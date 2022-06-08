@@ -1,2 +1,5 @@
 pike.exe
 .idea
+.terraform
+terraform.tfstate
+.terraform.lock.hcl
