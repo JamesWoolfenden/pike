@@ -5,3 +5,4 @@ terraform.tfstate
 .terraform.lock.hcl
 .vscode/
 pike
+.pytest_cache/

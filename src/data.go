@@ -8,9 +8,18 @@ import (
 )
 
 func GetAPI(resource string) string {
+	//file, _ := ioutil.ReadFile("./src/api.json")
+	//
+	//var data []interface{}
+	//result := json.Unmarshal([]byte(file), &data)
+	//log.Print(result)
+	//log.Print(data)
+
 	m := map[string]string{
 		"aws_instance":  "ec2",
-		"aws_s3_bucket": "s3"}
+		"aws_s3_bucket": "s3",
+		"aws_vpc":       "vpc",
+	}
 
 	api := m[resource]
 	if api == "" {
