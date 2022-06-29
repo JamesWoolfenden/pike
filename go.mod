@@ -1,4 +1,4 @@
-module pike
+module github.com/jameswoolfenden/pike
 
 go 1.17
 

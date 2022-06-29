@@ -4,3 +4,4 @@ pike.exe
 terraform.tfstate
 .terraform.lock.hcl
 .vscode/
+pike
