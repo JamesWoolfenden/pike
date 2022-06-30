@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/jameswoolfenden/pike/src"
+	"github.com/jameswoolfenden/pike/src" //nolint:goimports
 	"github.com/urfave/cli/v2"
 	"log"
 	"os"
