@@ -1,10 +1,14 @@
 package pike
 
 import (
+	"fmt"
 	"io/fs"
 	"io/ioutil"
 	"log"
 	"strings"
+
+	"github.com/hashicorp/hcl"
+	"github.com/hashicorp/hcl/hcl/ast"
 )
 
 // GetAPI determines which APIs a resource targets
@@ -33,18 +37,17 @@ func GetResources(file fs.FileInfo, dirname string) ([]string, string, string) {
 	var result []string
 
 	src, _ := ioutil.ReadFile(dirname + file.Name())
-	resources := strings.Split(string(src), "}")
 
-	for _, resource := range resources {
-		if len(resource) > 1 {
-			s := strings.Split(resource, "\"")
-			verb, template := strings.TrimSpace(s[0]), strings.TrimSpace(s[1])
-			if verb == "resource" {
-				result = append(result, template)
-			}
-		}
+	myCode, _ := hcl.Parse(string(src))
+
+	fmt.Print(myCode)
+	Tree := myCode.Node.(*ast.ObjectList)
+
+	for _, item := range Tree.Items {
+		result = append(result, strings.Trim(item.Keys[1].Token.Text, "\""))
 	}
 
+	fmt.Println(myCode)
 	return result, dirname + file.Name(), string(src)
 }
 
