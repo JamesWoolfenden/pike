@@ -1,9 +1,11 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"os"
 	"sort"
+	"time"
 
 	pike "github.com/jameswoolfenden/pike/src" //nolint:goimports
 	"github.com/urfave/cli/v2"
@@ -36,9 +38,21 @@ func main() {
 					return pike.Scan(directory)
 				},
 			},
+			{
+				Name:    "version",
+				Aliases: []string{"v"},
+				Usage:   "version",
+				Action: func(*cli.Context) error {
+					fmt.Println(pike.Version)
+					return nil
+				},
+			},
 		},
-		Name:  "pike",
-		Usage: "Generate IAM policy from your IAC code",
+		Name:     "pike",
+		Usage:    "Generate IAM policy from your IAC code",
+		Compiled: time.Time{},
+		Authors:  []*cli.Author{{Name: "James Woolfenden", Email: "support@bridgecrew.io"}},
+		Version:  pike.Version,
 	}
 
 	sort.Sort(cli.FlagsByName(app.Flags))
