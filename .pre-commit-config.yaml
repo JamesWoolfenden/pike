@@ -1,0 +1,49 @@
+---
+# yamllint disable rule:line-length
+default_language_version:
+  python: python3.8
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.2.0
+    hooks:
+      - id: check-json
+      - id: check-merge-conflict
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
+      - id: pretty-format-json
+        args:
+          - --autofix
+      - id: detect-aws-credentials
+      - id: detect-private-key
+  - repo: https://github.com/Lucas-C/pre-commit-hooks
+    rev: v1.1.14
+    hooks:
+      - id: forbid-tabs
+        exclude_types: [python, javascript, dtd, markdown, makefile, xml]
+        exclude: binary|\.bin$|rego|\.rego$|go|\.go$
+  - repo: https://github.com/jameswoolfenden/pre-commit-shell
+    rev: 0.0.2
+    hooks:
+      - id: shell-lint
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.31.1
+    hooks:
+      - id: markdownlint
+        exclude: docs/|templates/
+  - repo: https://github.com/jameswoolfenden/pre-commit
+    rev: v0.1.46
+    hooks:
+      - id: terraform-fmt
+        language_version: python3.8
+  - repo: https://github.com/gruntwork-io/pre-commit
+    rev: v0.1.17
+    hooks:
+      - id: gofmt
+      - id: goimports
+      - id: golint
+  - repo: https://github.com/golangci/golangci-lint
+    rev: v1.43.0
+    hooks:
+      - id: golangci-lint

@@ -1,11 +1,12 @@
 package main
 
 import (
-	"github.com/jameswoolfenden/pike/src" //nolint:goimports
-	"github.com/urfave/cli/v2"
 	"log"
 	"os"
 	"sort"
+
+	pike "github.com/jameswoolfenden/pike/src" //nolint:goimports
+	"github.com/urfave/cli/v2"
 )
 
 func main() {

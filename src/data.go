@@ -7,18 +7,16 @@ import (
 	"strings"
 )
 
+// GetAPI determines which APIs a resource targets
 func GetAPI(resource string) string {
-	//file, _ := ioutil.ReadFile("./src/api.json")
-	//
-	//var data []interface{}
-	//result := json.Unmarshal([]byte(file), &data)
-	//log.Print(result)
-	//log.Print(data)
 
 	m := map[string]string{
-		"aws_instance":  "ec2",
-		"aws_s3_bucket": "s3",
-		"aws_vpc":       "vpc",
+		"aws_instance":                           "ec2",
+		"aws_s3_bucket":                          "s3",
+		"aws_s3_bucket_accelerate_configuration": "s3",
+		"aws_s3_bucket_policy":                   "s3",
+		"aws_s3_bucket_logging":                  "s3",
+		"aws_vpc":                                "vpc",
 	}
 
 	api := m[resource]
@@ -30,6 +28,7 @@ func GetAPI(resource string) string {
 	return api
 }
 
+// GetResources retrieves all the resources in a tf file
 func GetResources(file fs.FileInfo, dirname string) ([]string, string, string) {
 	var result []string
 
@@ -47,4 +46,9 @@ func GetResources(file fs.FileInfo, dirname string) ([]string, string, string) {
 	}
 
 	return result, dirname + file.Name(), string(src)
+}
+
+// GetProvider retrieves the provider from the resource
+func GetProvider(resource string) string {
+	return strings.Split(resource, "_")[0]
 }

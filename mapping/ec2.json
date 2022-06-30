@@ -1,5 +1,13 @@
-[{
-    "plan":["ec2:DescribeAccountAttributes"],
-    "apply":[""],
-    "destroy":[""]
-}]
+[
+  {
+    "apply": [
+      ""
+    ],
+    "destroy": [
+      ""
+    ],
+    "plan": [
+      "ec2:DescribeAccountAttributes"
+    ]
+  }
+]

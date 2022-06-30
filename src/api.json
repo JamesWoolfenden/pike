@@ -1,9 +1,10 @@
-[{
-  "resource": "aws_instance",
-  "api":"ec2"
+[
+  {
+    "api": "ec2",
+    "resource": "aws_instance"
   },
   {
-    "resource": "aws_s3_bucket",
-    "api": "s3"
-  }]
-
+    "api": "s3",
+    "resource": "aws_s3_bucket"
+  }
+]

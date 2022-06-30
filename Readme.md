@@ -1,4 +1,4 @@
-# Pike 
+# Pike
 
 A tool to determine the minimum permissions required to run a tf/iac run
 
@@ -27,7 +27,7 @@ GLOBAL OPTIONS:
    --config FILE, -c FILE       Load configuration from FILE
    --directory value, -D value  Directory to scan
    --help, -h                   show help (default: false)
-   
+
 
 ```
 
