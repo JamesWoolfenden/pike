@@ -32,8 +32,9 @@ func GetAPI(resource string) string {
 }
 
 // GetResources retrieves all the resources in a tf file
-func GetResources(file fs.FileInfo, dirname string) ([]string, string, string) {
-	var result []string
+func GetResources(file fs.FileInfo, dirname string) []Resource {
+
+	var results []Resource
 
 	src, _ := ioutil.ReadFile(dirname + file.Name())
 
@@ -41,13 +42,25 @@ func GetResources(file fs.FileInfo, dirname string) ([]string, string, string) {
 	Tree := myCode.Node.(*ast.ObjectList)
 
 	for _, item := range Tree.Items {
-		result = append(result, strings.Trim(item.Keys[1].Token.Text, "\""))
+		var temp Resource
+		temp.name = strings.Trim(item.Keys[1].Token.Text, "\"")
+		temp.path = dirname + file.Name()
+		temp.code = *item
+		results = append(results, temp)
 	}
 
-	return result, dirname + file.Name(), string(src)
+	// resources, filename, code
+	return results
 }
 
 // GetProvider retrieves the provider from the resource
 func GetProvider(resource string) string {
 	return strings.Split(resource, "_")[0]
+}
+
+// GetPermission determines the IAM permissions required and returns a list of permission
+func GetPermission(template) Permission {
+
+	var myPermission Permission
+	return myPermission
 }

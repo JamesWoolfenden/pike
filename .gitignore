@@ -6,3 +6,4 @@ terraform.tfstate
 .vscode/
 pike
 .pytest_cache/
+*.backup

@@ -1,10 +1,13 @@
 [
   {
     "apply": [
-      ""
+      {
+        "attribute": "associate_public_ip_address",
+        "permission": "madethisup"
+      }
     ],
     "destroy": [
-      ""
+      {}
     ],
     "plan": [
       "ec2:DescribeAccountAttributes"
