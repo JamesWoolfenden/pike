@@ -7,13 +7,12 @@ import (
 	"sort"
 	"time"
 
-	mapping "github.com/jameswoolfenden/pike/mapping" //nolint:goimports
-	pike "github.com/jameswoolfenden/pike/src"        //nolint:goimports
+	//nolint:goimports
+	pike "github.com/jameswoolfenden/pike/src" //nolint:goimports
 	"github.com/urfave/cli/v2"
 )
 
 func main() {
-	mapping.Test()
 	var directory string
 
 	app := &cli.App{

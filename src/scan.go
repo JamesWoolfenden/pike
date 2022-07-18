@@ -14,9 +14,12 @@ func Scan(dirname string) error {
 	}
 
 	var results []template
+	ignores := []string{".terraform", ".terraform.info.hcl", "terraform.tfstate", "terraform.tfstate.backup"}
 
 	for _, file := range files {
-
+		if stringInSlice(file.Name(), ignores) {
+			continue
+		}
 		resources := GetResources(file, dirname)
 
 		for _, resource := range resources {
@@ -26,17 +29,28 @@ func Scan(dirname string) error {
 			results = append(results, result)
 		}
 	}
+	var PermissionBag []string
 
 	for _, result := range results {
-		var PermissionBag []Permission
+		if result.API != "" {
+			PermissionBag = append(PermissionBag, GetPermission(result)...)
+		}
 		// this now contains all the information we need for each resource/data/provider in our code
-		PermissionBag = append(PermissionBag, GetPermission(result))
-		log.Print(PermissionBag)
 	}
 
+	log.Print(PermissionBag)
 	return nil
 }
 
 // Permission object probably delete this
 type Permission struct {
+}
+
+func stringInSlice(a string, list []string) bool {
+	for _, b := range list {
+		if b == a {
+			return true
+		}
+	}
+	return false
 }

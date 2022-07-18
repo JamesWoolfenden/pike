@@ -1,18 +1,23 @@
 [
   {
     "apply": [
-      "DeleteBucket",
-      "CreateBucket"
+      "s3:DeleteBucket",
+      "s3:CreateBucket"
     ],
+    "attributes": {
+      "object_lock_enabled": [
+        "s3:GetBucketObjectLockConfiguration",
+        "s3:PutBucketObjectLockConfiguration",
+        "s3:PutObjectLegalHold",
+        "s3:PutObjectRetention",
+        "s3:PutObject"
+      ],
+      "tag": [
+        "s3:PutBucketTagging"
+      ]
+    },
     "destroy": [
-      "DeleteBucket"
-    ],
-    "object_lock_enabled": [
-      "s3:GetBucketObjectLockConfiguration",
-      "s3:PutBucketObjectLockConfiguration",
-      "s3:PutObjectLegalHold",
-      "s3:PutObjectRetention",
-      "s3:PutObject"
+      "s3:DeleteBucket"
     ],
     "plan": [
       "s3:GetLifecycleConfiguration",
@@ -31,9 +36,6 @@
       "s3:GetEncryptionConfiguration",
       "s3:GetBucketRequestPayment",
       "s3:GetBucketCORS"
-    ],
-    "tag": [
-      "s3:PutBucketTagging"
     ]
   }
 ]

@@ -24,7 +24,7 @@ func GetAPI(resource string) string {
 
 	api := m[resource]
 	if api == "" {
-		log.Printf("Resource:%s does not map", resource)
+		//log.Printf("Resource:%s does not map", resource)
 		return ""
 	}
 
@@ -59,8 +59,16 @@ func GetProvider(resource string) string {
 }
 
 // GetPermission determines the IAM permissions required and returns a list of permission
-func GetPermission(template) Permission {
+func GetPermission(result template) []string {
+	var myPermission []string
+	switch result.Provider {
+	case "aws":
+		myPermission = GetAWSPermissions(result)
+	case "azure":
+	case "gcp":
+	default:
+		log.Fatal("Provider {result.Provider} not found")
+	}
 
-	var myPermission Permission
 	return myPermission
 }

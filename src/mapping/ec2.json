@@ -1,0 +1,10 @@
+[
+  {
+    "apply": [],
+    "attributes": {},
+    "destroy": [],
+    "plan": [
+      "ec2:DescribeAccountAttributes"
+    ]
+  }
+]

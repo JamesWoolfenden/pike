@@ -1,0 +1,19 @@
+//package mapping
+//
+//import (
+//	_ "embed"
+//	"encoding/json"
+//	"fmt"
+//)
+//
+////go:embed ec2.json
+//var ec2raw []byte
+//
+//// Mapping Struct
+//
+//func Test() {
+//	var mappings []Mapping
+//	_ = json.Unmarshal(ec2raw, &mappings)
+//
+//	fmt.Println(mappings)
+//}
