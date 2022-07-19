@@ -1,25 +1,24 @@
 package pike
 
 import (
+	"io/fs"
 	"io/ioutil"
 	"log"
+	"path/filepath"
 )
 
 // Scan looks for resources in a given directory
 func Scan(dirname string) error {
-	files, err := ioutil.ReadDir(dirname)
 
-	if err != nil {
-		return err
+	files, err2 := GetTF(dirname)
+	if err2 != nil {
+		return err2
 	}
 
 	var results []template
-	ignores := []string{".terraform", ".terraform.info.hcl", "terraform.tfstate", "terraform.tfstate.backup"}
 
 	for _, file := range files {
-		if stringInSlice(file.Name(), ignores) {
-			continue
-		}
+
 		resources := GetResources(file, dirname)
 
 		for _, resource := range resources {
@@ -42,8 +41,26 @@ func Scan(dirname string) error {
 	return nil
 }
 
-// Permission object probably delete this
-type Permission struct {
+// GetTF return tf files in a directory
+func GetTF(dirname string) ([]fs.FileInfo, error) {
+	rawfiles, err := ioutil.ReadDir(dirname)
+	var files []fs.FileInfo
+	for _, file := range rawfiles {
+		if file.IsDir() {
+			continue
+		}
+		fileExtension := filepath.Ext(file.Name())
+
+		if fileExtension != ".tf" {
+			continue
+		}
+		files = append(files, file)
+	}
+
+	if err != nil {
+		return nil, err
+	}
+	return files, nil
 }
 
 func stringInSlice(a string, list []string) bool {

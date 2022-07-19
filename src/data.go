@@ -36,7 +36,10 @@ func GetResources(file fs.FileInfo, dirname string) []Resource {
 
 	var results []Resource
 
-	src, _ := ioutil.ReadFile(dirname + file.Name())
+	src, err := ioutil.ReadFile(dirname + file.Name())
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	myCode, _ := hcl.Parse(string(src))
 	Tree := myCode.Node.(*ast.ObjectList)

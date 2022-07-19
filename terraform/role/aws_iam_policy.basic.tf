@@ -5,33 +5,17 @@ resource "aws_iam_policy" "basic" {
     Statement = [
       {
         Action = [
-          "s3:GetLifecycleConfiguration",
-          "s3:GetBucketTagging",
-          "s3:GetBucketWebsite",
-          "s3:GetBucketLogging",
-          "s3:CreateBucket",
-          "s3:ListBucket",
-          "s3:GetAccelerateConfiguration",
-          "s3:GetBucketVersioning",
-          "s3:GetBucketAcl",
-          "s3:GetBucketPolicy",
-          "s3:GetReplicationConfiguration",
-          "s3:GetBucketObjectLockConfiguration",
-          "s3:GetObjectAcl",
-          "s3:GetObject",
-          "s3:GetEncryptionConfiguration",
-          "s3:GetBucketRequestPayment",
-          "s3:GetBucketCORS",
-          "s3:DeleteBucket",
-
-          "s3:GetBucketObjectLockConfiguration",
-          "s3:GetObjectLegalHold",
-          "s3:GetObjectRetention",
-          "s3:PutBucketObjectLockConfiguration",
-          "s3:PutObjectLegalHold",
-          "s3:PutObjectRetention",
-          "s3:PutObject",
-        ]
+          "ec2:DescribeInstances",
+          "ec2:TerminateInstances",
+          "ec2:StartInstances",
+          "ec2:DescribeTags",
+          "ec2:DescribeInstanceAttribute",
+          "ec2:DescribeVolumes",
+          "ec2:DescribeInstanceTypes",
+          "ec2:RunInstances",
+          "ec2:ModifyInstanceAttribute",
+          "ec2:StopInstances",
+        "ec2:DescribeInstanceCreditSpecifications"]
         Effect   = "Allow"
         Resource = "*"
       },

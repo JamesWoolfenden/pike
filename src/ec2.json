@@ -1,0 +1,34 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeInstances",
+      "ec2:DescribeTags",
+      "ec2:DescribeInstanceAttribute",
+      "ec2:DescribeVolumes",
+      "ec2:DescribeInstanceTypes",
+      "ec2:RunInstances",
+      "ec2:DescribeInstanceCreditSpecifications"
+    ],
+    "attributes": {
+      "monitoring": [
+        "ec2:MonitorInstances",
+        "ec2:UnmonitorInstances"
+      ],
+      "tags": [
+        "ec2:CreateTags",
+        "ec2:DeleteTags"
+      ]
+    },
+    "destroy": [
+      "ec2:StopInstances",
+      "ec2:TerminateInstances"
+    ],
+    "modify": [
+      "ec2:StopInstances",
+      "ec2:StartInstances",
+      "ec2:ModifyInstanceAttribute",
+      "ec2:StopInstances"
+    ],
+    "plan": []
+  }
+]

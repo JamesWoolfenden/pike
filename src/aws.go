@@ -54,7 +54,8 @@ func GetAWSPermissions(result template) []string {
 		permissions = append(permissions, moreperms...)
 		return permissions
 	case "aws_instance":
-
+		file := EC2Test()
+		log.Print(file)
 	default:
 		log.Fatalf("resource %s not found", result.Resource.name)
 	}
@@ -95,9 +96,7 @@ func GetAttributes(result template) []string {
 func GetAttributesValue(result []Mapping, somestring string) []string {
 
 	e := reflect.ValueOf(result[0].Attributes)
-	//e := reflect.ValueOf(&mappings[0].Attributes).Elem()
-	//test1 := e.Type().Field(3)
-	//log.Print(test1)
+
 	for i := 0; i < e.NumField(); i++ {
 		if somestring == strings.ToLower(e.Type().Field(i).Name) {
 			return e.Field(i).Interface().([]string)
