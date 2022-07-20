@@ -9,3 +9,6 @@ var s3 []byte
 
 //go:embed ec2.json
 var ec2raw []byte
+
+//go:embed aws_security_group.json
+var securityGroup []byte

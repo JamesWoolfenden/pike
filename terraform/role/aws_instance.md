@@ -5,23 +5,22 @@ resource "aws_iam_policy" "basic" {
     Statement = [
       {
         Action = [
-          "ec2:CreateSecurityGroup",
-          "ec2:DescribeSecurityGroups",
-          "ec2:DescribeAccountAttributes",
-          "ec2:DescribeNetworkInterfaces",
-          "ec2:DeleteSecurityGroup",
-          "ec2:RevokeSecurityGroupEgress",
-          "ec2:CreateTags",
-          "ec2:DeleteTags",
-          "ec2:AuthorizeSecurityGroupIngress",
-          "ec2:AuthorizeSecurityGroupEgress"
-        ]
+          "ec2:DescribeInstances",
+          "ec2:TerminateInstances",
+          "ec2:StartInstances",
+          "ec2:DescribeTags",
+          "ec2:DescribeInstanceAttribute",
+          "ec2:DescribeVolumes",
+          "ec2:DescribeInstanceTypes",
+          "ec2:RunInstances",
+          "ec2:ModifyInstanceAttribute",
+          "ec2:StopInstances",
+        "ec2:DescribeInstanceCreditSpecifications"]
         Effect   = "Allow"
         Resource = "*"
       },
     ]
   })
-  tags = { createdby = "JamesWoolfenden" }
 }
 
 resource "aws_iam_role_policy_attachment" "basic" {

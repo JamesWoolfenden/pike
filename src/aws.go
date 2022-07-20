@@ -16,6 +16,8 @@ func GetAWSPermissions(result template) []interface{} {
 		Permissions = GetPermissionMap(s3, myAttributes)
 	case "aws_instance":
 		Permissions = GetPermissionMap(ec2raw, myAttributes)
+	case "aws_security_group":
+		Permissions = GetPermissionMap(securityGroup, myAttributes)
 	default:
 		log.Printf("%s %s not found", result.Template, result.Resource.name)
 	}
