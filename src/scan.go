@@ -3,7 +3,6 @@ package pike
 import (
 	"io/fs"
 	"io/ioutil"
-	"log"
 	"path/filepath"
 )
 
@@ -34,9 +33,8 @@ func Scan(dirname string) error {
 		PermissionBag = append(PermissionBag, GetPermission(result)...)
 	}
 
-	for _, action := range PermissionBag {
-		log.Print(action)
-	}
+	GetPolicy(PermissionBag)
+
 	return nil
 }
 
