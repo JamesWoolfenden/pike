@@ -1,23 +1,11 @@
 package pike
 
 import (
-	_ "embed"
-	"encoding/json"
-	"fmt"
+	_ "embed" //required for embed
 )
 
-//go:embed api.json
-var f []byte
+//go:embed s3_bucket.json
+var s3 []byte
 
-func test() {
-	var languages []Language
-	_ = json.Unmarshal(f, &languages)
-
-	fmt.Println(languages[0].API)
-}
-
-// Language struct
-type Language struct {
-	API      string `json:"api"`
-	Resource string `json:"resource"`
-}
+//go:embed ec2.json
+var ec2raw []byte

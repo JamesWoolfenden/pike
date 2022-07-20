@@ -22,22 +22,21 @@ func Scan(dirname string) error {
 		resources := GetResources(file, dirname)
 
 		for _, resource := range resources {
-			myAPI := GetAPI(resource.name)
+			hcltype := GetHCLType(resource)
 			provider := GetProvider(resource.name)
-			result := template{resource, myAPI, provider}
+			result := template{resource, provider, hcltype}
 			results = append(results, result)
 		}
 	}
-	var PermissionBag []string
+	var PermissionBag []interface{}
 
 	for _, result := range results {
-		if result.API != "" {
-			PermissionBag = append(PermissionBag, GetPermission(result)...)
-		}
-		// this now contains all the information we need for each resource/data/provider in our code
+		PermissionBag = append(PermissionBag, GetPermission(result)...)
 	}
 
-	log.Print(PermissionBag)
+	for _, action := range PermissionBag {
+		log.Print(action)
+	}
 	return nil
 }
 
@@ -70,4 +69,9 @@ func stringInSlice(a string, list []string) bool {
 		}
 	}
 	return false
+}
+
+// GetHCLType gets the template type
+func GetHCLType(hcl Resource) string {
+	return hcl.code.Keys[0].Token.Text
 }

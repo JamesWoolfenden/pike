@@ -4,8 +4,8 @@ import "github.com/hashicorp/hcl/hcl/ast"
 
 type template struct {
 	Resource Resource `json:"resource"`
-	API      string   `json:"api"`
 	Provider string   `json:"provider"`
+	Template string   `json:"template"`
 }
 
 // Resource object for the HCL parser

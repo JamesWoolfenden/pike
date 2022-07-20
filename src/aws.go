@@ -1,83 +1,26 @@
 package pike
 
 import (
-	_ "embed"
 	"encoding/json"
 	"log"
-	"reflect"
-	"strings"
 
 	"github.com/hashicorp/hcl/hcl/ast"
 )
 
-// Mapping structure for permissions
-type Mapping struct {
-	Apply      []string   `json:"apply"`
-	Destroy    []string   `json:"destroy"`
-	Plan       []string   `json:"plan"`
-	Attributes Attributes `json:"attributes"`
-}
-
-// Attributes Object
-//goland:noinspection GoSnakeCaseUsage
-type Attributes struct {
-	Tag                 []string `json:"tag"`
-	Object_lock_enabled []string `json:"object_lock_enabled"`
-}
-
-func (m Mapping) GetPermissions(file []byte) []Mapping {
-	var mappings []Mapping
-	_ = json.Unmarshal(file, &mappings)
-
-	return mappings
-}
-
-//go:embed s3_bucket.json
-var s3 []byte
-
-// get permissions for AWS resources
-func GetAWSPermissions(result template) []string {
+// GetAWSPermissions for AWS resources
+func GetAWSPermissions(result template) []interface{} {
+	myAttributes := GetAttributes(result)
+	var Permissions []interface{}
 	switch result.Resource.name {
 	case "aws_s3_bucket":
-		var newer Mapping
-		var permissions []string
-		mappings := newer.GetPermissions(s3)
-		myAttributes := GetAttributes(result)
-
-		matches := findMatches(mappings, myAttributes)
-
-		for _, match := range matches {
-			permissions = GetAttributesValue(mappings, match)
-		}
-
-		moreperms := GetBaseValue(mappings)
-		permissions = append(permissions, moreperms...)
-		return permissions
+		Permissions = GetPermissionMap(s3, myAttributes)
 	case "aws_instance":
-		file := EC2Test()
-		log.Print(file)
+		Permissions = GetPermissionMap(ec2raw, myAttributes)
 	default:
-		log.Fatalf("resource %s not found", result.Resource.name)
+		log.Printf("%s %s not found", result.Template, result.Resource.name)
 	}
 
-	return nil
-}
-
-func findMatches(mappings []Mapping, myAttributes []string) []string {
-	e := reflect.ValueOf(&mappings[0].Attributes).Elem()
-
-	var Fields []string
-	for i := 0; i < e.NumField(); i++ {
-		Fields = append(Fields, strings.ToLower(e.Type().Field(i).Name))
-	}
-
-	var matches []string
-	for _, field := range Fields {
-		if contains(myAttributes, field) {
-			matches = append(matches, field)
-		}
-	}
-	return matches
+	return Permissions
 }
 
 // GetAttributes gets the name of the important attributes for this resource
@@ -92,34 +35,6 @@ func GetAttributes(result template) []string {
 	return myAttributes
 }
 
-// GetAttributesValue gets the values of attributes
-func GetAttributesValue(result []Mapping, somestring string) []string {
-
-	e := reflect.ValueOf(result[0].Attributes)
-
-	for i := 0; i < e.NumField(); i++ {
-		if somestring == strings.ToLower(e.Type().Field(i).Name) {
-			return e.Field(i).Interface().([]string)
-		}
-	}
-
-	return nil
-}
-
-// GetBasevalue gets the base permissions - plan, apply, destroy
-func GetBaseValue(result []Mapping) []string {
-
-	e := reflect.ValueOf(result[0])
-
-	var myparams []string
-	for i := 0; i < 3; i++ {
-		//myresult := e.Type().Field(i)
-		myparams = append(myparams, e.Field(i).Interface().([]string)...)
-	}
-
-	return myparams
-}
-
 func contains(s []string, e string) bool {
 	for _, a := range s {
 		if a == e {
@@ -127,4 +42,33 @@ func contains(s []string, e string) bool {
 		}
 	}
 	return false
+}
+
+// GetPermissionMap Anonymous parsing
+func GetPermissionMap(raw []byte, attributes []string) []interface{} {
+	var mappings []interface{}
+	err := json.Unmarshal(raw, &mappings)
+	if err != nil {
+		log.Print(err)
+	}
+	temp := mappings[0].(map[string]interface{})
+	myAttributes := temp["attributes"].(map[string]interface{})
+
+	var found []interface{}
+
+	for _, attribute := range attributes {
+		if myAttributes[attribute] != nil {
+			found = append(found, myAttributes[attribute])
+		}
+	}
+
+	actions := []string{"apply", "plan", "modify", "destroy"}
+
+	for _, action := range actions {
+		if temp[action] != nil {
+			found = append(found, temp[action])
+		}
+	}
+
+	return found
 }
