@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      
+    ],
+    "attributes": {
+      
+      "tags": [
+      ]
+    },
+    "destroy": [
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

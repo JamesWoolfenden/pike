@@ -63,6 +63,7 @@ func Test_stringInSlice(t *testing.T) {
 		want bool
 	}{
 		{"pass",args{"a",[]string{ "a","b","c"}},true},
+		{"fail",args{"d",[]string{ "a","b","c"}},false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
