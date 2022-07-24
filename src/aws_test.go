@@ -7,7 +7,7 @@ import (
 
 func TestGetAWSPermissions(t *testing.T) {
 
-	var data []inferface{
+	var data []inferface{}{
 		"ec2:AuthorizeSecurityGroupIngress",
 		"ec2:AuthorizeSecurityGroupEgress",
 		"ec2:CreateSecurityGroup"}
