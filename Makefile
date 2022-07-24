@@ -1,4 +1,4 @@
-.PHONY: clean  docs
+.PHONY: 
 TEST?=$$(go list ./... | grep -v 'vendor'| grep -v 'scripts'| grep -v 'version')
 HOSTNAME=jameswoolfenden
 FULL_PKG_NAME=github.com/jameswoolfenden/pike
@@ -9,7 +9,7 @@ OS_ARCH=darwin_amd64
 TERRAFORM=./terraform/
 TF_TEST=./terraform_test/
 
-default: install
+default:
 
 build:
 	go build -o ${BINARY}
@@ -28,10 +28,6 @@ release:
 	GOOS=windows GOARCH=386 go build -o ./bin/${BINARY}_${VERSION}_windows_386
 	GOOS=windows GOARCH=amd64 go build -o ./bin/${BINARY}_${VERSION}_windows_amd64
 
-install: build
-	mkdir -p ~/.terraform.d/plugins/${HOSTNAME}/${NAMESPACE}/${NAME}/${VERSION}/${OS_ARCH}
-	mv ${BINARY} ~/.terraform.d/plugins/${HOSTNAME}/${NAMESPACE}/${NAME}/${VERSION}/${OS_ARCH}
-
 test:
 	go test $(TEST) || exit 1
 	echo $(TEST) | xargs -t -n4 go test $(TESTARGS) -timeout=30s -parallel=4
@@ -39,57 +35,21 @@ test:
 testacc:
 	TF_ACC=1 go test $(TEST) -v $(TESTARGS) -timeout 120m
 
-check: install purge_tf purge_state
-	cd $(TERRAFORM) && terraform init
-	cd $(TERRAFORM) && terraform plan
-
-check_tf: install
-	cd $(TF_TEST) && rm .terraform.*
-	cd $(TF_TEST) && terraform init
-	cd $(TF_TEST) && terraform plan
-
-apply: install purge_tf purge_state
-	cd $(TERRAFORM) && terraform init
-	cd $(TERRAFORM) && terraform apply --auto-approve
-
-plan: install purge_tf
-	cd $(TERRAFORM) && terraform init
-	cd $(TERRAFORM) && terraform plan
-
-update: install
-	cd $(TERRAFORM) && terraform init
-	cd $(TERRAFORM) && terraform apply --auto-approve
 
 destroy:
 	cd $(TERRAFORM) && terraform destroy --auto-approve
 
-clean: purge_tf
-	-rm -rf ./bin
-
-purge_state:
-	-rm $(TERRAFORM)terraform.tfstate
-	-rm $(TERRAFORM)terraform.tfstate.backup
-
-purge_tf:
-	-rm -fr $(TERRAFORM).terraform
-	-rm $(TERRAFORM).terraform.lock.hcl
 
 BIN=$(CURDIR)/bin
 $(BIN)/%:
 	@echo "Installing tools from tools/tools.go"
 	@cat tools/tools.go | grep _ | awk -F '"' '{print $$2}' | GOBIN=$(BIN) xargs -tI {} go install {}
 
-generate-docs: $(BIN)/tfplugindocs
-	-rm -fr templates-backup
-	go run -ldflags="-X $(FULL_PKG_NAME)/$(VERSION_PLACEHOLDER)=$(shell git describe --tags --always --abbrev=0)" scripts/generate-docs.go -tfplugindocsPath=$(BIN)/tfplugindocs
+generate-docs: 
+	echo "does nowt"
 
+docs: 
 
-docs: $(BIN)/tfplugindocs
-	-rm -fr templates-backup
-	go run scripts/generate-docs.go -tfplugindocsPath=$(BIN)/tfplugindocs
-
-validate-docs: $(BIN)/tfplugindocs
-	$(BIN)/tfplugindocs validate
 
 fmt:
 	go fmt ./...
