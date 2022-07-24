@@ -1,7 +1,6 @@
 # Pike
 
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/jameswoolfenden/pike/graphs/commit-activity)
-![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/JamesWoolfenden/pike)
 
 Pike is a tool to determine the minimum permissions required to run a tf/iac run:
 
@@ -110,7 +109,7 @@ Make build
 ## Extending
 
 Determine and Create IAM mapping file, working out the permissions required for your resource:
-e.g.
+e.g. *aws_security_group.json*
 
 ```json
 [
