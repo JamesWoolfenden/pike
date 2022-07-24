@@ -3,7 +3,7 @@ on:
     branches:
       - master
 
-name: Test Across Matrix
+name: CI
 
 jobs:
   test:
