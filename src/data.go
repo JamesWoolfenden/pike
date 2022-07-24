@@ -42,6 +42,7 @@ func GetProvider(resource string) string {
 	}
 	return ""
 }
+
 // GetPermission determines the IAM permissions required and returns a list of permission
 func GetPermission(result template) []interface{} {
 	var myPermission []interface{}
@@ -51,7 +52,9 @@ func GetPermission(result template) []interface{} {
 	case "azure":
 	case "gcp":
 	default:
-		log.Fatal("Provider {result.Provider} not found")
+		if result.Provider != "" {
+			log.Printf("Provider %s was not found", result.Provider)
+		}
 	}
 
 	return myPermission

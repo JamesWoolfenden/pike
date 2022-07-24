@@ -16,7 +16,7 @@ func TestGetResources(t *testing.T) {
 		args args
 		want []Resource
 	}{
-		{"missing", args{}, []Resource{}},
+		{"missing", args{nil, "./terraform/"}, []Resource{}},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
