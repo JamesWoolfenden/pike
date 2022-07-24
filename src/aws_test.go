@@ -7,10 +7,10 @@ import (
 
 func TestGetAWSPermissions(t *testing.T) {
 
-	data:=make([]inferface, 3)
-	data[0]="ec2:AuthorizeSecurityGroupIngress"
-	data[1]="ec2:AuthorizeSecurityGroupEgress"
-    data[2]="ec2:CreateSecurityGroup"
+	var data []inferface{
+		"ec2:AuthorizeSecurityGroupIngress",
+		"ec2:AuthorizeSecurityGroupEgress",
+		"ec2:CreateSecurityGroup"}
 
 	type args struct {
 		result template
