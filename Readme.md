@@ -144,7 +144,9 @@ e.g. *aws_security_group.json*
 
 ```
 
-Import mapping file 
+### Add Import mapping file 
+
+Update **files.go** with:
 
 ```go
 //go:embed aws_security_group.json
