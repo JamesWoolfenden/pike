@@ -55,7 +55,8 @@ func Test_contains(t *testing.T) {
 		args args
 		want bool
 	}{
-		// TODO: Add test cases.
+		{"pass",args{[]string{"a","b","c"},"c"},true},
+		{"fail",args{[]string{"a","b","c"},"d"},false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

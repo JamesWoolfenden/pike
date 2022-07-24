@@ -16,7 +16,7 @@ func TestGetResources(t *testing.T) {
 		args args
 		want []Resource
 	}{
-		//{"missing", args{}, []Resource{{"missing",".",nil},}},
+		{"missing", args{}, []Resource{}},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -36,7 +36,8 @@ func TestGetProvider(t *testing.T) {
 		args args
 		want string
 	}{
-		// TODO: Add test cases.
+		{"pass",args{"aws_something.tf"},"aws"},
+		{"nothing",args{"something.tf"}, ""},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

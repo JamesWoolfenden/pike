@@ -37,9 +37,11 @@ func GetResources(file fs.FileInfo, dirname string) []Resource {
 
 // GetProvider retrieves the provider from the resource
 func GetProvider(resource string) string {
-	return strings.Split(resource, "_")[0]
+	if strings.Contains(resource, "_"){
+		return strings.Split(resource, "_")[0]
+	}
+	return ""
 }
-
 // GetPermission determines the IAM permissions required and returns a list of permission
 func GetPermission(result template) []interface{} {
 	var myPermission []interface{}
