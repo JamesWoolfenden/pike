@@ -7,10 +7,10 @@ import (
 
 func TestGetAWSPermissions(t *testing.T) {
 
-	var data []inferface{}{
-		"ec2:AuthorizeSecurityGroupIngress",
-		"ec2:AuthorizeSecurityGroupEgress",
-		"ec2:CreateSecurityGroup"}
+	var data []string
+	data[0]="ec2:AuthorizeSecurityGroupIngress"
+	data[1]="ec2:AuthorizeSecurityGroupEgress"
+	data[2]="ec2:CreateSecurityGroup"
 
 	type args struct {
 		result template
@@ -18,9 +18,9 @@ func TestGetAWSPermissions(t *testing.T) {
 	tests := []struct {
 		name string
 		args args
-		want []interface{}
+		want []string
 	}{
-		{"First",args{},data},
+		{"First",args{}, data},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
