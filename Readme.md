@@ -1,8 +1,10 @@
+![alt text](pike.jfif "Pike")
+
 # Pike
 
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/jameswoolfenden/pike/graphs/commit-activity)
 
-Pike is a tool to determine the minimum permissions required to run a tf/iac run:
+Pike is a tool, to determine the minimum permissions required to run a tf/iac run:
 
 - run ci - limit external outbound connections
 - runs on a path or a file
