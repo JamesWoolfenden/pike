@@ -37,3 +37,4 @@ nat_gateway
 handle 
 2022/07/24 07:00:37 data aws_caller_identity not found
 2022/07/24 07:00:37 provider aws not found
+
