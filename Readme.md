@@ -152,7 +152,7 @@ var securityGroup []byte
 
 ```
 
-## Add to provider Scan
+### Add to provider Scan
 
 ```go
 func GetAWSPermissions(result template) []interface{} {
