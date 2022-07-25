@@ -18,9 +18,11 @@ func GetAWSPermissions(result template) []interface{} {
 		Permissions = GetPermissionMap(aws_instance, myAttributes)
 	case "aws_security_group":
 		Permissions = GetPermissionMap(aws_security_group, myAttributes)
-	case "aws_lambda":
-		Permissions = GetPermissionMap(aws_lambda, myAttributes)
-		
+	case "aws_lambda_function":
+		Permissions = GetPermissionMap(aws_lambda_function, myAttributes)
+	case "aws_vpc":
+		Permissions = GetPermissionMap(aws_vpc, myAttributes)
+			
 	default:
 		log.Printf("%s %s not found", result.Template, result.Resource.name)
 	}

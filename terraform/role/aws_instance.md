@@ -5,22 +5,14 @@ resource "aws_iam_policy" "basic" {
     Statement = [
       {
         Action = [
-          "ec2:DescribeInstances",
-          "ec2:TerminateInstances",
-          "ec2:StartInstances",
-          "ec2:DescribeTags",
-          "ec2:DescribeInstanceAttribute",
-          "ec2:DescribeVolumes",
-          "ec2:DescribeInstanceTypes",
-          "ec2:RunInstances",
-          "ec2:ModifyInstanceAttribute",
-          "ec2:StopInstances",
-        "ec2:DescribeInstanceCreditSpecifications"]
+          "ec2:AuthorizeSecurityGroupEgress"
+        ]
         Effect   = "Allow"
         Resource = "*"
       },
     ]
   })
+  tags = { createdby = "JamesWoolfenden" }
 }
 
 resource "aws_iam_role_policy_attachment" "basic" {

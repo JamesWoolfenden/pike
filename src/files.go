@@ -13,5 +13,8 @@ var aws_instance []byte
 //go:embed mapping/aws/aws_security_group.json
 var aws_security_group []byte
 
-//go:embed mapping/aws/aws_lambda.json
-var aws_lambda []byte
+//go:embed mapping/aws/aws_lambda_function.json
+var aws_lambda_function []byte
+
+//go:embed mapping/aws/aws_vpc.json
+var aws_vpc []byte

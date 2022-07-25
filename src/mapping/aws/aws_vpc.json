@@ -1,0 +1,22 @@
+[
+    {
+      "apply": [
+        "ec2:CreateVPC",
+        "ec2:DeleteVPC",
+        "ec2:DescribeVpcs",
+        "ec2:DescribeAccountAttributes",
+        "ec2:DescribeVpcAttribute"
+      ],
+      "attributes": {
+        "tags": [
+            "ec2:CreateTags",
+            "ec2:DeleteTags"
+        ]
+      },
+      "destroy": [ "ec2:DeleteVPC"
+      ],
+      "modify": [],
+      "plan": []
+    }
+  ]
+  

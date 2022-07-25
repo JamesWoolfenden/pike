@@ -5,16 +5,7 @@ resource "aws_iam_policy" "basic" {
     Statement = [
       {
         Action = [
-          "ec2:CreateSecurityGroup",
-          "ec2:DescribeSecurityGroups",
-          "ec2:DescribeAccountAttributes",
-          "ec2:DescribeNetworkInterfaces",
-          "ec2:DeleteSecurityGroup",
-          "ec2:RevokeSecurityGroupEgress",
-          "ec2:CreateTags",
           "ec2:DeleteTags",
-          "ec2:AuthorizeSecurityGroupIngress",
-          "ec2:AuthorizeSecurityGroupEgress"
         ]
         Effect   = "Allow"
         Resource = "*"
@@ -30,6 +21,7 @@ resource "aws_iam_role_policy_attachment" "basic" {
 }
 
 resource "aws_iam_user_policy_attachment" "basic" {
+	# checkov:skip=CKV_AWS_40: By design
   user       = "basic"
   policy_arn = aws_iam_policy.basic.arn
 }

@@ -1,7 +1,11 @@
 [
   {
     "apply": [
-      
+      "ec2:CreateVpc",
+      "ec2:DescribeVpcAttribute",
+      "ec2:DescribeVpcs",
+      "ec2:DescribeAccountAttributes", 
+      "ec2:DeleteVpc"
     ],
     "attributes": {
       
