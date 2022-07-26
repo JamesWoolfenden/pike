@@ -1,4 +1,4 @@
-aws_lambda
+
 aws_api_gateway_rest_api
 aws_apigatewayv2_api
 aws_launch_config
@@ -29,12 +29,9 @@ sqs
 sns
 
 nacl
-vpc
 subnet
 route_table
 nat_gateway
 
-handle 
+handle
 2022/07/24 07:00:37 data aws_caller_identity not found
-2022/07/24 07:00:37 provider aws not found
-

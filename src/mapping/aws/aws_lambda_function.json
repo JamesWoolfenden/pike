@@ -1,20 +1,24 @@
 [
   {
     "apply": [
-      "ec2:CreateVpc",
-      "ec2:DescribeVpcAttribute",
-      "ec2:DescribeVpcs",
-      "ec2:DescribeAccountAttributes", 
-      "ec2:DeleteVpc"
+      "ec2:DescribeAccountAttributes",
+      "lambda:CreateFunction",
+      "iam:PassRole",
+      "lambda:GetFunctionCodeSigningConfig"
     ],
     "attributes": {
-      
       "tags": [
+        "lambda:TagResource",
+        "lambda:UntagResource"
       ]
     },
     "destroy": [
+      "lambda:DeleteFunction"
     ],
-    "modify": [],
+    "modify": [
+      "lambda:GetFunction",
+      "lambda:ListVersionsByFunction"
+    ],
     "plan": []
   }
 ]

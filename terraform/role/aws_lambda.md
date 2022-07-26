@@ -5,7 +5,15 @@ resource "aws_iam_policy" "basic" {
     Statement = [
       {
         Action = [
-          "ec2:DescribeAccountAttributes",
+        "ec2:DescribeAccountAttributes",
+        "lambda:CreateFunction",
+        "iam:PassRole",
+        "lambda:GetFunction",
+        "lambda:ListVersionsByFunction",
+        "lambda:DeleteFunction",
+        "lambda:GetFunctionCodeSigningConfig",
+        "lambda:TagResource",
+        "lambda:UntagResource"
         ]
         Effect   = "Allow"
         Resource = "*"
@@ -21,7 +29,7 @@ resource "aws_iam_role_policy_attachment" "basic" {
 }
 
 resource "aws_iam_user_policy_attachment" "basic" {
-  # checkov:skip=CKV_AWS_40: By design
+	# checkov:skip=CKV_AWS_40: By design
   user       = "basic"
   policy_arn = aws_iam_policy.basic.arn
 }

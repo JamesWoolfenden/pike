@@ -4,4 +4,7 @@ resource "aws_lambda_function" "examplea" {
   handler       = "anyoldguff"
   runtime       = "python3.8"
   filename      = "todo.zip"
+  # tags = {
+  #   createdby="james woolfenden"
+  # }
 }
