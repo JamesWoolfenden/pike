@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [ 
+      "ec2:CreateSubnet",
+      "ec2:DescribeAccountAttributes",
+      "ec2:DescribeSubnets",
+      "ec2:DeleteSubnet"
+    ],
+    "attributes": {
+      "tags": [
+        "ec2:CreateTags",
+        "ec2:DeleteTags"
+      ]
+    },
+    "destroy": [
+      "ec2:DeleteSubnet"
+    ],
+    "modify": [
+    ],
+    "plan": []
+  }
+]

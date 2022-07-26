@@ -5,7 +5,13 @@ resource "aws_iam_policy" "basic" {
     Statement = [
       {
         Action = [
-          "ec2:DescribeAccountAttributes"]
+          "ec2:CreateSubnet",
+          "ec2:DescribeAccountAttributes",
+          "ec2:DescribeSubnets",
+          "ec2:DeleteSubnet",
+          "ec2:CreateTags",
+          "ec2:DeleteTags"
+        ]
         Effect   = "Allow"
         Resource = "*"
       },

@@ -28,8 +28,6 @@ aws_route53_zone
 sqs
 sns
 
-nacl
-subnet
 route_table
 nat_gateway
 

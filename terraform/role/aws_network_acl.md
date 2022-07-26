@@ -5,7 +5,14 @@ resource "aws_iam_policy" "basic" {
     Statement = [
       {
         Action = [
-          "ec2:DescribeAccountAttributes"]
+          "ec2:DescribeAccountAttributes",
+          "ec2:CreateNetworkAcl",
+          "ec2:CreateNetworkAclEntry",
+          "ec2:DescribeNetworkAcls",
+          "ec2:DeleteNetworkAcl",
+          "ec2:CreateTags",
+          "ec2:DeleteTags"
+        ]
         Effect   = "Allow"
         Resource = "*"
       },
