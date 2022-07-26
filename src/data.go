@@ -5,22 +5,32 @@ import (
 	"io/ioutil"
 	"log"
 	"strings"
-
+	"os"
 	"github.com/hashicorp/hcl"
 	"github.com/hashicorp/hcl/hcl/ast"
 )
 
 // GetResources retrieves all the resources in a tf file
-func GetResources(file fs.FileInfo, dirname string) []Resource {
+func GetResources(file fs.FileInfo, dirname string) ([]Resource, error ){
 
 	var results []Resource
 
-	src, err := ioutil.ReadFile(dirname + file.Name())
+	fullfile:=dirname + string(os.PathSeparator)+ file.Name()
+	
+	src, err := ioutil.ReadFile(fullfile)
+
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	myCode, _ := hcl.Parse(string(src))
+	myCode, err := hcl.Parse(string(src))
+
+	if err != nil {
+		log.Printf("failed to parse %s", fullfile )
+		log.Print(err)
+		return nil, err
+	}
+
 	Tree := myCode.Node.(*ast.ObjectList)
 
 	for _, item := range Tree.Items {
@@ -32,7 +42,7 @@ func GetResources(file fs.FileInfo, dirname string) []Resource {
 	}
 
 	// resources, filename, code
-	return results
+	return results, nil
 }
 
 // GetProvider retrieves the provider from the resource

@@ -33,3 +33,6 @@ nat_gateway
 
 handle
 2022/07/24 07:00:37 data aws_caller_identity not found
+
+parse/ignore variables hcl.parse the correct parser?
+https://discuss.hashicorp.com/t/parse-hcl-treating-variables-or-functions-as-raw-strings-hashicorp-hcl/5859/2

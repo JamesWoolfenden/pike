@@ -3,13 +3,25 @@ package pike
 import (
 	"io/fs"
 	"io/ioutil"
+	"log"
+	"os"
 	"path/filepath"
+	"strings"
 )
 
 // Scan looks for resources in a given directory
 func Scan(dirname string) error {
 
-	files, err2 := GetTF(dirname)
+	fulldir, err:=filepath.Abs(dirname)
+	fulldir=strings.TrimSuffix(fulldir, string(os.PathSeparator))
+
+	if err != nil {
+		return err
+	}
+
+    log.Print(fulldir)
+
+	files, err2 := GetTF(fulldir)
 	if err2 != nil {
 		return err2
 	}
@@ -18,7 +30,11 @@ func Scan(dirname string) error {
 
 	for _, file := range files {
 
-		resources := GetResources(file, dirname)
+		resources, err := GetResources(file, fulldir)
+		
+		if err != nil {
+			continue
+		}
 
 		for _, resource := range resources {
 			hcltype := GetHCLType(resource)
