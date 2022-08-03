@@ -13,8 +13,8 @@
 Pike is a tool, to determine the minimum permissions required to run a TF/IAC run:
 Still very much under development, I intend it to: 
 
-- can run in ci - limit external outbound connections
-- runs on a path or a file
+- run in ci - limit external outbound connections
+- run on a path or a file
 - determines permission drift
 - least privilege enabler
 - policy creator
