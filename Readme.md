@@ -10,16 +10,21 @@
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 [![checkov](https://img.shields.io/badge/checkov-verified-brightgreen)](https://www.checkov.io/)
 
-Pike is a tool, to determine the minimum permissions required to run a tf/iac run:
+Pike is a tool, to determine the minimum permissions required to run a TF/IAC run:
+Still very much under development, I intend it to: 
 
-- run ci - limit external outbound connections
+- can run in ci - limit external outbound connections
 - runs on a path or a file
 - determines permission drift
 - least privilege enabler
 - policy creator
 - test policy against environment
 
-It currently supports Terraform.
+It currently supports Terraform and can support multiple providers but focus is only on AWS at present. 
+
+## Current issues:
+
+- The current HCL parser needs to be replaced with one that ignores variables. We dont care about them yet.
 
 ## Usage
 
