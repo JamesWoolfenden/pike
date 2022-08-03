@@ -22,7 +22,10 @@ func GetAWSPermissions(result template) []string {
 		Permissions = GetPermissionMap(aws_lambda_function, myAttributes)
 	case "aws_vpc":
 		Permissions = GetPermissionMap(aws_vpc, myAttributes)
-
+	case "aws_subnet":
+		Permissions = GetPermissionMap(aws_subnet, myAttributes)
+	case "aws_network_acl":
+		Permissions = GetPermissionMap(aws_network_acl, myAttributes)
 	default:
 		log.Printf("%s %s not found", result.Template, result.Resource.name)
 	}

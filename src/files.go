@@ -19,5 +19,11 @@ var aws_lambda_function []byte
 //go:embed mapping/aws/aws_vpc.json
 var aws_vpc []byte
 
+//go:embed mapping/aws/aws_subnet.json
+var aws_subnet []byte
+
+//go:embed mapping/aws/aws_network_acl.json
+var aws_network_acl []byte
+
 //go:embed mapping/gcp/google_compute_instance.json
 var google_compute_instance []byte

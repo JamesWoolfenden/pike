@@ -20,7 +20,11 @@ func GetResources(file string) []Resource {
 		log.Fatal(err)
 	}
 
-	myCode, _ := hcl.Parse(string(src))
+	myCode, err := hcl.Parse(string(src))
+
+	if err != nil {
+		log.Printf("failed to parse %s", file)
+	}
 
 	Tree := myCode.Node.(*ast.ObjectList)
 
