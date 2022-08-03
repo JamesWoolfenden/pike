@@ -14,3 +14,10 @@ type Resource struct {
 	path string
 	code ast.ObjectItem
 }
+
+// Sorted is to help split out permission to the relevant auth
+type Sorted struct {
+	AWS   []string
+	GCP   []string
+	AZURE []string
+}

@@ -1,6 +1,6 @@
-![alt text](pike.jfif "Pike")
-
 # Pike
+
+![alt text](pike.jfif "Pike")
 
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/jameswoolfenden/pike/graphs/commit-activity)
 [![Build Status](https://github.com/JamesWoolfenden/pike/workflows/CI/badge.svg?branch=master)](https://github.com/JamesWoolfenden/pike)
@@ -9,7 +9,6 @@
 ![Terraform Version](https://img.shields.io/badge/tf-%3E%3D0.14.0-blue.svg)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 [![checkov](https://img.shields.io/badge/checkov-verified-brightgreen)](https://www.checkov.io/)
-
 
 Pike is a tool, to determine the minimum permissions required to run a tf/iac run:
 
@@ -24,9 +23,10 @@ It currently supports Terraform.
 
 ## Usage
 
-Scan a directory of terraform files
+Scan a directory of terraform file
+
 ```shell
-./pike -D .\terraform\ scan
+./pike -d .\terraform\ scan
 2022/07/24 07:00:37 data aws_caller_identity not found
 2022/07/24 07:00:37 provider aws not found
 {
@@ -106,10 +106,10 @@ GLOBAL OPTIONS:
 ## Building
 
 ```go
-go build 
+go build
 ```
 
-or 
+or
 
 ```Make
 Make build
@@ -117,7 +117,8 @@ Make build
 
 ## Extending
 
-Determine and Create IAM mapping file, working out the permissions required for your resource:
+Determine and Create IAM mapping file,
+working out the permissions required for your resource:
 e.g. *aws_security_group.json*
 
 ```json
@@ -151,7 +152,7 @@ e.g. *aws_security_group.json*
 
 ```
 
-### Add Import mapping file 
+### Add Import mapping file
 
 Update **files.go** with:
 
@@ -165,15 +166,15 @@ var securityGroup []byte
 
 ```go
 func GetAWSPermissions(result template) []interface{} {
-	myAttributes := GetAttributes(result)
-	var Permissions []interface{}
-	switch result.Resource.name {
-	case "aws_s3_bucket":
-		Permissions = GetPermissionMap(s3, myAttributes)
-	case "aws_instance":
-		Permissions = GetPermissionMap(ec2raw, myAttributes)
-+	case "aws_security_group":
-+		Permissions = GetPermissionMap(securityGroup, myAttributes)
+    myAttributes := GetAttributes(result)
+    var Permissions []interface{}
+    switch result.Resource.name {
+    case "aws_s3_bucket":
+       Permissions = GetPermissionMap(s3, myAttributes)
+    case "aws_instance":
+       Permissions = GetPermissionMap(ec2raw, myAttributes)
++   case "aws_security_group":
++      Permissions = GetPermissionMap(securityGroup, myAttributes)
 ```
 
 ## Related Tools

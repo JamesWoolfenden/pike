@@ -27,7 +27,7 @@ func TestNewPolicy(t *testing.T) {
 
 func TestGetPolicy(t *testing.T) {
 	type args struct {
-		actions []interface{}
+		actions Sorted
 	}
 	tests := []struct {
 		name string

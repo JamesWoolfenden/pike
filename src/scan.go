@@ -1,15 +1,19 @@
 package pike
 
 import (
-	"io/fs"
 	"io/ioutil"
 	"path/filepath"
 )
 
 // Scan looks for resources in a given directory
 func Scan(dirname string) error {
+	fullPath, err := filepath.Abs(dirname)
 
-	files, err2 := GetTF(dirname)
+	if err != nil {
+		return err
+	}
+
+	files, err2 := GetTF(fullPath)
 	if err2 != nil {
 		return err2
 	}
@@ -18,7 +22,7 @@ func Scan(dirname string) error {
 
 	for _, file := range files {
 
-		resources := GetResources(file, dirname)
+		resources := GetResources(file)
 
 		for _, resource := range resources {
 			hcltype := GetHCLType(resource)
@@ -27,31 +31,49 @@ func Scan(dirname string) error {
 			results = append(results, result)
 		}
 	}
-	var PermissionBag []interface{}
+	var PermissionBag Sorted
 
 	for _, result := range results {
-		PermissionBag = append(PermissionBag, GetPermission(result)...)
+		newPerms, err := GetPermission(result)
+
+		if err != nil {
+			return err
+		}
+
+		PermissionBag.AWS = append(PermissionBag.AWS, newPerms.AWS...)
+		PermissionBag.GCP = append(PermissionBag.GCP, newPerms.AWS...)
 	}
 
-	GetPolicy(PermissionBag)
+	err = GetPolicy(PermissionBag)
 
-	return nil
+	return err
 }
 
 // GetTF return tf files in a directory
-func GetTF(dirname string) ([]fs.FileInfo, error) {
-	rawfiles, err := ioutil.ReadDir(dirname)
-	var files []fs.FileInfo
-	for _, file := range rawfiles {
+func GetTF(dirname string) ([]string, error) {
+	rawFiles, err := ioutil.ReadDir(dirname)
+	var files []string
+	for _, file := range rawFiles {
 		if file.IsDir() {
-			continue
+
+			if file.Name() == ".terraform" || file.Name() == ".git" {
+				continue
+			}
+			newdirName := dirname + "/" + file.Name()
+			moreFiles, err := GetTF(newdirName)
+			if err == nil {
+				if moreFiles != nil {
+					files = append(files, moreFiles...)
+				}
+			}
 		}
+
 		fileExtension := filepath.Ext(file.Name())
 
 		if fileExtension != ".tf" {
 			continue
 		}
-		files = append(files, file)
+		files = append(files, dirname+"/"+file.Name())
 	}
 
 	if err != nil {

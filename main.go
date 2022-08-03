@@ -25,7 +25,7 @@ func main() {
 			},
 			&cli.StringFlag{
 				Name:        "directory",
-				Aliases:     []string{"D"},
+				Aliases:     []string{"d"},
 				Usage:       "Directory to scan",
 				Destination: &directory,
 			},

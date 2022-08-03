@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "compute.images.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

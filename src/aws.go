@@ -8,9 +8,9 @@ import (
 )
 
 // GetAWSPermissions for AWS resources
-func GetAWSPermissions(result template) []interface{} {
+func GetAWSPermissions(result template) []string {
 	myAttributes := GetAttributes(result)
-	var Permissions []interface{}
+	var Permissions []string
 	switch result.Resource.name {
 	case "aws_s3_bucket":
 		Permissions = GetPermissionMap(aws_s3_bucket, myAttributes)
@@ -22,7 +22,7 @@ func GetAWSPermissions(result template) []interface{} {
 		Permissions = GetPermissionMap(aws_lambda_function, myAttributes)
 	case "aws_vpc":
 		Permissions = GetPermissionMap(aws_vpc, myAttributes)
-			
+
 	default:
 		log.Printf("%s %s not found", result.Template, result.Resource.name)
 	}
@@ -52,7 +52,7 @@ func contains(s []string, e string) bool {
 }
 
 // GetPermissionMap Anonymous parsing
-func GetPermissionMap(raw []byte, attributes []string) []interface{} {
+func GetPermissionMap(raw []byte, attributes []string) []string {
 	var mappings []interface{}
 	err := json.Unmarshal(raw, &mappings)
 	if err != nil {
@@ -61,11 +61,14 @@ func GetPermissionMap(raw []byte, attributes []string) []interface{} {
 	temp := mappings[0].(map[string]interface{})
 	myAttributes := temp["attributes"].(map[string]interface{})
 
-	var found []interface{}
+	var found []string
 
 	for _, attribute := range attributes {
 		if myAttributes[attribute] != nil {
-			found = append(found, myAttributes[attribute])
+			entries := myAttributes[attribute].([]interface{})
+			for _, entry := range entries {
+				found = append(found, entry.(string))
+			}
 		}
 	}
 
@@ -73,7 +76,10 @@ func GetPermissionMap(raw []byte, attributes []string) []interface{} {
 
 	for _, action := range actions {
 		if temp[action] != nil {
-			found = append(found, temp[action])
+			myentries := temp[action].([]interface{})
+			for _, entry := range myentries {
+				found = append(found, entry.(string))
+			}
 		}
 	}
 

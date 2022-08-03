@@ -2,6 +2,7 @@ package pike
 
 import (
 	"encoding/json"
+	"errors"
 	"fmt"
 )
 
@@ -26,27 +27,38 @@ func NewPolicy(Actions []string) Policy {
 }
 
 // GetPolicy creates new iam polices from a list of Permissions
-func GetPolicy(actions []interface{}) {
+func GetPolicy(actions Sorted) error {
 	var Permissions []string
 
-	for _, action := range actions {
-		test := action.([]interface{})
-		for _, item := range test {
-			Permissions = append(Permissions, item.(string))
-		}
+	Permissions = append(Permissions, actions.AWS...)
+
+	if Permissions == nil {
+		return errors.New("no permissions detected")
 	}
 
 	//dedupe
 	Permissions = unique(Permissions)
 
+	err2 := AWSPolicy(Permissions)
+
+	if err2 != nil {
+		return err2
+	}
+	return nil
+}
+
+// AWSPolicy create an IAM policy
+func AWSPolicy(Permissions []string) error {
 	Policy := NewPolicy(Permissions)
 	b, err := json.MarshalIndent(Policy, "", "    ")
 	if err != nil {
 		fmt.Println(err)
-		return
+		return err
 	}
+
 	fmt.Print(string(b))
 	fmt.Print("\n")
+	return nil
 }
 
 func unique(s []string) []string {

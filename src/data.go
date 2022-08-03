@@ -1,7 +1,7 @@
 package pike
 
 import (
-	"io/fs"
+	"errors"
 	"io/ioutil"
 	"log"
 	"strings"
@@ -11,22 +11,23 @@ import (
 )
 
 // GetResources retrieves all the resources in a tf file
-func GetResources(file fs.FileInfo, dirname string) []Resource {
+func GetResources(file string) []Resource {
 
 	var results []Resource
 
-	src, err := ioutil.ReadFile(dirname + file.Name())
+	src, err := ioutil.ReadFile(file)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	myCode, _ := hcl.Parse(string(src))
+
 	Tree := myCode.Node.(*ast.ObjectList)
 
 	for _, item := range Tree.Items {
 		var temp Resource
 		temp.name = strings.Trim(item.Keys[1].Token.Text, "\"")
-		temp.path = dirname + file.Name()
+		temp.path = file
 		temp.code = *item
 		results = append(results, temp)
 	}
@@ -37,25 +38,27 @@ func GetResources(file fs.FileInfo, dirname string) []Resource {
 
 // GetProvider retrieves the provider from the resource
 func GetProvider(resource string) string {
-	if strings.Contains(resource, "_"){
+	if strings.Contains(resource, "_") {
 		return strings.Split(resource, "_")[0]
 	}
 	return ""
 }
 
 // GetPermission determines the IAM permissions required and returns a list of permission
-func GetPermission(result template) []interface{} {
-	var myPermission []interface{}
+func GetPermission(result template) (Sorted, error) {
+	var myPermission Sorted
 	switch result.Provider {
 	case "aws":
-		myPermission = GetAWSPermissions(result)
+		myPermission.AWS = GetAWSPermissions(result)
 	case "azure":
-	case "gcp":
+		return myPermission, errors.New("not implemented")
+	case "gcp", "google":
+		myPermission.GCP = GetGCPPermissions(result)
 	default:
 		if result.Provider != "" {
 			log.Printf("Provider %s was not found", result.Provider)
 		}
 	}
 
-	return myPermission
+	return myPermission, nil
 }

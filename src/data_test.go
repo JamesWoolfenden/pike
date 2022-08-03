@@ -36,8 +36,8 @@ func TestGetProvider(t *testing.T) {
 		args args
 		want string
 	}{
-		{"pass",args{"aws_something.tf"},"aws"},
-		{"nothing",args{"something.tf"}, ""},
+		{"pass", args{"aws_something.tf"}, "aws"},
+		{"nothing", args{"something.tf"}, ""},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -61,7 +61,7 @@ func TestGetPermission(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := GetPermission(tt.args.result); !reflect.DeepEqual(got, tt.want) {
+			if got, _ := GetPermission(tt.args.result); !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("GetPermission() = %v, want %v", got, tt.want)
 			}
 		})
