@@ -34,7 +34,9 @@ func GetResources(file string) ([]ResourceV2, error) {
 		var resource ResourceV2
 		resource.TypeName = block.Type
 
-		if resource.TypeName == "terraform" || resource.TypeName == "output" || resource.TypeName == "provider" {
+		ignore := []string{"terraform", "output", "provider", "variable", "locals"}
+
+		if stringInSlice(resource.TypeName, ignore) {
 			continue
 		}
 

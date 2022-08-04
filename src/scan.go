@@ -29,7 +29,9 @@ func Scan(dirname string) error {
 			//parse the other files
 			log.Print(err)
 		}
-		resources = append(resources, resource...)
+		if resource != nil {
+			resources = append(resources, resource...)
+		}
 	}
 	var PermissionBag Sorted
 
