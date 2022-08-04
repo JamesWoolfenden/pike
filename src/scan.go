@@ -4,6 +4,7 @@ import (
 	"io/ioutil"
 	"log"
 	"path/filepath"
+	"strings"
 )
 
 // Scan looks for resources in a given directory
@@ -19,28 +20,21 @@ func Scan(dirname string) error {
 		return err2
 	}
 
-	var results []template
-
+	var resources []ResourceV2
 	for _, file := range files {
 
-		resources, err := GetResources(file)
+		resource, err := GetResources(file)
 
 		if err != nil {
 			//parse the other files
 			log.Print(err)
 		}
-
-		for _, resource := range resources {
-			hcltype := GetHCLType(resource)
-			provider := GetProvider(resource.name)
-			result := template{resource, provider, hcltype}
-			results = append(results, result)
-		}
+		resources = append(resources, resource...)
 	}
 	var PermissionBag Sorted
 
-	for _, result := range results {
-		newPerms, err := GetPermission(result)
+	for _, resource := range resources {
+		newPerms, err := GetPermission(resource)
 
 		if err != nil {
 			return err
@@ -97,7 +91,7 @@ func stringInSlice(a string, list []string) bool {
 	return false
 }
 
-// GetHCLType gets the template type
-func GetHCLType(hcl Resource) string {
-	return hcl.code.Keys[0].Token.Text
+//GetHCLType gets the resource Name
+func GetHCLType(resourceName string) string {
+	return strings.Split(resourceName, "_")[0]
 }

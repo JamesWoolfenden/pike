@@ -3,46 +3,32 @@ package pike
 import (
 	"encoding/json"
 	"log"
-
-	"github.com/hashicorp/hcl/hcl/ast"
 )
 
 // GetAWSPermissions for AWS resources
-func GetAWSPermissions(result template) []string {
-	myAttributes := GetAttributes(result)
+func GetAWSPermissions(result ResourceV2) []string {
+
 	var Permissions []string
-	switch result.Resource.name {
+	switch result.Name {
 	case "aws_s3_bucket":
-		Permissions = GetPermissionMap(aws_s3_bucket, myAttributes)
+		Permissions = GetPermissionMap(aws_s3_bucket, result.Attributes)
 	case "aws_instance":
-		Permissions = GetPermissionMap(aws_instance, myAttributes)
+		Permissions = GetPermissionMap(aws_instance, result.Attributes)
 	case "aws_security_group":
-		Permissions = GetPermissionMap(aws_security_group, myAttributes)
+		Permissions = GetPermissionMap(aws_security_group, result.Attributes)
 	case "aws_lambda_function":
-		Permissions = GetPermissionMap(aws_lambda_function, myAttributes)
+		Permissions = GetPermissionMap(aws_lambda_function, result.Attributes)
 	case "aws_vpc":
-		Permissions = GetPermissionMap(aws_vpc, myAttributes)
+		Permissions = GetPermissionMap(aws_vpc, result.Attributes)
 	case "aws_subnet":
-		Permissions = GetPermissionMap(aws_subnet, myAttributes)
+		Permissions = GetPermissionMap(aws_subnet, result.Attributes)
 	case "aws_network_acl":
-		Permissions = GetPermissionMap(aws_network_acl, myAttributes)
+		Permissions = GetPermissionMap(aws_network_acl, result.Attributes)
 	default:
-		log.Printf("%s %s not found", result.Template, result.Resource.name)
+		log.Printf("%s not implemented", result.Name)
 	}
 
 	return Permissions
-}
-
-// GetAttributes gets the name of the important attributes for this resource
-func GetAttributes(result template) []string {
-	temp := result.Resource.code.Val.(*ast.ObjectType)
-	attributes := temp.List.Items
-	var myAttributes []string
-	for _, item := range attributes {
-		mytemp := item.Keys
-		myAttributes = append(myAttributes, mytemp[0].Token.Text)
-	}
-	return myAttributes
 }
 
 func contains(s []string, e string) bool {

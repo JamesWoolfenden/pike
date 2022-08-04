@@ -73,23 +73,3 @@ func Test_stringInSlice(t *testing.T) {
 		})
 	}
 }
-
-func TestGetHCLType(t *testing.T) {
-	type args struct {
-		hcl Resource
-	}
-	tests := []struct {
-		name string
-		args args
-		want string
-	}{
-		// TODO: Add test cases.
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			if got := GetHCLType(tt.args.hcl); got != tt.want {
-				t.Errorf("GetHCLType() = %v, want %v", got, tt.want)
-			}
-		})
-	}
-}

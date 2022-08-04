@@ -5,15 +5,14 @@ import (
 )
 
 // GetGCPPermissions for GCP resources
-func GetGCPPermissions(result template) []string {
-	myAttributes := GetAttributes(result)
+func GetGCPPermissions(result ResourceV2) []string {
 	var Permissions []string
-	switch result.Resource.name {
+	switch result.Name {
 	case "google_compute_instance":
-		Permissions = GetPermissionMap(google_compute_instance, myAttributes)
+		Permissions = GetPermissionMap(google_compute_instance, result.Attributes)
 
 	default:
-		log.Printf("%s %s not yet implemented", result.Template, result.Resource.name)
+		log.Printf("%s not yet implemented", result.Name)
 	}
 
 	return Permissions

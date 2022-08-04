@@ -37,7 +37,10 @@ func TestGetPolicy(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			GetPolicy(tt.args.actions)
+			got := GetPolicy(tt.args.actions)
+			if got == nil {
+				t.Errorf("GetPolicy() = %v, want %v", got, tt.want)
+			}
 		})
 	}
 }

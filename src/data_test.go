@@ -1,8 +1,6 @@
 package pike
 
 import (
-	//"io/fs"
-	"reflect"
 	"testing"
 )
 
@@ -43,26 +41,6 @@ func TestGetProvider(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := GetProvider(tt.args.resource); got != tt.want {
 				t.Errorf("GetProvider() = %v, want %v", got, tt.want)
-			}
-		})
-	}
-}
-
-func TestGetPermission(t *testing.T) {
-	type args struct {
-		result template
-	}
-	tests := []struct {
-		name string
-		args args
-		want []interface{}
-	}{
-		// TODO: Add test cases.
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			if got, _ := GetPermission(tt.args.result); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("GetPermission() = %v, want %v", got, tt.want)
 			}
 		})
 	}

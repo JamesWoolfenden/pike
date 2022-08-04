@@ -31,26 +31,6 @@ import (
 // 	}
 // }
 
-func TestGetAttributes(t *testing.T) {
-	type args struct {
-		result template
-	}
-	tests := []struct {
-		name string
-		args args
-		want []string
-	}{
-		// TODO: Add test cases.
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			if got := GetAttributes(tt.args.result); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("GetAttributes() = %v, want %v", got, tt.want)
-			}
-		})
-	}
-}
-
 func Test_contains(t *testing.T) {
 	type args struct {
 		s []string
