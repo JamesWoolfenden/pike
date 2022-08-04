@@ -2,6 +2,7 @@ package pike
 
 import (
 	"io/ioutil"
+	"log"
 	"path/filepath"
 )
 
@@ -22,7 +23,12 @@ func Scan(dirname string) error {
 
 	for _, file := range files {
 
-		resources := GetResources(file)
+		resources, err := GetResources(file)
+
+		if err != nil {
+			//parse the other files
+			log.Print(err)
+		}
 
 		for _, resource := range resources {
 			hcltype := GetHCLType(resource)

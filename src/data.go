@@ -11,7 +11,7 @@ import (
 )
 
 // GetResources retrieves all the resources in a tf file
-func GetResources(file string) []Resource {
+func GetResources(file string) ([]Resource, error) {
 
 	var results []Resource
 
@@ -26,6 +26,9 @@ func GetResources(file string) []Resource {
 		log.Printf("failed to parse %s", file)
 	}
 
+	if myCode == nil {
+		return nil, errors.New("parsing error: no code parsed")
+	}
 	Tree := myCode.Node.(*ast.ObjectList)
 
 	for _, item := range Tree.Items {
@@ -37,7 +40,7 @@ func GetResources(file string) []Resource {
 	}
 
 	// resources, filename, code
-	return results
+	return results, nil
 }
 
 // GetProvider retrieves the provider from the resource

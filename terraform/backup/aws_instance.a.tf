@@ -10,7 +10,7 @@ resource "aws_instance" "name" {
   #iam_instance_profile =
   key_name   = "test"
   monitoring = false
-  # tags = {
-  #   "createdby" = "james"
-  # }
+  tags = {
+    "createdby" = "james"
+  }
 }

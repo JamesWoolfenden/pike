@@ -1,5 +1,5 @@
 resource "aws_network_acl" "example" {
-  vpc_id = "vpc-0c9622709bb598517"
+  vpc_id = aws_vpc.example.id
 
   egress {
     protocol   = "tcp"
