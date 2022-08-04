@@ -9,6 +9,7 @@
 ![Terraform Version](https://img.shields.io/badge/tf-%3E%3D0.14.0-blue.svg)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 [![checkov](https://img.shields.io/badge/checkov-verified-brightgreen)](https://www.checkov.io/)
+[![Github All Releases](https://img.shields.io/github/downloads/jameswoolfenden/pike/total.svg)]()
 
 Pike is a tool, to determine the minimum permissions required to run a TF/IAC run:
 Still very much under development, I intend it to: 
