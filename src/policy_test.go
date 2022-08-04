@@ -25,25 +25,25 @@ func TestNewPolicy(t *testing.T) {
 	}
 }
 
-func TestGetPolicy(t *testing.T) {
-	type args struct {
-		actions Sorted
-	}
-	tests := []struct {
-		name string
-		args args
-	}{
-		// TODO: Add test cases.
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			got := GetPolicy(tt.args.actions)
-			if got == nil {
-				t.Errorf("GetPolicy() = %v, want %v", got, tt.want)
-			}
-		})
-	}
-}
+//func TestGetPolicy(t *testing.T) {
+//	type args struct {
+//		actions Sorted
+//	}
+//	tests := []struct {
+//		name string
+//		args args
+//	}{
+//		// TODO: Add test cases.
+//	}
+//	for _, tt := range tests {
+//		t.Run(tt.name, func(t *testing.T) {
+//			got := GetPolicy(tt.args.actions)
+//			if got == nil {
+//				t.Errorf("GetPolicy() = %v, want %v", got, tt.want)
+//			}
+//		})
+//	}
+//}
 
 func Test_unique(t *testing.T) {
 	type args struct {
