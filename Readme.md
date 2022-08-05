@@ -101,7 +101,7 @@ COMMANDS:
 
 GLOBAL OPTIONS:
    --config FILE, -c FILE       Load configuration from FILE
-   --directory value, -D value  Directory to scan
+   --directory value, -d value  Directory to scan
    --help, -h                   show help (default: false)
 
 
