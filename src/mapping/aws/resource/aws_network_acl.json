@@ -16,8 +16,7 @@
     "destroy": [
       "ec2:DeleteNetworkAcl"
     ],
-    "modify": [
-    ],
+    "modify": [],
     "plan": []
   }
 ]

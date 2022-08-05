@@ -1,6 +1,6 @@
 [
   {
-    "apply": [ 
+    "apply": [
       "ec2:CreateSubnet",
       "ec2:DescribeAccountAttributes",
       "ec2:DescribeSubnets",
@@ -15,8 +15,7 @@
     "destroy": [
       "ec2:DeleteSubnet"
     ],
-    "modify": [
-    ],
+    "modify": [],
     "plan": []
   }
 ]

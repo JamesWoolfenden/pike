@@ -5,8 +5,7 @@ resource "aws_iam_policy" "basic" {
     Statement = [
       {
         Action = [
-          "ec2:DescribeVpcs",
-          "ec2:DescribeSubnets"
+          "ec2:DescribeAccountAttributes",
         ]
         Effect   = "Allow"
         Resource = "*"

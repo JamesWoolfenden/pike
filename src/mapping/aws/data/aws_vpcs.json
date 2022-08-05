@@ -1,7 +1,6 @@
 [
   {
     "apply": [
-      "ec2:DescribeAccountAttributes",
       "ec2:DescribeVpcs"
     ],
     "attributes": {

@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "mq:CreateConfiguration",
+      "mq:UpdateConfiguration",
+      "mq:DescribeConfiguration",
+      "mq:DescribeConfigurationRevision",
+      "mq:RebootBroker"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
