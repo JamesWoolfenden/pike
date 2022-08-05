@@ -1,7 +1,6 @@
 package pike
 
 import (
-	"errors"
 	"io/ioutil"
 	"log"
 	"strings"
@@ -34,7 +33,7 @@ func GetResources(file string) ([]ResourceV2, error) {
 		var resource ResourceV2
 		resource.TypeName = block.Type
 
-		ignore := []string{"terraform", "output", "provider", "variable", "locals"}
+		ignore := []string{"terraform", "output", "provider", "variable", "locals", "module", "template"}
 
 		if stringInSlice(resource.TypeName, ignore) {
 			continue
@@ -74,11 +73,13 @@ func GetPermission(result ResourceV2) (Sorted, error) {
 	switch result.Provider {
 	case "aws":
 		myPermission.AWS = GetAWSPermissions(result)
-	case "azure":
-		return myPermission, errors.New("not implemented")
+	case "azurerm", "oci", "digitalocean", "linode", "helm":
+		log.Printf("Provider %s not yet implemented", result.Provider)
+		return myPermission, nil
 	case "gcp", "google":
 		myPermission.GCP = GetGCPPermissions(result)
-	case "provider":
+	case "provider", "random", "main", "ip", "http", "test", "local",
+		"archive", "tls", "template", "null", "time":
 		return myPermission, nil
 	default:
 		if result.Provider != "" {

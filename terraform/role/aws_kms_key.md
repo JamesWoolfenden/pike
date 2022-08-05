@@ -5,19 +5,19 @@ resource "aws_iam_policy" "basic" {
     Statement = [
       {
         Action = [
-          "ec2:DescribeAccountAttributes",
-          "ec2:CreateNetworkInterface",
-          "ec2:CreateNetworkInterfacePermission",
-          "ec2:DeleteNetworkInterface",
-          "ec2:DeleteNetworkInterfacePermission",
-          "ec2:DetachNetworkInterface",
-          "ec2:DescribeInternetGateways",
-          "ec2:DescribeNetworkInterfaces",
-          "ec2:DescribeNetworkInterfacePermissions",
-          "ec2:DescribeRouteTables",
-          "ec2:DescribeSecurityGroups",
-          "ec2:DescribeSubnets",
-        "ec2:DescribeVpcs"]
+          "kms:CreateKey",
+          "kms:TagResource",
+          "kms:UntagResource",
+          "kms:DescribeKey",
+          "kms:GetKeyPolicy",
+          "kms:GetKeyRotationStatus",
+          "kms:ListResourceTags",
+          "kms:ScheduleKeyDeletion",
+          "kms:EnableKeyRotation",
+          "kms:PutKeyPolicy",
+          "kms:DisableKey",
+          "kms:EnableKey"
+        ]
         Effect   = "Allow"
         Resource = "*"
       },

@@ -1,0 +1,39 @@
+[
+  {
+    "apply": [
+      "iam:CreateRole"
+    ],
+    "attributes": {
+      "description": [
+        "iam:UpdateRoleDescription"
+      ],
+      "inline_policy": [
+        "iam:PutRolePolicy",
+        "iam:GetRolePolicy"
+      ],
+      "managed_policy_arns": [
+        "iam:AttachRolePolicy",
+        "iam:DetachRolePolicy",
+        "iam:DeleteRolePolicy"
+      ],
+      "permissions_boundary": [
+        "iam:PutRolePermissionsBoundary",
+        "iam:DeleteRolePermissionsBoundary"
+      ],
+      "tags": [
+        "iam:TagRole"
+      ]
+    },
+    "destroy": [
+      "iam:DeleteRole"
+    ],
+    "modify": [
+      "iam:GetRole",
+      "iam:ListRolePolicies",
+      "iam:ListAttachedRolePolicies",
+      "iam:ListInstanceProfilesForRole",
+      "iam:DeleteRole"
+    ],
+    "plan": []
+  }
+]

@@ -25,5 +25,17 @@ var aws_subnet []byte
 //go:embed mapping/aws/aws_network_acl.json
 var aws_network_acl []byte
 
+//go:embed mapping/aws/aws_kms_key.json
+var aws_kms_key []byte
+
+//go:embed mapping/aws/aws_iam_role.json
+var aws_iam_role []byte
+
+//go:embed mapping/aws/aws_mq_broker.json
+var aws_mq_broker []byte
+
+//go:embed mapping/aws/aws_mq_configuration.json
+var aws_mq_configuration []byte
+
 //go:embed mapping/gcp/google_compute_instance.json
 var google_compute_instance []byte

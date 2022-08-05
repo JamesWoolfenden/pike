@@ -1,4 +1,5 @@
 resource "aws_iam_role" "basic" {
+  name = "pike-test-role"
   assume_role_policy = jsonencode(
     {
       "Version" : "2012-10-17",

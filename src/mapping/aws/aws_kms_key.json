@@ -1,0 +1,33 @@
+[
+  {
+    "apply": [
+      "kms:CreateKey"
+    ],
+    "attributes": {
+      "enable_key_rotation": [
+        "kms:EnableKeyRotation"
+      ],
+      "is_enabled": [
+        "kms:DisableKey",
+        "kms:EnableKey"
+      ],
+      "policy": [
+        "kms:PutKeyPolicy"
+      ],
+      "tags": [
+        "kms:TagResource",
+        "kms:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [
+      "kms:ScheduleKeyDeletion"
+    ],
+    "plan": [
+      "kms:DescribeKey",
+      "kms:GetKeyPolicy",
+      "kms:GetKeyRotationStatus",
+      "kms:ListResourceTags"
+    ]
+  }
+]
