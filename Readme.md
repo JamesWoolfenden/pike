@@ -33,8 +33,6 @@ Scan a directory of terraform file
 
 ```shell
 ./pike -d .\terraform\ scan
-2022/07/24 07:00:37 data aws_caller_identity not found
-2022/07/24 07:00:37 provider aws not found
 {
     "Version": "2012-10-17",
     "Statement": {
@@ -171,7 +169,7 @@ var securityGroup []byte
 ### Add to provider Scan
 
 ```go
-func GetAWSPermissions(result template) []interface{} {
+func GetAWSResourcePermissions(result template) []interface{} {
     myAttributes := GetAttributes(result)
     var Permissions []interface{}
     switch result.Resource.name {
