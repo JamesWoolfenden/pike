@@ -8,7 +8,7 @@ import (
 )
 
 // Scan looks for resources in a given directory
-func Scan(dirname string) error {
+func Scan(dirname string, output string) error {
 	fullPath, err := filepath.Abs(dirname)
 
 	if err != nil {
@@ -46,7 +46,7 @@ func Scan(dirname string) error {
 		PermissionBag.GCP = append(PermissionBag.GCP, newPerms.AWS...)
 	}
 
-	err = GetPolicy(PermissionBag)
+	err = GetPolicy(PermissionBag, output)
 
 	return err
 }

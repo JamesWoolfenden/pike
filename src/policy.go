@@ -4,7 +4,13 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"os"
+	"text/template"
+	_ "embed" //required for embed
 )
+
+//go:embed terraform.policy.template
+var policyTemplate []byte
 
 // Policy creates iam policies
 type Policy struct {
@@ -27,7 +33,7 @@ func NewPolicy(Actions []string) Policy {
 }
 
 // GetPolicy creates new iam polices from a list of Permissions
-func GetPolicy(actions Sorted) error {
+func GetPolicy(actions Sorted, output string) error {
 	var Permissions []string
 
 	Permissions = append(Permissions, actions.AWS...)
@@ -39,7 +45,7 @@ func GetPolicy(actions Sorted) error {
 	//dedupe
 	Permissions = unique(Permissions)
 
-	err2 := AWSPolicy(Permissions)
+	err2 := AWSPolicy(Permissions, output)
 
 	if err2 != nil {
 		return err2
@@ -48,16 +54,37 @@ func GetPolicy(actions Sorted) error {
 }
 
 // AWSPolicy create an IAM policy
-func AWSPolicy(Permissions []string) error {
+func AWSPolicy(Permissions []string, output string) error {
 	Policy := NewPolicy(Permissions)
 	b, err := json.MarshalIndent(Policy, "", "    ")
 	if err != nil {
 		fmt.Println(err)
 		return err
 	}
+    
+	switch output {
+	case "terraform","Terraform":
+		
+		type PolicyDetails struct {
+			Policy string
+			Name string
+			Path string
+			Description string
+		}
 
-	fmt.Print(string(b))
-	fmt.Print("\n")
+        PolicyName:= "terraform"+ randSeq(8)
+		theDetails := PolicyDetails{string(b), PolicyName,"/", "Add Description"}
+		tmpl, err := template.New("test").Parse(string(policyTemplate))
+		if err != nil { panic(err) }
+
+		err = tmpl.Execute(os.Stdout, theDetails)
+
+		if err != nil { panic(err) }
+	default: 
+		fmt.Print(string(b))
+		fmt.Print("\n")
+	}
+
 	return nil
 }
 

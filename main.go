@@ -14,6 +14,7 @@ import (
 
 func main() {
 	var directory string
+	var output string
 
 	app := &cli.App{
 		EnableBashCompletion: true,
@@ -29,6 +30,13 @@ func main() {
 				Usage:       "Directory to scan",
 				Destination: &directory,
 			},
+			&cli.StringFlag{
+				Name:        "output",
+				Aliases:     []string{"o"},
+				Usage:       "Output type `json`",
+				Destination: &output,
+				EnvVars: []string{"OUTPUT"},
+			},
 		},
 		Commands: []*cli.Command{
 			{
@@ -36,7 +44,7 @@ func main() {
 				Aliases: []string{"s"},
 				Usage:   "scan",
 				Action: func(*cli.Context) error {
-					return pike.Scan(directory)
+					return pike.Scan(directory, output)
 				},
 			},
 			{
