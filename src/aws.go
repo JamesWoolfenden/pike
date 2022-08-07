@@ -44,6 +44,8 @@ func GetAWSResourcePermissions(result ResourceV2) []string {
 		Permissions = GetPermissionMap(aws_mq_broker, result.Attributes)
 	case "aws_mq_configuration":
 		Permissions = GetPermissionMap(aws_mq_configuration, result.Attributes)
+	case "aws_cloudwatch_log_group":
+		Permissions = GetPermissionMap(aws_cloudwatch_log_group, result.Attributes)
 	default:
 		log.Printf("%s not implemented", result.Name)
 	}

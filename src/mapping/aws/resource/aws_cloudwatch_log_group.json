@@ -1,0 +1,28 @@
+[
+  {
+    "apply": [          
+      "logs:CreateLogGroup",
+      "logs:DescribeLogGroups",
+      "logs:ListTagsLogGroup",
+      "logs:DeleteLogGroup"
+    ],
+    "attributes": {
+      "tags": [ 
+        "logs:TagLogGroup",
+        "logs:UntagLogGroup"
+      ],
+      "retention_in_days":[
+        "logs:PutRetentionPolicy",
+        "logs:DeleteRetentionPolicy"],
+      "kms_key_id":[
+        "logs:AssociateKmsKey", 
+        "logs:DisassociateKmsKey"]
+    },
+    "destroy": [
+      "logs:DeleteLogGroup"
+    ],
+    "modify": [
+    ],
+    "plan": []
+  }
+]

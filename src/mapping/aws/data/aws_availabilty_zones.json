@@ -1,0 +1,16 @@
+[
+  {
+    "apply": ["ec2:DescribeAvailabilityZones"
+    ],
+    "attributes": {
+      "tags": [
+
+      ]
+    },
+    "destroy": [
+    ],
+    "modify": [
+    ],
+    "plan": []
+  }
+]

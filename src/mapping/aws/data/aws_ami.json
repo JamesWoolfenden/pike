@@ -1,0 +1,16 @@
+[
+  {
+    "apply": ["ec2:DescribeImages"
+    ],
+    "attributes": {
+      "tags": [
+
+      ]
+    },
+    "destroy": [
+    ],
+    "modify": [
+    ],
+    "plan": []
+  }
+]

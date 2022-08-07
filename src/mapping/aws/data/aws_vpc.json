@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeVpcs",
+      "ec2:DescribeVpcAttribute"
+    ],
+    "attributes": {
+      "tags": [
+
+      ]
+    },
+    "destroy": [
+    ],
+    "modify": [
+    ],
+    "plan": []
+  }
+]

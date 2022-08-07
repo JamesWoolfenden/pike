@@ -5,7 +5,16 @@ resource "aws_iam_policy" "basic" {
     Statement = [
       {
         Action = [
-          "s3:*"
+          "logs:CreateLogGroup",
+          "logs:DescribeLogGroups",
+          "logs:ListTagsLogGroup",
+          "logs:DeleteLogGroup",
+          "logs:TagLogGroup",
+          "logs:UntagLogGroup",
+          "logs:PutRetentionPolicy",
+          "logs:DeleteRetentionPolicy",
+          "logs:AssociateKmsKey",
+          "logs:DisassociateKmsKey"
         ]
         Effect   = "Allow"
         Resource = "*"

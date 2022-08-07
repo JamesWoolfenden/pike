@@ -37,5 +37,9 @@ var aws_mq_broker []byte
 //go:embed mapping/aws/resource/aws_mq_configuration.json
 var aws_mq_configuration []byte
 
+//go:embed mapping/aws/resource/aws_cloudwatch_log_group.json
+var aws_cloudwatch_log_group []byte
+
+
 //go:embed mapping/gcp/google_compute_instance.json
 var google_compute_instance []byte
