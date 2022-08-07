@@ -87,6 +87,64 @@ Scan a directory of terraform file
 }
 ```
 
+You can also generate the terraform policy instead:
+
+```bash
+$pike -o terraform -d ..\modules\aws\terraform-aws-activemq\ scan
+resource "aws_iam_policy" "terraformXVlBzgba" {
+  name        = "terraformXVlBzgba"
+  path        = "/"
+  description = "Add Description"
+
+  policy = jsonencode({
+    "Version": "2012-10-17",
+    "Statement": {
+        "Effect": "Allow",
+        "Action": [
+            "mq:CreateTags",
+            "mq:DeleteTags",
+            "ec2:DescribeInternetGateways",
+            "ec2:DescribeAccountAttributes",
+            "ec2:DescribeVpcs",
+            "ec2:DescribeSubnets",
+            "ec2:DescribeSecurityGroups",
+            "ec2:CreateNetworkInterface",
+            "ec2:CreateNetworkInterfacePermission",
+            "ec2:DeleteNetworkInterfacePermission",
+            "ec2:DetachNetworkInterface",
+            "ec2:DeleteNetworkInterface",
+            "mq:CreateBroker",
+            "mq:DescribeBroker",
+            "mq:DescribeUser",
+            "mq:UpdateBroker",
+            "mq:DeleteBroker",
+            "mq:CreateConfiguration",
+            "mq:UpdateConfiguration",
+            "mq:DescribeConfiguration",
+            "mq:DescribeConfigurationRevision",
+            "mq:RebootBroker",
+            "ec2:CreateTags",
+            "ec2:DeleteTags",
+            "ec2:CreateSecurityGroup",
+            "ec2:DescribeNetworkInterfaces",
+            "ec2:DeleteSecurityGroup",
+            "ec2:RevokeSecurityGroupEgress",
+            "kms:EnableKeyRotation",
+            "kms:TagResource",
+            "kms:UntagResource",
+            "kms:CreateKey",
+            "kms:DescribeKey",
+            "kms:GetKeyPolicy",
+            "kms:GetKeyRotationStatus",
+            "kms:ListResourceTags",
+            "kms:ScheduleKeyDeletion"
+        ],
+        "Resource": "*"
+    }
+})
+}
+```
+
 ```bash
 $./pike -h
 NAME:
@@ -95,15 +153,23 @@ NAME:
 USAGE:
    pike [global options] command [command options] [arguments...]
 
+VERSION:
+   v0.1.5
+
+AUTHOR:
+   James Woolfenden <support@bridgecrew.io>
+
 COMMANDS:
-   scan, s  scan
-   help, h  Shows a list of commands or help for one command
+   scan, s     scan
+   version, v  version
+   help, h     Shows a list of commands or help for one command
 
 GLOBAL OPTIONS:
    --config FILE, -c FILE       Load configuration from FILE
    --directory value, -d value  Directory to scan
    --help, -h                   show help (default: false)
-
+   --output json, -o json       Output types e.g. json terraform (default: "terraform") [%OUTPUT%]
+   --version, -v                print the version (default: false)
 
 ```
 

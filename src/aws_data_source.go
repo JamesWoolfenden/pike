@@ -10,7 +10,7 @@ func GetAWSDataPermissions(result ResourceV2) []string {
 		Permissions = GetPermissionMap(data_aws_vpcs, result.Attributes)
 	case "aws_subnet_ids":
 		Permissions = GetPermissionMap(data_aws_subnet_ids, result.Attributes)
-	case "aws_caller_identity":
+	case "aws_caller_identity","aws_iam_policy_document":
 		//do nothing
 	default:
 		log.Printf("%s.%s not implemented", result.TypeName, result.Name)
