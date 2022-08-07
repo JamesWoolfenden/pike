@@ -22,13 +22,10 @@ jobs:
         with:
           gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
-      - name: Bump version
-        id: sub
-        uses: bluwy/substitute-string-action@v1
+      - uses: datamonsters/replace-action
         with:
-          _input-file: src/version.go
-          _output-file: src/version.go
-          9.9.9: '${GITHUB_REF:11}'
+          files: 'src/version.go'
+          replacements: '9.9.9=${GITHUB_REF:11}'
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v2.7.0
         with:
