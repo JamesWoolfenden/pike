@@ -33,7 +33,7 @@ func main() {
 			&cli.StringFlag{
 				Name:        "output",
 				Aliases:     []string{"o"},
-				Usage:       "Output type `json`",
+				Usage:       "Output types e.g. `json` terraform",
 				Destination: &output,
 				EnvVars: []string{"OUTPUT"},
 			},
