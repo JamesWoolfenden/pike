@@ -38,7 +38,8 @@ jobs:
         with:
           gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
-      - name: Bump version
+      - 
+        name: Bump version
         uses: bluwy/substitute-string-action@v1
         _input-file: src/version.go
         _output-file: src/version.go
