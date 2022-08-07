@@ -22,10 +22,13 @@ jobs:
         with:
           gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
-      - uses: datamonsters/replace-action
+      - uses: actions/checkout@v2
+      - name: Find and Replace
+        uses: jacobtomlinson/gha-find-replace@v2
         with:
-          files: 'src/version.go'
-          replacements: '9.9.9=${GITHUB_REF:11}'
+          find: "9.9.9"
+          replace: "${GITHUB_REF:11}"
+          include: "**version.go" 
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v2.7.0
         with:
