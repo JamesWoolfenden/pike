@@ -25,9 +25,9 @@ jobs:
       - name: Bump version
         id: sub
         uses: bluwy/substitute-string-action@v1
-        _input-file: src/version.go
-        _output-file: src/version.go
         with:
+          _input-file: src/version.go
+          _output-file: src/version.go
           9.9.9: '${GITHUB_REF:11}'
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v2.7.0
