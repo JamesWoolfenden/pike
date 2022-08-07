@@ -1,4 +1,9 @@
 # .goreleaser.yml
+
+before:
+  hooks:
+  - ./set-version.sh
+  
 builds:
   - goos:
       - darwin
