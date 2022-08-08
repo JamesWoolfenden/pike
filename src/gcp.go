@@ -8,8 +8,8 @@ import (
 func GetGCPPermissions(result ResourceV2) []string {
 	var Permissions []string
 	switch result.Name {
-	case "google_compute_instance":
-		Permissions = GetPermissionMap(google_compute_instance, result.Attributes)
+	case "googleComputeInstance":
+		Permissions = GetPermissionMap(googleComputeInstance, result.Attributes)
 
 	default:
 		log.Printf("%s not yet implemented", result.Name)

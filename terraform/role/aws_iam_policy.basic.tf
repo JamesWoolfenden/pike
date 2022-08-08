@@ -5,27 +5,11 @@ resource "aws_iam_policy" "basic" {
     Statement = [
       {
         Action = [
-          "dynamodb:CreateTable",
-          "dynamodb:TagResource",
-          "dynamodb:DescribeTable",
-          "dynamodb:DescribeContinuousBackups",
-          "dynamodb:DescribeTimeToLive",
-          "dynamodb:ListTagsOfResource",
-          "dynamodb:DeleteTable",
-          "dynamodb:UntagResource",
-          "dynamodb:UpdateTable",
-          "dynamodb:UpdateTimeToLive",
-          "dynamodb:CreateTableReplica",
-          "dynamodb:Scan",
-          "dynamodb:Query",
-          "dynamodb:UpdateItem",
-          "dynamodb:PutItem",
-          "dynamodb:GetItem",
-          "dynamodb:DeleteItem",
-          "dynamodb:BatchWriteItem",
-          "iam:CreateServiceLinkedRole",
-          "dynamodb:UpdateContinuousBackups",
-          "dynamodb:DeleteTableReplica"
+          "ec2:DescribeSecurityGroups",
+          "ec2:AuthorizeSecurityGroupIngress",
+          "ec2:RevokeSecurityGroupIngress",
+          "ec2:AuthorizeSecurityGroupEgress",
+          "ec2:RevokeSecurityGroupEgress"
         ]
         Effect   = "Allow"
         Resource = "*"

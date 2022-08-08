@@ -9,9 +9,13 @@
       "ec2:RevokeSecurityGroupEgress"
     ],
     "attributes": {
+      "egress": [
+        "ec2:AuthorizeSecurityGroupEgress",
+        "ec2:RevokeSecurityGroupEgress"
+      ],
       "ingress": [
         "ec2:AuthorizeSecurityGroupIngress",
-        "ec2:AuthorizeSecurityGroupEgress"
+        "ec2:RevokeSecurityGroupIngress"
       ],
       "tags": [
         "ec2:CreateTags",

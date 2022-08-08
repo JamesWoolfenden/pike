@@ -5,79 +5,82 @@ import (
 )
 
 //go:embed mapping/aws/resource/aws_s3_bucket.json
-var aws_s3_bucket []byte
+var awsS3Bucket []byte
 
 //go:embed mapping/aws/resource/aws_s3_bucket_acl.json
-var aws_s3_bucket_acl []byte
+var awsS3BucketACL []byte
 
 //go:embed mapping/aws/resource/aws_s3_bucket_versioning.json
-var aws_s3_bucket_versioning []byte
+var awsS3BucketVersioning []byte
 
 //go:embed mapping/aws/resource/aws_s3_bucket_server_side_encryption_configuration.json
-var aws_s3_bucket_server_side_encryption_configuration []byte
+var awsS3BucketServerSideEncryptionConfiguration []byte
 
 //go:embed mapping/aws/resource/aws_s3_bucket_public_access_block.json
-var aws_s3_bucket_public_access_block []byte
+var awsS3BucketPublicAccessBlock []byte
 
 //go:embed mapping/aws/resource/aws_instance.json
-var aws_instance []byte
+var awsInstance []byte
 
 //go:embed mapping/aws/resource/aws_security_group.json
-var aws_security_group []byte
+var awsSecurityGroup []byte
+
+//go:embed mapping/aws/resource/aws_security_group_rule.json
+var awsSecurityGroupRule []byte
 
 //go:embed mapping/aws/resource/aws_lambda_function.json
-var aws_lambda_function []byte
+var awsLambdaFunction []byte
 
 //go:embed mapping/aws/resource/aws_vpc.json
-var aws_vpc []byte
+var awsVpc []byte
 
 //go:embed mapping/aws/resource/aws_subnet.json
-var aws_subnet []byte
+var awsSubnet []byte
 
 //go:embed mapping/aws/resource/aws_network_acl.json
-var aws_network_acl []byte
+var awsNetworkACL []byte
 
 //go:embed mapping/aws/resource/aws_kms_key.json
-var aws_kms_key []byte
+var awsKmsKey []byte
 
 //go:embed mapping/aws/resource/aws_iam_role.json
-var aws_iam_role []byte
+var awsIamRole []byte
 
 //go:embed mapping/aws/resource/aws_iam_role_policy.json
-var aws_iam_role_policy []byte
+var awsIamRolePolicy []byte
 
 //go:embed mapping/aws/resource/aws_iam_role_policy_attachment.json
-var aws_iam_role_policy_attachment []byte
+var awsIamRolePolicyAttachment []byte
 
 //go:embed mapping/aws/resource/aws_iam_policy.json
-var aws_iam_policy []byte
+var awsIamPolicy []byte
 
 //go:embed mapping/aws/resource/aws_iam_instance_profile.json
-var aws_iam_instance_profile []byte
+var awsIamInstanceProfile []byte
 
 //go:embed mapping/aws/resource/aws_mq_broker.json
-var aws_mq_broker []byte
+var awsMqBroker []byte
 
 //go:embed mapping/aws/resource/aws_mq_configuration.json
-var aws_mq_configuration []byte
+var awsMqConfiguration []byte
 
 //go:embed mapping/aws/resource/aws_cloudwatch_log_group.json
-var aws_cloudwatch_log_group []byte
+var awsCloudwatchLogGroup []byte
 
 //go:embed mapping/aws/resource/aws_route53_record.json
-var aws_route53_record []byte
+var awsRoute53Record []byte
 
 //go:embed mapping/aws/resource/aws_sns_topic.json
-var aws_sns_topic []byte
+var awsSnsTopic []byte
 
 //go:embed mapping/aws/resource/aws_key_pair.json
-var aws_key_pair []byte
+var awsKeyPair []byte
 
 //go:embed mapping/aws/resource/aws_db_instance.json
-var aws_db_instance []byte
+var awsDbInstance []byte
 
 //go:embed mapping/aws/resource/aws_dynamodb_table.json
-var aws_dynamodb_table []byte
+var awsDynamodbTable []byte
 
 //go:embed mapping/gcp/google_compute_instance.json
-var google_compute_instance []byte
+var googleComputeInstance []byte

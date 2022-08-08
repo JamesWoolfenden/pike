@@ -23,55 +23,57 @@ func GetAWSResourcePermissions(result ResourceV2) []string {
 	var Permissions []string
 	switch result.Name {
 	case "aws_s3_bucket":
-		Permissions = GetPermissionMap(aws_s3_bucket, result.Attributes)
-	case "aws_s3_bucket_acl":
-		Permissions = GetPermissionMap(aws_s3_bucket_acl, result.Attributes)
-	case "aws_s3_bucket_versioning":
-		Permissions = GetPermissionMap(aws_s3_bucket_versioning, result.Attributes)
-	case "aws_s3_bucket_server_side_encryption_configuration":
-		Permissions = GetPermissionMap(aws_s3_bucket_server_side_encryption_configuration, result.Attributes)
-	case "aws_s3_bucket_public_access_block":
-		Permissions = GetPermissionMap(aws_s3_bucket_public_access_block, result.Attributes)
+		Permissions = GetPermissionMap(awsS3Bucket, result.Attributes)
+	case "awsS3BucketAcl":
+		Permissions = GetPermissionMap(awsS3BucketACL, result.Attributes)
+	case "awsS3BucketVersioning":
+		Permissions = GetPermissionMap(awsS3BucketVersioning, result.Attributes)
+	case "awsS3BucketServerSideEncryptionConfiguration":
+		Permissions = GetPermissionMap(awsS3BucketServerSideEncryptionConfiguration, result.Attributes)
+	case "awsS3BucketPublicAccessBlock":
+		Permissions = GetPermissionMap(awsS3BucketPublicAccessBlock, result.Attributes)
 	case "aws_instance":
-		Permissions = GetPermissionMap(aws_instance, result.Attributes)
+		Permissions = GetPermissionMap(awsInstance, result.Attributes)
 	case "aws_security_group":
-		Permissions = GetPermissionMap(aws_security_group, result.Attributes)
+		Permissions = GetPermissionMap(awsSecurityGroup, result.Attributes)
+	case "aws_security_group_rule":
+		Permissions = GetPermissionMap(awsSecurityGroupRule, result.Attributes)
 	case "aws_lambda_function":
-		Permissions = GetPermissionMap(aws_lambda_function, result.Attributes)
+		Permissions = GetPermissionMap(awsLambdaFunction, result.Attributes)
 	case "aws_vpc":
-		Permissions = GetPermissionMap(aws_vpc, result.Attributes)
+		Permissions = GetPermissionMap(awsVpc, result.Attributes)
 	case "aws_subnet":
-		Permissions = GetPermissionMap(aws_subnet, result.Attributes)
+		Permissions = GetPermissionMap(awsSubnet, result.Attributes)
 	case "aws_network_acl":
-		Permissions = GetPermissionMap(aws_network_acl, result.Attributes)
+		Permissions = GetPermissionMap(awsNetworkACL, result.Attributes)
 	case "aws_kms_key":
-		Permissions = GetPermissionMap(aws_kms_key, result.Attributes)
+		Permissions = GetPermissionMap(awsKmsKey, result.Attributes)
 	case "aws_iam_role":
-		Permissions = GetPermissionMap(aws_iam_role, result.Attributes)
+		Permissions = GetPermissionMap(awsIamRole, result.Attributes)
 	case "aws_iam_role_policy":
-		Permissions = GetPermissionMap(aws_iam_role_policy, result.Attributes)
+		Permissions = GetPermissionMap(awsIamRolePolicy, result.Attributes)
 	case "aws_iam_role_policy_attachment":
-		Permissions = GetPermissionMap(aws_iam_role_policy_attachment, result.Attributes)
+		Permissions = GetPermissionMap(awsIamRolePolicyAttachment, result.Attributes)
 	case "aws_iam_policy":
-		Permissions = GetPermissionMap(aws_iam_policy, result.Attributes)
+		Permissions = GetPermissionMap(awsIamPolicy, result.Attributes)
 	case "aws_iam_instance_profile":
-		Permissions = GetPermissionMap(aws_iam_instance_profile, result.Attributes)
+		Permissions = GetPermissionMap(awsIamInstanceProfile, result.Attributes)
 	case "aws_mq_broker":
-		Permissions = GetPermissionMap(aws_mq_broker, result.Attributes)
+		Permissions = GetPermissionMap(awsMqBroker, result.Attributes)
 	case "aws_mq_configuration":
-		Permissions = GetPermissionMap(aws_mq_configuration, result.Attributes)
+		Permissions = GetPermissionMap(awsMqConfiguration, result.Attributes)
 	case "aws_cloudwatch_log_group":
-		Permissions = GetPermissionMap(aws_cloudwatch_log_group, result.Attributes)
+		Permissions = GetPermissionMap(awsCloudwatchLogGroup, result.Attributes)
 	case "aws_route53_record":
-		Permissions = GetPermissionMap(aws_route53_record, result.Attributes)
+		Permissions = GetPermissionMap(awsRoute53Record, result.Attributes)
 	case "aws_sns_topic":
-		Permissions = GetPermissionMap(aws_sns_topic, result.Attributes)
+		Permissions = GetPermissionMap(awsSnsTopic, result.Attributes)
 	case "aws_key_pair":
-		Permissions = GetPermissionMap(aws_key_pair, result.Attributes)
+		Permissions = GetPermissionMap(awsKeyPair, result.Attributes)
 	case "aws_db_instance":
-		Permissions = GetPermissionMap(aws_db_instance, result.Attributes)
+		Permissions = GetPermissionMap(awsDbInstance, result.Attributes)
 	case "aws_dynamodb_table":
-		Permissions = GetPermissionMap(aws_dynamodb_table, result.Attributes)
+		Permissions = GetPermissionMap(awsDynamodbTable, result.Attributes)
 	default:
 		log.Printf("%s not implemented", result.Name)
 	}
