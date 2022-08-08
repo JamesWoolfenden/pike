@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "ec2:ImportKeyPair",
+      "ec2:CreateKeyPair",
+      "ec2:DescribeKeyPairs",
+      "ec2:DeleteKeyPair"
+    ],
+    "attributes": {
+      "tags": [
+        "ec2:DeleteTags",
+        "ec2:CreateTags"
+      ]
+    },
+    "destroy": [
+      "ec2:DeleteKeyPair"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

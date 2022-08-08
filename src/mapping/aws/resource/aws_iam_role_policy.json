@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "iam:PutRolePolicy",
+      "iam:GetRolePolicy",
+      "iam:DeleteRolePolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "iam:DeleteRolePolicy"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,12 +1,12 @@
 package pike
 
 import (
+	_ "embed" //required for embed
 	"encoding/json"
 	"errors"
 	"fmt"
 	"os"
 	"text/template"
-	_ "embed" //required for embed
 )
 
 //go:embed terraform.policy.template
@@ -61,26 +61,30 @@ func AWSPolicy(Permissions []string, output string) error {
 		fmt.Println(err)
 		return err
 	}
-    
+
 	switch output {
-	case "terraform","Terraform":
-		
+	case "terraform", "Terraform":
+
 		type PolicyDetails struct {
-			Policy string
-			Name string
-			Path string
+			Policy      string
+			Name        string
+			Path        string
 			Description string
 		}
 
-        PolicyName:= "terraform"+ randSeq(8)
-		theDetails := PolicyDetails{string(b), PolicyName,"/", "Add Description"}
+		PolicyName := "terraform" + randSeq(8)
+		theDetails := PolicyDetails{string(b), PolicyName, "/", "Add Description"}
 		tmpl, err := template.New("test").Parse(string(policyTemplate))
-		if err != nil { panic(err) }
+		if err != nil {
+			panic(err)
+		}
 
 		err = tmpl.Execute(os.Stdout, theDetails)
 
-		if err != nil { panic(err) }
-	default: 
+		if err != nil {
+			panic(err)
+		}
+	default:
 		fmt.Print(string(b))
 		fmt.Print("\n")
 	}

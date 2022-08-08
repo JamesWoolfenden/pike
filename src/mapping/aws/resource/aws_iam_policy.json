@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "iam:CreatePolicy",
+      "iam:GetPolicy",
+      "iam:GetPolicyVersion",
+      "iam:ListPolicyVersions",
+      "iam:DeletePolicy"
+    ],
+    "attributes": {
+      "tags": [
+        "iam:TagPolicy",
+        "iam:UntagPolicy"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

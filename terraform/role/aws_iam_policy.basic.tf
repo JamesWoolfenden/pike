@@ -5,14 +5,21 @@ resource "aws_iam_policy" "basic" {
     Statement = [
       {
         Action = [
-          "s3:*"
+          "ec2:ImportKeyPair",
+          "ec2:CreateKeyPair",
+          "ec2:DescribeKeyPairs",
+          "ec2:DeleteKeyPair",
+          "ec2:DeleteTags",
+          "ec2:CreateTags",
         ]
         Effect   = "Allow"
         Resource = "*"
       },
     ]
   })
-  tags = { createdby = "JamesWoolfenden" }
+  tags = {
+    createdby = "JamesWoolfenden"
+  }
 }
 
 resource "aws_iam_role_policy_attachment" "basic" {

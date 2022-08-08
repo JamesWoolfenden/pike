@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "iam:CreateInstanceProfile",
+      "iam:GetInstanceProfile",
+      "iam:RemoveRoleFromInstanceProfile",
+      "iam:DeleteInstanceProfile",
+      "iam:AddRoleToInstanceProfile",
+      "iam:PassRole"
+    ],
+    "attributes": {
+      "tags": [
+        "iam:TagInstanceProfile",
+        "iam:UntagInstanceProfile"
+      ]
+    },
+    "destroy": [
+      "iam:GetRole"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

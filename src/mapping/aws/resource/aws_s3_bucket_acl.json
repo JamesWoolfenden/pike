@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "s3:ListAllMyBuckets",
+      "s3:PutBucketAcl",
+      "s3:ListBucket",
+      "s3:GetBucketAcl"
+    ],
+    "attributes": {
+      "tag": []
+    },
+    "destroy": [],
+    "plan": []
+  }
+]
