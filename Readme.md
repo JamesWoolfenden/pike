@@ -23,9 +23,6 @@ Still very much under development, I intend it to:
 
 It currently supports Terraform and can support multiple providers but focus is only on AWS at present. 
 
-## Current issues:
-
-- The current HCL parser needs to be replaced with one that ignores variables. We dont care about them yet.
 
 ## Usage
 
