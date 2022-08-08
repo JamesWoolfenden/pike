@@ -28,4 +28,4 @@ data "aws_subnet" "selected" {
   id = "subnet-0243b982356b4a0f0"
 }
 
-data "aws_subnets"  "all" {}
+data "aws_subnets" "all" {}

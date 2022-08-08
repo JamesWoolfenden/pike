@@ -68,6 +68,10 @@ func GetAWSResourcePermissions(result ResourceV2) []string {
 		Permissions = GetPermissionMap(aws_sns_topic, result.Attributes)
 	case "aws_key_pair":
 		Permissions = GetPermissionMap(aws_key_pair, result.Attributes)
+	case "aws_db_instance":
+		Permissions = GetPermissionMap(aws_db_instance, result.Attributes)
+	case "aws_dynamodb_table":
+		Permissions = GetPermissionMap(aws_dynamodb_table, result.Attributes)
 	default:
 		log.Printf("%s not implemented", result.Name)
 	}

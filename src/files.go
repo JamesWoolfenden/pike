@@ -73,5 +73,11 @@ var aws_sns_topic []byte
 //go:embed mapping/aws/resource/aws_key_pair.json
 var aws_key_pair []byte
 
+//go:embed mapping/aws/resource/aws_db_instance.json
+var aws_db_instance []byte
+
+//go:embed mapping/aws/resource/aws_dynamodb_table.json
+var aws_dynamodb_table []byte
+
 //go:embed mapping/gcp/google_compute_instance.json
 var google_compute_instance []byte

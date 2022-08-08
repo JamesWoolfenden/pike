@@ -23,6 +23,6 @@ output "subnets" {
   value = data.aws_subnet_ids.public
 }
 
-data aws_vpc "this" {
-    id="vpc-0c33dc8cd64f408c4"
+data "aws_vpc" "this" {
+  id = "vpc-0c33dc8cd64f408c4"
 }

@@ -1,0 +1,42 @@
+[
+  {
+    "apply": [
+      "dynamodb:CreateTable",
+      "dynamodb:DescribeTable",
+      "dynamodb:DescribeContinuousBackups",
+      "dynamodb:DescribeTimeToLive",
+      "dynamodb:ListTagsOfResource",
+      "dynamodb:DeleteTable"
+    ],
+    "attributes": {
+      "replica": [
+        "dynamodb:CreateTableReplica",
+        "dynamodb:Query",
+        "dynamodb:Scan",
+        "dynamodb:UpdateItem",
+        "dynamodb:PutItem",
+        "dynamodb:GetItem",
+        "dynamodb:DeleteItem",
+        "dynamodb:BatchWriteItem",
+        "iam:CreateServiceLinkedRole",
+        "dynamodb:UpdateContinuousBackups",
+        "dynamodb:DeleteTableReplica"
+      ],
+      "tags": [
+        "dynamodb:TagResource",
+        "dynamodb:UntagResource"
+      ],
+      "ttl": [
+        "dynamodb:UpdateTimeToLive"
+      ]
+    },
+    "destroy": [
+      "dynamodb:DeleteTable"
+    ],
+    "modify": [
+      "dynamodb:UpdateTable",
+      "dynamodb:UpdateTimeToLive"
+    ],
+    "plan": []
+  }
+]
