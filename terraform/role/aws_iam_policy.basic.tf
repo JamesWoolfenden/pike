@@ -5,11 +5,9 @@ resource "aws_iam_policy" "basic" {
     Statement = [
       {
         Action = [
-          "ec2:DescribeSecurityGroups",
-          "ec2:AuthorizeSecurityGroupIngress",
-          "ec2:RevokeSecurityGroupIngress",
-          "ec2:AuthorizeSecurityGroupEgress",
-          "ec2:RevokeSecurityGroupEgress"
+          "iam:AttachUserPolicy",
+          "iam:ListAttachedUserPolicies",
+          "iam:DetachUserPolicy"
         ]
         Effect   = "Allow"
         Resource = "*"

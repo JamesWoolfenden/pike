@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "iam:AttachGroupPolicy",
+      "iam:ListAttachedGroupPolicies",
+      "iam:DetachGroupPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

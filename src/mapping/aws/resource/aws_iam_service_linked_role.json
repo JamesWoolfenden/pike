@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "iam:CreateServiceLinkedRole",
+      "iam:DeleteServiceLinkedRole",
+      "iam:GetRole"
+    ],
+    "attributes": {
+      "tags": [
+        "iam:TagRole",
+        "iam:UnTagRole"
+      ]
+    },
+    "destroy": [
+      "iam:DeleteServiceLinkedRole",
+      "iam:GetServiceLinkedRoleDeletionStatus"
+    ],
+    "modify": [
+      "iam:UpdateRoleDescription",
+      "iam:DeleteServiceLinkedRole",
+      "iam:GetServiceLinkedRoleDeletionStatus"
+    ],
+    "plan": []
+  }
+]

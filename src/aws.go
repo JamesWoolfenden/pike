@@ -58,6 +58,28 @@ func GetAWSResourcePermissions(result ResourceV2) []string {
 		Permissions = GetPermissionMap(awsIamPolicy, result.Attributes)
 	case "aws_iam_instance_profile":
 		Permissions = GetPermissionMap(awsIamInstanceProfile, result.Attributes)
+	case "aws_iam_access_key":
+		Permissions = GetPermissionMap(awsIamAccessKey, result.Attributes)
+	case "aws_iam_group":
+		Permissions = GetPermissionMap(awsIamGroup, result.Attributes)
+	case "aws_iam_group_membership":
+		Permissions = GetPermissionMap(awsIamGroupMembership, result.Attributes)
+	case "aws_iam_group_policy":
+		Permissions = GetPermissionMap(awsIamGroupPolicy, result.Attributes)
+	case "aws_iam_group_policy_attachment":
+		Permissions = GetPermissionMap(awsIamGroupPolicyAttachment, result.Attributes)
+	case "aws_iam_policy_attachment":
+		Permissions = GetPermissionMap(awsIamPolicyAttachment, result.Attributes)
+	case "aws_iam_service_linked_role":
+		Permissions = GetPermissionMap(awsIamServiceLinkedRole, result.Attributes)
+	case "aws_iam_user":
+		Permissions = GetPermissionMap(awsIamUser, result.Attributes)
+	case "aws_iam_user_login_profile":
+		Permissions = GetPermissionMap(awsIamUserLoginProfile, result.Attributes)
+	case "aws_iam_user_policy":
+		Permissions = GetPermissionMap(awsIamUserPolicy, result.Attributes)
+	case "aws_iam_user_policy_attachment":
+		Permissions = GetPermissionMap(awsIamUserPolicyAttachment, result.Attributes)
 	case "aws_mq_broker":
 		Permissions = GetPermissionMap(awsMqBroker, result.Attributes)
 	case "aws_mq_configuration":

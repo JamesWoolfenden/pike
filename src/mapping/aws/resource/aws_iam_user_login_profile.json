@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "iam:CreateLoginProfile"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "iam:DeleteLoginProfile"
+    ],
+    "modify": [
+      "iam:GetLoginProfile",
+      "iam:DeleteLoginProfile"
+    ],
+    "plan": []
+  }
+]

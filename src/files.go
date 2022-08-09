@@ -58,6 +58,39 @@ var awsIamPolicy []byte
 //go:embed mapping/aws/resource/aws_iam_instance_profile.json
 var awsIamInstanceProfile []byte
 
+//go:embed mapping/aws/resource/aws_iam_access_key.json
+var awsIamAccessKey []byte
+
+//go:embed mapping/aws/resource/aws_iam_group.json
+var awsIamGroup []byte
+
+//go:embed mapping/aws/resource/aws_iam_group_membership.json
+var awsIamGroupMembership []byte
+
+//go:embed mapping/aws/resource/aws_iam_group_policy.json
+var awsIamGroupPolicy []byte
+
+//go:embed mapping/aws/resource/aws_iam_group_policy_attachment.json
+var awsIamGroupPolicyAttachment []byte
+
+//go:embed mapping/aws/resource/aws_iam_policy_attachment.json
+var awsIamPolicyAttachment []byte
+
+//go:embed mapping/aws/resource/aws_iam_service_linked_role.json
+var awsIamServiceLinkedRole []byte
+
+//go:embed mapping/aws/resource/aws_iam_user.json
+var awsIamUser []byte
+
+//go:embed mapping/aws/resource/aws_iam_user_login_profile.json
+var awsIamUserLoginProfile []byte
+
+//go:embed mapping/aws/resource/aws_iam_user_policy.json
+var awsIamUserPolicy []byte
+
+//go:embed mapping/aws/resource/aws_iam_user_policy_attachment.json
+var awsIamUserPolicyAttachment []byte
+
 //go:embed mapping/aws/resource/aws_mq_broker.json
 var awsMqBroker []byte
 

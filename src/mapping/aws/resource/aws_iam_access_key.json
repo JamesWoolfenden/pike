@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "iam:CreateAccessKey"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "iam:ListAccessKeys",
+      "iam:DeleteAccessKey"
+    ],
+    "modify": [
+      "UpdateAccessKey"
+    ],
+    "plan": []
+  }
+]

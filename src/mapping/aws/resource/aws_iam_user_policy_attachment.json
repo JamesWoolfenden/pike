@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "iam:AttachUserPolicy",
+      "iam:ListAttachedUserPolicies",
+      "iam:DetachUserPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

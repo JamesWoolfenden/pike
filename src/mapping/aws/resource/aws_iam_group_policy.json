@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "iam:PutGroupPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "iam:DeleteGroupPolicy"
+    ],
+    "modify": [
+      "iam:GetGroupPolicy"
+    ],
+    "plan": []
+  }
+]

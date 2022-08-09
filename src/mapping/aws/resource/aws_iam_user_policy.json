@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "iam:PutUserPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "iam:DeleteUserPolicy"
+    ],
+    "modify": [
+      "iam:GetUserPolicy"
+    ],
+    "plan": []
+  }
+]

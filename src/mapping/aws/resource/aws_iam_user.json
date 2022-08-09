@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "iam:CreateUser",
+      "iam:GetUser",
+      "iam:ListGroupsForUser",
+      "iam:DeleteUser"
+    ],
+    "attributes": {
+      "tags": [
+        "iam:TagUser",
+        "iam:UnTagUser"
+      ]
+    },
+    "destroy": [
+      "iam:DeleteUser"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

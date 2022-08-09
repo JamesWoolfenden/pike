@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "iam:GetPolicy",
+      "iam:ListEntitiesForPolicy"
+    ],
+    "attributes": {
+      "groups": [
+        "iam:AttachGroupPolicy",
+        "iam:DetachGroupPolicy"
+      ],
+      "roles": [
+        "iam:AttachRolePolicy",
+        "iam:DetachRolePolicy"
+      ],
+      "users": [
+        "iam:AttachUserPolicy",
+        "iam:DetachUserPolicy"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

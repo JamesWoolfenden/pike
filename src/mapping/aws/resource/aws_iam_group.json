@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "iam:CreateGroup",
+      "iam:GetGroup"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "iam:DeleteGroup"
+    ],
+    "modify": [
+      "iam:DeleteGroup"
+    ],
+    "plan": []
+  }
+]
