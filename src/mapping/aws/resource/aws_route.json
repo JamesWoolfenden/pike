@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "ec2:CreateRoute",
+      "ec2:DescribeRouteTables",
+      "ec2:DeleteRoute"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "ec2:DeleteRoute"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

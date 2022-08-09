@@ -115,5 +115,11 @@ var awsDbInstance []byte
 //go:embed mapping/aws/resource/aws_dynamodb_table.json
 var awsDynamodbTable []byte
 
+//go:embed mapping/aws/resource/aws_ssm_parameter.json
+var awsSsmParameter []byte
+
+//go:embed mapping/aws/resource/aws_route.json
+var awsRoute []byte
+
 //go:embed mapping/gcp/google_compute_instance.json
 var googleComputeInstance []byte

@@ -24,13 +24,13 @@ func GetAWSResourcePermissions(result ResourceV2) []string {
 	switch result.Name {
 	case "aws_s3_bucket":
 		Permissions = GetPermissionMap(awsS3Bucket, result.Attributes)
-	case "awsS3BucketAcl":
+	case "aws_s3_bucket_acl":
 		Permissions = GetPermissionMap(awsS3BucketACL, result.Attributes)
-	case "awsS3BucketVersioning":
+	case "aws_s3_bucket_versioning":
 		Permissions = GetPermissionMap(awsS3BucketVersioning, result.Attributes)
-	case "awsS3BucketServerSideEncryptionConfiguration":
+	case "aws_s3_bucket_server_side_encryption_configuration":
 		Permissions = GetPermissionMap(awsS3BucketServerSideEncryptionConfiguration, result.Attributes)
-	case "awsS3BucketPublicAccessBlock":
+	case "aws_s3_bucket_public_access_block":
 		Permissions = GetPermissionMap(awsS3BucketPublicAccessBlock, result.Attributes)
 	case "aws_instance":
 		Permissions = GetPermissionMap(awsInstance, result.Attributes)
@@ -96,6 +96,10 @@ func GetAWSResourcePermissions(result ResourceV2) []string {
 		Permissions = GetPermissionMap(awsDbInstance, result.Attributes)
 	case "aws_dynamodb_table":
 		Permissions = GetPermissionMap(awsDynamodbTable, result.Attributes)
+	case "aws_ssm_parameter":
+		Permissions = GetPermissionMap(awsSsmParameter, result.Attributes)
+	case "aws_route":
+		Permissions = GetPermissionMap(awsRoute, result.Attributes)
 	default:
 		log.Printf("%s not implemented", result.Name)
 	}

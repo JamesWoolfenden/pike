@@ -5,7 +5,9 @@ resource "aws_iam_policy" "basic" {
     Statement = [
       {
         Action = [
-          "iam:GetRole"
+          "ec2:CreateRoute",
+          "ec2:DescribeRouteTables",
+          "ec2:DeleteRoute"
         ]
         Effect   = "Allow"
         Resource = "*"

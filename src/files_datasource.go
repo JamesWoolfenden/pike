@@ -24,3 +24,6 @@ var dataAwsIamRole []byte
 
 //go:embed mapping/aws/data/aws_vpc.json
 var dataAwsVpc []byte
+
+//go:embed mapping/aws/data/aws_s3_bucket.json
+var dataAwsS3Bucket []byte

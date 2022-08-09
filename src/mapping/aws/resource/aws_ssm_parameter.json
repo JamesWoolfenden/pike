@@ -1,0 +1,29 @@
+[
+  {
+    "apply": [
+      "ssm:PutParameter",
+      "ssm:AddTagsToResource",
+      "ssm:GetParameter",
+      "ssm:DescribeParameters",
+      "ssm:ListTagsForResource",
+      "ssm:GetParameters",
+      "ssm:DeleteParameter"
+    ],
+    "attributes": {
+      "key_id": [
+        "kms:Encrypt",
+        "kms:Decrypt"
+      ],
+      "tags": [
+        "ssm:AddTagsToResource"
+      ]
+    },
+    "destroy": [
+      "ssm:DeleteParameter"
+    ],
+    "modify": [],
+    "plan": [
+      "kms:Decrypt"
+    ]
+  }
+]

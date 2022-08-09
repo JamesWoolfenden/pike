@@ -16,6 +16,8 @@ func GetAWSDataPermissions(result ResourceV2) []string {
 		Permissions = GetPermissionMap(dataAwsIamPolicy, result.Attributes)
 	case "aws_iam_role":
 		Permissions = GetPermissionMap(dataAwsIamRole, result.Attributes)
+	case "aws_s3_bucket":
+		Permissions = GetPermissionMap(dataAwsS3Bucket, result.Attributes)
 	case "aws_vpc":
 		Permissions = GetPermissionMap(dataAwsVpc, result.Attributes)
 	case "aws_availability_zones":
