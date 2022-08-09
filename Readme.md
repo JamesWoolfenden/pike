@@ -12,7 +12,8 @@
 [![Github All Releases](https://img.shields.io/github/downloads/jameswoolfenden/pike/total.svg)]()
 
 Pike is a tool, to determine the minimum permissions required to run a TF/IAC run:
-Still very much under development, I intend it to: 
+
+Still very much under active development, I intend it to: 
 
 - run in ci - limit external outbound connections
 - run on a path or a file
@@ -21,12 +22,12 @@ Still very much under development, I intend it to:
 - policy creator
 - test policy against environment
 
-It currently supports Terraform and can support multiple providers but focus is only on AWS at present. 
+It currently supports Terraform and can support multiple providers but I focus on AWS at present. If you request others then Ill take a look.
 
 
 ## Usage
 
-Scan a directory of terraform file
+To scan a directory of terraform file
 
 ```shell
 ./pike -d .\terraform\ scan
@@ -84,7 +85,7 @@ Scan a directory of terraform file
 }
 ```
 
-You can also generate the terraform policy instead:
+You can also generate the policy as Terraform instead:
 
 ```bash
 $pike -o terraform -d ..\modules\aws\terraform-aws-activemq\ scan
