@@ -5,9 +5,7 @@ resource "aws_iam_policy" "basic" {
     Statement = [
       {
         Action = [
-          "iam:AttachUserPolicy",
-          "iam:ListAttachedUserPolicies",
-          "iam:DetachUserPolicy"
+          "iam:GetRole"
         ]
         Effect   = "Allow"
         Resource = "*"

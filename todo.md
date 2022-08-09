@@ -486,14 +486,6 @@ data.aws_cloudtrail_service_account not implemented
 data.aws_directory_service_directory not implemented
 data.aws_ebs_default_kms_key not implemented
 data.aws_elastic_beanstalk_solution_stack not implemented
-
-data.aws_iam_policy not implemented
-data.aws_iam_policy not implemented
-data.aws_iam_role not implemented
-data.aws_iam_role not implemented
-data.aws_iam_role not implemented
-data.aws_iam_role not implemented
-
 data.aws_inspector_rules_packages not implemented
 data.aws_inspector_rules_packages not implemented
 data.aws_kms_ciphertext not implemented

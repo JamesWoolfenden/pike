@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "iam:GetRole"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

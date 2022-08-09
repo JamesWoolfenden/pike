@@ -1,20 +1,26 @@
 package pike
 
 import (
-	_ "embed" //required for embed
+	_ "embed" // required for embed
 )
 
 //go:embed mapping/aws/data/aws_vpcs.json
-var data_aws_vpcs []byte
+var dataAwsVpcs []byte
 
 //go:embed mapping/aws/data/aws_subnets_ids.json
-var data_aws_subnet_ids []byte
+var dataAwsSubnetIds []byte
 
 //go:embed mapping/aws/data/aws_ami.json
-var data_aws_ami []byte
+var dataAwsAmi []byte
 
-//go:embed mapping/aws/data/aws_availabilty_zones.json
-var data_aws_availability_zones []byte
+//go:embed mapping/aws/data/aws_availability_zones.json
+var dataAwsAvailabilityZones []byte
+
+//go:embed mapping/aws/data/aws_iam_policy.json
+var dataAwsIamPolicy []byte
+
+//go:embed mapping/aws/data/aws_iam_role.json
+var dataAwsIamRole []byte
 
 //go:embed mapping/aws/data/aws_vpc.json
-var data_aws_vpc []byte
+var dataAwsVpc []byte
