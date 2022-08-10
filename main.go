@@ -42,7 +42,7 @@ func main() {
 			{
 				Name:    "scan",
 				Aliases: []string{"s"},
-				Usage:   "scan",
+				Usage:   "scan a directory for IAM code",
 				Action: func(*cli.Context) error {
 					return pike.Scan(directory, output)
 				},
@@ -50,7 +50,7 @@ func main() {
 			{
 				Name:    "readme",
 				Aliases: []string{"r"},
-				Usage:   "readme",
+				Usage:   "Looks in dir for a README.md and updates it with the Policy required to build the code",
 				Action: func(*cli.Context) error {
 					return pike.Readme(directory, output)
 				},
@@ -58,7 +58,7 @@ func main() {
 			{
 				Name:    "version",
 				Aliases: []string{"v"},
-				Usage:   "version",
+				Usage:   "Outputs the application version",
 				Action: func(*cli.Context) error {
 					fmt.Println(pike.Version)
 					return nil
