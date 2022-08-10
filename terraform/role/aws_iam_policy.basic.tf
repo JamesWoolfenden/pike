@@ -5,9 +5,9 @@ resource "aws_iam_policy" "basic" {
     Statement = [
       {
         Action = [
-          "ec2:CreateRoute",
-          "ec2:DescribeRouteTables",
-          "ec2:DeleteRoute"
+          "logs:PutSubscriptionFilter",
+          "logs:DescribeSubscriptionFilters",
+          "logs:DeleteSubscriptionFilter"
         ]
         Effect   = "Allow"
         Resource = "*"

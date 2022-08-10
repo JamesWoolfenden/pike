@@ -1,7 +1,7 @@
 package pike
 
 import (
-	_ "embed" //required for embed
+	_ "embed" // required for embed
 )
 
 //go:embed mapping/aws/resource/aws_s3_bucket.json
@@ -99,6 +99,24 @@ var awsMqConfiguration []byte
 
 //go:embed mapping/aws/resource/aws_cloudwatch_log_group.json
 var awsCloudwatchLogGroup []byte
+
+//go:embed mapping/aws/resource/aws_cloudwatch_event_rule.json
+var awsCloudwatchEventRule []byte
+
+//go:embed mapping/aws/resource/aws_cloudwatch_log_metric_filter.json
+var awsCloudwatchLogMetricFilter []byte
+
+//go:embed mapping/aws/resource/aws_cloudwatch_log_resource_policy.json
+var awsCloudwatchLogResourcePolicy []byte
+
+//go:embed mapping/aws/resource/aws_cloudwatch_log_subscription_filter.json
+var awsCloudwatchLogSubscriptionFilter []byte
+
+//go:embed mapping/aws/resource/aws_cloudwatch_metric_alarm.json
+var awsCloudwatchMetricAlarm []byte
+
+//go:embed mapping/aws/resource/aws_cloudwatch_event_target.json
+var awsCloudwatchEventTarget []byte
 
 //go:embed mapping/aws/resource/aws_route53_record.json
 var awsRoute53Record []byte

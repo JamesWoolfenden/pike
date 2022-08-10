@@ -86,6 +86,18 @@ func GetAWSResourcePermissions(result ResourceV2) []string {
 		Permissions = GetPermissionMap(awsMqConfiguration, result.Attributes)
 	case "aws_cloudwatch_log_group":
 		Permissions = GetPermissionMap(awsCloudwatchLogGroup, result.Attributes)
+	case "aws_cloudwatch_event_rule":
+		Permissions = GetPermissionMap(awsCloudwatchEventRule, result.Attributes)
+	case "aws_cloudwatch_event_target":
+		Permissions = GetPermissionMap(awsCloudwatchEventTarget, result.Attributes)
+	case "aws_cloudwatch_log_metric_filter":
+		Permissions = GetPermissionMap(awsCloudwatchLogMetricFilter, result.Attributes)
+	case "aws_cloudwatch_log_resource_policy":
+		Permissions = GetPermissionMap(awsCloudwatchLogResourcePolicy, result.Attributes)
+	case "aws_cloudwatch_log_subscription_filter":
+		Permissions = GetPermissionMap(awsCloudwatchLogSubscriptionFilter, result.Attributes)
+	case "aws_cloudwatch_metric_alarm":
+		Permissions = GetPermissionMap(awsCloudwatchMetricAlarm, result.Attributes)
 	case "aws_route53_record":
 		Permissions = GetPermissionMap(awsRoute53Record, result.Attributes)
 	case "aws_sns_topic":

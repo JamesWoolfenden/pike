@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "cloudwatch:PutMetricAlarm",
+      "cloudwatch:DescribeAlarms",
+      "cloudwatch:ListTagsForResource",
+      "cloudwatch:DeleteAlarms"
+    ],
+    "attributes": {
+      "tags": [
+        "cloudwatch:TagResource",
+        "cloudwatch:UnTagResource"
+      ]
+    },
+    "destroy": [
+      "cloudwatch:DeleteAlarms"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

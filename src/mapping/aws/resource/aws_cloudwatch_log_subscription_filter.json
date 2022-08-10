@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "logs:PutSubscriptionFilter"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "logs:DeleteSubscriptionFilter"
+    ],
+    "modify": [],
+    "plan": [
+      "logs:DescribeSubscriptionFilters"
+    ]
+  }
+]

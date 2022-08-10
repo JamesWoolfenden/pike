@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "events:PutRule",
+      "events:DescribeRule",
+      "events:ListTagsForResource",
+      "events:DeleteRule"
+    ],
+    "attributes": {
+      "role_arn": [
+        "iam:PassRole"
+      ],
+      "tags": [
+        "events:ListTagsForResource",
+        "events:TagResource",
+        "events:UnTagResource"
+      ]
+    },
+    "destroy": [
+      "events:DeleteRule"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "logs:PutResourcePolicy",
+      "logs:DescribeResourcePolicies",
+      "logs:DeleteResourcePolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "logs:DeleteResourcePolicy"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

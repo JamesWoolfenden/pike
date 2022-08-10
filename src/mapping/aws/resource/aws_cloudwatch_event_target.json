@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "events:PutTargets",
+      "events:ListTargetsByRule",
+      "events:RemoveTargets"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

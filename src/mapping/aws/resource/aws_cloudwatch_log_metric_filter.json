@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "logs:PutMetricFilter",
+      "logs:DescribeMetricFilters",
+      "logs:DeleteMetricFilter"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "logs:DeleteMetricFilter"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]
