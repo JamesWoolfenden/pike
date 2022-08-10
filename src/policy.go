@@ -1,11 +1,11 @@
 package pike
 
 import (
+	"bytes"
 	_ "embed" //required for embed
 	"encoding/json"
 	"errors"
 	"fmt"
-	"os"
 	"text/template"
 )
 
@@ -33,33 +33,34 @@ func NewPolicy(Actions []string) Policy {
 }
 
 // GetPolicy creates new iam polices from a list of Permissions
-func GetPolicy(actions Sorted, output string) error {
+func GetPolicy(actions Sorted, output string) (string, error) {
 	var Permissions []string
 
 	Permissions = append(Permissions, actions.AWS...)
 
 	if Permissions == nil {
-		return errors.New("no permissions detected")
+		return "", errors.New("no permissions detected")
 	}
 
 	//dedupe
 	Permissions = unique(Permissions)
 
-	err2 := AWSPolicy(Permissions, output)
+	Policy, err2 := AWSPolicy(Permissions, output)
 
 	if err2 != nil {
-		return err2
+		return "", err2
 	}
-	return nil
+
+	return Policy, nil
 }
 
 // AWSPolicy create an IAM policy
-func AWSPolicy(Permissions []string, output string) error {
+func AWSPolicy(Permissions []string, output string) (string, error) {
 	Policy := NewPolicy(Permissions)
 	b, err := json.MarshalIndent(Policy, "", "    ")
 	if err != nil {
 		fmt.Println(err)
-		return err
+		return "", err
 	}
 
 	switch output {
@@ -74,22 +75,22 @@ func AWSPolicy(Permissions []string, output string) error {
 
 		PolicyName := "terraform" + randSeq(8)
 		theDetails := PolicyDetails{string(b), PolicyName, "/", "Add Description"}
+
+		var output bytes.Buffer
 		tmpl, err := template.New("test").Parse(string(policyTemplate))
 		if err != nil {
 			panic(err)
 		}
 
-		err = tmpl.Execute(os.Stdout, theDetails)
+		err = tmpl.Execute(&output, theDetails)
 
 		if err != nil {
 			panic(err)
 		}
+		return output.String(), nil
 	default:
-		fmt.Print(string(b))
-		fmt.Print("\n")
+		return string(b) + "\n", nil
 	}
-
-	return nil
 }
 
 func unique(s []string) []string {

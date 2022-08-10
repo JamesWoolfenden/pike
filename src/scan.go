@@ -1,6 +1,7 @@
 package pike
 
 import (
+	"fmt"
 	"io/ioutil"
 	"log"
 	"path/filepath"
@@ -9,15 +10,25 @@ import (
 
 // Scan looks for resources in a given directory
 func Scan(dirname string, output string) error {
+	Policy, err := MakePolicy(dirname, output)
+	if err != nil {
+		return err
+	}
+    
+	fmt.Print(Policy)
+	return err
+}
+
+func MakePolicy(dirname string, output string) (string, error) {
 	fullPath, err := filepath.Abs(dirname)
 
 	if err != nil {
-		return err
+		return "", err
 	}
 
 	files, err2 := GetTF(fullPath)
 	if err2 != nil {
-		return err2
+		return "", err2
 	}
 
 	var resources []ResourceV2
@@ -39,16 +50,15 @@ func Scan(dirname string, output string) error {
 		newPerms, err := GetPermission(resource)
 
 		if err != nil {
-			return err
+			return "", err
 		}
 
 		PermissionBag.AWS = append(PermissionBag.AWS, newPerms.AWS...)
 		PermissionBag.GCP = append(PermissionBag.GCP, newPerms.AWS...)
 	}
 
-	err = GetPolicy(PermissionBag, output)
-
-	return err
+	Policy, err := GetPolicy(PermissionBag, output)
+	return Policy, nil
 }
 
 // GetTF return tf files in a directory

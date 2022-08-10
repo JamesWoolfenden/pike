@@ -35,7 +35,7 @@ func main() {
 				Aliases:     []string{"o"},
 				Usage:       "Output types e.g. `json` terraform",
 				Destination: &output,
-				EnvVars: []string{"OUTPUT"},
+				EnvVars:     []string{"OUTPUT"},
 			},
 		},
 		Commands: []*cli.Command{
@@ -45,6 +45,14 @@ func main() {
 				Usage:   "scan",
 				Action: func(*cli.Context) error {
 					return pike.Scan(directory, output)
+				},
+			},
+			{
+				Name:    "readme",
+				Aliases: []string{"r"},
+				Usage:   "readme",
+				Action: func(*cli.Context) error {
+					return pike.Readme(directory, output)
 				},
 			},
 			{
