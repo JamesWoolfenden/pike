@@ -6,6 +6,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"sort"
 	"text/template"
 )
 
@@ -102,5 +103,6 @@ func unique(s []string) []string {
 			result = append(result, str)
 		}
 	}
+	sort.Strings(result)
 	return result
 }
