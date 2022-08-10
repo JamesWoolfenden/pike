@@ -91,7 +91,7 @@ To scan a directory of Terraform file:
 You can also generate the policy as Terraform instead:
 
 ```bash
-$pike -o terraform -d ..\modules\aws\terraform-aws-activemq\ scan
+./pike -o terraform -d ..\modules\aws\terraform-aws-activemq\ scan
 resource "aws_iam_policy" "terraformXVlBzgba" {
   name        = "terraformXVlBzgba"
   path        = "/"
@@ -150,7 +150,7 @@ resource "aws_iam_policy" "terraformXVlBzgba" {
 
 Pike can now be used to update a projects README.md file:
 
->$pike -o terraform -d ..\modules\aws\terraform-aws-activemq\ readme
+./pike -o terraform -d ..\modules\aws\terraform-aws-activemq\ readme
 
 This looks in the readme for the deliminators:
 
