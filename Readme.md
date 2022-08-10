@@ -214,6 +214,8 @@ The Policy required is
 }
 ```
 
+You can see an example here <https://github.com/jamesWoolfenden/terraform-aws-activemq#policy>.
+
 ## Help
 
 ```bash
