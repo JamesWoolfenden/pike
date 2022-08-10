@@ -18,7 +18,7 @@ func Readme(dirname string, output string) error {
 	if err2 != nil {
 		return err2
 	}
-	markdown := "\nThe Policy required is: \n\n```json\n" + Policy + "\n```\n"
+	markdown := "\nThe Policy required is:\n\n```json\n" + Policy + "\n```\n"
 	err := ReplaceSection(file, markdown)
 
 	return err
