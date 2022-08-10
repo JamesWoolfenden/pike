@@ -1,5 +1,7 @@
 package pike
 
+import "log"
+
 // GetAWSDataPermissions gets permissions required for datasources
 func GetAWSDataPermissions(result ResourceV2) []string {
 
@@ -14,10 +16,10 @@ func GetAWSDataPermissions(result ResourceV2) []string {
 		"aws_s3_bucket":           dataAwsS3Bucket,
 		"aws_vpc":                 dataAwsVpc,
 		"aws_availability_zones":  dataAwsAvailabilityZones,
-		"aws_caller_identity":     nil,
-		"aws_iam_policy_document": nil,
-		"aws_region":              nil,
-		"aws_canonical_user_id":   nil,
+		"aws_caller_identity":     placeholder,
+		"aws_iam_policy_document": placeholder,
+		"aws_region":              placeholder,
+		"aws_canonical_user_id":   placeholder,
 	}
 
 	var Permissions []string
@@ -25,6 +27,8 @@ func GetAWSDataPermissions(result ResourceV2) []string {
 	temp := TFLookup[result.Name]
 	if temp != nil {
 		Permissions = GetPermissionMap(TFLookup[result.Name].([]byte), result.Attributes)
+	} else {
+		log.Printf("%s not implemented", result.Name)
 	}
 
 	return Permissions

@@ -4,6 +4,9 @@ import (
 	_ "embed" // required for embed
 )
 
+//go:embed mapping/aws/data/template.json
+var placeholder []byte
+
 //go:embed mapping/aws/data/aws_vpcs.json
 var dataAwsVpcs []byte
 

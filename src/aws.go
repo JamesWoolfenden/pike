@@ -74,6 +74,8 @@ func GetAWSResourcePermissions(result ResourceV2) []string {
 	temp := TFLookup[result.Name]
 	if temp != nil {
 		Permissions = GetPermissionMap(TFLookup[result.Name].([]byte), result.Attributes)
+	} else {
+		log.Printf("%s not implemented", result.Name)
 	}
 
 	return Permissions
