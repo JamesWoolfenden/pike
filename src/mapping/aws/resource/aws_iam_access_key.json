@@ -11,7 +11,7 @@
       "iam:DeleteAccessKey"
     ],
     "modify": [
-      "UpdateAccessKey"
+      "iam:UpdateAccessKey"
     ],
     "plan": []
   }
