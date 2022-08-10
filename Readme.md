@@ -9,11 +9,11 @@
 ![Terraform Version](https://img.shields.io/badge/tf-%3E%3D0.14.0-blue.svg)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 [![checkov](https://img.shields.io/badge/checkov-verified-brightgreen)](https://www.checkov.io/)
-[![Github All Releases](https://img.shields.io/github/downloads/jameswoolfenden/pike/total.svg)]()
+[![Github All Releases](https://img.shields.io/github/downloads/jameswoolfenden/pike/total.svg)](https://github.com/JamesWoolfenden/pike/releases)
 
 Pike is a tool, to determine the minimum permissions required to run a TF/IAC run:
 
-Still very much under active development, I intend it to: 
+Still very much under active development, I intend it to:
 
 - run in ci - limit external outbound connections
 - run on a path or a file
@@ -22,12 +22,15 @@ Still very much under active development, I intend it to:
 - policy creator
 - test policy against environment
 
-It currently supports Terraform and can support multiple providers but I focus on AWS at present. If you request others then Ill take a look.
-
+Pike currently supports Terraform and can support multiple providers,
+but I am currently focused on AWS.
+Feel free to submit PR or Issue, and then I'll take a look.
 
 ## Usage
 
-To scan a directory of terraform file
+### Scan
+
+To scan a directory of Terraform file:
 
 ```shell
 ./pike -d .\terraform\ scan
@@ -143,8 +146,77 @@ resource "aws_iam_policy" "terraformXVlBzgba" {
 }
 ```
 
+### Readme
+
+Pike can now be used to update a projects README.md file:
+$pike -o terraform -d ..\modules\aws\terraform-aws-activemq\ readme
+
+This looks in the readme for the deliminators:
+
+```html
+<!-- BEGINNING OF PRE-COMMIT-PIKE DOCS HOOK -->
+<!-- END OF PRE-COMMIT-PIKE DOCS HOOK -->
+```
+
+and replaces is either with json or Terraform like so:
+
+```markdown
+This is the policy required to build this project:
+
+The Policy required is
+
+{
+    "Version": "2012-10-17",
+    "Statement": {
+        "Effect": "Allow",
+        "Action": [
+            "mq:CreateTags",
+            "mq:DeleteTags",
+            "ec2:DescribeInternetGateways",
+            "ec2:DescribeAccountAttributes",
+            "ec2:DescribeVpcs",
+            "ec2:DescribeSubnets",
+            "ec2:DescribeSecurityGroups",
+            "ec2:CreateNetworkInterface",
+            "ec2:CreateNetworkInterfacePermission",
+            "ec2:DeleteNetworkInterfacePermission",
+            "ec2:DetachNetworkInterface",
+            "ec2:DeleteNetworkInterface",
+            "mq:CreateBroker",
+            "mq:DescribeBroker",
+            "mq:DescribeUser",
+            "mq:UpdateBroker",
+            "mq:DeleteBroker",
+            "mq:CreateConfiguration",
+            "mq:UpdateConfiguration",
+            "mq:DescribeConfiguration",
+            "mq:DescribeConfigurationRevision",
+            "mq:RebootBroker",
+            "ec2:CreateTags",
+            "ec2:DeleteTags",
+            "ec2:CreateSecurityGroup",
+            "ec2:DescribeNetworkInterfaces",
+            "ec2:DeleteSecurityGroup",
+            "ec2:RevokeSecurityGroupEgress",
+            "kms:TagResource",
+            "kms:UntagResource",
+            "kms:EnableKeyRotation",
+            "kms:CreateKey",
+            "kms:DescribeKey",
+            "kms:GetKeyPolicy",
+            "kms:GetKeyRotationStatus",
+            "kms:ListResourceTags",
+            "kms:ScheduleKeyDeletion"
+        ],
+        "Resource": "*"
+    }
+}
+```
+
+## Help
+
 ```bash
-$./pike -h
+./pike -h
 NAME:
    pike - Generate IAM policy from your IAC code
 
@@ -152,21 +224,23 @@ USAGE:
    pike [global options] command [command options] [arguments...]
 
 VERSION:
-   v0.1.5
+   v0.1.12
 
 AUTHOR:
    James Woolfenden <support@bridgecrew.io>
 
 COMMANDS:
-   scan, s     scan
-   version, v  version
+   readme, r   Looks in dir for a README.md and updates it with the Policy required
+                to build the code
+   scan, s     scan a directory for IAM code
+   version, v  Outputs the application version
    help, h     Shows a list of commands or help for one command
 
 GLOBAL OPTIONS:
    --config FILE, -c FILE       Load configuration from FILE
    --directory value, -d value  Directory to scan
    --help, -h                   show help (default: false)
-   --output json, -o json       Output types e.g. json terraform (default: "terraform") [%OUTPUT%]
+   --output json, -o json       Output types e.g. json terraform [$OUTPUT]
    --version, -v                print the version (default: false)
 
 ```

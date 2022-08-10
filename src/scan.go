@@ -14,11 +14,12 @@ func Scan(dirname string, output string) error {
 	if err != nil {
 		return err
 	}
-    
+
 	fmt.Print(Policy)
 	return err
 }
 
+// MakePolicy does the guts of determining a policy from code
 func MakePolicy(dirname string, output string) (string, error) {
 	fullPath, err := filepath.Abs(dirname)
 
@@ -37,7 +38,7 @@ func MakePolicy(dirname string, output string) (string, error) {
 		resource, err := GetResources(file)
 
 		if err != nil {
-			//parse the other files
+			// parse the other files
 			log.Print(err)
 		}
 		if resource != nil {
@@ -57,13 +58,16 @@ func MakePolicy(dirname string, output string) (string, error) {
 		PermissionBag.GCP = append(PermissionBag.GCP, newPerms.AWS...)
 	}
 
-	Policy, err := GetPolicy(PermissionBag, output)
+	Policy, err2 := GetPolicy(PermissionBag, output)
+	if err2 != nil {
+		return "", err2
+	}
 	return Policy, nil
 }
 
 // GetTF return tf files in a directory
-func GetTF(dirname string) ([]string, error) {
-	rawFiles, err := ioutil.ReadDir(dirname)
+func GetTF(dirName string) ([]string, error) {
+	rawFiles, err := ioutil.ReadDir(dirName)
 	var files []string
 	for _, file := range rawFiles {
 		if file.IsDir() {
@@ -71,8 +75,8 @@ func GetTF(dirname string) ([]string, error) {
 			if file.Name() == ".terraform" || file.Name() == ".git" {
 				continue
 			}
-			newdirName := dirname + "/" + file.Name()
-			moreFiles, err := GetTF(newdirName)
+			newDirName := dirName + "/" + file.Name()
+			moreFiles, err := GetTF(newDirName)
 			if err == nil {
 				if moreFiles != nil {
 					files = append(files, moreFiles...)
@@ -85,7 +89,7 @@ func GetTF(dirname string) ([]string, error) {
 		if fileExtension != ".tf" {
 			continue
 		}
-		files = append(files, dirname+"/"+file.Name())
+		files = append(files, dirName+"/"+file.Name())
 	}
 
 	if err != nil {
@@ -103,7 +107,7 @@ func stringInSlice(a string, list []string) bool {
 	return false
 }
 
-//GetHCLType gets the resource Name
+// GetHCLType gets the resource Name
 func GetHCLType(resourceName string) string {
 	return strings.Split(resourceName, "_")[0]
 }

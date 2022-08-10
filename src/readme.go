@@ -5,6 +5,7 @@ import (
 	"os"
 )
 
+// Readme Updates a README.md file
 func Readme(dirname string, output string) error {
 
 	file := dirname + "/README.md"
@@ -13,10 +14,12 @@ func Readme(dirname string, output string) error {
 		return err
 	}
 
-	Policy, err := MakePolicy(dirname, output)
-
-	markdown := "\nThe Policy required is \n```json\n" + Policy + "\n```\n"
-	err = ReplaceSection(file, markdown)
+	Policy, err2 := MakePolicy(dirname, output)
+	if err2 != nil {
+		return err2
+	}
+	markdown := "\nThe Policy required is: \n\n```json\n" + Policy + "\n```\n"
+	err := ReplaceSection(file, markdown)
 
 	return err
 }
