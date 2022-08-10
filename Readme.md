@@ -302,23 +302,22 @@ Update **files.go** with:
 ```go
 //go:embed aws_security_group.json
 var securityGroup []byte
-
 ```
 
 ### Add to provider Scan
 
+Once you have added the json import above you just need to update the lookup table so we can read it and get the permissions:
+
 ```go
 func GetAWSResourcePermissions(result template) []interface{} {
-    myAttributes := GetAttributes(result)
-    var Permissions []interface{}
-    switch result.Resource.name {
-    case "aws_s3_bucket":
-       Permissions = GetPermissionMap(s3, myAttributes)
-    case "aws_instance":
-       Permissions = GetPermissionMap(ec2raw, myAttributes)
-+   case "aws_security_group":
-+      Permissions = GetPermissionMap(securityGroup, myAttributes)
+   	TFLookup := map[string]interface{}{
+		"aws_s3_bucket":            awsS3Bucket,
+		"aws_s3_bucket_acl":        awsS3BucketACL,
++       "aws_security_group":       awsSecurityGroup,
+     
 ```
+
+Also add an example Terraform file into the folder terraform/backups.
 
 ## Related Tools
 
