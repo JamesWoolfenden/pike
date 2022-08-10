@@ -313,7 +313,7 @@ func GetAWSResourcePermissions(result template) []interface{} {
    	TFLookup := map[string]interface{}{
 		"aws_s3_bucket":            awsS3Bucket,
 		"aws_s3_bucket_acl":        awsS3BucketACL,
-+       "aws_security_group":       awsSecurityGroup,
++       	"aws_security_group":       awsSecurityGroup,
      
 ```
 
