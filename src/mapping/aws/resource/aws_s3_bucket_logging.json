@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "s3:PutBucketLogging",
+      "s3:GetBucketLogging"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -78,12 +78,6 @@
  aws_dax_subnet_group not implemented
  aws_db_event_subscription not implemented
  aws_db_parameter_group not implemented
- aws_db_subnet_group not implemented
- aws_db_subnet_group not implemented
- aws_db_subnet_group not implemented
- aws_default_security_group not implemented
- aws_default_security_group not implemented
- aws_default_security_group not implemented
  aws_directory_service_directory not implemented
  aws_directory_service_directory not implemented
  aws_directory_service_log_subscription not implemented
@@ -281,48 +275,11 @@
  aws_route_table_association not implemented
  aws_s3_bucket_cors_configuration not implemented
  aws_s3_bucket_cors_configuration not implemented
- aws_s3_bucket_lifecycle_configuration not implemented
- aws_s3_bucket_lifecycle_configuration not implemented
- aws_s3_bucket_lifecycle_configuration not implemented
- aws_s3_bucket_lifecycle_configuration not implemented
- aws_s3_bucket_logging not implemented
- aws_s3_bucket_logging not implemented
- aws_s3_bucket_logging not implemented
- aws_s3_bucket_logging not implemented
- aws_s3_bucket_logging not implemented
- aws_s3_bucket_logging not implemented
- aws_s3_bucket_object not implemented
- aws_s3_bucket_object not implemented
- aws_s3_bucket_object not implemented
- aws_s3_bucket_policy not implemented
- aws_s3_bucket_policy not implemented
- aws_s3_bucket_policy not implemented
- aws_s3_bucket_policy not implemented
- aws_s3_bucket_policy not implemented
- aws_s3_bucket_policy not implemented
- aws_s3_bucket_policy not implemented
- aws_s3_bucket_policy not implemented
- aws_s3_bucket_policy not implemented
- aws_s3_bucket_policy not implemented
- aws_s3_bucket_policy not implemented
- aws_s3_bucket_policy not implemented
- aws_s3_bucket_policy not implemented
- aws_s3_bucket_policy not implemented
- aws_s3_bucket_policy not implemented
  aws_s3_bucket_replication_configuration not implemented
  aws_s3_bucket_replication_configuration not implemented
  aws_s3_bucket_replication_configuration not implemented
  aws_s3_bucket_website_configuration not implemented
  aws_s3_bucket_website_configuration not implemented
- aws_s3_object not implemented
- aws_s3_object not implemented
- aws_s3_object not implemented
- aws_s3_object not implemented
- aws_s3_object not implemented
- aws_s3_object not implemented
- aws_s3_object not implemented
- aws_s3_object not implemented
- aws_s3_object not implemented
  aws_sagemaker_endpoint_configuration not implemented
  aws_sagemaker_model not implemented
  aws_secretsmanager_secret not implemented

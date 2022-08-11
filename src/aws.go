@@ -27,6 +27,11 @@ func GetAWSResourcePermissions(result ResourceV2) []string {
 		"aws_s3_bucket_versioning": awsS3BucketVersioning,
 		"aws_s3_bucket_server_side_encryption_configuration": awsS3BucketServerSideEncryptionConfiguration,
 		"aws_s3_bucket_public_access_block":                  awsS3BucketPublicAccessBlock,
+		"aws_s3_bucket_logging":                              awsS3BucketLogging,
+		"aws_s3_bucket_lifecycle_configuration":              awsS3BucketLifecycleConfiguration,
+		"aws_s3_bucket_policy":                               awsS3BucketPolicy,
+		"aws_s3_bucket_object":                               awsS3Object,
+		"aws_s3_object":                                      awsS3Object,
 		"aws_instance":                                       awsInstance,
 		"aws_security_group":                                 awsSecurityGroup,
 		"aws_security_group_rule":                            awsSecurityGroupRule,
@@ -75,6 +80,8 @@ func GetAWSResourcePermissions(result ResourceV2) []string {
 		"aws_alb_target_group":                               awsLbTargetGroup,
 		"aws_alb_target_group_attachment":                    awsLbTargetGroupAttachment,
 		"aws_lb_target_group_attachment":                     awsLbTargetGroupAttachment,
+		"aws_default_security_group":                         awsDefaultSecurityGroup,
+		"aws_db_subnet_group":                                awsDbSubnetGroup,
 	}
 
 	var Permissions []string

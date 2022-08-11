@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "s3:GetBucketLogging",
+      "s3:PutLifecycleConfiguration",
+      "s3:GetLifecycleConfiguration"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "s3:PutBucketLogging"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

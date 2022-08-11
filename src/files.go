@@ -31,6 +31,18 @@ var awsS3BucketServerSideEncryptionConfiguration []byte
 //go:embed mapping/aws/resource/aws_s3_bucket_public_access_block.json
 var awsS3BucketPublicAccessBlock []byte
 
+//go:embed mapping/aws/resource/aws_s3_bucket_logging.json
+var awsS3BucketLogging []byte
+
+//go:embed mapping/aws/resource/aws_s3_bucket_lifecycle_configuration.json
+var awsS3BucketLifecycleConfiguration []byte
+
+//go:embed mapping/aws/resource/aws_s3_bucket_policy.json
+var awsS3BucketPolicy []byte
+
+//go:embed mapping/aws/resource/aws_s3_object.json
+var awsS3Object []byte
+
 //go:embed mapping/aws/resource/aws_instance.json
 var awsInstance []byte
 
@@ -150,6 +162,12 @@ var awsSsmParameter []byte
 
 //go:embed mapping/aws/resource/aws_route.json
 var awsRoute []byte
+
+//go:embed mapping/aws/resource/aws_default_security_group.json
+var awsDefaultSecurityGroup []byte
+
+//go:embed mapping/aws/resource/aws_db_subnet_group.json
+var awsDbSubnetGroup []byte
 
 //go:embed mapping/gcp/google_compute_instance.json
 var googleComputeInstance []byte

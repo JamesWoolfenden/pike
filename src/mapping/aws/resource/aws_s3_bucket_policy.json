@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "s3:PutBucketPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
