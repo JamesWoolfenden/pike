@@ -5,9 +5,13 @@ resource "aws_iam_policy" "basic" {
     Statement = [
       {
         Action = [
-          "logs:PutSubscriptionFilter",
-          "logs:DescribeSubscriptionFilters",
-          "logs:DeleteSubscriptionFilter"
+          "elasticloadbalancing:CreateLoadBalancer",
+          "elasticloadbalancing:DescribeLoadBalancers",
+          "elasticloadbalancing:DescribeLoadBalancerAttributes",
+          "elasticloadbalancing:DescribeTags",
+          "elasticloadbalancing:DeleteLoadBalancer",
+          "elasticloadbalancing:ModifyLoadBalancerAttributes",
+          "elasticloadbalancing:SetSecurityGroups"
         ]
         Effect   = "Allow"
         Resource = "*"

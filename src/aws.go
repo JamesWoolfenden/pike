@@ -67,6 +67,8 @@ func GetAWSResourcePermissions(result ResourceV2) []string {
 		"aws_dynamodb_table":                                 awsDynamodbTable,
 		"aws_ssm_parameter":                                  awsSsmParameter,
 		"aws_route":                                          awsRoute,
+		"aws_lb":                                             awsLb,
+		"aws_alb":                                            awsLb,
 	}
 
 	var Permissions []string

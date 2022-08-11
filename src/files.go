@@ -4,6 +4,9 @@ import (
 	_ "embed" // required for embed
 )
 
+//go:embed mapping/aws/resource/aws_lb.json
+var awsLb []byte
+
 //go:embed mapping/aws/resource/aws_s3_bucket.json
 var awsS3Bucket []byte
 

@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "elasticloadbalancing:CreateLoadBalancer",
+      "elasticloadbalancing:DescribeLoadBalancers",
+      "elasticloadbalancing:DescribeLoadBalancerAttributes",
+      "elasticloadbalancing:DescribeTags",
+      "elasticloadbalancing:DeleteLoadBalancer",
+      "elasticloadbalancing:ModifyLoadBalancerAttributes"
+    ],
+    "attributes": {
+      "tags": [
+        "elasticloadbalancing:AddTags"
+      ],
+      "security_groups": [
+        "elasticloadbalancing:SetSecurityGroups"]
+    },
+    "destroy": [
+      "elasticloadbalancing:DeleteLoadBalancer"
+    ],
+    "modify": [
+    ],
+    "plan": []
+  }
+]
