@@ -28,7 +28,7 @@ func GetAWSDataPermissions(result ResourceV2) []string {
 	if temp != nil {
 		Permissions = GetPermissionMap(TFLookup[result.Name].([]byte), result.Attributes)
 	} else {
-		log.Printf("%s not implemented", result.Name)
+		log.Printf("data.%s not implemented", result.Name)
 	}
 
 	return Permissions
