@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "elasticloadbalancing:RegisterTargets"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "elasticloadbalancing:DeregisterTargets"
+    ],
+    "modify": [],
+    "plan": [
+      "elasticloadbalancing:DescribeTargetHealth"
+    ]
+  }
+]

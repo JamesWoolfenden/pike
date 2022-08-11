@@ -5,13 +5,30 @@ resource "aws_iam_policy" "basic" {
     Statement = [
       {
         Action = [
+          "elasticloadbalancing:AddTags",
+          "elasticloadbalancing:CreateTargetGroup",
+          "elasticloadbalancing:DeleteTargetGroup",
+          "elasticloadbalancing:DescribeTags",
+          "elasticloadbalancing:DescribeTargetGroupAttributes",
+          "elasticloadbalancing:DescribeTargetGroups",
+          "elasticloadbalancing:ModifyTargetGroupAttributes",
+          "elasticloadbalancing:RemoveTags",
           "elasticloadbalancing:CreateLoadBalancer",
           "elasticloadbalancing:DescribeLoadBalancers",
           "elasticloadbalancing:DescribeLoadBalancerAttributes",
           "elasticloadbalancing:DescribeTags",
           "elasticloadbalancing:DeleteLoadBalancer",
           "elasticloadbalancing:ModifyLoadBalancerAttributes",
-          "elasticloadbalancing:SetSecurityGroups"
+          "elasticloadbalancing:SetSecurityGroups",
+          "elasticloadbalancing:CreateListener",
+          "elasticloadbalancing:DescribeListeners",
+          "elasticloadbalancing:DeleteListener",
+          "elasticloadbalancing:ModifyListener",
+          "elasticloadbalancing:RegisterTargets",
+          "elasticloadbalancing:DescribeTargetHealth",
+          "elasticloadbalancing:DeregisterTargets"
+          #          "elasticloadbalancing:AddTags",
+          #          "elasticloadbalancing:RemoveTags"
         ]
         Effect   = "Allow"
         Resource = "*"

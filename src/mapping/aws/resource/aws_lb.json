@@ -9,17 +9,18 @@
       "elasticloadbalancing:ModifyLoadBalancerAttributes"
     ],
     "attributes": {
-      "tags": [
-        "elasticloadbalancing:AddTags"
-      ],
       "security_groups": [
-        "elasticloadbalancing:SetSecurityGroups"]
+        "elasticloadbalancing:SetSecurityGroups"
+      ],
+      "tags": [
+        "elasticloadbalancing:AddTags",
+        "elasticloadbalancing:RemoveTags"
+      ]
     },
     "destroy": [
       "elasticloadbalancing:DeleteLoadBalancer"
     ],
-    "modify": [
-    ],
+    "modify": [],
     "plan": []
   }
 ]

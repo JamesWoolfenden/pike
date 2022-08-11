@@ -4,6 +4,15 @@ import (
 	_ "embed" // required for embed
 )
 
+//go:embed mapping/aws/resource/aws_lb_target_group.json
+var awsLbTargetGroup []byte
+
+//go:embed mapping/aws/resource/aws_lb_target_group_attachment.json
+var awsLbTargetGroupAttachment []byte
+
+//go:embed mapping/aws/resource/aws_lb_listener.json
+var awsLbListener []byte
+
 //go:embed mapping/aws/resource/aws_lb.json
 var awsLb []byte
 

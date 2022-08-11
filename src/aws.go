@@ -69,6 +69,12 @@ func GetAWSResourcePermissions(result ResourceV2) []string {
 		"aws_route":                                          awsRoute,
 		"aws_lb":                                             awsLb,
 		"aws_alb":                                            awsLb,
+		"aws_alb_listener":                                   awsLbListener,
+		"aws_lb_listener":                                    awsLbListener,
+		"aws_lb_target_group":                                awsLbTargetGroup,
+		"aws_alb_target_group":                               awsLbTargetGroup,
+		"aws_alb_target_group_attachment":                    awsLbTargetGroupAttachment,
+		"aws_lb_target_group_attachment":                     awsLbTargetGroupAttachment,
 	}
 
 	var Permissions []string

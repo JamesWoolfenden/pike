@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "elasticloadbalancing:CreateListener",
+      "elasticloadbalancing:DescribeListeners",
+      "elasticloadbalancing:DeleteListener",
+      "elasticloadbalancing:ModifyListener"
+    ],
+    "attributes": {
+      "certificate_arn": [
+        "elasticloadbalancing:RemoveListenerCertificates",
+        "elasticloadbalancing:AddListenerCertificates",
+        "elasticloadbalancing:DescribeListenerCertificates"
+      ],
+      "tags": [
+        "elasticloadbalancing:AddTags",
+        "elasticloadbalancing:RemoveTags"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "elasticloadbalancing:CreateTargetGroup",
+      "elasticloadbalancing:DescribeTargetGroups",
+      "elasticloadbalancing:DeleteTargetGroup",
+      "elasticloadbalancing:ModifyTargetGroupAttributes"
+    ],
+    "attributes": {
+      "tags": [
+        "elasticloadbalancing:AddTags",
+        "elasticloadbalancing:RemoveTags"
+      ]
+    },
+    "destroy": [
+      "elasticloadbalancing:DeleteTargetGroup"
+    ],
+    "modify": [],
+    "plan": [
+      "elasticloadbalancing:DescribeTargetGroups",
+      "elasticloadbalancing:DescribeTargetGroupAttributes",
+      "elasticloadbalancing:DescribeTags"
+    ]
+  }
+]
