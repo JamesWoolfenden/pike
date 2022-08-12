@@ -69,7 +69,6 @@
  aws_docdb_cluster_instance not implemented
  aws_docdb_cluster_parameter_group not implemented
  aws_docdb_subnet_group not implemented
- aws_ebs_volume not implemented
  aws_ec2_traffic_mirror_filter not implemented
  aws_ec2_traffic_mirror_session not implemented
  aws_ec2_traffic_mirror_target not implemented
@@ -335,9 +334,6 @@
 glacier
 -vault
 -vaultlock
-
-ebs
-  aws_ebs_volume not implemented
 
 kinesis
   aws_kinesis_firehose_delivery_stream not implemented

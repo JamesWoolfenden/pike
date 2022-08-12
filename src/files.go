@@ -202,5 +202,8 @@ var awsSqsQueue []byte
 //go:embed mapping/aws/resource/aws_sqs_queue_policy.json
 var awsSqsQueuePolicy []byte
 
+//go:embed mapping/aws/resource/aws_ebs_volume.json
+var awsEbsVolume []byte
+
 //go:embed mapping/gcp/google_compute_instance.json
 var googleComputeInstance []byte

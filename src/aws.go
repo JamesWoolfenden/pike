@@ -104,6 +104,7 @@ func GetAWSResourcePermissions(result ResourceV2) []string {
 		"aws_api_gateway_account":                            awsAPIGatewayAccount,
 		"aws_sqs_queue":                                      awsSqsQueue,
 		"aws_sqs_queue_policy":                               awsSqsQueuePolicy,
+		"aws_ebs_volume":                                     awsEbsVolume,
 	}
 
 	var Permissions []string

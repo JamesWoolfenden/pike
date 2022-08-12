@@ -5,8 +5,14 @@ resource "aws_iam_policy" "basic" {
     Statement = [
       {
         Action = [
-          "SNS:SetTopicAttributes",
-          "SNS:GetTopicAttributes"
+          "ec2:DeleteVolume",
+          #          "ec2:ModifyVolumeAttribute",
+          "ec2:CreateTags",
+          "ec2:DescribeVolumes",
+          #          "ec2:DescribeVolumeAttribute",
+          "ec2:CreateVolume",
+          "ec2:DeleteTags",
+          "ec2:ModifyVolume"
         ]
         Effect   = "Allow"
         Resource = "*"

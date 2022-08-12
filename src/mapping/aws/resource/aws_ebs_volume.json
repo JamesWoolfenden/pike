@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "ec2:DeleteVolume",
+      "ec2:DescribeVolumes",
+      "ec2:CreateVolume"
+    ],
+    "attributes": {
+      "tags": [
+        "ec2:DeleteTags",
+        "ec2:CreateTags"
+      ]
+    },
+    "destroy": [],
+    "modify": [
+      "ec2:ModifyVolume"
+    ],
+    "plan": []
+  }
+]

@@ -1,4 +1,4 @@
-.PHONY: 
+.PHONY:
 TEST?=$$(go list ./... | grep -v 'vendor'| grep -v 'scripts'| grep -v 'version')
 HOSTNAME=jameswoolfenden
 FULL_PKG_NAME=github.com/jameswoolfenden/pike
@@ -45,10 +45,10 @@ $(BIN)/%:
 	@echo "Installing tools from tools/tools.go"
 	@cat tools/tools.go | grep _ | awk -F '"' '{print $$2}' | GOBIN=$(BIN) xargs -tI {} go install {}
 
-generate-docs: 
+generate-docs:
 	echo "does nowt"
 
-docs: 
+docs:
 
 
 fmt:
@@ -56,3 +56,8 @@ fmt:
 
 vet:
 	go vet ./...
+
+bump:
+	$(eval VERSION=$(shell git describe --tags --abbrev=0 | awk -F. '{OFS="."; $$NF+=1; print $0}'))
+	git tag -a $(VERSION) -m "new release"
+	git push origin $(VERSION)
