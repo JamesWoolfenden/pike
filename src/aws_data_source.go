@@ -21,8 +21,10 @@ func GetAWSDataPermissions(result ResourceV2) []string {
 		"aws_region":                          placeholder,
 		"aws_canonical_user_id":               placeholder,
 		"aws_route53_traffic_policy_document": placeholder,
+		"aws_cloudtrail_service_account":      placeholder,
 		"aws_inspector_rules_packages":        dataAwsInspectorRulesPackages,
 		"aws_route53_zone":                    dataAwsRoute53Zone,
+		"aws_kms_ciphertext":                  dataAwsKmsCiphertext,
 	}
 
 	var Permissions []string

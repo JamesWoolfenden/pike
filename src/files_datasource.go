@@ -36,3 +36,6 @@ var dataAwsInspectorRulesPackages []byte
 
 //go:embed mapping/aws/data/aws_route53_zone.json
 var dataAwsRoute53Zone []byte
+
+//go:embed mapping/aws/data/aws_kms_ciphertext.json
+var dataAwsKmsCiphertext []byte

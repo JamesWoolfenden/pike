@@ -299,27 +299,13 @@
  aws_wafv2_web_acl_logging_configuration not implemented
  aws_workspaces_directory not implemented
  aws_workspaces_workspace not implemented
- data.aws_cloudtrail_service_account not implemented
+
  data.aws_directory_service_directory not implemented
- data.aws_ebs_default_kms_key not implemented
  data.aws_elastic_beanstalk_solution_stack not implemented
- data.aws_inspector_rules_packages not implemented
- data.aws_inspector_rules_packages not implemented
- data.aws_kms_ciphertext not implemented
- data.aws_kms_ciphertext not implemented
- data.aws_kms_ciphertext not implemented
- data.aws_kms_ciphertext not implemented
  data.aws_kms_key not implemented
  data.aws_organizations_organization not implemented
  data.aws_partition not implemented
  data.aws_partition not implemented
- data.aws_route53_zone not implemented
- data.aws_route53_zone not implemented
- data.aws_route53_zone not implemented
- data.aws_route53_zone not implemented
- data.aws_route53_zone not implemented
- data.aws_route53_zone not implemented
- data.aws_route53_zone not implemented
  data.aws_route_tables not implemented
  data.aws_route_tables not implemented
  data.aws_s3_bucket_object not implemented

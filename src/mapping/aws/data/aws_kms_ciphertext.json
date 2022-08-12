@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "kms:Encrypt"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

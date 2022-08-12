@@ -28,12 +28,12 @@ repos:
     hooks:
       - id: shell-lint
   - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.32.0
+    rev: v0.32.1
     hooks:
       - id: markdownlint
         exclude: docs/|templates/
   - repo: https://github.com/jameswoolfenden/pre-commit
-    rev: v0.1.46
+    rev: v0.1.50
     hooks:
       - id: terraform-fmt
         language_version: python3.8
@@ -44,7 +44,7 @@ repos:
       - id: goimports
       - id: golint
   - repo: https://github.com/golangci/golangci-lint
-    rev: v1.47.2
+    rev: v1.48.0
     hooks:
       - id: golangci-lint
   - repo: https://github.com/syntaqx/git-hooks
