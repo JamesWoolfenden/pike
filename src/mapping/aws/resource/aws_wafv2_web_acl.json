@@ -1,16 +1,21 @@
 [
   {
     "apply": [
+      "wafv2:CreateWebACL",
+      "wafv2:GetWebACL",
+      "wafv2:ListTagsForResource",
+      "wafv2:DeleteWebACL"
     ],
     "attributes": {
       "tags": [
-
+        "wafv2:TagResource",
+        "wafv2:UntagResource"
       ]
     },
     "destroy": [
+      "wafv2:DeleteWebACL"
     ],
-    "modify": [
-    ],
+    "modify": [],
     "plan": []
   }
 ]

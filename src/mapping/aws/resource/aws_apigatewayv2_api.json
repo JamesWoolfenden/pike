@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "apigateway:POST",
+      "apigateway:PUT",
+      "apigateway:PATCH",
+      "apigateway:GET",
+      "apigateway:DELETE"
+    ],
+    "attributes": {},
+    "destroy": [
+      "apigateway:DELETE"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

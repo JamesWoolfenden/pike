@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "route53:ListHostedZones",
+      "route53:GetHostedZone",
+      "route53:ListTagsForResource"
+    ]
+  }
+]

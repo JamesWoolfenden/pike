@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "lambda:CreateAlias",
+      "lambda:GetAlias"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "lambda:DeleteAlias",
+      "lambda:GetAlias"
+    ],
+    "modify": [
+      "lambda:UpdateAlias"
+    ],
+    "plan": []
+  }
+]

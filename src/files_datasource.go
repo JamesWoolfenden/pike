@@ -30,3 +30,9 @@ var dataAwsVpc []byte
 
 //go:embed mapping/aws/data/aws_s3_bucket.json
 var dataAwsS3Bucket []byte
+
+//go:embed mapping/aws/data/aws_inspector_rules_packages.json
+var dataAwsInspectorRulesPackages []byte
+
+//go:embed mapping/aws/data/aws_route53_zone.json
+var dataAwsRoute53Zone []byte

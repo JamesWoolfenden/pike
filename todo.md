@@ -5,24 +5,6 @@
  aws_acm_certificate_validation not implemented
  aws_acm_certificate_validation not implemented
  aws_acmpca_certificate_authority not implemented
- aws_api_gateway_api_key not implemented
- aws_api_gateway_deployment not implemented
- aws_api_gateway_integration not implemented
- aws_api_gateway_integration not implemented
- aws_api_gateway_integration_response not implemented
- aws_api_gateway_integration_response not implemented
- aws_api_gateway_integration_response not implemented
- aws_api_gateway_method not implemented
- aws_api_gateway_method not implemented
- aws_api_gateway_method_response not implemented
- aws_api_gateway_method_response not implemented
- aws_api_gateway_method_settings not implemented
- aws_api_gateway_resource not implemented
- aws_api_gateway_rest_api not implemented
- aws_api_gateway_rest_api not implemented
- aws_api_gateway_stage not implemented
- aws_api_gateway_usage_plan not implemented
- aws_api_gateway_usage_plan_key not implemented
  aws_appsync_datasource not implemented
  aws_appsync_graphql_api not implemented
  aws_appsync_resolver not implemented
@@ -218,17 +200,6 @@
  aws_kms_alias not implemented
  aws_kms_alias not implemented
  aws_lambda_layer_version not implemented
- aws_lambda_permission not implemented
- aws_lambda_permission not implemented
- aws_lambda_permission not implemented
- aws_lambda_permission not implemented
- aws_lambda_permission not implemented
- aws_lambda_permission not implemented
- aws_lambda_permission not implemented
- aws_lambda_permission not implemented
- aws_lambda_permission not implemented
- aws_lambda_permission not implemented
- aws_lambda_permission not implemented
  aws_launch_configuration not implemented
  aws_launch_configuration not implemented
  aws_launch_configuration not implemented
@@ -332,10 +303,6 @@
  aws_wafv2_rule_group not implemented
  aws_wafv2_rule_group not implemented
  aws_wafv2_rule_group not implemented
- aws_wafv2_web_acl not implemented
- aws_wafv2_web_acl not implemented
- aws_wafv2_web_acl not implemented
- aws_wafv2_web_acl not implemented
  aws_wafv2_web_acl_association not implemented
  aws_wafv2_web_acl_association not implemented
  aws_wafv2_web_acl_logging_configuration not implemented

@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "lambda:AddPermission",
+      "lambda:RemovePermission",
+      "lambda:GetPolicy",
+      "iam:PassRole"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "lambda:RemovePermission"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

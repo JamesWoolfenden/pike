@@ -55,6 +55,12 @@ var awsSecurityGroupRule []byte
 //go:embed mapping/aws/resource/aws_lambda_function.json
 var awsLambdaFunction []byte
 
+//go:embed mapping/aws/resource/aws_lambda_alias.json
+var awsLambdaAlias []byte
+
+//go:embed mapping/aws/resource/aws_lambda_permission.json
+var awsLambdaPermission []byte
+
 //go:embed mapping/aws/resource/aws_vpc.json
 var awsVpc []byte
 
@@ -145,6 +151,9 @@ var awsCloudwatchEventTarget []byte
 //go:embed mapping/aws/resource/aws_route53_record.json
 var awsRoute53Record []byte
 
+//go:embed mapping/aws/resource/aws_route53_zone.json
+var awsRoute53Zone []byte
+
 //go:embed mapping/aws/resource/aws_sns_topic.json
 var awsSnsTopic []byte
 
@@ -168,6 +177,18 @@ var awsDefaultSecurityGroup []byte
 
 //go:embed mapping/aws/resource/aws_db_subnet_group.json
 var awsDbSubnetGroup []byte
+
+//go:embed mapping/aws/resource/aws_wafv2_web_acl.json
+var awsWafv2WebACL []byte
+
+//go:embed mapping/aws/resource/aws_api_gateway_rest_api.json
+var awsAPIGatewayRestAPI []byte
+
+//go:embed mapping/aws/resource/aws_apigatewayv2_api.json
+var awsApigatewayv2Api []byte
+
+//go:embed mapping/aws/resource/aws_api_gateway_account.json
+var awsAPIGatewayAccount []byte
 
 //go:embed mapping/gcp/google_compute_instance.json
 var googleComputeInstance []byte

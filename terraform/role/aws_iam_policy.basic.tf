@@ -5,12 +5,14 @@ resource "aws_iam_policy" "basic" {
     Statement = [
       {
         Action = [
-          "s3:PutObject",
-          "s3:GetObject",
-          "kms:DescribeKey",
-          "kms:Encrypt",
-          "s3:GetObjectTagging",
-          "s3:DeleteObject"
+          "lambda:CreateAlias",
+          "lambda:DeleteAlias",
+          "lambda:GetAlias",
+          "lambda:UpdateAlias",
+          "lambda:AddPermission",
+          "lambda:RemovePermission",
+          "lambda:GetPolicy",
+          "iam:PassRole"
         ]
         Effect   = "Allow"
         Resource = "*"

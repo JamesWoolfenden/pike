@@ -1,0 +1,28 @@
+[
+  {
+    "apply": [
+      "route53:CreateHostedZone",
+      "route53:GetChange",
+      "route53:GetHostedZone",
+      "route53:ListTagsForResource",
+      "route53:ListResourceRecordSets"
+    ],
+    "attributes": {
+      "tags": [
+        "route53:ChangeTagsForResource"
+      ],
+      "vpc": [
+        "ec2:DescribeVpcs",
+        "route53:AssociateVPCWithHostedZone"
+      ]
+    },
+    "destroy": [
+      "route53:DeleteHostedZone"
+    ],
+    "modify": [
+      "route53:DeleteHostedZone",
+      "route53:ListResourceRecordSets"
+    ],
+    "plan": []
+  }
+]
