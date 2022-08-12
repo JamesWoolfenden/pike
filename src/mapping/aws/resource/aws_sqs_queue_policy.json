@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "sqs:GetQueueAttributes",
+      "sqs:ListQueueTags",
+      "sqs:SetQueueAttributes"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

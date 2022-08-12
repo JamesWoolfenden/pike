@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "sqs:CreateQueue",
+      "sqs:GetQueueAttributes",
+      "sqs:ListQueueTags",
+      "sqs:DeleteQueue",
+      "sqs:SetQueueAttributes"
+    ],
+    "attributes": {
+      "tags": [
+        "sqs:TagQueue",
+        "sqs:UntagQueue"
+      ]
+    },
+    "destroy": [
+      "sqs:DeleteQueue"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "SNS:SetTopicAttributes",
+      "SNS:GetTopicAttributes"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

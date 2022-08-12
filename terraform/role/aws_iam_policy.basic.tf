@@ -5,14 +5,8 @@ resource "aws_iam_policy" "basic" {
     Statement = [
       {
         Action = [
-          "lambda:CreateAlias",
-          "lambda:DeleteAlias",
-          "lambda:GetAlias",
-          "lambda:UpdateAlias",
-          "lambda:AddPermission",
-          "lambda:RemovePermission",
-          "lambda:GetPolicy",
-          "iam:PassRole"
+          "SNS:SetTopicAttributes",
+          "SNS:GetTopicAttributes"
         ]
         Effect   = "Allow"
         Resource = "*"

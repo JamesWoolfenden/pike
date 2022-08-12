@@ -157,6 +157,12 @@ var awsRoute53Zone []byte
 //go:embed mapping/aws/resource/aws_sns_topic.json
 var awsSnsTopic []byte
 
+//go:embed mapping/aws/resource/aws_sns_topic_subscription.json
+var awsSnsTopicSubscription []byte
+
+//go:embed mapping/aws/resource/aws_sns_topic_policy.json
+var awsSnsTopicPolicy []byte
+
 //go:embed mapping/aws/resource/aws_key_pair.json
 var awsKeyPair []byte
 
@@ -189,6 +195,12 @@ var awsApigatewayv2Api []byte
 
 //go:embed mapping/aws/resource/aws_api_gateway_account.json
 var awsAPIGatewayAccount []byte
+
+//go:embed mapping/aws/resource/aws_sqs_queue.json
+var awsSqsQueue []byte
+
+//go:embed mapping/aws/resource/aws_sqs_queue_policy.json
+var awsSqsQueuePolicy []byte
 
 //go:embed mapping/gcp/google_compute_instance.json
 var googleComputeInstance []byte

@@ -70,6 +70,8 @@ func GetAWSResourcePermissions(result ResourceV2) []string {
 		"aws_route53_record":                                 awsRoute53Record,
 		"aws_route53_zone":                                   awsRoute53Zone,
 		"aws_sns_topic":                                      awsSnsTopic,
+		"aws_sns_topic_subscription":                         awsSnsTopicSubscription,
+		"aws_sns_topic_policy":                               awsSnsTopicPolicy,
 		"aws_key_pair":                                       awsKeyPair,
 		"aws_db_instance":                                    awsDbInstance,
 		"aws_dynamodb_table":                                 awsDynamodbTable,
@@ -100,6 +102,8 @@ func GetAWSResourcePermissions(result ResourceV2) []string {
 		"aws_api_gateway_usage_plan":                         awsApigatewayv2Api,
 		"aws_api_gateway_usage_plan_key":                     awsApigatewayv2Api,
 		"aws_api_gateway_account":                            awsAPIGatewayAccount,
+		"aws_sqs_queue":                                      awsSqsQueue,
+		"aws_sqs_queue_policy":                               awsSqsQueuePolicy,
 	}
 
 	var Permissions []string

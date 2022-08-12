@@ -264,17 +264,6 @@
  aws_sfn_activity not implemented
  aws_sfn_state_machine not implemented
  aws_sfn_state_machine not implemented
- aws_sns_topic_policy not implemented
- aws_sns_topic_policy not implemented
- aws_sns_topic_subscription not implemented
- aws_sns_topic_subscription not implemented
- aws_sns_topic_subscription not implemented
- aws_sns_topic_subscription not implemented
- aws_sns_topic_subscription not implemented
- aws_sns_topic_subscription not implemented
- aws_sns_topic_subscription not implemented
- aws_sqs_queue not implemented
- aws_sqs_queue_policy not implemented
  aws_ssm_document not implemented
  aws_ssm_maintenance_window not implemented
  aws_ssm_maintenance_window_target not implemented
@@ -342,3 +331,49 @@
  data.aws_ssm_parameter not implemented
  data.aws_ssoadmin_instances not implemented
  data.aws_workspaces_bundle not implemented
+
+glacier
+-vault
+-vaultlock
+
+ebs
+  aws_ebs_volume not implemented
+
+kinesis
+  aws_kinesis_firehose_delivery_stream not implemented
+  aws_kinesis_firehose_delivery_stream not implemented
+  aws_kinesis_firehose_delivery_stream not implemented
+  aws_kinesis_firehose_delivery_stream not implemented
+  aws_kinesis_firehose_delivery_stream not implemented
+  aws_kinesis_stream not implemented
+  aws_kinesis_video_stream not implemented
+autoscaling
+   aws_autoscaling_attachment not implemented
+   aws_autoscaling_attachment not implemented
+   aws_autoscaling_group not implemented
+   aws_autoscaling_group not implemented
+   aws_autoscaling_group not implemented
+   aws_autoscaling_group not implemented
+
+beanstalk
+aws_elastic_beanstalk_application not implemented
+aws_elastic_beanstalk_application_version not implemented
+aws_elastic_beanstalk_environment not implemented
+
+elasticache
+
+redshift
+
+sagemaker
+
+lightsail
+
+efs
+
+chime
+
+cloud_directory
+
+cognito
+
+inspector
