@@ -37,5 +37,23 @@ var dataAwsInspectorRulesPackages []byte
 //go:embed mapping/aws/data/aws_route53_zone.json
 var dataAwsRoute53Zone []byte
 
+//go:embed mapping/aws/data/aws_security_group.json
+var dataAwsSecurityGroup []byte
+
+//go:embed mapping/aws/data/aws_sns_topic.json
+var dataAwsSnsTopic []byte
+
+//go:embed mapping/aws/data/aws_ssm_parameter.json
+var dataAwsSsmParameter []byte
+
 //go:embed mapping/aws/data/aws_kms_ciphertext.json
 var dataAwsKmsCiphertext []byte
+
+//go:embed mapping/aws/data/aws_kms_key.json
+var dataAwsKmsKey []byte
+
+//go:embed mapping/aws/data/aws_route_tables.json
+var dataAwsRouteTables []byte
+
+//go:embed mapping/aws/data/aws_elastic_beanstalk_solution_stack.json
+var dataAwsElasticBeanstalkSolutionStack []byte

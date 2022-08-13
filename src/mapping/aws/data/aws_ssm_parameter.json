@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "ssm:GetParameter"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

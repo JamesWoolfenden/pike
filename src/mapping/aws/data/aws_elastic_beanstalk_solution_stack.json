@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "elasticbeanstalk:ListAvailableSolutionStacks"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

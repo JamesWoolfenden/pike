@@ -5,7 +5,7 @@ resource "aws_iam_policy" "basic" {
     Statement = [
       {
         Action = [
-          "kms:Encrypt"
+          "ec2:DescribeRouteTables"
         ]
         Effect   = "Allow"
         Resource = "*"

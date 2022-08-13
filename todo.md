@@ -301,19 +301,11 @@
  aws_workspaces_workspace not implemented
 
  data.aws_directory_service_directory not implemented
- data.aws_elastic_beanstalk_solution_stack not implemented
  data.aws_kms_key not implemented
  data.aws_organizations_organization not implemented
- data.aws_partition not implemented
- data.aws_partition not implemented
  data.aws_route_tables not implemented
  data.aws_route_tables not implemented
  data.aws_s3_bucket_object not implemented
- data.aws_security_group not implemented
- data.aws_security_group not implemented
- data.aws_sns_topic not implemented
- data.aws_sns_topic not implemented
- data.aws_ssm_parameter not implemented
  data.aws_ssoadmin_instances not implemented
  data.aws_workspaces_bundle not implemented
 

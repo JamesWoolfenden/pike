@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "SNS:ListTopics"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
