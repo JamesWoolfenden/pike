@@ -300,15 +300,6 @@
  aws_workspaces_directory not implemented
  aws_workspaces_workspace not implemented
 
- data.aws_directory_service_directory not implemented
- data.aws_kms_key not implemented
- data.aws_organizations_organization not implemented
- data.aws_route_tables not implemented
- data.aws_route_tables not implemented
- data.aws_s3_bucket_object not implemented
- data.aws_ssoadmin_instances not implemented
- data.aws_workspaces_bundle not implemented
-
 glacier
 -vault
 -vaultlock

@@ -57,3 +57,8 @@ var dataAwsRouteTables []byte
 
 //go:embed mapping/aws/data/aws_elastic_beanstalk_solution_stack.json
 var dataAwsElasticBeanstalkSolutionStack []byte
+
+// todo on account that is enabled for this
+//
+//go:embed mapping/aws/data/aws_ssoadmin_instances.json
+var dataAwsSsoadminInstances []byte

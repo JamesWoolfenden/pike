@@ -5,7 +5,7 @@ resource "aws_iam_policy" "basic" {
     Statement = [
       {
         Action = [
-          "ec2:DescribeRouteTables"
+          "sso:ListInstances"
         ]
         Effect   = "Allow"
         Resource = "*"

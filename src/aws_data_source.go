@@ -33,6 +33,9 @@ func GetAWSDataPermissions(result ResourceV2) []string {
 		"aws_ssm_parameter":                    dataAwsSsmParameter,
 		"aws_route_tables":                     dataAwsRouteTables,
 		"aws_elastic_beanstalk_solution_stack": dataAwsElasticBeanstalkSolutionStack,
+		"aws_ssoadmin_instances":               dataAwsSsoadminInstances,
+		"aws_s3_bucket_object":                 placeholder,
+		"aws_s3_object":                        placeholder,
 	}
 
 	var Permissions []string

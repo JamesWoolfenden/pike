@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "organizations:DescribeOrganization",
+      "organizations:ListAccounts",
+      "organizations:ListRoots",
+      "organizations:ListAWSServiceAccessForOrganization"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
