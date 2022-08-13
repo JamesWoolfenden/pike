@@ -105,6 +105,11 @@ func GetAWSResourcePermissions(result ResourceV2) []string {
 		"aws_sqs_queue":                                      awsSqsQueue,
 		"aws_sqs_queue_policy":                               awsSqsQueuePolicy,
 		"aws_ebs_volume":                                     awsEbsVolume,
+		"aws_autoscaling_group":                              awsAutoscalingGroup,
+		"aws_autoscaling_group_attachment":                   awsAutoscalingGroupAttachment,
+		"aws_elb":                                            awsElb,
+		"aws_internet_gateway":                               awsInternetGateway,
+		"aws_launch_configuration":                           awsLaunchConfiguration,
 	}
 
 	var Permissions []string

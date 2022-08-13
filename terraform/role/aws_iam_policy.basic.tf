@@ -5,7 +5,9 @@ resource "aws_iam_policy" "basic" {
     Statement = [
       {
         Action = [
-          "sso:ListInstances"
+          "autoscaling:AttachLoadBalancers",
+          "autoscaling:DescribeAutoScalingGroups",
+          "autoscaling:DetachLoadBalancers"
         ]
         Effect   = "Allow"
         Resource = "*"

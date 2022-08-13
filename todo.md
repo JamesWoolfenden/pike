@@ -10,12 +10,6 @@
  aws_appsync_resolver not implemented
  aws_athena_database not implemented
  aws_athena_workgroup not implemented
- aws_autoscaling_attachment not implemented
- aws_autoscaling_attachment not implemented
- aws_autoscaling_group not implemented
- aws_autoscaling_group not implemented
- aws_autoscaling_group not implemented
- aws_autoscaling_group not implemented
  aws_batch_compute_environment not implemented
  aws_batch_job_definition not implemented
  aws_batch_job_queue not implemented
@@ -110,14 +104,6 @@
  aws_elasticache_subnet_group not implemented
  aws_elasticsearch_domain not implemented
  aws_elasticsearch_domain_policy not implemented
- aws_elb not implemented
- aws_elb not implemented
- aws_elb not implemented
- aws_elb not implemented
- aws_elb not implemented
- aws_elb not implemented
- aws_elb not implemented
- aws_elb not implemented
  aws_emr_cluster not implemented
  aws_emr_security_configuration not implemented
  aws_flow_log not implemented
@@ -181,9 +167,6 @@
  aws_inspector_assessment_target not implemented
  aws_inspector_assessment_template not implemented
  aws_inspector_resource_group not implemented
- aws_internet_gateway not implemented
- aws_internet_gateway not implemented
- aws_internet_gateway not implemented
  aws_kinesis_firehose_delivery_stream not implemented
  aws_kinesis_firehose_delivery_stream not implemented
  aws_kinesis_firehose_delivery_stream not implemented
@@ -199,10 +182,6 @@
  aws_kms_alias not implemented
  aws_kms_alias not implemented
  aws_lambda_layer_version not implemented
- aws_launch_configuration not implemented
- aws_launch_configuration not implemented
- aws_launch_configuration not implemented
- aws_launch_configuration not implemented
  aws_launch_template not implemented
  aws_lb_listener_rule not implemented
  aws_media_convert_queue not implemented
@@ -312,13 +291,6 @@ kinesis
   aws_kinesis_firehose_delivery_stream not implemented
   aws_kinesis_stream not implemented
   aws_kinesis_video_stream not implemented
-autoscaling
-   aws_autoscaling_attachment not implemented
-   aws_autoscaling_attachment not implemented
-   aws_autoscaling_group not implemented
-   aws_autoscaling_group not implemented
-   aws_autoscaling_group not implemented
-   aws_autoscaling_group not implemented
 
 beanstalk
 aws_elastic_beanstalk_application not implemented
@@ -342,3 +314,10 @@ cloud_directory
 cognito
 
 inspector
+
+2022/08/13 23:07:24 aws_placement_group not implemented
+2022/08/13 23:07:24 aws_network_interface not implemented
+2022/08/13 23:07:24 aws_ec2_capacity_reservation not implemented
+2022/08/13 23:07:24 aws_ec2_capacity_reservation not implemented
+2022/08/13 23:07:24 aws_volume_attachment not implemented
+2022/08/13 23:07:24 aws_spot_instance_request not implemented

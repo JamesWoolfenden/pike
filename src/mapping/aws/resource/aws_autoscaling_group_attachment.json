@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "autoscaling:AttachLoadBalancers",
+      "autoscaling:DescribeAutoScalingGroups",
+      "autoscaling:DetachLoadBalancers"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "autoscaling:DescribeAutoScalingGroups",
+      "autoscaling:DetachLoadBalancers"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

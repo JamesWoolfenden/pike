@@ -1,0 +1,26 @@
+[
+  {
+    "apply": [
+      "elasticloadbalancing:CreateLoadBalancer",
+      "elasticloadbalancing:CreateLoadBalancerListeners",
+      "elasticloadbalancing:DescribeLoadBalancers",
+      "elasticloadbalancing:DescribeLoadBalancerAttributes",
+      "ec2:DescribeSecurityGroups",
+      "elasticloadbalancing:DescribeTags",
+      "elasticloadbalancing:DeleteLoadBalancer",
+      "elasticloadbalancing:ModifyLoadBalancerAttributes",
+      "elasticloadbalancing:AttachLoadBalancerToSubnets"
+    ],
+    "attributes": {
+      "tags": [
+        "elasticloadbalancing:AddTags",
+        "elasticloadbalancing:RemoveTags"
+      ]
+    },
+    "destroy": [
+      "elasticloadbalancing:DeleteLoadBalancer"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

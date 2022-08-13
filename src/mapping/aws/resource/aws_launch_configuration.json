@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeImages",
+      "autoscaling:CreateLaunchConfiguration",
+      "autoscaling:DescribeLaunchConfigurations",
+      "autoscaling:DeleteLaunchConfiguration"
+    ],
+    "attributes": {
+      "tags": [
+        "autoscaling:CreateOrUpdateTags",
+        "autoscaling:DeleteTags"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

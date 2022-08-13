@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "autoscaling:CreateAutoScalingGroup",
+      "autoscaling:DescribeAutoScalingGroups",
+      "autoscaling:DescribeScalingActivities",
+      "autoscaling:UpdateAutoScalingGroup",
+      "autoscaling:DeleteAutoScalingGroup"
+    ],
+    "attributes": {
+      "tags": [
+        "autoscaling:CreateOrUpdateTags",
+        "autoscaling:DeleteTags"
+      ]
+    },
+    "destroy": [
+      "autoscaling:UpdateAutoScalingGroup",
+      "autoscaling:DeleteAutoScalingGroup"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

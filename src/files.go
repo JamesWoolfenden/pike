@@ -205,5 +205,20 @@ var awsSqsQueuePolicy []byte
 //go:embed mapping/aws/resource/aws_ebs_volume.json
 var awsEbsVolume []byte
 
+//go:embed mapping/aws/resource/aws_autoscaling_group.json
+var awsAutoscalingGroup []byte
+
+//go:embed mapping/aws/resource/aws_autoscaling_group_attachment.json
+var awsAutoscalingGroupAttachment []byte
+
+//go:embed mapping/aws/resource/aws_elb.json
+var awsElb []byte
+
+//go:embed mapping/aws/resource/aws_internet_gateway.json
+var awsInternetGateway []byte
+
+//go:embed mapping/aws/resource/aws_launch_configuration.json
+var awsLaunchConfiguration []byte
+
 //go:embed mapping/gcp/google_compute_instance.json
 var googleComputeInstance []byte

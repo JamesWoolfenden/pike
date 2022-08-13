@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "ec2:CreateInternetGateway",
+      "ec2:DescribeInternetGateways",
+      "ec2:DeleteInternetGateway"
+    ],
+    "attributes": {
+      "tags": [
+        "ec2:CreateTags",
+        "ec2:DeleteTags"
+      ],
+      "vpc_id": [
+        "ec2:AttachInternetGateway"
+      ]
+    },
+    "destroy": [
+      "ec2:DetachInternetGateway"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]
