@@ -1,0 +1,28 @@
+[
+  {
+    "apply": [
+      "ec2:ReleaseAddress",
+      "ec2:DescribeAddresses",
+      "ec2:AllocateAddress",
+      "ec2:ReleaseAddress",
+      "ec2:AssociateAddress"
+    ],
+    "attributes": {
+      "instance": [
+        "ec2:AssociateAddress"
+      ],
+      "network_interface": [
+        "ec2:AssociateAddress"
+      ],
+      "tags": [
+        "ec2:DeleteTags",
+        "ec2:CreateTags"
+      ]
+    },
+    "destroy": [
+      "ec2:DisassociateAddress"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

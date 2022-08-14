@@ -13,7 +13,6 @@
  aws_batch_compute_environment not implemented
  aws_batch_job_definition not implemented
  aws_batch_job_queue not implemented
- aws_budgets_budget not implemented
  aws_cloudfront_distribution not implemented
  aws_cloudfront_distribution not implemented
  aws_cloudfront_distribution not implemented
@@ -92,9 +91,6 @@
  aws_efs_file_system not implemented
  aws_efs_file_system not implemented
  aws_efs_mount_target not implemented
- aws_eip not implemented
- aws_eip not implemented
- aws_eip not implemented
  aws_elastic_beanstalk_application not implemented
  aws_elastic_beanstalk_application_version not implemented
  aws_elastic_beanstalk_environment not implemented
@@ -167,13 +163,6 @@
  aws_inspector_assessment_target not implemented
  aws_inspector_assessment_template not implemented
  aws_inspector_resource_group not implemented
- aws_kinesis_firehose_delivery_stream not implemented
- aws_kinesis_firehose_delivery_stream not implemented
- aws_kinesis_firehose_delivery_stream not implemented
- aws_kinesis_firehose_delivery_stream not implemented
- aws_kinesis_firehose_delivery_stream not implemented
- aws_kinesis_stream not implemented
- aws_kinesis_video_stream not implemented
  aws_kms_alias not implemented
  aws_kms_alias not implemented
  aws_kms_alias not implemented
@@ -281,15 +270,6 @@
 glacier
 -vault
 -vaultlock
-
-kinesis
-  aws_kinesis_firehose_delivery_stream not implemented
-  aws_kinesis_firehose_delivery_stream not implemented
-  aws_kinesis_firehose_delivery_stream not implemented
-  aws_kinesis_firehose_delivery_stream not implemented
-  aws_kinesis_firehose_delivery_stream not implemented
-  aws_kinesis_stream not implemented
-  aws_kinesis_video_stream not implemented
 
 beanstalk
 aws_elastic_beanstalk_application not implemented

@@ -5,10 +5,13 @@ resource "aws_iam_policy" "basic" {
     Statement = [
       {
         Action = [
-          "ec2:DescribeVolumes",
-          "ec2:DescribeInstances",
-          "ec2:AttachVolume",
-          "ec2:DetachVolume"
+          "kinesisvideo:CreateStream",
+          "kinesisvideo:DescribeStream",
+          "kinesisvideo:ListTagsForStream",
+          "kinesisvideo:DeleteStream",
+          "kinesisvideo:UpdateStream",
+          "kinesisvideo:TagStream",
+          "kinesisvideo:UntagStream"
         ]
         Effect   = "Allow"
         Resource = "*"

@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "kinesisvideo:CreateStream",
+      "kinesisvideo:DescribeStream",
+      "kinesisvideo:ListTagsForStream",
+      "kinesisvideo:DeleteStream",
+      "kinesisvideo:UpdateStream",
+      "kinesisvideo:TagStream",
+      "kinesisvideo:UntagStream"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "kinesisvideo:DeleteStream"
+    ],
+    "modify": [
+      "kinesisvideo:UpdateStream"
+    ],
+    "plan": []
+  }
+]

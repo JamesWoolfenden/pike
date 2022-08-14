@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "budgets:ModifyBudget",
+      "budgets:ViewBudget"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

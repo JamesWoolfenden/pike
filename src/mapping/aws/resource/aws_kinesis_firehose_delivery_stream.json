@@ -1,8 +1,17 @@
 [
   {
-    "apply": [],
+    "apply": [
+      "firehose:DescribeDeliveryStream",
+      "firehose:DeleteDeliveryStream",
+      "iam:PassRole",
+      "firehose:CreateDeliveryStream",
+      "firehose:ListTagsForDeliveryStream"
+    ],
     "attributes": {
-      "tags": []
+      "tags": [
+        "firehose:TagDeliveryStream",
+        "firehose:UntagDeliveryStream"
+      ]
     },
     "destroy": [],
     "modify": [],

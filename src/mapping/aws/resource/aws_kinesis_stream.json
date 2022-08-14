@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "kinesis:CreateStream",
+      "kinesis:DescribeStreamSummary",
+      "kinesis:IncreaseStreamRetentionPeriod",
+      "kinesis:ListTagsForStream",
+      "kinesis:DeleteStream",
+      "kinesis:EnableEnhancedMonitoring"
+    ],
+    "attributes": {
+      "tags": [
+        "kinesis:AddTagsToStream",
+        "kinesis:RemoveTagsFromStream"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

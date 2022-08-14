@@ -115,6 +115,11 @@ func GetAWSResourcePermissions(result ResourceV2) []string {
 		"aws_placement_group":                                awsPlacementGroup,
 		"aws_spot_instance_request":                          awsSpotInstanceRequest,
 		"aws_volume_attachment":                              awsVolumeAttachment,
+		"aws_budgets_budgets":                                awsBudgetsBudgets,
+		"aws_eip":                                            awsEip,
+		"aws_kinesis_firehose_delivery_stream":               awsKinesisFirehoseDeliveryStream,
+		"aws_kinesis_stream":                                 awsKinesisStream,
+		"aws_kinesis_video_stream":                           awsKinesisVideoStream,
 	}
 
 	var Permissions []string

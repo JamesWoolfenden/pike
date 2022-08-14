@@ -235,5 +235,20 @@ var awsSpotInstanceRequest []byte
 //go:embed mapping/aws/resource/aws_volume_attachment.json
 var awsVolumeAttachment []byte
 
+//go:embed mapping/aws/resource/aws_eip.json
+var awsEip []byte
+
+//go:embed mapping/aws/resource/aws_kinesis_firehose_delivery_stream.json
+var awsKinesisFirehoseDeliveryStream []byte
+
+//go:embed mapping/aws/resource/aws_kinesis_stream.json
+var awsKinesisStream []byte
+
+//go:embed mapping/aws/resource/aws_kinesis_video_stream.json
+var awsKinesisVideoStream []byte
+
+//go:embed mapping/aws/resource/aws_budgets_budgets.json
+var awsBudgetsBudgets []byte
+
 //go:embed mapping/gcp/google_compute_instance.json
 var googleComputeInstance []byte
