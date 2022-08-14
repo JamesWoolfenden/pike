@@ -5,9 +5,10 @@ resource "aws_iam_policy" "basic" {
     Statement = [
       {
         Action = [
-          "autoscaling:AttachLoadBalancers",
-          "autoscaling:DescribeAutoScalingGroups",
-          "autoscaling:DetachLoadBalancers"
+          "ec2:DescribeVolumes",
+          "ec2:DescribeInstances",
+          "ec2:AttachVolume",
+          "ec2:DetachVolume"
         ]
         Effect   = "Allow"
         Resource = "*"

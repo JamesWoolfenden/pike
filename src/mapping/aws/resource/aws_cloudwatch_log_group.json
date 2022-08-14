@@ -1,28 +1,29 @@
 [
   {
-    "apply": [          
+    "apply": [
       "logs:CreateLogGroup",
       "logs:DescribeLogGroups",
       "logs:ListTagsLogGroup",
       "logs:DeleteLogGroup"
     ],
     "attributes": {
-      "tags": [ 
+      "kms_key_id": [
+        "logs:AssociateKmsKey",
+        "logs:DisassociateKmsKey"
+      ],
+      "retention_in_days": [
+        "logs:PutRetentionPolicy",
+        "logs:DeleteRetentionPolicy"
+      ],
+      "tags": [
         "logs:TagLogGroup",
         "logs:UntagLogGroup"
-      ],
-      "retention_in_days":[
-        "logs:PutRetentionPolicy",
-        "logs:DeleteRetentionPolicy"],
-      "kms_key_id":[
-        "logs:AssociateKmsKey", 
-        "logs:DisassociateKmsKey"]
+      ]
     },
     "destroy": [
       "logs:DeleteLogGroup"
     ],
-    "modify": [
-    ],
+    "modify": [],
     "plan": []
   }
 ]

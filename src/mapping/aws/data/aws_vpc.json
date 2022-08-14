@@ -5,14 +5,10 @@
       "ec2:DescribeVpcAttribute"
     ],
     "attributes": {
-      "tags": [
-
-      ]
+      "tags": []
     },
-    "destroy": [
-    ],
-    "modify": [
-    ],
+    "destroy": [],
+    "modify": [],
     "plan": []
   }
 ]

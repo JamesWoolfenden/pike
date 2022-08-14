@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeVolumes",
+      "ec2:DescribeInstances",
+      "ec2:AttachVolume"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "ec2:DetachVolume"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

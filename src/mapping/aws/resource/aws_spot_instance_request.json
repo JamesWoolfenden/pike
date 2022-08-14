@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "ec2:RunInstances",
+      "ec2:DescribeInstances",
+      "ec2:DescribeInstanceTypes",
+      "ec2:DescribeTags",
+      "ec2:DescribeInstanceAttribute",
+      "ec2:DescribeInstanceCreditSpecifications",
+      "ec2:TerminateInstances",
+      "ec2:DescribeVolumes",
+      "ec2:DescribeInstances",
+      "ec2:RequestSpotInstances",
+      "ec2:DescribeSpotInstanceRequests",
+      "ec2:CancelSpotInstanceRequests"
+    ],
+    "attributes": {
+      "tags": [
+        "ec2:CreateTags",
+        "ec2:DeleteTags"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

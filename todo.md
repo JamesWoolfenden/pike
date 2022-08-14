@@ -249,7 +249,6 @@
  aws_ssm_patch_group not implemented
  aws_ssoadmin_permission_set not implemented
  aws_ssoadmin_permission_set_inline_policy not implemented
- aws_volume_attachment not implemented
  aws_vpc_endpoint not implemented
  aws_vpc_endpoint not implemented
  aws_vpc_endpoint_service not implemented
@@ -314,10 +313,3 @@ cloud_directory
 cognito
 
 inspector
-
-2022/08/13 23:07:24 aws_placement_group not implemented
-2022/08/13 23:07:24 aws_network_interface not implemented
-2022/08/13 23:07:24 aws_ec2_capacity_reservation not implemented
-2022/08/13 23:07:24 aws_ec2_capacity_reservation not implemented
-2022/08/13 23:07:24 aws_volume_attachment not implemented
-2022/08/13 23:07:24 aws_spot_instance_request not implemented

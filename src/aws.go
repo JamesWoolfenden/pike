@@ -110,6 +110,11 @@ func GetAWSResourcePermissions(result ResourceV2) []string {
 		"aws_elb":                                            awsElb,
 		"aws_internet_gateway":                               awsInternetGateway,
 		"aws_launch_configuration":                           awsLaunchConfiguration,
+		"aws_ec2_capacity_reservation":                       awsEc2CapacityReservation,
+		"aws_network_interface":                              awsNetworkInterface,
+		"aws_placement_group":                                awsPlacementGroup,
+		"aws_spot_instance_request":                          awsSpotInstanceRequest,
+		"aws_volume_attachment":                              awsVolumeAttachment,
 	}
 
 	var Permissions []string

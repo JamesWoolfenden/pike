@@ -220,5 +220,20 @@ var awsInternetGateway []byte
 //go:embed mapping/aws/resource/aws_launch_configuration.json
 var awsLaunchConfiguration []byte
 
+//go:embed mapping/aws/resource/aws_ec2_capacity_reservation.json
+var awsEc2CapacityReservation []byte
+
+//go:embed mapping/aws/resource/aws_network_interface.json
+var awsNetworkInterface []byte
+
+//go:embed mapping/aws/resource/aws_placement_group.json
+var awsPlacementGroup []byte
+
+//go:embed mapping/aws/resource/aws_spot_instance_request.json
+var awsSpotInstanceRequest []byte
+
+//go:embed mapping/aws/resource/aws_volume_attachment.json
+var awsVolumeAttachment []byte
+
 //go:embed mapping/gcp/google_compute_instance.json
 var googleComputeInstance []byte

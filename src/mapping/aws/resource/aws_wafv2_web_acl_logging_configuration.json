@@ -1,16 +1,11 @@
 [
   {
-    "apply": [
-    ],
+    "apply": [],
     "attributes": {
-      "tags": [
-
-      ]
+      "tags": []
     },
-    "destroy": [
-    ],
-    "modify": [
-    ],
+    "destroy": [],
+    "modify": [],
     "plan": []
   }
 ]

@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "ec2:CreatePlacementGroup",
+      "ec2:DescribeAccountAttributes",
+      "ec2:DescribePlacementGroups"
+    ],
+    "attributes": {
+      "tags": [
+        "ec2:CreateTags",
+        "ec2:DeleteTags"
+      ]
+    },
+    "destroy": [
+      "ec2:DeletePlacementGroup"
+    ],
+    "modify": [],
+    "plan": [
+      "ec2:DescribePlacementGroups"
+    ]
+  }
+]

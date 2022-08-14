@@ -308,15 +308,16 @@ var securityGroup []byte
 
 ### Add to provider Scan
 
-Once you have added the json import above you just need to update the lookup table so we can read it and get the permissions:
+Once you have added the json import above you just need to update the lookup table,
+so we can read it and get the permissions:
 
 ```go
 func GetAWSResourcePermissions(result template) []interface{} {
-   	TFLookup := map[string]interface{}{
-		"aws_s3_bucket":            awsS3Bucket,
-		"aws_s3_bucket_acl":        awsS3BucketACL,
-+       	"aws_security_group":       awsSecurityGroup,
-     
+    TFLookup := map[string]interface{}{
+        "aws_s3_bucket":            awsS3Bucket,
+        "aws_s3_bucket_acl":        awsS3BucketACL,
++         "aws_security_group":       awsSecurityGroup,
+
 ```
 
 Also add an example Terraform file into the folder terraform/backups.
