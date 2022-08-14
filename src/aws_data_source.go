@@ -27,6 +27,7 @@ func GetAWSDataPermissions(result ResourceV2) []string {
 		"aws_route53_zone":                     dataAwsRoute53Zone,
 		"aws_kms_ciphertext":                   dataAwsKmsCiphertext,
 		"aws_kms_key":                          dataAwsKmsKey,
+		"aws_ebs_default_kms_key":              dataAwsEbsDefaultKmsKey,
 		"aws_security_group":                   dataAwsSecurityGroup,
 		"aws_security_groups":                  dataAwsSecurityGroup,
 		"aws_sns_topic":                        dataAwsSnsTopic,
@@ -34,6 +35,7 @@ func GetAWSDataPermissions(result ResourceV2) []string {
 		"aws_route_tables":                     dataAwsRouteTables,
 		"aws_elastic_beanstalk_solution_stack": dataAwsElasticBeanstalkSolutionStack,
 		"aws_ssoadmin_instances":               dataAwsSsoadminInstances,
+		"aws_organizations_organization":       dataAwsOrganizationsOrganization,
 		"aws_s3_bucket_object":                 placeholder,
 		"aws_s3_object":                        placeholder,
 	}

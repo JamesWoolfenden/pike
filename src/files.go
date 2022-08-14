@@ -208,8 +208,8 @@ var awsEbsVolume []byte
 //go:embed mapping/aws/resource/aws_autoscaling_group.json
 var awsAutoscalingGroup []byte
 
-//go:embed mapping/aws/resource/aws_autoscaling_group_attachment.json
-var awsAutoscalingGroupAttachment []byte
+//go:embed mapping/aws/resource/aws_autoscaling_attachment.json
+var awsAutoscalingAttachment []byte
 
 //go:embed mapping/aws/resource/aws_elb.json
 var awsElb []byte
@@ -247,8 +247,8 @@ var awsKinesisStream []byte
 //go:embed mapping/aws/resource/aws_kinesis_video_stream.json
 var awsKinesisVideoStream []byte
 
-//go:embed mapping/aws/resource/aws_budgets_budgets.json
-var awsBudgetsBudgets []byte
+//go:embed mapping/aws/resource/aws_budgets_budget.json
+var awsBudgetsBudget []byte
 
 //go:embed mapping/gcp/google_compute_instance.json
 var googleComputeInstance []byte

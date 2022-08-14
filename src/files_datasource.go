@@ -58,6 +58,12 @@ var dataAwsRouteTables []byte
 //go:embed mapping/aws/data/aws_elastic_beanstalk_solution_stack.json
 var dataAwsElasticBeanstalkSolutionStack []byte
 
+//go:embed mapping/aws/data/aws_organizations_organization.json
+var dataAwsOrganizationsOrganization []byte
+
+//go:embed mapping/aws/data/aws_ebs_default_kms_key.json
+var dataAwsEbsDefaultKmsKey []byte
+
 // todo on account that is enabled for this
 //
 //go:embed mapping/aws/data/aws_ssoadmin_instances.json
