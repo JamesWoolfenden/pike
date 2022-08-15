@@ -13,23 +13,21 @@ import (
 //go:embed terraform.policy.template
 var policyTemplate []byte
 
-// Policy creates iam policies
-type Policy struct {
-	Version   string `json:"Version"`
-	Statement struct {
-		Effect   string   `json:"Effect"`
-		Action   []string `json:"Action"`
-		Resource string   `json:"Resource"`
-	} `json:"Statement"`
-}
-
 // NewPolicy constructor
 func NewPolicy(Actions []string) Policy {
 	something := Policy{}
 	something.Version = "2012-10-17"
-	something.Statement.Effect = "Allow"
-	something.Statement.Action = Actions
-	something.Statement.Resource = "*"
+	var state Statement
+
+	state.Effect = "Allow"
+	state.Sid = "VisualEditor0"
+	state.Action = Actions
+	state.Resource = "*"
+
+	var statements []Statement
+
+	statements = append(statements, state)
+	something.Statements = statements
 	return something
 }
 

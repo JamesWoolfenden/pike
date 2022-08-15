@@ -2,11 +2,14 @@ package pike
 
 import (
 	"context"
+	"encoding/json"
 	"errors"
 	"github.com/aws/aws-sdk-go-v2/aws"
 	"github.com/aws/aws-sdk-go-v2/config"
 	"github.com/aws/aws-sdk-go-v2/service/iam"
 	"log"
+	"net/url"
+	"sort"
 	"time"
 )
 
@@ -41,7 +44,7 @@ func WaitForPolicyChange(client *iam.Client, arn string, Version string, Wait in
 			return nil, i
 		}
 	}
-	return errors.New("Wait expired with no change"), Wait
+	return errors.New("wait expired with no change"), Wait
 }
 
 func GetVersion(client *iam.Client, PolicyArn string) string {
@@ -52,4 +55,38 @@ func GetVersion(client *iam.Client, PolicyArn string) string {
 		log.Fatal(err)
 	}
 	return *(output.Policy.DefaultVersionId)
+}
+
+func GetPolicyVersion(client *iam.Client, PolicyArn string, Version string) (string, error) {
+	output, err := client.GetPolicyVersion(context.TODO(), &iam.GetPolicyVersionInput{PolicyArn: aws.String(PolicyArn), VersionId: &Version})
+
+	if err != nil {
+		return "", err
+	}
+
+	Policy, err := url.QueryUnescape(*(output.PolicyVersion.Document))
+
+	fixed, err := SortActions(Policy)
+
+	if err != nil {
+		return "", err
+	}
+
+	return string(fixed), err
+}
+
+func SortActions(myPolicy string) ([]byte, error) {
+	var raw Policy
+	err := json.Unmarshal([]byte(myPolicy), &raw)
+
+	var blocks []Statement
+	for _, block := range raw.Statements {
+		sort.Strings(block.Action)
+		blocks = append(blocks, block)
+	}
+
+	raw.Statements = blocks
+
+	fixed, err := json.Marshal(raw)
+	return fixed, err
 }

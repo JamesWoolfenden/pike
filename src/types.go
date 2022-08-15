@@ -15,3 +15,16 @@ type ResourceV2 struct {
 	Provider     string
 	Attributes   []string
 }
+
+// Policy creates iam policies
+type Policy struct {
+	Version    string      `json:"Version"`
+	Statements []Statement `json:"Statement"`
+}
+
+type Statement struct {
+	Sid      string   `json:"Sid"`
+	Effect   string   `json:"Effect"`
+	Action   []string `json:"Action"`
+	Resource string   `json:"Resource"`
+}
