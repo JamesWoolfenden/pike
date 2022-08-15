@@ -15,6 +15,8 @@ import (
 func main() {
 	var directory string
 	var output string
+	var arn string
+	var wait int
 
 	app := &cli.App{
 		EnableBashCompletion: true,
@@ -27,7 +29,8 @@ func main() {
 			&cli.StringFlag{
 				Name:        "directory",
 				Aliases:     []string{"d"},
-				Usage:       "Directory to scan",
+				Usage:       "Directory to scan (defaults to .)",
+				Value:       ".",
 				Destination: &directory,
 			},
 			&cli.StringFlag{
@@ -37,6 +40,22 @@ func main() {
 				Destination: &output,
 				EnvVars:     []string{"OUTPUT"},
 			},
+			&cli.StringFlag{
+				Name:        "arn",
+				Aliases:     []string{"a"},
+				Usage:       "Policy identifier e.g. arn",
+				Value:       "arn:aws:iam::680235478471:policy/basic",
+				Destination: &arn,
+				EnvVars:     []string{"ARN"},
+			},
+			&cli.IntFlag{
+				Name:        "wait",
+				Aliases:     []string{"W"},
+				Value:       100,
+				Usage:       "Time to wait for policy change (in tenths of seconds)",
+				Destination: &wait,
+				EnvVars:     []string{"WAIT"},
+			},
 		},
 		Commands: []*cli.Command{
 			{
@@ -45,6 +64,22 @@ func main() {
 				Usage:   "scan a directory for IAM code",
 				Action: func(*cli.Context) error {
 					return pike.Scan(directory, output)
+				},
+			},
+			{
+				Name:    "compare",
+				Aliases: []string{"c"},
+				Usage:   "policy comparison of deployed versus IAC",
+				Action: func(*cli.Context) error {
+					return pike.Compare(directory, arn)
+				},
+			},
+			{
+				Name:    "watch",
+				Aliases: []string{"w"},
+				Usage:   "Waits for policy update",
+				Action: func(*cli.Context) error {
+					return pike.Watch(arn, wait)
 				},
 			},
 			{
