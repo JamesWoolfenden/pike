@@ -227,24 +227,27 @@ USAGE:
    pike [global options] command [command options] [arguments...]
 
 VERSION:
-   v0.1.12
+   v0.1.26
 
 AUTHOR:
    James Woolfenden <support@bridgecrew.io>
 
 COMMANDS:
-   readme, r   Looks in dir for a README.md and updates it with the Policy required
-                to build the code
+   compare, c  policy comparison of deployed versus IAC
+   readme, r   Looks in dir for a README.md and updates it with the Policy required to build the code
    scan, s     scan a directory for IAM code
    version, v  Outputs the application version
+   watch, w    Waits for policy update
    help, h     Shows a list of commands or help for one command
 
 GLOBAL OPTIONS:
+   --arn value, -a value        Policy identifier e.g. arn (default: "arn:aws:iam::680235478471:policy/basic") [%ARN%]
    --config FILE, -c FILE       Load configuration from FILE
-   --directory value, -d value  Directory to scan
+   --directory value, -d value  Directory to scan (defaults to .) (default: ".")
    --help, -h                   show help (default: false)
-   --output json, -o json       Output types e.g. json terraform [$OUTPUT]
+   --output json, -o json       Output types e.g. json terraform [%OUTPUT%]
    --version, -v                print the version (default: false)
+   --wait value, -W value       Time to wait for policy change (in tenths of seconds) (default: 100) [%WAIT%]
 
 ```
 
