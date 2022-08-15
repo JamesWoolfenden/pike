@@ -120,6 +120,8 @@ func GetAWSResourcePermissions(result ResourceV2) []string {
 		"aws_kinesis_firehose_delivery_stream":               awsKinesisFirehoseDeliveryStream,
 		"aws_kinesis_stream":                                 awsKinesisStream,
 		"aws_kinesis_video_stream":                           awsKinesisVideoStream,
+		"aws_elastic_beanstalk_application":                  awsElasticBeanstalkApplication,
+		"aws_flow_log":                                       awsFlowLog,
 	}
 
 	var Permissions []string

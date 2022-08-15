@@ -91,7 +91,6 @@
  aws_efs_file_system not implemented
  aws_efs_file_system not implemented
  aws_efs_mount_target not implemented
- aws_elastic_beanstalk_application not implemented
  aws_elastic_beanstalk_application_version not implemented
  aws_elastic_beanstalk_environment not implemented
  aws_elasticache_cluster not implemented
@@ -102,8 +101,6 @@
  aws_elasticsearch_domain_policy not implemented
  aws_emr_cluster not implemented
  aws_emr_security_configuration not implemented
- aws_flow_log not implemented
- aws_flow_log not implemented
  aws_fsx_openzfs_file_system not implemented
  aws_fsx_openzfs_snapshot not implemented
  aws_fsx_openzfs_volume not implemented
@@ -272,7 +269,6 @@ glacier
 -vaultlock
 
 beanstalk
-aws_elastic_beanstalk_application not implemented
 aws_elastic_beanstalk_application_version not implemented
 aws_elastic_beanstalk_environment not implemented
 

@@ -1,0 +1,29 @@
+[
+  {
+    "apply": [
+      "elasticbeanstalk:CreateApplication",
+      "ec2:DescribeAccountAttributes",
+      "elasticbeanstalk:DeleteApplication",
+      "elasticbeanstalk:DescribeApplications",
+      "s3:ListBucket",
+      "s3:GetBucketLocation",
+      "elasticbeanstalk:ListTagsForResource"
+    ],
+    "attributes": {
+      "appversion_lifecycle": [
+        "iam:PassRole"
+      ],
+      "tags": [
+        "elasticbeanstalk:AddTags",
+        "elasticbeanstalk:RemoveTags"
+      ]
+    },
+    "destroy": [
+      "elasticbeanstalk:DeleteApplication"
+    ],
+    "modify": [
+      "elasticbeanstalk:UpdateApplicationResourceLifecycle"
+    ],
+    "plan": []
+  }
+]

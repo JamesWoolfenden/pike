@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "ec2:CreateFlowLogs",
+      "ec2:DescribeAccountAttributes",
+      "ec2:DescribeFlowLogs",
+      "iam:PassRole",
+      "ec2:DeleteFlowLogs"
+    ],
+    "attributes": {
+      "tags": [
+        "ec2:DeleteTags",
+        "ec2:CreateTags"
+      ]
+    },
+    "destroy": [
+      "ec2:DeleteFlowLogs"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

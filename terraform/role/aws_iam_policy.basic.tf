@@ -1,15 +1,22 @@
 resource "aws_iam_policy" "basic" {
   name = "basic"
   policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [
+    "Version" : "2012-10-17",
+    "Statement" : [
       {
-        Action = [
-          "kinesisvideo:CreateStream"
-        ]
-        Effect   = "Allow"
-        Resource = "*"
-      },
+        "Sid" : "ElasticBeanstalkReadOnlyAccess",
+        "Effect" : "Allow",
+        "Action" : [
+          "ec2:DeleteTags",
+          "ec2:CreateFlowLogs",
+          "ec2:CreateTags",
+          "ec2:DescribeAccountAttributes",
+          "ec2:DescribeFlowLogs",
+          "iam:PassRole",
+          "ec2:DeleteFlowLogs"
+        ],
+        "Resource" : "*"
+      }
     ]
   })
   tags = {

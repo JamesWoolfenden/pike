@@ -250,5 +250,11 @@ var awsKinesisVideoStream []byte
 //go:embed mapping/aws/resource/aws_budgets_budget.json
 var awsBudgetsBudget []byte
 
+//go:embed mapping/aws/resource/aws_elastic_beanstalk_application.json
+var awsElasticBeanstalkApplication []byte
+
+//go:embed mapping/aws/resource/aws_flow_log.json
+var awsFlowLog []byte
+
 //go:embed mapping/gcp/google_compute_instance.json
 var googleComputeInstance []byte
