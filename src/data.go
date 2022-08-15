@@ -1,8 +1,8 @@
 package pike
 
 import (
-	"io/ioutil"
 	"log"
+	"os"
 	"strings"
 
 	"github.com/hashicorp/hcl/v2/hclsyntax"
@@ -13,7 +13,7 @@ import (
 // GetResources retrieves all the resources in a tf file
 func GetResources(file string) ([]ResourceV2, error) {
 
-	src, err := ioutil.ReadFile(file)
+	src, err := os.ReadFile(file)
 	if err != nil {
 		log.Fatal(err)
 	}

@@ -22,6 +22,7 @@ type Policy struct {
 	Statements []Statement `json:"Statement"`
 }
 
+// Statement is the core of an IAM policy
 type Statement struct {
 	Sid      string   `json:"Sid"`
 	Effect   string   `json:"Effect"`

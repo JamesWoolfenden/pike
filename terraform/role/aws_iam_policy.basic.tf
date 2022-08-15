@@ -5,13 +5,7 @@ resource "aws_iam_policy" "basic" {
     Statement = [
       {
         Action = [
-          "kinesisvideo:CreateStream",
-          "kinesisvideo:DescribeStream",
-          "kinesisvideo:ListTagsForStream",
-          "kinesisvideo:DeleteStream",
-          "kinesisvideo:UpdateStream",
-          "kinesisvideo:TagStream",
-          "kinesisvideo:UntagStream"
+          "kinesisvideo:CreateStream"
         ]
         Effect   = "Allow"
         Resource = "*"

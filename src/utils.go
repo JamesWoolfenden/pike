@@ -18,6 +18,7 @@ func randSeq(n int) string {
 	return string(b)
 }
 
+// ReplaceSection find a section in a readme and replaces the section
 func ReplaceSection(source string, middle string) error {
 
 	const start = "<!-- BEGINNING OF PRE-COMMIT-PIKE DOCS HOOK -->"

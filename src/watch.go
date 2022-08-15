@@ -4,15 +4,17 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
-	"github.com/aws/aws-sdk-go-v2/aws"
-	"github.com/aws/aws-sdk-go-v2/config"
-	"github.com/aws/aws-sdk-go-v2/service/iam"
 	"log"
 	"net/url"
 	"sort"
 	"time"
+
+	"github.com/aws/aws-sdk-go-v2/aws"
+	"github.com/aws/aws-sdk-go-v2/config"
+	"github.com/aws/aws-sdk-go-v2/service/iam"
 )
 
+// Watch looks at IAM policy for new revisions
 func Watch(arn string, wait int) error {
 	// Load the Shared AWS Configuration (~/.aws/config)
 	cfg, err := config.LoadDefaultConfig(context.TODO())
@@ -26,27 +28,30 @@ func Watch(arn string, wait int) error {
 
 	log.Printf("Waiting for change on policy Version %s", Version)
 
-	err, delay := WaitForPolicyChange(client, "arn:aws:iam::680235478471:policy/basic", Version, wait)
+	delay, err := WaitForPolicyChange(client, "arn:aws:iam::680235478471:policy/basic", Version, wait)
 
 	if err != nil {
 		return err
 	}
+
 	log.Printf("Policy updated after %d", delay)
 	return nil
 }
 
-func WaitForPolicyChange(client *iam.Client, arn string, Version string, Wait int) (error, int) {
+// WaitForPolicyChange looks at IAM policy change
+func WaitForPolicyChange(client *iam.Client, arn string, Version string, Wait int) (int, error) {
 
 	for i := 1; i < Wait; i++ {
 		time.Sleep(time.Duration(5))
 		NewVersion := GetVersion(client, arn)
 		if NewVersion != Version {
-			return nil, i
+			return i, nil
 		}
 	}
-	return errors.New("wait expired with no change"), Wait
+	return Wait, errors.New("wait expired with no change")
 }
 
+// GetVersion gets the version of the IAM policy
 func GetVersion(client *iam.Client, PolicyArn string) string {
 
 	output, err := client.GetPolicy(context.TODO(), &iam.GetPolicyInput{PolicyArn: aws.String(PolicyArn)})
@@ -57,6 +62,7 @@ func GetVersion(client *iam.Client, PolicyArn string) string {
 	return *(output.Policy.DefaultVersionId)
 }
 
+// GetPolicyVersion Obtains the versioned IAM policy
 func GetPolicyVersion(client *iam.Client, PolicyArn string, Version string) (string, error) {
 	output, err := client.GetPolicyVersion(context.TODO(), &iam.GetPolicyVersionInput{PolicyArn: aws.String(PolicyArn), VersionId: &Version})
 
@@ -65,6 +71,9 @@ func GetPolicyVersion(client *iam.Client, PolicyArn string, Version string) (str
 	}
 
 	Policy, err := url.QueryUnescape(*(output.PolicyVersion.Document))
+	if err != nil {
+		return "", err
+	}
 
 	fixed, err := SortActions(Policy)
 
@@ -75,9 +84,13 @@ func GetPolicyVersion(client *iam.Client, PolicyArn string, Version string) (str
 	return string(fixed), err
 }
 
+// SortActions sorts the actions list of an IAM policy
 func SortActions(myPolicy string) ([]byte, error) {
 	var raw Policy
 	err := json.Unmarshal([]byte(myPolicy), &raw)
+	if err != nil {
+		return nil, err
+	}
 
 	var blocks []Statement
 	for _, block := range raw.Statements {

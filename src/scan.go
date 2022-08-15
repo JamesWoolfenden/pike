@@ -2,8 +2,8 @@ package pike
 
 import (
 	"fmt"
-	"io/ioutil"
 	"log"
+	"os"
 	"path/filepath"
 	"strings"
 )
@@ -67,7 +67,7 @@ func MakePolicy(dirname string, output string) (string, error) {
 
 // GetTF return tf files in a directory
 func GetTF(dirName string) ([]string, error) {
-	rawFiles, err := ioutil.ReadDir(dirName)
+	rawFiles, err := os.ReadDir(dirName)
 	var files []string
 	for _, file := range rawFiles {
 		if file.IsDir() {

@@ -16,11 +16,11 @@ Pike is a tool, to determine the minimum permissions required to run a TF/IAC ru
 Still very much under active development, I intend it to:
 
 - run in ci - limit external outbound connections
-- run on a path or a file
-- determines permission drift
+- run on a path or a file (path is done)
+- determines permission drift (Compare verb now exists)
 - least privilege enabler
-- policy creator
-- test policy against environment
+- policy creator (This is done)
+- test policy against environment (This is done see compare)
 
 Pike currently supports Terraform and can support multiple providers,
 but I am currently focused on AWS.
@@ -215,6 +215,87 @@ The Policy required is
 ```
 
 You can see an example here <https://github.com/jamesWoolfenden/terraform-aws-activemq#policy>.
+
+## Compare
+
+Want to check your deployed IAM policy against your IAC requirement?
+
+>$./pike -d ../modules/aws/terraform-aws-appsync -a arn:aws:iam::680235478471:policy/basic compare
+
+```markdown
+IAM Policy arn:aws:iam::680235478471:policy/basic versus Local ../modules/aws/terraform-aws-appsync
+ {
+   "Statement": [
+     0: {
+       "Action": [
+-        0: "kinesisvideo:CreateStream"
++        0: "firehose:CreateDeliveryStream"
++        0: "firehose:CreateDeliveryStream"
++        1: "firehose:DeleteDeliveryStream"
++        2: "firehose:DescribeDeliveryStream"
++        3: "firehose:ListTagsForDeliveryStream"
++        4: "iam:AttachRolePolicy"
++        5: "iam:CreateRole"
++        6: "iam:DeleteRole"
++        7: "iam:DetachRolePolicy"
++        8: "iam:GetRole"
++        9: "iam:ListAttachedRolePolicies"
++        10: "iam:ListInstanceProfilesForRole"
++        11: "iam:ListRolePolicies"
++        12: "iam:PassRole"
++        13: "iam:TagRole"
++        14: "kms:CreateKey"
++        15: "kms:DescribeKey"
++        16: "kms:EnableKeyRotation"
++        17: "kms:GetKeyPolicy"
++        18: "kms:GetKeyRotationStatus"
++        19: "kms:ListResourceTags"
++        20: "kms:ScheduleKeyDeletion"
++        21: "logs:AssociateKmsKey"
++        22: "logs:CreateLogGroup"
++        23: "logs:DeleteLogGroup"
++        24: "logs:DeleteRetentionPolicy"
++        25: "logs:DescribeLogGroups"
++        26: "logs:DisassociateKmsKey"
++        27: "logs:ListTagsLogGroup"
++        28: "logs:PutRetentionPolicy"
++        29: "s3:CreateBucket"
++        30: "s3:DeleteBucket"
++        31: "s3:GetAccelerateConfiguration"
++        32: "s3:GetBucketAcl"
++        33: "s3:GetBucketCORS"
++        34: "s3:GetBucketLogging"
++        35: "s3:GetBucketObjectLockConfiguration"
++        36: "s3:GetBucketPolicy"
++        37: "s3:GetBucketPublicAccessBlock"
++        38: "s3:GetBucketRequestPayment"
++        39: "s3:GetBucketTagging"
++        40: "s3:GetBucketVersioning"
++        41: "s3:GetBucketWebsite"
++        42: "s3:GetEncryptionConfiguration"
++        43: "s3:GetLifecycleConfiguration"
++        44: "s3:GetObject"
++        45: "s3:GetObjectAcl"
++        46: "s3:GetReplicationConfiguration"
++        47: "s3:ListAllMyBuckets"
++        48: "s3:ListBucket"
++        49: "s3:PutBucketAcl"
++        50: "s3:PutBucketPublicAccessBlock"
++        51: "s3:PutEncryptionConfiguration"
++        52: "wafv2:CreateWebACL"
++        53: "wafv2:DeleteWebACL"
++        54: "wafv2:GetWebACL"
+       ],
+       "Effect": "Allow",
+       "Resource": "*",
+-      "Sid": ""
++      "Sid": "VisualEditor0"
+     }
+   ],
+   "Version": "2012-10-17"
+ }
+
+```
 
 ## Help
 
