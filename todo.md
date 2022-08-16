@@ -193,12 +193,6 @@
  aws_s3_bucket_website_configuration not implemented
  aws_sagemaker_endpoint_configuration not implemented
  aws_sagemaker_model not implemented
- aws_secretsmanager_secret not implemented
- aws_secretsmanager_secret not implemented
- aws_secretsmanager_secret not implemented
- aws_secretsmanager_secret_version not implemented
- aws_secretsmanager_secret_version not implemented
- aws_secretsmanager_secret_version not implemented
  aws_securityhub_account not implemented
  aws_servicecatalog_portfolio not implemented
  aws_sfn_activity not implemented

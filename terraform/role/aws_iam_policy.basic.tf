@@ -7,14 +7,8 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "rds:AddTagsToResource",
-          "rds:ListTagsForResource",
-          "rds:RemoveTagsFromResource",
-          "rds:CreateDBParameterGroup",
-          "rds:ModifyDBParameterGroup",
-          "rds:DescribeDBParameterGroups",
-          "rds:DescribeDBParameters",
-          "rds:DeleteDBParameterGroup"
+          "secretsmanager:PutSecretValue",
+          "secretsmanager:GetSecretValue",
         ],
         "Resource" : "*"
       }

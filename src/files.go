@@ -277,5 +277,11 @@ var awsDbOptionGroup []byte
 //go:embed mapping/aws/resource/aws_db_parameter_group.json
 var awsDbParameterGroup []byte
 
+//go:embed mapping/aws/resource/aws_secretsmanager_secret.json
+var awsSecretsmanagerSecret []byte
+
+//go:embed mapping/aws/resource/aws_secretsmanager_secret_version.json
+var awsSecretsmanagerSecretVersion []byte
+
 //go:embed mapping/gcp/google_compute_instance.json
 var googleComputeInstance []byte

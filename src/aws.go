@@ -129,6 +129,8 @@ func GetAWSResourcePermissions(result ResourceV2) []string {
 		"aws_nat_gateway":                                    awsNatGateway,
 		"aws_db_option_group":                                awsDbOptionGroup,
 		"aws_db_parameter_group":                             awsDbParameterGroup,
+		"aws_secretsmanager_secret":                          awsSecretsmanagerSecret,
+		"aws_secretsmanager_secret_version":                  awsSecretsmanagerSecretVersion,
 	}
 
 	var Permissions []string
