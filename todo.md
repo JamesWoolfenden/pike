@@ -71,8 +71,6 @@
  aws_ec2_transit_gateway_vpc_attachment not implemented
  aws_ecr_lifecycle_policy not implemented
  aws_ecr_lifecycle_policy not implemented
- aws_ecr_repository not implemented
- aws_ecr_repository not implemented
  aws_ecr_repository_policy not implemented
  aws_ecr_repository_policy not implemented
  aws_ecrpublic_repository not implemented
@@ -188,16 +186,6 @@
  aws_route53_hosted_zone_dnssec not implemented
  aws_route53_key_signing_key not implemented
  aws_route53_query_log not implemented
- aws_route53_zone not implemented
- aws_route53_zone not implemented
- aws_route53_zone not implemented
- aws_route53_zone not implemented
- aws_route53_zone not implemented
- aws_route53_zone not implemented
- aws_route53_zone not implemented
- aws_route_table not implemented
- aws_route_table not implemented
- aws_route_table not implemented
  aws_route_table_association not implemented
  aws_route_table_association not implemented
  aws_route_table_association not implemented

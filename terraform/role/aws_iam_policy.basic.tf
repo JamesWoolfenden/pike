@@ -4,18 +4,15 @@ resource "aws_iam_policy" "basic" {
     "Version" : "2012-10-17",
     "Statement" : [
       {
-        "Sid" : "ElasticBeanstalkReadOnlyAccess",
+        "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "ecr:CreateRepository",
-          "ecr:DescribeRepositories",
-          "ecr:ListTagsForResource",
-          "ecr:DeleteRepository",
-          "ecr:TagResource",
-          "ecr:UntagResource",
-          "ecr:PutImageScanningConfiguration",
-          "kms:DescribeKey",
-          "kms:CreateGrant"
+          "ec2:DescribeAccountAttributes",
+          "ec2:CreateRouteTable",
+          "ec2:DescribeRouteTables",
+          "ec2:DeleteRouteTable",
+          "ec2:CreateTags",
+          "ec2:DeleteTags"
         ],
         "Resource" : "*"
       }

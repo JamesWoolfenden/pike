@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "ec2:CreateRouteTable",
+      "ec2:DescribeRouteTables",
+      "ec2:DeleteRouteTable"
+    ],
+    "attributes": {
+      "tags": [
+        "ec2:CreateTags",
+        "ec2:DeleteTags"
+      ]
+    },
+    "destroy": [
+      "ec2:DeleteRouteTable"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -124,6 +124,7 @@ func GetAWSResourcePermissions(result ResourceV2) []string {
 		"aws_flow_log":                                       awsFlowLog,
 		"aws_kms_alias":                                      awsKmsAlias,
 		"aws_ecr_repository":                                 awsEcrRepository,
+		"aws_route_table":                                    awsRouteTable,
 	}
 
 	var Permissions []string
