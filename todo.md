@@ -186,9 +186,6 @@
  aws_route53_hosted_zone_dnssec not implemented
  aws_route53_key_signing_key not implemented
  aws_route53_query_log not implemented
- aws_route_table_association not implemented
- aws_route_table_association not implemented
- aws_route_table_association not implemented
  aws_s3_bucket_cors_configuration not implemented
  aws_s3_bucket_cors_configuration not implemented
  aws_s3_bucket_replication_configuration not implemented
@@ -244,6 +241,11 @@
  aws_wafv2_web_acl_logging_configuration not implemented
  aws_workspaces_directory not implemented
  aws_workspaces_workspace not implemented
+
+2022/08/16 15:11:24 aws_nat_gateway not implemented
+2022/08/16 15:11:24 aws_vpc_endpoint not implemented
+2022/08/16 15:11:24 aws_vpc_endpoint not implemented
+2022/08/16 15:11:24 aws_vpn_gateway not implemented
 
 glacier
 -vault

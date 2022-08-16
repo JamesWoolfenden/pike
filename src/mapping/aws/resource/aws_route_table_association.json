@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "ec2:AssociateRouteTable",
+      "ec2:DescribeRouteTables",
+      "ec2:DisassociateRouteTable"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "ec2:DisassociateRouteTable"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

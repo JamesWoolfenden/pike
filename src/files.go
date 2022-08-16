@@ -265,5 +265,8 @@ var awsKmsAlias []byte
 //go:embed mapping/aws/resource/aws_route_table.json
 var awsRouteTable []byte
 
+//go:embed mapping/aws/resource/aws_route_table_association.json
+var awsRouteTableAssociation []byte
+
 //go:embed mapping/gcp/google_compute_instance.json
 var googleComputeInstance []byte
