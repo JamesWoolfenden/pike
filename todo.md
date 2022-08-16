@@ -165,7 +165,6 @@
  aws_memorydb_cluster not implemented
  aws_memorydb_snapshot not implemented
  aws_memorydb_subnet_group not implemented
- aws_nat_gateway not implemented
  aws_neptune_cluster not implemented
  aws_neptune_cluster_instance not implemented
  aws_neptune_parameter_group not implemented
@@ -242,7 +241,6 @@
  aws_workspaces_directory not implemented
  aws_workspaces_workspace not implemented
 
-2022/08/16 15:11:24 aws_nat_gateway not implemented
 2022/08/16 15:11:24 aws_vpc_endpoint not implemented
 2022/08/16 15:11:24 aws_vpc_endpoint not implemented
 2022/08/16 15:11:24 aws_vpn_gateway not implemented

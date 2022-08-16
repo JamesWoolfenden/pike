@@ -8,9 +8,11 @@ resource "aws_iam_policy" "basic" {
         "Effect" : "Allow",
         "Action" : [
           "ec2:DescribeAccountAttributes",
-          "ec2:AssociateRouteTable",
-          "ec2:DescribeRouteTables",
-          "ec2:DisassociateRouteTable"
+          "ec2:CreateNatGateway",
+          "ec2:DescribeNatGateways",
+          "ec2:DeleteNatGateway",
+          "ec2:DeleteTags",
+          "ec2:CreateTags",
         ],
         "Resource" : "*"
       }

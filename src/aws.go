@@ -126,6 +126,7 @@ func GetAWSResourcePermissions(result ResourceV2) []string {
 		"aws_ecr_repository":                                 awsEcrRepository,
 		"aws_route_table":                                    awsRouteTable,
 		"aws_route_table_association":                        awsRouteTableAssociation,
+		"aws_nat_gateway":                                    awsNatGateway,
 	}
 
 	var Permissions []string
