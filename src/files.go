@@ -256,5 +256,11 @@ var awsElasticBeanstalkApplication []byte
 //go:embed mapping/aws/resource/aws_flow_log.json
 var awsFlowLog []byte
 
+//go:embed mapping/aws/resource/aws_ecr_repository.json
+var awsEcrRepository []byte
+
+//go:embed mapping/aws/resource/aws_kms_alias.json
+var awsKmsAlias []byte
+
 //go:embed mapping/gcp/google_compute_instance.json
 var googleComputeInstance []byte

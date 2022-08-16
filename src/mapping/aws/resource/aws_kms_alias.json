@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "kms:CreateAlias",
+      "kms:ListAliases",
+      "kms:DeleteAlias"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "kms:DeleteAlias"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

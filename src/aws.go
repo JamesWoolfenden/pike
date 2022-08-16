@@ -122,6 +122,8 @@ func GetAWSResourcePermissions(result ResourceV2) []string {
 		"aws_kinesis_video_stream":                           awsKinesisVideoStream,
 		"aws_elastic_beanstalk_application":                  awsElasticBeanstalkApplication,
 		"aws_flow_log":                                       awsFlowLog,
+		"aws_kms_alias":                                      awsKmsAlias,
+		"aws_ecr_repository":                                 awsEcrRepository,
 	}
 
 	var Permissions []string

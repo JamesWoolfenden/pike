@@ -1,0 +1,26 @@
+[
+  {
+    "apply": [
+      "ecr:CreateRepository",
+      "ecr:DescribeRepositories",
+      "ecr:ListTagsForResource",
+      "ecr:DeleteRepository"
+    ],
+    "attributes": {
+      "encryption_configuration": [
+        "kms:DescribeKey",
+        "kms:CreateGrant"
+      ],
+      "image_scanning_configuration": [
+        "ecr:PutImageScanningConfiguration"
+      ],
+      "tags": [
+        "ecr:TagResource",
+        "ecr:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

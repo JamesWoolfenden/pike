@@ -48,15 +48,29 @@ func GetResources(file string) ([]ResourceV2, error) {
 		}
 
 		var attributes []string
-		for _, attribute := range block.Body.Attributes {
-			attributes = append(attributes, attribute.Name)
-		}
-		resource.Attributes = attributes
+
+		resource.Attributes = GetBlockAttributes(attributes, block)
 		resource.Provider = GetHCLType(block.Labels[0])
 		Resources = append(Resources, resource)
 	}
 
 	return Resources, nil
+}
+
+// GetBlockAttributes walks through a blocks getting all blocks and attributes
+func GetBlockAttributes(attributes []string, block *hclsyntax.Block) []string {
+	for _, attribute := range block.Body.Attributes {
+		attributes = append(attributes, attribute.Name)
+	}
+	for _, block := range block.Body.Blocks {
+		// Also add in block names
+		if block.Type != "resource" {
+			attributes = append(attributes, block.Type)
+		}
+
+		attributes = GetBlockAttributes(attributes, block)
+	}
+	return attributes
 }
 
 // GetProvider retrieves the provider from the resource

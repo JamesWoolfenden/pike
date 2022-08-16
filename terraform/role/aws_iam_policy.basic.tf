@@ -7,19 +7,22 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "ElasticBeanstalkReadOnlyAccess",
         "Effect" : "Allow",
         "Action" : [
-          "ec2:DeleteTags",
-          "ec2:CreateFlowLogs",
-          "ec2:CreateTags",
-          "ec2:DescribeAccountAttributes",
-          "ec2:DescribeFlowLogs",
-          "iam:PassRole",
-          "ec2:DeleteFlowLogs"
+          "ecr:CreateRepository",
+          "ecr:DescribeRepositories",
+          "ecr:ListTagsForResource",
+          "ecr:DeleteRepository",
+          "ecr:TagResource",
+          "ecr:UntagResource",
+          "ecr:PutImageScanningConfiguration",
+          "kms:DescribeKey",
+          "kms:CreateGrant"
         ],
         "Resource" : "*"
       }
     ]
   })
   tags = {
+    pike      = "permissions"
     createdby = "JamesWoolfenden"
   }
 }
