@@ -52,7 +52,6 @@
  aws_dax_parameter_group not implemented
  aws_dax_subnet_group not implemented
  aws_db_event_subscription not implemented
- aws_db_parameter_group not implemented
  aws_directory_service_directory not implemented
  aws_directory_service_directory not implemented
  aws_directory_service_log_subscription not implemented

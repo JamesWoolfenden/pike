@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "rds:ListTagsForResource",
+      "rds:CreateDBParameterGroup",
+      "rds:ModifyDBParameterGroup",
+      "rds:DescribeDBParameterGroups",
+      "rds:DescribeDBParameters",
+      "rds:DeleteDBParameterGroup"
+    ],
+    "attributes": {
+      "tags": [
+        "rds:AddTagsToResource",
+        "rds:RemoveTagsFromResource"
+      ]
+    },
+    "destroy": [
+      "rds:DeleteDBParameterGroup"
+    ],
+    "modify": [
+      "rds:ModifyDBParameterGroup"
+    ],
+    "plan": []
+  }
+]

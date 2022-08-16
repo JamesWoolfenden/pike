@@ -7,12 +7,14 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "ec2:DescribeAccountAttributes",
-          "ec2:CreateNatGateway",
-          "ec2:DescribeNatGateways",
-          "ec2:DeleteNatGateway",
-          "ec2:DeleteTags",
-          "ec2:CreateTags",
+          "rds:AddTagsToResource",
+          "rds:ListTagsForResource",
+          "rds:RemoveTagsFromResource",
+          "rds:CreateDBParameterGroup",
+          "rds:ModifyDBParameterGroup",
+          "rds:DescribeDBParameterGroups",
+          "rds:DescribeDBParameters",
+          "rds:DeleteDBParameterGroup"
         ],
         "Resource" : "*"
       }

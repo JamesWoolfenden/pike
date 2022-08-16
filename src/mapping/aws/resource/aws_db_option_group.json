@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "rds:DeleteOptionGroup",
+      "rds:ModifyOptionGroup",
+      "rds:ListTagsForResource",
+      "rds:CreateOptionGroup",
+      "rds:DescribeOptionGroups"
+    ],
+    "attributes": {
+      "tags": [
+        "rds:AddTagsToResource",
+        "rds:RemoveTagsFromResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -271,5 +271,11 @@ var awsRouteTableAssociation []byte
 //go:embed mapping/aws/resource/aws_nat_gateway.json
 var awsNatGateway []byte
 
+//go:embed mapping/aws/resource/aws_db_option_group.json
+var awsDbOptionGroup []byte
+
+//go:embed mapping/aws/resource/aws_db_parameter_group.json
+var awsDbParameterGroup []byte
+
 //go:embed mapping/gcp/google_compute_instance.json
 var googleComputeInstance []byte

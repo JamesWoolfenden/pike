@@ -127,6 +127,8 @@ func GetAWSResourcePermissions(result ResourceV2) []string {
 		"aws_route_table":                                    awsRouteTable,
 		"aws_route_table_association":                        awsRouteTableAssociation,
 		"aws_nat_gateway":                                    awsNatGateway,
+		"aws_db_option_group":                                awsDbOptionGroup,
+		"aws_db_parameter_group":                             awsDbParameterGroup,
 	}
 
 	var Permissions []string
