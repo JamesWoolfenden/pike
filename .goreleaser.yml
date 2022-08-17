@@ -12,3 +12,7 @@ builds:
     goarch:
       - amd64
       - arm64
+archives:
+  - format_overrides:
+      - goos: windows
+        format: zip
