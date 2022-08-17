@@ -26,6 +26,17 @@ Pike currently supports Terraform and can support multiple providers,
 but I am currently focused on AWS.
 Feel free to submit PR or Issue, and then I'll take a look.
 
+## Install
+
+Download the latest binary here:
+
+<https://github.com/JamesWoolfenden/pike/releases>
+
+Install from code:
+
+- Clone repo
+- Run `go install`
+
 ## Usage
 
 ### Scan

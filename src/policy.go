@@ -7,6 +7,8 @@ import (
 	"errors"
 	"fmt"
 	"sort"
+	"strconv"
+	"strings"
 	"text/template"
 )
 
@@ -17,16 +19,35 @@ var policyTemplate []byte
 func NewPolicy(Actions []string) Policy {
 	something := Policy{}
 	something.Version = "2012-10-17"
-	var state Statement
 
-	state.Effect = "Allow"
-	state.Sid = "VisualEditor0"
-	state.Action = Actions
-	state.Resource = "*"
+	sort.Strings(Actions)
 
+	var categories []string
+	for _, action := range Actions {
+		prefix := strings.Split(action, ":")[0]
+		categories = append(categories, prefix)
+	}
+
+	sections := unique(categories)
 	var statements []Statement
 
-	statements = append(statements, state)
+	for count, section := range sections {
+		var myActions []string
+		for _, action := range Actions {
+			mySection := section + ":"
+			if strings.Contains(action, mySection) {
+				myActions = append(myActions, action)
+			}
+		}
+		var state Statement
+
+		state.Effect = "Allow"
+		state.Sid = "VisualEditor" + strconv.Itoa(count)
+		state.Action = myActions
+		state.Resource = "*"
+		statements = append(statements, state)
+	}
+
 	something.Statements = statements
 	return something
 }
