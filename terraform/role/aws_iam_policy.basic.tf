@@ -7,8 +7,13 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "secretsmanager:PutSecretValue",
-          "secretsmanager:GetSecretValue",
+          "wafv2:TagResource",
+          "wafv2:ListTagsForResource",
+          "wafv2:UntagResource",
+          "wafv2:GetRegexPatternSet",
+          "wafv2:CreateRegexPatternSet",
+          "wafv2:UpdateRegexPatternSet",
+          "wafv2:DeleteRegexPatternSet"
         ],
         "Resource" : "*"
       }

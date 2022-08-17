@@ -2,9 +2,9 @@
   {
     "apply": [
       "wafv2:ListTagsForResource",
-      "wafv2:CreateRuleGroup",
-      "wafv2:GetRuleGroup",
-      "wafv2:DeleteRuleGroup"
+      "wafv2:CreateIpSet",
+      "wafv2:GetIpSet",
+      "wafv2:DeleteIpSet"
     ],
     "attributes": {
       "tags": [
@@ -13,10 +13,10 @@
       ]
     },
     "destroy": [
-      "wafv2:DeleteRuleGroup"
+      "wafv2:DeleteIpSet"
     ],
     "modify": [
-      "wafv2:UpdateRuleGroup"
+      "wafv2:UpdateIpSet"
     ],
     "plan": []
   }

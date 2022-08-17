@@ -2,9 +2,9 @@
   {
     "apply": [
       "wafv2:ListTagsForResource",
-      "wafv2:CreateRuleGroup",
-      "wafv2:GetRuleGroup",
-      "wafv2:DeleteRuleGroup"
+      "wafv2:GetRegexPatternSet",
+      "wafv2:CreateRegexPatternSet",
+      "wafv2:DeleteRegexPatternSet"
     ],
     "attributes": {
       "tags": [
@@ -13,10 +13,10 @@
       ]
     },
     "destroy": [
-      "wafv2:DeleteRuleGroup"
+      "wafv2:DeleteRegexPatternSet"
     ],
     "modify": [
-      "wafv2:UpdateRuleGroup"
+      "wafv2:UpdateRegexPatternSet"
     ],
     "plan": []
   }

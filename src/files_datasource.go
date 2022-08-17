@@ -64,6 +64,18 @@ var dataAwsOrganizationsOrganization []byte
 //go:embed mapping/aws/data/aws_ebs_default_kms_key.json
 var dataAwsEbsDefaultKmsKey []byte
 
+//go:embed mapping/aws/data/aws_wafv2_ip_set.json
+var dataAwsWafv2IpSet []byte
+
+//go:embed mapping/aws/data/aws_wafv2_web_acl.json
+var dataAwsWafv2WebACL []byte
+
+//go:embed mapping/aws/data/aws_wafv2_rule_group.json
+var dataAwsWafv2RuleGroup []byte
+
+//go:embed mapping/aws/data/aws_wafv2_regex_pattern_set.json
+var dataAwsWafv2RegexPatternSet []byte
+
 // todo on account that is enabled for this
 //
 //go:embed mapping/aws/data/aws_ssoadmin_instances.json

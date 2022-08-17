@@ -187,6 +187,15 @@ var awsDbSubnetGroup []byte
 //go:embed mapping/aws/resource/aws_wafv2_web_acl.json
 var awsWafv2WebACL []byte
 
+//go:embed mapping/aws/resource/aws_wafv2_ip_set.json
+var awsWafv2IpSet []byte
+
+//go:embed mapping/aws/resource/aws_wafv2_rule_group.json
+var awsWafv2RuleGroup []byte
+
+//go:embed mapping/aws/resource/aws_wafv2_regex_pattern_set.json
+var awsWafv2RegexPatternSet []byte
+
 //go:embed mapping/aws/resource/aws_api_gateway_rest_api.json
 var awsAPIGatewayRestAPI []byte
 

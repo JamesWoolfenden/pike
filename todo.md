@@ -221,10 +221,6 @@
  aws_wafregional_rule not implemented
  aws_wafregional_web_acl not implemented
  aws_wafregional_web_acl not implemented
- aws_wafv2_rule_group not implemented
- aws_wafv2_rule_group not implemented
- aws_wafv2_rule_group not implemented
- aws_wafv2_rule_group not implemented
  aws_wafv2_web_acl_association not implemented
  aws_wafv2_web_acl_association not implemented
  aws_wafv2_web_acl_logging_configuration not implemented
