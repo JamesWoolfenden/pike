@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "ec2:CreateVpnGateway",
+      "ec2:AttachVpnGateway",
+      "ec2:DescribeVpnGateways",
+      "ec2:DeleteVpnGateway",
+      "ec2:DetachVpnGateway"
+    ],
+    "attributes": {
+      "tags": [
+        "ec2:CreateTags",
+        "ec2:DeleteTags"
+      ]
+    },
+    "destroy": [
+      "ec2:DetachVpnGateway"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

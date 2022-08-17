@@ -205,15 +205,12 @@
  aws_ssm_patch_group not implemented
  aws_ssoadmin_permission_set not implemented
  aws_ssoadmin_permission_set_inline_policy not implemented
- aws_vpc_endpoint not implemented
- aws_vpc_endpoint not implemented
  aws_vpc_endpoint_service not implemented
  aws_vpc_endpoint_service not implemented
  aws_vpc_peering_connection not implemented
  aws_vpc_peering_connection_accepter not implemented
  aws_vpc_peering_connection_options not implemented
  aws_vpc_peering_connection_options not implemented
- aws_vpn_gateway not implemented
  aws_waf_ipset not implemented
  aws_waf_rule not implemented
  aws_waf_web_acl not implemented
@@ -229,10 +226,6 @@
  aws_wafv2_web_acl_logging_configuration not implemented
  aws_workspaces_directory not implemented
  aws_workspaces_workspace not implemented
-
-2022/08/16 15:11:24 aws_vpc_endpoint not implemented
-2022/08/16 15:11:24 aws_vpc_endpoint not implemented
-2022/08/16 15:11:24 aws_vpn_gateway not implemented
 
 glacier
 -vault

@@ -7,13 +7,13 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "wafv2:TagResource",
-          "wafv2:ListTagsForResource",
-          "wafv2:UntagResource",
-          "wafv2:GetRegexPatternSet",
-          "wafv2:CreateRegexPatternSet",
-          "wafv2:UpdateRegexPatternSet",
-          "wafv2:DeleteRegexPatternSet"
+          "ec2:CreateVpnGateway",
+          "ec2:AttachVpnGateway",
+          "ec2:DescribeVpnGateways",
+          "ec2:DeleteVpnGateway",
+          "ec2:DetachVpnGateway",
+          "ec2:CreateTags",
+          "ec2:DeleteTags"
         ],
         "Resource" : "*"
       }

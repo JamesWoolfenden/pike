@@ -196,6 +196,12 @@ var awsWafv2RuleGroup []byte
 //go:embed mapping/aws/resource/aws_wafv2_regex_pattern_set.json
 var awsWafv2RegexPatternSet []byte
 
+//go:embed mapping/aws/resource/aws_vpn_gateway.json
+var awsVpnGateway []byte
+
+//go:embed mapping/aws/resource/aws_vpc_endpoint.json
+var awsVpcEndpoint []byte
+
 //go:embed mapping/aws/resource/aws_api_gateway_rest_api.json
 var awsAPIGatewayRestAPI []byte
 

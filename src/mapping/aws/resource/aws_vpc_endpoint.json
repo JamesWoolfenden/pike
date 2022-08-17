@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "ec2:CreateVpcEndpoint",
+      "ec2:DescribeVpcEndpoints",
+      "ec2:DescribePrefixLists",
+      "ec2:DeleteVpcEndpoints"
+    ],
+    "attributes": {
+      "tags": [
+        "ec2:CreateTags",
+        "ec2:DeleteTags"
+      ]
+    },
+    "destroy": [
+      "ec2:DeleteVpcEndpoints"
+    ],
+    "modify": [
+      "ec2:ModifyVpcEndpoint"
+    ],
+    "plan": []
+  }
+]

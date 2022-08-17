@@ -134,6 +134,8 @@ func GetAWSResourcePermissions(result ResourceV2) []string {
 		"aws_db_parameter_group":                             awsDbParameterGroup,
 		"aws_secretsmanager_secret":                          awsSecretsmanagerSecret,
 		"aws_secretsmanager_secret_version":                  awsSecretsmanagerSecretVersion,
+		"aws_vpc_endpoint":                                   awsVpcEndpoint,
+		"aws_vpn_gateway":                                    awsVpnGateway,
 	}
 
 	var Permissions []string
