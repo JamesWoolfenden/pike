@@ -102,7 +102,7 @@ To scan a directory of Terraform file:
 You can also generate the policy as Terraform instead:
 
 ```bash
-./pike -o terraform -d ..\modules\aws\terraform-aws-activemq\ scan
+$pike -o terraform -d ../modules/aws/terraform-aws-activemq  scan
 resource "aws_iam_policy" "terraformXVlBzgba" {
   name        = "terraformXVlBzgba"
   path        = "/"
@@ -110,49 +110,72 @@ resource "aws_iam_policy" "terraformXVlBzgba" {
 
   policy = jsonencode({
     "Version": "2012-10-17",
-    "Statement": {
-        "Effect": "Allow",
-        "Action": [
-            "mq:CreateTags",
-            "mq:DeleteTags",
-            "ec2:DescribeInternetGateways",
-            "ec2:DescribeAccountAttributes",
-            "ec2:DescribeVpcs",
-            "ec2:DescribeSubnets",
-            "ec2:DescribeSecurityGroups",
-            "ec2:CreateNetworkInterface",
-            "ec2:CreateNetworkInterfacePermission",
-            "ec2:DeleteNetworkInterfacePermission",
-            "ec2:DetachNetworkInterface",
-            "ec2:DeleteNetworkInterface",
-            "mq:CreateBroker",
-            "mq:DescribeBroker",
-            "mq:DescribeUser",
-            "mq:UpdateBroker",
-            "mq:DeleteBroker",
-            "mq:CreateConfiguration",
-            "mq:UpdateConfiguration",
-            "mq:DescribeConfiguration",
-            "mq:DescribeConfigurationRevision",
-            "mq:RebootBroker",
-            "ec2:CreateTags",
-            "ec2:DeleteTags",
-            "ec2:CreateSecurityGroup",
-            "ec2:DescribeNetworkInterfaces",
-            "ec2:DeleteSecurityGroup",
-            "ec2:RevokeSecurityGroupEgress",
-            "kms:EnableKeyRotation",
-            "kms:TagResource",
-            "kms:UntagResource",
-            "kms:CreateKey",
-            "kms:DescribeKey",
-            "kms:GetKeyPolicy",
-            "kms:GetKeyRotationStatus",
-            "kms:ListResourceTags",
-            "kms:ScheduleKeyDeletion"
-        ],
-        "Resource": "*"
-    }
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:AuthorizeSecurityGroupEgress",
+                "ec2:AuthorizeSecurityGroupIngress",
+                "ec2:CreateNetworkInterface",
+                "ec2:CreateNetworkInterfacePermission",
+                "ec2:CreateSecurityGroup",
+                "ec2:CreateTags",
+                "ec2:DeleteNetworkInterface",
+                "ec2:DeleteNetworkInterfacePermission",
+                "ec2:DeleteSecurityGroup",
+                "ec2:DeleteTags",
+                "ec2:DescribeAccountAttributes",
+                "ec2:DescribeInternetGateways",
+                "ec2:DescribeNetworkInterfaces",
+                "ec2:DescribeSecurityGroups",
+                "ec2:DescribeSubnets",
+                "ec2:DescribeVpcs",
+                "ec2:DetachNetworkInterface",
+                "ec2:RevokeSecurityGroupEgress",
+                "ec2:RevokeSecurityGroupIngress"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": [
+                "kms:CreateKey",
+                "kms:DescribeKey",
+                "kms:EnableKeyRotation",
+                "kms:GetKeyPolicy",
+                "kms:GetKeyRotationStatus",
+                "kms:ListResourceTags",
+                "kms:ScheduleKeyDeletion",
+                "kms:TagResource",
+                "kms:UntagResource"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "VisualEditor2",
+            "Effect": "Allow",
+            "Action": [
+                "mq:CreateBroker",
+                "mq:CreateConfiguration",
+                "mq:CreateTags",
+                "mq:CreateUser",
+                "mq:DeleteBroker",
+                "mq:DeleteTags",
+                "mq:DeleteUser",
+                "mq:DescribeBroker",
+                "mq:DescribeConfiguration",
+                "mq:DescribeConfigurationRevision",
+                "mq:DescribeUser",
+                "mq:RebootBroker",
+                "mq:UpdateBroker",
+                "mq:UpdateConfiguration",
+                "mq:UpdateUser"
+            ],
+            "Resource": "*"
+        }
+    ]
 })
 }
 ```
