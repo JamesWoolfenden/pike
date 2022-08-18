@@ -101,29 +101,8 @@
  aws_fsx_openzfs_file_system not implemented
  aws_fsx_openzfs_snapshot not implemented
  aws_fsx_openzfs_volume not implemented
- aws_glue_catalog_database not implemented
- aws_glue_catalog_database not implemented
- aws_glue_catalog_database not implemented
- aws_glue_catalog_database not implemented
- aws_glue_catalog_database not implemented
- aws_glue_catalog_database not implemented
- aws_glue_catalog_table not implemented
- aws_glue_catalog_table not implemented
- aws_glue_catalog_table not implemented
- aws_glue_catalog_table not implemented
- aws_glue_classifier not implemented
- aws_glue_classifier not implemented
- aws_glue_classifier not implemented
- aws_glue_classifier not implemented
  aws_glue_connection not implemented
  aws_glue_connection not implemented
- aws_glue_crawler not implemented
- aws_glue_crawler not implemented
- aws_glue_crawler not implemented
- aws_glue_crawler not implemented
- aws_glue_crawler not implemented
- aws_glue_crawler not implemented
- aws_glue_crawler not implemented
  aws_glue_data_catalog_encryption_settings not implemented
  aws_glue_job not implemented
  aws_glue_ml_transform not implemented
@@ -198,7 +177,6 @@
  aws_sfn_activity not implemented
  aws_sfn_state_machine not implemented
  aws_sfn_state_machine not implemented
- aws_ssm_document not implemented
  aws_ssm_maintenance_window not implemented
  aws_ssm_maintenance_window_target not implemented
  aws_ssm_maintenance_window_task not implemented

@@ -298,5 +298,20 @@ var awsSecretsmanagerSecret []byte
 //go:embed mapping/aws/resource/aws_secretsmanager_secret_version.json
 var awsSecretsmanagerSecretVersion []byte
 
+//go:embed mapping/aws/resource/aws_ssm_document.json
+var awsSsmDocument []byte
+
+//go:embed mapping/aws/resource/aws_glue_classifier.json
+var awsGlueClassifier []byte
+
+//go:embed mapping/aws/resource/aws_glue_crawler.json
+var awsGlueCrawler []byte
+
+//go:embed mapping/aws/resource/aws_glue_catalog_database.json
+var awsGlueCatalogDatabase []byte
+
+//go:embed mapping/aws/resource/aws_glue_catalog_table.json
+var awsGlueCatalogTable []byte
+
 //go:embed mapping/gcp/google_compute_instance.json
 var googleComputeInstance []byte

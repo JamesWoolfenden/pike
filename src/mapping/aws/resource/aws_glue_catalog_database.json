@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "glue:CreateDatabase",
+      "glue:GetDatabase",
+      "glue:DeleteDatabase"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "glue:DeleteDatabase"
+    ],
+    "modify": [
+      "glue:UpdateDatabase"
+    ],
+    "plan": []
+  }
+]

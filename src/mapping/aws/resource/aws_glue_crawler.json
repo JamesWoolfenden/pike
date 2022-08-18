@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "glue:GetCrawler",
+      "glue:DeleteCrawler",
+      "glue:CreateCrawler"
+    ],
+    "attributes": {
+      "tags": [
+        "glue:TagResource",
+        "glue:UntagResource"
+      ]
+    },
+    "destroy": [
+      "glue:DeleteCrawler"
+    ],
+    "modify": [
+      "glue:UpdateCrawler"
+    ],
+    "plan": []
+  }
+]

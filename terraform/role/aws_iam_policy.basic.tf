@@ -7,13 +7,10 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "ec2:CreateVpnGateway",
-          "ec2:AttachVpnGateway",
-          "ec2:DescribeVpnGateways",
-          "ec2:DeleteVpnGateway",
-          "ec2:DetachVpnGateway",
-          "ec2:CreateTags",
-          "ec2:DeleteTags"
+          "glue:DeleteClassifier",
+          "glue:CreateClassifier",
+          "glue:UpdateClassifier",
+          "glue:GetClassifier"
         ],
         "Resource" : "*"
       }

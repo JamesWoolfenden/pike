@@ -136,6 +136,11 @@ func GetAWSResourcePermissions(result ResourceV2) []string {
 		"aws_secretsmanager_secret_version":                  awsSecretsmanagerSecretVersion,
 		"aws_vpc_endpoint":                                   awsVpcEndpoint,
 		"aws_vpn_gateway":                                    awsVpnGateway,
+		"aws_ssm_document":                                   awsSsmDocument,
+		"aws_glue_catalog_database":                          awsGlueCatalogDatabase,
+		"aws_glue_catalog_table":                             awsGlueCatalogTable,
+		"aws_glue_classifier":                                awsGlueClassifier,
+		"aws_glue_crawler":                                   awsGlueCrawler,
 	}
 
 	var Permissions []string

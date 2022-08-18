@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "CreateClassifier",
+      "DeleteClassifier",
+      "GetClassifier"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "DeleteClassifier"
+    ],
+    "modify": [
+      "UpdateClassifier"
+    ],
+    "plan": []
+  }
+]

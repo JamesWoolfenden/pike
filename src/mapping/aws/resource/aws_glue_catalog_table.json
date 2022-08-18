@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "glue:CreateTable",
+      "glue:GetTable",
+      "glue:DeleteTable"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "glue:DeleteTable"
+    ],
+    "modify": [],
+    "plan": [
+      "glue:UpdateTable"
+    ]
+  }
+]

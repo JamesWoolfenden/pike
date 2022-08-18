@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "ssm:CreateDocument",
+      "ssm:DescribeDocument",
+      "ssm:GetDocument",
+      "ssm:DescribeDocumentPermission",
+      "ssm:DeleteDocument"
+    ],
+    "attributes": {
+      "tags": [
+        "ssm:AddTagsToResource",
+        "ssm:RemoveTagsFromResource"
+      ]
+    },
+    "destroy": [
+      "ssm:DeleteDocument"
+    ],
+    "modify": [
+      "ssm:UpdateDocument"
+    ],
+    "plan": []
+  }
+]
