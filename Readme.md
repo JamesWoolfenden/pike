@@ -41,11 +41,13 @@ Install from code:
 
  >choco install pike
 
-### Docker <https://hub.docker.com/repository/docker/jameswoolfenden/pike>
+### Docker 
 
 >docker pull jameswoolfenden/pike
 >
 >docker run --tty --volume /local/path/to/tf:/tf jameswoolfenden/pike -d /tf scan
+
+<https://hub.docker.com/repository/docker/jameswoolfenden/pike>
 
 ## Usage
 
