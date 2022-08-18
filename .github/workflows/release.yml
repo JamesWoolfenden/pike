@@ -42,8 +42,8 @@ jobs:
         uses: elgohr/Publish-Docker-Github-Action@v4
         with:
           name: jameswoolfenden/pike
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
           tags: "latest,${{ github.ref_name }}"
       - name: Update Docker Hub README
         uses: peter-evans/dockerhub-description@v2
