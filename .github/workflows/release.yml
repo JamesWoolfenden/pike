@@ -39,12 +39,11 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Publish to Registry
-        uses: elgohr/Publish-Docker-Github-Action@master
+        uses: elgohr/Publish-Docker-Github-Action@v4
         with:
           name: jameswoolfenden/pike
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-          buildoptions: "--no-cache"
           tags: "latest,${{ github.ref_name }}"
       - name: Update Docker Hub README
         uses: peter-evans/dockerhub-description@v2

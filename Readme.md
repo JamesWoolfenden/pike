@@ -36,9 +36,16 @@ Install from code:
 
 - Clone repo
 - Run `go install`
-- choco install pike
-- docker pull jameswoolfenden/pike
-- docker run --tty --volume /local/path/to/tf:/tf jameswoolfenden/pike -d /tf scan
+
+### Windows
+
+ >choco install pike
+
+### Docker
+
+>docker pull jameswoolfenden/pike
+>
+>docker run --tty --volume /local/path/to/tf:/tf jameswoolfenden/pike -d /tf scan
 
 ## Usage
 
