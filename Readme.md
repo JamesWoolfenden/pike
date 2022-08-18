@@ -41,7 +41,7 @@ Install from code:
 
  >choco install pike
 
-### Docker
+### Docker <https://hub.docker.com/repository/docker/jameswoolfenden/pike>
 
 >docker pull jameswoolfenden/pike
 >
