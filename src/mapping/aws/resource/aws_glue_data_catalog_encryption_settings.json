@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "glue:PutDataCatalogEncryptionSettings",
+      "glue:GetDataCatalogEncryptionSettings"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

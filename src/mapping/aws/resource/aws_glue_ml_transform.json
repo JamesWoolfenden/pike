@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "glue:DeleteMLTransform",
+      "glue:GetMLTransform",
+      "glue:CreateMLTransform"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "glue:DeleteMLTransform"
+    ],
+    "modify": [
+      "glue:UpdateMLTransform"
+    ],
+    "plan": []
+  }
+]

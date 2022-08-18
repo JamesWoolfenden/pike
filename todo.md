@@ -101,11 +101,7 @@
  aws_fsx_openzfs_file_system not implemented
  aws_fsx_openzfs_snapshot not implemented
  aws_fsx_openzfs_volume not implemented
- aws_glue_connection not implemented
- aws_glue_connection not implemented
- aws_glue_data_catalog_encryption_settings not implemented
  aws_glue_job not implemented
- aws_glue_ml_transform not implemented
  aws_glue_partition not implemented
  aws_glue_partition_index not implemented
  aws_glue_registry not implemented
@@ -113,13 +109,6 @@
  aws_glue_schema not implemented
  aws_glue_security_configuration not implemented
  aws_glue_security_configuration not implemented
- aws_glue_trigger not implemented
- aws_glue_trigger not implemented
- aws_glue_trigger not implemented
- aws_glue_trigger not implemented
- aws_glue_trigger not implemented
- aws_glue_trigger not implemented
- aws_glue_trigger not implemented
  aws_glue_user_defined_function not implemented
  aws_glue_workflow not implemented
  aws_guardduty_detector not implemented

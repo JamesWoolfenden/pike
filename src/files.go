@@ -313,5 +313,17 @@ var awsGlueCatalogDatabase []byte
 //go:embed mapping/aws/resource/aws_glue_catalog_table.json
 var awsGlueCatalogTable []byte
 
+//go:embed mapping/aws/resource/aws_glue_connection.json
+var awsGlueConnection []byte
+
+//go:embed mapping/aws/resource/aws_glue_data_catalog_encryption_settings.json
+var awsGlueDataCatalogEncryptionSettings []byte
+
+//go:embed mapping/aws/resource/aws_glue_ml_transform.json
+var awsGlueMlTransform []byte
+
+//go:embed mapping/aws/resource/aws_glue_trigger.json
+var awsGlueTrigger []byte
+
 //go:embed mapping/gcp/google_compute_instance.json
 var googleComputeInstance []byte

@@ -7,10 +7,8 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "glue:DeleteClassifier",
-          "glue:CreateClassifier",
-          "glue:UpdateClassifier",
-          "glue:GetClassifier"
+          "glue:PutDataCatalogEncryptionSettings",
+          "glue:GetDataCatalogEncryptionSettings"
         ],
         "Resource" : "*"
       }

@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "glue:DeleteConnection",
+      "glue:GetConnection",
+      "glue:CreateConnection",
+      "glue:GetTags"
+    ],
+    "attributes": {
+      "tags": [
+        "glue:TagResource",
+        "glue:UntagResource"
+      ]
+    },
+    "destroy": [
+      "glue:DeleteConnection"
+    ],
+    "modify": [
+      "glue:UpdateConnection"
+    ],
+    "plan": []
+  }
+]

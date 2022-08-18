@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "glue:GetTrigger",
+      "glue:CreateTrigger",
+      "glue:DeleteTrigger"
+    ],
+    "attributes": {
+      "tags": [
+        "TagResource",
+        "UntagResource"
+      ]
+    },
+    "destroy": [
+      "glue:DeleteTrigger"
+    ],
+    "modify": [
+      "glue:UpdateTrigger"
+    ],
+    "plan": []
+  }
+]

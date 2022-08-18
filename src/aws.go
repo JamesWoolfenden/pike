@@ -141,6 +141,10 @@ func GetAWSResourcePermissions(result ResourceV2) []string {
 		"aws_glue_catalog_table":                             awsGlueCatalogTable,
 		"aws_glue_classifier":                                awsGlueClassifier,
 		"aws_glue_crawler":                                   awsGlueCrawler,
+		"aws_glue_connection":                                awsGlueConnection,
+		"aws_glue_data_catalog_encryption_settings":          awsGlueDataCatalogEncryptionSettings,
+		"aws_glue_ml_transform":                              awsGlueMlTransform,
+		"aws_glue_trigger":                                   awsGlueTrigger,
 	}
 
 	var Permissions []string
