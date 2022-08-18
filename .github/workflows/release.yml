@@ -32,3 +32,24 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
           PASSPHRASE: ${{ secrets.PASSPHRASE }}
+  publish-dockerhub:
+    runs-on:  ubuntu-latest
+    needs:
+      - goreleaser
+    steps:
+      - uses: actions/checkout@master
+      - name: Publish to Registry
+        uses: elgohr/Publish-Docker-Github-Action@master
+        with:
+          name: jameswoolfenden/pike
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          buildoptions: "--no-cache"
+          tags: "latest,${{ github.ref_name }}"
+      - name: Update Docker Hub README
+        uses: peter-evans/dockerhub-description@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          repository: jameswoolfenden/pike
+          short-description: ${{ github.event.repository.description }}

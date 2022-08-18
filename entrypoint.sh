@@ -11,7 +11,7 @@ fi
 flags=""
 
 echo "running command:"
-echo pike tag -d "$INPUT_DIRECTORY" scan "$flags"
+echo pike -d "$INPUT_DIRECTORY" scan "$flags"
 
-/usr/bin/pike tag -d "$INPUT_DIRECTORY" scan "$flags"
+/usr/bin/pike -d "$INPUT_DIRECTORY" scan "$flags"
 export pike_EXIT_CODE=$?
