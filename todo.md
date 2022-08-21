@@ -68,8 +68,6 @@
  aws_ec2_transit_gateway not implemented
  aws_ec2_transit_gateway_route_table not implemented
  aws_ec2_transit_gateway_vpc_attachment not implemented
- aws_ecr_lifecycle_policy not implemented
- aws_ecr_lifecycle_policy not implemented
  aws_ecr_repository_policy not implemented
  aws_ecr_repository_policy not implemented
  aws_ecrpublic_repository not implemented

@@ -271,6 +271,9 @@ var awsElasticBeanstalkApplication []byte
 //go:embed mapping/aws/resource/aws_flow_log.json
 var awsFlowLog []byte
 
+//go:embed mapping/aws/resource/aws_ecr_lifecycle_policy.json
+var awsEcrLifecyclePolicy []byte
+
 //go:embed mapping/aws/resource/aws_ecr_repository.json
 var awsEcrRepository []byte
 
