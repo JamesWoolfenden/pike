@@ -126,6 +126,7 @@ func GetAWSResourcePermissions(result ResourceV2) []string {
 		"aws_elastic_beanstalk_application":                  awsElasticBeanstalkApplication,
 		"aws_flow_log":                                       awsFlowLog,
 		"aws_kms_alias":                                      awsKmsAlias,
+		"aws_ecr_lifecycle_policy":                           awsEcrLifecyclePolicy,
 		"aws_ecr_repository":                                 awsEcrRepository,
 		"aws_route_table":                                    awsRouteTable,
 		"aws_route_table_association":                        awsRouteTableAssociation,
