@@ -26,7 +26,7 @@ func Compare(directory string, arn string) error {
 	Version := GetVersion(client, arn)
 	Policy, _ := GetPolicyVersion(client, arn, Version)
 
-	iacPolicy, _ := MakePolicy(directory, "json")
+	iacPolicy, _ := MakePolicy(directory, "json", "")
 	Sorted, _ := SortActions(iacPolicy)
 
 	// iam versus iac

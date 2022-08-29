@@ -14,6 +14,7 @@ import (
 
 func main() {
 	var directory string
+	var file string
 	var output string
 	var arn string
 	var wait int
@@ -32,6 +33,12 @@ func main() {
 				Usage:       "Directory to scan (defaults to .)",
 				Value:       ".",
 				Destination: &directory,
+			},
+			&cli.StringFlag{
+				Name:        "file",
+				Aliases:     []string{"f"},
+				Usage:       "File to scan",
+				Destination: &file,
 			},
 			&cli.StringFlag{
 				Name:        "output",
@@ -63,7 +70,7 @@ func main() {
 				Aliases: []string{"s"},
 				Usage:   "scan a directory for IAM code",
 				Action: func(*cli.Context) error {
-					return pike.Scan(directory, output)
+					return pike.Scan(directory, output, file)
 				},
 			},
 			{

@@ -14,7 +14,7 @@ func Readme(dirname string, output string) error {
 		return err
 	}
 
-	Policy, err2 := MakePolicy(dirname, output)
+	Policy, err2 := MakePolicy(dirname, output, "")
 	if err2 != nil {
 		return err2
 	}

@@ -9,8 +9,8 @@ import (
 )
 
 // Scan looks for resources in a given directory
-func Scan(dirname string, output string) error {
-	Policy, err := MakePolicy(dirname, output)
+func Scan(dirname string, output string, file string) error {
+	Policy, err := MakePolicy(dirname, output, file)
 	if err != nil {
 		return err
 	}
@@ -20,16 +20,33 @@ func Scan(dirname string, output string) error {
 }
 
 // MakePolicy does the guts of determining a policy from code
-func MakePolicy(dirname string, output string) (string, error) {
-	fullPath, err := filepath.Abs(dirname)
+func MakePolicy(dirname string, output string, file string) (string, error) {
+	var files []string
 
-	if err != nil {
-		return "", err
-	}
+	if file == "" {
+		fullPath, err := filepath.Abs(dirname)
 
-	files, err2 := GetTF(fullPath)
-	if err2 != nil {
-		return "", err2
+		if err != nil {
+			return "", err
+		}
+
+		files, err = GetTF(fullPath)
+		if err != nil {
+			return "", err
+		}
+	} else {
+		myFile, err := filepath.Abs(file)
+
+		if err != nil {
+			return "", err
+		}
+
+		// is this a file
+		if !(fileExists(myFile)) {
+			return "", os.ErrNotExist
+		}
+
+		files = append(files, myFile)
 	}
 
 	var resources []ResourceV2

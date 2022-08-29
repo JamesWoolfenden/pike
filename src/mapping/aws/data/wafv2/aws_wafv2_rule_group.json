@@ -7,7 +7,7 @@
     "destroy": [],
     "modify": [],
     "plan": [
-      "WAFV2:ListRuleGroups"
+      "wafv2:ListRuleGroups"
     ]
   }
 ]
