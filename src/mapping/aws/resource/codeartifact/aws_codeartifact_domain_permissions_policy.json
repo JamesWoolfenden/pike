@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "codeartifact:PutDomainPermissionsPolicy",
+      "codeartifact:GetDomainPermissionsPolicy",
+      "codeartifact:DeleteDomainPermissionsPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "codeartifact:DeleteDomainPermissionsPolicy"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

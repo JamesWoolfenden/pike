@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "codecommit:CreateRepository",
+      "codecommit:ListBranches",
+      "codecommit:GetRepository",
+      "codecommit:DeleteRepository",
+      "codecommit:ListTagsForResource"
+    ],
+    "attributes": {
+      "description": [
+        "codecommit:UpdateRepositoryDescription"
+      ],
+      "tags": [
+        "codecommit:TagResource",
+        "codecommit:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

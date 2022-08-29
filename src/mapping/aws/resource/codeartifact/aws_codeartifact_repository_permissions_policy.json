@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "codeartifact:PutRepositoryPermissionsPolicy",
+      "codeartifact:GetRepositoryPermissionsPolicy",
+      "codeartifact:DeleteRepositoryPermissionsPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "codeartifact:DeleteRepositoryPermissionsPolicy"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

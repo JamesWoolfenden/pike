@@ -328,5 +328,26 @@ var awsGlueMlTransform []byte
 //go:embed mapping/aws/resource/glue/aws_glue_trigger.json
 var awsGlueTrigger []byte
 
+//go:embed mapping/aws/resource/codebuild/aws_codebuild_project.json
+var awsCodebuildProject []byte
+
+//go:embed mapping/aws/resource/codecommit/aws_codecommit_repository.json
+var awsCodecommitRepository []byte
+
+//go:embed mapping/aws/resource/codepipeline/aws_codepipeline.json
+var awsCodepipeline []byte
+
+//go:embed mapping/aws/resource/codeartifact/aws_codeartifact_repository.json
+var awsCodeartifactRepository []byte
+
+//go:embed mapping/aws/resource/codeartifact/aws_codeartifact_domain.json
+var awsCodeartifactDomain []byte
+
+//go:embed mapping/aws/resource/codeartifact/aws_codeartifact_repository_permissions_policy.json
+var awsCodeartifactRepositoryPermissionsPolicy []byte
+
+//go:embed mapping/aws/resource/codeartifact/aws_codeartifact_domain_permissions_policy.json
+var awsCodeartifactDomainPermissionsPolicy []byte
+
 //go:embed mapping/gcp/google_compute_instance.json
 var googleComputeInstance []byte

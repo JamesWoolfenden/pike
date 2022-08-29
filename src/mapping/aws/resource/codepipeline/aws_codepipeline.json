@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "codepipeline:CreatePipeline",
+      "iam:PassRole",
+      "codepipeline:GetPipeline",
+      "codepipeline:ListTagsForResource",
+      "codepipeline:DeletePipeline"
+    ],
+    "attributes": {
+      "tags": [
+        "codepipeline:TagResource",
+        "codepipeline:UntagResource"
+      ]
+    },
+    "destroy": [
+      "codepipeline:DeletePipeline"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

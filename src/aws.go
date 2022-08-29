@@ -146,6 +146,13 @@ func GetAWSResourcePermissions(result ResourceV2) []string {
 		"aws_glue_data_catalog_encryption_settings":          awsGlueDataCatalogEncryptionSettings,
 		"aws_glue_ml_transform":                              awsGlueMlTransform,
 		"aws_glue_trigger":                                   awsGlueTrigger,
+		"aws_codebuild_project":                              awsCodebuildProject,
+		"aws_codecommit_repository":                          awsCodecommitRepository,
+		"aws_codepipeline":                                   awsCodepipeline,
+		"aws_codeartifact_domain":                            awsCodeartifactDomain,
+		"aws_codeartifact_domain_permissions_policy":         awsCodeartifactDomainPermissionsPolicy,
+		"aws_codeartifact_repository":                        awsCodeartifactRepository,
+		"aws_codeartifact_repository_permissions_policy":     awsCodeartifactRepositoryPermissionsPolicy,
 	}
 
 	var Permissions []string

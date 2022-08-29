@@ -1,18 +1,18 @@
 [
   {
     "apply": [
-      "CreateClassifier",
-      "DeleteClassifier",
-      "GetClassifier"
+      "glue:CreateClassifier",
+      "glue:DeleteClassifier",
+      "glue:GetClassifier"
     ],
     "attributes": {
       "tags": []
     },
     "destroy": [
-      "DeleteClassifier"
+      "glue:DeleteClassifier"
     ],
     "modify": [
-      "UpdateClassifier"
+      "glue:UpdateClassifier"
     ],
     "plan": []
   }

@@ -25,17 +25,6 @@
  aws_cloudhsm_v2_cluster not implemented
  aws_cloudhsm_v2_hsm not implemented
  aws_cloudtrail not implemented
- aws_codeartifact_domain not implemented
- aws_codeartifact_domain_permissions_policy not implemented
- aws_codeartifact_repository not implemented
- aws_codeartifact_repository_permissions_policy not implemented
- aws_codebuild_project not implemented
- aws_codebuild_project not implemented
- aws_codecommit_approval_rule_template not implemented
- aws_codecommit_approval_rule_template_association not implemented
- aws_codecommit_repository not implemented
- aws_codecommit_repository not implemented
- aws_codepipeline not implemented
  aws_cognito_identity_pool not implemented
  aws_cognito_resource_server not implemented
  aws_cognito_user_group not implemented

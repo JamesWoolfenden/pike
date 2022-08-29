@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "codeartifact:CreateDomain",
+      "codeartifact:DescribeDomain",
+      "codeartifact:DeleteDomain",
+      "codeartifact:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "codeartifact:TagResource",
+        "codeartifact:UntagResource"
+      ]
+    },
+    "destroy": [
+      "codeartifact:DeleteDomain"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

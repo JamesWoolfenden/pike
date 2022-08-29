@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "codebuild:CreateProject",
+      "iam:PassRole",
+      "codebuild:BatchGetProjects",
+      "codebuild:DeleteProject"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "codebuild:DeleteProject"
+    ],
+    "modify": [
+      "codebuild:UpdateProject"
+    ],
+    "plan": []
+  }
+]

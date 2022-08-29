@@ -6,6 +6,12 @@ clean:
 apply: init
 	terraform apply -auto-approve
 
+plan: init
+	terraform plan
+
+destroy: init
+	terraform destroy -auto-approve
+
 init:
 	terraform init
 
