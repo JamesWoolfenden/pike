@@ -354,7 +354,7 @@ USAGE:
    pike [global options] command [command options] [arguments...]
 
 VERSION:
-   v0.1.26
+   v0.1.46
 
 AUTHOR:
    James Woolfenden <support@bridgecrew.io>
