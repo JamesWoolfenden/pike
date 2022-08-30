@@ -1,22 +1,74 @@
 package pike
 
 import (
+	"context"
 	"fmt"
 	"log"
 	"os"
+	"os/exec"
 	"path/filepath"
 	"strings"
+
+	"github.com/hashicorp/go-version"
+	"github.com/hashicorp/hc-install/product"
+	"github.com/hashicorp/hc-install/releases"
+	"github.com/hashicorp/terraform-exec/tfexec"
 )
 
+const tfVersion = "1.2.3"
+
 // Scan looks for resources in a given directory
-func Scan(dirname string, output string, file string) error {
-	Policy, err := MakePolicy(dirname, output, file)
+func Scan(dirName string, output string, file string, init bool) error {
+
+	if init && file == "" {
+		err := InitTF(dirName)
+		if err != nil {
+			return err
+		}
+	}
+
+	Policy, err := MakePolicy(dirName, output, file)
 	if err != nil {
 		return err
 	}
 
 	fmt.Print(Policy)
 	return err
+}
+
+// InitTF can download and install terraform if required and then terraform init your specified directory
+func InitTF(dirName string) error {
+
+	tfPath, _ := exec.LookPath("terraform")
+
+	//if you don't have tf installed we have to install it
+	if tfPath == "" {
+		log.Printf("installing Terraform %s\n", tfVersion)
+		installer := &releases.ExactVersion{
+			Product: product.Terraform,
+			Version: version.Must(version.NewVersion(tfVersion)),
+		}
+
+		var err error
+
+		tfPath, err = installer.Install(context.Background())
+		if err != nil {
+			return err
+		}
+	}
+
+	tf, err := tfexec.NewTerraform(dirName, tfPath)
+	if err != nil {
+		return err
+	}
+
+	err = tf.Init(context.Background(), tfexec.Upgrade(true))
+	if err != nil {
+		return err
+	}
+
+	log.Printf("terraform init at %s\n", dirName)
+	return nil
 }
 
 // MakePolicy does the guts of determining a policy from code
@@ -89,7 +141,7 @@ func GetTF(dirName string) ([]string, error) {
 	for _, file := range rawFiles {
 		if file.IsDir() {
 
-			if file.Name() == ".terraform" || file.Name() == ".git" {
+			if file.Name() == ".git" {
 				continue
 			}
 			newDirName := dirName + "/" + file.Name()

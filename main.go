@@ -18,6 +18,7 @@ func main() {
 	var output string
 	var arn string
 	var wait int
+	var init bool
 
 	app := &cli.App{
 		EnableBashCompletion: true,
@@ -26,6 +27,12 @@ func main() {
 				Name:    "config",
 				Aliases: []string{"c"},
 				Usage:   "Load configuration from `FILE`",
+			},
+			&cli.BoolFlag{
+				Name:        "init",
+				Aliases:     []string{"i"},
+				Usage:       "Run Terraform init to download modules",
+				Destination: &init,
 			},
 			&cli.StringFlag{
 				Name:        "directory",
@@ -70,7 +77,7 @@ func main() {
 				Aliases: []string{"s"},
 				Usage:   "scan a directory for IAM code",
 				Action: func(*cli.Context) error {
-					return pike.Scan(directory, output, file)
+					return pike.Scan(directory, output, file, init)
 				},
 			},
 			{

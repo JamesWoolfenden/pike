@@ -41,7 +41,7 @@ Install from code:
 
  >choco install pike
 
-### Docker 
+### Docker
 
 >docker pull jameswoolfenden/pike
 >
@@ -368,13 +368,15 @@ COMMANDS:
    help, h     Shows a list of commands or help for one command
 
 GLOBAL OPTIONS:
-   --arn value, -a value        Policy identifier e.g. arn (default: "arn:aws:iam::680235478471:policy/basic") [%ARN%]
+   --arn value, -a value        Policy identifier e.g. arn (default: "arn:aws:iam::680235478471:policy/basic") [$ARN]
    --config FILE, -c FILE       Load configuration from FILE
    --directory value, -d value  Directory to scan (defaults to .) (default: ".")
+   --file value, -f value       File to scan
    --help, -h                   show help (default: false)
-   --output json, -o json       Output types e.g. json terraform [%OUTPUT%]
+   --init, -i                   Run Terraform init to download modules (default: false)
+   --output json, -o json       Output types e.g. json terraform [$OUTPUT]
    --version, -v                print the version (default: false)
-   --wait value, -W value       Time to wait for policy change (in tenths of seconds) (default: 100) [%WAIT%]
+   --wait value, -W value       Time to wait for policy change (in tenths of seconds) (default: 100) [$WAIT]
 
 ```
 
