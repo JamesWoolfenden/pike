@@ -6,15 +6,15 @@ import (
 )
 
 // Readme Updates a README.md file
-func Readme(dirname string, output string) error {
+func Readme(dirName string, output string, init bool) error {
 
-	file := dirname + "/README.md"
+	file := dirName + "/README.md"
 
 	if _, err := os.Stat(file); errors.Is(err, os.ErrNotExist) {
 		return err
 	}
 
-	Policy, err2 := MakePolicy(dirname, output, "")
+	Policy, err2 := MakePolicy(dirName, output, "", init)
 	if err2 != nil {
 		return err2
 	}

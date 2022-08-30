@@ -20,14 +20,7 @@ const tfVersion = "1.2.3"
 // Scan looks for resources in a given directory
 func Scan(dirName string, output string, file string, init bool) error {
 
-	if init && file == "" {
-		err := InitTF(dirName)
-		if err != nil {
-			return err
-		}
-	}
-
-	Policy, err := MakePolicy(dirName, output, file)
+	Policy, err := MakePolicy(dirName, output, file, init)
 	if err != nil {
 		return err
 	}
@@ -72,14 +65,20 @@ func InitTF(dirName string) error {
 }
 
 // MakePolicy does the guts of determining a policy from code
-func MakePolicy(dirname string, output string, file string) (string, error) {
+func MakePolicy(dirName string, output string, file string, init bool) (string, error) {
 	var files []string
 
 	if file == "" {
-		fullPath, err := filepath.Abs(dirname)
+		fullPath, err := filepath.Abs(dirName)
 
 		if err != nil {
 			return "", err
+		}
+		if init {
+			err := InitTF(dirName)
+			if err != nil {
+				return "", err
+			}
 		}
 
 		files, err = GetTF(fullPath)
@@ -141,7 +140,7 @@ func GetTF(dirName string) ([]string, error) {
 	for _, file := range rawFiles {
 		if file.IsDir() {
 
-			if file.Name() == ".git" {
+			if file.Name() == ".git" || file.Name() == ".external_modules" {
 				continue
 			}
 			newDirName := dirName + "/" + file.Name()

@@ -13,7 +13,7 @@ import (
 )
 
 // Compare IAC codebase to AWS policy
-func Compare(directory string, arn string) error {
+func Compare(directory string, arn string, init bool) error {
 
 	// Load the Shared AWS Configuration (~/.aws/config)
 	cfg, err := config.LoadDefaultConfig(context.TODO())
@@ -26,7 +26,7 @@ func Compare(directory string, arn string) error {
 	Version := GetVersion(client, arn)
 	Policy, _ := GetPolicyVersion(client, arn, Version)
 
-	iacPolicy, _ := MakePolicy(directory, "json", "")
+	iacPolicy, _ := MakePolicy(directory, "json", "", init)
 	Sorted, _ := SortActions(iacPolicy)
 
 	// iam versus iac
