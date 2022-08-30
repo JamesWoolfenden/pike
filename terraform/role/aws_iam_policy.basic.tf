@@ -7,9 +7,12 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "ssm:RegisterTaskWithMaintenanceWindow",
-          "ssm:DescribeMaintenanceWindowTasks",
-          "ssm:DeregisterTaskFromMaintenanceWindow"
+          "ec2:DescribeInstanceTypes",
+          "ec2:CreateLaunchTemplate",
+          "ec2:DescribeLaunchTemplates",
+          "ec2:DescribeLaunchTemplateVersions",
+          "ec2:DeleteLaunchTemplate",
+          "ec2:CreateLaunchTemplateVersion"
         ],
         "Resource" : "*"
       }

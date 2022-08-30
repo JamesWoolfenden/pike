@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeInstanceTypes",
+      "ec2:CreateLaunchTemplate",
+      "ec2:DescribeLaunchTemplates",
+      "ec2:DescribeLaunchTemplateVersions",
+      "ec2:DeleteLaunchTemplate",
+      "ec2:CreateLaunchTemplateVersion"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "ec2:DeleteLaunchTemplate"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

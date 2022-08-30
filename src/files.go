@@ -286,7 +286,7 @@ var awsRouteTable []byte
 //go:embed mapping/aws/resource/ec2/aws_route_table_association.json
 var awsRouteTableAssociation []byte
 
-//go:embed mapping/aws/resource/aws_nat_gateway.json
+//go:embed mapping/aws/resource/ec2/aws_nat_gateway.json
 var awsNatGateway []byte
 
 //go:embed mapping/aws/resource/rds/aws_db_option_group.json
@@ -363,6 +363,9 @@ var awsSsmMaintenanceWindowTarget []byte
 
 //go:embed mapping/aws/resource/ssm/aws_ssm_maintenance_window_task.json
 var awsSsmMaintenanceWindowTask []byte
+
+//go:embed mapping/aws/resource/ec2/aws_launch_template.json
+var awsLaunchTemplate []byte
 
 //go:embed mapping/gcp/google_compute_instance.json
 var googleComputeInstance []byte

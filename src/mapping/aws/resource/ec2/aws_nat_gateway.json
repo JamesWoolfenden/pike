@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "ec2:CreateNatGateway",
+      "ec2:DeleteNatGateway",
+      "ec2:DescribeNatGateways"
+    ],
+    "attributes": {
+      "tags": [
+        "ec2:DeleteTags",
+        "ec2:CreateTags"
+      ]
+    },
+    "destroy": [
+      "ec2:DeleteNatGateway"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

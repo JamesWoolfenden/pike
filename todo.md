@@ -123,7 +123,6 @@ aws_inspector_assessment_target not implemented
 aws_inspector_assessment_template not implemented
 aws_inspector_resource_group not implemented
 aws_lambda_layer_version not implemented
-aws_launch_template not implemented
 aws_lb_listener_rule not implemented
 aws_media_convert_queue not implemented
 aws_memorydb_cluster not implemented
