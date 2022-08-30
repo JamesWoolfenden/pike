@@ -65,13 +65,13 @@ EOF
 }
 
 resource "aws_api_gateway_stage" "development" {
-  deployment_id = aws_api_gateway_deployment.example.id
+  deployment_id = aws_api_gateway_deployment.myexample.id
   rest_api_id   = aws_api_gateway_rest_api.MyDemoAPI.id
   stage_name    = "development"
 }
 
 resource "aws_api_gateway_stage" "production" {
-  deployment_id = aws_api_gateway_deployment.example.id
+  deployment_id = aws_api_gateway_deployment.myexample.id
   rest_api_id   = aws_api_gateway_rest_api.MyDemoAPI.id
   stage_name    = "production"
 }
@@ -91,7 +91,7 @@ resource "aws_api_gateway_usage_plan" "myusageplan" {
   }
 }
 
-resource "aws_api_gateway_deployment" "example" {
+resource "aws_api_gateway_deployment" "myexample" {
   rest_api_id = aws_api_gateway_rest_api.MyDemoAPI.id
 
   triggers = {

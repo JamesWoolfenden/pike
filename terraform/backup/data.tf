@@ -9,10 +9,10 @@ output "aws_vpcs" {
 }
 
 
-data "aws_caller_identity" "current" {}
+data "aws_caller_identity" "me" {}
 
-output "id" {
-  value = data.aws_caller_identity.current
+output "caller_id" {
+  value = data.aws_caller_identity.me
 }
 
 data "aws_subnet_ids" "public" {

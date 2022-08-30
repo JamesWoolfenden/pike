@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "ssm:RegisterTaskWithMaintenanceWindow",
+      "ssm:DescribeMaintenanceWindowTasks",
+      "ssm:DeregisterTaskFromMaintenanceWindow"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "ssm:DeregisterTaskFromMaintenanceWindow"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

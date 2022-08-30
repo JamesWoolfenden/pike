@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "ssm:CreatePatchBaseline",
+      "ssm:GetPatchBaseline",
+      "ssm:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "ssm:RemoveTagsFromResource",
+        "ssm:AddTagsToResource"
+      ]
+    },
+    "destroy": [
+      "ssm:DeletePatchBaseline"
+    ],
+    "modify": [
+      "ssm:UpdatePatchBaseline"
+    ],
+    "plan": []
+  }
+]

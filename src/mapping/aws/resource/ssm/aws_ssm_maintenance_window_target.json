@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "ssm:RegisterTargetWithMaintenanceWindow",
+      "ssm:DescribeMaintenanceWindowTargets",
+      "ssm:DeregisterTargetFromMaintenanceWindow"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "ssm:DeregisterTargetFromMaintenanceWindow"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

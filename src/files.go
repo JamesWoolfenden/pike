@@ -349,5 +349,20 @@ var awsCodeartifactRepositoryPermissionsPolicy []byte
 //go:embed mapping/aws/resource/codeartifact/aws_codeartifact_domain_permissions_policy.json
 var awsCodeartifactDomainPermissionsPolicy []byte
 
+//go:embed mapping/aws/resource/ssm/aws_ssm_patch_baseline.json
+var awsSsmPatchBaseline []byte
+
+//go:embed mapping/aws/resource/ssm/aws_ssm_patch_group.json
+var awsSsmPatchGroup []byte
+
+//go:embed mapping/aws/resource/ssm/aws_ssm_maintenance_window.json
+var awsSsmMaintenanceWindow []byte
+
+//go:embed mapping/aws/resource/ssm/aws_ssm_maintenance_window_target.json
+var awsSsmMaintenanceWindowTarget []byte
+
+//go:embed mapping/aws/resource/ssm/aws_ssm_maintenance_window_task.json
+var awsSsmMaintenanceWindowTask []byte
+
 //go:embed mapping/gcp/google_compute_instance.json
 var googleComputeInstance []byte

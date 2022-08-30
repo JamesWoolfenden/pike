@@ -1,4 +1,4 @@
-resource "aws_api_gateway_rest_api" "example" {
+resource "aws_api_gateway_rest_api" "pikeexample" {
   #  body = jsonencode({
   #    openapi = "3.0.1"
   #    info = {

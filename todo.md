@@ -1,185 +1,195 @@
 # todo
 
- aws_acm_certificate not implemented
- aws_acm_certificate not implemented
- aws_acm_certificate_validation not implemented
- aws_acm_certificate_validation not implemented
- aws_acmpca_certificate_authority not implemented
- aws_appsync_datasource not implemented
- aws_appsync_graphql_api not implemented
- aws_appsync_resolver not implemented
- aws_athena_database not implemented
- aws_athena_workgroup not implemented
- aws_batch_compute_environment not implemented
- aws_batch_job_definition not implemented
- aws_batch_job_queue not implemented
- aws_cloudfront_distribution not implemented
- aws_cloudfront_distribution not implemented
- aws_cloudfront_distribution not implemented
- aws_cloudfront_origin_access_identity not implemented
- aws_cloudfront_origin_access_identity not implemented
- aws_cloudfront_response_headers_policy not implemented
- aws_cloudfront_response_headers_policy not implemented
- aws_cloudfront_response_headers_policy not implemented
- aws_cloudfront_response_headers_policy not implemented
- aws_cloudhsm_v2_cluster not implemented
- aws_cloudhsm_v2_hsm not implemented
- aws_cloudtrail not implemented
- aws_cognito_identity_pool not implemented
- aws_cognito_resource_server not implemented
- aws_cognito_user_group not implemented
- aws_cognito_user_group not implemented
- aws_cognito_user_pool not implemented
- aws_cognito_user_pool_client not implemented
- aws_cognito_user_pool_client not implemented
- aws_cognito_user_pool_domain not implemented
- aws_config_config_rule not implemented
- aws_config_configuration_recorder not implemented
- aws_config_configuration_recorder_status not implemented
- aws_config_delivery_channel not implemented
- aws_dax_cluster not implemented
- aws_dax_parameter_group not implemented
- aws_dax_subnet_group not implemented
- aws_db_event_subscription not implemented
- aws_directory_service_directory not implemented
- aws_directory_service_directory not implemented
- aws_directory_service_log_subscription not implemented
- aws_dlm_lifecycle_policy not implemented
- aws_dms_replication_instance not implemented
- aws_docdb_cluster not implemented
- aws_docdb_cluster_instance not implemented
- aws_docdb_cluster_parameter_group not implemented
- aws_docdb_subnet_group not implemented
- aws_ec2_traffic_mirror_filter not implemented
- aws_ec2_traffic_mirror_session not implemented
- aws_ec2_traffic_mirror_target not implemented
- aws_ec2_transit_gateway not implemented
- aws_ec2_transit_gateway not implemented
- aws_ec2_transit_gateway_route_table not implemented
- aws_ec2_transit_gateway_vpc_attachment not implemented
- aws_ecr_repository_policy not implemented
- aws_ecr_repository_policy not implemented
- aws_ecrpublic_repository not implemented
- aws_ecs_cluster not implemented
- aws_ecs_cluster not implemented
- aws_ecs_cluster not implemented
- aws_ecs_service not implemented
- aws_ecs_service not implemented
- aws_ecs_service not implemented
- aws_ecs_service not implemented
- aws_ecs_task_definition not implemented
- aws_ecs_task_definition not implemented
- aws_ecs_task_definition not implemented
- aws_ecs_task_definition not implemented
- aws_efs_access_point not implemented
- aws_efs_file_system not implemented
- aws_efs_file_system not implemented
- aws_efs_mount_target not implemented
- aws_elastic_beanstalk_application_version not implemented
- aws_elastic_beanstalk_environment not implemented
- aws_elasticache_cluster not implemented
- aws_elasticache_parameter_group not implemented
- aws_elasticache_replication_group not implemented
- aws_elasticache_subnet_group not implemented
- aws_elasticsearch_domain not implemented
- aws_elasticsearch_domain_policy not implemented
- aws_emr_cluster not implemented
- aws_emr_security_configuration not implemented
- aws_fsx_openzfs_file_system not implemented
- aws_fsx_openzfs_snapshot not implemented
- aws_fsx_openzfs_volume not implemented
- aws_glue_job not implemented
- aws_glue_partition not implemented
- aws_glue_partition_index not implemented
- aws_glue_registry not implemented
- aws_glue_resource_policy not implemented
- aws_glue_schema not implemented
- aws_glue_security_configuration not implemented
- aws_glue_security_configuration not implemented
- aws_glue_user_defined_function not implemented
- aws_glue_workflow not implemented
- aws_guardduty_detector not implemented
- aws_guardduty_ipset not implemented
- aws_guardduty_member not implemented
- aws_guardduty_organization_configuration not implemented
- aws_guardduty_threatintelset not implemented
- aws_imagebuilder_component not implemented
- aws_imagebuilder_distribution_configuration not implemented
- aws_imagebuilder_image not implemented
- aws_imagebuilder_image_pipeline not implemented
- aws_imagebuilder_image_recipe not implemented
- aws_imagebuilder_infrastructure_configuration not implemented
- aws_inspector_assessment_target not implemented
- aws_inspector_assessment_template not implemented
- aws_inspector_resource_group not implemented
- aws_lambda_layer_version not implemented
- aws_launch_template not implemented
- aws_lb_listener_rule not implemented
- aws_media_convert_queue not implemented
- aws_memorydb_cluster not implemented
- aws_memorydb_snapshot not implemented
- aws_memorydb_subnet_group not implemented
- aws_neptune_cluster not implemented
- aws_neptune_cluster_instance not implemented
- aws_neptune_parameter_group not implemented
- aws_neptune_subnet_group not implemented
- aws_networkfirewall_firewall not implemented
- aws_networkfirewall_firewall_policy not implemented
- aws_networkfirewall_logging_configuration not implemented
- aws_networkfirewall_rule_group not implemented
- aws_organizations_organization not implemented
- aws_organizations_policy not implemented
- aws_organizations_policy_attachment not implemented
- aws_rds_cluster not implemented
- aws_rds_cluster_instance not implemented
- aws_rds_cluster_parameter_group not implemented
- aws_redshift_cluster not implemented
- aws_redshift_parameter_group not implemented
- aws_redshift_subnet_group not implemented
- aws_route53_hosted_zone_dnssec not implemented
- aws_route53_key_signing_key not implemented
- aws_route53_query_log not implemented
- aws_s3_bucket_cors_configuration not implemented
- aws_s3_bucket_cors_configuration not implemented
- aws_s3_bucket_replication_configuration not implemented
- aws_s3_bucket_replication_configuration not implemented
- aws_s3_bucket_replication_configuration not implemented
- aws_s3_bucket_website_configuration not implemented
- aws_s3_bucket_website_configuration not implemented
- aws_sagemaker_endpoint_configuration not implemented
- aws_sagemaker_model not implemented
- aws_securityhub_account not implemented
- aws_servicecatalog_portfolio not implemented
- aws_sfn_activity not implemented
- aws_sfn_state_machine not implemented
- aws_sfn_state_machine not implemented
- aws_ssm_maintenance_window not implemented
- aws_ssm_maintenance_window_target not implemented
- aws_ssm_maintenance_window_task not implemented
- aws_ssm_patch_group not implemented
- aws_ssoadmin_permission_set not implemented
- aws_ssoadmin_permission_set_inline_policy not implemented
- aws_vpc_endpoint_service not implemented
- aws_vpc_endpoint_service not implemented
- aws_vpc_peering_connection not implemented
- aws_vpc_peering_connection_accepter not implemented
- aws_vpc_peering_connection_options not implemented
- aws_vpc_peering_connection_options not implemented
- aws_waf_ipset not implemented
- aws_waf_rule not implemented
- aws_waf_web_acl not implemented
- aws_wafregional_ipset not implemented
- aws_wafregional_rule not implemented
- aws_wafregional_web_acl not implemented
- aws_wafregional_web_acl not implemented
- aws_wafv2_web_acl_association not implemented
- aws_wafv2_web_acl_association not implemented
- aws_wafv2_web_acl_logging_configuration not implemented
- aws_wafv2_web_acl_logging_configuration not implemented
- aws_wafv2_web_acl_logging_configuration not implemented
- aws_wafv2_web_acl_logging_configuration not implemented
- aws_workspaces_directory not implemented
- aws_workspaces_workspace not implemented
+aws_acm_certificate not implemented
+aws_acm_certificate not implemented
+aws_acm_certificate_validation not implemented
+aws_acm_certificate_validation not implemented
+aws_acmpca_certificate_authority not implemented
+aws_appsync_datasource not implemented
+aws_appsync_graphql_api not implemented
+aws_appsync_resolver not implemented
+aws_athena_database not implemented
+aws_athena_workgroup not implemented
+aws_batch_compute_environment not implemented
+aws_batch_job_definition not implemented
+aws_batch_job_queue not implemented
+aws_cloudfront_distribution not implemented
+aws_cloudfront_distribution not implemented
+aws_cloudfront_distribution not implemented
+aws_cloudfront_distribution not implemented
+aws_cloudfront_origin_access_identity not implemented
+aws_cloudfront_origin_access_identity not implemented
+aws_cloudfront_response_headers_policy not implemented
+aws_cloudfront_response_headers_policy not implemented
+aws_cloudfront_response_headers_policy not implemented
+aws_cloudfront_response_headers_policy not implemented
+aws_cloudfront_response_headers_policy not implemented
+aws_cloudfront_response_headers_policy not implemented
+aws_cloudhsm_v2_cluster not implemented
+aws_cloudhsm_v2_hsm not implemented
+aws_cloudtrail not implemented
+aws_codecommit_approval_rule_template not implemented
+aws_codecommit_approval_rule_template not implemented
+aws_codecommit_approval_rule_template not implemented
+aws_codecommit_approval_rule_template_association not implemented
+aws_codecommit_approval_rule_template_association not implemented
+aws_codecommit_approval_rule_template_association not implemented
+aws_cognito_identity_pool not implemented
+aws_cognito_resource_server not implemented
+aws_cognito_user_group not implemented
+aws_cognito_user_group not implemented
+aws_cognito_user_pool not implemented
+aws_cognito_user_pool_client not implemented
+aws_cognito_user_pool_client not implemented
+aws_cognito_user_pool_domain not implemented
+aws_config_config_rule not implemented
+aws_config_configuration_recorder not implemented
+aws_config_configuration_recorder_status not implemented
+aws_config_delivery_channel not implemented
+aws_dax_cluster not implemented
+aws_dax_parameter_group not implemented
+aws_dax_subnet_group not implemented
+aws_db_event_subscription not implemented
+aws_directory_service_directory not implemented
+aws_directory_service_directory not implemented
+aws_directory_service_log_subscription not implemented
+aws_dlm_lifecycle_policy not implemented
+aws_dms_replication_instance not implemented
+aws_docdb_cluster not implemented
+aws_docdb_cluster_instance not implemented
+aws_docdb_cluster_parameter_group not implemented
+aws_docdb_subnet_group not implemented
+aws_ec2_traffic_mirror_filter not implemented
+aws_ec2_traffic_mirror_session not implemented
+aws_ec2_traffic_mirror_target not implemented
+aws_ec2_transit_gateway not implemented
+aws_ec2_transit_gateway not implemented
+aws_ec2_transit_gateway_route_table not implemented
+aws_ec2_transit_gateway_vpc_attachment not implemented
+aws_ecr_repository_policy not implemented
+aws_ecr_repository_policy not implemented
+aws_ecr_repository_policy not implemented
+aws_ecrpublic_repository not implemented
+aws_ecs_cluster not implemented
+aws_ecs_cluster not implemented
+aws_ecs_cluster not implemented
+aws_ecs_service not implemented
+aws_ecs_service not implemented
+aws_ecs_service not implemented
+aws_ecs_service not implemented
+aws_ecs_task_definition not implemented
+aws_ecs_task_definition not implemented
+aws_ecs_task_definition not implemented
+aws_ecs_task_definition not implemented
+aws_efs_access_point not implemented
+aws_efs_file_system not implemented
+aws_efs_file_system not implemented
+aws_efs_mount_target not implemented
+aws_elastic_beanstalk_application_version not implemented
+aws_elastic_beanstalk_environment not implemented
+aws_elasticache_cluster not implemented
+aws_elasticache_parameter_group not implemented
+aws_elasticache_replication_group not implemented
+aws_elasticache_subnet_group not implemented
+aws_elasticsearch_domain not implemented
+aws_elasticsearch_domain_policy not implemented
+aws_emr_cluster not implemented
+aws_emr_security_configuration not implemented
+aws_fsx_openzfs_file_system not implemented
+aws_fsx_openzfs_snapshot not implemented
+aws_fsx_openzfs_volume not implemented
+aws_glue_job not implemented
+aws_glue_partition not implemented
+aws_glue_partition_index not implemented
+aws_glue_registry not implemented
+aws_glue_resource_policy not implemented
+aws_glue_schema not implemented
+aws_glue_security_configuration not implemented
+aws_glue_security_configuration not implemented
+aws_glue_user_defined_function not implemented
+aws_glue_workflow not implemented
+aws_guardduty_detector not implemented
+aws_guardduty_ipset not implemented
+aws_guardduty_member not implemented
+aws_guardduty_organization_configuration not implemented
+aws_guardduty_threatintelset not implemented
+aws_imagebuilder_component not implemented
+aws_imagebuilder_distribution_configuration not implemented
+aws_imagebuilder_image not implemented
+aws_imagebuilder_image_pipeline not implemented
+aws_imagebuilder_image_recipe not implemented
+aws_imagebuilder_infrastructure_configuration not implemented
+aws_inspector_assessment_target not implemented
+aws_inspector_assessment_template not implemented
+aws_inspector_resource_group not implemented
+aws_lambda_layer_version not implemented
+aws_launch_template not implemented
+aws_lb_listener_rule not implemented
+aws_media_convert_queue not implemented
+aws_memorydb_cluster not implemented
+aws_memorydb_snapshot not implemented
+aws_memorydb_subnet_group not implemented
+aws_neptune_cluster not implemented
+aws_neptune_cluster_instance not implemented
+aws_neptune_parameter_group not implemented
+aws_neptune_subnet_group not implemented
+aws_networkfirewall_firewall not implemented
+aws_networkfirewall_firewall_policy not implemented
+aws_networkfirewall_logging_configuration not implemented
+aws_networkfirewall_rule_group not implemented
+aws_organizations_organization not implemented
+aws_organizations_policy not implemented
+aws_organizations_policy_attachment not implemented
+aws_rds_cluster not implemented
+aws_rds_cluster_instance not implemented
+aws_rds_cluster_parameter_group not implemented
+aws_redshift_cluster not implemented
+aws_redshift_parameter_group not implemented
+aws_redshift_subnet_group not implemented
+aws_route53_hosted_zone_dnssec not implemented
+aws_route53_key_signing_key not implemented
+aws_route53_query_log not implemented
+aws_s3_bucket_cors_configuration not implemented
+aws_s3_bucket_cors_configuration not implemented
+aws_s3_bucket_replication_configuration not implemented
+aws_s3_bucket_replication_configuration not implemented
+aws_s3_bucket_replication_configuration not implemented
+aws_s3_bucket_website_configuration not implemented
+aws_s3_bucket_website_configuration not implemented
+aws_sagemaker_endpoint_configuration not implemented
+aws_sagemaker_model not implemented
+aws_securityhub_account not implemented
+aws_servicecatalog_portfolio not implemented
+aws_sfn_activity not implemented
+aws_sfn_state_machine not implemented
+aws_sfn_state_machine not implemented
+aws_ssoadmin_permission_set not implemented
+aws_ssoadmin_permission_set_inline_policy not implemented
+aws_vpc_endpoint_service not implemented
+aws_vpc_endpoint_service not implemented
+aws_vpc_peering_connection not implemented
+aws_vpc_peering_connection_accepter not implemented
+aws_vpc_peering_connection_options not implemented
+aws_vpc_peering_connection_options not implemented
+aws_waf_ipset not implemented
+aws_waf_rule not implemented
+aws_waf_web_acl not implemented
+aws_wafregional_ipset not implemented
+aws_wafregional_rule not implemented
+aws_wafregional_web_acl not implemented
+aws_wafregional_web_acl not implemented
+aws_wafv2_web_acl_association not implemented
+aws_wafv2_web_acl_association not implemented
+aws_wafv2_web_acl_logging_configuration not implemented
+aws_wafv2_web_acl_logging_configuration not implemented
+aws_wafv2_web_acl_logging_configuration not implemented
+aws_wafv2_web_acl_logging_configuration not implemented
+aws_wafv2_web_acl_logging_configuration not implemented
+aws_wafv2_web_acl_logging_configuration not implemented
+aws_workspaces_directory not implemented
+aws_workspaces_workspace not implemented
+data.aws_directory_service_directory not implemented
+data.aws_workspaces_bundle not implemented
 
 glacier
 -vault

@@ -1,4 +1,4 @@
-data "aws_region" "current" {}
+data "aws_region" "mine" {}
 
 data "aws_route53_traffic_policy_document" "example" {
   record_type = "A"
@@ -12,7 +12,7 @@ data "aws_route53_traffic_policy_document" "example" {
   endpoint {
     id     = "site_down_banner"
     type   = "s3-website"
-    region = data.aws_region.current.name
+    region = data.aws_region.mine.name
     value  = "www.example.com"
   }
 

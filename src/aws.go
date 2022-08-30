@@ -153,6 +153,11 @@ func GetAWSResourcePermissions(result ResourceV2) []string {
 		"aws_codeartifact_domain_permissions_policy":         awsCodeartifactDomainPermissionsPolicy,
 		"aws_codeartifact_repository":                        awsCodeartifactRepository,
 		"aws_codeartifact_repository_permissions_policy":     awsCodeartifactRepositoryPermissionsPolicy,
+		"aws_ssm_patch_baseline":                             awsSsmPatchBaseline,
+		"aws_ssm_patch_group":                                awsSsmPatchGroup,
+		"aws_ssm_maintenance_window":                         awsSsmMaintenanceWindow,
+		"aws_ssm_maintenance_window_target":                  awsSsmMaintenanceWindowTarget,
+		"aws_ssm_maintenance_window_task":                    awsSsmMaintenanceWindowTask,
 	}
 
 	var Permissions []string

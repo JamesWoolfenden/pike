@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "ssm:RegisterPatchBaselineForPatchGroup",
+      "ssm:DeregisterPatchBaselineForPatchGroup",
+      "ssm:DescribePatchGroups"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

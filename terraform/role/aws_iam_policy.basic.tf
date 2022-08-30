@@ -7,22 +7,9 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "codeartifact:CreateDomain",
-          "codeartifact:TagResource",
-          "codeartifact:UntagResource",
-          "codeartifact:DescribeDomain",
-          "codeartifact:ListTagsForResource",
-          "codeartifact:DeleteDomain",
-          "codeartifact:PutDomainPermissionsPolicy",
-          "codeartifact:GetDomainPermissionsPolicy",
-          "codeartifact:DeleteDomainPermissionsPolicy",
-          "codeartifact:CreateRepository",
-          "codeartifact:DescribeRepository",
-          "codeartifact:DeleteRepository",
-          "codeartifact:UpdateRepository",
-          "codeartifact:PutRepositoryPermissionsPolicy",
-          "codeartifact:GetRepositoryPermissionsPolicy",
-          "codeartifact:DeleteRepositoryPermissionsPolicy"
+          "ssm:RegisterTaskWithMaintenanceWindow",
+          "ssm:DescribeMaintenanceWindowTasks",
+          "ssm:DeregisterTaskFromMaintenanceWindow"
         ],
         "Resource" : "*"
       }

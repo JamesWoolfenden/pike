@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "ssm:CreateMaintenanceWindow",
+      "ssm:DeleteMaintenanceWindow",
+      "ssm:GetMaintenanceWindow",
+      "ssm:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "ssm:RemoveTagsFromResource",
+        "ssm:AddTagsToResource"
+      ]
+    },
+    "destroy": [
+      "ssm:DeleteMaintenanceWindow"
+    ],
+    "modify": [
+      "ssm:UpdateMaintenanceWindow"
+    ],
+    "plan": []
+  }
+]
