@@ -1,13 +1,5 @@
 # todo
 
-2022/08/31 07:57:30 terraform init at ..\terraform-aws-modules\
-aws_acm_certificate not implemented
-aws_acm_certificate not implemented
-aws_acm_certificate not implemented
-aws_acm_certificate_validation not implemented
-aws_acm_certificate_validation not implemented
-aws_acm_certificate_validation not implemented
-aws_acmpca_certificate_authority not implemented
 aws_appautoscaling_policy not implemented
 aws_appautoscaling_policy not implemented
 aws_appautoscaling_policy not implemented
@@ -203,20 +195,6 @@ aws_neptune_cluster not implemented
 aws_neptune_cluster_instance not implemented
 aws_neptune_parameter_group not implemented
 aws_neptune_subnet_group not implemented
-aws_network_acl_rule not implemented
-aws_network_acl_rule not implemented
-aws_network_acl_rule not implemented
-aws_network_acl_rule not implemented
-aws_network_acl_rule not implemented
-aws_network_acl_rule not implemented
-aws_network_acl_rule not implemented
-aws_network_acl_rule not implemented
-aws_network_acl_rule not implemented
-aws_network_acl_rule not implemented
-aws_network_acl_rule not implemented
-aws_network_acl_rule not implemented
-aws_network_acl_rule not implemented
-aws_network_acl_rule not implemented
 aws_networkfirewall_firewall not implemented
 aws_networkfirewall_firewall_policy not implemented
 aws_networkfirewall_logging_configuration not implemented
@@ -229,14 +207,6 @@ aws_rds_cluster not implemented
 aws_rds_cluster_endpoint not implemented
 aws_rds_cluster_instance not implemented
 aws_rds_cluster_instance not implemented
-aws_rds_cluster_parameter_group not implemented
-aws_rds_cluster_parameter_group not implemented
-aws_rds_cluster_parameter_group not implemented
-aws_rds_cluster_parameter_group not implemented
-aws_rds_cluster_parameter_group not implemented
-aws_rds_cluster_parameter_group not implemented
-aws_rds_cluster_parameter_group not implemented
-aws_rds_cluster_parameter_group not implemented
 aws_rds_cluster_role_association not implemented
 aws_rds_global_cluster not implemented
 aws_redshift_cluster not implemented

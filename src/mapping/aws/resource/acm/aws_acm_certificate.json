@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "acm:RequestCertificate",
+      "acm:DescribeCertificate",
+      "acm:ListTagsForCertificate",
+      "acm:DeleteCertificate"
+    ],
+    "attributes": {
+      "tags": [
+        "acm:AddTagsToCertificate",
+        "acm:RemoveTagsFromCertificate"
+      ]
+    },
+    "destroy": [
+      "acm:DeleteCertificate"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

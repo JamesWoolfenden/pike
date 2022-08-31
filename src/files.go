@@ -376,5 +376,17 @@ var awsDirectoryServiceLogSubscription []byte
 //go:embed mapping/aws/resource/cloudtrail/aws_cloudtrail.json
 var awsCloudtrail []byte
 
+//go:embed mapping/aws/resource/rds/aws_rds_cluster_parameter_group.json
+var awsRdsClusterParameterGroup []byte
+
+//go:embed mapping/aws/resource/ec2/aws_network_acl_rule.json
+var awsNetworkACLRule []byte
+
+//go:embed mapping/aws/resource/acm/aws_acm_certificate.json
+var awsAcmCertificate []byte
+
+//go:embed mapping/aws/resource/acm-pa/aws_acmpca_certificate_authority.json
+var awsAcmpcaCertificateAuthority []byte
+
 //go:embed mapping/gcp/google_compute_instance.json
 var googleComputeInstance []byte

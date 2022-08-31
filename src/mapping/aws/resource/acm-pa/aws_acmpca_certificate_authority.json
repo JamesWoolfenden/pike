@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "acm-pca:CreateCertificateAuthority",
+      "acm-pca:GetCertificateAuthorityCertificate",
+      "acm-pca:DeleteCertificateAuthority",
+      "acm-pa:DescribeCertificateAuthority",
+      "acm-pa:ListTags"
+    ],
+    "attributes": {
+      "tags": [
+        "acm-pca:TagCertificateAuthority",
+        "acm-pca:UntagCertificateAuthority"
+      ]
+    },
+    "destroy": [
+      "acm-pca:DeleteCertificateAuthority"
+    ],
+    "modify": [
+      "acm-pca:UpdateCertificateAuthority"
+    ],
+    "plan": []
+  }
+]

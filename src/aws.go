@@ -162,6 +162,11 @@ func GetAWSResourcePermissions(result ResourceV2) []string {
 		"aws_directory_service_directory":                    awsDirectoryServiceDirectory,
 		"aws_directory_service_log_subscription":             awsDirectoryServiceLogSubscription,
 		"aws_cloudtrail":                                     awsCloudtrail,
+		"aws_rds_cluster_parameter_group":                    awsRdsClusterParameterGroup,
+		"aws_network_acl_rule":                               awsNetworkACLRule,
+		"aws_acm_certificate":                                awsAcmCertificate,
+		"aws_acmpca_certificate_authority":                   awsAcmpcaCertificateAuthority,
+		"aws_acm_certificate_validation":                     placeholder,
 	}
 
 	var Permissions []string

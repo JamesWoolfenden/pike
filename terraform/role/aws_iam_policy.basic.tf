@@ -7,18 +7,7 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "cloudtrail:CreateTrail",
-          "cloudtrail:AddTags",
-          "cloudtrail:RemoveTags",
-          "cloudtrail:StartLogging",
-          "cloudtrail:DescribeTrails",
-          "cloudtrail:ListTags",
-          "cloudtrail:GetTrailStatus",
-          "cloudtrail:GetEventSelectors",
-          "cloudtrail:DeleteTrail",
-          "iam:PassRole",
-          "cloudtrail:PutEventSelectors",
-          "cloudtrail:UpdateTrail"
+          "acm:RequestCertificate",
         ],
         "Resource" : "*"
       }

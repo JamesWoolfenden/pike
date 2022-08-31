@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "rds:CreateDBClusterParameterGroup",
+      "rds:ModifyDBClusterParameterGroup",
+      "rds:DescribeDBClusterParameterGroups",
+      "rds:DescribeDBClusterParameters",
+      "rds:DeleteDBClusterParameterGroup"
+    ],
+    "attributes": {
+      "tags": [
+        "rds:ListTagsForResource",
+        "rds:AddTagsToResource",
+        "rds:RemoveTagsFromResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
