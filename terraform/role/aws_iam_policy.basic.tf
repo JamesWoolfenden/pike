@@ -7,12 +7,18 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "ec2:DescribeInstanceTypes",
-          "ec2:CreateLaunchTemplate",
-          "ec2:DescribeLaunchTemplates",
-          "ec2:DescribeLaunchTemplateVersions",
-          "ec2:DeleteLaunchTemplate",
-          "ec2:CreateLaunchTemplateVersion"
+          "cloudtrail:CreateTrail",
+          "cloudtrail:AddTags",
+          "cloudtrail:RemoveTags",
+          "cloudtrail:StartLogging",
+          "cloudtrail:DescribeTrails",
+          "cloudtrail:ListTags",
+          "cloudtrail:GetTrailStatus",
+          "cloudtrail:GetEventSelectors",
+          "cloudtrail:DeleteTrail",
+          "iam:PassRole",
+          "cloudtrail:PutEventSelectors",
+          "cloudtrail:UpdateTrail"
         ],
         "Resource" : "*"
       }

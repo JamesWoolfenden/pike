@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "ds:CreateLogSubscription",
+      "ds:DeleteLogSubscription"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "ds:DeleteLogSubscription"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

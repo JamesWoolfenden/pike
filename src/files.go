@@ -367,5 +367,14 @@ var awsSsmMaintenanceWindowTask []byte
 //go:embed mapping/aws/resource/ec2/aws_launch_template.json
 var awsLaunchTemplate []byte
 
+//go:embed mapping/aws/resource/directoryservice/aws_directory_service_directory.json
+var awsDirectoryServiceDirectory []byte
+
+//go:embed mapping/aws/resource/directoryservice/aws_directory_service_log_subscription.json
+var awsDirectoryServiceLogSubscription []byte
+
+//go:embed mapping/aws/resource/cloudtrail/aws_cloudtrail.json
+var awsCloudtrail []byte
+
 //go:embed mapping/gcp/google_compute_instance.json
 var googleComputeInstance []byte

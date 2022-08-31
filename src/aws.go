@@ -159,6 +159,9 @@ func GetAWSResourcePermissions(result ResourceV2) []string {
 		"aws_ssm_maintenance_window_target":                  awsSsmMaintenanceWindowTarget,
 		"aws_ssm_maintenance_window_task":                    awsSsmMaintenanceWindowTask,
 		"aws_launch_template":                                awsLaunchTemplate,
+		"aws_directory_service_directory":                    awsDirectoryServiceDirectory,
+		"aws_directory_service_log_subscription":             awsDirectoryServiceLogSubscription,
+		"aws_cloudtrail":                                     awsCloudtrail,
 	}
 
 	var Permissions []string

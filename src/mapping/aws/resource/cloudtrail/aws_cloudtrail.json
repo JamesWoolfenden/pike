@@ -1,0 +1,35 @@
+[
+  {
+    "apply": [
+      "cloudtrail:CreateTrail",
+      "cloudtrail:StartLogging",
+      "cloudtrail:DescribeTrails",
+      "cloudtrail:ListTags",
+      "cloudtrail:GetTrailStatus",
+      "cloudtrail:GetEventSelectors",
+      "cloudtrail:DeleteTrail"
+    ],
+    "attributes": {
+      "cloud_watch_logs_role_arn": [
+        "iam:PassRole"
+      ],
+      "event_selector": [
+        "cloudtrail:PutEventSelectors"
+      ],
+      "insight_selector": [
+        "cloudtrail:PutInsightSelectors"
+      ],
+      "tags": [
+        "cloudtrail:AddTags",
+        "cloudtrail:RemoveTags"
+      ]
+    },
+    "destroy": [
+      "cloudtrail:DeleteTrail"
+    ],
+    "modify": [
+      "cloudtrail:UpdateTrail"
+    ],
+    "plan": []
+  }
+]

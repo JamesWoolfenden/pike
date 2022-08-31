@@ -76,6 +76,12 @@ var dataAwsWafv2RuleGroup []byte
 //go:embed mapping/aws/data/wafv2/aws_wafv2_regex_pattern_set.json
 var dataAwsWafv2RegexPatternSet []byte
 
+//go:embed mapping/aws/data/logs/aws_cloudwatch_log_group.json
+var dataAwsCloudwatchLogGroup []byte
+
+//go:embed mapping/aws/data/directoryservice/aws_directory_service_directory.json
+var dataAwsDirectoryServiceDirectory []byte
+
 // todo on account that is enabled for this
 //
 //go:embed mapping/aws/data/aws_ssoadmin_instances.json

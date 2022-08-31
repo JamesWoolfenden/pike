@@ -38,10 +38,14 @@ func GetAWSDataPermissions(result ResourceV2) []string {
 		"aws_organizations_organization":       dataAwsOrganizationsOrganization,
 		"aws_s3_bucket_object":                 placeholder,
 		"aws_s3_object":                        placeholder,
+		"aws_arn":                              placeholder,
+		"aws_default_tags":                     placeholder,
 		"aws_wafv2_ip_set":                     dataAwsWafv2IpSet,
 		"aws_wafv2_regex_pattern_set":          dataAwsWafv2RegexPatternSet,
 		"aws_wafv2_rule_group":                 dataAwsWafv2RuleGroup,
 		"aws_wafv2_web_acl":                    dataAwsWafv2WebACL,
+		"aws_cloudwatch_log_group":             dataAwsCloudwatchLogGroup,
+		"aws_directory_service_directory":      dataAwsDirectoryServiceDirectory,
 	}
 
 	var Permissions []string
