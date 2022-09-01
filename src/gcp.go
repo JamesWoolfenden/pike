@@ -20,6 +20,7 @@ func GetGCPPermissions(result ResourceV2) []string {
 func GetGCPResourcePermissions(result ResourceV2) []string {
 	TFLookup := map[string]interface{}{
 		"google_compute_instance": googleComputeInstance,
+		"google_storage_bucket":   googleStorageBucket,
 	}
 
 	var Permissions []string

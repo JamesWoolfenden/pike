@@ -2,7 +2,7 @@ package pike
 
 import (
 	"bytes"
-	_ "embed" //required for embed
+	_ "embed" // required for embed
 	"strings"
 	"text/template"
 )
