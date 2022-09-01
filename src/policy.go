@@ -6,6 +6,8 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"log"
+	"reflect"
 	"sort"
 	"strconv"
 	"strings"
@@ -15,8 +17,8 @@ import (
 //go:embed terraform.policy.template
 var policyTemplate []byte
 
-// NewPolicy constructor
-func NewPolicy(Actions []string) Policy {
+// NewAWSPolicy constructor
+func NewAWSPolicy(Actions []string) Policy {
 	something := Policy{}
 	something.Version = "2012-10-17"
 
@@ -54,29 +56,53 @@ func NewPolicy(Actions []string) Policy {
 
 // GetPolicy creates new iam polices from a list of Permissions
 func GetPolicy(actions Sorted, output string) (string, error) {
-	var Permissions []string
 
-	Permissions = append(Permissions, actions.AWS...)
+	v := reflect.ValueOf(actions)
+	typeOfV := v.Type()
+	values := make([]interface{}, v.NumField())
 
-	if Permissions == nil {
-		return "", errors.New("no permissions detected")
+	var Policy string
+	var err error
+	for i := 0; i < v.NumField(); i++ {
+		values[i] = v.Field(i).Interface()
+		switch typeOfV.Field(i).Name {
+		case "AWS":
+			//AWSPermissions = append(AWSPermissions, actions.AWS...)
+
+			if actions.AWS == nil {
+				continue
+			}
+			//dedupe
+			AWSPermissions := unique(actions.AWS)
+			Policy, err = AWSPolicy(AWSPermissions, output)
+
+			if err != nil {
+				log.Print(err)
+				continue
+			}
+
+		case "GCP":
+			if actions.GCP == nil {
+				continue
+			}
+			//dedupe
+			GCPPermissions := unique(actions.GCP)
+			Policy, err = GCPPolicy(GCPPermissions)
+			if err != nil {
+				log.Print(err)
+				continue
+			}
+		}
 	}
-
-	//dedupe
-	Permissions = unique(Permissions)
-
-	Policy, err2 := AWSPolicy(Permissions, output)
-
-	if err2 != nil {
-		return "", err2
+	if Policy == "" {
+		return Policy, errors.New("No permissions found")
 	}
-
 	return Policy, nil
 }
 
 // AWSPolicy create an IAM policy
 func AWSPolicy(Permissions []string, output string) (string, error) {
-	Policy := NewPolicy(Permissions)
+	Policy := NewAWSPolicy(Permissions)
 	b, err := json.MarshalIndent(Policy, "", "    ")
 	if err != nil {
 		fmt.Println(err)

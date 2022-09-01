@@ -123,7 +123,7 @@ func MakePolicy(dirName string, output string, file string, init bool) (string, 
 		}
 
 		PermissionBag.AWS = append(PermissionBag.AWS, newPerms.AWS...)
-		PermissionBag.GCP = append(PermissionBag.GCP, newPerms.AWS...)
+		PermissionBag.GCP = append(PermissionBag.GCP, newPerms.GCP...)
 	}
 
 	Policy, err2 := GetPolicy(PermissionBag, output)

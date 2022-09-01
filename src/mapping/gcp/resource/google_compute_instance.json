@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "compute.zones.get",
+      "compute.instances.create",
+      "compute.instances.get",
+      "compute.disks.create",
+      "compute.disks.create",
+      "compute.subnetworks.use",
+      "compute.subnetworks.useExternalIp",
+      "compute.instances.setMetadata",
+      "compute.instances.delete"
+    ],
+    "attributes": {
+      "tags": [
+        "compute.instances.setTags"
+      ]
+    },
+    "destroy": [
+      "compute.instances.delete"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

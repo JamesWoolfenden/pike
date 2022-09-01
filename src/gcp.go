@@ -7,12 +7,28 @@ import (
 // GetGCPPermissions for GCP resources
 func GetGCPPermissions(result ResourceV2) []string {
 	var Permissions []string
-	switch result.Name {
-	case "googleComputeInstance":
-		Permissions = GetPermissionMap(googleComputeInstance, result.Attributes)
+	if result.TypeName == "resource" {
+		Permissions = GetGCPResourcePermissions(result)
+	} else {
+		Permissions = GetGCPDataPermissions(result)
+	}
 
-	default:
-		log.Printf("%s not yet implemented", result.Name)
+	return Permissions
+}
+
+// GetGCPResourcePermissions looks up permissions required for resources
+func GetGCPResourcePermissions(result ResourceV2) []string {
+	TFLookup := map[string]interface{}{
+		"google_compute_instance": googleComputeInstance,
+	}
+
+	var Permissions []string
+
+	temp := TFLookup[result.Name]
+	if temp != nil {
+		Permissions = GetPermissionMap(TFLookup[result.Name].([]byte), result.Attributes)
+	} else {
+		log.Printf("%s not implemented", result.Name)
 	}
 
 	return Permissions

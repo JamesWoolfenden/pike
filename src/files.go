@@ -387,6 +387,3 @@ var awsAcmCertificate []byte
 
 //go:embed mapping/aws/resource/acm-pa/aws_acmpca_certificate_authority.json
 var awsAcmpcaCertificateAuthority []byte
-
-//go:embed mapping/gcp/google_compute_instance.json
-var googleComputeInstance []byte

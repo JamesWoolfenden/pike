@@ -18,7 +18,7 @@ func TestNewPolicy(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := NewPolicy(tt.args.Actions); !reflect.DeepEqual(got, tt.want) {
+			if got := NewAWSPolicy(tt.args.Actions); !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("NewPolicy() = %v, want %v", got, tt.want)
 			}
 		})
