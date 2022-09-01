@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "compute.networks.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

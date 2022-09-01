@@ -1,11 +1,5 @@
 # GCP
 
- data.google_compute_image not implemented
- data.google_compute_image not implemented
- data.google_compute_image not implemented
- data.google_compute_network not implemented
- data.google_compute_network not implemented
- data.google_compute_network not implemented
  data.google_compute_subnetwork not implemented
  data.google_compute_zones not implemented
  data.google_iam_policy not implemented
@@ -13,7 +7,6 @@
  data.google_project not implemented
  data.google_project not implemented
  data.google_project not implemented
- data.google_service_account not implemented
 
  google_app_engine_standard_app_version not implemented
  google_bigquery_dataset not implemented

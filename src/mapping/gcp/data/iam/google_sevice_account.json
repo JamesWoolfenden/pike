@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "iam.serviceAccounts.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
