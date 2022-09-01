@@ -9,3 +9,6 @@ var googleComputeInstance []byte
 
 //go:embed mapping/gcp/resource/storage/google_storage_bucket.json
 var googleStorageBucket []byte
+
+//go:embed mapping/gcp/resource/storage/google_storage_bucket_object.json
+var googleStorageBucketObject []byte

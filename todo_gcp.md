@@ -63,9 +63,3 @@
  google_storage_bucket_acl not implemented
  google_storage_bucket_acl not implemented
  google_storage_bucket_iam_binding not implemented
- google_storage_bucket_object not implemented
- google_storage_bucket_object not implemented
- google_storage_bucket_object not implemented
- google_storage_bucket_object not implemented
- google_storage_bucket_object not implemented
- google_storage_bucket_object not implemented

@@ -19,8 +19,9 @@ func GetGCPPermissions(result ResourceV2) []string {
 // GetGCPResourcePermissions looks up permissions required for resources
 func GetGCPResourcePermissions(result ResourceV2) []string {
 	TFLookup := map[string]interface{}{
-		"google_compute_instance": googleComputeInstance,
-		"google_storage_bucket":   googleStorageBucket,
+		"google_compute_instance":      googleComputeInstance,
+		"google_storage_bucket":        googleStorageBucket,
+		"google_storage_bucket_object": googleStorageBucketObject,
 	}
 
 	var Permissions []string

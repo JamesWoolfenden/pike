@@ -4,10 +4,9 @@ resource "google_project_iam_custom_role" "pike" {
   title       = "pike terraform user"
   description = "A user with least privileges"
   permissions = [
-    "storage.buckets.create",
-    "storage.buckets.get",
-    "storage.buckets.delete",
+    "storage.objects.create",
+    "storage.objects.delete",
 
-    "storage.buckets.update"
+    "storage.objects.get"
   ]
 }

@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "storage.objects.create",
+      "storage.objects.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "storage.objects.delete"
+    ],
+    "modify": [
+      "storage.objects.get"
+    ],
+    "plan": []
+  }
+]
