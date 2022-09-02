@@ -18,7 +18,13 @@ func Readme(dirName string, output string, init bool) error {
 	if err2 != nil {
 		return err2
 	}
-	markdown := "\nThe Policy required is:\n\n```json\n" + Policy + "\n```\n"
+
+	var markdown string
+	if init {
+		markdown = "\nThe Terraform resource required is:\n\n```golang\n" + Policy + "\n```\n"
+	} else {
+		markdown = "\nThe Policy required is:\n\n```json\n" + Policy + "\n```\n"
+	}
 	err := ReplaceSection(file, markdown)
 
 	return err

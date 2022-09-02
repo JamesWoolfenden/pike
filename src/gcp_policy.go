@@ -12,7 +12,7 @@ var policyGCPTemplate []byte
 
 // GCPPolicy create an IAM policy
 func GCPPolicy(permissions []string) (string, error) {
-	test := strings.Join(permissions, "\", \n\t \"")
+	test := strings.Join(permissions, "\",\n    \"")
 
 	type GCPPolicyDetails struct {
 		Name        string

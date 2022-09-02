@@ -3,7 +3,7 @@ resource "google_project_iam_custom_role" "{{.Name}}" {
   role_id     = "{{.RoleID}}"
   title       = "{{.Name}}"
   description = "A user with least privileges"
-  permissions= [
-         "{{ .Permissions }}"
-         ]
+  permissions = [
+    "{{ .Permissions }}"
+  ]
 }
