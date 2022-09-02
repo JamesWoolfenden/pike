@@ -1,6 +1,6 @@
 # GCP
 
- google_app_engine_standard_app_version not implemented
+ google_app_engine_standard_app_version [AVOID]
  google_bigquery_dataset not implemented
  google_bigquery_job not implemented
  google_bigquery_table not implemented
