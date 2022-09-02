@@ -4,6 +4,9 @@ resource "google_project_iam_custom_role" "pike" {
   title       = "pike terraform user"
   description = "A user with least privileges"
   permissions = [
-    "storage.buckets.create"
+    "iam.serviceAccounts.create",
+    "iam.serviceAccounts.get",
+    "iam.serviceAccounts.delete",
+    "iam.serviceAccounts.update"
   ]
 }

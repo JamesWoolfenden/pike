@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "iam.serviceAccounts.create",
+      "iam.serviceAccounts.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "iam.serviceAccounts.delete"
+    ],
+    "modify": [
+      "iam.serviceAccounts.update"
+    ],
+    "plan": []
+  }
+]

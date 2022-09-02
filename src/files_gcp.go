@@ -24,3 +24,6 @@ var googleComputeFirewall []byte
 
 //go:embed mapping/gcp/resource/iam/google_project_iam_custom_role.json
 var googleProjectIamCustomRole []byte
+
+//go:embed mapping/gcp/resource/iam/google_sevice_account.json
+var googleServiceAccount []byte

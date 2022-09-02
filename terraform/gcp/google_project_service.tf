@@ -1,6 +1,6 @@
 #resource "google_project_service" "pike" {
 #    project = "pike-361314"
-#    service = "iam.googleapis.com"
+#    service = "artifactregistry.googleapis.com"
 #
 #    timeouts {
 #      create = "30m"
@@ -9,8 +9,7 @@
 #
 #    disable_dependent_services = true
 #  }
-
-resource "google_storage_bucket" "bucket" {
-  name     = "test-bucket-jgw-today"
-  location = "US"
-}
+#
+#output "project_service" {
+#  value=google_project_service.pike
+#}

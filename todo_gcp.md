@@ -30,8 +30,6 @@
  google_project_service not implemented
  google_project_service not implemented
  google_project_service not implemented
- google_service_account not implemented
- google_service_account not implemented
  google_service_account_iam_policy not implemented
  google_service_account_key not implemented
  google_service_networking_connection not implemented
