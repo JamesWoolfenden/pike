@@ -9,3 +9,12 @@ var dataGoogleServiceAccount []byte
 
 //go:embed mapping/gcp/data/compute/google_compute_network.json
 var dataGoogleComputeNetwork []byte
+
+//go:embed mapping/gcp/data/compute/google_compute_subnetwork.json
+var dataGoogleComputeSubnetwork []byte
+
+//go:embed mapping/gcp/data/compute/google_compute_zones.json
+var dataGoogleComputeZones []byte
+
+//go:embed mapping/gcp/data/resourcemanager/google_project.json
+var dataGoogleProject []byte
