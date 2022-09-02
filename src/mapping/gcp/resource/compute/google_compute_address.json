@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "compute.addresses.create",
+      "compute.subnetworks.use",
+      "compute.networks.use",
+      "compute.addresses.get"
+    ],
+    "attributes": {
+      "address_type": [
+        "compute.addresses.createInternal",
+        "compute.addresses.deleteInternal"
+      ],
+      "tags": []
+    },
+    "destroy": [
+      "compute.addresses.delete"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

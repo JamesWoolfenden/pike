@@ -140,7 +140,7 @@ func GetTF(dirName string) ([]string, error) {
 	for _, file := range rawFiles {
 		if file.IsDir() {
 
-			if file.Name() == ".git" || file.Name() == ".external_modules" {
+			if file.Name() == ".git" || file.Name() == ".external_modules" || file.Name() == ".pike" {
 				continue
 			}
 			newDirName := dirName + "/" + file.Name()

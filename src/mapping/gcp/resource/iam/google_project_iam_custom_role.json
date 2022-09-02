@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "iam.roles.get",
+      "iam.roles.create"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "iam.roles.delete"
+    ],
+    "modify": [
+      "iam.roles.update"
+    ],
+    "plan": []
+  }
+]

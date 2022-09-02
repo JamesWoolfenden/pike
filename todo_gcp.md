@@ -13,16 +13,9 @@
  google_bigquery_job not implemented
  google_bigquery_table not implemented
  google_cloudfunctions_function not implemented
- google_compute_address not implemented
- google_compute_address not implemented
- google_compute_firewall not implemented
- google_compute_firewall not implemented
- google_compute_firewall not implemented
- google_compute_firewall not implemented
  google_compute_global_address not implemented
  google_compute_instance_template not implemented
  google_compute_instance_template not implemented
- google_compute_network not implemented
  google_compute_project_metadata_item not implemented
  google_compute_region_instance_group_manager not implemented
  google_compute_subnetwork not implemented

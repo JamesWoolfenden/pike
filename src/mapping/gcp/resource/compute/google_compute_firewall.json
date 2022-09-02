@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "compute.firewalls.create",
+      "compute.networks.updatePolicy",
+      "compute.firewalls.get",
+      "compute.firewalls.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [
+      "compute.firewalls.update"
+    ],
+    "plan": []
+  }
+]

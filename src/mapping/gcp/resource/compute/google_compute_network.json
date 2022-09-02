@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "compute.networks.create",
+      "compute.networks.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.networks.delete"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]
