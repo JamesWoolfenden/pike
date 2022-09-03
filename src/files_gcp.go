@@ -33,3 +33,9 @@ var googleKmsKeyRing []byte
 
 //go:embed  mapping/gcp/resource/cloudkms/google_kms_crypto_key.json
 var googleKmsCryptoKey []byte
+
+//go:embed  mapping/gcp/resource/storage/google_storage_bucket_acl.json
+var googleStorageBucketAcl []byte
+
+//go:embed  mapping/gcp/resource/storage/google_storage_bucket_iam_binding.json
+var googleStorageBucketIamBinding []byte

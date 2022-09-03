@@ -4,6 +4,9 @@ resource "google_project_iam_custom_role" "pike" {
   title       = "pike terraform user"
   description = "A user with least privileges"
   permissions = [
-    "cloudkms.cryptoKeys.get"
+    "storage.buckets.get",
+    "storage.buckets.update",
+    "storage.buckets.getIamPolicy",
+    "storage.buckets.setIamPolicy"
   ]
 }

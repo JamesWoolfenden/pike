@@ -26,6 +26,3 @@
  google_sql_database not implemented
  google_sql_database_instance not implemented
  google_sql_user not implemented
- google_storage_bucket_acl not implemented
- google_storage_bucket_acl not implemented
- google_storage_bucket_iam_binding not implemented
