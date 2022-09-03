@@ -14,6 +14,8 @@ func GetGCPDataPermissions(result ResourceV2) []string {
 		"google_project":            dataGoogleProject,
 		"google_iam_policy":         placeholder,
 		"google_iam_role":           placeholder,
+		"google_kms_crypto_key":     dataGoogleKmsCryptoKey,
+		"google_kms_key_ring":       dataGoogleKmsKeyRing,
 	}
 
 	var Permissions []string

@@ -18,3 +18,9 @@ var dataGoogleComputeZones []byte
 
 //go:embed mapping/gcp/data/resourcemanager/google_project.json
 var dataGoogleProject []byte
+
+//go:embed mapping/gcp/data/cloudkms/google_kms_key_ring.json
+var dataGoogleKmsKeyRing []byte
+
+//go:embed  mapping/gcp/data/cloudkms/google_kms_crypto_key.json
+var dataGoogleKmsCryptoKey []byte

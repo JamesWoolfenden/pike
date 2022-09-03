@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "cloudkms.keyRings.create",
+      "cloudkms.keyRings.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "cloudkms.cryptoKeys.create",
+      "cloudkms.cryptoKeys.get",
+      "cloudkms.cryptoKeyVersions.list",
+      "cloudkms.cryptoKeyVersions.destroy",
+      "cloudkms.cryptoKeys.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "cloudkms.cryptoKeyVersions.destroy"
+    ],
+    "modify": [
+      "cloudkms.cryptoKeys.update"
+    ],
+    "plan": []
+  }
+]

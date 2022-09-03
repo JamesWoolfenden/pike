@@ -13,8 +13,6 @@
  google_compute_subnetwork not implemented
  google_container_cluster not implemented
  google_container_node_pool not implemented
- google_kms_crypto_key not implemented
- google_kms_key_ring not implemented
  google_project_iam_binding not implemented
  google_project_iam_binding not implemented
  google_project_iam_binding not implemented
@@ -22,14 +20,6 @@
  google_project_iam_binding not implemented
  google_project_iam_binding not implemented
  google_project_iam_member not implemented
- google_project_service not implemented
- google_project_service not implemented
- google_project_service not implemented
- google_project_service not implemented
- google_project_service not implemented
- google_project_service not implemented
- google_project_service not implemented
- google_project_service not implemented
  google_service_account_iam_policy not implemented
  google_service_account_key not implemented
  google_service_networking_connection not implemented

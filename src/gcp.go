@@ -27,6 +27,8 @@ func GetGCPResourcePermissions(result ResourceV2) []string {
 		"google_compute_firewall":        googleComputeFirewall,
 		"google_project_iam_custom_role": googleProjectIamCustomRole,
 		"google_service_account":         googleServiceAccount,
+		"google_kms_crypto_key":          googleKmsCryptoKey,
+		"google_kms_key_ring":            googleKmsKeyRing,
 	}
 
 	var Permissions []string

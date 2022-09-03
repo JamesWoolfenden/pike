@@ -27,3 +27,9 @@ var googleProjectIamCustomRole []byte
 
 //go:embed mapping/gcp/resource/iam/google_sevice_account.json
 var googleServiceAccount []byte
+
+//go:embed mapping/gcp/resource/cloudkms/google_kms_key_ring.json
+var googleKmsKeyRing []byte
+
+//go:embed  mapping/gcp/resource/cloudkms/google_kms_crypto_key.json
+var googleKmsCryptoKey []byte
