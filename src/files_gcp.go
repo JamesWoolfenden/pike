@@ -16,6 +16,9 @@ var googleStorageBucketObject []byte
 //go:embed mapping/gcp/resource/compute/google_compute_network.json
 var googleComputeNetwork []byte
 
+//go:embed mapping/gcp/resource/compute/google_compute_subnetwork.json
+var googleComputeSubnetwork []byte
+
 //go:embed mapping/gcp/resource/compute/google_compute_address.json
 var googleComputeAddress []byte
 

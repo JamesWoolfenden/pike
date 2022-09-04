@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "compute.subnetworks.create",
+      "compute.networks.updatePolicy",
+      "compute.subnetworks.get",
+      "compute.subnetworks.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.subnetworks.delete"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

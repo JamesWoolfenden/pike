@@ -23,6 +23,7 @@ func GetGCPResourcePermissions(result ResourceV2) []string {
 		"google_storage_bucket":                googleStorageBucket,
 		"google_storage_bucket_object":         googleStorageBucketObject,
 		"google_compute_network":               googleComputeNetwork,
+		"google_compute_subnetwork":            googleComputeSubnetwork,
 		"google_compute_address":               googleComputeAddress,
 		"google_compute_firewall":              googleComputeFirewall,
 		"google_project_iam_custom_role":       googleProjectIamCustomRole,
