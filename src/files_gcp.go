@@ -39,3 +39,18 @@ var googleStorageBucketAcl []byte
 
 //go:embed  mapping/gcp/resource/storage/google_storage_bucket_iam_binding.json
 var googleStorageBucketIamBinding []byte
+
+//go:embed  mapping/gcp/resource/cloudsql/google_sql_database_instance.json
+var googleSqlDatabaseInstance []byte
+
+//go:embed  mapping/gcp/resource/cloudsql/google_sql_database.json
+var googleSqlDatabase []byte
+
+//go:embed  mapping/gcp/resource/cloudsql/google_sql_user.json
+var googleSqlUser []byte
+
+//go:embed  mapping/gcp/resource/servicenetworking/google_service_networking_connection.json
+var googleServiceNetworkingConnection []byte
+
+//go:embed  mapping/gcp/resource/compute/google_compute_global_address.json
+var googleComputeGlobalAddress []byte

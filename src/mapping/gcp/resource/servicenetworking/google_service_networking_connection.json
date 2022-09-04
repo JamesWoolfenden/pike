@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "resourcemanager.projects.get",
+      "servicenetworking.services.get",
+      "servicenetworking.services.addPeering",
+      "compute.networks.removePeering"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.networks.removePeering"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

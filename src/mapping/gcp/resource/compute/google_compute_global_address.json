@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "compute.globalAddresses.create",
+      "compute.globalAddresses.delete",
+      "compute.globalAddresses.get",
+      "compute.networks.use"
+    ],
+    "attributes": {
+      "address_type": [
+        "compute.globalAddresses.deleteInternal",
+        "compute.globalAddresses.createInternal"
+      ],
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

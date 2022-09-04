@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "cloudsql.users.list",
+      "cloudsql.users.delete",
+      "cloudsql.users.create"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "cloudsql.users.delete"
+    ],
+    "modify": [
+      "cloudsql.users.update"
+    ],
+    "plan": []
+  }
+]

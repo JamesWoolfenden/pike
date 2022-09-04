@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "cloudsql.databases.create",
+      "cloudsql.databases.delete",
+      "cloudsql.databases.get",
+      "cloudsql.databases.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "cloudsql.databases.delete"
+    ],
+    "modify": [
+      "cloudsql.databases.update"
+    ],
+    "plan": []
+  }
+]
