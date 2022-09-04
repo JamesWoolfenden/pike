@@ -25,6 +25,12 @@ var googleComputeAddress []byte
 //go:embed mapping/gcp/resource/compute/google_compute_firewall.json
 var googleComputeFirewall []byte
 
+//go:embed mapping/gcp/resource/cloudfunctions/google_cloudfunctions_function.json
+var googleCloudfunctionsFunction []byte
+
+//go:embed mapping/gcp/resource/cloudfunctions/google_cloudfunctions_function_iam_policy.json
+var googleCloudfunctionsFunctionIamPolicy []byte
+
 //go:embed mapping/gcp/resource/iam/google_project_iam_custom_role.json
 var googleProjectIamCustomRole []byte
 

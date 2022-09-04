@@ -4,8 +4,6 @@
  google_bigquery_dataset not implemented
  google_bigquery_job not implemented
  google_bigquery_table not implemented
- google_cloudfunctions_function not implemented
- google_compute_global_address not implemented
  google_compute_instance_template not implemented
  google_compute_instance_template not implemented
  google_compute_project_metadata_item not implemented
@@ -21,7 +19,3 @@
  google_project_iam_member not implemented
  google_service_account_iam_policy not implemented
  google_service_account_key not implemented
- google_service_networking_connection not implemented
- google_sql_database not implemented
- google_sql_database_instance not implemented
- google_sql_user not implemented

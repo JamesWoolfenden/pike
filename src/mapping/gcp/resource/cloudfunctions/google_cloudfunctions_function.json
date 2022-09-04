@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "iam.serviceAccounts.actAs",
+      "cloudfunctions.functions.create",
+      "cloudfunctions.operations.get",
+      "cloudfunctions.functions.get",
+      "cloudfunctions.functions.delete",
+      "cloudfunctions.functions.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "cloudfunctions.functions.delete"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]
