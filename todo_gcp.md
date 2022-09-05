@@ -10,12 +10,3 @@
  google_compute_region_instance_group_manager not implemented
  google_container_cluster not implemented
  google_container_node_pool not implemented
- google_project_iam_binding not implemented
- google_project_iam_binding not implemented
- google_project_iam_binding not implemented
- google_project_iam_binding not implemented
- google_project_iam_binding not implemented
- google_project_iam_binding not implemented
- google_project_iam_member not implemented
- google_service_account_iam_policy not implemented
- google_service_account_key not implemented

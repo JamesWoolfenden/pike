@@ -40,6 +40,12 @@ func GetGCPResourcePermissions(result ResourceV2) []string {
 		"google_cloudfunctions_function":            googleCloudfunctionsFunction,
 		"google_cloudfunctions_function_iam_policy": googleCloudfunctionsFunctionIamPolicy,
 		"google_cloudfunctions_function_iam_member": googleCloudfunctionsFunctionIamPolicy,
+		"google_pubsub_topic":                       googlePubsubTopic,
+		"google_sourcerepo_repository":              googleSourcerepoRepository,
+		"google_project_iam_binding":                googleProjectIamBinding,
+		"google_project_iam_member":                 googleProjectIamBinding,
+		"google_service_account_iam_policy":         googleServiceAccountIamPolicy,
+		"google_service_account_key":                googleServiceAccountKey,
 	}
 
 	var Permissions []string

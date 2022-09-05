@@ -63,3 +63,18 @@ var googleServiceNetworkingConnection []byte
 
 //go:embed  mapping/gcp/resource/compute/google_compute_global_address.json
 var googleComputeGlobalAddress []byte
+
+//go:embed  mapping/gcp/resource/pubsub/google_pubsub_topic.json
+var googlePubsubTopic []byte
+
+//go:embed  mapping/gcp/resource/source/google_soucerepo_repository.json
+var googleSourcerepoRepository []byte
+
+//go:embed  mapping/gcp/resource/iam/google_service_account_iam_policy.json
+var googleServiceAccountIamPolicy []byte
+
+//go:embed  mapping/gcp/resource/iam/google_service_account_key.json
+var googleServiceAccountKey []byte
+
+//go:embed  mapping/gcp/resource/resourcemanager/google_project_iam_binding.json
+var googleProjectIamBinding []byte

@@ -4,14 +4,10 @@ resource "google_project_iam_custom_role" "pike" {
   title       = "pike terraform user"
   description = "A user with least privileges"
   permissions = [
-    "iam.serviceAccounts.actAs",
-    "cloudfunctions.functions.create",
-    "cloudfunctions.operations.get",
-    "cloudfunctions.functions.get",
-    "cloudfunctions.functions.delete",
-    "cloudfunctions.functions.update",
-
-    "cloudfunctions.functions.setIamPolicy",
-    "cloudfunctions.functions.getIamPolicy"
+    "resourcemanager.projects.setIamPolicy",
+    "resourcemanager.projects.getIamPolicy",
+    #        "iam.serviceAccounts.get",
+    #    "iam.serviceAccounts.setIamPolicy",
+    #    "iam.serviceAccounts.getIamPolicy"
   ]
 }
