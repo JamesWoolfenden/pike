@@ -30,11 +30,11 @@ func GetGCPResourcePermissions(result ResourceV2) []string {
 		"google_service_account":                    googleServiceAccount,
 		"google_kms_crypto_key":                     googleKmsCryptoKey,
 		"google_kms_key_ring":                       googleKmsKeyRing,
-		"google_storage_bucket_acl":                 googleStorageBucketAcl,
+		"google_storage_bucket_acl":                 googleStorageBucketACL,
 		"google_storage_bucket_iam_binding":         googleStorageBucketIamBinding,
-		"google_sql_database_instance":              googleSqlDatabaseInstance,
-		"google_sql_database":                       googleSqlDatabase,
-		"google_sql_user":                           googleSqlUser,
+		"google_sql_database_instance":              googleSQLDatabaseInstance,
+		"google_sql_database":                       googleSQLDatabase,
+		"google_sql_user":                           googleSQLUser,
 		"google_compute_global_address":             googleComputeGlobalAddress,
 		"google_service_networking_connection":      googleServiceNetworkingConnection,
 		"google_cloudfunctions_function":            googleCloudfunctionsFunction,
@@ -46,6 +46,10 @@ func GetGCPResourcePermissions(result ResourceV2) []string {
 		"google_project_iam_member":                 googleProjectIamBinding,
 		"google_service_account_iam_policy":         googleServiceAccountIamPolicy,
 		"google_service_account_key":                googleServiceAccountKey,
+		"google_compute_instance_template":          googleComputeInstanceTemplate,
+		"google_compute_project_metadata_item":      googleComputeProjectMetadataItem,
+		"google_container_cluster":                  googleContainerCluster,
+		"google_container_node_pool":                googleContainerNodePool,
 	}
 
 	var Permissions []string

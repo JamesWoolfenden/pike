@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "iam.serviceAccounts.actAs",
+      "container.clusters.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

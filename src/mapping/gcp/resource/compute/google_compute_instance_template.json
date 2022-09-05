@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "compute.instanceTemplates.create",
+      "compute.networks.get",
+      "compute.instanceTemplates.get",
+      "compute.instanceTemplates.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.instanceTemplates.delete"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "compute.projects.get",
+      "compute.projects.setCommonInstanceMetadata",
+      "iam.serviceAccounts.actAs",
+      "compute.globalOperations.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

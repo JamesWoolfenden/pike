@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "container.clusters.create",
+      "container.operations.get",
+      "container.clusters.get",
+      "compute.instanceGroupManagers.get",
+      "container.clusters.delete",
+      "container.clusters.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "container.clusters.delete"
+    ],
+    "modify": [
+      "container.clusters.update"
+    ],
+    "plan": []
+  }
+]

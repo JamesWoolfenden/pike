@@ -25,6 +25,12 @@ var googleComputeAddress []byte
 //go:embed mapping/gcp/resource/compute/google_compute_firewall.json
 var googleComputeFirewall []byte
 
+//go:embed mapping/gcp/resource/compute/google_compute_instance_template.json
+var googleComputeInstanceTemplate []byte
+
+//go:embed mapping/gcp/resource/compute/google_compute_project_metadata_item.json
+var googleComputeProjectMetadataItem []byte
+
 //go:embed mapping/gcp/resource/cloudfunctions/google_cloudfunctions_function.json
 var googleCloudfunctionsFunction []byte
 
@@ -44,19 +50,19 @@ var googleKmsKeyRing []byte
 var googleKmsCryptoKey []byte
 
 //go:embed  mapping/gcp/resource/storage/google_storage_bucket_acl.json
-var googleStorageBucketAcl []byte
+var googleStorageBucketACL []byte
 
 //go:embed  mapping/gcp/resource/storage/google_storage_bucket_iam_binding.json
 var googleStorageBucketIamBinding []byte
 
 //go:embed  mapping/gcp/resource/cloudsql/google_sql_database_instance.json
-var googleSqlDatabaseInstance []byte
+var googleSQLDatabaseInstance []byte
 
 //go:embed  mapping/gcp/resource/cloudsql/google_sql_database.json
-var googleSqlDatabase []byte
+var googleSQLDatabase []byte
 
 //go:embed  mapping/gcp/resource/cloudsql/google_sql_user.json
-var googleSqlUser []byte
+var googleSQLUser []byte
 
 //go:embed  mapping/gcp/resource/servicenetworking/google_service_networking_connection.json
 var googleServiceNetworkingConnection []byte
@@ -78,3 +84,9 @@ var googleServiceAccountKey []byte
 
 //go:embed  mapping/gcp/resource/resourcemanager/google_project_iam_binding.json
 var googleProjectIamBinding []byte
+
+//go:embed  mapping/gcp/resource/container/google_container_cluster.json
+var googleContainerCluster []byte
+
+//go:embed  mapping/gcp/resource/container/google_container_node_pool.json
+var googleContainerNodePool []byte
