@@ -19,7 +19,7 @@ func randSeq(n int) string {
 }
 
 // ReplaceSection find a section in a readme and replaces the section
-func ReplaceSection(source string, middle string) error {
+func ReplaceSection(source string, middle string, autoadd bool) error {
 
 	const start = "<!-- BEGINNING OF PRE-COMMIT-PIKE DOCS HOOK -->"
 	const stop = "<!-- END OF PRE-COMMIT-PIKE DOCS HOOK -->"
@@ -32,10 +32,23 @@ func ReplaceSection(source string, middle string) error {
 	file := string(dat)
 
 	if !strings.Contains(file, start) || !strings.Contains(file, stop) {
-		return errors.New("Pike delimiters not found in Readme")
+		// add to new readme files
+		if !strings.Contains(file, start) && !strings.Contains(file, stop) {
+			if autoadd {
+				file = file + "\n\n" + start + stop
+			} else {
+				return errors.New("Missing both hooks in Readme, consider using the flag -autoappend")
+			}
+		} else {
+			return errors.New("Pike delimiters mismatch in Readme")
+		}
+
 	}
 
 	section1 := (strings.Split(file, start)[0]) + start
+	if strings.Contains(section1, stop) {
+		return errors.New("Pike delimiters mismatch in Readme")
+	}
 	section2 := stop + (strings.Split(file, stop)[1])
 
 	var Output bytes.Buffer

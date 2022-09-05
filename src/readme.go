@@ -6,7 +6,7 @@ import (
 )
 
 // Readme Updates a README.md file
-func Readme(dirName string, output string, init bool) error {
+func Readme(dirName string, output string, init bool, autoAppend bool) error {
 
 	file := dirName + "/README.md"
 
@@ -25,7 +25,7 @@ func Readme(dirName string, output string, init bool) error {
 	} else {
 		markdown = "\nThe Policy required is:\n\n```json\n" + Policy + "\n```\n"
 	}
-	err := ReplaceSection(file, markdown)
+	err := ReplaceSection(file, markdown, autoAppend)
 
 	return err
 }

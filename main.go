@@ -19,6 +19,7 @@ func main() {
 	var arn string
 	var wait int
 	var init bool
+	var autoAppend bool
 
 	app := &cli.App{
 		EnableBashCompletion: true,
@@ -33,6 +34,12 @@ func main() {
 				Aliases:     []string{"i"},
 				Usage:       "Run Terraform init to download modules",
 				Destination: &init,
+			},
+			&cli.BoolFlag{
+				Name:        "auto append",
+				Aliases:     []string{"A"},
+				Usage:       "Automatically adds policy section to the end of Readme",
+				Destination: &autoAppend,
 			},
 			&cli.StringFlag{
 				Name:        "directory",
@@ -101,7 +108,7 @@ func main() {
 				Aliases: []string{"r"},
 				Usage:   "Looks in dir for a README.md and updates it with the Policy required to build the code",
 				Action: func(*cli.Context) error {
-					return pike.Readme(directory, output, init)
+					return pike.Readme(directory, output, init, autoAppend)
 				},
 			},
 			{

@@ -50,7 +50,12 @@ func GetResources(file string) ([]ResourceV2, error) {
 		var attributes []string
 
 		resource.Attributes = GetBlockAttributes(attributes, block)
-		resource.Provider = GetHCLType(block.Labels[0])
+		if len(block.Labels) > 0 {
+			resource.Provider = GetHCLType(block.Labels[0])
+		} else {
+			resource.Provider = "unknown"
+			log.Print("parsing error for ", block.Type)
+		}
 		Resources = append(Resources, resource)
 	}
 
