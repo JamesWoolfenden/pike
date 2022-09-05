@@ -11,5 +11,5 @@
 #  }
 #
 #output "project_service" {
-#  value=google_project_service.pike
+#  value=google_project_service.piktf destroye
 #}

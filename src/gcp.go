@@ -50,6 +50,9 @@ func GetGCPResourcePermissions(result ResourceV2) []string {
 		"google_compute_project_metadata_item":      googleComputeProjectMetadataItem,
 		"google_container_cluster":                  googleContainerCluster,
 		"google_container_node_pool":                googleContainerNodePool,
+		"google_bigquery_table":                     placeholder,
+		"google_bigquery_dataset":                   googleBigqueryDataset,
+		"google_bigquery_job":                       googleBigqueryJob,
 	}
 
 	var Permissions []string

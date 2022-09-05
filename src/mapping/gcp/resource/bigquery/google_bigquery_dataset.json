@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "bigquery.datasets.create"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -38,9 +38,9 @@ Install from code:
 - Run `go install`
 
 Install remotely:
- 
+
  > go install  github.com/jameswoolfenden/pike@latest
-  
+
 ### Windows
 
  >choco install pike

@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "bigquery.jobs.create"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

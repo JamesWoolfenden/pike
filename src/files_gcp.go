@@ -90,3 +90,9 @@ var googleContainerCluster []byte
 
 //go:embed  mapping/gcp/resource/container/google_container_node_pool.json
 var googleContainerNodePool []byte
+
+//go:embed  mapping/gcp/resource/bigquery/google_bigquery_dataset.json
+var googleBigqueryDataset []byte
+
+//go:embed  mapping/gcp/resource/bigquery/google_bigquery_job.json
+var googleBigqueryJob []byte
