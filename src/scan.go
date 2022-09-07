@@ -9,6 +9,8 @@ import (
 	"path/filepath"
 	"strings"
 
+	"github.com/urfave/cli/v2"
+
 	"github.com/hashicorp/go-version"
 	"github.com/hashicorp/hc-install/product"
 	"github.com/hashicorp/hc-install/releases"
@@ -18,9 +20,9 @@ import (
 const tfVersion = "1.2.3"
 
 // Scan looks for resources in a given directory
-func Scan(dirName string, output string, file string, init bool) error {
+func Scan(dirName string, output string, file string, init bool, excludes *cli.StringSlice) error {
 
-	Policy, err := MakePolicy(dirName, output, file, init)
+	Policy, err := MakePolicy(dirName, output, file, init, excludes)
 	if err != nil {
 		return err
 	}
@@ -65,7 +67,7 @@ func Init(dirName string) (string, error) {
 }
 
 // MakePolicy does the guts of determining a policy from code
-func MakePolicy(dirName string, output string, file string, init bool) (string, error) {
+func MakePolicy(dirName string, output string, file string, init bool, excludes *cli.StringSlice) (string, error) {
 	var files []string
 
 	if file == "" {
@@ -81,7 +83,7 @@ func MakePolicy(dirName string, output string, file string, init bool) (string, 
 			}
 		}
 
-		files, err = GetTF(fullPath)
+		files, err = GetTF(fullPath, true, excludes)
 		if err != nil {
 			return "", err
 		}
@@ -134,17 +136,23 @@ func MakePolicy(dirName string, output string, file string, init bool) (string, 
 }
 
 // GetTF return tf files in a directory
-func GetTF(dirName string) ([]string, error) {
+func GetTF(dirName string, recurse bool, excludes *cli.StringSlice) ([]string, error) {
 	rawFiles, err := os.ReadDir(dirName)
 	var files []string
 	for _, file := range rawFiles {
-		if file.IsDir() {
+		if file.IsDir() && recurse {
+			var excludeDir []string
+			if excludes != nil {
+				excludeDir = excludes.Value()
+			}
 
-			if file.Name() == ".git" || file.Name() == ".external_modules" || file.Name() == ".pike" {
+			excludeDir = append(excludeDir, ".git", ".external_modules", ".pike")
+			if stringInSlice(file.Name(), excludeDir) {
 				continue
 			}
+
 			newDirName := dirName + "/" + file.Name()
-			moreFiles, err := GetTF(newDirName)
+			moreFiles, err := GetTF(newDirName, true, nil)
 			if err == nil {
 				if moreFiles != nil {
 					files = append(files, moreFiles...)

@@ -6,7 +6,7 @@ import (
 )
 
 // Readme Updates a README.md file
-func Readme(dirName string, output string, init bool, autoAppend bool) error {
+func Readme(dirName string, output string, init bool, autoAppend bool, exclude []string) error {
 
 	file := dirName + "/README.md"
 
@@ -14,7 +14,7 @@ func Readme(dirName string, output string, init bool, autoAppend bool) error {
 		return err
 	}
 
-	Policy, err2 := MakePolicy(dirName, output, "", init)
+	Policy, err2 := MakePolicy(dirName, output, "", init, nil)
 	if err2 != nil {
 		return err2
 	}

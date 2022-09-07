@@ -196,6 +196,26 @@ resource "aws_iam_policy" "terraformXVlBzgba" {
 }
 ```
 
+### Excludes
+
+You may want to exclude certain directories dependant on you Repo structure e.g:
+
+If you were scanning :
+
+```shell
+git clone https://github.com/terraform-aws-modules/terraform-aws-lambda
+
+pike -d terraform-aws-lambda scan
+```
+
+This would not only get the permissions for the module but also all the examples!
+
+So you can now specify a list of directories to exclude :
+
+```shell
+pike -x "examples","modules" -o terraform -d /Users/jameswoolfenden/code/terraform-aws-modules/terraform-aws-lambda scan
+```
+
 ### Readme
 
 Pike can now be used to update a projects README.md file:
@@ -373,15 +393,16 @@ COMMANDS:
 
 GLOBAL OPTIONS:
    --arn value, -a value        Policy identifier e.g. arn (default: "arn:aws:iam::680235478471:policy/basic") [$ARN]
+   --auto, -A                   Automatically adds policy section to the end of Readme (default: false)
    --config FILE, -c FILE       Load configuration from FILE
    --directory value, -d value  Directory to scan (defaults to .) (default: ".")
+   --exclude value, -x value    A list of directories to ignore  (accepts multiple inputs)
    --file value, -f value       File to scan
    --help, -h                   show help (default: false)
    --init, -i                   Run Terraform init to download modules (default: false)
    --output json, -o json       Output types e.g. json terraform [$OUTPUT]
    --version, -v                print the version (default: false)
    --wait value, -W value       Time to wait for policy change (in tenths of seconds) (default: 100) [$WAIT]
-
 ```
 
 ## Building

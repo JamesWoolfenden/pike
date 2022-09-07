@@ -19,7 +19,7 @@ func TestScan(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if err := Scan(tt.args.dirname, "json", "", false); (err != nil) != tt.wantErr {
+			if err := Scan(tt.args.dirname, "json", "", false, nil); (err != nil) != tt.wantErr {
 				t.Errorf("Scan() error = %v, wantErr %v", err, tt.wantErr)
 			}
 		})
@@ -40,7 +40,7 @@ func TestGetTF(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got, err := GetTF(tt.args.dirname)
+			got, err := GetTF(tt.args.dirname, false, nil)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("GetTF() error = %v, wantErr %v", err, tt.wantErr)
 				return
