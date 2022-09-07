@@ -29,8 +29,8 @@ func Scan(dirName string, output string, file string, init bool) error {
 	return err
 }
 
-// InitTF can download and install terraform if required and then terraform init your specified directory
-func InitTF(dirName string) error {
+// Init can download and install terraform if required and then terraform init your specified directory
+func Init(dirName string) (string, error) {
 
 	tfPath, _ := exec.LookPath("terraform")
 
@@ -46,22 +46,22 @@ func InitTF(dirName string) error {
 
 		tfPath, err = installer.Install(context.Background())
 		if err != nil {
-			return err
+			return "", err
 		}
 	}
 
 	tf, err := tfexec.NewTerraform(dirName, tfPath)
 	if err != nil {
-		return err
+		return "", err
 	}
 
 	err = tf.Init(context.Background(), tfexec.Upgrade(true))
 	if err != nil {
-		return err
+		return "", err
 	}
 
 	log.Printf("terraform init at %s\n", dirName)
-	return nil
+	return tfPath, err
 }
 
 // MakePolicy does the guts of determining a policy from code
@@ -75,7 +75,7 @@ func MakePolicy(dirName string, output string, file string, init bool) (string, 
 			return "", err
 		}
 		if init {
-			err := InitTF(dirName)
+			_, err := Init(dirName)
 			if err != nil {
 				return "", err
 			}
@@ -103,7 +103,7 @@ func MakePolicy(dirName string, output string, file string, init bool) (string, 
 	var resources []ResourceV2
 	for _, file := range files {
 
-		resource, err := GetResources(file)
+		resource, err := GetResources(file, dirName)
 
 		if err != nil {
 			// parse the other files
