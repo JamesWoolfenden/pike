@@ -83,7 +83,7 @@ func MakePolicy(dirName string, output string, file string, init bool, excludes 
 			}
 		}
 
-		files, err = GetTF(fullPath, true, excludes)
+		files, err = GetTF(fullPath, false, excludes)
 		if err != nil {
 			return "", err
 		}
