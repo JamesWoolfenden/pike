@@ -40,57 +40,9 @@ func GetResources(file string, dirName string) ([]ResourceV2, error) {
 		}
 
 		if strings.Contains(resource.TypeName, "module") {
-			modulePath := GetModulePath(block)
-			_, err := os.Stat(modulePath)
+			Resources, err = getLocalModules(block, dirName, Resources)
 			if err != nil {
-				//probably a directory or path
-			} else {
-				name := block.Labels[0]
-				outPath := filepath.Join(dirName, "/.local_modules/", name)
-				modulePath = filepath.Join(dirName, "/", modulePath)
-
-				os.Remove(outPath)
-				err := os.MkdirAll(outPath, 0750)
-				files, _ := os.ReadDir(modulePath)
-				for _, src := range files {
-					sourceFile := filepath.Join(modulePath, src.Name())
-					dst := outPath + "/" + src.Name()
-					sourceFileStat, err := os.Stat(sourceFile)
-					if err != nil {
-						return nil, err
-					}
-
-					if !sourceFileStat.Mode().IsRegular() {
-						//not copying directories
-						continue
-					}
-					source, err := os.Open(sourceFile)
-
-					if err != nil {
-						return nil, err
-					}
-					defer source.Close()
-
-					destination, err := os.Create(dst)
-					if err != nil {
-						return nil, err
-					}
-					defer destination.Close()
-					_, err = io.Copy(destination, source)
-					if err != nil {
-						return nil, err
-					}
-				}
-				if err != nil {
-					return nil, err
-				}
-
-				//now process these extras
-				ExtraFiles, _ := GetTF(outPath)
-				for _, file := range ExtraFiles {
-					resource, _ := GetResources(file, dirName)
-					Resources = append(Resources, resource...)
-				}
+				return nil, err
 			}
 		}
 
@@ -114,6 +66,66 @@ func GetResources(file string, dirName string) ([]ResourceV2, error) {
 		Resources = append(Resources, resource)
 	}
 
+	return Resources, nil
+}
+
+func getLocalModules(block *hclsyntax.Block, dirName string, Resources []ResourceV2) ([]ResourceV2, error) {
+	modulePath := GetModulePath(block)
+	_, err := os.Stat(modulePath)
+	if err != nil {
+		//probably a directory or path
+	} else {
+		name := block.Labels[0]
+		outPath := filepath.Join(dirName, "/.local_modules/", name)
+		modulePath = filepath.Join(dirName, "/", modulePath)
+
+		err := os.RemoveAll(filepath.Join(dirName, "/.local_modules/"))
+		if err != nil {
+			return nil, err
+		}
+
+		err = os.MkdirAll(outPath, 0750)
+		files, _ := os.ReadDir(modulePath)
+		for _, src := range files {
+			sourceFile := filepath.Join(modulePath, src.Name())
+			dst := outPath + "/" + src.Name()
+			sourceFileStat, err := os.Stat(sourceFile)
+			if err != nil {
+				return nil, err
+			}
+
+			if !sourceFileStat.Mode().IsRegular() {
+				//not copying directories
+				continue
+			}
+			source, err := os.Open(sourceFile)
+
+			if err != nil {
+				return nil, err
+			}
+			defer source.Close()
+
+			destination, err := os.Create(dst)
+			if err != nil {
+				return nil, err
+			}
+			defer destination.Close()
+			_, err = io.Copy(destination, source)
+			if err != nil {
+				return nil, err
+			}
+		}
+		if err != nil {
+			return nil, err
+		}
+
+		//now process these extras
+		ExtraFiles, _ := GetTF(outPath)
+		for _, file := range ExtraFiles {
+			resource, _ := GetResources(file, dirName)
+			Resources = append(Resources, resource...)
+		}
+	}
 	return Resources, nil
 }
 
