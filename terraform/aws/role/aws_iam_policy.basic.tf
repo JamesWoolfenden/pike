@@ -7,7 +7,11 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "acm:RequestCertificate",
+          "ecs:CreateCluster",
+          "ecs:DescribeClusters",
+          "ecs:DeleteCluster",
+          "ecs:TagResource",
+          "ecs:UntagResource"
         ],
         "Resource" : "*"
       }

@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "ecs:CreateCluster",
+      "ecs:DescribeClusters",
+      "ecs:DeleteCluster"
+    ],
+    "attributes": {
+      "tags": [
+        "ecs:TagResource",
+        "ecs:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

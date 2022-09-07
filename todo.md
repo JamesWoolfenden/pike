@@ -92,9 +92,6 @@ aws_ecr_repository_policy not implemented
 aws_ecr_repository_policy not implemented
 aws_ecr_repository_policy not implemented
 aws_ecrpublic_repository not implemented
-aws_ecs_cluster not implemented
-aws_ecs_cluster not implemented
-aws_ecs_cluster not implemented
 aws_ecs_service not implemented
 aws_ecs_service not implemented
 aws_ecs_service not implemented

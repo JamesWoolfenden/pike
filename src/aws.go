@@ -168,6 +168,7 @@ func GetAWSResourcePermissions(result ResourceV2) []string {
 		"aws_acm_certificate":                                awsAcmCertificate,
 		"aws_acmpca_certificate_authority":                   awsAcmpcaCertificateAuthority,
 		"aws_acm_certificate_validation":                     placeholder,
+		"aws_ecs_cluster":                                    awsEcsCluster,
 	}
 
 	var Permissions []string

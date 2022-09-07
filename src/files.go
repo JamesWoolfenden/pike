@@ -390,3 +390,6 @@ var awsAcmCertificate []byte
 
 //go:embed mapping/aws/resource/acm-pa/aws_acmpca_certificate_authority.json
 var awsAcmpcaCertificateAuthority []byte
+
+//go:embed mapping/aws/resource/ecs/aws_ecs_cluster.json
+var awsEcsCluster []byte
