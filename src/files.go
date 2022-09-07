@@ -274,6 +274,9 @@ var awsFlowLog []byte
 //go:embed mapping/aws/resource/ecr/aws_ecr_lifecycle_policy.json
 var awsEcrLifecyclePolicy []byte
 
+//go:embed mapping/aws/resource/ecr/aws_ecr_pull_through_cache_rule.json
+var awsEcrPullThroughCacheRule []byte
+
 //go:embed mapping/aws/resource/ecr/aws_ecr_repository.json
 var awsEcrRepository []byte
 
