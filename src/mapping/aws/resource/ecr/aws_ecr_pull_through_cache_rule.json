@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "ecr:CreatePullThroughCacheRule",
+      "ecr:DescribePullThroughCacheRules",
+      "ecr:DeletePullThroughCacheRule",
+      "iam:CreateServiceLinkedRole"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
