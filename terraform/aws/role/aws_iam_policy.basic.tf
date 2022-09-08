@@ -7,13 +7,8 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "ecs:RegisterTaskDefinition",
-          "ecs:DescribeTaskDefinition",
-          "ecs:DeregisterTaskDefinition",
-
-          "ecs:TagResource",
-          "ecs:UntagResource",
-          "iam:PassRole"
+          "ecr:GetAuthorizationToken",
+          ""
         ],
         "Resource" : "*"
       }
