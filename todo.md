@@ -238,18 +238,6 @@ aws_wafv2_web_acl_logging_configuration not implemented
 aws_workspaces_directory not implemented
 aws_workspaces_workspace not implemented
 
-data.aws_ecr_authorization_token not implemented
-data.aws_ecs_task_definition not implemented
-data.aws_eks_cluster not implemented
-data.aws_elb_service_account not implemented
-data.aws_lambda_alias not implemented
-data.aws_lambda_alias not implemented
-data.aws_lambda_function not implemented
-data.aws_outposts_outpost not implemented
-data.aws_rds_engine_version not implemented
-data.aws_vpc_endpoint_service not implemented
-data.aws_workspaces_bundle not implemented
-
 glacier
 -vault
 -vaultlock

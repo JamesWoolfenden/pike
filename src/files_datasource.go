@@ -82,7 +82,29 @@ var dataAwsCloudwatchLogGroup []byte
 //go:embed mapping/aws/data/directoryservice/aws_directory_service_directory.json
 var dataAwsDirectoryServiceDirectory []byte
 
-// todo on account that is enabled for this
-//
-//go:embed mapping/aws/data/aws_ssoadmin_instances.json
+//go:embed mapping/aws/data/sso/aws_ssoadmin_instances.json
 var dataAwsSsoadminInstances []byte
+
+//go:embed mapping/aws/data/ecr/aws_ecr_authorization_token.json
+var dataAwsEcrAuthorization []byte
+
+//go:embed mapping/aws/data/ecs/aws_ecs_task_definition.json
+var dataAwsEcsTaskDefinition []byte
+
+//go:embed mapping/aws/data/eks/aws_eks_cluster.json
+var dataAwsEksCluster []byte
+
+//go:embed mapping/aws/data/lambda/aws_lambda_function.json
+var dataAwsLambdaFunction []byte
+
+//go:embed mapping/aws/data/ecr/aws_ecr_authorization_token.json
+var dataAwsEcrAuthorizationToken []byte
+
+//go:embed mapping/aws/data/outposts/aws_outposts_outpost.json
+var dataAwsOutpostsOutpost []byte
+
+//go:embed mapping/aws/data/rds/aws_rds_engine_version.json
+var dataAwsRdsEngineVersion []byte
+
+//go:embed mapping/aws/data/ec2/aws_vpc_endpoint_service.json
+var dataAwsVpcEndpointService []byte

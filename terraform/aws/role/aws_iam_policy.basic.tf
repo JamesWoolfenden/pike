@@ -8,7 +8,6 @@ resource "aws_iam_policy" "basic" {
         "Effect" : "Allow",
         "Action" : [
           "ecr:GetAuthorizationToken",
-          ""
         ],
         "Resource" : "*"
       }

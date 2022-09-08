@@ -46,6 +46,15 @@ func GetAWSDataPermissions(result ResourceV2) []string {
 		"aws_wafv2_web_acl":                    dataAwsWafv2WebACL,
 		"aws_cloudwatch_log_group":             dataAwsCloudwatchLogGroup,
 		"aws_directory_service_directory":      dataAwsDirectoryServiceDirectory,
+		"aws_ecr_authorization":                dataAwsEcrAuthorization,
+		"aws_ecs_task_definition":              dataAwsEcsTaskDefinition,
+		"aws_eks_cluster":                      dataAwsEksCluster,
+		"aws_elb_service_account":              placeholder,
+		"aws_ecr_authorization_token":          dataAwsEcrAuthorizationToken,
+		"aws_lambda_function":                  dataAwsLambdaFunction,
+		"aws_outposts_outpost":                 dataAwsOutpostsOutpost,
+		"aws_rds_engine_version":               dataAwsRdsEngineVersion,
+		"aws_vpc_endpoint_service":             dataAwsVpcEndpointService,
 	}
 
 	var Permissions []string
