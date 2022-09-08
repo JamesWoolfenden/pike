@@ -393,3 +393,18 @@ var awsAcmpcaCertificateAuthority []byte
 
 //go:embed mapping/aws/resource/ecs/aws_ecs_cluster.json
 var awsEcsCluster []byte
+
+//go:embed mapping/aws/resource/ecs/aws_ecs_task_definition.json
+var awsEcsTaskDefinition []byte
+
+//go:embed mapping/aws/resource/ecs/aws_ecs_service.json
+var awsEcsService []byte
+
+//go:embed mapping/aws/resource/application-autoscaling/aws_appautoscaling_scheduled_action.json
+var awsAppautoscalingScheduledAction []byte
+
+//go:embed mapping/aws/resource/application-autoscaling/aws_appautoscaling_target.json
+var awsAppautoscalingTarget []byte
+
+//go:embed mapping/aws/resource/application-autoscaling/aws_appautoscaling_policy.json
+var awsAppautoscalingPolicy []byte

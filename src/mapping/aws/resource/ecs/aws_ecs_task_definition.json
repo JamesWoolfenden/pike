@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "ecs:RegisterTaskDefinition",
+      "ecs:DescribeTaskDefinition",
+      "ecs:DeregisterTaskDefinition"
+    ],
+    "attributes": {
+      "execution_role_arn": [
+        "iam:PassRole"
+      ],
+      "tags": [
+        "ecs:TagResource",
+        "ecs:UntagResource"
+      ],
+      "task_role_arn": [
+        "iam:PassRole"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

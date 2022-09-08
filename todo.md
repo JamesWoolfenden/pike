@@ -1,15 +1,5 @@
 # todo
 
-aws_appautoscaling_policy not implemented
-aws_appautoscaling_policy not implemented
-aws_appautoscaling_policy not implemented
-aws_appautoscaling_policy not implemented
-aws_appautoscaling_policy not implemented
-aws_appautoscaling_target not implemented
-aws_appautoscaling_target not implemented
-aws_appautoscaling_target not implemented
-aws_appautoscaling_target not implemented
-aws_appautoscaling_target not implemented
 aws_appsync_datasource not implemented
 aws_appsync_graphql_api not implemented
 aws_appsync_resolver not implemented
@@ -92,20 +82,6 @@ aws_ecr_repository_policy not implemented
 aws_ecr_repository_policy not implemented
 aws_ecr_repository_policy not implemented
 aws_ecrpublic_repository not implemented
-aws_ecs_service not implemented
-aws_ecs_service not implemented
-aws_ecs_service not implemented
-aws_ecs_service not implemented
-aws_ecs_service not implemented
-aws_ecs_service not implemented
-aws_ecs_service not implemented
-aws_ecs_task_definition not implemented
-aws_ecs_task_definition not implemented
-aws_ecs_task_definition not implemented
-aws_ecs_task_definition not implemented
-aws_ecs_task_definition not implemented
-aws_ecs_task_definition not implemented
-aws_ecs_task_definition not implemented
 aws_efs_access_point not implemented
 aws_efs_access_point not implemented
 aws_efs_access_point not implemented

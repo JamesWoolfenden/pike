@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "application-autoscaling:RegisterScalableTarget",
+      "iam:CreateServiceLinkedRole",
+      "application-autoscaling:DescribeScalableTargets",
+      "application-autoscaling:DeregisterScalableTarget"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "application-autoscaling:DeregisterScalableTarget"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

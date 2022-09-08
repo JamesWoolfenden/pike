@@ -140,7 +140,8 @@ func GetTF(dirName string, recurse bool, excludes *cli.StringSlice) ([]string, e
 	rawFiles, err := os.ReadDir(dirName)
 	var files []string
 	for _, file := range rawFiles {
-		if file.IsDir() && recurse {
+		if file.IsDir() &&
+			(recurse || (strings.Contains(file.Name(), ".terraform") || strings.Contains(dirName, ".terraform"))) {
 			var excludeDir []string
 			if excludes != nil {
 				excludeDir = excludes.Value()
@@ -152,7 +153,7 @@ func GetTF(dirName string, recurse bool, excludes *cli.StringSlice) ([]string, e
 			}
 
 			newDirName := dirName + "/" + file.Name()
-			moreFiles, err := GetTF(newDirName, false, nil)
+			moreFiles, err := GetTF(newDirName, true, nil)
 			if err == nil {
 				if moreFiles != nil {
 					files = append(files, moreFiles...)

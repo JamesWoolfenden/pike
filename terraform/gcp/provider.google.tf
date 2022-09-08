@@ -1,7 +1,7 @@
 provider "google" {
-  project = "pike-361314"
-  region  = "europe-west2"
-  zone    = "europe-west2-a"
-  //credentials = "C:/Users/jim_w/examplea-pike.json"
-  credentials = "/Users/jameswoolfenden/pike-361314-pikeservice.json"
+  project     = "pike-361314"
+  region      = "europe-west2"
+  zone        = "europe-west2-a"
+  credentials = "C:/Users/jim_w/examplea-pike.json"
+  //credentials = "/Users/jameswoolfenden/pike-361314-pikeservice.json"
 }

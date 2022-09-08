@@ -169,6 +169,11 @@ func GetAWSResourcePermissions(result ResourceV2) []string {
 		"aws_acmpca_certificate_authority":                   awsAcmpcaCertificateAuthority,
 		"aws_acm_certificate_validation":                     placeholder,
 		"aws_ecs_cluster":                                    awsEcsCluster,
+		"aws_ecs_service":                                    awsEcsService,
+		"aws_ecs_task_definition":                            awsEcsTaskDefinition,
+		"aws_appautoscaling_scheduled_action":                awsAppautoscalingScheduledAction,
+		"aws_appautoscaling_policy":                          awsAppautoscalingPolicy,
+		"aws_appautoscaling_target":                          awsAppautoscalingTarget,
 	}
 
 	var Permissions []string

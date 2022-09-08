@@ -1,9 +1,9 @@
 [
   {
     "apply": [
-      "ecs:CreateCluster",
-      "ecs:DescribeClusters",
-      "ecs:DeleteCluster"
+      "ecs:CreateService",
+      "ecs:DeleteService",
+      "ecs:DescribeServices"
     ],
     "attributes": {
       "tags": [
@@ -11,9 +11,11 @@
         "ecs:UntagResource"
       ]
     },
-    "destroy": [],
+    "destroy": [
+      "ecs:DeleteService"
+    ],
     "modify": [
-      "ecs:ModifyCluster"
+      "ecs:UpdateService"
     ],
     "plan": []
   }

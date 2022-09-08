@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "application-autoscaling:PutScalingPolicy",
+      "application-autoscaling:DescribeScalingPolicies",
+      "application-autoscaling:DeleteScalingPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "application-autoscaling:DeleteScalingPolicy"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]
