@@ -147,7 +147,7 @@ func GetTF(dirName string, recurse bool, excludes *cli.StringSlice) ([]string, e
 				excludeDir = excludes.Value()
 			}
 
-			excludeDir = append(excludeDir, ".git", ".external_modules", ".pike")
+			excludeDir = append(excludeDir, ".git", ".external_modules", ".pike", "registry.terraform.io")
 			if stringInSlice(file.Name(), excludeDir) {
 				continue
 			}
