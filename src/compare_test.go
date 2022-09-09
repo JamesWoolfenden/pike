@@ -1,13 +1,17 @@
 package pike
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/urfave/cli/v2"
+)
 
 func TestCompare(t *testing.T) {
 	type args struct {
 		directory string
 		arn       string
 		init      bool
-		exclude   []string
+		exclude   *cli.StringSlice
 	}
 	tests := []struct {
 		name    string

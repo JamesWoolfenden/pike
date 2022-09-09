@@ -1,6 +1,7 @@
 package pike
 
 import (
+	"errors"
 	"log"
 	"os"
 	"path/filepath"
@@ -14,19 +15,10 @@ import (
 // GetResources retrieves all the resources in a tf file
 func GetResources(file string, dirName string) ([]ResourceV2, error) {
 	var Resources []ResourceV2
-	src, err := os.ReadFile(file)
+	temp, err := GetResourceBlocks(file)
 	if err != nil {
-		log.Fatal(err)
+		return Resources, err
 	}
-
-	parser := hclparse.NewParser()
-	parsedFile, fileDiags := parser.ParseHCL(src, file)
-
-	if fileDiags != nil {
-		return nil, fileDiags
-	}
-
-	temp := parsedFile.Body.(*hclsyntax.Body)
 
 	for _, block := range temp.Blocks {
 		var resource ResourceV2
@@ -41,7 +33,8 @@ func GetResources(file string, dirName string) ([]ResourceV2, error) {
 		if strings.Contains(resource.TypeName, "module") {
 			Resources, err = getLocalModules(block, dirName, Resources)
 			if err != nil {
-				return nil, err
+				log.Print(err)
+				continue
 			}
 		}
 
@@ -68,19 +61,39 @@ func GetResources(file string, dirName string) ([]ResourceV2, error) {
 	return Resources, nil
 }
 
+// GetResourceBlocks breaks down a file into resources
+func GetResourceBlocks(file string) (*hclsyntax.Body, error) {
+	src, err := os.ReadFile(file)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	parser := hclparse.NewParser()
+	parsedFile, fileDiags := parser.ParseHCL(src, file)
+
+	if fileDiags != nil {
+		return nil, fileDiags
+	}
+
+	return parsedFile.Body.(*hclsyntax.Body), err
+}
+
 func getLocalModules(block *hclsyntax.Block, dirName string, Resources []ResourceV2) ([]ResourceV2, error) {
 	modulePath := GetModulePath(block)
+
 	_, err := os.Stat(modulePath)
 	if err != nil {
-		//probably a directory or path
-	} else {
-		//have the path to the module
-		modulePath = filepath.Join(dirName, "/", modulePath)
+		return nil, errors.New("module not local")
+	}
 
-		//now process these extras
-		ExtraFiles, _ := GetTF(modulePath, false, nil)
-		for _, file := range ExtraFiles {
-			resource, _ := GetResources(file, dirName)
+	//have the path to the module
+	modulePath = filepath.Join(dirName, "/", modulePath)
+
+	//now process these extras
+	ExtraFiles, _ := GetTF(modulePath, false, nil)
+	for _, file := range ExtraFiles {
+		resource, err := GetResources(file, dirName)
+		if err == nil {
 			Resources = append(Resources, resource...)
 		}
 	}
@@ -118,14 +131,6 @@ func GetBlockAttributes(attributes []string, block *hclsyntax.Block) []string {
 		attributes = GetBlockAttributes(attributes, block)
 	}
 	return attributes
-}
-
-// GetProvider retrieves the provider from the resource
-func GetProvider(resource string) string {
-	if strings.Contains(resource, "_") {
-		return strings.Split(resource, "_")[0]
-	}
-	return ""
 }
 
 // GetPermission determines the IAM permissions required and returns a list of permission

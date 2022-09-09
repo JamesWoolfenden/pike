@@ -115,7 +115,7 @@ func main() {
 				Aliases: []string{"r"},
 				Usage:   "Looks in dir for a README.md and updates it with the Policy required to build the code",
 				Action: func(*cli.Context) error {
-					return pike.Readme(directory, output, init, autoAppend, nil)
+					return pike.Readme(directory, output, init, autoAppend, excludes)
 				},
 			},
 			{

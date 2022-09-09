@@ -18,7 +18,7 @@ repos:
       - id: detect-aws-credentials
       - id: detect-private-key
   - repo: https://github.com/Lucas-C/pre-commit-hooks
-    rev: v1.3.0
+    rev: v1.3.1
     hooks:
       - id: forbid-tabs
         exclude_types: [python, javascript, dtd, markdown, makefile, xml]
@@ -28,10 +28,10 @@ repos:
     hooks:
       - id: shell-lint
   - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.32.1
+    rev: v0.32.2
     hooks:
       - id: markdownlint
-        exclude: src/mapping/testdata
+        exclude: src/testdata|testdata
   - repo: https://github.com/jameswoolfenden/pre-commit
     rev: v0.1.50
     hooks:
@@ -44,7 +44,7 @@ repos:
       - id: goimports
       - id: golint
   - repo: https://github.com/golangci/golangci-lint
-    rev: v1.48.0
+    rev: v1.49.0
     hooks:
       - id: golangci-lint
   - repo: https://github.com/syntaqx/git-hooks

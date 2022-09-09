@@ -95,7 +95,7 @@ func GetPolicy(actions Sorted, output string) (string, error) {
 		}
 	}
 	if Policy == "" {
-		return Policy, errors.New("No permissions found")
+		return Policy, errors.New("no permissions found")
 	}
 	return Policy, nil
 }

@@ -40,17 +40,17 @@ func ReplaceSection(source string, middle string, autoadd bool) error {
 			if autoadd {
 				file = file + "\n\n" + start + stop
 			} else {
-				return errors.New("Missing both hooks in Readme, consider using the flag -autoappend")
+				return errors.New("missing both hooks in Readme, consider using the flag -autoappend")
 			}
 		} else {
-			return errors.New("Pike delimiters mismatch in Readme")
+			return errors.New("pike delimiters mismatch in Readme")
 		}
 
 	}
 
 	section1 := (strings.Split(file, start)[0]) + start
 	if strings.Contains(section1, stop) {
-		return errors.New("Pike delimiters mismatch in Readme")
+		return errors.New("pike delimiters mismatch in Readme")
 	}
 	section2 := stop + (strings.Split(file, stop)[1])
 

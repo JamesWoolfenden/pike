@@ -1,9 +1,10 @@
 package pike
 
 import (
-	"io/fs"
 	"reflect"
 	"testing"
+
+	"github.com/urfave/cli/v2"
 )
 
 func TestScan(t *testing.T) {
@@ -15,7 +16,8 @@ func TestScan(t *testing.T) {
 		args    args
 		wantErr bool
 	}{
-		// TODO: Add test cases.
+		{"aws", args{"../terraform/aws/backup"}, false},
+		{"gcp", args{"../terraform/gcp/backup"}, false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -28,19 +30,26 @@ func TestScan(t *testing.T) {
 
 func TestGetTF(t *testing.T) {
 	type args struct {
-		dirname string
+		dirname  string
+		recurse  bool
+		excludes *cli.StringSlice
 	}
+
+	excludes := cli.NewStringSlice("simple")
 	tests := []struct {
 		name    string
 		args    args
-		want    []fs.FileInfo
+		want    []string
 		wantErr bool
 	}{
-		// TODO: Add test cases.
+		{"first", args{"../testdata/scan/examples/simple", false, nil}, []string{"../testdata/scan/examples/simple/aws_s3_bucket.pike.tf"}, false},
+		{"empty", args{"../testdata/scan", false, nil}, nil, false},
+		{"recurse", args{"../testdata/scan", true, nil}, []string{"../testdata/scan/examples/simple/aws_s3_bucket.pike.tf"}, false},
+		{"recurse-exclude", args{"../testdata/scan", true, excludes}, nil, false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got, err := GetTF(tt.args.dirname, false, nil)
+			got, err := GetTF(tt.args.dirname, tt.args.recurse, tt.args.excludes)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("GetTF() error = %v, wantErr %v", err, tt.wantErr)
 				return

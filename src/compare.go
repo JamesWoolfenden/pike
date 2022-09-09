@@ -6,6 +6,8 @@ import (
 	"fmt"
 	"log"
 
+	"github.com/urfave/cli/v2"
+
 	"github.com/aws/aws-sdk-go-v2/config"
 	"github.com/aws/aws-sdk-go-v2/service/iam"
 	diff "github.com/yudai/gojsondiff"
@@ -13,7 +15,7 @@ import (
 )
 
 // Compare IAC codebase to AWS policy
-func Compare(directory string, arn string, init bool, exclude []string) error {
+func Compare(directory string, arn string, init bool, exclude *cli.StringSlice) error {
 
 	// Load the Shared AWS Configuration (~/.aws/config)
 	cfg, err := config.LoadDefaultConfig(context.TODO())
@@ -26,7 +28,7 @@ func Compare(directory string, arn string, init bool, exclude []string) error {
 	Version := GetVersion(client, arn)
 	Policy, _ := GetPolicyVersion(client, arn, Version)
 
-	iacPolicy, _ := MakePolicy(directory, "json", "", init, nil)
+	iacPolicy, _ := MakePolicy(directory, "json", "", init, exclude)
 	Sorted, _ := SortActions(iacPolicy)
 
 	// iam versus iac
@@ -58,13 +60,13 @@ func CompareIAMPolicy(Policy string, OldPolicy string) (bool, error) {
 			return false, err
 		}
 
-		config := formatter.AsciiFormatterConfig{
+		myConfig := formatter.AsciiFormatterConfig{
 			ShowArrayIndex: true,
 			Coloring:       true,
 		}
 
-		formatter := formatter.NewAsciiFormatter(aJSON, config)
-		diffString, err := formatter.Format(d)
+		myFormatter := formatter.NewAsciiFormatter(aJSON, myConfig)
+		diffString, err := myFormatter.Format(d)
 
 		if err != nil {
 			return false, err

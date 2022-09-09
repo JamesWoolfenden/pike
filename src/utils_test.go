@@ -36,25 +36,25 @@ func TestReplaceSection(t *testing.T) {
 
 		{"found",
 			args{
-				"mapping/testdata/test-readme.md",
+				"testdata/test-readme.md",
 				"Any thing in here",
 				false},
 			false},
 		{"file not found",
 			args{
-				"mapping/testdata/bogus-readme.md",
+				"testdata/bogus-readme.md",
 				"Any thing in here",
 				false},
 			true},
 		{"empty file",
 			args{
-				"mapping/testdata/test-readme-empty.md",
+				"testdata/test-readme-empty.md",
 				"Any thing in here",
 				false},
 			true},
 		{"wrong format",
 			args{
-				"mapping/testdata/test-readme-wrong.md",
+				"testdata/test-readme-wrong.md",
 				"Any thing in here",
 				false},
 			true},
@@ -77,8 +77,8 @@ func Test_fileExists(t *testing.T) {
 		args args
 		want bool
 	}{
-		{"found", args{"mapping/testdata/test-readme-empty.md"}, true},
-		{"bogus", args{"mapping/testdata/bogus-readme-empty.md"}, false},
+		{"found", args{"testdata/test-readme-empty.md"}, true},
+		{"bogus", args{"testdata/bogus-readme-empty.md"}, false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

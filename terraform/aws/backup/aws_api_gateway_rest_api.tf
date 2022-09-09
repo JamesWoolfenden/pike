@@ -2,7 +2,7 @@ resource "aws_api_gateway_rest_api" "pikeexample" {
   #  body = jsonencode({
   #    openapi = "3.0.1"
   #    info = {
-  #      title   = "example"
+  #      title   = "examples"
   #      version = "1.0"
   #    }
   #    paths = {

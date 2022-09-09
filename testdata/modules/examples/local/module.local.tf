@@ -1,0 +1,3 @@
+module "local" {
+  source = "../../"
+}

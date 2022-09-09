@@ -3,10 +3,12 @@ package pike
 import (
 	"errors"
 	"os"
+
+	"github.com/urfave/cli/v2"
 )
 
 // Readme Updates a README.md file
-func Readme(dirName string, output string, init bool, autoAppend bool, exclude []string) error {
+func Readme(dirName string, output string, init bool, autoAppend bool, excludes *cli.StringSlice) error {
 
 	file := dirName + "/README.md"
 
@@ -14,7 +16,7 @@ func Readme(dirName string, output string, init bool, autoAppend bool, exclude [
 		return err
 	}
 
-	Policy, err2 := MakePolicy(dirName, output, "", init, nil)
+	Policy, err2 := MakePolicy(dirName, output, "", init, excludes)
 	if err2 != nil {
 		return err2
 	}

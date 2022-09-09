@@ -153,7 +153,7 @@ func GetTF(dirName string, recurse bool, excludes *cli.StringSlice) ([]string, e
 			}
 
 			newDirName := dirName + "/" + file.Name()
-			moreFiles, err := GetTF(newDirName, true, nil)
+			moreFiles, err := GetTF(newDirName, true, excludes)
 			if err == nil {
 				if moreFiles != nil {
 					files = append(files, moreFiles...)
