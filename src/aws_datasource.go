@@ -1,9 +1,11 @@
 package pike
 
-import "log"
+import (
+	"fmt"
+)
 
 // GetAWSDataPermissions gets permissions required for datasources
-func GetAWSDataPermissions(result ResourceV2) []string {
+func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 
 	TFLookup := map[string]interface{}{
 		"aws_vpcs":                             dataAwsVpcs,
@@ -63,8 +65,8 @@ func GetAWSDataPermissions(result ResourceV2) []string {
 	if temp != nil {
 		Permissions = GetPermissionMap(TFLookup[result.Name].([]byte), result.Attributes)
 	} else {
-		log.Printf("data.%s not implemented", result.Name)
+		return nil, fmt.Errorf("data.%s not implemented", result.Name)
 	}
 
-	return Permissions
+	return Permissions, nil
 }

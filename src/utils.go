@@ -5,6 +5,7 @@ import (
 	"errors"
 	"math/rand"
 	"os"
+	"path/filepath"
 	"strings"
 )
 
@@ -24,7 +25,9 @@ func ReplaceSection(source string, middle string, autoadd bool) error {
 	const start = "<!-- BEGINNING OF PRE-COMMIT-PIKE DOCS HOOK -->"
 	const stop = "<!-- END OF PRE-COMMIT-PIKE DOCS HOOK -->"
 
-	dat, err := os.ReadFile(source)
+	newSource, _ := filepath.Abs(source)
+	//log.Print(newSource)
+	dat, err := os.ReadFile(newSource)
 	if (err) != nil {
 		return err
 	}

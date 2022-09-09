@@ -1,0 +1,3 @@
+content
+<!-- END OF PRE-COMMIT-PIKE DOCS HOOK -->
+<!-- BEGINNING OF PRE-COMMIT-PIKE DOCS HOOK -->Any thing in here

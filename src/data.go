@@ -130,10 +130,11 @@ func GetProvider(resource string) string {
 
 // GetPermission determines the IAM permissions required and returns a list of permission
 func GetPermission(result ResourceV2) (Sorted, error) {
+	var err error
 	var myPermission Sorted
 	switch result.Provider {
 	case "aws":
-		myPermission.AWS = GetAWSPermissions(result)
+		myPermission.AWS, err = GetAWSPermissions(result)
 	case "azurerm", "oci", "digitalocean", "linode", "helm":
 		log.Printf("Provider %s not yet implemented", result.Provider)
 		return myPermission, nil
@@ -148,5 +149,5 @@ func GetPermission(result ResourceV2) (Sorted, error) {
 		}
 	}
 
-	return myPermission, nil
+	return myPermission, err
 }

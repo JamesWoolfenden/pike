@@ -5,31 +5,113 @@ import (
 	"testing"
 )
 
-// func TestGetAWSPermissions(t *testing.T) {
+func TestGetAWSPermissions(t *testing.T) {
+	type args struct {
+		result ResourceV2
+	}
+	tests := []struct {
+		name    string
+		args    args
+		want    []string
+		wantErr bool
+	}{
+		{"found",
+			args{
+				ResourceV2{"resource",
+					"aws_api_gateway_api_key",
+					"MyDemoApiKey",
+					"aws",
+					[]string{"name", "tags"}}},
+			[]string{"apigateway:POST", "apigateway:PUT", "apigateway:PATCH", "apigateway:GET", "apigateway:DELETE", "apigateway:DELETE"},
+			false},
+		{"bogus",
+			args{
+				ResourceV2{"resource",
+					"aws_madeup",
+					"pike",
+					"aws",
+					[]string{"name"}},
+			},
+			nil,
+			true},
+		{"found_datasource",
+			args{
+				ResourceV2{"data",
+					"aws_cloudwatch_log_group",
+					"pike",
+					"aws",
+					[]string{"name"}},
+			},
+			[]string{"logs:DescribeLogGroups", "logs:ListTagsLogGroup"},
+			false},
+		{"bogus_datasource",
+			args{
+				ResourceV2{"data",
+					"aws_madeup",
+					"pike",
+					"aws",
+					[]string{"name"}},
+			},
+			nil,
+			true},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			got, err := GetAWSPermissions(tt.args.result)
+			if (err != nil) != tt.wantErr {
+				t.Errorf("GetAWSPermissions() error = %v, wantErr %v", err, tt.wantErr)
+				return
+			}
+			if !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("GetAWSPermissions() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
 
-// 	var data []string
-// 	data[0]="ec2:AuthorizeSecurityGroupIngress"
-// 	data[1]="ec2:AuthorizeSecurityGroupEgress"
-// 	data[2]="ec2:CreateSecurityGroup"
-
-// 	type args struct {
-// 		result template
-// 	}
-// 	tests := []struct {
-// 		name string
-// 		args args
-// 		want []string
-// 	}{
-// 		//{"First",args{}, data},
-// 	}
-// 	for _, tt := range tests {
-// 		t.Run(tt.name, func(t *testing.T) {
-// 			if got := GetAWSPermissions(tt.args.result); !reflect.DeepEqual(got, tt.want) {
-// 				t.Errorf("GetAWSPermissions() = %v, want %v", got, tt.want)
-// 			}
-// 		})
-// 	}
-// }
+func TestGetAWSResourcePermissions(t *testing.T) {
+	type args struct {
+		result ResourceV2
+	}
+	tests := []struct {
+		name    string
+		args    args
+		want    []string
+		wantErr bool
+	}{
+		{"found",
+			args{
+				ResourceV2{"resource",
+					"aws_api_gateway_api_key",
+					"MyDemoApiKey",
+					"aws",
+					[]string{"name", "tags"}}},
+			[]string{"apigateway:POST", "apigateway:PUT", "apigateway:PATCH", "apigateway:GET", "apigateway:DELETE", "apigateway:DELETE"},
+			false},
+		{"bogus",
+			args{
+				ResourceV2{"resource",
+					"aws_madeup",
+					"pike",
+					"aws",
+					[]string{"name"}},
+			},
+			nil,
+			true},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			got, err := GetAWSResourcePermissions(tt.args.result)
+			if (err != nil) != tt.wantErr {
+				t.Errorf("GetAWSResourcePermissions() error = %v, wantErr %v", err, tt.wantErr)
+				return
+			}
+			if !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("GetAWSResourcePermissions() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
 
 func Test_contains(t *testing.T) {
 	type args struct {
@@ -41,8 +123,12 @@ func Test_contains(t *testing.T) {
 		args args
 		want bool
 	}{
-		{"pass", args{[]string{"a", "b", "c"}, "c"}, true},
-		{"fail", args{[]string{"a", "b", "c"}, "d"}, false},
+		{"found", args{
+			[]string{"dog", "cat"}, "cat"},
+			true},
+		{"missing", args{
+			[]string{"dog", "cat"}, "fox"},
+			false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -61,9 +147,20 @@ func TestGetPermissionMap(t *testing.T) {
 	tests := []struct {
 		name string
 		args args
-		want []interface{}
+		want []string
 	}{
-		// TODO: Add test cases.
+		{"found",
+			args{
+				awsAcmCertificate,
+				[]string{"validation_method", "tags", "domain_name", "lifecycle", "create_before_destroy"}},
+			[]string{
+				"acm:AddTagsToCertificate",
+				"acm:RemoveTagsFromCertificate",
+				"acm:RequestCertificate",
+				"acm:DescribeCertificate",
+				"acm:ListTagsForCertificate",
+				"acm:DeleteCertificate",
+				"acm:DeleteCertificate"}},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

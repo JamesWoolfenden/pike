@@ -2,24 +2,31 @@ package pike
 
 import (
 	"encoding/json"
+	"fmt"
 	"log"
 )
 
 // GetAWSPermissions for AWS resources
-func GetAWSPermissions(result ResourceV2) []string {
-
+func GetAWSPermissions(result ResourceV2) ([]string, error) {
+	var err error
 	var Permissions []string
 	if result.TypeName == "resource" {
-		Permissions = GetAWSResourcePermissions(result)
+		Permissions, err = GetAWSResourcePermissions(result)
+		if err != nil {
+			return Permissions, err
+		}
 	} else {
-		Permissions = GetAWSDataPermissions(result)
+		Permissions, err = GetAWSDataPermissions(result)
+		if err != nil {
+			return Permissions, err
+		}
 	}
 
-	return Permissions
+	return Permissions, nil
 }
 
 // GetAWSResourcePermissions looks up permissions required for resources
-func GetAWSResourcePermissions(result ResourceV2) []string {
+func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 
 	TFLookup := map[string]interface{}{
 		"aws_s3_bucket":            awsS3Bucket,
@@ -182,10 +189,10 @@ func GetAWSResourcePermissions(result ResourceV2) []string {
 	if temp != nil {
 		Permissions = GetPermissionMap(TFLookup[result.Name].([]byte), result.Attributes)
 	} else {
-		log.Printf("%s not implemented", result.Name)
+		return nil, fmt.Errorf("%s not implemented", result.Name)
 	}
 
-	return Permissions
+	return Permissions, nil
 }
 
 func contains(s []string, e string) bool {
@@ -222,8 +229,8 @@ func GetPermissionMap(raw []byte, attributes []string) []string {
 
 	for _, action := range actions {
 		if temp[action] != nil {
-			myentries := temp[action].([]interface{})
-			for _, entry := range myentries {
+			myEntries := temp[action].([]interface{})
+			for _, entry := range myEntries {
 				found = append(found, entry.(string))
 			}
 		}

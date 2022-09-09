@@ -31,7 +31,7 @@ repos:
     rev: v0.32.1
     hooks:
       - id: markdownlint
-        exclude: docs/|templates/
+        exclude: src/mapping/testdata
   - repo: https://github.com/jameswoolfenden/pre-commit
     rev: v0.1.50
     hooks:
