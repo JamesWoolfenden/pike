@@ -44,15 +44,14 @@ func Test_getLocalModules(t *testing.T) {
 		Resources []ResourceV2
 	}
 
-	file, _ := filepath.Abs("E:\\Code\\pike\\testdata\\modules\\examples\\local\\module.local.tf")
-	dirName := "e:/code/pike/testdata/modules/examples/local"
-	block := getInitialBlock(file)
+	dirName, _ := filepath.Abs("..\\testdata\\modules\\examples\\local")
+	block := getInitialBlock(dirName + "\\module.local.tf")
 
-	duffName := "e:/code/pike/testdata/modules/examples/rubbish"
-	duffBlock := getInitialBlock("e:/code/pike/testdata/modules/examples/rubbish/module.local.tf")
+	duffName, _ := filepath.Abs("..\\testdata\\modules\\examples\\rubbish")
+	duffBlock := getInitialBlock(duffName + "\\module.local.tf")
 
-	notLocal := "e:/code/pike/testdata/modules/examples/notlocal"
-	notBlock := getInitialBlock("e:/code/pike/testdata/modules/examples/notlocal/module.local.tf")
+	notLocal, _ := filepath.Abs("..\\testdata\\modules\\examples\\notlocal")
+	notBlock := getInitialBlock(notLocal + "\\module.local.tf")
 
 	tests := []struct {
 		name    string
