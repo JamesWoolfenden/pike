@@ -52,4 +52,4 @@ jobs:
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
           repository: jameswoolfenden/pike
           short-description: ${{ github.event.repository.description }}
-          readme-filepath: ./Readme.md
+          readme-filepath: ./README.md
