@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "cognito-idp:AdminCreateUser",
+      "cognito-idp:AdminGetUser",
+      "cognito-idp:AdminDeleteUser"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "cognito-idp:AdminDeleteUser"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

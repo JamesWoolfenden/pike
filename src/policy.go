@@ -67,8 +67,6 @@ func GetPolicy(actions Sorted, output string) (string, error) {
 		values[i] = v.Field(i).Interface()
 		switch typeOfV.Field(i).Name {
 		case "AWS":
-			//AWSPermissions = append(AWSPermissions, actions.AWS...)
-
 			if actions.AWS == nil {
 				continue
 			}

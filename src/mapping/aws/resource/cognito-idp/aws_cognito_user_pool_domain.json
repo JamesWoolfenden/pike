@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "cognito-idp:CreateUserPoolDomain",
+      "cognito-idp:DescribeUserPoolDomain",
+      "cognito-idp:DeleteUserPoolDomain"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "cognito-idp:DeleteUserPoolDomain"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

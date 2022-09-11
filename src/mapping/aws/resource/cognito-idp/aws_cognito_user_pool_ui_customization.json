@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "cognito-idp:GetUICustomization",
+      "cognito-idp:SetUICustomization"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

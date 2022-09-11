@@ -408,3 +408,33 @@ var awsAppautoscalingTarget []byte
 
 //go:embed mapping/aws/resource/application-autoscaling/aws_appautoscaling_policy.json
 var awsAppautoscalingPolicy []byte
+
+//go:embed mapping/aws/resource/cognito-idp/aws_cognito_identity_provider.json
+var awsCognitoIdentityProvider []byte
+
+//go:embed mapping/aws/resource/cognito-idp/aws_cognito_resource_server.json
+var awsCognitoResourceServer []byte
+
+//go:embed mapping/aws/resource/cognito-idp/aws_cognito_identity_provider.json
+var awsCognitoRiskConfiguration []byte
+
+//go:embed mapping/aws/resource/cognito-idp/aws_cognito_user.json
+var awsCognitoUser []byte
+
+//go:embed mapping/aws/resource/cognito-idp/aws_cognito_user_group.json
+var awsCognitoUserGroup []byte
+
+//go:embed mapping/aws/resource/cognito-idp/aws_cognito_user_in_group.json
+var awsCognitoUserInGroup []byte
+
+//go:embed mapping/aws/resource/cognito-idp/aws_cognito_user_pool.json
+var awsCognitoUserPool []byte
+
+//go:embed mapping/aws/resource/cognito-idp/aws_cognito_user_pool_client.json
+var awsCognitoUserPoolClient []byte
+
+//go:embed mapping/aws/resource/cognito-idp/aws_cognito_user_pool_domain.json
+var awsCognitoUserPoolDomain []byte
+
+//go:embed mapping/aws/resource/cognito-idp/aws_cognito_user_pool_ui_customization.json
+var awsCognitoUserPoolUICustomization []byte

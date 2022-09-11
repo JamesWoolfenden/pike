@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "cognito-idp:CreateResourceServer",
+      "cognito-idp:DeleteResourceServer",
+      "cognito-idp:DescribeResourceServer"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "cognito-idp:DeleteResourceServer"
+    ],
+    "modify": [
+      "cognito-idp:UpdateResourceServer"
+    ],
+    "plan": []
+  }
+]

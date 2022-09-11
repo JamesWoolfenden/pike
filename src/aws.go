@@ -181,6 +181,16 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_appautoscaling_scheduled_action":                awsAppautoscalingScheduledAction,
 		"aws_appautoscaling_policy":                          awsAppautoscalingPolicy,
 		"aws_appautoscaling_target":                          awsAppautoscalingTarget,
+		"aws_cognito_identity_provider":                      awsCognitoIdentityProvider,
+		"aws_cognito_resource_server":                        awsCognitoResourceServer,
+		"aws_cognito_risk_configuration":                     awsCognitoRiskConfiguration,
+		"aws_cognito_user":                                   awsCognitoUser,
+		"aws_cognito_user_group":                             awsCognitoUserGroup,
+		"aws_cognito_user_in_group":                          awsCognitoUserInGroup,
+		"aws_cognito_user_pool":                              awsCognitoUserPool,
+		"aws_cognito_user_pool_client":                       awsCognitoUserPoolClient,
+		"aws_cognito_user_pool_domain":                       awsCognitoUserPoolDomain,
+		"aws_cognito_user_pool_ui_customization":             awsCognitoUserPoolUICustomization,
 	}
 
 	var Permissions []string

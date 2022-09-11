@@ -15,13 +15,21 @@ func TestGetResources(t *testing.T) {
 		file    string
 		dirName string
 	}
+
+	file, _ := filepath.Abs("../testdata/scan/examples/simple/aws_s3_bucket.pike.tf")
+	moduleFile, _ := filepath.Abs("../testdata/modules/examples/local/module.local.tf")
+
 	tests := []struct {
 		name    string
 		args    args
 		want    []ResourceV2
 		wantErr bool
 	}{
-		// TODO: Add test cases.
+		{"empty", args{"", "../testdata/scan/examples/simple"}, nil, true},
+		{"no_dir", args{file, ""}, []ResourceV2{{"resource", "aws_s3_bucket", "pike", "aws", []string{"bucket"}}}, false},
+		{"dir", args{file, "../testdata/scan/examples/simple"}, []ResourceV2{{"resource", "aws_s3_bucket", "pike", "aws", []string{"bucket"}}}, false},
+		{"module", args{moduleFile, "../testdata/modules/examples/local"}, []ResourceV2{{"resource", "aws_s3_bucket", "pike", "aws", []string{"name"}},
+			{"module", "local", "", "local", []string{"source"}}}, false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

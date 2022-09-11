@@ -7,7 +7,9 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "ecr:GetAuthorizationToken",
+          "cognito-idp:ListUserPoolClients",
+          "cognito-idp:GetSigningCertificate",
+          "cognito-idp:DescribeUserPoolClient"
         ],
         "Resource" : "*"
       }

@@ -1,0 +1,37 @@
+[
+  {
+    "apply": [
+      "cognito-idp:DescribeUserPoolClient",
+      "cognito-idp:CreateUserPool",
+      "cognito-idp:DescribeUserPool",
+      "cognito-idp:GetUserPoolMfaConfig",
+      "cognito-idp:DeleteUserPool",
+      "ec2:DescribeAccountAttributes"
+    ],
+    "attributes": {
+      "kms_key_id": [
+        "kms:CreateGrant"
+      ],
+      "schema": [
+        "cognito-idp:AddCustomAttributes"
+      ],
+      "sms_configuration": [
+        "iam:PassRole"
+      ],
+      "software_token_mfa_configuration": [
+        "cognito-idp:SetUserPoolMfaConfig"
+      ],
+      "tags": [
+        "cognito-idp:TagResource",
+        "cognito-idp:UntagResource"
+      ]
+    },
+    "destroy": [
+      "cognito-idp:DeleteUserPool"
+    ],
+    "modify": [
+      "cognito-idp:UpdateUserPool"
+    ],
+    "plan": []
+  }
+]

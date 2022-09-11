@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "cognito-idp:CreateGroup",
+      "cognito-idp:GetGroup",
+      "cognito-idp:DeleteGroup",
+      "iam:PassRole"
+    ],
+    "attributes": {
+      "role_arn": [
+        "iam:PassRole"
+      ],
+      "tags": []
+    },
+    "destroy": [
+      "cognito-idp:DeleteGroup"
+    ],
+    "modify": [
+      "cognito-idp:UpdateGroup"
+    ],
+    "plan": []
+  }
+]

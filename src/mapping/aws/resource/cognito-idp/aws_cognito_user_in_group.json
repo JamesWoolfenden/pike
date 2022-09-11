@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "cognito-idp:AdminAddUserToGroup",
+      "cognito-idp:AdminListGroupsForUser",
+      "cognito-idp:AdminRemoveUserFromGroup"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

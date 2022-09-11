@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "cognito-idp:SetRiskConfiguration"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

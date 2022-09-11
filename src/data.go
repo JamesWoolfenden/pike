@@ -63,9 +63,10 @@ func GetResources(file string, dirName string) ([]ResourceV2, error) {
 
 // GetResourceBlocks breaks down a file into resources
 func GetResourceBlocks(file string) (*hclsyntax.Body, error) {
-	src, err := os.ReadFile(file)
+	temp, _ := filepath.Abs(file)
+	src, err := os.ReadFile(temp)
 	if err != nil {
-		log.Fatal(err)
+		return nil, err
 	}
 
 	parser := hclparse.NewParser()

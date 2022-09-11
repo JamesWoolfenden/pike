@@ -43,14 +43,6 @@ aws_codecommit_approval_rule_template_association not implemented
 aws_codecommit_approval_rule_template_association not implemented
 aws_codedeploy_app not implemented
 aws_codedeploy_deployment_group not implemented
-aws_cognito_identity_pool not implemented
-aws_cognito_resource_server not implemented
-aws_cognito_user_group not implemented
-aws_cognito_user_group not implemented
-aws_cognito_user_pool not implemented
-aws_cognito_user_pool_client not implemented
-aws_cognito_user_pool_client not implemented
-aws_cognito_user_pool_domain not implemented
 aws_config_config_rule not implemented
 aws_config_configuration_recorder not implemented
 aws_config_configuration_recorder_status not implemented
@@ -259,7 +251,5 @@ efs
 chime
 
 cloud_directory
-
-cognito
 
 inspector

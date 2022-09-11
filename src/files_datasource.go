@@ -4,6 +4,18 @@ import (
 	_ "embed" // required for embed
 )
 
+//go:embed mapping/aws/data/cognito-idp/aws_cognito_user_pools.json
+var dataAwsCognitoUserPools []byte
+
+//go:embed mapping/aws/data/cognito-idp/aws_cognito_user_pool_client.json
+var dataAwsCognitoUserPoolClient []byte
+
+//go:embed mapping/aws/data/cognito-idp/aws_cognito_user_pool_clients.json
+var dataAwsCognitoUserPoolClients []byte
+
+//go:embed mapping/aws/data/cognito-idp/aws_cognito_user_pool_signing_certificate.json
+var dataAwsCognitoUserPoolSigningCertificate []byte
+
 //go:embed mapping/aws/data/template.json
 var placeholder []byte
 

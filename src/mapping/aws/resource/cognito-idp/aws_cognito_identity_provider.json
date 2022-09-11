@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "cognito-idp:DeleteIdentityProvider",
+      "cognito-idp:DescribeIdentityProvider",
+      "cognito-idp:CreateIdentityProvider"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "cognito-idp:DeleteIdentityProvider"
+    ],
+    "modify": [
+      "cognito-idp:UpdateIdentityProvider"
+    ],
+    "plan": []
+  }
+]
