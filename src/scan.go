@@ -22,12 +22,12 @@ const tfVersion = "1.2.3"
 // Scan looks for resources in a given directory
 func Scan(dirName string, output string, file string, init bool, excludes *cli.StringSlice) error {
 
-	Policy, err := MakePolicy(dirName, output, file, init, excludes)
+	OutPolicy, err := MakePolicy(dirName, file, init, excludes)
 	if err != nil {
 		return err
 	}
 
-	fmt.Print(Policy)
+	fmt.Print(OutPolicy.AsString(output))
 	return err
 }
 
@@ -67,36 +67,36 @@ func Init(dirName string) (string, error) {
 }
 
 // MakePolicy does the guts of determining a policy from code
-func MakePolicy(dirName string, output string, file string, init bool, excludes *cli.StringSlice) (string, error) {
+func MakePolicy(dirName string, file string, init bool, excludes *cli.StringSlice) (OutputPolicy, error) {
 	var files []string
-
+	var Output OutputPolicy
 	if file == "" {
 		fullPath, err := filepath.Abs(dirName)
 
 		if err != nil {
-			return "", err
+			return Output, err
 		}
 		if init {
 			_, err := Init(dirName)
 			if err != nil {
-				return "", err
+				return Output, err
 			}
 		}
 
 		files, err = GetTF(fullPath, false, excludes)
 		if err != nil {
-			return "", err
+			return Output, err
 		}
 	} else {
 		myFile, err := filepath.Abs(file)
 
 		if err != nil {
-			return "", err
+			return Output, err
 		}
 
 		// is this a file
 		if !(fileExists(myFile)) {
-			return "", os.ErrNotExist
+			return Output, os.ErrNotExist
 		}
 
 		files = append(files, myFile)
@@ -121,18 +121,18 @@ func MakePolicy(dirName string, output string, file string, init bool, excludes 
 		newPerms, err := GetPermission(resource)
 
 		if err != nil {
-			return "", err
+			return Output, err
 		}
 
 		PermissionBag.AWS = append(PermissionBag.AWS, newPerms.AWS...)
 		PermissionBag.GCP = append(PermissionBag.GCP, newPerms.GCP...)
 	}
 
-	Policy, err2 := GetPolicy(PermissionBag, output)
+	Output, err2 := GetPolicy(PermissionBag)
 	if err2 != nil {
-		return "", err2
+		return Output, err2
 	}
-	return Policy, nil
+	return Output, nil
 }
 
 // GetTF return tf files in a directory

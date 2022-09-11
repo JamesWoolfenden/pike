@@ -59,6 +59,7 @@ func main() {
 				Name:        "output",
 				Aliases:     []string{"o"},
 				Usage:       "Output types e.g. `json` terraform",
+				Value:       "terraform",
 				Destination: &output,
 				EnvVars:     []string{"OUTPUT"},
 			},

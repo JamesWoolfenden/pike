@@ -3,6 +3,7 @@ package pike
 import (
 	_ "embed"
 	"reflect"
+	"strings"
 	"testing"
 )
 
@@ -65,80 +66,9 @@ func TestNewAWSPolicy(t *testing.T) {
 	}
 }
 
-//func TestGetPolicy(t *testing.T) {
-//	type args struct {
-//		actions Sorted
-//		output  string
-//	}
-//	tests := []struct {
-//		name    string
-//		args    args
-//		want    string
-//		wantErr bool
-//	}{
-//{"first", args{Sorted{[]string{"s3:DeleteBucket",
-//	"s3:CreateBucket",
-//	"s3:GetLifecycleConfiguration",
-//	"s3:GetBucketTagging",
-//	"s3:GetBucketWebsite",
-//	"s3:GetBucketLogging",
-//	"s3:ListBucket",
-//	"s3:GetAccelerateConfiguration",
-//	"s3:GetBucketVersioning",
-//	"s3:GetBucketAcl",
-//	"s3:GetBucketPolicy",
-//	"s3:GetReplicationConfiguration",
-//	"s3:GetBucketObjectLockConfiguration",
-//	"s3:GetObjectAcl",
-//	"s3:GetObject",
-//	"s3:GetEncryptionConfiguration",
-//	"s3:GetBucketRequestPayment",
-//	"s3:GetBucketCORS",
-//	"s3:DeleteBucket"},
-//	nil,
-//	nil},
-//	""},
-//	Policy{
-//		Version: "2012-10-17",
-//		Statements: []Statement{
-//			{"VisualEditor0", "Allow", []string{"s3:CreateBucket",
-//				"s3:DeleteBucket",
-//				"s3:GetAccelerateConfiguration",
-//				"s3:GetBucketAcl",
-//				"s3:GetBucketCORS",
-//				"s3:GetBucketLogging",
-//				"s3:GetBucketObjectLockConfiguration",
-//				"s3:GetBucketPolicy",
-//				"s3:GetBucketRequestPayment",
-//				"s3:GetBucketTagging",
-//				"s3:GetBucketVersioning",
-//				"s3:GetBucketWebsite",
-//				"s3:GetEncryptionConfiguration",
-//				"s3:GetLifecycleConfiguration",
-//				"s3:GetObject",
-//				"s3:GetObjectAcl",
-//				"s3:GetReplicationConfiguration",
-//				"s3:ListBucket"}, "*"}}},
-//	false},
-//	}
-//	for _, tt := range tests {
-//		t.Run(tt.name, func(t *testing.T) {
-//			got, err := GetPolicy(tt.args.actions, tt.args.output)
-//			if (err != nil) != tt.wantErr {
-//				t.Errorf("GetPolicy() error = %v, wantErr %v", err, tt.wantErr)
-//				return
-//			}
-//			if got != tt.want {
-//				t.Errorf("GetPolicy() = %v, want %v", got, tt.want)
-//			}
-//		})
-//	}
-//}
-
-func TestAWSPolicy(t *testing.T) {
+func TestGetPolicy(t *testing.T) {
 	type args struct {
-		Permissions []string
-		output      string
+		actions Sorted
 	}
 	tests := []struct {
 		name    string
@@ -146,11 +76,66 @@ func TestAWSPolicy(t *testing.T) {
 		want    string
 		wantErr bool
 	}{
+		{"first", args{Sorted{
+			[]string{},
+			nil,
+			nil,
+		}},
+			"{\"Version\": \"2012-10-17\",\"Statement\": null\n}",
+			false,
+		},
+		{"aws", args{Sorted{[]string{
+			"ec2:DescribeInstances",
+			"ec2:DescribeTags",
+			"ec2:DescribeInstanceAttribute",
+			"ec2:DescribeVolumes",
+			"ec2:DescribeInstanceTypes",
+			"ec2:RunInstances",
+			"ec2:DescribeInstanceCreditSpecifications",
+			"ec2:StopInstances",
+			"ec2:StartInstances",
+			"ec2:ModifyInstanceAttribute",
+			"ec2:StopInstances",
+			"ec2:StopInstances",
+			"ec2:TerminateInstances"}, nil, nil}},
+			"{\n    \"Version\": \"2012-10-17\",\n    \"Statement\": [\n        {\n            \"Sid\": \"VisualEditor0\",\n            \"Effect\": \"Allow\",\n            \"Action\": [\n                \"ec2:DescribeInstanceAttribute\",\n                \"ec2:DescribeInstanceCreditSpecifications\",\n                \"ec2:DescribeInstanceTypes\",\n                \"ec2:DescribeInstances\",\n                \"ec2:DescribeTags\",\n                \"ec2:DescribeVolumes\",\n                \"ec2:ModifyInstanceAttribute\",\n                \"ec2:RunInstances\",\n                \"ec2:StartInstances\",\n                \"ec2:StopInstances\",\n                \"ec2:TerminateInstances\"\n            ],\n            \"Resource\": \"*\"\n        }\n    ]\n}",
+			false},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			got, err := GetPolicy(tt.args.actions)
+			if (err != nil) != tt.wantErr {
+				t.Errorf("GetPolicy() error = %v, wantErr %v", err, tt.wantErr)
+				return
+			}
+			newGot := minify(got.AWS.JSONOut)
+			reallyWant := minify(tt.want)
+			if newGot != reallyWant {
+				t.Errorf("GetPolicy() = %v, want %v", got.AWS.JSONOut, tt.want)
+			}
+		})
+	}
+}
+
+func minify(JSONOut string) string {
+	return strings.ReplaceAll(strings.ReplaceAll(strings.ReplaceAll(JSONOut, "\n", ""), "	", ""), " ", "")
+}
+
+func TestAWSPolicy(t *testing.T) {
+	type args struct {
+		Permissions []string
+	}
+	tests := []struct {
+		name    string
+		args    args
+		want    AwsOutput
+		wantErr bool
+	}{
 		// TODO: Add test cases.
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got, err := AWSPolicy(tt.args.Permissions, tt.args.output)
+			got, err := AWSPolicy(tt.args.Permissions)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("AWSPolicy() error = %v, wantErr %v", err, tt.wantErr)
 				return

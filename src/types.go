@@ -1,5 +1,7 @@
 package pike
 
+import "strings"
+
 // Sorted is to help split out permission to the relevant auth
 type Sorted struct {
 	AWS   []string
@@ -28,4 +30,37 @@ type Statement struct {
 	Effect   string   `json:"Effect"`
 	Action   []string `json:"Action"`
 	Resource string   `json:"Resource"`
+}
+
+// OutputPolicy is the main output type
+type OutputPolicy struct {
+	AWS   AwsOutput
+	GCP   string
+	Azure string
+}
+
+// AwsOutput structure
+type AwsOutput struct {
+	JSONOut   string
+	Terraform string
+}
+
+// AsString converts object into string
+func (Out OutputPolicy) AsString(format string) string {
+	var Output string
+	if strings.ToLower(format) == "terraform" {
+		Output = Out.AWS.Terraform + "\n"
+	} else {
+		Output = Out.AWS.JSONOut + "\n"
+	}
+
+	if Out.GCP != "" {
+		Output = Output + Out.GCP + "\n"
+	}
+
+	if Out.Azure != "" {
+		Output = Output + Out.Azure + "\n"
+	}
+
+	return Output
 }

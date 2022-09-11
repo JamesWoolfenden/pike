@@ -55,13 +55,15 @@ func NewAWSPolicy(Actions []string) Policy {
 }
 
 // GetPolicy creates new iam polices from a list of Permissions
-func GetPolicy(actions Sorted, output string) (string, error) {
+func GetPolicy(actions Sorted) (OutputPolicy, error) {
+	var OutPolicy OutputPolicy
+	var Empty bool
+	Empty = true
 
 	v := reflect.ValueOf(actions)
 	typeOfV := v.Type()
 	values := make([]interface{}, v.NumField())
 
-	var Policy string
 	var err error
 	for i := 0; i < v.NumField(); i++ {
 		values[i] = v.Field(i).Interface()
@@ -70,9 +72,11 @@ func GetPolicy(actions Sorted, output string) (string, error) {
 			if actions.AWS == nil {
 				continue
 			}
+
+			Empty = false
 			//dedupe
 			AWSPermissions := unique(actions.AWS)
-			Policy, err = AWSPolicy(AWSPermissions, output)
+			OutPolicy.AWS, err = AWSPolicy(AWSPermissions)
 
 			if err != nil {
 				log.Print(err)
@@ -83,58 +87,58 @@ func GetPolicy(actions Sorted, output string) (string, error) {
 			if actions.GCP == nil {
 				continue
 			}
+
+			Empty = false
 			//dedupe
 			GCPPermissions := unique(actions.GCP)
-			Policy, err = GCPPolicy(GCPPermissions)
+			OutPolicy.GCP, err = GCPPolicy(GCPPermissions)
 			if err != nil {
 				log.Print(err)
 				continue
 			}
 		}
 	}
-	if Policy == "" {
-		return Policy, errors.New("no permissions found")
+	if Empty {
+		return OutPolicy, errors.New("no permissions found")
 	}
-	return Policy, nil
+	return OutPolicy, nil
 }
 
 // AWSPolicy create an IAM policy
-func AWSPolicy(Permissions []string, output string) (string, error) {
+func AWSPolicy(Permissions []string) (AwsOutput, error) {
+	var OutPolicy AwsOutput
 	Policy := NewAWSPolicy(Permissions)
 	b, err := json.MarshalIndent(Policy, "", "    ")
 	if err != nil {
 		fmt.Println(err)
-		return "", err
+		return OutPolicy, err
 	}
 
-	switch output {
-	case "terraform", "Terraform":
-
-		type PolicyDetails struct {
-			Policy      string
-			Name        string
-			Path        string
-			Description string
-		}
-
-		PolicyName := "terraform" + randSeq(8)
-		theDetails := PolicyDetails{string(b), PolicyName, "/", "Add Description"}
-
-		var output bytes.Buffer
-		tmpl, err := template.New("test").Parse(string(policyTemplate))
-		if err != nil {
-			panic(err)
-		}
-
-		err = tmpl.Execute(&output, theDetails)
-
-		if err != nil {
-			panic(err)
-		}
-		return output.String(), nil
-	default:
-		return string(b) + "\n", nil
+	type PolicyDetails struct {
+		Policy      string
+		Name        string
+		Path        string
+		Description string
 	}
+
+	PolicyName := "terraform" + randSeq(8)
+	theDetails := PolicyDetails{string(b), PolicyName, "/", "Add Description"}
+
+	var output bytes.Buffer
+	tmpl, err := template.New("test").Parse(string(policyTemplate))
+	if err != nil {
+		panic(err)
+	}
+
+	err = tmpl.Execute(&output, theDetails)
+
+	if err != nil {
+		panic(err)
+	}
+	OutPolicy.Terraform = output.String()
+	OutPolicy.JSONOut = string(b) + "\n"
+
+	return OutPolicy, nil
 }
 
 func unique(s []string) []string {

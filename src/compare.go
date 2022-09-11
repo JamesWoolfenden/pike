@@ -28,8 +28,8 @@ func Compare(directory string, arn string, init bool, exclude *cli.StringSlice) 
 	Version := GetVersion(client, arn)
 	Policy, _ := GetPolicyVersion(client, arn, Version)
 
-	iacPolicy, _ := MakePolicy(directory, "json", "", init, exclude)
-	Sorted, _ := SortActions(iacPolicy)
+	iacPolicy, _ := MakePolicy(directory, "", init, exclude)
+	Sorted, _ := SortActions(iacPolicy.AWS.JSONOut)
 
 	// iam versus iac
 	fmt.Printf("IAM Policy %s versus Local %s \n", arn, directory)

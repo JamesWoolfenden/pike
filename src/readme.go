@@ -16,16 +16,16 @@ func Readme(dirName string, output string, init bool, autoAppend bool, excludes 
 		return err
 	}
 
-	Policy, err2 := MakePolicy(dirName, output, "", init, excludes)
+	OutPolicy, err2 := MakePolicy(dirName, "", init, excludes)
 	if err2 != nil {
 		return err2
 	}
 
 	var markdown string
 	if init {
-		markdown = "\nThe Terraform resource required is:\n\n```golang\n" + Policy + "\n```\n"
+		markdown = "\nThe Terraform resource required is:\n\n```golang\n" + OutPolicy.AsString(output) + "\n```\n"
 	} else {
-		markdown = "\nThe Policy required is:\n\n```json\n" + Policy + "\n```\n"
+		markdown = "\nThe Policy required is:\n\n```json\n" + OutPolicy.AsString(output) + "\n```\n"
 	}
 	err := ReplaceSection(file, markdown, autoAppend)
 
