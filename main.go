@@ -20,7 +20,6 @@ func main() {
 	var wait int
 	var init bool
 	var autoAppend bool
-	excludes := cli.NewStringSlice()
 
 	app := &cli.App{
 		EnableBashCompletion: true,
@@ -79,12 +78,6 @@ func main() {
 				Destination: &wait,
 				EnvVars:     []string{"WAIT"},
 			},
-			&cli.StringSliceFlag{
-				Name:        "exclude",
-				Aliases:     []string{"x"},
-				Usage:       "A list of directories to ignore",
-				Destination: excludes,
-			},
 		},
 		Commands: []*cli.Command{
 			{
@@ -92,7 +85,7 @@ func main() {
 				Aliases: []string{"s"},
 				Usage:   "scan a directory for IAM code",
 				Action: func(*cli.Context) error {
-					return pike.Scan(directory, output, file, init, excludes)
+					return pike.Scan(directory, output, file, init)
 				},
 			},
 			{
@@ -100,7 +93,7 @@ func main() {
 				Aliases: []string{"c"},
 				Usage:   "policy comparison of deployed versus IAC",
 				Action: func(*cli.Context) error {
-					return pike.Compare(directory, arn, init, nil)
+					return pike.Compare(directory, arn, init)
 				},
 			},
 			{
@@ -116,7 +109,7 @@ func main() {
 				Aliases: []string{"r"},
 				Usage:   "Looks in dir for a README.md and updates it with the Policy required to build the code",
 				Action: func(*cli.Context) error {
-					return pike.Readme(directory, output, init, autoAppend, excludes)
+					return pike.Readme(directory, output, init, autoAppend)
 				},
 			},
 			{

@@ -76,8 +76,8 @@ func Test_getLocalModules(t *testing.T) {
 				"aws",
 				[]string{"name"}}},
 			false},
-		{"rubbish", args{duffBlock, duffName, nil}, nil, true},
-		{"notlocal", args{notBlock, notLocal, nil}, nil, true},
+		{"rubbish", args{duffBlock, duffName, nil}, nil, false},
+		{"notlocal", args{notBlock, notLocal, nil}, nil, false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -210,6 +210,8 @@ func TestGetPermission(t *testing.T) {
 				"acm:DeleteCertificate",
 				"acm:DeleteCertificate"}, nil, nil},
 			false},
+		{"not-implemented", args{ResourceV2{Provider: "azurerm"}}, Sorted{}, false},
+		{"bogus", args{ResourceV2{Provider: "bogus"}}, Sorted{}, false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

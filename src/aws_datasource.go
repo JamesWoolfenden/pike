@@ -64,13 +64,14 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 	}
 
 	var Permissions []string
+	var err error
 
 	temp := TFLookup[result.Name]
 	if temp != nil {
-		Permissions = GetPermissionMap(TFLookup[result.Name].([]byte), result.Attributes)
+		Permissions, err = GetPermissionMap(TFLookup[result.Name].([]byte), result.Attributes)
 	} else {
 		return nil, fmt.Errorf("data.%s not implemented", result.Name)
 	}
 
-	return Permissions, nil
+	return Permissions, err
 }

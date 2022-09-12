@@ -145,9 +145,10 @@ func TestGetPermissionMap(t *testing.T) {
 		attributes []string
 	}
 	tests := []struct {
-		name string
-		args args
-		want []string
+		name    string
+		args    args
+		want    []string
+		wantErr bool
 	}{
 		{"found",
 			args{
@@ -160,13 +161,21 @@ func TestGetPermissionMap(t *testing.T) {
 				"acm:DescribeCertificate",
 				"acm:ListTagsForCertificate",
 				"acm:DeleteCertificate",
-				"acm:DeleteCertificate"}},
+				"acm:DeleteCertificate"},
+			false},
+		{"bogus", args{[]byte("bogus"), []string{}}, nil, true},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := GetPermissionMap(tt.args.raw, tt.args.attributes); !reflect.DeepEqual(got, tt.want) {
+			got, err := GetPermissionMap(tt.args.raw, tt.args.attributes)
+			if (err != nil) != tt.wantErr {
+				t.Errorf("GetPermissionMap() error = %v, wantErr %v", err, tt.wantErr)
+				return
+			}
+			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("GetPermissionMap() = %v, want %v", got, tt.want)
 			}
 		})
 	}
+
 }

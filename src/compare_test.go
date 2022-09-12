@@ -2,8 +2,6 @@ package pike
 
 import (
 	"testing"
-
-	"github.com/urfave/cli/v2"
 )
 
 func TestCompare(t *testing.T) {
@@ -11,7 +9,6 @@ func TestCompare(t *testing.T) {
 		directory string
 		arn       string
 		init      bool
-		exclude   *cli.StringSlice
 	}
 	tests := []struct {
 		name    string
@@ -22,7 +19,7 @@ func TestCompare(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if err := Compare(tt.args.directory, tt.args.arn, tt.args.init, tt.args.exclude); (err != nil) != tt.wantErr {
+			if err := Compare(tt.args.directory, tt.args.arn, tt.args.init); (err != nil) != tt.wantErr {
 				t.Errorf("Compare() error = %v, wantErr %v", err, tt.wantErr)
 			}
 		})

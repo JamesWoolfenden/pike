@@ -1,8 +1,8 @@
 const start
 <!-- BEGINNING OF PRE-COMMIT-PIKE DOCS HOOK -->
-The Terraform resource required is:
+The Policy required is:
 
-```golang
+```json
 {
     "Version": "2012-10-17",
     "Statement": [

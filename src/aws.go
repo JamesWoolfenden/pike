@@ -3,7 +3,6 @@ package pike
 import (
 	"encoding/json"
 	"fmt"
-	"log"
 )
 
 // GetAWSPermissions for AWS resources
@@ -194,15 +193,16 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 	}
 
 	var Permissions []string
+	var err error
 
 	temp := TFLookup[result.Name]
 	if temp != nil {
-		Permissions = GetPermissionMap(TFLookup[result.Name].([]byte), result.Attributes)
+		Permissions, err = GetPermissionMap(TFLookup[result.Name].([]byte), result.Attributes)
 	} else {
 		return nil, fmt.Errorf("%s not implemented", result.Name)
 	}
 
-	return Permissions, nil
+	return Permissions, err
 }
 
 func contains(s []string, e string) bool {
@@ -215,11 +215,11 @@ func contains(s []string, e string) bool {
 }
 
 // GetPermissionMap Anonymous parsing
-func GetPermissionMap(raw []byte, attributes []string) []string {
+func GetPermissionMap(raw []byte, attributes []string) ([]string, error) {
 	var mappings []interface{}
 	err := json.Unmarshal(raw, &mappings)
 	if err != nil {
-		log.Print(err)
+		return nil, err
 	}
 	temp := mappings[0].(map[string]interface{})
 	myAttributes := temp["attributes"].(map[string]interface{})
@@ -246,5 +246,5 @@ func GetPermissionMap(raw []byte, attributes []string) []string {
 		}
 	}
 
-	return found
+	return found, nil
 }

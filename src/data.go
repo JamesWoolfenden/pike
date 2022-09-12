@@ -1,7 +1,6 @@
 package pike
 
 import (
-	"errors"
 	"log"
 	"os"
 	"path/filepath"
@@ -84,14 +83,15 @@ func getLocalModules(block *hclsyntax.Block, dirName string, Resources []Resourc
 
 	_, err := os.Stat(modulePath)
 	if err != nil {
-		return nil, errors.New("module not local")
+		//could be totally valid
+		return nil, nil
 	}
 
 	//have the path to the module
 	modulePath = filepath.Join(dirName, "/", modulePath)
 
 	//now process these extras
-	ExtraFiles, _ := GetTF(modulePath, false, nil)
+	ExtraFiles, _ := GetTF(modulePath)
 	for _, file := range ExtraFiles {
 		resource, err := GetResources(file, dirName)
 		if err == nil {
@@ -147,10 +147,10 @@ func GetPermission(result ResourceV2) (Sorted, error) {
 	case "gcp", "google":
 		myPermission.GCP = GetGCPPermissions(result)
 	case "provider", "random", "main", "ip", "http", "test", "local",
-		"archive", "tls", "template", "null", "time":
+		"archive", "tls", "template", "null", "time", "external":
 		return myPermission, nil
 	default:
-		if result.Provider != "" {
+		if result.Provider != "" && !(result.TypeName == "module") {
 			log.Printf("Provider %s was not found", result.Provider)
 		}
 	}

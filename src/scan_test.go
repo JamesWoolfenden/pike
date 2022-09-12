@@ -1,10 +1,10 @@
 package pike
 
 import (
+	"log"
+	"path/filepath"
 	"reflect"
 	"testing"
-
-	"github.com/urfave/cli/v2"
 )
 
 func TestScan(t *testing.T) {
@@ -21,7 +21,7 @@ func TestScan(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if err := Scan(tt.args.dirname, "json", "", false, nil); (err != nil) != tt.wantErr {
+			if err := Scan(tt.args.dirname, "json", "", false); (err != nil) != tt.wantErr {
 				t.Errorf("Scan() error = %v, wantErr %v", err, tt.wantErr)
 			}
 		})
@@ -30,26 +30,21 @@ func TestScan(t *testing.T) {
 
 func TestGetTF(t *testing.T) {
 	type args struct {
-		dirname  string
-		recurse  bool
-		excludes *cli.StringSlice
+		dirname string
 	}
 
-	excludes := cli.NewStringSlice("simple")
 	tests := []struct {
 		name    string
 		args    args
 		want    []string
 		wantErr bool
 	}{
-		{"first", args{"../testdata/scan/examples/simple", false, nil}, []string{"../testdata/scan/examples/simple/aws_s3_bucket.pike.tf"}, false},
-		{"empty", args{"../testdata/scan", false, nil}, nil, false},
-		{"recurse", args{"../testdata/scan", true, nil}, []string{"../testdata/scan/examples/simple/aws_s3_bucket.pike.tf"}, false},
-		{"recurse-exclude", args{"../testdata/scan", true, excludes}, nil, false},
+		{"first", args{"../testdata/scan/examples/simple"}, []string{"../testdata/scan/examples/simple/aws_s3_bucket.pike.tf"}, false},
+		{"empty", args{"../testdata/scan"}, nil, false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got, err := GetTF(tt.args.dirname, tt.args.recurse, tt.args.excludes)
+			got, err := GetTF(tt.args.dirname)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("GetTF() error = %v, wantErr %v", err, tt.wantErr)
 				return
@@ -87,51 +82,62 @@ func TestInit(t *testing.T) {
 	type args struct {
 		dirName string
 	}
+
+	dirName, _ := filepath.Abs("../testdata/init/nicconf")
+
 	tests := []struct {
 		name    string
 		args    args
-		want    string
+		want    []string
 		wantErr bool
 	}{
-		// TODO: Add test cases.
+		{"remote", args{dirName}, []string{"api_gateway", "dynamodb_table", "lambda_get", "lambda_post"}, false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got, err := Init(tt.args.dirName)
+			got, modules, err := Init(tt.args.dirName)
+			log.Print(modules)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("Init() error = %v, wantErr %v", err, tt.wantErr)
 				return
 			}
-			if got != tt.want {
-				t.Errorf("Init() = %v, want %v", got, tt.want)
+			if got == "" {
+				t.Error("init should return new path to Terraform")
 			}
+			if !reflect.DeepEqual(modules, tt.want) {
+				t.Errorf("Init() got1 = %v, want %v", modules, tt.want)
+			}
+
 		})
 	}
 }
 
 func TestMakePolicy(t *testing.T) {
 	type args struct {
-		dirName  string
-		file     string
-		init     bool
-		excludes *cli.StringSlice
+		dirName string
+		file    string
+		init    bool
 	}
 	tests := []struct {
 		name    string
 		args    args
-		want    OutputPolicy
+		want    string
 		wantErr bool
 	}{
-		// TODO: Add test cases.
+		{"basic", args{
+			"../testdata/init/nicconf", "", true},
+			"{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"VisualEditor0\",\"Effect\":\"Allow\",\"Action\":[\"apigateway:DELETE\",\"apigateway:GET\",\"apigateway:PATCH\",\"apigateway:POST\",\"apigateway:PUT\"],\"Resource\":\"*\"},{\"Sid\":\"VisualEditor1\",\"Effect\":\"Allow\",\"Action\":[\"application-autoscaling:DeleteScalingPolicy\",\"application-autoscaling:DeregisterScalableTarget\",\"application-autoscaling:DescribeScalableTargets\",\"application-autoscaling:DescribeScalingPolicies\",\"application-autoscaling:PutScalingPolicy\",\"application-autoscaling:RegisterScalableTarget\"],\"Resource\":\"*\"},{\"Sid\":\"VisualEditor2\",\"Effect\":\"Allow\",\"Action\":[\"dynamodb:CreateTable\",\"dynamodb:DeleteTable\",\"dynamodb:DescribeContinuousBackups\",\"dynamodb:DescribeTable\",\"dynamodb:DescribeTimeToLive\",\"dynamodb:ListTagsOfResource\",\"dynamodb:TagResource\",\"dynamodb:UntagResource\",\"dynamodb:UpdateTable\",\"dynamodb:UpdateTimeToLive\"],\"Resource\":\"*\"},{\"Sid\":\"VisualEditor3\",\"Effect\":\"Allow\",\"Action\":[\"ec2:DescribeAccountAttributes\"],\"Resource\":\"*\"},{\"Sid\":\"VisualEditor4\",\"Effect\":\"Allow\",\"Action\":[\"iam:AttachRolePolicy\",\"iam:CreatePolicy\",\"iam:CreateRole\",\"iam:CreateServiceLinkedRole\",\"iam:DeletePolicy\",\"iam:DeleteRole\",\"iam:DeleteRolePermissionsBoundary\",\"iam:DetachRolePolicy\",\"iam:GetPolicy\",\"iam:GetPolicyVersion\",\"iam:GetRole\",\"iam:ListAttachedRolePolicies\",\"iam:ListInstanceProfilesForRole\",\"iam:ListPolicies\",\"iam:ListPolicyVersions\",\"iam:ListRolePolicies\",\"iam:PassRole\",\"iam:PutRolePermissionsBoundary\",\"iam:TagPolicy\",\"iam:TagRole\",\"iam:UntagPolicy\",\"iam:UpdateRoleDescription\"],\"Resource\":\"*\"},{\"Sid\":\"VisualEditor5\",\"Effect\":\"Allow\",\"Action\":[\"lambda:AddPermission\",\"lambda:CreateFunction\",\"lambda:DeleteFunction\",\"lambda:GetFunction\",\"lambda:GetFunctionCodeSigningConfig\",\"lambda:GetPolicy\",\"lambda:ListVersionsByFunction\",\"lambda:RemovePermission\",\"lambda:TagResource\",\"lambda:UntagResource\"],\"Resource\":\"*\"},{\"Sid\":\"VisualEditor6\",\"Effect\":\"Allow\",\"Action\":[\"logs:AssociateKmsKey\",\"logs:CreateLogGroup\",\"logs:DeleteLogGroup\",\"logs:DeleteRetentionPolicy\",\"logs:DescribeLogGroups\",\"logs:DisassociateKmsKey\",\"logs:ListTagsLogGroup\",\"logs:PutRetentionPolicy\",\"logs:TagLogGroup\",\"logs:UntagLogGroup\"],\"Resource\":\"*\"},{\"Sid\":\"VisualEditor7\",\"Effect\":\"Allow\",\"Action\":[\"s3:DeleteObject\",\"s3:GetObject\",\"s3:GetObjectTagging\",\"s3:PutObject\"],\"Resource\":\"*\"}]}",
+			false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got, err := MakePolicy(tt.args.dirName, tt.args.file, tt.args.init, tt.args.excludes)
+			got, err := MakePolicy(tt.args.dirName, tt.args.file, tt.args.init)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("MakePolicy() error = %v, wantErr %v", err, tt.wantErr)
 				return
 			}
-			if !reflect.DeepEqual(got, tt.want) {
+
+			if !reflect.DeepEqual(minify(got.AWS.JSONOut), tt.want) {
 				t.Errorf("MakePolicy() = %v, want %v", got, tt.want)
 			}
 		})
@@ -147,12 +153,48 @@ func TestGetHCLType(t *testing.T) {
 		args args
 		want string
 	}{
-		// TODO: Add test cases.
+		{"basic", args{"aws_s3_bucket"}, "aws"},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := GetHCLType(tt.args.resourceName); got != tt.want {
 				t.Errorf("GetHCLType() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func Test_getTFFiles(t *testing.T) {
+	type args struct {
+		dirName string
+	}
+
+	dirName := "../testdata/init/nicconf"
+
+	tests := []struct {
+		name    string
+		args    args
+		want    []string
+		wantErr bool
+	}{
+		{"basic", args{dirName},
+			[]string{
+				"../testdata/init/nicconf/api_gateway.tf",
+				"../testdata/init/nicconf/dynamodb.tf",
+				"../testdata/init/nicconf/lambda_get.tf",
+				"../testdata/init/nicconf/lambda_post.tf",
+				"../testdata/init/nicconf/main.tf",
+				"../testdata/init/nicconf/outputs.tf"}, false},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			got, err := getTFFiles(tt.args.dirName)
+			if (err != nil) != tt.wantErr {
+				t.Errorf("getTFFiles() error = %v, wantErr %v", err, tt.wantErr)
+				return
+			}
+			if !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("getTFFiles() = %v, want %v", got, tt.want)
 			}
 		})
 	}

@@ -3,7 +3,7 @@ package pike
 import "log"
 
 // GetGCPDataPermissions gets permissions required for datasources
-func GetGCPDataPermissions(result ResourceV2) []string {
+func GetGCPDataPermissions(result ResourceV2) ([]string, error) {
 
 	TFLookup := map[string]interface{}{
 		"google_service_account":    dataGoogleServiceAccount,
@@ -19,13 +19,13 @@ func GetGCPDataPermissions(result ResourceV2) []string {
 	}
 
 	var Permissions []string
-
+	var err error
 	temp := TFLookup[result.Name]
 	if temp != nil {
-		Permissions = GetPermissionMap(TFLookup[result.Name].([]byte), result.Attributes)
+		Permissions, err = GetPermissionMap(TFLookup[result.Name].([]byte), result.Attributes)
 	} else {
 		log.Printf("data.%s not implemented", result.Name)
 	}
 
-	return Permissions
+	return Permissions, err
 }

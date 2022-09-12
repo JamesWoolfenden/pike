@@ -9,8 +9,6 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/urfave/cli/v2"
-
 	"github.com/hashicorp/go-version"
 	"github.com/hashicorp/hc-install/product"
 	"github.com/hashicorp/hc-install/releases"
@@ -20,9 +18,9 @@ import (
 const tfVersion = "1.2.3"
 
 // Scan looks for resources in a given directory
-func Scan(dirName string, output string, file string, init bool, excludes *cli.StringSlice) error {
+func Scan(dirName string, output string, file string, init bool) error {
 
-	OutPolicy, err := MakePolicy(dirName, file, init, excludes)
+	OutPolicy, err := MakePolicy(dirName, file, init)
 	if err != nil {
 		return err
 	}
@@ -32,7 +30,7 @@ func Scan(dirName string, output string, file string, init bool, excludes *cli.S
 }
 
 // Init can download and install terraform if required and then terraform init your specified directory
-func Init(dirName string) (string, error) {
+func Init(dirName string) (string, []string, error) {
 
 	tfPath, _ := exec.LookPath("terraform")
 
@@ -48,26 +46,41 @@ func Init(dirName string) (string, error) {
 
 		tfPath, err = installer.Install(context.Background())
 		if err != nil {
-			return "", err
+			return "", nil, err
 		}
 	}
 
 	tf, err := tfexec.NewTerraform(dirName, tfPath)
 	if err != nil {
-		return "", err
+		return "", nil, err
 	}
 
 	err = tf.Init(context.Background(), tfexec.Upgrade(true))
 	if err != nil {
-		return "", err
+		return "", nil, err
 	}
 
 	log.Printf("terraform init at %s\n", dirName)
-	return tfPath, err
+
+	modules, err := os.ReadDir(dirName + "/" + ".terraform/modules")
+
+	var found []string
+	for _, module := range modules {
+		if module.Name() == "modules.json" {
+			continue
+		}
+		found = append(found, module.Name())
+	}
+
+	if err != nil {
+		return tfPath, nil, err
+	}
+
+	return tfPath, found, err
 }
 
 // MakePolicy does the guts of determining a policy from code
-func MakePolicy(dirName string, file string, init bool, excludes *cli.StringSlice) (OutputPolicy, error) {
+func MakePolicy(dirName string, file string, init bool) (OutputPolicy, error) {
 	var files []string
 	var Output OutputPolicy
 	if file == "" {
@@ -77,13 +90,17 @@ func MakePolicy(dirName string, file string, init bool, excludes *cli.StringSlic
 			return Output, err
 		}
 		if init {
-			_, err := Init(dirName)
+			_, modules, err := Init(dirName)
 			if err != nil {
-				return Output, err
+				log.Printf("modules not found at %s", dirName)
+			}
+			for _, module := range modules {
+				log.Printf("downloaded %s", module)
 			}
 		}
 
-		files, err = GetTF(fullPath, false, excludes)
+		files, err = GetTF(fullPath)
+
 		if err != nil {
 			return Output, err
 		}
@@ -117,11 +134,14 @@ func MakePolicy(dirName string, file string, init bool, excludes *cli.StringSlic
 	}
 	var PermissionBag Sorted
 
+	var newPerms Sorted
+
 	for _, resource := range resources {
-		newPerms, err := GetPermission(resource)
+		var err error
+		newPerms, err = GetPermission(resource)
 
 		if err != nil {
-			return Output, err
+			continue
 		}
 
 		PermissionBag.AWS = append(PermissionBag.AWS, newPerms.AWS...)
@@ -136,31 +156,26 @@ func MakePolicy(dirName string, file string, init bool, excludes *cli.StringSlic
 }
 
 // GetTF return tf files in a directory
-func GetTF(dirName string, recurse bool, excludes *cli.StringSlice) ([]string, error) {
+func GetTF(dirName string) ([]string, error) {
+	files, err := getTFFiles(dirName)
+	modulePath := dirName + "/.terraform/modules"
+	if modules, err := os.ReadDir(modulePath); err == nil {
+		for _, module := range modules {
+			moreFiles, _ := getTFFiles(modulePath + "/" + module.Name())
+			files = append(files, moreFiles...)
+		}
+	}
+
+	if err != nil {
+		return nil, err
+	}
+	return files, nil
+}
+
+func getTFFiles(dirName string) ([]string, error) {
 	rawFiles, err := os.ReadDir(dirName)
 	var files []string
 	for _, file := range rawFiles {
-		if file.IsDir() &&
-			(recurse || (strings.Contains(file.Name(), ".terraform") || strings.Contains(dirName, ".terraform"))) {
-			var excludeDir []string
-			if excludes != nil {
-				excludeDir = excludes.Value()
-			}
-
-			excludeDir = append(excludeDir, ".git", ".external_modules", ".pike", "registry.terraform.io")
-			if stringInSlice(file.Name(), excludeDir) {
-				continue
-			}
-
-			newDirName := dirName + "/" + file.Name()
-			moreFiles, err := GetTF(newDirName, true, excludes)
-			if err == nil {
-				if moreFiles != nil {
-					files = append(files, moreFiles...)
-				}
-			}
-		}
-
 		fileExtension := filepath.Ext(file.Name())
 
 		if fileExtension != ".tf" {
@@ -168,11 +183,7 @@ func GetTF(dirName string, recurse bool, excludes *cli.StringSlice) ([]string, e
 		}
 		files = append(files, dirName+"/"+file.Name())
 	}
-
-	if err != nil {
-		return nil, err
-	}
-	return files, nil
+	return files, err
 }
 
 func stringInSlice(a string, list []string) bool {

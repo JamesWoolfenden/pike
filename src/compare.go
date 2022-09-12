@@ -6,8 +6,6 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/urfave/cli/v2"
-
 	"github.com/aws/aws-sdk-go-v2/config"
 	"github.com/aws/aws-sdk-go-v2/service/iam"
 	diff "github.com/yudai/gojsondiff"
@@ -15,7 +13,7 @@ import (
 )
 
 // Compare IAC codebase to AWS policy
-func Compare(directory string, arn string, init bool, exclude *cli.StringSlice) error {
+func Compare(directory string, arn string, init bool) error {
 
 	// Load the Shared AWS Configuration (~/.aws/config)
 	cfg, err := config.LoadDefaultConfig(context.TODO())
@@ -28,15 +26,24 @@ func Compare(directory string, arn string, init bool, exclude *cli.StringSlice) 
 	Version := GetVersion(client, arn)
 	Policy, _ := GetPolicyVersion(client, arn, Version)
 
-	iacPolicy, _ := MakePolicy(directory, "", init, exclude)
-	Sorted, _ := SortActions(iacPolicy.AWS.JSONOut)
+	iacPolicy, err := MakePolicy(directory, "", init)
+
+	if err != nil {
+		return err
+	}
+
+	Sorted, err := SortActions(iacPolicy.AWS.JSONOut)
+
+	if err != nil {
+		return err
+	}
 
 	// iam versus iac
 	fmt.Printf("IAM Policy %s versus Local %s \n", arn, directory)
 	_, err = CompareIAMPolicy(Policy, Sorted)
 
 	if err != nil {
-		log.Fatal(err)
+		return err
 	}
 
 	return nil

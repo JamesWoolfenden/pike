@@ -8,16 +8,16 @@ import (
 func GetGCPPermissions(result ResourceV2) []string {
 	var Permissions []string
 	if result.TypeName == "resource" {
-		Permissions = GetGCPResourcePermissions(result)
+		Permissions, _ = GetGCPResourcePermissions(result)
 	} else {
-		Permissions = GetGCPDataPermissions(result)
+		Permissions, _ = GetGCPDataPermissions(result)
 	}
 
 	return Permissions
 }
 
 // GetGCPResourcePermissions looks up permissions required for resources
-func GetGCPResourcePermissions(result ResourceV2) []string {
+func GetGCPResourcePermissions(result ResourceV2) ([]string, error) {
 	TFLookup := map[string]interface{}{
 		"google_compute_instance":                   googleComputeInstance,
 		"google_storage_bucket":                     googleStorageBucket,
@@ -56,13 +56,14 @@ func GetGCPResourcePermissions(result ResourceV2) []string {
 	}
 
 	var Permissions []string
+	var err error
 
 	temp := TFLookup[result.Name]
 	if temp != nil {
-		Permissions = GetPermissionMap(TFLookup[result.Name].([]byte), result.Attributes)
+		Permissions, err = GetPermissionMap(TFLookup[result.Name].([]byte), result.Attributes)
 	} else {
 		log.Printf("%s not implemented", result.Name)
 	}
 
-	return Permissions
+	return Permissions, err
 }
