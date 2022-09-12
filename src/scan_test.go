@@ -83,7 +83,7 @@ func TestInit(t *testing.T) {
 		dirName string
 	}
 
-	dirName, _ := filepath.Abs("../testdata/init/nicconf")
+	dirName, _ := filepath.Abs("testdata/init/nicconf")
 
 	tests := []struct {
 		name    string
@@ -125,7 +125,7 @@ func TestMakePolicy(t *testing.T) {
 		wantErr bool
 	}{
 		{"basic", args{
-			"../testdata/init/nicconf", "", true},
+			"testdata/init/nicconf", "", true},
 			"{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"VisualEditor0\",\"Effect\":\"Allow\",\"Action\":[\"apigateway:DELETE\",\"apigateway:GET\",\"apigateway:PATCH\",\"apigateway:POST\",\"apigateway:PUT\"],\"Resource\":\"*\"},{\"Sid\":\"VisualEditor1\",\"Effect\":\"Allow\",\"Action\":[\"application-autoscaling:DeleteScalingPolicy\",\"application-autoscaling:DeregisterScalableTarget\",\"application-autoscaling:DescribeScalableTargets\",\"application-autoscaling:DescribeScalingPolicies\",\"application-autoscaling:PutScalingPolicy\",\"application-autoscaling:RegisterScalableTarget\"],\"Resource\":\"*\"},{\"Sid\":\"VisualEditor2\",\"Effect\":\"Allow\",\"Action\":[\"dynamodb:CreateTable\",\"dynamodb:DeleteTable\",\"dynamodb:DescribeContinuousBackups\",\"dynamodb:DescribeTable\",\"dynamodb:DescribeTimeToLive\",\"dynamodb:ListTagsOfResource\",\"dynamodb:TagResource\",\"dynamodb:UntagResource\",\"dynamodb:UpdateTable\",\"dynamodb:UpdateTimeToLive\"],\"Resource\":\"*\"},{\"Sid\":\"VisualEditor3\",\"Effect\":\"Allow\",\"Action\":[\"ec2:DescribeAccountAttributes\"],\"Resource\":\"*\"},{\"Sid\":\"VisualEditor4\",\"Effect\":\"Allow\",\"Action\":[\"iam:AttachRolePolicy\",\"iam:CreatePolicy\",\"iam:CreateRole\",\"iam:CreateServiceLinkedRole\",\"iam:DeletePolicy\",\"iam:DeleteRole\",\"iam:DeleteRolePermissionsBoundary\",\"iam:DetachRolePolicy\",\"iam:GetPolicy\",\"iam:GetPolicyVersion\",\"iam:GetRole\",\"iam:ListAttachedRolePolicies\",\"iam:ListInstanceProfilesForRole\",\"iam:ListPolicies\",\"iam:ListPolicyVersions\",\"iam:ListRolePolicies\",\"iam:PassRole\",\"iam:PutRolePermissionsBoundary\",\"iam:TagPolicy\",\"iam:TagRole\",\"iam:UntagPolicy\",\"iam:UpdateRoleDescription\"],\"Resource\":\"*\"},{\"Sid\":\"VisualEditor5\",\"Effect\":\"Allow\",\"Action\":[\"lambda:AddPermission\",\"lambda:CreateFunction\",\"lambda:DeleteFunction\",\"lambda:GetFunction\",\"lambda:GetFunctionCodeSigningConfig\",\"lambda:GetPolicy\",\"lambda:ListVersionsByFunction\",\"lambda:RemovePermission\",\"lambda:TagResource\",\"lambda:UntagResource\"],\"Resource\":\"*\"},{\"Sid\":\"VisualEditor6\",\"Effect\":\"Allow\",\"Action\":[\"logs:AssociateKmsKey\",\"logs:CreateLogGroup\",\"logs:DeleteLogGroup\",\"logs:DeleteRetentionPolicy\",\"logs:DescribeLogGroups\",\"logs:DisassociateKmsKey\",\"logs:ListTagsLogGroup\",\"logs:PutRetentionPolicy\",\"logs:TagLogGroup\",\"logs:UntagLogGroup\"],\"Resource\":\"*\"},{\"Sid\":\"VisualEditor7\",\"Effect\":\"Allow\",\"Action\":[\"s3:DeleteObject\",\"s3:GetObject\",\"s3:GetObjectTagging\",\"s3:PutObject\"],\"Resource\":\"*\"}]}",
 			false},
 	}
@@ -169,7 +169,7 @@ func Test_getTFFiles(t *testing.T) {
 		dirName string
 	}
 
-	dirName, _ := filepath.Abs("../testdata/init/nicconf")
+	dirName, _ := filepath.Abs("testdata/init/nicconf")
 
 	tests := []struct {
 		name    string
