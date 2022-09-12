@@ -26,23 +26,24 @@ Pike currently supports Terraform and can support multiple providers,
 So far Ive added support for a larger number of AWS resources, but I have just added support for GCP.
 Feel free to submit PR or Issue, and then I'll take a look.
 
+## Table of Contents
+
 <!--toc:start-->
-- [Pike](#pike)
-  - [Install](#install)
-    - [MacOS](#macos)
-    - [Windows](#windows)
-    - [Docker](#docker)
-  - [Usage](#usage)
-    - [Scan](#scan)
-    - [Excludes](#excludes)
-    - [Readme](#readme)
-  - [Compare](#compare)
-  - [Help](#help)
-  - [Building](#building)
-  - [Extending](#extending)
-    - [Add Import mapping file](#add-import-mapping-file)
-    - [Add to provider Scan](#add-to-provider-scan)
-  - [Related Tools](#related-tools)
+- [Install](#install)
+  - [MacOS](#macos)
+  - [Windows](#windows)
+  - [Docker](#docker)
+- [Usage](#usage)
+  - [Scan](#scan)
+  - [Excludes](#excludes)
+  - [Readme](#readme)
+- [Compare](#compare)
+- [Help](#help)
+- [Building](#building)
+- [Extending](#extending)
+  - [Add Import mapping file](#add-import-mapping-file)
+  - [Add to provider Scan](#add-to-provider-scan)
+- [Related Tools](#related-tools)
 <!--toc:end-->
 
 ## Install
@@ -59,27 +60,26 @@ Install from code:
 Install remotely:
 
 ```shell
- go install  github.com/jameswoolfenden/pike@latest
+go install  github.com/jameswoolfenden/pike@latest
 ```
 
  ### MacOS
 
 ```shell
- brew tap jameswoolfenden/homebrew-tap
- brew install jameswoolfenden/tap/pike
+brew tap jameswoolfenden/homebrew-tap
+brew install jameswoolfenden/tap/pike
 ```
 
 ### Windows
 
 ```shell
- choco install pike
+choco install pike
 ```
 
 ### Docker
 
 ```shell
 docker pull jameswoolfenden/pike
-
 docker run --tty --volume /local/path/to/tf:/tf jameswoolfenden/pike -d /tf scan
 ```
 
