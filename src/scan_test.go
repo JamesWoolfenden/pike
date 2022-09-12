@@ -169,7 +169,7 @@ func Test_getTFFiles(t *testing.T) {
 		dirName string
 	}
 
-	dirName := "../testdata/init/nicconf"
+	dirName, _ := filepath.Abs("../testdata/init/nicconf")
 
 	tests := []struct {
 		name    string
@@ -179,12 +179,12 @@ func Test_getTFFiles(t *testing.T) {
 	}{
 		{"basic", args{dirName},
 			[]string{
-				"../testdata/init/nicconf/api_gateway.tf",
-				"../testdata/init/nicconf/dynamodb.tf",
-				"../testdata/init/nicconf/lambda_get.tf",
-				"../testdata/init/nicconf/lambda_post.tf",
-				"../testdata/init/nicconf/main.tf",
-				"../testdata/init/nicconf/outputs.tf"}, false},
+				dirName + "/api_gateway.tf",
+				dirName + "/dynamodb.tf",
+				dirName + "/lambda_get.tf",
+				dirName + "/lambda_post.tf",
+				dirName + "/main.tf",
+				dirName + "/outputs.tf"}, false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
