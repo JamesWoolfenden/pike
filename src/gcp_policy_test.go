@@ -32,6 +32,7 @@ func TestGCPPolicy(t *testing.T) {
 			target := minify(tt.want)
 			if original != target {
 				t.Errorf("GCPPolicy() = %v, want %v", got, tt.want)
+				t.Errorf("GCPPolicy() = %v, want %v", original, target)
 			}
 		})
 	}
