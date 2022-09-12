@@ -22,3 +22,27 @@ archives:
   - format_overrides:
       - goos: windows
         format: zip
+
+brews:
+  -
+    name: pike
+
+    tap:
+      owner: JamesWoolfenden
+      name: homebrew-tap
+      token: "{{ .Env.HOMEBREW_TAP_GITHUB_TOKEN }}"
+
+
+    commit_author:
+      name: "GitHub Action"
+      email: action@github.com
+
+    homepage: "https://github.com/JamesWoolfenden/pike#readme"
+
+    description: "Pike is a tool for determining the permissions or policy required for IAC code"
+
+    install: |
+      bin.install "pike"
+
+    test: |
+      system "#{bin}/pike", "--help"
