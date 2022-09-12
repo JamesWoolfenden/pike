@@ -58,6 +58,12 @@ func TestReplaceSection(t *testing.T) {
 				"Any thing in here",
 				false},
 			true},
+		{"half man half biscuit",
+			args{
+				"testdata/biscuit.md",
+				"Any thing in here",
+				false},
+			true},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -79,6 +85,7 @@ func Test_fileExists(t *testing.T) {
 	}{
 		{"found", args{"testdata/test-readme-empty.md"}, true},
 		{"bogus", args{"testdata/bogus-readme-empty.md"}, false},
+		{"half-man half-biscuit", args{"testdata/biscuit.md"}, true},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

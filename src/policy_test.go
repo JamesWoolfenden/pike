@@ -135,7 +135,7 @@ func TestAWSPolicy(t *testing.T) {
 		want    AwsOutput
 		wantErr bool
 	}{
-		// TODO: Add test cases.
+		{"pass", args{[]string{"woof"}}, AwsOutput{"{\n            \"Version\": \"2012-10-17\",\n            \"Statement\": [\n                {\n                    \"Sid\": \"VisualEditor0\",\n                    \"Effect\": \"Allow\",\n                    \"Action\": null,\n                    \"Resource\": \"*\"\n                }\n            ]\n        }", ""}, false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -144,8 +144,8 @@ func TestAWSPolicy(t *testing.T) {
 				t.Errorf("AWSPolicy() error = %v, wantErr %v", err, tt.wantErr)
 				return
 			}
-			if got != tt.want {
-				t.Errorf("AWSPolicy() = %v, want %v", got, tt.want)
+			if minify(got.JSONOut) != minify(tt.want.JSONOut) {
+				t.Errorf("AWSPolicy() = %v, want %v", got.JSONOut, tt.want.JSONOut)
 			}
 		})
 	}

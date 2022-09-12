@@ -28,8 +28,8 @@ func TestGetResources(t *testing.T) {
 		{"empty", args{"", "../testdata/scan/examples/simple"}, nil, true},
 		{"no_dir", args{file, ""}, []ResourceV2{{"resource", "aws_s3_bucket", "pike", "aws", []string{"bucket"}}}, false},
 		{"dir", args{file, "../testdata/scan/examples/simple"}, []ResourceV2{{"resource", "aws_s3_bucket", "pike", "aws", []string{"bucket"}}}, false},
-		{"module", args{moduleFile, "../testdata/modules/examples/local"}, []ResourceV2{{"resource", "aws_s3_bucket", "pike", "aws", []string{"name"}},
-			{"module", "local", "", "local", []string{"source"}}}, false},
+		{"module", args{moduleFile, "../testdata/modules/examples/local"}, []ResourceV2{{"resource", "aws_s3_bucket", "pike", "aws", []string{"name"}}, {"module", "local", "", "local", []string{"source"}}}, false},
+		{"not a path", args{moduleFile, "../testdata/modules/examples/rubbish"}, []ResourceV2{{"resource", "aws_s3_bucket", "pike", "aws", []string{"name"}}, {"module", "local", "", "local", []string{"source"}}}, false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
