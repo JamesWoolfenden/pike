@@ -17,7 +17,7 @@ func TestGCPPolicy(t *testing.T) {
 		wantErr bool
 	}{
 		{"basic", args{[]string{"bigquery.datasets.create", "bigquery.jobs.create"}},
-			"resource \"google_project_iam_custom_role\" \"terraformXVlBzgba\" {\n  project     = \"pike\"\n  role_id     = \"terraform_pike\"\n  title       = \"terraformXVlBzgba\"\n  description = \"A user with least privileges\"\n  permissions = [\n    \"bigquery.datasets.create\",\n    \"bigquery.jobs.create\"\n  ]\n}\n",
+			"resource\"google_project_iam_custom_role\"\"terraformXVlBzgba\"{project=\"pike\"role_id=\"terraform_pike\"\title=\"terraformXVlBzgba\"description=\"Auserwithleastprivileges\"permissions=[\"bigquery.datasets.create\",\"bigquery.jobs.create\"]}",
 			false},
 	}
 	for _, tt := range tests {
