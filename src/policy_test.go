@@ -118,7 +118,7 @@ func TestGetPolicy(t *testing.T) {
 }
 
 func minify(JSONOut string) string {
-	return strings.ReplaceAll(strings.ReplaceAll(strings.ReplaceAll(JSONOut, "\n", ""), "	", ""), " ", "")
+	return strings.ReplaceAll(strings.ReplaceAll(strings.ReplaceAll(strings.ReplaceAll(JSONOut, "\n", ""), "	", ""), " ", ""), "\r\n", "")
 }
 
 func TestAWSPolicy(t *testing.T) {
