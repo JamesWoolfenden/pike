@@ -19,7 +19,7 @@ func Watch(arn string, wait int) error {
 	// Load the Shared AWS Configuration (~/.aws/config)
 	cfg, err := config.LoadDefaultConfig(context.TODO())
 	if err != nil {
-		log.Fatal(err)
+		return err
 	}
 
 	client := iam.NewFromConfig(cfg)
@@ -81,15 +81,15 @@ func GetPolicyVersion(client *iam.Client, PolicyArn string, Version string) (str
 		return "", err
 	}
 
-	return string(fixed), err
+	return fixed, err
 }
 
 // SortActions sorts the actions list of an IAM policy
-func SortActions(myPolicy string) ([]byte, error) {
+func SortActions(myPolicy string) (string, error) {
 	var raw Policy
 	err := json.Unmarshal([]byte(myPolicy), &raw)
 	if err != nil {
-		return nil, err
+		return "", err
 	}
 
 	var blocks []Statement
@@ -101,5 +101,5 @@ func SortActions(myPolicy string) ([]byte, error) {
 	raw.Statements = blocks
 
 	fixed, err := json.Marshal(raw)
-	return fixed, err
+	return string(fixed), err
 }

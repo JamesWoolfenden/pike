@@ -13,7 +13,7 @@ resource "aws_s3_bucket_acl" "example" {
     grant {
       grantee {
         type = "Group"
-        uri  = "http://acs.amazonaws.com/groups/s3/LogDelivery"
+        uri  = "https://acs.amazonaws.com/groups/s3/LogDelivery"
       }
       permission = "READ_ACP"
     }

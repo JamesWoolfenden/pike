@@ -14,7 +14,20 @@ func TestGetGCPDataPermissions(t *testing.T) {
 		args args
 		want []string
 	}{
-		// TODO: Add test cases.
+		{"placeholder", args{ResourceV2{
+			TypeName:     "data",
+			Name:         "google_compute_image",
+			ResourceName: "image",
+			Provider:     "google",
+			Attributes:   []string{"family", "project"},
+		}}, nil},
+		{"basic", args{ResourceV2{
+			TypeName:     "data",
+			Name:         "google_compute_network",
+			ResourceName: "image",
+			Provider:     "google",
+			Attributes:   []string{"name"},
+		}}, []string{"compute.networks.get"}},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

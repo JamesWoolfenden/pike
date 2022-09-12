@@ -33,7 +33,7 @@ func Compare(directory string, arn string, init bool, exclude *cli.StringSlice) 
 
 	// iam versus iac
 	fmt.Printf("IAM Policy %s versus Local %s \n", arn, directory)
-	_, err = CompareIAMPolicy(Policy, string(Sorted))
+	_, err = CompareIAMPolicy(Policy, Sorted)
 
 	if err != nil {
 		log.Fatal(err)
@@ -73,8 +73,8 @@ func CompareIAMPolicy(Policy string, OldPolicy string) (bool, error) {
 		}
 
 		fmt.Print(diffString)
-		return true, nil
+		return false, nil
 	}
 
-	return false, nil
+	return true, nil
 }

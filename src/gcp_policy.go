@@ -27,13 +27,13 @@ func GCPPolicy(permissions []string) (string, error) {
 	var output bytes.Buffer
 	tmpl, err := template.New("test").Parse(string(policyGCPTemplate))
 	if err != nil {
-		panic(err)
+		return "", err
 	}
 
 	err = tmpl.Execute(&output, theDetails)
 
 	if err != nil {
-		panic(err)
+		return "", err
 	}
 	return output.String(), nil
 }

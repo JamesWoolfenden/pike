@@ -15,7 +15,9 @@ func TestGCPPolicy(t *testing.T) {
 		want    string
 		wantErr bool
 	}{
-		// TODO: Add test cases.
+		{"basic", args{[]string{"bigquery.datasets.create", "bigquery.jobs.create"}},
+			"resource \"google_project_iam_custom_role\" \"terraformXVlBzgba\" {\n  project     = \"pike\"\n  role_id     = \"terraform_pike\"\n  title       = \"terraformXVlBzgba\"\n  description = \"A user with least privileges\"\n  permissions = [\n    \"bigquery.datasets.create\",\n    \"bigquery.jobs.create\"]\n}",
+			false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -24,7 +26,10 @@ func TestGCPPolicy(t *testing.T) {
 				t.Errorf("GCPPolicy() error = %v, wantErr %v", err, tt.wantErr)
 				return
 			}
-			if got != tt.want {
+
+			original := minify(got)
+			target := minify(tt.want)
+			if original != target {
 				t.Errorf("GCPPolicy() = %v, want %v", got, tt.want)
 			}
 		})

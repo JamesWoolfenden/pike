@@ -82,3 +82,78 @@ func Test_stringInSlice(t *testing.T) {
 		})
 	}
 }
+
+func TestInit(t *testing.T) {
+	type args struct {
+		dirName string
+	}
+	tests := []struct {
+		name    string
+		args    args
+		want    string
+		wantErr bool
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			got, err := Init(tt.args.dirName)
+			if (err != nil) != tt.wantErr {
+				t.Errorf("Init() error = %v, wantErr %v", err, tt.wantErr)
+				return
+			}
+			if got != tt.want {
+				t.Errorf("Init() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestMakePolicy(t *testing.T) {
+	type args struct {
+		dirName  string
+		file     string
+		init     bool
+		excludes *cli.StringSlice
+	}
+	tests := []struct {
+		name    string
+		args    args
+		want    OutputPolicy
+		wantErr bool
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			got, err := MakePolicy(tt.args.dirName, tt.args.file, tt.args.init, tt.args.excludes)
+			if (err != nil) != tt.wantErr {
+				t.Errorf("MakePolicy() error = %v, wantErr %v", err, tt.wantErr)
+				return
+			}
+			if !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("MakePolicy() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestGetHCLType(t *testing.T) {
+	type args struct {
+		resourceName string
+	}
+	tests := []struct {
+		name string
+		args args
+		want string
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := GetHCLType(tt.args.resourceName); got != tt.want {
+				t.Errorf("GetHCLType() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}

@@ -17,7 +17,7 @@ func TestWatch(t *testing.T) {
 		args    args
 		wantErr bool
 	}{
-		// TODO: Add test cases.
+		//{"first", args{"arn:aws:iam::680235478471:policy/basic", 5}, true},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -90,7 +90,7 @@ func TestGetPolicyVersion(t *testing.T) {
 		want    string
 		wantErr bool
 	}{
-		// TODO: Add test cases.
+		//{ "",args{"","arn:aws:iam::680235478471:policy/allows3","v1"},"", false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -113,10 +113,12 @@ func TestSortActions(t *testing.T) {
 	tests := []struct {
 		name    string
 		args    args
-		want    []byte
+		want    string
 		wantErr bool
 	}{
-		// TODO: Add test cases.
+		{"odd", args{
+			"{\"Statement\":[{\"Action\":[\"cognito-idp:ListUserPoolClients\",\"cognito-idp:GetSigningCertificate\",\"cognito-idp:DescribeUserPoolClient\"],\"Effect\":\"Allow\",\"Resource\":\"*\",\"Sid\":\"0\"}],\"Version\":\"2012-10-17\"}"},
+			"{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"0\",\"Effect\":\"Allow\",\"Action\":[\"cognito-idp:DescribeUserPoolClient\",\"cognito-idp:GetSigningCertificate\",\"cognito-idp:ListUserPoolClients\"],\"Resource\":\"*\"}]}", false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
