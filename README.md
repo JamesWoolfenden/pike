@@ -26,6 +26,25 @@ Pike currently supports Terraform and can support multiple providers,
 So far Ive added support for a larger number of AWS resources, but I have just added support for GCP.
 Feel free to submit PR or Issue, and then I'll take a look.
 
+<!--toc:start-->
+- [Pike](#pike)
+  - [Install](#install)
+    - [MacOS](#macos)
+    - [Windows](#windows)
+    - [Docker](#docker)
+  - [Usage](#usage)
+    - [Scan](#scan)
+    - [Excludes](#excludes)
+    - [Readme](#readme)
+  - [Compare](#compare)
+  - [Help](#help)
+  - [Building](#building)
+  - [Extending](#extending)
+    - [Add Import mapping file](#add-import-mapping-file)
+    - [Add to provider Scan](#add-to-provider-scan)
+  - [Related Tools](#related-tools)
+<!--toc:end-->
+
 ## Install
 
 Download the latest binary here:
@@ -39,17 +58,30 @@ Install from code:
 
 Install remotely:
 
- > go install  github.com/jameswoolfenden/pike@latest
+```shell
+ go install  github.com/jameswoolfenden/pike@latest
+```
+
+ ### MacOS
+
+```shell
+ brew tap jameswoolfenden/homebrew-tap
+ brew install jameswoolfenden/tap/pike
+```
 
 ### Windows
 
- >choco install pike
+```shell
+ choco install pike
+```
 
 ### Docker
 
->docker pull jameswoolfenden/pike
->
->docker run --tty --volume /local/path/to/tf:/tf jameswoolfenden/pike -d /tf scan
+```shell
+docker pull jameswoolfenden/pike
+
+docker run --tty --volume /local/path/to/tf:/tf jameswoolfenden/pike -d /tf scan
+```
 
 <https://hub.docker.com/repository/docker/jameswoolfenden/pike>
 
