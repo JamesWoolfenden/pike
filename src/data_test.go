@@ -104,12 +104,16 @@ func TestGetModulePath(t *testing.T) {
 	type args struct {
 		block *hclsyntax.Block
 	}
+
+	dirName, _ := filepath.Abs("../testdata/modules/examples/local")
+	block := getInitialBlock(dirName + "/module.local.tf")
+
 	tests := []struct {
 		name string
 		args args
 		want string
 	}{
-		//{ },
+		{"basic", args{block}, "../../"},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

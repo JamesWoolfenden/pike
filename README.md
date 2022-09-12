@@ -23,7 +23,7 @@ Still very much under active development, I intend it to:
 - test policy against environment (This is done see compare)
 
 Pike currently supports Terraform and can support multiple providers,
-So far Ive added support for a larger number of AWS resources, but I have just added support for GCP.
+So far I've added support for a larger number of AWS resources, but I have just added support for GCP.
 Feel free to submit PR or Issue, and then I'll take a look.
 
 ## Table of Contents
@@ -63,7 +63,7 @@ Install remotely:
 go install  github.com/jameswoolfenden/pike@latest
 ```
 
- ### MacOS
+### MacOS
 
 ```shell
 brew tap jameswoolfenden/homebrew-tap
