@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "redshift:ModifyClusterIamRoles",
+      "iam:PassRole",
+      "redshift:DescribeClusters"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

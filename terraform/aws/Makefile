@@ -23,3 +23,7 @@ FORCE:
 sleep:
 	timeout 5
 up: role sleep apply
+
+mac: role init
+	sleep 5
+	terraform apply -auto-approve

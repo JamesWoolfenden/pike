@@ -1,6 +1,8 @@
 [
   {
-    "apply": [],
+    "apply": [
+      "redshift:ModifyClusterSnapshotSchedule"
+    ],
     "attributes": {
       "tags": []
     },

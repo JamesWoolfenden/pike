@@ -7,14 +7,46 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
+          "redshift:CreateTags",
+          "redshift:DeleteTags",
+          "redshift:DeleteCluster",
+          //"redshift:CreateEndpointAccess",
+          //"redshift:RevokeEndpointAccess"
+          //"redshift:DescribeClusters"
+
           #          "redshift:CreateTags",
           #          "redshift:DeleteTags",
-          "redshift:CreateScheduledAction",
-          "redshift:PauseCluster",
+          "redshift:CreateCluster",
+          "redshift:ModifyCluster",
+          "redshift:DescribeClusters",
+          "redshift:DescribeLoggingStatus",
+
+          //logging
+          "redshift:DisableLogging",
+          "redshift:EnableLogging",
+
+          "redshift:ModifyClusterIamRoles",
+          #          "redshift:DescribeClusters"
+          #          "redshift:CreateScheduledAction",
+          //"redshift:PauseCluster",
+          //iam_roles
           "iam:PassRole",
-          "redshift:DescribeScheduledActions",
-          "redshift:DeleteScheduledAction",
-          "redshift:ModifyScheduledAction"
+          #          "redshift:DescribeScheduledActions",
+          #          "redshift:DeleteScheduledAction",
+          #          "redshift:ModifyScheduledAction"
+          //"redshift:CreateClusterUser"
+
+          "ec2:DescribeAccountAttributes",
+          "ec2:DescribeAddresses",
+          "ec2:DescribeAvailabilityZones",
+          "ec2:DescribeSecurityGroups",
+          "ec2:DescribeSubnets",
+          "ec2:DescribeVpcs",
+          "ec2:DescribeInternetGateways",
+
+
+
+          "redshift:CreateEndpointAccess"
         ]
         "Resource" : "*"
       }

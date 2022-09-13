@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "redshift:CreateEventSubscription",
+      "redshift:DescribeEventSubscriptions",
+      "redshift:DeleteEventSubscription"
+    ],
+    "attributes": {
+      "tags": [
+        "redshift:CreateTags",
+        "redshift:DeleteTags"
+      ]
+    },
+    "destroy": [
+      "redshift:DeleteEventSubscription"
+    ],
+    "modify": [
+      "redshift:ModifyEventSubscription"
+    ],
+    "plan": []
+  }
+]

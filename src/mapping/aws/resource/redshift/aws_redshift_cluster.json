@@ -1,0 +1,38 @@
+[
+  {
+    "apply": [
+      "redshift:DeleteCluster",
+      "redshift:CreateCluster",
+      "redshift:DescribeClusters",
+      "redshift:DescribeLoggingStatus",
+      "redshift:ModifyClusterIamRoles",
+      "ec2:DescribeAccountAttributes",
+      "ec2:DescribeAddresses",
+      "ec2:DescribeAvailabilityZones",
+      "ec2:DescribeSecurityGroups",
+      "ec2:DescribeSubnets",
+      "ec2:DescribeVpcs",
+      "ec2:DescribeInternetGateways"
+    ],
+    "attributes": {
+      "iam_roles": [
+        "iam:PassRole"
+      ],
+      "logging": [
+        "redshift:DisableLogging",
+        "redshift:EnableLogging"
+      ],
+      "tags": [
+        "redshift:CreateTags",
+        "redshift:DeleteTags"
+      ]
+    },
+    "destroy": [
+      "redshift:DeleteCluster"
+    ],
+    "modify": [
+      "redshift:ModifyCluster"
+    ],
+    "plan": []
+  }
+]
