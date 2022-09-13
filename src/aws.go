@@ -190,6 +190,19 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_cognito_user_pool_client":                       awsCognitoUserPoolClient,
 		"aws_cognito_user_pool_domain":                       awsCognitoUserPoolDomain,
 		"aws_cognito_user_pool_ui_customization":             awsCognitoUserPoolUICustomization,
+		"aws_redshift_cluster":                               awsRedshiftCluster,
+		"aws_redshift_authentication_profile":                awsRedshiftAuthenticationProfile,
+		"aws_redshift_cluster_iam_roles":                     awsRedshiftClusterIamRoles,
+		"aws_redshift_event_subscription":                    awsRedshiftEventSubscription,
+		"aws_redshift_hsm_client_certificate":                awsRedshiftHsmClientCertififcate,
+		"aws_redshift_hsm_configuration":                     awsRedshiftHsmConfiguration,
+		"aws_redshift_parameter_group":                       awsRedshiftParameterGroup,
+		"aws_redshift_scheduled_action":                      awsRedshiftScheduledAction,
+		"aws_redshift_snapshot_copy_grant":                   awsRedshiftSnapshotCopyGrant,
+		"aws_redshift_snapshot_schedule":                     awsRedshiftSnapshotSchedule,
+		"aws_redshift_snapshot_schedule_association":         awsRedshiftSnapshotScheduleAssociation,
+		"aws_redshift_subnet_group":                          awsRedshiftSubnetGroup,
+		"aws_redshift_usage_limit":                           awsRedshiftUsageLimit,
 	}
 
 	var Permissions []string

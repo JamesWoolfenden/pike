@@ -438,3 +438,42 @@ var awsCognitoUserPoolDomain []byte
 
 //go:embed mapping/aws/resource/cognito-idp/aws_cognito_user_pool_ui_customization.json
 var awsCognitoUserPoolUICustomization []byte
+
+//go:embed mapping/aws/resource/redshift/aws_redshift_subnet_group.json
+var awsRedshiftSubnetGroup []byte
+
+//go:embed mapping/aws/resource/redshift/aws_redshift_cluster.json
+var awsRedshiftCluster []byte
+
+//go:embed mapping/aws/resource/redshift/aws_redshift_scheduled_action.json
+var awsRedshiftScheduledAction []byte
+
+//go:embed mapping/aws/resource/redshift/aws_redshift_authentication_profile.json
+var awsRedshiftAuthenticationProfile []byte
+
+//go:embed mapping/aws/resource/redshift/aws_redshift_cluster_iam_roles.json
+var awsRedshiftClusterIamRoles []byte
+
+//go:embed mapping/aws/resource/redshift/aws_redshift_event_subscription.json
+var awsRedshiftEventSubscription []byte
+
+//go:embed mapping/aws/resource/redshift/aws_redshift_hsm_client_certificate.json
+var awsRedshiftHsmClientCertififcate []byte
+
+//go:embed mapping/aws/resource/redshift/aws_redshift_hsm_configuration.json
+var awsRedshiftHsmConfiguration []byte
+
+//go:embed mapping/aws/resource/redshift/aws_redshift_usage_limit.json
+var awsRedshiftUsageLimit []byte
+
+//go:embed mapping/aws/resource/redshift/aws_redshift_parameter_group.json
+var awsRedshiftParameterGroup []byte
+
+//go:embed mapping/aws/resource/redshift/aws_redshift_snapshot_copy_grant.json
+var awsRedshiftSnapshotCopyGrant []byte
+
+//go:embed mapping/aws/resource/redshift/aws_redshift_snapshot_schedule.json
+var awsRedshiftSnapshotSchedule []byte
+
+//go:embed mapping/aws/resource/redshift/aws_redshift_snapshot_schedule_association.json
+var awsRedshiftSnapshotScheduleAssociation []byte
