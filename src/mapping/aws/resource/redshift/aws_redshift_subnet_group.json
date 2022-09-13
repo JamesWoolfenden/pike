@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "redshift:DeleteClusterSubnetGroup",
+      "redshift:DescribeClusterSubnetGroups",
+      "redshift:CreateClusterSubnetGroup",
+      "ec2:DescribeAccountAttributes",
+      "ec2:DescribeVpcs",
+      "ec2:DescribeSubnets"
+    ],
+    "attributes": {
+      "tags": [
+        "redshift:CreateTags",
+        "redshift:DeleteTags"
+      ]
+    },
+    "destroy": [
+      "redshift:DeleteClusterSubnetGroup"
+    ],
+    "modify": [
+      "redshift:ModifyClusterSubnetGroup"
+    ],
+    "plan": []
+  }
+]

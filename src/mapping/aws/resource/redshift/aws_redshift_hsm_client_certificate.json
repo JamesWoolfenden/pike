@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "redshift:DescribeHsmClientCertificates",
+      "redshift:CreateHsmClientCertificate",
+      "redshift:DeleteHsmClientCertificate"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "redshift:DeleteHsmClientCertificate"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

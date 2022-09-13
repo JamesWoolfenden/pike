@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "redshift:CreateSnapshotCopyGrant",
+      "redshift:DescribeSnapshotCopyGrants",
+      "redshift:DeleteSnapshotCopyGrant"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "redshift:DeleteSnapshotCopyGrant"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

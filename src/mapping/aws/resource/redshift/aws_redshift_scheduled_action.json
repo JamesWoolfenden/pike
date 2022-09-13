@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "redshift:CreateScheduledAction",
+      "redshift:PauseCluster",
+      "iam:PassRole",
+      "redshift:DescribeScheduledActions",
+      "redshift:DeleteScheduledAction"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "redshift:DeleteScheduledAction"
+    ],
+    "modify": [
+      "redshift:ModifyScheduledAction"
+    ],
+    "plan": []
+  }
+]

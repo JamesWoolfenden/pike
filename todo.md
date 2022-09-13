@@ -174,10 +174,12 @@ aws_rds_cluster_instance not implemented
 aws_rds_cluster_instance not implemented
 aws_rds_cluster_role_association not implemented
 aws_rds_global_cluster not implemented
+
 aws_redshift_cluster not implemented
 aws_redshift_parameter_group not implemented
 aws_redshift_subnet_group not implemented
 aws_redshift_subnet_group not implemented
+
 aws_route53_hosted_zone_dnssec not implemented
 aws_route53_key_signing_key not implemented
 aws_route53_query_log not implemented

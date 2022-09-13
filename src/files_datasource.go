@@ -120,3 +120,15 @@ var dataAwsRdsEngineVersion []byte
 
 //go:embed mapping/aws/data/ec2/aws_vpc_endpoint_service.json
 var dataAwsVpcEndpointService []byte
+
+//go:embed mapping/aws/data/redshift/aws_redshift_cluster.json
+var dataAwsRedshiftCluster []byte
+
+//go:embed mapping/aws/data/redshift/aws_redshift_orderable_cluster.json
+var dataAwsRedshiftOrderableCluster []byte
+
+//go:embed mapping/aws/data/redshift/aws_redshift_cluster_credentials.json
+var dataAwsRedshiftClusterCredentials []byte
+
+//go:embed mapping/aws/data/redshift/aws_redshift_subnet_group.json
+var dataAwsRedshiftSubnetGroup []byte

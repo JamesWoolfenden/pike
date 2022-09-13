@@ -61,6 +61,11 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 		"aws_cognito_user_pool_client":              dataAwsCognitoUserPoolClient,
 		"aws_cognito_user_pool_clients":             dataAwsCognitoUserPoolClients,
 		"aws_cognito_user_pool_signing_certificate": dataAwsCognitoUserPoolSigningCertificate,
+		"aws_redshift_cluster":                      dataAwsRedshiftCluster,
+		"aws_redshift_cluster_credentials":          dataAwsRedshiftClusterCredentials,
+		"aws_redshift_orderable_cluster":            dataAwsRedshiftOrderableCluster,
+		"aws_redshift_service_account":              placeholder,
+		"aws_redshift_subnet_group":                 dataAwsRedshiftSubnetGroup,
 	}
 
 	var Permissions []string

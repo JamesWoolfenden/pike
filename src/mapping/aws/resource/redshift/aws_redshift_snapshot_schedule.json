@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "redshift:CreateSnapshotSchedule",
+      "redshift:CreateSnapshotSchedule",
+      "redshift:DescribeSnapshotSchedules",
+      "redshift:DeleteSnapshotSchedule",
+      "redshift:ModifySnapshotSchedule"
+    ],
+    "attributes": {
+      "tags": [
+        "redshift:CreateTags",
+        "redshift:DeleteTags"
+      ]
+    },
+    "destroy": [
+      "redshift:ModifySnapshotSchedule"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

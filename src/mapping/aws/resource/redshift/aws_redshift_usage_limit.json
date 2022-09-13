@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "redshift:CreateUsageLimit",
+      "redshift:DescribeUsageLimits",
+      "redshift:DeleteUsageLimit"
+    ],
+    "attributes": {
+      "tags": [
+        "redshift:CreateTags",
+        "redshift:DeleteTags"
+      ]
+    },
+    "destroy": [
+      "redshift:DeleteUsageLimit"
+    ],
+    "modify": [
+      "redshift:ModifyUsageLimit"
+    ],
+    "plan": []
+  }
+]

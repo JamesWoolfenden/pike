@@ -7,10 +7,15 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "cognito-idp:ListUserPoolClients",
-          "cognito-idp:GetSigningCertificate",
-          "cognito-idp:DescribeUserPoolClient"
-        ],
+          #          "redshift:CreateTags",
+          #          "redshift:DeleteTags",
+          "redshift:CreateScheduledAction",
+          "redshift:PauseCluster",
+          "iam:PassRole",
+          "redshift:DescribeScheduledActions",
+          "redshift:DeleteScheduledAction",
+          "redshift:ModifyScheduledAction"
+        ]
         "Resource" : "*"
       }
     ]

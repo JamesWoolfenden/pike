@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "redshift:CreateHsmConfiguration",
+      "redshift:DeleteHsmConfiguration",
+      "redshift:DescribeHsmConfigurations"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "redshift:DeleteHsmConfiguration"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

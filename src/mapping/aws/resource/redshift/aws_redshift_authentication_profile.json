@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "redshift:CreateAuthenticationProfile",
+      "redshift:DescribeAuthenticationProfiles",
+      "redshift:DeleteAuthenticationProfile"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "redshift:DeleteAuthenticationProfile"
+    ],
+    "modify": [
+      "redshift:ModifyAuthenticationProfile"
+    ],
+    "plan": []
+  }
+]

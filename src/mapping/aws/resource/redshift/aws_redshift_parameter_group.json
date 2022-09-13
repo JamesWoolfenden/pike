@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "redshift:CreateClusterParameterGroup",
+      "redshift:ModifyClusterParameterGroup",
+      "redshift:DescribeClusterParameterGroups",
+      "redshift:DescribeClusterParameters",
+      "redshift:DeleteClusterParameterGroup"
+    ],
+    "attributes": {
+      "tags": [
+        "redshift:CreateTags",
+        "redshift:DeleteTags"
+      ]
+    },
+    "destroy": [
+      "redshift:DeleteClusterParameterGroup"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]
