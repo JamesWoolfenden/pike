@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "inspector:CreateAssessmentTarget",
+      "inspector:DescribeAssessmentTargets",
+      "inspector:DeleteAssessmentTarget"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "inspector:DeleteAssessmentTarget"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

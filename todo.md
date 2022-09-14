@@ -140,9 +140,6 @@ aws_imagebuilder_image not implemented
 aws_imagebuilder_image_pipeline not implemented
 aws_imagebuilder_image_recipe not implemented
 aws_imagebuilder_infrastructure_configuration not implemented
-aws_inspector_assessment_target not implemented
-aws_inspector_assessment_template not implemented
-aws_inspector_resource_group not implemented
 aws_lambda_event_source_mapping not implemented
 aws_lambda_event_source_mapping not implemented
 aws_lambda_function_event_invoke_config not implemented
@@ -247,5 +244,3 @@ efs
 chime
 
 cloud_directory
-
-inspector

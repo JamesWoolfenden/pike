@@ -203,6 +203,9 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_redshift_snapshot_schedule_association":         awsRedshiftSnapshotScheduleAssociation,
 		"aws_redshift_subnet_group":                          awsRedshiftSubnetGroup,
 		"aws_redshift_usage_limit":                           awsRedshiftUsageLimit,
+		"aws_inspector_assessment_target":                    awsInspectorAssessmentTarget,
+		"aws_inspector_assessment_template":                  awsInspectorAssessmentTemplate,
+		"aws_inspector_resource_group":                       awsInspectorResouceGroup,
 	}
 
 	var Permissions []string

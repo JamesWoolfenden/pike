@@ -7,46 +7,26 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "redshift:CreateTags",
-          "redshift:DeleteTags",
-          "redshift:DeleteCluster",
-          //"redshift:CreateEndpointAccess",
-          //"redshift:RevokeEndpointAccess"
-          //"redshift:DescribeClusters"
+          "inspector:CreateAssessmentTemplate",
+          "inspector:DescribeAssessmentTemplates",
+          "inspector:ListEventSubscriptions",
+          "inspector:ListTagsForResource",
 
-          #          "redshift:CreateTags",
-          #          "redshift:DeleteTags",
-          "redshift:CreateCluster",
-          "redshift:ModifyCluster",
-          "redshift:DescribeClusters",
-          "redshift:DescribeLoggingStatus",
+          "inspector:SetTagsForResource",
 
-          //logging
-          "redshift:DisableLogging",
-          "redshift:EnableLogging",
+          "inspector:DeleteAssessmentTemplate",
 
-          "redshift:ModifyClusterIamRoles",
-          #          "redshift:DescribeClusters"
-          #          "redshift:CreateScheduledAction",
-          //"redshift:PauseCluster",
-          //iam_roles
-          "iam:PassRole",
-          #          "redshift:DescribeScheduledActions",
-          #          "redshift:DeleteScheduledAction",
-          #          "redshift:ModifyScheduledAction"
-          //"redshift:CreateClusterUser"
+          "inspector:SubscribeToEvent",
+          "inspector:UnsubscribeFromEvent",
 
-          "ec2:DescribeAccountAttributes",
-          "ec2:DescribeAddresses",
-          "ec2:DescribeAvailabilityZones",
-          "ec2:DescribeSecurityGroups",
-          "ec2:DescribeSubnets",
-          "ec2:DescribeVpcs",
-          "ec2:DescribeInternetGateways",
+          "inspector:CreateAssessmentTarget",
+          "inspector:DescribeAssessmentTargets",
+          "inspector:DeleteAssessmentTarget",
 
+          "inspector:CreateResourceGroup",
+          "inspector:DescribeResourceGroups",
 
-
-          "redshift:CreateEndpointAccess"
+          "inspector:ListRulesPackages"
         ]
         "Resource" : "*"
       }

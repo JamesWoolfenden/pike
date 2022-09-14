@@ -477,3 +477,12 @@ var awsRedshiftSnapshotSchedule []byte
 
 //go:embed mapping/aws/resource/redshift/aws_redshift_snapshot_schedule_association.json
 var awsRedshiftSnapshotScheduleAssociation []byte
+
+//go:embed mapping/aws/resource/inspector/aws_inspector_assessment_target.json
+var awsInspectorAssessmentTarget []byte
+
+//go:embed mapping/aws/resource/inspector/aws_inspector_assessment_template.json
+var awsInspectorAssessmentTemplate []byte
+
+//go:embed mapping/aws/resource/inspector/aws_inspector_resource_group.json
+var awsInspectorResouceGroup []byte

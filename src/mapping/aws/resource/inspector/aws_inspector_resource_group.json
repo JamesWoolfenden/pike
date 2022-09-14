@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "inspector:CreateResourceGroup",
+      "inspector:DescribeResourceGroups"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

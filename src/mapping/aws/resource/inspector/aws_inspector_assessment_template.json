@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "inspector:CreateAssessmentTemplate",
+      "inspector:DescribeAssessmentTemplates",
+      "inspector:ListEventSubscriptions",
+      "inspector:ListTagsForResource"
+    ],
+    "attributes": {
+      "event_subscription": [
+        "inspector:SubscribeToEvent",
+        "inspector:UnsubscribeFromEvent"
+      ],
+      "tags": [
+        "inspector:SetTagsForResource"
+      ]
+    },
+    "destroy": [
+      "inspector:DeleteAssessmentTemplate"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]
