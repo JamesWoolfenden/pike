@@ -1,237 +1,239 @@
 # todo
 
-aws_appsync_datasource not implemented
-aws_appsync_graphql_api not implemented
-aws_appsync_resolver not implemented
-aws_athena_database not implemented
-aws_athena_workgroup not implemented
-aws_autoscaling_group_tag not implemented
-aws_autoscaling_schedule not implemented
-aws_batch_compute_environment not implemented
-aws_batch_compute_environment not implemented
-aws_batch_job_definition not implemented
-aws_batch_job_definition not implemented
-aws_batch_job_queue not implemented
-aws_batch_job_queue not implemented
-aws_batch_scheduling_policy not implemented
-aws_cloudfront_distribution not implemented
-aws_cloudfront_distribution not implemented
-aws_cloudfront_distribution not implemented
-aws_cloudfront_distribution not implemented
-aws_cloudfront_origin_access_identity not implemented
-aws_cloudfront_origin_access_identity not implemented
-aws_cloudfront_response_headers_policy not implemented
-aws_cloudfront_response_headers_policy not implemented
-aws_cloudfront_response_headers_policy not implemented
-aws_cloudfront_response_headers_policy not implemented
-aws_cloudfront_response_headers_policy not implemented
-aws_cloudfront_response_headers_policy not implemented
-aws_cloudhsm_v2_cluster not implemented
-aws_cloudhsm_v2_hsm not implemented
-aws_cloudwatch_event_api_destination not implemented
-aws_cloudwatch_event_archive not implemented
-aws_cloudwatch_event_bus not implemented
-aws_cloudwatch_event_bus not implemented
-aws_cloudwatch_event_bus not implemented
-aws_cloudwatch_event_connection not implemented
-aws_cloudwatch_event_permission not implemented
-aws_codecommit_approval_rule_template not implemented
-aws_codecommit_approval_rule_template not implemented
-aws_codecommit_approval_rule_template not implemented
-aws_codecommit_approval_rule_template_association not implemented
-aws_codecommit_approval_rule_template_association not implemented
-aws_codecommit_approval_rule_template_association not implemented
-aws_codedeploy_app not implemented
-aws_codedeploy_deployment_group not implemented
-aws_config_config_rule not implemented
-aws_config_configuration_recorder not implemented
-aws_config_configuration_recorder_status not implemented
-aws_config_delivery_channel not implemented
-aws_customer_gateway not implemented
-aws_dax_cluster not implemented
-aws_dax_parameter_group not implemented
-aws_dax_subnet_group not implemented
-aws_db_event_subscription not implemented
-aws_db_instance_automated_backups_replication not implemented
-aws_default_network_acl not implemented
-aws_default_route_table not implemented
-aws_default_vpc not implemented
-aws_dlm_lifecycle_policy not implemented
-aws_dms_replication_instance not implemented
-aws_docdb_cluster not implemented
-aws_docdb_cluster_instance not implemented
-aws_docdb_cluster_parameter_group not implemented
-aws_docdb_subnet_group not implemented
-aws_ec2_tag not implemented
-aws_ec2_traffic_mirror_filter not implemented
-aws_ec2_traffic_mirror_session not implemented
-aws_ec2_traffic_mirror_target not implemented
-aws_ec2_transit_gateway not implemented
-aws_ec2_transit_gateway not implemented
-aws_ec2_transit_gateway_route_table not implemented
-aws_ec2_transit_gateway_vpc_attachment not implemented
-aws_ecr_repository_policy not implemented
-aws_ecr_repository_policy not implemented
-aws_ecr_repository_policy not implemented
-aws_ecrpublic_repository not implemented
-aws_efs_access_point not implemented
-aws_efs_access_point not implemented
-aws_efs_access_point not implemented
-aws_efs_file_system not implemented
-aws_efs_file_system not implemented
-aws_efs_file_system not implemented
-aws_efs_file_system not implemented
-aws_efs_mount_target not implemented
-aws_efs_mount_target not implemented
-aws_efs_mount_target not implemented
-aws_egress_only_internet_gateway not implemented
-aws_eks_addon not implemented
-aws_eks_cluster not implemented
-aws_eks_fargate_profile not implemented
-aws_eks_identity_provider_config not implemented
-aws_eks_node_group not implemented
-aws_elastic_beanstalk_application_version not implemented
-aws_elastic_beanstalk_environment not implemented
+./resource.ps1 aws_appsync_datasource
+./resource.ps1 aws_appsync_graphql_api
+./resource.ps1 aws_appsync_resolver
+./resource.ps1 aws_athena_database
+./resource.ps1 aws_athena_workgroup
+./resource.ps1 aws_autoscaling_group_tag
+./resource.ps1 aws_autoscaling_schedule
+./resource.ps1 aws_batch_compute_environment
+./resource.ps1 aws_batch_compute_environment
+./resource.ps1 aws_batch_job_definition
+./resource.ps1 aws_batch_job_definition
+./resource.ps1 aws_batch_job_queue
+./resource.ps1 aws_batch_job_queue
+./resource.ps1 aws_batch_scheduling_policy
+./resource.ps1 aws_cloudfront_distribution
+./resource.ps1 aws_cloudfront_distribution
+./resource.ps1 aws_cloudfront_distribution
+./resource.ps1 aws_cloudfront_distribution
+./resource.ps1 aws_cloudfront_origin_access_identity
+./resource.ps1 aws_cloudfront_origin_access_identity
+./resource.ps1 aws_cloudfront_response_headers_policy
+./resource.ps1 aws_cloudfront_response_headers_policy
+./resource.ps1 aws_cloudfront_response_headers_policy
+./resource.ps1 aws_cloudfront_response_headers_policy
+./resource.ps1 aws_cloudfront_response_headers_policy
+./resource.ps1 aws_cloudfront_response_headers_policy
+./resource.ps1 aws_cloudhsm_v2_cluster
+./resource.ps1 aws_cloudhsm_v2_hsm
+./resource.ps1 aws_cloudwatch_event_api_destination
+./resource.ps1 aws_cloudwatch_event_archive
+./resource.ps1 aws_cloudwatch_event_bus
+./resource.ps1 aws_cloudwatch_event_bus
+./resource.ps1 aws_cloudwatch_event_bus
+./resource.ps1 aws_cloudwatch_event_connection
+./resource.ps1 aws_cloudwatch_event_permission
+./resource.ps1 aws_codecommit_approval_rule_template
+./resource.ps1 aws_codecommit_approval_rule_template
+./resource.ps1 aws_codecommit_approval_rule_template
+./resource.ps1 aws_codecommit_approval_rule_template_association
+./resource.ps1 aws_codecommit_approval_rule_template_association
+./resource.ps1 aws_codecommit_approval_rule_template_association
+./resource.ps1 aws_codedeploy_app
+./resource.ps1 aws_codedeploy_deployment_group
+./resource.ps1 aws_config_config_rule
+./resource.ps1 aws_config_configuration_recorder
+./resource.ps1 aws_config_configuration_recorder_status
+./resource.ps1 aws_config_delivery_channel
+./resource.ps1 aws_customer_gateway
+./resource.ps1 aws_dax_cluster
+./resource.ps1 aws_dax_parameter_group
+./resource.ps1 aws_dax_subnet_group
+./resource.ps1 aws_db_event_subscription
+./resource.ps1 aws_db_instance_automated_backups_replication
+./resource.ps1 aws_default_network_acl
+./resource.ps1 aws_default_route_table
+./resource.ps1 aws_default_vpc
+./resource.ps1 aws_dlm_lifecycle_policy
+./resource.ps1 aws_dms_replication_instance
+./resource.ps1 aws_docdb_cluster
+./resource.ps1 aws_docdb_cluster_instance
+./resource.ps1 aws_docdb_cluster_parameter_group
+./resource.ps1 aws_docdb_subnet_group
+./resource.ps1 aws_ec2_tag
+./resource.ps1 aws_ec2_traffic_mirror_filter
+./resource.ps1 aws_ec2_traffic_mirror_session
+./resource.ps1 aws_ec2_traffic_mirror_target
+./resource.ps1 aws_ec2_transit_gateway
+./resource.ps1 aws_ec2_transit_gateway
+./resource.ps1 aws_ec2_transit_gateway_route_table
+./resource.ps1 aws_ec2_transit_gateway_vpc_attachment
+./resource.ps1 aws_ecr_repository_policy
+./resource.ps1 aws_ecr_repository_policy
+./resource.ps1 aws_ecr_repository_policy
+./resource.ps1 aws_ecrpublic_repository
+./resource.ps1 aws_efs_access_point
+./resource.ps1 aws_efs_access_point
+./resource.ps1 aws_efs_access_point
+./resource.ps1 aws_efs_file_system
+./resource.ps1 aws_efs_file_system
+./resource.ps1 aws_efs_file_system
+./resource.ps1 aws_efs_file_system
+./resource.ps1 aws_efs_mount_target
+./resource.ps1 aws_efs_mount_target
+./resource.ps1 aws_efs_mount_target
+./resource.ps1 aws_egress_only_internet_gateway
+./resource.ps1 aws_eks_addon
+./resource.ps1 aws_eks_cluster
+./resource.ps1 aws_eks_fargate_profile
+./resource.ps1 aws_eks_identity_provider_config
+./resource.ps1 aws_eks_node_group
+./resource.ps1 aws_elastic_beanstalk_application_version
+./resource.ps1 aws_elastic_beanstalk_environment
 
-aws_elasticache_cluster not implemented
-aws_elasticache_parameter_group not implemented
-aws_elasticache_replication_group not implemented
-aws_elasticache_subnet_group not implemented
-aws_elasticache_subnet_group not implemented
+./resource.ps1 aws_elasticache_cluster
+./resource.ps1 aws_elasticache_parameter_group
+./resource.ps1 aws_elasticache_replication_group
+./resource.ps1 aws_elasticache_subnet_group
+./resource.ps1 aws_elasticache_subnet_group
 
-aws_elasticsearch_domain not implemented
-aws_elasticsearch_domain_policy not implemented
-aws_emr_cluster not implemented
-aws_emr_security_configuration not implemented
-aws_fsx_openzfs_file_system not implemented
-aws_fsx_openzfs_snapshot not implemented
-aws_fsx_openzfs_volume not implemented
-aws_glue_job not implemented
-aws_glue_partition not implemented
-aws_glue_partition_index not implemented
-aws_glue_registry not implemented
-aws_glue_resource_policy not implemented
-aws_glue_schema not implemented
-aws_glue_security_configuration not implemented
-aws_glue_security_configuration not implemented
-aws_glue_user_defined_function not implemented
-aws_glue_workflow not implemented
-aws_grafana_license_association not implemented
-aws_grafana_role_association not implemented
-aws_grafana_workspace not implemented
-aws_grafana_workspace_api_key not implemented
-aws_grafana_workspace_saml_configuration not implemented
-aws_guardduty_detector not implemented
-aws_guardduty_ipset not implemented
-aws_guardduty_member not implemented
-aws_guardduty_organization_configuration not implemented
-aws_guardduty_threatintelset not implemented
-aws_iam_account_alias not implemented
-aws_iam_account_password_policy not implemented
-aws_iam_openid_connect_provider not implemented
-aws_iam_saml_provider not implemented
-aws_iam_saml_provider not implemented
-aws_iam_saml_provider not implemented
-aws_iam_saml_provider not implemented
-aws_iam_user_ssh_key not implemented
-aws_imagebuilder_component not implemented
-aws_imagebuilder_distribution_configuration not implemented
-aws_imagebuilder_image not implemented
-aws_imagebuilder_image_pipeline not implemented
-aws_imagebuilder_image_recipe not implemented
-aws_imagebuilder_infrastructure_configuration not implemented
-aws_lambda_event_source_mapping not implemented
-aws_lambda_event_source_mapping not implemented
-aws_lambda_function_event_invoke_config not implemented
-aws_lambda_function_event_invoke_config not implemented
-aws_lambda_function_url not implemented
-aws_lambda_layer_version not implemented
-aws_lambda_layer_version not implemented
-aws_lambda_provisioned_concurrency_config not implemented
-aws_lb_listener_rule not implemented
-aws_lb_listener_rule not implemented
-aws_lb_listener_rule not implemented
-aws_media_convert_queue not implemented
-aws_memorydb_cluster not implemented
-aws_memorydb_snapshot not implemented
-aws_memorydb_subnet_group not implemented
-aws_neptune_cluster not implemented
-aws_neptune_cluster_instance not implemented
-aws_neptune_parameter_group not implemented
-aws_neptune_subnet_group not implemented
-aws_networkfirewall_firewall not implemented
-aws_networkfirewall_firewall_policy not implemented
-aws_networkfirewall_logging_configuration not implemented
-aws_networkfirewall_rule_group not implemented
-aws_organizations_organization not implemented
-aws_organizations_policy not implemented
-aws_organizations_policy_attachment not implemented
-aws_rds_cluster not implemented
-aws_rds_cluster not implemented
-aws_rds_cluster_endpoint not implemented
-aws_rds_cluster_instance not implemented
-aws_rds_cluster_instance not implemented
-aws_rds_cluster_role_association not implemented
-aws_rds_global_cluster not implemented
-aws_route53_hosted_zone_dnssec not implemented
-aws_route53_key_signing_key not implemented
-aws_route53_query_log not implemented
-aws_s3_bucket_cors_configuration not implemented
-aws_s3_bucket_cors_configuration not implemented
-aws_s3_bucket_replication_configuration not implemented
-aws_s3_bucket_replication_configuration not implemented
-aws_s3_bucket_replication_configuration not implemented
-aws_s3_bucket_website_configuration not implemented
-aws_s3_bucket_website_configuration not implemented
-aws_sagemaker_endpoint_configuration not implemented
-aws_sagemaker_model not implemented
-aws_securityhub_account not implemented
-aws_servicecatalog_portfolio not implemented
-aws_sfn_activity not implemented
-aws_sfn_state_machine not implemented
-aws_sfn_state_machine not implemented
-aws_ssoadmin_permission_set not implemented
-aws_ssoadmin_permission_set not implemented
-aws_ssoadmin_permission_set_inline_policy not implemented
-aws_ssoadmin_permission_set_inline_policy not implemented
-aws_vpc_dhcp_options not implemented
-aws_vpc_dhcp_options_association not implemented
-aws_vpc_endpoint_service not implemented
-aws_vpc_endpoint_service not implemented
-aws_vpc_ipv4_cidr_block_association not implemented
-aws_vpc_peering_connection not implemented
-aws_vpc_peering_connection_accepter not implemented
-aws_vpc_peering_connection_options not implemented
-aws_vpc_peering_connection_options not implemented
-aws_vpn_gateway_attachment not implemented
-aws_vpn_gateway_route_propagation not implemented
-aws_vpn_gateway_route_propagation not implemented
-aws_vpn_gateway_route_propagation not implemented
-aws_waf_ipset not implemented
-aws_waf_rule not implemented
-aws_waf_web_acl not implemented
-aws_wafregional_ipset not implemented
-aws_wafregional_rule not implemented
-aws_wafregional_web_acl not implemented
-aws_wafregional_web_acl not implemented
-aws_wafv2_web_acl_association not implemented
-aws_wafv2_web_acl_association not implemented
-aws_wafv2_web_acl_logging_configuration not implemented
-aws_wafv2_web_acl_logging_configuration not implemented
-aws_wafv2_web_acl_logging_configuration not implemented
-aws_wafv2_web_acl_logging_configuration not implemented
-aws_wafv2_web_acl_logging_configuration not implemented
-aws_wafv2_web_acl_logging_configuration not implemented
-aws_workspaces_directory not implemented
-aws_workspaces_workspace not implemented
+./resource.ps1 aws_elasticsearch_domain
+./resource.ps1 aws_elasticsearch_domain_policy
+./resource.ps1 aws_emr_cluster
+./resource.ps1 aws_emr_security_configuration
+./resource.ps1 aws_fsx_openzfs_file_system
+./resource.ps1 aws_fsx_openzfs_snapshot
+./resource.ps1 aws_fsx_openzfs_volume
+./resource.ps1 aws_glue_job
+./resource.ps1 aws_glue_partition
+./resource.ps1 aws_glue_partition_index
+./resource.ps1 aws_glue_registry
+./resource.ps1 aws_glue_resource_policy
+./resource.ps1 aws_glue_schema
+./resource.ps1 aws_glue_security_configuration
+./resource.ps1 aws_glue_security_configuration
+./resource.ps1 aws_glue_user_defined_function
+./resource.ps1 aws_glue_workflow
+./resource.ps1 aws_grafana_license_association
+./resource.ps1 aws_grafana_role_association
+./resource.ps1 aws_grafana_workspace
+./resource.ps1 aws_grafana_workspace_api_key
+./resource.ps1 aws_grafana_workspace_saml_configuration
+./resource.ps1 aws_guardduty_detector
+./resource.ps1 aws_guardduty_ipset
+./resource.ps1 aws_guardduty_member
+./resource.ps1 aws_guardduty_organization_configuration
+./resource.ps1 aws_guardduty_threatintelset
+./resource.ps1 aws_iam_account_alias
+./resource.ps1 aws_iam_account_password_policy
+./resource.ps1 aws_iam_openid_connect_provider
+./resource.ps1 aws_iam_saml_provider
+./resource.ps1 aws_iam_saml_provider
+./resource.ps1 aws_iam_saml_provider
+./resource.ps1 aws_iam_saml_provider
+./resource.ps1 aws_iam_user_ssh_key
+./resource.ps1 aws_imagebuilder_component
+./resource.ps1 aws_imagebuilder_distribution_configuration
+./resource.ps1 aws_imagebuilder_image
+./resource.ps1 aws_imagebuilder_image_pipeline
+./resource.ps1 aws_imagebuilder_image_recipe
+./resource.ps1 aws_imagebuilder_infrastructure_configuration
+./resource.ps1 aws_lambda_event_source_mapping
+./resource.ps1 aws_lambda_event_source_mapping
+./resource.ps1 aws_lambda_function_event_invoke_config
+./resource.ps1 aws_lambda_function_event_invoke_config
+./resource.ps1 aws_lambda_function_url
+./resource.ps1 aws_lambda_layer_version
+./resource.ps1 aws_lambda_layer_version
+./resource.ps1 aws_lambda_provisioned_concurrency_config
+./resource.ps1 aws_lb_listener_rule
+./resource.ps1 aws_lb_listener_rule
+./resource.ps1 aws_lb_listener_rule
+./resource.ps1 aws_media_convert_queue
+./resource.ps1 aws_memorydb_cluster
+./resource.ps1 aws_memorydb_snapshot
+./resource.ps1 aws_memorydb_subnet_group
+./resource.ps1 aws_neptune_cluster
+./resource.ps1 aws_neptune_cluster_instance
+./resource.ps1 aws_neptune_parameter_group
+./resource.ps1 aws_neptune_subnet_group
+./resource.ps1 aws_networkfirewall_firewall
+./resource.ps1 aws_networkfirewall_firewall_policy
+./resource.ps1 aws_networkfirewall_logging_configuration
+./resource.ps1 aws_networkfirewall_rule_group
+./resource.ps1 aws_organizations_organization
+./resource.ps1 aws_organizations_policy
+./resource.ps1 aws_organizations_policy_attachment
+
+./resource.ps1 aws_rds_cluster
+./resource.ps1 aws_rds_cluster
+./resource.ps1 aws_rds_cluster_endpoint
+./resource.ps1 aws_rds_cluster_instance
+./resource.ps1 aws_rds_cluster_instance
+./resource.ps1 aws_rds_cluster_role_association
+./resource.ps1 aws_rds_global_cluster
+
+./resource.ps1 aws_route53_hosted_zone_dnssec
+./resource.ps1 aws_route53_key_signing_key
+./resource.ps1 aws_route53_query_log
+./resource.ps1 aws_s3_bucket_cors_configuration
+./resource.ps1 aws_s3_bucket_cors_configuration
+./resource.ps1 aws_s3_bucket_replication_configuration
+./resource.ps1 aws_s3_bucket_replication_configuration
+./resource.ps1 aws_s3_bucket_replication_configuration
+./resource.ps1 aws_s3_bucket_website_configuration
+./resource.ps1 aws_s3_bucket_website_configuration
+./resource.ps1 aws_sagemaker_endpoint_configuration
+./resource.ps1 aws_sagemaker_model
+./resource.ps1 aws_securityhub_account
+./resource.ps1 aws_servicecatalog_portfolio
+./resource.ps1 aws_sfn_activity
+./resource.ps1 aws_sfn_state_machine
+./resource.ps1 aws_sfn_state_machine
+./resource.ps1 aws_ssoadmin_permission_set
+./resource.ps1 aws_ssoadmin_permission_set
+./resource.ps1 aws_ssoadmin_permission_set_inline_policy
+./resource.ps1 aws_ssoadmin_permission_set_inline_policy
+./resource.ps1 aws_vpc_dhcp_options
+./resource.ps1 aws_vpc_dhcp_options_association
+./resource.ps1 aws_vpc_endpoint_service
+./resource.ps1 aws_vpc_endpoint_service
+./resource.ps1 aws_vpc_ipv4_cidr_block_association
+./resource.ps1 aws_vpc_peering_connection
+./resource.ps1 aws_vpc_peering_connection_accepter
+./resource.ps1 aws_vpc_peering_connection_options
+./resource.ps1 aws_vpc_peering_connection_options
+./resource.ps1 aws_vpn_gateway_attachment
+./resource.ps1 aws_vpn_gateway_route_propagation
+./resource.ps1 aws_vpn_gateway_route_propagation
+./resource.ps1 aws_vpn_gateway_route_propagation
+./resource.ps1 aws_waf_ipset
+./resource.ps1 aws_waf_rule
+./resource.ps1 aws_waf_web_acl
+./resource.ps1 aws_wafregional_ipset
+./resource.ps1 aws_wafregional_rule
+./resource.ps1 aws_wafregional_web_acl
+./resource.ps1 aws_wafregional_web_acl
+./resource.ps1 aws_wafv2_web_acl_association
+./resource.ps1 aws_wafv2_web_acl_association
+./resource.ps1 aws_wafv2_web_acl_logging_configuration
+./resource.ps1 aws_wafv2_web_acl_logging_configuration
+./resource.ps1 aws_wafv2_web_acl_logging_configuration
+./resource.ps1 aws_wafv2_web_acl_logging_configuration
+./resource.ps1 aws_wafv2_web_acl_logging_configuration
+./resource.ps1 aws_wafv2_web_acl_logging_configuration
+./resource.ps1 aws_workspaces_directory
+./resource.ps1 aws_workspaces_workspace
 
 glacier
 -vault
 -vaultlock
 
 beanstalk
-aws_elastic_beanstalk_application_version not implemented
-aws_elastic_beanstalk_environment not implemented
+./resource.ps1 aws_elastic_beanstalk_application_version
+./resource.ps1 aws_elastic_beanstalk_environment
 
 elasticache
 
@@ -244,3 +246,31 @@ efs
 chime
 
 cloud_directory
+
+resource
+./resource.ps1 aws_db_cluster_snapshot
+./resource.ps1 aws_db_event_subscription
+./resource.ps1 aws_db_instance
+./resource.ps1 aws_db_instance_automated_backups_replication
+./resource.ps1 aws_db_instance_role_association
+./resource.ps1 aws_db_option_group
+./resource.ps1 aws_db_parameter_group
+./resource.ps1 aws_db_proxy
+./resource.ps1 aws_db_proxy_default_target_group
+./resource.ps1 aws_db_proxy_endpoint
+./resource.ps1 aws_db_proxy_target
+./resource.ps1 aws_db_security_group
+./resource.ps1 aws_db_snapshot
+./resource.ps1 aws_db_snapshot_copy
+./resource.ps1 aws_db_subnet_group
+./resource.ps1 aws_rds_cluster
+./resource.ps1 aws_rds_cluster_activity_stream
+./resource.ps1 aws_rds_cluster_endpoint
+./resource.ps1 aws_rds_cluster_instance
+./resource.ps1 aws_rds_cluster_parameter_group
+./resource.ps1 aws_rds_cluster_role_association
+./resource.ps1 aws_rds_global_cluster
+
+Data Sources
+
+[//]: # (./resource.ps1 aws_db_instance -type data)

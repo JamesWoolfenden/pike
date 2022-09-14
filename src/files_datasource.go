@@ -118,6 +118,30 @@ var dataAwsOutpostsOutpost []byte
 //go:embed mapping/aws/data/rds/aws_rds_engine_version.json
 var dataAwsRdsEngineVersion []byte
 
+//go:embed mapping/aws/data/rds/aws_db_cluster_snapshot.json
+var dataAwsDbClusterSnapshot []byte
+
+//go:embed mapping/aws/data/rds/aws_db_event_categories.json
+var dataAwsDbEventCategories []byte
+
+//go:embed mapping/aws/data/rds/aws_db_instance.json
+var dataAwsDbInstance []byte
+
+//go:embed mapping/aws/data/rds/aws_db_snapshot.json
+var dataAwsDbSnapshot []byte
+
+//go:embed mapping/aws/data/rds/aws_db_subnet_group.json
+var dataAwsDbSubnetGroup []byte
+
+//go:embed mapping/aws/data/rds/aws_rds_certificate.json
+var dataAwsRdsCertificate []byte
+
+//go:embed mapping/aws/data/rds/aws_rds_cluster.json
+var dataAwsRdsCluster []byte
+
+//go:embed mapping/aws/data/rds/aws_rds_orderable_db_instance.json
+var dataAwsRdsOrderableDbInstance []byte
+
 //go:embed mapping/aws/data/ec2/aws_vpc_endpoint_service.json
 var dataAwsVpcEndpointService []byte
 

@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-// GetAWSDataPermissions gets permissions required for datasources
+// GetAWSDataPermissions gets permissions required for datasource's
 func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 
 	TFLookup := map[string]interface{}{
@@ -55,7 +55,6 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 		"aws_ecr_authorization_token":               dataAwsEcrAuthorizationToken,
 		"aws_lambda_function":                       dataAwsLambdaFunction,
 		"aws_outposts_outpost":                      dataAwsOutpostsOutpost,
-		"aws_rds_engine_version":                    dataAwsRdsEngineVersion,
 		"aws_vpc_endpoint_service":                  dataAwsVpcEndpointService,
 		"aws_cognito_user_pools":                    dataAwsCognitoUserPools,
 		"aws_cognito_user_pool_client":              dataAwsCognitoUserPoolClient,
@@ -66,6 +65,16 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 		"aws_redshift_orderable_cluster":            dataAwsRedshiftOrderableCluster,
 		"aws_redshift_service_account":              placeholder,
 		"aws_redshift_subnet_group":                 dataAwsRedshiftSubnetGroup,
+		"aws_db_proxy":                              placeholder,
+		"aws_db_cluster_snapshot":                   dataAwsDbClusterSnapshot,
+		"aws_db_event_categories":                   dataAwsDbEventCategories,
+		"aws_db_instance":                           dataAwsDbInstance,
+		"aws_dn_snapshot":                           dataAwsDbSnapshot,
+		"aws_db_subnet_group":                       dataAwsDbSubnetGroup,
+		"aws_rds_certificate":                       dataAwsRdsCertificate,
+		"aws_rds_cluster":                           dataAwsRdsCluster,
+		"aws_rds_engine_version":                    dataAwsRdsEngineVersion,
+		"aws_rds_orderable_db_instance":             dataAwsRdsOrderableDbInstance,
 	}
 
 	var Permissions []string

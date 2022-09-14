@@ -7,26 +7,13 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "inspector:CreateAssessmentTemplate",
-          "inspector:DescribeAssessmentTemplates",
-          "inspector:ListEventSubscriptions",
-          "inspector:ListTagsForResource",
-
-          "inspector:SetTagsForResource",
-
-          "inspector:DeleteAssessmentTemplate",
-
-          "inspector:SubscribeToEvent",
-          "inspector:UnsubscribeFromEvent",
-
-          "inspector:CreateAssessmentTarget",
-          "inspector:DescribeAssessmentTargets",
-          "inspector:DeleteAssessmentTarget",
-
-          "inspector:CreateResourceGroup",
-          "inspector:DescribeResourceGroups",
-
-          "inspector:ListRulesPackages"
+          "rds:DescribeOrderableDBInstanceOptions",
+          "rds:DescribeDBClusters",
+          "rds:DescribeCertificates",
+          "rds:DescribeDBSubnetGroups",
+          "rds:DescribeDBInstances",
+          "rds:DescribeDBSnapshots",
+          "rds:DescribeEventCategories"
         ]
         "Resource" : "*"
       }
