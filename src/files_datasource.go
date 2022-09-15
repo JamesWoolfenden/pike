@@ -156,3 +156,12 @@ var dataAwsRedshiftClusterCredentials []byte
 
 //go:embed mapping/aws/data/redshift/aws_redshift_subnet_group.json
 var dataAwsRedshiftSubnetGroup []byte
+
+//go:embed mapping/aws/data/glue/aws_glue_connection.json
+var dataAwsGlueConnection []byte
+
+//go:embed mapping/aws/data/glue/aws_glue_script.json
+var dataAwsGlueScript []byte
+
+//go:embed mapping/aws/data/glue/aws_glue_data_catalog_encryption_settings.json
+var dataAwsDataCatalogEncryptionSettings []byte

@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "glue:CreateSecurityConfiguration",
+      "glue:GetSecurityConfiguration",
+      "glue:DeleteSecurityConfiguration"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

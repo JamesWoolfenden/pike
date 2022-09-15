@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "glue:CreateUserDefinedFunction",
+      "glue:GetUserDefinedFunction",
+      "glue:DeleteUserDefinedFunction"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "glue:DeleteUserDefinedFunction"
+    ],
+    "modify": [
+      "glue:UpdateUserDefinedFunction"
+    ],
+    "plan": []
+  }
+]

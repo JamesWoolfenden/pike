@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "glue:PutResourcePolicy",
+      "glue:GetResourcePolicy",
+      "glue:DeleteResourcePolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -7,13 +7,7 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "rds:DescribeOrderableDBInstanceOptions",
-          "rds:DescribeDBClusters",
-          "rds:DescribeCertificates",
-          "rds:DescribeDBSubnetGroups",
-          "rds:DescribeDBInstances",
-          "rds:DescribeDBSnapshots",
-          "rds:DescribeEventCategories"
+          "glue:UpdateTable"
         ]
         "Resource" : "*"
       }

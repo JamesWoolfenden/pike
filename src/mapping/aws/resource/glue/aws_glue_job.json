@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "glue:CreateJob",
+      "iam:PassRole",
+      "glue:GetJob",
+      "glue:DeleteJob"
+    ],
+    "attributes": {
+      "tags": [
+        "glue:GetTags"
+      ]
+    },
+    "destroy": [
+      "glue:DeleteJob"
+    ],
+    "modify": [
+      "glue:UpdateJob"
+    ],
+    "plan": []
+  }
+]

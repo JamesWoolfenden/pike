@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "glue:CreateSchema",
+      "glue:GetSchema",
+      "glue:GetTags",
+      "glue:GetSchemaVersion",
+      "glue:DeleteSchema"
+    ],
+    "attributes": {
+      "tags": [
+        "glue:TagResource",
+        "glue:UntagResource"
+      ]
+    },
+    "destroy": [
+      "glue:DeleteSchema"
+    ],
+    "modify": [
+      "glue:UpdateSchema"
+    ],
+    "plan": []
+  }
+]

@@ -75,6 +75,9 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 		"aws_rds_cluster":                           dataAwsRdsCluster,
 		"aws_rds_engine_version":                    dataAwsRdsEngineVersion,
 		"aws_rds_orderable_db_instance":             dataAwsRdsOrderableDbInstance,
+		"aws_glue_connection":                       dataAwsGlueConnection,
+		"aws_glue_data_catalog_encryption_settings": dataAwsDataCatalogEncryptionSettings,
+		"aws_glue_script":                           dataAwsGlueScript,
 	}
 
 	var Permissions []string

@@ -92,13 +92,11 @@
 ./resource.ps1 aws_eks_node_group
 ./resource.ps1 aws_elastic_beanstalk_application_version
 ./resource.ps1 aws_elastic_beanstalk_environment
-
 ./resource.ps1 aws_elasticache_cluster
 ./resource.ps1 aws_elasticache_parameter_group
 ./resource.ps1 aws_elasticache_replication_group
 ./resource.ps1 aws_elasticache_subnet_group
 ./resource.ps1 aws_elasticache_subnet_group
-
 ./resource.ps1 aws_elasticsearch_domain
 ./resource.ps1 aws_elasticsearch_domain_policy
 ./resource.ps1 aws_emr_cluster
@@ -106,16 +104,6 @@
 ./resource.ps1 aws_fsx_openzfs_file_system
 ./resource.ps1 aws_fsx_openzfs_snapshot
 ./resource.ps1 aws_fsx_openzfs_volume
-./resource.ps1 aws_glue_job
-./resource.ps1 aws_glue_partition
-./resource.ps1 aws_glue_partition_index
-./resource.ps1 aws_glue_registry
-./resource.ps1 aws_glue_resource_policy
-./resource.ps1 aws_glue_schema
-./resource.ps1 aws_glue_security_configuration
-./resource.ps1 aws_glue_security_configuration
-./resource.ps1 aws_glue_user_defined_function
-./resource.ps1 aws_glue_workflow
 ./resource.ps1 aws_grafana_license_association
 ./resource.ps1 aws_grafana_role_association
 ./resource.ps1 aws_grafana_workspace
@@ -166,7 +154,6 @@
 ./resource.ps1 aws_organizations_organization
 ./resource.ps1 aws_organizations_policy
 ./resource.ps1 aws_organizations_policy_attachment
-
 ./resource.ps1 aws_rds_cluster
 ./resource.ps1 aws_rds_cluster
 ./resource.ps1 aws_rds_cluster_endpoint

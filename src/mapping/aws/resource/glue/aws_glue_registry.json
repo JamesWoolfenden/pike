@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "glue:CreateRegistry",
+      "glue:GetRegistry",
+      "glue:GetTags",
+      "glue:DeleteRegistry"
+    ],
+    "attributes": {
+      "tags": [
+        "glue:TagResource",
+        "glue:UntagResource"
+      ]
+    },
+    "destroy": [
+      "glue:DeleteRegistry"
+    ],
+    "modify": [
+      "glue:UpdateRegistry"
+    ],
+    "plan": []
+  }
+]

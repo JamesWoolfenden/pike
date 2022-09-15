@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "glue:CreateWorkflow",
+      "glue:GetWorkflow",
+      "glue:DeleteWorkflow",
+      "glue:GetTags"
+    ],
+    "attributes": {
+      "tags": [
+        "glue:TagResource",
+        "glue:UntagResource"
+      ]
+    },
+    "destroy": [
+      "glue:DeleteWorkflow"
+    ],
+    "modify": [
+      "glue:UpdateWorkflow"
+    ],
+    "plan": []
+  }
+]
