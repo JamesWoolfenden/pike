@@ -1,0 +1,28 @@
+[
+  {
+    "apply": [
+      "rds:CreateDBCluster",
+      "iam:PassRole",
+      "rds:DescribeDBClusters",
+      "rds:ListTagsForResource",
+      "rds:DescribeGlobalClusters",
+      "rds:DeleteDBCluster"
+    ],
+    "attributes": {
+      "iam_roles": [
+        "rds:AddRoleToDBCluster"
+      ],
+      "tags": [
+        "rds:AddTagsToResource",
+        "rds:RemoveTagsFromResource"
+      ]
+    },
+    "destroy": [
+      "rds:DeleteDBCluster"
+    ],
+    "modify": [
+      "rds:ModifyDBCluster"
+    ],
+    "plan": []
+  }
+]

@@ -6,6 +6,9 @@
       "rds:ListTagsForResource"
     ],
     "attributes": {
+      "monitoring_role_arn": [
+        "iam:PassRole"
+      ],
       "tags": [
         "rds:AddTagsToResource",
         "rds:RemoveTagsFromResource"

@@ -80,6 +80,7 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_sns_topic_policy":                               awsSnsTopicPolicy,
 		"aws_key_pair":                                       awsKeyPair,
 		"aws_db_instance":                                    awsDbInstance,
+		"aws_rds_cluster_instance":                           awsDbInstance,
 		"aws_dynamodb_table":                                 awsDynamodbTable,
 		"aws_ssm_parameter":                                  awsSsmParameter,
 		"aws_route":                                          awsRoute,
@@ -219,6 +220,12 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_efs_file_system_policy":                         awsEfsFileSystemPolicy,
 		"aws_efs_mount_target":                               awsEfsMountTarget,
 		"aws_efs_replication_configuration":                  awsEfsReplicationConfiguration,
+		"aws_db_cluster_snapshot":                            awsDbClusterSnapshot,
+		"aws_rds_cluster":                                    awsRdsCluster,
+		"aws_rds_cluster_activity_stream":                    awsRdsClusterActivityStream,
+		"aws_rds_cluster_endpoint":                           awsRdsClusterEndpoint,
+		"aws_rds_cluster_role_association":                   awsRdsClusterRoleAssociation,
+		"aws_rds_global_cluster":                             awsRdsGlobalCluster,
 	}
 
 	var Permissions []string

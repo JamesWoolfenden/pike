@@ -141,11 +141,17 @@ func GetPermission(result ResourceV2) (Sorted, error) {
 	switch result.Provider {
 	case "aws":
 		myPermission.AWS, err = GetAWSPermissions(result)
+		if err != nil {
+			log.Print(err)
+		}
 	case "azurerm", "oci", "digitalocean", "linode", "helm":
 		log.Printf("Provider %s not yet implemented", result.Provider)
 		return myPermission, nil
 	case "gcp", "google":
 		myPermission.GCP = GetGCPPermissions(result)
+		if err != nil {
+			log.Print(err)
+		}
 	case "provider", "random", "main", "ip", "http", "test", "local",
 		"archive", "tls", "template", "null", "time", "external":
 		return myPermission, nil

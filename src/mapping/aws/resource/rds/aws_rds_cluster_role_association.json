@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "rds:AddRoleToDBCluster",
+      "iam:PassRole",
+      "rds:RemoveRoleFromDBCluster"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

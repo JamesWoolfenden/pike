@@ -17,6 +17,7 @@ resource "aws_db_instance" "default" {
   copy_tags_to_snapshot               = true
   enabled_cloudwatch_logs_exports     = ["audit", "error", "general", "slowquery"]
   iam_database_authentication_enabled = true
+  monitoring_role_arn                 = "arn:aws:iam::680235478471:role/rds-monitoring-role"
   //monitoring_interval = 60
   storage_encrypted = true
 

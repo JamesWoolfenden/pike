@@ -169,6 +169,24 @@ var awsKeyPair []byte
 //go:embed mapping/aws/resource/rds/aws_db_instance.json
 var awsDbInstance []byte
 
+//go:embed mapping/aws/resource/rds/aws_db_cluster_snapshot.json
+var awsDbClusterSnapshot []byte
+
+//go:embed mapping/aws/resource/rds/aws_rds_cluster.json
+var awsRdsCluster []byte
+
+//go:embed mapping/aws/resource/rds/aws_rds_cluster_activity_stream.json
+var awsRdsClusterActivityStream []byte
+
+//go:embed mapping/aws/resource/rds/aws_rds_cluster_endpoint.json
+var awsRdsClusterEndpoint []byte
+
+//go:embed mapping/aws/resource/rds/aws_rds_cluster_role_association.json
+var awsRdsClusterRoleAssociation []byte
+
+//go:embed mapping/aws/resource/rds/aws_rds_global_cluster.json
+var awsRdsGlobalCluster []byte
+
 //go:embed mapping/aws/resource/dynamodb/aws_dynamodb_table.json
 var awsDynamodbTable []byte
 

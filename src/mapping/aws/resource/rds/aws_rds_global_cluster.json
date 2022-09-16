@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "rds:CreateGlobalCluster",
+      "rds:DescribeGlobalClusters",
+      "rds:DeleteGlobalCluster"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "rds:DeleteGlobalCluster"
+    ],
+    "modify": [
+      "rds:ModifyGlobalCluster"
+    ],
+    "plan": []
+  }
+]

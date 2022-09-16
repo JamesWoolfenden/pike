@@ -51,8 +51,7 @@
 ./resource.ps1 aws_dax_cluster
 ./resource.ps1 aws_dax_parameter_group
 ./resource.ps1 aws_dax_subnet_group
-./resource.ps1 aws_db_event_subscription
-./resource.ps1 aws_db_instance_automated_backups_replication
+
 ./resource.ps1 aws_default_network_acl
 ./resource.ps1 aws_default_route_table
 ./resource.ps1 aws_default_vpc
@@ -144,14 +143,16 @@
 ./resource.ps1 aws_organizations_organization
 ./resource.ps1 aws_organizations_policy
 ./resource.ps1 aws_organizations_policy_attachment
-./resource.ps1 aws_rds_cluster
-./resource.ps1 aws_rds_cluster
-./resource.ps1 aws_rds_cluster_endpoint
-./resource.ps1 aws_rds_cluster_instance
-./resource.ps1 aws_rds_cluster_instance
-./resource.ps1 aws_rds_cluster_role_association
-./resource.ps1 aws_rds_global_cluster
-
+./resource.ps1 aws_db_event_subscription
+./resource.ps1 aws_db_instance_automated_backups_replication
+./resource.ps1 aws_db_instance_role_association
+./resource.ps1 aws_db_proxy
+./resource.ps1 aws_db_proxy_default_target_group
+./resource.ps1 aws_db_proxy_endpoint
+./resource.ps1 aws_db_proxy_target
+./resource.ps1 aws_db_security_group
+./resource.ps1 aws_db_snapshot
+./resource.ps1 aws_db_snapshot_copy
 ./resource.ps1 aws_route53_hosted_zone_dnssec
 ./resource.ps1 aws_route53_key_signing_key
 ./resource.ps1 aws_route53_query_log
@@ -218,36 +219,8 @@ sagemaker
 
 lightsail
 
-efs
-
 chime
 
 cloud_directory
-
-resource
-./resource.ps1 aws_db_cluster_snapshot
-./resource.ps1 aws_db_event_subscription
-./resource.ps1 aws_db_instance
-./resource.ps1 aws_db_instance_automated_backups_replication
-./resource.ps1 aws_db_instance_role_association
-./resource.ps1 aws_db_option_group
-./resource.ps1 aws_db_parameter_group
-./resource.ps1 aws_db_proxy
-./resource.ps1 aws_db_proxy_default_target_group
-./resource.ps1 aws_db_proxy_endpoint
-./resource.ps1 aws_db_proxy_target
-./resource.ps1 aws_db_security_group
-./resource.ps1 aws_db_snapshot
-./resource.ps1 aws_db_snapshot_copy
-./resource.ps1 aws_db_subnet_group
-./resource.ps1 aws_rds_cluster
-./resource.ps1 aws_rds_cluster_activity_stream
-./resource.ps1 aws_rds_cluster_endpoint
-./resource.ps1 aws_rds_cluster_instance
-./resource.ps1 aws_rds_cluster_parameter_group
-./resource.ps1 aws_rds_cluster_role_association
-./resource.ps1 aws_rds_global_cluster
-
-Data Sources
 
 [//]: # (./resource.ps1 aws_db_instance -type data)

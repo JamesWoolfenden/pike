@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "rds:CreateDBClusterEndpoint",
+      "rds:DeleteDBClusterEndpoint"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "rds:DeleteDBClusterEndpoint"
+    ],
+    "modify": [
+      "rds:ModifyDBClusterEndpoint"
+    ],
+    "plan": []
+  }
+]

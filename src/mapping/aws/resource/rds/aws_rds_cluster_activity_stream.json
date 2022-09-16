@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "rds:StartActivityStream",
+      "rds:StopActivityStream"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

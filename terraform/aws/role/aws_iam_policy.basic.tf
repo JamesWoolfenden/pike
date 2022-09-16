@@ -7,30 +7,18 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "elasticfilesystem:DescribeMountTargets",
-          "elasticfilesystem:DescribeMountTargetSecurityGroups",
+          "rds:CreateDBCluster",
+          "iam:PassRole",
+          "rds:DescribeDBClusters",
+          "rds:ListTagsForResource",
+          "rds:DescribeGlobalClusters",
 
-          "elasticfilesystem:DescribeReplicationConfigurations",
-          "elasticfilesystem:DeleteReplicationConfiguration",
-          "ec2:DescribeAccountAttributes",
-          "elasticfilesystem:CreateReplicationConfiguration",
+          "rds:AddTagsToResource",
+          "rds:RemoveTagsFromResource",
 
+          "rds:AddRoleToDBCluster",
 
-          "elasticfilesystem:CreateFileSystem",
-          #          "elasticfilesystem:DescribeFileSystems",
-          #          "elasticfilesystem:DescribeLifecycleConfiguration",
-          #          "elasticfilesystem:DeleteFileSystem",
-
-          #          "elasticfilesystem:UntagResource",
-          #          "elasticfilesystem:TagResource",
-          #
-          #            "kms:Encrypt",
-          #            "kms:Decrypt",
-          #            "kms:ReEncrypt*",
-          #            "kms:GenerateDataKey*",
-          #            "kms:CreateGrant",
-          #            "kms:DescribeKey",
-          #            "elasticfilesystem:PutLifecycleConfiguration",
+          "rds:ModifyDBCluster"
         ]
         "Resource" : "*"
       }

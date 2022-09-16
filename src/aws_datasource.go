@@ -69,7 +69,7 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 		"aws_db_cluster_snapshot":                   dataAwsDbClusterSnapshot,
 		"aws_db_event_categories":                   dataAwsDbEventCategories,
 		"aws_db_instance":                           dataAwsDbInstance,
-		"aws_dn_snapshot":                           dataAwsDbSnapshot,
+		"aws_db_snapshot":                           dataAwsDbSnapshot,
 		"aws_db_subnet_group":                       dataAwsDbSubnetGroup,
 		"aws_rds_certificate":                       dataAwsRdsCertificate,
 		"aws_rds_cluster":                           dataAwsRdsCluster,

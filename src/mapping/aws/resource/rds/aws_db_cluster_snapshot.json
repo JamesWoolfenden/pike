@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "rds:CreateDBClusterSnapshot",
+      "rds:DescribeDBClusterSnapshots",
+      "rds:ListTagsForResource",
+      "rds:DeleteDBClusterSnapshot"
+    ],
+    "attributes": {
+      "tags": [
+        "rds:AddTagsToResource",
+        "rds:RemoveTagsFromResource"
+      ]
+    },
+    "destroy": [
+      "rds:DeleteDBClusterSnapshot"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]
