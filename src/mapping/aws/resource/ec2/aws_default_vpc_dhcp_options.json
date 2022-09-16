@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeSubnets",
+      "ec2:DescribeDhcpOptions"
+    ],
+    "attributes": {
+      "tags": [
+        "ec2:CreateTags",
+        "ec2:DeleteTags"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

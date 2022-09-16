@@ -7,18 +7,23 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "rds:CreateDBCluster",
-          "iam:PassRole",
-          "rds:DescribeDBClusters",
-          "rds:ListTagsForResource",
-          "rds:DescribeGlobalClusters",
+          #         "ec2:DescribeDhcpOptions",
+          #         "ec2:DescribeVpcs",
+          #          "ec2:CreateDefaultVpc",
+          #         "ec2:DescribeVpcAttribute",
+          #          "ec2:DescribeSecurityGroups",
+          #
+          "ec2:CreateTags",
+          "ec2:DeleteTags",
+          "ec2:DescribeSubnets",
+          "ec2:DescribeDhcpOptions"
 
-          "rds:AddTagsToResource",
-          "rds:RemoveTagsFromResource",
 
-          "rds:AddRoleToDBCluster",
+          #          "ec2:DescribeRouteTables",
+          #          "ec2:DeleteRoute",
+          #
+          #          "ec2:DescribeSubnets"
 
-          "rds:ModifyDBCluster"
         ]
         "Resource" : "*"
       }

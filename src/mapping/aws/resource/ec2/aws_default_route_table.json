@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeNetworkAcls",
+      "ec2:DescribeRouteTables"
+    ],
+    "attributes": {
+      "tags": [
+        "ec2:CreateTags",
+        "ec2:DeleteTags"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

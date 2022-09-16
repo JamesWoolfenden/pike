@@ -51,10 +51,6 @@
 ./resource.ps1 aws_dax_cluster
 ./resource.ps1 aws_dax_parameter_group
 ./resource.ps1 aws_dax_subnet_group
-
-./resource.ps1 aws_default_network_acl
-./resource.ps1 aws_default_route_table
-./resource.ps1 aws_default_vpc
 ./resource.ps1 aws_dlm_lifecycle_policy
 ./resource.ps1 aws_dms_replication_instance
 ./resource.ps1 aws_docdb_cluster

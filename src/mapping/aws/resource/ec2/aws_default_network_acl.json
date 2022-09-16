@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeNetworkAcls",
+      "ec2:DescribeAccountAttributes",
+      "ec2:DeleteNetworkAclEntry",
+      "ec2:CreateNetworkAclEntry"
+    ],
+    "attributes": {
+      "tags": [
+        "ec2:CreateTags",
+        "ec2:DeleteTags"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

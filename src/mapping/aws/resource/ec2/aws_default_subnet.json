@@ -2,10 +2,7 @@
   {
     "apply": [
       "ec2:DescribeSecurityGroups",
-      "ec2:AuthorizeSecurityGroupIngress",
-      "ec2:RevokeSecurityGroupIngress",
-      "ec2:RevokeSecurityGroupEgress",
-      "ec2:AuthorizeSecurityGroupEgress"
+      "ec2:DescribeSubnets"
     ],
     "attributes": {
       "tags": [
