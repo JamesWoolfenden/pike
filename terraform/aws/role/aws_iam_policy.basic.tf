@@ -7,7 +7,30 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "glue:UpdateTable"
+          "elasticfilesystem:DescribeMountTargets",
+          "elasticfilesystem:DescribeMountTargetSecurityGroups",
+
+          "elasticfilesystem:DescribeReplicationConfigurations",
+          "elasticfilesystem:DeleteReplicationConfiguration",
+          "ec2:DescribeAccountAttributes",
+          "elasticfilesystem:CreateReplicationConfiguration",
+
+
+          "elasticfilesystem:CreateFileSystem",
+          #          "elasticfilesystem:DescribeFileSystems",
+          #          "elasticfilesystem:DescribeLifecycleConfiguration",
+          #          "elasticfilesystem:DeleteFileSystem",
+
+          #          "elasticfilesystem:UntagResource",
+          #          "elasticfilesystem:TagResource",
+          #
+          #            "kms:Encrypt",
+          #            "kms:Decrypt",
+          #            "kms:ReEncrypt*",
+          #            "kms:GenerateDataKey*",
+          #            "kms:CreateGrant",
+          #            "kms:DescribeKey",
+          #            "elasticfilesystem:PutLifecycleConfiguration",
         ]
         "Resource" : "*"
       }

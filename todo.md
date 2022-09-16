@@ -74,16 +74,6 @@
 ./resource.ps1 aws_ecr_repository_policy
 ./resource.ps1 aws_ecr_repository_policy
 ./resource.ps1 aws_ecrpublic_repository
-./resource.ps1 aws_efs_access_point
-./resource.ps1 aws_efs_access_point
-./resource.ps1 aws_efs_access_point
-./resource.ps1 aws_efs_file_system
-./resource.ps1 aws_efs_file_system
-./resource.ps1 aws_efs_file_system
-./resource.ps1 aws_efs_file_system
-./resource.ps1 aws_efs_mount_target
-./resource.ps1 aws_efs_mount_target
-./resource.ps1 aws_efs_mount_target
 ./resource.ps1 aws_egress_only_internet_gateway
 ./resource.ps1 aws_eks_addon
 ./resource.ps1 aws_eks_cluster

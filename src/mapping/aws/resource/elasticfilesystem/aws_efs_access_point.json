@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "elasticfilesystem:DescribeAccessPoints",
+      "elasticfilesystem:CreateAccessPoint",
+      "elasticfilesystem:DeleteAccessPoint"
+    ],
+    "attributes": {
+      "tags": [
+        "elasticfilesystem:UntagResource",
+        "elasticfilesystem:TagResource"
+      ]
+    },
+    "destroy": [
+      "elasticfilesystem:DeleteAccessPoint"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -78,6 +78,10 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 		"aws_glue_connection":                       dataAwsGlueConnection,
 		"aws_glue_data_catalog_encryption_settings": dataAwsDataCatalogEncryptionSettings,
 		"aws_glue_script":                           dataAwsGlueScript,
+		"aws_efs_access_point":                      dataAwsEfsAccessPoint,
+		"aws_efs_access_points":                     dataAwsEfsAccessPoints,
+		"aws_efs_file_system":                       dataAwsEfsFileSystem,
+		"aws_efs_mount_target":                      dataAwsEfsMountTarget,
 	}
 
 	var Permissions []string

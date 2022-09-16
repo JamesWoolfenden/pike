@@ -213,6 +213,12 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_inspector_assessment_target":                    awsInspectorAssessmentTarget,
 		"aws_inspector_assessment_template":                  awsInspectorAssessmentTemplate,
 		"aws_inspector_resource_group":                       awsInspectorResouceGroup,
+		"aws_efs_access_point":                               awsEfsAccessPoint,
+		"aws_efs_backup_policy":                              awsEfsBackupPolicy,
+		"aws_efs_file_system":                                awsEfsFileSystem,
+		"aws_efs_file_system_policy":                         awsEfsFileSystemPolicy,
+		"aws_efs_mount_target":                               awsEfsMountTarget,
+		"aws_efs_replication_configuration":                  awsEfsReplicationConfiguration,
 	}
 
 	var Permissions []string

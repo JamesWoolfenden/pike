@@ -165,3 +165,15 @@ var dataAwsGlueScript []byte
 
 //go:embed mapping/aws/data/glue/aws_glue_data_catalog_encryption_settings.json
 var dataAwsDataCatalogEncryptionSettings []byte
+
+//go:embed mapping/aws/data/elasticfilesystem/aws_efs_mount_target.json
+var dataAwsEfsMountTarget []byte
+
+//go:embed mapping/aws/data/elasticfilesystem/aws_efs_file_system.json
+var dataAwsEfsFileSystem []byte
+
+//go:embed mapping/aws/data/elasticfilesystem/aws_efs_access_point.json
+var dataAwsEfsAccessPoint []byte
+
+//go:embed mapping/aws/data/elasticfilesystem/aws_efs_access_points.json
+var dataAwsEfsAccessPoints []byte

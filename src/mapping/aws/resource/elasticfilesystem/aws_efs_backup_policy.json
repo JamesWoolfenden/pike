@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "elasticfilesystem:PutBackupPolicy",
+      "ec2:DescribeAccountAttributes",
+      "elasticfilesystem:DescribeBackupPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

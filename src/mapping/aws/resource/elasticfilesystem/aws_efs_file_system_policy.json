@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "elasticfilesystem:PutFileSystemPolicy",
+      "elasticfilesystem:DescribeFileSystemPolicy",
+      "elasticfilesystem:DeleteFileSystemPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "elasticfilesystem:DeleteFileSystemPolicy"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

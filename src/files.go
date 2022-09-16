@@ -507,3 +507,21 @@ var awsInspectorAssessmentTemplate []byte
 
 //go:embed mapping/aws/resource/inspector/aws_inspector_resource_group.json
 var awsInspectorResouceGroup []byte
+
+//go:embed mapping/aws/resource/elasticfilesystem/aws_efs_access_point.json
+var awsEfsAccessPoint []byte
+
+//go:embed mapping/aws/resource/elasticfilesystem/aws_efs_file_system.json
+var awsEfsFileSystem []byte
+
+//go:embed mapping/aws/resource/elasticfilesystem/aws_efs_backup_policy.json
+var awsEfsBackupPolicy []byte
+
+//go:embed mapping/aws/resource/elasticfilesystem/aws_efs_file_system_policy.json
+var awsEfsFileSystemPolicy []byte
+
+//go:embed mapping/aws/resource/elasticfilesystem/aws_efs_mount_target.json
+var awsEfsMountTarget []byte
+
+//go:embed mapping/aws/resource/elasticfilesystem/aws_efs_replication_configuration.json
+var awsEfsReplicationConfiguration []byte

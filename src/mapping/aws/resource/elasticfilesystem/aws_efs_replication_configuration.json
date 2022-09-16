@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "elasticfilesystem:DescribeReplicationConfigurations",
+      "elasticfilesystem:DeleteReplicationConfiguration",
+      "ec2:DescribeAccountAttributes",
+      "elasticfilesystem:CreateReplicationConfiguration",
+      "elasticfilesystem:CreateFileSystem"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [
+      "elasticfilesystem:DeleteReplicationConfiguration"
+    ],
+    "plan": []
+  }
+]

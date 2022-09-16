@@ -1,0 +1,33 @@
+[
+  {
+    "apply": [
+      "elasticfilesystem:CreateFileSystem",
+      "elasticfilesystem:DescribeFileSystems",
+      "ec2:DescribeAccountAttributes",
+      "elasticfilesystem:DescribeLifecycleConfiguration",
+      "elasticfilesystem:DeleteFileSystem"
+    ],
+    "attributes": {
+      "kms_key_id": [
+        "kms:Encrypt",
+        "kms:Decrypt",
+        "kms:ReEncrypt*",
+        "kms:GenerateDataKey*",
+        "kms:CreateGrant",
+        "kms:DescribeKey"
+      ],
+      "tags": [
+        "elasticfilesystem:UntagResource",
+        "elasticfilesystem:TagResource"
+      ]
+    },
+    "destroy": [
+      "elasticfilesystem:DeleteFileSystem"
+    ],
+    "lifecycle_policy": [
+      "elasticfilesystem:PutLifecycleConfiguration"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]
