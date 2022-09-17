@@ -21,7 +21,8 @@ func GCPPolicy(permissions []string) (string, error) {
 		Permissions string
 	}
 
-	PolicyName := "terraform" + randSeq(8)
+	//PolicyName := "terraform" + randSeq(8)
+	PolicyName := "terraform_pike"
 	theDetails := GCPPolicyDetails{PolicyName, "pike", "terraform_pike", test}
 
 	var output bytes.Buffer
