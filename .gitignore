@@ -11,3 +11,4 @@ __debug_bin.exe
 .DS_Store
 *.orig
 .terraform.tfstate.lock.info
+.pike

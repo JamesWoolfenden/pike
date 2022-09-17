@@ -18,15 +18,57 @@ import (
 const tfVersion = "1.2.3"
 
 // Scan looks for resources in a given directory
-func Scan(dirName string, output string, file string, init bool) error {
+func Scan(dirName string, output string, file string, init bool, write bool) error {
 
 	OutPolicy, err := MakePolicy(dirName, file, init)
 	if err != nil {
 		return err
 	}
 
-	fmt.Print(OutPolicy.AsString(output))
+	if write {
+		err2 := WriteOutput(OutPolicy, output)
+		if err2 != nil {
+			return err2
+		}
+	} else {
+		fmt.Print(OutPolicy.AsString(output))
+	}
+
 	return err
+}
+
+// WriteOutput writes out the policy as json ro terraform
+func WriteOutput(OutPolicy OutputPolicy, output string) error {
+
+	newPath, _ := filepath.Abs(".pike")
+	err := os.MkdirAll(newPath, os.ModePerm)
+	if err != nil {
+		return err
+	}
+
+	var outFile string
+	d1 := []byte(OutPolicy.AsString(output))
+	if strings.ToLower(output) == "terraform" {
+		outFile = newPath + "/pike.generated_policy.tf"
+
+		if OutPolicy.AWS.Terraform != "" {
+			err = os.WriteFile(newPath+"/aws_iam_role.terraform_pike.tf", roleTemplate, 0644)
+		}
+
+		if err != nil {
+			return err
+		}
+	} else {
+		outFile = newPath + "/pike.generated_policy.json"
+	}
+
+	err = os.WriteFile(outFile, d1, 0644)
+
+	if err != nil {
+		return err
+	}
+
+	return nil
 }
 
 // Init can download and install terraform if required and then terraform init your specified directory

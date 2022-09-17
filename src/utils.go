@@ -3,20 +3,31 @@ package pike
 import (
 	"bytes"
 	"errors"
+	"log"
 	"math/rand"
 	"os"
 	"path/filepath"
 	"strings"
+	"time"
 )
 
 var letters = []rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
 
 func randSeq(n int) string {
+
+	rand.Seed(time.Now().UTC().UnixNano())
+
 	b := make([]rune, n)
 	for i := range b {
 		b[i] = letters[rand.Intn(len(letters))]
 	}
-	return string(b)
+	last := "XVlBzgba"
+	temp := string(b)
+
+	if last == temp {
+		log.Fatal("not random")
+	}
+	return temp
 }
 
 // ReplaceSection find a section in a readme and replaces the section

@@ -20,6 +20,7 @@ func main() {
 	var wait int
 	var init bool
 	var autoAppend bool
+	var write bool
 
 	app := &cli.App{
 		EnableBashCompletion: true,
@@ -34,6 +35,12 @@ func main() {
 				Aliases:     []string{"i"},
 				Usage:       "Run Terraform init to download modules",
 				Destination: &init,
+			},
+			&cli.BoolFlag{
+				Name:        "write",
+				Aliases:     []string{"w"},
+				Usage:       "Write the policy output to a file at .pike",
+				Destination: &write,
 			},
 			&cli.BoolFlag{
 				Name:        "auto append",
@@ -85,7 +92,7 @@ func main() {
 				Aliases: []string{"s"},
 				Usage:   "scan a directory for IAM code",
 				Action: func(*cli.Context) error {
-					return pike.Scan(directory, output, file, init)
+					return pike.Scan(directory, output, file, init, write)
 				},
 			},
 			{

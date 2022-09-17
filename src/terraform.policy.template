@@ -1,5 +1,5 @@
 resource "aws_iam_policy" "{{.Name}}" {
-  name        = "{{.Name}}"
+  name_prefix = "{{.Name}}"
   path        = "{{.Path}}"
   description = "{{.Description}}"
 
