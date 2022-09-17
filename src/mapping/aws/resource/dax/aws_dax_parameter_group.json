@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "dax:CreateParameterGroup",
+      "dax:UpdateParameterGroup",
+      "dax:DescribeParameterGroups",
+      "dax:DescribeParameters",
+      "dax:DeleteParameterGroup"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "dax:DeleteParameterGroup"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

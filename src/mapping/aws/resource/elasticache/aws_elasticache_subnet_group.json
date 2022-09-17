@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "elasticache:CreateCacheSubnetGroup",
+      "elasticache:DescribeCacheSubnetGroups",
+      "elasticache:ListTagsForResource",
+      "elasticache:DeleteCacheSubnetGroup"
+    ],
+    "attributes": {
+      "tags": [
+        "elasticache:AddTagsToResource",
+        "elasticache:RemoveTagsFromResource"
+      ]
+    },
+    "destroy": [
+      "elasticache:DeleteCacheSubnetGroup"
+    ],
+    "modify": [
+      "elasticache:ModifyCacheSubnetGroup"
+    ],
+    "plan": []
+  }
+]

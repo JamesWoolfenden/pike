@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "states:CreateStateMachine",
+      "states:DescribeStateMachine",
+      "states:ListTagsForResource",
+      "states:DeleteStateMachine",
+      "iam:PassRole"
+    ],
+    "attributes": {
+      "tags": [
+        "states:TagResource",
+        "states:UntagResource"
+      ]
+    },
+    "destroy": [
+      "states:DeleteStateMachine"
+    ],
+    "modify": [
+      "states:UpdateStateMachine"
+    ],
+    "plan": []
+  }
+]

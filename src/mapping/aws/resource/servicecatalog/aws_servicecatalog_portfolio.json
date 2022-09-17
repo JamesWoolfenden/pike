@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "servicecatalog:CreatePortfolio",
+      "servicecatalog:DescribePortfolio",
+      "servicecatalog:DeletePortfolio"
+    ],
+    "attributes": {
+      "tags": [
+        "servicecatalog:TagResource"
+      ]
+    },
+    "destroy": [
+      "servicecatalog:DeletePortfolio"
+    ],
+    "modify": [
+      "servicecatalog:UpdatePortfolio"
+    ],
+    "plan": []
+  }
+]

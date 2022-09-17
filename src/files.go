@@ -199,6 +199,21 @@ var awsRoute []byte
 //go:embed mapping/aws/resource/ec2/aws_default_security_group.json
 var awsDefaultSecurityGroup []byte
 
+//go:embed mapping/aws/resource/ec2/aws_default_network_acl.json
+var awsDefaultNetworkACL []byte
+
+//go:embed mapping/aws/resource/ec2/aws_default_subnet.json
+var awsDefaultSubnet []byte
+
+//go:embed mapping/aws/resource/ec2/aws_default_vpc.json
+var awsDefaultVpc []byte
+
+//go:embed mapping/aws/resource/ec2/aws_default_route_table.json
+var awsDefaultRouteTable []byte
+
+//go:embed mapping/aws/resource/ec2/aws_default_vpc_dhcp_options.json
+var awsDefaultVpcDhcpOptions []byte
+
 //go:embed mapping/aws/resource/rds/aws_db_subnet_group.json
 var awsDbSubnetGroup []byte
 
@@ -543,3 +558,27 @@ var awsEfsMountTarget []byte
 
 //go:embed mapping/aws/resource/elasticfilesystem/aws_efs_replication_configuration.json
 var awsEfsReplicationConfiguration []byte
+
+//go:embed mapping/aws/resource/dax/aws_dax_parameter_group.json
+var awsDaxParameterGroup []byte
+
+//go:embed mapping/aws/resource/dax/aws_dax_subnet_group.json
+var awsDaxSubnetGroup []byte
+
+//go:embed mapping/aws/resource/elasticache/aws_elasticache_parameter_group.json
+var awsElasticacheParameterGroup []byte
+
+//go:embed mapping/aws/resource/elasticache/aws_elasticache_subnet_group.json
+var awsElasticacheSubnetGroup []byte
+
+//go:embed mapping/aws/resource/memorydb/aws_memorydb_subnet_group.json
+var awsMemorydbSubnetGroup []byte
+
+//go:embed mapping/aws/resource/servicecatalog/aws_servicecatalog_portfolio.json
+var awsServicecatalogPortfolio []byte
+
+//go:embed mapping/aws/resource/states/aws_sfn_activity.json
+var awsSfnActivity []byte
+
+//go:embed mapping/aws/resource/states/aws_sfn_state_machine.json
+var awsSfnStateMachine []byte

@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "elasticache:CreateCacheParameterGroup",
+      "elasticache:ModifyCacheParameterGroup",
+      "elasticache:DescribeCacheParameterGroups",
+      "elasticache:DescribeCacheParameters",
+      "elasticache:ListTagsForResource",
+      "elasticache:DeleteCacheParameterGroup"
+    ],
+    "attributes": {
+      "tags": [
+        "elasticache:AddTagsToResource",
+        "elasticache:RemoveTagsFromResource"
+      ]
+    },
+    "destroy": [
+      "elasticache:DeleteCacheParameterGroup"
+    ],
+    "modify": [
+      "elasticache:ModifyCacheParameterGroup"
+    ],
+    "plan": []
+  }
+]

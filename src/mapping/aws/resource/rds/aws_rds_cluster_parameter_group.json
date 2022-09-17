@@ -5,11 +5,11 @@
       "rds:ModifyDBClusterParameterGroup",
       "rds:DescribeDBClusterParameterGroups",
       "rds:DescribeDBClusterParameters",
-      "rds:DeleteDBClusterParameterGroup"
+      "rds:DeleteDBClusterParameterGroup",
+      "rds:ListTagsForResource"
     ],
     "attributes": {
       "tags": [
-        "rds:ListTagsForResource",
         "rds:AddTagsToResource",
         "rds:RemoveTagsFromResource"
       ]

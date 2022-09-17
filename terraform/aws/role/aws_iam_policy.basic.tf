@@ -7,23 +7,38 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          #         "ec2:DescribeDhcpOptions",
-          #         "ec2:DescribeVpcs",
-          #          "ec2:CreateDefaultVpc",
-          #         "ec2:DescribeVpcAttribute",
-          #          "ec2:DescribeSecurityGroups",
-          #
-          "ec2:CreateTags",
-          "ec2:DeleteTags",
-          "ec2:DescribeSubnets",
-          "ec2:DescribeDhcpOptions"
+          "rds:ListTagsForResource",
+          "rds:CreateDBParameterGroup",
+          "rds:DescribeDBParameterGroups",
+          "rds:DescribeDBParameters",
+          "rds:AddTagsToResource",
+          "rds:RemoveTagsFromResource",
+          "rds:DeleteDBParameterGroup",
+          "rds:ModifyDBParameterGroup",
 
+          "rds:CreateDBClusterParameterGroup",
+          "rds:ModifyDBClusterParameterGroup",
+          "rds:DescribeDBClusterParameterGroups",
+          "rds:DescribeDBClusterParameters",
+          "rds:DeleteDBClusterParameterGroup",
+          "rds:ListTagsForResource",
+          "rds:AddTagsToResource",
+          "rds:RemoveTagsFromResource",
 
-          #          "ec2:DescribeRouteTables",
-          #          "ec2:DeleteRoute",
-          #
-          #          "ec2:DescribeSubnets"
+          "elasticache:CreateCacheParameterGroup",
+          "elasticache:AddTagsToResource",
+          "elasticache:ModifyCacheParameterGroup",
+          "elasticache:DescribeCacheParameterGroups",
+          "elasticache:DescribeCacheParameters",
+          "elasticache:ListTagsForResource",
+          "elasticache:DeleteCacheParameterGroup",
+          "elasticache:RemoveTagsFromResource",
 
+          "dax:CreateParameterGroup",
+          "dax:UpdateParameterGroup",
+          "dax:DescribeParameterGroups",
+          "dax:DescribeParameters",
+          "dax:DeleteParameterGroup"
         ]
         "Resource" : "*"
       }

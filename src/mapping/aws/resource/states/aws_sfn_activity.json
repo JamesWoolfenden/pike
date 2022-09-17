@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "states:CreateActivity",
+      "states:DescribeActivity",
+      "states:ListTagsForResource",
+      "states:DeleteActivity"
+    ],
+    "attributes": {
+      "tags": [
+        "states:TagResource",
+        "states:UntagResource"
+      ]
+    },
+    "destroy": [
+      "states:DeleteActivity"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

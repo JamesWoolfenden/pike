@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "dax:DescribeSubnetGroups",
+      "dax:CreateSubnetGroup",
+      "iam:CreateServiceLinkedRole",
+      "dax:DeleteSubnetGroup"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "dax:DeleteSubnetGroup"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

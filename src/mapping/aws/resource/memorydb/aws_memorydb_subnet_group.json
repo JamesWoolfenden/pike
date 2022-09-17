@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "memorydb:CreateSubnetGroup",
+      "memorydb:DescribeSubnetGroups",
+      "memorydb:ListTags",
+      "memorydb:DeleteSubnetGroup"
+    ],
+    "attributes": {
+      "tags": [
+        "memorydb:TagResource",
+        "memorydb:UntagResource"
+      ]
+    },
+    "destroy": [
+      "memorydb:DeleteSubnetGroup"
+    ],
+    "modify": [
+      "memorydb:UpdateSubnetGroup"
+    ],
+    "plan": []
+  }
+]
