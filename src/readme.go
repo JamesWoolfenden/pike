@@ -3,6 +3,7 @@ package pike
 import (
 	"errors"
 	"os"
+	"strings"
 )
 
 // Readme Updates a README.md file
@@ -20,7 +21,7 @@ func Readme(dirName string, output string, init bool, autoAppend bool) error {
 	}
 
 	var markdown string
-	if init {
+	if strings.ToLower(output) == "terraform" {
 		markdown = "\nThe Terraform resource required is:\n\n```golang\n" + OutPolicy.AsString(output) + "\n```\n"
 	} else {
 		markdown = "\nThe Policy required is:\n\n```json\n" + OutPolicy.AsString(output) + "\n```\n"
