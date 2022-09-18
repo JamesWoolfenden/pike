@@ -261,7 +261,7 @@ $pike -d ../modules/aws/terraform-aws-apigateway/ make
  arn:aws:iam::680235478471:role/terraform_pike_20220918071439382800000002
 ```
 
-This new verb returns the ARN of the role create and you can find the tf used in your .pike folder.
+This new verb returns the ARN of the role created, and you can find the tf used in your .pike folder.
 
 ### Readme
 
