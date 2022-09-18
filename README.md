@@ -35,8 +35,9 @@ Feel free to submit PR or Issue, and then I'll take a look.
   - [Docker](#docker)
 - [Usage](#usage)
   - [Scan](#scan)
-  - [Excludes](#excludes)
+  - [Output](#output)
   - [Readme](#readme)
+  - [Make](#make)
 - [Compare](#compare)
 - [Help](#help)
 - [Building](#building)
@@ -228,7 +229,7 @@ resource "aws_iam_policy" "terraformXVlBzgba" {
 }
 ```
 
-### Output 
+### Output
 
 If you select the -w flag, pike will write out the role/policy required to build your project into the .pike folder:
 
@@ -240,12 +241,27 @@ $pike -w -i -d . scan
 
 The .pike folder will contain:
 
-```
+``` shell
 aws_iam_role.terraform_pike.tf
 pike.generated_policy.tf
 ```
 
 Which you can deploy using terraform to create the role/policy to build your IAC project.
+
+### Make
+
+You can now deploy the policy you need directly (AWS only so far):
+
+```bash
+$pike -d ../modules/aws/terraform-aws-apigateway/ make
+
+2022/09/18 08:53:41 terraform init at ..\modules\aws\terraform-aws-apigateway\
+2022/09/18 08:53:41 modules not found at ..\modules\aws\terraform-aws-apigateway\
+2022/09/18 08:53:49 aws role create/updated arn:aws:iam::680235478471:role/terraform_pike_20220918071439382800000002
+ arn:aws:iam::680235478471:role/terraform_pike_20220918071439382800000002
+```
+
+This new verb returns the ARN of the role create and you can find the tf used in your .pike folder.
 
 ### Readme
 

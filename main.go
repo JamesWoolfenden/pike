@@ -88,6 +88,14 @@ func main() {
 		},
 		Commands: []*cli.Command{
 			{
+				Name:    "make",
+				Aliases: []string{"m"},
+				Usage:   "make the policy/role required for this IAC to deploy",
+				Action: func(*cli.Context) error {
+					return pike.Make(directory)
+				},
+			},
+			{
 				Name:    "scan",
 				Aliases: []string{"s"},
 				Usage:   "scan a directory for IAM code",

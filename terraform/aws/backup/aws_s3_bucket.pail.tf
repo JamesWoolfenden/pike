@@ -20,4 +20,4 @@ resource "aws_s3_bucket" "tail" {
 #   bucket = "pail"
 # }
 
-data "aws_caller_identity" "current" {}
+#data "aws_caller_identity" "current" {}

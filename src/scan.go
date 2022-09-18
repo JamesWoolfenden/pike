@@ -26,7 +26,7 @@ func Scan(dirName string, output string, file string, init bool, write bool) err
 	}
 
 	if write {
-		err2 := WriteOutput(OutPolicy, output)
+		err2 := WriteOutput(OutPolicy, output, dirName)
 		if err2 != nil {
 			return err2
 		}
@@ -38,9 +38,9 @@ func Scan(dirName string, output string, file string, init bool, write bool) err
 }
 
 // WriteOutput writes out the policy as json ro terraform
-func WriteOutput(OutPolicy OutputPolicy, output string) error {
+func WriteOutput(OutPolicy OutputPolicy, output, location string) error {
 
-	newPath, _ := filepath.Abs(".pike")
+	newPath, _ := filepath.Abs(location + "/.pike")
 	err := os.MkdirAll(newPath, os.ModePerm)
 	if err != nil {
 		return err
@@ -74,31 +74,20 @@ func WriteOutput(OutPolicy OutputPolicy, output string) error {
 // Init can download and install terraform if required and then terraform init your specified directory
 func Init(dirName string) (string, []string, error) {
 
-	tfPath, _ := exec.LookPath("terraform")
-
-	//if you don't have tf installed we have to install it
-	if tfPath == "" {
-		log.Printf("installing Terraform %s\n", tfVersion)
-		installer := &releases.ExactVersion{
-			Product: product.Terraform,
-			Version: version.Must(version.NewVersion(tfVersion)),
-		}
-
-		var err error
-
-		tfPath, err = installer.Install(context.Background())
-		if err != nil {
-			return "", nil, err
-		}
+	tfPath, err := LocateTerraform()
+	if err != nil {
+		return "", nil, err
 	}
 
 	tf, err := tfexec.NewTerraform(dirName, tfPath)
+
 	if err != nil {
 		return "", nil, err
 	}
 
 	err = tf.Init(context.Background(), tfexec.Upgrade(true))
 	if err != nil {
+
 		return "", nil, err
 	}
 
@@ -119,6 +108,28 @@ func Init(dirName string) (string, []string, error) {
 	}
 
 	return tfPath, found, err
+}
+
+// LocateTerraform finds the Terraform executable or installs it
+func LocateTerraform() (string, error) {
+	tfPath, _ := exec.LookPath("terraform")
+
+	//if you don't have tf installed we have to install it
+	if tfPath == "" {
+		log.Printf("installing Terraform %s\n", tfVersion)
+		installer := &releases.ExactVersion{
+			Product: product.Terraform,
+			Version: version.Must(version.NewVersion(tfVersion)),
+		}
+
+		var err error
+
+		tfPath, err = installer.Install(context.Background())
+		if err != nil {
+			return "", err
+		}
+	}
+	return tfPath, nil
 }
 
 // MakePolicy does the guts of determining a policy from code

@@ -22,3 +22,7 @@ resource "aws_iam_role_policy_attachment" "pike-attach" {
   role       = aws_iam_role.terraform_pike.name
   policy_arn = aws_iam_policy.terraform_pike.arn
 }
+
+output "arn" {
+  value = aws_iam_role.terraform_pike.arn
+}
