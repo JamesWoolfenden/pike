@@ -244,6 +244,16 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_servicecatalog_portfolio":                       awsServicecatalogPortfolio,
 		"aws_sfn_activity":                                   awsSfnActivity,
 		"aws_sfn_state_machine":                              awsSfnStateMachine,
+		"aws_config_config_rule":                             awsConfigConfigRule,
+		"aws_config_configuration_recorder":                  awsConfigConfigurationRecorder,
+		"aws_config_configuration_recorder_status":           awsConfigConfigurationRecorderStatus,
+		"aws_config_delivery_channel":                        awsConfigDeliveryChannel,
+		"aws_ec2_tag":                                        awsEc2Tag,
+		"aws_iam_account_alias":                              awsIamAccountAlias,
+		"aws_iam_account_password_policy":                    awsIamAccountPasswordPolicy,
+		"aws_iam_openid_connect_provider":                    awsIamOpenidConnectProvider,
+		"aws_iam_saml_provider":                              awsIamSamlProvider,
+		"aws_iam_user_ssh_key":                               awsIamUserSSHKey,
 	}
 
 	var Permissions []string

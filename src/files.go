@@ -582,3 +582,33 @@ var awsSfnActivity []byte
 
 //go:embed mapping/aws/resource/states/aws_sfn_state_machine.json
 var awsSfnStateMachine []byte
+
+//go:embed mapping/aws/resource/config/aws_config_config_rule.json
+var awsConfigConfigRule []byte
+
+//go:embed mapping/aws/resource/config/aws_config_configuration_recorder_status.json
+var awsConfigConfigurationRecorderStatus []byte
+
+//go:embed mapping/aws/resource/config/aws_config_configuration_recorder.json
+var awsConfigConfigurationRecorder []byte
+
+//go:embed mapping/aws/resource/config/aws_config_delivery_channel.json
+var awsConfigDeliveryChannel []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ec2_tag.json
+var awsEc2Tag []byte
+
+//go:embed mapping/aws/resource/iam/aws_iam_account_alias.json
+var awsIamAccountAlias []byte
+
+//go:embed mapping/aws/resource/iam/aws_iam_account_password_policy.json
+var awsIamAccountPasswordPolicy []byte
+
+//go:embed mapping/aws/resource/iam/aws_iam_openid_connect_provider.json
+var awsIamOpenidConnectProvider []byte
+
+//go:embed mapping/aws/resource/iam/aws_iam_saml_provider.json
+var awsIamSamlProvider []byte
+
+//go:embed mapping/aws/resource/iam/aws_iam_user_ssh_key.json
+var awsIamUserSSHKey []byte

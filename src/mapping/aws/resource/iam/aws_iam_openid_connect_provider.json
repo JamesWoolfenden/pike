@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "iam:DeleteOpenIDConnectProvider",
+      "iam:GetOpenIDConnectProvider",
+      "iam:CreateOpenIDConnectProvider"
+    ],
+    "attributes": {
+      "tags": [
+        "iam:UntagOpenIDConnectProvider",
+        "iam:TagOpenIDConnectProvider"
+      ]
+    },
+    "destroy": [],
+    "modify": [
+      "iam:UpdateOpenIDConnectProviderThumbprint"
+    ],
+    "plan": []
+  }
+]

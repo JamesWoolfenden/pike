@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "config:PutConfigurationRecorder",
+      "config:DescribeConfigurationRecorders",
+      "config:DeleteConfigurationRecorder",
+      "iam:PassRole"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "config:DeleteConfigurationRecorder"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

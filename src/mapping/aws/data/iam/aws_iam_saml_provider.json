@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "iam:ListSAMLProviders",
+      "iam:GetSAMLProvider",
+      "ec2:DescribeAccountAttributes"
+    ]
+  }
+]

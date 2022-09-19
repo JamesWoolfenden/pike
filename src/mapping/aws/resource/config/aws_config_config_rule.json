@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "config:PutConfigRule",
+      "ec2:DescribeAccountAttributes",
+      "config:DescribeConfigRules",
+      "config:ListTagsForResource",
+      "config:DeleteConfigRule"
+    ],
+    "attributes": {
+      "tags": [
+        "config:TagResource",
+        "config:UntagResource"
+      ]
+    },
+    "destroy": [
+      "config:DeleteConfigRule"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

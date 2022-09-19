@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "config:DescribeConfigurationRecorderStatus",
+      "config:StopConfigurationRecorder",
+      "config:StartConfigurationRecorder"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

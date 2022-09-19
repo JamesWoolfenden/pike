@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "config:PutDeliveryChannel",
+      "config:DescribeDeliveryChannels",
+      "config:DeleteDeliveryChannel"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "config:DeleteDeliveryChannel"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

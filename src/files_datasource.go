@@ -177,3 +177,33 @@ var dataAwsEfsAccessPoint []byte
 
 //go:embed mapping/aws/data/elasticfilesystem/aws_efs_access_points.json
 var dataAwsEfsAccessPoints []byte
+
+//go:embed mapping/aws/data/iam/aws_iam_account_alias.json
+var dataAwsIamAccountAlias []byte
+
+//go:embed mapping/aws/data/iam/aws_iam_group.json
+var dataAwsIamGroup []byte
+
+//go:embed mapping/aws/data/iam/aws_iam_instance_profile.json
+var dataAwsIamInstanceProfile []byte
+
+//go:embed mapping/aws/data/iam/aws_iam_instance_profiles.json
+var dataAwsIamInstanceProfiles []byte
+
+//go:embed mapping/aws/data/iam/aws_iam_openid_connect_provider.json
+var dataAwsIamOpenIDConnectProvider []byte
+
+//go:embed mapping/aws/data/iam/aws_iam_saml_provider.json
+var dataAwsIamSamlProvider []byte
+
+//go:embed mapping/aws/data/iam/aws_iam_server_certificate.json
+var dataAwsIamServerCertificate []byte
+
+//go:embed mapping/aws/data/iam/aws_iam_user.json
+var dataAwsIamUser []byte
+
+//go:embed mapping/aws/data/iam/aws_iam_user_ssh_key.json
+var dataAwsIamUserSSHKey []byte
+
+//go:embed mapping/aws/data/iam/aws_iam_users.json
+var dataAwsIamUsers []byte

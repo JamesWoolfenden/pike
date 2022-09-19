@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "ec2:DescribeAccountAttributes",
+      "iam:ListOpenIDConnectProviders",
+      "iam:GetOpenIDConnectProvider"
+    ]
+  }
+]

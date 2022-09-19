@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "iam:UploadSSHPublicKey",
+      "iam:GetSSHPublicKey",
+      "iam:DeleteSSHPublicKey"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "iam:DeleteSSHPublicKey"
+    ],
+    "modify": [
+      "iam:UpdateSSHPublicKey"
+    ],
+    "plan": []
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "iam:CreateAccountAlias",
+      "iam:DeleteAccountAlias",
+      "iam:ListAccountAliases"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "iam:DeleteAccountAlias"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

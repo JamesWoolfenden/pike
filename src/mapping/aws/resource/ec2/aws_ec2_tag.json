@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "ec2:CreateTags",
+      "ec2:DescribeTags",
+      "ec2:DeleteTags"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "ec2:DeleteTags"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -82,6 +82,17 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 		"aws_efs_access_points":                     dataAwsEfsAccessPoints,
 		"aws_efs_file_system":                       dataAwsEfsFileSystem,
 		"aws_efs_mount_target":                      dataAwsEfsMountTarget,
+		"aws_iam_session_context":                   placeholder,
+		"aws_iam_account_alias":                     dataAwsIamAccountAlias,
+		"aws_iam_group":                             dataAwsIamGroup,
+		"aws_iam_instance_profile":                  dataAwsIamInstanceProfile,
+		"aws_iam_instance_profiles":                 dataAwsIamInstanceProfiles,
+		"aws_iam_openid_connect_provider":           dataAwsIamOpenIDConnectProvider,
+		"aws_iam_saml_provider":                     dataAwsIamSamlProvider,
+		"aws_iam_server_certificate":                dataAwsIamServerCertificate,
+		"aws_iam_user":                              dataAwsIamUser,
+		"aws_iam_user_ssh_key":                      dataAwsIamUserSSHKey,
+		"aws_iam_users":                             dataAwsIamUsers,
 	}
 
 	var Permissions []string
