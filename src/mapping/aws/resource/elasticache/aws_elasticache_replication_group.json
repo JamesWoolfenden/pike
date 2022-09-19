@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "elasticache:CreateReplicationGroup",
+      "elasticache:DeleteReplicationGroup",
+      "elasticache:DescribeReplicationGroups",
+      "elasticache:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "elasticache:AddTagsToResource",
+        "elasticache:RemoveTagsFromResource"
+      ]
+    },
+    "destroy": [
+      "elasticache:DeleteReplicationGroup"
+    ],
+    "modify": [
+      "elasticache:ModifyReplicationGroup"
+    ],
+    "plan": []
+  }
+]

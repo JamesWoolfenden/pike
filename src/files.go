@@ -612,3 +612,15 @@ var awsIamSamlProvider []byte
 
 //go:embed mapping/aws/resource/iam/aws_iam_user_ssh_key.json
 var awsIamUserSSHKey []byte
+
+//go:embed mapping/aws/resource/elasticache/aws_elasticache_cluster.json
+var awsElasticacheCluster []byte
+
+//go:embed mapping/aws/resource/elasticache/aws_elasticache_replication_group.json
+var awsElasticacheReplicationGroup []byte
+
+//go:embed mapping/aws/resource/es/aws_elasticsearch_domain.json
+var awsElasticsearchDomain []byte
+
+//go:embed mapping/aws/resource/es/aws_elasticsearch_domain_policy.json
+var awsElasticsearchDomainPolicy []byte

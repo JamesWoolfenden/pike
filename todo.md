@@ -201,8 +201,6 @@ beanstalk
 ./resource.ps1 aws_elastic_beanstalk_application_version
 ./resource.ps1 aws_elastic_beanstalk_environment
 
-elasticache
-
 sagemaker
 
 lightsail

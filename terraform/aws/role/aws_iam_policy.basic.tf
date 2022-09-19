@@ -7,26 +7,18 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "config:PutConfigRule",
-          "ec2:DescribeAccountAttributes",
-          "config:DescribeConfigRules",
-          "config:ListTagsForResource",
-          "config:DeleteConfigRule",
-          "config:TagResource",
-          "config:UntagResource",
-
-          "config:PutConfigurationRecorder",
-          "config:DescribeConfigurationRecorders",
-          "config:DeleteConfigurationRecorder",
-          "iam:PassRole",
-
-          "config:DescribeConfigurationRecorderStatus",
-          "config:StopConfigurationRecorder",
-          "config:StartConfigurationRecorder",
-
-          "config:PutDeliveryChannel",
-          "config:DescribeDeliveryChannels",
-          "config:DeleteDeliveryChannel",
+          "es:AddTags",
+          "es:RemoveTags",
+          "es:CreateElasticsearchDomain",
+          "es:DescribeElasticsearchDomain",
+          "es:DescribeElasticsearchDomainConfig",
+          "es:DeleteElasticsearchDomain",
+          "es:DescribeDomainConfig",
+          "es:DeleteDomain",
+          "es:ListTags",
+          "es:CreateDomain",
+          "es:UpdateElasticsearchDomainConfig",
+          "es:UpdateDomainConfig"
         ]
         "Resource" : "*"
       }

@@ -1,0 +1,29 @@
+[
+  {
+    "apply": [
+      "es:CreateElasticsearchDomain",
+      "es:DescribeElasticsearchDomain",
+      "es:DescribeElasticsearchDomainConfig",
+      "es:DeleteElasticsearchDomain",
+      "es:DescribeDomainConfig",
+      "es:DeleteDomain",
+      "es:ListTags",
+      "es:CreateDomain"
+    ],
+    "attributes": {
+      "tags": [
+        "es:AddTags",
+        "es:RemoveTags"
+      ]
+    },
+    "destroy": [
+      "es:DeleteElasticsearchDomain",
+      "es:DeleteDomain"
+    ],
+    "modify": [
+      "es:UpdateElasticsearchDomainConfig",
+      "es:UpdateDomainConfig"
+    ],
+    "plan": []
+  }
+]

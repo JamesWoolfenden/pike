@@ -254,6 +254,10 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_iam_openid_connect_provider":                    awsIamOpenidConnectProvider,
 		"aws_iam_saml_provider":                              awsIamSamlProvider,
 		"aws_iam_user_ssh_key":                               awsIamUserSSHKey,
+		"aws_elasticache_cluster":                            awsElasticacheCluster,
+		"aws_elasticache_replication_group":                  awsElasticacheReplicationGroup,
+		"aws_elasticsearch_domain":                           awsElasticsearchDomain,
+		"aws_elasticsearch_domain_policy":                    awsElasticsearchDomainPolicy,
 	}
 
 	var Permissions []string

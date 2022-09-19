@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "elasticache:CreateCacheCluster",
+      "elasticache:DescribeCacheClusters",
+      "elasticache:ListTagsForResource",
+      "elasticache:DeleteCacheCluster"
+    ],
+    "attributes": {
+      "tags": [
+        "elasticache:AddTagsToResource",
+        "elasticache:RemoveTagsFromResource"
+      ]
+    },
+    "destroy": [
+      "elasticache:DeleteCacheCluster"
+    ],
+    "modify": [
+      "elasticache:ModifyCacheCluster"
+    ],
+    "plan": []
+  }
+]

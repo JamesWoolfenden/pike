@@ -1,6 +1,9 @@
 [
   {
-    "apply": [],
+    "apply": [
+      "es:UpdateElasticsearchDomainConfig",
+      "es:UpdateDomainConfig"
+    ],
     "attributes": {
       "tags": []
     },
