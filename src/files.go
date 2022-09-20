@@ -624,3 +624,6 @@ var awsElasticsearchDomain []byte
 
 //go:embed mapping/aws/resource/es/aws_elasticsearch_domain_policy.json
 var awsElasticsearchDomainPolicy []byte
+
+//go:embed mapping/aws/resource/mediaconvert/aws_media_convert_queue.json
+var awsMediaConvertQueue []byte

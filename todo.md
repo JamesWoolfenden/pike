@@ -2,13 +2,17 @@
 
 ./resource.ps1 aws_cloudhsm_v2_cluster
 ./resource.ps1 aws_cloudhsm_v2_hsm
+
 ./resource.ps1 aws_appsync_datasource
 ./resource.ps1 aws_appsync_graphql_api
 ./resource.ps1 aws_appsync_resolver
+
 ./resource.ps1 aws_athena_database
 ./resource.ps1 aws_athena_workgroup
+
 ./resource.ps1 aws_autoscaling_group_tag
 ./resource.ps1 aws_autoscaling_schedule
+
 ./resource.ps1 aws_batch_compute_environment
 ./resource.ps1 aws_batch_compute_environment
 ./resource.ps1 aws_batch_job_definition
@@ -16,6 +20,7 @@
 ./resource.ps1 aws_batch_job_queue
 ./resource.ps1 aws_batch_job_queue
 ./resource.ps1 aws_batch_scheduling_policy
+
 ./resource.ps1 aws_cloudfront_distribution
 ./resource.ps1 aws_cloudfront_distribution
 ./resource.ps1 aws_cloudfront_distribution
@@ -47,11 +52,15 @@
 ./resource.ps1 aws_codedeploy_deployment_group
 
 ./resource.ps1 aws_customer_gateway
+
 ./resource.ps1 aws_dax_cluster
+
 ./resource.ps1 aws_dlm_lifecycle_policy
+
 ./resource.ps1 aws_dms_replication_instance
 ./resource.ps1 aws_docdb_cluster
 ./resource.ps1 aws_docdb_cluster_instance
+
 ./resource.ps1 aws_ec2_traffic_mirror_filter
 ./resource.ps1 aws_ec2_traffic_mirror_session
 ./resource.ps1 aws_ec2_traffic_mirror_target
@@ -113,8 +122,6 @@
 ./resource.ps1 aws_lb_listener_rule
 ./resource.ps1 aws_lb_listener_rule
 ./resource.ps1 aws_lb_listener_rule
-
-./resource.ps1 aws_media_convert_queue
 
 ./resource.ps1 aws_memorydb_cluster
 ./resource.ps1 aws_memorydb_snapshot
@@ -210,3 +217,4 @@ chime
 cloud_directory
 
 [//]: # (./resource.ps1 aws_db_instance -type data)
+./resource.ps1 aws_acm_certificate -type data

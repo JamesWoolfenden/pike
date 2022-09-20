@@ -258,6 +258,7 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_elasticache_replication_group":                  awsElasticacheReplicationGroup,
 		"aws_elasticsearch_domain":                           awsElasticsearchDomain,
 		"aws_elasticsearch_domain_policy":                    awsElasticsearchDomainPolicy,
+		"aws_media_convert_queue":                            awsMediaConvertQueue,
 	}
 
 	var Permissions []string

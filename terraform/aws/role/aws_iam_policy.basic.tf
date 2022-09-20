@@ -7,18 +7,20 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "es:AddTags",
-          "es:RemoveTags",
-          "es:CreateElasticsearchDomain",
-          "es:DescribeElasticsearchDomain",
-          "es:DescribeElasticsearchDomainConfig",
-          "es:DeleteElasticsearchDomain",
-          "es:DescribeDomainConfig",
-          "es:DeleteDomain",
-          "es:ListTags",
-          "es:CreateDomain",
-          "es:UpdateElasticsearchDomainConfig",
-          "es:UpdateDomainConfig"
+          "mediaconvert:UpdateQueue",
+          "mediaconvert:DeleteQueue",
+          "mediaconvert:ListTagsForResource",
+          "mediaconvert:DescribeEndpoints",
+          "mediaconvert:UntagResource",
+          "mediaconvert:CreateQueue",
+          "ec2:DescribeAccountAttributes",
+          "mediaconvert:TagResource",
+          "mediaconvert:GetQueue",
+          "iam:ListRole",
+          "iam:PassRole",
+          "s3:ListBucket",
+          "s3:GetBucketLocation",
+          "s3:ListAllMyBuckets"
         ]
         "Resource" : "*"
       }

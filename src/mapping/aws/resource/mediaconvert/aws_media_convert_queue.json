@@ -1,0 +1,30 @@
+[
+  {
+    "apply": [
+      "mediaconvert:DeleteQueue",
+      "mediaconvert:ListTagsForResource",
+      "mediaconvert:DescribeEndpoints",
+      "mediaconvert:CreateQueue",
+      "ec2:DescribeAccountAttributes",
+      "mediaconvert:GetQueue",
+      "iam:ListRole",
+      "iam:PassRole",
+      "s3:ListBucket",
+      "s3:GetBucketLocation",
+      "s3:ListAllMyBuckets"
+    ],
+    "attributes": {
+      "tags": [
+        "mediaconvert:TagResource",
+        "mediaconvert:UntagResource"
+      ]
+    },
+    "destroy": [
+      "mediaconvert:DeleteQueue"
+    ],
+    "modify": [
+      "mediaconvert:UpdateQueue"
+    ],
+    "plan": []
+  }
+]
