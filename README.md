@@ -28,7 +28,7 @@ Feel free to submit PR or Issue, and then I'll take a look.
 
 **CAVEAT** The policies and roles are to get you started, there are no conditions and resources are all wildcards (for AWS) - this is definitely not best practice- you need will to modify these permissions to minimum required by adding these constrictions. 
 
-These policies are determined statically, and we would need to determine the resource names that will be created. 
+Ideally I would like to do this for you, but these policies are determined statically, and we would need to determine the resource names that will be created and know your intentions. 
 
 ## Table of Contents
 
