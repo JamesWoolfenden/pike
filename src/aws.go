@@ -259,6 +259,12 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_elasticsearch_domain":                           awsElasticsearchDomain,
 		"aws_elasticsearch_domain_policy":                    awsElasticsearchDomainPolicy,
 		"aws_media_convert_queue":                            awsMediaConvertQueue,
+		"aws_imagebuilder_component":                         awsImagebuilderComponent,
+		"aws_imagebuilder_distribution_configuration":        awsImagebuilderDistributionConfiguration,
+		"aws_imagebuilder_image":                             awsImagebuilderImage,
+		"aws_imagebuilder_image_pipeline":                    awsImagebuilderImagePipeline,
+		"aws_imagebuilder_image_recipe":                      awsImagebuilderImageRecipe,
+		"aws_imagebuilder_infrastructure_configuration":      awsImagebuilderInstrastructureConfiguration,
 	}
 
 	var Permissions []string

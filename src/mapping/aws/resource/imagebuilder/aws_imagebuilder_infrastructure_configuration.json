@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "imagebuilder:CreateInfrastructureConfiguration",
+      "imagebuilder:GetInfrastructureConfiguration",
+      "imagebuilder:DeleteInfrastructureConfiguration",
+      "iam:PassRole"
+    ],
+    "attributes": {
+      "sns_topic_arn": [
+        "sns:Publish"
+      ],
+      "tags": [
+        "imagebuilder:TagResource",
+        "imagebuilder:UntagResource"
+      ]
+    },
+    "destroy": [
+      "imagebuilder:DeleteInfrastructureConfiguration"
+    ],
+    "modify": [
+      "imagebuilder:UpdateInfrastructureConfiguration"
+    ],
+    "plan": []
+  }
+]

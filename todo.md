@@ -103,13 +103,6 @@
 ./resource.ps1 aws_guardduty_organization_configuration
 ./resource.ps1 aws_guardduty_threatintelset
 
-./resource.ps1 aws_imagebuilder_component
-./resource.ps1 aws_imagebuilder_distribution_configuration
-./resource.ps1 aws_imagebuilder_image
-./resource.ps1 aws_imagebuilder_image_pipeline
-./resource.ps1 aws_imagebuilder_image_recipe
-./resource.ps1 aws_imagebuilder_infrastructure_configuration
-
 ./resource.ps1 aws_lambda_event_source_mapping
 ./resource.ps1 aws_lambda_event_source_mapping
 ./resource.ps1 aws_lambda_function_event_invoke_config
@@ -199,6 +192,8 @@
 
 ./resource.ps1 aws_workspaces_directory
 ./resource.ps1 aws_workspaces_workspace
+
+./resource.ps1 aws_cognito_identity_pool
 
 glacier
 -vault

@@ -7,20 +7,57 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "mediaconvert:UpdateQueue",
-          "mediaconvert:DeleteQueue",
-          "mediaconvert:ListTagsForResource",
-          "mediaconvert:DescribeEndpoints",
-          "mediaconvert:UntagResource",
-          "mediaconvert:CreateQueue",
-          "ec2:DescribeAccountAttributes",
-          "mediaconvert:TagResource",
-          "mediaconvert:GetQueue",
-          "iam:ListRole",
+          "imagebuilder:CreateInfrastructureConfiguration",
+          "imagebuilder:GetInfrastructureConfiguration",
+          "imagebuilder:DeleteInfrastructureConfiguration",
+          "imagebuilder:UpdateInfrastructureConfiguration",
           "iam:PassRole",
-          "s3:ListBucket",
-          "s3:GetBucketLocation",
-          "s3:ListAllMyBuckets"
+          "sns:Publish",
+
+          "ec2:DescribeAccountAttributes",
+          "imagebuilder:CreateComponent",
+          "imagebuilder:GetComponent",
+          "imagebuilder:DeleteComponent",
+
+          #          "iam:CreateServiceLinkedRole",
+          #
+          "kms:GenerateDataKey",
+          "kms:GenerateDataKeyWithoutPlaintext",
+          "kms:Encrypt",
+          "kms:Decrypt",
+
+
+          "imagebuilder:CreateImageRecipe",
+          "imagebuilder:GetImageRecipe",
+          "imagebuilder:DeleteImageRecipe",
+          "ec2:DescribeImages",
+          "imagebuilder:Getimage",
+          "imagebuilder:GetComponent",
+          "iam:CreateServiceLinkedRole",
+
+          "imagebuilder:CreateImagePipeline",
+          "imagebuilder:GetImagePipeline",
+          "imagebuilder:DeleteImagePipeline",
+          "imagebuilder:UpdateImagePipeline",
+          "imagebuilder:GetImageRecipe",
+          "iam:CreateServiceLinkedRole",
+          "imagebuilder:GetContainerRecipe",
+
+
+          "imagebuilder:CreateDistributionConfiguration",
+          "imagebuilder:DeleteDistributionConfiguration",
+          "imagebuilder:GetDistributionConfiguration",
+          "iam:CreateServiceLinkedRole",
+          #          "imagebuilder:ListDistributionConfigurations",
+          "imagebuilder:UpdateDistributionConfiguration",
+
+          "imagebuilder:TagResource",
+          "imagebuilder:UntagResource",
+          "imagebuilder:CreateImage",
+          "imagebuilder:GetImage",
+          "imagebuilder:DeleteImage",
+
+
         ]
         "Resource" : "*"
       }

@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "imagebuilder:CreateDistributionConfiguration",
+      "imagebuilder:DeleteDistributionConfiguration",
+      "imagebuilder:GetDistributionConfiguration",
+      "iam:CreateServiceLinkedRole"
+    ],
+    "attributes": {
+      "tags": [
+        "imagebuilder:TagResource",
+        "imagebuilder:UntagResource"
+      ]
+    },
+    "destroy": [
+      "imagebuilder:DeleteDistributionConfiguration"
+    ],
+    "modify": [
+      "imagebuilder:UpdateDistributionConfiguration"
+    ],
+    "plan": []
+  }
+]

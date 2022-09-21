@@ -1,0 +1,31 @@
+[
+  {
+    "apply": [
+      "imagebuilder:CreateImage",
+      "imagebuilder:GetImage",
+      "imagebuilder:DeleteImage",
+      "imagebuilder:GetInfrastructureConfiguration",
+      "iam:CreateServiceLinkedRole"
+    ],
+    "attributes": {
+      "container_recipe_arn": [
+        "imagebuilder:GetContainerRecipe"
+      ],
+      "distribution_configuration_arn": [
+        "imagebuilder:GetDistributionConfiguration"
+      ],
+      "image_recipe_arn": [
+        "imagebuilder:GetImageRecipe"
+      ],
+      "tags": [
+        "imagebuilder:TagResource",
+        "imagebuilder:UntagResource"
+      ]
+    },
+    "destroy": [
+      "imagebuilder:DeleteImage"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

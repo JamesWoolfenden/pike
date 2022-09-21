@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "imagebuilder:CreateImageRecipe",
+      "imagebuilder:GetImageRecipe",
+      "imagebuilder:DeleteImageRecipe",
+      "ec2:DescribeImages",
+      "imagebuilder:Getimage",
+      "imagebuilder:GetComponent",
+      "iam:CreateServiceLinkedRole"
+    ],
+    "attributes": {
+      "tags": [
+        "imagebuilder:TagResource",
+        "imagebuilder:UntagResource"
+      ]
+    },
+    "destroy": [
+      "imagebuilder:DeleteImageRecipe"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

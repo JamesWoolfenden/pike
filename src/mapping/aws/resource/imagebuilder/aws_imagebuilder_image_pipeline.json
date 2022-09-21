@@ -1,0 +1,28 @@
+[
+  {
+    "apply": [
+      "imagebuilder:CreateImagePipeline",
+      "imagebuilder:GetImagePipeline",
+      "imagebuilder:DeleteImagePipeline",
+      "imagebuilder:UpdateImagePipeline",
+      "iam:CreateServiceLinkedRole"
+    ],
+    "attributes": {
+      "container_recipe_arn": [
+        "imagebuilder:GetContainerRecipe"
+      ],
+      "image_recipe_arn": [
+        "imagebuilder:GetImageRecipe"
+      ],
+      "tags": [
+        "imagebuilder:TagResource",
+        "imagebuilder:UntagResource"
+      ]
+    },
+    "destroy": [
+      "imagebuilder:DeleteImagePipeline"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

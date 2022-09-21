@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "imagebuilder:CreateComponent",
+      "imagebuilder:GetComponent",
+      "imagebuilder:DeleteComponent"
+    ],
+    "attributes": {
+      "kms_key_id": [
+        "kms:GenerateDataKey",
+        "kms:GenerateDataKeyWithoutPlaintext",
+        "kms:Encrypt",
+        "kms:Decrypt"
+      ],
+      "tags": [
+        "imagebuilder:TagResource",
+        "imagebuilder:UntagResource"
+      ]
+    },
+    "destroy": [
+      "imagebuilder:DeleteComponent"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

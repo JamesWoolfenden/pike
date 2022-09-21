@@ -627,3 +627,21 @@ var awsElasticsearchDomainPolicy []byte
 
 //go:embed mapping/aws/resource/mediaconvert/aws_media_convert_queue.json
 var awsMediaConvertQueue []byte
+
+//go:embed mapping/aws/resource/imagebuilder/aws_imagebuilder_component.json
+var awsImagebuilderComponent []byte
+
+//go:embed mapping/aws/resource/imagebuilder/aws_imagebuilder_distribution_configuration.json
+var awsImagebuilderDistributionConfiguration []byte
+
+//go:embed mapping/aws/resource/imagebuilder/aws_imagebuilder_image.json
+var awsImagebuilderImage []byte
+
+//go:embed mapping/aws/resource/imagebuilder/aws_imagebuilder_image_pipeline.json
+var awsImagebuilderImagePipeline []byte
+
+//go:embed mapping/aws/resource/imagebuilder/aws_imagebuilder_image_recipe.json
+var awsImagebuilderImageRecipe []byte
+
+//go:embed mapping/aws/resource/imagebuilder/aws_imagebuilder_infrastructure_configuration.json
+var awsImagebuilderInstrastructureConfiguration []byte
