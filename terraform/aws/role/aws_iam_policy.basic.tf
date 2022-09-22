@@ -7,56 +7,22 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "imagebuilder:CreateInfrastructureConfiguration",
-          "imagebuilder:GetInfrastructureConfiguration",
-          "imagebuilder:DeleteInfrastructureConfiguration",
-          "imagebuilder:UpdateInfrastructureConfiguration",
-          "iam:PassRole",
-          "sns:Publish",
-
           "ec2:DescribeAccountAttributes",
-          "imagebuilder:CreateComponent",
-          "imagebuilder:GetComponent",
-          "imagebuilder:DeleteComponent",
-
-          #          "iam:CreateServiceLinkedRole",
-          #
-          "kms:GenerateDataKey",
-          "kms:GenerateDataKeyWithoutPlaintext",
-          "kms:Encrypt",
-          "kms:Decrypt",
-
-
-          "imagebuilder:CreateImageRecipe",
-          "imagebuilder:GetImageRecipe",
-          "imagebuilder:DeleteImageRecipe",
-          "ec2:DescribeImages",
-          "imagebuilder:Getimage",
-          "imagebuilder:GetComponent",
-          "iam:CreateServiceLinkedRole",
-
-          "imagebuilder:CreateImagePipeline",
-          "imagebuilder:GetImagePipeline",
-          "imagebuilder:DeleteImagePipeline",
-          "imagebuilder:UpdateImagePipeline",
-          "imagebuilder:GetImageRecipe",
-          "iam:CreateServiceLinkedRole",
-          "imagebuilder:GetContainerRecipe",
+          "glacier:CreateVault",
+          "glacier:AddTagsToVault",
+          "glacier:RemoveTagsFromVault",
+          "glacier:ListTagsForVault",
+          "glacier:DescribeVault",
+          "glacier:GetVaultAccessPolicy",
+          "glacier:DeleteVault",
+          "glacier:SetVaultAccessPolicy",
+          "glacier:SetVaultNotifications",
 
 
-          "imagebuilder:CreateDistributionConfiguration",
-          "imagebuilder:DeleteDistributionConfiguration",
-          "imagebuilder:GetDistributionConfiguration",
-          "iam:CreateServiceLinkedRole",
-          #          "imagebuilder:ListDistributionConfigurations",
-          "imagebuilder:UpdateDistributionConfiguration",
-
-          "imagebuilder:TagResource",
-          "imagebuilder:UntagResource",
-          "imagebuilder:CreateImage",
-          "imagebuilder:GetImage",
-          "imagebuilder:DeleteImage",
-
+          "glacier:InitiateVaultLock",
+          "glacier:GetVaultLock",
+          "glacier:AbortVaultLock",
+          "glacier:CompleteVaultLock"
 
         ]
         "Resource" : "*"

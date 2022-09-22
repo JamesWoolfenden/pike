@@ -22,8 +22,7 @@ var roleTemplate []byte
 
 // NewAWSPolicy constructor
 func NewAWSPolicy(Actions []string) Policy {
-	something := Policy{}
-	something.Version = "2012-10-17"
+	something := Policy{Version: "2012-10-17"}
 
 	sort.Strings(Actions)
 
@@ -44,12 +43,9 @@ func NewAWSPolicy(Actions []string) Policy {
 				myActions = append(myActions, action)
 			}
 		}
-		var state Statement
 
-		state.Effect = "Allow"
-		state.Sid = "VisualEditor" + strconv.Itoa(count)
-		state.Action = myActions
-		state.Resource = "*"
+		state := Statement{Sid: "VisualEditor" + strconv.Itoa(count), Effect: "Allow", Action: myActions, Resource: "*"}
+
 		statements = append(statements, state)
 	}
 

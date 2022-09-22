@@ -7,6 +7,7 @@ resource "aws_directory_service_directory" "pike" {
   }
 
   tags = {
-    #    pike="permissions"
+    pike   = "permissions"
+    delete = "me"
   }
 }

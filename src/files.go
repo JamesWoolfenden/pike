@@ -645,3 +645,9 @@ var awsImagebuilderImageRecipe []byte
 
 //go:embed mapping/aws/resource/imagebuilder/aws_imagebuilder_infrastructure_configuration.json
 var awsImagebuilderInstrastructureConfiguration []byte
+
+//go:embed mapping/aws/resource/glacier/aws_glacier_vault_lock.json
+var awsGlacierVaultLock []byte
+
+//go:embed mapping/aws/resource/glacier/aws_glacier_vault.json
+var awsGlacierVault []byte

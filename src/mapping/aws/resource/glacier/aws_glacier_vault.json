@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "glacier:CreateVault",
+      "glacier:ListTagsForVault",
+      "glacier:DescribeVault",
+      "glacier:GetVaultAccessPolicy",
+      "glacier:DeleteVault",
+      "glacier:SetVaultAccessPolicy",
+      "glacier:SetVaultNotifications"
+    ],
+    "attributes": {
+      "tags": [
+        "glacier:AddTagsToVault",
+        "glacier:RemoveTagsFromVault"
+      ]
+    },
+    "destroy": [
+      "glacier:DeleteVault"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -93,6 +93,7 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 		"aws_iam_user":                              dataAwsIamUser,
 		"aws_iam_user_ssh_key":                      dataAwsIamUserSSHKey,
 		"aws_iam_users":                             dataAwsIamUsers,
+		"aws_sagemaker_prebuilt_ecr_image":          placeholder,
 	}
 
 	var Permissions []string

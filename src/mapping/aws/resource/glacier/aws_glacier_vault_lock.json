@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "glacier:InitiateVaultLock",
+      "glacier:GetVaultLock",
+      "glacier:AbortVaultLock",
+      "glacier:CompleteVaultLock"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

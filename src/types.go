@@ -32,6 +32,11 @@ type Statement struct {
 	Resource string   `json:"Resource"`
 }
 
+// NewStatement constructor
+func NewStatement(sid string, effect string, action []string, resource string) *Statement {
+	return &Statement{Sid: sid, Effect: effect, Action: action, Resource: resource}
+}
+
 // OutputPolicy is the main output type
 type OutputPolicy struct {
 	AWS   AwsOutput

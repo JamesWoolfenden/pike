@@ -150,10 +150,17 @@
 ./resource.ps1 aws_s3_bucket_website_configuration
 ./resource.ps1 aws_s3_bucket_website_configuration
 
-./resource.ps1 aws_sagemaker_endpoint_configuration
-./resource.ps1 aws_sagemaker_model
-
 ./resource.ps1 aws_securityhub_account
+./resource.ps1 aws_securityhub_action_target
+./resource.ps1 aws_securityhub_finding_aggregator
+./resource.ps1 aws_securityhub_insight
+./resource.ps1 aws_securityhub_invite_accepter
+./resource.ps1 aws_securityhub_member
+./resource.ps1 aws_securityhub_organization_admin_account
+./resource.ps1 aws_securityhub_organization_configuration
+./resource.ps1 aws_securityhub_product_subscription
+./resource.ps1 aws_securityhub_standards_control
+./resource.ps1 aws_securityhub_standards_subscription
 
 ./resource.ps1 aws_ssoadmin_permission_set
 ./resource.ps1 aws_ssoadmin_permission_set
@@ -190,14 +197,27 @@
 ./resource.ps1 aws_wafv2_web_acl_logging_configuration
 ./resource.ps1 aws_wafv2_web_acl_logging_configuration
 
-./resource.ps1 aws_workspaces_directory
-./resource.ps1 aws_workspaces_workspace
-
-./resource.ps1 aws_cognito_identity_pool
-
-glacier
--vault
--vaultlock
+./resource.ps1 aws_sagemaker_app
+./resource.ps1 aws_sagemaker_app_image_config
+./resource.ps1 aws_sagemaker_code_repository
+./resource.ps1 aws_sagemaker_device
+./resource.ps1 aws_sagemaker_device_fleet
+./resource.ps1 aws_sagemaker_domain
+./resource.ps1 aws_sagemaker_endpoint
+./resource.ps1 aws_sagemaker_feature_group
+./resource.ps1 aws_sagemaker_flow_definition
+./resource.ps1 aws_sagemaker_human_task_ui
+./resource.ps1 aws_sagemaker_image
+./resource.ps1 aws_sagemaker_image_version
+./resource.ps1 aws_sagemaker_model_package_group
+./resource.ps1 aws_sagemaker_model_package_group_policy
+./resource.ps1 aws_sagemaker_notebook_instance
+./resource.ps1 aws_sagemaker_notebook_instance_lifecycle_configuration
+./resource.ps1 aws_sagemaker_project
+./resource.ps1 aws_sagemaker_studio_lifecycle_config
+./resource.ps1 aws_sagemaker_user_profile
+./resource.ps1 aws_sagemaker_workforce
+./resource.ps1 aws_sagemaker_workteam
 
 beanstalk
 ./resource.ps1 aws_elastic_beanstalk_application_version
