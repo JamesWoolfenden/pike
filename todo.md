@@ -106,8 +106,6 @@
 ./resource.ps1 aws_lambda_function_event_invoke_config
 ./resource.ps1 aws_lambda_function_event_invoke_config
 ./resource.ps1 aws_lambda_function_url
-./resource.ps1 aws_lambda_layer_version
-./resource.ps1 aws_lambda_layer_version
 ./resource.ps1 aws_lambda_provisioned_concurrency_config
 
 ./resource.ps1 aws_lb_listener_rule

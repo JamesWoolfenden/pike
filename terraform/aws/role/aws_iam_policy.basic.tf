@@ -7,16 +7,17 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "dlm:UntagResource",
-          "dlm:CreateLifecyclePolicy",
-          "dlm:UpdateLifecyclePolicy",
-          "dlm:DeleteLifecyclePolicy",
           "ec2:DescribeAccountAttributes",
-          "dlm:TagResource",
-          "dlm:GetLifecyclePolicy",
-          "dlm:ListTagsForResource",
-          "kms:ListAliases",
-          "kms:DescribeKey",
+          "lambda:GetLayerVersion",
+          "lambda:PublishLayerVersion",
+          "lambda:DeleteLayerVersion",
+          "s3:GetObject",
+
+          "ec2:DescribeAccountAttributes",
+          "lambda:AddLayerVersionPermission",
+          "lambda:RemoveLayerVersionPermission",
+          "lambda:GetLayerVersionPolicy",
+          "lambda:RemoveLayerVersionPermission"
         ]
         "Resource" : "*"
       }

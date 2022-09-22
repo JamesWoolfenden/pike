@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "lambda:GetLayerVersion",
+      "lambda:PublishLayerVersion",
+      "lambda:DeleteLayerVersion"
+    ],
+    "attributes": {
+      "s3_bucket": [
+        "s3:GetObject"
+      ],
+      "tags": []
+    },
+    "destroy": [
+      "lambda:DeleteLayerVersion"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

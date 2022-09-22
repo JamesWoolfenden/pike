@@ -268,6 +268,8 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_glacier_vault_lock":                             awsGlacierVaultLock,
 		"aws_glacier_vault":                                  awsGlacierVault,
 		"aws_dlm_lifecycle_policy":                           awsDlmLifecyclePolicy,
+		"aws_lambda_layer_version":                           awsLambdaLayerVersion,
+		"aws_lambda_layer_version_permission":                awsLambdaLayerVersionPermission,
 	}
 
 	var Permissions []string

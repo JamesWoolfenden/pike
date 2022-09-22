@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "lambda:AddLayerVersionPermission",
+      "lambda:RemoveLayerVersionPermission",
+      "lambda:GetLayerVersionPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "lambda:RemoveLayerVersionPermission"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

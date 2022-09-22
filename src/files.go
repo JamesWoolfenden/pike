@@ -654,3 +654,9 @@ var awsGlacierVault []byte
 
 //go:embed mapping/aws/resource/dlm/aws_dlm_lifecycle_policy.json
 var awsDlmLifecyclePolicy []byte
+
+//go:embed mapping/aws/resource/lambda/aws_lambda_layer_version.json
+var awsLambdaLayerVersion []byte
+
+//go:embed mapping/aws/resource/lambda/aws_lambda_layer_version_permission.json
+var awsLambdaLayerVersionPermission []byte
