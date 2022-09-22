@@ -55,8 +55,6 @@
 
 ./resource.ps1 aws_dax_cluster
 
-./resource.ps1 aws_dlm_lifecycle_policy
-
 ./resource.ps1 aws_dms_replication_instance
 ./resource.ps1 aws_docdb_cluster
 ./resource.ps1 aws_docdb_cluster_instance

@@ -1,0 +1,26 @@
+[
+  {
+    "apply": [
+      "dlm:CreateLifecyclePolicy",
+      "dlm:DeleteLifecyclePolicy",
+      "ec2:DescribeAccountAttributes",
+      "dlm:GetLifecyclePolicy",
+      "dlm:ListTagsForResource",
+      "kms:ListAliases",
+      "kms:DescribeKey"
+    ],
+    "attributes": {
+      "tags": [
+        "dlm:UntagResource",
+        "dlm:TagResource"
+      ]
+    },
+    "destroy": [
+      "dlm:DeleteLifecyclePolicy"
+    ],
+    "modify": [
+      "dlm:UpdateLifecyclePolicy"
+    ],
+    "plan": []
+  }
+]

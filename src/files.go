@@ -651,3 +651,6 @@ var awsGlacierVaultLock []byte
 
 //go:embed mapping/aws/resource/glacier/aws_glacier_vault.json
 var awsGlacierVault []byte
+
+//go:embed mapping/aws/resource/dlm/aws_dlm_lifecycle_policy.json
+var awsDlmLifecyclePolicy []byte

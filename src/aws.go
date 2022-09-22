@@ -267,6 +267,7 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_imagebuilder_infrastructure_configuration":      awsImagebuilderInstrastructureConfiguration,
 		"aws_glacier_vault_lock":                             awsGlacierVaultLock,
 		"aws_glacier_vault":                                  awsGlacierVault,
+		"aws_dlm_lifecycle_policy":                           awsDlmLifecyclePolicy,
 	}
 
 	var Permissions []string

@@ -7,23 +7,16 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
+          "dlm:UntagResource",
+          "dlm:CreateLifecyclePolicy",
+          "dlm:UpdateLifecyclePolicy",
+          "dlm:DeleteLifecyclePolicy",
           "ec2:DescribeAccountAttributes",
-          "glacier:CreateVault",
-          "glacier:AddTagsToVault",
-          "glacier:RemoveTagsFromVault",
-          "glacier:ListTagsForVault",
-          "glacier:DescribeVault",
-          "glacier:GetVaultAccessPolicy",
-          "glacier:DeleteVault",
-          "glacier:SetVaultAccessPolicy",
-          "glacier:SetVaultNotifications",
-
-
-          "glacier:InitiateVaultLock",
-          "glacier:GetVaultLock",
-          "glacier:AbortVaultLock",
-          "glacier:CompleteVaultLock"
-
+          "dlm:TagResource",
+          "dlm:GetLifecyclePolicy",
+          "dlm:ListTagsForResource",
+          "kms:ListAliases",
+          "kms:DescribeKey",
         ]
         "Resource" : "*"
       }
