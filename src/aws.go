@@ -270,6 +270,10 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_dlm_lifecycle_policy":                           awsDlmLifecyclePolicy,
 		"aws_lambda_layer_version":                           awsLambdaLayerVersion,
 		"aws_lambda_layer_version_permission":                awsLambdaLayerVersionPermission,
+		"aws_batch_compute_environment":                      awsBatchComputeEnvironment,
+		"aws_batch_job_definition":                           awsBatchJobDefinition,
+		"aws_batch_job_queue":                                awsBatchJobQueue,
+		"aws_batch_scheduling_policy":                        awsBatchSchedulingPolicy,
 	}
 
 	var Permissions []string

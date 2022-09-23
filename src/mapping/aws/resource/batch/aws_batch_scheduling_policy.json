@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "batch:CreateSchedulingPolicy",
+      "batch:DeleteSchedulingPolicy"
+    ],
+    "attributes": {
+      "tags": [
+        "batch:TagResource",
+        "batch:UntagResource"
+      ]
+    },
+    "destroy": [
+      "batch:DeleteSchedulingPolicy"
+    ],
+    "modify": [
+      "batch:UpdateSchedulingPolicy"
+    ],
+    "plan": []
+  }
+]

@@ -8,16 +8,49 @@ resource "aws_iam_policy" "basic" {
         "Effect" : "Allow",
         "Action" : [
           "ec2:DescribeAccountAttributes",
-          "lambda:GetLayerVersion",
-          "lambda:PublishLayerVersion",
-          "lambda:DeleteLayerVersion",
-          "s3:GetObject",
 
-          "ec2:DescribeAccountAttributes",
-          "lambda:AddLayerVersionPermission",
-          "lambda:RemoveLayerVersionPermission",
-          "lambda:GetLayerVersionPolicy",
-          "lambda:RemoveLayerVersionPermission"
+          "batch:CreateComputeEnvironment",
+          "batch:DeleteComputeEnvironment",
+          "batch:UpdateComputeEnvironment",
+          "batch:DescribeComputeEnvironments",
+          "batch:TagResource",
+          "batch:UntagResource",
+          // "ec2:*",
+          "iam:PassRole",
+          "ec2:DescribeSubnets",
+          "ec2:DescribeSecurityGroups",
+          "ec2:DescribeKeyPairs",
+          "ec2:DescribeVpcs",
+          "ec2:DescribeImages",
+          "ec2:DescribeLaunchTemplates",
+          "ec2:DescribeLaunchTemplateVersions",
+
+          "ecs:DescribeClusters",
+          "ecs:Describe*",
+          "ecs:List*",
+
+          "batch:CreateJobQueue",
+          "batch:UpdateJobQueue",
+          "batch:DeleteJobQueue",
+          "batch:DescribeJobQueues",
+          "batch:UpdateJobQueue",
+          "batch:TagResource",
+          "batch:UntagResource",
+          "batch:DescribeSchedulingPolicies",
+
+          "batch:TagResource",
+          "batch:UntagResource",
+          "batch:CreateSchedulingPolicy",
+          "batch:DeleteSchedulingPolicy",
+          "batch:UpdateSchedulingPolicy",
+
+
+          "batch:TagResource",
+          "batch:UntagResource",
+          "batch:DeregisterJobDefinition",
+          "batch:DescribeJobDefinitions",
+          "batch:RegisterJobDefinition",
+
         ]
         "Resource" : "*"
       }

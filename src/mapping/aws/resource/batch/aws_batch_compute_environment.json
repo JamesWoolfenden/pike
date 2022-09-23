@@ -1,0 +1,34 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "batch:CreateComputeEnvironment",
+      "batch:DeleteComputeEnvironment",
+      "batch:DescribeComputeEnvironments",
+      "iam:PassRole",
+      "ec2:DescribeSubnets",
+      "ec2:DescribeSecurityGroups",
+      "ec2:DescribeKeyPairs",
+      "ec2:DescribeVpcs",
+      "ec2:DescribeImages",
+      "ec2:DescribeLaunchTemplates",
+      "ec2:DescribeLaunchTemplateVersions",
+      "ecs:DescribeClusters",
+      "ecs:Describe*",
+      "ecs:List*"
+    ],
+    "attributes": {
+      "tags": [
+        "batch:TagResource",
+        "batch:UntagResource"
+      ]
+    },
+    "destroy": [
+      "batch:DeleteComputeEnvironment"
+    ],
+    "modify": [
+      "batch:UpdateComputeEnvironment"
+    ],
+    "plan": []
+  }
+]

@@ -660,3 +660,15 @@ var awsLambdaLayerVersion []byte
 
 //go:embed mapping/aws/resource/lambda/aws_lambda_layer_version_permission.json
 var awsLambdaLayerVersionPermission []byte
+
+//go:embed mapping/aws/resource/batch/aws_batch_compute_environment.json
+var awsBatchComputeEnvironment []byte
+
+//go:embed mapping/aws/resource/batch/aws_batch_job_definition.json
+var awsBatchJobDefinition []byte
+
+//go:embed mapping/aws/resource/batch/aws_batch_job_queue.json
+var awsBatchJobQueue []byte
+
+//go:embed mapping/aws/resource/batch/aws_batch_scheduling_policy.json
+var awsBatchSchedulingPolicy []byte

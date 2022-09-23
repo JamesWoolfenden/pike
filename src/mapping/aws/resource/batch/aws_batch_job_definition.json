@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "batch:DeregisterJobDefinition",
+      "batch:DescribeJobDefinitions",
+      "batch:RegisterJobDefinition"
+    ],
+    "attributes": {
+      "tags": [
+        "batch:TagResource",
+        "batch:UntagResource"
+      ]
+    },
+    "destroy": [
+      "batch:DeregisterJobDefinition"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

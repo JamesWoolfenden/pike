@@ -46,14 +46,6 @@
 ./resource.ps1 aws_backup_vault_notifications
 ./resource.ps1 aws_backup_vault_policy
 
-./resource.ps1 aws_batch_compute_environment
-./resource.ps1 aws_batch_compute_environment
-./resource.ps1 aws_batch_job_definition
-./resource.ps1 aws_batch_job_definition
-./resource.ps1 aws_batch_job_queue
-./resource.ps1 aws_batch_job_queue
-./resource.ps1 aws_batch_scheduling_policy
-
 ./resource.ps1 aws_budgets_budget_action
 
 ./resource.ps1 aws_ce_anomaly_monitor

@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "batch:CreateJobQueue",
+      "batch:UpdateJobQueue",
+      "batch:DeleteJobQueue",
+      "batch:DescribeJobQueues",
+      "batch:DescribeSchedulingPolicies"
+    ],
+    "attributes": {
+      "tags": [
+        "batch:TagResource",
+        "batch:UntagResource"
+      ]
+    },
+    "destroy": [
+      "batch:DeleteJobQueue"
+    ],
+    "modify": [
+      "batch:UpdateJobQueue"
+    ],
+    "plan": []
+  }
+]
