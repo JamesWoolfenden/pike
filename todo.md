@@ -133,9 +133,6 @@
 ./resource.ps1 aws_ec2_transit_gateway_route_table
 ./resource.ps1 aws_ec2_transit_gateway_vpc_attachment
 
-./resource.ps1 aws_ecr_repository_policy
-./resource.ps1 aws_ecr_repository_policy
-./resource.ps1 aws_ecr_repository_policy
 ./resource.ps1 aws_ecrpublic_repository
 
 ./resource.ps1 aws_egress_only_internet_gateway

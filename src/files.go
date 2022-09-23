@@ -672,3 +672,6 @@ var awsBatchJobQueue []byte
 
 //go:embed mapping/aws/resource/batch/aws_batch_scheduling_policy.json
 var awsBatchSchedulingPolicy []byte
+
+//go:embed mapping/aws/resource/ecr/aws_ecr_repository_policy.json
+var awsEcrRepositoryPolicy []byte

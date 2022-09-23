@@ -274,6 +274,7 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_batch_job_definition":                           awsBatchJobDefinition,
 		"aws_batch_job_queue":                                awsBatchJobQueue,
 		"aws_batch_scheduling_policy":                        awsBatchSchedulingPolicy,
+		"aws_ecr_repository_policy":                          awsEcrRepositoryPolicy,
 	}
 
 	var Permissions []string

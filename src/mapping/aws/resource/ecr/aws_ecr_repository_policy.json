@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "ecr:SetRepositoryPolicy",
+      "ecr:GetRepositoryPolicy",
+      "ecr:DeleteRepositoryPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "ecr:DeleteRepositoryPolicy"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]
