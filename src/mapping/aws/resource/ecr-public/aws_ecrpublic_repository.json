@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "ecr-public:CreateRepository",
+      "ecr-public:ListTagsForResource",
+      "ec2:DescribeAccountAttributes",
+      "ecr-public:DeleteRepository"
+    ],
+    "attributes": {
+      "tags": [
+        "ecr-public:UntagResource",
+        "ecr-public:TagResource"
+      ]
+    },
+    "destroy": [
+      "ecr-public:DeleteRepository"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -675,3 +675,6 @@ var awsBatchSchedulingPolicy []byte
 
 //go:embed mapping/aws/resource/ecr/aws_ecr_repository_policy.json
 var awsEcrRepositoryPolicy []byte
+
+//go:embed mapping/aws/resource/ecr-public/aws_ecrpublic_repository.json
+var awsEcrPublicRepository []byte
