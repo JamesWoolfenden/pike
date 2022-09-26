@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "ec2:DeleteDhcpOptions",
+      "ec2:DescribeDhcpOptions",
+      "ec2:CreateDhcpOptions"
+    ],
+    "attributes": {
+      "tags": [
+        "ec2:CreateTags",
+        "ec2:DeleteTags"
+      ]
+    },
+    "destroy": [
+      "ec2:DeleteDhcpOptions"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

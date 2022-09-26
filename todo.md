@@ -135,8 +135,6 @@
 
 ./resource.ps1 aws_ecrpublic_repository
 
-./resource.ps1 aws_egress_only_internet_gateway
-
 ./resource.ps1 aws_eks_addon
 ./resource.ps1 aws_eks_cluster
 ./resource.ps1 aws_eks_fargate_profile
@@ -260,17 +258,6 @@
 
 ./resource.ps1 aws_ssoadmin_permission_set
 ./resource.ps1 aws_ssoadmin_permission_set_inline_policy
-
-./resource.ps1 aws_vpc_dhcp_options
-./resource.ps1 aws_vpc_dhcp_options_association
-./resource.ps1 aws_vpc_endpoint_service
-./resource.ps1 aws_vpc_ipv4_cidr_block_association
-./resource.ps1 aws_vpc_peering_connection
-./resource.ps1 aws_vpc_peering_connection_accepter
-./resource.ps1 aws_vpc_peering_connection_options
-
-./resource.ps1 aws_vpn_gateway_attachment
-./resource.ps1 aws_vpn_gateway_route_propagation
 
 ./resource.ps1 aws_waf_ipset
 ./resource.ps1 aws_waf_rule

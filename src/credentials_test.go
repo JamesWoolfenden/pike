@@ -1,0 +1,88 @@
+//go:build auth
+// +build auth
+
+package pike
+
+import (
+	"reflect"
+	"strings"
+	"testing"
+
+	"github.com/aws/aws-sdk-go/service/sts"
+)
+
+func Test_getAWSCredentails(t *testing.T) {
+	type args struct {
+		IAMRole string
+	}
+	arn := "arn:aws:sts::680235478471:assumed-role/terraform_pike_20220924074025950900000002/testAssumeRoleSession"
+	assumeroleid := "AROAZ4YJRVXDRTVF6YDQI:testAssumeRoleSession"
+	find := &sts.AssumedRoleUser{Arn: &arn, AssumedRoleId: &assumeroleid}
+
+	tests := []struct {
+		name    string
+		args    args
+		want    *sts.AssumedRoleUser
+		wantErr bool
+	}{
+		{"pass", args{"arn:aws:iam::680235478471:role/terraform_pike_20220924074025950900000002"}, find, false},
+		{"denied", args{"arn:aws:iam::123456789012:role/demo"}, nil, true},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			got, err := getAWSCredentials(tt.args.IAMRole)
+			if (err != nil) != tt.wantErr {
+				t.Errorf("getAWSCredentails() error = %v, wantErr %v", err, tt.wantErr)
+				return
+			}
+			if tt.want == nil {
+				if got != nil {
+					t.Errorf("getAWSCredentails() = %v, want %v", got, tt.want)
+				}
+				return
+			}
+			if !reflect.DeepEqual(got.AssumedRoleUser, tt.want) {
+				t.Errorf("getAWSCredentails() = %v, want %v", got.AssumedRoleUser, tt.want)
+			}
+		})
+	}
+}
+
+func Test_setAWSAuth(t *testing.T) {
+	type args struct {
+		iamRole string
+	}
+
+	arghh := "User: arn:aws:iam::680235478471:user/jameswoolfenden is not authorized to perform: sts:AssumeRole on resource: arn:aws:iam::123456789012:role/demo"
+	//myErr := awserr.NewRequestFailure(arghh, 403, "")
+	tests := []struct {
+		name string
+		args args
+		want *string
+	}{
+		{"pass", args{"arn:aws:iam::680235478471:role/terraform_pike_20220924074025950900000002"}, nil},
+		{"denied", args{"arn:aws:iam::123456789012:role/demo"}, &arghh},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			//could inherit temp set from before
+			unSetAWSAuth()
+			got := setAWSAuth(tt.args.iamRole)
+
+			if tt.want == nil && got != nil {
+				t.Errorf("setAWSAuth() = %v, want %v", got, tt.want)
+				return
+			}
+
+			if !(tt.want == nil && got == nil) {
+				wanted := tt.want
+				gotten := got.Error()
+
+				if !strings.Contains(gotten, *wanted) {
+					t.Errorf("setAWSAuth() = %v, want %v", gotten, *wanted)
+					return
+				}
+			}
+		})
+	}
+}

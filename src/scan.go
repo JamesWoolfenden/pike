@@ -72,23 +72,22 @@ func WriteOutput(OutPolicy OutputPolicy, output, location string) error {
 }
 
 // Init can download and install terraform if required and then terraform init your specified directory
-func Init(dirName string) (string, []string, error) {
+func Init(dirName string) (*string, []string, error) {
 
 	tfPath, err := LocateTerraform()
 	if err != nil {
-		return "", nil, err
+		return nil, nil, err
 	}
 
 	tf, err := tfexec.NewTerraform(dirName, tfPath)
 
 	if err != nil {
-		return "", nil, err
+		return nil, nil, err
 	}
 
 	err = tf.Init(context.Background(), tfexec.Upgrade(true))
 	if err != nil {
-
-		return "", nil, err
+		return nil, nil, err
 	}
 
 	log.Printf("terraform init at %s\n", dirName)
@@ -104,10 +103,10 @@ func Init(dirName string) (string, []string, error) {
 	}
 
 	if err != nil {
-		return tfPath, nil, err
+		return &tfPath, nil, err
 	}
 
-	return tfPath, found, err
+	return &tfPath, found, err
 }
 
 // LocateTerraform finds the Terraform executable or installs it

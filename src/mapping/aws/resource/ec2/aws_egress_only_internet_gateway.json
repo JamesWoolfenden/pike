@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "ec2:CreateEgressOnlyInternetGateway",
+      "ec2:DescribeEgressOnlyInternetGateways",
+      "ec2:DeleteEgressOnlyInternetGateway"
+    ],
+    "attributes": {
+      "tags": [
+        "ec2:CreateTags",
+        "ec2:DeleteTags"
+      ]
+    },
+    "destroy": [
+      "ec2:DeleteEgressOnlyInternetGateway"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

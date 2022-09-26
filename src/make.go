@@ -2,7 +2,7 @@ package pike
 
 import (
 	"context"
-	"fmt"
+	"errors"
 	"log"
 	"path/filepath"
 
@@ -10,7 +10,7 @@ import (
 )
 
 // Make creats the required role
-func Make(directory string) error {
+func Make(directory string) (*string, error) {
 
 	err := Scan(
 		directory,
@@ -20,44 +20,76 @@ func Make(directory string) error {
 		true,
 	)
 	if err != nil {
-		return err
+		return nil, err
+	}
+
+	directory, err = filepath.Abs(directory)
+	if err != nil {
+		return nil, err
 	}
 
 	policyPath, err := filepath.Abs(directory + "./.pike/")
 	if err != nil {
-		return err
+		return nil, err
 	}
 
-	tfPath, err := LocateTerraform()
-	if err != nil {
-		return err
-	}
-
-	tf, err := tfexec.NewTerraform(policyPath, tfPath)
-	if err != nil {
-		return err
-	}
-
-	err = tf.Init(context.Background(), tfexec.Upgrade(true))
-	if err != nil {
-		return err
-	}
-
-	err = tf.Apply(context.Background())
-	if err != nil {
-		return err
+	tf, err2 := tfApply(policyPath)
+	if err2 != nil {
+		return nil, err2
 	}
 
 	state, err := tf.Show(context.Background())
 	if err != nil {
-		return err
+		return nil, err
 	}
 
 	if (state.Values.Outputs["arn"]) != nil {
 		arn := state.Values.Outputs["arn"]
 		log.Printf("aws role create/updated %s", arn.Value.(string))
-		fmt.Print(arn.Value.(string))
+		role := arn.Value.(string)
+		return &role, nil
 	}
+
+	return nil, errors.New("no arn found in state")
+}
+
+func tfApply(policyPath string) (*tfexec.Terraform, error) {
+	tfPath, err := LocateTerraform()
+	if err != nil {
+		return nil, err
+	}
+
+	tf, err := tfexec.NewTerraform(policyPath, tfPath)
+	if err != nil {
+		return nil, err
+	}
+
+	err = tf.Init(context.Background(), tfexec.Upgrade(true))
+	if err != nil {
+		return nil, err
+	}
+
+	err = tf.Apply(context.Background())
+	if err != nil {
+		return nil, err
+	}
+	return tf, nil
+}
+
+// Apply  executes tf using prepared role
+func Apply(target string) error {
+	iamRole, _ := Make(target)
+	err := setAWSAuth(*iamRole)
+	if err != nil {
+		return err
+	}
+	_, err = tfApply(target)
+
+	if err != nil {
+		return err
+	}
+
+	unSetAWSAuth()
 
 	return nil
 }

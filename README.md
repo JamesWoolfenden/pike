@@ -26,9 +26,9 @@ Pike currently supports Terraform and can support multiple providers,
 So far I've added support for a larger number of AWS resources, but I have just added support for GCP.
 Feel free to submit PR or Issue, and then I'll take a look.
 
-**CAVEAT** The policies and roles are to get you started, there are no conditions and resources are all wildcards (for AWS) - this is definitely not best practice- you need will to modify these permissions to minimum required by adding these constrictions. 
+**CAVEAT** The policies and roles are to get you started, there are no conditions and resources are all wildcards (for AWS) - this is definitely not best practice- you need will to modify these permissions to minimum required by adding these constrictions.
 
-Ideally I would like to do this for you, but these policies are determined statically, and we would need to determine the resource names that will be created and know your intentions. 
+Ideally I would like to do this for you, but these policies are determined statically, and we would need to determine the resource names that will be created and know your intentions.
 
 ## Table of Contents
 

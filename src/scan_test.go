@@ -104,7 +104,7 @@ func TestInit(t *testing.T) {
 				t.Errorf("Init() error = %v, wantErr %v", err, tt.wantErr)
 				return
 			}
-			if got == "" {
+			if *got == "" {
 				t.Error("init should return new path to Terraform")
 			}
 			if !reflect.DeepEqual(modules, tt.want) {

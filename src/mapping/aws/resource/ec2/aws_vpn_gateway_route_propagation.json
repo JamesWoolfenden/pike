@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "ec2:EnableVgwRoutePropagation",
+      "ec2:DisableVgwRoutePropagation",
+      "ec2:DescribeVpnGateways"
+    ],
+    "attributes": {
+      "tags": [
+        "ec2:CreateTags",
+        "ec2:DeleteTags"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

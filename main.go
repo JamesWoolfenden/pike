@@ -22,7 +22,7 @@ func main() {
 	var autoAppend bool
 	var write bool
 
-	app := &cli.App{
+	var app = &cli.App{
 		EnableBashCompletion: true,
 		Flags: []cli.Flag{
 			&cli.StringFlag{
@@ -92,7 +92,17 @@ func main() {
 				Aliases: []string{"m"},
 				Usage:   "make the policy/role required for this IAC to deploy",
 				Action: func(*cli.Context) error {
-					return pike.Make(directory)
+					arn, err := pike.Make(directory)
+					log.Print(*arn)
+					return err
+				},
+			},
+			{
+				Name:    "apply",
+				Aliases: []string{"a"},
+				Usage:   "Create a Policy and use to instantiate the IAC",
+				Action: func(*cli.Context) error {
+					return pike.Apply(directory)
 				},
 			},
 			{
@@ -143,7 +153,6 @@ func main() {
 		Authors:  []*cli.Author{{Name: "James Woolfenden", Email: "support@bridgecrew.io"}},
 		Version:  pike.Version,
 	}
-
 	sort.Sort(cli.FlagsByName(app.Flags))
 	sort.Sort(cli.CommandsByName(app.Commands))
 

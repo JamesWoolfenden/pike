@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "ec2:AssociateVpcCidrBlock",
+      "ec2:DisassociateVpcCidrBlock",
+      "ec2:DescribeVpcs"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "ec2:DisassociateVpcCidrBlock"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

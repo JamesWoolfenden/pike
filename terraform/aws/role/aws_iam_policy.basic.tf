@@ -7,10 +7,37 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
+          "ec2:CreateVpnGateway",
+          #          "ec2:AttachVpnGateway",
+          "ec2:DescribeVpnGateways",
+          "ec2:DeleteVpnGateway",
+          #          "ec2:DetachVpnGateway",
+          "ec2:CreateTags",
+          "ec2:DeleteTags",
+          "ec2:DetachVpnGateway",
           "ec2:DescribeAccountAttributes",
-          "ecr:SetRepositoryPolicy",
-          "ecr:GetRepositoryPolicy",
-          "ecr:DeleteRepositoryPolicy"
+          #          "ec2:CreateRouteTable",
+          #          "ec2:DescribeRouteTables",
+          #          "ec2:DeleteRouteTable",
+          #          "ec2:CreateTags",
+          #          "ec2:DeleteTags",
+          #          "ec2:DeleteRouteTable",
+
+          #          "ec2:DescribeAccountAttributes",
+          #          "ec2:DescribeVpnGateways",
+          #          "ec2:EnableVgwRoutePropagation",
+          #          "ec2:DisableVgwRoutePropagation",
+          #          "ec2:CreateTags",
+          #          "ec2:DeleteTags",
+
+          #          "ec2:DescribeAccountAttributes",
+          #          "ec2:EnableVgwRoutePropagation",
+          #          "ec2:DisableVgwRoutePropagation",
+          "ec2:AttachVpnGateway",
+          "ec2:DetachVpnGateway",
+          "ec2:DescribeVpnGateways",
+          "ec2:CreateTags",
+          "ec2:DeleteTags",
         ]
         "Resource" : "*"
       }

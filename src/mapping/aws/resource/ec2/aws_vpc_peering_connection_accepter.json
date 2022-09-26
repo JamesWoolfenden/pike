@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeVpcPeeringConnections"
+    ],
+    "attributes": {
+      "tags": [
+        "ec2:CreateTags",
+        "ec2:DeleteTags"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
