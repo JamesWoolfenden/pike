@@ -13,8 +13,8 @@ import (
 )
 
 // Compare IAC codebase to AWS policy
-func Compare(directory string, arn string, init bool) error {
-
+func Compare(directory string, arn string, init bool) (bool, error) {
+	var theSame bool
 	// Load the Shared AWS Configuration (~/.aws/config)
 	cfg, err := config.LoadDefaultConfig(context.TODO())
 	if err != nil {
@@ -29,24 +29,20 @@ func Compare(directory string, arn string, init bool) error {
 	iacPolicy, err := MakePolicy(directory, "", init)
 
 	if err != nil {
-		return err
+		return theSame, err
 	}
 
 	Sorted, err := SortActions(iacPolicy.AWS.JSONOut)
 
 	if err != nil {
-		return err
+		return theSame, err
 	}
 
 	// iam versus iac
 	fmt.Printf("IAM Policy %s versus Local %s \n", arn, directory)
-	_, err = CompareIAMPolicy(Policy, Sorted)
+	theSame, err = CompareIAMPolicy(Policy, Sorted)
 
-	if err != nil {
-		return err
-	}
-
-	return nil
+	return theSame, err
 }
 
 // CompareIAMPolicy takes to IAm policies and compares
@@ -80,6 +76,7 @@ func CompareIAMPolicy(Policy string, OldPolicy string) (bool, error) {
 		}
 
 		fmt.Print(diffString)
+
 		return false, nil
 	}
 

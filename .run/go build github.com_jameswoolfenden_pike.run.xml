@@ -2,7 +2,7 @@
   <configuration default="false" name="go build github.com/jameswoolfenden/pike" type="GoApplicationRunConfiguration" factoryName="Go Application" nameIsGenerated="true">
     <module name="pike" />
     <working_directory value="$PROJECT_DIR$" />
-    <parameters value="-d ..\modules\aws\terraform-aws-s3\example\examplea\ apply" />
+    <parameters value="-d terraform/aws/backup scan" />
     <EXTENSION ID="net.ashald.envfile">
       <option name="IS_ENABLED" value="false" />
       <option name="IS_SUBST" value="false" />

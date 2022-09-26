@@ -118,7 +118,9 @@ func main() {
 				Aliases: []string{"c"},
 				Usage:   "policy comparison of deployed versus IAC",
 				Action: func(*cli.Context) error {
-					return pike.Compare(directory, arn, init)
+					theSame, err := pike.Compare(directory, arn, init)
+					log.Print("The same: ", theSame)
+					return err
 				},
 			},
 			{

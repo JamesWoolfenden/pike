@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-exec/tfexec"
 )
 
-// Make creats the required role
+// Make creates the required role
 func Make(directory string) (*string, error) {
 
 	err := Scan(
@@ -28,7 +28,7 @@ func Make(directory string) (*string, error) {
 		return nil, err
 	}
 
-	policyPath, err := filepath.Abs(directory + "./.pike/")
+	policyPath, err := filepath.Abs(directory + "/.pike/")
 	if err != nil {
 		return nil, err
 	}
@@ -78,18 +78,19 @@ func tfApply(policyPath string) (*tfexec.Terraform, error) {
 
 // Apply  executes tf using prepared role
 func Apply(target string) error {
-	iamRole, _ := Make(target)
-	err := setAWSAuth(*iamRole)
+	iamRole, err := Make(target)
+
+	if err != nil {
+		return err
+	}
+
+	err = setAWSAuth(*iamRole)
 	if err != nil {
 		return err
 	}
 	_, err = tfApply(target)
 
-	if err != nil {
-		return err
-	}
-
 	unSetAWSAuth()
 
-	return nil
+	return err
 }

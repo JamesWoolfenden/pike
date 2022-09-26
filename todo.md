@@ -133,8 +133,6 @@
 ./resource.ps1 aws_ec2_transit_gateway_route_table
 ./resource.ps1 aws_ec2_transit_gateway_vpc_attachment
 
-./resource.ps1 aws_ecrpublic_repository
-
 ./resource.ps1 aws_eks_addon
 ./resource.ps1 aws_eks_cluster
 ./resource.ps1 aws_eks_fargate_profile
@@ -189,9 +187,6 @@
 ./resource.ps1 aws_lightsail_key_pair
 ./resource.ps1 aws_lightsail_static_ip
 ./resource.ps1 aws_lightsail_static_ip_attachment
-
-./resource.ps1 aws_memorydb_cluster
-./resource.ps1 aws_memorydb_snapshot
 
 ./resource.ps1 aws_neptune_cluster
 ./resource.ps1 aws_neptune_cluster_endpoint

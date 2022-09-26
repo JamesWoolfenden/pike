@@ -37,6 +37,7 @@ require (
 	github.com/zclconf/go-cty v1.10.0 // indirect
 	golang.org/x/crypto v0.0.0-20220517005047-85d78b3ac167 // indirect
 	golang.org/x/text v0.3.7 // indirect
+	gopkg.in/yaml.v2 v2.4.0 // indirect
 )
 
 require (

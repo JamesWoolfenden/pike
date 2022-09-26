@@ -678,3 +678,33 @@ var awsEcrRepositoryPolicy []byte
 
 //go:embed mapping/aws/resource/ecr-public/aws_ecrpublic_repository.json
 var awsEcrPublicRepository []byte
+
+//go:embed mapping/aws/resource/ec2/aws_egress_only_internet_gateway.json
+var awsEgressOnlyInternetGateway []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpc_dhcp_options.json
+var awsVpcDhcpOptions []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpc_dhcp_options_association.json
+var awsVpcDhcpOptionsAssociation []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpc_endpoint_service.json
+var awsVpcEndpointService []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpc_ipv4_cidr_block_association.json
+var awsVpcIpv4CidrBlockAssociation []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpc_peering_connection.json
+var awsVpcPeeringConnection []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpc_peering_connection_accepter.json
+var awsVpcPeeringConnectionAccepter []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpc_peering_connection_options.json
+var awsVpcPeeringConnectionOptions []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpn_gateway_attachment.json
+var awsVpnGatewayAttachment []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpn_gateway_route_propagation.json
+var awsVpnGatewayRoutePropagation []byte
