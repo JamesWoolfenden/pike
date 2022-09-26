@@ -708,3 +708,9 @@ var awsVpnGatewayAttachment []byte
 
 //go:embed mapping/aws/resource/ec2/aws_vpn_gateway_route_propagation.json
 var awsVpnGatewayRoutePropagation []byte
+
+//go:embed mapping/aws/resource/memorydb/aws_memorydb_cluster.json
+var awsMemorydbCluster []byte
+
+//go:embed mapping/aws/resource/memorydb/aws_memorydb_snapshot.json
+var awsmemorydbSnapshot []byte

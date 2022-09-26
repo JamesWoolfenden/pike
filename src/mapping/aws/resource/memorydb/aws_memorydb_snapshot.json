@@ -1,13 +1,13 @@
 [
   {
     "apply": [
-      "rds:CreateDBClusterSnapshot",
-      "rds:DescribeDBClusterSnapshots",
-      "rds:ListTagsForResource",
-      "rds:DeleteDBClusterSnapshot"
+      "memorydb:CreateSnapshot",
+      "memorydb:DescribeSnapshots",
+      "memorydb:DeleteSnapshot",
+      "memorydb:ListTags"
     ],
     "attributes": {
-      "kms_key_id": [
+      "kms_key_arn": [
         "kms:Decrypt",
         "kms:Encrypt",
         "kms:GenerateDataKey",
@@ -15,12 +15,12 @@
         "kms:CreateGrant"
       ],
       "tags": [
-        "rds:AddTagsToResource",
-        "rds:RemoveTagsFromResource"
+        "memorydb:TagResource",
+        "memorydb:UntagResource"
       ]
     },
     "destroy": [
-      "rds:DeleteDBClusterSnapshot"
+      "memorydb:DeleteSnapshot"
     ],
     "modify": [],
     "plan": []

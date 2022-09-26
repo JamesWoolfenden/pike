@@ -5,15 +5,22 @@ import (
 )
 
 // GetGCPPermissions for GCP resources
-func GetGCPPermissions(result ResourceV2) []string {
+func GetGCPPermissions(result ResourceV2) ([]string, error) {
+	var err error
 	var Permissions []string
 	if result.TypeName == "resource" {
-		Permissions, _ = GetGCPResourcePermissions(result)
+		Permissions, err = GetGCPResourcePermissions(result)
+		if err != nil {
+			return Permissions, err
+		}
 	} else {
-		Permissions, _ = GetGCPDataPermissions(result)
+		Permissions, err = GetGCPDataPermissions(result)
+		if err != nil {
+			return Permissions, err
+		}
 	}
 
-	return Permissions
+	return Permissions, err
 }
 
 // GetGCPResourcePermissions looks up permissions required for resources

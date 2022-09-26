@@ -148,7 +148,7 @@ func GetPermission(result ResourceV2) (Sorted, error) {
 		log.Printf("Provider %s not yet implemented", result.Provider)
 		return myPermission, nil
 	case "gcp", "google":
-		myPermission.GCP = GetGCPPermissions(result)
+		myPermission.GCP, err = GetGCPPermissions(result)
 		if err != nil {
 			log.Print(err)
 		}

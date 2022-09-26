@@ -286,6 +286,8 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_vpc_peering_connection_options":                 awsVpcPeeringConnectionOptions,
 		"aws_vpn_gateway_attachment":                         awsVpnGatewayAttachment,
 		"aws_vpn_gateway_route_propagation":                  awsVpnGatewayRoutePropagation,
+		"aws_memorydb_cluster":                               awsMemorydbCluster,
+		"aws_memorydb_snapshot":                              awsmemorydbSnapshot,
 	}
 
 	var Permissions []string

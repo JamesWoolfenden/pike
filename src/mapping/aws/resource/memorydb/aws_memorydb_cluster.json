@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "memorydb:CreateCluster",
+      "memorydb:DescribeClusters",
+      "memorydb:DeleteCluster",
+      "memorydb:ListTags"
+    ],
+    "attributes": {
+      "tags": [
+        "memorydb:TagResource",
+        "memorydb:UntagResource"
+      ]
+    },
+    "destroy": [
+      "memorydb:DeleteCluster"
+    ],
+    "modify": [
+      "memorydb:UpdateCluster"
+    ],
+    "plan": []
+  }
+]

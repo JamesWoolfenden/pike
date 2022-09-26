@@ -11,7 +11,7 @@ import (
 	"github.com/aws/aws-sdk-go/service/sts"
 )
 
-func Test_getAWSCredentails(t *testing.T) {
+func Test_getAWSCredentials(t *testing.T) {
 	type args struct {
 		IAMRole string
 	}
