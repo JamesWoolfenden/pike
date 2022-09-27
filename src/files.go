@@ -715,6 +715,9 @@ var awsMemorydbCluster []byte
 //go:embed mapping/aws/resource/memorydb/aws_memorydb_snapshot.json
 var awsMemorydbSnapshot []byte
 
+//go:embed mapping/aws/resource/ec2/aws_customer_gateway.json
+var awsCustomerGateway []byte
+
 //go:embed mapping/aws/resource/fsx/aws_fsx_openzfs_file_system.json
 var awsFsxOpenzfsFileSystem []byte
 
