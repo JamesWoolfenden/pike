@@ -1,0 +1,29 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "fsx:CreateFileSystem",
+      "iam:CreateServiceLinkedRole",
+      "fsx:DescribeFileSystems",
+      "fsx:DescribeVolumes",
+      "fsx:DeleteFileSystem"
+    ],
+    "attributes": {
+      "kms_key_id": [
+        "kms:DescribeKey",
+        "kms:CreateGrant"
+      ],
+      "tags": [
+        "fsx:TagResource",
+        "fsx:UntagResource"
+      ]
+    },
+    "destroy": [
+      "fsx:DeleteFileSystem"
+    ],
+    "modify": [
+      "fsx:UpdateFileSystem"
+    ],
+    "plan": []
+  }
+]

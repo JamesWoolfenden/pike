@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "fsx:CreateVolume",
+      "fsx:ListTagsForResource",
+      "fsx:DeleteVolume"
+    ],
+    "attributes": {
+      "tags": [
+        "fsx:TagResource",
+        "fsx:UntagResource"
+      ]
+    },
+    "destroy": [
+      "fsx:DeleteVolume"
+    ],
+    "modify": [
+      "fsx:UpdateVolume"
+    ],
+    "plan": []
+  }
+]

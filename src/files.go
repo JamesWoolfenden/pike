@@ -713,4 +713,13 @@ var awsVpnGatewayRoutePropagation []byte
 var awsMemorydbCluster []byte
 
 //go:embed mapping/aws/resource/memorydb/aws_memorydb_snapshot.json
-var awsmemorydbSnapshot []byte
+var awsMemorydbSnapshot []byte
+
+//go:embed mapping/aws/resource/fsx/aws_fsx_openzfs_file_system.json
+var awsFsxOpenzfsFileSystem []byte
+
+//go:embed mapping/aws/resource/fsx/aws_fsx_openzfs_volume.json
+var awsFsxOpenzfsVolume []byte
+
+//go:embed mapping/aws/resource/fsx/aws_fsx_openzfs_snapshot.json
+var awsFsxOpenzfsSnaphot []byte

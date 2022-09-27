@@ -100,7 +100,7 @@ func main() {
 			{
 				Name:    "apply",
 				Aliases: []string{"a"},
-				Usage:   "Create a Policy and use to instantiate the IAC",
+				Usage:   "Create a policy and use it to instantiate the IAC",
 				Action: func(*cli.Context) error {
 					return pike.Apply(directory)
 				},

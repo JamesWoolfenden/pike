@@ -7,27 +7,22 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "memorydb:CreateCluster",
-          "memorydb:DescribeClusters",
-          "memorydb:UpdateCluster",
-          "memorydb:DeleteCluster",
-          "memorydb:TagResource",
-          "memorydb:UntagResource",
-          "memorydb:ListTags",
+          "ec2:DescribeAccountAttributes",
+          "fsx:TagResource",
+          "fsx:UntagResource",
+          "fsx:CreateSnapshot",
+          "fsx:DescribeSnapshots",
+          "fsx:ListTagsForResource",
+          "fsx:DeleteSnapshot",
+          "fsx:UpdateSnapshot",
 
-          "memorydb:CreateSnapshot",
-          "memorydb:DescribeSnapshots",
-          "memorydb:DeleteSnapshot",
-          "memorydb:TagResource",
-          "memorydb:UntagResource",
-          "memorydb:ListTags",
-
-
-          "kms:Decrypt",
-          "kms:Encrypt",
-          "kms:GenerateDataKey",
-          "kms:DescribeKey",
-          "kms:CreateGrant"
+          "ec2:DescribeAccountAttributes",
+          "fsx:TagResource",
+          "fsx:UntagResource",
+          "fsx:CreateVolume",
+          "fsx:ListTagsForResource",
+          "fsx:DeleteVolume",
+          "fsx:UpdateVolume",
         ]
         "Resource" : "*"
       }

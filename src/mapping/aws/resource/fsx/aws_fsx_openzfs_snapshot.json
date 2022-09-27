@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "fsx:CreateSnapshot",
+      "fsx:DescribeSnapshots",
+      "fsx:ListTagsForResource",
+      "fsx:DeleteSnapshot"
+    ],
+    "attributes": {
+      "tags": [
+        "fsx:TagResource",
+        "fsx:UntagResource"
+      ]
+    },
+    "destroy": [
+      "fsx:DeleteSnapshot"
+    ],
+    "modify": [
+      "fsx:UpdateSnapshot"
+    ],
+    "plan": []
+  }
+]

@@ -287,7 +287,10 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_vpn_gateway_attachment":                         awsVpnGatewayAttachment,
 		"aws_vpn_gateway_route_propagation":                  awsVpnGatewayRoutePropagation,
 		"aws_memorydb_cluster":                               awsMemorydbCluster,
-		"aws_memorydb_snapshot":                              awsmemorydbSnapshot,
+		"aws_memorydb_snapshot":                              awsMemorydbSnapshot,
+		"aws_fsx_openzfs_file_system":                        awsFsxOpenzfsFileSystem,
+		"aws_fsx_openzfs_volume":                             awsFsxOpenzfsVolume,
+		"aws_fsx_openzfs_snapshot":                           awsFsxOpenzfsSnaphot,
 	}
 
 	var Permissions []string
