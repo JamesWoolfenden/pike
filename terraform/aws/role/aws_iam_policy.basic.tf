@@ -8,21 +8,23 @@ resource "aws_iam_policy" "basic" {
         "Effect" : "Allow",
         "Action" : [
           "ec2:DescribeAccountAttributes",
-          "fsx:TagResource",
-          "fsx:UntagResource",
-          "fsx:CreateSnapshot",
-          "fsx:DescribeSnapshots",
-          "fsx:ListTagsForResource",
-          "fsx:DeleteSnapshot",
-          "fsx:UpdateSnapshot",
+          "codedeploy:CreateApplication",
+          "codedeploy:GetApplication",
+          "codedeploy:ListTagsForResource",
+          "codedeploy:DeleteApplication",
+          "codedeploy:TagResource",
+          "codedeploy:UntagResource",
 
           "ec2:DescribeAccountAttributes",
-          "fsx:TagResource",
-          "fsx:UntagResource",
-          "fsx:CreateVolume",
-          "fsx:ListTagsForResource",
-          "fsx:DeleteVolume",
-          "fsx:UpdateVolume",
+          "codedeploy:CreateDeploymentConfig",
+          "codedeploy:GetDeploymentConfig",
+          "codedeploy:DeleteDeploymentConfig",
+
+          "ec2:DescribeAccountAttributes",
+          "codedeploy:CreateDeploymentGroup",
+          "codedeploy:GetDeploymentGroup",
+          "codedeploy:DeleteDeploymentGroup",
+          "iam:PassRole"
         ]
         "Resource" : "*"
       }

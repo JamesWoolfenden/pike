@@ -292,6 +292,9 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_fsx_openzfs_volume":                             awsFsxOpenzfsVolume,
 		"aws_fsx_openzfs_snapshot":                           awsFsxOpenzfsSnaphot,
 		"aws_fsx_openzfs_file_system":                        awsFsxOpenzfsFileSystem,
+		"aws_codedeploy_app":                                 awsCodedeployApp,
+		"aws_codedeploy_deployment_config":                   awsCodedeployDeploymentConfig,
+		"aws_codedeploy_deployment_group":                    awsCodedeployDeploymentGroup,
 	}
 
 	var Permissions []string

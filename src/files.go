@@ -726,3 +726,12 @@ var awsFsxOpenzfsVolume []byte
 
 //go:embed mapping/aws/resource/fsx/aws_fsx_openzfs_snapshot.json
 var awsFsxOpenzfsSnaphot []byte
+
+//go:embed mapping/aws/resource/codedeploy/aws_codedeploy_app.json
+var awsCodedeployApp []byte
+
+//go:embed mapping/aws/resource/codedeploy/aws_codedeploy_deployment_config.json
+var awsCodedeployDeploymentConfig []byte
+
+//go:embed mapping/aws/resource/codedeploy/aws_codedeploy_deployment_group.json
+var awsCodedeployDeploymentGroup []byte

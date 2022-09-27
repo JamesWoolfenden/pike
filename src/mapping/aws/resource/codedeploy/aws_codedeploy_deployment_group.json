@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "codedeploy:CreateDeploymentGroup",
+      "codedeploy:GetDeploymentGroup",
+      "codedeploy:DeleteDeploymentGroup",
+      "iam:PassRole"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "codedeploy:DeleteDeploymentGroup"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

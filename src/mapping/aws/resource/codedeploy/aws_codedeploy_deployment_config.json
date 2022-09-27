@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "codedeploy:CreateDeploymentConfig",
+      "codedeploy:GetDeploymentConfig",
+      "codedeploy:DeleteDeploymentConfig"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "codedeploy:DeleteDeploymentConfig"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

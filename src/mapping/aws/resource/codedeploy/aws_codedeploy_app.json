@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "codedeploy:CreateApplication",
+      "codedeploy:GetApplication",
+      "codedeploy:ListTagsForResource",
+      "codedeploy:DeleteApplication"
+    ],
+    "attributes": {
+      "tags": [
+        "codedeploy:TagResource",
+        "codedeploy:UntagResource"
+      ]
+    },
+    "destroy": [
+      "codedeploy:DeleteApplication"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

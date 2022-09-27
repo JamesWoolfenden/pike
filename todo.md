@@ -90,13 +90,6 @@
 ./resource.ps1 aws_cloudwatch_event_permission
 ./resource.ps1 aws_cloudwatch_metric_stream
 
-./resource.ps1 aws_codecommit_approval_rule_template
-./resource.ps1 aws_codecommit_approval_rule_template_association
-./resource.ps1 aws_codedeploy_app
-./resource.ps1 aws_codedeploy_deployment_group
-
-./resource.ps1 aws_customer_gateway
-
 ./resource.ps1 aws_dax_cluster
 ./resource.ps1 aws_db_event_subscription
 ./resource.ps1 aws_db_instance_automated_backups_replication
