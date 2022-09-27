@@ -288,6 +288,7 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_vpn_gateway_route_propagation":                  awsVpnGatewayRoutePropagation,
 		"aws_memorydb_cluster":                               awsMemorydbCluster,
 		"aws_memorydb_snapshot":                              awsmemorydbSnapshot,
+		"aws_customer_gateway":                               awsCustomerGateway,
 	}
 
 	var Permissions []string

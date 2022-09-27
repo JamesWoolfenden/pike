@@ -129,7 +129,6 @@
 ./resource.ps1 aws_ec2_traffic_mirror_session
 ./resource.ps1 aws_ec2_traffic_mirror_target
 ./resource.ps1 aws_ec2_transit_gateway
-./resource.ps1 aws_ec2_transit_gateway
 ./resource.ps1 aws_ec2_transit_gateway_route_table
 ./resource.ps1 aws_ec2_transit_gateway_vpc_attachment
 
@@ -140,8 +139,6 @@
 ./resource.ps1 aws_eks_node_group
 
 ./resource.ps1 aws_elastic_beanstalk_application_version
-./resource.ps1 aws_elastic_beanstalk_application_version
-./resource.ps1 aws_elastic_beanstalk_environment
 ./resource.ps1 aws_elastic_beanstalk_environment
 
 ./resource.ps1 aws_emr_cluster
@@ -247,9 +244,6 @@
 ./resource.ps1 aws_securityhub_product_subscription
 ./resource.ps1 aws_securityhub_standards_control
 ./resource.ps1 aws_securityhub_standards_subscription
-
-./resource.ps1 aws_sfn_activity
-./resource.ps1 aws_sfn_state_machine
 
 ./resource.ps1 aws_ssoadmin_permission_set
 ./resource.ps1 aws_ssoadmin_permission_set_inline_policy

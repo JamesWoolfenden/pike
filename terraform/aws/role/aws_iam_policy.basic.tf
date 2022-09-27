@@ -7,27 +7,12 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "memorydb:CreateCluster",
-          "memorydb:DescribeClusters",
-          "memorydb:UpdateCluster",
-          "memorydb:DeleteCluster",
-          "memorydb:TagResource",
-          "memorydb:UntagResource",
-          "memorydb:ListTags",
-
-          "memorydb:CreateSnapshot",
-          "memorydb:DescribeSnapshots",
-          "memorydb:DeleteSnapshot",
-          "memorydb:TagResource",
-          "memorydb:UntagResource",
-          "memorydb:ListTags",
-
-
-          "kms:Decrypt",
-          "kms:Encrypt",
-          "kms:GenerateDataKey",
-          "kms:DescribeKey",
-          "kms:CreateGrant"
+          "ec2:DescribeAccountAttributes",
+          "ec2:CreateCustomerGateway",
+          "ec2:DeleteCustomerGateway",
+          "ec2:DescribeCustomerGateways",
+          "ec2:CreateTags",
+          "ec2:DeleteTags"
         ]
         "Resource" : "*"
       }

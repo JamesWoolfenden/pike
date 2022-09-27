@@ -714,3 +714,6 @@ var awsMemorydbCluster []byte
 
 //go:embed mapping/aws/resource/memorydb/aws_memorydb_snapshot.json
 var awsmemorydbSnapshot []byte
+
+//go:embed mapping/aws/resource/ec2/aws_customer_gateway.json
+var awsCustomerGateway []byte

@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "ec2:CreateCustomerGateway",
+      "ec2:DeleteCustomerGateway",
+      "ec2:DescribeCustomerGateways"
+    ],
+    "attributes": {
+      "tags": [
+        "ec2:CreateTags",
+        "ec2:DeleteTags"
+      ]
+    },
+    "destroy": [
+      "ec2:DeleteCustomerGateway"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]
