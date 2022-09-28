@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "lightsail:CreateKeyPair",
+      "lightsail:GetKeyPair",
+      "lightsail:DeleteKeyPair",
+      "lightsail:GetOperation"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "lightsail:DeleteKeyPair"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

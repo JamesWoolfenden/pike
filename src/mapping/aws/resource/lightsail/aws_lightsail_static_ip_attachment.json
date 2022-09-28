@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "lightsail:AttachStaticIp",
+      "lightsail:DetachStaticIp",
+      "lightsail:ReleaseStaticIp"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

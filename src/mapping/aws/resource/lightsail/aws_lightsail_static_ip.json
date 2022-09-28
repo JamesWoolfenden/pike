@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "lightsail:GetStaticIp",
+      "lightsail:AllocateStaticIp"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

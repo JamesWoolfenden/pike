@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "lightsail:CreateInstances",
+      "lightsail:GetInstance",
+      "lightsail:DeleteInstance"
+    ],
+    "attributes": {
+      "tags": [
+        "lightsail:TagResource",
+        "lightsail:UntagResource"
+      ]
+    },
+    "destroy": [
+      "lightsail:DeleteInstance",
+      "lightsail:ReleaseStaticIp"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

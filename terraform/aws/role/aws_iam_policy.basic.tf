@@ -8,17 +8,31 @@ resource "aws_iam_policy" "basic" {
         "Effect" : "Allow",
         "Action" : [
 
-
-
-
           "ec2:DescribeAccountAttributes",
-          "network-firewall:UpdateLoggingConfiguration",
-          "network-firewall:DescribeLoggingConfiguration",
-          "logs:ListLogDeliveries",
-          "logs:CreateLogDelivery",
-          "logs:GetLogDelivery",
-          "logs:DeleteLogDelivery"
+          "lightsail:CreateInstances",
+          "lightsail:TagResource",
+          "lightsail:UntagResource",
+          "lightsail:GetInstance",
 
+          "lightsail:DeleteInstance",
+          "lightsail:ReleaseStaticIp",
+
+          "lightsail:CreateKeyPair",
+          "lightsail:GetKeyPair",
+          "lightsail:DeleteKeyPair",
+          "lightsail:GetOperation",
+
+          "lightsail:PutInstancePublicPorts",
+          "lightsail:GetInstancePortStates",
+          "lightsail:CloseInstancePublicPorts",
+
+          "lightsail:GetStaticIp",
+          "lightsail:AllocateStaticIp",
+
+
+          "lightsail:AttachStaticIp",
+          "lightsail:DetachStaticIp",
+          "lightsail:ReleaseStaticIp"
         ]
         "Resource" : "*"
       }
