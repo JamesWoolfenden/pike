@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "network-firewall:UpdateLoggingConfiguration",
+      "network-firewall:DescribeLoggingConfiguration",
+      "logs:ListLogDeliveries",
+      "logs:CreateLogDelivery",
+      "logs:GetLogDelivery",
+      "logs:DeleteLogDelivery"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "logs:DeleteLogDelivery"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

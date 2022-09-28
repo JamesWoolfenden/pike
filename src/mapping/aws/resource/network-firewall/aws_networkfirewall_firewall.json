@@ -1,0 +1,41 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "network-firewall:CreateFirewall",
+      "network-firewall:DeleteFirewall",
+      "network-firewall:DescribeFirewall",
+      "network-firewall:AssociateFirewallPolicy",
+      "iam:CreateServiceLinkedRole",
+      "ec2:DescribeSubnets",
+      "ec2:DescribeVpcs",
+      "ec2:CreateVpcEndpoint",
+      "ec2:DescribeVpcEndpoints"
+    ],
+    "attributes": {
+      "delete_protection": [
+        "network-firewall:UpdateFirewallDeleteProtection"
+      ],
+      "description": [
+        "network-firewall:UpdateFirewallDescription"
+      ],
+      "firewall_policy_change_protection": [
+        "network-firewall:UpdateFirewallPolicyChangeProtection"
+      ],
+      "subnet_change_protection": [
+        "network-firewall:UpdateSubnetChangeProtection"
+      ],
+      "tags": [
+        "network-firewall:TagResource",
+        "network-firewall:UntagResource"
+      ]
+    },
+    "destroy": [
+      "network-firewall:DeleteFirewall",
+      "ec2:DescribeRouteTables",
+      "ec2:DeleteVpcEndpoints"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

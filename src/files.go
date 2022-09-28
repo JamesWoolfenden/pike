@@ -735,3 +735,15 @@ var awsCodedeployDeploymentConfig []byte
 
 //go:embed mapping/aws/resource/codedeploy/aws_codedeploy_deployment_group.json
 var awsCodedeployDeploymentGroup []byte
+
+//go:embed mapping/aws/resource/network-firewall/aws_networkfirewall_firewall.json
+var awsNetworkfirewallFirewall []byte
+
+//go:embed mapping/aws/resource/network-firewall/aws_networkfirewall_firewall_policy.json
+var awsNetworkfirewallFirewallPolicy []byte
+
+//go:embed mapping/aws/resource/network-firewall/aws_networkfirewall_logging_configuration.json
+var awsNetworkfirewallLoggingConfiguration []byte
+
+//go:embed mapping/aws/resource/network-firewall/aws_networkfirewall_rule_group.json
+var awsNetworkfirewallRuleGroup []byte

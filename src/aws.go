@@ -295,6 +295,10 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_codedeploy_app":                                 awsCodedeployApp,
 		"aws_codedeploy_deployment_config":                   awsCodedeployDeploymentConfig,
 		"aws_codedeploy_deployment_group":                    awsCodedeployDeploymentGroup,
+		"aws_networkfirewall_firewall":                       awsNetworkfirewallFirewall,
+		"aws_networkfirewall_firewall_policy":                awsNetworkfirewallFirewallPolicy,
+		"aws_networkfirewall_logging_configuration":          awsNetworkfirewallLoggingConfiguration,
+		"aws_networkfirewall_rule_group":                     awsNetworkfirewallRuleGroup,
 	}
 
 	var Permissions []string

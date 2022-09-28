@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "network-firewall:ListRuleGroups",
+      "network-firewall:CreateFirewallPolicy",
+      "network-firewall:DescribeFirewallPolicy",
+      "network-firewall:DeleteFirewallPolicy"
+    ],
+    "attributes": {
+      "tags": [
+        "network-firewall:TagResource",
+        "network-firewall:UntagResource"
+      ]
+    },
+    "destroy": [
+      "network-firewall:DeleteFirewallPolicy"
+    ],
+    "modify": [
+      "network-firewall:UpdateFirewallPolicy"
+    ],
+    "plan": []
+  }
+]

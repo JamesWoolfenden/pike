@@ -187,11 +187,6 @@
 ./resource.ps1 aws_neptune_parameter_group
 ./resource.ps1 aws_neptune_subnet_group
 
-./resource.ps1 aws_networkfirewall_firewall
-./resource.ps1 aws_networkfirewall_firewall_policy
-./resource.ps1 aws_networkfirewall_logging_configuration
-./resource.ps1 aws_networkfirewall_rule_group
-
 ./resource.ps1 aws_organizations_organization
 ./resource.ps1 aws_organizations_policy
 ./resource.ps1 aws_organizations_policy_attachment

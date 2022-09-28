@@ -7,24 +7,18 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "ec2:DescribeAccountAttributes",
-          "codedeploy:CreateApplication",
-          "codedeploy:GetApplication",
-          "codedeploy:ListTagsForResource",
-          "codedeploy:DeleteApplication",
-          "codedeploy:TagResource",
-          "codedeploy:UntagResource",
+
+
+
 
           "ec2:DescribeAccountAttributes",
-          "codedeploy:CreateDeploymentConfig",
-          "codedeploy:GetDeploymentConfig",
-          "codedeploy:DeleteDeploymentConfig",
+          "network-firewall:UpdateLoggingConfiguration",
+          "network-firewall:DescribeLoggingConfiguration",
+          "logs:ListLogDeliveries",
+          "logs:CreateLogDelivery",
+          "logs:GetLogDelivery",
+          "logs:DeleteLogDelivery"
 
-          "ec2:DescribeAccountAttributes",
-          "codedeploy:CreateDeploymentGroup",
-          "codedeploy:GetDeploymentGroup",
-          "codedeploy:DeleteDeploymentGroup",
-          "iam:PassRole"
         ]
         "Resource" : "*"
       }
