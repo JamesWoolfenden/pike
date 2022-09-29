@@ -7,14 +7,13 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-
-
-
-
-          "ec2:DescribeAccountAttributes",
-          "ec2:DescribeTransitGatewayAttachments"
-
-
+          "medialive:CreateTags",
+          "medialive:DeleteTags",
+          "medialive:DescribeInputSecurityGroup",
+          "medialive:UpdateInputSecurityGroup",
+          "medialive:DeleteInputSecurityGroup",
+          "medialive:CreateInputSecurityGroup",
+          "medialive:ListTagsForResource"
         ]
         "Resource" : "*"
       }

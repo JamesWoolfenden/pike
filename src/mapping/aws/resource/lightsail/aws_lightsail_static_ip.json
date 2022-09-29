@@ -1,6 +1,9 @@
 [
   {
-    "apply": [],
+    "apply": [
+      "lightsail:GetStaticIp",
+      "lightsail:AllocateStaticIp"
+    ],
     "attributes": {
       "tags": []
     },

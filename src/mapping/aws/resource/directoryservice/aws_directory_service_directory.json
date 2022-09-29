@@ -3,6 +3,7 @@
     "apply": [
       "ds:CreateDirectory",
       "ds:DeleteDirectory",
+      "ds:DescribeDirectories",
       "ds:ListTagsForResource",
       "ec2:AuthorizeSecurityGroupEgress",
       "ec2:AuthorizeSecurityGroupIngress",

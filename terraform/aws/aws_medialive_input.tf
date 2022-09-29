@@ -1,1 +1,1 @@
-resource "aws_medialive_input" "pike" {}
+#resource "aws_medialive_input" "pike" {}

@@ -91,15 +91,6 @@
 ./resource.ps1 aws_cloudwatch_metric_stream
 
 ./resource.ps1 aws_dax_cluster
-./resource.ps1 aws_db_event_subscription
-./resource.ps1 aws_db_instance_automated_backups_replication
-./resource.ps1 aws_db_instance_role_association
-./resource.ps1 aws_db_proxy
-./resource.ps1 aws_db_proxy_default_target_group
-./resource.ps1 aws_db_proxy_endpoint
-./resource.ps1 aws_db_proxy_target
-./resource.ps1 aws_db_snapshot
-./resource.ps1 aws_db_snapshot_copy
 
 ./resource.ps1 aws_dms_replication_instance
 
@@ -137,10 +128,6 @@
 ./resource.ps1 aws_emr_cluster
 ./resource.ps1 aws_emr_security_configuration
 
-./resource.ps1 aws_fsx_openzfs_file_system
-./resource.ps1 aws_fsx_openzfs_snapshot
-./resource.ps1 aws_fsx_openzfs_volume
-
 ./resource.ps1 aws_grafana_license_association
 ./resource.ps1 aws_grafana_role_association
 ./resource.ps1 aws_grafana_workspace
@@ -172,9 +159,8 @@
 ./resource.ps1 aws_lightsail_container_service_deployment_version
 ./resource.ps1 aws_lightsail_database
 ./resource.ps1 aws_lightsail_domain
-./resource.ps1 aws_lightsail_instance
+
 ./resource.ps1 aws_lightsail_instance_public_ports
-./resource.ps1 aws_lightsail_key_pair
 ./resource.ps1 aws_lightsail_static_ip
 ./resource.ps1 aws_lightsail_static_ip_attachment
 
@@ -192,11 +178,7 @@
 ./resource.ps1 aws_organizations_policy_attachment
 
 ./resource.ps1 aws_s3_bucket_cors_configuration
-./resource.ps1 aws_s3_bucket_cors_configuration
 ./resource.ps1 aws_s3_bucket_replication_configuration
-./resource.ps1 aws_s3_bucket_replication_configuration
-./resource.ps1 aws_s3_bucket_replication_configuration
-./resource.ps1 aws_s3_bucket_website_configuration
 ./resource.ps1 aws_s3_bucket_website_configuration
 
 ./resource.ps1 aws_sagemaker_app
@@ -242,14 +224,8 @@
 ./resource.ps1 aws_wafregional_ipset
 ./resource.ps1 aws_wafregional_rule
 ./resource.ps1 aws_wafregional_web_acl
-./resource.ps1 aws_wafregional_web_acl
 ./resource.ps1 aws_wafv2_web_acl_association
 ./resource.ps1 aws_wafv2_web_acl_association
-./resource.ps1 aws_wafv2_web_acl_logging_configuration
-./resource.ps1 aws_wafv2_web_acl_logging_configuration
-./resource.ps1 aws_wafv2_web_acl_logging_configuration
-./resource.ps1 aws_wafv2_web_acl_logging_configuration
-./resource.ps1 aws_wafv2_web_acl_logging_configuration
 ./resource.ps1 aws_wafv2_web_acl_logging_configuration
 
 ./resource.ps1 aws_xray_encryption_config

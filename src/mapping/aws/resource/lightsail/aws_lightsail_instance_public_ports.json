@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "lightsail:PutInstancePublicPorts",
+      "lightsail:GetInstancePortStates"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "lightsail:CloseInstancePublicPorts"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

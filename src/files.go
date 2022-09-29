@@ -747,3 +747,18 @@ var awsNetworkfirewallLoggingConfiguration []byte
 
 //go:embed mapping/aws/resource/network-firewall/aws_networkfirewall_rule_group.json
 var awsNetworkfirewallRuleGroup []byte
+
+//go:embed mapping/aws/resource/lightsail/aws_lightsail_instance.json
+var awsLightsailInstance []byte
+
+//go:embed mapping/aws/resource/lightsail/aws_lightsail_instance_public_ports.json
+var awsLightsailInstancePublicPorts []byte
+
+//go:embed mapping/aws/resource/lightsail/aws_lightsail_key_pair.json
+var awsLightsailKeyPair []byte
+
+//go:embed mapping/aws/resource/lightsail/aws_lightsail_static_ip.json
+var awsLightsailStaticIP []byte
+
+//go:embed mapping/aws/resource/lightsail/aws_lightsail_static_ip_attachment.json
+var awsLightsailStaticIPAttachment []byte

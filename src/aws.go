@@ -299,6 +299,11 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_networkfirewall_firewall_policy":                awsNetworkfirewallFirewallPolicy,
 		"aws_networkfirewall_logging_configuration":          awsNetworkfirewallLoggingConfiguration,
 		"aws_networkfirewall_rule_group":                     awsNetworkfirewallRuleGroup,
+		"aws_lightsail_instance":                             awsLightsailInstance,
+		"aws_lightsail_instance_public_ports":                awsLightsailInstancePublicPorts,
+		"aws_lightsail_key_pair":                             awsLightsailKeyPair,
+		"aws_lightsail_static_ip":                            awsLightsailStaticIP,
+		"aws_lightsail_static_ip_attachment":                 awsLightsailStaticIPAttachment,
 	}
 
 	var Permissions []string
