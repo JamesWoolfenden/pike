@@ -12,12 +12,8 @@ resource "aws_iam_policy" "basic" {
 
 
           "ec2:DescribeAccountAttributes",
-          "network-firewall:UpdateLoggingConfiguration",
-          "network-firewall:DescribeLoggingConfiguration",
-          "logs:ListLogDeliveries",
-          "logs:CreateLogDelivery",
-          "logs:GetLogDelivery",
-          "logs:DeleteLogDelivery"
+          "ec2:DescribeTransitGatewayAttachments"
+
 
         ]
         "Resource" : "*"

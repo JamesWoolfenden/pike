@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "ec2:DescribeManagedPrefixLists",
+      "ec2:GetManagedPrefixListEntries"
+    ]
+  }
+]
