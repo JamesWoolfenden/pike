@@ -1,0 +1,36 @@
+[
+  {
+    "apply": [
+      "Kafka:CreateClusterV2",
+      "ec2:CreateVpcEndpoint",
+      "ec2:DeleteVpcEndpoints",
+      "ec2:DescribeSecurityGroups",
+      "ec2:DescribeSubnets",
+      "ec2:DescribeVpcAttribute",
+      "ec2:DescribeVpcEndpoints",
+      "ec2:DescribeVpcs",
+      "Kafka:DescribeClusterV2",
+      "Kafka:ListTagsForResource",
+      "Kafka:DeleteCluster",
+      "ec2:DeleteVpcEndpoints",
+      "ec2:DescribeVpcAttribute",
+      "ec2:DescribeVpcEndpoints"
+    ],
+    "attributes": {
+      "tags": [
+        "ec2:CreateTags",
+        "ec2:DeleteTags",
+        "Kafka:TagResource",
+        "Kafka:UntagResource"
+      ]
+    },
+    "destroy": [
+      "Kafka:DeleteCluster",
+      "ec2:DeleteVpcEndpoints",
+      "ec2:DescribeVpcAttribute",
+      "ec2:DescribeVpcEndpoints"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

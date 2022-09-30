@@ -94,6 +94,13 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 		"aws_iam_user_ssh_key":                      dataAwsIamUserSSHKey,
 		"aws_iam_users":                             dataAwsIamUsers,
 		"aws_sagemaker_prebuilt_ecr_image":          placeholder,
+		"aws_ec2_managed_prefix_list":               dataAwsEc2ManagedPrefixList,
+		"aws_ec2_network_insights_analysis":         dataAwsEc2NetworkInsightsAnalysis,
+		"aws_ec2_network_insights_path":             dataAwsEc2NetworkInsightsPath,
+		"aws_ec2_transit_gateway_attachment":        dataAwsEc2TransitGatewayAttachment,
+		"aws_location_tracker_association":          dataAwsLocationTrackerAssociation,
+		"aws_location_tracker_associations":         dataAwsLocationTrackerAssociations,
+		"aws_workspaces_bundle":                     dataAwsWorkspacesBundle,
 	}
 
 	var Permissions []string

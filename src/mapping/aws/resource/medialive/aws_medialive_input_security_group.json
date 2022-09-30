@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "medialive:DescribeInputSecurityGroup",
+      "medialive:UpdateInputSecurityGroup",
+      "medialive:DeleteInputSecurityGroup",
+      "medialive:CreateInputSecurityGroup",
+      "medialive:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "medialive:CreateTags",
+        "medialive:DeleteTags"
+      ]
+    },
+    "destroy": [
+      "medialive:DeleteInputSecurityGroup"
+    ],
+    "modify": [
+      "medialive:UpdateInputSecurityGroup"
+    ],
+    "plan": []
+  }
+]

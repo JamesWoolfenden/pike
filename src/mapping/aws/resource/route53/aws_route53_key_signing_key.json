@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "route53:CreateKeySigningKey",
+      "route53:DeactivateKeySigningKey",
+      "route53:DeleteKeySigningKey"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

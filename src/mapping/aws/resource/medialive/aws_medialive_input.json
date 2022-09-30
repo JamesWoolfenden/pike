@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "medialive:CreateInput",
+      "medialive:DescribeInput",
+      "medialive:UpdateInput",
+      "medialive:DeleteInput"
+    ],
+    "attributes": {
+      "tags": [
+        "medialive:CreateTags",
+        "medialive:DeleteTags"
+      ]
+    },
+    "destroy": [
+      "medialive:DeleteInput"
+    ],
+    "modify": [
+      "medialive:UpdateInput"
+    ],
+    "plan": []
+  }
+]

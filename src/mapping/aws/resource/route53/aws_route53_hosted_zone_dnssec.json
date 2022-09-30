@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "route53:GetChange",
+      "route53:GetDNSSEC",
+      "route53:EnableHostedZoneDNSSEC",
+      "route53:DisableHostedZoneDNSSEC"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

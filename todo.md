@@ -237,7 +237,6 @@ cloud_directory
 [//]: # (./resource.ps1 aws_db_instance -type data)
 ./resource.ps1 aws_acm_certificate -type data
 
-./resource.ps1 aws_sqs_queue_redrive_allow_policy
 ./resource.ps1 aws_sqs_queue_redrive_policy
 ./resource.ps1 aws_medialive_multiplex
 ./resource.ps1 aws_medialive_multiplex_program

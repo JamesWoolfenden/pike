@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "cloudfront:CreateOriginAccessControl",
+      "cloudfront:GetOriginAccessControl",
+      "cloudfront:DeleteOriginAccessControl"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "cloudfront:DeleteOriginAccessControl"
+    ],
+    "modify": [
+      "cloudfront:UpdateOriginAccessControl"
+    ],
+    "plan": []
+  }
+]

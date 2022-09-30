@@ -762,3 +762,33 @@ var awsLightsailStaticIP []byte
 
 //go:embed mapping/aws/resource/lightsail/aws_lightsail_static_ip_attachment.json
 var awsLightsailStaticIPAttachment []byte
+
+//go:embed mapping/aws/resource/medialive/aws_medialive_input.json
+var awsMedialiveInput []byte
+
+//go:embed mapping/aws/resource/medialive/aws_medialive_input_security_group.json
+var awsMedialiveInputSecurityGroup []byte
+
+//go:embed mapping/aws/resource/cloudfront/aws_cloudfront_origin_access_control.json
+var awsCloudfrontOriginAccessControl []byte
+
+//go:embed mapping/aws/resource/kafka/aws_msk_serverless_cluster.json
+var awsMskServerlessCluster []byte
+
+//go:embed mapping/aws/resource/route53/aws_route53_key_signing_key.json
+var awsRoute53KeySiginingKey []byte
+
+//go:embed mapping/aws/resource/route53/aws_route53_hosted_zone_dnssec.json
+var awsRoute53HostedZoneDnssec []byte
+
+//go:embed mapping/aws/resource/route53/aws_route53_query_log.json
+var awsRoute53QueryLog []byte
+
+//go:embed mapping/aws/resource/sagemaker/aws_sagemaker_endpoint_configuration.json
+var awsSagemakerEndpointConfiguration []byte
+
+//go:embed mapping/aws/resource/sagemaker/aws_sagemaker_model.json
+var awsSagemakerModel []byte
+
+//go:embed mapping/aws/resource/sqs/aws_sqs_queue_redrive_allow_policy.json
+var awsSqsQueueRedriveAllowPolicy []byte

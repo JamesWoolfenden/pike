@@ -304,6 +304,16 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_lightsail_key_pair":                             awsLightsailKeyPair,
 		"aws_lightsail_static_ip":                            awsLightsailStaticIP,
 		"aws_lightsail_static_ip_attachment":                 awsLightsailStaticIPAttachment,
+		"aws_medialive_input":                                awsMedialiveInput,
+		"aws_medialive_input_security_group":                 awsMedialiveInputSecurityGroup,
+		"aws_cloudfront_origin_access_control":               awsCloudfrontOriginAccessControl,
+		"aws_msk_serverless_cluster":                         awsMskServerlessCluster,
+		"aws_route53_key_signing_key":                        awsRoute53KeySiginingKey,
+		"aws_route53_hosted_zone_dnssec":                     awsRoute53HostedZoneDnssec,
+		"aws_route53_query_log":                              awsRoute53QueryLog,
+		"aws_sagemaker_endpoint_configuration":               awsSagemakerEndpointConfiguration,
+		"aws_sagemaker_model":                                awsSagemakerModel,
+		"aws_sqs_queue_redrive_allow_policy":                 awsSqsQueueRedriveAllowPolicy,
 	}
 
 	var Permissions []string

@@ -7,13 +7,10 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "medialive:CreateTags",
-          "medialive:DeleteTags",
-          "medialive:DescribeInputSecurityGroup",
-          "medialive:UpdateInputSecurityGroup",
-          "medialive:DeleteInputSecurityGroup",
-          "medialive:CreateInputSecurityGroup",
-          "medialive:ListTagsForResource"
+          "cloudfront:CreateOriginAccessControl",
+          "cloudfront:GetOriginAccessControl",
+          "cloudfront:DeleteOriginAccessControl",
+          "cloudfront:UpdateOriginAccessControl",
         ]
         "Resource" : "*"
       }
