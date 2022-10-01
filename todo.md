@@ -1,6 +1,5 @@
 # todo
 
-./resource.ps1 aws_amplify_app
 ./resource.ps1 aws_amplify_backend_environment
 ./resource.ps1 aws_amplify_branch
 ./resource.ps1 aws_amplify_domain_association
