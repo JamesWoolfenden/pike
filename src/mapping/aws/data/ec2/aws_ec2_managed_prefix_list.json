@@ -6,6 +6,9 @@
     },
     "destroy": [],
     "modify": [],
-    "plan": []
+    "plan": [
+      "ec2:DescribeManagedPrefixLists",
+      "ec2:GetManagedPrefixListEntries"
+    ]
   }
 ]

@@ -207,3 +207,24 @@ var dataAwsIamUserSSHKey []byte
 
 //go:embed mapping/aws/data/iam/aws_iam_users.json
 var dataAwsIamUsers []byte
+
+//go:embed mapping/aws/data/ec2/aws_ec2_managed_prefix_list.json
+var dataAwsEc2ManagedPrefixList []byte
+
+//go:embed mapping/aws/data/ec2/aws_ec2_network_insights_analysis.json
+var dataAwsEc2NetworkInsightsAnalysis []byte
+
+//go:embed mapping/aws/data/ec2/aws_ec2_network_insights_path.json
+var dataAwsEc2NetworkInsightsPath []byte
+
+//go:embed mapping/aws/data/ec2/aws_ec2_transit_gateway_attachment.json
+var dataAwsEc2TransitGatewayAttachment []byte
+
+//go:embed mapping/aws/data/geo/aws_location_tracker_association.json
+var dataAwsLocationTrackerAssociation []byte
+
+//go:embed mapping/aws/data/geo/aws_location_tracker_associations.json
+var dataAwsLocationTrackerAssociations []byte
+
+//go:embed mapping/aws/data/workspaces/aws_workspaces_bundle.json
+var dataAwsWorkspacesBundle []byte

@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "route53:CreateQueryLoggingConfig",
+      "logs:DescribeResourcePolicies",
+      "logs:ListTagsLogGroup",
+      "route53:GetQueryLoggingConfig"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "route53:DeleteQueryLoggingConfig"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

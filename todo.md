@@ -235,3 +235,24 @@ cloud_directory
 
 [//]: # (./resource.ps1 aws_db_instance -type data)
 ./resource.ps1 aws_acm_certificate -type data
+
+./resource.ps1 aws_sqs_queue_redrive_policy
+./resource.ps1 aws_medialive_multiplex
+./resource.ps1 aws_medialive_multiplex_program
+./resource.ps1 aws_redshiftserverless_usage_limit
+./resource.ps1 aws_ssoadmin_customer_managed_policy_attachment
+./resource.ps1 aws_redshiftserverless_endpoint_access
+./resource.ps1 aws_redshiftserverless_workgroup
+
+./resource.ps1 aws_ec2_network_insights_analysis
+./resource.ps1 aws_ec2_network_insights_path
+
+./resource.ps1 aws_ec2_transit_gateway_policy_table
+./resource.ps1 aws_ec2_transit_gateway_policy_table_association
+./resource.ps1 aws_networkmanager_transit_gateway_peering
+./resource.ps1 aws_networkmanager_transit_gateway_route_table_attachment
+
+./resource.ps1 aws_grafana_workspace_api_key
+
+./resource.ps1 aws_networkmanager_attachment_accepter
+./resource.ps1 aws_networkmanager_vpc_attachment
