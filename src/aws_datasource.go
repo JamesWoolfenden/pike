@@ -101,6 +101,7 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 		"aws_location_tracker_association":          dataAwsLocationTrackerAssociation,
 		"aws_location_tracker_associations":         dataAwsLocationTrackerAssociations,
 		"aws_workspaces_bundle":                     dataAwsWorkspacesBundle,
+		"aws_route_table":                           dataAwsRouteTable,
 	}
 
 	var Permissions []string
