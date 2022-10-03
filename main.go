@@ -21,6 +21,8 @@ func main() {
 	var init bool
 	var autoAppend bool
 	var write bool
+	var repository string
+	var owner string
 
 	var app = &cli.App{
 		EnableBashCompletion: true,
@@ -56,6 +58,12 @@ func main() {
 				Destination: &directory,
 			},
 			&cli.StringFlag{
+				Name:        "repository",
+				Aliases:     []string{"r"},
+				Usage:       "The github repository (to set secrets)",
+				Destination: &repository,
+			},
+			&cli.StringFlag{
 				Name:        "file",
 				Aliases:     []string{"f"},
 				Usage:       "File to scan",
@@ -68,6 +76,12 @@ func main() {
 				Value:       "terraform",
 				Destination: &output,
 				EnvVars:     []string{"OUTPUT"},
+			},
+			&cli.StringFlag{
+				Name:        "owner",
+				Aliases:     []string{"n"},
+				Usage:       "The Owner of the Github repo",
+				Destination: &owner,
 			},
 			&cli.StringFlag{
 				Name:        "arn",
@@ -103,6 +117,21 @@ func main() {
 				Usage:   "Create a policy and use it to instantiate the IAC",
 				Action: func(*cli.Context) error {
 					return pike.Apply(directory)
+				},
+			},
+			{
+				Name:    "remote",
+				Aliases: []string{"r"},
+				Usage:   "Create/Update the Policy and set credentials/secret for Github Action",
+
+				Action: func(*cli.Context) error {
+					if owner == "" {
+						log.Fatal("owner details required")
+					}
+					if repository == "" {
+						log.Fatal("repository must be set for Remote")
+					}
+					return pike.Remote(directory, owner, repository)
 				},
 			},
 			{

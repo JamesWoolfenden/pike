@@ -47,9 +47,8 @@ func TestGetResources(t *testing.T) {
 
 func Test_getLocalModules(t *testing.T) {
 	type args struct {
-		block     *hclsyntax.Block
-		dirName   string
-		Resources []ResourceV2
+		block   *hclsyntax.Block
+		dirName string
 	}
 
 	dirName, _ := filepath.Abs("../testdata/modules/examples/local")
@@ -68,7 +67,7 @@ func Test_getLocalModules(t *testing.T) {
 		wantErr bool
 	}{
 		{"local",
-			args{block, dirName, nil},
+			args{block, dirName},
 			[]ResourceV2{{
 				"resource",
 				"aws_s3_bucket",
@@ -76,12 +75,12 @@ func Test_getLocalModules(t *testing.T) {
 				"aws",
 				[]string{"name"}}},
 			false},
-		{"rubbish", args{duffBlock, duffName, nil}, nil, false},
-		{"notlocal", args{notBlock, notLocal, nil}, nil, false},
+		{"rubbish", args{duffBlock, duffName}, nil, false},
+		{"notlocal", args{notBlock, notLocal}, nil, false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got, err := getLocalModules(tt.args.block, tt.args.dirName, tt.args.Resources)
+			got, err := getLocalModules(tt.args.block, tt.args.dirName)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("getLocalModules() error = %v, wantErr %v", err, tt.wantErr)
 				return

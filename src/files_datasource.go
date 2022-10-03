@@ -228,3 +228,6 @@ var dataAwsLocationTrackerAssociations []byte
 
 //go:embed mapping/aws/data/workspaces/aws_workspaces_bundle.json
 var dataAwsWorkspacesBundle []byte
+
+//go:embed mapping/aws/data/ec2/aws_route_table.json
+var dataAwsRouteTable []byte

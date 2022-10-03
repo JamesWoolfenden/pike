@@ -314,6 +314,10 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_sagemaker_endpoint_configuration":               awsSagemakerEndpointConfiguration,
 		"aws_sagemaker_model":                                awsSagemakerModel,
 		"aws_sqs_queue_redrive_allow_policy":                 awsSqsQueueRedriveAllowPolicy,
+		"aws_sqs_queue_redrive_policy":                       awsSqsQueueRedrivePolicy,
+		"aws_grafana_workspace_api_key":                      awsGrafanaWorkspaceAPIKey,
+		"aws_ec2_transit_gateway_vpc_attachment":             awsEc2TransitGatewayVpcAttachment,
+		"aws_vpc_endpoint_route_table_association":           awsVpcEndpointRouteTableAssociation,
 	}
 
 	var Permissions []string

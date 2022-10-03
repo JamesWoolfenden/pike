@@ -107,7 +107,6 @@
 ./resource.ps1 aws_ec2_traffic_mirror_target
 ./resource.ps1 aws_ec2_transit_gateway
 ./resource.ps1 aws_ec2_transit_gateway_route_table
-./resource.ps1 aws_ec2_transit_gateway_vpc_attachment
 
 ./resource.ps1 aws_eks_addon
 ./resource.ps1 aws_eks_cluster
@@ -124,7 +123,6 @@
 ./resource.ps1 aws_grafana_license_association
 ./resource.ps1 aws_grafana_role_association
 ./resource.ps1 aws_grafana_workspace
-./resource.ps1 aws_grafana_workspace_api_key
 ./resource.ps1 aws_grafana_workspace_saml_configuration
 
 ./resource.ps1 aws_guardduty_detector
@@ -234,16 +232,15 @@
 
 ./resource.ps1 aws_medialive_multiplex
 ./resource.ps1 aws_medialive_multiplex_program
-./resource.ps1 aws_redshiftserverless_usage_limit
 ./resource.ps1 aws_ssoadmin_customer_managed_policy_attachment
 ./resource.ps1 aws_redshiftserverless_endpoint_access
 ./resource.ps1 aws_redshiftserverless_workgroup
-
+./resource.ps1 aws_ec2_network_insights_analysis
 ./resource.ps1 aws_ec2_transit_gateway_policy_table
 ./resource.ps1 aws_ec2_transit_gateway_policy_table_association
+
 ./resource.ps1 aws_networkmanager_transit_gateway_peering
 ./resource.ps1 aws_networkmanager_transit_gateway_route_table_attachment
-
 ./resource.ps1 aws_networkmanager_attachment_accepter
 ./resource.ps1 aws_networkmanager_vpc_attachment
 

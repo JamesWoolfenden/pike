@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeRouteTables"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

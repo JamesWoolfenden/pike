@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "sqs:SetQueueAttributes",
+      "sqs:GetQueueAttributes"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
