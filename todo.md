@@ -1,10 +1,5 @@
 # todo
 
-./resource.ps1 aws_amplify_backend_environment
-./resource.ps1 aws_amplify_branch
-./resource.ps1 aws_amplify_domain_association
-./resource.ps1 aws_amplify_webhook
-
 ./resource.ps1 aws_applicationinsights_application
 
 ./resource.ps1 aws_appmesh_gateway_route
@@ -69,7 +64,6 @@
 ./resource.ps1 aws_cloudfront_key_group
 ./resource.ps1 aws_cloudfront_monitoring_subscription
 ./resource.ps1 aws_cloudfront_origin_access_control
-./resource.ps1 aws_cloudfront_origin_access_identity
 ./resource.ps1 aws_cloudfront_origin_access_identity
 ./resource.ps1 aws_cloudfront_origin_request_policy
 ./resource.ps1 aws_cloudfront_public_key
@@ -230,13 +224,14 @@
 ./resource.ps1 aws_xray_encryption_config
 ./resource.ps1 aws_xray_group
 ./resource.ps1 aws_xray_sampling_rule
-beanstalk
-cloud_directory
+./resource.ps1 aws_eks_addon
+./resource.ps1 aws_eks_identity_provider_config
+./resource.ps1 aws_eks_fargate_profile
+./resource.ps1 aws_eks_node_group
 
 [//]: # (./resource.ps1 aws_db_instance -type data)
 ./resource.ps1 aws_acm_certificate -type data
 
-./resource.ps1 aws_sqs_queue_redrive_policy
 ./resource.ps1 aws_medialive_multiplex
 ./resource.ps1 aws_medialive_multiplex_program
 ./resource.ps1 aws_redshiftserverless_usage_limit
@@ -244,15 +239,16 @@ cloud_directory
 ./resource.ps1 aws_redshiftserverless_endpoint_access
 ./resource.ps1 aws_redshiftserverless_workgroup
 
-./resource.ps1 aws_ec2_network_insights_analysis
-./resource.ps1 aws_ec2_network_insights_path
-
 ./resource.ps1 aws_ec2_transit_gateway_policy_table
 ./resource.ps1 aws_ec2_transit_gateway_policy_table_association
 ./resource.ps1 aws_networkmanager_transit_gateway_peering
 ./resource.ps1 aws_networkmanager_transit_gateway_route_table_attachment
 
-./resource.ps1 aws_grafana_workspace_api_key
-
 ./resource.ps1 aws_networkmanager_attachment_accepter
 ./resource.ps1 aws_networkmanager_vpc_attachment
+
+./resource.ps1 aws_eks_addon not implemented
+./resource.ps1 aws_eks_identity_provider_config
+./resource.ps1 aws_eks_fargate_profile
+./resource.ps1 aws_eks_node_group
+./resource.ps1 aws_autoscaling_schedule

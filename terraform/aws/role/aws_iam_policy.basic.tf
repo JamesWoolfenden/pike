@@ -7,9 +7,29 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
+          "ec2:DescribeAccountAttributes",
           "Amplify:CreateApp",
           "Amplify:GetApp",
-          "Amplify:UpdateApp"
+          "Amplify:UpdateApp",
+          "Amplify:TagResource",
+          "Amplify:UntagResource",
+
+          "cloudformation:CreateChangeSet",
+          "cloudformation:CreateStack",
+          "cloudformation:DeleteStack",
+          "cloudformation:DescribeChangeSet",
+          "cloudformation:DescribeStackEvents",
+          "cloudformation:DescribeStackResource",
+          "cloudformation:DescribeStackResources",
+          "cloudformation:DescribeStacks",
+          "cloudformation:ExecuteChangeSet",
+          "cloudformation:GetTemplate",
+          "cloudformation:UpdateStack",
+          "cloudformation:ListStackResources",
+          "cloudformation:DeleteStackSet",
+          "cloudformation:DescribeStackSet",
+          "cloudformation:UpdateStackSet"
+
         ]
         "Resource" : "*"
       }
