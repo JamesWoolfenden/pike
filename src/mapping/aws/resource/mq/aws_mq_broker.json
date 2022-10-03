@@ -15,6 +15,9 @@
       "mq:DescribeUser"
     ],
     "attributes": {
+      "kms_key_id": [
+        "kms:CreateGrant"
+      ],
       "publicly_accessible": [
         "ec2:DescribeInternetGateways"
       ],
