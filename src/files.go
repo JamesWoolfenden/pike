@@ -793,6 +793,12 @@ var awsSagemakerModel []byte
 //go:embed mapping/aws/resource/sqs/aws_sqs_queue_redrive_allow_policy.json
 var awsSqsQueueRedriveAllowPolicy []byte
 
+//go:embed mapping/aws/resource/sqs/aws_sqs_queue_redrive_policy.json
+var awsSqsQueueRedrivePolicy []byte
+
+//go:embed mapping/aws/resource/grafana/aws_grafana_workspace_api_key.json
+var awsGrafanaWorkspaceAPIKey []byte
+
 //go:embed mapping/aws/resource/ec2/aws_ec2_transit_gateway_vpc_attachment.json
 var awsEc2TransitGatewayVpcAttachment []byte
 

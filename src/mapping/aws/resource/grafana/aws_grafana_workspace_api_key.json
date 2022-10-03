@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "grafana:CreateWorkspaceApiKey"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "grafana:DeleteWorkspaceApiKey"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

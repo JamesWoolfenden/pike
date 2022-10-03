@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "ec2:CreateNetworkInsightsPath",
+      "ec2:DescribeNetworkInsightsPaths",
+      "ec2:DeleteNetworkInsightsPath"
+    ],
+    "attributes": {
+      "tags": [
+        "ec2:CreateTags",
+        "ec2:DeleteTags"
+      ]
+    },
+    "destroy": [
+      "ec2:DeleteNetworkInsightsPath"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]
