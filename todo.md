@@ -114,7 +114,6 @@
 ./resource.ps1 aws_ec2_traffic_mirror_target
 ./resource.ps1 aws_ec2_transit_gateway
 ./resource.ps1 aws_ec2_transit_gateway_route_table
-./resource.ps1 aws_ec2_transit_gateway_vpc_attachment
 
 ./resource.ps1 aws_eks_addon
 ./resource.ps1 aws_eks_cluster
@@ -131,7 +130,6 @@
 ./resource.ps1 aws_grafana_license_association
 ./resource.ps1 aws_grafana_role_association
 ./resource.ps1 aws_grafana_workspace
-./resource.ps1 aws_grafana_workspace_api_key
 ./resource.ps1 aws_grafana_workspace_saml_configuration
 
 ./resource.ps1 aws_guardduty_detector
