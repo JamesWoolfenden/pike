@@ -5,6 +5,7 @@ import (
 	"errors"
 	"log"
 	"path/filepath"
+	"time"
 
 	"github.com/hashicorp/terraform-exec/tfexec"
 )
@@ -79,6 +80,7 @@ func tfApply(policyPath string) (*tfexec.Terraform, error) {
 // Apply  executes tf using prepared role
 func Apply(target string) error {
 	iamRole, err := Make(target)
+	time.Sleep(5 * time.Second)
 
 	if err != nil {
 		return err
@@ -86,6 +88,7 @@ func Apply(target string) error {
 
 	err = setAWSAuth(*iamRole)
 	if err != nil {
+		unSetAWSAuth()
 		return err
 	}
 	_, err = tfApply(target)

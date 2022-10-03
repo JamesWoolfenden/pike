@@ -30,7 +30,8 @@ func GetResources(file string, dirName string) ([]ResourceV2, error) {
 		}
 
 		if strings.Contains(resource.TypeName, "module") {
-			Resources, err = getLocalModules(block, dirName, Resources)
+			LocalResources, err := getLocalModules(block, dirName)
+			Resources = append(LocalResources, Resources...)
 			if err != nil {
 				log.Print(err)
 				continue
@@ -78,7 +79,8 @@ func GetResourceBlocks(file string) (*hclsyntax.Body, error) {
 	return parsedFile.Body.(*hclsyntax.Body), err
 }
 
-func getLocalModules(block *hclsyntax.Block, dirName string, Resources []ResourceV2) ([]ResourceV2, error) {
+func getLocalModules(block *hclsyntax.Block, dirName string) ([]ResourceV2, error) {
+	var Resources []ResourceV2
 	modulePath := GetModulePath(block)
 
 	_, err := os.Stat(modulePath)

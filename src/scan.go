@@ -142,7 +142,7 @@ func MakePolicy(dirName string, file string, init bool) (OutputPolicy, error) {
 			return Output, err
 		}
 		if init {
-			_, modules, err := Init(dirName)
+			_, modules, err := Init(fullPath)
 			if err != nil {
 				log.Printf("modules not found at %s", dirName)
 			}

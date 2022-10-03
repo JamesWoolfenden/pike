@@ -13,11 +13,13 @@ import (
 func getAWSCredentials(IAMRole string) (*sts.AssumeRoleOutput, error) {
 	mySession := session.Must(session.NewSession())
 	svc := sts.New(mySession)
+	duration := int64(900)
 	input := &sts.AssumeRoleInput{
 		ExternalId:      aws.String("123ABC"),
 		Policy:          nil,
 		RoleArn:         aws.String(IAMRole),
 		RoleSessionName: aws.String("testAssumeRoleSession"),
+		DurationSeconds: &duration,
 		Tags:            []*sts.Tag{},
 		TransitiveTagKeys: []*string{
 			aws.String("Project"),
