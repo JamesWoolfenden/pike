@@ -30,7 +30,7 @@ func Test_getAWSCredentials(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got, err := getAWSCredentials(tt.args.IAMRole)
+			got, err := getAWSCredentials(tt.args.IAMRole, "eu-west-2")
 			if (err != nil) != tt.wantErr {
 				t.Errorf("getAWSCredentails() error = %v, wantErr %v", err, tt.wantErr)
 				return

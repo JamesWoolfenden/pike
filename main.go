@@ -23,6 +23,7 @@ func main() {
 	var write bool
 	var repository string
 	var owner string
+	var region string
 
 	var app = &cli.App{
 		EnableBashCompletion: true,
@@ -62,6 +63,13 @@ func main() {
 				Aliases:     []string{"r"},
 				Usage:       "The github repository (to set secrets)",
 				Destination: &repository,
+			},
+			&cli.StringFlag{
+				Name:        "region",
+				Aliases:     []string{"g"},
+				Usage:       "The region",
+				DefaultText: "eu-west-2",
+				Destination: &region,
 			},
 			&cli.StringFlag{
 				Name:        "file",
@@ -116,7 +124,7 @@ func main() {
 				Aliases: []string{"a"},
 				Usage:   "Create a policy and use it to instantiate the IAC",
 				Action: func(*cli.Context) error {
-					return pike.Apply(directory)
+					return pike.Apply(directory, region)
 				},
 			},
 			{
@@ -131,7 +139,7 @@ func main() {
 					if repository == "" {
 						log.Fatal("repository must be set for Remote")
 					}
-					return pike.Remote(directory, owner, repository)
+					return pike.Remote(directory, owner, repository, region)
 				},
 			},
 			{

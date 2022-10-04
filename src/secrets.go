@@ -4,7 +4,8 @@ import (
 	"context"
 	"encoding/base64"
 	"fmt" //nolint:goimports
-	"os"  //nolint:goimports
+	"log"
+	"os" //nolint:goimports
 	"time"
 
 	"github.com/google/go-github/v47/github"
@@ -12,8 +13,8 @@ import (
 	"golang.org/x/oauth2"
 )
 
-// Remote updates a repo with AWS creds
-func Remote(target string, owner string, repository string) error {
+// Remote updates a repo with AWS credentials
+func Remote(target string, owner string, repository string, region string) error {
 	iamRole, err := Make(target)
 
 	time.Sleep(5 * time.Second)
@@ -22,13 +23,13 @@ func Remote(target string, owner string, repository string) error {
 		return err
 	}
 
-	credentials, err2 := getAWSCredentials(*iamRole)
+	Creds, err2 := getAWSCredentials(*iamRole, region)
+
+	myCredentials := Creds.Credentials
 
 	if err2 != nil {
 		return err2
 	}
-
-	myCredentials := credentials.Credentials
 
 	_, err = SetRepoSecret(owner, repository, *myCredentials.AccessKeyId, "AWS_ACCESS_KEY_ID")
 
@@ -98,8 +99,9 @@ func getGithubClient() (context.Context, *github.Client) {
 func getPublicKeyDetails(owner, repository string) (keyID, pkValue string, err error) {
 	ctx, client := getGithubClient()
 
-	publicKey, _, err := client.Actions.GetRepoPublicKey(ctx, owner, repository)
+	publicKey, response, err := client.Actions.GetRepoPublicKey(ctx, owner, repository)
 	if err != nil {
+		log.Print(&response)
 		return keyID, pkValue, err
 	}
 

@@ -10,8 +10,10 @@ import (
 	"github.com/aws/aws-sdk-go/service/sts"
 )
 
-func getAWSCredentials(IAMRole string) (*sts.AssumeRoleOutput, error) {
-	mySession := session.Must(session.NewSession())
+func getAWSCredentials(IAMRole string, region string) (*sts.AssumeRoleOutput, error) {
+	config := aws.NewConfig()
+	config.Region = &region
+	mySession := session.Must(session.NewSession(config))
 	svc := sts.New(mySession)
 	duration := int64(900)
 	input := &sts.AssumeRoleInput{
@@ -53,8 +55,8 @@ func getAWSCredentials(IAMRole string) (*sts.AssumeRoleOutput, error) {
 	return result, nil
 }
 
-func setAWSAuth(iamRole string) error {
-	creds, err := getAWSCredentials(iamRole)
+func setAWSAuth(iamRole string, region string) error {
+	creds, err := getAWSCredentials(iamRole, region)
 	if err != nil {
 		return err
 	}

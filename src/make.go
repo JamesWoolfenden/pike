@@ -78,7 +78,7 @@ func tfApply(policyPath string) (*tfexec.Terraform, error) {
 }
 
 // Apply  executes tf using prepared role
-func Apply(target string) error {
+func Apply(target string, region string) error {
 	iamRole, err := Make(target)
 	time.Sleep(5 * time.Second)
 
@@ -88,13 +88,16 @@ func Apply(target string) error {
 	//clear any temp creds
 	unSetAWSAuth()
 
-	err = setAWSAuth(*iamRole)
+	err = setAWSAuth(*iamRole, region)
 	if err != nil {
 		unSetAWSAuth()
 		return err
 	}
 	_, err = tfApply(target)
 
+	if err == nil {
+		log.Printf("provisioned %s", target)
+	}
 	unSetAWSAuth()
 
 	return err
