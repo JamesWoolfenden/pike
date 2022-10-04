@@ -22,7 +22,6 @@ func main() {
 	var autoAppend bool
 	var write bool
 	var repository string
-	var owner string
 	var region string
 
 	var app = &cli.App{
@@ -61,7 +60,7 @@ func main() {
 			&cli.StringFlag{
 				Name:        "repository",
 				Aliases:     []string{"r"},
-				Usage:       "The github repository (to set secrets)",
+				Usage:       "The github repository and owner (to set secrets) e.g. jameswoolfenden/pike   ",
 				Destination: &repository,
 			},
 			&cli.StringFlag{
@@ -84,12 +83,6 @@ func main() {
 				Value:       "terraform",
 				Destination: &output,
 				EnvVars:     []string{"OUTPUT"},
-			},
-			&cli.StringFlag{
-				Name:        "owner",
-				Aliases:     []string{"n"},
-				Usage:       "The Owner of the Github repo",
-				Destination: &owner,
 			},
 			&cli.StringFlag{
 				Name:        "arn",
@@ -133,13 +126,10 @@ func main() {
 				Usage:   "Create/Update the Policy and set credentials/secret for Github Action",
 
 				Action: func(*cli.Context) error {
-					if owner == "" {
-						log.Fatal("owner details required")
-					}
 					if repository == "" {
 						log.Fatal("repository must be set for Remote")
 					}
-					return pike.Remote(directory, owner, repository, region)
+					return pike.Remote(directory, repository, region)
 				},
 			},
 			{

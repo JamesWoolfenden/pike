@@ -3,9 +3,11 @@ package pike
 import (
 	"context"
 	"encoding/base64"
+	"errors"
 	"fmt" //nolint:goimports
 	"log"
 	"os" //nolint:goimports
+	"strings"
 	"time"
 
 	"github.com/google/go-github/v47/github"
@@ -14,7 +16,7 @@ import (
 )
 
 // Remote updates a repo with AWS credentials
-func Remote(target string, owner string, repository string, region string) error {
+func Remote(target string, repository string, region string) error {
 	iamRole, err := Make(target)
 
 	time.Sleep(5 * time.Second)
@@ -31,18 +33,18 @@ func Remote(target string, owner string, repository string, region string) error
 		return err2
 	}
 
-	_, err = SetRepoSecret(owner, repository, *myCredentials.AccessKeyId, "AWS_ACCESS_KEY_ID")
+	_, err = SetRepoSecret(repository, *myCredentials.AccessKeyId, "AWS_ACCESS_KEY_ID")
 
 	if err != nil {
 		return err
 	}
 
-	_, err = SetRepoSecret(owner, repository, *myCredentials.SecretAccessKey, "AWS_SECRET_ACCESS_KEY")
+	_, err = SetRepoSecret(repository, *myCredentials.SecretAccessKey, "AWS_SECRET_ACCESS_KEY")
 	if err != nil {
 		return err
 	}
 
-	_, err = SetRepoSecret(owner, repository, *myCredentials.SessionToken, "AWS_SESSION_TOKEN")
+	_, err = SetRepoSecret(repository, *myCredentials.SessionToken, "AWS_SESSION_TOKEN")
 
 	if err != nil {
 		return err
@@ -52,8 +54,19 @@ func Remote(target string, owner string, repository string, region string) error
 }
 
 // SetRepoSecret does what it is named
-func SetRepoSecret(owner string, repository string, keyText string, keyName string) (*github.Response, error) {
-	keyID, publicKey, err := getPublicKeyDetails(owner, repository)
+func SetRepoSecret(repository string, keyText string, keyName string) (*github.Response, error) {
+
+	Splitter := strings.Split(repository, "/")
+
+	if len(Splitter) != 2 {
+		errString := fmt.Sprintf("repository not formatted correctly %s", repository)
+		return nil, errors.New(errString)
+	}
+
+	owner := Splitter[0]
+	repo := Splitter[1]
+
+	keyID, publicKey, err := getPublicKeyDetails(owner, repo)
 
 	if err != nil {
 		return nil, err
@@ -76,7 +89,7 @@ func SetRepoSecret(owner string, repository string, keyText string, keyName stri
 
 	ctx, client := getGithubClient()
 
-	response, err := client.Actions.CreateOrUpdateRepoSecret(ctx, owner, repository, eSecret)
+	response, err := client.Actions.CreateOrUpdateRepoSecret(ctx, owner, repo, eSecret)
 
 	if err != nil {
 		return response, err

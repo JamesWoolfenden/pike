@@ -10,7 +10,6 @@ import (
 
 func TestSetRepoSecret(t *testing.T) {
 	type args struct {
-		owner      string
 		repository string
 		keyText    string
 		keyName    string
@@ -25,7 +24,7 @@ func TestSetRepoSecret(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got, err := SetRepoSecret(tt.args.owner, tt.args.repository, tt.args.keyText, tt.args.keyName)
+			got, err := SetRepoSecret(tt.args.repository, tt.args.keyText, tt.args.keyName)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("SetRepoSecret() error = %v, wantErr %v", err, tt.wantErr)
 				return
