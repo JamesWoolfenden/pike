@@ -85,6 +85,8 @@ func Apply(target string) error {
 	if err != nil {
 		return err
 	}
+	//clear any temp creds
+	unSetAWSAuth()
 
 	err = setAWSAuth(*iamRole)
 	if err != nil {
