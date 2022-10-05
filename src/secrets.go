@@ -27,11 +27,11 @@ func Remote(target string, repository string, region string) error {
 
 	Creds, err2 := getAWSCredentials(*iamRole, region)
 
-	myCredentials := Creds.Credentials
-
 	if err2 != nil {
 		return err2
 	}
+
+	myCredentials := Creds.Credentials
 
 	_, err = SetRepoSecret(repository, *myCredentials.AccessKeyId, "AWS_ACCESS_KEY_ID")
 

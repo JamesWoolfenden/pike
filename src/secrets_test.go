@@ -114,3 +114,25 @@ func Test_encryptPlaintext(t *testing.T) {
 		})
 	}
 }
+
+func TestRemote(t *testing.T) {
+	type args struct {
+		target     string
+		repository string
+		region     string
+	}
+	tests := []struct {
+		name    string
+		args    args
+		wantErr bool
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if err := Remote(tt.args.target, tt.args.repository, tt.args.region); (err != nil) != tt.wantErr {
+				t.Errorf("Remote() error = %v, wantErr %v", err, tt.wantErr)
+			}
+		})
+	}
+}

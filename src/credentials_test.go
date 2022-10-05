@@ -51,6 +51,7 @@ func Test_getAWSCredentials(t *testing.T) {
 func Test_setAWSAuth(t *testing.T) {
 	type args struct {
 		iamRole string
+		Region  string
 	}
 
 	arghh := "User: arn:aws:iam::680235478471:user/jameswoolfenden is not authorized to perform: sts:AssumeRole on resource: arn:aws:iam::123456789012:role/demo"
@@ -60,14 +61,14 @@ func Test_setAWSAuth(t *testing.T) {
 		args args
 		want *string
 	}{
-		{"pass", args{"arn:aws:iam::680235478471:role/terraform_pike_20220924074025950900000002"}, nil},
-		{"denied", args{"arn:aws:iam::123456789012:role/demo"}, &arghh},
+		{"pass", args{"arn:aws:iam::680235478471:role/terraform_pike_20221003170618461900000002", "eu-west-2"}, nil},
+		{"denied", args{"arn:aws:iam::123456789012:role/demo", "eu-west-2"}, &arghh},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			//could inherit temp set from before
 			unSetAWSAuth()
-			got := setAWSAuth(tt.args.iamRole)
+			got := setAWSAuth(tt.args.iamRole, tt.args.Region)
 
 			if tt.want == nil && got != nil {
 				t.Errorf("setAWSAuth() = %v, want %v", got, tt.want)

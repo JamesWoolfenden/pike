@@ -61,10 +61,9 @@ func Test_getLocalModules(t *testing.T) {
 	notBlock := getInitialBlock(notLocal + "/module.local.tf")
 
 	tests := []struct {
-		name    string
-		args    args
-		want    []ResourceV2
-		wantErr bool
+		name string
+		args args
+		want []ResourceV2
 	}{
 		{"local",
 			args{block, dirName},
@@ -73,18 +72,13 @@ func Test_getLocalModules(t *testing.T) {
 				"aws_s3_bucket",
 				"pike",
 				"aws",
-				[]string{"name"}}},
-			false},
-		{"rubbish", args{duffBlock, duffName}, nil, false},
-		{"notlocal", args{notBlock, notLocal}, nil, false},
+				[]string{"name"}}}},
+		{"rubbish", args{duffBlock, duffName}, nil},
+		{"notlocal", args{notBlock, notLocal}, nil},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got, err := getLocalModules(tt.args.block, tt.args.dirName)
-			if (err != nil) != tt.wantErr {
-				t.Errorf("getLocalModules() error = %v, wantErr %v", err, tt.wantErr)
-				return
-			}
+			got := getLocalModules(tt.args.block, tt.args.dirName)
 			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("getLocalModules() = %v, want %v", got, tt.want)
 			}

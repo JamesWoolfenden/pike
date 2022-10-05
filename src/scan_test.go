@@ -4,6 +4,7 @@ import (
 	"log"
 	"path/filepath"
 	"reflect"
+	"runtime"
 	"testing"
 )
 
@@ -232,6 +233,8 @@ func TestWriteOutput(t *testing.T) {
 		wantErr bool
 	}{
 		{name: "aws", args: args{OutPolicy: out, output: "terraform", location: "."}, wantErr: false},
+		{name: "aws-json", args: args{OutPolicy: out, output: "json", location: "."}, wantErr: false},
+		{name: "aws-fail", args: args{OutPolicy: out, output: "cdk", location: "."}, wantErr: true},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -239,5 +242,30 @@ func TestWriteOutput(t *testing.T) {
 				t.Errorf("WriteOutput() error = %v, wantErr %v", err, tt.wantErr)
 			}
 		})
+	}
+}
+
+func TestLocateTerraform(t *testing.T) {
+	tests := []struct {
+		name    string
+		os      string
+		want    string
+		wantErr bool
+	}{
+		{"find", "darwin", "/usr/local/bin/terraform", false},
+	}
+	for _, tt := range tests {
+		if tt.os == runtime.GOOS {
+			t.Run(tt.name, func(t *testing.T) {
+				got, err := LocateTerraform()
+				if (err != nil) != tt.wantErr {
+					t.Errorf("LocateTerraform() error = %v, wantErr %v", err, tt.wantErr)
+					return
+				}
+				if got != tt.want {
+					t.Errorf("LocateTerraform() = %v, want %v", got, tt.want)
+				}
+			})
+		}
 	}
 }

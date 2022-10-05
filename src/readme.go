@@ -21,11 +21,15 @@ func Readme(dirName string, output string, init bool, autoAppend bool) error {
 	}
 
 	var markdown string
-	if strings.ToLower(output) == "terraform" {
+	switch strings.ToLower(output) {
+	case "terraform":
 		markdown = "\nThe Terraform resource required is:\n\n```golang\n" + OutPolicy.AsString(output) + "\n```\n"
-	} else {
+	case "json":
 		markdown = "\nThe Policy required is:\n\n```json\n" + OutPolicy.AsString(output) + "\n```\n"
+	default:
+		return errors.New("Output formats are terraform or json")
 	}
+
 	err := ReplaceSection(file, markdown, autoAppend)
 
 	return err

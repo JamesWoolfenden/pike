@@ -2,6 +2,7 @@ package pike
 
 import (
 	"context"
+	"errors"
 	"fmt"
 	"log"
 	"os"
@@ -37,7 +38,7 @@ func Scan(dirName string, output string, file string, init bool, write bool) err
 	return err
 }
 
-// WriteOutput writes out the policy as json ro terraform
+// WriteOutput writes out the policy as json or terraform
 func WriteOutput(OutPolicy OutputPolicy, output, location string) error {
 
 	newPath, _ := filepath.Abs(location + "/.pike")
@@ -48,7 +49,10 @@ func WriteOutput(OutPolicy OutputPolicy, output, location string) error {
 
 	var outFile string
 	d1 := []byte(OutPolicy.AsString(output))
-	if strings.ToLower(output) == "terraform" {
+
+	switch strings.ToLower(output) {
+
+	case "terraform":
 		outFile = newPath + "/pike.generated_policy.tf"
 
 		if OutPolicy.AWS.Terraform != "" {
@@ -58,8 +62,10 @@ func WriteOutput(OutPolicy OutputPolicy, output, location string) error {
 		if err != nil {
 			return err
 		}
-	} else {
+	case "json":
 		outFile = newPath + "/pike.generated_policy.json"
+	default:
+		return errors.New("output format supports only json and terraform")
 	}
 
 	err = os.WriteFile(outFile, d1, 0644)
@@ -111,10 +117,10 @@ func Init(dirName string) (*string, []string, error) {
 
 // LocateTerraform finds the Terraform executable or installs it
 func LocateTerraform() (string, error) {
-	tfPath, _ := exec.LookPath("terraform")
+	tfPath, err := exec.LookPath("terraform")
 
 	//if you don't have tf installed we have to install it
-	if tfPath == "" {
+	if err != nil || tfPath == "" {
 		log.Printf("installing Terraform %s\n", tfVersion)
 		installer := &releases.ExactVersion{
 			Product: product.Terraform,

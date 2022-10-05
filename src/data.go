@@ -30,7 +30,7 @@ func GetResources(file string, dirName string) ([]ResourceV2, error) {
 		}
 
 		if strings.Contains(resource.TypeName, "module") {
-			LocalResources, err := getLocalModules(block, dirName)
+			LocalResources := getLocalModules(block, dirName)
 			Resources = append(LocalResources, Resources...)
 			if err != nil {
 				log.Print(err)
@@ -79,20 +79,20 @@ func GetResourceBlocks(file string) (*hclsyntax.Body, error) {
 	return parsedFile.Body.(*hclsyntax.Body), err
 }
 
-func getLocalModules(block *hclsyntax.Block, dirName string) ([]ResourceV2, error) {
+func getLocalModules(block *hclsyntax.Block, dirName string) []ResourceV2 {
 	var Resources []ResourceV2
 	modulePath := GetModulePath(block)
 
 	_, err := os.Stat(modulePath)
 	if err != nil {
-		//could be totally valid
-		return nil, nil
+		// could be totally valid
+		return nil
 	}
 
-	//have the path to the module
+	// have the path to the module
 	modulePath = filepath.Join(dirName, "/", modulePath)
 
-	//now process these extras
+	// now process these extras
 	ExtraFiles, _ := GetTF(modulePath)
 	for _, file := range ExtraFiles {
 		resource, err := GetResources(file, dirName)
@@ -100,7 +100,7 @@ func getLocalModules(block *hclsyntax.Block, dirName string) ([]ResourceV2, erro
 			Resources = append(Resources, resource...)
 		}
 	}
-	return Resources, nil
+	return Resources
 }
 
 // GetModulePath extracts the source location from a module
