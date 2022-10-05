@@ -53,7 +53,7 @@ func Remote(target string, repository string, region string) error {
 	return nil
 }
 
-// SetRepoSecret does what it is named
+// SetRepoSecret sets an encrypted github action secret
 func SetRepoSecret(repository string, keyText string, keyName string) (*github.Response, error) {
 
 	Splitter := strings.Split(repository, "/")

@@ -235,6 +235,7 @@
 ./resource.ps1 aws_ssoadmin_customer_managed_policy_attachment
 ./resource.ps1 aws_redshiftserverless_endpoint_access
 ./resource.ps1 aws_redshiftserverless_workgroup
+./resource.ps1 aws_redshiftserverless_usage_limit
 ./resource.ps1 aws_ec2_network_insights_analysis
 ./resource.ps1 aws_ec2_transit_gateway_policy_table
 ./resource.ps1 aws_ec2_transit_gateway_policy_table_association
@@ -244,8 +245,10 @@
 ./resource.ps1 aws_networkmanager_attachment_accepter
 ./resource.ps1 aws_networkmanager_vpc_attachment
 
-./resource.ps1 aws_eks_addon not implemented
-./resource.ps1 aws_eks_identity_provider_config
+aws_route_table
+
+resources
+aws_ec2_transit_gateway_vpc_attachment
 ./resource.ps1 aws_eks_fargate_profile
 ./resource.ps1 aws_eks_node_group
 ./resource.ps1 aws_autoscaling_schedule

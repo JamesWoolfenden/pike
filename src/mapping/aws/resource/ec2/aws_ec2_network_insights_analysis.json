@@ -6,7 +6,6 @@
       "ec2:DeleteNetworkInsightsAnalysis",
       "tiros:CreateQuery",
       "tiros:GetQueryAnswer",
-      "tiros:*",
       "cloudformation:DescribeStacks",
       "cloudformation:ListStackResources",
       "ec2:CreateNetworkInsightsAccessScope",

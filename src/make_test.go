@@ -32,9 +32,8 @@ func Test_tfApply(t *testing.T) {
 		policyPath string
 	}
 	tests := []struct {
-		name string
-		args args
-		//want    *tfexec.Terraform
+		name    string
+		args    args
 		wantErr bool
 	}{
 		{name: "fail", args: args{"asdasd"}, wantErr: true},
@@ -47,10 +46,6 @@ func Test_tfApply(t *testing.T) {
 				t.Errorf("tfApply() error = %v, wantErr %v", err, tt.wantErr)
 				return
 			}
-			//i dont care about the pathg to tf here
-			//if !reflect.DeepEqual(got, tt.want) {
-			//	t.Errorf("tfApply() = %v, want %v", got, tt.want)
-			//}
 		})
 	}
 }

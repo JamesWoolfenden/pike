@@ -804,3 +804,9 @@ var awsEc2TransitGatewayVpcAttachment []byte
 
 //go:embed mapping/aws/resource/ec2/aws_vpc_endpoint_route_table_association.json
 var awsVpcEndpointRouteTableAssociation []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ec2_network_insights_path.json
+var awsEc2NetworkInsightsPath []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ec2_network_insights_analysis.json
+var awsEc2NetworkInsightsAnalysis []byte
