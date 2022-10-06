@@ -252,7 +252,7 @@ func TestLocateTerraform(t *testing.T) {
 		want    string
 		wantErr bool
 	}{
-		{"find", "darwin", "/usr/local/bin/terraform", false},
+		//{"find", "darwin", "/usr/local/bin/terraform", false},
 	}
 	for _, tt := range tests {
 		if tt.os == runtime.GOOS {
