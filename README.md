@@ -13,20 +13,12 @@
 
 Pike is a tool, to determine the minimum permissions required to run a TF/IAC run:
 
-Still very much under active development, I intend it to:
-
-- run in ci - limit external outbound connections
-- run on a path or a file (path is done)
-- determines permission drift (Compare verb now exists)
-- least privilege enabler
-- policy creator (This is done)
-- test policy against environment (This is done see compare)
-
 Pike currently supports Terraform and can support multiple providers,
 So far I've added support for a larger number of AWS resources, but I have just added support for GCP.
 Feel free to submit PR or Issue, and then I'll take a look.
 
-**CAVEAT** The policies and roles are to get you started, there are no conditions and resources are all wildcards (for AWS) - this is definitely not best practice- you need will to modify these permissions to minimum required by adding these constrictions.
+**CAVEAT** The policies and roles are to get you started, there are no conditions and resources are all wildcards (for AWS)
+this is **definitely not best practice**, you need will to modify these permissions to minimum required by adding these constrictions.
 
 Ideally I would like to do this for you, but these policies are determined statically, and we would need to determine the resource names that will be created and know your intentions.
 
@@ -42,6 +34,9 @@ Ideally I would like to do this for you, but these policies are determined stati
   - [Output](#output)
   - [Readme](#readme)
   - [Make](#make)
+  - [Invoke](#invoke)
+  - [Apply](#apply)
+  - [Remote](#remote)
 - [Compare](#compare)
 - [Help](#help)
 - [Building](#building)
@@ -97,7 +92,7 @@ docker run --tty --volume /local/path/to/tf:/tf jameswoolfenden/pike -d /tf scan
 To scan a directory of Terraform file:
 
 ```shell
-./pike -d .\terraform\ scan
+./pike scan -d .\terraform\
 {
     "Version": "2012-10-17",
     "Statement": {
@@ -116,28 +111,6 @@ To scan a directory of Terraform file:
             "ec2:StartInstances",
             "ec2:ModifyInstanceAttribute",
             "ec2:TerminateInstances",
-            "s3:GetBucketObjectLockConfiguration",
-            "s3:PutBucketObjectLockConfiguration",
-            "s3:PutObjectLegalHold",
-            "s3:PutObjectRetention",
-            "s3:PutObject",
-            "s3:DeleteBucket",
-            "s3:CreateBucket",
-            "s3:GetLifecycleConfiguration",
-            "s3:GetBucketTagging",
-            "s3:GetBucketWebsite",
-            "s3:GetBucketLogging",
-            "s3:ListBucket",
-            "s3:GetAccelerateConfiguration",
-            "s3:GetBucketVersioning",
-            "s3:GetBucketAcl",
-            "s3:GetBucketPolicy",
-            "s3:GetReplicationConfiguration",
-            "s3:GetObjectAcl",
-            "s3:GetObject",
-            "s3:GetEncryptionConfiguration",
-            "s3:GetBucketRequestPayment",
-            "s3:GetBucketCORS",
             "ec2:AuthorizeSecurityGroupIngress",
             "ec2:AuthorizeSecurityGroupEgress",
             "ec2:CreateSecurityGroup",
@@ -155,7 +128,7 @@ To scan a directory of Terraform file:
 You can also generate the policy as Terraform instead:
 
 ```bash
-$pike -o terraform -d ../modules/aws/terraform-aws-activemq  scan
+$pike scan -o terraform -d ../modules/aws/terraform-aws-activemq
 resource "aws_iam_policy" "terraformXVlBzgba" {
   name        = "terraformXVlBzgba"
   path        = "/"
@@ -238,7 +211,7 @@ resource "aws_iam_policy" "terraformXVlBzgba" {
 If you select the -w flag, pike will write out the role/policy required to build your project into the .pike folder:
 
 ```bash
-$pike -w -i -d . scan
+$pike scan -w -i -d .
 2022/09/17 13:50:51 terraform init at .
 2022/09/17 13:50:51 downloaded ip
 ```
@@ -257,7 +230,7 @@ Which you can deploy using terraform to create the role/policy to build your IAC
 You can now deploy the policy you need directly (AWS only so far):
 
 ```bash
-$pike -d ../modules/aws/terraform-aws-apigateway/ make
+$pike make -d ../modules/aws/terraform-aws-apigateway/
 
 2022/09/18 08:53:41 terraform init at ..\modules\aws\terraform-aws-apigateway\
 2022/09/18 08:53:41 modules not found at ..\modules\aws\terraform-aws-apigateway\
@@ -265,13 +238,63 @@ $pike -d ../modules/aws/terraform-aws-apigateway/ make
  arn:aws:iam::680235478471:role/terraform_pike_20220918071439382800000002
 ```
 
-This new verb returns the ARN of the role created, and you can find the tf used in your .pike folder.
+This new verb returns the ARN of the role created, and you can find the Terraform used in your .pike folder.
+
+### Invoke
+
+Invoke is currently for triggering GitHub actions, if supplied with the workflow (defaults to main.yaml), repository and
+branch (defaults to main) flags, it will trigger the dispatch event.
+
+You'll need to include the dispatch event in your workflow:
+
+```yaml
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+```
+
+To authenticate the GitHub Api you will need to set you GitHub Personal Access Token as the environment variable
+*GITHUB_TOKEN*
+
+To Invoke a workflow it is then:
+
+```shell
+pike invoke -workflow master.yml -branch master -repository JamesWoolfenden/terraform-aws-s3
+```
+
+I created Invoke to be used in tandem with the new remote command which supplies temporary credentials to a workflow.
+
+**Note The gitHub API is rate limited usually 5000 calls per hour.
+
+```shell
+pike make -d ./module/aws/terraform-aws-s3/example/examplea
+```
+
+### Apply
+
+Apply is an extension to make and will apply the policy and role and use that role to create your infrastructure:
+
+```shell
+pike apply -d ./module/aws/terraform-aws-s3/example/examplea -region eu-west-2
+```
+
+It is intended for testing and developing the permissions for Pike itself
+
+### Remote
+
+Remote uses the core code of make and apply, to write temporary AWS credentials(only so far) into your workflow.
+
+```shell
+pike remote -d ./module/aws/terraform-aws-s3/example/examplea -region eu-west-2 -repository terraform-aws-s3
+```
 
 ### Readme
 
 Pike can now be used to update a projects README.md file:
 
-./pike -o terraform -d ..\modules\aws\terraform-aws-activemq\ readme
+./pike readme -o terraform -d ..\modules\aws\terraform-aws-activemq\
 
 This looks in the readme for the deliminators:
 
@@ -341,7 +364,7 @@ You can see an example here <https://github.com/jamesWoolfenden/terraform-aws-ac
 
 Want to check your deployed IAM policy against your IAC requirement?
 
->$./pike -d ../modules/aws/terraform-aws-appsync -a arn:aws:iam::680235478471:policy/basic compare
+>$./pike compare -d ../modules/aws/terraform-aws-appsync -a arn:aws:iam::680235478471:policy/basic
 
 ```markdown
 IAM Policy arn:aws:iam::680235478471:policy/basic versus Local ../modules/aws/terraform-aws-appsync
@@ -429,31 +452,26 @@ USAGE:
    pike [global options] command [command options] [arguments...]
 
 VERSION:
-   v0.1.81
+   v0.2.1
 
 AUTHOR:
    James Woolfenden <support@bridgecrew.io>
 
 COMMANDS:
+   apply, a    Create a policy and use it to instantiate the IAC
    compare, c  policy comparison of deployed versus IAC
+   invoke, i   Triggers a gitHub action specified with the workflow flag
+   make, m     make the policy/role required for this IAC to deploy
    readme, r   Looks in dir for a README.md and updates it with the Policy required to build the code
+   remote, m   Create/Update the Policy and set credentials/secret for Github Action
    scan, s     scan a directory for IAM code
    version, v  Outputs the application version
    watch, w    Waits for policy update
    help, h     Shows a list of commands or help for one command
 
 GLOBAL OPTIONS:
-   --arn value, -a value        Policy identifier e.g. arn (default: "arn:aws:iam::680235478471:policy/basic") [%ARN%]
-   --auto, -A                   Automatically adds policy section to the end of Readme (default: false)
-   --config FILE, -c FILE       Load configuration from FILE
-   --directory value, -d value  Directory to scan (defaults to .) (default: ".")
-   --file value, -f value       File to scan
-   --help, -h                   show help (default: false)
-   --init, -i                   Run Terraform init to download modules (default: false)
-   --output json, -o json       Output types e.g. json terraform (default: "terraform") [%OUTPUT%]
-   --version, -v                print the version (default: false)
-   --wait value, -W value       Time to wait for policy change (in tenths of seconds) (default: 100) [%WAIT%]
-   --write, -w                  Write the policy output to a file at .pike (default: false)
+   --help, -h     show help (default: false)
+   --version, -v  print the version (default: false)
 ```
 
 ## Building

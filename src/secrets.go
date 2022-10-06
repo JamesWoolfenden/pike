@@ -53,18 +53,13 @@ func Remote(target string, repository string, region string) error {
 	return nil
 }
 
-// SetRepoSecret sets an encrypted github action secret
+// SetRepoSecret sets an encrypted gitHub action secret
 func SetRepoSecret(repository string, keyText string, keyName string) (*github.Response, error) {
 
-	Splitter := strings.Split(repository, "/")
-
-	if len(Splitter) != 2 {
-		errString := fmt.Sprintf("repository not formatted correctly %s", repository)
-		return nil, errors.New(errString)
+	owner, repo, err2 := splitHub(repository)
+	if err2 != nil {
+		return nil, err2
 	}
-
-	owner := Splitter[0]
-	repo := Splitter[1]
 
 	keyID, publicKey, err := getPublicKeyDetails(owner, repo)
 
@@ -97,6 +92,19 @@ func SetRepoSecret(repository string, keyText string, keyName string) (*github.R
 	return response, nil
 }
 
+func splitHub(repository string) (string, string, error) {
+	Splitter := strings.Split(repository, "/")
+
+	if len(Splitter) != 2 {
+		errString := fmt.Sprintf("repository not formatted correctly %s", repository)
+		return "", "", errors.New(errString)
+	}
+
+	owner := Splitter[0]
+	repo := Splitter[1]
+	return owner, repo, nil
+}
+
 func getGithubClient() (context.Context, *github.Client) {
 	token := os.Getenv("GITHUB_TOKEN")
 	ctx := context.Background()
@@ -109,7 +117,7 @@ func getGithubClient() (context.Context, *github.Client) {
 	return ctx, client
 }
 
-func getPublicKeyDetails(owner, repository string) (keyID, pkValue string, err error) {
+func getPublicKeyDetails(owner string, repository string) (keyID, pkValue string, err error) {
 	ctx, client := getGithubClient()
 
 	publicKey, response, err := client.Actions.GetRepoPublicKey(ctx, owner, repository)
@@ -121,7 +129,7 @@ func getPublicKeyDetails(owner, repository string) (keyID, pkValue string, err e
 	return publicKey.GetKeyID(), publicKey.GetKey(), err
 }
 
-func encryptPlaintext(plaintext, publicKeyB64 string) ([]byte, error) {
+func encryptPlaintext(plaintext string, publicKeyB64 string) ([]byte, error) {
 	publicKeyBytes, err := base64.StdEncoding.DecodeString(publicKeyB64)
 	if err != nil {
 		return nil, err
