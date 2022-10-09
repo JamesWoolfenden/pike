@@ -95,7 +95,22 @@ func GetPolicy(actions Sorted) (OutputPolicy, error) {
 				log.Print(err)
 				continue
 			}
+
+		case "AZURE":
+			if actions.AZURE == nil {
+				continue
+			}
+
+			Empty = false
+			//dedupe
+			AZUREPermissions := unique(actions.AZURE)
+			OutPolicy.AZURE, err = AZUREPolicy(AZUREPermissions)
+			if err != nil {
+				log.Print(err)
+				continue
+			}
 		}
+
 	}
 	if Empty {
 		return OutPolicy, errors.New("no permissions found")

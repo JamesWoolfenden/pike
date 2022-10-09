@@ -146,9 +146,14 @@ func GetPermission(result ResourceV2) (Sorted, error) {
 		if err != nil {
 			log.Print(err)
 		}
-	case "azurerm", "oci", "digitalocean", "linode", "helm":
+	case "oci", "digitalocean", "linode", "helm":
 		log.Printf("Provider %s not yet implemented", result.Provider)
 		return myPermission, nil
+	case "azurerm", "azuread":
+		myPermission.AZURE, err = GetAZUREPermissions(result)
+		if err != nil {
+			log.Print(err)
+		}
 	case "gcp", "google":
 		myPermission.GCP, err = GetGCPPermissions(result)
 		if err != nil {

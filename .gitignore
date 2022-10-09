@@ -12,3 +12,4 @@ __debug_bin.exe
 *.orig
 .terraform.tfstate.lock.info
 .pike
+provider.azure.tf

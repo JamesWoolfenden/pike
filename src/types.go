@@ -41,7 +41,7 @@ func NewStatement(sid string, effect string, action []string, resource string) *
 type OutputPolicy struct {
 	AWS   AwsOutput
 	GCP   string
-	Azure string
+	AZURE string
 }
 
 // AwsOutput structure
@@ -63,8 +63,8 @@ func (Out OutputPolicy) AsString(format string) string {
 		Output = Output + Out.GCP + "\n"
 	}
 
-	if Out.Azure != "" {
-		Output = Output + Out.Azure + "\n"
+	if Out.AZURE != "" {
+		Output = Output + Out.AZURE + "\n"
 	}
 
 	return Output

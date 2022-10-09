@@ -27,7 +27,7 @@ func TestOutputPolicy_AsString(t *testing.T) {
 			Out := OutputPolicy{
 				AWS:   tt.fields.AWS,
 				GCP:   tt.fields.GCP,
-				Azure: tt.fields.Azure,
+				AZURE: tt.fields.Azure,
 			}
 			if got := Out.AsString(tt.args.format); got != tt.want {
 				t.Errorf("OutputPolicy.AsString() = %v, want %v", got, tt.want)

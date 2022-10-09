@@ -1,0 +1,22 @@
+resource "azurerm_role_definition" "{{.Name}}" {
+  role_definition_id = local.uuid
+  name               = "{{.Name}}"
+  scope              = data.azurerm_subscription.primary.id
+
+  permissions {
+    actions = [
+    "{{ .Permissions }}"]
+    not_actions = []
+  }
+
+  assignable_scopes = [
+    data.azurerm_subscription.primary.id,
+  ]
+}
+
+locals {
+  uuid = uuid()
+}
+
+data "azurerm_subscription" "primary" {
+}

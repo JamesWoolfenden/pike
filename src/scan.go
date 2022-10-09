@@ -204,6 +204,7 @@ func MakePolicy(dirName string, file string, init bool) (OutputPolicy, error) {
 
 		PermissionBag.AWS = append(PermissionBag.AWS, newPerms.AWS...)
 		PermissionBag.GCP = append(PermissionBag.GCP, newPerms.GCP...)
+		PermissionBag.AZURE = append(PermissionBag.AZURE, newPerms.AZURE...)
 	}
 
 	Output, err2 := GetPolicy(PermissionBag)

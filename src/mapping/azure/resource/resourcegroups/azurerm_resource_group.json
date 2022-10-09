@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourcegroups/read",
+      "Microsoft.Resources/subscriptions/resourcegroups/write"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Resources/subscriptions/resourcegroups/delete"
+    ],
+    "modify": [],
+    "plan": [
+      "Microsoft.Resources/subscriptions/providers/read"
+    ]
+  }
+]
