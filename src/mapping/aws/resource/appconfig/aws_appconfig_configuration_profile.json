@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "appconfig:CreateConfigurationProfile",
+      "appconfig:GetConfigurationProfile",
+      "appconfig:DeleteConfigurationProfile"
+    ],
+    "attributes": {
+      "tags": [
+        "appconfig:TagResource",
+        "appconfig:UntagResource"
+      ]
+    },
+    "destroy": [
+      "appconfig:DeleteConfigurationProfile"
+    ],
+    "modify": [
+      "appconfig:UpdateConfigurationProfile"
+    ],
+    "plan": []
+  }
+]

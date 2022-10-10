@@ -320,6 +320,8 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_ec2_network_insights_analysis":                  awsEc2NetworkInsightsAnalysis,
 		"aws_ec2_transit_gateway_vpc_attachment":             awsEc2TransitGatewayVpcAttachment,
 		"aws_vpc_endpoint_route_table_association":           awsVpcEndpointRouteTableAssociation,
+		"aws_appconfig_configuration_profile":                awsAppconfigConfigurationProfile,
+		"aws_appconfig_application":                          awsAppconfigApplication,
 	}
 
 	var Permissions []string

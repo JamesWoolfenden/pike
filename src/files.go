@@ -810,3 +810,9 @@ var awsEc2NetworkInsightsPath []byte
 
 //go:embed mapping/aws/resource/ec2/aws_ec2_network_insights_analysis.json
 var awsEc2NetworkInsightsAnalysis []byte
+
+//go:embed mapping/aws/resource/appconfig/aws_appconfig_configuration_profile.json
+var awsAppconfigConfigurationProfile []byte
+
+//go:embed mapping/aws/resource/appconfig/aws_appconfig_application.json
+var awsAppconfigApplication []byte

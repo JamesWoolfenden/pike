@@ -248,7 +248,10 @@
 aws_route_table
 
 resources
-aws_ec2_transit_gateway_vpc_attachment
-./resource.ps1 aws_eks_fargate_profile
-./resource.ps1 aws_eks_node_group
-./resource.ps1 aws_autoscaling_schedule
+
+./resource.ps1 aws_evidently_project
+./resource.ps1 aws_identitystore_group
+./resource.ps1 aws_identitystore_group_membership
+./resource.ps1 aws_identitystore_user
+./resource.ps1 aws_inspector2_organization_configuration
+./resource.ps1 aws_kms_custom_key_store
