@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "appconfig:DeleteApplication",
+      "appconfig:GetApplication",
+      "ec2:DescribeAccountAttributes",
+      "appconfig:ListTagsForResource",
+      "appconfig:CreateApplication"
+    ],
+    "attributes": {
+      "tags": [
+        "appconfig:TagResource",
+        "appconfig:UntagResource"
+      ]
+    },
+    "destroy": [
+      "appconfig:DeleteApplication"
+    ],
+    "modify": [
+      "appconfig:UpdateApplication"
+    ],
+    "plan": []
+  }
+]

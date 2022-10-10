@@ -231,3 +231,18 @@ var dataAwsWorkspacesBundle []byte
 
 //go:embed mapping/aws/data/ec2/aws_route_table.json
 var dataAwsRouteTable []byte
+
+//go:embed mapping/aws/data/appconfig/aws_appconfig_configuration_profiles.json
+var dataAwsAppconfigConfigurationProfiles []byte
+
+//go:embed mapping/aws/data/appconfig/aws_appconfig_environment.json
+var dataAwsAppconfigEnvironment []byte
+
+//go:embed mapping/aws/data/appconfig/aws_appconfig_environments.json
+var dataAwsAppconfigEnvironments []byte
+
+//go:embed mapping/aws/data/kms/aws_kms_custom_key_store.json
+var dataAwsKmsCustomKeyStore []byte
+
+//go:embed mapping/aws/data/ec2/aws_vpc_ipam_pool_cidrs.json
+var dataAwsVpcIpamPoolCidrs []byte

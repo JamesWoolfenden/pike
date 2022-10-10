@@ -102,6 +102,12 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 		"aws_location_tracker_associations":         dataAwsLocationTrackerAssociations,
 		"aws_workspaces_bundle":                     dataAwsWorkspacesBundle,
 		"aws_route_table":                           dataAwsRouteTable,
+		"aws_appconfig_configuration_profiles":      dataAwsAppconfigConfigurationProfiles,
+		"aws_appconfig_environment":                 dataAwsAppconfigEnvironment,
+		"aws_appconfig_environments":                dataAwsAppconfigEnvironments,
+		"aws_kms_custom_key_store":                  dataAwsKmsCustomKeyStore,
+		"aws_vpc_ipam_pool_cidrs":                   dataAwsVpcIpamPoolCidrs,
+		"aws_vpc_ipam_pool":                         dataAwsVpcIpamPoolCidrs,
 	}
 
 	var Permissions []string
