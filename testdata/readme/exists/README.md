@@ -34,7 +34,9 @@ resource "aws_iam_policy" "terraform_pike" {
                 "s3:GetReplicationConfiguration",
                 "s3:ListBucket"
             ],
-            "Resource": "*"
+            "Resource": [
+                "*"
+            ]
         }
     ]
 })

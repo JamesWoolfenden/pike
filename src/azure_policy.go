@@ -10,7 +10,7 @@ import (
 //go:embed terraform.azurepolicy.template
 var policyAZURETemplate []byte
 
-// AZUREPolicy create an IAM policy
+// AZUREPolicy creates an Azure role definition
 func AZUREPolicy(permissions []string) (string, error) {
 	test := strings.Join(permissions, "\",\n    \"")
 
@@ -19,7 +19,9 @@ func AZUREPolicy(permissions []string) (string, error) {
 		Permissions string
 	}
 
-	theDetails := AzurePolicyDetails{"terraform_pike", test}
+	policyName := strings.ToLower("terraform_pike" + randSeq(8))
+
+	theDetails := AzurePolicyDetails{policyName, test}
 
 	var output bytes.Buffer
 	tmpl, err := template.New("test").Parse(string(policyAZURETemplate))

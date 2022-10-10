@@ -1,8 +1,14 @@
+//go:build auth
+// +build auth
+
 package pike
 
 import (
 	"reflect"
 	"testing"
+
+	"github.com/aws/aws-sdk-go-v2/config"
+	"golang.org/x/net/context"
 
 	"github.com/aws/aws-sdk-go-v2/service/iam"
 )
@@ -35,13 +41,18 @@ func TestWaitForPolicyChange(t *testing.T) {
 		Version string
 		Wait    int
 	}
+
+	cfg, _ := config.LoadDefaultConfig(context.TODO())
+	client := iam.NewFromConfig(cfg)
+
 	tests := []struct {
 		name    string
 		args    args
 		want    int
 		wantErr bool
 	}{
-		// TODO: Add test cases.
+		{"wait", args{client, "arn:aws:iam::680235478471:policy/allows3", "1.0", 2}, 2, true},
+		{"fail", args{client, "arn:aws:iam::680235478471:policy/rub", "1.0", 5}, 5, true},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -62,16 +73,26 @@ func TestGetVersion(t *testing.T) {
 		client    *iam.Client
 		PolicyArn string
 	}
+	cfg, _ := config.LoadDefaultConfig(context.TODO())
+	client := iam.NewFromConfig(cfg)
+	want := "v1"
 	tests := []struct {
-		name string
-		args args
-		want string
+		name    string
+		args    args
+		want    *string
+		wantErr bool
 	}{
-		// TODO: Add test cases.
+		{"fail", args{client, "arn:aws:iam::680235478471:policy/allowsduff"}, nil, true},
+		{"current", args{client, "arn:aws:iam::680235478471:policy/allows3"}, &want, false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := GetVersion(tt.args.client, tt.args.PolicyArn); got != tt.want {
+			got, err := GetVersion(tt.args.client, tt.args.PolicyArn)
+			if (err != nil) != tt.wantErr {
+				t.Errorf("GetVersion() error = %v, wantErr %v", err, tt.wantErr)
+				return
+			}
+			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("GetVersion() = %v, want %v", got, tt.want)
 			}
 		})
@@ -84,13 +105,19 @@ func TestGetPolicyVersion(t *testing.T) {
 		PolicyArn string
 		Version   string
 	}
+	cfg, _ := config.LoadDefaultConfig(context.TODO())
+	client := iam.NewFromConfig(cfg)
+	wantpass := "{\"Statement\":[{\"Action\":\"s3:*\",\"Effect\":\"Allow\",\"Resource\":\"*\",\"Sid\":\"VisualEditor0\"}],\"Version\":\"2012-10-17\"}"
+	sagemaker := "{\"Statement\":[{\"Action\":[\"s3:DeleteObject\",\"s3:GetObject\",\"s3:ListBucket\",\"s3:PutObject\"],\"Effect\":\"Allow\",\"Resource\":[\"arn:aws:s3:::*\"]}],\"Version\":\"2012-10-17\"}"
 	tests := []struct {
 		name    string
 		args    args
-		want    string
+		want    *string
 		wantErr bool
 	}{
-		//{ "",args{"","arn:aws:iam::680235478471:policy/allows3","v1"},"", false},
+		{"pass", args{client, "arn:aws:iam::680235478471:policy/allows3", "v1"}, &wantpass, false},
+		{"not found", args{client, "arn:aws:iam::680235478471:policy/basic", "v1"}, nil, true},
+		{"not found2", args{client, "arn:aws:iam::680235478471:policy/service-role/AmazonSageMaker-ExecutionPolicy-20211117T143702", "v1"}, &sagemaker, false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -99,7 +126,7 @@ func TestGetPolicyVersion(t *testing.T) {
 				t.Errorf("GetPolicyVersion() error = %v, wantErr %v", err, tt.wantErr)
 				return
 			}
-			if got != tt.want {
+			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("GetPolicyVersion() = %v, want %v", got, tt.want)
 			}
 		})
@@ -110,15 +137,16 @@ func TestSortActions(t *testing.T) {
 	type args struct {
 		myPolicy string
 	}
+	want := "{\"Statement\":[{\"Action\":[\"cognito-idp:DescribeUserPoolClient\",\"cognito-idp:GetSigningCertificate\",\"cognito-idp:ListUserPoolClients\"],\"Effect\":\"Allow\",\"Resource\":\"*\",\"Sid\":\"0\"}],\"Version\":\"2012-10-17\"}"
 	tests := []struct {
 		name    string
 		args    args
-		want    string
+		want    *string
 		wantErr bool
 	}{
 		{"odd", args{
 			"{\"Statement\":[{\"Action\":[\"cognito-idp:ListUserPoolClients\",\"cognito-idp:GetSigningCertificate\",\"cognito-idp:DescribeUserPoolClient\"],\"Effect\":\"Allow\",\"Resource\":\"*\",\"Sid\":\"0\"}],\"Version\":\"2012-10-17\"}"},
-			"{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"0\",\"Effect\":\"Allow\",\"Action\":[\"cognito-idp:DescribeUserPoolClient\",\"cognito-idp:GetSigningCertificate\",\"cognito-idp:ListUserPoolClients\"],\"Resource\":\"*\"}]}", false},
+			&want, false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

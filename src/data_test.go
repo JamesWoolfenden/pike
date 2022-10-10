@@ -223,3 +223,29 @@ func TestGetPermission(t *testing.T) {
 		})
 	}
 }
+
+func TestGetResourceBlocks(t *testing.T) {
+	type args struct {
+		file string
+	}
+	tests := []struct {
+		name    string
+		args    args
+		want    *hclsyntax.Body
+		wantErr bool
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			got, err := GetResourceBlocks(tt.args.file)
+			if (err != nil) != tt.wantErr {
+				t.Errorf("GetResourceBlocks() error = %v, wantErr %v", err, tt.wantErr)
+				return
+			}
+			if !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("GetResourceBlocks() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}

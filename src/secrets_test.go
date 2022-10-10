@@ -136,3 +136,33 @@ func TestRemote(t *testing.T) {
 		})
 	}
 }
+
+func Test_splitHub(t *testing.T) {
+	type args struct {
+		repository string
+	}
+	tests := []struct {
+		name    string
+		args    args
+		want    string
+		want1   string
+		wantErr bool
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			got, got1, err := splitHub(tt.args.repository)
+			if (err != nil) != tt.wantErr {
+				t.Errorf("splitHub() error = %v, wantErr %v", err, tt.wantErr)
+				return
+			}
+			if got != tt.want {
+				t.Errorf("splitHub() got = %v, want %v", got, tt.want)
+			}
+			if got1 != tt.want1 {
+				t.Errorf("splitHub() got1 = %v, want %v", got1, tt.want1)
+			}
+		})
+	}
+}

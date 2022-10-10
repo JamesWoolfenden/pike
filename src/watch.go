@@ -6,6 +6,7 @@ import (
 	"errors"
 	"log"
 	"net/url"
+	"reflect"
 	"sort"
 	"time"
 
@@ -24,11 +25,15 @@ func Watch(arn string, wait int) error {
 
 	client := iam.NewFromConfig(cfg)
 
-	Version := GetVersion(client, arn)
+	Version, err := GetVersion(client, arn)
 
-	log.Printf("Waiting for change on policy Version %s", Version)
+	if err != nil {
+		return err
+	}
 
-	delay, err := WaitForPolicyChange(client, "arn:aws:iam::680235478471:policy/basic", Version, wait)
+	log.Printf("Waiting for change on policy Version %s", *Version)
+
+	delay, err := WaitForPolicyChange(client, "arn:aws:iam::680235478471:policy/basic", *Version, wait)
 
 	if err != nil {
 		return err
@@ -43,63 +48,94 @@ func WaitForPolicyChange(client *iam.Client, arn string, Version string, Wait in
 
 	for i := 1; i < Wait; i++ {
 		time.Sleep(time.Duration(5))
-		NewVersion := GetVersion(client, arn)
-		if NewVersion != Version {
+		NewVersion, err := GetVersion(client, arn)
+		if err != nil {
+			continue
+		}
+		if NewVersion == &Version {
 			return i, nil
 		}
+		log.Print("Not equal")
 	}
 	return Wait, errors.New("wait expired with no change")
 }
 
 // GetVersion gets the version of the IAM policy
-func GetVersion(client *iam.Client, PolicyArn string) string {
+func GetVersion(client *iam.Client, PolicyArn string) (*string, error) {
 
 	output, err := client.GetPolicy(context.TODO(), &iam.GetPolicyInput{PolicyArn: aws.String(PolicyArn)})
 
 	if err != nil {
-		log.Fatal(err)
+		return nil, err
 	}
-	return *(output.Policy.DefaultVersionId)
+
+	return output.Policy.DefaultVersionId, nil
 }
 
 // GetPolicyVersion Obtains the versioned IAM policy
-func GetPolicyVersion(client *iam.Client, PolicyArn string, Version string) (string, error) {
+func GetPolicyVersion(client *iam.Client, PolicyArn string, Version string) (*string, error) {
 	output, err := client.GetPolicyVersion(context.TODO(), &iam.GetPolicyVersionInput{PolicyArn: aws.String(PolicyArn), VersionId: &Version})
 
 	if err != nil {
-		return "", err
+		return nil, err
 	}
 
 	Policy, err := url.QueryUnescape(*(output.PolicyVersion.Document))
 	if err != nil {
-		return "", err
+		return nil, err
 	}
 
 	fixed, err := SortActions(Policy)
 
 	if err != nil {
-		return "", err
+		return nil, err
 	}
 
 	return fixed, err
 }
 
 // SortActions sorts the actions list of an IAM policy
-func SortActions(myPolicy string) (string, error) {
-	var raw Policy
+func SortActions(myPolicy string) (*string, error) {
+	//var raw Policy
+	var raw map[string]interface{}
 	err := json.Unmarshal([]byte(myPolicy), &raw)
 	if err != nil {
-		return "", err
+		return nil, err
 	}
 
-	var blocks []Statement
-	for _, block := range raw.Statements {
-		sort.Strings(block.Action)
-		blocks = append(blocks, block)
+	//var blocks []interface{}
+	Statements := raw["Statement"].([]interface{})
+	var NewStatements []interface{}
+	for _, block := range Statements {
+
+		blocked := block.(map[string]interface{})
+		Actions := blocked["Action"]
+		myType := reflect.TypeOf(Actions)
+		switch myType.Kind() {
+		case reflect.String:
+			//do nothing
+		case reflect.Slice:
+			blocked["Action"] = sortInterfaceStrings(Actions)
+		default:
+			log.Print(myType.Kind())
+		}
+		NewStatements = append(NewStatements, block)
 	}
 
-	raw.Statements = blocks
+	raw["Statement"] = NewStatements
 
 	fixed, err := json.Marshal(raw)
-	return string(fixed), err
+	result := string(fixed)
+	return &result, err
+}
+
+func sortInterfaceStrings(Actions interface{}) []string {
+	temp := Actions.([]interface{})
+	var myActions []string
+	for _, action := range temp {
+		myAction := action.(string)
+		myActions = append(myActions, myAction)
+	}
+	sort.Strings(myActions)
+	return myActions
 }

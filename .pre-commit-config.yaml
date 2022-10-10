@@ -51,5 +51,6 @@ repos:
     rev:  v0.0.17
     hooks:
       - id: go-test
+        args: ["./..."]
       - id: go-mod-tidy
       - id: go-generate

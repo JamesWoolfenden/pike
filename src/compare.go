@@ -23,8 +23,12 @@ func Compare(directory string, arn string, init bool) (bool, error) {
 
 	client := iam.NewFromConfig(cfg)
 
-	Version := GetVersion(client, arn)
-	Policy, _ := GetPolicyVersion(client, arn, Version)
+	Version, err := GetVersion(client, arn)
+	if err != nil {
+		return theSame, err
+	}
+
+	Policy, _ := GetPolicyVersion(client, arn, *Version)
 
 	iacPolicy, err := MakePolicy(directory, "", init)
 
@@ -40,7 +44,7 @@ func Compare(directory string, arn string, init bool) (bool, error) {
 
 	// iam versus iac
 	fmt.Printf("IAM Policy %s versus Local %s \n", arn, directory)
-	theSame, err = CompareIAMPolicy(Policy, Sorted)
+	theSame, err = CompareIAMPolicy(*Policy, *Sorted)
 
 	return theSame, err
 }

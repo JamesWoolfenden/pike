@@ -29,11 +29,11 @@ type Statement struct {
 	Sid      string   `json:"Sid"`
 	Effect   string   `json:"Effect"`
 	Action   []string `json:"Action"`
-	Resource string   `json:"Resource"`
+	Resource []string `json:"Resource"`
 }
 
 // NewStatement constructor
-func NewStatement(sid string, effect string, action []string, resource string) *Statement {
+func NewStatement(sid string, effect string, action []string, resource []string) *Statement {
 	return &Statement{Sid: sid, Effect: effect, Action: action, Resource: resource}
 }
 

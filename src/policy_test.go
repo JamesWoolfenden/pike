@@ -12,9 +12,10 @@ func TestNewAWSPolicy(t *testing.T) {
 		Actions []string
 	}
 	tests := []struct {
-		name string
-		args args
-		want Policy
+		name    string
+		args    args
+		want    Policy
+		wantErr bool
 	}{
 		{"pass", args{[]string{
 			"s3:CreateBucket",
@@ -54,12 +55,19 @@ func TestNewAWSPolicy(t *testing.T) {
 					"s3:GetObject",
 					"s3:GetObjectAcl",
 					"s3:GetReplicationConfiguration",
-					"s3:ListBucket"}, "*"}},
-			}},
+					"s3:ListBucket"}, []string{"*"}},
+				},
+			},
+			false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := NewAWSPolicy(tt.args.Actions); !reflect.DeepEqual(got, tt.want) {
+			got, err := NewAWSPolicy(tt.args.Actions)
+			if (err != nil) != tt.wantErr {
+				t.Errorf("NewAWSPolicy() error = %v, wantErr %v", err, tt.wantErr)
+				return
+			}
+			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("NewAWSPolicy() = %v, want %v", got, tt.want)
 			}
 		})
@@ -98,7 +106,10 @@ func TestGetPolicy(t *testing.T) {
 			"ec2:StopInstances",
 			"ec2:StopInstances",
 			"ec2:TerminateInstances"}, nil, nil}},
-			"{\n    \"Version\": \"2012-10-17\",\n    \"Statement\": [\n        {\n            \"Sid\": \"VisualEditor0\",\n            \"Effect\": \"Allow\",\n            \"Action\": [\n                \"ec2:DescribeInstanceAttribute\",\n                \"ec2:DescribeInstanceCreditSpecifications\",\n                \"ec2:DescribeInstanceTypes\",\n                \"ec2:DescribeInstances\",\n                \"ec2:DescribeTags\",\n                \"ec2:DescribeVolumes\",\n                \"ec2:ModifyInstanceAttribute\",\n                \"ec2:RunInstances\",\n                \"ec2:StartInstances\",\n                \"ec2:StopInstances\",\n                \"ec2:TerminateInstances\"\n            ],\n            \"Resource\": \"*\"\n        }\n    ]\n}",
+			"{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"VisualEditor0\",\"Effect\":\"Allow\",\"Action\":[\"ec2:DescribeInstanceAttribute\",\"ec2:DescribeInstanceCreditSpecifications\",\"ec2:DescribeInstanceTypes\",\"ec2:DescribeInstances\",\"ec2:DescribeTags\",\"ec2:DescribeVolumes\",\"ec2:ModifyInstanceAttribute\",\"ec2:RunInstances\",\"ec2:StartInstances\",\"ec2:StopInstances\",\"ec2:TerminateInstances\"],\"Resource\":[\"*\"]}]}",
+			false},
+		{"short", args{Sorted{[]string{"s3:*"}, nil, nil}},
+			"{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"VisualEditor0\",\"Effect\":\"Allow\",\"Action\":[\"s3:*\"],\"Resource\":[\"*\"]}]}",
 			false},
 	}
 	for _, tt := range tests {
@@ -135,7 +146,15 @@ func TestAWSPolicy(t *testing.T) {
 		want    AwsOutput
 		wantErr bool
 	}{
-		{"pass", args{[]string{"woof"}}, AwsOutput{"{\n            \"Version\": \"2012-10-17\",\n            \"Statement\": [\n                {\n                    \"Sid\": \"VisualEditor0\",\n                    \"Effect\": \"Allow\",\n                    \"Action\": null,\n                    \"Resource\": \"*\"\n                }\n            ]\n        }", ""}, false},
+		{"fail",
+			args{[]string{"woof"}},
+			AwsOutput{},
+			true},
+		{"fail2", args{[]string{"woof", "meow:*"}}, AwsOutput{"", ""}, true},
+		{"pass",
+			args{[]string{"woof:*"}},
+			AwsOutput{"{\n    \"Version\": \"2012-10-17\",\n    \"Statement\": [\n        {\n            \"Sid\": \"VisualEditor0\",\n            \"Effect\": \"Allow\",\n            \"Action\": [\n                \"woof:*\"\n            ],\n            \"Resource\": [\n                \"*\"\n            ]\n        }\n    ]\n}", ""},
+			false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

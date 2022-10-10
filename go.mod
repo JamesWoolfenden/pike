@@ -14,6 +14,7 @@ require (
 	github.com/hashicorp/terraform-exec v0.17.2
 	github.com/urfave/cli/v2 v2.10.3
 	golang.org/x/crypto v0.0.0-20220517005047-85d78b3ac167
+	golang.org/x/net v0.0.0-20220624214902-1bab6f366d9e
 	golang.org/x/oauth2 v0.0.0-20220909003341-f21342109be1
 )
 
@@ -40,7 +41,6 @@ require (
 	github.com/sergi/go-diff v1.2.0 // indirect
 	github.com/xrash/smetrics v0.0.0-20201216005158-039620a65673 // indirect
 	github.com/zclconf/go-cty v1.10.0 // indirect
-	golang.org/x/net v0.0.0-20220624214902-1bab6f366d9e // indirect
 	golang.org/x/sys v0.0.0-20220811171246-fbc7d0a398ab // indirect
 	golang.org/x/text v0.3.7 // indirect
 	google.golang.org/appengine v1.6.7 // indirect

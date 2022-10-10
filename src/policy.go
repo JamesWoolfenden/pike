@@ -21,7 +21,7 @@ var policyTemplate []byte
 var roleTemplate []byte
 
 // NewAWSPolicy constructor
-func NewAWSPolicy(Actions []string) Policy {
+func NewAWSPolicy(Actions []string) (Policy, error) {
 	something := Policy{Version: "2012-10-17"}
 
 	sort.Strings(Actions)
@@ -43,14 +43,16 @@ func NewAWSPolicy(Actions []string) Policy {
 				myActions = append(myActions, action)
 			}
 		}
-
-		state := Statement{Sid: "VisualEditor" + strconv.Itoa(count), Effect: "Allow", Action: myActions, Resource: "*"}
+		if myActions == nil {
+			return something, fmt.Errorf("failed to find any action")
+		}
+		state := Statement{Sid: "VisualEditor" + strconv.Itoa(count), Effect: "Allow", Action: myActions, Resource: []string{"*"}}
 
 		statements = append(statements, state)
 	}
 
 	something.Statements = statements
-	return something
+	return something, nil
 }
 
 // GetPolicy creates new iam polices from a list of Permissions
@@ -121,7 +123,12 @@ func GetPolicy(actions Sorted) (OutputPolicy, error) {
 // AWSPolicy create an IAM policy
 func AWSPolicy(Permissions []string) (AwsOutput, error) {
 	var OutPolicy AwsOutput
-	Policy := NewAWSPolicy(Permissions)
+	Policy, err := NewAWSPolicy(Permissions)
+
+	if err != nil {
+		return OutPolicy, err
+	}
+
 	b, err := json.MarshalIndent(Policy, "", "    ")
 	if err != nil {
 		fmt.Println(err)
