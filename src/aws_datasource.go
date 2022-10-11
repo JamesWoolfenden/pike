@@ -108,6 +108,7 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 		"aws_kms_custom_key_store":                  dataAwsKmsCustomKeyStore,
 		"aws_vpc_ipam_pool_cidrs":                   dataAwsVpcIpamPoolCidrs,
 		"aws_vpc_ipam_pool":                         dataAwsVpcIpamPoolCidrs,
+		"aws_elastic_beanstalk_hosted_zone":         placeholder,
 	}
 
 	var Permissions []string

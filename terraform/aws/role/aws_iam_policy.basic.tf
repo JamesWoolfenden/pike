@@ -7,22 +7,18 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "appconfig:DeleteApplication",
-          "appconfig:TagResource",
-          "appconfig:UpdateApplication",
-          "appconfig:UntagResource",
-          "appconfig:GetApplication",
           "ec2:DescribeAccountAttributes",
-          "appconfig:ListTagsForResource",
-          "appconfig:CreateApplication",
+          "dax:CreateCluster",
+          "dax:DescribeClusters",
+          "dax:UpdateCluster",
+          "dax:DeleteCluster",
+          "dax:ListTags",
+          "dax:TagResource",
+          "dax:UntagResource",
 
-          "ec2:DescribeAccountAttributes",
-          "appconfig:CreateConfigurationProfile",
-          "appconfig:GetConfigurationProfile",
-          "appconfig:DeleteConfigurationProfile",
-          "appconfig:TagResource",
-          "appconfig:UntagResource",
-        ]
+          //iam_role_arn
+          "iam:PassRole"
+        ],
         "Resource" : "*"
       }
     ]

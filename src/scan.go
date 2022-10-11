@@ -19,7 +19,7 @@ import (
 const tfVersion = "1.2.3"
 
 // Scan looks for resources in a given directory
-func Scan(dirName string, output string, file string, init bool, write bool) error {
+func Scan(dirName string, output string, file *string, init bool, write bool) error {
 
 	OutPolicy, err := MakePolicy(dirName, file, init)
 	if err != nil {
@@ -138,10 +138,10 @@ func LocateTerraform() (string, error) {
 }
 
 // MakePolicy does the guts of determining a policy from code
-func MakePolicy(dirName string, file string, init bool) (OutputPolicy, error) {
+func MakePolicy(dirName string, file *string, init bool) (OutputPolicy, error) {
 	var files []string
 	var Output OutputPolicy
-	if file == "" {
+	if file == nil {
 		fullPath, err := filepath.Abs(dirName)
 
 		if err != nil {
@@ -163,7 +163,7 @@ func MakePolicy(dirName string, file string, init bool) (OutputPolicy, error) {
 			return Output, err
 		}
 	} else {
-		myFile, err := filepath.Abs(file)
+		myFile, err := filepath.Abs(*file)
 
 		if err != nil {
 			return Output, err

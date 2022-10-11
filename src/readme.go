@@ -15,7 +15,7 @@ func Readme(dirName string, output string, init bool, autoAppend bool) error {
 		return err
 	}
 
-	OutPolicy, err2 := MakePolicy(dirName, "", init)
+	OutPolicy, err2 := MakePolicy(dirName, nil, init)
 	if err2 != nil {
 		return err2
 	}
@@ -27,7 +27,7 @@ func Readme(dirName string, output string, init bool, autoAppend bool) error {
 	case "json":
 		markdown = "\nThe Policy required is:\n\n```json\n" + OutPolicy.AsString(output) + "\n```\n"
 	default:
-		return errors.New("Output formats are terraform or json")
+		return errors.New("output formats are terraform or json")
 	}
 
 	err := ReplaceSection(file, markdown, autoAppend)

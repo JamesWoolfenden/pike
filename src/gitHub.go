@@ -8,7 +8,7 @@ import (
 	"github.com/google/go-github/v47/github"
 )
 
-// InvokeGithubDispatchEvent uses your gitHub api key (if sufficiently enabled) to invoke a github action workflow
+// InvokeGithubDispatchEvent uses your gitHub api key (if sufficiently enabled) to invoke a gitHub action workflow
 func InvokeGithubDispatchEvent(repository string, workflowFileName string, branch string) error {
 	owner, repo, err := splitHub(repository)
 

@@ -14,18 +14,19 @@ func TestScan(t *testing.T) {
 		output  string
 		write   bool
 	}
+	testpath, _ := filepath.Abs("../terraform/aws/backup")
 	tests := []struct {
 		name    string
 		args    args
 		wantErr bool
 	}{
-		{"aws", args{"../terraform/aws/backup", "json", false}, false},
-		{"aws-out", args{"../terraform/aws/backup", "terraform", true}, false},
-		{"gcp", args{"../terraform/gcp/backup", "json", false}, false},
+		{"aws", args{testpath, "json", false}, false},
+		{"aws-out", args{testpath, "terraform", true}, false},
+		{"gcp", args{testpath, "json", false}, false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if err := Scan(tt.args.dirname, tt.args.output, "", false, tt.args.write); (err != nil) != tt.wantErr {
+			if err := Scan(tt.args.dirname, tt.args.output, nil, false, tt.args.write); (err != nil) != tt.wantErr {
 				t.Errorf("Scan() error = %v, wantErr %v", err, tt.wantErr)
 			}
 		})
@@ -119,9 +120,12 @@ func TestInit(t *testing.T) {
 func TestMakePolicy(t *testing.T) {
 	type args struct {
 		dirName string
-		file    string
+		file    *string
 		init    bool
 	}
+
+	bogus := "testdata/scan/examples/simple/bogus.tf"
+	real := "testdata/scan/examples/simple/aws_s3_bucket.pike.tf"
 	tests := []struct {
 		name    string
 		args    args
@@ -129,16 +133,16 @@ func TestMakePolicy(t *testing.T) {
 		wantErr bool
 	}{
 		{"basic", args{
-			"testdata/init/nicconf", "", true},
+			"testdata/init/nicconf", nil, true},
 			"{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"VisualEditor0\",\"Effect\":\"Allow\",\"Action\":[\"apigateway:DELETE\",\"apigateway:GET\",\"apigateway:PATCH\",\"apigateway:POST\",\"apigateway:PUT\"],\"Resource\":\"*\"},{\"Sid\":\"VisualEditor1\",\"Effect\":\"Allow\",\"Action\":[\"application-autoscaling:DeleteScalingPolicy\",\"application-autoscaling:DeregisterScalableTarget\",\"application-autoscaling:DescribeScalableTargets\",\"application-autoscaling:DescribeScalingPolicies\",\"application-autoscaling:PutScalingPolicy\",\"application-autoscaling:RegisterScalableTarget\"],\"Resource\":\"*\"},{\"Sid\":\"VisualEditor2\",\"Effect\":\"Allow\",\"Action\":[\"dynamodb:CreateTable\",\"dynamodb:DeleteTable\",\"dynamodb:DescribeContinuousBackups\",\"dynamodb:DescribeTable\",\"dynamodb:DescribeTimeToLive\",\"dynamodb:ListTagsOfResource\",\"dynamodb:TagResource\",\"dynamodb:UntagResource\",\"dynamodb:UpdateTable\",\"dynamodb:UpdateTimeToLive\"],\"Resource\":\"*\"},{\"Sid\":\"VisualEditor3\",\"Effect\":\"Allow\",\"Action\":[\"ec2:DescribeAccountAttributes\"],\"Resource\":\"*\"},{\"Sid\":\"VisualEditor4\",\"Effect\":\"Allow\",\"Action\":[\"iam:AttachRolePolicy\",\"iam:CreatePolicy\",\"iam:CreateRole\",\"iam:CreateServiceLinkedRole\",\"iam:DeletePolicy\",\"iam:DeleteRole\",\"iam:DeleteRolePermissionsBoundary\",\"iam:DetachRolePolicy\",\"iam:GetPolicy\",\"iam:GetPolicyVersion\",\"iam:GetRole\",\"iam:ListAttachedRolePolicies\",\"iam:ListInstanceProfilesForRole\",\"iam:ListPolicies\",\"iam:ListPolicyVersions\",\"iam:ListRolePolicies\",\"iam:PassRole\",\"iam:PutRolePermissionsBoundary\",\"iam:TagPolicy\",\"iam:TagRole\",\"iam:UntagPolicy\",\"iam:UpdateRoleDescription\"],\"Resource\":\"*\"},{\"Sid\":\"VisualEditor5\",\"Effect\":\"Allow\",\"Action\":[\"lambda:AddPermission\",\"lambda:CreateFunction\",\"lambda:DeleteFunction\",\"lambda:DeleteLayerVersion\",\"lambda:GetFunction\",\"lambda:GetFunctionCodeSigningConfig\",\"lambda:GetLayerVersion\",\"lambda:GetPolicy\",\"lambda:ListVersionsByFunction\",\"lambda:PublishLayerVersion\",\"lambda:RemovePermission\",\"lambda:TagResource\",\"lambda:UntagResource\"],\"Resource\":\"*\"},{\"Sid\":\"VisualEditor6\",\"Effect\":\"Allow\",\"Action\":[\"logs:AssociateKmsKey\",\"logs:CreateLogGroup\",\"logs:DeleteLogGroup\",\"logs:DeleteRetentionPolicy\",\"logs:DescribeLogGroups\",\"logs:DisassociateKmsKey\",\"logs:ListTagsLogGroup\",\"logs:PutRetentionPolicy\",\"logs:TagLogGroup\",\"logs:UntagLogGroup\"],\"Resource\":\"*\"},{\"Sid\":\"VisualEditor7\",\"Effect\":\"Allow\",\"Action\":[\"s3:DeleteObject\",\"s3:GetObject\",\"s3:GetObjectTagging\",\"s3:PutObject\"],\"Resource\":\"*\"}]}",
 			false},
-		{"not a dir", args{"bogus", "", true},
+		{"not a dir", args{"bogus", nil, true},
 			"",
 			true},
-		{"a file", args{"", "testdata/scan/examples/simple/aws_s3_bucket.pike.tf", false},
+		{"a file", args{"", &real, false},
 			"{\"Version\":\"2012-10-17\",\"Statement\": [{\"Sid\": \"VisualEditor0\",\"Effect\": \"Allow\",\"Action\": [\"s3:CreateBucket\",\"s3:DeleteBucket\",\"s3:GetAccelerateConfiguration\",\"s3:GetBucketAcl\",\"s3:GetBucketCORS\",\"s3:GetBucketLogging\",\"s3:GetBucketObjectLockConfiguration\",\"s3:GetBucketPolicy\",\"s3:GetBucketRequestPayment\",\"s3:GetBucketTagging\",\"s3:GetBucketVersioning\",\"s3:GetBucketWebsite\",\"s3:GetEncryptionConfiguration\",\"s3:GetLifecycleConfiguration\",\"s3:GetObject\",\"s3:GetObjectAcl\",\"s3:GetReplicationConfiguration\",\"s3:ListBucket\"],\"Resource\": \"*\"}]}",
 			false},
-		{"not a file", args{"", "testdata/scan/examples/simple/bogus.tf", false},
+		{"not a file", args{"", &bogus, false},
 			"",
 			true},
 	}
