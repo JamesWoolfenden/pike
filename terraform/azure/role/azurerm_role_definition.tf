@@ -5,12 +5,11 @@ resource "azurerm_role_definition" "example" {
 
   permissions {
     actions = [
-      "Microsoft.Resources/subscriptions/providers/read",
-
-      "Microsoft.Resources/subscriptions/resourcegroups/read",
-      "Microsoft.Resources/subscriptions/resourcegroups/write",
-
-    "Microsoft.Resources/subscriptions/resourcegroups/delete"]
+      "Microsoft.Web/serverfarms/read",
+      "Microsoft.Web/serverfarms/write",
+      "Microsoft.Web/serverfarms/delete",
+      "Microsoft.Resources/subscriptions/providers/read"
+    ]
     not_actions = []
   }
 

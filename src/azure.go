@@ -27,6 +27,7 @@ func GetAZUREPermissions(result ResourceV2) ([]string, error) {
 func GetAZUREResourcePermissions(result ResourceV2) ([]string, error) {
 	TFLookup := map[string]interface{}{
 		"azurerm_resource_group": azurermResourceGroup,
+		"azurerm_service_plan":   azurermServicePlan,
 	}
 
 	var Permissions []string

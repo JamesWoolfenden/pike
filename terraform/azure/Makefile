@@ -34,4 +34,4 @@ bump:
 	git push origin $(VERSION)
 
 psbump:
-	powershell -command "./bump.ps1"
+	powershell -command "../../bump.ps1"
