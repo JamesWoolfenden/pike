@@ -19,7 +19,10 @@ func AZUREPolicy(permissions []string) (string, error) {
 		Permissions string
 	}
 
-	policyName := strings.ToLower("terraform_pike" + randSeq(8))
+	//make the policy different each time which isnt greate for the readme
+	//policyName := strings.ToLower("terraform_pike" + randSeq(8))
+
+	policyName := "terraform_pike"
 
 	theDetails := AzurePolicyDetails{policyName, test}
 

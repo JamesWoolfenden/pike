@@ -1,0 +1,8 @@
+# todo
+
+azurerm_app_service_plan
+azurerm_cosmosdb_account
+azurerm_cosmosdb_table
+azurerm_managed_disk
+azurerm_dns_zone
+azurerm_private_dns_zone
