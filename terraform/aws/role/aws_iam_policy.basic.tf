@@ -8,17 +8,35 @@ resource "aws_iam_policy" "basic" {
         "Effect" : "Allow",
         "Action" : [
           "ec2:DescribeAccountAttributes",
-          "dax:CreateCluster",
-          "dax:DescribeClusters",
-          "dax:UpdateCluster",
-          "dax:DeleteCluster",
-          "dax:ListTags",
-          "dax:TagResource",
-          "dax:UntagResource",
+          "eks:CreateCluster",
+          "eks:DeleteCluster",
+          "eks:TagResource",
+          "eks:UntagResource",
+          "eks:ListTagsForResource",
+          "iam:PassRole",
+          "eks:DescribeCluster",
+          "eks:UpdateClusterConfig",
 
-          //iam_role_arn
-          "iam:PassRole"
-        ],
+          "eks:CreateAddon",
+          "eks:DescribeAddon",
+          "eks:DescribeAddonVersions",
+          "eks:UpdateAddon",
+          "eks:DeleteAddon",
+          "eks:TagResource",
+          "eks:UntagResource",
+
+          "ec2:DescribeAccountAttributes",
+          "eks:CreateNodegroup",
+          "eks:DeleteNodegroup",
+          "eks:UpdateNodegroupConfig",
+          "eks:TagResource",
+          "eks:UntagResource",
+          "iam:GetRole",
+          "iam:ListAttachedRolePolicies",
+          "ec2:DescribeSubnets",
+          "iam:CreateServiceLinkedRole",
+          "eks:DescribeNodegroup"
+        ]
         "Resource" : "*"
       }
     ]

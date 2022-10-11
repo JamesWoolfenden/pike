@@ -106,11 +106,8 @@
 ./resource.ps1 aws_ec2_transit_gateway
 ./resource.ps1 aws_ec2_transit_gateway_route_table
 
-./resource.ps1 aws_eks_addon
-./resource.ps1 aws_eks_cluster
 ./resource.ps1 aws_eks_fargate_profile
 ./resource.ps1 aws_eks_identity_provider_config
-./resource.ps1 aws_eks_node_group
 
 ./resource.ps1 aws_emr_cluster
 ./resource.ps1 aws_emr_security_configuration

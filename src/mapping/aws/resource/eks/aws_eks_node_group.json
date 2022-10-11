@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "eks:CreateNodegroup",
+      "eks:DeleteNodegroup",
+      "iam:GetRole",
+      "iam:ListAttachedRolePolicies",
+      "ec2:DescribeSubnets",
+      "iam:CreateServiceLinkedRole",
+      "eks:DescribeNodegroup"
+    ],
+    "attributes": {
+      "tags": [
+        "eks:TagResource",
+        "eks:UntagResource"
+      ]
+    },
+    "destroy": [
+      "eks:DeleteNodegroup"
+    ],
+    "modify": [
+      "eks:UpdateNodegroupConfig"
+    ],
+    "plan": []
+  }
+]

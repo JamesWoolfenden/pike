@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "eks:CreateAddon",
+      "eks:DescribeAddon",
+      "eks:DescribeAddonVersions",
+      "eks:DeleteAddon"
+    ],
+    "attributes": {
+      "tags": [
+        "eks:TagResource",
+        "eks:UntagResource"
+      ]
+    },
+    "destroy": [
+      "eks:DeleteAddon"
+    ],
+    "modify": [
+      "eks:UpdateAddon"
+    ],
+    "plan": []
+  }
+]
