@@ -7,8 +7,8 @@
     "destroy": [],
     "modify": [],
     "plan": [
-      "ec2:DescribeAccountAttributes",
-      "elasticbeanstalk:ListAvailableSolutionStacks"
+      "elasticbeanstalk:DescribeApplications",
+      "ec2:DescribeAccountAttributes"
     ]
   }
 ]

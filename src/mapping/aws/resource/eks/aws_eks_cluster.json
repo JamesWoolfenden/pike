@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "eks:CreateCluster",
+      "eks:DeleteCluster",
+      "eks:ListTagsForResource",
+      "iam:PassRole",
+      "eks:DescribeCluster"
+    ],
+    "attributes": {
+      "tags": [
+        "eks:TagResource",
+        "eks:UntagResource"
+      ]
+    },
+    "destroy": [
+      "eks:DeleteCluster"
+    ],
+    "modify": [
+      "eks:UpdateClusterConfig"
+    ],
+    "plan": []
+  }
+]

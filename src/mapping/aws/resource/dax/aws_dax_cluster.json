@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "dax:CreateCluster",
+      "dax:DescribeClusters",
+      "dax:DeleteCluster",
+      "dax:ListTags"
+    ],
+    "attributes": {
+      "iam_role_arn": [
+        "iam:PassRole"
+      ],
+      "tags": [
+        "dax:TagResource",
+        "dax:UntagResource"
+      ]
+    },
+    "destroy": [
+      "dax:DeleteCluster"
+    ],
+    "modify": [
+      "dax:UpdateCluster"
+    ],
+    "plan": []
+  }
+]

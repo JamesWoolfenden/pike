@@ -16,7 +16,7 @@ func Make(directory string) (*string, error) {
 	err := Scan(
 		directory,
 		"terraform",
-		"",
+		nil,
 		true,
 		true,
 	)

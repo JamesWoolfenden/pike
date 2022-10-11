@@ -144,7 +144,11 @@ func main() {
 					},
 				},
 				Action: func(*cli.Context) error {
-					return pike.Scan(directory, output, file, init, write)
+					if file == "" {
+						return pike.Scan(directory, output, nil, init, write)
+					}
+
+					return pike.Scan(directory, output, &file, init, write)
 				},
 			},
 			{

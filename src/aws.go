@@ -322,6 +322,7 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_vpc_endpoint_route_table_association":           awsVpcEndpointRouteTableAssociation,
 		"aws_appconfig_configuration_profile":                awsAppconfigConfigurationProfile,
 		"aws_appconfig_application":                          awsAppconfigApplication,
+		"aws_dax_cluster":                                    awsDaxCluster,
 	}
 
 	var Permissions []string

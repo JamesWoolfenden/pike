@@ -816,3 +816,6 @@ var awsAppconfigConfigurationProfile []byte
 
 //go:embed mapping/aws/resource/appconfig/aws_appconfig_application.json
 var awsAppconfigApplication []byte
+
+//go:embed mapping/aws/resource/dax/aws_dax_cluster.json
+var awsDaxCluster []byte

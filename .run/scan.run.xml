@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="go build github.com/jameswoolfenden/pike" type="GoApplicationRunConfiguration" factoryName="Go Application" nameIsGenerated="true">
+  <configuration default="false" name="scan" type="GoApplicationRunConfiguration" factoryName="Go Application">
     <module name="pike" />
     <working_directory value="$PROJECT_DIR$" />
     <parameters value="scan -d terraform/aws/backup" />

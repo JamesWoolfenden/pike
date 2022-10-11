@@ -83,8 +83,6 @@
 ./resource.ps1 aws_cloudwatch_event_permission
 ./resource.ps1 aws_cloudwatch_metric_stream
 
-./resource.ps1 aws_dax_cluster
-
 ./resource.ps1 aws_dms_replication_instance
 
 ./resource.ps1 aws_docdb_cluster
@@ -108,14 +106,8 @@
 ./resource.ps1 aws_ec2_transit_gateway
 ./resource.ps1 aws_ec2_transit_gateway_route_table
 
-./resource.ps1 aws_eks_addon
-./resource.ps1 aws_eks_cluster
 ./resource.ps1 aws_eks_fargate_profile
 ./resource.ps1 aws_eks_identity_provider_config
-./resource.ps1 aws_eks_node_group
-
-./resource.ps1 aws_elastic_beanstalk_application_version
-./resource.ps1 aws_elastic_beanstalk_environment
 
 ./resource.ps1 aws_emr_cluster
 ./resource.ps1 aws_emr_security_configuration

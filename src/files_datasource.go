@@ -246,3 +246,6 @@ var dataAwsKmsCustomKeyStore []byte
 
 //go:embed mapping/aws/data/ec2/aws_vpc_ipam_pool_cidrs.json
 var dataAwsVpcIpamPoolCidrs []byte
+
+//go:embed mapping/aws/data/elasticbeanstalk/aws_elastic_beanstalk_application.json
+var dataAwsElasticBeanstalkApplication []byte
