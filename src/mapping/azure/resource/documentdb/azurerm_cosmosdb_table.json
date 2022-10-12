@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourcegroups/read",
+      "Microsoft.DocumentDB/databaseAccounts/read",
+      "Microsoft.DocumentDB/databaseAccounts/tables/read",
+      "Microsoft.DocumentDB/databaseAccounts/tables/write",
+      "Microsoft.DocumentDB/databaseAccounts/tables/delete",
+      "Microsoft.DocumentDB/databaseAccounts/tables/throughputSettings/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.DocumentDB/databaseAccounts/tables/delete"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

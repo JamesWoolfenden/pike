@@ -6,7 +6,8 @@ import "log"
 func GetAZUREDataPermissions(result ResourceV2) ([]string, error) {
 
 	TFLookup := map[string]interface{}{
-		//		"google_compute_image":      placeholder,
+		"azurerm_resource_group": dataAzurermResourceGroup,
+		"azurerm_client_config":  placeholder,
 	}
 
 	var Permissions []string

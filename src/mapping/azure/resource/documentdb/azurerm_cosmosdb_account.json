@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourcegroups/read",
+      "Microsoft.DocumentDB/databaseAccounts/read",
+      "Microsoft.DocumentDB/databaseAccounts/write",
+      "Microsoft.DocumentDB/databaseAccounts/delete",
+      "Microsoft.DocumentDB/databaseAccounts/listKeys/action",
+      "Microsoft.DocumentDB/databaseAccounts/readonlykeys/action",
+      "Microsoft.DocumentDB/databaseAccounts/listConnectionStrings/action"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.DocumentDB/databaseAccounts/delete"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]
