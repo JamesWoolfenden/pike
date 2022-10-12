@@ -13,14 +13,14 @@
 
 Pike is a tool, to determine the minimum permissions required to run a TF/IAC run:
 
-Pike currently supports Terraform and can support multiple providers,
-So far I've added support for a larger number of AWS resources, but I have just added support for GCP.
-Feel free to submit PR or Issue, and then I'll take a look.
+Pike currently supports Terraform and supports multiple providers (AWS, GCP, AZURE),
+Azure is the newest with AWS having the most supported resources <https://github.com/JamesWoolfenden/pike/tree/master/src/mapping>.
+Feel free to submit PR or Issue if you find an issue or even better add new resources, and then I'll take a look at merging it ASAP.
 
 **CAVEAT** The policies and roles are to get you started, there are no conditions and resources are all wildcards (for AWS)
-this is **definitely not best practice**, you need will to modify these permissions to minimum required by adding these constrictions.
+this is **definitely not best practice**, you need will to modify these permissions to minimum required by adding these constrictions, however I also added the ability (in AWS so far) to generate short lived credentials for your build and remotely (REMOTE) supply and invoke your builds (INVOKE).
 
-Ideally I would like to do this for you, but these policies are determined statically, and we would need to determine the resource names that will be created and know your intentions.
+Ideally I would like to do this for you, but these policies are determined statically, and we would need to determine the resource names that will be created and know your intentions. 
 
 ## Table of Contents
 
