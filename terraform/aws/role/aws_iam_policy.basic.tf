@@ -8,34 +8,29 @@ resource "aws_iam_policy" "basic" {
         "Effect" : "Allow",
         "Action" : [
           "ec2:DescribeAccountAttributes",
-          "eks:CreateCluster",
-          "eks:DeleteCluster",
-          "eks:TagResource",
-          "eks:UntagResource",
-          "eks:ListTagsForResource",
-          "iam:PassRole",
-          "eks:DescribeCluster",
-          "eks:UpdateClusterConfig",
-
-          "eks:CreateAddon",
-          "eks:DescribeAddon",
-          "eks:DescribeAddonVersions",
-          "eks:UpdateAddon",
-          "eks:DeleteAddon",
-          "eks:TagResource",
-          "eks:UntagResource",
+          "lambda:CreateEventSourceMapping",
+          "lambda:GetEventSourceMapping",
+          "lambda:DeleteEventSourceMapping",
+          "lambda:UpdateEventSourceMapping",
 
           "ec2:DescribeAccountAttributes",
-          "eks:CreateNodegroup",
-          "eks:DeleteNodegroup",
-          "eks:UpdateNodegroupConfig",
-          "eks:TagResource",
-          "eks:UntagResource",
-          "iam:GetRole",
-          "iam:ListAttachedRolePolicies",
-          "ec2:DescribeSubnets",
-          "iam:CreateServiceLinkedRole",
-          "eks:DescribeNodegroup"
+          "lambda:UpdateFunctionEventInvokeConfig",
+          "lambda:GetFunctionEventInvokeConfig",
+          "lambda:PutFunctionEventInvokeConfig",
+          "lambda:DeleteFunctionEventInvokeConfig",
+
+          "ec2:DescribeAccountAttributes",
+          "lambda:CreateFunctionUrlConfig",
+          "lambda:GetFunctionUrlConfig",
+          "lambda:DeleteFunctionUrlConfig",
+          "lambda:UpdateFunctionUrlConfig",
+          "lambda:AddPermission",
+
+          "ec2:DescribeAccountAttributes",
+          "lambda:PutProvisionedConcurrencyConfig",
+          "lambda:DeleteProvisionedConcurrencyConfig",
+          "lambda:GetProvisionedConcurrencyConfig",
+
         ]
         "Resource" : "*"
       }

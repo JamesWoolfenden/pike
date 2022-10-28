@@ -819,3 +819,24 @@ var awsAppconfigApplication []byte
 
 //go:embed mapping/aws/resource/dax/aws_dax_cluster.json
 var awsDaxCluster []byte
+
+//go:embed mapping/aws/resource/eks/aws_eks_cluster.json
+var awsEksCluster []byte
+
+//go:embed mapping/aws/resource/eks/aws_eks_addon.json
+var awsEksAddon []byte
+
+//go:embed mapping/aws/resource/eks/aws_eks_node_group.json
+var awsEksNodeGroup []byte
+
+//go:embed mapping/aws/resource/lambda/aws_lambda_event_source_mapping.json
+var awsLambdaEventSourceMapping []byte
+
+//go:embed mapping/aws/resource/lambda/aws_lambda_function_event_invoke_config.json
+var awsLambdaFunctionEventInvokeConfig []byte
+
+//go:embed mapping/aws/resource/lambda/aws_lambda_function_url.json
+var awsLambdaFunctionURL []byte
+
+//go:embed mapping/aws/resource/lambda/aws_lambda_provisioned_concurrency_config.json
+var awsLambdaProvisionedConcurrencyConfig []byte

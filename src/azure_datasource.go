@@ -8,6 +8,7 @@ func GetAZUREDataPermissions(result ResourceV2) ([]string, error) {
 	TFLookup := map[string]interface{}{
 		"azurerm_resource_group": dataAzurermResourceGroup,
 		"azurerm_client_config":  placeholder,
+		"azurerm_key_vault":      dataAzurermKeyVault,
 	}
 
 	var Permissions []string

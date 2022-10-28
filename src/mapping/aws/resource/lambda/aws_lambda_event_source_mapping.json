@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "lambda:CreateEventSourceMapping",
+      "lambda:GetEventSourceMapping",
+      "lambda:DeleteEventSourceMapping"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "lambda:DeleteEventSourceMapping"
+    ],
+    "modify": [
+      "lambda:UpdateEventSourceMapping"
+    ],
+    "plan": []
+  }
+]

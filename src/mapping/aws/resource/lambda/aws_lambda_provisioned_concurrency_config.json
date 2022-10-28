@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "lambda:PutProvisionedConcurrencyConfig",
+      "lambda:DeleteProvisionedConcurrencyConfig",
+      "lambda:GetProvisionedConcurrencyConfig"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "lambda:DeleteProvisionedConcurrencyConfig"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

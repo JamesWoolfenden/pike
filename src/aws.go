@@ -270,6 +270,10 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_dlm_lifecycle_policy":                           awsDlmLifecyclePolicy,
 		"aws_lambda_layer_version":                           awsLambdaLayerVersion,
 		"aws_lambda_layer_version_permission":                awsLambdaLayerVersionPermission,
+		"aws_lambda_event_source_mapping":                    awsLambdaEventSourceMapping,
+		"aws_lambda_function_event_invoke_config":            awsLambdaFunctionEventInvokeConfig,
+		"aws_lambda_function_url":                            awsLambdaFunctionURL,
+		"aws_lambda_provisioned_concurrency_config":          awsLambdaProvisionedConcurrencyConfig,
 		"aws_batch_compute_environment":                      awsBatchComputeEnvironment,
 		"aws_batch_job_definition":                           awsBatchJobDefinition,
 		"aws_batch_job_queue":                                awsBatchJobQueue,
@@ -323,6 +327,9 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_appconfig_configuration_profile":                awsAppconfigConfigurationProfile,
 		"aws_appconfig_application":                          awsAppconfigApplication,
 		"aws_dax_cluster":                                    awsDaxCluster,
+		"aws_eks_cluster":                                    awsEksCluster,
+		"aws_eks_node_group":                                 awsEksNodeGroup,
+		"aws_eks_addon":                                      awsEksAddon,
 	}
 
 	var Permissions []string

@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "lambda:GetFunctionEventInvokeConfig",
+      "lambda:PutFunctionEventInvokeConfig",
+      "lambda:DeleteFunctionEventInvokeConfig"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "lambda:DeleteFunctionEventInvokeConfig"
+    ],
+    "modify": [
+      "lambda:UpdateFunctionEventInvokeConfig"
+    ],
+    "plan": []
+  }
+]

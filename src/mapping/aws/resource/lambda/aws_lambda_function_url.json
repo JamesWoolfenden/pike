@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "lambda:CreateFunctionUrlConfig",
+      "lambda:GetFunctionUrlConfig",
+      "lambda:DeleteFunctionUrlConfig",
+      "lambda:AddPermission"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "lambda:DeleteFunctionUrlConfig"
+    ],
+    "modify": [
+      "lambda:UpdateFunctionUrlConfig"
+    ],
+    "plan": []
+  }
+]

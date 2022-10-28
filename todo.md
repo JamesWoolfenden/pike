@@ -129,11 +129,6 @@
 ./resource.ps1 aws_kms_replica_external_key
 ./resource.ps1 aws_kms_replica_key
 
-./resource.ps1 aws_lambda_event_source_mapping
-./resource.ps1 aws_lambda_function_event_invoke_config
-./resource.ps1 aws_lambda_function_url
-./resource.ps1 aws_lambda_provisioned_concurrency_config
-
 ./resource.ps1 aws_lb_listener_rule
 ./resource.ps1 aws_lb_listener_rule
 ./resource.ps1 aws_lb_listener_rule

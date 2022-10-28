@@ -1,13 +1,10 @@
 # todo
 
-./resource.ps1 azurerm_service_plan
-azurerm_cosmosdb_account
-azurerm_cosmosdb_table
-azurerm_managed_disk
-azurerm_dns_zone
-azurerm_private_dns_zone
-azurerm_linux_virtual_machine_scale_set
-azurerm_virtual_network
-azurerm_subnet
-azurerm_network_interface
-azurerm_linux_virtual_machine
+./resource.ps1 azurerm_managed_disk
+./resource.ps1 azurerm_dns_zone
+./resource.ps1 azurerm_private_dns_zone
+./resource.ps1 azurerm_linux_virtual_machine_scale_set
+./resource.ps1 azurerm_virtual_network
+./resource.ps1 azurerm_subnet
+./resource.ps1 azurerm_network_interface
+./resource.ps1 azurerm_linux_virtual_machine

@@ -20,30 +20,32 @@ Feel free to submit PR or Issue if you find an issue or even better add new reso
 **CAVEAT** The policies and roles are to get you started, there are no conditions and resources are all wildcards (for AWS)
 this is **definitely not best practice**, you need will to modify these permissions to minimum required by adding these constrictions, however I also added the ability (in AWS so far) to generate short lived credentials for your build and remotely (REMOTE) supply and invoke your builds (INVOKE).
 
-Ideally I would like to do this for you, but these policies are determined statically, and we would need to determine the resource names that will be created and know your intentions. 
+Ideally I would like to do this for you, but these policies are determined statically, and we would need to determine the resource names that will be created and know your intentions.
 
 ## Table of Contents
 
 <!--toc:start-->
-- [Install](#install)
-  - [MacOS](#macos)
-  - [Windows](#windows)
-  - [Docker](#docker)
-- [Usage](#usage)
-  - [Scan](#scan)
-  - [Output](#output)
-  - [Readme](#readme)
-  - [Make](#make)
-  - [Invoke](#invoke)
-  - [Apply](#apply)
-  - [Remote](#remote)
-- [Compare](#compare)
-- [Help](#help)
-- [Building](#building)
-- [Extending](#extending)
-  - [Add Import mapping file](#add-import-mapping-file)
-  - [Add to provider Scan](#add-to-provider-scan)
-- [Related Tools](#related-tools)
+- [Pike](#pike)
+  - [Table of Contents](#table-of-contents)
+  - [Install](#install)
+    - [MacOS](#macos)
+    - [Windows](#windows)
+    - [Docker](#docker)
+  - [Usage](#usage)
+    - [Scan](#scan)
+    - [Output](#output)
+    - [Make](#make)
+    - [Invoke](#invoke)
+    - [Apply](#apply)
+    - [Remote](#remote)
+    - [Readme](#readme)
+  - [Compare](#compare)
+  - [Help](#help)
+  - [Building](#building)
+  - [Extending](#extending)
+    - [Add Import mapping file](#add-import-mapping-file)
+    - [Add to provider Scan](#add-to-provider-scan)
+  - [Related Tools](#related-tools)
 <!--toc:end-->
 
 ## Install
@@ -80,7 +82,7 @@ choco install pike
 
 ```shell
 docker pull jameswoolfenden/pike
-docker run --tty --volume /local/path/to/tf:/tf jameswoolfenden/pike -d /tf scan
+docker run --tty --volume /local/path/to/tf:/tf jameswoolfenden/pike scan -d /tf
 ```
 
 <https://hub.docker.com/repository/docker/jameswoolfenden/pike>
