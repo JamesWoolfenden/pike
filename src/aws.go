@@ -3,21 +3,36 @@ package pike
 import (
 	"encoding/json"
 	"fmt"
+	"log"
 )
 
 // GetAWSPermissions for AWS resources
 func GetAWSPermissions(result ResourceV2) ([]string, error) {
 	var err error
 	var Permissions []string
-	if result.TypeName == "resource" {
-		Permissions, err = GetAWSResourcePermissions(result)
-		if err != nil {
-			return Permissions, err
+	switch result.TypeName {
+	case "resource":
+		{
+			Permissions, err = GetAWSResourcePermissions(result)
+			if err != nil {
+				return Permissions, err
+			}
 		}
-	} else {
-		Permissions, err = GetAWSDataPermissions(result)
-		if err != nil {
-			return Permissions, err
+	case "data":
+		{
+			Permissions, err = GetAWSDataPermissions(result)
+			if err != nil {
+				return Permissions, err
+			}
+		}
+	case "module":
+		{
+			// do nothing this is a module not a base resource type, and
+			// we shouldn't really be able to get here unless well bad naming
+		}
+	default:
+		{
+			log.Printf("unknown permission resource type %s", result)
 		}
 	}
 
