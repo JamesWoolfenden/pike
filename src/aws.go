@@ -67,6 +67,7 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_mq_broker":                                      awsMqBroker,
 		"aws_mq_configuration":                               awsMqConfiguration,
 		"aws_cloudwatch_log_group":                           awsCloudwatchLogGroup,
+		"aws_cloudwatch_log_stream":                          awsCloudwatchLogStream,
 		"aws_cloudwatch_event_rule":                          awsCloudwatchEventRule,
 		"aws_cloudwatch_event_target":                        awsCloudwatchEventTarget,
 		"aws_cloudwatch_log_metric_filter":                   awsCloudwatchLogMetricFilter,

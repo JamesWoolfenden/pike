@@ -8,29 +8,9 @@ resource "aws_iam_policy" "basic" {
         "Effect" : "Allow",
         "Action" : [
           "ec2:DescribeAccountAttributes",
-          "lambda:CreateEventSourceMapping",
-          "lambda:GetEventSourceMapping",
-          "lambda:DeleteEventSourceMapping",
-          "lambda:UpdateEventSourceMapping",
-
-          "ec2:DescribeAccountAttributes",
-          "lambda:UpdateFunctionEventInvokeConfig",
-          "lambda:GetFunctionEventInvokeConfig",
-          "lambda:PutFunctionEventInvokeConfig",
-          "lambda:DeleteFunctionEventInvokeConfig",
-
-          "ec2:DescribeAccountAttributes",
-          "lambda:CreateFunctionUrlConfig",
-          "lambda:GetFunctionUrlConfig",
-          "lambda:DeleteFunctionUrlConfig",
-          "lambda:UpdateFunctionUrlConfig",
-          "lambda:AddPermission",
-
-          "ec2:DescribeAccountAttributes",
-          "lambda:PutProvisionedConcurrencyConfig",
-          "lambda:DeleteProvisionedConcurrencyConfig",
-          "lambda:GetProvisionedConcurrencyConfig",
-
+          "logs:CreateLogStream",
+          "logs:DescribeLogStreams",
+          "logs:DeleteLogStream"
         ]
         "Resource" : "*"
       }

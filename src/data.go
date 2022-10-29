@@ -83,11 +83,12 @@ func getLocalModules(block *hclsyntax.Block, dirName string) []ResourceV2 {
 	var Resources []ResourceV2
 	modulePath := GetModulePath(block)
 
-	_, err := os.Stat(modulePath)
-	if err != nil {
-		// could be totally valid
-		return nil
-	}
+	//_, err := os.Stat(modulePath)
+	//if err != nil {
+	//	// could be totally valid
+	//	log.Print(err.Error())
+	//	return nil
+	//}
 
 	// have the path to the module
 	modulePath = filepath.Join(dirName, "/", modulePath)

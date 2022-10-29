@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "logs:CreateLogStream",
+      "logs:DescribeLogStreams",
+      "logs:DeleteLogStream"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "logs:DeleteLogStream"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

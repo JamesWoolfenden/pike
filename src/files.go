@@ -130,6 +130,9 @@ var awsMqConfiguration []byte
 //go:embed mapping/aws/resource/logs/aws_cloudwatch_log_group.json
 var awsCloudwatchLogGroup []byte
 
+//go:embed mapping/aws/resource/logs/aws_cloudwatch_log_stream.json
+var awsCloudwatchLogStream []byte
+
 //go:embed mapping/aws/resource/events/aws_cloudwatch_event_rule.json
 var awsCloudwatchEventRule []byte
 
