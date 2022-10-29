@@ -51,7 +51,7 @@ func ReplaceSection(source string, middle string, autoadd bool) error {
 			if autoadd {
 				file = file + "\n\n" + start + stop
 			} else {
-				return errors.New("missing both hooks in Readme, consider using the flag -autoappend")
+				return errors.New("missing both hooks in Readme, consider using the flag -auto")
 			}
 		} else {
 			return errors.New("pike delimiters mismatch in Readme")
