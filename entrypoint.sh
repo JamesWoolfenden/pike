@@ -13,16 +13,15 @@ flags=""
 echo "running command:"
 if [ -n "$INPUT_DIRECTORY" ]
 then
-  echo pike "$INPUT_VERB" -d "$INPUT_DIRECTORY" "$flags"
-
-  /usr/bin/pike "$INPUT_VERB" -d "$INPUT_DIRECTORY" "$flags"
+  COMMANDS="-d $INPUT_DIRECTORY"
 fi
 
 if [ -n "$INPUT_FILE" ]
 then
-  echo pike "$INPUT_VERB" -f "$INPUT_FILE" "$flags"
-
-  /usr/bin/pike "$INPUT_VERB" -f "$INPUT_FILE" "$flags"
+  COMMANDS="-f $INPUT_FILE"
 fi
+
+echo pike "$INPUT_VERB" "$COMMANDS" "$flags"
+/usr/bin/pike "$INPUT_VERB" "$COMMANDS" "$flags"
 
 export pike_EXIT_CODE=$?
