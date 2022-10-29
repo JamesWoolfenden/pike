@@ -11,7 +11,18 @@ fi
 flags=""
 
 echo "running command:"
-echo pike scan -d "$INPUT_DIRECTORY" "$flags"
+if [ -n "$INPUT_DIRECTORY" ]
+then
+  echo pike "$INPUT_VERB" -d "$INPUT_DIRECTORY" "$flags"
 
-/usr/bin/pike scan -d "$INPUT_DIRECTORY" "$flags"
+  /usr/bin/pike "$INPUT_VERB" -d "$INPUT_DIRECTORY" "$flags"
+fi
+
+if [ -n "$INPUT_FILE" ]
+then
+  echo pike "$INPUT_VERB" -f "$INPUT_FILE" "$flags"
+
+  /usr/bin/pike "$INPUT_VERB" -f "$INPUT_FILE" "$flags"
+fi
+
 export pike_EXIT_CODE=$?
