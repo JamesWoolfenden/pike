@@ -2,8 +2,9 @@ package pike
 
 import (
 	"errors"
-	"log"
 	"strconv"
+
+	"github.com/rs/zerolog/log"
 
 	"github.com/google/go-github/v47/github"
 )

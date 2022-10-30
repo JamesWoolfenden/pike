@@ -3,12 +3,13 @@ package pike
 import (
 	"bytes"
 	"errors"
-	"log"
 	"math/rand"
 	"os"
 	"path/filepath"
 	"strings"
 	"time"
+
+	"github.com/rs/zerolog/log"
 )
 
 var letters = []rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
@@ -25,7 +26,7 @@ func randSeq(n int) string {
 	temp := string(b)
 
 	if last == temp {
-		log.Fatal("not random")
+		log.Fatal().Msg("not random")
 	}
 	return temp
 }

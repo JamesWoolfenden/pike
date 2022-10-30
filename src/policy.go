@@ -6,12 +6,13 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"log"
 	"reflect"
 	"sort"
 	"strconv"
 	"strings"
 	"text/template"
+
+	"github.com/rs/zerolog/log"
 )
 
 //go:embed terraform.policy.template

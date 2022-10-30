@@ -1,10 +1,11 @@
 package pike
 
 import (
-	"log"
 	"os"
 	"path/filepath"
 	"strings"
+
+	"github.com/rs/zerolog/log"
 
 	"github.com/hashicorp/hcl/v2/hclsyntax"
 

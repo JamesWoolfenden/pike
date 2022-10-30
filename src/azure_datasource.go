@@ -1,6 +1,6 @@
 package pike
 
-import "log"
+import "github.com/rs/zerolog/log"
 
 // GetAZUREDataPermissions gets permissions required for datasources
 func GetAZUREDataPermissions(result ResourceV2) ([]string, error) {

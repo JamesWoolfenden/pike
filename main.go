@@ -2,10 +2,12 @@ package main
 
 import (
 	"fmt"
-	"log"
 	"os"
 	"sort"
 	"time"
+
+	"github.com/rs/zerolog"
+	"github.com/rs/zerolog/log"
 
 	//nolint:goimports
 	pike "github.com/jameswoolfenden/pike/src" //nolint:goimports
@@ -26,6 +28,7 @@ func main() {
 	var region string
 	var workflow string
 
+	log.Logger = log.Output(zerolog.ConsoleWriter{Out: os.Stderr})
 	var app = &cli.App{
 		EnableBashCompletion: true,
 		Flags:                []cli.Flag{},
@@ -297,6 +300,6 @@ func main() {
 	sort.Sort(cli.CommandsByName(app.Commands))
 
 	if err := app.Run(os.Args); err != nil {
-		log.Fatal(err)
+		log.Fatal().Err(err)
 	}
 }

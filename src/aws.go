@@ -3,7 +3,8 @@ package pike
 import (
 	"encoding/json"
 	"fmt"
-	"log"
+
+	"github.com/rs/zerolog/log"
 )
 
 // GetAWSPermissions for AWS resources

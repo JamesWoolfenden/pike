@@ -5,10 +5,11 @@ import (
 	"encoding/base64"
 	"errors"
 	"fmt" //nolint:goimports
-	"log"
-	"os" //nolint:goimports
+	"os"  //nolint:goimports
 	"strings"
 	"time"
+
+	"github.com/rs/zerolog/log"
 
 	"github.com/google/go-github/v47/github"
 	"golang.org/x/crypto/nacl/box"

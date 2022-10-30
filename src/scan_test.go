@@ -1,11 +1,12 @@
 package pike
 
 import (
-	"log"
 	"path/filepath"
 	"reflect"
 	"runtime"
 	"testing"
+
+	"github.com/rs/zerolog/log"
 )
 
 func TestScan(t *testing.T) {

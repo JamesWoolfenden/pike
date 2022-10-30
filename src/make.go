@@ -3,9 +3,10 @@ package pike
 import (
 	"context"
 	"errors"
-	"log"
 	"path/filepath"
 	"time"
+
+	"github.com/rs/zerolog/log"
 
 	"github.com/hashicorp/terraform-exec/tfexec"
 )

@@ -1,7 +1,7 @@
 package pike
 
 import (
-	"log"
+	"github.com/rs/zerolog/log"
 )
 
 // GetAZUREPermissions for GCP resources

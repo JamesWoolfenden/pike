@@ -1,6 +1,6 @@
 package pike
 
-import "log"
+import "github.com/rs/zerolog/log"
 
 // GetGCPDataPermissions gets permissions required for datasources
 func GetGCPDataPermissions(result ResourceV2) ([]string, error) {
