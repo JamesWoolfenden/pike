@@ -2,7 +2,7 @@
   <configuration default="false" name="scan" type="GoApplicationRunConfiguration" factoryName="Go Application">
     <module name="pike" />
     <working_directory value="$PROJECT_DIR$" />
-    <parameters value="scan -i -d E:\code\terraform-aws-modules\terraform-aws-cloudwatch\examples\multiple-lambda-metric-alarm" />
+    <parameters value="scan -d terraform/aws/backup " />
     <EXTENSION ID="net.ashald.envfile">
       <option name="IS_ENABLED" value="false" />
       <option name="IS_SUBST" value="false" />

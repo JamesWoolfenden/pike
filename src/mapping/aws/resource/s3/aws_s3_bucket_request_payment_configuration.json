@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "s3:PutBucketRequestPayment",
+      "s3:GetBucketRequestPayment",
+      "ec2:DescribeAccountAttributes"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "s3:PutMetricsConfiguration",
+      "ec2:DescribeAccountAttributes",
+      "s3:GetMetricsConfiguration"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

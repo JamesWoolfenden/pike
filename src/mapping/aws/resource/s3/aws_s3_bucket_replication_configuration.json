@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "s3:PutReplicationConfiguration",
+      "ec2:DescribeAccountAttributes",
+      "s3:GetReplicationConfiguration",
+      "iam:PassRole"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "s3:GetBucketObjectLockConfiguration",
+      "ec2:DescribeAccountAttributes",
+      "s3:PutBucketObjectLockConfiguration"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

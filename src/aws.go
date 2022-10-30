@@ -346,6 +346,15 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_eks_cluster":                                    awsEksCluster,
 		"aws_eks_node_group":                                 awsEksNodeGroup,
 		"aws_eks_addon":                                      awsEksAddon,
+		"aws_s3_bucket_accelerate_configuration":             awsS3BucketAccelerateConfiguration,
+		"aws_s3_bucket_cors_configuration":                   awsS3BucketCorsConfiguration,
+		"aws_s3_bucket_intelligent_tiering_configuration":    awsS3BucketIntelligentTieringConfiguration,
+		"aws_s3_bucket_metric":                               awsS3BucketMetric,
+		"aws_s3_bucket_object_lock_configuration":            awsS3BucketObjectLockCOnfiguration,
+		"aws_s3_bucket_ownership_controls":                   awsS3BucketOwnershipControls,
+		"aws_s3_bucket_replication_configuration":            awsS3BucketReplicationConfiguration,
+		"aws_s3_bucket_request_payment_configuration":        awsS3BucketRequestPaymentConfiguration,
+		"aws_s3_bucket_website_configuration":                awsS3BucketWebsiteConfiguration,
 	}
 
 	var Permissions []string

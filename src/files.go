@@ -843,3 +843,30 @@ var awsLambdaFunctionURL []byte
 
 //go:embed mapping/aws/resource/lambda/aws_lambda_provisioned_concurrency_config.json
 var awsLambdaProvisionedConcurrencyConfig []byte
+
+//go:embed mapping/aws/resource/s3/aws_s3_bucket_accelerate_configuration.json
+var awsS3BucketAccelerateConfiguration []byte
+
+//go:embed mapping/aws/resource/s3/aws_s3_bucket_cors_configuration.json
+var awsS3BucketCorsConfiguration []byte
+
+//go:embed mapping/aws/resource/s3/aws_s3_bucket_intelligent_tiering_configuration.json
+var awsS3BucketIntelligentTieringConfiguration []byte
+
+//go:embed mapping/aws/resource/s3/aws_s3_bucket_metric.json
+var awsS3BucketMetric []byte
+
+//go:embed mapping/aws/resource/s3/aws_s3_bucket_object_lock_configuration.json
+var awsS3BucketObjectLockCOnfiguration []byte
+
+//go:embed mapping/aws/resource/s3/aws_s3_bucket_ownership_controls.json
+var awsS3BucketOwnershipControls []byte
+
+//go:embed mapping/aws/resource/s3/aws_s3_bucket_replication_configuration.json
+var awsS3BucketReplicationConfiguration []byte
+
+//go:embed mapping/aws/resource/s3/aws_s3_bucket_request_payment_configuration.json
+var awsS3BucketRequestPaymentConfiguration []byte
+
+//go:embed mapping/aws/resource/s3/aws_s3_bucket_website_configuration.json
+var awsS3BucketWebsiteConfiguration []byte

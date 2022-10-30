@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "s3:GetIntelligentTieringConfiguration",
+      "s3:PutIntelligentTieringConfiguration",
+      "ec2:DescribeAccountAttributes"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

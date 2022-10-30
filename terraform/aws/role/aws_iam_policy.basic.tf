@@ -7,10 +7,10 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
+          "s3:GetIntelligentTieringConfiguration",
+          "s3:PutIntelligentTieringConfiguration",
           "ec2:DescribeAccountAttributes",
-          "logs:CreateLogStream",
-          "logs:DescribeLogStreams",
-          "logs:DeleteLogStream"
+          #          "s3:GetBucketLocation"
         ]
         "Resource" : "*"
       }

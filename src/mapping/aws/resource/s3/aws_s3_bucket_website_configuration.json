@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "s3:DeleteBucketWebsite",
+      "s3:GetBucketWebsite",
+      "s3:PutBucketWebsite",
+      "ec2:DescribeAccountAttributes",
+      "s3:GetBucketLocation"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "s3:DeleteBucketWebsite"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

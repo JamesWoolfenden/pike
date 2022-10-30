@@ -1,6 +1,10 @@
 [
   {
-    "apply": [],
+    "apply": [
+      "s3:GetBucketCORS",
+      "ec2:DescribeAccountAttributes",
+      "s3:PutBucketCORS"
+    ],
     "attributes": {
       "tags": []
     },
