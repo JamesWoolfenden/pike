@@ -7,10 +7,16 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "s3:GetIntelligentTieringConfiguration",
-          "s3:PutIntelligentTieringConfiguration",
+          "cloud9:CreateEnvironmentEC2",
           "ec2:DescribeAccountAttributes",
-          #          "s3:GetBucketLocation"
+          "iam:CreateServiceLinkedRole",
+          "ec2:DescribeVpcs",
+          "ec2:DescribeSubnets",
+          "cloud9:TagResource",
+          "cloud9:UntagResource",
+          "cloud9:DescribeEnvironments",
+          "cloud9:ListTagsForResource",
+          "cloud9:DeleteEnvironment"
         ]
         "Resource" : "*"
       }

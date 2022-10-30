@@ -870,3 +870,6 @@ var awsS3BucketRequestPaymentConfiguration []byte
 
 //go:embed mapping/aws/resource/s3/aws_s3_bucket_website_configuration.json
 var awsS3BucketWebsiteConfiguration []byte
+
+//go:embed mapping/aws/resource/cloud9/aws_cloud9_environment_ec2.json
+var awsCloud9EnvironmentEc2 []byte

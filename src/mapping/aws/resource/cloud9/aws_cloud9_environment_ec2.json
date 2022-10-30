@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "cloud9:CreateEnvironmentEC2",
+      "ec2:DescribeAccountAttributes",
+      "iam:CreateServiceLinkedRole",
+      "ec2:DescribeVpcs",
+      "ec2:DescribeSubnets",
+      "cloud9:DescribeEnvironments",
+      "cloud9:ListTagsForResource",
+      "cloud9:DeleteEnvironment"
+    ],
+    "attributes": {
+      "tags": [
+        "cloud9:TagResource",
+        "cloud9:UntagResource"
+      ]
+    },
+    "destroy": [
+      "cloud9:DeleteEnvironment"
+    ],
+    "modify": [
+      "cloud9:UpdateEnvironment"
+    ],
+    "plan": []
+  }
+]
