@@ -242,3 +242,5 @@ resources
 ./resource.ps1 aws_identitystore_user
 ./resource.ps1 aws_inspector2_organization_configuration
 ./resource.ps1 aws_kms_custom_key_store
+
+./resource.ps1 aws_s3_bucket_notification

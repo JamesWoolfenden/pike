@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "s3:PutBucketNotification",
+      "s3:GetBucketNotification"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

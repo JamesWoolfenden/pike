@@ -357,6 +357,7 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_s3_bucket_request_payment_configuration":        awsS3BucketRequestPaymentConfiguration,
 		"aws_s3_bucket_website_configuration":                awsS3BucketWebsiteConfiguration,
 		"aws_cloud9_environment_ec2":                         awsCloud9EnvironmentEc2,
+		"aws_s3_bucket_notification":                         awsS3BucketNotification,
 	}
 
 	var Permissions []string

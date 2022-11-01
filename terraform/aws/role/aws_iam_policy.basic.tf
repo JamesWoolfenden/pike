@@ -7,16 +7,9 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "cloud9:CreateEnvironmentEC2",
+          "s3:PutBucketNotification",
           "ec2:DescribeAccountAttributes",
-          "iam:CreateServiceLinkedRole",
-          "ec2:DescribeVpcs",
-          "ec2:DescribeSubnets",
-          "cloud9:TagResource",
-          "cloud9:UntagResource",
-          "cloud9:DescribeEnvironments",
-          "cloud9:ListTagsForResource",
-          "cloud9:DeleteEnvironment"
+          "s3:GetBucketNotification"
         ]
         "Resource" : "*"
       }

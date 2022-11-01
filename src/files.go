@@ -873,3 +873,6 @@ var awsS3BucketWebsiteConfiguration []byte
 
 //go:embed mapping/aws/resource/cloud9/aws_cloud9_environment_ec2.json
 var awsCloud9EnvironmentEc2 []byte
+
+//go:embed mapping/aws/resource/s3/aws_s3_bucket_notification.json
+var awsS3BucketNotification []byte
