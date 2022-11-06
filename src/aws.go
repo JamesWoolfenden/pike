@@ -358,6 +358,11 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_s3_bucket_website_configuration":                awsS3BucketWebsiteConfiguration,
 		"aws_cloud9_environment_ec2":                         awsCloud9EnvironmentEc2,
 		"aws_s3_bucket_notification":                         awsS3BucketNotification,
+		"aws_neptune_cluster":                                awsNeptuneCluster,
+		"aws_neptune_cluster_endpoint":                       awsNeptuneClusterEndpoint,
+		"aws_neptune_cluster_instance":                       awsNeptuneClusterInstance,
+		"aws_neptune_event_subscription":                     awsNeptuneEventSubscription,
+		"aws_neptune_cluster_snapshot":                       awsNeptuneClusterSnapshot,
 	}
 
 	var Permissions []string

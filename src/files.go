@@ -876,3 +876,18 @@ var awsCloud9EnvironmentEc2 []byte
 
 //go:embed mapping/aws/resource/s3/aws_s3_bucket_notification.json
 var awsS3BucketNotification []byte
+
+//go:embed mapping/aws/resource/rds/aws_neptune_cluster.json
+var awsNeptuneCluster []byte
+
+//go:embed mapping/aws/resource/rds/aws_neptune_cluster_endpoint.json
+var awsNeptuneClusterEndpoint []byte
+
+//go:embed mapping/aws/resource/rds/aws_neptune_cluster_instance.json
+var awsNeptuneClusterInstance []byte
+
+//go:embed mapping/aws/resource/rds/aws_neptune_event_subscription.json
+var awsNeptuneEventSubscription []byte
+
+//go:embed mapping/aws/resource/rds/aws_neptune_cluster_snapshot.json
+var awsNeptuneClusterSnapshot []byte

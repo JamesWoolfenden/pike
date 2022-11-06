@@ -7,9 +7,49 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "s3:PutBucketNotification",
           "ec2:DescribeAccountAttributes",
-          "s3:GetBucketNotification"
+          "rds:CreateDBCluster",
+          "rds:DescribeDBClusters",
+          "rds:ListTagsForResource",
+          "rds:DeleteDBCluster",
+
+          "rds:AddTagsToResource",
+          "rds:RemoveTagsFromResource",
+
+          "rds:AddRoleToDBCluster",
+          "iam:PassRole",
+
+          "rds:ModifyDBCluster",
+
+          "ec2:DescribeAccountAttributes",
+          "rds:CreateDBInstance",
+          "rds:DescribeDBInstances",
+          "rds:DeleteDBInstance",
+          "rds:ModifyDBInstance",
+          "rds:AddTagsToResource",
+          "rds:RemoveTagsFromResource",
+
+          "ec2:DescribeAccountAttributes",
+          "rds:CreateDBClusterEndpoint",
+          "rds:DeleteDBClusterEndpoint",
+          "rds:ModifyDBClusterEndpoint",
+          "rds:DescribeDBClusterEndpoints",
+          "rds:AddTagsToResource",
+          "rds:RemoveTagsFromResource",
+
+          #snapshot
+          "ec2:DescribeAccountAttributes",
+          "rds:CreateDBClusterSnapshot",
+          "rds:DeleteDBClusterSnapshot",
+          "rds:DescribeDBClusterSnapshots",
+
+          "ec2:DescribeAccountAttributes",
+          "rds:CreateEventSubscription",
+          "rds:DescribeEventSubscriptions",
+          "rds:DeleteEventSubscription",
+          "rds:ModifyEventSubscription",
+          "rds:AddTagsToResource",
+          "rds:RemoveTagsFromResource",
         ]
         "Resource" : "*"
       }

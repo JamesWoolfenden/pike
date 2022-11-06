@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "rds:CreateDBInstance",
+      "rds:DescribeDBInstances",
+      "rds:DeleteDBInstance"
+    ],
+    "attributes": {
+      "tags": [
+        "rds:AddTagsToResource",
+        "rds:RemoveTagsFromResource"
+      ]
+    },
+    "destroy": [
+      "rds:DeleteDBInstance"
+    ],
+    "modify": [
+      "rds:ModifyDBInstance"
+    ],
+    "plan": []
+  }
+]

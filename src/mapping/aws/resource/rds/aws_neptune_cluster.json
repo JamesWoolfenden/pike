@@ -1,10 +1,10 @@
 [
   {
     "apply": [
+      "ec2:DescribeAccountAttributes",
       "rds:CreateDBCluster",
       "rds:DescribeDBClusters",
       "rds:ListTagsForResource",
-      "rds:DescribeGlobalClusters",
       "rds:DeleteDBCluster"
     ],
     "attributes": {

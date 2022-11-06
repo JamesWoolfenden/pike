@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "rds:CreateDBClusterEndpoint",
+      "rds:DeleteDBClusterEndpoint",
+      "rds:DescribeDBClusterEndpoints"
+    ],
+    "attributes": {
+      "tags": [
+        "rds:AddTagsToResource",
+        "rds:RemoveTagsFromResource"
+      ]
+    },
+    "destroy": [
+      "rds:DeleteDBClusterEndpoint"
+    ],
+    "modify": [
+      "rds:ModifyDBClusterEndpoint"
+    ],
+    "plan": []
+  }
+]

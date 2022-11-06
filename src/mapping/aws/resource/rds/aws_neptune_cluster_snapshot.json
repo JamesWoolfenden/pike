@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "rds:CreateDBClusterSnapshot",
+      "rds:DeleteDBClusterSnapshot",
+      "rds:DescribeDBClusterSnapshots"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "rds:DeleteDBClusterSnapshot"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]
