@@ -181,8 +181,8 @@
 ./resource.ps1 aws_xray_sampling_rule
 
 aws_db_instance_automated_backups_replication
-./resource.ps1 aws_cloudwatch_composite_alarm
-./resource.ps1 aws_cloudwatch_dashboard
+
+./resource.ps1 aws_cloudwatch_event_connection
 ./resource.ps1 aws_cloudwatch_event_api_destination
 ./resource.ps1 aws_cloudwatch_event_archive
 ./resource.ps1 aws_cloudwatch_event_bus

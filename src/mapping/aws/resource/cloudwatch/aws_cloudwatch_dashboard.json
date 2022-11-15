@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "cloudwatch:PutDashboard",
+      "cloudwatch:GetDashboard",
+      "cloudwatch:DeleteDashboards"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "cloudwatch:DeleteDashboards"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -8,17 +8,10 @@ resource "aws_iam_policy" "basic" {
         "Effect" : "Allow",
         "Action" : [
           "ec2:DescribeAccountAttributes",
-          "athena:CreateWorkGroup",
-          "athena:TagResource",
-          "athena:UntagResource",
-          "athena:GetWorkGroup",
-          "athena:ListTagsForResource",
-          "athena:DeleteWorkGroup",
-          "athena:UpdateWorkGroup",
 
-          "athena:CreateNamedQuery",
-          "athena:GetNamedQuery",
-          "athena:DeleteNamedQuery"
+          "cloudwatch:PutDashboard",
+          "cloudwatch:GetDashboard",
+          "cloudwatch:DeleteDashboards"
         ]
         "Resource" : "*"
       }

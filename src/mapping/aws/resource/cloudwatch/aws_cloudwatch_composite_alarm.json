@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "cloudwatch:PutCompositeAlarm",
+      "cloudwatch:DescribeAlarms",
+      "cloudwatch:ListTagsForResource",
+      "cloudwatch:DeleteAlarms"
+    ],
+    "attributes": {
+      "tags": [
+        "cloudwatch:TagResource",
+        "cloudwatch:UntagResource"
+      ]
+    },
+    "destroy": [
+      "cloudwatch:DeleteAlarms"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]
