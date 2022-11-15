@@ -891,3 +891,15 @@ var awsNeptuneEventSubscription []byte
 
 //go:embed mapping/aws/resource/rds/aws_neptune_cluster_snapshot.json
 var awsNeptuneClusterSnapshot []byte
+
+//go:embed mapping/aws/resource/athena/aws_athena_data_catalog.json
+var awsAthenaDataCatalog []byte
+
+//go:embed mapping/aws/resource/athena/aws_athena_database.json
+var awsAthenaDatabase []byte
+
+//go:embed mapping/aws/resource/athena/aws_athena_workgroup.json
+var awsAthenaWorkgroup []byte
+
+//go:embed mapping/aws/resource/athena/aws_athena_named_query.json
+var awsAthenaNamedQuery []byte

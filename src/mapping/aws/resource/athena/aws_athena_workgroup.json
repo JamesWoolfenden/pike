@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "athena:CreateWorkGroup",
+      "athena:GetWorkGroup",
+      "athena:ListTagsForResource",
+      "athena:DeleteWorkGroup"
+    ],
+    "attributes": {
+      "tags": [
+        "athena:TagResource",
+        "athena:UntagResource"
+      ]
+    },
+    "destroy": [
+      "athena:DeleteWorkGroup"
+    ],
+    "modify": [
+      "athena:UpdateWorkGroup"
+    ],
+    "plan": []
+  }
+]

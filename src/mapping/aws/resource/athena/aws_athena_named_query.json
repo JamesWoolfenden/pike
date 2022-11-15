@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "athena:CreateNamedQuery",
+      "athena:GetNamedQuery",
+      "athena:DeleteNamedQuery"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "athena:DeleteNamedQuery"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

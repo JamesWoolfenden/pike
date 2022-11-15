@@ -14,10 +14,7 @@
 ./resource.ps1 aws_appsync_datasource
 ./resource.ps1 aws_appsync_graphql_api
 ./resource.ps1 aws_appsync_resolver
-./resource.ps1 aws_athena_data_catalog
-./resource.ps1 aws_athena_database
-./resource.ps1 aws_athena_named_query
-./resource.ps1 aws_athena_workgroup
+
 ./resource.ps1 aws_autoscaling_group_tag
 ./resource.ps1 aws_autoscaling_schedule
 ./resource.ps1 aws_backup_framework
@@ -64,14 +61,7 @@
 ./resource.ps1 aws_cloudhsm_v2_hsm
 ./resource.ps1 aws_cloudtrail_event_data_store
 ./resource.ps1 aws_cloudtrail_service_account -type data
-./resource.ps1 aws_cloudwatch_composite_alarm
-./resource.ps1 aws_cloudwatch_dashboard
-./resource.ps1 aws_cloudwatch_event_api_destination
-./resource.ps1 aws_cloudwatch_event_archive
-./resource.ps1 aws_cloudwatch_event_bus
-./resource.ps1 aws_cloudwatch_event_connection
-./resource.ps1 aws_cloudwatch_event_permission
-./resource.ps1 aws_cloudwatch_metric_stream
+
 ./resource.ps1 aws_dms_replication_instance
 ./resource.ps1 aws_docdb_cluster
 ./resource.ps1 aws_docdb_cluster_instance
@@ -95,7 +85,6 @@
 ./resource.ps1 aws_ec2_transit_gateway_policy_table_association
 ./resource.ps1 aws_ec2_transit_gateway_route_table
 ./resource.ps1 aws_eks_fargate_profile
-./resource.ps1 aws_eks_identity_provider_config
 ./resource.ps1 aws_eks_identity_provider_config
 ./resource.ps1 aws_emr_cluster
 ./resource.ps1 aws_emr_security_configuration
@@ -190,3 +179,13 @@
 ./resource.ps1 aws_xray_encryption_config
 ./resource.ps1 aws_xray_group
 ./resource.ps1 aws_xray_sampling_rule
+
+aws_db_instance_automated_backups_replication
+./resource.ps1 aws_cloudwatch_composite_alarm
+./resource.ps1 aws_cloudwatch_dashboard
+./resource.ps1 aws_cloudwatch_event_api_destination
+./resource.ps1 aws_cloudwatch_event_archive
+./resource.ps1 aws_cloudwatch_event_bus
+./resource.ps1 aws_cloudwatch_event_connection
+./resource.ps1 aws_cloudwatch_event_permission
+./resource.ps1 aws_cloudwatch_metric_stream

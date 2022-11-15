@@ -1,0 +1,36 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "s3:GetBucketLocation",
+      "s3:GetObject",
+      "s3:ListBucket",
+      "s3:CreateBucket",
+      "s3:PutObject",
+      "s3:PutBucketPublicAccessBlock",
+      "athena:GetQueryExecution",
+      "athena:StartQueryExecution",
+      "athena:GetDatabase",
+      "athena:GetQueryResults",
+      "glue:CreateDatabase",
+      "glue:GetDatabase",
+      "glue:GetTables",
+      "glue:DeleteDatabase"
+    ],
+    "attributes": {
+      "encryption_configuration": [
+        "kms:GenerateDataKey",
+        "kms:Decrypt",
+        "kms:Encrypt"
+      ],
+      "tags": []
+    },
+    "destroy": [
+      "glue:DeleteDatabase"
+    ],
+    "modify": [
+      "glue:UpdateDatabase"
+    ],
+    "plan": []
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "athena:CreateDataCatalog",
+      "athena:DeleteDataCatalog",
+      "ec2:DescribeAccountAttributes",
+      "athena:GetDataCatalog",
+      "athena:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "athena:TagResource",
+        "athena:UntagResource"
+      ]
+    },
+    "destroy": [
+      "athena:DeleteDataCatalog"
+    ],
+    "modify": [
+      "athena:UpdateDataCatalog"
+    ],
+    "plan": []
+  }
+]

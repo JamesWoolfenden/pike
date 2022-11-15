@@ -363,6 +363,10 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_neptune_cluster_instance":                       awsNeptuneClusterInstance,
 		"aws_neptune_event_subscription":                     awsNeptuneEventSubscription,
 		"aws_neptune_cluster_snapshot":                       awsNeptuneClusterSnapshot,
+		"aws_athena_data_catalog":                            awsAthenaDataCatalog,
+		"aws_athena_database":                                awsAthenaDatabase,
+		"aws_athena_workgroup":                               awsAthenaWorkgroup,
+		"aws_athena_named_query":                             awsAthenaNamedQuery,
 	}
 
 	var Permissions []string
