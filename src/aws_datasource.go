@@ -110,6 +110,9 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 		"aws_vpc_ipam_pool":                         dataAwsVpcIpamPoolCidrs,
 		"aws_elastic_beanstalk_hosted_zone":         placeholder,
 		"aws_elastic_beanstalk_application":         dataAwsElasticBeanstalkApplication,
+		"aws_cloudwatch_event_bus":                  dataCloudwatchEventBus,
+		"aws_cloudwatch_event_connection":           dataCloudwatchEventConnection,
+		"aws_cloudwatch_event_source":               dataCloudwatchEventSource,
 	}
 
 	var Permissions []string

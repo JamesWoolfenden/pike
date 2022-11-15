@@ -367,6 +367,13 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_athena_database":                                awsAthenaDatabase,
 		"aws_athena_workgroup":                               awsAthenaWorkgroup,
 		"aws_athena_named_query":                             awsAthenaNamedQuery,
+		"aws_cloudwatch_composite_alarm":                     awsCloudwatchCompositeAlarm,
+		"aws_cloudwatch_dashboard":                           awsCloudwatchDashboard,
+		"aws_cloudwatch_event_api_destination":               awsCloudwatchEventAPIDestination,
+		"aws_cloudwatch_event_archive":                       awsCloudwatchEventArchive,
+		"aws_cloudwatch_event_bus":                           awsCloudwatchEventBus,
+		"aws_cloudwatch_event_connection":                    awsCloudwatchEventConnection,
+		"aws_cloudwatch_event_permission":                    awsCloudwatchEventPermission,
 	}
 
 	var Permissions []string

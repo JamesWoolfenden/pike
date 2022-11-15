@@ -8,10 +8,8 @@ resource "aws_iam_policy" "basic" {
         "Effect" : "Allow",
         "Action" : [
           "ec2:DescribeAccountAttributes",
-
-          "cloudwatch:PutDashboard",
-          "cloudwatch:GetDashboard",
-          "cloudwatch:DeleteDashboards"
+          "events:DescribeEventBus",
+          "events:DescribeConnection"
         ]
         "Resource" : "*"
       }

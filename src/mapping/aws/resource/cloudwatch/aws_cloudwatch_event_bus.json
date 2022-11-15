@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "events:CreateEventBus",
+      "events:DescribeEventBus",
+      "events:ListTagsForResource",
+      "events:DeleteEventBus"
+    ],
+    "attributes": {
+      "tags": [
+        "events:TagResource",
+        "events:UntagResource"
+      ]
+    },
+    "destroy": [
+      "events:DeleteEventBus"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

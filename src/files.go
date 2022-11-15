@@ -903,3 +903,24 @@ var awsAthenaWorkgroup []byte
 
 //go:embed mapping/aws/resource/athena/aws_athena_named_query.json
 var awsAthenaNamedQuery []byte
+
+//go:embed mapping/aws/resource/cloudwatch/aws_cloudwatch_composite_alarm.json
+var awsCloudwatchCompositeAlarm []byte
+
+//go:embed mapping/aws/resource/cloudwatch/aws_cloudwatch_dashboard.json
+var awsCloudwatchDashboard []byte
+
+//go:embed mapping/aws/resource/cloudwatch/aws_cloudwatch_event_api_destination.json
+var awsCloudwatchEventAPIDestination []byte
+
+//go:embed mapping/aws/resource/cloudwatch/aws_cloudwatch_event_archive.json
+var awsCloudwatchEventArchive []byte
+
+//go:embed mapping/aws/resource/cloudwatch/aws_cloudwatch_event_bus.json
+var awsCloudwatchEventBus []byte
+
+//go:embed mapping/aws/resource/cloudwatch/aws_cloudwatch_event_connection.json
+var awsCloudwatchEventConnection []byte
+
+//go:embed mapping/aws/resource/cloudwatch/aws_cloudwatch_event_permission.json
+var awsCloudwatchEventPermission []byte

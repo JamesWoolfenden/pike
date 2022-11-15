@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "iam:CreateServiceLinkedRole",
+      "events:CreateConnection",
+      "events:DescribeConnection",
+      "events:DeleteConnection",
+      "events:UpdateConnection",
+      "secretsmanager:GetSecretValue",
+      "secretsmanager:PutSecretValue",
+      "secretsmanager:CreateSecret",
+      "secretsmanager:DeleteSecret"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "events:DeleteConnection",
+      "secretsmanager:DeleteSecret"
+    ],
+    "modify": [
+      "events:UpdateConnection"
+    ],
+    "plan": []
+  }
+]

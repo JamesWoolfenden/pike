@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "events:CreateArchive",
+      "events:DescribeArchive",
+      "events:DeleteArchive"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "events:DeleteArchive"
+    ],
+    "modify": [
+      "events:UpdateArchive"
+    ],
+    "plan": []
+  }
+]

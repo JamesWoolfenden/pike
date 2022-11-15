@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "events:CreateApiDestination",
+      "events:DescribeApiDestination",
+      "events:DeleteApiDestination"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "events:DeleteApiDestination"
+    ],
+    "modify": [
+      "events:UpdateApiDestination"
+    ],
+    "plan": []
+  }
+]

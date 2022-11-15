@@ -182,10 +182,4 @@
 
 aws_db_instance_automated_backups_replication
 
-./resource.ps1 aws_cloudwatch_event_connection
-./resource.ps1 aws_cloudwatch_event_api_destination
-./resource.ps1 aws_cloudwatch_event_archive
-./resource.ps1 aws_cloudwatch_event_bus
-./resource.ps1 aws_cloudwatch_event_connection
-./resource.ps1 aws_cloudwatch_event_permission
 ./resource.ps1 aws_cloudwatch_metric_stream

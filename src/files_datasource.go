@@ -249,3 +249,12 @@ var dataAwsVpcIpamPoolCidrs []byte
 
 //go:embed mapping/aws/data/elasticbeanstalk/aws_elastic_beanstalk_application.json
 var dataAwsElasticBeanstalkApplication []byte
+
+//go:embed mapping/aws/data/cloudwatch/aws_cloudwatch_event_bus.json
+var dataCloudwatchEventBus []byte
+
+//go:embed mapping/aws/data/cloudwatch/aws_cloudwatch_event_connection.json
+var dataCloudwatchEventConnection []byte
+
+//go:embed mapping/aws/data/cloudwatch/aws_cloudwatch_event_source.json
+var dataCloudwatchEventSource []byte
