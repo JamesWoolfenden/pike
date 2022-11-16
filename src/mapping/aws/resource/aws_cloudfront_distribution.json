@@ -6,8 +6,6 @@
     },
     "destroy": [],
     "modify": [],
-    "plan": [
-      "s3:ListBucket"
-    ]
+    "plan": []
   }
 ]

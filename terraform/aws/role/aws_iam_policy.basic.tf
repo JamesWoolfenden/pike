@@ -7,9 +7,16 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
+          "s3:ListBucket",
+
+          "cloudfront:ListTagsForResource",
+          "cloudfront:GetDistribution",
           "ec2:DescribeAccountAttributes",
-          "events:DescribeEventBus",
-          "events:DescribeConnection"
+          "cloudfront:CreateDistribution",
+          "cloudfront:TagResource",
+          "cloudfront:UntagResource",
+          "cloudfront:DeleteDistribution",
+          "cloudfront:UpdateDistribution"
         ]
         "Resource" : "*"
       }
