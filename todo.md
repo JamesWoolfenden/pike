@@ -45,18 +45,6 @@
 ./resource.ps1 aws_chime_voice_connector_streaming
 ./resource.ps1 aws_chime_voice_connector_termination
 ./resource.ps1 aws_chime_voice_connector_termination_credentials
-./resource.ps1 aws_cloudfront_distribution
-./resource.ps1 aws_cloudfront_field_level_encryption_config
-./resource.ps1 aws_cloudfront_field_level_encryption_profile
-./resource.ps1 aws_cloudfront_function
-./resource.ps1 aws_cloudfront_key_group
-./resource.ps1 aws_cloudfront_monitoring_subscription
-./resource.ps1 aws_cloudfront_origin_access_control
-./resource.ps1 aws_cloudfront_origin_access_identity
-./resource.ps1 aws_cloudfront_origin_request_policy
-./resource.ps1 aws_cloudfront_public_key
-./resource.ps1 aws_cloudfront_realtime_log_config
-./resource.ps1 aws_cloudfront_response_headers_policy
 ./resource.ps1 aws_cloudhsm_v2_cluster
 ./resource.ps1 aws_cloudhsm_v2_hsm
 ./resource.ps1 aws_cloudtrail_event_data_store
@@ -183,3 +171,10 @@
 aws_db_instance_automated_backups_replication
 
 ./resource.ps1 aws_cloudwatch_metric_stream
+
+./resource.ps1 aws_cloudfront_function
+./resource.ps1 aws_cloudfront_origin_access_control
+./resource.ps1 aws_cloudfront_origin_access_identity
+./resource.ps1 aws_cloudfront_origin_request_policy
+./resource.ps1 aws_cloudfront_realtime_log_config
+./resource.ps1 aws_cloudfront_response_headers_policy

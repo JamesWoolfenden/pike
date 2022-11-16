@@ -374,6 +374,12 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_cloudwatch_event_bus":                           awsCloudwatchEventBus,
 		"aws_cloudwatch_event_connection":                    awsCloudwatchEventConnection,
 		"aws_cloudwatch_event_permission":                    awsCloudwatchEventPermission,
+		"aws_cloudfront_distribution":                        awsCloudfrontDistribution,
+		"aws_cloudfront_field_level_encryption_config":       awsCloudfrontFieldLevelEncryptionConfig,
+		"aws_cloudfront_field_level_encryption_profile":      awsCloudfrontFieldLevelEncryptionProfile,
+		"aws_cloudfront_key_group":                           awsCloudfrontKeyGroup,
+		"aws_cloudfront_monitoring_subscription":             awsCloudfrontMonitoringSubscription,
+		"aws_cloudfront_public_key":                          awsCloudfrontPublicKey,
 	}
 
 	var Permissions []string

@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "cloudfront:ListTagsForResource",
+      "cloudfront:GetDistribution",
+      "ec2:DescribeAccountAttributes",
+      "cloudfront:CreateDistribution",
+      "cloudfront:DeleteDistribution",
+      "cloudfront:UpdateDistribution"
+    ],
+    "attributes": {
+      "tags": [
+        "cloudfront:TagResource",
+        "cloudfront:UntagResource"
+      ]
+    },
+    "destroy": [
+      "cloudfront:DeleteDistribution"
+    ],
+    "modify": [
+      "cloudfront:UpdateDistribution"
+    ],
+    "plan": []
+  }
+]

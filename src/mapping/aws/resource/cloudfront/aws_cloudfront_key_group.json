@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "cloudfront:CreateKeyGroup",
+      "cloudfront:GetKeyGroup",
+      "cloudfront:DeleteKeyGroup"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "cloudfront:DeleteKeyGroup"
+    ],
+    "modify": [
+      "cloudfront:UpdateKeyGroup"
+    ],
+    "plan": []
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "cloudfront:CreatePublicKey",
+      "cloudfront:GetPublicKey",
+      "cloudfront:DeletePublicKey"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "cloudfront:DeletePublicKey"
+    ],
+    "modify": [
+      "cloudfront:UpdatePublicKey"
+    ],
+    "plan": []
+  }
+]

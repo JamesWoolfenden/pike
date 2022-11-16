@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "cloudfront:CreateMonitoringSubscription",
+      "cloudfront:GetMonitoringSubscription",
+      "cloudfront:DeleteMonitoringSubscription"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "cloudfront:DeleteMonitoringSubscription"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

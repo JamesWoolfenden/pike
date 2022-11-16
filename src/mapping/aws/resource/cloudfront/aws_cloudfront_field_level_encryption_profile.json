@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "cloudfront:CreateFieldLevelEncryptionProfile",
+      "cloudfront:GetFieldLevelEncryptionProfile",
+      "cloudfront:DeleteFieldLevelEncryptionProfile"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "cloudfront:DeleteFieldLevelEncryptionProfile"
+    ],
+    "modify": [
+      "cloudfront:UpdateFieldLevelEncryptionProfile"
+    ],
+    "plan": []
+  }
+]

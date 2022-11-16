@@ -924,3 +924,21 @@ var awsCloudwatchEventConnection []byte
 
 //go:embed mapping/aws/resource/cloudwatch/aws_cloudwatch_event_permission.json
 var awsCloudwatchEventPermission []byte
+
+//go:embed mapping/aws/resource/cloudfront/aws_cloudfront_distribution.json
+var awsCloudfrontDistribution []byte
+
+//go:embed mapping/aws/resource/cloudfront/aws_cloudfront_field_level_encryption_config.json
+var awsCloudfrontFieldLevelEncryptionConfig []byte
+
+//go:embed mapping/aws/resource/cloudfront/aws_cloudfront_field_level_encryption_profile.json
+var awsCloudfrontFieldLevelEncryptionProfile []byte
+
+//go:embed mapping/aws/resource/cloudfront/aws_cloudfront_key_group.json
+var awsCloudfrontKeyGroup []byte
+
+//go:embed mapping/aws/resource/cloudfront/aws_cloudfront_monitoring_subscription.json
+var awsCloudfrontMonitoringSubscription []byte
+
+//go:embed mapping/aws/resource/cloudfront/aws_cloudfront_public_key.json
+var awsCloudfrontPublicKey []byte
