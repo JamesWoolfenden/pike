@@ -17,6 +17,7 @@
 
 ./resource.ps1 aws_autoscaling_group_tag
 ./resource.ps1 aws_autoscaling_schedule
+
 ./resource.ps1 aws_backup_framework
 ./resource.ps1 aws_backup_framework  -type data
 ./resource.ps1 aws_backup_global_settings
@@ -31,6 +32,7 @@
 ./resource.ps1 aws_backup_vault_lock_configuration
 ./resource.ps1 aws_backup_vault_notifications
 ./resource.ps1 aws_backup_vault_policy
+
 ./resource.ps1 aws_budgets_budget_action
 ./resource.ps1 aws_ce_anomaly_monitor
 ./resource.ps1 aws_ce_anomaly_subscription
@@ -49,7 +51,6 @@
 ./resource.ps1 aws_cloudhsm_v2_hsm
 ./resource.ps1 aws_cloudtrail_event_data_store
 ./resource.ps1 aws_cloudtrail_service_account -type data
-
 ./resource.ps1 aws_dms_replication_instance
 ./resource.ps1 aws_docdb_cluster
 ./resource.ps1 aws_docdb_cluster_instance
@@ -106,7 +107,6 @@
 ./resource.ps1 aws_lightsail_static_ip_attachment
 ./resource.ps1 aws_medialive_multiplex
 ./resource.ps1 aws_medialive_multiplex_program
-
 ./resource.ps1 aws_networkmanager_attachment_accepter
 ./resource.ps1 aws_networkmanager_transit_gateway_peering
 ./resource.ps1 aws_networkmanager_transit_gateway_route_table_attachment
@@ -117,9 +117,7 @@
 ./resource.ps1 aws_redshiftserverless_endpoint_access
 ./resource.ps1 aws_redshiftserverless_usage_limit
 ./resource.ps1 aws_redshiftserverless_workgroup
-./resource.ps1 aws_s3_bucket_cors_configuration
-./resource.ps1 aws_s3_bucket_replication_configuration
-./resource.ps1 aws_s3_bucket_website_configuration
+
 ./resource.ps1 aws_sagemaker_app
 ./resource.ps1 aws_sagemaker_app_image_config
 ./resource.ps1 aws_sagemaker_code_repository
@@ -141,6 +139,7 @@
 ./resource.ps1 aws_sagemaker_user_profile
 ./resource.ps1 aws_sagemaker_workforce
 ./resource.ps1 aws_sagemaker_workteam
+
 ./resource.ps1 aws_securityhub_account
 ./resource.ps1 aws_securityhub_action_target
 ./resource.ps1 aws_securityhub_finding_aggregator
@@ -167,11 +166,8 @@
 ./resource.ps1 aws_xray_encryption_config
 ./resource.ps1 aws_xray_group
 ./resource.ps1 aws_xray_sampling_rule
-
-aws_db_instance_automated_backups_replication
-
+./resource.ps1 aws_db_instance_automated_backups_replication
 ./resource.ps1 aws_cloudwatch_metric_stream
-
 ./resource.ps1 aws_cloudfront_function
 ./resource.ps1 aws_cloudfront_origin_access_control
 ./resource.ps1 aws_cloudfront_origin_access_identity

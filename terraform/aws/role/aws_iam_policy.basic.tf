@@ -7,42 +7,12 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "s3:ListBucket",
+          "s3:PutBucketCors",
+          "s3:GetBucketLocation",
+          "s3:GetBucketCors",
 
-          "cloudfront:ListTagsForResource",
-          "cloudfront:GetDistribution",
-          "ec2:DescribeAccountAttributes",
-          "cloudfront:CreateDistribution",
-          "cloudfront:TagResource",
-          "cloudfront:UntagResource",
-          "cloudfront:DeleteDistribution",
-          "cloudfront:UpdateDistribution",
-
-          "cloudfront:CreatePublicKey",
-          "cloudfront:GetPublicKey",
-          "cloudfront:DeletePublicKey",
-          "cloudfront:UpdatePublicKey",
-
-          #          aws_cloudfront_field_level_encryption_profile
-          "cloudfront:CreateFieldLevelEncryptionProfile",
-          "cloudfront:GetFieldLevelEncryptionProfile",
-          "cloudfront:DeleteFieldLevelEncryptionProfile",
-          "cloudfront:UpdateFieldLevelEncryptionProfile",
-          #config
-          "cloudfront:CreateFieldLevelEncryptionConfig",
-          "cloudfront:GetFieldLevelEncryptionConfig",
-          "cloudfront:DeleteFieldLevelEncryptionConfig",
-          "cloudfront:UpdateFieldLevelEncryptionConfig",
-
-          #          keygroup
-          "cloudfront:CreateKeyGroup",
-          "cloudfront:GetKeyGroup",
-          "cloudfront:DeleteKeyGroup",
-          "cloudfront:UpdateKeyGroup",
-
-          "cloudfront:CreateMonitoringSubscription",
-          "cloudfront:GetMonitoringSubscription",
-          "cloudfront:DeleteMonitoringSubscription"
+          "s3:PutBucketWebsite",
+          "s3:DeleteBucketWebsite",
         ]
         "Resource" : "*"
       }
