@@ -4,6 +4,8 @@ import (
 	"errors"
 	"os"
 	"strings"
+
+	"github.com/rs/zerolog/log"
 )
 
 // Readme Updates a README.md file
@@ -17,6 +19,7 @@ func Readme(dirName string, output string, init bool, autoAppend bool) error {
 
 	OutPolicy, err2 := MakePolicy(dirName, nil, init)
 	if err2 != nil {
+		log.Print("failed to make policy")
 		return err2
 	}
 
@@ -31,6 +34,6 @@ func Readme(dirName string, output string, init bool, autoAppend bool) error {
 	}
 
 	err := ReplaceSection(file, markdown, autoAppend)
-
+	log.Print("readme updated")
 	return err
 }
