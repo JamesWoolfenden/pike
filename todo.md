@@ -17,20 +17,7 @@
 
 ./resource.ps1 aws_autoscaling_group_tag
 ./resource.ps1 aws_autoscaling_schedule
-./resource.ps1 aws_backup_framework
-./resource.ps1 aws_backup_framework  -type data
-./resource.ps1 aws_backup_global_settings
-./resource.ps1 aws_backup_plan
-./resource.ps1 aws_backup_plan -type data
-./resource.ps1 aws_backup_region_settings
-./resource.ps1 aws_backup_report_plan
-./resource.ps1 aws_backup_report_plan -type data
-./resource.ps1 aws_backup_selection
-./resource.ps1 aws_backup_selection -type data
-./resource.ps1 aws_backup_vault
-./resource.ps1 aws_backup_vault_lock_configuration
-./resource.ps1 aws_backup_vault_notifications
-./resource.ps1 aws_backup_vault_policy
+
 ./resource.ps1 aws_budgets_budget_action
 ./resource.ps1 aws_ce_anomaly_monitor
 ./resource.ps1 aws_ce_anomaly_subscription
@@ -168,7 +155,7 @@
 ./resource.ps1 aws_xray_group
 ./resource.ps1 aws_xray_sampling_rule
 
-aws_db_instance_automated_backups_replication
+./resource.ps1 aws_db_instance_automated_backups_replication
 
 ./resource.ps1 aws_cloudwatch_metric_stream
 
@@ -178,3 +165,14 @@ aws_db_instance_automated_backups_replication
 ./resource.ps1 aws_cloudfront_origin_request_policy
 ./resource.ps1 aws_cloudfront_realtime_log_config
 ./resource.ps1 aws_cloudfront_response_headers_policy
+
+./resource.ps1 aws_backup_framework
+./resource.ps1 aws_backup_global_settings
+./resource.ps1 aws_backup_plan
+./resource.ps1 aws_backup_region_settings
+./resource.ps1 aws_backup_report_plan
+./resource.ps1 aws_backup_selection
+./resource.ps1 aws_backup_vault
+./resource.ps1 aws_backup_vault_lock_configuration
+./resource.ps1 aws_backup_vault_notifications
+./resource.ps1 aws_backup_vault_policy

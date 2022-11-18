@@ -258,3 +258,15 @@ var dataCloudwatchEventConnection []byte
 
 //go:embed mapping/aws/data/cloudwatch/aws_cloudwatch_event_source.json
 var dataCloudwatchEventSource []byte
+
+//go:embed mapping/aws/data/backup/aws_backup_framework.json
+var dataBackupFramework []byte
+
+//go:embed mapping/aws/data/backup/aws_backup_plan.json
+var dataBackupPlan []byte
+
+//go:embed mapping/aws/data/backup/aws_backup_report_plan.json
+var dataBackupReportPlan []byte
+
+//go:embed mapping/aws/data/backup/aws_backup_selection.json
+var dataBackupSelection []byte

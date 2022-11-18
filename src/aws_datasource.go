@@ -113,6 +113,10 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 		"aws_cloudwatch_event_bus":                  dataCloudwatchEventBus,
 		"aws_cloudwatch_event_connection":           dataCloudwatchEventConnection,
 		"aws_cloudwatch_event_source":               dataCloudwatchEventSource,
+		"aws_backup_framework":                      dataBackupFramework,
+		"aws_backup_plan":                           dataBackupPlan,
+		"aws_backup_report_plan":                    dataBackupReportPlan,
+		"aws_backup_selection":                      dataBackupSelection,
 	}
 
 	var Permissions []string
