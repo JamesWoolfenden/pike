@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "Backup:CreateFramework",
+      "Backup:DescribeFramework",
+      "Backup:DeleteFramework",
+      "Backup:ListTags"
+    ],
+    "attributes": {
+      "tags": [
+        "Backup:UntagResource",
+        "Backup:TagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [
+      "Backup:UpdateFramework"
+    ],
+    "plan": []
+  }
+]

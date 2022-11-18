@@ -7,17 +7,17 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "s3:ListBucket",
-          "cloudfront:ListTagsForResource",
-          "cloudfront:TagResource",
-          "cloudfront:UntagResource",
+          "ec2:DescribeAccountAttributes",
+          "Backup:CreateBackupPlan",
+          "Backup:GetBackupPlan",
+          "Backup:UntagResource",
+          "Backup:TagResource",
+          "Backup:ListTags",
+          "Backup:DeleteBackupPlan",
+          "Backup:UpdateBackupPlan",
 
-          "cloudfront:CreatePublicKey",
-          "cloudfront:DeletePublicKey",
-          #          aws_cloudfront_field_level_encryption_profile
-          "cloudfront:UpdateKeyGroup",
-        ]
-        "Resource" : "*"
+        ],
+        "Resource" : "*",
       }
     ]
   })

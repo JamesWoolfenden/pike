@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "Backup:UpdateRegionSettings",
+      "Backup:DescribeRegionSettings"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

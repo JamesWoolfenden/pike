@@ -1,0 +1,30 @@
+[
+  {
+    "apply": [
+      "backup:ListTags",
+      "backup:DeleteBackupVault",
+      "ec2:DescribeAccountAttributes",
+      "backup:CreateBackupVault",
+      "backup:DescribeBackupVault",
+      "backup-storage:MountCapsule"
+    ],
+    "attributes": {
+      "kms_key_arn": [
+        "kms:CreateGrant",
+        "kms:GenerateDataKey",
+        "kms:Decrypt",
+        "kms:RetireGrant",
+        "kms:DescribeKey"
+      ],
+      "tags": [
+        "backup:UntagResource",
+        "backup:TagResource"
+      ]
+    },
+    "destroy": [
+      "backup:DeleteBackupVault"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

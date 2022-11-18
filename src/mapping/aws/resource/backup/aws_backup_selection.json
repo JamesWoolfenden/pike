@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "Backup:CreateBackupSelection",
+      "Backup:DeleteBackupSelection",
+      "Backup:GetBackupSelection",
+      "iam:PassRole"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Backup:DeleteBackupSelection"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

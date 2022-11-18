@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "Backup:DescribeReportPlan",
+      "Backup:CreateReportPlan",
+      "Backup:DeleteReportPlan",
+      "s3:ListBucket",
+      "Backup:ListTags"
+    ],
+    "attributes": {
+      "tags": [
+        "Backup:UntagResource",
+        "Backup:TagResource"
+      ]
+    },
+    "destroy": [
+      "Backup:DeleteReportPlan"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "backup:PutBackupVaultNotifications"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "backup:DeleteBackupVaultNotifications",
+      "Backup:GetBackupVaultNotifications"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

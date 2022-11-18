@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "Backup:CreateBackupPlan",
+      "Backup:GetBackupPlan",
+      "Backup:ListTags",
+      "Backup:DeleteBackupPlan"
+    ],
+    "attributes": {
+      "tags": [
+        "Backup:UntagResource",
+        "Backup:TagResource"
+      ]
+    },
+    "destroy": [
+      "Backup:UpdateBackupPlan"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

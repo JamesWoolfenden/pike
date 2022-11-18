@@ -942,3 +942,33 @@ var awsCloudfrontMonitoringSubscription []byte
 
 //go:embed mapping/aws/resource/cloudfront/aws_cloudfront_public_key.json
 var awsCloudfrontPublicKey []byte
+
+//go:embed mapping/aws/resource/backup/aws_backup_framework.json
+var awsBackupFramework []byte
+
+//go:embed mapping/aws/resource/backup/aws_backup_global_settings.json
+var awsBackupGlobalSettings []byte
+
+//go:embed mapping/aws/resource/backup/aws_backup_plan.json
+var awsBackupPlan []byte
+
+//go:embed mapping/aws/resource/backup/aws_backup_region_settings.json
+var awsBackupRegionSettings []byte
+
+//go:embed mapping/aws/resource/backup/aws_backup_report_plan.json
+var awsBackupReportPlan []byte
+
+//go:embed mapping/aws/resource/backup/aws_backup_selection.json
+var awsBackupSelection []byte
+
+//go:embed mapping/aws/resource/backup/aws_backup_vault.json
+var awsBackupVault []byte
+
+//go:embed mapping/aws/resource/backup/aws_backup_vault_lock_configuration.json
+var awsBackupVaultLockConfiguration []byte
+
+//go:embed mapping/aws/resource/backup/aws_backup_vault_notifications.json
+var awsBackupVaultNotification []byte
+
+//go:embed mapping/aws/resource/backup/aws_backup_vault_policy.json
+var awsBackupVaultPolicy []byte

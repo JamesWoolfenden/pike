@@ -159,14 +159,3 @@
 ./resource.ps1 aws_cloudfront_origin_request_policy
 ./resource.ps1 aws_cloudfront_realtime_log_config
 ./resource.ps1 aws_cloudfront_response_headers_policy
-
-./resource.ps1 aws_backup_framework
-./resource.ps1 aws_backup_global_settings
-./resource.ps1 aws_backup_plan
-./resource.ps1 aws_backup_region_settings
-./resource.ps1 aws_backup_report_plan
-./resource.ps1 aws_backup_selection
-./resource.ps1 aws_backup_vault
-./resource.ps1 aws_backup_vault_lock_configuration
-./resource.ps1 aws_backup_vault_notifications
-./resource.ps1 aws_backup_vault_policy

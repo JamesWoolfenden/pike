@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "backup:PutBackupVaultAccessPolicy",
+      "backup:DeleteBackupVaultAccessPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "backup:DeleteBackupVaultAccessPolicy"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -380,6 +380,16 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_cloudfront_key_group":                           awsCloudfrontKeyGroup,
 		"aws_cloudfront_monitoring_subscription":             awsCloudfrontMonitoringSubscription,
 		"aws_cloudfront_public_key":                          awsCloudfrontPublicKey,
+		"aws_backup_framework":                               awsBackupFramework,
+		"aws_backup_global_settings":                         awsBackupGlobalSettings,
+		"aws_backup_plan":                                    awsBackupPlan,
+		"aws_backup_region_settings":                         awsBackupRegionSettings,
+		"aws_backup_report_plan":                             awsBackupReportPlan,
+		"aws_backup_selection":                               awsBackupSelection,
+		"aws_backup_vault":                                   awsBackupVault,
+		"aws_backup_vault_lock_configuration":                awsBackupVaultLockConfiguration,
+		"aws_backup_vault_notifications":                     awsBackupVaultNotification,
+		"aws_backup_vault_policy":                            awsBackupVaultPolicy,
 	}
 
 	var Permissions []string

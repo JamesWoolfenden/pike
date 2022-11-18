@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "backup:PutBackupVaultLockConfiguration",
+      "backup:DeleteBackupVaultLockConfiguration"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "backup:DeleteBackupVaultLockConfiguration"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]
