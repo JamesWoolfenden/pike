@@ -1,6 +1,8 @@
 package pike
 
-import "github.com/rs/zerolog/log"
+import (
+	"fmt"
+)
 
 // GetGCPDataPermissions gets permissions required for datasources
 func GetGCPDataPermissions(result ResourceV2) ([]string, error) {
@@ -24,7 +26,7 @@ func GetGCPDataPermissions(result ResourceV2) ([]string, error) {
 	if temp != nil {
 		Permissions, err = GetPermissionMap(TFLookup[result.Name].([]byte), result.Attributes)
 	} else {
-		log.Printf("data.%s not implemented", result.Name)
+		return nil, fmt.Errorf("data.%s not implemented", result.Name)
 	}
 
 	return Permissions, err

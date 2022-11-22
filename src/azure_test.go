@@ -15,7 +15,46 @@ func TestGetAZUREPermissions(t *testing.T) {
 		want    []string
 		wantErr bool
 	}{
-		// TODO: Add test cases.
+		{"data",
+			args{
+				ResourceV2{"data",
+					"azurerm_key_vault",
+					"MyDemoApiKey",
+					"azurerm",
+					[]string{"name"}}},
+			[]string{"Microsoft.KeyVault/vaults/read"},
+			false},
+		{"resource",
+			args{
+				ResourceV2{"resource",
+					"azurerm_key_vault",
+					"MyDemoApiKey",
+					"azurerm",
+					[]string{"name", "name", "resource_group"}}},
+			[]string{"Microsoft.Resources/subscriptions/resourcegroups/read",
+				"Microsoft.KeyVault/vaults/read",
+				"Microsoft.KeyVault/vaults/write",
+				"Microsoft.KeyVault/vaults/delete",
+				"Microsoft.KeyVault/locations/deletedVaults/read"},
+			false},
+		{"bogus resource",
+			args{
+				ResourceV2{"resource",
+					"azurerm_is_best",
+					"MyDemoApiKey",
+					"azurerm",
+					[]string{"name", "type", "resource_group"}}},
+			nil,
+			true},
+		{"bogus data",
+			args{
+				ResourceV2{"data",
+					"azurerm_is_best",
+					"MyDemoApiKey",
+					"azurerm",
+					[]string{"name", "type", "resource_group"}}},
+			nil,
+			true},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -41,7 +80,24 @@ func TestGetAZUREResourcePermissions(t *testing.T) {
 		want    []string
 		wantErr bool
 	}{
-		// TODO: Add test cases.
+		{"resource",
+			args{
+				ResourceV2{"resource",
+					"azurerm_key_vault",
+					"MyDemoApiKey",
+					"azurerm",
+					[]string{"name", "name", "resource_group"}}},
+			[]string{"Microsoft.Resources/subscriptions/resourcegroups/read",
+				"Microsoft.KeyVault/vaults/read",
+				"Microsoft.KeyVault/vaults/write",
+				"Microsoft.KeyVault/vaults/delete",
+				"Microsoft.KeyVault/locations/deletedVaults/read"},
+			false},
+		{"bogus", args{ResourceV2{"resource",
+			"azurerm_is_best",
+			"MyDemoApiKey",
+			"azurerm",
+			[]string{"name", "type", "resource_group"}}}, nil, true},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

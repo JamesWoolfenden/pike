@@ -1,7 +1,8 @@
 package pike
 
 import (
-	"github.com/rs/zerolog/log"
+	"errors"
+	"fmt"
 )
 
 // GetAZUREPermissions for GCP resources
@@ -40,7 +41,9 @@ func GetAZUREResourcePermissions(result ResourceV2) ([]string, error) {
 	if temp != nil {
 		Permissions, err = GetPermissionMap(TFLookup[result.Name].([]byte), result.Attributes)
 	} else {
-		log.Printf("%s not implemented", result.Name)
+		message := fmt.Sprintf("%s not implemented", result.Name)
+		//log.Print(message)
+		return nil, errors.New(message)
 	}
 
 	return Permissions, err

@@ -126,7 +126,7 @@ func TestMakePolicy(t *testing.T) {
 	}
 
 	bogus := "testdata/scan/examples/simple/bogus.tf"
-	real := "testdata/scan/examples/simple/aws_s3_bucket.pike.tf"
+	actual := "testdata/scan/examples/simple/aws_s3_bucket.pike.tf"
 	tests := []struct {
 		name    string
 		args    args
@@ -140,7 +140,7 @@ func TestMakePolicy(t *testing.T) {
 		{"not a dir", args{"bogus", nil, true},
 			"",
 			true},
-		{"a file", args{"", &real, false},
+		{"a file", args{"", &actual, false},
 			"{\n    \"Version\": \"2012-10-17\",\n    \"Statement\": [\n        {\n            \"Sid\": \"VisualEditor0\",\n            \"Effect\": \"Allow\",\n            \"Action\": [\n                \"s3:CreateBucket\",\n                \"s3:DeleteBucket\",\n                \"s3:GetAccelerateConfiguration\",\n                \"s3:GetBucketAcl\",\n                \"s3:GetBucketCORS\",\n                \"s3:GetBucketLogging\",\n                \"s3:GetBucketObjectLockConfiguration\",\n                \"s3:GetBucketPolicy\",\n                \"s3:GetBucketRequestPayment\",\n                \"s3:GetBucketTagging\",\n                \"s3:GetBucketVersioning\",\n                \"s3:GetBucketWebsite\",\n                \"s3:GetEncryptionConfiguration\",\n                \"s3:GetLifecycleConfiguration\",\n                \"s3:GetObject\",\n                \"s3:GetObjectAcl\",\n                \"s3:GetReplicationConfiguration\",\n                \"s3:ListBucket\"\n            ],\n            \"Resource\": [\n                \"*\"\n            ]\n        }\n    ]\n}\n",
 			false},
 		{"not a file", args{"", &bogus, false},

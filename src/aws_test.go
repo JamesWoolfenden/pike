@@ -54,6 +54,26 @@ func TestGetAWSPermissions(t *testing.T) {
 			},
 			nil,
 			true},
+		{"module",
+			args{
+				ResourceV2{"module",
+					"instance",
+					"pike",
+					"",
+					[]string{"name"}},
+			},
+			nil,
+			false},
+		{"duff",
+			args{
+				ResourceV2{"duff",
+					"instance",
+					"pike",
+					"",
+					[]string{"name"}},
+			},
+			nil,
+			true},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

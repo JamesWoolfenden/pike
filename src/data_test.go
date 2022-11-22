@@ -6,7 +6,6 @@ import (
 	"testing"
 
 	"github.com/hashicorp/hcl/v2"
-
 	"github.com/hashicorp/hcl/v2/hclsyntax"
 )
 
@@ -207,8 +206,68 @@ func TestGetPermission(t *testing.T) {
 				"acm:DeleteCertificate",
 				"acm:DeleteCertificate"}, nil, nil},
 			false},
-		{"not-implemented", args{ResourceV2{Provider: "azurerm"}}, Sorted{}, false},
+		{"no-provider",
+			args{
+				ResourceV2{
+					"resource",
+					"bogus_test",
+					"pike",
+					"bogus",
+					[]string{
+						"domain_name",
+						"validation_method",
+						"tags",
+						"lifecycle",
+						"create_before_destroy",
+					}}},
+			Sorted{nil, nil, nil},
+			false},
+		{"no-iam",
+			args{
+				ResourceV2{
+					"resource",
+					"random_string",
+					"pike",
+					"random",
+					[]string{
+						"length",
+						"special",
+					}}},
+			Sorted{nil, nil, nil},
+			false},
+		{"not-implemented", args{ResourceV2{Provider: "linode"}}, Sorted{}, false},
 		{"bogus", args{ResourceV2{Provider: "bogus"}}, Sorted{}, false},
+		{"azure",
+			args{
+				ResourceV2{"resource",
+					"azurerm_key_vault",
+					"MyDemoApiKey",
+					"azurerm",
+					[]string{"name", "name", "resource_group"}}},
+			Sorted{
+				nil, nil,
+				[]string{"Microsoft.Resources/subscriptions/resourcegroups/read",
+					"Microsoft.KeyVault/vaults/read",
+					"Microsoft.KeyVault/vaults/write",
+					"Microsoft.KeyVault/vaults/delete",
+					"Microsoft.KeyVault/locations/deletedVaults/read"}},
+			false},
+		{"gcp",
+			args{
+				ResourceV2{"resource", "google_compute_instance", "found", "gcp",
+					[]string{"name", "machine_type", "zone"}}},
+			Sorted{nil, []string{
+				"compute.zones.get",
+				"compute.instances.create",
+				"compute.instances.get",
+				"compute.disks.create",
+				"compute.disks.create",
+				"compute.subnetworks.use",
+				"compute.subnetworks.useExternalIp",
+				"compute.instances.setMetadata",
+				"compute.instances.delete",
+				"compute.instances.delete"}, nil},
+			false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -228,13 +287,25 @@ func TestGetResourceBlocks(t *testing.T) {
 	type args struct {
 		file string
 	}
+	empty := hcl.Range{Filename: "testdata/scan/examples/empty/empty.tf",
+		Start: hcl.Pos{Line: 1, Column: 1},
+		End:   hcl.Pos{Line: 1, Column: 1}}
+
+	random := hcl.Range{Filename: "testdata/scan/examples/random/random_string.pike.tf",
+		Start: hcl.Pos{Line: 1, Column: 1},
+		End:   hcl.Pos{Line: 5, Column: 2, Byte: 118}}
 	tests := []struct {
 		name    string
 		args    args
-		want    *hclsyntax.Body
+		want    hcl.Range
 		wantErr bool
 	}{
-		// TODO: Add test cases.
+		{"pass", args{"testdata/scan/examples/random/random_string.pike.tf"},
+			random,
+			false},
+		{"empty", args{"testdata/scan/examples/empty/empty.tf"},
+			empty,
+			false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -243,7 +314,7 @@ func TestGetResourceBlocks(t *testing.T) {
 				t.Errorf("GetResourceBlocks() error = %v, wantErr %v", err, tt.wantErr)
 				return
 			}
-			if !reflect.DeepEqual(got, tt.want) {
+			if !reflect.DeepEqual(got.SrcRange, tt.want) {
 				t.Errorf("GetResourceBlocks() = %v, want %v", got, tt.want)
 			}
 		})

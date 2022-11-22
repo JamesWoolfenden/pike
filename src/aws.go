@@ -3,8 +3,6 @@ package pike
 import (
 	"encoding/json"
 	"fmt"
-
-	"github.com/rs/zerolog/log"
 )
 
 // GetAWSPermissions for AWS resources
@@ -33,7 +31,7 @@ func GetAWSPermissions(result ResourceV2) ([]string, error) {
 		}
 	default:
 		{
-			log.Printf("unknown permission resource type %s", result)
+			return nil, fmt.Errorf("unknown permission resource type %s", result.Name)
 		}
 	}
 

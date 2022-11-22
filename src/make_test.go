@@ -15,6 +15,7 @@ func TestMake(t *testing.T) {
 		args    args
 		wantErr bool
 	}{
+		{"linux-random", args{"testdata/scan/examples/random"}, true},
 		{"linux-full", args{"testdata/scan/examples/simple"}, false},
 		{"linux-fail", args{"../modules/aws/terraform-aws-budget/rubbish"}, true},
 	}
@@ -37,6 +38,7 @@ func Test_tfApply(t *testing.T) {
 		wantErr bool
 	}{
 		{name: "fail", args: args{"asdasd"}, wantErr: true},
+		{name: "pass-random", args: args{"testdata/scan/examples/random"}, wantErr: false},
 		{name: "pass", args: args{"testdata/scan/examples/simple"}, wantErr: false},
 	}
 	for _, tt := range tests {

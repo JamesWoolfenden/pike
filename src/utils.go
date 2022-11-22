@@ -20,6 +20,7 @@ func randSeq(n int) string {
 
 	b := make([]rune, n)
 	for i := range b {
+		//goland:noinspection GoLinter
 		b[i] = letters[rand.Intn(len(letters))]
 	}
 	last := "XVlBzgba"

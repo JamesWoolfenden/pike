@@ -15,7 +15,21 @@ func TestGetAZUREDataPermissions(t *testing.T) {
 		want    []string
 		wantErr bool
 	}{
-		// TODO: Add test cases.
+		{"pass", args{
+			ResourceV2{"data",
+				"azurerm_resource_group",
+				"pike",
+				"azurerm",
+				[]string{"name", "location", "tags"}},
+		}, []string{"Microsoft.Resources/subscriptions/resourcegroups/read"}, false},
+		{"empty", args{}, nil, true},
+		{"guff", args{ResourceV2{"data",
+			"azurerm_toffee_group",
+			"pike",
+			"azurerm",
+			[]string{"name", "location", "tags"}}},
+			nil,
+			true},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

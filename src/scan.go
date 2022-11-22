@@ -17,7 +17,7 @@ import (
 	"github.com/hashicorp/terraform-exec/tfexec"
 )
 
-const tfVersion = "1.2.3"
+const tfVersion = "1.3.5"
 
 // Scan looks for resources in a given directory
 func Scan(dirName string, output string, file *string, init bool, write bool) error {
@@ -97,7 +97,7 @@ func Init(dirName string) (*string, []string, error) {
 		return nil, nil, err
 	}
 
-	log.Printf("terraform init at %s\n", dirName)
+	log.Printf("terraform init at %s", dirName)
 
 	modules, err := os.ReadDir(dirName + "/" + ".terraform/modules")
 

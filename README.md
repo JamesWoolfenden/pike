@@ -18,7 +18,7 @@ Azure is the newest with AWS having the most supported resources <https://github
 Feel free to submit PR or Issue if you find an issue or even better add new resources, and then I'll take a look at merging it ASAP.
 
 **CAVEAT** The policies and roles are to get you started, there are no conditions and resources are all wildcards (for AWS)
-this is **definitely not best practice**, you need will to modify these permissions to minimum required by adding these constrictions, however I also added the ability (in AWS so far) to generate short lived credentials for your build and remotely (REMOTE) supply and invoke your builds (INVOKE).
+this is **definitely not best practice**, you need will to modify these permissions to minimum required by adding these constrictions, however I also added the ability (in AWS so far) to generate short-lived credentials for your build and remotely (REMOTE) supply and invoke your builds (INVOKE).
 
 Ideally I would like to do this for you, but these policies are determined statically, and we would need to determine the resource names that will be created and know your intentions.
 
