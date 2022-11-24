@@ -7,6 +7,7 @@ resource "azurerm_container_registry" "pike" {
   sku                           = "Premium"
   public_network_access_enabled = true
 
+
   georeplications {
     location                = "East US"
     zone_redundancy_enabled = true
@@ -15,11 +16,17 @@ resource "azurerm_container_registry" "pike" {
     }
   }
 
+  identity {
+    type         = "UserAssigned"
+    identity_ids = [azurerm_user_assigned_identity.example.id]
+  }
+
   encryption {
     enabled            = true
-    identity_client_id = azurerm_user_assigned_identity.example.id
-    key_vault_key_id   = data.azurerm_key_vault.pike.id
+    identity_client_id = azurerm_user_assigned_identity.example.client_id
+    key_vault_key_id   = data.azurerm_key_vault_key.pike.id
   }
+
 
   tags = {
     pike = "permissions"
@@ -33,12 +40,12 @@ resource "azurerm_user_assigned_identity" "example" {
   name = "registry-uai"
 }
 
-data "azurerm_key_vault_key" "example" {
+data "azurerm_key_vault_key" "pike" {
   name         = "pike"
   key_vault_id = data.azurerm_key_vault.pike.id
 }
 
 data "azurerm_key_vault" "pike" {
   resource_group_name = "pike"
-  name                = "pike-vault"
+  name                = "pike"
 }

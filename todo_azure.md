@@ -8,3 +8,4 @@
 ./resource.ps1 azurerm_subnet
 ./resource.ps1 azurerm_network_interface
 ./resource.ps1 azurerm_linux_virtual_machine
+./resource.ps1 azurerm_container_registry
