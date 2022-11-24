@@ -22,7 +22,10 @@ func TestGetAZUREPermissions(t *testing.T) {
 					"MyDemoApiKey",
 					"azurerm",
 					[]string{"name"}}},
-			[]string{"Microsoft.KeyVault/vaults/read"},
+			[]string{
+				"Microsoft.Resources/subscriptions/resourcegroups/read",
+				"Microsoft.KeyVault/vaults/read",
+			},
 			false},
 		{"resource",
 			args{
