@@ -293,7 +293,7 @@ func TestGetResourceBlocks(t *testing.T) {
 
 	random := hcl.Range{Filename: "testdata/scan/examples/random/random_string.pike.tf",
 		Start: hcl.Pos{Line: 1, Column: 1},
-		End:   hcl.Pos{Line: 5, Column: 2, Byte: 118}}
+		End:   hcl.Pos{Line: 6, Column: 1, Byte: 119}}
 	tests := []struct {
 		name    string
 		args    args
@@ -315,7 +315,7 @@ func TestGetResourceBlocks(t *testing.T) {
 				return
 			}
 			if !reflect.DeepEqual(got.SrcRange, tt.want) {
-				t.Errorf("GetResourceBlocks() = %v, want %v", got, tt.want)
+				t.Errorf("GetResourceBlocks() = %v, want %v", got.SrcRange, tt.want)
 			}
 		})
 	}
