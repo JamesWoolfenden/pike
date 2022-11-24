@@ -1,6 +1,6 @@
 module "api_gateway" {
   source  = "terraform-aws-modules/apigateway-v2/aws"
-  version = "~> 1.0"
+  version = "v2.2.1"
 
   name          = "${random_pet.this.id}-http"
   description   = "My awesome HTTP API Gateway"

@@ -1,6 +1,6 @@
 module "lambda_post" {
   source  = "terraform-aws-modules/lambda/aws"
-  version = "~> 3.0"
+  version = "v4.7.1"
 
   function_name = "${random_pet.this.id}-lambda-post"
   description   = "My awesome Python lambda function"
