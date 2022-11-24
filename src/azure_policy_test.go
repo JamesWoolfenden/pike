@@ -27,8 +27,10 @@ func TestAZUREPolicy(t *testing.T) {
 				t.Errorf("AZUREPolicy() error = %v, wantErr %v", err, tt.wantErr)
 				return
 			}
-			if got != tt.want {
-				t.Errorf("AZUREPolicy() = %v, want %v", got, tt.want)
+			mingot := minify(got)
+			minwant := minify(tt.want)
+			if mingot != minwant {
+				t.Errorf("AZUREPolicy() = %v, want %v", mingot, minwant)
 			}
 		})
 	}
