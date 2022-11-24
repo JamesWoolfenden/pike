@@ -14,7 +14,13 @@ var azurermServicePlan []byte
 var azurermKeyVault []byte
 
 //go:embed mapping/azurerm/resource/documentdb/azurerm_cosmosdb_account.json
-var azureCosmosdbAccount []byte
+var azurermCosmosdbAccount []byte
 
 //go:embed mapping/azurerm/resource/documentdb/azurerm_cosmosdb_table.json
-var azureCosmosdbTable []byte
+var azurermCosmosdbTable []byte
+
+//go:embed mapping/azurerm/resource/containerregistry/azurerm_container_registry.json
+var azurermContainerRegistry []byte
+
+//go:embed mapping/azurerm/resource/managedidentity/azurerm_user_assigned_identity.json
+var azurermUserAssignedIdentity []byte

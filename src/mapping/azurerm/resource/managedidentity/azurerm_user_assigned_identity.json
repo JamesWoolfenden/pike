@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourcegroups/read",
+      "Microsoft.ManagedIdentity/userAssignedIdentities/read",
+      "Microsoft.ManagedIdentity/userAssignedIdentities/write",
+      "Microsoft.ManagedIdentity/userAssignedIdentities/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.ManagedIdentity/userAssignedIdentities/delete"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

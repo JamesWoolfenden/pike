@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourcegroups/read",
+      "Microsoft.ContainerRegistry/registries/read",
+      "Microsoft.ContainerRegistry/registries/write",
+      "Microsoft.ContainerRegistry/registries/operationStatuses/read",
+      "Microsoft.ContainerRegistry/registries/delete"
+    ],
+    "attributes": {
+      "georeplications": [
+        "Microsoft.ContainerRegistry/registries/replications/write",
+        "Microsoft.ContainerRegistry/registries/replications/operationStatuses/read"
+      ],
+      "identity": [
+        "Microsoft.ManagedIdentity/userAssignedIdentities/assign/action",
+        "Microsoft.ManagedIdentity/userAssignedIdentities/read"
+      ],
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

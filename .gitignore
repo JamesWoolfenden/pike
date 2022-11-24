@@ -13,3 +13,4 @@ __debug_bin.exe
 .terraform.tfstate.lock.info
 .pike
 provider.azure.tf
+provider.azurerm.tf

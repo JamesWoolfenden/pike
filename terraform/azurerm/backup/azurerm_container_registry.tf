@@ -7,7 +7,6 @@ resource "azurerm_container_registry" "pike" {
   sku                           = "Premium"
   public_network_access_enabled = true
 
-
   georeplications {
     location                = "East US"
     zone_redundancy_enabled = true
@@ -27,9 +26,9 @@ resource "azurerm_container_registry" "pike" {
     key_vault_key_id   = data.azurerm_key_vault_key.pike.id
   }
 
-
   tags = {
-    pike = "permissions"
+    pike    = "permissions"
+    another = "here"
   }
 }
 

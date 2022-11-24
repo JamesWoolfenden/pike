@@ -7,6 +7,7 @@
     "destroy": [],
     "modify": [],
     "plan": [
+      "Microsoft.Resources/subscriptions/resourcegroups/read",
       "Microsoft.KeyVault/vaults/read"
     ]
   }
