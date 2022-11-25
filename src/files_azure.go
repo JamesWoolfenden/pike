@@ -27,3 +27,9 @@ var azurermUserAssignedIdentity []byte
 
 //go:embed mapping/azurerm/resource/compute/azurerm_managed_disk.json
 var azurermManagedDisk []byte
+
+//go:embed mapping/azurerm/resource/network/azurerm_private_dns_zone.json
+var azurermPrivateDNSZone []byte
+
+//go:embed mapping/azurerm/resource/network/azurerm_dns_zone.json
+var azurermDNSZone []byte

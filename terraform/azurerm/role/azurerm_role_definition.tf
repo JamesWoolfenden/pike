@@ -8,9 +8,10 @@ resource "azurerm_role_definition" "example" {
 
       //data azurerm_key_vault
       "Microsoft.Resources/subscriptions/resourcegroups/read",
-      "Microsoft.Compute/disks/read",
-      "Microsoft.Compute/disks/write",
-      "Microsoft.Compute/disks/delete"
+      "Microsoft.Network/privateDnsZones/read",
+      "Microsoft.Network/privateDnsZones/write",
+      "Microsoft.Network/privateDnsZones/SOA/read",
+      "Microsoft.Network/privateDnsZones/delete"
     ]
     not_actions = []
   }
