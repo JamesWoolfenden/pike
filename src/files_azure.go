@@ -27,3 +27,12 @@ var azurermUserAssignedIdentity []byte
 
 //go:embed mapping/azurerm/resource/compute/azurerm_managed_disk.json
 var azurermManagedDisk []byte
+
+//go:embed mapping/azurerm/resource/network/azurerm_subnet.json
+var azurermSubnet []byte
+
+//go:embed mapping/azurerm/resource/network/azurerm_virtual_network.json
+var azurermVirtualNetwork []byte
+
+//go:embed mapping/azurerm/resource/compute/azurerm_linux_virtual_machine_scale_set.json
+var azurermLinuxVirtualMachineScaleSet []byte

@@ -27,14 +27,17 @@ func GetAZUREPermissions(result ResourceV2) ([]string, error) {
 // GetAZUREResourcePermissions looks up permissions required for resources
 func GetAZUREResourcePermissions(result ResourceV2) ([]string, error) {
 	TFLookup := map[string]interface{}{
-		"azurerm_resource_group":         azurermResourceGroup,
-		"azurerm_service_plan":           azurermServicePlan,
-		"azurerm_key_vault":              azurermKeyVault,
-		"azurerm_cosmosdb_account":       azurermCosmosdbAccount,
-		"azurerm_cosmosdb_table":         azurermCosmosdbTable,
-		"azurerm_container_registry":     azurermContainerRegistry,
-		"azurerm_user_assigned_identity": azurermUserAssignedIdentity,
-		"azurerm_managed_disk":           azurermManagedDisk,
+		"azurerm_resource_group":                  azurermResourceGroup,
+		"azurerm_service_plan":                    azurermServicePlan,
+		"azurerm_key_vault":                       azurermKeyVault,
+		"azurerm_cosmosdb_account":                azurermCosmosdbAccount,
+		"azurerm_cosmosdb_table":                  azurermCosmosdbTable,
+		"azurerm_container_registry":              azurermContainerRegistry,
+		"azurerm_user_assigned_identity":          azurermUserAssignedIdentity,
+		"azurerm_managed_disk":                    azurermManagedDisk,
+		"azurerm_subnet":                          azurermSubnet,
+		"azurerm_virtual_network":                 azurermVirtualNetwork,
+		"azurerm_linux_virtual_machine_scale_set": azurermLinuxVirtualMachineScaleSet,
 	}
 
 	var Permissions []string

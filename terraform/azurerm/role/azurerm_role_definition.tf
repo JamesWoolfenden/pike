@@ -6,11 +6,26 @@ resource "azurerm_role_definition" "example" {
   permissions {
     actions = [
 
-      //data azurerm_key_vault
+      //vnet
+      #      "Microsoft.Resources/subscriptions/resourcegroups/read",
+      #      "Microsoft.Network/virtualNetworks/read",
+      #      "Microsoft.Network/virtualNetworks/write",
+      #      "Microsoft.Network/virtualNetworks/delete",
+
+      //subnet
       "Microsoft.Resources/subscriptions/resourcegroups/read",
-      "Microsoft.Compute/disks/read",
-      "Microsoft.Compute/disks/write",
-      "Microsoft.Compute/disks/delete"
+      "Microsoft.Network/virtualNetworks/read",
+      "Microsoft.Network/virtualNetworks/subnets/read",
+      "Microsoft.Network/virtualNetworks/subnets/write",
+      "Microsoft.Network/virtualNetworks/subnets/delete",
+
+      "Microsoft.Resources/subscriptions/resourcegroups/read",
+      "Microsoft.Network/virtualNetworks/subnets/read",
+      "Microsoft.Compute/virtualMachineScaleSets/read",
+      "Microsoft.Compute/virtualMachineScaleSets/write",
+      "Microsoft.Network/virtualNetworks/subnets/join/action",
+      "Microsoft.Compute/virtualMachineScaleSets/delete"
+
     ]
     not_actions = []
   }
