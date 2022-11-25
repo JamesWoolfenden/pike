@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourcegroups/read",
+      "Microsoft.Compute/disks/read",
+      "Microsoft.Compute/disks/write"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Compute/disks/delete"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

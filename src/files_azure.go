@@ -24,3 +24,6 @@ var azurermContainerRegistry []byte
 
 //go:embed mapping/azurerm/resource/managedidentity/azurerm_user_assigned_identity.json
 var azurermUserAssignedIdentity []byte
+
+//go:embed mapping/azurerm/resource/compute/azurerm_managed_disk.json
+var azurermManagedDisk []byte

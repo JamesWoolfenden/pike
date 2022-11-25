@@ -159,3 +159,13 @@
 ./resource.ps1 aws_cloudfront_origin_request_policy
 ./resource.ps1 aws_cloudfront_realtime_log_config
 ./resource.ps1 aws_cloudfront_response_headers_policy
+
+snapshots
+aws_ebs_snapshot
+aws_ebs_snapshot_copy
+aws_ebs_snapshot_import
+aws_snapshot_create_volume_permission
+aws_ebs_snapshot -type data
+aws_ebs_snapshot_ids -type data
+aws_db_snapshot_copy
+aws_redshiftserverless_snapshot

@@ -34,6 +34,7 @@ func GetAZUREResourcePermissions(result ResourceV2) ([]string, error) {
 		"azurerm_cosmosdb_table":         azurermCosmosdbTable,
 		"azurerm_container_registry":     azurermContainerRegistry,
 		"azurerm_user_assigned_identity": azurermUserAssignedIdentity,
+		"azurerm_managed_disk":           azurermManagedDisk,
 	}
 
 	var Permissions []string
