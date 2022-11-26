@@ -36,3 +36,9 @@ var azurermVirtualNetwork []byte
 
 //go:embed mapping/azurerm/resource/compute/azurerm_linux_virtual_machine_scale_set.json
 var azurermLinuxVirtualMachineScaleSet []byte
+
+//go:embed mapping/azurerm/resource/compute/azurerm_virtual_machine.json
+var azurermVirtualMachine []byte
+
+//go:embed mapping/azurerm/resource/network/azurerm_network_interface.json
+var azurermNetworkInterface []byte

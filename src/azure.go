@@ -38,6 +38,10 @@ func GetAZUREResourcePermissions(result ResourceV2) ([]string, error) {
 		"azurerm_subnet":                          azurermSubnet,
 		"azurerm_virtual_network":                 azurermVirtualNetwork,
 		"azurerm_linux_virtual_machine_scale_set": azurermLinuxVirtualMachineScaleSet,
+		"azurerm_linux_virtual_machine":           azurermVirtualMachine,
+		"azurerm_windows_virtual_machine":         azurermVirtualMachine,
+		"azurerm_virtual_machine":                 azurermVirtualMachine,
+		"azurerm_network_interface":               azurermNetworkInterface,
 	}
 
 	var Permissions []string
