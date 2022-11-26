@@ -12,3 +12,9 @@ var dataAzurermKeyVault []byte
 
 //go:embed  mapping/azurerm/data/keyvault/azurerm_key_vault_key.json
 var dataAzurermKeyVaultKey []byte
+
+//go:embed mapping/azurerm/data/network/azurerm_subnet.json
+var dataAzurermSubnet []byte
+
+//go:embed mapping/azurerm/data/network/azurerm_virtual_network.json
+var dataAzurermVirtualNetwork []byte

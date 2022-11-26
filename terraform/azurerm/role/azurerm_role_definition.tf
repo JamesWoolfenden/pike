@@ -6,13 +6,11 @@ resource "azurerm_role_definition" "example" {
   permissions {
     actions = [
       "Microsoft.Resources/subscriptions/resourcegroups/read",
-      "Microsoft.Network/virtualNetworks/read",
-
-      "Microsoft.Resources/subscriptions/resourcegroups/read",
-      "Microsoft.Network/virtualNetworks/read",
       "Microsoft.Network/virtualNetworks/subnets/read",
-
-
+      "Microsoft.Compute/virtualMachineScaleSets/read",
+      "Microsoft.Compute/virtualMachineScaleSets/write",
+      "Microsoft.Network/virtualNetworks/subnets/join/action",
+      "Microsoft.Compute/virtualMachineScaleSets/delete"
     ]
     not_actions = []
   }
