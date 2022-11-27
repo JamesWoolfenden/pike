@@ -14,6 +14,7 @@ func GetAZUREDataPermissions(result ResourceV2) ([]string, error) {
 		"azurerm_key_vault_key":   dataAzurermKeyVaultKey,
 		"azurerm_subnet":          dataAzurermSubnet,
 		"azurerm_virtual_network": dataAzurermVirtualNetwork,
+		"azurerm_subscription":    dataAzurermSubscription,
 	}
 
 	var Permissions []string

@@ -42,3 +42,6 @@ var azurermVirtualMachine []byte
 
 //go:embed mapping/azurerm/resource/network/azurerm_network_interface.json
 var azurermNetworkInterface []byte
+
+//go:embed mapping/azurerm/resource/management/azurerm_management_group.json
+var azurermManagementGroup []byte

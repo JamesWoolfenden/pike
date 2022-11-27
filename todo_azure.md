@@ -1,8 +1,6 @@
 # todo
 
-./resource.ps1 azurerm_management_group
 ./resource.ps1 azurerm_storage_container
-./resource.ps1 azurerm_subscription -type data
 ./resource.ps1 azurerm_key_vault_access_policy
 ./resource.ps1 azurerm_key_vault_key
 ./resource.ps1 azurerm_log_analytics_workspace

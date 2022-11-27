@@ -18,3 +18,6 @@ var dataAzurermSubnet []byte
 
 //go:embed mapping/azurerm/data/network/azurerm_virtual_network.json
 var dataAzurermVirtualNetwork []byte
+
+//go:embed mapping/azurerm/data/resources/azurerm_subscription.json
+var dataAzurermSubscription []byte
