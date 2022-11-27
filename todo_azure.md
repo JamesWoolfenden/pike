@@ -1,6 +1,5 @@
 # todo
 
-./resource.ps1 azurerm_storage_container
 ./resource.ps1 azurerm_key_vault_access_policy
 ./resource.ps1 azurerm_key_vault_key
 ./resource.ps1 azurerm_log_analytics_workspace
@@ -13,7 +12,6 @@
 ./resource.ps1 azurerm_mssql_server_vulnerability_assessment
 ./resource.ps1 azurerm_mysql_database
 ./resource.ps1 azurerm_mysql_server
-./resource.ps1 azurerm_network_security_group
 ./resource.ps1 azurerm_network_watcher
 ./resource.ps1 azurerm_network_watcher_flow_log
 ./resource.ps1 azurerm_postgresql_database
@@ -24,6 +22,7 @@
 ./resource.ps1 azurerm_sql_active_directory_administrator
 ./resource.ps1 azurerm_sql_database
 ./resource.ps1 azurerm_sql_server
+./resource.ps1 azurerm_storage_container
 ./resource.ps1 azurerm_storage_account
 ./resource.ps1 azurerm_storage_account_customer_managed_key
 ./resource.ps1 azurerm_storage_account_network_rules

@@ -45,3 +45,9 @@ var azurermNetworkInterface []byte
 
 //go:embed mapping/azurerm/resource/management/azurerm_management_group.json
 var azurermManagementGroup []byte
+
+//go:embed mapping/azurerm/resource/network/azurerm_network_security_group.json
+var azurermNetworksSecurityGroup []byte
+
+//go:embed mapping/azurerm/resource/network/azurerm_network_security_rule.json
+var azurermNetworksSecurityRule []byte

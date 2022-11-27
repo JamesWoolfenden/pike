@@ -5,14 +5,11 @@ resource "azurerm_role_definition" "example" {
 
   permissions {
     actions = [
-      #      "Microsoft.Resources/subscriptions/resourcegroups/read",
-      "Microsoft.Resources/subscriptions/providers/read",
 
-      "Microsoft.Resources/subscriptions/providers/read",
-      "Microsoft.Authorization/roleAssignments/write",
-      "Microsoft.Authorization/roleAssignments/delete",
-      "Microsoft.Authorization/roleAssignments/read",
-      "Microsoft.Management/managementGroups/*"
+      "Microsoft.Network/networkSecurityGroups/read",
+      "Microsoft.Network/networkSecurityGroups/securityRules/read",
+      "Microsoft.Network/networkSecurityGroups/securityRules/write",
+      "Microsoft.Network/networkSecurityGroups/securityRules/delete"
     ]
     not_actions = []
   }
