@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "Microsoft.OperationalInsights/workspaces/read",
+      "Microsoft.OperationalInsights/workspaces/write"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.OperationalInsights/workspaces/delete"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

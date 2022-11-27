@@ -45,8 +45,12 @@ func GetAZUREResourcePermissions(result ResourceV2) ([]string, error) {
 		"azurerm_virtual_machine":                   azurermVirtualMachine,
 		"azurerm_network_interface":                 azurermNetworkInterface,
 		"azurerm_management_group":                  azurermManagementGroup,
-		"azurerm_network_security_group":            azurermNetworksSecurityGroup,
-		"azurerm_network_security_rule":             azurermNetworksSecurityRule,
+		"azurerm_network_security_group":            azurermNetworkSecurityGroup,
+		"azurerm_network_security_rule":             azurermNetworkSecurityRule,
+		"azurerm_network_watcher":                   azurermNetworkWatcher,
+		"azurerm_log_analytics_workspace":           azurermLogAnalyticsWorkspace,
+		"azurerm_network_watcher_flow_log":          azurermNetworkWatcherFlowLog,
+		"azurerm_storage_account":                   azurermStorageAccount,
 	}
 
 	var Permissions []string

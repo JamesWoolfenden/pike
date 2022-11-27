@@ -15,6 +15,7 @@ func GetAZUREDataPermissions(result ResourceV2) ([]string, error) {
 		"azurerm_subnet":          dataAzurermSubnet,
 		"azurerm_virtual_network": dataAzurermVirtualNetwork,
 		"azurerm_subscription":    dataAzurermSubscription,
+		"azurerm_network_watcher": dataAzurermNetworkWatcher,
 	}
 
 	var Permissions []string

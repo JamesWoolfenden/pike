@@ -21,3 +21,6 @@ var dataAzurermVirtualNetwork []byte
 
 //go:embed mapping/azurerm/data/resources/azurerm_subscription.json
 var dataAzurermSubscription []byte
+
+//go:embed mapping/azurerm/data/network/azurerm_network_watcher.json
+var dataAzurermNetworkWatcher []byte

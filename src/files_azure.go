@@ -47,7 +47,19 @@ var azurermNetworkInterface []byte
 var azurermManagementGroup []byte
 
 //go:embed mapping/azurerm/resource/network/azurerm_network_security_group.json
-var azurermNetworksSecurityGroup []byte
+var azurermNetworkSecurityGroup []byte
 
 //go:embed mapping/azurerm/resource/network/azurerm_network_security_rule.json
-var azurermNetworksSecurityRule []byte
+var azurermNetworkSecurityRule []byte
+
+//go:embed mapping/azurerm/resource/network/azurerm_network_watcher.json
+var azurermNetworkWatcher []byte
+
+//go:embed mapping/azurerm/resource/operationalinsights/azurerm_log_analytics_workspace.json
+var azurermLogAnalyticsWorkspace []byte
+
+//go:embed mapping/azurerm/resource/network/azurerm_network_watcher_flow_log.json
+var azurermNetworkWatcherFlowLog []byte
+
+//go:embed mapping/azurerm/resource/storage/azurerm_storage_account.json
+var azurermStorageAccount []byte
