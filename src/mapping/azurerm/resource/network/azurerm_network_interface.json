@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourcegroups/read",
+      "Microsoft.Network/virtualNetworks/subnets/read",
+      "Microsoft.Network/networkInterfaces/read",
+      "Microsoft.Network/networkInterfaces/write",
+      "Microsoft.Network/virtualNetworks/subnets/join/action"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/networkInterfaces/delete"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

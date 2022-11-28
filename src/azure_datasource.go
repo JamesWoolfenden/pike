@@ -8,10 +8,14 @@ import (
 func GetAZUREDataPermissions(result ResourceV2) ([]string, error) {
 
 	TFLookup := map[string]interface{}{
-		"azurerm_resource_group": dataAzurermResourceGroup,
-		"azurerm_client_config":  placeholder,
-		"azurerm_key_vault":      dataAzurermKeyVault,
-		"azurerm_key_vault_key":  dataAzurermKeyVaultKey,
+		"azurerm_resource_group":  dataAzurermResourceGroup,
+		"azurerm_client_config":   placeholder,
+		"azurerm_key_vault":       dataAzurermKeyVault,
+		"azurerm_key_vault_key":   dataAzurermKeyVaultKey,
+		"azurerm_subnet":          dataAzurermSubnet,
+		"azurerm_virtual_network": dataAzurermVirtualNetwork,
+		"azurerm_subscription":    dataAzurermSubscription,
+		"azurerm_network_watcher": dataAzurermNetworkWatcher,
 	}
 
 	var Permissions []string

@@ -5,13 +5,10 @@ resource "azurerm_role_definition" "example" {
 
   permissions {
     actions = [
-
-      //data azurerm_key_vault
-      "Microsoft.Resources/subscriptions/resourcegroups/read",
-      "Microsoft.Network/privateDnsZones/read",
-      "Microsoft.Network/privateDnsZones/write",
-      "Microsoft.Network/privateDnsZones/SOA/read",
-      "Microsoft.Network/privateDnsZones/delete"
+      "Microsoft.Compute/disks/read",
+      "Microsoft.Compute/disks/write",
+      "Microsoft.Network/virtualNetworks/virtualNetworkPeerings/write",
+      "Microsoft.Compute/disks/delete"
     ]
     not_actions = []
   }

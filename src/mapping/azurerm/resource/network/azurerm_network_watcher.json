@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "Microsoft.Network/networkWatchers/read",
+      "Microsoft.Network/networkWatchers/write",
+      "Microsoft.Network/networkWatchers/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

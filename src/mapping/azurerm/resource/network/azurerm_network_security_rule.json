@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "Microsoft.Network/networkSecurityGroups/read",
+      "Microsoft.Network/networkSecurityGroups/securityRules/read",
+      "Microsoft.Network/networkSecurityGroups/securityRules/write"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/networkSecurityGroups/securityRules/delete"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]
