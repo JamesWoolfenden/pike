@@ -51,6 +51,7 @@ func GetAZUREResourcePermissions(result ResourceV2) ([]string, error) {
 		"azurerm_log_analytics_workspace":           azurermLogAnalyticsWorkspace,
 		"azurerm_network_watcher_flow_log":          azurermNetworkWatcherFlowLog,
 		"azurerm_storage_account":                   azurermStorageAccount,
+		"azurerm_virtual_network_peering":           azurermVirtualNetworkPeering,
 	}
 
 	var Permissions []string

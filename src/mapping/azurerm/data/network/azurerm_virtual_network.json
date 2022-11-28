@@ -7,7 +7,6 @@
     "destroy": [],
     "modify": [],
     "plan": [
-      "Microsoft.Resources/subscriptions/resourcegroups/read",
       "Microsoft.Network/virtualNetworks/read"
     ]
   }

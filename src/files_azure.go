@@ -63,3 +63,6 @@ var azurermNetworkWatcherFlowLog []byte
 
 //go:embed mapping/azurerm/resource/storage/azurerm_storage_account.json
 var azurermStorageAccount []byte
+
+//go:embed mapping/azurerm/resource/network/azurerm_virtual_network_peering.json
+var azurermVirtualNetworkPeering []byte
