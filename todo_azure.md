@@ -18,6 +18,3 @@
 ./resource.ps1 azurerm_sql_active_directory_administrator
 ./resource.ps1 azurerm_sql_database
 ./resource.ps1 azurerm_sql_server
-./resource.ps1 azurerm_storage_container
-./resource.ps1 azurerm_storage_account_customer_managed_key
-./resource.ps1 azurerm_storage_account_network_rules

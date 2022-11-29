@@ -1,7 +1,6 @@
 [
   {
     "apply": [
-      "Microsoft.Resources/subscriptions/resourcegroups/read",
       "Microsoft.Network/privateDnsZones/read",
       "Microsoft.Network/privateDnsZones/write",
       "Microsoft.Network/privateDnsZones/SOA/read",

@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "Microsoft.KeyVault/vaults/read",
+      "Microsoft.Storage/storageAccounts/read",
+      "Microsoft.Storage/storageAccounts/write"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

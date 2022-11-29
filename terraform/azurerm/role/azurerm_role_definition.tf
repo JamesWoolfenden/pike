@@ -5,10 +5,8 @@ resource "azurerm_role_definition" "example" {
 
   permissions {
     actions = [
-      "Microsoft.Compute/disks/read",
-      "Microsoft.Compute/disks/write",
-      "Microsoft.Network/virtualNetworks/virtualNetworkPeerings/write",
-      "Microsoft.Compute/disks/delete"
+      "Microsoft.Storage/storageAccounts/read",
+      "Microsoft.Storage/storageAccounts/write"
     ]
     not_actions = []
   }

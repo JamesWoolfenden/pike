@@ -24,3 +24,6 @@ var dataAzurermSubscription []byte
 
 //go:embed mapping/azurerm/data/network/azurerm_network_watcher.json
 var dataAzurermNetworkWatcher []byte
+
+//go:embed mapping/azurerm/data/storage/azurerm_storage_account.json
+var dataAzurermStorageAccount []byte

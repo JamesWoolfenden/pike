@@ -72,3 +72,12 @@ var azurermPrivateDNSZone []byte
 
 //go:embed mapping/azurerm/resource/network/azurerm_dns_zone.json
 var azurermDNSZone []byte
+
+//go:embed mapping/azurerm/resource/storage/azurerm_storage_account_customer_managed_key.json
+var azurermStorageAccountCustomerManagedKey []byte
+
+//go:embed mapping/azurerm/resource/storage/azurerm_storage_account_network_rules.json
+var azurermStorageAccountNetworkRules []byte
+
+//go:embed mapping/azurerm/resource/storage/azurerm_storage_container.json
+var azurermStorageContainer []byte
