@@ -57,6 +57,8 @@ func GetAZUREResourcePermissions(result ResourceV2) ([]string, error) {
 		"azurerm_storage_account_customer_managed_key": azurermStorageAccountCustomerManagedKey,
 		"azurerm_storage_account_network_rules":        azurermStorageAccountNetworkRules,
 		"azurerm_storage_container":                    azurermStorageContainer,
+		"azurerm_private_endpoint":                     azurermPrivateEndpoint,
+		"azurerm_redis_cache":                          azurermRedisCache,
 	}
 
 	var Permissions []string

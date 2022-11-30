@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "Microsoft.Network/privateEndpoints/read",
+      "Microsoft.Network/privateEndpoints/write",
+      "Microsoft.Network/privateEndpoints/delete",
+      "Microsoft.Network/virtualNetworks/subnets/join/action",
+      "Microsoft.Cache/redis/PrivateEndpointConnectionsApproval/action"
+    ],
+    "attributes": {
+      "private_dns_zone_group": [
+        "Microsoft.Network/privateEndpoints/privateDnsZoneGroups/write",
+        "Microsoft.Network/privateDnsZones/join/action"
+      ],
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

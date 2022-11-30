@@ -81,3 +81,9 @@ var azurermStorageAccountNetworkRules []byte
 
 //go:embed mapping/azurerm/resource/storage/azurerm_storage_container.json
 var azurermStorageContainer []byte
+
+//go:embed mapping/azurerm/resource/network/azurerm_private_endpoint.json
+var azurermPrivateEndpoint []byte
+
+//go:embed mapping/azurerm/resource/cache/azurerm_redis_cache.json
+var azurermRedisCache []byte

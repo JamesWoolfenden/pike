@@ -13,8 +13,6 @@
 ./resource.ps1 azurerm_mysql_server
 ./resource.ps1 azurerm_postgresql_database
 ./resource.ps1 azurerm_postgresql_server
-./resource.ps1 azurerm_private_endpoint
-./resource.ps1 azurerm_redis_cache
 ./resource.ps1 azurerm_sql_active_directory_administrator
 ./resource.ps1 azurerm_sql_database
 ./resource.ps1 azurerm_sql_server

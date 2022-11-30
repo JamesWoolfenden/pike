@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "Microsoft.Cache/redis/read",
+      "Microsoft.Cache/redis/write",
+      "Microsoft.Cache/redis/delete",
+      "Microsoft.Cache/redis/listKeys/action",
+      "Microsoft.Cache/redis/patchSchedules/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Cache/redis/delete"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]
