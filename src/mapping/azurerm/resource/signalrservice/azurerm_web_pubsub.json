@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "Microsoft.SignalRService/webPubSub/read",
+      "Microsoft.SignalRService/webPubSub/write",
+      "Microsoft.SignalRService/webPubSub/delete",
+      "Microsoft.SignalRService/WebPubSub/operationStatuses/read",
+      "Microsoft.SignalRService/webPubSub/listKeys/action"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

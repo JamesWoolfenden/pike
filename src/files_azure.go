@@ -87,3 +87,6 @@ var azurermPrivateEndpoint []byte
 
 //go:embed mapping/azurerm/resource/cache/azurerm_redis_cache.json
 var azurermRedisCache []byte
+
+//go:embed mapping/azurerm/resource/signalrservice/azurerm_web_pubsub.json
+var azurermWebPubsub []byte

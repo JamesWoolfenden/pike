@@ -5,20 +5,11 @@ resource "azurerm_role_definition" "example" {
 
   permissions {
     actions = [
-      "Microsoft.Cache/redis/read",
-      "Microsoft.Cache/redis/write",
-      "Microsoft.Cache/redis/delete",
-      "Microsoft.Cache/redis/listKeys/action",
-      "Microsoft.Cache/redis/patchSchedules/delete",
-
-      "Microsoft.Network/privateEndpoints/read",
-      "Microsoft.Network/privateEndpoints/write",
-      "Microsoft.Network/privateEndpoints/delete",
-      "Microsoft.Network/virtualNetworks/subnets/join/action",
-      "Microsoft.Cache/redis/PrivateEndpointConnectionsApproval/action",
-      //private_dns_zone_group
-      "Microsoft.Network/privateEndpoints/privateDnsZoneGroups/write",
-      "Microsoft.Network/privateDnsZones/join/action"
+      "Microsoft.SignalRService/webPubSub/read",
+      "Microsoft.SignalRService/webPubSub/write",
+      "Microsoft.SignalRService/webPubSub/delete",
+      "Microsoft.SignalRService/WebPubSub/operationStatuses/read",
+      "Microsoft.SignalRService/webPubSub/listKeys/action"
 
     ]
     not_actions = []

@@ -59,6 +59,7 @@ func GetAZUREResourcePermissions(result ResourceV2) ([]string, error) {
 		"azurerm_storage_container":                    azurermStorageContainer,
 		"azurerm_private_endpoint":                     azurermPrivateEndpoint,
 		"azurerm_redis_cache":                          azurermRedisCache,
+		"azurerm_web_pubsub":                           azurermWebPubsub,
 	}
 
 	var Permissions []string
