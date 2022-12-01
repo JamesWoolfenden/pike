@@ -90,3 +90,6 @@ var azurermRedisCache []byte
 
 //go:embed mapping/azurerm/resource/signalrservice/azurerm_web_pubsub.json
 var azurermWebPubsub []byte
+
+//go:embed mapping/azurerm/resource/apimanagement/azurerm_api_management.json
+var azurermAPIManagement []byte

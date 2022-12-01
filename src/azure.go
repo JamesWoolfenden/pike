@@ -60,6 +60,7 @@ func GetAZUREResourcePermissions(result ResourceV2) ([]string, error) {
 		"azurerm_private_endpoint":                     azurermPrivateEndpoint,
 		"azurerm_redis_cache":                          azurermRedisCache,
 		"azurerm_web_pubsub":                           azurermWebPubsub,
+		"azurerm_api_management":                       azurermAPIManagement,
 	}
 
 	var Permissions []string
