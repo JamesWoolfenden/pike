@@ -5,14 +5,7 @@ resource "azurerm_role_definition" "example" {
 
   permissions {
     actions = [
-      "Microsoft.ApiManagement/service/read",
-      "Microsoft.ApiManagement/service/write",
-      "Microsoft.ApiManagement/service/delete",
-      "Microsoft.ApiManagement/service/operationresults/read",
-      "Microsoft.ApiManagement/service/policies/read",
-      "Microsoft.ApiManagement/service/portalsettings/read",
-      "Microsoft.ApiManagement/service/tenant/listSecrets/action"
-
+      "Microsoft.KeyVault/vaults/read",
     ]
     not_actions = []
   }

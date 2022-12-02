@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "Microsoft.KeyVault/vaults/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
