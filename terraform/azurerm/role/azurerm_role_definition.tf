@@ -6,6 +6,8 @@ resource "azurerm_role_definition" "example" {
   permissions {
     actions = [
       "Microsoft.KeyVault/vaults/read",
+
+      "Microsoft.KeyVault/vaults/accessPolicies/write"
     ]
     not_actions = []
   }

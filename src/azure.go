@@ -61,6 +61,8 @@ func GetAZUREResourcePermissions(result ResourceV2) ([]string, error) {
 		"azurerm_redis_cache":                          azurermRedisCache,
 		"azurerm_web_pubsub":                           azurermWebPubsub,
 		"azurerm_api_management":                       azurermAPIManagement,
+		"azurerm_key_vault_access_policy":              azurermKeyVaultAccessPolicy,
+		"azurerm_key_vault_key":                        azurermKeyVaultKey,
 	}
 
 	var Permissions []string

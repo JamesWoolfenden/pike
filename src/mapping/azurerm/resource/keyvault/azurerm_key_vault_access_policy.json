@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "Microsoft.KeyVault/vaults/accessPolicies/write"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

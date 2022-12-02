@@ -93,3 +93,9 @@ var azurermWebPubsub []byte
 
 //go:embed mapping/azurerm/resource/apimanagement/azurerm_api_management.json
 var azurermAPIManagement []byte
+
+//go:embed mapping/azurerm/resource/keyvault/azurerm_key_vault_access_policy.json
+var azurermKeyVaultAccessPolicy []byte
+
+//go:embed mapping/azurerm/resource/keyvault/azurerm_key_vault_key.json
+var azurermKeyVaultKey []byte
