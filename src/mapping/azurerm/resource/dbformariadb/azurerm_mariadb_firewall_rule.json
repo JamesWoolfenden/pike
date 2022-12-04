@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "Microsoft.DBforMariaDB/servers/firewallRules/read",
+      "Microsoft.DBforMariaDB/servers/firewallRules/write",
+      "Microsoft.DBforMariaDB/servers/firewallRules/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

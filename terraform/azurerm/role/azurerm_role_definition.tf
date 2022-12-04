@@ -5,9 +5,9 @@ resource "azurerm_role_definition" "example" {
 
   permissions {
     actions = [
-      "Microsoft.KeyVault/vaults/read",
-
-      "Microsoft.KeyVault/vaults/accessPolicies/write"
+      "Microsoft.DBforMariaDB/servers/read",
+      "Microsoft.DBforMariaDB/servers/write",
+      "Microsoft.DBforMariaDB/servers/delete",
     ]
     not_actions = []
   }

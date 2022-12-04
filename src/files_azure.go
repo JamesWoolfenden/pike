@@ -99,3 +99,15 @@ var azurermKeyVaultAccessPolicy []byte
 
 //go:embed mapping/azurerm/resource/keyvault/azurerm_key_vault_key.json
 var azurermKeyVaultKey []byte
+
+//go:embed mapping/azurerm/resource/dbformariadb/azurerm_mariadb_configuration.json
+var azurermMariadbConfiguration []byte
+
+//go:embed mapping/azurerm/resource/dbformariadb/azurerm_mariadb_database.json
+var azurermMariadbDatabase []byte
+
+//go:embed mapping/azurerm/resource/dbformariadb/azurerm_mariadb_firewall_rule.json
+var azurermMariadbFirewallRule []byte
+
+//go:embed mapping/azurerm/resource/dbformariadb/azurerm_mariadb_server.json
+var azurermMariadbServer []byte

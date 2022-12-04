@@ -1,9 +1,5 @@
 # todo
 
-./resource.ps1 azurerm_key_vault_access_policy
-
-./resource.ps1 azurerm_mariadb_database
-./resource.ps1 azurerm_mariadb_server
 ./resource.ps1 azurerm_mssql_database
 ./resource.ps1 azurerm_mssql_database_extended_auditing_policy
 ./resource.ps1 azurerm_mssql_server

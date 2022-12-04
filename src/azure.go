@@ -63,6 +63,10 @@ func GetAZUREResourcePermissions(result ResourceV2) ([]string, error) {
 		"azurerm_api_management":                       azurermAPIManagement,
 		"azurerm_key_vault_access_policy":              azurermKeyVaultAccessPolicy,
 		"azurerm_key_vault_key":                        azurermKeyVaultKey,
+		"azurerm_mariadb_configuration":                azurermMariadbConfiguration,
+		"azurerm_mariadb_database":                     azurermMariadbDatabase,
+		"azurerm_mariadb_firewall_rule":                azurermMariadbFirewallRule,
+		"azurerm_mariadb_server":                       azurermMariadbServer,
 	}
 
 	var Permissions []string

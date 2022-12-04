@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "Microsoft.DBforMariaDB/servers/databases/read",
+      "Microsoft.DBforMariaDB/servers/databases/write",
+      "Microsoft.DBforMariaDB/servers/databases/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

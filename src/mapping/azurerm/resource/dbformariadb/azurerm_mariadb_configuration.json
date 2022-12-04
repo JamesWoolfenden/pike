@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "Microsoft.DBforMariaDB/servers/configurations/write",
+      "Microsoft.DBforMariaDB/servers/configurations/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
