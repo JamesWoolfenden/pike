@@ -58,9 +58,11 @@ vet:
 	go vet ./...
 
 bump:
+	git push
 	$(eval VERSION=$(shell git describe --tags --abbrev=0 | awk -F. '{OFS="."; $$NF+=1; print $0}'))
 	git tag -a $(VERSION) -m "new release"
 	git push origin $(VERSION)
 
 psbump:
+	git push
 	powershell -command "./bump.ps1"
