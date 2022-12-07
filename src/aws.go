@@ -103,6 +103,7 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_alb":                                            awsLb,
 		"aws_alb_listener":                                   awsLbListener,
 		"aws_lb_listener":                                    awsLbListener,
+		"aws_lb_listener_rule":                               awsLbListenerRule,
 		"aws_lb_target_group":                                awsLbTargetGroup,
 		"aws_alb_target_group":                               awsLbTargetGroup,
 		"aws_alb_target_group_attachment":                    awsLbTargetGroupAttachment,
