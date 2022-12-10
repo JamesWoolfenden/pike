@@ -5,9 +5,9 @@ resource "azurerm_role_definition" "example" {
 
   permissions {
     actions = [
-      "Microsoft.DBforMariaDB/servers/read",
-      "Microsoft.DBforMariaDB/servers/write",
-      "Microsoft.DBforMariaDB/servers/delete",
+      "Microsoft.AppConfiguration/configurationStores/read",
+      "Microsoft.AppConfiguration/configurationStores/write",
+      "Microsoft.AppConfiguration/locations/deletedConfigurationStores/read"
     ]
     not_actions = []
   }
