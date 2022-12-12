@@ -34,3 +34,6 @@ azurerm_mssql_virtual_network_rule
 ./resource.ps1 azurerm_sql_server
 ./resource.ps1 azurerm_app_configuration
 ./resource.ps1 azurerm_kusto_server
+azurerm_storage_blob
+eventgrid_topic
+eventgrid_domain

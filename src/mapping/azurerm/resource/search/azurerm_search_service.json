@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "Microsoft.Search/searchServices/read",
+      "Microsoft.Search/searchServices/write",
+      "Microsoft.Search/searchServices/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Search/searchServices/delete"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -67,6 +67,7 @@ func GetAZUREResourcePermissions(result ResourceV2) ([]string, error) {
 		"azurerm_mariadb_database":                     azurermMariadbDatabase,
 		"azurerm_mariadb_firewall_rule":                azurermMariadbFirewallRule,
 		"azurerm_mariadb_server":                       azurermMariadbServer,
+		"azurerm_search_service":                       azurermSearchService,
 	}
 
 	var Permissions []string
