@@ -7,7 +7,10 @@ resource "azurerm_role_definition" "example" {
     actions = [
       "Microsoft.AppConfiguration/configurationStores/read",
       "Microsoft.AppConfiguration/configurationStores/write",
-      "Microsoft.AppConfiguration/locations/deletedConfigurationStores/read"
+      "Microsoft.AppConfiguration/locations/deletedConfigurationStores/read",
+      "Microsoft.AppConfiguration/configurationStores/listKeys/action",
+      "Microsoft.AppConfiguration/configurationStores/delete"
+
     ]
     not_actions = []
   }

@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "Microsoft.AppConfiguration/configurationStores/read",
+      "Microsoft.AppConfiguration/configurationStores/write",
+      "Microsoft.AppConfiguration/locations/deletedConfigurationStores/read",
+      "Microsoft.AppConfiguration/configurationStores/listKeys/action",
+      "Microsoft.AppConfiguration/configurationStores/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

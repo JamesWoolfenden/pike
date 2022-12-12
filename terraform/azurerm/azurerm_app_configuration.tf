@@ -1,5 +1,5 @@
 resource "azurerm_app_configuration" "pike" {
-  name                = "appConf1"
+  name                = "pikeappconfig2"
   resource_group_name = "pike"
   location            = "uksouth"
 }

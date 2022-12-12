@@ -111,3 +111,6 @@ var azurermMariadbFirewallRule []byte
 
 //go:embed mapping/azurerm/resource/dbformariadb/azurerm_mariadb_server.json
 var azurermMariadbServer []byte
+
+//go:embed mapping/azurerm/resource/appconfiguration/azurerm_app_configuration.json
+var azurermAppConfiguration []byte
