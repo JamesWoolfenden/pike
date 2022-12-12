@@ -13,6 +13,9 @@ var awsLbTargetGroupAttachment []byte
 //go:embed mapping/aws/resource/elasticloadbalancing/aws_lb_listener.json
 var awsLbListener []byte
 
+//go:embed mapping/aws/resource/elasticloadbalancing/aws_lb_listener_rule.json
+var awsLbListenerRule []byte
+
 //go:embed mapping/aws/resource/elasticloadbalancing/aws_lb.json
 var awsLb []byte
 

@@ -548,7 +548,7 @@ func GetAWSResourcePermissions(result template) []interface{} {
 
 ```
 
-Also add an example Terraform file into the folder terraform/backups.
+Also add an example Terraform file into the folder terraform/<cloud>/backups.
 
 ## Related Tools
 

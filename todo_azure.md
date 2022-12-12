@@ -2,28 +2,28 @@
 
 ./resource.ps1 azurerm_mssql_database
 ./resource.ps1 azurerm_mssql_database_extended_auditing_policy
-azurerm_mssql_database_vulnerability_assessment_rule_baseline
-azurerm_mssql_elasticpool
-azurerm_mssql_failover_group
-azurerm_mssql_firewall_rule
-azurerm_mssql_job_agent
-azurerm_mssql_job_credential
-azurerm_mssql_managed_database
-azurerm_mssql_managed_instance
-azurerm_mssql_managed_instance_active_directory_administrator
-azurerm_mssql_managed_instance_failover_group
-azurerm_mssql_managed_instance_security_alert_policy
-azurerm_mssql_managed_instance_transparent_data_encryption
-azurerm_mssql_managed_instance_vulnerability_assessment
-azurerm_mssql_outbound_firewall_rule
-azurerm_mssql_server_dns_alias
+./resource.ps1 azurerm_mssql_database_vulnerability_assessment_rule_baseline
+./resource.ps1 azurerm_mssql_elasticpool
+./resource.ps1 azurerm_mssql_failover_group
+./resource.ps1 azurerm_mssql_firewall_rule
+./resource.ps1 azurerm_mssql_job_agent
+./resource.ps1 azurerm_mssql_job_credential
+./resource.ps1 azurerm_mssql_managed_database
+./resource.ps1 azurerm_mssql_managed_instance
+./resource.ps1 azurerm_mssql_managed_instance_active_directory_administrator
+./resource.ps1 azurerm_mssql_managed_instance_failover_group
+./resource.ps1 azurerm_mssql_managed_instance_security_alert_policy
+./resource.ps1 azurerm_mssql_managed_instance_transparent_data_encryption
+./resource.ps1 azurerm_mssql_managed_instance_vulnerability_assessment
+./resource.ps1 azurerm_mssql_outbound_firewall_rule
+./resource.ps1 azurerm_mssql_server_dns_alias
 ./resource.ps1 azurerm_mssql_server
-azurerm_mssql_server_microsoft_support_auditing_policy
+./resource.ps1 azurerm_mssql_server_microsoft_support_auditing_policy
 ./resource.ps1 azurerm_mssql_server_security_alert_policy
-azurerm_mssql_server_transparent_data_encryption
+./resource.ps1 azurerm_mssql_server_transparent_data_encryption
 ./resource.ps1 azurerm_mssql_server_vulnerability_assessment
-azurerm_mssql_virtual_machine
-azurerm_mssql_virtual_network_rule
+./resource.ps1 azurerm_mssql_virtual_machine
+./resource.ps1 azurerm_mssql_virtual_network_rule
 ./resource.ps1 azurerm_mysql_database
 ./resource.ps1 azurerm_mysql_server
 ./resource.ps1 azurerm_mysql_flexible_server
@@ -32,8 +32,6 @@ azurerm_mssql_virtual_network_rule
 ./resource.ps1 azurerm_sql_active_directory_administrator
 ./resource.ps1 azurerm_sql_database
 ./resource.ps1 azurerm_sql_server
-./resource.ps1 azurerm_app_configuration
 ./resource.ps1 azurerm_kusto_server
-azurerm_storage_blob
-eventgrid_topic
-eventgrid_domain
+azurerm_disk_encryption_set
+azurerm_kubernetes_cluster

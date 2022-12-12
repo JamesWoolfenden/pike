@@ -82,7 +82,6 @@
 ./resource.ps1 aws_kms_grant
 ./resource.ps1 aws_kms_replica_external_key
 ./resource.ps1 aws_kms_replica_key
-./resource.ps1 aws_lb_listener_rule
 ./resource.ps1 aws_lightsail_container_service
 ./resource.ps1 aws_lightsail_container_service_deployment_version
 ./resource.ps1 aws_lightsail_database
