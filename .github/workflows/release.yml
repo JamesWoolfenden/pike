@@ -54,3 +54,15 @@ jobs:
           repository: jameswoolfenden/pike
           short-description: ${{ github.event.repository.description }}
           readme-filepath: ./README.md
+  update-scoop:
+    runs-on:  ubuntu-latest
+    needs:
+      - goreleaser
+    steps:
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.PAT }}
+          repository: jameswoolfenden/scoop
+          event-type: pike
+          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
