@@ -74,8 +74,19 @@ brew install jameswoolfenden/tap/pike
 
 ### Windows
 
+I'm now using Scoop to distribute releases, it's much quicker to update and easier to manage than previous methods,
+you can install scoop from <https://scoop.sh/>.
+
+Add my scoop bucket:
+
 ```shell
-choco install pike
+scoop bucket add iac https://github.com/JamesWoolfenden/scoop.git
+```
+
+Then you can install a tool:
+
+```
+scoop install pike
 ```
 
 ### Docker
