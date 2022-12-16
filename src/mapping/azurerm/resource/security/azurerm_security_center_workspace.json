@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "Microsoft.Security/workspaceSettings/read",
+      "Microsoft.Security/workspaceSettings/write",
+      "Microsoft.Security/workspaceSettings/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Security/workspaceSettings/delete"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

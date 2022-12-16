@@ -38,10 +38,8 @@ azurerm_kubernetes_cluster
 azurerm_log_analytics_solution
 ./resource.ps1 azurerm_log_analytics_solution
 ./resource.ps1 azurerm_role_assignment
-./resource.ps1 azurerm_security_center_setting
+
 ./resource.ps1 azurerm_security_center_auto_provisioning
-./resource.ps1 azurerm_security_center_workspace
 ./resource.ps1 azurerm_security_center_automation
-./resource.ps1 azurerm_security_center_contact
 ./resource.ps1 azurerm_security_center_subscription_pricing
 ./resource.ps1 azurerm_subscription_policy_assignment

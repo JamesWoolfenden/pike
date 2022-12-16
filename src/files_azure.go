@@ -117,3 +117,12 @@ var azurermAppConfiguration []byte
 
 //go:embed mapping/azurerm/resource/search/azurerm_search_service.json
 var azurermSearchService []byte
+
+//go:embed mapping/azurerm/resource/security/azurerm_security_center_contact.json
+var azurermSecurityCenterContact []byte
+
+//go:embed mapping/azurerm/resource/security/azurerm_security_center_setting.json
+var azurermSecurityCenterSetting []byte
+
+//go:embed mapping/azurerm/resource/security/azurerm_security_center_workspace.json
+var azurermSecurityCenterWorkspace []byte

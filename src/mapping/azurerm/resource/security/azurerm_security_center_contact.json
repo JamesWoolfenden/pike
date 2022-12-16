@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "Microsoft.Security/securityContacts/read",
+      "Microsoft.Security/securityContacts/write",
+      "Microsoft.Security/securityContacts/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Security/securityContacts/delete"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]
