@@ -1,5 +1,7 @@
 # todo
 
+./resource.ps1 azurerm_kubernetes_cluster
+./resource.ps1 azurerm_kusto_server
 ./resource.ps1 azurerm_mssql_database
 ./resource.ps1 azurerm_mssql_database_extended_auditing_policy
 ./resource.ps1 azurerm_mssql_database_vulnerability_assessment_rule_baseline
@@ -16,8 +18,8 @@
 ./resource.ps1 azurerm_mssql_managed_instance_transparent_data_encryption
 ./resource.ps1 azurerm_mssql_managed_instance_vulnerability_assessment
 ./resource.ps1 azurerm_mssql_outbound_firewall_rule
-./resource.ps1 azurerm_mssql_server_dns_alias
 ./resource.ps1 azurerm_mssql_server
+./resource.ps1 azurerm_mssql_server_dns_alias
 ./resource.ps1 azurerm_mssql_server_microsoft_support_auditing_policy
 ./resource.ps1 azurerm_mssql_server_security_alert_policy
 ./resource.ps1 azurerm_mssql_server_transparent_data_encryption
@@ -25,17 +27,14 @@
 ./resource.ps1 azurerm_mssql_virtual_machine
 ./resource.ps1 azurerm_mssql_virtual_network_rule
 ./resource.ps1 azurerm_mysql_database
-./resource.ps1 azurerm_mysql_server
 ./resource.ps1 azurerm_mysql_flexible_server
+./resource.ps1 azurerm_mysql_server
 ./resource.ps1 azurerm_postgresql_database
 ./resource.ps1 azurerm_postgresql_server
-./resource.ps1 azurerm_sql_active_directory_administrator
-./resource.ps1 azurerm_sql_database
-./resource.ps1 azurerm_sql_server
-./resource.ps1 azurerm_kusto_server
-azurerm_disk_encryption_set
-azurerm_kubernetes_cluster
 ./resource.ps1 azurerm_security_center_auto_provisioning
 ./resource.ps1 azurerm_security_center_automation
 ./resource.ps1 azurerm_security_center_subscription_pricing
+./resource.ps1 azurerm_sql_active_directory_administrator
+./resource.ps1 azurerm_sql_database
+./resource.ps1 azurerm_sql_server
 ./resource.ps1 azurerm_subscription_policy_assignment

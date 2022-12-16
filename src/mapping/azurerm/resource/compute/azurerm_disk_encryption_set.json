@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "Microsoft.Compute/diskEncryptionSets/write",
+      "Microsoft.Compute/diskEncryptionSets/delete",
+      "Microsoft.Compute/diskEncryptionSets/read",
+      "Microsoft.KeyVault/vaults/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Compute/diskEncryptionSets/delete"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

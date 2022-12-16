@@ -132,3 +132,6 @@ var azurermLogAnalyticsSolution []byte
 
 //go:embed mapping/azurerm/resource/authorization/azurerm_role_assignment.json
 var azurermRoleAssignment []byte
+
+//go:embed mapping/azurerm/resource/compute/azurerm_disk_encryption_set.json
+var azurermDiskEncryptionSet []byte

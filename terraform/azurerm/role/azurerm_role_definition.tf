@@ -5,17 +5,10 @@ resource "azurerm_role_definition" "example" {
 
   permissions {
     actions = [
-      #analytics
-      "Microsoft.OperationsManagement/solutions/read",
-      "Microsoft.OperationsManagement/solutions/write",
-      "Microsoft.OperationsManagement/solutions/delete",
-
-      "Microsoft.Resources/subscriptions/providers/read",
-
-      #role
-      "Microsoft.Authorization/roleAssignments/read",
-      "Microsoft.Authorization/roleAssignments/write",
-      "Microsoft.Authorization/roleAssignments/delete"
+      "Microsoft.Compute/diskEncryptionSets/write",
+      "Microsoft.Compute/diskEncryptionSets/delete",
+      "Microsoft.Compute/diskEncryptionSets/read",
+      "Microsoft.KeyVault/vaults/read"
     ]
     not_actions = []
   }
