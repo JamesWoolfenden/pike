@@ -126,3 +126,9 @@ var azurermSecurityCenterSetting []byte
 
 //go:embed mapping/azurerm/resource/security/azurerm_security_center_workspace.json
 var azurermSecurityCenterWorkspace []byte
+
+//go:embed mapping/azurerm/resource/operationsmanagement/azurerm_log_analytics_solution.json
+var azurermLogAnalyticsSolution []byte
+
+//go:embed mapping/azurerm/resource/authorization/azurerm_role_assignment.json
+var azurermRoleAssignment []byte

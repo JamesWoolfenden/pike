@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "Microsoft.Authorization/roleAssignments/read",
+      "Microsoft.Authorization/roleAssignments/write",
+      "Microsoft.Authorization/roleAssignments/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Authorization/roleAssignments/delete"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

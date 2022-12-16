@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "Microsoft.OperationsManagement/solutions/read",
+      "Microsoft.OperationsManagement/solutions/write",
+      "Microsoft.OperationsManagement/solutions/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.OperationsManagement/solutions/delete"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

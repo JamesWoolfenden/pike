@@ -72,6 +72,8 @@ func GetAZUREResourcePermissions(result ResourceV2) ([]string, error) {
 		"azurerm_security_center_contact":              azurermSecurityCenterContact,
 		"azurerm_security_center_setting":              azurermSecurityCenterSetting,
 		"azurerm_security_center_workspace":            azurermSecurityCenterWorkspace,
+		"azurerm_log_analytics_solution":               azurermLogAnalyticsSolution,
+		"azurerm_role_assignment":                      azurermRoleAssignment,
 	}
 
 	var Permissions []string

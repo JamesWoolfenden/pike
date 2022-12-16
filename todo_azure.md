@@ -35,10 +35,6 @@
 ./resource.ps1 azurerm_kusto_server
 azurerm_disk_encryption_set
 azurerm_kubernetes_cluster
-azurerm_log_analytics_solution
-./resource.ps1 azurerm_log_analytics_solution
-./resource.ps1 azurerm_role_assignment
-
 ./resource.ps1 azurerm_security_center_auto_provisioning
 ./resource.ps1 azurerm_security_center_automation
 ./resource.ps1 azurerm_security_center_subscription_pricing
