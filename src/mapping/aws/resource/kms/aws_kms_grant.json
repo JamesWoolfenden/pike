@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "kms:CreateGrant",
+      "kms:ListGrants",
+      "kms:RevokeGrant"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "kms:RevokeGrant"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

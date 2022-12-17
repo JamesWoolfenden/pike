@@ -990,3 +990,6 @@ var awsXrayGroup []byte
 
 //go:embed mapping/aws/resource/xray/aws_xray_sampling_rule.json
 var awsXraySamplingRule []byte
+
+//go:embed mapping/aws/resource/kms/aws_kms_grant.json
+var awsKmsGrant []byte

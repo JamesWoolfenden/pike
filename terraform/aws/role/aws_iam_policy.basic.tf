@@ -10,27 +10,13 @@ resource "aws_iam_policy" "basic" {
           "ec2:DescribeAccountAttributes",
           "kms:DescribeKey",
 
-          #config
-          "xray:PutEncryptionConfig",
-          "xray:GetEncryptionConfig",
+          #data role
+          "iam:GetRole",
+
+          #grant
           "kms:CreateGrant",
-          "kms:DescribeKey",
-
-          #group
-          "xray:CreateGroup",
-          "xray:ListTagsForResource",
-          "xray:GetGroup",
-          "xray:DeleteGroup",
-          "xray:UntagResource",
-          "xray:TagResource",
-
-          #sampling rule
-          "xray:CreateSamplingRule",
-          "xray:GetSamplingRules",
-          "xray:ListTagsForResource",
-          "xray:DeleteSamplingRule",
-          "xray:UntagResource",
-          "xray:TagResource",
+          "kms:ListGrants",
+          "kms:RevokeGrant"
         ],
         "Resource" : "*",
       }
