@@ -1,13 +1,13 @@
 [
   {
-    "apply": [
-      "kms:DescribeKey"
-    ],
+    "apply": [],
     "attributes": {
       "tags": []
     },
     "destroy": [],
     "modify": [],
-    "plan": []
+    "plan": [
+      "kms:DescribeKey"
+    ]
   }
 ]

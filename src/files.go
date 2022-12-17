@@ -981,3 +981,12 @@ var awsEbsSnapshot []byte
 
 //go:embed mapping/aws/resource/ec2/aws_ebs_snapshot_copy.json
 var awsEbsSnapshotCopy []byte
+
+//go:embed mapping/aws/resource/xray/aws_xray_encryption_config.json
+var awsXrayEncryptionConfig []byte
+
+//go:embed mapping/aws/resource/xray/aws_xray_group.json
+var awsXrayGroup []byte
+
+//go:embed mapping/aws/resource/xray/aws_xray_sampling_rule.json
+var awsXraySamplingRule []byte

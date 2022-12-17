@@ -147,9 +147,6 @@
 ./resource.ps1 aws_wafv2_web_acl_association
 ./resource.ps1 aws_wafv2_web_acl_association
 ./resource.ps1 aws_wafv2_web_acl_logging_configuration
-./resource.ps1 aws_xray_encryption_config
-./resource.ps1 aws_xray_group
-./resource.ps1 aws_xray_sampling_rule
 ./resource.ps1 aws_db_instance_automated_backups_replication
 ./resource.ps1 aws_cloudwatch_metric_stream
 ./resource.ps1 aws_cloudfront_function

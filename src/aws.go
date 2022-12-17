@@ -391,6 +391,9 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_backup_vault_policy":                            awsBackupVaultPolicy,
 		"aws_ebs_snapshot":                                   awsEbsSnapshot,
 		"aws_ebs_snapshot_copy":                              awsEbsSnapshotCopy,
+		"aws_xray_encryption_config":                         awsXrayEncryptionConfig,
+		"aws_xray_group":                                     awsXrayGroup,
+		"aws_xray_sampling_rule":                             awsXraySamplingRule,
 	}
 
 	var Permissions []string

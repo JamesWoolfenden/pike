@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "xray:CreateSamplingRule",
+      "xray:GetSamplingRules",
+      "xray:ListTagsForResource",
+      "xray:DeleteSamplingRule"
+    ],
+    "attributes": {
+      "tags": [
+        "xray:UntagResource",
+        "xray:TagResource"
+      ]
+    },
+    "destroy": [
+      "xray:DeleteSamplingRule"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

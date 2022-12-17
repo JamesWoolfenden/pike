@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "xray:PutEncryptionConfig",
+      "xray:GetEncryptionConfig",
+      "kms:CreateGrant",
+      "kms:DescribeKey"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

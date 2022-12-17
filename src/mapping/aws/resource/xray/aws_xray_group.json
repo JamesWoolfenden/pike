@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "xray:CreateGroup",
+      "xray:ListTagsForResource",
+      "xray:GetGroup",
+      "xray:DeleteGroup"
+    ],
+    "attributes": {
+      "tags": [
+        "xray:UntagResource",
+        "xray:TagResource"
+      ]
+    },
+    "destroy": [
+      "xray:DeleteGroup"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

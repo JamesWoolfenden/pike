@@ -8,13 +8,29 @@ resource "aws_iam_policy" "basic" {
         "Effect" : "Allow",
         "Action" : [
           "ec2:DescribeAccountAttributes",
-          "ec2:DescribeSnapshots",
-          "ec2:CopySnapshot",
-          "ec2:DeleteSnapshot",
+          "kms:DescribeKey",
 
-          "ec2:DeleteTags",
-          "ec2:CreateTags",
+          #config
+          "xray:PutEncryptionConfig",
+          "xray:GetEncryptionConfig",
+          "kms:CreateGrant",
+          "kms:DescribeKey",
 
+          #group
+          "xray:CreateGroup",
+          "xray:ListTagsForResource",
+          "xray:GetGroup",
+          "xray:DeleteGroup",
+          "xray:UntagResource",
+          "xray:TagResource",
+
+          #sampling rule
+          "xray:CreateSamplingRule",
+          "xray:GetSamplingRules",
+          "xray:ListTagsForResource",
+          "xray:DeleteSamplingRule",
+          "xray:UntagResource",
+          "xray:TagResource",
         ],
         "Resource" : "*",
       }
