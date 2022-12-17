@@ -13,7 +13,7 @@
         <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
       </ENTRIES>
     </EXTENSION>
-    <kind value="PACKAGE" />
+    <kind value="DIRECTORY" />
     <package value="github.com/jameswoolfenden/pike" />
     <directory value="$PROJECT_DIR$" />
     <filePath value="$PROJECT_DIR$" />

@@ -117,6 +117,10 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 		"aws_backup_plan":                           dataBackupPlan,
 		"aws_backup_report_plan":                    dataBackupReportPlan,
 		"aws_backup_selection":                      dataBackupSelection,
+		"aws_ebs_snapshot":                          dataAwsEbsSnapshot,
+		"aws_ebs_snapshot_ids":                      dataAwsEbsSnapshotIds,
+		"aws_ebs_volume":                            dataAwsEbsVolume,
+		"aws_ebs_volumes":                           dataAwsEbsVolumes,
 	}
 
 	var Permissions []string

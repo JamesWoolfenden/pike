@@ -8,13 +8,12 @@ resource "aws_iam_policy" "basic" {
         "Effect" : "Allow",
         "Action" : [
           "ec2:DescribeAccountAttributes",
-          "Backup:CreateBackupPlan",
-          "Backup:GetBackupPlan",
-          "Backup:UntagResource",
-          "Backup:TagResource",
-          "Backup:ListTags",
-          "Backup:DeleteBackupPlan",
-          "Backup:UpdateBackupPlan",
+          "ec2:DescribeSnapshots",
+          "ec2:CopySnapshot",
+          "ec2:DeleteSnapshot",
+
+          "ec2:DeleteTags",
+          "ec2:CreateTags",
 
         ],
         "Resource" : "*",

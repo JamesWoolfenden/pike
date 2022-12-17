@@ -389,6 +389,8 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_backup_vault_lock_configuration":                awsBackupVaultLockConfiguration,
 		"aws_backup_vault_notifications":                     awsBackupVaultNotification,
 		"aws_backup_vault_policy":                            awsBackupVaultPolicy,
+		"aws_ebs_snapshot":                                   awsEbsSnapshot,
+		"aws_ebs_snapshot_copy":                              awsEbsSnapshotCopy,
 	}
 
 	var Permissions []string

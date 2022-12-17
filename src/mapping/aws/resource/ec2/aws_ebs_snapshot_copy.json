@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "ec2:DescribeSnapshots",
+      "ec2:CopySnapshot",
+      "ec2:DeleteSnapshot"
+    ],
+    "attributes": {
+      "tags": [
+        "ec2:DeleteTags",
+        "ec2:CreateTags"
+      ]
+    },
+    "destroy": [
+      "ec2:DeleteSnapshot"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

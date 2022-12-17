@@ -975,3 +975,9 @@ var awsBackupVaultNotification []byte
 
 //go:embed mapping/aws/resource/backup/aws_backup_vault_policy.json
 var awsBackupVaultPolicy []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ebs_snapshot.json
+var awsEbsSnapshot []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ebs_snapshot_copy.json
+var awsEbsSnapshotCopy []byte

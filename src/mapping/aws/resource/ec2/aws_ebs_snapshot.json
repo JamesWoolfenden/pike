@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "ec2:CreateSnapshot",
+      "ec2:DescribeVolumes",
+      "ec2:DescribeSnapshots",
+      "ec2:DeleteSnapshot"
+    ],
+    "attributes": {
+      "tags": [
+        "ec2:DeleteTags",
+        "ec2:CreateTags"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

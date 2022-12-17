@@ -270,3 +270,15 @@ var dataBackupReportPlan []byte
 
 //go:embed mapping/aws/data/backup/aws_backup_selection.json
 var dataBackupSelection []byte
+
+//go:embed mapping/aws/data/ec2/aws_ebs_snapshot.json
+var dataAwsEbsSnapshot []byte
+
+//go:embed mapping/aws/data/ec2/aws_ebs_snapshot_ids.json
+var dataAwsEbsSnapshotIds []byte
+
+//go:embed mapping/aws/data/ec2/aws_ebs_volume.json
+var dataAwsEbsVolume []byte
+
+//go:embed mapping/aws/data/ec2/aws_ebs_volumes.json
+var dataAwsEbsVolumes []byte
