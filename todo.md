@@ -161,3 +161,4 @@ snapshots
 ./resource.ps1 aws_snapshot_create_volume_permission
 ./resource.ps1 aws_db_snapshot_copy
 ./resource.ps1 aws_redshiftserverless_snapshot
+data.aws_eks_addon_version
