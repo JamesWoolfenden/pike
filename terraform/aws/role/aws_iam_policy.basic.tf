@@ -8,15 +8,27 @@ resource "aws_iam_policy" "basic" {
         "Effect" : "Allow",
         "Action" : [
           "ec2:DescribeAccountAttributes",
-          "kms:DescribeKey",
+          "SNS:ListTopics",
 
-          #data role
-          "iam:GetRole",
+          "resource-groups:CreateGroup",
+          "resource-groups:GetGroup",
+          "resource-groups:GetGroupQuery",
+          "resource-groups:GetTags",
+          "resource-groups:DeleteGroup",
+          "resource-groups:Untag",
+          "resource-groups:Tag",
+          "resource:UpdateGroup",
 
-          #grant
-          "kms:CreateGrant",
-          "kms:ListGrants",
-          "kms:RevokeGrant"
+          "applicationinsights:CreateApplication",
+          "applicationinsights:TagResource",
+          "applicationinsights:UntagResource",
+          "iam:CreateServiceLinkedRole",
+          "logs:DescribeLogGroups",
+          "applicationinsights:DescribeApplication",
+          "applicationinsights:ListTagsForResource",
+          "applicationinsights:DeleteApplication",
+
+          "applicationinsights:UpdateApplication"
         ],
         "Resource" : "*",
       }

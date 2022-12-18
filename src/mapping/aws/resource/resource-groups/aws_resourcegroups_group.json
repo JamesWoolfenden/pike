@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "resource-groups:CreateGroup",
+      "resource-groups:GetGroup",
+      "resource-groups:GetGroupQuery",
+      "resource-groups:GetTags",
+      "resource-groups:DeleteGroup"
+    ],
+    "attributes": {
+      "tags": [
+        "resource-groups:Untag",
+        "resource-groups:Tag"
+      ]
+    },
+    "destroy": [
+      "resource-groups:DeleteGroup"
+    ],
+    "modify": [
+      "resource:UpdateGroup"
+    ],
+    "plan": []
+  }
+]

@@ -395,6 +395,8 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_xray_group":                                     awsXrayGroup,
 		"aws_xray_sampling_rule":                             awsXraySamplingRule,
 		"aws_kms_grant":                                      awsKmsGrant,
+		"aws_applicationinsights_application":                awsApplicationinsightsApplication,
+		"aws_resourcegroups_group":                           awsResourcegroupsGroup,
 	}
 
 	var Permissions []string

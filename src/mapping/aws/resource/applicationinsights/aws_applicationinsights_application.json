@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "applicationinsights:CreateApplication",
+      "iam:CreateServiceLinkedRole",
+      "logs:DescribeLogGroups",
+      "applicationinsights:DescribeApplication",
+      "applicationinsights:ListTagsForResource",
+      "applicationinsights:DeleteApplication"
+    ],
+    "attributes": {
+      "tags": [
+        "applicationinsights:TagResource",
+        "applicationinsights:UntagResource"
+      ]
+    },
+    "destroy": [
+      "applicationinsights:DeleteApplication"
+    ],
+    "modify": [
+      "applicationinsights:UpdateApplication"
+    ],
+    "plan": []
+  }
+]

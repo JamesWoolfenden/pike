@@ -993,3 +993,9 @@ var awsXraySamplingRule []byte
 
 //go:embed mapping/aws/resource/kms/aws_kms_grant.json
 var awsKmsGrant []byte
+
+//go:embed mapping/aws/resource/applicationinsights/aws_applicationinsights_application.json
+var awsApplicationinsightsApplication []byte
+
+//go:embed mapping/aws/resource/resource-groups/aws_resourcegroups_group.json
+var awsResourcegroupsGroup []byte

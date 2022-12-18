@@ -1,7 +1,6 @@
 # todo
 
 ./resource.ps1 aws_acm_certificate -type data
-./resource.ps1 aws_applicationinsights_application
 ./resource.ps1 aws_appmesh_gateway_route
 ./resource.ps1 aws_appmesh_mesh
 ./resource.ps1 aws_appmesh_mesh -type data
