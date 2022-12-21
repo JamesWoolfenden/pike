@@ -121,6 +121,14 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 		"aws_ebs_snapshot_ids":                      dataAwsEbsSnapshotIds,
 		"aws_ebs_volume":                            dataAwsEbsVolume,
 		"aws_ebs_volumes":                           dataAwsEbsVolumes,
+		"aws_api_gateway_api_key":                   dataAwsAPIGateway,
+		"aws_api_gateway_domain_name":               dataAwsAPIGateway,
+		"aws_api_gateway_export":                    dataAwsAPIGateway,
+		"aws_api_gateway_resource":                  dataAwsAPIGateway,
+		"aws_api_gateway_rest_api":                  dataAwsAPIGateway,
+		"aws_api_gateway_sdk":                       dataAwsAPIGateway,
+		"aws_api_gateway_vpc_link":                  dataAwsAPIGateway,
+		"aws_prometheus_workspace":                  dataAwsAPIGateway,
 	}
 
 	var Permissions []string

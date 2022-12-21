@@ -282,3 +282,6 @@ var dataAwsEbsVolume []byte
 
 //go:embed mapping/aws/data/ec2/aws_ebs_volumes.json
 var dataAwsEbsVolumes []byte
+
+//go:embed mapping/aws/data/apigateway/aws_api_gateway.json
+var dataAwsAPIGateway []byte

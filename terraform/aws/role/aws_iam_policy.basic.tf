@@ -7,28 +7,7 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "ec2:DescribeAccountAttributes",
-          "SNS:ListTopics",
-
-          "resource-groups:CreateGroup",
-          "resource-groups:GetGroup",
-          "resource-groups:GetGroupQuery",
-          "resource-groups:GetTags",
-          "resource-groups:DeleteGroup",
-          "resource-groups:Untag",
-          "resource-groups:Tag",
-          "resource:UpdateGroup",
-
-          "applicationinsights:CreateApplication",
-          "applicationinsights:TagResource",
-          "applicationinsights:UntagResource",
-          "iam:CreateServiceLinkedRole",
-          "logs:DescribeLogGroups",
-          "applicationinsights:DescribeApplication",
-          "applicationinsights:ListTagsForResource",
-          "applicationinsights:DeleteApplication",
-
-          "applicationinsights:UpdateApplication"
+          "apigateway:GET",
         ],
         "Resource" : "*",
       }
