@@ -2,7 +2,7 @@
   <configuration default="false" name="invoke" type="GoApplicationRunConfiguration" factoryName="Go Application">
     <module name="pike" />
     <working_directory value="$PROJECT_DIR$" />
-    <parameters value="invoke -workflow master.yml -branch master -repository JamesWoolfenden/terraform-aws-s3 " />
+    <parameters value="invoke -repository JamesWoolfenden/terraform-aws-activemq -workflow master.yml -branch master" />
     <EXTENSION ID="net.ashald.envfile">
       <option name="IS_ENABLED" value="false" />
       <option name="IS_SUBST" value="false" />
@@ -10,7 +10,7 @@
       <option name="IS_IGNORE_MISSING_FILES" value="false" />
       <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
       <ENTRIES>
-        <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+        <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
       </ENTRIES>
     </EXTENSION>
     <kind value="PACKAGE" />
