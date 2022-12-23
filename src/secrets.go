@@ -37,6 +37,8 @@ func Remote(target string, repository string, region string) error {
 	_, err = SetRepoSecret(repository, *myCredentials.AccessKeyId, "AWS_ACCESS_KEY_ID")
 
 	if err != nil {
+		response := err.(*github.ErrorResponse)
+		log.Printf("failed to set repo secrets: %s for repository %s", response.Message, repository)
 		return err
 	}
 
@@ -121,9 +123,8 @@ func getGithubClient() (context.Context, *github.Client) {
 func getPublicKeyDetails(owner string, repository string) (keyID, pkValue string, err error) {
 	ctx, client := getGithubClient()
 
-	publicKey, response, err := client.Actions.GetRepoPublicKey(ctx, owner, repository)
+	publicKey, _, err := client.Actions.GetRepoPublicKey(ctx, owner, repository)
 	if err != nil {
-		log.Print(&response)
 		return keyID, pkValue, err
 	}
 
