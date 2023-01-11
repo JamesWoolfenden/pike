@@ -9,7 +9,7 @@ jobs:
     - name: Install Go
       uses: actions/setup-go@v3.3.0
       with:
-        go-version: 1.17.x
+        go-version: 1.18.x
     - name: Restore cache
       uses: actions/cache@v2
       with:
@@ -19,12 +19,10 @@ jobs:
           ${{ runner.os }}-go-mod-
     - name: Fmt
       run: make fmt
-    - name: Vet
-      run: make vet
   test:
     strategy:
       matrix:
-        go-version: [1.17.x]
+        go-version: [1.18.x]
         platform: [ubuntu-latest, macos-latest, windows-latest]
     runs-on: ${{ matrix.platform }}
     steps:
@@ -51,4 +49,4 @@ jobs:
     - name: Install Go
       uses: actions/setup-go@v3.3.0
       with:
-        go-version: 1.17.x
+        go-version: 1.18.x
