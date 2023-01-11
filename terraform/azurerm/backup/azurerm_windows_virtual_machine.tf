@@ -20,6 +20,7 @@ resource "azurerm_windows_virtual_machine" "example" {
     sku       = "2016-Datacenter"
     version   = "latest"
   }
+  allow_extension_operations = false
 }
 
 resource "azurerm_network_interface" "win" {
