@@ -538,9 +538,9 @@ e.g. *aws_security_group.json*
 
 ### How
 
-Datasource are the easiest to start with, I have a script (resource.ps1) that creates a blank mapping file and tf 
-resource but you've seen the example json file - make one without any entries.
-Also create a minimal resource that you are trying to figure out the permissions for and place it in the correct dir 
+Datasources are the easiest to start with, I have a script (resource.ps1) that creates a blank mapping file and tf 
+resource, but you've seen the example json file - make one without any entries.
+You also need to create a minimal resource/datasource, that you are trying to figure out the permissions for, and place it in the correct dir 
 e.g../terraform/aws, I have a script for making a profile for the profile in the role directory.
 You can then tf using the empty role against the resource/datasource with no permissions. 
 The debug output from the tf run will help you figure out the permissions you need to add to your basic role.
