@@ -66,3 +66,7 @@ bump:
 psbump:
 	git push
 	powershell -command "./bump.ps1"
+
+update:
+	go get -u
+	go mod tidy
