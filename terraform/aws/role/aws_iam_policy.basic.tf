@@ -7,9 +7,9 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "iam:AddUserToGroup",
-          "iam:ListGroupsForUser",
-          "iam:RemoveUserFromGroup"
+    //      "lambda:InvokeFunctionUrl",
+#          "lambda:InvokeFunction",
+          "lambda:InvokeAsync"
         ],
         "Resource" : "*",
       }

@@ -1,0 +1,11 @@
+[
+  {
+    "apply": ["lambda:InvokeAsync"],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

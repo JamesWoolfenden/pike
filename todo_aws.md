@@ -247,7 +247,6 @@ aws_cur_report_definition
 ./resource.ps1 aws_ec2_transit_gateway_vpc_attachment_accepter 
 ./resource.ps1 aws_elasticache_user
 ./resource.ps1 aws_elasticache_user_group
-./resource.ps1 aws_lambda_invocation 
 ./resource.ps1 aws_msk_cluster 
 ./resource.ps1 aws_servicequotas_service_quota 
 ./resource.ps1 aws_ses_configuration_set 

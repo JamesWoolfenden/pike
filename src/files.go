@@ -1005,3 +1005,6 @@ var awsS3BucketInventory []byte
 
 //go:embed mapping/aws/resource/iam/aws_iam_user_group_membership.json
 var awsIamUserGroupMembership []byte
+
+//go:embed mapping/aws/resource/lambda/aws_lambda_invocation.json
+var awsLambdaInvocation []byte
