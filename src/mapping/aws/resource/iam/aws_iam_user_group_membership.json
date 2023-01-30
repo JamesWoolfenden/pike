@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "iam:AddUserToGroup",
+      "iam:ListGroupsForUser",
+      "iam:RemoveUserFromGroup"],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "iam:RemoveUserFromGroup"],
+    "modify": [],
+    "plan": []
+  }
+]
