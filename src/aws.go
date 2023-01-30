@@ -397,6 +397,7 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_kms_grant":                                      awsKmsGrant,
 		"aws_applicationinsights_application":                awsApplicationinsightsApplication,
 		"aws_resourcegroups_group":                           awsResourcegroupsGroup,
+		"aws_s3_bucket_inventory":                            awsS3BucketInventory,
 	}
 
 	var Permissions []string

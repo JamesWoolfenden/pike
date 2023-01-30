@@ -7,7 +7,8 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "apigateway:GET",
+          "s3:GetInventoryConfiguration",
+          "s3:PutInventoryConfiguration"
         ],
         "Resource" : "*",
       }

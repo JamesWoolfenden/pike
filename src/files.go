@@ -999,3 +999,6 @@ var awsApplicationinsightsApplication []byte
 
 //go:embed mapping/aws/resource/resource-groups/aws_resourcegroups_group.json
 var awsResourcegroupsGroup []byte
+
+//go:embed mapping/aws/resource/s3/aws_s3_bucket_inventory.json
+var awsS3BucketInventory []byte

@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "s3:GetInventoryConfiguration",
+      "s3:PutInventoryConfiguration"],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
