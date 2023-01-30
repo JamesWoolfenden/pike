@@ -559,7 +559,7 @@ Build out your tf resources to cover all reasonable scenarios.
 
 #### Eventual consistency
 
-Some cloud providers follow this flaw<cough>model which means your test IAM role will take time after you change it to be 
+Some cloud providers follow this model which means your test IAM role will take time after you change it to be 
 changed, how long? This seems to vary on time of day and the resource. Whilst other providers like 
 Azure just take a long time for the TF to change.
 
