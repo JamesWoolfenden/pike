@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "elasticache:CreateUser",
+      "elasticache:ListTagsForResource",
+      "elasticache:DescribeUsers",
+      "elasticache:DeleteUser"
+    ],
+    "attributes": {
+      "tags": [
+        "elasticache:AddTagsToResource",
+        "elasticache:RemoveTagsFromResource"
+      ]
+    },
+    "destroy": [
+      "elasticache:DeleteUser"
+    ],
+    "modify": [
+      "elasticache:ModifyUser"
+    ],
+    "plan": []
+  }
+]

@@ -1008,3 +1008,9 @@ var awsIamUserGroupMembership []byte
 
 //go:embed mapping/aws/resource/lambda/aws_lambda_invocation.json
 var awsLambdaInvocation []byte
+
+//go:embed mapping/aws/resource/elasticache/aws_elasticache_user_group.json
+var awsElasticacheUserGroup []byte
+
+//go:embed mapping/aws/resource/elasticache/aws_elasticache_user.json
+var awsElasticacheUser []byte

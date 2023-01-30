@@ -7,9 +7,18 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-    //      "lambda:InvokeFunctionUrl",
-#          "lambda:InvokeFunction",
-          "lambda:InvokeAsync"
+//user
+          "elasticache:CreateUser",
+          "elasticache:AddTagsToResource",
+          "elasticache:ListTagsForResource",
+          "elasticache:DescribeUsers",
+          "elasticache:DeleteUser",
+          "elasticache:RemoveTagsFromResource",
+
+          "elasticache:CreateUserGroup",
+          "elasticache:DescribeUserGroups",
+          "elasticache:DeleteUserGroup"
+
         ],
         "Resource" : "*",
       }
