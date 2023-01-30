@@ -7,8 +7,9 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "s3:GetInventoryConfiguration",
-          "s3:PutInventoryConfiguration"
+          "iam:AddUserToGroup",
+          "iam:ListGroupsForUser",
+          "iam:RemoveUserFromGroup"
         ],
         "Resource" : "*",
       }

@@ -398,6 +398,7 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_applicationinsights_application":                awsApplicationinsightsApplication,
 		"aws_resourcegroups_group":                           awsResourcegroupsGroup,
 		"aws_s3_bucket_inventory":                            awsS3BucketInventory,
+		"aws_iam_user_group_membership":                      awsIamUserGroupMembership,
 	}
 
 	var Permissions []string

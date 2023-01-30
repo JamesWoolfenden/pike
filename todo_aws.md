@@ -240,37 +240,26 @@ aws_controltower_controls
 aws_cur_report_definition
 
 
-./resource.ps1 aws_wafv2_web_acl_association 
-./resource.ps1 aws_docdb_cluster 
-./resource.ps1 aws_docdb_cluster_instance 
-./resource.ps1 aws_docdb_cluster 
-./resource.ps1 aws_docdb_cluster_instance
 ./resource.ps1 aws_api_gateway_authorizer 
 ./resource.ps1 aws_cloudfront_origin_access_identity 
+./resource.ps1 aws_docdb_cluster 
+./resource.ps1 aws_docdb_cluster_instance
+./resource.ps1 aws_ec2_transit_gateway_vpc_attachment_accepter 
+./resource.ps1 aws_elasticache_user
+./resource.ps1 aws_elasticache_user_group
 ./resource.ps1 aws_lambda_invocation 
 ./resource.ps1 aws_msk_cluster 
-./resource.ps1 aws_ec2_transit_gateway_vpc_attachment_accepter 
-./resource.ps1 aws_vpc_endpoint_subnet_association 
-./resource.ps1 aws_vpc_endpoint_subnet_association 
-./resource.ps1 aws_elasticache_user 
-./resource.ps1 aws_elasticache_user_group 
-./resource.ps1 aws_elasticache_user 
-./resource.ps1 aws_elasticache_user_group 
 ./resource.ps1 aws_servicequotas_service_quota 
+./resource.ps1 aws_ses_configuration_set 
+./resource.ps1 aws_ses_domain_dkim 
 ./resource.ps1 aws_ses_domain_identity 
 ./resource.ps1 aws_ses_domain_identity_verification 
 ./resource.ps1 aws_ses_domain_mail_from 
-./resource.ps1 aws_ses_domain_dkim 
-./resource.ps1 aws_ses_configuration_set 
-./resource.ps1 aws_ses_event_destination 
-./resource.ps1 aws_ses_event_destination 
-./resource.ps1 aws_ses_event_destination 
-./resource.ps1 aws_ses_identity_notification_topic 
-./resource.ps1 aws_ses_identity_notification_topic 
-./resource.ps1 aws_iam_user_group_membership 
+./resource.ps1 aws_ses_event_destination
+./resource.ps1 aws_ses_identity_notification_topic
 ./resource.ps1 aws_transfer_server 
-./resource.ps1 aws_wafv2_web_acl_association 
-./resource.ps1 aws_wafv2_web_acl_association 
+./resource.ps1 aws_vpc_endpoint_subnet_association
+./resource.ps1 aws_wafv2_web_acl_association
 ./resource.ps1 aws_wafv2_web_acl_logging_configuration 
 
 
