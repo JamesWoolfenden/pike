@@ -285,3 +285,9 @@ var dataAwsEbsVolumes []byte
 
 //go:embed mapping/aws/data/apigateway/aws_api_gateway.json
 var dataAwsAPIGateway []byte
+
+//go:embed mapping/aws/data/servicequota/aws_servicequotas_service.json
+var dataAwsServicequotasService []byte
+
+//go:embed mapping/aws/data/servicequota/aws_servicequotas_service_quota.json
+var dataAwsServicequotaServiceQuota []byte

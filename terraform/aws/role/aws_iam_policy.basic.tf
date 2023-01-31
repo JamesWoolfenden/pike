@@ -7,17 +7,14 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-//user
-          "elasticache:CreateUser",
-          "elasticache:AddTagsToResource",
-          "elasticache:ListTagsForResource",
-          "elasticache:DescribeUsers",
-          "elasticache:DeleteUser",
-          "elasticache:RemoveTagsFromResource",
+          "servicequotas:GetAWSDefaultServiceQuota",
+          "servicequotas:GetServiceQuota",
+          "servicequotas:RequestServiceQuotaIncrease",
+          "servicequotas:GetRequestedServiceQuotaChange",
+          "iam:CreateServiceLinkedRole",
 
-          "elasticache:CreateUserGroup",
-          "elasticache:DescribeUserGroups",
-          "elasticache:DeleteUserGroup"
+
+          "servicequotas:ListServices"
 
         ],
         "Resource" : "*",

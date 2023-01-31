@@ -402,6 +402,7 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_lambda_invocation":                              awsLambdaInvocation,
 		"aws_elasticache_user_group":                         awsElasticacheUserGroup,
 		"aws_elasticache_user":                               awsElasticacheUser,
+		"aws_servicequotas_service_quota":                    awsServicequotasServiceQuota,
 	}
 
 	var Permissions []string

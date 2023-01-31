@@ -246,7 +246,7 @@ aws_cur_report_definition
 ./resource.ps1 aws_docdb_cluster_instance
 ./resource.ps1 aws_ec2_transit_gateway_vpc_attachment_accepter
 ./resource.ps1 aws_msk_cluster 
-./resource.ps1 aws_servicequotas_service_quota 
+
 ./resource.ps1 aws_ses_configuration_set 
 ./resource.ps1 aws_ses_domain_dkim 
 ./resource.ps1 aws_ses_domain_identity 

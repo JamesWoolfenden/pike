@@ -1014,3 +1014,6 @@ var awsElasticacheUserGroup []byte
 
 //go:embed mapping/aws/resource/elasticache/aws_elasticache_user.json
 var awsElasticacheUser []byte
+
+//go:embed mapping/aws/resource/servicequota/aws_servicequotas_service_quota.json
+var awsServicequotasServiceQuota []byte

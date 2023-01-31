@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "servicequotas:GetAWSDefaultServiceQuota",
+      "servicequotas:GetServiceQuota",
+      "servicequotas:RequestServiceQuotaIncrease",
+      "servicequotas:GetRequestedServiceQuotaChange",
+      "iam:CreateServiceLinkedRole"],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

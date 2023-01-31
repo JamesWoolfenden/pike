@@ -129,6 +129,8 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 		"aws_api_gateway_sdk":                       dataAwsAPIGateway,
 		"aws_api_gateway_vpc_link":                  dataAwsAPIGateway,
 		"aws_prometheus_workspace":                  dataAwsAPIGateway,
+		"aws_servicequotas_service":                 dataAwsServicequotasService,
+		"aws_servicequotas_service_quota":           dataAwsServicequotaServiceQuota,
 	}
 
 	var Permissions []string
