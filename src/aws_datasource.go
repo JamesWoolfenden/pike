@@ -131,6 +131,10 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 		"aws_prometheus_workspace":                  dataAwsAPIGateway,
 		"aws_servicequotas_service":                 dataAwsServicequotasService,
 		"aws_servicequotas_service_quota":           dataAwsServicequotaServiceQuota,
+		"aws_msk_broker_nodes":                      dataAwsBrokerNodes,
+		"aws_msk_cluster":                           dataAwsMskCluster,
+		"aws_msk_configuration":                     dataAwsMskConfiguration,
+		"aws_msk_kafka_version":                     dataAwsMskKafkaVersion,
 	}
 
 	var Permissions []string

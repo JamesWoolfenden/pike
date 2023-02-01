@@ -134,6 +134,7 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_api_gateway_integration_response":               awsApigatewayv2Api,
 		"aws_api_gateway_usage_plan":                         awsApigatewayv2Api,
 		"aws_api_gateway_usage_plan_key":                     awsApigatewayv2Api,
+		"aws_api_gateway_authorizer":                         awsApigatewayv2Api,
 		"aws_api_gateway_account":                            awsAPIGatewayAccount,
 		"aws_sqs_queue":                                      awsSqsQueue,
 		"aws_sqs_queue_policy":                               awsSqsQueuePolicy,
@@ -328,6 +329,9 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_medialive_input_security_group":                 awsMedialiveInputSecurityGroup,
 		"aws_cloudfront_origin_access_control":               awsCloudfrontOriginAccessControl,
 		"aws_msk_serverless_cluster":                         awsMskServerlessCluster,
+		"aws_msk_cluster":                                    awsMskCluster,
+		"aws_msk_configuration":                              awsMskConfiguration,
+		"aws_msk_scram_secret_association":                   awsMskScramSecretAssociation,
 		"aws_route53_key_signing_key":                        awsRoute53KeySiginingKey,
 		"aws_route53_hosted_zone_dnssec":                     awsRoute53HostedZoneDnssec,
 		"aws_route53_query_log":                              awsRoute53QueryLog,
@@ -403,6 +407,7 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_elasticache_user_group":                         awsElasticacheUserGroup,
 		"aws_elasticache_user":                               awsElasticacheUser,
 		"aws_servicequotas_service_quota":                    awsServicequotasServiceQuota,
+		"aws_cloudfront_origin_access_identity":              awsCloudfrontOriginAccessIdentity,
 	}
 
 	var Permissions []string

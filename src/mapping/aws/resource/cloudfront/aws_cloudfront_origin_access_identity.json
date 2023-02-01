@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "cloudfront:CreateCloudFrontOriginAccessIdentity",
+      "cloudfront:GetCloudFrontOriginAccessIdentity",
+      "cloudfront:DeleteCloudFrontOriginAccessIdentity"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "cloudfront:DeleteCloudFrontOriginAccessIdentity"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

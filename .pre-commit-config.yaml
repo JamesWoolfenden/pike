@@ -1,7 +1,7 @@
 ---
 # yamllint disable rule:line-length
 default_language_version:
-  python: python3.8
+  python: python3.9
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0
@@ -36,7 +36,7 @@ repos:
     rev: v0.1.50
     hooks:
       - id: terraform-fmt
-        language_version: python3.8
+        language_version: python3.9
   - repo: https://github.com/gruntwork-io/pre-commit
     rev: v0.1.17
     hooks:

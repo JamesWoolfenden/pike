@@ -7,15 +7,13 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "servicequotas:GetAWSDefaultServiceQuota",
-          "servicequotas:GetServiceQuota",
-          "servicequotas:RequestServiceQuotaIncrease",
-          "servicequotas:GetRequestedServiceQuotaChange",
-          "iam:CreateServiceLinkedRole",
+          "Kafka:ListClusters",
 
+          "Kafka:ListConfigurations",
 
-          "servicequotas:ListServices"
+          "Kafka:ListNodes",
 
+          "Kafka:ListKafkaVersions"
         ],
         "Resource" : "*",
       }

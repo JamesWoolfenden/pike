@@ -781,6 +781,15 @@ var awsCloudfrontOriginAccessControl []byte
 //go:embed mapping/aws/resource/kafka/aws_msk_serverless_cluster.json
 var awsMskServerlessCluster []byte
 
+//go:embed mapping/aws/resource/kafka/aws_msk_cluster.json
+var awsMskCluster []byte
+
+//go:embed mapping/aws/resource/kafka/aws_msk_configuration.json
+var awsMskConfiguration []byte
+
+//go:embed mapping/aws/resource/kafka/aws_msk_scram_secret_association.json
+var awsMskScramSecretAssociation []byte
+
 //go:embed mapping/aws/resource/route53/aws_route53_key_signing_key.json
 var awsRoute53KeySiginingKey []byte
 
@@ -1017,3 +1026,6 @@ var awsElasticacheUser []byte
 
 //go:embed mapping/aws/resource/servicequota/aws_servicequotas_service_quota.json
 var awsServicequotasServiceQuota []byte
+
+//go:embed mapping/aws/resource/cloudfront/aws_cloudfront_origin_access_identity.json
+var awsCloudfrontOriginAccessIdentity []byte

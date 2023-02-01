@@ -291,3 +291,15 @@ var dataAwsServicequotasService []byte
 
 //go:embed mapping/aws/data/servicequota/aws_servicequotas_service_quota.json
 var dataAwsServicequotaServiceQuota []byte
+
+//go:embed mapping/aws/data/kafka/aws_msk_broker_nodes.json
+var dataAwsBrokerNodes []byte
+
+//go:embed mapping/aws/data/kafka/aws_msk_cluster.json
+var dataAwsMskCluster []byte
+
+//go:embed mapping/aws/data/kafka/aws_msk_configuration.json
+var dataAwsMskConfiguration []byte
+
+//go:embed mapping/aws/data/kafka/aws_msk_kafka_version.json
+var dataAwsMskKafkaVersion []byte
