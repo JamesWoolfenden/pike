@@ -3,11 +3,18 @@
     "apply": [
       "ec2:DescribeAccountAttributes",
       "rds:CreateDBClusterSnapshot",
-      "rds:DeleteDBClusterSnapshot",
-      "rds:DescribeDBClusterSnapshots"
+      "rds:DescribeDBClusterSnapshots",
+      "rds:ListTagsForResource",
+      "rds:DeleteDBClusterSnapshot"
     ],
     "attributes": {
-      "tags": []
+      "kms_key_id": [
+        "kms:Decrypt",
+        "kms:Encrypt",
+        "kms:GenerateDataKey",
+        "kms:DescribeKey",
+        "kms:CreateGrant"
+      ]
     },
     "destroy": [
       "rds:DeleteDBClusterSnapshot"

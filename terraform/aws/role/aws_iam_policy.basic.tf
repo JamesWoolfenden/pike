@@ -7,13 +7,9 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "Kafka:ListClusters",
-
-          "Kafka:ListConfigurations",
-
-          "Kafka:ListNodes",
-
-          "Kafka:ListKafkaVersions"
+          "rds:CreateGlobalCluster",
+          "rds:DescribeGlobalClusters",
+          "rds:DeleteGlobalCluster"
         ],
         "Resource" : "*",
       }

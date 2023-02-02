@@ -1,6 +1,7 @@
 [
   {
     "apply": [
+      "ec2:DescribeAccountAttributes",
       "rds:CreateDBClusterSnapshot",
       "rds:DescribeDBClusterSnapshots",
       "rds:ListTagsForResource",

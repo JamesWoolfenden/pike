@@ -36,13 +36,6 @@
 ./resource.ps1 aws_cloudtrail_event_data_store
 ./resource.ps1 aws_cloudtrail_service_account -type data
 ./resource.ps1 aws_dms_replication_instance
-./resource.ps1 aws_docdb_cluster
-./resource.ps1 aws_docdb_cluster_instance
-./resource.ps1 aws_docdb_cluster_parameter_group
-./resource.ps1 aws_docdb_cluster_snapshot
-./resource.ps1 aws_docdb_event_subscription
-./resource.ps1 aws_docdb_global_cluster
-./resource.ps1 aws_docdb_subnet_group
 ./resource.ps1 aws_dynamodb_contributor_insights
 ./resource.ps1 aws_dynamodb_global_table
 ./resource.ps1 aws_dynamodb_kinesis_streaming_destination
@@ -238,8 +231,6 @@ aws_controltower_controls
 
 aws_cur_report_definition
 
-./resource.ps1 aws_docdb_cluster
-./resource.ps1 aws_docdb_cluster_instance
 ./resource.ps1 aws_ec2_transit_gateway_vpc_attachment_accepter
 ./resource.ps1 aws_ses_configuration_set
 ./resource.ps1 aws_ses_domain_dkim

@@ -4,7 +4,8 @@
       "ec2:DescribeAccountAttributes",
       "rds:CreateDBInstance",
       "rds:DescribeDBInstances",
-      "rds:DeleteDBInstance"
+      "rds:DeleteDBInstance",
+      "rds:ListTagsForResource"
     ],
     "attributes": {
       "tags": [
