@@ -303,3 +303,27 @@ var dataAwsMskConfiguration []byte
 
 //go:embed mapping/aws/data/kafka/aws_msk_kafka_version.json
 var dataAwsMskKafkaVersion []byte
+
+//go:embed mapping/aws/data/acm/aws_acm_certificate.json
+var dataAwsAcmCertificate []byte
+
+//go:embed mapping/aws/data/autoscaling/aws_autoscaling_group.json
+var dataAwsAutoscalingGroup []byte
+
+//go:embed mapping/aws/data/autoscaling/aws_autoscaling_groups.json
+var dataAwsAutoscalingGroups []byte
+
+//go:embed mapping/aws/data/appconfig/aws_appconfig_configuration_profile.json
+var dataAwsAppconfigConfigurationProfile []byte
+
+//go:embed mapping/aws/data/appmesh/aws_appmesh_mesh.json
+var dataAwsAppmeshMesh []byte
+
+//go:embed mapping/aws/data/appmesh/aws_appmesh_virtual_service.json
+var dataAppmeshVirtualService []byte
+
+//go:embed mapping/aws/data/backup/aws_backup_vault.json
+var dataAwsBackupVault []byte
+
+//go:embed mapping/aws/data/autoscaling/aws_launch_configuration.json
+var dataAwsLaunchConfiguration []byte

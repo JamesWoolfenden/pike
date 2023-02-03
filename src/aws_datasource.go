@@ -129,12 +129,23 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 		"aws_api_gateway_sdk":                       dataAwsAPIGateway,
 		"aws_api_gateway_vpc_link":                  dataAwsAPIGateway,
 		"aws_prometheus_workspace":                  dataAwsAPIGateway,
+		"aws_apigatewayv2_api":                      dataAwsAPIGateway,
+		"aws_apigatewayv2_apis":                     dataAwsAPIGateway,
+		"aws_apigatewayv2_export":                   dataAwsAPIGateway,
 		"aws_servicequotas_service":                 dataAwsServicequotasService,
 		"aws_servicequotas_service_quota":           dataAwsServicequotaServiceQuota,
 		"aws_msk_broker_nodes":                      dataAwsBrokerNodes,
 		"aws_msk_cluster":                           dataAwsMskCluster,
 		"aws_msk_configuration":                     dataAwsMskConfiguration,
 		"aws_msk_kafka_version":                     dataAwsMskKafkaVersion,
+		"aws_acm_certificate":                       dataAwsAcmCertificate,
+		"aws_autoscaling_group":                     dataAwsAutoscalingGroup,
+		"aws_autoscaling_groups":                    dataAwsAutoscalingGroups,
+		"aws_appconfig_configuration_profile":       dataAwsAppconfigConfigurationProfile,
+		"aws_appmesh_mesh":                          dataAwsAppmeshMesh,
+		"aws_appmesh_virtual_service":               dataAppmeshVirtualService,
+		"aws_backup_vault":                          dataAwsBackupVault,
+		"aws_launch_configuration":                  dataAwsLaunchConfiguration,
 	}
 
 	var Permissions []string

@@ -1,15 +1,12 @@
 # todo
 
-./resource.ps1 aws_acm_certificate -type data
 ./resource.ps1 aws_appmesh_gateway_route
 ./resource.ps1 aws_appmesh_mesh
-./resource.ps1 aws_appmesh_mesh -type data
 ./resource.ps1 aws_appmesh_route
 ./resource.ps1 aws_appmesh_virtual_gateway
 ./resource.ps1 aws_appmesh_virtual_node
 ./resource.ps1 aws_appmesh_virtual_router
 ./resource.ps1 aws_appmesh_virtual_service
-./resource.ps1 aws_appmesh_virtual_service -type data
 ./resource.ps1 aws_appsync_datasource
 ./resource.ps1 aws_appsync_graphql_api
 ./resource.ps1 aws_appsync_resolver
@@ -155,81 +152,67 @@ snapshots
 data.aws_eks_addon_version
 
 //data
-aws_apigatewayv2_api
-aws_apigatewayv2_apis
-aws_apigatewayv2_export
 
-aws_appmesh_mesh
-aws_appmesh_virtual_service
+./resource.ps1  aws_batch_compute_environment -type data
+./resource.ps1  aws_batch_job_queue -type data
+./resource.ps1  aws_batch_scheduling_policy -type data
 
-aws_appconfig_configuration_profile
+./resource.ps1  aws_ce_cost_category -type data
+./resource.ps1  aws_ce_tags -type data
 
-aws_autoscaling_group
-aws_autoscaling_groups
-aws_launch_configuration
+./resource.ps1  aws_cloudcontrolapi_resource -type data
 
-aws_backup_vault
+./resource.ps1  aws_service_discovery_dns_namespace -type data
+./resource.ps1  aws_service_discovery_http_namespace -type data
+./resource.ps1  aws_service_discovery_service -type data
 
-aws_batch_compute_environment
-aws_batch_job_queue
-aws_batch_scheduling_policy
+./resource.ps1  aws_cloudformation_export -type data
+./resource.ps1  aws_cloudformation_stack -type data
+./resource.ps1  aws_cloudformation_type -type data
 
-aws_ce_cost_category
-aws_ce_tags
+./resource.ps1  aws_cloudfront_cache_policy -type data
+./resource.ps1  aws_cloudfront_distribution -type data
+./resource.ps1  aws_cloudfront_function -type data
+./resource.ps1  aws_cloudfront_log_delivery_canonical_user_id -type data
+./resource.ps1  aws_cloudfront_origin_access_identities -type data
+./resource.ps1  aws_cloudfront_origin_access_identity -type data
+./resource.ps1  aws_cloudfront_origin_request_policy -type data
+./resource.ps1  aws_cloudfront_realtime_log_config -type data
+./resource.ps1  aws_cloudfront_response_headers_policy -type data
 
-aws_cloudcontrolapi_resource
+./resource.ps1  aws_cloudhsm_v2_cluster -type data
+./resource.ps1  aws_cloudtrail_service_account -type data
 
-aws_service_discovery_dns_namespace
-aws_service_discovery_http_namespace
-aws_service_discovery_service
+./resource.ps1  aws_cloudwatch_log_data_protection_policy_document -type data
+./resource.ps1  aws_cloudwatch_log_group -type data
+./resource.ps1  aws_cloudwatch_log_groups -type data
 
-aws_cloudformation_export
-aws_cloudformation_stack
-aws_cloudformation_type
+./resource.ps1  aws_codeartifact_authorization_token -type data
+./resource.ps1  aws_codeartifact_repository_endpoint -type data
 
-aws_cloudfront_cache_policy
-aws_cloudfront_distribution
-aws_cloudfront_function
-aws_cloudfront_log_delivery_canonical_user_id
-aws_cloudfront_origin_access_identities
-aws_cloudfront_origin_access_identity
-aws_cloudfront_origin_request_policy
-aws_cloudfront_realtime_log_config
-aws_cloudfront_response_headers_policy
+./resource.ps1  aws_codecommit_approval_rule_template -type data
+./resource.ps1  aws_codecommit_repository -type data
 
-aws_cloudhsm_v2_cluster
-aws_cloudtrail_service_account
+./resource.ps1  aws_codestarconnections_connection -type data
 
-aws_cloudwatch_log_data_protection_policy_document
-aws_cloudwatch_log_group
-aws_cloudwatch_log_groups
+./resource.ps1  aws_connect_bot_association -type data
+./resource.ps1  aws_connect_contact_flow -type data
+./resource.ps1  aws_connect_contact_flow_module -type data
+./resource.ps1  aws_connect_hours_of_operation -type data
+./resource.ps1  aws_connect_instance -type data
+./resource.ps1  aws_connect_instance_storage_config -type data
+./resource.ps1  aws_connect_lambda_function_association -type data
+./resource.ps1  aws_connect_prompt -type data
+./resource.ps1  aws_connect_queue -type data
+./resource.ps1  aws_connect_quick_connect -type data
+./resource.ps1  aws_connect_routing_profile -type data
+./resource.ps1  aws_connect_security_profile -type data
+./resource.ps1  aws_connect_user_hierarchy_group -type data
+./resource.ps1  aws_connect_user_hierarchy_structure -type data
 
-aws_codeartifact_authorization_token
-aws_codeartifact_repository_endpoint
+./resource.ps1  aws_controltower_controls -type data
 
-aws_codecommit_approval_rule_template
-aws_codecommit_repository
-
-aws_codestarconnections_connection
-
-aws_connect_bot_association
-aws_connect_contact_flow
-aws_connect_contact_flow_module
-aws_connect_hours_of_operation
-aws_connect_instance
-aws_connect_instance_storage_config
-aws_connect_lambda_function_association
-aws_connect_prompt
-aws_connect_queue
-aws_connect_quick_connect
-aws_connect_routing_profile
-aws_connect_security_profile
-aws_connect_user_hierarchy_group
-aws_connect_user_hierarchy_structure
-
-aws_controltower_controls
-
-aws_cur_report_definition
+./resource.ps1  aws_cur_report_definition -type data
 
 ./resource.ps1 aws_ec2_transit_gateway_vpc_attachment_accepter
 ./resource.ps1 aws_ses_configuration_set
