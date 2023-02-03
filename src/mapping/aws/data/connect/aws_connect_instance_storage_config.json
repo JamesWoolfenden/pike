@@ -1,13 +1,13 @@
 [
   {
-    "apply": [
-      "lambda:InvokeAsync"
-    ],
+    "apply": [],
     "attributes": {
       "tags": []
     },
     "destroy": [],
     "modify": [],
-    "plan": []
+    "plan": [
+      "connect:DescribeInstanceStorageConfig"
+    ]
   }
 ]

@@ -4,7 +4,8 @@
       "elasticache:ListTagsForResource",
       "elasticache:CreateUserGroup",
       "elasticache:DescribeUserGroups",
-      "elasticache:DeleteUserGroup"],
+      "elasticache:DeleteUserGroup"
+    ],
     "attributes": {
       "tags": [
         "elasticache:AddTagsToResource",
@@ -12,9 +13,11 @@
       ]
     },
     "destroy": [
-      "elasticache:DeleteUserGroup"],
+      "elasticache:DeleteUserGroup"
+    ],
     "modify": [
-      "elasticache:ModifyUserGroup"],
+      "elasticache:ModifyUserGroup"
+    ],
     "plan": []
   }
 ]

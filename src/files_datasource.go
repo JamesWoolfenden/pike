@@ -342,3 +342,27 @@ var dataAwsSecretsmanagerSecret []byte
 
 //go:embed mapping/aws/data/secretsmanager/aws_secretsmanager_secret_version.json
 var dataAwsSecretsmanagerSecretVersion []byte
+
+//go:embed mapping/aws/data/ses/aws_sesv2_dedicated_ip_pool.json
+var dataAwsSesv2DedicatedIPPool []byte
+
+//go:embed mapping/aws/data/sqs/aws_sqs_queues.json
+var dataAwsSqsQueues []byte
+
+//go:embed mapping/aws/data/ec2/aws_vpc_ipam_pools.json
+var dataAwsVpcIpamPools []byte
+
+//go:embed mapping/aws/data/auditmanager/aws_auditmanager_control.json
+var dataAwsAuditmanagerControl []byte
+
+//go:embed mapping/aws/data/auditmanager/aws_auditmanager_framework.json
+var dataAwsAuditmanagerFramework []byte
+
+//go:embed mapping/aws/data/connect/aws_connect_instance_storage_config.json
+var dataAwsConnectInstanceStorageConfig []byte
+
+//go:embed mapping/aws/data/controltower/aws_controltower_controls.json
+var dataAwsControltowerControls []byte
+
+//go:embed mapping/aws/data/rds/aws_db_instances.json
+var dataAwsDbInstances []byte

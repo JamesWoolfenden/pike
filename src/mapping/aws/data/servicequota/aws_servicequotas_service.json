@@ -6,6 +6,8 @@
     },
     "destroy": [],
     "modify": [],
-    "plan": [          "servicequotas:ListServices"]
+    "plan": [
+      "servicequotas:ListServices"
+    ]
   }
 ]

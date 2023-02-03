@@ -7,7 +7,8 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "ec2:DescribeTransitGateways",
+          "rds:DescribeDBInstances",
+
         ],
         "Resource" : "*",
       }

@@ -3,6 +3,6 @@ data "aws_servicequotas_service" "pike" {
 }
 
 output "quota" {
-  value=data.aws_servicequotas_service.pike
+  value = data.aws_servicequotas_service.pike
 }
 //servicequotas:ListServices

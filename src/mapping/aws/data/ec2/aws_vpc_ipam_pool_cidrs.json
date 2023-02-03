@@ -7,7 +7,7 @@
     "destroy": [],
     "modify": [],
     "plan": [
-      "ec2:DescribeIpamPools"
+      "ec2:GetIpamPoolCidrs"
     ]
   }
 ]

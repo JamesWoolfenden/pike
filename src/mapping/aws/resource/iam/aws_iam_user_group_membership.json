@@ -3,12 +3,14 @@
     "apply": [
       "iam:AddUserToGroup",
       "iam:ListGroupsForUser",
-      "iam:RemoveUserFromGroup"],
+      "iam:RemoveUserFromGroup"
+    ],
     "attributes": {
       "tags": []
     },
     "destroy": [
-      "iam:RemoveUserFromGroup"],
+      "iam:RemoveUserFromGroup"
+    ],
     "modify": [],
     "plan": []
   }

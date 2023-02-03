@@ -3,5 +3,3 @@ resource "aws_servicequotas_service_quota" "pike" {
   service_code = "vpc"
   value        = 5
 }
-
-

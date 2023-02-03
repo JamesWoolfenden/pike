@@ -85,7 +85,7 @@ scoop bucket add iac https://github.com/JamesWoolfenden/scoop.git
 
 Then you can install a tool:
 
-```
+```bash
 scoop install pike
 ```
 
@@ -539,29 +539,29 @@ e.g. *aws_security_group.json*
 ### How
 
 Datasources are the easiest to start with, I have a script (resource.ps1 - add pwsh with **brew install --cask powershell**)
-that creates a blank mapping file and tf 
+that creates a blank mapping file and tf
 resource, but you've seen the example json file - make one without any entries.
-You also need to create a minimal resource/datasource, that you are trying to figure out the permissions for, and place it in the correct dir 
+You also need to create a minimal resource/datasource, that you are trying to figure out the permissions for, and place it in the correct dir
 e.g../terraform/aws, I have a script for making a profile for the profile in the role directory.
-You can then tf using the empty role against the resource/datasource with no permissions. 
+You can then tf using the empty role against the resource/datasource with no permissions.
 The debug output from the tf run will help you figure out the permissions you need to add to your basic role.
-You then update your "basic" role. 
+You then update your "basic" role.
 
-Issues? 
-The providers don't always tell you want you need to add, 
-you will need to check the IAM docs and the online IAM policymakers. 
-Not all resource are as easy as others, anything that make/scripts CF internally. 
+Issues?
+The providers don't always tell you want you need to add,
+you will need to check the IAM docs and the online IAM policymakers.
+Not all resource are as easy as others, anything that make/scripts CF internally.
 Some roles require *Passrole* and *CreateLinkedRole* but won't say so. Trail and error
 
 #### What about "attributes" ?
 
-Some cloud providers require extra permissions depending on the attributes you add, this is how this is handled. 
-Build out your tf resources to cover all reasonable scenarios. 
+Some cloud providers require extra permissions depending on the attributes you add, this is how this is handled.
+Build out your tf resources to cover all reasonable scenarios.
 
 #### Eventual consistency
 
-Some cloud providers follow this model which means your test IAM role will take time after you change it to be 
-changed, how long? This seems to vary on time of day and the resource. Whilst other providers like 
+Some cloud providers follow this model which means your test IAM role will take time after you change it to be
+changed, how long? This seems to vary on time of day and the resource. Whilst other providers like
 Azure just take a long time for the TF to change.
 
 ### Add Import mapping file

@@ -4,5 +4,5 @@ data "aws_servicequotas_service_quota" "by_quota_code" {
 }
 
 output "service_quota" {
-  value=data.aws_servicequotas_service_quota.by_quota_code
+  value = data.aws_servicequotas_service_quota.by_quota_code
 }

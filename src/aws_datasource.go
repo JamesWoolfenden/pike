@@ -153,6 +153,14 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 		"aws_lb":                                             dataAwsLb,
 		"aws_secretsmanager_secret":                          dataAwsSecretsmanagerSecret,
 		"aws_secretsmanager_secret_version":                  dataAwsSecretsmanagerSecretVersion,
+		"aws_sesv2_dedicated_ip_pool":                        dataAwsSesv2DedicatedIPPool,
+		"aws_sqs_queues":                                     dataAwsSqsQueues,
+		"aws_vpc_ipam_pools":                                 dataAwsVpcIpamPools,
+		"aws_auditmanager_control":                           dataAwsAuditmanagerControl,
+		"aws_auditmanager_framework":                         dataAwsAuditmanagerFramework,
+		"aws_connect_instance_storage_config":                dataAwsConnectInstanceStorageConfig,
+		"aws_controltower_controls":                          dataAwsControltowerControls,
+		"aws_db_instances":                                   dataAwsDbInstances,
 	}
 
 	var Permissions []string

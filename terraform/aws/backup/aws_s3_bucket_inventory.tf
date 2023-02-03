@@ -2,7 +2,7 @@ resource "aws_s3_bucket_inventory" "pike" {
   bucket                   = "config-store-jgw"
   included_object_versions = "Current"
   name                     = "EntireBucketDaily"
-  enabled = true
+  enabled                  = true
   destination {
     bucket {
       account_id = "680235478471"

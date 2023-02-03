@@ -5,7 +5,7 @@ resource "aws_elasticache_user" "pike" {
   engine        = "REDIS"
   passwords     = ["password123456789"]
   tags = {
-    pike="permissions"
-#    another="tag"
+    pike = "permissions"
+    #    another="tag"
   }
 }

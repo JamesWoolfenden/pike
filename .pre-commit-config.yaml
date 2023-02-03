@@ -18,7 +18,7 @@ repos:
       - id: detect-aws-credentials
       - id: detect-private-key
   - repo: https://github.com/Lucas-C/pre-commit-hooks
-    rev: v1.3.1
+    rev: v1.4.2
     hooks:
       - id: forbid-tabs
         exclude_types: [python, javascript, dtd, markdown, makefile, xml]
@@ -28,7 +28,7 @@ repos:
     hooks:
       - id: shell-lint
   - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.32.2
+    rev: v0.33.0
     hooks:
       - id: markdownlint
         exclude: src/testdata|testdata
@@ -38,13 +38,13 @@ repos:
       - id: terraform-fmt
         language_version: python3.9
   - repo: https://github.com/gruntwork-io/pre-commit
-    rev: v0.1.17
+    rev: v0.1.18
     hooks:
       - id: gofmt
       - id: goimports
       - id: golint
   - repo: https://github.com/golangci/golangci-lint
-    rev: v1.50.1
+    rev: v1.51.0
     hooks:
       - id: golangci-lint
   - repo: https://github.com/syntaqx/git-hooks

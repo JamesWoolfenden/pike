@@ -1,24 +1,24 @@
 [
-    {
-        "apply": [
-            "elasticloadbalancing:CreateRule",
-            "elasticloadbalancing:SetRulePriorities"
-        ],
-        "attributes": {
-            "tags": [
-                "elasticloadbalancing:AddTags",
-                "elasticloadbalancing:RemoveTags",
-                "elasticloadbalancing:DescribeTags"
-            ]
-        },
-        "destroy": [
-            "elasticloadbalancing:DeleteRule"
-        ],
-        "modify": [
-            "elasticloadbalancing:ModifyRule"
-        ],
-        "plan": [
-            "elasticloadbalancing:DescribeRules"
-        ]
-    }
+  {
+    "apply": [
+      "elasticloadbalancing:CreateRule",
+      "elasticloadbalancing:SetRulePriorities"
+    ],
+    "attributes": {
+      "tags": [
+        "elasticloadbalancing:AddTags",
+        "elasticloadbalancing:RemoveTags",
+        "elasticloadbalancing:DescribeTags"
+      ]
+    },
+    "destroy": [
+      "elasticloadbalancing:DeleteRule"
+    ],
+    "modify": [
+      "elasticloadbalancing:ModifyRule"
+    ],
+    "plan": [
+      "elasticloadbalancing:DescribeRules"
+    ]
+  }
 ]

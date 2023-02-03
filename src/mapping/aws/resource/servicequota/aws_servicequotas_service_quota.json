@@ -5,7 +5,8 @@
       "servicequotas:GetServiceQuota",
       "servicequotas:RequestServiceQuotaIncrease",
       "servicequotas:GetRequestedServiceQuotaChange",
-      "iam:CreateServiceLinkedRole"],
+      "iam:CreateServiceLinkedRole"
+    ],
     "attributes": {
       "tags": []
     },
