@@ -88,8 +88,11 @@ var dataAwsWafv2RuleGroup []byte
 //go:embed mapping/aws/data/wafv2/aws_wafv2_regex_pattern_set.json
 var dataAwsWafv2RegexPatternSet []byte
 
-//go:embed mapping/aws/data/logs/aws_cloudwatch_log_group.json
+//go:embed mapping/aws/data/cloudwatch/aws_cloudwatch_log_group.json
 var dataAwsCloudwatchLogGroup []byte
+
+//go:embed mapping/aws/data/cloudwatch/aws_cloudwatch_log_groups.json
+var dataAwsCloudwatchLogGroups []byte
 
 //go:embed mapping/aws/data/directoryservice/aws_directory_service_directory.json
 var dataAwsDirectoryServiceDirectory []byte

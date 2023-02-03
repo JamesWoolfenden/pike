@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "cloudwatch:PutMetricStream",
+      "cloudwatch:GetMetricStream",
+      "cloudwatch:ListTagsForResource",
+      "cloudwatch:DeleteMetricStream",
+      "iam:PassRole"
+    ],
+    "attributes": {
+      "tags": [
+        "cloudwatch:TagResource",
+        "cloudwatch:UntagResource"
+      ]
+    },
+    "destroy": [
+      "cloudwatch:DeleteMetricStream"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

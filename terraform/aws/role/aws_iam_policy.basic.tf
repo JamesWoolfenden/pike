@@ -7,8 +7,13 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "autoscaling:DescribeLaunchConfigurations",
-          "ec2:DescribeImages"
+          "cloudwatch:PutMetricStream",
+          "cloudwatch:TagResource",
+          "cloudwatch:UntagResource",
+          "cloudwatch:GetMetricStream",
+          "cloudwatch:ListTagsForResource",
+          "cloudwatch:DeleteMetricStream",
+          "iam:PassRole"
         ],
         "Resource" : "*",
       }

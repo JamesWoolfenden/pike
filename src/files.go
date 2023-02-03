@@ -1029,3 +1029,6 @@ var awsServicequotasServiceQuota []byte
 
 //go:embed mapping/aws/resource/cloudfront/aws_cloudfront_origin_access_identity.json
 var awsCloudfrontOriginAccessIdentity []byte
+
+//go:embed mapping/aws/resource/cloudwatch/aws_cloudwatch_metric_stream.json
+var awsCloudwatchMetricStream []byte

@@ -413,6 +413,7 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_elasticache_user":                               awsElasticacheUser,
 		"aws_servicequotas_service_quota":                    awsServicequotasServiceQuota,
 		"aws_cloudfront_origin_access_identity":              awsCloudfrontOriginAccessIdentity,
+		"aws_cloudwatch_metric_stream":                       awsCloudwatchMetricStream,
 	}
 
 	var Permissions []string

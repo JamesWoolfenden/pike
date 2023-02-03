@@ -135,7 +135,6 @@
 ./resource.ps1 aws_wafv2_web_acl_association
 ./resource.ps1 aws_wafv2_web_acl_logging_configuration
 ./resource.ps1 aws_db_instance_automated_backups_replication
-./resource.ps1 aws_cloudwatch_metric_stream
 ./resource.ps1 aws_cloudfront_function
 ./resource.ps1 aws_cloudfront_origin_access_control
 ./resource.ps1 aws_cloudfront_origin_access_identity
@@ -182,10 +181,6 @@ data.aws_eks_addon_version
 
 ./resource.ps1  aws_cloudhsm_v2_cluster -type data
 ./resource.ps1  aws_cloudtrail_service_account -type data
-
-./resource.ps1  aws_cloudwatch_log_data_protection_policy_document -type data
-./resource.ps1  aws_cloudwatch_log_group -type data
-./resource.ps1  aws_cloudwatch_log_groups -type data
 
 ./resource.ps1  aws_codeartifact_authorization_token -type data
 ./resource.ps1  aws_codeartifact_repository_endpoint -type data
