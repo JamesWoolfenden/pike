@@ -9,21 +9,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3.1.0
+        uses: actions/checkout@v3.3.0
       - name: Unshallow
         run: git fetch --prune --unshallow
       - name: Set up Go
-        uses: actions/setup-go@v3.3.0
+        uses: actions/setup-go@v3.5.0
         with:
           go-version: 1.19
       - name: Import GPG key
         id: import_gpg
-        uses: crazy-max/ghaction-import-gpg@v5.1.0
+        uses: crazy-max/ghaction-import-gpg@v5.2.0
         with:
           gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
       - name: Run GoReleaser
-        uses: goreleaser/goreleaser-action@v3.1.0
+        uses: goreleaser/goreleaser-action@v4.2.0
         with:
           version: latest
           args: release --rm-dist
@@ -38,7 +38,7 @@ jobs:
     needs:
       - goreleaser
     steps:
-      - uses: actions/checkout@v3.1.0
+      - uses: actions/checkout@v3.3.0
       - name: Publish to Registry
         uses: elgohr/Publish-Docker-Github-Action@v4
         with:
@@ -47,7 +47,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
           tags: "latest,${{ github.ref_name }}"
       - name: Update Docker Hub README
-        uses: peter-evans/dockerhub-description@v3
+        uses: peter-evans/dockerhub-description@v3.1.2
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}

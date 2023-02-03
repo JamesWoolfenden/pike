@@ -221,10 +221,3 @@ data.aws_eks_addon_version
 ./resource.ps1 aws_vpc_endpoint_subnet_association
 ./resource.ps1 aws_wafv2_web_acl_association
 ./resource.ps1 aws_wafv2_web_acl_logging_configuration
-
-./resource.ps1 data.aws_ec2_transit_gateway -type data
-./resource.ps1 data.aws_lb -type data
-./resource.ps1 data.aws_eks_cluster_auth -type data
-./resource.ps1 data.aws_eks_cluster_auth -type data
-./resource.ps1 data.aws_secretsmanager_secret -type data
-./resource.ps1 data.aws_secretsmanager_secret_version -type data

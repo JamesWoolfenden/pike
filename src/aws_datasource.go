@@ -148,6 +148,11 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 		"aws_appmesh_virtual_service":                        dataAppmeshVirtualService,
 		"aws_backup_vault":                                   dataAwsBackupVault,
 		"aws_launch_configuration":                           dataAwsLaunchConfiguration,
+		"aws_ec2_transit_gateway":                            dataAwsEc2Transitgateway,
+		"aws_eks_cluster_auth":                               placeholder,
+		"aws_lb":                                             dataAwsLb,
+		"aws_secretsmanager_secret":                          dataAwsSecretsmanagerSecret,
+		"aws_secretsmanager_secret_version":                  dataAwsSecretsmanagerSecretVersion,
 	}
 
 	var Permissions []string

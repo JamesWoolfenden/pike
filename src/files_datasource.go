@@ -330,3 +330,15 @@ var dataAwsBackupVault []byte
 
 //go:embed mapping/aws/data/autoscaling/aws_launch_configuration.json
 var dataAwsLaunchConfiguration []byte
+
+//go:embed mapping/aws/data/ec2/aws_ec2_transit_gateway.json
+var dataAwsEc2Transitgateway []byte
+
+//go:embed mapping/aws/data/elasticloadbalancing/aws_lb.json
+var dataAwsLb []byte
+
+//go:embed mapping/aws/data/secretsmanager/aws_secretsmanager_secret.json
+var dataAwsSecretsmanagerSecret []byte
+
+//go:embed mapping/aws/data/secretsmanager/aws_secretsmanager_secret_version.json
+var dataAwsSecretsmanagerSecretVersion []byte

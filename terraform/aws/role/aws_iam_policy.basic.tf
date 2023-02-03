@@ -7,13 +7,7 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "cloudwatch:PutMetricStream",
-          "cloudwatch:TagResource",
-          "cloudwatch:UntagResource",
-          "cloudwatch:GetMetricStream",
-          "cloudwatch:ListTagsForResource",
-          "cloudwatch:DeleteMetricStream",
-          "iam:PassRole"
+          "ec2:DescribeTransitGateways",
         ],
         "Resource" : "*",
       }
