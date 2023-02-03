@@ -7,8 +7,7 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "rds:DescribeDBInstances",
-
+          "route53resolver:GetFirewallConfig"
         ],
         "Resource" : "*",
       }

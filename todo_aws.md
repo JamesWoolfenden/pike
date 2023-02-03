@@ -221,19 +221,3 @@ data.aws_eks_addon_version
 ./resource.ps1 aws_vpc_endpoint_subnet_association
 ./resource.ps1 aws_wafv2_web_acl_association
 ./resource.ps1 aws_wafv2_web_acl_logging_configuration
-
-./resource.ps1 aws_dx_router_configuration -type data
-./resource.ps1 aws_dynamodb_table_item -type data
-./resource.ps1 aws_elasticache_subnet_group -type data
-./resource.ps1 aws_glue_catalog_table -type data
-./resource.ps1 aws_ivs_stream_key -type data
-./resource.ps1 aws_kms_custom_key_store -type data
-./resource.ps1 aws_lbs -type data
-./resource.ps1 aws_rds_reserved_instance_offering  -type data
-./resource.ps1 aws_redshiftserverless_credentials  -type data
-./resource.ps1 aws_route53_resolver_firewall_config -type data
-./resource.ps1 aws_route53_resolver_firewall_domain_list -type data
-./resource.ps1 aws_route53_resolver_firewall_rule_group -type data
-./resource.ps1 aws_route53_resolver_firewall_rule_group_association -type data
-./resource.ps1 aws_route53_resolver_firewall_rules -type data
-./resource.ps1 aws_s3control_multi_region_access_point -type data

@@ -366,3 +366,42 @@ var dataAwsControltowerControls []byte
 
 //go:embed mapping/aws/data/rds/aws_db_instances.json
 var dataAwsDbInstances []byte
+
+//go:embed mapping/aws/data/directconnect/aws_dx_router_configuration.json
+var dataAwsDxRouterConfiguration []byte
+
+//go:embed mapping/aws/data/dynamodb/aws_dynamodb_table_item.json
+var dataAwsDynamodbTableItem []byte
+
+//go:embed mapping/aws/data/elasticache/aws_elasticache_subnet_group.json
+var dataAwsElasticacheSubnetGroup []byte
+
+//go:embed mapping/aws/data/glue/aws_glue_catalog_table.json
+var dataAwsGlueCatalogTable []byte
+
+//go:embed mapping/aws/data/ivs/aws_ivs_stream_key.json
+var dataAwsIvsStreamKey []byte
+
+//go:embed mapping/aws/data/elasticloadbalancing/aws_lbs.json
+var dataAwsLbs []byte
+
+//go:embed mapping/aws/data/rds/aws_rds_reserved_instance_offering.json
+var dataAwsRdsReservedInstanceOffering []byte
+
+//go:embed mapping/aws/data/route53/aws_route53_resolver_firewall_rules.json
+var dataAwsRoute53ResolverFirewallConfig []byte
+
+//go:embed mapping/aws/data/route53/aws_route53_resolver_firewall_domain_list.json
+var dataAwsRoute53ResolverFirewallDomainList []byte
+
+//go:embed mapping/aws/data/route53/aws_route53_resolver_firewall_rule_group.json
+var dataAwsRoute53ResolverFirewallRuleGroup []byte
+
+//go:embed mapping/aws/data/route53/aws_route53_resolver_firewall_rule_group_association.json
+var dataAwsRoute53ResolverFirewallGroupAssociation []byte
+
+//go:embed mapping/aws/data/route53/aws_route53_resolver_firewall_rules.json
+var dataAwsRoute53ResolverFirewallRules []byte
+
+//go:embed mapping/aws/data/s3/aws_s3control_multi_region_access_point.json
+var dataAwsS3controlMultiRegionAccessPoint []byte
