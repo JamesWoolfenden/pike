@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "dynamodb:PutItem",
+      "dynamodb:GetItem",
+      "dynamodb:DeleteItem"],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "dynamodb:DeleteItem"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

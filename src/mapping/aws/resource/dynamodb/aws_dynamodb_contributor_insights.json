@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "dynamodb:UpdateContributorInsights",
+      "dynamodb:DescribeContributorInsights"],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

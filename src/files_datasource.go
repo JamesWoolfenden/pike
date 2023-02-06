@@ -405,3 +405,6 @@ var dataAwsRoute53ResolverFirewallRules []byte
 
 //go:embed mapping/aws/data/s3/aws_s3control_multi_region_access_point.json
 var dataAwsS3controlMultiRegionAccessPoint []byte
+
+//go:embed mapping/aws/data/dynamodb/aws_dynamodb_table.json
+var dataAwsDynamodbTable []byte

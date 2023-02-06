@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "dynamodb:TagResource",
+      "dynamodb:UntagResource"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

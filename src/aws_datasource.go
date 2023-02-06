@@ -175,6 +175,7 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 		"aws_route53_resolver_firewall_rule_group_association": dataAwsRoute53ResolverFirewallGroupAssociation,
 		"aws_route53_resolver_firewall_rules":                  dataAwsRoute53ResolverFirewallRules,
 		"aws_s3control_multi_region_access_point":              dataAwsS3controlMultiRegionAccessPoint,
+		"aws_dynamodb_table":                                   dataAwsDynamodbTable,
 	}
 
 	var Permissions []string

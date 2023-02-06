@@ -414,6 +414,10 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_servicequotas_service_quota":                    awsServicequotasServiceQuota,
 		"aws_cloudfront_origin_access_identity":              awsCloudfrontOriginAccessIdentity,
 		"aws_cloudwatch_metric_stream":                       awsCloudwatchMetricStream,
+		"aws_dynamodb_global_table":                          awsDynamodbGlobalTable,
+		"aws_dynamodb_contributor_insights":                  awsDynamodbContributorInsights,
+		"aws_dynamodb_table_item":                            awsDynamodbTableItem,
+		"aws_dynamodb_tag":                                   awsDynamodbTag,
 	}
 
 	var Permissions []string

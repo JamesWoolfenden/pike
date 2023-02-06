@@ -1032,3 +1032,15 @@ var awsCloudfrontOriginAccessIdentity []byte
 
 //go:embed mapping/aws/resource/cloudwatch/aws_cloudwatch_metric_stream.json
 var awsCloudwatchMetricStream []byte
+
+//go:embed mapping/aws/resource/dynamodb/aws_dynamodb_global_table.json
+var awsDynamodbGlobalTable []byte
+
+//go:embed mapping/aws/resource/dynamodb/aws_dynamodb_contributor_insights.json
+var awsDynamodbContributorInsights []byte
+
+//go:embed mapping/aws/resource/dynamodb/aws_dynamodb_table_item.json
+var awsDynamodbTableItem []byte
+
+//go:embed mapping/aws/resource/dynamodb/aws_dynamodb_tag.json
+var awsDynamodbTag []byte

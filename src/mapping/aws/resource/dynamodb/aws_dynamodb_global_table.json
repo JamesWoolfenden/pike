@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "dynamodb:CreateGlobalTable"
+      ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": ["dynamodb:UpdateGlobalTable"],
+    "plan": []
+  }
+]
