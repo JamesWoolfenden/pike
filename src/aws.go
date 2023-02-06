@@ -10,7 +10,7 @@ func GetAWSPermissions(result ResourceV2) ([]string, error) {
 	var err error
 	var Permissions []string
 	switch result.TypeName {
-	case "resource":
+	case "resource", "terraform":
 		{
 			Permissions, err = GetAWSResourcePermissions(result)
 			if err != nil {
@@ -418,6 +418,7 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_dynamodb_contributor_insights":                  awsDynamodbContributorInsights,
 		"aws_dynamodb_table_item":                            awsDynamodbTableItem,
 		"aws_dynamodb_tag":                                   awsDynamodbTag,
+		"backend":                                            s3backend,
 	}
 
 	var Permissions []string

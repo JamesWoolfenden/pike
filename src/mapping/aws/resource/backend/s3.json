@@ -2,15 +2,17 @@
   {
     "apply": [
       "dynamodb:PutItem",
+      "dynamodb:DeleteItem",
       "dynamodb:GetItem",
-      "dynamodb:DeleteItem"
+      "s3:ListBucket",
+      "s3:PutObject",
+      "s3:GetObject",
+      "s3:DeleteObject"
     ],
     "attributes": {
       "tags": []
     },
-    "destroy": [
-      "dynamodb:DeleteItem"
-    ],
+    "destroy": [],
     "modify": [],
     "plan": []
   }

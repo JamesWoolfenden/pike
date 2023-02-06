@@ -1044,3 +1044,6 @@ var awsDynamodbTableItem []byte
 
 //go:embed mapping/aws/resource/dynamodb/aws_dynamodb_tag.json
 var awsDynamodbTag []byte
+
+//go:embed mapping/aws/resource/backend/s3.json
+var s3backend []byte

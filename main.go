@@ -293,7 +293,7 @@ func main() {
 		Name:     "pike",
 		Usage:    "Generate IAM policy from your IAC code",
 		Compiled: time.Time{},
-		Authors:  []*cli.Author{{Name: "James Woolfenden", Email: "support@bridgecrew.io"}},
+		Authors:  []*cli.Author{{Name: "James Woolfenden", Email: "james.woolfenden@gmail.com"}},
 		Version:  pike.Version,
 	}
 	sort.Sort(cli.FlagsByName(app.Flags))

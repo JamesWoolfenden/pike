@@ -41,7 +41,7 @@ then
   COMMANDS+=" --output "+ $INPUT_OUTPUT
 fi
 
-echo pike $INPUT_VERB $FLAG $COMMANDS
-/usr/bin/pike $INPUT_VERB $FLAG $COMMANDS
+echo pike "$INPUT_VERB" "$FLAG" "$COMMANDS"
+/usr/bin/pike "$INPUT_VERB" "$FLAG" "$COMMANDS"
 
 export pike_EXIT_CODE=$?

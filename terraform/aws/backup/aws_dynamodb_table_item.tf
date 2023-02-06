@@ -1,8 +1,8 @@
 resource "aws_dynamodb_table_item" "pike" {
-table_name = "pike"
-hash_key   = data.aws_dynamodb_table.pike.hash_key
+  table_name = "pike"
+  hash_key   = data.aws_dynamodb_table.pike.hash_key
 
-item = <<ITEM
+  item = <<ITEM
 {
   "first":{"S":"test"},
   "exampleHashKey": {"S": "something"},

@@ -1,15 +1,14 @@
 package pike
 
 import (
+	"errors"
 	"os"
 	"path/filepath"
 	"strings"
 
-	"github.com/rs/zerolog/log"
-
-	"github.com/hashicorp/hcl/v2/hclsyntax"
-
 	"github.com/hashicorp/hcl/v2/hclparse"
+	"github.com/hashicorp/hcl/v2/hclsyntax"
+	"github.com/rs/zerolog/log"
 )
 
 // GetResources retrieves all the resources in a tf file
@@ -27,6 +26,10 @@ func GetResources(file string, dirName string) ([]ResourceV2, error) {
 		ignore := []string{"terraform", "output", "provider", "variable", "locals", "template"}
 
 		if stringInSlice(resource.TypeName, ignore) {
+			Resources, err := DetectBackend(resource, block, Resources)
+			if err == nil {
+				return Resources, err
+			}
 			continue
 		}
 
@@ -60,6 +63,24 @@ func GetResources(file string, dirName string) ([]ResourceV2, error) {
 	}
 
 	return Resources, nil
+}
+
+// DetectBackend handles permissions for backend blocks
+func DetectBackend(resource ResourceV2, block *hclsyntax.Block, Resources []ResourceV2) ([]ResourceV2, error) {
+	if resource.TypeName == "terraform" {
+		for _, terraform := range block.Body.Blocks {
+			if terraform.Type == "backend" {
+				if terraform.Labels[0] == "s3" {
+					resource.Name = "backend"
+					resource.Provider = "aws"
+					resource.Attributes = []string{"s3"}
+					Resources = append(Resources, resource)
+					return Resources, nil
+				}
+			}
+		}
+	}
+	return nil, errors.New("no Backend found")
 }
 
 // GetResourceBlocks breaks down a file into resources

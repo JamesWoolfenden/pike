@@ -2,7 +2,8 @@
   {
     "apply": [
       "dynamodb:UpdateContributorInsights",
-      "dynamodb:DescribeContributorInsights"],
+      "dynamodb:DescribeContributorInsights"
+    ],
     "attributes": {
       "tags": []
     },
