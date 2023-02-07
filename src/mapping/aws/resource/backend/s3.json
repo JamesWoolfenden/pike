@@ -4,6 +4,7 @@
       "dynamodb:PutItem",
       "dynamodb:DeleteItem",
       "dynamodb:GetItem",
+      "dynamodb:DescribeTable",
       "s3:ListBucket",
       "s3:PutObject",
       "s3:GetObject",
