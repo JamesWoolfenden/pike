@@ -182,9 +182,6 @@ data.aws_eks_addon_version
 ./resource.ps1  aws_cloudhsm_v2_cluster -type data
 ./resource.ps1  aws_cloudtrail_service_account -type data
 
-./resource.ps1  aws_codeartifact_authorization_token -type data
-./resource.ps1  aws_codeartifact_repository_endpoint -type data
-
 ./resource.ps1  aws_codecommit_approval_rule_template -type data
 ./resource.ps1  aws_codecommit_repository -type data
 

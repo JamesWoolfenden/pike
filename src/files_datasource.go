@@ -408,3 +408,12 @@ var dataAwsS3controlMultiRegionAccessPoint []byte
 
 //go:embed mapping/aws/data/dynamodb/aws_dynamodb_table.json
 var dataAwsDynamodbTable []byte
+
+//go:embed mapping/aws/data/codeartifact/aws_codeartifact_authorization_token.json
+var datAwsCodeartifactAutorization []byte
+
+//go:embed mapping/aws/data/codeartifact/aws_codeartifact_repository_endpoint.json
+var dataAwsCodeartifactRepositoryEndpoint []byte
+
+//go:embed mapping/aws/data/iam/aws_iam_roles.json
+var dataAwsIamRoles []byte

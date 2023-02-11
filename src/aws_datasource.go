@@ -176,6 +176,9 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 		"aws_route53_resolver_firewall_rules":                  dataAwsRoute53ResolverFirewallRules,
 		"aws_s3control_multi_region_access_point":              dataAwsS3controlMultiRegionAccessPoint,
 		"aws_dynamodb_table":                                   dataAwsDynamodbTable,
+		"aws_codeartifact_authorization_token":                 datAwsCodeartifactAutorization,
+		"aws_codeartifact_repository_endpoint":                 dataAwsCodeartifactRepositoryEndpoint,
+		"aws_iam_roles":                                        dataAwsIamRoles,
 	}
 
 	var Permissions []string
