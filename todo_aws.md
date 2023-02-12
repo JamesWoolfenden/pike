@@ -165,10 +165,6 @@ data.aws_eks_addon_version
 ./resource.ps1  aws_service_discovery_http_namespace -type data
 ./resource.ps1  aws_service_discovery_service -type data
 
-./resource.ps1  aws_cloudformation_export -type data
-./resource.ps1  aws_cloudformation_stack -type data
-./resource.ps1  aws_cloudformation_type -type data
-
 ./resource.ps1  aws_cloudfront_cache_policy -type data
 ./resource.ps1  aws_cloudfront_distribution -type data
 ./resource.ps1  aws_cloudfront_function -type data
@@ -178,14 +174,6 @@ data.aws_eks_addon_version
 ./resource.ps1  aws_cloudfront_origin_request_policy -type data
 ./resource.ps1  aws_cloudfront_realtime_log_config -type data
 ./resource.ps1  aws_cloudfront_response_headers_policy -type data
-
-./resource.ps1  aws_cloudhsm_v2_cluster -type data
-./resource.ps1  aws_cloudtrail_service_account -type data
-
-./resource.ps1  aws_codecommit_approval_rule_template -type data
-./resource.ps1  aws_codecommit_repository -type data
-
-./resource.ps1  aws_codestarconnections_connection -type data
 
 ./resource.ps1  aws_connect_bot_association -type data
 ./resource.ps1  aws_connect_contact_flow -type data

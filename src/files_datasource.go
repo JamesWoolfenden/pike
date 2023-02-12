@@ -417,3 +417,24 @@ var dataAwsCodeartifactRepositoryEndpoint []byte
 
 //go:embed mapping/aws/data/iam/aws_iam_roles.json
 var dataAwsIamRoles []byte
+
+//go:embed mapping/aws/data/cloudformation/aws_cloudformation_export.json
+var dataAwsCloudformationExport []byte
+
+//go:embed mapping/aws/data/cloudformation/aws_cloudformation_stack.json
+var dataAwsCloudformationStack []byte
+
+//go:embed mapping/aws/data/cloudformation/aws_cloudformation_type.json
+var dataAwsCloudformationType []byte
+
+//go:embed mapping/aws/data/cloudhsm/aws_cloudhsm_v2_cluster.json
+var dataAwsCloudhsmV2Cluster []byte
+
+//go:embed mapping/aws/data/codecommit/aws_codecommit_approval_rule_template.json
+var dataAwsCodecommitApprovalRuleTemplate []byte
+
+//go:embed mapping/aws/data/codecommit/aws_codecommit_repository.json
+var dataAwsCodecommitRepository []byte
+
+//go:embed mapping/aws/data/codestar-connections/aws_codestarconnections_connection.json
+var dataAwsCodestarconnectionsConnection []byte

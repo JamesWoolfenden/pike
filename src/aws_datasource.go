@@ -179,6 +179,13 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 		"aws_codeartifact_authorization_token":                 datAwsCodeartifactAutorization,
 		"aws_codeartifact_repository_endpoint":                 dataAwsCodeartifactRepositoryEndpoint,
 		"aws_iam_roles":                                        dataAwsIamRoles,
+		"aws_cloudformation_export":                            dataAwsCloudformationExport,
+		"aws_cloudformation_stack":                             dataAwsCloudformationStack,
+		"aws_cloudformation_type":                              dataAwsCloudformationType,
+		"aws_cloudhsm_v2_cluster":                              dataAwsCloudhsmV2Cluster,
+		"aws_codecommit_approval_rule_template":                dataAwsCodecommitApprovalRuleTemplate,
+		"aws_codecommit_repository":                            dataAwsCodecommitRepository,
+		"aws_codestarconnections_connection":                   dataAwsCodestarconnectionsConnection,
 	}
 
 	var Permissions []string

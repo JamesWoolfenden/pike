@@ -7,7 +7,9 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "iam:ListRoles"
+          "cloudformation:DescribeType",
+          "cloudformation:DescribeStacks",
+          "cloudformation:ListExports"
         ],
         "Resource" : "*",
       }
