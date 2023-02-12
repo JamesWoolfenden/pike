@@ -489,3 +489,42 @@ var dataAwsServiceDiscoveryHTTPNamespace []byte
 
 //go:embed mapping/aws/data/servicediscovery/aws_service_discovery_service.json
 var dataAwsServiceDiscoveryService []byte
+
+//go:embed mapping/aws/data/connect/aws_connect_bot_association.json
+var dataAwsConnectBotAssociation []byte
+
+//go:embed mapping/aws/data/connect/aws_connect_contact_flow.json
+var dataAwsConnectContactFlow []byte
+
+//go:embed mapping/aws/data/connect/aws_connect_contact_flow_module.json
+var dataAwsConnectContactFlowModule []byte
+
+//go:embed mapping/aws/data/connect/aws_connect_hours_of_operation.json
+var dataAwsConnectHoursOfOperation []byte
+
+//go:embed mapping/aws/data/connect/aws_connect_instance.json
+var dataAwsConnectInstance []byte
+
+//go:embed mapping/aws/data/connect/aws_connect_lambda_function_association.json
+var dataAwsConnectLambdaFunctionAssociation []byte
+
+//go:embed mapping/aws/data/connect/aws_connect_prompt.json
+var dataAwsConnectPrompt []byte
+
+//go:embed mapping/aws/data/connect/aws_connect_queue.json
+var dataAwsConnectQueue []byte
+
+//go:embed mapping/aws/data/connect/aws_connect_quick_connect.json
+var dataAwsConnectQuickConnect []byte
+
+//go:embed mapping/aws/data/connect/aws_connect_routing_profile.json
+var dataAwsConnectRoutingProfile []byte
+
+//go:embed mapping/aws/data/connect/aws_connect_security_profile.json
+var dataAwsConnectSecurityProfile []byte
+
+//go:embed mapping/aws/data/connect/aws_connect_user_hierarchy_group.json
+var dataAwsConnectUserHierarchyGroup []byte
+
+//go:embed mapping/aws/data/connect/aws_connect_user_hierarchy_structure.json
+var dataAwsConnectUserHierarchyStructure []byte

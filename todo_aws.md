@@ -152,21 +152,6 @@ data.aws_eks_addon_version
 
 //data
 
-./resource.ps1  aws_connect_bot_association -type data
-./resource.ps1  aws_connect_contact_flow -type data
-./resource.ps1  aws_connect_contact_flow_module -type data
-./resource.ps1  aws_connect_hours_of_operation -type data
-./resource.ps1  aws_connect_instance -type data
-./resource.ps1  aws_connect_instance_storage_config -type data
-./resource.ps1  aws_connect_lambda_function_association -type data
-./resource.ps1  aws_connect_prompt -type data
-./resource.ps1  aws_connect_queue -type data
-./resource.ps1  aws_connect_quick_connect -type data
-./resource.ps1  aws_connect_routing_profile -type data
-./resource.ps1  aws_connect_security_profile -type data
-./resource.ps1  aws_connect_user_hierarchy_group -type data
-./resource.ps1  aws_connect_user_hierarchy_structure -type data
-
 ./resource.ps1  aws_controltower_controls -type data
 
 ./resource.ps1  aws_cur_report_definition -type data

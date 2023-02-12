@@ -7,11 +7,36 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          //data.aws_cloudfront_cache_policy.pike
-          "cloudfront:ListCachePolicies",
-
-
-
+          //data.aws_connect_bot_association.pike
+          "connect:ListBots",
+          // data.aws_connect_contact_flow.pike
+          "connect:ListContactFlows",
+          //data.aws_connect_contact_flow_module.pike
+          "connect:ListContactFlowModules",
+          // data.aws_connect_hours_of_operation
+          "connect:ListHoursOfOperations",
+          //data.aws_connect_routing_profile.pike
+          "connect:ListRoutingProfiles",
+          //data.aws_connect_instance
+          "connect:DescribeInstance",
+          //data.aws_connect_instance_storage_config.pike
+          "connect:DescribeInstanceStorageConfig",
+          // data.aws_connect_lambda_function_association.pike
+          "connect:ListLambdaFunctions",
+          // data.aws_connect_prompt.pike
+          "connect:ListPrompts",
+          //data.aws_connect_queue.
+          "connect:ListQueues",
+          //data.aws_connect_quick_connect.pike
+          "connect:ListQuickConnects",
+          //data.aws_connect_routing_profile.pike
+          "connect:ListRoutingProfiles",
+          //data.aws_connect_security_profile.pike
+          "connect:ListSecurityProfiles",
+          //data.aws_connect_user_hierarchy_structure.pike
+          "connect:DescribeUserHierarchyStructure",
+          //data.aws_connect_user_hierarchy_group.pike
+          "connect:ListUserHierarchyGroups"
         ],
         "Resource" : "*",
       }

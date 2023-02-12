@@ -204,6 +204,19 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 		"aws_service_discovery_dns_namespace":                  dataAwsServiceDiscoveryDNSNamespace,
 		"aws_service_discovery_http_namespace":                 dataAwsServiceDiscoveryHTTPNamespace,
 		"aws_service_discovery_service":                        dataAwsServiceDiscoveryService,
+		"aws_connect_bot_association":                          dataAwsConnectBotAssociation,
+		"aws_connect_contact_flow":                             dataAwsConnectContactFlow,
+		"aws_connect_contact_flow_module":                      dataAwsConnectContactFlowModule,
+		"aws_connect_hours_of_operation":                       dataAwsConnectHoursOfOperation,
+		"aws_connect_instance":                                 dataAwsConnectInstance,
+		"aws_connect_lambda_function_association":              dataAwsConnectLambdaFunctionAssociation,
+		"aws_connect_prompt":                                   dataAwsConnectPrompt,
+		"aws_connect_queue":                                    dataAwsConnectQueue,
+		"aws_connect_quick_connect":                            dataAwsConnectQuickConnect,
+		"aws_connect_routing_profile":                          dataAwsConnectRoutingProfile,
+		"aws_connect_security_profile":                         dataAwsConnectSecurityProfile,
+		"aws_connect_user_hierarchy_group":                     dataAwsConnectUserHierarchyGroup,
+		"aws_connect_user_hierarchy_structure":                 dataAwsConnectUserHierarchyStructure,
 	}
 
 	var Permissions []string
