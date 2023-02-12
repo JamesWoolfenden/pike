@@ -10,17 +10,13 @@
 ./resource.ps1 aws_appsync_datasource
 ./resource.ps1 aws_appsync_graphql_api
 ./resource.ps1 aws_appsync_resolver
-
 ./resource.ps1 aws_autoscaling_group_tag
 ./resource.ps1 aws_autoscaling_schedule
-
 ./resource.ps1 aws_budgets_budget_action
 ./resource.ps1 aws_ce_anomaly_monitor
 ./resource.ps1 aws_ce_anomaly_subscription
 ./resource.ps1 aws_ce_cost_allocation_tag
 ./resource.ps1 aws_ce_cost_category
-./resource.ps1 aws_ce_cost_category -type data
-./resource.ps1 aws_ce_tags -type data
 ./resource.ps1 aws_chime_voice_connector
 ./resource.ps1 aws_chime_voice_connector_group
 ./resource.ps1 aws_chime_voice_connector_logging
@@ -28,10 +24,17 @@
 ./resource.ps1 aws_chime_voice_connector_streaming
 ./resource.ps1 aws_chime_voice_connector_termination
 ./resource.ps1 aws_chime_voice_connector_termination_credentials
+./resource.ps1 aws_cloudfront_function
+./resource.ps1 aws_cloudfront_origin_access_control
+./resource.ps1 aws_cloudfront_origin_access_identity
+./resource.ps1 aws_cloudfront_origin_request_policy
+./resource.ps1 aws_cloudfront_realtime_log_config
+./resource.ps1 aws_cloudfront_response_headers_policy
 ./resource.ps1 aws_cloudhsm_v2_cluster
 ./resource.ps1 aws_cloudhsm_v2_hsm
 ./resource.ps1 aws_cloudtrail_event_data_store
-./resource.ps1 aws_cloudtrail_service_account -type data
+./resource.ps1 aws_db_instance_automated_backups_replication
+./resource.ps1 aws_db_snapshot_copy
 ./resource.ps1 aws_dms_replication_instance
 ./resource.ps1 aws_dynamodb_contributor_insights
 ./resource.ps1 aws_dynamodb_global_table
@@ -39,6 +42,7 @@
 ./resource.ps1 aws_dynamodb_table_item
 ./resource.ps1 aws_dynamodb_table_replica
 ./resource.ps1 aws_dynamodb_tag
+./resource.ps1 aws_ebs_snapshot_import
 ./resource.ps1 aws_ec2_network_insights_analysis
 ./resource.ps1 aws_ec2_traffic_mirror_filter
 ./resource.ps1 aws_ec2_traffic_mirror_session
@@ -47,6 +51,7 @@
 ./resource.ps1 aws_ec2_transit_gateway_policy_table
 ./resource.ps1 aws_ec2_transit_gateway_policy_table_association
 ./resource.ps1 aws_ec2_transit_gateway_route_table
+./resource.ps1 aws_ec2_transit_gateway_vpc_attachment_accepter
 ./resource.ps1 aws_eks_fargate_profile
 ./resource.ps1 aws_eks_identity_provider_config
 ./resource.ps1 aws_emr_cluster
@@ -87,9 +92,9 @@
 ./resource.ps1 aws_organizations_policy
 ./resource.ps1 aws_organizations_policy_attachment
 ./resource.ps1 aws_redshiftserverless_endpoint_access
+./resource.ps1 aws_redshiftserverless_snapshot
 ./resource.ps1 aws_redshiftserverless_usage_limit
 ./resource.ps1 aws_redshiftserverless_workgroup
-
 ./resource.ps1 aws_sagemaker_app
 ./resource.ps1 aws_sagemaker_app_image_config
 ./resource.ps1 aws_sagemaker_code_repository
@@ -111,7 +116,6 @@
 ./resource.ps1 aws_sagemaker_user_profile
 ./resource.ps1 aws_sagemaker_workforce
 ./resource.ps1 aws_sagemaker_workteam
-
 ./resource.ps1 aws_securityhub_account
 ./resource.ps1 aws_securityhub_action_target
 ./resource.ps1 aws_securityhub_finding_aggregator
@@ -123,40 +127,6 @@
 ./resource.ps1 aws_securityhub_product_subscription
 ./resource.ps1 aws_securityhub_standards_control
 ./resource.ps1 aws_securityhub_standards_subscription
-./resource.ps1 aws_ssoadmin_customer_managed_policy_attachment
-./resource.ps1 aws_ssoadmin_permission_set
-./resource.ps1 aws_ssoadmin_permission_set_inline_policy
-./resource.ps1 aws_waf_ipset
-./resource.ps1 aws_waf_rule
-./resource.ps1 aws_waf_web_acl
-./resource.ps1 aws_wafregional_ipset
-./resource.ps1 aws_wafregional_rule
-./resource.ps1 aws_wafregional_web_acl
-./resource.ps1 aws_wafv2_web_acl_association
-./resource.ps1 aws_wafv2_web_acl_logging_configuration
-./resource.ps1 aws_db_instance_automated_backups_replication
-./resource.ps1 aws_cloudfront_function
-./resource.ps1 aws_cloudfront_origin_access_control
-./resource.ps1 aws_cloudfront_origin_access_identity
-./resource.ps1 aws_cloudfront_origin_request_policy
-./resource.ps1 aws_cloudfront_realtime_log_config
-./resource.ps1 aws_cloudfront_response_headers_policy
-
-snapshots
-
-./resource.ps1 aws_ebs_snapshot_import
-./resource.ps1 aws_snapshot_create_volume_permission
-./resource.ps1 aws_db_snapshot_copy
-./resource.ps1 aws_redshiftserverless_snapshot
-data.aws_eks_addon_version
-
-//data
-
-./resource.ps1  aws_controltower_controls -type data
-
-./resource.ps1  aws_cur_report_definition -type data
-
-./resource.ps1 aws_ec2_transit_gateway_vpc_attachment_accepter
 ./resource.ps1 aws_ses_configuration_set
 ./resource.ps1 aws_ses_domain_dkim
 ./resource.ps1 aws_ses_domain_identity
@@ -164,7 +134,17 @@ data.aws_eks_addon_version
 ./resource.ps1 aws_ses_domain_mail_from
 ./resource.ps1 aws_ses_event_destination
 ./resource.ps1 aws_ses_identity_notification_topic
+./resource.ps1 aws_snapshot_create_volume_permission
+./resource.ps1 aws_ssoadmin_customer_managed_policy_attachment
+./resource.ps1 aws_ssoadmin_permission_set
+./resource.ps1 aws_ssoadmin_permission_set_inline_policy
 ./resource.ps1 aws_transfer_server
 ./resource.ps1 aws_vpc_endpoint_subnet_association
+./resource.ps1 aws_waf_ipset
+./resource.ps1 aws_waf_rule
+./resource.ps1 aws_waf_web_acl
+./resource.ps1 aws_wafregional_ipset
+./resource.ps1 aws_wafregional_rule
+./resource.ps1 aws_wafregional_web_acl
 ./resource.ps1 aws_wafv2_web_acl_association
 ./resource.ps1 aws_wafv2_web_acl_logging_configuration

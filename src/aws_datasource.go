@@ -217,6 +217,7 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 		"aws_connect_security_profile":                         dataAwsConnectSecurityProfile,
 		"aws_connect_user_hierarchy_group":                     dataAwsConnectUserHierarchyGroup,
 		"aws_connect_user_hierarchy_structure":                 dataAwsConnectUserHierarchyStructure,
+		"aws_cur_report_definition":                            placeholder,
 	}
 
 	var Permissions []string
