@@ -152,29 +152,6 @@ data.aws_eks_addon_version
 
 //data
 
-./resource.ps1  aws_batch_compute_environment -type data
-./resource.ps1  aws_batch_job_queue -type data
-./resource.ps1  aws_batch_scheduling_policy -type data
-
-./resource.ps1  aws_ce_cost_category -type data
-./resource.ps1  aws_ce_tags -type data
-
-./resource.ps1  aws_cloudcontrolapi_resource -type data
-
-./resource.ps1  aws_service_discovery_dns_namespace -type data
-./resource.ps1  aws_service_discovery_http_namespace -type data
-./resource.ps1  aws_service_discovery_service -type data
-
-./resource.ps1  aws_cloudfront_cache_policy -type data
-./resource.ps1  aws_cloudfront_distribution -type data
-./resource.ps1  aws_cloudfront_function -type data
-./resource.ps1  aws_cloudfront_log_delivery_canonical_user_id -type data
-./resource.ps1  aws_cloudfront_origin_access_identities -type data
-./resource.ps1  aws_cloudfront_origin_access_identity -type data
-./resource.ps1  aws_cloudfront_origin_request_policy -type data
-./resource.ps1  aws_cloudfront_realtime_log_config -type data
-./resource.ps1  aws_cloudfront_response_headers_policy -type data
-
 ./resource.ps1  aws_connect_bot_association -type data
 ./resource.ps1  aws_connect_contact_flow -type data
 ./resource.ps1  aws_connect_contact_flow_module -type data

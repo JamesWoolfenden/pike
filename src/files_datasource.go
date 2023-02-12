@@ -438,3 +438,54 @@ var dataAwsCodecommitRepository []byte
 
 //go:embed mapping/aws/data/codestar-connections/aws_codestarconnections_connection.json
 var dataAwsCodestarconnectionsConnection []byte
+
+//go:embed mapping/aws/data/batch/aws_batch_compute_environment.json
+var dataAwsBatchComputeEnvironment []byte
+
+//go:embed mapping/aws/data/batch/aws_batch_job_queue.json
+var dataAwsBatchJobQueue []byte
+
+//go:embed mapping/aws/data/batch/aws_batch_scheduling_policy.json
+var dataAwsBatchSchedulingPolicy []byte
+
+//go:embed mapping/aws/data/ce/aws_ce_cost_category.json
+var dataAwsCeCostCategory []byte
+
+//go:embed mapping/aws/data/ce/aws_ce_tags.json
+var dataAwsCeTags []byte
+
+//go:embed mapping/aws/data/cloudformation/aws_cloudcontrolapi_resource.json
+var dataAwsCloudcontrolapiResource []byte
+
+//go:embed mapping/aws/data/cloudfront/aws_cloudfront_cache_policy.json
+var dataAwsCloudfrontCachePolicy []byte
+
+//go:embed mapping/aws/data/cloudfront/aws_cloudfront_distribution.json
+var dataAwsCloudfrontDistribution []byte
+
+//go:embed mapping/aws/data/cloudfront/aws_cloudfront_function.json
+var dataAwsCloudfrontFunction []byte
+
+//go:embed mapping/aws/data/cloudfront/aws_cloudfront_origin_access_identities.json
+var dataAwsCloudfrontOriginAccessIdentities []byte
+
+//go:embed mapping/aws/data/cloudfront/aws_cloudfront_origin_access_identity.json
+var dataAwsCloudfrontOriginAccessIdentity []byte
+
+//go:embed mapping/aws/data/cloudfront/aws_cloudfront_origin_request_policy.json
+var dataAwsCloudfrontOriginRequestPolicy []byte
+
+//go:embed mapping/aws/data/cloudfront/aws_cloudfront_realtime_log_config.json
+var dataAwsCloudfrontRealtimeLogConfig []byte
+
+//go:embed mapping/aws/data/cloudfront/aws_cloudfront_response_headers_policy.json
+var dataAwsCloudfrontResponseHeadersPolicy []byte
+
+//go:embed mapping/aws/data/servicediscovery/aws_service_discovery_dns_namespace.json
+var dataAwsServiceDiscoveryDNSNamespace []byte
+
+//go:embed mapping/aws/data/servicediscovery/aws_service_discovery_http_namespace.json
+var dataAwsServiceDiscoveryHTTPNamespace []byte
+
+//go:embed mapping/aws/data/servicediscovery/aws_service_discovery_service.json
+var dataAwsServiceDiscoveryService []byte

@@ -7,7 +7,7 @@
     "destroy": [],
     "modify": [],
     "plan": [
-      "iam:ListRoles"
+      "cloudfront:GetCloudFrontOriginAccessIdentity"
     ]
   }
 ]

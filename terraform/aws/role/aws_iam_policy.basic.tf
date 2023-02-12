@@ -7,9 +7,11 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "cloudformation:DescribeType",
-          "cloudformation:DescribeStacks",
-          "cloudformation:ListExports"
+          //data.aws_cloudfront_cache_policy.pike
+          "cloudfront:ListCachePolicies",
+
+
+
         ],
         "Resource" : "*",
       }
