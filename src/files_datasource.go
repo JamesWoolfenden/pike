@@ -528,3 +528,27 @@ var dataAwsConnectUserHierarchyGroup []byte
 
 //go:embed mapping/aws/data/connect/aws_connect_user_hierarchy_structure.json
 var dataAwsConnectUserHierarchyStructure []byte
+
+//go:embed mapping/aws/data/datapipeline/aws_datapipeline_pipeline.json
+var dataAwsDatapipelinePipeline []byte
+
+//go:embed mapping/aws/data/datapipeline/aws_datapipeline_pipeline_definition.json
+var dataAwsDatapipelinePipelineDefinition []byte
+
+//go:embed mapping/aws/data/rds/aws_docdb_engine_version.json
+var dataAwsDocDBEngineVersion []byte
+
+//go:embed mapping/aws/data/rds/aws_docdb_orderable_db_instance.json
+var dataAwsDocDBOrderableDBInstance []byte
+
+//go:embed mapping/aws/data/directconnect/aws_dx_connection.json
+var dataAwsDxConnection []byte
+
+//go:embed mapping/aws/data/directconnect/aws_dx_gateway.json
+var dataAwsDxGateway []byte
+
+//go:embed mapping/aws/data/directconnect/aws_dx_location.json
+var dataAwsDxLocation []byte
+
+//go:embed mapping/aws/data/directconnect/aws_dx_locations.json
+var dataAwsDxLocations []byte

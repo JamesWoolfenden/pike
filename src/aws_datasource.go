@@ -218,6 +218,14 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 		"aws_wafv2_rule_group":                                 dataAwsWafv2RuleGroup,
 		"aws_wafv2_web_acl":                                    dataAwsWafv2WebACL,
 		"aws_workspaces_bundle":                                dataAwsWorkspacesBundle,
+		"aws_datapipeline_pipeline":                            dataAwsDatapipelinePipeline,
+		"aws_datapipeline_pipeline_definition":                 dataAwsDatapipelinePipelineDefinition,
+		"aws_docdb_engine_version":                             dataAwsDocDBEngineVersion,
+		"aws_docdb_orderable_db_instance":                      dataAwsDocDBOrderableDBInstance,
+		"aws_dx_connection":                                    dataAwsDxConnection,
+		"aws_dx_gateway":                                       dataAwsDxGateway,
+		"aws_dx_location":                                      dataAwsDxLocation,
+		"aws_dx_locations":                                     dataAwsDxLocations,
 	}
 
 	var Permissions []string

@@ -7,8 +7,8 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-
-          "controltower:ListEnabledControls",
+          "datapipeline:GetPipelineDefinition",
+          "datapipeline:*"
         ],
         "Resource" : "*",
       }
