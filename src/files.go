@@ -1039,6 +1039,9 @@ var awsServicequotasServiceQuota []byte
 //go:embed mapping/aws/resource/ses/aws_ses_receipt_rule.json
 var awsSesReceiptRule []byte
 
+//go:embed mapping/aws/resource/ses/aws_ses_receipt_rule_set.json
+var awsSesReceiptRuleSet []byte
+
 //go:embed mapping/aws/resource/cloudfront/aws_cloudfront_origin_access_identity.json
 var awsCloudfrontOriginAccessIdentity []byte
 
