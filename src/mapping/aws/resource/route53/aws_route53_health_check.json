@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "route53:CreateHealthCheck",
+      "route53:DeleteHealthCheck",
+      "route53:GetHealthCheck",
+      "route53:GetHealthCheckCount",
+      "route53:GetHealthCheckLastFailureReason",
+      "route53:GetHealthCheckStatus",
+      "route53:ListHealthChecks",
+      "route53:ListTagsForResource",
+      "route53:ListTagsForResources",
+      "route53:UpdateHealthCheck"
+    ],
+    "attributes": {
+      "tags": [
+        "route53:ChangeTagsForResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

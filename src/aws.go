@@ -344,6 +344,7 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_redshift_usage_limit":                           awsRedshiftUsageLimit,
 		"aws_resourcegroups_group":                           awsResourcegroupsGroup,
 		"aws_route":                                          awsRoute,
+		"aws_route53_health_check":                           awsRoute53HealthCheck,
 		"aws_route53_hosted_zone_dnssec":                     awsRoute53HostedZoneDnssec,
 		"aws_route53_key_signing_key":                        awsRoute53KeySiginingKey,
 		"aws_route53_query_log":                              awsRoute53QueryLog,

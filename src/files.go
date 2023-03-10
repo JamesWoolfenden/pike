@@ -796,6 +796,9 @@ var awsMskScramSecretAssociation []byte
 //go:embed mapping/aws/resource/route53/aws_route53_key_signing_key.json
 var awsRoute53KeySiginingKey []byte
 
+//go:embed mapping/aws/resource/route53/aws_route53_health_check.json
+var awsRoute53HealthCheck []byte
+
 //go:embed mapping/aws/resource/route53/aws_route53_hosted_zone_dnssec.json
 var awsRoute53HostedZoneDnssec []byte
 
