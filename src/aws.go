@@ -382,6 +382,7 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_security_group_rule":                            awsSecurityGroupRule,
 		"aws_servicecatalog_portfolio":                       awsServicecatalogPortfolio,
 		"aws_servicequotas_service_quota":                    awsServicequotasServiceQuota,
+		"aws_ses_receipt_rule":                               awsSesReceiptRule,
 		"aws_sfn_activity":                                   awsSfnActivity,
 		"aws_sfn_state_machine":                              awsSfnStateMachine,
 		"aws_sns_topic":                                      awsSnsTopic,
