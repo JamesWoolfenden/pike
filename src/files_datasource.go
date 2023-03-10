@@ -58,6 +58,9 @@ var dataAwsSnsTopic []byte
 //go:embed mapping/aws/data/ssm/aws_ssm_parameter.json
 var dataAwsSsmParameter []byte
 
+//go:embed mapping/aws/data/kms/aws_kms_alias.json
+var dataAwsKmsAlias []byte
+
 //go:embed mapping/aws/data/kms/aws_kms_ciphertext.json
 var dataAwsKmsCiphertext []byte
 

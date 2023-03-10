@@ -147,6 +147,7 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 		"aws_iam_users":                                        dataAwsIamUsers,
 		"aws_inspector_rules_packages":                         dataAwsInspectorRulesPackages,
 		"aws_ivs_stream_key":                                   dataAwsIvsStreamKey,
+		"aws_kms_alias":                                        dataAwsKmsAlias,
 		"aws_kms_ciphertext":                                   dataAwsKmsCiphertext,
 		"aws_kms_custom_key_store":                             dataAwsKmsCustomKeyStore,
 		"aws_kms_key":                                          dataAwsKmsKey,
