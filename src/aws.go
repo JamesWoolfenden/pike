@@ -350,6 +350,7 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_route53_query_log":                              awsRoute53QueryLog,
 		"aws_route53_record":                                 awsRoute53Record,
 		"aws_route53_zone":                                   awsRoute53Zone,
+		"aws_route53_zone_association":                       awsRoute53ZoneAssociation,
 		"aws_route_table":                                    awsRouteTable,
 		"aws_route_table_association":                        awsRouteTableAssociation,
 		"aws_s3_bucket":                                      awsS3Bucket,

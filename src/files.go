@@ -160,6 +160,9 @@ var awsRoute53Record []byte
 //go:embed mapping/aws/resource/route53/aws_route53_zone.json
 var awsRoute53Zone []byte
 
+//go:embed mapping/aws/resource/route53/aws_route53_zone_association.json
+var awsRoute53ZoneAssociation []byte
+
 //go:embed mapping/aws/resource/sns/aws_sns_topic.json
 var awsSnsTopic []byte
 
