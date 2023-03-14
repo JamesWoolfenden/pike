@@ -271,6 +271,9 @@ var awsAutoscalingLifecycleHook []byte
 //go:embed mapping/aws/resource/autoscaling/aws_autoscaling_notification.json
 var awsAutoscalingNotification []byte
 
+//go:embed mapping/aws/resource/autoscaling/aws_autoscaling_policy.json
+var awsAutoscalingPolicy []byte
+
 //go:embed mapping/aws/resource/autoscaling/aws_autoscaling_attachment.json
 var awsAutoscalingAttachment []byte
 

@@ -78,6 +78,7 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_autoscaling_group":                              awsAutoscalingGroup,
 		"aws_autoscaling_lifecycle_hook":                     awsAutoscalingLifecycleHook,
 		"aws_autoscaling_notification":                       awsAutoscalingNotification,
+		"aws_autoscaling_policy":                             awsAutoscalingPolicy,
 		"aws_backup_framework":                               awsBackupFramework,
 		"aws_backup_global_settings":                         awsBackupGlobalSettings,
 		"aws_backup_plan":                                    awsBackupPlan,
