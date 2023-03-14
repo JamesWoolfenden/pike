@@ -420,6 +420,7 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_vpc_peering_connection":                         awsVpcPeeringConnection,
 		"aws_vpc_peering_connection_accepter":                awsVpcPeeringConnectionAccepter,
 		"aws_vpc_peering_connection_options":                 awsVpcPeeringConnectionOptions,
+		"aws_vpn_connection":                                 awsVpnConnection,
 		"aws_vpn_gateway":                                    awsVpnGateway,
 		"aws_vpn_gateway_attachment":                         awsVpnGatewayAttachment,
 		"aws_vpn_gateway_route_propagation":                  awsVpnGatewayRoutePropagation,

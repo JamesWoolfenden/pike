@@ -241,6 +241,9 @@ var awsWafv2RuleGroup []byte
 //go:embed mapping/aws/resource/wafv2/aws_wafv2_regex_pattern_set.json
 var awsWafv2RegexPatternSet []byte
 
+//go:embed mapping/aws/resource/ec2/aws_vpn_connection.json
+var awsVpnConnection []byte
+
 //go:embed mapping/aws/resource/ec2/aws_vpn_gateway.json
 var awsVpnGateway []byte
 
