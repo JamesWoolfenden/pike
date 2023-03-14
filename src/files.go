@@ -1048,6 +1048,9 @@ var awsElasticacheUser []byte
 //go:embed mapping/aws/resource/servicequota/aws_servicequotas_service_quota.json
 var awsServicequotasServiceQuota []byte
 
+//go:embed mapping/aws/resource/ses/aws_ses_identity_notification_topic.json
+var awsSesIdentityNotificationTopic []byte
+
 //go:embed mapping/aws/resource/ses/aws_ses_receipt_rule.json
 var awsSesReceiptRule []byte
 

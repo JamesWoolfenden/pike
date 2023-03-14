@@ -1,0 +1,12 @@
+[
+  {
+    "apply": [
+      "ses:GetIdentityNotificationAttributes",
+      "ses:SetIdentityNotificationTopic"
+    ],
+    "attributes": {},
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
