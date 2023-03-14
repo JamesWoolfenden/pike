@@ -325,6 +325,8 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_networkfirewall_firewall_policy":                awsNetworkfirewallFirewallPolicy,
 		"aws_networkfirewall_logging_configuration":          awsNetworkfirewallLoggingConfiguration,
 		"aws_networkfirewall_rule_group":                     awsNetworkfirewallRuleGroup,
+		"aws_opensearch_domain":                              awsElasticsearchDomain,
+		"aws_opensearch_domain_policy":                       awsElasticsearchDomainPolicy,
 		"aws_placement_group":                                awsPlacementGroup,
 		"aws_rds_cluster":                                    awsRdsCluster,
 		"aws_rds_cluster_activity_stream":                    awsRdsClusterActivityStream,
