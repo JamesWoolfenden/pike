@@ -116,6 +116,7 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 		"aws_ecr_authorization":                                dataAwsEcrAuthorization,
 		"aws_ecr_authorization_token":                          dataAwsEcrAuthorizationToken,
 		"aws_ecr_repository":                                   dataAwsEcrRepository,
+		"aws_ecs_cluster":                                      dataAwsEcsCluster,
 		"aws_ecs_task_definition":                              dataAwsEcsTaskDefinition,
 		"aws_efs_access_point":                                 dataAwsEfsAccessPoint,
 		"aws_efs_access_points":                                dataAwsEfsAccessPoints,

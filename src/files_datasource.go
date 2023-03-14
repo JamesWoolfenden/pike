@@ -106,6 +106,9 @@ var dataAwsSsoadminInstances []byte
 //go:embed mapping/aws/data/ecr/aws_ecr_authorization_token.json
 var dataAwsEcrAuthorization []byte
 
+//go:embed mapping/aws/data/ecs/aws_ecs_cluster.json
+var dataAwsEcsCluster []byte
+
 //go:embed mapping/aws/data/ecs/aws_ecs_task_definition.json
 var dataAwsEcsTaskDefinition []byte
 
