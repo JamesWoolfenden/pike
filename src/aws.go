@@ -76,6 +76,7 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_athena_workgroup":                               awsAthenaWorkgroup,
 		"aws_autoscaling_attachment":                         awsAutoscalingAttachment,
 		"aws_autoscaling_group":                              awsAutoscalingGroup,
+		"aws_autoscaling_lifecycle_hook":                     awsAutoscalingLifecycleHook,
 		"aws_backup_framework":                               awsBackupFramework,
 		"aws_backup_global_settings":                         awsBackupGlobalSettings,
 		"aws_backup_plan":                                    awsBackupPlan,

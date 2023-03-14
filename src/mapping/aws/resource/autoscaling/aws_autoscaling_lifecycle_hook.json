@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "autoscaling:DeleteAutoscalingHook",
+      "autoscaling:DescribeLifecycleHookTypes",
+      "autoscaling:DescribeLifecycleHooks",
+      "autoscaling:PutLifecycleHook"
+    ],
+    "attributes": {},
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

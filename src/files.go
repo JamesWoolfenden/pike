@@ -265,6 +265,9 @@ var awsEbsVolume []byte
 //go:embed mapping/aws/resource/autoscaling/aws_autoscaling_group.json
 var awsAutoscalingGroup []byte
 
+//go:embed mapping/aws/resource/autoscaling/aws_autoscaling_lifecycle_hook.json
+var awsAutoscalingLifecycleHook []byte
+
 //go:embed mapping/aws/resource/autoscaling/aws_autoscaling_attachment.json
 var awsAutoscalingAttachment []byte
 
