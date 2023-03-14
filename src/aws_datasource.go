@@ -9,6 +9,7 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 
 	TFLookup := map[string]interface{}{
 		"aws_acm_certificate":                                  dataAwsAcmCertificate,
+		"aws_alb":                                              dataAwsLb,
 		"aws_ami":                                              dataAwsAmi,
 		"aws_api_gateway_api_key":                              dataAwsAPIGateway,
 		"aws_api_gateway_domain_name":                          dataAwsAPIGateway,
@@ -114,6 +115,7 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 		"aws_ec2_transit_gateway_attachment":                   dataAwsEc2TransitGatewayAttachment,
 		"aws_ecr_authorization":                                dataAwsEcrAuthorization,
 		"aws_ecr_authorization_token":                          dataAwsEcrAuthorizationToken,
+		"aws_ecr_repository":                                   dataAwsEcrRepository,
 		"aws_ecs_task_definition":                              dataAwsEcsTaskDefinition,
 		"aws_efs_access_point":                                 dataAwsEfsAccessPoint,
 		"aws_efs_access_points":                                dataAwsEfsAccessPoints,

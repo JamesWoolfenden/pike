@@ -118,6 +118,9 @@ var dataAwsLambdaFunction []byte
 //go:embed mapping/aws/data/ecr/aws_ecr_authorization_token.json
 var dataAwsEcrAuthorizationToken []byte
 
+//go:embed mapping/aws/data/ecr/aws_ecr_repository.json
+var dataAwsEcrRepository []byte
+
 //go:embed mapping/aws/data/outposts/aws_outposts_outpost.json
 var dataAwsOutpostsOutpost []byte
 
