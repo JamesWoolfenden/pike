@@ -181,6 +181,9 @@ var awsDbInstance []byte
 //go:embed mapping/aws/resource/rds/aws_db_cluster_snapshot.json
 var awsDbClusterSnapshot []byte
 
+//go:embed mapping/aws/resource/rds/aws_db_event_subscription.json
+var awsDbEventSubscription []byte
+
 //go:embed mapping/aws/resource/rds/aws_rds_cluster.json
 var awsRdsCluster []byte
 

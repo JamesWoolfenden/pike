@@ -149,6 +149,7 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_dax_parameter_group":                            awsDaxParameterGroup,
 		"aws_dax_subnet_group":                               awsDaxSubnetGroup,
 		"aws_db_cluster_snapshot":                            awsDbClusterSnapshot,
+		"aws_db_event_subscription":                          awsDbEventSubscription,
 		"aws_db_instance":                                    awsDbInstance,
 		"aws_db_option_group":                                awsDbOptionGroup,
 		"aws_db_parameter_group":                             awsDbParameterGroup,
