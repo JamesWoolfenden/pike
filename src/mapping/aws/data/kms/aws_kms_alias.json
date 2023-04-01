@@ -1,0 +1,11 @@
+[
+  {
+    "apply": [],
+    "attributes": {},
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "kms:ListAliases"
+    ]
+  }
+]

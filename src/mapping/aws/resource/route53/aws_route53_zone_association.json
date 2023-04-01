@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "route53:CreateVPCAssociationAuthorization",
+      "route53:DeleteVPCAssociationAuthorization",
+      "route53:ListVPCAssociationAuthorizations"
+    ],
+    "attributes": {},
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

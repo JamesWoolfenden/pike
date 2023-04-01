@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "autoscaling:DeleteNotificationConfiguration",
+      "autoscaling:DescribeAutoScalingNotificationTypes",
+      "autoscaling:DescribeNotificationConfigurations",
+      "autoscaling:PutNotificationConfiguration"
+    ],
+    "attributes": {},
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

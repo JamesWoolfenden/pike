@@ -1,5 +1,6 @@
 on: pull_request
 name: Pull request
+permissions: read-all
 jobs:
   lint:
     runs-on: ubuntu-latest

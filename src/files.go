@@ -160,6 +160,9 @@ var awsRoute53Record []byte
 //go:embed mapping/aws/resource/route53/aws_route53_zone.json
 var awsRoute53Zone []byte
 
+//go:embed mapping/aws/resource/route53/aws_route53_zone_association.json
+var awsRoute53ZoneAssociation []byte
+
 //go:embed mapping/aws/resource/sns/aws_sns_topic.json
 var awsSnsTopic []byte
 
@@ -177,6 +180,9 @@ var awsDbInstance []byte
 
 //go:embed mapping/aws/resource/rds/aws_db_cluster_snapshot.json
 var awsDbClusterSnapshot []byte
+
+//go:embed mapping/aws/resource/rds/aws_db_event_subscription.json
+var awsDbEventSubscription []byte
 
 //go:embed mapping/aws/resource/rds/aws_rds_cluster.json
 var awsRdsCluster []byte
@@ -235,6 +241,9 @@ var awsWafv2RuleGroup []byte
 //go:embed mapping/aws/resource/wafv2/aws_wafv2_regex_pattern_set.json
 var awsWafv2RegexPatternSet []byte
 
+//go:embed mapping/aws/resource/ec2/aws_vpn_connection.json
+var awsVpnConnection []byte
+
 //go:embed mapping/aws/resource/ec2/aws_vpn_gateway.json
 var awsVpnGateway []byte
 
@@ -261,6 +270,15 @@ var awsEbsVolume []byte
 
 //go:embed mapping/aws/resource/autoscaling/aws_autoscaling_group.json
 var awsAutoscalingGroup []byte
+
+//go:embed mapping/aws/resource/autoscaling/aws_autoscaling_lifecycle_hook.json
+var awsAutoscalingLifecycleHook []byte
+
+//go:embed mapping/aws/resource/autoscaling/aws_autoscaling_notification.json
+var awsAutoscalingNotification []byte
+
+//go:embed mapping/aws/resource/autoscaling/aws_autoscaling_policy.json
+var awsAutoscalingPolicy []byte
 
 //go:embed mapping/aws/resource/autoscaling/aws_autoscaling_attachment.json
 var awsAutoscalingAttachment []byte
@@ -315,6 +333,9 @@ var awsEcrLifecyclePolicy []byte
 
 //go:embed mapping/aws/resource/ecr/aws_ecr_pull_through_cache_rule.json
 var awsEcrPullThroughCacheRule []byte
+
+//go:embed mapping/aws/resource/ecr/aws_ecr_registry_scanning_configuration.json
+var awsEcrRegistryScanningConfiguration []byte
 
 //go:embed mapping/aws/resource/ecr/aws_ecr_repository.json
 var awsEcrRepository []byte
@@ -793,6 +814,9 @@ var awsMskScramSecretAssociation []byte
 //go:embed mapping/aws/resource/route53/aws_route53_key_signing_key.json
 var awsRoute53KeySiginingKey []byte
 
+//go:embed mapping/aws/resource/route53/aws_route53_health_check.json
+var awsRoute53HealthCheck []byte
+
 //go:embed mapping/aws/resource/route53/aws_route53_hosted_zone_dnssec.json
 var awsRoute53HostedZoneDnssec []byte
 
@@ -1026,6 +1050,15 @@ var awsElasticacheUser []byte
 
 //go:embed mapping/aws/resource/servicequota/aws_servicequotas_service_quota.json
 var awsServicequotasServiceQuota []byte
+
+//go:embed mapping/aws/resource/ses/aws_ses_identity_notification_topic.json
+var awsSesIdentityNotificationTopic []byte
+
+//go:embed mapping/aws/resource/ses/aws_ses_receipt_rule.json
+var awsSesReceiptRule []byte
+
+//go:embed mapping/aws/resource/ses/aws_ses_receipt_rule_set.json
+var awsSesReceiptRuleSet []byte
 
 //go:embed mapping/aws/resource/cloudfront/aws_cloudfront_origin_access_identity.json
 var awsCloudfrontOriginAccessIdentity []byte

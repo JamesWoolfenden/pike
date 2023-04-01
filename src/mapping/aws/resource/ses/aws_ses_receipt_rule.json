@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "ses:CreateReceiptRule",
+      "ses:DeleteReceiptRule",
+      "ses:DescribeReceiptRule",
+      "ses:UpdateReceiptRule"
+    ],
+    "attributes": {},
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

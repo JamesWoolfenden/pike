@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "rds:AddSourceIdentifierToSubscription",
+      "rds:CreateEventSubscription",
+      "rds:DeleteEventSubscription",
+      "rds:DeleteEventSubscriptions",
+      "rds:ModifyEventSubscription",
+      "rds:RemoveSourceIdentifierFromSubscription"
+    ],
+    "attributes": {},
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
