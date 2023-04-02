@@ -7,6 +7,7 @@ on:
 permissions: read-all
 jobs:
   goreleaser:
+    permissions: write-all
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -24,7 +25,6 @@ jobs:
           gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
       - name: Run GoReleaser
-        permissions: write-all
         uses: goreleaser/goreleaser-action@v4.2.0
         with:
           version: latest
