@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "wafv2:PutLoggingConfiguration",
+      "wafv2:GetLoggingConfiguration"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
