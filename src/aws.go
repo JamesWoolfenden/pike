@@ -428,6 +428,8 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_wafv2_regex_pattern_set":                        awsWafv2RegexPatternSet,
 		"aws_wafv2_rule_group":                               awsWafv2RuleGroup,
 		"aws_wafv2_web_acl":                                  awsWafv2WebACL,
+		"aws_wafv2_web_acl_association":                      awsWafv2WebACLAssociation,
+		"aws_wafv2_web_acl_logging_configuration":            awsWafv2WebACLLoggingConfiguration,
 		"aws_xray_encryption_config":                         awsXrayEncryptionConfig,
 		"aws_xray_group":                                     awsXrayGroup,
 		"aws_xray_sampling_rule":                             awsXraySamplingRule,

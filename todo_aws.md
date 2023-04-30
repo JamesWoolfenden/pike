@@ -146,8 +146,6 @@
 ./resource.ps1 aws_wafregional_ipset
 ./resource.ps1 aws_wafregional_rule
 ./resource.ps1 aws_wafregional_web_acl
-./resource.ps1 aws_wafv2_web_acl_association
-./resource.ps1 aws_wafv2_web_acl_logging_configuration
 
 ## data
 
