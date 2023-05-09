@@ -1,5 +1,6 @@
 # todo
 
+```pwsh
 ./resource.ps1 aws_appmesh_gateway_route
 ./resource.ps1 aws_appmesh_mesh
 ./resource.ps1 aws_appmesh_route
@@ -7,9 +8,7 @@
 ./resource.ps1 aws_appmesh_virtual_node
 ./resource.ps1 aws_appmesh_virtual_router
 ./resource.ps1 aws_appmesh_virtual_service
-./resource.ps1 aws_appsync_datasource
-./resource.ps1 aws_appsync_graphql_api
-./resource.ps1 aws_appsync_resolver
+
 ./resource.ps1 aws_autoscaling_group_tag
 ./resource.ps1 aws_autoscaling_schedule
 ./resource.ps1 aws_budgets_budget_action
@@ -54,8 +53,6 @@
 ./resource.ps1 aws_ec2_transit_gateway_vpc_attachment_accepter
 ./resource.ps1 aws_eks_fargate_profile
 ./resource.ps1 aws_eks_identity_provider_config
-./resource.ps1 aws_emr_cluster
-./resource.ps1 aws_emr_security_configuration
 ./resource.ps1 aws_evidently_project
 ./resource.ps1 aws_grafana_license_association
 ./resource.ps1 aws_grafana_role_association
@@ -187,3 +184,42 @@
 ./resource.ps1 aws_elasticache_user -type data
 ./resource.ps1 aws_elastic_beanstalk_hosted_zone -type data
 ./resource.ps1 aws_elasticsearch_domain -type data
+```
+
+./resource.ps1 aws_appsync_api_cache
+./resource.ps1 aws_appsync_api_key
+./resource.ps1 aws_appsync_datasource
+./resource.ps1 aws_appsync_domain_name
+./resource.ps1 aws_appsync_domain_name_api_association
+./resource.ps1 aws_appsync_function
+./resource.ps1 aws_appsync_graphql_api
+./resource.ps1 aws_appsync_resolver
+./resource.ps1 aws_appsync_type
+./resource.ps1 aws_auditmanager_account_registration
+./resource.ps1 aws_auditmanager_assessment
+./resource.ps1 aws_auditmanager_assessment_delegation
+./resource.ps1 aws_auditmanager_assessment_report
+./resource.ps1 aws_auditmanager_control
+./resource.ps1 aws_auditmanager_framework
+./resource.ps1 aws_auditmanager_framework_share
+./resource.ps1 aws_auditmanager_organization_admin_account_registration
+./resource.ps1 aws_cloudwatch_log_data_protection_policy
+./resource.ps1 aws_datasync_location_object_storage
+./resource.ps1 aws_dms_s3_endpoint
+./resource.ps1 aws_ec2_instance_state
+./resource.ps1 aws_ivschat_logging_configuration
+./resource.ps1 aws_ivschat_room
+./resource.ps1 aws_lightsail_bucket
+./resource.ps1 aws_networkmanager_core_network
+./resource.ps1 aws_rds_clusters
+./resource.ps1 aws_rds_export_task
+./resource.ps1 aws_redshiftserverless_resource_policy
+./resource.ps1 aws_resourceexplorer2_index
+./resource.ps1 aws_resourceexplorer2_view
+./resource.ps1 aws_rum_metrics_destination
+./resource.ps1 aws_sagemaker_space
+./resource.ps1 aws_scheduler_schedule
+./resource.ps1 aws_sesv2_configuration_set_event_destination
+./resource.ps1 aws_ssoadmin_instance_access_control_attributes
+./resource.ps1 aws_ssoadmin_permissions_boundary_attachment
+./resource.ps1 aws_vpc_network_performance_metric_subscription
