@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "wafv2:AssociateWebACL",
+      "wafv2:GetWebACLForResource",
+      "apigateway:SetWebACL",
+      "elasticloadbalancing:SetWebAcl",
+      "appsync:SetWebACL",
+      "cognito-idp:AssociateWebACL",
+      "cognito-idp:GetWebACLForResource",
+      "cognito-idp:ListResourcesForWebACL",
+      "apprunner:ListAssociatedServicesForWebAcl",
+      "apprunner:AssociateWebAcl",
+      "apprunner:DescribeWebAclForService"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "cognito-idp:DisassociateWebACL",
+      "apprunner:DisassociateWebAcl",
+      "wafv2:DisassociateWebACL"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

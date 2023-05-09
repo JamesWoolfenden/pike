@@ -143,8 +143,6 @@
 ./resource.ps1 aws_wafregional_ipset
 ./resource.ps1 aws_wafregional_rule
 ./resource.ps1 aws_wafregional_web_acl
-./resource.ps1 aws_wafv2_web_acl_association
-./resource.ps1 aws_wafv2_web_acl_logging_configuration
 
 ## data
 
@@ -160,30 +158,6 @@
 ./resource.ps1 aws_imagebuilder_image_recipes -type data
 ./resource.ps1 aws_imagebuilder_infrastructure_configuration -type data
 ./resource.ps1 aws_imagebuilder_infrastructure_configurations -type data
-./resource.ps1 aws_ecr_image -type data
-./resource.ps1 aws_ecr_repository -type data
-./resource.ps1 aws_ecrpublic_authorization_token -type data
-./resource.ps1 aws_ecs_container_definition -type data
-./resource.ps1 aws_ecs_service -type data
-./resource.ps1 aws_eks_addon -type data
-./resource.ps1 aws_eks_addon_version -type data
-./resource.ps1 aws_eks_cluster_auth -type data
-./resource.ps1 aws_eks_clusters -type data
-./resource.ps1 aws_eks_node_group -type data
-./resource.ps1 aws_eks_node_groups -type data
-./resource.ps1 aws_lb_hosted_zone_id -type data
-./resource.ps1 aws_lb_listener -type data
-./resource.ps1 aws_lb_target_group -type data
-./resource.ps1 aws_elb -type data
-./resource.ps1 aws_elb_hosted_zone_id -type data
-./resource.ps1 aws_elb_service_account -type data
-./resource.ps1 aws_emr_release_labels -type data
-./resource.ps1 aws_emrcontainers_virtual_cluster -type data
-./resource.ps1 aws_elasticache_cluster -type data
-./resource.ps1 aws_elasticache_replication_group -type data
-./resource.ps1 aws_elasticache_user -type data
-./resource.ps1 aws_elastic_beanstalk_hosted_zone -type data
-./resource.ps1 aws_elasticsearch_domain -type data
 ```
 
 ./resource.ps1 aws_appsync_api_cache
@@ -212,7 +186,8 @@
 ./resource.ps1 aws_lightsail_bucket
 ./resource.ps1 aws_networkmanager_core_network
 ./resource.ps1 aws_rds_clusters
-./resource.ps1 aws_rds_export_task
+./resource.ps1 aws_rds_export_taskgit push
+
 ./resource.ps1 aws_redshiftserverless_resource_policy
 ./resource.ps1 aws_resourceexplorer2_index
 ./resource.ps1 aws_resourceexplorer2_view

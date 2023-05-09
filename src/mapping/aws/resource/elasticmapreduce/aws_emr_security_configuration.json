@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "elasticmapreduce:CreateSecurityConfiguration",
+      "elasticmapreduce:DescribeSecurityConfiguration",
+      "elasticmapreduce:DeleteSecurityConfiguration"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "elasticmapreduce:DeleteSecurityConfiguration"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

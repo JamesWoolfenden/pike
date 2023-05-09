@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "ses:CloneReceiptRuleSet",
+      "ses:CreateReceiptRuleSet",
+      "ses:DeleteReceiptRuleSet",
+      "ses:DescribeActiveReceiptRuleSet",
+      "ses:DescribeReceiptRuleSet",
+      "ses:ListReceiptRuleSets",
+      "ses:ReorderReceiptRuleSet",
+      "ses:SetActiveReceiptRuleSet",
+      "ses:SetReceiptRulePosition"
+    ],
+    "attributes": {},
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -58,6 +58,9 @@ var dataAwsSnsTopic []byte
 //go:embed mapping/aws/data/ssm/aws_ssm_parameter.json
 var dataAwsSsmParameter []byte
 
+//go:embed mapping/aws/data/kms/aws_kms_alias.json
+var dataAwsKmsAlias []byte
+
 //go:embed mapping/aws/data/kms/aws_kms_ciphertext.json
 var dataAwsKmsCiphertext []byte
 
@@ -103,6 +106,9 @@ var dataAwsSsoadminInstances []byte
 //go:embed mapping/aws/data/ecr/aws_ecr_authorization_token.json
 var dataAwsEcrAuthorization []byte
 
+//go:embed mapping/aws/data/ecs/aws_ecs_cluster.json
+var dataAwsEcsCluster []byte
+
 //go:embed mapping/aws/data/ecs/aws_ecs_task_definition.json
 var dataAwsEcsTaskDefinition []byte
 
@@ -114,6 +120,9 @@ var dataAwsLambdaFunction []byte
 
 //go:embed mapping/aws/data/ecr/aws_ecr_authorization_token.json
 var dataAwsEcrAuthorizationToken []byte
+
+//go:embed mapping/aws/data/ecr/aws_ecr_repository.json
+var dataAwsEcrRepository []byte
 
 //go:embed mapping/aws/data/outposts/aws_outposts_outpost.json
 var dataAwsOutpostsOutpost []byte
@@ -552,3 +561,42 @@ var dataAwsDxLocation []byte
 
 //go:embed mapping/aws/data/directconnect/aws_dx_locations.json
 var dataAwsDxLocations []byte
+
+//go:embed mapping/aws/data/elasticloadbalancing/aws_lb_target_group.json
+var dataAwsLbTargetGroup []byte
+
+//go:embed mapping/aws/data/elasticloadbalancing/aws_lb_listener.json
+var dataAwsLbListener []byte
+
+//go:embed mapping/aws/data/elasticache/aws_elasticache_cluster.json
+var dataAwsElasticacheCluster []byte
+
+//go:embed mapping/aws/data/elasticache/aws_elasticache_replication_group.json
+var dataAwsElasticacheReplicationGroup []byte
+
+//go:embed mapping/aws/data/elasticache/aws_elasticache_user.json
+var dataAwsElasticacheUser []byte
+
+//go:embed mapping/aws/data/elasticsearch/aws_elasticsearch_domain.json
+var dataAwsElasticsearchDomain []byte
+
+//go:embed mapping/aws/data/elasticmapreduce/aws_emr_release_labels.json
+var dataAwsEmrReleaseLabels []byte
+
+//go:embed mapping/aws/data/ecr/aws_ecr_image.json
+var dataAwsEcrImage []byte
+
+//go:embed mapping/aws/data/ecs/aws_ecs_container_definition.json
+var dataAwsEcsContainerDefinition []byte
+
+//go:embed mapping/aws/data/ecs/aws_ecs_service.json
+var dataDataEcsService []byte
+
+//go:embed mapping/aws/data/eks/aws_eks_clusters.json
+var dataAwsEksClusters []byte
+
+//go:embed mapping/aws/data/eks/aws_eks_node_group.json
+var dataAwsEksNodeGroup []byte
+
+//go:embed mapping/aws/data/eks/aws_eks_node_groups.json
+var dataAwsEksNodeGroups []byte

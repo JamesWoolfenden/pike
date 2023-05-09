@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "autoscaling:DeletePolicy",
+      "autoscaling:DescribeAdjustmentTypes",
+      "autoscaling:DescribeTerminationPolicyTypes",
+      "autoscaling:ExecutePolicy",
+      "autoscaling:PutScalingPolicy"
+    ],
+    "attributes": {},
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

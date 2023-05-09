@@ -1,0 +1,12 @@
+[
+  {
+    "apply": [
+      "ecr:GetRegistryScanningConfiguration",
+      "ecr:PutRegistryScanningConfiguration"
+    ],
+    "attributes": {},
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

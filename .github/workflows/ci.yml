@@ -4,6 +4,7 @@ on:
       - master
 
 name: CI
+permissions: read-all
 
 jobs:
   test:

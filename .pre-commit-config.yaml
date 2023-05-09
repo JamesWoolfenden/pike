@@ -18,7 +18,7 @@ repos:
       - id: detect-aws-credentials
       - id: detect-private-key
   - repo: https://github.com/Lucas-C/pre-commit-hooks
-    rev: v1.4.2
+    rev: v1.5.1
     hooks:
       - id: forbid-tabs
         exclude_types: [python, javascript, dtd, markdown, makefile, xml]
@@ -38,15 +38,11 @@ repos:
       - id: terraform-fmt
         language_version: python3.10
   - repo: https://github.com/gruntwork-io/pre-commit
-    rev: v0.1.18
+    rev: v0.1.20
     hooks:
       - id: gofmt
       - id: goimports
       - id: golint
-  - repo: https://github.com/golangci/golangci-lint
-    rev: v1.51.1
-    hooks:
-      - id: golangci-lint
   - repo: https://github.com/syntaqx/git-hooks
     rev:  v0.0.17
     hooks:
@@ -54,3 +50,7 @@ repos:
         args: ["./..."]
       - id: go-mod-tidy
       - id: go-generate
+  - repo: https://github.com/golangci/golangci-lint
+    rev: v1.52.2
+    hooks:
+      - id: golangci-lint
