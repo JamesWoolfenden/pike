@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "cloudfront:CreateResponseHeadersPolicy",
+      "cloudfront:GetResponseHeadersPolicy",
+      "cloudfront:DeleteResponseHeadersPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "cloudfront:DeleteResponseHeadersPolicy"
+    ],
+    "modify": [
+      "cloudfront:UpdateResponseHeadersPolicy"
+    ],
+    "plan": []
+  }
+]

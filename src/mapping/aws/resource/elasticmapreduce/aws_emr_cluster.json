@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "elasticmapreduce:RunJobFlow",
+      "iam:PassRole",
+      "elasticmapreduce:DescribeCluster",
+      "iam:CreateServiceLinkedRole",
+      "elasticmapreduce:ListBootstrapActions",
+      "elasticmapreduce:ListSteps",
+      "elasticmapreduce:GetAutoTerminationPolicy"
+    ],
+    "attributes": {
+      "tags": [
+        "elasticmapreduce:AddTags",
+        "elasticmapreduce:RemoveTags"
+      ]
+    },
+    "destroy": [
+      "elasticmapreduce:TerminateJobFlows"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

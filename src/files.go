@@ -1081,6 +1081,15 @@ var awsDynamodbTag []byte
 //go:embed mapping/aws/resource/backend/s3.json
 var s3backend []byte
 
+//go:embed mapping/aws/resource/cloudfront/aws_cloudfront_response_headers_policy.json
+var awsCloudfrontResponseHeadersPolicy []byte
+
+//go:embed mapping/aws/resource/elasticmapreduce/aws_emr_cluster.json
+var awsEmrCluster []byte
+
+//go:embed mapping/aws/resource/elasticmapreduce/aws_emr_security_configuration.json
+var awsEmrSecurityConfiguration []byte
+
 //go:embed mapping/aws/resource/wafv2/aws_wafv2_web_acl_association.json
 var awsWafv2WebACLAssociation []byte
 

@@ -72,6 +72,8 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_api_gateway_usage_plan":                         awsApigatewayv2Api,
 		"aws_api_gateway_usage_plan_key":                     awsApigatewayv2Api,
 		"aws_apigatewayv2_api":                               awsApigatewayv2Api,
+		"aws_apigatewayv2_route":                             awsApigatewayv2Api,
+		"aws_apigatewayv2_stage":                             awsApigatewayv2Api,
 		"aws_appautoscaling_policy":                          awsAppautoscalingPolicy,
 		"aws_appautoscaling_scheduled_action":                awsAppautoscalingScheduledAction,
 		"aws_appautoscaling_target":                          awsAppautoscalingTarget,
@@ -111,6 +113,7 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_cloudfront_origin_access_control":               awsCloudfrontOriginAccessControl,
 		"aws_cloudfront_origin_access_identity":              awsCloudfrontOriginAccessIdentity,
 		"aws_cloudfront_public_key":                          awsCloudfrontPublicKey,
+		"aws_cloudfront_response_headers_policy":             awsCloudfrontResponseHeadersPolicy,
 		"aws_cloudtrail":                                     awsCloudtrail,
 		"aws_cloudwatch_composite_alarm":                     awsCloudwatchCompositeAlarm,
 		"aws_cloudwatch_dashboard":                           awsCloudwatchDashboard,
@@ -442,6 +445,8 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_xray_group":                                     awsXrayGroup,
 		"aws_xray_sampling_rule":                             awsXraySamplingRule,
 		"backend":                                            s3backend,
+		"aws_emr_cluster":                                    awsEmrCluster,
+		"aws_emr_security_configuration":                     awsEmrSecurityConfiguration,
 	}
 
 	var (

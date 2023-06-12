@@ -7,7 +7,9 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "ecs:DescribeTaskDefinition",
+          "elasticmapreduce:CreateSecurityConfiguration",
+          "elasticmapreduce:DescribeSecurityConfiguration",
+          "elasticmapreduce:DeleteSecurityConfiguration"
         ],
         "Resource" : "*",
       }
