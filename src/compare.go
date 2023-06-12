@@ -5,10 +5,9 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/rs/zerolog/log"
-
 	"github.com/aws/aws-sdk-go-v2/config"
 	"github.com/aws/aws-sdk-go-v2/service/iam"
+	"github.com/rs/zerolog/log"
 	diff "github.com/yudai/gojsondiff"
 	"github.com/yudai/gojsondiff/formatter"
 )
@@ -32,37 +31,35 @@ func Compare(directory string, arn string, init bool) (bool, error) {
 	Policy, _ := GetPolicyVersion(client, arn, *Version)
 
 	iacPolicy, err := MakePolicy(directory, nil, init)
-
 	if err != nil {
 		return theSame, err
 	}
 
 	Sorted, err := SortActions(iacPolicy.AWS.JSONOut)
-
 	if err != nil {
 		return theSame, err
 	}
 
 	// iam versus iac
 	fmt.Printf("IAM Policy %s versus Local %s \n", arn, directory)
+
 	theSame, err = CompareIAMPolicy(*Policy, *Sorted)
 
 	return theSame, err
 }
 
 // CompareIAMPolicy takes to IAm policies and compares
-func CompareIAMPolicy(Policy string, OldPolicy string) (bool, error) {
-
+func CompareIAMPolicy(policy string, oldPolicy string) (bool, error) {
 	differ := diff.New()
-	d, err := differ.Compare([]byte(Policy), []byte(OldPolicy))
+	compare, err := differ.Compare([]byte(policy), []byte(oldPolicy))
 
 	if err != nil {
 		return false, err
 	}
 
-	if d.Modified() {
+	if compare.Modified() {
 		var aJSON map[string]interface{}
-		err = json.Unmarshal([]byte(Policy), &aJSON)
+		err = json.Unmarshal([]byte(policy), &aJSON)
 
 		if err != nil {
 			return false, err
@@ -74,7 +71,7 @@ func CompareIAMPolicy(Policy string, OldPolicy string) (bool, error) {
 		}
 
 		myFormatter := formatter.NewAsciiFormatter(aJSON, myConfig)
-		diffString, err := myFormatter.Format(d)
+		diffString, err := myFormatter.Format(compare)
 
 		if err != nil {
 			return false, err

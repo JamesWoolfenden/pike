@@ -72,5 +72,4 @@ func TestApply(t *testing.T) {
 			}
 		})
 	}
-
 }

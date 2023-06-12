@@ -2,6 +2,7 @@ package pike
 
 import (
 	"errors"
+	"fmt"
 	"os"
 	"path/filepath"
 	"strings"
@@ -14,6 +15,7 @@ import (
 // GetResources retrieves all the resources in a tf file
 func GetResources(file string, dirName string) ([]ResourceV2, error) {
 	var Resources []ResourceV2
+
 	temp, err := GetResourceBlocks(file)
 	if err != nil {
 		return Resources, err
@@ -25,21 +27,17 @@ func GetResources(file string, dirName string) ([]ResourceV2, error) {
 
 		ignore := []string{"terraform", "output", "provider", "variable", "locals", "template"}
 
-		if stringInSlice(resource.TypeName, ignore) {
+		if StringInSlice(resource.TypeName, ignore) {
 			Resources, err := DetectBackend(resource, block, Resources)
 			if err == nil {
-				return Resources, err
+				return Resources, fmt.Errorf("faile dto detect backend %w", err)
 			}
 			continue
 		}
 
 		if strings.Contains(resource.TypeName, "module") {
-			LocalResources := getLocalModules(block, dirName)
+			LocalResources := GetLocalModules(block, dirName)
 			Resources = append(LocalResources, Resources...)
-			if err != nil {
-				log.Print(err)
-				continue
-			}
 		}
 
 		if block.Labels != nil {
@@ -59,6 +57,7 @@ func GetResources(file string, dirName string) ([]ResourceV2, error) {
 			resource.Provider = "unknown"
 			log.Print("parsing error for ", block.Type)
 		}
+
 		Resources = append(Resources, resource)
 	}
 
@@ -66,20 +65,21 @@ func GetResources(file string, dirName string) ([]ResourceV2, error) {
 }
 
 // DetectBackend handles permissions for backend blocks
-func DetectBackend(resource ResourceV2, block *hclsyntax.Block, Resources []ResourceV2) ([]ResourceV2, error) {
-	if resource.TypeName == "terraform" {
+func DetectBackend(resource ResourceV2, block *hclsyntax.Block, resources []ResourceV2) ([]ResourceV2, error) {
+	if resource.TypeName == terraform {
 		for _, terraform := range block.Body.Blocks {
 			if terraform.Type == "backend" {
 				if terraform.Labels[0] == "s3" {
 					resource.Name = "backend"
 					resource.Provider = "aws"
 					resource.Attributes = []string{"s3"}
-					Resources = append(Resources, resource)
-					return Resources, nil
+					resources = append(resources, resource)
+					return resources, nil
 				}
 			}
 		}
 	}
+
 	return nil, errors.New("no Backend found")
 }
 
@@ -87,8 +87,9 @@ func DetectBackend(resource ResourceV2, block *hclsyntax.Block, Resources []Reso
 func GetResourceBlocks(file string) (*hclsyntax.Body, error) {
 	temp, _ := filepath.Abs(file)
 	src, err := os.ReadFile(temp)
+
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to read file: %w", err)
 	}
 
 	parser := hclparse.NewParser()
@@ -101,16 +102,11 @@ func GetResourceBlocks(file string) (*hclsyntax.Body, error) {
 	return parsedFile.Body.(*hclsyntax.Body), err
 }
 
-func getLocalModules(block *hclsyntax.Block, dirName string) []ResourceV2 {
+// GetLocalModules returen resource from path
+func GetLocalModules(block *hclsyntax.Block, dirName string) []ResourceV2 {
 	var Resources []ResourceV2
-	modulePath := GetModulePath(block)
 
-	//_, err := os.Stat(modulePath)
-	//if err != nil {
-	//	// could be totally valid
-	//	log.Print(err.Error())
-	//	return nil
-	//}
+	modulePath := GetModulePath(block)
 
 	// have the path to the module
 	modulePath = filepath.Join(dirName, "/", modulePath)
@@ -123,6 +119,7 @@ func getLocalModules(block *hclsyntax.Block, dirName string) []ResourceV2 {
 			Resources = append(Resources, resource...)
 		}
 	}
+
 	return Resources
 }
 
@@ -135,6 +132,7 @@ func GetModulePath(block *hclsyntax.Block) string {
 
 	castValue := value.(*hclsyntax.TemplateExpr)
 	parts := castValue.Parts
+
 	for _, part := range parts {
 		myPart := part.(*hclsyntax.LiteralValueExpr)
 		modulePath = myPart.Val.AsString()
@@ -156,6 +154,7 @@ func GetBlockAttributes(attributes []string, block *hclsyntax.Block) []string {
 
 		attributes = GetBlockAttributes(attributes, block)
 	}
+
 	return attributes
 }
 
@@ -163,6 +162,7 @@ func GetBlockAttributes(attributes []string, block *hclsyntax.Block) []string {
 func GetPermission(result ResourceV2) (Sorted, error) {
 	var err error
 	var myPermission Sorted
+
 	switch result.Provider {
 	case "aws":
 		myPermission.AWS, err = GetAWSPermissions(result)
@@ -171,6 +171,7 @@ func GetPermission(result ResourceV2) (Sorted, error) {
 		}
 	case "oci", "digitalocean", "linode", "helm":
 		log.Printf("Provider %s not yet implemented", result.Provider)
+
 		return myPermission, nil
 	case "azurerm", "azuread":
 		myPermission.AZURE, err = GetAZUREPermissions(result)

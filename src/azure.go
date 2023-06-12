@@ -7,8 +7,11 @@ import (
 
 // GetAZUREPermissions for GCP resources
 func GetAZUREPermissions(result ResourceV2) ([]string, error) {
-	var err error
-	var Permissions []string
+	var (
+		err         error
+		Permissions []string
+	)
+
 	if result.TypeName == "resource" {
 		Permissions, err = GetAZUREResourcePermissions(result)
 		if err != nil {
@@ -77,15 +80,17 @@ func GetAZUREResourcePermissions(result ResourceV2) ([]string, error) {
 		"azurerm_disk_encryption_set":                  azurermDiskEncryptionSet,
 	}
 
-	var Permissions []string
-	var err error
+	var (
+		Permissions []string
+		err         error
+	)
 
 	temp := TFLookup[result.Name]
 	if temp != nil {
 		Permissions, err = GetPermissionMap(TFLookup[result.Name].([]byte), result.Attributes)
 	} else {
 		message := fmt.Sprintf("%s not implemented", result.Name)
-		//log.Print(message)
+
 		return nil, errors.New(message)
 	}
 

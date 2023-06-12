@@ -21,7 +21,7 @@ repos:
     rev: v1.5.1
     hooks:
       - id: forbid-tabs
-        exclude_types: [python, javascript, dtd, markdown, makefile, xml]
+        exclude_types: [ python, javascript, dtd, markdown, makefile, xml ]
         exclude: binary|\.bin$|rego|\.rego$|go|\.go$
   - repo: https://github.com/jameswoolfenden/pre-commit-shell
     rev: 0.0.2
@@ -44,10 +44,10 @@ repos:
       - id: goimports
       - id: golint
   - repo: https://github.com/syntaqx/git-hooks
-    rev:  v0.0.17
+    rev: v0.0.17
     hooks:
       - id: go-test
-        args: ["./..."]
+        args: [ "./..." ]
       - id: go-mod-tidy
       - id: go-generate
   - repo: https://github.com/golangci/golangci-lint

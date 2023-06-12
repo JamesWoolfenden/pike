@@ -1,4 +1,3 @@
-
 data "azurerm_resource_group" "pike" {
   name = "pike"
 }

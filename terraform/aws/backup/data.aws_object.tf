@@ -1,4 +1,3 @@
-
 data "aws_s3_bucket_object" "example" {
   bucket = "testbucketforlbjgw"
   key    = "prefix/AWSLogs/680235478471/ELBAccessLogTestFile"

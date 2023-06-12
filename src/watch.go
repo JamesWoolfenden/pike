@@ -4,16 +4,16 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
+	"fmt"
 	"net/url"
 	"reflect"
 	"sort"
 	"time"
 
-	"github.com/rs/zerolog/log"
-
 	"github.com/aws/aws-sdk-go-v2/aws"
 	"github.com/aws/aws-sdk-go-v2/config"
 	"github.com/aws/aws-sdk-go-v2/service/iam"
+	"github.com/rs/zerolog/log"
 )
 
 // Watch looks at IAM policy for new revisions
@@ -21,13 +21,12 @@ func Watch(arn string, wait int) error {
 	// Load the Shared AWS Configuration (~/.aws/config)
 	cfg, err := config.LoadDefaultConfig(context.TODO())
 	if err != nil {
-		return err
+		return fmt.Errorf("failed to load default config %w", err)
 	}
 
 	client := iam.NewFromConfig(cfg)
 
 	Version, err := GetVersion(client, arn)
-
 	if err != nil {
 		return err
 	}
@@ -35,37 +34,40 @@ func Watch(arn string, wait int) error {
 	log.Printf("Waiting for change on policy Version %s", *Version)
 
 	delay, err := WaitForPolicyChange(client, "arn:aws:iam::680235478471:policy/basic", *Version, wait)
-
 	if err != nil {
 		return err
 	}
 
 	log.Printf("Policy updated after %d", delay)
+
 	return nil
 }
 
 // WaitForPolicyChange looks at IAM policy change
-func WaitForPolicyChange(client *iam.Client, arn string, Version string, Wait int) (int, error) {
+func WaitForPolicyChange(client *iam.Client, arn string, version string, wait int) (int, error) {
+	magic := 5
 
-	for i := 1; i < Wait; i++ {
-		time.Sleep(time.Duration(5))
+	for item := 1; item < wait; item++ {
+		time.Sleep(time.Duration(magic))
+
 		NewVersion, err := GetVersion(client, arn)
 		if err != nil {
 			continue
 		}
-		if NewVersion == &Version {
-			return i, nil
+
+		if NewVersion == &version {
+			return item, nil
 		}
+
 		log.Print("Not equal")
 	}
-	return Wait, errors.New("wait expired with no change")
+
+	return wait, errors.New("wait expired with no change")
 }
 
 // GetVersion gets the version of the IAM policy
-func GetVersion(client *iam.Client, PolicyArn string) (*string, error) {
-
-	output, err := client.GetPolicy(context.TODO(), &iam.GetPolicyInput{PolicyArn: aws.String(PolicyArn)})
-
+func GetVersion(client *iam.Client, policyArn string) (*string, error) {
+	output, err := client.GetPolicy(context.TODO(), &iam.GetPolicyInput{PolicyArn: aws.String(policyArn)})
 	if err != nil {
 		return nil, err
 	}
@@ -74,9 +76,13 @@ func GetVersion(client *iam.Client, PolicyArn string) (*string, error) {
 }
 
 // GetPolicyVersion Obtains the versioned IAM policy
-func GetPolicyVersion(client *iam.Client, PolicyArn string, Version string) (*string, error) {
-	output, err := client.GetPolicyVersion(context.TODO(), &iam.GetPolicyVersionInput{PolicyArn: aws.String(PolicyArn), VersionId: &Version})
-
+func GetPolicyVersion(client *iam.Client, policyArn string, version string) (*string, error) {
+	output, err := client.GetPolicyVersion(
+		context.TODO(),
+		&iam.GetPolicyVersionInput{
+			PolicyArn: aws.String(policyArn),
+			VersionId: &version,
+		})
 	if err != nil {
 		return nil, err
 	}
@@ -87,7 +93,6 @@ func GetPolicyVersion(client *iam.Client, PolicyArn string, Version string) (*st
 	}
 
 	fixed, err := SortActions(Policy)
-
 	if err != nil {
 		return nil, err
 	}
@@ -97,29 +102,33 @@ func GetPolicyVersion(client *iam.Client, PolicyArn string, Version string) (*st
 
 // SortActions sorts the actions list of an IAM policy
 func SortActions(myPolicy string) (*string, error) {
-	//var raw Policy
 	var raw map[string]interface{}
 	err := json.Unmarshal([]byte(myPolicy), &raw)
+
 	if err != nil {
 		return nil, err
 	}
 
-	//var blocks []interface{}
 	Statements := raw["Statement"].([]interface{})
-	var NewStatements []interface{}
-	for _, block := range Statements {
 
+	var (
+		NewStatements []interface{}
+	)
+
+	for _, block := range Statements {
 		blocked := block.(map[string]interface{})
 		Actions := blocked["Action"]
 		myType := reflect.TypeOf(Actions)
+
 		switch myType.Kind() {
 		case reflect.String:
-			//do nothing
+			// do nothing
 		case reflect.Slice:
 			blocked["Action"] = sortInterfaceStrings(Actions)
 		default:
 			log.Print(myType.Kind())
 		}
+
 		NewStatements = append(NewStatements, block)
 	}
 
@@ -127,16 +136,21 @@ func SortActions(myPolicy string) (*string, error) {
 
 	fixed, err := json.Marshal(raw)
 	result := string(fixed)
+
 	return &result, err
 }
 
-func sortInterfaceStrings(Actions interface{}) []string {
-	temp := Actions.([]interface{})
+func sortInterfaceStrings(actions interface{}) []string {
+	temp := actions.([]interface{})
+
 	var myActions []string
+
 	for _, action := range temp {
 		myAction := action.(string)
 		myActions = append(myActions, myAction)
 	}
+
 	sort.Strings(myActions)
+
 	return myActions
 }

@@ -4,14 +4,13 @@ import (
 	"context"
 	"encoding/base64"
 	"errors"
-	"fmt" //nolint:goimports
-	"os"  //nolint:goimports
+	"fmt"
+	"os"
 	"strings"
 	"time"
 
-	"github.com/rs/zerolog/log"
-
 	"github.com/google/go-github/v47/github"
+	"github.com/rs/zerolog/log"
 	"golang.org/x/crypto/nacl/box"
 	"golang.org/x/oauth2"
 )
@@ -19,8 +18,8 @@ import (
 // Remote updates a repo with AWS credentials
 func Remote(target string, repository string, region string) error {
 	iamRole, err := Make(target)
-
-	time.Sleep(5 * time.Second)
+	const magic = 5
+	time.Sleep(magic * time.Second)
 
 	if err != nil {
 		return err
@@ -39,7 +38,8 @@ func Remote(target string, repository string, region string) error {
 	if err != nil {
 		response := err.(*github.ErrorResponse)
 		log.Printf("failed to set repo secrets: %s for repository %s", response.Message, repository)
-		return err
+
+		return fmt.Errorf("failed to set repo secrets: %s for repository %s", response.Message, repository)
 	}
 
 	_, err = SetRepoSecret(repository, *myCredentials.SecretAccessKey, "AWS_SECRET_ACCESS_KEY")
@@ -58,20 +58,17 @@ func Remote(target string, repository string, region string) error {
 
 // SetRepoSecret sets an encrypted gitHub action secret
 func SetRepoSecret(repository string, keyText string, keyName string) (*github.Response, error) {
-
-	owner, repo, err2 := splitHub(repository)
+	owner, repo, err2 := SplitHub(repository)
 	if err2 != nil {
 		return nil, err2
 	}
 
-	keyID, publicKey, err := getPublicKeyDetails(owner, repo)
-
+	keyID, publicKey, err := GetPublicKeyDetails(owner, repo)
 	if err != nil {
 		return nil, err
 	}
 
-	encryptedBytes, err := encryptPlaintext(keyText, publicKey)
-
+	encryptedBytes, err := EncryptPlaintext(keyText, publicKey)
 	if err != nil {
 		return nil, err
 	}
@@ -85,17 +82,17 @@ func SetRepoSecret(repository string, keyText string, keyName string) (*github.R
 		EncryptedValue: encryptedValue,
 	}
 
-	ctx, client := getGithubClient()
+	ctx, client := GetGithubClient()
 
 	response, err := client.Actions.CreateOrUpdateRepoSecret(ctx, owner, repo, eSecret)
-
 	if err != nil {
 		return response, err
 	}
 	return response, nil
 }
 
-func splitHub(repository string) (string, string, error) {
+// SplitHub return details from url
+func SplitHub(repository string) (string, string, error) {
 	Splitter := strings.Split(repository, "/")
 
 	if len(Splitter) != 2 {
@@ -108,7 +105,8 @@ func splitHub(repository string) (string, string, error) {
 	return owner, repo, nil
 }
 
-func getGithubClient() (context.Context, *github.Client) {
+// GetGithubClient instantiate and return a client object for github
+func GetGithubClient() (context.Context, *github.Client) {
 	token := os.Getenv("GITHUB_TOKEN")
 	ctx := context.Background()
 	ts := oauth2.StaticTokenSource(
@@ -120,8 +118,9 @@ func getGithubClient() (context.Context, *github.Client) {
 	return ctx, client
 }
 
-func getPublicKeyDetails(owner string, repository string) (keyID, pkValue string, err error) {
-	ctx, client := getGithubClient()
+// GetPublicKeyDetails obtains the public key of the owner
+func GetPublicKeyDetails(owner string, repository string) (keyID, pkValue string, err error) {
+	ctx, client := GetGithubClient()
 
 	publicKey, _, err := client.Actions.GetRepoPublicKey(ctx, owner, repository)
 	if err != nil {
@@ -131,7 +130,8 @@ func getPublicKeyDetails(owner string, repository string) (keyID, pkValue string
 	return publicKey.GetKeyID(), publicKey.GetKey(), err
 }
 
-func encryptPlaintext(plaintext string, publicKeyB64 string) ([]byte, error) {
+// EncryptPlaintext standard encryption
+func EncryptPlaintext(plaintext string, publicKeyB64 string) ([]byte, error) {
 	publicKeyBytes, err := base64.StdEncoding.DecodeString(publicKeyB64)
 	if err != nil {
 		return nil, err

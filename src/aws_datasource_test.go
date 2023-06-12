@@ -1,55 +1,77 @@
-package pike
+package pike_test
 
 import (
 	"reflect"
 	"testing"
+
+	pike "github.com/jameswoolfenden/pike/src"
 )
 
 func TestGetAWSDataPermissions(t *testing.T) {
+	t.Parallel()
+
 	type args struct {
-		result ResourceV2
+		result pike.ResourceV2
 	}
+
 	tests := []struct {
 		name    string
 		args    args
 		want    []string
 		wantErr bool
 	}{
-		{"placeholder",
+		{
+			"placeholder",
 			args{
-				ResourceV2{"data",
-					"aws_iam_policy_document",
-					"elasticsearch-log-publishing-policy",
-					"aws",
-					[]string{"statement", "actions", "resources", "principals", "type", "identifiers"}}},
+				pike.ResourceV2{
+					TypeName:     "data",
+					Name:         "aws_iam_policy_document",
+					ResourceName: "elasticsearch-log-publishing-policy",
+					Provider:     "aws",
+					Attributes:   []string{"statement", "actions", "resources", "principals", "type", "identifiers"},
+				},
+			},
 			nil,
-			false},
-		{"found",
+			false,
+		},
+		{
+			"found",
 			args{
-				ResourceV2{"data",
-					"aws_cloudwatch_log_group",
-					"pike",
-					"aws",
-					[]string{"name"}},
+				pike.ResourceV2{
+					TypeName:     "data",
+					Name:         "aws_cloudwatch_log_group",
+					ResourceName: "pike",
+					Provider:     "aws",
+					Attributes:   []string{"name"},
+				},
 			},
 			[]string{"logs:DescribeLogGroups", "logs:ListTagsLogGroup"},
-			false},
-		{"bogus",
+			false,
+		},
+		{
+			"bogus",
 			args{
-				ResourceV2{"data",
-					"aws_madeup",
-					"pike",
-					"aws",
-					[]string{"name"}},
+				pike.ResourceV2{
+					TypeName:     "data",
+					Name:         "aws_madeup",
+					ResourceName: "pike",
+					Provider:     "aws",
+					Attributes:   []string{"name"},
+				},
 			},
 			nil,
-			true},
+			true,
+		},
 	}
+
 	for _, tt := range tests {
+		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
-			got, err := GetAWSDataPermissions(tt.args.result)
+			t.Parallel()
+			got, err := pike.GetAWSDataPermissions(tt.args.result)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("GetAWSDataPermissions() error = %v, wantErr %v", err, tt.wantErr)
+
 				return
 			}
 			if !reflect.DeepEqual(got, tt.want) {

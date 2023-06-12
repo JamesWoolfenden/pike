@@ -6,30 +6,30 @@ import (
 	"sort"
 	"time"
 
+	pike "github.com/jameswoolfenden/pike/src" //nolint:goimports
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
-
-	//nolint:goimports
-	pike "github.com/jameswoolfenden/pike/src" //nolint:goimports
 	"github.com/urfave/cli/v2"
 )
 
 func main() {
-	var branch string
-	var directory string
-	var file string
-	var output string
-	var arn string
-	var wait int
-	var init bool
-	var autoAppend bool
-	var write bool
-	var repository string
-	var region string
-	var workflow string
+	var (
+		branch     string
+		directory  string
+		file       string
+		output     string
+		arn        string
+		wait       int
+		init       bool
+		autoAppend bool
+		write      bool
+		repository string
+		region     string
+		workflow   string
+	)
 
 	log.Logger = log.Output(zerolog.ConsoleWriter{Out: os.Stderr})
-	var app = &cli.App{
+	app := &cli.App{
 		EnableBashCompletion: true,
 		Flags:                []cli.Flag{},
 		Commands: []*cli.Command{
@@ -48,8 +48,11 @@ func main() {
 				},
 				Action: func(*cli.Context) error {
 					arn, err := pike.Make(directory)
-					log.Print(*arn)
-					return err
+					if arn != nil {
+						log.Print(*arn)
+					}
+
+					return fmt.Errorf("make failed: %w", err)
 				},
 			},
 			{
@@ -286,6 +289,7 @@ func main() {
 				UsageText: "pike version",
 				Action: func(*cli.Context) error {
 					fmt.Println(pike.Version)
+
 					return nil
 				},
 			},

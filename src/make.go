@@ -3,17 +3,16 @@ package pike
 import (
 	"context"
 	"errors"
+	"fmt"
 	"path/filepath"
 	"time"
 
-	"github.com/rs/zerolog/log"
-
 	"github.com/hashicorp/terraform-exec/tfexec"
+	"github.com/rs/zerolog/log"
 )
 
 // Make creates the required role
 func Make(directory string) (*string, error) {
-
 	err := Scan(
 		directory,
 		"terraform",
@@ -27,7 +26,7 @@ func Make(directory string) (*string, error) {
 
 	directory, err = filepath.Abs(directory)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to find path %w", err)
 	}
 
 	policyPath, err := filepath.Abs(directory + "/.pike/")
@@ -49,6 +48,7 @@ func Make(directory string) (*string, error) {
 		arn := state.Values.Outputs["arn"]
 		log.Printf("aws role create/updated %s", arn.Value.(string))
 		role := arn.Value.(string)
+
 		return &role, nil
 	}
 
@@ -61,21 +61,22 @@ func tfApply(policyPath string) (*tfexec.Terraform, error) {
 		return nil, err
 	}
 
-	tf, err := tfexec.NewTerraform(policyPath, tfPath)
+	terraform, err := tfexec.NewTerraform(policyPath, tfPath)
 	if err != nil {
 		return nil, err
 	}
 
-	err = tf.Init(context.Background(), tfexec.Upgrade(true))
+	err = terraform.Init(context.Background(), tfexec.Upgrade(true))
 	if err != nil {
 		return nil, err
 	}
 
-	err = tf.Apply(context.Background())
+	err = terraform.Apply(context.Background())
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("terraform apply failed %w", err)
 	}
-	return tf, nil
+
+	return terraform, nil
 }
 
 // Apply  executes tf using prepared role
@@ -86,19 +87,22 @@ func Apply(target string, region string) error {
 	if err != nil {
 		return err
 	}
-	//clear any temp creds
+	// clear any temp creds
 	unSetAWSAuth()
 
 	err = setAWSAuth(*iamRole, region)
 	if err != nil {
 		unSetAWSAuth()
+
 		return err
 	}
+
 	_, err = tfApply(target)
 
 	if err == nil {
 		log.Printf("provisioned %s", target)
 	}
+
 	unSetAWSAuth()
 
 	return err

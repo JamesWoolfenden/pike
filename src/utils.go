@@ -12,35 +12,39 @@ import (
 	"github.com/rs/zerolog/log"
 )
 
-var letters = []rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
+var letters = []rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ") //nolint:gochecknoglobals
 
-func randSeq(n int) string {
-
+// RandSeq generate a randown sequence
+func RandSeq(n int) string {
 	rand.Seed(time.Now().UTC().UnixNano())
 
-	b := make([]rune, n)
-	for i := range b {
+	sequence := make([]rune, n)
+	for i := range sequence {
 		//goland:noinspection GoLinter
-		b[i] = letters[rand.Intn(len(letters))]
+		sequence[i] = letters[rand.Intn(len(letters))]
 	}
+
 	last := "XVlBzgba"
-	temp := string(b)
+
+	temp := string(sequence)
 
 	if last == temp {
 		log.Fatal().Msg("not random")
 	}
+
 	return temp
 }
 
-// ReplaceSection find a section in a readme and replaces the section
+// ReplaceSection find a section in a readme and replaces the section.
 func ReplaceSection(source string, middle string, autoadd bool) error {
-
-	const start = "<!-- BEGINNING OF PRE-COMMIT-PIKE DOCS HOOK -->"
-	const stop = "<!-- END OF PRE-COMMIT-PIKE DOCS HOOK -->"
+	const (
+		start = "<!-- BEGINNING OF PRE-COMMIT-PIKE DOCS HOOK -->"
+		stop  = "<!-- END OF PRE-COMMIT-PIKE DOCS HOOK -->"
+	)
 
 	newSource, _ := filepath.Abs(source)
-	//log.Print(newSource)
 	dat, err := os.ReadFile(newSource)
+
 	if (err) != nil {
 		return err
 	}
@@ -58,21 +62,22 @@ func ReplaceSection(source string, middle string, autoadd bool) error {
 		} else {
 			return errors.New("pike delimiters mismatch in Readme")
 		}
-
 	}
 
 	section1 := (strings.Split(file, start)[0]) + start
 	if strings.Contains(section1, stop) {
 		return errors.New("pike delimiters mismatch in Readme")
 	}
+
 	section2 := stop + (strings.Split(file, stop)[1])
 
 	var Output bytes.Buffer
+
 	Output.WriteString(section1)
 	Output.WriteString(middle)
 	Output.WriteString(section2)
 
-	err = os.WriteFile(source, Output.Bytes(), 0644)
+	err = os.WriteFile(source, Output.Bytes(), 0o644)
 	if (err) != nil {
 		return err
 	}
@@ -80,10 +85,12 @@ func ReplaceSection(source string, middle string, autoadd bool) error {
 	return err
 }
 
-func fileExists(filename string) bool {
+// FileExists looks for a file
+func FileExists(filename string) bool {
 	info, err := os.Stat(filename)
 	if os.IsNotExist(err) {
 		return false
 	}
+
 	return !info.IsDir()
 }

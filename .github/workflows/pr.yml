@@ -5,49 +5,49 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3.3.0
-    - name: Install Go
-      uses: actions/setup-go@v3.5.0
-      with:
-        go-version: 1.19.x
-    - name: Restore cache
-      uses: actions/cache@v3.2.4
-      with:
-        path: ~/go/pkg/mod
-        key: ${{ runner.os }}-go-mod-${{ hashFiles('**/go.sum') }}
-        restore-keys: |
-          ${{ runner.os }}-go-mod-
-    - name: Fmt
-      run: make fmt
+      - name: Checkout code
+        uses: actions/checkout@v3.5.0
+      - name: Install Go
+        uses: actions/setup-go@v4.0.0
+        with:
+          go-version: 1.20.x
+      - name: Restore cache
+        uses: actions/cache@v3.3.1
+        with:
+          path: ~/go/pkg/mod
+          key: ${{ runner.os }}-go-mod-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-go-mod-
+      - name: Fmt
+        run: make fmt
   test:
     strategy:
       matrix:
-        go-version: [1.19.x]
-        platform: [ubuntu-latest, macos-latest, windows-latest]
+        go-version: [ 1.20.x ]
+        platform: [ ubuntu-latest, macos-latest, windows-latest ]
     runs-on: ${{ matrix.platform }}
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3.3.0
-    - name: Install Go
-      uses: actions/setup-go@v3.5.0
-      with:
-        go-version: ${{ matrix.go-version }}
-    - name: Restore cache
-      uses: actions/cache@v3.2.4
-      with:
-        path: ~/go/pkg/mod
-        key: ${{ runner.os }}-go-mod-${{ hashFiles('**/go.sum') }}
-        restore-keys: |
-          ${{ runner.os }}-go-mod-
-    - name: Test
-      run: make test
+      - name: Checkout code
+        uses: actions/checkout@v3.5.0
+      - name: Install Go
+        uses: actions/setup-go@v4.0.0
+        with:
+          go-version: ${{ matrix.go-version }}
+      - name: Restore cache
+        uses: actions/cache@v3.3.1
+        with:
+          path: ~/go/pkg/mod
+          key: ${{ runner.os }}-go-mod-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-go-mod-
+      - name: Test
+        run: make test
   docs:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3.3.0
-    - name: Install Go
-      uses: actions/setup-go@v3.5.0
-      with:
-        go-version: 1.19.x
+      - name: Checkout code
+        uses: actions/checkout@v3.5.0
+      - name: Install Go
+        uses: actions/setup-go@v4.0.0
+        with:
+          go-version: 1.20.x

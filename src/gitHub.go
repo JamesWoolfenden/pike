@@ -3,20 +3,21 @@ package pike
 import (
 	"context"
 	"errors"
+	"fmt"
 	"net/http"
 	"strconv"
 
-	"github.com/rs/zerolog/log"
-
 	"github.com/google/go-github/v47/github"
+	"github.com/rs/zerolog/log"
 )
 
 // InvokeGithubDispatchEvent uses your gitHub api key (if sufficiently enabled) to invoke a gitHub action workflow
 func InvokeGithubDispatchEvent(repository string, workflowFileName string, branch string) error {
-	owner, repo, err := splitHub(repository)
+	owner, repo, err := SplitHub(repository)
 	if err != nil {
 		log.Print(err)
-		return err
+
+		return fmt.Errorf("failed to SplitHub %w", err)
 	}
 
 	url := "https://api.github.com/repos/" + repository + "/actions/workflows/" + workflowFileName
@@ -24,14 +25,16 @@ func InvokeGithubDispatchEvent(repository string, workflowFileName string, branc
 	err2 := VerifyURL(url)
 	if err2 != nil {
 		log.Print(err2)
+
 		return err2
 	}
 
-	ctx, client := getGithubClient()
+	ctx, client := GetGithubClient()
 
 	err3 := VerifyBranch(client, owner, repo, branch)
 	if err3 != nil {
 		log.Print(err3)
+
 		return err3
 	}
 
@@ -45,9 +48,9 @@ func InvokeGithubDispatchEvent(repository string, workflowFileName string, branc
 		repo,
 		workflowFileName,
 		event)
-
 	if err != nil {
 		log.Printf("invoke failed %s", response.Response.Status)
+
 		return err
 	}
 
@@ -88,11 +91,14 @@ func VerifyURL(url string) error {
 	resp, err := http.Get(url)
 	if err != nil {
 		log.Printf("failed to reach %s for %s", url, resp.Status)
+
 		return err
 	}
+
 	if resp.StatusCode != http.StatusOK {
 		log.Printf("non ok status code %s for %s", resp.Status, url)
 		return errors.New(resp.Status)
 	}
+
 	return nil
 }

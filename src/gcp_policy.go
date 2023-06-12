@@ -3,6 +3,7 @@ package pike
 import (
 	"bytes"
 	_ "embed" // required for embed
+	"fmt"
 	"strings"
 	"text/template"
 )
@@ -21,14 +22,14 @@ func GCPPolicy(permissions []string) (string, error) {
 		Permissions string
 	}
 
-	//PolicyName := "terraform" + randSeq(8)
 	PolicyName := "terraform_pike"
 	theDetails := GCPPolicyDetails{PolicyName, "pike", "terraform_pike", test}
 
 	var output bytes.Buffer
 	tmpl, err := template.New("test").Parse(string(policyGCPTemplate))
+
 	if err != nil {
-		return "", err
+		return "", fmt.Errorf("failed to parse template %w", err)
 	}
 
 	err = tmpl.Execute(&output, theDetails)
@@ -36,5 +37,6 @@ func GCPPolicy(permissions []string) (string, error) {
 	if err != nil {
 		return "", err
 	}
+
 	return output.String(), nil
 }

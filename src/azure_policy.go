@@ -3,6 +3,7 @@ package pike
 import (
 	"bytes"
 	_ "embed" // required for embed
+	"fmt"
 	"strings"
 	"text/template"
 )
@@ -19,23 +20,21 @@ func AZUREPolicy(permissions []string) (string, error) {
 		Permissions string
 	}
 
-	//make the policy different each time which isn't great for the readme
-	//policyName := strings.ToLower("terraform_pike" + randSeq(8))
-
 	policyName := "terraform_pike"
 
 	theDetails := AzurePolicyDetails{policyName, test}
 
 	var output bytes.Buffer
+
 	tmpl, err := template.New("test").Parse(string(policyAZURETemplate))
 	if err != nil {
-		return "", err
+		return "", fmt.Errorf("failed to create template %w", err)
 	}
 
 	err = tmpl.Execute(&output, theDetails)
 
 	if err != nil {
-		return "", err
+		return "", fmt.Errorf("failed to execute template %w", err)
 	}
 
 	return output.String(), nil

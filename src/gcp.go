@@ -6,8 +6,11 @@ import (
 
 // GetGCPPermissions for GCP resources
 func GetGCPPermissions(result ResourceV2) ([]string, error) {
-	var err error
-	var Permissions []string
+	var (
+		err         error
+		Permissions []string
+	)
+
 	if result.TypeName == "resource" {
 		Permissions, err = GetGCPResourcePermissions(result)
 		if err != nil {
@@ -62,8 +65,10 @@ func GetGCPResourcePermissions(result ResourceV2) ([]string, error) {
 		"google_bigquery_job":                       googleBigqueryJob,
 	}
 
-	var Permissions []string
-	var err error
+	var (
+		Permissions []string
+		err         error
+	)
 
 	temp := TFLookup[result.Name]
 	if temp != nil {

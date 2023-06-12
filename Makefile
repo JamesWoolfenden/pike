@@ -51,9 +51,6 @@ generate-docs:
 docs:
 
 
-fmt:
-	go fmt ./...
-
 vet:
 	go vet ./...
 
@@ -70,3 +67,13 @@ psbump:
 update:
 	go get -u
 	go mod tidy
+	pre-commit autoupdate
+
+lint:
+	golangci-lint run --fix
+
+gci:
+	gci -w .
+
+fmt:
+	gofumpt -l -w .

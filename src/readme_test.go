@@ -1,16 +1,21 @@
-package pike
+package pike_test
 
 import (
 	"testing"
+
+	pike "github.com/jameswoolfenden/pike/src"
 )
 
 func TestReadme(t *testing.T) {
+	t.Parallel()
+
 	type args struct {
 		dirName    string
 		output     string
 		init       bool
 		autoAppend bool
 	}
+
 	tests := []struct {
 		name    string
 		args    args
@@ -25,9 +30,12 @@ func TestReadme(t *testing.T) {
 		{"empty", args{"../testdata/readme/empty", "terraform", true, false}, true},
 		{"exists-noinit", args{"../testdata/readme/exists", "terraform", false, false}, false},
 	}
+
 	for _, tt := range tests {
+		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
-			if err := Readme(tt.args.dirName, tt.args.output, tt.args.init, tt.args.autoAppend); (err != nil) != tt.wantErr {
+			t.Parallel()
+			if err := pike.Readme(tt.args.dirName, tt.args.output, tt.args.init, tt.args.autoAppend); (err != nil) != tt.wantErr {
 				t.Errorf("Readme() error = %v, wantErr %v", err, tt.wantErr)
 			}
 		})

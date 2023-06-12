@@ -1,4 +1,4 @@
-package pike
+package pike_test
 
 import (
 	"path/filepath"
@@ -7,9 +7,12 @@ import (
 
 	"github.com/hashicorp/hcl/v2"
 	"github.com/hashicorp/hcl/v2/hclsyntax"
+	pike "github.com/jameswoolfenden/pike/src"
 )
 
 func TestGetResources(t *testing.T) {
+	t.Parallel()
+
 	type args struct {
 		file    string
 		dirName string
@@ -21,20 +24,39 @@ func TestGetResources(t *testing.T) {
 	tests := []struct {
 		name    string
 		args    args
-		want    []ResourceV2
+		want    []pike.ResourceV2
 		wantErr bool
 	}{
-		{"empty", args{"", "../testdata/scan/examples/simple"}, nil, true},
-		{"no_dir", args{file, ""}, []ResourceV2{{"resource", "aws_s3_bucket", "pike", "aws", []string{"bucket"}}}, false},
-		{"dir", args{file, "../testdata/scan/examples/simple"}, []ResourceV2{{"resource", "aws_s3_bucket", "pike", "aws", []string{"bucket"}}}, false},
-		{"module", args{moduleFile, "../testdata/modules/examples/local"}, []ResourceV2{{"resource", "aws_s3_bucket", "pike", "aws", []string{"name"}}, {"module", "local", "", "local", []string{"source"}}}, false},
-		{"not a path", args{moduleFile, "../testdata/modules/examples/rubbish"}, []ResourceV2{{"resource", "aws_s3_bucket", "pike", "aws", []string{"name"}}, {"module", "local", "", "local", []string{"source"}}}, false},
+		{"empty",
+			args{"", "../testdata/scan/examples/simple"}, nil, true},
+		{"no_dir",
+			args{file, ""},
+			[]pike.ResourceV2{{
+				"resource", "aws_s3_bucket", "pike", "aws", []string{"bucket"}}}, false},
+		{"dir",
+			args{file, "../testdata/scan/examples/simple"},
+			[]pike.ResourceV2{{
+				"resource", "aws_s3_bucket", "pike", "aws", []string{"bucket"}}}, false},
+		{"module",
+			args{moduleFile, "../testdata/modules/examples/local"},
+			[]pike.ResourceV2{{
+				"resource", "aws_s3_bucket", "pike", "aws", []string{"name"}},
+				{"module", "local", "", "local", []string{"source"}}}, false},
+		{"not a path",
+			args{moduleFile, "../testdata/modules/examples/rubbish"},
+			[]pike.ResourceV2{{
+				"resource", "aws_s3_bucket", "pike", "aws", []string{"name"}},
+				{"module", "local", "", "local", []string{"source"}}}, false},
 	}
+
 	for _, tt := range tests {
+		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
-			got, err := GetResources(tt.args.file, tt.args.dirName)
+			t.Parallel()
+			got, err := pike.GetResources(tt.args.file, tt.args.dirName)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("GetResources() error = %v, wantErr %v", err, tt.wantErr)
+
 				return
 			}
 			if !reflect.DeepEqual(got, tt.want) {
@@ -62,31 +84,34 @@ func Test_getLocalModules(t *testing.T) {
 	tests := []struct {
 		name string
 		args args
-		want []ResourceV2
+		want []pike.ResourceV2
 	}{
-		{"local",
+		{
+			"local",
 			args{block, dirName},
-			[]ResourceV2{{
+			[]pike.ResourceV2{{
 				"resource",
 				"aws_s3_bucket",
 				"pike",
 				"aws",
-				[]string{"name"}}}},
+				[]string{"name"},
+			}},
+		},
 		{"rubbish", args{duffBlock, duffName}, nil},
 		{"notlocal", args{notBlock, notLocal}, nil},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got := getLocalModules(tt.args.block, tt.args.dirName)
+			got := pike.GetLocalModules(tt.args.block, tt.args.dirName)
 			if !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("getLocalModules() = %v, want %v", got, tt.want)
+				t.Errorf("GetLocalModules() = %v, want %v", got, tt.want)
 			}
 		})
 	}
 }
 
 func getInitialBlock(file string) *hclsyntax.Block {
-	body, _ := GetResourceBlocks(file)
+	body, _ := pike.GetResourceBlocks(file)
 	blocks := body.Blocks
 	block := blocks[0]
 	return block
@@ -109,7 +134,7 @@ func TestGetModulePath(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := GetModulePath(tt.args.block); got != tt.want {
+			if got := pike.GetModulePath(tt.args.block); got != tt.want {
 				t.Errorf("GetModulePath() = %v, want %v", got, tt.want)
 			}
 		})
@@ -121,6 +146,7 @@ func TestGetBlockAttributes(t *testing.T) {
 		attributes []string
 		block      *hclsyntax.Block
 	}
+
 	file, _ := filepath.Abs("terraform\\aws\\backup/aws_acm_certificate.tf")
 
 	attribute := hclsyntax.Attribute{Name: "create_before_destroy"}
@@ -129,24 +155,33 @@ func TestGetBlockAttributes(t *testing.T) {
 	}
 	body := hclsyntax.Body{Attributes: attributes}
 
-	closeRange := hcl.Range{Filename: file, Start: hcl.Pos{Line: 12, Column: 3, Byte: 245}, End: hcl.Pos{Line: 12, Column: 4, Byte: 246}}
-	open := hcl.Range{Filename: file, Start: hcl.Pos{Line: 10, Column: 13, Byte: 206}, End: hcl.Pos{Line: 10, Column: 14, Byte: 207}}
-	typeRange := hcl.Range{Filename: file, Start: hcl.Pos{Line: 10, Column: 3, Byte: 196}, End: hcl.Pos{Line: 10, Column: 12, Byte: 205}}
-	block := hclsyntax.Block{Type: "lifecycle", Body: &body, TypeRange: typeRange, OpenBraceRange: open, CloseBraceRange: closeRange}
+	closeRange := hcl.Range{
+		Filename: file, Start: hcl.Pos{Line: 12, Column: 3, Byte: 245}, End: hcl.Pos{Line: 12, Column: 4, Byte: 246}}
+	open := hcl.Range{
+		Filename: file, Start: hcl.Pos{Line: 10, Column: 13, Byte: 206}, End: hcl.Pos{Line: 10, Column: 14, Byte: 207}}
+	typeRange := hcl.Range{
+		Filename: file, Start: hcl.Pos{Line: 10, Column: 3, Byte: 196}, End: hcl.Pos{Line: 10, Column: 12, Byte: 205}}
+	block := hclsyntax.Block{
+		Type: "lifecycle", Body: &body, TypeRange: typeRange, OpenBraceRange: open, CloseBraceRange: closeRange}
 
 	tests := []struct {
 		name string
 		args args
 		want []string
 	}{
-		{"get attributes", args{
-			[]string{"domain_name", "validation_method", "tags", "lifecycle"},
-			&block},
-			[]string{"domain_name", "validation_method", "tags", "lifecycle", "create_before_destroy"}},
+		{
+			"get attributes",
+			args{
+				[]string{"domain_name", "validation_method", "tags", "lifecycle"},
+				&block,
+			},
+			[]string{"domain_name", "validation_method", "tags", "lifecycle", "create_before_destroy"},
+		},
 	}
+
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := GetBlockAttributes(tt.args.attributes, tt.args.block); !reflect.DeepEqual(got, tt.want) {
+			if got := pike.GetBlockAttributes(tt.args.attributes, tt.args.block); !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("GetBlockAttributes() = %v, want %v", got, tt.want)
 			}
 		})
@@ -155,17 +190,19 @@ func TestGetBlockAttributes(t *testing.T) {
 
 func TestGetPermission(t *testing.T) {
 	type args struct {
-		result ResourceV2
+		result pike.ResourceV2
 	}
+
 	tests := []struct {
 		name    string
 		args    args
-		want    Sorted
+		want    pike.Sorted
 		wantErr bool
 	}{
-		{"parse",
+		{
+			"parse",
 			args{
-				ResourceV2{
+				pike.ResourceV2{
 					"resource",
 					"aws_acm_certificate",
 					"pike",
@@ -176,19 +213,24 @@ func TestGetPermission(t *testing.T) {
 						"tags",
 						"lifecycle",
 						"create_before_destroy",
-					}}},
-			Sorted{[]string{
+					},
+				},
+			},
+			pike.Sorted{[]string{
 				"acm:AddTagsToCertificate",
 				"acm:RemoveTagsFromCertificate",
 				"acm:RequestCertificate",
 				"acm:DescribeCertificate",
 				"acm:ListTagsForCertificate",
 				"acm:DeleteCertificate",
-				"acm:DeleteCertificate"}, nil, nil},
-			false},
-		{"no tags",
+				"acm:DeleteCertificate",
+			}, nil, nil},
+			false,
+		},
+		{
+			"no tags",
 			args{
-				ResourceV2{
+				pike.ResourceV2{
 					"resource",
 					"aws_acm_certificate",
 					"pike",
@@ -198,17 +240,22 @@ func TestGetPermission(t *testing.T) {
 						"validation_method",
 						"lifecycle",
 						"create_before_destroy",
-					}}},
-			Sorted{[]string{
+					},
+				},
+			},
+			pike.Sorted{[]string{
 				"acm:RequestCertificate",
 				"acm:DescribeCertificate",
 				"acm:ListTagsForCertificate",
 				"acm:DeleteCertificate",
-				"acm:DeleteCertificate"}, nil, nil},
-			false},
-		{"no-provider",
+				"acm:DeleteCertificate",
+			}, nil, nil},
+			false,
+		},
+		{
+			"no-provider",
 			args{
-				ResourceV2{
+				pike.ResourceV2{
 					"resource",
 					"bogus_test",
 					"pike",
@@ -219,12 +266,16 @@ func TestGetPermission(t *testing.T) {
 						"tags",
 						"lifecycle",
 						"create_before_destroy",
-					}}},
-			Sorted{nil, nil, nil},
-			false},
-		{"no-iam",
+					},
+				},
+			},
+			pike.Sorted{nil, nil, nil},
+			false,
+		},
+		{
+			"no-iam",
 			args{
-				ResourceV2{
+				pike.ResourceV2{
 					"resource",
 					"random_string",
 					"pike",
@@ -232,31 +283,46 @@ func TestGetPermission(t *testing.T) {
 					[]string{
 						"length",
 						"special",
-					}}},
-			Sorted{nil, nil, nil},
-			false},
-		{"not-implemented", args{ResourceV2{Provider: "linode"}}, Sorted{}, false},
-		{"bogus", args{ResourceV2{Provider: "bogus"}}, Sorted{}, false},
-		{"azure",
+					},
+				},
+			},
+			pike.Sorted{nil, nil, nil},
+			false,
+		},
+		{"not-implemented", args{pike.ResourceV2{Provider: "linode"}}, pike.Sorted{}, false},
+		{"bogus", args{pike.ResourceV2{Provider: "bogus"}}, pike.Sorted{}, false},
+		{
+			"azure",
 			args{
-				ResourceV2{"resource",
+				pike.ResourceV2{
+					"resource",
 					"azurerm_key_vault",
 					"MyDemoApiKey",
 					"azurerm",
-					[]string{"name", "name", "resource_group"}}},
-			Sorted{
+					[]string{"name", "name", "resource_group"},
+				},
+			},
+			pike.Sorted{
 				nil, nil,
-				[]string{"Microsoft.Resources/subscriptions/resourcegroups/read",
+				[]string{
+					"Microsoft.Resources/subscriptions/resourcegroups/read",
 					"Microsoft.KeyVault/vaults/read",
 					"Microsoft.KeyVault/vaults/write",
 					"Microsoft.KeyVault/vaults/delete",
-					"Microsoft.KeyVault/locations/deletedVaults/read"}},
-			false},
-		{"gcp",
+					"Microsoft.KeyVault/locations/deletedVaults/read",
+				},
+			},
+			false,
+		},
+		{
+			"gcp",
 			args{
-				ResourceV2{"resource", "google_compute_instance", "found", "gcp",
-					[]string{"name", "machine_type", "zone"}}},
-			Sorted{nil, []string{
+				pike.ResourceV2{
+					"resource", "google_compute_instance", "found", "gcp",
+					[]string{"name", "machine_type", "zone"},
+				},
+			},
+			pike.Sorted{nil, []string{
 				"compute.zones.get",
 				"compute.instances.create",
 				"compute.instances.get",
@@ -266,14 +332,18 @@ func TestGetPermission(t *testing.T) {
 				"compute.subnetworks.useExternalIp",
 				"compute.instances.setMetadata",
 				"compute.instances.delete",
-				"compute.instances.delete"}, nil},
-			false},
+				"compute.instances.delete",
+			}, nil},
+			false,
+		},
 	}
+
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got, err := GetPermission(tt.args.result)
+			got, err := pike.GetPermission(tt.args.result)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("GetPermission() error = %v, wantErr %v", err, tt.wantErr)
+
 				return
 			}
 			if !reflect.DeepEqual(got, tt.want) {
@@ -284,34 +354,51 @@ func TestGetPermission(t *testing.T) {
 }
 
 func TestGetResourceBlocks(t *testing.T) {
+	t.Parallel()
+
 	type args struct {
 		file string
 	}
-	empty := hcl.Range{Filename: "testdata/scan/examples/empty/empty.tf",
-		Start: hcl.Pos{Line: 1, Column: 1},
-		End:   hcl.Pos{Line: 1, Column: 1}}
 
-	random := hcl.Range{Filename: "testdata/scan/examples/random/random_string.pike.tf",
-		Start: hcl.Pos{Line: 1, Column: 1},
-		End:   hcl.Pos{Line: 6, Column: 1, Byte: 119}}
+	empty := hcl.Range{
+		Filename: "testdata/scan/examples/empty/empty.tf",
+		Start:    hcl.Pos{Line: 1, Column: 1},
+		End:      hcl.Pos{Line: 1, Column: 1},
+	}
+
+	random := hcl.Range{
+		Filename: "testdata/scan/examples/random/random_string.pike.tf",
+		Start:    hcl.Pos{Line: 1, Column: 1},
+		End:      hcl.Pos{Line: 6, Column: 1, Byte: 119},
+	}
 	tests := []struct {
 		name    string
 		args    args
 		want    hcl.Range
 		wantErr bool
 	}{
-		{"pass", args{"testdata/scan/examples/random/random_string.pike.tf"},
+		{
+			"pass",
+			args{"testdata/scan/examples/random/random_string.pike.tf"},
 			random,
-			false},
-		{"empty", args{"testdata/scan/examples/empty/empty.tf"},
+			false,
+		},
+		{
+			"empty",
+			args{"testdata/scan/examples/empty/empty.tf"},
 			empty,
-			false},
+			false,
+		},
 	}
+
 	for _, tt := range tests {
+		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
-			got, err := GetResourceBlocks(tt.args.file)
+			t.Parallel()
+			got, err := pike.GetResourceBlocks(tt.args.file)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("GetResourceBlocks() error = %v, wantErr %v", err, tt.wantErr)
+
 				return
 			}
 			if !reflect.DeepEqual(got.SrcRange, tt.want) {

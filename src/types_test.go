@@ -1,13 +1,20 @@
-package pike
+package pike_test
 
-import "testing"
+import (
+	"testing"
+
+	pike "github.com/jameswoolfenden/pike/src"
+)
 
 func TestOutputPolicy_AsString(t *testing.T) {
+	t.Parallel()
+
 	type fields struct {
-		AWS   AwsOutput
+		AWS   pike.AwsOutput
 		GCP   string
 		Azure string
 	}
+
 	type args struct {
 		format string
 	}
@@ -18,13 +25,33 @@ func TestOutputPolicy_AsString(t *testing.T) {
 		args   args
 		want   string
 	}{
-		{"json", fields{AwsOutput{"[json]", ""}, "", ""}, args{"json"}, "[json]\n"},
-		{"terraform", fields{AwsOutput{"[json]", "terraform"}, "", ""}, args{"terraform"}, "terraform\n"},
-		{"all", fields{AwsOutput{"[json]", "terraform"}, "gcp", "azure"}, args{"terraform"}, "terraform\ngcp\nazure\n"},
+		{
+			"json",
+			fields{pike.AwsOutput{JSONOut: "[json]"}, "", ""},
+			args{"json"},
+			"[json]\n",
+		},
+		{
+			"terraform",
+			fields{
+				pike.AwsOutput{JSONOut: "[json]", Terraform: "terraform"}, "", "",
+			},
+			args{"terraform"},
+			"terraform\n",
+		},
+		{
+			"all",
+			fields{pike.AwsOutput{JSONOut: "[json]", Terraform: "terraform"}, "gcp", "azure"},
+			args{"terraform"},
+			"terraform\ngcp\nazure\n",
+		},
 	}
+
 	for _, tt := range tests {
+		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
-			Out := OutputPolicy{
+			t.Parallel()
+			Out := pike.OutputPolicy{
 				AWS:   tt.fields.AWS,
 				GCP:   tt.fields.GCP,
 				AZURE: tt.fields.Azure,

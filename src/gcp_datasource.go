@@ -6,7 +6,6 @@ import (
 
 // GetGCPDataPermissions gets permissions required for datasources
 func GetGCPDataPermissions(result ResourceV2) ([]string, error) {
-
 	TFLookup := map[string]interface{}{
 		"google_service_account":    dataGoogleServiceAccount,
 		"google_compute_image":      placeholder,
@@ -20,9 +19,13 @@ func GetGCPDataPermissions(result ResourceV2) ([]string, error) {
 		"google_kms_key_ring":       dataGoogleKmsKeyRing,
 	}
 
-	var Permissions []string
-	var err error
+	var (
+		Permissions []string
+		err         error
+	)
+
 	temp := TFLookup[result.Name]
+
 	if temp != nil {
 		Permissions, err = GetPermissionMap(TFLookup[result.Name].([]byte), result.Attributes)
 	} else {

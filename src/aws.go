@@ -2,17 +2,24 @@ package pike
 
 import (
 	"encoding/json"
+	"errors"
 	"fmt"
 )
 
+const terraform string = "terraform"
+
 // GetAWSPermissions for AWS resources
 func GetAWSPermissions(result ResourceV2) ([]string, error) {
-	var err error
-	var Permissions []string
+	var (
+		err         error
+		Permissions []string
+	)
+
 	switch result.TypeName {
-	case "resource", "terraform":
+	case "resource", terraform:
 		{
 			Permissions, err = GetAWSResourcePermissions(result)
+
 			if err != nil {
 				return Permissions, err
 			}
@@ -39,10 +46,11 @@ func GetAWSPermissions(result ResourceV2) ([]string, error) {
 }
 
 // GetAWSResourcePermissions looks up permissions required for resources
+//
+//goland:noinspection GoLinter
 func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
-
 	TFLookup := map[string]interface{}{
-		"aws_acm_certificate":                                awsAcmCertificate,
+		"aws_acm_certificate":                                AWSAcmCertificate,
 		"aws_acm_certificate_validation":                     placeholder,
 		"aws_acmpca_certificate_authority":                   awsAcmpcaCertificateAuthority,
 		"aws_alb":                                            awsLb,
@@ -436,8 +444,10 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"backend":                                            s3backend,
 	}
 
-	var Permissions []string
-	var err error
+	var (
+		Permissions []string
+		err         error
+	)
 
 	temp := TFLookup[result.Name]
 	if temp != nil {
@@ -449,12 +459,14 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 	return Permissions, err
 }
 
-func contains(s []string, e string) bool {
+// Contains looks if slice contains string
+func Contains(s []string, e string) bool {
 	for _, a := range s {
 		if a == e {
 			return true
 		}
 	}
+
 	return false
 }
 
@@ -462,13 +474,21 @@ func contains(s []string, e string) bool {
 func GetPermissionMap(raw []byte, attributes []string) ([]string, error) {
 	var mappings []interface{}
 	err := json.Unmarshal(raw, &mappings)
-	if err != nil {
-		return nil, err
-	}
-	temp := mappings[0].(map[string]interface{})
-	myAttributes := temp["attributes"].(map[string]interface{})
 
-	var found []string
+	if err != nil {
+		return nil, fmt.Errorf("failed to unmarshal json %w", err)
+	}
+
+	if mappings == nil {
+		return nil, errors.New("mappings are empty")
+	}
+
+	temp := mappings[0].(map[string]interface{})
+
+	var (
+		myAttributes = temp["attributes"].(map[string]interface{})
+		found        []string
+	)
 
 	for _, attribute := range attributes {
 		if myAttributes[attribute] != nil {

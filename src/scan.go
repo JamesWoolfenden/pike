@@ -9,19 +9,17 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/rs/zerolog/log"
-
 	"github.com/hashicorp/go-version"
 	"github.com/hashicorp/hc-install/product"
 	"github.com/hashicorp/hc-install/releases"
 	"github.com/hashicorp/terraform-exec/tfexec"
+	"github.com/rs/zerolog/log"
 )
 
 const tfVersion = "1.3.5"
 
 // Scan looks for resources in a given directory
 func Scan(dirName string, output string, file *string, init bool, write bool) error {
-
 	OutPolicy, err := MakePolicy(dirName, file, init)
 	if err != nil {
 		return err
@@ -41,7 +39,6 @@ func Scan(dirName string, output string, file *string, init bool, write bool) er
 
 // WriteOutput writes out the policy as json or terraform
 func WriteOutput(OutPolicy OutputPolicy, output, location string) error {
-
 	newPath, _ := filepath.Abs(location + "/.pike")
 	err := os.MkdirAll(newPath, os.ModePerm)
 	if err != nil {
@@ -53,11 +50,11 @@ func WriteOutput(OutPolicy OutputPolicy, output, location string) error {
 
 	switch strings.ToLower(output) {
 
-	case "terraform":
+	case terraform:
 		outFile = newPath + "/pike.generated_policy.tf"
 
 		if OutPolicy.AWS.Terraform != "" {
-			err = os.WriteFile(newPath+"/aws_iam_role.terraform_pike.tf", roleTemplate, 0644)
+			err = os.WriteFile(newPath+"/aws_iam_role.terraform_pike.tf", roleTemplate, 0o644)
 		}
 
 		if err != nil {
@@ -69,7 +66,7 @@ func WriteOutput(OutPolicy OutputPolicy, output, location string) error {
 		return errors.New("output format supports only json and terraform")
 	}
 
-	err = os.WriteFile(outFile, d1, 0644)
+	err = os.WriteFile(outFile, d1, 0o644)
 
 	if err != nil {
 		return err
@@ -80,14 +77,12 @@ func WriteOutput(OutPolicy OutputPolicy, output, location string) error {
 
 // Init can download and install terraform if required and then terraform init your specified directory
 func Init(dirName string) (*string, []string, error) {
-
 	tfPath, err := LocateTerraform()
 	if err != nil {
 		return nil, nil, err
 	}
 
 	tf, err := tfexec.NewTerraform(dirName, tfPath)
-
 	if err != nil {
 		return nil, nil, err
 	}
@@ -118,9 +113,9 @@ func Init(dirName string) (*string, []string, error) {
 
 // LocateTerraform finds the Terraform executable or installs it
 func LocateTerraform() (string, error) {
-	tfPath, err := exec.LookPath("terraform")
+	tfPath, err := exec.LookPath(terraform)
 
-	//if you don't have tf installed we have to install it
+	// if you don't have tf installed we have to install it
 	if err != nil || tfPath == "" {
 		log.Printf("installing Terraform %s\n", tfVersion)
 		installer := &releases.ExactVersion{
@@ -140,11 +135,13 @@ func LocateTerraform() (string, error) {
 
 // MakePolicy does the guts of determining a policy from code
 func MakePolicy(dirName string, file *string, init bool) (OutputPolicy, error) {
-	var files []string
-	var Output OutputPolicy
+	var (
+		files  []string
+		Output OutputPolicy
+	)
+
 	if file == nil {
 		fullPath, err := filepath.Abs(dirName)
-
 		if err != nil {
 			return Output, err
 		}
@@ -153,6 +150,7 @@ func MakePolicy(dirName string, file *string, init bool) (OutputPolicy, error) {
 			if err != nil {
 				log.Printf("modules not found at %s", dirName)
 			}
+
 			for _, module := range modules {
 				log.Printf("downloaded %s", module)
 			}
@@ -165,13 +163,12 @@ func MakePolicy(dirName string, file *string, init bool) (OutputPolicy, error) {
 		}
 	} else {
 		myFile, err := filepath.Abs(*file)
-
 		if err != nil {
 			return Output, err
 		}
 
 		// is this a file
-		if !(fileExists(myFile)) {
+		if !(FileExists(myFile)) {
 			return Output, os.ErrNotExist
 		}
 
@@ -182,7 +179,6 @@ func MakePolicy(dirName string, file *string, init bool) (OutputPolicy, error) {
 	for _, file := range files {
 
 		resource, err := GetResources(file, dirName)
-
 		if err != nil {
 			// parse the other files
 			log.Print(err)
@@ -217,11 +213,11 @@ func MakePolicy(dirName string, file *string, init bool) (OutputPolicy, error) {
 
 // GetTF return tf files in a directory
 func GetTF(dirName string) ([]string, error) {
-	files, err := getTFFiles(dirName)
+	files, err := GetTFFiles(dirName)
 	modulePath := dirName + "/.terraform/modules"
 	if modules, err := os.ReadDir(modulePath); err == nil {
 		for _, module := range modules {
-			moreFiles, _ := getTFFiles(modulePath + "/" + module.Name())
+			moreFiles, _ := GetTFFiles(modulePath + "/" + module.Name())
 			files = append(files, moreFiles...)
 		}
 	}
@@ -232,26 +228,32 @@ func GetTF(dirName string) ([]string, error) {
 	return files, nil
 }
 
-func getTFFiles(dirName string) ([]string, error) {
+// GetTFFiles get tf files in directory
+func GetTFFiles(dirName string) ([]string, error) {
 	rawFiles, err := os.ReadDir(dirName)
 	var files []string
+
 	for _, file := range rawFiles {
 		fileExtension := filepath.Ext(file.Name())
 
 		if fileExtension != ".tf" {
 			continue
 		}
+
 		files = append(files, dirName+"/"+file.Name())
 	}
+
 	return files, err
 }
 
-func stringInSlice(a string, list []string) bool {
+// StringInSlice looks for item in slice
+func StringInSlice(a string, list []string) bool {
 	for _, b := range list {
 		if b == a {
 			return true
 		}
 	}
+
 	return false
 }
 

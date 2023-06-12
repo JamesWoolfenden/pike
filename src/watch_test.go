@@ -8,9 +8,8 @@ import (
 	"testing"
 
 	"github.com/aws/aws-sdk-go-v2/config"
-	"golang.org/x/net/context"
-
 	"github.com/aws/aws-sdk-go-v2/service/iam"
+	"golang.org/x/net/context"
 )
 
 func TestWatch(t *testing.T) {
@@ -144,9 +143,13 @@ func TestSortActions(t *testing.T) {
 		want    *string
 		wantErr bool
 	}{
-		{"odd", args{
-			"{\"Statement\":[{\"Action\":[\"cognito-idp:ListUserPoolClients\",\"cognito-idp:GetSigningCertificate\",\"cognito-idp:DescribeUserPoolClient\"],\"Effect\":\"Allow\",\"Resource\":\"*\",\"Sid\":\"0\"}],\"Version\":\"2012-10-17\"}"},
-			&want, false},
+		{
+			"odd",
+			args{
+				"{\"Statement\":[{\"Action\":[\"cognito-idp:ListUserPoolClients\",\"cognito-idp:GetSigningCertificate\",\"cognito-idp:DescribeUserPoolClient\"],\"Effect\":\"Allow\",\"Resource\":\"*\",\"Sid\":\"0\"}],\"Version\":\"2012-10-17\"}",
+			},
+			&want, false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

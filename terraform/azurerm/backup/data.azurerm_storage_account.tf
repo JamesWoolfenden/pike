@@ -1,4 +1,3 @@
-
 data "azurerm_storage_account" "pike" {
   name                = "pike"
   resource_group_name = "pike"

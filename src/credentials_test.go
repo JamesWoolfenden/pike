@@ -55,7 +55,7 @@ func Test_setAWSAuth(t *testing.T) {
 	}
 
 	arghh := "User: arn:aws:iam::680235478471:user/jameswoolfenden is not authorized to perform: sts:AssumeRole on resource: arn:aws:iam::123456789012:role/demo"
-	//myErr := awserr.NewRequestFailure(arghh, 403, "")
+	// myErr := awserr.NewRequestFailure(arghh, 403, "")
 	tests := []struct {
 		name string
 		args args
@@ -66,7 +66,7 @@ func Test_setAWSAuth(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			//could inherit temp set from before
+			// could inherit temp set from before
 			unSetAWSAuth()
 			got := setAWSAuth(tt.args.iamRole, tt.args.Region)
 
@@ -89,6 +89,67 @@ func Test_setAWSAuth(t *testing.T) {
 }
 
 func Test_unSetAWSAuth(t *testing.T) {
+	tests := []struct {
+		name string
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			unSetAWSAuth()
+		})
+	}
+}
+
+func Test_getAWSCredentials1(t *testing.T) {
+	type args struct {
+		IAMRole string
+		region  string
+	}
+	tests := []struct {
+		name    string
+		args    args
+		want    *sts.AssumeRoleOutput
+		wantErr bool
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			got, err := getAWSCredentials(tt.args.IAMRole, tt.args.region)
+			if (err != nil) != tt.wantErr {
+				t.Errorf("getAWSCredentials() error = %v, wantErr %v", err, tt.wantErr)
+				return
+			}
+			if !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("getAWSCredentials() got = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func Test_setAWSAuth1(t *testing.T) {
+	type args struct {
+		iamRole string
+		region  string
+	}
+	tests := []struct {
+		name    string
+		args    args
+		wantErr bool
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if err := setAWSAuth(tt.args.iamRole, tt.args.region); (err != nil) != tt.wantErr {
+				t.Errorf("setAWSAuth() error = %v, wantErr %v", err, tt.wantErr)
+			}
+		})
+	}
+}
+
+func Test_unSetAWSAuth1(t *testing.T) {
 	tests := []struct {
 		name string
 	}{

@@ -2,7 +2,7 @@
 
 before:
   hooks:
-  - ./set-version.sh
+    - ./set-version.sh
 
 builds:
   - goos:
@@ -24,8 +24,7 @@ archives:
         format: zip
 
 brews:
-  -
-    name: pike
+  - name: pike
 
     tap:
       owner: JamesWoolfenden

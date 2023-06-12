@@ -4,9 +4,10 @@ import (
 	"fmt"
 )
 
-// GetAWSDataPermissions gets permissions required for datasource's
+// GetAWSDataPermissions gets permissions required for datasource's.
+//
+//goland:noinspection GoLinter
 func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
-
 	TFLookup := map[string]interface{}{
 		"aws_acm_certificate":                                  dataAwsAcmCertificate,
 		"aws_alb":                                              dataAwsLb,
@@ -248,8 +249,10 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 		"aws_eks_node_groups":                                  dataAwsEksNodeGroups,
 	}
 
-	var Permissions []string
-	var err error
+	var (
+		Permissions []string
+		err         error
+	)
 
 	temp := TFLookup[result.Name]
 	if temp != nil {

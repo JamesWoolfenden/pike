@@ -7,7 +7,7 @@
   language: golang
   entry: pike
   pass_filenames: false
-  types: [terraform]
+  types: [ terraform ]
 
 # Build and run `pike-docs` assuming it was installed manually
 # or via package manager
@@ -18,7 +18,7 @@
   language: system
   entry: pike
   pass_filenames: false
-  types: [terraform]
+  types: [ terraform ]
 
 # Builds and runs the Docker image from the repo
 # REQUIRES: Docker installed
@@ -28,4 +28,4 @@
   language: docker
   entry: pike
   pass_filenames: false
-  types: [terraform]
+  types: [ terraform ]

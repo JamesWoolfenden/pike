@@ -1,14 +1,19 @@
-package pike
+package pike_test
 
 import (
 	"reflect"
 	"testing"
+
+	pike "github.com/jameswoolfenden/pike/src"
 )
 
 func TestGetAZUREDataPermissions(t *testing.T) {
+	t.Parallel()
+
 	type args struct {
-		result ResourceV2
+		result pike.ResourceV2
 	}
+
 	tests := []struct {
 		name    string
 		args    args
@@ -16,26 +21,37 @@ func TestGetAZUREDataPermissions(t *testing.T) {
 		wantErr bool
 	}{
 		{"pass", args{
-			ResourceV2{"data",
-				"azurerm_resource_group",
-				"pike",
-				"azurerm",
-				[]string{"name", "location", "tags"}},
+			pike.ResourceV2{
+				TypeName:     "data",
+				Name:         "azurerm_resource_group",
+				ResourceName: "pike",
+				Provider:     "azurerm",
+				Attributes:   []string{"name", "location", "tags"},
+			},
 		}, []string{"Microsoft.Resources/subscriptions/resourcegroups/read"}, false},
 		{"empty", args{}, nil, true},
-		{"guff", args{ResourceV2{"data",
-			"azurerm_toffee_group",
-			"pike",
-			"azurerm",
-			[]string{"name", "location", "tags"}}},
+		{
+			"guff",
+			args{pike.ResourceV2{
+				TypeName:     "data",
+				Name:         "azurerm_toffee_group",
+				ResourceName: "pike",
+				Provider:     "azurerm",
+				Attributes:   []string{"name", "location", "tags"},
+			}},
 			nil,
-			true},
+			true,
+		},
 	}
+
 	for _, tt := range tests {
+		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
-			got, err := GetAZUREDataPermissions(tt.args.result)
+			t.Parallel()
+			got, err := pike.GetAZUREDataPermissions(tt.args.result)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("GetAZUREDataPermissions() error = %v, wantErr %v", err, tt.wantErr)
+
 				return
 			}
 			if !reflect.DeepEqual(got, tt.want) {

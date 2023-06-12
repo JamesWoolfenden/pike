@@ -467,7 +467,7 @@ var awsRdsClusterParameterGroup []byte
 var awsNetworkACLRule []byte
 
 //go:embed mapping/aws/resource/acm/aws_acm_certificate.json
-var awsAcmCertificate []byte
+var AWSAcmCertificate []byte
 
 //go:embed mapping/aws/resource/acm-pa/aws_acmpca_certificate_authority.json
 var awsAcmpcaCertificateAuthority []byte

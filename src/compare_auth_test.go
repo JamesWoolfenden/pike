@@ -33,5 +33,4 @@ func TestCompare(t *testing.T) {
 			}
 		})
 	}
-
 }

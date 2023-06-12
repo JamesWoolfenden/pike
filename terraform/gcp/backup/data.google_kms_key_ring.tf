@@ -1,4 +1,3 @@
-
 data "google_kms_key_ring" "pike" {
   name     = "pike"
   location = "europe-west1"

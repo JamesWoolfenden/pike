@@ -1,11 +1,15 @@
-package pike
+package pike_test
 
 import (
 	_ "embed"
 	"testing"
+
+	pike "github.com/jameswoolfenden/pike/src"
 )
 
 func TestGCPPolicy(t *testing.T) {
+	t.Parallel()
+
 	type args struct {
 		permissions []string
 	}
@@ -16,20 +20,26 @@ func TestGCPPolicy(t *testing.T) {
 		want    string
 		wantErr bool
 	}{
-		{"basic", args{[]string{"bigquery.datasets.create", "bigquery.jobs.create"}},
+		{
+			"basic",
+			args{[]string{"bigquery.datasets.create", "bigquery.jobs.create"}},
 			"resource\"google_project_iam_custom_role\"\"terraform_pike\"{project=\"pike\"role_id=\"terraform_pike\"title=\"terraform_pike\"description=\"Auserwithleastprivileges\"permissions=[\"bigquery.datasets.create\",\"bigquery.jobs.create\"]}",
-			false},
+			false,
+		},
 	}
 	for _, tt := range tests {
+		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
-			got, err := GCPPolicy(tt.args.permissions)
+			t.Parallel()
+			got, err := pike.GCPPolicy(tt.args.permissions)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("GCPPolicy() error = %v, wantErr %v", err, tt.wantErr)
+
 				return
 			}
 
-			original := minify(got)
-			target := minify(tt.want)
+			original := Minify(got)
+			target := Minify(tt.want)
 			if original != target {
 				t.Errorf("GCPPolicy() = %v, want %v", got, tt.want)
 				t.Errorf("GCPPolicy() = %v, want %v", original, target)

@@ -1,4 +1,3 @@
-
 data "aws_security_group" "example" {
   name = "launch-wizard-1"
   tags = {

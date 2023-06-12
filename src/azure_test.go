@@ -1,69 +1,101 @@
-package pike
+package pike_test
 
 import (
 	"reflect"
 	"testing"
+
+	pike "github.com/jameswoolfenden/pike/src"
 )
 
 func TestGetAZUREPermissions(t *testing.T) {
+	t.Parallel()
+
 	type args struct {
-		result ResourceV2
+		result pike.ResourceV2
 	}
+
 	tests := []struct {
 		name    string
 		args    args
 		want    []string
 		wantErr bool
 	}{
-		{"data",
+		{
+			"data",
 			args{
-				ResourceV2{"data",
-					"azurerm_key_vault",
-					"MyDemoApiKey",
-					"azurerm",
-					[]string{"name"}}},
+				pike.ResourceV2{
+					TypeName:     "data",
+					Name:         "azurerm_key_vault",
+					ResourceName: "MyDemoApiKey",
+					Provider:     "azurerm",
+					Attributes:   []string{"name"},
+				},
+			},
 			[]string{
 				"Microsoft.Resources/subscriptions/resourcegroups/read",
 				"Microsoft.KeyVault/vaults/read",
 			},
-			false},
-		{"resource",
+			false,
+		},
+		{
+			"resource",
 			args{
-				ResourceV2{"resource",
-					"azurerm_key_vault",
-					"MyDemoApiKey",
-					"azurerm",
-					[]string{"name", "name", "resource_group"}}},
-			[]string{"Microsoft.Resources/subscriptions/resourcegroups/read",
+				pike.ResourceV2{
+					TypeName:     "resource",
+					Name:         "azurerm_key_vault",
+					ResourceName: "MyDemoApiKey",
+					Provider:     "azurerm",
+					Attributes:   []string{"name", "name", "resource_group"},
+				},
+			},
+			[]string{
+				"Microsoft.Resources/subscriptions/resourcegroups/read",
 				"Microsoft.KeyVault/vaults/read",
 				"Microsoft.KeyVault/vaults/write",
 				"Microsoft.KeyVault/vaults/delete",
-				"Microsoft.KeyVault/locations/deletedVaults/read"},
-			false},
-		{"bogus resource",
+				"Microsoft.KeyVault/locations/deletedVaults/read",
+			},
+			false,
+		},
+		{
+			"bogus resource",
 			args{
-				ResourceV2{"resource",
-					"azurerm_is_best",
-					"MyDemoApiKey",
-					"azurerm",
-					[]string{"name", "type", "resource_group"}}},
+				pike.ResourceV2{
+					TypeName:     "resource",
+					Name:         "azurerm_is_best",
+					ResourceName: "MyDemoApiKey",
+					Provider:     "azurerm",
+					Attributes:   []string{"name", "type", "resource_group"},
+				},
+			},
 			nil,
-			true},
-		{"bogus data",
+			true,
+		},
+		{
+			"bogus data",
 			args{
-				ResourceV2{"data",
-					"azurerm_is_best",
-					"MyDemoApiKey",
-					"azurerm",
-					[]string{"name", "type", "resource_group"}}},
+				pike.ResourceV2{
+					TypeName:     "data",
+					Name:         "azurerm_is_best",
+					ResourceName: "MyDemoApiKey",
+					Provider:     "azurerm",
+					Attributes:   []string{"name", "type", "resource_group"},
+				},
+			},
 			nil,
-			true},
+			true,
+		},
 	}
+
 	for _, tt := range tests {
+		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
-			got, err := GetAZUREPermissions(tt.args.result)
+			t.Parallel()
+
+			got, err := pike.GetAZUREPermissions(tt.args.result)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("GetAZUREPermissions() error = %v, wantErr %v", err, tt.wantErr)
+
 				return
 			}
 			if !reflect.DeepEqual(got, tt.want) {
@@ -74,41 +106,58 @@ func TestGetAZUREPermissions(t *testing.T) {
 }
 
 func TestGetAZUREResourcePermissions(t *testing.T) {
+	t.Parallel()
+
 	type args struct {
-		result ResourceV2
+		result pike.ResourceV2
 	}
+
 	tests := []struct {
 		name    string
 		args    args
 		want    []string
 		wantErr bool
 	}{
-		{"resource",
+		{
+			"resource",
 			args{
-				ResourceV2{"resource",
-					"azurerm_key_vault",
-					"MyDemoApiKey",
-					"azurerm",
-					[]string{"name", "name", "resource_group"}}},
-			[]string{"Microsoft.Resources/subscriptions/resourcegroups/read",
+				pike.ResourceV2{
+					TypeName:     "resource",
+					Name:         "azurerm_key_vault",
+					ResourceName: "MyDemoApiKey",
+					Provider:     "azurerm",
+					Attributes:   []string{"name", "name", "resource_group"},
+				},
+			},
+			[]string{
+				"Microsoft.Resources/subscriptions/resourcegroups/read",
 				"Microsoft.KeyVault/vaults/read",
 				"Microsoft.KeyVault/vaults/write",
 				"Microsoft.KeyVault/vaults/delete",
-				"Microsoft.KeyVault/locations/deletedVaults/read"},
-			false},
-		{"bogus", args{ResourceV2{"resource",
-			"azurerm_is_best",
-			"MyDemoApiKey",
-			"azurerm",
-			[]string{"name", "type", "resource_group"}}}, nil, true},
+				"Microsoft.KeyVault/locations/deletedVaults/read",
+			},
+			false,
+		},
+		{"bogus", args{pike.ResourceV2{
+			TypeName:     "resource",
+			Name:         "azurerm_is_best",
+			ResourceName: "MyDemoApiKey",
+			Provider:     "azurerm",
+			Attributes:   []string{"name", "type", "resource_group"},
+		}}, nil, true},
 	}
+
 	for _, tt := range tests {
+		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
-			got, err := GetAZUREResourcePermissions(tt.args.result)
+			t.Parallel()
+			got, err := pike.GetAZUREResourcePermissions(tt.args.result)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("GetAZUREResourcePermissions() error = %v, wantErr %v", err, tt.wantErr)
+
 				return
 			}
+
 			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("GetAZUREResourcePermissions() = %v, want %v", got, tt.want)
 			}
