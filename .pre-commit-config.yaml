@@ -42,7 +42,6 @@ repos:
     hooks:
       - id: gofmt
       - id: goimports
-      - id: golint
   - repo: https://github.com/syntaqx/git-hooks
     rev: v0.0.17
     hooks:
@@ -54,3 +53,9 @@ repos:
     rev: v1.52.2
     hooks:
       - id: golangci-lint
+  - repo: https://github.com/bridgecrewio/checkov
+    rev: 2.3.294
+    hooks:
+      - id: checkov
+        language_version: python3.10
+        args: ["-d", "."]
