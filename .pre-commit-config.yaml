@@ -58,4 +58,3 @@ repos:
     hooks:
       - id: checkov
         language_version: python3.10
-        args: ["-d", "."]

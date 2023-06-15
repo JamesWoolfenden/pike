@@ -1,0 +1,23 @@
+block-list-secret-scan: []
+branch: master
+directory:
+- .
+download-external-modules: false
+evaluate-variables: true
+external-modules-download-path: .external_modules
+framework:
+- secrets
+- dockerfile
+- github_configuration
+- github_actions
+- json
+- yaml
+- sca_package
+- sca_image
+mask: []
+secrets-history-timeout: 12h
+secrets-scan-file-type: []
+skip-path:
+- terraform
+- venv
+summary-position: top
