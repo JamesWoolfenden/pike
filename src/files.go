@@ -859,6 +859,9 @@ var awsEc2TransitGatewayRouteTable []byte
 //go:embed mapping/aws/resource/ec2/aws_ec2_transit_gateway_route_table_association.json
 var awsEc2TransitGatewayRouteTableAssociation []byte
 
+//go:embed mapping/aws/resource/ec2/aws_ec2_transit_gateway_route_table_propagation.json
+var awsEc2TransitGatewayRouteTablePropagation []byte
+
 //go:embed mapping/aws/resource/ec2/aws_ec2_transit_gateway_vpc_attachment.json
 var awsEc2TransitGatewayVpcAttachment []byte
 

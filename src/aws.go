@@ -196,6 +196,7 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_ec2_transit_gateway_route":                      awsEc2TransitGatewayRoute,
 		"aws_ec2_transit_gateway_route_table":                awsEc2TransitGatewayRouteTable,
 		"aws_ec2_transit_gateway_route_table_association":    awsEc2TransitGatewayRouteTableAssociation,
+		"aws_ec2_transit_gateway_route_table_propagation":    awsEc2TransitGatewayRouteTablePropagation,
 		"aws_ec2_transit_gateway_vpc_attachment":             awsEc2TransitGatewayVpcAttachment,
 		"aws_ecr_lifecycle_policy":                           awsEcrLifecyclePolicy,
 		"aws_ecr_pull_through_cache_rule":                    awsEcrPullThroughCacheRule,

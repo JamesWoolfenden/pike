@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "ec2:DescribePrefixLists"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
