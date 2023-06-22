@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "ec2:CreateTransitGatewayRoute",
+      "ec2:DescribeTransitGatewayRoute",
+      "ec2:ReplaceTransitGatewayRoute",
+      "ec2:SearchTransitGatewayRoutes"
+    ],
+    "attributes": {
+    },
+    "destroy": [
+      "ec2:DeleteTransitGatewayRoute"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

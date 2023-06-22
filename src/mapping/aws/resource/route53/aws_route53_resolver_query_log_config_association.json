@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "route53resolver:AssociateResolverQueryLogConfig",
+      "route53resolver:GetResolverQueryLogConfigAssociation"
+    ],
+    "attributes": {
+      "tags": [
+      ]
+    },
+    "destroy": [
+      "route53resolver:DisassociateResolverQueryLogConfig"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

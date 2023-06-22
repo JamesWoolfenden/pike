@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "iam:GetServerCertificate",
+      "iam:UploadServerCertificate"
+    ],
+    "attributes": {
+      "tags": [
+        "iam:ListServerCertificateTags",
+        "iam:TagServerCertificate",
+        "iam:UntagServerCertificate"
+      ]
+    },
+    "destroy": [
+      "iam:DeleteServerCertificate"
+    ],
+    "modify": [
+      "iam:UpdateServerCertificate"
+    ],
+    "plan": []
+  }
+]

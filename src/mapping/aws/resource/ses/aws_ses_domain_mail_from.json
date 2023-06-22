@@ -1,0 +1,12 @@
+[
+  {
+    "apply": [
+      "ses:SetIdentityMailFromDomain",
+      "ses:GetIdentityMailFromDomainAttributes"
+    ],
+    "attributes": {},
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

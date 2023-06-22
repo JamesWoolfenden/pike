@@ -1,0 +1,12 @@
+[
+  {
+    "apply": [
+      "ses:VerifyDomainDkim",
+      "ses:GetIdentityDkimAttributes"
+    ],
+    "attributes": {},
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -112,6 +112,9 @@ var awsIamPolicyAttachment []byte
 //go:embed mapping/aws/resource/iam/aws_iam_service_linked_role.json
 var awsIamServiceLinkedRole []byte
 
+//go:embed mapping/aws/resource/iam/aws_iam_server_certificate.json
+var awsIamServerCertificate []byte
+
 //go:embed mapping/aws/resource/iam/aws_iam_user.json
 var awsIamUser []byte
 
@@ -823,6 +826,15 @@ var awsRoute53HostedZoneDnssec []byte
 //go:embed mapping/aws/resource/route53/aws_route53_query_log.json
 var awsRoute53QueryLog []byte
 
+//go:embed mapping/aws/resource/route53/aws_route53_resolver_query_log_config.json
+var awsRoute53ResolverQueryLogConfig []byte
+
+//go:embed mapping/aws/resource/route53/aws_route53_resolver_query_log_config_association.json
+var awsRoute53ResolverQueryLogConfigAssociation []byte
+
+//go:embed mapping/aws/resource/route53/aws_route53_resolver_rule_association.json
+var awsRoute53ResolverRuleAssociation []byte
+
 //go:embed mapping/aws/resource/sagemaker/aws_sagemaker_endpoint_configuration.json
 var awsSagemakerEndpointConfiguration []byte
 
@@ -837,6 +849,15 @@ var awsSqsQueueRedrivePolicy []byte
 
 //go:embed mapping/aws/resource/grafana/aws_grafana_workspace_api_key.json
 var awsGrafanaWorkspaceAPIKey []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ec2_transit_gateway_route.json
+var awsEc2TransitGatewayRoute []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ec2_transit_gateway_route_table.json
+var awsEc2TransitGatewayRouteTable []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ec2_transit_gateway_route_table_association.json
+var awsEc2TransitGatewayRouteTableAssociation []byte
 
 //go:embed mapping/aws/resource/ec2/aws_ec2_transit_gateway_vpc_attachment.json
 var awsEc2TransitGatewayVpcAttachment []byte
@@ -1051,8 +1072,23 @@ var awsElasticacheUser []byte
 //go:embed mapping/aws/resource/servicequota/aws_servicequotas_service_quota.json
 var awsServicequotasServiceQuota []byte
 
+//go:embed mapping/aws/resource/ses/aws_ses_domain_dkim.json
+var awsSesDomainDkim []byte
+
+//go:embed mapping/aws/resource/ses/aws_ses_domain_identity.json
+var awsSesDomainIdentity []byte
+
+//go:embed mapping/aws/resource/ses/aws_ses_domain_identity_verification.json
+var awsSesDomainIdentityVerification []byte
+
+//go:embed mapping/aws/resource/ses/aws_ses_domain_mail_from.json
+var awsSesDomainMailFrom []byte
+
 //go:embed mapping/aws/resource/ses/aws_ses_identity_notification_topic.json
 var awsSesIdentityNotificationTopic []byte
+
+//go:embed mapping/aws/resource/ses/aws_ses_identity_policy.json
+var awsSesIdentityPolicy []byte
 
 //go:embed mapping/aws/resource/ses/aws_ses_receipt_rule.json
 var awsSesReceiptRule []byte
