@@ -19,7 +19,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-go-mod-
       - name: gofumpt
-        uses: iamnotaturtle/auto-gofmt@v2.10
+        uses: iamnotaturtle/auto-gofmt@v2.1.0
   test:
     strategy:
       matrix:
