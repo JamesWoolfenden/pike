@@ -67,7 +67,7 @@ var dataAwsKmsCiphertext []byte
 //go:embed mapping/aws/data/kms/aws_kms_key.json
 var dataAwsKmsKey []byte
 
-//go:embed mapping/aws/data/route53/aws_route_tables.json
+//go:embed mapping/aws/data/ec2/aws_route_tables.json
 var dataAwsRouteTables []byte
 
 //go:embed mapping/aws/data/elasticbeanstalk/aws_elastic_beanstalk_solution_stack.json
