@@ -7,7 +7,6 @@ evaluate-variables: true
 external-modules-download-path: .external_modules
 framework:
 - secrets
-- dockerfile
 - github_configuration
 - github_actions
 - json

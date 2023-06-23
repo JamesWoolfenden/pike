@@ -89,13 +89,14 @@ func Init(dirName string) (*string, []string, error) {
 
 	err = tf.Init(context.Background(), tfexec.Upgrade(true))
 	if err != nil {
-		return nil, nil, err
+		return nil, nil, fmt.Errorf("init failed %w", err)
 	}
 
 	log.Printf("terraform init at %s", dirName)
 
 	modules, err := os.ReadDir(dirName + "/" + ".terraform/modules")
 
+	//filter
 	var found []string
 	for _, module := range modules {
 		if module.Name() == "modules.json" || module.Name() == ".DS_Store" {
@@ -142,9 +143,11 @@ func MakePolicy(dirName string, file *string, init bool) (OutputPolicy, error) {
 
 	if file == nil {
 		fullPath, err := filepath.Abs(dirName)
+
 		if err != nil {
 			return Output, err
 		}
+
 		if init {
 			_, modules, err := Init(fullPath)
 			if err != nil {
@@ -167,7 +170,7 @@ func MakePolicy(dirName string, file *string, init bool) (OutputPolicy, error) {
 			return Output, err
 		}
 
-		// is this a file
+		// is this a tfFile
 		if !(FileExists(myFile)) {
 			return Output, os.ErrNotExist
 		}
@@ -176,13 +179,14 @@ func MakePolicy(dirName string, file *string, init bool) (OutputPolicy, error) {
 	}
 
 	var resources []ResourceV2
-	for _, file := range files {
+	for _, tfFile := range files {
 
-		resource, err := GetResources(file, dirName)
+		resource, err := GetResources(tfFile, dirName)
 		if err != nil {
 			// parse the other files
 			log.Print(err)
 		}
+
 		if resource != nil {
 			resources = append(resources, resource...)
 		}
@@ -214,6 +218,11 @@ func MakePolicy(dirName string, file *string, init bool) (OutputPolicy, error) {
 // GetTF return tf files in a directory
 func GetTF(dirName string) ([]string, error) {
 	files, err := GetTFFiles(dirName)
+
+	if err != nil {
+		return nil, fmt.Errorf("folder cant be found")
+	}
+
 	modulePath := dirName + "/.terraform/modules"
 	if modules, err := os.ReadDir(modulePath); err == nil {
 		for _, module := range modules {
@@ -222,9 +231,6 @@ func GetTF(dirName string) ([]string, error) {
 		}
 	}
 
-	if err != nil {
-		return nil, err
-	}
 	return files, nil
 }
 

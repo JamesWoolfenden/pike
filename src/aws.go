@@ -68,12 +68,19 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_api_gateway_method_settings":                    awsApigatewayv2Api,
 		"aws_api_gateway_resource":                           awsApigatewayv2Api,
 		"aws_api_gateway_rest_api":                           awsAPIGatewayRestAPI,
+		"aws_api_gateway_client_certificate":                 awsAPIGatewayRestAPI,
+		"aws_api_gateway_request_validator":                  awsAPIGatewayRestAPI,
 		"aws_api_gateway_stage":                              awsApigatewayv2Api,
 		"aws_api_gateway_usage_plan":                         awsApigatewayv2Api,
 		"aws_api_gateway_usage_plan_key":                     awsApigatewayv2Api,
 		"aws_apigatewayv2_api":                               awsApigatewayv2Api,
 		"aws_apigatewayv2_route":                             awsApigatewayv2Api,
 		"aws_apigatewayv2_stage":                             awsApigatewayv2Api,
+		"aws_apigatewayv2_domain_name":                       awsApigatewayv2Api,
+		"aws_apigatewayv2_api_mapping":                       awsApigatewayv2Api,
+		"aws_apigatewayv2_integration":                       awsApigatewayv2Api,
+		"aws_apigatewayv2_authorizer":                        awsApigatewayv2Api,
+		"aws_apigatewayv2_vpc_link":                          awsApigatewayv2Api,
 		"aws_appautoscaling_policy":                          awsAppautoscalingPolicy,
 		"aws_appautoscaling_scheduled_action":                awsAppautoscalingScheduledAction,
 		"aws_appautoscaling_target":                          awsAppautoscalingTarget,
@@ -461,6 +468,8 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"backend":                                            s3backend,
 		"aws_emr_cluster":                                    awsEmrCluster,
 		"aws_emr_security_configuration":                     awsEmrSecurityConfiguration,
+		"aws_workspaces_workspace":                           awsWorkspacesWorkspace,
+		"aws_workspaces_directory":                           awsWorkspacesDirectory,
 	}
 
 	var (

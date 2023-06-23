@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
-	"strings"
 
 	"github.com/hashicorp/hcl/v2/hclparse"
 	"github.com/hashicorp/hcl/v2/hclsyntax"
@@ -25,19 +24,27 @@ func GetResources(file string, dirName string) ([]ResourceV2, error) {
 		var resource ResourceV2
 		resource.TypeName = block.Type
 
-		ignore := []string{"terraform", "output", "provider", "variable", "locals", "template"}
-
-		if StringInSlice(resource.TypeName, ignore) {
-			Resources, err := DetectBackend(resource, block, Resources)
-			if err == nil {
-				return Resources, fmt.Errorf("faile dto detect backend %w", err)
+		switch block.Type {
+		case "terraform":
+			{
+				Resources, _ = DetectBackend(resource, block, Resources)
+				continue
 			}
-			continue
-		}
-
-		if strings.Contains(resource.TypeName, "module") {
-			LocalResources := GetLocalModules(block, dirName)
-			Resources = append(LocalResources, Resources...)
+		case "module":
+			{
+				LocalResources, err := GetLocalModules(block, dirName)
+				if err == nil {
+					Resources = append(LocalResources, Resources...)
+				}
+			}
+		case "output", "variable", "locals", "provider":
+			{
+				continue
+			}
+		default:
+			{
+				//currently missed
+			}
 		}
 
 		if block.Labels != nil {
@@ -55,7 +62,7 @@ func GetResources(file string, dirName string) ([]ResourceV2, error) {
 			resource.Provider = GetHCLType(block.Labels[0])
 		} else {
 			resource.Provider = "unknown"
-			log.Print("parsing error for ", block.Type)
+			log.Print("parsing error for ", block)
 		}
 
 		Resources = append(Resources, resource)
@@ -67,14 +74,16 @@ func GetResources(file string, dirName string) ([]ResourceV2, error) {
 // DetectBackend handles permissions for backend blocks
 func DetectBackend(resource ResourceV2, block *hclsyntax.Block, resources []ResourceV2) ([]ResourceV2, error) {
 	if resource.TypeName == terraform {
-		for _, terraform := range block.Body.Blocks {
-			if terraform.Type == "backend" {
-				if terraform.Labels[0] == "s3" {
-					resource.Name = "backend"
-					resource.Provider = "aws"
-					resource.Attributes = []string{"s3"}
-					resources = append(resources, resource)
-					return resources, nil
+		if block.Body != nil && block.Body.Blocks != nil {
+			for _, terraform := range block.Body.Blocks {
+				if terraform.Type == "backend" {
+					if terraform.Labels != nil && terraform.Labels[0] == "s3" {
+						resource.Name = "backend"
+						resource.Provider = "aws"
+						resource.Attributes = []string{"s3"}
+						resources = append(resources, resource)
+						return resources, nil
+					}
 				}
 			}
 		}
@@ -102,8 +111,8 @@ func GetResourceBlocks(file string) (*hclsyntax.Body, error) {
 	return parsedFile.Body.(*hclsyntax.Body), err
 }
 
-// GetLocalModules returen resource from path
-func GetLocalModules(block *hclsyntax.Block, dirName string) []ResourceV2 {
+// GetLocalModules return resource from path
+func GetLocalModules(block *hclsyntax.Block, dirName string) ([]ResourceV2, error) {
 	var Resources []ResourceV2
 
 	modulePath := GetModulePath(block)
@@ -112,7 +121,11 @@ func GetLocalModules(block *hclsyntax.Block, dirName string) []ResourceV2 {
 	modulePath = filepath.Join(dirName, "/", modulePath)
 
 	// now process these extras
-	ExtraFiles, _ := GetTF(modulePath)
+	ExtraFiles, err := GetTF(modulePath)
+	if err != nil {
+		log.Printf("getTF %s", err)
+	}
+
 	for _, file := range ExtraFiles {
 		resource, err := GetResources(file, dirName)
 		if err == nil {
@@ -120,7 +133,7 @@ func GetLocalModules(block *hclsyntax.Block, dirName string) []ResourceV2 {
 		}
 	}
 
-	return Resources
+	return Resources, nil
 }
 
 // GetModulePath extracts the source location from a module

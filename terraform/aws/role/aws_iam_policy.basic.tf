@@ -7,9 +7,15 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "elasticmapreduce:CreateSecurityConfiguration",
-          "elasticmapreduce:DescribeSecurityConfiguration",
-          "elasticmapreduce:DeleteSecurityConfiguration"
+          #          "apigateway:CreateRequestValidator",
+          "apigateway:DELETE",
+          "apigateway:GET",
+          "apigateway:PUT",
+          "apigateway:POST",
+          "apigateway:PATCH",
+          #          "apigateway:RemoveCertificateFromDomain",
+          #          "apigateway:AddCertificateToDomain",
+          #          "apigateway:GetRequestValidator"
         ],
         "Resource" : "*",
       }

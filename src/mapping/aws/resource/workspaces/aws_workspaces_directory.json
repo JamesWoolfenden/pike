@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "workspaces:DeregisterWorkspaceDirectory",
+      "workspaces:RegisterWorkspaceDirectory"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

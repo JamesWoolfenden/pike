@@ -82,9 +82,10 @@ func Test_getLocalModules(t *testing.T) {
 	notBlock := getInitialBlock(notLocal + "/module.local.tf")
 
 	tests := []struct {
-		name string
-		args args
-		want []pike.ResourceV2
+		name    string
+		args    args
+		want    []pike.ResourceV2
+		wantErr bool
 	}{
 		{
 			"local",
@@ -96,13 +97,19 @@ func Test_getLocalModules(t *testing.T) {
 				"aws",
 				[]string{"name"},
 			}},
+			false,
 		},
-		{"rubbish", args{duffBlock, duffName}, nil},
-		{"notlocal", args{notBlock, notLocal}, nil},
+		{name: "rubbish", args: args{duffBlock, duffName}, wantErr: false},
+		{name: "notLocal", args: args{notBlock, notLocal}, wantErr: false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got := pike.GetLocalModules(tt.args.block, tt.args.dirName)
+			got, err := pike.GetLocalModules(tt.args.block, tt.args.dirName)
+			if (err != nil) != tt.wantErr {
+				t.Errorf("GetResources() error = %v, wantErr %v", err, tt.wantErr)
+
+				return
+			}
 			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("GetLocalModules() = %v, want %v", got, tt.want)
 			}
@@ -403,6 +410,106 @@ func TestGetResourceBlocks(t *testing.T) {
 			}
 			if !reflect.DeepEqual(got.SrcRange, tt.want) {
 				t.Errorf("GetResourceBlocks() = %v, want %v", got.SrcRange, tt.want)
+			}
+		})
+	}
+}
+
+func TestDetectBackend(t *testing.T) {
+	t.Parallel()
+
+	type args struct {
+		resource  pike.ResourceV2
+		block     *hclsyntax.Block
+		resources []pike.ResourceV2
+	}
+
+	resource := pike.ResourceV2{
+		TypeName:     "terraform",
+		Name:         "",
+		ResourceName: "",
+		Provider:     "",
+		Attributes:   nil,
+	}
+
+	convert := pike.ResourceV2{
+		TypeName:     "terraform",
+		Name:         "backend",
+		ResourceName: "",
+		Provider:     "aws",
+		Attributes:   []string{"s3"},
+	}
+
+	var wanted []pike.ResourceV2
+
+	want := pike.ResourceV2{
+		TypeName:     "terraform",
+		Name:         "backend",
+		ResourceName: "string",
+		Provider:     "aws",
+		Attributes:   []string{"s3"},
+	}
+	wanted = append(wanted, want)
+	wanted = append(wanted, convert)
+
+	ablock := hclsyntax.Block{
+		Type:   "backend",
+		Labels: []string{"s3"},
+		Body:   nil,
+	}
+
+	blocks := hclsyntax.Blocks{
+		&ablock,
+	}
+
+	test := hclsyntax.Body{
+		Attributes: nil,
+		Blocks:     blocks,
+		SrcRange:   hcl.Range{},
+		EndRange:   hcl.Range{},
+	}
+
+	block := hclsyntax.Block{
+		Type: "terraform",
+		Body: &test,
+	}
+
+	emptyBlock := hclsyntax.Block{}
+	item := pike.ResourceV2{
+		TypeName:     "terraform",
+		Name:         "backend",
+		ResourceName: "string",
+		Provider:     "aws",
+		Attributes:   []string{"s3"},
+	}
+
+	var empty []pike.ResourceV2
+	var found []pike.ResourceV2
+	var nought []pike.ResourceV2
+
+	found = append(found, item)
+
+	tests := []struct {
+		name    string
+		args    args
+		want    []pike.ResourceV2
+		wantErr bool
+	}{
+		{name: "nothing", args: args{resource, &emptyBlock, empty}, want: nought, wantErr: true},
+		{name: "backend", args: args{resource, &block, found}, want: wanted, wantErr: false},
+	}
+
+	for _, tt := range tests {
+		tt := tt
+		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
+			got, err := pike.DetectBackend(tt.args.resource, tt.args.block, tt.args.resources)
+			if (err != nil) != tt.wantErr {
+				t.Errorf("DetectBackend() error = %v, wantErr %v", err, tt.wantErr)
+				return
+			}
+			if !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("DetectBackend() got = %v, want %v", got, tt.want)
 			}
 		})
 	}

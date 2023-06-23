@@ -45,3 +45,16 @@ resource "aws_iam_policy" "terraform_pike" {
 
 ```
 <!-- END OF PRE-COMMIT-PIKE DOCS HOOK -->
+nfiguration",
+                "s3:ListBucket"
+            ],
+            "Resource": [
+                "*"
+            ]
+        }
+    ]
+})
+}
+
+
+```

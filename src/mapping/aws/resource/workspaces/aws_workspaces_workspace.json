@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "workspaces:CreateWorkspaces",
+      "workspaces:DeleteTags",
+      "workspaces:CreateTags",
+      "workspaces:ModifyWorkspaceProperties"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "workspaces:TerminateWorkspaces"
+    ],
+    "modify": [
+      "workspaces:ModifyWorkspaceProperties"
+    ],
+    "plan": []
+  }
+]

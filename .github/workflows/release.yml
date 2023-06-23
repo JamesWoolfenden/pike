@@ -11,21 +11,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3.5.3
+        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
       - name: Unshallow
         run: git fetch --prune --unshallow
       - name: Set up Go
-        uses: actions/setup-go@v4.0.1
+        uses: actions/setup-go@fac708d6674e30b6ba41289acaab6d4b75aa0753 # v4.0.1
         with:
           go-version: 1.19
       - name: Import GPG key
         id: import_gpg
-        uses: crazy-max/ghaction-import-gpg@v5.3.0
+        uses: crazy-max/ghaction-import-gpg@72b6676b71ab476b77e676928516f6982eef7a41 # v5.3.0
         with:
           gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
       - name: Run GoReleaser
-        uses: goreleaser/goreleaser-action@v4.3.0
+        uses: goreleaser/goreleaser-action@f82d6c1c344bcacabba2c841718984797f664a6b # v4.2.0
         with:
           version: latest
           args: release --clean
@@ -41,16 +41,16 @@ jobs:
     needs:
       - goreleaser
     steps:
-      - uses: actions/checkout@v3.5.3
+      - uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
       - name: Publish to Registry
-        uses: elgohr/Publish-Docker-Github-Action@v5
+        uses: elgohr/Publish-Docker-Github-Action@219613003b08f4d049f34cb56c92e84345e1bb3f # v5
         with:
           name: jameswoolfenden/pike
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
           tags: "latest,${{ github.ref_name }}"
       - name: Update Docker Hub README
-        uses: peter-evans/dockerhub-description@v3.4.1
+        uses: peter-evans/dockerhub-description@579f64ca0abced29dbbc44ab4c6a0b9e33ab3588 # v3.4.1
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
@@ -64,7 +64,7 @@ jobs:
       - goreleaser
     steps:
       - name: Repository Dispatch
-        uses: peter-evans/repository-dispatch@v2.1.1
+        uses: peter-evans/repository-dispatch@26b39ed245ab8f31526069329e112ab2fb224588 # v2.1.1
         with:
           token: ${{ secrets.PAT }}
           repository: jameswoolfenden/scoop

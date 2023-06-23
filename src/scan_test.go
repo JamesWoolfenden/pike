@@ -188,6 +188,7 @@ func TestMakePolicy(t *testing.T) {
 			true,
 		},
 	}
+
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			got, err := pike.MakePolicy(tt.args.dirName, tt.args.file, tt.args.init)
