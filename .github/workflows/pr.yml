@@ -18,8 +18,8 @@ jobs:
           key: ${{ runner.os }}-go-mod-${{ hashFiles('**/go.sum') }}
           restore-keys: |
             ${{ runner.os }}-go-mod-
-      - name: Fmt
-        run: make fmt
+      - name: gofumpt
+        uses: iamnotaturtle/auto-gofmt@v2.1.0
   test:
     strategy:
       matrix:

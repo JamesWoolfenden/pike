@@ -1,0 +1,12 @@
+[
+  {
+    "apply": [
+      "ses:VerifyDomainIdentity",
+      "ses:GetIdentityVerificationAttributes"
+    ],
+    "attributes": {},
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

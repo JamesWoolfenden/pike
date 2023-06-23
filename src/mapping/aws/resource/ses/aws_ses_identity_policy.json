@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "ses:GetIdentityPolicies",
+      "ses:PutIdentityPolicy"
+    ],
+    "attributes": {},
+    "destroy": [
+      "ses:DeleteIdentityPolicy"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

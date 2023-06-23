@@ -67,7 +67,7 @@ var dataAwsKmsCiphertext []byte
 //go:embed mapping/aws/data/kms/aws_kms_key.json
 var dataAwsKmsKey []byte
 
-//go:embed mapping/aws/data/route53/aws_route_tables.json
+//go:embed mapping/aws/data/ec2/aws_route_tables.json
 var dataAwsRouteTables []byte
 
 //go:embed mapping/aws/data/elasticbeanstalk/aws_elastic_beanstalk_solution_stack.json
@@ -600,3 +600,12 @@ var dataAwsEksNodeGroup []byte
 
 //go:embed mapping/aws/data/eks/aws_eks_node_groups.json
 var dataAwsEksNodeGroups []byte
+
+//go:embed mapping/aws/data/ec2/aws_prefix_list.json
+var dataAwsPrefixList []byte
+
+//go:embed mapping/aws/data/ec2/aws_vpc_dhcp_options.json
+var dataAwsVpcDhcpOptions []byte
+
+//go:embed mapping/aws/data/route53/aws_route53_resolver_rule.json
+var dataAwsRoute53ResolverRule []byte

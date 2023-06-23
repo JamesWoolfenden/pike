@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "route53resolver:AssociateResolverRule",
+      "route53resolver:GetResolverRuleAssociation"
+    ],
+    "attributes": {
+      "tags": [
+      ]
+    },
+    "destroy": [
+      "route53resolver:DisassociateResolverRule"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

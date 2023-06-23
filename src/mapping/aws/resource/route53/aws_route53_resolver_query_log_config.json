@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "route53resolver:CreateResolverQueryLogConfig",
+      "route53resolver:GetResolverQueryLogConfig"
+    ],
+    "attributes": {
+      "tags": [
+        "route53resolver:ListTagsForResource",
+        "route53resolver:TagResource"
+      ]
+    },
+    "destroy": [
+      "route53resolver:DeleteResolverQueryLogConfig"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

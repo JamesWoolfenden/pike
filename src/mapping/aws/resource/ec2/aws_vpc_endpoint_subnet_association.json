@@ -1,0 +1,15 @@
+[
+    {
+      "apply": [
+        "ec2:ModifyVpcEndpoint",
+        "ec2:DescribeVpcEndpoints"
+      ],
+      "attributes": {
+      },
+      "destroy": [
+      ],
+      "modify": [
+      ],
+      "plan": []
+    }
+  ]
