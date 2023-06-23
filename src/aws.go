@@ -440,6 +440,7 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_vpc_endpoint":                                   awsVpcEndpoint,
 		"aws_vpc_endpoint_route_table_association":           awsVpcEndpointRouteTableAssociation,
 		"aws_vpc_endpoint_service":                           awsVpcEndpointService,
+		"aws_vpc_endpoint_subnet_association":                awsVpcEndpointSubnetAssociation,
 		"aws_vpc_ipv4_cidr_block_association":                awsVpcIpv4CidrBlockAssociation,
 		"aws_vpc_peering_connection":                         awsVpcPeeringConnection,
 		"aws_vpc_peering_connection_accepter":                awsVpcPeeringConnectionAccepter,

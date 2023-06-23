@@ -721,6 +721,9 @@ var awsVpcDhcpOptionsAssociation []byte
 //go:embed mapping/aws/resource/ec2/aws_vpc_endpoint_service.json
 var awsVpcEndpointService []byte
 
+//go:embed mapping/aws/resource/ec2/aws_vpc_endpoint_subnet_association.json
+var awsVpcEndpointSubnetAssociation []byte
+
 //go:embed mapping/aws/resource/ec2/aws_vpc_ipv4_cidr_block_association.json
 var awsVpcIpv4CidrBlockAssociation []byte
 
