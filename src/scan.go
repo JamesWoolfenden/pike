@@ -98,7 +98,7 @@ func Init(dirName string) (*string, []string, error) {
 
 	var found []string
 	for _, module := range modules {
-		if module.Name() == "modules.json" {
+		if module.Name() == "modules.json" || module.Name() == ".DS_Store" {
 			continue
 		}
 		found = append(found, module.Name())
