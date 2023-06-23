@@ -381,6 +381,7 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_route53_resolver_query_log_config":              awsRoute53ResolverQueryLogConfig,
 		"aws_route53_resolver_query_log_config_association":  awsRoute53ResolverQueryLogConfigAssociation,
 		"aws_route53_resolver_rule_association":              awsRoute53ResolverRuleAssociation,
+		"aws_route53_vpc_association_authorization":          awsRoute53VpcAssociationAuthorization,
 		"aws_route53_zone":                                   awsRoute53Zone,
 		"aws_route53_zone_association":                       awsRoute53ZoneAssociation,
 		"aws_route_table":                                    awsRouteTable,

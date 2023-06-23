@@ -601,6 +601,9 @@ var dataAwsEksNodeGroup []byte
 //go:embed mapping/aws/data/eks/aws_eks_node_groups.json
 var dataAwsEksNodeGroups []byte
 
+//go:embed mapping/aws/data/ec2/aws_network_acls.json
+var dataAwsNetworkAcls []byte
+
 //go:embed mapping/aws/data/ec2/aws_prefix_list.json
 var dataAwsPrefixList []byte
 

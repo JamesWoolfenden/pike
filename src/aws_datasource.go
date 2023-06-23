@@ -184,6 +184,7 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 		"aws_msk_cluster":                                      dataAwsMskCluster,
 		"aws_msk_configuration":                                dataAwsMskConfiguration,
 		"aws_msk_kafka_version":                                dataAwsMskKafkaVersion,
+		"aws_network_acls":                                     dataAwsNetworkAcls,
 		"aws_organizations_organization":                       dataAwsOrganizationsOrganization,
 		"aws_outposts_outpost":                                 dataAwsOutpostsOutpost,
 		"aws_partition":                                        placeholder,
