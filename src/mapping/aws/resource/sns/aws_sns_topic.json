@@ -1,20 +1,20 @@
 [
   {
     "apply": [
-      "SNS:CreateTopic",
-      "SNS:SetTopicAttributes",
-      "SNS:GetTopicAttributes",
-      "SNS:ListTagsForResource",
-      "SNS:DeleteTopic"
+      "sns:CreateTopic",
+      "sns:SetTopicAttributes",
+      "sns:GetTopicAttributes",
+      "sns:ListTagsForResource",
+      "sns:DeleteTopic"
     ],
     "attributes": {
       "tags": [
-        "SNS:TagResource",
-        "SNS:UnTagResource"
+        "sns:TagResource",
+        "sns:UnTagResource"
       ]
     },
     "destroy": [
-      "SNS:DeleteTopic"
+      "sns:DeleteTopic"
     ],
     "modify": [],
     "plan": []

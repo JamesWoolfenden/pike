@@ -1,8 +1,8 @@
 [
   {
     "apply": [
-      "SNS:SetTopicAttributes",
-      "SNS:GetTopicAttributes"
+      "sns:SetTopicAttributes",
+      "sns:GetTopicAttributes"
     ],
     "attributes": {
       "tags": []
