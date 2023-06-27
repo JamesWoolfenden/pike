@@ -220,7 +220,7 @@ func GetTF(dirName string) ([]string, error) {
 	files, err := GetTFFiles(dirName)
 
 	if err != nil {
-		return nil, fmt.Errorf("folder cant be found")
+		return nil, fmt.Errorf("folder %s can't be found", dirName)
 	}
 
 	modulePath := dirName + "/.terraform/modules"

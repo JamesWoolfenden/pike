@@ -1,14 +1,15 @@
 [
   {
     "apply": [
-      "sns:SetTopicAttributes",
-      "sns:GetTopicAttributes"
+      "ec2:DescribeNetworkAcls"
     ],
     "attributes": {
       "tags": []
     },
     "destroy": [],
     "modify": [],
-    "plan": []
+    "plan": [
+      "ec2:DescribeNetworkAcls"
+    ]
   }
 ]

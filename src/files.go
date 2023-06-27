@@ -829,6 +829,9 @@ var awsRoute53HostedZoneDnssec []byte
 //go:embed mapping/aws/resource/route53/aws_route53_query_log.json
 var awsRoute53QueryLog []byte
 
+//go:embed mapping/aws/resource/route53/aws_route53_vpc_association_authorization.json
+var awsRoute53VpcAssociationAuthorization []byte
+
 //go:embed mapping/aws/resource/route53/aws_route53_resolver_query_log_config.json
 var awsRoute53ResolverQueryLogConfig []byte
 
