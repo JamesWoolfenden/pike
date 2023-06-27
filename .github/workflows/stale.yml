@@ -2,6 +2,7 @@ name: 'Stale'
 on:
   schedule:
     - cron: '30 1 * * *'
+  workflow_dispatch:  
 permissions: read-all
 
 jobs:
