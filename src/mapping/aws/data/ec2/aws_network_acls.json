@@ -8,6 +8,8 @@
     },
     "destroy": [],
     "modify": [],
-    "plan": []
+    "plan": [
+      "ec2:DescribeNetworkAcls"
+    ]
   }
 ]
