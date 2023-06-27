@@ -2,7 +2,7 @@ name: 'Stale'
 on:
   schedule:
     - cron: '30 1 * * *'
-  workflow_dispatch:  
+  workflow_dispatch:
 permissions: read-all
 
 jobs:
@@ -20,3 +20,4 @@ jobs:
           days-before-close: 5
           enable-statistics: true
           exempt-issue-labels: enhancement
+          exempt-pr-labels: enhancement
