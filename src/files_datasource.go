@@ -232,6 +232,12 @@ var dataAwsEc2NetworkInsightsPath []byte
 //go:embed mapping/aws/data/ec2/aws_ec2_transit_gateway_attachment.json
 var dataAwsEc2TransitGatewayAttachment []byte
 
+//go:embed mapping/aws/data/ec2/aws_ec2_transit_gateway_attachments.json
+var dataAwsEc2TransitGatewayAttachments []byte
+
+//go:embed mapping/aws/data/ec2/aws_ec2_transit_gateway_dx_gateway_attachment.json
+var dataAwsEc2TransitGatewayDxGatewayAttachment []byte
+
 //go:embed mapping/aws/data/geo/aws_location_tracker_association.json
 var dataAwsLocationTrackerAssociation []byte
 

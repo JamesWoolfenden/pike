@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "directconnect:CreateDirectConnectGateway",
+      "directconnect:DescribeDirectConnectGateways"
+    ],
+    "attributes": {
+    },
+    "destroy": [
+      "directconnect:DeleteDirectConnectGateway"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]
