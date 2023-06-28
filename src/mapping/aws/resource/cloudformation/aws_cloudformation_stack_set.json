@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "cloudformation:CreateStackSet",
+      "cloudformation:DescribeStackSet"
+    ],
+    "attributes": {
+    },
+    "destroy": [
+      "cloudformation:DeleteStackSet"
+    ],
+    "modify": [
+      "cloudformation:UpdateStackSet"
+    ],
+    "plan": []
+  }
+]

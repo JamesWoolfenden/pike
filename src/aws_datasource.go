@@ -122,6 +122,8 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 		"aws_ec2_network_insights_path":                        dataAwsEc2NetworkInsightsPath,
 		"aws_ec2_transit_gateway":                              dataAwsEc2Transitgateway,
 		"aws_ec2_transit_gateway_attachment":                   dataAwsEc2TransitGatewayAttachment,
+		"aws_ec2_transit_gateway_attachments":                  dataAwsEc2TransitGatewayAttachments,
+		"aws_ec2_transit_gateway_dx_gateway_attachment":        dataAwsEc2TransitGatewayDxGatewayAttachment,
 		"aws_ecr_authorization":                                dataAwsEcrAuthorization,
 		"aws_ecr_authorization_token":                          dataAwsEcrAuthorizationToken,
 		"aws_ecr_repository":                                   dataAwsEcrRepository,

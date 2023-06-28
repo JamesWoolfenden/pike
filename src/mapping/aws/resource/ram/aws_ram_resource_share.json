@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "ram:CreateResourceShare",
+      "ram:GetResourceShares"
+    ],
+    "attributes": {
+      "tags": [
+        "ram:TagResource",
+        "ram:UntagResource"
+      ]
+    },
+    "destroy": [
+      "ram:DeleteResourceShare"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

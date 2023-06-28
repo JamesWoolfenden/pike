@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "cloudformation:CreateStackInstances",
+      "cloudformation:DescribeStackInstance",
+      "cloudformation:DescribeStackSetOperation",
+      "cloudformation:ListStackSetOperationResults"
+    ],
+    "attributes": {
+    },
+    "destroy": [
+      "cloudformation:DeleteStackInstances"
+    ],
+    "modify": [
+      "cloudformation:UpdateStackInstances"
+    ],
+    "plan": []
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "apply": [
+      "directconnect:ConfirmTransitVirtualInterface"
+    ],
+    "attributes": {
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
