@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "route53:CreateReusableDelegationSet",
+      "route53:GetReusableDelegationSetk"
+    ],
+    "attributes": {
+    },
+    "destroy": [
+      "route53:DeleteReusableDelegationSet"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

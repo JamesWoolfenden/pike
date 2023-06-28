@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "ram:AssociateResourceShare",
+      "ram:GetResourceShareAssociations"
+    ],
+    "attributes": {
+    },
+    "destroy": [
+      "ram:DisassociateResourceShare"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

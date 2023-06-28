@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "config:PutConfigurationAggregator",
+      "config:DescribeConfigurationAggregators"
+    ],
+    "attributes": {
+      "tags": [
+        "config:ListTagsForResource",
+        "config:TagResource",
+        "config:UntagResource"
+      ]
+    },
+    "destroy": [
+      "config:DeleteConfigurationAggregator"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

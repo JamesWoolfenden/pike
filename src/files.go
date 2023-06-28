@@ -187,6 +187,15 @@ var awsDbClusterSnapshot []byte
 //go:embed mapping/aws/resource/rds/aws_db_event_subscription.json
 var awsDbEventSubscription []byte
 
+//go:embed mapping/aws/resource/ram/aws_ram_principal_association.json
+var awsRamPrincipleAssociation []byte
+
+//go:embed mapping/aws/resource/ram/aws_ram_resource_association.json
+var awsRamResourceAssociation []byte
+
+//go:embed mapping/aws/resource/ram/aws_ram_resource_share.json
+var awsRamResourceShare []byte
+
 //go:embed mapping/aws/resource/rds/aws_rds_cluster.json
 var awsRdsCluster []byte
 
@@ -616,6 +625,9 @@ var awsSfnStateMachine []byte
 //go:embed mapping/aws/resource/config/aws_config_config_rule.json
 var awsConfigConfigRule []byte
 
+//go:embed mapping/aws/resource/config/aws_config_configuration_aggregator.json
+var awsConfigConfigurationAggregator []byte
+
 //go:embed mapping/aws/resource/config/aws_config_configuration_recorder_status.json
 var awsConfigConfigurationRecorderStatus []byte
 
@@ -802,6 +814,12 @@ var awsMedialiveInput []byte
 //go:embed mapping/aws/resource/medialive/aws_medialive_input_security_group.json
 var awsMedialiveInputSecurityGroup []byte
 
+//go:embed mapping/aws/resource/cloudformation/aws_cloudformation_stack_set.json
+var awsCloudFormationStackSet []byte
+
+//go:embed mapping/aws/resource/cloudformation/aws_cloudformation_stack_set_instance.json
+var awsCloudFormationStackSetInstance []byte
+
 //go:embed mapping/aws/resource/cloudfront/aws_cloudfront_origin_access_control.json
 var awsCloudfrontOriginAccessControl []byte
 
@@ -816,6 +834,9 @@ var awsMskConfiguration []byte
 
 //go:embed mapping/aws/resource/kafka/aws_msk_scram_secret_association.json
 var awsMskScramSecretAssociation []byte
+
+//go:embed mapping/aws/resource/route53/aws_route53_delegation_set.json
+var awsRoute53DelegationSet []byte
 
 //go:embed mapping/aws/resource/route53/aws_route53_key_signing_key.json
 var awsRoute53KeySiginingKey []byte
@@ -858,6 +879,9 @@ var awsGrafanaWorkspaceAPIKey []byte
 
 //go:embed mapping/aws/resource/ec2/aws_ec2_transit_gateway_route.json
 var awsEc2TransitGatewayRoute []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ec2_transit_gateway.json
+var awsEc2TransitGateway []byte
 
 //go:embed mapping/aws/resource/ec2/aws_ec2_transit_gateway_route_table.json
 var awsEc2TransitGatewayRouteTable []byte
@@ -1110,6 +1134,15 @@ var awsCloudfrontOriginAccessIdentity []byte
 
 //go:embed mapping/aws/resource/cloudwatch/aws_cloudwatch_metric_stream.json
 var awsCloudwatchMetricStream []byte
+
+//go:embed mapping/aws/resource/directconnect/aws_dx_hosted_transit_virtual_interface_accepter.json
+var awsDxHostedTransitVirtualInterfaceAccepter []byte
+
+//go:embed mapping/aws/resource/directconnect/aws_dx_gateway.json
+var awsDxGateway []byte
+
+//go:embed mapping/aws/resource/directconnect/aws_dx_gateway_association.json
+var awsDxGatewayAssociation []byte
 
 //go:embed mapping/aws/resource/dynamodb/aws_dynamodb_global_table.json
 var awsDynamodbGlobalTable []byte
