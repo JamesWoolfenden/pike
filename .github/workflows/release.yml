@@ -50,7 +50,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
           tags: "latest,${{ github.ref_name }}"
       - name: Update Docker Hub README
-        uses: peter-evans/dockerhub-description@579f64ca0abced29dbbc44ab4c6a0b9e33ab3588 # v3.4.1
+        uses: peter-evans/dockerhub-description@dc67fad7001ef9e8e3c124cb7a64e16d0a63d864 # v3.4.2
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
