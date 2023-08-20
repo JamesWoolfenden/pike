@@ -1,6 +1,7 @@
 package pike_test
 
 import (
+	"os"
 	"path/filepath"
 	"reflect"
 	"runtime"
@@ -113,6 +114,10 @@ func TestInit(t *testing.T) {
 	}
 
 	dirName, _ := filepath.Abs("testdata/init/nicconf")
+
+	err := os.RemoveAll(filepath.Join(dirName, ".terraform"))
+
+	log.Print(err)
 
 	tests := []struct {
 		name    string
