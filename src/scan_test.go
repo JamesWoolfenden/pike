@@ -146,6 +146,7 @@ func TestInit(t *testing.T) {
 }
 
 func TestMakePolicy(t *testing.T) {
+	t.Parallel()
 	type args struct {
 		dirName string
 		file    *string
@@ -154,6 +155,8 @@ func TestMakePolicy(t *testing.T) {
 
 	bogus := "testdata/scan/examples/simple/bogus.tf"
 	actual := "testdata/scan/examples/simple/aws_s3_bucket.pike.tf"
+	dynamic := "testdata/scan/examples/dynamic/dynamic.tf"
+
 	//goland:noinspection GoLinter
 	tests := []struct {
 		name    string
@@ -166,7 +169,50 @@ func TestMakePolicy(t *testing.T) {
 			args{
 				"testdata/init/nicconf", nil, true,
 			},
-			"{\n    \"Version\": \"2012-10-17\",\n    \"Statement\": [\n        {\n            \"Sid\": \"VisualEditor0\",\n            \"Effect\": \"Allow\",\n            \"Action\": [\n                \"apigateway:DELETE\",\n                \"apigateway:GET\",\n                \"apigateway:PATCH\",\n                \"apigateway:POST\",\n                \"apigateway:PUT\"\n            ],\n            \"Resource\": [\n                \"*\"\n            ]\n        },\n        {\n            \"Sid\": \"VisualEditor1\",\n            \"Effect\": \"Allow\",\n            \"Action\": [\n                \"application-autoscaling:DeleteScalingPolicy\",\n                \"application-autoscaling:DeregisterScalableTarget\",\n                \"application-autoscaling:DescribeScalableTargets\",\n                \"application-autoscaling:DescribeScalingPolicies\",\n                \"application-autoscaling:PutScalingPolicy\",\n                \"application-autoscaling:RegisterScalableTarget\"\n            ],\n            \"Resource\": [\n                \"*\"\n            ]\n        },\n        {\n            \"Sid\": \"VisualEditor2\",\n            \"Effect\": \"Allow\",\n            \"Action\": [\n                \"dynamodb:CreateTable\",\n                \"dynamodb:DeleteTable\",\n                \"dynamodb:DescribeContinuousBackups\",\n                \"dynamodb:DescribeTable\",\n                \"dynamodb:DescribeTimeToLive\",\n                \"dynamodb:ListTagsOfResource\",\n                \"dynamodb:TagResource\",\n                \"dynamodb:UntagResource\",\n                \"dynamodb:UpdateTable\",\n                \"dynamodb:UpdateTimeToLive\"\n            ],\n            \"Resource\": [\n                \"*\"\n            ]\n        },\n        {\n            \"Sid\": \"VisualEditor3\",\n            \"Effect\": \"Allow\",\n            \"Action\": [\n                \"ec2:DescribeAccountAttributes\"\n            ],\n            \"Resource\": [\n                \"*\"\n            ]\n        },\n        {\n            \"Sid\": \"VisualEditor4\",\n            \"Effect\": \"Allow\",\n            \"Action\": [\n                \"iam:AttachRolePolicy\",\n                \"iam:CreatePolicy\",\n                \"iam:CreateRole\",\n                \"iam:CreateServiceLinkedRole\",\n                \"iam:DeletePolicy\",\n                \"iam:DeleteRole\",\n                \"iam:DeleteRolePermissionsBoundary\",\n                \"iam:DetachRolePolicy\",\n                \"iam:GetPolicy\",\n                \"iam:GetPolicyVersion\",\n                \"iam:GetRole\",\n                \"iam:ListAttachedRolePolicies\",\n                \"iam:ListInstanceProfilesForRole\",\n                \"iam:ListPolicies\",\n                \"iam:ListPolicyVersions\",\n                \"iam:ListRolePolicies\",\n                \"iam:PassRole\",\n                \"iam:PutRolePermissionsBoundary\",\n                \"iam:TagPolicy\",\n                \"iam:TagRole\",\n                \"iam:UntagPolicy\",\n                \"iam:UpdateRoleDescription\"\n            ],\n            \"Resource\": [\n                \"*\"\n            ]\n        },\n        {\n            \"Sid\": \"VisualEditor5\",\n            \"Effect\": \"Allow\",\n            \"Action\": [\n                \"lambda:AddPermission\",\n                \"lambda:CreateEventSourceMapping\",\n                \"lambda:CreateFunction\",\n                \"lambda:CreateFunctionUrlConfig\",\n                \"lambda:DeleteEventSourceMapping\",\n                \"lambda:DeleteFunction\",\n                \"lambda:DeleteFunctionEventInvokeConfig\",\n                \"lambda:DeleteFunctionUrlConfig\",\n                \"lambda:DeleteLayerVersion\",\n                \"lambda:DeleteProvisionedConcurrencyConfig\",\n                \"lambda:GetEventSourceMapping\",\n                \"lambda:GetFunction\",\n                \"lambda:GetFunctionCodeSigningConfig\",\n                \"lambda:GetFunctionEventInvokeConfig\",\n                \"lambda:GetFunctionUrlConfig\",\n                \"lambda:GetLayerVersion\",\n                \"lambda:GetPolicy\",\n                \"lambda:GetProvisionedConcurrencyConfig\",\n                \"lambda:ListVersionsByFunction\",\n                \"lambda:PublishLayerVersion\",\n                \"lambda:PutFunctionEventInvokeConfig\",\n                \"lambda:PutProvisionedConcurrencyConfig\",\n                \"lambda:RemovePermission\",\n                \"lambda:TagResource\",\n                \"lambda:UntagResource\",\n                \"lambda:UpdateEventSourceMapping\",\n                \"lambda:UpdateFunctionEventInvokeConfig\",\n                \"lambda:UpdateFunctionUrlConfig\"\n            ],\n            \"Resource\": [\n                \"*\"\n            ]\n        },\n        {\n            \"Sid\": \"VisualEditor6\",\n            \"Effect\": \"Allow\",\n            \"Action\": [\n                \"logs:AssociateKmsKey\",\n                \"logs:CreateLogGroup\",\n                \"logs:DeleteLogGroup\",\n                \"logs:DeleteRetentionPolicy\",\n                \"logs:DescribeLogGroups\",\n                \"logs:DisassociateKmsKey\",\n                \"logs:ListTagsLogGroup\",\n                \"logs:PutRetentionPolicy\",\n                \"logs:TagLogGroup\",\n                \"logs:UntagLogGroup\"\n            ],\n            \"Resource\": [\n                \"*\"\n            ]\n        },\n        {\n            \"Sid\": \"VisualEditor7\",\n            \"Effect\": \"Allow\",\n            \"Action\": [\n                \"s3:DeleteObject\",\n                \"s3:GetObject\",\n                \"s3:GetObjectTagging\",\n                \"s3:PutObject\"\n            ],\n            \"Resource\": [\n                \"*\"\n            ]\n        }\n    ]\n}\n",
+			`{
+				"Version": "2012-10-17",
+				"Statement": [{
+				"Sid": "VisualEditor0",
+				"Effect": "Allow",
+				"Action": ["apigateway:DELETE", "apigateway:GET", "apigateway:PATCH", "apigateway:POST", "apigateway:PUT"],
+				"Resource": ["*"]
+			}, {
+				"Sid": "VisualEditor1",
+				"Effect": "Allow",
+				"Action": ["application-autoscaling:DeleteScalingPolicy", "application-autoscaling:DeregisterScalableTarget", "application-autoscaling:DescribeScalableTargets", "application-autoscaling:DescribeScalingPolicies", "application-autoscaling:PutScalingPolicy", "application-autoscaling:RegisterScalableTarget"],
+				"Resource": ["*"]
+			}, {
+				"Sid": "VisualEditor2",
+				"Effect": "Allow",
+				"Action": ["dynamodb:BatchWriteItem", "dynamodb:CreateTable", "dynamodb:CreateTableReplica", "dynamodb:DeleteItem", "dynamodb:DeleteTable", "dynamodb:DeleteTableReplica", "dynamodb:DescribeContinuousBackups", "dynamodb:DescribeTable", "dynamodb:DescribeTimeToLive", "dynamodb:GetItem", "dynamodb:ListTagsOfResource", "dynamodb:PutItem", "dynamodb:Query", "dynamodb:Scan", "dynamodb:TagResource", "dynamodb:UntagResource", "dynamodb:UpdateContinuousBackups", "dynamodb:UpdateItem", "dynamodb:UpdateTable", "dynamodb:UpdateTimeToLive"],
+				"Resource": ["*"]
+			}, {
+				"Sid": "VisualEditor3",
+				"Effect": "Allow",
+				"Action": ["ec2:DescribeAccountAttributes"],
+				"Resource": ["*"]
+			}, {
+				"Sid": "VisualEditor4",
+				"Effect": "Allow",
+				"Action": ["iam:AttachRolePolicy", "iam:CreatePolicy", "iam:CreateRole", "iam:CreateServiceLinkedRole", "iam:DeletePolicy", "iam:DeleteRole", "iam:DeleteRolePermissionsBoundary", "iam:DetachRolePolicy", "iam:GetPolicy", "iam:GetPolicyVersion", "iam:GetRole", "iam:ListAttachedRolePolicies", "iam:ListInstanceProfilesForRole", "iam:ListPolicies", "iam:ListPolicyVersions", "iam:ListRolePolicies", "iam:PassRole", "iam:PutRolePermissionsBoundary", "iam:TagPolicy", "iam:TagRole", "iam:UntagPolicy", "iam:UpdateRoleDescription"],
+				"Resource": ["*"]
+			}, {
+				"Sid": "VisualEditor5",
+				"Effect": "Allow",
+				"Action": ["lambda:AddPermission", "lambda:CreateEventSourceMapping", "lambda:CreateFunction", "lambda:CreateFunctionUrlConfig", "lambda:DeleteEventSourceMapping", "lambda:DeleteFunction", "lambda:DeleteFunctionEventInvokeConfig", "lambda:DeleteFunctionUrlConfig", "lambda:DeleteLayerVersion", "lambda:DeleteProvisionedConcurrencyConfig", "lambda:GetEventSourceMapping", "lambda:GetFunction", "lambda:GetFunctionCodeSigningConfig", "lambda:GetFunctionEventInvokeConfig", "lambda:GetFunctionUrlConfig", "lambda:GetLayerVersion", "lambda:GetPolicy", "lambda:GetProvisionedConcurrencyConfig", "lambda:ListVersionsByFunction", "lambda:PublishLayerVersion", "lambda:PutFunctionEventInvokeConfig", "lambda:PutProvisionedConcurrencyConfig", "lambda:RemovePermission", "lambda:TagResource", "lambda:UntagResource", "lambda:UpdateEventSourceMapping", "lambda:UpdateFunctionEventInvokeConfig", "lambda:UpdateFunctionUrlConfig"],
+				"Resource": ["*"]
+			}, {
+				"Sid": "VisualEditor6",
+				"Effect": "Allow",
+				"Action": ["logs:AssociateKmsKey", "logs:CreateLogGroup", "logs:DeleteLogGroup", "logs:DeleteRetentionPolicy", "logs:DescribeLogGroups", "logs:DisassociateKmsKey", "logs:ListTagsLogGroup", "logs:PutRetentionPolicy", "logs:TagLogGroup", "logs:UntagLogGroup"],
+				"Resource": ["*"]
+			}, {
+				"Sid": "VisualEditor7",
+				"Effect": "Allow",
+				"Action": ["s3:DeleteObject", "s3:GetObject", "s3:GetObjectTagging", "s3:PutObject"],
+				"Resource": ["*"]
+			}]
+			}`,
 			false,
 		},
 		{
@@ -187,10 +233,26 @@ func TestMakePolicy(t *testing.T) {
 			"",
 			true,
 		},
+		{
+			"dynamic",
+			args{"", &dynamic, false},
+			`{
+	"Version": "2012-10-17",
+	"Statement": [{
+		"Sid": "VisualEditor0",
+		"Effect": "Allow",
+		"Action": ["autoscaling:CreateAutoScalingGroup", "autoscaling:CreateOrUpdateTags", "autoscaling:DeleteAutoScalingGroup", "autoscaling:DeleteTags", "autoscaling:DescribeAutoScalingGroups", "autoscaling:DescribeScalingActivities", "autoscaling:UpdateAutoScalingGroup"],
+		"Resource": ["*"]
+	}]
+}`,
+			false,
+		},
 	}
 
 	for _, tt := range tests {
+		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
 			got, err := pike.MakePolicy(tt.args.dirName, tt.args.file, tt.args.init)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("MakePolicy() error = %v, wantErr %v", err, tt.wantErr)

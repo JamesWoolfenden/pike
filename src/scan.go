@@ -179,6 +179,7 @@ func MakePolicy(dirName string, file *string, init bool) (OutputPolicy, error) {
 	}
 
 	var resources []ResourceV2
+
 	for _, tfFile := range files {
 
 		resource, err := GetResources(tfFile, dirName)
@@ -191,6 +192,7 @@ func MakePolicy(dirName string, file *string, init bool) (OutputPolicy, error) {
 			resources = append(resources, resource...)
 		}
 	}
+
 	var PermissionBag Sorted
 
 	var newPerms Sorted
@@ -212,6 +214,7 @@ func MakePolicy(dirName string, file *string, init bool) (OutputPolicy, error) {
 	if err2 != nil {
 		return Output, err2
 	}
+
 	return Output, nil
 }
 

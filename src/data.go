@@ -159,13 +159,26 @@ func GetBlockAttributes(attributes []string, block *hclsyntax.Block) []string {
 	for _, attribute := range block.Body.Attributes {
 		attributes = append(attributes, attribute.Name)
 	}
+
 	for _, block := range block.Body.Blocks {
 		// Also add in block names
-		if block.Type != "resource" {
-			attributes = append(attributes, block.Type)
+
+		switch block.Type {
+		case "dynamic":
+			{
+				attributes = append(attributes, block.Labels...)
+			}
+		case "resource":
+			{
+				//do nothing
+			}
+		default:
+			{
+				attributes = append(attributes, block.Type)
+				attributes = GetBlockAttributes(attributes, block)
+			}
 		}
 
-		attributes = GetBlockAttributes(attributes, block)
 	}
 
 	return attributes
@@ -174,6 +187,7 @@ func GetBlockAttributes(attributes []string, block *hclsyntax.Block) []string {
 // GetPermission determines the IAM permissions required and returns a list of permission
 func GetPermission(result ResourceV2) (Sorted, error) {
 	var err error
+
 	var myPermission Sorted
 
 	switch result.Provider {

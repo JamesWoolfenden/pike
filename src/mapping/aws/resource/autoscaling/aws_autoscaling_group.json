@@ -8,7 +8,7 @@
       "autoscaling:DeleteAutoScalingGroup"
     ],
     "attributes": {
-      "tags": [
+      "tag": [
         "autoscaling:CreateOrUpdateTags",
         "autoscaling:DeleteTags"
       ]
