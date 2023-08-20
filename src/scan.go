@@ -16,7 +16,7 @@ import (
 	"github.com/rs/zerolog/log"
 )
 
-const tfVersion = "1.3.5"
+const tfVersion = "1.5.4"
 
 // Scan looks for resources in a given directory
 func Scan(dirName string, output string, file *string, init bool, write bool) error {
@@ -41,11 +41,13 @@ func Scan(dirName string, output string, file *string, init bool, write bool) er
 func WriteOutput(OutPolicy OutputPolicy, output, location string) error {
 	newPath, _ := filepath.Abs(location + "/.pike")
 	err := os.MkdirAll(newPath, os.ModePerm)
+
 	if err != nil {
 		return err
 	}
 
 	var outFile string
+
 	d1 := []byte(OutPolicy.AsString(output))
 
 	switch strings.ToLower(output) {
@@ -98,10 +100,12 @@ func Init(dirName string) (*string, []string, error) {
 
 	//filter
 	var found []string
+
 	for _, module := range modules {
 		if module.Name() == "modules.json" || module.Name() == ".DS_Store" {
 			continue
 		}
+
 		found = append(found, module.Name())
 	}
 
@@ -131,6 +135,7 @@ func LocateTerraform() (string, error) {
 			return "", err
 		}
 	}
+
 	return tfPath, nil
 }
 
@@ -179,6 +184,7 @@ func MakePolicy(dirName string, file *string, init bool) (OutputPolicy, error) {
 	}
 
 	var resources []ResourceV2
+
 	for _, tfFile := range files {
 
 		resource, err := GetResources(tfFile, dirName)
@@ -191,6 +197,7 @@ func MakePolicy(dirName string, file *string, init bool) (OutputPolicy, error) {
 			resources = append(resources, resource...)
 		}
 	}
+
 	var PermissionBag Sorted
 
 	var newPerms Sorted
@@ -212,6 +219,7 @@ func MakePolicy(dirName string, file *string, init bool) (OutputPolicy, error) {
 	if err2 != nil {
 		return Output, err2
 	}
+
 	return Output, nil
 }
 
