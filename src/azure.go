@@ -91,6 +91,7 @@ func GetAZUREResourcePermissions(result ResourceV2) ([]string, error) {
 	} else {
 		message := fmt.Sprintf("%s not implemented", result.Name)
 
+		//goland:noinspection GoLinter
 		return nil, errors.New(message)
 	}
 
