@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-// GetAZUREPermissions for GCP resources
+// GetAZUREPermissions for GCP resources.
 func GetAZUREPermissions(result ResourceV2) ([]string, error) {
 	var (
 		err         error
@@ -27,7 +27,7 @@ func GetAZUREPermissions(result ResourceV2) ([]string, error) {
 	return Permissions, err
 }
 
-// GetAZUREResourcePermissions looks up permissions required for resources
+// GetAZUREResourcePermissions looks up permissions required for resources.
 func GetAZUREResourcePermissions(result ResourceV2) ([]string, error) {
 	TFLookup := map[string]interface{}{
 		"azurerm_resource_group":                       azurermResourceGroup,
