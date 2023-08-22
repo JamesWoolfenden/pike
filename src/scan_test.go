@@ -50,6 +50,8 @@ func TestGetTF(t *testing.T) {
 		dirname string
 	}
 
+	found := []string{"../testdata/scan/examples/notlocal/module.tf"}
+
 	tests := []struct {
 		name    string
 		args    args
@@ -59,6 +61,7 @@ func TestGetTF(t *testing.T) {
 		{"first", args{"../testdata/scan/examples/simple"},
 			[]string{"../testdata/scan/examples/simple/aws_s3_bucket.pike.tf"}, false},
 		{"empty", args{"../testdata/scan"}, nil, false},
+		{"notlocal", args{"../testdata/scan/examples/notlocal"}, found, false},
 	}
 
 	for _, tt := range tests {
@@ -231,6 +234,12 @@ func TestMakePolicy(t *testing.T) {
 		{
 			"not a file",
 			args{"", &bogus, false},
+			"",
+			true,
+		},
+		{
+			"remote module",
+			args{"../testdata/scan/examples/notlocal", &bogus, false},
 			"",
 			true,
 		},

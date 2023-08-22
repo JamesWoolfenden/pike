@@ -98,7 +98,7 @@ func Init(dirName string) (*string, []string, error) {
 
 	modules, err := os.ReadDir(dirName + "/" + ".terraform/modules")
 
-	//filter
+	// filter
 	var found []string
 
 	for _, module := range modules {
@@ -245,6 +245,7 @@ func GetTF(dirName string) ([]string, error) {
 // GetTFFiles get tf files in directory
 func GetTFFiles(dirName string) ([]string, error) {
 	rawFiles, err := os.ReadDir(dirName)
+
 	var files []string
 
 	for _, file := range rawFiles {
