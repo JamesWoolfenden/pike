@@ -358,9 +358,9 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_opensearch_domain":                              awsElasticsearchDomain,
 		"aws_opensearch_domain_policy":                       awsElasticsearchDomainPolicy,
 		"aws_placement_group":                                awsPlacementGroup,
-		"aws_ram_principal_association":                      awsRamPrincipleAssociation,
-		"aws_ram_resource_association":                       awsRamResourceAssociation,
-		"aws_ram_resource_share":                             awsRamResourceShare,
+		"aws_ram_principal_association":                      awsRAMPrincipleAssociation,
+		"aws_ram_resource_association":                       awsRAMResourceAssociation,
+		"aws_ram_resource_share":                             awsRAMResourceShare,
 		"aws_rds_cluster":                                    awsRdsCluster,
 		"aws_rds_cluster_activity_stream":                    awsRdsClusterActivityStream,
 		"aws_rds_cluster_endpoint":                           awsRdsClusterEndpoint,
@@ -482,6 +482,8 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_emr_security_configuration":                     awsEmrSecurityConfiguration,
 		"aws_workspaces_workspace":                           awsWorkspacesWorkspace,
 		"aws_workspaces_directory":                           awsWorkspacesDirectory,
+		"aws_acmpca_certificate_authority_certificate":       awsAcmpcaCertificateAuthorityCertificate,
+		"aws_acmpca_certificate":                             awsAcmpcaCertificate,
 	}
 
 	var (

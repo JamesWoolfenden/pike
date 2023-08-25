@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "acm-pca:IssueCertificate",
+      "acm-pca:GetCertificate",
+      "acm-pca:RevokeCertificate"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

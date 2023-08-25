@@ -6,8 +6,7 @@
       "cloudformation:DescribeStackSetOperation",
       "cloudformation:ListStackSetOperationResults"
     ],
-    "attributes": {
-    },
+    "attributes": {},
     "destroy": [
       "cloudformation:DeleteStackInstances"
     ],

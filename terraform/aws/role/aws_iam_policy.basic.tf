@@ -7,15 +7,18 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          #          "apigateway:CreateRequestValidator",
-          "apigateway:DELETE",
-          "apigateway:GET",
-          "apigateway:PUT",
-          "apigateway:POST",
-          "apigateway:PATCH",
-          #          "apigateway:RemoveCertificateFromDomain",
-          #          "apigateway:AddCertificateToDomain",
-          #          "apigateway:GetRequestValidator"
+          //aws_acmpca_certificate_authority
+          "acm-pca:DescribeCertificateAuthority",
+          "acm-pca:GetCertificateAuthorityCertificate",
+          "acm-pca:GetCertificateAuthorityCsr",
+          "acm-pca:ListTags",
+
+          //aws_acmpca_certificate
+          "acm-pca:IssueCertificate",
+          "acm-pca:GetCertificate",
+          "acm-pca:RevokeCertificate",
+          //aws_acmpca_certificate_authority_certificate
+          "acm-pca:ImportCertificateAuthorityCertificate",
         ],
         "Resource" : "*",
       }

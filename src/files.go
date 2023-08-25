@@ -188,13 +188,13 @@ var awsDbClusterSnapshot []byte
 var awsDbEventSubscription []byte
 
 //go:embed mapping/aws/resource/ram/aws_ram_principal_association.json
-var awsRamPrincipleAssociation []byte
+var awsRAMPrincipleAssociation []byte
 
 //go:embed mapping/aws/resource/ram/aws_ram_resource_association.json
-var awsRamResourceAssociation []byte
+var awsRAMResourceAssociation []byte
 
 //go:embed mapping/aws/resource/ram/aws_ram_resource_share.json
-var awsRamResourceShare []byte
+var awsRAMResourceShare []byte
 
 //go:embed mapping/aws/resource/rds/aws_rds_cluster.json
 var awsRdsCluster []byte
@@ -483,6 +483,12 @@ var AWSAcmCertificate []byte
 
 //go:embed mapping/aws/resource/acm-pa/aws_acmpca_certificate_authority.json
 var awsAcmpcaCertificateAuthority []byte
+
+//go:embed mapping/aws/resource/acm-pa/aws_acmpca_certificate_authority_certificate.json
+var awsAcmpcaCertificateAuthorityCertificate []byte
+
+//go:embed mapping/aws/resource/acm-pa/aws_acmpca_certificate.json
+var awsAcmpcaCertificate []byte
 
 //go:embed mapping/aws/resource/ecs/aws_ecs_cluster.json
 var awsEcsCluster []byte

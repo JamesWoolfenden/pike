@@ -6,8 +6,7 @@
       "ec2:ReplaceTransitGatewayRoute",
       "ec2:SearchTransitGatewayRoutes"
     ],
-    "attributes": {
-    },
+    "attributes": {},
     "destroy": [
       "ec2:DeleteTransitGatewayRoute"
     ],

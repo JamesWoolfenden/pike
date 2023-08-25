@@ -4,8 +4,7 @@
       "ram:AssociateResourceShare",
       "ram:GetResourceShareAssociations"
     ],
-    "attributes": {
-    },
+    "attributes": {},
     "destroy": [
       "ram:DisassociateResourceShare"
     ],

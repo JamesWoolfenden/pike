@@ -4,8 +4,7 @@
       "route53:CreateReusableDelegationSet",
       "route53:GetReusableDelegationSetk"
     ],
-    "attributes": {
-    },
+    "attributes": {},
     "destroy": [
       "route53:DeleteReusableDelegationSet"
     ],

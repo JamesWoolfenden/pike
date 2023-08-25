@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "acm-pca:ImportCertificateAuthorityCertificate"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

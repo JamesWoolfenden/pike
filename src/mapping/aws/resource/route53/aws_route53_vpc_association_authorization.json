@@ -4,8 +4,7 @@
       "route53:CreateVPCAssociationAuthorization",
       "route53:ListVPCAssociationAuthorizations"
     ],
-    "attributes": {
-    },
+    "attributes": {},
     "destroy": [
       "route53:DeleteVPCAssociationAuthorization"
     ],

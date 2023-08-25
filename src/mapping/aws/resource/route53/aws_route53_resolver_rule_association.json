@@ -5,8 +5,7 @@
       "route53resolver:GetResolverRuleAssociation"
     ],
     "attributes": {
-      "tags": [
-      ]
+      "tags": []
     },
     "destroy": [
       "route53resolver:DisassociateResolverRule"

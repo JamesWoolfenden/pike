@@ -253,6 +253,8 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 		"aws_eks_clusters":                                     dataAwsEksClusters,
 		"aws_eks_node_group":                                   dataAwsEksNodeGroup,
 		"aws_eks_node_groups":                                  dataAwsEksNodeGroups,
+		"aws_acmpca_certificate":                               dataAwsAcmpcaCertificate,
+		"aws_acmpca_certificate_authority":                     dataAwsAcmpcaCertificateAuthority,
 	}
 
 	var (

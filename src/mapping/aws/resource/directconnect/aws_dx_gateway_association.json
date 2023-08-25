@@ -4,10 +4,9 @@
       "directconnect:CreateDirectConnectGatewayAssociation",
       "directconnect:DescribeDirectConnectGatewayAssociations"
     ],
-    "attributes": {
-    },
+    "attributes": {},
     "destroy": [
-      "directconnect/DeleteDirectConnectGatewayAssociation"
+      "directconnect:DeleteDirectConnectGatewayAssociation"
     ],
     "modify": [],
     "plan": []

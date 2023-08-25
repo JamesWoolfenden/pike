@@ -5,8 +5,7 @@
       "route53resolver:GetResolverQueryLogConfigAssociation"
     ],
     "attributes": {
-      "tags": [
-      ]
+      "tags": []
     },
     "destroy": [
       "route53resolver:DisassociateResolverQueryLogConfig"

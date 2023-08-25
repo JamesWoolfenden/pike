@@ -4,8 +4,7 @@
       "directconnect:CreateDirectConnectGateway",
       "directconnect:DescribeDirectConnectGateways"
     ],
-    "attributes": {
-    },
+    "attributes": {},
     "destroy": [
       "directconnect:DeleteDirectConnectGateway"
     ],

@@ -4,8 +4,7 @@
       "cloudformation:CreateStackSet",
       "cloudformation:DescribeStackSet"
     ],
-    "attributes": {
-    },
+    "attributes": {},
     "destroy": [
       "cloudformation:DeleteStackSet"
     ],

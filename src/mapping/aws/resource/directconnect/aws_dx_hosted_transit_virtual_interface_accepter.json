@@ -3,8 +3,7 @@
     "apply": [
       "directconnect:ConfirmTransitVirtualInterface"
     ],
-    "attributes": {
-    },
+    "attributes": {},
     "destroy": [],
     "modify": [],
     "plan": []

@@ -618,3 +618,9 @@ var dataAwsVpcDhcpOptions []byte
 
 //go:embed mapping/aws/data/route53/aws_route53_resolver_rule.json
 var dataAwsRoute53ResolverRule []byte
+
+//go:embed mapping/aws/data/acm-pca/aws_acmpca_certificate.json
+var dataAwsAcmpcaCertificate []byte
+
+//go:embed mapping/aws/data/acm-pca/aws_acmpca_certificate_authority.json
+var dataAwsAcmpcaCertificateAuthority []byte

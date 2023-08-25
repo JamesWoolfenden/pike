@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "acm-pca:DescribeCertificateAuthority",
+      "acm-pca:GetCertificateAuthorityCertificate",
+      "acm-pca:GetCertificateAuthorityCsr",
+      "acm-pca:ListTags"
+    ]
+  }
+]

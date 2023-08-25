@@ -5,6 +5,8 @@
       "acm-pca:GetCertificateAuthorityCertificate",
       "acm-pca:DeleteCertificateAuthority",
       "acm-pa:DescribeCertificateAuthority",
+      "acm-pca:UpdateCertificateAuthority",
+      "acm-pca:GetCertificateAuthorityCsr",
       "acm-pa:ListTags"
     ],
     "attributes": {

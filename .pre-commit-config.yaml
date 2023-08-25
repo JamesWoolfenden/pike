@@ -1,7 +1,7 @@
 ---
 # yamllint disable rule:line-length
 default_language_version:
-  python: python3.10
+  python: python3.11
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0
@@ -19,7 +19,7 @@ repos:
       - id: detect-aws-credentials
       - id: detect-private-key
   - repo: https://github.com/Lucas-C/pre-commit-hooks
-    rev: v1.5.1
+    rev: v1.5.4
     hooks:
       - id: forbid-tabs
         exclude_types: [ python, javascript, dtd, markdown, makefile, xml ]
@@ -48,19 +48,15 @@ repos:
     hooks:
       - id: go-test
         args: [ "./..." ]
-      - id: go-mod-tidy
+#      - id: go-mod-tidy
       - id: go-generate
-  - repo: https://github.com/golangci/golangci-lint
-    rev: v1.53.3
-    hooks:
-      - id: golangci-lint
   - repo: https://github.com/bridgecrewio/checkov
-    rev: 2.3.301
+    rev: 2.4.10
     hooks:
       - id: checkov
-        language_version: python3.10
+        language_version: python3.11
   - repo: https://github.com/jameswoolfenden/ghat
-    rev: v0.0.11
+    rev: v0.0.24
     hooks:
       - id: ghat-go
         name: ghat
@@ -70,3 +66,12 @@ repos:
         always_run: true
         pass_filenames: false
         types: [ yaml ]
+  - repo: https://github.com/dnephin/pre-commit-golang
+    rev: v0.5.1
+    hooks:
+      - id: go-vet
+      - id: go-imports
+      - id: validate-toml
+      - id: no-go-testing
+      - id: golangci-lint
+      - id: go-mod-tidy
