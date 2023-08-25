@@ -6,7 +6,7 @@ import (
 
 // GetAWSDataPermissions gets permissions required for datasource's.
 //
-//goland:noinspection GoLinter
+//goland:noinspection GoLinter,GoLinter
 func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 	TFLookup := map[string]interface{}{
 		"aws_acm_certificate":                                  dataAwsAcmCertificate,
@@ -266,6 +266,7 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 	if temp != nil {
 		Permissions, err = GetPermissionMap(TFLookup[result.Name].([]byte), result.Attributes)
 	} else {
+		//goland:noinspection GoLinter
 		return nil, fmt.Errorf("data.%s not implemented", result.Name)
 	}
 

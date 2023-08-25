@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"strings"
 
 	"github.com/hashicorp/hcl/v2/hclparse"
 	"github.com/hashicorp/hcl/v2/hclsyntax"
@@ -117,6 +118,11 @@ func GetLocalModules(block *hclsyntax.Block, dirName string) ([]ResourceV2, erro
 
 	modulePath := GetModulePath(block)
 
+	//not local
+	if strings.Contains(modulePath, "git::") {
+		return nil, nil
+	}
+
 	// have the path to the module
 	modulePath = filepath.Join(dirName, "/", modulePath)
 
@@ -178,7 +184,6 @@ func GetBlockAttributes(attributes []string, block *hclsyntax.Block) []string {
 				attributes = GetBlockAttributes(attributes, block)
 			}
 		}
-
 	}
 
 	return attributes

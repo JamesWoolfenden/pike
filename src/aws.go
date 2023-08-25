@@ -525,7 +525,11 @@ func GetPermissionMap(raw []byte, attributes []string) ([]string, error) {
 		return nil, errors.New("mappings are empty")
 	}
 
-	temp := mappings[0].(map[string]interface{})
+	temp, ok := mappings[0].(map[string]interface{})
+
+	if !ok {
+		return nil, fmt.Errorf("assertion to map[string]interface{} failed")
+	}
 
 	var (
 		myAttributes = temp["attributes"].(map[string]interface{})
