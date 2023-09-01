@@ -78,6 +78,7 @@ func GetAZUREResourcePermissions(result ResourceV2) ([]string, error) {
 		"azurerm_log_analytics_solution":               azurermLogAnalyticsSolution,
 		"azurerm_role_assignment":                      azurermRoleAssignment,
 		"azurerm_disk_encryption_set":                  azurermDiskEncryptionSet,
+		"azurerm_cognitive_account":                    azurermCognitiveAccount,
 	}
 
 	var (

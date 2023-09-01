@@ -38,3 +38,8 @@
 ./resource.ps1 azurerm_sql_database
 ./resource.ps1 azurerm_sql_server
 ./resource.ps1 azurerm_subscription_policy_assignment
+
+./resource.ps1 azurerm_storage_data_lake_gen2_filesystem
+./resource.ps1  azurerm_synapse_workspace
+./resource.ps1  azurerm_synapse_workspace_key
+./resource.ps1  azurerm_synapse_workspace_aad_admin

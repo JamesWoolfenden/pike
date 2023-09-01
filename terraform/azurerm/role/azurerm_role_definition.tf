@@ -5,10 +5,14 @@ resource "azurerm_role_definition" "example" {
 
   permissions {
     actions = [
-      "Microsoft.Compute/diskEncryptionSets/write",
-      "Microsoft.Compute/diskEncryptionSets/delete",
-      "Microsoft.Compute/diskEncryptionSets/read",
-      "Microsoft.KeyVault/vaults/read"
+      "Microsoft.Resources/subscriptions/providers/read",
+      "Microsoft.CognitiveServices/accounts/read",
+      "Microsoft.CognitiveServices/accounts/write",
+      "Microsoft.CognitiveServices/accounts/delete",
+      "Microsoft.CognitiveServices/accounts/listKeys/action",
+      "Microsoft.CognitiveServices/locations/resourceGroups/deletedAccounts/delete",
+
+      "Microsoft.CognitiveServices/locations/resourceGroups/deletedAccounts/read"
     ]
     not_actions = []
   }

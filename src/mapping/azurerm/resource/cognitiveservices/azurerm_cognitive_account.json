@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/providers/read",
+      "Microsoft.CognitiveServices/accounts/read",
+      "Microsoft.CognitiveServices/accounts/write",
+      "Microsoft.CognitiveServices/accounts/delete",
+      "Microsoft.CognitiveServices/accounts/listKeys/action",
+      "Microsoft.CognitiveServices/locations/resourceGroups/deletedAccounts/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.CognitiveServices/locations/resourceGroups/deletedAccounts/read"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

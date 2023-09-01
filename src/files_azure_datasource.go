@@ -27,3 +27,24 @@ var dataAzurermNetworkWatcher []byte
 
 //go:embed mapping/azurerm/data/storage/azurerm_storage_account.json
 var dataAzurermStorageAccount []byte
+
+//go:embed mapping/azurerm/data/keyvault/azurerm_key_vault_certificate.json
+var dataAzurermKeyVaultCertificate []byte
+
+//go:embed mapping/azurerm/data/keyvault/azurerm_key_vault_certificate_data.json
+var dataAzurermKeyVaultCertificateData []byte
+
+//go:embed mapping/azurerm/data/keyvault/azurerm_key_vault_certificate_issuer.json
+var dataAzurermKeyVaultCertificateIssuer []byte
+
+//go:embed mapping/azurerm/data/keyvault/azurerm_key_vault_certificates.json
+var dataAzurermKeyVaultCertificates []byte
+
+//go:embed mapping/azurerm/data/keyvault/azurerm_key_vault_managed_hardware_security_module.json
+var dataAzurermKeyVaultManagedHardwareSecurityModule []byte
+
+//go:embed mapping/azurerm/data/keyvault/azurerm_key_vault_secret.json
+var dataAzurermKeyVaultSecret []byte
+
+//go:embed mapping/azurerm/data/keyvault/azurerm_key_vault_secrets.json
+var dataAzurermKeyVaultSecrets []byte

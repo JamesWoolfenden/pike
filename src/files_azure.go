@@ -135,3 +135,6 @@ var azurermRoleAssignment []byte
 
 //go:embed mapping/azurerm/resource/compute/azurerm_disk_encryption_set.json
 var azurermDiskEncryptionSet []byte
+
+//go:embed mapping/azurerm/resource/cognitiveservices/azurerm_cognitive_account.json
+var azurermCognitiveAccount []byte
