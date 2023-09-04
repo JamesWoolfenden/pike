@@ -7,6 +7,7 @@ import (
 	"time"
 
 	pike "github.com/jameswoolfenden/pike/src" //nolint:goimports
+	parse "github.com/jameswoolfenden/pike/src/parse"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
 	"github.com/urfave/cli/v2"
@@ -26,6 +27,7 @@ func main() {
 		repository string
 		region     string
 		workflow   string
+		name       string
 	)
 
 	log.Logger = log.Output(zerolog.ConsoleWriter{Out: os.Stderr})
@@ -280,6 +282,30 @@ func main() {
 				},
 				Action: func(*cli.Context) error {
 					return pike.InvokeGithubDispatchEvent(repository, workflow, branch)
+				},
+			},
+			{
+				Name:    "parse",
+				Aliases: []string{"p"},
+				Usage:   "Triggers a gitHub action specified with the workflow flag",
+				Flags: []cli.Flag{
+					&cli.StringFlag{
+						Name:        "directory",
+						Aliases:     []string{"d"},
+						Usage:       "Directory to scan (defaults to .)",
+						Value:       ".",
+						Destination: &directory,
+					},
+					&cli.StringFlag{
+						Name:        "name",
+						Aliases:     []string{"n"},
+						Usage:       "The name of the provider e.g. aws",
+						Required:    true,
+						Destination: &name,
+					},
+				},
+				Action: func(*cli.Context) error {
+					return parse.Parse(directory, name)
 				},
 			},
 			{

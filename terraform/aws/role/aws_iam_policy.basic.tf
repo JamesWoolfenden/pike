@@ -7,18 +7,15 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          //aws_acmpca_certificate_authority
-          "acm-pca:DescribeCertificateAuthority",
-          "acm-pca:GetCertificateAuthorityCertificate",
-          "acm-pca:GetCertificateAuthorityCsr",
-          "acm-pca:ListTags",
-
-          //aws_acmpca_certificate
-          "acm-pca:IssueCertificate",
-          "acm-pca:GetCertificate",
-          "acm-pca:RevokeCertificate",
-          //aws_acmpca_certificate_authority_certificate
-          "acm-pca:ImportCertificateAuthorityCertificate",
+          //aws_appintegrations_event_integration
+          "app-integrations:GetEventIntegration",
+          //aws_cloudcontrolapi_resource
+          "cloudformation:GetResource",
+          "ecs:DescribeClusters",
+          //data.aws_prometheus_workspace
+          "aps:DescribeWorkspace",
+          //data.aws_prometheus_workspaces
+          "aps:ListWorkspaces",
         ],
         "Resource" : "*",
       }

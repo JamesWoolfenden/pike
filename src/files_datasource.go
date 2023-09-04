@@ -131,19 +131,19 @@ var dataAwsOutpostsOutpost []byte
 var dataAwsRdsEngineVersion []byte
 
 //go:embed mapping/aws/data/rds/aws_db_cluster_snapshot.json
-var dataAwsDbClusterSnapshot []byte
+var dataAwsDBClusterSnapshot []byte
 
 //go:embed mapping/aws/data/rds/aws_db_event_categories.json
-var dataAwsDbEventCategories []byte
+var dataAwsDBEventCategories []byte
 
 //go:embed mapping/aws/data/rds/aws_db_instance.json
-var dataAwsDbInstance []byte
+var dataAwsDBInstance []byte
 
 //go:embed mapping/aws/data/rds/aws_db_snapshot.json
-var dataAwsDbSnapshot []byte
+var dataAwsDBSnapshot []byte
 
 //go:embed mapping/aws/data/rds/aws_db_subnet_group.json
-var dataAwsDbSubnetGroup []byte
+var dataAwsDBSubnetGroup []byte
 
 //go:embed mapping/aws/data/rds/aws_rds_certificate.json
 var dataAwsRdsCertificate []byte
@@ -624,3 +624,12 @@ var dataAwsAcmpcaCertificate []byte
 
 //go:embed mapping/aws/data/acm-pca/aws_acmpca_certificate_authority.json
 var dataAwsAcmpcaCertificateAuthority []byte
+
+//go:embed mapping/aws/data/appintegrations/aws_appintegrations_event_integration.json
+var dataAwsAppintergrationsEventIntegration []byte
+
+//go:embed mapping/aws/data/prometheus/aws_prometheus_workspace.json
+var dataAwsPrometheusWorkspace []byte
+
+//go:embed mapping/aws/data/prometheus/aws_prometheus_workspaces.json
+var dataAwsPrometheusWorkspaces []byte
