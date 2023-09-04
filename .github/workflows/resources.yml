@@ -1,4 +1,4 @@
-name: 'resources'
+name: 'Resources'
 on:
   schedule:
     - cron: '0 18 * * 5'
@@ -25,16 +25,16 @@ jobs:
         - name: Generate AWS
           uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
           with:
-            repository: github.com/hashicorp/terraform-provider-aws
+            repository: hashicorp/terraform-provider-aws
             path: aws
 
-        - name: pike
+        - name: Pike parse aws
           run: pike parse -d aws -name aws
 
         - name: Generate AZURERM
           uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
           with:
-            repository: github.com/hashicorp/terraform-provider-azurerm
+            repository: hashicorp/terraform-provider-azurerm
             path: azurerm
-        - name: pike
+        - name: Pike parse azurerm
           run: pike parse -d azurerm -name azurerm
