@@ -20,7 +20,7 @@ jobs:
 
         ## runs go test ./...
         - name: Build
-          run: go build ./...
+          run: go build -o ${{ github.workspace }} ./...
 
         - name: list
           run: ls ${{ github.workspace }}
@@ -32,7 +32,7 @@ jobs:
             path: aws
 
         - name: Pike parse aws
-          run: ./pike parse -d ${{ github.workspace }}/aws -name aws
+          run: ${{ github.workspace }}/pike parse -d ${{ github.workspace }}/aws -name aws
 
         - name: Generate AZURERM
           uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
@@ -41,4 +41,4 @@ jobs:
             path: azurerm
 
         - name: Pike parse azurerm
-          run: ./pike parse -d ${{ github.workspace }}/azurerm -name azurerm
+          run: ${{ github.workspace }}/pike parse -d ${{ github.workspace }}/azurerm -name azurerm
