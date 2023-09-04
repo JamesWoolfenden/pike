@@ -22,8 +22,6 @@ jobs:
         - name: Build
           run: go build -o ${{ github.workspace }} ./...
 
-        - name: list
-          run: ls ${{ github.workspace }}
 
         - name: Generate AWS
           uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
@@ -31,7 +29,7 @@ jobs:
             repository: hashicorp/terraform-provider-aws
             path: aws
 
-        - name: Pike parse aws
+        - name: Parse AWS
           run: ${{ github.workspace }}/pike parse -d ${{ github.workspace }}/aws -name aws
 
         - name: Generate AZURERM
@@ -40,5 +38,20 @@ jobs:
             repository: hashicorp/terraform-provider-azurerm
             path: azurerm
 
-        - name: Pike parse azurerm
+        - name: Parse Azurerm
           run: ${{ github.workspace }}/pike parse -d ${{ github.workspace }}/azurerm -name azurerm
+
+        - name: copy
+          run: cp ${{ github.workspace }}/*.json ${{ github.workspace }}/src/parse/
+        - name: setup git config
+          run: |
+            # setup the username and email. I tend to use 'GitHub Actions Bot' with no email by default
+            git config user.name "GitHub Actions Bot"
+            git config user.email "jim.wolf@duck.com"
+
+        - name: commit
+          run: |
+            # Stage the file, commit and push
+            git add -A
+            git commit -m "updated resources"
+            git push origin master
