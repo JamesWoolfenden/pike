@@ -29,12 +29,13 @@ jobs:
             path: aws
 
         - name: Pike parse aws
-          run: pike parse -d aws -name aws
+          run: ${{ github.workspace }}/pike parse -d aws -name aws
 
         - name: Generate AZURERM
           uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
           with:
             repository: hashicorp/terraform-provider-azurerm
             path: azurerm
+
         - name: Pike parse azurerm
-          run: pike parse -d azurerm -name azurerm
+          run: ${{ github.workspace }}/pike parse -d azurerm -name azurerm

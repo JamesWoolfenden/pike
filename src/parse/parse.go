@@ -7,6 +7,8 @@ import (
 	"regexp"
 	"strings"
 
+	"github.com/rs/zerolog/log"
+
 	"golang.org/x/exp/slices"
 )
 
@@ -37,6 +39,7 @@ func Parse(codebase string, name string) error {
 		return err
 	}
 
+	log.Info().Msgf("creating %s-members.json", name)
 	err = os.WriteFile(name+"-members.json", jsonOut, 0700)
 
 	if err != nil {
