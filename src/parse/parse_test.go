@@ -81,6 +81,7 @@ func TestGetMatches(t *testing.T) {
 }
 
 func TestParse(t *testing.T) {
+	t.Parallel()
 
 	type args struct {
 		codebase string
@@ -92,13 +93,15 @@ func TestParse(t *testing.T) {
 		args    args
 		wantErr bool
 	}{
-		//{"aws", args{"e:/code/terraform-provider-aws", "aws"}, false},
-		//{"azure", args{"e:/code/terraform-provider-azurerm", "azurerm"}, false},
-		//{"google", args{"e:/code/terraform-provider-google", "google"}, false},
+		{"aws", args{"e:/code/terraform-provider-aws", "aws"}, false},
+		{"azure", args{"e:/code/terraform-provider-azurerm", "azurerm"}, false},
+		{"google", args{"e:/code/terraform-provider-google", "google"}, false},
 	}
 
 	for _, tt := range tests {
+		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
 			if err := Parse(tt.args.codebase, tt.args.name); (err != nil) != tt.wantErr {
 				t.Errorf("Parse() error = %v, wantErr %v", err, tt.wantErr)
 			}
@@ -107,11 +110,14 @@ func TestParse(t *testing.T) {
 }
 
 func Test_add(t *testing.T) {
+	t.Parallel()
+
 	type args struct {
 		s string
 		m map[string]bool
 		a []string
 	}
+
 	tests := []struct {
 		name  string
 		args  args
@@ -120,6 +126,7 @@ func Test_add(t *testing.T) {
 	}{
 		// TODO: Add test cases.
 	}
+
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			got, got1 := add(tt.args.s, tt.args.m, tt.args.a)

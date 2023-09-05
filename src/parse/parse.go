@@ -8,7 +8,6 @@ import (
 	"strings"
 
 	"github.com/rs/zerolog/log"
-
 	"golang.org/x/exp/slices"
 )
 
@@ -19,21 +18,42 @@ type provider struct {
 
 func Parse(codebase string, name string) error {
 	var err error
+	var jsonOut []byte
 
 	myProvider := provider{}
 
-	match := `"(` + strings.ToLower(name) + `_.*?)"`
-	myProvider.Resources, err = GetMatches(codebase, match, "go")
-	if err != nil {
-		return err
+	name = strings.ToLower(name)
+
+	switch name {
+
+	case "google":
+		{
+			match := `resource "(` + name + `_.*?)"`
+			myProvider.Resources, err = GetMatches(codebase, match, "markdown")
+			if err != nil {
+				return err
+			}
+
+			myProvider.DataSources, err = GetMatches(codebase, `data "(`+name+`_.*?)"`, "markdown")
+			if err != nil {
+				return err
+			}
+		}
+	default:
+		match := `"(` + name + `_.*?)"`
+		myProvider.Resources, err = GetMatches(codebase, match, "go")
+
+		if err != nil {
+			return err
+		}
+
+		myProvider.DataSources, err = GetMatches(codebase, `# Data Source:(.*)`, "markdown")
+		if err != nil {
+			return err
+		}
 	}
 
-	myProvider.DataSources, err = GetMatches(codebase, `# Data Source:(.*)`, "markdown")
-	if err != nil {
-		return err
-	}
-
-	jsonOut, err := json.MarshalIndent(myProvider, "", "    ")
+	jsonOut, err = json.MarshalIndent(myProvider, "", "    ")
 
 	if err != nil {
 		return err
@@ -65,15 +85,19 @@ func GetMatches(source string, match string, extension string) ([]string, error)
 		contents, _ := os.ReadFile(file)
 
 		re := regexp.MustCompile(match)
-		match := re.FindStringSubmatch(string(contents))
+		match := re.FindAllString(string(contents), -1)
 
 		for _, item := range match {
+
 			if strings.Contains(item, "%s") {
 				continue
 			}
 
 			matched := strings.TrimSpace(strings.ReplaceAll(item, "\"", ""))
 			matched = strings.TrimSpace(strings.ReplaceAll(matched, "# Data Source: ", ""))
+			matched = strings.TrimSpace(strings.ReplaceAll(matched, "data ", ""))
+			matched = strings.TrimSpace(strings.ReplaceAll(matched, "resource ", ""))
+			matched = strings.TrimSpace(strings.ReplaceAll(matched, "`", ""))
 			a, m = add(matched, m, a)
 		}
 	}
@@ -124,8 +148,10 @@ func GetKeys(m map[string]bool) []string {
 
 func add(s string, m map[string]bool, a []string) ([]string, map[string]bool) {
 	if m[s] {
-		return a, m // Already in the map
+
+		return a, m
 	}
+
 	a = append(a, s)
 
 	m[s] = true
