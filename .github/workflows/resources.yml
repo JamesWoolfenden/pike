@@ -24,16 +24,16 @@ jobs:
           run: go build -o ${{ github.workspace }} ./...
 
 
-        - name: Generate AWS
+        - name: Checkout AWS
           uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
           with:
             repository: hashicorp/terraform-provider-aws
             path: aws
 
-        - name: Parse AWS
+        - name: Parse Azurerm
           run: ${{ github.workspace }}/pike parse -d ${{ github.workspace }}/aws -name aws
 
-        - name: Generate AZURERM
+        - name: Checkout AZURERM
           uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
           with:
             repository: hashicorp/terraform-provider-azurerm

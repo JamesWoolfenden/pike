@@ -43,6 +43,7 @@ repos:
     hooks:
       - id: gofmt
       - id: goimports
+        exclude: src/parse/terraform-provider-*
   - repo: https://github.com/syntaqx/git-hooks
     rev:  v0.0.18
     hooks:

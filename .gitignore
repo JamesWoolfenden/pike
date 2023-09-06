@@ -14,3 +14,4 @@ __debug_bin.exe
 .pike
 provider.azure.tf
 provider.azurerm.tf
+terraform-provider-*

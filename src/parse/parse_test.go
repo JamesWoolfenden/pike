@@ -1,8 +1,12 @@
 package parse
 
 import (
+	"os"
 	"reflect"
 	"testing"
+
+	"github.com/go-git/go-git/v5"
+	"github.com/rs/zerolog/log"
 )
 
 func TestGetGoFiles(t *testing.T) {
@@ -83,6 +87,27 @@ func TestGetMatches(t *testing.T) {
 func TestParse(t *testing.T) {
 	t.Parallel()
 
+	_, err := git.PlainClone("./terraform-provider-aws", false, &git.CloneOptions{
+		URL:      "https://github.com/hashicorp/terraform-provider-aws",
+		Progress: os.Stdout,
+		Depth:    1,
+	})
+	log.Print(err)
+
+	_, err = git.PlainClone("./terraform-provider-azurerm", false, &git.CloneOptions{
+		URL:      "https://github.com/hashicorp/terraform-provider-azurerm",
+		Progress: os.Stdout,
+		Depth:    1,
+	})
+
+	log.Print(err)
+	_, err = git.PlainClone("./terraform-provider-google", false, &git.CloneOptions{
+		URL:      "https://github.com/hashicorp/terraform-provider-google",
+		Progress: os.Stdout,
+		Depth:    1,
+	})
+	log.Print(err)
+
 	type args struct {
 		codebase string
 		name     string
@@ -93,9 +118,9 @@ func TestParse(t *testing.T) {
 		args    args
 		wantErr bool
 	}{
-		{"aws", args{"e:/code/terraform-provider-aws", "aws"}, false},
-		{"azure", args{"e:/code/terraform-provider-azurerm", "azurerm"}, false},
-		{"google", args{"e:/code/terraform-provider-google", "google"}, false},
+		{"aws", args{"./terraform-provider-aws", "aws"}, false},
+		{"azure", args{"./terraform-provider-azurerm", "azurerm"}, false},
+		{"google", args{"./terraform-provider-google", "google"}, false},
 	}
 
 	for _, tt := range tests {
@@ -118,13 +143,26 @@ func Test_add(t *testing.T) {
 		a []string
 	}
 
+	myMap := map[string]bool{
+		"aws_s3_bucket": true,
+	}
+
+	wantMap := map[string]bool{
+		"aws_ami":       true,
+		"aws_s3_bucket": true,
+	}
 	tests := []struct {
 		name  string
 		args  args
 		want  []string
 		want1 map[string]bool
 	}{
-		// TODO: Add test cases.
+		{"pass",
+			args{"aws_ami", myMap, []string{"aws_s3_bucket"}},
+			[]string{"aws_s3_bucket", "aws_ami"}, wantMap},
+		{"duplicate",
+			args{"aws_ami", wantMap, []string{"aws_s3_bucket", "aws_ami"}},
+			[]string{"aws_s3_bucket", "aws_ami"}, wantMap},
 	}
 
 	for _, tt := range tests {
