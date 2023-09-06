@@ -702,3 +702,33 @@ var dataAwsWafregionalRule []byte
 
 //go:embed mapping/aws/data/wafregional/aws_wafregional_web_acl.json
 var dataAwsWafregionalWebAcl []byte
+
+//go:embed mapping/aws/data/ec2/aws_ec2_transitgateway_route_table_propagations.json
+var dataAwsEc2TransitGatewayRouteTablePropagations []byte
+
+//go:embed mapping/aws/data/ecr/aws_ecr_pull_through_cache_rule.json
+var dataAwsEcrPullThroughCacheRule []byte
+
+//go:embed mapping/aws/data/ecr-public/aws_ecrpublic_authorization_token.json
+var dataEcrpublicAuthorizationToken []byte
+
+//go:embed mapping/aws/data/ecs/aws_ecs_task_execution.json
+var dataAwsEcsTaskExecution []byte
+
+//go:embed mapping/aws/data/ec2/aws_eip.json
+var dataAwsEip []byte
+
+//go:embed mapping/aws/data/ec2/aws_eips.json
+var dataAwsEips []byte
+
+//go:embed mapping/aws/data/eks/aws_eks_addon.json
+var dataAwsEksAddon []byte
+
+//go:embed mapping/aws/data/eks/aws_eks_addon_version.json
+var dataAwsEksAddonVersion []byte
+
+//go:embed mapping/aws/data/fsx/aws_fsx_openzfs_snapshot.json
+var dataAwsFsxOpenzfsSnapshot []byte
+
+//go:embed mapping/aws/data/fsx/aws_fsx_windows_file_system.json
+var dataAwsFsxWindowsFileSystem []byte
