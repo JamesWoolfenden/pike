@@ -732,3 +732,54 @@ var dataAwsFsxOpenzfsSnapshot []byte
 
 //go:embed mapping/aws/data/fsx/aws_fsx_windows_file_system.json
 var dataAwsFsxWindowsFileSystem []byte
+
+//go:embed mapping/aws/data/ec2/aws_instance.json
+var dataAwsInstance []byte
+
+//go:embed mapping/aws/data/ec2/aws_instances.json
+var dataAwsInstances []byte
+
+//go:embed mapping/aws/data/ec2/aws_internet_gateway.json
+var dataAwsInternetGateway []byte
+
+//go:embed mapping/aws/data/ec2/aws_key_pair.json
+var dataAwsKeyPair []byte
+
+//go:embed mapping/aws/data/kms/aws_kms_secrets.json
+var dataAwsKmsSecrets []byte
+
+//go:embed mapping/aws/data/mq/aws_mq_broker.json
+var dataAwsMqBroker []byte
+
+//go:embed mapping/aws/data/ec2/aws_nat_gateway.json
+var dataAwsNatGateway []byte
+
+//go:embed mapping/aws/data/ec2/aws_nat_gateways.json
+var dataAwsNatGateways []byte
+
+//go:embed mapping/aws/data/rds/aws_rds_clusters.json
+var dataAwsRdsClusters []byte
+
+//go:embed mapping/aws/data/ec2/aws_route.json
+var dataAwsRoute []byte
+
+//go:embed mapping/aws/data/s3/aws_s3_account_public_access_block.json
+var dataAwsS3AccountPublicAccessBlock []byte
+
+//go:embed mapping/aws/data/s3/aws_s3_bucket_policy.json
+var dataAwsS3BucketPolicy []byte
+
+//go:embed mapping/aws/data/s3/aws_s3_objects.json
+var dataAwsS3Objects []byte
+
+//go:embed mapping/aws/data/ssm/aws_ssm_document.json
+var dataAwsSsmDocument []byte
+
+//go:embed mapping/aws/data/transfer/aws_transfer_server.json
+var dataAwsTransferServer []byte
+
+//go:embed mapping/aws/data/ec2/aws_vpc_endpoint.json
+var dataAwsVpcEndpoint []byte
+
+//go:embed mapping/aws/data/sqs/aws_sqs_queue.json
+var dataAwsSqsQueue []byte
