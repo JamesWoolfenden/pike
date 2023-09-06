@@ -783,3 +783,36 @@ var dataAwsVpcEndpoint []byte
 
 //go:embed mapping/aws/data/sqs/aws_sqs_queue.json
 var dataAwsSqsQueue []byte
+
+//go:embed mapping/aws/data/ec2/aws_ebs_default_kms_key.json
+var dataAwsEbsEncryptionByDefault []byte
+
+//go:embed mapping/aws/data/ec2/aws_ec2_spot_price.json
+var dataAwsEc2SpotPrice []byte
+
+//go:embed mapping/aws/data/iam/aws_iam_access_keys.json
+var dataAwsIamAccessKeys []byte
+
+//go:embed mapping/aws/data/iam/aws_iam_principal_policy_simulation.json
+var dataAwsIamPrincipalPolicySimulation []byte
+
+//go:embed mapping/aws/data/kinesis/aws_kinesis_firehose_delivery_stream.json
+var dataAwsKinesisFirehoseDeliveryStream []byte
+
+//go:embed mapping/aws/data/kinesis/aws_kinesis_stream.json
+var dataAwsKinesisStream []byte
+
+//go:embed mapping/aws/data/ec2/aws_launch_template.json
+var dataAwsLaunchTemplate []byte
+
+//go:embed mapping/aws/data/ec2/aws_regions.json
+var dataAwsRegions []byte
+
+//go:embed mapping/aws/data/states/aws_sfn_state_machine.json
+var dataAwsSfnStateMachine []byte
+
+//go:embed mapping/aws/data/states/aws_sfn_state_machine_versions.json
+var dataAwsSfnStateMachineVersion []byte
+
+//go:embed mapping/aws/data/ec2/aws_vpn_gateway.json
+var dataAwsVpnGateway []byte

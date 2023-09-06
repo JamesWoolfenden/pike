@@ -7,16 +7,21 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          //aws_ssm_document
-          "ssm:GetDocument",
-          //aws_rds_clusters
-          "rds:DescribeDBClusters",
-          //aws_mq_broker
-          "mq:ListBrokers",
-          //aws_kms_secrets
-          "kms:Decrypt",
-          //aws_transfer_server
-          "transfer:DescribeServer"
+          "iam:GetSAMLProvider",
+          //aws_sfn_state_machine
+          "states:ListStateMachines",
+          "states:DescribeStateMachine",
+          "states:ListStateMachineVersions",
+          //aws_kinesis_stream
+          "kinesis:DescribeStreamSummary",
+          //aws_kinesis_firehose_delivery_stream
+          "firehose:DescribeDeliveryStream",
+          //aws_iam_session_context
+          "iam:GetRole",
+          //aws_iam_principal_policy_simulation
+          "iam:SimulatePrincipalPolicy",
+          //aws_iam_access_keys
+          "iam:ListAccessKeys"
         ],
         "Resource" : "*",
       }

@@ -310,6 +310,19 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 		"aws_wafv2_rule_group":                                 dataAwsWafv2RuleGroup,
 		"aws_wafv2_web_acl":                                    dataAwsWafv2WebACL,
 		"aws_workspaces_bundle":                                dataAwsWorkspacesBundle,
+		"aws_ebs_encryption_by_default":                        dataAwsEbsEncryptionByDefault,
+		"aws_ec2_spot_price":                                   dataAwsEc2SpotPrice,
+		"aws_iam_access_keys":                                  dataAwsIamAccessKeys,
+		"aws_iam_principal_policy_simulation":                  dataAwsIamPrincipalPolicySimulation,
+		"aws_kinesis_firehose_delivery_stream":                 dataAwsKinesisFirehoseDeliveryStream,
+		"aws_kinesis_stream":                                   dataAwsKinesisStream,
+		"aws_launch_template":                                  dataAwsLaunchTemplate,
+		"aws_opensearch_domain":                                placeholder,
+		"aws_pricing_product":                                  placeholder,
+		"aws_regions":                                          dataAwsRegions,
+		"aws_sfn_state_machine":                                dataAwsSfnStateMachine,
+		"aws_sfn_state_machine_versions":                       dataAwsSfnStateMachineVersion,
+		"aws_vpn_gateway":                                      dataAwsVpnGateway,
 	}
 
 	var (
