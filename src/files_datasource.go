@@ -666,3 +666,39 @@ var dataAwsConnectVocabulary []byte
 
 //go:embed mapping/aws/data/ec2/aws_customer_gateway.json
 var dataAwsCustomerGateway []byte
+
+//go:embed mapping/aws/data/dms/aws_dms_endpoint.json
+var dataAwsDmsEndpoint []byte
+
+//go:embed mapping/aws/data/dms/aws_dms_replication_instance.json
+var dataAwsDmsReplicationInstance []byte
+
+//go:embed mapping/aws/data/dms/aws_dms_replication_subnet_group.json
+var dataAwsDmsReplicationSubnetGroup []byte
+
+//go:embed mapping/aws/data/dms/aws_dms_replication_task.json
+var dataAwsDmsReplicationTask []byte
+
+//go:embed mapping/aws/data/waf/aws_waf_ipset.json
+var dataAwsWafIpset []byte
+
+//go:embed mapping/aws/data/waf/aws_waf_rate_based_rule.json
+var dataAwsWafRateBasedRule []byte
+
+//go:embed mapping/aws/data/waf/aws_waf_rule.json
+var dataAwsWafRule []byte
+
+//go:embed mapping/aws/data/waf/aws_waf_web_acl.json
+var dataAwsWafWebAcl []byte
+
+//go:embed mapping/aws/data/wafregional/aws_wafregional_ipset.json
+var dataAwsWafregionalIpset []byte
+
+//go:embed mapping/aws/data/wafregional/aws_wafregional_rate_based_rule.json
+var dataAwsWafregionalRateBasedRule []byte
+
+//go:embed mapping/aws/data/wafregional/aws_wafregional_rule.json
+var dataAwsWafregionalRule []byte
+
+//go:embed mapping/aws/data/wafregional/aws_wafregional_web_acl.json
+var dataAwsWafregionalWebAcl []byte

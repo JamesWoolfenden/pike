@@ -6,6 +6,8 @@
     },
     "destroy": [],
     "modify": [],
-    "plan": []
+    "plan": [
+      "waf:ListIPSets"
+    ]
   }
 ]

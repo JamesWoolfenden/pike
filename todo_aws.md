@@ -146,11 +146,7 @@
 
 ## data
 
-./resource.ps1 aws_dms_certificate -type data
-./resource.ps1 aws_dms_endpoint -type data
-./resource.ps1 aws_dms_replication_instance -type data
-./resource.ps1 aws_dms_replication_subnet_group -type data
-./resource.ps1 aws_dms_replication_task -type data
+
 ./resource.ps1 aws_ebs_encryption_by_default -type data
 ./resource.ps1 aws_ec2_client_vpn_endpoint -type data
 ./resource.ps1 aws_ec2_coip_pool -type data
@@ -376,14 +372,6 @@
 ./resource.ps1 aws_vpclattice_service -type data
 ./resource.ps1 aws_vpclattice_service_network -type data
 ./resource.ps1 aws_vpn_gateway -type data
-./resource.ps1 aws_waf_ipset -type data
-./resource.ps1 aws_waf_rate_based_rule -type data
-./resource.ps1 aws_waf_rule -type data
-./resource.ps1 aws_waf_web_acl -type data
-./resource.ps1 aws_wafregional_ipset -type data
-./resource.ps1 aws_wafregional_rate_based_rule -type data
-./resource.ps1 aws_wafregional_rule -type data
-./resource.ps1 aws_wafregional_web_acl -type data
 ./resource.ps1 aws_workspaces_directory -type data
 ./resource.ps1 aws_workspaces_image -type data
 ./resource.ps1 ssm_maintenance_windows -type data
