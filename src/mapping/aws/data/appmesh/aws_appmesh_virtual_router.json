@@ -7,7 +7,7 @@
     "destroy": [],
     "modify": [],
     "plan": [
-      "ec2:DescribeAvailabilityZones"
+      "appmesh:DescribeVirtualRouter"
     ]
   }
 ]

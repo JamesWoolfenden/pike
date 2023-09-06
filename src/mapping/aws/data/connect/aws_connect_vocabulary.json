@@ -6,8 +6,6 @@
     },
     "destroy": [],
     "modify": [],
-    "plan": [
-      "ec2:DescribeAvailabilityZones"
-    ]
+    "plan": []
   }
 ]

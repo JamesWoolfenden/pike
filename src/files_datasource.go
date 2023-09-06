@@ -152,7 +152,7 @@ var dataAwsRdsCertificate []byte
 var dataAwsRdsCluster []byte
 
 //go:embed mapping/aws/data/rds/aws_rds_orderable_db_instance.json
-var dataAwsRdsOrderableDbInstance []byte
+var dataAwsRdsOrderableDBInstance []byte
 
 //go:embed mapping/aws/data/ec2/aws_vpc_endpoint_service.json
 var dataAwsVpcEndpointService []byte
@@ -633,3 +633,36 @@ var dataAwsPrometheusWorkspace []byte
 
 //go:embed mapping/aws/data/prometheus/aws_prometheus_workspaces.json
 var dataAwsPrometheusWorkspaces []byte
+
+//go:embed mapping/aws/data/ec2/aws_ami_ids.json
+var dataAwsAmiIds []byte
+
+//go:embed mapping/aws/data/appmesh/aws_appmesh_gateway_route.json
+var dataAwsAppmeshGatewayRoute []byte
+
+//go:embed mapping/aws/data/appmesh/aws_appmesh_route.json
+var dataAwsAppmeshRoute []byte
+
+//go:embed mapping/aws/data/appmesh/aws_appmesh_virtual_gateway.json
+var dataAwsAppmeshVirtualGateway []byte
+
+//go:embed mapping/aws/data/appmesh/aws_appmesh_virtual_node.json
+var dataAwsAppmeshVirtualNode []byte
+
+//go:embed mapping/aws/data/appmesh/aws_appmesh_virtual_router.json
+var dataAwsAppmeshVirtualRouter []byte
+
+//go:embed mapping/aws/data/ec2/aws_availability_zone.json
+var dataAwsAvailabilityZone []byte
+
+//go:embed mapping/aws/data/budgets/aws_budgets_budget.json
+var dataAwsBudgetsBudget []byte
+
+//go:embed mapping/aws/data/connect/aws_connect_user.json
+var dataAwsConnectUser []byte
+
+//go:embed mapping/aws/data/connect/aws_connect_vocabulary.json
+var dataAwsConnectVocabulary []byte
+
+//go:embed mapping/aws/data/ec2/aws_customer_gateway.json
+var dataAwsCustomerGateway []byte

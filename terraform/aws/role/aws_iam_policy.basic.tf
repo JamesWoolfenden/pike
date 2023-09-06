@@ -7,15 +7,9 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          //aws_appintegrations_event_integration
-          "app-integrations:GetEventIntegration",
-          //aws_cloudcontrolapi_resource
-          "cloudformation:GetResource",
-          "ecs:DescribeClusters",
-          //data.aws_prometheus_workspace
-          "aps:DescribeWorkspace",
-          //data.aws_prometheus_workspaces
-          "aps:ListWorkspaces",
+          //aws_appmesh_virtual_gateway
+          "ec2:DescribeCustomerGateways",
+          "ec2:DescribeAvailabilityZones"
         ],
         "Resource" : "*",
       }
