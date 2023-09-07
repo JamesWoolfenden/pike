@@ -7,11 +7,7 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-
-          "ec2:DescribeLocalGatewayVirtualInterfaceGroups",
-          "ec2:DescribeLocalGatewayVirtualInterfaces",
-          "ec2:DescribeLocalGatewayRouteTables",
-          "ec2:DescribeLocalGateways"
+          "ec2:DescribeTransitGatewayAttachments",
         ],
         "Resource" : "*",
       }

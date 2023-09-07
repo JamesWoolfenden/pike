@@ -146,21 +146,6 @@
 
 ## data
 
-./resource.ps1 aws_ec2_managed_prefix_lists -type data
-./resource.ps1 aws_ec2_public_ipv4_pool -type data
-./resource.ps1 aws_ec2_public_ipv4_pools -type data
-./resource.ps1 aws_ec2_serial_console_access -type data
-./resource.ps1 aws_ec2_transit_gateway_connect -type data
-./resource.ps1 aws_ec2_transit_gateway_connect_peer -type data
-./resource.ps1 aws_ec2_transit_gateway_multicast_domain -type data
-./resource.ps1 aws_ec2_transit_gateway_peering_attachment -type data
-./resource.ps1 aws_ec2_transit_gateway_route_table -type data
-./resource.ps1 aws_ec2_transit_gateway_route_table_associations -type data
-./resource.ps1 aws_ec2_transit_gateway_route_table_routes -type data
-./resource.ps1 aws_ec2_transit_gateway_route_tables -type data
-./resource.ps1 aws_ec2_transit_gateway_vpc_attachment -type data
-./resource.ps1 aws_ec2_transit_gateway_vpc_attachments -type data
-./resource.ps1 aws_ec2_transit_gateway_vpn_attachment -type data
 ./resource.ps1 aws_globalaccelerator_accelerator -type data
 ./resource.ps1 aws_globalaccelerator_custom_routing_accelerator -type data
 ./resource.ps1 aws_grafana_workspace -type data

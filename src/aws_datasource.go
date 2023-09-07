@@ -354,6 +354,21 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) { //nolint:maint
 		"aws_ec2_local_gateway_virtual_interface_group":        dataAwsEc2LocalGatewayVirtualInterfaceGroup,
 		"aws_ec2_local_gateway_virtual_interface_groups":       dataAwsEc2LocalGatewayVirtualInterfaceGroups,
 		"aws_ec2_local_gateways":                               dataAwsEc2LocalGateways,
+		"aws_ec2_managed_prefix_lists":                         dataAwsEc2ManagedPrefixLists,
+		"aws_ec2_public_ipv4_pool":                             dataAwsEc2PublicIpv4Pool,
+		"aws_ec2_public_ipv4_pools":                            dataAwsEc2PublicIpv4Pools,
+		"aws_ec2_serial_console_access":                        dataAwsEc2SerialConsoleAccess,
+		"aws_ec2_transit_gateway_connect":                      dataAwsEc2TransitGatewayConnect,
+		"aws_ec2_transit_gateway_connect_peer":                 dataAwsEc2TransitGatewayConnectPeer,
+		"aws_ec2_transit_gateway_multicast_domain":             dataAwsEc2TransitGatewayMulticastDomain,
+		"aws_ec2_transit_gateway_peering_attachment":           dataAwsEc2TransitGatewayPeeringAttachment,
+		"aws_ec2_transit_gateway_route_table":                  dataAwsEc2TransitGatewayRouteTable,
+		"aws_ec2_transit_gateway_route_table_associations":     dataAwsEc2TransitGatewayRouteTableAssociations,
+		"aws_ec2_transit_gateway_route_table_routes":           dataAwsEc2TransitGatewayRouteTableRoutes,
+		"aws_ec2_transit_gateway_route_tables":                 dataAwsEc2TransitGatewayRouteTables,
+		"aws_ec2_transit_gateway_vpc_attachment":               dataAwsEc2TransitGatewayVpcAttachment,
+		"aws_ec2_transit_gateway_vpc_attachments":              dataAwsEc2TransitGatewayVpcAttachments,
+		"aws_ec2_transit_gateway_vpn_attachment":               dataAwsEc2TransitGatewayVPNAttachment,
 	}
 
 	var (

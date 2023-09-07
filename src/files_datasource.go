@@ -903,3 +903,48 @@ var dataAwsEc2LocalGatewayVirtualInterfaceGroups []byte
 
 //go:embed mapping/aws/data/ec2/aws_ec2_local_gateways.json
 var dataAwsEc2LocalGateways []byte
+
+//go:embed mapping/aws/data/ec2/aws_ec2_managed_prefix_lists.json
+var dataAwsEc2ManagedPrefixLists []byte
+
+//go:embed mapping/aws/data/ec2/aws_ec2_public_ipv4_pool.json
+var dataAwsEc2PublicIpv4Pool []byte
+
+//go:embed mapping/aws/data/ec2/aws_ec2_public_ipv4_pools.json
+var dataAwsEc2PublicIpv4Pools []byte
+
+//go:embed mapping/aws/data/ec2/aws_ec2_serial_console_access.json
+var dataAwsEc2SerialConsoleAccess []byte
+
+//go:embed mapping/aws/data/ec2/aws_ec2_transit_gateway_connect.json
+var dataAwsEc2TransitGatewayConnect []byte
+
+//go:embed mapping/aws/data/ec2/aws_ec2_transit_gateway_connect_peer.json
+var dataAwsEc2TransitGatewayConnectPeer []byte
+
+//go:embed mapping/aws/data/ec2/aws_ec2_transit_gateway_multicast_domain.json
+var dataAwsEc2TransitGatewayMulticastDomain []byte
+
+//go:embed mapping/aws/data/ec2/aws_ec2_transit_gateway_peering_attachment.json
+var dataAwsEc2TransitGatewayPeeringAttachment []byte
+
+//go:embed mapping/aws/data/ec2/aws_ec2_transit_gateway_route_table.json
+var dataAwsEc2TransitGatewayRouteTable []byte
+
+//go:embed mapping/aws/data/ec2/aws_ec2_transit_gateway_route_table_associations.json
+var dataAwsEc2TransitGatewayRouteTableAssociations []byte
+
+//go:embed mapping/aws/data/ec2/aws_ec2_transit_gateway_route_table_routes.json
+var dataAwsEc2TransitGatewayRouteTableRoutes []byte
+
+//go:embed mapping/aws/data/ec2/aws_ec2_transit_gateway_route_tables.json
+var dataAwsEc2TransitGatewayRouteTables []byte
+
+//go:embed mapping/aws/data/ec2/aws_ec2_transit_gateway_vpc_attachment.json
+var dataAwsEc2TransitGatewayVpcAttachment []byte
+
+//go:embed mapping/aws/data/ec2/aws_ec2_transit_gateway_vpc_attachments.json
+var dataAwsEc2TransitGatewayVpcAttachments []byte
+
+//go:embed mapping/aws/data/ec2/aws_ec2_transit_gateway_vpn_attachment.json
+var dataAwsEc2TransitGatewayVPNAttachment []byte
