@@ -816,3 +816,45 @@ var dataAwsSfnStateMachineVersion []byte
 
 //go:embed mapping/aws/data/ec2/aws_vpn_gateway.json
 var dataAwsVpnGateway []byte
+
+//go:embed mapping/aws/data/lambda/aws_lambda_code_signing_config.json
+var dataAwsLambdaCodeSigningConfig []byte
+
+//go:embed mapping/aws/data/lambda/aws_lambda_invocation.json
+var dataAwsLambdaInvocation []byte
+
+//go:embed mapping/aws/data/rds/aws_neptune_engine_version.json
+var dataAwsNeptuneEngineVersion []byte
+
+//go:embed mapping/aws/data/rds/aws_neptune_orderable_db_instance.json
+var dataAwsNeptuneOrderableDBInstance []byte
+
+//go:embed mapping/aws/data/ec2/aws_network_interfaces.json
+var dataAwsNetworkInterfaces []byte
+
+//go:embed mapping/aws/data/quicksight/aws_quicksight_group.json
+var dataAwsQuicksightGroup []byte
+
+//go:embed mapping/aws/data/quicksight/aws_quicksight_theme.json
+var dataAwsQuicksightTheme []byte
+
+//go:embed mapping/aws/data/quicksight/aws_quicksight_user.json
+var dataAwsQuicksightUser []byte
+
+//go:embed mapping/aws/data/states/aws_sfn_activity.json
+var dataAwsSfnActivity []byte
+
+//go:embed mapping/aws/data/states/aws_sfn_alias.json
+var dataAwsSfnAlias []byte
+
+//go:embed mapping/aws/data/ssm/aws_ssm_instances.json
+var dataAwsSsmInstances []byte
+
+//go:embed mapping/aws/data/ssm/aws_ssm_maintenance_windows.json
+var dataAwsSsmMaintenanceWindows []byte
+
+//go:embed mapping/aws/data/ssm/aws_ssm_parameters_by_path.json
+var dataAwsSsmParametersByPath []byte
+
+//go:embed mapping/aws/data/ssm/aws_ssm_patch_baseline.json
+var dataAwsSsmPatchBaseline []byte

@@ -7,21 +7,23 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "iam:GetSAMLProvider",
-          //aws_sfn_state_machine
-          "states:ListStateMachines",
-          "states:DescribeStateMachine",
-          "states:ListStateMachineVersions",
-          //aws_kinesis_stream
-          "kinesis:DescribeStreamSummary",
-          //aws_kinesis_firehose_delivery_stream
-          "firehose:DescribeDeliveryStream",
-          //aws_iam_session_context
-          "iam:GetRole",
-          //aws_iam_principal_policy_simulation
-          "iam:SimulatePrincipalPolicy",
-          //aws_iam_access_keys
-          "iam:ListAccessKeys"
+          //aws_ssm_patch_baseline
+          "ssm:DescribePatchBaselines",
+          //aws_ssm_parameters_by_path
+          "ssm:GetParametersByPath",
+          //aws_ssm_maintenance_windows
+          "ssm:DescribeMaintenanceWindows",
+          //aws_ssm_instances
+          "ssm:DescribeInstanceInformation",
+          //aws_sfn_activity
+          "states:ListActivities",
+          //aws_quicksight_user
+          "quicksight:DescribeUser",
+          //aws_quicksight_theme
+          "quicksight:DescribeTheme",
+          //aws_quicksight_group
+          "quicksight:DescribeGroup",
+
         ],
         "Resource" : "*",
       }

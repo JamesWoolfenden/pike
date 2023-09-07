@@ -146,7 +146,6 @@
 
 ## data
 
-
 ./resource.ps1 aws_ec2_client_vpn_endpoint -type data
 ./resource.ps1 aws_ec2_coip_pool -type data
 ./resource.ps1 aws_ec2_coip_pools -type data
@@ -208,8 +207,6 @@
 ./resource.ps1 aws_lakeformation_data_lake_settings -type data
 ./resource.ps1 aws_lakeformation_permissions -type data
 ./resource.ps1 aws_lakeformation_resource -type data
-./resource.ps1 aws_lambda_code_signing_config -type data
-./resource.ps1 aws_lambda_invocation -type data
 ./resource.ps1 aws_lex_bot -type data
 ./resource.ps1 aws_lex_bot_alias -type data
 ./resource.ps1 aws_lex_intent -type data
@@ -227,9 +224,6 @@
 ./resource.ps1 aws_mskconnect_connector -type data
 ./resource.ps1 aws_mskconnect_custom_plugin -type data
 ./resource.ps1 aws_mskconnect_worker_configuration -type data
-./resource.ps1 aws_neptune_engine_version -type data
-./resource.ps1 aws_neptune_orderable_db_instance -type data
-./resource.ps1 aws_network_interfaces -type data
 ./resource.ps1 aws_networkfirewall_firewall -type data
 ./resource.ps1 aws_networkfirewall_firewall_policy -type data
 ./resource.ps1 aws_networkfirewall_resource_policy -type data
@@ -270,10 +264,6 @@
 ./resource.ps1 aws_outposts_site -type data
 ./resource.ps1 aws_outposts_sites -type data
 ./resource.ps1 aws_qldb_ledger -type data
-./resource.ps1 aws_quicksight_data_set -type data
-./resource.ps1 aws_quicksight_group -type data
-./resource.ps1 aws_quicksight_theme -type data
-./resource.ps1 aws_quicksight_user -type data
 ./resource.ps1 aws_ram_resource_share -type data
 ./resource.ps1 aws_redshiftserverless_namespace -type data
 ./resource.ps1 aws_redshiftserverless_workgroup -type data
@@ -299,13 +289,8 @@
 ./resource.ps1 aws_sesv2_configuration_set -type data
 ./resource.ps1 aws_sesv2_email_identity -type data
 ./resource.ps1 aws_sesv2_email_identity_mail_from_attributes -type data
-./resource.ps1 aws_sfn_activity -type data
-./resource.ps1 aws_sfn_alias -type data
 ./resource.ps1 aws_signer_signing_job -type data
 ./resource.ps1 aws_signer_signing_profile -type data
-./resource.ps1 aws_ssm_instances -type data
-./resource.ps1 aws_ssm_parameters_by_path -type data
-./resource.ps1 aws_ssm_patch_baseline -type data
 ./resource.ps1 aws_ssmcontacts_contact -type data
 ./resource.ps1 aws_ssmcontacts_contact_channel -type data
 ./resource.ps1 aws_ssmcontacts_plan -type data
@@ -326,8 +311,6 @@
 ./resource.ps1 aws_vpclattice_service_network -type data
 ./resource.ps1 aws_workspaces_directory -type data
 ./resource.ps1 aws_workspaces_image -type data
-./resource.ps1 ssm_maintenance_windows -type data
-
 
 ```
 
