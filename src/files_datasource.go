@@ -858,3 +858,48 @@ var dataAwsSsmParametersByPath []byte
 
 //go:embed mapping/aws/data/ssm/aws_ssm_patch_baseline.json
 var dataAwsSsmPatchBaseline []byte
+
+//go:embed mapping/aws/data/ec2/aws_ec2_client_vpn_endpoint.json
+var dataAwsEc2ClientVpnEndpoint []byte
+
+//go:embed mapping/aws/data/ec2/aws_ec2_coip_pool.json
+var dataAwsEc2CoipPool []byte
+
+//go:embed mapping/aws/data/ec2/aws_ec2_coip_pools.json
+var dataAwsEc2CoipPools []byte
+
+//go:embed mapping/aws/data/ec2/aws_ec2_host.json
+var dataAwsEc2Host []byte
+
+//go:embed mapping/aws/data/ec2/aws_ec2_instance_type.json
+var dataAwsEc2InstanceType []byte
+
+//go:embed mapping/aws/data/ec2/aws_ec2_instance_type_offering.json
+var dataAwsEc2InstanceTypeOffering []byte
+
+//go:embed mapping/aws/data/ec2/aws_ec2_instance_type_offerings.json
+var dataAwsEc2InstanceTypeOfferings []byte
+
+//go:embed mapping/aws/data/ec2/aws_ec2_instance_types.json
+var dataAwsEc2InstanceTypes []byte
+
+//go:embed mapping/aws/data/ec2/aws_ec2_local_gateway.json
+var dataAwsEc2LocalGateway []byte
+
+//go:embed mapping/aws/data/ec2/aws_ec2_local_gateway_route_table.json
+var dataAwsEc2LocalGatewayRouteTable []byte
+
+//go:embed mapping/aws/data/ec2/aws_ec2_local_gateway_route_tables.json
+var dataAwsEc2LocalGatewayRouteTables []byte
+
+//go:embed mapping/aws/data/ec2/aws_ec2_local_gateway_virtual_interface.json
+var dataAwsEc2LocalGatewayVirtualInterface []byte
+
+//go:embed mapping/aws/data/ec2/aws_ec2_local_gateway_virtual_interface_group.json
+var dataAwsEc2LocalGatewayVirtualInterfaceGroup []byte
+
+//go:embed mapping/aws/data/ec2/aws_ec2_local_gateway_virtual_interface_groups.json
+var dataAwsEc2LocalGatewayVirtualInterfaceGroups []byte
+
+//go:embed mapping/aws/data/ec2/aws_ec2_local_gateways.json
+var dataAwsEc2LocalGateways []byte

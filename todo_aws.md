@@ -146,21 +146,6 @@
 
 ## data
 
-./resource.ps1 aws_ec2_client_vpn_endpoint -type data
-./resource.ps1 aws_ec2_coip_pool -type data
-./resource.ps1 aws_ec2_coip_pools -type data
-./resource.ps1 aws_ec2_host -type data
-./resource.ps1 aws_ec2_instance_type -type data
-./resource.ps1 aws_ec2_instance_type_offering -type data
-./resource.ps1 aws_ec2_instance_type_offerings -type data
-./resource.ps1 aws_ec2_instance_types -type data
-./resource.ps1 aws_ec2_local_gateway -type data
-./resource.ps1 aws_ec2_local_gateway_route_table -type data
-./resource.ps1 aws_ec2_local_gateway_route_tables -type data
-./resource.ps1 aws_ec2_local_gateway_virtual_interface -type data
-./resource.ps1 aws_ec2_local_gateway_virtual_interface_group -type data
-./resource.ps1 aws_ec2_local_gateway_virtual_interface_groups -type data
-./resource.ps1 aws_ec2_local_gateways -type data
 ./resource.ps1 aws_ec2_managed_prefix_lists -type data
 ./resource.ps1 aws_ec2_public_ipv4_pool -type data
 ./resource.ps1 aws_ec2_public_ipv4_pools -type data

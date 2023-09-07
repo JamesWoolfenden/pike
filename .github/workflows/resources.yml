@@ -17,7 +17,7 @@ jobs:
 
         ## checks out our code locally, so we can work with the files
         - name: Checkout code
-          uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
+          uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
 
         ## runs go test ./...
         - name: Build
@@ -25,7 +25,7 @@ jobs:
 
 
         - name: Checkout AWS
-          uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
+          uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
           with:
             repository: hashicorp/terraform-provider-aws
             path: aws
@@ -34,7 +34,7 @@ jobs:
           run: ${{ github.workspace }}/pike parse -d ${{ github.workspace }}/aws -name aws
 
         - name: Checkout AZURERM
-          uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
+          uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
           with:
             repository: hashicorp/terraform-provider-azurerm
             path: azurerm
@@ -43,7 +43,7 @@ jobs:
           run: ${{ github.workspace }}/pike parse -d ${{ github.workspace }}/azurerm -name azurerm
 
         - name: Generate Google
-          uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
+          uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
           with:
             repository: hashicorp/terraform-provider-google
             path: google

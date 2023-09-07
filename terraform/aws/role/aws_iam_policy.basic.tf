@@ -7,23 +7,11 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          //aws_ssm_patch_baseline
-          "ssm:DescribePatchBaselines",
-          //aws_ssm_parameters_by_path
-          "ssm:GetParametersByPath",
-          //aws_ssm_maintenance_windows
-          "ssm:DescribeMaintenanceWindows",
-          //aws_ssm_instances
-          "ssm:DescribeInstanceInformation",
-          //aws_sfn_activity
-          "states:ListActivities",
-          //aws_quicksight_user
-          "quicksight:DescribeUser",
-          //aws_quicksight_theme
-          "quicksight:DescribeTheme",
-          //aws_quicksight_group
-          "quicksight:DescribeGroup",
 
+          "ec2:DescribeLocalGatewayVirtualInterfaceGroups",
+          "ec2:DescribeLocalGatewayVirtualInterfaces",
+          "ec2:DescribeLocalGatewayRouteTables",
+          "ec2:DescribeLocalGateways"
         ],
         "Resource" : "*",
       }

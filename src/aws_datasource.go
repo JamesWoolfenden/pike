@@ -339,6 +339,21 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) { //nolint:maint
 		"aws_wafv2_rule_group":                                 dataAwsWafv2RuleGroup,
 		"aws_wafv2_web_acl":                                    dataAwsWafv2WebACL,
 		"aws_workspaces_bundle":                                dataAwsWorkspacesBundle,
+		"aws_ec2_client_vpn_endpoint":                          dataAwsEc2ClientVpnEndpoint,
+		"aws_ec2_coip_pool":                                    dataAwsEc2CoipPool,
+		"aws_ec2_coip_pools":                                   dataAwsEc2CoipPools,
+		"aws_ec2_host":                                         dataAwsEc2Host,
+		"aws_ec2_instance_type":                                dataAwsEc2InstanceType,
+		"aws_ec2_instance_type_offering":                       dataAwsEc2InstanceTypeOffering,
+		"aws_ec2_instance_type_offerings":                      dataAwsEc2InstanceTypeOfferings,
+		"aws_ec2_instance_types":                               dataAwsEc2InstanceTypes,
+		"aws_ec2_local_gateway":                                dataAwsEc2LocalGateway,
+		"aws_ec2_local_gateway_route_table":                    dataAwsEc2LocalGatewayRouteTable,
+		"aws_ec2_local_gateway_route_tables":                   dataAwsEc2LocalGatewayRouteTables,
+		"aws_ec2_local_gateway_virtual_interface":              dataAwsEc2LocalGatewayVirtualInterface,
+		"aws_ec2_local_gateway_virtual_interface_group":        dataAwsEc2LocalGatewayVirtualInterfaceGroup,
+		"aws_ec2_local_gateway_virtual_interface_groups":       dataAwsEc2LocalGatewayVirtualInterfaceGroups,
+		"aws_ec2_local_gateways":                               dataAwsEc2LocalGateways,
 	}
 
 	var (
