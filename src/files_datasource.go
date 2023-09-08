@@ -948,3 +948,36 @@ var dataAwsEc2TransitGatewayVpcAttachments []byte
 
 //go:embed mapping/aws/data/ec2/aws_ec2_transit_gateway_vpn_attachment.json
 var dataAwsEc2TransitGatewayVPNAttachment []byte
+
+//go:embed mapping/aws/data/globalaccelerator/aws_globalaccelerator_accelerator.json
+var dataAwsGlobalAccelerator []byte
+
+//go:embed mapping/aws/data/globalaccelerator/aws_globalaccelerator_custom_routing_accelerator.json
+var dataAwsGlobalAcceleratorCustomRoutingAccelerator []byte
+
+//go:embed mapping/aws/data/grafana/aws_grafana_workspace.json
+var dataAwsGrafanaWorkspace []byte
+
+//go:embed mapping/aws/data/guardduty/aws_guardduty_detector.json
+var dataAwsGuarddutyDetector []byte
+
+//go:embed mapping/aws/data/guardduty/aws_guardduty_finding_ids.json
+var dataAwsGuarddutyFindingIds []byte
+
+//go:embed mapping/aws/data/identitystore/aws_identitystore_group.json
+var dataAwsIdentitystoreGroup []byte
+
+//go:embed mapping/aws/data/identitystore/aws_identitystore_user.json
+var dataAwsIdentitystoreUser []byte
+
+//go:embed mapping/aws/data/iot/aws_iot_endpoint.json
+var dataAwsIotEndpoint []byte
+
+//go:embed mapping/aws/data/kinesis/aws_kinesis_stream_consumer.json
+var dataAwsKinesisStreamConsumer []byte
+
+//go:embed mapping/aws/data/workspaces/aws_workspaces_image.json
+var dataAwsWorkspaceImage []byte
+
+//go:embed mapping/aws/data/workspaces/aws_workspaces_directory.json
+var dataAwsWorkspaceDirectory []byte

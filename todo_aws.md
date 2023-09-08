@@ -146,13 +146,6 @@
 
 ## data
 
-./resource.ps1 aws_globalaccelerator_accelerator -type data
-./resource.ps1 aws_globalaccelerator_custom_routing_accelerator -type data
-./resource.ps1 aws_grafana_workspace -type data
-./resource.ps1 aws_guardduty_detector -type data
-./resource.ps1 aws_guardduty_finding_ids -type data
-./resource.ps1 aws_identitystore_group -type data
-./resource.ps1 aws_identitystore_user -type data
 ./resource.ps1 aws_imagebuilder_component -type data
 ./resource.ps1 aws_imagebuilder_components -type data
 ./resource.ps1 aws_imagebuilder_container_recipe -type data
@@ -166,14 +159,11 @@
 ./resource.ps1 aws_imagebuilder_image_recipes -type data
 ./resource.ps1 aws_imagebuilder_infrastructure_configuration -type data
 ./resource.ps1 aws_imagebuilder_infrastructure_configurations -type data
-./resource.ps1 aws_iot_endpoint -type data
-./resource.ps1 aws_ip_ranges -type data
 ./resource.ps1 aws_kendra_experience -type data
 ./resource.ps1 aws_kendra_faq -type data
 ./resource.ps1 aws_kendra_index -type data
 ./resource.ps1 aws_kendra_query_suggestions_block_list -type data
 ./resource.ps1 aws_kendra_thesaurus -type data
-./resource.ps1 aws_kinesis_stream_consumer -type data
 ./resource.ps1 aws_lakeformation_data_lake_settings -type data
 ./resource.ps1 aws_lakeformation_permissions -type data
 ./resource.ps1 aws_lakeformation_resource -type data
@@ -246,7 +236,6 @@
 ./resource.ps1 aws_secretsmanager_secret_rotation -type data
 ./resource.ps1 aws_secretsmanager_secrets -type data
 ./resource.ps1 aws_serverlessapplicationrepository_application -type data
-./resource.ps1 aws_service -type data
 ./resource.ps1 aws_servicecatalog_constraint -type data
 ./resource.ps1 aws_servicecatalog_launch_paths -type data
 ./resource.ps1 aws_servicecatalog_portfolio -type data
@@ -279,8 +268,6 @@
 ./resource.ps1 aws_vpclattice_resource_policy -type data
 ./resource.ps1 aws_vpclattice_service -type data
 ./resource.ps1 aws_vpclattice_service_network -type data
-./resource.ps1 aws_workspaces_directory -type data
-./resource.ps1 aws_workspaces_image -type data
 
 ```
 

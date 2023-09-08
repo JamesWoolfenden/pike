@@ -7,7 +7,20 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "ec2:DescribeTransitGatewayAttachments",
+          //aws_workspaces_image
+          "workspaces:DescribeWorkspaceImages",
+          //aws_workspaces_directory
+          "workspaces:DescribeWorkspaceDirectories",
+          //aws_iot_endpoint
+          "iot:DescribeEndpoint",
+          //aws_ssoadmin_instances
+          "sso:ListInstances",
+          //aws_kinesis_stream_consumer
+          "kinesis:ListStreamConsumers",
+          //aws_identitystore_user
+          "identitystore:GetUserId",
+          //aws_identitystore_group
+          "identitystore:GetGroupId"
         ],
         "Resource" : "*",
       }
