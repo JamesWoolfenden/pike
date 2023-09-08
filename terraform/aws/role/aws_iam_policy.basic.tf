@@ -7,10 +7,26 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          //aws_vpc_ipam_pool
-          "ec2:DescribeIpamPools",
-          //aws_vpc_peering_connection
-          ,
+          //aws_ssmincidents_replication_set
+          "ssm-incidents:ListReplicationSets",
+          //aws_resourcegroupstaggingapi_resources
+          "tag:GetResources",
+          //aws_ram_resource_share
+          "ram:GetResourceShares",
+          //aws_mskconnect_worker_configuration
+          "kafkaconnect:ListWorkerConfigurations",
+          //aws_mskconnect_custom_plugin
+          "kafkaconnect:ListCustomPlugins",
+          //aws_mskconnect_connector
+          "kafkaconnect:ListConnectors",
+          //aws_msk_vpc_connection
+          "kafka:DescribeVpcConnection",
+          //aws_serverlessapplicationrepository_application
+          "serverlessrepo:GetApplication",
+          //aws_signer_signing_profile
+          "Signer:GetSigningProfile",
+          //aws_signer_signing_job
+          "Signer:DescribeSigningJob"
 
         ],
         "Resource" : "*",

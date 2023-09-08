@@ -1017,3 +1017,33 @@ var dataAwsVpcSecurityGroupRule []byte
 
 //go:embed mapping/aws/data/ec2/aws_vpc_security_group_rules.json
 var dataAwsVpcSecurityGroupRules []byte
+
+//go:embed mapping/aws/data/kafka/aws_msk_vpc_connection.json
+var dataAwsMskVpcConnection []byte
+
+//go:embed mapping/aws/data/kafka/aws_mskconnect_connector.json
+var dataAwsMskconnectConnector []byte
+
+//go:embed mapping/aws/data/kafka/aws_mskconnect_custom_plugin.json
+var dataAwsMskconnectCustomPlugin []byte
+
+//go:embed mapping/aws/data/kafka/aws_mskconnect_worker_configuration.json
+var dataAwsMskconnectWorkerConfiguration []byte
+
+//go:embed mapping/aws/data/ram/aws_ram_resource_share.json
+var dataAwsRamResourceShare []byte
+
+//go:embed mapping/aws/data/tag/aws_resourcegroupstaggingapi_resources.json
+var dataAwsResourcegroupstaggingapiResources []byte
+
+//go:embed mapping/aws/data/serverlessrepo/aws_serverlessapplicationrepository_application.json
+var dataAwsServerlessapplicationrepositoryApplication []byte
+
+//go:embed mapping/aws/data/signer/aws_signer_signing_job.json
+var dataAwsSignerSigningJob []byte
+
+//go:embed mapping/aws/data/signer/aws_signer_signing_profile.json
+var dataAwsSignerSigningProfile []byte
+
+//go:embed mapping/aws/data/ssm-incidents/aws_ssmincidents_replication_set.json
+var dataAwsSsmincidentsReplicationSet []byte
