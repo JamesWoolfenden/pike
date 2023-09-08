@@ -7,27 +7,37 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          //aws_ssmincidents_replication_set
-          "ssm-incidents:ListReplicationSets",
-          //aws_resourcegroupstaggingapi_resources
-          "tag:GetResources",
-          //aws_ram_resource_share
-          "ram:GetResourceShares",
-          //aws_mskconnect_worker_configuration
-          "kafkaconnect:ListWorkerConfigurations",
-          //aws_mskconnect_custom_plugin
-          "kafkaconnect:ListCustomPlugins",
-          //aws_mskconnect_connector
-          "kafkaconnect:ListConnectors",
-          //aws_msk_vpc_connection
-          "kafka:DescribeVpcConnection",
-          //aws_serverlessapplicationrepository_application
-          "serverlessrepo:GetApplication",
-          //aws_signer_signing_profile
-          "Signer:GetSigningProfile",
-          //aws_signer_signing_job
-          "Signer:DescribeSigningJob"
 
+          #          //aws_networkfirewall_firewall_policy
+          #          "network-firewall:DescribeFirewallPolicy",
+          #          //aws_networkfirewall_firewall
+          #          "network-firewall:DescribeFirewall",
+          #          //aws_licensemanager_received_licenses, aws_licensemanager_received_license
+          #          "license-manager:ListReceivedLicenses",
+          #          //aws_licensemanager_grants
+          #          "license-manager:ListDistributedGrants"
+
+          //aws_networkfirewall_rule_group
+          "network-firewall:CreateRuleGroup",
+          "network-firewall:DescribeRuleGroup",
+          "network-firewall:DeleteRuleGroup",
+          "network-firewall:TagResource",
+          "network-firewall:UntagResource",
+          "network-firewall:UpdateRuleGroup",
+
+          //aws_networkfirewall_firewall_policy
+          "network-firewall:CreateFirewallPolicy",
+          "network-firewall:TagResource",
+          "network-firewall:UntagResource",
+          "network-firewall:ListRuleGroups",
+          "network-firewall:DescribeFirewallPolicy",
+          "network-firewall:DeleteFirewallPolicy",
+          "network-firewall:UpdateFirewallPolicy",
+
+          //aws_networkfirewall_resource_policy
+          "network-firewall:PutResourcePolicy",
+          "network-firewall:DescribeResourcePolicy",
+          "network-firewall:DeleteResourcePolicy"
         ],
         "Resource" : "*",
       }

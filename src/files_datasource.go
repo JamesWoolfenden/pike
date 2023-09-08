@@ -1047,3 +1047,30 @@ var dataAwsSignerSigningProfile []byte
 
 //go:embed mapping/aws/data/ssm-incidents/aws_ssmincidents_replication_set.json
 var dataAwsSsmincidentsReplicationSet []byte
+
+//go:embed mapping/aws/data/license-manager/aws_licensemanager_grants.json
+var dataAwsLicensemanagerGrants []byte
+
+//go:embed mapping/aws/data/license-manager/aws_licensemanager_received_license.json
+var dataAwsLicensemanagerReceivedLicense []byte
+
+//go:embed mapping/aws/data/license-manager/aws_licensemanager_received_licenses.json
+var dataAwsLicensemanagerReceivedLicenses []byte
+
+//go:embed mapping/aws/data/network-firewall/aws_networkfirewall_firewall.json
+var dataAwsNetworkfirewallFirewall []byte
+
+//go:embed mapping/aws/data/network-firewall/aws_networkfirewall_firewall_policy.json
+var dataAwsNetworkfirewallFirewallPolicy []byte
+
+//go:embed mapping/aws/data/network-firewall/aws_networkfirewall_resource_policy.json
+var dataAwsNetworkfirewallResourcePolicy []byte
+
+//go:embed mapping/aws/data/qldb/aws_qldb_ledger.json
+var dataAwsQldbLedger []byte
+
+//go:embed mapping/aws/data/redshift-serverless/awas_redshiftserverless_namespace.json
+var dataAwsRedshiftserverlessNamespace []byte
+
+//go:embed mapping/aws/data/redshift-serverless/awas_redshiftserverless_workgroups.json
+var dataAwsRedshiftserverlessWorkgroup []byte

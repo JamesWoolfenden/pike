@@ -4,6 +4,9 @@ import (
 	_ "embed" // required for embed
 )
 
+//go:embed mapping/aws/resource/network-firewall/aws_networkfirewall_resource_policy.json
+var awsNetworkfirewallResourcePolicy []byte
+
 //go:embed mapping/aws/resource/elasticloadbalancing/aws_lb_target_group.json
 var awsLbTargetGroup []byte
 

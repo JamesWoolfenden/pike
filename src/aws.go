@@ -484,6 +484,7 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_workspaces_directory":                           awsWorkspacesDirectory,
 		"aws_acmpca_certificate_authority_certificate":       awsAcmpcaCertificateAuthorityCertificate,
 		"aws_acmpca_certificate":                             awsAcmpcaCertificate,
+		"aws_networkfirewall_resource_policy":                awsNetworkfirewallResourcePolicy,
 	}
 
 	var (

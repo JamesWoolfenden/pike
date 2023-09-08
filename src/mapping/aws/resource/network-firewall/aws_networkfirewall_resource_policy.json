@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "network-firewall:PutResourcePolicy",
+      "network-firewall:DescribeResourcePolicy",
+      "network-firewall:DeleteResourcePolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "network-firewall:DeleteResourcePolicy"
+    ],
+    "modify": [],
+    "plan": [
+      "network-firewall:DescribeResourcePolicy"
+    ]
+  }
+]

@@ -410,6 +410,15 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) { //nolint:maint
 		"aws_workspaces_bundle":                                dataAwsWorkspacesBundle,
 		"aws_workspaces_directory":                             dataAwsWorkspaceDirectory,
 		"aws_workspaces_image":                                 dataAwsWorkspaceImage,
+		"aws_licensemanager_grants":                            dataAwsLicensemanagerGrants,
+		"aws_licensemanager_received_license":                  dataAwsLicensemanagerReceivedLicense,
+		"aws_licensemanager_received_licenses":                 dataAwsLicensemanagerReceivedLicenses,
+		"aws_networkfirewall_firewall":                         dataAwsNetworkfirewallFirewall,
+		"aws_networkfirewall_firewall_policy":                  dataAwsNetworkfirewallFirewallPolicy,
+		"aws_networkfirewall_resource_policy":                  dataAwsNetworkfirewallResourcePolicy,
+		"aws_qldb_ledger":                                      dataAwsQldbLedger,
+		"aws_redshiftserverless_namespace":                     dataAwsRedshiftserverlessNamespace,
+		"aws_redshiftserverless_workgroup":                     dataAwsRedshiftserverlessWorkgroup,
 	}
 
 	var (
