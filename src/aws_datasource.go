@@ -382,6 +382,20 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) { //nolint:maint
 		"aws_workspaces_bundle":                                dataAwsWorkspacesBundle,
 		"aws_workspaces_directory":                             dataAwsWorkspaceDirectory,
 		"aws_workspaces_image":                                 dataAwsWorkspaceImage,
+		"aws_lakeformation_data_lake_settings":                 dataAwsLakeformationDataLakeSettings,
+		"aws_lakeformation_permissions":                        dataAwsLakeformationPermissions,
+		"aws_lakeformation_resource":                           dataAwsLakeformationResource,
+		"aws_mq_broker_instance_type_offerings":                dataAwsMqBrokerInstanceTypeOfferings,
+		"aws_secretsmanager_random_password":                   dataAwsSecretsmanagerRandomPassword,
+		"aws_secretsmanager_secret_rotation":                   dataAwsSecretsmanagerSecretRotation,
+		"aws_secretsmanager_secrets":                           dataAwsSecretsmanagerSecrets,
+		"aws_ssoadmin_permission_set":                          dataAwsSsoadminPermissionSet,
+		"aws_storagegateway_local_disk":                        placeholder,
+		"aws_vpc_ipam_preview_next_cidr":                       placeholder,
+		"aws_vpc_peering_connection":                           dataAwsVpcPeeringConnection,
+		"aws_vpc_peering_connections":                          dataAwsVpcPeeringConnections,
+		"aws_vpc_security_group_rule":                          dataAwsVpcSecurityGroupRule,
+		"aws_vpc_security_group_rules":                         dataAwsVpcSecurityGroupRules,
 	}
 
 	var (

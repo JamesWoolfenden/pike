@@ -981,3 +981,39 @@ var dataAwsWorkspaceImage []byte
 
 //go:embed mapping/aws/data/workspaces/aws_workspaces_directory.json
 var dataAwsWorkspaceDirectory []byte
+
+//go:embed mapping/aws/data/lakeformation/aws_lakeformation_data_lake_settings.json
+var dataAwsLakeformationDataLakeSettings []byte
+
+//go:embed mapping/aws/data/lakeformation/aws_lakeformation_permissions.json
+var dataAwsLakeformationPermissions []byte
+
+//go:embed mapping/aws/data/lakeformation/aws_lakeformation_resource.json
+var dataAwsLakeformationResource []byte
+
+//go:embed mapping/aws/data/mq/aws_mq_broker_instance_type_offerings.json
+var dataAwsMqBrokerInstanceTypeOfferings []byte
+
+//go:embed mapping/aws/data/secretsmanager/aws_secretsmanager_random_password.json
+var dataAwsSecretsmanagerRandomPassword []byte
+
+//go:embed mapping/aws/data/secretsmanager/aws_secretsmanager_secret_rotation.json
+var dataAwsSecretsmanagerSecretRotation []byte
+
+//go:embed mapping/aws/data/secretsmanager/aws_secretsmanager_secrets.json
+var dataAwsSecretsmanagerSecrets []byte
+
+//go:embed mapping/aws/data/sso/aws_ssoadmin_permission_set.json
+var dataAwsSsoadminPermissionSet []byte
+
+//go:embed mapping/aws/data/ec2/aws_vpc_peering_connection.json
+var dataAwsVpcPeeringConnection []byte
+
+//go:embed mapping/aws/data/ec2/aws_vpc_peering_connections.json
+var dataAwsVpcPeeringConnections []byte
+
+//go:embed mapping/aws/data/ec2/aws_vpc_security_group_rule.json
+var dataAwsVpcSecurityGroupRule []byte
+
+//go:embed mapping/aws/data/ec2/aws_vpc_security_group_rules.json
+var dataAwsVpcSecurityGroupRules []byte
