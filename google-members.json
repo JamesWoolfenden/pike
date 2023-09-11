@@ -347,6 +347,7 @@
         "google_data_loss_prevention_inspect_template",
         "google_data_loss_prevention_job_trigger",
         "google_data_loss_prevention_stored_info_type",
+        "google_data_pipeline_pipeline",
         "google_database_migration_service_connection_profile",
         "google_dataflow_flex_template_job",
         "google_dataflow_job",
