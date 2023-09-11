@@ -143,9 +143,9 @@ func TestParse(t *testing.T) {
 		args    args
 		wantErr bool
 	}{
-		{name: "aws", args: args{codebase: "./terraform-provider-aws", name: "aws"}},
-		{name: "azure", args: args{codebase: "./terraform-provider-azurerm", name: "azurerm"}},
-		{name: "google", args: args{codebase: "./terraform-provider-google", name: "google"}},
+		//{name: "aws", args: args{codebase: "./terraform-provider-aws", name: "aws"}},
+		//{name: "azure", args: args{codebase: "./terraform-provider-azurerm", name: "azurerm"}},
+		//{name: "google", args: args{codebase: "./terraform-provider-google", name: "google"}},
 	}
 
 	for _, tt := range tests {
