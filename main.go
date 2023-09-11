@@ -7,7 +7,7 @@ import (
 	"time"
 
 	pike "github.com/jameswoolfenden/pike/src" //nolint:goimports
-	parse "github.com/jameswoolfenden/pike/src/parse"
+	"github.com/jameswoolfenden/pike/src/parse"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
 	"github.com/urfave/cli/v2"

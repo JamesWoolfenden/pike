@@ -1,0 +1,6 @@
+
+
+
+resource "aws_test" {
+
+}

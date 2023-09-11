@@ -20,7 +20,7 @@ func InvokeGithubDispatchEvent(repository string, workflowFileName string, branc
 		return fmt.Errorf("failed to SplitHub %w", err)
 	}
 
-	url := "https://api.github.com/repos/" + repository + "/actions/workflows/" + workflowFileName
+	url := "https://api.github.com/repos/" + owner + "/" + repo + "/actions/workflows/" + workflowFileName
 
 	err2 := VerifyURL(url)
 	if err2 != nil {
@@ -71,7 +71,12 @@ func InvokeGithubDispatchEvent(repository string, workflowFileName string, branc
 // VerifyBranch checks that a branch exists in a repo
 func VerifyBranch(client *github.Client, owner string, repo string, branch string) error {
 	ctx := context.Background()
-	branches, _, _ := client.Repositories.ListBranches(ctx, owner, repo, nil)
+	branches, _, err := client.Repositories.ListBranches(ctx, owner, repo, nil)
+
+	if err != nil {
+		return err
+	}
+
 	found := false
 
 	for _, stem := range branches {

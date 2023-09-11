@@ -21,14 +21,14 @@ func TestReadme(t *testing.T) {
 		args    args
 		wantErr bool
 	}{
-		{"missing", args{"../testdata/readme/missing", "json", true, false}, true},
-		{"missing-tf", args{"../testdata/readme/missing", "terraform", true, false}, true},
-		{"exists", args{"../testdata/readme/exists", "terraform", true, false}, false},
-		{"exists-json", args{"../testdata/readme/exists", "json", true, false}, false},
-		{"wrong output", args{"../testdata/readme/exists", "cdk", true, false}, true},
-		{"exists-notags", args{"../testdata/readme/exists-notags", "terraform", true, false}, true},
-		{"empty", args{"../testdata/readme/empty", "terraform", true, false}, true},
-		{"exists-noinit", args{"../testdata/readme/exists", "terraform", false, false}, false},
+		{name: "missing", args: args{dirName: "../testdata/readme/missing", output: "json", init: true}, wantErr: true},
+		{name: "missing-tf", args: args{dirName: "../testdata/readme/missing", output: "terraform", init: true}, wantErr: true},
+		{name: "exists", args: args{dirName: "../testdata/readme/exists", output: "terraform", init: true}},
+		{name: "exists-json", args: args{dirName: "../testdata/readme/exists", output: "json", init: true}},
+		{name: "wrong output", args: args{dirName: "../testdata/readme/exists", output: "cdk", init: true}, wantErr: true},
+		{name: "exists-notags", args: args{dirName: "../testdata/readme/exists-notags", output: "terraform", init: true}, wantErr: true},
+		{name: "empty", args: args{dirName: "../testdata/readme/empty", output: "terraform", init: true}, wantErr: true},
+		{name: "exists-noinit", args: args{dirName: "../testdata/readme/exists", output: "terraform"}},
 	}
 
 	for _, tt := range tests {

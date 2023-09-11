@@ -21,9 +21,9 @@ func TestGetAWSDataPermissions(t *testing.T) {
 		wantErr bool
 	}{
 		{
-			"placeholder",
-			args{
-				pike.ResourceV2{
+			name: "placeholder",
+			args: args{
+				result: pike.ResourceV2{
 					TypeName:     "data",
 					Name:         "aws_iam_policy_document",
 					ResourceName: "elasticsearch-log-publishing-policy",
@@ -31,13 +31,11 @@ func TestGetAWSDataPermissions(t *testing.T) {
 					Attributes:   []string{"statement", "actions", "resources", "principals", "type", "identifiers"},
 				},
 			},
-			nil,
-			false,
 		},
 		{
-			"found",
-			args{
-				pike.ResourceV2{
+			name: "found",
+			args: args{
+				result: pike.ResourceV2{
 					TypeName:     "data",
 					Name:         "aws_cloudwatch_log_group",
 					ResourceName: "pike",
@@ -45,13 +43,12 @@ func TestGetAWSDataPermissions(t *testing.T) {
 					Attributes:   []string{"name"},
 				},
 			},
-			[]string{"logs:DescribeLogGroups", "logs:ListTagsLogGroup"},
-			false,
+			want: []string{"logs:DescribeLogGroups", "logs:ListTagsLogGroup"},
 		},
 		{
-			"bogus",
-			args{
-				pike.ResourceV2{
+			name: "bogus",
+			args: args{
+				result: pike.ResourceV2{
 					TypeName:     "data",
 					Name:         "aws_madeup",
 					ResourceName: "pike",
@@ -59,8 +56,7 @@ func TestGetAWSDataPermissions(t *testing.T) {
 					Attributes:   []string{"name"},
 				},
 			},
-			nil,
-			true,
+			wantErr: true,
 		},
 	}
 

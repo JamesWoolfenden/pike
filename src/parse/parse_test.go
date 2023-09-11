@@ -1,12 +1,11 @@
 package parse
 
 import (
+	"github.com/go-git/go-git/v5"
+	"github.com/rs/zerolog/log"
 	"os"
 	"reflect"
 	"testing"
-
-	"github.com/go-git/go-git/v5"
-	"github.com/rs/zerolog/log"
 )
 
 func TestGetGoFiles(t *testing.T) {
@@ -14,13 +13,16 @@ func TestGetGoFiles(t *testing.T) {
 		path      string
 		extension string
 	}
+
+	wanted := []string{"testdata/test.go"}
 	tests := []struct {
 		name    string
 		args    args
 		want    []string
 		wantErr bool
 	}{
-		// TODO: Add test cases.
+		{name: "Pass", args: args{path: "./testdata", extension: "go"}, want: wanted},
+		{name: "None", args: args{path: "../mapping", extension: "go"}},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -37,18 +39,34 @@ func TestGetGoFiles(t *testing.T) {
 }
 
 func TestGetKeys(t *testing.T) {
+	t.Parallel()
+
 	type args struct {
 		m map[string]bool
 	}
+
+	sample := map[string]bool{
+		"first": true,
+	}
+
+	nothing := map[string]bool{}
+
+	myKeys := []string{"first"}
+
 	tests := []struct {
 		name string
 		args args
 		want []string
 	}{
-		// TODO: Add test cases.
+		{name: "pass", args: args{sample}, want: myKeys},
+		{name: "nil", args: args{nothing}},
 	}
+
 	for _, tt := range tests {
+		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
+
 			if got := GetKeys(tt.args.m); !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("GetKeys() = %v, want %v", got, tt.want)
 			}
@@ -57,21 +75,28 @@ func TestGetKeys(t *testing.T) {
 }
 
 func TestGetMatches(t *testing.T) {
+	t.Parallel()
+
 	type args struct {
 		source    string
 		match     string
 		extension string
 	}
+
 	tests := []struct {
 		name    string
 		args    args
 		want    []string
 		wantErr bool
 	}{
-		// TODO: Add test cases.
+		{name: "pass"},
+		{name: "go", args: args{source: "./testdata", match: "(aws_.*?)", extension: "go"}, want: []string{"aws_"}},
 	}
+
 	for _, tt := range tests {
+		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
 			got, err := GetMatches(tt.args.source, tt.args.match, tt.args.extension)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("GetMatches() error = %v, wantErr %v", err, tt.wantErr)
@@ -118,9 +143,9 @@ func TestParse(t *testing.T) {
 		args    args
 		wantErr bool
 	}{
-		{"aws", args{"./terraform-provider-aws", "aws"}, false},
-		{"azure", args{"./terraform-provider-azurerm", "azurerm"}, false},
-		{"google", args{"./terraform-provider-google", "google"}, false},
+		{name: "aws", args: args{codebase: "./terraform-provider-aws", name: "aws"}},
+		{name: "azure", args: args{codebase: "./terraform-provider-azurerm", name: "azurerm"}},
+		{name: "google", args: args{codebase: "./terraform-provider-google", name: "google"}},
 	}
 
 	for _, tt := range tests {
@@ -151,18 +176,19 @@ func Test_add(t *testing.T) {
 		"aws_ami":       true,
 		"aws_s3_bucket": true,
 	}
+
 	tests := []struct {
 		name  string
 		args  args
 		want  []string
 		want1 map[string]bool
 	}{
-		{"pass",
-			args{"aws_ami", myMap, []string{"aws_s3_bucket"}},
-			[]string{"aws_s3_bucket", "aws_ami"}, wantMap},
-		{"duplicate",
-			args{"aws_ami", wantMap, []string{"aws_s3_bucket", "aws_ami"}},
-			[]string{"aws_s3_bucket", "aws_ami"}, wantMap},
+		{name: "pass",
+			args: args{s: "aws_ami", m: myMap, a: []string{"aws_s3_bucket"}},
+			want: []string{"aws_s3_bucket", "aws_ami"}, want1: wantMap},
+		{name: "duplicate",
+			args: args{s: "aws_ami", m: wantMap, a: []string{"aws_s3_bucket", "aws_ami"}},
+			want: []string{"aws_s3_bucket", "aws_ami"}, want1: wantMap},
 	}
 
 	for _, tt := range tests {

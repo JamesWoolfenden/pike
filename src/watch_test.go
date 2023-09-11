@@ -106,7 +106,7 @@ func TestGetPolicyVersion(t *testing.T) {
 	}
 	cfg, _ := config.LoadDefaultConfig(context.TODO())
 	client := iam.NewFromConfig(cfg)
-	wantpass := "{\"Statement\":[{\"Action\":\"s3:*\",\"Effect\":\"Allow\",\"Resource\":\"*\",\"Sid\":\"VisualEditor0\"}],\"Version\":\"2012-10-17\"}"
+	wantPass := "{\"Statement\":[{\"Action\":\"s3:*\",\"Effect\":\"Allow\",\"Resource\":\"*\",\"Sid\":\"VisualEditor0\"}],\"Version\":\"2012-10-17\"}"
 	sagemaker := "{\"Statement\":[{\"Action\":[\"s3:DeleteObject\",\"s3:GetObject\",\"s3:ListBucket\",\"s3:PutObject\"],\"Effect\":\"Allow\",\"Resource\":[\"arn:aws:s3:::*\"]}],\"Version\":\"2012-10-17\"}"
 	tests := []struct {
 		name    string
@@ -114,7 +114,7 @@ func TestGetPolicyVersion(t *testing.T) {
 		want    *string
 		wantErr bool
 	}{
-		{"pass", args{client, "arn:aws:iam::680235478471:policy/allows3", "v1"}, &wantpass, false},
+		{"pass", args{client, "arn:aws:iam::680235478471:policy/allows3", "v1"}, &wantPass, false},
 		{"not found", args{client, "arn:aws:iam::680235478471:policy/basic", "v1"}, nil, true},
 		{"not found2", args{client, "arn:aws:iam::680235478471:policy/service-role/AmazonSageMaker-ExecutionPolicy-20211117T143702", "v1"}, &sagemaker, false},
 	}

@@ -95,19 +95,36 @@ func SetRepoSecret(repository string, keyText string, keyName string) (*github.R
 func SplitHub(repository string) (string, string, error) {
 	Splitter := strings.Split(repository, "/")
 
-	if len(Splitter) != 2 {
+	var owner string
+	var repo string
+
+	switch len(Splitter) {
+	case 2:
+		{
+			owner = Splitter[0]
+			repo = Splitter[1]
+		}
+	case 5:
+		{
+			owner = Splitter[3]
+			repo = Splitter[4]
+		}
+	default:
 		errString := fmt.Sprintf("repository not formatted correctly %s", repository)
 		return "", "", errors.New(errString)
 	}
 
-	owner := Splitter[0]
-	repo := Splitter[1]
 	return owner, repo, nil
 }
 
 // GetGithubClient instantiate and return a client object for github
 func GetGithubClient() (context.Context, *github.Client) {
 	token := os.Getenv("GITHUB_TOKEN")
+
+	if token == "" {
+		token = os.Getenv("GITHUB_API")
+	}
+
 	ctx := context.Background()
 	ts := oauth2.StaticTokenSource(
 		&oauth2.Token{AccessToken: token},

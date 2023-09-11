@@ -196,6 +196,8 @@ func TestGetBlockAttributes(t *testing.T) {
 }
 
 func TestGetPermission(t *testing.T) {
+	t.Parallel()
+
 	type args struct {
 		result pike.ResourceV2
 	}
@@ -207,14 +209,14 @@ func TestGetPermission(t *testing.T) {
 		wantErr bool
 	}{
 		{
-			"parse",
-			args{
-				pike.ResourceV2{
-					"resource",
-					"aws_acm_certificate",
-					"pike",
-					"aws",
-					[]string{
+			name: "parse",
+			args: args{
+				result: pike.ResourceV2{
+					TypeName:     "resource",
+					Name:         "aws_acm_certificate",
+					ResourceName: "pike",
+					Provider:     "aws",
+					Attributes: []string{
 						"domain_name",
 						"validation_method",
 						"tags",
@@ -223,7 +225,7 @@ func TestGetPermission(t *testing.T) {
 					},
 				},
 			},
-			pike.Sorted{[]string{
+			want: pike.Sorted{AWS: []string{
 				"acm:AddTagsToCertificate",
 				"acm:RemoveTagsFromCertificate",
 				"acm:RequestCertificate",
@@ -231,18 +233,17 @@ func TestGetPermission(t *testing.T) {
 				"acm:ListTagsForCertificate",
 				"acm:DeleteCertificate",
 				"acm:DeleteCertificate",
-			}, nil, nil},
-			false,
+			}},
 		},
 		{
-			"no tags",
-			args{
-				pike.ResourceV2{
-					"resource",
-					"aws_acm_certificate",
-					"pike",
-					"aws",
-					[]string{
+			name: "no tags",
+			args: args{
+				result: pike.ResourceV2{
+					TypeName:     "resource",
+					Name:         "aws_acm_certificate",
+					ResourceName: "pike",
+					Provider:     "aws",
+					Attributes: []string{
 						"domain_name",
 						"validation_method",
 						"lifecycle",
@@ -250,24 +251,23 @@ func TestGetPermission(t *testing.T) {
 					},
 				},
 			},
-			pike.Sorted{[]string{
+			want: pike.Sorted{AWS: []string{
 				"acm:RequestCertificate",
 				"acm:DescribeCertificate",
 				"acm:ListTagsForCertificate",
 				"acm:DeleteCertificate",
 				"acm:DeleteCertificate",
-			}, nil, nil},
-			false,
+			}},
 		},
 		{
-			"no-provider",
-			args{
-				pike.ResourceV2{
-					"resource",
-					"bogus_test",
-					"pike",
-					"bogus",
-					[]string{
+			name: "no-provider",
+			args: args{
+				result: pike.ResourceV2{
+					TypeName:     "resource",
+					Name:         "bogus_test",
+					ResourceName: "pike",
+					Provider:     "bogus",
+					Attributes: []string{
 						"domain_name",
 						"validation_method",
 						"tags",
@@ -276,42 +276,39 @@ func TestGetPermission(t *testing.T) {
 					},
 				},
 			},
-			pike.Sorted{nil, nil, nil},
-			false,
+			want: pike.Sorted{},
 		},
 		{
-			"no-iam",
-			args{
-				pike.ResourceV2{
-					"resource",
-					"random_string",
-					"pike",
-					"random",
-					[]string{
+			name: "no-iam",
+			args: args{
+				result: pike.ResourceV2{
+					TypeName:     "resource",
+					Name:         "random_string",
+					ResourceName: "pike",
+					Provider:     "random",
+					Attributes: []string{
 						"length",
 						"special",
 					},
 				},
 			},
-			pike.Sorted{nil, nil, nil},
-			false,
+			want: pike.Sorted{},
 		},
-		{"not-implemented", args{pike.ResourceV2{Provider: "linode"}}, pike.Sorted{}, false},
-		{"bogus", args{pike.ResourceV2{Provider: "bogus"}}, pike.Sorted{}, false},
+		{name: "not-implemented", args: args{result: pike.ResourceV2{Provider: "linode"}}},
+		{name: "bogus", args: args{result: pike.ResourceV2{Provider: "bogus"}}},
 		{
-			"azure",
-			args{
-				pike.ResourceV2{
-					"resource",
-					"azurerm_key_vault",
-					"MyDemoApiKey",
-					"azurerm",
-					[]string{"name", "name", "resource_group"},
+			name: "azure",
+			args: args{
+				result: pike.ResourceV2{
+					TypeName:     "resource",
+					Name:         "azurerm_key_vault",
+					ResourceName: "MyDemoApiKey",
+					Provider:     "azurerm",
+					Attributes:   []string{"name", "name", "resource_group"},
 				},
 			},
-			pike.Sorted{
-				nil, nil,
-				[]string{
+			want: pike.Sorted{
+				AZURE: []string{
 					"Microsoft.Resources/subscriptions/resourcegroups/read",
 					"Microsoft.KeyVault/vaults/read",
 					"Microsoft.KeyVault/vaults/write",
@@ -319,17 +316,16 @@ func TestGetPermission(t *testing.T) {
 					"Microsoft.KeyVault/locations/deletedVaults/read",
 				},
 			},
-			false,
 		},
 		{
-			"gcp",
-			args{
-				pike.ResourceV2{
-					"resource", "google_compute_instance", "found", "gcp",
-					[]string{"name", "machine_type", "zone"},
+			name: "gcp",
+			args: args{
+				result: pike.ResourceV2{
+					TypeName: "resource", Name: "google_compute_instance", ResourceName: "found", Provider: "gcp",
+					Attributes: []string{"name", "machine_type", "zone"},
 				},
 			},
-			pike.Sorted{nil, []string{
+			want: pike.Sorted{GCP: []string{
 				"compute.zones.get",
 				"compute.instances.create",
 				"compute.instances.get",
@@ -340,13 +336,14 @@ func TestGetPermission(t *testing.T) {
 				"compute.instances.setMetadata",
 				"compute.instances.delete",
 				"compute.instances.delete",
-			}, nil},
-			false,
+			}},
 		},
 	}
 
 	for _, tt := range tests {
+		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
 			got, err := pike.GetPermission(tt.args.result)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("GetPermission() error = %v, wantErr %v", err, tt.wantErr)
@@ -385,16 +382,14 @@ func TestGetResourceBlocks(t *testing.T) {
 		wantErr bool
 	}{
 		{
-			"pass",
-			args{"testdata/scan/examples/random/random_string.pike.tf"},
-			random,
-			false,
+			name: "pass",
+			args: args{"testdata/scan/examples/random/random_string.pike.tf"},
+			want: random,
 		},
 		{
-			"empty",
-			args{"testdata/scan/examples/empty/empty.tf"},
-			empty,
-			false,
+			name: "empty",
+			args: args{"testdata/scan/examples/empty/empty.tf"},
+			want: empty,
 		},
 	}
 

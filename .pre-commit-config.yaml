@@ -29,7 +29,7 @@ repos:
     hooks:
       - id: shell-lint
   - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.35.0
+    rev: v0.36.0
     hooks:
       - id: markdownlint
         exclude: src/testdata|testdata
@@ -52,7 +52,7 @@ repos:
 #      - id: go-mod-tidy
       - id: go-generate
   - repo: https://github.com/bridgecrewio/checkov
-    rev: 2.4.10
+    rev: 2.4.32
     hooks:
       - id: checkov
         language_version: python3.11

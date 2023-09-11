@@ -14,33 +14,32 @@ func TestGetAZUREDataPermissions(t *testing.T) {
 		result pike.ResourceV2
 	}
 
-	tests := []struct {
+	var tests = []struct {
 		name    string
 		args    args
 		want    []string
 		wantErr bool
 	}{
-		{"pass", args{
-			pike.ResourceV2{
+		{name: "pass", args: args{
+			result: pike.ResourceV2{
 				TypeName:     "data",
 				Name:         "azurerm_resource_group",
 				ResourceName: "pike",
 				Provider:     "azurerm",
 				Attributes:   []string{"name", "location", "tags"},
 			},
-		}, []string{"Microsoft.Resources/subscriptions/resourcegroups/read"}, false},
-		{"empty", args{}, nil, true},
+		}, want: []string{"Microsoft.Resources/subscriptions/resourcegroups/read"}},
+		{name: "empty", wantErr: true},
 		{
-			"guff",
-			args{pike.ResourceV2{
+			name: "guff",
+			args: args{result: pike.ResourceV2{
 				TypeName:     "data",
 				Name:         "azurerm_toffee_group",
 				ResourceName: "pike",
 				Provider:     "azurerm",
 				Attributes:   []string{"name", "location", "tags"},
 			}},
-			nil,
-			true,
+			wantErr: true,
 		},
 	}
 

@@ -62,6 +62,6 @@ jobs:
         - name: commit
           run: |
             # Stage the file, commit and push
-            git add *-members.json
+            git add src/parse/*-members.json
             git commit -m "updated resources"
             git push origin master

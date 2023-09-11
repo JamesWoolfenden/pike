@@ -10,7 +10,7 @@ jobs:
       - name: Install Go
         uses: actions/setup-go@93397bea11091df50f3d7e59dc26a7711a8bcfbe # v4.1.0
         with:
-          go-version: 1.20.x
+          go-version: 1.21.x
       - name: Restore cache
         uses: actions/cache@f5ce41475b483ad7581884324a6eca9f48f8dcc7 # v1.2.1
         with:
@@ -23,7 +23,7 @@ jobs:
   test:
     strategy:
       matrix:
-        go-version: [ 1.20.x ]
+        go-version: [ 1.21.x ]
         platform: [ ubuntu-latest, macos-latest, windows-latest ]
     runs-on: ${{ matrix.platform }}
     steps:
@@ -53,4 +53,4 @@ jobs:
       - name: Install Go
         uses: actions/setup-go@93397bea11091df50f3d7e59dc26a7711a8bcfbe # v4.1.0
         with:
-          go-version: 1.20.x
+          go-version: 1.21.x

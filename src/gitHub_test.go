@@ -20,7 +20,9 @@ func TestInvokeGithubDispatchEvent(t *testing.T) {
 		args    args
 		wantErr bool
 	}{
-		// TODO: Add test cases.
+		{name: "wrong branch", args: args{repository: "https://github.com/jameswoolfenden/pike", workflowFileName: "resources.yml", branch: "main"}, wantErr: true},
+		{name: "branch", args: args{repository: "https://github.com/jameswoolfenden/pike", workflowFileName: "resources.yml", branch: "master"}, wantErr: false},
+		{name: "guff", args: args{repository: "github.guff/jameswoolfenden/pike", workflowFileName: "resources", branch: "main"}, wantErr: true},
 	}
 
 	for _, tt := range tests {

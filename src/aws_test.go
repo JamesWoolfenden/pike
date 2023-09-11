@@ -21,9 +21,9 @@ func TestGetAWSPermissions(t *testing.T) {
 		wantErr bool
 	}{
 		{
-			"found",
-			args{
-				pike.ResourceV2{
+			name: "found",
+			args: args{
+				result: pike.ResourceV2{
 					TypeName:     "resource",
 					Name:         "aws_api_gateway_api_key",
 					ResourceName: "MyDemoApiKey",
@@ -31,7 +31,7 @@ func TestGetAWSPermissions(t *testing.T) {
 					Attributes:   []string{"name", "tags"},
 				},
 			},
-			[]string{
+			want: []string{
 				"apigateway:POST",
 				"apigateway:PUT",
 				"apigateway:PATCH",
@@ -39,11 +39,10 @@ func TestGetAWSPermissions(t *testing.T) {
 				"apigateway:DELETE",
 				"apigateway:DELETE",
 			},
-			false,
 		},
 		{
-			"bogus",
-			args{
+			name: "bogus",
+			args: args{
 				pike.ResourceV2{
 					TypeName:     "resource",
 					Name:         "aws_madeup",
@@ -52,13 +51,12 @@ func TestGetAWSPermissions(t *testing.T) {
 					Attributes:   []string{"name"},
 				},
 			},
-			nil,
-			true,
+			wantErr: true,
 		},
 		{
-			"found_datasource",
-			args{
-				pike.ResourceV2{
+			name: "found_datasource",
+			args: args{
+				result: pike.ResourceV2{
 					TypeName:     "data",
 					Name:         "aws_cloudwatch_log_group",
 					ResourceName: "pike",
@@ -66,13 +64,12 @@ func TestGetAWSPermissions(t *testing.T) {
 					Attributes:   []string{"name"},
 				},
 			},
-			[]string{"logs:DescribeLogGroups", "logs:ListTagsLogGroup"},
-			false,
+			want: []string{"logs:DescribeLogGroups", "logs:ListTagsLogGroup"},
 		},
 		{
-			"bogus_datasource",
-			args{
-				pike.ResourceV2{
+			name: "bogus_datasource",
+			args: args{
+				result: pike.ResourceV2{
 					TypeName:     "data",
 					Name:         "aws_madeup",
 					ResourceName: "pike",
@@ -80,34 +77,30 @@ func TestGetAWSPermissions(t *testing.T) {
 					Attributes:   []string{"name"},
 				},
 			},
-			nil,
-			true,
+			wantErr: true,
 		},
 		{
-			"module",
-			args{
-				pike.ResourceV2{
+			name: "module",
+			args: args{
+				result: pike.ResourceV2{
 					TypeName:     "module",
 					Name:         "instance",
 					ResourceName: "pike",
 					Attributes:   []string{"name"},
 				},
 			},
-			nil,
-			false,
 		},
 		{
-			"duff",
-			args{
-				pike.ResourceV2{
+			name: "duff",
+			args: args{
+				result: pike.ResourceV2{
 					TypeName:     "duff",
 					Name:         "instance",
 					ResourceName: "pike",
 					Attributes:   []string{"name"},
 				},
 			},
-			nil,
-			true,
+			wantErr: true,
 		},
 	}
 
@@ -142,9 +135,9 @@ func TestGetAWSResourcePermissions(t *testing.T) {
 		wantErr bool
 	}{
 		{
-			"found",
-			args{
-				pike.ResourceV2{
+			name: "found",
+			args: args{
+				result: pike.ResourceV2{
 					TypeName:     "resource",
 					Name:         "aws_api_gateway_api_key",
 					ResourceName: "MyDemoApiKey",
@@ -152,7 +145,7 @@ func TestGetAWSResourcePermissions(t *testing.T) {
 					Attributes:   []string{"name", "tags"},
 				},
 			},
-			[]string{
+			want: []string{
 				"apigateway:POST",
 				"apigateway:PUT",
 				"apigateway:PATCH",
@@ -160,12 +153,11 @@ func TestGetAWSResourcePermissions(t *testing.T) {
 				"apigateway:DELETE",
 				"apigateway:DELETE",
 			},
-			false,
 		},
 		{
-			"bogus",
-			args{
-				pike.ResourceV2{
+			name: "bogus",
+			args: args{
+				result: pike.ResourceV2{
 					TypeName:     "resource",
 					Name:         "aws_madeup",
 					ResourceName: "pike",
@@ -173,10 +165,10 @@ func TestGetAWSResourcePermissions(t *testing.T) {
 					Attributes:   []string{"name"},
 				},
 			},
-			nil,
-			true,
+			wantErr: true,
 		},
 	}
+
 	for _, tt := range tests {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
@@ -208,18 +200,17 @@ func Test_contains(t *testing.T) {
 		want bool
 	}{
 		{
-			"found",
-			args{
+			name: "found",
+			args: args{
 				[]string{"dog", "cat"}, "cat",
 			},
-			true,
+			want: true,
 		},
 		{
-			"missing",
-			args{
+			name: "missing",
+			args: args{
 				[]string{"dog", "cat"}, "fox",
 			},
-			false,
 		},
 	}
 
@@ -249,12 +240,12 @@ func TestGetPermissionMap(t *testing.T) {
 		wantErr bool
 	}{
 		{
-			"found",
-			args{
-				pike.AWSAcmCertificate,
-				[]string{"validation_method", "tags", "domain_name", "lifecycle", "create_before_destroy"},
+			name: "found",
+			args: args{
+				raw:        pike.AWSAcmCertificate,
+				attributes: []string{"validation_method", "tags", "domain_name", "lifecycle", "create_before_destroy"},
 			},
-			[]string{
+			want: []string{
 				"acm:AddTagsToCertificate",
 				"acm:RemoveTagsFromCertificate",
 				"acm:RequestCertificate",
@@ -263,9 +254,8 @@ func TestGetPermissionMap(t *testing.T) {
 				"acm:DeleteCertificate",
 				"acm:DeleteCertificate",
 			},
-			false,
 		},
-		{"bogus", args{[]byte("bogus"), []string{}}, nil, true},
+		{name: "bogus", args: args{raw: []byte("bogus"), attributes: []string{}}, wantErr: true},
 	}
 
 	for _, tt := range tests {

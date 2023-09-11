@@ -8,33 +8,36 @@ import (
 )
 
 func TestGetGCPPermissions(t *testing.T) {
+	t.Parallel()
+
 	type args struct {
 		result pike.ResourceV2
 	}
+
 	tests := []struct {
 		name    string
 		args    args
 		want    []string
 		wantErr bool
 	}{
-		{"missing", args{pike.ResourceV2{"bogus", "bogus", "", "", nil}}, nil, true},
-		{"notype", args{pike.ResourceV2{"bogus", "google_compute_instance", "pike", "azurerm", []string{
+		{name: "missing", args: args{result: pike.ResourceV2{TypeName: "bogus", Name: "bogus"}}, wantErr: true},
+		{name: "notype", args: args{result: pike.ResourceV2{TypeName: "bogus", Name: "google_compute_instance", ResourceName: "pike", Provider: "azurerm", Attributes: []string{
 			"name",
 			"machine_type", "zone",
-		}}}, nil, true},
-		{"not implemented", args{pike.ResourceV2{"data", "google_compute_instance", "pike", "azurerm", []string{
+		}}}, wantErr: true},
+		{name: "not implemented", args: args{result: pike.ResourceV2{TypeName: "data", Name: "google_compute_instance", ResourceName: "pike", Provider: "azurerm", Attributes: []string{
 			"name",
 			"machine_type", "zone",
-		}}}, nil, true},
+		}}}, wantErr: true},
 		{
-			"resource",
-			args{
-				pike.ResourceV2{
-					"resource", "google_compute_instance", "", "",
-					[]string{"name", "machine_type", "zone"},
+			name: "resource",
+			args: args{
+				result: pike.ResourceV2{
+					TypeName: "resource", Name: "google_compute_instance",
+					Attributes: []string{"name", "machine_type", "zone"},
 				},
 			},
-			[]string{
+			want: []string{
 				"compute.zones.get",
 				"compute.instances.create",
 				"compute.instances.get",
@@ -46,11 +49,13 @@ func TestGetGCPPermissions(t *testing.T) {
 				"compute.instances.delete",
 				"compute.instances.delete",
 			},
-			false,
 		},
 	}
+
 	for _, tt := range tests {
+		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
 			got, err := pike.GetGCPPermissions(tt.args.result)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("GetGCPPermissions() error = %v, wantErr %v", err, tt.wantErr)
@@ -64,23 +69,26 @@ func TestGetGCPPermissions(t *testing.T) {
 }
 
 func TestGetGCPResourcePermissions(t *testing.T) {
+	t.Parallel()
+
 	type args struct {
 		result pike.ResourceV2
 	}
+
 	tests := []struct {
 		name    string
 		args    args
 		want    []string
 		wantErr bool
 	}{
-		{"missing", args{pike.ResourceV2{"bogus", "bogus", "", "", nil}}, nil, false},
+		{name: "missing", args: args{result: pike.ResourceV2{TypeName: "bogus", Name: "bogus"}}},
 		{
-			"resource",
-			args{pike.ResourceV2{"resource", "google_compute_instance", "", "", []string{
+			name: "resource",
+			args: args{result: pike.ResourceV2{TypeName: "resource", Name: "google_compute_instance", Attributes: []string{
 				"name",
 				"machine_type", "zone",
 			}}},
-			[]string{
+			want: []string{
 				"compute.zones.get",
 				"compute.instances.create",
 				"compute.instances.get",
@@ -91,11 +99,13 @@ func TestGetGCPResourcePermissions(t *testing.T) {
 				"compute.instances.setMetadata",
 				"compute.instances.delete",
 				"compute.instances.delete"},
-			false,
 		},
 	}
+
 	for _, tt := range tests {
+		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
 			if got, _ := pike.GetGCPResourcePermissions(tt.args.result); !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("GetGCPResourcePermissions() = %v, want %v", got, tt.want)
 			}
