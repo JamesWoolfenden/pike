@@ -63,6 +63,6 @@ jobs:
           run: |
             # Stage the file, commit and push
             mv *-members.json src/parse
-            git add src/parse/*-members.json
-            git commit -m "updated resources"
+            git add src/parse/*-members.json --ignore-errors
+            git commit -m "updated resources" --allow empty
             git push origin master
