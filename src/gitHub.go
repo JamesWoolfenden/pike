@@ -1,6 +1,3 @@
-//go:build auth
-// +build auth
-
 package pike
 
 import (
