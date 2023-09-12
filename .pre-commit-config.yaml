@@ -71,6 +71,7 @@ repos:
     rev: v0.5.1
     hooks:
       - id: go-vet
+        exclude: src/parse/testdata
       - id: go-imports
       - id: validate-toml
       - id: no-go-testing

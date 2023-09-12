@@ -1,7 +1,7 @@
 #data "aws_ssoadmin_instances" "example" {}
 
 data "aws_identitystore_group" "example" {
-  identity_store_id = "d-9367058404"//tolist(data.aws_ssoadmin_instances.example.identity_store_ids)[0]
+  identity_store_id = "d-9367058404" //tolist(data.aws_ssoadmin_instances.example.identity_store_ids)[0]
 
   alternate_identifier {
     unique_attribute {
@@ -14,4 +14,3 @@ data "aws_identitystore_group" "example" {
 output "group_id" {
   value = data.aws_identitystore_group.example.group_id
 }
-

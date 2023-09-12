@@ -9,7 +9,7 @@ import (
 	pike "github.com/jameswoolfenden/pike/src"
 )
 
-func coverage() {
+func coverage() error {
 	type members struct {
 		DataSources []string `json:"datasources"`
 		Resources   []string `json:"resources"`
@@ -38,13 +38,18 @@ func coverage() {
 		}
 	}
 
-	Prepend := "# todo aws \n"
+	Prepend := "# todo aws \n\n"
 
 	Prepend += fmt.Sprintf("Resource percentage coverage   %3.2f \n", percent(missing.Resources, data.Resources))
 	Prepend += fmt.Sprintf("Datasource percentage coverage %3.2f \n\n", percent(missing.DataSources, data.DataSources))
 
 	target = Prepend + target
-	os.WriteFile("aws.md", []byte(target), 0700)
+	err := os.WriteFile("aws.md", []byte(target), 0700)
+	if err != nil {
+		return err
+	}
+
+	return nil
 }
 
 func percent(missing []string, data []string) float64 {

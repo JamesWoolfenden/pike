@@ -5,5 +5,5 @@ data "aws_lambda_invocation" "pike" {
 
 
 output "result" {
-  value=data.aws_lambda_invocation.pike
+  value = data.aws_lambda_invocation.pike
 }
