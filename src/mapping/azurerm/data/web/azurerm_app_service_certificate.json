@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "Microsoft.Web/certificates/read",
+      "Microsoft.Resources/subscriptions/providers/read"
+    ]
+  }
+]

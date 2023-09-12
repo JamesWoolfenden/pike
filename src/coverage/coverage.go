@@ -9,20 +9,16 @@ import (
 	pike "github.com/jameswoolfenden/pike/src"
 )
 
-func coverage() error {
-	type members struct {
-		DataSources []string `json:"datasources"`
-		Resources   []string `json:"resources"`
-	}
+type members struct {
+	DataSources []string `json:"datasources"`
+	Resources   []string `json:"resources"`
+}
 
-	fileName, _ := filepath.Abs("../parse/aws-members.json")
-	file, _ := os.ReadFile(fileName)
-	data := members{}
+func coverageAWS() error {
+
+	data := importMembers("../parse/aws-members.json")
 	missing := members{}
-
 	target := ""
-
-	_ = json.Unmarshal(file, &data)
 
 	for _, myData := range data.Resources {
 		if temp := pike.AwsLookup(myData); temp == nil {
@@ -50,6 +46,49 @@ func coverage() error {
 	}
 
 	return nil
+}
+
+func coverageAzure() error {
+
+	data := importMembers("../parse/azurerm-members.json")
+	missing := members{}
+	target := ""
+
+	for _, myData := range data.Resources {
+		if temp := pike.AzureLookup(myData); temp == nil {
+			missing.Resources = append(missing.Resources, myData)
+			target += "./resource.ps1 " + myData + "\n"
+		}
+	}
+
+	for _, myData := range data.DataSources {
+		if temp := pike.AzureDataLookup(myData); temp == nil {
+			missing.DataSources = append(missing.DataSources, myData)
+			target += "./resource.ps1 " + myData + " -type data\n"
+		}
+	}
+
+	Prepend := "# todo azure \n\n"
+
+	Prepend += fmt.Sprintf("Resource percentage coverage   %3.2f \n", percent(missing.Resources, data.Resources))
+	Prepend += fmt.Sprintf("Datasource percentage coverage %3.2f \n\n", percent(missing.DataSources, data.DataSources))
+
+	target = Prepend + target
+	err := os.WriteFile("azure.md", []byte(target), 0700)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func importMembers(targetMembers string) members {
+	fileName, _ := filepath.Abs(targetMembers)
+	file, _ := os.ReadFile(fileName)
+	data := members{}
+
+	_ = json.Unmarshal(file, &data)
+	return data
 }
 
 func percent(missing []string, data []string) float64 {

@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/providers/read",
+      "Microsoft.Web/serverfarms/write",
+      "Microsoft.Web/serverfarms/delete",
+      "Microsoft.Web/serverfarms/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Web/serverfarms/delete"
+    ],
+    "modify": [],
+    "plan": [
+      "Microsoft.Resources/subscriptions/providers/read",
+      "Microsoft.Web/serverfarms/read"
+    ]
+  }
+]

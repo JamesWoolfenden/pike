@@ -29,6 +29,26 @@ func GetAZUREPermissions(result ResourceV2) ([]string, error) {
 
 // GetAZUREResourcePermissions looks up permissions required for resources.
 func GetAZUREResourcePermissions(result ResourceV2) ([]string, error) {
+	temp := AzureLookup(result.Name)
+
+	var (
+		Permissions []string
+		err         error
+	)
+
+	if temp != nil {
+		Permissions, err = GetPermissionMap(temp.([]byte), result.Attributes)
+	} else {
+		message := fmt.Sprintf("%s not implemented", result.Name)
+
+		//goland:noinspection GoLinter
+		return nil, errors.New(message)
+	}
+
+	return Permissions, err
+}
+
+func AzureLookup(name string) interface{} {
 	TFLookup := map[string]interface{}{
 		"azurerm_resource_group":                       azurermResourceGroup,
 		"azurerm_service_plan":                         azurermServicePlan,
@@ -79,22 +99,9 @@ func GetAZUREResourcePermissions(result ResourceV2) ([]string, error) {
 		"azurerm_role_assignment":                      azurermRoleAssignment,
 		"azurerm_disk_encryption_set":                  azurermDiskEncryptionSet,
 		"azurerm_cognitive_account":                    azurermCognitiveAccount,
+		"azurerm_app_service":                          azurermAppService,
+		"azurerm_app_service_plan":                     azurermAppServicePlan,
 	}
 
-	var (
-		Permissions []string
-		err         error
-	)
-
-	temp := TFLookup[result.Name]
-	if temp != nil {
-		Permissions, err = GetPermissionMap(TFLookup[result.Name].([]byte), result.Attributes)
-	} else {
-		message := fmt.Sprintf("%s not implemented", result.Name)
-
-		//goland:noinspection GoLinter
-		return nil, errors.New(message)
-	}
-
-	return Permissions, err
+	return TFLookup[name]
 }

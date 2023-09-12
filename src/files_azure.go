@@ -138,3 +138,9 @@ var azurermDiskEncryptionSet []byte
 
 //go:embed mapping/azurerm/resource/cognitiveservices/azurerm_cognitive_account.json
 var azurermCognitiveAccount []byte
+
+//go:embed mapping/azurerm/resource/web/azurerm_app_service.json
+var azurermAppService []byte
+
+//go:embed mapping/azurerm/resource/web/azurerm_app_service_plan.json
+var azurermAppServicePlan []byte

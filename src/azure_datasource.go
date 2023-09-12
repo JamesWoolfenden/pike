@@ -6,6 +6,23 @@ import (
 
 // GetAZUREDataPermissions gets permissions required for datasources
 func GetAZUREDataPermissions(result ResourceV2) ([]string, error) {
+	temp := AzureDataLookup(result.Name)
+
+	var (
+		Permissions []string
+		err         error
+	)
+
+	if temp != nil {
+		Permissions, err = GetPermissionMap(temp.([]byte), result.Attributes)
+	} else {
+		return nil, fmt.Errorf("data.%s not implemented", result.Name)
+	}
+
+	return Permissions, err
+}
+
+func AzureDataLookup(name string) interface{} {
 	TFLookup := map[string]interface{}{
 		"azurerm_resource_group":                             dataAzurermResourceGroup,
 		"azurerm_client_config":                              placeholder,
@@ -25,20 +42,18 @@ func GetAZUREDataPermissions(result ResourceV2) ([]string, error) {
 		"azurerm_key_vault_managed_hardware_security_module": dataAzurermKeyVaultManagedHardwareSecurityModule,
 		"azurerm_key_vault_secret":                           dataAzurermKeyVaultSecret,
 		"azurerm_key_vault_secrets":                          dataAzurermKeyVaultSecrets,
+		"azurerm_app_service":                                dataAzurermAppService,
+		"azurerm_app_service_certificate":                    dataAzurermAppServiceCertificate,
+		"azurerm_app_service_certificate_order":              dataAzurermAppServiceCertificateOrder,
+		"azurerm_app_service_environment":                    dataAzurermAppServiceEnvironment,
+		"azurerm_app_service_environment_v3":                 dataAzurermAppServiceEnvironmentV3,
+		"azurerm_app_service_plan":                           dataAzurermAppServicePlan,
+		"azurerm_public_ip":                                  dataAzurermPublicIp,
+		"azurerm_public_ip_prefix":                           dataAzurermPublicIpPrefix,
+		"azurerm_public_ips":                                 dataAzurermPublicIps,
+		"azurerm_windows_function_app":                       dataAzurermWindowsFunctionApp,
+		"azurerm_windows_web_app":                            dataAzurermWindowsWebApp,
 	}
 
-	var (
-		Permissions []string
-		err         error
-	)
-
-	temp := TFLookup[result.Name]
-
-	if temp != nil {
-		Permissions, err = GetPermissionMap(TFLookup[result.Name].([]byte), result.Attributes)
-	} else {
-		return nil, fmt.Errorf("data.%s not implemented", result.Name)
-	}
-
-	return Permissions, err
+	return TFLookup[name]
 }

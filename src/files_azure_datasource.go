@@ -48,3 +48,36 @@ var dataAzurermKeyVaultSecret []byte
 
 //go:embed mapping/azurerm/data/keyvault/azurerm_key_vault_secrets.json
 var dataAzurermKeyVaultSecrets []byte
+
+//go:embed mapping/azurerm/data/web/azurerm_app_service.json
+var dataAzurermAppService []byte
+
+//go:embed mapping/azurerm/data/web/azurerm_app_service_certificate.json
+var dataAzurermAppServiceCertificate []byte
+
+//go:embed mapping/azurerm/data/resources/azurerm_app_service_certificate_order.json
+var dataAzurermAppServiceCertificateOrder []byte
+
+//go:embed mapping/azurerm/data/web/azurerm_app_service_environment.json
+var dataAzurermAppServiceEnvironment []byte
+
+//go:embed mapping/azurerm/data/web/azurerm_app_service_environment_v3.json
+var dataAzurermAppServiceEnvironmentV3 []byte
+
+//go:embed mapping/azurerm/data/web/azurerm_app_service_plan.json
+var dataAzurermAppServicePlan []byte
+
+//go:embed mapping/azurerm/data/network/azurerm_public_ip.json
+var dataAzurermPublicIp []byte
+
+//go:embed mapping/azurerm/data/network/azurerm_public_ip_prefix.json
+var dataAzurermPublicIpPrefix []byte
+
+//go:embed mapping/azurerm/data/network/azurerm_public_ips.json
+var dataAzurermPublicIps []byte
+
+//go:embed mapping/azurerm/data/web/azurerm_windows_function_app.json
+var dataAzurermWindowsFunctionApp []byte
+
+//go:embed mapping/azurerm/data/web/azurerm_windows_web_app.json
+var dataAzurermWindowsWebApp []byte

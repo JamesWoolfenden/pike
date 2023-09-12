@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "Microsoft.Network/publicIPAddresses/read",
+      "Microsoft.Resources/subscriptions/providers/read"
+    ]
+  }
+]

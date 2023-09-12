@@ -1,0 +1,26 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/providers/read",
+      "Microsoft.Web/sites/write",
+      "Microsoft.Web/sites/read",
+      "Microsoft.Web/sites/delete",
+      "Microsoft.Web/sites/config/write",
+      "Microsoft.Web/sites/config/read",
+      "Microsoft.Web/sites/config/delete",
+      "Microsoft.Web/sites/config/list/action",
+      "Microsoft.Web/sites/sourcecontrols/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Web/sites/config/delete"
+    ],
+    "modify": [],
+    "plan": [
+      "Microsoft.Resources/subscriptions/providers/read",
+      "Microsoft.Web/sites/read"
+    ]
+  }
+]
