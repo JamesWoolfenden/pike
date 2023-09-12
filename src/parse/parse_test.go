@@ -1,11 +1,13 @@
 package parse
 
 import (
-	"github.com/go-git/go-git/v5"
-	"github.com/rs/zerolog/log"
 	"os"
+	"path/filepath"
 	"reflect"
 	"testing"
+
+	"github.com/go-git/go-git/v5"
+	"github.com/rs/zerolog/log"
 )
 
 func TestGetGoFiles(t *testing.T) {
@@ -14,7 +16,8 @@ func TestGetGoFiles(t *testing.T) {
 		extension string
 	}
 
-	wanted := []string{"testdata/test.go"}
+	wanted := []string{filepath.Join("testdata", "test.go")}
+
 	tests := []struct {
 		name    string
 		args    args

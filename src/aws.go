@@ -49,6 +49,23 @@ func GetAWSPermissions(result ResourceV2) ([]string, error) {
 //
 //goland:noinspection GoLinter
 func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
+	temp := AwsLookup(result.Name)
+
+	var (
+		Permissions []string
+		err         error
+	)
+
+	if temp != nil {
+		Permissions, err = GetPermissionMap(temp.([]byte), result.Attributes)
+	} else {
+		return nil, fmt.Errorf("%s not implemented", result.Name)
+	}
+
+	return Permissions, err
+}
+
+func AwsLookup(name string) interface{} {
 	TFLookup := map[string]interface{}{
 		"aws_acm_certificate":                                AWSAcmCertificate,
 		"aws_acm_certificate_validation":                     placeholder,
@@ -487,19 +504,7 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 		"aws_networkfirewall_resource_policy":                awsNetworkfirewallResourcePolicy,
 	}
 
-	var (
-		Permissions []string
-		err         error
-	)
-
-	temp := TFLookup[result.Name]
-	if temp != nil {
-		Permissions, err = GetPermissionMap(TFLookup[result.Name].([]byte), result.Attributes)
-	} else {
-		return nil, fmt.Errorf("%s not implemented", result.Name)
-	}
-
-	return Permissions, err
+	return TFLookup[name]
 }
 
 // Contains looks if slice contains string
@@ -532,15 +537,14 @@ func GetPermissionMap(raw []byte, attributes []string) ([]string, error) {
 		return nil, fmt.Errorf("assertion to map[string]interface{} failed")
 	}
 
+	myAttributes := temp["attributes"].(map[string]interface{})
 	var (
-		myAttributes = temp["attributes"].(map[string]interface{})
-		found        []string
+		found []string
 	)
 
 	for _, attribute := range attributes {
 		if myAttributes[attribute] != nil {
-			entries := myAttributes[attribute].([]interface{})
-			for _, entry := range entries {
+			for _, entry := range myAttributes[attribute].([]interface{}) {
 				found = append(found, entry.(string))
 			}
 		}
@@ -550,8 +554,7 @@ func GetPermissionMap(raw []byte, attributes []string) ([]string, error) {
 
 	for _, action := range actions {
 		if temp[action] != nil {
-			myEntries := temp[action].([]interface{})
-			for _, entry := range myEntries {
+			for _, entry := range temp[action].([]interface{}) {
 				found = append(found, entry.(string))
 			}
 		}

@@ -1,14 +1,27 @@
 package pike
 
-import (
-	"fmt"
-)
+import "fmt"
 
 // GetAWSDataPermissions gets permissions required for datasource's.
 //
-//goland:noinspection GoLinter,GoLinter
-//nolint:funlen
+//goland:noinspection GoLinter
 func GetAWSDataPermissions(result ResourceV2) ([]string, error) { //nolint:maintidx
+	var (
+		Permissions []string
+		err         error
+	)
+
+	if temp := AwsDataLoookup(result.Name); temp != nil {
+		Permissions, err = GetPermissionMap(temp.([]byte), result.Attributes)
+	} else {
+		return nil, fmt.Errorf("resource not found")
+	}
+
+	return Permissions, err
+}
+
+//nolint:funlen
+func AwsDataLoookup(find string) interface{} {
 	TFLookup := map[string]interface{}{
 		"aws_acm_certificate":                                  dataAwsAcmCertificate,
 		"aws_acmpca_certificate":                               dataAwsAcmpcaCertificate,
@@ -421,18 +434,5 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) { //nolint:maint
 		"aws_redshiftserverless_workgroup":                     dataAwsRedshiftserverlessWorkgroup,
 	}
 
-	var (
-		Permissions []string
-		err         error
-	)
-
-	temp := TFLookup[result.Name]
-	if temp != nil {
-		Permissions, err = GetPermissionMap(TFLookup[result.Name].([]byte), result.Attributes)
-	} else {
-		//goland:noinspection GoLinter
-		return nil, fmt.Errorf("data.%s not implemented", result.Name)
-	}
-
-	return Permissions, err
+	return TFLookup[find]
 }

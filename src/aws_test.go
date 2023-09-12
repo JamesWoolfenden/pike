@@ -39,6 +39,7 @@ func TestGetAWSPermissions(t *testing.T) {
 				"apigateway:DELETE",
 				"apigateway:DELETE",
 			},
+			wantErr: false,
 		},
 		{
 			name: "bogus",
@@ -51,6 +52,7 @@ func TestGetAWSPermissions(t *testing.T) {
 					Attributes:   []string{"name"},
 				},
 			},
+			want:    nil,
 			wantErr: true,
 		},
 		{
@@ -255,7 +257,12 @@ func TestGetPermissionMap(t *testing.T) {
 				"acm:DeleteCertificate",
 			},
 		},
-		{name: "bogus", args: args{raw: []byte("bogus"), attributes: []string{}}, wantErr: true},
+		{
+			name: "bogus",
+			args: args{
+				raw:        []byte("bogus"),
+				attributes: []string{}},
+			wantErr: true},
 	}
 
 	for _, tt := range tests {
