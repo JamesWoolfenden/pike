@@ -131,3 +131,29 @@ func Test_fileExists(t *testing.T) {
 		})
 	}
 }
+
+func TestRandSeq(t *testing.T) {
+	t.Parallel()
+	
+	type args struct {
+		n int
+	}
+
+	tests := []struct {
+		name    string
+		args    args
+		notWant string
+	}{
+		{"correct", args{8}, "jslbVKIr"},
+	}
+
+	for _, tt := range tests {
+		tt := tt
+		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
+			if got := pike.RandSeq(tt.args.n); got == tt.notWant {
+				t.Errorf("RandSeq() = %v, want %v", got, tt.notWant)
+			}
+		})
+	}
+}

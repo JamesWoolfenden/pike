@@ -82,6 +82,40 @@ func coverageAzure() error {
 	return nil
 }
 
+func coverageGcp() error {
+
+	data := importMembers("../parse/google-members.json")
+	missing := members{}
+	target := ""
+
+	for _, myData := range data.Resources {
+		if temp := pike.GCPLookup(myData); temp == nil {
+			missing.Resources = append(missing.Resources, myData)
+			target += "./resource.ps1 " + myData + "\n"
+		}
+	}
+
+	for _, myData := range data.DataSources {
+		if temp := pike.GCPDataLookup(myData); temp == nil {
+			missing.DataSources = append(missing.DataSources, myData)
+			target += "./resource.ps1 " + myData + " -type data\n"
+		}
+	}
+
+	Prepend := "# todo gcp \n\n"
+
+	Prepend += fmt.Sprintf("Resource percentage coverage   %3.2f \n", percent(missing.Resources, data.Resources))
+	Prepend += fmt.Sprintf("Datasource percentage coverage %3.2f \n\n", percent(missing.DataSources, data.DataSources))
+
+	target = Prepend + target
+	err := os.WriteFile("gcp.md", []byte(target), 0700)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func importMembers(targetMembers string) members {
 	fileName, _ := filepath.Abs(targetMembers)
 	file, _ := os.ReadFile(fileName)

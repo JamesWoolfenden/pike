@@ -7,7 +7,6 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
-	"time"
 
 	"github.com/rs/zerolog/log"
 )
@@ -16,7 +15,6 @@ var letters = []rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ") //n
 
 // RandSeq generate a randown sequence
 func RandSeq(n int) string {
-	rand.Seed(time.Now().UTC().UnixNano())
 
 	sequence := make([]rune, n)
 	for i := range sequence {

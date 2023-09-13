@@ -1,7 +1,7 @@
 # todo azure
 
-Resource percentage coverage   4.52
-Datasource percentage coverage 5.92
+Resource percentage coverage   4.71
+Datasource percentage coverage 9.54
 
 ./resource.ps1 azurerm_
 ./resource.ps1 azurerm_[a-zA-Z0-9]+($|_)

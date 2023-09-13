@@ -28,6 +28,23 @@ func GetGCPPermissions(result ResourceV2) ([]string, error) {
 
 // GetGCPResourcePermissions looks up permissions required for resources
 func GetGCPResourcePermissions(result ResourceV2) ([]string, error) {
+	temp := GCPLookup(result.Name)
+
+	var (
+		Permissions []string
+		err         error
+	)
+
+	if temp != nil {
+		Permissions, err = GetPermissionMap(temp.([]byte), result.Attributes)
+	} else {
+		log.Printf("%s not implemented", result.Name)
+	}
+
+	return Permissions, err
+}
+
+func GCPLookup(result string) interface{} {
 	TFLookup := map[string]interface{}{
 		"google_compute_instance":                   googleComputeInstance,
 		"google_storage_bucket":                     googleStorageBucket,
@@ -65,17 +82,5 @@ func GetGCPResourcePermissions(result ResourceV2) ([]string, error) {
 		"google_bigquery_job":                       googleBigqueryJob,
 	}
 
-	var (
-		Permissions []string
-		err         error
-	)
-
-	temp := TFLookup[result.Name]
-	if temp != nil {
-		Permissions, err = GetPermissionMap(TFLookup[result.Name].([]byte), result.Attributes)
-	} else {
-		log.Printf("%s not implemented", result.Name)
-	}
-
-	return Permissions, err
+	return TFLookup[result]
 }
