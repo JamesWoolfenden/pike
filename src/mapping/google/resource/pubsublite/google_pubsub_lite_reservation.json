@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "pubsublite.reservations.create",
+      "pubsublite.reservations.update",
+      "pubsublite.reservations.get",
+      "pubsublite.reservations.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "pubsublite.reservations.delete"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

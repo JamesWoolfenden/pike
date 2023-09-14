@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "pubsublite.subscriptions.create",
+      "pubsublite.subscriptions.update",
+      "pubsublite.subscriptions.get",
+      "pubsublite.subscriptions.delete",
+      "pubsublite.topics.subscribe"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "pubsublite.subscriptions.delete"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -643,17 +643,6 @@ Datasource percentage coverage 4.20
 ./resource.ps1 google_project_services
 ./resource.ps1 google_project_usage_export_bucket
 ./resource.ps1 google_public_ca_external_account_key
-./resource.ps1 google_pubsub_lite_reservation
-./resource.ps1 google_pubsub_lite_subscription
-./resource.ps1 google_pubsub_lite_topic
-./resource.ps1 google_pubsub_schema
-./resource.ps1 google_pubsub_subscription
-./resource.ps1 google_pubsub_subscription_iam_binding
-./resource.ps1 google_pubsub_subscription_iam_member
-./resource.ps1 google_pubsub_subscription_iam_policy
-./resource.ps1 google_pubsub_topic_iam_binding
-./resource.ps1 google_pubsub_topic_iam_member
-./resource.ps1 google_pubsub_topic_iam_policy
 ./resource.ps1 google_recaptcha_enterprise_key
 ./resource.ps1 google_redis_cluster
 ./resource.ps1 google_redis_instance
@@ -927,10 +916,6 @@ Datasource percentage coverage 4.20
 ./resource.ps1 google_project_organization_policy -type data
 ./resource.ps1 google_project_service -type data
 ./resource.ps1 google_projects -type data
-./resource.ps1 google_pubsub_subscription -type data
-./resource.ps1 google_pubsub_subscription_iam_policy -type data
-./resource.ps1 google_pubsub_topic -type data
-./resource.ps1 google_pubsub_topic_iam_policy -type data
 ./resource.ps1 google_redis_instance -type data
 ./resource.ps1 google_runtimeconfig_config -type data
 ./resource.ps1 google_runtimeconfig_config_iam_policy -type data

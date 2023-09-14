@@ -84,6 +84,9 @@ func GCPLookup(result string) interface{} {
 		"google_artifact_registry_repository_iam_binding": googleArtifactRegistryRepositoryIamBinding,
 		"google_artifact_registry_repository_iam_member":  googleArtifactRegistryRepositoryIamMember,
 		"google_artifact_registry_repository_iam_policy":  googleArtifactRegistryRepositoryIamPolicy,
+		"google_pubsub_lite_reservation":                  googlePubsubLiteReservation,
+		"google_pubsub_lite_subscription":                 googlePubsubLiteSubscription,
+		"google_pubsub_lite_topic":                        googlePubsubLiteTopic,
 	}
 
 	return TFLookup[result]

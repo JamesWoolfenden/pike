@@ -108,3 +108,12 @@ var googleArtifactRegistryRepositoryIamMember []byte
 
 //go:embed  mapping/google/resource/artifactregistry/google_artifact_registry_repository_iam_policy.json
 var googleArtifactRegistryRepositoryIamPolicy []byte
+
+//go:embed  mapping/google/resource/pubsublite/google_pubsub_lite_reservation.json
+var googlePubsubLiteReservation []byte
+
+//go:embed  mapping/google/resource/pubsublite/google_pubsub_lite_subscription.json
+var googlePubsubLiteSubscription []byte
+
+//go:embed  mapping/google/resource/pubsublite/google_pubsub_lite_topic.json
+var googlePubsubLiteTopic []byte
