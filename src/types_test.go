@@ -41,9 +41,9 @@ func TestOutputPolicy_AsString(t *testing.T) {
 		},
 		{
 			"all",
-			fields{pike.AwsOutput{JSONOut: "[json]", Terraform: "terraform"}, "gcp", "azure"},
+			fields{pike.AwsOutput{JSONOut: "[json]", Terraform: "terraform"}, "google", "azure"},
 			args{"terraform"},
-			"terraform\ngcp\nazure\n",
+			"terraform\ngoogle\nazure\n",
 		},
 	}
 

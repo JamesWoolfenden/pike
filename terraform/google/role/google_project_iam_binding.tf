@@ -1,5 +1,5 @@
 resource "google_project_iam_binding" "pike" {
-  project = "pike-361314"
+  project = "pike-gcp"
   role    = google_project_iam_custom_role.pike.id
 
   members = [

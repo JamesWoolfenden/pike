@@ -29,7 +29,7 @@ func TestScan(t *testing.T) {
 	}{
 		{"aws", args{testpath, "json", false}, false},
 		{"aws-out", args{testpath, "terraform", true}, false},
-		{"gcp", args{testpath, "json", false}, false},
+		{"google", args{testpath, "json", false}, false},
 	}
 
 	for _, tt := range tests {

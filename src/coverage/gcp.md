@@ -58,10 +58,6 @@ Datasource percentage coverage 4.20
 ./resource.ps1 google_app_engine_service_network_settings
 ./resource.ps1 google_app_engine_service_split_traffic
 ./resource.ps1 google_app_engine_standard_app_version
-./resource.ps1 google_artifact_registry_repository
-./resource.ps1 google_artifact_registry_repository_iam_binding
-./resource.ps1 google_artifact_registry_repository_iam_member
-./resource.ps1 google_artifact_registry_repository_iam_policy
 ./resource.ps1 google_assured_workloads_workload
 ./resource.ps1 google_backup_dr_management_server
 ./resource.ps1 google_beyondcorp_app_connection

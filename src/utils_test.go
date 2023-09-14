@@ -134,7 +134,7 @@ func Test_fileExists(t *testing.T) {
 
 func TestRandSeq(t *testing.T) {
 	t.Parallel()
-	
+
 	type args struct {
 		n int
 	}

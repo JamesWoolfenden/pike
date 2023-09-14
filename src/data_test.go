@@ -318,10 +318,10 @@ func TestGetPermission(t *testing.T) {
 			},
 		},
 		{
-			name: "gcp",
+			name: "google",
 			args: args{
 				result: pike.ResourceV2{
-					TypeName: "resource", Name: "google_compute_instance", ResourceName: "found", Provider: "gcp",
+					TypeName: "resource", Name: "google_compute_instance", ResourceName: "found", Provider: "google",
 					Attributes: []string{"name", "machine_type", "zone"},
 				},
 			},

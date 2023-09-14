@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "artifactregistry.repositories.create",
+      "artifactregistry.repositories.get",
+      "artifactregistry.repositories.update",
+      "artifactregistry.repositories.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "artifactregistry.repositories.delete"
+    ],
+    "modify": [],
+    "plan": [
+      "artifactregistry.repositories.get"
+    ]
+  }
+]

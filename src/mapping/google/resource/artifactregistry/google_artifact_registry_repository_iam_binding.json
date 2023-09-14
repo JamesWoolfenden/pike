@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "artifactregistry.repositories.setIamPolicy",
+      "artifactregistry.repositories.getIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

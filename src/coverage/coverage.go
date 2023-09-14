@@ -102,13 +102,13 @@ func coverageGcp() error {
 		}
 	}
 
-	Prepend := "# todo gcp \n\n"
+	Prepend := "# todo google \n\n"
 
 	Prepend += fmt.Sprintf("Resource percentage coverage   %3.2f \n", percent(missing.Resources, data.Resources))
 	Prepend += fmt.Sprintf("Datasource percentage coverage %3.2f \n\n", percent(missing.DataSources, data.DataSources))
 
 	target = Prepend + target
-	err := os.WriteFile("gcp.md", []byte(target), 0700)
+	err := os.WriteFile("google.md", []byte(target), 0700)
 	if err != nil {
 		return err
 	}
