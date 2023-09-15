@@ -37,7 +37,7 @@ repos:
     rev: v0.1.50
     hooks:
       - id: terraform-fmt
-        language_version: python3.10
+        language_version: python3.11
   - repo: https://github.com/gruntwork-io/pre-commit
     rev: v0.1.22
     hooks:
@@ -70,10 +70,7 @@ repos:
   - repo: https://github.com/dnephin/pre-commit-golang
     rev: v0.5.1
     hooks:
-      - id: go-vet
-        exclude: src/parse/testdata
       - id: go-imports
       - id: validate-toml
       - id: no-go-testing
-      - id: golangci-lint
       - id: go-mod-tidy

@@ -87,6 +87,10 @@ func GCPLookup(result string) interface{} {
 		"google_storage_bucket_acl":                       googleStorageBucketACL,
 		"google_storage_bucket_iam_binding":               googleStorageBucketIamBinding,
 		"google_storage_bucket_object":                    googleStorageBucketObject,
+		"google_compute_security_policy":                  googleComputeSecurityPolicy,
+		"google_kms_crypto_key_iam_binding":               googlekmsCryptoKeyIamBinding,
+		"google_kms_crypto_key_iam_member":                googlekmsCryptoKeyIamMember,
+		"google_kms_crypto_key_iam_policy":                googlekmsCryptoKeyIamPolicy,
 	}
 
 	return TFLookup[result]

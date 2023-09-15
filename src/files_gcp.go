@@ -117,3 +117,15 @@ var googlePubsubLiteSubscription []byte
 
 //go:embed  mapping/google/resource/pubsublite/google_pubsub_lite_topic.json
 var googlePubsubLiteTopic []byte
+
+//go:embed  mapping/google/resource/compute/google_compute_security_policy.json
+var googleComputeSecurityPolicy []byte
+
+//go:embed  mapping/google/resource/cloudkms/google_kms_crypto_key_iam_binding.json
+var googlekmsCryptoKeyIamBinding []byte
+
+//go:embed  mapping/google/resource/cloudkms/google_kms_crypto_key_iam_member.json
+var googlekmsCryptoKeyIamMember []byte
+
+//go:embed  mapping/google/resource/cloudkms/google_kms_crypto_key_iam_policy.json
+var googlekmsCryptoKeyIamPolicy []byte

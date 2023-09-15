@@ -270,7 +270,6 @@ Datasource percentage coverage 4.17
 ./resource.ps1 google_compute_router_interface
 ./resource.ps1 google_compute_router_nat
 ./resource.ps1 google_compute_router_peer
-./resource.ps1 google_compute_security_policy
 ./resource.ps1 google_compute_service_attachment
 ./resource.ps1 google_compute_shared_vpc_host_project
 ./resource.ps1 google_compute_shared_vpc_service_project
@@ -542,7 +541,7 @@ Datasource percentage coverage 4.17
 ./resource.ps1 google_identity_platform_tenant_default_supported_idp_config
 ./resource.ps1 google_identity_platform_tenant_inbound_saml_config
 ./resource.ps1 google_identity_platform_tenant_oauth_idp_config
-./resource.ps1 google_kms_crypto_key_iam_binding
+
 ./resource.ps1 google_kms_crypto_key_iam_member
 ./resource.ps1 google_kms_crypto_key_iam_policy
 ./resource.ps1 google_kms_crypto_key_version

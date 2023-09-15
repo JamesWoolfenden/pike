@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "cloudkms.cryptoKeys.getIamPolicy",
+      "cloudkms.cryptoKeys.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

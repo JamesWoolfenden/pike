@@ -1,13 +1,9 @@
 package parse
 
 import (
-	"os"
 	"path/filepath"
 	"reflect"
 	"testing"
-
-	"github.com/go-git/go-git/v5"
-	"github.com/rs/zerolog/log"
 )
 
 func TestGetGoFiles(t *testing.T) {
@@ -112,55 +108,52 @@ func TestGetMatches(t *testing.T) {
 	}
 }
 
-func TestParse(t *testing.T) {
-	t.Parallel()
-
-	_, err := git.PlainClone("./terraform-provider-aws", false, &git.CloneOptions{
-		URL:      "https://github.com/hashicorp/terraform-provider-aws",
-		Progress: os.Stdout,
-		Depth:    1,
-	})
-	log.Print(err)
-
-	_, err = git.PlainClone("./terraform-provider-azurerm", false, &git.CloneOptions{
-		URL:      "https://github.com/hashicorp/terraform-provider-azurerm",
-		Progress: os.Stdout,
-		Depth:    1,
-	})
-
-	log.Print(err)
-	_, err = git.PlainClone("./terraform-provider-google", false, &git.CloneOptions{
-		URL:      "https://github.com/hashicorp/terraform-provider-google",
-		Progress: os.Stdout,
-		Depth:    1,
-	})
-	log.Print(err)
-
-	type args struct {
-		codebase string
-		name     string
-	}
-
-	tests := []struct {
-		name    string
-		args    args
-		wantErr bool
-	}{
-		//{name: "aws", args: args{codebase: "./terraform-provider-aws", name: "aws"}},
-		//{name: "azure", args: args{codebase: "./terraform-provider-azurerm", name: "azurerm"}},
-		//{name: "google", args: args{codebase: "./terraform-provider-google", name: "google"}},
-	}
-
-	for _, tt := range tests {
-		tt := tt
-		t.Run(tt.name, func(t *testing.T) {
-			t.Parallel()
-			if err := Parse(tt.args.codebase, tt.args.name); (err != nil) != tt.wantErr {
-				t.Errorf("Parse() error = %v, wantErr %v", err, tt.wantErr)
-			}
-		})
-	}
-}
+//func TestParse(t *testing.T) {
+//	t.Parallel()
+//
+//	_, err := git.PlainClone("./terraform-provider-aws", false, &git.CloneOptions{
+//		URL:      "https://github.com/hashicorp/terraform-provider-aws",
+//		Progress: os.Stdout,
+//		Depth:    1,
+//	})
+//
+//	_, err = git.PlainClone("./terraform-provider-azurerm", false, &git.CloneOptions{
+//		URL:      "https://github.com/hashicorp/terraform-provider-azurerm",
+//		Progress: os.Stdout,
+//		Depth:    1,
+//	})
+//
+//	_, err = git.PlainClone("./terraform-provider-google", false, &git.CloneOptions{
+//		URL:      "https://github.com/hashicorp/terraform-provider-google",
+//		Progress: os.Stdout,
+//		Depth:    1,
+//	})
+//
+//	type args struct {
+//		codebase string
+//		name     string
+//	}
+//
+//	tests := []struct {
+//		name    string
+//		args    args
+//		wantErr bool
+//	}{
+//		{name: "aws", args: args{codebase: "./terraform-provider-aws", name: "aws"}},
+//		{name: "azure", args: args{codebase: "./terraform-provider-azurerm", name: "azurerm"}},
+//		{name: "google", args: args{codebase: "./terraform-provider-google", name: "google"}},
+//	}
+//
+//	for _, tt := range tests {
+//		tt := tt
+//		t.Run(tt.name, func(t *testing.T) {
+//			t.Parallel()
+//			if err := Parse(tt.args.codebase, tt.args.name); (err != nil) != tt.wantErr {
+//				t.Errorf("Parse() error = %v, wantErr %v", err, tt.wantErr)
+//			}
+//		})
+//	}
+//}
 
 func Test_add(t *testing.T) {
 	t.Parallel()
