@@ -1,6 +1,6 @@
 # todo google
 
-Resource percentage coverage   5.19
+Resource percentage coverage   5.70
 Datasource percentage coverage 4.17
 
 ./resource.ps1 google_access_context_manager_access_level
@@ -541,9 +541,6 @@ Datasource percentage coverage 4.17
 ./resource.ps1 google_identity_platform_tenant_default_supported_idp_config
 ./resource.ps1 google_identity_platform_tenant_inbound_saml_config
 ./resource.ps1 google_identity_platform_tenant_oauth_idp_config
-
-./resource.ps1 google_kms_crypto_key_iam_member
-./resource.ps1 google_kms_crypto_key_iam_policy
 ./resource.ps1 google_kms_crypto_key_version
 ./resource.ps1 google_kms_key_ring_iam_binding
 ./resource.ps1 google_kms_key_ring_iam_member

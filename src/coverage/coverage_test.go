@@ -1,6 +1,10 @@
 package coverage
 
-import "testing"
+import (
+	"testing"
+
+	pike "github.com/jameswoolfenden/pike/src"
+)
 
 func Test_coverageAws(t *testing.T) {
 	t.Parallel()
@@ -43,7 +47,8 @@ func Test_percent(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
-			if got := percent(tt.args.missing, tt.args.data); got != tt.want {
+			got := percent(tt.args.missing, tt.args.data)
+			if !pike.AlmostEqual(got, tt.want) {
 				t.Errorf("percent() = %v, want %v", got, tt.want)
 			}
 		})

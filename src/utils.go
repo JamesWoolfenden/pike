@@ -3,6 +3,7 @@ package pike
 import (
 	"bytes"
 	"errors"
+	"math"
 	"math/rand"
 	"os"
 	"path/filepath"
@@ -91,4 +92,10 @@ func FileExists(filename string) bool {
 	}
 
 	return !info.IsDir()
+}
+
+const float64EqualityThreshold = 1e-9
+
+func AlmostEqual(a, b float64) bool {
+	return math.Abs(a-b) <= float64EqualityThreshold
 }
