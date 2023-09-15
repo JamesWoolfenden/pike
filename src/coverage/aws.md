@@ -1,6 +1,6 @@
 # todo aws
 
-Resource percentage coverage   29.27
+Resource percentage coverage   29.25
 Datasource percentage coverage 80.98
 
 ./resource.ps1 aws_accessanalyzer_analyzer
@@ -374,7 +374,6 @@ Datasource percentage coverage 80.98
 ./resource.ps1 aws_elastic_beanstalk_environment
 ./resource.ps1 aws_elastic_beanstalk_hosted_zone
 ./resource.ps1 aws_elastic_beanstalk_solution_stack
-./resource.ps1 aws_elasticache_cluster does not support transit encryption using the redis engine, use aws_elasticache_replication_group instead
 ./resource.ps1 aws_elasticache_global_replication_group
 ./resource.ps1 aws_elasticache_user_group_association
 ./resource.ps1 aws_elasticsearch_domain_saml_options
@@ -911,6 +910,7 @@ Datasource percentage coverage 80.98
 ./resource.ps1 aws_sesv2_email_identity_mail_from_attributes
 ./resource.ps1 aws_sfn_alias
 ./resource.ps1 aws_sfn_state_machine_versions
+./resource.ps1 aws_shield_application_layer_automatic_response
 ./resource.ps1 aws_shield_drt_access_log_bucket_association
 ./resource.ps1 aws_shield_drt_access_role_arn_association
 ./resource.ps1 aws_shield_protection
@@ -981,6 +981,7 @@ Datasource percentage coverage 80.98
 ./resource.ps1 aws_transfer_tag
 ./resource.ps1 aws_transfer_user
 ./resource.ps1 aws_transfer_workflow
+./resource.ps1 aws_verifiedaccess_instance
 ./resource.ps1 aws_verifiedaccess_trust_provider
 ./resource.ps1 aws_vpc_configuration
 ./resource.ps1 aws_vpc_endpoint_connection_accepter

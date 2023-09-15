@@ -915,8 +915,9 @@ Datasource percentage coverage 9.54
 ./resource.ps1 azurerm_storage_share
 ./resource.ps1 azurerm_storage_share_directory
 ./resource.ps1 azurerm_storage_share_file
-
+./resource.ps1 azurerm_storage_sync
 ./resource.ps1 azurerm_storage_sync_cloud_endpoint
+./resource.ps1 azurerm_storage_sync_group
 ./resource.ps1 azurerm_storage_table
 ./resource.ps1 azurerm_storage_table_entity
 ./resource.ps1 azurerm_stream_analytics_cluster
@@ -1276,6 +1277,16 @@ Datasource percentage coverage 9.54
 ./resource.ps1 azurerm_sql_managed_instance -type data
 ./resource.ps1 azurerm_sql_server -type data
 ./resource.ps1 azurerm_ssh_public_key -type data
+./resource.ps1 azurerm_storage_account_blob_container_sas -type data
+./resource.ps1 azurerm_storage_account_sas -type data
+./resource.ps1 azurerm_storage_blob -type data
+./resource.ps1 azurerm_storage_container -type data
+./resource.ps1 azurerm_storage_encryption_scope -type data
+./resource.ps1 azurerm_storage_management_policy -type data
+./resource.ps1 azurerm_storage_share -type data
+./resource.ps1 azurerm_storage_sync -type data
+./resource.ps1 azurerm_storage_sync_group -type data
+./resource.ps1 azurerm_storage_table_entity -type data
 ./resource.ps1 azurerm_stream_analytics_job -type data
 ./resource.ps1 azurerm_subscription_template_deployment -type data
 ./resource.ps1 azurerm_subscriptions -type data
