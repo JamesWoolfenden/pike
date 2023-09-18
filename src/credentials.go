@@ -11,12 +11,15 @@ import (
 )
 
 func getAWSCredentials(IAMRole string, region string) (*sts.AssumeRoleOutput, error) {
+
 	const waitForConsistency = 900
 	config := aws.NewConfig()
+
 	config.Region = &region
 	mySession := session.Must(session.NewSession(config))
 	svc := sts.New(mySession)
 	duration := int64(waitForConsistency)
+
 	input := &sts.AssumeRoleInput{
 		ExternalId:      aws.String("123ABC"),
 		Policy:          nil,

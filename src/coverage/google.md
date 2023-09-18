@@ -1,7 +1,7 @@
 # todo google
 
-Resource percentage coverage   5.70
-Datasource percentage coverage 4.17
+Resource percentage coverage   5.67
+Datasource percentage coverage 4.15
 
 ./resource.ps1 google_access_context_manager_access_level
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -455,6 +455,10 @@ Datasource percentage coverage 4.17
 ./resource.ps1 google_gke_backup_backup_plan_iam_binding
 ./resource.ps1 google_gke_backup_backup_plan_iam_member
 ./resource.ps1 google_gke_backup_backup_plan_iam_policy
+./resource.ps1 google_gke_backup_restore_plan
+./resource.ps1 google_gke_backup_restore_plan_iam_binding
+./resource.ps1 google_gke_backup_restore_plan_iam_member
+./resource.ps1 google_gke_backup_restore_plan_iam_policy
 ./resource.ps1 google_gke_hub_feature
 ./resource.ps1 google_gke_hub_feature_iam_binding
 ./resource.ps1 google_gke_hub_feature_iam_member
@@ -878,6 +882,7 @@ Datasource percentage coverage 4.17
 ./resource.ps1 google_folders -type data
 ./resource.ps1 google_game_services_game_server_deployment_rollout -type data
 ./resource.ps1 google_gke_backup_backup_plan_iam_policy -type data
+./resource.ps1 google_gke_backup_restore_plan_iam_policy -type data
 ./resource.ps1 google_gke_hub_feature_iam_policy -type data
 ./resource.ps1 google_gke_hub_membership_iam_policy -type data
 ./resource.ps1 google_gke_hub_scope_iam_policy -type data

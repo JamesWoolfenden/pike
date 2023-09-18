@@ -67,21 +67,29 @@ func TestCompareIAMPolicy(t *testing.T) {
 }
 
 func TestCompare(t *testing.T) {
+	t.Parallel()
+
 	type args struct {
 		directory string
 		arn       string
 		init      bool
 	}
+
 	tests := []struct {
 		name    string
 		args    args
 		want    bool
 		wantErr bool
 	}{
-		{"pass", args{"./testdata/init/nicconf", "", false}, true, false},
+		{"fail arn is empty", args{"./testdata/init/nicconf", "", false}, false, true},
+		{"fail arn is not policy", args{"./testdata/init/nicconf", "arn:aws:iam::680235478471:user/readonly", false}, false, true},
+		{"pass", args{"./testdata/init/nicconf", "arn:aws:iam::680235478471:policy/testdata", false}, true, false},
 	}
+
 	for _, tt := range tests {
+		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
 			got, err := pike.Compare(tt.args.directory, tt.args.arn, tt.args.init)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("Compare() error = %v, wantErr %v", err, tt.wantErr)

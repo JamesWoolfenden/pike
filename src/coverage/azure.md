@@ -1,6 +1,6 @@
 # todo azure
 
-Resource percentage coverage   4.71
+Resource percentage coverage   4.70
 Datasource percentage coverage 9.54
 
 ./resource.ps1 azurerm_
@@ -672,6 +672,7 @@ Datasource percentage coverage 9.54
 ./resource.ps1 azurerm_network_profile
 ./resource.ps1 azurerm_network_service_tags
 ./resource.ps1 azurerm_new_relic_monitor
+./resource.ps1 azurerm_new_relic_tag_rule
 ./resource.ps1 azurerm_nginx_certificate
 ./resource.ps1 azurerm_nginx_configuration
 ./resource.ps1 azurerm_nginx_deployment
