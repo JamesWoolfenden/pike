@@ -144,3 +144,9 @@ var azurermAppService []byte
 
 //go:embed mapping/azurerm/resource/web/azurerm_app_service_plan.json
 var azurermAppServicePlan []byte
+
+//go:embed mapping/azurerm/resource/storagesync/azurerm_storage_sync.json
+var azurermStorageSync []byte
+
+//go:embed mapping/azurerm/resource/storagesync/azurerm_storage_sync_group.json
+var azurermStorageSyncGroup []byte

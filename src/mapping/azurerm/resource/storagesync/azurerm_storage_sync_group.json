@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "Microsoft.StorageSync/storageSyncServices/syncGroups/read",
+      "Microsoft.StorageSync/storageSyncServices/syncGroups/write",
+      "Microsoft.StorageSync/storageSyncServices/syncGroups/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.StorageSync/storageSyncServices/syncGroups/delete"
+    ],
+    "modify": [],
+    "plan": [
+      "Microsoft.StorageSync/storageSyncServices/syncGroups/read"
+    ]
+  }
+]

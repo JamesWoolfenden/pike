@@ -81,3 +81,27 @@ var dataAzurermWindowsFunctionApp []byte
 
 //go:embed mapping/azurerm/data/web/azurerm_windows_web_app.json
 var dataAzurermWindowsWebApp []byte
+
+//go:embed mapping/azurerm/data/storage/azurerm_storage_blob.json
+var dataAzurermStorageBlob []byte
+
+//go:embed mapping/azurerm/data/storage/azurerm_storage_container.json
+var dataAzurermStorageContainer []byte
+
+//go:embed mapping/azurerm/data/storage/azurerm_storage_encryption_scope.json
+var dataAzurermStorageEncryptionScope []byte
+
+//go:embed mapping/azurerm/data/storage/azurerm_storage_management_policy.json
+var dataAzurermStorageManagementPolicy []byte
+
+//go:embed mapping/azurerm/data/storage/azurerm_storage_share.json
+var dataAzurermStorageShare []byte
+
+//go:embed mapping/azurerm/data/storagesync/azurerm_storage_sync.json
+var dataAzurermStorageSync []byte
+
+//go:embed mapping/azurerm/data/storagesync/azurerm_storage_sync_group.json
+var dataAzurermStorageSyncGroup []byte
+
+//go:embed mapping/azurerm/data/storage/azurerm_storage_table_entity.json
+var dataAzurermStorageTableEntity []byte

@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "Microsoft.StorageSync/storageSyncServices/write",
+      "Microsoft.StorageSync/storageSyncServices/read",
+      "Microsoft.StorageSync/storageSyncServices/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.StorageSync/storageSyncServices/delete"
+    ],
+    "modify": [],
+    "plan": [
+      "Microsoft.StorageSync/storageSyncServices/read"
+    ]
+  }
+]

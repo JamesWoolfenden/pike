@@ -53,6 +53,16 @@ func AzureDataLookup(name string) interface{} {
 		"azurerm_public_ips":                                 dataAzurermPublicIps,
 		"azurerm_windows_function_app":                       dataAzurermWindowsFunctionApp,
 		"azurerm_windows_web_app":                            dataAzurermWindowsWebApp,
+		"azurerm_storage_account_blob_container_sas":         placeholder,
+		"azurerm_storage_account_sas":                        placeholder,
+		"azurerm_storage_blob":                               dataAzurermStorageBlob,
+		"azurerm_storage_container":                          dataAzurermStorageContainer,
+		"azurerm_storage_encryption_scope":                   dataAzurermStorageEncryptionScope,
+		"azurerm_storage_management_policy":                  dataAzurermStorageManagementPolicy,
+		"azurerm_storage_share":                              dataAzurermStorageShare,
+		"azurerm_storage_sync":                               dataAzurermStorageSync,
+		"azurerm_storage_sync_group":                         dataAzurermStorageSyncGroup,
+		"azurerm_storage_table_entity":                       dataAzurermStorageTableEntity,
 	}
 
 	return TFLookup[name]
