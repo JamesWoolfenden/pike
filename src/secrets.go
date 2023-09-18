@@ -15,10 +15,11 @@ import (
 	"golang.org/x/oauth2"
 )
 
-// Remote updates a repo with AWS credentials
+// Remote updates a repo with AWS credentials.
 func Remote(target string, repository string, region string) error {
 	iamRole, err := Make(target)
 	const magic = 5
+
 	time.Sleep(magic * time.Second)
 
 	if err != nil {
@@ -56,7 +57,7 @@ func Remote(target string, repository string, region string) error {
 	return nil
 }
 
-// SetRepoSecret sets an encrypted gitHub action secret
+// SetRepoSecret sets an encrypted gitHub action secret.
 func SetRepoSecret(repository string, keyText string, keyName string) (*github.Response, error) {
 	owner, repo, err2 := SplitHub(repository)
 	if err2 != nil {
@@ -96,6 +97,7 @@ func SplitHub(repository string) (string, string, error) {
 	Splitter := strings.Split(repository, "/")
 
 	var owner string
+
 	var repo string
 
 	switch len(Splitter) {
@@ -117,7 +119,7 @@ func SplitHub(repository string) (string, string, error) {
 	return owner, repo, nil
 }
 
-// GetGithubClient instantiate and return a client object for github
+// GetGithubClient instantiate and return a client object for GitHub.
 func GetGithubClient() (context.Context, *github.Client) {
 	token := os.Getenv("GITHUB_TOKEN")
 
@@ -135,7 +137,7 @@ func GetGithubClient() (context.Context, *github.Client) {
 	return ctx, client
 }
 
-// GetPublicKeyDetails obtains the public key of the owner
+// GetPublicKeyDetails obtains the public key of the owner.
 func GetPublicKeyDetails(owner string, repository string) (keyID, pkValue string, err error) {
 	ctx, client := GetGithubClient()
 
@@ -147,7 +149,7 @@ func GetPublicKeyDetails(owner string, repository string) (keyID, pkValue string
 	return publicKey.GetKeyID(), publicKey.GetKey(), err
 }
 
-// EncryptPlaintext standard encryption
+// EncryptPlaintext standard encryption.
 func EncryptPlaintext(plaintext string, publicKeyB64 string) ([]byte, error) {
 	publicKeyBytes, err := base64.StdEncoding.DecodeString(publicKeyB64)
 	if err != nil {

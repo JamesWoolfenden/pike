@@ -1,5 +1,3 @@
-//go:build auth
-
 package pike
 
 import (
@@ -7,9 +5,12 @@ import (
 )
 
 func TestMake(t *testing.T) {
+	t.Parallel()
+
 	type args struct {
 		directory string
 	}
+
 	tests := []struct {
 		name    string
 		args    args
@@ -19,8 +20,11 @@ func TestMake(t *testing.T) {
 		{"linux-full", args{"testdata/scan/examples/simple"}, false},
 		{"linux-fail", args{"../modules/aws/terraform-aws-budget/rubbish"}, true},
 	}
+
 	for _, tt := range tests {
+		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
 			if _, err := Make(tt.args.directory); (err != nil) != tt.wantErr {
 				t.Errorf("Make() error = %v, wantErr %v", err, tt.wantErr)
 			}
