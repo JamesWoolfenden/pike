@@ -24,6 +24,11 @@ Main:
     - sato/src/arm
     - sato/src/cf
     - sato/src/see
+    - github.com/jameswoolfenden/pike/src
+    - github.com/aws/aws-sdk-go-v2/aws
+    - github.com/aws/aws-sdk-go-v2/config
+    - github.com/aws/aws-sdk-go-v2/service/iam
+    - github.com/rs/zerolog/log"
   deny:
 Test:
   files:

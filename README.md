@@ -489,7 +489,7 @@ GLOBAL OPTIONS:
 
 ## Building
 
-```go
+```shell
 go build
 ```
 
@@ -568,7 +568,7 @@ Azure just take a long time for the TF to change.
 
 Update **files.go** with:
 
-```go
+```txt
 //go:embed aws_security_group.json
 var securityGroup []byte
 ```
@@ -578,7 +578,7 @@ var securityGroup []byte
 Once you have added the json import above you just need to update the lookup table,
 so we can read it and get the permissions:
 
-```go
+```txt
 func GetAWSResourcePermissions(result template) []interface{} {
     TFLookup := map[string]interface{}{
         "aws_s3_bucket":            awsS3Bucket,

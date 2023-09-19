@@ -45,11 +45,11 @@ repos:
       - id: goimports
         exclude: src/parse/terraform-provider-*
   - repo: https://github.com/syntaqx/git-hooks
-    rev:  v0.0.18
+    rev: v0.0.18
     hooks:
       - id: go-test
         args: [ "./..." ]
-#      - id: go-mod-tidy
+      - id: go-mod-tidy
       - id: go-generate
   - repo: https://github.com/bridgecrewio/checkov
     rev: 2.4.32

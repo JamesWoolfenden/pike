@@ -49,14 +49,12 @@ func GetAWSPermissions(result ResourceV2) ([]string, error) {
 //
 //goland:noinspection GoLinter
 func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
-	temp := AwsLookup(result.Name)
-
 	var (
 		Permissions []string
 		err         error
 	)
 
-	if temp != nil {
+	if temp := AwsLookup(result.Name); temp != nil {
 		Permissions, err = GetPermissionMap(temp.([]byte), result.Attributes)
 	} else {
 		return nil, fmt.Errorf("%s not implemented", result.Name)

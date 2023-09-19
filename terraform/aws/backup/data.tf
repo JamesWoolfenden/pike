@@ -19,7 +19,7 @@ data "aws_subnet_ids" "public" {
   vpc_id = "vpc-0c33dc8cd64f408c4"
 }
 
-output "subnets" {
+output "subnet_ids" {
   value = data.aws_subnet_ids.public
 }
 

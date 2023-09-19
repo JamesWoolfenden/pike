@@ -2,7 +2,7 @@ const start
 <!-- BEGINNING OF PRE-COMMIT-PIKE DOCS HOOK -->
 The Terraform resource required is:
 
-```golang
+```hcl
 resource "aws_iam_policy" "terraform_pike" {
   name_prefix = "terraform_pike"
   path        = "/"

@@ -7,6 +7,6 @@ data "aws_ec2_transit_gateway_route_table_routes" "pike" {
   transit_gateway_route_table_id = data.aws_ec2_transit_gateway_route_table.pike.id
 }
 
-output "routes" {
+output "table_routes" {
   value = data.aws_ec2_transit_gateway_route_table_routes.pike
 }

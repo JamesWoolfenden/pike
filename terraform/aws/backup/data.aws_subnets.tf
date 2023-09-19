@@ -1,5 +1,5 @@
 data "aws_subnets" "pike" {}
 
-output "subnets" {
+output "aws_subnets" {
   value = data.aws_subnets.pike
 }

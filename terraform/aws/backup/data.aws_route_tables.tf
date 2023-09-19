@@ -1,5 +1,5 @@
 data "aws_route_tables" "example" {}
 
-output "routes" {
+output "route_tables" {
   value = data.aws_route_tables.example
 }

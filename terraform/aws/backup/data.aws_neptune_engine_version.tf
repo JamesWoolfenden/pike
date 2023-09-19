@@ -1,5 +1,5 @@
 data "aws_neptune_engine_version" "pike" {}
 
-output "version" {
+output "engine_version" {
   value = data.aws_neptune_engine_version.pike
 }

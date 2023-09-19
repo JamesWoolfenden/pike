@@ -1,5 +1,5 @@
 data "aws_resourcegroupstaggingapi_resources" "pike" {}
 
-output "tags" {
+output "api_tags" {
   value = data.aws_resourcegroupstaggingapi_resources.pike
 }

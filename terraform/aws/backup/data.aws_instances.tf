@@ -1,5 +1,5 @@
 data "aws_instances" "pike" {}
 
-output "instances" {
+output "aws_instances" {
   value = data.aws_instances.pike
 }

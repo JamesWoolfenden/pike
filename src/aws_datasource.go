@@ -5,7 +5,7 @@ import "fmt"
 // GetAWSDataPermissions gets permissions required for datasource's.
 //
 //goland:noinspection GoLinter
-func GetAWSDataPermissions(result ResourceV2) ([]string, error) { //nolint:maintidx
+func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 	var (
 		Permissions []string
 		err         error

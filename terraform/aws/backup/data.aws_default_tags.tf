@@ -1,6 +1,6 @@
 data "aws_default_tags" "pike" {
 }
 
-output "tags" {
+output "default_tags" {
   value = data.aws_default_tags.pike
 }
