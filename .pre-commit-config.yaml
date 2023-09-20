@@ -52,18 +52,18 @@ repos:
       - id: go-mod-tidy
       - id: go-generate
   - repo: https://github.com/bridgecrewio/checkov
-    rev: 2.4.32
+    rev: 2.4.47
     hooks:
       - id: checkov
         language_version: python3.11
   - repo: https://github.com/jameswoolfenden/ghat
-    rev: v0.0.24
+    rev: v0.1.0
     hooks:
       - id: ghat-go
         name: ghat
         description: upgrade action dependencies
         language: golang
-        entry: ghat swot -d . --stable 14
+        entry: ghat swot -d . --continue-on-error true --stable 14
         always_run: true
         pass_filenames: false
         types: [ yaml ]
