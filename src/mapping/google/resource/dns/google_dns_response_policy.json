@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "dns.responsePolicies.create",
+      "dns.responsePolicies.delete",
+      "dns.responsePolicies.get",
+      "dns.responsePolicies.list",
+      "dns.responsePolicies.update",
+      "dns.networks.bindDNSResponsePolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "dns.responsePolicies.delete"
+    ],
+    "modify": [
+      "dns.responsePolicies.update"
+    ],
+    "plan": [
+      "dns.responsePolicies.get"
+    ]
+  }
+]

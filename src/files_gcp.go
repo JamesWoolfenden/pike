@@ -129,3 +129,12 @@ var googlekmsCryptoKeyIamMember []byte
 
 //go:embed  mapping/google/resource/cloudkms/google_kms_crypto_key_iam_policy.json
 var googlekmsCryptoKeyIamPolicy []byte
+
+//go:embed  mapping/google/resource/dns/google_dns_managed_zone.json
+var googleDnsmanagedZone []byte
+
+//go:embed  mapping/google/resource/dns/google_dns_policy.json
+var googleDnsPolicy []byte
+
+//go:embed  mapping/google/resource/dns/google_dns_record_set.json
+var googleDnsRecordSet []byte

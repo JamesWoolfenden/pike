@@ -1,0 +1,30 @@
+[
+  {
+    "apply": [
+      "dns.networks.bindDNSResponsePolicy",
+      "dns.networks.bindPrivateDNSPolicy",
+      "dns.networks.bindPrivateDNSZone",
+      "dns.networks.targetWithPeeringZone",
+      "dns.networks.useHealthSignals",
+      "dns.policies.create",
+      "dns.policies.delete",
+      "dns.policies.get",
+      "dns.policies.getIamPolicy",
+      "dns.policies.update",
+      "dns.policies.list"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "dns.policies.delete"
+    ],
+    "modify": [
+      "dns.policies.update"
+    ],
+    "plan": [
+      "dns.policies.get",
+      "dns.policies.getIamPolicy"
+    ]
+  }
+]

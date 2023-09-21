@@ -91,6 +91,9 @@ func GCPLookup(result string) interface{} {
 		"google_kms_crypto_key_iam_binding":               googlekmsCryptoKeyIamBinding,
 		"google_kms_crypto_key_iam_member":                googlekmsCryptoKeyIamMember,
 		"google_kms_crypto_key_iam_policy":                googlekmsCryptoKeyIamPolicy,
+		"google_dns_managed_zone":                         googleDnsmanagedZone,
+		"google_dns_policy":                               googleDnsPolicy,
+		"google_dns_record_set":                           googleDnsRecordSet,
 	}
 
 	return TFLookup[result]

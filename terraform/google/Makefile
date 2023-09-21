@@ -16,6 +16,6 @@ init:
 	terraform init
 
 role: FORCE
-	terraform  -chdir=./role apply -auto-approve
+	GOOGLE_CLOUD_KEYFILE_JSON="" terraform  -chdir=./role apply -auto-approve
 
 FORCE:

@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "dns.managedZones.get",
+      "dns.managedZones.create",
+      "dns.managedZones.delete",
+      "dns.managedZones.update"
+    ],
+    "attributes": {
+      "tags": [],
+      "visibility": [
+        "dns.networks.bindPrivateDNSZone",
+        "dns.networks.targetWithPeeringZone"
+      ]
+    },
+    "destroy": [
+      "dns.managedZones.delete"
+    ],
+    "modify": [],
+    "plan": [
+      "dns.managedZones.update"
+    ]
+  }
+]

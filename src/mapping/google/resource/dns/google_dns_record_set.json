@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "dns.changes.create",
+      "dns.changes.get",
+      "dns.resourceRecordSets.create",
+      "dns.resourceRecordSets.delete",
+      "dns.resourceRecordSets.get",
+      "dns.resourceRecordSets.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "dns.resourceRecordSets.delete"
+    ],
+    "modify": [
+      "dns.resourceRecordSets.update"
+    ],
+    "plan": [
+      "dns.changes.get",
+      "dns.resourceRecordSets.get"
+    ]
+  }
+]

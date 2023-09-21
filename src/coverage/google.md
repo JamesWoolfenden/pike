@@ -395,14 +395,6 @@ Datasource percentage coverage 4.15
 ./resource.ps1 google_dialogflow_entity_type
 ./resource.ps1 google_dialogflow_fulfillment
 ./resource.ps1 google_dialogflow_intent
-./resource.ps1 google_dns_managed_zone
-./resource.ps1 google_dns_managed_zone_iam_binding
-./resource.ps1 google_dns_managed_zone_iam_member
-./resource.ps1 google_dns_managed_zone_iam_policy
-./resource.ps1 google_dns_policy
-./resource.ps1 google_dns_record_set
-./resource.ps1 google_dns_response_policy
-./resource.ps1 google_dns_response_policy_rule
 ./resource.ps1 google_document_ai_processor
 ./resource.ps1 google_document_ai_processor_default_version
 ./resource.ps1 google_document_ai_warehouse_document_schema
@@ -869,10 +861,6 @@ Datasource percentage coverage 4.15
 ./resource.ps1 google_dataproc_metastore_service -type data
 ./resource.ps1 google_dataproc_metastore_service_iam_policy -type data
 ./resource.ps1 google_datastream_static_ips -type data
-./resource.ps1 google_dns_keys -type data
-./resource.ps1 google_dns_managed_zone -type data
-./resource.ps1 google_dns_managed_zone_iam_policy -type data
-./resource.ps1 google_dns_record_set -type data
 ./resource.ps1 google_endpoints_service_consumers_iam_policy -type data
 ./resource.ps1 google_endpoints_service_iam_policy -type data
 ./resource.ps1 google_firebase_web_app_config -type data
