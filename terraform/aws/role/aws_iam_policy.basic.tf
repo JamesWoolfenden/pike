@@ -7,37 +7,13 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
+          //aws_ses_email_identity, aws_ses_domain_identity
+          "ses:GetIdentityVerificationAttributes",
+          //aws_ses_active_receipt_rule_set
+          "ses:DescribeActiveReceiptRuleSet",
+          //aws_lambda_alias
+          "lambda:GetAlias"
 
-          #          //aws_networkfirewall_firewall_policy
-          #          "network-firewall:DescribeFirewallPolicy",
-          #          //aws_networkfirewall_firewall
-          #          "network-firewall:DescribeFirewall",
-          #          //aws_licensemanager_received_licenses, aws_licensemanager_received_license
-          #          "license-manager:ListReceivedLicenses",
-          #          //aws_licensemanager_grants
-          #          "license-manager:ListDistributedGrants"
-
-          //aws_networkfirewall_rule_group
-          "network-firewall:CreateRuleGroup",
-          "network-firewall:DescribeRuleGroup",
-          "network-firewall:DeleteRuleGroup",
-          "network-firewall:TagResource",
-          "network-firewall:UntagResource",
-          "network-firewall:UpdateRuleGroup",
-
-          //aws_networkfirewall_firewall_policy
-          "network-firewall:CreateFirewallPolicy",
-          "network-firewall:TagResource",
-          "network-firewall:UntagResource",
-          "network-firewall:ListRuleGroups",
-          "network-firewall:DescribeFirewallPolicy",
-          "network-firewall:DeleteFirewallPolicy",
-          "network-firewall:UpdateFirewallPolicy",
-
-          //aws_networkfirewall_resource_policy
-          "network-firewall:PutResourcePolicy",
-          "network-firewall:DescribeResourcePolicy",
-          "network-firewall:DeleteResourcePolicy"
         ],
         "Resource" : "*",
       }

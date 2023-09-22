@@ -11,8 +11,6 @@ framework:
   - github_actions
   - json
   - yaml
-  - sca_package
-  - sca_image
 mask: [ ]
 secrets-history-timeout: 12h
 secrets-scan-file-type: [ ]

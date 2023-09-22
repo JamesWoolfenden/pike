@@ -1053,10 +1053,7 @@ Datasource percentage coverage 80.98
 ./resource.ps1 aws_workspaces_connection_alias
 ./resource.ps1 aws_workspaces_image
 ./resource.ps1 aws_workspaces_ip_group
-./resource.ps1 aws_codecatalyst_dev_environment -type data
-./resource.ps1 aws_cognito_identity_pool -type data
-./resource.ps1 aws_dms_certificate -type data
-./resource.ps1 aws_ec2_transitgateway_route_table_propagations -type data
+
 ./resource.ps1 aws_imagebuilder_component -type data
 ./resource.ps1 aws_imagebuilder_components -type data
 ./resource.ps1 aws_imagebuilder_container_recipe -type data
@@ -1075,17 +1072,10 @@ Datasource percentage coverage 80.98
 ./resource.ps1 aws_kendra_index -type data
 ./resource.ps1 aws_kendra_query_suggestions_block_list -type data
 ./resource.ps1 aws_kendra_thesaurus -type data
-./resource.ps1 aws_kms_secret -type data
-./resource.ps1 aws_lambda_alias -type data
 ./resource.ps1 aws_lex_bot -type data
 ./resource.ps1 aws_lex_bot_alias -type data
 ./resource.ps1 aws_lex_intent -type data
 ./resource.ps1 aws_lex_slot_type -type data
-./resource.ps1 aws_location_geofence_collection -type data
-./resource.ps1 aws_location_map -type data
-./resource.ps1 aws_location_place_index -type data
-./resource.ps1 aws_location_route_calculator -type data
-./resource.ps1 aws_location_tracker -type data
 ./resource.ps1 aws_networkmanager_connection -type data
 ./resource.ps1 aws_networkmanager_connections -type data
 ./resource.ps1 aws_networkmanager_core_network_policy_document -type data
@@ -1126,23 +1116,12 @@ Datasource percentage coverage 80.98
 ./resource.ps1 aws_route53_resolver_endpoint -type data
 ./resource.ps1 aws_route53_resolver_query_log_config -type data
 ./resource.ps1 aws_route53_resolver_rules -type data
-./resource.ps1 aws_s3_bucket_objects -type data
-./resource.ps1 aws_saml_provider -type data
 ./resource.ps1 aws_servicecatalog_constraint -type data
 ./resource.ps1 aws_servicecatalog_launch_paths -type data
 ./resource.ps1 aws_servicecatalog_portfolio -type data
 ./resource.ps1 aws_servicecatalog_portfolio_constraints -type data
 ./resource.ps1 aws_servicecatalog_product -type data
 ./resource.ps1 aws_servicecatalog_provisioning_artifacts -type data
-./resource.ps1 aws_ses_active_receipt_rule_set -type data
-./resource.ps1 aws_ses_domain_identity -type data
-./resource.ps1 aws_ses_email_identity -type data
 ./resource.ps1 aws_sesv2_configuration_set -type data
 ./resource.ps1 aws_sesv2_email_identity -type data
 ./resource.ps1 aws_sesv2_email_identity_mail_from_attributes -type data
-./resource.ps1 aws_vpclattice_auth_policy -type data
-./resource.ps1 aws_vpclattice_listener -type data
-./resource.ps1 aws_vpclattice_resource_policy -type data
-./resource.ps1 aws_vpclattice_service -type data
-./resource.ps1 aws_vpclattice_service_network -type data
-./resource.ps1 ssm_maintenance_windows -type data

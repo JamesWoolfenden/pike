@@ -1074,3 +1074,45 @@ var dataAwsRedshiftserverlessNamespace []byte
 
 //go:embed mapping/aws/data/redshift-serverless/awas_redshiftserverless_workgroups.json
 var dataAwsRedshiftserverlessWorkgroup []byte
+
+//go:embed mapping/aws/data/geo/aws_location_geofence_collection.json
+var dataAwsLocationGeofenceCollection []byte
+
+//go:embed mapping/aws/data/geo/aws_location_map.json
+var dataAwsLocationMap []byte
+
+//go:embed mapping/aws/data/geo/aws_location_place_index.json
+var dataAwsLocationPlaceIndex []byte
+
+//go:embed mapping/aws/data/geo/aws_location_route_calculator.json
+var dataAwsLocationRouteCalculator []byte
+
+//go:embed mapping/aws/data/geo/aws_location_tracker.json
+var dataAwsLocationTracker []byte
+
+//go:embed mapping/aws/data/vpc-lattice/aws_vpclattice_auth_policy.json
+var dataAwsVpclatticeAuthPolicy []byte
+
+//go:embed mapping/aws/data/vpc-lattice/aws_vpclattice_listener.json
+var dataAwsVpclatticeListener []byte
+
+//go:embed mapping/aws/data/vpc-lattice/aws_vpclattice_resource_policy.json
+var dataAwsVpclatticeResourcePolicy []byte
+
+//go:embed mapping/aws/data/vpc-lattice/aws_vpclattice_service.json
+var dataAwsVpclatticeService []byte
+
+//go:embed mapping/aws/data/vpc-lattice/aws_vpclattice_service_network.json
+var dataAwsVpclatticeServiceNetwork []byte
+
+//go:embed mapping/aws/data/dms/aws_dms_certificate.json
+var dataAwsDmsCertificate []byte
+
+//go:embed mapping/aws/data/ses/aws_ses_active_receipt_rule_set.json
+var dataAwsSesActiveReceiptRuleSet []byte
+
+//go:embed mapping/aws/data/ses/aws_ses_domain_identity.json
+var dataAwsSesDomainIdentity []byte
+
+//go:embed mapping/aws/data/ses/aws_ses_email_identity.json
+var dataAwsSesEmailIdentity []byte

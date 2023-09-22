@@ -14,7 +14,7 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 	if temp := AwsDataLoookup(result.Name); temp != nil {
 		Permissions, err = GetPermissionMap(temp.([]byte), result.Attributes)
 	} else {
-		return nil, fmt.Errorf("resource not found")
+		return nil, fmt.Errorf("%s not implemented", result.Name)
 	}
 
 	return Permissions, err
@@ -287,6 +287,9 @@ func AwsDataLoookup(find string) interface{} {
 		"aws_lb_listener":                                      dataAwsLbListener,
 		"aws_lb_target_group":                                  dataAwsLbTargetGroup,
 		"aws_lbs":                                              dataAwsLbs,
+		"aws_licensemanager_grants":                            dataAwsLicensemanagerGrants,
+		"aws_licensemanager_received_license":                  dataAwsLicensemanagerReceivedLicense,
+		"aws_licensemanager_received_licenses":                 dataAwsLicensemanagerReceivedLicenses,
 		"aws_location_tracker_association":                     dataAwsLocationTrackerAssociation,
 		"aws_location_tracker_associations":                    dataAwsLocationTrackerAssociations,
 		"aws_mq_broker":                                        dataAwsMqBroker,
@@ -305,6 +308,9 @@ func AwsDataLoookup(find string) interface{} {
 		"aws_neptune_orderable_db_instance":                    dataAwsNeptuneOrderableDBInstance,
 		"aws_network_acls":                                     dataAwsNetworkAcls,
 		"aws_network_interfaces":                               dataAwsNetworkInterfaces,
+		"aws_networkfirewall_firewall":                         dataAwsNetworkfirewallFirewall,
+		"aws_networkfirewall_firewall_policy":                  dataAwsNetworkfirewallFirewallPolicy,
+		"aws_networkfirewall_resource_policy":                  dataAwsNetworkfirewallResourcePolicy,
 		"aws_opensearch_domain":                                placeholder,
 		"aws_organizations_organization":                       dataAwsOrganizationsOrganization,
 		"aws_outposts_outpost":                                 dataAwsOutpostsOutpost,
@@ -313,6 +319,7 @@ func AwsDataLoookup(find string) interface{} {
 		"aws_pricing_product":                                  placeholder,
 		"aws_prometheus_workspace":                             dataAwsPrometheusWorkspace,
 		"aws_prometheus_workspaces":                            dataAwsPrometheusWorkspaces,
+		"aws_qldb_ledger":                                      dataAwsQldbLedger,
 		"aws_quicksight_data_set":                              placeholder,
 		"aws_quicksight_group":                                 dataAwsQuicksightGroup,
 		"aws_quicksight_theme":                                 dataAwsQuicksightTheme,
@@ -330,6 +337,8 @@ func AwsDataLoookup(find string) interface{} {
 		"aws_redshift_service_account":                         placeholder,
 		"aws_redshift_subnet_group":                            dataAwsRedshiftSubnetGroup,
 		"aws_redshiftserverless_credentials":                   placeholder,
+		"aws_redshiftserverless_namespace":                     dataAwsRedshiftserverlessNamespace,
+		"aws_redshiftserverless_workgroup":                     dataAwsRedshiftserverlessWorkgroup,
 		"aws_region":                                           placeholder,
 		"aws_regions":                                          dataAwsRegions,
 		"aws_resourcegroupstaggingapi_resources":               dataAwsResourcegroupstaggingapiResources,
@@ -423,15 +432,23 @@ func AwsDataLoookup(find string) interface{} {
 		"aws_workspaces_bundle":                                dataAwsWorkspacesBundle,
 		"aws_workspaces_directory":                             dataAwsWorkspaceDirectory,
 		"aws_workspaces_image":                                 dataAwsWorkspaceImage,
-		"aws_licensemanager_grants":                            dataAwsLicensemanagerGrants,
-		"aws_licensemanager_received_license":                  dataAwsLicensemanagerReceivedLicense,
-		"aws_licensemanager_received_licenses":                 dataAwsLicensemanagerReceivedLicenses,
-		"aws_networkfirewall_firewall":                         dataAwsNetworkfirewallFirewall,
-		"aws_networkfirewall_firewall_policy":                  dataAwsNetworkfirewallFirewallPolicy,
-		"aws_networkfirewall_resource_policy":                  dataAwsNetworkfirewallResourcePolicy,
-		"aws_qldb_ledger":                                      dataAwsQldbLedger,
-		"aws_redshiftserverless_namespace":                     dataAwsRedshiftserverlessNamespace,
-		"aws_redshiftserverless_workgroup":                     dataAwsRedshiftserverlessWorkgroup,
+		"aws_location_geofence_collection":                     dataAwsLocationGeofenceCollection,
+		"aws_location_map":                                     dataAwsLocationMap,
+		"aws_location_place_index":                             dataAwsLocationPlaceIndex,
+		"aws_location_route_calculator":                        dataAwsLocationRouteCalculator,
+		"aws_location_tracker":                                 dataAwsLocationTracker,
+		"aws_vpclattice_auth_policy":                           dataAwsVpclatticeAuthPolicy,
+		"aws_vpclattice_listener":                              dataAwsVpclatticeListener,
+		"aws_vpclattice_resource_policy":                       dataAwsVpclatticeResourcePolicy,
+		"aws_vpclattice_service":                               dataAwsVpclatticeService,
+		"aws_vpclattice_service_network":                       dataAwsVpclatticeServiceNetwork,
+		"aws_codecatalyst_dev_environment":                     placeholder,
+		"aws_dms_certificate":                                  dataAwsDmsCertificate,
+		"aws_kms_secret":                                       placeholder,
+		"aws_s3_bucket_objects":                                placeholder,
+		"aws_ses_active_receipt_rule_set":                      dataAwsSesActiveReceiptRuleSet,
+		"aws_ses_domain_identity":                              dataAwsSesDomainIdentity,
+		"aws_ses_email_identity":                               dataAwsSesEmailIdentity,
 	}
 
 	return TFLookup[find]
