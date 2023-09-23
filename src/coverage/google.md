@@ -1,7 +1,7 @@
 # todo google
 
-Resource percentage coverage   5.67
-Datasource percentage coverage 4.15
+Resource percentage coverage   6.05
+Datasource percentage coverage 5.81
 
 ./resource.ps1 google_access_context_manager_access_level
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -395,6 +395,11 @@ Datasource percentage coverage 4.15
 ./resource.ps1 google_dialogflow_entity_type
 ./resource.ps1 google_dialogflow_fulfillment
 ./resource.ps1 google_dialogflow_intent
+./resource.ps1 google_dns_managed_zone_iam_binding
+./resource.ps1 google_dns_managed_zone_iam_member
+./resource.ps1 google_dns_managed_zone_iam_policy
+./resource.ps1 google_dns_response_policy
+./resource.ps1 google_dns_response_policy_rule
 ./resource.ps1 google_document_ai_processor
 ./resource.ps1 google_document_ai_processor_default_version
 ./resource.ps1 google_document_ai_warehouse_document_schema

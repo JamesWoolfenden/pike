@@ -1116,3 +1116,204 @@ var dataAwsSesDomainIdentity []byte
 
 //go:embed mapping/aws/data/ses/aws_ses_email_identity.json
 var dataAwsSesEmailIdentity []byte
+
+//go:embed mapping/aws/data/imagebuilder/aws_imagebuilder_component.json
+var dataAwsImagebuilderComponent []byte
+
+//go:embed mapping/aws/data/imagebuilder/aws_imagebuilder_components.json
+var dataAwsImagebuilderComponets []byte
+
+//go:embed mapping/aws/data/imagebuilder/aws_imagebuilder_container_recipe.json
+var dataAwsImagebuilderContainerRecipe []byte
+
+//go:embed mapping/aws/data/imagebuilder/aws_imagebuilder_container_recipes.json
+var dataAwsImagebuilderContainerRecipes []byte
+
+//go:embed mapping/aws/data/imagebuilder/aws_imagebuilder_distribution_configuration.json
+var dataAwsImagebuilderDistributionConfiguration []byte
+
+//go:embed mapping/aws/data/imagebuilder/aws_imagebuilder_distribution_configurations.json
+var dataAwsImagebuilderDistributionConfigurations []byte
+
+//go:embed mapping/aws/data/imagebuilder/aws_imagebuilder_image.json
+var dataAwsImagebuilderImage []byte
+
+//go:embed mapping/aws/data/imagebuilder/aws_imagebuilder_image_pipeline.json
+var dataAwsImagebuilderImagePipeline []byte
+
+//go:embed mapping/aws/data/imagebuilder/aws_imagebuilder_image_pipelines.json
+var dataAwsImagebuilderImagePipelines []byte
+
+//go:embed mapping/aws/data/imagebuilder/aws_imagebuilder_image_recipe.json
+var dataAwsImagebuilderImageRecipe []byte
+
+//go:embed mapping/aws/data/imagebuilder/aws_imagebuilder_image_recipes.json
+var dataAwsImagebuilderImageRecipes []byte
+
+//go:embed mapping/aws/data/imagebuilder/aws_imagebuilder_infrastructure_configuration.json
+var dataAwsImagebuilderInfrastructureConfiguration []byte
+
+//go:embed mapping/aws/data/imagebuilder/aws_imagebuilder_distribution_configurations.json
+var dataAwsImagebuilderInfrastructureConfigurations []byte
+
+//go:embed mapping/aws/data/kendra/aws_kendra_experience.json
+var dataAwsKendraExperience []byte
+
+//go:embed mapping/aws/data/kendra/aws_kendra_faq.json
+var dataAwsKendraFaq []byte
+
+//go:embed mapping/aws/data/kendra/aws_kendra_index.json
+var dataAwsKendraIndex []byte
+
+//go:embed mapping/aws/data/kendra/aws_kendra_query_suggestions_block_list.json
+var dataAwsKendraQuerySuggestionsBlockList []byte
+
+//go:embed mapping/aws/data/kendra/aws_kendra_thesaurus.json
+var dataAwsKendraThesaurus []byte
+
+//go:embed mapping/aws/data/lex/aws_lex_bot.json
+var dataAwsLexBot []byte
+
+//go:embed mapping/aws/data/lex/aws_lex_bot_alias.json
+var dataAwsLexBotAlias []byte
+
+//go:embed mapping/aws/data/lex/aws_lex_intent.json
+var dataAwsLexIntent []byte
+
+//go:embed mapping/aws/data/lex/aws_lex_slot_type.json
+var dataAwsLexSlotType []byte
+
+//go:embed mapping/aws/data/networkmanager/aws_networkmanager_connection.json
+var dataAwsNetworkManagerConnection []byte
+
+//go:embed mapping/aws/data/networkmanager/aws_networkmanager_connections.json
+var dataAwsNetworkManagerConnections []byte
+
+//go:embed mapping/aws/data/networkmanager/aws_networkmanager_device.json
+var dataAwsNetworkManagerDevice []byte
+
+//go:embed mapping/aws/data/networkmanager/aws_networkmanager_devices.json
+var dataAwsNetworkManagerDevices []byte
+
+//go:embed mapping/aws/data/networkmanager/aws_networkmanager_global_network.json
+var dataAwsNetworkManagerGlobalNetwork []byte
+
+//go:embed mapping/aws/data/networkmanager/aws_networkmanager_global_networks.json
+var dataAwsNetworkManagerGlobalNetworks []byte
+
+//go:embed mapping/aws/data/networkmanager/aws_networkmanager_link.json
+var dataAwsNetworkManagerLink []byte
+
+//go:embed mapping/aws/data/networkmanager/aws_networkmanager_links.json
+var dataAwsNetworkManagerLinks []byte
+
+//go:embed mapping/aws/data/networkmanager/aws_networkmanager_site.json
+var dataAwsNetworkManagerSite []byte
+
+//go:embed mapping/aws/data/networkmanager/aws_networkmanager_sites.json
+var dataAwsNetworkManagerSites []byte
+
+//go:embed mapping/aws/data/oam/aws_oam_link.json
+var dataAwsOamLink []byte
+
+//go:embed mapping/aws/data/oam/aws_oam_links.json
+var dataAwsOamLinks []byte
+
+//go:embed mapping/aws/data/oam/aws_oam_sink.json
+var dataAwsOamSink []byte
+
+//go:embed mapping/aws/data/oam/aws_oam_sinks.json
+var dataAwsOamSinks []byte
+
+//go:embed mapping/aws/data/organizations/aws_organizations_delegated_administrators.json
+var dataAwsOrganizationsDelegatedAdministrators []byte
+
+//go:embed mapping/aws/data/organizations/aws_organizations_delegated_services.json
+var dataAwsOrganizationsDelegatedServices []byte
+
+//go:embed mapping/aws/data/organizations/aws_organizations_organizational_unit_child_accounts.json
+var dataAwsOrganizationsOrganizationalUnitChildsAccounts []byte
+
+//go:embed mapping/aws/data/organizations/aws_organizations_organizational_unit_descendant_accounts.json
+var dataAwsOrganizationsOrganizationalUnitDescendantAccounts []byte
+
+//go:embed mapping/aws/data/organizations/aws_organizations_organizational_units.json
+var dataAwsOrganizationsOrganizationalUnits []byte
+
+//go:embed mapping/aws/data/organizations/aws_organizations_policies.json
+var dataAwsOrganizationsPolicies []byte
+
+//go:embed mapping/aws/data/organizations/aws_organizations_policies_for_target.json
+var dataAwsOrganizationsPoliciesForTarget []byte
+
+//go:embed mapping/aws/data/organizations/aws_organizations_resource_tags.json
+var dataAwsOrganizationsResourceTags []byte
+
+//go:embed mapping/aws/data/outposts/aws_outposts_asset.json
+var dataAwsOutpostsAsset []byte
+
+//go:embed mapping/aws/data/outposts/aws_outposts_assets.json
+var dataAwsOutpostsAssets []byte
+
+//go:embed mapping/aws/data/outposts/aws_outposts_outpost_instance_type.json
+var dataAwsOutpostsOutpostInstanceType []byte
+
+//go:embed mapping/aws/data/outposts/aws_outposts_outpost_instance_types.json
+var dataAwsOutpostsOutpostInstanceTypes []byte
+
+//go:embed mapping/aws/data/outposts/aws_outposts_sites.json
+var dataAwsOutpostSites []byte
+
+//go:embed mapping/aws/data/outposts/aws_outposts_sites.json
+var dataAwsOutpostsSites []byte
+
+//go:embed mapping/aws/data/route53/aws_route53_delegation_set.json
+var dataAwsRoute53DelegationSet []byte
+
+//go:embed mapping/aws/data/route53resolver/aws_route53_resolver_endpoint.json
+var dataAwsRoute53ResolverEndpoint []byte
+
+//go:embed mapping/aws/data/route53resolver/aws_route53_resolver_query_log_config.json
+var dataAwsRoute53ResolverQueryLogConfig []byte
+
+//go:embed mapping/aws/data/route53resolver/aws_route53_resolver_rules.json
+var dataAwsRoute53ResolverRules []byte
+
+//go:embed mapping/aws/data/servicecatalog/aws_servicecatalog_constraint.json
+var dataAwsSevicecatalogConstraint []byte
+
+//go:embed mapping/aws/data/servicecatalog/aws_servicecatalog_launch_paths.json
+var dataAwsSevicecatalogLaunchPaths []byte
+
+//go:embed mapping/aws/data/servicecatalog/aws_servicecatalog_portfolio.json
+var dataAwsSevicecatalogPortfolio []byte
+
+//go:embed mapping/aws/data/servicecatalog/aws_servicecatalog_portfolio_constraints.json
+var dataAwsSevicecatalogPortfolioConstraints []byte
+
+//go:embed mapping/aws/data/servicecatalog/aws_servicecatalog_product.json
+var dataAwsSevicecatalogProduct []byte
+
+//go:embed mapping/aws/data/servicecatalog/aws_servicecatalog_provisioning_artifacts.json
+var dataAwsSevicecatalogProvisioningArtifacts []byte
+
+//go:embed mapping/aws/data/ses/aws_sesv2_configuration_set.json
+var dataAwsSesv2ConfigurationSet []byte
+
+//go:embed mapping/aws/data/ses/aws_ses_email_identity.json
+var dataAwsSesv2EmailIdentity []byte
+
+//go:embed mapping/aws/data/aoss/aws_opensearchserverless_access_policy.json
+var dataAwsOpensearchserverlessAccessPolicy []byte
+
+//go:embed mapping/aws/data/aoss/aws_opensearchserverless_collection.json
+var dataAwsOpensearchserverlessCollection []byte
+
+//go:embed mapping/aws/data/aoss/aws_opensearchserverless_security_config.json
+var dataAwsOpensearchserverlessSecurityConfig []byte
+
+//go:embed mapping/aws/data/aoss/aws_opensearchserverless_security_policy.json
+var dataAwsOpensearchserverlessSecurityPolicy []byte
+
+//go:embed mapping/aws/data/aoss/aws_opensearchserverless_vpc_endpoint.json
+var dataAwsOpensearchserverlessVpcEndpoint []byte

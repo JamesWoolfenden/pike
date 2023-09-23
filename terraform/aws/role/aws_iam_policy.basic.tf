@@ -7,13 +7,32 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          //aws_ses_email_identity, aws_ses_domain_identity
-          "ses:GetIdentityVerificationAttributes",
-          //aws_ses_active_receipt_rule_set
-          "ses:DescribeActiveReceiptRuleSet",
-          //aws_lambda_alias
-          "lambda:GetAlias"
-
+          //aws_oam_sinks
+          "oam:ListSinks",
+          //aws_oam_sink
+          "oam:GetSink",
+          //aws_oam_links
+          "oam:ListLinks",
+          //aws_oam_link
+          "oam:GetLink",
+          //aws_lex_slot_type
+          "lex:GetSlotType",
+          //aws_lex_intent
+          "lex:GetIntent",
+          //aws_lex_bot_alias
+          "lex:GetBotAlias",
+          //aws_lex_bot
+          "lex:GetBot",
+          //aws_kendra_thesaurus
+          "kendra:DescribeThesaurus",
+          //aws_kendra_query_suggestions_block_list
+          "kendra:DescribeQuerySuggestionsBlockList",
+          //aws_kendra_index
+          "kendra:DescribeIndex",
+          //aws_kendra_faq
+          "kendra:DescribeFaq",
+          //aws_kendra_experience
+          "kendra:DescribeExperience"
         ],
         "Resource" : "*",
       }
