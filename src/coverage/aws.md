@@ -1,7 +1,7 @@
-# todo aws
+# todo aws 
 
-Resource percentage coverage   34.45
-Datasource percentage coverage 98.17
+Resource percentage coverage   34.45 
+Datasource percentage coverage 98.17 
 
 ./resource.ps1 aws_accessanalyzer_analyzer
 ./resource.ps1 aws_accessanalyzer_archive_rule
