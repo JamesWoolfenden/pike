@@ -1,7 +1,7 @@
-# todo google
+# todo google 
 
-Resource percentage coverage   5.67
-Datasource percentage coverage 4.15
+Resource percentage coverage   6.02 
+Datasource percentage coverage 5.79 
 
 ./resource.ps1 google_access_context_manager_access_level
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -390,15 +390,23 @@ Datasource percentage coverage 4.15
 ./resource.ps1 google_dialogflow_cx_flow
 ./resource.ps1 google_dialogflow_cx_intent
 ./resource.ps1 google_dialogflow_cx_page
+./resource.ps1 google_dialogflow_cx_security_settings
 ./resource.ps1 google_dialogflow_cx_version
 ./resource.ps1 google_dialogflow_cx_webhook
 ./resource.ps1 google_dialogflow_entity_type
 ./resource.ps1 google_dialogflow_fulfillment
 ./resource.ps1 google_dialogflow_intent
+./resource.ps1 google_dns_managed_zone_iam_binding
+./resource.ps1 google_dns_managed_zone_iam_member
+./resource.ps1 google_dns_managed_zone_iam_policy
+./resource.ps1 google_dns_response_policy
+./resource.ps1 google_dns_response_policy_rule
 ./resource.ps1 google_document_ai_processor
 ./resource.ps1 google_document_ai_processor_default_version
 ./resource.ps1 google_document_ai_warehouse_document_schema
 ./resource.ps1 google_document_ai_warehouse_location
+./resource.ps1 google_edgenetwork_network
+./resource.ps1 google_edgenetwork_subnet
 ./resource.ps1 google_endpoints_service
 ./resource.ps1 google_endpoints_service_consumers_iam_binding
 ./resource.ps1 google_endpoints_service_consumers_iam_member
@@ -655,6 +663,7 @@ Datasource percentage coverage 4.15
 ./resource.ps1 google_runtimeconfig_variable
 ./resource.ps1 google_scc_mute_config
 ./resource.ps1 google_scc_notification_config
+./resource.ps1 google_scc_project_custom_module
 ./resource.ps1 google_scc_source
 ./resource.ps1 google_scc_source_iam_binding
 ./resource.ps1 google_scc_source_iam_member
@@ -771,6 +780,7 @@ Datasource percentage coverage 4.15
 ./resource.ps1 google_billing_account -type data
 ./resource.ps1 google_billing_account_iam_policy -type data
 ./resource.ps1 google_binary_authorization_attestor_iam_policy -type data
+./resource.ps1 google_certificate_manager_certificate_map -type data
 ./resource.ps1 google_client_config -type data
 ./resource.ps1 google_client_openid_userinfo -type data
 ./resource.ps1 google_cloud_identity_group_memberships -type data

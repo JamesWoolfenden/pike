@@ -25,7 +25,6 @@ func Parse(codebase string, name string) error {
 	name = strings.ToLower(name)
 
 	switch name {
-
 	case "google":
 		{
 			match := `resource "(` + name + `_.*?)"`
@@ -40,8 +39,8 @@ func Parse(codebase string, name string) error {
 			}
 		}
 	default:
-		match := `"(` + name + `_.*?)"`
-		myProvider.Resources, err = GetMatches(codebase, match, "go")
+		match := `resource "(` + name + `_.*?)"`
+		myProvider.Resources, err = GetMatches(codebase, match, "markdown")
 
 		if err != nil {
 			return err
@@ -88,7 +87,6 @@ func GetMatches(source string, match string, extension string) ([]string, error)
 		match := re.FindAllString(string(contents), -1)
 
 		for _, item := range match {
-
 			if strings.Contains(item, "%s") {
 				continue
 			}

@@ -41,6 +41,7 @@ func coverageAWS() error {
 
 	target = Prepend + target
 	err := os.WriteFile("aws.md", []byte(target), 0700)
+
 	if err != nil {
 		return err
 	}
