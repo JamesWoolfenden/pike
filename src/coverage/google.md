@@ -756,8 +756,6 @@ Datasource percentage coverage 4.15
 ./resource.ps1 google_api_gateway_gateway_iam_policy -type data
 ./resource.ps1 google_apigee_environment_iam_policy -type data
 ./resource.ps1 google_app_engine_default_service_account -type data
-./resource.ps1 google_artifact_registry_repository -type data
-./resource.ps1 google_artifact_registry_repository_iam_policy -type data
 ./resource.ps1 google_beyondcorp_app_connection -type data
 ./resource.ps1 google_beyondcorp_app_connector -type data
 ./resource.ps1 google_beyondcorp_app_gateway -type data
@@ -915,7 +913,6 @@ Datasource percentage coverage 4.15
 ./resource.ps1 google_project_iam_policy -type data
 ./resource.ps1 google_project_organization_policy -type data
 ./resource.ps1 google_project_service -type data
-./resource.ps1 google_projects -type data
 ./resource.ps1 google_pubsub_subscription -type data
 ./resource.ps1 google_pubsub_subscription_iam_policy -type data
 ./resource.ps1 google_pubsub_topic -type data

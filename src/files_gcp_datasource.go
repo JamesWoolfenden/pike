@@ -36,3 +36,9 @@ var dataGoogleDnsManagedZoneIamPolicy []byte
 
 //go:embed  mapping/google/data/dns/google_dns_record_set.json
 var dataGoogleDnsRecordSet []byte
+
+//go:embed  mapping/google/data/artifactregistry/google_artifact_registry_repository.json
+var dataGoogleArtifactRegistryRepository []byte
+
+//go:embed  mapping/google/data/artifactregistry/google_artifact_registry_repository_iam_policy.json
+var dataGoogleArtifactRegistryRepositoryIamPolicy []byte

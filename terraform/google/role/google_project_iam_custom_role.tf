@@ -32,7 +32,9 @@ resource "google_project_iam_custom_role" "pike" {
     #    "dns.managedZones.list",
     #    "dns.managedZones.update",
 
-    "dns.networks.bindDNSResponsePolicy",
+    "artifactregistry.repositories.get",
+    //google_artifact_registry_repository_iam_policy
+    "artifactregistry.repositories.getIamPolicy",
     #    "dns.networks.bindPrivateDNSPolicy",
     #    "dns.networks.bindPrivateDNSZone",
     #    "dns.networks.targetWithPeeringZone",
