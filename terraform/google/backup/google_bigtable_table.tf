@@ -42,3 +42,24 @@ EOF
 
   deletion_protection = false
 }
+
+resource "google_bigtable_table" "table" {
+  name          = "tf-table"
+  instance_name = google_bigtable_instance.instance.name
+  split_keys    = ["a", "b", "c", "d"]
+
+  lifecycle {
+    prevent_destroy = false
+  }
+
+  column_family {
+    family = "family-first"
+  }
+
+  column_family {
+    family = "family-second"
+  }
+
+  change_stream_retention = "0"
+
+}

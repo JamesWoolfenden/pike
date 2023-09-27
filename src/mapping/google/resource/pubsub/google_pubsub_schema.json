@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "pubsub.schemas.attach",
+      "pubsub.schemas.create",
+      "pubsub.schemas.delete",
+      "pubsub.schemas.get",
+      "pubsub.schemas.list",
+      "pubsub.schemas.listRevisions"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

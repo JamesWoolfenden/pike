@@ -98,6 +98,15 @@ func GCPLookup(result string) interface{} {
 		"google_storage_bucket_acl":                       googleStorageBucketACL,
 		"google_storage_bucket_iam_binding":               googleStorageBucketIamBinding,
 		"google_storage_bucket_object":                    googleStorageBucketObject,
+		"google_bigtable_table":                           googleBigtableTable,
+		"google_bigtable_instance_iam_policy":             googleBigTableInstanceIam,
+		"google_bigtable_instance_iam_member":             googleBigTableInstanceIam,
+		"google_bigtable_instance_iam_binding":            googleBigTableInstanceIam,
+		"google_bigtable_table_iam_binding":               googleBigTableTableIam,
+		"google_bigtable_table_iam_member":                googleBigTableTableIam,
+		"google_bigtable_table_iam_policy":                googleBigTableTableIam,
+		"google_pubsub_schema":                            googlePubsubSchema,
+		"google_pubsub_subscription":                      googlePubsubSubscription,
 	}
 
 	return TFLookup[result]

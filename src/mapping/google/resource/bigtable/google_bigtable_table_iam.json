@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "bigtable.tables.setIamPolicy",
+      "bigtable.tables.getIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

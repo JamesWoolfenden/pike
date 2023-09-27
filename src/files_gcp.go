@@ -150,3 +150,18 @@ var googleBigtableInstance []byte
 
 //go:embed  mapping/google/resource/bigtable/google_bigtable_instance.json
 var googleComputeRegionSslCertificate []byte
+
+//go:embed  mapping/google/resource/bigtable/google_bigtable_table.json
+var googleBigtableTable []byte
+
+//go:embed  mapping/google/resource/bigtable/google_bigtable_instance_iam.json
+var googleBigTableInstanceIam []byte
+
+//go:embed  mapping/google/resource/bigtable/google_bigtable_table_iam.json
+var googleBigTableTableIam []byte
+
+//go:embed  mapping/google/resource/pubsub/google_pubsub_schema.json
+var googlePubsubSchema []byte
+
+//go:embed  mapping/google/resource/pubsub/google_pubsub_subscription.json
+var googlePubsubSubscription []byte

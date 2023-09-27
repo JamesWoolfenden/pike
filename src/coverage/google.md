@@ -101,10 +101,6 @@ Datasource percentage coverage 5.79
 ./resource.ps1 google_bigtable_instance_iam_binding
 ./resource.ps1 google_bigtable_instance_iam_member
 ./resource.ps1 google_bigtable_instance_iam_policy
-./resource.ps1 google_bigtable_table
-./resource.ps1 google_bigtable_table_iam_binding
-./resource.ps1 google_bigtable_table_iam_member
-./resource.ps1 google_bigtable_table_iam_policy
 ./resource.ps1 google_billing_account_iam_binding
 ./resource.ps1 google_billing_account_iam_member
 ./resource.ps1 google_billing_account_iam_policy
@@ -642,8 +638,6 @@ Datasource percentage coverage 5.79
 ./resource.ps1 google_project_services
 ./resource.ps1 google_project_usage_export_bucket
 ./resource.ps1 google_public_ca_external_account_key
-./resource.ps1 google_pubsub_schema
-./resource.ps1 google_pubsub_subscription
 ./resource.ps1 google_pubsub_subscription_iam_binding
 ./resource.ps1 google_pubsub_subscription_iam_member
 ./resource.ps1 google_pubsub_subscription_iam_policy

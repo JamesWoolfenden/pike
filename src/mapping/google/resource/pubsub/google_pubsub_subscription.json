@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "pubsub.subscriptions.create",
+      "pubsub.subscriptions.delete",
+      "pubsub.subscriptions.get",
+      "pubsub.subscriptions.list",
+      "pubsub.subscriptions.update",
+      "pubsub.topics.attachSubscription",
+      "pubsub.topics.detachSubscription"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

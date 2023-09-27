@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "bigtable.tables.create",
+      "bigtable.tables.delete",
+      "bigtable.tables.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "bigtable.tables.delete"
+    ],
+    "modify": [],
+    "plan": [
+      "bigtable.tables.get"
+    ]
+  }
+]
