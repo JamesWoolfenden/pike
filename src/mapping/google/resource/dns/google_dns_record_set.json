@@ -3,10 +3,12 @@
     "apply": [
       "dns.changes.create",
       "dns.changes.get",
+      "dns.changes.list",
       "dns.resourceRecordSets.create",
+      "dns.resourceRecordSets.update",
       "dns.resourceRecordSets.delete",
       "dns.resourceRecordSets.get",
-      "dns.resourceRecordSets.update"
+      "dns.resourceRecordSets.list"
     ],
     "attributes": {
       "tags": []

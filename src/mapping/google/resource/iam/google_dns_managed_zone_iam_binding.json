@@ -1,6 +1,9 @@
 [
   {
-    "apply": [],
+    "apply": [
+      "iam.serviceAccounts.getIamPolicy",
+      "iam.serviceAccounts.setIamPolicy"
+    ],
     "attributes": {
       "tags": []
     },

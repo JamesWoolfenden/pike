@@ -7,11 +7,14 @@
       "dns.managedZones.update"
     ],
     "attributes": {
-      "tags": [],
-      "visibility": [
+      "gke_clusters": [
+        "dns.gkeClusters.bindPrivateDNSZone"
+      ],
+      "private_visibility_config": [
         "dns.networks.bindPrivateDNSZone",
         "dns.networks.targetWithPeeringZone"
-      ]
+      ],
+      "tags": []
     },
     "destroy": [
       "dns.managedZones.delete"

@@ -4,64 +4,14 @@ resource "google_project_iam_custom_role" "pike" {
   title       = "pike terraform user"
   description = "A user with least privileges"
   permissions = [
-
-    "compute.networks.get",
-    "compute.networks.list",
-    "compute.networks.create",
-    "compute.networks.delete",
-
-    #   "dns.changes.create",
-    #   "dns.changes.get",
-    #   "dns.resourceRecordSets.create",
-    #  "dns.resourceRecordSets.delete",
-    #    "dns.resourceRecordSets.get",
-    #    "dns.resourceRecordSets.list",
-    #    "dns.resourceRecordSets.update",
-    #    "dns.changes.list",
-
-    #    "dns.dnsKeys.get",
-    #    "dns.dnsKeys.list",
-
-    #    "dns.managedZoneOperations.get",
-    #    "dns.managedZoneOperations.list",
-    #
-    #    "dns.managedZones.create",
-    #    "dns.managedZones.delete",
-    #    "dns.managedZones.get",
-    #    "dns.managedZones.getIamPolicy",
-    #    "dns.managedZones.list",
-    #    "dns.managedZones.update",
-
-    "artifactregistry.repositories.get",
-    //google_artifact_registry_repository_iam_policy
-    "artifactregistry.repositories.getIamPolicy",
-    #    "dns.networks.bindPrivateDNSPolicy",
-    #    "dns.networks.bindPrivateDNSZone",
-    #    "dns.networks.targetWithPeeringZone",
-    #    "dns.networks.useHealthSignals",
-    #
-    #    "dns.policies.create",
-    #    "dns.policies.delete",
-    #    "dns.policies.get",
-    #    "dns.policies.getIamPolicy",
-    #    "dns.policies.list",
-    #    "dns.policies.update",
-
-    //"dns.projects.get",
-
-    "dns.responsePolicies.create",
-    "dns.responsePolicies.delete",
-    "dns.responsePolicies.get",
-    "dns.responsePolicies.list",
-    "dns.responsePolicies.update",
-
-    "dns.responsePolicyRules.create",
-    "dns.responsePolicyRules.delete",
-    "dns.responsePolicyRules.get",
-    "dns.responsePolicyRules.list",
-    "dns.responsePolicyRules.update",
-
-    //"resourcemanager.projects.get",
+    //bigquery
+    "bigquery.datasets.create",
+    //google_bigtable_instance
+    "bigtable.instances.create",
+    "bigtable.instances.get",
+    "bigtable.clusters.list",
+    "bigtable.instances.update",
+    "bigtable.instances.delete"
 
   ]
 }

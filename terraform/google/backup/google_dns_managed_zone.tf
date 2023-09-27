@@ -1,11 +1,13 @@
 resource "google_dns_managed_zone" "pike" {
-  name     = "prod-zone"
-  dns_name = "freebeer.site."
+  name        = "pike"
+  dns_name    = "freebeer.site."
+  description = "Example DNS zone"
   labels = {
-    pike = "permissions"
+    foo = "bar"
   }
-}
-
-output "zone" {
-  value = google_dns_managed_zone.pike
+  private_visibility_config {
+    gke_clusters {
+      gke_cluster_name = google_container_cluster.cluster-1.id
+    }
+  }
 }

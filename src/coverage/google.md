@@ -1,7 +1,7 @@
-# todo google 
+# todo google
 
-Resource percentage coverage   6.02 
-Datasource percentage coverage 5.79 
+Resource percentage coverage   6.02
+Datasource percentage coverage 5.79
 
 ./resource.ps1 google_access_context_manager_access_level
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -98,7 +98,6 @@ Datasource percentage coverage 5.79
 ./resource.ps1 google_bigquery_table_iam_policy
 ./resource.ps1 google_bigtable_app_profile
 ./resource.ps1 google_bigtable_gc_policy
-./resource.ps1 google_bigtable_instance
 ./resource.ps1 google_bigtable_instance_iam_binding
 ./resource.ps1 google_bigtable_instance_iam_member
 ./resource.ps1 google_bigtable_instance_iam_policy
@@ -637,7 +636,6 @@ Datasource percentage coverage 5.79
 ./resource.ps1 google_project_access_approval_settings
 ./resource.ps1 google_project_default_service_accounts
 ./resource.ps1 google_project_iam_audit_config
-./resource.ps1 google_project_iam_policy
 ./resource.ps1 google_project_organization_policy
 ./resource.ps1 google_project_service
 ./resource.ps1 google_project_service_identity
@@ -674,8 +672,6 @@ Datasource percentage coverage 5.79
 ./resource.ps1 google_secret_manager_secret_iam_policy
 ./resource.ps1 google_secret_manager_secret_version
 ./resource.ps1 google_security_scanner_scan_config
-./resource.ps1 google_service_account_iam_binding
-./resource.ps1 google_service_account_iam_member
 ./resource.ps1 google_service_directory_endpoint
 ./resource.ps1 google_service_directory_namespace
 ./resource.ps1 google_service_directory_namespace_iam_binding
@@ -920,7 +916,6 @@ Datasource percentage coverage 5.79
 ./resource.ps1 google_privateca_ca_pool_iam_policy -type data
 ./resource.ps1 google_privateca_certificate_authority -type data
 ./resource.ps1 google_privateca_certificate_template_iam_policy -type data
-./resource.ps1 google_project_iam_policy -type data
 ./resource.ps1 google_project_organization_policy -type data
 ./resource.ps1 google_project_service -type data
 ./resource.ps1 google_pubsub_subscription -type data

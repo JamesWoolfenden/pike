@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "bigtable.instances.create",
+      "bigtable.instances.get",
+      "bigtable.clusters.list",
+      "bigtable.instances.update",
+      "bigtable.instances.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "bigtable.instances.delete"
+    ],
+    "modify": [
+      "bigtable.instances.update"
+    ],
+    "plan": [
+      "bigtable.instances.get"
+    ]
+  }
+]

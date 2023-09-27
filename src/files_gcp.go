@@ -138,3 +138,15 @@ var googleDnsPolicy []byte
 
 //go:embed  mapping/google/resource/dns/google_dns_record_set.json
 var googleDnsRecordSet []byte
+
+//go:embed  mapping/google/resource/iam/google_service_account_iam_binding.json
+var googleServiceAccountIamBinding []byte
+
+//go:embed  mapping/google/resource/iam/google_service_account_iam_member.json
+var googleServiceAccountIamMember []byte
+
+//go:embed  mapping/google/resource/bigtable/google_bigtable_instance.json
+var googleBigtableInstance []byte
+
+//go:embed  mapping/google/resource/bigtable/google_bigtable_instance.json
+var googleComputeRegionSslCertificate []byte

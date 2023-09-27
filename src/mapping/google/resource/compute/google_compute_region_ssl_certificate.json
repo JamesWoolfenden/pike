@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "compute.regionSslCertificates.create",
+      "compute.regionSslCertificates.get",
+      "compute.regionSslCertificates.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.regionSslCertificates.delete"
+    ],
+    "modify": [],
+    "plan": [
+      "compute.regionSslCertificates.get"
+    ]
+  }
+]
