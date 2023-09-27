@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "account:DeleteAlternateContact",
+      "account:GetAlternateContact",
+      "account:PutAlternateContact"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "account:DeleteAlternateContact"
+    ],
+    "modify": [
+      "account:PutAlternateContact"
+    ],
+    "plan": [
+      "account:GetAlternateContact"
+    ]
+  }
+]

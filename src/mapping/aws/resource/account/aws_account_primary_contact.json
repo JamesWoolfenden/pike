@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "account:GetContactInformation",
+      "account:PutContactInformation"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [
+      "account:PutContactInformation"
+    ],
+    "plan": [
+      "account:GetContactInformation"
+    ]
+  }
+]
