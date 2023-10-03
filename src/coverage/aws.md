@@ -1,10 +1,12 @@
 # todo aws
 
-Resource percentage coverage   34.45
+Resource percentage coverage   34.34
 Datasource percentage coverage 98.17
 
 ./resource.ps1 aws_accessanalyzer_analyzer
 ./resource.ps1 aws_accessanalyzer_archive_rule
+./resource.ps1 aws_account_alternate_contact
+./resource.ps1 aws_account_primary_contact
 ./resource.ps1 aws_acmpca_permission
 ./resource.ps1 aws_acmpca_policy
 ./resource.ps1 aws_ami
@@ -99,6 +101,7 @@ Datasource percentage coverage 98.17
 ./resource.ps1 aws_chimesdkvoice_sip_rule
 ./resource.ps1 aws_chimesdkvoice_voice_profile_domain
 ./resource.ps1 aws_cleanrooms_collaboration
+./resource.ps1 aws_cleanrooms_configured_table
 ./resource.ps1 aws_cloud9_environment_membership
 ./resource.ps1 aws_cloudcontrolapi_resource
 ./resource.ps1 aws_cloudformation_stack
@@ -336,6 +339,7 @@ Datasource percentage coverage 98.17
 ./resource.ps1 aws_grafana_workspace
 ./resource.ps1 aws_grafana_workspace_saml_configuration
 ./resource.ps1 aws_guardduty_detector
+./resource.ps1 aws_guardduty_detector_feature
 ./resource.ps1 aws_guardduty_filter
 ./resource.ps1 aws_guardduty_invite_accepter
 ./resource.ps1 aws_guardduty_ipset
@@ -409,6 +413,7 @@ Datasource percentage coverage 98.17
 ./resource.ps1 aws_lex_bot_alias
 ./resource.ps1 aws_lex_intent
 ./resource.ps1 aws_lex_slot_type
+./resource.ps1 aws_lexv2models_bot
 ./resource.ps1 aws_licensemanager_association
 ./resource.ps1 aws_licensemanager_grant
 ./resource.ps1 aws_licensemanager_grant_accepter
@@ -563,6 +568,7 @@ Datasource percentage coverage 98.17
 ./resource.ps1 aws_ram_resource_share_accepter
 ./resource.ps1 aws_ram_sharing_with_organization
 ./resource.ps1 aws_rbin_rule
+./resource.ps1 aws_rds_custom_db_engine_version
 ./resource.ps1 aws_rds_export_task
 ./resource.ps1 aws_rds_reserved_instance
 ./resource.ps1 aws_redshift_cluster_snapshot
@@ -709,6 +715,8 @@ Datasource percentage coverage 98.17
 ./resource.ps1 aws_simpledb_domain
 ./resource.ps1 aws_snapshot_create_volume_permission
 ./resource.ps1 aws_sns_platform_application
+./resource.ps1 aws_sns_sms_preferences
+./resource.ps1 aws_sns_topic_data_protection_policy
 ./resource.ps1 aws_spot_datafeed_subscription
 ./resource.ps1 aws_spot_fleet_request
 ./resource.ps1 aws_ssm_activation
@@ -716,6 +724,9 @@ Datasource percentage coverage 98.17
 ./resource.ps1 aws_ssm_default_patch_baseline
 ./resource.ps1 aws_ssm_resource_data_sync
 ./resource.ps1 aws_ssm_service_setting
+./resource.ps1 aws_ssmcontacts_contact
+./resource.ps1 aws_ssmcontacts_contact_channel
+./resource.ps1 aws_ssmcontacts_plan
 ./resource.ps1 aws_ssmincidents_replication_set
 ./resource.ps1 aws_ssmincidents_response_plan
 ./resource.ps1 aws_ssoadmin_account_assignment
@@ -735,6 +746,7 @@ Datasource percentage coverage 98.17
 ./resource.ps1 aws_storagegateway_tape_pool
 ./resource.ps1 aws_storagegateway_upload_buffer
 ./resource.ps1 aws_storagegateway_working_storage
+./resource.ps1 aws_swf_domain
 ./resource.ps1 aws_synthetics_canary
 ./resource.ps1 aws_synthetics_group
 ./resource.ps1 aws_synthetics_group_association

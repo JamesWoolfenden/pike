@@ -27,11 +27,10 @@ func NewAWSPolicy(actions []string) (Policy, error) {
 
 	sort.Strings(actions)
 
-	var categories []string
+	categories := make([]string, len(actions))
 
-	for _, action := range actions {
-		prefix := strings.Split(action, ":")[0]
-		categories = append(categories, prefix)
+	for index, action := range actions {
+		categories[index] = strings.Split(action, ":")[0]
 	}
 
 	sections := Unique(categories)
@@ -50,6 +49,7 @@ func NewAWSPolicy(actions []string) (Policy, error) {
 		if myActions == nil {
 			return something, fmt.Errorf("failed to find any action")
 		}
+
 		state := Statement{
 			Sid: "VisualEditor" + strconv.Itoa(count), Effect: "Allow", Action: myActions, Resource: []string{"*"}}
 

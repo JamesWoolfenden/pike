@@ -1,7 +1,7 @@
-# todo azure 
+# todo azure
 
-Resource percentage coverage   5.21 
-Datasource percentage coverage 12.83 
+Resource percentage coverage   5.20
+Datasource percentage coverage 12.83
 
 ./resource.ps1 azurerm_aadb2c_directory
 ./resource.ps1 azurerm_active_directory_domain_service
@@ -82,6 +82,7 @@ Datasource percentage coverage 12.83
 ./resource.ps1 azurerm_application_insights_smart_detection_rule
 ./resource.ps1 azurerm_application_insights_workbook
 ./resource.ps1 azurerm_application_insights_workbook_template
+./resource.ps1 azurerm_application_load_balancer
 ./resource.ps1 azurerm_application_security_group
 ./resource.ps1 azurerm_arc_kubernetes_cluster
 ./resource.ps1 azurerm_arc_kubernetes_cluster_extension
@@ -350,6 +351,7 @@ Datasource percentage coverage 12.83
 ./resource.ps1 azurerm_frontdoor_rules_engine
 ./resource.ps1 azurerm_function_app
 ./resource.ps1 azurerm_function_app_active_slot
+./resource.ps1 azurerm_function_app_connection
 ./resource.ps1 azurerm_function_app_function
 ./resource.ps1 azurerm_function_app_hybrid_connection
 ./resource.ps1 azurerm_function_app_slot
@@ -707,6 +709,7 @@ Datasource percentage coverage 12.83
 ./resource.ps1 azurerm_resource_group_policy_exemption
 ./resource.ps1 azurerm_resource_group_policy_remediation
 ./resource.ps1 azurerm_resource_group_template_deployment
+./resource.ps1 azurerm_resource_management_private_link
 ./resource.ps1 azurerm_resource_policy_assignment
 ./resource.ps1 azurerm_resource_policy_exemption
 ./resource.ps1 azurerm_resource_policy_remediation

@@ -12,6 +12,7 @@ Main:
     - github.com/go-git/go-git/v5
     - github.com/go-git/go-git/v5/plumbing
     - github.com/gobeam/stringy
+    - github.com/google/go-github/v47/github
     - github.com/hashicorp/hc-install/product
     - github.com/hashicorp/hc-install/releases
     - github.com/hashicorp/terraform-exec/tfexec

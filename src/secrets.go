@@ -18,6 +18,7 @@ import (
 // Remote updates a repo with AWS credentials.
 func Remote(target string, repository string, region string) error {
 	iamRole, err := Make(target)
+
 	const magic = 5
 
 	time.Sleep(magic * time.Second)
@@ -89,6 +90,7 @@ func SetRepoSecret(repository string, keyText string, keyName string) (*github.R
 	if err != nil {
 		return response, err
 	}
+
 	return response, nil
 }
 
@@ -134,19 +136,20 @@ func GetGithubClient() (context.Context, *github.Client) {
 	tc := oauth2.NewClient(ctx, ts)
 
 	client := github.NewClient(tc)
+
 	return ctx, client
 }
 
 // GetPublicKeyDetails obtains the public key of the owner.
-func GetPublicKeyDetails(owner string, repository string) (keyID, pkValue string, err error) {
+func GetPublicKeyDetails(owner string, repository string) (string, string, error) {
 	ctx, client := GetGithubClient()
 
 	publicKey, _, err := client.Actions.GetRepoPublicKey(ctx, owner, repository)
 	if err != nil {
-		return keyID, pkValue, err
+		return "", "", err
 	}
 
-	return publicKey.GetKeyID(), publicKey.GetKey(), err
+	return publicKey.GetKeyID(), publicKey.GetKey(), nil
 }
 
 // EncryptPlaintext standard encryption.

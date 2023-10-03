@@ -541,9 +541,7 @@ func GetPermissionMap(raw []byte, attributes []string) ([]string, error) {
 		fmt.Errorf("assertion failed")
 	}
 
-	var (
-		found []string
-	)
+	var found []string
 
 	for _, attribute := range attributes {
 		if myAttributes[attribute] != nil {
@@ -553,9 +551,7 @@ func GetPermissionMap(raw []byte, attributes []string) ([]string, error) {
 		}
 	}
 
-	actions := []string{"apply", "plan", "modify", "destroy"}
-
-	for _, action := range actions {
+	for _, action := range []string{"apply", "plan", "modify", "destroy"} {
 		if temp[action] != nil {
 			for _, entry := range temp[action].([]interface{}) {
 				found = append(found, entry.(string))

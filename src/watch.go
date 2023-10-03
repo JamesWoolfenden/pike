@@ -16,7 +16,7 @@ import (
 	"github.com/rs/zerolog/log"
 )
 
-// Watch looks at IAM policy for new revisions
+// Watch looks at IAM policy for new revisions.
 func Watch(arn string, wait int) error {
 	// Load the Shared AWS Configuration (~/.aws/config)
 	cfg, err := config.LoadDefaultConfig(context.TODO())
@@ -43,7 +43,7 @@ func Watch(arn string, wait int) error {
 	return nil
 }
 
-// WaitForPolicyChange looks at IAM policy change
+// WaitForPolicyChange looks at IAM policy change.
 func WaitForPolicyChange(client *iam.Client, arn string, version string, wait int) (int, error) {
 	magic := 5
 
@@ -75,7 +75,7 @@ func GetVersion(client *iam.Client, policyArn string) (*string, error) {
 	return output.Policy.DefaultVersionId, nil
 }
 
-// GetPolicyVersion Obtains the versioned IAM policy
+// GetPolicyVersion Obtains the versioned IAM policy.
 func GetPolicyVersion(client *iam.Client, policyArn string, version string) (*string, error) {
 	output, err := client.GetPolicyVersion(
 		context.TODO(),
@@ -100,7 +100,7 @@ func GetPolicyVersion(client *iam.Client, policyArn string, version string) (*st
 	return fixed, err
 }
 
-// SortActions sorts the actions list of an IAM policy
+// SortActions sorts the actions list of an IAM policy.
 func SortActions(myPolicy string) (*string, error) {
 	var raw map[string]interface{}
 	err := json.Unmarshal([]byte(myPolicy), &raw)
@@ -109,14 +109,22 @@ func SortActions(myPolicy string) (*string, error) {
 		return nil, err
 	}
 
-	Statements := raw["Statement"].([]interface{})
+	Statements, ok := raw["Statement"].([]interface{})
+
+	if !ok {
+		return nil, fmt.Errorf("failed to assert list of interface for Statements")
+	}
 
 	var (
 		NewStatements []interface{}
 	)
 
 	for _, block := range Statements {
-		blocked := block.(map[string]interface{})
+		blocked, ok := block.(map[string]interface{})
+		if !ok {
+			log.Info().Msgf("assertion failed")
+		}
+
 		Actions := blocked["Action"]
 		myType := reflect.TypeOf(Actions)
 
@@ -141,13 +149,25 @@ func SortActions(myPolicy string) (*string, error) {
 }
 
 func sortInterfaceStrings(actions interface{}) []string {
-	temp := actions.([]interface{})
+	temp, ok := actions.([]interface{})
 
-	var myActions []string
+	if !ok {
+		log.Info().Msgf("failed to assert list for actions")
 
-	for _, action := range temp {
-		myAction := action.(string)
-		myActions = append(myActions, myAction)
+		return nil
+	}
+
+	myActions := make([]string, len(temp))
+
+	for index, action := range temp {
+		myAction, ok := action.(string)
+		if !ok {
+			log.Info().Msgf("failed to convert to string %s", action)
+
+			continue
+		}
+
+		myActions[index] = myAction
 	}
 
 	sort.Strings(myActions)

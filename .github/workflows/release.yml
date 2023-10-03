@@ -43,7 +43,7 @@ jobs:
     steps:
       - uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4.1.0
       - name: Publish to Registry
-        uses: elgohr/Publish-Docker-Github-Action@219613003b08f4d049f34cb56c92e84345e1bb3f # v5
+        uses: elgohr/Publish-Docker-Github-Action@82556589c08f584cb95411629a94e6c2b68b9b80 # v5
         with:
           name: jameswoolfenden/pike
           username: ${{ secrets.DOCKERHUB_USERNAME }}
