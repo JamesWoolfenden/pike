@@ -103,7 +103,7 @@ docker run --tty --volume /local/path/to/tf:/tf jameswoolfenden/pike scan -d /tf
 
 ### Scan
 
-To scan a directory of Terraform file:
+To scan a directory containing Terraform files:
 
 ```shell
 ./pike scan -d .\terraform\
