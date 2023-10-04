@@ -42,3 +42,42 @@ var dataGoogleArtifactRegistryRepository []byte
 
 //go:embed  mapping/google/data/artifactregistry/google_artifact_registry_repository_iam_policy.json
 var dataGoogleArtifactRegistryRepositoryIamPolicy []byte
+
+//go:embed  mapping/google/data/bigquery/google_app_engine_default_service_account.json
+var dataGoogleAppEngineDefaultServiceAccount []byte
+
+//go:embed  mapping/google/data/bigquery/google_bigquery_datapolicy_data_policy_iam_policy.json
+var dataGoogleBigqueryDatapolicyDataPolicyIamPolicy []byte
+
+//go:embed  mapping/google/data/bigquery/google_app_engine_default_service_account.json
+var dataGoogleBigqueryDefaultServiceAccount []byte
+
+//go:embed  mapping/google/data/bigtable/google_bigtable_instance_iam_policy.json
+var dataGoogleBigtableInstanceIamPolicy []byte
+
+//go:embed  mapping/google/data/analyticshub/google_bigquery_analytics_hub_data_exchange_iam_policy.json
+var dataGoogleBigqueryHubDataExchangeIamPolicy []byte
+
+//go:embed  mapping/google/data/analyticshub/google_bigquery_analytics_hub_listing_iam_policy.json
+var dataGoogleBigqueryAnalyticsHubListingIamPolicy []byte
+
+//go:embed  mapping/google/data/cloudkms/google_kms_key_ring_iam_policy.json
+var dataGoogleKmsKeyRingIamPolicy []byte
+
+//go:embed  mapping/google/data/cloudkms/google_kms_secret.json
+var dataGoogleKmsSecret []byte
+
+//go:embed  mapping/google/data/cloudkms/google_kms_secret_asymmetric.json
+var dataGoogleKmsSecretAsymnetric []byte
+
+//go:embed  mapping/google/data/pubsub/google_pubsub_subscription.json
+var dataGooglePubsubSubscription []byte
+
+//go:embed  mapping/google/data/pubsub/google_pubsub_subscription_iam_policy.json
+var dataGooglePubsubSubscriptionIamPolicy []byte
+
+//go:embed  mapping/google/data/pubsub/google_pubsub_topic.json
+var dataGooglePubsubTopic []byte
+
+//go:embed  mapping/google/data/pubsub/google_pubsub_topic_iam_policy.json
+var dataGooglePubsubTopicIamPolicy []byte

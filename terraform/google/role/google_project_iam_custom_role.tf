@@ -4,33 +4,19 @@ resource "google_project_iam_custom_role" "pike" {
   title       = "pike terraform user"
   description = "A user with least privileges"
   permissions = [
-    "resourcemanager.projects.get",
-
-    //schema
-    "pubsub.schemas.attach",
-    //"pubsub.schemas.commit",
-    "pubsub.schemas.create",
-    "pubsub.schemas.delete",
-    "pubsub.schemas.get",
-    "pubsub.schemas.list",
-    "pubsub.schemas.listRevisions",
-    //"pubsub.schemas.rollback",
-    //"pubsub.schemas.validate",
-
-    //topics
-    "pubsub.topics.create",
-    "pubsub.topics.delete",
-    "pubsub.topics.get",
-    "pubsub.topics.list",
-
-    //subscription
-    //"pubsub.subscriptions.consume",
-    "pubsub.subscriptions.create",
-    "pubsub.subscriptions.delete",
+    //google_kms_secret
+    "cloudkms.cryptoKeyVersions.useToDecrypt",
+    //google_kms_key_ring_iam_policy
+    "cloudkms.keyRings.getIamPolicy",
+    //google_pubsub_subscription
     "pubsub.subscriptions.get",
-    "pubsub.subscriptions.list",
-    "pubsub.subscriptions.update",
-    "pubsub.topics.attachSubscription",
-    "pubsub.topics.detachSubscription",
+    //topics
+    "pubsub.topics.get",
+    "pubsub.topics.getIamPolicy",
+    "pubsub.subscriptions.getIamPolicy",
+
+    //google_kms_secret_asymmetric
+    "cloudkms.cryptoKeyVersions.useToDecrypt"
+
   ]
 }
