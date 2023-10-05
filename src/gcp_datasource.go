@@ -62,6 +62,18 @@ func GCPDataLookup(result string) interface{} {
 		"google_pubsub_topic":                                    dataGooglePubsubTopic,
 		"google_pubsub_topic_iam_policy":                         dataGooglePubsubTopicIamPolicy,
 		"google_service_account":                                 dataGoogleServiceAccount,
+		"google_spanner_database_iam_policy":                     dataGoogleSpannerDatabaseIamPolicy,
+		"google_spanner_instance":                                dataGoogleSpannerInstance,
+		"google_spanner_instance_iam_policy":                     dataGoogleSpannerInstanceIamPolicy,
+		"google_storage_bucket":                                  dataGoogleStorageBucket,
+		"google_storage_bucket_iam_policy":                       dataGoogleStorageBucketIamPolicy,
+		"google_storage_bucket_object":                           dataGoogleStorageBucketObject,
+		"google_storage_bucket_object_content":                   dataGoogleStorageBucketObjectContent,
+		"google_storage_object_signed_url":                       placeholder,
+		"google_storage_project_service_account":                 dataGoogleStorageProjectServiceAccount,
+		"google_storage_transfer_project_service_account":        dataGoogleStorageTransferProjectServiceAccount,
+		"google_vertex_ai_featurestore_entitytype_iam_policy":    dataGoogleVertexAiFeaturestoreEntitytypeIamPolicy,
+		"google_vertex_ai_featurestore_iam_policy":               dataGoogleVertexAiFeaturestoreIamPolicy,
 	}
 	return TFLookup[result]
 }

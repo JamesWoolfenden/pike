@@ -81,3 +81,36 @@ var dataGooglePubsubTopic []byte
 
 //go:embed  mapping/google/data/pubsub/google_pubsub_topic_iam_policy.json
 var dataGooglePubsubTopicIamPolicy []byte
+
+//go:embed  mapping/google/data/spanner/google_spanner_database_iam_policy.json
+var dataGoogleSpannerDatabaseIamPolicy []byte
+
+//go:embed  mapping/google/data/spanner/google_spanner_instance.json
+var dataGoogleSpannerInstance []byte
+
+//go:embed  mapping/google/data/spanner/google_spanner_instance_iam_policy.json
+var dataGoogleSpannerInstanceIamPolicy []byte
+
+//go:embed  mapping/google/data/storage/google_storage_bucket.json
+var dataGoogleStorageBucket []byte
+
+//go:embed  mapping/google/data/storage/google_storage_bucket_iam_policy.json
+var dataGoogleStorageBucketIamPolicy []byte
+
+//go:embed  mapping/google/data/storage/google_storage_bucket_object.json
+var dataGoogleStorageBucketObject []byte
+
+//go:embed  mapping/google/data/storage/google_storage_bucket_object_content.json
+var dataGoogleStorageBucketObjectContent []byte
+
+//go:embed  mapping/google/data/resourcemanager/google_storage_project_service_account.json
+var dataGoogleStorageProjectServiceAccount []byte
+
+//go:embed  mapping/google/data/storagetransfer/google_storage_transfer_project_service_account.json
+var dataGoogleStorageTransferProjectServiceAccount []byte
+
+//go:embed  mapping/google/data/aiplatform/google_vertex_ai_featurestore_entitytype_iam_policy.json
+var dataGoogleVertexAiFeaturestoreEntitytypeIamPolicy []byte
+
+//go:embed  mapping/google/data/aiplatform/google_vertex_ai_featurestore_iam_policy.json
+var dataGoogleVertexAiFeaturestoreIamPolicy []byte

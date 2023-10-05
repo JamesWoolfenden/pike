@@ -1,7 +1,7 @@
 # todo google
 
-Resource percentage coverage   7.67
-Datasource percentage coverage 7.08
+Resource percentage coverage   7.66
+Datasource percentage coverage 15.83
 
 ./resource.ps1 google_access_context_manager_access_level
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -450,6 +450,7 @@ Datasource percentage coverage 7.08
 ./resource.ps1 google_gke_hub_feature_iam_member
 ./resource.ps1 google_gke_hub_feature_iam_policy
 ./resource.ps1 google_gke_hub_feature_membership
+./resource.ps1 google_gke_hub_fleet
 ./resource.ps1 google_gke_hub_membership
 ./resource.ps1 google_gke_hub_membership_binding
 ./resource.ps1 google_gke_hub_membership_iam_binding
@@ -737,6 +738,7 @@ Datasource percentage coverage 7.08
 ./resource.ps1 google_workstations_workstation_iam_binding
 ./resource.ps1 google_workstations_workstation_iam_member
 ./resource.ps1 google_workstations_workstation_iam_policy
+
 ./resource.ps1 google_access_approval_folder_service_account -type data
 ./resource.ps1 google_access_approval_organization_service_account -type data
 ./resource.ps1 google_access_approval_project_service_account -type data
@@ -906,9 +908,6 @@ Datasource percentage coverage 7.08
 ./resource.ps1 google_service_directory_service_iam_policy -type data
 ./resource.ps1 google_sourcerepo_repository -type data
 ./resource.ps1 google_sourcerepo_repository_iam_policy -type data
-./resource.ps1 google_spanner_database_iam_policy -type data
-./resource.ps1 google_spanner_instance -type data
-./resource.ps1 google_spanner_instance_iam_policy -type data
 ./resource.ps1 google_sql_backup_run -type data
 ./resource.ps1 google_sql_ca_certs -type data
 ./resource.ps1 google_sql_database -type data
@@ -917,13 +916,6 @@ Datasource percentage coverage 7.08
 ./resource.ps1 google_sql_database_instances -type data
 ./resource.ps1 google_sql_databases -type data
 ./resource.ps1 google_sql_tiers -type data
-./resource.ps1 google_storage_bucket -type data
-./resource.ps1 google_storage_bucket_iam_policy -type data
-./resource.ps1 google_storage_bucket_object -type data
-./resource.ps1 google_storage_bucket_object_content -type data
-./resource.ps1 google_storage_object_signed_url -type data
-./resource.ps1 google_storage_project_service_account -type data
-./resource.ps1 google_storage_transfer_project_service_account -type data
 ./resource.ps1 google_tags_tag_key -type data
 ./resource.ps1 google_tags_tag_key_iam_policy -type data
 ./resource.ps1 google_tags_tag_value -type data
@@ -931,8 +923,6 @@ Datasource percentage coverage 7.08
 ./resource.ps1 google_tpu_tensorflow_versions -type data
 ./resource.ps1 google_tpu_v2_accelerator_types -type data
 ./resource.ps1 google_tpu_v2_runtime_versions -type data
-./resource.ps1 google_vertex_ai_featurestore_entitytype_iam_policy -type data
-./resource.ps1 google_vertex_ai_featurestore_iam_policy -type data
 ./resource.ps1 google_vmwareengine_cluster -type data
 ./resource.ps1 google_vmwareengine_network -type data
 ./resource.ps1 google_vmwareengine_private_cloud -type data
