@@ -1,7 +1,7 @@
 # todo google
 
-Resource percentage coverage   7.66
-Datasource percentage coverage 15.83
+Resource percentage coverage   7.79
+Datasource percentage coverage 30.42
 
 ./resource.ps1 google_access_context_manager_access_level
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -626,7 +626,6 @@ Datasource percentage coverage 15.83
 ./resource.ps1 google_project_iam_audit_config
 ./resource.ps1 google_project_iam_policy
 ./resource.ps1 google_project_organization_policy
-./resource.ps1 google_project_service
 ./resource.ps1 google_project_service_identity
 ./resource.ps1 google_project_services
 ./resource.ps1 google_project_usage_export_bucket
@@ -738,7 +737,6 @@ Datasource percentage coverage 15.83
 ./resource.ps1 google_workstations_workstation_iam_binding
 ./resource.ps1 google_workstations_workstation_iam_member
 ./resource.ps1 google_workstations_workstation_iam_policy
-
 ./resource.ps1 google_access_approval_folder_service_account -type data
 ./resource.ps1 google_access_approval_organization_service_account -type data
 ./resource.ps1 google_access_approval_project_service_account -type data
@@ -754,8 +752,6 @@ Datasource percentage coverage 15.83
 ./resource.ps1 google_billing_account_iam_policy -type data
 ./resource.ps1 google_binary_authorization_attestor_iam_policy -type data
 ./resource.ps1 google_certificate_manager_certificate_map -type data
-./resource.ps1 google_client_config -type data
-./resource.ps1 google_client_openid_userinfo -type data
 ./resource.ps1 google_cloud_identity_group_memberships -type data
 ./resource.ps1 google_cloud_identity_groups -type data
 ./resource.ps1 google_cloud_run_locations -type data
@@ -766,10 +762,6 @@ Datasource percentage coverage 15.83
 ./resource.ps1 google_cloud_tasks_queue_iam_policy -type data
 ./resource.ps1 google_cloudbuild_trigger -type data
 ./resource.ps1 google_cloudbuildv2_connection_iam_policy -type data
-./resource.ps1 google_cloudfunctions2_function -type data
-./resource.ps1 google_cloudfunctions2_function_iam_policy -type data
-./resource.ps1 google_cloudfunctions_function -type data
-./resource.ps1 google_cloudfunctions_function_iam_policy -type data
 ./resource.ps1 google_composer_environment -type data
 ./resource.ps1 google_composer_image_versions -type data
 ./resource.ps1 google_compute_address -type data
@@ -848,11 +840,6 @@ Datasource percentage coverage 15.83
 ./resource.ps1 google_folder_iam_policy -type data
 ./resource.ps1 google_folder_organization_policy -type data
 ./resource.ps1 google_folders -type data
-./resource.ps1 google_gke_backup_backup_plan_iam_policy -type data
-./resource.ps1 google_gke_backup_restore_plan_iam_policy -type data
-./resource.ps1 google_gke_hub_feature_iam_policy -type data
-./resource.ps1 google_gke_hub_membership_iam_policy -type data
-./resource.ps1 google_gke_hub_scope_iam_policy -type data
 ./resource.ps1 google_healthcare_consent_store_iam_policy -type data
 ./resource.ps1 google_healthcare_dataset_iam_policy -type data
 ./resource.ps1 google_healthcare_dicom_store_iam_policy -type data
@@ -870,8 +857,6 @@ Datasource percentage coverage 15.83
 ./resource.ps1 google_iap_web_region_backend_service_iam_policy -type data
 ./resource.ps1 google_iap_web_type_app_engine_iam_policy -type data
 ./resource.ps1 google_iap_web_type_compute_iam_policy -type data
-./resource.ps1 google_kms_crypto_key_iam_policy -type data
-./resource.ps1 google_kms_crypto_key_version -type data
 ./resource.ps1 google_logging_project_cmek_settings -type data
 ./resource.ps1 google_monitoring_app_engine_service -type data
 ./resource.ps1 google_monitoring_cluster_istio_service -type data
@@ -889,21 +874,11 @@ Datasource percentage coverage 15.83
 ./resource.ps1 google_privateca_certificate_template_iam_policy -type data
 ./resource.ps1 google_project_iam_policy -type data
 ./resource.ps1 google_project_organization_policy -type data
-./resource.ps1 google_project_service -type data
 ./resource.ps1 google_redis_instance -type data
 ./resource.ps1 google_runtimeconfig_config -type data
 ./resource.ps1 google_runtimeconfig_config_iam_policy -type data
 ./resource.ps1 google_runtimeconfig_variable -type data
 ./resource.ps1 google_scc_source_iam_policy -type data
-./resource.ps1 google_secret_manager_secret -type data
-./resource.ps1 google_secret_manager_secret_iam_policy -type data
-./resource.ps1 google_secret_manager_secret_version -type data
-./resource.ps1 google_secret_manager_secret_version_access -type data
-./resource.ps1 google_service_account_access_token -type data
-./resource.ps1 google_service_account_iam_policy -type data
-./resource.ps1 google_service_account_id_token -type data
-./resource.ps1 google_service_account_jwt -type data
-./resource.ps1 google_service_account_key -type data
 ./resource.ps1 google_service_directory_namespace_iam_policy -type data
 ./resource.ps1 google_service_directory_service_iam_policy -type data
 ./resource.ps1 google_sourcerepo_repository -type data

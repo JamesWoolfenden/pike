@@ -107,6 +107,7 @@ func GCPLookup(result string) interface{} {
 		"google_bigtable_table_iam_policy":                googleBigTableTableIam,
 		"google_pubsub_schema":                            googlePubsubSchema,
 		"google_pubsub_subscription":                      googlePubsubSubscription,
+		"google_project_service":                          googleProjectService,
 	}
 
 	return TFLookup[result]

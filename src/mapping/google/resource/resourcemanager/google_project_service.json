@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "serviceusage.services.get",
+      "serviceusage.services.list",
+      "serviceusage.services.enable",
+      "serviceusage.services.disable",
+      "resourcemanager.projects.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "serviceusage.services.disable"
+    ],
+    "modify": [],
+    "plan": [
+      "resourcemanager.projects.get"
+    ]
+  }
+]
