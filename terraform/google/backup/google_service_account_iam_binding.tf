@@ -8,6 +8,6 @@ resource "google_service_account_iam_binding" "admin-account-iam" {
   role               = "roles/iam.serviceAccountUser"
 
   members = [
-    "user:crwoolfenden@gmail.com",
+    "user:anonymous@gmail.com",
   ]
 }

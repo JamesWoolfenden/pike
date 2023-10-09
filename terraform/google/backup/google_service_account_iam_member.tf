@@ -6,5 +6,5 @@ resource "google_service_account" "sa" {
 resource "google_service_account_iam_member" "pike" {
   service_account_id = google_service_account.sa.name
   role               = "roles/iam.serviceAccountUser"
-  member             = "user:crwoolfenden@gmail.com"
+  member             = "user:anonymous@gmail.com"
 }

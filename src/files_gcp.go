@@ -165,3 +165,15 @@ var googlePubsubSchema []byte
 
 //go:embed  mapping/google/resource/pubsub/google_pubsub_subscription.json
 var googlePubsubSubscription []byte
+
+//go:embed  mapping/google/resource/pubsub/google_pubsub_topic_iam_binding.json
+var googlePubsubTopicIam []byte
+
+//go:embed  mapping/google/resource/secretmanager/google_secret_manager_secret.json
+var googleSecretManagerSecret []byte
+
+//go:embed  mapping/google/resource/secretmanager/google_secret_manager_secret_iam_binding.json
+var googleSecretManagerSecretIam []byte
+
+//go:embed  mapping/google/resource/secretmanager/google_secret_manager_secret_version.json
+var googleSecretManagerSecretVersion []byte

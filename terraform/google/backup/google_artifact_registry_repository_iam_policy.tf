@@ -3,7 +3,7 @@ data "google_iam_policy" "admin" {
     role = "roles/artifactregistry.reader"
     members = [
       "user:james.woolfenden@gmail.com",
-      "user:crwoolfenden@gmail.com",
+      "user:anonymous@gmail.com",
     ]
   }
 }

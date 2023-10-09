@@ -5,6 +5,6 @@ resource "google_artifact_registry_repository_iam_binding" "pike" {
   role       = "roles/artifactregistry.reader"
   members = [
     "user:james.woolfenden@gmail.com",
-    "user:crwoolfenden@gmail.com"
+    "user:anonymous@gmail.com"
   ]
 }

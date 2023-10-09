@@ -1,6 +1,6 @@
 # todo google
 
-Resource percentage coverage   7.79
+Resource percentage coverage   7.77
 Datasource percentage coverage 30.42
 
 ./resource.ps1 google_access_context_manager_access_level
@@ -21,6 +21,7 @@ Datasource percentage coverage 30.42
 ./resource.ps1 google_alloydb_backup
 ./resource.ps1 google_alloydb_cluster
 ./resource.ps1 google_alloydb_instance
+./resource.ps1 google_alloydb_user
 ./resource.ps1 google_api_gateway_api
 ./resource.ps1 google_api_gateway_api_config
 ./resource.ps1 google_api_gateway_api_config_iam_binding
@@ -319,6 +320,7 @@ Datasource percentage coverage 30.42
 ./resource.ps1 google_data_loss_prevention_stored_info_type
 ./resource.ps1 google_data_pipeline_pipeline
 ./resource.ps1 google_database_migration_service_connection_profile
+./resource.ps1 google_database_migration_service_private_connection
 ./resource.ps1 google_dataflow_flex_template_job
 ./resource.ps1 google_dataflow_job
 ./resource.ps1 google_dataform_repository
@@ -626,16 +628,12 @@ Datasource percentage coverage 30.42
 ./resource.ps1 google_project_iam_audit_config
 ./resource.ps1 google_project_iam_policy
 ./resource.ps1 google_project_organization_policy
-./resource.ps1 google_project_service_identity
 ./resource.ps1 google_project_services
 ./resource.ps1 google_project_usage_export_bucket
 ./resource.ps1 google_public_ca_external_account_key
 ./resource.ps1 google_pubsub_subscription_iam_binding
 ./resource.ps1 google_pubsub_subscription_iam_member
 ./resource.ps1 google_pubsub_subscription_iam_policy
-./resource.ps1 google_pubsub_topic_iam_binding
-./resource.ps1 google_pubsub_topic_iam_member
-./resource.ps1 google_pubsub_topic_iam_policy
 ./resource.ps1 google_recaptcha_enterprise_key
 ./resource.ps1 google_redis_cluster
 ./resource.ps1 google_redis_instance
@@ -654,11 +652,6 @@ Datasource percentage coverage 30.42
 ./resource.ps1 google_scc_source_iam_binding
 ./resource.ps1 google_scc_source_iam_member
 ./resource.ps1 google_scc_source_iam_policy
-./resource.ps1 google_secret_manager_secret
-./resource.ps1 google_secret_manager_secret_iam_binding
-./resource.ps1 google_secret_manager_secret_iam_member
-./resource.ps1 google_secret_manager_secret_iam_policy
-./resource.ps1 google_secret_manager_secret_version
 ./resource.ps1 google_security_scanner_scan_config
 ./resource.ps1 google_service_directory_endpoint
 ./resource.ps1 google_service_directory_namespace

@@ -4,20 +4,27 @@ resource "google_project_iam_custom_role" "pike" {
   title       = "pike terraform user"
   description = "A user with least privileges"
   permissions = [
-
-    //google_project_service
-    "serviceusage.services.get",
-    "serviceusage.services.list",
-    "serviceusage.services.enable",
-    "serviceusage.services.disable",
-
     "resourcemanager.projects.get",
-    #    "iam.serviceAccounts.list",
-    #    "iam.serviceAccounts.setIamPolicy",
-    #    "iam.serviceAccounts.getIamPolicy",
-    #    "iam.serviceAccounts.undelete"
 
+    //google_pubsub_topic_iam_member
+    "pubsub.topics.getIamPolicy",
+    "pubsub.topics.setIamPolicy",
 
+    //google_secret_manager_secret
+    "secretmanager.secrets.create",
+    "secretmanager.secrets.get",
+    "secretmanager.secrets.update",
+    "secretmanager.secrets.delete",
 
+    //google_secret_manager_secret_iam_member
+    "secretmanager.secrets.getIamPolicy",
+    "secretmanager.secrets.setIamPolicy",
+
+    //google_secret_manager_secret_version
+    "secretmanager.versions.add",
+    "secretmanager.versions.enable",
+    "secretmanager.versions.get",
+    "secretmanager.versions.access",
+    "secretmanager.versions.destroy"
   ]
 }

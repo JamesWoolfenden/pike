@@ -3,7 +3,7 @@ data "google_iam_policy" "admin" {
   binding {
     role = "roles/bigtable.user"
     members = [
-      "user:crwoolfenden@gmail.com",
+      "user:anonymous@gmail.com",
     ]
   }
 }
