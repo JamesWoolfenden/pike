@@ -1,6 +1,6 @@
 # todo aws
 
-Resource percentage coverage   34.34
+Resource percentage coverage   34.26
 Datasource percentage coverage 98.17
 
 ./resource.ps1 aws_accessanalyzer_analyzer
@@ -688,12 +688,14 @@ Datasource percentage coverage 98.17
 ./resource.ps1 aws_servicecatalog_service_action
 ./resource.ps1 aws_servicecatalog_tag_option
 ./resource.ps1 aws_servicecatalog_tag_option_resource_association
+./resource.ps1 aws_servicequotas_template
 ./resource.ps1 aws_ses_active_receipt_rule_set
 ./resource.ps1 aws_ses_configuration_set
 ./resource.ps1 aws_ses_email_identity
 ./resource.ps1 aws_ses_event_destination
 ./resource.ps1 aws_ses_receipt_filter
 ./resource.ps1 aws_ses_template
+./resource.ps1 aws_sesv2_account_vdm_attributes
 ./resource.ps1 aws_sesv2_configuration_set
 ./resource.ps1 aws_sesv2_configuration_set_event_destination
 ./resource.ps1 aws_sesv2_contact_list
@@ -767,6 +769,7 @@ Datasource percentage coverage 98.17
 ./resource.ps1 aws_transfer_user
 ./resource.ps1 aws_transfer_workflow
 ./resource.ps1 aws_verifiedaccess_instance
+./resource.ps1 aws_verifiedaccess_instance_trust_provider_attachment
 ./resource.ps1 aws_verifiedaccess_trust_provider
 ./resource.ps1 aws_vpc_endpoint_connection_accepter
 ./resource.ps1 aws_vpc_endpoint_connection_notification

@@ -1,6 +1,6 @@
 # todo azure
 
-Resource percentage coverage   5.20
+Resource percentage coverage   5.19
 Datasource percentage coverage 12.83
 
 ./resource.ps1 azurerm_aadb2c_directory
@@ -805,6 +805,7 @@ Datasource percentage coverage 12.83
 ./resource.ps1 azurerm_spring_cloud_app_cosmosdb_association
 ./resource.ps1 azurerm_spring_cloud_app_mysql_association
 ./resource.ps1 azurerm_spring_cloud_app_redis_association
+./resource.ps1 azurerm_spring_cloud_application_insights_application_performance_monitoring
 ./resource.ps1 azurerm_spring_cloud_application_live_view
 ./resource.ps1 azurerm_spring_cloud_build_deployment
 ./resource.ps1 azurerm_spring_cloud_build_pack_binding

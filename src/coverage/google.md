@@ -1,6 +1,6 @@
 # todo google
 
-Resource percentage coverage   7.77
+Resource percentage coverage   8.90
 Datasource percentage coverage 30.42
 
 ./resource.ps1 google_access_context_manager_access_level
