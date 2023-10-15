@@ -500,6 +500,15 @@ func AwsLookup(name string) interface{} {
 		"aws_acmpca_certificate_authority_certificate":       awsAcmpcaCertificateAuthorityCertificate,
 		"aws_acmpca_certificate":                             awsAcmpcaCertificate,
 		"aws_networkfirewall_resource_policy":                awsNetworkfirewallResourcePolicy,
+		"aws_account_alternate_contact":                      awsAccountAlternativeContact,
+		"aws_account_primary_contact":                        awsAccountPrimaryContact,
+		"aws_sns_sms_preferences":                            awsSnsSmsPreferences,
+		"aws_sns_topic_data_protection_policy":               awsSnsTopicDataProtection,
+		"aws_ssmcontacts_contact":                            awsSsmcontactsContact,
+		"aws_ssmcontacts_contact_channel":                    awsSsmcontactContactChannel,
+		"aws_ssmcontacts_plan":                               awsSsmcontactsPlan,
+		"aws_ssmincidents_replication_set":                   awsSsmincidentsReplicationSet,
+		"aws_swf_domain":                                     awsSwfDomain,
 	}
 
 	return TFLookup[name]

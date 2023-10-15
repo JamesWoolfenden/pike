@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "swf:RegisterDomain",
+      "swf:DescribeDomain",
+      "swf:ListTagsForResource",
+      "swf:DeprecateDomain"
+    ],
+    "attributes": {
+      "tags": [
+        "swf:TagResource",
+        "swf:UntagResource"
+      ]
+    },
+    "destroy": [
+      "swf:DeprecateDomain"
+    ],
+    "modify": [],
+    "plan": [
+      "swf:DescribeDomain"
+    ]
+  }
+]

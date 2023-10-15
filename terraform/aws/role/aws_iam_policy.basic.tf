@@ -7,22 +7,8 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          //aws_swf_domain
-          "swf:RegisterDomain",
-          "swf:DescribeDomain",
-          "swf:ListTagsForResource",
-          "swf:DeprecateDomain",
-          "swf:TagResource",
-
-          //aws_ssmcontacts_contact
-          "ssm-contacts:CreateContact",
-          "ssm-contacts:TagResource",
-          //aws_sns_topic_data_protection_policy
-          "SNS:PutDataProtectionPolicy",
-          "SNS:GetDataProtectionPolicy",
-          //aws_sns_sms_preferences
-          "SNS:SetSMSAttributes",
-          "SNS:GetSMSAttributes"
+          //aws_ssmcontacts_plan
+          "ssm-contacts:UpdateContact",
 
         ],
         "Resource" : "*",

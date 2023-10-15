@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "ssm-incidents:CreateReplicationSet",
+      "iam:CreateServiceLinkedRole",
+      "ssm-incidents:GetReplicationSet",
+      "ssm-incidents:ListTagsForResource",
+      "ssm-incidents:DeleteReplicationSet",
+      "ssm-incidents:UpdateReplicationSet"
+    ],
+    "attributes": {
+      "tags": [
+        "ssm-incidents:TagResource",
+        "ssm-incidents:UntagResource"
+      ]
+    },
+    "destroy": [
+      "ssm-incidents:DeleteReplicationSet"
+    ],
+    "modify": [
+      "ssm-incidents:UpdateReplicationSet"
+    ],
+    "plan": [
+      "ssm-incidents:GetReplicationSet"
+    ]
+  }
+]

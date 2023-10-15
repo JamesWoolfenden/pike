@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "ssm-contacts:CreateContactChannel",
+      "ssm-contacts:GetContactChannel",
+      "ssm-contacts:DeleteContactChannel",
+      "ssm-contacts:UpdateContactChannel"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "ssm-contacts:DeleteContactChannel"
+    ],
+    "modify": [
+      "ssm-contacts:UpdateContactChannel"
+    ],
+    "plan": [
+      "ssm-contacts:GetContactChannel"
+    ]
+  }
+]

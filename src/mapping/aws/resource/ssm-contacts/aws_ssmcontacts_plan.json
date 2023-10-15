@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "ssm-contacts:UpdateContact"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [
+      "ssm-contacts:UpdateContact"
+    ],
+    "plan": []
+  }
+]

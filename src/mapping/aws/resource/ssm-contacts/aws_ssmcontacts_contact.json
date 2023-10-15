@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "ssm-contacts:CreateContact",
+      "ssm-contacts:TagResource",
+      "ssm-contacts:GetContact",
+      "ssm-contacts:ListTagsForResource",
+      "ssm-contacts:DeleteContact",
+      "ssm-contacts:UpdateContact"
+    ],
+    "attributes": {
+      "tags": [
+        "ssm-contacts:TagResource",
+        "ssm-contacts:UntagResource"
+      ]
+    },
+    "destroy": [
+      "ssm-contacts:DeleteContact"
+    ],
+    "modify": [
+      "ssm-contacts:UpdateContact"
+    ],
+    "plan": [
+      "ssm-contacts:GetContact"
+    ]
+  }
+]

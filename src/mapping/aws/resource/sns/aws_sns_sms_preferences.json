@@ -1,6 +1,9 @@
 [
   {
-    "apply": [],
+    "apply": [
+      "SNS:SetSMSAttributes",
+      "SNS:GetSMSAttributes"
+    ],
     "attributes": {
       "tags": []
     },

@@ -1,12 +1,10 @@
 # todo aws
 
-Resource percentage coverage   34.26
-Datasource percentage coverage 98.17
+Resource percentage coverage   34.87
+Datasource percentage coverage 97.98
 
 ./resource.ps1 aws_accessanalyzer_analyzer
 ./resource.ps1 aws_accessanalyzer_archive_rule
-./resource.ps1 aws_account_alternate_contact
-./resource.ps1 aws_account_primary_contact
 ./resource.ps1 aws_acmpca_permission
 ./resource.ps1 aws_acmpca_policy
 ./resource.ps1 aws_ami
@@ -245,6 +243,7 @@ Datasource percentage coverage 98.17
 ./resource.ps1 aws_ec2_client_vpn_route
 ./resource.ps1 aws_ec2_fleet
 ./resource.ps1 aws_ec2_host
+./resource.ps1 aws_ec2_image_block_public_access
 ./resource.ps1 aws_ec2_instance
 ./resource.ps1 aws_ec2_instance_connect_endpoint
 ./resource.ps1 aws_ec2_instance_state
@@ -689,6 +688,7 @@ Datasource percentage coverage 98.17
 ./resource.ps1 aws_servicecatalog_tag_option
 ./resource.ps1 aws_servicecatalog_tag_option_resource_association
 ./resource.ps1 aws_servicequotas_template
+./resource.ps1 aws_servicequotas_template_association
 ./resource.ps1 aws_ses_active_receipt_rule_set
 ./resource.ps1 aws_ses_configuration_set
 ./resource.ps1 aws_ses_email_identity
@@ -717,8 +717,6 @@ Datasource percentage coverage 98.17
 ./resource.ps1 aws_simpledb_domain
 ./resource.ps1 aws_snapshot_create_volume_permission
 ./resource.ps1 aws_sns_platform_application
-./resource.ps1 aws_sns_sms_preferences
-./resource.ps1 aws_sns_topic_data_protection_policy
 ./resource.ps1 aws_spot_datafeed_subscription
 ./resource.ps1 aws_spot_fleet_request
 ./resource.ps1 aws_ssm_activation
@@ -726,10 +724,6 @@ Datasource percentage coverage 98.17
 ./resource.ps1 aws_ssm_default_patch_baseline
 ./resource.ps1 aws_ssm_resource_data_sync
 ./resource.ps1 aws_ssm_service_setting
-./resource.ps1 aws_ssmcontacts_contact
-./resource.ps1 aws_ssmcontacts_contact_channel
-./resource.ps1 aws_ssmcontacts_plan
-./resource.ps1 aws_ssmincidents_replication_set
 ./resource.ps1 aws_ssmincidents_response_plan
 ./resource.ps1 aws_ssoadmin_account_assignment
 ./resource.ps1 aws_ssoadmin_customer_managed_policy_attachment
@@ -748,7 +742,6 @@ Datasource percentage coverage 98.17
 ./resource.ps1 aws_storagegateway_tape_pool
 ./resource.ps1 aws_storagegateway_upload_buffer
 ./resource.ps1 aws_storagegateway_working_storage
-./resource.ps1 aws_swf_domain
 ./resource.ps1 aws_synthetics_canary
 ./resource.ps1 aws_synthetics_group
 ./resource.ps1 aws_synthetics_group_association
@@ -768,7 +761,9 @@ Datasource percentage coverage 98.17
 ./resource.ps1 aws_transfer_tag
 ./resource.ps1 aws_transfer_user
 ./resource.ps1 aws_transfer_workflow
+./resource.ps1 aws_verifiedaccess_group
 ./resource.ps1 aws_verifiedaccess_instance
+./resource.ps1 aws_verifiedaccess_instance_logging_configuration
 ./resource.ps1 aws_verifiedaccess_instance_trust_provider_attachment
 ./resource.ps1 aws_verifiedaccess_trust_provider
 ./resource.ps1 aws_vpc_endpoint_connection_accepter
@@ -838,4 +833,5 @@ Datasource percentage coverage 98.17
 ./resource.ps1 aws_organizations_organizational_unit -type data
 ./resource.ps1 aws_organizations_policy -type data
 ./resource.ps1 aws_saml_provider -type data
+./resource.ps1 aws_servicequotas_templates -type data
 ./resource.ps1 ssm_maintenance_windows -type data

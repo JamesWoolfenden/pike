@@ -23,3 +23,7 @@ resource "aws_sns_topic_data_protection_policy" "pike" {
     }
   )
 }
+
+output "policy" {
+  value = aws_sns_topic_data_protection_policy.pike
+}

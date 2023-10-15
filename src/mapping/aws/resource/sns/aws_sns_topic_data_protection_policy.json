@@ -1,6 +1,9 @@
 [
   {
-    "apply": [],
+    "apply": [
+      "SNS:PutDataProtectionPolicy",
+      "SNS:GetDataProtectionPolicy"
+    ],
     "attributes": {
       "tags": []
     },

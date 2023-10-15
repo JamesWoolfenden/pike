@@ -1188,3 +1188,30 @@ var awsWorkspacesWorkspace []byte
 
 //go:embed mapping/aws/resource/workspaces/aws_workspaces_directory.json
 var awsWorkspacesDirectory []byte
+
+//go:embed mapping/aws/resource/account/aws_account_alternate_contact.json
+var awsAccountAlternativeContact []byte
+
+//go:embed mapping/aws/resource/account/aws_account_primary_contact.json
+var awsAccountPrimaryContact []byte
+
+//go:embed mapping/aws/resource/sns/aws_sns_sms_preferences.json
+var awsSnsSmsPreferences []byte
+
+//go:embed mapping/aws/resource/sns/aws_sns_topic_data_protection_policy.json
+var awsSnsTopicDataProtection []byte
+
+//go:embed mapping/aws/resource/ssm-contacts/aws_ssmcontacts_contact.json
+var awsSsmcontactsContact []byte
+
+//go:embed mapping/aws/resource/ssm-contacts/aws_ssmcontacts_contact_channel.json
+var awsSsmcontactContactChannel []byte
+
+//go:embed mapping/aws/resource/ssm-contacts/aws_ssmcontacts_plan.json
+var awsSsmcontactsPlan []byte
+
+//go:embed mapping/aws/resource/ssm-incidents/aws_ssmincidents_replication_set.json
+var awsSsmincidentsReplicationSet []byte
+
+//go:embed mapping/aws/resource/swf/aws_swf_domain.json
+var awsSwfDomain []byte
