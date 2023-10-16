@@ -1,6 +1,6 @@
 # todo aws
 
-Resource percentage coverage   34.87
+Resource percentage coverage   35.79
 Datasource percentage coverage 97.98
 
 ./resource.ps1 aws_accessanalyzer_analyzer
@@ -16,18 +16,6 @@ Datasource percentage coverage 97.98
 ./resource.ps1 aws_amplify_branch
 ./resource.ps1 aws_amplify_domain_association
 ./resource.ps1 aws_amplify_webhook
-./resource.ps1 aws_api_gateway_base_path_mapping
-./resource.ps1 aws_api_gateway_documentation_part
-./resource.ps1 aws_api_gateway_documentation_version
-./resource.ps1 aws_api_gateway_domain_name
-./resource.ps1 aws_api_gateway_gateway_response
-./resource.ps1 aws_api_gateway_model
-./resource.ps1 aws_api_gateway_rest_api_policy
-./resource.ps1 aws_api_gateway_vpc_link
-./resource.ps1 aws_apigatewayv2_deployment
-./resource.ps1 aws_apigatewayv2_integration_response
-./resource.ps1 aws_apigatewayv2_model
-./resource.ps1 aws_apigatewayv2_route_response
 ./resource.ps1 aws_app_cookie_stickiness_policy
 ./resource.ps1 aws_appconfig_deployment
 ./resource.ps1 aws_appconfig_deployment_strategy
@@ -345,6 +333,7 @@ Datasource percentage coverage 97.98
 ./resource.ps1 aws_guardduty_member
 ./resource.ps1 aws_guardduty_organization_admin_account
 ./resource.ps1 aws_guardduty_organization_configuration
+./resource.ps1 aws_guardduty_organization_configuration_feature
 ./resource.ps1 aws_guardduty_publishing_destination
 ./resource.ps1 aws_guardduty_threatintelset
 ./resource.ps1 aws_iam_security_token_service_preferences

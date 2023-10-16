@@ -8,7 +8,7 @@ resource "aws_iam_policy" "basic" {
         "Effect" : "Allow",
         "Action" : [
           //aws_ssmcontacts_plan
-          "ssm-contacts:UpdateContact",
+          "elasticloadbalancing:*",
 
         ],
         "Resource" : "*",
