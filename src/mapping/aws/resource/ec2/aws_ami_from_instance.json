@@ -1,0 +1,30 @@
+[
+  {
+    "apply": [
+      "ec2:CreateImage",
+      "ec2:DescribeTags",
+      "ec2:DescribeImages",
+      "ec2:RegisterImage",
+      "ec2:DeregisterImage",
+      "ec2:CreateSnapshot",
+      "ec2:DeleteSnapshot",
+      "ec2:DescribeAvailabilityZones",
+      "ec2:DescribeSnapshots",
+      "ec2:DescribeVolumeAttribute",
+      "ec2:DescribeVolumeStatus",
+      "ec2:DescribeVolumes"
+    ],
+    "attributes": {
+      "tags": [
+        "ec2:CreateTags",
+        "ec2:DeleteTags"
+      ]
+    },
+    "destroy": [
+      "ec2:DeregisterImage",
+      "ec2:DeleteSnapshot"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

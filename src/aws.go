@@ -521,6 +521,13 @@ func AwsLookup(name string) interface{} {
 		"aws_xray_group":                                     awsXrayGroup,
 		"aws_xray_sampling_rule":                             awsXraySamplingRule,
 		"backend":                                            s3backend,
+		"aws_ami":                                            awsAmi,
+		"aws_ami_copy":                                       awsAmiCopy,
+		"aws_ami_from_instance":                              awsAmiFromInstance,
+		"aws_ami_launch_permission":                          awsAmiLauchPermission,
+		"aws_budgets_budget_action":                          awsBudgetsBudgetAction,
+		"aws_cloudformation_stack":                           awsCloudformationStack,
+		"aws_cloudformation_type":                            awsCloudformationType,
 	}
 
 	return TFLookup[name]

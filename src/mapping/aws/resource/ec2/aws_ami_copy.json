@@ -1,0 +1,29 @@
+[
+  {
+    "apply": [
+      "ec2:CreateImage",
+      "ec2:DescribeTags",
+      "ec2:DescribeImages",
+      "ec2:RegisterImage",
+      "ec2:DeregisterImage",
+      "s3:CreateBucket",
+      "s3:GetBucketAcl",
+      "s3:ListAllMyBuckets",
+      "s3:GetObject",
+      "s3:PutObject",
+      "s3:PutObjectAcl",
+      "ec2:CopyImage"
+    ],
+    "attributes": {
+      "tags": [
+        "ec2:CreateTags",
+        "ec2:DeleteTags"
+      ]
+    },
+    "destroy": [
+      "ec2:DeregisterImage"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

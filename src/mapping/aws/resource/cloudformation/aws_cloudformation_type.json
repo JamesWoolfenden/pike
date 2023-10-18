@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "iam:PassRole",
+      "cloudformation:RegisterType",
+      "cloudformation:DescribeType"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

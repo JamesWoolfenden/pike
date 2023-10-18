@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "ec2:ModifyImageAttribute",
+      "ec2:DescribeImageAttribute",
+      "ec2:ResetImageAttribute"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

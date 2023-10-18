@@ -1215,3 +1215,24 @@ var awsSsmincidentsReplicationSet []byte
 
 //go:embed mapping/aws/resource/swf/aws_swf_domain.json
 var awsSwfDomain []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ami.json
+var awsAmi []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ami_copy.json
+var awsAmiCopy []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ami_from_instance.json
+var awsAmiFromInstance []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ami_launch_permission.json
+var awsAmiLauchPermission []byte
+
+//go:embed mapping/aws/resource/budgets/aws_budgets_budget_action.json
+var awsBudgetsBudgetAction []byte
+
+//go:embed mapping/aws/resource/cloudformation/aws_cloudformation_stack.json
+var awsCloudformationStack []byte
+
+//go:embed mapping/aws/resource/cloudformation/aws_cloudformation_type.json
+var awsCloudformationType []byte

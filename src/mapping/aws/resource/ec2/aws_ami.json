@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "ec2:CreateImage",
+      "ec2:DescribeTags",
+      "ec2:DescribeImages",
+      "ec2:RegisterImage",
+      "ec2:DeregisterImage"
+    ],
+    "attributes": {
+      "tags": [
+        "ec2:CreateTags",
+        "ec2:DeleteTags"
+      ]
+    },
+    "destroy": [
+      "ec2:DeregisterImage"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

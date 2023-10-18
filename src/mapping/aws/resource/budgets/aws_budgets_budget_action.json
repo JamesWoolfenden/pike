@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "budgets:CreateBudgetAction",
+      "budgets:DescribeBudgetAction",
+      "budgets:DeleteBudgetAction",
+      "budgets:UpdateBudgetAction"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "budgets:DeleteBudgetAction"
+    ],
+    "modify": [
+      "budgets:UpdateBudgetAction"
+    ],
+    "plan": [
+      "budgets:DescribeBudgetAction"
+    ]
+  }
+]

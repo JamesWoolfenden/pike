@@ -7,8 +7,28 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          //aws_ssmcontacts_plan
-          "elasticloadbalancing:*",
+          //          "sqs:*",
+          "cloudformation:DescribeStackEvents",
+          "cloudformation:DescribeStackResources",
+          "cloudformation:ValidateTemplate",
+          //aws_cloudformation_stack
+          "cloudformation:CreateStack",
+          "cloudformation:DescribeStacks",
+          "cloudformation:GetTemplate",
+          "cloudformation:DeleteStack",
+          "cloudformation:UpdateStack",
+          //aws_cloudformation_type
+          "iam:PassRole",
+          "cloudformation:RegisterType",
+          "cloudformation:DescribeType",
+
+          //
+          "ec2:CreateVpc",
+          "ec2:CreateTags",
+          "ec2:DeleteTags",
+          "ec2:DescribeVpcs",
+          "ec2:DeleteVpc",
+          "ec2:ModifyVpcAttribute"
 
         ],
         "Resource" : "*",

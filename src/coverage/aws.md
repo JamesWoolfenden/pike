@@ -7,10 +7,6 @@ Datasource percentage coverage 97.98
 ./resource.ps1 aws_accessanalyzer_archive_rule
 ./resource.ps1 aws_acmpca_permission
 ./resource.ps1 aws_acmpca_policy
-./resource.ps1 aws_ami
-./resource.ps1 aws_ami_copy
-./resource.ps1 aws_ami_from_instance
-./resource.ps1 aws_ami_launch_permission
 ./resource.ps1 aws_amplify_app
 ./resource.ps1 aws_amplify_backend_environment
 ./resource.ps1 aws_amplify_branch
@@ -69,7 +65,6 @@ Datasource percentage coverage 97.98
 ./resource.ps1 aws_autoscaling_schedule
 ./resource.ps1 aws_autoscaling_traffic_source_attachment
 ./resource.ps1 aws_autoscalingplans_scaling_plan
-./resource.ps1 aws_budgets_budget_action
 ./resource.ps1 aws_ce_anomaly_monitor
 ./resource.ps1 aws_ce_anomaly_subscription
 ./resource.ps1 aws_ce_cost_allocation_tag
@@ -90,8 +85,6 @@ Datasource percentage coverage 97.98
 ./resource.ps1 aws_cleanrooms_configured_table
 ./resource.ps1 aws_cloud9_environment_membership
 ./resource.ps1 aws_cloudcontrolapi_resource
-./resource.ps1 aws_cloudformation_stack
-./resource.ps1 aws_cloudformation_type
 ./resource.ps1 aws_cloudfront_cache_policy
 ./resource.ps1 aws_cloudfront_continuous_deployment_policy
 ./resource.ps1 aws_cloudfront_function

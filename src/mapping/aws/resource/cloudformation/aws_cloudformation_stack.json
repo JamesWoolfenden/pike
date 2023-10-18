@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "cloudformation:DescribeStackEvents",
+      "cloudformation:DescribeStackResources",
+      "cloudformation:ValidateTemplate",
+      "cloudformation:CreateStack",
+      "cloudformation:DescribeStacks",
+      "cloudformation:GetTemplate",
+      "cloudformation:DeleteStack",
+      "cloudformation:UpdateStack"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "cloudformation:DeleteStack"
+    ],
+    "modify": [
+      "cloudformation:UpdateStack"
+    ],
+    "plan": []
+  }
+]
