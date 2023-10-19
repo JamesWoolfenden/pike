@@ -689,7 +689,7 @@ var dataAwsWafRateBasedRule []byte
 var dataAwsWafRule []byte
 
 //go:embed mapping/aws/data/waf/aws_waf_web_acl.json
-var dataAwsWafWebAcl []byte
+var dataAwsWafWebACL []byte
 
 //go:embed mapping/aws/data/wafregional/aws_wafregional_ipset.json
 var dataAwsWafregionalIpset []byte
@@ -701,7 +701,7 @@ var dataAwsWafregionalRateBasedRule []byte
 var dataAwsWafregionalRule []byte
 
 //go:embed mapping/aws/data/wafregional/aws_wafregional_web_acl.json
-var dataAwsWafregionalWebAcl []byte
+var dataAwsWafregionalWebACL []byte
 
 //go:embed mapping/aws/data/ec2/aws_ec2_transitgateway_route_table_propagations.json
 var dataAwsEc2TransitGatewayRouteTablePropagations []byte
@@ -1031,7 +1031,7 @@ var dataAwsMskconnectCustomPlugin []byte
 var dataAwsMskconnectWorkerConfiguration []byte
 
 //go:embed mapping/aws/data/ram/aws_ram_resource_share.json
-var dataAwsRamResourceShare []byte
+var dataAwsRAMResourceShare []byte
 
 //go:embed mapping/aws/data/tag/aws_resourcegroupstaggingapi_resources.json
 var dataAwsResourcegroupstaggingapiResources []byte
@@ -1317,3 +1317,24 @@ var dataAwsOpensearchserverlessSecurityPolicy []byte
 
 //go:embed mapping/aws/data/aoss/aws_opensearchserverless_vpc_endpoint.json
 var dataAwsOpensearchserverlessVpcEndpoint []byte
+
+//go:embed mapping/aws/data/cognito-identity/aws_cognito_identity_pool.json
+var dataAwsCognitoIdentityPool []byte
+
+//go:embed mapping/aws/data/fsx/aws_fsx_ontap_file_system.json
+var dataAwsFsxOntapFileSystem []byte
+
+//go:embed mapping/aws/data/fsx/aws_fsx_ontap_storage_virtual_machine.json
+var dataAwsFsxOntapStorageVirtualMachine []byte
+
+//go:embed mapping/aws/data/fsx/aws_fsx_ontap_storage_virtual_machines.json
+var dataAwsFsxOntapStorageVirtualMachines []byte
+
+//go:embed mapping/aws/data/organizations/aws_organizations_organizational_unit.json
+var dataAwsOrganizationsOrganizationalUnit []byte
+
+//go:embed mapping/aws/data/organizations/aws_organizations_policy.json
+var dataAwsOrganizationsPolicy []byte
+
+//go:embed mapping/aws/data/servicequota/aws_servicequotas_templates.json
+var dataAwsServicequotasTemplates []byte

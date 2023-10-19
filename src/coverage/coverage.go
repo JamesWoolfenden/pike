@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"strings"
 
 	pike "github.com/jameswoolfenden/pike/src"
 )
@@ -22,15 +23,19 @@ func coverageAWS() error {
 
 	for _, myData := range data.Resources {
 		if temp := pike.AwsLookup(myData); temp == nil {
-			missing.Resources = append(missing.Resources, myData)
-			target += "./resource.ps1 " + myData + "\n"
+			if strings.Contains(myData, "aws") {
+				missing.Resources = append(missing.Resources, myData)
+				target += "./resource.ps1 " + myData + "\n"
+			}
 		}
 	}
 
 	for _, myData := range data.DataSources {
 		if temp := pike.AwsDataLoookup(myData); temp == nil {
-			missing.DataSources = append(missing.DataSources, myData)
-			target += "./resource.ps1 " + myData + " -type data\n"
+			if strings.Contains(myData, "aws") {
+				missing.DataSources = append(missing.DataSources, myData)
+				target += "./resource.ps1 " + myData + " -type data\n"
+			}
 		}
 	}
 

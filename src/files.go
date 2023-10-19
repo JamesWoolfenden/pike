@@ -1236,3 +1236,18 @@ var awsCloudformationStack []byte
 
 //go:embed mapping/aws/resource/cloudformation/aws_cloudformation_type.json
 var awsCloudformationType []byte
+
+//go:embed mapping/aws/resource/organizations/aws_organizations_policy.json
+var awsOrganizationsPolicy []byte
+
+//go:embed mapping/aws/resource/organizations/aws_organizations_policy_attachment.json
+var awsOrganizationsPolicyAttachment []byte
+
+//go:embed mapping/aws/resource/secretsmanager/aws_secretsmanager_secret_policy.json
+var awsSecretsmanagerSecretPolicy []byte
+
+//go:embed mapping/aws/resource/secretsmanager/aws_secretsmanager_secret_rotation.json
+var awsSecretsmanagerSecretRotation []byte
+
+//go:embed mapping/aws/resource/states/aws_sfn_alias.json
+var awsSfnAlias []byte

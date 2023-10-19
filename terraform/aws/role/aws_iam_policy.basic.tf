@@ -7,29 +7,30 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          //          "sqs:*",
-          "cloudformation:DescribeStackEvents",
-          "cloudformation:DescribeStackResources",
-          "cloudformation:ValidateTemplate",
-          //aws_cloudformation_stack
-          "cloudformation:CreateStack",
-          "cloudformation:DescribeStacks",
-          "cloudformation:GetTemplate",
-          "cloudformation:DeleteStack",
-          "cloudformation:UpdateStack",
-          //aws_cloudformation_type
-          "iam:PassRole",
-          "cloudformation:RegisterType",
-          "cloudformation:DescribeType",
 
+          //aws_organizations_policy
+          "organizations:DescribePolicy",
+          "organizations:CreatePolicy",
+          "organizations:DeletePolicy",
+          "organizations:UpdatePolicy",
+          "organizations:UntagResource",
+          "organizations:TagResource",
+          //aws_secretsmanager_secret_policy
+          "secretsmanager:DescribeSecret",
+          "secretsmanager:PutResourcePolicy",
+          "secretsmanager:DeleteResourcePolicy",
+
+          //aws_secretsmanager_secret
+          "secretsmanager:GetResourcePolicy",
+          //aws_secretsmanager_secret_rotation
+          "secretsmanager:RotateSecret",
+          "secretsmanager:CancelRotateSecret",
+          "lambda:InvokeFunction",
           //
-          "ec2:CreateVpc",
-          "ec2:CreateTags",
-          "ec2:DeleteTags",
-          "ec2:DescribeVpcs",
-          "ec2:DeleteVpc",
-          "ec2:ModifyVpcAttribute"
-
+          "states:DescribeStateMachineAlias",
+          "states:CreateStateMachineAlias",
+          "states:DeleteStateMachineAlias",
+          "states:UpdateStateMachineAlias"
         ],
         "Resource" : "*",
       }

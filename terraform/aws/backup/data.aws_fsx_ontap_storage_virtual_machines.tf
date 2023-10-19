@@ -1,0 +1,1 @@
+data "aws_fsx_ontap_storage_virtual_machines" "pike" {}

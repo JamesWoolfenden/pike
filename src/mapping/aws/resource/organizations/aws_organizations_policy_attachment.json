@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "organizations:AttachPolicy",
+      "organizations:DetachPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

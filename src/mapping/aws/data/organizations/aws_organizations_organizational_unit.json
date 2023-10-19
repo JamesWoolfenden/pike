@@ -7,8 +7,7 @@
     "destroy": [],
     "modify": [],
     "plan": [
-      "cognito-identity:DescribeIdentityPool",
-      "cognito-identity:ListIdentityPools"
+      "organizations:DescribeOrganizationalUnit"
     ]
   }
 ]

@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "organizations:DescribePolicy",
+      "organizations:CreatePolicy",
+      "organizations:DeletePolicy",
+      "organizations:UpdatePolicy"
+    ],
+    "attributes": {
+      "tags": [
+        "organizations:UntagResource",
+        "organizations:TagResource"
+      ]
+    },
+    "destroy": [
+      "organizations:DeletePolicy"
+    ],
+    "modify": [
+      "organizations:UpdatePolicy"
+    ],
+    "plan": []
+  }
+]

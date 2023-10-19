@@ -1,7 +1,7 @@
 # todo aws
 
-Resource percentage coverage   35.79
-Datasource percentage coverage 97.98
+Resource percentage coverage   36.74
+Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_accessanalyzer_analyzer
 ./resource.ps1 aws_accessanalyzer_archive_rule
@@ -507,8 +507,6 @@ Datasource percentage coverage 97.98
 ./resource.ps1 aws_organizations_delegated_administrator
 ./resource.ps1 aws_organizations_organization
 ./resource.ps1 aws_organizations_organizational_unit
-./resource.ps1 aws_organizations_policy
-./resource.ps1 aws_organizations_policy_attachment
 ./resource.ps1 aws_organizations_resource_policy
 ./resource.ps1 aws_pinpoint_adm_channel
 ./resource.ps1 aws_pinpoint_apns_channel
@@ -638,8 +636,6 @@ Datasource percentage coverage 97.98
 ./resource.ps1 aws_schemas_registry
 ./resource.ps1 aws_schemas_registry_policy
 ./resource.ps1 aws_schemas_schema
-./resource.ps1 aws_secretsmanager_secret_policy
-./resource.ps1 aws_secretsmanager_secret_rotation
 ./resource.ps1 aws_securityhub_account
 ./resource.ps1 aws_securityhub_action_target
 ./resource.ps1 aws_securityhub_finding_aggregator
@@ -686,7 +682,6 @@ Datasource percentage coverage 97.98
 ./resource.ps1 aws_sesv2_email_identity
 ./resource.ps1 aws_sesv2_email_identity_feedback_attributes
 ./resource.ps1 aws_sesv2_email_identity_mail_from_attributes
-./resource.ps1 aws_sfn_alias
 ./resource.ps1 aws_shield_application_layer_automatic_response
 ./resource.ps1 aws_shield_drt_access_log_bucket_association
 ./resource.ps1 aws_shield_drt_access_role_arn_association
@@ -807,13 +802,3 @@ Datasource percentage coverage 97.98
 ./resource.ps1 aws_worklink_website_certificate_authority_association
 ./resource.ps1 aws_workspaces_connection_alias
 ./resource.ps1 aws_workspaces_ip_group
-./resource.ps1 aws_cognito_identity_pool -type data
-./resource.ps1 aws_ec2_transitgateway_route_table_propagations -type data
-./resource.ps1 aws_fsx_ontap_file_system -type data
-./resource.ps1 aws_fsx_ontap_storage_virtual_machine -type data
-./resource.ps1 aws_fsx_ontap_storage_virtual_machines -type data
-./resource.ps1 aws_organizations_organizational_unit -type data
-./resource.ps1 aws_organizations_policy -type data
-./resource.ps1 aws_saml_provider -type data
-./resource.ps1 aws_servicequotas_templates -type data
-./resource.ps1 ssm_maintenance_windows -type data

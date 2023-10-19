@@ -528,6 +528,11 @@ func AwsLookup(name string) interface{} {
 		"aws_budgets_budget_action":                          awsBudgetsBudgetAction,
 		"aws_cloudformation_stack":                           awsCloudformationStack,
 		"aws_cloudformation_type":                            awsCloudformationType,
+		"aws_organizations_policy":                           awsOrganizationsPolicy,
+		"aws_organizations_policy_attachment":                awsOrganizationsPolicyAttachment,
+		"aws_secretsmanager_secret_policy":                   awsSecretsmanagerSecretPolicy,
+		"aws_secretsmanager_secret_rotation":                 awsSecretsmanagerSecretRotation,
+		"aws_sfn_alias":                                      awsSfnAlias,
 	}
 
 	return TFLookup[name]

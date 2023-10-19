@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "states:DescribeStateMachineAlias",
+      "states:CreateStateMachineAlias",
+      "states:DeleteStateMachineAlias",
+      "states:UpdateStateMachineAlias"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "states:DeleteStateMachineAlias"
+    ],
+    "modify": [
+      "states:UpdateStateMachineAlias"
+    ],
+    "plan": []
+  }
+]
