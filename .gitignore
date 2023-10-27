@@ -17,3 +17,4 @@ provider.azurerm.tf
 terraform-provider-*
 *.pem
 *.csr
+.destination

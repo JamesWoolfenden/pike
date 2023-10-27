@@ -1,7 +1,7 @@
 # todo google
 
-Resource percentage coverage   8.90
-Datasource percentage coverage 30.42
+Resource percentage coverage   8.85
+Datasource percentage coverage 29.67
 
 ./resource.ps1 google_access_context_manager_access_level
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -58,7 +58,6 @@ Datasource percentage coverage 30.42
 ./resource.ps1 google_app_engine_flexible_app_version
 ./resource.ps1 google_app_engine_service_network_settings
 ./resource.ps1 google_app_engine_service_split_traffic
-./resource.ps1 google_app_engine_standard_app_version
 ./resource.ps1 google_artifact_registry_vpcsc_config
 ./resource.ps1 google_assured_workloads_workload
 ./resource.ps1 google_backup_dr_management_server
@@ -428,6 +427,7 @@ Datasource percentage coverage 30.42
 ./resource.ps1 google_firebase_web_app
 ./resource.ps1 google_firebaserules_release
 ./resource.ps1 google_firebaserules_ruleset
+./resource.ps1 google_firestore_backup_schedule
 ./resource.ps1 google_firestore_database
 ./resource.ps1 google_firestore_document
 ./resource.ps1 google_firestore_field
@@ -631,12 +631,14 @@ Datasource percentage coverage 30.42
 ./resource.ps1 google_project_services
 ./resource.ps1 google_project_usage_export_bucket
 ./resource.ps1 google_public_ca_external_account_key
+./resource.ps1 google_pubsub_schema_iam_binding
+./resource.ps1 google_pubsub_schema_iam_member
+./resource.ps1 google_pubsub_schema_iam_policy
 ./resource.ps1 google_pubsub_subscription_iam_binding
 ./resource.ps1 google_pubsub_subscription_iam_member
 ./resource.ps1 google_pubsub_subscription_iam_policy
 ./resource.ps1 google_recaptcha_enterprise_key
 ./resource.ps1 google_redis_cluster
-./resource.ps1 google_redis_instance
 ./resource.ps1 google_resource_manager_lien
 ./resource.ps1 google_runtimeconfig_config
 ./resource.ps1 google_runtimeconfig_config_iam_binding
@@ -745,12 +747,15 @@ Datasource percentage coverage 30.42
 ./resource.ps1 google_billing_account_iam_policy -type data
 ./resource.ps1 google_binary_authorization_attestor_iam_policy -type data
 ./resource.ps1 google_certificate_manager_certificate_map -type data
+./resource.ps1 google_cloud_identity_group_lookup -type data
 ./resource.ps1 google_cloud_identity_group_memberships -type data
 ./resource.ps1 google_cloud_identity_groups -type data
 ./resource.ps1 google_cloud_run_locations -type data
 ./resource.ps1 google_cloud_run_service -type data
 ./resource.ps1 google_cloud_run_service_iam_policy -type data
+./resource.ps1 google_cloud_run_v2_job -type data
 ./resource.ps1 google_cloud_run_v2_job_iam_policy -type data
+./resource.ps1 google_cloud_run_v2_service -type data
 ./resource.ps1 google_cloud_run_v2_service_iam_policy -type data
 ./resource.ps1 google_cloud_tasks_queue_iam_policy -type data
 ./resource.ps1 google_cloudbuild_trigger -type data
@@ -782,6 +787,7 @@ Datasource percentage coverage 30.42
 ./resource.ps1 google_compute_machine_image_iam_policy -type data
 ./resource.ps1 google_compute_network_endpoint_group -type data
 ./resource.ps1 google_compute_network_peering -type data
+./resource.ps1 google_compute_networks -type data
 ./resource.ps1 google_compute_node_types -type data
 ./resource.ps1 google_compute_region_backend_service_iam_policy -type data
 ./resource.ps1 google_compute_region_disk_iam_policy -type data
@@ -867,11 +873,12 @@ Datasource percentage coverage 30.42
 ./resource.ps1 google_privateca_certificate_template_iam_policy -type data
 ./resource.ps1 google_project_iam_policy -type data
 ./resource.ps1 google_project_organization_policy -type data
-./resource.ps1 google_redis_instance -type data
+./resource.ps1 google_pubsub_schema_iam_policy -type data
 ./resource.ps1 google_runtimeconfig_config -type data
 ./resource.ps1 google_runtimeconfig_config_iam_policy -type data
 ./resource.ps1 google_runtimeconfig_variable -type data
 ./resource.ps1 google_scc_source_iam_policy -type data
+./resource.ps1 google_secret_manager_secrets -type data
 ./resource.ps1 google_service_directory_namespace_iam_policy -type data
 ./resource.ps1 google_service_directory_service_iam_policy -type data
 ./resource.ps1 google_sourcerepo_repository -type data

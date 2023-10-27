@@ -1,6 +1,6 @@
 # todo aws
 
-Resource percentage coverage   36.74
+Resource percentage coverage   36.68
 Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_accessanalyzer_analyzer
@@ -267,6 +267,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_elasticache_global_replication_group
 ./resource.ps1 aws_elasticache_user_group_association
 ./resource.ps1 aws_elasticsearch_domain_saml_options
+./resource.ps1 aws_elasticsearch_vpc_endpoint
 ./resource.ps1 aws_elastictranscoder_pipeline
 ./resource.ps1 aws_elastictranscoder_preset
 ./resource.ps1 aws_elb_attachment
@@ -445,6 +446,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_memorydb_parameter_group
 ./resource.ps1 aws_memorydb_user
 ./resource.ps1 aws_msk_cluster_policy
+./resource.ps1 aws_msk_replicator
 ./resource.ps1 aws_msk_vpc_connection
 ./resource.ps1 aws_mskconnect_connector
 ./resource.ps1 aws_mskconnect_custom_plugin

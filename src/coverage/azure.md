@@ -1,6 +1,6 @@
 # todo azure
 
-Resource percentage coverage   5.19
+Resource percentage coverage   5.17
 Datasource percentage coverage 12.83
 
 ./resource.ps1 azurerm_aadb2c_directory
@@ -83,6 +83,7 @@ Datasource percentage coverage 12.83
 ./resource.ps1 azurerm_application_insights_workbook
 ./resource.ps1 azurerm_application_insights_workbook_template
 ./resource.ps1 azurerm_application_load_balancer
+./resource.ps1 azurerm_application_load_balancer_frontend
 ./resource.ps1 azurerm_application_security_group
 ./resource.ps1 azurerm_arc_kubernetes_cluster
 ./resource.ps1 azurerm_arc_kubernetes_cluster_extension
@@ -292,6 +293,8 @@ Datasource percentage coverage 12.83
 ./resource.ps1 azurerm_dedicated_hardware_security_module
 ./resource.ps1 azurerm_dedicated_host
 ./resource.ps1 azurerm_dedicated_host_group
+./resource.ps1 azurerm_dev_center
+./resource.ps1 azurerm_dev_center_project
 ./resource.ps1 azurerm_digital_twins_endpoint_eventgrid
 ./resource.ps1 azurerm_digital_twins_endpoint_eventhub
 ./resource.ps1 azurerm_digital_twins_endpoint_servicebus
@@ -728,6 +731,7 @@ Datasource percentage coverage 12.83
 ./resource.ps1 azurerm_security_center_automation
 ./resource.ps1 azurerm_security_center_server_vulnerability_assessment
 ./resource.ps1 azurerm_security_center_server_vulnerability_assessment_virtual_machine
+./resource.ps1 azurerm_security_center_storage_defender
 ./resource.ps1 azurerm_security_center_subscription_pricing
 ./resource.ps1 azurerm_sentinel_alert_rule_anomaly_built_in
 ./resource.ps1 azurerm_sentinel_alert_rule_anomaly_duplicate

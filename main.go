@@ -15,19 +15,20 @@ import (
 
 func main() {
 	var (
-		branch     string
-		directory  string
-		file       string
-		output     string
-		arn        string
-		wait       int
-		init       bool
-		autoAppend bool
-		write      bool
-		repository string
-		region     string
-		workflow   string
-		name       string
+		branch      string
+		directory   string
+		destination string
+		file        string
+		output      string
+		arn         string
+		wait        int
+		init        bool
+		autoAppend  bool
+		write       bool
+		repository  string
+		region      string
+		workflow    string
+		name        string
 	)
 
 	log.Logger = log.Output(zerolog.ConsoleWriter{Out: os.Stderr})
@@ -306,6 +307,58 @@ func main() {
 				},
 				Action: func(*cli.Context) error {
 					return parse.Parse(directory, name)
+				},
+			},
+			{
+				Name:    "pull",
+				Aliases: []string{"p"},
+				Usage:   "Clones remote repo and scans it using pike",
+				Flags: []cli.Flag{
+					&cli.StringFlag{
+						Name:        "directory",
+						Aliases:     []string{"d"},
+						Usage:       "Directory to scan (defaults to .)",
+						Value:       ".",
+						Destination: &directory,
+					},
+					&cli.StringFlag{
+						Name:        "destination",
+						Aliases:     []string{"dest"},
+						Usage:       "Where to clone repository",
+						Value:       ".destination",
+						Destination: &destination,
+					},
+
+					&cli.StringFlag{
+						Name:        "output",
+						Aliases:     []string{"o"},
+						Usage:       "Policy Output types e.g. `json` terraform",
+						Value:       "terraform",
+						Destination: &output,
+						EnvVars:     []string{"OUTPUT"},
+					},
+					&cli.StringFlag{
+						Name:        "repository",
+						Aliases:     []string{"r"},
+						Usage:       "Repository url",
+						Required:    true,
+						Destination: &repository,
+					},
+					&cli.BoolFlag{
+						Name:        "init",
+						Aliases:     []string{"i"},
+						Usage:       "Run Terraform init to download modules",
+						Destination: &init,
+					},
+					&cli.BoolFlag{
+						Name:        "write",
+						Aliases:     []string{"w"},
+						Usage:       "Write the policy output to a file at .pike",
+						Destination: &write,
+					},
+				},
+				Action: func(*cli.Context) error {
+					return pike.Repository(repository, destination, directory, output, init, write)
 				},
 			},
 			{
