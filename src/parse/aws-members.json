@@ -613,6 +613,7 @@
         "aws_internetmonitor_monitor",
         "aws_iot_authorizer",
         "aws_iot_certificate",
+        "aws_iot_domain_configuration",
         "aws_iot_indexing_configuration",
         "aws_iot_logging_options",
         "aws_iot_policy",
