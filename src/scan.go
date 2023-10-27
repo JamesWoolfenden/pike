@@ -41,7 +41,6 @@ func Scan(dirName string, output string, file *string, init bool, write bool) er
 func WriteOutput(OutPolicy OutputPolicy, output, location string) error {
 	newPath, _ := filepath.Abs(location + "/.pike")
 	err := os.MkdirAll(newPath, os.ModePerm)
-
 	if err != nil {
 		return err
 	}
@@ -148,7 +147,6 @@ func MakePolicy(dirName string, file *string, init bool) (OutputPolicy, error) {
 
 	if file == nil {
 		fullPath, err := filepath.Abs(dirName)
-
 		if err != nil {
 			return Output, err
 		}
@@ -226,7 +224,6 @@ func MakePolicy(dirName string, file *string, init bool) (OutputPolicy, error) {
 // GetTF return tf files in a directory
 func GetTF(dirName string) ([]string, error) {
 	files, err := GetTFFiles(dirName)
-
 	if err != nil {
 		return nil, fmt.Errorf("folder %s can't be found", dirName)
 	}

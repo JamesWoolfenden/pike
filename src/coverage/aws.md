@@ -1,6 +1,6 @@
 # todo aws
 
-Resource percentage coverage   36.68
+Resource percentage coverage   36.65
 Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_accessanalyzer_analyzer
@@ -346,6 +346,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_internetmonitor_monitor
 ./resource.ps1 aws_iot_authorizer
 ./resource.ps1 aws_iot_certificate
+./resource.ps1 aws_iot_domain_configuration
 ./resource.ps1 aws_iot_indexing_configuration
 ./resource.ps1 aws_iot_logging_options
 ./resource.ps1 aws_iot_policy

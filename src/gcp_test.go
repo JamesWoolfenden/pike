@@ -98,7 +98,8 @@ func TestGetGCPResourcePermissions(t *testing.T) {
 				"compute.subnetworks.useExternalIp",
 				"compute.instances.setMetadata",
 				"compute.instances.delete",
-				"compute.instances.delete"},
+				"compute.instances.delete",
+			},
 		},
 	}
 

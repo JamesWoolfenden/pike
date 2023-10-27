@@ -44,7 +44,7 @@ func GetResources(file string, dirName string) ([]ResourceV2, error) {
 			}
 		default:
 			{
-				//currently missed
+				// currently missed
 			}
 		}
 
@@ -97,7 +97,6 @@ func DetectBackend(resource ResourceV2, block *hclsyntax.Block, resources []Reso
 func GetResourceBlocks(file string) (*hclsyntax.Body, error) {
 	temp, _ := filepath.Abs(file)
 	src, err := os.ReadFile(temp)
-
 	if err != nil {
 		return nil, fmt.Errorf("failed to read file: %w", err)
 	}
@@ -118,7 +117,7 @@ func GetLocalModules(block *hclsyntax.Block, dirName string) ([]ResourceV2, erro
 
 	modulePath := GetModulePath(block)
 
-	//not local
+	// not local
 	if strings.Contains(modulePath, "git::") {
 		return nil, nil
 	}
@@ -176,7 +175,7 @@ func GetBlockAttributes(attributes []string, block *hclsyntax.Block) []string {
 			}
 		case "resource":
 			{
-				//do nothing
+				// do nothing
 			}
 		default:
 			{

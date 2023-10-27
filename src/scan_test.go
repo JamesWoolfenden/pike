@@ -58,8 +58,12 @@ func TestGetTF(t *testing.T) {
 		want    []string
 		wantErr bool
 	}{
-		{"first", args{"../testdata/scan/examples/simple"},
-			[]string{"../testdata/scan/examples/simple/aws_s3_bucket.pike.tf"}, false},
+		{
+			"first",
+			args{"../testdata/scan/examples/simple"},
+			[]string{"../testdata/scan/examples/simple/aws_s3_bucket.pike.tf"},
+			false,
+		},
 		{"empty", args{"../testdata/scan"}, nil, false},
 		{"notlocal", args{"../testdata/scan/examples/notlocal"}, found, false},
 	}
@@ -126,8 +130,12 @@ func TestInit(t *testing.T) {
 		want    []string
 		wantErr bool
 	}{
-		{"remote", args{dirName},
-			[]string{"api_gateway", "dynamodb_table", "lambda_get", "lambda_post"}, false},
+		{
+			"remote",
+			args{dirName},
+			[]string{"api_gateway", "dynamodb_table", "lambda_get", "lambda_post"},
+			false,
+		},
 	}
 
 	for _, tt := range tests {

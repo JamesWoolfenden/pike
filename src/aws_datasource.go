@@ -20,7 +20,7 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 	return Permissions, err
 }
 
-//nolint:funlen
+// nolint:funlen
 func AwsDataLoookup(find string) interface{} {
 	TFLookup := map[string]interface{}{
 		"aws_acm_certificate":                                       dataAwsAcmCertificate,

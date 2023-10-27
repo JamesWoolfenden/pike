@@ -713,6 +713,7 @@ Datasource percentage coverage 12.83
 ./resource.ps1 azurerm_resource_group_policy_remediation
 ./resource.ps1 azurerm_resource_group_template_deployment
 ./resource.ps1 azurerm_resource_management_private_link
+./resource.ps1 azurerm_resource_management_private_link_association
 ./resource.ps1 azurerm_resource_policy_assignment
 ./resource.ps1 azurerm_resource_policy_exemption
 ./resource.ps1 azurerm_resource_policy_remediation

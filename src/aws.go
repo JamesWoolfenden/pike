@@ -553,7 +553,6 @@ func Contains(s []string, e string) bool {
 func GetPermissionMap(raw []byte, attributes []string) ([]string, error) {
 	var mappings []interface{}
 	err := json.Unmarshal(raw, &mappings)
-
 	if err != nil {
 		return nil, fmt.Errorf("failed to unmarshal json %w", err)
 	}

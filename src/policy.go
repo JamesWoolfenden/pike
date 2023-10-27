@@ -51,7 +51,8 @@ func NewAWSPolicy(actions []string) (Policy, error) {
 		}
 
 		state := Statement{
-			Sid: "VisualEditor" + strconv.Itoa(count), Effect: "Allow", Action: myActions, Resource: []string{"*"}}
+			Sid: "VisualEditor" + strconv.Itoa(count), Effect: "Allow", Action: myActions, Resource: []string{"*"},
+		}
 
 		statements = append(statements, state)
 	}
@@ -139,7 +140,6 @@ func AWSPolicy(Permissions []string) (AwsOutput, error) {
 	var OutPolicy AwsOutput
 
 	Policy, err := NewAWSPolicy(Permissions)
-
 	if err != nil {
 		return OutPolicy, err
 	}

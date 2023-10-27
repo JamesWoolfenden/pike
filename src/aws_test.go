@@ -261,8 +261,10 @@ func TestGetPermissionMap(t *testing.T) {
 			name: "bogus",
 			args: args{
 				raw:        []byte("bogus"),
-				attributes: []string{}},
-			wantErr: true},
+				attributes: []string{},
+			},
+			wantErr: true,
+		},
 	}
 
 	for _, tt := range tests {

@@ -59,7 +59,7 @@ func Parse(codebase string, name string) error {
 	}
 
 	log.Info().Msgf("creating %s-members.json", name)
-	err = os.WriteFile(name+"-members.json", jsonOut, 0700)
+	err = os.WriteFile(name+"-members.json", jsonOut, 0o700)
 
 	if err != nil {
 		return err
@@ -70,7 +70,6 @@ func Parse(codebase string, name string) error {
 
 func GetMatches(source string, match string, extension string) ([]string, error) {
 	files, err := GetGoFiles(source, extension)
-
 	if err != nil {
 		return nil, err
 	}
@@ -116,7 +115,6 @@ func GetGoFiles(path string, extension string) ([]string, error) {
 	err = filepath.Walk(path, func(path string, info os.FileInfo, err error) error {
 		if err == nil && libRegEx.MatchString(info.Name()) {
 			if strings.Contains(path, "_test") || strings.Contains(path, ".ci") || info.IsDir() {
-
 			} else {
 				files = append(files, path)
 			}
@@ -146,7 +144,6 @@ func GetKeys(m map[string]bool) []string {
 
 func add(s string, m map[string]bool, a []string) ([]string, map[string]bool) {
 	if m[s] {
-
 		return a, m
 	}
 

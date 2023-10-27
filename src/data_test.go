@@ -27,26 +27,49 @@ func TestGetResources(t *testing.T) {
 		want    []pike.ResourceV2
 		wantErr bool
 	}{
-		{"empty",
-			args{"", "../testdata/scan/examples/simple"}, nil, true},
-		{"no_dir",
+		{
+			"empty",
+			args{"", "../testdata/scan/examples/simple"},
+			nil, true,
+		},
+		{
+			"no_dir",
 			args{file, ""},
 			[]pike.ResourceV2{{
-				"resource", "aws_s3_bucket", "pike", "aws", []string{"bucket"}}}, false},
-		{"dir",
+				"resource", "aws_s3_bucket", "pike", "aws", []string{"bucket"},
+			}},
+			false,
+		},
+		{
+			"dir",
 			args{file, "../testdata/scan/examples/simple"},
 			[]pike.ResourceV2{{
-				"resource", "aws_s3_bucket", "pike", "aws", []string{"bucket"}}}, false},
-		{"module",
+				"resource", "aws_s3_bucket", "pike", "aws", []string{"bucket"},
+			}},
+			false,
+		},
+		{
+			"module",
 			args{moduleFile, "../testdata/modules/examples/local"},
-			[]pike.ResourceV2{{
-				"resource", "aws_s3_bucket", "pike", "aws", []string{"name"}},
-				{"module", "local", "", "local", []string{"source"}}}, false},
-		{"not a path",
+			[]pike.ResourceV2{
+				{
+					"resource", "aws_s3_bucket", "pike", "aws", []string{"name"},
+				},
+				{"module", "local", "", "local", []string{"source"}},
+			},
+			false,
+		},
+		{
+			"not a path",
 			args{moduleFile, "../testdata/modules/examples/rubbish"},
-			[]pike.ResourceV2{{
-				"resource", "aws_s3_bucket", "pike", "aws", []string{"name"}},
-				{"module", "local", "", "local", []string{"source"}}}, false},
+			[]pike.ResourceV2{
+				{
+					"resource", "aws_s3_bucket", "pike", "aws", []string{"name"},
+				},
+				{"module", "local", "", "local", []string{"source"}},
+			},
+			false,
+		},
 	}
 
 	for _, tt := range tests {
@@ -163,13 +186,17 @@ func TestGetBlockAttributes(t *testing.T) {
 	body := hclsyntax.Body{Attributes: attributes}
 
 	closeRange := hcl.Range{
-		Filename: file, Start: hcl.Pos{Line: 12, Column: 3, Byte: 245}, End: hcl.Pos{Line: 12, Column: 4, Byte: 246}}
+		Filename: file, Start: hcl.Pos{Line: 12, Column: 3, Byte: 245}, End: hcl.Pos{Line: 12, Column: 4, Byte: 246},
+	}
 	open := hcl.Range{
-		Filename: file, Start: hcl.Pos{Line: 10, Column: 13, Byte: 206}, End: hcl.Pos{Line: 10, Column: 14, Byte: 207}}
+		Filename: file, Start: hcl.Pos{Line: 10, Column: 13, Byte: 206}, End: hcl.Pos{Line: 10, Column: 14, Byte: 207},
+	}
 	typeRange := hcl.Range{
-		Filename: file, Start: hcl.Pos{Line: 10, Column: 3, Byte: 196}, End: hcl.Pos{Line: 10, Column: 12, Byte: 205}}
+		Filename: file, Start: hcl.Pos{Line: 10, Column: 3, Byte: 196}, End: hcl.Pos{Line: 10, Column: 12, Byte: 205},
+	}
 	block := hclsyntax.Block{
-		Type: "lifecycle", Body: &body, TypeRange: typeRange, OpenBraceRange: open, CloseBraceRange: closeRange}
+		Type: "lifecycle", Body: &body, TypeRange: typeRange, OpenBraceRange: open, CloseBraceRange: closeRange,
+	}
 
 	tests := []struct {
 		name string

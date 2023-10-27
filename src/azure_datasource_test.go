@@ -14,7 +14,7 @@ func TestGetAZUREDataPermissions(t *testing.T) {
 		result pike.ResourceV2
 	}
 
-	var tests = []struct {
+	tests := []struct {
 		name    string
 		args    args
 		want    []string

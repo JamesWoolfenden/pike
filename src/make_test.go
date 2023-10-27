@@ -65,7 +65,6 @@ func Test_tfApply(t *testing.T) {
 }
 
 func TestApply(t *testing.T) {
-
 	type args struct {
 		target string
 		region string

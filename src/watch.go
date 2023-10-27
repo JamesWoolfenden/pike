@@ -104,7 +104,6 @@ func GetPolicyVersion(client *iam.Client, policyArn string, version string) (*st
 func SortActions(myPolicy string) (*string, error) {
 	var raw map[string]interface{}
 	err := json.Unmarshal([]byte(myPolicy), &raw)
-
 	if err != nil {
 		return nil, err
 	}
@@ -115,9 +114,7 @@ func SortActions(myPolicy string) (*string, error) {
 		return nil, fmt.Errorf("failed to assert list of interface for Statements")
 	}
 
-	var (
-		NewStatements []interface{}
-	)
+	var NewStatements []interface{}
 
 	for _, block := range Statements {
 		blocked, ok := block.(map[string]interface{})

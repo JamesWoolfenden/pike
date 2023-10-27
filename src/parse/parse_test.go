@@ -202,12 +202,16 @@ func Test_add(t *testing.T) {
 		want  []string
 		want1 map[string]bool
 	}{
-		{name: "pass",
+		{
+			name: "pass",
 			args: args{s: "aws_ami", m: myMap, a: []string{"aws_s3_bucket"}},
-			want: []string{"aws_s3_bucket", "aws_ami"}, want1: wantMap},
-		{name: "duplicate",
+			want: []string{"aws_s3_bucket", "aws_ami"}, want1: wantMap,
+		},
+		{
+			name: "duplicate",
 			args: args{s: "aws_ami", m: wantMap, a: []string{"aws_s3_bucket", "aws_ami"}},
-			want: []string{"aws_s3_bucket", "aws_ami"}, want1: wantMap},
+			want: []string{"aws_s3_bucket", "aws_ami"}, want1: wantMap,
+		},
 	}
 
 	for _, tt := range tests {

@@ -1,7 +1,7 @@
 # todo google
 
-Resource percentage coverage   8.85
-Datasource percentage coverage 29.67
+Resource percentage coverage   8.84
+Datasource percentage coverage 29.55
 
 ./resource.ps1 google_access_context_manager_access_level
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -58,6 +58,7 @@ Datasource percentage coverage 29.67
 ./resource.ps1 google_app_engine_flexible_app_version
 ./resource.ps1 google_app_engine_service_network_settings
 ./resource.ps1 google_app_engine_service_split_traffic
+./resource.ps1 google_app_engine_standard_app_version
 ./resource.ps1 google_artifact_registry_vpcsc_config
 ./resource.ps1 google_assured_workloads_workload
 ./resource.ps1 google_backup_dr_management_server
@@ -569,6 +570,7 @@ Datasource percentage coverage 29.67
 ./resource.ps1 google_monitoring_slo
 ./resource.ps1 google_monitoring_uptime_check_config
 ./resource.ps1 google_network_connectivity_hub
+./resource.ps1 google_network_connectivity_policy_based_route
 ./resource.ps1 google_network_connectivity_service_connection_policy
 ./resource.ps1 google_network_connectivity_spoke
 ./resource.ps1 google_network_security_address_group
@@ -639,6 +641,7 @@ Datasource percentage coverage 29.67
 ./resource.ps1 google_pubsub_subscription_iam_policy
 ./resource.ps1 google_recaptcha_enterprise_key
 ./resource.ps1 google_redis_cluster
+./resource.ps1 google_redis_instance
 ./resource.ps1 google_resource_manager_lien
 ./resource.ps1 google_runtimeconfig_config
 ./resource.ps1 google_runtimeconfig_config_iam_binding
@@ -743,6 +746,7 @@ Datasource percentage coverage 29.67
 ./resource.ps1 google_beyondcorp_app_connection -type data
 ./resource.ps1 google_beyondcorp_app_connector -type data
 ./resource.ps1 google_beyondcorp_app_gateway -type data
+./resource.ps1 google_bigquery_dataset -type data
 ./resource.ps1 google_billing_account -type data
 ./resource.ps1 google_billing_account_iam_policy -type data
 ./resource.ps1 google_binary_authorization_attestor_iam_policy -type data
@@ -874,6 +878,7 @@ Datasource percentage coverage 29.67
 ./resource.ps1 google_project_iam_policy -type data
 ./resource.ps1 google_project_organization_policy -type data
 ./resource.ps1 google_pubsub_schema_iam_policy -type data
+./resource.ps1 google_redis_instance -type data
 ./resource.ps1 google_runtimeconfig_config -type data
 ./resource.ps1 google_runtimeconfig_config_iam_policy -type data
 ./resource.ps1 google_runtimeconfig_variable -type data

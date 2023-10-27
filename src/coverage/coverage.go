@@ -16,7 +16,6 @@ type members struct {
 }
 
 func coverageAWS() error {
-
 	data := importMembers("../parse/aws-members.json")
 	missing := members{}
 	target := ""
@@ -45,8 +44,7 @@ func coverageAWS() error {
 	Prepend += fmt.Sprintf("Datasource percentage coverage %3.2f \n\n", percent(missing.DataSources, data.DataSources))
 
 	target = Prepend + target
-	err := os.WriteFile("aws.md", []byte(target), 0700)
-
+	err := os.WriteFile("aws.md", []byte(target), 0o700)
 	if err != nil {
 		return err
 	}
@@ -55,7 +53,6 @@ func coverageAWS() error {
 }
 
 func coverageAzure() error {
-
 	data := importMembers("../parse/azurerm-members.json")
 	missing := members{}
 	target := ""
@@ -80,7 +77,7 @@ func coverageAzure() error {
 	Prepend += fmt.Sprintf("Datasource percentage coverage %3.2f \n\n", percent(missing.DataSources, data.DataSources))
 
 	target = Prepend + target
-	err := os.WriteFile("azure.md", []byte(target), 0700)
+	err := os.WriteFile("azure.md", []byte(target), 0o700)
 	if err != nil {
 		return err
 	}
@@ -89,7 +86,6 @@ func coverageAzure() error {
 }
 
 func coverageGcp() error {
-
 	data := importMembers("../parse/google-members.json")
 	missing := members{}
 	target := ""
@@ -114,7 +110,7 @@ func coverageGcp() error {
 	Prepend += fmt.Sprintf("Datasource percentage coverage %3.2f \n\n", percent(missing.DataSources, data.DataSources))
 
 	target = Prepend + target
-	err := os.WriteFile("google.md", []byte(target), 0700)
+	err := os.WriteFile("google.md", []byte(target), 0o700)
 	if err != nil {
 		return err
 	}

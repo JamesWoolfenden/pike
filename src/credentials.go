@@ -11,7 +11,6 @@ import (
 )
 
 func getAWSCredentials(IAMRole string, region string) (*sts.AssumeRoleOutput, error) {
-
 	const waitForConsistency = 900
 
 	config := aws.NewConfig()

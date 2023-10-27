@@ -1,9 +1,14 @@
-package pike
+package pike_test
 
-import "testing"
+import (
+	"testing"
+
+	pike "github.com/jameswoolfenden/pike/src"
+)
 
 func TestRepository(t *testing.T) {
 	t.Parallel()
+
 	type args struct {
 		repository  string
 		destination string
@@ -18,9 +23,10 @@ func TestRepository(t *testing.T) {
 		args    args
 		wantErr bool
 	}{
-		{name: "pass",
+		{
+			name: "pass",
 			args: args{
-				repository:  "https://github.com/JamesWoolfenden/terraform-gcp-redis",
+				repository:  "https://github.com/JamesWoolfenden/terraform-aws-codebuild",
 				destination: "../../terraform-gcp-redis",
 				directory:   ".",
 				output:      "terraform",
@@ -28,13 +34,27 @@ func TestRepository(t *testing.T) {
 				write:       true,
 			},
 		},
+		{
+			name: "nothing",
+			args: args{
+				repository:  "https://github.com/JamesWoolfenden/pike",
+				destination: "../../placeholder",
+				directory:   ".",
+				output:      "terraform",
+				init:        true,
+				write:       true,
+			}, wantErr: true,
+		},
 	}
 
 	for _, tt := range tests {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
-			if err := Repository(tt.args.repository, tt.args.destination, tt.args.directory, tt.args.output, tt.args.init, tt.args.write); (err != nil) != tt.wantErr {
+			if err := pike.Repository(
+				tt.args.repository, tt.args.destination,
+				tt.args.directory, tt.args.output,
+				tt.args.init, tt.args.write); (err != nil) != tt.wantErr {
 				t.Errorf("Repository() error = %v, wantErr %v", err, tt.wantErr)
 			}
 		})

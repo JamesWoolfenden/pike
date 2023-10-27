@@ -16,7 +16,6 @@ var letters = []rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ") //n
 
 // RandSeq generate a randown sequence
 func RandSeq(n int) string {
-
 	sequence := make([]rune, n)
 	for i := range sequence {
 		//goland:noinspection GoLinter

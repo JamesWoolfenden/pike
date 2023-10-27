@@ -22,7 +22,6 @@ func Repository(repository, destination, directory, output string, init, write b
 		RecurseSubmodules: git.DefaultSubmoduleRecursionDepth,
 		Depth:             1,
 	})
-
 	if err != nil {
 		return err
 	}
