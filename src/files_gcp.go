@@ -177,3 +177,9 @@ var googleSecretManagerSecretIam []byte
 
 //go:embed  mapping/google/resource/secretmanager/google_secret_manager_secret_version.json
 var googleSecretManagerSecretVersion []byte
+
+//go:embed  mapping/google/resource/redis/google_redis_instance.json
+var googleRedisInstance []byte
+
+//go:embed  mapping/google/resource/resourcemanager/google_project_service.json
+var googleProjectService []byte

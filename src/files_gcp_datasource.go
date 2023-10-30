@@ -169,5 +169,5 @@ var dataGoogleServiceAccountJwt []byte
 //go:embed  mapping/google/data/iam/google_service_account_key.json
 var dataGoogleServiceAccountKey []byte
 
-//go:embed  mapping/google/data/resourcemanager/google_project_service.json
-var googleProjectService []byte
+//go:embed  mapping/google/data/redis/google_redis_instance.json
+var dataGoogleRedisInstance []byte

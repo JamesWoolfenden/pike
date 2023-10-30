@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "redis.instances.get",
+      "redis.instances.create",
+      "redis.operations.get",
+      "redis.instances.update",
+      "redis.instances.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "redis.instances.delete"
+    ],
+    "modify": [
+      "redis.instances.update"
+    ],
+    "plan": [
+      "redis.instances.get"
+    ]
+  }
+]

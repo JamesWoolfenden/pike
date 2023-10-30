@@ -97,6 +97,7 @@ func GCPDataLookup(result string) interface{} {
 		"google_service_account_id_token":                        placeholder,
 		"google_service_account_jwt":                             dataGoogleServiceAccountJwt,
 		"google_service_account_key":                             dataGoogleServiceAccountKey,
+		"google_redis_instance":                                  dataGoogleRedisInstance,
 	}
 	return TFLookup[result]
 }

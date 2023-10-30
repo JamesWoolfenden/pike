@@ -117,6 +117,7 @@ func GCPLookup(result string) interface{} {
 		"google_storage_bucket_acl":                       googleStorageBucketACL,
 		"google_storage_bucket_iam_binding":               googleStorageBucketIamBinding,
 		"google_storage_bucket_object":                    googleStorageBucketObject,
+		"google_redis_instance":                           googleRedisInstance,
 	}
 
 	return TFLookup[result]
