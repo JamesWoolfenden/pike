@@ -127,7 +127,6 @@ Datasource percentage coverage 29.55
 ./resource.ps1 google_cloud_run_service_iam_binding
 ./resource.ps1 google_cloud_run_service_iam_member
 ./resource.ps1 google_cloud_run_service_iam_policy
-./resource.ps1 google_cloud_run_v2_job
 ./resource.ps1 google_cloud_run_v2_job_iam_binding
 ./resource.ps1 google_cloud_run_v2_job_iam_member
 ./resource.ps1 google_cloud_run_v2_job_iam_policy
@@ -135,7 +134,6 @@ Datasource percentage coverage 29.55
 ./resource.ps1 google_cloud_run_v2_service_iam_binding
 ./resource.ps1 google_cloud_run_v2_service_iam_member
 ./resource.ps1 google_cloud_run_v2_service_iam_policy
-./resource.ps1 google_cloud_scheduler_job
 ./resource.ps1 google_cloud_tasks_queue
 ./resource.ps1 google_cloud_tasks_queue_iam_binding
 ./resource.ps1 google_cloud_tasks_queue_iam_member

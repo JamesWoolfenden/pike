@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "run.jobs.create",
+      "run.jobs.get",
+      "run.operations.get",
+      "run.jobs.delete",
+      "run.jobs.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "run.jobs.delete"
+    ],
+    "modify": [
+      "run.jobs.update"
+    ],
+    "plan": []
+  }
+]

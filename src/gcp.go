@@ -118,6 +118,8 @@ func GCPLookup(result string) interface{} {
 		"google_storage_bucket_iam_binding":               googleStorageBucketIamBinding,
 		"google_storage_bucket_object":                    googleStorageBucketObject,
 		"google_redis_instance":                           googleRedisInstance,
+		"google_cloud_run_v2_job":                         googleCloudRunV2Job,
+		"google_cloud_scheduler_job":                      googleCloudSchedulerJob,
 	}
 
 	return TFLookup[result]

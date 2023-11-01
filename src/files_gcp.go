@@ -183,3 +183,9 @@ var googleRedisInstance []byte
 
 //go:embed  mapping/google/resource/resourcemanager/google_project_service.json
 var googleProjectService []byte
+
+//go:embed  mapping/google/resource/run/google_cloud_run_v2_job.json
+var googleCloudRunV2Job []byte
+
+//go:embed  mapping/google/resource/cloudscheduler/google_cloud_scheduler_job.json
+var googleCloudSchedulerJob []byte

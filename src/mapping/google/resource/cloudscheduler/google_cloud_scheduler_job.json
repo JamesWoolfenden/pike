@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "cloudscheduler.jobs.create",
+      "cloudscheduler.jobs.enable",
+      "cloudscheduler.jobs.get",
+      "cloudscheduler.jobs.delete",
+      "cloudscheduler.jobs.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "cloudscheduler.jobs.delete"
+    ],
+    "modify": [
+      "cloudscheduler.jobs.update"
+    ],
+    "plan": []
+  }
+]
