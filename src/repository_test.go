@@ -1,3 +1,5 @@
+//go:build auth
+
 package pike_test
 
 import (
@@ -51,7 +53,13 @@ func TestRepository(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
-			if err := pike.Repository(tt.args.repository, tt.args.destination, tt.args.directory, tt.args.output, tt.args.init, tt.args.write, false); (err != nil) != tt.wantErr {
+			if err := pike.Repository(
+				tt.args.repository,
+				tt.args.destination,
+				tt.args.directory,
+				tt.args.output,
+				tt.args.init,
+				tt.args.write, false); (err != nil) != tt.wantErr {
 				t.Errorf("Repository() error = %v, wantErr %v", err, tt.wantErr)
 			}
 		})
