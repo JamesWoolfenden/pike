@@ -87,3 +87,26 @@ func TestApply(t *testing.T) {
 		})
 	}
 }
+
+func Test_tfPlan(t *testing.T) {
+	type args struct {
+		policyPath string
+	}
+
+	tests := []struct {
+		name    string
+		args    args
+		wantErr bool
+	}{
+		{"plan", args{"./testdata/plan/simple"}, false},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			err := tfPlan(tt.args.policyPath)
+			if (err != nil) != tt.wantErr {
+				t.Errorf("tfPlan() error = %v, wantErr %v", err, tt.wantErr)
+				return
+			}
+		})
+	}
+}

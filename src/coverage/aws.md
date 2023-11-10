@@ -1,7 +1,7 @@
 # todo aws
 
-Resource percentage coverage   36.65
-Datasource percentage coverage 100.00
+Resource percentage coverage   36.51
+Datasource percentage coverage 99.40
 
 ./resource.ps1 aws_accessanalyzer_analyzer
 ./resource.ps1 aws_accessanalyzer_archive_rule
@@ -176,6 +176,8 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_detective_graph
 ./resource.ps1 aws_detective_invitation_accepter
 ./resource.ps1 aws_detective_member
+./resource.ps1 aws_detective_organization_admin_account
+./resource.ps1 aws_detective_organization_configuration
 ./resource.ps1 aws_devicefarm_device_pool
 ./resource.ps1 aws_devicefarm_instance_profile
 ./resource.ps1 aws_devicefarm_network_profile
@@ -486,6 +488,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_opensearch_vpc_endpoint
 ./resource.ps1 aws_opensearchserverless_access_policy
 ./resource.ps1 aws_opensearchserverless_collection
+./resource.ps1 aws_opensearchserverless_lifecycle_policy
 ./resource.ps1 aws_opensearchserverless_security_config
 ./resource.ps1 aws_opensearchserverless_security_policy
 ./resource.ps1 aws_opensearchserverless_vpc_endpoint
@@ -557,6 +560,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_redshift_endpoint_access
 ./resource.ps1 aws_redshift_endpoint_authorization
 ./resource.ps1 aws_redshift_partner
+./resource.ps1 aws_redshift_resource_policy
 ./resource.ps1 aws_redshiftdata_statement
 ./resource.ps1 aws_redshiftserverless_endpoint_access
 ./resource.ps1 aws_redshiftserverless_namespace
@@ -741,6 +745,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_transfer_tag
 ./resource.ps1 aws_transfer_user
 ./resource.ps1 aws_transfer_workflow
+./resource.ps1 aws_verifiedaccess_endpoint
 ./resource.ps1 aws_verifiedaccess_group
 ./resource.ps1 aws_verifiedaccess_instance
 ./resource.ps1 aws_verifiedaccess_instance_logging_configuration
@@ -805,3 +810,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_worklink_website_certificate_authority_association
 ./resource.ps1 aws_workspaces_connection_alias
 ./resource.ps1 aws_workspaces_ip_group
+./resource.ps1 aws_bedrock_foundation_model -type data
+./resource.ps1 aws_bedrock_foundation_models -type data
+./resource.ps1 aws_opensearchserverless_lifecycle_policy -type data

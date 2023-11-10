@@ -12,6 +12,7 @@ import (
 	"strings"
 	"text/template"
 
+	"github.com/JamesWoolfenden/arn"
 	"github.com/rs/zerolog/log"
 )
 
@@ -22,7 +23,7 @@ var policyTemplate []byte
 var roleTemplate []byte
 
 // NewAWSPolicy constructor.
-func NewAWSPolicy(actions []string) (Policy, error) {
+func NewAWSPolicy(actions []string, resources bool) (Policy, error) {
 	something := Policy{Version: "2012-10-17"}
 
 	sort.Strings(actions)
@@ -33,11 +34,17 @@ func NewAWSPolicy(actions []string) (Policy, error) {
 		categories[index] = strings.Split(action, ":")[0]
 	}
 
+	myArn := new(arn.AwsArn)
+	myArn.Builder()
+
 	sections := Unique(categories)
 	var statements []Statement
 
 	for count, section := range sections {
 		var myActions []string
+		myResource := []string{"*"}
+
+		resource := "*"
 
 		for _, action := range actions {
 			mySection := section + ":"
@@ -50,8 +57,15 @@ func NewAWSPolicy(actions []string) (Policy, error) {
 			return something, fmt.Errorf("failed to find any action")
 		}
 
+		//todo expand with new plan function
+		if resources {
+			myArn.Service = section
+			myArn.Resource = &resource
+			myResource = myArn.Builder()
+		}
+
 		state := Statement{
-			Sid: "VisualEditor" + strconv.Itoa(count), Effect: "Allow", Action: myActions, Resource: []string{"*"},
+			Sid: "VisualEditor" + strconv.Itoa(count), Effect: "Allow", Action: myActions, Resource: myResource,
 		}
 
 		statements = append(statements, state)
@@ -63,7 +77,7 @@ func NewAWSPolicy(actions []string) (Policy, error) {
 }
 
 // GetPolicy creates new iam polices from a list of Permissions
-func GetPolicy(actions Sorted) (OutputPolicy, error) {
+func GetPolicy(actions Sorted, resources bool) (OutputPolicy, error) {
 	var (
 		OutPolicy OutputPolicy
 		Empty     bool
@@ -89,7 +103,7 @@ func GetPolicy(actions Sorted) (OutputPolicy, error) {
 			Empty = false
 			// dedupe
 			AWSPermissions := Unique(actions.AWS)
-			OutPolicy.AWS, err = AWSPolicy(AWSPermissions)
+			OutPolicy.AWS, err = AWSPolicy(AWSPermissions, resources)
 
 			if err != nil {
 				log.Print(err)
@@ -136,10 +150,10 @@ func GetPolicy(actions Sorted) (OutputPolicy, error) {
 }
 
 // AWSPolicy create an IAM policy
-func AWSPolicy(Permissions []string) (AwsOutput, error) {
+func AWSPolicy(Permissions []string, Resources bool) (AwsOutput, error) {
 	var OutPolicy AwsOutput
 
-	Policy, err := NewAWSPolicy(Permissions)
+	Policy, err := NewAWSPolicy(Permissions, Resources)
 	if err != nil {
 		return OutPolicy, err
 	}

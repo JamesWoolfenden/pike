@@ -77,7 +77,7 @@ func TestNewAWSPolicy(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
-			got, err := pike.NewAWSPolicy(tt.args.Actions)
+			got, err := pike.NewAWSPolicy(tt.args.Actions, false)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("NewAWSPolicy() error = %v, wantErr %v", err, tt.wantErr)
 
@@ -143,7 +143,7 @@ func TestGetPolicy(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
-			got, err := pike.GetPolicy(tt.args.actions)
+			got, err := pike.GetPolicy(tt.args.actions, false)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("GetPolicy() error = %v, wantErr %v", err, tt.wantErr)
 
@@ -198,7 +198,7 @@ func TestAWSPolicy(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
-			got, err := pike.AWSPolicy(tt.args.Permissions)
+			got, err := pike.AWSPolicy(tt.args.Permissions, false)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("AWSPolicy() error = %v, wantErr %v", err, tt.wantErr)
 

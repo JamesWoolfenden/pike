@@ -1,6 +1,6 @@
 # todo azure
 
-Resource percentage coverage   5.17
+Resource percentage coverage   5.16
 Datasource percentage coverage 12.83
 
 ./resource.ps1 azurerm_aadb2c_directory
@@ -610,6 +610,7 @@ Datasource percentage coverage 12.83
 ./resource.ps1 azurerm_network_connection_monitor
 ./resource.ps1 azurerm_network_ddos_protection_plan
 ./resource.ps1 azurerm_network_function_azure_traffic_collector
+./resource.ps1 azurerm_network_function_collector_policy
 ./resource.ps1 azurerm_network_interface_application_gateway_backend_address_pool_association
 ./resource.ps1 azurerm_network_interface_application_security_group_association
 ./resource.ps1 azurerm_network_interface_backend_address_pool_association

@@ -16,7 +16,7 @@ func Readme(dirName string, output string, init bool, autoAppend bool) error {
 		return err
 	}
 
-	OutPolicy, err2 := MakePolicy(dirName, nil, init)
+	OutPolicy, err2 := MakePolicy(dirName, nil, init, false)
 	if err2 != nil {
 		log.Print("failed to make policy")
 

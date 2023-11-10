@@ -30,7 +30,7 @@ func Compare(directory string, arn string, init bool) (bool, error) {
 
 	Policy, _ := GetPolicyVersion(client, arn, *Version)
 
-	iacPolicy, err := MakePolicy(directory, nil, init)
+	iacPolicy, err := MakePolicy(directory, nil, init, false)
 	if err != nil {
 		return theSame, err
 	}

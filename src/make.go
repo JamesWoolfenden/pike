@@ -4,6 +4,8 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"os"
+	"os/exec"
 	"path/filepath"
 	"time"
 
@@ -13,13 +15,7 @@ import (
 
 // Make creates the required role
 func Make(directory string) (*string, error) {
-	err := Scan(
-		directory,
-		"terraform",
-		nil,
-		true,
-		true,
-	)
+	err := Scan(directory, "terraform", nil, true, true, false)
 	if err != nil {
 		return nil, err
 	}
@@ -46,7 +42,7 @@ func Make(directory string) (*string, error) {
 
 	if (state.Values.Outputs["arn"]) != nil {
 		arn := state.Values.Outputs["arn"]
-		log.Printf("aws role create/updated %s", arn.Value.(string))
+		log.Info().Msgf("aws role create/updated %s", arn.Value.(string))
 		role := arn.Value.(string)
 
 		return &role, nil
@@ -106,4 +102,42 @@ func Apply(target string, region string) error {
 	unSetAWSAuth()
 
 	return err
+}
+
+func tfPlan(policyPath string) error {
+	tfPath, err := LocateTerraform()
+	if err != nil {
+		return err
+	}
+
+	terraform, err := tfexec.NewTerraform(policyPath, tfPath)
+	if err != nil {
+		return err
+	}
+
+	err = terraform.Init(context.Background(), tfexec.Upgrade(true))
+	if err != nil {
+		return err
+	}
+
+	chdir := "-chdir=" + policyPath
+	cmd := exec.Command(terraform.ExecPath(), chdir, "plan", "--out", "tf.plan")
+	stdout, err := cmd.Output()
+
+	cmd = exec.Command(terraform.ExecPath(), chdir, "show", "--json", "tf.plan")
+	stdout, err = cmd.Output()
+
+	if err != nil {
+		fmt.Println(err.Error())
+		return err
+	}
+
+	outfile := filepath.Join(policyPath, "tf.json")
+	err = os.WriteFile(outfile, stdout, 666)
+
+	if err != nil {
+		return fmt.Errorf("terraform show failed %w", err)
+	}
+
+	return nil
 }

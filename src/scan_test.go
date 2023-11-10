@@ -36,7 +36,7 @@ func TestScan(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
-			if err := pike.Scan(tt.args.dirname, tt.args.output, nil, false, tt.args.write); (err != nil) != tt.wantErr {
+			if err := pike.Scan(tt.args.dirname, tt.args.output, nil, false, tt.args.write, false); (err != nil) != tt.wantErr {
 				t.Errorf("Scan() error = %v, wantErr %v", err, tt.wantErr)
 			}
 		})
@@ -271,7 +271,7 @@ func TestMakePolicy(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
-			got, err := pike.MakePolicy(tt.args.dirName, tt.args.file, tt.args.init)
+			got, err := pike.MakePolicy(tt.args.dirName, tt.args.file, tt.args.init, false)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("MakePolicy() error = %v, wantErr %v", err, tt.wantErr)
 

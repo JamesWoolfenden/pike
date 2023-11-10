@@ -19,8 +19,8 @@ import (
 const tfVersion = "1.5.4"
 
 // Scan looks for resources in a given directory
-func Scan(dirName string, output string, file *string, init bool, write bool) error {
-	OutPolicy, err := MakePolicy(dirName, file, init)
+func Scan(dirName string, output string, file *string, init bool, write bool, enableResources bool) error {
+	OutPolicy, err := MakePolicy(dirName, file, init, enableResources)
 	if err != nil {
 		return err
 	}
@@ -139,7 +139,7 @@ func LocateTerraform() (string, error) {
 }
 
 // MakePolicy does the guts of determining a policy from code
-func MakePolicy(dirName string, file *string, init bool) (OutputPolicy, error) {
+func MakePolicy(dirName string, file *string, init bool, EnableResources bool) (OutputPolicy, error) {
 	var (
 		files  []string
 		Output OutputPolicy
@@ -213,7 +213,7 @@ func MakePolicy(dirName string, file *string, init bool) (OutputPolicy, error) {
 		PermissionBag.AZURE = append(PermissionBag.AZURE, newPerms.AZURE...)
 	}
 
-	Output, err2 := GetPolicy(PermissionBag)
+	Output, err2 := GetPolicy(PermissionBag, EnableResources)
 	if err2 != nil {
 		return Output, err2
 	}

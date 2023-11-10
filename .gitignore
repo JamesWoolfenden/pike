@@ -18,3 +18,5 @@ terraform-provider-*
 *.pem
 *.csr
 .destination
+tf.plan
+tf.json

@@ -15,20 +15,21 @@ import (
 
 func main() {
 	var (
-		branch      string
-		directory   string
-		destination string
-		file        string
-		output      string
-		arn         string
-		wait        int
-		init        bool
-		autoAppend  bool
-		write       bool
-		repository  string
-		region      string
-		workflow    string
-		name        string
+		branch          string
+		directory       string
+		destination     string
+		file            string
+		output          string
+		arn             string
+		wait            int
+		init            bool
+		autoAppend      bool
+		write           bool
+		enableResources bool
+		repository      string
+		region          string
+		workflow        string
+		name            string
 	)
 
 	log.Logger = log.Output(zerolog.ConsoleWriter{Out: os.Stderr})
@@ -151,13 +152,19 @@ func main() {
 						Usage:       "Write the policy output to a file at .pike",
 						Destination: &write,
 					},
+					&cli.BoolFlag{
+						Name:        "enableResources",
+						Aliases:     []string{"e"},
+						Usage:       "Add resource constraints to policy (AWS only)",
+						Destination: &enableResources,
+					},
 				},
 				Action: func(*cli.Context) error {
 					if file == "" {
-						return pike.Scan(directory, output, nil, init, write)
+						return pike.Scan(directory, output, nil, init, write, enableResources)
 					}
 
-					return pike.Scan(directory, output, &file, init, write)
+					return pike.Scan(directory, output, &file, init, write, enableResources)
 				},
 			},
 			{
@@ -356,9 +363,15 @@ func main() {
 						Usage:       "Write the policy output to a file at .pike",
 						Destination: &write,
 					},
+					&cli.BoolFlag{
+						Name:        "enableResources",
+						Aliases:     []string{"e"},
+						Usage:       "Add resource constraints to policy (AWS only)",
+						Destination: &enableResources,
+					},
 				},
 				Action: func(*cli.Context) error {
-					return pike.Repository(repository, destination, directory, output, init, write)
+					return pike.Repository(repository, destination, directory, output, init, write, enableResources)
 				},
 			},
 			{

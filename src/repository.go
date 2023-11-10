@@ -8,7 +8,7 @@ import (
 	"github.com/rs/zerolog/log"
 )
 
-func Repository(repository, destination, directory, output string, init, write bool) error {
+func Repository(repository, destination, directory, output string, init, write, enableResources bool) error {
 	if _, err := os.Stat(destination); !os.IsNotExist(err) {
 		log.Info().Msgf("%s was not empty, removing", destination)
 		os.RemoveAll(destination)
@@ -37,5 +37,5 @@ func Repository(repository, destination, directory, output string, init, write b
 		return err
 	}
 
-	return Scan(filepath.Join(destination, directory), output, nil, init, write)
+	return Scan(filepath.Join(destination, directory), output, nil, init, write, enableResources)
 }
