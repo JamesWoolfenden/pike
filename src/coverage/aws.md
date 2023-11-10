@@ -1,7 +1,7 @@
 # todo aws
 
-Resource percentage coverage   36.51
-Datasource percentage coverage 99.40
+Resource percentage coverage   36.45
+Datasource percentage coverage 99.00
 
 ./resource.ps1 aws_accessanalyzer_analyzer
 ./resource.ps1 aws_accessanalyzer_archive_rule
@@ -53,6 +53,7 @@ Datasource percentage coverage 99.40
 ./resource.ps1 aws_appsync_graphql_api
 ./resource.ps1 aws_appsync_resolver
 ./resource.ps1 aws_appsync_type
+./resource.ps1 aws_athena_prepared_statement
 ./resource.ps1 aws_auditmanager_account_registration
 ./resource.ps1 aws_auditmanager_assessment
 ./resource.ps1 aws_auditmanager_assessment_delegation
@@ -399,6 +400,7 @@ Datasource percentage coverage 99.40
 ./resource.ps1 aws_lex_intent
 ./resource.ps1 aws_lex_slot_type
 ./resource.ps1 aws_lexv2models_bot
+./resource.ps1 aws_lexv2models_bot_locale
 ./resource.ps1 aws_licensemanager_association
 ./resource.ps1 aws_licensemanager_grant
 ./resource.ps1 aws_licensemanager_grant_accepter
@@ -810,6 +812,8 @@ Datasource percentage coverage 99.40
 ./resource.ps1 aws_worklink_website_certificate_authority_association
 ./resource.ps1 aws_workspaces_connection_alias
 ./resource.ps1 aws_workspaces_ip_group
+./resource.ps1 aws_apigatewayv2_vpc_link -type data
+./resource.ps1 aws_athena_named_query -type data
 ./resource.ps1 aws_bedrock_foundation_model -type data
 ./resource.ps1 aws_bedrock_foundation_models -type data
 ./resource.ps1 aws_opensearchserverless_lifecycle_policy -type data
