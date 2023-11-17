@@ -21,14 +21,13 @@ Azure is the newest with AWS having the most supported resources
 Feel free to submit PR or Issue if you find an issue or even better add new resources, and then I'll take a look at
 merging it ASAP.
 
-**CAVEAT** The policies and roles are to get you started, there are no conditions and resources are all wildcards
+**CAVEAT** The outputs of this tool are your first step, if you have AWS your can now generate resources partially, there are no conditions and even partial resources are wildcarded (for now)
 (for AWS)
-this is **definitely not best practice**, you need will to modify these permissions to minimum required by adding these
-constrictions, however I also added the ability (in AWS so far) to generate short-lived credentials for your build
-and remotely (REMOTE) supply and invoke your builds (INVOKE).
+**best practice** would go further (and I am working on it as well), you need will to modify these permissions to the minimum required in your enviornment by adding these
+restrictions, you can also deploy using short lived credentials (usinmg this tool or Vault) (in AWS so far), generatING short-lived credentials for your build
+and then remotely (REMOTE) supply and invoke your builds (INVOKE).
 
-Ideally I would like to do this for you, but these policies are determined statically, and we would need to determine
-the resource names that will be created and know your intentions.
+Ideally I would like to do this for you, but these policies are currently determined statically (QUICKER), and unrecorded intentions can be impossible to infer.
 
 ## Table of Contents
 
