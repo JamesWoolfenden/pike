@@ -1,7 +1,7 @@
 # todo google
 
-Resource percentage coverage   9.19
-Datasource percentage coverage 29.96
+Resource percentage coverage   9.11
+Datasource percentage coverage 29.72
 
 ./resource.ps1 google_access_context_manager_access_level
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -323,6 +323,9 @@ Datasource percentage coverage 29.96
 ./resource.ps1 google_dataflow_flex_template_job
 ./resource.ps1 google_dataflow_job
 ./resource.ps1 google_dataform_repository
+./resource.ps1 google_dataform_repository_iam_binding
+./resource.ps1 google_dataform_repository_iam_member
+./resource.ps1 google_dataform_repository_iam_policy
 ./resource.ps1 google_dataform_repository_release_config
 ./resource.ps1 google_dataform_repository_workflow_config
 ./resource.ps1 google_dataplex_asset
@@ -558,6 +561,7 @@ Datasource percentage coverage 29.96
 ./resource.ps1 google_logging_project_sink
 ./resource.ps1 google_looker_instance
 ./resource.ps1 google_memcache_instance
+./resource.ps1 google_migration_center_group
 ./resource.ps1 google_ml_engine_model
 ./resource.ps1 google_monitoring_alert_policy
 ./resource.ps1 google_monitoring_custom_service
@@ -707,6 +711,9 @@ Datasource percentage coverage 29.96
 ./resource.ps1 google_tpu_v2_vm
 ./resource.ps1 google_vertex_ai_dataset
 ./resource.ps1 google_vertex_ai_endpoint
+./resource.ps1 google_vertex_ai_endpoint_iam_binding
+./resource.ps1 google_vertex_ai_endpoint_iam_member
+./resource.ps1 google_vertex_ai_endpoint_iam_policy
 ./resource.ps1 google_vertex_ai_featurestore
 ./resource.ps1 google_vertex_ai_featurestore_entitytype
 ./resource.ps1 google_vertex_ai_featurestore_entitytype_feature
@@ -823,6 +830,7 @@ Datasource percentage coverage 29.96
 ./resource.ps1 google_data_catalog_tag_template_iam_policy -type data
 ./resource.ps1 google_data_catalog_taxonomy_iam_policy -type data
 ./resource.ps1 google_data_fusion_instance_iam_policy -type data
+./resource.ps1 google_dataform_repository_iam_policy -type data
 ./resource.ps1 google_dataplex_asset_iam_policy -type data
 ./resource.ps1 google_dataplex_datascan_iam_policy -type data
 ./resource.ps1 google_dataplex_lake_iam_policy -type data
@@ -901,6 +909,7 @@ Datasource percentage coverage 29.96
 ./resource.ps1 google_tpu_tensorflow_versions -type data
 ./resource.ps1 google_tpu_v2_accelerator_types -type data
 ./resource.ps1 google_tpu_v2_runtime_versions -type data
+./resource.ps1 google_vertex_ai_endpoint_iam_policy -type data
 ./resource.ps1 google_vmwareengine_cluster -type data
 ./resource.ps1 google_vmwareengine_network -type data
 ./resource.ps1 google_vmwareengine_private_cloud -type data
