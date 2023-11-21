@@ -130,7 +130,7 @@ Datasource percentage coverage 29.96
 ./resource.ps1 google_cloud_run_v2_job_iam_binding
 ./resource.ps1 google_cloud_run_v2_job_iam_member
 ./resource.ps1 google_cloud_run_v2_job_iam_policy
-./resource.ps1 google_cloud_run_v2_service
+
 ./resource.ps1 google_cloud_run_v2_service_iam_binding
 ./resource.ps1 google_cloud_run_v2_service_iam_member
 ./resource.ps1 google_cloud_run_v2_service_iam_policy
@@ -734,17 +734,6 @@ Datasource percentage coverage 29.96
 ./resource.ps1 google_workstations_workstation_iam_binding
 ./resource.ps1 google_workstations_workstation_iam_member
 ./resource.ps1 google_workstations_workstation_iam_policy
-./resource.ps1 google_access_approval_folder_service_account -type data
-./resource.ps1 google_access_approval_organization_service_account -type data
-./resource.ps1 google_access_approval_project_service_account -type data
-./resource.ps1 google_access_context_manager_access_policy_iam_policy -type data
-./resource.ps1 google_active_folder -type data
-./resource.ps1 google_alloydb_locations -type data
-./resource.ps1 google_alloydb_supported_database_flags -type data
-./resource.ps1 google_apigee_environment_iam_policy -type data
-./resource.ps1 google_beyondcorp_app_connection -type data
-./resource.ps1 google_beyondcorp_app_connector -type data
-./resource.ps1 google_beyondcorp_app_gateway -type data
 ./resource.ps1 google_bigquery_dataset -type data
 ./resource.ps1 google_billing_account -type data
 ./resource.ps1 google_billing_account_iam_policy -type data

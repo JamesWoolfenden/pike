@@ -4,18 +4,15 @@ resource "google_project_iam_custom_role" "pike" {
   title       = "pike terraform user"
   description = "A user with least privileges"
   permissions = [
-    "resourcemanager.projects.get",
-    //google_cloud_run_v2_job
-    "run.jobs.create",
-    "run.jobs.get",
-    "run.operations.get",
-    "run.jobs.delete",
-    "run.jobs.update",
-    //google_cloud_scheduler_job
-    "cloudscheduler.jobs.create",
-    "cloudscheduler.jobs.enable",
-    "cloudscheduler.jobs.get",
-    "cloudscheduler.jobs.delete",
-    "cloudscheduler.jobs.update"
+    //google_alloydb_locations
+    "alloydb.locations.list",
+    //google_alloydb_supported_database_flags
+    "alloydb.supportedDatabaseFlags.list",
+    //google_beyondcorp_app_connection
+    "beyondcorp.appConnections.get",
+    //google_beyondcorp_app_connector
+    "beyondcorp.appConnectors.get",
+    //google_beyondcorp_app_gateway
+    "beyondcorp.appGateways.get"
   ]
 }

@@ -98,6 +98,12 @@ func GCPDataLookup(result string) interface{} {
 		"google_service_account_jwt":                             dataGoogleServiceAccountJwt,
 		"google_service_account_key":                             dataGoogleServiceAccountKey,
 		"google_redis_instance":                                  dataGoogleRedisInstance,
+		"google_alloydb_locations":                               dataGoogleAlloydbLocations,
+		"google_alloydb_supported_database_flags":                dataGoogleAlloydbSupportedDatabaseFlags,
+		"google_apigee_environment_iam_policy":                   placeholder,
+		"google_beyondcorp_app_connection":                       dataGoogleBeyondcorpAppConnection,
+		"google_beyondcorp_app_connector":                        dataGoogleBeyondcorpAppConnector,
+		"google_beyondcorp_app_gateway":                          dataGoogleBeyondcorpAppGateway,
 	}
 	return TFLookup[result]
 }

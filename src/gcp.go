@@ -61,6 +61,9 @@ func GCPLookup(result string) interface{} {
 		"google_bigtable_table_iam_binding":               googleBigTableTableIam,
 		"google_bigtable_table_iam_member":                googleBigTableTableIam,
 		"google_bigtable_table_iam_policy":                googleBigTableTableIam,
+		"google_cloud_run_v2_job":                         googleCloudRunV2Job,
+		"google_cloud_run_v2_service":                     googleCloudRunV2Job,
+		"google_cloud_scheduler_job":                      googleCloudSchedulerJob,
 		"google_cloudfunctions_function":                  googleCloudfunctionsFunction,
 		"google_cloudfunctions_function_iam_member":       googleCloudfunctionsFunctionIamPolicy,
 		"google_cloudfunctions_function_iam_policy":       googleCloudfunctionsFunctionIamPolicy,
@@ -98,6 +101,7 @@ func GCPLookup(result string) interface{} {
 		"google_pubsub_topic_iam_binding":                 googlePubsubTopicIam,
 		"google_pubsub_topic_iam_member":                  googlePubsubTopicIam,
 		"google_pubsub_topic_iam_policy":                  googlePubsubTopicIam,
+		"google_redis_instance":                           googleRedisInstance,
 		"google_secret_manager_secret":                    googleSecretManagerSecret,
 		"google_secret_manager_secret_iam_binding":        googleSecretManagerSecretIam,
 		"google_secret_manager_secret_iam_member":         googleSecretManagerSecretIam,
@@ -117,9 +121,6 @@ func GCPLookup(result string) interface{} {
 		"google_storage_bucket_acl":                       googleStorageBucketACL,
 		"google_storage_bucket_iam_binding":               googleStorageBucketIamBinding,
 		"google_storage_bucket_object":                    googleStorageBucketObject,
-		"google_redis_instance":                           googleRedisInstance,
-		"google_cloud_run_v2_job":                         googleCloudRunV2Job,
-		"google_cloud_scheduler_job":                      googleCloudSchedulerJob,
 	}
 
 	return TFLookup[result]

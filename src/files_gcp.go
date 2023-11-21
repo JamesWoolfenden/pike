@@ -46,146 +46,146 @@ var googleServiceAccount []byte
 //go:embed mapping/google/resource/cloudkms/google_kms_key_ring.json
 var googleKmsKeyRing []byte
 
-//go:embed  mapping/google/resource/cloudkms/google_kms_crypto_key.json
+//go:embed mapping/google/resource/cloudkms/google_kms_crypto_key.json
 var googleKmsCryptoKey []byte
 
-//go:embed  mapping/google/resource/storage/google_storage_bucket_acl.json
+//go:embed mapping/google/resource/storage/google_storage_bucket_acl.json
 var googleStorageBucketACL []byte
 
-//go:embed  mapping/google/resource/storage/google_storage_bucket_iam_binding.json
+//go:embed mapping/google/resource/storage/google_storage_bucket_iam_binding.json
 var googleStorageBucketIamBinding []byte
 
-//go:embed  mapping/google/resource/cloudsql/google_sql_database_instance.json
+//go:embed mapping/google/resource/cloudsql/google_sql_database_instance.json
 var googleSQLDatabaseInstance []byte
 
-//go:embed  mapping/google/resource/cloudsql/google_sql_database.json
+//go:embed mapping/google/resource/cloudsql/google_sql_database.json
 var googleSQLDatabase []byte
 
-//go:embed  mapping/google/resource/cloudsql/google_sql_user.json
+//go:embed mapping/google/resource/cloudsql/google_sql_user.json
 var googleSQLUser []byte
 
-//go:embed  mapping/google/resource/servicenetworking/google_service_networking_connection.json
+//go:embed mapping/google/resource/servicenetworking/google_service_networking_connection.json
 var googleServiceNetworkingConnection []byte
 
-//go:embed  mapping/google/resource/compute/google_compute_global_address.json
+//go:embed mapping/google/resource/compute/google_compute_global_address.json
 var googleComputeGlobalAddress []byte
 
-//go:embed  mapping/google/resource/pubsub/google_pubsub_topic.json
+//go:embed mapping/google/resource/pubsub/google_pubsub_topic.json
 var googlePubsubTopic []byte
 
-//go:embed  mapping/google/resource/source/google_soucerepo_repository.json
+//go:embed mapping/google/resource/source/google_soucerepo_repository.json
 var googleSourcerepoRepository []byte
 
-//go:embed  mapping/google/resource/iam/google_service_account_iam_policy.json
+//go:embed mapping/google/resource/iam/google_service_account_iam_policy.json
 var googleServiceAccountIamPolicy []byte
 
-//go:embed  mapping/google/resource/iam/google_service_account_key.json
+//go:embed mapping/google/resource/iam/google_service_account_key.json
 var googleServiceAccountKey []byte
 
-//go:embed  mapping/google/resource/resourcemanager/google_project_iam_binding.json
+//go:embed mapping/google/resource/resourcemanager/google_project_iam_binding.json
 var googleProjectIamBinding []byte
 
-//go:embed  mapping/google/resource/container/google_container_cluster.json
+//go:embed mapping/google/resource/container/google_container_cluster.json
 var googleContainerCluster []byte
 
-//go:embed  mapping/google/resource/container/google_container_node_pool.json
+//go:embed mapping/google/resource/container/google_container_node_pool.json
 var googleContainerNodePool []byte
 
-//go:embed  mapping/google/resource/bigquery/google_bigquery_dataset.json
+//go:embed mapping/google/resource/bigquery/google_bigquery_dataset.json
 var googleBigqueryDataset []byte
 
-//go:embed  mapping/google/resource/bigquery/google_bigquery_job.json
+//go:embed mapping/google/resource/bigquery/google_bigquery_job.json
 var googleBigqueryJob []byte
 
-//go:embed  mapping/google/resource/artifactregistry/google_artifact_registry_repository.json
+//go:embed mapping/google/resource/artifactregistry/google_artifact_registry_repository.json
 var googleArtifactRegistryRepository []byte
 
-//go:embed  mapping/google/resource/artifactregistry/google_artifact_registry_repository_iam_binding.json
+//go:embed mapping/google/resource/artifactregistry/google_artifact_registry_repository_iam_binding.json
 var googleArtifactRegistryRepositoryIamBinding []byte
 
-//go:embed  mapping/google/resource/artifactregistry/google_artifact_registry_repository_iam_member.json
+//go:embed mapping/google/resource/artifactregistry/google_artifact_registry_repository_iam_member.json
 var googleArtifactRegistryRepositoryIamMember []byte
 
-//go:embed  mapping/google/resource/artifactregistry/google_artifact_registry_repository_iam_policy.json
+//go:embed mapping/google/resource/artifactregistry/google_artifact_registry_repository_iam_policy.json
 var googleArtifactRegistryRepositoryIamPolicy []byte
 
-//go:embed  mapping/google/resource/pubsublite/google_pubsub_lite_reservation.json
+//go:embed mapping/google/resource/pubsublite/google_pubsub_lite_reservation.json
 var googlePubsubLiteReservation []byte
 
-//go:embed  mapping/google/resource/pubsublite/google_pubsub_lite_subscription.json
+//go:embed mapping/google/resource/pubsublite/google_pubsub_lite_subscription.json
 var googlePubsubLiteSubscription []byte
 
-//go:embed  mapping/google/resource/pubsublite/google_pubsub_lite_topic.json
+//go:embed mapping/google/resource/pubsublite/google_pubsub_lite_topic.json
 var googlePubsubLiteTopic []byte
 
-//go:embed  mapping/google/resource/compute/google_compute_security_policy.json
+//go:embed mapping/google/resource/compute/google_compute_security_policy.json
 var googleComputeSecurityPolicy []byte
 
-//go:embed  mapping/google/resource/cloudkms/google_kms_crypto_key_iam_binding.json
+//go:embed mapping/google/resource/cloudkms/google_kms_crypto_key_iam_binding.json
 var googlekmsCryptoKeyIamBinding []byte
 
-//go:embed  mapping/google/resource/cloudkms/google_kms_crypto_key_iam_member.json
+//go:embed mapping/google/resource/cloudkms/google_kms_crypto_key_iam_member.json
 var googlekmsCryptoKeyIamMember []byte
 
-//go:embed  mapping/google/resource/cloudkms/google_kms_crypto_key_iam_policy.json
+//go:embed mapping/google/resource/cloudkms/google_kms_crypto_key_iam_policy.json
 var googlekmsCryptoKeyIamPolicy []byte
 
-//go:embed  mapping/google/resource/dns/google_dns_managed_zone.json
+//go:embed mapping/google/resource/dns/google_dns_managed_zone.json
 var googleDnsmanagedZone []byte
 
-//go:embed  mapping/google/resource/dns/google_dns_policy.json
+//go:embed mapping/google/resource/dns/google_dns_policy.json
 var googleDnsPolicy []byte
 
-//go:embed  mapping/google/resource/dns/google_dns_record_set.json
+//go:embed mapping/google/resource/dns/google_dns_record_set.json
 var googleDnsRecordSet []byte
 
-//go:embed  mapping/google/resource/iam/google_service_account_iam_binding.json
+//go:embed mapping/google/resource/iam/google_service_account_iam_binding.json
 var googleServiceAccountIamBinding []byte
 
-//go:embed  mapping/google/resource/iam/google_service_account_iam_member.json
+//go:embed mapping/google/resource/iam/google_service_account_iam_member.json
 var googleServiceAccountIamMember []byte
 
-//go:embed  mapping/google/resource/bigtable/google_bigtable_instance.json
+//go:embed mapping/google/resource/bigtable/google_bigtable_instance.json
 var googleBigtableInstance []byte
 
-//go:embed  mapping/google/resource/bigtable/google_bigtable_instance.json
+//go:embed mapping/google/resource/bigtable/google_bigtable_instance.json
 var googleComputeRegionSslCertificate []byte
 
-//go:embed  mapping/google/resource/bigtable/google_bigtable_table.json
+//go:embed mapping/google/resource/bigtable/google_bigtable_table.json
 var googleBigtableTable []byte
 
-//go:embed  mapping/google/resource/bigtable/google_bigtable_instance_iam.json
+//go:embed mapping/google/resource/bigtable/google_bigtable_instance_iam.json
 var googleBigTableInstanceIam []byte
 
-//go:embed  mapping/google/resource/bigtable/google_bigtable_table_iam.json
+//go:embed mapping/google/resource/bigtable/google_bigtable_table_iam.json
 var googleBigTableTableIam []byte
 
-//go:embed  mapping/google/resource/pubsub/google_pubsub_schema.json
+//go:embed mapping/google/resource/pubsub/google_pubsub_schema.json
 var googlePubsubSchema []byte
 
-//go:embed  mapping/google/resource/pubsub/google_pubsub_subscription.json
+//go:embed mapping/google/resource/pubsub/google_pubsub_subscription.json
 var googlePubsubSubscription []byte
 
-//go:embed  mapping/google/resource/pubsub/google_pubsub_topic_iam_binding.json
+//go:embed mapping/google/resource/pubsub/google_pubsub_topic_iam_binding.json
 var googlePubsubTopicIam []byte
 
-//go:embed  mapping/google/resource/secretmanager/google_secret_manager_secret.json
+//go:embed mapping/google/resource/secretmanager/google_secret_manager_secret.json
 var googleSecretManagerSecret []byte
 
-//go:embed  mapping/google/resource/secretmanager/google_secret_manager_secret_iam_binding.json
+//go:embed mapping/google/resource/secretmanager/google_secret_manager_secret_iam_binding.json
 var googleSecretManagerSecretIam []byte
 
-//go:embed  mapping/google/resource/secretmanager/google_secret_manager_secret_version.json
+//go:embed mapping/google/resource/secretmanager/google_secret_manager_secret_version.json
 var googleSecretManagerSecretVersion []byte
 
-//go:embed  mapping/google/resource/redis/google_redis_instance.json
+//go:embed mapping/google/resource/redis/google_redis_instance.json
 var googleRedisInstance []byte
 
-//go:embed  mapping/google/resource/resourcemanager/google_project_service.json
+//go:embed mapping/google/resource/resourcemanager/google_project_service.json
 var googleProjectService []byte
 
-//go:embed  mapping/google/resource/run/google_cloud_run_v2_job.json
+//go:embed mapping/google/resource/run/google_cloud_run_v2_job.json
 var googleCloudRunV2Job []byte
 
-//go:embed  mapping/google/resource/cloudscheduler/google_cloud_scheduler_job.json
+//go:embed mapping/google/resource/cloudscheduler/google_cloud_scheduler_job.json
 var googleCloudSchedulerJob []byte
