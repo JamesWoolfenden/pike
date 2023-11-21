@@ -52,6 +52,7 @@ func Compare(directory string, arn string, init bool) (bool, error) {
 func CompareIAMPolicy(policy string, oldPolicy string) (bool, error) {
 	differ := diff.New()
 	compare, err := differ.Compare([]byte(policy), []byte(oldPolicy))
+
 	if err != nil {
 		return false, err
 	}

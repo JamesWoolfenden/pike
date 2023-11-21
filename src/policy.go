@@ -45,6 +45,7 @@ func NewAWSPolicy(actions []string, resources bool) (Policy, error) {
 
 	for count, section := range sections {
 		var myActions []string
+
 		myResource := []string{"*"}
 
 		resource := "*"
@@ -60,7 +61,7 @@ func NewAWSPolicy(actions []string, resources bool) (Policy, error) {
 			return something, fmt.Errorf("failed to find any action")
 		}
 
-		//todo expand with new plan function
+		// todo expand with new plan function
 		if resources {
 			myArn.Service = section
 			myArn.Resource = &resource
@@ -137,12 +138,13 @@ func GetPolicy(actions Sorted, resources bool) (OutputPolicy, error) {
 			// dedupe
 			AZUREPermissions := Unique(actions.AZURE)
 			OutPolicy.AZURE, err = AZUREPolicy(AZUREPermissions)
+
 			if err != nil {
 				log.Print(err)
+
 				continue
 			}
 		}
-
 	}
 
 	if Empty {
@@ -206,6 +208,7 @@ func Unique(s []string) []string {
 	for _, str := range s {
 		if _, ok := inResult[str]; !ok {
 			inResult[str] = true
+
 			result = append(result, str)
 		}
 	}

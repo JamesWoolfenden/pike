@@ -43,10 +43,10 @@ func GCPDataLookup(result string) interface{} {
 		"google_compute_network":                                 dataGoogleComputeNetwork,
 		"google_compute_subnetwork":                              dataGoogleComputeSubnetwork,
 		"google_compute_zones":                                   dataGoogleComputeZones,
-		"google_dns_keys":                                        dataGoogleDnsKeys,
-		"google_dns_managed_zone":                                dataGoogleDnsManagedZone,
-		"google_dns_managed_zone_iam_policy":                     dataGoogleDnsManagedZoneIamPolicy,
-		"google_dns_record_set":                                  dataGoogleDnsRecordSet,
+		"google_dns_keys":                                        dataGoogleDNSKeys,
+		"google_dns_managed_zone":                                dataGoogleDNSManagedZone,
+		"google_dns_managed_zone_iam_policy":                     dataGoogleDNSManagedZoneIamPolicy,
+		"google_dns_record_set":                                  dataGoogleDNSRecordSet,
 		"google_iam_policy":                                      placeholder,
 		"google_iam_role":                                        placeholder,
 		"google_kms_crypto_key":                                  dataGoogleKmsCryptoKey,
@@ -99,5 +99,6 @@ func GCPDataLookup(result string) interface{} {
 		"google_service_account_key":                             dataGoogleServiceAccountKey,
 		"google_redis_instance":                                  dataGoogleRedisInstance,
 	}
+
 	return TFLookup[result]
 }

@@ -10,7 +10,7 @@ import (
 	"github.com/aws/aws-sdk-go/service/sts"
 )
 
-func getAWSCredentials(IAMRole string, region string) (*sts.AssumeRoleOutput, error) {
+func getAWSCredentials(iamRole string, region string) (*sts.AssumeRoleOutput, error) {
 	const waitForConsistency = 900
 
 	config := aws.NewConfig()
@@ -23,7 +23,7 @@ func getAWSCredentials(IAMRole string, region string) (*sts.AssumeRoleOutput, er
 	input := &sts.AssumeRoleInput{
 		ExternalId:      aws.String("123ABC"),
 		Policy:          nil,
-		RoleArn:         aws.String(IAMRole),
+		RoleArn:         aws.String(iamRole),
 		RoleSessionName: aws.String("testAssumeRoleSession"),
 		DurationSeconds: &duration,
 		Tags:            []*sts.Tag{},

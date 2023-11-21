@@ -128,7 +128,7 @@ func AwsDataLoookup(find string) interface{} {
 		"aws_db_cluster_snapshot":                                   dataAwsDBClusterSnapshot,
 		"aws_db_event_categories":                                   dataAwsDBEventCategories,
 		"aws_db_instance":                                           dataAwsDBInstance,
-		"aws_db_instances":                                          dataAwsDbInstances,
+		"aws_db_instances":                                          dataAwsDBInstances,
 		"aws_db_proxy":                                              placeholder,
 		"aws_db_snapshot":                                           dataAwsDBSnapshot,
 		"aws_db_subnet_group":                                       dataAwsDBSubnetGroup,

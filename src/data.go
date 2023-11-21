@@ -29,6 +29,7 @@ func GetResources(file string, dirName string) ([]ResourceV2, error) {
 		case "terraform":
 			{
 				Resources, _ = DetectBackend(resource, block, Resources)
+
 				continue
 			}
 		case "module":
@@ -83,6 +84,7 @@ func DetectBackend(resource ResourceV2, block *hclsyntax.Block, resources []Reso
 						resource.Provider = "aws"
 						resource.Attributes = []string{"s3"}
 						resources = append(resources, resource)
+
 						return resources, nil
 					}
 				}
@@ -97,6 +99,7 @@ func DetectBackend(resource ResourceV2, block *hclsyntax.Block, resources []Reso
 func GetResourceBlocks(file string) (*hclsyntax.Body, error) {
 	temp, _ := filepath.Abs(file)
 	src, err := os.ReadFile(temp)
+
 	if err != nil {
 		return nil, fmt.Errorf("failed to read file: %w", err)
 	}

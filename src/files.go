@@ -182,13 +182,13 @@ var awsSnsTopicPolicy []byte
 var awsKeyPair []byte
 
 //go:embed mapping/aws/resource/rds/aws_db_instance.json
-var awsDbInstance []byte
+var awsDBInstance []byte
 
 //go:embed mapping/aws/resource/rds/aws_db_cluster_snapshot.json
-var awsDbClusterSnapshot []byte
+var awsDBClusterSnapshot []byte
 
 //go:embed mapping/aws/resource/rds/aws_db_event_subscription.json
-var awsDbEventSubscription []byte
+var awsDBEventSubscription []byte
 
 //go:embed mapping/aws/resource/ram/aws_ram_principal_association.json
 var awsRAMPrincipleAssociation []byte
@@ -242,7 +242,7 @@ var awsDefaultRouteTable []byte
 var awsDefaultVpcDhcpOptions []byte
 
 //go:embed mapping/aws/resource/rds/aws_db_subnet_group.json
-var awsDbSubnetGroup []byte
+var awsDBSubnetGroup []byte
 
 //go:embed mapping/aws/resource/wafv2/aws_wafv2_web_acl.json
 var awsWafv2WebACL []byte
@@ -368,10 +368,10 @@ var awsRouteTableAssociation []byte
 var awsNatGateway []byte
 
 //go:embed mapping/aws/resource/rds/aws_db_option_group.json
-var awsDbOptionGroup []byte
+var awsDBOptionGroup []byte
 
 //go:embed mapping/aws/resource/rds/aws_db_parameter_group.json
-var awsDbParameterGroup []byte
+var awsDBParameterGroup []byte
 
 //go:embed mapping/aws/resource/secretsmanager/aws_secretsmanager_secret.json
 var awsSecretsmanagerSecret []byte

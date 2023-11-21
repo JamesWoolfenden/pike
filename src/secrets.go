@@ -161,11 +161,13 @@ func EncryptPlaintext(plaintext string, publicKeyB64 string) ([]byte, error) {
 
 	var publicKeyBytes32 [32]byte
 	copiedLen := copy(publicKeyBytes32[:], publicKeyBytes)
+
 	if copiedLen == 0 {
 		return nil, fmt.Errorf("could not convert publicKey to bytes")
 	}
 
 	plaintextBytes := []byte(plaintext)
+
 	var encryptedBytes []byte
 
 	cipherText, err := box.SealAnonymous(encryptedBytes, plaintextBytes, &publicKeyBytes32, nil)
