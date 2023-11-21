@@ -1,7 +1,7 @@
 # todo google
 
 Resource percentage coverage   10.22
-Datasource percentage coverage 32.13
+Datasource percentage coverage 39.36
 
 ./resource.ps1 google_access_context_manager_access_level
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -750,17 +750,6 @@ Datasource percentage coverage 32.13
 ./resource.ps1 google_cloudbuildv2_connection_iam_policy -type data
 ./resource.ps1 google_composer_environment -type data
 ./resource.ps1 google_composer_image_versions -type data
-./resource.ps1 google_compute_address -type data
-./resource.ps1 google_compute_addresses -type data
-./resource.ps1 google_compute_backend_bucket -type data
-./resource.ps1 google_compute_backend_bucket_iam_policy -type data
-./resource.ps1 google_compute_backend_service -type data
-./resource.ps1 google_compute_backend_service_iam_policy -type data
-./resource.ps1 google_compute_default_service_account -type data
-./resource.ps1 google_compute_disk -type data
-./resource.ps1 google_compute_disk_iam_policy -type data
-./resource.ps1 google_compute_forwarding_rule -type data
-./resource.ps1 google_compute_global_address -type data
 ./resource.ps1 google_compute_global_forwarding_rule -type data
 ./resource.ps1 google_compute_ha_vpn_gateway -type data
 ./resource.ps1 google_compute_health_check -type data

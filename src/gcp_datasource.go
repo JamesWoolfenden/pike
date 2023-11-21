@@ -111,6 +111,17 @@ func GCPDataLookup(result string) interface{} {
 		"google_cloud_run_v2_job_iam_policy":                     dataGoogleCloudRunV2JobIamPolicy,
 		"google_cloud_run_v2_service":                            dataGoogleCloudRunV2Service,
 		"google_cloud_run_v2_service_iam_policy":                 dataGoogleCloudRunV2ServiceIamPolicy,
+		"google_compute_address":                                 dataGoogleComputeAddress,
+		"google_compute_addresses":                               dataGoogleComputeAddresses,
+		"google_compute_backend_bucket":                          dataGoogleComputeBackendBucket,
+		"google_compute_backend_bucket_iam_policy":               dataGoogleComputeBackendBucketIamPolicy,
+		"google_compute_backend_service":                         dataGoogleComputeBackendService,
+		"google_compute_backend_service_iam_policy":              dataGoogleComputeBackendServiceIamPolicy,
+		"google_compute_default_service_account":                 dataGoogleComputeDefaultServiceAccount,
+		"google_compute_disk":                                    dataGoogleComputeDisk,
+		"google_compute_disk_iam_policy":                         dataGoogleComputeDiskIamPolicy,
+		"google_compute_forwarding_rule":                         dataGoogleComputeForwardingRule,
+		"google_compute_global_address":                          dataGoogleComputeGlobalAddress,
 	}
 	return TFLookup[result]
 }

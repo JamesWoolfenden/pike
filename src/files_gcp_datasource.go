@@ -207,3 +207,36 @@ var dataGoogleCloudRunV2Service []byte
 
 //go:embed mapping/google/data/run/google_cloud_run_v2_service_iam_policy.json
 var dataGoogleCloudRunV2ServiceIamPolicy []byte
+
+//go:embed mapping/google/data/compute/google_compute_address.json
+var dataGoogleComputeAddress []byte
+
+//go:embed mapping/google/data/compute/google_compute_addresses.json
+var dataGoogleComputeAddresses []byte
+
+//go:embed mapping/google/data/compute/google_compute_backend_bucket.json
+var dataGoogleComputeBackendBucket []byte
+
+//go:embed mapping/google/data/compute/google_compute_backend_bucket_iam_policy.json
+var dataGoogleComputeBackendBucketIamPolicy []byte
+
+//go:embed mapping/google/data/compute/google_compute_backend_service.json
+var dataGoogleComputeBackendService []byte
+
+//go:embed mapping/google/data/compute/google_compute_backend_service_iam_policy.json
+var dataGoogleComputeBackendServiceIamPolicy []byte
+
+//go:embed mapping/google/data/compute/google_compute_default_service_account.json
+var dataGoogleComputeDefaultServiceAccount []byte
+
+//go:embed mapping/google/data/compute/google_compute_disk.json
+var dataGoogleComputeDisk []byte
+
+//go:embed mapping/google/data/compute/google_compute_disk_iam_policy.json
+var dataGoogleComputeDiskIamPolicy []byte
+
+//go:embed mapping/google/data/compute/google_compute_forwarding_rule.json
+var dataGoogleComputeForwardingRule []byte
+
+//go:embed mapping/google/data/compute/google_compute_global_address.json
+var dataGoogleComputeGlobalAddress []byte

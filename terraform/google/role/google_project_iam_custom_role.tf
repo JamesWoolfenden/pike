@@ -4,15 +4,23 @@ resource "google_project_iam_custom_role" "pike" {
   title       = "pike terraform user"
   description = "A user with least privileges"
   permissions = [
-    //google_cloud_run_v2_service_iam_policy, google_cloud_run_v2_job_iam_policy, google_cloud_run_service_iam_policy
-    "run.services.getIamPolicy",
-    //google_cloud_run_service
-    "run.services.get",
-    //google_cloud_run_locations
-    "run.locations.list",
-    //google_cloud_run_v2_job
-    "run.jobs.get",
-    //google_cloud_run_v2_job_iam_policy
-    "run.jobs.getIamPolicy"
+    //google_compute_global_address
+    "compute.globalAddresses.get",
+    //google_compute_forwarding_rule
+    "compute.forwardingRules.get",
+    //google_compute_default_service_account
+    "compute.projects.get",
+    //google_compute_backend_service_iam_policy
+    "compute.backendServices.getIamPolicy",
+    //google_compute_backend_service
+    "compute.backendServices.get",
+    //google_compute_backend_bucket_iam_policy
+    "compute.backendBuckets.getIamPolicy",
+    //google_compute_backend_bucket
+    "compute.backendBuckets.get",
+    //google_compute_addresses
+    "compute.addresses.list",
+    //google_compute_address
+    "compute.addresses.get"
   ]
 }
