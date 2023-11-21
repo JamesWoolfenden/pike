@@ -4,25 +4,15 @@ resource "google_project_iam_custom_role" "pike" {
   title       = "pike terraform user"
   description = "A user with least privileges"
   permissions = [
-    //google_storage_bucket_access_control, google_storage_default_object_access_control,google_storage_default_object_acl
-    "storage.buckets.get",
-    "storage.buckets.update",
-    //google_storage_object_access_control
-    "storage.objects.update",
-    //google_storage_bucket_iam_member
-    "storage.buckets.getIamPolicy",
-    //google_storage_bucket_iam_policy
-    "storage.buckets.setIamPolicy",
-    //google_storage_object_access_control
-    "storage.objects.get",
-    "storage.objects.getIamPolicy",
-    "storage.objects.setIamPolicy",
-    //google_storage_insights_report_config
-    "storageinsights.reportConfigs.create",
-    //google_storage_hmac_key
-    "storage.hmacKeys.create",
-    "storage.hmacKeys.get",
-    "storage.hmacKeys.update",
-    "storage.hmacKeys.delete"
+    //google_cloud_run_v2_service_iam_policy, google_cloud_run_v2_job_iam_policy, google_cloud_run_service_iam_policy
+    "run.services.getIamPolicy",
+    //google_cloud_run_service
+    "run.services.get",
+    //google_cloud_run_locations
+    "run.locations.list",
+    //google_cloud_run_v2_job
+    "run.jobs.get",
+    //google_cloud_run_v2_job_iam_policy
+    "run.jobs.getIamPolicy"
   ]
 }

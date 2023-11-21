@@ -4,3 +4,10 @@ provider "google" {
   //credentials = "C:/Users/jim_w/examplea-pike.json"
   credentials = "/Users/jwoolfenden/pike-service.json"
 }
+
+provider "google-beta" {
+  project = "pike-gcp"
+  region  = "europe-west2"
+  //credentials = "C:/Users/jim_w/examplea-pike.json"
+  credentials = "/Users/jwoolfenden/pike-service.json"
+}

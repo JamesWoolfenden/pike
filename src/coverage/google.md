@@ -745,13 +745,6 @@ Datasource percentage coverage 32.13
 ./resource.ps1 google_cloud_identity_group_lookup -type data
 ./resource.ps1 google_cloud_identity_group_memberships -type data
 ./resource.ps1 google_cloud_identity_groups -type data
-./resource.ps1 google_cloud_run_locations -type data
-./resource.ps1 google_cloud_run_service -type data
-./resource.ps1 google_cloud_run_service_iam_policy -type data
-./resource.ps1 google_cloud_run_v2_job -type data
-./resource.ps1 google_cloud_run_v2_job_iam_policy -type data
-./resource.ps1 google_cloud_run_v2_service -type data
-./resource.ps1 google_cloud_run_v2_service_iam_policy -type data
 ./resource.ps1 google_cloud_tasks_queue_iam_policy -type data
 ./resource.ps1 google_cloudbuild_trigger -type data
 ./resource.ps1 google_cloudbuildv2_connection_iam_policy -type data

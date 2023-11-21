@@ -104,6 +104,13 @@ func GCPDataLookup(result string) interface{} {
 		"google_beyondcorp_app_connection":                       dataGoogleBeyondcorpAppConnection,
 		"google_beyondcorp_app_connector":                        dataGoogleBeyondcorpAppConnector,
 		"google_beyondcorp_app_gateway":                          dataGoogleBeyondcorpAppGateway,
+		"google_cloud_run_locations":                             dataGoogleCloudRunLocations,
+		"google_cloud_run_service":                               dataGoogleCloudRunService,
+		"google_cloud_run_service_iam_policy":                    dataGoogleCloudRunServiceIamPolicy,
+		"google_cloud_run_v2_job":                                dataGoogleCloudRunV2Job,
+		"google_cloud_run_v2_job_iam_policy":                     dataGoogleCloudRunV2JobIamPolicy,
+		"google_cloud_run_v2_service":                            dataGoogleCloudRunV2Service,
+		"google_cloud_run_v2_service_iam_policy":                 dataGoogleCloudRunV2ServiceIamPolicy,
 	}
 	return TFLookup[result]
 }

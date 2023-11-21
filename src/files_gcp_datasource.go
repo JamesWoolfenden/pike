@@ -186,3 +186,24 @@ var dataGoogleBeyondcorpAppConnector []byte
 
 //go:embed mapping/google/data/beyondcorp/google_beyondcorp_app_gateway.json
 var dataGoogleBeyondcorpAppGateway []byte
+
+//go:embed mapping/google/data/run/google_cloud_run_locations.json
+var dataGoogleCloudRunLocations []byte
+
+//go:embed mapping/google/data/run/google_cloud_run_service.json
+var dataGoogleCloudRunService []byte
+
+//go:embed mapping/google/data/run/google_cloud_run_service_iam_policy.json
+var dataGoogleCloudRunServiceIamPolicy []byte
+
+//go:embed mapping/google/data/run/google_cloud_run_v2_job.json
+var dataGoogleCloudRunV2Job []byte
+
+//go:embed mapping/google/data/run/google_cloud_run_v2_job_iam_policy.json
+var dataGoogleCloudRunV2JobIamPolicy []byte
+
+//go:embed mapping/google/data/run/google_cloud_run_v2_service.json
+var dataGoogleCloudRunV2Service []byte
+
+//go:embed mapping/google/data/run/google_cloud_run_v2_service_iam_policy.json
+var dataGoogleCloudRunV2ServiceIamPolicy []byte
