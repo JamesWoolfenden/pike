@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "storage.buckets.getIamPolicy",
+      "storage.buckets.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

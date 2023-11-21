@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "storage.objects.update",
+      "storage.objects.get",
+      "storage.objects.getIamPolicy",
+      "storage.objects.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
