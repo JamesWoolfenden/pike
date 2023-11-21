@@ -189,3 +189,27 @@ var googleCloudRunV2Job []byte
 
 //go:embed mapping/google/resource/cloudscheduler/google_cloud_scheduler_job.json
 var googleCloudSchedulerJob []byte
+
+//go:embed mapping/google/resource/storage/google_storage_bucket_access_control.json
+var googleStorageBucketAccessControl []byte
+
+//go:embed mapping/google/resource/storage/google_storage_bucket_iam_member.json
+var googleStorageBucketIamMember []byte
+
+//go:embed mapping/google/resource/storage/google_storage_bucket_iam_policy.json
+var googleStorageBucketIamPolicy []byte
+
+//go:embed mapping/google/resource/storage/google_storage_default_object_access_control.json
+var googleStorageDefaultObjectAccessControl []byte
+
+//go:embed mapping/google/resource/storage/google_storage_default_object_acl.json
+var googleStorageDefaultObjectAcl []byte
+
+//go:embed mapping/google/resource/storage/google_storage_hmac_key.json
+var googleStorageHmacKey []byte
+
+//go:embed mapping/google/resource/storage/google_storage_insights_report_config.json
+var googleStorageInsightsReportConfig []byte
+
+//go:embed mapping/google/resource/storage/google_storage_object_access_control.json
+var googleStorageObjectAccessControl []byte

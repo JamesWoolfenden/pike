@@ -121,6 +121,14 @@ func GCPLookup(result string) interface{} {
 		"google_storage_bucket_acl":                       googleStorageBucketACL,
 		"google_storage_bucket_iam_binding":               googleStorageBucketIamBinding,
 		"google_storage_bucket_object":                    googleStorageBucketObject,
+		"google_storage_bucket_access_control":            googleStorageBucketAccessControl,
+		"google_storage_bucket_iam_member":                googleStorageBucketIamMember,
+		"google_storage_bucket_iam_policy":                googleStorageBucketIamPolicy,
+		"google_storage_default_object_access_control":    googleStorageDefaultObjectAccessControl,
+		"google_storage_default_object_acl":               googleStorageDefaultObjectAcl,
+		"google_storage_hmac_key":                         googleStorageHmacKey,
+		"google_storage_insights_report_config":           googleStorageInsightsReportConfig,
+		"google_storage_object_access_control":            googleStorageObjectAccessControl,
 	}
 
 	return TFLookup[result]
