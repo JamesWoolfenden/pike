@@ -72,6 +72,7 @@ func InvokeGithubDispatchEvent(repository string, workflowFileName string, branc
 func VerifyBranch(client *github.Client, owner string, repo string, branch string) error {
 	ctx := context.Background()
 	branches, _, err := client.Repositories.ListBranches(ctx, owner, repo, nil)
+
 	if err != nil {
 		return err
 	}

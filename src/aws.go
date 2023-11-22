@@ -200,12 +200,12 @@ func AwsLookup(name string) interface{} {
 		"aws_dax_cluster":                                    awsDaxCluster,
 		"aws_dax_parameter_group":                            awsDaxParameterGroup,
 		"aws_dax_subnet_group":                               awsDaxSubnetGroup,
-		"aws_db_cluster_snapshot":                            awsDbClusterSnapshot,
-		"aws_db_event_subscription":                          awsDbEventSubscription,
-		"aws_db_instance":                                    awsDbInstance,
-		"aws_db_option_group":                                awsDbOptionGroup,
-		"aws_db_parameter_group":                             awsDbParameterGroup,
-		"aws_db_subnet_group":                                awsDbSubnetGroup,
+		"aws_db_cluster_snapshot":                            awsDBClusterSnapshot,
+		"aws_db_event_subscription":                          awsDBEventSubscription,
+		"aws_db_instance":                                    awsDBInstance,
+		"aws_db_option_group":                                awsDBOptionGroup,
+		"aws_db_parameter_group":                             awsDBParameterGroup,
+		"aws_db_subnet_group":                                awsDBSubnetGroup,
 		"aws_default_network_acl":                            awsDefaultNetworkACL,
 		"aws_default_route_table":                            awsDefaultRouteTable,
 		"aws_default_security_group":                         awsDefaultSecurityGroup,
@@ -218,10 +218,10 @@ func AwsLookup(name string) interface{} {
 		"aws_docdb_cluster":                                  awsRdsCluster,
 		"aws_docdb_cluster_instance":                         awsNeptuneClusterInstance,
 		"aws_docdb_cluster_parameter_group":                  awsRdsClusterParameterGroup,
-		"aws_docdb_cluster_snapshot":                         awsDbClusterSnapshot,
+		"aws_docdb_cluster_snapshot":                         awsDBClusterSnapshot,
 		"aws_docdb_event_subscription":                       awsNeptuneEventSubscription,
 		"aws_docdb_global_cluster":                           awsRdsGlobalCluster,
-		"aws_docdb_subnet_group":                             awsDbSubnetGroup,
+		"aws_docdb_subnet_group":                             awsDBSubnetGroup,
 		"aws_dx_gateway":                                     awsDxGateway,
 		"aws_dx_gateway_association":                         awsDxGatewayAssociation,
 		"aws_dx_hosted_transit_virtual_interface_accepter":   awsDxHostedTransitVirtualInterfaceAccepter,
@@ -379,8 +379,8 @@ func AwsLookup(name string) interface{} {
 		"aws_neptune_cluster_parameter_group":                awsRdsClusterParameterGroup,
 		"aws_neptune_cluster_snapshot":                       awsNeptuneClusterSnapshot,
 		"aws_neptune_event_subscription":                     awsNeptuneEventSubscription,
-		"aws_neptune_parameter_group":                        awsDbParameterGroup,
-		"aws_neptune_subnet_group":                           awsDbSubnetGroup,
+		"aws_neptune_parameter_group":                        awsDBParameterGroup,
+		"aws_neptune_subnet_group":                           awsDBSubnetGroup,
 		"aws_network_acl":                                    awsNetworkACL,
 		"aws_network_acl_rule":                               awsNetworkACLRule,
 		"aws_network_interface":                              awsNetworkInterface,
@@ -398,7 +398,7 @@ func AwsLookup(name string) interface{} {
 		"aws_rds_cluster":                                    awsRdsCluster,
 		"aws_rds_cluster_activity_stream":                    awsRdsClusterActivityStream,
 		"aws_rds_cluster_endpoint":                           awsRdsClusterEndpoint,
-		"aws_rds_cluster_instance":                           awsDbInstance,
+		"aws_rds_cluster_instance":                           awsDBInstance,
 		"aws_rds_cluster_parameter_group":                    awsRdsClusterParameterGroup,
 		"aws_rds_cluster_role_association":                   awsRdsClusterRoleAssociation,
 		"aws_rds_global_cluster":                             awsRdsGlobalCluster,
@@ -553,6 +553,7 @@ func Contains(s []string, e string) bool {
 func GetPermissionMap(raw []byte, attributes []string) ([]string, error) {
 	var mappings []interface{}
 	err := json.Unmarshal(raw, &mappings)
+
 	if err != nil {
 		return nil, fmt.Errorf("failed to unmarshal json %w", err)
 	}

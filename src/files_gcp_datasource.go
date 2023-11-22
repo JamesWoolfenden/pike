@@ -26,16 +26,16 @@ var dataGoogleKmsKeyRing []byte
 var dataGoogleKmsCryptoKey []byte
 
 //go:embed mapping/google/data/dns/google_dns_keys.json
-var dataGoogleDnsKeys []byte
+var dataGoogleDNSKeys []byte
 
 //go:embed mapping/google/data/dns/google_dns_managed_zone.json
-var dataGoogleDnsManagedZone []byte
+var dataGoogleDNSManagedZone []byte
 
 //go:embed mapping/google/data/dns/google_dns_managed_zone_iam_policy.json
-var dataGoogleDnsManagedZoneIamPolicy []byte
+var dataGoogleDNSManagedZoneIamPolicy []byte
 
 //go:embed mapping/google/data/dns/google_dns_record_set.json
-var dataGoogleDnsRecordSet []byte
+var dataGoogleDNSRecordSet []byte
 
 //go:embed mapping/google/data/artifactregistry/google_artifact_registry_repository.json
 var dataGoogleArtifactRegistryRepository []byte

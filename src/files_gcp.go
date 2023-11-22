@@ -134,10 +134,10 @@ var googlekmsCryptoKeyIamPolicy []byte
 var googleDnsmanagedZone []byte
 
 //go:embed mapping/google/resource/dns/google_dns_policy.json
-var googleDnsPolicy []byte
+var googleDNSPolicy []byte
 
 //go:embed mapping/google/resource/dns/google_dns_record_set.json
-var googleDnsRecordSet []byte
+var googleDNSRecordSet []byte
 
 //go:embed mapping/google/resource/iam/google_service_account_iam_binding.json
 var googleServiceAccountIamBinding []byte

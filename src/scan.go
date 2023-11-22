@@ -38,23 +38,24 @@ func Scan(dirName string, output string, file *string, init bool, write bool, en
 }
 
 // WriteOutput writes out the policy as json or terraform
-func WriteOutput(OutPolicy OutputPolicy, output, location string) error {
+func WriteOutput(outPolicy OutputPolicy, output, location string) error {
 	newPath, _ := filepath.Abs(location + "/.pike")
 	err := os.MkdirAll(newPath, os.ModePerm)
+
 	if err != nil {
 		return err
 	}
 
 	var outFile string
 
-	d1 := []byte(OutPolicy.AsString(output))
+	d1 := []byte(outPolicy.AsString(output))
 
 	switch strings.ToLower(output) {
 
 	case terraform:
 		outFile = newPath + "/pike.generated_policy.tf"
 
-		if OutPolicy.AWS.Terraform != "" {
+		if outPolicy.AWS.Terraform != "" {
 			err = os.WriteFile(newPath+"/aws_iam_role.terraform_pike.tf", roleTemplate, 0o644)
 		}
 

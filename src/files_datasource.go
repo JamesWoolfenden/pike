@@ -380,7 +380,7 @@ var dataAwsConnectInstanceStorageConfig []byte
 var dataAwsControltowerControls []byte
 
 //go:embed mapping/aws/data/rds/aws_db_instances.json
-var dataAwsDbInstances []byte
+var dataAwsDBInstances []byte
 
 //go:embed mapping/aws/data/directconnect/aws_dx_router_configuration.json
 var dataAwsDxRouterConfiguration []byte

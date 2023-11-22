@@ -1,7 +1,7 @@
 # todo aws
 
-Resource percentage coverage   36.45
-Datasource percentage coverage 99.00
+Resource percentage coverage   36.31
+Datasource percentage coverage 98.80
 
 ./resource.ps1 aws_accessanalyzer_analyzer
 ./resource.ps1 aws_accessanalyzer_archive_rule
@@ -66,6 +66,7 @@ Datasource percentage coverage 99.00
 ./resource.ps1 aws_autoscaling_schedule
 ./resource.ps1 aws_autoscaling_traffic_source_attachment
 ./resource.ps1 aws_autoscalingplans_scaling_plan
+./resource.ps1 aws_bedrock_model_invocation_logging_configuration
 ./resource.ps1 aws_ce_anomaly_monitor
 ./resource.ps1 aws_ce_anomaly_subscription
 ./resource.ps1 aws_ce_cost_allocation_tag
@@ -348,8 +349,11 @@ Datasource percentage coverage 99.00
 ./resource.ps1 aws_internet_gateway_attachment
 ./resource.ps1 aws_internetmonitor_monitor
 ./resource.ps1 aws_iot_authorizer
+./resource.ps1 aws_iot_billing_group
+./resource.ps1 aws_iot_ca_certificate
 ./resource.ps1 aws_iot_certificate
 ./resource.ps1 aws_iot_domain_configuration
+./resource.ps1 aws_iot_event_configurations
 ./resource.ps1 aws_iot_indexing_configuration
 ./resource.ps1 aws_iot_logging_options
 ./resource.ps1 aws_iot_policy
@@ -401,6 +405,7 @@ Datasource percentage coverage 99.00
 ./resource.ps1 aws_lex_slot_type
 ./resource.ps1 aws_lexv2models_bot
 ./resource.ps1 aws_lexv2models_bot_locale
+./resource.ps1 aws_lexv2models_bot_version
 ./resource.ps1 aws_licensemanager_association
 ./resource.ps1 aws_licensemanager_grant
 ./resource.ps1 aws_licensemanager_grant_accepter
@@ -816,4 +821,5 @@ Datasource percentage coverage 99.00
 ./resource.ps1 aws_athena_named_query -type data
 ./resource.ps1 aws_bedrock_foundation_model -type data
 ./resource.ps1 aws_bedrock_foundation_models -type data
+./resource.ps1 aws_iot_registration_code -type data
 ./resource.ps1 aws_opensearchserverless_lifecycle_policy -type data
