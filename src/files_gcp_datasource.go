@@ -327,3 +327,27 @@ var dataGoogleComputeSubnetworkIamPolicy []byte
 
 //go:embed mapping/google/data/compute/google_compute_vpn_gateway.json
 var dataGoogleComputeVpnGateway []byte
+
+//go:embed mapping/google/data/containeranalysis/google_container_analysis_note_iam_policy.json
+var dataGoogleContainerAnalysisNoteIamPolicy []byte
+
+//go:embed mapping/google/data/container/google_container_cluster.json
+var dataGoogleContainerCluster []byte
+
+//go:embed mapping/google/data/source/google_sourcerepo_repository.json
+var dataGoogleSourcerepoRepository []byte
+
+//go:embed mapping/google/data/source/google_sourcerepo_repository_iam_policy.json
+var dataGoogleSourcerepoRepositoryIamPolicy []byte
+
+//go:embed mapping/google/data/cloudsql/google_sql_database.json
+var dataGoogleSqlDatabase []byte
+
+//go:embed mapping/google/data/cloudsql/google_sql_database_instance.json
+var dataGoogleSqlDatabaseInstance []byte
+
+//go:embed mapping/google/data/cloudsql/google_sql_database_instances.json
+var dataGoogleSqlDatabaseInstances []byte
+
+//go:embed mapping/google/data/cloudsql/google_sql_databases.json
+var dataGoogleSqlDatabases []byte

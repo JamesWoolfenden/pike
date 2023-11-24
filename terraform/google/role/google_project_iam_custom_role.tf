@@ -4,24 +4,24 @@ resource "google_project_iam_custom_role" "pike" {
   title       = "pike terraform user"
   description = "A user with least privileges"
   permissions = [
-    //ggoogle_compute_regions
-    "compute.regions.list",
-    //google_compute_resource_policy
-    "compute.resourcePolicies.get",
-    //google_compute_router, google_compute_router_nat,google_compute_router_status
-    "compute.routers.get",
-    //google_compute_snapshot
-    "compute.snapshots.get",
-    //google_compute_snapshot_iam_policy
-    "compute.snapshots.getIamPolicy",
-    //google_compute_ssl_certificate
-    "compute.sslCertificates.get",
-    //google_compute_ssl_policy
-    "compute.sslPolicies.get",
-    //google_compute_subnetwork_iam_policy
-    "compute.subnetworks.getIamPolicy",
-    //google_compute_vpn_gateway
-    "compute.targetVpnGateways.get"
+    //google_sourcerepo_repository
+    "source.repos.get",
+    //google_sourcerepo_repository_iam_policy
+    "source.repos.getIamPolicy",
+    //
+    "cloudsql.backupRuns.get",
+    "cloudsql.backupRuns.list",
 
+    //google_sql_database
+    "cloudsql.databases.get",
+    //google_sql_database_instance
+    "cloudsql.instances.get",
+    "cloudsql.instances.list",
+
+    "cloudsql.databases.list",
+
+    //notsure
+    "cloudsql.sslCerts.get",
+    "cloudsql.sslCerts.list"
   ]
 }
