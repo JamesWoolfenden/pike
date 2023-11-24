@@ -240,3 +240,57 @@ var dataGoogleComputeForwardingRule []byte
 
 //go:embed mapping/google/data/compute/google_compute_global_address.json
 var dataGoogleComputeGlobalAddress []byte
+
+//go:embed mapping/google/data/compute/google_compute_global_forwarding_rule.json
+var dataGoogleComputeGlobalForwardingRule []byte
+
+//go:embed mapping/google/data/compute/google_compute_ha_vpn_gateway.json
+var dataGoogleComputeHaVpnGateway []byte
+
+//go:embed mapping/google/data/compute/google_compute_health_check.json
+var dataGoogleComputeHealthCheck []byte
+
+//go:embed mapping/google/data/compute/google_compute_image_iam_policy.json
+var dataGoogleComputeImageIamPolicy []byte
+
+//go:embed mapping/google/data/compute/google_compute_instance.json
+var dataGoogleComputeInstance []byte
+
+//go:embed mapping/google/data/compute/google_compute_instance_group.json
+var dataGoogleComputeInstanceGroup []byte
+
+//go:embed mapping/google/data/compute/google_compute_instance_group_manager.json
+var dataGoogleComputeInstanceGroupManager []byte
+
+//go:embed mapping/google/data/compute/google_compute_instance_serial_port.json
+var dataGoogleComputeInstanceSerialPort []byte
+
+//go:embed mapping/google/data/compute/google_compute_instance_template.json
+var dataGoogleComputeInstanceTemplate []byte
+
+//go:embed mapping/google/data/compute/google_compute_machine_image_iam_policy.json
+var dataGoogleComputeMachineImageIamPolicy []byte
+
+//go:embed mapping/google/data/compute/google_compute_network_endpoint_group.json
+var dataGoogleComputeNetworkEndpointGroup []byte
+
+//go:embed mapping/google/data/compute/google_compute_networks.json
+var dataGoogleComputeNetworks []byte
+
+//go:embed mapping/google/data/compute/google_compute_node_types.json
+var dataGoogleComputeNodeTypes []byte
+
+//go:embed mapping/google/data/compute/google_compute_region_backend_service_iam_policy.json
+var dataGoogleComputeRegionBackendServiceIamPolicy []byte
+
+//go:embed mapping/google/data/compute/google_compute_region_disk_iam_policy.json
+var dataGoogleComputeRegionDiskIamPolicy []byte
+
+//go:embed mapping/google/data/compute/google_compute_region_instance_group.json
+var dataGoogleComputeRegionInstanceGroup []byte
+
+//go:embed mapping/google/data/compute/google_compute_region_instance_template.json
+var dataGoogleComputeRegionInstanceTemplate []byte
+
+//go:embed mapping/google/data/compute/google_compute_region_network_endpoint_group.json
+var dataGoogleComputeRegionNetworkEndpointGroup []byte

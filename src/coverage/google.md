@@ -1,7 +1,7 @@
 # todo google
 
 Resource percentage coverage   10.22
-Datasource percentage coverage 39.36
+Datasource percentage coverage 48.19
 
 ./resource.ps1 google_access_context_manager_access_level
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -750,28 +750,6 @@ Datasource percentage coverage 39.36
 ./resource.ps1 google_cloudbuildv2_connection_iam_policy -type data
 ./resource.ps1 google_composer_environment -type data
 ./resource.ps1 google_composer_image_versions -type data
-./resource.ps1 google_compute_global_forwarding_rule -type data
-./resource.ps1 google_compute_ha_vpn_gateway -type data
-./resource.ps1 google_compute_health_check -type data
-./resource.ps1 google_compute_image_iam_policy -type data
-./resource.ps1 google_compute_instance -type data
-./resource.ps1 google_compute_instance_group -type data
-./resource.ps1 google_compute_instance_group_manager -type data
-./resource.ps1 google_compute_instance_iam_policy -type data
-./resource.ps1 google_compute_instance_serial_port -type data
-./resource.ps1 google_compute_instance_template -type data
-./resource.ps1 google_compute_lb_ip_ranges -type data
-./resource.ps1 google_compute_machine_image_iam_policy -type data
-./resource.ps1 google_compute_network_endpoint_group -type data
-./resource.ps1 google_compute_network_peering -type data
-./resource.ps1 google_compute_networks -type data
-./resource.ps1 google_compute_node_types -type data
-./resource.ps1 google_compute_region_backend_service_iam_policy -type data
-./resource.ps1 google_compute_region_disk_iam_policy -type data
-./resource.ps1 google_compute_region_instance_group -type data
-./resource.ps1 google_compute_region_instance_template -type data
-./resource.ps1 google_compute_region_network_endpoint_group -type data
-./resource.ps1 google_compute_region_ssl_certificate -type data
 ./resource.ps1 google_compute_regions -type data
 ./resource.ps1 google_compute_resource_policy -type data
 ./resource.ps1 google_compute_router -type data
