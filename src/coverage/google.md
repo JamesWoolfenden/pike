@@ -750,17 +750,6 @@ Datasource percentage coverage 48.19
 ./resource.ps1 google_cloudbuildv2_connection_iam_policy -type data
 ./resource.ps1 google_composer_environment -type data
 ./resource.ps1 google_composer_image_versions -type data
-./resource.ps1 google_compute_regions -type data
-./resource.ps1 google_compute_resource_policy -type data
-./resource.ps1 google_compute_router -type data
-./resource.ps1 google_compute_router_nat -type data
-./resource.ps1 google_compute_router_status -type data
-./resource.ps1 google_compute_snapshot -type data
-./resource.ps1 google_compute_snapshot_iam_policy -type data
-./resource.ps1 google_compute_ssl_certificate -type data
-./resource.ps1 google_compute_ssl_policy -type data
-./resource.ps1 google_compute_subnetwork_iam_policy -type data
-./resource.ps1 google_compute_vpn_gateway -type data
 ./resource.ps1 google_container_analysis_note_iam_policy -type data
 ./resource.ps1 google_container_attached_install_manifest -type data
 ./resource.ps1 google_container_attached_versions -type data

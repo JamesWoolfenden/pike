@@ -294,3 +294,36 @@ var dataGoogleComputeRegionInstanceTemplate []byte
 
 //go:embed mapping/google/data/compute/google_compute_region_network_endpoint_group.json
 var dataGoogleComputeRegionNetworkEndpointGroup []byte
+
+//go:embed mapping/google/data/compute/google_compute_regions.json
+var dataGoogleComputeRegions []byte
+
+//go:embed mapping/google/data/compute/google_compute_resource_policy.json
+var dataGoogleComputeResourcePolicy []byte
+
+//go:embed mapping/google/data/compute/google_compute_router.json
+var dataGoogleComputeRouter []byte
+
+//go:embed mapping/google/data/compute/google_compute_router_nat.json
+var dataGoogleComputeRouterNat []byte
+
+//go:embed mapping/google/data/compute/google_compute_router_status.json
+var dataGoogleComputeRouterStatus []byte
+
+//go:embed mapping/google/data/compute/google_compute_snapshot.json
+var dataGoogleComputeSnapshot []byte
+
+//go:embed mapping/google/data/compute/google_compute_snapshot_iam_policy.json
+var dataGoogleComputeSnapshotIamPolicy []byte
+
+//go:embed mapping/google/data/compute/google_compute_ssl_certificate.json
+var dataGoogleComputeSslCertificate []byte
+
+//go:embed mapping/google/data/compute/google_compute_ssl_policy.json
+var dataGoogleComputeSslPolicy []byte
+
+//go:embed mapping/google/data/compute/google_compute_subnetwork_iam_policy.json
+var dataGoogleComputeSubnetworkIamPolicy []byte
+
+//go:embed mapping/google/data/compute/google_compute_vpn_gateway.json
+var dataGoogleComputeVpnGateway []byte

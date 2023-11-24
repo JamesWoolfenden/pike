@@ -144,6 +144,17 @@ func GCPDataLookup(result string) interface{} {
 		"google_compute_region_instance_template":                dataGoogleComputeRegionInstanceTemplate,
 		"google_compute_region_network_endpoint_group":           dataGoogleComputeRegionNetworkEndpointGroup,
 		"google_compute_region_ssl_certificate":                  placeholder,
+		"google_compute_regions":                                 dataGoogleComputeRegions,
+		"google_compute_resource_policy":                         dataGoogleComputeResourcePolicy,
+		"google_compute_router":                                  dataGoogleComputeRouter,
+		"google_compute_router_nat":                              dataGoogleComputeRouterNat,
+		"google_compute_router_status":                           dataGoogleComputeRouterStatus,
+		"google_compute_snapshot":                                dataGoogleComputeSnapshot,
+		"google_compute_snapshot_iam_policy":                     dataGoogleComputeSnapshotIamPolicy,
+		"google_compute_ssl_certificate":                         dataGoogleComputeSslCertificate,
+		"google_compute_ssl_policy":                              dataGoogleComputeSslPolicy,
+		"google_compute_subnetwork_iam_policy":                   dataGoogleComputeSubnetworkIamPolicy,
+		"google_compute_vpn_gateway":                             dataGoogleComputeVpnGateway,
 	}
 
 	return TFLookup[result]
