@@ -610,6 +610,7 @@
         "google_monitoring_service",
         "google_monitoring_slo",
         "google_monitoring_uptime_check_config",
+        "google_netapp_storage_pool",
         "google_network_connectivity_hub",
         "google_network_connectivity_policy_based_route",
         "google_network_connectivity_service_connection_policy",
