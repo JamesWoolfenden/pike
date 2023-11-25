@@ -7,17 +7,17 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          //aws_sns_topic
-          "SNS:CreateTopic",
-          "SNS:SetTopicAttributes",
-          "SNS:GetTopicAttributes",
-          "SNS:ListTagsForResource",
-          "SNS:DeleteTopic",
-          //aws_sns_topic_subscription
-          "SNS:Subscribe",
-          "SNS:GetSubscriptionAttributes",
-          "SNS:Unsubscribe"
+          //aws_opensearchserverless_lifecycle_policy
+          "aoss:BatchGetLifecyclePolicy",
+          //aws_apigatewayv2_vpc_link
+          "apigateway:GET",
+          //aws_athena_named_query
+          "athena:ListNamedQueries",
+          //aws_iot_registration_code
+          "iot:GetRegistrationCode",
 
+          "bedrock:ListFoundationModels",
+          "bedrock:GetFoundationModel",
         ],
         "Resource" : "*",
       }

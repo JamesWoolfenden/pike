@@ -529,6 +529,12 @@ func AwsDataLoookup(find string) interface{} {
 		"aws_servicequotas_templates":                               dataAwsServicequotasTemplates,
 		"aws_ec2_transitgateway_route_table_propagations":           placeholder,
 		"aws_saml_provider":                                         dataAwsIamSamlProvider,
+		"aws_apigatewayv2_vpc_link":                                 dataAwsApigatewayv2VpcLink,
+		"aws_athena_named_query":                                    dataAwsAthenaNamedQuery,
+		"aws_bedrock_foundation_model":                              dataAwsBedrockFoundationModel,
+		"aws_bedrock_foundation_models":                             dataAwsBedrockFoundationModels,
+		"aws_iot_registration_code":                                 dataAwsIotRegistrationCode,
+		"aws_opensearchserverless_lifecycle_policy":                 dataAwsOpensearchserverlessLifecyclePolicy,
 	}
 
 	return TFLookup[find]

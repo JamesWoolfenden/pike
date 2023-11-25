@@ -1338,3 +1338,21 @@ var dataAwsOrganizationsPolicy []byte
 
 //go:embed mapping/aws/data/servicequota/aws_servicequotas_templates.json
 var dataAwsServicequotasTemplates []byte
+
+//go:embed mapping/aws/data/apigateway/aws_apigatewayv2_vpc_link.json
+var dataAwsApigatewayv2VpcLink []byte
+
+//go:embed mapping/aws/data/athena/aws_athena_named_query.json
+var dataAwsAthenaNamedQuery []byte
+
+//go:embed mapping/aws/data/bedrock/aws_bedrock_foundation_model.json
+var dataAwsBedrockFoundationModel []byte
+
+//go:embed mapping/aws/data/bedrock/aws_bedrock_foundation_models.json
+var dataAwsBedrockFoundationModels []byte
+
+//go:embed mapping/aws/data/iot/aws_iot_registration_code.json
+var dataAwsIotRegistrationCode []byte
+
+//go:embed mapping/aws/data/aoss/aws_opensearchserverless_lifecycle_policy.json
+var dataAwsOpensearchserverlessLifecyclePolicy []byte
