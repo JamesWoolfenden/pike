@@ -203,7 +203,7 @@ var googleStorageBucketIamPolicy []byte
 var googleStorageDefaultObjectAccessControl []byte
 
 //go:embed mapping/google/resource/storage/google_storage_default_object_acl.json
-var googleStorageDefaultObjectAcl []byte
+var googleStorageDefaultObjectACL []byte
 
 //go:embed mapping/google/resource/storage/google_storage_hmac_key.json
 var googleStorageHmacKey []byte

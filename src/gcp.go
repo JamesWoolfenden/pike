@@ -1,10 +1,6 @@
 package pike
 
-import (
-	"github.com/rs/zerolog/log"
-)
-
-// GetGCPPermissions for GCP resources
+// GetGCPPermissions for GCP resources.
 func GetGCPPermissions(result ResourceV2) ([]string, error) {
 	var (
 		err         error
@@ -26,19 +22,15 @@ func GetGCPPermissions(result ResourceV2) ([]string, error) {
 	return Permissions, err
 }
 
-// GetGCPResourcePermissions looks up permissions required for resources
+// GetGCPResourcePermissions looks up permissions required for resources.
 func GetGCPResourcePermissions(result ResourceV2) ([]string, error) {
-	temp := GCPLookup(result.Name)
-
 	var (
 		Permissions []string
 		err         error
 	)
 
-	if temp != nil {
+	if temp := GCPLookup(result.Name); temp != nil {
 		Permissions, err = GetPermissionMap(temp.([]byte), result.Attributes)
-	} else {
-		log.Printf("%s not implemented", result.Name)
 	}
 
 	return Permissions, err
@@ -125,7 +117,7 @@ func GCPLookup(result string) interface{} {
 		"google_storage_bucket_iam_member":                googleStorageBucketIamMember,
 		"google_storage_bucket_iam_policy":                googleStorageBucketIamPolicy,
 		"google_storage_default_object_access_control":    googleStorageDefaultObjectAccessControl,
-		"google_storage_default_object_acl":               googleStorageDefaultObjectAcl,
+		"google_storage_default_object_acl":               googleStorageDefaultObjectACL,
 		"google_storage_hmac_key":                         googleStorageHmacKey,
 		"google_storage_insights_report_config":           googleStorageInsightsReportConfig,
 		"google_storage_object_access_control":            googleStorageObjectAccessControl,

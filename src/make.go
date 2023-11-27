@@ -13,7 +13,7 @@ import (
 	"github.com/rs/zerolog/log"
 )
 
-// Make creates the required role
+// Make creates the required role.
 func Make(directory string) (*string, error) {
 	err := Scan(directory, "terraform", nil, true, true, false)
 	if err != nil {
@@ -75,7 +75,7 @@ func tfApply(policyPath string) (*tfexec.Terraform, error) {
 	return terraform, nil
 }
 
-// Apply  executes tf using prepared role
+// Apply executes tf using a prepared role.
 func Apply(target string, region string) error {
 	iamRole, err := Make(target)
 	time.Sleep(5 * time.Second)
@@ -129,6 +129,7 @@ func tfPlan(policyPath string) error {
 
 	if err != nil {
 		fmt.Println(err.Error())
+
 		return err
 	}
 

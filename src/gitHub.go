@@ -11,7 +11,7 @@ import (
 	"github.com/rs/zerolog/log"
 )
 
-// InvokeGithubDispatchEvent uses your gitHub api key (if sufficiently enabled) to invoke a gitHub action workflow
+// InvokeGithubDispatchEvent uses your gitHub api key (if sufficiently enabled) to invoke a gitHub action workflow.
 func InvokeGithubDispatchEvent(repository string, workflowFileName string, branch string) error {
 	owner, repo, err := SplitHub(repository)
 	if err != nil {
@@ -68,7 +68,7 @@ func InvokeGithubDispatchEvent(repository string, workflowFileName string, branc
 	return nil
 }
 
-// VerifyBranch checks that a branch exists in a repo
+// VerifyBranch checks that a branch exists in a repo.
 func VerifyBranch(client *github.Client, owner string, repo string, branch string) error {
 	ctx := context.Background()
 	branches, _, err := client.Repositories.ListBranches(ctx, owner, repo, nil)
@@ -91,7 +91,7 @@ func VerifyBranch(client *github.Client, owner string, repo string, branch strin
 	return errors.New("branch " + branch + " not found for " + repo)
 }
 
-// VerifyURL tests a url
+// VerifyURL tests a url.
 func VerifyURL(url string) error {
 	resp, err := http.Get(url)
 	if err != nil {

@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-// GetGCPDataPermissions gets permissions required for datasources
+// GetGCPDataPermissions gets permissions required for datasources.
 func GetGCPDataPermissions(result ResourceV2) ([]string, error) {
 	temp := GCPDataLookup(result.Name)
 
@@ -153,10 +153,10 @@ func GCPDataLookup(result string) interface{} {
 		"google_spanner_database_iam_policy":                     dataGoogleSpannerDatabaseIamPolicy,
 		"google_spanner_instance":                                dataGoogleSpannerInstance,
 		"google_spanner_instance_iam_policy":                     dataGoogleSpannerInstanceIamPolicy,
-		"google_sql_database":                                    dataGoogleSqlDatabase,
-		"google_sql_database_instance":                           dataGoogleSqlDatabaseInstance,
-		"google_sql_database_instances":                          dataGoogleSqlDatabaseInstances,
-		"google_sql_databases":                                   dataGoogleSqlDatabases,
+		"google_sql_database":                                    dataGoogleSQLDatabase,
+		"google_sql_database_instance":                           dataGoogleSQLDatabaseInstance,
+		"google_sql_database_instances":                          dataGoogleSQLDatabaseInstances,
+		"google_sql_databases":                                   dataGoogleSQLDatabases,
 		"google_sql_tiers":                                       placeholder,
 		"google_storage_bucket":                                  dataGoogleStorageBucket,
 		"google_storage_bucket_iam_policy":                       dataGoogleStorageBucketIamPolicy,

@@ -1,7 +1,7 @@
 # todo aws
 
-Resource percentage coverage   36.31
-Datasource percentage coverage 98.80
+Resource percentage coverage   36.75
+Datasource percentage coverage 99.80
 
 ./resource.ps1 aws_accessanalyzer_analyzer
 ./resource.ps1 aws_accessanalyzer_archive_rule
@@ -33,6 +33,7 @@ Datasource percentage coverage 98.80
 ./resource.ps1 aws_apprunner_auto_scaling_configuration_version
 ./resource.ps1 aws_apprunner_connection
 ./resource.ps1 aws_apprunner_custom_domain_association
+./resource.ps1 aws_apprunner_default_auto_scaling_configuration_version
 ./resource.ps1 aws_apprunner_observability_configuration
 ./resource.ps1 aws_apprunner_service
 ./resource.ps1 aws_apprunner_vpc_connector
@@ -493,12 +494,6 @@ Datasource percentage coverage 98.80
 ./resource.ps1 aws_opensearch_package
 ./resource.ps1 aws_opensearch_package_association
 ./resource.ps1 aws_opensearch_vpc_endpoint
-./resource.ps1 aws_opensearchserverless_access_policy
-./resource.ps1 aws_opensearchserverless_collection
-./resource.ps1 aws_opensearchserverless_lifecycle_policy
-./resource.ps1 aws_opensearchserverless_security_config
-./resource.ps1 aws_opensearchserverless_security_policy
-./resource.ps1 aws_opensearchserverless_vpc_endpoint
 ./resource.ps1 aws_opsworks_application
 ./resource.ps1 aws_opsworks_custom_layer
 ./resource.ps1 aws_opsworks_ecs_cluster_layer
@@ -817,9 +812,4 @@ Datasource percentage coverage 98.80
 ./resource.ps1 aws_worklink_website_certificate_authority_association
 ./resource.ps1 aws_workspaces_connection_alias
 ./resource.ps1 aws_workspaces_ip_group
-./resource.ps1 aws_apigatewayv2_vpc_link -type data
-./resource.ps1 aws_athena_named_query -type data
-./resource.ps1 aws_bedrock_foundation_model -type data
-./resource.ps1 aws_bedrock_foundation_models -type data
-./resource.ps1 aws_iot_registration_code -type data
-./resource.ps1 aws_opensearchserverless_lifecycle_policy -type data
+./resource.ps1 aws_emr_supported_instance_types -type data

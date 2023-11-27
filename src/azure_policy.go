@@ -11,18 +11,18 @@ import (
 //go:embed terraform.azurepolicy.template
 var policyAZURETemplate []byte
 
-// AZUREPolicy creates an Azure role definition
+// AZUREPolicy creates an Azure role definition.
 func AZUREPolicy(permissions []string) (string, error) {
 	test := strings.Join(permissions, "\",\n    \"")
 
-	type AzurePolicyDetails struct {
+	type azurePolicyDetails struct {
 		Name        string
 		Permissions string
 	}
 
 	policyName := "terraform_pike"
 
-	theDetails := AzurePolicyDetails{policyName, test}
+	theDetails := azurePolicyDetails{policyName, test}
 
 	var output bytes.Buffer
 

@@ -80,7 +80,7 @@ func NewAWSPolicy(actions []string, resources bool) (Policy, error) {
 	return something, nil
 }
 
-// GetPolicy creates new iam polices from a list of Permissions
+// GetPolicy creates new iam polices from a list of Permissions.
 func GetPolicy(actions Sorted, resources bool) (OutputPolicy, error) {
 	var (
 		OutPolicy OutputPolicy
@@ -111,6 +111,7 @@ func GetPolicy(actions Sorted, resources bool) (OutputPolicy, error) {
 
 			if err != nil {
 				log.Print(err)
+
 				continue
 			}
 
@@ -154,11 +155,11 @@ func GetPolicy(actions Sorted, resources bool) (OutputPolicy, error) {
 	return OutPolicy, nil
 }
 
-// AWSPolicy create an IAM policy
-func AWSPolicy(Permissions []string, Resources bool) (AwsOutput, error) {
+// AWSPolicy create an IAM policy.
+func AWSPolicy(permissions []string, Resources bool) (AwsOutput, error) {
 	var OutPolicy AwsOutput
 
-	Policy, err := NewAWSPolicy(Permissions, Resources)
+	Policy, err := NewAWSPolicy(permissions, Resources)
 	if err != nil {
 		return OutPolicy, err
 	}
@@ -203,6 +204,7 @@ func AWSPolicy(Permissions []string, Resources bool) (AwsOutput, error) {
 // Unique make slice unique
 func Unique(s []string) []string {
 	inResult := make(map[string]bool)
+
 	var result []string
 
 	for _, str := range s {

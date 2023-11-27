@@ -8,7 +8,7 @@ import (
 
 const terraform string = "terraform"
 
-// GetAWSPermissions for AWS resources
+// GetAWSPermissions for AWS resources.
 func GetAWSPermissions(result ResourceV2) ([]string, error) {
 	var (
 		err         error
@@ -76,6 +76,10 @@ func AwsLookup(name string) interface{} {
 		"aws_alb_listener":                                   awsLbListener,
 		"aws_alb_target_group":                               awsLbTargetGroup,
 		"aws_alb_target_group_attachment":                    awsLbTargetGroupAttachment,
+		"aws_ami":                                            awsAmi,
+		"aws_ami_copy":                                       awsAmiCopy,
+		"aws_ami_from_instance":                              awsAmiFromInstance,
+		"aws_ami_launch_permission":                          awsAmiLauchPermission,
 		"aws_api_gateway_account":                            awsAPIGatewayAccount,
 		"aws_api_gateway_api_key":                            awsApigatewayv2Api,
 		"aws_api_gateway_authorizer":                         awsApigatewayv2Api,
@@ -142,9 +146,12 @@ func AwsLookup(name string) interface{} {
 		"aws_batch_job_queue":                                awsBatchJobQueue,
 		"aws_batch_scheduling_policy":                        awsBatchSchedulingPolicy,
 		"aws_budgets_budget":                                 awsBudgetsBudget,
+		"aws_budgets_budget_action":                          awsBudgetsBudgetAction,
 		"aws_cloud9_environment_ec2":                         awsCloud9EnvironmentEc2,
+		"aws_cloudformation_stack":                           awsCloudformationStack,
 		"aws_cloudformation_stack_set":                       awsCloudFormationStackSet,
 		"aws_cloudformation_stack_set_instance":              awsCloudFormationStackSetInstance,
+		"aws_cloudformation_type":                            awsCloudformationType,
 		"aws_cloudfront_distribution":                        awsCloudfrontDistribution,
 		"aws_cloudfront_field_level_encryption_config":       awsCloudfrontFieldLevelEncryptionConfig,
 		"aws_cloudfront_field_level_encryption_profile":      awsCloudfrontFieldLevelEncryptionProfile,
@@ -391,6 +398,14 @@ func AwsLookup(name string) interface{} {
 		"aws_networkfirewall_rule_group":                     awsNetworkfirewallRuleGroup,
 		"aws_opensearch_domain":                              awsElasticsearchDomain,
 		"aws_opensearch_domain_policy":                       awsElasticsearchDomainPolicy,
+		"aws_opensearchserverless_access_policy":             awsOpenseachserverlessAccessPolicy,
+		"aws_opensearchserverless_collection":                awsOpenseachserverlessCollection,
+		"aws_opensearchserverless_lifecycle_policy":          awsOpenseachserverlessLifecyclePolicy,
+		"aws_opensearchserverless_security_config":           awsOpenseachserverlessSecurityConfig,
+		"aws_opensearchserverless_security_policy":           awsOpenseachserverlessSecurityPolicy,
+		"aws_opensearchserverless_vpc_endpoint":              awsOpenseachserverlessVpcEndpoint,
+		"aws_organizations_policy":                           awsOrganizationsPolicy,
+		"aws_organizations_policy_attachment":                awsOrganizationsPolicyAttachment,
 		"aws_placement_group":                                awsPlacementGroup,
 		"aws_ram_principal_association":                      awsRAMPrincipleAssociation,
 		"aws_ram_resource_association":                       awsRAMResourceAssociation,
@@ -455,6 +470,8 @@ func AwsLookup(name string) interface{} {
 		"aws_sagemaker_endpoint_configuration":               awsSagemakerEndpointConfiguration,
 		"aws_sagemaker_model":                                awsSagemakerModel,
 		"aws_secretsmanager_secret":                          awsSecretsmanagerSecret,
+		"aws_secretsmanager_secret_policy":                   awsSecretsmanagerSecretPolicy,
+		"aws_secretsmanager_secret_rotation":                 awsSecretsmanagerSecretRotation,
 		"aws_secretsmanager_secret_version":                  awsSecretsmanagerSecretVersion,
 		"aws_security_group":                                 awsSecurityGroup,
 		"aws_security_group_rule":                            awsSecurityGroupRule,
@@ -469,6 +486,7 @@ func AwsLookup(name string) interface{} {
 		"aws_ses_receipt_rule":                               awsSesReceiptRule,
 		"aws_ses_receipt_rule_set":                           awsSesReceiptRuleSet,
 		"aws_sfn_activity":                                   awsSfnActivity,
+		"aws_sfn_alias":                                      awsSfnAlias,
 		"aws_sfn_state_machine":                              awsSfnStateMachine,
 		"aws_sns_sms_preferences":                            awsSnsSmsPreferences,
 		"aws_sns_topic":                                      awsSnsTopic,
@@ -521,24 +539,12 @@ func AwsLookup(name string) interface{} {
 		"aws_xray_group":                                     awsXrayGroup,
 		"aws_xray_sampling_rule":                             awsXraySamplingRule,
 		"backend":                                            s3backend,
-		"aws_ami":                                            awsAmi,
-		"aws_ami_copy":                                       awsAmiCopy,
-		"aws_ami_from_instance":                              awsAmiFromInstance,
-		"aws_ami_launch_permission":                          awsAmiLauchPermission,
-		"aws_budgets_budget_action":                          awsBudgetsBudgetAction,
-		"aws_cloudformation_stack":                           awsCloudformationStack,
-		"aws_cloudformation_type":                            awsCloudformationType,
-		"aws_organizations_policy":                           awsOrganizationsPolicy,
-		"aws_organizations_policy_attachment":                awsOrganizationsPolicyAttachment,
-		"aws_secretsmanager_secret_policy":                   awsSecretsmanagerSecretPolicy,
-		"aws_secretsmanager_secret_rotation":                 awsSecretsmanagerSecretRotation,
-		"aws_sfn_alias":                                      awsSfnAlias,
 	}
 
 	return TFLookup[name]
 }
 
-// Contains looks if slice contains string
+// Contains looks if slice contains string.
 func Contains(s []string, e string) bool {
 	for _, a := range s {
 		if a == e {
@@ -549,7 +555,7 @@ func Contains(s []string, e string) bool {
 	return false
 }
 
-// GetPermissionMap Anonymous parsing
+// GetPermissionMap Anonymous parsing.
 func GetPermissionMap(raw []byte, attributes []string) ([]string, error) {
 	var mappings []interface{}
 	err := json.Unmarshal(raw, &mappings)

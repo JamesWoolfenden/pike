@@ -45,6 +45,7 @@ func coverageAWS() error {
 
 	target = Prepend + target
 	err := os.WriteFile("aws.md", []byte(target), 0o700)
+
 	if err != nil {
 		return err
 	}
@@ -129,6 +130,7 @@ func importMembers(targetMembers string) members {
 
 func percent(missing []string, data []string) float64 {
 	var source float64
+
 	var target float64
 
 	source = float64(len(missing))

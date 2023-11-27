@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-// GetAZUREDataPermissions gets permissions required for datasources
+// GetAZUREDataPermissions gets permissions required for datasources.
 func GetAZUREDataPermissions(result ResourceV2) ([]string, error) {
 	temp := AzureDataLookup(result.Name)
 
@@ -48,8 +48,8 @@ func AzureDataLookup(name string) interface{} {
 		"azurerm_app_service_environment":                    dataAzurermAppServiceEnvironment,
 		"azurerm_app_service_environment_v3":                 dataAzurermAppServiceEnvironmentV3,
 		"azurerm_app_service_plan":                           dataAzurermAppServicePlan,
-		"azurerm_public_ip":                                  dataAzurermPublicIp,
-		"azurerm_public_ip_prefix":                           dataAzurermPublicIpPrefix,
+		"azurerm_public_ip":                                  dataAzurermPublicIP,
+		"azurerm_public_ip_prefix":                           dataAzurermPublicIPPrefix,
 		"azurerm_public_ips":                                 dataAzurermPublicIps,
 		"azurerm_windows_function_app":                       dataAzurermWindowsFunctionApp,
 		"azurerm_windows_web_app":                            dataAzurermWindowsWebApp,

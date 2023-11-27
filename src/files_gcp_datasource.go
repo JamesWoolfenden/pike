@@ -341,13 +341,13 @@ var dataGoogleSourcerepoRepository []byte
 var dataGoogleSourcerepoRepositoryIamPolicy []byte
 
 //go:embed mapping/google/data/cloudsql/google_sql_database.json
-var dataGoogleSqlDatabase []byte
+var dataGoogleSQLDatabase []byte
 
 //go:embed mapping/google/data/cloudsql/google_sql_database_instance.json
-var dataGoogleSqlDatabaseInstance []byte
+var dataGoogleSQLDatabaseInstance []byte
 
 //go:embed mapping/google/data/cloudsql/google_sql_database_instances.json
-var dataGoogleSqlDatabaseInstances []byte
+var dataGoogleSQLDatabaseInstances []byte
 
 //go:embed mapping/google/data/cloudsql/google_sql_databases.json
-var dataGoogleSqlDatabases []byte
+var dataGoogleSQLDatabases []byte

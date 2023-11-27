@@ -68,10 +68,10 @@ var dataAzurermAppServiceEnvironmentV3 []byte
 var dataAzurermAppServicePlan []byte
 
 //go:embed mapping/azurerm/data/network/azurerm_public_ip.json
-var dataAzurermPublicIp []byte
+var dataAzurermPublicIP []byte
 
 //go:embed mapping/azurerm/data/network/azurerm_public_ip_prefix.json
-var dataAzurermPublicIpPrefix []byte
+var dataAzurermPublicIPPrefix []byte
 
 //go:embed mapping/azurerm/data/network/azurerm_public_ips.json
 var dataAzurermPublicIps []byte

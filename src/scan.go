@@ -18,7 +18,7 @@ import (
 
 const tfVersion = "1.5.4"
 
-// Scan looks for resources in a given directory
+// Scan looks for resources in a given directory.
 func Scan(dirName string, output string, file *string, init bool, write bool, enableResources bool) error {
 	OutPolicy, err := MakePolicy(dirName, file, init, enableResources)
 	if err != nil {
@@ -37,7 +37,7 @@ func Scan(dirName string, output string, file *string, init bool, write bool, en
 	return err
 }
 
-// WriteOutput writes out the policy as json or terraform
+// WriteOutput writes out the policy as json or terraform.
 func WriteOutput(outPolicy OutputPolicy, output, location string) error {
 	newPath, _ := filepath.Abs(location + "/.pike")
 	err := os.MkdirAll(newPath, os.ModePerm)
@@ -51,7 +51,6 @@ func WriteOutput(outPolicy OutputPolicy, output, location string) error {
 	d1 := []byte(outPolicy.AsString(output))
 
 	switch strings.ToLower(output) {
-
 	case terraform:
 		outFile = newPath + "/pike.generated_policy.tf"
 
@@ -77,7 +76,7 @@ func WriteOutput(outPolicy OutputPolicy, output, location string) error {
 	return nil
 }
 
-// Init can download and install terraform if required and then terraform init your specified directory
+// Init can download and install terraform if required and then terraform init your specified directory.
 func Init(dirName string) (*string, []string, error) {
 	tfPath, err := LocateTerraform()
 	if err != nil {
@@ -120,7 +119,7 @@ func Init(dirName string) (*string, []string, error) {
 func LocateTerraform() (string, error) {
 	tfPath, err := exec.LookPath(terraform)
 
-	// if you don't have tf installed we have to install it
+	// if you don't have tf installed, we have to install it
 	if err != nil || tfPath == "" {
 		log.Printf("installing Terraform %s\n", tfVersion)
 		installer := &releases.ExactVersion{
@@ -139,7 +138,7 @@ func LocateTerraform() (string, error) {
 	return tfPath, nil
 }
 
-// MakePolicy does the guts of determining a policy from code
+// MakePolicy does the guts of determining a policy from code.
 func MakePolicy(dirName string, file *string, init bool, EnableResources bool) (OutputPolicy, error) {
 	var (
 		files  []string
@@ -174,7 +173,7 @@ func MakePolicy(dirName string, file *string, init bool, EnableResources bool) (
 			return Output, err
 		}
 
-		// is this a tfFile
+		// is this a tfFile?
 		if !(FileExists(myFile)) {
 			return Output, os.ErrNotExist
 		}

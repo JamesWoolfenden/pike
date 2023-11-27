@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "aoss:CreateSecurityPolicy",
+      "aoss:DeleteSecurityPolicy",
+      "aoss:UpdateSecurityPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "aoss:DeleteSecurityPolicy"
+    ],
+    "modify": [
+      "aoss:UpdateSecurityPolicy"
+    ],
+    "plan": []
+  }
+]

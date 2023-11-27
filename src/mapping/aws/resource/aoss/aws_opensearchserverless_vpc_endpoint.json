@@ -1,0 +1,32 @@
+[
+  {
+    "apply": [
+      "aoss:BatchGetVpcEndpoint",
+      "aoss:CreateVpcEndpoint",
+      "aoss:DeleteVpcEndpoint",
+      "aoss:UpdateVpcEndpoint",
+      "ec2:CreateTags",
+      "ec2:CreateVpcEndpoint",
+      "ec2:DeleteNetworkInterface",
+      "ec2:DeleteVpcEndpoints",
+      "ec2:DescribeSecurityGroups",
+      "ec2:DescribeVpcEndpoints",
+      "ec2:ModifyVpcEndpoints",
+      "route53:AssociateVPCWithHostedZone",
+      "ec2:DetachNetworkInterface"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "aoss:DeleteVpcEndpoint",
+      "ec2:DeleteVpcEndpoints",
+      "ec2:DeleteNetworkInterface"
+    ],
+    "modify": [
+      "ec2:ModifyVpcEndpoints",
+      "aoss:UpdateVpcEndpoint"
+    ],
+    "plan": []
+  }
+]

@@ -94,7 +94,7 @@ func SetRepoSecret(repository string, keyText string, keyName string) (*github.R
 	return response, nil
 }
 
-// SplitHub return details from url
+// SplitHub return details from url.
 func SplitHub(repository string) (string, string, error) {
 	Splitter := strings.Split(repository, "/")
 

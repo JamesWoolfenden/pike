@@ -8,7 +8,7 @@ import (
 	"github.com/rs/zerolog/log"
 )
 
-// Readme Updates a README.md file
+// Readme Updates a README.md file.
 func Readme(dirName string, output string, init bool, autoAppend bool) error {
 	file := dirName + "/README.md"
 

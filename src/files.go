@@ -1251,3 +1251,21 @@ var awsSecretsmanagerSecretRotation []byte
 
 //go:embed mapping/aws/resource/states/aws_sfn_alias.json
 var awsSfnAlias []byte
+
+//go:embed mapping/aws/resource/aoss/aws_opensearchserverless_access_policy.json
+var awsOpenseachserverlessAccessPolicy []byte
+
+//go:embed mapping/aws/resource/aoss/aws_opensearchserverless_collection.json
+var awsOpenseachserverlessCollection []byte
+
+//go:embed mapping/aws/resource/aoss/aws_opensearchserverless_lifecycle_policy.json
+var awsOpenseachserverlessLifecyclePolicy []byte
+
+//go:embed mapping/aws/resource/aoss/aws_opensearchserverless_security_config.json
+var awsOpenseachserverlessSecurityConfig []byte
+
+//go:embed mapping/aws/resource/aoss/aws_opensearchserverless_security_policy.json
+var awsOpenseachserverlessSecurityPolicy []byte
+
+//go:embed mapping/aws/resource/aoss/aws_opensearchserverless_vpc_endpoint.json
+var awsOpenseachserverlessVpcEndpoint []byte
