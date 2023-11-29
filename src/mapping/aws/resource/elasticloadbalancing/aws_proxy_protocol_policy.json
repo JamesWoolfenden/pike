@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "elasticloadbalancing:CreateLoadBalancerPolicy",
+      "elasticloadbalancing:SetLoadBalancerPoliciesForBackendServer",
+      "elasticloadbalancing:DeleteLoadBalancerPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "elasticloadbalancing:DeleteLoadBalancerPolicy"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

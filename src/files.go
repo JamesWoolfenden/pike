@@ -1299,3 +1299,12 @@ var awsCloudwatchLogDestinationPolicy []byte
 
 //go:embed mapping/aws/resource/logs/aws_cloudwatch_log_destination.json
 var awsCloudwatchQueryDestination []byte
+
+//go:embed mapping/aws/resource/datapipeline/aws_datapipeline_pipeline.json
+var awsDatapipelinePipeline []byte
+
+//go:embed mapping/aws/resource/datapipeline/aws_datapipeline_pipeline_definition.json
+var awsDatapipelinePipelineDefinition []byte
+
+//go:embed mapping/aws/resource/elasticloadbalancing/aws_proxy_protocol_policy.json
+var awsProxyProtocolPolicy []byte

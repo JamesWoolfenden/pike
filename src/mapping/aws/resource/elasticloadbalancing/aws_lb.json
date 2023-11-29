@@ -2,13 +2,23 @@
   {
     "apply": [
       "elasticloadbalancing:CreateLoadBalancer",
+      "elasticloadbalancing:CreateLoadBalancerListeners",
       "elasticloadbalancing:DescribeLoadBalancers",
       "elasticloadbalancing:DescribeLoadBalancerAttributes",
+      "ec2:DescribeSecurityGroups",
+      "ec2:CreateSecurityGroup",
       "elasticloadbalancing:DescribeTags",
       "elasticloadbalancing:DeleteLoadBalancer",
-      "elasticloadbalancing:ModifyLoadBalancerAttributes"
+      "elasticloadbalancing:ModifyLoadBalancerAttributes",
+      "elasticloadbalancing:AttachLoadBalancerToSubnets",
+      "ec2:DescribeNetworkInterfaces",
+      "ec2:DetachNetworkInterface",
+      "ec2:DeleteNetworkInterface"
     ],
     "attributes": {
+      "availability_zones": [
+        "elasticloadbalancing:EnableAvailabilityZonesForLoadBalancer"
+      ],
       "security_groups": [
         "elasticloadbalancing:SetSecurityGroups"
       ],
@@ -18,7 +28,9 @@
       ]
     },
     "destroy": [
-      "elasticloadbalancing:DeleteLoadBalancer"
+      "elasticloadbalancing:DeleteLoadBalancer",
+      "ec2:DetachNetworkInterface",
+      "ec2:DeleteNetworkInterface"
     ],
     "modify": [],
     "plan": []

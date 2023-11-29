@@ -144,8 +144,6 @@ Datasource percentage coverage 99.80
 ./resource.ps1 aws_cur_report_definition
 ./resource.ps1 aws_dataexchange_data_set
 ./resource.ps1 aws_dataexchange_revision
-./resource.ps1 aws_datapipeline_pipeline
-./resource.ps1 aws_datapipeline_pipeline_definition
 ./resource.ps1 aws_datasync_agent
 ./resource.ps1 aws_datasync_location_azure_blob
 ./resource.ps1 aws_datasync_location_efs
@@ -521,7 +519,6 @@ Datasource percentage coverage 99.80
 ./resource.ps1 aws_prometheus_alert_manager_definition
 ./resource.ps1 aws_prometheus_rule_group_namespace
 ./resource.ps1 aws_prometheus_workspace
-./resource.ps1 aws_proxy_protocol_policy
 ./resource.ps1 aws_qldb_ledger
 ./resource.ps1 aws_qldb_stream
 ./resource.ps1 aws_quicksight_account_subscription

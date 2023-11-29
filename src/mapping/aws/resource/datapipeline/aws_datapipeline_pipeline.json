@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "datapipeline:CreatePipeline",
+      "datapipeline:DeletePipeline"
+    ],
+    "attributes": {
+      "tags": [
+        "datapipeline:AddTags",
+        "datapipeline:RemoveTags"
+      ]
+    },
+    "destroy": [
+      "datapipeline:DeletePipeline"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

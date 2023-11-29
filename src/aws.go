@@ -549,6 +549,9 @@ func AwsLookup(name string) interface{} {
 		"aws_kinesis_stream_consumer":                        awsKinesisStreamConsumer,
 		"aws_cloudwatch_log_destination_policy":              awsCloudwatchLogDestinationPolicy,
 		"aws_cloudwatch_query_definition":                    awsCloudwatchQueryDestination,
+		"aws_datapipeline_pipeline":                          awsDatapipelinePipeline,
+		"aws_datapipeline_pipeline_definition":               awsDatapipelinePipelineDefinition,
+		"aws_proxy_protocol_policy":                          awsProxyProtocolPolicy,
 	}
 
 	return TFLookup[name]

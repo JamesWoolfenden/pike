@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "datapipeline:PutPipelineDefinition",
+      "datapipeline:GetPipelineDefinition"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
