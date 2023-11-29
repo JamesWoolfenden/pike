@@ -7,62 +7,64 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "ec2:CreateVpc",
-          "ec2:DescribeVpcs",
-          "ec2:DescribeVpcAttribute",
-          "ec2:DeleteVpc",
-          "ec2:CreateSubnet",
-          "ec2:DeleteSubnet",
-          "ec2:DescribeSubnets",
-          "ec2:DescribeNetworkInterfaces",
-          "ec2:ModifyVpcAttribute",
-          "ec2:DescribeNetworkInterfaces",
-          "ec2:DeleteNetworkInterface",
-          //aws_opensearchserverless_vpc_endpoint
-          "aoss:BatchGetVpcEndpoint",
-          "aoss:CreateVpcEndpoint",
-          "aoss:DeleteVpcEndpoint",
-          "aoss:UpdateVpcEndpoint",
-          "ec2:CreateTags",
-          "ec2:CreateVpcEndpoint",
-          "ec2:DeleteNetworkInterface",
-          "ec2:DeleteVpcEndpoints",
-          "ec2:DescribeSecurityGroups",
-          "ec2:DescribeVpcEndpoints",
-          "ec2:ModifyVpcEndpoints",
-          "route53:AssociateVPCWithHostedZone",
-          "ec2:DetachNetworkInterface",
 
-          //aws_opensearchserverless_security_config
-          "aoss:CreateSecurityConfig",
-          "aoss:DeleteSecurityConfig",
-          "aoss:GetSecurityConfig",
-          "aoss:UpdateSecurityConfig",
-          "aoss:DeleteSecurityConfig",
 
-          //aws_opensearchserverless_lifecycle_policy
-          "aoss:CreateLifecyclePolicy",
-          "aoss:BatchGetLifecyclePolicy",
-          "aoss:DeleteLifecyclePolicy",
-          "aoss:UpdateLifecyclePolicy",
+          //aws_cloudwatch_event_bus
+          "events:TagResource",
+          "events:DescribeEventBus",
+          "events:ListTagsForResource",
+          "events:DeleteEventBus",
+          "events:CreateEventBus",
 
-          //aws_opensearchserverless_collection
-          "aoss:CreateCollection",
-          "aoss:UpdateCollection",
-          "aoss:DeleteCollection",
-          "aoss:BatchGetCollection",
-          "iam:CreateServiceLinkedRole",
-          "aoss:ListTagsForResource",
 
-          //aws_opensearchserverless_access_policy
-          "aoss:CreateAccessPolicy",
-          "aoss:UpdateAccessPolicy",
-          "aoss:DeleteAccessPolicy",
+          //healthcheck
+          "route53:ChangeTagsForResource",
+          "route53:CreateHealthCheck",
+          "route53:DeleteHealthCheck",
+          "route53:GetHealthCheck",
+          "route53:GetHealthCheckCount",
+          "route53:GetHealthCheckLastFailureReason",
+          "route53:GetHealthCheckStatus",
+          "route53:ListHealthChecks",
+          "route53:ListTagsForResource",
+          "route53:ListTagsForResources",
+          "route53:UpdateHealthCheck",
 
-          //aws_opensearchserverless_security_policy
-          "aoss:CreateSecurityPolicy",
-          "aoss:DeleteSecurityPolicy",
-          "aoss:UpdateSecurityPolicy",
+          //aws_cloudwatch_log_destination
+          "logs:PutDestination",
+          "iam:PassRole",
+          "logs:TagResource",
+          "logs:UntagResource",
+          "logs:ListTagsForResource",
+          "logs:DescribeDestinations",
+          "logs:DeleteDestination",
+
+          //aws_cloudwatch_log_destination_policy
+          "logs:PutDestinationPolicy",
+          "logs:GetDeliveryDestinationPolicy",
+
+          //aws_kinesis_stream_consumer
+          "kinesis:RegisterStreamConsumer",
+          "kinesis:DescribeStreamConsumer",
+          "kinesis:DeregisterStreamConsumer",
+
+          //kinesis
+          "kinesis:AddTagsToStream",
+          "kinesis:CreateStream",
+          "kinesis:DeleteStream",
+          "kinesis:DescribeStreamSummary",
+          "kinesis:EnableEnhancedMonitoring",
+          "kinesis:IncreaseStreamRetentionPeriod",
+          "kinesis:ListTagsForStream",
+          "kinesis:RemoveTagsFromStream",
+
+
+          //aws_cloudwatch_event_endpoint
+          "events:CreateEndpoint",
+          "events:DescribeEndpoint",
+          "events:CreateEndpoint",
+          "events:DeleteEndpoint",
+          "events:UpdateEndpoint",
         ],
         "Resource" : "*",
       }

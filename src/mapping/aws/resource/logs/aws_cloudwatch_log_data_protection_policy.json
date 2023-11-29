@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "logs:PutAccountPolicy",
+      "logs:PutDataProtectionPolicy",
+      "logs:GetDataProtectionPolicy",
+      "logs:DeleteDataProtectionPolicy",
+      "logs:CreateLogDelivery",
+      "logs:DescribeLogGroups",
+      "logs:DescribeResourcePolicies",
+      "logs:PutResourcePolicy",
+      "s3:GetBucketPolicy",
+      "s3:PutBucketPolicy",
+      "firehose:TagDeliveryStream"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "logs:DeleteDataProtectionPolicy"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

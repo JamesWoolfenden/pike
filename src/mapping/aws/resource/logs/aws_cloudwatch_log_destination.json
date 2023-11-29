@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "logs:PutDestination",
+      "iam:PassRole",
+      "logs:ListTagsForResource",
+      "logs:DescribeDestinations",
+      "logs:DeleteDestination"
+    ],
+    "attributes": {
+      "tags": [
+        "logs:TagResource",
+        "logs:UntagResource"
+      ]
+    },
+    "destroy": [
+      "logs:DeleteDestination"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

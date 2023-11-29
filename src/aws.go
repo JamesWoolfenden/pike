@@ -539,6 +539,16 @@ func AwsLookup(name string) interface{} {
 		"aws_xray_group":                                     awsXrayGroup,
 		"aws_xray_sampling_rule":                             awsXraySamplingRule,
 		"backend":                                            s3backend,
+		"aws_cloudsearch_domain":                             awsCloudsearchDomain,
+		"aws_cloudsearch_domain_service_access_policy":       awsCloudsearchDomainServiceAccessPolicy,
+		"aws_cloudtrail_event_data_store":                    awsCloudtrailEventDataStore,
+		"aws_cloudwatch_event_bus_policy":                    awsCloudwatchEventBusPolicy,
+		"aws_cloudwatch_event_endpoint":                      awsCloudwatchEventEndpoint,
+		"aws_cloudwatch_log_data_protection_policy":          awsCloudwatchLogDataProtectionPolicy,
+		"aws_cloudwatch_log_destination":                     awsCloudwatchLogDestination,
+		"aws_kinesis_stream_consumer":                        awsKinesisStreamConsumer,
+		"aws_cloudwatch_log_destination_policy":              awsCloudwatchLogDestinationPolicy,
+		"aws_cloudwatch_query_definition":                    awsCloudwatchQueryDestination,
 	}
 
 	return TFLookup[name]

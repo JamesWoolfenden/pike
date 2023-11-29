@@ -1,6 +1,6 @@
 # todo aws
 
-Resource percentage coverage   36.75
+Resource percentage coverage   37.53
 Datasource percentage coverage 99.80
 
 ./resource.ps1 aws_accessanalyzer_analyzer
@@ -95,15 +95,6 @@ Datasource percentage coverage 99.80
 ./resource.ps1 aws_cloudfront_realtime_log_config
 ./resource.ps1 aws_cloudhsm_v2_cluster
 ./resource.ps1 aws_cloudhsm_v2_hsm
-./resource.ps1 aws_cloudsearch_domain
-./resource.ps1 aws_cloudsearch_domain_service_access_policy
-./resource.ps1 aws_cloudtrail_event_data_store
-./resource.ps1 aws_cloudwatch_event_bus_policy
-./resource.ps1 aws_cloudwatch_event_endpoint
-./resource.ps1 aws_cloudwatch_log_data_protection_policy
-./resource.ps1 aws_cloudwatch_log_destination
-./resource.ps1 aws_cloudwatch_log_destination_policy
-./resource.ps1 aws_cloudwatch_query_definition
 ./resource.ps1 aws_codebuild_report_group
 ./resource.ps1 aws_codebuild_resource_policy
 ./resource.ps1 aws_codebuild_source_credential
@@ -382,7 +373,6 @@ Datasource percentage coverage 99.80
 ./resource.ps1 aws_keyspaces_keyspace
 ./resource.ps1 aws_keyspaces_table
 ./resource.ps1 aws_kinesis_analytics_application
-./resource.ps1 aws_kinesis_stream_consumer
 ./resource.ps1 aws_kinesisanalyticsv2_application
 ./resource.ps1 aws_kinesisanalyticsv2_application_snapshot
 ./resource.ps1 aws_kms_ciphertext

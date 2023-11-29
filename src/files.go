@@ -1269,3 +1269,33 @@ var awsOpenseachserverlessSecurityPolicy []byte
 
 //go:embed mapping/aws/resource/aoss/aws_opensearchserverless_vpc_endpoint.json
 var awsOpenseachserverlessVpcEndpoint []byte
+
+//go:embed mapping/aws/resource/cloudsearch/aws_cloudsearch_domain.json
+var awsCloudsearchDomain []byte
+
+//go:embed mapping/aws/resource/cloudsearch/aws_cloudsearch_domain_service_access_policy.json
+var awsCloudsearchDomainServiceAccessPolicy []byte
+
+//go:embed mapping/aws/resource/cloudtrail/aws_cloudtrail_event_data_store.json
+var awsCloudtrailEventDataStore []byte
+
+//go:embed mapping/aws/resource/events/aws_cloudwatch_event_bus_policy.json
+var awsCloudwatchEventBusPolicy []byte
+
+//go:embed mapping/aws/resource/events/aws_cloudwatch_event_endpoint.json
+var awsCloudwatchEventEndpoint []byte
+
+//go:embed mapping/aws/resource/logs/aws_cloudwatch_log_data_protection_policy.json
+var awsCloudwatchLogDataProtectionPolicy []byte
+
+//go:embed mapping/aws/resource/logs/aws_cloudwatch_log_destination.json
+var awsCloudwatchLogDestination []byte
+
+//go:embed mapping/aws/resource/kinesis/aws_kinesis_stream_consumer.json
+var awsKinesisStreamConsumer []byte
+
+//go:embed mapping/aws/resource/logs/aws_cloudwatch_log_destination_policy.json
+var awsCloudwatchLogDestinationPolicy []byte
+
+//go:embed mapping/aws/resource/logs/aws_cloudwatch_log_destination.json
+var awsCloudwatchQueryDestination []byte

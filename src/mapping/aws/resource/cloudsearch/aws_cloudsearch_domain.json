@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "cloudsearch:CreateDomain",
+      "cloudsearch:DescribeDomains",
+      "cloudsearch:DescribeAvailabilityOptions",
+      "cloudsearch:DescribeDomainEndpointOptions",
+      "cloudsearch:DescribeScalingParameters",
+      "cloudsearch:DescribeIndexFields",
+      "cloudsearch:DeleteDomain",
+      "cloudsearch:UpdateDomainEndpointOptions"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "cloudsearch:DeleteDomain"
+    ],
+    "modify": [
+      "cloudsearch:UpdateDomainEndpointOptions"
+    ],
+    "plan": []
+  }
+]

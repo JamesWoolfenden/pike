@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "events:PutPermission",
+      "events:RemovePermission"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "events:RemovePermission"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]
