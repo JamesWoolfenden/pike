@@ -351,3 +351,18 @@ var dataGoogleSQLDatabaseInstances []byte
 
 //go:embed mapping/google/data/cloudsql/google_sql_databases.json
 var dataGoogleSQLDatabases []byte
+
+//go:embed mapping/google/data/cloudbuild/google_cloudbuild_trigger.json
+var dataGoogleCloudbuildTrigger []byte
+
+//go:embed mapping/google/data/cloudbuild/google_cloudbuildv2_connection_iam_policy.json
+var dataGoogleCloudbuildv2ConnectionIamPolicy []byte
+
+//go:embed mapping/google/data/monitoring/google_monitoring_istio_canonical_service.json
+var dataGoogleMonitoringIstioCanonicalService []byte
+
+//go:embed mapping/google/data/monitoring/google_monitoring_mesh_istio_service.json
+var dataGoogleMonitoringMeshIstioService []byte
+
+//go:embed mapping/google/data/monitoring/google_monitoring_notification_channel.json
+var dataGoogleMonitoringNotificationChannel []byte

@@ -138,7 +138,6 @@ Datasource percentage coverage 52.61
 ./resource.ps1 google_cloud_tasks_queue_iam_member
 ./resource.ps1 google_cloud_tasks_queue_iam_policy
 ./resource.ps1 google_cloudbuild_bitbucket_server_config
-./resource.ps1 google_cloudbuild_trigger
 ./resource.ps1 google_cloudbuild_worker_pool
 ./resource.ps1 google_cloudbuildv2_connection
 ./resource.ps1 google_cloudbuildv2_connection_iam_binding
@@ -746,8 +745,6 @@ Datasource percentage coverage 52.61
 ./resource.ps1 google_cloud_identity_group_memberships -type data
 ./resource.ps1 google_cloud_identity_groups -type data
 ./resource.ps1 google_cloud_tasks_queue_iam_policy -type data
-./resource.ps1 google_cloudbuild_trigger -type data
-./resource.ps1 google_cloudbuildv2_connection_iam_policy -type data
 ./resource.ps1 google_composer_environment -type data
 ./resource.ps1 google_composer_image_versions -type data
 ./resource.ps1 google_container_analysis_note_iam_policy -type data
@@ -755,10 +752,6 @@ Datasource percentage coverage 52.61
 ./resource.ps1 google_container_attached_versions -type data
 ./resource.ps1 google_container_aws_versions -type data
 ./resource.ps1 google_container_azure_versions -type data
-./resource.ps1 google_container_cluster -type data
-./resource.ps1 google_container_engine_versions -type data
-./resource.ps1 google_container_registry_image -type data
-./resource.ps1 google_container_registry_repository -type data
 ./resource.ps1 google_data_catalog_entry_group_iam_policy -type data
 ./resource.ps1 google_data_catalog_policy_tag_iam_policy -type data
 ./resource.ps1 google_data_catalog_tag_template_iam_policy -type data
@@ -804,10 +797,6 @@ Datasource percentage coverage 52.61
 ./resource.ps1 google_logging_project_cmek_settings -type data
 ./resource.ps1 google_monitoring_app_engine_service -type data
 ./resource.ps1 google_monitoring_cluster_istio_service -type data
-./resource.ps1 google_monitoring_istio_canonical_service -type data
-./resource.ps1 google_monitoring_mesh_istio_service -type data
-./resource.ps1 google_monitoring_notification_channel -type data
-./resource.ps1 google_monitoring_uptime_check_ips -type data
 ./resource.ps1 google_netblock_ip_ranges -type data
 ./resource.ps1 google_notebooks_instance_iam_policy -type data
 ./resource.ps1 google_notebooks_runtime_iam_policy -type data

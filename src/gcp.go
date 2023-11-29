@@ -1,5 +1,7 @@
 package pike
 
+import "fmt"
+
 // GetGCPPermissions for GCP resources.
 func GetGCPPermissions(result ResourceV2) ([]string, error) {
 	var (
@@ -31,6 +33,8 @@ func GetGCPResourcePermissions(result ResourceV2) ([]string, error) {
 
 	if temp := GCPLookup(result.Name); temp != nil {
 		Permissions, err = GetPermissionMap(temp.([]byte), result.Attributes)
+	} else {
+		return nil, fmt.Errorf("%s not implemented", result.Name)
 	}
 
 	return Permissions, err
@@ -121,6 +125,7 @@ func GCPLookup(result string) interface{} {
 		"google_storage_hmac_key":                         googleStorageHmacKey,
 		"google_storage_insights_report_config":           googleStorageInsightsReportConfig,
 		"google_storage_object_access_control":            googleStorageObjectAccessControl,
+		"google_cloudbuild_trigger":                       googleCloudbuildTrigger,
 	}
 
 	return TFLookup[result]

@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "cloudbuild.builds.create",
+      "cloudbuild.builds.update",
+      "cloudbuild.builds.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

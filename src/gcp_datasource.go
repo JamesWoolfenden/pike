@@ -167,6 +167,12 @@ func GCPDataLookup(result string) interface{} {
 		"google_storage_transfer_project_service_account":        dataGoogleStorageTransferProjectServiceAccount,
 		"google_vertex_ai_featurestore_entitytype_iam_policy":    dataGoogleVertexAiFeaturestoreEntitytypeIamPolicy,
 		"google_vertex_ai_featurestore_iam_policy":               dataGoogleVertexAiFeaturestoreIamPolicy,
+		"google_cloudbuild_trigger":                              dataGoogleCloudbuildTrigger,
+		"google_cloudbuildv2_connection_iam_policy":              dataGoogleCloudbuildv2ConnectionIamPolicy,
+		"google_monitoring_istio_canonical_service":              dataGoogleMonitoringIstioCanonicalService,
+		"google_monitoring_mesh_istio_service":                   dataGoogleMonitoringMeshIstioService,
+		"google_monitoring_notification_channel":                 dataGoogleMonitoringNotificationChannel,
+		"google_monitoring_uptime_check_ips":                     placeholder,
 	}
 
 	return TFLookup[result]

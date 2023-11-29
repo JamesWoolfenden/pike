@@ -213,3 +213,6 @@ var googleStorageInsightsReportConfig []byte
 
 //go:embed mapping/google/resource/storage/google_storage_object_access_control.json
 var googleStorageObjectAccessControl []byte
+
+//go:embed mapping/google/resource/cloudbuild/google_cloudbuild_trigger.json
+var googleCloudbuildTrigger []byte
