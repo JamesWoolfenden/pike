@@ -1,18 +1,16 @@
 # todo aws
 
-Resource percentage coverage   37.53
+Resource percentage coverage   37.76
 Datasource percentage coverage 99.80
 
 ./resource.ps1 aws_accessanalyzer_analyzer
 ./resource.ps1 aws_accessanalyzer_archive_rule
 ./resource.ps1 aws_acmpca_permission
-./resource.ps1 aws_acmpca_policy
 ./resource.ps1 aws_amplify_app
 ./resource.ps1 aws_amplify_backend_environment
 ./resource.ps1 aws_amplify_branch
 ./resource.ps1 aws_amplify_domain_association
 ./resource.ps1 aws_amplify_webhook
-./resource.ps1 aws_app_cookie_stickiness_policy
 ./resource.ps1 aws_appconfig_deployment
 ./resource.ps1 aws_appconfig_deployment_strategy
 ./resource.ps1 aws_appconfig_environment
@@ -88,15 +86,11 @@ Datasource percentage coverage 99.80
 ./resource.ps1 aws_cleanrooms_configured_table
 ./resource.ps1 aws_cloud9_environment_membership
 ./resource.ps1 aws_cloudcontrolapi_resource
-./resource.ps1 aws_cloudfront_cache_policy
-./resource.ps1 aws_cloudfront_continuous_deployment_policy
 ./resource.ps1 aws_cloudfront_function
-./resource.ps1 aws_cloudfront_origin_request_policy
 ./resource.ps1 aws_cloudfront_realtime_log_config
 ./resource.ps1 aws_cloudhsm_v2_cluster
 ./resource.ps1 aws_cloudhsm_v2_hsm
 ./resource.ps1 aws_codebuild_report_group
-./resource.ps1 aws_codebuild_resource_policy
 ./resource.ps1 aws_codebuild_source_credential
 ./resource.ps1 aws_codebuild_webhook
 ./resource.ps1 aws_codecatalyst_dev_environment
@@ -244,9 +238,6 @@ Datasource percentage coverage 99.80
 ./resource.ps1 aws_ec2_transit_gateway_policy_table_association
 ./resource.ps1 aws_ec2_transit_gateway_prefix_list_reference
 ./resource.ps1 aws_ec2_transit_gateway_vpc_attachment_accepter
-./resource.ps1 aws_ecr_registry_policy
-./resource.ps1 aws_ecr_replication_configuration
-./resource.ps1 aws_ecrpublic_repository_policy
 ./resource.ps1 aws_ecs_account_setting_default
 ./resource.ps1 aws_ecs_capacity_provider
 ./resource.ps1 aws_ecs_cluster_capacity_providers
@@ -268,7 +259,6 @@ Datasource percentage coverage 99.80
 ./resource.ps1 aws_emr_block_public_access_configuration
 ./resource.ps1 aws_emr_instance_fleet
 ./resource.ps1 aws_emr_instance_group
-./resource.ps1 aws_emr_managed_scaling_policy
 ./resource.ps1 aws_emr_studio
 ./resource.ps1 aws_emr_studio_session_mapping
 ./resource.ps1 aws_emrcontainers_job_template
@@ -385,7 +375,6 @@ Datasource percentage coverage 99.80
 ./resource.ps1 aws_lakeformation_resource
 ./resource.ps1 aws_lakeformation_resource_lf_tags
 ./resource.ps1 aws_lambda_code_signing_config
-./resource.ps1 aws_lb_cookie_stickiness_policy
 ./resource.ps1 aws_lb_listener_certificate
 ./resource.ps1 aws_lb_ssl_negotiation_policy
 ./resource.ps1 aws_lex_bot
