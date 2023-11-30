@@ -1,6 +1,6 @@
 resource "aws_cloudfront_cache_policy" "pike" {
   name        = "example-policy"
-  comment     = "test comment"
+  comment     = "test comment 2"
   default_ttl = 50
   max_ttl     = 100
   min_ttl     = 1

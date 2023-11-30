@@ -11,7 +11,7 @@ resource "aws_codebuild_resource_policy" "pike" {
   resource_arn = aws_codebuild_report_group.example.arn
   policy = jsonencode({
     Version = "2012-10-17"
-    Id      = "default"
+    Id      = "default2"
     Statement = [{
       Sid    = "default"
       Effect = "Allow"

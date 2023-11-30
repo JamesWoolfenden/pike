@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "ecr:PutRegistryPolicy",
+      "ecr:GetRegistryPolicy",
+      "ecr:DeleteRegistryPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "ecr:DeleteRegistryPolicy"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

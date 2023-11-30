@@ -11,7 +11,7 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 		err         error
 	)
 
-	if temp := AwsDataLoookup(result.Name); temp != nil {
+	if temp := AwsDataLookup(result.Name); temp != nil {
 		Permissions, err = GetPermissionMap(temp.([]byte), result.Attributes)
 	} else {
 		return nil, fmt.Errorf("%s not implemented", result.Name)
@@ -21,7 +21,7 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 }
 
 // nolint:funlen
-func AwsDataLoookup(find string) interface{} {
+func AwsDataLookup(find string) interface{} {
 	TFLookup := map[string]interface{}{
 		"aws_acm_certificate":                                       dataAwsAcmCertificate,
 		"aws_acmpca_certificate":                                    dataAwsAcmpcaCertificate,

@@ -53,4 +53,5 @@ resource "aws_cloudfront_continuous_deployment_policy" "example" {
       weight = "0.01"
     }
   }
+
 }

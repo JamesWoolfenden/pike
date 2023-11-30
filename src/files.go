@@ -1308,3 +1308,36 @@ var awsDatapipelinePipelineDefinition []byte
 
 //go:embed mapping/aws/resource/elasticloadbalancing/aws_proxy_protocol_policy.json
 var awsProxyProtocolPolicy []byte
+
+//go:embed mapping/aws/resource/elasticloadbalancing/aws_app_cookie_stickiness_policy.json
+var awsAppCookieStickinessPolicy []byte
+
+//go:embed mapping/aws/resource/cloudfront/aws_cloudfront_cache_policy.json
+var awsCloudfrontCachePolicy []byte
+
+//go:embed mapping/aws/resource/cloudfront/aws_cloudfront_continuous_deployment_policy.json
+var awsCloudfrontContinuousDeploymentPolicy []byte
+
+//go:embed mapping/aws/resource/cloudfront/aws_cloudfront_origin_request_policy.json
+var awsCloudfrontOriginRequestPolicy []byte
+
+//go:embed mapping/aws/resource/codebuild/aws_codebuild_report_group.json
+var awsCodebuildReportGroup []byte
+
+//go:embed mapping/aws/resource/codebuild/aws_codebuild_resource_policy.json
+var awsCodebuildResourcePolicy []byte
+
+//go:embed mapping/aws/resource/ecr/aws_ecr_registry_policy.json
+var awsEcrRegistryPolicy []byte
+
+//go:embed mapping/aws/resource/ecr/aws_ecr_replication_configuration.json
+var awsEcrReplicationConfiguration []byte
+
+//go:embed mapping/aws/resource/ecr-public/aws_ecrpublic_repository_policy.json
+var awsEcrpublicRepositoryPolicy []byte
+
+//go:embed mapping/aws/resource/elasticmapreduce/aws_emr_managed_scaling_policy.json
+var awsEmrManagedScalingPolicy []byte
+
+//go:embed mapping/aws/resource/elasticloadbalancing/aws_lb_cookie_stickiness_policy.json
+var awsLbCookieStickinessPolicy []byte

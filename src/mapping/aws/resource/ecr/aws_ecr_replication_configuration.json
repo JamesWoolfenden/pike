@@ -1,6 +1,9 @@
 [
   {
-    "apply": [],
+    "apply": [
+      "ecr:PutReplicationConfiguration",
+      "ecr:DescribeRegistry"
+    ],
     "attributes": {
       "tags": []
     },

@@ -8,7 +8,7 @@ resource "aws_ecr_registry_policy" "pike" {
     Version = "2012-10-17",
     Statement = [
       {
-        Sid    = "testpolicy",
+        Sid    = "testpolicy2",
         Effect = "Allow",
         Principal = {
           "AWS" : "arn:${data.aws_partition.current.partition}:iam::${data.aws_caller_identity.current.account_id}:root"

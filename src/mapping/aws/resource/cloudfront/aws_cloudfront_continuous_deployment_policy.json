@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "cloudfront:CreateContinuousDeploymentPolicy",
+      "cloudfront:GetContinuousDeploymentPolicy",
+      "cloudfront:DeleteContinuousDeploymentPolicy",
+      "cloudfront:UpdateContinuousDeploymentPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "cloudfront:DeleteContinuousDeploymentPolicy"
+    ],
+    "modify": [
+      "cloudfront:UpdateContinuousDeploymentPolicy"
+    ],
+    "plan": []
+  }
+]

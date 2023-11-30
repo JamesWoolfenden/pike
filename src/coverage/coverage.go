@@ -30,7 +30,7 @@ func coverageAWS() error {
 	}
 
 	for _, myData := range data.DataSources {
-		if temp := pike.AwsDataLoookup(myData); temp == nil {
+		if temp := pike.AwsDataLookup(myData); temp == nil {
 			if strings.Contains(myData, "aws") {
 				missing.DataSources = append(missing.DataSources, myData)
 				target += "./resource.ps1 " + myData + " -type data\n"

@@ -1,5 +1,10 @@
-resource "aws_ecr_repository" "foo" {
-  name = "bar"
+resource "aws_ecrpublic_repository" "foo" {
+  provider        = aws.central
+  repository_name = "bar"
+  tags = {
+    pike    = "permissions"
+    another = "tag"
+  }
 }
 
 data "aws_iam_policy_document" "foopolicy" {
@@ -9,7 +14,7 @@ data "aws_iam_policy_document" "foopolicy" {
 
     principals {
       type        = "AWS"
-      identifiers = ["123456789012"]
+      identifiers = ["680235478471"]
     }
 
     actions = [
@@ -31,7 +36,8 @@ data "aws_iam_policy_document" "foopolicy" {
   }
 }
 
-resource "aws_ecr_repository_policy" "foopolicy" {
-  repository = aws_ecr_repository.foo.name
-  policy     = data.aws_iam_policy_document.foopolicy.json
+resource "aws_ecrpublic_repository_policy" "foopolicy" {
+  provider        = aws.central
+  repository_name = aws_ecrpublic_repository.foo.repository_name
+  policy          = data.aws_iam_policy_document.foopolicy.json
 }

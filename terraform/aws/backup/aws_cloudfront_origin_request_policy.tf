@@ -1,6 +1,6 @@
 resource "aws_cloudfront_origin_request_policy" "example" {
   name    = "example-policy"
-  comment = "example comment"
+  comment = "example comment2"
   cookies_config {
     cookie_behavior = "whitelist"
     cookies {

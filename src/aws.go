@@ -552,6 +552,17 @@ func AwsLookup(name string) interface{} {
 		"aws_datapipeline_pipeline":                          awsDatapipelinePipeline,
 		"aws_datapipeline_pipeline_definition":               awsDatapipelinePipelineDefinition,
 		"aws_proxy_protocol_policy":                          awsProxyProtocolPolicy,
+		"aws_app_cookie_stickiness_policy":                   awsAppCookieStickinessPolicy,
+		"aws_cloudfront_cache_policy":                        awsCloudfrontCachePolicy,
+		"aws_cloudfront_continuous_deployment_policy":        awsCloudfrontContinuousDeploymentPolicy,
+		"aws_cloudfront_origin_request_policy":               awsCloudfrontOriginRequestPolicy,
+		"aws_codebuild_report_group":                         awsCodebuildReportGroup,
+		"aws_codebuild_resource_policy":                      awsCodebuildResourcePolicy,
+		"aws_ecr_registry_policy":                            awsEcrRegistryPolicy,
+		"aws_ecr_replication_configuration":                  awsEcrReplicationConfiguration,
+		"aws_ecrpublic_repository_policy":                    awsEcrpublicRepositoryPolicy,
+		"aws_emr_managed_scaling_policy":                     awsEmrManagedScalingPolicy,
+		"aws_lb_cookie_stickiness_policy":                    awsLbCookieStickinessPolicy,
 	}
 
 	return TFLookup[name]

@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "elasticloadbalancing:CreateAppCookieStickinessPolicy",
+      "elasticloadbalancing:SetLoadBalancerPoliciesOfListener",
+      "elasticloadbalancing:DescribeLoadBalancerPolicies",
+      "elasticloadbalancing:DeleteLoadBalancerPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "elasticloadbalancing:DeleteLoadBalancerPolicy"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]
