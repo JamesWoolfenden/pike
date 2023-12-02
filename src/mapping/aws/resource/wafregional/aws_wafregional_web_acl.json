@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "waf-regional:GetChangeToken",
+      "waf-regional:CreateWebACL",
+      "waf-regional:UpdateWebACL",
+      "waf-regional:GetWebACL",
+      "waf-regional:GetLoggingConfiguration",
+      "waf-regional:DeleteWebACL"
+    ],
+    "attributes": {
+      "tags": [
+        "waf-regional:UntagResource",
+        "waf-regional:TagResource"
+      ]
+    },
+    "destroy": [
+      "waf-regional:DeleteWebACL"
+    ],
+    "modify": [
+      "waf-regional:UpdateWebACL"
+    ],
+    "plan": []
+  }
+]

@@ -1341,3 +1341,39 @@ var awsEmrManagedScalingPolicy []byte
 
 //go:embed mapping/aws/resource/elasticloadbalancing/aws_lb_cookie_stickiness_policy.json
 var awsLbCookieStickinessPolicy []byte
+
+//go:embed mapping/aws/resource/wafregional/aws_wafregional_byte_match_set.json
+var awsWafregionalByteMatchSet []byte
+
+//go:embed mapping/aws/resource/wafregional/aws_wafregional_geo_match_set.json
+var awsWafregionalGeoMatchSet []byte
+
+//go:embed mapping/aws/resource/wafregional/aws_wafregional_ipset.json
+var awsWafregionalIpset []byte
+
+//go:embed mapping/aws/resource/wafregional/aws_wafregional_rate_based_rule.json
+var awsWafregionalRateBasedRule []byte
+
+//go:embed mapping/aws/resource/wafregional/aws_wafregional_regex_match_set.json
+var awsWafregionalRegexMatchSet []byte
+
+//go:embed mapping/aws/resource/wafregional/aws_wafregional_regex_pattern_set.json
+var awsWafregionalRegexPatternSet []byte
+
+//go:embed mapping/aws/resource/wafregional/aws_wafregional_rule.json
+var awsWafregionalRule []byte
+
+//go:embed mapping/aws/resource/wafregional/aws_wafregional_rule_group.json
+var awsWafregionalRuleGroup []byte
+
+//go:embed mapping/aws/resource/wafregional/aws_wafregional_size_constraint_set.json
+var awsWafregionalSizeConstraintSet []byte
+
+//go:embed mapping/aws/resource/wafregional/aws_wafregional_sql_injection_match_set.json
+var awsWafregionalSqlInjectionMatchSet []byte
+
+//go:embed mapping/aws/resource/wafregional/aws_wafregional_web_acl.json
+var awsWafregionalWebAcl []byte
+
+//go:embed mapping/aws/resource/wafregional/aws_wafregional_xss_match_set.json
+var awsWafregionalXssNatchSet []byte

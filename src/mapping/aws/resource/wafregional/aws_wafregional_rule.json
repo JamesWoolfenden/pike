@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "waf-regional:GetChangeToken",
+      "waf-regional:CreateRule",
+      "waf-regional:UpdateRule",
+      "waf-regional:GetRule",
+      "waf-regional:ListTagsForResource",
+      "waf-regional:DeleteRule"
+    ],
+    "attributes": {
+      "tags": [
+        "waf-regional:TagResource",
+        "waf-regional:UntagResource"
+      ]
+    },
+    "destroy": [
+      "waf-regional:DeleteRule"
+    ],
+    "modify": [
+      "waf-regional:UpdateRule"
+    ],
+    "plan": []
+  }
+]
