@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "waf:GetChangeToken",
+      "waf:CreateGeoMatchSet",
+      "waf:UpdateGeoMatchSet",
+      "waf:GetGeoMatchSet",
+      "waf:DeleteGeoMatchSet"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "waf:DeleteGeoMatchSet"
+    ],
+    "modify": [
+      "waf:UpdateGeoMatchSet"
+    ],
+    "plan": []
+  }
+]

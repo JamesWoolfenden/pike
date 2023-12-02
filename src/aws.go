@@ -575,6 +575,18 @@ func AwsLookup(name string) interface{} {
 		"aws_wafregional_sql_injection_match_set":            awsWafregionalSqlInjectionMatchSet,
 		"aws_wafregional_web_acl":                            awsWafregionalWebAcl,
 		"aws_wafregional_xss_match_set":                      awsWafregionalXssNatchSet,
+		"aws_waf_byte_match_set":                             awsWafByteMatchSet,
+		"aws_waf_geo_match_set":                              awsWafGeoMatchSet,
+		"aws_waf_ipset":                                      awsWafIpset,
+		"aws_waf_rate_based_rule":                            awsWafRateBasedRule,
+		"aws_waf_regex_match_set":                            awsWafRegexMatchSet,
+		"aws_waf_regex_pattern_set":                          awsWafRegexPatternSet,
+		"aws_waf_rule":                                       awsWafRule,
+		"aws_waf_rule_group":                                 awsWafRuleGroup,
+		"aws_waf_size_constraint_set":                        awsWafSizeConstraintSet,
+		"aws_waf_sql_injection_match_set":                    awsWafSqlInjectionMatchSet,
+		"aws_waf_web_acl":                                    awsWafWebAcl,
+		"aws_waf_xss_match_set":                              awsWafXssNatchSet,
 	}
 
 	return TFLookup[name]

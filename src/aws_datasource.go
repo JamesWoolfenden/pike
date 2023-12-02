@@ -535,6 +535,7 @@ func AwsDataLookup(find string) interface{} {
 		"aws_bedrock_foundation_models":                             dataAwsBedrockFoundationModels,
 		"aws_iot_registration_code":                                 dataAwsIotRegistrationCode,
 		"aws_opensearchserverless_lifecycle_policy":                 dataAwsOpensearchserverlessLifecyclePolicy,
+		"aws_emr_supported_instance_types":                          dataAwsEmrSupportedInstanceTypes,
 	}
 
 	return TFLookup[find]

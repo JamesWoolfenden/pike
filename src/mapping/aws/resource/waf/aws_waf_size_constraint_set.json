@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "waf:GetChangeToken",
+      "waf:CreateSizeConstraintSet",
+      "waf:UpdateSizeConstraintSet",
+      "waf:GetSizeConstraintSet",
+      "waf:DeleteSizeConstraintSet"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "waf:DeleteSizeConstraintSet"
+    ],
+    "modify": [
+      "waf:UpdateSizeConstraintSet"
+    ],
+    "plan": []
+  }
+]

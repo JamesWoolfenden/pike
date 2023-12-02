@@ -1356,3 +1356,6 @@ var dataAwsIotRegistrationCode []byte
 
 //go:embed mapping/aws/data/aoss/aws_opensearchserverless_lifecycle_policy.json
 var dataAwsOpensearchserverlessLifecyclePolicy []byte
+
+//go:embed mapping/aws/data/elasticmapreduce/aws_emr_supported_instance_types.json
+var dataAwsEmrSupportedInstanceTypes []byte

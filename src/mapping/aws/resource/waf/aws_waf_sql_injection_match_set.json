@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "waf:GetChangeToken",
+      "waf:CreateSqlInjectionMatchSet",
+      "waf:UpdateSqlInjectionMatchSet",
+      "waf:GetSqlInjectionMatchSet",
+      "waf:DeleteSqlInjectionMatchSet"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "waf:DeleteSqlInjectionMatchSet"
+    ],
+    "modify": [
+      "waf:UpdateSqlInjectionMatchSet"
+    ],
+    "plan": []
+  }
+]

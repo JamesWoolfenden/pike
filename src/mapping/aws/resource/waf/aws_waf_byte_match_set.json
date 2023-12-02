@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "waf:GetChangeToken",
+      "waf:CreateByteMatchSet",
+      "waf:UpdateByteMatchSet",
+      "waf:GetByteMatchSet",
+      "waf:DeleteByteMatchSet"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "waf:DeleteByteMatchSet"
+    ],
+    "modify": [
+      "waf:UpdateByteMatchSet"
+    ],
+    "plan": []
+  }
+]

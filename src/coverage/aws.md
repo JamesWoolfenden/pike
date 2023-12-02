@@ -1,7 +1,7 @@
 # todo aws
 
-Resource percentage coverage   38.35
-Datasource percentage coverage 99.40
+Resource percentage coverage   40.22
+Datasource percentage coverage 99.60
 
 ./resource.ps1 aws_accessanalyzer_analyzer
 ./resource.ps1 aws_accessanalyzer_archive_rule
@@ -768,21 +768,10 @@ Datasource percentage coverage 99.40
 ./resource.ps1 aws_vpclattice_target_group
 ./resource.ps1 aws_vpclattice_target_group_attachment
 ./resource.ps1 aws_vpn_connection_route
-./resource.ps1 aws_waf_byte_match_set
-./resource.ps1 aws_waf_geo_match_set
-./resource.ps1 aws_waf_ipset
-./resource.ps1 aws_waf_rate_based_rule
-./resource.ps1 aws_waf_regex_match_set
-./resource.ps1 aws_waf_regex_pattern_set
-./resource.ps1 aws_waf_rule
-./resource.ps1 aws_waf_rule_group
-./resource.ps1 aws_waf_size_constraint_set
-./resource.ps1 aws_waf_sql_injection_match_set
-./resource.ps1 aws_waf_web_acl
-./resource.ps1 aws_waf_xss_match_set
 ./resource.ps1 aws_wafregional_web_acl_association
 ./resource.ps1 aws_worklink_fleet
 ./resource.ps1 aws_worklink_website_certificate_authority_association
 ./resource.ps1 aws_workspaces_connection_alias
 ./resource.ps1 aws_workspaces_ip_group
-./resource.ps1 aws_emr_supported_instance_types -type data
+./resource.ps1 aws_lb_trust_store -type data
+./resource.ps1 aws_s3_directory_buckets -type data

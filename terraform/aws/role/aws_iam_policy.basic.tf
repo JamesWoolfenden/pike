@@ -7,53 +7,8 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-
-          //aws_wafregional_geo_match_set
-          "waf-regional:GetChangeToken",
-          "waf-regional:CreateGeoMatchSet",
-          "waf-regional:UpdateGeoMatchSet",
-          "waf-regional:GetGeoMatchSet",
-          "waf-regional:DeleteGeoMatchSet",
-
-
-
-          //aws_wafregional_regex_match_set
-          "waf-regional:GetChangeToken",
-          "waf-regional:CreateRegexMatchSet",
-          "waf-regional:UpdateRegexMatchSet",
-          "waf-regional:GetRegexMatchSet",
-          "waf-regional:DeleteRegexMatchSet",
-
-          //aws_wafregional_rate_based_rule
-          "waf-regional:GetChangeToken",
-          "waf-regional:CreateRateBasedRule",
-          "waf-regional:UpdateRateBasedRule",
-          "waf-regional:GetRateBasedRule",
-          "waf-regional:ListTagsForResource",
-          "waf-regional:DeleteRateBasedRule",
-          "waf-regional:TagResource",
-          "waf-regional:UntagResource",
-
-          //aws_wafregional_web_acl
-          "waf-regional:GetChangeToken",
-          "waf-regional:CreateWebACL",
-          "waf-regional:UpdateWebACL",
-          "waf-regional:TagResource",
-          "waf-regional:GetWebACL",
-          "waf-regional:GetLoggingConfiguration",
-          "waf-regional:DeleteWebACL",
-          "waf-regional:UntagResource",
-          "waf-regional:TagResource",
-
-          //aws_wafregional_rule_group
-          "waf-regional:GetChangeToken",
-          "waf-regional:CreateRuleGroup",
-          "waf-regional:UpdateRuleGroup",
-          "waf-regional:GetRuleGroup",
-          "waf-regional:ListActivatedRulesInRuleGroup",
-          "waf-regional:DeleteRuleGroup",
-          "waf-regional:UntagResource",
-          "waf-regional:TagResource",
+          //aws_waf_rate_based_rule
+          "waf:CreateRateBasedRule"
         ],
         "Resource" : "*",
       }

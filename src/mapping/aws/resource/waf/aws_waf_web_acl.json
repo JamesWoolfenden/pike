@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "waf:GetChangeToken",
+      "waf:CreateWebACL",
+      "waf:UpdateWebACL",
+      "waf:GetWebACL",
+      "waf:GetLoggingConfiguration",
+      "waf:DeleteWebACL"
+    ],
+    "attributes": {
+      "tags": [
+        "waf:UntagResource",
+        "waf:TagResource"
+      ]
+    },
+    "destroy": [
+      "waf:DeleteWebACL"
+    ],
+    "modify": [
+      "waf:UpdateWebACL"
+    ],
+    "plan": []
+  }
+]

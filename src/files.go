@@ -1377,3 +1377,39 @@ var awsWafregionalWebAcl []byte
 
 //go:embed mapping/aws/resource/wafregional/aws_wafregional_xss_match_set.json
 var awsWafregionalXssNatchSet []byte
+
+//go:embed mapping/aws/resource/waf/aws_waf_byte_match_set.json
+var awsWafByteMatchSet []byte
+
+//go:embed mapping/aws/resource/waf/aws_waf_geo_match_set.json
+var awsWafGeoMatchSet []byte
+
+//go:embed mapping/aws/resource/waf/aws_waf_ipset.json
+var awsWafIpset []byte
+
+//go:embed mapping/aws/resource/waf/aws_waf_rate_based_rule.json
+var awsWafRateBasedRule []byte
+
+//go:embed mapping/aws/resource/waf/aws_waf_regex_match_set.json
+var awsWafRegexMatchSet []byte
+
+//go:embed mapping/aws/resource/waf/aws_waf_regex_pattern_set.json
+var awsWafRegexPatternSet []byte
+
+//go:embed mapping/aws/resource/waf/aws_waf_rule.json
+var awsWafRule []byte
+
+//go:embed mapping/aws/resource/waf/aws_waf_rule_group.json
+var awsWafRuleGroup []byte
+
+//go:embed mapping/aws/resource/waf/aws_waf_size_constraint_set.json
+var awsWafSizeConstraintSet []byte
+
+//go:embed mapping/aws/resource/waf/aws_waf_sql_injection_match_set.json
+var awsWafSqlInjectionMatchSet []byte
+
+//go:embed mapping/aws/resource/waf/aws_waf_web_acl.json
+var awsWafWebAcl []byte
+
+//go:embed mapping/aws/resource/waf/aws_waf_xss_match_set.json
+var awsWafXssNatchSet []byte

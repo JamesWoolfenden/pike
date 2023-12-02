@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "waf:GetChangeToken",
+      "waf:CreateRegexMatchSet",
+      "waf:UpdateRegexMatchSet",
+      "waf:GetRegexMatchSet",
+      "waf:DeleteRegexMatchSet"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "waf:DeleteRegexMatchSet"
+    ],
+    "modify": [
+      "waf:UpdateRegexMatchSet"
+    ],
+    "plan": []
+  }
+]
