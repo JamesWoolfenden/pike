@@ -1,7 +1,7 @@
 # todo google
 
-Resource percentage coverage   10.22
-Datasource percentage coverage 52.61
+Resource percentage coverage   10.24
+Datasource percentage coverage 86.51
 
 ./resource.ps1 google_access_context_manager_access_level
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -571,6 +571,7 @@ Datasource percentage coverage 52.61
 ./resource.ps1 google_monitoring_service
 ./resource.ps1 google_monitoring_slo
 ./resource.ps1 google_monitoring_uptime_check_config
+./resource.ps1 google_netapp_storage_pool
 ./resource.ps1 google_network_connectivity_hub
 ./resource.ps1 google_network_connectivity_policy_based_route
 ./resource.ps1 google_network_connectivity_service_connection_policy
@@ -649,6 +650,7 @@ Datasource percentage coverage 52.61
 ./resource.ps1 google_runtimeconfig_config_iam_member
 ./resource.ps1 google_runtimeconfig_config_iam_policy
 ./resource.ps1 google_runtimeconfig_variable
+./resource.ps1 google_scc_event_threat_detection_custom_module
 ./resource.ps1 google_scc_folder_custom_module
 ./resource.ps1 google_scc_mute_config
 ./resource.ps1 google_scc_notification_config
@@ -658,6 +660,10 @@ Datasource percentage coverage 52.61
 ./resource.ps1 google_scc_source_iam_binding
 ./resource.ps1 google_scc_source_iam_member
 ./resource.ps1 google_scc_source_iam_policy
+./resource.ps1 google_secure_source_manager_instance
+./resource.ps1 google_secure_source_manager_instance_iam_binding
+./resource.ps1 google_secure_source_manager_instance_iam_member
+./resource.ps1 google_secure_source_manager_instance_iam_policy
 ./resource.ps1 google_security_scanner_scan_config
 ./resource.ps1 google_service_directory_endpoint
 ./resource.ps1 google_service_directory_namespace
@@ -719,6 +725,8 @@ Datasource percentage coverage 52.61
 ./resource.ps1 google_vertex_ai_tensorboard
 ./resource.ps1 google_vmwareengine_cluster
 ./resource.ps1 google_vmwareengine_network
+./resource.ps1 google_vmwareengine_network_peering
+./resource.ps1 google_vmwareengine_network_policy
 ./resource.ps1 google_vmwareengine_private_cloud
 ./resource.ps1 google_vpc_access_connector
 ./resource.ps1 google_workflows_workflow
@@ -731,76 +739,17 @@ Datasource percentage coverage 52.61
 ./resource.ps1 google_workstations_workstation_iam_binding
 ./resource.ps1 google_workstations_workstation_iam_member
 ./resource.ps1 google_workstations_workstation_iam_policy
-./resource.ps1 google_access_approval_folder_service_account -type data
-./resource.ps1 google_access_approval_organization_service_account -type data
-./resource.ps1 google_access_approval_project_service_account -type data
-./resource.ps1 google_access_context_manager_access_policy_iam_policy -type data
-./resource.ps1 google_active_folder -type data
-./resource.ps1 google_bigquery_dataset -type data
 ./resource.ps1 google_billing_account -type data
-./resource.ps1 google_billing_account_iam_policy -type data
-./resource.ps1 google_binary_authorization_attestor_iam_policy -type data
-./resource.ps1 google_certificate_manager_certificate_map -type data
-./resource.ps1 google_cloud_identity_group_lookup -type data
-./resource.ps1 google_cloud_identity_group_memberships -type data
-./resource.ps1 google_cloud_identity_groups -type data
-./resource.ps1 google_cloud_tasks_queue_iam_policy -type data
-./resource.ps1 google_composer_environment -type data
-./resource.ps1 google_composer_image_versions -type data
-./resource.ps1 google_container_analysis_note_iam_policy -type data
 ./resource.ps1 google_container_attached_install_manifest -type data
-./resource.ps1 google_container_attached_versions -type data
 ./resource.ps1 google_container_aws_versions -type data
 ./resource.ps1 google_container_azure_versions -type data
-./resource.ps1 google_data_catalog_entry_group_iam_policy -type data
-./resource.ps1 google_data_catalog_policy_tag_iam_policy -type data
-./resource.ps1 google_data_catalog_tag_template_iam_policy -type data
 ./resource.ps1 google_data_catalog_taxonomy_iam_policy -type data
-./resource.ps1 google_data_fusion_instance_iam_policy -type data
 ./resource.ps1 google_dataform_repository_iam_policy -type data
-./resource.ps1 google_dataplex_asset_iam_policy -type data
-./resource.ps1 google_dataplex_datascan_iam_policy -type data
-./resource.ps1 google_dataplex_lake_iam_policy -type data
-./resource.ps1 google_dataplex_task_iam_policy -type data
-./resource.ps1 google_dataplex_zone_iam_policy -type data
-./resource.ps1 google_dataproc_autoscaling_policy_iam_policy -type data
-./resource.ps1 google_dataproc_cluster_iam_policy -type data
-./resource.ps1 google_dataproc_job_iam_policy -type data
-./resource.ps1 google_dataproc_metastore_federation_iam_policy -type data
-./resource.ps1 google_dataproc_metastore_service -type data
-./resource.ps1 google_dataproc_metastore_service_iam_policy -type data
-./resource.ps1 google_datastream_static_ips -type data
-./resource.ps1 google_endpoints_service_consumers_iam_policy -type data
 ./resource.ps1 google_endpoints_service_iam_policy -type data
 ./resource.ps1 google_firebase_web_app_config -type data
 ./resource.ps1 google_folder -type data
 ./resource.ps1 google_folder_iam_policy -type data
-./resource.ps1 google_folder_organization_policy -type data
 ./resource.ps1 google_folders -type data
-./resource.ps1 google_healthcare_consent_store_iam_policy -type data
-./resource.ps1 google_healthcare_dataset_iam_policy -type data
-./resource.ps1 google_healthcare_dicom_store_iam_policy -type data
-./resource.ps1 google_healthcare_fhir_store_iam_policy -type data
-./resource.ps1 google_healthcare_hl7_v2_store_iam_policy -type data
-./resource.ps1 google_iam_workload_identity_pool -type data
-./resource.ps1 google_iam_workload_identity_pool_provider -type data
-./resource.ps1 google_iap_app_engine_service_iam_policy -type data
-./resource.ps1 google_iap_app_engine_version_iam_policy -type data
-./resource.ps1 google_iap_client -type data
-./resource.ps1 google_iap_tunnel_iam_policy -type data
-./resource.ps1 google_iap_tunnel_instance_iam_policy -type data
-./resource.ps1 google_iap_web_backend_service_iam_policy -type data
-./resource.ps1 google_iap_web_iam_policy -type data
-./resource.ps1 google_iap_web_region_backend_service_iam_policy -type data
-./resource.ps1 google_iap_web_type_app_engine_iam_policy -type data
-./resource.ps1 google_iap_web_type_compute_iam_policy -type data
-./resource.ps1 google_logging_project_cmek_settings -type data
-./resource.ps1 google_monitoring_app_engine_service -type data
-./resource.ps1 google_monitoring_cluster_istio_service -type data
-./resource.ps1 google_netblock_ip_ranges -type data
-./resource.ps1 google_notebooks_instance_iam_policy -type data
-./resource.ps1 google_notebooks_runtime_iam_policy -type data
-./resource.ps1 google_organization -type data
 ./resource.ps1 google_organization_iam_policy -type data
 ./resource.ps1 google_privateca_ca_pool_iam_policy -type data
 ./resource.ps1 google_privateca_certificate_authority -type data
@@ -812,20 +761,15 @@ Datasource percentage coverage 52.61
 ./resource.ps1 google_runtimeconfig_config_iam_policy -type data
 ./resource.ps1 google_runtimeconfig_variable -type data
 ./resource.ps1 google_scc_source_iam_policy -type data
-./resource.ps1 google_secret_manager_secrets -type data
+./resource.ps1 google_secure_source_manager_instance_iam_policy -type data
 ./resource.ps1 google_service_directory_namespace_iam_policy -type data
 ./resource.ps1 google_service_directory_service_iam_policy -type data
-./resource.ps1 google_tags_tag_key -type data
+./resource.ps1 google_sql_backup_run -type data
+./resource.ps1 google_sql_ca_certs -type data
+./resource.ps1 google_sql_database_instance_latest_recovery_time -type data
 ./resource.ps1 google_tags_tag_key_iam_policy -type data
 ./resource.ps1 google_tags_tag_value -type data
 ./resource.ps1 google_tags_tag_value_iam_policy -type data
-./resource.ps1 google_tpu_tensorflow_versions -type data
-./resource.ps1 google_tpu_v2_accelerator_types -type data
-./resource.ps1 google_tpu_v2_runtime_versions -type data
 ./resource.ps1 google_vertex_ai_endpoint_iam_policy -type data
-./resource.ps1 google_vmwareengine_cluster -type data
-./resource.ps1 google_vmwareengine_network -type data
-./resource.ps1 google_vmwareengine_private_cloud -type data
-./resource.ps1 google_vpc_access_connector -type data
-./resource.ps1 google_workstations_workstation_config_iam_policy -type data
-./resource.ps1 google_workstations_workstation_iam_policy -type data
+./resource.ps1 google_vmwareengine_network_peering -type data
+./resource.ps1 google_vmwareengine_network_policy -type data

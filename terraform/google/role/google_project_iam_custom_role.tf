@@ -4,8 +4,8 @@ resource "google_project_iam_custom_role" "pike" {
   title       = "pike terraform user"
   description = "A user with least privileges"
   permissions = [
-    "cloudbuild.builds.create",
-    "cloudbuild.builds.update",
-    "cloudbuild.builds.get"
+    //"composer.environments.list",
+    "composer.environments.get",
+    "composer.imageversions.list"
   ]
 }

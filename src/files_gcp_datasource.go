@@ -366,3 +366,144 @@ var dataGoogleMonitoringMeshIstioService []byte
 
 //go:embed mapping/google/data/monitoring/google_monitoring_notification_channel.json
 var dataGoogleMonitoringNotificationChannel []byte
+
+//go:embed mapping/google/data/tpu/google_tpu_tensorflow_versions.json
+var dataGoogleTpuTensorflowVersions []byte
+
+//go:embed mapping/google/data/tpu/google_tpu_v2_accelerator_types.json
+var dataGoogleTpuV2AcceleratorTypes []byte
+
+//go:embed mapping/google/data/tpu/google_tpu_v2_runtime_versions.json
+var dataGoogleTpuV2RuntimeVersions []byte
+
+//go:embed mapping/google/data/vmwareengine/google_vmwareengine_network.json
+var dataGoogleVmwareengineNetwork []byte
+
+//go:embed mapping/google/data/vmwareengine/google_vmwareengine_private_cloud.json
+var dataGoogleVmwareenginePrivateCloud []byte
+
+//go:embed mapping/google/data/vpcaccess/google_vpc_access_connector.json
+var dataGoogleVpcAccessConnector []byte
+
+//go:embed mapping/google/data/workstations/google_workstations_workstation_config_iam_policy.json
+var dataGoogleWorkstationsWorkstationConfigIamPolicy []byte
+
+//go:embed mapping/google/data/workstations/google_workstations_workstation_iam_policy.json
+var dataGoogleWorkstationsWorkstationIamPolicy []byte
+
+//go:embed mapping/google/data/notebooks/google_notebooks_instance_iam_policy.json
+var dataGoogleNotebooksInstanceIamPolicy []byte
+
+//go:embed mapping/google/data/notebooks/google_notebooks_runtime_iam_policy.json
+var dataGoogleNotebooksRuntimeIamPolicy []byte
+
+//go:embed mapping/google/data/secretmanager/google_secret_manager_secrets.json
+var dataGoogleSecretManagerSecrets []byte
+
+//go:embed mapping/google/data/resourcemanager/google_tags_tag_key.json
+var dataGoogleTagsTagKey []byte
+
+//go:embed mapping/google/data/monitoring/google_monitoring_cluster_istio_service.json
+var dataGoogleMonitoringClusterIstioService []byte
+
+//go:embed mapping/google/data/monitoring/google_monitoring_app_engine_service.json
+var dataGoogleMonitoringAppEngineService []byte
+
+//go:embed mapping/google/data/logging/google_logging_project_cmek_settings.json
+var dataGoogleLoggingProjectCmekSettings []byte
+
+//go:embed mapping/google/data/iap/google_iap_web_type_compute_iam_policy.json
+var dataGoogleIapWebTypeComputeIamPolicy []byte
+
+//go:embed mapping/google/data/iap/google_iap_web_type_app_engine_iam_policy.json
+var dataGoogleIapWebTypeAppEngineIamPolicy []byte
+
+//go:embed mapping/google/data/iap/google_iap_web_region_backend_service_iam_policy.json
+var dataGoogleIapWebRegionBackendServiceIamPolicy []byte
+
+//go:embed mapping/google/data/iap/google_iap_web_iam_policy.json
+var dataGoogleIapWebIamPolicy []byte
+
+//go:embed mapping/google/data/iap/google_iap_web_backend_service_iam_policy.json
+var dataGoogleIapWebBackendServiceIamPolicy []byte
+
+//go:embed mapping/google/data/iap/google_iap_tunnel_instance_iam_policy.json
+var dataGoogleIapTunnelInstanceIamPolicy []byte
+
+//go:embed mapping/google/data/iap/google_iap_tunnel_iam_policy.json
+var dataGoogleIapTunnelIamPolicy []byte
+
+//go:embed mapping/google/data/binaryauthorization/google_binary_authorization_attestor_iam_policy.json
+var dataGoogleBinaryAuthorizationAttestorIamPolicy []byte
+
+//go:embed mapping/google/data/certificatemanager/google_certificate_manager_certificate_map.json
+var dataGoogleCertificateManagerCertificateMap []byte
+
+//go:embed mapping/google/data/iap/google_iap_app_engine_version_iam_policy.json
+var dataGoogleIapAppEngineVersionIamPolicy []byte
+
+//go:embed mapping/google/data/iap/google_iap_app_engine_service_iam_policy.json
+var dataGoogleIapAppEngineServiceIamPolicy []byte
+
+//go:embed mapping/google/data/iam/google_iam_workload_identity_pool_provider.json
+var dataGoogleIamWorkloadIdentityPoolProvider []byte
+
+//go:embed mapping/google/data/iam/google_iam_workload_identity_pool.json
+var dataGoogleIamWorkloadIdentityPool []byte
+
+//go:embed mapping/google/data/dataplex/google_dataplex_asset_iam_policy.json
+var dataGoogleDataplexAssetIamPolicy []byte
+
+//go:embed mapping/google/data/dataplex/google_dataplex_datascan_iam_policy.json
+var dataGoogleDataplexDatascanIamPolicy []byte
+
+//go:embed mapping/google/data/datastream/google_datastream_static_ips.json
+var dataGoogleDataStreamStaticIps []byte
+
+//go:embed mapping/google/data/healthcare/google_healthcare_hl7_v2_store_iam_policy.json
+var dataGoogleHealthcareHl7V2StoreIamPolicy []byte
+
+//go:embed mapping/google/data/healthcare/google_healthcare_fhir_store_iam_policy.json
+var dataGoogleHealthcareFhirStoreIamPolicy []byte
+
+//go:embed mapping/google/data/healthcare/google_healthcare_dicom_store_iam_policy.json
+var dataGoogleHealthcareDicomStoreIamPolicy []byte
+
+//go:embed mapping/google/data/healthcare/google_healthcare_dataset_iam_policy.json
+var dataGoogleHealthcareDatasetStoreIamPolicy []byte
+
+//go:embed mapping/google/data/healthcare/google_healthcare_consent_store_iam_policy.json
+var dataGoogleHealthcareConsentStoreIamPolicy []byte
+
+//go:embed mapping/google/data/gkemulticloud/google_container_attached_versions.json
+var dataGoogleContainerAttachedVersions []byte
+
+//go:embed mapping/google/data/datafusion/google_data_fusion_instance_iam_policy.json
+var dataGoogleDataFusionInstanceIamPolicy []byte
+
+//go:embed mapping/google/data/cloudtasks/google_cloud_tasks_queue_iam_policy.json
+var dataGoogleCloudTasksQueueIamPolicy []byte
+
+//go:embed mapping/google/data/composer/google_composer_environment.json
+var dataGoogleComposerEnvironment []byte
+
+//go:embed mapping/google/data/composer/google_composer_image_versions.json
+var dataGoogleComposerImageVersions []byte
+
+//go:embed mapping/google/data/dataplex/google_dataplex_lake_iam_policy.json
+var dataGoogleDataplexLakeIamPolicy []byte
+
+//go:embed mapping/google/data/dataplex/google_dataplex_task_iam_policy.json
+var dataGoogleDataplexTaskIamPolicy []byte
+
+//go:embed mapping/google/data/dataplex/google_dataplex_zone_iam_policy.json
+var dataGoogleDataplexZoneIamPolicy []byte
+
+//go:embed mapping/google/data/metastore/google_dataproc_metastore_service_iam_policy.json
+var dataGoogleDataprocMetastoreServiceIamPolicy []byte
+
+//go:embed mapping/google/data/metastore/google_dataproc_metastore_federation_iam_policy.json
+var dataGoogleDataprocMetaStoreFederationIamPolicy []byte
+
+//go:embed mapping/google/data/metastore/google_dataproc_metastore_service.json
+var dataGoogleDataprocMetastoreService []byte
