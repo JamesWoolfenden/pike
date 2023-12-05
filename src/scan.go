@@ -184,7 +184,6 @@ func MakePolicy(dirName string, file *string, init bool, EnableResources bool) (
 	var resources []ResourceV2
 
 	for _, tfFile := range files {
-
 		resource, err := GetResources(tfFile, dirName)
 		if err != nil {
 			// parse the other files

@@ -51,20 +51,20 @@ type AwsOutput struct {
 }
 
 // AsString converts object into string.
-func (Out OutputPolicy) AsString(format string) string {
+func (out OutputPolicy) AsString(format string) string {
 	var Output string
 	if strings.ToLower(format) == terraform {
-		Output = Out.AWS.Terraform + "\n"
+		Output = out.AWS.Terraform + "\n"
 	} else {
-		Output = Out.AWS.JSONOut + "\n"
+		Output = out.AWS.JSONOut + "\n"
 	}
 
-	if Out.GCP != "" {
-		Output = Output + Out.GCP + "\n"
+	if out.GCP != "" {
+		Output = Output + out.GCP + "\n"
 	}
 
-	if Out.AZURE != "" {
-		Output = Output + Out.AZURE + "\n"
+	if out.AZURE != "" {
+		Output = Output + out.AZURE + "\n"
 	}
 
 	return Output

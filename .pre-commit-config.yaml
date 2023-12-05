@@ -39,7 +39,7 @@ repos:
       - id: terraform-fmt
         language_version: python3.11
   - repo: https://github.com/gruntwork-io/pre-commit
-    rev: v0.1.22
+    rev: v0.1.23
     hooks:
       - id: gofmt
       - id: goimports
@@ -52,7 +52,7 @@ repos:
       - id: go-mod-tidy
       - id: go-generate
   - repo: https://github.com/bridgecrewio/checkov
-    rev: 2.5.7
+    rev: 3.1.22
     hooks:
       - id: checkov
         language_version: python3.11

@@ -18,6 +18,7 @@ type provider struct {
 
 func Parse(codebase string, name string) error {
 	var err error
+
 	var jsonOut []byte
 
 	myProvider := provider{}
@@ -75,8 +76,8 @@ func GetMatches(source string, match string, extension string) ([]string, error)
 	}
 
 	var (
-		m = make(map[string]bool)
-		a []string
+		matches = make(map[string]bool)
+		a       []string
 	)
 
 	for _, file := range files {
@@ -95,11 +96,11 @@ func GetMatches(source string, match string, extension string) ([]string, error)
 			matched = strings.TrimSpace(strings.ReplaceAll(matched, "data ", ""))
 			matched = strings.TrimSpace(strings.ReplaceAll(matched, "resource ", ""))
 			matched = strings.TrimSpace(strings.ReplaceAll(matched, "`", ""))
-			a, m = add(matched, m, a)
+			a, matches = add(matched, matches, a)
 		}
 	}
 
-	keys := GetKeys(m)
+	keys := GetKeys(matches)
 
 	return keys, nil
 }
