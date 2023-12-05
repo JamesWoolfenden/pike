@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "ec2:AuthorizeSecurityGroupIngress",
+      "ec2:DescribeSecurityGroupRules",
+      "ec2:RevokeSecurityGroupIngress"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "ec2:RevokeSecurityGroupIngress"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

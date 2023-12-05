@@ -1413,3 +1413,33 @@ var awsWafWebAcl []byte
 
 //go:embed mapping/aws/resource/waf/aws_waf_xss_match_set.json
 var awsWafXssNatchSet []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpc_ipam.json
+var awsVpcIpam []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpc_ipam_pool.json
+var awsVpcIpamPool []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpc_ipam_pool_cidr.json
+var awsVpcIpamPoolCidr []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpc_ipam_pool_cidr_allocation.json
+var awsVpcIpamPoolCidrAllocation []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpc_ipam_preview_next_cidr.json
+var awsVpcIpamPreviewNextCidr []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpc_ipam_resource_discovery.json
+var awsVpcIpamResourceDiscovery []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpc_ipam_resource_discovery_association.json
+var awsVpcIpamResourceDiscoveryAssociation []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpc_ipam_scope.json
+var awsVpcIpamScope []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpc_security_group_egress_rule.json
+var awsVpcSecurityGroupEgressRule []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpc_security_group_ingress_rule.json
+var awsVpcSecurityGroupIngressRule []byte

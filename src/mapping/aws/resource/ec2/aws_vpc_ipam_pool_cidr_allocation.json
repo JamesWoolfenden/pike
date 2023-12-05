@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "ec2:AllocateIpamPoolCidr",
+      "ec2:GetIpamPoolAllocations",
+      "ec2:ReleaseIpamPoolAllocation",
+      "ec2:DeprovisionIpamPoolCidr"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "ec2:DeprovisionIpamPoolCidr",
+      "ec2:ReleaseIpamPoolAllocation"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

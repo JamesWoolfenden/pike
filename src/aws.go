@@ -587,6 +587,16 @@ func AwsLookup(name string) interface{} {
 		"aws_waf_sql_injection_match_set":                    awsWafSqlInjectionMatchSet,
 		"aws_waf_web_acl":                                    awsWafWebAcl,
 		"aws_waf_xss_match_set":                              awsWafXssNatchSet,
+		"aws_vpc_ipam":                                       awsVpcIpam,
+		"aws_vpc_ipam_pool":                                  awsVpcIpamPool,
+		"aws_vpc_ipam_pool_cidr":                             awsVpcIpamPoolCidr,
+		"aws_vpc_ipam_pool_cidr_allocation":                  awsVpcIpamPoolCidrAllocation,
+		"aws_vpc_ipam_preview_next_cidr":                     awsVpcIpamPreviewNextCidr,
+		"aws_vpc_ipam_resource_discovery":                    awsVpcIpamResourceDiscovery,
+		"aws_vpc_ipam_resource_discovery_association":        awsVpcIpamResourceDiscoveryAssociation,
+		"aws_vpc_ipam_scope":                                 awsVpcIpamScope,
+		"aws_vpc_security_group_egress_rule":                 awsVpcSecurityGroupEgressRule,
+		"aws_vpc_security_group_ingress_rule":                awsVpcSecurityGroupIngressRule,
 	}
 
 	return TFLookup[name]

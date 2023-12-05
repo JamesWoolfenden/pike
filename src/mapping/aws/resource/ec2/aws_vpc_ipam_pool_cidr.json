@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "ec2:ProvisionIpamPoolCidr",
+      "ec2:GetIpamPoolCidrs"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
