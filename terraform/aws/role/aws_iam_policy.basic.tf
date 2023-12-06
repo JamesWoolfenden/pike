@@ -7,42 +7,46 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          //dependson
-          "ec2:CreateSecurityGroup",
-          "ec2:DescribeSecurityGroups",
-          "ec2:DescribeNetworkInterfaces",
-          "ec2:DeleteSecurityGroup",
+          //aws_location_tracker
+          "geo:CreateTracker",
+          "geo:DescribeTracker",
+          "geo:DeleteTracker",
 
-          //aws_vpc_ipam
-          "ec2:CreateIpam",
-          "ec2:ModifyIpam",
-          "iam:CreateServiceLinkedRole",
-          "ec2:DescribeIpams",
-          "ec2:DeleteIpam",
-          "ec2:CreateTags",
-          "ec2:DeleteTags",
-          "ec2:DescribeTags",
+          //aws_location_route_calculator
+          "geo:TagResource",
+          "geo:UntagResource",
+          "geo:CreateRouteCalculator",
+          "geo:DescribeRouteCalculator",
+          "geo:ListTagsForResource",
+          "geo:DeleteRouteCalculator",
+          "geo:UpdateRouteCalculator",
 
-          //aws_vpc_ipam_pool
-          "ec2:CreateIpamPool",
-          "ec2:DescribeIpamPools",
-          "ec2:DeleteIpamPool",
-          "ec2:CreateTags",
-          "ec2:DeleteTags",
-          "ec2:ModifyIpamPool",
+          //aws_location_map
+          "geo:TagResource",
+          "geo:UntagResource",
+          "geo:CreateMap",
+          "geo:DescribeMap",
+          "geo:DescribeMap",
+          "geo:DeleteMap",
+          "geo:UpdateMap",
 
-          //aws_vpc_ipam_pool_cidr
-          "ec2:ProvisionIpamPoolCidr",
-          "ec2:GetIpamPoolCidrs",
+          //aws_location_geofence_collection
+          "geo:TagResource",
+          "geo:UntagResource",
+          "geo:CreateGeofenceCollection",
+          "kms:DescribeKey",
+          "kms:CreateGrant",
+          "geo:DescribeGeofenceCollection",
+          "geo:DeleteGeofenceCollection",
 
-          //aws_vpc_ipam_preview_next_cidr
-          "ec2:AllocateIpamPoolCidr",
+          //aws_location_place_index
+          "geo:TagResource",
+          "geo:CreatePlaceIndex",
+          "geo:DescribePlaceIndex",
+          "geo:DeletePlaceIndex",
+          "geo:UntagResource",
+          "geo:UpdatePlaceIndex",
 
-          //aws_vpc_ipam_pool_cidr_allocation
-          "ec2:AllocateIpamPoolCidr",
-          "ec2:GetIpamPoolAllocations",
-          "ec2:ReleaseIpamPoolAllocation",
-          "ec2:DeprovisionIpamPoolCidr",
         ],
         "Resource" : "*",
       }

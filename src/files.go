@@ -1443,3 +1443,18 @@ var awsVpcSecurityGroupEgressRule []byte
 
 //go:embed mapping/aws/resource/ec2/aws_vpc_security_group_ingress_rule.json
 var awsVpcSecurityGroupIngressRule []byte
+
+//go:embed mapping/aws/resource/location/aws_location_geofence_collection.json
+var awsLocationGeofenceCollection []byte
+
+//go:embed mapping/aws/resource/location/aws_location_map.json
+var awsLocationMap []byte
+
+//go:embed mapping/aws/resource/location/aws_location_place_index.json
+var awsLocationPlaceIndex []byte
+
+//go:embed mapping/aws/resource/location/aws_location_route_calculator.json
+var awsLocationRouteCalculator []byte
+
+//go:embed mapping/aws/resource/location/aws_location_tracker.json
+var awsLocationTracker []byte

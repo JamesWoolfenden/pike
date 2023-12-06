@@ -1,6 +1,6 @@
 # todo aws
 
-Resource percentage coverage   40.22
+Resource percentage coverage   41.38
 Datasource percentage coverage 99.60
 
 ./resource.ps1 aws_accessanalyzer_analyzer
@@ -413,11 +413,6 @@ Datasource percentage coverage 99.60
 ./resource.ps1 aws_load_balancer_backend_server_policy
 ./resource.ps1 aws_load_balancer_listener_policy
 ./resource.ps1 aws_load_balancer_policy
-./resource.ps1 aws_location_geofence_collection
-./resource.ps1 aws_location_map
-./resource.ps1 aws_location_place_index
-./resource.ps1 aws_location_route_calculator
-./resource.ps1 aws_location_tracker
 ./resource.ps1 aws_location_tracker_association
 ./resource.ps1 aws_macie2_account
 ./resource.ps1 aws_macie2_classification_export_configuration

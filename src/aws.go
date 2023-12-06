@@ -597,6 +597,11 @@ func AwsLookup(name string) interface{} {
 		"aws_vpc_ipam_scope":                                 awsVpcIpamScope,
 		"aws_vpc_security_group_egress_rule":                 awsVpcSecurityGroupEgressRule,
 		"aws_vpc_security_group_ingress_rule":                awsVpcSecurityGroupIngressRule,
+		"aws_location_geofence_collection":                   awsLocationGeofenceCollection,
+		"aws_location_map":                                   awsLocationMap,
+		"aws_location_place_index":                           awsLocationPlaceIndex,
+		"aws_location_route_calculator":                      awsLocationRouteCalculator,
+		"aws_location_tracker":                               awsLocationTracker,
 	}
 
 	return TFLookup[name]
