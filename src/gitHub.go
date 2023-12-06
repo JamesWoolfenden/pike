@@ -88,6 +88,7 @@ func VerifyBranch(client *github.Client, owner string, repo string, branch strin
 	if found {
 		return nil
 	}
+
 	return errors.New("branch " + branch + " not found for " + repo)
 }
 

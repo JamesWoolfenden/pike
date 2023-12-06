@@ -78,6 +78,7 @@ func tfApply(policyPath string) (*tfexec.Terraform, error) {
 // Apply executes tf using a prepared role.
 func Apply(target string, region string) error {
 	iamRole, err := Make(target)
+
 	time.Sleep(5 * time.Second)
 
 	if err != nil {
