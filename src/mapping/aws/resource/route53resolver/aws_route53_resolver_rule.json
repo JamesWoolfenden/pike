@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "route53resolver:CreateResolverRule",
+      "route53resolver:GetResolverRule",
+      "route53resolver:DeleteResolverRule",
+      "route53resolver:UpdateResolverRule"
+    ],
+    "attributes": {
+      "tags": [
+        "route53resolver:TagResource",
+        "route53resolver:UntagResource"
+      ]
+    },
+    "destroy": [
+      "route53resolver:DeleteResolverRule"
+    ],
+    "modify": [
+      "route53resolver:UpdateResolverRule"
+    ],
+    "plan": []
+  }
+]

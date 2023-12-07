@@ -1,6 +1,6 @@
 # todo aws
 
-Resource percentage coverage   41.38
+Resource percentage coverage   42.62
 Datasource percentage coverage 99.60
 
 ./resource.ps1 aws_accessanalyzer_analyzer
@@ -410,9 +410,6 @@ Datasource percentage coverage 99.60
 ./resource.ps1 aws_lightsail_lb_certificate_attachment
 ./resource.ps1 aws_lightsail_lb_https_redirection_policy
 ./resource.ps1 aws_lightsail_lb_stickiness_policy
-./resource.ps1 aws_load_balancer_backend_server_policy
-./resource.ps1 aws_load_balancer_listener_policy
-./resource.ps1 aws_load_balancer_policy
 ./resource.ps1 aws_location_tracker_association
 ./resource.ps1 aws_macie2_account
 ./resource.ps1 aws_macie2_classification_export_configuration
@@ -550,19 +547,6 @@ Datasource percentage coverage 99.60
 ./resource.ps1 aws_resourcegroups_resource
 ./resource.ps1 aws_rolesanywhere_profile
 ./resource.ps1 aws_rolesanywhere_trust_anchor
-./resource.ps1 aws_route53_cidr_collection
-./resource.ps1 aws_route53_cidr_location
-./resource.ps1 aws_route53_resolver_config
-./resource.ps1 aws_route53_resolver_dnssec_config
-./resource.ps1 aws_route53_resolver_endpoint
-./resource.ps1 aws_route53_resolver_firewall_config
-./resource.ps1 aws_route53_resolver_firewall_domain_list
-./resource.ps1 aws_route53_resolver_firewall_rule
-./resource.ps1 aws_route53_resolver_firewall_rule_group
-./resource.ps1 aws_route53_resolver_firewall_rule_group_association
-./resource.ps1 aws_route53_resolver_rule
-./resource.ps1 aws_route53_traffic_policy
-./resource.ps1 aws_route53_traffic_policy_instance
 ./resource.ps1 aws_route53domains_registered_domain
 ./resource.ps1 aws_route53recoverycontrolconfig_cluster
 ./resource.ps1 aws_route53recoverycontrolconfig_control_panel

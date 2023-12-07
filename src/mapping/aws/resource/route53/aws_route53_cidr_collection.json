@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "route53:CreateCidrCollection",
+      "route53:ChangeCidrCollection",
+      "route53:DeleteCidrCollection",
+      "route53:ListCidrCollections"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "route53:DeleteCidrCollection"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

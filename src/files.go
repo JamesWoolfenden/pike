@@ -862,13 +862,13 @@ var awsRoute53QueryLog []byte
 //go:embed mapping/aws/resource/route53/aws_route53_vpc_association_authorization.json
 var awsRoute53VpcAssociationAuthorization []byte
 
-//go:embed mapping/aws/resource/route53/aws_route53_resolver_query_log_config.json
+//go:embed mapping/aws/resource/route53resolver/aws_route53_resolver_query_log_config.json
 var awsRoute53ResolverQueryLogConfig []byte
 
-//go:embed mapping/aws/resource/route53/aws_route53_resolver_query_log_config_association.json
+//go:embed mapping/aws/resource/route53resolver/aws_route53_resolver_query_log_config_association.json
 var awsRoute53ResolverQueryLogConfigAssociation []byte
 
-//go:embed mapping/aws/resource/route53/aws_route53_resolver_rule_association.json
+//go:embed mapping/aws/resource/route53resolver/aws_route53_resolver_rule_association.json
 var awsRoute53ResolverRuleAssociation []byte
 
 //go:embed mapping/aws/resource/sagemaker/aws_sagemaker_endpoint_configuration.json
@@ -1458,3 +1458,51 @@ var awsLocationRouteCalculator []byte
 
 //go:embed mapping/aws/resource/location/aws_location_tracker.json
 var awsLocationTracker []byte
+
+//go:embed mapping/aws/resource/elasticloadbalancing/aws_load_balancer_backend_server_policy.json
+var awsLoadBalancerBackendServerPolicy []byte
+
+//go:embed mapping/aws/resource/elasticloadbalancing/aws_load_balancer_listener_policy.json
+var awsLoadBalancerListenerPolicy []byte
+
+//go:embed mapping/aws/resource/elasticloadbalancing/aws_load_balancer_policy.json
+var awsLoadBalancerPolicy []byte
+
+//go:embed mapping/aws/resource/route53/aws_route53_cidr_collection.json
+var awsRoute53CidrCollection []byte
+
+//go:embed mapping/aws/resource/route53/aws_route53_cidr_location.json
+var awsRoute53CidrLocation []byte
+
+//go:embed mapping/aws/resource/route53resolver/aws_route53_resolver_config.json
+var awsRoute53ResolverConfig []byte
+
+//go:embed mapping/aws/resource/route53resolver/aws_route53_resolver_dnssec_config.json
+var awsRoute53ResolverDnssecConfig []byte
+
+//go:embed mapping/aws/resource/route53resolver/aws_route53_resolver_endpoint.json
+var awsRoute53ResolverEndpoint []byte
+
+//go:embed mapping/aws/resource/route53resolver/aws_route53_resolver_firewall_config.json
+var awsRoute53ResolverFirewallConfig []byte
+
+//go:embed mapping/aws/resource/route53resolver/aws_route53_resolver_firewall_domain_list.json
+var awsRoute53ResolverFirewallDomainList []byte
+
+//go:embed mapping/aws/resource/route53resolver/aws_route53_resolver_firewall_rule.json
+var awsRoute53ResolverFirewallRule []byte
+
+//go:embed mapping/aws/resource/route53resolver/aws_route53_resolver_firewall_rule_group.json
+var awsRoute53ResolverFirewallRuleGroup []byte
+
+//go:embed mapping/aws/resource/route53resolver/aws_route53_resolver_firewall_rule_group_association.json
+var awsRoute53ResolverFirewallRuleGroupAssociation []byte
+
+//go:embed mapping/aws/resource/route53resolver/aws_route53_resolver_rule.json
+var awsRoute53ResolverRule []byte
+
+//go:embed mapping/aws/resource/route53/aws_route53_traffic_policy.json
+var awsRoute53TrafficPolicy []byte
+
+//go:embed mapping/aws/resource/route53/aws_route53_traffic_policy_instance.json
+var awsRoute53TrafficPolicyInstance []byte

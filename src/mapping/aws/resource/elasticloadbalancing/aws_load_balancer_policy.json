@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "elasticloadbalancing:CreateLoadBalancerPolicy",
+      "elasticloadbalancing:DescribeLoadBalancerPolicies",
+      "elasticloadbalancing:DeleteLoadBalancerPolicy"
+    ],
+    "attributes": {
+      "tags": [
+        "elasticloadbalancing:AddTags",
+        "elasticloadbalancing:RemoveTags"
+      ]
+    },
+    "destroy": [
+      "elasticloadbalancing:DeleteLoadBalancerPolicy"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

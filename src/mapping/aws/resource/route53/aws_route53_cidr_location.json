@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "route53:ListCidrBlocks"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
