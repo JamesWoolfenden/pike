@@ -1506,3 +1506,15 @@ var awsRoute53TrafficPolicy []byte
 
 //go:embed mapping/aws/resource/route53/aws_route53_traffic_policy_instance.json
 var awsRoute53TrafficPolicyInstance []byte
+
+//go:embed mapping/aws/resource/ce/aws_ce_anomaly_monitor.json
+var awsCeAnomalyMonitor []byte
+
+//go:embed mapping/aws/resource/ce/aws_ce_anomaly_subscription.json
+var awsCeAnomalySubscription []byte
+
+//go:embed mapping/aws/resource/ce/aws_ce_cost_allocation_tag.json
+var awsCeCostAllocationTag []byte
+
+//go:embed mapping/aws/resource/ce/aws_ce_cost_category.json
+var awsCeCostCategory []byte

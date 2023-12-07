@@ -1,6 +1,6 @@
 # todo aws
 
-Resource percentage coverage   42.62
+Resource percentage coverage   42.93
 Datasource percentage coverage 99.60
 
 ./resource.ps1 aws_accessanalyzer_analyzer
@@ -67,10 +67,6 @@ Datasource percentage coverage 99.60
 ./resource.ps1 aws_autoscaling_traffic_source_attachment
 ./resource.ps1 aws_autoscalingplans_scaling_plan
 ./resource.ps1 aws_bedrock_model_invocation_logging_configuration
-./resource.ps1 aws_ce_anomaly_monitor
-./resource.ps1 aws_ce_anomaly_subscription
-./resource.ps1 aws_ce_cost_allocation_tag
-./resource.ps1 aws_ce_cost_category
 ./resource.ps1 aws_chime_voice_connector
 ./resource.ps1 aws_chime_voice_connector_group
 ./resource.ps1 aws_chime_voice_connector_logging

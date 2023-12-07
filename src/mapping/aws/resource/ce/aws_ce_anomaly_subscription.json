@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "ce:CreateAnomalySubscription",
+      "ce:GetAnomalySubscriptions",
+      "ce:DeleteAnomalySubscription",
+      "ce:UpdateAnomalySubscription"
+    ],
+    "attributes": {
+      "tags": [
+        "ce:TagResource",
+        "ce:UntagResource"
+      ]
+    },
+    "destroy": [
+      "ce:DeleteAnomalySubscription"
+    ],
+    "modify": [
+      "ce:UpdateAnomalySubscription"
+    ],
+    "plan": []
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "ce:CreateAnomalyMonitor",
+      "ce:GetAnomalyMonitors",
+      "ce:ListTagsForResource",
+      "ce:DeleteAnomalyMonitor",
+      "ce:UpdateAnomalyMonitor"
+    ],
+    "attributes": {
+      "tags": [
+        "ce:TagResource",
+        "ce:UntagResource"
+      ]
+    },
+    "destroy": [
+      "ce:DeleteAnomalyMonitor"
+    ],
+    "modify": [
+      "ce:UpdateAnomalyMonitor"
+    ],
+    "plan": []
+  }
+]
