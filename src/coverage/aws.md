@@ -83,7 +83,6 @@ Datasource percentage coverage 99.60
 ./resource.ps1 aws_cleanrooms_configured_table
 ./resource.ps1 aws_cloud9_environment_membership
 ./resource.ps1 aws_cloudcontrolapi_resource
-./resource.ps1 aws_cloudfront_function
 ./resource.ps1 aws_cloudfront_realtime_log_config
 ./resource.ps1 aws_cloudhsm_v2_cluster
 ./resource.ps1 aws_cloudhsm_v2_hsm
@@ -101,7 +100,6 @@ Datasource percentage coverage 99.60
 ./resource.ps1 aws_codestarconnections_connection
 ./resource.ps1 aws_codestarconnections_host
 ./resource.ps1 aws_codestarnotifications_notification_rule
-./resource.ps1 aws_cognito_identity_pool
 ./resource.ps1 aws_cognito_identity_pool_provider_principal_tag
 ./resource.ps1 aws_cognito_identity_pool_roles_attachment
 ./resource.ps1 aws_cognito_managed_user_pool_client

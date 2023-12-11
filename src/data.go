@@ -131,7 +131,7 @@ func GetLocalModules(block *hclsyntax.Block, dirName string) ([]ResourceV2, erro
 	// now process these extras
 	ExtraFiles, err := GetTF(modulePath)
 	if err != nil {
-		log.Printf("getTF %s", err)
+		log.Info().Msgf("local module scan getTF, %s", err)
 	}
 
 	for _, file := range ExtraFiles {

@@ -224,7 +224,7 @@ func MakePolicy(dirName string, file *string, init bool, EnableResources bool) (
 func GetTF(dirName string) ([]string, error) {
 	files, err := GetTFFiles(dirName)
 	if err != nil {
-		return nil, fmt.Errorf("folder %s can't be found", dirName)
+		return nil, fmt.Errorf("folder %s can't be found, may not be local path", dirName)
 	}
 
 	modulePath := dirName + "/.terraform/modules"
