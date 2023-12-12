@@ -1518,3 +1518,9 @@ var awsCeCostAllocationTag []byte
 
 //go:embed mapping/aws/resource/ce/aws_ce_cost_category.json
 var awsCeCostCategory []byte
+
+//go:embed mapping/aws/resource/cloudfront/aws_cloudfront_function.json
+var awsCloudfrontFunction []byte
+
+//go:embed mapping/aws/resource/cognito-idp/aws_cognito_identity_pool.json
+var awsCognitoIdentityPool []byte

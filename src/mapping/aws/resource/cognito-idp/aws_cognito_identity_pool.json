@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "cognito-identity:CreateIdentityPool",
+      "cognito-identity:DescribeIdentityPool",
+      "cognito-identity:DeleteIdentityPool",
+      "cognito-identity:UpdateIdentityPool"
+    ],
+    "attributes": {
+      "tags": [
+        "cognito-identity:TagResource",
+        "cognito-identity:UntagResource"
+      ]
+    },
+    "destroy": [
+      "cognito-identity:DeleteIdentityPool"
+    ],
+    "modify": [
+      "cognito-identity:UpdateIdentityPool"
+    ],
+    "plan": []
+  }
+]

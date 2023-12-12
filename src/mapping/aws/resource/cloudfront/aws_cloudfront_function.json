@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "cloudfront:CreateFunction",
+      "cloudfront:PublishFunction",
+      "cloudfront:DescribeFunction",
+      "cloudfront:GetFunction",
+      "cloudfront:DeleteFunction",
+      "cloudfront:UpdateFunction"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "cloudfront:DeleteFunction"
+    ],
+    "modify": [
+      "cloudfront:UpdateFunction"
+    ],
+    "plan": []
+  }
+]

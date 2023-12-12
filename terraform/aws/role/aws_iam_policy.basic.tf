@@ -7,35 +7,22 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          //
 
-          //aws_ce_anomaly_monitor
-          "ce:CreateAnomalyMonitor",
-          "ce:TagResource",
-          "ce:UntagResource",
-          "ce:GetAnomalyMonitors",
-          "ce:ListTagsForResource",
-          "ce:DeleteAnomalyMonitor",
-          "ce:UpdateAnomalyMonitor",
+          //aws_cloudfront_function
+          "cloudfront:CreateFunction",
+          "cloudfront:PublishFunction",
+          "cloudfront:DescribeFunction",
+          "cloudfront:GetFunction",
+          "cloudfront:DeleteFunction",
+          "cloudfront:UpdateFunction",
 
-          //aws_ce_cost_allocation_tag
-          "ce:ListCostAllocationTags",
-          "ce:UpdateCostAllocationTagsStatus",
-
-          //aws_ce_cost_category
-          "ce:CreateCostCategoryDefinition",
-          "ce:DescribeCostCategoryDefinition",
-          "ce:DeleteCostCategoryDefinition",
-          "ce:UpdateCostCategoryDefinition",
-
-          //aws_ce_anomaly_subscription
-          "ce:CreateAnomalySubscription",
-          "ce:GetAnomalySubscriptions",
-          "ce:DeleteAnomalySubscription",
-          "ce:UpdateAnomalySubscription",
-          "ce:TagResource",
-          "ce:UntagResource",
-
+          //aws_cognito_identity_pool
+          "cognito-identity:CreateIdentityPool",
+          "cognito-identity:DescribeIdentityPool",
+          "cognito-identity:TagResource",
+          "cognito-identity:UntagResource",
+          "cognito-identity:DeleteIdentityPool",
+          "cognito-identity:UpdateIdentityPool",
         ],
         "Resource" : "*",
       }

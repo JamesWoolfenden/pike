@@ -622,6 +622,8 @@ func AwsLookup(name string) interface{} {
 		"aws_xray_group":                                       awsXrayGroup,
 		"aws_xray_sampling_rule":                               awsXraySamplingRule,
 		"backend":                                              s3backend,
+		"aws_cloudfront_function":                              awsCloudfrontFunction,
+		"aws_cognito_identity_pool":                            awsCognitoIdentityPool,
 	}
 
 	return TFLookup[name]
