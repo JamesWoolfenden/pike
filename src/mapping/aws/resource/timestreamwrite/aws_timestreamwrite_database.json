@@ -1,0 +1,30 @@
+[
+  {
+    "apply": [
+      "timestream:DescribeEndpoints",
+      "timestream:CreateDatabase",
+      "timestream:DescribeDatabase",
+      "timestream:ListTagsForResource",
+      "timestream:DeleteDatabase",
+      "timestream:UpdateDatabase"
+    ],
+    "attributes": {
+      "kms_key_id": [
+        "kms:CreateGrant",
+        "kms:DescribeKey",
+        "kms:ListKeys"
+      ],
+      "tags": [
+        "timestream:TagResource",
+        "timestream:UntagResource"
+      ]
+    },
+    "destroy": [
+      "timestream:DeleteDatabase"
+    ],
+    "modify": [
+      "timestream:UpdateDatabase"
+    ],
+    "plan": []
+  }
+]

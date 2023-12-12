@@ -622,6 +622,8 @@ func AwsLookup(name string) interface{} {
 		"aws_xray_group":                                       awsXrayGroup,
 		"aws_xray_sampling_rule":                               awsXraySamplingRule,
 		"backend":                                              s3backend,
+		"aws_timestreamwrite_database":                         awsTimestreamwriteDatabase,
+		"aws_timestreamwrite_table":                            awsTimestreamwriteTable,
 	}
 
 	return TFLookup[name]

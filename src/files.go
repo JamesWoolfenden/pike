@@ -1518,3 +1518,9 @@ var awsCeCostAllocationTag []byte
 
 //go:embed mapping/aws/resource/ce/aws_ce_cost_category.json
 var awsCeCostCategory []byte
+
+//go:embed mapping/aws/resource/timestreamwrite/aws_timestreamwrite_database.json
+var awsTimestreamwriteDatabase []byte
+
+//go:embed mapping/aws/resource/timestreamwrite/aws_timestreamwrite_table.json
+var awsTimestreamwriteTable []byte

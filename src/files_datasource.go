@@ -1359,3 +1359,6 @@ var dataAwsOpensearchserverlessLifecyclePolicy []byte
 
 //go:embed mapping/aws/data/elasticmapreduce/aws_emr_supported_instance_types.json
 var dataAwsEmrSupportedInstanceTypes []byte
+
+//go:embed mapping/aws/data/elasticloadbalancing/aws_lb_trust_store.json
+var dataAwsLbTrustStore []byte

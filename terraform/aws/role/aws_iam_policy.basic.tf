@@ -7,34 +7,30 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          //
+          //aws_timestreamwrite_database
+          "timestream:DescribeEndpoints",
+          "timestream:CreateDatabase",
+          "timestream:TagResource",
+          "timestream:UntagResource",
+          "timestream:DescribeDatabase",
+          "timestream:ListTagsForResource",
+          "timestream:DeleteDatabase",
+          "timestream:UpdateDatabase",
+          "kms:CreateGrant",
+          "kms:DescribeKey",
+          "kms:ListKeys",
+          #          "kms:EnableKey"
+          #          "kms:Encrypt",
+          #          "kms:Decrypt"
 
-          //aws_ce_anomaly_monitor
-          "ce:CreateAnomalyMonitor",
-          "ce:TagResource",
-          "ce:UntagResource",
-          "ce:GetAnomalyMonitors",
-          "ce:ListTagsForResource",
-          "ce:DeleteAnomalyMonitor",
-          "ce:UpdateAnomalyMonitor",
 
-          //aws_ce_cost_allocation_tag
-          "ce:ListCostAllocationTags",
-          "ce:UpdateCostAllocationTagsStatus",
-
-          //aws_ce_cost_category
-          "ce:CreateCostCategoryDefinition",
-          "ce:DescribeCostCategoryDefinition",
-          "ce:DeleteCostCategoryDefinition",
-          "ce:UpdateCostCategoryDefinition",
-
-          //aws_ce_anomaly_subscription
-          "ce:CreateAnomalySubscription",
-          "ce:GetAnomalySubscriptions",
-          "ce:DeleteAnomalySubscription",
-          "ce:UpdateAnomalySubscription",
-          "ce:TagResource",
-          "ce:UntagResource",
+          "timestream:ListTagsForResource",
+          "timestream:TagResource",
+          "timestream:UntagResource",
+          "timestream:CreateTable",
+          "timestream:DeleteTable",
+          "timestream:UpdateTable",
+          "timestream:DescribeTable",
 
         ],
         "Resource" : "*",
