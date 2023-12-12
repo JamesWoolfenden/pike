@@ -1362,3 +1362,12 @@ var dataAwsEmrSupportedInstanceTypes []byte
 
 //go:embed mapping/aws/data/elasticloadbalancing/aws_lb_trust_store.json
 var dataAwsLbTrustStore []byte
+
+//go:embed mapping/aws/data/codeguru-profiler/aws_codeguruprofiler_profiling_group.json
+var dataAwsCodeguruprofilerProfilingGroup []byte
+
+//go:embed mapping/aws/data/ecr/aws_ecr_repositories.json
+var dataAwsEcrRepositories []byte
+
+//go:embed mapping/aws/data/sso/aws_ssoadmin_application_providers.json
+var dataAwsSsoadminApplicationProviders []byte

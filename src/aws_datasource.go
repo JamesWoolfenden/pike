@@ -538,6 +538,10 @@ func AwsDataLookup(find string) interface{} {
 		"aws_emr_supported_instance_types":                          dataAwsEmrSupportedInstanceTypes,
 		"aws_lb_trust_store":                                        dataAwsLbTrustStore,
 		"aws_alb_trust_store":                                       dataAwsLbTrustStore,
+		"aws_codeguruprofiler_profiling_group":                      dataAwsCodeguruprofilerProfilingGroup,
+		"aws_ecr_repositories":                                      dataAwsEcrRepositories,
+		"aws_ssoadmin_application":                                  placeholder,
+		"aws_ssoadmin_application_providers":                        dataAwsSsoadminApplicationProviders,
 	}
 
 	return TFLookup[find]

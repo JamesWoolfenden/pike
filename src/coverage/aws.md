@@ -1,7 +1,7 @@
 # todo aws
 
-Resource percentage coverage   42.93
-Datasource percentage coverage 99.60
+Resource percentage coverage   43.55
+Datasource percentage coverage 99.61
 
 ./resource.ps1 aws_accessanalyzer_analyzer
 ./resource.ps1 aws_accessanalyzer_archive_rule
@@ -83,8 +83,14 @@ Datasource percentage coverage 99.60
 ./resource.ps1 aws_cleanrooms_configured_table
 ./resource.ps1 aws_cloud9_environment_membership
 ./resource.ps1 aws_cloudcontrolapi_resource
+./resource.ps1 aws_cloudfront_realtime_log_config
 ./resource.ps1 aws_cloudhsm_v2_cluster
 ./resource.ps1 aws_cloudhsm_v2_hsm
+./resource.ps1 aws_codebuild_webhook
+./resource.ps1 aws_codecatalyst_dev_environment
+./resource.ps1 aws_codecatalyst_project
+./resource.ps1 aws_codecatalyst_source_repository
+./resource.ps1 aws_codeguruprofiler_profiling_group
 ./resource.ps1 aws_codegurureviewer_repository_association
 ./resource.ps1 aws_codepipeline_custom_action_type
 ./resource.ps1 aws_codepipeline_webhook
@@ -121,6 +127,8 @@ Datasource percentage coverage 99.60
 ./resource.ps1 aws_connect_vocabulary
 ./resource.ps1 aws_controltower_control
 ./resource.ps1 aws_cur_report_definition
+./resource.ps1 aws_customerprofiles_domain
+./resource.ps1 aws_customerprofiles_profile
 ./resource.ps1 aws_dataexchange_data_set
 ./resource.ps1 aws_dataexchange_revision
 ./resource.ps1 aws_datasync_agent
@@ -602,6 +610,7 @@ Datasource percentage coverage 99.60
 ./resource.ps1 aws_securityhub_product_subscription
 ./resource.ps1 aws_securityhub_standards_control
 ./resource.ps1 aws_securityhub_standards_subscription
+./resource.ps1 aws_securitylake_data_lake
 ./resource.ps1 aws_serverlessapplicationrepository_cloudformation_stack
 ./resource.ps1 aws_service_discovery_http_namespace
 ./resource.ps1 aws_service_discovery_instance
@@ -658,6 +667,9 @@ Datasource percentage coverage 99.60
 ./resource.ps1 aws_ssm_service_setting
 ./resource.ps1 aws_ssmincidents_response_plan
 ./resource.ps1 aws_ssoadmin_account_assignment
+./resource.ps1 aws_ssoadmin_application
+./resource.ps1 aws_ssoadmin_application_assignment
+./resource.ps1 aws_ssoadmin_application_assignment_configuration
 ./resource.ps1 aws_ssoadmin_customer_managed_policy_attachment
 ./resource.ps1 aws_ssoadmin_instance_access_control_attributes
 ./resource.ps1 aws_ssoadmin_managed_policy_attachment
@@ -722,3 +734,5 @@ Datasource percentage coverage 99.60
 ./resource.ps1 aws_worklink_website_certificate_authority_association
 ./resource.ps1 aws_workspaces_connection_alias
 ./resource.ps1 aws_workspaces_ip_group
+./resource.ps1 aws_s3_directory_buckets -type data
+./resource.ps1 aws_ssoadmin_application_assignments -type data
