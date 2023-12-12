@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "codecommit:AssociateApprovalRuleTemplateWithRepository",
+      "codecommit:ListRepositoriesForApprovalRuleTemplate"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

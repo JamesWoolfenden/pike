@@ -8,3 +8,9 @@ provider "aws" {
   region  = "us-east-1"
   profile = "basic"
 }
+
+provider "aws" {
+  alias   = "ire"
+  region  = "us-west-1"
+  profile = "basic"
+}

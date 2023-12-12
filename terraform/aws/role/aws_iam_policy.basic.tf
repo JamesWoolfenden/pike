@@ -7,22 +7,58 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
+          //aws_codebuild_source_credential
+          "codebuild:ImportSourceCredentials",
+          "codebuild:ListSourceCredentials",
+          "codebuild:DeleteSourceCredentials",
 
-          //aws_cloudfront_function
-          "cloudfront:CreateFunction",
-          "cloudfront:PublishFunction",
-          "cloudfront:DescribeFunction",
-          "cloudfront:GetFunction",
-          "cloudfront:DeleteFunction",
-          "cloudfront:UpdateFunction",
 
-          //aws_cognito_identity_pool
-          "cognito-identity:CreateIdentityPool",
-          "cognito-identity:DescribeIdentityPool",
-          "cognito-identity:TagResource",
-          "cognito-identity:UntagResource",
-          "cognito-identity:DeleteIdentityPool",
-          "cognito-identity:UpdateIdentityPool",
+          //aws_codebuild_project
+          "codebuild:CreateProject",
+          "iam:PassRole",
+          "codebuild:BatchGetProjects",
+          "codebuild:DeleteProject",
+
+          //aws_codebuild_webhook
+          "codebuild:CreateWebhook",
+          "codebuild:DeleteWebhook",
+          "codebuild:UpdateWebhook",
+
+          //aws_codecommit_repository
+          "codecommit:CreateRepository",
+          "codecommit:GetRepository",
+          "codecommit:ListTagsForResource",
+          "codecommit:DeleteRepository",
+          "codecommit:ListTagsForResource",
+
+          //aws_codecommit_approval_rule_template
+          "codecommit:CreateApprovalRuleTemplate",
+          "codecommit:GetApprovalRuleTemplate",
+          "codecommit:DeleteApprovalRuleTemplate",
+          "codecommit:DisassociateApprovalRuleTemplateFromRepository",
+
+          //aws_kms_key_policy
+          "kms:PutKeyPolicy",
+          "kms:DescribeKey",
+          "kms:GetKeyPolicy",
+          "kms:GetKeyRotationStatus",
+          "kms:ListResourceTags",
+
+          //aws_ebs_encryption_by_default
+          "ec2:EnableEbsEncryptionByDefault",
+          "ec2:GetEbsEncryptionByDefault",
+          "ec2:DisableEbsEncryptionByDefault",
+
+          //aws_ebs_default_kms_key
+          "ec2:ModifyEbsDefaultKmsKeyId",
+          "ec2:GetEbsEncryptionByDefault",
+          "ec2:GetEbsDefaultKmsKeyId",
+          "ec2:ResetEbsDefaultKmsKeyId",
+
+
+          //aws_codecommit_trigger
+          "codecommit:PutRepositoryTriggers",
+          "codecommit:GetRepositoryTriggers",
         ],
         "Resource" : "*",
       }

@@ -1524,3 +1524,30 @@ var awsCloudfrontFunction []byte
 
 //go:embed mapping/aws/resource/cognito-idp/aws_cognito_identity_pool.json
 var awsCognitoIdentityPool []byte
+
+//go:embed mapping/aws/resource/timestreamwrite/aws_timestreamwrite_database.json
+var awsTimestreamwriteDatabase []byte
+
+//go:embed mapping/aws/resource/timestreamwrite/aws_timestreamwrite_table.json
+var awsTimestreamwriteTable []byte
+
+//go:embed mapping/aws/resource/codebuild/aws_codebuild_source_credential.json
+var awsCodebuildSourceCredential []byte
+
+//go:embed mapping/aws/resource/codecommit/aws_codecommit_approval_rule_template.json
+var awsCodecommitApprovalRuleTemplate []byte
+
+//go:embed mapping/aws/resource/codecommit/aws_codecommit_approval_rule_template_association.json
+var awsCodecommitApprovalRuleTemplateAssociation []byte
+
+//go:embed mapping/aws/resource/codecommit/aws_codecommit_trigger.json
+var awsCodecommitTrigger []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ebs_default_kms_key.json
+var awsEbsDefaultKmsKey []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ebs_encryption_by_default.json
+var awsEbsEncryptionByDefault []byte
+
+//go:embed mapping/aws/resource/kms/aws_kms_key_policy.json
+var awsKmsKeyPolicy []byte

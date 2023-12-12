@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "codecommit:CreateApprovalRuleTemplate",
+      "codecommit:GetApprovalRuleTemplate",
+      "codecommit:DeleteApprovalRuleTemplate",
+      "codecommit:DisassociateApprovalRuleTemplateFromRepository"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "codecommit:DeleteApprovalRuleTemplate",
+      "codecommit:DisassociateApprovalRuleTemplateFromRepository"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

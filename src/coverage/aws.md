@@ -83,17 +83,8 @@ Datasource percentage coverage 99.60
 ./resource.ps1 aws_cleanrooms_configured_table
 ./resource.ps1 aws_cloud9_environment_membership
 ./resource.ps1 aws_cloudcontrolapi_resource
-./resource.ps1 aws_cloudfront_realtime_log_config
 ./resource.ps1 aws_cloudhsm_v2_cluster
 ./resource.ps1 aws_cloudhsm_v2_hsm
-./resource.ps1 aws_codebuild_source_credential
-./resource.ps1 aws_codebuild_webhook
-./resource.ps1 aws_codecatalyst_dev_environment
-./resource.ps1 aws_codecatalyst_project
-./resource.ps1 aws_codecatalyst_source_repository
-./resource.ps1 aws_codecommit_approval_rule_template
-./resource.ps1 aws_codecommit_approval_rule_template_association
-./resource.ps1 aws_codecommit_trigger
 ./resource.ps1 aws_codegurureviewer_repository_association
 ./resource.ps1 aws_codepipeline_custom_action_type
 ./resource.ps1 aws_codepipeline_webhook
@@ -196,8 +187,6 @@ Datasource percentage coverage 99.60
 ./resource.ps1 aws_dx_transit_virtual_interface
 ./resource.ps1 aws_dynamodb_kinesis_streaming_destination
 ./resource.ps1 aws_dynamodb_table_replica
-./resource.ps1 aws_ebs_default_kms_key
-./resource.ps1 aws_ebs_encryption_by_default
 ./resource.ps1 aws_ebs_snapshot_import
 ./resource.ps1 aws_ec2_availability_zone_group
 ./resource.ps1 aws_ec2_carrier_gateway
@@ -362,7 +351,6 @@ Datasource percentage coverage 99.60
 ./resource.ps1 aws_kms_ciphertext
 ./resource.ps1 aws_kms_custom_key_store
 ./resource.ps1 aws_kms_external_key
-./resource.ps1 aws_kms_key_policy
 ./resource.ps1 aws_kms_replica_external_key
 ./resource.ps1 aws_kms_replica_key
 ./resource.ps1 aws_lakeformation_data_lake_settings
@@ -689,8 +677,6 @@ Datasource percentage coverage 99.60
 ./resource.ps1 aws_synthetics_canary
 ./resource.ps1 aws_synthetics_group
 ./resource.ps1 aws_synthetics_group_association
-./resource.ps1 aws_timestreamwrite_database
-./resource.ps1 aws_timestreamwrite_table
 ./resource.ps1 aws_transcribe_language_model
 ./resource.ps1 aws_transcribe_medical_vocabulary
 ./resource.ps1 aws_transcribe_vocabulary
@@ -736,5 +722,3 @@ Datasource percentage coverage 99.60
 ./resource.ps1 aws_worklink_website_certificate_authority_association
 ./resource.ps1 aws_workspaces_connection_alias
 ./resource.ps1 aws_workspaces_ip_group
-./resource.ps1 aws_lb_trust_store -type data
-./resource.ps1 aws_s3_directory_buckets -type data

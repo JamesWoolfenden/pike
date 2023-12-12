@@ -1,6 +1,9 @@
 [
   {
-    "apply": [],
+    "apply": [
+      "codecommit:PutRepositoryTriggers",
+      "codecommit:GetRepositoryTriggers"
+    ],
     "attributes": {
       "tags": []
     },

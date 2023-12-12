@@ -536,6 +536,8 @@ func AwsDataLookup(find string) interface{} {
 		"aws_iot_registration_code":                                 dataAwsIotRegistrationCode,
 		"aws_opensearchserverless_lifecycle_policy":                 dataAwsOpensearchserverlessLifecyclePolicy,
 		"aws_emr_supported_instance_types":                          dataAwsEmrSupportedInstanceTypes,
+		"aws_lb_trust_store":                                        dataAwsLbTrustStore,
+		"aws_alb_trust_store":                                       dataAwsLbTrustStore,
 	}
 
 	return TFLookup[find]

@@ -624,6 +624,15 @@ func AwsLookup(name string) interface{} {
 		"backend":                                              s3backend,
 		"aws_cloudfront_function":                              awsCloudfrontFunction,
 		"aws_cognito_identity_pool":                            awsCognitoIdentityPool,
+		"aws_timestreamwrite_database":                         awsTimestreamwriteDatabase,
+		"aws_timestreamwrite_table":                            awsTimestreamwriteTable,
+		"aws_codebuild_source_credential":                      awsCodebuildSourceCredential,
+		"aws_codecommit_approval_rule_template":                awsCodecommitApprovalRuleTemplate,
+		"aws_codecommit_approval_rule_template_association":    awsCodecommitApprovalRuleTemplateAssociation,
+		"aws_codecommit_trigger":                               awsCodecommitTrigger,
+		"aws_ebs_default_kms_key":                              awsEbsDefaultKmsKey,
+		"aws_ebs_encryption_by_default":                        awsEbsEncryptionByDefault,
+		"aws_kms_key_policy":                                   awsKmsKeyPolicy,
 	}
 
 	return TFLookup[name]
