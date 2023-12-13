@@ -6,5 +6,4 @@ resource "aws_kms_external_key" "pike" {
   multi_region            = true
   enabled                 = true
 
-  key_material_base64 = "dGhpcyBpcyBteSBrZXk="
 }

@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "kms:CreateKey",
+      "iam:CreateServiceLinkedRole",
+      "kms:GetParametersForImport",
+      "kms:GetKeyPolicy",
+      "kms:ListResourceTags",
+      "kms:ScheduleKeyDeletion",
+      "kms:ImportKeyMaterial"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

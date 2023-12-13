@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "kms:CreateCustomKeyStore",
+      "kms:DeleteCustomKeyStore",
+      "kms:UpdateCustomKeyStore",
+      "kms:DescribeCustomKeyStores"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "kms:DeleteCustomKeyStore"
+    ],
+    "modify": [
+      "kms:UpdateCustomKeyStore"
+    ],
+    "plan": []
+  }
+]

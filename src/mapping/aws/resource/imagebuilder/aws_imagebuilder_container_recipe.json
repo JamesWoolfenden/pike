@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "imagebuilder:CreateContainerRecipe",
+      "imagebuilder:GetContainerRecipe",
+      "imagebuilder:GetImage",
+      "imagebuilder:CreateImageRecipe",
+      "imagebuilder:DeleteContainerRecipe",
+      "imagebuilder:DeleteImageRecipe"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "imagebuilder:DeleteContainerRecipe",
+      "imagebuilder:DeleteImageRecipe"],
+    "modify": [],
+    "plan": []
+  }
+]

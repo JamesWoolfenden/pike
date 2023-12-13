@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "lambda:CreateCodeSigningConfig",
+      "lambda:GetCodeSigningConfig",
+      "lambda:DeleteCodeSigningConfig"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "lambda:DeleteCodeSigningConfig"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

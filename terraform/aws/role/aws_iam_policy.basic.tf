@@ -13,6 +13,7 @@ resource "aws_iam_policy" "basic" {
 
           //aws_ec2_availability_zone_group
           "ec2:DescribeAvailabilityZones",
+          "ec2:ModifyAvailabilityZoneGroup",
 
           //aws_eip_association
           "ec2:AssociateAddress",
@@ -40,7 +41,7 @@ resource "aws_iam_policy" "basic" {
           //aws_imagebuilder_component
           "imagebuilder:CreateComponent",
           "imagebuilder:TagResource",
-          "imagebuilder:UnagResource",
+          "imagebuilder:UntagResource",
           "imagebuilder:GetComponent",
           "imagebuilder:DeleteComponent",
 
@@ -61,30 +62,9 @@ resource "aws_iam_policy" "basic" {
           "inspector2:AssociateMember",
           "inspector2:DisassociateMember",
 
-          //aws_inspector2_organization_configuration
-          "inspector2:UpdateOrganizationConfiguration",
-          "inspector2:DescribeOrganizationConfiguration",
 
-          //aws_internetmonitor_monitor
-          "internetmonitor:TagResource",
-          "internetmonitor:CreateMonitor",
-          "internetmonitor:GetMonitor",
-          "internetmonitor:UpdateMonitor",
-          "internetmonitor:DeleteMonitor",
 
-          //aws_kms_ciphertext
-          "kms:Encrypt",
 
-          //aws_kms_external_key
-          "kms:CreateKey",
-          "iam:CreateServiceLinkedRole",
-          "kms:GetParametersForImport",
-          "kms:GetKeyPolicy",
-          "kms:ListResourceTags",
-          "kms:ScheduleKeyDeletion",
-
-          //aws_kms_replica_key
-          "kms:ReplicateKey"
         ],
         "Resource" : "*",
       }

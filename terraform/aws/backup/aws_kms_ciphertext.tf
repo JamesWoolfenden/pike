@@ -4,8 +4,8 @@ resource "aws_kms_ciphertext" "pike" {
 
     plaintext = <<EOF
 {
-  "client_id": "e587dbae22222f55da22",
-  "client_secret": "8289575d00000ace55e1815ec13673955721b8a5"
+  "client_id": "e000dbae00000f00da00",
+  "client_secret": "0000000d00000ace00e0000ec00000000000b0a0"
 }
 EOF
   }

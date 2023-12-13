@@ -1,11 +1,16 @@
 [
   {
-    "apply": [],
+    "apply": [
+      "inspector2:UpdateOrganizationConfiguration",
+      "inspector2:DescribeOrganizationConfiguration"
+    ],
     "attributes": {
       "tags": []
     },
     "destroy": [],
-    "modify": [],
+    "modify": [
+      "inspector2:UpdateOrganizationConfiguration"
+    ],
     "plan": []
   }
 ]

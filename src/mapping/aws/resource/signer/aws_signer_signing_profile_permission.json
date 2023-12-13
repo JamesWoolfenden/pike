@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "signer:ListProfilePermissions",
+      "signer:AddProfilePermission",
+      "signer:RemoveProfilePermission"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "signer:RemoveProfilePermission"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

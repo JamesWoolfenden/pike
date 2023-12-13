@@ -1,6 +1,9 @@
 [
   {
-    "apply": [],
+    "apply": [
+      "signer:StartSigningJob",
+      "signer:DescribeSigningJob"
+    ],
     "attributes": {
       "tags": []
     },

@@ -3,7 +3,7 @@ resource "aws_imagebuilder_container_recipe" "pike" {
   version = "1.0.0"
 
   container_type = "DOCKER"
-  parent_image   = "arn:aws:imagebuilder:eu-central-1:aws:image/amazon-linux-x86-latest/x.x.x"
+  parent_image   = "jameswoolfenden/pike"
 
   target_repository {
     repository_name = "arn:aws:ecr:eu-west-2:680235478471:repository/pike"
@@ -50,3 +50,4 @@ resource "aws_imagebuilder_component" "example" {
   platform = "Linux"
   version  = "1.0.0"
 }
+

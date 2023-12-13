@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "signer:GetSigningProfile",
+      "signer:RevokeSigningProfile",
+      "signer:PutSigningProfile",
+      "signer:CancelSigningProfile"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "signer:RevokeSigningProfile",
+      "signer:CancelSigningProfile"],
+    "modify": [],
+    "plan": []
+  }
+]
