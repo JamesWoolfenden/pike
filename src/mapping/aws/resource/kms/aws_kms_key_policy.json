@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "kms:PutKeyPolicy",
+      "kms:DescribeKey",
+      "kms:GetKeyPolicy",
+      "kms:GetKeyRotationStatus",
+      "kms:ListResourceTags"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

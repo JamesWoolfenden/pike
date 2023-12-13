@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "route53resolver:CreateFirewallRuleGroup",
+      "route53resolver:GetFirewallRuleGroup",
+      "route53resolver:DeleteFirewallRuleGroup",
+      "route53resolver:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "route53resolver:TagResource",
+        "route53resolver:UntagResource"
+      ]
+    },
+    "destroy": [
+      "route53resolver:DeleteFirewallRuleGroup"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

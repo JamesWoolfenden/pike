@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "waf-regional:GetChangeToken",
+      "waf-regional:CreateSizeConstraintSet",
+      "waf-regional:UpdateSizeConstraintSet",
+      "waf-regional:GetSizeConstraintSet",
+      "waf-regional:DeleteSizeConstraintSet"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "waf-regional:DeleteSizeConstraintSet"
+    ],
+    "modify": [
+      "waf-regional:UpdateSizeConstraintSet"
+    ],
+    "plan": []
+  }
+]

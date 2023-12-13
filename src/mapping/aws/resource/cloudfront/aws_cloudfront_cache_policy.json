@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "cloudfront:CreateCachePolicy",
+      "cloudfront:GetCachePolicy",
+      "cloudfront:DeleteCachePolicy",
+      "cloudfront:UpdateCachePolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "cloudfront:DeleteCachePolicy"
+    ],
+    "modify": [
+      "cloudfront:UpdateCachePolicy"
+    ],
+    "plan": []
+  }
+]

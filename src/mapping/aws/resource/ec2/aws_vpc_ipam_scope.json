@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "ec2:CreateIpamScope",
+      "ec2:DescribeIpamScopes",
+      "ec2:DeleteIpamScope"
+    ],
+    "attributes": {
+      "tags": [
+        "ec2:CreateTags",
+        "ec2:DeleteTags"
+      ]
+    },
+    "destroy": [
+      "ec2:DeleteIpamScope"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

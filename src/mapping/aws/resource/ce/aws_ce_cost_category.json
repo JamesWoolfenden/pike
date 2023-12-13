@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "ce:CreateCostCategoryDefinition",
+      "ce:DescribeCostCategoryDefinition",
+      "ce:DeleteCostCategoryDefinition",
+      "ce:UpdateCostCategoryDefinition"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "ce:DeleteCostCategoryDefinition"
+    ],
+    "modify": [
+      "ce:UpdateCostCategoryDefinition"
+    ],
+    "plan": []
+  }
+]

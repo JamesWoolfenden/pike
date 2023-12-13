@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "timestream:ListTagsForResource",
+      "timestream:CreateTable",
+      "timestream:DeleteTable",
+      "timestream:UpdateTable",
+      "timestream:DescribeTable"
+    ],
+    "attributes": {
+      "tags": [
+        "timestream:TagResource",
+        "timestream:UntagResource"
+      ]
+    },
+    "destroy": [
+      "timestream:DeleteTable"
+    ],
+    "modify": [
+      "timestream:UpdateTable"
+    ],
+    "plan": []
+  }
+]

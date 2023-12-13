@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "waf-regional:GetChangeToken",
+      "waf-regional:CreateXssMatchSet",
+      "waf-regional:UpdateXssMatchSet",
+      "waf-regional:GetXssMatchSet",
+      "waf-regional:DeleteXssMatchSet"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "waf-regional:DeleteXssMatchSet"
+    ],
+    "modify": [
+      "waf-regional:UpdateXssMatchSet"
+    ],
+    "plan": []
+  }
+]

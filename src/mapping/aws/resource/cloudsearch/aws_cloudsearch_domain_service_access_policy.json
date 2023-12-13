@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "cloudsearch:UpdateServiceAccessPolicies",
+      "cloudsearch:DescribeServiceAccessPolicies"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [
+      "cloudsearch:UpdateServiceAccessPolicies"
+    ],
+    "plan": [
+      "cloudsearch:DescribeServiceAccessPolicies"
+    ]
+  }
+]

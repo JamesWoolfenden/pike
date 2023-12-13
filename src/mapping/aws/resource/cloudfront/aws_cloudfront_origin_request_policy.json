@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "cloudfront:CreateOriginRequestPolicy",
+      "cloudfront:GetOriginRequestPolicy",
+      "cloudfront:DeleteOriginRequestPolicy",
+      "cloudfront:UpdateOriginRequestPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "cloudfront:DeleteOriginRequestPolicy"
+    ],
+    "modify": [
+      "cloudfront:UpdateOriginRequestPolicy"
+    ],
+    "plan": []
+  }
+]

@@ -30,7 +30,7 @@ func coverageAWS() error {
 	}
 
 	for _, myData := range data.DataSources {
-		if temp := pike.AwsDataLoookup(myData); temp == nil {
+		if temp := pike.AwsDataLookup(myData); temp == nil {
 			if strings.Contains(myData, "aws") {
 				missing.DataSources = append(missing.DataSources, myData)
 				target += "./resource.ps1 " + myData + " -type data\n"
@@ -45,6 +45,7 @@ func coverageAWS() error {
 
 	target = Prepend + target
 	err := os.WriteFile("aws.md", []byte(target), 0o700)
+
 	if err != nil {
 		return err
 	}
@@ -129,6 +130,7 @@ func importMembers(targetMembers string) members {
 
 func percent(missing []string, data []string) float64 {
 	var source float64
+
 	var target float64
 
 	source = float64(len(missing))

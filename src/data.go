@@ -12,7 +12,7 @@ import (
 	"github.com/rs/zerolog/log"
 )
 
-// GetResources retrieves all the resources in a tf file
+// GetResources retrieves all the resources in a tf file.
 func GetResources(file string, dirName string) ([]ResourceV2, error) {
 	var Resources []ResourceV2
 
@@ -29,6 +29,7 @@ func GetResources(file string, dirName string) ([]ResourceV2, error) {
 		case "terraform":
 			{
 				Resources, _ = DetectBackend(resource, block, Resources)
+
 				continue
 			}
 		case "module":
@@ -72,7 +73,7 @@ func GetResources(file string, dirName string) ([]ResourceV2, error) {
 	return Resources, nil
 }
 
-// DetectBackend handles permissions for backend blocks
+// DetectBackend handles permissions for backend blocks.
 func DetectBackend(resource ResourceV2, block *hclsyntax.Block, resources []ResourceV2) ([]ResourceV2, error) {
 	if resource.TypeName == terraform {
 		if block.Body != nil && block.Body.Blocks != nil {
@@ -83,6 +84,7 @@ func DetectBackend(resource ResourceV2, block *hclsyntax.Block, resources []Reso
 						resource.Provider = "aws"
 						resource.Attributes = []string{"s3"}
 						resources = append(resources, resource)
+
 						return resources, nil
 					}
 				}
@@ -93,10 +95,11 @@ func DetectBackend(resource ResourceV2, block *hclsyntax.Block, resources []Reso
 	return nil, errors.New("no Backend found")
 }
 
-// GetResourceBlocks breaks down a file into resources
+// GetResourceBlocks breaks down a file into resources.
 func GetResourceBlocks(file string) (*hclsyntax.Body, error) {
 	temp, _ := filepath.Abs(file)
 	src, err := os.ReadFile(temp)
+
 	if err != nil {
 		return nil, fmt.Errorf("failed to read file: %w", err)
 	}
@@ -111,7 +114,7 @@ func GetResourceBlocks(file string) (*hclsyntax.Body, error) {
 	return parsedFile.Body.(*hclsyntax.Body), err
 }
 
-// GetLocalModules return resource from path
+// GetLocalModules return resource from a path.
 func GetLocalModules(block *hclsyntax.Block, dirName string) ([]ResourceV2, error) {
 	var Resources []ResourceV2
 
@@ -128,7 +131,7 @@ func GetLocalModules(block *hclsyntax.Block, dirName string) ([]ResourceV2, erro
 	// now process these extras
 	ExtraFiles, err := GetTF(modulePath)
 	if err != nil {
-		log.Printf("getTF %s", err)
+		log.Info().Msgf("local module scan getTF, %s", err)
 	}
 
 	for _, file := range ExtraFiles {
@@ -159,7 +162,7 @@ func GetModulePath(block *hclsyntax.Block) string {
 	return modulePath
 }
 
-// GetBlockAttributes walks through a blocks getting all blocks and attributes
+// GetBlockAttributes walks through a blocks getting all blocks and attributes.
 func GetBlockAttributes(attributes []string, block *hclsyntax.Block) []string {
 	for _, attribute := range block.Body.Attributes {
 		attributes = append(attributes, attribute.Name)

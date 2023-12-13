@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "waf:GetChangeToken",
+      "waf:CreateRateBasedRule",
+      "waf:UpdateRateBasedRule",
+      "waf:GetRateBasedRule",
+      "waf:ListTagsForResource",
+      "waf:DeleteRateBasedRule"
+    ],
+    "attributes": {
+      "tags": [
+        "waf:TagResource",
+        "waf:UntagResource"
+      ]
+    },
+    "destroy": [
+      "waf:DeleteRateBasedRule"
+    ],
+    "modify": [
+      "waf:UpdateRateBasedRule"
+    ],
+    "plan": []
+  }
+]

@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "storageinsights.reportConfigs.create"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

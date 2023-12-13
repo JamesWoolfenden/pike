@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "route53resolver:ListResolverEndpoints",
+      "route53resolver:GetResolverEndpoint",
+      "route53resolver:DeleteResolverEndpoint",
+      "route53resolver:UpdateResolverEndpoint",
+      "route53resolver:CreateResolverEndpoint"
+    ],
+    "attributes": {
+      "tags": [
+        "route53resolver:TagResource",
+        "route53resolver:UntagResource"
+      ]
+    },
+    "destroy": [
+      "route53resolver:DeleteResolverEndpoint"
+    ],
+    "modify": [
+      "route53resolver:UpdateResolverEndpoint"
+    ],
+    "plan": []
+  }
+]

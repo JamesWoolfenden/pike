@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "cloudtrail:CreateEventDataStore",
+      "cloudtrail:AddTags",
+      "cloudtrail:GetEventDataStore",
+      "cloudtrail:ListTags",
+      "cloudtrail:DeleteEventDataStore",
+      "cloudtrail:UpdateEventDataStore"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "cloudtrail:DeleteEventDataStore"
+    ],
+    "modify": [
+      "cloudtrail:UpdateEventDataStore"
+    ],
+    "plan": []
+  }
+]

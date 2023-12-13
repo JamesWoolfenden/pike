@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "waf:GetChangeToken",
+      "waf:CreateIPSet",
+      "waf:UpdateIPSet",
+      "waf:GetIPSet",
+      "waf:DeleteIPSet"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "waf:DeleteIPSet"
+    ],
+    "modify": [
+      "waf:UpdateIPSet"
+    ],
+    "plan": []
+  }
+]

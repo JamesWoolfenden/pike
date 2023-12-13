@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "route53resolver:CreateFirewallDomainList",
+      "route53resolver:GetFirewallDomainList",
+      "route53resolver:DeleteFirewallDomainList",
+      "route53resolver:ListFirewallDomains"
+    ],
+    "attributes": {
+      "tags": [
+        "route53resolver:TagResource",
+        "route53resolver:UntagResource"
+      ]
+    },
+    "destroy": [
+      "route53resolver:DeleteFirewallDomainList"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

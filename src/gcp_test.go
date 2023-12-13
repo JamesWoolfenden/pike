@@ -20,15 +20,21 @@ func TestGetGCPPermissions(t *testing.T) {
 		want    []string
 		wantErr bool
 	}{
-		{name: "missing", args: args{result: pike.ResourceV2{TypeName: "bogus", Name: "bogus"}}, wantErr: true},
-		{name: "notype", args: args{result: pike.ResourceV2{TypeName: "bogus", Name: "google_compute_instance", ResourceName: "pike", Provider: "azurerm", Attributes: []string{
-			"name",
-			"machine_type", "zone",
-		}}}, wantErr: true},
-		{name: "not implemented", args: args{result: pike.ResourceV2{TypeName: "data", Name: "google_compute_instance", ResourceName: "pike", Provider: "azurerm", Attributes: []string{
-			"name",
-			"machine_type", "zone",
-		}}}, wantErr: true},
+		{name: "missing", args: args{
+			result: pike.ResourceV2{
+				TypeName: "bogus", Name: "bogus"}}, wantErr: true},
+		{name: "notype", args: args{
+			result: pike.ResourceV2{
+				TypeName: "bogus", Name: "google_compute_duff", ResourceName: "pike", Provider: "azurerm", Attributes: []string{
+					"name",
+					"machine_type", "zone",
+				}}}, wantErr: true},
+		{name: "not implemented", args: args{
+			result: pike.ResourceV2{
+				TypeName: "data", Name: "google_compute_duff", ResourceName: "pike", Provider: "azurerm", Attributes: []string{
+					"name",
+					"machine_type", "zone",
+				}}}, wantErr: true},
 		{
 			name: "resource",
 			args: args{
@@ -59,6 +65,7 @@ func TestGetGCPPermissions(t *testing.T) {
 			got, err := pike.GetGCPPermissions(tt.args.result)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("GetGCPPermissions() error = %v, wantErr %v", err, tt.wantErr)
+
 				return
 			}
 			if !reflect.DeepEqual(got, tt.want) {

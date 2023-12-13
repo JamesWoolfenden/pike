@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "waf-regional:GetChangeToken",
+      "waf-regional:CreateRegexMatchSet",
+      "waf-regional:UpdateRegexMatchSet",
+      "waf-regional:GetRegexMatchSet",
+      "waf-regional:DeleteRegexMatchSet"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "waf-regional:DeleteRegexMatchSet"
+    ],
+    "modify": [
+      "waf-regional:UpdateRegexMatchSet"
+    ],
+    "plan": []
+  }
+]

@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "waf:GetChangeToken",
+      "waf:CreateRuleGroup",
+      "waf:UpdateRuleGroup",
+      "waf:GetRuleGroup",
+      "waf:ListActivatedRulesInRuleGroup",
+      "waf:DeleteRuleGroup"
+    ],
+    "attributes": {
+      "tags": [
+        "waf:UntagResource",
+        "waf:TagResource"
+      ]
+    },
+    "destroy": [
+      "waf:DeleteRuleGroup"
+    ],
+    "modify": [
+      "waf:UpdateRuleGroup"
+    ],
+    "plan": []
+  }
+]

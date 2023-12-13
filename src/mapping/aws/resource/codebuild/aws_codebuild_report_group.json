@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "codebuild:CreateReportGroup",
+      "codebuild:BatchGetReportGroups",
+      "codebuild:DeleteReportGroup",
+      "codebuild:UpdateReportGroup"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "codebuild:DeleteReportGroup"
+    ],
+    "modify": [
+      "codebuild:UpdateReportGroup"
+    ],
+    "plan": []
+  }
+]

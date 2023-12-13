@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "elasticloadbalancing:SetLoadBalancerPoliciesOfListener"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

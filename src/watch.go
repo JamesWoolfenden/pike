@@ -65,7 +65,7 @@ func WaitForPolicyChange(client *iam.Client, arn string, version string, wait in
 	return wait, errors.New("wait expired with no change")
 }
 
-// GetVersion gets the version of the IAM policy
+// GetVersion gets the version of the IAM policy.
 func GetVersion(client *iam.Client, policyArn string) (*string, error) {
 	output, err := client.GetPolicy(context.TODO(), &iam.GetPolicyInput{PolicyArn: aws.String(policyArn)})
 	if err != nil {
@@ -104,6 +104,7 @@ func GetPolicyVersion(client *iam.Client, policyArn string, version string) (*st
 func SortActions(myPolicy string) (*string, error) {
 	var raw map[string]interface{}
 	err := json.Unmarshal([]byte(myPolicy), &raw)
+
 	if err != nil {
 		return nil, err
 	}

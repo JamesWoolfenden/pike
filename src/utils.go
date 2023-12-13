@@ -14,7 +14,7 @@ import (
 
 var letters = []rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ") //nolint:gochecknoglobals
 
-// RandSeq generate a randown sequence
+// RandSeq generate a randown sequence.
 func RandSeq(n int) string {
 	sequence := make([]rune, n)
 	for i := range sequence {
@@ -83,7 +83,7 @@ func ReplaceSection(source string, middle string, autoadd bool) error {
 	return err
 }
 
-// FileExists looks for a file
+// FileExists looks for a file.
 func FileExists(filename string) bool {
 	info, err := os.Stat(filename)
 	if os.IsNotExist(err) {

@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "elasticmapreduce:PutManagedScalingPolicy",
+      "elasticmapreduce:GetManagedScalingPolicy",
+      "elasticmapreduce:RemoveManagedScalingPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "elasticmapreduce:RemoveManagedScalingPolicy"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,10 +1,8 @@
 package pike
 
-import (
-	"github.com/rs/zerolog/log"
-)
+import "fmt"
 
-// GetGCPPermissions for GCP resources
+// GetGCPPermissions for GCP resources.
 func GetGCPPermissions(result ResourceV2) ([]string, error) {
 	var (
 		err         error
@@ -26,19 +24,17 @@ func GetGCPPermissions(result ResourceV2) ([]string, error) {
 	return Permissions, err
 }
 
-// GetGCPResourcePermissions looks up permissions required for resources
+// GetGCPResourcePermissions looks up permissions required for resources.
 func GetGCPResourcePermissions(result ResourceV2) ([]string, error) {
-	temp := GCPLookup(result.Name)
-
 	var (
 		Permissions []string
 		err         error
 	)
 
-	if temp != nil {
+	if temp := GCPLookup(result.Name); temp != nil {
 		Permissions, err = GetPermissionMap(temp.([]byte), result.Attributes)
 	} else {
-		log.Printf("%s not implemented", result.Name)
+		return nil, fmt.Errorf("%s not implemented", result.Name)
 	}
 
 	return Permissions, err
@@ -61,6 +57,9 @@ func GCPLookup(result string) interface{} {
 		"google_bigtable_table_iam_binding":               googleBigTableTableIam,
 		"google_bigtable_table_iam_member":                googleBigTableTableIam,
 		"google_bigtable_table_iam_policy":                googleBigTableTableIam,
+		"google_cloud_run_v2_job":                         googleCloudRunV2Job,
+		"google_cloud_run_v2_service":                     googleCloudRunV2Job,
+		"google_cloud_scheduler_job":                      googleCloudSchedulerJob,
 		"google_cloudfunctions_function":                  googleCloudfunctionsFunction,
 		"google_cloudfunctions_function_iam_member":       googleCloudfunctionsFunctionIamPolicy,
 		"google_cloudfunctions_function_iam_policy":       googleCloudfunctionsFunctionIamPolicy,
@@ -77,8 +76,8 @@ func GCPLookup(result string) interface{} {
 		"google_container_cluster":                        googleContainerCluster,
 		"google_container_node_pool":                      googleContainerNodePool,
 		"google_dns_managed_zone":                         googleDnsmanagedZone,
-		"google_dns_policy":                               googleDnsPolicy,
-		"google_dns_record_set":                           googleDnsRecordSet,
+		"google_dns_policy":                               googleDNSPolicy,
+		"google_dns_record_set":                           googleDNSRecordSet,
 		"google_kms_crypto_key":                           googleKmsCryptoKey,
 		"google_kms_crypto_key_iam_binding":               googlekmsCryptoKeyIamBinding,
 		"google_kms_crypto_key_iam_member":                googlekmsCryptoKeyIamMember,
@@ -98,6 +97,7 @@ func GCPLookup(result string) interface{} {
 		"google_pubsub_topic_iam_binding":                 googlePubsubTopicIam,
 		"google_pubsub_topic_iam_member":                  googlePubsubTopicIam,
 		"google_pubsub_topic_iam_policy":                  googlePubsubTopicIam,
+		"google_redis_instance":                           googleRedisInstance,
 		"google_secret_manager_secret":                    googleSecretManagerSecret,
 		"google_secret_manager_secret_iam_binding":        googleSecretManagerSecretIam,
 		"google_secret_manager_secret_iam_member":         googleSecretManagerSecretIam,
@@ -117,9 +117,15 @@ func GCPLookup(result string) interface{} {
 		"google_storage_bucket_acl":                       googleStorageBucketACL,
 		"google_storage_bucket_iam_binding":               googleStorageBucketIamBinding,
 		"google_storage_bucket_object":                    googleStorageBucketObject,
-		"google_redis_instance":                           googleRedisInstance,
-		"google_cloud_run_v2_job":                         googleCloudRunV2Job,
-		"google_cloud_scheduler_job":                      googleCloudSchedulerJob,
+		"google_storage_bucket_access_control":            googleStorageBucketAccessControl,
+		"google_storage_bucket_iam_member":                googleStorageBucketIamMember,
+		"google_storage_bucket_iam_policy":                googleStorageBucketIamPolicy,
+		"google_storage_default_object_access_control":    googleStorageDefaultObjectAccessControl,
+		"google_storage_default_object_acl":               googleStorageDefaultObjectACL,
+		"google_storage_hmac_key":                         googleStorageHmacKey,
+		"google_storage_insights_report_config":           googleStorageInsightsReportConfig,
+		"google_storage_object_access_control":            googleStorageObjectAccessControl,
+		"google_cloudbuild_trigger":                       googleCloudbuildTrigger,
 	}
 
 	return TFLookup[result]

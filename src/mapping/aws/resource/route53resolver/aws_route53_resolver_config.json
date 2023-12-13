@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "route53resolver:UpdateResolverConfig",
+      "route53resolver:GetResolverConfig",
+      "route53resolver:ListResolverConfigs"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [
+      "route53resolver:UpdateResolverConfig"
+    ],
+    "plan": []
+  }
+]

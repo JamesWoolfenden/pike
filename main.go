@@ -85,7 +85,7 @@ func main() {
 			},
 			{
 				Name:    "remote",
-				Aliases: []string{"m"},
+				Aliases: []string{"o"},
 				Usage:   "Create/Update the Policy and set credentials/secret for Github Action",
 				Flags: []cli.Flag{
 					&cli.StringFlag{
@@ -318,7 +318,7 @@ func main() {
 			},
 			{
 				Name:    "pull",
-				Aliases: []string{"p"},
+				Aliases: []string{"l"},
 				Usage:   "Clones remote repo and scans it using pike",
 				Flags: []cli.Flag{
 					&cli.StringFlag{

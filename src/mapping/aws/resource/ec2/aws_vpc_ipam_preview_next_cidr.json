@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "ec2:AllocateIpamPoolCidr"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

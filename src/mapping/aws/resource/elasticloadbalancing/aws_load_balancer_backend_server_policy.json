@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "elasticloadbalancing:SetLoadBalancerPoliciesForBackendServer"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

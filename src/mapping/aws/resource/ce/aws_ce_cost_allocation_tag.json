@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "ce:ListCostAllocationTags",
+      "ce:UpdateCostAllocationTagsStatus"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "ce:UpdateCostAllocationTagsStatus"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

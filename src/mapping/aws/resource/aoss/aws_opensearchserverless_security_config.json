@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "aoss:CreateSecurityConfig",
+      "aoss:DeleteSecurityConfig",
+      "aoss:GetSecurityConfig",
+      "aoss:UpdateSecurityConfig",
+      "aoss:DeleteSecurityConfig"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "aoss:DeleteSecurityConfig"
+    ],
+    "modify": [
+      "aoss:UpdateSecurityConfig"
+    ],
+    "plan": []
+  }
+]

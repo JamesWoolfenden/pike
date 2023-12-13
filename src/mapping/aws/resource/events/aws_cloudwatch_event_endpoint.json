@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "events:CreateEndpoint",
+      "events:DescribeEndpoint",
+      "events:CreateEndpoint",
+      "events:DeleteEndpoint",
+      "events:UpdateEndpoint"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "events:DeleteEndpoint"
+    ],
+    "modify": [
+      "events:UpdateEndpoint"
+    ],
+    "plan": []
+  }
+]

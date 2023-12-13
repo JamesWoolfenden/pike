@@ -11,7 +11,7 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 		err         error
 	)
 
-	if temp := AwsDataLoookup(result.Name); temp != nil {
+	if temp := AwsDataLookup(result.Name); temp != nil {
 		Permissions, err = GetPermissionMap(temp.([]byte), result.Attributes)
 	} else {
 		return nil, fmt.Errorf("%s not implemented", result.Name)
@@ -21,7 +21,7 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 }
 
 // nolint:funlen
-func AwsDataLoookup(find string) interface{} {
+func AwsDataLookup(find string) interface{} {
 	TFLookup := map[string]interface{}{
 		"aws_acm_certificate":                                       dataAwsAcmCertificate,
 		"aws_acmpca_certificate":                                    dataAwsAcmpcaCertificate,
@@ -128,7 +128,7 @@ func AwsDataLoookup(find string) interface{} {
 		"aws_db_cluster_snapshot":                                   dataAwsDBClusterSnapshot,
 		"aws_db_event_categories":                                   dataAwsDBEventCategories,
 		"aws_db_instance":                                           dataAwsDBInstance,
-		"aws_db_instances":                                          dataAwsDbInstances,
+		"aws_db_instances":                                          dataAwsDBInstances,
 		"aws_db_proxy":                                              placeholder,
 		"aws_db_snapshot":                                           dataAwsDBSnapshot,
 		"aws_db_subnet_group":                                       dataAwsDBSubnetGroup,
@@ -529,6 +529,19 @@ func AwsDataLoookup(find string) interface{} {
 		"aws_servicequotas_templates":                               dataAwsServicequotasTemplates,
 		"aws_ec2_transitgateway_route_table_propagations":           placeholder,
 		"aws_saml_provider":                                         dataAwsIamSamlProvider,
+		"aws_apigatewayv2_vpc_link":                                 dataAwsApigatewayv2VpcLink,
+		"aws_athena_named_query":                                    dataAwsAthenaNamedQuery,
+		"aws_bedrock_foundation_model":                              dataAwsBedrockFoundationModel,
+		"aws_bedrock_foundation_models":                             dataAwsBedrockFoundationModels,
+		"aws_iot_registration_code":                                 dataAwsIotRegistrationCode,
+		"aws_opensearchserverless_lifecycle_policy":                 dataAwsOpensearchserverlessLifecyclePolicy,
+		"aws_emr_supported_instance_types":                          dataAwsEmrSupportedInstanceTypes,
+		"aws_lb_trust_store":                                        dataAwsLbTrustStore,
+		"aws_alb_trust_store":                                       dataAwsLbTrustStore,
+		"aws_codeguruprofiler_profiling_group":                      dataAwsCodeguruprofilerProfilingGroup,
+		"aws_ecr_repositories":                                      dataAwsEcrRepositories,
+		"aws_ssoadmin_application":                                  placeholder,
+		"aws_ssoadmin_application_providers":                        dataAwsSsoadminApplicationProviders,
 	}
 
 	return TFLookup[find]

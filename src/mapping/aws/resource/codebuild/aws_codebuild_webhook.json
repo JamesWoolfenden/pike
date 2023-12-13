@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "codebuild:CreateWebhook",
+      "codebuild:DeleteWebhook",
+      "codebuild:UpdateWebhook"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "codebuild:DeleteWebhook"
+    ],
+    "modify": [
+      "codebuild:UpdateWebhook"
+    ],
+    "plan": []
+  }
+]

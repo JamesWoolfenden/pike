@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "ecr:PutReplicationConfiguration",
+      "ecr:DescribeRegistry"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

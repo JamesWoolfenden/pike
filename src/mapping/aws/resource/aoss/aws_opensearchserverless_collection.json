@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "aoss:CreateCollection",
+      "aoss:UpdateCollection",
+      "aoss:DeleteCollection",
+      "aoss:BatchGetCollection",
+      "iam:CreateServiceLinkedRole",
+      "aoss:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "aoss:DeleteCollection"
+    ],
+    "modify": [
+      "aoss:UpdateCollection"
+    ],
+    "plan": []
+  }
+]

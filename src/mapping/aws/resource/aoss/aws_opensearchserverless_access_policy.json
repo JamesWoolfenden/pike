@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "aoss:CreateAccessPolicy",
+      "aoss:UpdateAccessPolicy",
+      "aoss:DeleteAccessPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "aoss:DeleteAccessPolicy"
+    ],
+    "modify": [
+      "aoss:UpdateAccessPolicy"
+    ],
+    "plan": []
+  }
+]

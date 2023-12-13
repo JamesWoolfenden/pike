@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "kinesis:RegisterStreamConsumer",
+      "kinesis:DescribeStreamConsumer",
+      "kinesis:DeregisterStreamConsumer"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "kinesis:DeregisterStreamConsumer"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

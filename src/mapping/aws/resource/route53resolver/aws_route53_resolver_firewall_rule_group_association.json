@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "route53resolver:AssociateFirewallRuleGroup",
+      "route53resolver:GetFirewallRuleGroupAssociation",
+      "route53resolver:DisassociateFirewallRuleGroup",
+      "route53resolver:UpdateFirewallRuleGroupAssociation"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "route53resolver:DisassociateFirewallRuleGroup"
+    ],
+    "modify": [
+      "route53resolver:UpdateFirewallRuleGroupAssociation"
+    ],
+    "plan": []
+  }
+]

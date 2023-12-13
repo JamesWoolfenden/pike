@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "ec2:CreateIpamPool",
+      "ec2:DescribeIpamPools",
+      "ec2:DeleteIpamPool",
+      "ec2:ModifyIpamPool"
+    ],
+    "attributes": {
+      "tags": [
+        "ec2:CreateTags",
+        "ec2:DeleteTags"
+      ]
+    },
+    "destroy": [
+      "ec2:DeleteIpamPool"
+    ],
+    "modify": [
+      "ec2:ModifyIpamPool"
+    ],
+    "plan": []
+  }
+]

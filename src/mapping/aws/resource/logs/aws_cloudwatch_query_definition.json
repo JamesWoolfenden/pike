@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "logs:PutQueryDefinition",
+      "logs:DescribeQueryDefinitions",
+      "logs:DeleteQueryDefinition"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "logs:DeleteQueryDefinition"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

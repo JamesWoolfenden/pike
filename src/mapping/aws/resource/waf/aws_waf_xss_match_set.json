@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "waf:GetChangeToken",
+      "waf:CreateXssMatchSet",
+      "waf:UpdateXssMatchSet",
+      "waf:GetXssMatchSet",
+      "waf:DeleteXssMatchSet"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "waf:DeleteXssMatchSet"
+    ],
+    "modify": [
+      "waf:UpdateXssMatchSet"
+    ],
+    "plan": []
+  }
+]

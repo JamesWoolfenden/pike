@@ -15,6 +15,9 @@ destroy: init
 init:
 	terraform init
 
+upgrade:
+	terraform init --upgrade
+
 role: FORCE
 	terraform  -chdir=./role apply -auto-approve
 
@@ -22,6 +25,7 @@ FORCE:
 
 sleep:
 	timeout 5
+
 up: role sleep apply
 
 mac: role init

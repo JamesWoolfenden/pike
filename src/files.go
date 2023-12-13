@@ -182,13 +182,13 @@ var awsSnsTopicPolicy []byte
 var awsKeyPair []byte
 
 //go:embed mapping/aws/resource/rds/aws_db_instance.json
-var awsDbInstance []byte
+var awsDBInstance []byte
 
 //go:embed mapping/aws/resource/rds/aws_db_cluster_snapshot.json
-var awsDbClusterSnapshot []byte
+var awsDBClusterSnapshot []byte
 
 //go:embed mapping/aws/resource/rds/aws_db_event_subscription.json
-var awsDbEventSubscription []byte
+var awsDBEventSubscription []byte
 
 //go:embed mapping/aws/resource/ram/aws_ram_principal_association.json
 var awsRAMPrincipleAssociation []byte
@@ -242,7 +242,7 @@ var awsDefaultRouteTable []byte
 var awsDefaultVpcDhcpOptions []byte
 
 //go:embed mapping/aws/resource/rds/aws_db_subnet_group.json
-var awsDbSubnetGroup []byte
+var awsDBSubnetGroup []byte
 
 //go:embed mapping/aws/resource/wafv2/aws_wafv2_web_acl.json
 var awsWafv2WebACL []byte
@@ -368,10 +368,10 @@ var awsRouteTableAssociation []byte
 var awsNatGateway []byte
 
 //go:embed mapping/aws/resource/rds/aws_db_option_group.json
-var awsDbOptionGroup []byte
+var awsDBOptionGroup []byte
 
 //go:embed mapping/aws/resource/rds/aws_db_parameter_group.json
-var awsDbParameterGroup []byte
+var awsDBParameterGroup []byte
 
 //go:embed mapping/aws/resource/secretsmanager/aws_secretsmanager_secret.json
 var awsSecretsmanagerSecret []byte
@@ -862,13 +862,13 @@ var awsRoute53QueryLog []byte
 //go:embed mapping/aws/resource/route53/aws_route53_vpc_association_authorization.json
 var awsRoute53VpcAssociationAuthorization []byte
 
-//go:embed mapping/aws/resource/route53/aws_route53_resolver_query_log_config.json
+//go:embed mapping/aws/resource/route53resolver/aws_route53_resolver_query_log_config.json
 var awsRoute53ResolverQueryLogConfig []byte
 
-//go:embed mapping/aws/resource/route53/aws_route53_resolver_query_log_config_association.json
+//go:embed mapping/aws/resource/route53resolver/aws_route53_resolver_query_log_config_association.json
 var awsRoute53ResolverQueryLogConfigAssociation []byte
 
-//go:embed mapping/aws/resource/route53/aws_route53_resolver_rule_association.json
+//go:embed mapping/aws/resource/route53resolver/aws_route53_resolver_rule_association.json
 var awsRoute53ResolverRuleAssociation []byte
 
 //go:embed mapping/aws/resource/sagemaker/aws_sagemaker_endpoint_configuration.json
@@ -1251,3 +1251,303 @@ var awsSecretsmanagerSecretRotation []byte
 
 //go:embed mapping/aws/resource/states/aws_sfn_alias.json
 var awsSfnAlias []byte
+
+//go:embed mapping/aws/resource/aoss/aws_opensearchserverless_access_policy.json
+var awsOpenseachserverlessAccessPolicy []byte
+
+//go:embed mapping/aws/resource/aoss/aws_opensearchserverless_collection.json
+var awsOpenseachserverlessCollection []byte
+
+//go:embed mapping/aws/resource/aoss/aws_opensearchserverless_lifecycle_policy.json
+var awsOpenseachserverlessLifecyclePolicy []byte
+
+//go:embed mapping/aws/resource/aoss/aws_opensearchserverless_security_config.json
+var awsOpenseachserverlessSecurityConfig []byte
+
+//go:embed mapping/aws/resource/aoss/aws_opensearchserverless_security_policy.json
+var awsOpenseachserverlessSecurityPolicy []byte
+
+//go:embed mapping/aws/resource/aoss/aws_opensearchserverless_vpc_endpoint.json
+var awsOpenseachserverlessVpcEndpoint []byte
+
+//go:embed mapping/aws/resource/cloudsearch/aws_cloudsearch_domain.json
+var awsCloudsearchDomain []byte
+
+//go:embed mapping/aws/resource/cloudsearch/aws_cloudsearch_domain_service_access_policy.json
+var awsCloudsearchDomainServiceAccessPolicy []byte
+
+//go:embed mapping/aws/resource/cloudtrail/aws_cloudtrail_event_data_store.json
+var awsCloudtrailEventDataStore []byte
+
+//go:embed mapping/aws/resource/events/aws_cloudwatch_event_bus_policy.json
+var awsCloudwatchEventBusPolicy []byte
+
+//go:embed mapping/aws/resource/events/aws_cloudwatch_event_endpoint.json
+var awsCloudwatchEventEndpoint []byte
+
+//go:embed mapping/aws/resource/logs/aws_cloudwatch_log_data_protection_policy.json
+var awsCloudwatchLogDataProtectionPolicy []byte
+
+//go:embed mapping/aws/resource/logs/aws_cloudwatch_log_destination.json
+var awsCloudwatchLogDestination []byte
+
+//go:embed mapping/aws/resource/kinesis/aws_kinesis_stream_consumer.json
+var awsKinesisStreamConsumer []byte
+
+//go:embed mapping/aws/resource/logs/aws_cloudwatch_log_destination_policy.json
+var awsCloudwatchLogDestinationPolicy []byte
+
+//go:embed mapping/aws/resource/logs/aws_cloudwatch_log_destination.json
+var awsCloudwatchQueryDestination []byte
+
+//go:embed mapping/aws/resource/datapipeline/aws_datapipeline_pipeline.json
+var awsDatapipelinePipeline []byte
+
+//go:embed mapping/aws/resource/datapipeline/aws_datapipeline_pipeline_definition.json
+var awsDatapipelinePipelineDefinition []byte
+
+//go:embed mapping/aws/resource/elasticloadbalancing/aws_proxy_protocol_policy.json
+var awsProxyProtocolPolicy []byte
+
+//go:embed mapping/aws/resource/elasticloadbalancing/aws_app_cookie_stickiness_policy.json
+var awsAppCookieStickinessPolicy []byte
+
+//go:embed mapping/aws/resource/cloudfront/aws_cloudfront_cache_policy.json
+var awsCloudfrontCachePolicy []byte
+
+//go:embed mapping/aws/resource/cloudfront/aws_cloudfront_continuous_deployment_policy.json
+var awsCloudfrontContinuousDeploymentPolicy []byte
+
+//go:embed mapping/aws/resource/cloudfront/aws_cloudfront_origin_request_policy.json
+var awsCloudfrontOriginRequestPolicy []byte
+
+//go:embed mapping/aws/resource/codebuild/aws_codebuild_report_group.json
+var awsCodebuildReportGroup []byte
+
+//go:embed mapping/aws/resource/codebuild/aws_codebuild_resource_policy.json
+var awsCodebuildResourcePolicy []byte
+
+//go:embed mapping/aws/resource/ecr/aws_ecr_registry_policy.json
+var awsEcrRegistryPolicy []byte
+
+//go:embed mapping/aws/resource/ecr/aws_ecr_replication_configuration.json
+var awsEcrReplicationConfiguration []byte
+
+//go:embed mapping/aws/resource/ecr-public/aws_ecrpublic_repository_policy.json
+var awsEcrpublicRepositoryPolicy []byte
+
+//go:embed mapping/aws/resource/elasticmapreduce/aws_emr_managed_scaling_policy.json
+var awsEmrManagedScalingPolicy []byte
+
+//go:embed mapping/aws/resource/elasticloadbalancing/aws_lb_cookie_stickiness_policy.json
+var awsLbCookieStickinessPolicy []byte
+
+//go:embed mapping/aws/resource/wafregional/aws_wafregional_byte_match_set.json
+var awsWafregionalByteMatchSet []byte
+
+//go:embed mapping/aws/resource/wafregional/aws_wafregional_geo_match_set.json
+var awsWafregionalGeoMatchSet []byte
+
+//go:embed mapping/aws/resource/wafregional/aws_wafregional_ipset.json
+var awsWafregionalIpset []byte
+
+//go:embed mapping/aws/resource/wafregional/aws_wafregional_rate_based_rule.json
+var awsWafregionalRateBasedRule []byte
+
+//go:embed mapping/aws/resource/wafregional/aws_wafregional_regex_match_set.json
+var awsWafregionalRegexMatchSet []byte
+
+//go:embed mapping/aws/resource/wafregional/aws_wafregional_regex_pattern_set.json
+var awsWafregionalRegexPatternSet []byte
+
+//go:embed mapping/aws/resource/wafregional/aws_wafregional_rule.json
+var awsWafregionalRule []byte
+
+//go:embed mapping/aws/resource/wafregional/aws_wafregional_rule_group.json
+var awsWafregionalRuleGroup []byte
+
+//go:embed mapping/aws/resource/wafregional/aws_wafregional_size_constraint_set.json
+var awsWafregionalSizeConstraintSet []byte
+
+//go:embed mapping/aws/resource/wafregional/aws_wafregional_sql_injection_match_set.json
+var awsWafregionalSqlInjectionMatchSet []byte
+
+//go:embed mapping/aws/resource/wafregional/aws_wafregional_web_acl.json
+var awsWafregionalWebAcl []byte
+
+//go:embed mapping/aws/resource/wafregional/aws_wafregional_xss_match_set.json
+var awsWafregionalXssNatchSet []byte
+
+//go:embed mapping/aws/resource/waf/aws_waf_byte_match_set.json
+var awsWafByteMatchSet []byte
+
+//go:embed mapping/aws/resource/waf/aws_waf_geo_match_set.json
+var awsWafGeoMatchSet []byte
+
+//go:embed mapping/aws/resource/waf/aws_waf_ipset.json
+var awsWafIpset []byte
+
+//go:embed mapping/aws/resource/waf/aws_waf_rate_based_rule.json
+var awsWafRateBasedRule []byte
+
+//go:embed mapping/aws/resource/waf/aws_waf_regex_match_set.json
+var awsWafRegexMatchSet []byte
+
+//go:embed mapping/aws/resource/waf/aws_waf_regex_pattern_set.json
+var awsWafRegexPatternSet []byte
+
+//go:embed mapping/aws/resource/waf/aws_waf_rule.json
+var awsWafRule []byte
+
+//go:embed mapping/aws/resource/waf/aws_waf_rule_group.json
+var awsWafRuleGroup []byte
+
+//go:embed mapping/aws/resource/waf/aws_waf_size_constraint_set.json
+var awsWafSizeConstraintSet []byte
+
+//go:embed mapping/aws/resource/waf/aws_waf_sql_injection_match_set.json
+var awsWafSqlInjectionMatchSet []byte
+
+//go:embed mapping/aws/resource/waf/aws_waf_web_acl.json
+var awsWafWebAcl []byte
+
+//go:embed mapping/aws/resource/waf/aws_waf_xss_match_set.json
+var awsWafXssNatchSet []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpc_ipam.json
+var awsVpcIpam []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpc_ipam_pool.json
+var awsVpcIpamPool []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpc_ipam_pool_cidr.json
+var awsVpcIpamPoolCidr []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpc_ipam_pool_cidr_allocation.json
+var awsVpcIpamPoolCidrAllocation []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpc_ipam_preview_next_cidr.json
+var awsVpcIpamPreviewNextCidr []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpc_ipam_resource_discovery.json
+var awsVpcIpamResourceDiscovery []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpc_ipam_resource_discovery_association.json
+var awsVpcIpamResourceDiscoveryAssociation []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpc_ipam_scope.json
+var awsVpcIpamScope []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpc_security_group_egress_rule.json
+var awsVpcSecurityGroupEgressRule []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpc_security_group_ingress_rule.json
+var awsVpcSecurityGroupIngressRule []byte
+
+//go:embed mapping/aws/resource/location/aws_location_geofence_collection.json
+var awsLocationGeofenceCollection []byte
+
+//go:embed mapping/aws/resource/location/aws_location_map.json
+var awsLocationMap []byte
+
+//go:embed mapping/aws/resource/location/aws_location_place_index.json
+var awsLocationPlaceIndex []byte
+
+//go:embed mapping/aws/resource/location/aws_location_route_calculator.json
+var awsLocationRouteCalculator []byte
+
+//go:embed mapping/aws/resource/location/aws_location_tracker.json
+var awsLocationTracker []byte
+
+//go:embed mapping/aws/resource/elasticloadbalancing/aws_load_balancer_backend_server_policy.json
+var awsLoadBalancerBackendServerPolicy []byte
+
+//go:embed mapping/aws/resource/elasticloadbalancing/aws_load_balancer_listener_policy.json
+var awsLoadBalancerListenerPolicy []byte
+
+//go:embed mapping/aws/resource/elasticloadbalancing/aws_load_balancer_policy.json
+var awsLoadBalancerPolicy []byte
+
+//go:embed mapping/aws/resource/route53/aws_route53_cidr_collection.json
+var awsRoute53CidrCollection []byte
+
+//go:embed mapping/aws/resource/route53/aws_route53_cidr_location.json
+var awsRoute53CidrLocation []byte
+
+//go:embed mapping/aws/resource/route53resolver/aws_route53_resolver_config.json
+var awsRoute53ResolverConfig []byte
+
+//go:embed mapping/aws/resource/route53resolver/aws_route53_resolver_dnssec_config.json
+var awsRoute53ResolverDnssecConfig []byte
+
+//go:embed mapping/aws/resource/route53resolver/aws_route53_resolver_endpoint.json
+var awsRoute53ResolverEndpoint []byte
+
+//go:embed mapping/aws/resource/route53resolver/aws_route53_resolver_firewall_config.json
+var awsRoute53ResolverFirewallConfig []byte
+
+//go:embed mapping/aws/resource/route53resolver/aws_route53_resolver_firewall_domain_list.json
+var awsRoute53ResolverFirewallDomainList []byte
+
+//go:embed mapping/aws/resource/route53resolver/aws_route53_resolver_firewall_rule.json
+var awsRoute53ResolverFirewallRule []byte
+
+//go:embed mapping/aws/resource/route53resolver/aws_route53_resolver_firewall_rule_group.json
+var awsRoute53ResolverFirewallRuleGroup []byte
+
+//go:embed mapping/aws/resource/route53resolver/aws_route53_resolver_firewall_rule_group_association.json
+var awsRoute53ResolverFirewallRuleGroupAssociation []byte
+
+//go:embed mapping/aws/resource/route53resolver/aws_route53_resolver_rule.json
+var awsRoute53ResolverRule []byte
+
+//go:embed mapping/aws/resource/route53/aws_route53_traffic_policy.json
+var awsRoute53TrafficPolicy []byte
+
+//go:embed mapping/aws/resource/route53/aws_route53_traffic_policy_instance.json
+var awsRoute53TrafficPolicyInstance []byte
+
+//go:embed mapping/aws/resource/ce/aws_ce_anomaly_monitor.json
+var awsCeAnomalyMonitor []byte
+
+//go:embed mapping/aws/resource/ce/aws_ce_anomaly_subscription.json
+var awsCeAnomalySubscription []byte
+
+//go:embed mapping/aws/resource/ce/aws_ce_cost_allocation_tag.json
+var awsCeCostAllocationTag []byte
+
+//go:embed mapping/aws/resource/ce/aws_ce_cost_category.json
+var awsCeCostCategory []byte
+
+//go:embed mapping/aws/resource/cloudfront/aws_cloudfront_function.json
+var awsCloudfrontFunction []byte
+
+//go:embed mapping/aws/resource/cognito-idp/aws_cognito_identity_pool.json
+var awsCognitoIdentityPool []byte
+
+//go:embed mapping/aws/resource/timestreamwrite/aws_timestreamwrite_database.json
+var awsTimestreamwriteDatabase []byte
+
+//go:embed mapping/aws/resource/timestreamwrite/aws_timestreamwrite_table.json
+var awsTimestreamwriteTable []byte
+
+//go:embed mapping/aws/resource/codebuild/aws_codebuild_source_credential.json
+var awsCodebuildSourceCredential []byte
+
+//go:embed mapping/aws/resource/codecommit/aws_codecommit_approval_rule_template.json
+var awsCodecommitApprovalRuleTemplate []byte
+
+//go:embed mapping/aws/resource/codecommit/aws_codecommit_approval_rule_template_association.json
+var awsCodecommitApprovalRuleTemplateAssociation []byte
+
+//go:embed mapping/aws/resource/codecommit/aws_codecommit_trigger.json
+var awsCodecommitTrigger []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ebs_default_kms_key.json
+var awsEbsDefaultKmsKey []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ebs_encryption_by_default.json
+var awsEbsEncryptionByDefault []byte
+
+//go:embed mapping/aws/resource/kms/aws_kms_key_policy.json
+var awsKmsKeyPolicy []byte

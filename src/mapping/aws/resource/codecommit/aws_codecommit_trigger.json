@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "codecommit:PutRepositoryTriggers",
+      "codecommit:GetRepositoryTriggers"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

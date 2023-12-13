@@ -12,7 +12,7 @@ import (
 	"github.com/yudai/gojsondiff/formatter"
 )
 
-// Compare IAC codebase to AWS policy
+// Compare IAC codebase to AWS policy.
 func Compare(directory string, arn string, init bool) (bool, error) {
 	var theSame bool
 	// Load the Shared AWS Configuration (~/.aws/config)
@@ -48,10 +48,11 @@ func Compare(directory string, arn string, init bool) (bool, error) {
 	return theSame, err
 }
 
-// CompareIAMPolicy takes to IAm policies and compares
+// CompareIAMPolicy takes to IAm policies and compares.
 func CompareIAMPolicy(policy string, oldPolicy string) (bool, error) {
 	differ := diff.New()
 	compare, err := differ.Compare([]byte(policy), []byte(oldPolicy))
+
 	if err != nil {
 		return false, err
 	}

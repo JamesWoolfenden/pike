@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "route53resolver:UpdateFirewallConfig",
+      "route53resolver:GetFirewallConfig",
+      "route53resolver:ListFirewallConfigs"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [
+      "route53resolver:UpdateFirewallConfig"
+    ],
+    "plan": []
+  }
+]

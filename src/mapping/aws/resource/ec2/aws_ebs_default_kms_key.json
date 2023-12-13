@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "ec2:ModifyEbsDefaultKmsKeyId",
+      "ec2:GetEbsEncryptionByDefault",
+      "ec2:GetEbsDefaultKmsKeyId",
+      "ec2:ResetEbsDefaultKmsKeyId"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "ec2:ResetEbsDefaultKmsKeyId"
+    ],
+    "modify": [
+      "ec2:ModifyEbsDefaultKmsKeyId"
+    ],
+    "plan": []
+  }
+]

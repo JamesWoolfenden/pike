@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "route53:CreateTrafficPolicyInstance",
+      "route53:GetTrafficPolicyInstance",
+      "route53:DeleteTrafficPolicyInstance"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

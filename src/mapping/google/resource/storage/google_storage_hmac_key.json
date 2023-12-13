@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "storage.hmacKeys.create",
+      "storage.hmacKeys.get",
+      "storage.hmacKeys.update",
+      "storage.hmacKeys.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "storage.hmacKeys.delete"
+    ],
+    "modify": [
+      "storage.hmacKeys.update"
+    ],
+    "plan": []
+  }
+]

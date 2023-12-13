@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "aoss:CreateLifecyclePolicy",
+      "aoss:BatchGetLifecyclePolicy",
+      "aoss:DeleteLifecyclePolicy",
+      "aoss:UpdateLifecyclePolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "aoss:DeleteLifecyclePolicy"
+    ],
+    "modify": [
+      "aoss:UpdateLifecyclePolicy"
+    ],
+    "plan": []
+  }
+]

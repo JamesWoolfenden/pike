@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "route53resolver:CreateFirewallRule",
+      "route53resolver:ListFirewallRules",
+      "route53resolver:DeleteFirewallRule",
+      "route53resolver:UpdateFirewallRule"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "route53resolver:DeleteFirewallRule"
+    ],
+    "modify": [
+      "route53resolver:UpdateFirewallRule"
+    ],
+    "plan": []
+  }
+]
