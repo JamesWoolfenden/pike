@@ -88,7 +88,7 @@ function handler(event) {
 
     //Secret key used to verify JWT token.
     //Update with your own key.
-    var key = "LzdWGpAToQ1DqYuzHxE6YOqi7G3X2yvNBot9mCXfx5k";
+    var key = "dummy";
 
     // If no JWT token, then generate HTTP redirect 401 response.
     if(!request.querystring.jwt) {
