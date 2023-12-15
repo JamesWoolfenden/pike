@@ -11,3 +11,11 @@ provider "google-beta" {
   //credentials = "C:/Users/jim_w/examplea-pike.json"
   credentials = "/Users/jwoolfenden/pike-service.json"
 }
+
+provider "google" {
+  alias   = "central"
+  project = "pike-gcp"
+  region  = "us-central1"
+  //credentials = "C:/Users/jim_w/examplea-pike.json"
+  credentials = "/Users/jwoolfenden/pike-service.json"
+}

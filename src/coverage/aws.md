@@ -1,6 +1,6 @@
 # todo aws
 
-Resource percentage coverage   43.55
+Resource percentage coverage   45.41
 Datasource percentage coverage 99.61
 
 ./resource.ps1 aws_accessanalyzer_analyzer
@@ -243,6 +243,7 @@ Datasource percentage coverage 99.61
 ./resource.ps1 aws_elasticsearch_vpc_endpoint
 ./resource.ps1 aws_elastictranscoder_pipeline
 ./resource.ps1 aws_elastictranscoder_preset
+./resource.ps1 aws_elb_attachment
 ./resource.ps1 aws_emr_block_public_access_configuration
 ./resource.ps1 aws_emr_instance_fleet
 ./resource.ps1 aws_emr_instance_group
@@ -304,6 +305,7 @@ Datasource percentage coverage 99.61
 ./resource.ps1 aws_identitystore_group
 ./resource.ps1 aws_identitystore_group_membership
 ./resource.ps1 aws_identitystore_user
+./resource.ps1 aws_internet_gateway_attachment
 ./resource.ps1 aws_iot_authorizer
 ./resource.ps1 aws_iot_billing_group
 ./resource.ps1 aws_iot_ca_certificate

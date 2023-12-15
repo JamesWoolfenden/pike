@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "elasticbeanstalk:CreateConfigurationTemplate",
+      "elasticbeanstalk:DeleteConfigurationTemplate",
+      "elasticbeanstalk:UpdateConfigurationTemplate"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "elasticbeanstalk:DeleteConfigurationTemplate"
+    ],
+    "modify": [
+      "elasticbeanstalk:UpdateConfigurationTemplate"
+    ],
+    "plan": []
+  }
+]

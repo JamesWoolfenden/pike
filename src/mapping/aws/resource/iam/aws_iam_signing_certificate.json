@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "iam:UploadSigningCertificate",
+      "iam:DeleteSigningCertificate",
+      "iam:UpdateSigningCertificate",
+      "iam:ListSigningCertificates"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "iam:DeleteSigningCertificate"
+    ],
+    "modify": [
+      "iam:UpdateSigningCertificate"
+    ],
+    "plan": []
+  }
+]

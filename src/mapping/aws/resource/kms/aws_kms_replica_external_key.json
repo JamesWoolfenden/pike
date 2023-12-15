@@ -1,6 +1,8 @@
 [
   {
-    "apply": [],
+    "apply": [
+      "kms:ReplicateKey"
+    ],
     "attributes": {
       "tags": []
     },

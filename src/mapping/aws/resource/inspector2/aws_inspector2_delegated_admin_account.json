@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "inspector2:EnableDelegatedAdminAccount",
+      "organizations:ListDelegatedAdministrators",
+      "organizations:EnableAwsServiceAccess",
+      "inspector2:ListDelegatedAdminAccounts",
+      "inspector2:DisableDelegatedAdminAccount"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "inspector2:DisableDelegatedAdminAccount"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

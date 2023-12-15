@@ -1,6 +1,9 @@
 [
   {
-    "apply": [],
+    "apply": [
+      "ec2:AssociateAddress",
+      "ec2:DisassociateAddress"
+    ],
     "attributes": {
       "tags": []
     },

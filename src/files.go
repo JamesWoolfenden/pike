@@ -1551,3 +1551,75 @@ var awsEbsEncryptionByDefault []byte
 
 //go:embed mapping/aws/resource/kms/aws_kms_key_policy.json
 var awsKmsKeyPolicy []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ec2_availability_zone_group.json
+var awsEc2AvailabilityGroup []byte
+
+//go:embed mapping/aws/resource/ec2/aws_eip_association.json
+var awsEipAssociation []byte
+
+//go:embed mapping/aws/resource/iam/aws_iam_security_token_service_preferences.json
+var awsIamSecurityTokenServicePreferences []byte
+
+//go:embed mapping/aws/resource/iam/aws_iam_service_specific_credential.json
+var awsIamServiceSpecificCredential []byte
+
+//go:embed mapping/aws/resource/iam/aws_iam_signing_certificate.json
+var awsIamSigningCertificate []byte
+
+//go:embed mapping/aws/resource/iam/aws_iam_virtual_mfa_device.json
+var awsIamVirtualMfaDevice []byte
+
+//go:embed mapping/aws/resource/imagebuilder/aws_imagebuilder_container_recipe.json
+var awsImagebuilderContainerRecipe []byte
+
+//go:embed mapping/aws/resource/inspector2/aws_inspector2_delegated_admin_account.json
+var awsInspector2DelegatedAdminAccount []byte
+
+//go:embed mapping/aws/resource/inspector2/aws_inspector2_enabler.json
+var awsInspector2Enabler []byte
+
+//go:embed mapping/aws/resource/inspector2/aws_inspector2_member_association.json
+var awsInspector2MemberAssociation []byte
+
+//go:embed mapping/aws/resource/inspector2/aws_inspector2_organization_configuration.json
+var awsInspector2OrganizationConfiguration []byte
+
+//go:embed mapping/aws/resource/internetmonitor/aws_internetmonitor_monitor.json
+var awsInternetmonitorMonitor []byte
+
+//go:embed mapping/aws/resource/kms/aws_kms_ciphertext.json
+var awsKmsCiphertext []byte
+
+//go:embed mapping/aws/resource/kms/aws_kms_custom_key_store.json
+var awsKmsCustomKeyStore []byte
+
+//go:embed mapping/aws/resource/kms/aws_kms_external_key.json
+var awsKmsExternalKey []byte
+
+//go:embed mapping/aws/resource/kms/aws_kms_replica_external_key.json
+var awsKmsReplicaExternalKey []byte
+
+//go:embed mapping/aws/resource/kms/aws_kms_replica_key.json
+var awsKmsReplicaKey []byte
+
+//go:embed mapping/aws/resource/lambda/aws_lambda_code_signing_config.json
+var awsLambdaCodeSigningConfig []byte
+
+//go:embed mapping/aws/resource/signer/aws_signer_signing_job.json
+var awsSignerSigningJob []byte
+
+//go:embed mapping/aws/resource/signer/aws_signer_signing_profile.json
+var awsSignerSigningProfile []byte
+
+//go:embed mapping/aws/resource/signer/aws_signer_signing_profile_permission.json
+var awsSignerSigningProfilePermission []byte
+
+//go:embed mapping/aws/resource/elasticbeanstalk/aws_elastic_beanstalk_environment.json
+var awsElastiBeanstalkEnvironment []byte
+
+//go:embed mapping/aws/resource/elasticbeanstalk/aws_elastic_beanstalk_application_version.json
+var awsElasticBeanstalkApplicationVersion []byte
+
+//go:embed mapping/aws/resource/elasticbeanstalk/aws_elastic_beanstalk_configuration_template.json
+var awsElasticBeanstalkConfigurationTemplate []byte

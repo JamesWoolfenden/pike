@@ -1,6 +1,9 @@
 [
   {
-    "apply": [],
+    "apply": [
+      "iam:SetSecurityTokenServicePreferences",
+      "iam:GetAccountSummary"
+    ],
     "attributes": {
       "tags": []
     },

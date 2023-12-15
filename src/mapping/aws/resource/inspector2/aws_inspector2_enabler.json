@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "inspector2:Enable",
+      "iam:CreateServiceLinkedRole",
+      "inspector2:BatchGetAccountStatus",
+      "inspector2:Disable"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

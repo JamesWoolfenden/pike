@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "elasticbeanstalk:CreateApplication",
+      "elasticbeanstalk:DescribeApplications",
+      "elasticbeanstalk:DeleteApplication",
+      "elasticbeanstalk:UpdateApplication"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "elasticbeanstalk:DeleteApplication"
+    ],
+    "modify": [
+      "elasticbeanstalk:UpdateApplication"
+    ],
+    "plan": []
+  }
+]

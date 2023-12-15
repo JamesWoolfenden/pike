@@ -765,11 +765,3 @@ Datasource percentage coverage 86.51
 ./resource.ps1 google_service_directory_namespace_iam_policy -type data
 ./resource.ps1 google_service_directory_service_iam_policy -type data
 ./resource.ps1 google_sql_backup_run -type data
-./resource.ps1 google_sql_ca_certs -type data
-./resource.ps1 google_sql_database_instance_latest_recovery_time -type data
-./resource.ps1 google_tags_tag_key_iam_policy -type data
-./resource.ps1 google_tags_tag_value -type data
-./resource.ps1 google_tags_tag_value_iam_policy -type data
-./resource.ps1 google_vertex_ai_endpoint_iam_policy -type data
-./resource.ps1 google_vmwareengine_network_peering -type data
-./resource.ps1 google_vmwareengine_network_policy -type data

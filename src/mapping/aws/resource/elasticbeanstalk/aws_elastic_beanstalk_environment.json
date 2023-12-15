@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "elasticbeanstalk:DescribeEnvironments",
+      "elasticbeanstalk:CreateEnvironment",
+      "elasticbeanstalk:UpdateEnvironment",
+      "elasticbeanstalk:TerminateEnvironment"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "elasticbeanstalk:TerminateEnvironment"
+    ],
+    "modify": [
+      "elasticbeanstalk:UpdateEnvironment"
+    ],
+    "plan": []
+  }
+]

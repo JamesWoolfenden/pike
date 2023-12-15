@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "internetmonitor:CreateMonitor",
+      "internetmonitor:GetMonitor",
+      "internetmonitor:UpdateMonitor",
+      "internetmonitor:DeleteMonitor"
+    ],
+    "attributes": {
+      "tags": [
+        "internetmonitor:TagResource",
+        "internetmonitor:UntagResource"
+      ]
+    },
+    "destroy": [
+      "internetmonitor:DeleteMonitor"
+    ],
+    "modify": [
+      "internetmonitor:UpdateMonitor"
+    ],
+    "plan": []
+  }
+]

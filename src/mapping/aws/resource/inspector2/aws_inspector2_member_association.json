@@ -1,6 +1,9 @@
 [
   {
-    "apply": [],
+    "apply": [
+      "inspector2:AssociateMember",
+      "inspector2:DisassociateMember"
+    ],
     "attributes": {
       "tags": []
     },

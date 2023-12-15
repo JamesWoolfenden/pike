@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "elasticbeanstalk:DescribeApplicationVersions",
+      "elasticbeanstalk:CreateApplicationVersion",
+      "elasticbeanstalk:DeleteApplicationVersion",
+      "elasticbeanstalk:UpdateApplicationVersion"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "elasticbeanstalk:DeleteApplicationVersion"
+    ],
+    "modify": [
+      "elasticbeanstalk:UpdateApplicationVersion"
+    ],
+    "plan": []
+  }
+]
