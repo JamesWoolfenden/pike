@@ -1190,6 +1190,7 @@
         "azurerm_linux_function_app",
         "azurerm_linux_web_app",
         "azurerm_local_network_gateway",
+        "azurerm_location",
         "azurerm_log_analytics_workspace",
         "azurerm_logic_app_integration_account",
         "azurerm_logic_app_standard",
