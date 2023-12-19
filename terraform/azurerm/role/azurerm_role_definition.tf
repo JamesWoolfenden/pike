@@ -5,14 +5,9 @@ resource "azurerm_role_definition" "example" {
 
   permissions {
     actions = [
-      "Microsoft.Resources/subscriptions/providers/read",
-      //data.azurerm_storage_management_policy
-      //      "Microsoft.Storage/storageAccounts/read",
-      //azurerm_storage_encryption_scope
-      #      "Microsoft.Storage/storageAccounts/encryptionScopes/read",
-      #      //azurerm_storage_table_entity, azurerm_storage_share, azurerm_storage_container, azurerm_storage_blob
-      #      "Microsoft.Storage/storageAccounts/listKeys/action",
 
+      //azurerm_api_management_api
+      "Microsoft.ApiManagement/service/apiVersionSets/read",
     ]
     not_actions = []
   }

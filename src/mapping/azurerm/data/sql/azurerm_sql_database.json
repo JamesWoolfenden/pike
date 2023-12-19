@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "Microsoft.Sql/servers/databases/read"
+    ]
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "geo:AssociateTrackerConsumer",
+      "geo:DisassociateTrackerConsumer"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

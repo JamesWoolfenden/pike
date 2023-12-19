@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "vpc-lattice:DeregisterTargets",
+      "vpc-lattice:RegisterTargets"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "vpc-lattice:DeregisterTargets"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

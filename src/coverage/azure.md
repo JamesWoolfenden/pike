@@ -1,7 +1,7 @@
 # todo azure
 
-Resource percentage coverage   5.16
-Datasource percentage coverage 12.79
+Resource percentage coverage   5.14
+Datasource percentage coverage 40.78
 
 ./resource.ps1 azurerm_aadb2c_directory
 ./resource.ps1 azurerm_active_directory_domain_service
@@ -84,6 +84,7 @@ Datasource percentage coverage 12.79
 ./resource.ps1 azurerm_application_insights_workbook_template
 ./resource.ps1 azurerm_application_load_balancer
 ./resource.ps1 azurerm_application_load_balancer_frontend
+./resource.ps1 azurerm_application_load_balancer_subnet_association
 ./resource.ps1 azurerm_application_security_group
 ./resource.ps1 azurerm_arc_kubernetes_cluster
 ./resource.ps1 azurerm_arc_kubernetes_cluster_extension
@@ -316,6 +317,7 @@ Datasource percentage coverage 12.79
 ./resource.ps1 azurerm_dns_srv_record
 ./resource.ps1 azurerm_dns_txt_record
 ./resource.ps1 azurerm_elastic_cloud_elasticsearch
+./resource.ps1 azurerm_elastic_san
 ./resource.ps1 azurerm_email_communication_service
 ./resource.ps1 azurerm_eventgrid_domain
 ./resource.ps1 azurerm_eventgrid_domain_topic
@@ -415,8 +417,10 @@ Datasource percentage coverage 12.79
 ./resource.ps1 azurerm_key_vault_certificate_contacts
 ./resource.ps1 azurerm_key_vault_certificate_issuer
 ./resource.ps1 azurerm_key_vault_managed_hardware_security_module
+./resource.ps1 azurerm_key_vault_managed_hardware_security_module_role_definition
 ./resource.ps1 azurerm_key_vault_managed_storage_account
 ./resource.ps1 azurerm_key_vault_managed_storage_account_sas_token_definition
+./resource.ps1 azurerm_key_vault_role_assignment
 ./resource.ps1 azurerm_key_vault_secret
 ./resource.ps1 azurerm_kubernetes_cluster
 ./resource.ps1 azurerm_kubernetes_cluster_extension
@@ -980,37 +984,7 @@ Datasource percentage coverage 12.79
 ./resource.ps1 azurerm_aadb2c_directory -type data
 ./resource.ps1 azurerm_active_directory_domain_service -type data
 ./resource.ps1 azurerm_advisor_recommendations -type data
-./resource.ps1 azurerm_api_management -type data
-./resource.ps1 azurerm_api_management_api -type data
-./resource.ps1 azurerm_api_management_api_version_set -type data
-./resource.ps1 azurerm_api_management_gateway -type data
-./resource.ps1 azurerm_api_management_gateway_host_name_configuration -type data
-./resource.ps1 azurerm_api_management_group -type data
-./resource.ps1 azurerm_api_management_product -type data
-./resource.ps1 azurerm_api_management_user -type data
-./resource.ps1 azurerm_app_configuration -type data
-./resource.ps1 azurerm_app_configuration_key -type data
-./resource.ps1 azurerm_app_configuration_keys -type data
-./resource.ps1 azurerm_application_gateway -type data
-./resource.ps1 azurerm_application_insights -type data
-./resource.ps1 azurerm_application_security_group -type data
-./resource.ps1 azurerm_arc_machine -type data
 ./resource.ps1 azurerm_attestation -type data
-./resource.ps1 azurerm_automation_account -type data
-./resource.ps1 azurerm_automation_variable_bool -type data
-./resource.ps1 azurerm_automation_variable_datetime -type data
-./resource.ps1 azurerm_automation_variable_int -type data
-./resource.ps1 azurerm_automation_variable_object -type data
-./resource.ps1 azurerm_automation_variable_string -type data
-./resource.ps1 azurerm_automation_variables -type data
-./resource.ps1 azurerm_availability_set -type data
-./resource.ps1 azurerm_backup_policy_file_share -type data
-./resource.ps1 azurerm_backup_policy_vm -type data
-./resource.ps1 azurerm_bastion_host -type data
-./resource.ps1 azurerm_batch_account -type data
-./resource.ps1 azurerm_batch_application -type data
-./resource.ps1 azurerm_batch_certificate -type data
-./resource.ps1 azurerm_batch_pool -type data
 ./resource.ps1 azurerm_billing_enrollment_account_scope -type data
 ./resource.ps1 azurerm_billing_mca_account_scope -type data
 ./resource.ps1 azurerm_billing_mpa_account_scope -type data
@@ -1102,6 +1076,7 @@ Datasource percentage coverage 12.79
 ./resource.ps1 azurerm_iothub_dps_shared_access_policy -type data
 ./resource.ps1 azurerm_iothub_shared_access_policy -type data
 ./resource.ps1 azurerm_ip_group -type data
+./resource.ps1 azurerm_key_vault_managed_hardware_security_module_role_definition -type data
 ./resource.ps1 azurerm_kubernetes_cluster -type data
 ./resource.ps1 azurerm_kubernetes_cluster_node_pool -type data
 ./resource.ps1 azurerm_kubernetes_node_pool_snapshot -type data
@@ -1115,6 +1090,7 @@ Datasource percentage coverage 12.79
 ./resource.ps1 azurerm_linux_function_app -type data
 ./resource.ps1 azurerm_linux_web_app -type data
 ./resource.ps1 azurerm_local_network_gateway -type data
+./resource.ps1 azurerm_location -type data
 ./resource.ps1 azurerm_log_analytics_workspace -type data
 ./resource.ps1 azurerm_logic_app_integration_account -type data
 ./resource.ps1 azurerm_logic_app_standard -type data
@@ -1186,60 +1162,5 @@ Datasource percentage coverage 12.79
 ./resource.ps1 azurerm_proximity_placement_group -type data
 ./resource.ps1 azurerm_public_maintenance_configurations -type data
 ./resource.ps1 azurerm_recovery_services_vault -type data
-./resource.ps1 azurerm_redis_cache -type data
-./resource.ps1 azurerm_redis_enterprise_database -type data
-./resource.ps1 azurerm_resource_group_template_deployment -type data
-./resource.ps1 azurerm_resources -type data
-./resource.ps1 azurerm_role_definition -type data
-./resource.ps1 azurerm_route_filter -type data
-./resource.ps1 azurerm_route_table -type data
-./resource.ps1 azurerm_sentinel_alert_rule -type data
 ./resource.ps1 azurerm_sentinel_alert_rule_anomaly -type data
-./resource.ps1 azurerm_sentinel_alert_rule_template -type data
-./resource.ps1 azurerm_service_plan -type data
-./resource.ps1 azurerm_servicebus_namespace -type data
-./resource.ps1 azurerm_servicebus_namespace_authorization_rule -type data
-./resource.ps1 azurerm_servicebus_queue -type data
-./resource.ps1 azurerm_servicebus_queue_authorization_rule -type data
-./resource.ps1 azurerm_servicebus_subscription -type data
-./resource.ps1 azurerm_servicebus_topic -type data
 ./resource.ps1 azurerm_servicebus_topic_authorization_rule -type data
-./resource.ps1 azurerm_shared_image -type data
-./resource.ps1 azurerm_shared_image_gallery -type data
-./resource.ps1 azurerm_shared_image_version -type data
-./resource.ps1 azurerm_shared_image_versions -type data
-./resource.ps1 azurerm_signalr_service -type data
-./resource.ps1 azurerm_site_recovery_fabric -type data
-./resource.ps1 azurerm_site_recovery_protection_container -type data
-./resource.ps1 azurerm_site_recovery_replication_policy -type data
-./resource.ps1 azurerm_snapshot -type data
-./resource.ps1 azurerm_source_control_token -type data
-./resource.ps1 azurerm_spring_cloud_app -type data
-./resource.ps1 azurerm_spring_cloud_service -type data
-./resource.ps1 azurerm_sql_database -type data
-./resource.ps1 azurerm_sql_managed_instance -type data
-./resource.ps1 azurerm_sql_server -type data
-./resource.ps1 azurerm_ssh_public_key -type data
-./resource.ps1 azurerm_stream_analytics_job -type data
-./resource.ps1 azurerm_subscription_template_deployment -type data
-./resource.ps1 azurerm_subscriptions -type data
-./resource.ps1 azurerm_synapse_workspace -type data
-./resource.ps1 azurerm_template_spec_version -type data
-./resource.ps1 azurerm_tenant_template_deployment -type data
-./resource.ps1 azurerm_traffic_manager_geographical_location -type data
-./resource.ps1 azurerm_traffic_manager_profile -type data
-./resource.ps1 azurerm_user_assigned_identity -type data
-./resource.ps1 azurerm_virtual_desktop_host_pool -type data
-./resource.ps1 azurerm_virtual_hub -type data
-./resource.ps1 azurerm_virtual_hub_connection -type data
-./resource.ps1 azurerm_virtual_hub_route_table -type data
-./resource.ps1 azurerm_virtual_machine -type data
-./resource.ps1 azurerm_virtual_machine_scale_set -type data
-./resource.ps1 azurerm_virtual_network_gateway -type data
-./resource.ps1 azurerm_virtual_network_gateway_connection -type data
-./resource.ps1 azurerm_virtual_wan -type data
-./resource.ps1 azurerm_vmware_private_cloud -type data
-./resource.ps1 azurerm_vpn_gateway -type data
-./resource.ps1 azurerm_web_application_firewall_policy -type data
-./resource.ps1 azurerm_web_pubsub -type data
-./resource.ps1 azurerm_web_pubsub_private_link_resource -type data

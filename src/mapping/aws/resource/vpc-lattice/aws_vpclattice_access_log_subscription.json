@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "vpc-lattice:GetAccessLogSubscription",
+      "vpc-lattice:CreateAccessLogSubscription",
+      "vpc-lattice:DeleteAccessLogSubscription",
+      "vpc-lattice:UpdateAccessLogSubscription"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "vpc-lattice:DeleteAccessLogSubscription"
+    ],
+    "modify": [
+      "vpc-lattice:UpdateAccessLogSubscription"
+    ],
+    "plan": []
+  }
+]

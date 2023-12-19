@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "vpc-lattice:GetServiceNetworkVpcAssociation",
+      "vpc-lattice:CreateServiceNetworkVpcAssociation",
+      "vpc-lattice:DeleteServiceNetworkVpcAssociation",
+      "vpc-lattice:UpdateServiceNetworkVpcAssociation",
+      "ec2:DescribeSecurityGroups"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "vpc-lattice:DeleteServiceNetworkVpcAssociation"
+    ],
+    "modify": [
+      "vpc-lattice:UpdateServiceNetworkVpcAssociation"
+    ],
+    "plan": []
+  }
+]

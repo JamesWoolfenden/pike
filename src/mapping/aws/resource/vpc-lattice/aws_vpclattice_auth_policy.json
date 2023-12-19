@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "vpc-lattice:PutAuthPolicy",
+      "vpc-lattice:DeleteAuthPolicy",
+      "vpc-lattice:GetAuthPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "vpc-lattice:DeleteAuthPolicy"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

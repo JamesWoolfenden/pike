@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "access-analyzer:CreateAnalyzer",
+      "access-analyzer:DeleteAnalyzer",
+      "access-analyzer:GetAnalyzer",
+      "access-analyzer:ListAnalyzers",
+      "access-analyzer:UpdateAnalyzer"
+    ],
+    "attributes": {
+      "tags": [
+        "access-analyzer:TagResource",
+        "access-analyzer:UntagResource"
+      ]
+    },
+    "destroy": [
+      "access-analyzer:DeleteAnalyzer"
+    ],
+    "modify": [
+      "access-analyzer:UpdateAnalyzer"
+    ],
+    "plan": []
+  }
+]

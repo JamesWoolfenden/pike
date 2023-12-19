@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "vpc-lattice:GetTargetGroup",
+      "vpc-lattice:CreateTargetGroup",
+      "vpc-lattice:DeleteTargetGroup",
+      "vpc-lattice:UpdateTargetGroup",
+      "ec2:DescribeVpcs",
+      "vpc-lattice:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "vpc-lattice:UntagResource",
+        "vpc-lattice:TagResource"
+      ]
+    },
+    "destroy": [
+      "vpc-lattice:DeleteTargetGroup"
+    ],
+    "modify": [
+      "vpc-lattice:UpdateTargetGroup"
+    ],
+    "plan": []
+  }
+]

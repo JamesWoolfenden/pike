@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "geo:DescribeMap",
+      "geo:CreateMap",
+      "geo:DeleteMap",
+      "geo:UpdateMap"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "geo:DeleteMap"
+    ],
+    "modify": [
+      "geo:UpdateMap"
+    ],
+    "plan": []
+  }
+]

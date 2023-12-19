@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "vpc-lattice:GetResourcePolicy",
+      "vpc-lattice:DeleteResourcePolicy",
+      "vpc-lattice:PutResourcePolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "vpc-lattice:DeleteResourcePolicy"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

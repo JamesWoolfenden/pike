@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "geo:DescribeGeofenceCollection",
+      "geo:CreateGeofenceCollection",
+      "geo:DeleteGeofenceCollection",
+      "geo:UpdateGeofenceCollection"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "geo:DeleteGeofenceCollection"
+    ],
+    "modify": [
+      "geo:UpdateGeofenceCollection"
+    ],
+    "plan": []
+  }
+]

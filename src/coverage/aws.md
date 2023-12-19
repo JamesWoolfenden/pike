@@ -1,9 +1,8 @@
 # todo aws
 
-Resource percentage coverage   45.41
-Datasource percentage coverage 99.61
+Resource percentage coverage   46.34
+Datasource percentage coverage 99.22
 
-./resource.ps1 aws_accessanalyzer_analyzer
 ./resource.ps1 aws_accessanalyzer_archive_rule
 ./resource.ps1 aws_acmpca_permission
 ./resource.ps1 aws_acmpca_policy
@@ -86,7 +85,6 @@ Datasource percentage coverage 99.61
 ./resource.ps1 aws_cloudfront_realtime_log_config
 ./resource.ps1 aws_cloudhsm_v2_cluster
 ./resource.ps1 aws_cloudhsm_v2_hsm
-./resource.ps1 aws_codebuild_webhook
 ./resource.ps1 aws_codecatalyst_dev_environment
 ./resource.ps1 aws_codecatalyst_project
 ./resource.ps1 aws_codecatalyst_source_repository
@@ -258,8 +256,11 @@ Datasource percentage coverage 99.61
 ./resource.ps1 aws_evidently_segment
 ./resource.ps1 aws_finspace_kx_cluster
 ./resource.ps1 aws_finspace_kx_database
+./resource.ps1 aws_finspace_kx_dataview
 ./resource.ps1 aws_finspace_kx_environment
+./resource.ps1 aws_finspace_kx_scaling_group
 ./resource.ps1 aws_finspace_kx_user
+./resource.ps1 aws_finspace_kx_volume
 ./resource.ps1 aws_fis_experiment_template
 ./resource.ps1 aws_fms_admin_account
 ./resource.ps1 aws_fms_policy
@@ -379,7 +380,6 @@ Datasource percentage coverage 99.61
 ./resource.ps1 aws_lightsail_lb_certificate_attachment
 ./resource.ps1 aws_lightsail_lb_https_redirection_policy
 ./resource.ps1 aws_lightsail_lb_stickiness_policy
-./resource.ps1 aws_location_tracker_association
 ./resource.ps1 aws_macie2_account
 ./resource.ps1 aws_macie2_classification_export_configuration
 ./resource.ps1 aws_macie2_classification_job
@@ -652,6 +652,7 @@ Datasource percentage coverage 99.61
 ./resource.ps1 aws_ssoadmin_permission_set
 ./resource.ps1 aws_ssoadmin_permission_set_inline_policy
 ./resource.ps1 aws_ssoadmin_permissions_boundary_attachment
+./resource.ps1 aws_ssoadmin_trusted_token_issuer
 ./resource.ps1 aws_storagegateway_cache
 ./resource.ps1 aws_storagegateway_cached_iscsi_volume
 ./resource.ps1 aws_storagegateway_file_system_association
@@ -693,22 +694,13 @@ Datasource percentage coverage 99.61
 ./resource.ps1 aws_vpc_ipam_organization_admin_account
 ./resource.ps1 aws_vpc_ipv6_cidr_block_association
 ./resource.ps1 aws_vpc_network_performance_metric_subscription
-./resource.ps1 aws_vpclattice_access_log_subscription
-./resource.ps1 aws_vpclattice_auth_policy
-./resource.ps1 aws_vpclattice_listener
-./resource.ps1 aws_vpclattice_listener_rule
-./resource.ps1 aws_vpclattice_resource_policy
-./resource.ps1 aws_vpclattice_service
-./resource.ps1 aws_vpclattice_service_network
-./resource.ps1 aws_vpclattice_service_network_service_association
-./resource.ps1 aws_vpclattice_service_network_vpc_association
-./resource.ps1 aws_vpclattice_target_group
-./resource.ps1 aws_vpclattice_target_group_attachment
 ./resource.ps1 aws_vpn_connection_route
 ./resource.ps1 aws_wafregional_web_acl_association
 ./resource.ps1 aws_worklink_fleet
 ./resource.ps1 aws_worklink_website_certificate_authority_association
 ./resource.ps1 aws_workspaces_connection_alias
 ./resource.ps1 aws_workspaces_ip_group
+./resource.ps1 aws_polly_voices -type data
 ./resource.ps1 aws_s3_directory_buckets -type data
 ./resource.ps1 aws_ssoadmin_application_assignments -type data
+./resource.ps1 aws_ssoadmin_principal_application_assignments -type data

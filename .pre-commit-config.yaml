@@ -51,11 +51,6 @@ repos:
         args: [ "./..." ]
       - id: go-mod-tidy
       - id: go-generate
-  - repo: https://github.com/bridgecrewio/checkov
-    rev: 3.1.22
-    hooks:
-      - id: checkov
-        language_version: python3.11
   - repo: https://github.com/jameswoolfenden/ghat
     rev: v0.1.1
     hooks:

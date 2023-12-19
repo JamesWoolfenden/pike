@@ -11,7 +11,8 @@
     },
     "destroy": [
       "signer:RevokeSigningProfile",
-      "signer:CancelSigningProfile"],
+      "signer:CancelSigningProfile"
+    ],
     "modify": [],
     "plan": []
   }

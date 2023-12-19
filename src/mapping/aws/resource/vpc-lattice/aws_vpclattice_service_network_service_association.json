@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "vpc-lattice:GetServiceNetworkServiceAssociation",
+      "vpc-lattice:CreateServiceNetworkServiceAssociation",
+      "vpc-lattice:DeleteServiceNetworkServiceAssociation"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "vpc-lattice:DeleteServiceNetworkServiceAssociation"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

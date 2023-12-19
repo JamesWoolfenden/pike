@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "geo:DescribeTracker",
+      "geo:CreateTracker",
+      "geo:DeleteTracker",
+      "geo:UpdateTracker"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "geo:DeleteTracker"
+    ],
+    "modify": [
+      "geo:UpdateTracker"
+    ],
+    "plan": []
+  }
+]

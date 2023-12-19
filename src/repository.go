@@ -11,7 +11,7 @@ import (
 func Repository(repository, destination, directory, output string, init, write, enableResources bool) error {
 	if _, err := os.Stat(destination); !os.IsNotExist(err) {
 		log.Info().Msgf("%s was not empty, removing", destination)
-		os.RemoveAll(destination)
+		_ = os.RemoveAll(destination)
 	}
 
 	// Clone the given repository to the given directory

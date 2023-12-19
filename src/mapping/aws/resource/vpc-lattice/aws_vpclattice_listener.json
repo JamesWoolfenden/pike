@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "vpc-lattice:GetListener",
+      "vpc-lattice:CreateListener",
+      "vpc-lattice:DeleteListener",
+      "vpc-lattice:UpdateListener"
+    ],
+    "attributes": {
+      "tags": [
+        "vpc-lattice:UntagResource",
+        "vpc-lattice:TagResource"
+      ]
+    },
+    "destroy": [
+      "vpc-lattice:DeleteListener"
+    ],
+    "modify": [
+      "vpc-lattice:UpdateListener"
+    ],
+    "plan": []
+  }
+]

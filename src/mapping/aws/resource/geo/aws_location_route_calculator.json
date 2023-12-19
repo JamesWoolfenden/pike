@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "geo:DescribeRouteCalculator",
+      "geo:CreateRouteCalculator",
+      "geo:DeleteRouteCalculator",
+      "geo:UpdateRouteCalculator"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "geo:DeleteRouteCalculator"
+    ],
+    "modify": [
+      "geo:UpdateRouteCalculator"
+    ],
+    "plan": []
+  }
+]

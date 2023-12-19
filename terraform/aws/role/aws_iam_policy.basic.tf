@@ -7,85 +7,120 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "kms:DescribeKey",
-          "kms:GetKeyPolicy",
-          "kms:GetKeyRotationStatus",
+          "s3:CreateBucket",
+          "s3:DeleteBucket",
+          "s3:GetAccelerateConfiguration",
+          "s3:GetBucketAcl",
+          "s3:GetBucketCORS",
+          "s3:GetBucketLogging",
+          "s3:GetBucketObjectLockConfiguration",
+          "s3:GetBucketPolicy",
+          "s3:GetBucketRequestPayment",
+          "s3:GetBucketTagging",
+          "s3:GetBucketVersioning",
+          "s3:GetBucketWebsite",
+          "s3:GetEncryptionConfiguration",
+          "s3:GetLifecycleConfiguration",
+          "s3:GetObject",
+          "s3:GetObjectAcl",
+          "s3:GetReplicationConfiguration",
+          "s3:ListBucket",
+          "elasticloadbalancing:AddTags",
+          "elasticloadbalancing:AttachLoadBalancerToSubnets",
+          "elasticloadbalancing:CreateLoadBalancer",
+          "elasticloadbalancing:CreateLoadBalancerListeners",
+          "elasticloadbalancing:DeleteLoadBalancer",
+          "elasticloadbalancing:DescribeLoadBalancerAttributes",
+          "elasticloadbalancing:DescribeLoadBalancers",
+          "elasticloadbalancing:DescribeTags",
+          "elasticloadbalancing:ModifyLoadBalancerAttributes",
+          "elasticloadbalancing:RemoveTags",
+          "elasticloadbalancing:SetSecurityGroups",
 
-          //aws_ec2_availability_zone_group
-          "ec2:DescribeAvailabilityZones",
+          //aws_vpclattice_access_log_subscription
+          "vpc-lattice:GetAccessLogSubscription",
+          "vpc-lattice:CreateAccessLogSubscription",
+          "vpc-lattice:DeleteAccessLogSubscription",
+          "vpc-lattice:UpdateAccessLogSubscription",
 
-          //aws_eip_association
-          "ec2:AssociateAddress",
-          "ec2:DisassociateAddress",
+          //aws_vpclattice_auth_policy
+          "vpc-lattice:PutAuthPolicy",
+          "vpc-lattice:DeleteAuthPolicy",
+          "vpc-lattice:GetAuthPolicy",
 
-          //aws_elastic_beanstalk_application
-          "elasticbeanstalk:CreateApplication",
+          //aws_vpclattice_listener
+          "vpc-lattice:GetListener",
+          "vpc-lattice:CreateListener",
+          "vpc-lattice:DeleteListener",
+          "vpc-lattice:UpdateListener",
+          "vpc-lattice:UntagResource",
+          "vpc-lattice:TagResource",
 
-          //aws_iam_security_token_service_preferences
-          "iam:SetSecurityTokenServicePreferences",
-          "iam:GetAccountSummary",
+          //aws_vpclattice_listener_rule
+          "vpc-lattice:GetRule",
+          "vpc-lattice:CreateRule",
+          "vpc-lattice:DeleteRule",
+          "vpc-lattice:UpdateRule",
 
-          //aws_iam_signing_certificate
-          "iam:UploadSigningCertificate",
-          "iam:DeleteSigningCertificate",
-          "iam:UpdateSigningCertificate",
-          "iam:ListSigningCertificates",
 
-          //aws_iam_virtual_mfa_device
-          "iam:CreateVirtualMFADevice",
-          "iam:ListVirtualMFADevices",
-          "iam:ListMFADeviceTags",
-          "iam:DeleteVirtualMFADevice",
+          //aws_vpclattice_resource_policy
+          "vpc-lattice:GetResourcePolicy",
+          "vpc-lattice:DeleteResourcePolicy",
+          "vpc-lattice:PutResourcePolicy",
 
-          //aws_imagebuilder_component
-          "imagebuilder:CreateComponent",
-          "imagebuilder:TagResource",
-          "imagebuilder:UnagResource",
-          "imagebuilder:GetComponent",
-          "imagebuilder:DeleteComponent",
-
-          //aws_inspector2_delegated_admin_account
-          "inspector2:EnableDelegatedAdminAccount",
-          "organizations:ListDelegatedAdministrators",
-          "organizations:EnableAwsServiceAccess",
-          "inspector2:ListDelegatedAdminAccounts",
-          "inspector2:DisableDelegatedAdminAccount",
-
-          //aws_inspector2_enabler
-          "inspector2:Enable",
+          //aws_vpclattice_service
+          "vpc-lattice:GetService",
+          "vpc-lattice:CreateService",
+          "vpc-lattice:DeleteService",
+          "vpc-lattice:UpdateService",
           "iam:CreateServiceLinkedRole",
-          "inspector2:BatchGetAccountStatus",
-          "inspector2:Disable",
+          "vpc-lattice:ListTagsForResource",
+          "vpc-lattice:UntagResource",
+          "vpc-lattice:TagResource",
 
-          //aws_inspector2_member_association
-          "inspector2:AssociateMember",
-          "inspector2:DisassociateMember",
-
-          //aws_inspector2_organization_configuration
-          "inspector2:UpdateOrganizationConfiguration",
-          "inspector2:DescribeOrganizationConfiguration",
-
-          //aws_internetmonitor_monitor
-          "internetmonitor:TagResource",
-          "internetmonitor:CreateMonitor",
-          "internetmonitor:GetMonitor",
-          "internetmonitor:UpdateMonitor",
-          "internetmonitor:DeleteMonitor",
-
-          //aws_kms_ciphertext
-          "kms:Encrypt",
-
-          //aws_kms_external_key
-          "kms:CreateKey",
+          //aws_vpclattice_service_network
+          "vpc-lattice:GetServiceNetwork",
+          "vpc-lattice:CreateServiceNetwork",
+          "vpc-lattice:DeleteServiceNetwork",
+          "vpc-lattice:UpdateServiceNetwork",
           "iam:CreateServiceLinkedRole",
-          "kms:GetParametersForImport",
-          "kms:GetKeyPolicy",
-          "kms:ListResourceTags",
-          "kms:ScheduleKeyDeletion",
-          "kms:ImportKeyMaterial",
+          "vpc-lattice:ListTagsForResource",
+          "vpc-lattice:UntagResource",
+          "vpc-lattice:TagResource",
 
-          //aws_kms_replica_key
-          "kms:ReplicateKey"
+          //aws_vpclattice_service_network_service_association
+          "vpc-lattice:GetServiceNetworkServiceAssociation",
+          "vpc-lattice:CreateServiceNetworkServiceAssociation",
+          "vpc-lattice:DeleteServiceNetworkServiceAssociation",
+
+          //aws_vpclattice_service_network_vpc_association
+          "vpc-lattice:GetServiceNetworkVpcAssociation",
+          "vpc-lattice:CreateServiceNetworkVpcAssociation",
+          "vpc-lattice:DeleteServiceNetworkVpcAssociation",
+          "vpc-lattice:UpdateServiceNetworkVpcAssociation",
+          "ec2:DescribeSecurityGroups",
+
+          //aws_vpclattice_target_group
+          "vpc-lattice:GetTargetGroup",
+          "vpc-lattice:CreateTargetGroup",
+          "vpc-lattice:DeleteTargetGroup",
+          "vpc-lattice:UpdateTargetGroup",
+          "ec2:DescribeVpcs",
+          "vpc-lattice:ListTagsForResource",
+          "vpc-lattice:UntagResource",
+          "vpc-lattice:TagResource",
+
+
+          //aws_vpclattice_target_group_attachment
+
+          //aws_codebuild_webhook
+          "codebuild:CreateWebhook",
+          "codebuild:DeleteWebhook",
+          "codebuild:UpdateWebhook",
+
+          //aws_location_tracker_association
+          "location:AssociateTrackerConsumer",
+
         ],
         "Resource" : "*",
       }

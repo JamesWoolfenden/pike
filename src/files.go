@@ -1444,19 +1444,19 @@ var awsVpcSecurityGroupEgressRule []byte
 //go:embed mapping/aws/resource/ec2/aws_vpc_security_group_ingress_rule.json
 var awsVpcSecurityGroupIngressRule []byte
 
-//go:embed mapping/aws/resource/location/aws_location_geofence_collection.json
+//go:embed mapping/aws/resource/geo/aws_location_geofence_collection.json
 var awsLocationGeofenceCollection []byte
 
-//go:embed mapping/aws/resource/location/aws_location_map.json
+//go:embed mapping/aws/resource/geo/aws_location_map.json
 var awsLocationMap []byte
 
-//go:embed mapping/aws/resource/location/aws_location_place_index.json
+//go:embed mapping/aws/resource/geo/aws_location_place_index.json
 var awsLocationPlaceIndex []byte
 
-//go:embed mapping/aws/resource/location/aws_location_route_calculator.json
+//go:embed mapping/aws/resource/geo/aws_location_route_calculator.json
 var awsLocationRouteCalculator []byte
 
-//go:embed mapping/aws/resource/location/aws_location_tracker.json
+//go:embed mapping/aws/resource/geo/aws_location_tracker.json
 var awsLocationTracker []byte
 
 //go:embed mapping/aws/resource/elasticloadbalancing/aws_load_balancer_backend_server_policy.json
@@ -1623,3 +1623,45 @@ var awsElasticBeanstalkApplicationVersion []byte
 
 //go:embed mapping/aws/resource/elasticbeanstalk/aws_elastic_beanstalk_configuration_template.json
 var awsElasticBeanstalkConfigurationTemplate []byte
+
+//go:embed mapping/aws/resource/codebuild/aws_codebuild_webhook.json
+var awsCodebuildWebhook []byte
+
+//go:embed mapping/aws/resource/access-analyzer/aws_accessanalyzer_analyzer.json
+var awsAccessAnalyzer []byte
+
+//go:embed mapping/aws/resource/geo/aws_location_tracker_association.json
+var awsLocationTrackerAssociation []byte
+
+//go:embed mapping/aws/resource/vpc-lattice/aws_vpclattice_access_log_subscription.json
+var awsVpclatticeAccesLogSubscription []byte
+
+//go:embed mapping/aws/resource/vpc-lattice/aws_vpclattice_auth_policy.json
+var awsVpclatticeAuthPolicy []byte
+
+//go:embed mapping/aws/resource/vpc-lattice/aws_vpclattice_listener.json
+var awsVpclatticeListener []byte
+
+//go:embed mapping/aws/resource/vpc-lattice/aws_vpclattice_listener_rule.json
+var awsVpclatticeListernerRule []byte
+
+//go:embed mapping/aws/resource/vpc-lattice/aws_vpclattice_resource_policy.json
+var awsVpclatticeResourcePolicy []byte
+
+//go:embed mapping/aws/resource/vpc-lattice/aws_vpclattice_service.json
+var awsVpclatticeService []byte
+
+//go:embed mapping/aws/resource/vpc-lattice/aws_vpclattice_service_network.json
+var awsVpclatticeServiceNetwork []byte
+
+//go:embed mapping/aws/resource/vpc-lattice/aws_vpclattice_service_network_service_association.json
+var awsVpclatticeServiceNetworkServiceAssocation []byte
+
+//go:embed mapping/aws/resource/vpc-lattice/aws_vpclattice_service_network_vpc_association.json
+var awsVpclatticeServiceNetworkVpcAssociation []byte
+
+//go:embed mapping/aws/resource/vpc-lattice/aws_vpclattice_target_group.json
+var awsVpclatticeTargetGroup []byte
+
+//go:embed mapping/aws/resource/vpc-lattice/aws_vpclattice_target_group_attachment.json
+var awsVpclatticeTargetGroupAssociation []byte

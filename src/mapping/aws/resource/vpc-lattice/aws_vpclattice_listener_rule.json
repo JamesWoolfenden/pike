@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "vpc-lattice:GetRule",
+      "vpc-lattice:CreateRule",
+      "vpc-lattice:DeleteRule",
+      "vpc-lattice:UpdateRule"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "vpc-lattice:DeleteRule"
+    ],
+    "modify": [
+      "vpc-lattice:UpdateRule"
+    ],
+    "plan": []
+  }
+]

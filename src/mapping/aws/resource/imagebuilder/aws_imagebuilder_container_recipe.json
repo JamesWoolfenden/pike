@@ -13,7 +13,8 @@
     },
     "destroy": [
       "imagebuilder:DeleteContainerRecipe",
-      "imagebuilder:DeleteImageRecipe"],
+      "imagebuilder:DeleteImageRecipe"
+    ],
     "modify": [],
     "plan": []
   }

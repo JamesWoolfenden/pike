@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "vpc-lattice:GetServiceNetwork",
+      "vpc-lattice:CreateServiceNetwork",
+      "vpc-lattice:DeleteServiceNetwork",
+      "vpc-lattice:UpdateServiceNetwork",
+      "iam:CreateServiceLinkedRole",
+      "vpc-lattice:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "vpc-lattice:UntagResource",
+        "vpc-lattice:TagResource"
+      ]
+    },
+    "destroy": [
+      "vpc-lattice:DeleteServiceNetwork"
+    ],
+    "modify": [
+      "vpc-lattice:UpdateServiceNetwork"
+    ],
+    "plan": []
+  }
+]

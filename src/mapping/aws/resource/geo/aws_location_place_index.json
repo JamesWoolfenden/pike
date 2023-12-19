@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "geo:DescribePlaceIndex",
+      "geo:CreatePlaceIndex",
+      "geo:DeletePlaceIndex",
+      "geo:UpdatePlaceIndex"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "geo:DeletePlaceIndex"
+    ],
+    "modify": [
+      "geo:UpdatePlaceIndex"
+    ],
+    "plan": []
+  }
+]
