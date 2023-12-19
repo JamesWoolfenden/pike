@@ -16,7 +16,7 @@ require (
 	github.com/hashicorp/terraform-exec v0.19.0
 	github.com/rs/zerolog v1.31.0
 	github.com/urfave/cli/v2 v2.26.0
-	golang.org/x/crypto v0.16.0
+	golang.org/x/crypto v0.17.0
 	golang.org/x/exp v0.0.0-20231127185646-65229373498e
 	golang.org/x/net v0.19.0
 	golang.org/x/oauth2 v0.15.0
