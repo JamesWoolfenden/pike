@@ -484,6 +484,7 @@
         "azurerm_log_analytics_solution",
         "azurerm_log_analytics_storage_insights",
         "azurerm_log_analytics_workspace",
+        "azurerm_log_analytics_workspace_table",
         "azurerm_logic_app_action_custom",
         "azurerm_logic_app_action_http",
         "azurerm_logic_app_integration_account",
