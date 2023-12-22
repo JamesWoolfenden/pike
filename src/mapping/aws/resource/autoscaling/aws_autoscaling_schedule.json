@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "autoscaling:PutScheduledUpdateGroupAction",
+      "autoscaling:DescribeScheduledActions",
+      "autoscaling:DeleteScheduledAction"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "autoscaling:DeleteScheduledAction"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

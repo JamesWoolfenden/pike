@@ -7,120 +7,79 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "s3:CreateBucket",
-          "s3:DeleteBucket",
-          "s3:GetAccelerateConfiguration",
-          "s3:GetBucketAcl",
-          "s3:GetBucketCORS",
-          "s3:GetBucketLogging",
-          "s3:GetBucketObjectLockConfiguration",
-          "s3:GetBucketPolicy",
-          "s3:GetBucketRequestPayment",
-          "s3:GetBucketTagging",
-          "s3:GetBucketVersioning",
-          "s3:GetBucketWebsite",
-          "s3:GetEncryptionConfiguration",
-          "s3:GetLifecycleConfiguration",
-          "s3:GetObject",
-          "s3:GetObjectAcl",
-          "s3:GetReplicationConfiguration",
-          "s3:ListBucket",
+          "autoscaling:CreateAutoScalingGroup",
+          "autoscaling:CreateLaunchConfiguration",
+          "autoscaling:DeleteAutoScalingGroup",
+          "autoscaling:DeleteLaunchConfiguration",
+          "autoscaling:DescribeAutoScalingGroups",
+          "autoscaling:DescribeLaunchConfigurations",
+          "autoscaling:DescribeScalingActivities",
+          "autoscaling:UpdateAutoScalingGroup",
+          "ec2:CreateSecurityGroup",
+          "ec2:DeleteNetworkInterface",
+          "ec2:DescribeImages",
+          "ec2:DescribeInstanceAttribute",
+          "ec2:DescribeInstanceCreditSpecifications",
+          "ec2:DescribeInstanceTypes",
+          "ec2:DescribeInstances",
+          "ec2:DescribeNetworkInterfaces",
+          "ec2:DescribeSecurityGroups",
+          "ec2:DescribeTags",
+          "ec2:DescribeVolumes",
+          "ec2:DetachNetworkInterface",
+          "ec2:ModifyInstanceAttribute",
+          "ec2:RunInstances",
+          "ec2:StartInstances",
+          "ec2:StopInstances",
+          "ec2:TerminateInstances",
           "elasticloadbalancing:AddTags",
           "elasticloadbalancing:AttachLoadBalancerToSubnets",
           "elasticloadbalancing:CreateLoadBalancer",
           "elasticloadbalancing:CreateLoadBalancerListeners",
+          "elasticloadbalancing:CreateTargetGroup",
           "elasticloadbalancing:DeleteLoadBalancer",
+          "elasticloadbalancing:DeleteTargetGroup",
           "elasticloadbalancing:DescribeLoadBalancerAttributes",
           "elasticloadbalancing:DescribeLoadBalancers",
           "elasticloadbalancing:DescribeTags",
+          "elasticloadbalancing:DescribeTargetGroupAttributes",
+          "elasticloadbalancing:DescribeTargetGroups",
           "elasticloadbalancing:ModifyLoadBalancerAttributes",
+          "elasticloadbalancing:ModifyTargetGroupAttributes",
           "elasticloadbalancing:RemoveTags",
-          "elasticloadbalancing:SetSecurityGroups",
-
-          //aws_vpclattice_access_log_subscription
-          "vpc-lattice:GetAccessLogSubscription",
-          "vpc-lattice:CreateAccessLogSubscription",
-          "vpc-lattice:DeleteAccessLogSubscription",
-          "vpc-lattice:UpdateAccessLogSubscription",
-
-          //aws_vpclattice_auth_policy
-          "vpc-lattice:PutAuthPolicy",
-          "vpc-lattice:DeleteAuthPolicy",
-          "vpc-lattice:GetAuthPolicy",
-
-          //aws_vpclattice_listener
-          "vpc-lattice:GetListener",
-          "vpc-lattice:CreateListener",
-          "vpc-lattice:DeleteListener",
-          "vpc-lattice:UpdateListener",
-          "vpc-lattice:UntagResource",
-          "vpc-lattice:TagResource",
-
-          //aws_vpclattice_listener_rule
-          "vpc-lattice:GetRule",
-          "vpc-lattice:CreateRule",
-          "vpc-lattice:DeleteRule",
-          "vpc-lattice:UpdateRule",
 
 
-          //aws_vpclattice_resource_policy
-          "vpc-lattice:GetResourcePolicy",
-          "vpc-lattice:DeleteResourcePolicy",
-          "vpc-lattice:PutResourcePolicy",
 
-          //aws_vpclattice_service
-          "vpc-lattice:GetService",
-          "vpc-lattice:CreateService",
-          "vpc-lattice:DeleteService",
-          "vpc-lattice:UpdateService",
-          "iam:CreateServiceLinkedRole",
-          "vpc-lattice:ListTagsForResource",
-          "vpc-lattice:UntagResource",
-          "vpc-lattice:TagResource",
+          //aws_autoscalingplans_scaling_plan
+          "autoscaling-plans:CreateScalingPlan",
+          "autoscaling-plans:DeleteScalingPlan",
+          "autoscaling-plans:UpdateScalingPlan",
+          "autoscaling-plans:DescribeScalingPlans",
+          "cloudwatch:PutMetricAlarm",
+          "cloudwatch:DeleteAlarms",
+          "autoscaling:PutScalingPolicy",
+          "autoscaling:DescribePolicies",
+          "cloudwatch:DescribeAlarms",
+          "autoscaling:DeletePolicy",
 
-          //aws_vpclattice_service_network
-          "vpc-lattice:GetServiceNetwork",
-          "vpc-lattice:CreateServiceNetwork",
-          "vpc-lattice:DeleteServiceNetwork",
-          "vpc-lattice:UpdateServiceNetwork",
-          "iam:CreateServiceLinkedRole",
-          "vpc-lattice:ListTagsForResource",
-          "vpc-lattice:UntagResource",
-          "vpc-lattice:TagResource",
+          //aws_autoscaling_traffic_source_attachment
+          "autoscaling:DetachTrafficSources",
+          "autoscaling:AttachTrafficSources",
+          "autoscaling:DescribeTrafficSources",
 
-          //aws_vpclattice_service_network_service_association
-          "vpc-lattice:GetServiceNetworkServiceAssociation",
-          "vpc-lattice:CreateServiceNetworkServiceAssociation",
-          "vpc-lattice:DeleteServiceNetworkServiceAssociation",
+          //aws_autoscaling_schedule
+          "autoscaling:PutScheduledUpdateGroupAction",
+          "autoscaling:DescribeScheduledActions",
+          "autoscaling:DeleteScheduledAction",
 
-          //aws_vpclattice_service_network_vpc_association
-          "vpc-lattice:GetServiceNetworkVpcAssociation",
-          "vpc-lattice:CreateServiceNetworkVpcAssociation",
-          "vpc-lattice:DeleteServiceNetworkVpcAssociation",
-          "vpc-lattice:UpdateServiceNetworkVpcAssociation",
-          "ec2:DescribeSecurityGroups",
+          //aws_autoscaling_group_tag
+          "autoscaling:CreateOrUpdateTags",
+          "autoscaling:DescribeTags",
+          "autoscaling:DeleteTags",
 
-          //aws_vpclattice_target_group
-          "vpc-lattice:GetTargetGroup",
-          "vpc-lattice:CreateTargetGroup",
-          "vpc-lattice:DeleteTargetGroup",
-          "vpc-lattice:UpdateTargetGroup",
-          "ec2:DescribeVpcs",
-          "vpc-lattice:ListTagsForResource",
-          "vpc-lattice:UntagResource",
-          "vpc-lattice:TagResource",
-
-
-          //aws_vpclattice_target_group_attachment
-
-          //aws_codebuild_webhook
-          "codebuild:CreateWebhook",
-          "codebuild:DeleteWebhook",
-          "codebuild:UpdateWebhook",
-
-          //aws_location_tracker_association
-          "location:AssociateTrackerConsumer",
-
+          //aws_elb_attachment
+          "elasticloadbalancing:RegisterInstancesWithLoadBalancer",
+          "elasticloadbalancing:DeregisterInstancesFromLoadBalancer"
         ],
         "Resource" : "*",
       }

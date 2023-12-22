@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "elasticloadbalancing:RegisterInstancesWithLoadBalancer",
+      "elasticloadbalancing:DeregisterInstancesFromLoadBalancer"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "elasticloadbalancing:DeregisterInstancesFromLoadBalancer"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

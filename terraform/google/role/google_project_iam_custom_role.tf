@@ -8,15 +8,6 @@ resource "google_project_iam_custom_role" "pike" {
     "composer.environments.get",
     "composer.imageversions.list",
 
-    //google_vmwareengine_network_policy
-    "vmwareengine.networkPolicies.get",
-
-    //google_vmwareengine_network_peering
-    "vmwareengine.networkPeerings.get",
-
-    //google_vertex_ai_endpoint_iam_policy
-    "aiplatform.endpoints.getIamPolicy",
-
     //
     "cloudsql.instances.addServerCa",
     "cloudsql.instances.connect",

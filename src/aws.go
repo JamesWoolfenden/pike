@@ -671,6 +671,11 @@ func AwsLookup(name string) interface{} {
 		"aws_vpclattice_service_network_vpc_association":       awsVpclatticeServiceNetworkVpcAssociation,
 		"aws_vpclattice_target_group":                          awsVpclatticeTargetGroup,
 		"aws_vpclattice_target_group_attachment":               awsVpclatticeTargetGroupAssociation,
+		"aws_autoscaling_group_tag":                            awsAutoscalingGroupTag,
+		"aws_autoscaling_schedule":                             awsAutoscalingSchedule,
+		"aws_autoscaling_traffic_source_attachment":            awsAutoscalingTrafficSourceAttachment,
+		"aws_autoscalingplans_scaling_plan":                    awsAutoscalingplansScalingPlan,
+		"aws_elb_attachment":                                   awsElbAttachment,
 	}
 
 	return TFLookup[name]

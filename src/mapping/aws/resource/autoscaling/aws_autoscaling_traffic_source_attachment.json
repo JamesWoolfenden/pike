@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "autoscaling:DetachTrafficSources",
+      "autoscaling:AttachTrafficSources",
+      "autoscaling:DescribeTrafficSources"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "autoscaling:DetachTrafficSources"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

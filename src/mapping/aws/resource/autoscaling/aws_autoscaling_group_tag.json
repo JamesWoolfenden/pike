@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "autoscaling:CreateOrUpdateTags",
+      "autoscaling:DescribeTags",
+      "autoscaling:DeleteTags"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -507,3 +507,12 @@ var dataGoogleDataprocMetaStoreFederationIamPolicy []byte
 
 //go:embed mapping/google/data/metastore/google_dataproc_metastore_service.json
 var dataGoogleDataprocMetastoreService []byte
+
+//go:embed mapping/google/data/vmwareengine/google_vmwareengine_network_policy.json
+var dataGoogleVmwareengineNetworkPolicy []byte
+
+//go:embed mapping/google/data/vmwareengine/google_vmwareengine_network_policy.json
+var dataGoogleVmwareengineNetworkPeering []byte
+
+//go:embed mapping/google/data/aiplatform/google_vertex_ai_endpoint_iam_policy.json
+var dataGoogleVertexAiEndpointIamPolicy []byte

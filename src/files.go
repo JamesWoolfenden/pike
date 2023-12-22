@@ -1665,3 +1665,18 @@ var awsVpclatticeTargetGroup []byte
 
 //go:embed mapping/aws/resource/vpc-lattice/aws_vpclattice_target_group_attachment.json
 var awsVpclatticeTargetGroupAssociation []byte
+
+//go:embed mapping/aws/resource/autoscaling/aws_autoscaling_group_tag.json
+var awsAutoscalingGroupTag []byte
+
+//go:embed mapping/aws/resource/autoscaling/aws_autoscaling_schedule.json
+var awsAutoscalingSchedule []byte
+
+//go:embed mapping/aws/resource/autoscaling/aws_autoscaling_traffic_source_attachment.json
+var awsAutoscalingTrafficSourceAttachment []byte
+
+//go:embed mapping/aws/resource/autoscaling-plans/aws_autoscalingplans_scaling_plan.json
+var awsAutoscalingplansScalingPlan []byte
+
+//go:embed mapping/aws/resource/elasticloadbalancing/aws_elb_attachment.json
+var awsElbAttachment []byte

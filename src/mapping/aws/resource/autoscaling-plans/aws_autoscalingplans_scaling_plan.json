@@ -1,0 +1,28 @@
+[
+  {
+    "apply": [
+      "autoscaling-plans:CreateScalingPlan",
+      "autoscaling-plans:DeleteScalingPlan",
+      "autoscaling-plans:UpdateScalingPlan",
+      "autoscaling-plans:DescribeScalingPlans",
+      "cloudwatch:PutMetricAlarm",
+      "cloudwatch:DeleteAlarms",
+      "autoscaling:PutScalingPolicy",
+      "autoscaling:DescribePolicies",
+      "cloudwatch:DescribeAlarms",
+      "autoscaling:DeletePolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "autoscaling-plans:DeleteScalingPlan",
+      "autoscaling:DeletePolicy",
+      "cloudwatch:DeleteAlarms"
+    ],
+    "modify": [
+      "autoscaling-plans:UpdateScalingPlan"
+    ],
+    "plan": []
+  }
+]

@@ -1,6 +1,6 @@
 # todo aws
 
-Resource percentage coverage   46.34
+Resource percentage coverage   46.73
 Datasource percentage coverage 99.22
 
 ./resource.ps1 aws_accessanalyzer_archive_rule
@@ -61,10 +61,6 @@ Datasource percentage coverage 99.22
 ./resource.ps1 aws_auditmanager_framework
 ./resource.ps1 aws_auditmanager_framework_share
 ./resource.ps1 aws_auditmanager_organization_admin_account_registration
-./resource.ps1 aws_autoscaling_group_tag
-./resource.ps1 aws_autoscaling_schedule
-./resource.ps1 aws_autoscaling_traffic_source_attachment
-./resource.ps1 aws_autoscalingplans_scaling_plan
 ./resource.ps1 aws_bedrock_model_invocation_logging_configuration
 ./resource.ps1 aws_chime_voice_connector
 ./resource.ps1 aws_chime_voice_connector_group
@@ -241,7 +237,6 @@ Datasource percentage coverage 99.22
 ./resource.ps1 aws_elasticsearch_vpc_endpoint
 ./resource.ps1 aws_elastictranscoder_pipeline
 ./resource.ps1 aws_elastictranscoder_preset
-./resource.ps1 aws_elb_attachment
 ./resource.ps1 aws_emr_block_public_access_configuration
 ./resource.ps1 aws_emr_instance_fleet
 ./resource.ps1 aws_emr_instance_group

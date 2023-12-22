@@ -242,6 +242,9 @@ func GCPDataLookup(result string) interface{} {
 		"google_logging_project_cmek_settings":                   dataGoogleLoggingProjectCmekSettings,
 		"google_monitoring_app_engine_service":                   dataGoogleMonitoringAppEngineService,
 		"google_monitoring_cluster_istio_service":                dataGoogleMonitoringClusterIstioService,
+		"google_vmwareengine_network_policy":                     dataGoogleVmwareengineNetworkPolicy,
+		"google_vmwareengine_network_peering":                    dataGoogleVmwareengineNetworkPeering,
+		"google_vertex_ai_endpoint_iam_policy":                   dataGoogleVertexAiEndpointIamPolicy,
 	}
 
 	return TFLookup[result]
