@@ -103,7 +103,6 @@ Datasource percentage coverage 99.80
 ./resource.ps1 aws_config_organization_custom_rule
 ./resource.ps1 aws_config_organization_managed_rule
 ./resource.ps1 aws_config_remediation_configuration
-./resource.ps1 aws_connect_lambda_function_association
 ./resource.ps1 aws_controltower_control
 ./resource.ps1 aws_cur_report_definition
 ./resource.ps1 aws_customerprofiles_domain
