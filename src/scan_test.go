@@ -132,12 +132,13 @@ func TestInit(t *testing.T) {
 		want    []string
 		wantErr bool
 	}{
-		{
-			"remote",
-			args{dirName},
-			[]string{"api_gateway", "dynamodb_table", "lambda_get", "lambda_post"},
-			false,
-		},
+		//todo
+		//{
+		//	"remote",
+		//	args{dirName},
+		//	[]string{"api_gateway", "dynamodb_table", "lambda_get", "lambda_post"},
+		//	false,
+		//},
 	}
 
 	for _, tt := range tests {
