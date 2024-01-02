@@ -1,7 +1,1167 @@
 # todo azure
 
-Resource percentage coverage   60.00
-Datasource percentage coverage NaN
+Resource percentage coverage   5.14
+Datasource percentage coverage 40.78
 
+./resource.ps1 azurerm_aadb2c_directory
+./resource.ps1 azurerm_active_directory_domain_service
+./resource.ps1 azurerm_active_directory_domain_service_replica_set
+./resource.ps1 azurerm_active_directory_domain_service_trust
+./resource.ps1 azurerm_advanced_threat_protection
+./resource.ps1 azurerm_analysis_services_server
+./resource.ps1 azurerm_api_connection
+./resource.ps1 azurerm_api_management_api
+./resource.ps1 azurerm_api_management_api_diagnostic
+./resource.ps1 azurerm_api_management_api_operation
+./resource.ps1 azurerm_api_management_api_operation_policy
+./resource.ps1 azurerm_api_management_api_operation_tag
+./resource.ps1 azurerm_api_management_api_policy
+./resource.ps1 azurerm_api_management_api_release
+./resource.ps1 azurerm_api_management_api_schema
+./resource.ps1 azurerm_api_management_api_tag
+./resource.ps1 azurerm_api_management_api_tag_description
+./resource.ps1 azurerm_api_management_api_version_set
+./resource.ps1 azurerm_api_management_authorization_server
+./resource.ps1 azurerm_api_management_backend
+./resource.ps1 azurerm_api_management_certificate
+./resource.ps1 azurerm_api_management_custom_domain
+./resource.ps1 azurerm_api_management_diagnostic
+./resource.ps1 azurerm_api_management_email_template
+./resource.ps1 azurerm_api_management_gateway
+./resource.ps1 azurerm_api_management_gateway_api
+./resource.ps1 azurerm_api_management_gateway_certificate_authority
+./resource.ps1 azurerm_api_management_gateway_host_name_configuration
+./resource.ps1 azurerm_api_management_global_schema
+./resource.ps1 azurerm_api_management_group
+./resource.ps1 azurerm_api_management_group_user
+./resource.ps1 azurerm_api_management_identity_provider_aad
+./resource.ps1 azurerm_api_management_identity_provider_aadb2c
+./resource.ps1 azurerm_api_management_identity_provider_facebook
+./resource.ps1 azurerm_api_management_identity_provider_google
+./resource.ps1 azurerm_api_management_identity_provider_microsoft
+./resource.ps1 azurerm_api_management_identity_provider_twitter
+./resource.ps1 azurerm_api_management_logger
+./resource.ps1 azurerm_api_management_named_value
+./resource.ps1 azurerm_api_management_notification_recipient_email
+./resource.ps1 azurerm_api_management_notification_recipient_user
+./resource.ps1 azurerm_api_management_openid_connect_provider
+./resource.ps1 azurerm_api_management_policy
+./resource.ps1 azurerm_api_management_product
+./resource.ps1 azurerm_api_management_product_api
+./resource.ps1 azurerm_api_management_product_group
+./resource.ps1 azurerm_api_management_product_policy
+./resource.ps1 azurerm_api_management_product_tag
+./resource.ps1 azurerm_api_management_redis_cache
+./resource.ps1 azurerm_api_management_subscription
+./resource.ps1 azurerm_api_management_tag
+./resource.ps1 azurerm_api_management_user
+./resource.ps1 azurerm_app_configuration_feature
+./resource.ps1 azurerm_app_configuration_key
+./resource.ps1 azurerm_app_service_active_slot
+./resource.ps1 azurerm_app_service_certificate
+./resource.ps1 azurerm_app_service_certificate_binding
+./resource.ps1 azurerm_app_service_certificate_order
+./resource.ps1 azurerm_app_service_connection
+./resource.ps1 azurerm_app_service_custom_hostname_binding
+./resource.ps1 azurerm_app_service_environment
+./resource.ps1 azurerm_app_service_environment_v3
+./resource.ps1 azurerm_app_service_hybrid_connection
+./resource.ps1 azurerm_app_service_managed_certificate
+./resource.ps1 azurerm_app_service_public_certificate
+./resource.ps1 azurerm_app_service_slot
+./resource.ps1 azurerm_app_service_slot_custom_hostname_binding
+./resource.ps1 azurerm_app_service_slot_virtual_network_swift_connection
+./resource.ps1 azurerm_app_service_source_control
+./resource.ps1 azurerm_app_service_source_control_slot
+./resource.ps1 azurerm_app_service_source_control_token
+./resource.ps1 azurerm_app_service_virtual_network_swift_connection
+./resource.ps1 azurerm_application_gateway
+./resource.ps1 azurerm_application_insights
+./resource.ps1 azurerm_application_insights_analytics_item
+./resource.ps1 azurerm_application_insights_api_key
+./resource.ps1 azurerm_application_insights_smart_detection_rule
+./resource.ps1 azurerm_application_insights_workbook
+./resource.ps1 azurerm_application_insights_workbook_template
+./resource.ps1 azurerm_application_load_balancer
+./resource.ps1 azurerm_application_load_balancer_frontend
+./resource.ps1 azurerm_application_load_balancer_subnet_association
+./resource.ps1 azurerm_application_security_group
+./resource.ps1 azurerm_arc_kubernetes_cluster
+./resource.ps1 azurerm_arc_kubernetes_cluster_extension
+./resource.ps1 azurerm_arc_kubernetes_flux_configuration
+./resource.ps1 azurerm_arc_machine_extension
+./resource.ps1 azurerm_arc_private_link_scope
+./resource.ps1 azurerm_arc_resource_bridge_appliance
+./resource.ps1 azurerm_attestation_provider
+./resource.ps1 azurerm_automanage_configuration
+./resource.ps1 azurerm_automation_account
+./resource.ps1 azurerm_automation_certificate
+./resource.ps1 azurerm_automation_connection
+./resource.ps1 azurerm_automation_connection_certificate
+./resource.ps1 azurerm_automation_connection_classic_certificate
+./resource.ps1 azurerm_automation_connection_service_principal
+./resource.ps1 azurerm_automation_connection_type
+./resource.ps1 azurerm_automation_credential
+./resource.ps1 azurerm_automation_dsc_configuration
+./resource.ps1 azurerm_automation_dsc_nodeconfiguration
+./resource.ps1 azurerm_automation_hybrid_runbook_worker
+./resource.ps1 azurerm_automation_hybrid_runbook_worker_group
+./resource.ps1 azurerm_automation_job_schedule
+./resource.ps1 azurerm_automation_module
+./resource.ps1 azurerm_automation_python3_package
+./resource.ps1 azurerm_automation_runbook
+./resource.ps1 azurerm_automation_schedule
+./resource.ps1 azurerm_automation_software_update_configuration
+./resource.ps1 azurerm_automation_source_control
+./resource.ps1 azurerm_automation_variable_bool
+./resource.ps1 azurerm_automation_variable_datetime
+./resource.ps1 azurerm_automation_variable_int
+./resource.ps1 azurerm_automation_variable_object
+./resource.ps1 azurerm_automation_variable_string
+./resource.ps1 azurerm_automation_watcher
+./resource.ps1 azurerm_automation_webhook
+./resource.ps1 azurerm_availability_set
+./resource.ps1 azurerm_backup_container_storage_account
+./resource.ps1 azurerm_backup_policy_file_share
+./resource.ps1 azurerm_backup_policy_vm
+./resource.ps1 azurerm_backup_policy_vm_workload
+./resource.ps1 azurerm_backup_protected_file_share
+./resource.ps1 azurerm_backup_protected_vm
+./resource.ps1 azurerm_bastion_host
+./resource.ps1 azurerm_batch_account
+./resource.ps1 azurerm_batch_application
+./resource.ps1 azurerm_batch_certificate
+./resource.ps1 azurerm_batch_job
+./resource.ps1 azurerm_batch_pool
+./resource.ps1 azurerm_billing_account_cost_management_export
+./resource.ps1 azurerm_blueprint_assignment
+./resource.ps1 azurerm_bot_channel_alexa
+./resource.ps1 azurerm_bot_channel_direct_line_speech
+./resource.ps1 azurerm_bot_channel_directline
+./resource.ps1 azurerm_bot_channel_email
+./resource.ps1 azurerm_bot_channel_facebook
+./resource.ps1 azurerm_bot_channel_line
+./resource.ps1 azurerm_bot_channel_ms_teams
+./resource.ps1 azurerm_bot_channel_slack
+./resource.ps1 azurerm_bot_channel_sms
+./resource.ps1 azurerm_bot_channel_web_chat
+./resource.ps1 azurerm_bot_channels_registration
+./resource.ps1 azurerm_bot_connection
+./resource.ps1 azurerm_bot_service_azure_bot
+./resource.ps1 azurerm_bot_web_app
+./resource.ps1 azurerm_capacity_reservation
+./resource.ps1 azurerm_capacity_reservation_group
+./resource.ps1 azurerm_cdn_endpoint
+./resource.ps1 azurerm_cdn_endpoint_custom_domain
+./resource.ps1 azurerm_cdn_frontdoor_custom_domain
+./resource.ps1 azurerm_cdn_frontdoor_custom_domain_association
+./resource.ps1 azurerm_cdn_frontdoor_endpoint
+./resource.ps1 azurerm_cdn_frontdoor_firewall_policy
+./resource.ps1 azurerm_cdn_frontdoor_origin
+./resource.ps1 azurerm_cdn_frontdoor_origin_group
+./resource.ps1 azurerm_cdn_frontdoor_profile
+./resource.ps1 azurerm_cdn_frontdoor_route
+./resource.ps1 azurerm_cdn_frontdoor_route_disable_link_to_default_domain
+./resource.ps1 azurerm_cdn_frontdoor_rule
+./resource.ps1 azurerm_cdn_frontdoor_rule_set
+./resource.ps1 azurerm_cdn_frontdoor_secret
+./resource.ps1 azurerm_cdn_frontdoor_security_policy
+./resource.ps1 azurerm_cdn_profile
+./resource.ps1 azurerm_cognitive_account_customer_managed_key
+./resource.ps1 azurerm_cognitive_deployment
+./resource.ps1 azurerm_communication_service
+./resource.ps1 azurerm_confidential_ledger
+./resource.ps1 azurerm_consumption_budget_management_group
+./resource.ps1 azurerm_consumption_budget_resource_group
+./resource.ps1 azurerm_consumption_budget_subscription
+./resource.ps1 azurerm_container_app
+./resource.ps1 azurerm_container_app_environment
+./resource.ps1 azurerm_container_app_environment_certificate
+./resource.ps1 azurerm_container_app_environment_dapr_component
+./resource.ps1 azurerm_container_app_environment_storage
+./resource.ps1 azurerm_container_connected_registry
+./resource.ps1 azurerm_container_group
+./resource.ps1 azurerm_container_registry_agent_pool
+./resource.ps1 azurerm_container_registry_scope_map
+./resource.ps1 azurerm_container_registry_task
+./resource.ps1 azurerm_container_registry_task_schedule_run_now
+./resource.ps1 azurerm_container_registry_token
+./resource.ps1 azurerm_container_registry_token_password
+./resource.ps1 azurerm_container_registry_webhook
+./resource.ps1 azurerm_cosmosdb_cassandra_cluster
+./resource.ps1 azurerm_cosmosdb_cassandra_datacenter
+./resource.ps1 azurerm_cosmosdb_cassandra_keyspace
+./resource.ps1 azurerm_cosmosdb_cassandra_table
+./resource.ps1 azurerm_cosmosdb_gremlin_database
+./resource.ps1 azurerm_cosmosdb_gremlin_graph
+./resource.ps1 azurerm_cosmosdb_mongo_collection
+./resource.ps1 azurerm_cosmosdb_mongo_database
+./resource.ps1 azurerm_cosmosdb_mongo_role_definition
+./resource.ps1 azurerm_cosmosdb_mongo_user_definition
+./resource.ps1 azurerm_cosmosdb_notebook_workspace
+./resource.ps1 azurerm_cosmosdb_postgresql_cluster
+./resource.ps1 azurerm_cosmosdb_postgresql_coordinator_configuration
+./resource.ps1 azurerm_cosmosdb_postgresql_firewall_rule
+./resource.ps1 azurerm_cosmosdb_postgresql_node_configuration
+./resource.ps1 azurerm_cosmosdb_postgresql_role
+./resource.ps1 azurerm_cosmosdb_sql_container
+./resource.ps1 azurerm_cosmosdb_sql_database
+./resource.ps1 azurerm_cosmosdb_sql_dedicated_gateway
+./resource.ps1 azurerm_cosmosdb_sql_function
+./resource.ps1 azurerm_cosmosdb_sql_role_assignment
+./resource.ps1 azurerm_cosmosdb_sql_role_definition
+./resource.ps1 azurerm_cosmosdb_sql_stored_procedure
+./resource.ps1 azurerm_cosmosdb_sql_trigger
+./resource.ps1 azurerm_cost_anomaly_alert
+./resource.ps1 azurerm_cost_management_scheduled_action
+./resource.ps1 azurerm_custom_ip_prefix
+./resource.ps1 azurerm_custom_provider
+./resource.ps1 azurerm_dashboard
+./resource.ps1 azurerm_dashboard_grafana
+./resource.ps1 azurerm_data_factory
+./resource.ps1 azurerm_data_factory_custom_dataset
+./resource.ps1 azurerm_data_factory_data_flow
+./resource.ps1 azurerm_data_factory_dataset_azure_blob
+./resource.ps1 azurerm_data_factory_dataset_azure_sql_table
+./resource.ps1 azurerm_data_factory_dataset_binary
+./resource.ps1 azurerm_data_factory_dataset_cosmosdb_sqlapi
+./resource.ps1 azurerm_data_factory_dataset_delimited_text
+./resource.ps1 azurerm_data_factory_dataset_http
+./resource.ps1 azurerm_data_factory_dataset_json
+./resource.ps1 azurerm_data_factory_dataset_mysql
+./resource.ps1 azurerm_data_factory_dataset_parquet
+./resource.ps1 azurerm_data_factory_dataset_postgresql
+./resource.ps1 azurerm_data_factory_dataset_snowflake
+./resource.ps1 azurerm_data_factory_dataset_sql_server_table
+./resource.ps1 azurerm_data_factory_flowlet_data_flow
+./resource.ps1 azurerm_data_factory_integration_runtime_azure
+./resource.ps1 azurerm_data_factory_integration_runtime_azure_ssis
+./resource.ps1 azurerm_data_factory_integration_runtime_managed
+./resource.ps1 azurerm_data_factory_integration_runtime_self_hosted
+./resource.ps1 azurerm_data_factory_linked_custom_service
+./resource.ps1 azurerm_data_factory_linked_service_azure_blob_storage
+./resource.ps1 azurerm_data_factory_linked_service_azure_databricks
+./resource.ps1 azurerm_data_factory_linked_service_azure_file_storage
+./resource.ps1 azurerm_data_factory_linked_service_azure_function
+./resource.ps1 azurerm_data_factory_linked_service_azure_search
+./resource.ps1 azurerm_data_factory_linked_service_azure_sql_database
+./resource.ps1 azurerm_data_factory_linked_service_azure_table_storage
+./resource.ps1 azurerm_data_factory_linked_service_cosmosdb
+./resource.ps1 azurerm_data_factory_linked_service_cosmosdb_mongoapi
+./resource.ps1 azurerm_data_factory_linked_service_data_lake_storage_gen2
+./resource.ps1 azurerm_data_factory_linked_service_key_vault
+./resource.ps1 azurerm_data_factory_linked_service_kusto
+./resource.ps1 azurerm_data_factory_linked_service_mysql
+./resource.ps1 azurerm_data_factory_linked_service_odata
+./resource.ps1 azurerm_data_factory_linked_service_odbc
+./resource.ps1 azurerm_data_factory_linked_service_postgresql
+./resource.ps1 azurerm_data_factory_linked_service_sftp
+./resource.ps1 azurerm_data_factory_linked_service_snowflake
+./resource.ps1 azurerm_data_factory_linked_service_sql_server
+./resource.ps1 azurerm_data_factory_linked_service_synapse
+./resource.ps1 azurerm_data_factory_linked_service_web
+./resource.ps1 azurerm_data_factory_managed_private_endpoint
+./resource.ps1 azurerm_data_factory_pipeline
+./resource.ps1 azurerm_data_factory_trigger_blob_event
+./resource.ps1 azurerm_data_factory_trigger_custom_event
+./resource.ps1 azurerm_data_factory_trigger_schedule
+./resource.ps1 azurerm_data_factory_trigger_tumbling_window
+./resource.ps1 azurerm_data_protection_backup_instance_blob_storage
+./resource.ps1 azurerm_data_protection_backup_instance_disk
+./resource.ps1 azurerm_data_protection_backup_instance_postgresql
+./resource.ps1 azurerm_data_protection_backup_policy_blob_storage
+./resource.ps1 azurerm_data_protection_backup_policy_disk
+./resource.ps1 azurerm_data_protection_backup_policy_postgresql
+./resource.ps1 azurerm_data_protection_backup_vault
+./resource.ps1 azurerm_data_protection_resource_guard
+./resource.ps1 azurerm_data_share
+./resource.ps1 azurerm_data_share_account
+./resource.ps1 azurerm_data_share_dataset_blob_storage
+./resource.ps1 azurerm_data_share_dataset_data_lake_gen2
+./resource.ps1 azurerm_data_share_dataset_kusto_cluster
+./resource.ps1 azurerm_data_share_dataset_kusto_database
+./resource.ps1 azurerm_database_migration_project
+./resource.ps1 azurerm_database_migration_service
+./resource.ps1 azurerm_databox_edge_device
+./resource.ps1 azurerm_databox_edge_order
+./resource.ps1 azurerm_databricks_access_connector
+./resource.ps1 azurerm_databricks_virtual_network_peering
+./resource.ps1 azurerm_databricks_workspace
+./resource.ps1 azurerm_databricks_workspace_root_dbfs_customer_managed_key
+./resource.ps1 azurerm_datadog_monitor
+./resource.ps1 azurerm_datadog_monitor_sso_configuration
+./resource.ps1 azurerm_datadog_monitor_tag_rule
+./resource.ps1 azurerm_dedicated_hardware_security_module
+./resource.ps1 azurerm_dedicated_host
+./resource.ps1 azurerm_dedicated_host_group
+./resource.ps1 azurerm_dev_center
+./resource.ps1 azurerm_dev_center_project
+./resource.ps1 azurerm_digital_twins_endpoint_eventgrid
+./resource.ps1 azurerm_digital_twins_endpoint_eventhub
+./resource.ps1 azurerm_digital_twins_endpoint_servicebus
+./resource.ps1 azurerm_digital_twins_instance
+./resource.ps1 azurerm_digital_twins_time_series_database_connection
+./resource.ps1 azurerm_disk_access
+./resource.ps1 azurerm_disk_pool
+./resource.ps1 azurerm_disk_pool_iscsi_target
+./resource.ps1 azurerm_disk_pool_iscsi_target_lun
+./resource.ps1 azurerm_disk_pool_managed_disk_attachment
+./resource.ps1 azurerm_dns_a_record
+./resource.ps1 azurerm_dns_aaaa_record
+./resource.ps1 azurerm_dns_caa_record
+./resource.ps1 azurerm_dns_cname_record
+./resource.ps1 azurerm_dns_mx_record
+./resource.ps1 azurerm_dns_ns_record
+./resource.ps1 azurerm_dns_ptr_record
+./resource.ps1 azurerm_dns_soa_record
+./resource.ps1 azurerm_dns_srv_record
+./resource.ps1 azurerm_dns_txt_record
+./resource.ps1 azurerm_elastic_cloud_elasticsearch
+./resource.ps1 azurerm_elastic_san
+./resource.ps1 azurerm_email_communication_service
+./resource.ps1 azurerm_eventgrid_domain
+./resource.ps1 azurerm_eventgrid_domain_topic
+./resource.ps1 azurerm_eventgrid_event_subscription
+./resource.ps1 azurerm_eventgrid_system_topic
+./resource.ps1 azurerm_eventgrid_system_topic_event_subscription
+./resource.ps1 azurerm_eventgrid_topic
+./resource.ps1 azurerm_eventhub
+./resource.ps1 azurerm_eventhub_authorization_rule
+./resource.ps1 azurerm_eventhub_cluster
+./resource.ps1 azurerm_eventhub_consumer_group
+./resource.ps1 azurerm_eventhub_namespace
+./resource.ps1 azurerm_eventhub_namespace_authorization_rule
+./resource.ps1 azurerm_eventhub_namespace_customer_managed_key
+./resource.ps1 azurerm_eventhub_namespace_disaster_recovery_config
+./resource.ps1 azurerm_eventhub_namespace_schema_group
+./resource.ps1 azurerm_express_route_circuit
+./resource.ps1 azurerm_express_route_circuit_authorization
+./resource.ps1 azurerm_express_route_circuit_connection
+./resource.ps1 azurerm_express_route_circuit_peering
+./resource.ps1 azurerm_express_route_connection
+./resource.ps1 azurerm_express_route_gateway
+./resource.ps1 azurerm_express_route_port
+./resource.ps1 azurerm_express_route_port_authorization
+./resource.ps1 azurerm_federated_identity_credential
+./resource.ps1 azurerm_firewall
+./resource.ps1 azurerm_firewall_application_rule_collection
+./resource.ps1 azurerm_firewall_nat_rule_collection
+./resource.ps1 azurerm_firewall_network_rule_collection
+./resource.ps1 azurerm_firewall_policy
+./resource.ps1 azurerm_firewall_policy_rule_collection_group
+./resource.ps1 azurerm_fluid_relay_server
+./resource.ps1 azurerm_frontdoor
+./resource.ps1 azurerm_frontdoor_custom_https_configuration
+./resource.ps1 azurerm_frontdoor_firewall_policy
+./resource.ps1 azurerm_frontdoor_rules_engine
+./resource.ps1 azurerm_function_app
+./resource.ps1 azurerm_function_app_active_slot
+./resource.ps1 azurerm_function_app_connection
+./resource.ps1 azurerm_function_app_function
+./resource.ps1 azurerm_function_app_hybrid_connection
+./resource.ps1 azurerm_function_app_slot
+./resource.ps1 azurerm_gallery_application
+./resource.ps1 azurerm_gallery_application_version
+./resource.ps1 azurerm_graph_account
+./resource.ps1 azurerm_graph_services_account
+./resource.ps1 azurerm_hdinsight_hadoop_cluster
+./resource.ps1 azurerm_hdinsight_hbase_cluster
+./resource.ps1 azurerm_hdinsight_interactive_query_cluster
+./resource.ps1 azurerm_hdinsight_kafka_cluster
+./resource.ps1 azurerm_hdinsight_spark_cluster
+./resource.ps1 azurerm_healthbot
+./resource.ps1 azurerm_healthcare_dicom_service
+./resource.ps1 azurerm_healthcare_fhir_service
+./resource.ps1 azurerm_healthcare_medtech_service
+./resource.ps1 azurerm_healthcare_medtech_service_fhir_destination
+./resource.ps1 azurerm_healthcare_service
+./resource.ps1 azurerm_healthcare_workspace
+./resource.ps1 azurerm_hpc_cache
+./resource.ps1 azurerm_hpc_cache_access_policy
+./resource.ps1 azurerm_hpc_cache_blob_nfs_target
+./resource.ps1 azurerm_hpc_cache_blob_target
+./resource.ps1 azurerm_hpc_cache_nfs_target
+./resource.ps1 azurerm_image
+./resource.ps1 azurerm_integration_service_environment
+./resource.ps1 azurerm_iot_security_device_group
+./resource.ps1 azurerm_iot_security_solution
+./resource.ps1 azurerm_iot_time_series_insights_access_policy
+./resource.ps1 azurerm_iot_time_series_insights_event_source_eventhub
+./resource.ps1 azurerm_iot_time_series_insights_event_source_iothub
+./resource.ps1 azurerm_iot_time_series_insights_gen2_environment
+./resource.ps1 azurerm_iot_time_series_insights_reference_data_set
+./resource.ps1 azurerm_iot_time_series_insights_standard_environment
+./resource.ps1 azurerm_iotcentral_application
+./resource.ps1 azurerm_iotcentral_application_network_rule_set
+./resource.ps1 azurerm_iothub
+./resource.ps1 azurerm_iothub_certificate
+./resource.ps1 azurerm_iothub_consumer_group
+./resource.ps1 azurerm_iothub_device_update_account
+./resource.ps1 azurerm_iothub_device_update_instance
+./resource.ps1 azurerm_iothub_dps
+./resource.ps1 azurerm_iothub_dps_certificate
+./resource.ps1 azurerm_iothub_dps_shared_access_policy
+./resource.ps1 azurerm_iothub_endpoint_cosmosdb_account
+./resource.ps1 azurerm_iothub_endpoint_eventhub
+./resource.ps1 azurerm_iothub_endpoint_servicebus_queue
+./resource.ps1 azurerm_iothub_endpoint_servicebus_topic
+./resource.ps1 azurerm_iothub_endpoint_storage_container
+./resource.ps1 azurerm_iothub_enrichment
+./resource.ps1 azurerm_iothub_fallback_route
+./resource.ps1 azurerm_iothub_file_upload
+./resource.ps1 azurerm_iothub_route
+./resource.ps1 azurerm_iothub_shared_access_policy
+./resource.ps1 azurerm_ip_group
+./resource.ps1 azurerm_ip_group_cidr
+./resource.ps1 azurerm_key_vault_certificate
+./resource.ps1 azurerm_key_vault_certificate_contacts
+./resource.ps1 azurerm_key_vault_certificate_issuer
+./resource.ps1 azurerm_key_vault_managed_hardware_security_module
+./resource.ps1 azurerm_key_vault_managed_hardware_security_module_role_definition
+./resource.ps1 azurerm_key_vault_managed_storage_account
+./resource.ps1 azurerm_key_vault_managed_storage_account_sas_token_definition
+./resource.ps1 azurerm_key_vault_role_assignment
+./resource.ps1 azurerm_key_vault_secret
+./resource.ps1 azurerm_kubernetes_cluster
+./resource.ps1 azurerm_kubernetes_cluster_extension
+./resource.ps1 azurerm_kubernetes_cluster_node_pool
+./resource.ps1 azurerm_kubernetes_cluster_trusted_access_role_binding
+./resource.ps1 azurerm_kubernetes_fleet_manager
+./resource.ps1 azurerm_kubernetes_flux_configuration
+./resource.ps1 azurerm_kusto_attached_database_configuration
+./resource.ps1 azurerm_kusto_cluster
+./resource.ps1 azurerm_kusto_cluster_customer_managed_key
+./resource.ps1 azurerm_kusto_cluster_managed_private_endpoint
+./resource.ps1 azurerm_kusto_cluster_principal_assignment
+./resource.ps1 azurerm_kusto_cosmosdb_data_connection
+./resource.ps1 azurerm_kusto_database
+./resource.ps1 azurerm_kusto_database_principal_assignment
+./resource.ps1 azurerm_kusto_eventgrid_data_connection
+./resource.ps1 azurerm_kusto_eventhub_data_connection
+./resource.ps1 azurerm_kusto_iothub_data_connection
+./resource.ps1 azurerm_kusto_script
+./resource.ps1 azurerm_lab_service_lab
+./resource.ps1 azurerm_lab_service_plan
+./resource.ps1 azurerm_lab_service_schedule
+./resource.ps1 azurerm_lab_service_user
+./resource.ps1 azurerm_lb
+./resource.ps1 azurerm_lb_backend_address_pool
+./resource.ps1 azurerm_lb_backend_address_pool_address
+./resource.ps1 azurerm_lb_nat_pool
+./resource.ps1 azurerm_lb_nat_rule
+./resource.ps1 azurerm_lb_outbound_rule
+./resource.ps1 azurerm_lb_probe
+./resource.ps1 azurerm_lb_rule
+./resource.ps1 azurerm_lighthouse_assignment
+./resource.ps1 azurerm_lighthouse_definition
+./resource.ps1 azurerm_linux_function_app
+./resource.ps1 azurerm_linux_function_app_slot
+./resource.ps1 azurerm_linux_web_app
+./resource.ps1 azurerm_linux_web_app_slot
+./resource.ps1 azurerm_local_network_gateway
+./resource.ps1 azurerm_log_analytics_cluster
+./resource.ps1 azurerm_log_analytics_cluster_customer_managed_key
+./resource.ps1 azurerm_log_analytics_data_export_rule
+./resource.ps1 azurerm_log_analytics_datasource_windows_event
+./resource.ps1 azurerm_log_analytics_datasource_windows_performance_counter
+./resource.ps1 azurerm_log_analytics_linked_service
+./resource.ps1 azurerm_log_analytics_linked_storage_account
+./resource.ps1 azurerm_log_analytics_query_pack
+./resource.ps1 azurerm_log_analytics_query_pack_query
+./resource.ps1 azurerm_log_analytics_saved_search
+./resource.ps1 azurerm_log_analytics_storage_insights
+./resource.ps1 azurerm_log_analytics_workspace_table
+./resource.ps1 azurerm_logic_app_action_custom
+./resource.ps1 azurerm_logic_app_action_http
+./resource.ps1 azurerm_logic_app_integration_account
+./resource.ps1 azurerm_logic_app_integration_account_agreement
+./resource.ps1 azurerm_logic_app_integration_account_assembly
+./resource.ps1 azurerm_logic_app_integration_account_batch_configuration
+./resource.ps1 azurerm_logic_app_integration_account_certificate
+./resource.ps1 azurerm_logic_app_integration_account_map
+./resource.ps1 azurerm_logic_app_integration_account_partner
+./resource.ps1 azurerm_logic_app_integration_account_schema
+./resource.ps1 azurerm_logic_app_integration_account_session
+./resource.ps1 azurerm_logic_app_standard
+./resource.ps1 azurerm_logic_app_trigger_custom
+./resource.ps1 azurerm_logic_app_trigger_http_request
+./resource.ps1 azurerm_logic_app_trigger_recurrence
+./resource.ps1 azurerm_logic_app_workflow
+./resource.ps1 azurerm_logz_monitor
+./resource.ps1 azurerm_logz_sub_account
+./resource.ps1 azurerm_logz_sub_account_tag_rule
+./resource.ps1 azurerm_logz_tag_rule
+./resource.ps1 azurerm_machine_learning_compute_cluster
+./resource.ps1 azurerm_machine_learning_compute_instance
+./resource.ps1 azurerm_machine_learning_datastore_blobstorage
+./resource.ps1 azurerm_machine_learning_datastore_datalake_gen2
+./resource.ps1 azurerm_machine_learning_datastore_fileshare
+./resource.ps1 azurerm_machine_learning_inference_cluster
+./resource.ps1 azurerm_machine_learning_synapse_spark
+./resource.ps1 azurerm_machine_learning_workspace
+./resource.ps1 azurerm_maintenance_assignment_dedicated_host
+./resource.ps1 azurerm_maintenance_assignment_virtual_machine
+./resource.ps1 azurerm_maintenance_assignment_virtual_machine_scale_set
+./resource.ps1 azurerm_maintenance_configuration
+./resource.ps1 azurerm_managed_application
+./resource.ps1 azurerm_managed_application_definition
+./resource.ps1 azurerm_managed_disk_sas_token
+./resource.ps1 azurerm_managed_lustre_file_system
+./resource.ps1 azurerm_management_group_policy_assignment
+./resource.ps1 azurerm_management_group_policy_exemption
+./resource.ps1 azurerm_management_group_policy_remediation
+./resource.ps1 azurerm_management_group_subscription_association
+./resource.ps1 azurerm_management_group_template_deployment
+./resource.ps1 azurerm_management_lock
+./resource.ps1 azurerm_maps_account
+./resource.ps1 azurerm_maps_creator
+./resource.ps1 azurerm_mariadb_virtual_network_rule
+./resource.ps1 azurerm_marketplace_agreement
+./resource.ps1 azurerm_marketplace_role_assignment
+./resource.ps1 azurerm_media_asset
+./resource.ps1 azurerm_media_asset_filter
+./resource.ps1 azurerm_media_content_key_policy
+./resource.ps1 azurerm_media_job
+./resource.ps1 azurerm_media_live_event
+./resource.ps1 azurerm_media_live_event_output
 ./resource.ps1 azurerm_media_services_account
+./resource.ps1 azurerm_media_services_account_filter
+./resource.ps1 azurerm_media_streaming_endpoint
+./resource.ps1 azurerm_media_streaming_locator
+./resource.ps1 azurerm_media_streaming_policy
 ./resource.ps1 azurerm_media_transform
+./resource.ps1 azurerm_mobile_network
+./resource.ps1 azurerm_mobile_network_attached_data_network
+./resource.ps1 azurerm_mobile_network_data_network
+./resource.ps1 azurerm_mobile_network_packet_core_control_plane
+./resource.ps1 azurerm_mobile_network_packet_core_data_plane
+./resource.ps1 azurerm_mobile_network_service
+./resource.ps1 azurerm_mobile_network_sim
+./resource.ps1 azurerm_mobile_network_sim_group
+./resource.ps1 azurerm_mobile_network_sim_policy
+./resource.ps1 azurerm_mobile_network_site
+./resource.ps1 azurerm_mobile_network_slice
+./resource.ps1 azurerm_monitor_aad_diagnostic_setting
+./resource.ps1 azurerm_monitor_action_group
+./resource.ps1 azurerm_monitor_action_rule_action_group
+./resource.ps1 azurerm_monitor_action_rule_suppression
+./resource.ps1 azurerm_monitor_activity_log_alert
+./resource.ps1 azurerm_monitor_alert_processing_rule_action_group
+./resource.ps1 azurerm_monitor_alert_processing_rule_suppression
+./resource.ps1 azurerm_monitor_alert_prometheus_rule_group
+./resource.ps1 azurerm_monitor_autoscale_setting
+./resource.ps1 azurerm_monitor_data_collection_endpoint
+./resource.ps1 azurerm_monitor_data_collection_rule
+./resource.ps1 azurerm_monitor_data_collection_rule_association
+./resource.ps1 azurerm_monitor_diagnostic_setting
+./resource.ps1 azurerm_monitor_log_profile
+./resource.ps1 azurerm_monitor_metric_alert
+./resource.ps1 azurerm_monitor_private_link_scope
+./resource.ps1 azurerm_monitor_private_link_scoped_service
+./resource.ps1 azurerm_monitor_scheduled_query_rules_alert
+./resource.ps1 azurerm_monitor_scheduled_query_rules_alert_v2
+./resource.ps1 azurerm_monitor_scheduled_query_rules_log
+./resource.ps1 azurerm_monitor_smart_detector_alert_rule
+./resource.ps1 azurerm_monitor_workspace
+./resource.ps1 azurerm_mssql_database
+./resource.ps1 azurerm_mssql_database_extended_auditing_policy
+./resource.ps1 azurerm_mssql_database_vulnerability_assessment_rule_baseline
+./resource.ps1 azurerm_mssql_elasticpool
+./resource.ps1 azurerm_mssql_failover_group
+./resource.ps1 azurerm_mssql_firewall_rule
+./resource.ps1 azurerm_mssql_job_agent
+./resource.ps1 azurerm_mssql_job_credential
+./resource.ps1 azurerm_mssql_managed_database
+./resource.ps1 azurerm_mssql_managed_instance
+./resource.ps1 azurerm_mssql_managed_instance_active_directory_administrator
+./resource.ps1 azurerm_mssql_managed_instance_failover_group
+./resource.ps1 azurerm_mssql_managed_instance_security_alert_policy
+./resource.ps1 azurerm_mssql_managed_instance_transparent_data_encryption
+./resource.ps1 azurerm_mssql_managed_instance_vulnerability_assessment
+./resource.ps1 azurerm_mssql_outbound_firewall_rule
+./resource.ps1 azurerm_mssql_server
+./resource.ps1 azurerm_mssql_server_dns_alias
+./resource.ps1 azurerm_mssql_server_extended_auditing_policy
+./resource.ps1 azurerm_mssql_server_microsoft_support_auditing_policy
+./resource.ps1 azurerm_mssql_server_security_alert_policy
+./resource.ps1 azurerm_mssql_server_transparent_data_encryption
+./resource.ps1 azurerm_mssql_server_vulnerability_assessment
+./resource.ps1 azurerm_mssql_virtual_machine
+./resource.ps1 azurerm_mssql_virtual_machine_availability_group_listener
+./resource.ps1 azurerm_mssql_virtual_machine_group
+./resource.ps1 azurerm_mssql_virtual_network_rule
+./resource.ps1 azurerm_mysql_active_directory_administrator
+./resource.ps1 azurerm_mysql_configuration
+./resource.ps1 azurerm_mysql_database
+./resource.ps1 azurerm_mysql_firewall_rule
+./resource.ps1 azurerm_mysql_flexible_database
+./resource.ps1 azurerm_mysql_flexible_server
+./resource.ps1 azurerm_mysql_flexible_server_active_directory_administrator
+./resource.ps1 azurerm_mysql_flexible_server_configuration
+./resource.ps1 azurerm_mysql_flexible_server_firewall_rule
+./resource.ps1 azurerm_mysql_server
+./resource.ps1 azurerm_mysql_server_key
+./resource.ps1 azurerm_mysql_virtual_network_rule
+./resource.ps1 azurerm_nat_gateway
+./resource.ps1 azurerm_nat_gateway_public_ip_association
+./resource.ps1 azurerm_nat_gateway_public_ip_prefix_association
+./resource.ps1 azurerm_netapp_account
+./resource.ps1 azurerm_netapp_pool
+./resource.ps1 azurerm_netapp_snapshot
+./resource.ps1 azurerm_netapp_snapshot_policy
+./resource.ps1 azurerm_netapp_volume
+./resource.ps1 azurerm_netapp_volume_group_sap_hana
+./resource.ps1 azurerm_netapp_volume_quota_rule
+./resource.ps1 azurerm_network_connection_monitor
+./resource.ps1 azurerm_network_ddos_protection_plan
+./resource.ps1 azurerm_network_function_azure_traffic_collector
+./resource.ps1 azurerm_network_function_collector_policy
+./resource.ps1 azurerm_network_interface_application_gateway_backend_address_pool_association
+./resource.ps1 azurerm_network_interface_application_security_group_association
+./resource.ps1 azurerm_network_interface_backend_address_pool_association
+./resource.ps1 azurerm_network_interface_nat_rule_association
+./resource.ps1 azurerm_network_interface_security_group_association
+./resource.ps1 azurerm_network_manager
+./resource.ps1 azurerm_network_manager_admin_rule
+./resource.ps1 azurerm_network_manager_admin_rule_collection
+./resource.ps1 azurerm_network_manager_connectivity_configuration
+./resource.ps1 azurerm_network_manager_deployment
+./resource.ps1 azurerm_network_manager_management_group_connection
+./resource.ps1 azurerm_network_manager_network_group
+./resource.ps1 azurerm_network_manager_scope_connection
+./resource.ps1 azurerm_network_manager_security_admin_configuration
+./resource.ps1 azurerm_network_manager_static_member
+./resource.ps1 azurerm_network_manager_subscription_connection
+./resource.ps1 azurerm_network_packet_capture
+./resource.ps1 azurerm_network_profile
+./resource.ps1 azurerm_new_relic_monitor
+./resource.ps1 azurerm_new_relic_tag_rule
+./resource.ps1 azurerm_nginx_certificate
+./resource.ps1 azurerm_nginx_configuration
+./resource.ps1 azurerm_nginx_deployment
+./resource.ps1 azurerm_notification_hub
+./resource.ps1 azurerm_notification_hub_authorization_rule
+./resource.ps1 azurerm_notification_hub_namespace
+./resource.ps1 azurerm_orbital_contact
+./resource.ps1 azurerm_orbital_contact_profile
+./resource.ps1 azurerm_orbital_spacecraft
+./resource.ps1 azurerm_orchestrated_virtual_machine_scale_set
+./resource.ps1 azurerm_palo_alto_local_rulestack
+./resource.ps1 azurerm_palo_alto_local_rulestack_certificate
+./resource.ps1 azurerm_palo_alto_local_rulestack_fqdn_list
+./resource.ps1 azurerm_palo_alto_local_rulestack_outbound_trust_certificate_association
+./resource.ps1 azurerm_palo_alto_local_rulestack_outbound_untrust_certificate_association
+./resource.ps1 azurerm_palo_alto_local_rulestack_prefix_list
+./resource.ps1 azurerm_palo_alto_local_rulestack_rule
+./resource.ps1 azurerm_palo_alto_next_generation_firewall_virtual_hub_local_rulestack
+./resource.ps1 azurerm_palo_alto_next_generation_firewall_virtual_hub_panorama
+./resource.ps1 azurerm_palo_alto_next_generation_firewall_virtual_network_local_rulestack
+./resource.ps1 azurerm_palo_alto_next_generation_firewall_virtual_network_panorama
+./resource.ps1 azurerm_palo_alto_virtual_network_appliance
+./resource.ps1 azurerm_pim_active_role_assignment
+./resource.ps1 azurerm_pim_eligible_role_assignment
+./resource.ps1 azurerm_point_to_site_vpn_gateway
+./resource.ps1 azurerm_policy_definition
+./resource.ps1 azurerm_policy_set_definition
+./resource.ps1 azurerm_policy_virtual_machine_configuration_assignment
+./resource.ps1 azurerm_portal_dashboard
+./resource.ps1 azurerm_portal_tenant_configuration
+./resource.ps1 azurerm_postgresql_active_directory_administrator
+./resource.ps1 azurerm_postgresql_configuration
+./resource.ps1 azurerm_postgresql_database
+./resource.ps1 azurerm_postgresql_firewall_rule
+./resource.ps1 azurerm_postgresql_flexible_server
+./resource.ps1 azurerm_postgresql_flexible_server_active_directory_administrator
+./resource.ps1 azurerm_postgresql_flexible_server_configuration
+./resource.ps1 azurerm_postgresql_flexible_server_database
+./resource.ps1 azurerm_postgresql_flexible_server_firewall_rule
+./resource.ps1 azurerm_postgresql_server
+./resource.ps1 azurerm_postgresql_server_key
+./resource.ps1 azurerm_postgresql_virtual_network_rule
+./resource.ps1 azurerm_powerbi_embedded
+./resource.ps1 azurerm_private_dns_a_record
+./resource.ps1 azurerm_private_dns_aaaa_record
+./resource.ps1 azurerm_private_dns_cname_record
+./resource.ps1 azurerm_private_dns_mx_record
+./resource.ps1 azurerm_private_dns_ptr_record
+./resource.ps1 azurerm_private_dns_resolver
+./resource.ps1 azurerm_private_dns_resolver_dns_forwarding_ruleset
+./resource.ps1 azurerm_private_dns_resolver_forwarding_rule
+./resource.ps1 azurerm_private_dns_resolver_inbound_endpoint
+./resource.ps1 azurerm_private_dns_resolver_outbound_endpoint
+./resource.ps1 azurerm_private_dns_resolver_virtual_network_link
+./resource.ps1 azurerm_private_dns_soa_record
+./resource.ps1 azurerm_private_dns_srv_record
+./resource.ps1 azurerm_private_dns_txt_record
+./resource.ps1 azurerm_private_dns_zone_virtual_network_link
+./resource.ps1 azurerm_private_endpoint_application_security_group_association
+./resource.ps1 azurerm_private_link_service
+./resource.ps1 azurerm_proximity_placement_group
+./resource.ps1 azurerm_public_ip
+./resource.ps1 azurerm_public_ip_prefix
+./resource.ps1 azurerm_purview_account
+./resource.ps1 azurerm_recovery_services_vault
+./resource.ps1 azurerm_recovery_services_vault_resource_guard_association
+./resource.ps1 azurerm_redis_enterprise_cluster
+./resource.ps1 azurerm_redis_enterprise_database
+./resource.ps1 azurerm_redis_firewall_rule
+./resource.ps1 azurerm_redis_linked_server
+./resource.ps1 azurerm_relay_hybrid_connection
+./resource.ps1 azurerm_relay_hybrid_connection_authorization_rule
+./resource.ps1 azurerm_relay_namespace
+./resource.ps1 azurerm_relay_namespace_authorization_rule
+./resource.ps1 azurerm_resource_deployment_script_azure_cli
+./resource.ps1 azurerm_resource_deployment_script_azure_power_shell
+./resource.ps1 azurerm_resource_group_cost_management_export
+./resource.ps1 azurerm_resource_group_cost_management_view
+./resource.ps1 azurerm_resource_group_policy_assignment
+./resource.ps1 azurerm_resource_group_policy_exemption
+./resource.ps1 azurerm_resource_group_policy_remediation
+./resource.ps1 azurerm_resource_group_template_deployment
+./resource.ps1 azurerm_resource_management_private_link
+./resource.ps1 azurerm_resource_management_private_link_association
+./resource.ps1 azurerm_resource_policy_assignment
+./resource.ps1 azurerm_resource_policy_exemption
+./resource.ps1 azurerm_resource_policy_remediation
+./resource.ps1 azurerm_resource_provider_registration
+./resource.ps1 azurerm_role_definition
+./resource.ps1 azurerm_route
+./resource.ps1 azurerm_route_filter
+./resource.ps1 azurerm_route_map
+./resource.ps1 azurerm_route_server
+./resource.ps1 azurerm_route_server_bgp_connection
+./resource.ps1 azurerm_route_table
+./resource.ps1 azurerm_search_shared_private_link_service
+./resource.ps1 azurerm_security_center_assessment
+./resource.ps1 azurerm_security_center_assessment_policy
+./resource.ps1 azurerm_security_center_auto_provisioning
+./resource.ps1 azurerm_security_center_automation
+./resource.ps1 azurerm_security_center_server_vulnerability_assessment
+./resource.ps1 azurerm_security_center_server_vulnerability_assessment_virtual_machine
+./resource.ps1 azurerm_security_center_storage_defender
+./resource.ps1 azurerm_security_center_subscription_pricing
+./resource.ps1 azurerm_sentinel_alert_rule_anomaly_built_in
+./resource.ps1 azurerm_sentinel_alert_rule_anomaly_duplicate
+./resource.ps1 azurerm_sentinel_alert_rule_fusion
+./resource.ps1 azurerm_sentinel_alert_rule_machine_learning_behavior_analytics
+./resource.ps1 azurerm_sentinel_alert_rule_ms_security_incident
+./resource.ps1 azurerm_sentinel_alert_rule_nrt
+./resource.ps1 azurerm_sentinel_alert_rule_scheduled
+./resource.ps1 azurerm_sentinel_alert_rule_threat_intelligence
+./resource.ps1 azurerm_sentinel_automation_rule
+./resource.ps1 azurerm_sentinel_data_connector_aws_cloud_trail
+./resource.ps1 azurerm_sentinel_data_connector_aws_s3
+./resource.ps1 azurerm_sentinel_data_connector_azure_active_directory
+./resource.ps1 azurerm_sentinel_data_connector_azure_advanced_threat_protection
+./resource.ps1 azurerm_sentinel_data_connector_azure_security_center
+./resource.ps1 azurerm_sentinel_data_connector_dynamics_365
+./resource.ps1 azurerm_sentinel_data_connector_iot
+./resource.ps1 azurerm_sentinel_data_connector_microsoft_cloud_app_security
+./resource.ps1 azurerm_sentinel_data_connector_microsoft_defender_advanced_threat_protection
+./resource.ps1 azurerm_sentinel_data_connector_microsoft_threat_intelligence
+./resource.ps1 azurerm_sentinel_data_connector_microsoft_threat_protection
+./resource.ps1 azurerm_sentinel_data_connector_office_365
+./resource.ps1 azurerm_sentinel_data_connector_office_365_project
+./resource.ps1 azurerm_sentinel_data_connector_office_atp
+./resource.ps1 azurerm_sentinel_data_connector_office_irm
+./resource.ps1 azurerm_sentinel_data_connector_office_power_bi
+./resource.ps1 azurerm_sentinel_data_connector_threat_intelligence
+./resource.ps1 azurerm_sentinel_data_connector_threat_intelligence_taxii
+./resource.ps1 azurerm_sentinel_log_analytics_workspace_onboarding
+./resource.ps1 azurerm_sentinel_metadata
+./resource.ps1 azurerm_sentinel_threat_intelligence_indicator
+./resource.ps1 azurerm_sentinel_watchlist
+./resource.ps1 azurerm_sentinel_watchlist_item
+./resource.ps1 azurerm_service_fabric_cluster
+./resource.ps1 azurerm_service_fabric_managed_cluster
+./resource.ps1 azurerm_servicebus_namespace
+./resource.ps1 azurerm_servicebus_namespace_authorization_rule
+./resource.ps1 azurerm_servicebus_namespace_disaster_recovery_config
+./resource.ps1 azurerm_servicebus_namespace_network_rule_set
+./resource.ps1 azurerm_servicebus_queue
+./resource.ps1 azurerm_servicebus_queue_authorization_rule
+./resource.ps1 azurerm_servicebus_subscription
+./resource.ps1 azurerm_servicebus_subscription_rule
+./resource.ps1 azurerm_servicebus_topic
+./resource.ps1 azurerm_servicebus_topic_authorization_rule
+./resource.ps1 azurerm_shared_image
+./resource.ps1 azurerm_shared_image_gallery
+./resource.ps1 azurerm_shared_image_version
+./resource.ps1 azurerm_signalr_service
+./resource.ps1 azurerm_signalr_service_custom_certificate
+./resource.ps1 azurerm_signalr_service_custom_domain
+./resource.ps1 azurerm_signalr_service_network_acl
+./resource.ps1 azurerm_signalr_shared_private_link_resource
+./resource.ps1 azurerm_site_recovery_fabric
+./resource.ps1 azurerm_site_recovery_hyperv_network_mapping
+./resource.ps1 azurerm_site_recovery_hyperv_replication_policy
+./resource.ps1 azurerm_site_recovery_hyperv_replication_policy_association
+./resource.ps1 azurerm_site_recovery_network_mapping
+./resource.ps1 azurerm_site_recovery_protection_container
+./resource.ps1 azurerm_site_recovery_protection_container_mapping
+./resource.ps1 azurerm_site_recovery_replicated_vm
+./resource.ps1 azurerm_site_recovery_replication_policy
+./resource.ps1 azurerm_site_recovery_replication_recovery_plan
+./resource.ps1 azurerm_site_recovery_services_vault_hyperv_site
+./resource.ps1 azurerm_site_recovery_vmware_replication_policy
+./resource.ps1 azurerm_site_recovery_vmware_replication_policy_association
+./resource.ps1 azurerm_snapshot
+./resource.ps1 azurerm_source_control_token
+./resource.ps1 azurerm_spatial_anchors_account
+./resource.ps1 azurerm_spring_cloud_accelerator
+./resource.ps1 azurerm_spring_cloud_active_deployment
+./resource.ps1 azurerm_spring_cloud_api_portal
+./resource.ps1 azurerm_spring_cloud_api_portal_custom_domain
+./resource.ps1 azurerm_spring_cloud_app
+./resource.ps1 azurerm_spring_cloud_app_cosmosdb_association
+./resource.ps1 azurerm_spring_cloud_app_mysql_association
+./resource.ps1 azurerm_spring_cloud_app_redis_association
+./resource.ps1 azurerm_spring_cloud_application_insights_application_performance_monitoring
+./resource.ps1 azurerm_spring_cloud_application_live_view
+./resource.ps1 azurerm_spring_cloud_build_deployment
+./resource.ps1 azurerm_spring_cloud_build_pack_binding
+./resource.ps1 azurerm_spring_cloud_builder
+./resource.ps1 azurerm_spring_cloud_certificate
+./resource.ps1 azurerm_spring_cloud_configuration_service
+./resource.ps1 azurerm_spring_cloud_connection
+./resource.ps1 azurerm_spring_cloud_container_deployment
+./resource.ps1 azurerm_spring_cloud_custom_domain
+./resource.ps1 azurerm_spring_cloud_customized_accelerator
+./resource.ps1 azurerm_spring_cloud_dev_tool_portal
+./resource.ps1 azurerm_spring_cloud_gateway
+./resource.ps1 azurerm_spring_cloud_gateway_custom_domain
+./resource.ps1 azurerm_spring_cloud_gateway_route_config
+./resource.ps1 azurerm_spring_cloud_java_deployment
+./resource.ps1 azurerm_spring_cloud_service
+./resource.ps1 azurerm_spring_cloud_storage
+./resource.ps1 azurerm_sql_active_directory_administrator
+./resource.ps1 azurerm_sql_database
+./resource.ps1 azurerm_sql_elasticpool
+./resource.ps1 azurerm_sql_failover_group
+./resource.ps1 azurerm_sql_firewall_rule
+./resource.ps1 azurerm_sql_managed_database
+./resource.ps1 azurerm_sql_managed_instance
+./resource.ps1 azurerm_sql_managed_instance_active_directory_administrator
+./resource.ps1 azurerm_sql_managed_instance_failover_group
+./resource.ps1 azurerm_sql_server
+./resource.ps1 azurerm_sql_virtual_network_rule
+./resource.ps1 azurerm_ssh_public_key
+./resource.ps1 azurerm_stack_hci_cluster
+./resource.ps1 azurerm_static_site
+./resource.ps1 azurerm_static_site_custom_domain
+./resource.ps1 azurerm_storage_account_local_user
+./resource.ps1 azurerm_storage_blob
+./resource.ps1 azurerm_storage_blob_inventory_policy
+./resource.ps1 azurerm_storage_data_lake_gen2_filesystem
+./resource.ps1 azurerm_storage_data_lake_gen2_path
+./resource.ps1 azurerm_storage_encryption_scope
+./resource.ps1 azurerm_storage_management_policy
+./resource.ps1 azurerm_storage_mover
+./resource.ps1 azurerm_storage_mover_agent
+./resource.ps1 azurerm_storage_mover_job_definition
+./resource.ps1 azurerm_storage_mover_project
+./resource.ps1 azurerm_storage_mover_source_endpoint
+./resource.ps1 azurerm_storage_mover_target_endpoint
+./resource.ps1 azurerm_storage_object_replication
+./resource.ps1 azurerm_storage_queue
+./resource.ps1 azurerm_storage_share
+./resource.ps1 azurerm_storage_share_directory
+./resource.ps1 azurerm_storage_share_file
+./resource.ps1 azurerm_storage_sync_cloud_endpoint
+./resource.ps1 azurerm_storage_table
+./resource.ps1 azurerm_storage_table_entity
+./resource.ps1 azurerm_stream_analytics_cluster
+./resource.ps1 azurerm_stream_analytics_function_javascript_uda
+./resource.ps1 azurerm_stream_analytics_function_javascript_udf
+./resource.ps1 azurerm_stream_analytics_job
+./resource.ps1 azurerm_stream_analytics_job_schedule
+./resource.ps1 azurerm_stream_analytics_managed_private_endpoint
+./resource.ps1 azurerm_stream_analytics_output_blob
+./resource.ps1 azurerm_stream_analytics_output_cosmosdb
+./resource.ps1 azurerm_stream_analytics_output_eventhub
+./resource.ps1 azurerm_stream_analytics_output_function
+./resource.ps1 azurerm_stream_analytics_output_mssql
+./resource.ps1 azurerm_stream_analytics_output_powerbi
+./resource.ps1 azurerm_stream_analytics_output_servicebus_queue
+./resource.ps1 azurerm_stream_analytics_output_servicebus_topic
+./resource.ps1 azurerm_stream_analytics_output_synapse
+./resource.ps1 azurerm_stream_analytics_output_table
+./resource.ps1 azurerm_stream_analytics_reference_input_blob
+./resource.ps1 azurerm_stream_analytics_reference_input_mssql
+./resource.ps1 azurerm_stream_analytics_stream_input_blob
+./resource.ps1 azurerm_stream_analytics_stream_input_eventhub
+./resource.ps1 azurerm_stream_analytics_stream_input_eventhub_v2
+./resource.ps1 azurerm_stream_analytics_stream_input_iothub
+./resource.ps1 azurerm_subnet_nat_gateway_association
+./resource.ps1 azurerm_subnet_network_security_group_association
+./resource.ps1 azurerm_subnet_route_table_association
+./resource.ps1 azurerm_subnet_service_endpoint_storage_policy
+./resource.ps1 azurerm_subscription
+./resource.ps1 azurerm_subscription_cost_management_export
+./resource.ps1 azurerm_subscription_cost_management_view
+./resource.ps1 azurerm_subscription_policy_assignment
+./resource.ps1 azurerm_subscription_policy_exemption
+./resource.ps1 azurerm_subscription_policy_remediation
+./resource.ps1 azurerm_subscription_template_deployment
+./resource.ps1 azurerm_synapse_firewall_rule
+./resource.ps1 azurerm_synapse_integration_runtime_azure
+./resource.ps1 azurerm_synapse_integration_runtime_self_hosted
+./resource.ps1 azurerm_synapse_linked_service
+./resource.ps1 azurerm_synapse_managed_private_endpoint
+./resource.ps1 azurerm_synapse_private_link_hub
+./resource.ps1 azurerm_synapse_role_assignment
+./resource.ps1 azurerm_synapse_spark_pool
+./resource.ps1 azurerm_synapse_sql_pool
+./resource.ps1 azurerm_synapse_sql_pool_extended_auditing_policy
+./resource.ps1 azurerm_synapse_sql_pool_security_alert_policy
+./resource.ps1 azurerm_synapse_sql_pool_vulnerability_assessment
+./resource.ps1 azurerm_synapse_sql_pool_vulnerability_assessment_baseline
+./resource.ps1 azurerm_synapse_sql_pool_workload_classifier
+./resource.ps1 azurerm_synapse_sql_pool_workload_group
+./resource.ps1 azurerm_synapse_workspace
+./resource.ps1 azurerm_synapse_workspace_aad_admin
+./resource.ps1 azurerm_synapse_workspace_extended_auditing_policy
+./resource.ps1 azurerm_synapse_workspace_key
+./resource.ps1 azurerm_synapse_workspace_security_alert_policy
+./resource.ps1 azurerm_synapse_workspace_sql_aad_admin
+./resource.ps1 azurerm_synapse_workspace_vulnerability_assessment
+./resource.ps1 azurerm_template_deployment
+./resource.ps1 azurerm_tenant_template_deployment
+./resource.ps1 azurerm_traffic_manager_azure_endpoint
+./resource.ps1 azurerm_traffic_manager_external_endpoint
+./resource.ps1 azurerm_traffic_manager_nested_endpoint
+./resource.ps1 azurerm_traffic_manager_profile
+./resource.ps1 azurerm_video_analyzer
+./resource.ps1 azurerm_video_analyzer_edge_module
+./resource.ps1 azurerm_virtual_desktop_application
+./resource.ps1 azurerm_virtual_desktop_application_group
+./resource.ps1 azurerm_virtual_desktop_host_pool
+./resource.ps1 azurerm_virtual_desktop_host_pool_registration_info
+./resource.ps1 azurerm_virtual_desktop_scaling_plan
+./resource.ps1 azurerm_virtual_desktop_workspace
+./resource.ps1 azurerm_virtual_desktop_workspace_application_group_association
+./resource.ps1 azurerm_virtual_hub
+./resource.ps1 azurerm_virtual_hub_bgp_connection
+./resource.ps1 azurerm_virtual_hub_connection
+./resource.ps1 azurerm_virtual_hub_ip
+./resource.ps1 azurerm_virtual_hub_route_table
+./resource.ps1 azurerm_virtual_hub_route_table_route
+./resource.ps1 azurerm_virtual_hub_routing_intent
+./resource.ps1 azurerm_virtual_hub_security_partner_provider
+./resource.ps1 azurerm_virtual_machine_data_disk_attachment
+./resource.ps1 azurerm_virtual_machine_extension
+./resource.ps1 azurerm_virtual_machine_packet_capture
+./resource.ps1 azurerm_virtual_machine_scale_set_extension
+./resource.ps1 azurerm_virtual_machine_scale_set_packet_capture
+./resource.ps1 azurerm_virtual_network_dns_servers
+./resource.ps1 azurerm_virtual_network_gateway
+./resource.ps1 azurerm_virtual_network_gateway_connection
+./resource.ps1 azurerm_virtual_network_gateway_nat_rule
+./resource.ps1 azurerm_virtual_wan
+./resource.ps1 azurerm_vmware_cluster
+./resource.ps1 azurerm_vmware_express_route_authorization
+./resource.ps1 azurerm_vmware_netapp_volume_attachment
+./resource.ps1 azurerm_vmware_private_cloud
+./resource.ps1 azurerm_voice_services_communications_gateway
+./resource.ps1 azurerm_vpn_gateway
+./resource.ps1 azurerm_vpn_gateway_connection
+./resource.ps1 azurerm_vpn_gateway_nat_rule
+./resource.ps1 azurerm_vpn_server_configuration
+./resource.ps1 azurerm_vpn_server_configuration_policy_group
+./resource.ps1 azurerm_vpn_site
+./resource.ps1 azurerm_web_app_active_slot
+./resource.ps1 azurerm_web_app_hybrid_connection
+./resource.ps1 azurerm_web_application_firewall_policy
+./resource.ps1 azurerm_web_pubsub_custom_certificate
+./resource.ps1 azurerm_web_pubsub_custom_domain
+./resource.ps1 azurerm_web_pubsub_hub
+./resource.ps1 azurerm_web_pubsub_network_acl
+./resource.ps1 azurerm_web_pubsub_service
+./resource.ps1 azurerm_web_pubsub_shared_private_link_resource
+./resource.ps1 azurerm_windows_function_app
+./resource.ps1 azurerm_windows_function_app_slot
+./resource.ps1 azurerm_windows_web_app
+./resource.ps1 azurerm_windows_web_app_slot
+./resource.ps1 azurerm_aadb2c_directory -type data
+./resource.ps1 azurerm_active_directory_domain_service -type data
+./resource.ps1 azurerm_advisor_recommendations -type data
+./resource.ps1 azurerm_attestation -type data
+./resource.ps1 azurerm_billing_enrollment_account_scope -type data
+./resource.ps1 azurerm_billing_mca_account_scope -type data
+./resource.ps1 azurerm_billing_mpa_account_scope -type data
+./resource.ps1 azurerm_blueprint_definition -type data
+./resource.ps1 azurerm_blueprint_published_version -type data
+./resource.ps1 azurerm_cdn_frontdoor_custom_domain -type data
+./resource.ps1 azurerm_cdn_frontdoor_endpoint -type data
+./resource.ps1 azurerm_cdn_frontdoor_firewall_policy -type data
+./resource.ps1 azurerm_cdn_frontdoor_origin_group -type data
+./resource.ps1 azurerm_cdn_frontdoor_profile -type data
+./resource.ps1 azurerm_cdn_frontdoor_rule_set -type data
+./resource.ps1 azurerm_cdn_frontdoor_secret -type data
+./resource.ps1 azurerm_cdn_profile -type data
+./resource.ps1 azurerm_cognitive_account -type data
+./resource.ps1 azurerm_communication_service -type data
+./resource.ps1 azurerm_confidential_ledger -type data
+./resource.ps1 azurerm_consumption_budget_resource_group -type data
+./resource.ps1 azurerm_consumption_budget_subscription -type data
+./resource.ps1 azurerm_container_app -type data
+./resource.ps1 azurerm_container_app_environment. -type data
+./resource.ps1 azurerm_container_app_environment_certificate. -type data
+./resource.ps1 azurerm_container_app_environment_dapr_component. -type data
+./resource.ps1 azurerm_container_group -type data
+./resource.ps1 azurerm_container_registry -type data
+./resource.ps1 azurerm_container_registry_scope_map -type data
+./resource.ps1 azurerm_container_registry_token -type data
+./resource.ps1 azurerm_cosmosdb_account -type data
+./resource.ps1 azurerm_cosmosdb_mongo_database -type data
+./resource.ps1 azurerm_cosmosdb_restorable_database_accounts -type data
+./resource.ps1 azurerm_cosmosdb_sql_database -type data
+./resource.ps1 azurerm_data_factory -type data
+./resource.ps1 azurerm_data_lake_store -type data
+./resource.ps1 azurerm_data_protection_backup_vault -type data
+./resource.ps1 azurerm_data_share -type data
+./resource.ps1 azurerm_data_share_account -type data
+./resource.ps1 azurerm_data_share_dataset_blob_storage -type data
+./resource.ps1 azurerm_data_share_dataset_data_lake_gen1 -type data
+./resource.ps1 azurerm_data_share_dataset_data_lake_gen2 -type data
+./resource.ps1 azurerm_data_share_dataset_kusto_cluster -type data
+./resource.ps1 azurerm_data_share_dataset_kusto_database -type data
+./resource.ps1 azurerm_database_migration_project -type data
+./resource.ps1 azurerm_database_migration_service -type data
+./resource.ps1 azurerm_databricks_workspace -type data
+./resource.ps1 azurerm_databricks_workspace_private_endpoint_connection -type data
+./resource.ps1 azurerm_dedicated_host -type data
+./resource.ps1 azurerm_dedicated_host_group -type data
+./resource.ps1 azurerm_digital_twins_instance -type data
+./resource.ps1 azurerm_disk_access -type data
+./resource.ps1 azurerm_disk_encryption_set -type data
+./resource.ps1 azurerm_dns_a_record -type data
+./resource.ps1 azurerm_dns_aaaa_record -type data
+./resource.ps1 azurerm_dns_caa_record -type data
+./resource.ps1 azurerm_dns_cname_record -type data
+./resource.ps1 azurerm_dns_mx_record -type data
+./resource.ps1 azurerm_dns_ns_record -type data
+./resource.ps1 azurerm_dns_ptr_record -type data
+./resource.ps1 azurerm_dns_soa_record -type data
+./resource.ps1 azurerm_dns_srv_record -type data
+./resource.ps1 azurerm_dns_txt_record -type data
+./resource.ps1 azurerm_dns_zone -type data
+./resource.ps1 azurerm_elastic_cloud_elasticsearch -type data
+./resource.ps1 azurerm_eventgrid_domain -type data
+./resource.ps1 azurerm_eventgrid_domain_topic -type data
+./resource.ps1 azurerm_eventgrid_system_topic -type data
+./resource.ps1 azurerm_eventgrid_topic -type data
+./resource.ps1 azurerm_eventhub -type data
+./resource.ps1 azurerm_eventhub_cluster -type data
+./resource.ps1 azurerm_eventhub_consumer_group -type data
+./resource.ps1 azurerm_eventhub_namespace -type data
+./resource.ps1 azurerm_eventhub_namespace_authorization_rule -type data
+./resource.ps1 azurerm_eventhub_sas -type data
+./resource.ps1 azurerm_express_route_circuit -type data
+./resource.ps1 azurerm_extended_locations -type data
+./resource.ps1 azurerm_firewall -type data
+./resource.ps1 azurerm_firewall_policy -type data
+./resource.ps1 azurerm_function_app -type data
+./resource.ps1 azurerm_function_app_host_keys -type data
+./resource.ps1 azurerm_hdinsight_cluster -type data
+./resource.ps1 azurerm_healthcare_dicom_service -type data
+./resource.ps1 azurerm_healthcare_fhir_service -type data
+./resource.ps1 azurerm_healthcare_medtech_service -type data
+./resource.ps1 azurerm_healthcare_service -type data
+./resource.ps1 azurerm_healthcare_workspace -type data
+./resource.ps1 azurerm_hybrid_compute_machine -type data
+./resource.ps1 azurerm_image -type data
+./resource.ps1 azurerm_images -type data
+./resource.ps1 azurerm_iothub -type data
+./resource.ps1 azurerm_iothub_dps -type data
+./resource.ps1 azurerm_iothub_dps_shared_access_policy -type data
+./resource.ps1 azurerm_iothub_shared_access_policy -type data
+./resource.ps1 azurerm_ip_group -type data
+./resource.ps1 azurerm_key_vault_managed_hardware_security_module_role_definition -type data
+./resource.ps1 azurerm_kubernetes_cluster -type data
+./resource.ps1 azurerm_kubernetes_cluster_node_pool -type data
+./resource.ps1 azurerm_kubernetes_node_pool_snapshot -type data
+./resource.ps1 azurerm_kubernetes_service_versions -type data
+./resource.ps1 azurerm_kusto_cluster -type data
+./resource.ps1 azurerm_kusto_database -type data
+./resource.ps1 azurerm_lb -type data
+./resource.ps1 azurerm_lb_backend_address_pool -type data
+./resource.ps1 azurerm_lb_outbound_rule -type data
+./resource.ps1 azurerm_lb_rule -type data
+./resource.ps1 azurerm_linux_function_app -type data
+./resource.ps1 azurerm_linux_web_app -type data
+./resource.ps1 azurerm_local_network_gateway -type data
+./resource.ps1 azurerm_location -type data
+./resource.ps1 azurerm_log_analytics_workspace -type data
+./resource.ps1 azurerm_logic_app_integration_account -type data
+./resource.ps1 azurerm_logic_app_standard -type data
+./resource.ps1 azurerm_logic_app_workflow -type data
+./resource.ps1 azurerm_machine_learning_workspace -type data
+./resource.ps1 azurerm_maintenance_configuration -type data
+./resource.ps1 azurerm_managed_api -type data
+./resource.ps1 azurerm_managed_application_definition -type data
+./resource.ps1 azurerm_managed_disk -type data
+./resource.ps1 azurerm_management_group -type data
+./resource.ps1 azurerm_management_group_template_deployment -type data
+./resource.ps1 azurerm_maps_account -type data
+./resource.ps1 azurerm_mariadb_server -type data
+./resource.ps1 azurerm_monitor_action_group -type data
+./resource.ps1 azurerm_monitor_data_collection_endpoint -type data
+./resource.ps1 azurerm_monitor_data_collection_rule -type data
+./resource.ps1 azurerm_monitor_diagnostic_categories -type data
+./resource.ps1 azurerm_monitor_log_profile -type data
+./resource.ps1 azurerm_monitor_scheduled_query_rules_alert -type data
+./resource.ps1 azurerm_monitor_scheduled_query_rules_log -type data
+./resource.ps1 azurerm_monitor_workspace -type data
+./resource.ps1 azurerm_mssql_database -type data
+./resource.ps1 azurerm_mssql_elasticpool -type data
+./resource.ps1 azurerm_mssql_managed_instance -type data
+./resource.ps1 azurerm_mssql_server -type data
+./resource.ps1 azurerm_nat_gateway -type data
+./resource.ps1 azurerm_netapp_account -type data
+./resource.ps1 azurerm_netapp_pool -type data
+./resource.ps1 azurerm_netapp_snapshot -type data
+./resource.ps1 azurerm_netapp_snapshot_policy -type data
+./resource.ps1 azurerm_netapp_volume -type data
+./resource.ps1 azurerm_netapp_volume_group_sap_hana -type data
+./resource.ps1 azurerm_netapp_volume_quota_rule -type data
+./resource.ps1 azurerm_network_ddos_protection_plan -type data
+./resource.ps1 azurerm_network_interface -type data
+./resource.ps1 azurerm_network_security_group -type data
+./resource.ps1 azurerm_network_service_tags -type data
+./resource.ps1 azurerm_notification_hub -type data
+./resource.ps1 azurerm_notification_hub_namespace -type data
+./resource.ps1 azurerm_orchestrated_virtual_machine_scale_set -type data
+./resource.ps1 azurerm_platform_image -type data
+./resource.ps1 azurerm_policy_assignment -type data
+./resource.ps1 azurerm_policy_definition -type data
+./resource.ps1 azurerm_policy_definition_built_in -type data
+./resource.ps1 azurerm_policy_set_definition -type data
+./resource.ps1 azurerm_policy_virtual_machine_configuration_assignment -type data
+./resource.ps1 azurerm_portal_dashboard -type data
+./resource.ps1 azurerm_postgresql_flexible_server -type data
+./resource.ps1 azurerm_postgresql_server -type data
+./resource.ps1 azurerm_private_dns_a_record -type data
+./resource.ps1 azurerm_private_dns_aaaa_record -type data
+./resource.ps1 azurerm_private_dns_cname_record -type data
+./resource.ps1 azurerm_private_dns_mx_record -type data
+./resource.ps1 azurerm_private_dns_ptr_record -type data
+./resource.ps1 azurerm_private_dns_resolver -type data
+./resource.ps1 azurerm_private_dns_resolver_dns_forwarding_ruleset -type data
+./resource.ps1 azurerm_private_dns_resolver_forwarding_rule -type data
+./resource.ps1 azurerm_private_dns_resolver_inbound_endpoint -type data
+./resource.ps1 azurerm_private_dns_resolver_outbound_endpoint -type data
+./resource.ps1 azurerm_private_dns_resolver_virtual_network_link -type data
+./resource.ps1 azurerm_private_dns_soa_record -type data
+./resource.ps1 azurerm_private_dns_srv_record -type data
+./resource.ps1 azurerm_private_dns_txt_record -type data
+./resource.ps1 azurerm_private_dns_zone -type data
+./resource.ps1 azurerm_private_dns_zone_virtual_network_link -type data
+./resource.ps1 azurerm_private_endpoint_connection -type data
+./resource.ps1 azurerm_private_link_service -type data
+./resource.ps1 azurerm_private_link_service_endpoint_connections -type data
+./resource.ps1 azurerm_proximity_placement_group -type data
+./resource.ps1 azurerm_public_maintenance_configurations -type data
+./resource.ps1 azurerm_recovery_services_vault -type data
+./resource.ps1 azurerm_sentinel_alert_rule_anomaly -type data
+./resource.ps1 azurerm_servicebus_topic_authorization_rule -type data
