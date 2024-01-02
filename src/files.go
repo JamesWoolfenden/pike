@@ -1680,3 +1680,48 @@ var awsAutoscalingplansScalingPlan []byte
 
 //go:embed mapping/aws/resource/elasticloadbalancing/aws_elb_attachment.json
 var awsElbAttachment []byte
+
+//go:embed mapping/aws/resource/connect/aws_connect_bot_association.json
+var awsConnectBotAssociation []byte
+
+//go:embed mapping/aws/resource/connect/aws_connect_contact_flow.json
+var awsConnectContactFlow []byte
+
+//go:embed mapping/aws/resource/connect/aws_connect_contact_flow_module.json
+var awsConnectContactFlowModule []byte
+
+//go:embed mapping/aws/resource/connect/aws_connect_hours_of_operation.json
+var awsConnectHoursOfOperation []byte
+
+//go:embed mapping/aws/resource/connect/aws_connect_instance.json
+var awsConnectInstance []byte
+
+//go:embed mapping/aws/resource/connect/aws_connect_instance_storage_config.json
+var awsConnectInstanceStorageConfig []byte
+
+//go:embed mapping/aws/resource/connect/aws_connect_phone_number.json
+var awsConnectPhoneNumber []byte
+
+//go:embed mapping/aws/resource/connect/aws_connect_queue.json
+var awsConnectQueue []byte
+
+//go:embed mapping/aws/resource/connect/aws_connect_quick_connect.json
+var awsConnectQuickConnect []byte
+
+//go:embed mapping/aws/resource/connect/aws_connect_routing_profile.json
+var awsConnectRoutingProfile []byte
+
+//go:embed mapping/aws/resource/connect/aws_connect_security_profile.json
+var awsConnectSecurityProfile []byte
+
+//go:embed mapping/aws/resource/connect/aws_connect_user.json
+var awsConnectUser []byte
+
+//go:embed mapping/aws/resource/connect/aws_connect_user_hierarchy_structure.json
+var awsConnectUserHierarchyStructure []byte
+
+//go:embed mapping/aws/resource/connect/aws_connect_user_hierarchy_group.json
+var awsConnectUserHierarchyGroup []byte
+
+//go:embed mapping/aws/resource/connect/aws_connect_vocabulary.json
+var awsConnectVocabulary []byte

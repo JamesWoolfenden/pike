@@ -4,7 +4,7 @@ resource "aws_connect_routing_profile" "pike" {
   name        = "example"
 
 
-  default_outbound_queue_id = aws_connect_queue.pike.id
+  default_outbound_queue_id = aws_connect_queue.pike.queue_id
   description               = "example description"
 
   media_concurrencies {
@@ -16,7 +16,7 @@ resource "aws_connect_routing_profile" "pike" {
     channel  = "VOICE"
     delay    = 2
     priority = 1
-    queue_id = "12345678-1234-1234-1234-123456789012"
+    queue_id = aws_connect_queue.pike.queue_id
   }
 
 

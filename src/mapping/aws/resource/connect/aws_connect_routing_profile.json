@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "connect:DescribeRoutingProfile",
+      "connect:CreateRoutingProfile",
+      "connect:DeleteRoutingProfile",
+      "connect:ListRoutingProfileQueues"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "connect:DeleteRoutingProfile"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

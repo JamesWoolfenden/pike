@@ -1,6 +1,9 @@
 [
   {
-    "apply": [],
+    "apply": [
+      "connect:AssociateBot",
+      "connect:DisassociateBot"
+    ],
     "attributes": {
       "tags": []
     },

@@ -1371,3 +1371,15 @@ var dataAwsEcrRepositories []byte
 
 //go:embed mapping/aws/data/sso/aws_ssoadmin_application_providers.json
 var dataAwsSsoadminApplicationProviders []byte
+
+//go:embed mapping/aws/data/polly/aws_polly_voices.json
+var dataAwsPollyVoices []byte
+
+//go:embed mapping/aws/data/s3express/aws_s3_directory_buckets.json
+var dataAwsS3DirectoryBuckets []byte
+
+//go:embed mapping/aws/data/sso/aws_ssoadmin_application_assignments.json
+var dataAwsSsoadminApplicationAssignments []byte
+
+//go:embed mapping/aws/data/sso/aws_ssoadmin_principal_application_assignments.json
+var dataAwsSsoadminPrincipalApplicationAssignments []byte

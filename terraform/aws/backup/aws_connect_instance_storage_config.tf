@@ -13,7 +13,7 @@ resource "aws_connect_instance_storage_config" "pike" {
 
 
 resource "aws_kinesis_firehose_delivery_stream" "pike" {
-  name        = "terraform-kinesis-firehose-extended-s3-pike-stream"
+  name        = "terraform-kinesis-firehose-extended-s3-pike-stream2"
   destination = "extended_s3"
 
   extended_s3_configuration {

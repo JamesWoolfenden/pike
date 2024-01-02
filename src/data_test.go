@@ -142,9 +142,13 @@ func Test_getLocalModules(t *testing.T) {
 
 func getInitialBlock(file string) *hclsyntax.Block {
 	body, _ := pike.GetResourceBlocks(file)
-	blocks := body.Blocks
-	block := blocks[0]
-	return block
+	if body != nil {
+		blocks := body.Blocks
+		block := blocks[0]
+		return block
+	}
+
+	return nil
 }
 
 func TestGetModulePath(t *testing.T) {

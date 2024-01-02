@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "connect:DescribeContactFlow",
+      "connect:CreateContactFlow",
+      "connect:DeleteContactFlow"
+    ],
+    "attributes": {
+      "tags": [
+        "connect:UntagResource",
+        "connect:TagResource"
+      ]
+    },
+    "destroy": [
+      "connect:DeleteContactFlow"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

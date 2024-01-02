@@ -5,7 +5,8 @@
       "firehose:DeleteDeliveryStream",
       "iam:PassRole",
       "firehose:CreateDeliveryStream",
-      "firehose:ListTagsForDeliveryStream"
+      "firehose:ListTagsForDeliveryStream",
+      "firehose:UpdateDestination"
     ],
     "attributes": {
       "tags": [
@@ -14,7 +15,9 @@
       ]
     },
     "destroy": [],
-    "modify": [],
+    "modify": [
+      "firehose:UpdateDestination"
+    ],
     "plan": []
   }
 ]

@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "connect:CreateHoursOfOperation",
+      "connect:DeleteHoursOfOperation",
+      "connect:UpdateHoursOfOperation",
+      "connect:DescribeHoursOfOperation"
+    ],
+    "attributes": {
+      "tags": [
+        "connect:UntagResource",
+        "connect:TagResource"
+      ]
+    },
+    "destroy": [
+      "connect:DeleteHoursOfOperation"
+    ],
+    "modify": [
+      "connect:UpdateHoursOfOperation"
+    ],
+    "plan": []
+  }
+]

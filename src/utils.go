@@ -90,7 +90,11 @@ func FileExists(filename string) bool {
 		return false
 	}
 
-	return !info.IsDir()
+	if info != nil {
+		return !info.IsDir()
+	}
+
+	return false
 }
 
 const float64EqualityThreshold = 1e-9

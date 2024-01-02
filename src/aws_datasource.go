@@ -20,7 +20,9 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 	return Permissions, err
 }
 
-// nolint:funlen
+// AwsDataLookup is a map to connect resource name to an object map
+//
+//nolint:funlen
 func AwsDataLookup(find string) interface{} {
 	TFLookup := map[string]interface{}{
 		"aws_acm_certificate":                                       dataAwsAcmCertificate,
@@ -542,6 +544,10 @@ func AwsDataLookup(find string) interface{} {
 		"aws_ecr_repositories":                                      dataAwsEcrRepositories,
 		"aws_ssoadmin_application":                                  placeholder,
 		"aws_ssoadmin_application_providers":                        dataAwsSsoadminApplicationProviders,
+		"aws_polly_voices":                                          dataAwsPollyVoices,
+		"aws_s3_directory_buckets":                                  dataAwsS3DirectoryBuckets,
+		"aws_ssoadmin_application_assignments":                      dataAwsSsoadminApplicationAssignments,
+		"aws_ssoadmin_principal_application_assignments":            dataAwsSsoadminPrincipalApplicationAssignments,
 	}
 
 	return TFLookup[find]

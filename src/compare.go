@@ -43,12 +43,10 @@ func Compare(directory string, arn string, init bool) (bool, error) {
 	// iam versus iac
 	fmt.Printf("IAM Policy %s versus Local %s \n", arn, directory)
 
-	theSame, err = CompareIAMPolicy(*Policy, *Sorted)
-
-	return theSame, err
+	return CompareIAMPolicy(*Policy, *Sorted)
 }
 
-// CompareIAMPolicy takes to IAm policies and compares.
+// CompareIAMPolicy takes two IAM policies and compares.
 func CompareIAMPolicy(policy string, oldPolicy string) (bool, error) {
 	differ := diff.New()
 	compare, err := differ.Compare([]byte(policy), []byte(oldPolicy))

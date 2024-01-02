@@ -676,6 +676,21 @@ func AwsLookup(name string) interface{} {
 		"aws_autoscaling_traffic_source_attachment":            awsAutoscalingTrafficSourceAttachment,
 		"aws_autoscalingplans_scaling_plan":                    awsAutoscalingplansScalingPlan,
 		"aws_elb_attachment":                                   awsElbAttachment,
+		"aws_connect_bot_association":                          awsConnectBotAssociation,
+		"aws_connect_contact_flow":                             awsConnectContactFlow,
+		"aws_connect_contact_flow_module":                      awsConnectContactFlowModule,
+		"aws_connect_hours_of_operation":                       awsConnectHoursOfOperation,
+		"aws_connect_instance":                                 awsConnectInstance,
+		"aws_connect_instance_storage_config":                  awsConnectInstanceStorageConfig,
+		"aws_connect_phone_number":                             awsConnectPhoneNumber,
+		"aws_connect_queue":                                    awsConnectQueue,
+		"aws_connect_quick_connect":                            awsConnectQuickConnect,
+		"aws_connect_routing_profile":                          awsConnectRoutingProfile,
+		"aws_connect_security_profile":                         awsConnectSecurityProfile,
+		"aws_connect_user":                                     awsConnectUser,
+		"aws_connect_user_hierarchy_structure":                 awsConnectUserHierarchyStructure,
+		"aws_connect_user_hierarchy_group":                     awsConnectUserHierarchyGroup,
+		"aws_connect_vocabulary":                               awsConnectVocabulary,
 	}
 
 	return TFLookup[name]

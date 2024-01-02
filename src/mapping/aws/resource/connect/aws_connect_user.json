@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "connect:DescribeUser",
+      "connect:CreateUser",
+      "connect:DeleteUser"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "connect:DeleteUser"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

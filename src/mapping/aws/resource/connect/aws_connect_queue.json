@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "connect:DescribeQueue",
+      "connect:CreateQueue",
+      "connect:DeleteQueue",
+      "connect:ListSecurityProfilePermissions"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "connect:DeleteQueue"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

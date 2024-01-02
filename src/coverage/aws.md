@@ -1,7 +1,7 @@
 # todo aws
 
-Resource percentage coverage   46.73
-Datasource percentage coverage 99.22
+Resource percentage coverage   47.85
+Datasource percentage coverage 99.80
 
 ./resource.ps1 aws_accessanalyzer_archive_rule
 ./resource.ps1 aws_acmpca_permission
@@ -103,6 +103,7 @@ Datasource percentage coverage 99.22
 ./resource.ps1 aws_config_organization_custom_rule
 ./resource.ps1 aws_config_organization_managed_rule
 ./resource.ps1 aws_config_remediation_configuration
+./resource.ps1 aws_connect_lambda_function_association
 ./resource.ps1 aws_controltower_control
 ./resource.ps1 aws_cur_report_definition
 ./resource.ps1 aws_customerprofiles_domain
@@ -623,6 +624,7 @@ Datasource percentage coverage 99.22
 ./resource.ps1 aws_ssmincidents_response_plan
 ./resource.ps1 aws_ssoadmin_account_assignment
 ./resource.ps1 aws_ssoadmin_application
+./resource.ps1 aws_ssoadmin_application_access_scope
 ./resource.ps1 aws_ssoadmin_application_assignment
 ./resource.ps1 aws_ssoadmin_application_assignment_configuration
 ./resource.ps1 aws_ssoadmin_customer_managed_policy_attachment
@@ -679,7 +681,4 @@ Datasource percentage coverage 99.22
 ./resource.ps1 aws_worklink_website_certificate_authority_association
 ./resource.ps1 aws_workspaces_connection_alias
 ./resource.ps1 aws_workspaces_ip_group
-./resource.ps1 aws_polly_voices -type data
-./resource.ps1 aws_s3_directory_buckets -type data
-./resource.ps1 aws_ssoadmin_application_assignments -type data
-./resource.ps1 aws_ssoadmin_principal_application_assignments -type data
+./resource.ps1 aws_mq_broker_engine_types -type data

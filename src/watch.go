@@ -130,7 +130,12 @@ func SortActions(myPolicy string) (*string, error) {
 		case reflect.String:
 			// do nothing
 		case reflect.Slice:
-			blocked["Action"] = sortInterfaceStrings(Actions)
+			theActions := sortInterfaceStrings(Actions)
+
+			if theActions != nil {
+				blocked["Action"] = theActions
+			}
+
 		default:
 			log.Print(myType.Kind())
 		}
@@ -138,7 +143,9 @@ func SortActions(myPolicy string) (*string, error) {
 		NewStatements = append(NewStatements, block)
 	}
 
-	raw["Statement"] = NewStatements
+	if NewStatements != nil {
+		raw["Statement"] = NewStatements
+	}
 
 	fixed, err := json.Marshal(raw)
 	result := string(fixed)

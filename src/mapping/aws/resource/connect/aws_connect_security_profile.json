@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "connect:DescribeSecurityProfile",
+      "connect:CreateSecurityProfile",
+      "connect:UpdateSecurityProfile",
+      "connect:DeleteSecurityProfile",
+      "connect:ListSecurityProfilePermissions"
+    ],
+    "attributes": {
+      "tags": [
+        "connect:UntagResource",
+        "connect:TagResource"
+      ]
+    },
+    "destroy": [
+      "connect:DeleteSecurityProfile"
+    ],
+    "modify": [
+      "connect:UpdateSecurityProfile"
+    ],
+    "plan": []
+  }
+]

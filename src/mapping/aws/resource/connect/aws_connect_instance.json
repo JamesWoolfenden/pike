@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "connect:DescribeInstanceAttribute",
+      "connect:CreateInstance",
+      "connect:DeleteInstance",
+      "connect:DescribeInstance",
+      "ds:CheckAlias",
+      "iam:CreateServiceLinkedRole",
+      "ds:DescribeDirectories"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "connect:DeleteInstance"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "connect:DescribeUserHierarchyStructure",
+      "connect:UpdateUserHierarchyStructure"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -54,7 +54,8 @@ func Test_setAWSAuth(t *testing.T) {
 		Region  string
 	}
 
-	arghh := "User: arn:aws:iam::680235478471:user/jameswoolfenden is not authorized to perform: sts:AssumeRole on resource: arn:aws:iam::123456789012:role/demo"
+	arghh := "User: arn:aws:iam::680235478471:user/jameswoolfenden is not authorized to perform: sts:AssumeRole on " +
+		"resource: arn:aws:iam::123456789012:role/demo"
 	// myErr := awserr.NewRequestFailure(arghh, 403, "")
 	tests := []struct {
 		name string

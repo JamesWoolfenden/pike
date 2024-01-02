@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "connect:DescribeInstanceStorageConfig",
+      "connect:UpdateInstanceStorageConfig",
+      "connect:DisassociateInstanceStorageConfig",
+      "connect:AssociateInstanceStorageConfig",
+      "iam:PutRolePolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "connect:DisassociateInstanceStorageConfig"
+    ],
+    "modify": [
+      "connect:UpdateInstanceStorageConfig"
+    ],
+    "plan": []
+  }
+]

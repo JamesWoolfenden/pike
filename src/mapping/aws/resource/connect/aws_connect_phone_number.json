@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "connect:SearchAvailablePhoneNumbers",
+      "connect:DescribePhoneNumber",
+      "connect:UpdatePhoneNumber",
+      "connect:ClaimPhoneNumber",
+      "connect:ReleasePhoneNumber"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "connect:ReleasePhoneNumber"
+    ],
+    "modify": [
+      "connect:UpdatePhoneNumber"
+    ],
+    "plan": []
+  }
+]

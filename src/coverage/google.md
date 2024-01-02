@@ -1,7 +1,7 @@
 # todo google
 
-Resource percentage coverage   10.24
-Datasource percentage coverage 86.51
+Resource percentage coverage   10.07
+Datasource percentage coverage 84.35
 
 ./resource.ps1 google_access_context_manager_access_level
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -144,6 +144,7 @@ Datasource percentage coverage 86.51
 ./resource.ps1 google_cloudbuildv2_connection_iam_member
 ./resource.ps1 google_cloudbuildv2_connection_iam_policy
 ./resource.ps1 google_cloudbuildv2_repository
+./resource.ps1 google_clouddeploy_automation
 ./resource.ps1 google_clouddeploy_delivery_pipeline
 ./resource.ps1 google_clouddeploy_target
 ./resource.ps1 google_cloudfunctions2_function
@@ -536,6 +537,7 @@ Datasource percentage coverage 86.51
 ./resource.ps1 google_identity_platform_tenant_inbound_saml_config
 ./resource.ps1 google_identity_platform_tenant_oauth_idp_config
 ./resource.ps1 google_integration_connectors_connection
+./resource.ps1 google_integration_connectors_endpoint_attachment
 ./resource.ps1 google_kms_crypto_key_version
 ./resource.ps1 google_kms_key_ring_iam_binding
 ./resource.ps1 google_kms_key_ring_iam_member
@@ -547,12 +549,14 @@ Datasource percentage coverage 86.51
 ./resource.ps1 google_logging_billing_account_sink
 ./resource.ps1 google_logging_folder_bucket_config
 ./resource.ps1 google_logging_folder_exclusion
+./resource.ps1 google_logging_folder_settings
 ./resource.ps1 google_logging_folder_sink
 ./resource.ps1 google_logging_linked_dataset
 ./resource.ps1 google_logging_log_view
 ./resource.ps1 google_logging_metric
 ./resource.ps1 google_logging_organization_bucket_config
 ./resource.ps1 google_logging_organization_exclusion
+./resource.ps1 google_logging_organization_settings
 ./resource.ps1 google_logging_organization_sink
 ./resource.ps1 google_logging_project_bucket_config
 ./resource.ps1 google_logging_project_exclusion
@@ -571,6 +575,8 @@ Datasource percentage coverage 86.51
 ./resource.ps1 google_monitoring_service
 ./resource.ps1 google_monitoring_slo
 ./resource.ps1 google_monitoring_uptime_check_config
+./resource.ps1 google_netapp_active_directory
+./resource.ps1 google_netapp_backup_vault
 ./resource.ps1 google_netapp_storage_pool
 ./resource.ps1 google_network_connectivity_hub
 ./resource.ps1 google_network_connectivity_policy_based_route
@@ -710,6 +716,8 @@ Datasource percentage coverage 86.51
 ./resource.ps1 google_vertex_ai_endpoint_iam_binding
 ./resource.ps1 google_vertex_ai_endpoint_iam_member
 ./resource.ps1 google_vertex_ai_endpoint_iam_policy
+./resource.ps1 google_vertex_ai_feature_group
+./resource.ps1 google_vertex_ai_feature_online_store
 ./resource.ps1 google_vertex_ai_featurestore
 ./resource.ps1 google_vertex_ai_featurestore_entitytype
 ./resource.ps1 google_vertex_ai_featurestore_entitytype_feature
@@ -724,11 +732,17 @@ Datasource percentage coverage 86.51
 ./resource.ps1 google_vertex_ai_metadata_store
 ./resource.ps1 google_vertex_ai_tensorboard
 ./resource.ps1 google_vmwareengine_cluster
+./resource.ps1 google_vmwareengine_external_address
 ./resource.ps1 google_vmwareengine_network
 ./resource.ps1 google_vmwareengine_network_peering
 ./resource.ps1 google_vmwareengine_network_policy
 ./resource.ps1 google_vmwareengine_private_cloud
+./resource.ps1 google_vmwareengine_subnet
 ./resource.ps1 google_vpc_access_connector
+./resource.ps1 google_workbench_instance
+./resource.ps1 google_workbench_instance_iam_binding
+./resource.ps1 google_workbench_instance_iam_member
+./resource.ps1 google_workbench_instance_iam_policy
 ./resource.ps1 google_workflows_workflow
 ./resource.ps1 google_workstations_workstation
 ./resource.ps1 google_workstations_workstation_cluster
@@ -740,6 +754,8 @@ Datasource percentage coverage 86.51
 ./resource.ps1 google_workstations_workstation_iam_member
 ./resource.ps1 google_workstations_workstation_iam_policy
 ./resource.ps1 google_billing_account -type data
+./resource.ps1 google_compute_region_disk -type data
+./resource.ps1 google_compute_reservation -type data
 ./resource.ps1 google_container_attached_install_manifest -type data
 ./resource.ps1 google_container_aws_versions -type data
 ./resource.ps1 google_container_azure_versions -type data
@@ -750,6 +766,9 @@ Datasource percentage coverage 86.51
 ./resource.ps1 google_folder -type data
 ./resource.ps1 google_folder_iam_policy -type data
 ./resource.ps1 google_folders -type data
+./resource.ps1 google_logging_folder_settings -type data
+./resource.ps1 google_logging_organization_settings -type data
+./resource.ps1 google_logging_project_settings -type data
 ./resource.ps1 google_organization_iam_policy -type data
 ./resource.ps1 google_privateca_ca_pool_iam_policy -type data
 ./resource.ps1 google_privateca_certificate_authority -type data
@@ -765,3 +784,13 @@ Datasource percentage coverage 86.51
 ./resource.ps1 google_service_directory_namespace_iam_policy -type data
 ./resource.ps1 google_service_directory_service_iam_policy -type data
 ./resource.ps1 google_sql_backup_run -type data
+./resource.ps1 google_sql_ca_certs -type data
+./resource.ps1 google_sql_database_instance_latest_recovery_time -type data
+./resource.ps1 google_tags_tag_key_iam_policy -type data
+./resource.ps1 google_tags_tag_value -type data
+./resource.ps1 google_tags_tag_value_iam_policy -type data
+./resource.ps1 google_vmwareengine_external_address -type data
+./resource.ps1 google_vmwareengine_nsx_credentials -type data
+./resource.ps1 google_vmwareengine_subnet -type data
+./resource.ps1 google_vmwareengine_vcenter_credentials -type data
+./resource.ps1 google_workbench_instance_iam_policy -type data

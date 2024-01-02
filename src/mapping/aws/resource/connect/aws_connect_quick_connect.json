@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "connect:DescribeQuickConnect",
+      "connect:CreateQuickConnect",
+      "connect:DeleteQuickConnect",
+      "connect:ListQueueQuickConnects"
+    ],
+    "attributes": {
+      "tags": [
+        "connect:UntagResource",
+        "connect:TagResource"
+      ]
+    },
+    "destroy": [
+      "connect:DeleteQuickConnect"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

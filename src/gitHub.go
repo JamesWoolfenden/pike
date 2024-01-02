@@ -71,12 +71,14 @@ func InvokeGithubDispatchEvent(repository string, workflowFileName string, branc
 	Header := myResponse.Header
 	remains := Header["X-Ratelimit-Remaining"]
 
-	if left, err := strconv.Atoi(remains[0]); err == nil {
-		if left == 0 {
-			return errors.New("you are being gitHub rate limited")
-		}
+	if len(remains) != 0 {
+		if left, err := strconv.Atoi(remains[0]); err == nil {
+			if left == 0 {
+				return errors.New("you are being gitHub rate limited")
+			}
 
-		log.Printf("Invoked: Github rate limit remaining: %s", remains[0])
+			log.Printf("Invoked: Github rate limit remaining: %s", remains[0])
+		}
 	}
 
 	return nil

@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "lambda:GetFunction",
+      "connect:AssociateLambdaFunction",
+      "connect:DisassociateLambdaFunction",
+      "connect:ListLambdaFunctions"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "connect:DisassociateLambdaFunction"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]
