@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "servicecatalog:AssociateBudgetWithResource",
+      "servicecatalog:DisassociateBudgetFromResource"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

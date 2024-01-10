@@ -7,7 +7,8 @@
     ],
     "attributes": {
       "tags": [
-        "servicecatalog:TagResource"
+        "servicecatalog:TagResource",
+        "servicecatalog:UntagResource"
       ]
     },
     "destroy": [

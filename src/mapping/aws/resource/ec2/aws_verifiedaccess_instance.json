@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "ec2:CreateVerifiedAccessInstance",
+      "ec2:DeleteVerifiedAccessInstance",
+      "ec2:ModifyVerifiedAccessInstance",
+      "verified-access:AllowVerifiedAccess",
+      "ec2:DescribeVerifiedAccessInstances"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "ec2:DeleteVerifiedAccessInstance"
+    ],
+    "modify": [
+      "ec2:ModifyVerifiedAccessInstance"
+    ],
+    "plan": []
+  }
+]

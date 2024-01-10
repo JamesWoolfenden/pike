@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "servicecatalog:AssociateProductWithPortfolio",
+      "servicecatalog:DisassociateProductFromPortfolio",
+      "iam:GetUser"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

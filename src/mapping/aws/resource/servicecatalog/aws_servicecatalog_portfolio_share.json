@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "servicecatalog:CreatePortfolioShare",
+      "servicecatalog:UpdatePortfolioShare",
+      "servicecatalog:DeletePortfolioShare"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "servicecatalog:DeletePortfolioShare"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

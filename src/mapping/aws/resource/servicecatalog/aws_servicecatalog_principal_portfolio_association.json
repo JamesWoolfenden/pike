@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "servicecatalog:AssociatePrincipalWithPortfolio",
+      "servicecatalog:DisassociatePrincipalFromPortfolio"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

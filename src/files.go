@@ -1111,7 +1111,7 @@ var awsElasticacheUserGroup []byte
 //go:embed mapping/aws/resource/elasticache/aws_elasticache_user.json
 var awsElasticacheUser []byte
 
-//go:embed mapping/aws/resource/servicequota/aws_servicequotas_service_quota.json
+//go:embed mapping/aws/resource/servicequotas/aws_servicequotas_service_quota.json
 var awsServicequotasServiceQuota []byte
 
 //go:embed mapping/aws/resource/ses/aws_ses_domain_dkim.json
@@ -1725,3 +1725,57 @@ var awsConnectUserHierarchyGroup []byte
 
 //go:embed mapping/aws/resource/connect/aws_connect_vocabulary.json
 var awsConnectVocabulary []byte
+
+//go:embed mapping/aws/resource/ec2/aws_verifiedaccess_endpoint.json
+var awsVerifiedaccessEndpoint []byte
+
+//go:embed mapping/aws/resource/ec2/aws_verifiedaccess_group.json
+var awsVerifiedaccessGroup []byte
+
+//go:embed mapping/aws/resource/ec2/aws_verifiedaccess_instance.json
+var awsVerifiedaccessInstance []byte
+
+//go:embed mapping/aws/resource/ec2/aws_verifiedaccess_instance_logging_configuration.json
+var awsVerifiedaccessInstanceLoggingConfiguration []byte
+
+//go:embed mapping/aws/resource/ec2/aws_verifiedaccess_trust_provider.json
+var awsVerifiedaccessTrustProvider []byte
+
+//go:embed mapping/aws/resource/servicecatalog/aws_servicecatalog_budget_resource_association.json
+var awsServicecatalogBudgetResourceAssociation []byte
+
+//go:embed mapping/aws/resource/servicecatalog/aws_servicecatalog_constraint.json
+var awsServicecatalogConstraint []byte
+
+//go:embed mapping/aws/resource/servicecatalog/aws_servicecatalog_organizations_access.json
+var awsServicecatalogOrganizationAccess []byte
+
+//go:embed mapping/aws/resource/servicecatalog/aws_servicecatalog_portfolio_share.json
+var awsServicecatalogPortfolioShare []byte
+
+//go:embed mapping/aws/resource/servicecatalog/aws_servicecatalog_principal_portfolio_association.json
+var awsServicecatalogPrincipalPortfolioAssociation []byte
+
+//go:embed mapping/aws/resource/servicecatalog/aws_servicecatalog_product.json
+var awsServicecatalogProduct []byte
+
+//go:embed mapping/aws/resource/servicecatalog/aws_servicecatalog_product_portfolio_association.json
+var awsServicecatalogProductPortfolioAssociation []byte
+
+//go:embed mapping/aws/resource/servicecatalog/aws_servicecatalog_provisioned_product.json
+var awsServicecatalogProvisionedProduct []byte
+
+//go:embed mapping/aws/resource/servicecatalog/aws_servicecatalog_service_action.json
+var awsServicecatalogServiceAction []byte
+
+//go:embed mapping/aws/resource/servicecatalog/aws_servicecatalog_tag_option.json
+var awsServicecatalogTagOption []byte
+
+//go:embed mapping/aws/resource/servicecatalog/aws_servicecatalog_tag_option_resource_association.json
+var awsServicecatalogTagOptionResourceAssociation []byte
+
+//go:embed mapping/aws/resource/servicequotas/aws_servicequotas_template.json
+var awsServiceQuotasTemplate []byte
+
+//go:embed mapping/aws/resource/servicequotas/aws_servicequotas_template_association.json
+var awsServiceQuotasTemplateAssociation []byte

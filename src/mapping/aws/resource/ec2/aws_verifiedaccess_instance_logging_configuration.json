@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "ec2:ModifyVerifiedAccessInstanceLoggingConfiguration",
+      "logs:ListLogDeliveries",
+      "logs:CreateLogDelivery"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [
+      "ec2:ModifyVerifiedAccessInstanceLoggingConfiguration"
+    ],
+    "plan": []
+  }
+]

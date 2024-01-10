@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "servicecatalog:CreateProduct",
+      "servicecatalog:DescribeProduct",
+      "servicecatalog:DeleteProduct",
+      "servicecatalog:UpdateProduct"
+    ],
+    "attributes": {
+      "tags": [
+        "servicecatalog:TagResource",
+        "servicecatalog:UntagResource"
+      ]
+    },
+    "destroy": [
+      "servicecatalog:DeleteProduct",
+      "servicecatalog:UpdateProduct"
+    ],
+    "modify": [
+      "servicecatalog:DeleteProduct",
+      "servicecatalog:UpdateProduct"
+    ],
+    "plan": []
+  }
+]

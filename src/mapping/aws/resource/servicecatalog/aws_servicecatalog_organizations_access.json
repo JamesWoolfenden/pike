@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "servicecatalog:EnableAWSOrganizationsAccess",
+      "servicecatalog:DisableAWSOrganizationsAccess",
+      "servicecatalog:GetAWSOrganizationsAccessStatus",
+      "iam:CreateServiceLinkedRole"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

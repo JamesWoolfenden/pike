@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "servicecatalog:ProvisionProduct"
+    ],
+    "attributes": {
+      "tags": [
+        "servicecatalog:TagResource",
+        "servicecatalog:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

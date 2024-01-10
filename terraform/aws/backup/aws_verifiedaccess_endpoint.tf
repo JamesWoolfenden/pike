@@ -18,7 +18,7 @@ resource "aws_security_group" "pike" {
 }
 
 resource "aws_network_interface" "pike" {
-  subnet_id      = "subnet-0243b982356b4a0f0"
+  subnet_id      = "subnet-0562ef1d304b968f4"
   description    = "An interface"
   interface_type = "trunk"
   #  ipv4_prefix_count = 1

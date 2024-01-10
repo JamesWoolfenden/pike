@@ -1,6 +1,6 @@
 # todo aws
 
-Resource percentage coverage   47.85
+Resource percentage coverage   49.23
 Datasource percentage coverage 99.80
 
 ./resource.ps1 aws_accessanalyzer_archive_rule
@@ -103,6 +103,7 @@ Datasource percentage coverage 99.80
 ./resource.ps1 aws_config_organization_custom_rule
 ./resource.ps1 aws_config_organization_managed_rule
 ./resource.ps1 aws_config_remediation_configuration
+./resource.ps1 aws_connect_lambda_function_association
 ./resource.ps1 aws_controltower_control
 ./resource.ps1 aws_cur_report_definition
 ./resource.ps1 aws_customerprofiles_domain
@@ -575,20 +576,7 @@ Datasource percentage coverage 99.80
 ./resource.ps1 aws_service_discovery_private_dns_namespace
 ./resource.ps1 aws_service_discovery_public_dns_namespace
 ./resource.ps1 aws_service_discovery_service
-./resource.ps1 aws_servicecatalog_budget_resource_association
-./resource.ps1 aws_servicecatalog_constraint
-./resource.ps1 aws_servicecatalog_organizations_access
-./resource.ps1 aws_servicecatalog_portfolio_share
-./resource.ps1 aws_servicecatalog_principal_portfolio_association
-./resource.ps1 aws_servicecatalog_product
-./resource.ps1 aws_servicecatalog_product_portfolio_association
-./resource.ps1 aws_servicecatalog_provisioned_product
 ./resource.ps1 aws_servicecatalog_provisioning_artifact
-./resource.ps1 aws_servicecatalog_service_action
-./resource.ps1 aws_servicecatalog_tag_option
-./resource.ps1 aws_servicecatalog_tag_option_resource_association
-./resource.ps1 aws_servicequotas_template
-./resource.ps1 aws_servicequotas_template_association
 ./resource.ps1 aws_ses_active_receipt_rule_set
 ./resource.ps1 aws_ses_configuration_set
 ./resource.ps1 aws_ses_email_identity
@@ -660,12 +648,7 @@ Datasource percentage coverage 99.80
 ./resource.ps1 aws_transfer_tag
 ./resource.ps1 aws_transfer_user
 ./resource.ps1 aws_transfer_workflow
-./resource.ps1 aws_verifiedaccess_endpoint
-./resource.ps1 aws_verifiedaccess_group
-./resource.ps1 aws_verifiedaccess_instance
-./resource.ps1 aws_verifiedaccess_instance_logging_configuration
 ./resource.ps1 aws_verifiedaccess_instance_trust_provider_attachment
-./resource.ps1 aws_verifiedaccess_trust_provider
 ./resource.ps1 aws_vpc_endpoint_connection_accepter
 ./resource.ps1 aws_vpc_endpoint_connection_notification
 ./resource.ps1 aws_vpc_endpoint_policy

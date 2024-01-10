@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "servicequotas:PutServiceQuotaIncreaseRequestIntoTemplate",
+      "servicequotas:DeleteServiceQuotaIncreaseRequestFromTemplate",
+      "servicequotas:GetServiceQuotaIncreaseRequestFromTemplate"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "servicequotas:DeleteServiceQuotaIncreaseRequestFromTemplate"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

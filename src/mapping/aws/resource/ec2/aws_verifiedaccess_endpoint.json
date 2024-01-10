@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "ec2:CreateVerifiedAccessEndpoint",
+      "ec2:DeleteVerifiedAccessEndpoint",
+      "ec2:ModifyVerifiedAccessEndpoint"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "ec2:DeleteVerifiedAccessEndpoint"
+    ],
+    "modify": [
+      "ec2:ModifyVerifiedAccessEndpoint"
+    ],
+    "plan": []
+  }
+]

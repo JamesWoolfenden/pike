@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "servicecatalog:AssociateTagOptionWithResource",
+      "servicecatalog:DisassociateTagOptionFromResource"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

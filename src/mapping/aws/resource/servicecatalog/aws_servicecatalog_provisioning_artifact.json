@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "servicecatalog:CreateProvisioningArtifact",
+      "servicecatalog:DeleteProvisioningArtifact",
+      "servicecatalog:UpdateProvisioningArtifact",
+      "servicecatalog:DescribeProvisioningArtifact"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "servicecatalog:DeleteProvisioningArtifact"
+    ],
+    "modify": [
+      "servicecatalog:UpdateProvisioningArtifact"
+    ],
+    "plan": []
+  }
+]

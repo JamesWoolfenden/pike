@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "servicecatalog:CreateServiceAction",
+      "servicecatalog:DescribeServiceAction",
+      "servicecatalog:DeleteServiceAction",
+      "servicecatalog:UpdateServiceAction",
+      "ssm:DescribeDocument"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "servicecatalog:DeleteServiceAction"
+    ],
+    "modify": [
+      "servicecatalog:UpdateServiceAction"
+    ],
+    "plan": []
+  }
+]

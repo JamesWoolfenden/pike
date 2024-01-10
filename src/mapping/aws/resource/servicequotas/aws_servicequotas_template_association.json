@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "servicequotas:AssociateServiceQuotaTemplate",
+      "servicequotas:DisassociateServiceQuotaTemplate",
+      "organizations:EnableAWSServiceAccess"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

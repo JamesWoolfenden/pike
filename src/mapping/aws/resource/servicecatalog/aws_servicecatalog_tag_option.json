@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "servicecatalog:CreateTagOption",
+      "servicecatalog:DeleteTagOption",
+      "servicecatalog:UpdateTagOption",
+      "servicecatalog:DescribeTagOption"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "servicecatalog:DeleteTagOption"
+    ],
+    "modify": [
+      "servicecatalog:UpdateTagOption"
+    ],
+    "plan": []
+  }
+]

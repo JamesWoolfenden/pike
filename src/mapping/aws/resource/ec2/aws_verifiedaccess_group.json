@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "ec2:CreateVerifiedAccessGroup",
+      "ec2:DeleteVerifiedAccessGroup",
+      "ec2:ModifyVerifiedAccessGroup"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "ec2:DeleteVerifiedAccessGroup"
+    ],
+    "modify": [
+      "ec2:DeleteVerifiedAccessGroup"
+    ],
+    "plan": []
+  }
+]
