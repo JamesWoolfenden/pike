@@ -7,73 +7,34 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          //aws_servicequotas_template_association
-          "servicequotas:AssociateServiceQuotaTemplate",
-          "servicequotas:DisassociateServiceQuotaTemplate",
-          "organizations:EnableAWSServiceAccess",
 
-          //aws_servicequotas_template
-          "servicequotas:PutServiceQuotaIncreaseRequestIntoTemplate",
-          "servicequotas:DeleteServiceQuotaIncreaseRequestFromTemplate",
-          "servicequotas:GetServiceQuotaIncreaseRequestFromTemplate",
+          //aws_codepipeline_webhook
+          "codepipeline:DeleteWebhook",
+          "codepipeline:PutWebhook",
+          "codepipeline:ListWebhooks",
 
-          //aws_servicecatalog_tag_option_resource_association
-          "servicecatalog:AssociateTagOptionWithResource",
-          "servicecatalog:DisassociateTagOptionFromResource",
+          //aws_codepipeline_custom_action_type
+          "codepipeline:CreateCustomActionType",
+          "codepipeline:DeleteCustomActionType",
+          "codepipeline:ListActionTypes",
+          "codepipeline:ListTagsForResource",
 
-          //aws_servicecatalog_tag_option
-          "servicecatalog:CreateTagOption",
-          "servicecatalog:DeleteTagOption",
-          "servicecatalog:UpdateTagOption",
-          "servicecatalog:DescribeTagOption",
+          //aws_codegurureviewer_repository_association
+          "codeguru-reviewer:AssociateRepository",
+          "codeguru-reviewer:DisassociateRepository",
+          "codeguru-reviewer:DescribeRepositoryAssociation",
+          //aws_codeguruprofiler_profiling_group
+          "codeguru-profiler:UpdateProfilingGroup",
+          "codeguru-profiler:DeleteProfilingGroup",
+          "codeguru-profiler:CreateProfilingGroup",
+          "codeguru-profiler:DescribeProfilingGroup",
+          //aws_codecatalyst_source_repository
 
-          //aws_servicecatalog_service_action
-          "servicecatalog:CreateServiceAction",
-          "servicecatalog:DescribeServiceAction",
-          "servicecatalog:DeleteServiceAction",
-          "servicecatalog:UpdateServiceAction",
-          "ssm:DescribeDocument",
+          //aws_codecatalyst_project
+          //aws_codecatalyst_dev_environment
 
-          //aws_servicecatalog_provisioned_product
-          "servicecatalog:ProvisionProduct",
-          "servicecatalog:TagResource",
-          "servicecatalog:UntagResource",
 
-          //aws_servicecatalog_product_portfolio_association
-          "servicecatalog:AssociateProductWithPortfolio",
-          "servicecatalog:DisassociateProductFromPortfolio",
-          "iam:GetUser",
 
-          //aws_servicecatalog_product
-          "servicecatalog:CreateProduct",
-          "servicecatalog:DescribeProduct",
-          "servicecatalog:DeleteProduct",
-          "servicecatalog:UpdateProduct",
-
-          //aws_servicecatalog_principal_portfolio_association
-          "servicecatalog:AssociatePrincipalWithPortfolio",
-          "servicecatalog:DisassociatePrincipalFromPortfolio",
-
-          //aws_servicecatalog_portfolio
-          "servicecatalog:CreatePortfolio",
-          "servicecatalog:DescribePortfolio",
-          "servicecatalog:DeletePortfolio",
-          "servicecatalog:UpdatePortfolio",
-
-          //aws_servicecatalog_organizations_access
-          "servicecatalog:EnableAWSOrganizationsAccess",
-          "servicecatalog:DisableAWSOrganizationsAccess",
-          "servicecatalog:GetAWSOrganizationsAccessStatus",
-          "iam:CreateServiceLinkedRole",
-
-          //aws_servicecatalog_budget_resource_association
-          "servicecatalog:AssociateBudgetWithResource",
-          "servicecatalog:DisassociateBudgetFromResource",
-
-          //aws_servicecatalog_portfolio_share
-          "servicecatalog:CreatePortfolioShare",
-          "servicecatalog:UpdatePortfolioShare",
-          "servicecatalog:DeletePortfolioShare",
 
         ],
         "Resource" : "*",

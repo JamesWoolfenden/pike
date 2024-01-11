@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "codestar-connections:UpdateHost",
+      "codestar-connections:DeleteHost",
+      "codestar-connections:CreateHost",
+      "codestar-connections:GetHost"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "codestar-connections:DeleteHost"
+    ],
+    "modify": [
+      "codestar-connections:UpdateHost"
+    ],
+    "plan": []
+  }
+]

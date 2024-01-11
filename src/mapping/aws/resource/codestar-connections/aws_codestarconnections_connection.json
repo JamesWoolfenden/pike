@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "codestar-connections:GetConnection",
+      "codestar-connections:CreateConnection",
+      "codestar-connections:DeleteConnection",
+      "codestar-connections:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "codestar-connections:TagResource",
+        "codestar-connections:UntagResource"
+      ]
+    },
+    "destroy": [
+      "codestar-connections:DeleteConnection"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

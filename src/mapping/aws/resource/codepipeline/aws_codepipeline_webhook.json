@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "codepipeline:DeleteWebhook",
+      "codepipeline:PutWebhook",
+      "codepipeline:ListWebhooks"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "codepipeline:DeleteWebhook"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "codepipeline:CreateCustomActionType",
+      "codepipeline:DeleteCustomActionType",
+      "codepipeline:ListActionTypes",
+      "codepipeline:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "codepipeline:DeleteCustomActionType"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

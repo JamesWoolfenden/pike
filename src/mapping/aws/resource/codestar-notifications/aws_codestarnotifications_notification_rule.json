@@ -1,0 +1,26 @@
+[
+  {
+    "apply": [
+      "codestar-notifications:DescribeNotificationRule",
+      "codestar-notifications:CreateNotificationRule",
+      "codestar-notifications:DeleteNotificationRule",
+      "codestar-notifications:UpdateNotificationRule",
+      "iam:CreateServiceLinkedRole",
+      "codestar-notifications:DeleteTarget"
+    ],
+    "attributes": {
+      "tags": [
+        "codestar-notifications:TagResource",
+        "codestar-notifications:UntagResource"
+      ]
+    },
+    "destroy": [
+      "codestar-notifications:DeleteNotificationRule",
+      "codestar-notifications:DeleteTarget"
+    ],
+    "modify": [
+      "codestar-notifications:UpdateNotificationRule"
+    ],
+    "plan": []
+  }
+]
