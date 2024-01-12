@@ -772,6 +772,7 @@
         "azurerm_security_center_contact",
         "azurerm_security_center_server_vulnerability_assessment",
         "azurerm_security_center_server_vulnerability_assessment_virtual_machine",
+        "azurerm_security_center_server_vulnerability_assessments_setting",
         "azurerm_security_center_setting",
         "azurerm_security_center_storage_defender",
         "azurerm_security_center_subscription_pricing",
