@@ -516,3 +516,30 @@ var dataGoogleVmwareengineNetworkPeering []byte
 
 //go:embed mapping/google/data/aiplatform/google_vertex_ai_endpoint_iam_policy.json
 var dataGoogleVertexAiEndpointIamPolicy []byte
+
+//go:embed mapping/google/data/vmwareengine/google_vmwareengine_external_address.json
+var dataGoogleVmwareengineExternalAddress []byte
+
+//go:embed mapping/google/data/vmwareengine/google_vmwareengine_nsx_credentials.json
+var dataGoogleVmwareengineNsxCredentials []byte
+
+//go:embed mapping/google/data/vmwareengine/google_vmwareengine_subnet.json
+var dataGoogleVmwareengineSubnet []byte
+
+//go:embed mapping/google/data/vmwareengine/google_vmwareengine_vcenter_credentials.json
+var dataGoogleVmwareengineVcenterCredentials []byte
+
+//go:embed mapping/google/data/notebooks/google_workbench_instance_iam_policy.json
+var dataGoogleWorkbenchInstanceIamPolicy []byte
+
+//go:embed mapping/google/data/compute/google_compute_region_disk.json
+var dataGoogleComputeRegionDisk []byte
+
+//go:embed mapping/google/data/compute/google_compute_reservation.json
+var dataGoogleComputeReservation []byte
+
+//go:embed mapping/google/data/file/google_filestore_instance.json
+var dataGoogleFilestoreInstance []byte
+
+//go:embed mapping/google/data/logging/google_logging_project_settings.json
+var dataGoogleLoggingProjectSettings []byte

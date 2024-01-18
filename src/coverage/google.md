@@ -1,7 +1,7 @@
 # todo google
 
 Resource percentage coverage   10.01
-Datasource percentage coverage 83.71
+Datasource percentage coverage 88.64
 
 ./resource.ps1 google_access_context_manager_access_level
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -758,23 +758,16 @@ Datasource percentage coverage 83.71
 ./resource.ps1 google_workstations_workstation_iam_binding
 ./resource.ps1 google_workstations_workstation_iam_member
 ./resource.ps1 google_workstations_workstation_iam_policy
-./resource.ps1 google_billing_account -type data
-./resource.ps1 google_compute_region_disk -type data
-./resource.ps1 google_compute_reservation -type data
 ./resource.ps1 google_container_attached_install_manifest -type data
 ./resource.ps1 google_container_aws_versions -type data
 ./resource.ps1 google_container_azure_versions -type data
 ./resource.ps1 google_data_catalog_taxonomy_iam_policy -type data
 ./resource.ps1 google_dataform_repository_iam_policy -type data
 ./resource.ps1 google_endpoints_service_iam_policy -type data
-./resource.ps1 google_filestore_instance -type data
 ./resource.ps1 google_firebase_web_app_config -type data
 ./resource.ps1 google_folder -type data
 ./resource.ps1 google_folder_iam_policy -type data
 ./resource.ps1 google_folders -type data
-./resource.ps1 google_logging_folder_settings -type data
-./resource.ps1 google_logging_organization_settings -type data
-./resource.ps1 google_logging_project_settings -type data
 ./resource.ps1 google_organization_iam_policy -type data
 ./resource.ps1 google_privateca_ca_pool_iam_policy -type data
 ./resource.ps1 google_privateca_certificate_authority -type data
@@ -795,9 +788,3 @@ Datasource percentage coverage 83.71
 ./resource.ps1 google_tags_tag_key_iam_policy -type data
 ./resource.ps1 google_tags_tag_value -type data
 ./resource.ps1 google_tags_tag_value_iam_policy -type data
-./resource.ps1 google_vmwareengine_external_access_rule -type data
-./resource.ps1 google_vmwareengine_external_address -type data
-./resource.ps1 google_vmwareengine_nsx_credentials -type data
-./resource.ps1 google_vmwareengine_subnet -type data
-./resource.ps1 google_vmwareengine_vcenter_credentials -type data
-./resource.ps1 google_workbench_instance_iam_policy -type data

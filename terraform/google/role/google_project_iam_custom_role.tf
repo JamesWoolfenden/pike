@@ -4,34 +4,28 @@ resource "google_project_iam_custom_role" "pike" {
   title       = "pike terraform user"
   description = "A user with least privileges"
   permissions = [
-    //"composer.environments.list",
-    "composer.environments.get",
-    "composer.imageversions.list",
+    //google_workbench_instance_iam_policy
+    "notebooks.instances.getIamPolicy",
+    //google_vmwareengine_vcenter_credentials
+    "vmwareengine.privateClouds.showVcenterCredentials",
 
-    //
-    "cloudsql.instances.addServerCa",
-    "cloudsql.instances.connect",
-    "cloudsql.instances.export",
-    "cloudsql.instances.failover",
-    "cloudsql.instances.get",
-    "cloudsql.instances.list",
-    "cloudsql.instances.listServerCas",
-    "cloudsql.instances.migrate",
-    "cloudsql.instances.reencrypt",
-    "cloudsql.instances.restart",
-    "cloudsql.instances.rotateServerCa",
-    "cloudsql.instances.truncateLog",
-    "cloudsql.instances.update",
-    "cloudsql.databases.create",
-    "cloudsql.databases.get",
-    "cloudsql.databases.list",
-    "cloudsql.databases.update",
-    "cloudsql.backupRuns.create",
-    "cloudsql.backupRuns.get",
-    "cloudsql.backupRuns.list",
-    "cloudsql.sslCerts.get",
-    "cloudsql.sslCerts.list",
-    "cloudsql.users.list",
+    //google_vmwareengine_external_address
+    "vmwareengine.externalAddresses.get",
+    //google_vmwareengine_nsx_credentials
+    "vmwareengine.privateClouds.showNsxCredentials",
+    //google_vmwareengine_subnet
+    "vmwareengine.subnets.get",
 
+    //google_compute_region_disk
+    "compute.disks.get",
+
+    //google_compute_reservation
+    "compute.reservations.get",
+
+    //google_filestore_instance
+    "file.instances.get",
+
+    //google_logging_project_settings, google_logging_project_settings
+    "logging.settings.get"
   ]
 }

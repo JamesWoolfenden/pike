@@ -245,6 +245,19 @@ func GCPDataLookup(result string) interface{} {
 		"google_vmwareengine_network_policy":                     dataGoogleVmwareengineNetworkPolicy,
 		"google_vmwareengine_network_peering":                    dataGoogleVmwareengineNetworkPeering,
 		"google_vertex_ai_endpoint_iam_policy":                   dataGoogleVertexAiEndpointIamPolicy,
+		"google_vmwareengine_external_address":                   dataGoogleVmwareengineExternalAddress,
+		"google_vmwareengine_nsx_credentials":                    dataGoogleVmwareengineNsxCredentials,
+		"google_vmwareengine_subnet":                             dataGoogleVmwareengineSubnet,
+		"google_vmwareengine_vcenter_credentials":                dataGoogleVmwareengineVcenterCredentials,
+		"google_workbench_instance_iam_policy":                   dataGoogleWorkbenchInstanceIamPolicy,
+		"google_vmwareengine_external_access_rule":               placeholder,
+		"google_compute_region_disk":                             dataGoogleComputeRegionDisk,
+		"google_compute_reservation":                             dataGoogleComputeReservation,
+		"google_filestore_instance":                              dataGoogleFilestoreInstance,
+		"google_logging_project_settings":                        dataGoogleLoggingProjectSettings,
+		"google_billing_account":                                 placeholder,
+		"google_logging_folder_settings":                         placeholder,
+		"google_logging_organization_settings":                   placeholder,
 	}
 
 	return TFLookup[result]
