@@ -8,34 +8,12 @@ resource "aws_iam_policy" "basic" {
         "Effect" : "Allow",
         "Action" : [
 
-          //aws_codepipeline_webhook
-          "codepipeline:DeleteWebhook",
-          "codepipeline:PutWebhook",
-          "codepipeline:ListWebhooks",
-
-          //aws_codepipeline_custom_action_type
-          "codepipeline:CreateCustomActionType",
-          "codepipeline:DeleteCustomActionType",
-          "codepipeline:ListActionTypes",
-          "codepipeline:ListTagsForResource",
-
-          //aws_codegurureviewer_repository_association
-          "codeguru-reviewer:AssociateRepository",
-          "codeguru-reviewer:DisassociateRepository",
-          "codeguru-reviewer:DescribeRepositoryAssociation",
-          //aws_codeguruprofiler_profiling_group
-          "codeguru-profiler:UpdateProfilingGroup",
-          "codeguru-profiler:DeleteProfilingGroup",
-          "codeguru-profiler:CreateProfilingGroup",
-          "codeguru-profiler:DescribeProfilingGroup",
-          //aws_codecatalyst_source_repository
-
-          //aws_codecatalyst_project
-          //aws_codecatalyst_dev_environment
-
-
-
-
+          //aws_mq_broker_engine_types
+          "mq:DescribeBrokerEngineTypes",
+          //aws_msk_bootstrap_brokers
+          "kafka:GetBootstrapBrokers",
+          //aws_verifiedpermissions_policy_store
+          "verifiedpermissions:getpolicystore"
         ],
         "Resource" : "*",
       }

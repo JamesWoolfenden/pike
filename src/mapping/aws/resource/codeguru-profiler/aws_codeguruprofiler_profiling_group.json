@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "codeguru-profiler:UpdateProfilingGroup",
+      "codeguru-profiler:DeleteProfilingGroup",
+      "codeguru-profiler:CreateProfilingGroup",
+      "codeguru-profiler:DescribeProfilingGroup"
+    ],
+    "attributes": {
+      "tags": [
+        "codeguru-profiler:TagResource",
+        "codeguru-profiler:UntagResource"
+      ]
+    },
+    "destroy": [
+      "codeguru-profiler:UpdateProfilingGroup",
+      "codeguru-profiler:DeleteProfilingGroup"
+    ],
+    "modify": [
+      "codeguru-profiler:UpdateProfilingGroup",
+      "codeguru-profiler:DeleteProfilingGroup"
+    ],
+    "plan": []
+  }
+]

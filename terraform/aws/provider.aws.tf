@@ -14,3 +14,9 @@ provider "aws" {
   region  = "us-west-1"
   profile = "basic"
 }
+
+provider "aws" {
+  alias   = "eire"
+  region  = "eu-west-1"
+  profile = "basic"
+}

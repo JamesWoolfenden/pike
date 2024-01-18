@@ -709,6 +709,16 @@ func AwsLookup(name string) interface{} {
 		"aws_servicecatalog_tag_option_resource_association":   awsServicecatalogTagOptionResourceAssociation,
 		"aws_servicequotas_template":                           awsServiceQuotasTemplate,
 		"aws_servicequotas_template_association":               awsServiceQuotasTemplateAssociation,
+		"aws_codecatalyst_source_repository":                   placeholder,
+		"aws_codeguruprofiler_profiling_group":                 awsCodeguruprofilerProfilingGroup,
+		"aws_codegurureviewer_repository_association":          awsCodegurureviewerRepositoryAssociation,
+		"aws_codepipeline_custom_action_type":                  awsCodepipelineCustomActionType,
+		"aws_codepipeline_webhook":                             awsCodepipelineWebhook,
+		"aws_codestarconnections_connection":                   awsCodestarconnectionsConnection,
+		"aws_codestarconnections_host":                         awsCodestarconnectionsHost,
+		"aws_codestarnotifications_notification_rule":          awsCodestarconnectionsNotificationsRule,
+		"aws_codecatalyst_dev_environment":                     placeholder,
+		"aws_codecatalyst_project":                             placeholder,
 	}
 
 	return TFLookup[name]

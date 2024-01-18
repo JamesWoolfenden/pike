@@ -1,7 +1,7 @@
 # todo google
 
-Resource percentage coverage   10.07
-Datasource percentage coverage 84.35
+Resource percentage coverage   10.01
+Datasource percentage coverage 83.71
 
 ./resource.ps1 google_access_context_manager_access_level
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -147,6 +147,7 @@ Datasource percentage coverage 84.35
 ./resource.ps1 google_clouddeploy_automation
 ./resource.ps1 google_clouddeploy_delivery_pipeline
 ./resource.ps1 google_clouddeploy_target
+./resource.ps1 google_clouddomains_registration
 ./resource.ps1 google_cloudfunctions2_function
 ./resource.ps1 google_cloudfunctions2_function_iam_binding
 ./resource.ps1 google_cloudfunctions2_function_iam_member
@@ -576,7 +577,9 @@ Datasource percentage coverage 84.35
 ./resource.ps1 google_monitoring_slo
 ./resource.ps1 google_monitoring_uptime_check_config
 ./resource.ps1 google_netapp_active_directory
+./resource.ps1 google_netapp_backup_policy
 ./resource.ps1 google_netapp_backup_vault
+./resource.ps1 google_netapp_kmsconfig
 ./resource.ps1 google_netapp_storage_pool
 ./resource.ps1 google_network_connectivity_hub
 ./resource.ps1 google_network_connectivity_policy_based_route
@@ -718,6 +721,7 @@ Datasource percentage coverage 84.35
 ./resource.ps1 google_vertex_ai_endpoint_iam_policy
 ./resource.ps1 google_vertex_ai_feature_group
 ./resource.ps1 google_vertex_ai_feature_online_store
+./resource.ps1 google_vertex_ai_feature_online_store_featureview
 ./resource.ps1 google_vertex_ai_featurestore
 ./resource.ps1 google_vertex_ai_featurestore_entitytype
 ./resource.ps1 google_vertex_ai_featurestore_entitytype_feature
@@ -732,6 +736,7 @@ Datasource percentage coverage 84.35
 ./resource.ps1 google_vertex_ai_metadata_store
 ./resource.ps1 google_vertex_ai_tensorboard
 ./resource.ps1 google_vmwareengine_cluster
+./resource.ps1 google_vmwareengine_external_access_rule
 ./resource.ps1 google_vmwareengine_external_address
 ./resource.ps1 google_vmwareengine_network
 ./resource.ps1 google_vmwareengine_network_peering
@@ -762,6 +767,7 @@ Datasource percentage coverage 84.35
 ./resource.ps1 google_data_catalog_taxonomy_iam_policy -type data
 ./resource.ps1 google_dataform_repository_iam_policy -type data
 ./resource.ps1 google_endpoints_service_iam_policy -type data
+./resource.ps1 google_filestore_instance -type data
 ./resource.ps1 google_firebase_web_app_config -type data
 ./resource.ps1 google_folder -type data
 ./resource.ps1 google_folder_iam_policy -type data
@@ -789,6 +795,7 @@ Datasource percentage coverage 84.35
 ./resource.ps1 google_tags_tag_key_iam_policy -type data
 ./resource.ps1 google_tags_tag_value -type data
 ./resource.ps1 google_tags_tag_value_iam_policy -type data
+./resource.ps1 google_vmwareengine_external_access_rule -type data
 ./resource.ps1 google_vmwareengine_external_address -type data
 ./resource.ps1 google_vmwareengine_nsx_credentials -type data
 ./resource.ps1 google_vmwareengine_subnet -type data

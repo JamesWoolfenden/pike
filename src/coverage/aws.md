@@ -1,7 +1,7 @@
 # todo aws
 
-Resource percentage coverage   49.23
-Datasource percentage coverage 99.80
+Resource percentage coverage   49.66
+Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_accessanalyzer_archive_rule
 ./resource.ps1 aws_acmpca_permission
@@ -81,16 +81,6 @@ Datasource percentage coverage 99.80
 ./resource.ps1 aws_cloudfront_realtime_log_config
 ./resource.ps1 aws_cloudhsm_v2_cluster
 ./resource.ps1 aws_cloudhsm_v2_hsm
-./resource.ps1 aws_codecatalyst_dev_environment
-./resource.ps1 aws_codecatalyst_project
-./resource.ps1 aws_codecatalyst_source_repository
-./resource.ps1 aws_codeguruprofiler_profiling_group
-./resource.ps1 aws_codegurureviewer_repository_association
-./resource.ps1 aws_codepipeline_custom_action_type
-./resource.ps1 aws_codepipeline_webhook
-./resource.ps1 aws_codestarconnections_connection
-./resource.ps1 aws_codestarconnections_host
-./resource.ps1 aws_codestarnotifications_notification_rule
 ./resource.ps1 aws_cognito_identity_pool_provider_principal_tag
 ./resource.ps1 aws_cognito_identity_pool_roles_attachment
 ./resource.ps1 aws_cognito_managed_user_pool_client
@@ -174,6 +164,7 @@ Datasource percentage coverage 99.80
 ./resource.ps1 aws_dx_transit_virtual_interface
 ./resource.ps1 aws_dynamodb_kinesis_streaming_destination
 ./resource.ps1 aws_dynamodb_table_replica
+./resource.ps1 aws_ebs_fast_snapshot_restore
 ./resource.ps1 aws_ebs_snapshot_import
 ./resource.ps1 aws_ec2_carrier_gateway
 ./resource.ps1 aws_ec2_client_vpn_authorization_rule
@@ -217,6 +208,7 @@ Datasource percentage coverage 99.80
 ./resource.ps1 aws_eks_identity_provider_config
 ./resource.ps1 aws_eks_pod_identity_association
 ./resource.ps1 aws_elasticache_global_replication_group
+./resource.ps1 aws_elasticache_serverless_cache
 ./resource.ps1 aws_elasticache_user_group_association
 ./resource.ps1 aws_elasticsearch_domain_saml_options
 ./resource.ps1 aws_elasticsearch_vpc_endpoint
@@ -286,6 +278,7 @@ Datasource percentage coverage 99.80
 ./resource.ps1 aws_identitystore_group
 ./resource.ps1 aws_identitystore_group_membership
 ./resource.ps1 aws_identitystore_user
+./resource.ps1 aws_imagebuilder_workflow
 ./resource.ps1 aws_internet_gateway_attachment
 ./resource.ps1 aws_iot_authorizer
 ./resource.ps1 aws_iot_billing_group
@@ -320,6 +313,7 @@ Datasource percentage coverage 99.80
 ./resource.ps1 aws_keyspaces_keyspace
 ./resource.ps1 aws_keyspaces_table
 ./resource.ps1 aws_kinesis_analytics_application
+./resource.ps1 aws_kinesis_resource_policy
 ./resource.ps1 aws_kinesisanalyticsv2_application
 ./resource.ps1 aws_kinesisanalyticsv2_application_snapshot
 ./resource.ps1 aws_lakeformation_data_lake_settings
@@ -452,6 +446,7 @@ Datasource percentage coverage 99.80
 ./resource.ps1 aws_pipes_pipe
 ./resource.ps1 aws_prometheus_alert_manager_definition
 ./resource.ps1 aws_prometheus_rule_group_namespace
+./resource.ps1 aws_prometheus_scraper
 ./resource.ps1 aws_prometheus_workspace
 ./resource.ps1 aws_qldb_ledger
 ./resource.ps1 aws_qldb_stream
@@ -569,6 +564,7 @@ Datasource percentage coverage 99.80
 ./resource.ps1 aws_securityhub_product_subscription
 ./resource.ps1 aws_securityhub_standards_control
 ./resource.ps1 aws_securityhub_standards_subscription
+./resource.ps1 aws_securitylake_aws_log_source
 ./resource.ps1 aws_securitylake_data_lake
 ./resource.ps1 aws_serverlessapplicationrepository_cloudformation_stack
 ./resource.ps1 aws_service_discovery_http_namespace
@@ -649,6 +645,9 @@ Datasource percentage coverage 99.80
 ./resource.ps1 aws_transfer_user
 ./resource.ps1 aws_transfer_workflow
 ./resource.ps1 aws_verifiedaccess_instance_trust_provider_attachment
+./resource.ps1 aws_verifiedpermissions_policy_store
+./resource.ps1 aws_verifiedpermissions_policy_template
+./resource.ps1 aws_verifiedpermissions_schema
 ./resource.ps1 aws_vpc_endpoint_connection_accepter
 ./resource.ps1 aws_vpc_endpoint_connection_notification
 ./resource.ps1 aws_vpc_endpoint_policy
@@ -663,4 +662,3 @@ Datasource percentage coverage 99.80
 ./resource.ps1 aws_worklink_website_certificate_authority_association
 ./resource.ps1 aws_workspaces_connection_alias
 ./resource.ps1 aws_workspaces_ip_group
-./resource.ps1 aws_mq_broker_engine_types -type data

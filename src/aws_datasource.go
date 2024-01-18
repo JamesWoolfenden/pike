@@ -548,6 +548,9 @@ func AwsDataLookup(find string) interface{} {
 		"aws_s3_directory_buckets":                                  dataAwsS3DirectoryBuckets,
 		"aws_ssoadmin_application_assignments":                      dataAwsSsoadminApplicationAssignments,
 		"aws_ssoadmin_principal_application_assignments":            dataAwsSsoadminPrincipalApplicationAssignments,
+		"aws_verifiedpermissions_policy_store":                      dataVerifiedpermissionsPolicyStore,
+		"aws_msk_bootstrap_brokers":                                 dataAwsMskBoostrapBrokers,
+		"aws_mq_broker_engine_types":                                dataMqBrokerEngineTypes,
 	}
 
 	return TFLookup[find]

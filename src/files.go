@@ -1779,3 +1779,24 @@ var awsServiceQuotasTemplate []byte
 
 //go:embed mapping/aws/resource/servicequotas/aws_servicequotas_template_association.json
 var awsServiceQuotasTemplateAssociation []byte
+
+//go:embed mapping/aws/resource/codeguru-profiler/aws_codeguruprofiler_profiling_group.json
+var awsCodeguruprofilerProfilingGroup []byte
+
+//go:embed mapping/aws/resource/codeguru-reviewer/aws_codegurureviewer_repository_association.json
+var awsCodegurureviewerRepositoryAssociation []byte
+
+//go:embed mapping/aws/resource/codepipeline/aws_codepipeline_custom_action_type.json
+var awsCodepipelineCustomActionType []byte
+
+//go:embed mapping/aws/resource/codepipeline/aws_codepipeline_webhook.json
+var awsCodepipelineWebhook []byte
+
+//go:embed mapping/aws/resource/codestar-connections/aws_codestarconnections_connection.json
+var awsCodestarconnectionsConnection []byte
+
+//go:embed mapping/aws/resource/codestar-connections/aws_codestarconnections_host.json
+var awsCodestarconnectionsHost []byte
+
+//go:embed mapping/aws/resource/codestar-notifications/aws_codestarnotifications_notification_rule.json
+var awsCodestarconnectionsNotificationsRule []byte

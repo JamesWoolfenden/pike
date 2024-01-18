@@ -1,0 +1,33 @@
+[
+  {
+    "apply": [
+      "codeguru-reviewer:AssociateRepository",
+      "codeguru-reviewer:DisassociateRepository",
+      "codeguru-reviewer:DescribeRepositoryAssociation",
+      "codeguru-reviewer:ListTagsForResource",
+      "iam:CreateServiceLinkedRole",
+      "events:PutRule",
+      "events:PutTargets",
+      "events:DeleteRule",
+      "events:RemoveTargets"
+    ],
+    "attributes": {
+      "codecommit": [
+        "codecommit:TagResource",
+        "codecommit:UntagResource",
+        "codecommit:ListRepositories"
+      ],
+      "tags": [
+        "codeguru-reviewer:TagResource",
+        "codeguru-reviewer:UntagResource"
+      ]
+    },
+    "destroy": [
+      "codeguru-reviewer:DisassociateRepository",
+      "events:DeleteRule",
+      "events:RemoveTargets"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

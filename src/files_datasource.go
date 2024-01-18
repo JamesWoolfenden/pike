@@ -1383,3 +1383,12 @@ var dataAwsSsoadminApplicationAssignments []byte
 
 //go:embed mapping/aws/data/sso/aws_ssoadmin_principal_application_assignments.json
 var dataAwsSsoadminPrincipalApplicationAssignments []byte
+
+//go:embed mapping/aws/data/verifiedpermissions/aws_verifiedpermissions_policy_store.json
+var dataVerifiedpermissionsPolicyStore []byte
+
+//go:embed mapping/aws/data/kafka/aws_msk_bootstrap_brokers.json
+var dataAwsMskBoostrapBrokers []byte
+
+//go:embed mapping/aws/data/mq/aws_mq_broker_engine_types.json
+var dataMqBrokerEngineTypes []byte

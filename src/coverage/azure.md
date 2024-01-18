@@ -1,7 +1,7 @@
 # todo azure
 
-Resource percentage coverage   5.14
-Datasource percentage coverage 40.78
+Resource percentage coverage   5.12
+Datasource percentage coverage 40.65
 
 ./resource.ps1 azurerm_aadb2c_directory
 ./resource.ps1 azurerm_active_directory_domain_service
@@ -108,6 +108,7 @@ Datasource percentage coverage 40.78
 ./resource.ps1 azurerm_automation_hybrid_runbook_worker_group
 ./resource.ps1 azurerm_automation_job_schedule
 ./resource.ps1 azurerm_automation_module
+./resource.ps1 azurerm_automation_powershell72_module
 ./resource.ps1 azurerm_automation_python3_package
 ./resource.ps1 azurerm_automation_runbook
 ./resource.ps1 azurerm_automation_schedule
@@ -219,6 +220,7 @@ Datasource percentage coverage 40.78
 ./resource.ps1 azurerm_dashboard
 ./resource.ps1 azurerm_dashboard_grafana
 ./resource.ps1 azurerm_data_factory
+./resource.ps1 azurerm_data_factory_credential_user_managed_identity
 ./resource.ps1 azurerm_data_factory_custom_dataset
 ./resource.ps1 azurerm_data_factory_data_flow
 ./resource.ps1 azurerm_data_factory_dataset_azure_blob
@@ -417,10 +419,10 @@ Datasource percentage coverage 40.78
 ./resource.ps1 azurerm_key_vault_certificate_contacts
 ./resource.ps1 azurerm_key_vault_certificate_issuer
 ./resource.ps1 azurerm_key_vault_managed_hardware_security_module
+./resource.ps1 azurerm_key_vault_managed_hardware_security_module_role_assignment
 ./resource.ps1 azurerm_key_vault_managed_hardware_security_module_role_definition
 ./resource.ps1 azurerm_key_vault_managed_storage_account
 ./resource.ps1 azurerm_key_vault_managed_storage_account_sas_token_definition
-./resource.ps1 azurerm_key_vault_role_assignment
 ./resource.ps1 azurerm_key_vault_secret
 ./resource.ps1 azurerm_kubernetes_cluster
 ./resource.ps1 azurerm_kubernetes_cluster_extension
@@ -738,6 +740,7 @@ Datasource percentage coverage 40.78
 ./resource.ps1 azurerm_security_center_automation
 ./resource.ps1 azurerm_security_center_server_vulnerability_assessment
 ./resource.ps1 azurerm_security_center_server_vulnerability_assessment_virtual_machine
+./resource.ps1 azurerm_security_center_server_vulnerability_assessments_setting
 ./resource.ps1 azurerm_security_center_storage_defender
 ./resource.ps1 azurerm_security_center_subscription_pricing
 ./resource.ps1 azurerm_sentinel_alert_rule_anomaly_built_in
@@ -1016,6 +1019,7 @@ Datasource percentage coverage 40.78
 ./resource.ps1 azurerm_cosmosdb_mongo_database -type data
 ./resource.ps1 azurerm_cosmosdb_restorable_database_accounts -type data
 ./resource.ps1 azurerm_cosmosdb_sql_database -type data
+./resource.ps1 azurerm_dashboard_grafana -type data
 ./resource.ps1 azurerm_data_factory -type data
 ./resource.ps1 azurerm_data_lake_store -type data
 ./resource.ps1 azurerm_data_protection_backup_vault -type data
