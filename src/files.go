@@ -1800,3 +1800,27 @@ var awsCodestarconnectionsHost []byte
 
 //go:embed mapping/aws/resource/codestar-notifications/aws_codestarnotifications_notification_rule.json
 var awsCodestarconnectionsNotificationsRule []byte
+
+//go:embed mapping/aws/resource/auditmanager/aws_auditmanager_account_registration.json
+var awsAuditmanagerAccountRegistration []byte
+
+//go:embed mapping/aws/resource/auditmanager/aws_auditmanager_assessment.json
+var awsAuditmanagerAssessment []byte
+
+//go:embed mapping/aws/resource/auditmanager/aws_auditmanager_assessment_delegation.json
+var awsAuditmanagerAssessmentDelegation []byte
+
+//go:embed mapping/aws/resource/auditmanager/aws_auditmanager_assessment_report.json
+var awsAuditmanagerAssessmentReport []byte
+
+//go:embed mapping/aws/resource/auditmanager/aws_auditmanager_control.json
+var awsAuditmanagerControl []byte
+
+//go:embed mapping/aws/resource/auditmanager/aws_auditmanager_framework.json
+var awsAuditmanagerFramework []byte
+
+//go:embed mapping/aws/resource/auditmanager/aws_auditmanager_framework_share.json
+var awsAuditmanagerFrameworkShare []byte
+
+//go:embed mapping/aws/resource/auditmanager/aws_auditmanager_organization_admin_account_registration.json
+var awsAuditmanagerOrganizationAdminAccountRegistration []byte

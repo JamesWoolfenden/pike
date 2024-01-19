@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "auditmanager:DeleteAssessmentFramework",
+      "auditmanager:CreateAssessmentFramework",
+      "auditmanager:GetAssessmentFramework",
+      "auditmanager:UpdateAssessmentFramework"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "auditmanager:DeleteAssessmentFramework"
+    ],
+    "modify": [
+      "auditmanager:UpdateAssessmentFramework"
+    ],
+    "plan": []
+  }
+]

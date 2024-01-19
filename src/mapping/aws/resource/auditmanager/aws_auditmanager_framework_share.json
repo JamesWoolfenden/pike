@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "auditmanager:DeleteAssessmentFrameworkShare",
+      "auditmanager:StartAssessmentFrameworkShare",
+      "auditmanager:UpdateAssessmentFrameworkShare",
+      "auditmanager:ListAssessmentFrameworkShareRequests"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "auditmanager:DeleteAssessmentFrameworkShare"
+    ],
+    "modify": [
+      "auditmanager:UpdateAssessmentFrameworkShare"
+    ],
+    "plan": []
+  }
+]

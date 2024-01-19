@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "auditmanager:GetDelegations",
+      "auditmanager:BatchDeleteDelegationByAssessment"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "auditmanager:BatchDeleteDelegationByAssessment"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

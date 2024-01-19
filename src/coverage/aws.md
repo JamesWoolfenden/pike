@@ -1,6 +1,6 @@
 # todo aws
 
-Resource percentage coverage   49.66
+Resource percentage coverage   50.27
 Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_accessanalyzer_archive_rule
@@ -53,14 +53,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_appsync_resolver
 ./resource.ps1 aws_appsync_type
 ./resource.ps1 aws_athena_prepared_statement
-./resource.ps1 aws_auditmanager_account_registration
-./resource.ps1 aws_auditmanager_assessment
-./resource.ps1 aws_auditmanager_assessment_delegation
-./resource.ps1 aws_auditmanager_assessment_report
-./resource.ps1 aws_auditmanager_control
-./resource.ps1 aws_auditmanager_framework
-./resource.ps1 aws_auditmanager_framework_share
-./resource.ps1 aws_auditmanager_organization_admin_account_registration
 ./resource.ps1 aws_bedrock_model_invocation_logging_configuration
 ./resource.ps1 aws_chime_voice_connector
 ./resource.ps1 aws_chime_voice_connector_group

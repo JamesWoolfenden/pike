@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "auditmanager:RegisterOrganizationAdminAccount",
+      "auditmanager:DeregisterOrganizationAdminAccount",
+      "auditmanager:GetOrganizationAdminAccount"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "auditmanager:DeregisterOrganizationAdminAccount"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

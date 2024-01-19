@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "auditmanager:GetAssessment",
+      "auditmanager:CreateAssessment",
+      "auditmanager:DeleteAssessment",
+      "auditmanager:UpdateAssessment"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "auditmanager:DeleteAssessment"
+    ],
+    "modify": [
+      "auditmanager:UpdateAssessment"
+    ],
+    "plan": []
+  }
+]

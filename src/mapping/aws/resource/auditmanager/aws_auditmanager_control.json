@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "auditmanager:GetControl",
+      "auditmanager:CreateControl",
+      "auditmanager:DeleteControl",
+      "auditmanager:UpdateControl"
+    ],
+    "attributes": {
+      "tags": [
+        "auditmanager:TagResource",
+        "auditmanager:UntagResource"
+      ]
+    },
+    "destroy": [
+      "auditmanager:DeleteControl"
+    ],
+    "modify": [
+      "auditmanager:UpdateControl"
+    ],
+    "plan": []
+  }
+]

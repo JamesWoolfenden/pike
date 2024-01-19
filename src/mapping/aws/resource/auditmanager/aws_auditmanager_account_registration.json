@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "auditmanager:RegisterAccount",
+      "auditmanager:DeregisterAccount",
+      "iam:CreateServiceLinkedRole",
+      "events:PutRule",
+      "events:PutTargets",
+      "auditmanager:GetAccountStatus"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "auditmanager:DeregisterAccount"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]
