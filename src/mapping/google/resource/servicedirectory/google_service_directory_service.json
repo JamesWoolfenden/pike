@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "servicedirectory.services.create",
+      "servicedirectory.services.get",
+      "servicedirectory.services.delete",
+      "servicedirectory.services.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "servicedirectory.services.delete"
+    ],
+    "modify": [
+      "servicedirectory.services.update"
+    ],
+    "plan": []
+  }
+]

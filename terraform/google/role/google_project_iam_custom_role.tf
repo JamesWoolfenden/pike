@@ -4,28 +4,32 @@ resource "google_project_iam_custom_role" "pike" {
   title       = "pike terraform user"
   description = "A user with least privileges"
   permissions = [
-    //google_workbench_instance_iam_policy
-    "notebooks.instances.getIamPolicy",
-    //google_vmwareengine_vcenter_credentials
-    "vmwareengine.privateClouds.showVcenterCredentials",
+    //google_service_directory_namespace
+    "servicedirectory.namespaces.create",
+    "servicedirectory.namespaces.get",
+    "servicedirectory.namespaces.delete",
+    "servicedirectory.namespaces.update",
 
-    //google_vmwareengine_external_address
-    "vmwareengine.externalAddresses.get",
-    //google_vmwareengine_nsx_credentials
-    "vmwareengine.privateClouds.showNsxCredentials",
-    //google_vmwareengine_subnet
-    "vmwareengine.subnets.get",
+    //google_service_directory_service
+    "servicedirectory.services.create",
+    "servicedirectory.services.get",
+    "servicedirectory.services.delete",
+    "servicedirectory.services.update",
 
-    //google_compute_region_disk
-    "compute.disks.get",
+    //google_service_directory_endpoint
+    "servicedirectory.endpoints.create",
+    "servicedirectory.endpoints.get",
+    "servicedirectory.endpoints.delete",
+    "servicedirectory.endpoints.update",
 
-    //google_compute_reservation
-    "compute.reservations.get",
+    //google_service_directory_namespace_iam_policy, google_service_directory_namespace_iam_binding
+    //google_service_directory_namespace_iam_binding
+    "servicedirectory.namespaces.getIamPolicy",
+    "servicedirectory.namespaces.setIamPolicy",
+    //google_service_directory_service_iam_policy, google_service_directory_namespace_iam_policy,
+    //google_service_directory_service_iam_member, google_service_directory_service_iam_binding,
+    "servicedirectory.services.getIamPolicy",
+    "servicedirectory.services.setIamPolicy",
 
-    //google_filestore_instance
-    "file.instances.get",
-
-    //google_logging_project_settings, google_logging_project_settings
-    "logging.settings.get"
   ]
 }

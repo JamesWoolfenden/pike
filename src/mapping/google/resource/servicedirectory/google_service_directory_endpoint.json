@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "servicedirectory.endpoints.create",
+      "servicedirectory.endpoints.get",
+      "servicedirectory.endpoints.delete",
+      "servicedirectory.endpoints.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "servicedirectory.endpoints.delete"
+    ],
+    "modify": [
+      "servicedirectory.endpoints.update"
+    ],
+    "plan": []
+  }
+]

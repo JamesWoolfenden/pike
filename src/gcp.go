@@ -126,6 +126,15 @@ func GCPLookup(result string) interface{} {
 		"google_storage_insights_report_config":           googleStorageInsightsReportConfig,
 		"google_storage_object_access_control":            googleStorageObjectAccessControl,
 		"google_cloudbuild_trigger":                       googleCloudbuildTrigger,
+		"google_service_directory_endpoint":               googleServiceDirectoryEndpoint,
+		"google_service_directory_namespace":              googleServiceDirectoryNamespace,
+		"google_service_directory_namespace_iam_binding":  googleServiceDirectoryNamespaceIamBinding,
+		"google_service_directory_namespace_iam_member":   googleServiceDirectoryNamespaceIamMember,
+		"google_service_directory_namespace_iam_policy":   googleServiceDirectoryNamespaceIamPolicy,
+		"google_service_directory_service":                googleServiceDirectoryService,
+		"google_service_directory_service_iam_binding":    googleServiceDirectoryServiceIamBinding,
+		"google_service_directory_service_iam_member":     googleServiceDirectoryServiceIamMember,
+		"google_service_directory_service_iam_policy":     googleServiceDirectoryServiceIamPolicy,
 	}
 
 	return TFLookup[result]

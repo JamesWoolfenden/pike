@@ -1392,3 +1392,6 @@ var dataAwsMskBoostrapBrokers []byte
 
 //go:embed mapping/aws/data/mq/aws_mq_broker_engine_types.json
 var dataMqBrokerEngineTypes []byte
+
+//go:embed mapping/aws/data/eks/aws_eks_access_entry.json
+var dataAwsEksAccessEntry []byte

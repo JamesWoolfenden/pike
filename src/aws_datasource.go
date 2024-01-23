@@ -551,6 +551,7 @@ func AwsDataLookup(find string) interface{} {
 		"aws_verifiedpermissions_policy_store":                      dataVerifiedpermissionsPolicyStore,
 		"aws_msk_bootstrap_brokers":                                 dataAwsMskBoostrapBrokers,
 		"aws_mq_broker_engine_types":                                dataMqBrokerEngineTypes,
+		"aws_eks_access_entry":                                      dataAwsEksAccessEntry,
 	}
 
 	return TFLookup[find]

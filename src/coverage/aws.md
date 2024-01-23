@@ -1,7 +1,7 @@
 # todo aws
 
-Resource percentage coverage   50.27
-Datasource percentage coverage 100.00
+Resource percentage coverage   50.15
+Datasource percentage coverage 99.81
 
 ./resource.ps1 aws_accessanalyzer_archive_rule
 ./resource.ps1 aws_acmpca_permission
@@ -196,6 +196,8 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_ecs_cluster_capacity_providers
 ./resource.ps1 aws_ecs_tag
 ./resource.ps1 aws_ecs_task_set
+./resource.ps1 aws_eks_access_entry
+./resource.ps1 aws_eks_access_policy_association
 ./resource.ps1 aws_eks_fargate_profile
 ./resource.ps1 aws_eks_identity_provider_config
 ./resource.ps1 aws_eks_pod_identity_association
@@ -324,6 +326,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_lexv2models_bot
 ./resource.ps1 aws_lexv2models_bot_locale
 ./resource.ps1 aws_lexv2models_bot_version
+./resource.ps1 aws_lexv2models_intent
 ./resource.ps1 aws_licensemanager_association
 ./resource.ps1 aws_licensemanager_grant
 ./resource.ps1 aws_licensemanager_grant_accepter

@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "servicedirectory.services.getIamPolicy",
+      "servicedirectory.services.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

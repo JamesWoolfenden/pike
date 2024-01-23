@@ -258,6 +258,12 @@ func GCPDataLookup(result string) interface{} {
 		"google_billing_account":                                 placeholder,
 		"google_logging_folder_settings":                         placeholder,
 		"google_logging_organization_settings":                   placeholder,
+		"google_network_security_address_group_iam_policy":       dataGoogleSecurityAddressGroupIamPolicy,
+		"google_service_directory_namespace_iam_policy":          dataGoogleServiceDirectoryNamespaceIamPolicy,
+		"google_service_directory_service_iam_policy":            dataGoogleServiceDirectoryServiceIamPolicy,
+		"google_sql_backup_run":                                  dataGoogleSQLBackupRun,
+		"google_sql_ca_certs":                                    placeholder,
+		"google_sql_database_instance_latest_recovery_time":      dataGoogleSqlDatabaseInstanceLatestRecoveryTime,
 	}
 
 	return TFLookup[result]

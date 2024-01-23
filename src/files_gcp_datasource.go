@@ -543,3 +543,18 @@ var dataGoogleFilestoreInstance []byte
 
 //go:embed mapping/google/data/logging/google_logging_project_settings.json
 var dataGoogleLoggingProjectSettings []byte
+
+//go:embed mapping/google/data/networksecurity/google_network_security_address_group_iam_policy.json
+var dataGoogleSecurityAddressGroupIamPolicy []byte
+
+//go:embed mapping/google/data/servicedirectory/google_service_directory_namespace_iam_policy.json
+var dataGoogleServiceDirectoryNamespaceIamPolicy []byte
+
+//go:embed mapping/google/data/servicedirectory/google_service_directory_service_iam_policy.json
+var dataGoogleServiceDirectoryServiceIamPolicy []byte
+
+//go:embed mapping/google/data/cloudsql/google_sql_backup_run.json
+var dataGoogleSQLBackupRun []byte
+
+//go:embed mapping/google/data/cloudsql/google_sql_database_instance_latest_recovery_time.json
+var dataGoogleSqlDatabaseInstanceLatestRecoveryTime []byte

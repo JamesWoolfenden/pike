@@ -1,7 +1,7 @@
 # todo azure
 
-Resource percentage coverage   5.12
-Datasource percentage coverage 40.65
+Resource percentage coverage   5.11
+Datasource percentage coverage 40.51
 
 ./resource.ps1 azurerm_aadb2c_directory
 ./resource.ps1 azurerm_active_directory_domain_service
@@ -831,6 +831,7 @@ Datasource percentage coverage 40.65
 ./resource.ps1 azurerm_spring_cloud_custom_domain
 ./resource.ps1 azurerm_spring_cloud_customized_accelerator
 ./resource.ps1 azurerm_spring_cloud_dev_tool_portal
+./resource.ps1 azurerm_spring_cloud_dynatrace_application_performance_monitoring
 ./resource.ps1 azurerm_spring_cloud_gateway
 ./resource.ps1 azurerm_spring_cloud_gateway_custom_domain
 ./resource.ps1 azurerm_spring_cloud_gateway_route_config
@@ -954,6 +955,7 @@ Datasource percentage coverage 40.65
 ./resource.ps1 azurerm_virtual_machine_data_disk_attachment
 ./resource.ps1 azurerm_virtual_machine_extension
 ./resource.ps1 azurerm_virtual_machine_packet_capture
+./resource.ps1 azurerm_virtual_machine_run_command
 ./resource.ps1 azurerm_virtual_machine_scale_set_extension
 ./resource.ps1 azurerm_virtual_machine_scale_set_packet_capture
 ./resource.ps1 azurerm_virtual_network_dns_servers
@@ -1133,6 +1135,7 @@ Datasource percentage coverage 40.65
 ./resource.ps1 azurerm_network_interface -type data
 ./resource.ps1 azurerm_network_security_group -type data
 ./resource.ps1 azurerm_network_service_tags -type data
+./resource.ps1 azurerm_nginx_deployment -type data
 ./resource.ps1 azurerm_notification_hub -type data
 ./resource.ps1 azurerm_notification_hub_namespace -type data
 ./resource.ps1 azurerm_orchestrated_virtual_machine_scale_set -type data

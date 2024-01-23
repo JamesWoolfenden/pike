@@ -216,3 +216,30 @@ var googleStorageObjectAccessControl []byte
 
 //go:embed mapping/google/resource/cloudbuild/google_cloudbuild_trigger.json
 var googleCloudbuildTrigger []byte
+
+//go:embed mapping/google/resource/servicedirectory/google_service_directory_endpoint.json
+var googleServiceDirectoryEndpoint []byte
+
+//go:embed mapping/google/resource/servicedirectory/google_service_directory_namespace.json
+var googleServiceDirectoryNamespace []byte
+
+//go:embed mapping/google/resource/servicedirectory/google_service_directory_namespace_iam_binding.json
+var googleServiceDirectoryNamespaceIamBinding []byte
+
+//go:embed mapping/google/resource/servicedirectory/google_service_directory_namespace_iam_member.json
+var googleServiceDirectoryNamespaceIamMember []byte
+
+//go:embed mapping/google/resource/servicedirectory/google_service_directory_namespace_iam_policy.json
+var googleServiceDirectoryNamespaceIamPolicy []byte
+
+//go:embed mapping/google/resource/servicedirectory/google_service_directory_service.json
+var googleServiceDirectoryService []byte
+
+//go:embed mapping/google/resource/servicedirectory/google_service_directory_service_iam_binding.json
+var googleServiceDirectoryServiceIamBinding []byte
+
+//go:embed mapping/google/resource/servicedirectory/google_service_directory_service_iam_member.json
+var googleServiceDirectoryServiceIamMember []byte
+
+//go:embed mapping/google/resource/servicedirectory/google_service_directory_service_iam_policy.json
+var googleServiceDirectoryServiceIamPolicy []byte
