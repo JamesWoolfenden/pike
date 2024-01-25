@@ -849,3 +849,7 @@ new code is picked up pby pike.
 ## Related Tools
 
 <https://github.com/iann0036/iamlive>
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=jameswoolfenden/pike&type=Date)](https://star-history.com/#jameswoolfenden/pike&Date)

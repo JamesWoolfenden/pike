@@ -79,6 +79,7 @@ func coverageAzure() error {
 
 	target = Prepend + target
 	err := os.WriteFile("azure.md", []byte(target), 0o700)
+
 	if err != nil {
 		return err
 	}
