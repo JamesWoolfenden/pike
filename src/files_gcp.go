@@ -243,3 +243,27 @@ var googleServiceDirectoryServiceIamMember []byte
 
 //go:embed mapping/google/resource/servicedirectory/google_service_directory_service_iam_policy.json
 var googleServiceDirectoryServiceIamPolicy []byte
+
+//go:embed mapping/google/resource/accesscontextmanager/google_access_context_manager_access_level.json
+var googleAccessContextManagerAccessLevel []byte
+
+//go:embed mapping/google/resource/accesscontextmanager/google_access_context_manager_access_levels.json
+var googleAccessContextManagerAccessLevels []byte
+
+//go:embed mapping/google/resource/accesscontextmanager/google_access_context_manager_access_policy.json
+var googleAccessContextManagerAccessPolicy []byte
+
+//go:embed mapping/google/resource/accesscontextmanager/google_access_context_manager_access_policy_iam.json
+var googleAccessContextManagerAccessPolicyIam []byte
+
+//go:embed mapping/google/resource/accesscontextmanager/google_access_context_manager_authorized_orgs_desc.json
+var googleAccessContextManagerAuthorizedOrgsDesc []byte
+
+//go:embed mapping/google/resource/accesscontextmanager/google_access_context_manager_gcp_user_access_binding.json
+var googleAccessContextManagerGcpUserAccessBinding []byte
+
+//go:embed mapping/google/resource/accesscontextmanager/google_access_context_manager_service_perimeter.json
+var googleAccessContextManagerServicePerimeter []byte
+
+//go:embed mapping/google/resource/accesscontextmanager/google_access_context_manager_service_perimeters.json
+var googleAccessContextManagerServicePerimeters []byte

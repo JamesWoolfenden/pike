@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "accesscontextmanager.accessPolicies.getIamPolicy",
+      "accesscontextmanager.accessPolicies.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

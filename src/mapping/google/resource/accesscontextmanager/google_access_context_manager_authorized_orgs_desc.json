@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "accesscontextmanager.authorizedOrgsDescs.get",
+      "accesscontextmanager.authorizedOrgsDescs.create",
+      "accesscontextmanager.authorizedOrgsDescs.delete",
+      "accesscontextmanager.authorizedOrgsDescs.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "accesscontextmanager.authorizedOrgsDescs.delete"
+    ],
+    "modify": [
+      "accesscontextmanager.authorizedOrgsDescs.update"
+    ],
+    "plan": []
+  }
+]

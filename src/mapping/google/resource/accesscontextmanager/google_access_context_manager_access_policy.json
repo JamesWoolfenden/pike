@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "accesscontextmanager.accessPolicies.get",
+      "accesscontextmanager.accessPolicies.create",
+      "accesscontextmanager.accessPolicies.delete",
+      "accesscontextmanager.accessPolicies.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "accesscontextmanager.accessPolicies.delete"
+    ],
+    "modify": [
+      "accesscontextmanager.accessPolicies.update"
+    ],
+    "plan": []
+  }
+]

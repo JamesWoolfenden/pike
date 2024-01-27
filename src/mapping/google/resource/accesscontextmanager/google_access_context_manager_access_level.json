@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "accesscontextmanager.accessLevels.get",
+      "accesscontextmanager.accessLevels.create",
+      "accesscontextmanager.accessLevels.delete",
+      "accesscontextmanager.accessLevels.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "accesscontextmanager.accessLevels.delete"
+    ],
+    "modify": [
+      "accesscontextmanager.accessLevels.update"
+    ],
+    "plan": []
+  }
+]

@@ -1,6 +1,6 @@
 # todo aws
 
-Resource percentage coverage   50.15
+Resource percentage coverage   50.08
 Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_accessanalyzer_archive_rule
@@ -481,11 +481,13 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_redshiftserverless_snapshot
 ./resource.ps1 aws_redshiftserverless_usage_limit
 ./resource.ps1 aws_redshiftserverless_workgroup
+./resource.ps1 aws_rekognition_project
 ./resource.ps1 aws_resourceexplorer2_index
 ./resource.ps1 aws_resourceexplorer2_view
 ./resource.ps1 aws_resourcegroups_resource
 ./resource.ps1 aws_rolesanywhere_profile
 ./resource.ps1 aws_rolesanywhere_trust_anchor
+./resource.ps1 aws_route53domains_delegation_signer_record
 ./resource.ps1 aws_route53domains_registered_domain
 ./resource.ps1 aws_route53recoverycontrolconfig_cluster
 ./resource.ps1 aws_route53recoverycontrolconfig_control_panel

@@ -1,20 +1,10 @@
 # todo google
 
-Resource percentage coverage   11.01
-Datasource percentage coverage 90.57
+Resource percentage coverage   12.13
+Datasource percentage coverage 90.23
 
-./resource.ps1 google_access_context_manager_access_level
 ./resource.ps1 google_access_context_manager_access_level_condition
-./resource.ps1 google_access_context_manager_access_levels
-./resource.ps1 google_access_context_manager_access_policy
-./resource.ps1 google_access_context_manager_access_policy_iam_binding
-./resource.ps1 google_access_context_manager_access_policy_iam_member
-./resource.ps1 google_access_context_manager_access_policy_iam_policy
-./resource.ps1 google_access_context_manager_authorized_orgs_desc
-./resource.ps1 google_access_context_manager_gcp_user_access_binding
-./resource.ps1 google_access_context_manager_service_perimeter
 ./resource.ps1 google_access_context_manager_service_perimeter_resource
-./resource.ps1 google_access_context_manager_service_perimeters
 ./resource.ps1 google_active_directory_domain
 ./resource.ps1 google_active_directory_domain_trust
 ./resource.ps1 google_active_directory_peering
@@ -110,6 +100,7 @@ Datasource percentage coverage 90.57
 ./resource.ps1 google_binary_authorization_attestor_iam_member
 ./resource.ps1 google_binary_authorization_attestor_iam_policy
 ./resource.ps1 google_binary_authorization_policy
+./resource.ps1 google_blockchain_node_engine_blockchain_nodes
 ./resource.ps1 google_certificate_manager_certificate
 ./resource.ps1 google_certificate_manager_certificate_issuance_config
 ./resource.ps1 google_certificate_manager_certificate_map
@@ -387,6 +378,7 @@ Datasource percentage coverage 90.57
 ./resource.ps1 google_dialogflow_entity_type
 ./resource.ps1 google_dialogflow_fulfillment
 ./resource.ps1 google_dialogflow_intent
+./resource.ps1 google_discovery_engine_data_store
 ./resource.ps1 google_dns_managed_zone_iam_binding
 ./resource.ps1 google_dns_managed_zone_iam_member
 ./resource.ps1 google_dns_managed_zone_iam_policy
@@ -679,6 +671,8 @@ Datasource percentage coverage 90.57
 ./resource.ps1 google_secure_source_manager_instance_iam_member
 ./resource.ps1 google_secure_source_manager_instance_iam_policy
 ./resource.ps1 google_security_scanner_scan_config
+./resource.ps1 google_securityposture_posture
+./resource.ps1 google_securityposture_posture_deployment
 ./resource.ps1 google_service_networking_peered_dns_domain
 ./resource.ps1 google_service_usage_consumer_quota_override
 ./resource.ps1 google_sourcerepo_repository_iam_binding
@@ -755,6 +749,7 @@ Datasource percentage coverage 90.57
 ./resource.ps1 google_workstations_workstation_iam_binding
 ./resource.ps1 google_workstations_workstation_iam_member
 ./resource.ps1 google_workstations_workstation_iam_policy
+./resource.ps1 google_compute_machine_types -type data
 ./resource.ps1 google_container_attached_install_manifest -type data
 ./resource.ps1 google_container_aws_versions -type data
 ./resource.ps1 google_container_azure_versions -type data

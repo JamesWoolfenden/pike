@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "accesscontextmanager.gcpUserAccessBindings.create",
+      "accesscontextmanager.gcpUserAccessBindings.get",
+      "accesscontextmanager.gcpUserAccessBindings.delete",
+      "accesscontextmanager.gcpUserAccessBindings.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "accesscontextmanager.gcpUserAccessBindings.delete"
+    ],
+    "modify": [
+      "accesscontextmanager.gcpUserAccessBindings.update"
+    ],
+    "plan": []
+  }
+]
