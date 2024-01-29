@@ -557,4 +557,13 @@ var dataGoogleServiceDirectoryServiceIamPolicy []byte
 var dataGoogleSQLBackupRun []byte
 
 //go:embed mapping/google/data/cloudsql/google_sql_database_instance_latest_recovery_time.json
-var dataGoogleSqlDatabaseInstanceLatestRecoveryTime []byte
+var dataGoogleSQLDatabaseInstanceLatestRecoveryTime []byte
+
+//go:embed mapping/google/data/datacatalog/google_data_catalog_taxonomy_iam_policy.json
+var dataGoogleDataCatalogTaxonomyIamPolicy []byte
+
+//go:embed mapping/google/data/dataform/google_dataform_repository_iam_policy.json
+var dataGoogleDataformRepositoryIamPolicy []byte
+
+//go:embed mapping/google/data/servicemanagement/google_endpoints_service_iam_policy.json
+var dataGoogleEndpointsServiceIamPolicy []byte

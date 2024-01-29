@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "alloydb.users.create",
+      "alloydb.users.delete",
+      "alloydb.users.get",
+      "alloydb.users.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "alloydb.users.delete"
+    ],
+    "modify": [
+      "alloydb.users.update"
+    ],
+    "plan": []
+  }
+]

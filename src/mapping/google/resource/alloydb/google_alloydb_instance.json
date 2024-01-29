@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "alloydb.instances.create",
+      "alloydb.instances.delete",
+      "alloydb.instances.get",
+      "alloydb.instances.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "alloydb.instances.delete"
+    ],
+    "modify": [
+      "alloydb.instances.update"
+    ],
+    "plan": []
+  }
+]

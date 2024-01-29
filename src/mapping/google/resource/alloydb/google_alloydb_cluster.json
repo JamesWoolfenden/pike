@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "alloydb.clusters.create",
+      "alloydb.clusters.delete",
+      "alloydb.clusters.get",
+      "alloydb.clusters.update",
+      "alloydb.operations.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "alloydb.clusters.delete"
+    ],
+    "modify": [
+      "alloydb.clusters.update"
+    ],
+    "plan": []
+  }
+]

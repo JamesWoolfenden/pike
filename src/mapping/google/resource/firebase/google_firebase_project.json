@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "firebase.projects.create",
+      "firebase.projects.delete",
+      "firebase.projects.get",
+      "firebase.projects.update",
+      "resourcemanager.projects.delete",
+      "resourcemanager.projects.update",
+      "resourcemanager.projects.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "firebase.projects.delete"
+    ],
+    "modify": [
+      "firebase.projects.update"
+    ],
+    "plan": []
+  }
+]

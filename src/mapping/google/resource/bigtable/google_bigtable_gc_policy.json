@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "bigtable.tables.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

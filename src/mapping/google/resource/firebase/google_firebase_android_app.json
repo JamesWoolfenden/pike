@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "resourcemanager.projects.get",
+      "serviceusage.services.enable",
+      "serviceusage.services.get",
+      "firebase.clients.create",
+      "firebase.clients.delete",
+      "firebase.clients.update",
+      "firebase.clients.get",
+      "clientauthconfig.clients.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "firebase.clients.delete"
+    ],
+    "modify": [
+      "firebase.clients.update"
+    ],
+    "plan": []
+  }
+]

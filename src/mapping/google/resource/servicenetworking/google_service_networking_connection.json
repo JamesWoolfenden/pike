@@ -10,7 +10,9 @@
       "tags": []
     },
     "destroy": [
-      "compute.networks.removePeering"
+      "compute.networks.removePeering",
+      "servicenetworking.services.deleteConnection",
+      "serviceusage.operations.get"
     ],
     "modify": [],
     "plan": []

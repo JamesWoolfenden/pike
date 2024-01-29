@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "firebasedatabase.instances.create",
+      "firebasedatabase.instances.delete",
+      "firebasedatabase.instances.update",
+      "firebasedatabase.instances.get",
+      "firebasedatabase.instances.disable"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "firebasedatabase.instances.delete",
+      "firebasedatabase.instances.disable"
+    ],
+    "modify": [
+      "firebasedatabase.instances.update"
+    ],
+    "plan": []
+  }
+]

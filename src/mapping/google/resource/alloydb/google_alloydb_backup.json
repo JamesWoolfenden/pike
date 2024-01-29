@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "alloydb.backups.create",
+      "alloydb.backups.delete",
+      "alloydb.backups.get",
+      "alloydb.backups.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "alloydb.backups.delete"
+    ],
+    "modify": [
+      "alloydb.backups.update"
+    ],
+    "plan": []
+  }
+]

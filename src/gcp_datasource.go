@@ -263,7 +263,10 @@ func GCPDataLookup(result string) interface{} {
 		"google_service_directory_service_iam_policy":            dataGoogleServiceDirectoryServiceIamPolicy,
 		"google_sql_backup_run":                                  dataGoogleSQLBackupRun,
 		"google_sql_ca_certs":                                    placeholder,
-		"google_sql_database_instance_latest_recovery_time":      dataGoogleSqlDatabaseInstanceLatestRecoveryTime,
+		"google_sql_database_instance_latest_recovery_time":      dataGoogleSQLDatabaseInstanceLatestRecoveryTime,
+		"google_data_catalog_taxonomy_iam_policy":                dataGoogleDataCatalogTaxonomyIamPolicy,
+		"google_dataform_repository_iam_policy":                  dataGoogleDataformRepositoryIamPolicy,
+		"google_endpoints_service_iam_policy":                    dataGoogleEndpointsServiceIamPolicy,
 	}
 
 	return TFLookup[result]

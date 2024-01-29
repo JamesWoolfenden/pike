@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "bigtable.appProfiles.create",
+      "bigtable.appProfiles.delete",
+      "bigtable.appProfiles.update",
+      "bigtable.appProfiles.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "bigtable.appProfiles.delete"
+    ],
+    "modify": [
+      "bigtable.appProfiles.update"
+    ],
+    "plan": []
+  }
+]

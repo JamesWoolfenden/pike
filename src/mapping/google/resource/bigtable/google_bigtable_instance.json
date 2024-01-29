@@ -3,6 +3,7 @@
     "apply": [
       "bigtable.instances.create",
       "bigtable.instances.get",
+      "bigtable.instances.list",
       "bigtable.clusters.list",
       "bigtable.instances.update",
       "bigtable.instances.delete"

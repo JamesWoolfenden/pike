@@ -1,17 +1,13 @@
 # todo google
 
-Resource percentage coverage   12.13
-Datasource percentage coverage 90.23
+Resource percentage coverage   14.13
+Datasource percentage coverage 91.35
 
 ./resource.ps1 google_access_context_manager_access_level_condition
 ./resource.ps1 google_access_context_manager_service_perimeter_resource
 ./resource.ps1 google_active_directory_domain
 ./resource.ps1 google_active_directory_domain_trust
 ./resource.ps1 google_active_directory_peering
-./resource.ps1 google_alloydb_backup
-./resource.ps1 google_alloydb_cluster
-./resource.ps1 google_alloydb_instance
-./resource.ps1 google_alloydb_user
 ./resource.ps1 google_api_gateway_api
 ./resource.ps1 google_api_gateway_api_config
 ./resource.ps1 google_api_gateway_api_config_iam_binding
@@ -87,8 +83,7 @@ Datasource percentage coverage 90.23
 ./resource.ps1 google_bigquery_table_iam_binding
 ./resource.ps1 google_bigquery_table_iam_member
 ./resource.ps1 google_bigquery_table_iam_policy
-./resource.ps1 google_bigtable_app_profile
-./resource.ps1 google_bigtable_gc_policy
+
 ./resource.ps1 google_billing_account_iam_binding
 ./resource.ps1 google_billing_account_iam_member
 ./resource.ps1 google_billing_account_iam_policy
@@ -407,21 +402,8 @@ Datasource percentage coverage 90.23
 ./resource.ps1 google_filestore_backup
 ./resource.ps1 google_filestore_instance
 ./resource.ps1 google_filestore_snapshot
-./resource.ps1 google_firebase_android_app
-./resource.ps1 google_firebase_apple_app
-./resource.ps1 google_firebase_database_instance
 ./resource.ps1 google_firebase_extensions_instance
-./resource.ps1 google_firebase_hosting_channel
-./resource.ps1 google_firebase_hosting_custom_domain
-./resource.ps1 google_firebase_hosting_release
-./resource.ps1 google_firebase_hosting_site
-./resource.ps1 google_firebase_hosting_version
-./resource.ps1 google_firebase_project
 ./resource.ps1 google_firebase_project_location
-./resource.ps1 google_firebase_storage_bucket
-./resource.ps1 google_firebase_web_app
-./resource.ps1 google_firebaserules_release
-./resource.ps1 google_firebaserules_ruleset
 ./resource.ps1 google_firestore_backup_schedule
 ./resource.ps1 google_firestore_database
 ./resource.ps1 google_firestore_document
@@ -753,9 +735,6 @@ Datasource percentage coverage 90.23
 ./resource.ps1 google_container_attached_install_manifest -type data
 ./resource.ps1 google_container_aws_versions -type data
 ./resource.ps1 google_container_azure_versions -type data
-./resource.ps1 google_data_catalog_taxonomy_iam_policy -type data
-./resource.ps1 google_dataform_repository_iam_policy -type data
-./resource.ps1 google_endpoints_service_iam_policy -type data
 ./resource.ps1 google_firebase_web_app_config -type data
 ./resource.ps1 google_folder -type data
 ./resource.ps1 google_folder_iam_policy -type data

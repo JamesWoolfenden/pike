@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "firebasestorage.buckets.addFirebase",
+      "firebasestorage.buckets.get",
+      "firebasestorage.buckets.removeFirebase"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "firebasestorage.buckets.removeFirebase"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

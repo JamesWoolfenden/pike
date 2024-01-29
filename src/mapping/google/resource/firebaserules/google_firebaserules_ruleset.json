@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "firebaserules.rulesets.create",
+      "firebaserules.rulesets.delete",
+      "firebaserules.rulesets.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "firebaserules.rulesets.delete"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

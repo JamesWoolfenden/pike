@@ -267,3 +267,48 @@ var googleAccessContextManagerServicePerimeter []byte
 
 //go:embed mapping/google/resource/accesscontextmanager/google_access_context_manager_service_perimeters.json
 var googleAccessContextManagerServicePerimeters []byte
+
+//go:embed mapping/google/resource/alloydb/google_alloydb_backup.json
+var googleAlloydbBackup []byte
+
+//go:embed mapping/google/resource/alloydb/google_alloydb_cluster.json
+var googleAlloydbCluster []byte
+
+//go:embed mapping/google/resource/alloydb/google_alloydb_instance.json
+var googleAlloydbInstance []byte
+
+//go:embed mapping/google/resource/alloydb/google_alloydb_user.json
+var googleAlloydbUser []byte
+
+//go:embed mapping/google/resource/firebase/google_firebase_android_app.json
+var googleFirebaseAndroidApp []byte
+
+//go:embed mapping/google/resource/firebase/google_firebase_apple_app.json
+var googleFirebaseAppleApp []byte
+
+//go:embed mapping/google/resource/firebasedatabase/google_firebase_database_instance.json
+var googleFirebaseDatabaseInstance []byte
+
+//go:embed mapping/google/resource/firebasehosting/google_firebase_hosting_site.json
+var googleFirebaseHostingSite []byte
+
+//go:embed mapping/google/resource/firebase/google_firebase_project.json
+var googleFirebaseProject []byte
+
+//go:embed mapping/google/resource/firebasestorage/google_firebase_storage_bucket.json
+var googleFirebaseStorageBucket []byte
+
+//go:embed mapping/google/resource/firebase/google_firebase_android_app.json
+var googleFirebaseWebApp []byte
+
+//go:embed mapping/google/resource/firebaserules/google_firebaserules_release.json
+var googleFirebaserulesRelease []byte
+
+//go:embed mapping/google/resource/firebaserules/google_firebaserules_ruleset.json
+var googleFirebaserulesRuleset []byte
+
+//go:embed mapping/google/resource/bigtable/google_bigtable_app_profile.json
+var googleBigtableAppProfile []byte
+
+//go:embed mapping/google/resource/bigtable/google_bigtable_gc_policy.json
+var googleBigtableGcPolicy []byte

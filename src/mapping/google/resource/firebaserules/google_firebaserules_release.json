@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "firebaserules.releases.create",
+      "firebaserules.releases.delete",
+      "firebaserules.releases.get",
+      "firebaserules.releases.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "firebaserules.releases.delete"
+    ],
+    "modify": [
+      "firebaserules.releases.update"
+    ],
+    "plan": []
+  }
+]
