@@ -312,3 +312,21 @@ var googleBigtableAppProfile []byte
 
 //go:embed mapping/google/resource/bigtable/google_bigtable_gc_policy.json
 var googleBigtableGcPolicy []byte
+
+//go:embed mapping/google/resource/apigateway/google_api_gateway_api.json
+var googleApiGatewayApi []byte
+
+//go:embed mapping/google/resource/apigateway/google_api_gateway_api_config.json
+var googleApiGatewayApiConfig []byte
+
+//go:embed mapping/google/resource/apigateway/google_api_gateway_api_config_iam.json
+var googleApiGatewayApiConfigIam []byte
+
+//go:embed mapping/google/resource/apigateway/google_api_gateway_api_iam.json
+var googleApiGatewayApiIam []byte
+
+//go:embed mapping/google/resource/apigateway/google_api_gateway_gateway.json
+var googleApiGatewayGateway []byte
+
+//go:embed mapping/google/resource/apigateway/google_api_gateway_gateway_iam.json
+var googleApiGatewayGatewayIam []byte

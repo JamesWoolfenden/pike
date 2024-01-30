@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "apigateway.apis.setIamPolicy",
+      "apigateway.apis.getIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

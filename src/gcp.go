@@ -164,6 +164,18 @@ func GCPLookup(result string) interface{} {
 		"google_firebaserules_ruleset":                            googleFirebaserulesRuleset,
 		"google_bigtable_app_profile":                             googleBigtableAppProfile,
 		"google_bigtable_gc_policy":                               googleBigtableGcPolicy,
+		"google_api_gateway_api":                                  googleApiGatewayApi,
+		"google_api_gateway_api_config":                           googleApiGatewayApiConfig,
+		"google_api_gateway_api_config_iam_binding":               googleApiGatewayApiConfigIam,
+		"google_api_gateway_api_config_iam_member":                googleApiGatewayApiConfigIam,
+		"google_api_gateway_api_config_iam_policy":                googleApiGatewayApiConfigIam,
+		"google_api_gateway_api_iam_binding":                      googleApiGatewayApiIam,
+		"google_api_gateway_api_iam_member":                       googleApiGatewayApiIam,
+		"google_api_gateway_api_iam_policy":                       googleApiGatewayApiIam,
+		"google_api_gateway_gateway":                              googleApiGatewayGateway,
+		"google_api_gateway_gateway_iam_binding":                  googleApiGatewayGatewayIam,
+		"google_api_gateway_gateway_iam_member":                   googleApiGatewayGatewayIam,
+		"google_api_gateway_gateway_iam_policy":                   googleApiGatewayGatewayIam,
 	}
 
 	return TFLookup[result]
