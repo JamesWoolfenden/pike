@@ -1,6 +1,6 @@
 # todo aws
 
-Resource percentage coverage   50.08
+Resource percentage coverage   50.15
 Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_accessanalyzer_archive_rule

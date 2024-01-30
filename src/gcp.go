@@ -164,6 +164,14 @@ func GCPLookup(result string) interface{} {
 		"google_firebaserules_ruleset":                            googleFirebaserulesRuleset,
 		"google_bigtable_app_profile":                             googleBigtableAppProfile,
 		"google_bigtable_gc_policy":                               googleBigtableGcPolicy,
+		"google_spanner_database":                                 GoogleSpannerDatabase,
+		"google_spanner_database_iam_binding":                     GoogleSpannerDatabaseIam,
+		"google_spanner_database_iam_member":                      GoogleSpannerDatabaseIam,
+		"google_spanner_database_iam_policy":                      GoogleSpannerDatabaseIam,
+		"google_spanner_instance":                                 GoogleSpannerInstance,
+		"google_spanner_instance_iam_binding":                     GoogleSpannerInstanceIam,
+		"google_spanner_instance_iam_member":                      GoogleSpannerInstanceIam,
+		"google_spanner_instance_iam_policy":                      GoogleSpannerInstanceIam,
 	}
 
 	return TFLookup[result]

@@ -312,3 +312,15 @@ var googleBigtableAppProfile []byte
 
 //go:embed mapping/google/resource/bigtable/google_bigtable_gc_policy.json
 var googleBigtableGcPolicy []byte
+
+//go:embed mapping/google/resource/spanner/google_spanner_database.json
+var GoogleSpannerDatabase []byte
+
+//go:embed mapping/google/resource/spanner/google_spanner_database_iam.json
+var GoogleSpannerDatabaseIam []byte
+
+//go:embed mapping/google/resource/spanner/google_spanner_instance.json
+var GoogleSpannerInstance []byte
+
+//go:embed mapping/google/resource/spanner/google_spanner_instance_iam.json
+var GoogleSpannerInstanceIam []byte

@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "spanner.databases.create",
+      "spanner.databases.drop",
+      "spanner.databases.updateDdl",
+      "spanner.databases.update",
+      "spanner.databases.get",
+      "spanner.databaseOperations.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "spanner.databases.drop"
+    ],
+    "modify": [
+      "spanner.databases.updateDdl",
+      "spanner.databases.update"
+    ],
+    "plan": []
+  }
+]

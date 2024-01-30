@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "spanner.instances.create",
+      "spanner.instances.delete",
+      "spanner.instances.update",
+      "spanner.instances.get",
+      "spanner.instanceOperations.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "spanner.instances.delete"
+    ],
+    "modify": [
+      "spanner.instances.update"
+    ],
+    "plan": []
+  }
+]
