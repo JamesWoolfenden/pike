@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "run.services.setIamPolicy",
+      "run.services.getIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

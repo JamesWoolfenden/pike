@@ -330,3 +330,12 @@ var googleApiGatewayGateway []byte
 
 //go:embed mapping/google/resource/apigateway/google_api_gateway_gateway_iam.json
 var googleApiGatewayGatewayIam []byte
+
+//go:embed mapping/google/resource/run/google_cloud_run_v2_service.json
+var googleCloudRunV2Service []byte
+
+//go:embed mapping/google/resource/run/google_cloud_run_v2_job_iam.json
+var googleCloudRunV2JobIam []byte
+
+//go:embed mapping/google/resource/run/google_cloud_run_v2_service_iam.json
+var googleCloudRunV2ServiceIam []byte
