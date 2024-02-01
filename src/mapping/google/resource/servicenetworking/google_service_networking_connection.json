@@ -4,7 +4,8 @@
       "resourcemanager.projects.get",
       "servicenetworking.services.get",
       "servicenetworking.services.addPeering",
-      "compute.networks.removePeering"
+      "compute.networks.removePeering",
+      "servicenetworking.services.deleteConnection"
     ],
     "attributes": {
       "tags": []

@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "aiplatform.metadataStores.create",
+      "aiplatform.metadataStores.delete",
+      "aiplatform.metadataStores.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "aiplatform.metadataStores.delete"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

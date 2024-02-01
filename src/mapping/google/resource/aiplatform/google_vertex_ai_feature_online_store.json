@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "aiplatform.featureOnlineStores.create",
+      "aiplatform.featureOnlineStores.delete",
+      "aiplatform.featureOnlineStores.update",
+      "aiplatform.featureOnlineStores.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "aiplatform.featureOnlineStores.delete"
+    ],
+    "modify": [
+      "aiplatform.featureOnlineStores.update"
+    ],
+    "plan": []
+  }
+]

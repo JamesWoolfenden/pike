@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "aiplatform.indexEndpoints.create"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "aiplatform.featureGroups.create",
+      "aiplatform.featureGroups.delete",
+      "aiplatform.featureGroups.get",
+      "aiplatform.featureGroups.list",
+      "aiplatform.featureGroups.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "aiplatform.featureGroups.delete"
+    ],
+    "modify": [
+      "aiplatform.featureGroups.update"
+    ],
+    "plan": []
+  }
+]

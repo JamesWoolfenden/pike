@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "aiplatform.indexes.create"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

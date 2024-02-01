@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "aiplatform.endpoints.getIamPolicy",
+      "aiplatform.endpoints.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
