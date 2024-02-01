@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "apigateway.apis.create",
+      "apigateway.apis.delete",
+      "apigateway.apis.update",
+      "apigateway.apis.get",
+      "apigateway.operations.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "apigateway.apis.delete"
+    ],
+    "modify": [
+      "apigateway.apis.update"
+    ],
+    "plan": []
+  }
+]

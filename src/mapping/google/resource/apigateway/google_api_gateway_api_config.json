@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "apigateway.apiconfigs.get",
+      "apigateway.apiconfigs.create",
+      "apigateway.apiconfigs.delete",
+      "apigateway.apiconfigs.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "apigateway.apiconfigs.delete"
+    ],
+    "modify": [
+      "apigateway.apiconfigs.update"
+    ],
+    "plan": []
+  }
+]

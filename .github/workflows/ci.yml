@@ -43,6 +43,6 @@ jobs:
         run: go test ./... -coverprofile=./cover.out
 
       - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@41dd13387183a0c1e7e237138dc1cbd8e9c53f11 # v3.1.5
+        uses: codecov/codecov-action@edd20798ab377991aad21abfb1f2d5e093b681e8 # v4.0.0
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}

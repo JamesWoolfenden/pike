@@ -1,6 +1,6 @@
 # todo google
 
-Resource percentage coverage   15.31
+Resource percentage coverage   14.13
 Datasource percentage coverage 91.35
 
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -8,18 +8,6 @@ Datasource percentage coverage 91.35
 ./resource.ps1 google_active_directory_domain
 ./resource.ps1 google_active_directory_domain_trust
 ./resource.ps1 google_active_directory_peering
-./resource.ps1 google_api_gateway_api
-./resource.ps1 google_api_gateway_api_config
-./resource.ps1 google_api_gateway_api_config_iam_binding
-./resource.ps1 google_api_gateway_api_config_iam_member
-./resource.ps1 google_api_gateway_api_config_iam_policy
-./resource.ps1 google_api_gateway_api_iam_binding
-./resource.ps1 google_api_gateway_api_iam_member
-./resource.ps1 google_api_gateway_api_iam_policy
-./resource.ps1 google_api_gateway_gateway
-./resource.ps1 google_api_gateway_gateway_iam_binding
-./resource.ps1 google_api_gateway_gateway_iam_member
-./resource.ps1 google_api_gateway_gateway_iam_policy
 ./resource.ps1 google_apigee_addons_config
 ./resource.ps1 google_apigee_endpoint_attachment
 ./resource.ps1 google_apigee_env_keystore
