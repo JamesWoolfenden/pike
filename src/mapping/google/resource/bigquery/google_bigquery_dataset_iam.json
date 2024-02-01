@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "bigquery.datasets.update",
+      "bigquery.datasets.getIamPolicy",
+      "bigquery.datasets.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

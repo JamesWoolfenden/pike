@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "bigquery.reservations.create",
+      "bigquery.reservations.delete",
+      "bigquery.reservations.get",
+      "bigquery.reservations.list",
+      "bigquery.reservations.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "bigquery.reservations.delete"
+    ],
+    "modify": [
+      "bigquery.reservations.update"
+    ],
+    "plan": []
+  }
+]

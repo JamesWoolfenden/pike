@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "bigquery.transfers.get",
+      "bigquery.transfers.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "bigquery.transfers.update"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

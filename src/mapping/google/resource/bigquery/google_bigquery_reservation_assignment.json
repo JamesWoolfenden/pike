@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "bigquery.reservationAssignments.create",
+      "bigquery.reservationAssignments.delete",
+      "bigquery.reservationAssignments.list",
+      "bigquery.reservationAssignments.search"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "bigquery.reservationAssignments.delete"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

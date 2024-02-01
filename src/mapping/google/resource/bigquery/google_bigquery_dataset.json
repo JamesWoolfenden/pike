@@ -1,13 +1,20 @@
 [
   {
     "apply": [
-      "bigquery.datasets.create"
+      "bigquery.datasets.create",
+      "bigquery.datasets.get",
+      "bigquery.datasets.update",
+      "bigquery.datasets.delete"
     ],
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
+    "destroy": [
+      "bigquery.datasets.delete"
+    ],
+    "modify": [
+      "bigquery.datasets.update"
+    ],
     "plan": []
   }
 ]

@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "analyticshub.listings.setIamPolicy",
+      "analyticshub.listings.getIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

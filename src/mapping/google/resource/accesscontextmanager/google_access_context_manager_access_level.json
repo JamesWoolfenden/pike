@@ -4,7 +4,8 @@
       "accesscontextmanager.accessLevels.get",
       "accesscontextmanager.accessLevels.create",
       "accesscontextmanager.accessLevels.delete",
-      "accesscontextmanager.accessLevels.update"
+      "accesscontextmanager.accessLevels.update",
+      "bigquery.reservations.get"
     ],
     "attributes": {
       "tags": []

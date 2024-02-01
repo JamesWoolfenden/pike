@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "bigquery.routines.get",
+      "bigquery.routines.create",
+      "bigquery.routines.delete",
+      "bigquery.routines.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "bigquery.routines.delete"
+    ],
+    "modify": [
+      "bigquery.routines.update"
+    ],
+    "plan": []
+  }
+]

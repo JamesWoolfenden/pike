@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "aiplatform.datasets.create",
+      "aiplatform.datasets.update",
+      "aiplatform.datasets.delete",
+      "aiplatform.datasets.get",
+      "storage.objects.list"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "aiplatform.datasets.delete"
+    ],
+    "modify": [
+      "aiplatform.datasets.update"
+    ],
+    "plan": []
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "aiplatform.tensorboards.create",
+      "aiplatform.tensorboards.delete",
+      "aiplatform.tensorboards.update",
+      "aiplatform.tensorboards.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "aiplatform.tensorboards.delete"
+    ],
+    "modify": [
+      "aiplatform.tensorboards.update"
+    ],
+    "plan": []
+  }
+]

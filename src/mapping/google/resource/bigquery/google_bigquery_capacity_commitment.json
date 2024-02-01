@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "bigquery.capacityCommitments.create",
+      "bigquery.capacityCommitments.delete",
+      "bigquery.capacityCommitments.get",
+      "bigquery.capacityCommitments.list",
+      "bigquery.capacityCommitments.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "bigquery.capacityCommitments.delete"
+    ],
+    "modify": [
+      "bigquery.capacityCommitments.update"
+    ],
+    "plan": []
+  }
+]

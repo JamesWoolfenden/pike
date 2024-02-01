@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "aiplatform.featureViews.create",
+      "aiplatform.featureViews.delete",
+      "aiplatform.featureViews.get",
+      "aiplatform.featureViews.list",
+      "aiplatform.featureViews.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "aiplatform.featureViews.delete"
+    ],
+    "modify": [
+      "aiplatform.featureViews.update"
+    ],
+    "plan": []
+  }
+]

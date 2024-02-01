@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "bigquery.bireservations.update",
+      "bigquery.bireservations.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -341,3 +341,102 @@ var GoogleSpannerInstance []byte
 
 //go:embed mapping/google/resource/spanner/google_spanner_instance_iam.json
 var GoogleSpannerInstanceIam []byte
+
+//go:embed mapping/google/resource/run/google_cloud_run_v2_service.json
+var googleCloudRunV2Service []byte
+
+//go:embed mapping/google/resource/run/google_cloud_run_v2_job_iam.json
+var googleCloudRunV2JobIam []byte
+
+//go:embed mapping/google/resource/run/google_cloud_run_v2_service_iam.json
+var googleCloudRunV2ServiceIam []byte
+
+//go:embed mapping/google/resource/aiplatform/google_vertex_ai_dataset.json
+var googleVertexAiDataset []byte
+
+//go:embed mapping/google/resource/aiplatform/google_vertex_ai_endpoint.json
+var googleVertexAiEndpoint []byte
+
+//go:embed mapping/google/resource/aiplatform/google_vertex_ai_endpoint_iam.json
+var googleVertexAiEndpointIam []byte
+
+//go:embed mapping/google/resource/aiplatform/google_vertex_ai_feature_group.json
+var googleVertexAiFeatureGroup []byte
+
+//go:embed mapping/google/resource/aiplatform/google_vertex_ai_feature_group_feature.json
+var googleVertexAiFeatureGroupFeature []byte
+
+//go:embed mapping/google/resource/aiplatform/google_vertex_ai_feature_online_store.json
+var googleVertexAiFeatureOnlineStore []byte
+
+//go:embed mapping/google/resource/aiplatform/google_vertex_ai_feature_online_store_featureview.json
+var googleVertexAiFeatureOnlineStoreFeatureview []byte
+
+//go:embed mapping/google/resource/aiplatform/google_vertex_ai_featurestore.json
+var googleVertexAiFeaturestore []byte
+
+//go:embed mapping/google/resource/aiplatform/google_vertex_ai_featurestore_entitytype.json
+var googleVertexAiFeaturestoreEntitytype []byte
+
+//go:embed mapping/google/resource/aiplatform/google_vertex_ai_featurestore_entitytype_feature.json
+var googleVertexAiFeaturestoreEntitytypeFeature []byte
+
+//go:embed mapping/google/resource/aiplatform/google_vertex_ai_featurestore_entitytype_iam.json
+var googleVertexAiFeaturestoreEntitytypeIam []byte
+
+//go:embed mapping/google/resource/aiplatform/google_vertex_ai_featurestore_iam.json
+var googleVertexAiFeaturestoreIam []byte
+
+//go:embed mapping/google/resource/aiplatform/google_vertex_ai_index.json
+var googleVertexAiIndex []byte
+
+//go:embed mapping/google/resource/aiplatform/google_vertex_ai_index_endpoint.json
+var googleVertexAiIndexEndpoint []byte
+
+//go:embed mapping/google/resource/aiplatform/google_vertex_ai_metadata_store.json
+var googleVertexAiMetadataStore []byte
+
+//go:embed mapping/google/resource/aiplatform/google_vertex_ai_tensorboard.json
+var googleVertexAiTensorboard []byte
+
+//go:embed mapping/google/resource/analyticshub/google_bigquery_analytics_hub_data_exchange.json
+var googleBigqueryAnalyticsHubDataExchange []byte
+
+//go:embed mapping/google/resource/analyticshub/google_bigquery_analytics_hub_data_exchange_iam.json
+var googleBigqueryAnalyticsHubDataExchangeIam []byte
+
+//go:embed mapping/google/resource/analyticshub/google_bigquery_analytics_hub_listing.json
+var googleBigqueryAnalyticsHubListing []byte
+
+//go:embed mapping/google/resource/analyticshub/google_bigquery_analytics_hub_listing_iam.json
+var googleBigqueryAnalyticsHubListingIam []byte
+
+//go:embed mapping/google/resource/bigquery/google_bigquery_bi_reservation.json
+var googleBigqueryBiReservation []byte
+
+//go:embed mapping/google/resource/bigquery/google_bigquery_capacity_commitment.json
+var googleBigqueryCapacityCommitment []byte
+
+//go:embed mapping/google/resource/bigquery/google_bigquery_connection.json
+var googleBigqueryConnection []byte
+
+//go:embed mapping/google/resource/bigquery/google_bigquery_connection_iam.json
+var googleBigqueryConnectionIam []byte
+
+//go:embed mapping/google/resource/bigquery/google_bigquery_data_transfer_config.json
+var googleBigqueryDataTransferConfig []byte
+
+//go:embed mapping/google/resource/bigquery/google_bigquery_dataset_iam.json
+var googleBigqueryDatasetIam []byte
+
+//go:embed mapping/google/resource/bigquery/google_bigquery_reservation.json
+var googleBigqueryReservation []byte
+
+//go:embed mapping/google/resource/bigquery/google_bigquery_reservation_assignment.json
+var googleBigqueryReservationAssignment []byte
+
+//go:embed mapping/google/resource/bigquery/google_bigquery_routine.json
+var googleBigqueryRoutine []byte
+
+//go:embed mapping/google/resource/bigquery/google_bigquery_table_iam.json
+var googleBigqueryTableIam []byte

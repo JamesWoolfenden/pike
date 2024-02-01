@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "run.services.create",
+      "run.services.get",
+      "run.services.delete",
+      "run.services.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "run.services.delete"
+    ],
+    "modify": [
+      "run.services.update"
+    ],
+    "plan": []
+  }
+]

@@ -37,7 +37,7 @@ func GetAZUREResourcePermissions(result ResourceV2) ([]string, error) {
 	)
 
 	if temp != nil {
-		Permissions, err = GetPermissionMap(temp.([]byte), result.Attributes)
+		Permissions, err = GetPermissionMap(temp.([]byte), result.Attributes, result.Name)
 	} else {
 		message := fmt.Sprintf("%s not implemented", result.Name)
 

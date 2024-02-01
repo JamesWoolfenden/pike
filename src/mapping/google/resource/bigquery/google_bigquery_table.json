@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "bigquery.tables.update",
+      "bigquery.tables.delete",
+      "bigquery.tables.create",
+      "bigquery.tables.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "bigquery.tables.delete"
+    ],
+    "modify": [
+      "bigquery.tables.update"
+    ],
+    "plan": []
+  }
+]

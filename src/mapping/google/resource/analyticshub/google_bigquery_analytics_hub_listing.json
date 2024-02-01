@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "analyticshub.listings.create",
+      "analyticshub.listings.delete",
+      "analyticshub.listings.get",
+      "analyticshub.listings.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "analyticshub.listings.delete"
+    ],
+    "modify": [
+      "analyticshub.listings.update"
+    ],
+    "plan": []
+  }
+]

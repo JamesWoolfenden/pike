@@ -55,7 +55,8 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 	)
 
 	if temp := AwsLookup(result.Name); temp != nil {
-		Permissions, err = GetPermissionMap(temp.([]byte), result.Attributes)
+
+		Permissions, err = GetPermissionMap(temp.([]byte), result.Attributes, result.Name)
 	} else {
 		return nil, fmt.Errorf("%s not implemented", result.Name)
 	}
@@ -744,12 +745,12 @@ func Contains(s []string, e string) bool {
 }
 
 // GetPermissionMap Anonymous parsing.
-func GetPermissionMap(raw []byte, attributes []string) ([]string, error) {
+func GetPermissionMap(raw []byte, attributes []string, resource string) ([]string, error) {
 	var mappings []interface{}
 	err := json.Unmarshal(raw, &mappings)
 
 	if err != nil {
-		return nil, fmt.Errorf("failed to unmarshal json %w", err)
+		return nil, fmt.Errorf("failed to unmarshal json %w for %s", err, resource)
 	}
 
 	if mappings == nil {

@@ -1,7 +1,10 @@
 [
   {
     "apply": [
-      "bigquery.jobs.create"
+      "bigquery.jobs.create",
+      "bigquery.jobs.delete",
+      "bigquery.jobs.get",
+      "bigquery.jobs.update"
     ],
     "attributes": {
       "tags": []

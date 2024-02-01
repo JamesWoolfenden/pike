@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "aiplatform.featurestores.create",
+      "aiplatform.featurestores.get",
+      "aiplatform.featurestores.update",
+      "aiplatform.featurestores.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "aiplatform.featurestores.delete"
+    ],
+    "modify": [
+      "aiplatform.featurestores.update"
+    ],
+    "plan": []
+  }
+]

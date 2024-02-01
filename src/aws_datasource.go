@@ -12,7 +12,7 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 	)
 
 	if temp := AwsDataLookup(result.Name); temp != nil {
-		Permissions, err = GetPermissionMap(temp.([]byte), result.Attributes)
+		Permissions, err = GetPermissionMap(temp.([]byte), result.Attributes, result.Name)
 	} else {
 		return nil, fmt.Errorf("%s not implemented", result.Name)
 	}

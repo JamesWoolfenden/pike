@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "analyticshub.dataExchanges.getIamPolicy",
+      "analyticshub.dataExchanges.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

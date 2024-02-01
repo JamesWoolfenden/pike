@@ -1,6 +1,6 @@
 # todo google
 
-Resource percentage coverage   14.13
+Resource percentage coverage   16.49
 Datasource percentage coverage 91.35
 
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -100,12 +100,6 @@ Datasource percentage coverage 91.35
 ./resource.ps1 google_cloud_run_service_iam_binding
 ./resource.ps1 google_cloud_run_service_iam_member
 ./resource.ps1 google_cloud_run_service_iam_policy
-./resource.ps1 google_cloud_run_v2_job_iam_binding
-./resource.ps1 google_cloud_run_v2_job_iam_member
-./resource.ps1 google_cloud_run_v2_job_iam_policy
-./resource.ps1 google_cloud_run_v2_service_iam_binding
-./resource.ps1 google_cloud_run_v2_service_iam_member
-./resource.ps1 google_cloud_run_v2_service_iam_policy
 ./resource.ps1 google_cloud_tasks_queue
 ./resource.ps1 google_cloud_tasks_queue_iam_binding
 ./resource.ps1 google_cloud_tasks_queue_iam_member
@@ -665,28 +659,6 @@ Datasource percentage coverage 91.35
 ./resource.ps1 google_tags_tag_value_iam_policy
 ./resource.ps1 google_tpu_node
 ./resource.ps1 google_tpu_v2_vm
-./resource.ps1 google_vertex_ai_dataset
-./resource.ps1 google_vertex_ai_endpoint
-./resource.ps1 google_vertex_ai_endpoint_iam_binding
-./resource.ps1 google_vertex_ai_endpoint_iam_member
-./resource.ps1 google_vertex_ai_endpoint_iam_policy
-./resource.ps1 google_vertex_ai_feature_group
-./resource.ps1 google_vertex_ai_feature_group_feature
-./resource.ps1 google_vertex_ai_feature_online_store
-./resource.ps1 google_vertex_ai_feature_online_store_featureview
-./resource.ps1 google_vertex_ai_featurestore
-./resource.ps1 google_vertex_ai_featurestore_entitytype
-./resource.ps1 google_vertex_ai_featurestore_entitytype_feature
-./resource.ps1 google_vertex_ai_featurestore_entitytype_iam_binding
-./resource.ps1 google_vertex_ai_featurestore_entitytype_iam_member
-./resource.ps1 google_vertex_ai_featurestore_entitytype_iam_policy
-./resource.ps1 google_vertex_ai_featurestore_iam_binding
-./resource.ps1 google_vertex_ai_featurestore_iam_member
-./resource.ps1 google_vertex_ai_featurestore_iam_policy
-./resource.ps1 google_vertex_ai_index
-./resource.ps1 google_vertex_ai_index_endpoint
-./resource.ps1 google_vertex_ai_metadata_store
-./resource.ps1 google_vertex_ai_tensorboard
 ./resource.ps1 google_vmwareengine_cluster
 ./resource.ps1 google_vmwareengine_external_access_rule
 ./resource.ps1 google_vmwareengine_external_address

@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "bigquery.tables.getIamPolicy",
+      "bigquery.tables.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

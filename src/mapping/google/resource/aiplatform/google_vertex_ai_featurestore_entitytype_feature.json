@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "aiplatform.entityTypes.writeFeatureValues",
+      "aiplatform.entityTypes.deleteFeatureValues",
+      "aiplatform.entityTypes.readFeatureValues"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "aiplatform.entityTypes.deleteFeatureValues"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

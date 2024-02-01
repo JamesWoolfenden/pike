@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "analyticshub.dataExchanges.create",
+      "analyticshub.dataExchanges.delete",
+      "analyticshub.dataExchanges.get",
+      "analyticshub.dataExchanges.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "analyticshub.dataExchanges.delete"
+    ],
+    "modify": [
+      "analyticshub.dataExchanges.update"
+    ],
+    "plan": []
+  }
+]

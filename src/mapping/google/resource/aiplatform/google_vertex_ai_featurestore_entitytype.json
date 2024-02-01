@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "aiplatform.entityTypes.delete",
+      "aiplatform.entityTypes.get",
+      "aiplatform.entityTypes.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "aiplatform.entityTypes.delete"
+    ],
+    "modify": [
+      "aiplatform.entityTypes.update"
+    ],
+    "plan": []
+  }
+]
