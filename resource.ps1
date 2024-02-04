@@ -38,7 +38,12 @@ else
 
 if ($type -eq "data")
 {
-    $content = "data `"$resource`" `"pike`" {}"
+    $content = @"data `"$resource`" `"pike`" {
+}"@
+    $output  = @"output `"$resource`" {
+        value=data.$resource.pike
+}"@
+    $content = $content + $output
     $tffile = path terraform $provider "$type.$resource.tf"
 }
 else

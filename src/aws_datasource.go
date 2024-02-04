@@ -552,6 +552,9 @@ func AwsDataLookup(find string) interface{} {
 		"aws_msk_bootstrap_brokers":                                 dataAwsMskBoostrapBrokers,
 		"aws_mq_broker_engine_types":                                dataMqBrokerEngineTypes,
 		"aws_eks_access_entry":                                      dataAwsEksAccessEntry,
+		"aws_bedrock_custom_model":                                  dataAwsBedrockCustomModel,
+		"aws_bedrock_custom_models":                                 dataAwsBedrockCustomModels,
+		"aws_ssmcontacts_rotation":                                  dataAwsSsmcontactsRotation,
 	}
 
 	return TFLookup[find]

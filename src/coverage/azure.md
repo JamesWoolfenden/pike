@@ -1,7 +1,7 @@
 # todo azure
 
-Resource percentage coverage   5.09
-Datasource percentage coverage 39.75
+Resource percentage coverage   5.07
+Datasource percentage coverage 39.62
 
 ./resource.ps1 azurerm_aadb2c_directory
 ./resource.ps1 azurerm_active_directory_domain_service
@@ -431,6 +431,7 @@ Datasource percentage coverage 39.75
 ./resource.ps1 azurerm_kubernetes_cluster_node_pool
 ./resource.ps1 azurerm_kubernetes_cluster_trusted_access_role_binding
 ./resource.ps1 azurerm_kubernetes_fleet_manager
+./resource.ps1 azurerm_kubernetes_fleet_update_strategy
 ./resource.ps1 azurerm_kubernetes_flux_configuration
 ./resource.ps1 azurerm_kusto_attached_database_configuration
 ./resource.ps1 azurerm_kusto_cluster
@@ -810,6 +811,7 @@ Datasource percentage coverage 39.75
 ./resource.ps1 azurerm_site_recovery_replication_policy
 ./resource.ps1 azurerm_site_recovery_replication_recovery_plan
 ./resource.ps1 azurerm_site_recovery_services_vault_hyperv_site
+./resource.ps1 azurerm_site_recovery_vmware_replicated_vm
 ./resource.ps1 azurerm_site_recovery_vmware_replication_policy
 ./resource.ps1 azurerm_site_recovery_vmware_replication_policy_association
 ./resource.ps1 azurerm_snapshot
@@ -836,10 +838,12 @@ Datasource percentage coverage 39.75
 ./resource.ps1 azurerm_spring_cloud_customized_accelerator
 ./resource.ps1 azurerm_spring_cloud_dev_tool_portal
 ./resource.ps1 azurerm_spring_cloud_dynatrace_application_performance_monitoring
+./resource.ps1 azurerm_spring_cloud_elastic_application_performance_monitoring
 ./resource.ps1 azurerm_spring_cloud_gateway
 ./resource.ps1 azurerm_spring_cloud_gateway_custom_domain
 ./resource.ps1 azurerm_spring_cloud_gateway_route_config
 ./resource.ps1 azurerm_spring_cloud_java_deployment
+./resource.ps1 azurerm_spring_cloud_new_relic_application_performance_monitoring
 ./resource.ps1 azurerm_spring_cloud_service
 ./resource.ps1 azurerm_spring_cloud_storage
 ./resource.ps1 azurerm_sql_active_directory_administrator
@@ -1182,3 +1186,4 @@ Datasource percentage coverage 39.75
 ./resource.ps1 azurerm_recovery_services_vault -type data
 ./resource.ps1 azurerm_sentinel_alert_rule_anomaly -type data
 ./resource.ps1 azurerm_servicebus_topic_authorization_rule -type data
+./resource.ps1 azurerm_virtual_desktop_workspace -type data

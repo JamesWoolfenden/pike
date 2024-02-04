@@ -1,6 +1,6 @@
 # todo google
 
-Resource percentage coverage   16.49
+Resource percentage coverage   22.72
 Datasource percentage coverage 91.35
 
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -42,35 +42,11 @@ Datasource percentage coverage 91.35
 ./resource.ps1 google_biglake_catalog
 ./resource.ps1 google_biglake_database
 ./resource.ps1 google_biglake_table
-./resource.ps1 google_bigquery_analytics_hub_data_exchange
-./resource.ps1 google_bigquery_analytics_hub_data_exchange_iam_binding
-./resource.ps1 google_bigquery_analytics_hub_data_exchange_iam_member
-./resource.ps1 google_bigquery_analytics_hub_data_exchange_iam_policy
-./resource.ps1 google_bigquery_analytics_hub_listing
-./resource.ps1 google_bigquery_analytics_hub_listing_iam_binding
-./resource.ps1 google_bigquery_analytics_hub_listing_iam_member
-./resource.ps1 google_bigquery_analytics_hub_listing_iam_policy
-./resource.ps1 google_bigquery_bi_reservation
-./resource.ps1 google_bigquery_capacity_commitment
-./resource.ps1 google_bigquery_connection
-./resource.ps1 google_bigquery_connection_iam_binding
-./resource.ps1 google_bigquery_connection_iam_member
-./resource.ps1 google_bigquery_connection_iam_policy
-./resource.ps1 google_bigquery_data_transfer_config
 ./resource.ps1 google_bigquery_datapolicy_data_policy
 ./resource.ps1 google_bigquery_datapolicy_data_policy_iam_binding
 ./resource.ps1 google_bigquery_datapolicy_data_policy_iam_member
 ./resource.ps1 google_bigquery_datapolicy_data_policy_iam_policy
 ./resource.ps1 google_bigquery_dataset_access
-./resource.ps1 google_bigquery_dataset_iam_binding
-./resource.ps1 google_bigquery_dataset_iam_member
-./resource.ps1 google_bigquery_dataset_iam_policy
-./resource.ps1 google_bigquery_reservation
-./resource.ps1 google_bigquery_reservation_assignment
-./resource.ps1 google_bigquery_routine
-./resource.ps1 google_bigquery_table_iam_binding
-./resource.ps1 google_bigquery_table_iam_member
-./resource.ps1 google_bigquery_table_iam_policy
 ./resource.ps1 google_billing_account_iam_binding
 ./resource.ps1 google_billing_account_iam_member
 ./resource.ps1 google_billing_account_iam_policy
@@ -206,6 +182,7 @@ Datasource percentage coverage 91.35
 ./resource.ps1 google_compute_region_health_check
 ./resource.ps1 google_compute_region_instance_group_manager
 ./resource.ps1 google_compute_region_instance_template
+./resource.ps1 google_compute_region_network_endpoint
 ./resource.ps1 google_compute_region_network_endpoint_group
 ./resource.ps1 google_compute_region_network_firewall_policy
 ./resource.ps1 google_compute_region_network_firewall_policy_association
@@ -354,7 +331,9 @@ Datasource percentage coverage 91.35
 ./resource.ps1 google_dialogflow_entity_type
 ./resource.ps1 google_dialogflow_fulfillment
 ./resource.ps1 google_dialogflow_intent
+./resource.ps1 google_discovery_engine_chat_engine
 ./resource.ps1 google_discovery_engine_data_store
+./resource.ps1 google_discovery_engine_search_engine
 ./resource.ps1 google_dns_managed_zone_iam_binding
 ./resource.ps1 google_dns_managed_zone_iam_member
 ./resource.ps1 google_dns_managed_zone_iam_policy
@@ -383,6 +362,7 @@ Datasource percentage coverage 91.35
 ./resource.ps1 google_filestore_backup
 ./resource.ps1 google_filestore_instance
 ./resource.ps1 google_filestore_snapshot
+./resource.ps1 google_firebase_app_check_service_config
 ./resource.ps1 google_firebase_extensions_instance
 ./resource.ps1 google_firebase_project_location
 ./resource.ps1 google_firestore_backup_schedule
@@ -537,6 +517,7 @@ Datasource percentage coverage 91.35
 ./resource.ps1 google_netapp_kmsconfig
 ./resource.ps1 google_netapp_storage_pool
 ./resource.ps1 google_netapp_volume
+./resource.ps1 google_netapp_volume_snapshot
 ./resource.ps1 google_network_connectivity_hub
 ./resource.ps1 google_network_connectivity_policy_based_route
 ./resource.ps1 google_network_connectivity_service_connection_policy

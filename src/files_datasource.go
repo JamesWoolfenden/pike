@@ -1395,3 +1395,12 @@ var dataMqBrokerEngineTypes []byte
 
 //go:embed mapping/aws/data/eks/aws_eks_access_entry.json
 var dataAwsEksAccessEntry []byte
+
+//go:embed mapping/aws/data/bedrock/aws_bedrock_custom_model.json
+var dataAwsBedrockCustomModel []byte
+
+//go:embed mapping/aws/data/bedrock/aws_bedrock_custom_models.json
+var dataAwsBedrockCustomModels []byte
+
+//go:embed mapping/aws/data/ssm-contacts/aws_ssmcontacts_rotation.json
+var dataAwsSsmcontactsRotation []byte

@@ -1,7 +1,7 @@
 # todo aws
 
-Resource percentage coverage   50.15
-Datasource percentage coverage 100.00
+Resource percentage coverage   49.85
+Datasource percentage coverage 99.42
 
 ./resource.ps1 aws_accessanalyzer_archive_rule
 ./resource.ps1 aws_acmpca_permission
@@ -53,6 +53,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_appsync_resolver
 ./resource.ps1 aws_appsync_type
 ./resource.ps1 aws_athena_prepared_statement
+./resource.ps1 aws_bedrock_custom_model
 ./resource.ps1 aws_bedrock_model_invocation_logging_configuration
 ./resource.ps1 aws_chime_voice_connector
 ./resource.ps1 aws_chime_voice_connector_group
@@ -327,6 +328,8 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_lexv2models_bot_locale
 ./resource.ps1 aws_lexv2models_bot_version
 ./resource.ps1 aws_lexv2models_intent
+./resource.ps1 aws_lexv2models_slot
+./resource.ps1 aws_lexv2models_slot_type
 ./resource.ps1 aws_licensemanager_association
 ./resource.ps1 aws_licensemanager_grant
 ./resource.ps1 aws_licensemanager_grant_accepter
@@ -481,6 +484,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_redshiftserverless_snapshot
 ./resource.ps1 aws_redshiftserverless_usage_limit
 ./resource.ps1 aws_redshiftserverless_workgroup
+./resource.ps1 aws_rekognition_collection
 ./resource.ps1 aws_rekognition_project
 ./resource.ps1 aws_resourceexplorer2_index
 ./resource.ps1 aws_resourceexplorer2_view
@@ -585,6 +589,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_sesv2_email_identity
 ./resource.ps1 aws_sesv2_email_identity_feedback_attributes
 ./resource.ps1 aws_sesv2_email_identity_mail_from_attributes
+./resource.ps1 aws_sesv2_email_identity_policy
 ./resource.ps1 aws_shield_application_layer_automatic_response
 ./resource.ps1 aws_shield_drt_access_log_bucket_association
 ./resource.ps1 aws_shield_drt_access_role_arn_association
@@ -601,6 +606,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_ssm_default_patch_baseline
 ./resource.ps1 aws_ssm_resource_data_sync
 ./resource.ps1 aws_ssm_service_setting
+./resource.ps1 aws_ssmcontacts_rotation
 ./resource.ps1 aws_ssmincidents_response_plan
 ./resource.ps1 aws_ssoadmin_account_assignment
 ./resource.ps1 aws_ssoadmin_application
@@ -659,3 +665,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_worklink_website_certificate_authority_association
 ./resource.ps1 aws_workspaces_connection_alias
 ./resource.ps1 aws_workspaces_ip_group
+./resource.ps1 aws_bedrock_custom_model -type data
+./resource.ps1 aws_bedrock_custom_models -type data
+./resource.ps1 aws_ssmcontacts_rotation -type data
