@@ -1,7 +1,7 @@
 # todo aws
 
 Resource percentage coverage   49.85
-Datasource percentage coverage 99.42
+Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_accessanalyzer_archive_rule
 ./resource.ps1 aws_acmpca_permission
@@ -665,6 +665,3 @@ Datasource percentage coverage 99.42
 ./resource.ps1 aws_worklink_website_certificate_authority_association
 ./resource.ps1 aws_workspaces_connection_alias
 ./resource.ps1 aws_workspaces_ip_group
-./resource.ps1 aws_bedrock_custom_model -type data
-./resource.ps1 aws_bedrock_custom_models -type data
-./resource.ps1 aws_ssmcontacts_rotation -type data
