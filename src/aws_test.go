@@ -233,6 +233,7 @@ func TestGetPermissionMap(t *testing.T) {
 	type args struct {
 		raw        []byte
 		attributes []string
+		resource   string
 	}
 
 	tests := []struct {
@@ -246,6 +247,7 @@ func TestGetPermissionMap(t *testing.T) {
 			args: args{
 				raw:        pike.AWSAcmCertificate,
 				attributes: []string{"validation_method", "tags", "domain_name", "lifecycle", "create_before_destroy"},
+				resource:   "aws_acm_certificate",
 			},
 			want: []string{
 				"acm:AddTagsToCertificate",
@@ -271,7 +273,7 @@ func TestGetPermissionMap(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
-			got, err := pike.GetPermissionMap(tt.args.raw, tt.args.attributes)
+			got, err := pike.GetPermissionMap(tt.args.raw, tt.args.attributes, tt.args.resource)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("GetPermissionMap() error = %v, wantErr %v", err, tt.wantErr)
 
