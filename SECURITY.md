@@ -2,7 +2,7 @@
 
 ## Supported Versions
 
-I'm only supporting the latest version, and required changes will be releases ASAP.
+I'm only supporting the latest version, and required changes will be released ASAP.
 
 ## Reporting a Vulnerability
 
