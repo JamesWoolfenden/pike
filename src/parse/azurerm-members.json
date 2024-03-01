@@ -448,6 +448,7 @@
         "azurerm_kubernetes_cluster_trusted_access_role_binding",
         "azurerm_kubernetes_fleet_manager",
         "azurerm_kubernetes_fleet_member",
+        "azurerm_kubernetes_fleet_update_run",
         "azurerm_kubernetes_fleet_update_strategy",
         "azurerm_kubernetes_flux_configuration",
         "azurerm_kusto_attached_database_configuration",
