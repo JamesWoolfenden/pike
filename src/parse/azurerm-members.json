@@ -746,6 +746,8 @@
         "azurerm_recovery_services_vault_resource_guard_association",
         "azurerm_redhat_openshift_cluster",
         "azurerm_redis_cache",
+        "azurerm_redis_cache_access_policy",
+        "azurerm_redis_cache_access_policy_assignment",
         "azurerm_redis_enterprise_cluster",
         "azurerm_redis_enterprise_database",
         "azurerm_redis_firewall_rule",
@@ -1060,6 +1062,7 @@
         "azurerm_windows_virtual_machine_scale_set",
         "azurerm_windows_web_app",
         "azurerm_windows_web_app_slot",
+        "azurerm_workloads_sap_discovery_virtual_instance",
         "azurerm_workloads_sap_single_node_virtual_instance",
         "azurerm_workloads_sap_three_tier_virtual_instance"
     ],
