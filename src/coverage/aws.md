@@ -1,7 +1,7 @@
 # todo aws
 
-Resource percentage coverage   48.74
-Datasource percentage coverage 98.10
+Resource percentage coverage   48.70
+Datasource percentage coverage 99.43
 
 ./resource.ps1 aws_accessanalyzer_archive_rule
 ./resource.ps1 aws_account_region
@@ -134,6 +134,7 @@ Datasource percentage coverage 98.10
 ./resource.ps1 aws_devopsguru_event_sources_config
 ./resource.ps1 aws_devopsguru_notification_channel
 ./resource.ps1 aws_devopsguru_resource_collection
+./resource.ps1 aws_devopsguru_service_integration
 ./resource.ps1 aws_directory_service_conditional_forwarder
 ./resource.ps1 aws_directory_service_radius_settings
 ./resource.ps1 aws_directory_service_region
@@ -695,13 +696,6 @@ Datasource percentage coverage 98.10
 ./resource.ps1 aws_worklink_website_certificate_authority_association
 ./resource.ps1 aws_workspaces_connection_alias
 ./resource.ps1 aws_workspaces_ip_group
-./resource.ps1 aws_apprunner_hosted_zone_id -type data
-./resource.ps1 aws_batch_job_definition -type data
-./resource.ps1 aws_cognito_user_group -type data
-./resource.ps1 aws_cognito_user_groups -type data
-./resource.ps1 aws_db_parameter_group -type data
-./resource.ps1 aws_medialive_input -type data
-./resource.ps1 aws_redshift_data_shares -type data
-./resource.ps1 aws_redshift_producer_data_shares -type data
-./resource.ps1 aws_resourceexplorer2_search -type data
-./resource.ps1 aws_servicecatalogappregistry_application -type data
+./resource.ps1 aws_devopsguru_notification_channel -type data
+./resource.ps1 aws_devopsguru_resource_collection -type data
+./resource.ps1 aws_ecr_lifecycle_policy_document -type data

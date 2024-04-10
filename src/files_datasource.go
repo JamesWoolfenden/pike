@@ -1431,3 +1431,9 @@ var dataAwsResourceexplorer2Search []byte
 
 //go:embed mapping/aws/data/servicecatalog/aws_servicecatalogappregistry_application.json
 var dataAwsServicecatalogappregistryApplication []byte
+
+//go:embed mapping/aws/data/devopsguru/aws_devopsguru_notification_channel.json
+var dataAwsDevopsguruNotificationChannel []byte
+
+//go:embed mapping/aws/data/devopsguru/aws_devopsguru_resource_collection.json
+var dataAwsDevopsguruResourceCollection []byte

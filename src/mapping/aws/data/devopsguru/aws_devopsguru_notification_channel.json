@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "devops-guru:ListNotificationChannels",
+      "devops-guru:DescribeResourceCollectionHealth"
+    ]
+  }
+]

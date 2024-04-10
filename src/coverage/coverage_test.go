@@ -1,3 +1,6 @@
+//go:build cover
+// +build cover
+
 package coverage
 
 import (

@@ -565,6 +565,9 @@ func AwsDataLookup(find string) interface{} {
 		"aws_redshift_producer_data_shares":                         dataAwsRedshiftProducerDataShares,
 		"aws_resourceexplorer2_search":                              dataAwsResourceexplorer2Search,
 		"aws_servicecatalogappregistry_application":                 dataAwsServicecatalogappregistryApplication,
+		"aws_devopsguru_notification_channel":                       dataAwsDevopsguruNotificationChannel,
+		"aws_devopsguru_resource_collection":                        dataAwsDevopsguruResourceCollection,
+		"aws_ecr_lifecycle_policy_document":                         placeholder,
 	}
 
 	return TFLookup[find]

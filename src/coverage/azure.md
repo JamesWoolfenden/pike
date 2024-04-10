@@ -1,6 +1,6 @@
 # todo azure
 
-Resource percentage coverage   4.99
+Resource percentage coverage   4.98
 Datasource percentage coverage 39.25
 
 ./resource.ps1 azurerm_aadb2c_directory
@@ -718,6 +718,8 @@ Datasource percentage coverage 39.25
 ./resource.ps1 azurerm_recovery_services_vault
 ./resource.ps1 azurerm_recovery_services_vault_resource_guard_association
 ./resource.ps1 azurerm_redhat_openshift_cluster
+./resource.ps1 azurerm_redis_cache_access_policy
+./resource.ps1 azurerm_redis_cache_access_policy_assignment
 ./resource.ps1 azurerm_redis_enterprise_cluster
 ./resource.ps1 azurerm_redis_enterprise_database
 ./resource.ps1 azurerm_redis_firewall_rule
@@ -1010,6 +1012,7 @@ Datasource percentage coverage 39.25
 ./resource.ps1 azurerm_windows_function_app_slot
 ./resource.ps1 azurerm_windows_web_app
 ./resource.ps1 azurerm_windows_web_app_slot
+./resource.ps1 azurerm_workloads_sap_discovery_virtual_instance
 ./resource.ps1 azurerm_workloads_sap_single_node_virtual_instance
 ./resource.ps1 azurerm_workloads_sap_three_tier_virtual_instance
 ./resource.ps1 azurerm_aadb2c_directory -type data
