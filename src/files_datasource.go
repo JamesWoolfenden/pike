@@ -1404,3 +1404,30 @@ var dataAwsBedrockCustomModels []byte
 
 //go:embed mapping/aws/data/ssm-contacts/aws_ssmcontacts_rotation.json
 var dataAwsSsmcontactsRotation []byte
+
+//go:embed mapping/aws/data/batch/aws_batch_job_definition.json
+var dataAwsBatchJobDefinition []byte
+
+//go:embed mapping/aws/data/cognito-idp/aws_cognito_user_group.json
+var dataAwsCognitoUserGroup []byte
+
+//go:embed mapping/aws/data/cognito-idp/aws_cognito_user_groups.json
+var dataAwsCognitoUserGroups []byte
+
+//go:embed mapping/aws/data/rds/aws_db_parameter_group.json
+var dataAwsDbParameterGroup []byte
+
+//go:embed mapping/aws/data/medialive/aws_medialive_input.json
+var dataAwsMedialiveInput []byte
+
+//go:embed mapping/aws/data/redshift/aws_redshift_data_shares.json
+var dataAwsRedshiftDataShares []byte
+
+//go:embed mapping/aws/data/redshift/aws_redshift_producer_data_shares.json
+var dataAwsRedshiftProducerDataShares []byte
+
+//go:embed mapping/aws/data/resource-explorer-2/aws_resourceexplorer2_search.json
+var dataAwsResourceexplorer2Search []byte
+
+//go:embed mapping/aws/data/servicecatalog/aws_servicecatalogappregistry_application.json
+var dataAwsServicecatalogappregistryApplication []byte

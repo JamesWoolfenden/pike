@@ -264,6 +264,7 @@ func TestGetPermissionMap(t *testing.T) {
 			args: args{
 				raw:        []byte("bogus"),
 				attributes: []string{},
+				resource:   "bogus",
 			},
 			wantErr: true,
 		},

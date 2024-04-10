@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "resource-explorer-2:Search"
+    ]
+  }
+]

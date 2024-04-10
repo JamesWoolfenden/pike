@@ -1,9 +1,12 @@
 # todo google
 
-Resource percentage coverage   22.72
-Datasource percentage coverage 91.35
+Resource percentage coverage   21.77
+Datasource percentage coverage 87.73
 
 ./resource.ps1 google_access_context_manager_access_level_condition
+./resource.ps1 google_access_context_manager_service_perimeter_dry_run_resource
+./resource.ps1 google_access_context_manager_service_perimeter_egress_policy
+./resource.ps1 google_access_context_manager_service_perimeter_ingress_policy
 ./resource.ps1 google_access_context_manager_service_perimeter_resource
 ./resource.ps1 google_active_directory_domain
 ./resource.ps1 google_active_directory_domain_trust
@@ -33,6 +36,10 @@ Datasource percentage coverage 91.35
 ./resource.ps1 google_app_engine_service_network_settings
 ./resource.ps1 google_app_engine_service_split_traffic
 ./resource.ps1 google_app_engine_standard_app_version
+./resource.ps1 google_apphub_application
+./resource.ps1 google_apphub_service
+./resource.ps1 google_apphub_service_project_attachment
+./resource.ps1 google_apphub_workload
 ./resource.ps1 google_artifact_registry_vpcsc_config
 ./resource.ps1 google_assured_workloads_workload
 ./resource.ps1 google_backup_dr_management_server
@@ -71,6 +78,7 @@ Datasource percentage coverage 91.35
 ./resource.ps1 google_cloud_identity_group
 ./resource.ps1 google_cloud_identity_group_membership
 ./resource.ps1 google_cloud_ids_endpoint
+./resource.ps1 google_cloud_quotas_quota_preference
 ./resource.ps1 google_cloud_run_domain_mapping
 ./resource.ps1 google_cloud_run_service
 ./resource.ps1 google_cloud_run_service_iam_binding
@@ -88,8 +96,18 @@ Datasource percentage coverage 91.35
 ./resource.ps1 google_cloudbuildv2_connection_iam_policy
 ./resource.ps1 google_cloudbuildv2_repository
 ./resource.ps1 google_clouddeploy_automation
+./resource.ps1 google_clouddeploy_custom_target_type
+./resource.ps1 google_clouddeploy_custom_target_type_iam_binding
+./resource.ps1 google_clouddeploy_custom_target_type_iam_member
+./resource.ps1 google_clouddeploy_custom_target_type_iam_policy
 ./resource.ps1 google_clouddeploy_delivery_pipeline
+./resource.ps1 google_clouddeploy_delivery_pipeline_iam_binding
+./resource.ps1 google_clouddeploy_delivery_pipeline_iam_member
+./resource.ps1 google_clouddeploy_delivery_pipeline_iam_policy
 ./resource.ps1 google_clouddeploy_target
+./resource.ps1 google_clouddeploy_target_iam_binding
+./resource.ps1 google_clouddeploy_target_iam_member
+./resource.ps1 google_clouddeploy_target_iam_policy
 ./resource.ps1 google_clouddomains_registration
 ./resource.ps1 google_cloudfunctions2_function
 ./resource.ps1 google_cloudfunctions2_function_iam_binding
@@ -136,6 +154,7 @@ Datasource percentage coverage 91.35
 ./resource.ps1 google_compute_instance_from_template
 ./resource.ps1 google_compute_instance_group
 ./resource.ps1 google_compute_instance_group_manager
+./resource.ps1 google_compute_instance_group_membership
 ./resource.ps1 google_compute_instance_group_named_port
 ./resource.ps1 google_compute_instance_iam_binding
 ./resource.ps1 google_compute_instance_iam_member
@@ -362,6 +381,12 @@ Datasource percentage coverage 91.35
 ./resource.ps1 google_filestore_backup
 ./resource.ps1 google_filestore_instance
 ./resource.ps1 google_filestore_snapshot
+./resource.ps1 google_firebase_app_check_app_attest_config
+./resource.ps1 google_firebase_app_check_debug_token
+./resource.ps1 google_firebase_app_check_device_check_config
+./resource.ps1 google_firebase_app_check_play_integrity_config
+./resource.ps1 google_firebase_app_check_recaptcha_enterprise_config
+./resource.ps1 google_firebase_app_check_recaptcha_v3_config
 ./resource.ps1 google_firebase_app_check_service_config
 ./resource.ps1 google_firebase_extensions_instance
 ./resource.ps1 google_firebase_project_location
@@ -442,6 +467,10 @@ Datasource percentage coverage 91.35
 ./resource.ps1 google_iap_app_engine_version_iam_policy
 ./resource.ps1 google_iap_brand
 ./resource.ps1 google_iap_client
+./resource.ps1 google_iap_tunnel_dest_group
+./resource.ps1 google_iap_tunnel_dest_group_iam_binding
+./resource.ps1 google_iap_tunnel_dest_group_iam_member
+./resource.ps1 google_iap_tunnel_dest_group_iam_policy
 ./resource.ps1 google_iap_tunnel_iam_binding
 ./resource.ps1 google_iap_tunnel_iam_member
 ./resource.ps1 google_iap_tunnel_iam_policy
@@ -474,7 +503,9 @@ Datasource percentage coverage 91.35
 ./resource.ps1 google_identity_platform_tenant_oauth_idp_config
 ./resource.ps1 google_integration_connectors_connection
 ./resource.ps1 google_integration_connectors_endpoint_attachment
+./resource.ps1 google_integrations_client
 ./resource.ps1 google_kms_crypto_key_version
+./resource.ps1 google_kms_ekm_connection
 ./resource.ps1 google_kms_key_ring_iam_binding
 ./resource.ps1 google_kms_key_ring_iam_member
 ./resource.ps1 google_kms_key_ring_iam_policy
@@ -500,6 +531,7 @@ Datasource percentage coverage 91.35
 ./resource.ps1 google_looker_instance
 ./resource.ps1 google_memcache_instance
 ./resource.ps1 google_migration_center_group
+./resource.ps1 google_migration_center_preference_set
 ./resource.ps1 google_ml_engine_model
 ./resource.ps1 google_monitoring_alert_policy
 ./resource.ps1 google_monitoring_custom_service
@@ -517,6 +549,7 @@ Datasource percentage coverage 91.35
 ./resource.ps1 google_netapp_kmsconfig
 ./resource.ps1 google_netapp_storage_pool
 ./resource.ps1 google_netapp_volume
+./resource.ps1 google_netapp_volume_replication
 ./resource.ps1 google_netapp_volume_snapshot
 ./resource.ps1 google_network_connectivity_hub
 ./resource.ps1 google_network_connectivity_policy_based_route
@@ -528,9 +561,12 @@ Datasource percentage coverage 91.35
 ./resource.ps1 google_network_security_address_group_iam_policy
 ./resource.ps1 google_network_security_authorization_policy
 ./resource.ps1 google_network_security_client_tls_policy
+./resource.ps1 google_network_security_firewall_endpoint
+./resource.ps1 google_network_security_firewall_endpoint_association
 ./resource.ps1 google_network_security_gateway_security_policy
 ./resource.ps1 google_network_security_gateway_security_policy_rule
 ./resource.ps1 google_network_security_security_profile
+./resource.ps1 google_network_security_security_profile_group
 ./resource.ps1 google_network_security_server_tls_policy
 ./resource.ps1 google_network_security_tls_inspection_policy
 ./resource.ps1 google_network_security_url_lists
@@ -640,6 +676,7 @@ Datasource percentage coverage 91.35
 ./resource.ps1 google_tags_tag_value_iam_policy
 ./resource.ps1 google_tpu_node
 ./resource.ps1 google_tpu_v2_vm
+./resource.ps1 google_vertex_ai_deployment_resource_pool
 ./resource.ps1 google_vmwareengine_cluster
 ./resource.ps1 google_vmwareengine_external_access_rule
 ./resource.ps1 google_vmwareengine_external_address
@@ -663,14 +700,25 @@ Datasource percentage coverage 91.35
 ./resource.ps1 google_workstations_workstation_iam_binding
 ./resource.ps1 google_workstations_workstation_iam_member
 ./resource.ps1 google_workstations_workstation_iam_policy
+./resource.ps1 google_apphub_application -type data
+./resource.ps1 google_apphub_discovered_service -type data
+./resource.ps1 google_apphub_discovered_workload -type data
+./resource.ps1 google_cloud_quotas_quota_info -type data
+./resource.ps1 google_cloud_quotas_quota_infos -type data
+./resource.ps1 google_clouddeploy_custom_target_type_iam_policy -type data
+./resource.ps1 google_clouddeploy_delivery_pipeline_iam_policy -type data
+./resource.ps1 google_clouddeploy_target_iam_policy -type data
+./resource.ps1 google_compute_forwarding_rules -type data
 ./resource.ps1 google_compute_machine_types -type data
 ./resource.ps1 google_container_attached_install_manifest -type data
 ./resource.ps1 google_container_aws_versions -type data
 ./resource.ps1 google_container_azure_versions -type data
+./resource.ps1 google_dns_managed_zones -type data
 ./resource.ps1 google_firebase_web_app_config -type data
 ./resource.ps1 google_folder -type data
 ./resource.ps1 google_folder_iam_policy -type data
 ./resource.ps1 google_folders -type data
+./resource.ps1 google_iap_tunnel_dest_group_iam_policy -type data
 ./resource.ps1 google_organization_iam_policy -type data
 ./resource.ps1 google_privateca_ca_pool_iam_policy -type data
 ./resource.ps1 google_privateca_certificate_authority -type data

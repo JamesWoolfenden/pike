@@ -7,14 +7,9 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
+          //aws_servicecatalogappregistry_application
+          "servicecatalog:GetApplication",
 
-          //aws_bedrock_custom_model
-          "bedrock:GetCustomModel",
-
-          //aws_bedrock_custom_models
-          "bedrock:ListCustomModels",
-
-          "ssm-contacts:GetRotation",
         ],
         "Resource" : "*",
       }
