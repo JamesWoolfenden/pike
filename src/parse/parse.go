@@ -111,6 +111,14 @@ func GetGoFiles(path string, extension string) ([]string, error) {
 		return nil, err
 	}
 
+	absPath, err := filepath.Abs(path)
+
+	log.Info().Msgf(absPath)
+
+	if err != nil {
+		return nil, err
+	}
+
 	var files []string
 
 	err = filepath.Walk(path, func(path string, info os.FileInfo, err error) error {
