@@ -1,7 +1,7 @@
 # todo aws
 
-Resource percentage coverage   48.70
-Datasource percentage coverage 100.00
+Resource percentage coverage   48.49
+Datasource percentage coverage 99.81
 
 ./resource.ps1 aws_accessanalyzer_archive_rule
 ./resource.ps1 aws_account_region
@@ -58,6 +58,9 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_bedrock_custom_model
 ./resource.ps1 aws_bedrock_model_invocation_logging_configuration
 ./resource.ps1 aws_bedrock_provisioned_model_throughput
+./resource.ps1 aws_bedrockagent_agent
+./resource.ps1 aws_bedrockagent_agent_action_group
+./resource.ps1 aws_bedrockagent_agent_alias
 ./resource.ps1 aws_chime_voice_connector
 ./resource.ps1 aws_chime_voice_connector_group
 ./resource.ps1 aws_chime_voice_connector_logging
@@ -211,6 +214,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_ecs_cluster_capacity_providers
 ./resource.ps1 aws_ecs_tag
 ./resource.ps1 aws_ecs_task_set
+./resource.ps1 aws_eip_domain_name
 ./resource.ps1 aws_eks_access_entry
 ./resource.ps1 aws_eks_access_policy_association
 ./resource.ps1 aws_eks_fargate_profile
@@ -497,8 +501,10 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_redshift_data_share_consumer_association
 ./resource.ps1 aws_redshift_endpoint_access
 ./resource.ps1 aws_redshift_endpoint_authorization
+./resource.ps1 aws_redshift_logging
 ./resource.ps1 aws_redshift_partner
 ./resource.ps1 aws_redshift_resource_policy
+./resource.ps1 aws_redshift_snapshot_copy
 ./resource.ps1 aws_redshiftdata_statement
 ./resource.ps1 aws_redshiftserverless_custom_domain_association
 ./resource.ps1 aws_redshiftserverless_endpoint_access
@@ -696,3 +702,4 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_worklink_website_certificate_authority_association
 ./resource.ps1 aws_workspaces_connection_alias
 ./resource.ps1 aws_workspaces_ip_group
+./resource.ps1 aws_identitystore_groups -type data

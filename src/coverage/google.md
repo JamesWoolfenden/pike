@@ -1,6 +1,6 @@
 # todo google
 
-Resource percentage coverage   21.77
+Resource percentage coverage   21.63
 Datasource percentage coverage 87.10
 
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -116,6 +116,7 @@ Datasource percentage coverage 87.10
 ./resource.ps1 google_cloudfunctions_function_iam_binding
 ./resource.ps1 google_cloudiot_registry
 ./resource.ps1 google_composer_environment
+./resource.ps1 google_composer_user_workloads_secret
 ./resource.ps1 google_compute_attached_disk
 ./resource.ps1 google_compute_autoscaler
 ./resource.ps1 google_compute_backend_bucket
@@ -277,6 +278,7 @@ Datasource percentage coverage 87.10
 ./resource.ps1 google_data_fusion_instance_iam_member
 ./resource.ps1 google_data_fusion_instance_iam_policy
 ./resource.ps1 google_data_loss_prevention_deidentify_template
+./resource.ps1 google_data_loss_prevention_discovery_config
 ./resource.ps1 google_data_loss_prevention_inspect_template
 ./resource.ps1 google_data_loss_prevention_job_trigger
 ./resource.ps1 google_data_loss_prevention_stored_info_type
@@ -503,6 +505,7 @@ Datasource percentage coverage 87.10
 ./resource.ps1 google_identity_platform_tenant_oauth_idp_config
 ./resource.ps1 google_integration_connectors_connection
 ./resource.ps1 google_integration_connectors_endpoint_attachment
+./resource.ps1 google_integrations_auth_config
 ./resource.ps1 google_integrations_client
 ./resource.ps1 google_kms_crypto_key_version
 ./resource.ps1 google_kms_ekm_connection
@@ -552,6 +555,7 @@ Datasource percentage coverage 87.10
 ./resource.ps1 google_netapp_volume_replication
 ./resource.ps1 google_netapp_volume_snapshot
 ./resource.ps1 google_network_connectivity_hub
+./resource.ps1 google_network_connectivity_internal_range
 ./resource.ps1 google_network_connectivity_policy_based_route
 ./resource.ps1 google_network_connectivity_service_connection_policy
 ./resource.ps1 google_network_connectivity_spoke
@@ -603,6 +607,7 @@ Datasource percentage coverage 87.10
 ./resource.ps1 google_os_config_os_policy_assignment
 ./resource.ps1 google_os_config_patch_deployment
 ./resource.ps1 google_os_login_ssh_public_key
+./resource.ps1 google_parallelstore_instance
 ./resource.ps1 google_privateca_ca_pool
 ./resource.ps1 google_privateca_ca_pool_iam_binding
 ./resource.ps1 google_privateca_ca_pool_iam_member
@@ -617,6 +622,7 @@ Datasource percentage coverage 87.10
 ./resource.ps1 google_project_access_approval_settings
 ./resource.ps1 google_project_default_service_accounts
 ./resource.ps1 google_project_iam_audit_config
+./resource.ps1 google_project_iam_member_remove
 ./resource.ps1 google_project_iam_policy
 ./resource.ps1 google_project_organization_policy
 ./resource.ps1 google_project_services
