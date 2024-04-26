@@ -1437,3 +1437,6 @@ var dataAwsDevopsguruNotificationChannel []byte
 
 //go:embed mapping/aws/data/devopsguru/aws_devopsguru_resource_collection.json
 var dataAwsDevopsguruResourceCollection []byte
+
+//go:embed mapping/aws/data/sso/aws_identitystore_groups.json
+var dataAwsIdentitystoreGroups []byte

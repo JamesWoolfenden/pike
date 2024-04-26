@@ -568,6 +568,7 @@ func AwsDataLookup(find string) interface{} {
 		"aws_devopsguru_notification_channel":                       dataAwsDevopsguruNotificationChannel,
 		"aws_devopsguru_resource_collection":                        dataAwsDevopsguruResourceCollection,
 		"aws_ecr_lifecycle_policy_document":                         placeholder,
+		"aws_identitystore_groups":                                  dataAwsIdentitystoreGroups,
 	}
 
 	return TFLookup[find]

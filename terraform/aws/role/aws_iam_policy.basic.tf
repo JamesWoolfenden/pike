@@ -7,8 +7,8 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          //aws_servicecatalogappregistry_application
-          "servicecatalog:GetApplication",
+          //aws_ssoadmin_instances
+          "sso:ListInstances",
 
         ],
         "Resource" : "*",
