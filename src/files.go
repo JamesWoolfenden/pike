@@ -1824,3 +1824,21 @@ var awsAuditmanagerFrameworkShare []byte
 
 //go:embed mapping/aws/resource/auditmanager/aws_auditmanager_organization_admin_account_registration.json
 var awsAuditmanagerOrganizationAdminAccountRegistration []byte
+
+//go:embed mapping/aws/resource/bedrock/aws_bedrock_custom_model.json
+var awsBedrockCustomModel []byte
+
+//go:embed mapping/aws/resource/bedrock/aws_bedrock_model_invocation_logging_configuration.json
+var awsBedrockModelInvocationLoggingConfiguration []byte
+
+//go:embed mapping/aws/resource/bedrock/aws_bedrock_provisioned_model_throughput.json
+var awsBedrockProvisionedModelThroughput []byte
+
+//go:embed mapping/aws/resource/bedrock/aws_bedrockagent_agent.json
+var awsBedrockagentAgent []byte
+
+//go:embed mapping/aws/resource/bedrock/aws_bedrockagent_agent_action_group.json
+var awsBedrockagentActionGroup []byte
+
+//go:embed mapping/aws/resource/bedrock/aws_bedrockagent_agent_alias.json
+var awsBedrockagentAgentAlias []byte

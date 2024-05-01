@@ -55,12 +55,6 @@ Datasource percentage coverage 99.81
 ./resource.ps1 aws_appsync_resolver
 ./resource.ps1 aws_appsync_type
 ./resource.ps1 aws_athena_prepared_statement
-./resource.ps1 aws_bedrock_custom_model
-./resource.ps1 aws_bedrock_model_invocation_logging_configuration
-./resource.ps1 aws_bedrock_provisioned_model_throughput
-./resource.ps1 aws_bedrockagent_agent
-./resource.ps1 aws_bedrockagent_agent_action_group
-./resource.ps1 aws_bedrockagent_agent_alias
 ./resource.ps1 aws_chime_voice_connector
 ./resource.ps1 aws_chime_voice_connector_group
 ./resource.ps1 aws_chime_voice_connector_logging
@@ -702,4 +696,3 @@ Datasource percentage coverage 99.81
 ./resource.ps1 aws_worklink_website_certificate_authority_association
 ./resource.ps1 aws_workspaces_connection_alias
 ./resource.ps1 aws_workspaces_ip_group
-./resource.ps1 aws_identitystore_groups -type data

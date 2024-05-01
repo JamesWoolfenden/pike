@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "bedrock:CreateAgent",
+      "bedrock:DeleteAgent",
+      "bedrock:UpdateAgent",
+      "iam:PassRole",
+      "bedrock:GetAgent",
+      "bedrock:PrepareAgent"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "bedrock:DeleteAgent"
+    ],
+    "modify": [
+      "bedrock:UpdateAgent"
+    ],
+    "plan": []
+  }
+]

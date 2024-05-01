@@ -7,8 +7,54 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          //aws_ssoadmin_instances
-          "sso:ListInstances",
+          //aws_bedrock_provisioned_model_throughput
+          "bedrock:CreateProvisionedModelThroughput",
+          "bedrock:UpdateProvisionedModelThroughput",
+          "bedrock:DeleteProvisionedModelThroughput",
+          "bedrock:GetProvisionedModelThroughput",
+
+
+          //aws_bedrock_model_invocation_logging_configuration
+          "bedrock:PutModelInvocationLoggingConfiguration",
+          "bedrock:DeleteModelInvocationLoggingConfiguration",
+          "bedrock:GetModelInvocationLoggingConfiguration",
+
+          //aws_bedrock_custom_model
+          "bedrock:CreateModelCustomizationJob",
+          "bedrock:GetModelCustomizationJob",
+
+          "iam:CreateRole",
+          "iam:DeleteRole",
+          "iam:DeleteRolePolicy",
+          "iam:GetRole",
+          "iam:GetRolePolicy",
+          "iam:ListAttachedRolePolicies",
+          "iam:ListInstanceProfilesForRole",
+          "iam:ListRolePolicies",
+          "iam:PutRolePolicy",
+
+          "s3:CreateBucket",
+          "s3:DeleteBucket",
+          "s3:DeleteObject",
+          "s3:GetAccelerateConfiguration",
+          "s3:GetBucketAcl",
+          "s3:GetBucketCORS",
+          "s3:GetBucketLogging",
+          "s3:GetBucketObjectLockConfiguration",
+          "s3:GetBucketPolicy",
+          "s3:GetBucketRequestPayment",
+          "s3:GetBucketTagging",
+          "s3:GetBucketVersioning",
+          "s3:GetBucketWebsite",
+          "s3:GetEncryptionConfiguration",
+          "s3:GetLifecycleConfiguration",
+          "s3:GetObject",
+          "s3:GetObjectAcl",
+          "s3:GetReplicationConfiguration",
+          "s3:ListBucket",
+          "s3:PutBucketPolicy",
+          "s3:PutObject",
+
 
         ],
         "Resource" : "*",

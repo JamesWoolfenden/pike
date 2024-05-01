@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "bedrock:CreateModelCustomizationJob",
+      "bedrock:GetModelCustomizationJob"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

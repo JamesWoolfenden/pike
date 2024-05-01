@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "bedrock:PutModelInvocationLoggingConfiguration",
+      "bedrock:DeleteModelInvocationLoggingConfiguration",
+      "bedrock:GetModelInvocationLoggingConfiguration"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "bedrock:DeleteModelInvocationLoggingConfiguration"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

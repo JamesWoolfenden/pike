@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "bedrock:CreateAgentAlias",
+      "bedrock:DeleteAgentAlias",
+      "bedrock:UpdateAgentAlias",
+      "bedrock:GetAgentAlias"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "bedrock:DeleteAgentAlias"
+    ],
+    "modify": [
+      "bedrock:UpdateAgentAlias"
+    ],
+    "plan": []
+  }
+]

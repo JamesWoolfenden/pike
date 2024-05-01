@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "bedrock:CreateProvisionedModelThroughput",
+      "bedrock:UpdateProvisionedModelThroughput",
+      "bedrock:DeleteProvisionedModelThroughput",
+      "bedrock:GetProvisionedModelThroughput"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "bedrock:DeleteProvisionedModelThroughput"
+    ],
+    "modify": [
+      "bedrock:UpdateProvisionedModelThroughput"
+    ],
+    "plan": []
+  }
+]

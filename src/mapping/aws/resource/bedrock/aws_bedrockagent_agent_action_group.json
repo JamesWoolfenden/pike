@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "bedrock:GetAgentActionGroup",
+      "bedrock:CreateAgentActionGroup",
+      "bedrock:DeleteAgentActionGroup",
+      "bedrock:UpdateAgentActionGroup"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "bedrock:DeleteAgentActionGroup"
+    ],
+    "modify": [
+      "bedrock:UpdateAgentActionGroup"
+    ],
+    "plan": []
+  }
+]

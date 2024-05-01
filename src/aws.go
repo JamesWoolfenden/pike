@@ -728,6 +728,12 @@ func AwsLookup(name string) interface{} {
 		"aws_auditmanager_framework":                               awsAuditmanagerFramework,
 		"aws_auditmanager_framework_share":                         awsAuditmanagerFrameworkShare,
 		"aws_auditmanager_organization_admin_account_registration": awsAuditmanagerOrganizationAdminAccountRegistration,
+		"aws_bedrock_custom_model":                                 awsBedrockCustomModel,
+		"aws_bedrock_model_invocation_logging_configuration":       awsBedrockModelInvocationLoggingConfiguration,
+		"aws_bedrock_provisioned_model_throughput":                 awsBedrockProvisionedModelThroughput,
+		"aws_bedrockagent_agent":                                   awsBedrockagentAgent,
+		"aws_bedrockagent_agent_action_group":                      awsBedrockagentActionGroup,
+		"aws_bedrockagent_agent_alias":                             awsBedrockagentAgentAlias,
 	}
 
 	return TFLookup[name]
