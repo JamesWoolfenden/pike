@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "fsx:CreateBackup",
+      "fsx:DeleteBackup"
+    ],
+    "attributes": {
+      "tags": [
+        "fsx:TagResource",
+        "fsx:UntagResource"
+      ]
+    },
+    "destroy": [
+      "fsx:DeleteBackup"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

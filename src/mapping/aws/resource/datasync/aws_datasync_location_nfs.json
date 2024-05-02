@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "datasync:DescribeLocationNfs",
+      "datasync:CreateLocationNfs",
+      "datasync:DeleteLocation",
+      "datasync:UpdateLocationNfs"
+    ],
+    "attributes": {
+      "tags": [
+        "datasync:TagResource",
+        "datasync:UntagResource"
+      ]
+    },
+    "destroy": [
+      "datasync:DeleteLocation"
+    ],
+    "modify": [
+      "datasync:UpdateLocationNfs"
+    ],
+    "plan": []
+  }
+]

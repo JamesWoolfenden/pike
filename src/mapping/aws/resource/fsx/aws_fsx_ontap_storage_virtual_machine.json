@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "fsx:CreateStorageVirtualMachine",
+      "fsx:DeleteStorageVirtualMachine",
+      "fsx:UpdateStorageVirtualMachine"
+    ],
+    "attributes": {
+      "tags": [
+        "fsx:TagResource",
+        "fsx:UntagResource"
+      ]
+    },
+    "destroy": [
+      "fsx:DeleteStorageVirtualMachine"
+    ],
+    "modify": [
+      "fsx:UpdateStorageVirtualMachine"
+    ],
+    "plan": []
+  }
+]

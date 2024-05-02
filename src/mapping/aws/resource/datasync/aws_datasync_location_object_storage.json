@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "datasync:DescribeLocationObjectStorage",
+      "datasync:CreateLocationObjectStorage"
+    ],
+    "attributes": {
+      "tags": [
+        "datasync:TagResource",
+        "datasync:UntagResource"
+      ]
+    },
+    "destroy": [
+      "datasync:DeleteLocation"
+    ],
+    "modify": [
+      "datasync:UpdateLocationObjectStorage"
+    ],
+    "plan": []
+  }
+]

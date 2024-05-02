@@ -1842,3 +1842,66 @@ var awsBedrockagentActionGroup []byte
 
 //go:embed mapping/aws/resource/bedrock/aws_bedrockagent_agent_alias.json
 var awsBedrockagentAgentAlias []byte
+
+//go:embed mapping/aws/resource/datasync/aws_datasync_agent.json
+var awsDatasyncAgent []byte
+
+//go:embed mapping/aws/resource/datasync/aws_datasync_location_azure_blob.json
+var awsDatasyncLocationAzureBlob []byte
+
+//go:embed mapping/aws/resource/datasync/aws_datasync_location_efs.json
+var awsDatasyncLocationEfs []byte
+
+//go:embed mapping/aws/resource/datasync/aws_datasync_location_fsx_lustre_file_system.json
+var awsDatasyncLocationFsxLustreFileSystem []byte
+
+//go:embed mapping/aws/resource/datasync/aws_datasync_location_fsx_ontap_file_system.json
+var awsDatasyncLocationFsxOntapFileSystem []byte
+
+//go:embed mapping/aws/resource/datasync/aws_datasync_location_fsx_openzfs_file_system.json
+var awsDatasyncLocationFsxOpenzfsFileSystem []byte
+
+//go:embed mapping/aws/resource/datasync/aws_datasync_location_fsx_windows_file_system.json
+var awsDatasyncLocationFsxWindowsFileSystem []byte
+
+//go:embed mapping/aws/resource/datasync/aws_datasync_location_hdfs.json
+var awsDatasyncLocationHdfs []byte
+
+//go:embed mapping/aws/resource/datasync/aws_datasync_location_nfs.json
+var awsDatasyncLocationNfs []byte
+
+//go:embed mapping/aws/resource/datasync/aws_datasync_location_object_storage.json
+var awsDatasyncLocationObjectStorage []byte
+
+//go:embed mapping/aws/resource/datasync/aws_datasync_location_s3.json
+var awsDatasyncLocationS3 []byte
+
+//go:embed mapping/aws/resource/datasync/aws_datasync_location_smb.json
+var awsDatasyncLocationSmb []byte
+
+//go:embed mapping/aws/resource/datasync/aws_datasync_task.json
+var awsDatasyncTask []byte
+
+//go:embed mapping/aws/resource/fsx/aws_fsx_lustre_file_system.json
+var awsFsxLustreFileSystem []byte
+
+//go:embed mapping/aws/resource/fsx/aws_fsx_windows_file_system.json
+var awsFsxWindowsFileSystem []byte
+
+//go:embed mapping/aws/resource/fsx/aws_fsx_backup.json
+var awsFsxBackup []byte
+
+//go:embed mapping/aws/resource/fsx/aws_fsx_data_repository_association.json
+var awsFsxDataRepositoryAssociation []byte
+
+//go:embed mapping/aws/resource/fsx/aws_fsx_file_cache.json
+var awsFsxFileCache []byte
+
+//go:embed mapping/aws/resource/fsx/aws_fsx_ontap_file_system.json
+var awsFsxOntapFileSystem []byte
+
+//go:embed mapping/aws/resource/fsx/aws_fsx_ontap_storage_virtual_machine.json
+var awsFsxOntapStorageVirtualMachine []byte
+
+//go:embed mapping/aws/resource/fsx/aws_fsx_ontap_volume.json
+var awsFsxOntapVolume []byte

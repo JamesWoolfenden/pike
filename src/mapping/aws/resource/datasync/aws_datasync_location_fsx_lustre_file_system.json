@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "datasync:DescribeLocationFsxLustre",
+      "datasync:CreateLocationFsxLustre",
+      "datasync:DeleteLocation"
+    ],
+    "attributes": {
+      "tags": [
+        "datasync:TagResource",
+        "datasync:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

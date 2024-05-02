@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "fsx:DescribeFileSystems",
+      "fsx:CreateFileSystem",
+      "fsx:DeleteFileSystem",
+      "fsx:UpdateFileSystem"
+    ],
+    "attributes": {
+      "tags": [
+        "fsx:TagResource",
+        "fsx:UntagResource"
+      ]
+    },
+    "destroy": [
+      "fsx:DeleteFileSystem"
+    ],
+    "modify": [
+      "fsx:UpdateFileSystem"
+    ],
+    "plan": []
+  }
+]

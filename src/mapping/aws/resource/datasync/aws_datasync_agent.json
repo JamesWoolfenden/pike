@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "datasync:UpdateAgent",
+      "datasync:DeleteAgent",
+      "datasync:CreateAgent",
+      "datasync:DescribeAgent"
+    ],
+    "attributes": {
+      "tags": [
+        "datasync:TagResource",
+        "datasync:UntagResource"
+      ]
+    },
+    "destroy": [
+      "datasync:DeleteAgent"
+    ],
+    "modify": [
+      "datasync:UpdateAgent"
+    ],
+    "plan": []
+  }
+]

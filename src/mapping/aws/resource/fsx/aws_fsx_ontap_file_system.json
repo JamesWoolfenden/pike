@@ -1,0 +1,26 @@
+[
+  {
+    "apply": [
+      "fsx:DescribeFileSystems",
+      "fsx:CreateFileSystem",
+      "fsx:DeleteFileSystem",
+      "fsx:UpdateFileSystem",
+      "iam:CreateServiceLinkedRole",
+      "iam:AttachRolePolicy",
+      "iam:PutRolePolicy"
+    ],
+    "attributes": {
+      "tags": [
+        "fsx:TagResource",
+        "fsx:UntagResource"
+      ]
+    },
+    "destroy": [
+      "fsx:DeleteFileSystem"
+    ],
+    "modify": [
+      "fsx:UpdateFileSystem"
+    ],
+    "plan": []
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "datasync:CreateTask",
+      "datasync:DescribeTask",
+      "datasync:DeleteTask",
+      "datasync:UpdateTask"
+    ],
+    "attributes": {
+      "tags": [
+        "datasync:TagResource",
+        "datasync:UntagResource"
+      ]
+    },
+    "destroy": [
+      "datasync:DeleteTask"
+    ],
+    "modify": [
+      "datasync:UpdateTask"
+    ],
+    "plan": []
+  }
+]

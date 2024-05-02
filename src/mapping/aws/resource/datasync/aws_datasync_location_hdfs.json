@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "datasync:UpdateLocationHdfs",
+      "datasync:CreateLocationHdfs",
+      "datasync:DeleteLocation",
+      "datasync:DescribeLocationHdfs"
+    ],
+    "attributes": {
+      "tags": [
+        "datasync:TagResource",
+        "datasync:UntagResource"
+      ]
+    },
+    "destroy": [
+      "datasync:DeleteLocation"
+    ],
+    "modify": [
+      "datasync:UpdateLocationHdfs"
+    ],
+    "plan": []
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "datasync:DescribeLocationSmb",
+      "datasync:CreateLocationSmb",
+      "datasync:UpdateLocationSmb",
+      "datasync:DeleteLocation"
+    ],
+    "attributes": {
+      "tags": [
+        "datasync:TagResource",
+        "datasync:UntagResource"
+      ]
+    },
+    "destroy": [
+      "datasync:DeleteLocation"
+    ],
+    "modify": [
+      "datasync:UpdateLocationSmb"
+    ],
+    "plan": []
+  }
+]

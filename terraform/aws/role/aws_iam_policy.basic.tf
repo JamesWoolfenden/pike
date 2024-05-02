@@ -7,22 +7,92 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          //aws_bedrock_provisioned_model_throughput
-          "bedrock:CreateProvisionedModelThroughput",
-          "bedrock:UpdateProvisionedModelThroughput",
-          "bedrock:DeleteProvisionedModelThroughput",
-          "bedrock:GetProvisionedModelThroughput",
 
+          //backup
+          "fsx:CreateBackup",
+          "fsx:DeleteBackup",
+          "fsx:TagResource",
+          "fsx:UntagResource",
 
-          //aws_bedrock_model_invocation_logging_configuration
-          "bedrock:PutModelInvocationLoggingConfiguration",
-          "bedrock:DeleteModelInvocationLoggingConfiguration",
-          "bedrock:GetModelInvocationLoggingConfiguration",
+          //aws_fsx_lustre_file_system & aws_fsx_windows_file_system
+          "fsx:DescribeFileSystems",
+          "fsx:CreateFileSystem",
+          "fsx:DeleteFileSystem",
+          "fsx:UpdateFileSystem",
+          "fsx:TagResource",
+          "fsx:UntagResource",
 
-          //aws_bedrock_custom_model
-          "bedrock:CreateModelCustomizationJob",
-          "bedrock:GetModelCustomizationJob",
+          //cache
+          "fsx:CreateFileCache",
+          "fsx:DeleteFileCache",
+          "fsx:UpdateFileCache",
+          "ec2:DescribeVpcs",
+          "fsx:DescribeFileCaches",
+          "logs:CreateLogGroup",
+          "logs:CreateLogStream",
+          "logs:PutLogEvents",
+          "fsx:ListTagsForResource",
+          "fsx:TagResource",
+          "fsx:UntagResource",
 
+          //aws_fsx_data_repository_association
+          "fsx:CreateDataRepositoryAssociation",
+          "fsx:DeleteDataRepositoryAssociation",
+          "fsx:UpdateDataRepositoryAssociation",
+          "fsx:DescribeDataRepositoryAssociations",
+          "fsx:TagResource",
+          "fsx:UntagResource",
+          "iam:CreateServiceLinkedRole",
+          "iam:AttachRolePolicy",
+          "iam:PutRolePolicy",
+
+          //lustre
+          "iam:CreateServiceLinkedRole",
+          "iam:AttachRolePolicy",
+          "iam:PutRolePolicy",
+          "fsx:TagResource",
+          "fsx:UntagResource",
+
+          //storage
+          "fsx:CreateStorageVirtualMachine",
+          "fsx:DeleteStorageVirtualMachine",
+          "fsx:UpdateStorageVirtualMachine",
+          "fsx:TagResource",
+          "fsx:UntagResource",
+
+          //volume
+          "fsx:CreateVolume",
+          "fsx:DeleteVolume",
+          "fsx:UpdateVolume",
+          "fsx:TagResource",
+          "fsx:UntagResource",
+
+          "ec2:DescribeSubnets",
+          "dynamodb:DeleteItem",
+          "dynamodb:DescribeTable",
+          "dynamodb:GetItem",
+          "dynamodb:PutItem",
+          "ec2:CreateSecurityGroup",
+          "ec2:CreateTags",
+          "ec2:DeleteSecurityGroup",
+          "ec2:DeleteTags",
+          "ec2:DescribeAccountAttributes",
+          "ec2:DescribeImages",
+          "ec2:DescribeInstanceAttribute",
+          "ec2:DescribeInstanceCreditSpecifications",
+          "ec2:DescribeInstanceTypes",
+          "ec2:DescribeInstances",
+          "ec2:DescribeNetworkInterfaces",
+          "ec2:DescribeSecurityGroups",
+          "ec2:DescribeSubnets",
+          "ec2:DescribeTags",
+          "ec2:DescribeVolumes",
+          "ec2:ModifyInstanceAttribute",
+          "ec2:RevokeSecurityGroupEgress",
+          "ec2:RunInstances",
+          "ec2:StartInstances",
+          "ec2:StopInstances",
+          "ec2:TerminateInstances",
           "iam:CreateRole",
           "iam:DeleteRole",
           "iam:DeleteRolePolicy",
@@ -32,7 +102,6 @@ resource "aws_iam_policy" "basic" {
           "iam:ListInstanceProfilesForRole",
           "iam:ListRolePolicies",
           "iam:PutRolePolicy",
-
           "s3:CreateBucket",
           "s3:DeleteBucket",
           "s3:DeleteObject",
@@ -54,8 +123,7 @@ resource "aws_iam_policy" "basic" {
           "s3:ListBucket",
           "s3:PutBucketPolicy",
           "s3:PutObject",
-
-
+          "s3:PutBucketAcl",
         ],
         "Resource" : "*",
       }

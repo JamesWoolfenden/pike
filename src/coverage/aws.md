@@ -1,7 +1,7 @@
 # todo aws
 
-Resource percentage coverage   48.49
-Datasource percentage coverage 99.81
+Resource percentage coverage   50.33
+Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_accessanalyzer_archive_rule
 ./resource.ps1 aws_account_region
@@ -55,6 +55,8 @@ Datasource percentage coverage 99.81
 ./resource.ps1 aws_appsync_resolver
 ./resource.ps1 aws_appsync_type
 ./resource.ps1 aws_athena_prepared_statement
+./resource.ps1 aws_bcmdataexports_export
+./resource.ps1 aws_bedrockagent_knowledge_base
 ./resource.ps1 aws_chime_voice_connector
 ./resource.ps1 aws_chime_voice_connector_group
 ./resource.ps1 aws_chime_voice_connector_logging
@@ -97,19 +99,6 @@ Datasource percentage coverage 99.81
 ./resource.ps1 aws_customerprofiles_profile
 ./resource.ps1 aws_dataexchange_data_set
 ./resource.ps1 aws_dataexchange_revision
-./resource.ps1 aws_datasync_agent
-./resource.ps1 aws_datasync_location_azure_blob
-./resource.ps1 aws_datasync_location_efs
-./resource.ps1 aws_datasync_location_fsx_lustre_file_system
-./resource.ps1 aws_datasync_location_fsx_ontap_file_system
-./resource.ps1 aws_datasync_location_fsx_openzfs_file_system
-./resource.ps1 aws_datasync_location_fsx_windows_file_system
-./resource.ps1 aws_datasync_location_hdfs
-./resource.ps1 aws_datasync_location_nfs
-./resource.ps1 aws_datasync_location_object_storage
-./resource.ps1 aws_datasync_location_s3
-./resource.ps1 aws_datasync_location_smb
-./resource.ps1 aws_datasync_task
 ./resource.ps1 aws_db_instance_automated_backups_replication
 ./resource.ps1 aws_db_instance_role_association
 ./resource.ps1 aws_db_proxy
@@ -243,14 +232,6 @@ Datasource percentage coverage 99.81
 ./resource.ps1 aws_fis_experiment_template
 ./resource.ps1 aws_fms_admin_account
 ./resource.ps1 aws_fms_policy
-./resource.ps1 aws_fsx_backup
-./resource.ps1 aws_fsx_data_repository_association
-./resource.ps1 aws_fsx_file_cache
-./resource.ps1 aws_fsx_lustre_file_system
-./resource.ps1 aws_fsx_ontap_file_system
-./resource.ps1 aws_fsx_ontap_storage_virtual_machine
-./resource.ps1 aws_fsx_ontap_volume
-./resource.ps1 aws_fsx_windows_file_system
 ./resource.ps1 aws_gamelift_alias
 ./resource.ps1 aws_gamelift_build
 ./resource.ps1 aws_gamelift_fleet
@@ -258,6 +239,7 @@ Datasource percentage coverage 99.81
 ./resource.ps1 aws_gamelift_game_session_queue
 ./resource.ps1 aws_gamelift_script
 ./resource.ps1 aws_globalaccelerator_accelerator
+./resource.ps1 aws_globalaccelerator_cross_account_attachment
 ./resource.ps1 aws_globalaccelerator_custom_routing_accelerator
 ./resource.ps1 aws_globalaccelerator_custom_routing_endpoint_group
 ./resource.ps1 aws_globalaccelerator_custom_routing_listener
@@ -679,6 +661,7 @@ Datasource percentage coverage 99.81
 ./resource.ps1 aws_transfer_user
 ./resource.ps1 aws_transfer_workflow
 ./resource.ps1 aws_verifiedaccess_instance_trust_provider_attachment
+./resource.ps1 aws_verifiedpermissions_policy
 ./resource.ps1 aws_verifiedpermissions_policy_store
 ./resource.ps1 aws_verifiedpermissions_policy_template
 ./resource.ps1 aws_verifiedpermissions_schema

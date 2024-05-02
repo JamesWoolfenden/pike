@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "datasync:CreateLocationFsxWindows",
+      "datasync:DescribeLocationFsxWindows"
+    ],
+    "attributes": {
+      "tags": [
+        "datasync:TagResource",
+        "datasync:UntagResource"
+      ]
+    },
+    "destroy": [
+      "datasync:DeleteLocation"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

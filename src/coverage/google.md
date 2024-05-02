@@ -1,7 +1,7 @@
 # todo google
 
-Resource percentage coverage   21.63
-Datasource percentage coverage 87.10
+Resource percentage coverage   21.58
+Datasource percentage coverage 86.48
 
 ./resource.ps1 google_access_context_manager_access_level_condition
 ./resource.ps1 google_access_context_manager_service_perimeter_dry_run_resource
@@ -221,6 +221,7 @@ Datasource percentage coverage 87.10
 ./resource.ps1 google_compute_router_interface
 ./resource.ps1 google_compute_router_nat
 ./resource.ps1 google_compute_router_peer
+./resource.ps1 google_compute_security_policy_rule
 ./resource.ps1 google_compute_service_attachment
 ./resource.ps1 google_compute_shared_vpc_host_project
 ./resource.ps1 google_compute_shared_vpc_service_project
@@ -618,6 +619,7 @@ Datasource percentage coverage 87.10
 ./resource.ps1 google_privateca_certificate_template_iam_binding
 ./resource.ps1 google_privateca_certificate_template_iam_member
 ./resource.ps1 google_privateca_certificate_template_iam_policy
+./resource.ps1 google_privileged_access_manager_entitlement
 ./resource.ps1 google_project
 ./resource.ps1 google_project_access_approval_settings
 ./resource.ps1 google_project_default_service_accounts
@@ -737,6 +739,8 @@ Datasource percentage coverage 87.10
 ./resource.ps1 google_runtimeconfig_variable -type data
 ./resource.ps1 google_scc_source_iam_policy -type data
 ./resource.ps1 google_secure_source_manager_instance_iam_policy -type data
+./resource.ps1 google_storage_bucket_objects -type data
+./resource.ps1 google_storage_buckets -type data
 ./resource.ps1 google_tags_tag_key_iam_policy -type data
 ./resource.ps1 google_tags_tag_keys -type data
 ./resource.ps1 google_tags_tag_value -type data

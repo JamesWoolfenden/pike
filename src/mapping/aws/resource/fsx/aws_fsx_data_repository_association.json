@@ -1,0 +1,26 @@
+[
+  {
+    "apply": [
+      "fsx:CreateDataRepositoryAssociation",
+      "fsx:DeleteDataRepositoryAssociation",
+      "fsx:UpdateDataRepositoryAssociation",
+      "fsx:DescribeDataRepositoryAssociations",
+      "iam:CreateServiceLinkedRole",
+      "iam:AttachRolePolicy",
+      "iam:PutRolePolicy"
+    ],
+    "attributes": {
+      "tags": [
+        "fsx:TagResource",
+        "fsx:UntagResource"
+      ]
+    },
+    "destroy": [
+      "fsx:DeleteDataRepositoryAssociation"
+    ],
+    "modify": [
+      "fsx:UpdateDataRepositoryAssociation"
+    ],
+    "plan": []
+  }
+]

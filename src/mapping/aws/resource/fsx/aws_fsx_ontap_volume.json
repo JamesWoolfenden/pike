@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "fsx:CreateVolume",
+      "fsx:DeleteVolume",
+      "fsx:UpdateVolume"
+    ],
+    "attributes": {
+      "tags": [
+        "fsx:TagResource",
+        "fsx:UntagResource"
+      ]
+    },
+    "destroy": [
+      "fsx:DeleteVolume"
+    ],
+    "modify": [
+      "fsx:UpdateVolume"
+    ],
+    "plan": []
+  }
+]

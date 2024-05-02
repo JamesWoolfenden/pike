@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "datasync:UpdateLocationAzureBlob",
+      "datasync:CreateLocationAzureBlob",
+      "datasync:DescribeLocationAzureBlob"
+    ],
+    "attributes": {
+      "tags": [
+        "datasync:TagResource",
+        "datasync:UntagResource"
+      ]
+    },
+    "destroy": [
+      "datasync:DeleteLocation"
+    ],
+    "modify": [
+      "datasync:UpdateLocationAzureBlob"
+    ],
+    "plan": []
+  }
+]

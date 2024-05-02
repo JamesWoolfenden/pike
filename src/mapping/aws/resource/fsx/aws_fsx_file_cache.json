@@ -1,0 +1,28 @@
+[
+  {
+    "apply": [
+      "fsx:CreateFileCache",
+      "fsx:DeleteFileCache",
+      "fsx:UpdateFileCache",
+      "ec2:DescribeVpcs",
+      "fsx:DescribeFileCaches",
+      "logs:CreateLogGroup",
+      "logs:CreateLogStream",
+      "logs:PutLogEvents",
+      "fsx:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "fsx:TagResource",
+        "fsx:UntagResource"
+      ]
+    },
+    "destroy": [
+      "fsx:DeleteFileCache"
+    ],
+    "modify": [
+      "fsx:UpdateFileCache"
+    ],
+    "plan": []
+  }
+]
