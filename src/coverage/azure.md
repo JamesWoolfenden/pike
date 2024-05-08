@@ -1,6 +1,6 @@
 # todo azure
 
-Resource percentage coverage   4.98
+Resource percentage coverage   4.97
 Datasource percentage coverage 39.25
 
 ./resource.ps1 azurerm_aadb2c_directory
@@ -879,6 +879,7 @@ Datasource percentage coverage 39.25
 ./resource.ps1 azurerm_storage_account_local_user
 ./resource.ps1 azurerm_storage_blob
 ./resource.ps1 azurerm_storage_blob_inventory_policy
+./resource.ps1 azurerm_storage_container_immutability_policy
 ./resource.ps1 azurerm_storage_data_lake_gen2_filesystem
 ./resource.ps1 azurerm_storage_data_lake_gen2_path
 ./resource.ps1 azurerm_storage_encryption_scope
@@ -895,6 +896,7 @@ Datasource percentage coverage 39.25
 ./resource.ps1 azurerm_storage_share_directory
 ./resource.ps1 azurerm_storage_share_file
 ./resource.ps1 azurerm_storage_sync_cloud_endpoint
+./resource.ps1 azurerm_storage_sync_server_endpoint
 ./resource.ps1 azurerm_storage_table
 ./resource.ps1 azurerm_storage_table_entity
 ./resource.ps1 azurerm_stream_analytics_cluster

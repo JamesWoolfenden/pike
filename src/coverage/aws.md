@@ -1,6 +1,6 @@
 # todo aws
 
-Resource percentage coverage   50.33
+Resource percentage coverage   50.26
 Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_accessanalyzer_archive_rule
@@ -56,6 +56,8 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_appsync_type
 ./resource.ps1 aws_athena_prepared_statement
 ./resource.ps1 aws_bcmdataexports_export
+./resource.ps1 aws_bedrockagent_agent_knowledge_base_association
+./resource.ps1 aws_bedrockagent_data_source
 ./resource.ps1 aws_bedrockagent_knowledge_base
 ./resource.ps1 aws_chime_voice_connector
 ./resource.ps1 aws_chime_voice_connector_group

@@ -1,6 +1,6 @@
 # todo google
 
-Resource percentage coverage   21.58
+Resource percentage coverage   21.53
 Datasource percentage coverage 86.48
 
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -54,6 +54,7 @@ Datasource percentage coverage 86.48
 ./resource.ps1 google_bigquery_datapolicy_data_policy_iam_member
 ./resource.ps1 google_bigquery_datapolicy_data_policy_iam_policy
 ./resource.ps1 google_bigquery_dataset_access
+./resource.ps1 google_bigtable_authorized_view
 ./resource.ps1 google_billing_account_iam_binding
 ./resource.ps1 google_billing_account_iam_member
 ./resource.ps1 google_billing_account_iam_policy
@@ -558,6 +559,7 @@ Datasource percentage coverage 86.48
 ./resource.ps1 google_network_connectivity_hub
 ./resource.ps1 google_network_connectivity_internal_range
 ./resource.ps1 google_network_connectivity_policy_based_route
+./resource.ps1 google_network_connectivity_regional_endpoint
 ./resource.ps1 google_network_connectivity_service_connection_policy
 ./resource.ps1 google_network_connectivity_spoke
 ./resource.ps1 google_network_security_address_group
