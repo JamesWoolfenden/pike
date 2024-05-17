@@ -1291,6 +1291,7 @@
         "aws_vpc_endpoint_security_group_association",
         "aws_vpc_endpoint_service",
         "aws_vpc_endpoint_service_allowed_principal",
+        "aws_vpc_endpoint_service_private_dns_verification",
         "aws_vpc_endpoint_subnet_association",
         "aws_vpc_ipam",
         "aws_vpc_ipam_organization_admin_account",
