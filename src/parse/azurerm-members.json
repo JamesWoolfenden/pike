@@ -44,6 +44,7 @@
         "azurerm_api_management_notification_recipient_user",
         "azurerm_api_management_openid_connect_provider",
         "azurerm_api_management_policy",
+        "azurerm_api_management_policy_fragment",
         "azurerm_api_management_product",
         "azurerm_api_management_product_api",
         "azurerm_api_management_product_group",
