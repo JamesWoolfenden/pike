@@ -1,7 +1,7 @@
 # todo aws
 
-Resource percentage coverage   50.26
-Datasource percentage coverage 100.00
+Resource percentage coverage   50.15
+Datasource percentage coverage 99.81
 
 ./resource.ps1 aws_accessanalyzer_archive_rule
 ./resource.ps1 aws_account_region
@@ -101,6 +101,8 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_customerprofiles_profile
 ./resource.ps1 aws_dataexchange_data_set
 ./resource.ps1 aws_dataexchange_revision
+./resource.ps1 aws_datazone_domain
+./resource.ps1 aws_datazone_environment_blueprint_configuration
 ./resource.ps1 aws_db_instance_automated_backups_replication
 ./resource.ps1 aws_db_instance_role_association
 ./resource.ps1 aws_db_proxy
@@ -672,6 +674,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_vpc_endpoint_policy
 ./resource.ps1 aws_vpc_endpoint_security_group_association
 ./resource.ps1 aws_vpc_endpoint_service_allowed_principal
+./resource.ps1 aws_vpc_endpoint_service_private_dns_verification
 ./resource.ps1 aws_vpc_ipam_organization_admin_account
 ./resource.ps1 aws_vpc_ipv6_cidr_block_association
 ./resource.ps1 aws_vpc_network_performance_metric_subscription
@@ -681,3 +684,4 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_worklink_website_certificate_authority_association
 ./resource.ps1 aws_workspaces_connection_alias
 ./resource.ps1 aws_workspaces_ip_group
+./resource.ps1 aws_datazone_environment_blueprint -type data

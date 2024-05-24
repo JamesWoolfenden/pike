@@ -1,7 +1,7 @@
 # todo google
 
-Resource percentage coverage   21.53
-Datasource percentage coverage 86.48
+Resource percentage coverage   21.46
+Datasource percentage coverage 86.17
 
 ./resource.ps1 google_access_context_manager_access_level_condition
 ./resource.ps1 google_access_context_manager_service_perimeter_dry_run_resource
@@ -162,6 +162,7 @@ Datasource percentage coverage 86.48
 ./resource.ps1 google_compute_instance_iam_member
 ./resource.ps1 google_compute_instance_iam_policy
 ./resource.ps1 google_compute_instance_settings
+./resource.ps1 google_compute_interconnect
 ./resource.ps1 google_compute_interconnect_attachment
 ./resource.ps1 google_compute_machine_image
 ./resource.ps1 google_compute_machine_image_iam_binding
@@ -507,6 +508,7 @@ Datasource percentage coverage 86.48
 ./resource.ps1 google_identity_platform_tenant_oauth_idp_config
 ./resource.ps1 google_integration_connectors_connection
 ./resource.ps1 google_integration_connectors_endpoint_attachment
+./resource.ps1 google_integration_connectors_managed_zone
 ./resource.ps1 google_integrations_auth_config
 ./resource.ps1 google_integrations_client
 ./resource.ps1 google_kms_crypto_key_version
@@ -584,6 +586,7 @@ Datasource percentage coverage 86.48
 ./resource.ps1 google_network_services_gateway
 ./resource.ps1 google_network_services_grpc_route
 ./resource.ps1 google_network_services_http_route
+./resource.ps1 google_network_services_lb_traffic_extension
 ./resource.ps1 google_network_services_mesh
 ./resource.ps1 google_network_services_service_binding
 ./resource.ps1 google_network_services_tcp_route
@@ -720,6 +723,7 @@ Datasource percentage coverage 86.48
 ./resource.ps1 google_clouddeploy_target_iam_policy -type data
 ./resource.ps1 google_compute_forwarding_rules -type data
 ./resource.ps1 google_compute_machine_types -type data
+./resource.ps1 google_compute_subnetworks -type data
 ./resource.ps1 google_container_attached_install_manifest -type data
 ./resource.ps1 google_container_aws_versions -type data
 ./resource.ps1 google_container_azure_versions -type data
