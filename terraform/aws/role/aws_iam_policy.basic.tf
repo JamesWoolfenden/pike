@@ -7,34 +7,7 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "datazone:ListEnvironmentBlueprints",
-
-
-          //aws_datazone_domain
-          "datazone:CreateDomain",
-          "datazone:GetDomain",
-          "datazone:ListTagsForResource",
-          "datazone:DeleteDomain",
-          "datazone:UpdateDomain",
-
-          "datazone:TagResource",
-          "datazone:UntagResource",
-
-          //aws_datazone_environment_blueprint_configuration
-          "datazone:PutEnvironmentBlueprintConfiguration",
-          "datazone:GetEnvironmentBlueprintConfiguration",
-          "datazone:DeleteEnvironmentBlueprintConfiguration",
-
-          "iam:CreateRole",
-          "iam:DeleteRole",
-          "iam:GetRole",
-          "iam:GetRolePolicy",
-          "iam:ListAttachedRolePolicies",
-          "iam:ListInstanceProfilesForRole",
-          "iam:ListRolePolicies",
-          "iam:PutRolePolicy",
-          "iam:DeleteRolePolicy",
-
+          "chatbot:DescribeSlackWorkspaces",
         ],
         "Resource" : "*",
       }

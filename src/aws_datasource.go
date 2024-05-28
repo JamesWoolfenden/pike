@@ -570,6 +570,7 @@ func AwsDataLookup(find string) interface{} {
 		"aws_ecr_lifecycle_policy_document":                         placeholder,
 		"aws_identitystore_groups":                                  dataAwsIdentitystoreGroups,
 		"aws_datazone_environment_blueprint":                        dataAwsDatazoneEnvironmentBlueprint,
+		"aws_chatbot_slack_workspace":                               dataAwsChatbotSlackWorkspace,
 	}
 
 	return TFLookup[find]

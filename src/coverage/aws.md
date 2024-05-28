@@ -1,7 +1,7 @@
 # todo aws
 
 Resource percentage coverage   50.22
-Datasource percentage coverage 99.81
+Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_accessanalyzer_archive_rule
 ./resource.ps1 aws_account_region
@@ -684,4 +684,3 @@ Datasource percentage coverage 99.81
 ./resource.ps1 aws_worklink_website_certificate_authority_association
 ./resource.ps1 aws_workspaces_connection_alias
 ./resource.ps1 aws_workspaces_ip_group
-./resource.ps1 aws_chatbot_slack_workspace -type data

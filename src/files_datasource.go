@@ -1443,3 +1443,6 @@ var dataAwsIdentitystoreGroups []byte
 
 //go:embed mapping/aws/data/datazone/aws_datazone_environment_blueprint.json
 var dataAwsDatazoneEnvironmentBlueprint []byte
+
+//go:embed mapping/aws/data/chatbot/aws_chatbot_slack_workspace.json
+var dataAwsChatbotSlackWorkspace []byte
