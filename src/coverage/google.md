@@ -1,7 +1,7 @@
 # todo google
 
-Resource percentage coverage   21.53
-Datasource percentage coverage 86.48
+Resource percentage coverage   21.04
+Datasource percentage coverage 84.97
 
 ./resource.ps1 google_access_context_manager_access_level_condition
 ./resource.ps1 google_access_context_manager_service_perimeter_dry_run_resource
@@ -162,6 +162,7 @@ Datasource percentage coverage 86.48
 ./resource.ps1 google_compute_instance_iam_member
 ./resource.ps1 google_compute_instance_iam_policy
 ./resource.ps1 google_compute_instance_settings
+./resource.ps1 google_compute_interconnect
 ./resource.ps1 google_compute_interconnect_attachment
 ./resource.ps1 google_compute_machine_image
 ./resource.ps1 google_compute_machine_image_iam_binding
@@ -295,6 +296,10 @@ Datasource percentage coverage 86.48
 ./resource.ps1 google_dataform_repository_iam_policy
 ./resource.ps1 google_dataform_repository_release_config
 ./resource.ps1 google_dataform_repository_workflow_config
+./resource.ps1 google_dataplex_aspect_type
+./resource.ps1 google_dataplex_aspect_type_iam_binding
+./resource.ps1 google_dataplex_aspect_type_iam_member
+./resource.ps1 google_dataplex_aspect_type_iam_policy
 ./resource.ps1 google_dataplex_asset
 ./resource.ps1 google_dataplex_asset_iam_binding
 ./resource.ps1 google_dataplex_asset_iam_member
@@ -303,6 +308,14 @@ Datasource percentage coverage 86.48
 ./resource.ps1 google_dataplex_datascan_iam_binding
 ./resource.ps1 google_dataplex_datascan_iam_member
 ./resource.ps1 google_dataplex_datascan_iam_policy
+./resource.ps1 google_dataplex_entry_group
+./resource.ps1 google_dataplex_entry_group_iam_binding
+./resource.ps1 google_dataplex_entry_group_iam_member
+./resource.ps1 google_dataplex_entry_group_iam_policy
+./resource.ps1 google_dataplex_entry_type
+./resource.ps1 google_dataplex_entry_type_iam_binding
+./resource.ps1 google_dataplex_entry_type_iam_member
+./resource.ps1 google_dataplex_entry_type_iam_policy
 ./resource.ps1 google_dataplex_lake
 ./resource.ps1 google_dataplex_lake_iam_binding
 ./resource.ps1 google_dataplex_lake_iam_member
@@ -507,10 +520,13 @@ Datasource percentage coverage 86.48
 ./resource.ps1 google_identity_platform_tenant_oauth_idp_config
 ./resource.ps1 google_integration_connectors_connection
 ./resource.ps1 google_integration_connectors_endpoint_attachment
+./resource.ps1 google_integration_connectors_managed_zone
 ./resource.ps1 google_integrations_auth_config
 ./resource.ps1 google_integrations_client
+./resource.ps1 google_kms_autokey_config
 ./resource.ps1 google_kms_crypto_key_version
 ./resource.ps1 google_kms_ekm_connection
+./resource.ps1 google_kms_key_handle
 ./resource.ps1 google_kms_key_ring_iam_binding
 ./resource.ps1 google_kms_key_ring_iam_member
 ./resource.ps1 google_kms_key_ring_iam_policy
@@ -525,6 +541,9 @@ Datasource percentage coverage 86.48
 ./resource.ps1 google_logging_folder_sink
 ./resource.ps1 google_logging_linked_dataset
 ./resource.ps1 google_logging_log_view
+./resource.ps1 google_logging_log_view_iam_binding
+./resource.ps1 google_logging_log_view_iam_member
+./resource.ps1 google_logging_log_view_iam_policy
 ./resource.ps1 google_logging_metric
 ./resource.ps1 google_logging_organization_bucket_config
 ./resource.ps1 google_logging_organization_exclusion
@@ -584,6 +603,8 @@ Datasource percentage coverage 86.48
 ./resource.ps1 google_network_services_gateway
 ./resource.ps1 google_network_services_grpc_route
 ./resource.ps1 google_network_services_http_route
+./resource.ps1 google_network_services_lb_route_extension
+./resource.ps1 google_network_services_lb_traffic_extension
 ./resource.ps1 google_network_services_mesh
 ./resource.ps1 google_network_services_service_binding
 ./resource.ps1 google_network_services_tcp_route
@@ -720,15 +741,20 @@ Datasource percentage coverage 86.48
 ./resource.ps1 google_clouddeploy_target_iam_policy -type data
 ./resource.ps1 google_compute_forwarding_rules -type data
 ./resource.ps1 google_compute_machine_types -type data
+./resource.ps1 google_compute_subnetworks -type data
 ./resource.ps1 google_container_attached_install_manifest -type data
 ./resource.ps1 google_container_aws_versions -type data
 ./resource.ps1 google_container_azure_versions -type data
+./resource.ps1 google_dataplex_aspect_type_iam_policy -type data
+./resource.ps1 google_dataplex_entry_group_iam_policy -type data
+./resource.ps1 google_dataplex_entry_type_iam_policy -type data
 ./resource.ps1 google_dns_managed_zones -type data
 ./resource.ps1 google_firebase_web_app_config -type data
 ./resource.ps1 google_folder -type data
 ./resource.ps1 google_folder_iam_policy -type data
 ./resource.ps1 google_folders -type data
 ./resource.ps1 google_iap_tunnel_dest_group_iam_policy -type data
+./resource.ps1 google_logging_log_view_iam_policy -type data
 ./resource.ps1 google_organization_iam_policy -type data
 ./resource.ps1 google_privateca_ca_pool_iam_policy -type data
 ./resource.ps1 google_privateca_certificate_authority -type data

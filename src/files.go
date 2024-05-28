@@ -1905,3 +1905,9 @@ var awsFsxOntapStorageVirtualMachine []byte
 
 //go:embed mapping/aws/resource/fsx/aws_fsx_ontap_volume.json
 var awsFsxOntapVolume []byte
+
+//go:embed mapping/aws/resource/datazone/aws_datazone_domain.json
+var awsDatazoneDomain []byte
+
+//go:embed mapping/aws/resource/datazone/aws_datazone_environment_blueprint_configuration.json
+var awsDatazoneEnvironmentBlueprintConfiguration []byte

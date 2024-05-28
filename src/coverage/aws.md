@@ -1,7 +1,7 @@
 # todo aws
 
-Resource percentage coverage   50.26
-Datasource percentage coverage 100.00
+Resource percentage coverage   50.22
+Datasource percentage coverage 99.81
 
 ./resource.ps1 aws_accessanalyzer_archive_rule
 ./resource.ps1 aws_account_region
@@ -314,6 +314,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_lakeformation_resource
 ./resource.ps1 aws_lakeformation_resource_lf_tag
 ./resource.ps1 aws_lakeformation_resource_lf_tags
+./resource.ps1 aws_lambda_runtime_management_config
 ./resource.ps1 aws_lb_listener_certificate
 ./resource.ps1 aws_lb_ssl_negotiation_policy
 ./resource.ps1 aws_lb_trust_store
@@ -670,8 +671,10 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_vpc_endpoint_connection_accepter
 ./resource.ps1 aws_vpc_endpoint_connection_notification
 ./resource.ps1 aws_vpc_endpoint_policy
+./resource.ps1 aws_vpc_endpoint_private_dns
 ./resource.ps1 aws_vpc_endpoint_security_group_association
 ./resource.ps1 aws_vpc_endpoint_service_allowed_principal
+./resource.ps1 aws_vpc_endpoint_service_private_dns_verification
 ./resource.ps1 aws_vpc_ipam_organization_admin_account
 ./resource.ps1 aws_vpc_ipv6_cidr_block_association
 ./resource.ps1 aws_vpc_network_performance_metric_subscription
@@ -681,3 +684,4 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_worklink_website_certificate_authority_association
 ./resource.ps1 aws_workspaces_connection_alias
 ./resource.ps1 aws_workspaces_ip_group
+./resource.ps1 aws_chatbot_slack_workspace -type data

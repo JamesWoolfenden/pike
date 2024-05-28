@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "datazone:CreateDomain",
+      "datazone:GetDomain",
+      "datazone:ListTagsForResource",
+      "datazone:DeleteDomain",
+      "datazone:UpdateDomain"
+    ],
+    "attributes": {
+      "tags": [
+        "datazone:TagResource",
+        "datazone:UntagResource"
+      ]
+    },
+    "destroy": [
+      "datazone:DeleteDomain"
+    ],
+    "modify": [
+      "datazone:UpdateDomain"
+    ],
+    "plan": []
+  }
+]
