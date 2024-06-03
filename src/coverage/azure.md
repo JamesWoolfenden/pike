@@ -46,6 +46,7 @@ Datasource percentage coverage 39.01
 ./resource.ps1 azurerm_api_management_notification_recipient_user
 ./resource.ps1 azurerm_api_management_openid_connect_provider
 ./resource.ps1 azurerm_api_management_policy
+./resource.ps1 azurerm_api_management_policy_fragment
 ./resource.ps1 azurerm_api_management_product
 ./resource.ps1 azurerm_api_management_product_api
 ./resource.ps1 azurerm_api_management_product_group

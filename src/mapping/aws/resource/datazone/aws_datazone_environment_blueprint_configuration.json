@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "datazone:PutEnvironmentBlueprintConfiguration",
+      "datazone:GetEnvironmentBlueprintConfiguration",
+      "datazone:DeleteEnvironmentBlueprintConfiguration"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "datazone:DeleteEnvironmentBlueprintConfiguration"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -20,7 +20,7 @@ function path()
 }
 
 $provider = $resource.Split("_")[0]
-$baseMapping = path . "src" "mapping" $provider
+$baseMapping = path $PSScriptRoot "src" "mapping" $provider
 $mapping = path $baseMapping $type
 
 write-host "Copying to $baseMapping"
@@ -48,4 +48,6 @@ else
     $content = "resource `"$resource`" `"pike`" {}"
     $tffile = path terraform $provider "$resource.tf"
 }
+
+$tffile=path $PSScriptRoot $tffile
 new-item $tffile -value $content

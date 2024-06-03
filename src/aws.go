@@ -755,6 +755,8 @@ func AwsLookup(name string) interface{} {
 		"aws_fsx_ontap_file_system":                                awsFsxOntapFileSystem,
 		"aws_fsx_ontap_storage_virtual_machine":                    awsFsxOntapStorageVirtualMachine,
 		"aws_fsx_ontap_volume":                                     awsFsxOntapVolume,
+		"aws_datazone_domain":                                      awsDatazoneDomain,
+		"aws_datazone_environment_blueprint_configuration":         awsDatazoneEnvironmentBlueprintConfiguration,
 	}
 
 	return TFLookup[name]

@@ -9,7 +9,8 @@
       ],
       "inline_policy": [
         "iam:PutRolePolicy",
-        "iam:GetRolePolicy"
+        "iam:GetRolePolicy",
+        "iam:DeleteRolePolicy"
       ],
       "managed_policy_arns": [
         "iam:AttachRolePolicy",
