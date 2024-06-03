@@ -1,6 +1,9 @@
 [
   {
-    "apply": [],
+    "apply": [
+      "storagegateway:DescribeCache",
+      "storagegateway:AddCache"
+    ],
     "attributes": {
       "tags": []
     },

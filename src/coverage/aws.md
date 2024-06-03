@@ -1,6 +1,6 @@
 # todo aws
 
-Resource percentage coverage   50.22
+Resource percentage coverage   50.95
 Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_accessanalyzer_archive_rule
@@ -101,8 +101,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_customerprofiles_profile
 ./resource.ps1 aws_dataexchange_data_set
 ./resource.ps1 aws_dataexchange_revision
-./resource.ps1 aws_datazone_domain
-./resource.ps1 aws_datazone_environment_blueprint_configuration
 ./resource.ps1 aws_db_instance_automated_backups_replication
 ./resource.ps1 aws_db_instance_role_association
 ./resource.ps1 aws_db_proxy
@@ -638,7 +636,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_ssoadmin_permission_set_inline_policy
 ./resource.ps1 aws_ssoadmin_permissions_boundary_attachment
 ./resource.ps1 aws_ssoadmin_trusted_token_issuer
-
 ./resource.ps1 aws_synthetics_canary
 ./resource.ps1 aws_synthetics_group
 ./resource.ps1 aws_synthetics_group_association
@@ -677,4 +674,3 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_worklink_website_certificate_authority_association
 ./resource.ps1 aws_workspaces_connection_alias
 ./resource.ps1 aws_workspaces_ip_group
-./resource.ps1 aws_datazone_environment_blueprint -type data

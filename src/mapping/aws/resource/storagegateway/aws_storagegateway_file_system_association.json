@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "storagegateway:DescribeFileSystemAssociations",
+      "storagegateway:UpdateFileSystemAssociation",
+      "storagegateway:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "storagegateway:RemoveTagsFromResource",
+        "storagegateway:AddTagsToResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [
+      "storagegateway:UpdateFileSystemAssociation"
+    ],
+    "plan": []
+  }
+]

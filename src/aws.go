@@ -757,6 +757,16 @@ func AwsLookup(name string) interface{} {
 		"aws_fsx_ontap_volume":                                     awsFsxOntapVolume,
 		"aws_datazone_domain":                                      awsDatazoneDomain,
 		"aws_datazone_environment_blueprint_configuration":         awsDatazoneEnvironmentBlueprintConfiguration,
+		"aws_storagegateway_cache":                                 awsStoragegatewayCache,
+		"aws_storagegateway_cached_iscsi_volume":                   awsStoragegatewayCachedIscsiVolume,
+		"aws_storagegateway_file_system_association":               awsStoragegatewayFileSystemAssociation,
+		"aws_storagegateway_gateway":                               awsStoragegatewayGateway,
+		"aws_storagegateway_nfs_file_share":                        awsStoragegatewayNfsFileShare,
+		"aws_storagegateway_smb_file_share":                        awsStoragegatewaySmbFileShare,
+		"aws_storagegateway_stored_iscsi_volume":                   awsStoragegatewayStoredIscsiVolume,
+		"aws_storagegateway_tape_pool":                             awsStoragegatewayTapePool,
+		"aws_storagegateway_upload_buffer":                         awsStoragegatewayUploadBuffer,
+		"aws_storagegateway_working_storage":                       awsStoragegatewayWorkingStorage,
 	}
 
 	return TFLookup[name]

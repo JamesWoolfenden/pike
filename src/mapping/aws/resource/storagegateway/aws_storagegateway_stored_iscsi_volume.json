@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "storagegateway:DescribeStorediSCSIVolumes",
+      "storagegateway:CreateStorediSCSIVolume",
+      "storagegateway:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "storagegateway:RemoveTagsFromResource",
+        "storagegateway:AddTagsToResource"
+      ]
+    },
+    "destroy": [
+      "storagegateway:DeleteVolume"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

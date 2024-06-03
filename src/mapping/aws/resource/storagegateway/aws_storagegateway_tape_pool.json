@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "storagegateway:ListTapePools",
+      "storagegateway:CreateTapePool",
+      "storagegateway:DeleteTapePool",
+      "storagegateway:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "storagegateway:RemoveTagsFromResource",
+        "storagegateway:AddTagsToResource"
+      ]
+    },
+    "destroy": [
+      "storagegateway:DeleteTapePool"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

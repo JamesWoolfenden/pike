@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "storagegateway:DescribeSMBFileShares",
+      "storagegateway:UpdateSMBFileShare",
+      "storagegateway:CreateSMBFileShare",
+      "storagegateway:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "storagegateway:RemoveTagsFromResource",
+        "storagegateway:AddTagsToResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [
+      "storagegateway:UpdateSMBFileShare"
+    ],
+    "plan": []
+  }
+]

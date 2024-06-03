@@ -1,6 +1,9 @@
 [
   {
-    "apply": [],
+    "apply": [
+      "storagegateway:DescribeUploadBuffer",
+      "storagegateway:AddUploadBuffer"
+    ],
     "attributes": {
       "tags": []
     },

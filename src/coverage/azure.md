@@ -1,7 +1,7 @@
 # todo azure
 
-Resource percentage coverage   4.93
-Datasource percentage coverage 39.01
+Resource percentage coverage   4.92
+Datasource percentage coverage 38.41
 
 ./resource.ps1 azurerm_aadb2c_directory
 ./resource.ps1 azurerm_active_directory_domain_service
@@ -190,6 +190,7 @@ Datasource percentage coverage 39.01
 ./resource.ps1 azurerm_container_connected_registry
 ./resource.ps1 azurerm_container_group
 ./resource.ps1 azurerm_container_registry_agent_pool
+./resource.ps1 azurerm_container_registry_cache_rule
 ./resource.ps1 azurerm_container_registry_scope_map
 ./resource.ps1 azurerm_container_registry_task
 ./resource.ps1 azurerm_container_registry_task_schedule_run_now
@@ -989,6 +990,7 @@ Datasource percentage coverage 39.01
 ./resource.ps1 azurerm_virtual_machine_data_disk_attachment
 ./resource.ps1 azurerm_virtual_machine_extension
 ./resource.ps1 azurerm_virtual_machine_gallery_application_assignment
+./resource.ps1 azurerm_virtual_machine_implicit_data_disk_from_source
 ./resource.ps1 azurerm_virtual_machine_packet_capture
 ./resource.ps1 azurerm_virtual_machine_run_command
 ./resource.ps1 azurerm_virtual_machine_scale_set_extension
@@ -1028,6 +1030,7 @@ Datasource percentage coverage 39.01
 ./resource.ps1 azurerm_aadb2c_directory -type data
 ./resource.ps1 azurerm_active_directory_domain_service -type data
 ./resource.ps1 azurerm_advisor_recommendations -type data
+./resource.ps1 azurerm_arc_resource_bridge_appliance -type data
 ./resource.ps1 azurerm_attestation -type data
 ./resource.ps1 azurerm_billing_enrollment_account_scope -type data
 ./resource.ps1 azurerm_billing_mca_account_scope -type data
@@ -1053,6 +1056,7 @@ Datasource percentage coverage 39.01
 ./resource.ps1 azurerm_container_app_environment_dapr_component. -type data
 ./resource.ps1 azurerm_container_group -type data
 ./resource.ps1 azurerm_container_registry -type data
+./resource.ps1 azurerm_container_registry_cache_rule -type data
 ./resource.ps1 azurerm_container_registry_scope_map -type data
 ./resource.ps1 azurerm_container_registry_token -type data
 ./resource.ps1 azurerm_cosmosdb_account -type data
@@ -1095,6 +1099,7 @@ Datasource percentage coverage 39.01
 ./resource.ps1 azurerm_dns_zone -type data
 ./resource.ps1 azurerm_elastic_cloud_elasticsearch -type data
 ./resource.ps1 azurerm_elastic_san -type data
+./resource.ps1 azurerm_elastic_san_volume_group -type data
 ./resource.ps1 azurerm_eventgrid_domain -type data
 ./resource.ps1 azurerm_eventgrid_domain_topic -type data
 ./resource.ps1 azurerm_eventgrid_system_topic -type data
@@ -1219,6 +1224,8 @@ Datasource percentage coverage 39.01
 ./resource.ps1 azurerm_sentinel_alert_rule_anomaly -type data
 ./resource.ps1 azurerm_servicebus_topic_authorization_rule -type data
 ./resource.ps1 azurerm_static_web_app -type data
+./resource.ps1 azurerm_storage_queue -type data
+./resource.ps1 azurerm_storage_table -type data
 ./resource.ps1 azurerm_system_center_virtual_machine_manager_inventory_items -type data
 ./resource.ps1 azurerm_virtual_desktop_application_group -type data
 ./resource.ps1 azurerm_virtual_desktop_workspace -type data

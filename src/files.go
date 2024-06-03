@@ -1911,3 +1911,33 @@ var awsDatazoneDomain []byte
 
 //go:embed mapping/aws/resource/datazone/aws_datazone_environment_blueprint_configuration.json
 var awsDatazoneEnvironmentBlueprintConfiguration []byte
+
+//go:embed mapping/aws/resource/storagegateway/aws_storagegateway_cache.json
+var awsStoragegatewayCache []byte
+
+//go:embed mapping/aws/resource/storagegateway/aws_storagegateway_cached_iscsi_volume.json
+var awsStoragegatewayCachedIscsiVolume []byte
+
+//go:embed mapping/aws/resource/storagegateway/aws_storagegateway_file_system_association.json
+var awsStoragegatewayFileSystemAssociation []byte
+
+//go:embed mapping/aws/resource/storagegateway/aws_storagegateway_gateway.json
+var awsStoragegatewayGateway []byte
+
+//go:embed mapping/aws/resource/storagegateway/aws_storagegateway_nfs_file_share.json
+var awsStoragegatewayNfsFileShare []byte
+
+//go:embed mapping/aws/resource/storagegateway/aws_storagegateway_smb_file_share.json
+var awsStoragegatewaySmbFileShare []byte
+
+//go:embed mapping/aws/resource/storagegateway/aws_storagegateway_stored_iscsi_volume.json
+var awsStoragegatewayStoredIscsiVolume []byte
+
+//go:embed mapping/aws/resource/storagegateway/aws_storagegateway_tape_pool.json
+var awsStoragegatewayTapePool []byte
+
+//go:embed mapping/aws/resource/storagegateway/aws_storagegateway_upload_buffer.json
+var awsStoragegatewayUploadBuffer []byte
+
+//go:embed mapping/aws/resource/storagegateway/aws_storagegateway_working_storage.json
+var awsStoragegatewayWorkingStorage []byte

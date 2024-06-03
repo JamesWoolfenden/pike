@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "storagegateway:DescribeGatewayInformation",
+      "storagegateway:ActivateGateway",
+      "storagegateway:DeleteGateway",
+      "storagegateway:DisableGateway",
+      "storagegateway:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "storagegateway:RemoveTagsFromResource",
+        "storagegateway:AddTagsToResource"
+      ]
+    },
+    "destroy": [
+      "storagegateway:DeleteGateway"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

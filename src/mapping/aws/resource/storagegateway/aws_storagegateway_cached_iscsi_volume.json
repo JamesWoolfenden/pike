@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "storagegateway:DescribeCachediSCSIVolumes",
+      "storagegateway:CreateCachediSCSIVolume"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "storagegateway:DeleteVolume"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

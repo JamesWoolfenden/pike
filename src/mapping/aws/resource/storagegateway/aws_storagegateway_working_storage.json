@@ -1,6 +1,9 @@
 [
   {
-    "apply": [],
+    "apply": [
+      "storagegateway:AddWorkingStorage",
+      "storagegateway:DescribeWorkingStorage"
+    ],
     "attributes": {
       "tags": []
     },
