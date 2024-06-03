@@ -637,16 +637,7 @@ Datasource percentage coverage 99.81
 ./resource.ps1 aws_ssoadmin_permission_set_inline_policy
 ./resource.ps1 aws_ssoadmin_permissions_boundary_attachment
 ./resource.ps1 aws_ssoadmin_trusted_token_issuer
-./resource.ps1 aws_storagegateway_cache
-./resource.ps1 aws_storagegateway_cached_iscsi_volume
-./resource.ps1 aws_storagegateway_file_system_association
-./resource.ps1 aws_storagegateway_gateway
-./resource.ps1 aws_storagegateway_nfs_file_share
-./resource.ps1 aws_storagegateway_smb_file_share
-./resource.ps1 aws_storagegateway_stored_iscsi_volume
-./resource.ps1 aws_storagegateway_tape_pool
-./resource.ps1 aws_storagegateway_upload_buffer
-./resource.ps1 aws_storagegateway_working_storage
+
 ./resource.ps1 aws_synthetics_canary
 ./resource.ps1 aws_synthetics_group
 ./resource.ps1 aws_synthetics_group_association
