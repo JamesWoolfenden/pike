@@ -767,6 +767,12 @@ func AwsLookup(name string) interface{} {
 		"aws_storagegateway_tape_pool":                             awsStoragegatewayTapePool,
 		"aws_storagegateway_upload_buffer":                         awsStoragegatewayUploadBuffer,
 		"aws_storagegateway_working_storage":                       awsStoragegatewayWorkingStorage,
+		"aws_ses_active_receipt_rule_set":                          awsSesActiveReceiptRuleSet,
+		"aws_ses_configuration_set":                                awsSesConfigurationSet,
+		"aws_ses_email_identity":                                   awsSesEmailIdentity,
+		"aws_ses_event_destination":                                awsSesEventDestination,
+		"aws_ses_receipt_filter":                                   awsSesReceiptFilter,
+		"aws_ses_template":                                         awsSesTemplate,
 	}
 
 	return TFLookup[name]

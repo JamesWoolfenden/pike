@@ -589,12 +589,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_service_discovery_service
 ./resource.ps1 aws_servicecatalog_provisioning_artifact
 ./resource.ps1 aws_servicecatalogappregistry_application
-./resource.ps1 aws_ses_active_receipt_rule_set
-./resource.ps1 aws_ses_configuration_set
-./resource.ps1 aws_ses_email_identity
-./resource.ps1 aws_ses_event_destination
-./resource.ps1 aws_ses_receipt_filter
-./resource.ps1 aws_ses_template
 ./resource.ps1 aws_sesv2_account_vdm_attributes
 ./resource.ps1 aws_sesv2_configuration_set
 ./resource.ps1 aws_sesv2_configuration_set_event_destination

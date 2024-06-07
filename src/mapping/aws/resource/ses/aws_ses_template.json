@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "ses:CreateTemplate",
+      "ses:GetTemplate",
+      "ses:DeleteTemplate",
+      "ses:UpdateTemplate"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "ses:DeleteTemplate"
+    ],
+    "modify": [
+      "ses:UpdateTemplate"
+    ],
+    "plan": []
+  }
+]

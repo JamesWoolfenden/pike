@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "ses:SetActiveReceiptRuleSet",
+      "ses:ListReceiptRuleSets",
+      "ses:CreateReceiptRuleSet",
+      "ses:DescribeReceiptRuleSet",
+      "ses:DeleteReceiptRuleSet",
+      "ses:DescribeActiveReceiptRuleSet"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "ses:DeleteReceiptRuleSet"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

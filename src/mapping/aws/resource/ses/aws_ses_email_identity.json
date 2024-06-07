@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "ses:VerifyEmailIdentity",
+      "ses:GetIdentityVerificationAttributes",
+      "ses:DeleteIdentity"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "ses:DeleteIdentity"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

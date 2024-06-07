@@ -1941,3 +1941,21 @@ var awsStoragegatewayUploadBuffer []byte
 
 //go:embed mapping/aws/resource/storagegateway/aws_storagegateway_working_storage.json
 var awsStoragegatewayWorkingStorage []byte
+
+//go:embed mapping/aws/resource/ses/aws_ses_active_receipt_rule_set.json
+var awsSesActiveReceiptRuleSet []byte
+
+//go:embed mapping/aws/resource/ses/aws_ses_configuration_set.json
+var awsSesConfigurationSet []byte
+
+//go:embed mapping/aws/resource/ses/aws_ses_email_identity.json
+var awsSesEmailIdentity []byte
+
+//go:embed mapping/aws/resource/ses/aws_ses_event_destination.json
+var awsSesEventDestination []byte
+
+//go:embed mapping/aws/resource/ses/aws_ses_receipt_filter.json
+var awsSesReceiptFilter []byte
+
+//go:embed mapping/aws/resource/ses/aws_ses_template.json
+var awsSesTemplate []byte

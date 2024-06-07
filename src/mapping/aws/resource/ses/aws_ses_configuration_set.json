@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "ses:CreateConfigurationSet",
+      "ses:PutConfigurationSetDeliveryOptions",
+      "ses:DescribeConfigurationSet",
+      "ses:DeleteConfigurationSet",
+      "ses:CreateConfigurationSetTrackingOptions"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "ses:DeleteConfigurationSet"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

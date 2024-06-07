@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "ses:CreateReceiptFilter",
+      "ses:ListReceiptFilters",
+      "ses:DeleteReceiptFilter"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "ses:DeleteReceiptFilter"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

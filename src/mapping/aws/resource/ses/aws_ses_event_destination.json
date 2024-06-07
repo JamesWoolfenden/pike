@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "ses:CreateConfigurationSetEventDestination",
+      "ses:DeleteConfigurationSetEventDestination"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "ses:DeleteConfigurationSetEventDestination"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]
