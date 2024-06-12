@@ -1,7 +1,7 @@
 # todo azure
 
-Resource percentage coverage   4.92
-Datasource percentage coverage 38.41
+Resource percentage coverage   4.91
+Datasource percentage coverage 38.30
 
 ./resource.ps1 azurerm_aadb2c_directory
 ./resource.ps1 azurerm_active_directory_domain_service
@@ -285,6 +285,7 @@ Datasource percentage coverage 38.41
 ./resource.ps1 azurerm_data_protection_backup_policy_disk
 ./resource.ps1 azurerm_data_protection_backup_policy_kubernetes_cluster
 ./resource.ps1 azurerm_data_protection_backup_policy_postgresql
+./resource.ps1 azurerm_data_protection_backup_policy_postgresql_flexible_server
 ./resource.ps1 azurerm_data_protection_backup_vault
 ./resource.ps1 azurerm_data_protection_resource_guard
 ./resource.ps1 azurerm_data_share
@@ -660,6 +661,7 @@ Datasource percentage coverage 38.41
 ./resource.ps1 azurerm_new_relic_monitor
 ./resource.ps1 azurerm_new_relic_tag_rule
 ./resource.ps1 azurerm_nginx_certificate
+./resource.ps1 azurerm_nginx_configuration
 ./resource.ps1 azurerm_nginx_deployment
 ./resource.ps1 azurerm_notification_hub
 ./resource.ps1 azurerm_notification_hub_authorization_rule
@@ -1186,6 +1188,7 @@ Datasource percentage coverage 38.41
 ./resource.ps1 azurerm_network_security_group -type data
 ./resource.ps1 azurerm_network_service_tags -type data
 ./resource.ps1 azurerm_nginx_certificate -type data
+./resource.ps1 azurerm_nginx_configuration -type data
 ./resource.ps1 azurerm_nginx_deployment -type data
 ./resource.ps1 azurerm_notification_hub -type data
 ./resource.ps1 azurerm_notification_hub_namespace -type data

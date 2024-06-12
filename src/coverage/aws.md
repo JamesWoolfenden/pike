@@ -1,6 +1,6 @@
 # todo aws
 
-Resource percentage coverage   50.95
+Resource percentage coverage   51.31
 Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_accessanalyzer_archive_rule
@@ -433,6 +433,8 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_organizations_organizational_unit
 ./resource.ps1 aws_organizations_resource_policy
 ./resource.ps1 aws_osis_pipeline
+./resource.ps1 aws_paymentcryptography_key
+./resource.ps1 aws_paymentcryptography_key_alias
 ./resource.ps1 aws_pinpoint_adm_channel
 ./resource.ps1 aws_pinpoint_apns_channel
 ./resource.ps1 aws_pinpoint_apns_sandbox_channel

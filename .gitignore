@@ -20,3 +20,5 @@ terraform-provider-*
 .destination
 tf.plan
 tf.json
+
+dist/

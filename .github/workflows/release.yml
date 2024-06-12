@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
       - name: Unshallow
         run: git fetch --prune --unshallow
       - name: Set up Go
@@ -41,7 +41,7 @@ jobs:
     needs:
       - goreleaser
     steps:
-      - uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
       - name: Publish to Registry
         uses: elgohr/Publish-Docker-Github-Action@82556589c08f584cb95411629a94e6c2b68b9b80 # v5
         with:

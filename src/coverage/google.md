@@ -1,7 +1,7 @@
 # todo google
 
-Resource percentage coverage   21.04
-Datasource percentage coverage 84.97
+Resource percentage coverage   20.88
+Datasource percentage coverage 84.38
 
 ./resource.ps1 google_access_context_manager_access_level_condition
 ./resource.ps1 google_access_context_manager_service_perimeter_dry_run_resource
@@ -186,6 +186,7 @@ Datasource percentage coverage 84.97
 ./resource.ps1 google_compute_organization_security_policy_rule
 ./resource.ps1 google_compute_packet_mirroring
 ./resource.ps1 google_compute_per_instance_config
+./resource.ps1 google_compute_project_cloud_armor_tier
 ./resource.ps1 google_compute_project_default_network_tier
 ./resource.ps1 google_compute_project_metadata
 ./resource.ps1 google_compute_public_advertised_prefix
@@ -553,6 +554,7 @@ Datasource percentage coverage 84.97
 ./resource.ps1 google_logging_project_exclusion
 ./resource.ps1 google_logging_project_sink
 ./resource.ps1 google_looker_instance
+./resource.ps1 google_managed_kafka_cluster
 ./resource.ps1 google_memcache_instance
 ./resource.ps1 google_migration_center_group
 ./resource.ps1 google_migration_center_preference_set
@@ -568,6 +570,7 @@ Datasource percentage coverage 84.97
 ./resource.ps1 google_monitoring_slo
 ./resource.ps1 google_monitoring_uptime_check_config
 ./resource.ps1 google_netapp_active_directory
+./resource.ps1 google_netapp_backup
 ./resource.ps1 google_netapp_backup_policy
 ./resource.ps1 google_netapp_backup_vault
 ./resource.ps1 google_netapp_kmsconfig
@@ -607,6 +610,7 @@ Datasource percentage coverage 84.97
 ./resource.ps1 google_network_services_lb_traffic_extension
 ./resource.ps1 google_network_services_mesh
 ./resource.ps1 google_network_services_service_binding
+./resource.ps1 google_network_services_service_lb_policies
 ./resource.ps1 google_network_services_tcp_route
 ./resource.ps1 google_network_services_tls_route
 ./resource.ps1 google_notebooks_environment
@@ -669,6 +673,8 @@ Datasource percentage coverage 84.97
 ./resource.ps1 google_runtimeconfig_variable
 ./resource.ps1 google_scc_event_threat_detection_custom_module
 ./resource.ps1 google_scc_folder_custom_module
+./resource.ps1 google_scc_management_folder_security_health_analytics_custom_module
+./resource.ps1 google_scc_management_organization_event_threat_detection_custom_module
 ./resource.ps1 google_scc_mute_config
 ./resource.ps1 google_scc_notification_config
 ./resource.ps1 google_scc_organization_custom_module
@@ -689,6 +695,7 @@ Datasource percentage coverage 84.97
 ./resource.ps1 google_sourcerepo_repository_iam_binding
 ./resource.ps1 google_sourcerepo_repository_iam_member
 ./resource.ps1 google_sourcerepo_repository_iam_policy
+./resource.ps1 google_spanner_instance_config
 ./resource.ps1 google_sql_source_representation_instance
 ./resource.ps1 google_sql_ssl_cert
 ./resource.ps1 google_storage_notification
@@ -739,8 +746,10 @@ Datasource percentage coverage 84.97
 ./resource.ps1 google_clouddeploy_custom_target_type_iam_policy -type data
 ./resource.ps1 google_clouddeploy_delivery_pipeline_iam_policy -type data
 ./resource.ps1 google_clouddeploy_target_iam_policy -type data
+./resource.ps1 google_composer_user_workloads_secret -type data
 ./resource.ps1 google_compute_forwarding_rules -type data
 ./resource.ps1 google_compute_machine_types -type data
+./resource.ps1 google_compute_security_policy -type data
 ./resource.ps1 google_compute_subnetworks -type data
 ./resource.ps1 google_container_attached_install_manifest -type data
 ./resource.ps1 google_container_aws_versions -type data

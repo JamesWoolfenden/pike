@@ -37,6 +37,8 @@ func GetResources(file string, dirName string) ([]ResourceV2, error) {
 				LocalResources, err := GetLocalModules(block, dirName)
 				if err == nil {
 					Resources = append(LocalResources, Resources...)
+				} else {
+					log.Info().Msg(err.Error())
 				}
 			}
 		case "output", "variable", "locals", "provider":
@@ -122,7 +124,7 @@ func GetLocalModules(block *hclsyntax.Block, dirName string) ([]ResourceV2, erro
 
 	// not local
 	if strings.Contains(modulePath, "git::") {
-		return nil, nil
+		return nil, fmt.Errorf("git reference in module source path unsupported")
 	}
 
 	// have the path to the module
@@ -218,11 +220,14 @@ func GetPermission(result ResourceV2) (Sorted, error) {
 			log.Print(err)
 		}
 	case "provider", "random", "main", "ip", "http", "test", "local",
-		"archive", "tls", "template", "null", "time", "external":
+		"archive", "tls", "template", "null", "time", "external", "kubernetes",
+		"healthchecksio":
 		return myPermission, nil
 	default:
 		if result.Provider != "" && !(result.TypeName == "module") {
-			log.Printf("Provider %s was not found", result.Provider)
+			log.Info().Msgf("Provider %s was not found", result.Provider)
+		} else {
+			log.Info().Msgf("Provider %s Type %s not found", result.Provider, result.TypeName)
 		}
 	}
 
