@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "sagemaker:DescribeDevice",
+      "sagemaker:RegisterDevices",
+      "sagemaker:DeregisterDevices"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

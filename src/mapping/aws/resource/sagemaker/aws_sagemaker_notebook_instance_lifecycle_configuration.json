@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "sagemaker:CreateNotebookInstanceLifecycleConfig",
+      "sagemaker:DeleteNotebookInstanceLifecycleConfig",
+      "sagemaker:DescribeNotebookInstanceLifecycleConfig",
+      "sagemaker:UpdateNotebookInstanceLifecycleConfig"
+    ],
+    "attributes": {
+      "tags": [
+        "sagemaker:AddTags",
+        "sagemaker:DeleteTags"
+      ]
+    },
+    "destroy": [
+      "sagemaker:DeleteNotebookInstanceLifecycleConfig"
+    ],
+    "modify": [
+      "sagemaker:UpdateNotebookInstanceLifecycleConfig"
+    ],
+    "plan": []
+  }
+]

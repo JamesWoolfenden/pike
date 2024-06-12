@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "sagemaker:CreateNotebookInstance",
+      "sagemaker:DeleteNotebookInstance",
+      "sagemaker:DescribeNotebookInstance",
+      "sagemaker:UpdateNotebookInstance",
+      "sagemaker:StopNotebookInstance",
+      "iam:PassRole"
+    ],
+    "attributes": {
+      "tags": [
+        "sagemaker:AddTags",
+        "sagemaker:DeleteTags"
+      ]
+    },
+    "destroy": [
+      "sagemaker:DeleteNotebookInstance"
+    ],
+    "modify": [
+      "sagemaker:UpdateNotebookInstance"
+    ],
+    "plan": []
+  }
+]

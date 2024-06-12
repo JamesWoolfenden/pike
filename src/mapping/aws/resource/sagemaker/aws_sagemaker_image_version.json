@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "sagemaker:CreateImageVersion",
+      "sagemaker:DeleteImageVersion",
+      "sagemaker:DescribeImageVersion",
+      "sagemaker:UpdateImageVersion"
+    ],
+    "attributes": {
+      "tags": [
+        "sagemaker:AddTags",
+        "sagemaker:DeleteTags"
+      ]
+    },
+    "destroy": [
+      "sagemaker:DeleteImageVersion"
+    ],
+    "modify": [
+      "sagemaker:UpdateImageVersion"
+    ],
+    "plan": []
+  }
+]

@@ -1959,3 +1959,75 @@ var awsSesReceiptFilter []byte
 
 //go:embed mapping/aws/resource/ses/aws_ses_template.json
 var awsSesTemplate []byte
+
+//go:embed mapping/aws/resource/sagemaker/aws_sagemaker_app.json
+var awsSagemakerApp []byte
+
+//go:embed mapping/aws/resource/sagemaker/aws_sagemaker_app_image_config.json
+var awsSagemakerAppImageConfig []byte
+
+//go:embed mapping/aws/resource/sagemaker/aws_sagemaker_code_repository.json
+var awsSagemakerCodeRepository []byte
+
+//go:embed mapping/aws/resource/sagemaker/aws_sagemaker_data_quality_job_definition.json
+var awsSagemakerDataQualityJobDefinition []byte
+
+//go:embed mapping/aws/resource/sagemaker/aws_sagemaker_device.json
+var awsSagemakerDevice []byte
+
+//go:embed mapping/aws/resource/sagemaker/aws_sagemaker_device_fleet.json
+var awsSagemakerDeviceFleet []byte
+
+//go:embed mapping/aws/resource/sagemaker/aws_sagemaker_domain.json
+var awsSagemakerDomain []byte
+
+//go:embed mapping/aws/resource/sagemaker/aws_sagemaker_endpoint.json
+var awsSagemakerEndpoint []byte
+
+//go:embed mapping/aws/resource/sagemaker/aws_sagemaker_feature_group.json
+var awsSagemakerFeatureGroup []byte
+
+//go:embed mapping/aws/resource/sagemaker/aws_sagemaker_image.json
+var awsSagemakerImage []byte
+
+//go:embed mapping/aws/resource/sagemaker/aws_sagemaker_image_version.json
+var awsSagemakerImageVersion []byte
+
+//go:embed mapping/aws/resource/sagemaker/aws_sagemaker_model_package_group.json
+var awsSagemakerModelPackageGroup []byte
+
+//go:embed mapping/aws/resource/sagemaker/aws_sagemaker_model_package_group_policy.json
+var awsSagemakerModelPackageGroupPolicy []byte
+
+//go:embed mapping/aws/resource/sagemaker/aws_sagemaker_monitoring_schedule.json
+var awsSagemakerMonitoringSchedule []byte
+
+//go:embed mapping/aws/resource/sagemaker/aws_sagemaker_notebook_instance.json
+var awsSagemakerNotebookInstance []byte
+
+//go:embed mapping/aws/resource/sagemaker/aws_sagemaker_notebook_instance_lifecycle_configuration.json
+var awsSagemakerNotebookInstanceLifecycleConfiguration []byte
+
+//go:embed mapping/aws/resource/sagemaker/aws_sagemaker_pipeline.json
+var awsSagemakerPipeline []byte
+
+//go:embed mapping/aws/resource/sagemaker/aws_sagemaker_project.json
+var awsSagemakerProject []byte
+
+//go:embed mapping/aws/resource/sagemaker/aws_sagemaker_servicecatalog_portfolio_status.json
+var awsSagemakerServicecatalogPortfolioStatus []byte
+
+//go:embed mapping/aws/resource/sagemaker/aws_sagemaker_space.json
+var awsSagemakerSpace []byte
+
+//go:embed mapping/aws/resource/sagemaker/aws_sagemaker_studio_lifecycle_config.json
+var awsSagemakerStudioLifecycleConfig []byte
+
+//go:embed mapping/aws/resource/sagemaker/aws_sagemaker_user_profile.json
+var awsSagemakerUserProfile []byte
+
+//go:embed mapping/aws/resource/sagemaker/aws_sagemaker_workforce.json
+var awsSagemakerWorkforce []byte
+
+//go:embed mapping/aws/resource/sagemaker/aws_sagemaker_workteam.json
+var awsSagemakerWorkteam []byte

@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "sagemaker:CreateStudioLifecycleConfig",
+      "sagemaker:DeleteStudioLifecycleConfig",
+      "sagemaker:DescribeStudioLifecycleConfig"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "sagemaker:DeleteStudioLifecycleConfig"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "sagemaker:CreateDomain",
+      "sagemaker:DeleteDomain",
+      "sagemaker:DescribeDomain",
+      "sagemaker:UpdateDomain",
+      "iam:CreateServiceLinkedRole"
+    ],
+    "attributes": {
+      "tags": [
+        "sagemaker:AddTags",
+        "sagemaker:DeleteTags"
+      ]
+    },
+    "destroy": [
+      "sagemaker:DeleteDomain"
+    ],
+    "modify": [
+      "sagemaker:UpdateDomain"
+    ],
+    "plan": []
+  }
+]

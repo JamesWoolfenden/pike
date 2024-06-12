@@ -7,40 +7,56 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          //aws_ses_template
-          "ses:CreateTemplate",
-          "ses:GetTemplate",
-          "ses:DeleteTemplate",
-          "ses:UpdateTemplate",
 
-          //aws_ses_receipt_filter
-          "ses:CreateReceiptFilter",
-          "ses:ListReceiptFilters",
-          "ses:DeleteReceiptFilter",
 
-          //aws_ses_email_identity
-          "ses:VerifyEmailIdentity",
-          "ses:GetIdentityVerificationAttributes",
-          "ses:DeleteIdentity",
 
-          //aws_ses_configuration_set
-          "ses:CreateConfigurationSet",
-          "ses:PutConfigurationSetDeliveryOptions",
-          "ses:DescribeConfigurationSet",
-          "ses:DeleteConfigurationSet",
-          "ses:CreateConfigurationSetTrackingOptions",
+          //aws_sagemaker_servicecatalog_portfolio_status
 
-          //aws_ses_active_receipt_rule_set
-          "ses:SetActiveReceiptRuleSet",
-          "ses:ListReceiptRuleSets",
-          "ses:CreateReceiptRuleSet",
-          "ses:DescribeReceiptRuleSet",
-          "ses:DeleteReceiptRuleSet",
-          "ses:DescribeActiveReceiptRuleSet",
 
-          //aws_ses_event_destination
-          "ses:CreateConfigurationSetEventDestination",
-          "ses:DeleteConfigurationSetEventDestination",
+
+
+
+
+
+          "dynamodb:DeleteItem",
+          "dynamodb:DescribeTable",
+          "dynamodb:GetItem",
+          "dynamodb:PutItem",
+          "iam:CreateRole",
+          "iam:DeleteRole",
+          "iam:GetRole",
+          "iam:ListAttachedRolePolicies",
+          "iam:ListInstanceProfilesForRole",
+          "iam:ListRolePolicies",
+          "s3:CreateBucket",
+          "s3:DeleteBucket",
+          "s3:DeleteObject",
+          "s3:GetAccelerateConfiguration",
+          "s3:GetBucketAcl",
+          "s3:GetBucketCORS",
+          "s3:GetBucketLogging",
+          "s3:GetBucketObjectLockConfiguration",
+          "s3:GetBucketPolicy",
+          "s3:GetBucketRequestPayment",
+          "s3:GetBucketTagging",
+          "s3:GetBucketVersioning",
+          "s3:GetBucketWebsite",
+          "s3:GetEncryptionConfiguration",
+          "s3:GetLifecycleConfiguration",
+          "s3:GetObject",
+          "s3:GetObjectAcl",
+          "s3:GetReplicationConfiguration",
+          "s3:ListBucket",
+          "s3:PutObject",
+          "ec2:CreateSubnet",
+          "ec2:DescribeNetworkInterfaces",
+          "ec2:CreateVPC",
+          "ec2:DeleteSubnet",
+          "ec2:DeleteVPC",
+          "ec2:DescribeAccountAttributes",
+          "ec2:DescribeSubnets",
+          "ec2:DescribeVpcAttribute",
+          "ec2:DescribeVpcs",
 
         ],
         "Resource" : "*",

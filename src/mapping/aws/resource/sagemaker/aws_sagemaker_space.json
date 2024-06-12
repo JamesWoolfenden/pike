@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "sagemaker:CreateSpace",
+      "sagemaker:DeleteSpace",
+      "sagemaker:DescribeSpace",
+      "sagemaker:UpdateSpace"
+    ],
+    "attributes": {
+      "tags": [
+        "sagemaker:AddTags",
+        "sagemaker:DeleteTags"
+      ]
+    },
+    "destroy": [
+      "sagemaker:DeleteSpace"
+    ],
+    "modify": [
+      "sagemaker:UpdateSpace"
+    ],
+    "plan": []
+  }
+]

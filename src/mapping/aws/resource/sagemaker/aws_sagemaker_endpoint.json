@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "sagemaker:CreateEndpoint",
+      "sagemaker:DeleteEndpoint",
+      "sagemaker:DescribeEndpoint",
+      "sagemaker:UpdateEndpoint"
+    ],
+    "attributes": {
+      "tags": [
+        "sagemaker:AddTags",
+        "sagemaker:DeleteTags"
+      ]
+    },
+    "destroy": [
+      "sagemaker:DeleteEndpoint"
+    ],
+    "modify": [
+      "sagemaker:UpdateEndpoint"
+    ],
+    "plan": []
+  }
+]

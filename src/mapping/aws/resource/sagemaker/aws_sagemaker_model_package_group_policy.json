@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "sagemaker:PutModelPackageGroupPolicy",
+      "sagemaker:GetModelPackageGroupPolicy",
+      "sagemaker:DeleteModelPackageGroupPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "sagemaker:DeleteModelPackageGroupPolicy"
+    ],
+    "modify": [
+      "sagemaker:PutModelPackageGroupPolicy"
+    ],
+    "plan": []
+  }
+]

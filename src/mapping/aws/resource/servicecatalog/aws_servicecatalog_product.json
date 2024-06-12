@@ -13,11 +13,9 @@
       ]
     },
     "destroy": [
-      "servicecatalog:DeleteProduct",
-      "servicecatalog:UpdateProduct"
+      "servicecatalog:DeleteProduct"
     ],
     "modify": [
-      "servicecatalog:DeleteProduct",
       "servicecatalog:UpdateProduct"
     ],
     "plan": []

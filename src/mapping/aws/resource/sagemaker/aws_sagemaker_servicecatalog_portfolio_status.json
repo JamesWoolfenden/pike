@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "sagemaker:EnableSagemakerServicecatalogPortfolio",
+      "sagemaker:DisableSagemakerServicecatalogPortfolio",
+      "servicecatalog:ListAcceptedPortfolioShares",
+      "sagemaker:GetSagemakerServicecatalogPortfolioStatus"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
