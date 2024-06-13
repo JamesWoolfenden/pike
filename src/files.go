@@ -2031,3 +2031,24 @@ var awsSagemakerWorkforce []byte
 
 //go:embed mapping/aws/resource/sagemaker/aws_sagemaker_workteam.json
 var awsSagemakerWorkteam []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ec2_carrier_gateway.json
+var awsEc2CarrierGateway []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ec2_client_vpn_authorization_rule.json
+var awsEc2ClientvpnAuthorizationRule []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ec2_client_vpn_endpoint.json
+var awsEc2ClientVpnEndpoint []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ec2_client_vpn_network_association.json
+var awsEc2ClientVpnNetworkAssociation []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ec2_client_vpn_route.json
+var awsEc2ClientVpnRoute []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ec2_fleet.json
+var awsEc2Fleet []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ec2_host.json
+var awsEc2Host []byte

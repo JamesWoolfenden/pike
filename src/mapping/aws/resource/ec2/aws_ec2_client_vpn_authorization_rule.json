@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeClientVpnAuthorizationRules"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "ec2:DescribeClientVpnAuthorizationRules"
+    ]
+  }
+]

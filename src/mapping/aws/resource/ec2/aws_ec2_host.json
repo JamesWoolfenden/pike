@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "ec2:AllocateHosts",
+      "ec2:DescribeHosts",
+      "ec2:ReleaseHosts"
+    ],
+    "attributes": {
+      "tags": [
+        "ec2:CreateTags",
+        "ec2:DeleteTags"
+      ]
+    },
+    "destroy": [
+      "ec2:ReleaseHosts"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

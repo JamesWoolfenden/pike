@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "ec2:CreateClientVpnRoute",
+      "ec2:DescribeClientVpnRoutes",
+      "ec2:DeleteClientVpnRoute"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "ec2:DeleteClientVpnRoute"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

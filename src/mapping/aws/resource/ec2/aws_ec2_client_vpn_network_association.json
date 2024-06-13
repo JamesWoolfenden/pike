@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "ec2:AssociateClientVpnTargetNetwork",
+      "ec2:DisassociateClientVpnTargetNetwork"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

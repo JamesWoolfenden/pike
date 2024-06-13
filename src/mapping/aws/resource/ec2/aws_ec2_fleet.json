@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "ec2:CreateFleet",
+      "ec2:RunInstances",
+      "ec2:DescribeFleets",
+      "ec2:DeleteFleets"
+    ],
+    "attributes": {
+      "tags": [
+        "ec2:CreateTags",
+        "ec2:DeleteTags"
+      ]
+    },
+    "destroy": [
+      "ec2:DeleteFleets"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

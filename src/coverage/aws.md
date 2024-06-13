@@ -1,6 +1,6 @@
 # todo aws
 
-Resource percentage coverage   51.31
+Resource percentage coverage   53.07
 Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_accessanalyzer_archive_rule
@@ -160,13 +160,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_dynamodb_table_replica
 ./resource.ps1 aws_ebs_fast_snapshot_restore
 ./resource.ps1 aws_ebs_snapshot_import
-./resource.ps1 aws_ec2_carrier_gateway
-./resource.ps1 aws_ec2_client_vpn_authorization_rule
-./resource.ps1 aws_ec2_client_vpn_endpoint
-./resource.ps1 aws_ec2_client_vpn_network_association
-./resource.ps1 aws_ec2_client_vpn_route
-./resource.ps1 aws_ec2_fleet
-./resource.ps1 aws_ec2_host
 ./resource.ps1 aws_ec2_image_block_public_access
 ./resource.ps1 aws_ec2_instance
 ./resource.ps1 aws_ec2_instance_connect_endpoint
@@ -532,6 +525,8 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_s3control_object_lambda_access_point_policy
 ./resource.ps1 aws_s3control_storage_lens_configuration
 ./resource.ps1 aws_s3outposts_endpoint
+./resource.ps1 aws_sagemaker_flow_definition
+./resource.ps1 aws_sagemaker_human_task_ui
 ./resource.ps1 aws_scheduler_schedule
 ./resource.ps1 aws_scheduler_schedule_group
 ./resource.ps1 aws_schemas_discoverer

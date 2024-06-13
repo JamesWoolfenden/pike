@@ -797,6 +797,13 @@ func AwsLookup(name string) interface{} {
 		"aws_sagemaker_user_profile":                               awsSagemakerUserProfile,
 		"aws_sagemaker_workforce":                                  awsSagemakerWorkforce,
 		"aws_sagemaker_workteam":                                   awsSagemakerWorkteam,
+		"aws_ec2_carrier_gateway":                                  awsEc2CarrierGateway,
+		"aws_ec2_client_vpn_authorization_rule":                    awsEc2ClientvpnAuthorizationRule,
+		"aws_ec2_client_vpn_endpoint":                              awsEc2ClientVpnEndpoint,
+		"aws_ec2_client_vpn_network_association":                   awsEc2ClientVpnNetworkAssociation,
+		"aws_ec2_client_vpn_route":                                 awsEc2ClientVpnRoute,
+		"aws_ec2_fleet":                                            awsEc2Fleet,
+		"aws_ec2_host":                                             awsEc2Host,
 	}
 
 	return TFLookup[name]
