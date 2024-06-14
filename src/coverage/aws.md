@@ -1,12 +1,8 @@
 # todo aws
 
-Resource percentage coverage   53.07
+Resource percentage coverage   54.31
 Datasource percentage coverage 100.00
 
-./resource.ps1 aws_accessanalyzer_archive_rule
-./resource.ps1 aws_account_region
-./resource.ps1 aws_acmpca_permission
-./resource.ps1 aws_acmpca_policy
 ./resource.ps1 aws_amplify_app
 ./resource.ps1 aws_amplify_backend_environment
 ./resource.ps1 aws_amplify_branch
@@ -577,9 +573,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_shield_protection
 ./resource.ps1 aws_shield_protection_group
 ./resource.ps1 aws_shield_protection_health_check_association
-./resource.ps1 aws_simpledb_domain
-./resource.ps1 aws_snapshot_create_volume_permission
-./resource.ps1 aws_sns_platform_application
 ./resource.ps1 aws_spot_datafeed_subscription
 ./resource.ps1 aws_spot_fleet_request
 ./resource.ps1 aws_ssm_activation
@@ -601,9 +594,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_ssoadmin_permission_set_inline_policy
 ./resource.ps1 aws_ssoadmin_permissions_boundary_attachment
 ./resource.ps1 aws_ssoadmin_trusted_token_issuer
-./resource.ps1 aws_synthetics_canary
-./resource.ps1 aws_synthetics_group
-./resource.ps1 aws_synthetics_group_association
 ./resource.ps1 aws_transcribe_language_model
 ./resource.ps1 aws_transcribe_medical_vocabulary
 ./resource.ps1 aws_transcribe_vocabulary

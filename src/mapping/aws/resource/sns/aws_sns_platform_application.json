@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "sns:CreatePlatformApplication",
+      "sns:DeletePlatformApplication",
+      "sns:SetPlatformApplicationAttributes",
+      "sns:GetPlatformApplicationAttributes"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "sns:DeletePlatformApplication"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

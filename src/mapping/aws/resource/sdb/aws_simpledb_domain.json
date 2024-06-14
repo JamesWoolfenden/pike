@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "sdb:CreateDomain",
+      "sdb:DomainMetadata",
+      "sdb:DeleteDomain"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "sdb:DeleteDomain"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

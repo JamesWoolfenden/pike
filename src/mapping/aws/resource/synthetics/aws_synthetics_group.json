@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "synthetics:CreateGroup",
+      "synthetics:GetGroup",
+      "synthetics:DeleteGroup"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "synthetics:DeleteGroup"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

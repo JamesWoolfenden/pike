@@ -2052,3 +2052,33 @@ var awsEc2Fleet []byte
 
 //go:embed mapping/aws/resource/ec2/aws_ec2_host.json
 var awsEc2Host []byte
+
+//go:embed mapping/aws/resource/access-analyzer/aws_accessanalyzer_archive_rule.json
+var awsAccessAnalyzerArchiveRule []byte
+
+//go:embed mapping/aws/resource/account/aws_account_region.json
+var awsAccountRegion []byte
+
+//go:embed mapping/aws/resource/acm-pa/aws_acmpca_permission.json
+var awsAcmpcaPermission []byte
+
+//go:embed mapping/aws/resource/acm-pa/aws_acmpca_policy.json
+var awsAcmpcaPolicy []byte
+
+//go:embed mapping/aws/resource/sdb/aws_simpledb_domain.json
+var awsSimpledbDomain []byte
+
+//go:embed mapping/aws/resource/ec2/aws_snapshot_create_volume_permission.json
+var awsSnapshotCreateVolumePermission []byte
+
+//go:embed mapping/aws/resource/sns/aws_sns_platform_application.json
+var awsSnsPlatformApplication []byte
+
+//go:embed mapping/aws/resource/synthetics/aws_synthetics_canary.json
+var awsSyntheticsCanary []byte
+
+//go:embed mapping/aws/resource/synthetics/aws_synthetics_group.json
+var awsSyntheticsGroup []byte
+
+//go:embed mapping/aws/resource/synthetics/aws_synthetics_group_association.json
+var awsSyntheticsGroupAssociation []byte

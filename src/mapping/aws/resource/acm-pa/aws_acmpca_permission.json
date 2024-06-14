@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "acm-pca:CreatePermission",
+      "acm-pca:DeletePermission",
+      "acm-pca:ListPermissions"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "acm-pca:DeletePermission"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

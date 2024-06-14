@@ -7,82 +7,35 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          //aws_ec2_client_vpn_authorization_rule
-          "ec2:DescribeClientVpnAuthorizationRules",
-
-          //aws_ec2_client_vpn_network_association
-          "ec2:AssociateClientVpnTargetNetwork",
-          "ec2:DisassociateClientVpnTargetNetwork",
-
-          //aws_ec2_client_vpn_route
-          "ec2:CreateClientVpnRoute",
-          "ec2:DescribeClientVpnRoutes",
-          "ec2:DeleteClientVpnRoute",
-
-          //aws_ec2_host
-          "ec2:AllocateHosts",
-          "ec2:DescribeHosts",
-          "ec2:ReleaseHosts",
-          "ec2:CreateTags",
-          "ec2:DeleteTags",
-
-          //aws_ec2_client_vpn_endpoint
-          "ec2:CreateClientVpnEndpoint",
-          "ec2:DeleteClientVpnEndpoint",
-          "ec2:DescribeClientVpnEndpoints",
-          "ec2:ModifyClientVpnEndpoint",
-          "iam:CreateServiceLinkedRole",
-          "ec2:CreateTags",
-          "ec2:DeleteTags",
-
-          //aws_ec2_carrier_gateway
-          "ec2:CreateCarrierGateway",
-          "ec2:DeleteCarrierGateway",
-          "ec2:DescribeCarrierGateways",
-          "ec2:CreateTags",
-          "ec2:DeleteTags",
-
-          //aws_ec2_fleet
-          "ec2:CreateFleet",
-          "ec2:RunInstances",
-          "ec2:DescribeFleets",
-          "ec2:DeleteFleets",
-          "ec2:CreateTags",
-          "ec2:DeleteTags",
-
-          "ec2:DescribeNetworkInterfaces",
-          "acm:AddTagsToCertificate",
-          "acm:DeleteCertificate",
-          "acm:DescribeCertificate",
-          "acm:ListTagsForCertificate",
-          "acm:RemoveTagsFromCertificate",
-          "acm:RequestCertificate",
           "dynamodb:DeleteItem",
           "dynamodb:DescribeTable",
           "dynamodb:GetItem",
           "dynamodb:PutItem",
-          "ec2:CreateLaunchTemplate",
-          "ec2:CreateLaunchTemplateVersion",
-          "ec2:CreateSubnet",
-          "ec2:DeleteLaunchTemplate",
-          "ec2:DeleteSubnet",
-          "ec2:DescribeAccountAttributes",
-          "ec2:DescribeInstanceTypes",
-          "ec2:DescribeLaunchTemplateVersions",
-          "ec2:DescribeLaunchTemplates",
-          "ec2:DescribeSubnets",
-          "logs:CreateLogGroup",
-          "logs:CreateLogStream",
-          "logs:DeleteLogGroup",
-          "logs:DeleteLogStream",
-          "logs:DescribeLogGroups",
-          "logs:DescribeLogStreams",
-          "logs:ListTagsLogGroup",
+          "ec2:CreateSnapshot",
+          "ec2:CreateVolume",
+          "ec2:DeleteSnapshot",
+          "ec2:DeleteVolume",
+          "ec2:DescribeSnapshots",
+          "ec2:DescribeVolumes",
+          "ec2:ModifyVolume",
           "s3:DeleteObject",
           "s3:GetObject",
           "s3:ListBucket",
-          "s3:PutObject"
+          "s3:PutObject",
 
+          //aws_sns_platform_application
+          "sns:CreatePlatformApplication",
+          "sns:DeletePlatformApplication",
+          "sns:SetPlatformApplicationAttributes",
+          "sns:GetPlatformApplicationAttributes",
+
+          //aws_simpledb_domain
+          "sdb:CreateDomain",
+          "sdb:DomainMetadata",
+          "sdb:DeleteDomain",
+
+          //aws_snapshot_create_volume_permission
+          "ec2:ModifySnapshotAttribute"
         ],
         "Resource" : "*",
       }

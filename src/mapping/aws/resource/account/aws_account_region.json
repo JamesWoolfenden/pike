@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "account:EnableRegion",
+      "account:DisableRegion"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

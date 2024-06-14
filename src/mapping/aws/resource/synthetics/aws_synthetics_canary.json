@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "synthetics:GetCanary",
+      "synthetics:CreateCanary",
+      "synthetics:DeleteCanary",
+      "synthetics:UpdateCanary"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "synthetics:DeleteCanary"
+    ],
+    "modify": [
+      "synthetics:UpdateCanary"
+    ],
+    "plan": []
+  }
+]

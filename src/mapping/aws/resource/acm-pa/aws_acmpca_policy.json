@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "acm-pca:GetPolicy",
+      "acm-pca:DeletePolicy",
+      "acm-pca:PutPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "acm-pca:DeletePolicy"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

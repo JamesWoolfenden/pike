@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "ec2:ModifySnapshotAttribute"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

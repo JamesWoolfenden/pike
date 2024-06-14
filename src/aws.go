@@ -804,6 +804,16 @@ func AwsLookup(name string) interface{} {
 		"aws_ec2_client_vpn_route":                                 awsEc2ClientVpnRoute,
 		"aws_ec2_fleet":                                            awsEc2Fleet,
 		"aws_ec2_host":                                             awsEc2Host,
+		"aws_accessanalyzer_archive_rule":                          awsAccessAnalyzerArchiveRule,
+		"aws_account_region":                                       awsAccountRegion,
+		"aws_acmpca_permission":                                    awsAcmpcaPermission,
+		"aws_acmpca_policy":                                        awsAcmpcaPolicy,
+		"aws_simpledb_domain":                                      awsSimpledbDomain,
+		"aws_snapshot_create_volume_permission":                    awsSnapshotCreateVolumePermission,
+		"aws_sns_platform_application":                             awsSnsPlatformApplication,
+		"aws_synthetics_canary":                                    awsSyntheticsCanary,
+		"aws_synthetics_group":                                     awsSyntheticsGroup,
+		"aws_synthetics_group_association":                         awsSyntheticsGroupAssociation,
 	}
 
 	return TFLookup[name]

@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "access-analyzer:DeleteArchiveRule",
+      "access-analyzer:CreateArchiveRule",
+      "access-analyzer:GetArchiveRule",
+      "access-analyzer:UpdateArchiveRule"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "access-analyzer:DeleteArchiveRule"
+    ],
+    "modify": [
+      "access-analyzer:UpdateArchiveRule"
+    ],
+    "plan": []
+  }
+]

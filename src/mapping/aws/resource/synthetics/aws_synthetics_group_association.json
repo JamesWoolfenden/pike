@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "synthetics:AssociateResource",
+      "synthetics:DisassociateResource"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

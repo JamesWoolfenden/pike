@@ -5,7 +5,7 @@
       "access-analyzer:DeleteAnalyzer",
       "access-analyzer:GetAnalyzer",
       "access-analyzer:ListAnalyzers",
-      "access-analyzer:UpdateAnalyzer"
+      "iam:CreateServiceLinkedRole"
     ],
     "attributes": {
       "tags": [
@@ -16,9 +16,7 @@
     "destroy": [
       "access-analyzer:DeleteAnalyzer"
     ],
-    "modify": [
-      "access-analyzer:UpdateAnalyzer"
-    ],
+    "modify": [],
     "plan": []
   }
 ]
