@@ -1446,3 +1446,6 @@ var dataAwsDatazoneEnvironmentBlueprint []byte
 
 //go:embed mapping/aws/data/chatbot/aws_chatbot_slack_workspace.json
 var dataAwsChatbotSlackWorkspace []byte
+
+//go:embed mapping/aws/data/ec2/aws_ec2_capacity_block_offering.json
+var dataAwsEc2CapacityBlockOffering []byte

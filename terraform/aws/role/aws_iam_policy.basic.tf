@@ -7,35 +7,7 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "dynamodb:DeleteItem",
-          "dynamodb:DescribeTable",
-          "dynamodb:GetItem",
-          "dynamodb:PutItem",
-          "ec2:CreateSnapshot",
-          "ec2:CreateVolume",
-          "ec2:DeleteSnapshot",
-          "ec2:DeleteVolume",
-          "ec2:DescribeSnapshots",
-          "ec2:DescribeVolumes",
-          "ec2:ModifyVolume",
-          "s3:DeleteObject",
-          "s3:GetObject",
-          "s3:ListBucket",
-          "s3:PutObject",
-
-          //aws_sns_platform_application
-          "sns:CreatePlatformApplication",
-          "sns:DeletePlatformApplication",
-          "sns:SetPlatformApplicationAttributes",
-          "sns:GetPlatformApplicationAttributes",
-
-          //aws_simpledb_domain
-          "sdb:CreateDomain",
-          "sdb:DomainMetadata",
-          "sdb:DeleteDomain",
-
-          //aws_snapshot_create_volume_permission
-          "ec2:ModifySnapshotAttribute"
+          "ec2:DescribeCapacityBlockOfferings"
         ],
         "Resource" : "*",
       }

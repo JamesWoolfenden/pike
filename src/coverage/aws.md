@@ -1,7 +1,7 @@
 # todo aws
 
-Resource percentage coverage   54.31
-Datasource percentage coverage 100.00
+Resource percentage coverage   54.11
+Datasource percentage coverage 99.81
 
 ./resource.ps1 aws_amplify_app
 ./resource.ps1 aws_amplify_backend_environment
@@ -14,6 +14,8 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_appconfig_extension
 ./resource.ps1 aws_appconfig_extension_association
 ./resource.ps1 aws_appconfig_hosted_configuration_version
+./resource.ps1 aws_appfabric_app_authorization
+./resource.ps1 aws_appfabric_app_bundle
 ./resource.ps1 aws_appflow_connector_profile
 ./resource.ps1 aws_appflow_flow
 ./resource.ps1 aws_appintegrations_data_integration
@@ -156,6 +158,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_dynamodb_table_replica
 ./resource.ps1 aws_ebs_fast_snapshot_restore
 ./resource.ps1 aws_ebs_snapshot_import
+./resource.ps1 aws_ec2_capacity_block_reservation
 ./resource.ps1 aws_ec2_image_block_public_access
 ./resource.ps1 aws_ec2_instance
 ./resource.ps1 aws_ec2_instance_connect_endpoint
@@ -223,6 +226,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_fis_experiment_template
 ./resource.ps1 aws_fms_admin_account
 ./resource.ps1 aws_fms_policy
+./resource.ps1 aws_fms_resource_set
 ./resource.ps1 aws_gamelift_alias
 ./resource.ps1 aws_gamelift_build
 ./resource.ps1 aws_gamelift_fleet
@@ -249,6 +253,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_guardduty_filter
 ./resource.ps1 aws_guardduty_invite_accepter
 ./resource.ps1 aws_guardduty_ipset
+./resource.ps1 aws_guardduty_malware_protection_plan
 ./resource.ps1 aws_guardduty_member
 ./resource.ps1 aws_guardduty_organization_admin_account
 ./resource.ps1 aws_guardduty_organization_configuration
@@ -629,3 +634,4 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_worklink_website_certificate_authority_association
 ./resource.ps1 aws_workspaces_connection_alias
 ./resource.ps1 aws_workspaces_ip_group
+./resource.ps1 aws_ec2_capacity_block_offering -type data

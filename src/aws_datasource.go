@@ -571,6 +571,7 @@ func AwsDataLookup(find string) interface{} {
 		"aws_identitystore_groups":                                  dataAwsIdentitystoreGroups,
 		"aws_datazone_environment_blueprint":                        dataAwsDatazoneEnvironmentBlueprint,
 		"aws_chatbot_slack_workspace":                               dataAwsChatbotSlackWorkspace,
+		"aws_ec2_capacity_block_offering":                           dataAwsEc2CapacityBlockOffering,
 	}
 
 	return TFLookup[find]
