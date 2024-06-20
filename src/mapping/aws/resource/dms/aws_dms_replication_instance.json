@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "dms:DescribeReplicationInstances",
+      "dms:CreateReplicationInstance",
+      "dms:DeleteReplicationInstance",
+      "dms:ModifyReplicationInstance"
+    ],
+    "attributes": {
+      "tags": [
+        "dms:AddTagsToResource",
+        "dms:RemoveTagsFromResource"
+      ]
+    },
+    "destroy": [
+      "dms:DeleteReplicationInstance"
+    ],
+    "modify": [
+      "dms:ModifyReplicationInstance"
+    ],
+    "plan": []
+  }
+]

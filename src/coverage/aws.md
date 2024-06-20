@@ -1,7 +1,7 @@
 # todo aws
 
 Resource percentage coverage   54.11
-Datasource percentage coverage 99.81
+Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_amplify_app
 ./resource.ps1 aws_amplify_backend_environment
@@ -127,14 +127,6 @@ Datasource percentage coverage 99.81
 ./resource.ps1 aws_directory_service_shared_directory
 ./resource.ps1 aws_directory_service_shared_directory_accepter
 ./resource.ps1 aws_directory_service_trust
-./resource.ps1 aws_dms_certificate
-./resource.ps1 aws_dms_endpoint
-./resource.ps1 aws_dms_event_subscription
-./resource.ps1 aws_dms_replication_config
-./resource.ps1 aws_dms_replication_instance
-./resource.ps1 aws_dms_replication_subnet_group
-./resource.ps1 aws_dms_replication_task
-./resource.ps1 aws_dms_s3_endpoint
 ./resource.ps1 aws_docdbelastic_cluster
 ./resource.ps1 aws_dx_bgp_peer
 ./resource.ps1 aws_dx_connection
@@ -634,4 +626,3 @@ Datasource percentage coverage 99.81
 ./resource.ps1 aws_worklink_website_certificate_authority_association
 ./resource.ps1 aws_workspaces_connection_alias
 ./resource.ps1 aws_workspaces_ip_group
-./resource.ps1 aws_ec2_capacity_block_offering -type data

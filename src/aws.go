@@ -814,6 +814,13 @@ func AwsLookup(name string) interface{} {
 		"aws_synthetics_canary":                                    awsSyntheticsCanary,
 		"aws_synthetics_group":                                     awsSyntheticsGroup,
 		"aws_synthetics_group_association":                         awsSyntheticsGroupAssociation,
+		"aws_dms_certificate":                                      awsDmsCertificate,
+		"aws_dms_endpoint":                                         awsDmsEndpoint,
+		"aws_dms_event_subscription":                               awsDmsEventSubscription,
+		"aws_dms_replication_instance":                             awsDmsReplicationInstance,
+		"aws_dms_replication_subnet_group":                         awsDmsReplicationSubnetGroup,
+		"aws_dms_replication_task":                                 awsDmsReplicationTask,
+		"aws_dms_s3_endpoint":                                      awsDmsS3Endpoint,
 	}
 
 	return TFLookup[name]

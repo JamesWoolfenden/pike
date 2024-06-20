@@ -2082,3 +2082,24 @@ var awsSyntheticsGroup []byte
 
 //go:embed mapping/aws/resource/synthetics/aws_synthetics_group_association.json
 var awsSyntheticsGroupAssociation []byte
+
+//go:embed mapping/aws/resource/dms/aws_dms_certificate.json
+var awsDmsCertificate []byte
+
+//go:embed mapping/aws/resource/dms/aws_dms_endpoint.json
+var awsDmsEndpoint []byte
+
+//go:embed mapping/aws/resource/dms/aws_dms_event_subscription.json
+var awsDmsEventSubscription []byte
+
+//go:embed mapping/aws/resource/dms/aws_dms_replication_instance.json
+var awsDmsReplicationInstance []byte
+
+//go:embed mapping/aws/resource/dms/aws_dms_replication_subnet_group.json
+var awsDmsReplicationSubnetGroup []byte
+
+//go:embed mapping/aws/resource/dms/aws_dms_replication_task.json
+var awsDmsReplicationTask []byte
+
+//go:embed mapping/aws/resource/dms/aws_dms_s3_endpoint.json
+var awsDmsS3Endpoint []byte

@@ -29,7 +29,7 @@ repos:
     hooks:
       - id: shell-lint
   - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.39.0
+    rev: v0.41.0
     hooks:
       - id: markdownlint
         exclude: src/testdata|testdata

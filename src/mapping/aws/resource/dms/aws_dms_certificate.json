@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "dms:DeleteCertificate",
+      "dms:DescribeCertificates",
+      "dms:ListTagsForResource",
+      "dms:ImportCertificate"
+    ],
+    "attributes": {
+      "tags": [
+        "dms:AddTagsToResource",
+        "dms:RemoveTagsFromResource"
+      ]
+    },
+    "destroy": [
+      "dms:DeleteCertificate"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

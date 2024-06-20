@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "dms:DescribeReplicationSubnetGroups",
+      "dms:CreateReplicationSubnetGroup",
+      "dms:DeleteReplicationSubnetGroup",
+      "dms:ModifyReplicationSubnetGroup"
+    ],
+    "attributes": {
+      "tags": [
+        "dms:AddTagsToResource",
+        "dms:RemoveTagsFromResource"
+      ]
+    },
+    "destroy": [
+      "dms:DeleteReplicationSubnetGroup"
+    ],
+    "modify": [
+      "dms:ModifyReplicationSubnetGroup"
+    ],
+    "plan": []
+  }
+]

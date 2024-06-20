@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "dms:CreateReplicationConfig",
+      "dms:DescribeReplicationConfigs",
+      "dms:DeleteReplicationConfig",
+      "dms:ModifyReplicationConfig"
+    ],
+    "attributes": {
+      "tags": [
+        "dms:AddTagsToResource",
+        "dms:RemoveTagsFromResource"
+      ]
+    },
+    "destroy": [
+      "dms:DeleteReplicationConfig"
+    ],
+    "modify": [
+      "dms:ModifyReplicationConfig"
+    ],
+    "plan": []
+  }
+]

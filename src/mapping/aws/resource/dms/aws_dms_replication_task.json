@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "dms:DeleteReplicationTask",
+      "dms:ModifyReplicationTask",
+      "dms:CreateReplicationTask"
+    ],
+    "attributes": {
+      "tags": [
+        "dms:AddTagsToResource",
+        "dms:RemoveTagsFromResource"
+      ]
+    },
+    "destroy": [
+      "dms:DeleteReplicationTask"
+    ],
+    "modify": [
+      "dms:ModifyReplicationTask"
+    ],
+    "plan": []
+  }
+]

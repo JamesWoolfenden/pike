@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "dms:DescribeEndpoints",
+      "dms:CreateEndpoint",
+      "dms:DeleteEndpoint",
+      "dms:ModifyEndpoint",
+      "iam:PassRole"
+    ],
+    "attributes": {
+      "tags": [
+        "dms:AddTagsToResource",
+        "dms:RemoveTagsFromResource"
+      ]
+    },
+    "destroy": [
+      "dms:DeleteEndpoint"
+    ],
+    "modify": [
+      "dms:ModifyEndpoint"
+    ],
+    "plan": []
+  }
+]

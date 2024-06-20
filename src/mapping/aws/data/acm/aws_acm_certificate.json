@@ -1,13 +1,21 @@
 [
   {
-    "apply": [],
+    "apply": [
+      "acm:DescribeCertificate",
+      "acm:DescribeCertificate",
+      "acm:GetCertificate",
+      "acm:ListTagsForCertificate"
+    ],
     "attributes": {
       "tags": []
     },
     "destroy": [],
     "modify": [],
     "plan": [
-      "acm:ListCertificates"
+      "acm:ListCertificates",
+      "acm:DescribeCertificate",
+      "acm:GetCertificate",
+      "acm:ListTagsForCertificate"
     ]
   }
 ]

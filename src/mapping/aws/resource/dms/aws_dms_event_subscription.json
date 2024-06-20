@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "dms:DescribeEventSubscriptions",
+      "dms:CreateEventSubscription",
+      "dms:DeleteEventSubscription",
+      "dms:ModifyEventSubscription"
+    ],
+    "attributes": {
+      "tags": [
+        "dms:AddTagsToResource",
+        "dms:RemoveTagsFromResource"
+      ]
+    },
+    "destroy": [
+      "dms:DeleteEventSubscription"
+    ],
+    "modify": [
+      "dms:ModifyEventSubscription"
+    ],
+    "plan": []
+  }
+]
