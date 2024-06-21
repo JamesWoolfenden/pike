@@ -2130,3 +2130,24 @@ var awsDbSnapshot []byte
 
 //go:embed mapping/aws/resource/rds/aws_db_snapshot_copy.json
 var awsDbSnapshotCopy []byte
+
+//go:embed mapping/aws/resource/transcribe/aws_transcribe_language_model.json
+var awsTranscribeLanguageModel []byte
+
+//go:embed mapping/aws/resource/transcribe/aws_transcribe_medical_vocabulary.json
+var awsTranscribeMedicalVocabulary []byte
+
+//go:embed mapping/aws/resource/transcribe/aws_transcribe_vocabulary.json
+var awsTranscribeVocabulary []byte
+
+//go:embed mapping/aws/resource/transcribe/aws_transcribe_vocabulary_filter.json
+var awsTranscribeVocabularyFilter []byte
+
+//go:embed mapping/aws/resource/oam/aws_oam_link.json
+var awsOamLink []byte
+
+//go:embed mapping/aws/resource/oam/aws_oam_sink.json
+var awsOamSink []byte
+
+//go:embed mapping/aws/resource/oam/aws_oam_sink_policy.json
+var awsOamSinkPolicy []byte

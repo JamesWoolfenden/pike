@@ -48,6 +48,7 @@ func Test_percent(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
 			got := percent(tt.args.missing, tt.args.data)
+
 			if !pike.AlmostEqual(got, tt.want) {
 				t.Errorf("percent() = %v, want %v", got, tt.want)
 			}
@@ -69,6 +70,7 @@ func Test_coverageAzure(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
+
 			if err := coverageAzure(); (err != nil) != tt.wantErr {
 				t.Errorf("coverageAzure() error = %v, wantErr %v", err, tt.wantErr)
 			}
@@ -90,6 +92,7 @@ func Test_coverageGcp(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
+
 			if err := coverageGcp(); (err != nil) != tt.wantErr {
 				t.Errorf("coverageGcp() error = %v, wantErr %v", err, tt.wantErr)
 			}

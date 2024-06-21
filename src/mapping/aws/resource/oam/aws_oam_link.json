@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "oam:CreateLink",
+      "oam:GetLink",
+      "oam:UpdateLink",
+      "oam:DeleteLink",
+      "cloudwatch:Link"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "oam:DeleteLink"
+    ],
+    "modify": [
+      "oam:UpdateLink"
+    ],
+    "plan": []
+  }
+]

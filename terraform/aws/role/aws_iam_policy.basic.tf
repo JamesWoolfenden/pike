@@ -7,43 +7,40 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          //aws_db_proxy
-          "rds:CreateDBProxy",
-          "rds:DeleteDBProxy",
+          //aws_dms_replication_task
+          "dms:CreateReplicationTask",
+          //aws_dms_s3_endpoint
+          "dms:CreateEndpoint",
+          "dms:DeleteEndpoint",
           "rds:DescribeDBProxies",
-          "rds:ModifyDBProxy",
-          "rds:AddTagsToResource",
+          "dms:ModifyEndpoint",
+          "iam:PassRole",
           "rds:RemoveTagsFromResource",
+          "oam:UnTagResource",
 
 
-
-          "dynamodb:DeleteItem",
-          "dynamodb:DescribeTable",
-          "dynamodb:GetItem",
-          "dynamodb:PutItem",
-          "ec2:DescribeAccountAttributes",
+          "ec2:DescribeCapacityBlockOfferings",
+          "acm:ListCertificates",
+          "oam:GetLink",
+          "iam:AttachRolePolicy",
           "ec2:DescribeSubnets",
-          "iam:CreateRole",
-          "iam:DeleteRole",
-          "iam:GetRole",
-          "iam:ListAttachedRolePolicies",
-          "iam:ListInstanceProfilesForRole",
-          "iam:ListRolePolicies",
-          "rds:CreateDBInstance",
+          "oam:UpdateLink",
+          "oam:DeleteLink",
+          "iam:DetachRolePolicy",
+
+          //aws_oam_sink_policy
+          "iam:GetRolePolicy",
+          "iam:PutRolePolicy",
           "rds:DeleteDBInstance",
-          "rds:DescribeDBInstances",
+          "kms:DescribeKey",
           "rds:ListTagsForResource",
           "rds:ModifyDBInstance",
-          "s3:DeleteObject",
-          "s3:GetObject",
-          "s3:ListBucket",
-          "s3:PutObject",
-          "secretsmanager:CreateSecret",
-          "secretsmanager:DeleteSecret",
+          "sns:CreateTopic",
+          "sns:DeleteTopic",
           "secretsmanager:DescribeSecret",
-          "secretsmanager:GetResourcePolicy",
-          "secretsmanager:TagResource",
-          "secretsmanager:UntagResource"
+          "sns:GetTopicAttributes",
+          "sns:ListTagsForResource",
+          "sns:SetTopicAttributes"
         ],
         "Resource" : "*",
       }

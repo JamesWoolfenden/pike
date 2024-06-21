@@ -1,6 +1,6 @@
 # todo aws
 
-Resource percentage coverage   55.27
+Resource percentage coverage   55.78
 Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_amplify_app
@@ -379,9 +379,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_networkmanager_transit_gateway_registration
 ./resource.ps1 aws_networkmanager_transit_gateway_route_table_attachment
 ./resource.ps1 aws_networkmanager_vpc_attachment
-./resource.ps1 aws_oam_link
-./resource.ps1 aws_oam_sink
-./resource.ps1 aws_oam_sink_policy
 ./resource.ps1 aws_opensearch_domain_saml_options
 ./resource.ps1 aws_opensearch_inbound_connection_accepter
 ./resource.ps1 aws_opensearch_outbound_connection
@@ -583,10 +580,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_ssoadmin_permission_set_inline_policy
 ./resource.ps1 aws_ssoadmin_permissions_boundary_attachment
 ./resource.ps1 aws_ssoadmin_trusted_token_issuer
-./resource.ps1 aws_transcribe_language_model
-./resource.ps1 aws_transcribe_medical_vocabulary
-./resource.ps1 aws_transcribe_vocabulary
-./resource.ps1 aws_transcribe_vocabulary_filter
 ./resource.ps1 aws_transfer_access
 ./resource.ps1 aws_transfer_agreement
 ./resource.ps1 aws_transfer_certificate
