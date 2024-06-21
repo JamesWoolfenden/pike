@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "oam:PutSinkPolicy",
+      "oam:GetSinkPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -2115,3 +2115,12 @@ var awsTranscribeVocabulary []byte
 
 //go:embed mapping/aws/resource/transcribe/aws_transcribe_vocabulary_filter.json
 var awsTranscribeVocabularyFilter []byte
+
+//go:embed mapping/aws/resource/oam/aws_oam_link.json
+var awsOamLink []byte
+
+//go:embed mapping/aws/resource/oam/aws_oam_sink.json
+var awsOamSink []byte
+
+//go:embed mapping/aws/resource/oam/aws_oam_sink_policy.json
+var awsOamSinkPolicy []byte

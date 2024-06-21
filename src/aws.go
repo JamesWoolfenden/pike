@@ -825,6 +825,9 @@ func AwsLookup(name string) interface{} {
 		"aws_transcribe_medical_vocabulary":                        awsTranscribeMedicalVocabulary,
 		"aws_transcribe_vocabulary":                                awsTranscribeVocabulary,
 		"aws_transcribe_vocabulary_filter":                         awsTranscribeVocabularyFilter,
+		"aws_oam_link":                                             awsOamLink,
+		"aws_oam_sink":                                             awsOamSink,
+		"aws_oam_sink_policy":                                      awsOamSinkPolicy,
 	}
 
 	return TFLookup[name]

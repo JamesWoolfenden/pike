@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "oam:CreateSink",
+      "oam:GetSink",
+      "oam:DeleteSink",
+      "oam:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "oam:TagResource",
+        "oam:UnTagResource"
+      ]
+    },
+    "destroy": [
+      "oam:DeleteSink"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]
