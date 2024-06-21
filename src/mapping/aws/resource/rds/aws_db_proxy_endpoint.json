@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "rds:CreateDBProxyEndpoint",
+      "rds:DescribeDBProxyEndpoints",
+      "rds:DeleteDBProxyEndpoint",
+      "rds:ModifyDBProxyEndpoint"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "rds:DeleteDBProxyEndpoint"
+    ],
+    "modify": [
+      "rds:ModifyDBProxyEndpoint"
+    ],
+    "plan": []
+  }
+]

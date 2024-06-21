@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "rds:CreateDBProxy",
+      "rds:DeleteDBProxy",
+      "rds:DescribeDBProxies",
+      "rds:ModifyDBProxy"
+    ],
+    "attributes": {
+      "tags": [
+        "rds:AddTagsToResource",
+        "rds:RemoveTagsFromResource"
+      ]
+    },
+    "destroy": [
+      "rds:DeleteDBProxy"
+    ],
+    "modify": [
+      "rds:ModifyDBProxy"
+    ],
+    "plan": []
+  }
+]

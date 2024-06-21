@@ -2103,3 +2103,30 @@ var awsDmsReplicationTask []byte
 
 //go:embed mapping/aws/resource/dms/aws_dms_s3_endpoint.json
 var awsDmsS3Endpoint []byte
+
+//go:embed mapping/aws/resource/dms/aws_dms_replication_config.json
+var awsDmsReplicationConfig []byte
+
+//go:embed mapping/aws/resource/rds/aws_db_instance_automated_backups_replication.json
+var awsDbInstanceAutomatedBackupsReplication []byte
+
+//go:embed mapping/aws/resource/rds/aws_db_instance_role_association.json
+var awsDbInstanceRoleAssociation []byte
+
+//go:embed mapping/aws/resource/rds/aws_db_proxy.json
+var awsDbProxy []byte
+
+//go:embed mapping/aws/resource/rds/aws_db_proxy_default_target_group.json
+var awsDbProxyDefaultTargetGroup []byte
+
+//go:embed mapping/aws/resource/rds/aws_db_proxy_endpoint.json
+var awsDbProxyEndpoint []byte
+
+//go:embed mapping/aws/resource/rds/aws_db_proxy_target.json
+var awsDbProxyTarget []byte
+
+//go:embed mapping/aws/resource/rds/aws_db_snapshot.json
+var awsDbSnapshot []byte
+
+//go:embed mapping/aws/resource/rds/aws_db_snapshot_copy.json
+var awsDbSnapshotCopy []byte

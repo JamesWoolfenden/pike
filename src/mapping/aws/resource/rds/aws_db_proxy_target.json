@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "rds:DescribeDBProxyTargets",
+      "rds:RegisterDBProxyTargets",
+      "rds:DeregisterDBProxyTargets"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "rds:DeregisterDBProxyTargets"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

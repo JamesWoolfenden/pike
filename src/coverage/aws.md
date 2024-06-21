@@ -1,6 +1,6 @@
 # todo aws
 
-Resource percentage coverage   54.11
+Resource percentage coverage   55.27
 Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_amplify_app
@@ -99,14 +99,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_customerprofiles_profile
 ./resource.ps1 aws_dataexchange_data_set
 ./resource.ps1 aws_dataexchange_revision
-./resource.ps1 aws_db_instance_automated_backups_replication
-./resource.ps1 aws_db_instance_role_association
-./resource.ps1 aws_db_proxy
-./resource.ps1 aws_db_proxy_default_target_group
-./resource.ps1 aws_db_proxy_endpoint
-./resource.ps1 aws_db_proxy_target
-./resource.ps1 aws_db_snapshot
-./resource.ps1 aws_db_snapshot_copy
 ./resource.ps1 aws_detective_graph
 ./resource.ps1 aws_detective_invitation_accepter
 ./resource.ps1 aws_detective_member

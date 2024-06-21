@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "rds:ModifyDBProxyTargetGroup",
+      "rds:DescribeDBProxyTargetGroups"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [
+      "rds:ModifyDBProxyTargetGroup"
+    ],
+    "plan": []
+  }
+]

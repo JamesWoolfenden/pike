@@ -821,6 +821,15 @@ func AwsLookup(name string) interface{} {
 		"aws_dms_replication_subnet_group":                         awsDmsReplicationSubnetGroup,
 		"aws_dms_replication_task":                                 awsDmsReplicationTask,
 		"aws_dms_s3_endpoint":                                      awsDmsS3Endpoint,
+		"aws_dms_replication_config":                               awsDmsReplicationConfig,
+		"aws_db_instance_automated_backups_replication":            awsDbInstanceAutomatedBackupsReplication,
+		"aws_db_instance_role_association":                         awsDbInstanceRoleAssociation,
+		"aws_db_proxy":                                             awsDbProxy,
+		"aws_db_proxy_default_target_group":                        awsDbProxyDefaultTargetGroup,
+		"aws_db_proxy_endpoint":                                    awsDbProxyEndpoint,
+		"aws_db_proxy_target":                                      awsDbProxyTarget,
+		"aws_db_snapshot":                                          awsDbSnapshot,
+		"aws_db_snapshot_copy":                                     awsDbSnapshotCopy,
 	}
 
 	return TFLookup[name]

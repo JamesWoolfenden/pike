@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "rds:StartDBInstanceAutomatedBackupsReplication",
+      "rds:StopDBInstanceAutomatedBackupsReplication"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

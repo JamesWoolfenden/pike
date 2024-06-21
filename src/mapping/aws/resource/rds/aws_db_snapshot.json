@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "rds:CreateDBSnapshot",
+      "rds:DescribeDBSnapshots",
+      "rds:DescribeDBSnapshotAttributes",
+      "rds:DeleteDBSnapshot",
+      "rds:ModifyDBSnapshot"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "rds:DeleteDBSnapshot"
+    ],
+    "modify": [
+      "rds:ModifyDBSnapshot"
+    ],
+    "plan": []
+  }
+]

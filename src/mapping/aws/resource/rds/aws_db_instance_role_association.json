@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "rds:AddRoleToDBInstance",
+      "rds:RemoveRoleFromDBInstance",
+      "iam:PassRole"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "rds:RemoveRoleFromDBInstance"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]
