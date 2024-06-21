@@ -385,6 +385,7 @@
         "aws_docdb_global_cluster",
         "aws_docdb_subnet_group",
         "aws_docdbelastic_cluster",
+        "aws_drs_replication_configuration_template",
         "aws_dx_bgp_peer",
         "aws_dx_connection",
         "aws_dx_connection_association",
