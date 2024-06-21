@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "transcribe:CreateVocabularyFilter",
+      "transcribe:GetVocabularyFilter",
+      "transcribe:UpdateVocabularyFilter",
+      "transcribe:ListTagsForResource",
+      "transcribe:DeleteVocabularyFilter"
+    ],
+    "attributes": {
+      "tags": [
+        "transcribe:TagResource",
+        "transcribe:UntagResource"
+      ]
+    },
+    "destroy": [
+      "transcribe:DeleteVocabularyFilter"
+    ],
+    "modify": [
+      "transcribe:UpdateVocabularyFilter"
+    ],
+    "plan": []
+  }
+]

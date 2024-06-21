@@ -2103,3 +2103,15 @@ var awsDmsReplicationTask []byte
 
 //go:embed mapping/aws/resource/dms/aws_dms_s3_endpoint.json
 var awsDmsS3Endpoint []byte
+
+//go:embed mapping/aws/resource/transcribe/aws_transcribe_language_model.json
+var awsTranscribeLanguageModel []byte
+
+//go:embed mapping/aws/resource/transcribe/aws_transcribe_medical_vocabulary.json
+var awsTranscribeMedicalVocabulary []byte
+
+//go:embed mapping/aws/resource/transcribe/aws_transcribe_vocabulary.json
+var awsTranscribeVocabulary []byte
+
+//go:embed mapping/aws/resource/transcribe/aws_transcribe_vocabulary_filter.json
+var awsTranscribeVocabularyFilter []byte

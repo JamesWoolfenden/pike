@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "transcribe:CreateVocabulary",
+      "transcribe:GetVocabulary",
+      "transcribe:DeleteVocabulary"
+    ],
+    "attributes": {
+      "tags": [
+        "transcribe:TagResource",
+        "transcribe:UntagResource"
+      ]
+    },
+    "destroy": [
+      "transcribe:DeleteVocabulary"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

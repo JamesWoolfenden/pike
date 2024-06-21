@@ -821,6 +821,10 @@ func AwsLookup(name string) interface{} {
 		"aws_dms_replication_subnet_group":                         awsDmsReplicationSubnetGroup,
 		"aws_dms_replication_task":                                 awsDmsReplicationTask,
 		"aws_dms_s3_endpoint":                                      awsDmsS3Endpoint,
+		"aws_transcribe_language_model":                            awsTranscribeLanguageModel,
+		"aws_transcribe_medical_vocabulary":                        awsTranscribeMedicalVocabulary,
+		"aws_transcribe_vocabulary":                                awsTranscribeVocabulary,
+		"aws_transcribe_vocabulary_filter":                         awsTranscribeVocabularyFilter,
 	}
 
 	return TFLookup[name]

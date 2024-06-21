@@ -591,10 +591,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_ssoadmin_permission_set_inline_policy
 ./resource.ps1 aws_ssoadmin_permissions_boundary_attachment
 ./resource.ps1 aws_ssoadmin_trusted_token_issuer
-./resource.ps1 aws_transcribe_language_model
-./resource.ps1 aws_transcribe_medical_vocabulary
-./resource.ps1 aws_transcribe_vocabulary
-./resource.ps1 aws_transcribe_vocabulary_filter
 ./resource.ps1 aws_transfer_access
 ./resource.ps1 aws_transfer_agreement
 ./resource.ps1 aws_transfer_certificate

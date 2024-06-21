@@ -8,74 +8,72 @@ resource "aws_iam_policy" "basic" {
         "Effect" : "Allow",
         "Action" : [
 
-          //aws_dms_event_subscription
-          "dms:DescribeEventSubscriptions",
-          "dms:CreateEventSubscription",
-          "dms:DeleteEventSubscription",
-          "dms:ModifyEventSubscription",
-
-          //aws_dms_replication_config
-          "dms:CreateReplicationConfig",
-          "dms:DescribeReplicationConfigs",
-          "dms:DeleteReplicationConfig",
-          "dms:ModifyReplicationConfig",
-
-          //aws_dms_replication_instance
-          "dms:DescribeReplicationInstances",
-          "dms:CreateReplicationInstance",
-          "dms:DeleteReplicationInstance",
-          "dms:ModifyReplicationInstance",
-
-          //aws_dms_replication_subnet_group
-          "dms:DescribeReplicationSubnetGroups",
-          "dms:CreateReplicationSubnetGroup",
-          "dms:DeleteReplicationSubnetGroup",
-          "dms:ModifyReplicationSubnetGroup",
-
-          //aws_dms_replication_task
-          "dms:DeleteReplicationTask",
-          "dms:ModifyReplicationTask",
-          "dms:CreateReplicationTask",
-
-          //aws_dms_s3_endpoint
-          "dms:DescribeEndpoints",
-          "dms:CreateEndpoint",
-          "dms:DeleteEndpoint",
-          "dms:ModifyEndpoint",
+          //aws_transcribe_language_model
+          "transcribe:CreateLanguageModel",
+          "transcribe:DescribeLanguageModel",
+          "transcribe:DeleteLanguageModel",
           "iam:PassRole",
+          "transcribe:TagResource",
+          "transcribe:UntagResource",
 
 
+          //aws_transcribe_medical_vocabulary
+          "transcribe:CreateMedicalVocabulary",
+          "transcribe:GetMedicalVocabulary",
+          "transcribe:DeleteMedicalVocabulary",
+          "transcribe:TagResource",
+          "transcribe:UntagResource",
 
-          "ec2:DescribeCapacityBlockOfferings",
-          "acm:DescribeCertificate",
-          "acm:ListCertificates",
-          "acm:GetCertificate",
-          "acm:ListTagsForCertificate",
+          //aws_transcribe_vocabulary
+          "transcribe:CreateVocabulary",
+          "transcribe:GetVocabulary",
+          "transcribe:DeleteVocabulary",
+          "transcribe:TagResource",
+          "transcribe:UntagResource",
+
+          //aws_transcribe_vocabulary_filter
+          "transcribe:CreateVocabularyFilter",
+          "transcribe:GetVocabularyFilter",
+          "transcribe:UpdateVocabularyFilter",
+          "transcribe:ListTagsForResource",
+          "transcribe:DeleteVocabularyFilter",
+          "transcribe:TagResource",
+          "transcribe:UntagResource",
+
           "dynamodb:DeleteItem",
           "dynamodb:DescribeTable",
           "dynamodb:GetItem",
           "dynamodb:PutItem",
-          "iam:AttachRolePolicy",
           "iam:CreateRole",
           "iam:DeleteRole",
           "iam:DeleteRolePolicy",
-          "iam:DetachRolePolicy",
           "iam:GetRole",
           "iam:GetRolePolicy",
           "iam:ListAttachedRolePolicies",
           "iam:ListInstanceProfilesForRole",
           "iam:ListRolePolicies",
           "iam:PutRolePolicy",
-          "kms:DescribeKey",
+          "s3:CreateBucket",
+          "s3:DeleteBucket",
           "s3:DeleteObject",
+          "s3:GetAccelerateConfiguration",
+          "s3:GetBucketAcl",
+          "s3:GetBucketCORS",
+          "s3:GetBucketLogging",
+          "s3:GetBucketObjectLockConfiguration",
+          "s3:GetBucketPolicy",
+          "s3:GetBucketRequestPayment",
+          "s3:GetBucketTagging",
+          "s3:GetBucketVersioning",
+          "s3:GetBucketWebsite",
+          "s3:GetEncryptionConfiguration",
+          "s3:GetLifecycleConfiguration",
           "s3:GetObject",
+          "s3:GetObjectAcl",
+          "s3:GetObjectTagging",
+          "s3:GetReplicationConfiguration",
           "s3:ListBucket",
-          "s3:PutObject",
-          "sns:CreateTopic",
-          "sns:DeleteTopic",
-          "sns:GetTopicAttributes",
-          "sns:ListTagsForResource",
-          "sns:SetTopicAttributes"
+          "s3:PutObject"
         ],
         "Resource" : "*",
       }

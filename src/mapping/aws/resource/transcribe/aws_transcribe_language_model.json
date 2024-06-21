@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "transcribe:CreateLanguageModel",
+      "transcribe:DescribeLanguageModel",
+      "transcribe:DeleteLanguageModel",
+      "iam:PassRole"
+    ],
+    "attributes": {
+      "tags": [
+        "transcribe:TagResource",
+        "transcribe:UntagResource"
+      ]
+    },
+    "destroy": [
+      "transcribe:DeleteLanguageModel"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]
