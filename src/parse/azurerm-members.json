@@ -782,6 +782,7 @@
         "azurerm_resource_policy_exemption",
         "azurerm_resource_policy_remediation",
         "azurerm_resource_provider_registration",
+        "azurerm_restore_point_collection",
         "azurerm_role_assignment",
         "azurerm_role_definition",
         "azurerm_role_management_policy",
