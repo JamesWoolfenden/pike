@@ -1,6 +1,6 @@
 # todo aws
 
-Resource percentage coverage   55.78
+Resource percentage coverage   55.50
 Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_amplify_app
@@ -15,7 +15,10 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_appconfig_extension_association
 ./resource.ps1 aws_appconfig_hosted_configuration_version
 ./resource.ps1 aws_appfabric_app_authorization
+./resource.ps1 aws_appfabric_app_authorization_connection
 ./resource.ps1 aws_appfabric_app_bundle
+./resource.ps1 aws_appfabric_ingestion
+./resource.ps1 aws_appfabric_ingestion_destination
 ./resource.ps1 aws_appflow_connector_profile
 ./resource.ps1 aws_appflow_flow
 ./resource.ps1 aws_appintegrations_data_integration
@@ -120,6 +123,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_directory_service_shared_directory_accepter
 ./resource.ps1 aws_directory_service_trust
 ./resource.ps1 aws_docdbelastic_cluster
+./resource.ps1 aws_drs_replication_configuration_template
 ./resource.ps1 aws_dx_bgp_peer
 ./resource.ps1 aws_dx_connection
 ./resource.ps1 aws_dx_connection_association
@@ -361,6 +365,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_network_acl_association
 ./resource.ps1 aws_network_interface_attachment
 ./resource.ps1 aws_network_interface_sg_attachment
+./resource.ps1 aws_networkfirewall_tls_inspection_configuration
 ./resource.ps1 aws_networkmanager_attachment_accepter
 ./resource.ps1 aws_networkmanager_connect_attachment
 ./resource.ps1 aws_networkmanager_connect_peer
@@ -379,6 +384,8 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_networkmanager_transit_gateway_registration
 ./resource.ps1 aws_networkmanager_transit_gateway_route_table_attachment
 ./resource.ps1 aws_networkmanager_vpc_attachment
+./resource.ps1 aws_networkmonitor_monitor
+./resource.ps1 aws_networkmonitor_probe
 ./resource.ps1 aws_opensearch_domain_saml_options
 ./resource.ps1 aws_opensearch_inbound_connection_accepter
 ./resource.ps1 aws_opensearch_outbound_connection
