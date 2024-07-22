@@ -875,7 +875,7 @@ func GetPermissionMap(raw []byte, attributes []string, resource string) ([]strin
 	myAttributes, ok := temp["attributes"].(map[string]interface{})
 
 	if !ok {
-		fmt.Errorf("assertion failed")
+		_ = fmt.Errorf("assertion failed")
 	}
 
 	var found []string

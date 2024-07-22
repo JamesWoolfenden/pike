@@ -38,7 +38,8 @@ func Remote(target string, repository string, region string) error {
 	_, err = SetRepoSecret(repository, *myCredentials.AccessKeyId, "AWS_ACCESS_KEY_ID")
 
 	if err != nil {
-		response := err.(*github.ErrorResponse)
+		var response *github.ErrorResponse
+		errors.As(err, &response)
 		log.Printf("failed to set repo secrets: %s for repository %s", response.Message, repository)
 
 		return fmt.Errorf("failed to set repo secrets: %s for repository %s", response.Message, repository)

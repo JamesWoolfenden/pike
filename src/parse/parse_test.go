@@ -121,19 +121,19 @@ func TestGetMatches(t *testing.T) {
 func setup() {
 	log.Println("setup")
 
-	git.PlainClone("./terraform-provider-aws", false, &git.CloneOptions{
+	_, _ = git.PlainClone("./terraform-provider-aws", false, &git.CloneOptions{
 		URL:      "https://github.com/hashicorp/terraform-provider-aws",
 		Progress: os.Stdout,
 		Depth:    1,
 	})
 
-	git.PlainClone("./terraform-provider-azurerm", false, &git.CloneOptions{
+	_, _ = git.PlainClone("./terraform-provider-azurerm", false, &git.CloneOptions{
 		URL:      "https://github.com/hashicorp/terraform-provider-azurerm",
 		Progress: os.Stdout,
 		Depth:    1,
 	})
 
-	git.PlainClone("./terraform-provider-google", false, &git.CloneOptions{
+	_, _ = git.PlainClone("./terraform-provider-google", false, &git.CloneOptions{
 		URL:      "https://github.com/hashicorp/terraform-provider-google",
 		Progress: os.Stdout,
 		Depth:    1,
@@ -142,9 +142,9 @@ func setup() {
 
 func teardown() {
 	log.Println("teardown")
-	os.RemoveAll("./terraform-provider-aws")
-	os.RemoveAll("./terraform-provider-azurerm")
-	os.RemoveAll("./terraform-provider-google")
+	_ = os.RemoveAll("./terraform-provider-aws")
+	_ = os.RemoveAll("./terraform-provider-azurerm")
+	_ = os.RemoveAll("./terraform-provider-google")
 }
 
 func TestParse(t *testing.T) {

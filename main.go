@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"os"
 	"sort"
@@ -198,6 +199,40 @@ func main() {
 					theSame, err := pike.Compare(directory, arn, init)
 					log.Print("The same: ", theSame)
 					return err
+				},
+			},
+			{
+				Name:    "inspect",
+				Aliases: []string{"x"},
+				Usage:   "policy comparison of deployed versus IAC",
+				Flags: []cli.Flag{
+					&cli.StringFlag{
+						Name:        "directory",
+						Aliases:     []string{"d"},
+						Usage:       "Directory to scan (defaults to .)",
+						Value:       ".",
+						Destination: &directory,
+					},
+					&cli.BoolFlag{
+						Name:        "init",
+						Aliases:     []string{"i"},
+						Usage:       "Run Terraform init to download modules",
+						Destination: &init,
+					},
+				},
+				Action: func(*cli.Context) error {
+					over, err := pike.Inspect(directory, init)
+					if err != nil {
+						return err
+					}
+					if over != nil {
+						fmt.Println("The following are over-permissive: ")
+						for _, v := range over {
+							fmt.Println(v)
+						}
+						return errors.New("over-permissive")
+					}
+					return nil
 				},
 			},
 			{

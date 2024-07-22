@@ -49,7 +49,7 @@ function jwt_decode(token, key, noVerify, algorithm) {
     }
 
     return payload;
-};
+}
 
 //Function to ensure a constant time comparison to prevent
 //timing side channels.

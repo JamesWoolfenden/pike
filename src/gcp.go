@@ -36,8 +36,7 @@ func GetGCPResourcePermissions(result ResourceV2) ([]string, error) {
 	if temp := GCPLookup(result.Name); temp != nil {
 		myTemp, ok := temp.([]byte)
 		if ok && myTemp != nil {
-			permissionMap, err := GetPermissionMap(myTemp, result.Attributes, result.Name)
-			Permissions, err = permissionMap, err
+			Permissions, err = GetPermissionMap(myTemp, result.Attributes, result.Name)
 		}
 
 	} else {

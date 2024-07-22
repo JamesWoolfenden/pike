@@ -17,4 +17,7 @@ data "aws_subnet" "selected" {
   id = data.aws_subnets.example.ids[0]
 }
 
-resource "aws_efs_mount_target" "pike" {}
+resource "aws_efs_mount_target" "pike" {
+  file_system_id = ""
+  subnet_id      = ""
+}

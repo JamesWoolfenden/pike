@@ -11,7 +11,7 @@ before:
   hooks:
     # You may remove this if you don't use go modules.
     - go mod tidy
-    # you may remove this if you don't need go generate
+    # you may remove this if you don't use go generate
     - go generate ./...
     - ./set-version.sh
 

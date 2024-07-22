@@ -11,4 +11,7 @@
 #  project_id = "pike-gcp"
 #}
 
-resource "google_cloud_run_v2_job" "pike" {}
+resource "google_cloud_run_v2_job" "pike" {
+  location = ""
+  name     = ""
+}

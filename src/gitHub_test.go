@@ -43,6 +43,7 @@ func TestVerifyURL(t *testing.T) {
 	type args struct {
 		url string
 	}
+	//goland:noinspection HttpUrlsUsage
 	tests := []struct {
 		name    string
 		args    args

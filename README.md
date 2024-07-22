@@ -24,7 +24,7 @@ merging it ASAP.
 **CAVEAT** The outputs of this tool are your first step, if you have AWS, you can now generate resources partially, there are no conditions and even partial resources are wildcarded (for now).
 (for AWS)
 **best practice** would go further (and I am working on it as well), you will need to modify these permissions to the minimum required in your enviornment by adding these
-restrictions, you can also deploy using short lived credentials (using this tool or Vault) (in AWS so far), generating short-lived credentials for your build
+restrictions, you can also deploy using short-lived credentials (using this tool or Vault) (in AWS so far), generating short-lived credentials for your build
 and then remotely (REMOTE) supply and invoke your builds (INVOKE).
 
 Ideally I would like to do this for you, but these policies are currently determined statically (QUICKER), and unrecorded intentions can be impossible to infer.

@@ -9,4 +9,5 @@ resource "aws_rds_cluster_instance" "pike" {
     pike   = "permissions"
     delete = "me"
   }
+  engine = ""
 }

@@ -105,6 +105,7 @@ func Apply(target string, region string) error {
 	return err
 }
 
+//goland:noinspection GoUnusedFunction,GoLinter
 func tfPlan(policyPath string) error {
 	tfPath, err := LocateTerraform()
 	if err != nil {
@@ -135,7 +136,7 @@ func tfPlan(policyPath string) error {
 	}
 
 	outfile := filepath.Join(policyPath, "tf.json")
-	err = os.WriteFile(outfile, stdout, 666)
+	err = os.WriteFile(outfile, stdout, 0666)
 
 	if err != nil {
 		return fmt.Errorf("terraform show failed %w", err)
