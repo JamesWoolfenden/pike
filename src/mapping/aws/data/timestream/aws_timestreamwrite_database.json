@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "timestream:DescribeDatabase",
+      "timestream:DescribeEndpoints"
+    ]
+  }
+]

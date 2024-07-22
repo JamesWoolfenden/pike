@@ -1449,3 +1449,24 @@ var dataAwsChatbotSlackWorkspace []byte
 
 //go:embed mapping/aws/data/ec2/aws_ec2_capacity_block_offering.json
 var dataAwsEc2CapacityBlockOffering []byte
+
+//go:embed mapping/aws/data/appstream/aws_appstream_image.json
+var dataAwsAppstreamImage []byte
+
+//go:embed mapping/aws/data/cloudfront/aws_cloudfront_origin_access_control.json
+var dataAwsCloudfrontOriginAccessControl []byte
+
+//go:embed mapping/aws/data/cognito-idp/aws_cognito_user_pool.json
+var dataAwsCognitoUserPool []byte
+
+//go:embed mapping/aws/data/ec2/aws_ec2_transit_gateway_peering_attachments.json
+var dataAwsEc2TransitGatewayPeeringAttachments []byte
+
+//go:embed mapping/aws/data/timestream/aws_timestreamwrite_database.json
+var dataAwsTimestreamwriteDatabase []byte
+
+//go:embed mapping/aws/data/timestream/aws_timestreamwrite_table.json
+var dataAwsTimestreamwriteTable []byte
+
+//go:embed mapping/aws/data/transfer/aws_transfer_connector.json
+var dataAwsTransferConnector []byte

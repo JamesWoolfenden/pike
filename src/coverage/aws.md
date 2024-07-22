@@ -625,10 +625,3 @@ Datasource percentage coverage 98.71
 ./resource.ps1 aws_worklink_website_certificate_authority_association
 ./resource.ps1 aws_workspaces_connection_alias
 ./resource.ps1 aws_workspaces_ip_group
-./resource.ps1 aws_appstream_image -type data
-./resource.ps1 aws_cloudfront_origin_access_control -type data
-./resource.ps1 aws_cognito_user_pool -type data
-./resource.ps1 aws_ec2_transit_gateway_peering_attachments -type data
-./resource.ps1 aws_timestreamwrite_database -type data
-./resource.ps1 aws_timestreamwrite_table -type data
-./resource.ps1 aws_transfer_connector -type data

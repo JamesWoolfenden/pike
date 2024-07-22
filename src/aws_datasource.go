@@ -572,6 +572,13 @@ func AwsDataLookup(find string) interface{} {
 		"aws_datazone_environment_blueprint":                        dataAwsDatazoneEnvironmentBlueprint,
 		"aws_chatbot_slack_workspace":                               dataAwsChatbotSlackWorkspace,
 		"aws_ec2_capacity_block_offering":                           dataAwsEc2CapacityBlockOffering,
+		"aws_appstream_image":                                       dataAwsAppstreamImage,
+		"aws_cloudfront_origin_access_control":                      dataAwsCloudfrontOriginAccessControl,
+		"aws_cognito_user_pool":                                     dataAwsCognitoUserPool,
+		"aws_ec2_transit_gateway_peering_attachments":               dataAwsEc2TransitGatewayPeeringAttachments,
+		"aws_timestreamwrite_database":                              dataAwsTimestreamwriteDatabase,
+		"aws_timestreamwrite_table":                                 dataAwsTimestreamwriteTable,
+		"aws_transfer_connector":                                    dataAwsTransferConnector,
 	}
 
 	return TFLookup[find]
