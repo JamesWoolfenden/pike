@@ -1,7 +1,7 @@
 # todo aws
 
-Resource percentage coverage   55.78
-Datasource percentage coverage 100.00
+Resource percentage coverage   55.22
+Datasource percentage coverage 98.71
 
 ./resource.ps1 aws_amplify_app
 ./resource.ps1 aws_amplify_backend_environment
@@ -15,7 +15,10 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_appconfig_extension_association
 ./resource.ps1 aws_appconfig_hosted_configuration_version
 ./resource.ps1 aws_appfabric_app_authorization
+./resource.ps1 aws_appfabric_app_authorization_connection
 ./resource.ps1 aws_appfabric_app_bundle
+./resource.ps1 aws_appfabric_ingestion
+./resource.ps1 aws_appfabric_ingestion_destination
 ./resource.ps1 aws_appflow_connector_profile
 ./resource.ps1 aws_appflow_flow
 ./resource.ps1 aws_appintegrations_data_integration
@@ -78,6 +81,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_cloudfrontkeyvaluestore_key
 ./resource.ps1 aws_cloudhsm_v2_cluster
 ./resource.ps1 aws_cloudhsm_v2_hsm
+./resource.ps1 aws_cloudwatch_log_account_policy
 ./resource.ps1 aws_cognito_identity_pool_provider_principal_tag
 ./resource.ps1 aws_cognito_identity_pool_roles_attachment
 ./resource.ps1 aws_cognito_managed_user_pool_client
@@ -99,6 +103,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_customerprofiles_profile
 ./resource.ps1 aws_dataexchange_data_set
 ./resource.ps1 aws_dataexchange_revision
+./resource.ps1 aws_datazone_project
 ./resource.ps1 aws_detective_graph
 ./resource.ps1 aws_detective_invitation_accepter
 ./resource.ps1 aws_detective_member
@@ -120,6 +125,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_directory_service_shared_directory_accepter
 ./resource.ps1 aws_directory_service_trust
 ./resource.ps1 aws_docdbelastic_cluster
+./resource.ps1 aws_drs_replication_configuration_template
 ./resource.ps1 aws_dx_bgp_peer
 ./resource.ps1 aws_dx_connection
 ./resource.ps1 aws_dx_connection_association
@@ -232,6 +238,8 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_grafana_role_association
 ./resource.ps1 aws_grafana_workspace
 ./resource.ps1 aws_grafana_workspace_saml_configuration
+./resource.ps1 aws_grafana_workspace_service_account
+./resource.ps1 aws_grafana_workspace_service_account_token
 ./resource.ps1 aws_guardduty_detector
 ./resource.ps1 aws_guardduty_detector_feature
 ./resource.ps1 aws_guardduty_filter
@@ -361,6 +369,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_network_acl_association
 ./resource.ps1 aws_network_interface_attachment
 ./resource.ps1 aws_network_interface_sg_attachment
+./resource.ps1 aws_networkfirewall_tls_inspection_configuration
 ./resource.ps1 aws_networkmanager_attachment_accepter
 ./resource.ps1 aws_networkmanager_connect_attachment
 ./resource.ps1 aws_networkmanager_connect_peer
@@ -379,6 +388,8 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_networkmanager_transit_gateway_registration
 ./resource.ps1 aws_networkmanager_transit_gateway_route_table_attachment
 ./resource.ps1 aws_networkmanager_vpc_attachment
+./resource.ps1 aws_networkmonitor_monitor
+./resource.ps1 aws_networkmonitor_probe
 ./resource.ps1 aws_opensearch_domain_saml_options
 ./resource.ps1 aws_opensearch_inbound_connection_accepter
 ./resource.ps1 aws_opensearch_outbound_connection
@@ -449,6 +460,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_ram_resource_share_accepter
 ./resource.ps1 aws_ram_sharing_with_organization
 ./resource.ps1 aws_rbin_rule
+./resource.ps1 aws_rds_certificate
 ./resource.ps1 aws_rds_custom_db_engine_version
 ./resource.ps1 aws_rds_export_task
 ./resource.ps1 aws_rds_reserved_instance
@@ -471,6 +483,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_redshiftserverless_workgroup
 ./resource.ps1 aws_rekognition_collection
 ./resource.ps1 aws_rekognition_project
+./resource.ps1 aws_rekognition_stream_processor
 ./resource.ps1 aws_resourceexplorer2_index
 ./resource.ps1 aws_resourceexplorer2_view
 ./resource.ps1 aws_resourcegroups_resource
@@ -591,6 +604,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_transfer_user
 ./resource.ps1 aws_transfer_workflow
 ./resource.ps1 aws_verifiedaccess_instance_trust_provider_attachment
+./resource.ps1 aws_verifiedpermissions_identity_source
 ./resource.ps1 aws_verifiedpermissions_policy
 ./resource.ps1 aws_verifiedpermissions_policy_store
 ./resource.ps1 aws_verifiedpermissions_policy_template
@@ -611,3 +625,10 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_worklink_website_certificate_authority_association
 ./resource.ps1 aws_workspaces_connection_alias
 ./resource.ps1 aws_workspaces_ip_group
+./resource.ps1 aws_appstream_image -type data
+./resource.ps1 aws_cloudfront_origin_access_control -type data
+./resource.ps1 aws_cognito_user_pool -type data
+./resource.ps1 aws_ec2_transit_gateway_peering_attachments -type data
+./resource.ps1 aws_timestreamwrite_database -type data
+./resource.ps1 aws_timestreamwrite_table -type data
+./resource.ps1 aws_transfer_connector -type data
