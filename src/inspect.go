@@ -1,24 +1,37 @@
 package pike
 
 import (
+	"errors"
+
 	Identity "github.com/jameswoolfenden/identity/src"
+	"github.com/rs/zerolog/log"
 )
 
 func Inspect(directory string, init bool) ([]string, error) {
+	var iacPolicy Identity.Policy
 
 	rawIACPolicy, err := MakePolicy(directory, nil, init, false)
 	if err != nil {
-		return nil, err
+		if errors.Is(err, &emptyIACError{}) {
+			log.Info().Msgf("nothing to do for IAC as %s for directory %s", err, directory)
+		} else {
+			return nil, err
+		}
 	}
 
-	iacPolicy, err := Identity.Parse(rawIACPolicy.AWS.JSONOut)
+	iacPolicy, err = Identity.Parse(rawIACPolicy.AWS.JSONOut)
 
 	if err != nil {
-		return nil, err
+		if errors.Is(err, &Identity.EmptyParseError{}) {
+			log.Info().Msgf("nothing to do for IAC as parse for %s was empty", directory)
+		} else {
+			return nil, err
+		}
 	}
 
 	iamIdentity, err := Identity.GetIam()
 	if err != nil {
+		log.Info().Msgf("nothing to do for AWS as %s ", err)
 		return nil, err
 	}
 

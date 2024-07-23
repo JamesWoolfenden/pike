@@ -204,7 +204,7 @@ func main() {
 			{
 				Name:    "inspect",
 				Aliases: []string{"x"},
-				Usage:   "policy comparison of deployed versus IAC",
+				Usage:   "policy comparison of environment versus IAC",
 				Flags: []cli.Flag{
 					&cli.StringFlag{
 						Name:        "directory",

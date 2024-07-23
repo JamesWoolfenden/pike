@@ -10,6 +10,7 @@ import (
 	"strings"
 
 	"github.com/hashicorp/go-version"
+
 	"github.com/hashicorp/hc-install/product"
 	"github.com/hashicorp/hc-install/releases"
 	"github.com/hashicorp/terraform-exec/tfexec"
@@ -17,6 +18,12 @@ import (
 )
 
 const tfVersion = "1.5.4"
+
+type emptyIACError struct{}
+
+func (m *emptyIACError) Error() string {
+	return "no IAC found"
+}
 
 // Scan looks for resources in a given directory.
 func Scan(dirName string, output string, file *string, init bool, write bool, enableResources bool) error {
@@ -179,6 +186,10 @@ func MakePolicy(dirName string, file *string, init bool, EnableResources bool) (
 		}
 
 		files = append(files, myFile)
+	}
+
+	if files == nil || len(files) == 0 {
+		return Output, &emptyIACError{}
 	}
 
 	var resources []ResourceV2
