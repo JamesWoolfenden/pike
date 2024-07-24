@@ -221,17 +221,26 @@ func main() {
 					},
 				},
 				Action: func(*cli.Context) error {
-					over, err := pike.Inspect(directory, init)
+					Difference, err := pike.Inspect(directory, init)
 					if err != nil {
 						return err
 					}
-					if over != nil {
+					if Difference.Under != nil {
+						fmt.Println("The following are under-permissive: ")
+						for _, v := range Difference.Under {
+							fmt.Println(v)
+						}
+						return errors.New("under-permissive")
+					}
+
+					if Difference.Over != nil {
 						fmt.Println("The following are over-permissive: ")
-						for _, v := range over {
+						for _, v := range Difference.Over {
 							fmt.Println(v)
 						}
 						return errors.New("over-permissive")
 					}
+
 					return nil
 				},
 			},

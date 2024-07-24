@@ -39,13 +39,17 @@ func TestCompareAllow(t *testing.T) {
 	tests := []struct {
 		name    string
 		args    args
-		want    []string
+		want    PolicyDiff
 		wantErr bool
 	}{
-		{"pass empty", args{identity, policy}, nil, false},
-		{"pass not empty", args{identity, morePolicy}, nil, false},
-		{"pass", args{moreIdentity, morePolicy}, nil, false},
-		{"different", args{moreIdentity, policy}, []string{"s3:*", "s3-object-lambda:*"}, false},
+		{"pass empty",
+			args{identity, policy}, PolicyDiff{}, false},
+		{"pass not empty",
+			args{identity, morePolicy}, PolicyDiff{nil, []string{"s3:*", "s3-object-lambda:*"}}, false},
+		{"pass",
+			args{moreIdentity, morePolicy}, PolicyDiff{}, false},
+		{"different",
+			args{moreIdentity, policy}, PolicyDiff{[]string{"s3:*", "s3-object-lambda:*"}, nil}, false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -70,11 +74,11 @@ func TestInspect(t *testing.T) {
 	tests := []struct {
 		name    string
 		args    args
-		want    []string
+		want    PolicyDiff
 		wantErr bool
 	}{
 		//	{"Pass", args{"../terraform/aws/backup", false}, []string{"foo", "bar"}, false},
-		{"no dir", args{"../terraform/aws/nodir", false}, nil, true},
+		{"no dir", args{"../terraform/aws/nodir", false}, PolicyDiff{}, true},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

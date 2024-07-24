@@ -7,15 +7,21 @@ import (
 	"github.com/rs/zerolog/log"
 )
 
-func Inspect(directory string, init bool) ([]string, error) {
+type PolicyDiff struct {
+	Over  []string
+	Under []string
+}
+
+func Inspect(directory string, init bool) (PolicyDiff, error) {
 	var iacPolicy Identity.Policy
+	var Difference PolicyDiff
 
 	rawIACPolicy, err := MakePolicy(directory, nil, init, false)
 	if err != nil {
 		if errors.Is(err, &emptyIACError{}) {
 			log.Info().Msgf("nothing to do for IAC as %s for directory %s", err, directory)
 		} else {
-			return nil, err
+			return Difference, err
 		}
 	}
 
@@ -25,28 +31,28 @@ func Inspect(directory string, init bool) ([]string, error) {
 		if errors.Is(err, &Identity.EmptyParseError{}) {
 			log.Info().Msgf("nothing to do for IAC as parse for %s was empty", directory)
 		} else {
-			return nil, err
+			return Difference, err
 		}
 	}
 
 	iamIdentity, err := Identity.GetIam()
 	if err != nil {
 		log.Info().Msgf("nothing to do for AWS as %s ", err)
-		return nil, err
+		return Difference, err
 	}
 
-	result, err := CompareAllow(iamIdentity, iacPolicy)
+	Difference, err = CompareAllow(iamIdentity, iacPolicy)
 	if err != nil {
-		return nil, err
+		return Difference, err
 	}
 
-	return result, nil
+	return Difference, nil
 }
 
-func CompareAllow(identity Identity.IAM, policy Identity.Policy) ([]string, error) {
+func CompareAllow(identity Identity.IAM, policy Identity.Policy) (PolicyDiff, error) {
 	var identityAllows []string
 	var policyAllows []string
-	var over []string
+	var difference PolicyDiff
 
 	for _, identityPolicy := range identity.Policies {
 		statements := identityPolicy.Statements
@@ -68,11 +74,17 @@ func CompareAllow(identity Identity.IAM, policy Identity.Policy) ([]string, erro
 
 	for _, permission := range identityAllows {
 		if !contains(policyAllows, permission) {
-			over = append(over, permission)
+			difference.Over = append(difference.Over, permission)
 		}
 	}
 
-	return over, nil
+	for _, permission := range policyAllows {
+		if !contains(identityAllows, permission) {
+			difference.Under = append(difference.Under, permission)
+		}
+	}
+
+	return difference, nil
 }
 
 func contains(s []string, e string) bool {
