@@ -13,7 +13,7 @@
 [![codecov](https://codecov.io/gh/JamesWoolfenden/pike/graph/badge.svg?token=S5SW3BHIQQ)](https://codecov.io/gh/JamesWoolfenden/pike)
 [![OpenSSF Best Practices](https://www.bestpractices.dev/projects/7032/badge)](https://www.bestpractices.dev/projects/7032)
 
-Pike is a tool, to determine the minimum permissions required to run a TF/IAC run:
+Pike is a tool to determine the minimum permissions required to run a TF/IAC run:
 
 Pike currently supports Terraform and supports multiple providers (AWS, GCP, AZURE),
 Azure is the newest with AWS having the most supported resources
@@ -23,7 +23,7 @@ merging it ASAP.
 
 **CAVEAT** The outputs of this tool are your first step, if you have AWS, you can now generate resources partially, there are no conditions and even partial resources are wildcarded (for now).
 (for AWS)
-**best practice** would go further (and I am working on it as well), you will need to modify these permissions to the minimum required in your enviornment by adding these
+**best practice** would go further (and I am working on it as well), you will need to modify these permissions to the minimum required in your environment by adding these
 restrictions, you can also deploy using short-lived credentials (using this tool or Vault) (in AWS so far), generating short-lived credentials for your build
 and then remotely (REMOTE) supply and invoke your builds (INVOKE).
 
@@ -360,10 +360,10 @@ on:
       - master
 ```
 
-To authenticate the GitHub Api you will need to set you GitHub Personal Access Token as the environment variable
+To authenticate the GitHub API you will need to set you GitHub Personal Access Token, as the environment variable
 *GITHUB_TOKEN*
 
-To Invoke a workflow it is then:
+To Invoke a workflow, it is then:
 
 ```shell
 pike invoke -workflow master.yml -branch master -repository JamesWoolfenden/terraform-aws-s3
@@ -371,7 +371,7 @@ pike invoke -workflow master.yml -branch master -repository JamesWoolfenden/terr
 
 I created Invoke to be used in tandem with the new remote command which supplies temporary credentials to a workflow.
 
-**Note The gitHub API is rate limited usually 5000 calls per hour.
+**Note The GitHub API is rate limited, usually 5000 calls per hour.
 
 ```shell
 pike make -d ./module/aws/terraform-aws-s3/example/examplea

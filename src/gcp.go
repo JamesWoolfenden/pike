@@ -1,9 +1,5 @@
 package pike
 
-import (
-	"fmt"
-)
-
 // GetGCPPermissions for GCP resources.
 func GetGCPPermissions(result ResourceV2) ([]string, error) {
 	var (
@@ -40,7 +36,7 @@ func GetGCPResourcePermissions(result ResourceV2) ([]string, error) {
 		}
 
 	} else {
-		return nil, fmt.Errorf("%s not implemented", result.Name)
+		return nil, &notImplementedResourceError{result.Name}
 	}
 
 	return Permissions, err
@@ -62,18 +58,18 @@ func GCPLookup(result string) interface{} {
 		"google_alloydb_cluster":                                  googleAlloydbCluster,
 		"google_alloydb_instance":                                 googleAlloydbInstance,
 		"google_alloydb_user":                                     googleAlloydbUser,
-		"google_api_gateway_api":                                  googleApiGatewayApi,
-		"google_api_gateway_api_config":                           googleApiGatewayApiConfig,
-		"google_api_gateway_api_config_iam_binding":               googleApiGatewayApiConfigIam,
-		"google_api_gateway_api_config_iam_member":                googleApiGatewayApiConfigIam,
-		"google_api_gateway_api_config_iam_policy":                googleApiGatewayApiConfigIam,
-		"google_api_gateway_api_iam_binding":                      googleApiGatewayApiIam,
-		"google_api_gateway_api_iam_member":                       googleApiGatewayApiIam,
-		"google_api_gateway_api_iam_policy":                       googleApiGatewayApiIam,
-		"google_api_gateway_gateway":                              googleApiGatewayGateway,
-		"google_api_gateway_gateway_iam_binding":                  googleApiGatewayGatewayIam,
-		"google_api_gateway_gateway_iam_member":                   googleApiGatewayGatewayIam,
-		"google_api_gateway_gateway_iam_policy":                   googleApiGatewayGatewayIam,
+		"google_api_gateway_api":                                  googleAPIGatewayAPI,
+		"google_api_gateway_api_config":                           googleAPIGatewayAPIConfig,
+		"google_api_gateway_api_config_iam_binding":               googleAPIGatewayAPIConfigIam,
+		"google_api_gateway_api_config_iam_member":                googleAPIGatewayAPIConfigIam,
+		"google_api_gateway_api_config_iam_policy":                googleAPIGatewayAPIConfigIam,
+		"google_api_gateway_api_iam_binding":                      googleAPIGatewayAPIIam,
+		"google_api_gateway_api_iam_member":                       googleAPIGatewayAPIIam,
+		"google_api_gateway_api_iam_policy":                       googleAPIGatewayAPIIam,
+		"google_api_gateway_gateway":                              googleAPIGatewayGateway,
+		"google_api_gateway_gateway_iam_binding":                  googleAPIGatewayGatewayIam,
+		"google_api_gateway_gateway_iam_member":                   googleAPIGatewayGatewayIam,
+		"google_api_gateway_gateway_iam_policy":                   googleAPIGatewayGatewayIam,
 		"google_artifact_registry_repository":                     googleArtifactRegistryRepository,
 		"google_artifact_registry_repository_iam_binding":         googleArtifactRegistryRepositoryIamBinding,
 		"google_artifact_registry_repository_iam_member":          googleArtifactRegistryRepositoryIamMember,

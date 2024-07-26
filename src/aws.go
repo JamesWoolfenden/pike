@@ -38,7 +38,7 @@ func GetAWSPermissions(result ResourceV2) ([]string, error) {
 		}
 	default:
 		{
-			return nil, fmt.Errorf("unknown permission resource type %s", result.Name)
+			return nil, &unknownPermissionError{result.Name}
 		}
 	}
 
@@ -810,9 +810,9 @@ func AwsLookup(name string) interface{} {
 		"aws_waf_rule":                                             awsWafRule,
 		"aws_waf_rule_group":                                       awsWafRuleGroup,
 		"aws_waf_size_constraint_set":                              awsWafSizeConstraintSet,
-		"aws_waf_sql_injection_match_set":                          awsWafSqlInjectionMatchSet,
-		"aws_waf_web_acl":                                          awsWafWebAcl,
-		"aws_waf_xss_match_set":                                    awsWafXssNatchSet,
+		"aws_waf_sql_injection_match_set":                          awsWafSQLInjectionMatchSet,
+		"aws_waf_web_acl":                                          awsWafWebACL,
+		"aws_waf_xss_match_set":                                    awsWafXSSNatchSet,
 		"aws_wafregional_byte_match_set":                           awsWafregionalByteMatchSet,
 		"aws_wafregional_geo_match_set":                            awsWafregionalGeoMatchSet,
 		"aws_wafregional_ipset":                                    awsWafregionalIpset,
@@ -822,9 +822,9 @@ func AwsLookup(name string) interface{} {
 		"aws_wafregional_rule":                                     awsWafregionalRule,
 		"aws_wafregional_rule_group":                               awsWafregionalRuleGroup,
 		"aws_wafregional_size_constraint_set":                      awsWafregionalSizeConstraintSet,
-		"aws_wafregional_sql_injection_match_set":                  awsWafregionalSqlInjectionMatchSet,
-		"aws_wafregional_web_acl":                                  awsWafregionalWebAcl,
-		"aws_wafregional_xss_match_set":                            awsWafregionalXssNatchSet,
+		"aws_wafregional_sql_injection_match_set":                  awsWafregionalSQLInjectionMatchSet,
+		"aws_wafregional_web_acl":                                  awsWafregionalWebACL,
+		"aws_wafregional_xss_match_set":                            awsWafregionalXSSNatchSet,
 		"aws_wafv2_ip_set":                                         awsWafv2IpSet,
 		"aws_wafv2_regex_pattern_set":                              awsWafv2RegexPatternSet,
 		"aws_wafv2_rule_group":                                     awsWafv2RuleGroup,

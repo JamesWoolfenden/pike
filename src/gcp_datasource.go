@@ -1,9 +1,5 @@
 package pike
 
-import (
-	"fmt"
-)
-
 // GetGCPDataPermissions gets permissions required for datasources.
 func GetGCPDataPermissions(result ResourceV2) ([]string, error) {
 	temp := GCPDataLookup(result.Name)
@@ -16,7 +12,7 @@ func GetGCPDataPermissions(result ResourceV2) ([]string, error) {
 	if temp != nil {
 		Permissions, err = GetPermissionMap(temp.([]byte), result.Attributes, result.Name)
 	} else {
-		return nil, fmt.Errorf("data.%s not implemented", result.Name)
+		return nil, &notImplementedDatasourceError{result.Name}
 	}
 
 	return Permissions, err

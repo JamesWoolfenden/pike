@@ -70,6 +70,7 @@ func CompareIAMPolicy(policy string, oldPolicy string) (bool, error) {
 
 		myFormatter := formatter.NewAsciiFormatter(aJSON, myConfig)
 		diffString, err := myFormatter.Format(compare)
+
 		if err != nil {
 			return false, err
 		}

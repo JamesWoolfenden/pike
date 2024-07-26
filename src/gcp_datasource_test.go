@@ -40,6 +40,7 @@ func TestGetGCPDataPermissions(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
+
 			if got, _ := pike.GetGCPDataPermissions(tt.args.result); !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("GetGCPDataPermissions() = %v, want %v", got, tt.want)
 			}

@@ -66,6 +66,7 @@ func GetResources(file string, dirName string) ([]ResourceV2, error) {
 			resource.Provider = GetHCLType(block.Labels[0])
 		} else {
 			resource.Provider = "unknown"
+
 			log.Print("parsing error for ", block)
 		}
 
@@ -153,11 +154,21 @@ func GetModulePath(block *hclsyntax.Block) string {
 	attributes := block.Body.Attributes
 	value := attributes["source"].Expr
 
-	castValue := value.(*hclsyntax.TemplateExpr)
+	castValue, ok := value.(*hclsyntax.TemplateExpr)
+
+	if !ok {
+		return ""
+	}
+
 	parts := castValue.Parts
 
 	for _, part := range parts {
-		myPart := part.(*hclsyntax.LiteralValueExpr)
+		myPart, ok := part.(*hclsyntax.LiteralValueExpr)
+
+		if !ok {
+			return ""
+		}
+
 		modulePath = myPart.Val.AsString()
 	}
 

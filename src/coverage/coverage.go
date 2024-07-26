@@ -116,6 +116,7 @@ func coverageGcp() error {
 
 	target = Prepend + target
 	err := os.WriteFile("google.md", []byte(target), 0o700)
+
 	if err != nil {
 		return err
 	}
@@ -129,6 +130,7 @@ func importMembers(targetMembers string) members {
 	data := members{}
 
 	_ = json.Unmarshal(file, &data)
+
 	return data
 }
 

@@ -1,10 +1,5 @@
 package pike
 
-import (
-	"errors"
-	"fmt"
-)
-
 // GetAZUREPermissions for GCP resources.
 func GetAZUREPermissions(result ResourceV2) ([]string, error) {
 	var (
@@ -39,10 +34,9 @@ func GetAZUREResourcePermissions(result ResourceV2) ([]string, error) {
 	if temp != nil {
 		Permissions, err = GetPermissionMap(temp.([]byte), result.Attributes, result.Name)
 	} else {
-		message := fmt.Sprintf("%s not implemented", result.Name)
 
 		//goland:noinspection GoLinter
-		return nil, errors.New(message)
+		return nil, &notImplementedResourceError{result.Name}
 	}
 
 	return Permissions, err

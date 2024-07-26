@@ -14,6 +14,7 @@ type PolicyDiff struct {
 
 func Inspect(directory string, init bool) (PolicyDiff, error) {
 	var iacPolicy Identity.Policy
+
 	var Difference PolicyDiff
 
 	rawIACPolicy, err := MakePolicy(directory, nil, init, false)
@@ -38,6 +39,7 @@ func Inspect(directory string, init bool) (PolicyDiff, error) {
 	iamIdentity, err := Identity.GetIam()
 	if err != nil {
 		log.Info().Msgf("nothing to do for AWS as %s ", err)
+
 		return Difference, err
 	}
 
@@ -51,7 +53,9 @@ func Inspect(directory string, init bool) (PolicyDiff, error) {
 
 func CompareAllow(identity Identity.IAM, policy Identity.Policy) (PolicyDiff, error) {
 	var identityAllows []string
+
 	var policyAllows []string
+
 	var difference PolicyDiff
 
 	for _, identityPolicy := range identity.Policies {
@@ -93,5 +97,6 @@ func contains(s []string, e string) bool {
 			return true
 		}
 	}
+
 	return false
 }

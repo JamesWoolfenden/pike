@@ -1,9 +1,5 @@
 package pike
 
-import (
-	"fmt"
-)
-
 // GetAZUREDataPermissions gets permissions required for datasources.
 func GetAZUREDataPermissions(result ResourceV2) ([]string, error) {
 	temp := AzureDataLookup(result.Name)
@@ -16,7 +12,7 @@ func GetAZUREDataPermissions(result ResourceV2) ([]string, error) {
 	if temp != nil {
 		Permissions, err = GetPermissionMap(temp.([]byte), result.Attributes, result.Name)
 	} else {
-		return nil, fmt.Errorf("data.%s not implemented", result.Name)
+		return nil, &notImplementedDatasourceError{Name: result.Name}
 	}
 
 	return Permissions, err

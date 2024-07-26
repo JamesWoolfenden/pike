@@ -23,7 +23,7 @@ var placeholder []byte
 var dataAwsVpcs []byte
 
 //go:embed mapping/aws/data/ec2/aws_subnets_ids.json
-var dataAwsSubnetIds []byte
+var dataAwsSubnetIDs []byte
 
 //go:embed mapping/aws/data/ec2/aws_ami.json
 var dataAwsAmi []byte
@@ -293,7 +293,7 @@ var dataBackupSelection []byte
 var dataAwsEbsSnapshot []byte
 
 //go:embed mapping/aws/data/ec2/aws_ebs_snapshot_ids.json
-var dataAwsEbsSnapshotIds []byte
+var dataAwsEbsSnapshotIDs []byte
 
 //go:embed mapping/aws/data/ec2/aws_ebs_volume.json
 var dataAwsEbsVolume []byte
@@ -635,7 +635,7 @@ var dataAwsPrometheusWorkspace []byte
 var dataAwsPrometheusWorkspaces []byte
 
 //go:embed mapping/aws/data/ec2/aws_ami_ids.json
-var dataAwsAmiIds []byte
+var dataAwsAmiIDs []byte
 
 //go:embed mapping/aws/data/appmesh/aws_appmesh_gateway_route.json
 var dataAwsAppmeshGatewayRoute []byte
@@ -962,7 +962,7 @@ var dataAwsGrafanaWorkspace []byte
 var dataAwsGuarddutyDetector []byte
 
 //go:embed mapping/aws/data/guardduty/aws_guardduty_finding_ids.json
-var dataAwsGuarddutyFindingIds []byte
+var dataAwsGuarddutyFindingIDs []byte
 
 //go:embed mapping/aws/data/identitystore/aws_identitystore_group.json
 var dataAwsIdentitystoreGroup []byte
@@ -1415,7 +1415,7 @@ var dataAwsCognitoUserGroup []byte
 var dataAwsCognitoUserGroups []byte
 
 //go:embed mapping/aws/data/rds/aws_db_parameter_group.json
-var dataAwsDbParameterGroup []byte
+var dataAwsDBParameterGroup []byte
 
 //go:embed mapping/aws/data/medialive/aws_medialive_input.json
 var dataAwsMedialiveInput []byte

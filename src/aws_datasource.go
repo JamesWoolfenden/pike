@@ -1,7 +1,5 @@
 package pike
 
-import "fmt"
-
 // GetAWSDataPermissions gets permissions required for datasource's.
 //
 //goland:noinspection GoLinter
@@ -14,7 +12,7 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 	if temp := AwsDataLookup(result.Name); temp != nil {
 		Permissions, err = GetPermissionMap(temp.([]byte), result.Attributes, result.Name)
 	} else {
-		return nil, fmt.Errorf("%s not implemented", result.Name)
+		return nil, &notImplementedDatasourceError{result.Name}
 	}
 
 	return Permissions, err
@@ -23,14 +21,15 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 // AwsDataLookup is a map to connect resource name to an object map
 //
 //nolint:funlen
-func AwsDataLookup(find string) interface{} {
+func AwsDataLookup(find string) interface{} { //nolint:maintidx
+	//goland:noinspection LongLine
 	TFLookup := map[string]interface{}{
 		"aws_acm_certificate":                                       dataAwsAcmCertificate,
 		"aws_acmpca_certificate":                                    dataAwsAcmpcaCertificate,
 		"aws_acmpca_certificate_authority":                          dataAwsAcmpcaCertificateAuthority,
 		"aws_alb":                                                   dataAwsLb,
 		"aws_ami":                                                   dataAwsAmi,
-		"aws_ami_ids":                                               dataAwsAmiIds,
+		"aws_ami_ids":                                               dataAwsAmiIDs,
 		"aws_api_gateway_api_key":                                   dataAwsAPIGateway,
 		"aws_api_gateway_authorizer":                                dataAwsAPIGateway,
 		"aws_api_gateway_authorizers":                               dataAwsAPIGateway,
@@ -152,7 +151,7 @@ func AwsDataLookup(find string) interface{} {
 		"aws_ebs_default_kms_key":                                   dataAwsEbsDefaultKmsKey,
 		"aws_ebs_encryption_by_default":                             dataAwsEbsEncryptionByDefault,
 		"aws_ebs_snapshot":                                          dataAwsEbsSnapshot,
-		"aws_ebs_snapshot_ids":                                      dataAwsEbsSnapshotIds,
+		"aws_ebs_snapshot_ids":                                      dataAwsEbsSnapshotIDs,
 		"aws_ebs_volume":                                            dataAwsEbsVolume,
 		"aws_ebs_volumes":                                           dataAwsEbsVolumes,
 		"aws_ec2_client_vpn_endpoint":                               dataAwsEc2ClientVpnEndpoint,
@@ -240,7 +239,7 @@ func AwsDataLookup(find string) interface{} {
 		"aws_glue_script":                                           dataAwsGlueScript,
 		"aws_grafana_workspace":                                     dataAwsGrafanaWorkspace,
 		"aws_guardduty_detector":                                    dataAwsGuarddutyDetector,
-		"aws_guardduty_finding_ids":                                 dataAwsGuarddutyFindingIds,
+		"aws_guardduty_finding_ids":                                 dataAwsGuarddutyFindingIDs,
 		"aws_iam_access_keys":                                       dataAwsIamAccessKeys,
 		"aws_iam_account_alias":                                     dataAwsIamAccountAlias,
 		"aws_iam_group":                                             dataAwsIamGroup,
@@ -401,9 +400,9 @@ func AwsDataLookup(find string) interface{} {
 		"aws_ssoadmin_instances":                                    dataAwsSsoadminInstances,
 		"aws_ssoadmin_permission_set":                               dataAwsSsoadminPermissionSet,
 		"aws_storagegateway_local_disk":                             placeholder,
-		"aws_subnet":                                                dataAwsSubnetIds,
-		"aws_subnet_ids":                                            dataAwsSubnetIds,
-		"aws_subnets":                                               dataAwsSubnetIds,
+		"aws_subnet":                                                dataAwsSubnetIDs,
+		"aws_subnet_ids":                                            dataAwsSubnetIDs,
+		"aws_subnets":                                               dataAwsSubnetIDs,
 		"aws_transfer_server":                                       dataAwsTransferServer,
 		"aws_vpc":                                                   dataAwsVpc,
 		"aws_vpc_dhcp_options":                                      dataAwsVpcDhcpOptions,
@@ -559,7 +558,7 @@ func AwsDataLookup(find string) interface{} {
 		"aws_batch_job_definition":                                  dataAwsBatchJobDefinition,
 		"aws_cognito_user_group":                                    dataAwsCognitoUserGroup,
 		"aws_cognito_user_groups":                                   dataAwsCognitoUserGroups,
-		"aws_db_parameter_group":                                    dataAwsDbParameterGroup,
+		"aws_db_parameter_group":                                    dataAwsDBParameterGroup,
 		"aws_medialive_input":                                       dataAwsMedialiveInput,
 		"aws_redshift_data_shares":                                  dataAwsRedshiftDataShares,
 		"aws_redshift_producer_data_shares":                         dataAwsRedshiftProducerDataShares,
@@ -579,6 +578,7 @@ func AwsDataLookup(find string) interface{} {
 		"aws_timestreamwrite_database":                              dataAwsTimestreamwriteDatabase,
 		"aws_timestreamwrite_table":                                 dataAwsTimestreamwriteTable,
 		"aws_transfer_connector":                                    dataAwsTransferConnector,
+		"aws_service_principal":                                     placeholder,
 	}
 
 	return TFLookup[find]

@@ -1,7 +1,7 @@
 # todo aws
 
-Resource percentage coverage   55.22
-Datasource percentage coverage 98.71
+Resource percentage coverage   55.18
+Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_amplify_app
 ./resource.ps1 aws_amplify_backend_environment
@@ -572,6 +572,7 @@ Datasource percentage coverage 98.71
 ./resource.ps1 aws_shield_protection
 ./resource.ps1 aws_shield_protection_group
 ./resource.ps1 aws_shield_protection_health_check_association
+./resource.ps1 aws_shield_subscription
 ./resource.ps1 aws_spot_datafeed_subscription
 ./resource.ps1 aws_spot_fleet_request
 ./resource.ps1 aws_ssm_activation
