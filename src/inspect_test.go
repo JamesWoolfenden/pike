@@ -42,14 +42,30 @@ func TestCompareAllow(t *testing.T) {
 		want    PolicyDiff
 		wantErr bool
 	}{
-		{"pass empty",
-			args{identity, policy}, PolicyDiff{}, false},
-		{"pass not empty",
-			args{identity, morePolicy}, PolicyDiff{nil, []string{"s3:*", "s3-object-lambda:*"}}, false},
-		{"pass",
-			args{moreIdentity, morePolicy}, PolicyDiff{}, false},
-		{"different",
-			args{moreIdentity, policy}, PolicyDiff{[]string{"s3:*", "s3-object-lambda:*"}, nil}, false},
+		{
+			"pass empty",
+			args{identity, policy},
+			PolicyDiff{},
+			false,
+		},
+		{
+			"pass not empty",
+			args{identity, morePolicy},
+			PolicyDiff{nil, []string{"s3:*", "s3-object-lambda:*"}},
+			false,
+		},
+		{
+			"pass",
+			args{moreIdentity, morePolicy},
+			PolicyDiff{},
+			false,
+		},
+		{
+			"different",
+			args{moreIdentity, policy},
+			PolicyDiff{[]string{"s3:*", "s3-object-lambda:*"}, nil},
+			false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

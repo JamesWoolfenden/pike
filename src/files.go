@@ -2151,3 +2151,12 @@ var awsOamSink []byte
 
 //go:embed mapping/aws/resource/oam/aws_oam_sink_policy.json
 var awsOamSinkPolicy []byte
+
+//go:embed mapping/aws/resource/amplify/aws_amplify_app.json
+var awsAmplifyApp []byte
+
+//go:embed mapping/aws/resource/amplify/aws_amplify_branch.json
+var awsAmplifyBranch []byte
+
+//go:embed mapping/aws/resource/amplify/aws_amplify_domain_association.json
+var awsAmplifyDomainAssociation []byte

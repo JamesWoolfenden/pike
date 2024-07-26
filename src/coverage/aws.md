@@ -1,12 +1,9 @@
 # todo aws
 
-Resource percentage coverage   55.18
+Resource percentage coverage   55.40
 Datasource percentage coverage 100.00
 
-./resource.ps1 aws_amplify_app
 ./resource.ps1 aws_amplify_backend_environment
-./resource.ps1 aws_amplify_branch
-./resource.ps1 aws_amplify_domain_association
 ./resource.ps1 aws_amplify_webhook
 ./resource.ps1 aws_appconfig_deployment
 ./resource.ps1 aws_appconfig_deployment_strategy

@@ -102,7 +102,6 @@ func DetectBackend(resource ResourceV2, block *hclsyntax.Block, resources []Reso
 func GetResourceBlocks(file string) (*hclsyntax.Body, error) {
 	temp, _ := filepath.Abs(file)
 	src, err := os.ReadFile(temp)
-
 	if err != nil {
 		return nil, fmt.Errorf("failed to read file: %w", err)
 	}

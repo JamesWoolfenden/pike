@@ -1,0 +1,28 @@
+[
+  {
+    "apply": [
+      "amplify:CreateDomainAssociation",
+      "route53:ListHostedZones",
+      "route53:ChangeResourceRecordSets",
+      "iam:PassRole",
+      "amplify:DeleteDomainAssociation",
+      "amplify:ListTagsForResource",
+      "amplify:GetDomainAssociation",
+      "route53:ListHostedZones"
+    ],
+    "attributes": {
+      "tags": [
+        "amplify:TagResource",
+        "amplify:UntagResource"
+      ]
+    },
+    "destroy": [
+      "amplify:DeleteDomainAssociation"
+    ],
+    "modify": [
+      "amplify:UpdateDomainAssociation",
+      "route53:ChangeResourceRecordSets"
+    ],
+    "plan": []
+  }
+]

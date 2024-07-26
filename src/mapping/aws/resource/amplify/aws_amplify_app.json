@@ -1,0 +1,33 @@
+[
+  {
+    "apply": [
+      "amplify:GetApp",
+      "amplify:CreateApp",
+      "amplify:TagResource",
+      "codecommit:GetRepository",
+      "codecommit:PutRepositoryTriggers",
+      "codecommit:GetRepositoryTriggers",
+      "sns:CreateTopic",
+      "sns:Subscribe",
+      "sns:Unsubscribe",
+      "iam:PassRole",
+      "amplify:DeleteApp",
+      "amplify:UpdateApp",
+      "amplify:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "amplify:TagResource",
+        "amplify:UntagResource"
+      ]
+    },
+    "destroy": [
+      "amplify:DeleteApp",
+      "sns:Unsubscribe"
+    ],
+    "modify": [
+      "amplify:UpdateApp"
+    ],
+    "plan": []
+  }
+]

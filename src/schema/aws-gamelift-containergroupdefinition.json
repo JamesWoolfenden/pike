@@ -1,0 +1,452 @@
+{
+  "$schema": "https://schema.cloudformation.us-east-1.amazonaws.com/provider.definition.schema.v1.json",
+  "additionalProperties": false,
+  "createOnlyProperties": [
+    "/properties/Name",
+    "/properties/SchedulingStrategy",
+    "/properties/TotalMemoryLimit",
+    "/properties/TotalCpuLimit",
+    "/properties/ContainerDefinitions",
+    "/properties/OperatingSystem"
+  ],
+  "definitions": {
+    "ContainerDefinition": {
+      "additionalProperties": false,
+      "description": "Details about a container that is used in a container fleet",
+      "properties": {
+        "Command": {
+          "description": "The command that's passed to the container.",
+          "insertionOrder": true,
+          "items": {
+            "maxLength": 255,
+            "minLength": 1,
+            "pattern": "^.*$",
+            "type": "string"
+          },
+          "maxItems": 20,
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": false
+        },
+        "ContainerName": {
+          "description": "A descriptive label for the container definition. Container definition names must be unique with a container group definition.",
+          "maxLength": 128,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9-]+$",
+          "type": "string"
+        },
+        "Cpu": {
+          "description": "The maximum number of CPU units reserved for this container. The value is expressed as an integer amount of CPU units. 1 vCPU is equal to 1024 CPU units",
+          "maximum": 10240,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "DependsOn": {
+          "description": "A list of container dependencies that determines when this container starts up and shuts down. For container groups with multiple containers, dependencies let you define a startup/shutdown sequence across the containers.",
+          "insertionOrder": true,
+          "items": {
+            "$ref": "#/definitions/ContainerDependency"
+          },
+          "maxItems": 10,
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "EntryPoint": {
+          "description": "The entry point that's passed to the container so that it will run as an executable. If there are multiple arguments, each argument is a string in the array.",
+          "insertionOrder": true,
+          "items": {
+            "maxLength": 1024,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 20,
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": false
+        },
+        "Environment": {
+          "description": "The environment variables to pass to a container.",
+          "insertionOrder": false,
+          "items": {
+            "$ref": "#/definitions/ContainerEnvironment"
+          },
+          "maxItems": 20,
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "Essential": {
+          "description": "Specifies if the container is essential. If an essential container fails a health check, then all containers in the container group will be restarted. You must specify exactly 1 essential container in a container group.",
+          "type": "boolean"
+        },
+        "HealthCheck": {
+          "$ref": "#/definitions/ContainerHealthCheck",
+          "description": "Specifies how the health of the containers will be checked."
+        },
+        "ImageUri": {
+          "description": "Specifies the image URI of this container.",
+          "maxLength": 255,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9-_\\.@\\/:]+$",
+          "type": "string"
+        },
+        "MemoryLimits": {
+          "$ref": "#/definitions/MemoryLimits",
+          "description": "Specifies how much memory is available to the container. You must specify at least this parameter or the TotalMemoryLimit parameter of the ContainerGroupDefinition."
+        },
+        "PortConfiguration": {
+          "$ref": "#/definitions/PortConfiguration",
+          "description": "Defines the ports on the container."
+        },
+        "ResolvedImageDigest": {
+          "description": "The digest of the container image.",
+          "pattern": "^sha256:[a-fA-F0-9]{64}$",
+          "type": "string"
+        },
+        "WorkingDirectory": {
+          "description": "The working directory to run commands inside the container in.",
+          "maxLength": 255,
+          "minLength": 1,
+          "pattern": "^.*$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "ContainerName",
+        "ImageUri"
+      ],
+      "type": "object"
+    },
+    "ContainerDependency": {
+      "additionalProperties": false,
+      "description": "A dependency that impacts a container's startup and shutdown.",
+      "properties": {
+        "Condition": {
+          "description": "The type of dependency.",
+          "enum": [
+            "START",
+            "COMPLETE",
+            "SUCCESS",
+            "HEALTHY"
+          ],
+          "type": "string"
+        },
+        "ContainerName": {
+          "description": "A descriptive label for the container definition. The container being defined depends on this container's condition.",
+          "maxLength": 128,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9-]+$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "ContainerName",
+        "Condition"
+      ],
+      "type": "object"
+    },
+    "ContainerEnvironment": {
+      "additionalProperties": false,
+      "description": "An environment variable to set inside a container, in the form of a key-value pair.",
+      "properties": {
+        "Name": {
+          "description": "The environment variable name.",
+          "maxLength": 255,
+          "minLength": 1,
+          "pattern": "^.*$",
+          "type": "string"
+        },
+        "Value": {
+          "description": "The environment variable value.",
+          "maxLength": 255,
+          "minLength": 1,
+          "pattern": "^.*$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "Name",
+        "Value"
+      ],
+      "type": "object"
+    },
+    "ContainerHealthCheck": {
+      "additionalProperties": false,
+      "description": "Specifies how the process manager checks the health of containers.",
+      "properties": {
+        "Command": {
+          "description": "A string array representing the command that the container runs to determine if it is healthy.",
+          "insertionOrder": true,
+          "items": {
+            "maxLength": 255,
+            "minLength": 1,
+            "pattern": "^.*$",
+            "type": "string"
+          },
+          "maxItems": 20,
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": false
+        },
+        "Interval": {
+          "description": "How often (in seconds) the health is checked.",
+          "maximum": 300,
+          "minimum": 60,
+          "type": "integer"
+        },
+        "Retries": {
+          "description": "How many times the process manager will retry the command after a timeout. (The first run of the command does not count as a retry.)",
+          "maximum": 10,
+          "minimum": 5,
+          "type": "integer"
+        },
+        "StartPeriod": {
+          "description": "The optional grace period (in seconds) to give a container time to boostrap before teh health check is declared failed.",
+          "maximum": 300,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "Timeout": {
+          "description": "How many seconds the process manager allows the command to run before canceling it.",
+          "maximum": 60,
+          "minimum": 30,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "Command"
+      ],
+      "type": "object"
+    },
+    "ContainerPortRange": {
+      "additionalProperties": false,
+      "description": "A set of one or more port numbers that can be opened on the container.",
+      "properties": {
+        "FromPort": {
+          "description": "A starting value for the range of allowed port numbers.",
+          "maximum": 60000,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "Protocol": {
+          "description": "Defines the protocol of these ports.",
+          "enum": [
+            "TCP",
+            "UDP"
+          ],
+          "type": "string"
+        },
+        "ToPort": {
+          "description": "An ending value for the range of allowed port numbers. Port numbers are end-inclusive. This value must be equal to or greater than FromPort.",
+          "maximum": 60000,
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "FromPort",
+        "Protocol",
+        "ToPort"
+      ],
+      "type": "object"
+    },
+    "MemoryLimits": {
+      "additionalProperties": false,
+      "description": "Specifies how much memory is available to the container.",
+      "properties": {
+        "HardLimit": {
+          "description": "The hard limit of memory to reserve for the container.",
+          "maximum": 1024000,
+          "minimum": 4,
+          "type": "integer"
+        },
+        "SoftLimit": {
+          "description": "The amount of memory that is reserved for the container.",
+          "maximum": 1024000,
+          "minimum": 4,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "PortConfiguration": {
+      "additionalProperties": false,
+      "description": "Defines the ports on a container.",
+      "properties": {
+        "ContainerPortRanges": {
+          "description": "Specifies one or more ranges of ports on a container.",
+          "insertionOrder": false,
+          "items": {
+            "$ref": "#/definitions/ContainerPortRange"
+          },
+          "maxItems": 100,
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "ContainerPortRanges"
+      ],
+      "type": "object"
+    },
+    "Tag": {
+      "additionalProperties": false,
+      "description": "A key-value pair to associate with a resource.",
+      "properties": {
+        "Key": {
+          "description": "The key name of the tag. You can specify a value that is 1 to 128 Unicode characters in length.",
+          "maxLength": 128,
+          "minLength": 1,
+          "pattern": "^.*$",
+          "type": "string"
+        },
+        "Value": {
+          "description": "The value for the tag. You can specify a value that is 0 to 256 Unicode characters in length.",
+          "maxLength": 256,
+          "minLength": 0,
+          "pattern": "^.*$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "Key",
+        "Value"
+      ],
+      "type": "object"
+    }
+  },
+  "description": "The AWS::GameLift::ContainerGroupDefinition resource creates an Amazon GameLift container group definition.",
+  "handlers": {
+    "create": {
+      "permissions": [
+        "gamelift:CreateContainerGroupDefinition",
+        "gamelift:DescribeContainerGroupDefinition",
+        "gamelift:ListTagsForResource",
+        "gamelift:TagResource",
+        "ecr:BatchCheckLayerAvailability",
+        "ecr:BatchGetImage",
+        "ecr:GetDownloadUrlForLayer",
+        "ecr:DescribeImages"
+      ]
+    },
+    "delete": {
+      "permissions": [
+        "gamelift:DescribeContainerGroupDefinition",
+        "gamelift:DeleteContainerGroupDefinition"
+      ]
+    },
+    "list": {
+      "permissions": [
+        "gamelift:ListContainerGroupDefinitions"
+      ]
+    },
+    "read": {
+      "permissions": [
+        "gamelift:DescribeContainerGroupDefinition",
+        "gamelift:ListTagsForResource"
+      ]
+    },
+    "update": {
+      "permissions": [
+        "gamelift:ListTagsForResource",
+        "gamelift:TagResource",
+        "gamelift:UntagResource"
+      ]
+    }
+  },
+  "primaryIdentifier": [
+    "/properties/Name"
+  ],
+  "properties": {
+    "ContainerDefinitions": {
+      "description": "A collection of container definitions that define the containers in this group.",
+      "insertionOrder": false,
+      "items": {
+        "$ref": "#/definitions/ContainerDefinition"
+      },
+      "maxItems": 10,
+      "minItems": 1,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "ContainerGroupDefinitionArn": {
+      "description": "The Amazon Resource Name (ARN) that is assigned to a Amazon GameLift container group resource and uniquely identifies it across all AWS Regions.",
+      "maxLength": 512,
+      "minLength": 1,
+      "pattern": "^arn:.*:containergroupdefinition/containergroupdefinition-[a-zA-Z0-9-]+$",
+      "type": "string"
+    },
+    "CreationTime": {
+      "description": "A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example \"1469498468.057\").",
+      "type": "string"
+    },
+    "Name": {
+      "description": "A descriptive label for the container group definition.",
+      "maxLength": 128,
+      "minLength": 1,
+      "pattern": "^[a-zA-Z0-9-]+$",
+      "type": "string"
+    },
+    "OperatingSystem": {
+      "description": "The operating system of the container group",
+      "enum": [
+        "AMAZON_LINUX_2023"
+      ],
+      "type": "string"
+    },
+    "SchedulingStrategy": {
+      "description": "Specifies whether the container group includes replica or daemon containers.",
+      "enum": [
+        "REPLICA",
+        "DAEMON"
+      ],
+      "type": "string"
+    },
+    "Tags": {
+      "description": "An array of key-value pairs to apply to this resource.",
+      "insertionOrder": false,
+      "items": {
+        "$ref": "#/definitions/Tag"
+      },
+      "maxItems": 200,
+      "minItems": 0,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "TotalCpuLimit": {
+      "description": "The maximum number of CPU units reserved for this container group. The value is expressed as an integer amount of CPU units. (1 vCPU is equal to 1024 CPU units.)",
+      "maximum": 10240,
+      "minimum": 128,
+      "type": "integer"
+    },
+    "TotalMemoryLimit": {
+      "description": "The maximum amount of memory (in MiB) to allocate for this container group.",
+      "maximum": 1024000,
+      "minimum": 4,
+      "type": "integer"
+    }
+  },
+  "readOnlyProperties": [
+    "/properties/ContainerGroupDefinitionArn",
+    "/properties/CreationTime",
+    "/properties/ContainerDefinitions/*/ResolvedImageDigest"
+  ],
+  "required": [
+    "Name",
+    "TotalMemoryLimit",
+    "TotalCpuLimit",
+    "ContainerDefinitions",
+    "OperatingSystem"
+  ],
+  "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-gamelift.git",
+  "tagging": {
+    "cloudFormationSystemTags": false,
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": true,
+    "taggable": true
+  },
+  "typeName": "AWS::GameLift::ContainerGroupDefinition"
+}

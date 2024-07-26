@@ -136,7 +136,7 @@ func tfPlan(policyPath string) error {
 	}
 
 	outfile := filepath.Join(policyPath, "tf.json")
-	err = os.WriteFile(outfile, stdout, 0666)
+	err = os.WriteFile(outfile, stdout, 0o666)
 
 	if err != nil {
 		return fmt.Errorf("terraform show failed %w", err)

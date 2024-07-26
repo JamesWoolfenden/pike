@@ -4,7 +4,7 @@ import (
 	"github.com/rs/zerolog/log"
 )
 
-//goland:noinspection GoUnusedFunction
+//goland:noinspection GoUnusedFunction,GoLinter
 func main() {
 	log.Printf("aws_sample")
 }

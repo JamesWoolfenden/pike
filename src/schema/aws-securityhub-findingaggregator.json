@@ -1,0 +1,83 @@
+{
+  "additionalProperties": false,
+  "definitions": {
+    "Region": {
+      "pattern": "^[a-zA-Z0-9-]{1,32}$",
+      "type": "string"
+    }
+  },
+  "description": "The AWS::SecurityHub::FindingAggregator resource represents the AWS Security Hub Finding Aggregator in your account. One finding aggregator resource is created for each account in non opt-in region in which you configure region linking mode.",
+  "handlers": {
+    "create": {
+      "permissions": [
+        "securityhub:CreateFindingAggregator"
+      ]
+    },
+    "delete": {
+      "permissions": [
+        "securityhub:DeleteFindingAggregator"
+      ]
+    },
+    "list": {
+      "permissions": [
+        "securityhub:ListFindingAggregators"
+      ]
+    },
+    "read": {
+      "permissions": [
+        "securityhub:GetFindingAggregator"
+      ]
+    },
+    "update": {
+      "permissions": [
+        "securityhub:UpdateFindingAggregator"
+      ]
+    }
+  },
+  "primaryIdentifier": [
+    "/properties/FindingAggregatorArn"
+  ],
+  "properties": {
+    "FindingAggregationRegion": {
+      "$ref": "#/definitions/Region",
+      "description": "The aggregation Region of the FindingAggregator"
+    },
+    "FindingAggregatorArn": {
+      "description": "The ARN of the FindingAggregator being created and assigned as the unique identifier",
+      "pattern": "arn:aws\\S*:securityhub:\\S*",
+      "type": "string"
+    },
+    "RegionLinkingMode": {
+      "description": "Indicates whether to link all Regions, all Regions except for a list of excluded Regions, or a list of included Regions",
+      "enum": [
+        "ALL_REGIONS",
+        "ALL_REGIONS_EXCEPT_SPECIFIED",
+        "SPECIFIED_REGIONS"
+      ],
+      "type": "string"
+    },
+    "Regions": {
+      "description": "The list of excluded Regions or included Regions",
+      "insertionOrder": false,
+      "items": {
+        "$ref": "#/definitions/Region"
+      },
+      "maxItems": 50,
+      "minItems": 1,
+      "type": "array",
+      "uniqueItems": true
+    }
+  },
+  "readOnlyProperties": [
+    "/properties/FindingAggregatorArn",
+    "/properties/FindingAggregationRegion"
+  ],
+  "required": [
+    "RegionLinkingMode"
+  ],
+  "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-securityhub",
+  "tagging": {
+    "taggable": false
+  },
+  "typeName": "AWS::SecurityHub::FindingAggregator"
+}

@@ -55,7 +55,6 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 	)
 
 	if temp := AwsLookup(result.Name); temp != nil {
-
 		Permissions, err = GetPermissionMap(temp.([]byte), result.Attributes, result.Name)
 	} else {
 		return nil, fmt.Errorf("%s not implemented", result.Name)
@@ -837,6 +836,9 @@ func AwsLookup(name string) interface{} {
 		"aws_xray_group":                                           awsXrayGroup,
 		"aws_xray_sampling_rule":                                   awsXraySamplingRule,
 		"backend":                                                  s3backend,
+		"aws_amplify_app":                                          awsAmplifyApp,
+		"aws_amplify_branch":                                       awsAmplifyBranch,
+		"aws_amplify_domain_association":                           awsAmplifyDomainAssociation,
 	}
 
 	return TFLookup[name]
@@ -857,7 +859,6 @@ func Contains(s []string, e string) bool {
 func GetPermissionMap(raw []byte, attributes []string, resource string) ([]string, error) {
 	var mappings []interface{}
 	err := json.Unmarshal(raw, &mappings)
-
 	if err != nil {
 		return nil, fmt.Errorf("failed to unmarshal json %w for %s", err, resource)
 	}
@@ -883,7 +884,6 @@ func GetPermissionMap(raw []byte, attributes []string, resource string) ([]strin
 	for _, attribute := range attributes {
 		if myAttributes[attribute] != nil {
 			for _, entry := range myAttributes[attribute].([]interface{}) {
-
 				found = append(
 					found,
 					entry.(string),

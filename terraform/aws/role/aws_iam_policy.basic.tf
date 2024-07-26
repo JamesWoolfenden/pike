@@ -7,22 +7,7 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          //aws_transfer_connector
-          "transfer:DescribeConnector",
-          //aws_ec2_transit_gateway_peering_attachments
-          "ec2:DescribeTransitGatewayPeeringAttachments",
-          //aws_appstream_image
-          "appstream:DescribeImages",
-          //aws_cloudfront_origin_access_control
-          "cloudfront:GetOriginAccessControl",
-          //aws_cognito_user_pool
-          "cognito-idp:DescribeUserPool",
-          //aws_timestreamwrite_table, aws_timestreamwrite_database
-          "timestream:DescribeEndpoints",
-          //aws_timestreamwrite_table
-          "timestream:DescribeTable",
-          //aws_timestreamwrite_database
-          "timestream:DescribeDatabase"
+          "amplify:CreateApp"
         ],
         "Resource" : "*",
       }

@@ -1,0 +1,786 @@
+{
+  "additionalProperties": false,
+  "createOnlyProperties": [
+    "/properties/Description",
+    "/properties/FlowArn"
+  ],
+  "definitions": {
+    "ConditionFlowNodeConfiguration": {
+      "additionalProperties": false,
+      "description": "Condition flow node configuration",
+      "properties": {
+        "Conditions": {
+          "description": "List of conditions in a condition node",
+          "insertionOrder": true,
+          "items": {
+            "$ref": "#/definitions/FlowCondition"
+          },
+          "maxItems": 5,
+          "minItems": 1,
+          "type": "array"
+        }
+      },
+      "required": [
+        "Conditions"
+      ],
+      "type": "object"
+    },
+    "FlowCondition": {
+      "additionalProperties": false,
+      "description": "Condition branch for a condition node",
+      "properties": {
+        "Expression": {
+          "description": "Expression for a condition in a flow",
+          "maxLength": 64,
+          "minLength": 1,
+          "type": "string"
+        },
+        "Name": {
+          "description": "Name of a condition in a flow",
+          "pattern": "^[a-zA-Z]([_]?[0-9a-zA-Z]){1,50}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "Name"
+      ],
+      "type": "object"
+    },
+    "FlowConditionalConnectionConfiguration": {
+      "additionalProperties": false,
+      "description": "Conditional connection configuration",
+      "properties": {
+        "Condition": {
+          "description": "Name of a condition in a flow",
+          "pattern": "^[a-zA-Z]([_]?[0-9a-zA-Z]){1,50}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "Condition"
+      ],
+      "type": "object"
+    },
+    "FlowConnection": {
+      "additionalProperties": false,
+      "description": "Flow connection",
+      "properties": {
+        "Configuration": {
+          "$ref": "#/definitions/FlowConnectionConfiguration"
+        },
+        "Name": {
+          "description": "Name of a connection in a flow",
+          "pattern": "^[a-zA-Z]([_]?[0-9a-zA-Z]){1,100}$",
+          "type": "string"
+        },
+        "Source": {
+          "description": "Name of a node in a flow",
+          "pattern": "^[a-zA-Z]([_]?[0-9a-zA-Z]){1,50}$",
+          "type": "string"
+        },
+        "Target": {
+          "description": "Name of a node in a flow",
+          "pattern": "^[a-zA-Z]([_]?[0-9a-zA-Z]){1,50}$",
+          "type": "string"
+        },
+        "Type": {
+          "$ref": "#/definitions/FlowConnectionType"
+        }
+      },
+      "required": [
+        "Name",
+        "Source",
+        "Target",
+        "Type"
+      ],
+      "type": "object"
+    },
+    "FlowConnectionConfiguration": {
+      "description": "Connection configuration",
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "Data": {
+              "$ref": "#/definitions/FlowDataConnectionConfiguration"
+            }
+          },
+          "required": [
+            "Data"
+          ],
+          "title": "Data",
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "Conditional": {
+              "$ref": "#/definitions/FlowConditionalConnectionConfiguration"
+            }
+          },
+          "required": [
+            "Conditional"
+          ],
+          "title": "Conditional",
+          "type": "object"
+        }
+      ]
+    },
+    "FlowConnectionType": {
+      "description": "Connection type",
+      "enum": [
+        "Data",
+        "Conditional"
+      ],
+      "type": "string"
+    },
+    "FlowDataConnectionConfiguration": {
+      "additionalProperties": false,
+      "description": "Data connection configuration",
+      "properties": {
+        "SourceOutput": {
+          "description": "Name of a node output in a flow",
+          "pattern": "^[a-zA-Z]([_]?[0-9a-zA-Z]){1,50}$",
+          "type": "string"
+        },
+        "TargetInput": {
+          "description": "Name of a node input in a flow",
+          "pattern": "^[a-zA-Z]([_]?[0-9a-zA-Z]){1,50}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "SourceOutput",
+        "TargetInput"
+      ],
+      "type": "object"
+    },
+    "FlowDefinition": {
+      "additionalProperties": false,
+      "description": "Flow definition",
+      "properties": {
+        "Connections": {
+          "description": "List of connections",
+          "insertionOrder": true,
+          "items": {
+            "$ref": "#/definitions/FlowConnection"
+          },
+          "maxItems": 20,
+          "type": "array"
+        },
+        "Nodes": {
+          "description": "List of nodes in a flow",
+          "insertionOrder": true,
+          "items": {
+            "$ref": "#/definitions/FlowNode"
+          },
+          "maxItems": 20,
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "FlowNode": {
+      "additionalProperties": false,
+      "description": "Internal mixin for flow node",
+      "properties": {
+        "Configuration": {
+          "$ref": "#/definitions/FlowNodeConfiguration"
+        },
+        "Inputs": {
+          "description": "List of node inputs in a flow",
+          "insertionOrder": true,
+          "items": {
+            "$ref": "#/definitions/FlowNodeInput"
+          },
+          "maxItems": 5,
+          "type": "array"
+        },
+        "Name": {
+          "description": "Name of a node in a flow",
+          "pattern": "^[a-zA-Z]([_]?[0-9a-zA-Z]){1,50}$",
+          "type": "string"
+        },
+        "Outputs": {
+          "description": "List of node outputs in a flow",
+          "insertionOrder": true,
+          "items": {
+            "$ref": "#/definitions/FlowNodeOutput"
+          },
+          "maxItems": 5,
+          "type": "array"
+        },
+        "Type": {
+          "$ref": "#/definitions/FlowNodeType"
+        }
+      },
+      "required": [
+        "Name",
+        "Type"
+      ],
+      "type": "object"
+    },
+    "FlowNodeConfiguration": {
+      "description": "Node configuration in a flow",
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "Input": {
+              "$ref": "#/definitions/InputFlowNodeConfiguration"
+            }
+          },
+          "required": [
+            "Input"
+          ],
+          "title": "Input",
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "Output": {
+              "$ref": "#/definitions/OutputFlowNodeConfiguration"
+            }
+          },
+          "required": [
+            "Output"
+          ],
+          "title": "Output",
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "KnowledgeBase": {
+              "$ref": "#/definitions/KnowledgeBaseFlowNodeConfiguration"
+            }
+          },
+          "required": [
+            "KnowledgeBase"
+          ],
+          "title": "KnowledgeBase",
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "Condition": {
+              "$ref": "#/definitions/ConditionFlowNodeConfiguration"
+            }
+          },
+          "required": [
+            "Condition"
+          ],
+          "title": "Condition",
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "Lex": {
+              "$ref": "#/definitions/LexFlowNodeConfiguration"
+            }
+          },
+          "required": [
+            "Lex"
+          ],
+          "title": "Lex",
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "Prompt": {
+              "$ref": "#/definitions/PromptFlowNodeConfiguration"
+            }
+          },
+          "required": [
+            "Prompt"
+          ],
+          "title": "Prompt",
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "LambdaFunction": {
+              "$ref": "#/definitions/LambdaFunctionFlowNodeConfiguration"
+            }
+          },
+          "required": [
+            "LambdaFunction"
+          ],
+          "title": "LambdaFunction",
+          "type": "object"
+        }
+      ]
+    },
+    "FlowNodeIODataType": {
+      "description": "Type of input/output for a node in a flow",
+      "enum": [
+        "String",
+        "Number",
+        "Boolean",
+        "Object",
+        "Array"
+      ],
+      "type": "string"
+    },
+    "FlowNodeInput": {
+      "additionalProperties": false,
+      "description": "Input to a node in a flow",
+      "properties": {
+        "Expression": {
+          "description": "Expression for a node input in a flow",
+          "maxLength": 64,
+          "minLength": 1,
+          "type": "string"
+        },
+        "Name": {
+          "description": "Name of a node input in a flow",
+          "pattern": "^[a-zA-Z]([_]?[0-9a-zA-Z]){1,50}$",
+          "type": "string"
+        },
+        "Type": {
+          "$ref": "#/definitions/FlowNodeIODataType"
+        }
+      },
+      "required": [
+        "Expression",
+        "Name",
+        "Type"
+      ],
+      "type": "object"
+    },
+    "FlowNodeOutput": {
+      "additionalProperties": false,
+      "description": "Output of a node in a flow",
+      "properties": {
+        "Name": {
+          "description": "Name of a node output in a flow",
+          "pattern": "^[a-zA-Z]([_]?[0-9a-zA-Z]){1,50}$",
+          "type": "string"
+        },
+        "Type": {
+          "$ref": "#/definitions/FlowNodeIODataType"
+        }
+      },
+      "required": [
+        "Name",
+        "Type"
+      ],
+      "type": "object"
+    },
+    "FlowNodeType": {
+      "description": "Flow node types",
+      "enum": [
+        "Input",
+        "Output",
+        "KnowledgeBase",
+        "Condition",
+        "Lex",
+        "Prompt",
+        "LambdaFunction"
+      ],
+      "type": "string"
+    },
+    "FlowStatus": {
+      "description": "Schema Type for Flow APIs",
+      "enum": [
+        "Failed",
+        "Prepared",
+        "Preparing",
+        "NotPrepared"
+      ],
+      "type": "string"
+    },
+    "InputFlowNodeConfiguration": {
+      "additionalProperties": false,
+      "description": "Input flow node configuration",
+      "type": "object"
+    },
+    "KnowledgeBaseFlowNodeConfiguration": {
+      "additionalProperties": false,
+      "description": "Knowledge base flow node configuration",
+      "properties": {
+        "KnowledgeBaseId": {
+          "description": "Identifier of the KnowledgeBase",
+          "maxLength": 10,
+          "pattern": "^[0-9a-zA-Z]+$",
+          "type": "string"
+        },
+        "ModelId": {
+          "description": "ARN or name of a Bedrock model.",
+          "maxLength": 2048,
+          "minLength": 1,
+          "pattern": "^arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:(([0-9]{12}:custom-model/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}(([:][a-z0-9-]{1,63}){0,2})?/[a-z0-9]{12})|(:foundation-model/([a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([.]?[a-z0-9-]{1,63})([:][a-z0-9-]{1,63}){0,2})))|(([a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([.]?[a-z0-9-]{1,63})([:][a-z0-9-]{1,63}){0,2}))|(([0-9a-zA-Z][_-]?)+)$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "KnowledgeBaseId"
+      ],
+      "type": "object"
+    },
+    "LambdaFunctionFlowNodeConfiguration": {
+      "additionalProperties": false,
+      "description": "Lambda function flow node configuration",
+      "properties": {
+        "LambdaArn": {
+          "description": "ARN of a Lambda.",
+          "maxLength": 2048,
+          "pattern": "^arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\\d{1}:\\d{12}:function:[a-zA-Z0-9-_\\.]+(:(\\$LATEST|[a-zA-Z0-9-_]+))?$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "LambdaArn"
+      ],
+      "type": "object"
+    },
+    "LexFlowNodeConfiguration": {
+      "additionalProperties": false,
+      "description": "Lex flow node configuration",
+      "properties": {
+        "BotAliasArn": {
+          "description": "ARN of a Lex bot alias",
+          "maxLength": 78,
+          "pattern": "^arn:aws(|-us-gov):lex:[a-z]{2}(-gov)?-[a-z]+-\\d{1}:\\d{12}:bot-alias/[0-9a-zA-Z]+/[0-9a-zA-Z]+$",
+          "type": "string"
+        },
+        "LocaleId": {
+          "description": "Lex bot locale id",
+          "maxLength": 10,
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "BotAliasArn",
+        "LocaleId"
+      ],
+      "type": "object"
+    },
+    "OutputFlowNodeConfiguration": {
+      "additionalProperties": false,
+      "description": "Output flow node configuration",
+      "type": "object"
+    },
+    "PromptFlowNodeConfiguration": {
+      "additionalProperties": false,
+      "description": "Prompt flow node configuration",
+      "properties": {
+        "SourceConfiguration": {
+          "$ref": "#/definitions/PromptFlowNodeSourceConfiguration"
+        }
+      },
+      "required": [
+        "SourceConfiguration"
+      ],
+      "type": "object"
+    },
+    "PromptFlowNodeInlineConfiguration": {
+      "additionalProperties": false,
+      "description": "Inline prompt configuration for prompt node",
+      "properties": {
+        "InferenceConfiguration": {
+          "$ref": "#/definitions/PromptInferenceConfiguration"
+        },
+        "ModelId": {
+          "description": "ARN or name of a Bedrock model.",
+          "maxLength": 2048,
+          "minLength": 1,
+          "pattern": "^(arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:(([0-9]{12}:custom-model/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}/[a-z0-9]{12})|(:foundation-model/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([.:]?[a-z0-9-]{1,63}))|([0-9]{12}:provisioned-model/[a-z0-9]{12})))|([a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([.:]?[a-z0-9-]{1,63}))|(([0-9a-zA-Z][_-]?)+)$",
+          "type": "string"
+        },
+        "TemplateConfiguration": {
+          "$ref": "#/definitions/PromptTemplateConfiguration"
+        },
+        "TemplateType": {
+          "$ref": "#/definitions/PromptTemplateType"
+        }
+      },
+      "required": [
+        "ModelId",
+        "TemplateConfiguration",
+        "TemplateType"
+      ],
+      "type": "object"
+    },
+    "PromptFlowNodeResourceConfiguration": {
+      "additionalProperties": false,
+      "description": "Resource prompt configuration for prompt node",
+      "properties": {
+        "PromptArn": {
+          "description": "ARN of a prompt resource possibly with a version",
+          "pattern": "^(arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:prompt/[0-9a-zA-Z]{10}(?::[0-9]{1,5})?)$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "PromptArn"
+      ],
+      "type": "object"
+    },
+    "PromptFlowNodeSourceConfiguration": {
+      "description": "Prompt source configuration for prompt node",
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "Resource": {
+              "$ref": "#/definitions/PromptFlowNodeResourceConfiguration"
+            }
+          },
+          "required": [
+            "Resource"
+          ],
+          "title": "Resource",
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "Inline": {
+              "$ref": "#/definitions/PromptFlowNodeInlineConfiguration"
+            }
+          },
+          "required": [
+            "Inline"
+          ],
+          "title": "Inline",
+          "type": "object"
+        }
+      ]
+    },
+    "PromptInferenceConfiguration": {
+      "description": "Model inference configuration",
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "Text": {
+              "$ref": "#/definitions/PromptModelInferenceConfiguration"
+            }
+          },
+          "required": [
+            "Text"
+          ],
+          "title": "Text",
+          "type": "object"
+        }
+      ]
+    },
+    "PromptInputVariable": {
+      "additionalProperties": false,
+      "description": "Input variable",
+      "properties": {
+        "Name": {
+          "description": "Name for an input variable",
+          "pattern": "^([0-9a-zA-Z][_-]?){1,100}$",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "PromptModelInferenceConfiguration": {
+      "additionalProperties": false,
+      "description": "Prompt model inference configuration",
+      "properties": {
+        "MaxTokens": {
+          "description": "Maximum length of output",
+          "maximum": 4096,
+          "minimum": 0,
+          "type": "number"
+        },
+        "StopSequences": {
+          "description": "List of stop sequences",
+          "insertionOrder": true,
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 4,
+          "minItems": 0,
+          "type": "array"
+        },
+        "Temperature": {
+          "description": "Controls randomness, higher values increase diversity",
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        },
+        "TopK": {
+          "description": "Sample from the k most likely next tokens",
+          "maximum": 500,
+          "minimum": 0,
+          "type": "number"
+        },
+        "TopP": {
+          "description": "Cumulative probability cutoff for token selection",
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        }
+      },
+      "type": "object"
+    },
+    "PromptTemplateConfiguration": {
+      "description": "Prompt template configuration",
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "Text": {
+              "$ref": "#/definitions/TextPromptTemplateConfiguration"
+            }
+          },
+          "required": [
+            "Text"
+          ],
+          "title": "Text",
+          "type": "object"
+        }
+      ]
+    },
+    "PromptTemplateType": {
+      "description": "Prompt template type",
+      "enum": [
+        "TEXT"
+      ],
+      "type": "string"
+    },
+    "TextPromptTemplateConfiguration": {
+      "additionalProperties": false,
+      "description": "Configuration for text prompt template",
+      "properties": {
+        "InputVariables": {
+          "description": "List of input variables",
+          "insertionOrder": true,
+          "items": {
+            "$ref": "#/definitions/PromptInputVariable"
+          },
+          "maxItems": 5,
+          "minItems": 0,
+          "type": "array"
+        },
+        "Text": {
+          "description": "Prompt content for String prompt template",
+          "maxLength": 200000,
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "Text"
+      ],
+      "type": "object"
+    }
+  },
+  "description": "Definition of AWS::Bedrock::FlowVersion Resource Type",
+  "handlers": {
+    "create": {
+      "permissions": [
+        "bedrock:CreateFlowVersion",
+        "bedrock:GetFlowVersion"
+      ]
+    },
+    "delete": {
+      "permissions": [
+        "bedrock:DeleteFlowVersion",
+        "bedrock:GetFlowVersion"
+      ]
+    },
+    "list": {
+      "handlerSchema": {
+        "properties": {
+          "FlowArn": {
+            "$ref": "resource-schema.json#/properties/FlowArn"
+          }
+        },
+        "required": [
+          "FlowArn"
+        ]
+      },
+      "permissions": [
+        "bedrock:ListFlowVersions"
+      ]
+    },
+    "read": {
+      "permissions": [
+        "bedrock:GetFlowVersion"
+      ]
+    },
+    "update": {
+      "permissions": [
+        "noservice:NoAction"
+      ]
+    }
+  },
+  "primaryIdentifier": [
+    "/properties/FlowArn",
+    "/properties/Version"
+  ],
+  "properties": {
+    "CreatedAt": {
+      "description": "Time Stamp.",
+      "format": "date-time",
+      "type": "string"
+    },
+    "Definition": {
+      "$ref": "#/definitions/FlowDefinition"
+    },
+    "Description": {
+      "description": "Description of the flow version",
+      "maxLength": 200,
+      "minLength": 1,
+      "type": "string"
+    },
+    "ExecutionRoleArn": {
+      "description": "ARN of a IAM role",
+      "maxLength": 2048,
+      "pattern": "^arn:aws(-[^:]+)?:iam::([0-9]{12})?:role/(service-role/)?.+$",
+      "type": "string"
+    },
+    "FlowArn": {
+      "description": "Arn representation of the Flow",
+      "pattern": "^arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:flow/[0-9a-zA-Z]{10}$",
+      "type": "string"
+    },
+    "FlowId": {
+      "description": "Identifier for a Flow",
+      "pattern": "^[0-9a-zA-Z]{10}$",
+      "type": "string"
+    },
+    "Name": {
+      "description": "Name for the flow",
+      "pattern": "^([0-9a-zA-Z][_-]?){1,100}$",
+      "type": "string"
+    },
+    "Status": {
+      "$ref": "#/definitions/FlowStatus"
+    },
+    "Version": {
+      "description": "Numerical Version.",
+      "pattern": "^[0-9]{1,5}$",
+      "type": "string"
+    }
+  },
+  "readOnlyProperties": [
+    "/properties/CreatedAt",
+    "/properties/Definition",
+    "/properties/ExecutionRoleArn",
+    "/properties/FlowId",
+    "/properties/Name",
+    "/properties/Status",
+    "/properties/Version"
+  ],
+  "required": [
+    "FlowArn"
+  ],
+  "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-bedrock-flows",
+  "tagging": {
+    "taggable": false
+  },
+  "typeName": "AWS::Bedrock::FlowVersion"
+}

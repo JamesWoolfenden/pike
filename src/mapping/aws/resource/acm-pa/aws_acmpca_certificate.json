@@ -8,7 +8,9 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
+    "destroy": [
+      "acm-pca:RevokeCertificate"
+    ],
     "modify": [],
     "plan": []
   }

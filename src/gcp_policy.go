@@ -28,7 +28,6 @@ func GCPPolicy(permissions []string) (string, error) {
 	var output bytes.Buffer
 
 	tmpl, err := template.New("test").Parse(string(policyGCPTemplate))
-
 	if err != nil {
 		return "", fmt.Errorf("failed to parse template %w", err)
 	}

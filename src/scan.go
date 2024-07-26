@@ -48,7 +48,6 @@ func Scan(dirName string, output string, file *string, init bool, write bool, en
 func WriteOutput(outPolicy OutputPolicy, output, location string) error {
 	newPath, _ := filepath.Abs(location + "/.pike")
 	err := os.MkdirAll(newPath, os.ModePerm)
-
 	if err != nil {
 		return err
 	}
@@ -188,7 +187,7 @@ func MakePolicy(dirName string, file *string, init bool, EnableResources bool) (
 		files = append(files, myFile)
 	}
 
-	if files == nil || len(files) == 0 {
+	if len(files) == 0 {
 		return Output, &emptyIACError{}
 	}
 

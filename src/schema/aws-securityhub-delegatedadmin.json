@@ -1,0 +1,74 @@
+{
+  "additionalProperties": false,
+  "createOnlyProperties": [
+    "/properties/AdminAccountId"
+  ],
+  "description": "The AWS::SecurityHub::DelegatedAdmin resource represents the AWS Security Hub delegated admin account in your organization. One delegated admin resource is allowed to create for the organization in each region in which you configure the AdminAccountId.",
+  "handlers": {
+    "create": {
+      "permissions": [
+        "securityhub:EnableOrganizationAdminAccount",
+        "organizations:DescribeOrganization",
+        "organizations:EnableAWSServiceAccess",
+        "organizations:RegisterDelegatedAdministrator"
+      ]
+    },
+    "delete": {
+      "permissions": [
+        "securityhub:DisableOrganizationAdminAccount",
+        "organizations:DescribeOrganization"
+      ]
+    },
+    "list": {
+      "permissions": [
+        "securityhub:ListOrganizationAdminAccounts",
+        "organizations:DescribeOrganization"
+      ]
+    },
+    "read": {
+      "permissions": [
+        "securityhub:ListOrganizationAdminAccounts",
+        "organizations:DescribeOrganization"
+      ]
+    }
+  },
+  "primaryIdentifier": [
+    "/properties/DelegatedAdminIdentifier"
+  ],
+  "properties": {
+    "AdminAccountId": {
+      "description": "The Amazon Web Services account identifier of the account to designate as the Security Hub administrator account",
+      "pattern": "^[0-9]{12}$",
+      "type": "string"
+    },
+    "DelegatedAdminIdentifier": {
+      "description": "The identifier of the DelegatedAdmin being created and assigned as the unique identifier",
+      "pattern": "^[0-9]{12}/[a-zA-Z0-9-]{1,32}$",
+      "type": "string"
+    },
+    "Status": {
+      "description": "The current status of the Security Hub administrator account. Indicates whether the account is currently enabled as a Security Hub administrator",
+      "enum": [
+        "ENABLED",
+        "DISABLE_IN_PROGRESS"
+      ],
+      "type": "string"
+    }
+  },
+  "readOnlyProperties": [
+    "/properties/DelegatedAdminIdentifier",
+    "/properties/Status"
+  ],
+  "required": [
+    "AdminAccountId"
+  ],
+  "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-rpdk.git",
+  "tagging": {
+    "cloudFormationSystemTags": false,
+    "tagOnCreate": false,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": false,
+    "taggable": false
+  },
+  "typeName": "AWS::SecurityHub::DelegatedAdmin"
+}

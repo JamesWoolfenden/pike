@@ -118,37 +118,45 @@ func TestGetMatches(t *testing.T) {
 	}
 }
 
-func setup() {
+func setup(cloud string) {
 	log.Println("setup")
 
-	_, _ = git.PlainClone("./terraform-provider-aws", false, &git.CloneOptions{
-		URL:      "https://github.com/hashicorp/terraform-provider-aws",
-		Progress: os.Stdout,
-		Depth:    1,
-	})
-
-	_, _ = git.PlainClone("./terraform-provider-azurerm", false, &git.CloneOptions{
-		URL:      "https://github.com/hashicorp/terraform-provider-azurerm",
-		Progress: os.Stdout,
-		Depth:    1,
-	})
-
-	_, _ = git.PlainClone("./terraform-provider-google", false, &git.CloneOptions{
-		URL:      "https://github.com/hashicorp/terraform-provider-google",
-		Progress: os.Stdout,
-		Depth:    1,
-	})
+	switch cloud {
+	case "aws":
+		_, _ = git.PlainClone("./terraform-provider-aws", false, &git.CloneOptions{
+			URL:      "https://github.com/hashicorp/terraform-provider-aws",
+			Progress: os.Stdout,
+			Depth:    1,
+		})
+	case "azurerm":
+		_, _ = git.PlainClone("./terraform-provider-azurerm", false, &git.CloneOptions{
+			URL:      "https://github.com/hashicorp/terraform-provider-azurerm",
+			Progress: os.Stdout,
+			Depth:    1,
+		})
+	case "google":
+		_, _ = git.PlainClone("./terraform-provider-google", false, &git.CloneOptions{
+			URL:      "https://github.com/hashicorp/terraform-provider-google",
+			Progress: os.Stdout,
+			Depth:    1,
+		})
+	}
 }
 
-func teardown() {
+func teardown(cloud string) {
 	log.Println("teardown")
-	_ = os.RemoveAll("./terraform-provider-aws")
-	_ = os.RemoveAll("./terraform-provider-azurerm")
-	_ = os.RemoveAll("./terraform-provider-google")
+	switch cloud {
+	case "aws":
+		_ = os.RemoveAll("./terraform-provider-aws")
+	case "azurerm":
+		_ = os.RemoveAll("./terraform-provider-azurerm")
+	case "google":
+		_ = os.RemoveAll("./terraform-provider-google")
+	}
+
 }
 
 func TestParse(t *testing.T) {
-	setup()
 
 	type args struct {
 		codebase string
@@ -166,14 +174,15 @@ func TestParse(t *testing.T) {
 	}
 
 	for _, tt := range tests {
+
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
+			setup(tt.args.name)
 			if err := Parse(tt.args.codebase, tt.args.name); (err != nil) != tt.wantErr {
-				teardown()
 				t.Errorf("Parse() error = %v, wantErr %v", err, tt.wantErr)
 			}
-			teardown()
+			teardown(tt.args.name)
 		})
 	}
 }

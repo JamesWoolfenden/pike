@@ -1,0 +1,99 @@
+{
+  "additionalProperties": false,
+  "createOnlyProperties": [
+    "/properties/VpcId"
+  ],
+  "definitions": {
+    "Tag": {
+      "additionalProperties": false,
+      "description": "Specifies a tag. For more information, see [Add tags to a resource](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#cloudformation-add-tag-specifications).",
+      "properties": {
+        "Key": {
+          "description": "The tag key.",
+          "type": "string"
+        },
+        "Value": {
+          "description": "The tag value.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "Value",
+        "Key"
+      ],
+      "type": "object"
+    }
+  },
+  "description": "Specifies a network ACL for your VPC.",
+  "handlers": {
+    "create": {
+      "permissions": [
+        "ec2:CreateNetworkAcl",
+        "ec2:DescribeNetworkAcls",
+        "ec2:CreateTags"
+      ]
+    },
+    "delete": {
+      "permissions": [
+        "ec2:DeleteTags",
+        "ec2:DeleteNetworkAcl",
+        "ec2:DescribeNetworkAcls"
+      ]
+    },
+    "list": {
+      "permissions": [
+        "ec2:DescribeNetworkAcls"
+      ]
+    },
+    "read": {
+      "permissions": [
+        "ec2:DescribeNetworkAcls",
+        "ec2:DescribeTags"
+      ]
+    },
+    "update": {
+      "permissions": [
+        "ec2:DescribeNetworkAcls",
+        "ec2:DeleteTags",
+        "ec2:CreateTags"
+      ]
+    }
+  },
+  "primaryIdentifier": [
+    "/properties/Id"
+  ],
+  "properties": {
+    "Id": {
+      "description": "",
+      "type": "string"
+    },
+    "Tags": {
+      "description": "The tags for the network ACL.",
+      "insertionOrder": false,
+      "items": {
+        "$ref": "#/definitions/Tag"
+      },
+      "type": "array",
+      "uniqueItems": false
+    },
+    "VpcId": {
+      "description": "The ID of the VPC for the network ACL.",
+      "type": "string"
+    }
+  },
+  "readOnlyProperties": [
+    "/properties/Id"
+  ],
+  "required": [
+    "VpcId"
+  ],
+  "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-ec2.git",
+  "tagging": {
+    "cloudFormationSystemTags": true,
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": true,
+    "taggable": true
+  },
+  "typeName": "AWS::EC2::NetworkAcl"
+}

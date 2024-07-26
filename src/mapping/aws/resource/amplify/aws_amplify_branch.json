@@ -1,0 +1,38 @@
+[
+  {
+    "apply": [
+      "amplify:GetBranch",
+      "amplify:CreateBranch",
+      "amplify:TagResource",
+      "codecommit:GetRepository",
+      "codecommit:PutRepositoryTriggers",
+      "codecommit:GetRepositoryTriggers",
+      "s3:GetObject",
+      "s3:GetObjectAcl",
+      "s3:PutObject",
+      "s3:PutObjectAcl",
+      "iam:PassRole",
+      "amplify:DeleteBranch",
+      "amplify:ListTagsForResource",
+      "amplify:UpdateBranch"
+    ],
+    "attributes": {
+      "enable_notifications": [
+        "sns:CreateTopic",
+        "sns:Subscribe",
+        "sns:Unsubscribe"
+      ],
+      "tags": [
+        "amplify:TagResource",
+        "amplify:UntagResource"
+      ]
+    },
+    "destroy": [
+      "amplify:DeleteBranch"
+    ],
+    "modify": [
+      "amplify:UpdateBranch"
+    ],
+    "plan": []
+  }
+]

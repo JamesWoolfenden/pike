@@ -22,19 +22,25 @@ func TestGetGCPPermissions(t *testing.T) {
 	}{
 		{name: "missing", args: args{
 			result: pike.ResourceV2{
-				TypeName: "bogus", Name: "bogus"}}, wantErr: true},
+				TypeName: "bogus", Name: "bogus",
+			},
+		}, wantErr: true},
 		{name: "notype", args: args{
 			result: pike.ResourceV2{
 				TypeName: "bogus", Name: "google_compute_duff", ResourceName: "pike", Provider: "azurerm", Attributes: []string{
 					"name",
 					"machine_type", "zone",
-				}}}, wantErr: true},
+				},
+			},
+		}, wantErr: true},
 		{name: "not implemented", args: args{
 			result: pike.ResourceV2{
 				TypeName: "data", Name: "google_compute_duff", ResourceName: "pike", Provider: "azurerm", Attributes: []string{
 					"name",
 					"machine_type", "zone",
-				}}}, wantErr: true},
+				},
+			},
+		}, wantErr: true},
 		{
 			name: "resource",
 			args: args{

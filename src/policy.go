@@ -185,7 +185,6 @@ func AWSPolicy(permissions []string, resources bool) (AwsOutput, error) {
 	var output bytes.Buffer
 
 	tmpl, err := template.New("test").Parse(string(policyTemplate))
-
 	if err != nil {
 		panic(err)
 	}

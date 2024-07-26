@@ -4,9 +4,13 @@
       "ec2:DescribeAccountAttributes",
       "appconfig:CreateConfigurationProfile",
       "appconfig:GetConfigurationProfile",
-      "appconfig:DeleteConfigurationProfile"
+      "appconfig:DeleteConfigurationProfile",
+      "appconfig:ListTagsForResource"
     ],
     "attributes": {
+      "retrieval_role_arn": [
+        "iam:PassRole"
+      ],
       "tags": [
         "appconfig:TagResource",
         "appconfig:UntagResource"
