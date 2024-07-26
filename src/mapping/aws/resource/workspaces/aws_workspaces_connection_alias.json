@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "workspaces:CreateConnectionAlias",
+      "workspaces:DeleteConnectionAlias",
+      "workspaces:DescribeConnectionAliases"
+    ],
+    "attributes": {
+      "tags": [
+        "workspaces:DeleteTags",
+        "workspaces:CreateTags"
+      ]
+    },
+    "destroy": [
+      "workspaces:DeleteConnectionAlias"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

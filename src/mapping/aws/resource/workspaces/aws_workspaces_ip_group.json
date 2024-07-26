@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "workspaces:CreateIpGroup",
+      "workspaces:DeleteIpGroup",
+      "workspaces:UpdateRulesOfIpGroup"
+    ],
+    "attributes": {
+      "tags": [
+        "workspaces:DeleteTags",
+        "workspaces:CreateTags"
+      ]
+    },
+    "destroy": [
+      "workspaces:DeleteIpGroup"
+    ],
+    "modify": [
+      "workspaces:UpdateRulesOfIpGroup"
+    ],
+    "plan": []
+  }
+]

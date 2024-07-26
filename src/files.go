@@ -2160,3 +2160,9 @@ var awsAmplifyBranch []byte
 
 //go:embed mapping/aws/resource/amplify/aws_amplify_domain_association.json
 var awsAmplifyDomainAssociation []byte
+
+//go:embed mapping/aws/resource/workspaces/aws_workspaces_connection_alias.json
+var awsWorkspacesConnectionAlias []byte
+
+//go:embed mapping/aws/resource/workspaces/aws_workspaces_ip_group.json
+var awsWorkspacesIpGroup []byte

@@ -839,6 +839,8 @@ func AwsLookup(name string) interface{} {
 		"aws_amplify_app":                                          awsAmplifyApp,
 		"aws_amplify_branch":                                       awsAmplifyBranch,
 		"aws_amplify_domain_association":                           awsAmplifyDomainAssociation,
+		"aws_workspaces_connection_alias":                          awsWorkspacesConnectionAlias,
+		"aws_workspaces_ip_group":                                  awsWorkspacesIpGroup,
 	}
 
 	return TFLookup[name]

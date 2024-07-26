@@ -1,6 +1,6 @@
 # todo aws
 
-Resource percentage coverage   55.40
+Resource percentage coverage   55.54
 Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_amplify_backend_environment
@@ -621,5 +621,3 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_wafregional_web_acl_association
 ./resource.ps1 aws_worklink_fleet
 ./resource.ps1 aws_worklink_website_certificate_authority_association
-./resource.ps1 aws_workspaces_connection_alias
-./resource.ps1 aws_workspaces_ip_group
