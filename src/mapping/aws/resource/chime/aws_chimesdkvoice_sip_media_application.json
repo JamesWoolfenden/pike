@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "chime:CreateSipMediaApplication",
+      "chime:GetSipMediaApplication",
+      "chime:DeleteSipMediaApplication",
+      "chime:UpdateSipMediaApplication",
+      "lambda:AddPermission",
+      "lambda:GetPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "chime:DeleteSipMediaApplication"
+    ],
+    "modify": [
+      "chime:UpdateSipMediaApplication"
+    ],
+    "plan": []
+  }
+]

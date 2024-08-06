@@ -1,6 +1,6 @@
 # todo aws
 
-Resource percentage coverage   55.54
+Resource percentage coverage   56.16
 Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_amplify_backend_environment
@@ -57,18 +57,8 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_bedrockagent_agent_knowledge_base_association
 ./resource.ps1 aws_bedrockagent_data_source
 ./resource.ps1 aws_bedrockagent_knowledge_base
-./resource.ps1 aws_chime_voice_connector
-./resource.ps1 aws_chime_voice_connector_group
-./resource.ps1 aws_chime_voice_connector_logging
-./resource.ps1 aws_chime_voice_connector_origination
-./resource.ps1 aws_chime_voice_connector_streaming
-./resource.ps1 aws_chime_voice_connector_termination
-./resource.ps1 aws_chime_voice_connector_termination_credentials
-./resource.ps1 aws_chimesdkmediapipelines_media_insights_pipeline_configuration
-./resource.ps1 aws_chimesdkvoice_global_settings
-./resource.ps1 aws_chimesdkvoice_sip_media_application
-./resource.ps1 aws_chimesdkvoice_sip_rule
-./resource.ps1 aws_chimesdkvoice_voice_profile_domain
+./resource.ps1 aws_chatbot_slack_channel_configuration
+./resource.ps1 aws_chatbot_teams_channel_configuration
 ./resource.ps1 aws_cleanrooms_collaboration
 ./resource.ps1 aws_cleanrooms_configured_table
 ./resource.ps1 aws_cloud9_environment_membership
@@ -100,6 +90,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_customerprofiles_profile
 ./resource.ps1 aws_dataexchange_data_set
 ./resource.ps1 aws_dataexchange_revision
+./resource.ps1 aws_datazone_glossary
 ./resource.ps1 aws_datazone_project
 ./resource.ps1 aws_detective_graph
 ./resource.ps1 aws_detective_invitation_accepter
@@ -144,6 +135,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_dynamodb_table_export
 ./resource.ps1 aws_dynamodb_table_replica
 ./resource.ps1 aws_ebs_fast_snapshot_restore
+./resource.ps1 aws_ebs_snapshot_block_public_access
 ./resource.ps1 aws_ebs_snapshot_import
 ./resource.ps1 aws_ec2_capacity_block_reservation
 ./resource.ps1 aws_ec2_image_block_public_access
@@ -173,6 +165,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_ec2_transit_gateway_policy_table_association
 ./resource.ps1 aws_ec2_transit_gateway_prefix_list_reference
 ./resource.ps1 aws_ec2_transit_gateway_vpc_attachment_accepter
+./resource.ps1 aws_ecr_repository_creation_template
 ./resource.ps1 aws_ecs_account_setting_default
 ./resource.ps1 aws_ecs_capacity_provider
 ./resource.ps1 aws_ecs_cluster_capacity_providers
@@ -591,6 +584,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_ssoadmin_permission_set_inline_policy
 ./resource.ps1 aws_ssoadmin_permissions_boundary_attachment
 ./resource.ps1 aws_ssoadmin_trusted_token_issuer
+./resource.ps1 aws_timestreaminfluxdb_db_instance
 ./resource.ps1 aws_transfer_access
 ./resource.ps1 aws_transfer_agreement
 ./resource.ps1 aws_transfer_certificate

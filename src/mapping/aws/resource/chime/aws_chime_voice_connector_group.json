@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "chime:GetVoiceConnectorGroup",
+      "chime:CreateVoiceConnectorGroup",
+      "chime:DeleteVoiceConnectorGroup",
+      "chime:UpdateVoiceConnectorGroup"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "chime:DeleteVoiceConnectorGroup"
+    ],
+    "modify": [
+      "chime:UpdateVoiceConnectorGroup"
+    ],
+    "plan": []
+  }
+]

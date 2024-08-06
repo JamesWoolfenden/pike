@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "chime:CreateVoiceConnector",
+      "chime:GetVoiceConnector",
+      "chime:DeleteVoiceConnector",
+      "chime:UpdateVoiceConnector",
+      "chime:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "chime:TagResource",
+        "chime:UntagResource"
+      ]
+    },
+    "destroy": [
+      "chime:DeleteVoiceConnector"
+    ],
+    "modify": [
+      "chime:UpdateVoiceConnector"
+    ],
+    "plan": []
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "chime:PutVoiceConnectorLoggingConfiguration",
+      "chime:GetVoiceConnectorLoggingConfiguration"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [
+      "chime:PutVoiceConnectorLoggingConfiguration"
+    ],
+    "plan": []
+  }
+]

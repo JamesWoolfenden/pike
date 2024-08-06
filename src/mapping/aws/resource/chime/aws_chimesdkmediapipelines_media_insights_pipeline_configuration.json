@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "chime:CreateMediaInsightsPipelineConfiguration",
+      "chime:DeleteMediaInsightsPipelineConfiguration",
+      "chime:GetMediaInsightsPipelineConfiguration",
+      "chime:ListMediaInsightsPipelineConfigurations",
+      "chime:UpdateMediaInsightsPipelineConfiguration",
+      "chime:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "chime:TagResource",
+        "chime:UntagResource"
+      ]
+    },
+    "destroy": [
+      "chime:DeleteMediaInsightsPipelineConfiguration"
+    ],
+    "modify": [
+      "chime:UpdateMediaInsightsPipelineConfiguration"
+    ],
+    "plan": []
+  }
+]

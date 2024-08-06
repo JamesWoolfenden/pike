@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "chime:GetVoiceConnectorStreamingConfiguration",
+      "chime:DeleteVoiceConnectorStreamingConfiguration",
+      "chime:PutVoiceConnectorStreamingConfiguration"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "chime:DeleteVoiceConnectorStreamingConfiguration"
+    ],
+    "modify": [
+      "chime:PutVoiceConnectorStreamingConfiguration"
+    ],
+    "plan": []
+  }
+]

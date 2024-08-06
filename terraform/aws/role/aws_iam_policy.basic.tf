@@ -7,7 +7,7 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "amplify:CreateApp"
+          "ecr:DescribeRepositoryCreationTemplates"
         ],
         "Resource" : "*",
       }

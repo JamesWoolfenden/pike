@@ -1470,3 +1470,6 @@ var dataAwsTimestreamwriteTable []byte
 
 //go:embed mapping/aws/data/transfer/aws_transfer_connector.json
 var dataAwsTransferConnector []byte
+
+//go:embed mapping/aws/data/ecr/aws_ecr_repository_creation_template.json
+var dataAwsEcrRepositoryCreationTemplate []byte

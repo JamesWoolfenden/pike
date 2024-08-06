@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "chime:UpdateGlobalSettings",
+      "chime:GetGlobalSettings"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

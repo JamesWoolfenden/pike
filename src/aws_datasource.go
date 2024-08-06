@@ -579,6 +579,7 @@ func AwsDataLookup(find string) interface{} { //nolint:maintidx
 		"aws_timestreamwrite_table":                                 dataAwsTimestreamwriteTable,
 		"aws_transfer_connector":                                    dataAwsTransferConnector,
 		"aws_service_principal":                                     placeholder,
+		"aws_ecr_repository_creation_template":                      dataAwsEcrRepositoryCreationTemplate,
 	}
 
 	return TFLookup[find]

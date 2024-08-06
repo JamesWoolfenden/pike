@@ -2166,3 +2166,39 @@ var awsWorkspacesConnectionAlias []byte
 
 //go:embed mapping/aws/resource/workspaces/aws_workspaces_ip_group.json
 var awsWorkspacesIpGroup []byte
+
+//go:embed mapping/aws/resource/chime/aws_chime_voice_connector.json
+var awsChimeVoiceConnector []byte
+
+//go:embed mapping/aws/resource/chime/aws_chime_voice_connector_group.json
+var awsChimeVoiceConnectorGroup []byte
+
+//go:embed mapping/aws/resource/chime/aws_chime_voice_connector_logging.json
+var awsChimeVoiceConnectorLogging []byte
+
+//go:embed mapping/aws/resource/chime/aws_chime_voice_connector_origination.json
+var awsChimeVoiceConnectorOrigination []byte
+
+//go:embed mapping/aws/resource/chime/aws_chime_voice_connector_streaming.json
+var awsChimeVoiceConnectorStreaming []byte
+
+//go:embed mapping/aws/resource/chime/aws_chime_voice_connector_termination.json
+var awsChimeVoiceConnectorTermination []byte
+
+//go:embed mapping/aws/resource/chime/aws_chime_voice_connector_termination_credentials.json
+var awsChimeVoiceConnectorTerminationCredentials []byte
+
+//go:embed mapping/aws/resource/chime/aws_chimesdkmediapipelines_media_insights_pipeline_configuration.json
+var awsChimesdkmediapipelinesMediaInsightsPipelineConfiguration []byte
+
+//go:embed mapping/aws/resource/chime/aws_chimesdkvoice_global_settings.json
+var awsChimesdkvoiceGlobalSettings []byte
+
+//go:embed mapping/aws/resource/chime/aws_chimesdkvoice_sip_media_application.json
+var awsChimesdkvoiceSipMediaApplication []byte
+
+//go:embed mapping/aws/resource/chime/aws_chimesdkvoice_sip_rule.json
+var awsChimesdkvoiceSipRule []byte
+
+//go:embed mapping/aws/resource/chime/aws_chimesdkvoice_voice_profile_domain.json
+var awsChimesdkvoiceVoiceProfileDomain []byte

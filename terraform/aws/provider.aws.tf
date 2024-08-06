@@ -16,6 +16,13 @@ provider "aws" {
 }
 
 provider "aws" {
+  alias   = "uswest2"
+  region  = "us-west-2"
+  profile = "basic"
+}
+
+
+provider "aws" {
   alias   = "eire"
   region  = "eu-west-1"
   profile = "basic"

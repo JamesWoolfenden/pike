@@ -4,9 +4,22 @@
       "ec2:DescribeAccountAttributes",
       "lambda:CreateFunction",
       "iam:PassRole",
-      "lambda:GetFunctionCodeSigningConfig"
+      "lambda:GetFunctionCodeSigningConfig",
+      "lambda:DeleteFunction",
+      "ec2:DescribeNetworkInterfaces"
     ],
     "attributes": {
+      "code_signing_config_arn": [
+        "lambda:GetCodeSigningConfig"
+      ],
+      "s3_bucket": [
+        "s3:GetObject",
+        "s3:GetObjectVersion"
+      ],
+      "security_group_ids": [
+        "ec2:DescribeSecurityGroups"
+      ],
+      "subnet_ids": [],
       "tags": [
         "lambda:TagResource",
         "lambda:UntagResource"
@@ -19,6 +32,9 @@
       "lambda:GetFunction",
       "lambda:ListVersionsByFunction"
     ],
-    "plan": []
+    "plan": [
+      "lambda:GetFunction",
+      "lambda:GetFunctionCodeSigningConfig"
+    ]
   }
 ]

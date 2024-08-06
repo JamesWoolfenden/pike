@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "chime:GetVoiceConnectorOrigination",
+      "chime:DeleteVoiceConnectorOrigination",
+      "chime:PutVoiceConnectorOrigination"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "chime:DeleteVoiceConnectorOrigination"
+    ],
+    "modify": [
+      "chime:PutVoiceConnectorOrigination"
+    ],
+    "plan": []
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "chime:CreateVoiceProfileDomain",
+      "chime:GetVoiceProfileDomain",
+      "chime:DeleteVoiceProfileDomain",
+      "chime:UpdateVoiceProfileDomain"
+    ],
+    "attributes": {
+      "tags": [
+        "chime:TagResource",
+        "chime:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
