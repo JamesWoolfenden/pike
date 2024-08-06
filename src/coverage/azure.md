@@ -1,6 +1,6 @@
 # todo azure
 
-Resource percentage coverage   4.86
+Resource percentage coverage   4.85
 Datasource percentage coverage 37.84
 
 ./resource.ps1 azurerm_aadb2c_directory
@@ -314,6 +314,7 @@ Datasource percentage coverage 37.84
 ./resource.ps1 azurerm_dev_center_dev_box_definition
 ./resource.ps1 azurerm_dev_center_environment_type
 ./resource.ps1 azurerm_dev_center_gallery
+./resource.ps1 azurerm_dev_center_network_connection
 ./resource.ps1 azurerm_dev_center_project
 ./resource.ps1 azurerm_digital_twins_endpoint_eventgrid
 ./resource.ps1 azurerm_digital_twins_endpoint_eventhub
