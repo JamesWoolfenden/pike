@@ -2202,3 +2202,24 @@ var awsChimesdkvoiceSipRule []byte
 
 //go:embed mapping/aws/resource/chime/aws_chimesdkvoice_voice_profile_domain.json
 var awsChimesdkvoiceVoiceProfileDomain []byte
+
+//go:embed mapping/aws/resource/appconfig/aws_appconfig_environment.json
+var awsAppconfigEnvironment []byte
+
+//go:embed mapping/aws/resource/appconfig/aws_appconfig_extension.json
+var awsAppconfigExtension []byte
+
+//go:embed mapping/aws/resource/appconfig/aws_appconfig_extension_association.json
+var awsAppconfigExtensionAssociation []byte
+
+//go:embed mapping/aws/resource/bedrock/aws_bedrockagent_data_source.json
+var awsBedrockagentDatasource []byte
+
+//go:embed mapping/aws/resource/bedrock/aws_bedrockagent_knowledge_base.json
+var awsBedrockagentKnowledgeBase []byte
+
+//go:embed mapping/aws/resource/cleanrooms/aws_cleanrooms_collaboration.json
+var awsCleanroomsCollaboration []byte
+
+//go:embed mapping/aws/resource/cleanrooms/aws_cleanrooms_configured_table.json
+var awsCleanroomsConfiguredTable []byte

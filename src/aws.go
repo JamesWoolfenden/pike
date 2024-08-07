@@ -853,6 +853,13 @@ func AwsLookup(name string) interface{} {
 		"aws_chimesdkvoice_sip_media_application":                          awsChimesdkvoiceSipMediaApplication,
 		"aws_chimesdkvoice_sip_rule":                                       awsChimesdkvoiceSipRule,
 		"aws_chimesdkvoice_voice_profile_domain":                           awsChimesdkvoiceVoiceProfileDomain,
+		"aws_appconfig_environment":                                        awsAppconfigEnvironment,
+		"aws_appconfig_extension":                                          awsAppconfigExtension,
+		"aws_appconfig_extension_association":                              awsAppconfigExtensionAssociation,
+		"aws_bedrockagent_data_source":                                     awsBedrockagentDatasource,
+		"aws_bedrockagent_knowledge_base":                                  awsBedrockagentKnowledgeBase,
+		"aws_cleanrooms_collaboration":                                     awsCleanroomsCollaboration,
+		"aws_cleanrooms_configured_table":                                  awsCleanroomsConfiguredTable,
 	}
 
 	return TFLookup[name]

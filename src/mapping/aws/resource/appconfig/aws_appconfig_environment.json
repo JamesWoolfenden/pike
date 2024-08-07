@@ -1,0 +1,28 @@
+[
+  {
+    "apply": [
+      "appconfig:CreateEnvironment",
+      "appconfig:DeleteEnvironment",
+      "appconfig:GetEnvironment",
+      "appconfig:UpdateEnvironment",
+      "appconfig:ListTagsForResource",
+      "iam:PassRole"
+    ],
+    "attributes": {
+      "tags": [
+        "appconfig:TagResource",
+        "appconfig:UntagResource"
+      ]
+    },
+    "destroy": [
+      "appconfig:DeleteEnvironment"
+    ],
+    "modify": [
+      "appconfig:UpdateEnvironment",
+      "iam:PassRole"
+    ],
+    "plan": [
+      "appconfig:GetEnvironment"
+    ]
+  }
+]

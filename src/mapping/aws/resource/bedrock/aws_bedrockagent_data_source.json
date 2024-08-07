@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "bedrock:CreateDataSource",
+      "bedrock:GetDataSource",
+      "bedrock:GetKnowledgeBase",
+      "bedrock:UpdateDataSource",
+      "bedrock:DeleteDataSource"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "bedrock:DeleteDataSource"
+    ],
+    "modify": [
+      "bedrock:UpdateDataSource"
+    ],
+    "plan": [
+      "bedrock:GetDataSource"
+    ]
+  }
+]

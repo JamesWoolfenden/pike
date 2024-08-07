@@ -7,9 +7,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_amplify_webhook
 ./resource.ps1 aws_appconfig_deployment
 ./resource.ps1 aws_appconfig_deployment_strategy
-./resource.ps1 aws_appconfig_environment
-./resource.ps1 aws_appconfig_extension
-./resource.ps1 aws_appconfig_extension_association
 ./resource.ps1 aws_appconfig_hosted_configuration_version
 ./resource.ps1 aws_appfabric_app_authorization
 ./resource.ps1 aws_appfabric_app_authorization_connection
@@ -55,12 +52,8 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_athena_prepared_statement
 ./resource.ps1 aws_bcmdataexports_export
 ./resource.ps1 aws_bedrockagent_agent_knowledge_base_association
-./resource.ps1 aws_bedrockagent_data_source
-./resource.ps1 aws_bedrockagent_knowledge_base
 ./resource.ps1 aws_chatbot_slack_channel_configuration
 ./resource.ps1 aws_chatbot_teams_channel_configuration
-./resource.ps1 aws_cleanrooms_collaboration
-./resource.ps1 aws_cleanrooms_configured_table
 ./resource.ps1 aws_cloud9_environment_membership
 ./resource.ps1 aws_cloudcontrolapi_resource
 ./resource.ps1 aws_cloudfront_key_value_store

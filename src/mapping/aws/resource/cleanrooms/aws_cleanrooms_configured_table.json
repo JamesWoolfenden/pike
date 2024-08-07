@@ -1,0 +1,42 @@
+[
+  {
+    "apply": [
+      "cleanrooms:CreateConfiguredTable",
+      "cleanrooms:DeleteConfiguredTable",
+      "cleanrooms:DeleteConfiguredTableAnalysisRule",
+      "cleanrooms:CreateConfiguredTableAnalysisRule",
+      "cleanrooms:GetConfiguredTable",
+      "cleanrooms:GetConfiguredTableAnalysisRule",
+      "glue:GetDatabase",
+      "glue:GetDatabases",
+      "glue:GetTable",
+      "glue:GetTables",
+      "glue:GetPartition",
+      "glue:GetPartitions",
+      "glue:BatchGetPartition",
+      "glue:GetSchemaVersion",
+      "cleanrooms:ListTagsForResource",
+      "cleanrooms:ListConfiguredTables",
+      "cleanrooms:UpdateConfiguredTable",
+      "cleanrooms:UpdateConfiguredTableAnalysisRule"
+    ],
+    "attributes": {
+      "tags": [
+        "cleanrooms:TagResource",
+        "cleanrooms:UntagResource"
+      ]
+    },
+    "destroy": [
+      "cleanrooms:DeleteConfiguredTable"
+    ],
+    "modify": [
+      "cleanrooms:UpdateConfiguredTable",
+      "cleanrooms:UpdateConfiguredTableAnalysisRule"
+    ],
+    "plan": [
+      "cleanrooms:GetConfiguredTable",
+      "cleanrooms:GetConfiguredTableAnalysisRule",
+      "cleanrooms:ListTagsForResource"
+    ]
+  }
+]

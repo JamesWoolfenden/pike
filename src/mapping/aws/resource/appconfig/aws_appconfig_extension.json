@@ -1,0 +1,26 @@
+[
+  {
+    "apply": [
+      "appconfig:CreateExtension",
+      "appconfig:DeleteExtension",
+      "appconfig:UpdateExtension",
+      "appconfig:GetExtension",
+      "iam:PassRole"
+    ],
+    "attributes": {
+      "tags": [
+        "appconfig:TagResource",
+        "appconfig:UntagResource"
+      ]
+    },
+    "destroy": [
+      "appconfig:DeleteExtension"
+    ],
+    "modify": [
+      "appconfig:UpdateExtension"
+    ],
+    "plan": [
+      "appconfig:GetExtension"
+    ]
+  }
+]

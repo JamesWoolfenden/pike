@@ -1,0 +1,29 @@
+[
+  {
+    "apply": [
+      "cleanrooms:CreateCollaboration",
+      "cleanrooms:GetCollaboration",
+      "cleanrooms:ListMembers",
+      "cleanrooms:ListTagsForResource",
+      "cleanrooms:GetCollaboration",
+      "cleanrooms:ListCollaborations",
+      "cleanrooms:DeleteCollaboration",
+      "cleanrooms:UpdateCollaboration"
+    ],
+    "attributes": {
+      "tags": [
+        "cleanrooms:TagResource",
+        "cleanrooms:UntagResource"
+      ]
+    },
+    "destroy": [
+      "cleanrooms:DeleteCollaboration"
+    ],
+    "modify": [
+      "cleanrooms:UpdateCollaboration"
+    ],
+    "plan": [
+      "cleanrooms:GetCollaboration"
+    ]
+  }
+]

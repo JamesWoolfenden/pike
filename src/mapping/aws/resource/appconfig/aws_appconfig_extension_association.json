@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "appconfig:CreateExtensionAssociation",
+      "appconfig:DeleteExtensionAssociation",
+      "appconfig:GetExtensionAssociation",
+      "appconfig:UpdateExtensionAssociation"
+    ],
+    "attributes": {
+      "tags": [
+        "appconfig:TagResource",
+        "appconfig:UntagResource"
+      ]
+    },
+    "destroy": [
+      "appconfig:DeleteExtensionAssociation"
+    ],
+    "modify": [
+      "appconfig:UpdateExtensionAssociation"
+    ],
+    "plan": [
+      "appconfig:GetExtensionAssociation"
+    ]
+  }
+]
