@@ -729,6 +729,7 @@
         "azurerm_postgresql_flexible_server_configuration",
         "azurerm_postgresql_flexible_server_database",
         "azurerm_postgresql_flexible_server_firewall_rule",
+        "azurerm_postgresql_flexible_server_virtual_endpoint",
         "azurerm_postgresql_server",
         "azurerm_postgresql_server_key",
         "azurerm_postgresql_virtual_network_rule",
