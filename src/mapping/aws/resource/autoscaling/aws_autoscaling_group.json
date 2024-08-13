@@ -15,7 +15,10 @@
     },
     "destroy": [
       "autoscaling:UpdateAutoScalingGroup",
-      "autoscaling:DeleteAutoScalingGroup"
+      "autoscaling:DeleteAutoScalingGroup",
+      "autoscaling:Describe*",
+      "managed-fleets:Get*",
+      "managed-fleets:DeleteAutoScalingGroup"
     ],
     "modify": [],
     "plan": []

@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeVpnConnections",
+      "ec2:CreateVpnConnectionRoute",
+      "ec2:DeleteVpnConnectionRoute"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "ec2:DeleteVpnConnectionRoute"
+    ],
+    "modify": [],
+    "plan": [
+      "ec2:DescribeVpnConnections"
+    ]
+  }
+]

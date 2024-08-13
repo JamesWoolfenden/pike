@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "appsync:AssociateApi",
+      "appsync:GetApiAssociation",
+      "appsync:DisassociateApi"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "appsync:DisassociateApi"
+    ],
+    "modify": [
+      "appsync:AssociateApi"
+    ],
+    "plan": []
+  }
+]

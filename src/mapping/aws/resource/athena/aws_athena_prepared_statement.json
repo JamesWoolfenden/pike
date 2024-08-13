@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "athena:CreatePreparedStatement",
+      "athena:GetPreparedStatement",
+      "athena:DeletePreparedStatement",
+      "athena:UpdatePreparedStatement"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "athena:DeletePreparedStatement"
+    ],
+    "modify": [
+      "athena:UpdatePreparedStatement"
+    ],
+    "plan": [
+      "athena:GetPreparedStatement"
+    ]
+  }
+]

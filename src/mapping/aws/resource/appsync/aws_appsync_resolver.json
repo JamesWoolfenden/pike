@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "s3:GetObject",
+      "appsync:CreateResolver",
+      "appsync:GetResolver",
+      "appsync:DeleteResolver",
+      "appsync:UpdateResolver"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "appsync:DeleteResolver"
+    ],
+    "modify": [
+      "appsync:UpdateResolver"
+    ],
+    "plan": [
+      "appsync:GetResolver"
+    ]
+  }
+]

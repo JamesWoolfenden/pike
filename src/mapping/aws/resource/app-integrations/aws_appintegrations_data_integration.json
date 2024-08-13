@@ -1,0 +1,44 @@
+[
+  {
+    "apply": [
+      "app-integrations:CreateDataIntegration",
+      "appflow:DescribeConnectorProfiles",
+      "appflow:CreateFlow",
+      "appflow:DeleteFlow",
+      "appflow:DescribeConnectorEntity",
+      "appflow:UseConnectorProfile",
+      "kms:CreateGrant",
+      "kms:DescribeKey",
+      "kms:ListAliases",
+      "kms:ListGrants",
+      "kms:ListKeys",
+      "s3:GetBucketNotification",
+      "s3:PutBucketNotification",
+      "s3:GetEncryptionConfiguration",
+      "app-integrations:GetDataIntegration",
+      "app-integrations:UpdateDataIntegration",
+      "app-integrations:DeleteDataIntegration",
+      "appflow:DeleteFlow"
+    ],
+    "attributes": {
+      "tags": [
+        "appflow:TagResource",
+        "appflow:UntagResource",
+        "app-integrations:TagResource",
+        "app-integrations:UntagResource"
+      ]
+    },
+    "destroy": [
+      "app-integrations:DeleteDataIntegration",
+      "appflow:DeleteFlow"
+    ],
+    "modify": [
+      "app-integrations:GetDataIntegration",
+      "app-integrations:UpdateDataIntegration"
+    ],
+    "plan": [
+      "app-integrations:GetDataIntegration",
+      "app-integrations:ListTagsForResource"
+    ]
+  }
+]

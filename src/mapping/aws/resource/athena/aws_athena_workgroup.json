@@ -8,6 +8,21 @@
       "athena:DeleteWorkGroup"
     ],
     "attributes": {
+      "encryption_configuration": [
+        "kms:Decrypt",
+        "kms:GenerateDataKey"
+      ],
+      "execution_role": [
+        "iam:PassRole"
+      ],
+      "result_configuration": [
+        "s3:GetObject",
+        "s3:ListBucket",
+        "s3:ListBucketMultipartUploads",
+        "s3:AbortMultipartUpload",
+        "s3:PutObject",
+        "s3:ListMultipartUploadParts"
+      ],
       "tags": [
         "athena:TagResource",
         "athena:UntagResource"

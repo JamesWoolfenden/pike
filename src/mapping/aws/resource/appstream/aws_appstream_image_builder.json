@@ -1,0 +1,28 @@
+[
+  {
+    "apply": [
+      "appstream:CreateImageBuilder",
+      "appstream:CreateImageBuilderStreamingURL",
+      "appstream:CreateStreamingURL",
+      "appstream:DeleteImageBuilder",
+      "appstream:DescribeImageBuilders",
+      "appstream:StartImageBuilder",
+      "appstream:StopImageBuilder",
+      "iam:CreateServiceLinkedRole",
+      "iam:DeleteServiceLinkedRole",
+      "iam:GetServiceLinkedRoleDeletionStatus"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "appstream:DeleteImageBuilder",
+      "iam:DeleteServiceLinkedRole",
+      "iam:GetServiceLinkedRoleDeletionStatus"
+    ],
+    "modify": [],
+    "plan": [
+      "appstream:DescribeImageBuilders"
+    ]
+  }
+]

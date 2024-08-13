@@ -1,0 +1,28 @@
+[
+  {
+    "apply": [
+      "apprunner:CreateVpcIngressConnection",
+      "apprunner:DescribeVpcIngressConnection",
+      "ec2:DescribeVpcs",
+      "ec2:DescribeVpcEndpoints",
+      "ec2:DescribeSubnets",
+      "apprunner:UpdateVpcIngressConnection",
+      "apprunner:DeleteVpcIngressConnection"
+    ],
+    "attributes": {
+      "tags": [
+        "apprunner:TagResource",
+        "apprunner:UntagResource"
+      ]
+    },
+    "destroy": [
+      "apprunner:DeleteVpcIngressConnection"
+    ],
+    "modify": [
+      "apprunner:UpdateVpcIngressConnection"
+    ],
+    "plan": [
+      "apprunner:DescribeVpcIngressConnection"
+    ]
+  }
+]

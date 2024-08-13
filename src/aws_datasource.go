@@ -580,6 +580,8 @@ func AwsDataLookup(find string) interface{} { //nolint:maintidx
 		"aws_transfer_connector":                                    dataAwsTransferConnector,
 		"aws_service_principal":                                     placeholder,
 		"aws_ecr_repository_creation_template":                      dataAwsEcrRepositoryCreationTemplate,
+		"aws_rds_cluster_parameter_group":                           dataAwsRdsClusterParameterGroup,
+		"aws_secretsmanager_secret_versions":                        dataAwsSecretsmanagerSecretVersions,
 	}
 
 	return TFLookup[find]

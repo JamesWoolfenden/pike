@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "s3:GetObject",
+      "appsync:CreateFunction",
+      "appsync:DeleteFunction",
+      "appsync:GetFunction",
+      "appsync:UpdateFunction"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "appsync:DeleteFunction"
+    ],
+    "modify": [
+      "appsync:UpdateFunction"
+    ],
+    "plan": [
+      "appsync:GetFunction"
+    ]
+  }
+]

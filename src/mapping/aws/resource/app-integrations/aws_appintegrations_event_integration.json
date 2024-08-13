@@ -1,0 +1,28 @@
+[
+  {
+    "apply": [
+      "app-integrations:CreateEventIntegration",
+      "app-integrations:DeleteEventIntegration",
+      "app-integrations:GetEventIntegration",
+      "app-integrations:ListTagsForResource",
+      "app-integrations:UpdateEventIntegration"
+    ],
+    "attributes": {
+      "tags": [
+        "app-integrations:TagResource",
+        "app-integrations:UntagResource"
+      ]
+    },
+    "destroy": [
+      "app-integrations:DeleteEventIntegration"
+    ],
+    "modify": [
+      "app-integrations:GetEventIntegration",
+      "app-integrations:UpdateEventIntegration"
+    ],
+    "plan": [
+      "app-integrations:GetEventIntegration",
+      "app-integrations:ListTagsForResource"
+    ]
+  }
+]

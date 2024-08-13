@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "apprunner:CreateObservabilityConfiguration",
+      "apprunner:DescribeObservabilityConfiguration",
+      "apprunner:DeleteObservabilityConfiguration"
+    ],
+    "attributes": {
+      "tags": [
+        "apprunner:TagResource",
+        "apprunner:UntagResource"
+      ]
+    },
+    "destroy": [
+      "apprunner:DeleteObservabilityConfiguration"
+    ],
+    "modify": [],
+    "plan": [
+      "apprunner:DescribeObservabilityConfiguration"
+    ]
+  }
+]

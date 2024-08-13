@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "appconfig:CreateHostedConfigurationVersion",
+      "appconfig:DeleteHostedConfigurationVersion",
+      "appconfig:GetHostedConfigurationVersion"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "appconfig:DeleteHostedConfigurationVersion"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

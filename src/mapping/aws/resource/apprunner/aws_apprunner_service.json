@@ -1,0 +1,34 @@
+[
+  {
+    "apply": [
+      "apprunner:CreateService",
+      "iam:PassRole",
+      "iam:CreateServiceLinkedRole",
+      "logs:CreateLogGroup",
+      "logs:PutRetentionPolicy",
+      "logs:CreateLogStream",
+      "logs:PutLogEvents",
+      "logs:DescribeLogStreams",
+      "events:PutRule",
+      "events:PutTargets",
+      "apprunner:DeleteService",
+      "apprunner:DescribeService",
+      "apprunner:UpdateService"
+    ],
+    "attributes": {
+      "tags": [
+        "apprunner:TagRespource",
+        "apprunner:UntagResource"
+      ]
+    },
+    "destroy": [
+      "apprunner:DeleteService"
+    ],
+    "modify": [
+      "apprunner:UpdateService"
+    ],
+    "plan": [
+      "apprunner:DescribeService"
+    ]
+  }
+]

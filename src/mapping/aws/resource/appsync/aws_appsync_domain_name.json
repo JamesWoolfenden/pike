@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "appsync:CreateDomainName",
+      "appsync:GetDomainName",
+      "acm:DescribeCertificate",
+      "cloudfront:UpdateDistribution",
+      "appsync:UpdateDomainName",
+      "appsync:DeleteDomainName"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "appsync:DeleteDomainName"
+    ],
+    "modify": [
+      "appsync:UpdateDomainName"
+    ],
+    "plan": [
+      "appsync:GetDomainName"
+    ]
+  }
+]

@@ -3,9 +3,9 @@
     "apply": [
       "athena:CreateDataCatalog",
       "athena:DeleteDataCatalog",
-      "ec2:DescribeAccountAttributes",
       "athena:GetDataCatalog",
-      "athena:ListTagsForResource"
+      "athena:ListTagsForResource",
+      "athena:UpdateDataCatalog"
     ],
     "attributes": {
       "tags": [
@@ -19,6 +19,9 @@
     "modify": [
       "athena:UpdateDataCatalog"
     ],
-    "plan": []
+    "plan": [
+      "athena:GetDataCatalog",
+      "athena:ListTagsForResource"
+    ]
   }
 ]

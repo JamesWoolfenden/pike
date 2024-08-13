@@ -1,0 +1,33 @@
+[
+  {
+    "apply": [
+      "appflow:CreateConnectorProfile",
+      "iam:PassRole",
+      "secretsmanager:CreateSecret",
+      "secretsmanager:GetSecretValue",
+      "secretsmanager:PutResourcePolicy",
+      "appflow:DeleteConnectorProfile",
+      "appflow:DescribeConnectorProfiles",
+      "appflow:UpdateConnectorProfile"
+    ],
+    "attributes": {
+      "kms_arn": [
+        "kms:ListKeys",
+        "kms:DescribeKey",
+        "kms:ListAliases",
+        "kms:CreateGrant",
+        "kms:ListGrants"
+      ],
+      "tags": []
+    },
+    "destroy": [
+      "appflow:DeleteConnectorProfile"
+    ],
+    "modify": [
+      "appflow:UpdateConnectorProfile"
+    ],
+    "plan": [
+      "appflow:DescribeConnectorProfiles"
+    ]
+  }
+]

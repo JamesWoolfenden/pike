@@ -2223,3 +2223,54 @@ var awsCleanroomsCollaboration []byte
 
 //go:embed mapping/aws/resource/cleanrooms/aws_cleanrooms_configured_table.json
 var awsCleanroomsConfiguredTable []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpn_connection_route.json
+var awsVpnConnectionRoute []byte
+
+//go:embed mapping/aws/resource/appconfig/aws_appconfig_hosted_configuration_version.json
+var awsAppconfigHostedConfigurationVersion []byte
+
+//go:embed mapping/aws/resource/appflow/aws_appflow_connector_profile.json
+var awsAppflowConnectorProfile []byte
+
+//go:embed mapping/aws/resource/appflow/aws_appflow_flow.json
+var awsAppflowFlow []byte
+
+//go:embed mapping/aws/resource/app-integrations/aws_appintegrations_data_integration.json
+var awsAppintegrationsDataIntegration []byte
+
+//go:embed mapping/aws/resource/app-integrations/aws_appintegrations_event_integration.json
+var awsAppintegrationsEventIntegration []byte
+
+//go:embed mapping/aws/resource/apprunner/aws_apprunner_auto_scaling_configuration_version.json
+var awsApprunnerAutoScalingConfigurationVersion []byte
+
+//go:embed mapping/aws/resource/apprunner/aws_apprunner_default_auto_scaling_configuration_version.json
+var awsApprunnerDefaultAutoScalingConfigurationVersion []byte
+
+//go:embed mapping/aws/resource/apprunner/aws_apprunner_observability_configuration.json
+var awsApprunnerObservabilityConfiguration []byte
+
+//go:embed mapping/aws/resource/apprunner/aws_apprunner_service.json
+var awsApprunnerService []byte
+
+//go:embed mapping/aws/resource/apprunner/aws_apprunner_vpc_connector.json
+var awsApprunnerVpcConnector []byte
+
+//go:embed mapping/aws/resource/apprunner/aws_apprunner_vpc_ingress_connection.json
+var awsApprunnerVpcIngressConnection []byte
+
+//go:embed mapping/aws/resource/appstream/aws_appstream_image_builder.json
+var awsAppstreamImageBuilder []byte
+
+//go:embed mapping/aws/resource/appsync/aws_appsync_domain_name.json
+var awsAppsyncDomainName []byte
+
+//go:embed mapping/aws/resource/appsync/aws_appsync_domain_name_api_association.json
+var awsAppsyncDomainNameApiAssociation []byte
+
+//go:embed mapping/aws/resource/appsync/aws_appsync_function.json
+var awsAppsyncFunction []byte
+
+//go:embed mapping/aws/resource/appsync/aws_appsync_resolver.json
+var awsAppsyncResolver []byte

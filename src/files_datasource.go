@@ -1473,3 +1473,9 @@ var dataAwsTransferConnector []byte
 
 //go:embed mapping/aws/data/ecr/aws_ecr_repository_creation_template.json
 var dataAwsEcrRepositoryCreationTemplate []byte
+
+//go:embed mapping/aws/data/rds/aws_rds_cluster_parameter_group.json
+var dataAwsRdsClusterParameterGroup []byte
+
+//go:embed mapping/aws/data/secretsmanager/aws_secretsmanager_secret_versions.json
+var dataAwsSecretsmanagerSecretVersions []byte

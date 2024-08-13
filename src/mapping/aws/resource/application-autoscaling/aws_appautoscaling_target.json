@@ -4,9 +4,20 @@
       "application-autoscaling:RegisterScalableTarget",
       "iam:CreateServiceLinkedRole",
       "application-autoscaling:DescribeScalableTargets",
-      "application-autoscaling:DeregisterScalableTarget"
+      "application-autoscaling:DeregisterScalableTarget",
+      "application-autoscaling:DescribeScheduledActions",
+      "application-autoscaling:PutScheduledAction",
+      "cloudwatch:PutMetricAlarm",
+      "cloudwatch:DeleteAlarms",
+      "cloudwatch:DescribeAlarms",
+      "lambda:GetProvisionedConcurrencyConfig",
+      "lambda:PutProvisionedConcurrencyConfig",
+      "lambda:DeleteProvisionedConcurrencyConfig"
     ],
     "attributes": {
+      "role_arn": [
+        "iam:PassRole"
+      ],
       "tags": []
     },
     "destroy": [

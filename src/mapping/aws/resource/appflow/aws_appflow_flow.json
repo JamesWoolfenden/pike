@@ -1,0 +1,45 @@
+[
+  {
+    "apply": [
+      "appflow:CreateFlow",
+      "appflow:StartFlow",
+      "appflow:TagResource",
+      "appflow:ListTagsForResource",
+      "appflow:UseConnectorProfile",
+      "iam:PassRole",
+      "s3:ListAllMyBuckets",
+      "s3:GetBucketLocation",
+      "s3:GetBucketPolicy",
+      "secretsmanager:CreateSecret",
+      "secretsmanager:PutResourcePolicy",
+      "appflow:DeleteFlow",
+      "appflow:DescribeFlow",
+      "appflow:UpdateFlow",
+      "appflow:StopFlow"
+    ],
+    "attributes": {
+      "kms_arn": [
+        "kms:ListGrants",
+        "kms:ListKeys",
+        "kms:DescribeKey",
+        "kms:ListAliases",
+        "kms:CreateGrant"
+      ],
+      "tags": [
+        "appflow:TagResource",
+        "appflow:UntagResource"
+      ]
+    },
+    "destroy": [
+      "appflow:DeleteFlow"
+    ],
+    "modify": [
+      "appflow:UpdateFlow",
+      "appflow:StopFlow"
+    ],
+    "plan": [
+      "appflow:DescribeFlow",
+      "appflow:ListTagsForResource"
+    ]
+  }
+]

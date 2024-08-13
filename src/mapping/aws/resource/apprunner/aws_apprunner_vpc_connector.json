@@ -1,0 +1,26 @@
+[
+  {
+    "apply": [
+      "iam:CreateServiceLinkedRole",
+      "apprunner:CreateVpcConnector",
+      "apprunner:DescribeVpcConnector",
+      "ec2:DescribeSubnets",
+      "ec2:DescribeSecurityGroups",
+      "apprunner:DeleteVpcConnector",
+      "apprunner:DescribeVpcConnector"
+    ],
+    "attributes": {
+      "tags": [
+        "apprunner:TagResource",
+        "apprunner:UntagResource"
+      ]
+    },
+    "destroy": [
+      "apprunner:DeleteVpcConnector"
+    ],
+    "modify": [],
+    "plan": [
+      "apprunner:DescribeVpcConnector"
+    ]
+  }
+]

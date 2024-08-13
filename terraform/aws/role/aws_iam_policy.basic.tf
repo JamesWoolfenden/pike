@@ -7,7 +7,8 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "ecr:DescribeRepositoryCreationTemplates"
+          "secretsmanager:ListSecretVersionIds",
+          "rds:DescribeDBClusterParameterGroups"
         ],
         "Resource" : "*",
       }

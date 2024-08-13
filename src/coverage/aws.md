@@ -1,22 +1,17 @@
 # todo aws
 
-Resource percentage coverage   56.16
+Resource percentage coverage   57.84
 Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_amplify_backend_environment
 ./resource.ps1 aws_amplify_webhook
 ./resource.ps1 aws_appconfig_deployment
 ./resource.ps1 aws_appconfig_deployment_strategy
-./resource.ps1 aws_appconfig_hosted_configuration_version
 ./resource.ps1 aws_appfabric_app_authorization
 ./resource.ps1 aws_appfabric_app_authorization_connection
 ./resource.ps1 aws_appfabric_app_bundle
 ./resource.ps1 aws_appfabric_ingestion
 ./resource.ps1 aws_appfabric_ingestion_destination
-./resource.ps1 aws_appflow_connector_profile
-./resource.ps1 aws_appflow_flow
-./resource.ps1 aws_appintegrations_data_integration
-./resource.ps1 aws_appintegrations_event_integration
 ./resource.ps1 aws_appmesh_gateway_route
 ./resource.ps1 aws_appmesh_mesh
 ./resource.ps1 aws_appmesh_route
@@ -24,30 +19,19 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_appmesh_virtual_node
 ./resource.ps1 aws_appmesh_virtual_router
 ./resource.ps1 aws_appmesh_virtual_service
-./resource.ps1 aws_apprunner_auto_scaling_configuration_version
 ./resource.ps1 aws_apprunner_connection
 ./resource.ps1 aws_apprunner_custom_domain_association
-./resource.ps1 aws_apprunner_default_auto_scaling_configuration_version
 ./resource.ps1 aws_apprunner_deployment
-./resource.ps1 aws_apprunner_observability_configuration
-./resource.ps1 aws_apprunner_service
-./resource.ps1 aws_apprunner_vpc_connector
-./resource.ps1 aws_apprunner_vpc_ingress_connection
 ./resource.ps1 aws_appstream_directory_config
 ./resource.ps1 aws_appstream_fleet
 ./resource.ps1 aws_appstream_fleet_stack_association
-./resource.ps1 aws_appstream_image_builder
 ./resource.ps1 aws_appstream_stack
 ./resource.ps1 aws_appstream_user
 ./resource.ps1 aws_appstream_user_stack_association
 ./resource.ps1 aws_appsync_api_cache
 ./resource.ps1 aws_appsync_api_key
 ./resource.ps1 aws_appsync_datasource
-./resource.ps1 aws_appsync_domain_name
-./resource.ps1 aws_appsync_domain_name_api_association
-./resource.ps1 aws_appsync_function
 ./resource.ps1 aws_appsync_graphql_api
-./resource.ps1 aws_appsync_resolver
 ./resource.ps1 aws_appsync_type
 ./resource.ps1 aws_athena_prepared_statement
 ./resource.ps1 aws_bcmdataexports_export
@@ -446,6 +430,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_rds_certificate
 ./resource.ps1 aws_rds_custom_db_engine_version
 ./resource.ps1 aws_rds_export_task
+./resource.ps1 aws_rds_integration
 ./resource.ps1 aws_rds_reserved_instance
 ./resource.ps1 aws_redshift_cluster_snapshot
 ./resource.ps1 aws_redshift_data_share_authorization
@@ -604,7 +589,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_vpc_ipam_organization_admin_account
 ./resource.ps1 aws_vpc_ipv6_cidr_block_association
 ./resource.ps1 aws_vpc_network_performance_metric_subscription
-./resource.ps1 aws_vpn_connection_route
 ./resource.ps1 aws_wafregional_web_acl_association
 ./resource.ps1 aws_worklink_fleet
 ./resource.ps1 aws_worklink_website_certificate_authority_association

@@ -13,6 +13,8 @@
       "athena:DeleteNamedQuery"
     ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "athena:GetNamedQuery"
+    ]
   }
 ]
