@@ -1,7 +1,7 @@
-# todo azure
+# todo azure 
 
-Resource percentage coverage   4.85
-Datasource percentage coverage 37.84
+Resource percentage coverage   4.85 
+Datasource percentage coverage 37.84 
 
 ./resource.ps1 azurerm_aadb2c_directory
 ./resource.ps1 azurerm_active_directory_domain_service
@@ -704,6 +704,7 @@ Datasource percentage coverage 37.84
 ./resource.ps1 azurerm_postgresql_flexible_server_configuration
 ./resource.ps1 azurerm_postgresql_flexible_server_database
 ./resource.ps1 azurerm_postgresql_flexible_server_firewall_rule
+./resource.ps1 azurerm_postgresql_flexible_server_virtual_endpoint
 ./resource.ps1 azurerm_postgresql_server
 ./resource.ps1 azurerm_postgresql_server_key
 ./resource.ps1 azurerm_postgresql_virtual_network_rule
