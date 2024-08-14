@@ -12,7 +12,10 @@
       "roles": [
         "iam:PassRole"
       ],
-      "tags": []
+      "tags": [
+        "auditmanager:TagResource",
+        "auditmanager:UntagResource"
+      ]
     },
     "destroy": [
       "auditmanager:DeleteAssessment"

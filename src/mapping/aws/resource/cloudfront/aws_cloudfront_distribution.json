@@ -6,7 +6,10 @@
       "ec2:DescribeAccountAttributes",
       "cloudfront:CreateDistribution",
       "cloudfront:DeleteDistribution",
-      "cloudfront:UpdateDistribution"
+      "cloudfront:UpdateDistribution",
+      "cloudfront:GetDistributionConfig",
+      "cloudfront:CreateDistributionWithTags",
+      "cloudfront:UpdateDistributionWithStagingConfig"
     ],
     "attributes": {
       "tags": [
@@ -15,10 +18,12 @@
       ]
     },
     "destroy": [
-      "cloudfront:DeleteDistribution"
+      "cloudfront:DeleteDistribution",
+      "cloudfront:GetDistributionConfig"
     ],
     "modify": [
-      "cloudfront:UpdateDistribution"
+      "cloudfront:UpdateDistribution",
+      "cloudfront:UpdateDistributionWithStagingConfig"
     ],
     "plan": []
   }

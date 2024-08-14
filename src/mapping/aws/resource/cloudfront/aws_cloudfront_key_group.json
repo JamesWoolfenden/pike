@@ -3,7 +3,8 @@
     "apply": [
       "cloudfront:CreateKeyGroup",
       "cloudfront:GetKeyGroup",
-      "cloudfront:DeleteKeyGroup"
+      "cloudfront:DeleteKeyGroup",
+      "cloudfront:UpdateKeyGroup"
     ],
     "attributes": {
       "tags": []

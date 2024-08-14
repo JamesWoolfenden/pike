@@ -1,11 +1,22 @@
 [
   {
-    "apply": [],
+    "apply": [
+      "apprunner:CreateAutoScalingConfiguration",
+      "apprunner:DescribeAutoScalingConfiguration",
+      "apprunner:DeleteAutoScalingConfiguration"
+    ],
     "attributes": {
-      "tags": []
+      "tags": [
+        "apprunner:TagResource",
+        "apprunner:UntagResource"
+      ]
     },
-    "destroy": [],
+    "destroy": [
+      "apprunner:DeleteAutoScalingConfiguration"
+    ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "apprunner:DescribeAutoScalingConfiguration"
+    ]
   }
 ]

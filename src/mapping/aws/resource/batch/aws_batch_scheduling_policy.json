@@ -2,6 +2,7 @@
   {
     "apply": [
       "batch:CreateSchedulingPolicy",
+      "Batch:DescribeSchedulingPolicies",
       "batch:DeleteSchedulingPolicy"
     ],
     "attributes": {
@@ -16,6 +17,8 @@
     "modify": [
       "batch:UpdateSchedulingPolicy"
     ],
-    "plan": []
+    "plan": [
+      "Batch:DescribeSchedulingPolicies"
+    ]
   }
 ]

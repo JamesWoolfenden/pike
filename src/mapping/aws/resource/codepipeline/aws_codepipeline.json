@@ -2,6 +2,7 @@
   {
     "apply": [
       "codepipeline:CreatePipeline",
+      "iam:GetRole",
       "iam:PassRole",
       "codepipeline:GetPipeline",
       "codepipeline:ListTagsForResource",

@@ -11,7 +11,11 @@
     "destroy": [
       "autoscaling:DeleteScheduledAction"
     ],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "autoscaling:PutScheduledUpdateGroupAction"
+    ],
+    "plan": [
+      "autoscaling:DescribeScheduledActions"
+    ]
   }
 ]

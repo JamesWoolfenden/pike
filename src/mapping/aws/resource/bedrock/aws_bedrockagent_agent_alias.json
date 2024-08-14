@@ -4,10 +4,16 @@
       "bedrock:CreateAgentAlias",
       "bedrock:DeleteAgentAlias",
       "bedrock:UpdateAgentAlias",
-      "bedrock:GetAgentAlias"
+      "bedrock:GetAgentAlias",
+      "bedrock:ListTagsForResource",
+      "bedrock:PrepareAgent",
+      "bedrock:GetAgent"
     ],
     "attributes": {
-      "tags": []
+      "tags": [
+        "bedrock:TagResource",
+        "bedrock:UntagResource"
+      ]
     },
     "destroy": [
       "bedrock:DeleteAgentAlias"

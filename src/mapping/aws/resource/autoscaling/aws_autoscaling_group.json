@@ -1,16 +1,59 @@
 [
   {
     "apply": [
+      "autoscaling:Describe*",
       "autoscaling:CreateAutoScalingGroup",
       "autoscaling:DescribeAutoScalingGroups",
       "autoscaling:DescribeScalingActivities",
       "autoscaling:UpdateAutoScalingGroup",
-      "autoscaling:DeleteAutoScalingGroup"
+      "autoscaling:DeleteAutoScalingGroup",
+      "ec2:Describe*",
+      "ec2:Get*",
+      "ssm:Get*",
+      "ec2:RunInstances",
+      "managed-fleets:Get*",
+      "managed-fleets:RegisterAutoScalingGroup",
+      "managed-fleets:UpdateAutoScalingGroup",
+      "managed-fleets:DeleteAutoScalingGroup",
+      "managed-fleets:DeregisterAutoScalingGroup"
     ],
     "attributes": {
+      "alarms": [
+        "cloudwatch:PutMetricAlarm"
+      ],
+      "enabled_metrics": [
+        "autoscaling:EnableMetricsCollection",
+        "autoscaling:DisableMetricsCollection"
+      ],
+      "initial_lifecycle_hook": [
+        "autoscaling:PutLifecycleHook",
+        "autoscaling:DeleteLifecycleHook"
+      ],
+      "load_balancers": [
+        "elasticloadbalancing:Describe*"
+      ],
+      "notification_target_arn": [
+        "autoscaling:PutNotificationConfiguration",
+        "autoscaling:DeleteNotificationConfiguration"
+      ],
+      "role_arn": [
+        "iam:PassRole"
+      ],
+      "service_linked_role_arn": [
+        "iam:CreateServiceLinkedRole",
+        "iam:PassRole"
+      ],
       "tag": [
         "autoscaling:CreateOrUpdateTags",
         "autoscaling:DeleteTags"
+      ],
+      "target_group_arns": [
+        "autoscaling:DetachLoadBalancerTargetGroups",
+        "autoscaling:AttachLoadBalancerTargetGroups"
+      ],
+      "traffic_sources": [
+        "autoscaling:AttachTrafficSources",
+        "autoscaling:DetachTrafficSources"
       ]
     },
     "destroy": [
@@ -18,9 +61,14 @@
       "autoscaling:DeleteAutoScalingGroup",
       "autoscaling:Describe*",
       "managed-fleets:Get*",
-      "managed-fleets:DeleteAutoScalingGroup"
+      "managed-fleets:DeleteAutoScalingGroup",
+      "managed-fleets:DeregisterAutoScalingGroup"
     ],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "managed-fleets:UpdateAutoScalingGroup"
+    ],
+    "plan": [
+      "autoscaling:Describe*"
+    ]
   }
 ]

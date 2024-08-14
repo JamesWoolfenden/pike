@@ -4,10 +4,15 @@
       "budgets:CreateBudgetAction",
       "budgets:DescribeBudgetAction",
       "budgets:DeleteBudgetAction",
-      "budgets:UpdateBudgetAction"
+      "budgets:UpdateBudgetAction",
+      "budgets:ListTagsForResource",
+      "iam:PassRole"
     ],
     "attributes": {
-      "tags": []
+      "tags": [
+        "budgets:TagResource",
+        "budgets:UntagResource"
+      ]
     },
     "destroy": [
       "budgets:DeleteBudgetAction"

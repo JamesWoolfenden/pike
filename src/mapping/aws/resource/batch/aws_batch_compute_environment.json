@@ -6,6 +6,7 @@
       "batch:DeleteComputeEnvironment",
       "batch:DescribeComputeEnvironments",
       "iam:PassRole",
+      "iam:CreateServiceLinkedRole",
       "ec2:DescribeSubnets",
       "ec2:DescribeSecurityGroups",
       "ec2:DescribeKeyPairs",
@@ -18,6 +19,9 @@
       "ecs:List*"
     ],
     "attributes": {
+      "eks_configuration": [
+        "Eks:DescribeCluster"
+      ],
       "tags": [
         "batch:TagResource",
         "batch:UntagResource"

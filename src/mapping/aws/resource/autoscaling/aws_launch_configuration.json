@@ -7,6 +7,9 @@
       "autoscaling:DeleteLaunchConfiguration"
     ],
     "attributes": {
+      "iam_instance_profile": [
+        "iam:PassRole"
+      ],
       "tags": [
         "autoscaling:CreateOrUpdateTags",
         "autoscaling:DeleteTags"
@@ -14,6 +17,8 @@
     },
     "destroy": [],
     "modify": [],
-    "plan": []
+    "plan": [
+      "autoscaling:DeleteLaunchConfiguration"
+    ]
   }
 ]

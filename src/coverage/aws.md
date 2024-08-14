@@ -34,14 +34,10 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_appsync_graphql_api
 ./resource.ps1 aws_appsync_type
 ./resource.ps1 aws_athena_prepared_statement
-./resource.ps1 aws_bcmdataexports_export
 ./resource.ps1 aws_bedrockagent_agent_knowledge_base_association
-./resource.ps1 aws_chatbot_slack_channel_configuration
-./resource.ps1 aws_chatbot_teams_channel_configuration
 ./resource.ps1 aws_cloud9_environment_membership
 ./resource.ps1 aws_cloudcontrolapi_resource
-./resource.ps1 aws_cloudfront_key_value_store
-./resource.ps1 aws_cloudfront_realtime_log_config
+
 ./resource.ps1 aws_cloudfrontkeyvaluestore_key
 ./resource.ps1 aws_cloudhsm_v2_cluster
 ./resource.ps1 aws_cloudhsm_v2_hsm
@@ -254,8 +250,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_kendra_index
 ./resource.ps1 aws_kendra_query_suggestions_block_list
 ./resource.ps1 aws_kendra_thesaurus
-./resource.ps1 aws_keyspaces_keyspace
-./resource.ps1 aws_keyspaces_table
 ./resource.ps1 aws_kinesis_analytics_application
 ./resource.ps1 aws_kinesis_resource_policy
 ./resource.ps1 aws_kinesisanalyticsv2_application

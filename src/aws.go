@@ -877,6 +877,14 @@ func AwsLookup(name string) interface{} {
 		"aws_appsync_domain_name_api_association":                          awsAppsyncDomainNameApiAssociation,
 		"aws_appsync_function":                                             awsAppsyncFunction,
 		"aws_appsync_resolver":                                             awsAppsyncResolver,
+		"aws_athena_prepared_statement":                                    awsAthenaPreparedStatement,
+		"aws_bcmdataexports_export":                                        awsBcmdataexportsExport,
+		"aws_chatbot_slack_channel_configuration":                          awsChatbotSlackChannelConfiguration,
+		"aws_chatbot_teams_channel_configuration":                          awsChatbotTeamsChannelConfiguration,
+		"aws_cloudfront_key_value_store":                                   awsCloudfrontKeyValueStore,
+		"aws_cloudfront_realtime_log_config":                               awsCloudfrontRealtimeLogConfig,
+		"aws_keyspaces_keyspace":                                           awsKeyspacesKeyspace,
+		"aws_keyspaces_table":                                              awsKeyspacesTable,
 	}
 
 	return TFLookup[name]

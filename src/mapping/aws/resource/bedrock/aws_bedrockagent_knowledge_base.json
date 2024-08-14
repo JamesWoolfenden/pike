@@ -1,11 +1,28 @@
 [
   {
-    "apply": [],
+    "apply": [
+      "bedrock:CreateKnowledgeBase",
+      "bedrock:GetKnowledgeBase",
+      "bedrock:DeleteKnowledgeBase",
+      "bedrock:ListTagsForResource",
+      "bedrock:AssociateThirdPartyKnowledgeBase",
+      "iam:PassRole",
+      "bedrock:UpdateKnowledgeBase"
+    ],
     "attributes": {
-      "tags": []
+      "tags": [
+        "bedrock:TagResource",
+        "bedrock:UntagResource"
+      ]
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "bedrock:DeleteKnowledgeBase"
+    ],
+    "modify": [
+      "bedrock:UpdateKnowledgeBase"
+    ],
+    "plan": [
+      "bedrock:GetKnowledgeBase"
+    ]
   }
 ]

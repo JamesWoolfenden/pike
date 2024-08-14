@@ -3,7 +3,8 @@
     "apply": [
       "cloudfront:CreateResponseHeadersPolicy",
       "cloudfront:GetResponseHeadersPolicy",
-      "cloudfront:DeleteResponseHeadersPolicy"
+      "cloudfront:DeleteResponseHeadersPolicy",
+      "cloudfront:UpdateResponseHeadersPolicy"
     ],
     "attributes": {
       "tags": []

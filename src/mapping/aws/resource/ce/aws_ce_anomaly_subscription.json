@@ -18,6 +18,8 @@
     "modify": [
       "ce:UpdateAnomalySubscription"
     ],
-    "plan": []
+    "plan": [
+      "ce:GetAnomalySubscriptions"
+    ]
   }
 ]

@@ -3,7 +3,8 @@
     "apply": [
       "cloudfront:CreatePublicKey",
       "cloudfront:GetPublicKey",
-      "cloudfront:DeletePublicKey"
+      "cloudfront:DeletePublicKey",
+      "cloudfront:UpdatePublicKey"
     ],
     "attributes": {
       "tags": []

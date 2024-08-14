@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "cloudfront:CreateRealtimeLogConfig",
+      "cloudfront:UpdateRealtimeLogConfig",
+      "cloudfront:GetRealtimeLogConfig",
+      "cloudfront:DeleteRealtimeLogConfig"
+    ],
+    "attributes": {
+      "role_arn": [
+        "iam:PassRole"
+      ],
+      "tags": []
+    },
+    "destroy": [
+      "cloudfront:DeleteRealtimeLogConfig"
+    ],
+    "modify": [
+      "cloudfront:UpdateRealtimeLogConfig"
+    ],
+    "plan": [
+      "cloudfront:GetRealtimeLogConfig"
+    ]
+  }
+]

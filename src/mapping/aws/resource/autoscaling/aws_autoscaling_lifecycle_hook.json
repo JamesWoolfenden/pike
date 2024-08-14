@@ -6,9 +6,19 @@
       "autoscaling:DescribeLifecycleHooks",
       "autoscaling:PutLifecycleHook"
     ],
-    "attributes": {},
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "attributes": {
+      "role_arn": [
+        "iam:PassRole"
+      ]
+    },
+    "destroy": [
+      "autoscaling:DeleteLifecycleHook"
+    ],
+    "modify": [
+      "autoscaling:PutLifecycleHook"
+    ],
+    "plan": [
+      "autoscaling:DescribeLifecycleHooks"
+    ]
   }
 ]

@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "bcm-data-exports:CreateExport",
+      "bcm-data-exports:GetExport",
+      "bcm-data-exports:ListTagsForResource",
+      "cur:PutReportDefinition",
+      "bcm-data-exports:DeleteExport",
+      "bcm-data-exports:UpdateExport"
+    ],
+    "attributes": {
+      "tags": [
+        "bcm-data-exports:TagResource",
+        "bcm-data-exports:UntagResource"
+      ]
+    },
+    "destroy": [
+      "bcm-data-exports:DeleteExport"
+    ],
+    "modify": [
+      "bcm-data-exports:UpdateExport"
+    ],
+    "plan": [
+      "bcm-data-exports:GetExport"
+    ]
+  }
+]

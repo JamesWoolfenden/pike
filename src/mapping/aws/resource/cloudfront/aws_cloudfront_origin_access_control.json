@@ -3,7 +3,8 @@
     "apply": [
       "cloudfront:CreateOriginAccessControl",
       "cloudfront:GetOriginAccessControl",
-      "cloudfront:DeleteOriginAccessControl"
+      "cloudfront:DeleteOriginAccessControl",
+      "cloudfront:UpdateOriginAccessControl"
     ],
     "attributes": {
       "tags": []

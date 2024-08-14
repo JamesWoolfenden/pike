@@ -6,7 +6,9 @@
       "Backup:CreateReportPlan",
       "Backup:DeleteReportPlan",
       "s3:ListBucket",
-      "Backup:ListTags"
+      "Backup:ListTags",
+      "iam:CreateServiceLinkedRole",
+      "backup:UpdateReportPlan"
     ],
     "attributes": {
       "tags": [
@@ -17,7 +19,9 @@
     "destroy": [
       "Backup:DeleteReportPlan"
     ],
-    "modify": [],
+    "modify": [
+      "backup:UpdateReportPlan"
+    ],
     "plan": []
   }
 ]

@@ -5,7 +5,9 @@
       "Backup:CreateBackupSelection",
       "Backup:DeleteBackupSelection",
       "Backup:GetBackupSelection",
-      "iam:PassRole"
+      "iam:GetRole",
+      "iam:PassRole",
+      "iam:CreateServiceLinkedRole"
     ],
     "attributes": {
       "tags": []

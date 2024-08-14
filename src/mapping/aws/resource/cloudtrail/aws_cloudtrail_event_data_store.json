@@ -5,17 +5,36 @@
       "cloudtrail:AddTags",
       "cloudtrail:GetEventDataStore",
       "cloudtrail:ListTags",
+      "CloudTrail:ListEventDataStores",
       "cloudtrail:DeleteEventDataStore",
-      "cloudtrail:UpdateEventDataStore"
+      "cloudtrail:UpdateEventDataStore",
+      "CloudTrail:RestoreEventDataStore"
     ],
     "attributes": {
-      "tags": []
+      "kms_key_id": [
+        "kms:GenerateDataKey",
+        "kms:Decrypt",
+        "kms:DescribeKey"
+      ],
+      "multi_region_enabled": [
+        "CloudTrail:EnableFederation",
+        "CloudTrail:DisableFederation"
+      ],
+      "organization_enabled": [
+        "organizations:DescribeOrganization",
+        "organizations:ListAWSServiceAccessForOrganization"
+      ],
+      "tags": [
+        "CloudTrail:AddTags",
+        "CloudTrail:RemoveTags"
+      ]
     },
     "destroy": [
       "cloudtrail:DeleteEventDataStore"
     ],
     "modify": [
-      "cloudtrail:UpdateEventDataStore"
+      "cloudtrail:UpdateEventDataStore",
+      "CloudTrail:RestoreEventDataStore"
     ],
     "plan": []
   }

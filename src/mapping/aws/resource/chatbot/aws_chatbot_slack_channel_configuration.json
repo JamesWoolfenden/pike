@@ -1,0 +1,29 @@
+[
+  {
+    "apply": [
+      "chatbot:CreateSlackChannelConfiguration",
+      "chatbot:DeleteSlackChannelConfiguration",
+      "chatbot:DescribeSlackChannelConfigurations",
+      "chatbot:UpdateSlackChannelConfiguration"
+    ],
+    "attributes": {
+      "iam_role_arn": [
+        "iam:PassRole",
+        "iam:CreateServiceLinkedRole"
+      ],
+      "tags": [
+        "chatbot:TagResource",
+        "chatbot:UntagResource"
+      ]
+    },
+    "destroy": [
+      "chatbot:DeleteSlackChannelConfiguration"
+    ],
+    "modify": [
+      "chatbot:UpdateSlackChannelConfiguration"
+    ],
+    "plan": [
+      "chatbot:DescribeSlackChannelConfigurations"
+    ]
+  }
+]

@@ -8,16 +8,26 @@
       "cloudformation:DescribeStacks",
       "cloudformation:GetTemplate",
       "cloudformation:DeleteStack",
-      "cloudformation:UpdateStack"
+      "cloudformation:UpdateStack",
+      "cloudformation:UpdateTerminationProtection"
     ],
     "attributes": {
+      "iam_role_arn": [
+        "iam:PassRole"
+      ],
+      "policy_url": [
+        "cloudformation:SetStackPolicy",
+        "cloudformation:GetStackPolicy"
+      ],
       "tags": []
     },
     "destroy": [
       "cloudformation:DeleteStack"
     ],
     "modify": [
-      "cloudformation:UpdateStack"
+      "cloudformation:UpdateStack",
+      "cloudformation:UpdateTerminationProtection",
+      "cloudformation:SetStackPolicy"
     ],
     "plan": []
   }

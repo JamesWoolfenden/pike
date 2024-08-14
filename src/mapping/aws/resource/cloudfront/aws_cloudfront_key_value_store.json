@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "cloudfront:CreateKeyValueStore",
+      "cloudfront:DescribeKeyValueStore",
+      "cloudfront:DeleteKeyValueStore",
+      "cloudfront:UpdateKeyValueStore"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "cloudfront:DeleteKeyValueStore"
+    ],
+    "modify": [
+      "cloudfront:UpdateKeyValueStore"
+    ],
+    "plan": [
+      "cloudfront:DescribeKeyValueStore"
+    ]
+  }
+]

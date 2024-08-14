@@ -2274,3 +2274,27 @@ var awsAppsyncFunction []byte
 
 //go:embed mapping/aws/resource/appsync/aws_appsync_resolver.json
 var awsAppsyncResolver []byte
+
+//go:embed mapping/aws/resource/athena/aws_athena_prepared_statement.json
+var awsAthenaPreparedStatement []byte
+
+//go:embed mapping/aws/resource/bcm-data-exports/aws_bcmdataexports_export.json
+var awsBcmdataexportsExport []byte
+
+//go:embed mapping/aws/resource/chatbot/aws_chatbot_slack_channel_configuration.json
+var awsChatbotSlackChannelConfiguration []byte
+
+//go:embed mapping/aws/resource/chatbot/aws_chatbot_teams_channel_configuration.json
+var awsChatbotTeamsChannelConfiguration []byte
+
+//go:embed mapping/aws/resource/cloudfront/aws_cloudfront_key_value_store.json
+var awsCloudfrontKeyValueStore []byte
+
+//go:embed mapping/aws/resource/cloudfront/aws_cloudfront_realtime_log_config.json
+var awsCloudfrontRealtimeLogConfig []byte
+
+//go:embed mapping/aws/resource/cassandra/aws_keyspaces_keyspace.json
+var awsKeyspacesKeyspace []byte
+
+//go:embed mapping/aws/resource/cassandra/aws_keyspaces_table.json
+var awsKeyspacesTable []byte

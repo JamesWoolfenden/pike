@@ -7,9 +7,19 @@
       "autoscaling:ExecutePolicy",
       "autoscaling:PutScalingPolicy"
     ],
-    "attributes": {},
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "attributes": {
+      "predictive_scaling_configuration": [
+        "cloudwatch:GetMetricData"
+      ]
+    },
+    "destroy": [
+      "autoscaling:DeletePolicy"
+    ],
+    "modify": [
+      "autoscaling:PutScalingPolicy"
+    ],
+    "plan": [
+      "autoscaling:DescribePolicies"
+    ]
   }
 ]

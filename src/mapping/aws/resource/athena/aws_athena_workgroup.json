@@ -34,6 +34,9 @@
     "modify": [
       "athena:UpdateWorkGroup"
     ],
-    "plan": []
+    "plan": [
+      "athena:GetWorkGroup",
+      "athena:ListTagsForResource"
+    ]
   }
 ]

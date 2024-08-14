@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "cassandra:Create",
+      "cassandra:Drop",
+      "cassandra:Alter",
+      "cassandra:Select"
+    ],
+    "attributes": {
+      "tags": [
+        "cassandra:TagResource",
+        "cassandra:UntagResource"
+      ]
+    },
+    "destroy": [
+      "cassandra:Drop"
+    ],
+    "modify": [
+      "cassandra:Alter"
+    ],
+    "plan": [
+      "cassandra:Select"
+    ]
+  }
+]

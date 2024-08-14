@@ -5,7 +5,8 @@
       "Backup:CreateFramework",
       "Backup:DescribeFramework",
       "Backup:DeleteFramework",
-      "Backup:ListTags"
+      "Backup:ListTags",
+      "iam:CreateServiceLinkedRole"
     ],
     "attributes": {
       "tags": [

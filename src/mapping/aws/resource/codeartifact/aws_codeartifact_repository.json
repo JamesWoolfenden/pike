@@ -3,7 +3,8 @@
     "apply": [
       "codeartifact:CreateRepository",
       "codeartifact:DescribeRepository",
-      "codeartifact:DeleteRepository"
+      "codeartifact:DeleteRepository",
+      "codeartifact:UpdateRepository"
     ],
     "attributes": {
       "tags": [
@@ -11,7 +12,9 @@
         "codeartifact:UntagResource"
       ]
     },
-    "destroy": [],
+    "destroy": [
+      "codeartifact:DeleteRepository"
+    ],
     "modify": [
       "codeartifact:UpdateRepository"
     ],

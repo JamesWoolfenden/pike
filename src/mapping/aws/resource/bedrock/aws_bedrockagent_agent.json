@@ -6,10 +6,14 @@
       "bedrock:UpdateAgent",
       "iam:PassRole",
       "bedrock:GetAgent",
-      "bedrock:PrepareAgent"
+      "bedrock:PrepareAgent",
+      "bedrock:ListTagsForResource"
     ],
     "attributes": {
-      "tags": []
+      "tags": [
+        "bedrock:TagResource",
+        "bedrock:UntagResource"
+      ]
     },
     "destroy": [
       "bedrock:DeleteAgent"
@@ -17,6 +21,8 @@
     "modify": [
       "bedrock:UpdateAgent"
     ],
-    "plan": []
+    "plan": [
+      "bedrock:GetAgent"
+    ]
   }
 ]

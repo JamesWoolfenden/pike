@@ -1,0 +1,28 @@
+[
+  {
+    "apply": [
+      "chatbot:CreateMicrosoftTeamsChannelConfiguration",
+      "chatbot:GetMicrosoftTeamsChannelConfiguration",
+      "chatbot:DeleteMicrosoftTeamsChannelConfiguration",
+      "chatbot:UpdateMicrosoftTeamsChannelConfiguration",
+      "chatbot:ListTagsForResource"
+    ],
+    "attributes": {
+      "iam_role_arn": [
+        "iam:PassRole",
+        "iam:CreateServiceLinkedRole"
+      ],
+      "tags": [
+        "chatbot:TagResource",
+        "chatbot:UntagResource"
+      ]
+    },
+    "destroy": [
+      "chatbot:DeleteMicrosoftTeamsChannelConfiguration"
+    ],
+    "modify": [
+      "chatbot:UpdateMicrosoftTeamsChannelConfiguration"
+    ],
+    "plan": []
+  }
+]
