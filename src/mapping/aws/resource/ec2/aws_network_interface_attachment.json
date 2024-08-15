@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "ec2:AttachNetworkInterface",
+      "ec2:DescribeNetworkInterfaces",
+      "ec2:ModifyNetworkInterfaceAttribute",
+      "ec2:DetachNetworkInterface"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "ec2:DetachNetworkInterface"
+    ],
+    "modify": [
+      "ec2:ModifyNetworkInterfaceAttribute"
+    ],
+    "plan": []
+  }
+]

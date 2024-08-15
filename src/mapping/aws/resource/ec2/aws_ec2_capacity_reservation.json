@@ -12,9 +12,12 @@
         "ec2:DeleteTags"
       ]
     },
-    "destroy": [],
+    "destroy": [
+      "ec2:CancelCapacityReservation"
+    ],
     "modify": [
-      "ec2:ModifyCapacityReservation"
+      "ec2:ModifyCapacityReservation",
+      "ec2:CancelCapacityReservation"
     ],
     "plan": []
   }

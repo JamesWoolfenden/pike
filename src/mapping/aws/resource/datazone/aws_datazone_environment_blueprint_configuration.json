@@ -3,7 +3,9 @@
     "apply": [
       "datazone:PutEnvironmentBlueprintConfiguration",
       "datazone:GetEnvironmentBlueprintConfiguration",
-      "datazone:DeleteEnvironmentBlueprintConfiguration"
+      "datazone:DeleteEnvironmentBlueprintConfiguration",
+      "datazone:ListEnvironmentBlueprints",
+      "iam:PassRole"
     ],
     "attributes": {
       "tags": []

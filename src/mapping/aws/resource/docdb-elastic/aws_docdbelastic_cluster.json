@@ -1,0 +1,46 @@
+[
+  {
+    "apply": [
+      "docdb-elastic:CreateCluster",
+      "docdb-elastic:TagResource",
+      "docdb-elastic:GetCluster",
+      "docdb-elastic:ListTagsForResource",
+      "ec2:CreateVpcEndpoint",
+      "ec2:DescribeVpcEndpoints",
+      "ec2:DeleteVpcEndpoints",
+      "ec2:ModifyVpcEndpoint",
+      "ec2:DescribeSecurityGroups",
+      "ec2:DescribeSubnets",
+      "ec2:DescribeVpcAttribute",
+      "ec2:DescribeVpcs",
+      "ec2:DescribeAvailabilityZones",
+      "secretsmanager:ListSecrets",
+      "secretsmanager:ListSecretVersionIds",
+      "secretsmanager:DescribeSecret",
+      "secretsmanager:GetSecretValue",
+      "secretsmanager:GetResourcePolicy",
+      "iam:CreateServiceLinkedRole",
+      "docdb-elastic:UpdateCluster",
+      "docdb-elastic:DeleteCluster"
+    ],
+    "attributes": {
+      "kms_key_id": [
+        "kms:DescribeKey",
+        "kms:CreateGrant",
+        "kms:GenerateDataKey",
+        "kms:Decrypt"
+      ],
+      "tags": [
+        "docdb-elastic:TagResource",
+        "docdb-elastic:UntagResource"
+      ]
+    },
+    "destroy": [
+      "docdb-elastic:DeleteCluster"
+    ],
+    "modify": [
+      "docdb-elastic:UpdateCluster"
+    ],
+    "plan": []
+  }
+]

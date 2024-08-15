@@ -2,13 +2,16 @@
   {
     "apply": [
       "ec2:AssociateAddress",
-      "ec2:DisassociateAddress"
+      "ec2:DisassociateAddress",
+      "ec2:DescribeAddresses"
     ],
     "attributes": {
       "tags": []
     },
     "destroy": [],
     "modify": [],
-    "plan": []
+    "plan": [
+      "ec2:DescribeAddresses"
+    ]
   }
 ]

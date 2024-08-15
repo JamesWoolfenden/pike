@@ -3,7 +3,8 @@
     "apply": [
       "datasync:UpdateLocationAzureBlob",
       "datasync:CreateLocationAzureBlob",
-      "datasync:DescribeLocationAzureBlob"
+      "datasync:DescribeLocationAzureBlob",
+      "datasync:ListTagsForResource"
     ],
     "attributes": {
       "tags": [

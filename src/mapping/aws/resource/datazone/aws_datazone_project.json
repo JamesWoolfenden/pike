@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "datazone:CreateProject",
+      "datazone:GetProject",
+      "datazone:DeleteProject",
+      "datazone:UpdateProject"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "datazone:DeleteProject"
+    ],
+    "modify": [
+      "datazone:UpdateProject"
+    ],
+    "plan": []
+  }
+]

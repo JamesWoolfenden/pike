@@ -3,7 +3,8 @@
     "apply": [
       "ec2:CreateIpamScope",
       "ec2:DescribeIpamScopes",
-      "ec2:DeleteIpamScope"
+      "ec2:DeleteIpamScope",
+      "ec2:ModifyIpamScope"
     ],
     "attributes": {
       "tags": [
@@ -14,7 +15,9 @@
     "destroy": [
       "ec2:DeleteIpamScope"
     ],
-    "modify": [],
+    "modify": [
+      "ec2:ModifyIpamScope"
+    ],
     "plan": []
   }
 ]

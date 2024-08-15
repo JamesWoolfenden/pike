@@ -20,6 +20,7 @@ func Test_coverageAws(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
+
 			if err := coverageAWS(); (err != nil) != tt.wantErr {
 				t.Errorf("coverageAWS() error = %v, wantErr %v", err, tt.wantErr)
 			}

@@ -4,7 +4,9 @@
       "ec2:ImportKeyPair",
       "ec2:CreateKeyPair",
       "ec2:DescribeKeyPairs",
-      "ec2:DeleteKeyPair"
+      "ec2:DeleteKeyPair",
+      "ssm:PutParameter",
+      "ssm:DeleteParameter"
     ],
     "attributes": {
       "tags": [
@@ -13,7 +15,8 @@
       ]
     },
     "destroy": [
-      "ec2:DeleteKeyPair"
+      "ec2:DeleteKeyPair",
+      "ssm:DeleteParameter"
     ],
     "modify": [],
     "plan": []

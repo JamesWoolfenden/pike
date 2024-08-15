@@ -2,20 +2,35 @@
   {
     "apply": [
       "connect:DescribeInstanceAttribute",
+      "connect:UpdateInstanceAttribute",
       "connect:CreateInstance",
       "connect:DeleteInstance",
       "connect:DescribeInstance",
       "ds:CheckAlias",
+      "ds:CreateAlias",
+      "ds:AuthorizeApplication",
+      "ds:UnauthorizeApplication",
+      "ds:CreateIdentityPoolDirectory",
+      "ds:CreateDirectory",
       "iam:CreateServiceLinkedRole",
+      "iam:PutRolePolicy",
       "ds:DescribeDirectories"
     ],
     "attributes": {
-      "tags": []
+      "contact_flow_logs_enabled": [
+        "logs:CreateLogGroup"
+      ],
+      "tags": [
+        "connect:TagResource",
+        "connect:UntagResource"
+      ]
     },
     "destroy": [
       "connect:DeleteInstance"
     ],
-    "modify": [],
+    "modify": [
+      "connect:UpdateInstanceAttribute"
+    ],
     "plan": []
   }
 ]

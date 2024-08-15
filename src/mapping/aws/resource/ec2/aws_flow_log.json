@@ -8,6 +8,9 @@
       "ec2:DeleteFlowLogs"
     ],
     "attributes": {
+      "log_destination": [
+        "logs:CreateLogDelivery"
+      ],
       "tags": [
         "ec2:DeleteTags",
         "ec2:CreateTags"

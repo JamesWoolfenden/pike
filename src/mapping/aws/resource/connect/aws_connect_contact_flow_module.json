@@ -3,7 +3,9 @@
     "apply": [
       "connect:CreateContactFlowModule",
       "connect:DeleteContactFlowModule",
-      "connect:DescribeContactFlowModule"
+      "connect:DescribeContactFlowModule",
+      "connect:UpdateContactFlowModuleMetadata",
+      "connect:UpdateContactFlowModuleContent"
     ],
     "attributes": {
       "tags": [
@@ -14,7 +16,10 @@
     "destroy": [
       "connect:DeleteContactFlowModule"
     ],
-    "modify": [],
+    "modify": [
+      "connect:UpdateContactFlowModuleMetadata",
+      "connect:UpdateContactFlowModuleContent"
+    ],
     "plan": []
   }
 ]

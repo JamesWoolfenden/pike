@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "devops-guru:UpdateResourceCollection",
+      "devops-guru:GetResourceCollection"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

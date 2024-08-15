@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "detective:CreateMembers",
+      "detective:GetMembers",
+      "detective:DeleteMembers"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "detective:DeleteMembers"
+    ],
+    "modify": [],
+    "plan": [
+      "detective:GetMembers"
+    ]
+  }
+]

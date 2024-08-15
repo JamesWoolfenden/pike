@@ -5,7 +5,8 @@
       "ec2:DescribeAccountAttributes",
       "config:DescribeConfigRules",
       "config:ListTagsForResource",
-      "config:DeleteConfigRule"
+      "config:DeleteConfigRule",
+      "config:DescribeComplianceByConfigRule"
     ],
     "attributes": {
       "tags": [
@@ -17,6 +18,8 @@
       "config:DeleteConfigRule"
     ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "config:DescribeComplianceByConfigRule"
+    ]
   }
 ]

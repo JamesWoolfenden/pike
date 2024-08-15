@@ -1,0 +1,34 @@
+[
+  {
+    "apply": [
+      "controltower:ListEnabledControls",
+      "controltower:GetEnabledControl",
+      "controltower:GetControlOperation",
+      "controltower:EnableControl",
+      "controltower:DisableControl",
+      "controltower:UpdateEnabledControl",
+      "organizations:DeletePolicy",
+      "organizations:UpdatePolicy",
+      "organizations:CreatePolicy",
+      "organizations:AttachPolicy",
+      "organizations:DetachPolicy",
+      "organizations:ListPoliciesForTarget",
+      "organizations:ListTargetsForPolicy",
+      "organizations:DescribePolicy"
+    ],
+    "attributes": {
+      "tags": [
+        "controltower:TagResource",
+        "controltower:UntagResource"
+      ]
+    },
+    "destroy": [
+      "controltower:DisableControl",
+      "organizations:DeletePolicy"
+    ],
+    "modify": [
+      "controltower:UpdateEnabledControl"
+    ],
+    "plan": []
+  }
+]

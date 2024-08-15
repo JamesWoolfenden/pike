@@ -3,7 +3,8 @@
     "apply": [
       "cognito-idp:CreateResourceServer",
       "cognito-idp:DeleteResourceServer",
-      "cognito-idp:DescribeResourceServer"
+      "cognito-idp:DescribeResourceServer",
+      "cognito-idp:UpdateResourceServer"
     ],
     "attributes": {
       "tags": []

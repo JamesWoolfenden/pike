@@ -8,7 +8,9 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
+    "modify": [
+      "cognito-idp:SetUICustomization"
+    ],
     "plan": []
   }
 ]

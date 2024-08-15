@@ -3,7 +3,8 @@
     "apply": [
       "ec2:AllocateHosts",
       "ec2:DescribeHosts",
-      "ec2:ReleaseHosts"
+      "ec2:ReleaseHosts",
+      "ec2:ModifyHosts"
     ],
     "attributes": {
       "tags": [
@@ -14,7 +15,9 @@
     "destroy": [
       "ec2:ReleaseHosts"
     ],
-    "modify": [],
+    "modify": [
+      "ec2:ModifyHosts"
+    ],
     "plan": []
   }
 ]

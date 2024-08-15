@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "config:PutConformancePack",
+      "config:DescribeConformancePackStatus",
+      "config:DescribeConformancePacks",
+      "s3:GetObject",
+      "s3:GetBucketAcl",
+      "iam:CreateServiceLinkedRole",
+      "iam:PassRole",
+      "config:DeleteConformancePack",
+      "config:PutConformancePack"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "config:DeleteConformancePack"
+    ],
+    "modify": [
+      "config:PutConformancePack"
+    ],
+    "plan": [
+      "config:DescribeConformancePacks"
+    ]
+  }
+]

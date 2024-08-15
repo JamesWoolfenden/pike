@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "detective:CreateGraph",
+      "detective:UpdateOrganizationConfiguration",
+      "organizations:DescribeOrganization",
+      "detective:DeleteGraph",
+      "detective:ListGraphs",
+      "detective:ListTagsForResource",
+      "detective:DescribeOrganizationConfiguration",
+      "detective:UpdateOrganizationConfiguration"
+    ],
+    "attributes": {
+      "tags": [
+        "detective:UntagResource",
+        "detective:TagResource"
+      ]
+    },
+    "destroy": [
+      "detective:DeleteGraph"
+    ],
+    "modify": [
+      "detective:UpdateOrganizationConfiguration"
+    ],
+    "plan": []
+  }
+]

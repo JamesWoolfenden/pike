@@ -16,7 +16,9 @@
       "ec2:DescribeSubnets",
       "ec2:DescribeVpcs",
       "ec2:RevokeSecurityGroupEgress",
-      "ec2:RevokeSecurityGroupIngress"
+      "ec2:RevokeSecurityGroupIngress",
+      "ds:EnableSso",
+      "ds:DisableSso"
     ],
     "attributes": {
       "tags": [
@@ -34,7 +36,10 @@
       "ec2:RevokeSecurityGroupEgress",
       "ec2:RevokeSecurityGroupIngress"
     ],
-    "modify": [],
+    "modify": [
+      "ds:EnableSso",
+      "ds:DisableSso"
+    ],
     "plan": []
   }
 ]

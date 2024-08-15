@@ -2,16 +2,36 @@
   {
     "apply": [
       "connect:DescribeUser",
+      "connect:ListUserProficiencies",
       "connect:CreateUser",
-      "connect:DeleteUser"
+      "connect:DeleteUser",
+      "connect:AssociateUserProficiencies",
+      "connect:UpdateUserIdentityInfo",
+      "connect:UpdateUserPhoneConfig",
+      "connect:UpdateUserRoutingProfile",
+      "connect:UpdateUserSecurityProfiles",
+      "connect:UpdateUserHierarchy",
+      "connect:DisassociateUserProficiencies",
+      "connect:UpdateUserProficiencies"
     ],
     "attributes": {
-      "tags": []
+      "tags": [
+        "connect:TagResource",
+        "connect:UntagResource"
+      ]
     },
     "destroy": [
       "connect:DeleteUser"
     ],
-    "modify": [],
+    "modify": [
+      "connect:UpdateUserIdentityInfo",
+      "connect:UpdateUserPhoneConfig",
+      "connect:UpdateUserRoutingProfile",
+      "connect:UpdateUserSecurityProfiles",
+      "connect:UpdateUserHierarchy",
+      "connect:DisassociateUserProficiencies",
+      "connect:UpdateUserProficiencies"
+    ],
     "plan": []
   }
 ]

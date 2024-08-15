@@ -1,6 +1,6 @@
 # todo aws
 
-Resource percentage coverage   57.84
+Resource percentage coverage   58.77
 Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_amplify_backend_environment
@@ -33,42 +33,28 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_appsync_datasource
 ./resource.ps1 aws_appsync_graphql_api
 ./resource.ps1 aws_appsync_type
-./resource.ps1 aws_athena_prepared_statement
 ./resource.ps1 aws_bedrockagent_agent_knowledge_base_association
 ./resource.ps1 aws_cloud9_environment_membership
 ./resource.ps1 aws_cloudcontrolapi_resource
-
 ./resource.ps1 aws_cloudfrontkeyvaluestore_key
 ./resource.ps1 aws_cloudhsm_v2_cluster
 ./resource.ps1 aws_cloudhsm_v2_hsm
 ./resource.ps1 aws_cloudwatch_log_account_policy
-./resource.ps1 aws_cognito_identity_pool_provider_principal_tag
-./resource.ps1 aws_cognito_identity_pool_roles_attachment
 ./resource.ps1 aws_cognito_managed_user_pool_client
-./resource.ps1 aws_comprehend_document_classifier
 ./resource.ps1 aws_comprehend_entity_recognizer
 ./resource.ps1 aws_config_aggregate_authorization
-./resource.ps1 aws_config_conformance_pack
-./resource.ps1 aws_config_organization_conformance_pack
 ./resource.ps1 aws_config_organization_custom_policy_rule
 ./resource.ps1 aws_config_organization_custom_rule
 ./resource.ps1 aws_config_organization_managed_rule
 ./resource.ps1 aws_config_remediation_configuration
 ./resource.ps1 aws_config_retention_configuration
 ./resource.ps1 aws_connect_lambda_function_association
-./resource.ps1 aws_controltower_control
-./resource.ps1 aws_controltower_landing_zone
-./resource.ps1 aws_cur_report_definition
 ./resource.ps1 aws_customerprofiles_domain
 ./resource.ps1 aws_customerprofiles_profile
 ./resource.ps1 aws_dataexchange_data_set
 ./resource.ps1 aws_dataexchange_revision
 ./resource.ps1 aws_datazone_glossary
-./resource.ps1 aws_datazone_project
-./resource.ps1 aws_detective_graph
-./resource.ps1 aws_detective_invitation_accepter
 ./resource.ps1 aws_detective_member
-./resource.ps1 aws_detective_organization_admin_account
 ./resource.ps1 aws_detective_organization_configuration
 ./resource.ps1 aws_devicefarm_device_pool
 ./resource.ps1 aws_devicefarm_instance_profile
@@ -76,8 +62,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_devicefarm_project
 ./resource.ps1 aws_devicefarm_upload
 ./resource.ps1 aws_devopsguru_event_sources_config
-./resource.ps1 aws_devopsguru_notification_channel
-./resource.ps1 aws_devopsguru_resource_collection
 ./resource.ps1 aws_devopsguru_service_integration
 ./resource.ps1 aws_directory_service_conditional_forwarder
 ./resource.ps1 aws_directory_service_radius_settings
@@ -85,7 +69,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_directory_service_shared_directory
 ./resource.ps1 aws_directory_service_shared_directory_accepter
 ./resource.ps1 aws_directory_service_trust
-./resource.ps1 aws_docdbelastic_cluster
 ./resource.ps1 aws_drs_replication_configuration_template
 ./resource.ps1 aws_dx_bgp_peer
 ./resource.ps1 aws_dx_connection
@@ -116,9 +99,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_ec2_instance_connect_endpoint
 ./resource.ps1 aws_ec2_instance_metadata_defaults
 ./resource.ps1 aws_ec2_instance_state
-./resource.ps1 aws_ec2_local_gateway_route
-./resource.ps1 aws_ec2_local_gateway_route_table_vpc_association
-./resource.ps1 aws_ec2_managed_prefix_list
 ./resource.ps1 aws_ec2_managed_prefix_list_entry
 ./resource.ps1 aws_ec2_serial_console_access
 ./resource.ps1 aws_ec2_subnet_cidr_reservation
@@ -328,7 +308,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_mwaa_environment
 ./resource.ps1 aws_neptune_global_cluster
 ./resource.ps1 aws_network_acl_association
-./resource.ps1 aws_network_interface_attachment
+
 ./resource.ps1 aws_network_interface_sg_attachment
 ./resource.ps1 aws_networkfirewall_tls_inspection_configuration
 ./resource.ps1 aws_networkmanager_attachment_accepter
@@ -536,7 +516,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_shield_protection_health_check_association
 ./resource.ps1 aws_shield_subscription
 ./resource.ps1 aws_spot_datafeed_subscription
-./resource.ps1 aws_spot_fleet_request
+
 ./resource.ps1 aws_ssm_activation
 ./resource.ps1 aws_ssm_association
 ./resource.ps1 aws_ssm_default_patch_baseline

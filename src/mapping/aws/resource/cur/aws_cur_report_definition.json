@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "cur:PutReportDefinition",
+      "cur:DescribeReportDefinitions",
+      "cur:DeleteReportDefinition",
+      "cur:ModifyReportDefinition"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "cur:DeleteReportDefinition"
+    ],
+    "modify": [
+      "cur:ModifyReportDefinition"
+    ],
+    "plan": []
+  }
+]

@@ -2,12 +2,15 @@
   {
     "apply": [
       "ec2:ProvisionIpamPoolCidr",
-      "ec2:GetIpamPoolCidrs"
+      "ec2:GetIpamPoolCidrs",
+      "ec2:DeprovisionIpamPoolCidr"
     ],
     "attributes": {
       "tags": []
     },
-    "destroy": [],
+    "destroy": [
+      "ec2:DeprovisionIpamPoolCidr"
+    ],
     "modify": [],
     "plan": []
   }

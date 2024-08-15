@@ -3,13 +3,16 @@
     "apply": [
       "ec2:CreateNetworkAclEntry",
       "ec2:DescribeNetworkAcls",
-      "ec2:DeleteNetworkAclEntry"
+      "ec2:DeleteNetworkAclEntry",
+      "ec2:ReplaceNetworkAclEntry"
     ],
     "attributes": {
       "tags": []
     },
     "destroy": [],
-    "modify": [],
+    "modify": [
+      "ec2:ReplaceNetworkAclEntry"
+    ],
     "plan": []
   }
 ]

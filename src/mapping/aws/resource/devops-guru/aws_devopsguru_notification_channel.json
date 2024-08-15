@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "devops-guru:AddNotificationChannel",
+      "devops-guru:ListNotificationChannels",
+      "sns:Publish sns:GetTopicAttributes",
+      "sns:SetTopicAttributes",
+      "devops-guru:RemoveNotificationChannel"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "devops-guru:RemoveNotificationChannel"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

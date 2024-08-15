@@ -4,15 +4,33 @@
       "connect:DescribeQueue",
       "connect:CreateQueue",
       "connect:DeleteQueue",
-      "connect:ListSecurityProfilePermissions"
+      "connect:ListSecurityProfilePermissions",
+      "connect:UpdateQueueHoursOfOperation",
+      "connect:UpdateQueueMaxContacts",
+      "connect:UpdateQueueName",
+      "connect:UpdateQueueOutboundCallerConfig",
+      "connect:UpdateQueueStatus",
+      "connect:AssociateQueueQuickConnects",
+      "connect:DisassociateQueueQuickConnects"
     ],
     "attributes": {
-      "tags": []
+      "tags": [
+        "connect:TagResource",
+        "connect:UntagResource"
+      ]
     },
     "destroy": [
       "connect:DeleteQueue"
     ],
-    "modify": [],
+    "modify": [
+      "connect:UpdateQueueHoursOfOperation",
+      "connect:UpdateQueueMaxContacts",
+      "connect:UpdateQueueName",
+      "connect:UpdateQueueOutboundCallerConfig",
+      "connect:UpdateQueueStatus",
+      "connect:AssociateQueueQuickConnects",
+      "connect:DisassociateQueueQuickConnects"
+    ],
     "plan": []
   }
 ]

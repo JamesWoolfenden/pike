@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "iam:PassRole",
+      "ec2:RequestSpotFleet",
+      "ec2:DescribeSpotFleetRequests",
+      "ec2:RunInstances",
+      "ec2:ModifySpotFleetRequest",
+      "ec2:CancelSpotFleetRequests"
+    ],
+    "attributes": {
+      "tags": [
+        "ec2:CreateTags"
+      ]
+    },
+    "destroy": [
+      "ec2:CancelSpotFleetRequests"
+    ],
+    "modify": [
+      "ec2:ModifySpotFleetRequest"
+    ],
+    "plan": []
+  }
+]

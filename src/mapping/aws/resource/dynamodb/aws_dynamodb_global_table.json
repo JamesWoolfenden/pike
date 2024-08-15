@@ -1,7 +1,8 @@
 [
   {
     "apply": [
-      "dynamodb:CreateGlobalTable"
+      "dynamodb:CreateGlobalTable",
+      "dynamodb:UpdateGlobalTable"
     ],
     "attributes": {
       "tags": []

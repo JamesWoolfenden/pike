@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "cognito-identity:GetPrincipalTagAttributeMap",
+      "cognito-identity:SetPrincipalTagAttributeMap"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

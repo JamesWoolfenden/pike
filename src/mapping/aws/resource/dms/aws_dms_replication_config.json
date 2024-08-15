@@ -4,7 +4,14 @@
       "dms:CreateReplicationConfig",
       "dms:DescribeReplicationConfigs",
       "dms:DeleteReplicationConfig",
-      "dms:ModifyReplicationConfig"
+      "dms:ModifyReplicationConfig",
+      "dms:ListTagsForResource",
+      "iam:CreateServiceLinkedRole",
+      "iam:AttachRolePolicy",
+      "iam:PutRolePolicy",
+      "iam:UpdateRoleDescription",
+      "iam:DeleteServiceLinkedRole",
+      "iam:GetServiceLinkedRoleDeletionStatus"
     ],
     "attributes": {
       "tags": [
@@ -13,7 +20,9 @@
       ]
     },
     "destroy": [
-      "dms:DeleteReplicationConfig"
+      "dms:DeleteReplicationConfig",
+      "iam:DeleteServiceLinkedRole",
+      "iam:GetServiceLinkedRoleDeletionStatus"
     ],
     "modify": [
       "dms:ModifyReplicationConfig"

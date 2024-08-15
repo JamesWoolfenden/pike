@@ -5,16 +5,23 @@
       "connect:DescribePhoneNumber",
       "connect:UpdatePhoneNumber",
       "connect:ClaimPhoneNumber",
-      "connect:ReleasePhoneNumber"
+      "connect:ReleasePhoneNumber",
+      "connect:ImportPhoneNumber",
+      "sms-voice:DescribePhoneNumbers",
+      "connect:UpdatePhoneNumberMetadata"
     ],
     "attributes": {
-      "tags": []
+      "tags": [
+        "connect:TagResource",
+        "connect:UntagResource"
+      ]
     },
     "destroy": [
       "connect:ReleasePhoneNumber"
     ],
     "modify": [
-      "connect:UpdatePhoneNumber"
+      "connect:UpdatePhoneNumber",
+      "connect:UpdatePhoneNumberMetadata"
     ],
     "plan": []
   }

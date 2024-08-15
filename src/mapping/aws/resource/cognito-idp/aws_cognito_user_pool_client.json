@@ -11,7 +11,9 @@
     "destroy": [
       "cognito-idp:DeleteUserPoolClient"
     ],
-    "modify": [],
+    "modify": [
+      "cognito-idp:UpdateUserPoolClient"
+    ],
     "plan": []
   }
 ]

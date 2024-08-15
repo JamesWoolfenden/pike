@@ -2,11 +2,19 @@
   {
     "apply": [
       "config:PutConfigurationAggregator",
-      "config:DescribeConfigurationAggregators"
+      "config:DescribeConfigurationAggregators",
+      "config:PutConfigurationAggregator",
+      "config:ListTagsForResource"
     ],
     "attributes": {
+      "organization_aggregation_source": [
+        "organizations:EnableAWSServiceAccess",
+        "organizations:ListDelegatedAdministrators"
+      ],
+      "role_arn": [
+        "iam:PassRole"
+      ],
       "tags": [
-        "config:ListTagsForResource",
         "config:TagResource",
         "config:UntagResource"
       ]
@@ -14,7 +22,9 @@
     "destroy": [
       "config:DeleteConfigurationAggregator"
     ],
-    "modify": [],
+    "modify": [
+      "config:PutConfigurationAggregator"
+    ],
     "plan": []
   }
 ]

@@ -2298,3 +2298,63 @@ var awsKeyspacesKeyspace []byte
 
 //go:embed mapping/aws/resource/cassandra/aws_keyspaces_table.json
 var awsKeyspacesTable []byte
+
+//go:embed mapping/aws/resource/cognito-idp/aws_cognito_identity_pool_provider_principal_tag.json
+var awsCognitoIdentityPoolProviderPrincipalTag []byte
+
+//go:embed mapping/aws/resource/cognito-idp/aws_cognito_identity_pool_roles_attachment.json
+var awsCognitoIdentityPoolRolesAttachment []byte
+
+//go:embed mapping/aws/resource/comprehend/aws_comprehend_document_classifier.json
+var awsComprehendDocumentClassifier []byte
+
+//go:embed mapping/aws/resource/config/aws_config_conformance_pack.json
+var awsConfigConformancePack []byte
+
+//go:embed mapping/aws/resource/config/aws_config_organization_conformance_pack.json
+var awsConfigOrganizationConformancePack []byte
+
+//go:embed mapping/aws/resource/controltower/aws_controltower_control.json
+var awsControltowerControl []byte
+
+//go:embed mapping/aws/resource/controltower/aws_controltower_landing_zone.json
+var awsControltowerLandingZone []byte
+
+//go:embed mapping/aws/resource/cur/aws_cur_report_definition.json
+var awsCurReportDefinition []byte
+
+//go:embed mapping/aws/resource/datazone/aws_datazone_project.json
+var awsDatazoneProject []byte
+
+//go:embed mapping/aws/resource/detective/aws_detective_graph.json
+var awsDetectiveGraph []byte
+
+//go:embed mapping/aws/resource/detective/aws_detective_invitation_accepter.json
+var awsDetectiveInvitationAccepter []byte
+
+//go:embed mapping/aws/resource/detective/aws_detective_organization_admin_account.json
+var awsDectectiveOrganizationAdminAccount []byte
+
+//go:embed mapping/aws/resource/devops-guru/aws_devopsguru_notification_channel.json
+var awsDevopsguruNotificationChannel []byte
+
+//go:embed mapping/aws/resource/devops-guru/aws_devopsguru_resource_collection.json
+var awsDevopsguruResourceCollection []byte
+
+//go:embed mapping/aws/resource/docdb-elastic/aws_docdbelastic_cluster.json
+var awsDocdbelasticCluster []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ec2_local_gateway_route.json
+var awsEc2LocalGatewayRoute []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ec2_local_gateway_route_table_vpc_association.json
+var awsEc2LocalGatewayRouteTableVpcAssociation []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ec2_managed_prefix_list.json
+var awsEc2ManagedPrefixList []byte
+
+//go:embed mapping/aws/resource/ec2/aws_network_interface_attachment.json
+var awsNetworkInterfaceAttachment []byte
+
+//go:embed mapping/aws/resource/ec2/aws_spot_fleet_request.json
+var awsSpotFleetRequest []byte

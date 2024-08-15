@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "ec2:CreateLocalGatewayRoute",
+      "ec2:SearchLocalGatewayRoutes",
+      "ec2:DeleteLocalGatewayRoute",
+      "ec2:ModifyLocalGatewayRoute"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "ec2:DeleteLocalGatewayRoute"
+    ],
+    "modify": [
+      "ec2:ModifyLocalGatewayRoute"
+    ],
+    "plan": []
+  }
+]

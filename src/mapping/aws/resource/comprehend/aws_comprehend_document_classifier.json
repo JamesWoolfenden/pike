@@ -1,0 +1,28 @@
+[
+  {
+    "apply": [
+      "iam:PassRole",
+      "comprehend:CreateDocumentClassifier",
+      "comprehend:DescribeDocumentClassifier",
+      "comprehend:DescribeResourcePolicy",
+      "comprehend:ListTagsForResource",
+      "textract:DetectDocumentText",
+      "comprehend:DeleteDocumentClassifier",
+      "comprehend:DeleteResourcePolicy"
+    ],
+    "attributes": {
+      "tags": [
+        "comprehend:TagResource",
+        "comprehend:UntagResource"
+      ]
+    },
+    "destroy": [
+      "comprehend:DeleteDocumentClassifier"
+    ],
+    "modify": [
+      "comprehend:PutResourcePolicy",
+      "comprehend:DeleteResourcePolicy"
+    ],
+    "plan": []
+  }
+]

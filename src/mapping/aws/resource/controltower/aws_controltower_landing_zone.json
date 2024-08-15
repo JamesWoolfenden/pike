@@ -1,0 +1,71 @@
+[
+  {
+    "apply": [
+      "controltower:CreateLandingZone",
+      "controltower:GetLandingZoneOperation",
+      "controltower:ListTagsForResource",
+      "controltower:GetLandingZone",
+      "cloudformation:DescribeOrganizationsAccess",
+      "servicecatalog:AssociatePrincipalWithPortfolio",
+      "servicecatalog:AssociateProductWithPortfolio",
+      "servicecatalog:CreatePortfolio",
+      "servicecatalog:CreateProduct",
+      "servicecatalog:CreateProvisioningArtifact",
+      "servicecatalog:ListPortfolios",
+      "servicecatalog:ListProvisioningArtifacts",
+      "servicecatalog:SearchProductsAsAdmin",
+      "servicecatalog:UpdatePortfolio",
+      "servicecatalog:UpdateProvisioningArtifact",
+      "servicecatalog:ListPrincipalsForPortfolio",
+      "organizations:CreateOrganizationalUnit",
+      "organizations:CreateOrganization",
+      "organizations:UpdatePolicy",
+      "organizations:CreatePolicy",
+      "organizations:AttachPolicy",
+      "organizations:DetachPolicy",
+      "organizations:DeletePolicy",
+      "organizations:EnablePolicyType",
+      "organizations:EnableAWSServiceAccess",
+      "organizations:ListRoots",
+      "sso:GetPeregrineStatus",
+      "sso:ListDirectoryAssociations",
+      "sso:StartPeregrine",
+      "sso:RegisterRegion",
+      "controltower:UpdateLandingZone",
+      "servicecatalog:UpdatePortfolio",
+      "servicecatalog:UpdateProvisioningArtifact",
+      "controltower:DeleteLandingZone",
+      "servicecatalog:DeleteProvisioningArtifact",
+      "servicecatalog:DeleteProduct",
+      "servicecatalog:DisassociatePrincipalFromPortfolio",
+      "servicecatalog:DisassociateProductFromPortfolio",
+      "servicecatalog:DeletePortfolio",
+      "iam:DeleteRolePolicy",
+      "iam:DetachRolePolicy",
+      "iam:DeleteRole"
+    ],
+    "attributes": {
+      "tags": [
+        "controltower:TagResource",
+        "controltower:UntagResource"
+      ]
+    },
+    "destroy": [
+      "controltower:DeleteLandingZone",
+      "servicecatalog:DeleteProvisioningArtifact",
+      "servicecatalog:DeleteProduct",
+      "servicecatalog:DisassociatePrincipalFromPortfolio",
+      "servicecatalog:DisassociateProductFromPortfolio",
+      "servicecatalog:DeletePortfolio",
+      "iam:DeleteRolePolicy",
+      "iam:DetachRolePolicy",
+      "iam:DeleteRole"
+    ],
+    "modify": [
+      "controltower:UpdateLandingZone",
+      "servicecatalog:UpdatePortfolio",
+      "servicecatalog:UpdateProvisioningArtifact"
+    ],
+    "plan": []
+  }
+]

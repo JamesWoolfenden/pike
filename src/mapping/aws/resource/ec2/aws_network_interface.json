@@ -3,7 +3,12 @@
     "apply": [
       "ec2:CreateNetworkInterface",
       "ec2:DescribeNetworkInterfaces",
-      "ec2:DeleteNetworkInterface"
+      "ec2:DeleteNetworkInterface",
+      "ec2:ModifyNetworkInterfaceAttribute",
+      "ec2:UnassignIpv6Addresses",
+      "ec2:AssignIpv6Addresses",
+      "ec2:UnassignPrivateIpAddresses",
+      "ec2:AssignPrivateIpAddresses"
     ],
     "attributes": {
       "tags": [
@@ -14,7 +19,12 @@
     "destroy": [
       "ec2:DeleteNetworkInterface"
     ],
-    "modify": [],
+    "modify": [
+      "ec2:UnassignIpv6Addresses",
+      "ec2:AssignIpv6Addresses",
+      "ec2:UnassignPrivateIpAddresses",
+      "ec2:AssignPrivateIpAddresses"
+    ],
     "plan": []
   }
 ]

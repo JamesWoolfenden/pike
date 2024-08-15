@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "cognito-identity:GetIdentityPoolRoles",
+      "cognito-identity:SetIdentityPoolRoles",
+      "iam:PassRole"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

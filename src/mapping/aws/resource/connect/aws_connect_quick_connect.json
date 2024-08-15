@@ -4,7 +4,9 @@
       "connect:DescribeQuickConnect",
       "connect:CreateQuickConnect",
       "connect:DeleteQuickConnect",
-      "connect:ListQueueQuickConnects"
+      "connect:ListQueueQuickConnects",
+      "connect:UpdateQuickConnectName",
+      "connect:UpdateQuickConnectConfig"
     ],
     "attributes": {
       "tags": [
@@ -15,7 +17,10 @@
     "destroy": [
       "connect:DeleteQuickConnect"
     ],
-    "modify": [],
+    "modify": [
+      "connect:UpdateQuickConnectName",
+      "connect:UpdateQuickConnectConfig"
+    ],
     "plan": []
   }
 ]

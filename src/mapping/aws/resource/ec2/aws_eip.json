@@ -8,6 +8,9 @@
       "ec2:AssociateAddress"
     ],
     "attributes": {
+      "customer_owned_ipv4_pool": [
+        "ec2:AcceptAddressTransfer"
+      ],
       "instance": [
         "ec2:AssociateAddress"
       ],

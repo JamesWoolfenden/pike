@@ -4,15 +4,35 @@
       "connect:DescribeRoutingProfile",
       "connect:CreateRoutingProfile",
       "connect:DeleteRoutingProfile",
-      "connect:ListRoutingProfileQueues"
+      "connect:ListRoutingProfileQueues",
+      "connect:AssociateRoutingProfileQueues",
+      "connect:DisassociateRoutingProfileQueues",
+      "connect:UpdateRoutingProfileConcurrency",
+      "connect:UpdateRoutingProfileName",
+      "connect:UpdateRoutingProfileDefaultOutboundQueue",
+      "connect:UpdateRoutingProfileQueues",
+      "connect:ListRoutingProfileQueues",
+      "connect:UpdateRoutingProfileAgentAvailabilityTimer"
     ],
     "attributes": {
-      "tags": []
+      "tags": [
+        "connect:TagResource",
+        "connect:UntagResource"
+      ]
     },
     "destroy": [
       "connect:DeleteRoutingProfile"
     ],
-    "modify": [],
+    "modify": [
+      "connect:AssociateRoutingProfileQueues",
+      "connect:DisassociateRoutingProfileQueues",
+      "connect:UpdateRoutingProfileConcurrency",
+      "connect:UpdateRoutingProfileName",
+      "connect:UpdateRoutingProfileDefaultOutboundQueue",
+      "connect:UpdateRoutingProfileQueues",
+      "connect:ListRoutingProfileQueues",
+      "connect:UpdateRoutingProfileAgentAvailabilityTimer"
+    ],
     "plan": []
   }
 ]

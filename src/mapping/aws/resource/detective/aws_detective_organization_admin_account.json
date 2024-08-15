@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "detective:EnableOrganizationAdminAccount",
+      "detective:ListOrganizationAdminAccount",
+      "iam:CreateServiceLinkedRole",
+      "organizations:RegisterDelegatedAdministrator",
+      "organizations:DescribeOrganization",
+      "organizations:EnableAWSServiceAccess",
+      "organizations:ListAccounts",
+      "detective:DisableOrganizationAdminAccount"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "detective:DisableOrganizationAdminAccount"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

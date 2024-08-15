@@ -2,7 +2,8 @@
   {
     "apply": [
       "datapipeline:CreatePipeline",
-      "datapipeline:DeletePipeline"
+      "datapipeline:DeletePipeline",
+      "datapipeline:DescribePipelines"
     ],
     "attributes": {
       "tags": [
@@ -14,6 +15,8 @@
       "datapipeline:DeletePipeline"
     ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "datapipeline:DescribePipelines"
+    ]
   }
 ]

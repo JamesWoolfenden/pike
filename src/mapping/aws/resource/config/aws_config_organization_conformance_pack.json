@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "config:PutOrganizationConformancePack",
+      "config:DescribeOrganizationConformancePackStatuses",
+      "config:GetOrganizationConformancePackDetailedStatus",
+      "config:DescribeOrganizationConformancePacks",
+      "s3:GetObject",
+      "s3:GetBucketAcl",
+      "iam:CreateServiceLinkedRole",
+      "iam:PassRole",
+      "organizations:ListDelegatedAdministrators",
+      "organizations:EnableAWSServiceAccess",
+      "config:DeleteOrganizationConformancePack"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "config:DeleteOrganizationConformancePack"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

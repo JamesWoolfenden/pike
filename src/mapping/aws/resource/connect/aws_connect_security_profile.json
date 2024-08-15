@@ -5,7 +5,8 @@
       "connect:CreateSecurityProfile",
       "connect:UpdateSecurityProfile",
       "connect:DeleteSecurityProfile",
-      "connect:ListSecurityProfilePermissions"
+      "connect:ListSecurityProfilePermissions",
+      "connect:ListSecurityProfileApplications"
     ],
     "attributes": {
       "tags": [

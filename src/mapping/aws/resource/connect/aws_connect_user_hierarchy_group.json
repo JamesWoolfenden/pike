@@ -3,7 +3,8 @@
     "apply": [
       "connect:DescribeUserHierarchyGroup",
       "connect:CreateUserHierarchyGroup",
-      "connect:DeleteUserHierarchyGroup"
+      "connect:DeleteUserHierarchyGroup",
+      "connect:UpdateUserHierarchyGroupName"
     ],
     "attributes": {
       "tags": [
@@ -14,7 +15,9 @@
     "destroy": [
       "connect:DeleteUserHierarchyGroup"
     ],
-    "modify": [],
+    "modify": [
+      "connect:UpdateUserHierarchyGroupName"
+    ],
     "plan": []
   }
 ]

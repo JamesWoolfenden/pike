@@ -3,7 +3,9 @@
     "apply": [
       "ec2:CreateRoute",
       "ec2:DescribeRouteTables",
-      "ec2:DeleteRoute"
+      "ec2:DeleteRoute",
+      "ec2:DescribeNetworkInterfaces",
+      "ec2:ReplaceRoute"
     ],
     "attributes": {
       "tags": []
@@ -11,7 +13,9 @@
     "destroy": [
       "ec2:DeleteRoute"
     ],
-    "modify": [],
+    "modify": [
+      "ec2:ReplaceRoute"
+    ],
     "plan": []
   }
 ]
