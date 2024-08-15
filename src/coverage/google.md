@@ -1,9 +1,11 @@
-# todo google
+# todo google 
 
-Resource percentage coverage   20.44
-Datasource percentage coverage 82.65
+Resource percentage coverage   20.23 
+Datasource percentage coverage 81.82 
 
 ./resource.ps1 google_access_context_manager_access_level_condition
+./resource.ps1 google_access_context_manager_service_perimeter_dry_run_egress_policy
+./resource.ps1 google_access_context_manager_service_perimeter_dry_run_ingress_policy
 ./resource.ps1 google_access_context_manager_service_perimeter_dry_run_resource
 ./resource.ps1 google_access_context_manager_service_perimeter_egress_policy
 ./resource.ps1 google_access_context_manager_service_perimeter_ingress_policy
@@ -679,6 +681,7 @@ Datasource percentage coverage 82.65
 ./resource.ps1 google_runtimeconfig_variable
 ./resource.ps1 google_scc_event_threat_detection_custom_module
 ./resource.ps1 google_scc_folder_custom_module
+./resource.ps1 google_scc_folder_notification_config
 ./resource.ps1 google_scc_management_folder_security_health_analytics_custom_module
 ./resource.ps1 google_scc_management_organization_event_threat_detection_custom_module
 ./resource.ps1 google_scc_management_organization_security_health_analytics_custom_module
@@ -693,8 +696,14 @@ Datasource percentage coverage 82.65
 ./resource.ps1 google_scc_source_iam_member
 ./resource.ps1 google_scc_source_iam_policy
 ./resource.ps1 google_scc_v2_folder_mute_config
+./resource.ps1 google_scc_v2_folder_notification_config
 ./resource.ps1 google_scc_v2_organization_mute_config
 ./resource.ps1 google_scc_v2_organization_notification_config
+./resource.ps1 google_scc_v2_organization_source_iam_binding
+./resource.ps1 google_scc_v2_organization_source_iam_member
+./resource.ps1 google_scc_v2_organization_source_iam_policy
+./resource.ps1 google_scc_v2_project_mute_config
+./resource.ps1 google_scc_v2_project_notification_config
 ./resource.ps1 google_secure_source_manager_instance
 ./resource.ps1 google_secure_source_manager_instance_iam_binding
 ./resource.ps1 google_secure_source_manager_instance_iam_member
@@ -735,6 +744,7 @@ Datasource percentage coverage 82.65
 ./resource.ps1 google_tpu_node
 ./resource.ps1 google_tpu_v2_vm
 ./resource.ps1 google_vertex_ai_deployment_resource_pool
+./resource.ps1 google_vertex_ai_index_endpoint_deployed_index
 ./resource.ps1 google_vmwareengine_cluster
 ./resource.ps1 google_vmwareengine_external_access_rule
 ./resource.ps1 google_vmwareengine_external_address
@@ -762,6 +772,8 @@ Datasource percentage coverage 82.65
 ./resource.ps1 google_apphub_discovered_service -type data
 ./resource.ps1 google_apphub_discovered_workload -type data
 ./resource.ps1 google_artifact_registry_docker_image -type data
+./resource.ps1 google_artifact_registry_locations -type data
+./resource.ps1 google_cloud_identity_group_transitive_memberships -type data
 ./resource.ps1 google_cloud_quotas_quota_info -type data
 ./resource.ps1 google_cloud_quotas_quota_infos -type data
 ./resource.ps1 google_clouddeploy_custom_target_type_iam_policy -type data
@@ -799,6 +811,7 @@ Datasource percentage coverage 82.65
 ./resource.ps1 google_runtimeconfig_config_iam_policy -type data
 ./resource.ps1 google_runtimeconfig_variable -type data
 ./resource.ps1 google_scc_source_iam_policy -type data
+./resource.ps1 google_scc_v2_organization_source_iam_policy -type data
 ./resource.ps1 google_secure_source_manager_instance_iam_policy -type data
 ./resource.ps1 google_secure_source_manager_repository_iam_policy -type data
 ./resource.ps1 google_site_verification_token -type data

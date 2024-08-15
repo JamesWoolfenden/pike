@@ -1,7 +1,7 @@
 # todo aws
 
-Resource percentage coverage   58.77
-Datasource percentage coverage 100.00
+Resource percentage coverage   59.71
+Datasource percentage coverage 99.82
 
 ./resource.ps1 aws_amplify_backend_environment
 ./resource.ps1 aws_amplify_webhook
@@ -33,6 +33,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_appsync_datasource
 ./resource.ps1 aws_appsync_graphql_api
 ./resource.ps1 aws_appsync_type
+./resource.ps1 aws_bedrock_guardrail
 ./resource.ps1 aws_bedrockagent_agent_knowledge_base_association
 ./resource.ps1 aws_cloud9_environment_membership
 ./resource.ps1 aws_cloudcontrolapi_resource
@@ -53,6 +54,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_customerprofiles_profile
 ./resource.ps1 aws_dataexchange_data_set
 ./resource.ps1 aws_dataexchange_revision
+./resource.ps1 aws_datazone_environment_profile
 ./resource.ps1 aws_datazone_glossary
 ./resource.ps1 aws_detective_member
 ./resource.ps1 aws_detective_organization_configuration
@@ -308,7 +310,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_mwaa_environment
 ./resource.ps1 aws_neptune_global_cluster
 ./resource.ps1 aws_network_acl_association
-
 ./resource.ps1 aws_network_interface_sg_attachment
 ./resource.ps1 aws_networkfirewall_tls_inspection_configuration
 ./resource.ps1 aws_networkmanager_attachment_accepter
@@ -370,6 +371,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_pinpoint_app
 ./resource.ps1 aws_pinpoint_baidu_channel
 ./resource.ps1 aws_pinpoint_email_channel
+./resource.ps1 aws_pinpoint_email_template
 ./resource.ps1 aws_pinpoint_event_stream
 ./resource.ps1 aws_pinpoint_gcm_channel
 ./resource.ps1 aws_pinpoint_sms_channel
@@ -516,7 +518,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_shield_protection_health_check_association
 ./resource.ps1 aws_shield_subscription
 ./resource.ps1 aws_spot_datafeed_subscription
-
 ./resource.ps1 aws_ssm_activation
 ./resource.ps1 aws_ssm_association
 ./resource.ps1 aws_ssm_default_patch_baseline
@@ -566,3 +567,4 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_wafregional_web_acl_association
 ./resource.ps1 aws_worklink_fleet
 ./resource.ps1 aws_worklink_website_certificate_authority_association
+./resource.ps1 aws_bedrockagent_agent_versions -type data

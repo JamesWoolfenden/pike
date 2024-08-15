@@ -202,12 +202,21 @@ func TestMakePolicy(t *testing.T) {
 					"application-autoscaling:DeregisterScalableTarget",
 					"application-autoscaling:DescribeScalableTargets",
 					"application-autoscaling:DescribeScalingPolicies",
+					"application-autoscaling:DescribeScheduledActions",
 					"application-autoscaling:PutScalingPolicy",
+					"application-autoscaling:PutScheduledAction",
 					"application-autoscaling:RegisterScalableTarget"
 				],
 				"Resource": ["*"]
-			}, {
-				"Sid": "VisualEditor2",
+			},
+			{
+				"Sid":"VisualEditor2",
+				"Effect":"Allow",
+				"Action":["cloudwatch:DeleteAlarms","cloudwatch:DescribeAlarms","cloudwatch:PutMetricAlarm"],
+				"Resource":["*"]
+        	},
+			{
+				"Sid": "VisualEditor3",
 				"Effect": "Allow",
 				"Action": [
 					"dynamodb:BatchWriteItem",
@@ -233,12 +242,12 @@ func TestMakePolicy(t *testing.T) {
 				],
 				"Resource": ["*"]
 			}, {
-				"Sid": "VisualEditor3",
+				"Sid": "VisualEditor4",
 				"Effect": "Allow",
 				"Action": ["ec2:DescribeAccountAttributes", "ec2:DescribeNetworkInterfaces"],
 				"Resource": ["*"]
 			}, {
-				"Sid": "VisualEditor4",
+				"Sid": "VisualEditor5",
 				"Effect": "Allow",
 				"Action": [
 					"iam:AttachRolePolicy",
@@ -266,7 +275,7 @@ func TestMakePolicy(t *testing.T) {
 				],
 				"Resource": ["*"]
 			}, {
-				"Sid": "VisualEditor5",
+				"Sid": "VisualEditor6",
 				"Effect": "Allow",
 				"Action": [
 					"lambda:AddPermission",
@@ -301,7 +310,7 @@ func TestMakePolicy(t *testing.T) {
 			],
 				"Resource": ["*"]
 			}, {
-				"Sid": "VisualEditor6",
+				"Sid": "VisualEditor7",
 				"Effect": "Allow",
 				"Action": [
 					"logs:AssociateKmsKey",
@@ -317,7 +326,7 @@ func TestMakePolicy(t *testing.T) {
 			],
 				"Resource": ["*"]
 			}, {
-				"Sid": "VisualEditor7",
+				"Sid": "VisualEditor8",
 				"Effect": "Allow",
 				"Action": [
 					"s3:DeleteObject",
@@ -363,9 +372,24 @@ func TestMakePolicy(t *testing.T) {
 	"Statement": [{
 		"Sid": "VisualEditor0",
 		"Effect": "Allow",
-		"Action": ["autoscaling:CreateAutoScalingGroup", "autoscaling:CreateOrUpdateTags", "autoscaling:DeleteAutoScalingGroup", "autoscaling:DeleteTags", "autoscaling:DescribeAutoScalingGroups", "autoscaling:DescribeScalingActivities", "autoscaling:UpdateAutoScalingGroup"],
+		"Action": [
+			"autoscaling:CreateAutoScalingGroup", 
+			"autoscaling:CreateOrUpdateTags", 
+			"autoscaling:DeleteAutoScalingGroup", 
+			"autoscaling:DeleteTags", 
+	        "autoscaling:Describe*",
+			"autoscaling:DescribeAutoScalingGroups", 
+			"autoscaling:DescribeScalingActivities", 
+			"autoscaling:UpdateAutoScalingGroup"
+		],
 		"Resource": ["*"]
-	}]
+	},
+	{
+		"Sid":"VisualEditor1",
+		"Effect":"Allow",	
+		"Action":["managed-fleets:DeleteAutoScalingGroup","managed-fleets:Get*"],"Resource":["*"]
+	}
+]
 }`,
 			false,
 		},
