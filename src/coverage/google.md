@@ -1,7 +1,7 @@
-# todo google 
+# todo google
 
-Resource percentage coverage   20.23 
-Datasource percentage coverage 81.82 
+Resource percentage coverage   20.15
+Datasource percentage coverage 81.54
 
 ./resource.ps1 google_access_context_manager_access_level_condition
 ./resource.ps1 google_access_context_manager_service_perimeter_dry_run_egress_policy
@@ -377,6 +377,7 @@ Datasource percentage coverage 81.82
 ./resource.ps1 google_dialogflow_intent
 ./resource.ps1 google_discovery_engine_chat_engine
 ./resource.ps1 google_discovery_engine_data_store
+./resource.ps1 google_discovery_engine_schema
 ./resource.ps1 google_discovery_engine_search_engine
 ./resource.ps1 google_dns_managed_zone_iam_binding
 ./resource.ps1 google_dns_managed_zone_iam_member
@@ -534,6 +535,9 @@ Datasource percentage coverage 81.82
 ./resource.ps1 google_kms_autokey_config
 ./resource.ps1 google_kms_crypto_key_version
 ./resource.ps1 google_kms_ekm_connection
+./resource.ps1 google_kms_ekm_connection_iam_binding
+./resource.ps1 google_kms_ekm_connection_iam_member
+./resource.ps1 google_kms_ekm_connection_iam_policy
 ./resource.ps1 google_kms_key_handle
 ./resource.ps1 google_kms_key_ring_iam_binding
 ./resource.ps1 google_kms_key_ring_iam_member
@@ -798,6 +802,7 @@ Datasource percentage coverage 81.82
 ./resource.ps1 google_folders -type data
 ./resource.ps1 google_iap_tunnel_dest_group_iam_policy -type data
 ./resource.ps1 google_kms_crypto_keys -type data
+./resource.ps1 google_kms_ekm_connection_iam_policy -type data
 ./resource.ps1 google_kms_key_rings -type data
 ./resource.ps1 google_logging_log_view_iam_policy -type data
 ./resource.ps1 google_organization_iam_policy -type data

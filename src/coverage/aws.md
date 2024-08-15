@@ -1,6 +1,6 @@
 # todo aws
 
-Resource percentage coverage   59.71
+Resource percentage coverage   59.63
 Datasource percentage coverage 99.82
 
 ./resource.ps1 aws_amplify_backend_environment
@@ -40,6 +40,7 @@ Datasource percentage coverage 99.82
 ./resource.ps1 aws_cloudfrontkeyvaluestore_key
 ./resource.ps1 aws_cloudhsm_v2_cluster
 ./resource.ps1 aws_cloudhsm_v2_hsm
+./resource.ps1 aws_cloudtrail_organization_delegated_admin_account
 ./resource.ps1 aws_cloudwatch_log_account_policy
 ./resource.ps1 aws_cognito_managed_user_pool_client
 ./resource.ps1 aws_comprehend_entity_recognizer
@@ -56,6 +57,7 @@ Datasource percentage coverage 99.82
 ./resource.ps1 aws_dataexchange_revision
 ./resource.ps1 aws_datazone_environment_profile
 ./resource.ps1 aws_datazone_glossary
+./resource.ps1 aws_datazone_glossary_term
 ./resource.ps1 aws_detective_member
 ./resource.ps1 aws_detective_organization_configuration
 ./resource.ps1 aws_devicefarm_device_pool

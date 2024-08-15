@@ -1,13 +1,14 @@
-# todo azure 
+# todo azure
 
-Resource percentage coverage   4.85 
-Datasource percentage coverage 37.84 
+Resource percentage coverage   4.83
+Datasource percentage coverage 37.84
 
 ./resource.ps1 azurerm_aadb2c_directory
 ./resource.ps1 azurerm_active_directory_domain_service
 ./resource.ps1 azurerm_active_directory_domain_service_replica_set
 ./resource.ps1 azurerm_active_directory_domain_service_trust
 ./resource.ps1 azurerm_advanced_threat_protection
+./resource.ps1 azurerm_ai_services
 ./resource.ps1 azurerm_analysis_services_server
 ./resource.ps1 azurerm_api_connection
 ./resource.ps1 azurerm_api_management_api
@@ -175,6 +176,7 @@ Datasource percentage coverage 37.84
 ./resource.ps1 azurerm_cognitive_account_customer_managed_key
 ./resource.ps1 azurerm_cognitive_deployment
 ./resource.ps1 azurerm_communication_service
+./resource.ps1 azurerm_communication_service_email_domain_association
 ./resource.ps1 azurerm_confidential_ledger
 ./resource.ps1 azurerm_consumption_budget_management_group
 ./resource.ps1 azurerm_consumption_budget_resource_group
@@ -316,6 +318,7 @@ Datasource percentage coverage 37.84
 ./resource.ps1 azurerm_dev_center_gallery
 ./resource.ps1 azurerm_dev_center_network_connection
 ./resource.ps1 azurerm_dev_center_project
+./resource.ps1 azurerm_dev_center_project_environment_type
 ./resource.ps1 azurerm_digital_twins_endpoint_eventgrid
 ./resource.ps1 azurerm_digital_twins_endpoint_eventhub
 ./resource.ps1 azurerm_digital_twins_endpoint_servicebus
@@ -364,6 +367,7 @@ Datasource percentage coverage 37.84
 ./resource.ps1 azurerm_express_route_gateway
 ./resource.ps1 azurerm_express_route_port
 ./resource.ps1 azurerm_express_route_port_authorization
+./resource.ps1 azurerm_extended_location_custom_location
 ./resource.ps1 azurerm_federated_identity_credential
 ./resource.ps1 azurerm_firewall
 ./resource.ps1 azurerm_firewall_application_rule_collection

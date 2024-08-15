@@ -192,7 +192,12 @@ func TestMakePolicy(t *testing.T) {
 				"Statement": [{
 				"Sid": "VisualEditor0",
 				"Effect": "Allow",
-				"Action": ["apigateway:DELETE", "apigateway:GET", "apigateway:PATCH", "apigateway:POST", "apigateway:PUT"],
+				"Action": [
+					"apigateway:DELETE",
+					"apigateway:GET",
+					"apigateway:PATCH",
+					"apigateway:POST",
+					"apigateway:PUT"],
 				"Resource": ["*"]
 			}, {
 				"Sid": "VisualEditor1",
@@ -226,8 +231,11 @@ func TestMakePolicy(t *testing.T) {
 					"dynamodb:DeleteTable",
 					"dynamodb:DeleteTableReplica",
 					"dynamodb:DescribeContinuousBackups",
+					"dynamodb:DescribeKinesisStreamingDestination",
 					"dynamodb:DescribeTable",
 					"dynamodb:DescribeTimeToLive",
+					"dynamodb:DisableKinesisStreamingDestination",
+					"dynamodb:EnableKinesisStreamingDestination",
 					"dynamodb:GetItem",
 					"dynamodb:ListTagsOfResource",
 					"dynamodb:PutItem",
@@ -251,31 +259,34 @@ func TestMakePolicy(t *testing.T) {
 				"Effect": "Allow",
 				"Action": [
 					"iam:AttachRolePolicy",
-					"iam:CreatePolicy",
-					"iam:CreateRole",
-					"iam:CreateServiceLinkedRole",
-					"iam:DeletePolicy",
-					"iam:DeleteRole",
-					"iam:DeleteRolePermissionsBoundary",
-					"iam:DetachRolePolicy",
-					"iam:GetPolicy",
-					"iam:GetPolicyVersion",
-					"iam:GetRole",
-					"iam:ListAttachedRolePolicies",
-					"iam:ListInstanceProfilesForRole",
-					"iam:ListPolicies",
-					"iam:ListPolicyVersions",
-					"iam:ListRolePolicies",
-					"iam:PassRole",
-					"iam:PutRolePermissionsBoundary",
-					"iam:TagPolicy",
-					"iam:TagRole",
-					"iam:UntagPolicy",
-					"iam:UpdateRoleDescription"
+        "iam:CreatePolicy",
+        "iam:CreateRole",
+        "iam:CreateServiceLinkedRole",
+        "iam:DeletePolicy",
+        "iam:DeleteRole",
+        "iam:DeleteRolePermissionsBoundary",
+        "iam:DetachRolePolicy",
+        "iam:GetPolicy",
+        "iam:GetPolicyVersion",
+        "iam:GetRole",
+        "iam:ListAttachedRolePolicies",
+        "iam:ListInstanceProfilesForRole",
+        "iam:ListPolicies",
+        "iam:ListPolicyVersions",
+        "iam:ListRolePolicies",
+        "iam:PassRole",
+        "iam:PutRolePermissionsBoundary",
+        "iam:TagPolicy",
+        "iam:TagRole",
+        "iam:UntagPolicy",
+        "iam:UpdateRoleDescription"
 				],
 				"Resource": ["*"]
-			}, {
-				"Sid": "VisualEditor6",
+			},
+    {"Sid":"VisualEditor6","Effect":"Allow","Action":["kinesis:DescribeStream","kinesis:PutRecords"],"Resource":["*"]},
+    {"Sid":"VisualEditor7","Effect":"Allow","Action":["kms:CreateGrant","kms:Decrypt","kms:DescribeKey","kms:Encrypt","kms:ListAliases","kms:RevokeGrant"],"Resource":["*"]},
+    {
+				"Sid": "VisualEditor8",
 				"Effect": "Allow",
 				"Action": [
 					"lambda:AddPermission",
@@ -310,7 +321,7 @@ func TestMakePolicy(t *testing.T) {
 			],
 				"Resource": ["*"]
 			}, {
-				"Sid": "VisualEditor7",
+				"Sid": "VisualEditor9",
 				"Effect": "Allow",
 				"Action": [
 					"logs:AssociateKmsKey",
@@ -326,7 +337,7 @@ func TestMakePolicy(t *testing.T) {
 			],
 				"Resource": ["*"]
 			}, {
-				"Sid": "VisualEditor8",
+				"Sid": "VisualEditor10",
 				"Effect": "Allow",
 				"Action": [
 					"s3:DeleteObject",
@@ -368,29 +379,63 @@ func TestMakePolicy(t *testing.T) {
 			"dynamic",
 			args{"", &dynamic, false},
 			`{
-	"Version": "2012-10-17",
-	"Statement": [{
-		"Sid": "VisualEditor0",
-		"Effect": "Allow",
-		"Action": [
-			"autoscaling:CreateAutoScalingGroup", 
-			"autoscaling:CreateOrUpdateTags", 
-			"autoscaling:DeleteAutoScalingGroup", 
-			"autoscaling:DeleteTags", 
-	        "autoscaling:Describe*",
-			"autoscaling:DescribeAutoScalingGroups", 
-			"autoscaling:DescribeScalingActivities", 
-			"autoscaling:UpdateAutoScalingGroup"
-		],
-		"Resource": ["*"]
-	},
-	{
-		"Sid":"VisualEditor1",
-		"Effect":"Allow",	
-		"Action":["managed-fleets:DeleteAutoScalingGroup","managed-fleets:Get*"],"Resource":["*"]
-	}
-]
-}`,
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Sid": "VisualEditor0",
+        "Effect": "Allow",
+        "Action": [
+          "autoscaling:CreateAutoScalingGroup",
+          "autoscaling:CreateOrUpdateTags",
+          "autoscaling:DeleteAutoScalingGroup",
+          "autoscaling:DeleteTags",
+          "autoscaling:Describe*",
+          "autoscaling:DescribeAutoScalingGroups",
+          "autoscaling:DescribeScalingActivities",
+          "autoscaling:UpdateAutoScalingGroup"
+        ],
+        "Resource": [
+          "*"
+        ]
+      },
+      {
+        "Sid": "VisualEditor1",
+        "Effect": "Allow",
+        "Action": [
+          "ec2:Describe*",
+          "ec2:Get*",
+          "ec2:RunInstances"
+        ],
+        "Resource": [
+          "*"
+        ]
+      },
+      {
+        "Sid": "VisualEditor2",
+        "Effect": "Allow",
+        "Action": [
+          "managed-fleets:DeleteAutoScalingGroup",
+          "managed-fleets:DeregisterAutoScalingGroup",
+          "managed-fleets:Get*",
+          "managed-fleets:RegisterAutoScalingGroup",
+          "managed-fleets:UpdateAutoScalingGroup"
+        ],
+        "Resource": [
+          "*"
+        ]
+      },
+      {
+        "Sid": "VisualEditor3",
+        "Effect": "Allow",
+        "Action": [
+          "ssm:Get*"
+        ],
+        "Resource": [
+          "*"
+        ]
+      }
+    ]
+  }`,
 			false,
 		},
 	}
