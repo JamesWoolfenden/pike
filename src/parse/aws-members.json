@@ -1887,6 +1887,7 @@
         "aws_sfn_alias",
         "aws_sfn_state_machine",
         "aws_sfn_state_machine_versions",
+        "aws_shield_protection",
         "aws_signer_signing_job",
         "aws_signer_signing_profile",
         "aws_sns_topic",
