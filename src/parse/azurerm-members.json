@@ -91,6 +91,8 @@
         "azurerm_arc_kubernetes_cluster",
         "azurerm_arc_kubernetes_cluster_extension",
         "azurerm_arc_kubernetes_flux_configuration",
+        "azurerm_arc_machine",
+        "azurerm_arc_machine_automanage_configuration_assignment",
         "azurerm_arc_machine_extension",
         "azurerm_arc_private_link_scope",
         "azurerm_arc_resource_bridge_appliance",
