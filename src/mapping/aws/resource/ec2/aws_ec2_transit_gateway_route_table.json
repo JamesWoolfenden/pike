@@ -2,7 +2,7 @@
   {
     "apply": [
       "ec2:CreateTransitGatewayRouteTable",
-      "ec2:DescribeTransitGatewayRouteTable"
+      "ec2:DescribeTransitGatewayRouteTables"
     ],
     "attributes": {
       "tags": [
