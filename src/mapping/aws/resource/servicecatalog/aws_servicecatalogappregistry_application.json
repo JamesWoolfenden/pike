@@ -1,0 +1,30 @@
+[
+  {
+    "apply": [
+      "iam:CreateServiceLinkedRole",
+      "servicecatalog:CreateApplication",
+      "servicecatalog:DeleteApplication",
+      "servicecatalog:GetApplication",
+      "servicecatalog:ListTagsForResource",
+      "servicecatalog:UpdateApplication"
+    ],
+    "attributes": {
+      "tags": [
+        "servicecatalog:TagResource",
+        "servicecatalog:UntagResource"
+      ]
+    },
+    "destroy": [
+      "servicecatalog:DeleteApplication"
+    ],
+    "modify": [
+      "servicecatalog:GetApplication",
+      "servicecatalog:ListTagsForResource",
+      "servicecatalog:UpdateApplication",
+      "iam:CreateServiceLinkedRole"
+    ],
+    "plan": [
+      "servicecatalog:GetApplication"
+    ]
+  }
+]

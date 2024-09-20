@@ -1,0 +1,28 @@
+[
+  {
+    "apply": [
+      "networkmanager:GetSiteToSiteVpnAttachment",
+      "networkmanager:CreateSiteToSiteVpnAttachment",
+      "networkmanager:DeleteAttachment",
+      "networkmanager:ListTagsForResource",
+      "ec2:DescribeRegions"
+    ],
+    "attributes": {
+      "tags": [
+        "networkmanager:TagResource",
+        "networkmanager:UntagResource"
+      ]
+    },
+    "destroy": [
+      "networkmanager:GetSiteToSiteVpnAttachment",
+      "networkmanager:DeleteAttachment",
+      "ec2:DescribeRegions"
+    ],
+    "modify": [
+      "networkmanager:GetSiteToSiteVpnAttachment",
+      "networkmanager:ListTagsForResource",
+      "ec2:DescribeRegions"
+    ],
+    "plan": []
+  }
+]

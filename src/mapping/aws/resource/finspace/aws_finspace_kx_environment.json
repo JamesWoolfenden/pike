@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "finspace:CreateEnvironment",
+      "finspace:GetEnvironment",
+      "finspace:ListEnvironments",
+      "sts:AssumeRole",
+      "finspace:DeleteEnvironment",
+      "finspace:UpdateEnvironment"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "finspace:DeleteEnvironment"
+    ],
+    "modify": [
+      "finspace:UpdateEnvironment"
+    ],
+    "plan": []
+  }
+]

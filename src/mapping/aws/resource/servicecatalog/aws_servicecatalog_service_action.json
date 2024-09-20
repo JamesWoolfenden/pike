@@ -5,7 +5,8 @@
       "servicecatalog:DescribeServiceAction",
       "servicecatalog:DeleteServiceAction",
       "servicecatalog:UpdateServiceAction",
-      "ssm:DescribeDocument"
+      "ssm:DescribeDocument",
+      "iam:GetRole"
     ],
     "attributes": {
       "tags": []

@@ -3,17 +3,30 @@
     "apply": [
       "ec2:DeleteVolume",
       "ec2:DescribeVolumes",
-      "ec2:CreateVolume"
+      "ec2:CreateVolume",
+      "ec2:DescribeVolumeAttribute",
+      "ec2:ModifyVolumeAttribute",
+      "ec2:DescribeSnapshots",
+      "ec2:DeleteVolume",
+      "ec2:ModifyVolumeAttribute"
     ],
     "attributes": {
+      "kms_key_id": [
+        "kms:GenerateDataKeyWithoutPlaintext",
+        "kms:CreateGrant"
+      ],
       "tags": [
         "ec2:DeleteTags",
         "ec2:CreateTags"
       ]
     },
-    "destroy": [],
+    "destroy": [
+      "ec2:DescribeSnapshots",
+      "ec2:DeleteVolume"
+    ],
     "modify": [
-      "ec2:ModifyVolume"
+      "ec2:ModifyVolume",
+      "ec2:ModifyVolumeAttribute"
     ],
     "plan": []
   }

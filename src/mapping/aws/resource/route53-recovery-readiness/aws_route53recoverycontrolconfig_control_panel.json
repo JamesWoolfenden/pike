@@ -1,0 +1,30 @@
+[
+  {
+    "apply": [
+      "route53-recovery-control-config:CreateControlPanel",
+      "route53-recovery-control-config:DescribeCluster",
+      "route53-recovery-control-config:DescribeControlPanel",
+      "route53-recovery-control-config:ListTagsForResource",
+      "route53-recovery-control-config:DeleteControlPanel"
+    ],
+    "attributes": {
+      "tags": [
+        "route53-recovery-control-config:TagResource",
+        "route53-recovery-control-config:UntagResource"
+      ]
+    },
+    "destroy": [
+      "route53-recovery-control-config:DeleteControlPanel",
+      "route53-recovery-control-config:DescribeControlPanel"
+    ],
+    "modify": [
+      "route53-recovery-control-config:UpdateControlPanel",
+      "route53-recovery-control-config:DescribeControlPanel",
+      "route53-recovery-control-config:ListTagsForResource"
+    ],
+    "plan": [
+      "route53-recovery-control-config:DescribeControlPanel",
+      "route53-recovery-control-config:ListTagsForResource"
+    ]
+  }
+]

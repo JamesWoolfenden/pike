@@ -1,0 +1,26 @@
+[
+  {
+    "apply": [
+      "memorydb:CreateParameterGroup",
+      "memorydb:DescribeParameterGroups",
+      "memorydb:ListTags",
+      "memorydb:UpdateParameterGroup",
+      "memorydb:DescribeParameters",
+      "memorydb:DescribeClusters"
+    ],
+    "attributes": {
+      "tags": [
+        "memorydb:TagResource"
+      ]
+    },
+    "destroy": [
+      "memorydb:DeleteParameterGroup"
+    ],
+    "modify": [
+      "memorydb:UpdateParameterGroup",
+      "memorydb:DescribeParameters",
+      "memorydb:DescribeClusters"
+    ],
+    "plan": []
+  }
+]

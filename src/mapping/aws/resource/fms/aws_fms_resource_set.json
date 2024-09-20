@@ -1,0 +1,30 @@
+[
+  {
+    "apply": [
+      "fms:PutResourceSet",
+      "fms:BatchAssociateResource",
+      "fms:ListResourceSetResources",
+      "fms:GetResourceSet",
+      "fms:ListResourceSetResources",
+      "fms:ListTagsForResource",
+      "fms:DeleteResourceSet"
+    ],
+    "attributes": {
+      "tags": [
+        "fms:TagResource",
+        "fms:UntagResource"
+      ]
+    },
+    "destroy": [
+      "fms:DeleteResourceSet"
+    ],
+    "modify": [
+      "fms:BatchDisassociateResource"
+    ],
+    "plan": [
+      "fms:GetResourceSet",
+      "fms:ListResourceSetResources",
+      "fms:ListTagsForResource"
+    ]
+  }
+]

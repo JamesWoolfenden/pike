@@ -1,0 +1,32 @@
+[
+  {
+    "apply": [
+      "payment-cryptography:GetKey",
+      "payment-cryptography:CreateKey",
+      "payment-cryptography:DeleteKey",
+      "payment-cryptography:ListTagsForResource",
+      "payment-cryptography:StartKeyUsage",
+      "payment-cryptography:StopKeyUsage"
+    ],
+    "attributes": {
+      "tags": [
+        "payment-cryptography:TagResource",
+        "payment-cryptography:UntagResource"
+      ]
+    },
+    "destroy": [
+      "payment-cryptography:GetKey",
+      "payment-cryptography:DeleteKey"
+    ],
+    "modify": [
+      "payment-cryptography:GetKey",
+      "payment-cryptography:ListTagsForResource",
+      "payment-cryptography:StartKeyUsage",
+      "payment-cryptography:StopKeyUsage"
+    ],
+    "plan": [
+      "payment-cryptography:GetKey",
+      "payment-cryptography:ListTagsForResource"
+    ]
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "apply": [
+      "events:*",
+      "glue:*",
+      "iam:CreateServiceLinkedRole",
+      "iam:DeleteRolePolicy",
+      "iam:GetRole",
+      "iam:ListAttachedRolePolicies",
+      "iam:PassRole",
+      "iam:PutRolePolicy",
+      "lakeformation:*",
+      "lambda:*",
+      "organizations:*",
+      "s3:*",
+      "securitylake:CreateDataLake",
+      "securitylake:DeleteDataLake",
+      "securitylake:List*",
+      "securitylake:UpdateDataLake",
+      "sqs:*"
+    ],
+    "attributes": {
+      "kms_key_id": [
+        "kms:CreateGrant",
+        "kms:DescribeKey"
+      ],
+      "tags": [
+        "securitylake:TagResource",
+        "securitylake:UntagResource"
+      ]
+    },
+    "destroy": [
+      "organizations:*",
+      "securitylake:DeleteDataLake",
+      "securitylake:List*"
+    ],
+    "modify": [
+      "events:*",
+      "iam:CreateServiceLinkedRole",
+      "iam:DeleteRolePolicy",
+      "iam:GetRole",
+      "iam:PassRole",
+      "iam:PutRolePolicy",
+      "kms:DescribeKey",
+      "kms:CreateGrant",
+      "lakeformation:*",
+      "lambda:*",
+      "organizations:*",
+      "s3:*",
+      "securitylake:List*",
+      "securitylake:UpdateDataLake",
+      "sqs:*"
+    ],
+    "plan": []
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "quicksight:CreateRefreshSchedule",
+      "quicksight:DescribeRefreshSchedule",
+      "quicksight:UpdateRefreshSchedule",
+      "quicksight:DeleteRefreshSchedule"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "quicksight:DeleteRefreshSchedule",
+      "quicksight:DescribeRefreshSchedule"
+    ],
+    "modify": [
+      "quicksight:UpdateRefreshSchedule",
+      "quicksight:DescribeRefreshSchedule"
+    ],
+    "plan": [
+      "quicksight:DescribeRefreshSchedule"
+    ]
+  }
+]

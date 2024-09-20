@@ -1,0 +1,26 @@
+[
+  {
+    "apply": [
+      "iam:GetRole",
+      "iam:PassRole",
+      "iot:RegisterCACertificate",
+      "iot:DescribeCACertificate",
+      "iot:ListTagsForResource",
+      "iot:UpdateCACertificate",
+      "iot:DeleteCACertificate",
+      "iot:UpdateCACertificate"
+    ],
+    "attributes": {
+      "tags": [
+        "iot:TagResource",
+        "iot:UntagResource"
+      ]
+    },
+    "destroy": [
+      "iot:UpdateCACertificate",
+      "iot:DeleteCACertificate"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

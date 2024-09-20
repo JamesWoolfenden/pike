@@ -1,0 +1,46 @@
+[
+  {
+    "apply": [
+      "iam:PassRole",
+      "redshift-serverless:CreateNamespace",
+      "redshift-serverless:GetNamespace",
+      "redshift-serverless:ListSnapshotCopyConfigurations",
+      "redshift-serverless:CreateSnapshotCopyConfiguration",
+      "redshift:GetResourcePolicy",
+      "redshift:PutResourcePolicy",
+      "redshift-serverless:UpdateNamespace",
+      "redshift-serverless:DeleteNamespace"
+    ],
+    "attributes": {
+      "kms_key_id": [
+        "kms:TagResource",
+        "kms:UntagResource",
+        "kms:ScheduleKeyDeletion",
+        "kms:CancelKeyDeletion",
+        "kms:Encrypt",
+        "kms:Decrypt",
+        "kms:DescribeKey",
+        "kms:GenerateDataKeyPair",
+        "kms:GenerateDataKey",
+        "kms:CreateGrant",
+        "kms:ListGrants",
+        "kms:RevokeGrant",
+        "kms:RetireGrant"
+      ],
+      "manage_admin_password": [
+        "secretsmanager:CreateSecret",
+        "secretsmanager:TagResource",
+        "secretsmanager:RotateSecret",
+        "secretsmanager:DescribeSecret"
+      ],
+      "tags": []
+    },
+    "destroy": [
+      "redshift-serverless:DeleteNamespace"
+    ],
+    "modify": [
+      "redshift-serverless:UpdateNamespace"
+    ],
+    "plan": []
+  }
+]

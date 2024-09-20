@@ -1,0 +1,29 @@
+[
+  {
+    "apply": [
+      "networkmanager:CreateTransitGatewayPeering",
+      "networkmanager:GetTransitGatewayPeering",
+      "iam:CreateServiceLinkedRole",
+      "ec2:CreateTransitGatewayPeeringAttachment",
+      "ec2:AcceptTransitGatewayPeeringAttachment",
+      "ec2:DescribeRegions",
+      "networkmanager:DeletePeering",
+      "networkmanager:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "networkmanager:TagResource",
+        "networkmanager:UntagResource"
+      ]
+    },
+    "destroy": [
+      "networkmanager:DeletePeering"
+    ],
+    "modify": [
+      "networkmanager:ListTagsForResource"
+    ],
+    "plan": [
+      "networkmanager:GetTransitGatewayPeering"
+    ]
+  }
+]

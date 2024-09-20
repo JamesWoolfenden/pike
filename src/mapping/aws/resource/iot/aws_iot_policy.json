@@ -1,0 +1,29 @@
+[
+  {
+    "apply": [
+      "iot:CreatePolicy",
+      "iot:GetPolicy",
+      "iot:ListTagsForResource",
+      "iot:DeletePolicy",
+      "iot:ListPolicyVersions",
+      "iot:DeletePolicyVersion"
+    ],
+    "attributes": {
+      "tags": [
+        "iot:TagResource",
+        "iot:UntagResource"
+      ]
+    },
+    "destroy": [
+      "iot:DeletePolicy",
+      "iot:ListPolicyVersions",
+      "iot:DeletePolicyVersion"
+    ],
+    "modify": [
+      "iot:CreatePolicyVersion",
+      "iot:DeletePolicyVersion",
+      "iot:SetDefaultPolicyVersion"
+    ],
+    "plan": []
+  }
+]

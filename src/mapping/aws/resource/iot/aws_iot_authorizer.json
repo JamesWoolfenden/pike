@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "iot:CreateAuthorizer",
+      "iot:DescribeAuthorizer",
+      "iot:ListTagsForResource",
+      "iot:UpdateAuthorizer",
+      "iot:DeleteAuthorizer",
+      "iot:DescribeAuthorizer"
+    ],
+    "attributes": {
+      "tags": [
+        "iot:TagResource",
+        "iot:UntagResource"
+      ]
+    },
+    "destroy": [
+      "iot:UpdateAuthorizer",
+      "iot:DeleteAuthorizer",
+      "iot:DescribeAuthorizer"
+    ],
+    "modify": [
+      "iot:UpdateAuthorizer"
+    ],
+    "plan": []
+  }
+]

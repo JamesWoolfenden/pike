@@ -1,0 +1,29 @@
+[
+  {
+    "apply": [
+      "ivs:CreateChannel",
+      "ivs:DeleteChannel",
+      "ivs:GetChannel",
+      "ivs:ListTagsForResource",
+      "ivs:UpdateChannel",
+      "ivs:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "ivs:TagResource",
+        "ivs:UntagResource"
+      ]
+    },
+    "destroy": [
+      "ivs:DeleteChannel"
+    ],
+    "modify": [
+      "ivs:UpdateChannel",
+      "ivs:ListTagsForResource"
+    ],
+    "plan": [
+      "ivs:GetChannel",
+      "ivs:ListTagsForResource"
+    ]
+  }
+]

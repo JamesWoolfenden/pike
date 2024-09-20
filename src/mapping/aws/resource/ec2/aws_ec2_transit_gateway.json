@@ -2,7 +2,10 @@
   {
     "apply": [
       "ec2:CreateTransitGateway",
-      "ec2:DescribeTransitGateways"
+      "ec2:DescribeTransitGateways",
+      "ec2:DescribeTags",
+      "ec2:ModifyTransitGateway",
+      "ec2:ModifyTransitGatewayOptions"
     ],
     "attributes": {
       "tags": [
@@ -13,7 +16,10 @@
     "destroy": [
       "ec2:DeleteTransitGateway"
     ],
-    "modify": [],
+    "modify": [
+      "ec2:ModifyTransitGateway",
+      "ec2:ModifyTransitGatewayOptions"
+    ],
     "plan": []
   }
 ]

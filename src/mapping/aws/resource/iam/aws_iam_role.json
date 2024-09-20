@@ -22,7 +22,8 @@
         "iam:DeleteRolePermissionsBoundary"
       ],
       "tags": [
-        "iam:TagRole"
+        "iam:TagRole",
+        "iam:UntagRole"
       ]
     },
     "destroy": [

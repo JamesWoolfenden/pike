@@ -1,0 +1,29 @@
+[
+  {
+    "apply": [
+      "networkmanager:CreateLink",
+      "networkmanager:ListTagsForResource",
+      "networkmanager:GetLinks",
+      "networkmanager:UpdateLink",
+      "networkmanager:DeleteLink"
+    ],
+    "attributes": {
+      "tags": [
+        "networkmanager:TagResource",
+        "networkmanager:UntagResource"
+      ]
+    },
+    "destroy": [
+      "networkmanager:GetLinks",
+      "networkmanager:DeleteLink"
+    ],
+    "modify": [
+      "networkmanager:ListTagsForResource",
+      "networkmanager:GetLinks",
+      "networkmanager:UpdateLink"
+    ],
+    "plan": [
+      "networkmanager:GetLinks"
+    ]
+  }
+]

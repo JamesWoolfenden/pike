@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "ec2:CreateTransitGatewayConnect",
+      "ec2:DescribeTransitGatewayConnects",
+      "ec2:DeleteTransitGatewayConnect"
+    ],
+    "attributes": {
+      "tags": [
+        "ec2:CreateTags",
+        "ec2:DeleteTags"
+      ]
+    },
+    "destroy": [
+      "ec2:DeleteTransitGatewayConnect"
+    ],
+    "modify": [],
+    "plan": [
+      "ec2:DescribeTransitGatewayConnects"
+    ]
+  }
+]

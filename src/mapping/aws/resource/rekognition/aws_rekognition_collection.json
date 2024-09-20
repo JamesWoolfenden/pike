@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "rekognition:CreateCollection",
+      "rekognition:DescribeCollection",
+      "rekognition:ListTagsForResource",
+      "rekognition:DeleteCollection"
+    ],
+    "attributes": {
+      "tags": [
+        "rekognition:TagResource",
+        "rekognition:UntagResource"
+      ]
+    },
+    "destroy": [
+      "rekognition:DeleteCollection"
+    ],
+    "modify": [
+      "rekognition:DescribeCollection",
+      "rekognition:ListTagsForResource"
+    ],
+    "plan": [
+      "rekognition:DescribeCollection",
+      "rekognition:ListTagsForResource"
+    ]
+  }
+]

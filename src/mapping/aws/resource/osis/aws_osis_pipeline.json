@@ -1,0 +1,43 @@
+[
+  {
+    "apply": [
+      "osis:CreatePipeline",
+      "osis:GetPipeline",
+      "osis:ListTagsForResource",
+      "iam:PassRole",
+      "iam:CreateServiceLinkedRole",
+      "osis:DeletePipeline",
+      "osis:UpdatePipeline"
+    ],
+    "attributes": {
+      "kms_key_arn": [
+        "kms:DescribeKey"
+      ],
+      "log_group": [
+        "logs:CreateLogDelivery",
+        "logs:GetLogDelivery",
+        "logs:UpdateLogDelivery",
+        "logs:ListLogDeliveries",
+        "logs:DeleteLogDelivery"
+      ],
+      "tags": [
+        "osis:TagResource",
+        "osis:UntagResource"
+      ]
+    },
+    "destroy": [
+      "osis:GetPipeline",
+      "osis:DeletePipeline"
+    ],
+    "modify": [
+      "osis:UpdatePipeline",
+      "osis:GetPipeline",
+      "osis:ListTagsForResource",
+      "iam:PassRole"
+    ],
+    "plan": [
+      "osis:GetPipeline",
+      "osis:ListTagsForResource"
+    ]
+  }
+]

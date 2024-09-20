@@ -1,20 +1,80 @@
 [
   {
     "apply": [
-      "vpc-lattice:GetAccessLogSubscription",
+      "firehose:CreateDeliveryStream",
+      "firehose:DeleteDeliveryStream",
+      "firehose:DescribeDeliveryStream",
+      "firehose:TagDeliveryStream",
+      "firehose:UntagDeliveryStream",
+      "firehose:UpdateDestination",
+      "iam:CreateServiceLinkedRole",
+      "iam:DeleteServiceLinkedRole",
+      "iam:GetServiceLinkedRoleDeletionStatus",
+      "logs:CreateLogDelivery",
+      "logs:CreateLogStream",
+      "logs:DeleteDestination",
+      "logs:DeleteLogDelivery",
+      "logs:DeleteLogStream",
+      "logs:DescribeLogGroups",
+      "logs:DescribeResourcePolicies",
+      "logs:GetLogDelivery",
+      "logs:PutDestination",
+      "logs:PutDestinationPolicy",
+      "logs:PutResourcePolicy",
+      "logs:UpdateLogDelivery",
+      "s3:GetBucketLogging",
+      "s3:GetBucketPolicy",
+      "s3:PutBucketLogging",
+      "s3:PutBucketPolicy",
       "vpc-lattice:CreateAccessLogSubscription",
       "vpc-lattice:DeleteAccessLogSubscription",
+      "vpc-lattice:GetAccessLogSubscription",
+      "vpc-lattice:ListTagsForResource",
       "vpc-lattice:UpdateAccessLogSubscription"
     ],
     "attributes": {
-      "tags": []
+      "tags": [
+        "vpc-lattice:TagResource",
+        "vpc-lattice:UntagResource"
+      ]
     },
     "destroy": [
-      "vpc-lattice:DeleteAccessLogSubscription"
+      "vpc-lattice:DeleteAccessLogSubscription",
+      "logs:DeleteLogDelivery",
+      "logs:DeleteLogStream",
+      "logs:GetLogDelivery",
+      "logs:DeleteDestination",
+      "s3:PutBucketLogging",
+      "iam:GetServiceLinkedRoleDeletionStatus",
+      "iam:DeleteServiceLinkedRole",
+      "firehose:DeleteDeliveryStream",
+      "firehose:UntagDeliveryStream"
     ],
     "modify": [
-      "vpc-lattice:UpdateAccessLogSubscription"
+      "vpc-lattice:UpdateAccessLogSubscription",
+      "vpc-lattice:GetAccessLogSubscription",
+      "logs:UpdateLogDelivery",
+      "firehose:UpdateDestination",
+      "logs:CreateLogDelivery",
+      "logs:CreateLogStream",
+      "logs:PutDestination",
+      "logs:PutDestinationPolicy",
+      "logs:PutResourcePolicy",
+      "logs:DescribeResourcePolicies",
+      "logs:DescribeLogGroups",
+      "logs:GetLogDelivery",
+      "s3:PutBucketLogging",
+      "s3:GetBucketLogging",
+      "s3:GetBucketPolicy",
+      "s3:PutBucketPolicy",
+      "firehose:TagDeliveryStream",
+      "firehose:CreateDeliveryStream",
+      "firehose:DescribeDeliveryStream"
     ],
-    "plan": []
+    "plan": [
+      "vpc-lattice:GetAccessLogSubscription",
+      "vpc-lattice:ListTagsForResource",
+      "logs:GetLogDelivery"
+    ]
   }
 ]

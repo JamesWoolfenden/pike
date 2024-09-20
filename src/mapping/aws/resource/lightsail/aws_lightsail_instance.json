@@ -3,8 +3,19 @@
     "apply": [
       "ec2:DescribeAccountAttributes",
       "lightsail:CreateInstances",
+      "lightsail:GetInstances",
+      "lightsail:EnableAddOn",
       "lightsail:GetInstance",
-      "lightsail:DeleteInstance"
+      "lightsail:DisableAddOn",
+      "lightsail:PutInstancePublicPorts",
+      "lightsail:AttachDisk",
+      "lightsail:DetachDisk",
+      "lightsail:StartInstance",
+      "lightsail:StopInstance",
+      "lightsail:GetDisk",
+      "lightsail:GetRegions",
+      "lightsail:DeleteInstance",
+      "lightsail:ReleaseStaticIp"
     ],
     "attributes": {
       "tags": [

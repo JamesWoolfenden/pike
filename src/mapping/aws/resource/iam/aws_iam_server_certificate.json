@@ -2,11 +2,11 @@
   {
     "apply": [
       "iam:GetServerCertificate",
-      "iam:UploadServerCertificate"
+      "iam:UploadServerCertificate",
+      "iam:ListServerCertificateTags"
     ],
     "attributes": {
       "tags": [
-        "iam:ListServerCertificateTags",
         "iam:TagServerCertificate",
         "iam:UntagServerCertificate"
       ]

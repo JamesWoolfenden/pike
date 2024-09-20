@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "globalaccelerator:CreateAccelerator",
+      "globalaccelerator:DescribeAccelerator",
+      "globalaccelerator:UpdateAccelerator",
+      "globalaccelerator:DeleteAccelerator"
+    ],
+    "attributes": {
+      "tags": [
+        "globalaccelerator:TagResource",
+        "globalaccelerator:UntagResource"
+      ]
+    },
+    "destroy": [
+      "globalaccelerator:UpdateAccelerator",
+      "globalaccelerator:DeleteAccelerator"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -5,12 +5,17 @@
       "rds:DescribeDBClusters",
       "rds:ListTagsForResource",
       "rds:DescribeGlobalClusters",
-      "rds:DeleteDBCluster"
+      "rds:DeleteDBCluster",
+      "iam:CreateServiceLinkedRole"
     ],
     "attributes": {
       "iam_roles": [
         "rds:AddRoleToDBCluster",
         "iam:PassRole"
+      ],
+      "manage_master_user_password": [
+        "secretsmanager:CreateSecret",
+        "secretsmanager:TagResource"
       ],
       "tags": [
         "rds:AddTagsToResource",

@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "ec2:CreateVpcEndpointConnectionNotification",
+      "ec2:DeleteVpcEndpointConnectionNotifications",
+      "ec2:ModifyVpcEndpointConnectionNotification",
+      "ec2:DescribeVpcEndpointConnectionNotifications"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "ec2:DeleteVpcEndpointConnectionNotifications"
+    ],
+    "modify": [
+      "ec2:ModifyVpcEndpointConnectionNotification",
+      "ec2:DescribeVpcEndpointConnectionNotifications"
+    ],
+    "plan": []
+  }
+]

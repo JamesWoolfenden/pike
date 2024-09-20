@@ -1,0 +1,34 @@
+[
+  {
+    "apply": [
+      "emr-serverless:CreateApplication",
+      "emr-serverless:UpdateApplication",
+      "emr-serverless:DeleteApplication",
+      "emr-serverless:GetApplication",
+      "iam:CreateServiceLinkedRole",
+      "ec2:CreateNetworkInterface",
+      "ecr:BatchGetImage",
+      "ecr:DescribeImages",
+      "ecr:GetDownloadUrlForLayer"
+    ],
+    "attributes": {
+      "tags": [
+        "emr-serverless:TagResource",
+        "emr-serverless:UntagResource"
+      ]
+    },
+    "destroy": [
+      "emr-serverless:DeleteApplication",
+      "emr-serverless:GetApplication"
+    ],
+    "modify": [
+      "emr-serverless:UpdateApplication",
+      "emr-serverless:GetApplication",
+      "ec2:CreateNetworkInterface",
+      "ecr:BatchGetImage",
+      "ecr:DescribeImages",
+      "ecr:GetDownloadUrlForLayer"
+    ],
+    "plan": []
+  }
+]

@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "eks:CreatePodIdentityAssociation",
+      "eks:DescribePodIdentityAssociation",
+      "eks:UpdatePodIdentityAssociation",
+      "eks:DeletePodIdentityAssociation",
+      "iam:PassRole",
+      "iam:GetRole"
+    ],
+    "attributes": {
+      "tags": [
+        "eks:TagResource",
+        "eks:UntagResource"
+      ]
+    },
+    "destroy": [
+      "eks:DeletePodIdentityAssociation"
+    ],
+    "modify": [
+      "eks:UpdatePodIdentityAssociation"
+    ],
+    "plan": []
+  }
+]

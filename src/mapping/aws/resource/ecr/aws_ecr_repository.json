@@ -9,7 +9,8 @@
     "attributes": {
       "encryption_configuration": [
         "kms:DescribeKey",
-        "kms:CreateGrant"
+        "kms:CreateGrant",
+        "kms:RetireGrant"
       ],
       "image_scanning_configuration": [
         "ecr:PutImageScanningConfiguration"
@@ -19,7 +20,9 @@
         "ecr:UntagResource"
       ]
     },
-    "destroy": [],
+    "destroy": [
+      "ecr:DeleteRepository"
+    ],
     "modify": [],
     "plan": []
   }

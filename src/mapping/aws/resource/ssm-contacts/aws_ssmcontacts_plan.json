@@ -1,7 +1,9 @@
 [
   {
     "apply": [
-      "ssm-contacts:UpdateContact"
+      "ssm-contacts:UpdateContact",
+      "ssm-contacts:GetContact",
+      "ssm-contacts:AssociateContact"
     ],
     "attributes": {
       "tags": []

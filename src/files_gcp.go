@@ -313,6 +313,7 @@ var googleBigtableAppProfile []byte
 //go:embed mapping/google/resource/bigtable/google_bigtable_gc_policy.json
 var googleBigtableGcPolicy []byte
 
+//go:embed mapping/google/resource/apigateway/google_api_gateway_api.json
 var googleAPIGatewayAPI []byte
 
 //go:embed mapping/google/resource/apigateway/google_api_gateway_api_config.json

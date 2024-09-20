@@ -27,7 +27,8 @@ func TestGetGCPPermissions(t *testing.T) {
 		}, wantErr: true},
 		{name: "notype", args: args{
 			result: pike.ResourceV2{
-				TypeName: "bogus", Name: "google_compute_duff", ResourceName: "pike", Provider: "azurerm", Attributes: []string{
+				TypeName: "bogus", Name: "google_compute_duff", ResourceName: "pike", Provider: "azurerm",
+				Attributes: []string{
 					"name",
 					"machine_type", "zone",
 				},
@@ -35,7 +36,8 @@ func TestGetGCPPermissions(t *testing.T) {
 		}, wantErr: true},
 		{name: "not implemented", args: args{
 			result: pike.ResourceV2{
-				TypeName: "data", Name: "google_compute_duff", ResourceName: "pike", Provider: "azurerm", Attributes: []string{
+				TypeName: "data", Name: "google_compute_duff", ResourceName: "pike", Provider: "azurerm",
+				Attributes: []string{
 					"name",
 					"machine_type", "zone",
 				},
@@ -69,11 +71,13 @@ func TestGetGCPPermissions(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
 			got, err := pike.GetGCPPermissions(tt.args.result)
+
 			if (err != nil) != tt.wantErr {
 				t.Errorf("GetGCPPermissions() error = %v, wantErr %v", err, tt.wantErr)
 
 				return
 			}
+
 			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("GetGCPPermissions() = %v, want %v", got, tt.want)
 			}
@@ -120,6 +124,7 @@ func TestGetGCPResourcePermissions(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
+
 			if got, _ := pike.GetGCPResourcePermissions(tt.args.result); !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("GetGCPResourcePermissions() = %v, want %v", got, tt.want)
 			}

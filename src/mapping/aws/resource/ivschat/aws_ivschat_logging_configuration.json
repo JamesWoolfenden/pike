@@ -1,0 +1,43 @@
+[
+  {
+    "apply": [
+      "iam:CreateServiceLinkedRole",
+      "ivschat:CreateLoggingConfiguration",
+      "ivschat:DeleteLoggingConfiguration",
+      "ivschat:GetLoggingConfiguration",
+      "ivschat:UpdateLoggingConfiguration"
+    ],
+    "attributes": {
+      "cloudwatch_logs": [
+        "logs:CreateLogDelivery",
+        "logs:DeleteLogDelivery",
+        "logs:DescribeLogGroups",
+        "logs:DescribeResourcePolicies",
+        "logs:GetLogDelivery",
+        "logs:ListLogDeliveries",
+        "logs:PutResourcePolicy",
+        "logs:UpdateLogDelivery"
+      ],
+      "firehose": [
+        "firehose:TagDeliveryStream"
+      ],
+      "s3": [
+        "s3:GetBucketPolicy",
+        "s3:PutBucketPolicy"
+      ],
+      "tags": [
+        "ivschat:TagResource",
+        "ivschat:UntagResource"
+      ]
+    },
+    "destroy": [
+      "ivschat:DeleteLoggingConfiguration",
+      "ivschat:GetLoggingConfiguration"
+    ],
+    "modify": [
+      "ivschat:UpdateLoggingConfiguration",
+      "ivschat:GetLoggingConfiguration"
+    ],
+    "plan": []
+  }
+]

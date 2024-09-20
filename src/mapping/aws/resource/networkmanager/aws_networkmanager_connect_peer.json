@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "networkmanager:GetConnectPeer",
+      "networkmanager:CreateConnectPeer",
+      "ec2:DescribeRegions",
+      "networkmanager:DeleteConnectPeer",
+      "networkmanager:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "networkmanager:TagResource",
+        "networkmanager:UntagResource"
+      ]
+    },
+    "destroy": [
+      "networkmanager:DeleteConnectPeer"
+    ],
+    "modify": [
+      "networkmanager:ListTagsForResource"
+    ],
+    "plan": []
+  }
+]

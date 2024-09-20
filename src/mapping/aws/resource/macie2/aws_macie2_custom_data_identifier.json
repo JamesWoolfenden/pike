@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "macie2:CreateCustomDataIdentifier",
+      "macie2:GetCustomDataIdentifier",
+      "macie2:DeleteCustomDataIdentifier"
+    ],
+    "attributes": {
+      "tags": [
+        "macie2:TagResource",
+        "macie2:UntagResource"
+      ]
+    },
+    "destroy": [
+      "macie2:DeleteCustomDataIdentifier"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

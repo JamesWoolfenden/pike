@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "securityhub:EnableImportFindingsForProduct",
+      "securityhub:ListEnabledProductsForImport",
+      "securityhub:DisableImportFindingsForProduct"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "securityhub:ListEnabledProductsForImport",
+      "securityhub:DisableImportFindingsForProduct"
+    ],
+    "modify": [],
+    "plan": [
+      "securityhub:ListEnabledProductsForImport"
+    ]
+  }
+]

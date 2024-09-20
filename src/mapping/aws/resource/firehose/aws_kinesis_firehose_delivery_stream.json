@@ -9,6 +9,13 @@
       "firehose:UpdateDestination"
     ],
     "attributes": {
+      "kms_key_arn": [
+        "kms:CreateGrant",
+        "kms:DescribeKey",
+        "kms:RevokeGrant",
+        "firehose:StartDeliveryStreamEncryption",
+        "firehose:StopDeliveryStreamEncryption"
+      ],
       "tags": [
         "firehose:TagDeliveryStream",
         "firehose:UntagDeliveryStream"

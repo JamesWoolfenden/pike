@@ -4,7 +4,8 @@
       "ec2:DescribeAccountAttributes",
       "events:CreateArchive",
       "events:DescribeArchive",
-      "events:DeleteArchive"
+      "events:DeleteArchive",
+      "events:UpdateArchive"
     ],
     "attributes": {
       "tags": []

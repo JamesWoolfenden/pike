@@ -1,11 +1,20 @@
 [
   {
-    "apply": [],
+    "apply": [
+      "elasticfilesystem:CreateMountTarget",
+      "elasticfilesystem:DescribeMountTargets",
+      "elasticfilesystem:ModifyMountTargetSecurityGroups",
+      "elasticfilesystem:DescribeMountTargetSecurityGroups"
+    ],
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
+    "destroy": [
+      "elasticfilesystem:DeleteMountTarget"
+    ],
+    "modify": [
+      "elasticfilesystem:ModifyMountTargetSecurityGroups"
+    ],
     "plan": [
       "elasticfilesystem:DescribeMountTargets"
     ]

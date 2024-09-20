@@ -1,0 +1,31 @@
+[
+  {
+    "apply": [
+      "networkmanager:CreateCoreNetwork",
+      "networkmanager:GetCoreNetwork",
+      "networkmanager:GetCoreNetworkPolicy",
+      "ec2:DescribeRegions",
+      "networkmanager:DeleteCoreNetwork",
+      "networkmanager:UpdateCoreNetwork",
+      "networkmanager:ListTagsForResource",
+      "networkmanager:PutCoreNetworkPolicy",
+      "networkmanager:ExecuteCoreNetworkChangeSet"
+    ],
+    "attributes": {
+      "tags": [
+        "networkmanager:TagResource",
+        "networkmanager:UntagResource"
+      ]
+    },
+    "destroy": [
+      "networkmanager:DeleteCoreNetwork"
+    ],
+    "modify": [
+      "networkmanager:UpdateCoreNetwork",
+      "networkmanager:ListTagsForResource",
+      "networkmanager:PutCoreNetworkPolicy",
+      "networkmanager:ExecuteCoreNetworkChangeSet"
+    ],
+    "plan": []
+  }
+]

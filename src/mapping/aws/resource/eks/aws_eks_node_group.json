@@ -5,10 +5,22 @@
       "eks:CreateNodegroup",
       "eks:DeleteNodegroup",
       "iam:GetRole",
+      "iam:PassRole",
       "iam:ListAttachedRolePolicies",
-      "ec2:DescribeSubnets",
       "iam:CreateServiceLinkedRole",
-      "eks:DescribeNodegroup"
+      "eks:DescribeNodegroup",
+      "ec2:DescribeSubnets",
+      "ec2:DescribeVpcs",
+      "ec2:DescribeSecurityGroups",
+      "ec2:DescribeKeyPairs",
+      "ec2:CreateTags",
+      "ec2:DeleteTags",
+      "ec2:DescribeRouteTables",
+      "ec2:DescribeLaunchTemplates",
+      "ec2:DescribeLaunchTemplateVersions",
+      "ec2:RunInstances",
+      "eks:ListUpdates",
+      "eks:UpdateNodegroupVersion"
     ],
     "attributes": {
       "tags": [
@@ -20,7 +32,9 @@
       "eks:DeleteNodegroup"
     ],
     "modify": [
-      "eks:UpdateNodegroupConfig"
+      "eks:UpdateNodegroupConfig",
+      "eks:ListUpdates",
+      "eks:UpdateNodegroupVersion"
     ],
     "plan": []
   }

@@ -5,16 +5,23 @@
       "rds:CreateDBCluster",
       "rds:DescribeDBClusters",
       "rds:ListTagsForResource",
-      "rds:DeleteDBCluster"
+      "rds:DeleteDBCluster",
+      "iam:PassRole",
+      "iam:CreateServiceLinkedRole"
     ],
     "attributes": {
       "iam_roles": [
         "rds:AddRoleToDBCluster",
         "iam:PassRole"
       ],
+      "kms_key_arn": [
+        "kms:CreateGrant",
+        "kms:DescribeKey"
+      ],
       "tags": [
         "rds:AddTagsToResource",
-        "rds:RemoveTagsFromResource"
+        "rds:RemoveTagsFromResource",
+        "rds:AddTagsToResource"
       ]
     },
     "destroy": [

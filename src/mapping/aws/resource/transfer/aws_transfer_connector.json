@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "transfer:CreateConnector",
+      "iam:PassRole",
+      "transfer:UpdateConnector",
+      "transfer:DeleteConnector",
+      "transfer:DescribeConnector"
+    ],
+    "attributes": {
+      "tags": [
+        "transfer:UnTagResource",
+        "transfer:TagResource"
+      ]
+    },
+    "destroy": [
+      "transfer:DeleteConnector"
+    ],
+    "modify": [
+      "transfer:UpdateConnector",
+      "iam:PassRole"
+    ],
+    "plan": [
+      "transfer:DescribeConnector"
+    ]
+  }
+]

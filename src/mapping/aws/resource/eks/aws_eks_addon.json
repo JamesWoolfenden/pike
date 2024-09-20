@@ -4,19 +4,29 @@
       "eks:CreateAddon",
       "eks:DescribeAddon",
       "eks:DescribeAddonVersions",
-      "eks:DeleteAddon"
+      "eks:DeleteAddon",
+      "eks:CreatePodIdentityAssociation",
+      "eks:DeletePodIdentityAssociation",
+      "eks:UpdateAddon",
+      "eks:ListTagsForResource"
     ],
     "attributes": {
+      "service_account_role_arn": [
+        "iam:PassRole",
+        "iam:GetRole"
+      ],
       "tags": [
         "eks:TagResource",
         "eks:UntagResource"
       ]
     },
     "destroy": [
-      "eks:DeleteAddon"
+      "eks:DeleteAddon",
+      "eks:DeletePodIdentityAssociation"
     ],
     "modify": [
-      "eks:UpdateAddon"
+      "eks:UpdateAddon",
+      "eks:ListTagsForResource"
     ],
     "plan": []
   }

@@ -1,18 +1,61 @@
 [
   {
     "apply": [
+      "acm:CreateCertificateRelation",
+      "acm:DeleteCertificateRelation",
+      "acm:DescribeCertificate",
+      "acm:GetCertificateWithPK",
       "ec2:CreateVerifiedAccessEndpoint",
       "ec2:DeleteVerifiedAccessEndpoint",
-      "ec2:ModifyVerifiedAccessEndpoint"
+      "ec2:DescribeAccountAttributes",
+      "ec2:DescribeNetworkInterfaces",
+      "ec2:DescribeSubnets",
+      "ec2:DescribeTags",
+      "ec2:DescribeVerifiedAccessEndpoints",
+      "ec2:ModifyVerifiedAccessEndpoint",
+      "iam:CreateServiceLinkedRole",
+      "iam:ListRoles",
+      "sso:CreateManagedApplicationInstance",
+      "sso:DeleteManagedApplicationInstance",
+      "sso:GetManagedApplicationInstance",
+      "sso:GetPeregrineStatus",
+      "sso:GetSharedSsoConfiguration"
     ],
     "attributes": {
-      "tags": []
+      "load_balancer_options": [
+        "elasticloadbalancing:DescribeLoadBalancers",
+        "elasticloadbalancing:DescribeListeners",
+        "elasticloadbalancing:DescribeListenerCertificates"
+      ],
+      "policy_document": [
+        "ec2:GetVerifiedAccessEndpointPolicy",
+        "ec2:ModifyVerifiedAccessEndpointPolicy"
+      ],
+      "security_group_ids": [
+        "ec2:DescribeSecurityGroups"
+      ],
+      "sse_specification": [
+        "kms:DescribeKey",
+        "kms:RetireGrant",
+        "kms:CreateGrant",
+        "kms:GenerateDataKey",
+        "kms:Decrypt"
+      ],
+      "tags": [
+        "ec2:CreateTags",
+        "ec2:DeleteTags"
+      ]
     },
     "destroy": [
-      "ec2:DeleteVerifiedAccessEndpoint"
+      "ec2:DeleteVerifiedAccessEndpoint",
+      "sso:DeleteManagedApplicationInstance",
+      "acm:DeleteCertificateRelation"
     ],
     "modify": [
-      "ec2:ModifyVerifiedAccessEndpoint"
+      "ec2:ModifyVerifiedAccessEndpoint",
+      "ec2:ModifyVerifiedAccessEndpointPolicy",
+      "acm:DeleteCertificateRelation",
+      "sso:DeleteManagedApplicationInstance"
     ],
     "plan": []
   }

@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "transfer:CreateWorkflow",
+      "transfer:DeleteWorkflow",
+      "transfer:DescribeWorkflow"
+    ],
+    "attributes": {
+      "tags": [
+        "transfer:TagResource",
+        "transfer:UnTagResource"
+      ]
+    },
+    "destroy": [
+      "transfer:DeleteWorkflow"
+    ],
+    "modify": [],
+    "plan": [
+      "transfer:DescribeWorkflow"
+    ]
+  }
+]

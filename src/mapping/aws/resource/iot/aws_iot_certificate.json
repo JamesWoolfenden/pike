@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "iot:CreateCertificateFromCsr",
+      "iot:RegisterCertificate",
+      "iot:RegisterCertificateWithoutCA",
+      "iot:DescribeCertificate",
+      "iot:DeleteCertificate",
+      "iot:UpdateCertificate"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "iot:DeleteCertificate",
+      "iot:UpdateCertificate"
+    ],
+    "modify": [
+      "iot:UpdateCertificate"
+    ],
+    "plan": []
+  }
+]

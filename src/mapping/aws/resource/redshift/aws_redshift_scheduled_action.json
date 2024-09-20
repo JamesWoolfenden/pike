@@ -5,7 +5,10 @@
       "redshift:PauseCluster",
       "iam:PassRole",
       "redshift:DescribeScheduledActions",
-      "redshift:DeleteScheduledAction"
+      "redshift:DeleteScheduledAction",
+      "redshift:DescribeTags",
+      "redshift:ResumeCluster",
+      "redshift:ResizeCluster"
     ],
     "attributes": {
       "tags": []

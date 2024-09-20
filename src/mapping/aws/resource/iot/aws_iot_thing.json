@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "iot:CreateThing",
+      "iot:DescribeThing",
+      "iot:UpdateThing",
+      "iot:DeleteThing"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "iot:DeleteThing"
+    ],
+    "modify": [
+      "iot:UpdateThing"
+    ],
+    "plan": []
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "apply": [
+      "s3:ListBucket",
+      "s3:GetBucketPolicy",
+      "timestream-influxdb:GetDbInstance",
+      "timestream-influxdb:ListDbInstances",
+      "timestream-influxdb:CreateDbInstance",
+      "timestream-influxdb:UpdateDbInstance",
+      "timestream-influxdb:ListTagsForResource",
+      "ec2:DescribeSubnets",
+      "ec2:DescribeVpcs",
+      "ec2:DescribeNetworkInterfaces",
+      "ec2:DescribeSecurityGroups",
+      "ec2:CreateNetworkInterface",
+      "iam:CreateServiceLinkedRole"
+    ],
+    "attributes": {
+      "tags": [
+        "timestream-influxdb:TagResource",
+        "timestream-influxdb:UntagResource"
+      ]
+    },
+    "destroy": [
+      "timestream-influxdb:GetDbInstance",
+      "timestream-influxdb:ListDbInstances",
+      "timestream-influxdb:DeleteDbInstance"
+    ],
+    "modify": [
+      "s3:ListBucket",
+      "s3:GetBucketPolicy",
+      "timestream-influxdb:GetDbInstance",
+      "timestream-influxdb:ListDbInstances",
+      "timestream-influxdb:UpdateDbInstance",
+      "timestream-influxdb:ListTagsForResource"
+    ],
+    "plan": [
+      "timestream-influxdb:GetDbInstance",
+      "timestream-influxdb:ListTagsForResource"
+    ]
+  }
+]

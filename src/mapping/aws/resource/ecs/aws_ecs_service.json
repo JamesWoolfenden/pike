@@ -3,9 +3,14 @@
     "apply": [
       "ecs:CreateService",
       "ecs:DeleteService",
-      "ecs:DescribeServices"
+      "ecs:DescribeServices",
+      "ecs:UpdateService",
+      "ecs:ListTagsForResource"
     ],
     "attributes": {
+      "iam_role": [
+        "iam:PassRole"
+      ],
       "tags": [
         "ecs:TagResource",
         "ecs:UntagResource"
@@ -15,6 +20,7 @@
       "ecs:DeleteService"
     ],
     "modify": [
+      "ecs:ListTagsForResource",
       "ecs:UpdateService"
     ],
     "plan": []

@@ -4,7 +4,10 @@
       "sagemaker:CreateUserProfile",
       "sagemaker:DeleteUserProfile",
       "sagemaker:DescribeUserProfile",
-      "sagemaker:UpdateUserProfile"
+      "sagemaker:UpdateUserProfile",
+      "sagemaker:DescribeImage",
+      "sagemaker:DescribeImageVersion",
+      "iam:PassRole"
     ],
     "attributes": {
       "tags": [

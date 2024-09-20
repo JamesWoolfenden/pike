@@ -4,7 +4,8 @@
       "sagemaker:CreateMonitoringSchedule",
       "sagemaker:DeleteMonitoringSchedule",
       "sagemaker:DescribeMonitoringSchedule",
-      "sagemaker:UpdateMonitoringSchedule"
+      "sagemaker:UpdateMonitoringSchedule",
+      "iam:PassRole"
     ],
     "attributes": {
       "tags": [

@@ -3,13 +3,27 @@
     "apply": [
       "route53:CreateKeySigningKey",
       "route53:DeactivateKeySigningKey",
-      "route53:DeleteKeySigningKey"
+      "route53:DeleteKeySigningKey",
+      "route53:ActivateKeySigningKey",
+      "route53:GetDNSSEC"
     ],
     "attributes": {
+      "key_management_service_arn": [
+        "kms:Sign",
+        "kms:CreateGrant",
+        "kms:DescribeKey",
+        "kms:GetPublicKey"
+      ],
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "route53:GetDNSSEC",
+      "route53:ActivateKeySigningKey",
+      "route53:DeactivateKeySigningKey"
+    ],
+    "plan": [
+      "route53:GetDNSSEC"
+    ]
   }
 ]

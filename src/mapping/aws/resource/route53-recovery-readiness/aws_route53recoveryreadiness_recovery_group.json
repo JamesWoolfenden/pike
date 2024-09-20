@@ -1,0 +1,32 @@
+[
+  {
+    "apply": [
+      "route53-recovery-readiness:CreateRecoveryGroup",
+      "route53-recovery-readiness:GetRecoveryGroup",
+      "route53-recovery-readiness:GetCell",
+      "route53-recovery-readiness:ListTagsForResources",
+      "route53-recovery-readiness:DeleteRecoveryGroup",
+      "route53-recovery-readiness:UpdateRecoveryGroup"
+    ],
+    "attributes": {
+      "tags": [
+        "route53-recovery-readiness:TagResource",
+        "route53-recovery-readiness:UntagResource"
+      ]
+    },
+    "destroy": [
+      "route53-recovery-readiness:DeleteRecoveryGroup",
+      "route53-recovery-readiness:GetRecoveryGroup"
+    ],
+    "modify": [
+      "route53-recovery-readiness:UpdateRecoveryGroup",
+      "route53-recovery-readiness:GetRecoveryGroup",
+      "route53-recovery-readiness:GetCell",
+      "route53-recovery-readiness:ListTagsForResources"
+    ],
+    "plan": [
+      "route53-recovery-readiness:GetRecoveryGroup",
+      "route53-recovery-readiness:ListTagsForResources"
+    ]
+  }
+]

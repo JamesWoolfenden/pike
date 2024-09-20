@@ -1,0 +1,32 @@
+[
+  {
+    "apply": [
+      "route53-recovery-control-config:CreateSafetyRule",
+      "route53-recovery-control-config:DescribeSafetyRule",
+      "route53-recovery-control-config:DescribeControlPanel",
+      "route53-recovery-control-config:DescribeRoutingControl",
+      "route53-recovery-control-config:ListTagsForResource",
+      "route53-recovery-control-config:DeleteSafetyRule",
+      "route53-recovery-control-config:UpdateSafetyRule"
+    ],
+    "attributes": {
+      "tags": [
+        "route53-recovery-control-config:TagResource",
+        "route53-recovery-control-config:UntagResource"
+      ]
+    },
+    "destroy": [
+      "route53-recovery-control-config:DescribeSafetyRule",
+      "route53-recovery-control-config:DeleteSafetyRule"
+    ],
+    "modify": [
+      "route53-recovery-control-config:UpdateSafetyRule",
+      "route53-recovery-control-config:DescribeSafetyRule",
+      "route53-recovery-control-config:ListTagsForResource"
+    ],
+    "plan": [
+      "route53-recovery-control-config:DescribeSafetyRule",
+      "route53-recovery-control-config:ListTagsForResource"
+    ]
+  }
+]

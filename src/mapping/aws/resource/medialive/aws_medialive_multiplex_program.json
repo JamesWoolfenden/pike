@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "medialive:CreateMultiplexProgram",
+      "medialive:DescribeMultiplexProgram",
+      "medialive:DeleteMultiplexProgram",
+      "medialive:UpdateMultiplexProgram"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "medialive:DeleteMultiplexProgram"
+    ],
+    "modify": [
+      "medialive:UpdateMultiplexProgram"
+    ],
+    "plan": []
+  }
+]

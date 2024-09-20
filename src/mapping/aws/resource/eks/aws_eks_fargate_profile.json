@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "eks:CreateFargateProfile",
+      "eks:DescribeFargateProfile",
+      "eks:DeleteFargateProfile",
+      "iam:GetRole",
+      "iam:PassRole",
+      "iam:CreateServiceLinkedRole",
+      "eks:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "eks:TagResource",
+        "eks:UntagResource"
+      ]
+    },
+    "destroy": [
+      "eks:DeleteFargateProfile",
+      "eks:DescribeFargateProfile"
+    ],
+    "modify": [
+      "eks:ListTagsForResource"
+    ],
+    "plan": []
+  }
+]

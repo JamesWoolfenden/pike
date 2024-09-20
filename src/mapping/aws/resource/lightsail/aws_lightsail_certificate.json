@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "lightsail:CreateCertificate",
+      "lightsail:GetCertificates",
+      "lightsail:DeleteCertificate"
+    ],
+    "attributes": {
+      "tags": [
+        "lightsail:TagResource",
+        "lightsail:UntagResource"
+      ]
+    },
+    "destroy": [
+      "lightsail:DeleteCertificate"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

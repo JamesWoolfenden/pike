@@ -3,10 +3,26 @@
     "apply": [
       "ec2:CreateVerifiedAccessGroup",
       "ec2:DeleteVerifiedAccessGroup",
-      "ec2:ModifyVerifiedAccessGroup"
+      "ec2:ModifyVerifiedAccessGroup",
+      "ec2:DescribeVerifiedAccessGroups",
+      "ec2:DescribeTags"
     ],
     "attributes": {
-      "tags": []
+      "policy_document": [
+        "ec2:GetVerifiedAccessGroupPolicy",
+        "ec2:ModifyVerifiedAccessGroupPolicy"
+      ],
+      "server_side_encryption_configuration": [
+        "kms:DescribeKey",
+        "kms:RetireGrant",
+        "kms:CreateGrant",
+        "kms:GenerateDataKey",
+        "kms:Decrypt"
+      ],
+      "tags": [
+        "ec2:CreateTags",
+        "ec2:DeleteTags"
+      ]
     },
     "destroy": [
       "ec2:DeleteVerifiedAccessGroup"

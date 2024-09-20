@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "evidently:CreateSegment",
+      "evidently:GetSegment",
+      "evidently:ListTagsForResource",
+      "evidently:DeleteSegment"
+    ],
+    "attributes": {
+      "tags": [
+        "evidently:UntagResource",
+        "evidently:TagResource"
+      ]
+    },
+    "destroy": [
+      "evidently:DeleteSegment",
+      "evidently:GetSegment"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

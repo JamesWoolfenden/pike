@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "gamelift:CreateAlias",
+      "gamelift:UpdateAlias",
+      "gamelift:DeleteAlias",
+      "gamelift:DescribeAlias"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "gamelift:DeleteAlias"
+    ],
+    "modify": [
+      "gamelift:UpdateAlias"
+    ],
+    "plan": [
+      "gamelift:DescribeAlias"
+    ]
+  }
+]

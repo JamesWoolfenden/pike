@@ -6,7 +6,19 @@
       "vpc-lattice:DeleteTargetGroup",
       "vpc-lattice:UpdateTargetGroup",
       "ec2:DescribeVpcs",
-      "vpc-lattice:ListTagsForResource"
+      "vpc-lattice:ListTagsForResource",
+      "vpc-lattice:ListTargets",
+      "iam:CreateServiceLinkedRole",
+      "ec2:DescribeVpcs",
+      "ec2:DescribeInstances",
+      "ec2:DescribeSubnets",
+      "ec2:DescribeAvailabilityZoneMappings",
+      "lambda:Invoke",
+      "lambda:AddPermission",
+      "elasticloadbalancing:DescribeLoadBalancers",
+      "vpc-lattice:DeregisterTargets",
+      "lambda:RemovePermission",
+      "vpc-lattice:RegisterTargets"
     ],
     "attributes": {
       "tags": [
@@ -15,11 +27,18 @@
       ]
     },
     "destroy": [
-      "vpc-lattice:DeleteTargetGroup"
+      "vpc-lattice:DeleteTargetGroup",
+      "vpc-lattice:DeregisterTargets",
+      "lambda:RemovePermission"
     ],
     "modify": [
-      "vpc-lattice:UpdateTargetGroup"
+      "vpc-lattice:UpdateTargetGroup",
+      "vpc-lattice:RegisterTargets"
     ],
-    "plan": []
+    "plan": [
+      "vpc-lattice:GetTargetGroup",
+      "vpc-lattice:ListTargets",
+      "vpc-lattice:ListTagsForResource"
+    ]
   }
 ]

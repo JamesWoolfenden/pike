@@ -1,0 +1,28 @@
+[
+  {
+    "apply": [
+      "evidently:CreateLaunch",
+      "evidently:GetLaunch",
+      "evidently:StartLaunch",
+      "evidently:DeleteLaunch",
+      "evidently:UpdateLaunch",
+      "evidently:ListTagsForResource",
+      "evidently:StopLaunch"
+    ],
+    "attributes": {
+      "tags": [
+        "evidently:TagResource",
+        "evidently:UnTagResource"
+      ]
+    },
+    "destroy": [
+      "evidently:DeleteLaunch"
+    ],
+    "modify": [
+      "evidently:UpdateLaunch",
+      "evidently:ListTagsForResource",
+      "evidently:StopLaunch"
+    ],
+    "plan": []
+  }
+]

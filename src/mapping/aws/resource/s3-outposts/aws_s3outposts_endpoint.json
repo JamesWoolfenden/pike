@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "s3-outposts:CreateEndpoint",
+      "s3-outposts:DeleteEndpoint",
+      "s3-outposts:ListEndpoints"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "s3-outposts:DeleteEndpoint"
+    ],
+    "modify": [],
+    "plan": [
+      "s3-outposts:ListEndpoints"
+    ]
+  }
+]

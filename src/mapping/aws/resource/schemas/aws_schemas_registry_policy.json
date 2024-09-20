@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "schemas:PutResourcePolicy",
+      "schemas:GetResourcePolicy",
+      "schemas:DescribeRegistry",
+      "schemas:DeleteResourcePolicy",
+      "schemas:PutResourcePolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "schemas:DeleteResourcePolicy"
+    ],
+    "modify": [
+      "schemas:PutResourcePolicy"
+    ],
+    "plan": []
+  }
+]

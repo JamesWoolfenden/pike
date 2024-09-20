@@ -1,12 +1,16 @@
 [
   {
     "apply": [
-      "s3:PutBucketPolicy"
+      "s3:PutBucketPolicy",
+      "s3:GetBucketPolicy",
+      "s3:DeleteBucketPolicy"
     ],
     "attributes": {
       "tags": []
     },
-    "destroy": [],
+    "destroy": [
+      "s3:DeleteBucketPolicy"
+    ],
     "modify": [],
     "plan": []
   }

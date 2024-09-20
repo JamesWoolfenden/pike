@@ -1,0 +1,29 @@
+[
+  {
+    "apply": [
+      "verifiedpermissions:CreatePolicyStore",
+      "verifiedpermissions:GetPolicyStore",
+      "verifiedpermissions:PutSchema",
+      "verifiedpermissions:GetSchema",
+      "verifiedpermissions:DeletePolicyStore",
+      "verifiedpermissions:UpdatePolicyStore"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "verifiedpermissions:DeletePolicyStore",
+      "verifiedpermissions:GetPolicyStore"
+    ],
+    "modify": [
+      "verifiedpermissions:UpdatePolicyStore",
+      "verifiedpermissions:GetPolicyStore",
+      "verifiedpermissions:GetSchema",
+      "verifiedpermissions:PutSchema"
+    ],
+    "plan": [
+      "verifiedpermissions:GetPolicyStore",
+      "verifiedpermissions:GetSchema"
+    ]
+  }
+]

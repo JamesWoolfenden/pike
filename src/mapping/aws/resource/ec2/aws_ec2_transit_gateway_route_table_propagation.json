@@ -2,7 +2,8 @@
   {
     "apply": [
       "ec2:EnableTransitGatewayRouteTablePropagation",
-      "ec2:GetTransitGatewayRouteTablePropagations"
+      "ec2:GetTransitGatewayRouteTablePropagations",
+      "ec2:DisableTransitGatewayRouteTablePropagation"
     ],
     "attributes": {},
     "destroy": [

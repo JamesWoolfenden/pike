@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "s3:DescribeMultiRegionAccessPointOperation",
+      "s3:GetMultiRegionAccessPoint",
+      "s3:GetMultiRegionAccessPointPolicy",
+      "s3:PutMultiRegionAccessPointPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "s3:GetMultiRegionAccessPointPolicy",
+      "s3:GetMultiRegionAccessPoint"
+    ],
+    "modify": [
+      "s3:PutMultiRegionAccessPointPolicy",
+      "s3:DescribeMultiRegionAccessPointOperation"
+    ],
+    "plan": [
+      "s3:GetMultiRegionAccessPointPolicy",
+      "s3:GetMultiRegionAccessPointPolicyStatus"
+    ]
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "organizations:CreateOrganizationalUnit",
+      "organizations:DescribeOrganizationalUnit",
+      "organizations:ListParents",
+      "organizations:ListTagsForResource",
+      "organizations:UpdateOrganizationalUnit"
+    ],
+    "attributes": {
+      "tags": [
+        "organizations:TagResource",
+        "organizations:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [
+      "organizations:UpdateOrganizationalUnit"
+    ],
+    "plan": []
+  }
+]

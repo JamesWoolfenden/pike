@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "lightsail:CreateRelationalDatabase",
+      "lightsail:GetRelationalDatabase",
+      "lightsail:GetRelationalDatabases",
+      "lightsail:GetRegions",
+      "lightsail:UpdateRelationalDatabase",
+      "lightsail:UpdateRelationalDatabaseParameters",
+      "lightsail:DeleteRelationalDatabase"
+    ],
+    "attributes": {
+      "tags": [
+        "lightsail:TagResource",
+        "lightsail:UntagResource"
+      ]
+    },
+    "destroy": [
+      "lightsail:DeleteRelationalDatabase"
+    ],
+    "modify": [
+      "lightsail:UpdateRelationalDatabase",
+      "lightsail:UpdateRelationalDatabaseParameters"
+    ],
+    "plan": []
+  }
+]

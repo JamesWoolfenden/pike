@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "lightsail:CreateDisk",
+      "lightsail:EnableAddOn",
+      "lightsail:DisableAddOn",
+      "lightsail:GetDisk",
+      "lightsail:GetDisks",
+      "lightsail:GetRegions",
+      "lightsail:DeleteDisk"
+    ],
+    "attributes": {
+      "tags": [
+        "lightsail:TagResource",
+        "lightsail:UntagResource"
+      ]
+    },
+    "destroy": [
+      "lightsail:DeleteDisk"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

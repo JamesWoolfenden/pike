@@ -3,7 +3,8 @@
     "apply": [
       "route53resolver:UpdateResolverConfig",
       "route53resolver:GetResolverConfig",
-      "route53resolver:ListResolverConfigs"
+      "route53resolver:ListResolverConfigs",
+      "ec2:DescribeVpcs"
     ],
     "attributes": {
       "tags": []

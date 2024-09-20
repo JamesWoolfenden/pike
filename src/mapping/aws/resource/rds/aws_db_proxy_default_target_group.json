@@ -2,14 +2,21 @@
   {
     "apply": [
       "rds:ModifyDBProxyTargetGroup",
-      "rds:DescribeDBProxyTargetGroups"
+      "rds:DescribeDBProxyTargetGroups",
+      "rds:DescribeDBProxies",
+      "rds:RegisterDBProxyTargets",
+      "rds:DeregisterDBProxyTargets"
     ],
     "attributes": {
       "tags": []
     },
-    "destroy": [],
+    "destroy": [
+      "rds:DeregisterDBProxyTargets"
+    ],
     "modify": [
-      "rds:ModifyDBProxyTargetGroup"
+      "rds:ModifyDBProxyTargetGroup",
+      "rds:RegisterDBProxyTargets",
+      "rds:DeregisterDBProxyTargets"
     ],
     "plan": []
   }

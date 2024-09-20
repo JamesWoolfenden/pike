@@ -5,10 +5,14 @@
       "ec2:DeleteVerifiedAccessInstance",
       "ec2:ModifyVerifiedAccessInstance",
       "verified-access:AllowVerifiedAccess",
-      "ec2:DescribeVerifiedAccessInstances"
+      "ec2:DescribeVerifiedAccessInstances",
+      "ec2:DescribeTags"
     ],
     "attributes": {
-      "tags": []
+      "tags": [
+        "ec2:DeleteTags",
+        "ec2:CreateTags"
+      ]
     },
     "destroy": [
       "ec2:DeleteVerifiedAccessInstance"

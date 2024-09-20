@@ -3,13 +3,16 @@
     "apply": [
       "sagemaker:DescribeDevice",
       "sagemaker:RegisterDevices",
-      "sagemaker:DeregisterDevices"
+      "sagemaker:DeregisterDevices",
+      "sagemaker:UpdateDevices"
     ],
     "attributes": {
       "tags": []
     },
     "destroy": [],
-    "modify": [],
+    "modify": [
+      "sagemaker:UpdateDevices"
+    ],
     "plan": []
   }
 ]

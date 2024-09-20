@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "securityhub:GetEnabledStandards",
+      "securityhub:DescribeStandardsControls",
+      "securityhub:BatchEnableStandards",
+      "securityhub:UpdateStandardsControl"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "securityhub:GetEnabledStandards",
+      "securityhub:BatchDisableStandards"
+    ],
+    "modify": [
+      "securityhub:GetEnabledStandards",
+      "securityhub:UpdateStandardsControl"
+    ],
+    "plan": [
+      "securityhub:GetEnabledStandards",
+      "securityhub:DescribeStandardsControls"
+    ]
+  }
+]

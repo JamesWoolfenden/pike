@@ -1,0 +1,26 @@
+[
+  {
+    "apply": [
+      "iam:PassRole",
+      "qldb:StreamJournalToKinesis",
+      "qldb:DescribeJournalKinesisStream",
+      "qldb:ListTagsForResource",
+      "qldb:CancelJournalKinesisStream"
+    ],
+    "attributes": {
+      "tags": [
+        "qldb:UntagResource",
+        "qldb:TagResource"
+      ]
+    },
+    "destroy": [
+      "qldb:CancelJournalKinesisStream",
+      "qldb:DescribeJournalKinesisStream"
+    ],
+    "modify": [],
+    "plan": [
+      "qldb:DescribeJournalKinesisStream",
+      "qldb:ListTagsForResource"
+    ]
+  }
+]

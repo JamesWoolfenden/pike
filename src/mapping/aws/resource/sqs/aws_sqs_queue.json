@@ -5,7 +5,8 @@
       "sqs:GetQueueAttributes",
       "sqs:ListQueueTags",
       "sqs:DeleteQueue",
-      "sqs:SetQueueAttributes"
+      "sqs:SetQueueAttributes",
+      "sqs:GetQueueUrl"
     ],
     "attributes": {
       "tags": [

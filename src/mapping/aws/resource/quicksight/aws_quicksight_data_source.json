@@ -1,0 +1,37 @@
+[
+  {
+    "apply": [
+      "quicksight:CreateDataSource",
+      "quicksight:DescribeDataSource",
+      "quicksight:DescribeDataSourcePermissions",
+      "quicksight:ListTagsForResource",
+      "quicksight:DeleteDataSource",
+      "quicksight:UpdateDataSource",
+      "quicksight:UpdateDataSourcePermissions"
+    ],
+    "attributes": {
+      "tags": [
+        "quicksight:TagResource",
+        "quicksight:UntagResource"
+      ]
+    },
+    "destroy": [
+      "quicksight:DescribeDataSource",
+      "quicksight:DescribeDataSourcePermissions",
+      "quicksight:DeleteDataSource",
+      "quicksight:ListTagsForResource"
+    ],
+    "modify": [
+      "quicksight:DescribeDataSource",
+      "quicksight:DescribeDataSourcePermissions",
+      "quicksight:UpdateDataSource",
+      "quicksight:UpdateDataSourcePermissions",
+      "quicksight:ListTagsForResource"
+    ],
+    "plan": [
+      "quicksight:DescribeDataSource",
+      "quicksight:DescribeDataSourcePermissions",
+      "quicksight:ListTagsForResource"
+    ]
+  }
+]

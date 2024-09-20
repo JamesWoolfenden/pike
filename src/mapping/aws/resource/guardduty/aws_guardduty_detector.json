@@ -1,0 +1,26 @@
+[
+  {
+    "apply": [
+      "guardduty:CreateDetector",
+      "guardduty:GetDetector",
+      "iam:CreateServiceLinkedRole",
+      "iam:GetRole",
+      "guardduty:ListDetectors",
+      "guardduty:DeleteDetector",
+      "guardduty:UpdateDetector"
+    ],
+    "attributes": {
+      "tags": [
+        "guardduty:TagResource"
+      ]
+    },
+    "destroy": [
+      "guardduty:ListDetectors",
+      "guardduty:DeleteDetector"
+    ],
+    "modify": [
+      "guardduty:UpdateDetector"
+    ],
+    "plan": []
+  }
+]

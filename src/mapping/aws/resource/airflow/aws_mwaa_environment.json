@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "airflow:CreateEnvironment",
+      "airflow:DeleteEnvironment",
+      "airflow:GetEnvironment",
+      "airflow:UpdateEnvironment"
+    ],
+    "attributes": {
+      "tags": [
+        "airflow:TagResource",
+        "airflow:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

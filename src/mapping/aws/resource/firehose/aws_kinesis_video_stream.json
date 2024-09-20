@@ -6,17 +6,20 @@
       "kinesisvideo:ListTagsForStream",
       "kinesisvideo:DeleteStream",
       "kinesisvideo:UpdateStream",
-      "kinesisvideo:TagStream",
-      "kinesisvideo:UntagStream"
+      "kinesisvideo:UpdateDataRetention"
     ],
     "attributes": {
-      "tags": []
+      "tags": [
+        "kinesisvideo:TagStream",
+        "kinesisvideo:UntagStream"
+      ]
     },
     "destroy": [
       "kinesisvideo:DeleteStream"
     ],
     "modify": [
-      "kinesisvideo:UpdateStream"
+      "kinesisvideo:UpdateStream",
+      "kinesisvideo:UpdateDataRetention"
     ],
     "plan": []
   }

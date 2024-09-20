@@ -4,7 +4,9 @@
       "ec2:DescribeAccountAttributes",
       "ec2:AssociateRouteTable",
       "ec2:DescribeRouteTables",
-      "ec2:DisassociateRouteTable"
+      "ec2:DisassociateRouteTable",
+      "ec2:ReplaceRouteTableAssociation",
+      "ec2:DescribeSubnets"
     ],
     "attributes": {
       "tags": []

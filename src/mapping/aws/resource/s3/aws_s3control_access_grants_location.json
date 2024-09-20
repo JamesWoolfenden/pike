@@ -1,0 +1,26 @@
+[
+  {
+    "apply": [
+      "s3:CreateAccessGrantsLocation",
+      "iam:PassRole",
+      "s3:GetAccessGrantsLocation",
+      "s3:DeleteAccessGrantsLocation"
+    ],
+    "attributes": {
+      "tags": [
+        "s3:TagResource"
+      ]
+    },
+    "destroy": [
+      "s3:DeleteAccessGrantsLocation"
+    ],
+    "modify": [
+      "s3:UpdateAccessGrantsLocation",
+      "s3:TagResource",
+      "iam:PassRole"
+    ],
+    "plan": [
+      "s3:GetAccessGrantsLocation"
+    ]
+  }
+]

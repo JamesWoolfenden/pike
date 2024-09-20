@@ -5,9 +5,13 @@
       "events:DescribeEndpoint",
       "events:CreateEndpoint",
       "events:DeleteEndpoint",
-      "events:UpdateEndpoint"
+      "events:UpdateEndpoint",
+      "iam:PassRole"
     ],
     "attributes": {
+      "health_check": [
+        "route53:GetHealthCheck"
+      ],
       "tags": []
     },
     "destroy": [

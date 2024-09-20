@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "autoscaling:CreateOrUpdateTags",
+      "ecs:CreateCapacityProvider",
+      "ecs:DescribeCapacityProviders",
+      "ecs:DeleteCapacityProvider",
+      "ecs:UpdateCapacityProvider"
+    ],
+    "attributes": {
+      "tags": [
+        "ecs:TagResource",
+        "ecs:UntagResource"
+      ]
+    },
+    "destroy": [
+      "ecs:DeleteCapacityProvider"
+    ],
+    "modify": [
+      "ecs:UpdateCapacityProvider"
+    ],
+    "plan": []
+  }
+]

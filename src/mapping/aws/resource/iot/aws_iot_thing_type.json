@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "iot:DescribeThingType",
+      "iot:ListTagsForResource",
+      "iot:CreateThingType",
+      "iot:DeprecateThingType",
+      "iot:DeleteThingType",
+      "iot:DeleteThingType"
+    ],
+    "attributes": {
+      "tags": [
+        "iot:TagResource",
+        "iot:UntagResource"
+      ]
+    },
+    "destroy": [
+      "iot:DeleteThingType"
+    ],
+    "modify": [
+      "iot:DeleteThingType"
+    ],
+    "plan": []
+  }
+]

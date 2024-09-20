@@ -3,7 +3,8 @@
     "apply": [
       "ec2:DescribeAccountAttributes",
       "ec2:AttachVpnGateway",
-      "ec2:DescribeVpnGateways"
+      "ec2:DescribeVpnGateways",
+      "ec2:DetachVpnGateway"
     ],
     "attributes": {
       "tags": [

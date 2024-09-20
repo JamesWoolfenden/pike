@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "iot:DescribeBillingGroup",
+      "iot:ListTagsForResource",
+      "iot:CreateBillingGroup",
+      "iot:DeleteBillingGroup"
+    ],
+    "attributes": {
+      "tags": [
+        "iot:TagResource",
+        "iot:UntagResource"
+      ]
+    },
+    "destroy": [
+      "iot:DeleteBillingGroup"
+    ],
+    "modify": [
+      "iot:UpdateBillingGroup"
+    ],
+    "plan": []
+  }
+]

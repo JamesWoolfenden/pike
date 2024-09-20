@@ -5,7 +5,8 @@
       "resource-groups:GetGroup",
       "resource-groups:GetGroupQuery",
       "resource-groups:GetTags",
-      "resource-groups:DeleteGroup"
+      "resource-groups:DeleteGroup",
+      "resource:UpdateGroup"
     ],
     "attributes": {
       "tags": [

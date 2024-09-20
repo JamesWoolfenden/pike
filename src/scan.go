@@ -10,7 +10,6 @@ import (
 	"strings"
 
 	"github.com/hashicorp/go-version"
-
 	"github.com/hashicorp/hc-install/product"
 	"github.com/hashicorp/hc-install/releases"
 	"github.com/hashicorp/terraform-exec/tfexec"
@@ -38,6 +37,7 @@ func Scan(dirName string, output string, file *string, init bool, write bool, en
 			return err2
 		}
 	} else {
+
 		fmt.Print(OutPolicy.AsString(output))
 	}
 
@@ -48,6 +48,7 @@ func Scan(dirName string, output string, file *string, init bool, write bool, en
 func WriteOutput(outPolicy OutputPolicy, output, location string) error {
 	newPath, _ := filepath.Abs(location + "/.pike")
 	err := os.MkdirAll(newPath, os.ModePerm)
+
 	if err != nil {
 		return err
 	}
@@ -121,7 +122,7 @@ func Init(dirName string) (*string, []string, error) {
 	return &tfPath, found, err
 }
 
-// LocateTerraform finds the Terraform executable or installs it
+// LocateTerraform finds the Terraform executable or installs it.
 func LocateTerraform() (string, error) {
 	tfPath, err := exec.LookPath(terraform)
 
@@ -230,7 +231,7 @@ func MakePolicy(dirName string, file *string, init bool, EnableResources bool) (
 	return Output, nil
 }
 
-// GetTF return tf files in a directory
+// GetTF return tf files in a directory.
 func GetTF(dirName string) ([]string, error) {
 	files, err := GetTFFiles(dirName)
 	if err != nil {
@@ -248,7 +249,7 @@ func GetTF(dirName string) ([]string, error) {
 	return files, nil
 }
 
-// GetTFFiles get tf files in directory
+// GetTFFiles get tf files in directory.
 func GetTFFiles(dirName string) ([]string, error) {
 	rawFiles, err := os.ReadDir(dirName)
 
@@ -267,7 +268,7 @@ func GetTFFiles(dirName string) ([]string, error) {
 	return files, err
 }
 
-// StringInSlice looks for item in slice
+// StringInSlice looks for item in slice.
 func StringInSlice(a string, list []string) bool {
 	for _, b := range list {
 		if b == a {
@@ -278,7 +279,7 @@ func StringInSlice(a string, list []string) bool {
 	return false
 }
 
-// GetHCLType gets the resource Name
+// GetHCLType gets the resource Name.
 func GetHCLType(resourceName string) string {
 	return strings.Split(resourceName, "_")[0]
 }

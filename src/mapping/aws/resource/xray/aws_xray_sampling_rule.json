@@ -15,7 +15,9 @@
     "destroy": [
       "xray:DeleteSamplingRule"
     ],
-    "modify": [],
+    "modify": [
+      "xray:UpdateSamplingRule"
+    ],
     "plan": []
   }
 ]

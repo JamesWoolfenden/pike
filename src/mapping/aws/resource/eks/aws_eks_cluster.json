@@ -6,9 +6,21 @@
       "eks:DeleteCluster",
       "eks:ListTagsForResource",
       "iam:PassRole",
-      "eks:DescribeCluster"
+      "iam:TagInstanceProfile",
+      "iam:AddRoleToInstanceProfile",
+      "iam:GetInstanceProfile",
+      "iam:DeleteInstanceProfile",
+      "iam:RemoveRoleFromInstanceProfile",
+      "eks:DescribeCluster",
+      "eks:UpdateClusterConfig",
+      "ec2:DescribeSubnets",
+      "ec2:DescribeVpcs"
     ],
     "attributes": {
+      "key_arn": [
+        "kms:DescribeKey",
+        "kms:CreateGrant"
+      ],
       "tags": [
         "eks:TagResource",
         "eks:UntagResource"

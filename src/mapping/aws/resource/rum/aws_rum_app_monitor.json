@@ -1,0 +1,103 @@
+[
+  {
+    "apply": [
+      "dynamodb:DeleteItem",
+      "dynamodb:GetItem",
+      "dynamodb:PutItem",
+      "dynamodb:Query",
+      "dynamodb:UpdateItem",
+      "iam:CreateServiceLinkedRole",
+      "iam:GetRole",
+      "iam:PassRole",
+      "logs:CreateLogDelivery",
+      "logs:CreateLogGroup",
+      "logs:DeleteLogDelivery",
+      "logs:DescribeLogGroups",
+      "logs:DescribeResourcePolicies",
+      "logs:GetLogDelivery",
+      "logs:PutResourcePolicy",
+      "logs:PutRetentionPolicy",
+      "logs:UpdateLogDelivery",
+      "rum:BatchCreateRumMetricDefinitions",
+      "rum:BatchDeleteRumMetricDefinitions",
+      "rum:BatchGetRumMetricDefinitions",
+      "rum:CreateAppMonitor",
+      "rum:DeleteRumMetricsDestination",
+      "rum:GetAppMonitor",
+      "rum:ListRumMetricsDestinations",
+      "rum:ListTagsForResource",
+      "rum:PutRumMetricsDestination",
+      "rum:UpdateAppMonitor",
+      "rum:UpdateRumMetricDefinition",
+      "s3:DeleteObject",
+      "s3:DoesObjectExist",
+      "s3:GetObject",
+      "s3:GetObjectAcl",
+      "s3:PutObject"
+    ],
+    "attributes": {
+      "identity_pool_id": [
+        "cognito-identity:DescribeIdentityPool"
+      ],
+      "tags": [
+        "rum:TagResource",
+        "rum:UntagResource"
+      ]
+    },
+    "destroy": [
+      "rum:GetAppMonitor",
+      "rum:DeleteAppMonitor",
+      "dynamodb:DeleteItem",
+      "dynamodb:Query",
+      "logs:DeleteLogDelivery",
+      "s3:DeleteObject",
+      "s3:DoesObjectExist",
+      "rum:ListTagsForResource",
+      "rum:DeleteRumMetricsDestination",
+      "rum:BatchDeleteRumMetricDefinitions",
+      "rum:ListRumMetricsDestinations",
+      "rum:BatchGetRumMetricDefinitions"
+    ],
+    "modify": [
+      "rum:GetAppMonitor",
+      "rum:UpdateAppMonitor",
+      "dynamodb:GetItem",
+      "dynamodb:PutItem",
+      "dynamodb:UpdateItem",
+      "dynamodb:Query",
+      "s3:GetObject",
+      "s3:PutObject",
+      "s3:GetObjectAcl",
+      "s3:DoesObjectExist",
+      "logs:CreateLogDelivery",
+      "logs:CreateLogGroup",
+      "logs:GetLogDelivery",
+      "logs:UpdateLogDelivery",
+      "logs:PutResourcePolicy",
+      "logs:DescribeResourcePolicies",
+      "logs:DescribeLogGroups",
+      "logs:PutRetentionPolicy",
+      "rum:ListTagsForResource",
+      "iam:GetRole",
+      "iam:CreateServiceLinkedRole",
+      "iam:PassRole",
+      "rum:PutRumMetricsDestination",
+      "rum:DeleteRumMetricsDestination",
+      "rum:ListRumMetricsDestinations",
+      "rum:BatchCreateRumMetricDefinitions",
+      "rum:BatchDeleteRumMetricDefinitions",
+      "rum:BatchGetRumMetricDefinitions",
+      "rum:UpdateRumMetricDefinition"
+    ],
+    "plan": [
+      "rum:GetAppMonitor",
+      "dynamodb:GetItem",
+      "s3:GetObject",
+      "s3:DoesObjectExist",
+      "s3:GetObjectAcl",
+      "rum:ListTagsForResource",
+      "rum:ListRumMetricsDestinations",
+      "rum:BatchGetRumMetricDefinitions"
+    ]
+  }
+]

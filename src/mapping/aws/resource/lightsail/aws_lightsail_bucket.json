@@ -1,0 +1,33 @@
+[
+  {
+    "apply": [
+      "lightsail:CreateBucket",
+      "lightsail:GetBuckets",
+      "lightsail:GetInstance",
+      "lightsail:UpdateBucket",
+      "lightsail:UpdateBucketBundle",
+      "lightsail:SetResourceAccessForBucket",
+      "lightsail:DeleteBucket"
+    ],
+    "attributes": {
+      "tags": [
+        "lightsail:TagResource",
+        "lightsail:UntagResource"
+      ]
+    },
+    "destroy": [
+      "lightsail:DeleteBucket",
+      "lightsail:GetBuckets"
+    ],
+    "modify": [
+      "lightsail:GetBuckets",
+      "lightsail:GetInstance",
+      "lightsail:UpdateBucket",
+      "lightsail:UpdateBucketBundle",
+      "lightsail:SetResourceAccessForBucket"
+    ],
+    "plan": [
+      "lightsail:GetBuckets"
+    ]
+  }
+]

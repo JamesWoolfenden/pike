@@ -4,15 +4,22 @@
       "ec2:CreateVerifiedAccessTrustProvider",
       "ec2:AttachVerifiedAccessTrustProvider",
       "ec2:DetachVerifiedAccessTrustProvider",
-      "ec2:DeleteVerifiedAccessTrustProvider"
+      "ec2:DeleteVerifiedAccessTrustProvider",
+      "ec2:ModifyVerifiedAccessTrustProvider",
+      "ec2:DescribeTags"
     ],
     "attributes": {
-      "tags": []
+      "tags": [
+        "ec2:CreateTags",
+        "ec2:DeleteTags"
+      ]
     },
     "destroy": [
       "ec2:DeleteVerifiedAccessTrustProvider"
     ],
-    "modify": [],
+    "modify": [
+      "ec2:ModifyVerifiedAccessTrustProvider"
+    ],
     "plan": []
   }
 ]

@@ -12,6 +12,12 @@
       "code_signing_config_arn": [
         "lambda:GetCodeSigningConfig"
       ],
+      "kms_key_arn": [
+        "kms:CreateGrant",
+        "kms:Decrypt",
+        "kms:Encrypt",
+        "kms:GenerateDataKey"
+      ],
       "s3_bucket": [
         "s3:GetObject",
         "s3:GetObjectVersion"

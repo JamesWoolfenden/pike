@@ -1,0 +1,34 @@
+[
+  {
+    "apply": [
+      "elasticache:CreateGlobalReplicationGroup",
+      "elasticache:DescribeGlobalReplicationGroups",
+      "elasticache:DeleteGlobalReplicationGroup",
+      "elasticache:DisassociateGlobalReplicationGroup",
+      "elasticache:ModifyGlobalReplicationGroup",
+      "elasticache:FailoverGlobalReplicationGroup",
+      "elasticache:DescribeGlobalReplicationGroups",
+      "elasticache:IncreaseNodeGroupsInGlobalReplicationGroup",
+      "elasticache:DecreaseNodeGroupsInGlobalReplicationGroup",
+      "elasticache:DisassociateGlobalReplicationGroup",
+      "elasticache:RebalanceSlotsInGlobalReplicationGroup"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "elasticache:DeleteGlobalReplicationGroup",
+      "elasticache:DisassociateGlobalReplicationGroup"
+    ],
+    "modify": [
+      "elasticache:ModifyGlobalReplicationGroup",
+      "elasticache:FailoverGlobalReplicationGroup",
+      "elasticache:DescribeGlobalReplicationGroups",
+      "elasticache:IncreaseNodeGroupsInGlobalReplicationGroup",
+      "elasticache:DecreaseNodeGroupsInGlobalReplicationGroup",
+      "elasticache:DisassociateGlobalReplicationGroup",
+      "elasticache:RebalanceSlotsInGlobalReplicationGroup"
+    ],
+    "plan": []
+  }
+]

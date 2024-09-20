@@ -8,6 +8,15 @@
       "iam:PassRole"
     ],
     "attributes": {
+      "data_catalog_config": [
+        "glue:GetTable",
+        "glue:CreateDatabase",
+        "glue:GetDatabase"
+      ],
+      "kms_key_id": [
+        "kms:CreateGrant",
+        "kms:DescribeKey"
+      ],
       "tags": [
         "sagemaker:AddTags",
         "sagemaker:DeleteTags"

@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "rekognition:DescribeProjects",
+      "rekognition:DeleteProject",
+      "rekognition:CreateProject"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "rekognition:DescribeProjects",
+      "rekognition:DeleteProject"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

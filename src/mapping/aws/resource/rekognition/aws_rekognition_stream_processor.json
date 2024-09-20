@@ -1,0 +1,28 @@
+[
+  {
+    "apply": [
+      "rekognition:CreateStreamProcessor",
+      "iam:PassRole",
+      "rekognition:DescribeStreamProcessor",
+      "rekognition:ListTagsForResource",
+      "rekognition:DeleteStreamProcessor"
+    ],
+    "attributes": {
+      "tags": [
+        "rekognition:TagResource",
+        "rekognition:UntagResource"
+      ]
+    },
+    "destroy": [
+      "rekognition:DeleteStreamProcessor"
+    ],
+    "modify": [
+      "rekognition:ListTagsForResource",
+      "rekognition:DescribeStreamProcessor"
+    ],
+    "plan": [
+      "rekognition:DescribeStreamProcessor",
+      "rekognition:ListTagsForResource"
+    ]
+  }
+]

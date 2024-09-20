@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "schemas:DescribeSchema",
+      "schemas:CreateSchema",
+      "schemas:DeleteSchema",
+      "schemas:DeleteSchemaVersion",
+      "schemas:UpdateSchema",
+      "schemas:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "schemas:UntagResource",
+        "schemas:TagResource"
+      ]
+    },
+    "destroy": [
+      "schemas:DeleteSchema",
+      "schemas:DeleteSchemaVersion"
+    ],
+    "modify": [
+      "schemas:UpdateSchema",
+      "schemas:ListTagsForResource"
+    ],
+    "plan": []
+  }
+]

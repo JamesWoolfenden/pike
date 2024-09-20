@@ -2,7 +2,8 @@
   {
     "apply": [
       "ecr:PutReplicationConfiguration",
-      "ecr:DescribeRegistry"
+      "ecr:DescribeRegistry",
+      "iam:CreateServiceLinkedRole"
     ],
     "attributes": {
       "tags": []

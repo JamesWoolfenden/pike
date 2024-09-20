@@ -4,7 +4,8 @@
       "elasticbeanstalk:CreateApplication",
       "elasticbeanstalk:DescribeApplications",
       "elasticbeanstalk:DeleteApplication",
-      "elasticbeanstalk:UpdateApplication"
+      "elasticbeanstalk:UpdateApplication",
+      "elasticbeanstalk:UpdateApplicationResourceLifecycle"
     ],
     "attributes": {
       "tags": []
@@ -13,7 +14,8 @@
       "elasticbeanstalk:DeleteApplication"
     ],
     "modify": [
-      "elasticbeanstalk:UpdateApplication"
+      "elasticbeanstalk:UpdateApplication",
+      "elasticbeanstalk:UpdateApplicationResourceLifecycle"
     ],
     "plan": []
   }

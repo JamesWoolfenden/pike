@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "kafka:PutClusterPolicy",
+      "kafka:GetClusterPolicy",
+      "kafka:DeleteClusterPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "kafka:DeleteClusterPolicy"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

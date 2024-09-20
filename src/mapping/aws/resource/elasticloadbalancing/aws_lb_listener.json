@@ -7,6 +7,9 @@
       "elasticloadbalancing:ModifyListener"
     ],
     "attributes": {
+      "authenticate_cognito": [
+        "cognito-idp:DescribeUserPoolClient"
+      ],
       "certificate_arn": [
         "elasticloadbalancing:RemoveListenerCertificates",
         "elasticloadbalancing:AddListenerCertificates",
@@ -17,8 +20,12 @@
         "elasticloadbalancing:RemoveTags"
       ]
     },
-    "destroy": [],
-    "modify": [],
+    "destroy": [
+      "elasticloadbalancing:DeleteListener"
+    ],
+    "modify": [
+      "elasticloadbalancing:ModifyListener"
+    ],
     "plan": []
   }
 ]

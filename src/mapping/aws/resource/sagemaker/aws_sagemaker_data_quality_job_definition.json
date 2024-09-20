@@ -4,7 +4,8 @@
       "sagemaker:CreateDataQualityJobDefinition",
       "sagemaker:DescribeDataQualityJobDefinition",
       "sagemaker:DeleteDataQualityJobDefinition",
-      "sagemaker:UpdateDataQualityJobDefinition"
+      "sagemaker:UpdateDataQualityJobDefinition",
+      "iam:PassRole"
     ],
     "attributes": {
       "tags": [

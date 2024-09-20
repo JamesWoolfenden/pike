@@ -1,0 +1,28 @@
+[
+  {
+    "apply": [
+      "resource-explorer-2:CreateView",
+      "resource-explorer-2:DeleteView",
+      "resource-explorer-2:GetView",
+      "resource-explorer-2:UpdateView",
+      "resource-explorer-2:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "resource-explorer-2:TagResource",
+        "resource-explorer-2:UntagResource"
+      ]
+    },
+    "destroy": [
+      "resource-explorer-2:DeleteView",
+      "resource-explorer-2:GetView"
+    ],
+    "modify": [
+      "resource-explorer-2:UpdateView",
+      "resource-explorer-2:ListTagsForResource"
+    ],
+    "plan": [
+      "resource-explorer-2:GetView"
+    ]
+  }
+]

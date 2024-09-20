@@ -1,7 +1,6 @@
 package pike
 
 import (
-	"errors"
 	"fmt"
 	"os"
 	"path/filepath"
@@ -95,13 +94,14 @@ func DetectBackend(resource ResourceV2, block *hclsyntax.Block, resources []Reso
 		}
 	}
 
-	return nil, errors.New("no Backend found")
+	return nil, &backendExistsError{}
 }
 
 // GetResourceBlocks breaks down a file into resources.
 func GetResourceBlocks(file string) (*hclsyntax.Body, error) {
 	temp, _ := filepath.Abs(file)
 	src, err := os.ReadFile(temp)
+
 	if err != nil {
 		return nil, fmt.Errorf("failed to read file: %w", err)
 	}
@@ -124,7 +124,7 @@ func GetLocalModules(block *hclsyntax.Block, dirName string) ([]ResourceV2, erro
 
 	// not local
 	if strings.Contains(modulePath, "git::") {
-		return nil, fmt.Errorf("git reference in module source path unsupported")
+		return nil, &gitReferenceError{modulePath}
 	}
 
 	// have the path to the module
@@ -146,7 +146,7 @@ func GetLocalModules(block *hclsyntax.Block, dirName string) ([]ResourceV2, erro
 	return Resources, nil
 }
 
-// GetModulePath extracts the source location from a module
+// GetModulePath extracts the source location from a module.
 func GetModulePath(block *hclsyntax.Block) string {
 	var modulePath string
 
@@ -203,7 +203,7 @@ func GetBlockAttributes(attributes []string, block *hclsyntax.Block) []string {
 	return attributes
 }
 
-// GetPermission determines the IAM permissions required and returns a list of permission
+// GetPermission determines the IAM permissions required and returns a list of permission.
 func GetPermission(result ResourceV2) (Sorted, error) {
 	var err error
 

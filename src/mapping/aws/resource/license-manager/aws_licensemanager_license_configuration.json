@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "license-manager:CreateLicense",
+      "license-manager:DeleteLicense",
+      "license-manager:GetLicense",
+      "license-manager:CreateLicenseVersion"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "license-manager:DeleteLicense"
+    ],
+    "modify": [
+      "license-manager:CreateLicenseVersion"
+    ],
+    "plan": []
+  }
+]

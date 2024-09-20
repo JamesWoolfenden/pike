@@ -1,0 +1,56 @@
+[
+  {
+    "apply": [
+      "quicksight:CancelIngestion",
+      "quicksight:CreateDataSet",
+      "quicksight:DeleteDataSet",
+      "quicksight:DeleteDataSetRefreshProperties",
+      "quicksight:DescribeDataSet",
+      "quicksight:DescribeDataSetPermissions",
+      "quicksight:DescribeDataSetRefreshProperties",
+      "quicksight:DescribeIngestion",
+      "quicksight:ListIngestions",
+      "quicksight:ListTagsForResource",
+      "quicksight:PassDataSet",
+      "quicksight:PassDataSource",
+      "quicksight:PutDataSetRefreshProperties",
+      "quicksight:UpdateDataSet",
+      "quicksight:UpdateDataSetPermissions"
+    ],
+    "attributes": {
+      "tags": [
+        "quicksight:TagResource",
+        "quicksight:UntagResource"
+      ]
+    },
+    "destroy": [
+      "quicksight:DescribeDataSet",
+      "quicksight:DeleteDataSet",
+      "quicksight:ListTagsForResource",
+      "quicksight:DescribeIngestion",
+      "quicksight:DeleteDataSetRefreshProperties",
+      "quicksight:DescribeDataSetRefreshProperties"
+    ],
+    "modify": [
+      "quicksight:DescribeDataSet",
+      "quicksight:DescribeDataSetPermissions",
+      "quicksight:PassDataSource",
+      "quicksight:UpdateDataSet",
+      "quicksight:UpdateDataSetPermissions",
+      "quicksight:PassDataSet",
+      "quicksight:DescribeIngestion",
+      "quicksight:ListIngestions",
+      "quicksight:CancelIngestion",
+      "quicksight:ListTagsForResource",
+      "quicksight:PutDataSetRefreshProperties",
+      "quicksight:DescribeDataSetRefreshProperties",
+      "quicksight:DeleteDataSetRefreshProperties"
+    ],
+    "plan": [
+      "quicksight:DescribeDataSet",
+      "quicksight:DescribeDataSetPermissions",
+      "quicksight:ListTagsForResource",
+      "quicksight:DescribeDataSetRefreshProperties"
+    ]
+  }
+]

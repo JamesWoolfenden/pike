@@ -1,0 +1,29 @@
+[
+  {
+    "apply": [
+      "networkmanager:CreateSite",
+      "networkmanager:GetSites",
+      "networkmanager:ListTagsForResource",
+      "networkmanager:UpdateSite",
+      "networkmanager:DeleteSite"
+    ],
+    "attributes": {
+      "tags": [
+        "networkmanager:TagResource",
+        "networkmanager:UntagResource"
+      ]
+    },
+    "destroy": [
+      "networkmanager:GetSites",
+      "networkmanager:DeleteSite"
+    ],
+    "modify": [
+      "networkmanager:GetSites",
+      "networkmanager:ListTagsForResource",
+      "networkmanager:UpdateSite"
+    ],
+    "plan": [
+      "networkmanager:GetSites"
+    ]
+  }
+]

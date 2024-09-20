@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "gamelift:DescribeBuild",
+      "gamelift:CreateBuild",
+      "gamelift:DescribeBuild",
+      "gamelift:DeleteBuild",
+      "gamelift:UpdateBuild"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "gamelift:DescribeBuild",
+      "gamelift:DeleteBuild"
+    ],
+    "modify": [
+      "gamelift:UpdateBuild"
+    ],
+    "plan": [
+      "gamelift:DescribeBuild"
+    ]
+  }
+]

@@ -1,0 +1,28 @@
+[
+  {
+    "apply": [
+      "gamelift:CreateScript",
+      "gamelift:ListTagsForResource",
+      "gamelift:DescribeScript",
+      "iam:PassRole",
+      "gamelift:DeleteScript",
+      "gamelift:ListScripts",
+      "gamelift:UpdateScript"
+    ],
+    "attributes": {
+      "tags": [
+        "gamelift:TagResource",
+        "gamelift:UntagResource"
+      ]
+    },
+    "destroy": [
+      "gamelift:DeleteScript"
+    ],
+    "modify": [
+      "gamelift:UpdateScript"
+    ],
+    "plan": [
+      "gamelift:ListScripts"
+    ]
+  }
+]

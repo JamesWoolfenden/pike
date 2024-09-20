@@ -5,9 +5,20 @@
       "timestream:CreateTable",
       "timestream:DeleteTable",
       "timestream:UpdateTable",
-      "timestream:DescribeTable"
+      "timestream:DescribeTable",
+      "timestream:DescribeEndpoints"
     ],
     "attributes": {
+      "kms_key_id": [
+        "kms:GenerateDataKey*",
+        "kms:DescribeKey",
+        "kms:Encrypt"
+      ],
+      "s3_configuration": [
+        "s3:PutObject",
+        "s3:GetObject",
+        "s3:GetBucketAcl"
+      ],
       "tags": [
         "timestream:TagResource",
         "timestream:UntagResource"

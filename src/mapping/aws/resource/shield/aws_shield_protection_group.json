@@ -1,0 +1,28 @@
+[
+  {
+    "apply": [
+      "shield:CreateProtectionGroup",
+      "shield:DeleteProtectionGroup",
+      "shield:DescribeProtectionGroup",
+      "shield:UpdateProtectionGroup",
+      "shield:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "shield:TagResource",
+        "shield:UntagResource"
+      ]
+    },
+    "destroy": [
+      "shield:DeleteProtectionGroup"
+    ],
+    "modify": [
+      "shield:UpdateProtectionGroup",
+      "shield:ListTagsForResource"
+    ],
+    "plan": [
+      "shield:DescribeProtectionGroup",
+      "shield:ListTagsForResource"
+    ]
+  }
+]

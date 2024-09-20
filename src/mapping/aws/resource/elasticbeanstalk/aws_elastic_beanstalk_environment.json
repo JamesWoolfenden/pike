@@ -4,16 +4,23 @@
       "elasticbeanstalk:DescribeEnvironments",
       "elasticbeanstalk:CreateEnvironment",
       "elasticbeanstalk:UpdateEnvironment",
-      "elasticbeanstalk:TerminateEnvironment"
+      "elasticbeanstalk:TerminateEnvironment",
+      "elasticbeanstalk:ListTagsForResource",
+      "iam:PassRole"
     ],
     "attributes": {
-      "tags": []
+      "tags": [
+        "elasticbeanstalk:AddTags",
+        "elasticbeanstalk:UpdateTagsForResource"
+      ]
     },
     "destroy": [
       "elasticbeanstalk:TerminateEnvironment"
     ],
     "modify": [
-      "elasticbeanstalk:UpdateEnvironment"
+      "elasticbeanstalk:UpdateEnvironment",
+      "elasticbeanstalk:AssociateEnvironmentOperationsRole",
+      "elasticbeanstalk:DisassociateEnvironmentOperationsRole"
     ],
     "plan": []
   }

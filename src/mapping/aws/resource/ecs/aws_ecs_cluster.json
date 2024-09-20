@@ -3,17 +3,35 @@
     "apply": [
       "ecs:CreateCluster",
       "ecs:DescribeClusters",
-      "ecs:DeleteCluster"
+      "ecs:DeleteCluster",
+      "iam:CreateServiceLinkedRole",
+      "ecs:UpdateCluster",
+      "ecs:PutAccountSettingDefault",
+      "ecs:PutAccountSetting",
+      "ecs:ListTagsForResource",
+      "ecs:PutClusterCapacityProviders"
     ],
     "attributes": {
+      "fargate_ephemeral_storage_kms_key_id": [
+        "kms:DescribeKey"
+      ],
+      "kms_key_id": [
+        "kms:DescribeKey"
+      ],
       "tags": [
         "ecs:TagResource",
         "ecs:UntagResource"
       ]
     },
-    "destroy": [],
+    "destroy": [
+      "ecs:DeleteCluster"
+    ],
     "modify": [
-      "ecs:UpdateCluster"
+      "ecs:UpdateCluster",
+      "ecs:PutAccountSettingDefault",
+      "ecs:PutAccountSetting",
+      "ecs:ListTagsForResource",
+      "ecs:PutClusterCapacityProviders"
     ],
     "plan": []
   }

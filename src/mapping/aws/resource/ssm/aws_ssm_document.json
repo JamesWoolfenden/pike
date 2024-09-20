@@ -5,7 +5,11 @@
       "ssm:DescribeDocument",
       "ssm:GetDocument",
       "ssm:DescribeDocumentPermission",
-      "ssm:DeleteDocument"
+      "ssm:DeleteDocument",
+      "ssm:ListTagsForResource",
+      "iam:PassRole",
+      "s3:GetObject",
+      "ssm:UpdateDocumentDefaultVersion"
     ],
     "attributes": {
       "tags": [
@@ -17,7 +21,8 @@
       "ssm:DeleteDocument"
     ],
     "modify": [
-      "ssm:UpdateDocument"
+      "ssm:UpdateDocument",
+      "ssm:UpdateDocumentDefaultVersion"
     ],
     "plan": []
   }

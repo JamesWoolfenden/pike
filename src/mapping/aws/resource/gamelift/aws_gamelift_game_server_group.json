@@ -1,0 +1,57 @@
+[
+  {
+    "apply": [
+      "gamelift:CreateGameServerGroup",
+      "gamelift:DescribeGameServerGroup",
+      "iam:assumeRole",
+      "iam:PassRole",
+      "iam:CreateServiceLinkedRole",
+      "ec2:DescribeAvailabilityZones",
+      "ec2:DescribeSubnets",
+      "ec2:RunInstances",
+      "ec2:CreateTags",
+      "ec2:DescribeLaunchTemplateVersions",
+      "autoscaling:CreateAutoScalingGroup",
+      "autoscaling:DescribeLifecycleHooks",
+      "autoscaling:DescribeNotificationConfigurations",
+      "autoscaling:CreateAutoScalingGroup",
+      "autoscaling:CreateOrUpdateTags",
+      "autoscaling:DDescribeLaunchTemplateVersions",
+      "autoscaling:CreateAutoScalingGroup",
+      "autoscaling:DescribeLifecycleHooks",
+      "autoscaling:DescribeNotificationConfigurations",
+      "autoscaling:CreateAutoScalingGroup",
+      "autoscaling:CreateOrUpdateTags",
+      "autoscaling:DescribeAutoScalingGroups",
+      "autoscaling:ExitStandby",
+      "autoscaling:PutLifecycleHook",
+      "autoscaling:PutScalingPolicy",
+      "autoscaling:ResumeProcesses",
+      "autoscaling:SetInstanceProtection",
+      "autoscaling:UpdateAutoScalingGroup",
+      "events:PutRule",
+      "events:PutTargets",
+      "gamelift:DeleteGameServerGroup",
+      "ec2:DescribeLaunchTemplateVersions",
+      "autoscaling:UpdateAutoScalingGroup",
+      "autoscaling:DeleteAutoScalingGroup"
+    ],
+    "attributes": {
+      "tags": [
+        "gamelift:TagResource",
+        "gamelift:UntagResource"
+      ]
+    },
+    "destroy": [
+      "gamelift:DeleteGameServerGroup",
+      "ec2:DescribeLaunchTemplateVersions",
+      "autoscaling:UpdateAutoScalingGroup",
+      "autoscaling:DeleteAutoScalingGroup"
+    ],
+    "modify": [
+      "gamelift:UpdateGameServerGroup",
+      "autoscaling:UpdateAutoScalingGroup"
+    ],
+    "plan": []
+  }
+]

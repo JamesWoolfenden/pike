@@ -4,7 +4,8 @@
       "ec2:DescribeAccountAttributes",
       "iam:CreateSAMLProvider",
       "iam:GetSAMLProvider",
-      "iam:DeleteSAMLProvider"
+      "iam:DeleteSAMLProvider",
+      "iam:ListSAMLProviderTags"
     ],
     "attributes": {
       "tags": [
@@ -16,7 +17,8 @@
       "iam:DeleteSAMLProvider"
     ],
     "modify": [
-      "iam:UpdateSAMLProvider"
+      "iam:UpdateSAMLProvider",
+      "iam:ListSAMLProviderTags"
     ],
     "plan": []
   }

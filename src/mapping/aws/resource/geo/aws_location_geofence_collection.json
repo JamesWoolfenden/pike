@@ -7,7 +7,14 @@
       "geo:UpdateGeofenceCollection"
     ],
     "attributes": {
-      "tags": []
+      "kms_key_id": [
+        "kms:DescribeKey",
+        "kms:CreateGrant"
+      ],
+      "tags": [
+        "geo:TagResource",
+        "geo:UntagResource"
+      ]
     },
     "destroy": [
       "geo:DeleteGeofenceCollection"

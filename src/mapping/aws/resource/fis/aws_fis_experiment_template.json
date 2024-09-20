@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "fis:CreateExperimentTemplate",
+      "fis:DeleteExperimentTemplate",
+      "fis:GetExperimentTemplate",
+      "fis:ListTagsForResource",
+      "iam:PassRole"
+    ],
+    "attributes": {
+      "tags": [
+        "fis:TagResource",
+        "fis:UntagResource"
+      ]
+    },
+    "destroy": [
+      "fis:DeleteExperimentTemplate"
+    ],
+    "modify": [
+      "fis:UpdateExperimentTemplate"
+    ],
+    "plan": []
+  }
+]

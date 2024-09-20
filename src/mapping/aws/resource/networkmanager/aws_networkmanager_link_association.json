@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "networkmanager:GetLinkAssociations",
+      "networkmanager:AssociateLink",
+      "networkmanager:DisassociateLink"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "networkmanager:DisassociateLink"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "sso:CreateApplication",
+      "sso:DescribeApplication",
+      "sso:DeleteApplication"
+    ],
+    "attributes": {
+      "tags": [
+        "sso:TagResource",
+        "sso:UntagResource"
+      ]
+    },
+    "destroy": [
+      "sso:DeleteApplication"
+    ],
+    "modify": [
+      "sso:UpdateApplication",
+      "sso:ListTagsForResource",
+      "sso:DescribeApplication"
+    ],
+    "plan": [
+      "sso:DescribeApplication",
+      "sso:ListTagsForResource"
+    ]
+  }
+]

@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "ivs:ImportPlaybackKeyPair",
+      "ivs:DeletePlaybackKeyPair",
+      "ivs:GetPlaybackKeyPair",
+      "ivs:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "ivs:TagResource",
+        "ivs:UntagResource"
+      ]
+    },
+    "destroy": [
+      "ivs:DeletePlaybackKeyPair"
+    ],
+    "modify": [
+      "ivs:ListTagsForResource"
+    ],
+    "plan": [
+      "ivs:GetPlaybackKeyPair"
+    ]
+  }
+]

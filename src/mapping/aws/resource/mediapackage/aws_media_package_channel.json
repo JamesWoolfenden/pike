@@ -1,0 +1,28 @@
+[
+  {
+    "apply": [
+      "mediapackage:CreateChannel",
+      "mediapackage:DescribeChannel",
+      "mediapackage:UpdateChannel",
+      "mediapackage:ConfigureLogs",
+      "mediapackage:DeleteChannel",
+      "mediapackage:UpdateChannel",
+      "mediapackage:ConfigureLogs",
+      "iam:CreateServiceLinkedRole"
+    ],
+    "attributes": {
+      "tags": [
+        "mediapackage:TagResource",
+        "mediapackage:UntagResource"
+      ]
+    },
+    "destroy": [
+      "mediapackage:DeleteChannel"
+    ],
+    "modify": [
+      "mediapackage:UpdateChannel",
+      "mediapackage:ConfigureLogs"
+    ],
+    "plan": []
+  }
+]

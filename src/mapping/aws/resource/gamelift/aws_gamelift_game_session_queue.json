@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "gamelift:CreateGameSessionQueue",
+      "gamelift:ListTagsForResource",
+      "gamelift:DescribeGameSessionQueues",
+      "gamelift:UpdateGameSessionQueue"
+    ],
+    "attributes": {
+      "tags": [
+        "gamelift:TagResource",
+        "gamelift:UntagResource"
+      ]
+    },
+    "destroy": [
+      "gamelift:DeleteGameSessionQueue"
+    ],
+    "modify": [
+      "gamelift:UpdateGameSessionQueue"
+    ],
+    "plan": [
+      "gamelift:DescribeGameSessionQueues"
+    ]
+  }
+]

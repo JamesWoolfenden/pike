@@ -1,0 +1,26 @@
+[
+  {
+    "apply": [
+      "organizations:CreateAccount",
+      "organizations:DescribeCreateAccountStatus",
+      "organizations:MoveAccount",
+      "organizations:ListParents",
+      "organizations:DescribeAccount",
+      "organizations:ListTagsForResource",
+      "organizations:CloseAccount"
+    ],
+    "attributes": {
+      "tags": [
+        "organizations:TagResource",
+        "organizations:UntagResource"
+      ]
+    },
+    "destroy": [
+      "organizations:CloseAccount"
+    ],
+    "modify": [
+      "organizations:MoveAccount"
+    ],
+    "plan": []
+  }
+]

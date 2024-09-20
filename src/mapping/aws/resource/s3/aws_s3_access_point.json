@@ -1,0 +1,30 @@
+[
+  {
+    "apply": [
+      "s3:CreateAccessPoint",
+      "s3:DeleteAccessPointPolicy",
+      "s3:GetAccessPoint",
+      "s3:GetAccessPointPolicy",
+      "s3:PutAccessPointPolicy",
+      "s3:PutAccessPointPublicAccessBlock"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "s3:DeleteAccessPointPolicy",
+      "s3:DeleteAccessPoint"
+    ],
+    "modify": [
+      "s3:PutAccessPointPolicy",
+      "s3:PutAccessPointPublicAccessBlock",
+      "s3:DeleteAccessPointPolicy",
+      "s3:GetAccessPoint",
+      "s3:GetAccessPointPolicy"
+    ],
+    "plan": [
+      "s3:GetAccessPoint",
+      "s3:GetAccessPointPolicy"
+    ]
+  }
+]

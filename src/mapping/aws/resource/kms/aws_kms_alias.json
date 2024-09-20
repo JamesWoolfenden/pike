@@ -3,7 +3,8 @@
     "apply": [
       "kms:CreateAlias",
       "kms:ListAliases",
-      "kms:DeleteAlias"
+      "kms:DeleteAlias",
+      "kms:UpdateAlias"
     ],
     "attributes": {
       "tags": []
@@ -11,7 +12,9 @@
     "destroy": [
       "kms:DeleteAlias"
     ],
-    "modify": [],
+    "modify": [
+      "kms:UpdateAlias"
+    ],
     "plan": []
   }
 ]

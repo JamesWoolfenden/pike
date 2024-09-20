@@ -4,7 +4,8 @@
       "ec2:CreateVpcEndpoint",
       "ec2:DescribeVpcEndpoints",
       "ec2:DescribePrefixLists",
-      "ec2:DeleteVpcEndpoints"
+      "ec2:DeleteVpcEndpoints",
+      "ec2:ModifyVpcEndpoint"
     ],
     "attributes": {
       "tags": [

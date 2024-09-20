@@ -3,7 +3,8 @@
     "apply": [
       "elasticfilesystem:DescribeAccessPoints",
       "elasticfilesystem:CreateAccessPoint",
-      "elasticfilesystem:DeleteAccessPoint"
+      "elasticfilesystem:DeleteAccessPoint",
+      "elasticfilesystem:ListTagsForResource"
     ],
     "attributes": {
       "tags": [
@@ -12,7 +13,8 @@
       ]
     },
     "destroy": [
-      "elasticfilesystem:DeleteAccessPoint"
+      "elasticfilesystem:DeleteAccessPoint",
+      "elasticfilesystem:ListTagsForResource"
     ],
     "modify": [],
     "plan": []

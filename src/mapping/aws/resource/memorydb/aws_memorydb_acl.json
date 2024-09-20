@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "memorydb:CreateACL",
+      "memorydb:DescribeACLs",
+      "memorydb:ListTags",
+      "memorydb:ModifyReplicationGroup",
+      "memorydb:DeleteACL",
+      "memorydb:UpdateACL"
+    ],
+    "attributes": {
+      "tags": [
+        "memorydb:TagResource",
+        "memorydb:UntagResource"
+      ]
+    },
+    "destroy": [
+      "memorydb:ModifyReplicationGroup",
+      "memorydb:DeleteACL",
+      "memorydb:DescribeACLs"
+    ],
+    "modify": [
+      "memorydb:UpdateACL"
+    ],
+    "plan": []
+  }
+]

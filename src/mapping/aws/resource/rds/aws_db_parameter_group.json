@@ -6,7 +6,8 @@
       "rds:ModifyDBParameterGroup",
       "rds:DescribeDBParameterGroups",
       "rds:DescribeDBParameters",
-      "rds:DeleteDBParameterGroup"
+      "rds:DeleteDBParameterGroup",
+      "iam:CreateServiceLinkedRole"
     ],
     "attributes": {
       "tags": [

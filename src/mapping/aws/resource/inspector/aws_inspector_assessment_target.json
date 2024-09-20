@@ -3,7 +3,8 @@
     "apply": [
       "inspector:CreateAssessmentTarget",
       "inspector:DescribeAssessmentTargets",
-      "inspector:DeleteAssessmentTarget"
+      "inspector:DeleteAssessmentTarget",
+      "inspector:UpdateAssessmentTarget"
     ],
     "attributes": {
       "tags": []
@@ -11,7 +12,9 @@
     "destroy": [
       "inspector:DeleteAssessmentTarget"
     ],
-    "modify": [],
+    "modify": [
+      "inspector:UpdateAssessmentTarget"
+    ],
     "plan": []
   }
 ]

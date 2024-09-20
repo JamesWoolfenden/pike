@@ -6,7 +6,8 @@
       "rds:DescribeDBClusterParameterGroups",
       "rds:DescribeDBClusterParameters",
       "rds:DeleteDBClusterParameterGroup",
-      "rds:ListTagsForResource"
+      "rds:ListTagsForResource",
+      "iam:CreateServiceLinkedRole"
     ],
     "attributes": {
       "tags": [

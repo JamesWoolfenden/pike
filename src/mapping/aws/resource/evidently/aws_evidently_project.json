@@ -1,0 +1,60 @@
+[
+  {
+    "apply": [
+      "appconfig:CreateConfigurationProfile",
+      "appconfig:CreateExtensionAssociation",
+      "appconfig:CreateHostedConfigurationVersion",
+      "appconfig:DeleteConfigurationProfile",
+      "appconfig:DeleteExtensionAssociation",
+      "appconfig:DeleteHostedConfigurationVersion",
+      "appconfig:GetEnvironment",
+      "appconfig:GetEnvironment",
+      "appconfig:TagResource",
+      "evidently:CreateProject",
+      "evidently:DeleteProject",
+      "evidently:ExportProjectAsConfiguration",
+      "evidently:GetProject",
+      "evidently:ListTagsForResource",
+      "evidently:UntagResource",
+      "evidently:UpdateProject",
+      "evidently:UpdateProjectDataDelivery",
+      "iam:CreateServiceLinkedRole",
+      "iam:GetRole"
+    ],
+    "attributes": {
+      "cloudwatch_logs": [
+        "logs:CreateLogDelivery",
+        "logs:GetLogDelivery",
+        "logs:ListLogDeliveries",
+        "logs:DeleteLogDelivery",
+        "logs:DescribeResourcePolicies",
+        "logs:DescribeLogGroups",
+        "logs:UpdateLogDelivery"
+      ],
+      "s3_destination": [
+        "s3:PutBucketPolicy",
+        "s3:GetBucketPolicy"
+      ],
+      "tags": [
+        "evidently:TagResource"
+      ]
+    },
+    "destroy": [
+      "evidently:DeleteProject",
+      "evidently:UntagResource",
+      "appconfig:DeleteHostedConfigurationVersion",
+      "appconfig:DeleteExtensionAssociation",
+      "appconfig:DeleteConfigurationProfile"
+    ],
+    "modify": [
+      "evidently:UpdateProject",
+      "evidently:UpdateProjectDataDelivery",
+      "evidently:ListTagsForResource",
+      "evidently:ExportProjectAsConfiguration",
+      "appconfig:GetEnvironment",
+      "appconfig:CreateConfigurationProfile",
+      "appconfig:CreateHostedConfigurationVersion"
+    ],
+    "plan": []
+  }
+]

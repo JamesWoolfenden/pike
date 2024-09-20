@@ -2,7 +2,8 @@
   {
     "apply": [
       "route53resolver:AssociateResolverRule",
-      "route53resolver:GetResolverRuleAssociation"
+      "route53resolver:GetResolverRuleAssociation",
+      "ec2:DescribeVpcs"
     ],
     "attributes": {
       "tags": []

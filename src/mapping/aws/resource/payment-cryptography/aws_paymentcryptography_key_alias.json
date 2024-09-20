@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "payment-cryptography:CreateAlias",
+      "payment-cryptography:DeleteAlias",
+      "payment-cryptography:GetAlias",
+      "payment-cryptography:UpdateAlias"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "payment-cryptography:DeleteAlias"
+    ],
+    "modify": [
+      "payment-cryptography:UpdateAlias"
+    ],
+    "plan": [
+      "payment-cryptography:GetAlias"
+    ]
+  }
+]

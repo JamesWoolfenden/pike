@@ -1,0 +1,29 @@
+[
+  {
+    "apply": [
+      "iot:DescribeThingGroup",
+      "iot:ListTagsForResource",
+      "iot:CreateThingGroup",
+      "iot:CreateDynamicThingGroup",
+      "iot:DeleteThingGroup",
+      "iot:DeleteDynamicThingGroup",
+      "iot:UpdateThingGroup",
+      "iot:UpdateDynamicThingGroup"
+    ],
+    "attributes": {
+      "tags": [
+        "iot:TagResource",
+        "iot:UntagResource"
+      ]
+    },
+    "destroy": [
+      "iot:DeleteThingGroup",
+      "iot:DeleteDynamicThingGroup"
+    ],
+    "modify": [
+      "iot:UpdateThingGroup",
+      "iot:UpdateDynamicThingGroup"
+    ],
+    "plan": []
+  }
+]

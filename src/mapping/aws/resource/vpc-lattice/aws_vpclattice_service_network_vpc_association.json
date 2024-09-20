@@ -5,10 +5,14 @@
       "vpc-lattice:CreateServiceNetworkVpcAssociation",
       "vpc-lattice:DeleteServiceNetworkVpcAssociation",
       "vpc-lattice:UpdateServiceNetworkVpcAssociation",
-      "ec2:DescribeSecurityGroups"
+      "ec2:DescribeSecurityGroups",
+      "vpc-lattice:ListTagsForResource"
     ],
     "attributes": {
-      "tags": []
+      "tags": [
+        "vpc-lattice:UntagResource",
+        "vpc-lattice:TagResource"
+      ]
     },
     "destroy": [
       "vpc-lattice:DeleteServiceNetworkVpcAssociation"

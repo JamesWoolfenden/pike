@@ -1,7 +1,9 @@
 [
   {
     "apply": [
-      "iam:PutGroupPolicy"
+      "iam:PutGroupPolicy",
+      "iam:GetGroupPolicy",
+      "iam:DeleteGroupPolicy"
     ],
     "attributes": {
       "tags": []

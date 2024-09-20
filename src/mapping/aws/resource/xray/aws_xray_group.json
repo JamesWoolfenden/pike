@@ -4,7 +4,8 @@
       "xray:CreateGroup",
       "xray:ListTagsForResource",
       "xray:GetGroup",
-      "xray:DeleteGroup"
+      "xray:DeleteGroup",
+      "xray:UpdateGroup"
     ],
     "attributes": {
       "tags": [
@@ -15,7 +16,9 @@
     "destroy": [
       "xray:DeleteGroup"
     ],
-    "modify": [],
+    "modify": [
+      "xray:UpdateGroup"
+    ],
     "plan": []
   }
 ]

@@ -1,0 +1,29 @@
+[
+  {
+    "apply": [
+      "securityhub:CreateConfigurationPolicy",
+      "securityhub:UpdateConfigurationPolicy",
+      "securityhub:ListTagsForResource",
+      "securityhub:GetConfigurationPolicy",
+      "securityhub:DeleteConfigurationPolicy"
+    ],
+    "attributes": {
+      "tags": [
+        "securityhub:TagResource",
+        "securityhub:UntagResource"
+      ]
+    },
+    "destroy": [
+      "securityhub:GetConfigurationPolicy",
+      "securityhub:DeleteConfigurationPolicy"
+    ],
+    "modify": [
+      "securityhub:UpdateConfigurationPolicy",
+      "securityhub:ListTagsForResource"
+    ],
+    "plan": [
+      "securityhub:GetConfigurationPolicy",
+      "securityhub:ListTagsForResource"
+    ]
+  }
+]

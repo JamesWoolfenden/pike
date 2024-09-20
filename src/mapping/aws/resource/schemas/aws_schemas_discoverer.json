@@ -1,0 +1,38 @@
+[
+  {
+    "apply": [
+      "events:DeleteRule",
+      "events:DisableRule",
+      "events:EnableRule",
+      "events:ListTargetsByRule",
+      "events:PutRule",
+      "events:PutTargets",
+      "events:PutTargets",
+      "events:RemoveTargets",
+      "schemas:CreateDiscoverer",
+      "schemas:DeleteDiscoverer",
+      "schemas:DescribeDiscoverer",
+      "schemas:ListTagsForResource",
+      "schemas:UpdateDiscoverer"
+    ],
+    "attributes": {
+      "tags": [
+        "schemas:TagResource",
+        "schemas:UntagResource"
+      ]
+    },
+    "destroy": [
+      "schemas:DeleteDiscoverer",
+      "events:DeleteRule",
+      "events:DisableRule",
+      "events:RemoveTargets"
+    ],
+    "modify": [
+      "schemas:UpdateDiscoverer",
+      "schemas:ListTagsForResource",
+      "events:PutTargets",
+      "events:PutRule"
+    ],
+    "plan": []
+  }
+]

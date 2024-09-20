@@ -1,0 +1,72 @@
+[
+  {
+    "apply": [
+      "iam:CreateServiceLinkedRole",
+      "iam:DeleteRole",
+      "iam:DeleteRolePolicy",
+      "iam:PassRole",
+      "iam:PutRolePolicy",
+      "s3:GetBucketNotification",
+      "s3:GetBucketNotificationConfiguration",
+      "s3:PutBucketNotification",
+      "s3:PutBucketNotificationConfiguration",
+      "securitylake:CreateDataLake",
+      "securitylake:CreateSubscriber",
+      "securitylake:CreateSubscriberNotification",
+      "securitylake:DeleteSubscriberNotification",
+      "securitylake:GetSubscriber",
+      "securitylake:UpdateSubscriberNotification"
+    ],
+    "attributes": {
+      "authorization_api_key_value": [
+        "secretsmanager:CreateSecret"
+      ],
+      "https_notification_configuration": [
+        "events:CreateApiDestination",
+        "events:CreateConnection",
+        "events:CreateRule",
+        "events:DeleteApiDestination",
+        "events:DeleteConnection",
+        "events:DeleteRule",
+        "events:DescribeRule",
+        "events:ListApiDestinations",
+        "events:ListConnections",
+        "events:ListTargetsByRule",
+        "events:PutRule",
+        "events:PutTargets",
+        "events:RemoveTargets",
+        "events:UpdateApiDestination",
+        "events:UpdateConnection"
+      ],
+      "sqs_notification_configuration": [
+        "sqs:CreateQueue",
+        "sqs:DeleteQueue",
+        "sqs:GetQueueAttributes",
+        "sqs:GetQueueUrl",
+        "sqs:SetQueueAttributes"
+      ],
+      "tags": []
+    },
+    "destroy": [
+      "securitylake:DeleteSubscriberNotification",
+      "securitylake:GetSubscriber",
+      "iam:DeleteRole",
+      "iam:DeleteRolePolicy"
+    ],
+    "modify": [
+      "securitylake:UpdateSubscriberNotification",
+      "securitylake:GetSubscriber",
+      "iam:CreateServiceLinkedRole",
+      "iam:PutRolePolicy",
+      "iam:DeleteRolePolicy",
+      "iam:PassRole",
+      "s3:GetBucketNotificationConfiguration",
+      "s3:PutBucketNotificationConfiguration",
+      "s3:PutBucketNotification",
+      "s3:GetBucketNotification"
+    ],
+    "plan": [
+      "securitylake:GetSubscriber"
+    ]
+  }
+]

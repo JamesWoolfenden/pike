@@ -108,7 +108,10 @@ func TestGetPolicy(t *testing.T) {
 			args{pike.Sorted{
 				AWS: []string{},
 			}},
-			"{\"Version\": \"2012-10-17\",\"Statement\": null\n}",
+			`{
+  "version": "2012-10-17",
+  "statement": null
+}`,
 			false,
 		},
 		{
@@ -128,13 +131,51 @@ func TestGetPolicy(t *testing.T) {
 				"ec2:StopInstances",
 				"ec2:TerminateInstances",
 			}}},
-			"{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"VisualEditor0\",\"Effect\":\"Allow\",\"Action\":[\"ec2:DescribeInstanceAttribute\",\"ec2:DescribeInstanceCreditSpecifications\",\"ec2:DescribeInstanceTypes\",\"ec2:DescribeInstances\",\"ec2:DescribeTags\",\"ec2:DescribeVolumes\",\"ec2:ModifyInstanceAttribute\",\"ec2:RunInstances\",\"ec2:StartInstances\",\"ec2:StopInstances\",\"ec2:TerminateInstances\"],\"Resource\":[\"*\"]}]}",
+			`{
+  "version": "2012-10-17",
+  "statement": [
+    {
+      "sid": "VisualEditor0",
+      "effect": "Allow",
+      "action": [
+        "ec2:DescribeInstanceAttribute",
+        "ec2:DescribeInstanceCreditSpecifications",
+        "ec2:DescribeInstanceTypes",
+        "ec2:DescribeInstances",
+        "ec2:DescribeTags",
+        "ec2:DescribeVolumes",
+        "ec2:ModifyInstanceAttribute",
+        "ec2:RunInstances",
+        "ec2:StartInstances",
+        "ec2:StopInstances",
+        "ec2:TerminateInstances"
+      ],
+      "resource": [
+        "*"
+      ]
+    }
+  ]
+}`,
 			false,
 		},
 		{
 			"short",
 			args{pike.Sorted{AWS: []string{"s3:*"}}},
-			"{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"VisualEditor0\",\"Effect\":\"Allow\",\"Action\":[\"s3:*\"],\"Resource\":[\"*\"]}]}",
+			`{
+  "version": "2012-10-17",
+  "statement": [
+    {
+      "sid": "VisualEditor0",
+      "effect": "Allow",
+      "action": [
+        "s3:*"
+      ],
+      "resource": [
+        "*"
+      ]
+    }
+  ]
+}`,
 			false,
 		},
 	}
@@ -143,14 +184,18 @@ func TestGetPolicy(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
+
 			got, err := pike.GetPolicy(tt.args.actions, false)
+
 			if (err != nil) != tt.wantErr {
 				t.Errorf("GetPolicy() error = %v, wantErr %v", err, tt.wantErr)
 
 				return
 			}
+
 			newGot := Minify(got.AWS.JSONOut)
 			reallyWant := Minify(tt.want)
+
 			if newGot != reallyWant {
 				t.Errorf("GetPolicy() = %v, want %v", got.AWS.JSONOut, tt.want)
 			}
@@ -189,7 +234,21 @@ func TestAWSPolicy(t *testing.T) {
 		{
 			"pass",
 			args{[]string{"woof:*"}},
-			pike.AwsOutput{JSONOut: "{\n    \"Version\": \"2012-10-17\",\n    \"Statement\": [\n        {\n            \"Sid\": \"VisualEditor0\",\n            \"Effect\": \"Allow\",\n            \"Action\": [\n                \"woof:*\"\n            ],\n            \"Resource\": [\n                \"*\"\n            ]\n        }\n    ]\n}"},
+			pike.AwsOutput{JSONOut: `{
+  "version": "2012-10-17",
+  "statement": [
+    {
+      "sid": "VisualEditor0",
+      "effect": "Allow",
+      "action": [
+        "woof:*"
+      ],
+      "resource": [
+        "*"
+      ]
+    }
+  ]
+}`},
 			false,
 		},
 	}

@@ -1,0 +1,28 @@
+[
+  {
+    "apply": [
+      "iam:GetRole",
+      "iam:PassRole",
+      "iot:CreateProvisioningTemplate",
+      "iot:DescribeProvisioningTemplate",
+      "iot:ListTagsForResource",
+      "iot:DeleteProvisioningTemplate"
+    ],
+    "attributes": {
+      "tags": [
+        "iot:TagResource",
+        "iot:UntagResource"
+      ]
+    },
+    "destroy": [
+      "iot:DeleteProvisioningTemplate"
+    ],
+    "modify": [
+      "iot:UpdateProvisioningTemplate",
+      "iot:CreateProvisioningTemplateVersion",
+      "iot:ListProvisioningTemplateVersions",
+      "iot:DeleteProvisioningTemplateVersion"
+    ],
+    "plan": []
+  }
+]

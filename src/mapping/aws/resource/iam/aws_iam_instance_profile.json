@@ -6,7 +6,10 @@
       "iam:RemoveRoleFromInstanceProfile",
       "iam:DeleteInstanceProfile",
       "iam:AddRoleToInstanceProfile",
-      "iam:PassRole"
+      "iam:PassRole",
+      "iam:GetRole",
+      "iam:RemoveRoleFromInstanceProfile",
+      "iam:DeleteInstanceProfile"
     ],
     "attributes": {
       "tags": [
@@ -15,7 +18,9 @@
       ]
     },
     "destroy": [
-      "iam:GetRole"
+      "iam:GetRole",
+      "iam:RemoveRoleFromInstanceProfile",
+      "iam:DeleteInstanceProfile"
     ],
     "modify": [],
     "plan": []

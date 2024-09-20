@@ -4,7 +4,9 @@
       "elasticbeanstalk:DescribeApplicationVersions",
       "elasticbeanstalk:CreateApplicationVersion",
       "elasticbeanstalk:DeleteApplicationVersion",
-      "elasticbeanstalk:UpdateApplicationVersion"
+      "elasticbeanstalk:UpdateApplicationVersion",
+      "s3:GetObject",
+      "s3:PutObject"
     ],
     "attributes": {
       "tags": []

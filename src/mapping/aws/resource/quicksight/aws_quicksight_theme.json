@@ -1,0 +1,35 @@
+[
+  {
+    "apply": [
+      "quicksight:DescribeTheme",
+      "quicksight:DescribeThemePermissions",
+      "quicksight:CreateTheme",
+      "quicksight:ListTagsForResource",
+      "quicksight:UpdateTheme",
+      "quicksight:UpdateThemePermissions",
+      "quicksight:DeleteTheme"
+    ],
+    "attributes": {
+      "tags": [
+        "quicksight:TagResource",
+        "quicksight:UntagResource"
+      ]
+    },
+    "destroy": [
+      "quicksight:DescribeTheme",
+      "quicksight:DeleteTheme"
+    ],
+    "modify": [
+      "quicksight:DescribeTheme",
+      "quicksight:DescribeThemePermissions",
+      "quicksight:UpdateTheme",
+      "quicksight:UpdateThemePermissions",
+      "quicksight:ListTagsForResource"
+    ],
+    "plan": [
+      "quicksight:DescribeTheme",
+      "quicksight:DescribeThemePermissions",
+      "quicksight:ListTagsForResource"
+    ]
+  }
+]
