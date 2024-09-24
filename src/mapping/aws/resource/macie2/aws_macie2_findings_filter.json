@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "macie2:GetFindingsFilter",
+      "macie2:CreateFindingsFilter",
+      "macie2:DeleteFindingsFilter",
+      "macie2:UpdateFindingsFilter"
+    ],
+    "attributes": {
+      "tags": [
+        "macie2:TagResource",
+        "macie2:UntagResource"
+      ]
+    },
+    "destroy": [
+      "macie2:DeleteFindingsFilter"
+    ],
+    "modify": [
+      "macie2:UpdateFindingsFilter"
+    ],
+    "plan": []
+  }
+]

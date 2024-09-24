@@ -1,0 +1,30 @@
+[
+  {
+    "apply": [
+      "networkmanager:CreateDevice",
+      "networkmanager:GetDevices",
+      "networkmanager:DeleteDevice",
+      "networkmanager:UpdateDevice",
+      "networkmanager:ListTagsForResource",
+      "networkmanager:GetDevices"
+    ],
+    "attributes": {
+      "tags": [
+        "networkmanager:TagResource",
+        "networkmanager:UntagResource"
+      ]
+    },
+    "destroy": [
+      "networkmanager:GetDevices",
+      "networkmanager:DeleteDevice"
+    ],
+    "modify": [
+      "networkmanager:UpdateDevice",
+      "networkmanager:ListTagsForResource",
+      "networkmanager:GetDevices"
+    ],
+    "plan": [
+      "networkmanager:GetDevices"
+    ]
+  }
+]

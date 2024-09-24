@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "securityhub:CreateInsight",
+      "securityhub:GetInsights",
+      "securityhub:DeleteInsight",
+      "securityhub:UpdateInsight"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "securityhub:GetInsights",
+      "securityhub:DeleteInsight"
+    ],
+    "modify": [
+      "securityhub:UpdateInsight"
+    ],
+    "plan": [
+      "securityhub:GetInsights"
+    ]
+  }
+]

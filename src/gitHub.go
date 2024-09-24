@@ -15,7 +15,7 @@ import (
 
 const lastOK = 299
 
-// InvokeGithubDispatchEvent uses your gitHub api key (if sufficiently enabled) to invoke a gitHub action workflow.
+// InvokeGithubDispatchEvent uses your GitHub api key (if sufficiently enabled) to invoke a GitHub action workflow.
 func InvokeGithubDispatchEvent(repository string, workflowFileName string, branch string) error {
 	owner, repo, err := SplitHub(repository)
 	if err != nil {
@@ -88,6 +88,7 @@ func InvokeGithubDispatchEvent(repository string, workflowFileName string, branc
 func VerifyBranch(client *github.Client, owner string, repo string, branch string) error {
 	ctx := context.Background()
 	branches, _, err := client.Repositories.ListBranches(ctx, owner, repo, nil)
+
 	if err != nil {
 		return err
 	}

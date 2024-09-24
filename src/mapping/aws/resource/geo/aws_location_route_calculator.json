@@ -7,7 +7,10 @@
       "geo:UpdateRouteCalculator"
     ],
     "attributes": {
-      "tags": []
+      "tags": [
+        "geo:TagResource",
+        "geo:UntagResource"
+      ]
     },
     "destroy": [
       "geo:DeleteRouteCalculator"

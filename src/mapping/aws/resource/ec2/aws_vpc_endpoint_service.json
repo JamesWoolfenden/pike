@@ -5,7 +5,8 @@
       "ec2:CreateVpcEndpointServiceConfiguration",
       "ec2:DescribeVpcEndpointServiceConfigurations",
       "ec2:DescribeVpcEndpointServicePermissions",
-      "ec2:DeleteVpcEndpointServiceConfigurations"
+      "ec2:DeleteVpcEndpointServiceConfigurations",
+      "ec2:ModifyVpcEndpointServiceConfiguration"
     ],
     "attributes": {
       "tags": [
@@ -16,7 +17,9 @@
     "destroy": [
       "ec2:DeleteVpcEndpointServiceConfigurations"
     ],
-    "modify": [],
+    "modify": [
+      "ec2:ModifyVpcEndpointServiceConfiguration"
+    ],
     "plan": []
   }
 ]

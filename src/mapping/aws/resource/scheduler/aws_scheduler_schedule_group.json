@@ -1,0 +1,30 @@
+[
+  {
+    "apply": [
+      "scheduler:CreateScheduleGroup",
+      "scheduler:DeleteScheduleGroup",
+      "scheduler:GetScheduleGroup",
+      "scheduler:DeleteSchedule",
+      "scheduler:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "scheduler:TagResource",
+        "scheduler:UntagResource"
+      ]
+    },
+    "destroy": [
+      "scheduler:DeleteScheduleGroup",
+      "scheduler:GetScheduleGroup",
+      "scheduler:DeleteSchedule"
+    ],
+    "modify": [
+      "scheduler:ListTagsForResource",
+      "scheduler:GetScheduleGroup"
+    ],
+    "plan": [
+      "scheduler:GetScheduleGroup",
+      "scheduler:ListTagsForResource"
+    ]
+  }
+]

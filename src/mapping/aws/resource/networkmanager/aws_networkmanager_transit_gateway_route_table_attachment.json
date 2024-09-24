@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "networkmanager:CreateTransitGatewayRouteTableAttachment",
+      "networkmanager:GetTransitGatewayRouteTableAttachment",
+      "iam:CreateServiceLinkedRole",
+      "ec2:DescribeRegions",
+      "networkmanager:DeleteAttachment",
+      "networkmanager:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "networkmanager:TagResource",
+        "networkmanager:UntagResource"
+      ]
+    },
+    "destroy": [
+      "networkmanager:DeleteAttachment"
+    ],
+    "modify": [
+      "networkmanager:ListTagsForResource"
+    ],
+    "plan": []
+  }
+]

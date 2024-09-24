@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "lakeformation:CreateDataCellsFilter",
+      "glue:GetTable",
+      "lakeformation:DeleteDataCellsFilter",
+      "lakeformation:ListDataCellsFilter"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "lakeformation:DeleteDataCellsFilter"
+    ],
+    "modify": [],
+    "plan": [
+      "lakeformation:ListDataCellsFilter"
+    ]
+  }
+]

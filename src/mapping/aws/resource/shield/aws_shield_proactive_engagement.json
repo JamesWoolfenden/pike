@@ -1,0 +1,32 @@
+[
+  {
+    "apply": [
+      "shield:AssociateProactiveEngagementDetails",
+      "shield:DescribeEmergencyContactSettings",
+      "shield:DescribeSubscription",
+      "shield:DisableProactiveEngagement",
+      "shield:EnableProactiveEngagement",
+      "shield:UpdateEmergencyContactSettings"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "shield:DescribeSubscription",
+      "shield:DescribeEmergencyContactSettings",
+      "shield:UpdateEmergencyContactSettings",
+      "shield:DisableProactiveEngagement"
+    ],
+    "modify": [
+      "shield:DescribeSubscription",
+      "shield:DescribeEmergencyContactSettings",
+      "shield:UpdateEmergencyContactSettings",
+      "shield:EnableProactiveEngagement",
+      "shield:DisableProactiveEngagement"
+    ],
+    "plan": [
+      "shield:DescribeSubscription",
+      "shield:DescribeEmergencyContactSettings"
+    ]
+  }
+]

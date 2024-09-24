@@ -1,0 +1,40 @@
+[
+  {
+    "apply": [
+      "acm-pca:GetCertificateAuthorityCertificate",
+      "iam:CreateServiceLinkedRole",
+      "rolesanywhere:CreateTrustAnchor",
+      "rolesanywhere:DeleteTrustAnchor",
+      "rolesanywhere:DisableTrustAnchor",
+      "rolesanywhere:EnableTrustAnchor",
+      "rolesanywhere:GetTrustAnchor",
+      "rolesanywhere:ListTagsForResource",
+      "rolesanywhere:PutNotificationSettings",
+      "rolesanywhere:ResetNotificationSettings",
+      "rolesanywhere:UpdateTrustAnchor"
+    ],
+    "attributes": {
+      "tags": [
+        "rolesanywhere:TagResource",
+        "rolesanywhere:UntagResource"
+      ]
+    },
+    "destroy": [
+      "rolesanywhere:DeleteTrustAnchor"
+    ],
+    "modify": [
+      "acm-pca:GetCertificateAuthorityCertificate",
+      "rolesanywhere:ListTagsForResource",
+      "rolesanywhere:EnableTrustAnchor",
+      "rolesanywhere:DisableTrustAnchor",
+      "rolesanywhere:UpdateTrustAnchor",
+      "rolesanywhere:GetTrustAnchor",
+      "rolesanywhere:PutNotificationSettings",
+      "rolesanywhere:ResetNotificationSettings"
+    ],
+    "plan": [
+      "rolesanywhere:GetTrustAnchor",
+      "rolesanywhere:ListTagsForResource"
+    ]
+  }
+]

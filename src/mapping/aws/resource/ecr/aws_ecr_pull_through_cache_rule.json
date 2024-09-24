@@ -7,9 +7,14 @@
       "iam:CreateServiceLinkedRole"
     ],
     "attributes": {
+      "credential_arn": [
+        "secretsmanager:GetSecretValue"
+      ],
       "tags": []
     },
-    "destroy": [],
+    "destroy": [
+      "ecr:DeletePullThroughCacheRule"
+    ],
     "modify": [],
     "plan": []
   }

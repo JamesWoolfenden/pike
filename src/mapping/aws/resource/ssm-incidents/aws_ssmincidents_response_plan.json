@@ -1,0 +1,37 @@
+[
+  {
+    "apply": [
+      "ssm-incidents:CreateResponsePlan",
+      "ssm-incidents:GetResponsePlan",
+      "ssm-incidents:TagResource",
+      "ssm-incidents:ListTagsForResource",
+      "ssm-incidents:UpdateResponsePlan",
+      "iam:PassRole",
+      "kms:Decrypt",
+      "kms:GenerateDataKey",
+      "kms:GenerateDataKeyPair",
+      "kms:GenerateDataKeyPairWithoutPlaintext",
+      "kms:GenerateDataKeyWithoutPlaintext"
+    ],
+    "attributes": {
+      "secret_id": [
+        "secretsmanager:GetSecretValue"
+      ],
+      "tags": [
+        "ssm-incidents:TagResource",
+        "ssm-incidents:UntagResource"
+      ]
+    },
+    "destroy": [
+      "ssm-incidents:DeleteResponsePlan",
+      "ssm-incidents:GetResponsePlan"
+    ],
+    "modify": [
+      "ssm-incidents:UpdateResponsePlan"
+    ],
+    "plan": [
+      "ssm-incidents:GetResponsePlan",
+      "ssm-incidents:ListTagsForResource"
+    ]
+  }
+]

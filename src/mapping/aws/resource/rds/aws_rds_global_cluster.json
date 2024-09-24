@@ -3,13 +3,17 @@
     "apply": [
       "rds:CreateGlobalCluster",
       "rds:DescribeGlobalClusters",
-      "rds:DeleteGlobalCluster"
+      "rds:DeleteGlobalCluster",
+      "rds:DescribeDBClusters",
+      "rds:RemoveFromGlobalCluster",
+      "rds:ModifyGlobalCluster"
     ],
     "attributes": {
       "tags": []
     },
     "destroy": [
-      "rds:DeleteGlobalCluster"
+      "rds:DeleteGlobalCluster",
+      "rds:RemoveFromGlobalCluster"
     ],
     "modify": [
       "rds:ModifyGlobalCluster"

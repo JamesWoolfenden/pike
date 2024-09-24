@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "networkmanager:RegisterTransitGateway",
+      "networkmanager:GetTransitGatewayRegistrations",
+      "networkmanager:DeregisterTransitGateway"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "networkmanager:DeregisterTransitGateway"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

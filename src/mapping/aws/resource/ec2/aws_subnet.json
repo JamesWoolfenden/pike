@@ -5,7 +5,10 @@
       "ec2:DescribeAccountAttributes",
       "ec2:DescribeSubnets",
       "ec2:DeleteSubnet",
-      "ec2:DescribeNetworkInterfaces"
+      "ec2:DescribeNetworkInterfaces",
+      "ec2:ModifySubnetAttribute",
+      "ec2:AssociateSubnetCidrBlock",
+      "ec2:DisassociateSubnetCidrBlock"
     ],
     "attributes": {
       "tags": [
@@ -16,7 +19,11 @@
     "destroy": [
       "ec2:DeleteSubnet"
     ],
-    "modify": [],
+    "modify": [
+      "ec2:ModifySubnetAttribute",
+      "ec2:AssociateSubnetCidrBlock",
+      "ec2:DisassociateSubnetCidrBlock"
+    ],
     "plan": []
   }
 ]

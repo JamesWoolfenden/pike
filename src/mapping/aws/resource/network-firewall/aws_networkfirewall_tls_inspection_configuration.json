@@ -1,0 +1,26 @@
+[
+  {
+    "apply": [
+      "iam:CreateServiceLinkedRole",
+      "network-firewall:CreateTLSInspectionConfiguration",
+      "network-firewall:DescribeTLSInspectionConfiguration",
+      "network-firewall:DeleteTLSInspectionConfiguration",
+      "network-firewall:DescribeTLSInspectionConfiguration",
+      "network-firewall:ListTagsForResources",
+      "network-firewall:UpdateTLSInspectionConfiguration"
+    ],
+    "attributes": {
+      "tags": [
+        "network-firewall:TagResource",
+        "network-firewall:UntagResource"
+      ]
+    },
+    "destroy": [
+      "network-firewall:DeleteTLSInspectionConfiguration"
+    ],
+    "modify": [
+      "network-firewall:UpdateTLSInspectionConfiguration"
+    ],
+    "plan": []
+  }
+]

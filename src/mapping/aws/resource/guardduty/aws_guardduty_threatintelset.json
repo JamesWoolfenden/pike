@@ -1,0 +1,30 @@
+[
+  {
+    "apply": [
+      "guardduty:CreateThreatIntelSet",
+      "guardduty:GetThreatIntelSet",
+      "iam:PutRolePolicy",
+      "guardduty:ListDetectors",
+      "guardduty:ListThreatIntelSets",
+      "guardduty:DeleteThreatIntelSet",
+      "iam:DeleteRolePolicy",
+      "guardduty:UpdateThreatIntelSet"
+    ],
+    "attributes": {
+      "tags": [
+        "guardduty:TagResource",
+        "guardduty:UntagResource"
+      ]
+    },
+    "destroy": [
+      "guardduty:ListDetectors",
+      "guardduty:ListThreatIntelSets",
+      "guardduty:DeleteThreatIntelSet",
+      "iam:DeleteRolePolicy"
+    ],
+    "modify": [
+      "guardduty:UpdateThreatIntelSet"
+    ],
+    "plan": []
+  }
+]

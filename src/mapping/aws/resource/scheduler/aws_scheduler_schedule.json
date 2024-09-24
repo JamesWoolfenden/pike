@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "scheduler:CreateSchedule",
+      "scheduler:GetSchedule",
+      "scheduler:DeleteSchedule",
+      "iam:PassRole",
+      "scheduler:UpdateSchedule"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "scheduler:DeleteSchedule",
+      "scheduler:GetSchedule"
+    ],
+    "modify": [
+      "scheduler:UpdateSchedule"
+    ],
+    "plan": []
+  }
+]

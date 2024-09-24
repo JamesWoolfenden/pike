@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "networkmanager:GetCustomerGatewayAssociations",
+      "networkmanager:DisassociateCustomerGateway"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "networkmanager:DisassociateCustomerGateway"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

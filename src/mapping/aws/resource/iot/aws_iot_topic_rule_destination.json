@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "iam:PassRole",
+      "iot:CreateTopicRuleDestination",
+      "iot:GetTopicRuleDestination",
+      "iot:UpdateTopicRuleDestination",
+      "iot:DeleteTopicRuleDestination",
+      "iot:UpdateTopicRuleDestination"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "iot:DeleteTopicRuleDestination"
+    ],
+    "modify": [
+      "iot:UpdateTopicRuleDestination"
+    ],
+    "plan": []
+  }
+]

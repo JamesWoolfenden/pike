@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "globalaccelerator:DescribeCrossAccountAttachment",
+      "globalaccelerator:CreateCrossAccountAttachment",
+      "globalaccelerator:DeleteCrossAccountAttachment"
+    ],
+    "attributes": {
+      "tags": [
+        "globalaccelerator:TagResource",
+        "globalaccelerator:UntagResource"
+      ]
+    },
+    "destroy": [
+      "globalaccelerator:DeleteCrossAccountAttachment"
+    ],
+    "modify": [
+      "globalaccelerator:UpdateCrossAccountAttachment"
+    ],
+    "plan": []
+  }
+]

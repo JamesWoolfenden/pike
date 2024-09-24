@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "ec2:RegisterTransitGatewayMulticastGroupSources",
+      "ec2:SearchTransitGatewayMulticastGroups",
+      "ec2:DeregisterTransitGatewayMulticastGroupSources"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "ec2:DeregisterTransitGatewayMulticastGroupSources"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

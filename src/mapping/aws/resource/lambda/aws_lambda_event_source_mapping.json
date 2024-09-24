@@ -4,7 +4,8 @@
       "ec2:DescribeAccountAttributes",
       "lambda:CreateEventSourceMapping",
       "lambda:GetEventSourceMapping",
-      "lambda:DeleteEventSourceMapping"
+      "lambda:DeleteEventSourceMapping",
+      "lambda:UpdateEventSourceMapping"
     ],
     "attributes": {
       "tags": []

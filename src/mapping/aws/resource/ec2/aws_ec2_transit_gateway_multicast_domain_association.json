@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "ec2:AssociateTransitGatewayMulticastDomain",
+      "ec2:GetTransitGatewayMulticastDomainAssociations",
+      "ec2:DisassociateTransitGatewayMulticastDomain"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "ec2:DisassociateTransitGatewayMulticastDomain"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

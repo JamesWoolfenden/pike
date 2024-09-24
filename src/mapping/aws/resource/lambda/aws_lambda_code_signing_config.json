@@ -3,7 +3,8 @@
     "apply": [
       "lambda:CreateCodeSigningConfig",
       "lambda:GetCodeSigningConfig",
-      "lambda:DeleteCodeSigningConfig"
+      "lambda:DeleteCodeSigningConfig",
+      "lambda:UpdateCodeSigningConfig"
     ],
     "attributes": {
       "tags": []
@@ -11,7 +12,9 @@
     "destroy": [
       "lambda:DeleteCodeSigningConfig"
     ],
-    "modify": [],
+    "modify": [
+      "lambda:UpdateCodeSigningConfig"
+    ],
     "plan": []
   }
 ]

@@ -1,0 +1,26 @@
+[
+  {
+    "apply": [
+      "logs:PutAccountPolicy",
+      "logs:PutDataProtectionPolicy",
+      "logs:DescribeAccountPolicies",
+      "logs:CreateLogDelivery",
+      "firehose:TagDeliveryStream",
+      "logs:PutSubscriptionFilter",
+      "logs:DeleteSubscriptionFilter",
+      "logs:DeleteAccountPolicy",
+      "logs:DeleteDataProtectionPolicy",
+      "iam:PassRole"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "logs:DeleteAccountPolicy",
+      "logs:DeleteDataProtectionPolicy",
+      "logs:DeleteSubscriptionFilter"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

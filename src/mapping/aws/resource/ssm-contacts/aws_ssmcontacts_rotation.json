@@ -1,0 +1,28 @@
+[
+  {
+    "apply": [
+      "ssm-contacts:CreateRotation",
+      "ssm-contacts:GetRotation",
+      "ssm-contacts:ListTagsForResource",
+      "ssm-contacts:DeleteRotation",
+      "ssm-contacts:UpdateRotation"
+    ],
+    "attributes": {
+      "tags": [
+        "ssm-contacts:TagResource",
+        "ssm-contacts:UntagResource"
+      ]
+    },
+    "destroy": [
+      "ssm-contacts:DeleteRotation",
+      "ssm-contacts:GetRotation",
+      "ssm-contacts:ListTagsForResource"
+    ],
+    "modify": [
+      "ssm-contacts:UpdateRotation",
+      "ssm-contacts:GetRotation",
+      "ssm-contacts:ListTagsForResource"
+    ],
+    "plan": []
+  }
+]

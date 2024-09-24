@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "securityhub:CreateFindingAggregator",
+      "securityhub:DeleteFindingAggregator",
+      "securityhub:GetFindingAggregator",
+      "securityhub:UpdateFindingAggregator"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "securityhub:DeleteFindingAggregator"
+    ],
+    "modify": [
+      "securityhub:UpdateFindingAggregator"
+    ],
+    "plan": [
+      "securityhub:GetFindingAggregator"
+    ]
+  }
+]

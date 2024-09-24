@@ -12,7 +12,8 @@
       "kms_key_id": [
         "kms:CreateGrant",
         "kms:DescribeKey",
-        "kms:ListKeys"
+        "kms:ListKeys",
+        "kms:Decrypt"
       ],
       "tags": [
         "timestream:TagResource",

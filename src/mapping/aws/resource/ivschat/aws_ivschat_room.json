@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "ivschat:CreateRoom",
+      "ivschat:DeleteRoom",
+      "ivschat:UpdateRoom",
+      "ivschat:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "ivschat:TagResource",
+        "ivschat:UntagResource"
+      ]
+    },
+    "destroy": [
+      "ivschat:DeleteRoom"
+    ],
+    "modify": [
+      "ivschat:UpdateRoom"
+    ],
+    "plan": []
+  }
+]

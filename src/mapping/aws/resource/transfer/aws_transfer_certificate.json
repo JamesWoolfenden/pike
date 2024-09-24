@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "transfer:ImportCertificate",
+      "transfer:DeleteCertificate",
+      "transfer:DescribeCertificate",
+      "transfer:UpdateCertificate"
+    ],
+    "attributes": {
+      "tags": [
+        "transfer:UnTagResource",
+        "transfer:TagResource"
+      ]
+    },
+    "destroy": [
+      "transfer:DeleteCertificate"
+    ],
+    "modify": [
+      "transfer:UpdateCertificate",
+      "transfer:UnTagResource",
+      "transfer:TagResource"
+    ],
+    "plan": [
+      "transfer:DescribeCertificate"
+    ]
+  }
+]

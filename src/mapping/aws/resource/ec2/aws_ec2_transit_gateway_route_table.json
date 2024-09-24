@@ -2,7 +2,10 @@
   {
     "apply": [
       "ec2:CreateTransitGatewayRouteTable",
-      "ec2:DescribeTransitGatewayRouteTable"
+      "ec2:DescribeTransitGatewayRouteTables",
+      "ec2:DeleteTransitGatewayRouteTable",
+      "ec2:GetTransitGatewayRouteTableAssociations",
+      "ec2:DisassociateTransitGatewayRouteTable"
     ],
     "attributes": {
       "tags": [
@@ -11,7 +14,9 @@
       ]
     },
     "destroy": [
-      "ec2:DeleteTransitGatewayRouteTable"
+      "ec2:DeleteTransitGatewayRouteTable",
+      "ec2:GetTransitGatewayRouteTableAssociations",
+      "ec2:DisassociateTransitGatewayRouteTable"
     ],
     "modify": [],
     "plan": []

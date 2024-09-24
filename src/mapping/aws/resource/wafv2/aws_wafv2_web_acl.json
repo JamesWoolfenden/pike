@@ -4,7 +4,8 @@
       "wafv2:CreateWebACL",
       "wafv2:GetWebACL",
       "wafv2:ListTagsForResource",
-      "wafv2:DeleteWebACL"
+      "wafv2:DeleteWebACL",
+      "wafv2:UpdateWebACL"
     ],
     "attributes": {
       "tags": [
@@ -15,7 +16,9 @@
     "destroy": [
       "wafv2:DeleteWebACL"
     ],
-    "modify": [],
+    "modify": [
+      "wafv2:UpdateWebACL"
+    ],
     "plan": []
   }
 ]

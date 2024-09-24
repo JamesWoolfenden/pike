@@ -6,7 +6,8 @@
       "vpc-lattice:DeleteService",
       "vpc-lattice:UpdateService",
       "iam:CreateServiceLinkedRole",
-      "vpc-lattice:ListTagsForResource"
+      "vpc-lattice:ListTagsForResource",
+      "acm:ListCertificates"
     ],
     "attributes": {
       "tags": [

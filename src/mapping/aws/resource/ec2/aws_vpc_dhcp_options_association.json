@@ -2,13 +2,16 @@
   {
     "apply": [
       "ec2:DescribeAccountAttributes",
-      "ec2:AssociateDhcpOptions"
+      "ec2:AssociateDhcpOptions",
+      "ec2:DescribeVpcs"
     ],
     "attributes": {
       "tags": []
     },
     "destroy": [],
-    "modify": [],
+    "modify": [
+      "ec2:AssociateDhcpOptions"
+    ],
     "plan": []
   }
 ]

@@ -201,7 +201,7 @@ func AWSPolicy(permissions []string, resources bool) (AwsOutput, error) {
 	return OutPolicy, nil
 }
 
-// Unique make slice unique
+// Unique make slice unique.
 func Unique(s []string) []string {
 	inResult := make(map[string]bool)
 

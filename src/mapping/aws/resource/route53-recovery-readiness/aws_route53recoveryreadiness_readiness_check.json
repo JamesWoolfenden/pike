@@ -1,0 +1,32 @@
+[
+  {
+    "apply": [
+      "route53-recovery-readiness:CreateReadinessCheck",
+      "route53-recovery-readiness:GetResourceSet",
+      "route53-recovery-readiness:GetReadinessCheck",
+      "route53-recovery-readiness:ListTagsForResources",
+      "route53-recovery-readiness:DeleteReadinessCheck",
+      "route53-recovery-readiness:UpdateReadinessCheck"
+    ],
+    "attributes": {
+      "tags": [
+        "route53-recovery-readiness:TagResource",
+        "route53-recovery-readiness:UntagResource"
+      ]
+    },
+    "destroy": [
+      "route53-recovery-readiness:DeleteReadinessCheck",
+      "route53-recovery-readiness:GetReadinessCheck"
+    ],
+    "modify": [
+      "route53-recovery-readiness:UpdateReadinessCheck",
+      "route53-recovery-readiness:GetResourceSet",
+      "route53-recovery-readiness:GetReadinessCheck",
+      "route53-recovery-readiness:ListTagsForResources"
+    ],
+    "plan": [
+      "route53-recovery-readiness:GetReadinessCheck",
+      "route53-recovery-readiness:ListTagsForResources"
+    ]
+  }
+]

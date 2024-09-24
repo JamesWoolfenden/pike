@@ -1,0 +1,35 @@
+[
+  {
+    "apply": [
+      "fms:PutPolicy",
+      "waf-regional:ListRuleGroups",
+      "wafv2:CheckCapacity",
+      "wafv2:ListRuleGroups",
+      "wafv2:ListAvailableManagedRuleGroups",
+      "wafv2:ListAvailableManagedRuleGroupVersions",
+      "network-firewall:DescribeRuleGroup",
+      "network-firewall:DescribeRuleGroupMetadata",
+      "route53resolver:ListFirewallRuleGroups",
+      "ec2:DescribeAvailabilityZones",
+      "s3:PutBucketPolicy",
+      "s3:GetBucketPolicy",
+      "fms:DeletePolicy",
+      "fms:GetPolicy",
+      "fms:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "fms:TagResource",
+        "fms:UntagResource"
+      ]
+    },
+    "destroy": [
+      "fms:DeletePolicy"
+    ],
+    "modify": [],
+    "plan": [
+      "fms:GetPolicy",
+      "fms:ListTagsForResource"
+    ]
+  }
+]

@@ -1,0 +1,28 @@
+[
+  {
+    "apply": [
+      "guardduty:CreateFilter",
+      "guardduty:GetFilter",
+      "guardduty:ListDetectors",
+      "guardduty:ListFilters",
+      "guardduty:GetFilter",
+      "guardduty:DeleteFilter"
+    ],
+    "attributes": {
+      "tags": [
+        "guardduty:TagResource",
+        "guardduty:UntagResource"
+      ]
+    },
+    "destroy": [
+      "guardduty:ListDetectors",
+      "guardduty:ListFilters",
+      "guardduty:GetFilter",
+      "guardduty:DeleteFilter"
+    ],
+    "modify": [
+      "guardduty:UpdateFilter"
+    ],
+    "plan": []
+  }
+]

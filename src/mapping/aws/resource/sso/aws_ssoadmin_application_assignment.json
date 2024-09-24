@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "sso:CreateApplicationAssignment",
+      "sso:DescribeApplicationAssignment",
+      "sso:DeleteApplicationAssignment",
+      "sso:DescribeApplicationAssignment"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "sso:DeleteApplicationAssignment"
+    ],
+    "modify": [],
+    "plan": [
+      "sso:DescribeApplicationAssignment"
+    ]
+  }
+]

@@ -3,7 +3,10 @@
     "apply": [
       "elasticloadbalancing:CreateTargetGroup",
       "elasticloadbalancing:DescribeTargetGroups",
+      "elasticloadbalancing:RegisterTargets",
       "elasticloadbalancing:DeleteTargetGroup",
+      "elasticloadbalancing:DeregisterTargets",
+      "elasticloadbalancing:DescribeTargetHealth",
       "elasticloadbalancing:ModifyTargetGroupAttributes"
     ],
     "attributes": {
@@ -13,7 +16,8 @@
       ]
     },
     "destroy": [
-      "elasticloadbalancing:DeleteTargetGroup"
+      "elasticloadbalancing:DeleteTargetGroup",
+      "elasticloadbalancing:DeregisterTargets"
     ],
     "modify": [],
     "plan": [

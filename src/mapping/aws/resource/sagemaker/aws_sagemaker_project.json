@@ -4,7 +4,14 @@
       "sagemaker:DescribeProject",
       "sagemaker:CreateProject",
       "sagemaker:DeleteProject",
-      "sagemaker:UpdateProject"
+      "sagemaker:UpdateProject",
+      "sagemaker:ListTags",
+      "servicecatalog:DescribeProduct",
+      "servicecatalog:DescribeProvisioningArtifact",
+      "servicecatalog:ProvisionProduct",
+      "servicecatalog:DescribeRecord",
+      "servicecatalog:DescribeProvisionedProduct",
+      "servicecatalog:TerminateProvisionedProduct"
     ],
     "attributes": {
       "tags": [

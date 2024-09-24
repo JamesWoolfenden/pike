@@ -1,0 +1,31 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeInstanceStatus",
+      "iam:CreateServiceLinkedRole",
+      "ssm:CreateAssociation",
+      "ssm:DescribeAssociation",
+      "iam:PassRole",
+      "ssm:UpdateAssociation",
+      "ssm:GetCalendarState",
+      "ssm:DeleteAssociation"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "ssm:DeleteAssociation"
+    ],
+    "modify": [
+      "iam:PassRole",
+      "ssm:UpdateAssociation",
+      "ssm:GetCalendarState"
+    ],
+    "plan": [
+      "ssm:DescribeAssociation",
+      "resource-groups:GetGroupQuery",
+      "resource-groups:ListGroups",
+      "resource-groups:ListGroupResources"
+    ]
+  }
+]

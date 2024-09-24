@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeNetworkAcls",
+      "ec2:ReplaceNetworkAclAssociation",
+      "ec2:ReplaceNetworkAclAssociation"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "ec2:ReplaceNetworkAclAssociation"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

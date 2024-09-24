@@ -1,0 +1,26 @@
+[
+  {
+    "apply": [
+      "kendra:CreateIndex",
+      "kendra:DescribeIndex",
+      "kendra:UpdateIndex",
+      "kendra:ListTagsForResource",
+      "iam:PassRole",
+      "kendra:DeleteIndex",
+      "kendra:UpdateIndex"
+    ],
+    "attributes": {
+      "tags": [
+        "kendra:TagResource",
+        "kendra:UntagResource"
+      ]
+    },
+    "destroy": [
+      "kendra:DeleteIndex"
+    ],
+    "modify": [
+      "kendra:UpdateIndex"
+    ],
+    "plan": []
+  }
+]

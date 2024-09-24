@@ -1,0 +1,54 @@
+[
+  {
+    "apply": [
+      "sso:AttachCustomerManagedPolicyReferenceToPermissionSet",
+      "sso:AttachManagedPolicyToPermissionSet",
+      "sso:CreatePermissionSet",
+      "sso:DeleteInlinePolicyFromPermissionSet",
+      "sso:DeletePermissionSet",
+      "sso:DeletePermissionsBoundaryFromPermissionSet",
+      "sso:DescribePermissionSet",
+      "sso:DescribePermissionSetProvisioningStatus",
+      "sso:DetachCustomerManagedPolicyReferenceFromPermissionSet",
+      "sso:DetachManagedPolicyFromPermissionSet",
+      "sso:GetInlinePolicyForPermissionSet",
+      "sso:GetPermissionsBoundaryForPermissionSet",
+      "sso:ListCustomerManagedPolicyReferencesInPermissionSet",
+      "sso:ListManagedPoliciesInPermissionSet",
+      "sso:ListTagsForResource",
+      "sso:ProvisionPermissionSet",
+      "sso:PutInlinePolicyToPermissionSet",
+      "sso:PutPermissionsBoundaryToPermissionSet",
+      "sso:UpdatePermissionSet"
+    ],
+    "attributes": {
+      "tags": [
+        "sso:TagResource",
+        "sso:UntagResource"
+      ]
+    },
+    "destroy": [
+      "sso:DeletePermissionSet"
+    ],
+    "modify": [
+      "sso:UpdatePermissionSet",
+      "sso:ListTagsForResource",
+      "sso:AttachManagedPolicyToPermissionSet",
+      "sso:AttachCustomerManagedPolicyReferenceToPermissionSet",
+      "sso:DetachManagedPolicyFromPermissionSet",
+      "sso:DetachCustomerManagedPolicyReferenceFromPermissionSet",
+      "sso:ListManagedPoliciesInPermissionSet",
+      "sso:ListCustomerManagedPolicyReferencesInPermissionSet",
+      "sso:PutInlinePolicyToPermissionSet",
+      "sso:GetPermissionsBoundaryForPermissionSet",
+      "sso:DeletePermissionsBoundaryFromPermissionSet",
+      "sso:PutPermissionsBoundaryToPermissionSet",
+      "sso:DeleteInlinePolicyFromPermissionSet",
+      "sso:ProvisionPermissionSet",
+      "sso:DescribePermissionSet",
+      "sso:GetInlinePolicyForPermissionSet",
+      "sso:DescribePermissionSetProvisioningStatus"
+    ],
+    "plan": []
+  }
+]

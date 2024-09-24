@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "ssm:CreateResourceDataSync",
+      "ssm:ListResourceDataSync",
+      "ssm:UpdateResourceDataSync",
+      "ssm:DeleteResourceDataSync"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "ssm:ListResourceDataSync",
+      "ssm:DeleteResourceDataSync"
+    ],
+    "modify": [
+      "ssm:ListResourceDataSync",
+      "ssm:UpdateResourceDataSync"
+    ],
+    "plan": [
+      "ssm:ListResourceDataSync"
+    ]
+  }
+]

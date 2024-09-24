@@ -1,0 +1,28 @@
+[
+  {
+    "apply": [
+      "guardduty:CreateMembers",
+      "guardduty:GetMembers",
+      "guardduty:DisassociateMembers",
+      "guardduty:DeleteMembers",
+      "guardduty:DisassociateMembers",
+      "guardduty:StartMonitoringMembers",
+      "guardduty:StopMonitoringMembers",
+      "guardduty:InviteMembers"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "guardduty:DisassociateMembers",
+      "guardduty:DeleteMembers"
+    ],
+    "modify": [
+      "guardduty:DisassociateMembers",
+      "guardduty:StartMonitoringMembers",
+      "guardduty:StopMonitoringMembers",
+      "guardduty:InviteMembers"
+    ],
+    "plan": []
+  }
+]

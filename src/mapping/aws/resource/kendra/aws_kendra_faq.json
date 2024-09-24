@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "kendra:CreateFaq",
+      "kendra:DescribeFaq",
+      "iam:PassRole",
+      "kendra:ListTagsForResource",
+      "kendra:DeleteFaq"
+    ],
+    "attributes": {
+      "tags": [
+        "kendra:TagResource",
+        "kendra:UntagResource"
+      ]
+    },
+    "destroy": [
+      "kendra:DeleteFaq"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

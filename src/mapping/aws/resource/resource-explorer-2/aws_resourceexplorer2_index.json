@@ -1,0 +1,32 @@
+[
+  {
+    "apply": [
+      "resource-explorer-2:CreateIndex",
+      "resource-explorer-2:GetIndex",
+      "resource-explorer-2:UpdateIndexType",
+      "resource-explorer-2:DeleteIndex",
+      "iam:CreateServiceLinkedRole",
+      "resource-explorer-2:DeleteIndex",
+      "resource-explorer-2:GetIndex",
+      "resource-explorer-2:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "resource-explorer-2:TagResource",
+        "resource-explorer-2:UntagResource"
+      ]
+    },
+    "destroy": [
+      "resource-explorer-2:DeleteIndex",
+      "resource-explorer-2:GetIndex"
+    ],
+    "modify": [
+      "resource-explorer-2:GetIndex",
+      "resource-explorer-2:UpdateIndexType",
+      "resource-explorer-2:ListTagsForResource"
+    ],
+    "plan": [
+      "resource-explorer-2:GetIndex"
+    ]
+  }
+]

@@ -4,7 +4,8 @@
       "glue:CreateRegistry",
       "glue:GetRegistry",
       "glue:GetTags",
-      "glue:DeleteRegistry"
+      "glue:DeleteRegistry",
+      "glue:UpdateRegistry"
     ],
     "attributes": {
       "tags": [

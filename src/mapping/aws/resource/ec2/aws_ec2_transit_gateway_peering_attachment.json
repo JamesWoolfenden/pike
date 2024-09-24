@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "ec2:CreateTransitGatewayPeeringAttachment",
+      "ec2:DescribeTransitGatewayPeeringAttachments",
+      "ec2:DeleteTransitGatewayPeeringAttachment"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "ec2:DeleteTransitGatewayPeeringAttachment"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

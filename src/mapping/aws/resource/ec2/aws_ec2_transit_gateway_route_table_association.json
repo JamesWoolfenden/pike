@@ -2,7 +2,8 @@
   {
     "apply": [
       "ec2:AssociateTransitGatewayRouteTable",
-      "ec2:GetTransitGatewayRouteTableAssociations"
+      "ec2:GetTransitGatewayRouteTableAssociations",
+      "ec2:DisassociateTransitGatewayRouteTable"
     ],
     "attributes": {},
     "destroy": [

@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "organizations:PutResourcePolicy",
+      "organizations:DescribeResourcePolicy",
+      "organizations:ListTagsForResource",
+      "organizations:DeleteResourcePolicy"
+    ],
+    "attributes": {
+      "tags": [
+        "organizations:TagResource",
+        "organizations:UntagResource"
+      ]
+    },
+    "destroy": [
+      "organizations:DeleteResourcePolicy"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

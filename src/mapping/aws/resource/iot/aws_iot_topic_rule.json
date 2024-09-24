@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "iam:PassRole",
+      "iot:CreateTopicRule",
+      "iot:GetTopicRule",
+      "iot:ListTagsForResource",
+      "iot:DeleteTopicRule",
+      "iot:ReplaceTopicRule"
+    ],
+    "attributes": {
+      "tags": [
+        "iot:TagResource",
+        "iot:UntagResource"
+      ]
+    },
+    "destroy": [
+      "iot:DeleteTopicRule"
+    ],
+    "modify": [
+      "iot:ReplaceTopicRule"
+    ],
+    "plan": []
+  }
+]

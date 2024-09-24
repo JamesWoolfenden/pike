@@ -1,0 +1,26 @@
+[
+  {
+    "apply": [
+      "iam:PassRole",
+      "lex:DescribeBot",
+      "lex:CreateBot",
+      "lex:UpdateBot",
+      "lex:DeleteBot",
+      "lex:ListBots",
+      "lex:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "lex:TagResource",
+        "lex:UntagResource"
+      ]
+    },
+    "destroy": [
+      "lex:DeleteBot"
+    ],
+    "modify": [
+      "lex:UpdateBot"
+    ],
+    "plan": []
+  }
+]

@@ -1,0 +1,36 @@
+[
+  {
+    "apply": [
+      "glue:CreateDatabase",
+      "glue:CreateTable",
+      "glue:GetDatabase",
+      "glue:GetTable",
+      "iam:CreateServiceLinkedRole",
+      "kms:CreateGrant",
+      "kms:DescribeKey",
+      "securitylake:CreateAwsLogSource",
+      "securitylake:CreateDataLake",
+      "securitylake:DeleteAwsLogSource",
+      "securitylake:ListLogSources"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "securitylake:DeleteAwsLogSource",
+      "securitylake:ListLogSources"
+    ],
+    "modify": [
+      "securitylake:CreateAwsLogSource",
+      "securitylake:DeleteAwsLogSource",
+      "glue:CreateDatabase",
+      "glue:CreateTable",
+      "glue:GetDatabase",
+      "glue:GetTable",
+      "iam:CreateServiceLinkedRole"
+    ],
+    "plan": [
+      "securitylake:ListLogSources"
+    ]
+  }
+]

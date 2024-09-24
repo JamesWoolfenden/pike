@@ -1,0 +1,30 @@
+[
+  {
+    "apply": [
+      "iam:PassRole",
+      "kinesisanalytics:CreateApplication",
+      "kinesisanalytics:DescribeApplication",
+      "kinesisanalytics:ListTagsForResource",
+      "kinesisanalytics:UpdateApplicationMaintenanceConfiguration",
+      "kinesisanalytics:DeleteApplication",
+      "kinesisanalytics:UpdateApplication"
+    ],
+    "attributes": {
+      "tags": [
+        "kinesisanalytics:TagResource",
+        "kinesisanalytics:UntagResource"
+      ],
+      "vpc_configuration": [
+        "kinesisanalytics:AddApplicationVpcConfiguration",
+        "kinesisanalytics:DeleteApplicationVpcConfiguration"
+      ]
+    },
+    "destroy": [
+      "kinesisanalytics:DeleteApplication"
+    ],
+    "modify": [
+      "kinesisanalytics:UpdateApplication"
+    ],
+    "plan": []
+  }
+]

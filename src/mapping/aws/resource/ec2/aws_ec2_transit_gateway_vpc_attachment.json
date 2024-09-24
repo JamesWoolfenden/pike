@@ -2,9 +2,12 @@
   {
     "apply": [
       "ec2:CreateTransitGatewayVpcAttachment",
+      "ec2:DeleteTransitGatewayVpcAttachment",
+      "ec2:DescribeTags",
+      "ec2:DescribeTransitGatewayAttachments",
       "ec2:DescribeTransitGatewayVpcAttachments",
       "ec2:DescribeTransitGateways",
-      "ec2:DeleteTransitGatewayVpcAttachment"
+      "ec2:ModifyTransitGatewayVpcAttachment"
     ],
     "attributes": {
       "tags": [
@@ -15,7 +18,9 @@
     "destroy": [
       "ec2:DeleteTransitGatewayVpcAttachment"
     ],
-    "modify": [],
+    "modify": [
+      "ec2:ModifyTransitGatewayVpcAttachment"
+    ],
     "plan": []
   }
 ]

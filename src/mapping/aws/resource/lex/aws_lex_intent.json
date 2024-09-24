@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "lex:CreateIntent",
+      "lex:DeleteIntent",
+      "lex:UpdateIntent"
+    ],
+    "attributes": {
+      "tags": [
+        "lex:TagResource",
+        "lex:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

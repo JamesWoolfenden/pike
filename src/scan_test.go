@@ -36,7 +36,12 @@ func TestScan(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
-			if err := pike.Scan(tt.args.dirname, tt.args.output, nil, false, tt.args.write, false); (err != nil) != tt.wantErr {
+
+			if err := pike.Scan(
+				tt.args.dirname,
+				tt.args.output,
+				nil,
+				false, tt.args.write, false); (err != nil) != tt.wantErr {
 				t.Errorf("Scan() error = %v, wantErr %v", err, tt.wantErr)
 			}
 		})
@@ -188,77 +193,99 @@ func TestMakePolicy(t *testing.T) {
 				"testdata/init/nicconf", nil, true,
 			},
 			`{
-				"Version": "2012-10-17",
-				"Statement": [{
-				"Sid": "VisualEditor0",
-				"Effect": "Allow",
-				"Action": [
-					"apigateway:DELETE",
-					"apigateway:GET",
-					"apigateway:PATCH",
-					"apigateway:POST",
-					"apigateway:PUT"],
-				"Resource": ["*"]
-			}, {
-				"Sid": "VisualEditor1",
-				"Effect": "Allow",
-				"Action": [
-					"application-autoscaling:DeleteScalingPolicy",
-					"application-autoscaling:DeregisterScalableTarget",
-					"application-autoscaling:DescribeScalableTargets",
-					"application-autoscaling:DescribeScalingPolicies",
-					"application-autoscaling:DescribeScheduledActions",
-					"application-autoscaling:PutScalingPolicy",
-					"application-autoscaling:PutScheduledAction",
-					"application-autoscaling:RegisterScalableTarget"
-				],
-				"Resource": ["*"]
-			},
-			{
-				"Sid":"VisualEditor2",
-				"Effect":"Allow",
-				"Action":["cloudwatch:DeleteAlarms","cloudwatch:DescribeAlarms","cloudwatch:PutMetricAlarm"],
-				"Resource":["*"]
-        	},
-			{
-				"Sid": "VisualEditor3",
-				"Effect": "Allow",
-				"Action": [
-					"dynamodb:BatchWriteItem",
-					"dynamodb:CreateTable",
-					"dynamodb:CreateTableReplica",
-					"dynamodb:DeleteItem",
-					"dynamodb:DeleteTable",
-					"dynamodb:DeleteTableReplica",
-					"dynamodb:DescribeContinuousBackups",
-					"dynamodb:DescribeKinesisStreamingDestination",
-					"dynamodb:DescribeTable",
-					"dynamodb:DescribeTimeToLive",
-					"dynamodb:DisableKinesisStreamingDestination",
-					"dynamodb:EnableKinesisStreamingDestination",
-					"dynamodb:GetItem",
-					"dynamodb:ListTagsOfResource",
-					"dynamodb:PutItem",
-					"dynamodb:Query",
-					"dynamodb:Scan",
-					"dynamodb:TagResource",
-					"dynamodb:UntagResource",
-					"dynamodb:UpdateContinuousBackups",
-					"dynamodb:UpdateItem",
-					"dynamodb:UpdateTable",
-					"dynamodb:UpdateTimeToLive"
-				],
-				"Resource": ["*"]
-			}, {
-				"Sid": "VisualEditor4",
-				"Effect": "Allow",
-				"Action": ["ec2:DescribeAccountAttributes", "ec2:DescribeNetworkInterfaces"],
-				"Resource": ["*"]
-			}, {
-				"Sid": "VisualEditor5",
-				"Effect": "Allow",
-				"Action": [
-					"iam:AttachRolePolicy",
+  "version": "2012-10-17",
+  "statement": [
+    {
+      "sid": "VisualEditor0",
+      "effect": "Allow",
+      "action": [
+        "apigateway:DELETE",
+        "apigateway:GET",
+        "apigateway:PATCH",
+        "apigateway:POST",
+        "apigateway:PUT"
+      ],
+      "resource": [
+        "*"
+      ]
+    },
+    {
+      "sid": "VisualEditor1",
+      "effect": "Allow",
+      "action": [
+        "application-autoscaling:DeleteScalingPolicy",
+        "application-autoscaling:DeregisterScalableTarget",
+        "application-autoscaling:DescribeScalableTargets",
+        "application-autoscaling:DescribeScalingPolicies",
+        "application-autoscaling:DescribeScheduledActions",
+        "application-autoscaling:PutScalingPolicy",
+        "application-autoscaling:PutScheduledAction",
+        "application-autoscaling:RegisterScalableTarget"
+      ],
+      "resource": [
+        "*"
+      ]
+    },
+    {
+      "sid": "VisualEditor2",
+      "effect": "Allow",
+      "action": [
+        "cloudwatch:DeleteAlarms",
+        "cloudwatch:DescribeAlarms",
+        "cloudwatch:PutMetricAlarm"
+      ],
+      "resource": [
+        "*"
+      ]
+    },
+    {
+      "sid": "VisualEditor3",
+      "effect": "Allow",
+      "action": [
+        "dynamodb:BatchWriteItem",
+        "dynamodb:CreateTable",
+        "dynamodb:CreateTableReplica",
+        "dynamodb:DeleteItem",
+        "dynamodb:DeleteTable",
+        "dynamodb:DeleteTableReplica",
+        "dynamodb:DescribeContinuousBackups",
+        "dynamodb:DescribeKinesisStreamingDestination",
+        "dynamodb:DescribeTable",
+        "dynamodb:DescribeTimeToLive",
+        "dynamodb:DisableKinesisStreamingDestination",
+        "dynamodb:EnableKinesisStreamingDestination",
+        "dynamodb:GetItem",
+        "dynamodb:ListTagsOfResource",
+        "dynamodb:PutItem",
+        "dynamodb:Query",
+        "dynamodb:Scan",
+        "dynamodb:TagResource",
+        "dynamodb:UntagResource",
+        "dynamodb:UpdateContinuousBackups",
+        "dynamodb:UpdateItem",
+        "dynamodb:UpdateTable",
+        "dynamodb:UpdateTimeToLive"
+      ],
+      "resource": [
+        "*"
+      ]
+    },
+    {
+      "sid": "VisualEditor4",
+      "effect": "Allow",
+      "action": [
+        "ec2:DescribeAccountAttributes",
+        "ec2:DescribeNetworkInterfaces"
+      ],
+      "resource": [
+        "*"
+      ]
+    },
+    {
+      "sid": "VisualEditor5",
+      "effect": "Allow",
+      "action": [
+        "iam:AttachRolePolicy",
         "iam:CreatePolicy",
         "iam:CreateRole",
         "iam:CreateServiceLinkedRole",
@@ -279,76 +306,113 @@ func TestMakePolicy(t *testing.T) {
         "iam:TagPolicy",
         "iam:TagRole",
         "iam:UntagPolicy",
+        "iam:UntagRole",
         "iam:UpdateRoleDescription"
-				],
-				"Resource": ["*"]
-			},
-    {"Sid":"VisualEditor6","Effect":"Allow","Action":["kinesis:DescribeStream","kinesis:PutRecords"],"Resource":["*"]},
-    {"Sid":"VisualEditor7","Effect":"Allow","Action":["kms:CreateGrant","kms:Decrypt","kms:DescribeKey","kms:Encrypt","kms:ListAliases","kms:RevokeGrant"],"Resource":["*"]},
+      ],
+      "resource": [
+        "*"
+      ]
+    },
     {
-				"Sid": "VisualEditor8",
-				"Effect": "Allow",
-				"Action": [
-					"lambda:AddPermission",
-					"lambda:CreateEventSourceMapping",
-					"lambda:CreateFunction",
-					"lambda:CreateFunctionUrlConfig",
-					"lambda:DeleteEventSourceMapping",
-					"lambda:DeleteFunction",
-					"lambda:DeleteFunctionEventInvokeConfig",
-					"lambda:DeleteFunctionUrlConfig",
-					"lambda:DeleteLayerVersion",
-					"lambda:DeleteProvisionedConcurrencyConfig",
-					"lambda:GetCodeSigningConfig",
-					"lambda:GetEventSourceMapping",
-					"lambda:GetFunction",
-					"lambda:GetFunctionCodeSigningConfig",
-					"lambda:GetFunctionEventInvokeConfig",
-					"lambda:GetFunctionUrlConfig",
-					"lambda:GetLayerVersion",
-					"lambda:GetPolicy",
-					"lambda:GetProvisionedConcurrencyConfig",
-					"lambda:ListVersionsByFunction",
-					"lambda:PublishLayerVersion",
-					"lambda:PutFunctionEventInvokeConfig",
-					"lambda:PutProvisionedConcurrencyConfig",
-					"lambda:RemovePermission",
-					"lambda:TagResource",
-					"lambda:UntagResource",
-					"lambda:UpdateEventSourceMapping",
-					"lambda:UpdateFunctionEventInvokeConfig",
-					"lambda:UpdateFunctionUrlConfig"
-			],
-				"Resource": ["*"]
-			}, {
-				"Sid": "VisualEditor9",
-				"Effect": "Allow",
-				"Action": [
-					"logs:AssociateKmsKey",
-					"logs:CreateLogGroup",
-					"logs:DeleteLogGroup",
-					"logs:DeleteRetentionPolicy",
-					"logs:DescribeLogGroups",
-					"logs:DisassociateKmsKey",
-					"logs:ListTagsLogGroup",
-					"logs:PutRetentionPolicy",
-					"logs:TagLogGroup",
-					"logs:UntagLogGroup"
-			],
-				"Resource": ["*"]
-			}, {
-				"Sid": "VisualEditor10",
-				"Effect": "Allow",
-				"Action": [
-					"s3:DeleteObject",
-					"s3:GetObject",
-					"s3:GetObjectTagging",
-					"s3:GetObjectVersion",
-					"s3:PutObject"
-],
-				"Resource": ["*"]
-			}]
-			}`,
+      "sid": "VisualEditor6",
+      "effect": "Allow",
+      "action": [
+        "kinesis:DescribeStream",
+        "kinesis:PutRecords"
+      ],
+      "resource": [
+        "*"
+      ]
+    },
+    {
+      "sid": "VisualEditor7",
+      "effect": "Allow",
+      "action": [
+        "kms:CreateGrant",
+        "kms:Decrypt",
+        "kms:DescribeKey",
+        "kms:Encrypt",
+        "kms:GenerateDataKey",
+        "kms:ListAliases",
+        "kms:RevokeGrant"
+      ],
+      "resource": [
+        "*"
+      ]
+    },
+    {
+      "sid": "VisualEditor8",
+      "effect": "Allow",
+      "action": [
+        "lambda:AddPermission",
+        "lambda:CreateEventSourceMapping",
+        "lambda:CreateFunction",
+        "lambda:CreateFunctionUrlConfig",
+        "lambda:DeleteEventSourceMapping",
+        "lambda:DeleteFunction",
+        "lambda:DeleteFunctionEventInvokeConfig",
+        "lambda:DeleteFunctionUrlConfig",
+        "lambda:DeleteLayerVersion",
+        "lambda:DeleteProvisionedConcurrencyConfig",
+        "lambda:GetCodeSigningConfig",
+        "lambda:GetEventSourceMapping",
+        "lambda:GetFunction",
+        "lambda:GetFunctionCodeSigningConfig",
+        "lambda:GetFunctionEventInvokeConfig",
+        "lambda:GetFunctionUrlConfig",
+        "lambda:GetLayerVersion",
+        "lambda:GetPolicy",
+        "lambda:GetProvisionedConcurrencyConfig",
+        "lambda:ListVersionsByFunction",
+        "lambda:PublishLayerVersion",
+        "lambda:PutFunctionEventInvokeConfig",
+        "lambda:PutProvisionedConcurrencyConfig",
+        "lambda:RemovePermission",
+        "lambda:TagResource",
+        "lambda:UntagResource",
+        "lambda:UpdateEventSourceMapping",
+        "lambda:UpdateFunctionEventInvokeConfig",
+        "lambda:UpdateFunctionUrlConfig"
+      ],
+      "resource": [
+        "*"
+      ]
+    },
+    {
+      "sid": "VisualEditor9",
+      "effect": "Allow",
+      "action": [
+        "logs:AssociateKmsKey",
+        "logs:CreateLogGroup",
+        "logs:DeleteLogGroup",
+        "logs:DeleteRetentionPolicy",
+        "logs:DescribeLogGroups",
+        "logs:DisassociateKmsKey",
+        "logs:ListTagsLogGroup",
+        "logs:PutRetentionPolicy",
+        "logs:TagLogGroup",
+        "logs:UntagLogGroup"
+      ],
+      "resource": [
+        "*"
+      ]
+    },
+    {
+      "sid": "VisualEditor10",
+      "effect": "Allow",
+      "action": [
+        "s3:DeleteObject",
+        "s3:GetObject",
+        "s3:GetObjectTagging",
+        "s3:GetObjectVersion",
+        "s3:PutObject"
+      ],
+      "resource": [
+        "*"
+      ]
+    }
+  ]
+}`,
 			false,
 		},
 		{
@@ -360,7 +424,39 @@ func TestMakePolicy(t *testing.T) {
 		{
 			"a file",
 			args{"", &actual, false},
-			"{\n    \"Version\": \"2012-10-17\",\n    \"Statement\": [\n        {\n            \"Sid\": \"VisualEditor0\",\n            \"Effect\": \"Allow\",\n            \"Action\": [\n                \"s3:CreateBucket\",\n                \"s3:DeleteBucket\",\n                \"s3:GetAccelerateConfiguration\",\n                \"s3:GetBucketAcl\",\n                \"s3:GetBucketCORS\",\n                \"s3:GetBucketLogging\",\n                \"s3:GetBucketObjectLockConfiguration\",\n                \"s3:GetBucketPolicy\",\n                \"s3:GetBucketRequestPayment\",\n                \"s3:GetBucketTagging\",\n                \"s3:GetBucketVersioning\",\n                \"s3:GetBucketWebsite\",\n                \"s3:GetEncryptionConfiguration\",\n                \"s3:GetLifecycleConfiguration\",\n                \"s3:GetObject\",\n                \"s3:GetObjectAcl\",\n                \"s3:GetReplicationConfiguration\",\n                \"s3:ListBucket\"\n            ],\n            \"Resource\": [\n                \"*\"\n            ]\n        }\n    ]\n}\n",
+			`
+{
+  "version": "2012-10-17",
+  "statement": [
+    {
+      "sid": "VisualEditor0",
+      "effect": "Allow",
+      "action": [
+        "s3:CreateBucket",
+        "s3:DeleteBucket",
+        "s3:GetAccelerateConfiguration",
+        "s3:GetBucketAcl",
+        "s3:GetBucketCORS",
+        "s3:GetBucketLogging",
+        "s3:GetBucketObjectLockConfiguration",
+        "s3:GetBucketPolicy",
+        "s3:GetBucketRequestPayment",
+        "s3:GetBucketTagging",
+        "s3:GetBucketVersioning",
+        "s3:GetBucketWebsite",
+        "s3:GetEncryptionConfiguration",
+        "s3:GetLifecycleConfiguration",
+        "s3:GetObject",
+        "s3:GetObjectAcl",
+        "s3:GetReplicationConfiguration",
+        "s3:ListBucket"
+      ],
+      "resource": [
+        "*"
+      ]
+    }
+  ]
+}`,
 			false,
 		},
 		{
@@ -379,63 +475,63 @@ func TestMakePolicy(t *testing.T) {
 			"dynamic",
 			args{"", &dynamic, false},
 			`{
-    "Version": "2012-10-17",
-    "Statement": [
-      {
-        "Sid": "VisualEditor0",
-        "Effect": "Allow",
-        "Action": [
-          "autoscaling:CreateAutoScalingGroup",
-          "autoscaling:CreateOrUpdateTags",
-          "autoscaling:DeleteAutoScalingGroup",
-          "autoscaling:DeleteTags",
-          "autoscaling:Describe*",
-          "autoscaling:DescribeAutoScalingGroups",
-          "autoscaling:DescribeScalingActivities",
-          "autoscaling:UpdateAutoScalingGroup"
-        ],
-        "Resource": [
-          "*"
-        ]
-      },
-      {
-        "Sid": "VisualEditor1",
-        "Effect": "Allow",
-        "Action": [
-          "ec2:Describe*",
-          "ec2:Get*",
-          "ec2:RunInstances"
-        ],
-        "Resource": [
-          "*"
-        ]
-      },
-      {
-        "Sid": "VisualEditor2",
-        "Effect": "Allow",
-        "Action": [
-          "managed-fleets:DeleteAutoScalingGroup",
-          "managed-fleets:DeregisterAutoScalingGroup",
-          "managed-fleets:Get*",
-          "managed-fleets:RegisterAutoScalingGroup",
-          "managed-fleets:UpdateAutoScalingGroup"
-        ],
-        "Resource": [
-          "*"
-        ]
-      },
-      {
-        "Sid": "VisualEditor3",
-        "Effect": "Allow",
-        "Action": [
-          "ssm:Get*"
-        ],
-        "Resource": [
-          "*"
-        ]
-      }
-    ]
-  }`,
+  "version": "2012-10-17",
+  "statement": [
+    {
+      "sid": "VisualEditor0",
+      "effect": "Allow",
+      "action": [
+        "autoscaling:CreateAutoScalingGroup",
+        "autoscaling:CreateOrUpdateTags",
+        "autoscaling:DeleteAutoScalingGroup",
+        "autoscaling:DeleteTags",
+        "autoscaling:Describe*",
+        "autoscaling:DescribeAutoScalingGroups",
+        "autoscaling:DescribeScalingActivities",
+        "autoscaling:UpdateAutoScalingGroup"
+      ],
+      "resource": [
+        "*"
+      ]
+    },
+    {
+      "sid": "VisualEditor1",
+      "effect": "Allow",
+      "action": [
+        "ec2:Describe*",
+        "ec2:Get*",
+        "ec2:RunInstances"
+      ],
+      "resource": [
+        "*"
+      ]
+    },
+    {
+      "sid": "VisualEditor2",
+      "effect": "Allow",
+      "action": [
+        "managed-fleets:DeleteAutoScalingGroup",
+        "managed-fleets:DeregisterAutoScalingGroup",
+        "managed-fleets:Get*",
+        "managed-fleets:RegisterAutoScalingGroup",
+        "managed-fleets:UpdateAutoScalingGroup"
+      ],
+      "resource": [
+        "*"
+      ]
+    },
+    {
+      "sid": "VisualEditor3",
+      "effect": "Allow",
+      "action": [
+        "ssm:Get*"
+      ],
+      "resource": [
+        "*"
+      ]
+    }
+  ]
+}`,
 			false,
 		},
 	}
@@ -444,7 +540,9 @@ func TestMakePolicy(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
+
 			got, err := pike.MakePolicy(tt.args.dirName, tt.args.file, tt.args.init, false)
+
 			if (err != nil) != tt.wantErr {
 				t.Errorf("MakePolicy() error = %v, wantErr %v", err, tt.wantErr)
 
@@ -453,6 +551,7 @@ func TestMakePolicy(t *testing.T) {
 
 			JSONOut := Minify(got.AWS.JSONOut)
 			want := Minify(tt.want)
+
 			if !reflect.DeepEqual(JSONOut, want) {
 				t.Errorf("MakePolicy() = %v, want %v", JSONOut, want)
 			}

@@ -1479,3 +1479,24 @@ var dataAwsRdsClusterParameterGroup []byte
 
 //go:embed mapping/aws/data/secretsmanager/aws_secretsmanager_secret_versions.json
 var dataAwsSecretsmanagerSecretVersions []byte
+
+//go:embed mapping/aws/data/bedrock/aws_bedrockagent_agent_versions.json
+var dataAwsBedrockAgentVersions []byte
+
+//go:embed mapping/aws/data/glue/aws_glue_registry.json
+var dataAwsGlueRegistry []byte
+
+//go:embed mapping/aws/data/organizations/aws_organizations_organizational_unit_descendant_organizational_units.json
+var dataAwsOrganizationsOrganizationalUnitDescendantOrganizationalUnits []byte
+
+//go:embed mapping/aws/data/quicksight/aws_quicksight_analysis.json
+var dataAwsQuicksightAnalysis []byte
+
+//go:embed mapping/aws/data/route53/aws_route53_zones.json
+var dataAwsRoute53Zones []byte
+
+//go:embed mapping/aws/data/shield/aws_shield_protection.json
+var dataAwsShieldProtection []byte
+
+//go:embed mapping/aws/data/sso/aws_ssoadmin_permission_sets.json
+var dataAwsSsoadminPermissionSets []byte

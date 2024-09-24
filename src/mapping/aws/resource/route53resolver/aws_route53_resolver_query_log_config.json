@@ -1,7 +1,20 @@
 [
   {
     "apply": [
-      "route53resolver:CreateResolverQueryLogConfig",
+      "iam:CreateServiceLinked",
+      "logs:CreateLogDelivery",
+      "logs:DeleteLogDelivery",
+      "logs:DescribeLogGroups",
+      "logs:DescribeResourcePolicies",
+      "logs:GetLogDelivery",
+      "logs:ListLogDeliveries",
+      "logs:PutResourcePolicy",
+      "logs:UpdateLogDelivery",
+      "resolverquerylogging:CreateConfig",
+      "resolverquerylogging:DeleteConfig",
+      "resolverquerylogging:GetConfig",
+      "resolverquerylogging:ListConfig",
+      "route53resolver:DeleteResolverQueryLogConfig",
       "route53resolver:GetResolverQueryLogConfig"
     ],
     "attributes": {
@@ -11,7 +24,9 @@
       ]
     },
     "destroy": [
-      "route53resolver:DeleteResolverQueryLogConfig"
+      "route53resolver:DeleteResolverQueryLogConfig",
+      "resolverquerylogging:DeleteConfig",
+      "resolverquerylogging:ListConfig"
     ],
     "modify": [],
     "plan": []

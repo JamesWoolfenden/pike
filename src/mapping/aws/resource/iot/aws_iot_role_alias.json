@@ -1,0 +1,26 @@
+[
+  {
+    "apply": [
+      "iam:GetRole",
+      "iam:PassRole",
+      "iot:CreateRoleAlias",
+      "iot:DescribeRoleAlias",
+      "iot:ListTagsForResource",
+      "iot:DeleteRoleAlias",
+      "iot:UpdateRoleAlias"
+    ],
+    "attributes": {
+      "tags": [
+        "iot:TagResource",
+        "iot:UntagResource"
+      ]
+    },
+    "destroy": [
+      "iot:DeleteRoleAlias"
+    ],
+    "modify": [
+      "iot:UpdateRoleAlias"
+    ],
+    "plan": []
+  }
+]

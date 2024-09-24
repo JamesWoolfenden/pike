@@ -8,7 +8,8 @@
     ],
     "attributes": {
       "s3_bucket": [
-        "s3:GetObject"
+        "s3:GetObject",
+        "s3:GetObjectVersion"
       ],
       "tags": []
     },

@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "kendra:CreateDataSource",
+      "kendra:DescribeDataSource",
+      "kendra:ListTagsForResource",
+      "iam:PassRole",
+      "kendra:DeleteDataSource",
+      "kendra:UpdateDataSource"
+    ],
+    "attributes": {
+      "tags": [
+        "kendra:TagResource",
+        "kendra:UntagResource"
+      ]
+    },
+    "destroy": [
+      "kendra:DeleteDataSource"
+    ],
+    "modify": [
+      "kendra:UpdateDataSource"
+    ],
+    "plan": []
+  }
+]

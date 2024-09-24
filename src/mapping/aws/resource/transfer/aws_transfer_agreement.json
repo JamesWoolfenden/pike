@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "transfer:CreateAgreement",
+      "transfer:DescribeAgreement",
+      "transfer:DeleteAgreement",
+      "iam:PassRole"
+    ],
+    "attributes": {
+      "tags": [
+        "transfer:TagResource",
+        "transfer:UntagResource"
+      ]
+    },
+    "destroy": [
+      "transfer:DeleteAgreement"
+    ],
+    "modify": [
+      "transfer:UpdateAgreement"
+    ],
+    "plan": [
+      "transfer:DescribeAgreement"
+    ]
+  }
+]

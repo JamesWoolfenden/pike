@@ -1,0 +1,53 @@
+[
+  {
+    "apply": [
+      "gamelift:CreateFleet",
+      "gamelift:DescribeFleetAttributes",
+      "gamelift:DescribeFleetLocationAttributes",
+      "gamelift:UpdateFleetCapacity",
+      "gamelift:DescribeFleetLocationCapacity",
+      "gamelift:PutScalingPolicy",
+      "gamelift:DescribeScalingPolicies",
+      "gamelift:DeleteFleet",
+      "gamelift:DescribeFleetLocationCapacity",
+      "gamelift:DescribeScalingPolicies",
+      "gamelift:DeleteScalingPolicy",
+      "gamelift:UpdateFleetAttributes",
+      "gamelift:CreateFleetLocations",
+      "gamelift:DeleteFleetLocations",
+      "gamelift:UpdateFleetCapacity",
+      "gamelift:UpdateFleetPortSettings",
+      "gamelift:UpdateRuntimeConfiguration",
+      "gamelift:DescribeFleetLocationCapacity"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "gamelift:DeleteFleet",
+      "gamelift:DescribeFleetLocationCapacity",
+      "gamelift:DescribeScalingPolicies",
+      "gamelift:DeleteScalingPolicy"
+    ],
+    "modify": [
+      "gamelift:UpdateFleetAttributes",
+      "gamelift:CreateFleetLocations",
+      "gamelift:DeleteFleetLocations",
+      "gamelift:UpdateFleetCapacity",
+      "gamelift:UpdateFleetPortSettings",
+      "gamelift:UpdateRuntimeConfiguration",
+      "gamelift:DescribeFleetLocationCapacity"
+    ],
+    "plan": [
+      "gamelift:DescribeFleetAttributes",
+      "gamelift:DescribeFleetLocationAttributes",
+      "gamelift:DescribeFleetCapacity",
+      "gamelift:DescribeFleetPortSettings",
+      "gamelift:DescribeFleetUtilization",
+      "gamelift:DescribeRuntimeConfiguration",
+      "gamelift:DescribeEC2InstanceLimits",
+      "gamelift:DescribeFleetEvents",
+      "gamelift:DescribeScalingPolicies"
+    ]
+  }
+]

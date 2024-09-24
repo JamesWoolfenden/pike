@@ -1,0 +1,42 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeVpcAttribute",
+      "ec2:DescribeSecurityGroups",
+      "ec2:DescribeAddresses",
+      "ec2:DescribeInternetGateways",
+      "ec2:DescribeSubnets",
+      "ec2:DescribeAccountAttributes",
+      "ec2:DescribeAvailabilityZones",
+      "redshift-serverless:CreateNamespace",
+      "redshift-serverless:CreateWorkgroup",
+      "redshift-serverless:GetWorkgroup",
+      "redshift-serverless:GetNamespace",
+      "redshift-serverless:DeleteWorkgroup",
+      "redshift-serverless:UpdateWorkgroup",
+      "redshift-serverless:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "redshift-serverless:TagResource",
+        "redshift-serverless:UntagResource"
+      ]
+    },
+    "destroy": [
+      "ec2:DescribeVpcAttribute",
+      "ec2:DescribeSecurityGroups",
+      "ec2:DescribeAddresses",
+      "ec2:DescribeInternetGateways",
+      "ec2:DescribeSubnets",
+      "ec2:DescribeAccountAttributes",
+      "ec2:DescribeAvailabilityZones",
+      "redshift-serverless:GetWorkgroup",
+      "redshift-serverless:GetNamespace",
+      "redshift-serverless:DeleteWorkgroup"
+    ],
+    "modify": [
+      "redshift-serverless:UpdateWorkgroup"
+    ],
+    "plan": []
+  }
+]

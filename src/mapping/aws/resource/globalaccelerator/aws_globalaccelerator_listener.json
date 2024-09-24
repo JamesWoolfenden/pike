@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "globalaccelerator:CreateListener",
+      "globalaccelerator:DescribeListener",
+      "globalaccelerator:DescribeAccelerator",
+      "globalaccelerator:DeleteListener",
+      "globalaccelerator:UpdateListener"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "globalaccelerator:DeleteListener"
+    ],
+    "modify": [
+      "globalaccelerator:UpdateListener"
+    ],
+    "plan": []
+  }
+]

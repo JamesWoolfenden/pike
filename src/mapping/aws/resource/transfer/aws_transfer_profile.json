@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "transfer:CreateProfile",
+      "transfer:DeleteProfile",
+      "transfer:DescribeProfile",
+      "transfer:UpdateProfile"
+    ],
+    "attributes": {
+      "tags": [
+        "transfer:UnTagResource",
+        "transfer:TagResource"
+      ]
+    },
+    "destroy": [
+      "transfer:DeleteProfile"
+    ],
+    "modify": [
+      "transfer:UpdateProfile"
+    ],
+    "plan": [
+      "transfer:DescribeProfile"
+    ]
+  }
+]

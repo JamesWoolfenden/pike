@@ -17,8 +17,12 @@
         "ec2:DeleteTags"
       ]
     },
-    "destroy": [],
-    "modify": [],
+    "destroy": [
+      "ec2:DeleteVpnConnection"
+    ],
+    "modify": [
+      "ec2:ModifyVpnConnection"
+    ],
     "plan": []
   }
 ]

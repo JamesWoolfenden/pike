@@ -1,0 +1,29 @@
+[
+  {
+    "apply": [
+      "ivs:CreateRecordingConfiguration",
+      "ivs:GetRecordingConfiguration",
+      "iam:CreateServiceLinkedRole",
+      "iam:PutRolePolicy",
+      "iam:AttachRolePolicy",
+      "s3:ListBucket",
+      "s3:GetBucketLocation",
+      "cloudformation:ListExports",
+      "ivs:DeleteRecordingConfiguration",
+      "ivs:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "ivs:TagResource",
+        "ivs:UntagResource"
+      ]
+    },
+    "destroy": [
+      "ivs:DeleteRecordingConfiguration"
+    ],
+    "modify": [],
+    "plan": [
+      "ivs:ListTagsForResource"
+    ]
+  }
+]

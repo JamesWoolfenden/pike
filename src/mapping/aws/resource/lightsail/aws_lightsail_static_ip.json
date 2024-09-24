@@ -1,13 +1,20 @@
 [
   {
     "apply": [
+      "lightsail:AllocateStaticIp",
+      "lightsail:AttachStaticIp",
+      "lightsail:DetachStaticIp",
+      "lightsail:GetInstance",
       "lightsail:GetStaticIp",
-      "lightsail:AllocateStaticIp"
+      "lightsail:GetStaticIps",
+      "lightsail:ReleaseStaticIp"
     ],
     "attributes": {
       "tags": []
     },
-    "destroy": [],
+    "destroy": [
+      "lightsail:ReleaseStaticIp"
+    ],
     "modify": [],
     "plan": []
   }

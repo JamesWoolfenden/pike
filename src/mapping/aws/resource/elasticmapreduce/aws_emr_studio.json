@@ -1,0 +1,28 @@
+[
+  {
+    "apply": [
+      "elasticmapreduce:CreateStudio",
+      "elasticmapreduce:DeleteStudio",
+      "elasticmapreduce:DescribeStudio",
+      "sso:CreateManagedApplicationInstance",
+      "sso:DeleteManagedApplicationInstance",
+      "sso:GetManagedApplicationInstance",
+      "iam:PassRole"
+    ],
+    "attributes": {
+      "tags": [
+        "elasticmapreduce:AddTags",
+        "elasticmapreduce:RemoveTags"
+      ]
+    },
+    "destroy": [
+      "elasticmapreduce:DeleteStudio",
+      "elasticmapreduce:DescribeStudio",
+      "sso:DeleteManagedApplicationInstance"
+    ],
+    "modify": [
+      "elasticmapreduce:UpdateStudio"
+    ],
+    "plan": []
+  }
+]

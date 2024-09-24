@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "medialive:CreateMultiplex",
+      "medialive:DescribeMultiplex",
+      "medialive:DeleteMultiplex",
+      "medialive:UpdateMultiplex"
+    ],
+    "attributes": {
+      "tags": [
+        "medialive:CreateTags",
+        "medialive:DeleteTags"
+      ]
+    },
+    "destroy": [
+      "medialive:DeleteMultiplex"
+    ],
+    "modify": [
+      "medialive:UpdateMultiplex"
+    ],
+    "plan": []
+  }
+]

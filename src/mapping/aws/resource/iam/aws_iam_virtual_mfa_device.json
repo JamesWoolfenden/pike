@@ -4,13 +4,16 @@
       "iam:CreateVirtualMFADevice",
       "iam:ListVirtualMFADevices",
       "iam:ListMFADeviceTags",
-      "iam:DeleteVirtualMFADevice"
+      "iam:DeleteVirtualMFADevice",
+      "iam:EnableMFADevice",
+      "iam:DeactivateMFADevice"
     ],
     "attributes": {
       "tags": []
     },
     "destroy": [
-      "iam:DeleteVirtualMFADevice"
+      "iam:DeleteVirtualMFADevice",
+      "iam:DeactivateMFADevice"
     ],
     "modify": [],
     "plan": []

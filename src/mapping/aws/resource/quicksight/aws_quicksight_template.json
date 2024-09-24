@@ -1,0 +1,38 @@
+[
+  {
+    "apply": [
+      "quicksight:CreateTemplate",
+      "quicksight:DeleteTemplate",
+      "quicksight:DescribeAnalysis",
+      "quicksight:DescribeTemplate",
+      "quicksight:DescribeTemplatePermissions",
+      "quicksight:ListTagsForResource",
+      "quicksight:PassDataSet",
+      "quicksight:UpdateTemplate",
+      "quicksight:UpdateTemplatePermissions"
+    ],
+    "attributes": {
+      "tags": [
+        "quicksight:TagResource",
+        "quicksight:UntagResource"
+      ]
+    },
+    "destroy": [
+      "quicksight:DescribeTemplate",
+      "quicksight:DeleteTemplate"
+    ],
+    "modify": [
+      "quicksight:DescribeTemplate",
+      "quicksight:DescribeTemplatePermissions",
+      "quicksight:UpdateTemplate",
+      "quicksight:UpdateTemplatePermissions",
+      "quicksight:PassDataSet",
+      "quicksight:ListTagsForResource"
+    ],
+    "plan": [
+      "quicksight:DescribeTemplate",
+      "quicksight:DescribeTemplatePermissions",
+      "quicksight:ListTagsForResource"
+    ]
+  }
+]

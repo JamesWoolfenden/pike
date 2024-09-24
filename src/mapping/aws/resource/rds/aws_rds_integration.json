@@ -1,0 +1,29 @@
+[
+  {
+    "apply": [
+      "rds:CreateIntegration",
+      "rds:DescribeIntegrations",
+      "redshift:CreateInboundIntegration",
+      "rds:DeleteIntegration"
+    ],
+    "attributes": {
+      "kms_key_id": [
+        "kms:CreateGrant",
+        "kms:DescribeKey"
+      ],
+      "tags": [
+        "rds:AddTagsToResource",
+        "rds:RemoveTagsFromResource"
+      ]
+    },
+    "destroy": [
+      "rds:DeleteIntegration",
+      "rds:DescribeIntegrations"
+    ],
+    "modify": [
+      "rds:DescribeIntegrations",
+      "rds:ModifyIntegration"
+    ],
+    "plan": []
+  }
+]

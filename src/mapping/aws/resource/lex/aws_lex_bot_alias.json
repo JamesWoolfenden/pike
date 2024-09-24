@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "lex:CreateBotAlias",
+      "lex:DescribeBot",
+      "lex:DeleteBotAlias",
+      "lex:UpdateBotAlias",
+      "lex:DescribeBotAlias",
+      "lex:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "lex:TagResource",
+        "lex:UntagResource"
+      ]
+    },
+    "destroy": [
+      "lex:DeleteBotAlias"
+    ],
+    "modify": [
+      "lex:UpdateBotAlias",
+      "lex:DescribeBotAlias",
+      "lex:ListTagsForResource"
+    ],
+    "plan": []
+  }
+]

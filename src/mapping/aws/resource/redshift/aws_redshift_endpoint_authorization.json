@@ -1,0 +1,36 @@
+[
+  {
+    "apply": [
+      "redshift:AuthorizeEndpointAccess",
+      "redshift:DescribeEndpointAuthorization",
+      "redshift:RevokeEndpointAccess",
+      "redshift:DeleteEndpointAccess",
+      "ec2:DeleteClientVpnEndpoint",
+      "ec2:DescribeVpcAttribute",
+      "ec2:DescribeSecurityGroups",
+      "ec2:DescribeAddresses",
+      "ec2:DescribeInternetGateways",
+      "ec2:DescribeSubnets"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "redshift:RevokeEndpointAccess",
+      "redshift:DeleteEndpointAccess",
+      "redshift:DescribeEndpointAuthorization",
+      "ec2:DeleteClientVpnEndpoint",
+      "ec2:DescribeVpcAttribute",
+      "ec2:DescribeSecurityGroups",
+      "ec2:DescribeAddresses",
+      "ec2:DescribeInternetGateways",
+      "ec2:DescribeSubnets"
+    ],
+    "modify": [
+      "redshift:AuthorizeEndpointAccess",
+      "redshift:DescribeEndpointAuthorization",
+      "redshift:RevokeEndpointAccess"
+    ],
+    "plan": []
+  }
+]

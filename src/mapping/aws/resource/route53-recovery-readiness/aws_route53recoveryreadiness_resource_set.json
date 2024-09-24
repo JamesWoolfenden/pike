@@ -1,0 +1,34 @@
+[
+  {
+    "apply": [
+      "route53-recovery-readiness:CreateResourceSet",
+      "route53-recovery-readiness:GetResourceSet",
+      "route53-recovery-readiness:GetRecoveryGroup",
+      "route53-recovery-readiness:GetCell",
+      "route53-recovery-readiness:ListTagsForResources",
+      "route53-recovery-readiness:DeleteResourceSet",
+      "route53-recovery-readiness:UpdateResourceSet"
+    ],
+    "attributes": {
+      "tags": [
+        "route53-recovery-readiness:TagResource",
+        "route53-recovery-readiness:UntagResource"
+      ]
+    },
+    "destroy": [
+      "route53-recovery-readiness:DeleteResourceSet",
+      "route53-recovery-readiness:GetResourceSet"
+    ],
+    "modify": [
+      "route53-recovery-readiness:UpdateResourceSet",
+      "route53-recovery-readiness:GetResourceSet",
+      "route53-recovery-readiness:GetRecoveryGroup",
+      "route53-recovery-readiness:GetCell",
+      "route53-recovery-readiness:ListTagsForResources"
+    ],
+    "plan": [
+      "route53-recovery-readiness:GetResourceSet",
+      "route53-recovery-readiness:ListTagsForResources"
+    ]
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "route53-recovery-control-config:CreateRoutingControl",
+      "route53-recovery-control-config:DescribeRoutingControl",
+      "route53-recovery-control-config:DescribeControlPanel",
+      "route53-recovery-control-config:DescribeCluster",
+      "route53-recovery-control-config:DeleteRoutingControl",
+      "route53-recovery-control-config:UpdateRoutingControl"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "route53-recovery-control-config:DescribeRoutingControl",
+      "route53-recovery-control-config:DeleteRoutingControl"
+    ],
+    "modify": [
+      "route53-recovery-control-config:UpdateRoutingControl",
+      "route53-recovery-control-config:DescribeRoutingControl",
+      "route53-recovery-control-config:DescribeControlPanel"
+    ],
+    "plan": [
+      "route53-recovery-control-config:DescribeRoutingControl"
+    ]
+  }
+]

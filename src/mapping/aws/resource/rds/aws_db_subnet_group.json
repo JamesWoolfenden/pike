@@ -4,7 +4,9 @@
       "rds:DescribeDBSubnetGroups",
       "rds:CreateDBSubnetGroup",
       "rds:ListTagsForResource",
-      "rds:DeleteDBSubnetGroup"
+      "rds:DeleteDBSubnetGroup",
+      "iam:CreateServiceLinkedRole",
+      "rds:ModifyDBSubnetGroup"
     ],
     "attributes": {
       "tags": [
@@ -15,7 +17,9 @@
     "destroy": [
       "rds:DeleteDBSubnetGroup"
     ],
-    "modify": [],
+    "modify": [
+      "rds:ModifyDBSubnetGroup"
+    ],
     "plan": []
   }
 ]

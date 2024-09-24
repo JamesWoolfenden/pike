@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "verifiedpermissions:CreatePolicyTemplate",
+      "verifiedpermissions:GetPolicyTemplate",
+      "verifiedpermissions:UpdatePolicyTemplate",
+      "verifiedpermissions:DeletePolicyTemplate"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "verifiedpermissions:DeletePolicyTemplate",
+      "verifiedpermissions:GetPolicyTemplate"
+    ],
+    "modify": [
+      "verifiedpermissions:UpdatePolicyTemplate",
+      "verifiedpermissions:GetPolicyTemplate"
+    ],
+    "plan": [
+      "verifiedpermissions:GetPolicyTemplate"
+    ]
+  }
+]

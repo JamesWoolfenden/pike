@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "ecs:CreateTaskSet",
+      "ecs:DescribeTaskSets",
+      "ecs:DeleteTaskSet"
+    ],
+    "attributes": {
+      "tags": [
+        "ecs:UntagResource",
+        "ecs:TagResource"
+      ]
+    },
+    "destroy": [
+      "ecs:DeleteTaskSet",
+      "ecs:DescribeTaskSet"
+    ],
+    "modify": [
+      "ecs:UpdateTaskSet"
+    ],
+    "plan": []
+  }
+]

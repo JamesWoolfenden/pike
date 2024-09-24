@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "eks:CreateAccessEntry",
+      "eks:DescribeAccessEntry",
+      "eks:AssociateAccessPolicy",
+      "eks:ListAssociatedAccessPolicies",
+      "eks:DeleteAccessEntry",
+      "eks:UpdateAccessEntry"
+    ],
+    "attributes": {
+      "tags": [
+        "eks:TagResource",
+        "eks:UntagResource"
+      ]
+    },
+    "destroy": [
+      "eks:DeleteAccessEntry"
+    ],
+    "modify": [
+      "eks:UpdateAccessEntry"
+    ],
+    "plan": []
+  }
+]

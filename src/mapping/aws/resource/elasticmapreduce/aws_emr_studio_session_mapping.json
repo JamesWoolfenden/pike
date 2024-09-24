@@ -1,0 +1,33 @@
+[
+  {
+    "apply": [
+      "elasticmapreduce:CreateStudioSessionMapping",
+      "elasticmapreduce:DeleteStudioSessionMapping",
+      "elasticmapreduce:GetStudioSessionMapping",
+      "elasticmapreduce:UpdateStudioSessionMapping",
+      "sso-directory:DescribeGroup",
+      "sso-directory:DescribeUser",
+      "sso-directory:SearchGroups",
+      "sso-directory:SearchUsers",
+      "sso:AssociateProfile",
+      "sso:DescribeInstance",
+      "sso:DisassociateProfile",
+      "sso:GetManagedApplicationInstance",
+      "sso:GetProfile",
+      "sso:ListDirectoryAssociations",
+      "sso:ListProfiles"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "elasticmapreduce:DeleteStudioSessionMapping",
+      "sso:DescribeInstance",
+      "sso:DisassociateProfile"
+    ],
+    "modify": [
+      "elasticmapreduce:UpdateStudioSessionMapping"
+    ],
+    "plan": []
+  }
+]

@@ -1,0 +1,28 @@
+[
+  {
+    "apply": [
+      "lightsail:CreateDistribution",
+      "lightsail:GetDistributions",
+      "lightsail:UpdateDistribution",
+      "lightsail:UpdateDistributionBundle",
+      "lightsail:DeleteDistribution"
+    ],
+    "attributes": {
+      "certificate_name": [
+        "lightsail:AttachCertificateToDistribution",
+        "lightsail:DetachCertificateFromDistribution",
+        "lightsail:GetCertificates",
+        "lightsail:GetCertificateDetails"
+      ],
+      "tags": [
+        "lightsail:TagResource",
+        "lightsail:UntagResource"
+      ]
+    },
+    "destroy": [
+      "lightsail:DeleteDistribution"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

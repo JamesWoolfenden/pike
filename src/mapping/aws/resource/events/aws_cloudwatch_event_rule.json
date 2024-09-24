@@ -4,7 +4,10 @@
       "events:PutRule",
       "events:DescribeRule",
       "events:ListTagsForResource",
-      "events:DeleteRule"
+      "events:DeleteRule",
+      "events:PutTargets",
+      "events:DeleteRule",
+      "events:RemoveTargets"
     ],
     "attributes": {
       "role_arn": [
@@ -17,9 +20,12 @@
       ]
     },
     "destroy": [
-      "events:DeleteRule"
+      "events:DeleteRule",
+      "events:RemoveTargets"
     ],
-    "modify": [],
+    "modify": [
+      "events:PutTargets"
+    ],
     "plan": []
   }
 ]

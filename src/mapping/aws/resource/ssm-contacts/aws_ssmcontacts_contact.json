@@ -6,7 +6,8 @@
       "ssm-contacts:GetContact",
       "ssm-contacts:ListTagsForResource",
       "ssm-contacts:DeleteContact",
-      "ssm-contacts:UpdateContact"
+      "ssm-contacts:UpdateContact",
+      "ssm-contacts:AssociateContact"
     ],
     "attributes": {
       "tags": [

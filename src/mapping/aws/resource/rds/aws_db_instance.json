@@ -8,6 +8,14 @@
       "rds:ListTagsForResource"
     ],
     "attributes": {
+      "manage_master_user_password": [
+        "secretsmanager:CreateSecret",
+        "secretsmanager:TagResource"
+      ],
+      "master_user_secret_kms_key_id": [
+        "kms:CreateGrant",
+        "kms:DescribeKey"
+      ],
       "monitoring_role_arn": [
         "iam:PassRole"
       ],

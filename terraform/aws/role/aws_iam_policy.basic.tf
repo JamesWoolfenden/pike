@@ -7,8 +7,24 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "0",
         "Effect" : "Allow",
         "Action" : [
-          "secretsmanager:ListSecretVersionIds",
-          "rds:DescribeDBClusterParameterGroups"
+
+
+          //aws_bedrockagent_agent_versions
+
+          //aws_shield_protection
+
+
+          //aws_ssoadmin_permission_sets
+          "sso:ListInstances",
+
+          //aws_route53_zones
+          "route53:ListHostedZones",
+
+          //aws_quicksight_analysis
+          "quicksight:DescribeAnalysis",
+
+          //aws_glue_registry
+          "glue:GetRegistry"
         ],
         "Resource" : "*",
       }

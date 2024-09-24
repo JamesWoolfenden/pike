@@ -1,0 +1,36 @@
+[
+  {
+    "apply": [
+      "kafka:DescribeReplicator",
+      "kafka:ListTagsForResource",
+      "kafka:UpdateReplicationInfo",
+      "kafka:DeleteReplicator",
+      "ec2:CreateNetworkInterface",
+      "ec2:DescribeSecurityGroups",
+      "ec2:DescribeSubnets",
+      "ec2:DescribeVpcs",
+      "iam:CreateServiceLinkedRole",
+      "iam:PassRole",
+      "kafka:CreateReplicator",
+      "kafka:CreateReplicatorReference",
+      "kafka:DescribeClusterV2",
+      "kafka:GetBootstrapBrokers"
+    ],
+    "attributes": {
+      "tags": [
+        "kafka:UntagResource",
+        "kafka:UntagResource"
+      ]
+    },
+    "destroy": [
+      "kafka:DeleteReplicator"
+    ],
+    "modify": [
+      "kafka:UpdateReplicationInfo"
+    ],
+    "plan": [
+      "kafka:DescribeReplicator",
+      "kafka:ListTagsForResource"
+    ]
+  }
+]

@@ -39,7 +39,9 @@ func Remote(target string, repository string, region string) error {
 
 	if err != nil {
 		var response *github.ErrorResponse
+
 		errors.As(err, &response)
+
 		log.Printf("failed to set repo secrets: %s for repository %s", response.Message, repository)
 
 		return fmt.Errorf("failed to set repo secrets: %s for repository %s", response.Message, repository)
@@ -59,7 +61,7 @@ func Remote(target string, repository string, region string) error {
 	return nil
 }
 
-// SetRepoSecret sets an encrypted gitHub action secret.
+// SetRepoSecret sets an encrypted GitHub action secret.
 func SetRepoSecret(repository string, keyText string, keyName string) (*github.Response, error) {
 	owner, repo, err2 := SplitHub(repository)
 	if err2 != nil {
@@ -115,8 +117,7 @@ func SplitHub(repository string) (string, string, error) {
 			repo = Splitter[4]
 		}
 	default:
-		errString := fmt.Sprintf("repository not formatted correctly %s", repository)
-		return "", "", errors.New(errString)
+		return "", "", &repositoryFormatError{repository}
 	}
 
 	return owner, repo, nil

@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "organizations:CreateOrganization",
+      "organizations:DescribeOrganization",
+      "iam:CreateServiceLinkedRole",
+      "organizations:ListRoots",
+      "organizations:DeleteOrganization"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "organizations:DeleteOrganization"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

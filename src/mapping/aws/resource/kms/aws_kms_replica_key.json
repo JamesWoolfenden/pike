@@ -1,13 +1,32 @@
 [
   {
     "apply": [
-      "kms:ReplicateKey"
+      "kms:ReplicateKey",
+      "kms:CreateKey",
+      "kms:DescribeKey",
+      "kms:DisableKey",
+      "kms:ScheduleKeyDeletion",
+      "kms:GetKeyPolicy",
+      "kms:EnableKey",
+      "kms:PutKeyPolicy",
+      "kms:UpdateKeyDescription"
     ],
     "attributes": {
-      "tags": []
+      "tags": [
+        "kms:TagResource",
+        "kms:UntagResource"
+      ]
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "kms:ScheduleKeyDeletion"
+    ],
+    "modify": [
+      "kms:EnableKey",
+      "kms:PutKeyPolicy",
+      "kms:UpdateKeyDescription"
+    ],
+    "plan": [
+      "kms:GetKeyPolicy"
+    ]
   }
 ]

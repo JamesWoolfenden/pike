@@ -5,7 +5,8 @@
       "rds:ModifyOptionGroup",
       "rds:ListTagsForResource",
       "rds:CreateOptionGroup",
-      "rds:DescribeOptionGroups"
+      "rds:DescribeOptionGroups",
+      "iam:CreateServiceLinkedRole"
     ],
     "attributes": {
       "tags": [
@@ -14,7 +15,9 @@
       ]
     },
     "destroy": [],
-    "modify": [],
+    "modify": [
+      "rds:ModifyOptionGroup"
+    ],
     "plan": []
   }
 ]

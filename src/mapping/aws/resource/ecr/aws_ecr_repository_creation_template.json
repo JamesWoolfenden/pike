@@ -1,0 +1,29 @@
+[
+  {
+    "apply": [
+      "ecr:CreateRepositoryCreationTemplate",
+      "ecr:DeleteRepositoryCreationTemplate",
+      "ecr:DescribeRepositoryCreationTemplates",
+      "ecr:UpdateRepositoryCreationTemplate",
+      "ecr:CreateRepository"
+    ],
+    "attributes": {
+      "custom_role_arn": [
+        "iam:CreateServiceLinkedRole",
+        "iam:PassRole"
+      ],
+      "lifecycle_policy": [
+        "ecr:PutLifecyclePolicy",
+        "ecr:SetRepositoryPolicy"
+      ],
+      "tags": []
+    },
+    "destroy": [
+      "ecr:DeleteRepositoryCreationTemplate"
+    ],
+    "modify": [
+      "ecr:UpdateRepositoryCreationTemplate"
+    ],
+    "plan": []
+  }
+]

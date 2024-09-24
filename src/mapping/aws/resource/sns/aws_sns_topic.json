@@ -8,6 +8,10 @@
       "sns:DeleteTopic"
     ],
     "attributes": {
+      "delivery_policy": [
+        "sns:PutDataProtectionPolicy",
+        "sns:GetDataProtectionPolicy"
+      ],
       "tags": [
         "sns:TagResource",
         "sns:UnTagResource"

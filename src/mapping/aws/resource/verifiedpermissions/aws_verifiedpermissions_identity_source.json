@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "verifiedpermissions:CreateIdentitySource",
+      "verifiedpermissions:GetIdentitySource",
+      "cognito-idp:DescribeUserPool",
+      "cognito-idp:ListUserPoolClients"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "verifiedpermissions:DeleteIdentitySource verifiedpermissions:GetIdentitySource cognito-idp:DescribeUserPool",
+      "cognito-idp:ListUserPoolClients"
+    ],
+    "modify": [
+      "verifiedpermissions:UpdateIdentitySource verifiedpermissions:GetIdentitySource cognito-idp:DescribeUserPool cognito-idp:ListUserPoolClients"
+    ],
+    "plan": [
+      "verifiedpermissions:GetIdentitySource cognito-idp:DescribeUserPool cognito-idp:ListUserPoolClients"
+    ]
+  }
+]

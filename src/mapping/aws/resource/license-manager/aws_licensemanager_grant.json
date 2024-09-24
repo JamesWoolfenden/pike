@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "license-manager:CreateGrant",
+      "license-manager:DeleteGrant",
+      "license-manager:GetGrant",
+      "license-manager:CreateGrantVersion"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "license-manager:DeleteGrant"
+    ],
+    "modify": [
+      "license-manager:CreateGrantVersion"
+    ],
+    "plan": []
+  }
+]

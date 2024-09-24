@@ -1,0 +1,40 @@
+[
+  {
+    "apply": [
+      "iam:GetRole",
+      "iam:GetPolicy",
+      "iam:PassRole",
+      "rolesanywhere:CreateProfile",
+      "rolesanywhere:DeleteAttributeMapping",
+      "rolesanywhere:DeleteProfile",
+      "rolesanywhere:DisableProfile",
+      "rolesanywhere:EnableProfile",
+      "rolesanywhere:GetProfile",
+      "rolesanywhere:ListTagsForResource",
+      "rolesanywhere:PutAttributeMapping",
+      "rolesanywhere:UpdateProfile"
+    ],
+    "attributes": {
+      "tags": [
+        "rolesanywhere:TagResource",
+        "rolesanywhere:UntagResource"
+      ]
+    },
+    "destroy": [
+      "rolesanywhere:DeleteProfile"
+    ],
+    "modify": [
+      "rolesanywhere:GetProfile",
+      "rolesanywhere:UpdateProfile",
+      "rolesanywhere:EnableProfile",
+      "rolesanywhere:DisableProfile",
+      "rolesanywhere:ListTagsForResource",
+      "rolesanywhere:PutAttributeMapping",
+      "rolesanywhere:DeleteAttributeMapping"
+    ],
+    "plan": [
+      "rolesanywhere:GetProfile",
+      "rolesanywhere:ListTagsForResource"
+    ]
+  }
+]

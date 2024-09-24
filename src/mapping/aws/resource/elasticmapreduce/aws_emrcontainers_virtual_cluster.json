@@ -1,0 +1,26 @@
+[
+  {
+    "apply": [
+      "emr-containers:CreateVirtualCluster",
+      "emr-containers:TagResource",
+      "iam:CreateServiceLinkedRole",
+      "emr-containers:DeleteVirtualCluster",
+      "emr-containers:DescribeVirtualCluster",
+      "emr-containers:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "emr-containers:TagResource",
+        "emr-containers:UntagResource"
+      ]
+    },
+    "destroy": [
+      "emr-containers:DeleteVirtualCluster"
+    ],
+    "modify": [
+      "emr-containers:DescribeVirtualCluster",
+      "emr-containers:ListTagsForResource"
+    ],
+    "plan": []
+  }
+]

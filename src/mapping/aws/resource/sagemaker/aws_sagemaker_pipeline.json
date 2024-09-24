@@ -4,7 +4,8 @@
       "sagemaker:DescribePipeline",
       "sagemaker:CreatePipeline",
       "sagemaker:DeletePipeline",
-      "sagemaker:UpdatePipeline"
+      "sagemaker:UpdatePipeline",
+      "iam:PassRole"
     ],
     "attributes": {
       "tags": [

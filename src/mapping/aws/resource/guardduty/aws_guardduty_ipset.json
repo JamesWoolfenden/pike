@@ -1,0 +1,34 @@
+[
+  {
+    "apply": [
+      "guardduty:CreateIPSet",
+      "guardduty:GetIPSet",
+      "iam:PutRolePolicy",
+      "guardduty:GetDetector",
+      "guardduty:ListDetectors",
+      "guardduty:ListIPSets",
+      "guardduty:GetIPSet",
+      "guardduty:DeleteIPSet",
+      "iam:DeleteRolePolicy",
+      "guardduty:UpdateIPSet"
+    ],
+    "attributes": {
+      "tags": [
+        "guardduty:TagResource",
+        "guardduty:UntagResource"
+      ]
+    },
+    "destroy": [
+      "guardduty:GetDetector",
+      "guardduty:ListDetectors",
+      "guardduty:ListIPSets",
+      "guardduty:GetIPSet",
+      "guardduty:DeleteIPSet",
+      "iam:DeleteRolePolicy"
+    ],
+    "modify": [
+      "guardduty:UpdateIPSet"
+    ],
+    "plan": []
+  }
+]

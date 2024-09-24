@@ -34,7 +34,9 @@ func TestGetGoFiles(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
+
 			got, err := GetGoFiles(tt.args.path, tt.args.extension)
+
 			if (err != nil) != tt.wantErr {
 				t.Errorf("GetGoFiles() error = %v, wantErr %v", err, tt.wantErr)
 

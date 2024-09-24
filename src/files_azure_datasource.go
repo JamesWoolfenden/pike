@@ -233,43 +233,37 @@ var dataAzurermSpringCloudApp []byte
 var dataAzurermSpringCloudService []byte
 
 //go:embed mapping/azurerm/data/sql/azurerm_sql_database.json
-var dataAzurermSqlDatabase []byte
+var dataAzurermSQLDatabase []byte
 
 //go:embed mapping/azurerm/data/sql/azurerm_sql_managed_instance.json
-var dataAzurermSqlManagedInstance []byte
+var dataAzurermSQLManagedInstance []byte
 
 //go:embed mapping/azurerm/data/sql/azurerm_sql_server.json
-var dataAzurermSqlServer []byte
+var dataAzurermSQLServer []byte
 
 //go:embed mapping/azurerm/data/azurestackhci/azurerm_stack_hci_cluster.json
 var dataAzurermStackHCICluster []byte
 
-////go:embed mapping/azurerm/data/
-//var dataAzurermSnapshot []byte
-//
-////go:embed mapping/azurerm/data/
-//var dataAzurermSourceControlToken []byte
-
 //go:embed mapping/azurerm/data/apimanagement/azurerm_api_management.json
-var dataAzurermApiManagement []byte
+var dataAzurermAPIManagement []byte
 
 //go:embed mapping/azurerm/data/apimanagement/azurerm_api_management_api.json
-var dataAzurermApiManagementApi []byte
+var dataAzurermAPIManagementAPI []byte
 
 //go:embed mapping/azurerm/data/apimanagement/azurerm_api_management_api_version_set.json
-var dataAzurermApiManagementVersionSet []byte
+var dataAzurermAPIManagementVersionSet []byte
 
 //go:embed mapping/azurerm/data/apimanagement/azurerm_api_management_gateway.json
-var dataAzurermApiManagementGateway []byte
+var dataAzurermAPIManagementGateway []byte
 
 //go:embed mapping/azurerm/data/apimanagement/azurerm_api_management_gateway_host_name_configuration.json
-var dataAzurermApiManagementGatewayHostNameConfiguration []byte
+var dataAzurermAPIManagementGatewayHostNameConfiguration []byte
 
 //go:embed mapping/azurerm/data/apimanagement/azurerm_api_management_group.json
-var dataAzurermApiManagementGroup []byte
+var dataAzurermAPIManagementGroup []byte
 
 //go:embed mapping/azurerm/data/apimanagement/azurerm_api_management_product.json
-var dataAzurermApiManagmentProduct []byte
+var dataAzurermAPIManagmentProduct []byte
 
 //go:embed mapping/azurerm/data/apimanagement/azurerm_api_management_user.json
 var dataAzurermApiManagementUser []byte

@@ -7,7 +7,10 @@
       "vpc-lattice:UpdateRule"
     ],
     "attributes": {
-      "tags": []
+      "tags": [
+        "vpc-lattice:TagResource",
+        "vpc-lattice:UntagResource"
+      ]
     },
     "destroy": [
       "vpc-lattice:DeleteRule"

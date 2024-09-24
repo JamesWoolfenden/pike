@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "globalaccelerator:CreateEndpointGroup",
+      "globalaccelerator:DescribeEndpointGroup",
+      "globalaccelerator:DescribeAccelerator",
+      "globalaccelerator:DescribeListener",
+      "globalaccelerator:ListAccelerators",
+      "globalaccelerator:ListListeners",
+      "globalaccelerator:DeleteEndpointGroup",
+      "globalaccelerator:UpdateEndpointGroup"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "globalaccelerator:DeleteEndpointGroup"
+    ],
+    "modify": [
+      "globalaccelerator:UpdateEndpointGroup"
+    ],
+    "plan": []
+  }
+]

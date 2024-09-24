@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "s3:CreateAccessGrantsInstance",
+      "s3:DeleteAccessGrantsInstance",
+      "s3:GetAccessGrantsInstance"
+    ],
+    "attributes": {
+      "tags": [
+        "s3:TagResource"
+      ]
+    },
+    "destroy": [
+      "s3:DeleteAccessGrantsInstance"
+    ],
+    "modify": [],
+    "plan": [
+      "s3:GetAccessGrantsInstance"
+    ]
+  }
+]

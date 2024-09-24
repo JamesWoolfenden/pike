@@ -1,0 +1,50 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAddresses",
+      "elasticloadbalancing:DescribeLoadBalancers",
+      "iam:CreateServiceLinkedRole",
+      "iam:GetRole",
+      "route53:GetHealthCheck",
+      "shield:AssociateHealthCheck",
+      "shield:CreateProtection",
+      "shield:DeleteProtection",
+      "shield:DescribeProtection",
+      "shield:DisableApplicationLayerAutomaticResponse",
+      "shield:DisassociateHealthCheck",
+      "shield:EnableApplicationLayerAutomaticResponse",
+      "shield:ListProtections",
+      "shield:ListTagsForResource",
+      "shield:UpdateApplicationLayerAutomaticResponse",
+      "wafv2:GetWebACL",
+      "wafv2:GetWebACLForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "shield:TagResource",
+        "shield:UntagResource"
+      ]
+    },
+    "destroy": [
+      "shield:DeleteProtection"
+    ],
+    "modify": [
+      "shield:DescribeProtection",
+      "shield:AssociateHealthCheck",
+      "shield:DisassociateHealthCheck",
+      "shield:EnableApplicationLayerAutomaticResponse",
+      "shield:UpdateApplicationLayerAutomaticResponse",
+      "shield:DisableApplicationLayerAutomaticResponse",
+      "shield:ListTagsForResource",
+      "route53:GetHealthCheck",
+      "iam:GetRole",
+      "iam:CreateServiceLinkedRole",
+      "wafv2:GetWebACLForResource",
+      "wafv2:GetWebACL"
+    ],
+    "plan": [
+      "shield:DescribeProtection",
+      "shield:ListTagsForResource"
+    ]
+  }
+]

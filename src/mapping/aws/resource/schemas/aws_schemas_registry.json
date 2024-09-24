@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "schemas:DescribeRegistry",
+      "schemas:CreateRegistry",
+      "schemas:DeleteRegistry",
+      "schemas:UpdateRegistry",
+      "schemas:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "schemas:TagResource",
+        "schemas:UntagResource"
+      ]
+    },
+    "destroy": [
+      "schemas:DeleteRegistry"
+    ],
+    "modify": [
+      "schemas:UpdateRegistry",
+      "schemas:ListTagsForResource"
+    ],
+    "plan": []
+  }
+]

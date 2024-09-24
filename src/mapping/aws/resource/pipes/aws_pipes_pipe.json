@@ -1,0 +1,44 @@
+[
+  {
+    "apply": [
+      "pipes:CreatePipe",
+      "pipes:DescribePipe",
+      "pipes:UpdatePipe",
+      "pipes:DeletePipe",
+      "iam:PassRole",
+      "iam:CreateServiceLinkedRole"
+    ],
+    "attributes": {
+      "cloudwatch_logs_log_destination": [
+        "logs:CreateLogDelivery",
+        "logs:DeleteLogDelivery",
+        "logs:DescribeLogGroups",
+        "logs:DescribeResourcePolicies",
+        "logs:GetLogDelivery",
+        "logs:ListLogDeliveries",
+        "logs:PutResourcePolicy",
+        "logs:UpdateLogDelivery"
+      ],
+      "delivery_stream_arn": [
+        "firehose:TagDeliveryStream"
+      ],
+      "s3_log_destination": [
+        "s3:PutBucketPolicy",
+        "s3:GetBucketPolicy"
+      ],
+      "tags": [
+        "pipes:TagResource",
+        "pipes:UntagResource"
+      ]
+    },
+    "destroy": [
+      "pipes:DeletePipe",
+      "pipes:DescribePipe"
+    ],
+    "modify": [
+      "pipes:UpdatePipe",
+      "pipes:DescribePipe"
+    ],
+    "plan": []
+  }
+]

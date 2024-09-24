@@ -4,18 +4,30 @@
       "events:CreateEventBus",
       "events:DescribeEventBus",
       "events:ListTagsForResource",
-      "events:DeleteEventBus"
+      "events:DeleteEventBus",
+      "events:UpdateEventBus",
+      "events:RemovePermission",
+      "events:PutPermission"
     ],
     "attributes": {
+      "kms_key_identifier": [
+        "kms:DescribeKey",
+        "kms:GenerateDataKey",
+        "kms:Decrypt"
+      ],
       "tags": [
         "events:TagResource",
         "events:UntagResource"
       ]
     },
     "destroy": [
-      "events:DeleteEventBus"
+      "events:DeleteEventBus",
+      "events:UpdateEventBus",
+      "events:RemovePermission"
     ],
-    "modify": [],
+    "modify": [
+      "events:PutPermission"
+    ],
     "plan": []
   }
 ]

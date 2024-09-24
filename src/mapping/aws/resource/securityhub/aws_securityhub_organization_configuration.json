@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "securityhub:UpdateOrganizationConfiguration",
+      "securityhub:DescribeOrganizationConfiguration",
+      "securityhub:ListFindingAggregators",
+      "organizations:DescribeOrganization"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "securityhub:UpdateOrganizationConfiguration",
+      "securityhub:DescribeOrganizationConfiguration",
+      "securityhub:ListFindingAggregators",
+      "organizations:DescribeOrganization"
+    ],
+    "modify": [
+      "securityhub:UpdateOrganizationConfiguration",
+      "securityhub:DescribeOrganizationConfiguration",
+      "organizations:DescribeOrganization"
+    ],
+    "plan": [
+      "securityhub:DescribeOrganizationConfiguration"
+    ]
+  }
+]

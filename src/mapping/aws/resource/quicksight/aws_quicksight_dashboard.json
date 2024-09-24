@@ -1,0 +1,45 @@
+[
+  {
+    "apply": [
+      "quicksight:DescribeDashboard",
+      "quicksight:DescribeDashboardPermissions",
+      "quicksight:CreateDashboard",
+      "quicksight:DescribeTemplate",
+      "quicksight:DescribeTheme",
+      "quicksight:PassDataSet",
+      "quicksight:ListTagsForResource",
+      "quicksight:DeleteDashboard",
+      "quicksight:UpdateDashboard",
+      "quicksight:UpdateDashboardLinks",
+      "quicksight:UpdateDashboardPermissions",
+      "quicksight:UpdateDashboardPublishedVersion"
+    ],
+    "attributes": {
+      "tags": [
+        "quicksight:TagResource",
+        "quicksight:UntagResource"
+      ]
+    },
+    "destroy": [
+      "quicksight:DescribeDashboard",
+      "quicksight:DeleteDashboard"
+    ],
+    "modify": [
+      "quicksight:DescribeDashboard",
+      "quicksight:DescribeDashboardPermissions",
+      "quicksight:UpdateDashboard",
+      "quicksight:UpdateDashboardLinks",
+      "quicksight:UpdateDashboardPermissions",
+      "quicksight:UpdateDashboardPublishedVersion",
+      "quicksight:DescribeTemplate",
+      "quicksight:DescribeTheme",
+      "quicksight:PassDataSet",
+      "quicksight:ListTagsForResource"
+    ],
+    "plan": [
+      "quicksight:DescribeDashboard",
+      "quicksight:DescribeDashboardPermissions",
+      "quicksight:ListTagsForResource"
+    ]
+  }
+]

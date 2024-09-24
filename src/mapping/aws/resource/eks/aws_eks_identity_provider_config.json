@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "eks:DescribeUpdate",
+      "eks:AssociateIdentityProviderConfig",
+      "eks:DescribeIdentityProviderConfig",
+      "eks:DisassociateIdentityProviderConfig"
+    ],
+    "attributes": {
+      "tags": [
+        "eks:TagResource",
+        "eks:UntagResource"
+      ]
+    },
+    "destroy": [
+      "eks:DisassociateIdentityProviderConfig"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

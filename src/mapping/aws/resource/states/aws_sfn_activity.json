@@ -7,6 +7,9 @@
       "states:DeleteActivity"
     ],
     "attributes": {
+      "kms_key_id": [
+        "kms:DescribeKey"
+      ],
       "tags": [
         "states:TagResource",
         "states:UntagResource"

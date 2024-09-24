@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "s3:CreateAccessGrant",
+      "s3:DeleteAccessGrant",
+      "s3:GetAccessGrant"
+    ],
+    "attributes": {
+      "tags": [
+        "s3:TagResource"
+      ]
+    },
+    "destroy": [
+      "s3:DeleteAccessGrant"
+    ],
+    "modify": [],
+    "plan": [
+      "s3:GetAccessGrant"
+    ]
+  }
+]

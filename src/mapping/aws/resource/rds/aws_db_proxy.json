@@ -4,7 +4,8 @@
       "rds:CreateDBProxy",
       "rds:DeleteDBProxy",
       "rds:DescribeDBProxies",
-      "rds:ModifyDBProxy"
+      "rds:ModifyDBProxy",
+      "iam:PassRole"
     ],
     "attributes": {
       "tags": [

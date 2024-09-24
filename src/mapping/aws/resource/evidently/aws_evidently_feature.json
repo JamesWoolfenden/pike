@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "evidently:CreateFeature",
+      "evidently:GetFeature",
+      "evidently:DeleteFeature",
+      "evidently:UpdateFeature",
+      "evidently:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "evidently:TagResource",
+        "evidently:UntagResource"
+      ]
+    },
+    "destroy": [
+      "evidently:DeleteFeature"
+    ],
+    "modify": [
+      "evidently:UpdateFeature",
+      "evidently:ListTagsForResource"
+    ],
+    "plan": []
+  }
+]

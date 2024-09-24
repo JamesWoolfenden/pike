@@ -3,7 +3,8 @@
     "apply": [
       "redshift:CreateEventSubscription",
       "redshift:DescribeEventSubscriptions",
-      "redshift:DeleteEventSubscription"
+      "redshift:DeleteEventSubscription",
+      "redshift:ModifyEventSubscription"
     ],
     "attributes": {
       "tags": [

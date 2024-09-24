@@ -5,9 +5,15 @@
       "states:DescribeStateMachine",
       "states:ListTagsForResource",
       "states:DeleteStateMachine",
+      "s3:GetObject",
       "iam:PassRole"
     ],
     "attributes": {
+      "encryption_configuration": [
+        "kms:DescribeKey",
+        "kms:GenerateDataKey",
+        "kms:Decrypt"
+      ],
       "tags": [
         "states:TagResource",
         "states:UntagResource"

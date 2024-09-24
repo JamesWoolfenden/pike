@@ -20,7 +20,10 @@
       "secretsmanager:DeleteSecret"
     ],
     "modify": [
-      "events:UpdateConnection"
+      "events:UpdateConnection",
+      "secretsmanager:UpdateSecret",
+      "secretsmanager:GetSecretValue",
+      "secretsmanager:PutSecretValue"
     ],
     "plan": []
   }

@@ -4,7 +4,9 @@
       "ec2:DescribeAccountAttributes",
       "network-firewall:CreateRuleGroup",
       "network-firewall:DescribeRuleGroup",
-      "network-firewall:DeleteRuleGroup"
+      "network-firewall:DeleteRuleGroup",
+      "iam:CreateServiceLinkedRole",
+      "ec2:GetManagedPrefixListEntries"
     ],
     "attributes": {
       "tags": [

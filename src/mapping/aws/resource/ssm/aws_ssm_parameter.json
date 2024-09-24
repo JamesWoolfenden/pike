@@ -15,7 +15,8 @@
         "kms:Decrypt"
       ],
       "tags": [
-        "ssm:AddTagsToResource"
+        "ssm:AddTagsToResource",
+        "ssm:RemoveTagsFromResource"
       ]
     },
     "destroy": [

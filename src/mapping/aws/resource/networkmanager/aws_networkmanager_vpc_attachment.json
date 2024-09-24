@@ -1,0 +1,29 @@
+[
+  {
+    "apply": [
+      "networkmanager:CreateVpcAttachment",
+      "networkmanager:GetVpcAttachment",
+      "ec2:DescribeRegions",
+      "iam:CreateServiceLinkedRole",
+      "networkmanager:DeleteAttachment",
+      "networkmanager:UpdateVpcAttachment",
+      "networkmanager:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "networkmanager:TagResource",
+        "networkmanager:UntagResource"
+      ]
+    },
+    "destroy": [
+      "networkmanager:DeleteAttachment"
+    ],
+    "modify": [
+      "networkmanager:UpdateVpcAttachment",
+      "networkmanager:ListTagsForResource"
+    ],
+    "plan": [
+      "networkmanager:GetVpcAttachment"
+    ]
+  }
+]

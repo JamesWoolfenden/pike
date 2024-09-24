@@ -1,0 +1,31 @@
+[
+  {
+    "apply": [
+      "securityhub:CreateAutomationRule",
+      "securityhub:ListTagsForResource",
+      "securityhub:ListAutomationRules",
+      "securityhub:BatchUpdateAutomationRules",
+      "securityhub:BatchDeleteAutomationRules",
+      "securityhub:BatchGetAutomationRules"
+    ],
+    "attributes": {
+      "tags": [
+        "securityhub:TagResource",
+        "securityhub:UntagResource"
+      ]
+    },
+    "destroy": [
+      "securityhub:BatchDeleteAutomationRules",
+      "securityhub:BatchGetAutomationRules"
+    ],
+    "modify": [
+      "securityhub:BatchUpdateAutomationRules",
+      "securityhub:ListTagsForResource"
+    ],
+    "plan": [
+      "securityhub:ListAutomationRules",
+      "securityhub:BatchGetAutomationRules",
+      "securityhub:ListTagsForResource"
+    ]
+  }
+]

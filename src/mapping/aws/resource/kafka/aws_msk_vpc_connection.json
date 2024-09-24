@@ -1,0 +1,39 @@
+[
+  {
+    "apply": [
+      "ec2:CreateVpcEndpoint",
+      "ec2:DescribeSecurityGroups",
+      "ec2:DescribeSubnets",
+      "ec2:DescribeVpcAttribute",
+      "ec2:DescribeVpcs",
+      "ec2:DescribeVpcEndpoints",
+      "ec2:AcceptVpcEndpointConnections",
+      "ec2:RejectVpcEndpointConnections",
+      "ec2:DescribeVpcEndpointConnections",
+      "ec2:CreateTags",
+      "iam:AttachRolePolicy",
+      "iam:CreateServiceLinkedRole",
+      "iam:PutRolePolicy",
+      "kafka:CreateVpcConnection",
+      "kafka:DescribeVpcConnection",
+      "kms:CreateGrant",
+      "kms:DescribeKey",
+      "ec2:DeleteVpcEndpoint",
+      "ec2:DeleteVpcEndpoints",
+      "kafka:DeleteVpcConnection"
+    ],
+    "attributes": {
+      "tags": [
+        "kafka:TagResource",
+        "kafka:UntagResource"
+      ]
+    },
+    "destroy": [
+      "ec2:DeleteVpcEndpoint",
+      "ec2:DeleteVpcEndpoints",
+      "kafka:DeleteVpcConnection"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

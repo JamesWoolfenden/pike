@@ -6,16 +6,28 @@
       "kinesis:IncreaseStreamRetentionPeriod",
       "kinesis:ListTagsForStream",
       "kinesis:DeleteStream",
-      "kinesis:EnableEnhancedMonitoring"
+      "kinesis:EnableEnhancedMonitoring",
+      "kinesis:DeleteStream",
+      "kinesis:DisableEnhancedMonitoring"
     ],
     "attributes": {
+      "kms_key_id": [
+        "kinesis:StartStreamEncryption",
+        "kinesis:StopStreamEncryption"
+      ],
       "tags": [
         "kinesis:AddTagsToStream",
         "kinesis:RemoveTagsFromStream"
       ]
     },
-    "destroy": [],
-    "modify": [],
+    "destroy": [
+      "kinesis:DeleteStream"
+    ],
+    "modify": [
+      "kinesis:UpdateShardCount",
+      "kinesis:UpdateStreamMode",
+      "kinesis:DecreaseStreamRetentionPeriod"
+    ],
     "plan": []
   }
 ]

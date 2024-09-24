@@ -1,0 +1,35 @@
+[
+  {
+    "apply": [
+      "iam:GetRole",
+      "imagebuilder:GetWorkflow",
+      "imagebuilder:CreateWorkflow",
+      "imagebuilder:DeleteWorkflow"
+    ],
+    "attributes": {
+      "kms_key_id": [
+        "kms:GenerateDataKey",
+        "kms:GenerateDataKeyPair",
+        "kms:GenerateDataKeyPairWithoutPlaintext",
+        "kms:GenerateDataKeyWithoutPlaintext",
+        "kms:Encrypt",
+        "kms:Decrypt"
+      ],
+      "tags": [
+        "imagebuilder:TagResource",
+        "imagebuilder:UnTagResource"
+      ],
+      "uri": [
+        "s3:GetObject",
+        "s3:HeadBucket",
+        "s3:GetBucketLocation"
+      ]
+    },
+    "destroy": [
+      "imagebuilder:UnTagResource",
+      "imagebuilder:DeleteWorkflow"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

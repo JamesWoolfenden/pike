@@ -1,0 +1,41 @@
+[
+  {
+    "apply": [
+      "quicksight:DescribeAnalysis",
+      "quicksight:DescribeAnalysisPermissions",
+      "quicksight:UpdateAnalysis",
+      "quicksight:UpdateAnalysisPermissions",
+      "quicksight:CreateAnalysis",
+      "quicksight:DescribeTemplate",
+      "quicksight:DescribeTheme",
+      "quicksight:PassDataSet",
+      "quicksight:ListTagsForResource",
+      "quicksight:DeleteAnalysis"
+    ],
+    "attributes": {
+      "tags": [
+        "quicksight:TagResource",
+        "quicksight:UntagResource"
+      ]
+    },
+    "destroy": [
+      "quicksight:DescribeAnalysis",
+      "quicksight:DeleteAnalysis"
+    ],
+    "modify": [
+      "quicksight:DescribeAnalysis",
+      "quicksight:DescribeAnalysisPermissions",
+      "quicksight:UpdateAnalysis",
+      "quicksight:UpdateAnalysisPermissions",
+      "quicksight:DescribeTemplate",
+      "quicksight:DescribeTheme",
+      "quicksight:PassDataSet",
+      "quicksight:ListTagsForResource"
+    ],
+    "plan": [
+      "quicksight:DescribeAnalysis",
+      "quicksight:DescribeAnalysisPermissions",
+      "quicksight:ListTagsForResource"
+    ]
+  }
+]
