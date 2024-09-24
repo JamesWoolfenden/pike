@@ -172,6 +172,7 @@
   ],
   "required": [
     "Name",
+    "Namespace",
     "Description",
     "ApplicationSourceConfig"
   ],

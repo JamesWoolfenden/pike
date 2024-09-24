@@ -54,10 +54,6 @@
           "type": "string"
         },
         "S3Bucket": {
-          "relationshipRef": {
-            "propertyPath": "/properties/BucketName",
-            "typeName": "AWS::S3::Bucket"
-          },
           "type": "string"
         },
         "S3Key": {
@@ -77,6 +73,13 @@
         "Handler"
       ],
       "type": "object"
+    },
+    "ResourceToTag": {
+      "description": "Specifies which resources canary tags should be replicated to.",
+      "enum": [
+        "lambda-function"
+      ],
+      "type": "string"
     },
     "RunConfig": {
       "additionalProperties": false,
@@ -163,39 +166,17 @@
       "properties": {
         "SecurityGroupIds": {
           "items": {
-            "anyOf": [
-              {
-                "relationshipRef": {
-                  "propertyPath": "/properties/GroupId",
-                  "typeName": "AWS::EC2::SecurityGroup"
-                }
-              },
-              {
-                "relationshipRef": {
-                  "propertyPath": "/properties/DefaultSecurityGroup",
-                  "typeName": "AWS::EC2::VPC"
-                }
-              }
-            ],
             "type": "string"
           },
           "type": "array"
         },
         "SubnetIds": {
           "items": {
-            "relationshipRef": {
-              "propertyPath": "/properties/SubnetId",
-              "typeName": "AWS::EC2::Subnet"
-            },
             "type": "string"
           },
           "type": "array"
         },
         "VpcId": {
-          "relationshipRef": {
-            "propertyPath": "/properties/VpcId",
-            "typeName": "AWS::EC2::VPC"
-          },
           "type": "string"
         }
       },
@@ -251,6 +232,7 @@
         "lambda:GetLayerVersionByArn",
         "lambda:GetLayerVersion",
         "lambda:PublishLayerVersion",
+        "lambda:TagResource",
         "ec2:DescribeVpcs",
         "ec2:DescribeSubnets",
         "ec2:DescribeSecurityGroups",
@@ -298,6 +280,9 @@
         "lambda:GetLayerVersionByArn",
         "lambda:GetLayerVersion",
         "lambda:PublishLayerVersion",
+        "lambda:ListTags",
+        "lambda:TagResource",
+        "lambda:UntagResource",
         "iam:PassRole"
       ]
     }
@@ -337,8 +322,16 @@
     },
     "Name": {
       "description": "Name of the canary.",
-      "pattern": "^[0-9a-z_\\-]{1,21}$",
+      "pattern": "^[0-9a-z_\\-]{1,255}$",
       "type": "string"
+    },
+    "ResourcesToReplicateTags": {
+      "description": "List of resources which canary tags should be replicated to.",
+      "items": {
+        "$ref": "#/definitions/ResourceToTag"
+      },
+      "type": "array",
+      "uniqueItems": true
     },
     "RunConfig": {
       "$ref": "#/definitions/RunConfig",
@@ -405,6 +398,7 @@
     "/properties/Code/Script",
     "/properties/DeleteLambdaResourcesOnCanaryDeletion",
     "/properties/StartCanaryAfterCreation",
+    "/properties/ResourcesToReplicateTags",
     "/properties/RunConfig/EnvironmentVariables",
     "/properties/VisualReference"
   ]

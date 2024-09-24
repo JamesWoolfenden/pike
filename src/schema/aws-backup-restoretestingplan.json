@@ -56,6 +56,13 @@
       ],
       "type": "string"
     },
+    "RestoreTestingScheduleStatus": {
+      "enum": [
+        "ACTIVE",
+        "SUSPENDED"
+      ],
+      "type": "string"
+    },
     "Tag": {
       "additionalProperties": false,
       "properties": {
@@ -84,6 +91,7 @@
     "create": {
       "permissions": [
         "backup:CreateRestoreTestingPlan",
+        "backup:UpdateRestoreTestingPlanScheduleStatus",
         "backup:TagResource",
         "backup:GetRestoreTestingPlan",
         "backup:ListTags"
@@ -113,6 +121,7 @@
     "update": {
       "permissions": [
         "backup:UpdateRestoreTestingPlan",
+        "backup:UpdateRestoreTestingPlanScheduleStatus",
         "backup:TagResource",
         "backup:UntagResource",
         "backup:GetRestoreTestingPlan",
@@ -139,6 +148,9 @@
     },
     "ScheduleExpressionTimezone": {
       "type": "string"
+    },
+    "ScheduleStatus": {
+      "$ref": "#/definitions/RestoreTestingScheduleStatus"
     },
     "StartWindowHours": {
       "type": "integer"

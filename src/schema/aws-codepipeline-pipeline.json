@@ -141,6 +141,20 @@
       ],
       "type": "object"
     },
+    "BeforeEntryConditions": {
+      "additionalProperties": false,
+      "description": "The configuration that specifies the rules to run before stage starts.",
+      "properties": {
+        "Conditions": {
+          "items": {
+            "$ref": "#/definitions/Condition"
+          },
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
+      "type": "object"
+    },
     "BlockerDeclaration": {
       "additionalProperties": false,
       "description": "Reserved for future use.",
@@ -161,6 +175,24 @@
         "Type",
         "Name"
       ],
+      "type": "object"
+    },
+    "Condition": {
+      "additionalProperties": false,
+      "description": "Represents information about condition.",
+      "properties": {
+        "Result": {
+          "description": "The specified result for when the failure conditions are met, such as rolling back the stage",
+          "type": "string"
+        },
+        "Rules": {
+          "items": {
+            "$ref": "#/definitions/RuleDeclaration"
+          },
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
       "type": "object"
     },
     "EncryptionKey": {
@@ -186,6 +218,13 @@
       "additionalProperties": false,
       "description": "The configuration that specifies the result, such as rollback, to occur upon stage failure",
       "properties": {
+        "Conditions": {
+          "items": {
+            "$ref": "#/definitions/Condition"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
         "Result": {
           "description": "The specified result for when the failure conditions are met, such as rolling back the stage",
           "enum": [
@@ -380,6 +419,63 @@
       ],
       "type": "object"
     },
+    "RuleDeclaration": {
+      "additionalProperties": false,
+      "description": "Represents information about condition.",
+      "properties": {
+        "Configuration": {
+          "description": "The rule's configuration. These are key-value pairs that specify input values for a rule.",
+          "type": "object"
+        },
+        "InputArtifacts": {
+          "items": {
+            "$ref": "#/definitions/InputArtifact"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "Name": {
+          "description": "The rule declaration's name.",
+          "type": "string"
+        },
+        "Region": {
+          "description": "The rule declaration's AWS Region, such as us-east-1.",
+          "type": "string"
+        },
+        "RoleArn": {
+          "description": "The ARN of the IAM service role that performs the declared rule. This is assumed through the roleArn for the pipeline.",
+          "pattern": "arn:aws(-[\\w]+)*:iam::[0-9]{12}:role/.*",
+          "type": "string"
+        },
+        "RuleTypeId": {
+          "$ref": "#/definitions/RuleTypeId"
+        }
+      },
+      "type": "object"
+    },
+    "RuleTypeId": {
+      "additionalProperties": false,
+      "description": "Represents information about a rule type.",
+      "properties": {
+        "Category": {
+          "description": "A category for the provider type for the rule.",
+          "type": "string"
+        },
+        "Owner": {
+          "description": "The creator of the rule being called. Only AWS is supported.",
+          "type": "string"
+        },
+        "Provider": {
+          "description": "The provider of the service being called by the rule.",
+          "type": "string"
+        },
+        "Version": {
+          "description": "A string that describes the rule version.",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "StageDeclaration": {
       "additionalProperties": false,
       "description": "Represents information about a stage and its definition.",
@@ -390,6 +486,11 @@
           },
           "type": "array",
           "uniqueItems": true
+        },
+        "BeforeEntry": {
+          "$ref": "#/definitions/BeforeEntryConditions",
+          "description": "The method to use before stage runs.",
+          "type": "object"
         },
         "Blockers": {
           "items": {
@@ -405,6 +506,11 @@
         "OnFailure": {
           "$ref": "#/definitions/FailureConditions",
           "description": "The method to use when a stage has not completed successfully",
+          "type": "object"
+        },
+        "OnSuccess": {
+          "$ref": "#/definitions/SuccessConditions",
+          "description": "The method to use when a stage has completed successfully",
           "type": "object"
         }
       },
@@ -431,6 +537,20 @@
         "StageName",
         "Reason"
       ],
+      "type": "object"
+    },
+    "SuccessConditions": {
+      "additionalProperties": false,
+      "description": "The configuration that specifies the result, such as rollback, to occur upon stage failure",
+      "properties": {
+        "Conditions": {
+          "items": {
+            "$ref": "#/definitions/Condition"
+          },
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
       "type": "object"
     },
     "Tag": {
@@ -625,6 +745,10 @@
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-codepipeline",
   "tagging": {
     "cloudFormationSystemTags": false,
+    "permissions": [
+      "codepipeline:TagResource",
+      "codepipeline:UntagResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

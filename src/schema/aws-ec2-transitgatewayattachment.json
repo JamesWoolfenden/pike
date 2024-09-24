@@ -110,10 +110,6 @@
         "Ipv6Support": {
           "description": "Indicates whether to enable Ipv6 Support for Vpc Attachment. Valid Values: enable | disable",
           "type": "string"
-        },
-        "SecurityGroupReferencingSupport": {
-          "description": "Indicates whether to enable Security Group referencing support for Vpc Attachment. Valid Values: enable | disable",
-          "type": "string"
         }
       },
       "type": "object"
@@ -121,6 +117,10 @@
     "SubnetIds": {
       "insertionOrder": false,
       "items": {
+        "relationshipRef": {
+          "propertyPath": "/properties/SubnetId",
+          "typeName": "AWS::EC2::Subnet"
+        },
         "type": "string"
       },
       "type": "array",

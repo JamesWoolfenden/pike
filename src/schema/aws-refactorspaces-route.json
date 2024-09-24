@@ -285,7 +285,21 @@
     "RouteType"
   ],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-refactor-spaces",
-  "taggable": true,
+  "tagging": {
+    "cloudFormationSystemTags": false,
+    "permissions": [
+      "refactor-spaces:ListTagsForResource",
+      "tag:GetResources",
+      "elasticloadbalancing:AddTags",
+      "refactor-spaces:UntagResource",
+      "refactor-spaces:TagResource",
+      "elasticloadbalancing:DescribeTags"
+    ],
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": true,
+    "taggable": true
+  },
   "typeName": "AWS::RefactorSpaces::Route",
   "writeOnlyProperties": [
     "/properties/RouteType",

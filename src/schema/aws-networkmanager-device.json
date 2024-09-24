@@ -187,6 +187,11 @@
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-networkmanager.git",
   "tagging": {
     "cloudFormationSystemTags": false,
+    "permissions": [
+      "networkmanager:TagResource",
+      "networkmanager:UntagResource",
+      "networkmanager:ListTagsForResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

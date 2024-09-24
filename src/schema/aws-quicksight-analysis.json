@@ -107,6 +107,9 @@
           "minItems": 0,
           "type": "array"
         },
+        "QueryExecutionOptions": {
+          "$ref": "#/definitions/QueryExecutionOptions"
+        },
         "Sheets": {
           "items": {
             "$ref": "#/definitions/SheetDefinition"
@@ -1106,6 +1109,25 @@
       ],
       "type": "string"
     },
+    "CategoryInnerFilter": {
+      "additionalProperties": false,
+      "properties": {
+        "Column": {
+          "$ref": "#/definitions/ColumnIdentifier"
+        },
+        "Configuration": {
+          "$ref": "#/definitions/CategoryFilterConfiguration"
+        },
+        "DefaultFilterControlConfiguration": {
+          "$ref": "#/definitions/DefaultFilterControlConfiguration"
+        }
+      },
+      "required": [
+        "Column",
+        "Configuration"
+      ],
+      "type": "object"
+    },
     "ChartAxisLabelOptions": {
       "additionalProperties": false,
       "properties": {
@@ -1283,6 +1305,9 @@
         "Label": {
           "type": "string"
         },
+        "TooltipTarget": {
+          "$ref": "#/definitions/TooltipTarget"
+        },
         "Visibility": {
           "$ref": "#/definitions/Visibility"
         }
@@ -1376,6 +1401,9 @@
         },
         "SecondaryYAxisLabelOptions": {
           "$ref": "#/definitions/ChartAxisLabelOptions"
+        },
+        "SingleAxisOptions": {
+          "$ref": "#/definitions/SingleAxisOptions"
         },
         "SortConfiguration": {
           "$ref": "#/definitions/ComboChartSortConfiguration"
@@ -3141,6 +3169,9 @@
         "Label": {
           "type": "string"
         },
+        "TooltipTarget": {
+          "$ref": "#/definitions/TooltipTarget"
+        },
         "Visibility": {
           "$ref": "#/definitions/Visibility"
         }
@@ -3313,6 +3344,9 @@
       "properties": {
         "CategoryFilter": {
           "$ref": "#/definitions/CategoryFilter"
+        },
+        "NestedFilter": {
+          "$ref": "#/definitions/NestedFilter"
         },
         "NumericEqualityFilter": {
           "$ref": "#/definitions/NumericEqualityFilter"
@@ -5092,6 +5126,15 @@
       ],
       "type": "string"
     },
+    "InnerFilter": {
+      "additionalProperties": false,
+      "properties": {
+        "CategoryInnerFilter": {
+          "$ref": "#/definitions/CategoryInnerFilter"
+        }
+      },
+      "type": "object"
+    },
     "InsightConfiguration": {
       "additionalProperties": false,
       "properties": {
@@ -5696,6 +5739,9 @@
           "minItems": 0,
           "type": "array"
         },
+        "SingleAxisOptions": {
+          "$ref": "#/definitions/SingleAxisOptions"
+        },
         "SmallMultiplesOptions": {
           "$ref": "#/definitions/SmallMultiplesOptions"
         },
@@ -6154,6 +6200,34 @@
         "NEGATIVE"
       ],
       "type": "string"
+    },
+    "NestedFilter": {
+      "additionalProperties": false,
+      "properties": {
+        "Column": {
+          "$ref": "#/definitions/ColumnIdentifier"
+        },
+        "FilterId": {
+          "maxLength": 512,
+          "minLength": 1,
+          "pattern": "^[\\w\\-]+$",
+          "type": "string"
+        },
+        "IncludeInnerSet": {
+          "default": false,
+          "type": "boolean"
+        },
+        "InnerFilter": {
+          "$ref": "#/definitions/InnerFilter"
+        }
+      },
+      "required": [
+        "Column",
+        "FilterId",
+        "IncludeInnerSet",
+        "InnerFilter"
+      ],
+      "type": "object"
     },
     "NullValueFormatConfiguration": {
       "additionalProperties": false,
@@ -7705,6 +7779,22 @@
       },
       "type": "object"
     },
+    "QueryExecutionMode": {
+      "enum": [
+        "AUTO",
+        "MANUAL"
+      ],
+      "type": "string"
+    },
+    "QueryExecutionOptions": {
+      "additionalProperties": false,
+      "properties": {
+        "QueryExecutionMode": {
+          "$ref": "#/definitions/QueryExecutionMode"
+        }
+      },
+      "type": "object"
+    },
     "RadarChartAggregatedFieldWells": {
       "additionalProperties": false,
       "properties": {
@@ -9069,6 +9159,21 @@
       ],
       "type": "string"
     },
+    "SingleAxisOptions": {
+      "additionalProperties": false,
+      "properties": {
+        "YAxisOptions": {
+          "$ref": "#/definitions/YAxisOptions"
+        }
+      },
+      "type": "object"
+    },
+    "SingleYAxisOption": {
+      "enum": [
+        "PRIMARY_Y_AXIS"
+      ],
+      "type": "string"
+    },
     "SliderControlDisplayOptions": {
       "additionalProperties": false,
       "properties": {
@@ -10130,6 +10235,14 @@
       },
       "type": "object"
     },
+    "TooltipTarget": {
+      "enum": [
+        "BOTH",
+        "BAR",
+        "LINE"
+      ],
+      "type": "string"
+    },
     "TooltipTitleType": {
       "enum": [
         "NONE",
@@ -11152,6 +11265,18 @@
         "NORMAL"
       ],
       "type": "string"
+    },
+    "YAxisOptions": {
+      "additionalProperties": false,
+      "properties": {
+        "YAxis": {
+          "$ref": "#/definitions/SingleYAxisOption"
+        }
+      },
+      "required": [
+        "YAxis"
+      ],
+      "type": "object"
     }
   },
   "description": "Definition of the AWS::QuickSight::Analysis Resource Type.",
@@ -11203,6 +11328,9 @@
         "quicksight:DescribeAnalysisPermissions",
         "quicksight:UpdateAnalysis",
         "quicksight:UpdateAnalysisPermissions",
+        "quicksight:CreateFolderMembership",
+        "quicksight:DeleteFolderMembership",
+        "quicksight:ListFoldersForResource",
         "quicksight:DescribeTemplate",
         "quicksight:DescribeTheme",
         "quicksight:PassDataSet",

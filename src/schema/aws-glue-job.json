@@ -86,6 +86,9 @@
     "Id": {
       "type": "string"
     },
+    "JobMode": {
+      "type": "string"
+    },
     "LogUri": {
       "type": "string"
     },

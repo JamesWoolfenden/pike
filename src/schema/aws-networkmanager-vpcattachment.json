@@ -11,6 +11,30 @@
     "/properties/VpcArn"
   ],
   "definitions": {
+    "ProposedNetworkFunctionGroupChange": {
+      "additionalProperties": false,
+      "description": "The attachment to move from one network function group to another.",
+      "properties": {
+        "AttachmentPolicyRuleNumber": {
+          "description": "The rule number in the policy document that applies to this change.",
+          "type": "integer"
+        },
+        "NetworkFunctionGroupName": {
+          "description": "The name of the network function group to change.",
+          "type": "string"
+        },
+        "Tags": {
+          "description": "The key-value tags that changed for the network function group.",
+          "insertionOrder": false,
+          "items": {
+            "$ref": "#/definitions/Tag"
+          },
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
+      "type": "object"
+    },
     "ProposedSegmentChange": {
       "additionalProperties": false,
       "description": "The attachment to move from one segment to another.",
@@ -147,6 +171,10 @@
       "description": "The Region where the edge is located.",
       "type": "string"
     },
+    "NetworkFunctionGroupName": {
+      "description": "The name of the network function group attachment.",
+      "type": "string"
+    },
     "Options": {
       "$ref": "#/definitions/VpcOptions",
       "description": "Vpc options of the attachment."
@@ -154,6 +182,10 @@
     "OwnerAccountId": {
       "description": "Owner account of the attachment.",
       "type": "string"
+    },
+    "ProposedNetworkFunctionGroupChange": {
+      "$ref": "#/definitions/ProposedNetworkFunctionGroupChange",
+      "description": "The attachment to move from one network function group to another."
     },
     "ProposedSegmentChange": {
       "$ref": "#/definitions/ProposedSegmentChange",
@@ -208,6 +240,7 @@
     "/properties/EdgeLocation",
     "/properties/AttachmentPolicyRuleNumber",
     "/properties/SegmentName",
+    "/properties/NetworkFunctionGroupName",
     "/properties/ResourceArn"
   ],
   "required": [
@@ -218,6 +251,11 @@
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-networkmanager/aws-networkmanager-vpcattachment",
   "tagging": {
     "cloudFormationSystemTags": false,
+    "permissions": [
+      "networkmanager:TagResource",
+      "networkmanager:UntagResource",
+      "networkmanager:ListTagsForResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

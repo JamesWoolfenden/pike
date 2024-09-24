@@ -51,6 +51,29 @@
         }
       },
       "type": "object"
+    },
+    "Tag": {
+      "additionalProperties": false,
+      "description": "A key-value pair to associate with a resource.",
+      "properties": {
+        "Key": {
+          "description": "The key name of the tag. You can specify a value that is 1 to 128 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
+          "maxLength": 128,
+          "minLength": 1,
+          "type": "string"
+        },
+        "Value": {
+          "description": "The value for the tag. You can specify a value that is 0 to 256 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
+          "maxLength": 256,
+          "minLength": 0,
+          "type": "string"
+        }
+      },
+      "required": [
+        "Key",
+        "Value"
+      ],
+      "type": "object"
     }
   },
   "description": "Resource Type definition for AWS::Cognito::IdentityPool",
@@ -60,6 +83,7 @@
         "cognito-identity:CreateIdentityPool",
         "cognito-sync:SetIdentityPoolConfiguration",
         "cognito-sync:SetCognitoEvents",
+        "cognito-identity:TagResource",
         "iam:PassRole"
       ]
     },
@@ -84,6 +108,8 @@
         "cognito-identity:DescribeIdentityPool",
         "cognito-sync:SetIdentityPoolConfiguration",
         "cognito-sync:SetCognitoEvents",
+        "cognito-identity:TagResource",
+        "cognito-identity:UntagResource",
         "iam:PassRole"
       ]
     }
@@ -121,6 +147,15 @@
     "IdentityPoolName": {
       "type": "string"
     },
+    "IdentityPoolTags": {
+      "description": "An array of key-value pairs to apply to this resource.",
+      "insertionOrder": false,
+      "items": {
+        "$ref": "#/definitions/Tag"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
     "Name": {
       "type": "string"
     },
@@ -157,9 +192,14 @@
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-rpdk.git",
   "tagging": {
     "cloudFormationSystemTags": false,
-    "tagOnCreate": false,
-    "tagUpdatable": false,
-    "taggable": false
+    "permissions": [
+      "cognito-identity:TagResource",
+      "cognito-identity:UntagResource"
+    ],
+    "tagOnCreate": true,
+    "tagProperty": "/properties/IdentityPoolTags",
+    "tagUpdatable": true,
+    "taggable": true
   },
   "typeName": "AWS::Cognito::IdentityPool",
   "writeOnlyProperties": [

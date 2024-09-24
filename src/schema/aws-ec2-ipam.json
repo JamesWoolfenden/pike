@@ -94,6 +94,10 @@
     "Description": {
       "type": "string"
     },
+    "EnablePrivateGua": {
+      "description": "Enable provisioning of GUA space in private pools.",
+      "type": "boolean"
+    },
     "IpamId": {
       "description": "Id of the IPAM.",
       "type": "string"

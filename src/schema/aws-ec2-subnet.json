@@ -18,7 +18,7 @@
   "definitions": {
     "Tag": {
       "additionalProperties": false,
-      "description": "Specifies a tag. For more information, see [Add tags to a resource](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#cloudformation-add-tag-specifications).",
+      "description": "Specifies a tag. For more information, see [Resource tags](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html).",
       "properties": {
         "Key": {
           "description": "The tag key.",
@@ -96,7 +96,7 @@
       "type": "string"
     },
     "EnableDns64": {
-      "description": "Indicates whether DNS queries made to the Amazon-provided DNS Resolver in this subnet should return synthetic IPv6 addresses for IPv4-only destinations. For more information, see [DNS64 and NAT64](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-nat64-dns64) in the *User Guide*.",
+      "description": "Indicates whether DNS queries made to the Amazon-provided DNS Resolver in this subnet should return synthetic IPv6 addresses for IPv4-only destinations.\n  You must first configure a NAT gateway in a public subnet (separate from the subnet containing the IPv6-only workloads). For example, the subnet containing the NAT gateway should have a ``0.0.0.0/0`` route pointing to the internet gateway. For more information, see [Configure DNS64 and NAT64](https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-nat64-dns64.html#nat-gateway-nat64-dns64-walkthrough) in the *User Guide*.",
       "type": "boolean"
     },
     "EnableLniAtDeviceIndex": {
@@ -116,7 +116,7 @@
       "type": "string"
     },
     "Ipv6CidrBlocks": {
-      "description": "The IPv6 network ranges for the subnet, in CIDR notation.",
+      "description": "",
       "items": {
         "type": "string"
       },
@@ -182,13 +182,18 @@
   },
   "readOnlyProperties": [
     "/properties/NetworkAclAssociationId",
-    "/properties/SubnetId"
+    "/properties/SubnetId",
+    "/properties/Ipv6CidrBlocks"
   ],
   "required": [
     "VpcId"
   ],
   "tagging": {
     "cloudFormationSystemTags": true,
+    "permissions": [
+      "ec2:CreateTags",
+      "ec2:DeleteTags"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

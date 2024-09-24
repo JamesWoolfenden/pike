@@ -74,6 +74,51 @@
       ],
       "type": "object"
     },
+    "ContextualGroundingFilterConfig": {
+      "additionalProperties": false,
+      "description": "A config for grounding filter.",
+      "properties": {
+        "Threshold": {
+          "description": "The threshold for this filter.",
+          "minimum": 0,
+          "type": "number"
+        },
+        "Type": {
+          "$ref": "#/definitions/ContextualGroundingFilterType"
+        }
+      },
+      "required": [
+        "Threshold",
+        "Type"
+      ],
+      "type": "object"
+    },
+    "ContextualGroundingFilterType": {
+      "description": "Type of contextual grounding filter",
+      "enum": [
+        "GROUNDING",
+        "RELEVANCE"
+      ],
+      "type": "string"
+    },
+    "ContextualGroundingPolicyConfig": {
+      "additionalProperties": false,
+      "description": "Contextual grounding policy config for a guardrail.",
+      "properties": {
+        "FiltersConfig": {
+          "description": "List of contextual grounding filter configs.",
+          "items": {
+            "$ref": "#/definitions/ContextualGroundingFilterConfig"
+          },
+          "minItems": 1,
+          "type": "array"
+        }
+      },
+      "required": [
+        "FiltersConfig"
+      ],
+      "type": "object"
+    },
     "FilterStrength": {
       "description": "Strength for filters",
       "enum": [
@@ -496,6 +541,9 @@
     },
     "ContentPolicyConfig": {
       "$ref": "#/definitions/ContentPolicyConfig"
+    },
+    "ContextualGroundingPolicyConfig": {
+      "$ref": "#/definitions/ContextualGroundingPolicyConfig"
     },
     "CreatedAt": {
       "description": "Time Stamp",

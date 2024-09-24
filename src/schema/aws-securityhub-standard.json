@@ -67,7 +67,7 @@
   ],
   "properties": {
     "DisabledStandardsControls": {
-      "description": "Specifies which controls are to be disabled in a standard. \n *Maximum*: ``100``",
+      "description": "Specifies which controls are to be disabled in a standard. \n  *Maximum*: ``100``",
       "insertionOrder": true,
       "items": {
         "$ref": "#/definitions/StandardsControl"

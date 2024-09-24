@@ -11,7 +11,8 @@
     "/properties/NetworkConfiguration",
     "/properties/ImageConfiguration",
     "/properties/MonitoringConfiguration",
-    "/properties/RuntimeConfiguration"
+    "/properties/RuntimeConfiguration",
+    "/properties/InteractiveConfiguration"
   ],
   "createOnlyProperties": [
     "/properties/Name",
@@ -219,6 +220,22 @@
       },
       "type": "array",
       "uniqueItems": true
+    },
+    "InteractiveConfiguration": {
+      "additionalProperties": false,
+      "properties": {
+        "LivyEndpointEnabled": {
+          "default": false,
+          "description": "Enables an Apache Livy endpoint that you can connect to and run interactive jobs",
+          "type": "boolean"
+        },
+        "StudioEnabled": {
+          "default": false,
+          "description": "Enabled you to connect an Application to Amazon EMR Studio to run interactive workloads in a notebook",
+          "type": "boolean"
+        }
+      },
+      "type": "object"
     },
     "LogGroupName": {
       "maxLength": 512,
@@ -600,6 +617,9 @@
     "InitialCapacity": {
       "$ref": "#/definitions/InitialCapacityConfigMap",
       "description": "Initial capacity initialized when an Application is started."
+    },
+    "InteractiveConfiguration": {
+      "$ref": "#/definitions/InteractiveConfiguration"
     },
     "MaximumCapacity": {
       "$ref": "#/definitions/MaximumAllowedResources",

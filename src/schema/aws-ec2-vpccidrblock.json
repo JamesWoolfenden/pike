@@ -65,6 +65,10 @@
       "description": "The Id of the VPC associated CIDR Block.",
       "type": "string"
     },
+    "IpSource": {
+      "description": "The IP Source of an IPv6 VPC CIDR Block.",
+      "type": "string"
+    },
     "Ipv4IpamPoolId": {
       "description": "The ID of the IPv4 IPAM pool to Associate a CIDR from to a VPC.",
       "type": "string"
@@ -72,6 +76,10 @@
     "Ipv4NetmaskLength": {
       "description": "The netmask length of the IPv4 CIDR you would like to associate from an Amazon VPC IP Address Manager (IPAM) pool.",
       "type": "integer"
+    },
+    "Ipv6AddressAttribute": {
+      "description": "The value denoting whether an IPv6 VPC CIDR Block is public or private.",
+      "type": "string"
     },
     "Ipv6CidrBlock": {
       "description": "An IPv6 CIDR block from the IPv6 address pool.",
@@ -95,7 +103,9 @@
     }
   },
   "readOnlyProperties": [
-    "/properties/Id"
+    "/properties/Id",
+    "/properties/Ipv6AddressAttribute",
+    "/properties/IpSource"
   ],
   "required": [
     "VpcId"

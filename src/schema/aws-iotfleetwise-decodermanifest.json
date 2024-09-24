@@ -437,7 +437,7 @@
           }
         ]
       },
-      "maxItems": 500,
+      "maxItems": 5000,
       "minItems": 1,
       "type": "array"
     },
@@ -453,7 +453,7 @@
           }
         ]
       },
-      "maxItems": 500,
+      "maxItems": 5000,
       "minItems": 1,
       "type": "array"
     },
@@ -482,6 +482,11 @@
   ],
   "tagging": {
     "cloudFormationSystemTags": true,
+    "permissions": [
+      "iotfleetwise:UntagResource",
+      "iotfleetwise:TagResource",
+      "iotfleetwise:ListTagsForResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

@@ -1,3 +1,4 @@
+#!/usr/bin/env pwsh
 $files = get-childitem -path .\*.json
 
 foreach ($file in $files)

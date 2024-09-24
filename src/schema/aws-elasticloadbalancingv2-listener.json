@@ -254,6 +254,19 @@
       },
       "type": "object"
     },
+    "ListenerAttribute": {
+      "additionalProperties": false,
+      "description": "",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "MutualAuthentication": {
       "additionalProperties": false,
       "description": "Specifies the configuration information for mutual authentication.",
@@ -348,7 +361,8 @@
       "permissions": [
         "elasticloadbalancing:CreateListener",
         "elasticloadbalancing:DescribeListeners",
-        "cognito-idp:DescribeUserPoolClient"
+        "cognito-idp:DescribeUserPoolClient",
+        "elasticloadbalancing:ModifyListenerAttributes"
       ]
     },
     "delete": {
@@ -390,14 +404,16 @@
     },
     "read": {
       "permissions": [
-        "elasticloadbalancing:DescribeListeners"
+        "elasticloadbalancing:DescribeListeners",
+        "elasticloadbalancing:DescribeListenerAttributes"
       ]
     },
     "update": {
       "permissions": [
         "elasticloadbalancing:ModifyListener",
         "elasticloadbalancing:DescribeListeners",
-        "cognito-idp:DescribeUserPoolClient"
+        "cognito-idp:DescribeUserPoolClient",
+        "elasticloadbalancing:ModifyListenerAttributes"
       ]
     }
   },
@@ -431,6 +447,16 @@
     "ListenerArn": {
       "description": "",
       "type": "string"
+    },
+    "ListenerAttributes": {
+      "arrayType": "AttributeList",
+      "description": "",
+      "insertionOrder": false,
+      "items": {
+        "$ref": "#/definitions/ListenerAttribute"
+      },
+      "type": "array",
+      "uniqueItems": true
     },
     "LoadBalancerArn": {
       "description": "The Amazon Resource Name (ARN) of the load balancer.",

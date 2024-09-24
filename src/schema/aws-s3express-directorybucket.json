@@ -15,8 +15,11 @@
   "handlers": {
     "create": {
       "permissions": [
+        "kms:GenerateDataKey",
+        "kms:Decrypt",
         "s3express:CreateBucket",
-        "s3express:ListAllMyDirectoryBuckets"
+        "s3express:ListAllMyDirectoryBuckets",
+        "s3express:PutEncryptionConfiguration"
       ]
     },
     "delete": {
@@ -32,7 +35,17 @@
     },
     "read": {
       "permissions": [
+        "s3express:ListAllMyDirectoryBuckets",
+        "ec2:DescribeAvailabilityZones",
+        "s3express:GetEncryptionConfiguration",
         "s3express:ListAllMyDirectoryBuckets"
+      ]
+    },
+    "update": {
+      "permissions": [
+        "kms:GenerateDataKey",
+        "kms:Decrypt",
+        "s3express:PutEncryptionConfiguration"
       ]
     }
   },
@@ -47,6 +60,14 @@
         "arn:aws:s3express:us-west-2:123456789123:bucket/DOC-EXAMPLE-BUCKET--usw2-az1--x-s3"
       ]
     },
+    "AvailabilityZoneName": {
+      "description": "Returns the code for the Availability Zone where the directory bucket was created.",
+      "examples": [
+        "us-east-1f"
+      ],
+      "type": "string"
+    },
+    "BucketEncryption": {},
     "BucketName": {
       "description": "Specifies a name for the bucket. The bucket name must contain only lowercase letters, numbers, and hyphens (-). A directory bucket name must be unique in the chosen Availability Zone. The bucket name must also follow the format 'bucket_base_name--az_id--x-s3' (for example, 'DOC-EXAMPLE-BUCKET--usw2-az1--x-s3'). If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the bucket name.",
       "maxLength": 63,
@@ -66,7 +87,8 @@
     }
   },
   "readOnlyProperties": [
-    "/properties/Arn"
+    "/properties/Arn",
+    "/properties/AvailabilityZoneName"
   ],
   "required": [
     "LocationName",

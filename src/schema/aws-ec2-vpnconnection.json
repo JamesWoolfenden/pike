@@ -6,17 +6,28 @@
     "/properties/CustomerGatewayId",
     "/properties/VpnGatewayId",
     "/properties/TransitGatewayId",
-    "/properties/VpnTunnelOptionsSpecifications",
-    "/properties/StaticRoutesOnly"
+    "/properties/EnableAcceleration",
+    "/properties/LocalIpv4NetworkCidr",
+    "/properties/LocalIpv6NetworkCidr",
+    "/properties/OutsideIpAddressType",
+    "/properties/RemoteIpv4NetworkCidr",
+    "/properties/RemoteIpv6NetworkCidr",
+    "/properties/StaticRoutesOnly",
+    "/properties/TransportTransitGatewayAttachmentId",
+    "/properties/TunnelInsideIpVersion",
+    "/properties/VpnTunnelOptionsSpecifications"
   ],
   "definitions": {
     "Tag": {
       "additionalProperties": false,
+      "description": "Specifies a tag. For more information, see [Resource tags](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html).",
       "properties": {
         "Key": {
+          "description": "The tag key.",
           "type": "string"
         },
         "Value": {
+          "description": "The tag value.",
           "type": "string"
         }
       },
@@ -28,18 +39,21 @@
     },
     "VpnTunnelOptionsSpecification": {
       "additionalProperties": false,
+      "description": "The tunnel options for a single VPN tunnel.",
       "properties": {
         "PreSharedKey": {
+          "description": "The pre-shared key (PSK) to establish initial authentication between the virtual private gateway and customer gateway.\n Constraints: Allowed characters are alphanumeric characters, periods (.), and underscores (_). Must be between 8 and 64 characters in length and cannot start with zero (0).",
           "type": "string"
         },
         "TunnelInsideCidr": {
+          "description": "The range of inside IP addresses for the tunnel. Any specified CIDR blocks must be unique across all VPN connections that use the same virtual private gateway. \n Constraints: A size /30 CIDR block from the ``169.254.0.0/16`` range. The following CIDR blocks are reserved and cannot be used:\n  +   ``169.254.0.0/30`` \n  +   ``169.254.1.0/30`` \n  +   ``169.254.2.0/30`` \n  +   ``169.254.3.0/30`` \n  +   ``169.254.4.0/30`` \n  +   ``169.254.5.0/30`` \n  +   ``169.254.169.252/30``",
           "type": "string"
         }
       },
       "type": "object"
     }
   },
-  "description": "Resource Type definition for AWS::EC2::VPNConnection",
+  "description": "Specifies a VPN connection between a virtual private gateway and a VPN customer gateway or a transit gateway and a VPN customer gateway.\n To specify a VPN connection between a transit gateway and customer gateway, use the ``TransitGatewayId`` and ``CustomerGatewayId`` properties.\n To specify a VPN connection between a virtual private gateway and customer gateway, use the ``VpnGatewayId`` and ``CustomerGatewayId`` properties.\n For more information, see [](https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html) in the *User Guide*.",
   "handlers": {
     "create": {
       "permissions": [
@@ -51,8 +65,7 @@
     "delete": {
       "permissions": [
         "ec2:DescribeVpnConnections",
-        "ec2:DeleteVpnConnection",
-        "ec2:DeleteTags"
+        "ec2:DeleteVpnConnection"
       ]
     },
     "list": {
@@ -81,8 +94,32 @@
       "description": "The ID of the customer gateway at your end of the VPN connection.",
       "type": "string"
     },
+    "EnableAcceleration": {
+      "description": "Indicate whether to enable acceleration for the VPN connection.\n Default: ``false``",
+      "type": "boolean"
+    },
+    "LocalIpv4NetworkCidr": {
+      "description": "",
+      "type": "string"
+    },
+    "LocalIpv6NetworkCidr": {
+      "description": "",
+      "type": "string"
+    },
+    "OutsideIpAddressType": {
+      "description": "",
+      "type": "string"
+    },
+    "RemoteIpv4NetworkCidr": {
+      "description": "",
+      "type": "string"
+    },
+    "RemoteIpv6NetworkCidr": {
+      "description": "",
+      "type": "string"
+    },
     "StaticRoutesOnly": {
-      "description": "Indicates whether the VPN connection uses static routes only.",
+      "description": "Indicates whether the VPN connection uses static routes only. Static routes must be used for devices that don't support BGP.\n If you are creating a VPN connection for a device that does not support Border Gateway Protocol (BGP), you must specify ``true``.",
       "type": "boolean"
     },
     "Tags": {
@@ -95,7 +132,15 @@
       "uniqueItems": false
     },
     "TransitGatewayId": {
-      "description": "The ID of the transit gateway associated with the VPN connection.",
+      "description": "The ID of the transit gateway associated with the VPN connection.\n You must specify either ``TransitGatewayId`` or ``VpnGatewayId``, but not both.",
+      "type": "string"
+    },
+    "TransportTransitGatewayAttachmentId": {
+      "description": "",
+      "type": "string"
+    },
+    "TunnelInsideIpVersion": {
+      "description": "",
       "type": "string"
     },
     "Type": {
@@ -103,11 +148,11 @@
       "type": "string"
     },
     "VpnConnectionId": {
-      "description": "The provider-assigned unique ID for this managed resource",
+      "description": "",
       "type": "string"
     },
     "VpnGatewayId": {
-      "description": "The ID of the virtual private gateway at the AWS side of the VPN connection.",
+      "description": "The ID of the virtual private gateway at the AWS side of the VPN connection.\n You must specify either ``TransitGatewayId`` or ``VpnGatewayId``, but not both.",
       "type": "string"
     },
     "VpnTunnelOptionsSpecifications": {
@@ -129,6 +174,10 @@
   ],
   "tagging": {
     "cloudFormationSystemTags": false,
+    "permissions": [
+      "ec2:CreateTags",
+      "ec2:DeleteTags"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

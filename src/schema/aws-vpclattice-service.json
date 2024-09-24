@@ -62,7 +62,8 @@
     "delete": {
       "permissions": [
         "vpc-lattice:DeleteService",
-        "vpc-lattice:GetService"
+        "vpc-lattice:GetService",
+        "vpc-lattice:UntagResource"
       ]
     },
     "list": {
@@ -167,6 +168,11 @@
   ],
   "tagging": {
     "cloudFormationSystemTags": true,
+    "permissions": [
+      "vpc-lattice:UntagResource",
+      "vpc-lattice:TagResource",
+      "vpc-lattice:ListTagsForResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

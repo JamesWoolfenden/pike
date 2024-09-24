@@ -103,6 +103,12 @@
       "description": "The Amazon Resource Name (ARN) of the resolver rule.",
       "type": "string"
     },
+    "DelegationRecord": {
+      "description": "The name server domain for queries to be delegated to if a query matches the delegation record.",
+      "maxLength": 256,
+      "minLength": 1,
+      "type": "string"
+    },
     "DomainName": {
       "description": "DNS queries for this domain name are forwarded to the IP addresses that are specified in TargetIps",
       "maxLength": 256,
@@ -130,7 +136,8 @@
       "enum": [
         "FORWARD",
         "SYSTEM",
-        "RECURSIVE"
+        "RECURSIVE",
+        "DELEGATE"
       ],
       "type": "string"
     },
@@ -161,7 +168,6 @@
     "/properties/ResolverRuleId"
   ],
   "required": [
-    "DomainName",
     "RuleType"
   ],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-route53resolver.git",

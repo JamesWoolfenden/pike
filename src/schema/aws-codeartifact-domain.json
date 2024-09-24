@@ -37,7 +37,8 @@
         "codeartifact:DescribeDomain",
         "codeartifact:PutDomainPermissionsPolicy",
         "codeartifact:GetDomainPermissionsPolicy",
-        "codeartifact:TagResource"
+        "codeartifact:TagResource",
+        "codeartifact:ListTagsForResource"
       ]
     },
     "delete": {
@@ -60,11 +61,13 @@
     },
     "update": {
       "permissions": [
+        "codeartifact:DescribeDomain",
         "codeartifact:PutDomainPermissionsPolicy",
         "codeartifact:DeleteDomainPermissionsPolicy",
         "codeartifact:GetDomainPermissionsPolicy",
         "codeartifact:TagResource",
-        "codeartifact:UntagResource"
+        "codeartifact:UntagResource",
+        "codeartifact:ListTagsForResource"
       ]
     }
   },
@@ -127,6 +130,11 @@
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-codeartifact",
   "tagging": {
     "cloudFormationSystemTags": true,
+    "permissions": [
+      "codeartifact:ListTagsForResource",
+      "codeartifact:UntagResource",
+      "codeartifact:TagResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

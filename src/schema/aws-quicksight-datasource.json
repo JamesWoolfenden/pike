@@ -324,7 +324,9 @@
         "MONGO",
         "MONGO_ATLAS",
         "DOCUMENTDB",
-        "APPFLOW"
+        "APPFLOW",
+        "IMPALA",
+        "GLUE"
       ],
       "type": "string"
     },
@@ -987,6 +989,9 @@
         "quicksight:DescribeDataSourcePermissions",
         "quicksight:UpdateDataSource",
         "quicksight:UpdateDataSourcePermissions",
+        "quicksight:CreateFolderMembership",
+        "quicksight:DeleteFolderMembership",
+        "quicksight:ListFoldersForResource",
         "quicksight:TagResource",
         "quicksight:UntagResource",
         "quicksight:ListTagsForResource"

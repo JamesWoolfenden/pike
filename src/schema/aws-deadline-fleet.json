@@ -392,7 +392,8 @@
     },
     "ServiceManagedFleetOperatingSystemFamily": {
       "enum": [
-        "LINUX"
+        "LINUX",
+        "WINDOWS"
       ],
       "type": "string"
     },
@@ -571,6 +572,7 @@
   "required": [
     "Configuration",
     "DisplayName",
+    "FarmId",
     "MaxWorkerCount",
     "RoleArn"
   ],

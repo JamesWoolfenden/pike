@@ -267,10 +267,22 @@
       },
       "type": "object"
     },
+    "SpaceAppLifecycleManagement": {
+      "additionalProperties": false,
+      "properties": {
+        "IdleSettings": {
+          "$ref": "#/definitions/SpaceIdleSettings"
+        }
+      },
+      "type": "object"
+    },
     "SpaceCodeEditorAppSettings": {
       "additionalProperties": false,
       "description": "The CodeEditor app settings.",
       "properties": {
+        "AppLifecycleManagement": {
+          "$ref": "#/definitions/SpaceAppLifecycleManagement"
+        },
         "DefaultResourceSpec": {
           "$ref": "#/definitions/ResourceSpec"
         }
@@ -282,10 +294,25 @@
       "minimum": 5,
       "type": "integer"
     },
+    "SpaceIdleSettings": {
+      "additionalProperties": false,
+      "properties": {
+        "IdleTimeoutInMinutes": {
+          "description": "The space idle timeout value set in minutes",
+          "maximum": 525600,
+          "minimum": 60,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
     "SpaceJupyterLabAppSettings": {
       "additionalProperties": false,
       "description": "The JupyterServer app settings.",
       "properties": {
+        "AppLifecycleManagement": {
+          "$ref": "#/definitions/SpaceAppLifecycleManagement"
+        },
         "CodeRepositories": {
           "description": "A list of CodeRepositories available for use with JupyterLab apps.",
           "items": {

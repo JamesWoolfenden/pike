@@ -60,7 +60,7 @@
       "type": "integer"
     }
   },
-  "description": "Schema for PackageVersion Resource Type",
+  "description": "Registers a package version.",
   "handlers": {
     "create": {
       "permissions": [
@@ -110,40 +110,52 @@
   ],
   "properties": {
     "IsLatestPatch": {
+      "description": "",
       "type": "boolean"
     },
     "MarkLatest": {
+      "description": "Whether to mark the new version as the latest version.",
       "type": "boolean"
     },
     "OwnerAccount": {
-      "$ref": "#/definitions/PackageOwnerAccount"
+      "$ref": "#/definitions/PackageOwnerAccount",
+      "description": "An owner account."
     },
     "PackageArn": {
-      "$ref": "#/definitions/NodePackageArn"
+      "$ref": "#/definitions/NodePackageArn",
+      "description": ""
     },
     "PackageId": {
-      "$ref": "#/definitions/NodePackageId"
+      "$ref": "#/definitions/NodePackageId",
+      "description": "A package ID."
     },
     "PackageName": {
-      "$ref": "#/definitions/NodePackageName"
+      "$ref": "#/definitions/NodePackageName",
+      "description": ""
     },
     "PackageVersion": {
-      "$ref": "#/definitions/NodePackageVersion"
+      "$ref": "#/definitions/NodePackageVersion",
+      "description": "A package version."
     },
     "PatchVersion": {
-      "$ref": "#/definitions/NodePackagePatchVersion"
+      "$ref": "#/definitions/NodePackagePatchVersion",
+      "description": "A patch version."
     },
     "RegisteredTime": {
-      "$ref": "#/definitions/TimeStamp"
+      "$ref": "#/definitions/TimeStamp",
+      "description": ""
     },
     "Status": {
-      "$ref": "#/definitions/PackageVersionStatus"
+      "$ref": "#/definitions/PackageVersionStatus",
+      "description": ""
     },
     "StatusDescription": {
-      "$ref": "#/definitions/PackageVersionStatusDescription"
+      "$ref": "#/definitions/PackageVersionStatusDescription",
+      "description": ""
     },
     "UpdatedLatestPatchVersion": {
-      "$ref": "#/definitions/NodePackagePatchVersion"
+      "$ref": "#/definitions/NodePackagePatchVersion",
+      "description": "If the version was marked latest, the new version to maker as latest."
     }
   },
   "readOnlyProperties": [

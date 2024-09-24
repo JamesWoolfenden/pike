@@ -20,6 +20,16 @@
       ]
     },
     "list": {
+      "handlerSchema": {
+        "properties": {
+          "TransitGatewayMulticastDomainId": {
+            "$ref": "resource-schema.json#/properties/TransitGatewayMulticastDomainId"
+          }
+        },
+        "required": [
+          "TransitGatewayMulticastDomainId"
+        ]
+      },
       "permissions": [
         "ec2:SearchTransitGatewayMulticastGroups"
       ]
@@ -64,10 +74,6 @@
       "description": "The type of resource, for example a VPC attachment.",
       "type": "string"
     },
-    "SourceType": {
-      "description": "The source type.",
-      "type": "string"
-    },
     "SubnetId": {
       "description": "The ID of the subnet.",
       "type": "string"
@@ -88,7 +94,6 @@
     "/properties/GroupSource",
     "/properties/GroupMember",
     "/properties/MemberType",
-    "/properties/SourceType",
     "/properties/TransitGatewayAttachmentId"
   ],
   "required": [
@@ -97,5 +102,11 @@
     "TransitGatewayMulticastDomainId"
   ],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-transitgatewaymulticastdomain/aws-ec2-transitgatewaymulticastgroupsource",
+  "tagging": {
+    "cloudFormationSystemTags": false,
+    "tagOnCreate": false,
+    "tagUpdatable": false,
+    "taggable": false
+  },
   "typeName": "AWS::EC2::TransitGatewayMulticastGroupMember"
 }

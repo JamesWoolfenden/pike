@@ -126,6 +126,26 @@
           },
           "type": "array"
         },
+        "VpcAttachmentOptions": {
+          "additionalProperties": false,
+          "description": "Options for attaching a VPC to the pipeline.",
+          "properties": {
+            "AttachToVpc": {
+              "description": "Whether the pipeline should be attached to the provided VPC",
+              "type": "boolean"
+            },
+            "CidrBlock": {
+              "description": "The CIDR block to be reserved for OpenSearch Ingestion to create elastic network interfaces (ENIs).",
+              "pattern": "^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)/(3[0-2]|[12]?[0-9])$",
+              "type": "string"
+            }
+          },
+          "required": [
+            "AttachToVpc",
+            "CidrBlock"
+          ],
+          "type": "object"
+        },
         "VpcEndpointManagement": {
           "description": "Defines whether you or Amazon OpenSearch Ingestion service create and manage the VPC endpoint configured for the pipeline.",
           "enum": [

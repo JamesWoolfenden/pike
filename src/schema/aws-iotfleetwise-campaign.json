@@ -87,6 +87,24 @@
       ],
       "type": "object"
     },
+    "ConditionBasedSignalFetchConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "ConditionExpression": {
+          "maxLength": 2048,
+          "minLength": 1,
+          "type": "string"
+        },
+        "TriggerMode": {
+          "$ref": "#/definitions/TriggerMode"
+        }
+      },
+      "required": [
+        "ConditionExpression",
+        "TriggerMode"
+      ],
+      "type": "object"
+    },
     "DataDestinationConfig": {
       "oneOf": [
         {
@@ -114,6 +132,19 @@
           ],
           "title": "TimestreamConfig",
           "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "MqttTopicConfig": {
+              "$ref": "#/definitions/MqttTopicConfig"
+            }
+          },
+          "required": [
+            "MqttTopicConfig"
+          ],
+          "title": "MqttTopicConfig",
+          "type": "object"
         }
       ]
     },
@@ -131,6 +162,28 @@
         "SEND_ACTIVE_DTCS"
       ],
       "type": "string"
+    },
+    "MqttTopicConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "ExecutionRoleArn": {
+          "maxLength": 2048,
+          "minLength": 20,
+          "pattern": "^arn:(aws[a-zA-Z0-9-]*):iam::(\\d{12})?:(role((\\u002F)|(\\u002F[\\u0021-\\u007F]+\\u002F))[\\w+=,.@-]+)$",
+          "type": "string"
+        },
+        "MqttTopicArn": {
+          "maxLength": 2048,
+          "minLength": 20,
+          "pattern": "^arn:.*",
+          "type": "string"
+        }
+      },
+      "required": [
+        "ExecutionRoleArn",
+        "MqttTopicArn"
+      ],
+      "type": "object"
     },
     "S3Config": {
       "additionalProperties": false,
@@ -156,6 +209,71 @@
       },
       "required": [
         "BucketArn"
+      ],
+      "type": "object"
+    },
+    "SignalFetchConfig": {
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "TimeBased": {
+              "$ref": "#/definitions/TimeBasedSignalFetchConfig"
+            }
+          },
+          "required": [
+            "TimeBased"
+          ],
+          "title": "TimeBased",
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "ConditionBased": {
+              "$ref": "#/definitions/ConditionBasedSignalFetchConfig"
+            }
+          },
+          "required": [
+            "ConditionBased"
+          ],
+          "title": "ConditionBased",
+          "type": "object"
+        }
+      ]
+    },
+    "SignalFetchInformation": {
+      "additionalProperties": false,
+      "properties": {
+        "Actions": {
+          "items": {
+            "maxLength": 2048,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 5,
+          "minItems": 1,
+          "type": "array"
+        },
+        "ConditionLanguageVersion": {
+          "maximum": 1,
+          "minimum": 1,
+          "type": "number"
+        },
+        "FullyQualifiedName": {
+          "maxLength": 150,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9_.]+$",
+          "type": "string"
+        },
+        "SignalFetchConfig": {
+          "$ref": "#/definitions/SignalFetchConfig"
+        }
+      },
+      "required": [
+        "Actions",
+        "FullyQualifiedName",
+        "SignalFetchConfig"
       ],
       "type": "object"
     },
@@ -223,7 +341,7 @@
       "additionalProperties": false,
       "properties": {
         "PeriodMs": {
-          "maximum": 60000,
+          "maximum": 86400000,
           "minimum": 10000,
           "type": "number"
         }
@@ -232,6 +350,45 @@
         "PeriodMs"
       ],
       "type": "object"
+    },
+    "TimeBasedSignalFetchConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "ExecutionFrequencyMs": {
+          "minimum": 1,
+          "type": "number"
+        }
+      },
+      "required": [
+        "ExecutionFrequencyMs"
+      ],
+      "type": "object"
+    },
+    "TimePeriod": {
+      "additionalProperties": false,
+      "properties": {
+        "Unit": {
+          "$ref": "#/definitions/TimeUnit"
+        },
+        "Value": {
+          "minimum": 1,
+          "type": "number"
+        }
+      },
+      "required": [
+        "Unit",
+        "Value"
+      ],
+      "type": "object"
+    },
+    "TimeUnit": {
+      "enum": [
+        "MILLISECOND",
+        "SECOND",
+        "MINUTE",
+        "HOUR"
+      ],
+      "type": "string"
     },
     "TimestreamConfig": {
       "additionalProperties": false,
@@ -401,6 +558,15 @@
       "minItems": 0,
       "type": "array"
     },
+    "SignalsToFetch": {
+      "insertionOrder": false,
+      "items": {
+        "$ref": "#/definitions/SignalFetchInformation"
+      },
+      "maxItems": 10,
+      "minItems": 0,
+      "type": "array"
+    },
     "SpoolingMode": {
       "$ref": "#/definitions/SpoolingMode"
     },
@@ -434,13 +600,17 @@
   ],
   "required": [
     "Name",
-    "Action",
     "CollectionScheme",
     "SignalCatalogArn",
     "TargetArn"
   ],
   "tagging": {
     "cloudFormationSystemTags": true,
+    "permissions": [
+      "iotfleetwise:UntagResource",
+      "iotfleetwise:TagResource",
+      "iotfleetwise:ListTagsForResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

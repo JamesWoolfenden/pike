@@ -120,7 +120,6 @@
       "description": "The property describes a network type for the instance profile.",
       "enum": [
         "IPV4",
-        "IPV6",
         "DUAL"
       ],
       "type": "string"
@@ -161,6 +160,10 @@
   ],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-csf.git",
   "tagging": {
+    "cloudFormationSystemTags": false,
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": true,
     "taggable": true
   },
   "typeName": "AWS::DMS::InstanceProfile",

@@ -403,6 +403,7 @@
       "fis:ListTagsForResource"
     ],
     "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
     "tagUpdatable": true,
     "taggable": true
   },

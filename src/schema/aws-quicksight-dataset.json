@@ -23,7 +23,7 @@
         },
         "Expression": {
           "description": "<p>An expression that defines the calculated column.</p>",
-          "maxLength": 4096,
+          "maxLength": 250000,
           "minLength": 1,
           "type": "string"
         }
@@ -219,9 +219,6 @@
           "$ref": "#/definitions/RefreshConfiguration"
         }
       },
-      "required": [
-        "RefreshConfiguration"
-      ],
       "type": "object"
     },
     "DataSetUsageConfiguration": {
@@ -683,8 +680,7 @@
         }
       },
       "required": [
-        "Alias",
-        "Source"
+        "Alias"
       ],
       "type": "object"
     },
@@ -1414,6 +1410,9 @@
         "quicksight:DescribeIngestion",
         "quicksight:ListIngestions",
         "quicksight:CancelIngestion",
+        "quicksight:CreateFolderMembership",
+        "quicksight:DeleteFolderMembership",
+        "quicksight:ListFoldersForResource",
         "quicksight:TagResource",
         "quicksight:UntagResource",
         "quicksight:ListTagsForResource",
@@ -1485,6 +1484,15 @@
     },
     "FieldFolders": {
       "$ref": "#/definitions/FieldFolderMap"
+    },
+    "FolderArns": {
+      "description": "<p>When you create the dataset, Amazon QuickSight adds the dataset to these folders.</p>",
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 10,
+      "minItems": 0,
+      "type": "array"
     },
     "ImportMode": {
       "$ref": "#/definitions/DataSetImportMode"
@@ -1558,6 +1566,7 @@
   "typeName": "AWS::QuickSight::DataSet",
   "writeOnlyProperties": [
     "/properties/FieldFolders",
-    "/properties/IngestionWaitPolicy"
+    "/properties/IngestionWaitPolicy",
+    "/properties/FolderArns"
   ]
 }

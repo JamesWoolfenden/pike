@@ -1,6 +1,41 @@
 {
   "additionalProperties": false,
   "definitions": {
+    "AutoParticipantRecordingConfiguration": {
+      "additionalProperties": false,
+      "description": "Configuration object for individual participant recording, to attach to the new stage.",
+      "properties": {
+        "MediaTypes": {
+          "default": [
+            "AUDIO_VIDEO"
+          ],
+          "description": "Types of media to be recorded. Default: AUDIO_VIDEO.",
+          "insertionOrder": false,
+          "items": {
+            "enum": [
+              "AUDIO_VIDEO",
+              "AUDIO_ONLY"
+            ],
+            "type": "string"
+          },
+          "maxItems": 1,
+          "minItems": 0,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "StorageConfigurationArn": {
+          "description": "ARN of the StorageConfiguration resource to use for individual participant recording.",
+          "maxLength": 128,
+          "minLength": 0,
+          "pattern": "^$|^arn:aws:ivs:[a-z0-9-]+:[0-9]+:storage-configuration/[a-zA-Z0-9-]+$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "StorageConfigurationArn"
+      ],
+      "type": "object"
+    },
     "Tag": {
       "additionalProperties": false,
       "properties": {
@@ -35,7 +70,7 @@
     "delete": {
       "permissions": [
         "ivs:DeleteStage",
-        "ivs:UnTagResource"
+        "ivs:UntagResource"
       ]
     },
     "list": {
@@ -55,7 +90,7 @@
         "ivs:GetStage",
         "ivs:UpdateStage",
         "ivs:TagResource",
-        "ivs:UnTagResource",
+        "ivs:UntagResource",
         "ivs:ListTagsForResource"
       ]
     }
@@ -77,6 +112,9 @@
       "minLength": 0,
       "pattern": "^arn:aws[-a-z]*:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+$",
       "type": "string"
+    },
+    "AutoParticipantRecordingConfiguration": {
+      "$ref": "#/definitions/AutoParticipantRecordingConfiguration"
     },
     "Name": {
       "description": "Stage name",
@@ -102,6 +140,11 @@
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-rpdk.git",
   "tagging": {
     "cloudFormationSystemTags": false,
+    "permissions": [
+      "ivs:TagResource",
+      "ivs:UntagResource",
+      "ivs:ListTagsForResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

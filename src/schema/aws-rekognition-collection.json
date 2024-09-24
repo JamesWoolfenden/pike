@@ -104,6 +104,17 @@
     "CollectionId"
   ],
   "sourceUrl": "https://docs.aws.amazon.com/rekognition/latest/dg/collections.html",
-  "taggable": true,
+  "tagging": {
+    "cloudFormationSystemTags": true,
+    "permissions": [
+      "rekognition:ListTagsForResource",
+      "rekognition:TagResource",
+      "rekognition:UntagResource"
+    ],
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": true,
+    "taggable": true
+  },
   "typeName": "AWS::Rekognition::Collection"
 }

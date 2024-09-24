@@ -1,0 +1,401 @@
+{
+  "additionalIdentifiers": [
+    [
+      "/properties/ClusterName"
+    ]
+  ],
+  "additionalProperties": false,
+  "createOnlyProperties": [
+    "/properties/ClusterName",
+    "/properties/VpcConfig",
+    "/properties/Orchestrator",
+    "/properties/InstanceGroups/*/ExecutionRole",
+    "/properties/InstanceGroups/*/InstanceGroupName",
+    "/properties/InstanceGroups/*/InstanceType",
+    "/properties/InstanceGroups/*/ThreadsPerCore"
+  ],
+  "definitions": {
+    "ClusterEbsVolumeConfig": {
+      "additionalProperties": false,
+      "description": "Defines the configuration for attaching additional Amazon Elastic Block Store (EBS) volumes to the instances in the SageMaker HyperPod cluster instance group. The additional EBS volume is attached to each instance within the SageMaker HyperPod cluster instance group and mounted to /opt/sagemaker.",
+      "properties": {
+        "VolumeSizeInGB": {
+          "description": "The size in gigabytes (GB) of the additional EBS volume to be attached to the instances in the SageMaker HyperPod cluster instance group. The additional EBS volume is attached to each instance within the SageMaker HyperPod cluster instance group and mounted to /opt/sagemaker.",
+          "maximum": 16384,
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "ClusterInstanceGroup": {
+      "additionalProperties": false,
+      "description": "Details of an instance group in a SageMaker HyperPod cluster.",
+      "properties": {
+        "CurrentCount": {
+          "description": "The number of instances that are currently in the instance group of a SageMaker HyperPod cluster.",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "ExecutionRole": {
+          "$ref": "#/definitions/ExecutionRole"
+        },
+        "InstanceCount": {
+          "description": "The number of instances you specified to add to the instance group of a SageMaker HyperPod cluster.",
+          "minimum": 1,
+          "type": "integer"
+        },
+        "InstanceGroupName": {
+          "$ref": "#/definitions/InstanceGroupName"
+        },
+        "InstanceStorageConfigs": {
+          "$ref": "#/definitions/ClusterInstanceStorageConfigs"
+        },
+        "InstanceType": {
+          "$ref": "#/definitions/InstanceType"
+        },
+        "LifeCycleConfig": {
+          "$ref": "#/definitions/ClusterLifeCycleConfig"
+        },
+        "OnStartDeepHealthChecks": {
+          "$ref": "#/definitions/OnStartDeepHealthChecks"
+        },
+        "ThreadsPerCore": {
+          "description": "The number you specified to TreadsPerCore in CreateCluster for enabling or disabling multithreading. For instance types that support multithreading, you can specify 1 for disabling multithreading and 2 for enabling multithreading.",
+          "maximum": 2,
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "ExecutionRole",
+        "InstanceCount",
+        "InstanceGroupName",
+        "InstanceType",
+        "LifeCycleConfig"
+      ],
+      "type": "object"
+    },
+    "ClusterInstanceGroupsList": {
+      "description": "The instance groups of the SageMaker HyperPod cluster.",
+      "insertionOrder": false,
+      "items": {
+        "$ref": "#/definitions/ClusterInstanceGroup"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "ClusterInstanceStorageConfig": {
+      "description": "Defines the configuration for attaching additional storage to the instances in the SageMaker HyperPod cluster instance group.",
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "EbsVolumeConfig": {
+              "$ref": "#/definitions/ClusterEbsVolumeConfig"
+            }
+          },
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ClusterInstanceStorageConfigs": {
+      "description": "The instance storage configuration for the instance group.",
+      "insertionOrder": false,
+      "items": {
+        "$ref": "#/definitions/ClusterInstanceStorageConfig"
+      },
+      "maxItems": 1,
+      "type": "array"
+    },
+    "ClusterLifeCycleConfig": {
+      "additionalProperties": false,
+      "description": "The lifecycle configuration for a SageMaker HyperPod cluster.",
+      "properties": {
+        "OnCreate": {
+          "description": "The file name of the entrypoint script of lifecycle scripts under SourceS3Uri. This entrypoint script runs during cluster creation.",
+          "maxLength": 128,
+          "minLength": 1,
+          "pattern": "^[\\S\\s]+$",
+          "type": "string"
+        },
+        "SourceS3Uri": {
+          "description": "An Amazon S3 bucket path where your lifecycle scripts are stored.",
+          "maxLength": 1024,
+          "pattern": "^(https|s3)://([^/]+)/?(.*)$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "OnCreate",
+        "SourceS3Uri"
+      ],
+      "type": "object"
+    },
+    "ClusterOrchestratorEksConfig": {
+      "additionalProperties": false,
+      "description": "Specifies parameter(s) related to EKS as orchestrator, e.g. the EKS cluster nodes will attach to,",
+      "properties": {
+        "ClusterArn": {
+          "description": "The ARN of the EKS cluster, such as arn:aws:eks:us-west-2:123456789012:cluster/my-eks-cluster",
+          "type": "string"
+        }
+      },
+      "required": [
+        "ClusterArn"
+      ],
+      "type": "object"
+    },
+    "DeepHealthCheckType": {
+      "description": "The type of deep health check(s) to be performed on the instances in the SageMaker HyperPod cluster instance group.",
+      "enum": [
+        "InstanceStress",
+        "InstanceConnectivity"
+      ],
+      "type": "string"
+    },
+    "ExecutionRole": {
+      "description": "The execution role for the instance group to assume.",
+      "maxLength": 2048,
+      "minLength": 20,
+      "pattern": "^arn:aws[a-z\\-]*:iam::\\d{12}:role/?[a-zA-Z_0-9+=,.@\\-_/]+$",
+      "type": "string"
+    },
+    "InstanceGroupName": {
+      "description": "The name of the instance group of a SageMaker HyperPod cluster.",
+      "maxLength": 63,
+      "minLength": 1,
+      "pattern": "^[a-zA-Z0-9](-*[a-zA-Z0-9])*$",
+      "type": "string"
+    },
+    "InstanceType": {
+      "description": "The instance type of the instance group of a SageMaker HyperPod cluster.",
+      "type": "string"
+    },
+    "OnStartDeepHealthChecks": {
+      "description": "Nodes will undergo advanced stress test to detect and replace faulty instances, based on the type of deep health check(s) passed in.",
+      "insertionOrder": false,
+      "items": {
+        "$ref": "#/definitions/DeepHealthCheckType"
+      },
+      "type": "array"
+    },
+    "Orchestrator": {
+      "additionalProperties": false,
+      "description": "Specifies parameter(s) specific to the orchestrator, e.g. specify the EKS cluster.",
+      "properties": {
+        "Eks": {
+          "$ref": "#/definitions/ClusterOrchestratorEksConfig"
+        }
+      },
+      "required": [
+        "Eks"
+      ],
+      "type": "object"
+    },
+    "Tag": {
+      "additionalProperties": false,
+      "description": "A key-value pair to associate with a resource.",
+      "properties": {
+        "Key": {
+          "description": "The key name of the tag. You can specify a value that is 1 to 128 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
+          "maxLength": 128,
+          "minLength": 1,
+          "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
+          "type": "string"
+        },
+        "Value": {
+          "description": "The value for the tag. You can specify a value that is 0 to 256 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
+          "maxLength": 256,
+          "minLength": 0,
+          "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "Key",
+        "Value"
+      ],
+      "type": "object"
+    },
+    "VpcConfig": {
+      "additionalProperties": false,
+      "description": "Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC.",
+      "properties": {
+        "SecurityGroupIds": {
+          "description": "The VPC security group IDs, in the form sg-xxxxxxxx. Specify the security groups for the VPC that is specified in the Subnets field.",
+          "insertionOrder": false,
+          "items": {
+            "maxLength": 32,
+            "pattern": "[-0-9a-zA-Z]+",
+            "type": "string"
+          },
+          "maxItems": 5,
+          "minItems": 1,
+          "type": "array"
+        },
+        "Subnets": {
+          "description": "The ID of the subnets in the VPC to which you want to connect your training job or model.",
+          "insertionOrder": false,
+          "items": {
+            "maxLength": 32,
+            "pattern": "[-0-9a-zA-Z]+",
+            "type": "string"
+          },
+          "maxItems": 16,
+          "minItems": 1,
+          "type": "array"
+        }
+      },
+      "required": [
+        "SecurityGroupIds",
+        "Subnets"
+      ],
+      "type": "object"
+    }
+  },
+  "description": "Resource Type definition for AWS::SageMaker::Cluster",
+  "handlers": {
+    "create": {
+      "permissions": [
+        "sagemaker:CreateCluster",
+        "sagemaker:DescribeCluster",
+        "sagemaker:AddTags",
+        "sagemaker:ListTags",
+        "eks:DescribeAccessEntry",
+        "eks:DescribeCluster",
+        "eks:CreateAccessEntry",
+        "eks:DeleteAccessEntry",
+        "eks:AssociateAccessPolicy",
+        "iam:CreateServiceLinkedRole",
+        "iam:PassRole"
+      ],
+      "timeoutInMinutes": 720
+    },
+    "delete": {
+      "permissions": [
+        "sagemaker:DeleteCluster",
+        "sagemaker:DescribeCluster",
+        "eks:DescribeAccessEntry",
+        "eks:DeleteAccessEntry"
+      ],
+      "timeoutInMinutes": 720
+    },
+    "list": {
+      "permissions": [
+        "sagemaker:ListClusters"
+      ]
+    },
+    "read": {
+      "permissions": [
+        "sagemaker:DescribeCluster",
+        "sagemaker:ListTags"
+      ]
+    },
+    "update": {
+      "permissions": [
+        "sagemaker:UpdateCluster",
+        "sagemaker:DescribeCluster",
+        "sagemaker:ListTags",
+        "sagemaker:AddTags",
+        "sagemaker:DeleteTags",
+        "eks:DescribeAccessEntry",
+        "eks:DescribeCluster",
+        "eks:CreateAccessEntry",
+        "eks:DeleteAccessEntry",
+        "iam:PassRole"
+      ],
+      "timeoutInMinutes": 720
+    }
+  },
+  "primaryIdentifier": [
+    "/properties/ClusterArn"
+  ],
+  "properties": {
+    "ClusterArn": {
+      "description": "The Amazon Resource Name (ARN) of the HyperPod Cluster.",
+      "maxLength": 256,
+      "pattern": "^arn:aws[a-z\\-]*:sagemaker:[a-z0-9\\-]*:[0-9]{12}:cluster/[a-z0-9]{12}$",
+      "type": "string"
+    },
+    "ClusterName": {
+      "description": "The name of the HyperPod Cluster.",
+      "maxLength": 63,
+      "minLength": 1,
+      "pattern": "^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$",
+      "type": "string"
+    },
+    "ClusterStatus": {
+      "description": "The status of the HyperPod Cluster.",
+      "enum": [
+        "Creating",
+        "Deleting",
+        "Failed",
+        "InService",
+        "RollingBack",
+        "SystemUpdating",
+        "Updating"
+      ],
+      "type": "string"
+    },
+    "CreationTime": {
+      "description": "The time at which the HyperPod cluster was created.",
+      "type": "string"
+    },
+    "FailureMessage": {
+      "description": "The failure message of the HyperPod Cluster.",
+      "type": "string"
+    },
+    "InstanceGroups": {
+      "$ref": "#/definitions/ClusterInstanceGroupsList"
+    },
+    "NodeRecovery": {
+      "description": "If node auto-recovery is set to true, faulty nodes will be replaced or rebooted when a failure is detected. If set to false, nodes will be labelled when a fault is detected.",
+      "enum": [
+        "Automatic",
+        "None"
+      ],
+      "type": "string"
+    },
+    "Orchestrator": {
+      "$ref": "#/definitions/Orchestrator"
+    },
+    "Tags": {
+      "description": "Custom tags for managing the SageMaker HyperPod cluster as an AWS resource. You can add tags to your cluster in the same way you add them in other AWS services that support tagging.",
+      "insertionOrder": false,
+      "items": {
+        "$ref": "#/definitions/Tag"
+      },
+      "maxItems": 50,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "VpcConfig": {
+      "$ref": "#/definitions/VpcConfig"
+    }
+  },
+  "readOnlyProperties": [
+    "/properties/ClusterArn",
+    "/properties/CreationTime",
+    "/properties/ClusterStatus",
+    "/properties/FailureMessage",
+    "/properties/InstanceGroups/*/CurrentCount"
+  ],
+  "required": [
+    "InstanceGroups"
+  ],
+  "tagging": {
+    "cloudFormationSystemTags": false,
+    "permissions": [
+      "sagemaker:AddTags",
+      "sagemaker:ListTags",
+      "sagemaker:DeleteTags"
+    ],
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": true,
+    "taggable": true
+  },
+  "typeName": "AWS::SageMaker::Cluster"
+}

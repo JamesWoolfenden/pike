@@ -4,7 +4,8 @@
     "/properties/Credentials",
     "/properties/Instances",
     "/properties/SapInstanceNumber",
-    "/properties/Sid"
+    "/properties/Sid",
+    "/properties/DatabaseArn"
   ],
   "definitions": {
     "Credential": {
@@ -62,7 +63,8 @@
         "ssm-sap:RegisterApplication",
         "ssm-sap:GetApplication",
         "ssm-sap:TagResource",
-        "ssm-sap:ListTagsForResource"
+        "ssm-sap:ListTagsForResource",
+        "iam:CreateServiceLinkedRole"
       ]
     },
     "delete": {
@@ -96,17 +98,18 @@
   ],
   "properties": {
     "ApplicationId": {
-      "pattern": "[\\w\\d]{1,50}",
+      "pattern": "[\\w\\d\\.-]{1,60}",
       "type": "string"
     },
     "ApplicationType": {
       "enum": [
-        "HANA"
+        "HANA",
+        "SAP_ABAP"
       ],
       "type": "string"
     },
     "Arn": {
-      "description": "The ARN of the Helix application",
+      "description": "The ARN of the SSM-SAP application",
       "pattern": "^arn:(.+:){2,4}.+$|^arn:(.+:){1,3}.+\\/.+$",
       "type": "string"
     },
@@ -117,6 +120,11 @@
       },
       "minItems": 1,
       "type": "array"
+    },
+    "DatabaseArn": {
+      "description": "The ARN of the SAP HANA database",
+      "pattern": "^arn:(.+:){2,4}.+$|^arn:(.+:){1,3}.+\\/.+$",
+      "type": "string"
     },
     "Instances": {
       "insertionOrder": true,
@@ -152,6 +160,11 @@
   ],
   "tagging": {
     "cloudFormationSystemTags": true,
+    "permissions": [
+      "ssm-sap:UntagResource",
+      "ssm-sap:TagResource",
+      "ssm-sap:ListTagsForResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,
@@ -162,6 +175,7 @@
     "/properties/Credentials",
     "/properties/Instances",
     "/properties/SapInstanceNumber",
-    "/properties/Sid"
+    "/properties/Sid",
+    "/properties/DatabaseArn"
   ]
 }

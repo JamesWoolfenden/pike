@@ -28,6 +28,15 @@
       },
       "type": "object"
     },
+    "AdvancedSecurityAdditionalFlows": {
+      "additionalProperties": false,
+      "properties": {
+        "CustomAuthMode": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "CustomEmailSender": {
       "additionalProperties": false,
       "properties": {
@@ -166,6 +175,9 @@
         "MinimumLength": {
           "type": "integer"
         },
+        "PasswordHistorySize": {
+          "type": "integer"
+        },
         "RequireLowercase": {
           "type": "boolean"
         },
@@ -289,6 +301,9 @@
     "UserPoolAddOns": {
       "additionalProperties": false,
       "properties": {
+        "AdvancedSecurityAdditionalFlows": {
+          "$ref": "#/definitions/AdvancedSecurityAdditionalFlows"
+        },
         "AdvancedSecurityMode": {
           "type": "string"
         }
@@ -329,7 +344,7 @@
       "type": "object"
     }
   },
-  "description": "Resource Type definition for AWS::Cognito::UserPool",
+  "description": "Definition of AWS::Cognito::UserPool Resource Type",
   "handlers": {
     "create": {
       "permissions": [
@@ -355,7 +370,8 @@
     },
     "read": {
       "permissions": [
-        "cognito-idp:DescribeUserPool"
+        "cognito-idp:DescribeUserPool",
+        "cognito-idp:GetUserPoolMfaConfig"
       ]
     },
     "update": {
@@ -367,6 +383,7 @@
         "cognito-idp:SetUserPoolMfaConfig",
         "cognito-idp:AddCustomAttributes",
         "cognito-idp:DescribeUserPool",
+        "cognito-idp:GetUserPoolMfaConfig",
         "iam:PassRole"
       ],
       "timeoutInMinutes": 2
@@ -504,6 +521,11 @@
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-rpdk.git",
   "tagging": {
     "cloudFormationSystemTags": false,
+    "permissions": [
+      "cognito-idp:ListTagsForResource",
+      "cognito-idp:UntagResource",
+      "cognito-idp:TagResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/UserPoolTags",
     "tagUpdatable": true,

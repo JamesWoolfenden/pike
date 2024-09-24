@@ -459,6 +459,24 @@
       },
       "type": "object"
     },
+    "SourceMonitoringConfig": {
+      "additionalProperties": false,
+      "description": "The settings for source monitoring.",
+      "properties": {
+        "ThumbnailState": {
+          "description": "The state of thumbnail monitoring.",
+          "enum": [
+            "ENABLED",
+            "DISABLED"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "ThumbnailState"
+      ],
+      "type": "object"
+    },
     "VpcInterface": {
       "additionalProperties": false,
       "description": "The details of a VPC interface.",
@@ -577,7 +595,7 @@
     },
     "Maintenance": {
       "$ref": "#/definitions/Maintenance",
-      "description": "The maintenance settings you want to use for the flow. "
+      "description": "The maintenance settings you want to use for the flow."
     },
     "MediaStreams": {
       "description": "The media streams associated with the flow. You can associate any of these media streams with sources and outputs on the flow.",
@@ -597,6 +615,10 @@
     "SourceFailoverConfig": {
       "$ref": "#/definitions/FailoverConfig",
       "description": "The source failover config of the flow."
+    },
+    "SourceMonitoringConfig": {
+      "$ref": "#/definitions/SourceMonitoringConfig",
+      "description": "The source monitoring config of the flow."
     },
     "VpcInterfaces": {
       "description": "The VPC interfaces that you added to this flow.",

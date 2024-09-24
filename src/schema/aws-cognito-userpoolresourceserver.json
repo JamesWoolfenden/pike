@@ -26,8 +26,7 @@
   "handlers": {
     "create": {
       "permissions": [
-        "cognito-idp:CreateResourceServer",
-        "iam:PassRole"
+        "cognito-idp:CreateResourceServer"
       ],
       "timeoutInMinutes": 2
     },
@@ -59,8 +58,7 @@
     },
     "update": {
       "permissions": [
-        "cognito-idp:UpdateResourceServer",
-        "iam:PassRole"
+        "cognito-idp:UpdateResourceServer"
       ],
       "timeoutInMinutes": 2
     }
