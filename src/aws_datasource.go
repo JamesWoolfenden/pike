@@ -585,10 +585,14 @@ func AwsDataLookup(find string) interface{} { //nolint:maintidx
 		"aws_bedrockagent_agent_versions":                           dataAwsBedrockAgentVersions,
 		"aws_glue_registry":                                         dataAwsGlueRegistry,
 		"aws_organizations_organizational_unit_descendant_organizational_units": dataAwsOrganizationsOrganizationalUnitDescendantOrganizationalUnits,
-		"aws_quicksight_analysis":      dataAwsQuicksightAnalysis,
-		"aws_route53_zones":            dataAwsRoute53Zones,
-		"aws_shield_protection":        dataAwsShieldProtection,
-		"aws_ssoadmin_permission_sets": dataAwsSsoadminPermissionSets,
+		"aws_quicksight_analysis":                      dataAwsQuicksightAnalysis,
+		"aws_route53_zones":                            dataAwsRoute53Zones,
+		"aws_shield_protection":                        dataAwsShieldProtection,
+		"aws_ssoadmin_permission_sets":                 dataAwsSsoadminPermissionSets,
+		"aws_codebuild_fleet":                          dataAwsCodebuildFleet,
+		"aws_elasticache_reserved_cache_node_offering": dataAwsElasticacheReservedCacheNodeOffering,
+		"aws_synthetics_runtime_version":               dataAwsSyntheticsRuntimeVersion,
+		"aws_synthetics_runtime_versions":              dataAwsSytheticsRuntimeVersions,
 	}
 
 	return TFLookup[find]

@@ -1500,3 +1500,15 @@ var dataAwsShieldProtection []byte
 
 //go:embed mapping/aws/data/sso/aws_ssoadmin_permission_sets.json
 var dataAwsSsoadminPermissionSets []byte
+
+//go:embed mapping/aws/data/codebuild/aws_codebuild_fleet.json
+var dataAwsCodebuildFleet []byte
+
+//go:embed mapping/aws/data/elasticache/aws_elasticache_reserved_cache_node_offering.json
+var dataAwsElasticacheReservedCacheNodeOffering []byte
+
+//go:embed mapping/aws/data/synthetics/aws_synthetics_runtime_version.json
+var dataAwsSyntheticsRuntimeVersion []byte
+
+//go:embed mapping/aws/data/synthetics/aws_synthetics_runtime_versions.json
+var dataAwsSytheticsRuntimeVersions []byte

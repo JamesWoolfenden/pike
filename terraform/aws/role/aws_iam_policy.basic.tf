@@ -8,23 +8,17 @@ resource "aws_iam_policy" "basic" {
         "Effect" : "Allow",
         "Action" : [
 
+          //aws_codebuild_fleet
+          "codebuild:BatchGetFleets",
 
-          //aws_bedrockagent_agent_versions
+          //aws_elasticache_reserved_cache_node_offering
+          "elasticache:DescribeReservedCacheNodesOfferings",
 
-          //aws_shield_protection
+          //aws_synthetics_runtime_version
+          "synthetics:DescribeRuntimeVersions",
 
-
-          //aws_ssoadmin_permission_sets
-          "sso:ListInstances",
-
-          //aws_route53_zones
-          "route53:ListHostedZones",
-
-          //aws_quicksight_analysis
-          "quicksight:DescribeAnalysis",
-
-          //aws_glue_registry
-          "glue:GetRegistry"
+          //aws_synthetics_runtime_versions
+          "synthetics:DescribeRuntimeVersions"
         ],
         "Resource" : "*",
       }
