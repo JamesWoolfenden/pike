@@ -1108,6 +1108,15 @@ func AwsLookup(name string) interface{} {
 		"aws_m2_environment":                                               awsM2Environment,
 		"aws_memorydb_user":                                                awsMemorydbUser,
 		"aws_sagemaker_human_task_ui":                                      awsSagemakerHumanTaskUi,
+		"aws_cloudfrontkeyvaluestore_key":                                  awsCloudfrontkeyvaluestoreKey,
+		"aws_ecs_tag":                                                      awsEcsTag,
+		"aws_lb_trust_store":                                               awsLbTrustStore,
+		"aws_lb_trust_store_revocation":                                    awsLbTrustStoreRevocation,
+		"aws_quicksight_folder":                                            awsQuicksightFolder,
+		"aws_quicksight_group":                                             awsQuicksightGroup,
+		"aws_quicksight_group_membership":                                  awsQuicksightGroupMembership,
+		"aws_quicksight_namespace":                                         awsQuicksightNamespace,
+		"aws_quicksight_user":                                              awsQuicksightUser,
 	}
 
 	return TFLookup[name]

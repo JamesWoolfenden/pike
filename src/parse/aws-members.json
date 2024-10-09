@@ -438,7 +438,6 @@
     "aws_route53_traffic_policy_document",
     "aws_route53_zone",
     "aws_route53_zones",
-    "aws_route53profiles_profiles",
     "aws_route_table",
     "aws_route_tables",
     "aws_s3_account_public_access_block",

@@ -1,7 +1,7 @@
 # todo aws
 
-Resource percentage coverage   72.56
-Datasource percentage coverage 99.82
+Resource percentage coverage   73.18
+Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_amplify_backend_environment
 ./resource.ps1 aws_amplify_webhook
@@ -41,7 +41,6 @@ Datasource percentage coverage 99.82
 ./resource.ps1 aws_cloud9_environment_membership
 ./resource.ps1 aws_cloudcontrolapi_resource
 ./resource.ps1 aws_cloudformation_stack_instances
-./resource.ps1 aws_cloudfrontkeyvaluestore_key
 ./resource.ps1 aws_cloudhsm_v2_cluster
 ./resource.ps1 aws_cloudhsm_v2_hsm
 ./resource.ps1 aws_cloudtrail_organization_delegated_admin_account
@@ -129,7 +128,6 @@ Datasource percentage coverage 99.82
 ./resource.ps1 aws_ec2_transit_gateway_vpc_attachment_accepter
 ./resource.ps1 aws_ecs_account_setting_default
 ./resource.ps1 aws_ecs_cluster_capacity_providers
-./resource.ps1 aws_ecs_tag
 ./resource.ps1 aws_eip_domain_name
 ./resource.ps1 aws_eks_access_policy_association
 ./resource.ps1 aws_elasticache_reserved_cache_node
@@ -195,8 +193,6 @@ Datasource percentage coverage 99.82
 ./resource.ps1 aws_lambda_runtime_management_config
 ./resource.ps1 aws_lb_listener_certificate
 ./resource.ps1 aws_lb_ssl_negotiation_policy
-./resource.ps1 aws_lb_trust_store
-./resource.ps1 aws_lb_trust_store_revocation
 ./resource.ps1 aws_lexv2models_bot
 ./resource.ps1 aws_lexv2models_bot_locale
 ./resource.ps1 aws_lexv2models_bot_version
@@ -283,15 +279,10 @@ Datasource percentage coverage 99.82
 ./resource.ps1 aws_prometheus_workspace
 ./resource.ps1 aws_qldb_ledger
 ./resource.ps1 aws_quicksight_account_subscription
-./resource.ps1 aws_quicksight_folder
 ./resource.ps1 aws_quicksight_folder_membership
-./resource.ps1 aws_quicksight_group
-./resource.ps1 aws_quicksight_group_membership
 ./resource.ps1 aws_quicksight_iam_policy_assignment
 ./resource.ps1 aws_quicksight_ingestion
-./resource.ps1 aws_quicksight_namespace
 ./resource.ps1 aws_quicksight_template_alias
-./resource.ps1 aws_quicksight_user
 ./resource.ps1 aws_quicksight_vpc_connection
 ./resource.ps1 aws_ram_resource_share_accepter
 ./resource.ps1 aws_ram_sharing_with_organization
@@ -396,4 +387,3 @@ Datasource percentage coverage 99.82
 ./resource.ps1 aws_wafregional_web_acl_association
 ./resource.ps1 aws_worklink_fleet
 ./resource.ps1 aws_worklink_website_certificate_authority_association
-./resource.ps1 aws_route53profiles_profiles -type data

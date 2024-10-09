@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "quicksight:CreateFolder",
+      "quicksight:DescribeFolder",
+      "quicksight:DeleteFolder",
+      "quicksight:UpdateFolder"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

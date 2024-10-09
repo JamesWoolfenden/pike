@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "quicksight:DescribeGroupMembership",
+      "quicksight:CreateGroupMembership",
+      "quicksight:DeleteGroupMembership"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

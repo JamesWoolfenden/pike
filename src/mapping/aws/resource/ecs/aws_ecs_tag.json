@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "ecs:TagResource",
+      "ecs:UntagResource"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

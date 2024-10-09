@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "quicksight:CreateNamespace",
+      "quicksight:DeleteNamespace"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

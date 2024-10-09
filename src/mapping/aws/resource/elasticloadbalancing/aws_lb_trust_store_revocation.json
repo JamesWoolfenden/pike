@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "elasticloadbalancing:DeleteTrustStore"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

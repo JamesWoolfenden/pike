@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "elasticloadbalancing:CreateTrustStore",
+      "elasticloadbalancing:DeleteTrustStore",
+      "elasticloadbalancing:ModifyTrustStore"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

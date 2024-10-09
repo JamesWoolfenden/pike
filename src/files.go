@@ -2967,3 +2967,30 @@ var awsMemorydbUser []byte
 
 //go:embed mapping/aws/resource/sagemaker/aws_sagemaker_human_task_ui.json
 var awsSagemakerHumanTaskUi []byte
+
+//go:embed mapping/aws/resource/cloudfront-keyvaluestore/aws_cloudfrontkeyvaluestore_key.json
+var awsCloudfrontkeyvaluestoreKey []byte
+
+//go:embed mapping/aws/resource/ecs/aws_ecs_tag.json
+var awsEcsTag []byte
+
+//go:embed mapping/aws/resource/elasticloadbalancing/aws_lb_trust_store.json
+var awsLbTrustStore []byte
+
+//go:embed mapping/aws/resource/elasticloadbalancing/aws_lb_trust_store_revocation.json
+var awsLbTrustStoreRevocation []byte
+
+//go:embed mapping/aws/resource/quicksight/aws_quicksight_folder.json
+var awsQuicksightFolder []byte
+
+//go:embed mapping/aws/resource/quicksight/aws_quicksight_group.json
+var awsQuicksightGroup []byte
+
+//go:embed mapping/aws/resource/quicksight/aws_quicksight_group_membership.json
+var awsQuicksightGroupMembership []byte
+
+//go:embed mapping/aws/resource/quicksight/aws_quicksight_namespace.json
+var awsQuicksightNamespace []byte
+
+//go:embed mapping/aws/resource/quicksight/aws_quicksight_user.json
+var awsQuicksightUser []byte

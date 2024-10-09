@@ -7,50 +7,76 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "VisualEditor0",
         "Effect" : "Allow",
         "Action" : [
-          //aws_iam_user_policies_exclusive
-          "iam:ListUserPolicies",
-          "iam:PutUserPolicy",
+          //aws_cloudfrontkeyvaluestore_key
+          "cloudfront-keyvaluestore:DescribeKeyValueStore",
+          "cloudfront-keyvaluestore:PutKey",
+          "cloudfront-keyvaluestore:GetKey",
 
-          //aws_iam_role_policies_exclusive
-          "iam:ListRolePolicies",
-          "iam:PutRolePolicy",
+          //aws-ecs_tag
+          "ecs:TagResource",
+          "ecs:UntagResource",
 
-          //aws_iam_group_policies_exclusive
-          "iam:ListGroupPolicies",
-          "iam:PutGroupPolicy",
+          //aws_lb_trust_store
+          "elasticloadbalancing:CreateTrustStore",
+          "elasticloadbalancing:DeleteTrustStore",
+          "elasticloadbalancing:ModifyTrustStore",
 
-          //aws_sagemaker_human_task_ui
-          "sagemaker:CreateHumanTaskUi",
-          "sagemaker:DescribeHumanTaskUi",
-          "sagemaker:ListTags",
-          "sagemaker:DeleteHumanTaskUi",
-          "sagemaker:AddTags",
-          "sagemaker:DeleteTags",
+          //aws_quicksight_folder
+          "quicksight:CreateFolder",
+          "quicksight:DescribeFolder",
+          "quicksight:DeleteFolder",
+          "quicksight:UpdateFolder",
 
-          //aws_memorydb_user
-          "memorydb:CreateUser",
-          "memorydb:DescribeUsers",
-          "memorydb:ListTags",
-          "memorydb:DeleteUser",
-          "memorydb:TagResource",
-          "memorydb:UntagResource",
+          //aws_quicksight_user
+          "quicksight:RegisterUser",
+          "quicksight:DescribeUser",
+          "quicksight:CreateUser",
+          "quicksight:DeleteUser",
+          "quicksight:UpdateUser",
 
-          //aws_m2_environment
-          "m2:CreateEnvironment",
-          "m2:GetEnvironment",
-          "m2:DeleteEnvironment",
-          "m2:UpdateEnvironment",
+          //aws_quicksight_namespace
+          "quicksight:CreateNamespace",
+          "quicksight:DeleteNamespace",
 
-          //aws_m2_deployment
-          "m2:GetDeployment",
-          "m2:CreateDeployment",
+          //aws_quicksight_group
+          "quicksight:CreateGroup",
+          "quicksight:DescribeGroup",
+          "quicksight:DeleteGroup",
+          "quicksight:UpdateGroup",
 
-          //aws_m2_application
-          "m2:GetApplication",
-          "m2:CreateApplication",
-          "m2:DeleteApplication",
-          "m2:UpdateApplication",
+          //aws_quicksight_group_membership
+          "quicksight:DescribeGroupMembership",
+          "quicksight:CreateGroupMembership",
+          "quicksight:DeleteGroupMembership",
 
+          "batch:CreateComputeEnvironment",
+          "batch:DeleteComputeEnvironment",
+          "batch:DescribeComputeEnvironments",
+          "batch:TagResource",
+          "batch:UntagResource",
+          "batch:UpdateComputeEnvironment"
+        ],
+        "Resource" : [
+          "*"
+        ]
+      },
+      {
+        "Sid" : "VisualEditor1",
+        "Effect" : "Allow",
+        "Action" : [
+          "cloudfront:CreateKeyValueStore",
+          "cloudfront:DeleteKeyValueStore",
+          "cloudfront:DescribeKeyValueStore",
+          "cloudfront:UpdateKeyValueStore"
+        ],
+        "Resource" : [
+          "*"
+        ]
+      },
+      {
+        "Sid" : "VisualEditor2",
+        "Effect" : "Allow",
+        "Action" : [
           "dynamodb:DeleteItem",
           "dynamodb:DescribeTable",
           "dynamodb:GetItem",
@@ -61,34 +87,67 @@ resource "aws_iam_policy" "basic" {
         ]
       },
       {
-        "Sid" : "VisualEditor1",
+        "Sid" : "VisualEditor3",
         "Effect" : "Allow",
         "Action" : [
-          "iam:CreateUser",
-          "iam:DeleteUser",
-          "iam:GetUser",
-          "iam:ListGroupsForUser",
-          "iam:CreateRole",
-          "iam:GetRole",
-          "iam:ListAttachedRolePolicies",
-          "iam:ListInstanceProfilesForRole",
-          "iam:DeleteRole",
-          "iam:CreatePolicy",
-          "iam:GetPolicy",
-          "iam:GetPolicyVersion",
-          "iam:ListPolicyVersions",
-          "iam:DeletePolicy"
+          "ec2:DescribeAccountAttributes",
+          "ec2:DescribeImages",
+          "ec2:DescribeKeyPairs",
+          "ec2:DescribeLaunchTemplateVersions",
+          "ec2:DescribeLaunchTemplates",
+          "ec2:DescribeSecurityGroups",
+          "ec2:DescribeSubnets",
+          "ec2:DescribeVpcs"
         ],
         "Resource" : [
           "*"
         ]
       },
       {
-        "Sid" : "VisualEditor2",
+        "Sid" : "VisualEditor4",
         "Effect" : "Allow",
         "Action" : [
+          "ecs:Describe*",
+          "ecs:DescribeClusters",
+          "ecs:List*"
+        ],
+        "Resource" : [
+          "*"
+        ]
+      },
+      {
+        "Sid" : "VisualEditor5",
+        "Effect" : "Allow",
+        "Action" : [
+          "iam:CreateServiceLinkedRole",
+          "iam:PassRole"
+        ],
+        "Resource" : [
+          "*"
+        ]
+      },
+      {
+        "Sid" : "VisualEditor6",
+        "Effect" : "Allow",
+        "Action" : [
+          "s3:CreateBucket",
+          "s3:DeleteBucket",
           "s3:DeleteObject",
+          "s3:GetAccelerateConfiguration",
+          "s3:GetBucketAcl",
+          "s3:GetBucketCORS",
+          "s3:GetBucketLogging",
+          "s3:GetBucketObjectLockConfiguration",
+          "s3:GetBucketPolicy",
+          "s3:GetBucketRequestPayment",
+          "s3:GetBucketTagging",
+          "s3:GetBucketVersioning",
+          "s3:GetBucketWebsite",
+          "s3:GetEncryptionConfiguration",
+          "s3:GetLifecycleConfiguration",
           "s3:GetObject",
+          "s3:GetObjectAcl",
+          "s3:GetReplicationConfiguration",
           "s3:ListBucket",
           "s3:PutObject"
         ],
@@ -96,6 +155,7 @@ resource "aws_iam_policy" "basic" {
           "*"
         ]
       }
+
 
     ]
   })

@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "quicksight:RegisterUser",
+      "quicksight:DescribeUser",
+      "quicksight:CreateUser",
+      "quicksight:DeleteUser",
+      "quicksight:UpdateUser"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
