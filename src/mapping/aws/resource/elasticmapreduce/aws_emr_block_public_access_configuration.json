@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "elasticmapreduce:PutBlockPublicAccessConfiguration",
+      "elasticmapreduce:GetBlockPublicAccessConfiguration"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

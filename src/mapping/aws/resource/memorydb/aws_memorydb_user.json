@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "memorydb:CreateUser",
+      "memorydb:DescribeUsers",
+      "memorydb:ListTags",
+      "memorydb:DeleteUser"
+    ],
+    "attributes": {
+      "tags": [
+        "memorydb:TagResource",
+        "memorydb:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

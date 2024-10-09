@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "m2:GetApplication",
+      "m2:CreateApplication",
+      "m2:DeleteApplication",
+      "m2:UpdateApplication"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "sagemaker:CreateHumanTaskUi",
+      "sagemaker:DescribeHumanTaskUi",
+      "sagemaker:ListTags",
+      "sagemaker:DeleteHumanTaskUi"
+    ],
+    "attributes": {
+      "tags": [
+        "sagemaker:AddTags",
+        "sagemaker:DeleteTags"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

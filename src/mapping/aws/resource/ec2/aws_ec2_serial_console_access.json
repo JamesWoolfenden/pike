@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "ec2:EnableSerialConsoleAccess",
+      "ec2:GetSerialConsoleAccessStatus",
+      "ec2:DisableSerialConsoleAccess"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

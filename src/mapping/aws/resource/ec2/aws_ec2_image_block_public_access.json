@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "ec2:EnableImageBlockPublicAccess",
+      "ec2:GetImageBlockPublicAccessState"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

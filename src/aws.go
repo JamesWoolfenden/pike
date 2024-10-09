@@ -1094,6 +1094,20 @@ func AwsLookup(name string) interface{} {
 		"aws_verifiedpermissions_policy":                                   awsVerifiedpermissionsPolicy,
 		"aws_verifiedpermissions_policy_store":                             awsVerifiedpermissionsPolicyStore,
 		"aws_verifiedpermissions_policy_template":                          awsVerifiedpermissionsPolicyTemplate,
+		"aws_ebs_snapshot_block_public_access":                             awsEbsSnapshotBlockPublicAccess,
+		"aws_ec2_image_block_public_access":                                awsEc2ImageBlockPublicAccess,
+		"aws_ec2_serial_console_access":                                    awsEc2SerialConsoleAccess,
+		"aws_emr_block_public_access_configuration":                        awsEmrBlockPublicAccessConfiguration,
+		"aws_s3_account_public_access_block":                               awsS3AccountPublicAccessBlock,
+		"aws_s3control_access_point_policy":                                awsS3controlAccessPointPolicy,
+		"aws_iam_group_policies_exclusive":                                 awsIamGroupPoliciesExclusive,
+		"aws_iam_role_policies_exclusive":                                  awsIamRolePoliciesExclusive,
+		"aws_iam_user_policies_exclusive":                                  awsIamUserPoliciesExclusive,
+		"aws_m2_application":                                               awsM2Application,
+		"aws_m2_deployment":                                                awsM2Deployment,
+		"aws_m2_environment":                                               awsM2Environment,
+		"aws_memorydb_user":                                                awsMemorydbUser,
+		"aws_sagemaker_human_task_ui":                                      awsSagemakerHumanTaskUi,
 	}
 
 	return TFLookup[name]

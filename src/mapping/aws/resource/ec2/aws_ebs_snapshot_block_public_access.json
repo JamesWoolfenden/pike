@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "ec2:EnableSnapshotBlockPublicAccess",
+      "ec2:GetSnapshotBlockPublicAccessState",
+      "ec2:DisableSnapshotBlockPublicAccess"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

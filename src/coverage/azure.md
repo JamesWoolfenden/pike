@@ -588,13 +588,11 @@ Datasource percentage coverage 37.31
 ./resource.ps1 azurerm_mssql_virtual_machine_availability_group_listener
 ./resource.ps1 azurerm_mssql_virtual_machine_group
 ./resource.ps1 azurerm_mssql_virtual_network_rule
-./resource.ps1 azurerm_mysql_database
 ./resource.ps1 azurerm_mysql_flexible_database
 ./resource.ps1 azurerm_mysql_flexible_server
 ./resource.ps1 azurerm_mysql_flexible_server_active_directory_administrator
 ./resource.ps1 azurerm_mysql_flexible_server_configuration
 ./resource.ps1 azurerm_mysql_flexible_server_firewall_rule
-./resource.ps1 azurerm_mysql_server
 ./resource.ps1 azurerm_nat_gateway
 ./resource.ps1 azurerm_nat_gateway_public_ip_association
 ./resource.ps1 azurerm_nat_gateway_public_ip_prefix_association
@@ -845,6 +843,7 @@ Datasource percentage coverage 37.31
 ./resource.ps1 azurerm_stack_hci_deployment_setting
 ./resource.ps1 azurerm_stack_hci_logical_network
 ./resource.ps1 azurerm_stack_hci_storage_path
+./resource.ps1 azurerm_stack_hci_virtual_hard_disk
 ./resource.ps1 azurerm_static_site
 ./resource.ps1 azurerm_static_site_custom_domain
 ./resource.ps1 azurerm_static_web_app

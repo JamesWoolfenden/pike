@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "s3:GetAccessPointPolicy",
+      "s3:DeleteAccessPointPolicy",
+      "s3:PutAccessPointPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

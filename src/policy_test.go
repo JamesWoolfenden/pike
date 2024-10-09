@@ -109,8 +109,8 @@ func TestGetPolicy(t *testing.T) {
 				AWS: []string{},
 			}},
 			`{
-  "version": "2012-10-17",
-  "statement": null
+  "Version": "2012-10-17",
+  "Statement": null
 }`,
 			false,
 		},
@@ -132,12 +132,12 @@ func TestGetPolicy(t *testing.T) {
 				"ec2:TerminateInstances",
 			}}},
 			`{
-  "version": "2012-10-17",
-  "statement": [
+  "Version": "2012-10-17",
+  "Statement": [
     {
-      "sid": "VisualEditor0",
-      "effect": "Allow",
-      "action": [
+      "Sid": "VisualEditor0",
+      "Effect": "Allow",
+      "Action": [
         "ec2:DescribeInstanceAttribute",
         "ec2:DescribeInstanceCreditSpecifications",
         "ec2:DescribeInstanceTypes",
@@ -150,7 +150,7 @@ func TestGetPolicy(t *testing.T) {
         "ec2:StopInstances",
         "ec2:TerminateInstances"
       ],
-      "resource": [
+      "Resource": [
         "*"
       ]
     }
@@ -162,15 +162,15 @@ func TestGetPolicy(t *testing.T) {
 			"short",
 			args{pike.Sorted{AWS: []string{"s3:*"}}},
 			`{
-  "version": "2012-10-17",
-  "statement": [
+  "Version": "2012-10-17",
+  "Statement": [
     {
-      "sid": "VisualEditor0",
-      "effect": "Allow",
-      "action": [
+      "Sid": "VisualEditor0",
+      "Effect": "Allow",
+      "Action": [
         "s3:*"
       ],
-      "resource": [
+      "Resource": [
         "*"
       ]
     }
@@ -235,15 +235,15 @@ func TestAWSPolicy(t *testing.T) {
 			"pass",
 			args{[]string{"woof:*"}},
 			pike.AwsOutput{JSONOut: `{
-  "version": "2012-10-17",
-  "statement": [
+  "Version": "2012-10-17",
+  "Statement": [
     {
-      "sid": "VisualEditor0",
-      "effect": "Allow",
-      "action": [
+      "Sid": "VisualEditor0",
+      "Effect": "Allow",
+      "Action": [
         "woof:*"
       ],
-      "resource": [
+      "Resource": [
         "*"
       ]
     }

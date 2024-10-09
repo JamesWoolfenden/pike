@@ -20,16 +20,16 @@ type ResourceV2 struct {
 
 // Policy creates iam policies.
 type Policy struct {
-	Version    string      `json:"version"`
-	Statements []Statement `json:"statement"`
+	Version    string      `json:"Version"`
+	Statements []Statement `json:"Statement"`
 }
 
 // Statement is the core of an IAM policy.
 type Statement struct {
-	Sid      string   `json:"sid"`
-	Effect   string   `json:"effect"`
-	Action   []string `json:"action"`
-	Resource []string `json:"resource"`
+	Sid      string   `json:"Sid"`
+	Effect   string   `json:"Effect"`
+	Action   []string `json:"Action"`
+	Resource []string `json:"Resource"`
 }
 
 // NewStatement constructor.

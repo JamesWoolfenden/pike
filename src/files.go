@@ -2925,3 +2925,45 @@ var awsVerifiedpermissionsPolicyStore []byte
 
 //go:embed mapping/aws/resource/verifiedpermissions/aws_verifiedpermissions_policy_template.json
 var awsVerifiedpermissionsPolicyTemplate []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ebs_snapshot_block_public_access.json
+var awsEbsSnapshotBlockPublicAccess []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ec2_image_block_public_access.json
+var awsEc2ImageBlockPublicAccess []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ec2_serial_console_access.json
+var awsEc2SerialConsoleAccess []byte
+
+//go:embed mapping/aws/resource/elasticmapreduce/aws_emr_block_public_access_configuration.json
+var awsEmrBlockPublicAccessConfiguration []byte
+
+//go:embed mapping/aws/resource/s3/aws_s3_account_public_access_block.json
+var awsS3AccountPublicAccessBlock []byte
+
+//go:embed mapping/aws/resource/s3/aws_s3control_access_point_policy.json
+var awsS3controlAccessPointPolicy []byte
+
+//go:embed mapping/aws/resource/iam/aws_iam_role_policies_exclusive.json
+var awsIamGroupPoliciesExclusive []byte
+
+//go:embed mapping/aws/resource/iam/aws_iam_role_policies_exclusive.json
+var awsIamRolePoliciesExclusive []byte
+
+//go:embed mapping/aws/resource/iam/aws_iam_user_policies_exclusive.json
+var awsIamUserPoliciesExclusive []byte
+
+//go:embed mapping/aws/resource/m2/aws_m2_application.json
+var awsM2Application []byte
+
+//go:embed mapping/aws/resource/m2/aws_m2_deployment.json
+var awsM2Deployment []byte
+
+//go:embed mapping/aws/resource/m2/aws_m2_environment.json
+var awsM2Environment []byte
+
+//go:embed mapping/aws/resource/memorydb/aws_memorydb_user.json
+var awsMemorydbUser []byte
+
+//go:embed mapping/aws/resource/sagemaker/aws_sagemaker_human_task_ui.json
+var awsSagemakerHumanTaskUi []byte

@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "s3:PutAccountPublicAccessBlock",
+      "s3:GetAccountPublicAccessBlock"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

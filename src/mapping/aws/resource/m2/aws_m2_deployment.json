@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "m2:GetDeployment",
+      "m2:CreateDeployment"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

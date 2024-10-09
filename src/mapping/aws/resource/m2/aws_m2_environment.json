@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "m2:CreateEnvironment",
+      "m2:GetEnvironment",
+      "m2:DeleteEnvironment",
+      "m2:UpdateEnvironment"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

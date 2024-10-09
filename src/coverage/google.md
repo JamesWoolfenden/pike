@@ -1,7 +1,7 @@
 # todo google
 
-Resource percentage coverage   19.68
-Datasource percentage coverage 79.15
+Resource percentage coverage   19.58
+Datasource percentage coverage 78.90
 
 ./resource.ps1 google_access_context_manager_access_level_condition
 ./resource.ps1 google_access_context_manager_service_perimeter_dry_run_egress_policy
@@ -233,6 +233,7 @@ Datasource percentage coverage 79.15
 ./resource.ps1 google_compute_router
 ./resource.ps1 google_compute_router_interface
 ./resource.ps1 google_compute_router_nat
+./resource.ps1 google_compute_router_nat_address
 ./resource.ps1 google_compute_router_peer
 ./resource.ps1 google_compute_router_route_policy
 ./resource.ps1 google_compute_security_policy_rule
@@ -345,6 +346,7 @@ Datasource percentage coverage 79.15
 ./resource.ps1 google_dataproc_autoscaling_policy_iam_binding
 ./resource.ps1 google_dataproc_autoscaling_policy_iam_member
 ./resource.ps1 google_dataproc_autoscaling_policy_iam_policy
+./resource.ps1 google_dataproc_batch
 ./resource.ps1 google_dataproc_cluster
 ./resource.ps1 google_dataproc_cluster_iam_binding
 ./resource.ps1 google_dataproc_cluster_iam_member
@@ -560,6 +562,7 @@ Datasource percentage coverage 79.15
 ./resource.ps1 google_logging_folder_settings
 ./resource.ps1 google_logging_folder_sink
 ./resource.ps1 google_logging_linked_dataset
+./resource.ps1 google_logging_log_scope
 ./resource.ps1 google_logging_log_view
 ./resource.ps1 google_logging_log_view_iam_binding
 ./resource.ps1 google_logging_log_view_iam_member
@@ -729,6 +732,7 @@ Datasource percentage coverage 79.15
 ./resource.ps1 google_secret_manager_regional_secret_iam_member
 ./resource.ps1 google_secret_manager_regional_secret_iam_policy
 ./resource.ps1 google_secret_manager_regional_secret_version
+./resource.ps1 google_secure_source_manager_branch_rule
 ./resource.ps1 google_secure_source_manager_instance
 ./resource.ps1 google_secure_source_manager_instance_iam_binding
 ./resource.ps1 google_secure_source_manager_instance_iam_member
@@ -742,6 +746,7 @@ Datasource percentage coverage 79.15
 ./resource.ps1 google_service_networking_peered_dns_domain
 ./resource.ps1 google_service_networking_vpc_service_controls
 ./resource.ps1 google_service_usage_consumer_quota_override
+./resource.ps1 google_site_verification_owner
 ./resource.ps1 google_site_verification_web_resource
 ./resource.ps1 google_sourcerepo_repository_iam_binding
 ./resource.ps1 google_sourcerepo_repository_iam_member
@@ -812,6 +817,7 @@ Datasource percentage coverage 79.15
 ./resource.ps1 google_composer_user_workloads_secret -type data
 ./resource.ps1 google_compute_forwarding_rules -type data
 ./resource.ps1 google_compute_machine_types -type data
+./resource.ps1 google_compute_region_instance_group_manager -type data
 ./resource.ps1 google_compute_security_policy -type data
 ./resource.ps1 google_compute_subnetworks -type data
 ./resource.ps1 google_container_attached_install_manifest -type data

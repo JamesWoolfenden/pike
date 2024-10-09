@@ -193,26 +193,26 @@ func TestMakePolicy(t *testing.T) {
 				"testdata/init/nicconf", nil, true,
 			},
 			`{
-  "version": "2012-10-17",
-  "statement": [
+  "Version": "2012-10-17",
+  "Statement": [
     {
-      "sid": "VisualEditor0",
-      "effect": "Allow",
-      "action": [
+      "Sid": "VisualEditor0",
+      "Effect": "Allow",
+      "Action": [
         "apigateway:DELETE",
         "apigateway:GET",
         "apigateway:PATCH",
         "apigateway:POST",
         "apigateway:PUT"
       ],
-      "resource": [
+      "Resource": [
         "*"
       ]
     },
     {
-      "sid": "VisualEditor1",
-      "effect": "Allow",
-      "action": [
+      "Sid": "VisualEditor1",
+      "Effect": "Allow",
+      "Action": [
         "application-autoscaling:DeleteScalingPolicy",
         "application-autoscaling:DeregisterScalableTarget",
         "application-autoscaling:DescribeScalableTargets",
@@ -222,26 +222,26 @@ func TestMakePolicy(t *testing.T) {
         "application-autoscaling:PutScheduledAction",
         "application-autoscaling:RegisterScalableTarget"
       ],
-      "resource": [
+      "Resource": [
         "*"
       ]
     },
     {
-      "sid": "VisualEditor2",
-      "effect": "Allow",
-      "action": [
+      "Sid": "VisualEditor2",
+      "Effect": "Allow",
+      "Action": [
         "cloudwatch:DeleteAlarms",
         "cloudwatch:DescribeAlarms",
         "cloudwatch:PutMetricAlarm"
       ],
-      "resource": [
+      "Resource": [
         "*"
       ]
     },
     {
-      "sid": "VisualEditor3",
-      "effect": "Allow",
-      "action": [
+      "Sid": "VisualEditor3",
+      "Effect": "Allow",
+      "Action": [
         "dynamodb:BatchWriteItem",
         "dynamodb:CreateTable",
         "dynamodb:CreateTableReplica",
@@ -266,25 +266,25 @@ func TestMakePolicy(t *testing.T) {
         "dynamodb:UpdateTable",
         "dynamodb:UpdateTimeToLive"
       ],
-      "resource": [
+      "Resource": [
         "*"
       ]
     },
     {
-      "sid": "VisualEditor4",
-      "effect": "Allow",
-      "action": [
+      "Sid": "VisualEditor4",
+      "Effect": "Allow",
+      "Action": [
         "ec2:DescribeAccountAttributes",
         "ec2:DescribeNetworkInterfaces"
       ],
-      "resource": [
+      "Resource": [
         "*"
       ]
     },
     {
-      "sid": "VisualEditor5",
-      "effect": "Allow",
-      "action": [
+      "Sid": "VisualEditor5",
+      "Effect": "Allow",
+      "Action": [
         "iam:AttachRolePolicy",
         "iam:CreatePolicy",
         "iam:CreateRole",
@@ -309,25 +309,25 @@ func TestMakePolicy(t *testing.T) {
         "iam:UntagRole",
         "iam:UpdateRoleDescription"
       ],
-      "resource": [
+      "Resource": [
         "*"
       ]
     },
     {
-      "sid": "VisualEditor6",
-      "effect": "Allow",
-      "action": [
+      "Sid": "VisualEditor6",
+      "Effect": "Allow",
+      "Action": [
         "kinesis:DescribeStream",
         "kinesis:PutRecords"
       ],
-      "resource": [
+      "Resource": [
         "*"
       ]
     },
     {
-      "sid": "VisualEditor7",
-      "effect": "Allow",
-      "action": [
+      "Sid": "VisualEditor7",
+      "Effect": "Allow",
+      "Action": [
         "kms:CreateGrant",
         "kms:Decrypt",
         "kms:DescribeKey",
@@ -336,14 +336,14 @@ func TestMakePolicy(t *testing.T) {
         "kms:ListAliases",
         "kms:RevokeGrant"
       ],
-      "resource": [
+      "Resource": [
         "*"
       ]
     },
     {
-      "sid": "VisualEditor8",
-      "effect": "Allow",
-      "action": [
+      "Sid": "VisualEditor8",
+      "Effect": "Allow",
+      "Action": [
         "lambda:AddPermission",
         "lambda:CreateEventSourceMapping",
         "lambda:CreateFunction",
@@ -374,14 +374,14 @@ func TestMakePolicy(t *testing.T) {
         "lambda:UpdateFunctionEventInvokeConfig",
         "lambda:UpdateFunctionUrlConfig"
       ],
-      "resource": [
+      "Resource": [
         "*"
       ]
     },
     {
-      "sid": "VisualEditor9",
-      "effect": "Allow",
-      "action": [
+      "Sid": "VisualEditor9",
+      "Effect": "Allow",
+      "Action": [
         "logs:AssociateKmsKey",
         "logs:CreateLogGroup",
         "logs:DeleteLogGroup",
@@ -393,21 +393,21 @@ func TestMakePolicy(t *testing.T) {
         "logs:TagLogGroup",
         "logs:UntagLogGroup"
       ],
-      "resource": [
+      "Resource": [
         "*"
       ]
     },
     {
-      "sid": "VisualEditor10",
-      "effect": "Allow",
-      "action": [
+      "Sid": "VisualEditor10",
+      "Effect": "Allow",
+      "Action": [
         "s3:DeleteObject",
         "s3:GetObject",
         "s3:GetObjectTagging",
         "s3:GetObjectVersion",
         "s3:PutObject"
       ],
-      "resource": [
+      "Resource": [
         "*"
       ]
     }
@@ -426,12 +426,12 @@ func TestMakePolicy(t *testing.T) {
 			args{"", &actual, false},
 			`
 {
-  "version": "2012-10-17",
-  "statement": [
+  "Version": "2012-10-17",
+  "Statement": [
     {
-      "sid": "VisualEditor0",
-      "effect": "Allow",
-      "action": [
+      "Sid": "VisualEditor0",
+      "Effect": "Allow",
+      "Action": [
         "s3:CreateBucket",
         "s3:DeleteBucket",
         "s3:GetAccelerateConfiguration",
@@ -451,7 +451,7 @@ func TestMakePolicy(t *testing.T) {
         "s3:GetReplicationConfiguration",
         "s3:ListBucket"
       ],
-      "resource": [
+      "Resource": [
         "*"
       ]
     }
@@ -475,12 +475,12 @@ func TestMakePolicy(t *testing.T) {
 			"dynamic",
 			args{"", &dynamic, false},
 			`{
-  "version": "2012-10-17",
-  "statement": [
+  "Version": "2012-10-17",
+  "Statement": [
     {
-      "sid": "VisualEditor0",
-      "effect": "Allow",
-      "action": [
+      "Sid": "VisualEditor0",
+      "Effect": "Allow",
+      "Action": [
         "autoscaling:CreateAutoScalingGroup",
         "autoscaling:CreateOrUpdateTags",
         "autoscaling:DeleteAutoScalingGroup",
@@ -490,43 +490,43 @@ func TestMakePolicy(t *testing.T) {
         "autoscaling:DescribeScalingActivities",
         "autoscaling:UpdateAutoScalingGroup"
       ],
-      "resource": [
+      "Resource": [
         "*"
       ]
     },
     {
-      "sid": "VisualEditor1",
-      "effect": "Allow",
-      "action": [
+      "Sid": "VisualEditor1",
+      "Effect": "Allow",
+      "Action": [
         "ec2:Describe*",
         "ec2:Get*",
         "ec2:RunInstances"
       ],
-      "resource": [
+      "Resource": [
         "*"
       ]
     },
     {
-      "sid": "VisualEditor2",
-      "effect": "Allow",
-      "action": [
+      "Sid": "VisualEditor2",
+      "Effect": "Allow",
+      "Action": [
         "managed-fleets:DeleteAutoScalingGroup",
         "managed-fleets:DeregisterAutoScalingGroup",
         "managed-fleets:Get*",
         "managed-fleets:RegisterAutoScalingGroup",
         "managed-fleets:UpdateAutoScalingGroup"
       ],
-      "resource": [
+      "Resource": [
         "*"
       ]
     },
     {
-      "sid": "VisualEditor3",
-      "effect": "Allow",
-      "action": [
+      "Sid": "VisualEditor3",
+      "Effect": "Allow",
+      "Action": [
         "ssm:Get*"
       ],
-      "resource": [
+      "Resource": [
         "*"
       ]
     }

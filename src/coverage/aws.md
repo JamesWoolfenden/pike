@@ -1,7 +1,7 @@
 # todo aws
 
-Resource percentage coverage   72.23
-Datasource percentage coverage 100.00
+Resource percentage coverage   72.56
+Datasource percentage coverage 99.82
 
 ./resource.ps1 aws_amplify_backend_environment
 ./resource.ps1 aws_amplify_webhook
@@ -34,7 +34,9 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_appsync_graphql_api
 ./resource.ps1 aws_appsync_source_api_association
 ./resource.ps1 aws_appsync_type
+./resource.ps1 aws_backup_logically_air_gapped_vault
 ./resource.ps1 aws_bedrock_guardrail
+./resource.ps1 aws_bedrock_guardrail_version
 ./resource.ps1 aws_bedrockagent_agent_knowledge_base_association
 ./resource.ps1 aws_cloud9_environment_membership
 ./resource.ps1 aws_cloudcontrolapi_resource
@@ -67,6 +69,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_datazone_form_type
 ./resource.ps1 aws_datazone_glossary
 ./resource.ps1 aws_datazone_glossary_term
+./resource.ps1 aws_datazone_user_profile
 ./resource.ps1 aws_detective_member
 ./resource.ps1 aws_detective_organization_configuration
 ./resource.ps1 aws_devicefarm_device_pool
@@ -104,22 +107,21 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_dynamodb_table_export
 ./resource.ps1 aws_dynamodb_table_replica
 ./resource.ps1 aws_ebs_fast_snapshot_restore
-./resource.ps1 aws_ebs_snapshot_block_public_access
 ./resource.ps1 aws_ebs_snapshot_import
 ./resource.ps1 aws_ec2_capacity_block_reservation
-./resource.ps1 aws_ec2_image_block_public_access
 ./resource.ps1 aws_ec2_instance
 ./resource.ps1 aws_ec2_instance_connect_endpoint
 ./resource.ps1 aws_ec2_instance_metadata_defaults
 ./resource.ps1 aws_ec2_instance_state
 ./resource.ps1 aws_ec2_managed_prefix_list_entry
-./resource.ps1 aws_ec2_serial_console_access
 ./resource.ps1 aws_ec2_subnet_cidr_reservation
 ./resource.ps1 aws_ec2_traffic_mirror_filter
 ./resource.ps1 aws_ec2_traffic_mirror_filter_rule
 ./resource.ps1 aws_ec2_traffic_mirror_session
 ./resource.ps1 aws_ec2_traffic_mirror_target
 ./resource.ps1 aws_ec2_transit_gateway_connect_peer
+./resource.ps1 aws_ec2_transit_gateway_default_route_table_association
+./resource.ps1 aws_ec2_transit_gateway_default_route_table_propagation
 ./resource.ps1 aws_ec2_transit_gateway_peering_attachment_accepter
 ./resource.ps1 aws_ec2_transit_gateway_policy_table
 ./resource.ps1 aws_ec2_transit_gateway_policy_table_association
@@ -137,7 +139,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_elasticsearch_vpc_endpoint
 ./resource.ps1 aws_elastictranscoder_pipeline
 ./resource.ps1 aws_elastictranscoder_preset
-./resource.ps1 aws_emr_block_public_access_configuration
 ./resource.ps1 aws_emr_instance_fleet
 ./resource.ps1 aws_emr_instance_group
 ./resource.ps1 aws_emrcontainers_job_template
@@ -168,7 +169,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_guardduty_organization_configuration
 ./resource.ps1 aws_guardduty_organization_configuration_feature
 ./resource.ps1 aws_guardduty_publishing_destination
-./resource.ps1 aws_iam_role_policies_exclusive
 ./resource.ps1 aws_identitystore_group
 ./resource.ps1 aws_identitystore_group_membership
 ./resource.ps1 aws_identitystore_user
@@ -217,9 +217,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_lightsail_lb_certificate_attachment
 ./resource.ps1 aws_lightsail_lb_https_redirection_policy
 ./resource.ps1 aws_lightsail_lb_stickiness_policy
-./resource.ps1 aws_m2_application
-./resource.ps1 aws_m2_deployment
-./resource.ps1 aws_m2_environment
 ./resource.ps1 aws_macie2_account
 ./resource.ps1 aws_macie2_classification_export_configuration
 ./resource.ps1 aws_macie2_classification_job
@@ -230,7 +227,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_media_store_container
 ./resource.ps1 aws_media_store_container_policy
 ./resource.ps1 aws_medialive_channel
-./resource.ps1 aws_memorydb_user
 ./resource.ps1 aws_mskconnect_connector
 ./resource.ps1 aws_mskconnect_custom_plugin
 ./resource.ps1 aws_mskconnect_worker_configuration
@@ -278,6 +274,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_pinpoint_event_stream
 ./resource.ps1 aws_pinpoint_gcm_channel
 ./resource.ps1 aws_pinpoint_sms_channel
+./resource.ps1 aws_pinpointsmsvoicev2_configuration_set
 ./resource.ps1 aws_pinpointsmsvoicev2_opt_out_list
 ./resource.ps1 aws_pinpointsmsvoicev2_phone_number
 ./resource.ps1 aws_prometheus_alert_manager_definition
@@ -319,13 +316,14 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_resourcegroups_resource
 ./resource.ps1 aws_route53domains_delegation_signer_record
 ./resource.ps1 aws_route53domains_registered_domain
+./resource.ps1 aws_route53profiles_association
+./resource.ps1 aws_route53profiles_profile
+./resource.ps1 aws_route53profiles_resource_association
 ./resource.ps1 aws_rum_metrics_destination
-./resource.ps1 aws_s3_account_public_access_block
 ./resource.ps1 aws_s3_bucket_analytics_configuration
 ./resource.ps1 aws_s3_directory_bucket
 ./resource.ps1 aws_s3_object_copy
 ./resource.ps1 aws_s3control_access_grants_instance_resource_policy
-./resource.ps1 aws_s3control_access_point_policy
 ./resource.ps1 aws_s3control_bucket
 ./resource.ps1 aws_s3control_bucket_lifecycle_configuration
 ./resource.ps1 aws_s3control_bucket_policy
@@ -333,13 +331,13 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_s3control_object_lambda_access_point_policy
 ./resource.ps1 aws_s3control_storage_lens_configuration
 ./resource.ps1 aws_sagemaker_flow_definition
-./resource.ps1 aws_sagemaker_human_task_ui
 ./resource.ps1 aws_securityhub_account
 ./resource.ps1 aws_securityhub_action_target
 ./resource.ps1 aws_securityhub_configuration_policy_association
 ./resource.ps1 aws_securityhub_invite_accepter
 ./resource.ps1 aws_securityhub_member
 ./resource.ps1 aws_securityhub_organization_admin_account
+./resource.ps1 aws_securityhub_standards_control_association
 ./resource.ps1 aws_securityhub_standards_subscription
 ./resource.ps1 aws_securitylake_custom_log_source
 ./resource.ps1 aws_serverlessapplicationrepository_cloudformation_stack
@@ -378,6 +376,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_ssoadmin_permission_set_inline_policy
 ./resource.ps1 aws_ssoadmin_permissions_boundary_attachment
 ./resource.ps1 aws_ssoadmin_trusted_token_issuer
+./resource.ps1 aws_standards_control_association
 ./resource.ps1 aws_transfer_access
 ./resource.ps1 aws_transfer_server
 ./resource.ps1 aws_transfer_ssh_key
@@ -397,3 +396,4 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_wafregional_web_acl_association
 ./resource.ps1 aws_worklink_fleet
 ./resource.ps1 aws_worklink_website_certificate_authority_association
+./resource.ps1 aws_route53profiles_profiles -type data
