@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "quicksight:DescribeIngestion",
+      "quicksight:CreateIngestion",
+      "quicksight:CancelIngestion"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

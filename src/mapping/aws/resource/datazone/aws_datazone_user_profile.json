@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "datazone:GetUserProfile",
+      "datazone:CreateUserProfile",
+      "datazone:UpdateUserProfile"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

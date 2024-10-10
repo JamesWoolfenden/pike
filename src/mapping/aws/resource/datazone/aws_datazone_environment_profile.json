@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "datazone:GetEnvironmentProfile",
+      "datazone:CreateEnvironmentProfile",
+      "datazone:DeleteEnvironmentProfile",
+      "datazone:UpdateEnvironmentProfile"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

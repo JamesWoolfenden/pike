@@ -2994,3 +2994,42 @@ var awsQuicksightNamespace []byte
 
 //go:embed mapping/aws/resource/quicksight/aws_quicksight_user.json
 var awsQuicksightUser []byte
+
+//go:embed mapping/aws/resource/datazone/aws_datazone_asset_type.json
+var awsDatazoneAssetType []byte
+
+//go:embed mapping/aws/resource/datazone/aws_datazone_environment.json
+var awsDatazoneEnvironment []byte
+
+//go:embed mapping/aws/resource/datazone/aws_datazone_environment_profile.json
+var awsDatazoneEnvironmentProfile []byte
+
+//go:embed mapping/aws/resource/datazone/aws_datazone_form_type.json
+var awsDatazoneFormType []byte
+
+//go:embed mapping/aws/resource/datazone/aws_datazone_glossary.json
+var awsDatazoneGlossary []byte
+
+//go:embed mapping/aws/resource/datazone/aws_datazone_glossary_term.json
+var awsDatazoneGlossaryTerm []byte
+
+//go:embed mapping/aws/resource/datazone/aws_datazone_user_profile.json
+var awsDatazoneUserProfile []byte
+
+//go:embed mapping/aws/resource/quicksight/aws_quicksight_account_subscription.json
+var awsQuicksightAccountSubscription []byte
+
+//go:embed mapping/aws/resource/quicksight/aws_quicksight_folder_membership.json
+var awsQuicksightFolderMembership []byte
+
+//go:embed mapping/aws/resource/quicksight/aws_quicksight_iam_policy_assignment.json
+var awsQuicksightIamPolicyAssignment []byte
+
+//go:embed mapping/aws/resource/quicksight/aws_quicksight_ingestion.json
+var awsQuicksightIngestion []byte
+
+//go:embed mapping/aws/resource/quicksight/aws_quicksight_template_alias.json
+var awsQuicksightTemplateAlias []byte
+
+//go:embed mapping/aws/resource/quicksight/aws_quicksight_vpc_connection.json
+var awsQuicksightVpcConnection []byte

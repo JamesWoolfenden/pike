@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "datazone:GetFormType",
+      "datazone:CreateFormType",
+      "datazone:DeleteFormType"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

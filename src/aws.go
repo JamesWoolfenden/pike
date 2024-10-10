@@ -1117,6 +1117,19 @@ func AwsLookup(name string) interface{} {
 		"aws_quicksight_group_membership":                                  awsQuicksightGroupMembership,
 		"aws_quicksight_namespace":                                         awsQuicksightNamespace,
 		"aws_quicksight_user":                                              awsQuicksightUser,
+		"aws_datazone_asset_type":                                          awsDatazoneAssetType,
+		"aws_datazone_environment":                                         awsDatazoneEnvironment,
+		"aws_datazone_environment_profile":                                 awsDatazoneEnvironmentProfile,
+		"aws_datazone_form_type":                                           awsDatazoneFormType,
+		"aws_datazone_glossary":                                            awsDatazoneGlossary,
+		"aws_datazone_glossary_term":                                       awsDatazoneGlossaryTerm,
+		"aws_datazone_user_profile":                                        awsDatazoneUserProfile,
+		"aws_quicksight_account_subscription":                              awsQuicksightAccountSubscription,
+		"aws_quicksight_folder_membership":                                 awsQuicksightFolderMembership,
+		"aws_quicksight_iam_policy_assignment":                             awsQuicksightIamPolicyAssignment,
+		"aws_quicksight_ingestion":                                         awsQuicksightIngestion,
+		"aws_quicksight_template_alias":                                    awsQuicksightTemplateAlias,
+		"aws_quicksight_vpc_connection":                                    awsQuicksightVpcConnection,
 	}
 
 	return TFLookup[name]

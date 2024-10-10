@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "datazone:GetGlossary",
+      "datazone:CreateGlossary",
+      "datazone:DeleteGlossary",
+      "datazone:UpdateGlossary"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

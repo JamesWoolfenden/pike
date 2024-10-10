@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "quicksight:DescribeTemplateAlias",
+      "quicksight:CreateTemplateAlias",
+      "quicksight:DeleteTemplateAlias",
+      "quicksight:UpdateTemplateAlias"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1016,7 +1016,6 @@
     "aws_ec2_fleet",
     "aws_ec2_host",
     "aws_ec2_image_block_public_access",
-    "aws_ec2_instance",
     "aws_ec2_instance_connect_endpoint",
     "aws_ec2_instance_metadata_defaults",
     "aws_ec2_instance_state",

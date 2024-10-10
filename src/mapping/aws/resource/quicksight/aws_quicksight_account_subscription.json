@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "quicksight:DescribeAccountSubscription",
+      "quicksight:CreateAccountSubscription",
+      "quicksight:DeleteAccountSubscription"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

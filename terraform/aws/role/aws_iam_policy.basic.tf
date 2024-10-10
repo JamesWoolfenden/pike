@@ -7,156 +7,42 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "VisualEditor0",
         "Effect" : "Allow",
         "Action" : [
-          //aws_cloudfrontkeyvaluestore_key
-          "cloudfront-keyvaluestore:DescribeKeyValueStore",
-          "cloudfront-keyvaluestore:PutKey",
-          "cloudfront-keyvaluestore:GetKey",
+          //aws_quicksight_account_subscription
+          "quicksight:DescribeAccountSubscription",
+          "quicksight:CreateAccountSubscription",
+          "quicksight:DeleteAccountSubscription",
 
-          //aws-ecs_tag
-          "ecs:TagResource",
-          "ecs:UntagResource",
+          //aws_quicksight_folder_membership
+          "quicksight:CreateFolderMembership",
+          "quicksight:DeleteFolderMembership",
 
-          //aws_lb_trust_store
-          "elasticloadbalancing:CreateTrustStore",
-          "elasticloadbalancing:DeleteTrustStore",
-          "elasticloadbalancing:ModifyTrustStore",
+          //aws_quicksight_iam_policy_assignment
+          "quicksight:DescribeIAMPolicyAssignment",
+          "quicksight:CreateIAMPolicyAssignment",
+          "quicksight:DeleteIAMPolicyAssignment",
+          "quicksight:UpdateIAMPolicyAssignment",
 
-          //aws_quicksight_folder
-          "quicksight:CreateFolder",
-          "quicksight:DescribeFolder",
-          "quicksight:DeleteFolder",
-          "quicksight:UpdateFolder",
+          //aws_quicksight_ingestion
+          "quicksight:DescribeIngestion",
+          "quicksight:CreateIngestion",
+          "quicksight:CancelIngestion",
 
-          //aws_quicksight_user
-          "quicksight:RegisterUser",
-          "quicksight:DescribeUser",
-          "quicksight:CreateUser",
-          "quicksight:DeleteUser",
-          "quicksight:UpdateUser",
+          //aws_quicksight_template_alias
+          "quicksight:DescribeTemplateAlias",
+          "quicksight:CreateTemplateAlias",
+          "quicksight:DeleteTemplateAlias",
+          "quicksight:UpdateTemplateAlias",
 
-          //aws_quicksight_namespace
-          "quicksight:CreateNamespace",
-          "quicksight:DeleteNamespace",
-
-          //aws_quicksight_group
-          "quicksight:CreateGroup",
-          "quicksight:DescribeGroup",
-          "quicksight:DeleteGroup",
-          "quicksight:UpdateGroup",
-
-          //aws_quicksight_group_membership
-          "quicksight:DescribeGroupMembership",
-          "quicksight:CreateGroupMembership",
-          "quicksight:DeleteGroupMembership",
-
-          "batch:CreateComputeEnvironment",
-          "batch:DeleteComputeEnvironment",
-          "batch:DescribeComputeEnvironments",
-          "batch:TagResource",
-          "batch:UntagResource",
-          "batch:UpdateComputeEnvironment"
-        ],
-        "Resource" : [
-          "*"
-        ]
-      },
-      {
-        "Sid" : "VisualEditor1",
-        "Effect" : "Allow",
-        "Action" : [
-          "cloudfront:CreateKeyValueStore",
-          "cloudfront:DeleteKeyValueStore",
-          "cloudfront:DescribeKeyValueStore",
-          "cloudfront:UpdateKeyValueStore"
-        ],
-        "Resource" : [
-          "*"
-        ]
-      },
-      {
-        "Sid" : "VisualEditor2",
-        "Effect" : "Allow",
-        "Action" : [
-          "dynamodb:DeleteItem",
-          "dynamodb:DescribeTable",
-          "dynamodb:GetItem",
-          "dynamodb:PutItem"
-        ],
-        "Resource" : [
-          "*"
-        ]
-      },
-      {
-        "Sid" : "VisualEditor3",
-        "Effect" : "Allow",
-        "Action" : [
-          "ec2:DescribeAccountAttributes",
-          "ec2:DescribeImages",
-          "ec2:DescribeKeyPairs",
-          "ec2:DescribeLaunchTemplateVersions",
-          "ec2:DescribeLaunchTemplates",
-          "ec2:DescribeSecurityGroups",
-          "ec2:DescribeSubnets",
-          "ec2:DescribeVpcs"
-        ],
-        "Resource" : [
-          "*"
-        ]
-      },
-      {
-        "Sid" : "VisualEditor4",
-        "Effect" : "Allow",
-        "Action" : [
-          "ecs:Describe*",
-          "ecs:DescribeClusters",
-          "ecs:List*"
-        ],
-        "Resource" : [
-          "*"
-        ]
-      },
-      {
-        "Sid" : "VisualEditor5",
-        "Effect" : "Allow",
-        "Action" : [
-          "iam:CreateServiceLinkedRole",
-          "iam:PassRole"
-        ],
-        "Resource" : [
-          "*"
-        ]
-      },
-      {
-        "Sid" : "VisualEditor6",
-        "Effect" : "Allow",
-        "Action" : [
-          "s3:CreateBucket",
-          "s3:DeleteBucket",
-          "s3:DeleteObject",
-          "s3:GetAccelerateConfiguration",
-          "s3:GetBucketAcl",
-          "s3:GetBucketCORS",
-          "s3:GetBucketLogging",
-          "s3:GetBucketObjectLockConfiguration",
-          "s3:GetBucketPolicy",
-          "s3:GetBucketRequestPayment",
-          "s3:GetBucketTagging",
-          "s3:GetBucketVersioning",
-          "s3:GetBucketWebsite",
-          "s3:GetEncryptionConfiguration",
-          "s3:GetLifecycleConfiguration",
-          "s3:GetObject",
-          "s3:GetObjectAcl",
-          "s3:GetReplicationConfiguration",
-          "s3:ListBucket",
-          "s3:PutObject"
+          //aws_quicksight_vpc_connection
+          "quicksight:DescribeVPCConnection",
+          "quicksight:CreateVPCConnection",
+          "quicksight:DeleteVPCConnection",
+          "quicksight:UpdateVPCConnection"
         ],
         "Resource" : [
           "*"
         ]
       }
-
-
     ]
   })
   tags = {

@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "datazone:GetEnvironment",
+      "datazone:CreateEnvironment",
+      "datazone:DeleteEnvironment",
+      "datazone:UpdateEnvironment"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

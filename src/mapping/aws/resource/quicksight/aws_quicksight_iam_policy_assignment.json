@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "quicksight:DescribeIAMPolicyAssignment",
+      "quicksight:CreateIAMPolicyAssignment",
+      "quicksight:DeleteIAMPolicyAssignment",
+      "quicksight:UpdateIAMPolicyAssignment"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

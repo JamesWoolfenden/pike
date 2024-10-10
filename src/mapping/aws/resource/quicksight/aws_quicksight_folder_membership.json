@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "quicksight:CreateFolderMembership",
+      "quicksight:DeleteFolderMembership"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

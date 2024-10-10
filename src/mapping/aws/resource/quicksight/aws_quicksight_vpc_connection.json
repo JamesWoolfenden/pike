@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "quicksight:DescribeVPCConnection",
+      "quicksight:CreateVPCConnection",
+      "quicksight:DeleteVPCConnection",
+      "quicksight:UpdateVPCConnection"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

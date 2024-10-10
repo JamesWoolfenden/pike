@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "datazone:GetAssetType",
+      "datazone:CreateAssetType",
+      "datazone:DeleteAssetType"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

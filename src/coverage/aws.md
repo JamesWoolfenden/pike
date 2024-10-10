@@ -1,6 +1,6 @@
 # todo aws
 
-Resource percentage coverage   73.18
+Resource percentage coverage   74.09
 Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_amplify_backend_environment
@@ -62,13 +62,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_customerprofiles_profile
 ./resource.ps1 aws_dataexchange_data_set
 ./resource.ps1 aws_dataexchange_revision
-./resource.ps1 aws_datazone_asset_type
-./resource.ps1 aws_datazone_environment
-./resource.ps1 aws_datazone_environment_profile
-./resource.ps1 aws_datazone_form_type
-./resource.ps1 aws_datazone_glossary
-./resource.ps1 aws_datazone_glossary_term
-./resource.ps1 aws_datazone_user_profile
 ./resource.ps1 aws_detective_member
 ./resource.ps1 aws_detective_organization_configuration
 ./resource.ps1 aws_devicefarm_device_pool
@@ -108,7 +101,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_ebs_fast_snapshot_restore
 ./resource.ps1 aws_ebs_snapshot_import
 ./resource.ps1 aws_ec2_capacity_block_reservation
-./resource.ps1 aws_ec2_instance
 ./resource.ps1 aws_ec2_instance_connect_endpoint
 ./resource.ps1 aws_ec2_instance_metadata_defaults
 ./resource.ps1 aws_ec2_instance_state
@@ -278,12 +270,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_prometheus_scraper
 ./resource.ps1 aws_prometheus_workspace
 ./resource.ps1 aws_qldb_ledger
-./resource.ps1 aws_quicksight_account_subscription
-./resource.ps1 aws_quicksight_folder_membership
-./resource.ps1 aws_quicksight_iam_policy_assignment
-./resource.ps1 aws_quicksight_ingestion
-./resource.ps1 aws_quicksight_template_alias
-./resource.ps1 aws_quicksight_vpc_connection
 ./resource.ps1 aws_ram_resource_share_accepter
 ./resource.ps1 aws_ram_sharing_with_organization
 ./resource.ps1 aws_rbin_rule
