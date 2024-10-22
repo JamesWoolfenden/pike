@@ -1,7 +1,7 @@
 # todo aws
 
-Resource percentage coverage   74.09
-Datasource percentage coverage 100.00
+Resource percentage coverage   73.94
+Datasource percentage coverage 99.11
 
 ./resource.ps1 aws_amplify_backend_environment
 ./resource.ps1 aws_amplify_webhook
@@ -159,9 +159,13 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_guardduty_organization_configuration
 ./resource.ps1 aws_guardduty_organization_configuration_feature
 ./resource.ps1 aws_guardduty_publishing_destination
+./resource.ps1 aws_iam_group_policy_attachments_exclusive
+./resource.ps1 aws_iam_role_policy_attachments_exclusive
+./resource.ps1 aws_iam_user_policy_attachments_exclusive
 ./resource.ps1 aws_identitystore_group
 ./resource.ps1 aws_identitystore_group_membership
 ./resource.ps1 aws_identitystore_user
+./resource.ps1 aws_imagebuilder_lifecycle_policy
 ./resource.ps1 aws_internet_gateway_attachment
 ./resource.ps1 aws_iot_domain_configuration
 ./resource.ps1 aws_iot_event_configurations
@@ -373,3 +377,8 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_wafregional_web_acl_association
 ./resource.ps1 aws_worklink_fleet
 ./resource.ps1 aws_worklink_website_certificate_authority_association
+./resource.ps1 aws_bedrock_inference_profile -type data
+./resource.ps1 aws_bedrock_inference_profiles -type data
+./resource.ps1 aws_elasticache_serverless_cache -type data
+./resource.ps1 aws_prometheus_default_scraper_configuration -type data
+./resource.ps1 aws_route53profiles_profiles -type data
