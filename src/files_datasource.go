@@ -1512,3 +1512,18 @@ var dataAwsSyntheticsRuntimeVersion []byte
 
 //go:embed mapping/aws/data/synthetics/aws_synthetics_runtime_versions.json
 var dataAwsSytheticsRuntimeVersions []byte
+
+//go:embed mapping/aws/data/bedrock/aws_bedrock_inference_profile.json
+var dataAwsBedrockInferenceProfile []byte
+
+//go:embed mapping/aws/data/bedrock/aws_bedrock_inference_profiles.json
+var dataAwsBedrockInferenceProfiles []byte
+
+//go:embed mapping/aws/data/elasticache/aws_elasticache_serverless_cache.json
+var dataAwsElasticacheServerlessCache []byte
+
+//go:embed mapping/aws/data/aps/aws_prometheus_default_scraper_configuration.json
+var dataAwsPrometheusDefaultScarperConfiguration []byte
+
+//go:embed mapping/aws/data/route53profiles/aws_route53profiles_profiles.json
+var dataAwsRoute53profilesProfiles []byte

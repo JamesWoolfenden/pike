@@ -377,8 +377,3 @@ Datasource percentage coverage 99.11
 ./resource.ps1 aws_wafregional_web_acl_association
 ./resource.ps1 aws_worklink_fleet
 ./resource.ps1 aws_worklink_website_certificate_authority_association
-./resource.ps1 aws_bedrock_inference_profile -type data
-./resource.ps1 aws_bedrock_inference_profiles -type data
-./resource.ps1 aws_elasticache_serverless_cache -type data
-./resource.ps1 aws_prometheus_default_scraper_configuration -type data
-./resource.ps1 aws_route53profiles_profiles -type data

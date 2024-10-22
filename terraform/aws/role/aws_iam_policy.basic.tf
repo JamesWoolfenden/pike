@@ -7,37 +7,20 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "VisualEditor0",
         "Effect" : "Allow",
         "Action" : [
-          //aws_quicksight_account_subscription
-          "quicksight:DescribeAccountSubscription",
-          "quicksight:CreateAccountSubscription",
-          "quicksight:DeleteAccountSubscription",
+          //aws_bedrock_inference_profile
+          "bedrock:GetInferenceProfile",
 
-          //aws_quicksight_folder_membership
-          "quicksight:CreateFolderMembership",
-          "quicksight:DeleteFolderMembership",
+          //aws_bedrock_inference_profiles
+          "bedrock:ListInferenceProfiles",
 
-          //aws_quicksight_iam_policy_assignment
-          "quicksight:DescribeIAMPolicyAssignment",
-          "quicksight:CreateIAMPolicyAssignment",
-          "quicksight:DeleteIAMPolicyAssignment",
-          "quicksight:UpdateIAMPolicyAssignment",
+          //aws_elasticache_serverless_cache
+          "elasticache:DescribeServerlessCaches",
 
-          //aws_quicksight_ingestion
-          "quicksight:DescribeIngestion",
-          "quicksight:CreateIngestion",
-          "quicksight:CancelIngestion",
+          //aws_prometheus_default_scraper_configuration
+          "aps:GetDefaultScraperConfiguration",
 
-          //aws_quicksight_template_alias
-          "quicksight:DescribeTemplateAlias",
-          "quicksight:CreateTemplateAlias",
-          "quicksight:DeleteTemplateAlias",
-          "quicksight:UpdateTemplateAlias",
-
-          //aws_quicksight_vpc_connection
-          "quicksight:DescribeVPCConnection",
-          "quicksight:CreateVPCConnection",
-          "quicksight:DeleteVPCConnection",
-          "quicksight:UpdateVPCConnection"
+          //aws_route53profiles_profiles
+          "route53profiles:ListProfiles"
         ],
         "Resource" : [
           "*"
