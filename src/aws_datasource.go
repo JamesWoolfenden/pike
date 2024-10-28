@@ -598,6 +598,7 @@ func AwsDataLookup(find string) interface{} { //nolint:maintidx
 		"aws_workspaces_bundle":                                                 dataAwsWorkspacesBundle,
 		"aws_workspaces_directory":                                              dataAwsWorkspaceDirectory,
 		"aws_workspaces_image":                                                  dataAwsWorkspaceImage,
+		"aws_ssm_patch_baselines":                                               dataAwsSsmPatchBaselines,
 	}
 
 	return TFLookup[find]

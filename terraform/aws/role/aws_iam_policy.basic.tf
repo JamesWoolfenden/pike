@@ -7,20 +7,7 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "VisualEditor0",
         "Effect" : "Allow",
         "Action" : [
-          //aws_bedrock_inference_profile
-          "bedrock:GetInferenceProfile",
-
-          //aws_bedrock_inference_profiles
-          "bedrock:ListInferenceProfiles",
-
-          //aws_elasticache_serverless_cache
-          "elasticache:DescribeServerlessCaches",
-
-          //aws_prometheus_default_scraper_configuration
-          "aps:GetDefaultScraperConfiguration",
-
-          //aws_route53profiles_profiles
-          "route53profiles:ListProfiles"
+          "ssm:DescribePatchBaselines",
         ],
         "Resource" : [
           "*"

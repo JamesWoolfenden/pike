@@ -1527,3 +1527,6 @@ var dataAwsPrometheusDefaultScarperConfiguration []byte
 
 //go:embed mapping/aws/data/route53profiles/aws_route53profiles_profiles.json
 var dataAwsRoute53profilesProfiles []byte
+
+//go:embed mapping/aws/data/ssm/aws_ssm_patch_baselines.json
+var dataAwsSsmPatchBaselines []byte
