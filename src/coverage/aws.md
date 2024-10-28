@@ -1,7 +1,7 @@
 # todo aws
 
-Resource percentage coverage   73.94
-Datasource percentage coverage 99.11
+Resource percentage coverage   73.73
+Datasource percentage coverage 99.64
 
 ./resource.ps1 aws_amplify_backend_environment
 ./resource.ps1 aws_amplify_webhook
@@ -101,6 +101,7 @@ Datasource percentage coverage 99.11
 ./resource.ps1 aws_ebs_fast_snapshot_restore
 ./resource.ps1 aws_ebs_snapshot_import
 ./resource.ps1 aws_ec2_capacity_block_reservation
+./resource.ps1 aws_ec2_instance
 ./resource.ps1 aws_ec2_instance_connect_endpoint
 ./resource.ps1 aws_ec2_instance_metadata_defaults
 ./resource.ps1 aws_ec2_instance_state
@@ -294,6 +295,7 @@ Datasource percentage coverage 99.11
 ./resource.ps1 aws_redshiftserverless_resource_policy
 ./resource.ps1 aws_redshiftserverless_snapshot
 ./resource.ps1 aws_redshiftserverless_usage_limit
+./resource.ps1 aws_resiliencehub_resiliency_policy
 ./resource.ps1 aws_resourcegroups_resource
 ./resource.ps1 aws_route53domains_delegation_signer_record
 ./resource.ps1 aws_route53domains_registered_domain
@@ -312,6 +314,8 @@ Datasource percentage coverage 99.11
 ./resource.ps1 aws_s3control_object_lambda_access_point_policy
 ./resource.ps1 aws_s3control_storage_lens_configuration
 ./resource.ps1 aws_sagemaker_flow_definition
+./resource.ps1 aws_sagemaker_hub
+./resource.ps1 aws_sagemaker_mlflow_tracking_server
 ./resource.ps1 aws_securityhub_account
 ./resource.ps1 aws_securityhub_action_target
 ./resource.ps1 aws_securityhub_configuration_policy_association
@@ -377,3 +381,5 @@ Datasource percentage coverage 99.11
 ./resource.ps1 aws_wafregional_web_acl_association
 ./resource.ps1 aws_worklink_fleet
 ./resource.ps1 aws_worklink_website_certificate_authority_association
+./resource.ps1 aws_lb_listener_rule -type data
+./resource.ps1 aws_ssm_patch_baselines -type data
