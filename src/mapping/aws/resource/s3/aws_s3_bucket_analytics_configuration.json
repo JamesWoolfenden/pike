@@ -1,0 +1,19 @@
+[
+    {
+      "apply": [
+        "s3:PutBucketAnalyticsConfiguration"
+    
+      ],
+      "attributes": {
+        "tags": []
+      },
+      "destroy": [
+        "s3:DeleteBucketAnalyticsConfiguration"
+      ],
+      "modify": [],
+      "plan": [
+        "s3:GetBucketAnalyticsConfiguration"
+      ]
+    }
+  ]
+  
