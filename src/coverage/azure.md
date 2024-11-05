@@ -1,7 +1,7 @@
 # todo azure
 
-Resource percentage coverage   4.70
-Datasource percentage coverage 37.31
+Resource percentage coverage   4.66
+Datasource percentage coverage 36.20
 
 ./resource.ps1 azurerm_aadb2c_directory
 ./resource.ps1 azurerm_active_directory_domain_service
@@ -311,6 +311,7 @@ Datasource percentage coverage 37.31
 ./resource.ps1 azurerm_dedicated_host
 ./resource.ps1 azurerm_dedicated_host_group
 ./resource.ps1 azurerm_dev_center
+./resource.ps1 azurerm_dev_center_attached_network
 ./resource.ps1 azurerm_dev_center_catalog
 ./resource.ps1 azurerm_dev_center_dev_box_definition
 ./resource.ps1 azurerm_dev_center_environment_type
@@ -318,6 +319,7 @@ Datasource percentage coverage 37.31
 ./resource.ps1 azurerm_dev_center_network_connection
 ./resource.ps1 azurerm_dev_center_project
 ./resource.ps1 azurerm_dev_center_project_environment_type
+./resource.ps1 azurerm_dev_center_project_pool
 ./resource.ps1 azurerm_digital_twins_endpoint_eventgrid
 ./resource.ps1 azurerm_digital_twins_endpoint_eventhub
 ./resource.ps1 azurerm_digital_twins_endpoint_servicebus
@@ -510,6 +512,7 @@ Datasource percentage coverage 37.31
 ./resource.ps1 azurerm_machine_learning_inference_cluster
 ./resource.ps1 azurerm_machine_learning_synapse_spark
 ./resource.ps1 azurerm_machine_learning_workspace
+./resource.ps1 azurerm_machine_learning_workspace_network_outbound_rule_fqdn
 ./resource.ps1 azurerm_maintenance_assignment_dedicated_host
 ./resource.ps1 azurerm_maintenance_assignment_dynamic_scope
 ./resource.ps1 azurerm_maintenance_assignment_virtual_machine
@@ -633,6 +636,9 @@ Datasource percentage coverage 37.31
 ./resource.ps1 azurerm_notification_hub
 ./resource.ps1 azurerm_notification_hub_authorization_rule
 ./resource.ps1 azurerm_notification_hub_namespace
+./resource.ps1 azurerm_oracle_autonomous_database
+./resource.ps1 azurerm_oracle_cloud_vm_cluster
+./resource.ps1 azurerm_oracle_exadata_infrastructure
 ./resource.ps1 azurerm_orbital_contact
 ./resource.ps1 azurerm_orbital_contact_profile
 ./resource.ps1 azurerm_orbital_spacecraft
@@ -841,7 +847,9 @@ Datasource percentage coverage 37.31
 ./resource.ps1 azurerm_ssh_public_key
 ./resource.ps1 azurerm_stack_hci_cluster
 ./resource.ps1 azurerm_stack_hci_deployment_setting
+./resource.ps1 azurerm_stack_hci_extension
 ./resource.ps1 azurerm_stack_hci_logical_network
+./resource.ps1 azurerm_stack_hci_marketplace_gallery_image
 ./resource.ps1 azurerm_stack_hci_storage_path
 ./resource.ps1 azurerm_stack_hci_virtual_hard_disk
 ./resource.ps1 azurerm_static_site
@@ -937,6 +945,8 @@ Datasource percentage coverage 37.31
 ./resource.ps1 azurerm_traffic_manager_external_endpoint
 ./resource.ps1 azurerm_traffic_manager_nested_endpoint
 ./resource.ps1 azurerm_traffic_manager_profile
+./resource.ps1 azurerm_trusted_signing_account
+./resource.ps1 azurerm_video_indexer_account
 ./resource.ps1 azurerm_virtual_desktop_application
 ./resource.ps1 azurerm_virtual_desktop_application_group
 ./resource.ps1 azurerm_virtual_desktop_host_pool
@@ -1159,6 +1169,15 @@ Datasource percentage coverage 37.31
 ./resource.ps1 azurerm_nginx_deployment -type data
 ./resource.ps1 azurerm_notification_hub -type data
 ./resource.ps1 azurerm_notification_hub_namespace -type data
+./resource.ps1 azurerm_oracle_adbs_character_sets -type data
+./resource.ps1 azurerm_oracle_adbs_national_character_sets -type data
+./resource.ps1 azurerm_oracle_autonomous_database -type data
+./resource.ps1 azurerm_oracle_cloud_vm_cluster -type data
+./resource.ps1 azurerm_oracle_db_nodes -type data
+./resource.ps1 azurerm_oracle_db_servers -type data
+./resource.ps1 azurerm_oracle_db_system_shapes -type data
+./resource.ps1 azurerm_oracle_exadata_infrastructure -type data
+./resource.ps1 azurerm_oracle_gi_versions -type data
 ./resource.ps1 azurerm_orchestrated_virtual_machine_scale_set -type data
 ./resource.ps1 azurerm_platform_image -type data
 ./resource.ps1 azurerm_policy_assignment -type data
@@ -1200,4 +1219,5 @@ Datasource percentage coverage 37.31
 ./resource.ps1 azurerm_system_center_virtual_machine_manager_inventory_items -type data
 ./resource.ps1 azurerm_virtual_desktop_application_group -type data
 ./resource.ps1 azurerm_virtual_desktop_workspace -type data
+./resource.ps1 azurerm_virtual_network_peering -type data
 ./resource.ps1 azurerm_vpn_server_configuration -type data
