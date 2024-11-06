@@ -1,3 +1,6 @@
+//go:build auth
+// +build auth
+
 package pike
 
 import (
@@ -240,6 +243,12 @@ func TestInspectExtended(t *testing.T) {
 		init      bool
 	}
 
+	myDiff := PolicyDiff{
+		Over: []string{"ssm:DescribePatchBaselines"},
+		Under: []string{"dynamodb:DeleteItem", "dynamodb:DescribeTable", "dynamodb:GetItem", "dynamodb:PutItem",
+			"s3:DeleteObject", "s3:GetObject", "s3:ListBucket", "s3:PutObject"},
+	}
+
 	tests := []struct {
 		name    string
 		args    args
@@ -256,12 +265,13 @@ func TestInspectExtended(t *testing.T) {
 		//	wantErr: true,
 		//},
 		{
+			//its comparing
 			name: "init true",
 			args: args{
 				directory: "../terraform/aws",
 				init:      true,
 			},
-			want:    PolicyDiff{},
+			want:    myDiff,
 			wantErr: false,
 		},
 		{

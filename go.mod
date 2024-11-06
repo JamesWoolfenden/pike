@@ -14,7 +14,7 @@ require (
 	github.com/hashicorp/hc-install v0.9.0
 	github.com/hashicorp/hcl/v2 v2.22.0
 	github.com/hashicorp/terraform-exec v0.21.0
-	github.com/jameswoolfenden/identity v0.0.4
+	github.com/jameswoolfenden/identity v0.0.5
 	github.com/rs/zerolog v1.33.0
 	github.com/urfave/cli/v2 v2.27.5
 	golang.org/x/crypto v0.28.0

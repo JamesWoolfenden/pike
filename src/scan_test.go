@@ -700,3 +700,128 @@ func TestLocateTerraform(t *testing.T) {
 		}
 	}
 }
+
+func TestInitWithEmptyDir(t *testing.T) {
+	t.Parallel()
+
+	tempDir, err := os.MkdirTemp("", "empty_tf_test")
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer os.RemoveAll(tempDir)
+
+	tfPath, modules, err := pike.Init(tempDir)
+	if err == nil {
+		t.Error("Expected error for empty directory, got nil")
+	}
+	if tfPath == nil {
+		t.Error("TFPath was not set")
+	}
+	if modules != nil {
+		t.Errorf("Expected nil modules for empty directory, got %v", modules)
+	}
+}
+
+func TestInitWithInvalidTerraformConfig(t *testing.T) {
+	t.Parallel()
+
+	tempDir, err := os.MkdirTemp("", "invalid_tf_test")
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer os.RemoveAll(tempDir)
+
+	// Create invalid terraform configuration
+	invalidConfig := []byte(`
+		resource "invalid" {
+			bad config
+		}
+	`)
+	err = os.WriteFile(filepath.Join(tempDir, "main.tf"), invalidConfig, 0644)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	_, modules, err := pike.Init(tempDir)
+	if err == nil {
+		t.Error("Expected error for invalid terraform config, got nil")
+	}
+	if modules != nil {
+		t.Errorf("Expected nil modules for invalid config, got %v", modules)
+	}
+}
+
+func TestInitWithModulesJsonOnly(t *testing.T) {
+	t.Parallel()
+
+	tempDir, err := os.MkdirTemp("", "modulesjson_tf_test")
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer os.RemoveAll(tempDir)
+
+	// Create .terraform/modules directory with only modules.json
+	modulesDir := filepath.Join(tempDir, ".terraform", "modules")
+	err = os.MkdirAll(modulesDir, 0755)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	err = os.WriteFile(filepath.Join(modulesDir, "modules.json"), []byte("{}"), 0644)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	_, modules, err := pike.Init(tempDir)
+	if err != nil {
+		t.Errorf("Unexpected error: %v", err)
+	}
+	if len(modules) != 0 {
+		t.Errorf("Expected empty modules slice, got %v", modules)
+	}
+}
+
+func TestInitWithDSStoreOnly(t *testing.T) {
+	t.Parallel()
+
+	tempDir, err := os.MkdirTemp("", "dsstore_tf_test")
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer os.RemoveAll(tempDir)
+
+	// Create .terraform/modules directory with only .DS_Store
+	modulesDir := filepath.Join(tempDir, ".terraform", "modules")
+	err = os.MkdirAll(modulesDir, 0755)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	err = os.WriteFile(filepath.Join(modulesDir, ".DS_Store"), []byte{}, 0644)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	_, modules, err := pike.Init(tempDir)
+	if err != nil {
+		t.Errorf("Unexpected error: %v", err)
+	}
+	if len(modules) != 0 {
+		t.Errorf("Expected empty modules slice, got %v", modules)
+	}
+}
+
+func TestInitWithNonExistentDir(t *testing.T) {
+	t.Parallel()
+
+	tfPath, modules, err := pike.Init("/path/that/does/not/exist")
+	if err == nil {
+		t.Error("Expected error for non-existent directory, got nil")
+	}
+	if tfPath != nil {
+		t.Errorf("Expected nil tfPath for non-existent directory, got %v", *tfPath)
+	}
+	if modules != nil {
+		t.Errorf("Expected nil modules for non-existent directory, got %v", modules)
+	}
+}
