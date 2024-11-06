@@ -137,12 +137,12 @@ func TestBackendExistsError_Error(t *testing.T) {
 		{
 			name: "basic backend error",
 			m:    &backendExistsError{},
-			want: "no Backend found",
+			want: "backend already exists",
 		},
 		{
 			name: "new instance",
 			m:    new(backendExistsError),
-			want: "no Backend found",
+			want: "backend already exists",
 		},
 	}
 

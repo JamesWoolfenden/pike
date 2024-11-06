@@ -118,55 +118,6 @@ func Test_stringInSlice(t *testing.T) {
 	}
 }
 
-func TestInit(t *testing.T) {
-	t.Parallel()
-
-	type args struct {
-		dirName string
-	}
-
-	dirName, _ := filepath.Abs("testdata/init/nicconf")
-
-	err := os.RemoveAll(filepath.Join(dirName, ".terraform"))
-
-	log.Print(err)
-
-	tests := []struct {
-		name    string
-		args    args
-		want    []string
-		wantErr bool
-	}{
-		//todo
-		//{
-		//	"remote",
-		//	args{dirName},
-		//	[]string{"api_gateway", "dynamodb_table", "lambda_get", "lambda_post"},
-		//	false,
-		//},
-	}
-
-	for _, tt := range tests {
-		tt := tt
-		t.Run(tt.name, func(t *testing.T) {
-			t.Parallel()
-			got, modules, err := pike.Init(tt.args.dirName)
-			log.Print(modules)
-			if (err != nil) != tt.wantErr {
-				t.Errorf("Init() error = %v, wantErr %v", err, tt.wantErr)
-
-				return
-			}
-			if *got == "" {
-				t.Error("init should return new path to Terraform")
-			}
-			if !reflect.DeepEqual(modules, tt.want) {
-				t.Errorf("Init() got1 = %v, want %v", modules, tt.want)
-			}
-		})
-	}
-}
-
 func TestMakePolicy(t *testing.T) {
 	t.Parallel()
 
