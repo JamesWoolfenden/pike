@@ -1,7 +1,7 @@
-# todo google
+# todo google 
 
-Resource percentage coverage   19.25
-Datasource percentage coverage 75.70
+Resource percentage coverage   19.34 
+Datasource percentage coverage 75.94 
 
 ./resource.ps1 google_access_context_manager_access_level_condition
 ./resource.ps1 google_access_context_manager_service_perimeter_dry_run_egress_policy
@@ -49,8 +49,6 @@ Datasource percentage coverage 75.70
 ./resource.ps1 google_apphub_workload
 ./resource.ps1 google_artifact_registry_vpcsc_config
 ./resource.ps1 google_assured_workloads_workload
-./resource.ps1 google_backup_dr_backup_plan
-./resource.ps1 google_backup_dr_backup_plan_association
 ./resource.ps1 google_backup_dr_backup_vault
 ./resource.ps1 google_backup_dr_management_server
 ./resource.ps1 google_beyondcorp_app_connection
@@ -357,7 +355,6 @@ Datasource percentage coverage 75.70
 ./resource.ps1 google_dataproc_cluster_iam_binding
 ./resource.ps1 google_dataproc_cluster_iam_member
 ./resource.ps1 google_dataproc_cluster_iam_policy
-./resource.ps1 google_dataproc_gdc_application_environment
 ./resource.ps1 google_dataproc_gdc_service_instance
 ./resource.ps1 google_dataproc_job
 ./resource.ps1 google_dataproc_job_iam_binding
@@ -500,7 +497,6 @@ Datasource percentage coverage 75.70
 ./resource.ps1 google_healthcare_workspace
 ./resource.ps1 google_iam_access_boundary_policy
 ./resource.ps1 google_iam_deny_policy
-./resource.ps1 google_iam_principal_access_boundary_policy
 ./resource.ps1 google_iam_workforce_pool
 ./resource.ps1 google_iam_workforce_pool_provider
 ./resource.ps1 google_iam_workload_identity_pool
@@ -619,7 +615,6 @@ Datasource percentage coverage 75.70
 ./resource.ps1 google_network_connectivity_regional_endpoint
 ./resource.ps1 google_network_connectivity_service_connection_policy
 ./resource.ps1 google_network_connectivity_spoke
-./resource.ps1 google_network_management_vpc_flow_logs_config
 ./resource.ps1 google_network_security_address_group
 ./resource.ps1 google_network_security_address_group_iam_binding
 ./resource.ps1 google_network_security_address_group_iam_member
@@ -822,7 +817,6 @@ Datasource percentage coverage 75.70
 ./resource.ps1 google_apphub_discovered_workload -type data
 ./resource.ps1 google_artifact_registry_docker_image -type data
 ./resource.ps1 google_artifact_registry_locations -type data
-./resource.ps1 google_backup_dr_backup_plan_association -type data
 ./resource.ps1 google_bigquery_tables -type data
 ./resource.ps1 google_certificate_manager_certificates -type data
 ./resource.ps1 google_cloud_identity_group_transitive_memberships -type data

@@ -1130,6 +1130,7 @@ func AwsLookup(name string) interface{} {
 		"aws_quicksight_ingestion":                                         awsQuicksightIngestion,
 		"aws_quicksight_template_alias":                                    awsQuicksightTemplateAlias,
 		"aws_quicksight_vpc_connection":                                    awsQuicksightVpcConnection,
+		"aws_s3_bucket_analytics_configuration":							awsS3BucketAnalyticsConfiguration,
 	}
 
 	return TFLookup[name]
