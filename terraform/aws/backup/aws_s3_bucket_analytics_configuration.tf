@@ -1,5 +1,5 @@
 resource "aws_s3_bucket_analytics_configuration" "pike" {
-    bucket = aws_s3_bucket.example.id
+  bucket = aws_s3_bucket.example.id
   name   = "EntireBucket"
 
   storage_class_analysis {
