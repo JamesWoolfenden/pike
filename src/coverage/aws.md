@@ -1,7 +1,7 @@
-# todo aws
+# todo aws 
 
-Resource percentage coverage   73.63
-Datasource percentage coverage 100.00
+Resource percentage coverage   73.70 
+Datasource percentage coverage 100.00 
 
 ./resource.ps1 aws_amplify_backend_environment
 ./resource.ps1 aws_amplify_webhook
@@ -304,7 +304,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_route53profiles_profile
 ./resource.ps1 aws_route53profiles_resource_association
 ./resource.ps1 aws_rum_metrics_destination
-
 ./resource.ps1 aws_s3_directory_bucket
 ./resource.ps1 aws_s3_object_copy
 ./resource.ps1 aws_s3control_access_grants_instance_resource_policy

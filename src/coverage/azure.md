@@ -1,7 +1,7 @@
-# todo azure
+# todo azure 
 
-Resource percentage coverage   4.64
-Datasource percentage coverage 36.20
+Resource percentage coverage   4.66 
+Datasource percentage coverage 36.20 
 
 ./resource.ps1 azurerm_aadb2c_directory
 ./resource.ps1 azurerm_active_directory_domain_service
@@ -229,7 +229,6 @@ Datasource percentage coverage 36.20
 ./resource.ps1 azurerm_custom_provider
 ./resource.ps1 azurerm_dashboard
 ./resource.ps1 azurerm_dashboard_grafana
-./resource.ps1 azurerm_dashboard_grafana_managed_private_endpoint
 ./resource.ps1 azurerm_data_factory
 ./resource.ps1 azurerm_data_factory_credential_service_principal
 ./resource.ps1 azurerm_data_factory_credential_user_managed_identity
@@ -282,7 +281,6 @@ Datasource percentage coverage 36.20
 ./resource.ps1 azurerm_data_protection_backup_instance_blob_storage
 ./resource.ps1 azurerm_data_protection_backup_instance_disk
 ./resource.ps1 azurerm_data_protection_backup_instance_kubernetes_cluster
-./resource.ps1 azurerm_data_protection_backup_instance_mysql_flexible_server
 ./resource.ps1 azurerm_data_protection_backup_instance_postgresql
 ./resource.ps1 azurerm_data_protection_backup_instance_postgresql_flexible_server
 ./resource.ps1 azurerm_data_protection_backup_policy_blob_storage
@@ -860,8 +858,6 @@ Datasource percentage coverage 36.20
 ./resource.ps1 azurerm_static_web_app_custom_domain
 ./resource.ps1 azurerm_static_web_app_function_app_registration
 ./resource.ps1 azurerm_storage_account_local_user
-./resource.ps1 azurerm_storage_account_queue_properties
-./resource.ps1 azurerm_storage_account_static_website
 ./resource.ps1 azurerm_storage_blob
 ./resource.ps1 azurerm_storage_blob_inventory_policy
 ./resource.ps1 azurerm_storage_container_immutability_policy
