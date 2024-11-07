@@ -303,7 +303,7 @@ Datasource percentage coverage 99.82
 ./resource.ps1 aws_route53profiles_profile
 ./resource.ps1 aws_route53profiles_resource_association
 ./resource.ps1 aws_rum_metrics_destination
-./resource.ps1 aws_s3_bucket_analytics_configuration
+
 ./resource.ps1 aws_s3_directory_bucket
 ./resource.ps1 aws_s3_object_copy
 ./resource.ps1 aws_s3control_access_grants_instance_resource_policy

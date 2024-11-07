@@ -1,8 +1,8 @@
 [
     {
       "apply": [
+        "s3:GetBucketAnalyticsConfiguration",
         "s3:PutBucketAnalyticsConfiguration"
-    
       ],
       "attributes": {
         "tags": []
