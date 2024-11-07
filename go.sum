@@ -114,8 +114,8 @@ github.com/hashicorp/terraform-exec v0.21.0/go.mod h1:1PPeMYou+KDUSSeRE9szMZ/oHf
 github.com/hashicorp/terraform-json v0.23.0 h1:sniCkExU4iKtTADReHzACkk8fnpQXrdD2xoR+lppBkI=
 github.com/hashicorp/terraform-json v0.23.0/go.mod h1:MHdXbBAbSg0GvzuWazEGKAn/cyNfIB7mN6y7KJN6y2c=
 github.com/hpcloud/tail v1.0.0/go.mod h1:ab1qPbhIpdTxEkNHXyeSf5vhxWSCs/tWer42PpOxQnU=
-github.com/jameswoolfenden/identity v0.0.4 h1:O2bX2A0N5mrvGJRbF20agZTxaK2kiXE5zVByko/j5SM=
-github.com/jameswoolfenden/identity v0.0.4/go.mod h1:jaMZrHefs1GhLm4k13RLYyarODAXXlYjDwbc9DBxeqw=
+github.com/jameswoolfenden/identity v0.0.5 h1:y7s6+Nvk21a81eHspwTteO0HVq49nZJFmNu9V72whnY=
+github.com/jameswoolfenden/identity v0.0.5/go.mod h1:kQfxlwgjvu8RKuFzd9QeudGeypQQglBXwRLUpk3VQnA=
 github.com/jbenet/go-context v0.0.0-20150711004518-d14ea06fba99 h1:BQSFePA1RWJOlocH6Fxy8MmwDt+yVQYULKfN0RoTN8A=
 github.com/jbenet/go-context v0.0.0-20150711004518-d14ea06fba99/go.mod h1:1lJo3i6rXxKeerYnT8Nvf0QmHCRC1n8sfWVwXF2Frvo=
 github.com/jmespath/go-jmespath v0.4.0 h1:BEgLn5cpjn8UN1mAw4NjwDrS35OdebyEtFe+9YPoQUg=

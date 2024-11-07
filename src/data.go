@@ -66,7 +66,7 @@ func GetResources(file string, dirName string) ([]ResourceV2, error) {
 		} else {
 			resource.Provider = "unknown"
 
-			log.Print("parsing error for ", block)
+			log.Info().Msgf("parsing error for %s", block.Type)
 		}
 
 		Resources = append(Resources, resource)
