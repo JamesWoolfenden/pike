@@ -46,5 +46,5 @@ type backendExistsError struct {
 }
 
 func (m *backendExistsError) Error() string {
-	return fmt.Sprint("no Backend found")
+	return "backend already exists"
 }

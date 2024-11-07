@@ -1,7 +1,7 @@
 # todo aws
 
-Resource percentage coverage   73.73
-Datasource percentage coverage 99.82
+Resource percentage coverage   73.63
+Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_amplify_backend_environment
 ./resource.ps1 aws_amplify_webhook
@@ -231,6 +231,7 @@ Datasource percentage coverage 99.82
 ./resource.ps1 aws_networkmanager_transit_gateway_connect_peer_association
 ./resource.ps1 aws_networkmonitor_monitor
 ./resource.ps1 aws_networkmonitor_probe
+./resource.ps1 aws_opensearch_authorize_vpc_endpoint_access
 ./resource.ps1 aws_opensearch_domain_saml_options
 ./resource.ps1 aws_opensearch_inbound_connection_accepter
 ./resource.ps1 aws_opensearch_outbound_connection
@@ -352,6 +353,7 @@ Datasource percentage coverage 99.82
 ./resource.ps1 aws_ssm_activation
 ./resource.ps1 aws_ssm_default_patch_baseline
 ./resource.ps1 aws_ssm_service_setting
+./resource.ps1 aws_ssmquicksetup_configuration_manager
 ./resource.ps1 aws_ssoadmin_account_assignment
 ./resource.ps1 aws_ssoadmin_application_access_scope
 ./resource.ps1 aws_ssoadmin_application_assignment_configuration
@@ -381,4 +383,3 @@ Datasource percentage coverage 99.82
 ./resource.ps1 aws_wafregional_web_acl_association
 ./resource.ps1 aws_worklink_fleet
 ./resource.ps1 aws_worklink_website_certificate_authority_association
-./resource.ps1 aws_lb_listener_rule -type data

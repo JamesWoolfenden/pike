@@ -1530,3 +1530,6 @@ var dataAwsRoute53profilesProfiles []byte
 
 //go:embed mapping/aws/data/ssm/aws_ssm_patch_baselines.json
 var dataAwsSsmPatchBaselines []byte
+
+//go:embed mapping/aws/data/elasticloadbalancing/aws_lb_listener_rule.json
+var dataAwsLbListenerRule []byte

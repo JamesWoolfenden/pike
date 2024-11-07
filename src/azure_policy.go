@@ -27,6 +27,7 @@ func AZUREPolicy(permissions []string) (string, error) {
 	var output bytes.Buffer
 
 	tmpl, err := template.New("test").Parse(string(policyAZURETemplate))
+
 	if err != nil {
 		return "", fmt.Errorf("failed to create template %w", err)
 	}
