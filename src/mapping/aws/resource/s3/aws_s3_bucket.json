@@ -12,7 +12,7 @@
         "s3:PutObjectRetention",
         "s3:PutObject"
       ],
-      "tag": [
+      "tags": [
         "s3:PutBucketTagging"
       ]
     },
