@@ -10,6 +10,15 @@ const terraform string = "terraform"
 
 // GetAWSPermissions for AWS resources.
 func GetAWSPermissions(result ResourceV2) ([]string, error) {
+	// Validate the input
+	if result.TypeName == "" {
+		return nil, errors.New("TypeName cannot be empty")
+	}
+
+	if result.Name == "" {
+		return nil, errors.New("Name cannot be empty")
+	}
+
 	var (
 		err         error
 		Permissions []string
@@ -1130,7 +1139,7 @@ func AwsLookup(name string) interface{} {
 		"aws_quicksight_ingestion":                                         awsQuicksightIngestion,
 		"aws_quicksight_template_alias":                                    awsQuicksightTemplateAlias,
 		"aws_quicksight_vpc_connection":                                    awsQuicksightVpcConnection,
-		"aws_s3_bucket_analytics_configuration":							awsS3BucketAnalyticsConfiguration,
+		"aws_s3_bucket_analytics_configuration":                            awsS3BucketAnalyticsConfiguration,
 	}
 
 	return TFLookup[name]
@@ -1160,16 +1169,16 @@ func GetPermissionMap(raw []byte, attributes []string, resource string) ([]strin
 		return nil, errors.New("mappings are empty")
 	}
 
-	temp, ok := mappings[0].(map[string]interface{})
+	temp, err := IsTypeOK(mappings[0])
 
-	if !ok {
-		return nil, fmt.Errorf("assertion to map[string]interface{} failed")
+	if err != nil {
+		return nil, err
 	}
 
-	myAttributes, ok := temp["attributes"].(map[string]interface{})
+	myAttributes, err := IsTypeOK(temp["attributes"])
 
-	if !ok {
-		_ = fmt.Errorf("assertion failed")
+	if err != nil {
+		return nil, err
 	}
 
 	var found []string
@@ -1194,4 +1203,14 @@ func GetPermissionMap(raw []byte, attributes []string, resource string) ([]strin
 	}
 
 	return found, nil
+}
+
+func IsTypeOK(mappings interface{}) (map[string]interface{}, error) {
+	temp, ok := mappings.(map[string]interface{})
+
+	if !ok {
+		return nil, fmt.Errorf("assertion to map[string]interface{} failed")
+	}
+
+	return temp, nil
 }

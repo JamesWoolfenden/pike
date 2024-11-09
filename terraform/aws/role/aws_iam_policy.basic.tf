@@ -7,7 +7,7 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "VisualEditor0",
         "Effect" : "Allow",
         "Action" : [
-          "ssm:DescribePatchBaselines",
+          "ec2:DescribeSpotDatafeedSubscription",
         ],
         "Resource" : [
           "*"

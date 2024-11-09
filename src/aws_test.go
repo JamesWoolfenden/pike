@@ -286,3 +286,82 @@ func TestGetPermissionMap(t *testing.T) {
 		})
 	}
 }
+
+func TestIsTypeOK(t *testing.T) {
+	t.Parallel()
+
+	tests := []struct {
+		name    string
+		args    interface{}
+		want    map[string]interface{}
+		wantErr bool
+	}{
+		{
+			name: "valid_map",
+			args: map[string]interface{}{
+				"key1": "value1",
+				"key2": 123,
+				"key3": true,
+			},
+			want: map[string]interface{}{
+				"key1": "value1",
+				"key2": 123,
+				"key3": true,
+			},
+			wantErr: false,
+		},
+		{
+			name:    "nil_input",
+			args:    nil,
+			want:    nil,
+			wantErr: true,
+		},
+		{
+			name:    "string_input",
+			args:    "not a map",
+			want:    nil,
+			wantErr: true,
+		},
+		{
+			name:    "slice_input",
+			args:    []string{"not", "a", "map"},
+			want:    nil,
+			wantErr: true,
+		},
+		{
+			name:    "empty_map",
+			args:    map[string]interface{}{},
+			want:    map[string]interface{}{},
+			wantErr: false,
+		},
+		{
+			name: "nested_map",
+			args: map[string]interface{}{
+				"outer": map[string]interface{}{
+					"inner": "value",
+				},
+			},
+			want: map[string]interface{}{
+				"outer": map[string]interface{}{
+					"inner": "value",
+				},
+			},
+			wantErr: false,
+		},
+	}
+
+	for _, tt := range tests {
+		tt := tt
+		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
+			got, err := pike.IsTypeOK(tt.args)
+			if (err != nil) != tt.wantErr {
+				t.Errorf("IsTypeOK() error = %v, wantErr %v", err, tt.wantErr)
+				return
+			}
+			if !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("IsTypeOK() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}

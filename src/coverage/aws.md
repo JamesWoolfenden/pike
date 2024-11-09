@@ -1,7 +1,7 @@
 # todo aws
 
 Resource percentage coverage   73.70
-Datasource percentage coverage 99.82
+Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_amplify_backend_environment
 ./resource.ps1 aws_amplify_webhook
@@ -382,4 +382,3 @@ Datasource percentage coverage 99.82
 ./resource.ps1 aws_wafregional_web_acl_association
 ./resource.ps1 aws_worklink_fleet
 ./resource.ps1 aws_worklink_website_certificate_authority_association
-./resource.ps1 aws_spot_datafeed_subscription -type data

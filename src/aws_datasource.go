@@ -600,6 +600,7 @@ func AwsDataLookup(find string) interface{} { //nolint:maintidx
 		"aws_workspaces_image":                                                  dataAwsWorkspaceImage,
 		"aws_ssm_patch_baselines":                                               dataAwsSsmPatchBaselines,
 		"aws_lb_listener_rule":                                                  dataAwsLbListenerRule,
+		"aws_spot_datafeed_subscription":                                        dataAwsSpotDatafeedSubscription,
 	}
 
 	return TFLookup[find]

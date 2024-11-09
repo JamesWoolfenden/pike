@@ -3,47 +3,66 @@ package pike
 import (
 	"context"
 	"encoding/json"
+	"errors"
 	"fmt"
+	"os"
+	"strings"
 
 	"github.com/aws/aws-sdk-go-v2/config"
 	"github.com/aws/aws-sdk-go-v2/service/iam"
-	"github.com/rs/zerolog/log"
 	diff "github.com/yudai/gojsondiff"
 	"github.com/yudai/gojsondiff/formatter"
 )
 
 // Compare IAC codebase to AWS policy.
 func Compare(directory string, arn string, init bool) (bool, error) {
-	var theSame bool
+
+	if directory == "" {
+		return false, errors.New("directory cannot be empty")
+	}
+
+	if _, err := os.Stat(directory); os.IsNotExist(err) {
+		return false, fmt.Errorf("directory does not exist: %s", directory)
+	}
+
+	if arn == "" {
+		return false, errors.New("ARN cannot be empty")
+	}
+
+	if !strings.HasPrefix(arn, "arn:") {
+		return false, errors.New("invalid ARN format")
+	}
+
+	var polciesMatch bool
 	// Load the Shared AWS Configuration (~/.aws/config)
 	cfg, err := config.LoadDefaultConfig(context.TODO())
 	if err != nil {
-		log.Fatal().Err(err)
+		return false, fmt.Errorf("failed to load AWS config: %w", err)
 	}
 
 	client := iam.NewFromConfig(cfg)
 
-	Version, err := GetVersion(client, arn)
+	version, err := GetVersion(client, arn)
 	if err != nil {
-		return theSame, err
+		return polciesMatch, err
 	}
 
-	Policy, _ := GetPolicyVersion(client, arn, *Version)
+	policy, _ := GetPolicyVersion(client, arn, *version)
 
 	iacPolicy, err := MakePolicy(directory, nil, init, false)
 	if err != nil {
-		return theSame, err
+		return polciesMatch, err
 	}
 
-	Sorted, err := SortActions(iacPolicy.AWS.JSONOut)
+	sorted, err := SortActions(iacPolicy.AWS.JSONOut)
 	if err != nil {
-		return theSame, err
+		return polciesMatch, err
 	}
 
 	// iam versus iac
 	fmt.Printf("IAM Policy %s versus Local %s \n", arn, directory)
 
-	return CompareIAMPolicy(*Policy, *Sorted)
+	return CompareIAMPolicy(*policy, *sorted)
 }
 
 // CompareIAMPolicy takes two IAM policies and compares.
@@ -56,29 +75,33 @@ func CompareIAMPolicy(policy string, oldPolicy string) (bool, error) {
 	}
 
 	if compare.Modified() {
-		var aJSON map[string]interface{}
-		err = json.Unmarshal([]byte(policy), &aJSON)
-
-		if err != nil {
-			return false, err
-		}
-
-		myConfig := formatter.AsciiFormatterConfig{
-			ShowArrayIndex: true,
-			Coloring:       true,
-		}
-
-		myFormatter := formatter.NewAsciiFormatter(aJSON, myConfig)
-		diffString, err := myFormatter.Format(compare)
-
-		if err != nil {
-			return false, err
-		}
-
-		fmt.Print(diffString)
-
-		return false, nil
+		return showDifferences(policy, compare)
 	}
 
 	return true, nil
+}
+
+func showDifferences(policy string, compare diff.Diff) (bool, error) {
+	var aJSON map[string]interface{}
+	err := json.Unmarshal([]byte(policy), &aJSON)
+
+	if err != nil {
+		return false, err
+	}
+
+	myConfig := formatter.AsciiFormatterConfig{
+		ShowArrayIndex: true,
+		Coloring:       true,
+	}
+
+	myFormatter := formatter.NewAsciiFormatter(aJSON, myConfig)
+	diffString, err := myFormatter.Format(compare)
+
+	if err != nil {
+		return false, err
+	}
+
+	fmt.Print(diffString)
+
+	return false, nil
 }

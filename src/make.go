@@ -17,27 +17,27 @@ import (
 func Make(directory string) (*string, error) {
 	err := Scan(directory, "terraform", nil, true, true, false)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to scan directory: %w", err)
 	}
 
 	directory, err = filepath.Abs(directory)
 	if err != nil {
-		return nil, fmt.Errorf("failed to find path %w", err)
+		return nil, fmt.Errorf("failed to find path: %w", err)
 	}
 
 	policyPath, err := filepath.Abs(directory + "/.pike/")
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to get absolute path for policy: %w", err)
 	}
 
-	tf, err2 := tfApply(policyPath)
-	if err2 != nil {
-		return nil, err2
+	tf, err := tfApply(policyPath)
+	if err != nil {
+		return nil, fmt.Errorf("failed to apply terraform: %w", err)
 	}
 
 	state, err := tf.Show(context.Background())
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to show terraform state: %w", err)
 	}
 
 	if (state.Values.Outputs["arn"]) != nil {
@@ -67,7 +67,9 @@ func tfApply(policyPath string) (*tfexec.Terraform, error) {
 		return nil, err
 	}
 
-	err = terraform.Apply(context.Background())
+	ctx, cancel := context.WithTimeout(context.Background(), 30*time.Minute)
+	defer cancel()
+	err = terraform.Apply(ctx)
 	if err != nil {
 		return nil, fmt.Errorf("terraform apply failed %w", err)
 	}
@@ -94,6 +96,8 @@ func Apply(target string, region string) error {
 		return err
 	}
 
+	log.Debug().Msgf("Starting terraform apply in directory: %s", target)
+	defer log.Debug().Msg("Completed terraform apply")
 	_, err = tfApply(target)
 
 	if err == nil {
@@ -124,15 +128,27 @@ func tfPlan(policyPath string) error {
 
 	chdir := "-chdir=" + policyPath
 	cmd := exec.Command(terraform.ExecPath(), chdir, "plan", "--out", "tf.plan")
+
 	stdout, err := cmd.Output()
 
-	cmd = exec.Command(terraform.ExecPath(), chdir, "show", "--json", "tf.plan")
+	if err != nil {
+		return fmt.Errorf("terraform plan generation failed: %w", err)
+	}
+
+	if len(stdout) == 0 {
+		return errors.New("terraform plan output is empty")
+	}
+
+	defer os.Remove(filepath.Join(policyPath, "tf.plan"))
+
+	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Minute)
+	defer cancel()
+
+	cmd = exec.CommandContext(ctx, terraform.ExecPath(), chdir, "show", "--json", "tf.plan")
 	stdout, err = cmd.Output()
 
 	if err != nil {
-		fmt.Println(err.Error())
-
-		return err
+		return fmt.Errorf("terraform plan failed: %w", err)
 	}
 
 	outfile := filepath.Join(policyPath, "tf.json")

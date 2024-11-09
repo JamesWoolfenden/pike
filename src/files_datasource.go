@@ -1533,3 +1533,6 @@ var dataAwsSsmPatchBaselines []byte
 
 //go:embed mapping/aws/data/elasticloadbalancing/aws_lb_listener_rule.json
 var dataAwsLbListenerRule []byte
+
+//go:embed mapping/aws/data/ec2/aws_spot_datafeed_subscription.json
+var dataAwsSpotDatafeedSubscription []byte
