@@ -11,6 +11,14 @@
         "ActionTypeId": {
           "$ref": "#/definitions/ActionTypeId"
         },
+        "Commands": {
+          "description": "The shell commands to run with your compute action in CodePipeline.",
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": false
+        },
         "Configuration": {
           "description": "The action's configuration. These are key-value pairs that specify input values for an action.",
           "type": "object"
@@ -33,6 +41,14 @@
         "OutputArtifacts": {
           "items": {
             "$ref": "#/definitions/OutputArtifact"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "OutputVariables": {
+          "description": "The list of variables that are to be exported from the compute action.",
+          "items": {
+            "type": "string"
           },
           "type": "array",
           "uniqueItems": true
@@ -73,7 +89,8 @@
             "Test",
             "Deploy",
             "Invoke",
-            "Approval"
+            "Approval",
+            "Compute"
           ],
           "type": "string"
         },
@@ -228,9 +245,25 @@
         "Result": {
           "description": "The specified result for when the failure conditions are met, such as rolling back the stage",
           "enum": [
-            "ROLLBACK"
+            "ROLLBACK",
+            "RETRY"
           ],
           "type": "string"
+        },
+        "RetryConfiguration": {
+          "additionalProperties": false,
+          "description": "The configuration that specifies the retry configuration for a stage",
+          "properties": {
+            "RetryMode": {
+              "description": "The specified retry mode type for the given stage. FAILED_ACTIONS will retry only the failed actions. ALL_ACTIONS will retry both failed and successful",
+              "enum": [
+                "ALL_ACTIONS",
+                "FAILED_ACTIONS"
+              ],
+              "type": "string"
+            }
+          },
+          "type": "object"
         }
       },
       "type": "object"
@@ -389,6 +422,14 @@
       "additionalProperties": false,
       "description": "Represents information about the output of an action.",
       "properties": {
+        "Files": {
+          "description": "The files that you want to associate with the output artifact that will be exported from the compute action.",
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
         "Name": {
           "description": "The name of the output of an artifact, such as \"My App\".",
           "type": "string"

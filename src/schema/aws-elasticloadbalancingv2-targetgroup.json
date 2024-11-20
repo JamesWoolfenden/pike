@@ -248,6 +248,11 @@
   ],
   "tagging": {
     "cloudFormationSystemTags": false,
+    "permissions": [
+      "elasticloadbalancing:AddTags",
+      "elasticloadbalancing:DescribeTags",
+      "elasticloadbalancing:RemoveTags"
+    ],
     "tagOnCreate": false,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

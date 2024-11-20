@@ -1,7 +1,7 @@
-# todo azure
+# todo azure 
 
-Resource percentage coverage   4.64
-Datasource percentage coverage 36.20
+Resource percentage coverage   4.62 
+Datasource percentage coverage 35.88 
 
 ./resource.ps1 azurerm_aadb2c_directory
 ./resource.ps1 azurerm_active_directory_domain_service
@@ -337,6 +337,7 @@ Datasource percentage coverage 36.20
 ./resource.ps1 azurerm_dns_ptr_record
 ./resource.ps1 azurerm_dns_srv_record
 ./resource.ps1 azurerm_dns_txt_record
+./resource.ps1 azurerm_dynatrace_monitor
 ./resource.ps1 azurerm_elastic_cloud_elasticsearch
 ./resource.ps1 azurerm_elastic_san
 ./resource.ps1 azurerm_elastic_san_volume
@@ -604,6 +605,8 @@ Datasource percentage coverage 36.20
 ./resource.ps1 azurerm_nat_gateway_public_ip_prefix_association
 ./resource.ps1 azurerm_netapp_account
 ./resource.ps1 azurerm_netapp_account_encryption
+./resource.ps1 azurerm_netapp_backup_policy
+./resource.ps1 azurerm_netapp_backup_vault
 ./resource.ps1 azurerm_netapp_pool
 ./resource.ps1 azurerm_netapp_snapshot
 ./resource.ps1 azurerm_netapp_snapshot_policy
@@ -853,6 +856,7 @@ Datasource percentage coverage 36.20
 ./resource.ps1 azurerm_stack_hci_extension
 ./resource.ps1 azurerm_stack_hci_logical_network
 ./resource.ps1 azurerm_stack_hci_marketplace_gallery_image
+./resource.ps1 azurerm_stack_hci_network_interface
 ./resource.ps1 azurerm_stack_hci_storage_path
 ./resource.ps1 azurerm_stack_hci_virtual_hard_disk
 ./resource.ps1 azurerm_static_site
@@ -1117,6 +1121,7 @@ Datasource percentage coverage 36.20
 ./resource.ps1 azurerm_iothub_shared_access_policy -type data
 ./resource.ps1 azurerm_ip_group -type data
 ./resource.ps1 azurerm_ip_groups -type data
+./resource.ps1 azurerm_key_vault_managed_hardware_security_module_key -type data
 ./resource.ps1 azurerm_key_vault_managed_hardware_security_module_role_definition -type data
 ./resource.ps1 azurerm_kubernetes_cluster -type data
 ./resource.ps1 azurerm_kubernetes_cluster_node_pool -type data
@@ -1226,3 +1231,5 @@ Datasource percentage coverage 36.20
 ./resource.ps1 azurerm_virtual_desktop_workspace -type data
 ./resource.ps1 azurerm_virtual_network_peering -type data
 ./resource.ps1 azurerm_vpn_server_configuration -type data
+./resource.ps1 netapp_backup_policy -type data
+./resource.ps1 netapp_backup_vault -type data

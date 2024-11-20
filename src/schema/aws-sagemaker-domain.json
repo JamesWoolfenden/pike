@@ -260,6 +260,14 @@
         "DockerSettings": {
           "$ref": "#/definitions/DockerSettings"
         },
+        "ExecutionRoleIdentityConfig": {
+          "description": "The configuration for attaching a SageMaker user profile name to the execution role as a sts:SourceIdentity key.",
+          "enum": [
+            "USER_PROFILE_NAME",
+            "DISABLED"
+          ],
+          "type": "string"
+        },
         "RStudioServerProDomainSettings": {
           "$ref": "#/definitions/RStudioServerProDomainSettings"
         },
@@ -939,6 +947,14 @@
       "minItems": 1,
       "type": "array",
       "uniqueItems": false
+    },
+    "TagPropagation": {
+      "description": "Indicates whether the tags added to Domain, User Profile and Space entity is propagated to all SageMaker resources.",
+      "enum": [
+        "ENABLED",
+        "DISABLED"
+      ],
+      "type": "string"
     },
     "Tags": {
       "description": "A list of tags to apply to the user profile.",

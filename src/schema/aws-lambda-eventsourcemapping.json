@@ -200,16 +200,16 @@
     },
     "Tag": {
       "additionalProperties": false,
-      "description": "",
+      "description": "A [tag](https://docs.aws.amazon.com/lambda/latest/dg/tagging.html) to apply to the event source mapping.",
       "properties": {
         "Key": {
-          "description": "The key name of the tag. You can specify a value that is 1 to 128 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
+          "description": "The key for this tag.",
           "maxLength": 128,
           "minLength": 1,
           "type": "string"
         },
         "Value": {
-          "description": "The value for the tag. You can specify a value that is 0 to 256 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
+          "description": "The value for this tag.",
           "maxLength": 256,
           "minLength": 0,
           "type": "string"
@@ -418,7 +418,7 @@
       "type": "number"
     },
     "Tags": {
-      "description": "",
+      "description": "A list of tags to add to the event source mapping.\n  You must have the ``lambda:TagResource``, ``lambda:UntagResource``, and ``lambda:ListTags`` permissions for your [principal](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html) to manage the CFN stack. If you don't have these permissions, there might be unexpected behavior with stack-level tags propagating to the resource during resource creation and update.",
       "insertionOrder": false,
       "items": {
         "$ref": "#/definitions/Tag"

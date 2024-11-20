@@ -197,7 +197,6 @@
         }
       },
       "required": [
-        "Columns",
         "DataSourceArn",
         "Name",
         "SqlQuery"
@@ -949,7 +948,6 @@
       },
       "required": [
         "DataSourceArn",
-        "InputColumns",
         "Name"
       ],
       "type": "object"
@@ -1372,7 +1370,10 @@
         "quicksight:TagResource",
         "quicksight:ListTagsForResource",
         "quicksight:DescribeDataSetRefreshProperties",
-        "quicksight:PutDataSetRefreshProperties"
+        "quicksight:PutDataSetRefreshProperties",
+        "quicksight:CreateFolderMembership",
+        "quicksight:DeleteFolderMembership",
+        "quicksight:ListFoldersForResource"
       ]
     },
     "delete": {

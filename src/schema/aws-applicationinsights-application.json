@@ -764,6 +764,13 @@
       "pattern": "[a-zA-Z0-9.-_]*",
       "type": "string"
     },
+    "SNSNotificationArn": {
+      "description": "Application Insights sends notifications to this SNS topic whenever there is a problem update in the associated application.",
+      "maxLength": 300,
+      "minLength": 20,
+      "pattern": "^arn:aws(-[\\w]+)*:[\\w\\d-]+:([\\w\\d-]*)?:[\\w\\d_-]*([:/].+)*$",
+      "type": "string"
+    },
     "Tags": {
       "description": "The tags of Application Insights application.",
       "insertionOrder": true,
@@ -800,6 +807,7 @@
     "/properties/CustomComponents",
     "/properties/GroupingType",
     "/properties/OpsItemSNSTopicArn",
+    "/properties/SNSNotificationArn",
     "/properties/AttachMissingPermission"
   ]
 }

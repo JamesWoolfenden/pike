@@ -90,10 +90,12 @@
         "workspaces-web:AssociateUserSettings",
         "workspaces-web:ListTagsForResource",
         "workspaces-web:TagResource",
-        "kms:CreateGrant",
+        "kms:DescribeKey",
         "kms:GenerateDataKey",
         "kms:Decrypt",
-        "kms:DescribeKey",
+        "kms:GenerateDataKeyWithoutPlaintext",
+        "kms:ReEncryptTo",
+        "kms:ReEncryptFrom",
         "ec2:CreateNetworkInterface",
         "ec2:CreateNetworkInterfacePermission",
         "ec2:DeleteNetworkInterface",
@@ -303,6 +305,11 @@
   ],
   "tagging": {
     "cloudFormationSystemTags": false,
+    "permissions": [
+      "workspaces-web:UntagResource",
+      "workspaces-web:ListTagsForResource",
+      "workspaces-web:TagResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

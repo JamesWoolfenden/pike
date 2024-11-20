@@ -6,20 +6,26 @@
   "definitions": {
     "CatalogTarget": {
       "additionalProperties": false,
+      "description": "Specifies an AWS Glue Data Catalog target.",
       "properties": {
         "ConnectionName": {
+          "description": "The name of the connection for an Amazon S3-backed Data Catalog table to be a target of the crawl when using a Catalog connection type paired with a NETWORK Connection type.",
           "type": "string"
         },
         "DatabaseName": {
+          "description": "The name of the database to be synchronized.",
           "type": "string"
         },
         "DlqEventQueueArn": {
+          "description": "A valid Amazon dead-letter SQS ARN. For example, arn:aws:sqs:region:account:deadLetterQueue.",
           "type": "string"
         },
         "EventQueueArn": {
+          "description": "A valid Amazon SQS ARN. For example, arn:aws:sqs:region:account:sqs.",
           "type": "string"
         },
         "Tables": {
+          "description": "A list of the tables to be synchronized.",
           "items": {
             "type": "string"
           },
@@ -31,21 +37,27 @@
     },
     "DeltaTarget": {
       "additionalProperties": false,
+      "description": "Specifies a Delta data store to crawl one or more Delta tables.",
       "properties": {
         "ConnectionName": {
+          "description": "The name of the connection to use to connect to the Delta table target.",
           "type": "string"
         },
         "CreateNativeDeltaTable": {
+          "description": "Specifies whether the crawler will create native tables, to allow integration with query engines that support querying of the Delta transaction log directly.",
           "type": "boolean"
         },
         "DeltaTables": {
+          "description": "",
           "items": {
+            "description": "A list of the Amazon S3 paths to the Delta tables.",
             "type": "string"
           },
           "type": "array",
           "uniqueItems": false
         },
         "WriteManifest": {
+          "description": "Specifies whether to write the manifest files to the Delta table path.",
           "type": "boolean"
         }
       },
@@ -53,8 +65,10 @@
     },
     "DynamoDBTarget": {
       "additionalProperties": false,
+      "description": "Specifies an Amazon DynamoDB table to crawl.",
       "properties": {
         "Path": {
+          "description": "The name of the DynamoDB table to crawl.",
           "type": "string"
         }
       },
@@ -62,11 +76,14 @@
     },
     "IcebergTarget": {
       "additionalProperties": false,
+      "description": "Specifies Apache Iceberg data store targets.",
       "properties": {
         "ConnectionName": {
+          "description": "The name of the connection to use to connect to the Iceberg target.",
           "type": "string"
         },
         "Exclusions": {
+          "description": "A list of global patterns used to exclude from the crawl.",
           "items": {
             "type": "string"
           },
@@ -74,9 +91,11 @@
           "uniqueItems": false
         },
         "MaximumTraversalDepth": {
+          "description": "The maximum depth of Amazon S3 paths that the crawler can traverse to discover the Iceberg metadata folder in your Amazon S3 path. Used to limit the crawler run time.",
           "type": "integer"
         },
         "Paths": {
+          "description": "One or more Amazon S3 paths that contains Iceberg metadata folders as s3://bucket/prefix .",
           "items": {
             "type": "string"
           },
@@ -88,11 +107,14 @@
     },
     "JdbcTarget": {
       "additionalProperties": false,
+      "description": "Specifies a JDBC data store to crawl.",
       "properties": {
         "ConnectionName": {
+          "description": "The name of the connection to use to connect to the JDBC target.",
           "type": "string"
         },
         "EnableAdditionalMetadata": {
+          "description": "Specify a value of RAWTYPES or COMMENTS to enable additional metadata in table responses. RAWTYPES provides the native-level datatype. COMMENTS provides comments associated with a column or table in the database.\n\nIf you do not need additional metadata, keep the field empty.",
           "items": {
             "type": "string"
           },
@@ -100,6 +122,7 @@
           "uniqueItems": false
         },
         "Exclusions": {
+          "description": "A list of glob patterns used to exclude from the crawl. For more information, see Catalog Tables with a Crawler.",
           "items": {
             "type": "string"
           },
@@ -107,6 +130,7 @@
           "uniqueItems": false
         },
         "Path": {
+          "description": "The path of the JDBC target.",
           "type": "string"
         }
       },
@@ -114,11 +138,14 @@
     },
     "LakeFormationConfiguration": {
       "additionalProperties": false,
+      "description": "Specifies AWS Lake Formation configuration settings for the crawler",
       "properties": {
         "AccountId": {
+          "description": "Required for cross account crawls. For same account crawls as the target data, this can be left as null.",
           "type": "string"
         },
         "UseLakeFormationCredentials": {
+          "description": "Specifies whether to use AWS Lake Formation credentials for the crawler instead of the IAM role credentials.",
           "type": "boolean"
         }
       },
@@ -126,11 +153,14 @@
     },
     "MongoDBTarget": {
       "additionalProperties": false,
+      "description": "Specifies an Amazon DocumentDB or MongoDB data store to crawl.",
       "properties": {
         "ConnectionName": {
+          "description": "The name of the connection to use to connect to the Amazon DocumentDB or MongoDB target.",
           "type": "string"
         },
         "Path": {
+          "description": "The path of the Amazon DocumentDB or MongoDB target (database/collection).",
           "type": "string"
         }
       },
@@ -138,8 +168,10 @@
     },
     "RecrawlPolicy": {
       "additionalProperties": false,
+      "description": "When crawling an Amazon S3 data source after the first crawl is complete, specifies whether to crawl the entire dataset again or to crawl only folders that were added since the last crawler run. For more information, see Incremental Crawls in AWS Glue in the developer guide.",
       "properties": {
         "RecrawlBehavior": {
+          "description": "Specifies whether to crawl the entire dataset again or to crawl only folders that were added since the last crawler run. A value of CRAWL_EVERYTHING specifies crawling the entire dataset again. A value of CRAWL_NEW_FOLDERS_ONLY specifies crawling only folders that were added since the last crawler run. A value of CRAWL_EVENT_MODE specifies crawling only the changes identified by Amazon S3 events.",
           "type": "string"
         }
       },
@@ -147,17 +179,22 @@
     },
     "S3Target": {
       "additionalProperties": false,
+      "description": "Specifies a data store in Amazon Simple Storage Service (Amazon S3).",
       "properties": {
         "ConnectionName": {
+          "description": "The name of a connection which allows a job or crawler to access data in Amazon S3 within an Amazon Virtual Private Cloud environment (Amazon VPC).",
           "type": "string"
         },
         "DlqEventQueueArn": {
+          "description": "A valid Amazon dead-letter SQS ARN. For example, arn:aws:sqs:region:account:deadLetterQueue.",
           "type": "string"
         },
         "EventQueueArn": {
+          "description": "A valid Amazon SQS ARN. For example, arn:aws:sqs:region:account:sqs.",
           "type": "string"
         },
         "Exclusions": {
+          "description": "A list of glob patterns used to exclude from the crawl.",
           "items": {
             "type": "string"
           },
@@ -165,9 +202,11 @@
           "uniqueItems": false
         },
         "Path": {
+          "description": "The path to the Amazon S3 target.",
           "type": "string"
         },
         "SampleSize": {
+          "description": "Sets the number of files in each leaf folder to be crawled when crawling sample files in a dataset. If not set, all the files are crawled. A valid value is an integer between 1 and 249.",
           "type": "integer"
         }
       },
@@ -175,8 +214,10 @@
     },
     "Schedule": {
       "additionalProperties": false,
+      "description": "A scheduling object using a cron statement to schedule an event.",
       "properties": {
         "ScheduleExpression": {
+          "description": "A cron expression used to specify the schedule. For more information, see Time-Based Schedules for Jobs and Crawlers. For example, to run something every day at 12:15 UTC, specify cron(15 12 * * ? *).",
           "type": "string"
         }
       },
@@ -184,11 +225,14 @@
     },
     "SchemaChangePolicy": {
       "additionalProperties": false,
+      "description": "The policy that specifies update and delete behaviors for the crawler. The policy tells the crawler what to do in the event that it detects a change in a table that already exists in the customer's database at the time of the crawl. The SchemaChangePolicy does not affect whether or how new tables and partitions are added. New tables and partitions are always created regardless of the SchemaChangePolicy on a crawler. The SchemaChangePolicy consists of two components, UpdateBehavior and DeleteBehavior.",
       "properties": {
         "DeleteBehavior": {
+          "description": "The deletion behavior when the crawler finds a deleted object. A value of LOG specifies that if a table or partition is found to no longer exist, do not delete it, only log that it was found to no longer exist. A value of DELETE_FROM_DATABASE specifies that if a table or partition is found to have been removed, delete it from the database. A value of DEPRECATE_IN_DATABASE specifies that if a table has been found to no longer exist, to add a property to the table that says 'DEPRECATED' and includes a timestamp with the time of deprecation.",
           "type": "string"
         },
         "UpdateBehavior": {
+          "description": "The update behavior when the crawler finds a changed schema. A value of LOG specifies that if a table or a partition already exists, and a change is detected, do not update it, only log that a change was detected. Add new tables and new partitions (including on existing tables). A value of UPDATE_IN_DATABASE specifies that if a table or partition already exists, and a change is detected, update it. Add new tables and partitions.",
           "type": "string"
         }
       },
@@ -196,8 +240,10 @@
     },
     "Targets": {
       "additionalProperties": false,
+      "description": "Specifies data stores to crawl.",
       "properties": {
         "CatalogTargets": {
+          "description": "Specifies AWS Glue Data Catalog targets.",
           "items": {
             "$ref": "#/definitions/CatalogTarget"
           },
@@ -205,6 +251,7 @@
           "uniqueItems": false
         },
         "DeltaTargets": {
+          "description": "Specifies an array of Delta data store targets.",
           "items": {
             "$ref": "#/definitions/DeltaTarget"
           },
@@ -212,6 +259,7 @@
           "uniqueItems": false
         },
         "DynamoDBTargets": {
+          "description": "Specifies Amazon DynamoDB targets.",
           "items": {
             "$ref": "#/definitions/DynamoDBTarget"
           },
@@ -219,6 +267,7 @@
           "uniqueItems": false
         },
         "IcebergTargets": {
+          "description": "Specifies Apache Iceberg data store targets.",
           "items": {
             "$ref": "#/definitions/IcebergTarget"
           },
@@ -226,6 +275,7 @@
           "uniqueItems": false
         },
         "JdbcTargets": {
+          "description": "Specifies JDBC targets.",
           "items": {
             "$ref": "#/definitions/JdbcTarget"
           },
@@ -233,6 +283,7 @@
           "uniqueItems": false
         },
         "MongoDBTargets": {
+          "description": "A list of Mongo DB targets.",
           "items": {
             "$ref": "#/definitions/MongoDBTarget"
           },
@@ -240,6 +291,7 @@
           "uniqueItems": false
         },
         "S3Targets": {
+          "description": "Specifies Amazon Simple Storage Service (Amazon S3) targets.",
           "items": {
             "$ref": "#/definitions/S3Target"
           },
@@ -251,11 +303,51 @@
     }
   },
   "description": "Resource Type definition for AWS::Glue::Crawler",
+  "handlers": {
+    "create": {
+      "permissions": [
+        "glue:CreateCrawler",
+        "glue:GetCrawler",
+        "glue:TagResource",
+        "iam:PassRole"
+      ]
+    },
+    "delete": {
+      "permissions": [
+        "glue:DeleteCrawler",
+        "glue:GetCrawler",
+        "glue:StopCrawler",
+        "iam:PassRole"
+      ]
+    },
+    "list": {
+      "permissions": [
+        "glue:ListCrawlers",
+        "iam:PassRole"
+      ]
+    },
+    "read": {
+      "permissions": [
+        "glue:GetCrawler",
+        "glue:GetTags",
+        "iam:PassRole"
+      ]
+    },
+    "update": {
+      "permissions": [
+        "glue:UpdateCrawler",
+        "glue:UntagResource",
+        "glue:TagResource",
+        "iam:PassRole"
+      ]
+    }
+  },
   "primaryIdentifier": [
-    "/properties/Id"
+    "/properties/Name"
   ],
   "properties": {
     "Classifiers": {
+      "description": "A list of UTF-8 strings that specify the names of custom classifiers that are associated with the crawler.",
       "items": {
         "type": "string"
       },
@@ -263,30 +355,33 @@
       "uniqueItems": false
     },
     "Configuration": {
+      "description": "Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior.",
       "type": "string"
     },
     "CrawlerSecurityConfiguration": {
+      "description": "The name of the SecurityConfiguration structure to be used by this crawler.",
       "type": "string"
     },
     "DatabaseName": {
+      "description": "The name of the database in which the crawler's output is stored.",
       "type": "string"
     },
     "Description": {
-      "type": "string"
-    },
-    "Id": {
+      "description": "A description of the crawler.",
       "type": "string"
     },
     "LakeFormationConfiguration": {
       "$ref": "#/definitions/LakeFormationConfiguration"
     },
     "Name": {
+      "description": "The name of the crawler.",
       "type": "string"
     },
     "RecrawlPolicy": {
       "$ref": "#/definitions/RecrawlPolicy"
     },
     "Role": {
+      "description": "The Amazon Resource Name (ARN) of an IAM role that's used to access customer resources, such as Amazon Simple Storage Service (Amazon S3) data.",
       "type": "string"
     },
     "Schedule": {
@@ -296,21 +391,28 @@
       "$ref": "#/definitions/SchemaChangePolicy"
     },
     "TablePrefix": {
+      "description": "The prefix added to the names of tables that are created.",
       "type": "string"
     },
     "Tags": {
+      "description": "The tags to use with this crawler.",
       "type": "object"
     },
     "Targets": {
       "$ref": "#/definitions/Targets"
     }
   },
-  "readOnlyProperties": [
-    "/properties/Id"
-  ],
   "required": [
     "Role",
     "Targets"
   ],
+  "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-glue.git",
+  "tagging": {
+    "cloudFormationSystemTags": false,
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": true,
+    "taggable": true
+  },
   "typeName": "AWS::Glue::Crawler"
 }

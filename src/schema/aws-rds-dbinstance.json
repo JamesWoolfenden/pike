@@ -29,7 +29,6 @@
     "/properties/KmsKeyId",
     "/properties/MasterUsername",
     "/properties/NcharCharacterSetName",
-    "/properties/Port",
     "/properties/SourceRegion",
     "/properties/StorageEncrypted",
     "/properties/Timezone"
@@ -353,7 +352,7 @@
       "uniqueItems": true
     },
     "DBSnapshotIdentifier": {
-      "description": "The name or Amazon Resource Name (ARN) of the DB snapshot that's used to restore the DB instance. If you're restoring from a shared manual DB snapshot, you must specify the ARN of the snapshot.\n By specifying this property, you can create a DB instance from the specified DB snapshot. If the ``DBSnapshotIdentifier`` property is an empty string or the ``AWS::RDS::DBInstance`` declaration has no ``DBSnapshotIdentifier`` property, AWS CloudFormation creates a new database. If the property contains a value (other than an empty string), AWS CloudFormation creates a database from the specified snapshot. If a snapshot with the specified name doesn't exist, AWS CloudFormation can't create the database and it rolls back the stack.\n Some DB instance properties aren't valid when you restore from a snapshot, such as the ``MasterUsername`` and ``MasterUserPassword`` properties. For information about the properties that you can specify, see the ``RestoreDBInstanceFromDBSnapshot`` action in the *Amazon RDS API Reference*.\n After you restore a DB instance with a ``DBSnapshotIdentifier`` property, you must specify the same ``DBSnapshotIdentifier`` property for any future updates to the DB instance. When you specify this property for an update, the DB instance is not restored from the DB snapshot again, and the data in the database is not changed. However, if you don't specify the ``DBSnapshotIdentifier`` property, an empty DB instance is created, and the original DB instance is deleted. If you specify a property that is different from the previous snapshot restore property, a new DB instance is restored from the specified ``DBSnapshotIdentifier`` property, and the original DB instance is deleted.\n If you specify the ``DBSnapshotIdentifier`` property to restore a DB instance (as opposed to specifying it for DB instance updates), then don't specify the following properties:\n  +   ``CharacterSetName`` \n  +   ``DBClusterIdentifier`` \n  +   ``DBName`` \n  +   ``DeleteAutomatedBackups`` \n  +   ``KmsKeyId`` \n  +   ``MasterUsername`` \n  +   ``MasterUserPassword`` \n  +   ``PerformanceInsightsKMSKeyId`` \n  +   ``PerformanceInsightsRetentionPeriod`` \n  +   ``PromotionTier`` \n  +   ``SourceDBInstanceIdentifier`` \n  +   ``SourceRegion`` \n  +   ``StorageEncrypted`` (for an encrypted snapshot)\n  +   ``Timezone`` \n  \n  *Amazon Aurora* \n Not applicable. Snapshot restore is managed by the DB cluster.",
+      "description": "The name or Amazon Resource Name (ARN) of the DB snapshot that's used to restore the DB instance. If you're restoring from a shared manual DB snapshot, you must specify the ARN of the snapshot.\n By specifying this property, you can create a DB instance from the specified DB snapshot. If the ``DBSnapshotIdentifier`` property is an empty string or the ``AWS::RDS::DBInstance`` declaration has no ``DBSnapshotIdentifier`` property, AWS CloudFormation creates a new database. If the property contains a value (other than an empty string), AWS CloudFormation creates a database from the specified snapshot. If a snapshot with the specified name doesn't exist, AWS CloudFormation can't create the database and it rolls back the stack.\n Some DB instance properties aren't valid when you restore from a snapshot, such as the ``MasterUsername`` and ``MasterUserPassword`` properties. For information about the properties that you can specify, see the ``RestoreDBInstanceFromDBSnapshot`` action in the *Amazon RDS API Reference*.\n After you restore a DB instance with a ``DBSnapshotIdentifier`` property, you must specify the same ``DBSnapshotIdentifier`` property for any future updates to the DB instance. When you specify this property for an update, the DB instance is not restored from the DB snapshot again, and the data in the database is not changed. However, if you don't specify the ``DBSnapshotIdentifier`` property, an empty DB instance is created, and the original DB instance is deleted. If you specify a property that is different from the previous snapshot restore property, a new DB instance is restored from the specified ``DBSnapshotIdentifier`` property, and the original DB instance is deleted.\n If you specify the ``DBSnapshotIdentifier`` property to restore a DB instance (as opposed to specifying it for DB instance updates), then don't specify the following properties:\n  +   ``CharacterSetName`` \n  +   ``DBClusterIdentifier`` \n  +   ``DBName`` \n  +   ``KmsKeyId`` \n  +   ``MasterUsername`` \n  +   ``MasterUserPassword`` \n  +   ``PromotionTier`` \n  +   ``SourceDBInstanceIdentifier`` \n  +   ``SourceRegion`` \n  +   ``StorageEncrypted`` (for an unencrypted snapshot)\n  +   ``Timezone`` \n  \n  *Amazon Aurora* \n Not applicable. Snapshot restore is managed by the DB cluster.",
       "type": "string"
     },
     "DBSubnetGroupName": {
@@ -623,11 +622,11 @@
     "/properties/DBSubnetGroupName": "$lowercase(DBSubnetGroupName)",
     "/properties/Engine": "$lowercase(Engine)",
     "/properties/EngineVersion": "$join([$string(EngineVersion), \".*\"])",
-    "/properties/KmsKeyId": "$join([\"arn:(aws)[-]{0,1}[a-z]{0,2}[-]{0,1}[a-z]{0,3}:kms:[a-z]{2}[-]{1}[a-z]{3,10}[-]{0,1}[a-z]{0,10}[-]{1}[1-3]{1}:[0-9]{12}[:]{1}key\\/\", KmsKeyId])",
-    "/properties/MasterUserSecret/KmsKeyId": "$join([\"arn:(aws)[-]{0,1}[a-z]{0,2}[-]{0,1}[a-z]{0,3}:kms:[a-z]{2}[-]{1}[a-z]{3,10}[-]{0,1}[a-z]{0,10}[-]{1}[1-3]{1}:[0-9]{12}[:]{1}key\\/\", MasterUserSecret.KmsKeyId])",
+    "/properties/KmsKeyId": "$join([\"arn:.+?:kms:.+?:.+?:key\\/\", KmsKeyId])",
+    "/properties/MasterUserSecret/KmsKeyId": "$join([\"arn:.+?:kms:.+?:.+?:key\\/\", MasterUserSecret.KmsKeyId])",
     "/properties/NetworkType": "$lowercase(NetworkType)",
     "/properties/OptionGroupName": "$lowercase(OptionGroupName)",
-    "/properties/PerformanceInsightsKMSKeyId": "$join([\"arn:(aws)[-]{0,1}[a-z]{0,2}[-]{0,1}[a-z]{0,3}:kms:[a-z]{2}[-]{1}[a-z]{3,10}[-]{0,1}[a-z]{0,10}[-]{1}[1-3]{1}:[0-9]{12}[:]{1}key\\/\", PerformanceInsightsKMSKeyId])",
+    "/properties/PerformanceInsightsKMSKeyId": "$join([\"arn:.+?:kms:.+?:.+?:key\\/\", PerformanceInsightsKMSKeyId])",
     "/properties/PreferredMaintenanceWindow": "$lowercase(PreferredMaintenanceWindow)",
     "/properties/SourceDBInstanceAutomatedBackupsArn": "$lowercase(SourceDBInstanceAutomatedBackupsArn)",
     "/properties/SourceDBInstanceIdentifier": "$lowercase(SourceDBInstanceIdentifier)",
@@ -664,7 +663,6 @@
     "/properties/DBSnapshotIdentifier",
     "/properties/DeleteAutomatedBackups",
     "/properties/MasterUserPassword",
-    "/properties/Port",
     "/properties/RestoreTime",
     "/properties/SourceDBInstanceAutomatedBackupsArn",
     "/properties/SourceDBInstanceIdentifier",

@@ -1,8 +1,7 @@
 {
   "additionalProperties": false,
   "createOnlyProperties": [
-    "/properties/Name",
-    "/properties/Tags"
+    "/properties/Name"
   ],
   "definitions": {
     "LogLevel": {
@@ -49,8 +48,7 @@
     "create": {
       "permissions": [
         "iotwireless:CreateNetworkAnalyzerConfiguration",
-        "iotwireless:TagResource",
-        "iotwireless:ListTagsForResource"
+        "iotwireless:TagResource"
       ]
     },
     "delete": {
@@ -73,8 +71,9 @@
     "update": {
       "permissions": [
         "iotwireless:UpdateNetworkAnalyzerConfiguration",
-        "iotwireless:UntagResource",
-        "iotwireless:ListTagsForResource"
+        "iotwireless:GetNetworkAnalyzerConfiguration",
+        "iotwireless:TagResource",
+        "iotwireless:UntagResource"
       ]
     }
   },
@@ -148,9 +147,14 @@
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-rpdk.git",
   "tagging": {
     "cloudFormationSystemTags": false,
+    "permissions": [
+      "iotwireless:TagResource",
+      "iotwireless:UntagResource",
+      "iotwireless:ListTagsForResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
-    "tagUpdatable": false,
+    "tagUpdatable": true,
     "taggable": true
   },
   "typeName": "AWS::IoTWireless::NetworkAnalyzerConfiguration"

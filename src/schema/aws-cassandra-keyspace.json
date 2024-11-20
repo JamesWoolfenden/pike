@@ -152,5 +152,18 @@
     }
   },
   "required": [],
+  "tagging": {
+    "cloudFormationSystemTags": true,
+    "permissions": [
+      "cassandra:TagResource",
+      "cassandra:TagMultiRegionResource",
+      "cassandra:UntagResource",
+      "cassandra:UntagMultiRegionResource"
+    ],
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": true,
+    "taggable": true
+  },
   "typeName": "AWS::Cassandra::Keyspace"
 }

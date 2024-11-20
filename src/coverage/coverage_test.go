@@ -48,6 +48,7 @@ func Test_percent(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
+			
 			got := percent(tt.args.missing, tt.args.data)
 
 			if !pike.AlmostEqual(got, tt.want) {

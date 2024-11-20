@@ -2,6 +2,7 @@
   "additionalProperties": false,
   "createOnlyProperties": [
     "/properties/Name",
+    "/properties/OutputFormat",
     "/properties/DestinationResourceArn"
   ],
   "definitions": {
@@ -134,6 +135,13 @@
       "maxLength": 60,
       "minLength": 1,
       "pattern": "[\\w-]*$",
+      "type": "string"
+    },
+    "OutputFormat": {
+      "description": "The format of the logs that are sent to this delivery destination.",
+      "maxLength": 12,
+      "minLength": 1,
+      "pattern": "^[0-9A-Za-z]+$",
       "type": "string"
     },
     "Tags": {

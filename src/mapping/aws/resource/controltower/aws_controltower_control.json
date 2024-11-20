@@ -14,6 +14,7 @@
       "organizations:DetachPolicy",
       "organizations:ListPoliciesForTarget",
       "organizations:ListTargetsForPolicy",
+      "controltower:ListTagsForResource",
       "organizations:DescribePolicy"
     ],
     "attributes": {

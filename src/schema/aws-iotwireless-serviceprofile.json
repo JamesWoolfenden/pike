@@ -1,5 +1,9 @@
 {
   "additionalProperties": false,
+  "createOnlyProperties": [
+    "/properties/Name",
+    "/properties/LoRaWAN"
+  ],
   "definitions": {
     "LoRaWANServiceProfile": {
       "additionalProperties": false,
@@ -86,8 +90,7 @@
     "create": {
       "permissions": [
         "iotwireless:CreateServiceProfile",
-        "iotwireless:TagResource",
-        "iotwireless:ListTagsForResource"
+        "iotwireless:TagResource"
       ]
     },
     "delete": {
@@ -105,6 +108,13 @@
       "permissions": [
         "iotwireless:GetServiceProfile",
         "iotwireless:ListTagsForResource"
+      ]
+    },
+    "update": {
+      "permissions": [
+        "iotwireless:GetServiceProfile",
+        "iotwireless:TagResource",
+        "iotwireless:UntagResource"
       ]
     }
   },
@@ -163,6 +173,17 @@
   ],
   "required": [],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-rpdk.git",
-  "taggable": true,
+  "tagging": {
+    "cloudFormationSystemTags": true,
+    "permissions": [
+      "iotwireless:TagResource",
+      "iotwireless:UntagResource",
+      "iotwireless:ListTagsForResource"
+    ],
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": true,
+    "taggable": true
+  },
   "typeName": "AWS::IoTWireless::ServiceProfile"
 }

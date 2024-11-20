@@ -120,6 +120,9 @@
     "PropagationDefaultRouteTableId": {
       "type": "string"
     },
+    "SecurityGroupReferencingSupport": {
+      "type": "string"
+    },
     "Tags": {
       "items": {
         "$ref": "#/definitions/Tag"

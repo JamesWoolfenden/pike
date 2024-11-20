@@ -110,12 +110,15 @@ func TestGetAWSPermissions(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
+
 			got, err := pike.GetAWSPermissions(tt.args.result)
+
 			if (err != nil) != tt.wantErr {
 				t.Errorf("GetAWSPermissions() error = %v, wantErr %v", err, tt.wantErr)
 
 				return
 			}
+
 			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("GetAWSPermissions() = %v, want %v", got, tt.want)
 			}
@@ -176,11 +179,13 @@ func TestGetAWSResourcePermissions(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
 			got, err := pike.GetAWSResourcePermissions(tt.args.result)
+
 			if (err != nil) != tt.wantErr {
 				t.Errorf("GetAWSResourcePermissions() error = %v, wantErr %v", err, tt.wantErr)
 
 				return
 			}
+
 			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("GetAWSResourcePermissions() = %v, want %v", got, tt.want)
 			}
@@ -355,10 +360,13 @@ func TestIsTypeOK(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
 			got, err := pike.IsTypeOK(tt.args)
+
 			if (err != nil) != tt.wantErr {
 				t.Errorf("IsTypeOK() error = %v, wantErr %v", err, tt.wantErr)
+
 				return
 			}
+
 			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("IsTypeOK() = %v, want %v", got, tt.want)
 			}

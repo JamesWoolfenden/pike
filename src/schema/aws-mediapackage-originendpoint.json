@@ -590,6 +590,10 @@
     "update": {
       "permissions": [
         "mediapackage:UpdateOriginEndpoint",
+        "mediapackage:TagResource",
+        "mediapackage:ListTagsForResource",
+        "mediapackage:UntagResource",
+        "mediapackage:DescribeOriginEndpoint",
         "iam:PassRole"
       ]
     }
@@ -683,9 +687,13 @@
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-rpdk.git",
   "tagging": {
     "cloudFormationSystemTags": false,
+    "permissions": [
+      "mediapackage:TagResource",
+      "mediapackage:UntagResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
-    "tagUpdatable": false,
+    "tagUpdatable": true,
     "taggable": true
   },
   "typeName": "AWS::MediaPackage::OriginEndpoint"

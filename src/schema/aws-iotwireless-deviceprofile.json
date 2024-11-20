@@ -1,5 +1,9 @@
 {
   "additionalProperties": false,
+  "createOnlyProperties": [
+    "/properties/Name",
+    "/properties/LoRaWAN"
+  ],
   "definitions": {
     "FactoryPresetFreq": {
       "maximum": 16700000,
@@ -120,8 +124,7 @@
     "create": {
       "permissions": [
         "iotwireless:CreateDeviceProfile",
-        "iotwireless:TagResource",
-        "iotwireless:ListTagsForResource"
+        "iotwireless:TagResource"
       ]
     },
     "delete": {
@@ -139,6 +142,13 @@
       "permissions": [
         "iotwireless:GetDeviceProfile",
         "iotwireless:ListTagsForResource"
+      ]
+    },
+    "update": {
+      "permissions": [
+        "iotwireless:GetDeviceProfile",
+        "iotwireless:TagResource",
+        "iotwireless:UntagResource"
       ]
     }
   },
@@ -181,6 +191,17 @@
   ],
   "required": [],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-rpdk.git",
-  "taggable": true,
+  "tagging": {
+    "cloudFormationSystemTags": true,
+    "permissions": [
+      "iotwireless:TagResource",
+      "iotwireless:UntagResource",
+      "iotwireless:ListTagsForResource"
+    ],
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": true,
+    "taggable": true
+  },
   "typeName": "AWS::IoTWireless::DeviceProfile"
 }

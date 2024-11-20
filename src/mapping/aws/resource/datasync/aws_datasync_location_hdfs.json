@@ -4,7 +4,8 @@
       "datasync:UpdateLocationHdfs",
       "datasync:CreateLocationHdfs",
       "datasync:DeleteLocation",
-      "datasync:DescribeLocationHdfs"
+      "datasync:DescribeLocationHdfs",
+      "datasync:ListTagsForResource"
     ],
     "attributes": {
       "tags": [

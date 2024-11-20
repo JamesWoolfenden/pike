@@ -109,6 +109,11 @@
   ],
   "tagging": {
     "cloudFormationSystemTags": false,
+    "permissions": [
+      "workspaces-web:UntagResource",
+      "workspaces-web:ListTagsForResource",
+      "workspaces-web:TagResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

@@ -243,8 +243,7 @@
     "create": {
       "permissions": [
         "iotwireless:CreateWirelessDevice",
-        "iotwireless:TagResource",
-        "iotwireless:ListTagsForResource"
+        "iotwireless:TagResource"
       ]
     },
     "delete": {
@@ -268,9 +267,10 @@
     "update": {
       "permissions": [
         "iotwireless:UpdateWirelessDevice",
-        "iotwireless:UntagResource",
-        "iotwireless:ListTagsForResource",
-        "iotwireless:AssociateWirelessDeviceWithThing"
+        "iotwireless:GetWirelessDevice",
+        "iotwireless:AssociateWirelessDeviceWithThing",
+        "iotwireless:TagResource",
+        "iotwireless:UntagResource"
       ]
     }
   },
@@ -355,6 +355,17 @@
     "DestinationName"
   ],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-rpdk.git",
-  "taggable": true,
+  "tagging": {
+    "cloudFormationSystemTags": true,
+    "permissions": [
+      "iotwireless:TagResource",
+      "iotwireless:UntagResource",
+      "iotwireless:ListTagsForResource"
+    ],
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": true,
+    "taggable": true
+  },
   "typeName": "AWS::IoTWireless::WirelessDevice"
 }

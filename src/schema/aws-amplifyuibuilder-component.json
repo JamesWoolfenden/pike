@@ -574,6 +574,10 @@
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-amplifyuibuilder",
   "tagging": {
     "cloudFormationSystemTags": true,
+    "permissions": [
+      "amplifyuibuilder:TagResource",
+      "amplifyuibuilder:UntagResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

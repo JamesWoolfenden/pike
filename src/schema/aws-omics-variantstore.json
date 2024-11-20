@@ -175,7 +175,13 @@
   ],
   "tagging": {
     "cloudFormationSystemTags": false,
+    "permissions": [
+      "omics:TagResource",
+      "omics:UntagResource",
+      "omics:ListTagsForResource"
+    ],
     "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
     "tagUpdatable": true,
     "taggable": true
   },

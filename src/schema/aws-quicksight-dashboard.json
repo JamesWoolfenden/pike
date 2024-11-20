@@ -1366,6 +1366,13 @@
       ],
       "type": "object"
     },
+    "CommitMode": {
+      "enum": [
+        "AUTO",
+        "MANUAL"
+      ],
+      "type": "string"
+    },
     "ComparisonConfiguration": {
       "additionalProperties": false,
       "properties": {
@@ -2824,6 +2831,9 @@
     "DefaultDateTimePickerControlOptions": {
       "additionalProperties": false,
       "properties": {
+        "CommitMode": {
+          "$ref": "#/definitions/CommitMode"
+        },
         "DisplayOptions": {
           "$ref": "#/definitions/DateTimePickerControlDisplayOptions"
         },
@@ -2881,6 +2891,9 @@
     "DefaultFilterDropDownControlOptions": {
       "additionalProperties": false,
       "properties": {
+        "CommitMode": {
+          "$ref": "#/definitions/CommitMode"
+        },
         "DisplayOptions": {
           "$ref": "#/definitions/DropDownControlDisplayOptions"
         },
@@ -2971,6 +2984,9 @@
     "DefaultRelativeDateTimeControlOptions": {
       "additionalProperties": false,
       "properties": {
+        "CommitMode": {
+          "$ref": "#/definitions/CommitMode"
+        },
         "DisplayOptions": {
           "$ref": "#/definitions/RelativeDateTimeControlDisplayOptions"
         }
@@ -3622,6 +3638,9 @@
     "FilterDateTimePickerControl": {
       "additionalProperties": false,
       "properties": {
+        "CommitMode": {
+          "$ref": "#/definitions/CommitMode"
+        },
         "DisplayOptions": {
           "$ref": "#/definitions/DateTimePickerControlDisplayOptions"
         },
@@ -3658,6 +3677,9 @@
       "properties": {
         "CascadingControlConfiguration": {
           "$ref": "#/definitions/CascadingControlConfiguration"
+        },
+        "CommitMode": {
+          "$ref": "#/definitions/CommitMode"
         },
         "DisplayOptions": {
           "$ref": "#/definitions/DropDownControlDisplayOptions"
@@ -3844,6 +3866,9 @@
     "FilterRelativeDateTimeControl": {
       "additionalProperties": false,
       "properties": {
+        "CommitMode": {
+          "$ref": "#/definitions/CommitMode"
+        },
         "DisplayOptions": {
           "$ref": "#/definitions/RelativeDateTimeControlDisplayOptions"
         },
@@ -5801,7 +5826,8 @@
         "VISUAL",
         "FILTER_CONTROL",
         "PARAMETER_CONTROL",
-        "TEXT_BOX"
+        "TEXT_BOX",
+        "IMAGE"
       ],
       "type": "string"
     },
@@ -6936,6 +6962,9 @@
       "properties": {
         "CascadingControlConfiguration": {
           "$ref": "#/definitions/CascadingControlConfiguration"
+        },
+        "CommitMode": {
+          "$ref": "#/definitions/CommitMode"
         },
         "DisplayOptions": {
           "$ref": "#/definitions/DropDownControlDisplayOptions"
@@ -11522,7 +11551,10 @@
         "quicksight:PassDataSet",
         "quicksight:TagResource",
         "quicksight:UntagResource",
-        "quicksight:ListTagsForResource"
+        "quicksight:ListTagsForResource",
+        "quicksight:CreateFolderMembership",
+        "quicksight:DeleteFolderMembership",
+        "quicksight:ListFoldersForResource"
       ]
     },
     "delete": {
@@ -11604,6 +11636,14 @@
     },
     "Definition": {
       "$ref": "#/definitions/DashboardVersionDefinition"
+    },
+    "FolderArns": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 10,
+      "minItems": 0,
+      "type": "array"
     },
     "LastPublishedTime": {
       "description": "<p>The last time that this dashboard was published.</p>",
@@ -11693,6 +11733,7 @@
     "/properties/SourceEntity",
     "/properties/ThemeArn",
     "/properties/VersionDescription",
-    "/properties/ValidationStrategy"
+    "/properties/ValidationStrategy",
+    "/properties/FolderArns"
   ]
 }

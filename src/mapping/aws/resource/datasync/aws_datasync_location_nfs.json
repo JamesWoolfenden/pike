@@ -4,7 +4,8 @@
       "datasync:DescribeLocationNfs",
       "datasync:CreateLocationNfs",
       "datasync:DeleteLocation",
-      "datasync:UpdateLocationNfs"
+      "datasync:UpdateLocationNfs",
+      "datasync:ListTagsForResource"
     ],
     "attributes": {
       "tags": [

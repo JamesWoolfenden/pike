@@ -2,7 +2,8 @@
   {
     "apply": [
       "datasync:CreateLocationFsxWindows",
-      "datasync:DescribeLocationFsxWindows"
+      "datasync:DescribeLocationFsxWindows",
+      "datasync:ListTagsForResource"
     ],
     "attributes": {
       "tags": [

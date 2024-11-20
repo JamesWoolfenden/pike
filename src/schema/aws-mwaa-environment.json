@@ -195,7 +195,7 @@
     },
     "MaxWebservers": {
       "description": "Maximum webserver compute units.",
-      "minimum": 2,
+      "minimum": 1,
       "type": "integer"
     },
     "MaxWorkers": {
@@ -205,7 +205,7 @@
     },
     "MinWebservers": {
       "description": "Minimum webserver compute units.",
-      "minimum": 2,
+      "minimum": 1,
       "type": "integer"
     },
     "MinWorkers": {

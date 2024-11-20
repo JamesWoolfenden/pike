@@ -10,6 +10,20 @@
       "maxLength": 64,
       "type": "string"
     },
+    "CloudWatchDashboard": {
+      "additionalProperties": false,
+      "properties": {
+        "DashboardIdentifier": {
+          "maxLength": 512,
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "DashboardIdentifier"
+      ],
+      "type": "object"
+    },
     "ExperimentTemplateAction": {
       "additionalProperties": false,
       "description": "Specifies an action for the experiment template.",
@@ -108,6 +122,62 @@
           "type": "string"
         }
       },
+      "type": "object"
+    },
+    "ExperimentTemplateExperimentReportConfiguration": {
+      "additionalProperties": false,
+      "properties": {
+        "DataSources": {
+          "additionalProperties": false,
+          "properties": {
+            "CloudWatchDashboards": {
+              "items": {
+                "$ref": "#/definitions/CloudWatchDashboard"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        },
+        "Outputs": {
+          "additionalProperties": false,
+          "properties": {
+            "ExperimentReportS3Configuration": {
+              "additionalProperties": false,
+              "properties": {
+                "BucketName": {
+                  "maxLength": 63,
+                  "minLength": 3,
+                  "type": "string"
+                },
+                "Prefix": {
+                  "maxLength": 1024,
+                  "minLength": 1,
+                  "type": "string"
+                }
+              },
+              "required": [
+                "BucketName"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "ExperimentReportS3Configuration"
+          ],
+          "type": "object"
+        },
+        "PostExperimentDuration": {
+          "type": "string"
+        },
+        "PreExperimentDuration": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "Outputs",
+        "DataSources"
+      ],
       "type": "object"
     },
     "ExperimentTemplateId": {
@@ -357,6 +427,9 @@
     },
     "ExperimentOptions": {
       "$ref": "#/definitions/ExperimentTemplateExperimentOptions"
+    },
+    "ExperimentReportConfiguration": {
+      "$ref": "#/definitions/ExperimentTemplateExperimentReportConfiguration"
     },
     "Id": {
       "$ref": "#/definitions/ExperimentTemplateId"

@@ -113,7 +113,18 @@
     "Family"
   ],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-memorydb",
-  "taggable": true,
+  "tagging": {
+    "cloudFormationSystemTags": true,
+    "permissions": [
+      "memorydb:TagResource",
+      "memorydb:ListTags",
+      "memorydb:UntagResource"
+    ],
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": true,
+    "taggable": true
+  },
   "typeName": "AWS::MemoryDB::ParameterGroup",
   "writeOnlyProperties": [
     "/properties/Parameters"

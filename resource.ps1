@@ -49,5 +49,5 @@ else
     $tffile = path terraform $provider "$resource.tf"
 }
 
-$tffile=path $PSScriptRoot $tffile
+$tffile = path $PSScriptRoot $tffile
 new-item $tffile -value $content

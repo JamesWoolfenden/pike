@@ -9,7 +9,8 @@
     "/properties/PlatformVersion",
     "/properties/Service",
     "/properties/ServiceRegistries",
-    "/properties/TaskDefinition"
+    "/properties/TaskDefinition",
+    "/properties/CapacityProviderStrategy"
   ],
   "definitions": {
     "AwsVpcConfiguration": {
@@ -44,6 +45,21 @@
       "required": [
         "Subnets"
       ],
+      "type": "object"
+    },
+    "CapacityProviderStrategyItem": {
+      "additionalProperties": false,
+      "properties": {
+        "Base": {
+          "type": "integer"
+        },
+        "CapacityProvider": {
+          "type": "string"
+        },
+        "Weight": {
+          "type": "integer"
+        }
+      },
       "type": "object"
     },
     "LoadBalancer": {
@@ -164,6 +180,12 @@
     "/properties/Id"
   ],
   "properties": {
+    "CapacityProviderStrategy": {
+      "items": {
+        "$ref": "#/definitions/CapacityProviderStrategyItem"
+      },
+      "type": "array"
+    },
     "Cluster": {
       "description": "The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service to create the task set in.",
       "type": "string"
@@ -234,7 +256,13 @@
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-ecs.git",
   "tagging": {
     "cloudFormationSystemTags": false,
+    "permissions": [
+      "ecs:TagResource",
+      "ecs:UntagResource",
+      "ecs:ListTagsForResource"
+    ],
     "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
     "tagUpdatable": true,
     "taggable": true
   },

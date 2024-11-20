@@ -188,6 +188,17 @@
     "StatefulEngineOptions": {
       "additionalProperties": false,
       "properties": {
+        "FlowTimeouts": {
+          "additionalProperties": false,
+          "properties": {
+            "TcpIdleTimeoutSeconds": {
+              "maximum": 6000,
+              "minimum": 60,
+              "type": "integer"
+            }
+          },
+          "type": "object"
+        },
         "RuleOrder": {
           "$ref": "#/definitions/RuleOrder"
         },

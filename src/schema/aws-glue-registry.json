@@ -33,7 +33,8 @@
       "permissions": [
         "glue:CreateRegistry",
         "glue:GetRegistry",
-        "glue:GetTags"
+        "glue:GetTags",
+        "glue:TagResource"
       ]
     },
     "delete": {
@@ -101,5 +102,17 @@
     "Name"
   ],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-glue.git",
+  "tagging": {
+    "cloudFormationSystemTags": true,
+    "permissions": [
+      "glue:GetTags",
+      "glue:TagResource",
+      "glue:UntagResource"
+    ],
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": true,
+    "taggable": true
+  },
   "typeName": "AWS::Glue::Registry"
 }

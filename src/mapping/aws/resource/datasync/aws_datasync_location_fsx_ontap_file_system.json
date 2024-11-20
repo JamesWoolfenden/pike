@@ -3,7 +3,8 @@
     "apply": [
       "datasync:DescribeLocationFsxOntap",
       "datasync:CreateLocationFsxOntap",
-      "datasync:DeleteLocation"
+      "datasync:DeleteLocation",
+      "datasync:ListTagsForResource"
     ],
     "attributes": {
       "tags": [

@@ -47,12 +47,15 @@ func TestGetAZUREDataPermissions(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
+
 			got, err := pike.GetAZUREDataPermissions(tt.args.result)
+
 			if (err != nil) != tt.wantErr {
 				t.Errorf("GetAZUREDataPermissions() error = %v, wantErr %v", err, tt.wantErr)
 
 				return
 			}
+			
 			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("GetAZUREDataPermissions() = %v, want %v", got, tt.want)
 			}

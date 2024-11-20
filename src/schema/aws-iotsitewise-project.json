@@ -46,7 +46,8 @@
     },
     "list": {
       "permissions": [
-        "iotsitewise:ListProjects"
+        "iotsitewise:ListProjects",
+        "iotsitewise:ListTagsForResource"
       ]
     },
     "read": {
@@ -120,6 +121,17 @@
     "ProjectName"
   ],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-IoTSiteWise.git",
-  "taggable": true,
+  "tagging": {
+    "cloudFormationSystemTags": true,
+    "permissions": [
+      "iotsitewise:TagResource",
+      "iotsitewise:UntagResource",
+      "iotsitewise:ListTagsForResource"
+    ],
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": true,
+    "taggable": true
+  },
   "typeName": "AWS::IoTSiteWise::Project"
 }

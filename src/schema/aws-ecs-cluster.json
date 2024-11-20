@@ -254,6 +254,15 @@
     "/properties/Arn"
   ],
   "tagging": {
+    "cloudFormationSystemTags": true,
+    "permissions": [
+      "ecs:TagResource",
+      "ecs:UntagResource",
+      "ecs:ListTagsForResource"
+    ],
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": true,
     "taggable": true
   },
   "typeName": "AWS::ECS::Cluster",

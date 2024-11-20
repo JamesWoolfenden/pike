@@ -190,6 +190,11 @@
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-rpdk.git",
   "tagging": {
     "cloudFormationSystemTags": true,
+    "permissions": [
+      "kafkaconnect:ListTagsForResource",
+      "kafkaconnect:UntagResource",
+      "kafkaconnect:TagResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

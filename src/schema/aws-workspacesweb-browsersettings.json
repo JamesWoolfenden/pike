@@ -48,10 +48,12 @@
         "workspaces-web:GetBrowserSettings",
         "workspaces-web:ListTagsForResource",
         "workspaces-web:TagResource",
-        "kms:CreateGrant",
         "kms:DescribeKey",
         "kms:GenerateDataKey",
-        "kms:Decrypt"
+        "kms:Decrypt",
+        "kms:GenerateDataKeyWithoutPlaintext",
+        "kms:ReEncryptTo",
+        "kms:ReEncryptFrom"
       ]
     },
     "delete": {
@@ -146,6 +148,11 @@
   ],
   "tagging": {
     "cloudFormationSystemTags": false,
+    "permissions": [
+      "workspaces-web:UntagResource",
+      "workspaces-web:ListTagsForResource",
+      "workspaces-web:TagResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

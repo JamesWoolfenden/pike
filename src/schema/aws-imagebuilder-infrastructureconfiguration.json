@@ -33,6 +33,34 @@
       },
       "type": "object"
     },
+    "Placement": {
+      "additionalProperties": false,
+      "description": "The placement options",
+      "properties": {
+        "AvailabilityZone": {
+          "description": "AvailabilityZone",
+          "type": "string"
+        },
+        "HostId": {
+          "description": "HostId",
+          "type": "string"
+        },
+        "HostResourceGroupArn": {
+          "description": "HostResourceGroupArn",
+          "type": "string"
+        },
+        "Tenancy": {
+          "description": "Tenancy",
+          "enum": [
+            "default",
+            "dedicated",
+            "host"
+          ],
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "S3Logs": {
       "additionalProperties": false,
       "description": "The S3 path in which to store the logs.",
@@ -147,6 +175,10 @@
     "Name": {
       "description": "The name of the infrastructure configuration.",
       "type": "string"
+    },
+    "Placement": {
+      "$ref": "#/definitions/Placement",
+      "description": "The placement option settings for the infrastructure configuration."
     },
     "ResourceTags": {
       "additionalProperties": false,

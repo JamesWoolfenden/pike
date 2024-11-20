@@ -3,6 +3,8 @@ package pike
 import "testing"
 
 func Test_notImplementedResourceError_Error(t *testing.T) {
+	t.Parallel()
+
 	type fields struct {
 		Name string
 	}
@@ -28,6 +30,8 @@ func Test_notImplementedResourceError_Error(t *testing.T) {
 }
 
 func Test_notImplementedDatasourceError_Error(t *testing.T) {
+	t.Parallel()
+
 	type fields struct {
 		Name string
 	}
@@ -53,6 +57,7 @@ func Test_notImplementedDatasourceError_Error(t *testing.T) {
 }
 
 func Test_unknownPermissionError_Error(t *testing.T) {
+	t.Parallel()
 	type fields struct {
 		Name string
 	}
@@ -119,6 +124,7 @@ func TestGitReferenceError_Error(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
+
 			if got := tt.m.Error(); got != tt.want {
 				t.Errorf("gitReferenceError.Error() = %v, want %v", got, tt.want)
 			}
@@ -150,6 +156,7 @@ func TestBackendExistsError_Error(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
+
 			if got := tt.m.Error(); got != tt.want {
 				t.Errorf("backendExistsError.Error() = %v, want %v", got, tt.want)
 			}
@@ -199,6 +206,7 @@ func TestRepositoryFormatError_Error(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
+
 			if got := tt.m.Error(); got != tt.want {
 				t.Errorf("repositoryFormatError.Error() = %v, want %v", got, tt.want)
 			}
@@ -255,6 +263,7 @@ func TestRepositoryFormatError_Error_Additional(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
+
 			if got := tt.m.Error(); got != tt.want {
 				t.Errorf("repositoryFormatError.Error() = %v, want %v", got, tt.want)
 			}

@@ -97,7 +97,6 @@
       "permissions": [
         "iotwireless:CreateWirelessGatewayTaskDefinition",
         "iotwireless:TagResource",
-        "iotwireless:ListTagsForResource",
         "iam:GetRole",
         "iam:PassRole"
       ]
@@ -108,6 +107,13 @@
       ]
     },
     "list": {
+      "handlerSchema": {
+        "properties": {
+          "TaskDefinitionType": {
+            "$ref": "#/properties/TaskDefinitionType"
+          }
+        }
+      },
       "permissions": [
         "iotwireless:ListWirelessGatewayTaskDefinitions",
         "iotwireless:ListTagsForResource"
@@ -117,6 +123,13 @@
       "permissions": [
         "iotwireless:GetWirelessGatewayTaskDefinition",
         "iotwireless:ListTagsForResource"
+      ]
+    },
+    "update": {
+      "permissions": [
+        "iotwireless:GetWirelessGatewayTaskDefinition",
+        "iotwireless:TagResource",
+        "iotwireless:UntagResource"
       ]
     }
   },
@@ -177,6 +190,17 @@
     "AutoCreateTasks"
   ],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-rpdk.git",
-  "taggable": true,
+  "tagging": {
+    "cloudFormationSystemTags": true,
+    "permissions": [
+      "iotwireless:TagResource",
+      "iotwireless:UntagResource",
+      "iotwireless:ListTagsForResource"
+    ],
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": true,
+    "taggable": true
+  },
   "typeName": "AWS::IoTWireless::TaskDefinition"
 }

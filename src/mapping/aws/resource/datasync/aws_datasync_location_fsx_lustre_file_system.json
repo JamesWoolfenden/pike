@@ -3,7 +3,8 @@
     "apply": [
       "datasync:DescribeLocationFsxLustre",
       "datasync:CreateLocationFsxLustre",
-      "datasync:DeleteLocation"
+      "datasync:DeleteLocation",
+      "datasync:ListTagsForResource"
     ],
     "attributes": {
       "tags": [

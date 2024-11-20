@@ -12,7 +12,7 @@
           "items": {
             "maxLength": 200,
             "minLength": 5,
-            "pattern": "^geo:\\w*\\*?$",
+            "pattern": "^(geo|geo-routes|geo-places|geo-maps):\\w*\\*?$",
             "type": "string"
           },
           "maxItems": 24,
@@ -109,7 +109,21 @@
         "geo:SearchPlaceIndexForSuggestions",
         "geo:GetPlace",
         "geo:CalculateRoute",
-        "geo:CalculateRouteMatrix"
+        "geo:CalculateRouteMatrix",
+        "geo-maps:GetTile",
+        "geo-maps:GetStaticMap",
+        "geo-places:Autocomplete",
+        "geo-places:Geocode",
+        "geo-places:GetPlace",
+        "geo-places:ReverseGeocode",
+        "geo-places:SearchNearby",
+        "geo-places:SearchText",
+        "geo-places:Suggest",
+        "geo-routes:CalculateIsolines",
+        "geo-routes:CalculateRouteMatrix",
+        "geo-routes:CalculateRoutes",
+        "geo-routes:OptimizeWaypoints",
+        "geo-routes:SnapToRoads"
       ]
     },
     "delete": {
@@ -144,6 +158,20 @@
         "geo:GetPlace",
         "geo:CalculateRoute",
         "geo:CalculateRouteMatrix",
+        "geo-maps:GetTile",
+        "geo-maps:GetStaticMap",
+        "geo-places:Autocomplete",
+        "geo-places:Geocode",
+        "geo-places:GetPlace",
+        "geo-places:ReverseGeocode",
+        "geo-places:SearchNearby",
+        "geo-places:SearchText",
+        "geo-places:Suggest",
+        "geo-routes:CalculateIsolines",
+        "geo-routes:CalculateRouteMatrix",
+        "geo-routes:CalculateRoutes",
+        "geo-routes:OptimizeWaypoints",
+        "geo-routes:SnapToRoads",
         "geo:UpdateKey"
       ]
     }

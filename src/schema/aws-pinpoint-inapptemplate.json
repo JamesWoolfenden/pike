@@ -159,7 +159,9 @@
     "update": {
       "permissions": [
         "mobiletargeting:UpdateInAppTemplate",
-        "mobiletargeting:GetInAppTemplate"
+        "mobiletargeting:GetInAppTemplate",
+        "mobiletargeting:TagResource",
+        "mobiletargeting:UntagResource"
       ]
     }
   },
@@ -208,6 +210,16 @@
     "TemplateName"
   ],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-rpdk.git",
-  "taggable": true,
+  "tagging": {
+    "cloudFormationSystemTags": false,
+    "permissions": [
+      "mobiletargeting:TagResource",
+      "mobiletargeting:UntagResource"
+    ],
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": true,
+    "taggable": true
+  },
   "typeName": "AWS::Pinpoint::InAppTemplate"
 }

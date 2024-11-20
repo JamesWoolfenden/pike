@@ -4,7 +4,8 @@
       "codeguru-profiler:UpdateProfilingGroup",
       "codeguru-profiler:DeleteProfilingGroup",
       "codeguru-profiler:CreateProfilingGroup",
-      "codeguru-profiler:DescribeProfilingGroup"
+      "codeguru-profiler:DescribeProfilingGroup",
+      "codeguru-profiler:ListTagsForResource"
     ],
     "attributes": {
       "tags": [

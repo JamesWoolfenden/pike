@@ -73,7 +73,7 @@
       "permissions": [
         "iotwireless:AssociateAwsAccountWithPartnerAccount",
         "iotwireless:TagResource",
-        "iotwireless:ListTagsForResource"
+        "iotwireless:GetPartnerAccount"
       ]
     },
     "delete": {
@@ -95,9 +95,12 @@
     },
     "update": {
       "permissions": [
+        "iotwireless:GetPartnerAccount",
+        "iotwireless:AssociateAwsAccountWithPartnerAccount",
         "iotwireless:UpdatePartnerAccount",
-        "iotwireless:UntagResource",
-        "iotwireless:ListTagsForResource"
+        "iotwireless:ListTagsForResource",
+        "iotwireless:TagResource",
+        "iotwireless:UntagResource"
       ]
     }
   },
@@ -157,7 +160,18 @@
     "/properties/Fingerprint"
   ],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-rpdk.git",
-  "taggable": true,
+  "tagging": {
+    "cloudFormationSystemTags": true,
+    "permissions": [
+      "iotwireless:TagResource",
+      "iotwireless:UntagResource",
+      "iotwireless:ListTagsForResource"
+    ],
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": true,
+    "taggable": true
+  },
   "typeName": "AWS::IoTWireless::PartnerAccount",
   "writeOnlyProperties": [
     "/properties/SidewalkUpdate",

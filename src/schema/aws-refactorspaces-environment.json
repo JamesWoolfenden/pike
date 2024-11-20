@@ -96,6 +96,13 @@
         "refactor-spaces:GetEnvironment",
         "refactor-spaces:ListTagsForResource"
       ]
+    },
+    "update": {
+      "permissions": [
+        "refactor-spaces:GetEnvironment",
+        "refactor-spaces:TagResource",
+        "refactor-spaces:UntagResource"
+      ]
     }
   },
   "primaryIdentifier": [
@@ -149,11 +156,18 @@
     "/properties/Arn",
     "/properties/TransitGatewayId"
   ],
-  "required": [
-    "Name",
-    "NetworkFabricType"
-  ],
-  "taggable": true,
+  "tagging": {
+    "cloudFormationSystemTags": false,
+    "permissions": [
+      "refactor-spaces:TagResource",
+      "refactor-spaces:ListTagsForResource",
+      "refactor-spaces:UntagResource"
+    ],
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": true,
+    "taggable": true
+  },
   "typeName": "AWS::RefactorSpaces::Environment",
   "writeOnlyProperties": [
     "/properties/Description",

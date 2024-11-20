@@ -5,7 +5,8 @@
       "connect:DeleteContactFlowModule",
       "connect:DescribeContactFlowModule",
       "connect:UpdateContactFlowModuleMetadata",
-      "connect:UpdateContactFlowModuleContent"
+      "connect:UpdateContactFlowModuleContent",
+      "connect:ListTagsForResource"
     ],
     "attributes": {
       "tags": [

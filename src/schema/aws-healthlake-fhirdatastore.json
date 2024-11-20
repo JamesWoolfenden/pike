@@ -290,6 +290,17 @@
   "required": [
     "DatastoreTypeVersion"
   ],
-  "taggable": true,
+  "tagging": {
+    "cloudFormationSystemTags": true,
+    "permissions": [
+      "healthlake:UntagResource",
+      "healthlake:TagResource",
+      "healthlake:ListTagsForResource"
+    ],
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": true,
+    "taggable": true
+  },
   "typeName": "AWS::HealthLake::FHIRDatastore"
 }

@@ -119,7 +119,13 @@
   ],
   "tagging": {
     "cloudFormationSystemTags": false,
+    "permissions": [
+      "iam:TagServerCertificate",
+      "iam:UntagServerCertificate",
+      "iam:ListServerCertificateTags"
+    ],
     "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
     "tagUpdatable": true,
     "taggable": true
   },

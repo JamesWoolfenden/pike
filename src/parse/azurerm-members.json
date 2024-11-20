@@ -354,6 +354,7 @@
         "azurerm_eventgrid_domain",
         "azurerm_eventgrid_domain_topic",
         "azurerm_eventgrid_event_subscription",
+        "azurerm_eventgrid_namespace",
         "azurerm_eventgrid_system_topic",
         "azurerm_eventgrid_system_topic_event_subscription",
         "azurerm_eventgrid_topic",

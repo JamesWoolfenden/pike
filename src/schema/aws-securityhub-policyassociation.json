@@ -10,7 +10,8 @@
       "permissions": [
         "securityhub:StartConfigurationPolicyAssociation",
         "securityhub:GetConfigurationPolicyAssociation"
-      ]
+      ],
+      "timeoutInMinutes": 1440
     },
     "delete": {
       "permissions": [
@@ -33,7 +34,8 @@
       "permissions": [
         "securityhub:StartConfigurationPolicyAssociation",
         "securityhub:GetConfigurationPolicyAssociation"
-      ]
+      ],
+      "timeoutInMinutes": 1440
     }
   },
   "primaryIdentifier": [

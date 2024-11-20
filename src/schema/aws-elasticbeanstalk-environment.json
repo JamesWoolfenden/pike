@@ -109,11 +109,15 @@
       "permissions": [
         "elasticbeanstalk:DescribeEnvironments",
         "elasticbeanstalk:UpdateEnvironment",
-        "elasticbeanstalk:UpdateTagsForResource",
         "elasticbeanstalk:AssociateEnvironmentOperationsRole",
         "elasticbeanstalk:DisassociateEnvironmentOperationsRole",
         "elasticbeanstalk:AddTags",
         "elasticbeanstalk:ListTagsForResource",
+        "elasticbeanstalk:RemoveTags",
+        "s3:GetBucketLocation",
+        "s3:GetBucketPolicy",
+        "s3:ListBucket",
+        "s3:PutBucketPolicy",
         "iam:PassRole"
       ],
       "timeoutInMinutes": 300
@@ -193,6 +197,11 @@
   ],
   "tagging": {
     "cloudFormationSystemTags": false,
+    "permissions": [
+      "elasticbeanstalk:AddTags",
+      "elasticbeanstalk:RemoveTags",
+      "elasticbeanstalk:ListTagsForResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

@@ -21,6 +21,13 @@
         }
       ]
     },
+    "CapabilityDirection": {
+      "enum": [
+        "INBOUND",
+        "OUTBOUND"
+      ],
+      "type": "string"
+    },
     "CapabilityType": {
       "enum": [
         "edi"
@@ -30,6 +37,9 @@
     "EdiConfiguration": {
       "additionalProperties": false,
       "properties": {
+        "CapabilityDirection": {
+          "$ref": "#/definitions/CapabilityDirection"
+        },
         "InputLocation": {
           "$ref": "#/definitions/S3Location"
         },
@@ -319,6 +329,11 @@
   ],
   "tagging": {
     "cloudFormationSystemTags": true,
+    "permissions": [
+      "b2bi:ListTagsForResource",
+      "b2bi:TagResource",
+      "b2bi:UntagResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

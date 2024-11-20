@@ -85,6 +85,9 @@
         },
         "ResultFormat": {
           "$ref": "#/definitions/ResultFormat"
+        },
+        "SingleFileOutput": {
+          "type": "boolean"
         }
       },
       "required": [

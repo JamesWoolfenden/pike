@@ -4,7 +4,8 @@
       "datasync:CreateTask",
       "datasync:DescribeTask",
       "datasync:DeleteTask",
-      "datasync:UpdateTask"
+      "datasync:UpdateTask",
+      "datasync:ListTagsForResource"
     ],
     "attributes": {
       "tags": [

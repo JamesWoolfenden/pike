@@ -3036,3 +3036,9 @@ var awsQuicksightVpcConnection []byte
 
 //go:embed mapping/aws/resource/s3/aws_s3_bucket_analytics_configuration.json
 var awsS3BucketAnalyticsConfiguration []byte
+
+//go:embed mapping/aws/resource/backup/aws_backup_logically_air_gapped_vault.json
+var awsBackupLogicallyAirGappedVault []byte
+
+//go:embed mapping/aws/resource/kinesis/aws_kinesis_resource_policy.json
+var awsKinesisResourcePolicy []byte

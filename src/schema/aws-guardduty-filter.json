@@ -134,14 +134,17 @@
     },
     "read": {
       "permissions": [
-        "guardduty:GetFilter"
+        "guardduty:GetFilter",
+        "guardduty:ListTagsForResource"
       ]
     },
     "update": {
       "permissions": [
         "guardduty:UpdateFilter",
         "guardduty:GetFilter",
-        "guardduty:ListFilters"
+        "guardduty:ListFilters",
+        "guardduty:TagResource",
+        "guardduty:UntagResource"
       ]
     }
   },
@@ -175,6 +178,7 @@
       "type": "integer"
     },
     "Tags": {
+      "insertionOrder": false,
       "items": {
         "$ref": "#/definitions/TagItem"
       },
@@ -188,8 +192,14 @@
   ],
   "tagging": {
     "cloudFormationSystemTags": false,
+    "permissions": [
+      "guardduty:TagResource",
+      "guardduty:UntagResource",
+      "guardduty:ListTagsForResource"
+    ],
     "tagOnCreate": true,
-    "tagUpdatable": false,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": true,
     "taggable": true
   },
   "typeName": "AWS::GuardDuty::Filter"

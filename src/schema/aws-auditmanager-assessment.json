@@ -278,12 +278,14 @@
     },
     "delete": {
       "permissions": [
-        "auditmanager:DeleteAssessment"
+        "auditmanager:DeleteAssessment",
+        "auditmanager:UntagResource"
       ]
     },
     "list": {
       "permissions": [
-        "auditmanager:ListAssessments"
+        "auditmanager:ListAssessments",
+        "auditmanager:ListTagsForResource"
       ]
     },
     "read": {
@@ -363,6 +365,18 @@
   ],
   "required": [],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-rpdk.git",
+  "tagging": {
+    "cloudFormationSystemTags": false,
+    "permissions": [
+      "auditmanager:TagResource",
+      "auditmanager:ListTagsForResource",
+      "auditmanager:UntagResource"
+    ],
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": false,
+    "taggable": true
+  },
   "typeName": "AWS::AuditManager::Assessment",
   "writeOnlyProperties": [
     "/properties/Name",

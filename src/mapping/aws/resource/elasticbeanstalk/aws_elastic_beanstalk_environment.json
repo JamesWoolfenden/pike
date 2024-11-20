@@ -11,7 +11,8 @@
     "attributes": {
       "tags": [
         "elasticbeanstalk:AddTags",
-        "elasticbeanstalk:UpdateTagsForResource"
+        "elasticbeanstalk:UpdateTagsForResource",
+        "elasticbeanstalk:RemoveTags"
       ]
     },
     "destroy": [

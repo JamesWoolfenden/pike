@@ -166,6 +166,37 @@
         "LaunchTemplateName": {
           "type": "string"
         },
+        "Overrides": {
+          "insertionOrder": false,
+          "items": {
+            "$ref": "#/definitions/LaunchTemplateSpecificationOverride"
+          },
+          "type": "array",
+          "uniqueItems": false
+        },
+        "Version": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "LaunchTemplateSpecificationOverride": {
+      "additionalProperties": false,
+      "properties": {
+        "LaunchTemplateId": {
+          "type": "string"
+        },
+        "LaunchTemplateName": {
+          "type": "string"
+        },
+        "TargetInstanceTypes": {
+          "insertionOrder": false,
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": false
+        },
         "Version": {
           "type": "string"
         }
@@ -286,6 +317,10 @@
   ],
   "tagging": {
     "cloudFormationSystemTags": false,
+    "permissions": [
+      "Batch:TagResource",
+      "Batch:UntagResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": false,

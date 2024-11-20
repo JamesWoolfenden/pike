@@ -2,7 +2,8 @@
   {
     "apply": [
       "datasync:DescribeLocationObjectStorage",
-      "datasync:CreateLocationObjectStorage"
+      "datasync:CreateLocationObjectStorage",
+      "datasync:ListTagsForResource"
     ],
     "attributes": {
       "tags": [

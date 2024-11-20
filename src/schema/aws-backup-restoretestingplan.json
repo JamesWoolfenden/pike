@@ -174,6 +174,11 @@
   ],
   "tagging": {
     "cloudFormationSystemTags": true,
+    "permissions": [
+      "backup:TagResource",
+      "backup:UntagResource",
+      "backup:ListTags"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

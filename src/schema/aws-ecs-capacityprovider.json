@@ -131,10 +131,16 @@
   "propertyTransform": {
     "/properties/AutoScalingGroupProvider/AutoScalingGroupArn": "$split(AutoScalingGroupProvider.AutoScalingGroupArn, \"autoScalingGroupName/\")[-1] $OR $split(AutoScalingGroupArn, \"autoScalingGroupName/\")[-1]"
   },
-  "required": [
-    "AutoScalingGroupProvider"
-  ],
   "tagging": {
+    "cloudFormationSystemTags": true,
+    "permissions": [
+      "ecs:TagResource",
+      "ecs:UntagResource",
+      "ecs:ListTagsForResource"
+    ],
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": true,
     "taggable": true
   },
   "typeName": "AWS::ECS::CapacityProvider"

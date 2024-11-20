@@ -36,14 +36,16 @@
         "route53profiles:AssociateProfile",
         "route53profiles:GetProfileAssociation",
         "ec2:DescribeVpcs",
-        "route53profiles:TagResource"
+        "route53profiles:TagResource",
+        "route53profiles:ListTagsForResource"
       ]
     },
     "delete": {
       "permissions": [
         "route53profiles:DisassociateProfile",
         "route53profiles:GetProfileAssociation",
-        "route53profiles:UntagResource"
+        "route53profiles:UntagResource",
+        "route53profiles:ListTagsForResource"
       ]
     },
     "list": {
@@ -72,7 +74,7 @@
   ],
   "properties": {
     "Arn": {
-      "description": "The Amazon Resource Name (ARN) of the  profile association.",
+      "description": "The Amazon Resource Name (ARN) of the profile association.",
       "type": "string"
     },
     "Id": {
@@ -104,6 +106,7 @@
   "readOnlyProperties": [
     "/properties/Id"
   ],
+  "replacementStrategy": "delete_then_create",
   "required": [
     "ResourceId",
     "ProfileId",
@@ -111,6 +114,10 @@
   ],
   "tagging": {
     "cloudFormationSystemTags": false,
+    "permissions": [
+      "route53profiles:TagResource",
+      "route53profiles:UntagResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,
@@ -118,7 +125,6 @@
   },
   "typeName": "AWS::Route53Profiles::ProfileAssociation",
   "writeOnlyProperties": [
-    "/properties/Arn",
-    "/properties/Tags"
+    "/properties/Arn"
   ]
 }

@@ -6,17 +6,22 @@ import (
 	"fmt"
 )
 
-const terraform string = "terraform"
+const (
+	terraform string = "terraform"
+	module    string = "module"
+	resource  string = "resource"
+	data      string = "data"
+)
 
 // GetAWSPermissions for AWS resources.
 func GetAWSPermissions(result ResourceV2) ([]string, error) {
 	// Validate the input
 	if result.TypeName == "" {
-		return nil, errors.New("TypeName cannot be empty")
+		return nil, errors.New("typeName cannot be empty")
 	}
 
 	if result.Name == "" {
-		return nil, errors.New("Name cannot be empty")
+		return nil, errors.New("name cannot be empty")
 	}
 
 	var (
@@ -25,7 +30,7 @@ func GetAWSPermissions(result ResourceV2) ([]string, error) {
 	)
 
 	switch result.TypeName {
-	case "resource", terraform:
+	case resource, terraform:
 		{
 			Permissions, err = GetAWSResourcePermissions(result)
 
@@ -33,14 +38,14 @@ func GetAWSPermissions(result ResourceV2) ([]string, error) {
 				return Permissions, err
 			}
 		}
-	case "data":
+	case data:
 		{
 			Permissions, err = GetAWSDataPermissions(result)
 			if err != nil {
 				return Permissions, err
 			}
 		}
-	case "module":
+	case module:
 		{
 			// do nothing this is a module not a base resource type, and
 			// we shouldn't really be able to get here unless well bad naming
@@ -72,6 +77,7 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 	return Permissions, err
 }
 
+//goland:noinspection LongLine
 func AwsLookup(name string) interface{} {
 	TFLookup := map[string]interface{}{
 		"aws_accessanalyzer_analyzer":                                      awsAccessAnalyzer,
@@ -1140,6 +1146,8 @@ func AwsLookup(name string) interface{} {
 		"aws_quicksight_template_alias":                                    awsQuicksightTemplateAlias,
 		"aws_quicksight_vpc_connection":                                    awsQuicksightVpcConnection,
 		"aws_s3_bucket_analytics_configuration":                            awsS3BucketAnalyticsConfiguration,
+		"aws_backup_logically_air_gapped_vault":                            awsBackupLogicallyAirGappedVault,
+		"aws_kinesis_resource_policy":                                      awsKinesisResourcePolicy,
 	}
 
 	return TFLookup[name]

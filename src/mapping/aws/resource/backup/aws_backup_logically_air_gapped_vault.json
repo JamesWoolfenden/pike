@@ -1,0 +1,47 @@
+[
+  {
+    "apply": [
+      "backup-storage:Mount",
+      "backup-storage:MountCapsule",
+      "backup:CreateLogicallyAirGappedBackupVault",
+      "backup:DeleteBackupVault",
+      "backup:DeleteBackupVaultAccessPolicy",
+      "backup:DeleteBackupVaultLockConfiguration",
+      "backup:DeleteBackupVaultNotifications",
+      "backup:DescribeBackupVault",
+      "backup:GetBackupVaultAccessPolicy",
+      "backup:GetBackupVaultAccessPolicy",
+      "backup:GetBackupVaultNotifications",
+      "backup:ListTags",
+      "backup:PutBackupVaultAccessPolicy",
+      "backup:PutBackupVaultLockConfiguration",
+      "backup:PutBackupVaultNotifications"
+    ],
+    "attributes": {
+      "tags": [
+        "backup:TagResource",
+        "backup:UntagResource"
+      ]
+    },
+    "destroy": [
+      "backup:DeleteBackupVault"
+    ],
+    "modify": [
+      "backup:DescribeBackupVault",
+      "backup:DeleteBackupVaultAccessPolicy",
+      "backup:DeleteBackupVaultNotifications",
+      "backup:DeleteBackupVaultLockConfiguration",
+      "backup:GetBackupVaultAccessPolicy",
+      "backup:ListTags",
+      "backup:PutBackupVaultAccessPolicy",
+      "backup:PutBackupVaultNotifications",
+      "backup:PutBackupVaultLockConfiguration"
+    ],
+    "plan": [
+      "backup:DescribeBackupVault",
+      "backup:GetBackupVaultNotifications",
+      "backup:GetBackupVaultAccessPolicy",
+      "backup:ListTags"
+    ]
+  }
+]

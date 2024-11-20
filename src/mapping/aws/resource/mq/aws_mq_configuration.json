@@ -5,13 +5,21 @@
       "mq:UpdateConfiguration",
       "mq:DescribeConfiguration",
       "mq:DescribeConfigurationRevision",
-      "mq:RebootBroker"
+      "mq:RebootBroker",
+      "mq:ListTags"
     ],
     "attributes": {
-      "tags": []
+      "tags": [
+        "mq:CreateTags",
+        "mq:DeleteTags"
+      ]
     },
     "destroy": [],
     "modify": [],
-    "plan": []
+    "plan": [
+      "mq:ListTags"
+    ]
   }
 ]
+
+

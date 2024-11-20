@@ -11,6 +11,9 @@
     "Id": {
       "type": "string"
     },
+    "ServiceTimeout": {
+      "type": "integer"
+    },
     "ServiceToken": {
       "type": "string"
     }

@@ -42,13 +42,15 @@
     },
     "read": {
       "permissions": [
-        "s3:GetAccessGrantsLocation"
+        "s3:GetAccessGrantsLocation",
+        "s3:ListTagsForResource"
       ]
     },
     "update": {
       "permissions": [
         "s3:UpdateAccessGrantsLocation",
         "s3:TagResource",
+        "s3:UntagResource",
         "iam:PassRole"
       ]
     }
@@ -98,13 +100,16 @@
   "required": [],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-s3",
   "tagging": {
+    "cloudFormationSystemTags": false,
+    "permissions": [
+      "s3:UntagResource",
+      "s3:TagResource",
+      "s3:ListTagsForResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,
     "taggable": true
   },
-  "typeName": "AWS::S3::AccessGrantsLocation",
-  "writeOnlyProperties": [
-    "/properties/Tags"
-  ]
+  "typeName": "AWS::S3::AccessGrantsLocation"
 }

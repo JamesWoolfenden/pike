@@ -66,6 +66,16 @@
       ]
     },
     "list": {
+      "handlerSchema": {
+        "properties": {
+          "LedgerName": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "LedgerName"
+        ]
+      },
       "permissions": [
         "qldb:listJournalKinesisStreamsForLedger"
       ]

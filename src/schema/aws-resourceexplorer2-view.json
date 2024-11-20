@@ -112,6 +112,11 @@
   ],
   "tagging": {
     "cloudFormationSystemTags": false,
+    "permissions": [
+      "resource-explorer-2:ListTagsForResource",
+      "resource-explorer-2:TagResource",
+      "resource-explorer-2:UntagResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

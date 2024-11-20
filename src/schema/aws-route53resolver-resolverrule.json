@@ -53,6 +53,12 @@
             "DoH"
           ],
           "type": "string"
+        },
+        "ServerNameIndication": {
+          "description": "The SNI of the target name servers for DoH/DoH-FIPS outbound endpoints",
+          "maxLength": 255,
+          "minLength": 0,
+          "type": "string"
         }
       },
       "type": "object"
@@ -101,12 +107,6 @@
   "properties": {
     "Arn": {
       "description": "The Amazon Resource Name (ARN) of the resolver rule.",
-      "type": "string"
-    },
-    "DelegationRecord": {
-      "description": "The name server domain for queries to be delegated to if a query matches the delegation record.",
-      "maxLength": 256,
-      "minLength": 1,
       "type": "string"
     },
     "DomainName": {
@@ -173,6 +173,10 @@
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-route53resolver.git",
   "tagging": {
     "cloudFormationSystemTags": false,
+    "permissions": [
+      "route53resolver:TagResource",
+      "route53resolver:UntagResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

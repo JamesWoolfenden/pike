@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "kinesis:GetResourcePolicy",
+      "kinesis:PutResourcePolicy",
+      "kinesis:GetResourcePolicy",
+      "kinesis:DeleteResourcePolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "kinesis:DeleteResourcePolicy"
+    ],
+    "modify": [],
+    "plan": [
+      "kinesis:GetResourcePolicy"
+    ]
+  }
+]
+

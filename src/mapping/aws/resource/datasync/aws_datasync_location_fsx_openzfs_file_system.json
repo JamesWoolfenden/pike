@@ -3,7 +3,8 @@
     "apply": [
       "datasync:DescribeLocationFsxOpenZfs",
       "datasync:CreateLocationFsxOpenZfs",
-      "datasync:DeleteLocation"
+      "datasync:DeleteLocation",
+      "datasync:ListTagsForResource"
     ],
     "attributes": {
       "tags": [

@@ -41,7 +41,8 @@
       "permissions": [
         "route53profiles:DeleteProfile",
         "route53profiles:GetProfile",
-        "route53profiles:UntagResource"
+        "route53profiles:UntagResource",
+        "route53profiles:ListTagsForResource"
       ]
     },
     "list": {
@@ -109,13 +110,14 @@
   ],
   "tagging": {
     "cloudFormationSystemTags": false,
+    "permissions": [
+      "route53profiles:TagResource",
+      "route53profiles:UntagResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,
     "taggable": true
   },
-  "typeName": "AWS::Route53Profiles::Profile",
-  "writeOnlyProperties": [
-    "/properties/Tags"
-  ]
+  "typeName": "AWS::Route53Profiles::Profile"
 }

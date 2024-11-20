@@ -9,6 +9,74 @@
     "Arn": {
       "description": "The Amazon Resource Name (ARN) of the specified bucket.",
       "type": "string"
+    },
+    "BucketEncryption": {
+      "additionalProperties": false,
+      "description": "Specifies default encryption for a bucket using server-side encryption with Amazon S3 managed keys (SSE-S3) or AWS KMS keys (SSE-KMS).",
+      "properties": {
+        "ServerSideEncryptionConfiguration": {
+          "description": "Specifies the default server-side-encryption configuration.",
+          "insertionOrder": true,
+          "items": {
+            "$ref": "#/definitions/ServerSideEncryptionRule"
+          },
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "ServerSideEncryptionConfiguration"
+      ],
+      "type": "object"
+    },
+    "ServerSideEncryptionByDefault": {
+      "additionalProperties": false,
+      "description": "Specifies the default server-side encryption to apply to new objects in the bucket. If a PUT Object request doesn't specify any server-side encryption, this default encryption will be applied.",
+      "properties": {
+        "KMSMasterKeyID": {
+          "anyOf": [
+            {
+              "relationshipRef": {
+                "propertyPath": "/properties/KeyId",
+                "typeName": "AWS::KMS::Key"
+              }
+            },
+            {
+              "relationshipRef": {
+                "propertyPath": "/properties/Arn",
+                "typeName": "AWS::KMS::Key"
+              }
+            }
+          ],
+          "description": "AWS Key Management Service (KMS) customer managed key ID to use for the default encryption. This parameter is allowed only if SSEAlgorithm is set to aws:kms. You can specify this parameter with the key ID or the Amazon Resource Name (ARN) of the KMS key",
+          "type": "string"
+        },
+        "SSEAlgorithm": {
+          "enum": [
+            "aws:kms",
+            "AES256"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "SSEAlgorithm"
+      ],
+      "type": "object"
+    },
+    "ServerSideEncryptionRule": {
+      "additionalProperties": false,
+      "description": "Specifies the default server-side encryption configuration.",
+      "properties": {
+        "BucketKeyEnabled": {
+          "description": "Specifies whether Amazon S3 should use an S3 Bucket Key with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. Existing objects are not affected. Amazon S3 Express One Zone uses an S3 Bucket Key with SSE-KMS and S3 Bucket Key cannot be disabled. It's only allowed to set the BucketKeyEnabled element to true.",
+          "type": "boolean"
+        },
+        "ServerSideEncryptionByDefault": {
+          "$ref": "#/definitions/ServerSideEncryptionByDefault"
+        }
+      },
+      "type": "object"
     }
   },
   "description": "Resource Type definition for AWS::S3Express::DirectoryBucket.",
@@ -67,7 +135,9 @@
       ],
       "type": "string"
     },
-    "BucketEncryption": {},
+    "BucketEncryption": {
+      "$ref": "#/definitions/BucketEncryption"
+    },
     "BucketName": {
       "description": "Specifies a name for the bucket. The bucket name must contain only lowercase letters, numbers, and hyphens (-). A directory bucket name must be unique in the chosen Availability Zone. The bucket name must also follow the format 'bucket_base_name--az_id--x-s3' (for example, 'DOC-EXAMPLE-BUCKET--usw2-az1--x-s3'). If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the bucket name.",
       "maxLength": 63,

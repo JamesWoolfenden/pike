@@ -106,6 +106,11 @@
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-organizations",
   "tagging": {
     "cloudFormationSystemTags": false,
+    "permissions": [
+      "organizations:TagResource",
+      "organizations:UntagResource",
+      "organizations:ListTagsForResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

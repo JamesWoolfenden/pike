@@ -37,20 +37,6 @@
       "description": "The URLs of the queues to which you want to add the policy. You can use the ``Ref`` function to specify an ``AWS::SQS::Queue`` resource.",
       "insertionOrder": false,
       "items": {
-        "anyOf": [
-          {
-            "relationshipRef": {
-              "propertyPath": "/properties/QueueUrl",
-              "typeName": "AWS::SQS::Queue"
-            }
-          },
-          {
-            "relationshipRef": {
-              "propertyPath": "/properties/QueueName",
-              "typeName": "AWS::SQS::Queue"
-            }
-          }
-        ],
         "type": "string"
       },
       "type": "array",

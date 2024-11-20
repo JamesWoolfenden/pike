@@ -80,6 +80,7 @@
         "ec2:CreateCapacityReservation",
         "ec2:DescribeCapacityReservations",
         "ec2:CancelCapacityReservation",
+        "ec2:AssociateCapacityReservationBillingOwner",
         "ec2:CreateTags",
         "ec2:DeleteTags"
       ]
@@ -141,6 +142,9 @@
     },
     "TotalInstanceCount": {
       "type": "integer"
+    },
+    "UnusedReservationBillingOwnerId": {
+      "type": "string"
     }
   },
   "readOnlyProperties": [
@@ -154,5 +158,8 @@
     "InstancePlatform",
     "InstanceType"
   ],
-  "typeName": "AWS::EC2::CapacityReservation"
+  "typeName": "AWS::EC2::CapacityReservation",
+  "writeOnlyProperties": [
+    "/properties/UnusedReservationBillingOwnerId"
+  ]
 }

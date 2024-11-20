@@ -35,7 +35,8 @@
         "route53resolver:CreateOutpostResolver",
         "route53resolver:GetOutpostResolver",
         "route53resolver:ListTagsForResource",
-        "outposts:GetOutpost"
+        "outposts:GetOutpost",
+        "route53resolver:TagResource"
       ]
     },
     "delete": {
@@ -170,6 +171,10 @@
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-rpdk.git",
   "tagging": {
     "cloudFormationSystemTags": true,
+    "permissions": [
+      "route53resolver:TagResource",
+      "route53resolver:UntagResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

@@ -123,6 +123,18 @@
     },
     "AuthenticateOidcConfig": {
       "additionalProperties": false,
+      "anyOf": [
+        {
+          "required": [
+            "ClientSecret"
+          ]
+        },
+        {
+          "required": [
+            "UseExistingClientSecret"
+          ]
+        }
+      ],
       "description": "Specifies information required using an identity provide (IdP) that is compliant with OpenID Connect (OIDC) to authenticate users.",
       "properties": {
         "AuthenticationRequestExtraParams": {
@@ -256,12 +268,14 @@
     },
     "ListenerAttribute": {
       "additionalProperties": false,
-      "description": "",
+      "description": "Information about a listener attribute.",
       "properties": {
         "Key": {
+          "description": "The name of the attribute.\n The following attribute is supported by Network Load Balancers, and Gateway Load Balancers.\n  +   ``tcp.idle_timeout.seconds`` - The tcp idle timeout value, in seconds. The valid range is 60-6000 seconds. The default is 350 seconds.",
           "type": "string"
         },
         "Value": {
+          "description": "The value of the attribute.",
           "type": "string"
         }
       },
@@ -450,7 +464,7 @@
     },
     "ListenerAttributes": {
       "arrayType": "AttributeList",
-      "description": "",
+      "description": "The listener attributes.",
       "insertionOrder": false,
       "items": {
         "$ref": "#/definitions/ListenerAttribute"

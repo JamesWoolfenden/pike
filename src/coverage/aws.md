@@ -1,7 +1,7 @@
-# todo aws
+# todo aws 
 
-Resource percentage coverage   73.70
-Datasource percentage coverage 100.00
+Resource percentage coverage   73.79 
+Datasource percentage coverage 100.00 
 
 ./resource.ps1 aws_amplify_backend_environment
 ./resource.ps1 aws_amplify_webhook
@@ -34,7 +34,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_appsync_graphql_api
 ./resource.ps1 aws_appsync_source_api_association
 ./resource.ps1 aws_appsync_type
-./resource.ps1 aws_backup_logically_air_gapped_vault
 ./resource.ps1 aws_bedrock_guardrail
 ./resource.ps1 aws_bedrock_guardrail_version
 ./resource.ps1 aws_bedrockagent_agent_knowledge_base_association
@@ -179,7 +178,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_kendra_query_suggestions_block_list
 ./resource.ps1 aws_kendra_thesaurus
 ./resource.ps1 aws_kinesis_analytics_application
-./resource.ps1 aws_kinesis_resource_policy
 ./resource.ps1 aws_kinesisanalyticsv2_application_snapshot
 ./resource.ps1 aws_lakeformation_data_lake_settings
 ./resource.ps1 aws_lakeformation_lf_tag
@@ -379,6 +377,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_vpc_ipam_organization_admin_account
 ./resource.ps1 aws_vpc_ipv6_cidr_block_association
 ./resource.ps1 aws_vpc_network_performance_metric_subscription
+./resource.ps1 aws_vpc_security_group_vpc_association
 ./resource.ps1 aws_wafregional_web_acl_association
 ./resource.ps1 aws_worklink_fleet
 ./resource.ps1 aws_worklink_website_certificate_authority_association

@@ -21,6 +21,7 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 // AwsDataLookup is a map to connect resource name to an object map
 //
 //nolint:funlen
+//goland:noinspection GoLinter
 func AwsDataLookup(find string) interface{} { //nolint:maintidx
 	//goland:noinspection LongLine
 	TFLookup := map[string]interface{}{

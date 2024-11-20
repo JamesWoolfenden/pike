@@ -101,7 +101,13 @@
   ],
   "tagging": {
     "cloudFormationSystemTags": false,
+    "permissions": [
+      "iam:TagSAMLProvider",
+      "iam:ListSAMLProviderTags",
+      "iam:UntagSAMLProvider"
+    ],
     "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
     "tagUpdatable": true,
     "taggable": true
   },

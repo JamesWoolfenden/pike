@@ -785,7 +785,7 @@
     },
     "RateLimit": {
       "maximum": 2000000000,
-      "minimum": 100,
+      "minimum": 10,
       "type": "integer"
     },
     "RateLimitCookie": {
@@ -1372,6 +1372,8 @@
     },
     "update": {
       "permissions": [
+        "wafv2:TagResource",
+        "wafv2:UntagResource",
         "wafv2:UpdateRuleGroup",
         "wafv2:GetRuleGroup",
         "wafv2:ListTagsForResource"
@@ -1455,10 +1457,11 @@
   ],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-wafv2.git",
   "tagging": {
-    "cloudFormationSystemTags": false,
-    "tagOnCreate": false,
-    "tagUpdatable": false,
-    "taggable": false
+    "cloudFormationSystemTags": true,
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": true,
+    "taggable": true
   },
   "typeName": "AWS::WAFv2::RuleGroup"
 }

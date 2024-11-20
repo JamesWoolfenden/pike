@@ -939,13 +939,15 @@
   "handlers": {
     "create": {
       "permissions": [
-        "pca-connector-ad:CreateTemplate"
+        "pca-connector-ad:CreateTemplate",
+        "pca-connector-ad:TagResource"
       ]
     },
     "delete": {
       "permissions": [
         "pca-connector-ad:GetTemplate",
-        "pca-connector-ad:DeleteTemplate"
+        "pca-connector-ad:DeleteTemplate",
+        "pca-connector-ad:UntagResource"
       ]
     },
     "list": {
@@ -1021,6 +1023,11 @@
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-pcaconnectorad",
   "tagging": {
     "cloudFormationSystemTags": true,
+    "permissions": [
+      "pca-connector-ad:ListTagsForResource",
+      "pca-connector-ad:TagResource",
+      "pca-connector-ad:UntagResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,
@@ -1028,10 +1035,6 @@
   },
   "typeName": "AWS::PCAConnectorAD::Template",
   "writeOnlyProperties": [
-    "/properties/ConnectorArn",
-    "/properties/Definition",
-    "/properties/Name",
-    "/properties/ReenrollAllCertificateHolders",
-    "/properties/Tags"
+    "/properties/ReenrollAllCertificateHolders"
   ]
 }

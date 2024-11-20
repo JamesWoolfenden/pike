@@ -4,7 +4,8 @@
       "datasync:DescribeLocationSmb",
       "datasync:CreateLocationSmb",
       "datasync:UpdateLocationSmb",
-      "datasync:DeleteLocation"
+      "datasync:DeleteLocation",
+      "datasync:ListTagsForResource"
     ],
     "attributes": {
       "tags": [

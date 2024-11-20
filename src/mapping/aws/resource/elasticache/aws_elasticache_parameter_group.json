@@ -6,7 +6,9 @@
       "elasticache:DescribeCacheParameterGroups",
       "elasticache:DescribeCacheParameters",
       "elasticache:ListTagsForResource",
-      "elasticache:DeleteCacheParameterGroup"
+      "elasticache:DeleteCacheParameterGroup",
+      "iam:CreateServiceLinkedRole",
+      "iam:PutRolePolicy"
     ],
     "attributes": {
       "tags": [

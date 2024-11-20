@@ -103,7 +103,9 @@
       "permissions": [
         "wafv2:UpdateIPSet",
         "wafv2:GetIPSet",
-        "wafv2:ListTagsForResource"
+        "wafv2:ListTagsForResource",
+        "wafv2:TagResource",
+        "wafv2:UntagResource"
       ]
     }
   },
@@ -157,10 +159,11 @@
   ],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-wafv2.git",
   "tagging": {
-    "cloudFormationSystemTags": false,
-    "tagOnCreate": false,
-    "tagUpdatable": false,
-    "taggable": false
+    "cloudFormationSystemTags": true,
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": true,
+    "taggable": true
   },
   "typeName": "AWS::WAFv2::IPSet"
 }

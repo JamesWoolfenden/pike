@@ -64,12 +64,15 @@ func TestGetAWSDataPermissions(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
+
 			got, err := pike.GetAWSDataPermissions(tt.args.result)
+
 			if (err != nil) != tt.wantErr {
 				t.Errorf("GetAWSDataPermissions() error = %v, wantErr %v", err, tt.wantErr)
 
 				return
 			}
+
 			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("GetAWSDataPermissions() = %v, want %v", got, tt.want)
 			}

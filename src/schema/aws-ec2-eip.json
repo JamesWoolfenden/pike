@@ -4,7 +4,9 @@
   "createOnlyProperties": [
     "/properties/Domain",
     "/properties/NetworkBorderGroup",
-    "/properties/TransferAddress"
+    "/properties/TransferAddress",
+    "/properties/IpamPoolId",
+    "/properties/Address"
   ],
   "definitions": {
     "Tag": {
@@ -70,6 +72,10 @@
     "/properties/AllocationId"
   ],
   "properties": {
+    "Address": {
+      "description": "",
+      "type": "string"
+    },
     "AllocationId": {
       "description": "",
       "type": "string"
@@ -80,6 +86,10 @@
     },
     "InstanceId": {
       "description": "The ID of the instance.\n  Updates to the ``InstanceId`` property may require *some interruptions*. Updates on an EIP reassociates the address on its associated resource.",
+      "type": "string"
+    },
+    "IpamPoolId": {
+      "description": "",
       "type": "string"
     },
     "NetworkBorderGroup": {
@@ -125,6 +135,8 @@
   },
   "typeName": "AWS::EC2::EIP",
   "writeOnlyProperties": [
-    "/properties/TransferAddress"
+    "/properties/TransferAddress",
+    "/properties/IpamPoolId",
+    "/properties/Address"
   ]
 }

@@ -202,6 +202,11 @@
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-datasync.git",
   "tagging": {
     "cloudFormationSystemTags": true,
+    "permissions": [
+      "datasync:TagResource",
+      "datasync:UntagResource",
+      "datasync:ListTagsForResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

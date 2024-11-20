@@ -86,7 +86,8 @@
     "create": {
       "permissions": [
         "connect:CreateHoursOfOperation",
-        "connect:TagResource"
+        "connect:TagResource",
+        "connect:CreateHoursOfOperationOverride"
       ]
     },
     "delete": {
@@ -112,12 +113,17 @@
     },
     "read": {
       "permissions": [
-        "connect:DescribeHoursOfOperation"
+        "connect:DescribeHoursOfOperation",
+        "connect:ListHoursOfOperationOverrides"
       ]
     },
     "update": {
       "permissions": [
         "connect:UpdateHoursOfOperation",
+        "connect:CreateHoursOfOperationOverride",
+        "connect:UpdateHoursOfOperationOverride",
+        "connect:DeleteHoursOfOperationOverride",
+        "connect:ListHoursOfOperationOverrides",
         "connect:TagResource",
         "connect:UntagResource"
       ]
@@ -186,6 +192,10 @@
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-connect",
   "tagging": {
     "cloudFormationSystemTags": true,
+    "permissions": [
+      "connect:TagResource",
+      "connect:UntagResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

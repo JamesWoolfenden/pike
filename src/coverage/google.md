@@ -1,7 +1,7 @@
-# todo google
+# todo google 
 
-Resource percentage coverage   19.25
-Datasource percentage coverage 75.70
+Resource percentage coverage   19.19 
+Datasource percentage coverage 75.47 
 
 ./resource.ps1 google_access_context_manager_access_level_condition
 ./resource.ps1 google_access_context_manager_service_perimeter_dry_run_egress_policy
@@ -359,6 +359,7 @@ Datasource percentage coverage 75.70
 ./resource.ps1 google_dataproc_cluster_iam_policy
 ./resource.ps1 google_dataproc_gdc_application_environment
 ./resource.ps1 google_dataproc_gdc_service_instance
+./resource.ps1 google_dataproc_gdc_spark_application
 ./resource.ps1 google_dataproc_job
 ./resource.ps1 google_dataproc_job_iam_binding
 ./resource.ps1 google_dataproc_job_iam_member
@@ -500,6 +501,8 @@ Datasource percentage coverage 75.70
 ./resource.ps1 google_healthcare_workspace
 ./resource.ps1 google_iam_access_boundary_policy
 ./resource.ps1 google_iam_deny_policy
+./resource.ps1 google_iam_folders_policy_binding
+./resource.ps1 google_iam_organizations_policy_binding
 ./resource.ps1 google_iam_principal_access_boundary_policy
 ./resource.ps1 google_iam_workforce_pool
 ./resource.ps1 google_iam_workforce_pool_provider
@@ -817,6 +820,7 @@ Datasource percentage coverage 75.70
 ./resource.ps1 google_workstations_workstation_iam_binding
 ./resource.ps1 google_workstations_workstation_iam_member
 ./resource.ps1 google_workstations_workstation_iam_policy
+./resource.ps1 google_access_context_manager_access_policy -type data
 ./resource.ps1 google_apphub_application -type data
 ./resource.ps1 google_apphub_discovered_service -type data
 ./resource.ps1 google_apphub_discovered_workload -type data

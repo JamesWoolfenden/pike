@@ -2,7 +2,8 @@
   {
     "apply": [
       "datasync:DescribeLocationEfs",
-      "datasync:CreateLocationEfs"
+      "datasync:CreateLocationEfs",
+      "datasync:ListTagsForResource"
     ],
     "attributes": {
       "tags": [

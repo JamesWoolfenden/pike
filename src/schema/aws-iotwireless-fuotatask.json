@@ -44,7 +44,6 @@
       "permissions": [
         "iotwireless:CreateFuotaTask",
         "iotwireless:TagResource",
-        "iotwireless:ListTagsForResource",
         "iam:GetRole",
         "iam:PassRole"
       ]
@@ -70,8 +69,9 @@
       "permissions": [
         "iam:PassRole",
         "iotwireless:UpdateFuotaTask",
+        "iotwireless:GetFuotaTask",
+        "iotwireless:TagResource",
         "iotwireless:UntagResource",
-        "iotwireless:ListTagsForResource",
         "iotwireless:AssociateMulticastGroupWithFuotaTask",
         "iotwireless:DisassociateMulticastGroupFromFuotaTask",
         "iotwireless:AssociateWirelessDeviceWithFuotaTask",
@@ -165,6 +165,17 @@
     "FirmwareUpdateRole"
   ],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-rpdk.git",
-  "taggable": true,
+  "tagging": {
+    "cloudFormationSystemTags": true,
+    "permissions": [
+      "iotwireless:TagResource",
+      "iotwireless:UntagResource",
+      "iotwireless:ListTagsForResource"
+    ],
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": true,
+    "taggable": true
+  },
   "typeName": "AWS::IoTWireless::FuotaTask"
 }

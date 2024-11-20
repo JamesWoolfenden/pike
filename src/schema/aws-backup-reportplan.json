@@ -180,6 +180,11 @@
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-rpdk.git",
   "tagging": {
     "cloudFormationSystemTags": false,
+    "permissions": [
+      "backup:TagResource",
+      "backup:UntagResource",
+      "backup:ListTags"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/ReportPlanTags",
     "tagUpdatable": true,

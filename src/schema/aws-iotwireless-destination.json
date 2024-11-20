@@ -27,8 +27,7 @@
       "permissions": [
         "iam:PassRole",
         "iotwireless:CreateDestination",
-        "iotwireless:TagResource",
-        "iotwireless:ListTagsForResource"
+        "iotwireless:TagResource"
       ]
     },
     "delete": {
@@ -51,9 +50,10 @@
     "update": {
       "permissions": [
         "iam:PassRole",
+        "iotwireless:GetDestination",
         "iotwireless:UpdateDestination",
         "iotwireless:UntagResource",
-        "iotwireless:ListTagsForResource"
+        "iotwireless:TagResource"
       ]
     }
   },
@@ -115,6 +115,17 @@
     "ExpressionType"
   ],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-rpdk.git",
-  "taggable": true,
+  "tagging": {
+    "cloudFormationSystemTags": true,
+    "permissions": [
+      "iotwireless:TagResource",
+      "iotwireless:UntagResource",
+      "iotwireless:ListTagsForResource"
+    ],
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": true,
+    "taggable": true
+  },
   "typeName": "AWS::IoTWireless::Destination"
 }
