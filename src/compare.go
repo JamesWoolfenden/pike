@@ -33,7 +33,7 @@ func Compare(directory string, arn string, init bool) (bool, error) {
 		return false, errors.New("invalid ARN format")
 	}
 
-	var polciesMatch bool
+	var policiesMatch bool
 	// Load the Shared AWS Configuration (~/.aws/config)
 	cfg, err := config.LoadDefaultConfig(context.TODO())
 	if err != nil {
@@ -44,19 +44,19 @@ func Compare(directory string, arn string, init bool) (bool, error) {
 
 	version, err := GetVersion(client, arn)
 	if err != nil {
-		return polciesMatch, err
+		return policiesMatch, err
 	}
 
 	policy, _ := GetPolicyVersion(client, arn, *version)
 
 	iacPolicy, err := MakePolicy(directory, nil, init, false)
 	if err != nil {
-		return polciesMatch, err
+		return policiesMatch, err
 	}
 
 	sorted, err := SortActions(iacPolicy.AWS.JSONOut)
 	if err != nil {
-		return polciesMatch, err
+		return policiesMatch, err
 	}
 
 	// iam versus iac

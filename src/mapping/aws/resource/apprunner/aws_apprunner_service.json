@@ -17,7 +17,7 @@
     ],
     "attributes": {
       "tags": [
-        "apprunner:TagRespource",
+        "apprunner:TagResource",
         "apprunner:UntagResource"
       ]
     },

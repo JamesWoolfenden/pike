@@ -108,10 +108,7 @@ func TestGetPolicy(t *testing.T) {
 			args{pike.Sorted{
 				AWS: []string{},
 			}},
-			`{
-  "Version": "2012-10-17",
-  "Statement": null
-}`,
+			``,
 			false,
 		},
 		{

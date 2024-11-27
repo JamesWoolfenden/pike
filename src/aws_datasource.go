@@ -1,30 +1,7 @@
 package pike
 
-// GetAWSDataPermissions gets permissions required for datasource's.
-//
-//goland:noinspection GoLinter
-func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
-	var (
-		Permissions []string
-		err         error
-	)
-
-	if temp := AwsDataLookup(result.Name); temp != nil {
-		Permissions, err = GetPermissionMap(temp.([]byte), result.Attributes, result.Name)
-	} else {
-		return nil, &notImplementedDatasourceError{result.Name}
-	}
-
-	return Permissions, err
-}
-
-// AwsDataLookup is a map to connect resource name to an object map
-//
-//nolint:funlen
-//goland:noinspection GoLinter
-func AwsDataLookup(find string) interface{} { //nolint:maintidx
-	//goland:noinspection LongLine
-	TFLookup := map[string]interface{}{
+var (
+	TFLookupDataAWS = map[string]interface{}{
 		"aws_acm_certificate":                                       dataAwsAcmCertificate,
 		"aws_acmpca_certificate":                                    dataAwsAcmpcaCertificate,
 		"aws_acmpca_certificate_authority":                          dataAwsAcmpcaCertificateAuthority,
@@ -603,6 +580,27 @@ func AwsDataLookup(find string) interface{} { //nolint:maintidx
 		"aws_lb_listener_rule":                                                  dataAwsLbListenerRule,
 		"aws_spot_datafeed_subscription":                                        dataAwsSpotDatafeedSubscription,
 	}
+)
 
-	return TFLookup[find]
+// GetAWSDataPermissions gets permissions required for datasource's.
+//
+//goland:noinspection GoLinter
+func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
+	var (
+		Permissions []string
+		err         error
+	)
+
+	if temp := AwsDataLookup(result.Name); temp != nil {
+		Permissions, err = GetPermissionMap(temp.([]byte), result.Attributes, result.Name)
+	} else {
+		return nil, &notImplementedDatasourceError{result.Name}
+	}
+
+	return Permissions, err
+}
+
+// AwsDataLookup is a map to connect resource name to an object map
+func AwsDataLookup(find string) interface{} {
+	return TFLookupDataAWS[find]
 }

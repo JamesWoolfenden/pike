@@ -93,28 +93,28 @@ func TestGitReferenceError_Error(t *testing.T) {
 		{
 			name: "basic git reference",
 			m: &gitReferenceError{
-				Name: "refs/heads/main",
+				name: "refs/heads/main",
 			},
 			want: "git reference in module source path unsupported refs/heads/main",
 		},
 		{
 			name: "empty reference",
 			m: &gitReferenceError{
-				Name: "",
+				name: "",
 			},
 			want: "git reference in module source path unsupported ",
 		},
 		{
 			name: "commit hash reference",
 			m: &gitReferenceError{
-				Name: "a1b2c3d4e5f6",
+				name: "a1b2c3d4e5f6",
 			},
 			want: "git reference in module source path unsupported a1b2c3d4e5f6",
 		},
 		{
 			name: "tag reference",
 			m: &gitReferenceError{
-				Name: "refs/tags/v1.0.0",
+				name: "refs/tags/v1.0.0",
 			},
 			want: "git reference in module source path unsupported refs/tags/v1.0.0",
 		},
@@ -175,28 +175,28 @@ func TestRepositoryFormatError_Error(t *testing.T) {
 		{
 			name: "empty repository",
 			m: &repositoryFormatError{
-				Name: "",
+				name: "",
 			},
 			want: "repository not formatted correctly ",
 		},
 		{
 			name: "invalid path format",
 			m: &repositoryFormatError{
-				Name: "invalid/repo/path///",
+				name: "invalid/repo/path///",
 			},
 			want: "repository not formatted correctly invalid/repo/path///",
 		},
 		{
 			name: "special characters",
 			m: &repositoryFormatError{
-				Name: "@#$%^&*",
+				name: "@#$%^&*",
 			},
 			want: "repository not formatted correctly @#$%^&*",
 		},
 		{
 			name: "url format",
 			m: &repositoryFormatError{
-				Name: "https://github.com/user/repo.git",
+				name: "https://github.com/user/repo.git",
 			},
 			want: "repository not formatted correctly https://github.com/user/repo.git",
 		},
@@ -225,35 +225,35 @@ func TestRepositoryFormatError_Error_Additional(t *testing.T) {
 		{
 			name: "whitespace only",
 			m: &repositoryFormatError{
-				Name: "   ",
+				name: "   ",
 			},
 			want: "repository not formatted correctly    ",
 		},
 		{
 			name: "very long path",
 			m: &repositoryFormatError{
-				Name: "org/extremely/long/repository/path/that/exceeds/normal/length/limits/and/tests/boundary/conditions",
+				name: "org/extremely/long/repository/path/that/exceeds/normal/length/limits/and/tests/boundary/conditions",
 			},
 			want: "repository not formatted correctly org/extremely/long/repository/path/that/exceeds/normal/length/limits/and/tests/boundary/conditions",
 		},
 		{
 			name: "unicode characters",
 			m: &repositoryFormatError{
-				Name: "организация/репозиторий",
+				name: "организация/репозиторий",
 			},
 			want: "repository not formatted correctly организация/репозиторий",
 		},
 		{
 			name: "numeric repository",
 			m: &repositoryFormatError{
-				Name: "12345/67890",
+				name: "12345/67890",
 			},
 			want: "repository not formatted correctly 12345/67890",
 		},
 		{
 			name: "mixed case with symbols",
 			m: &repositoryFormatError{
-				Name: "My-Org/Repo_Name-123",
+				name: "My-Org/Repo_Name-123",
 			},
 			want: "repository not formatted correctly My-Org/Repo_Name-123",
 		},
@@ -266,6 +266,55 @@ func TestRepositoryFormatError_Error_Additional(t *testing.T) {
 
 			if got := tt.m.Error(); got != tt.want {
 				t.Errorf("repositoryFormatError.Error() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestMappingsEmpty_Error(t *testing.T) {
+	t.Parallel()
+
+	tests := []struct {
+		name string
+		m    *mappingsEmpty
+		want string
+	}{
+		{
+			name: "basic empty mappings",
+			m:    &mappingsEmpty{},
+			want: "mappings are empty",
+		},
+		{
+			name: "new instance",
+			m:    new(mappingsEmpty),
+			want: "mappings are empty",
+		},
+		{
+			name: "nil pointer",
+			m:    (*mappingsEmpty)(nil),
+			want: "mappings are empty",
+		},
+		{
+			name: "multiple calls",
+			m:    &mappingsEmpty{},
+			want: "mappings are empty",
+		},
+	}
+
+	for _, tt := range tests {
+		tt := tt
+		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
+			if got := tt.m.Error(); got != tt.want {
+				t.Errorf("mappingsEmpty.Error() = %v, want %v", got, tt.want)
+			}
+			// Test multiple calls return same result
+			if tt.name == "multiple calls" {
+				for i := 0; i < 3; i++ {
+					if got := tt.m.Error(); got != tt.want {
+						t.Errorf("mappingsEmpty.Error() iteration %d = %v, want %v", i, got, tt.want)
+					}
+				}
 			}
 		})
 	}

@@ -2,8 +2,6 @@ package pike
 
 import (
 	"encoding/json"
-	"errors"
-	"fmt"
 )
 
 const (
@@ -13,73 +11,8 @@ const (
 	data      string = "data"
 )
 
-// GetAWSPermissions for AWS resources.
-func GetAWSPermissions(result ResourceV2) ([]string, error) {
-	// Validate the input
-	if result.TypeName == "" {
-		return nil, errors.New("typeName cannot be empty")
-	}
-
-	if result.Name == "" {
-		return nil, errors.New("name cannot be empty")
-	}
-
-	var (
-		err         error
-		Permissions []string
-	)
-
-	switch result.TypeName {
-	case resource, terraform:
-		{
-			Permissions, err = GetAWSResourcePermissions(result)
-
-			if err != nil {
-				return Permissions, err
-			}
-		}
-	case data:
-		{
-			Permissions, err = GetAWSDataPermissions(result)
-			if err != nil {
-				return Permissions, err
-			}
-		}
-	case module:
-		{
-			// do nothing this is a module not a base resource type, and
-			// we shouldn't really be able to get here unless well bad naming
-		}
-	default:
-		{
-			return nil, &unknownPermissionError{result.Name}
-		}
-	}
-
-	return Permissions, nil
-}
-
-// GetAWSResourcePermissions looks up permissions required for resources
-//
-//goland:noinspection GoLinter
-func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
-	var (
-		Permissions []string
-		err         error
-	)
-
-	if temp := AwsLookup(result.Name); temp != nil {
-		Permissions, err = GetPermissionMap(temp.([]byte), result.Attributes, result.Name)
-	} else {
-		return nil, &notImplementedResourceError{result.Name}
-	}
-
-	return Permissions, err
-}
-
-//goland:noinspection LongLine
-func AwsLookup(name string) interface{} {
-	TFLookup := map[string]interface{}{
+var (
+	TFLookup = map[string]interface{}{
 		"aws_accessanalyzer_analyzer":                                      awsAccessAnalyzer,
 		"aws_accessanalyzer_archive_rule":                                  awsAccessAnalyzerArchiveRule,
 		"aws_account_alternate_contact":                                    awsAccountAlternativeContact,
@@ -1149,6 +1082,76 @@ func AwsLookup(name string) interface{} {
 		"aws_backup_logically_air_gapped_vault":                            awsBackupLogicallyAirGappedVault,
 		"aws_kinesis_resource_policy":                                      awsKinesisResourcePolicy,
 	}
+)
+
+// GetAWSPermissions for AWS resources.
+func GetAWSPermissions(result ResourceV2) ([]string, error) {
+	// Validate the input
+	if result.TypeName == "" {
+		return nil, &emptyTypeNameError{}
+	}
+
+	if result.Name == "" {
+		return nil, &emptyNameError{}
+	}
+
+	var (
+		err         error
+		Permissions []string
+	)
+
+	switch result.TypeName {
+	case resource, terraform:
+		{
+			Permissions, err = GetAWSResourcePermissions(result)
+
+			if err != nil {
+				return Permissions, &getAWSResourcePermissionsError{err}
+			}
+		}
+	case data:
+		{
+			Permissions, err = GetAWSDataPermissions(result)
+			if err != nil {
+				return Permissions, &getAWSDataPermissionsError{err}
+			}
+		}
+	case module:
+		{
+			// do nothing this is a module not a base resource type, and
+			// we shouldn't really be able to get here unless well bad naming
+		}
+	default:
+		{
+			return nil, &unknownPermissionError{result.Name}
+		}
+	}
+
+	return Permissions, nil
+}
+
+// GetAWSResourcePermissions looks up permissions required for resources
+//
+//goland:noinspection GoLinter
+func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
+	var (
+		Permissions []string
+		err         error
+	)
+
+	if temp := AwsLookup(result.Name); temp != nil {
+		Permissions, err = GetPermissionMap(temp.([]byte), result.Attributes, result.Name)
+	} else {
+		return nil, &notImplementedResourceError{result.Name}
+	}
+
+	return Permissions, err
+}
+
+func AwsLookup(name string) interface{} {
+	if name == "" {
+		return nil
+	}
 
 	return TFLookup[name]
 }
@@ -1166,15 +1169,24 @@ func Contains(s []string, e string) bool {
 
 // GetPermissionMap Anonymous parsing.
 func GetPermissionMap(raw []byte, attributes []string, resource string) ([]string, error) {
+
+	if !json.Valid(raw) || len(raw) == 0 {
+		return nil, &invalidJsonError{}
+	}
+
+	if len(attributes) == 0 {
+		return nil, &zeroLengthAttributesError{resource}
+	}
+
 	var mappings []interface{}
 	err := json.Unmarshal(raw, &mappings)
 
 	if err != nil {
-		return nil, fmt.Errorf("failed to unmarshal json %w for %s", err, resource)
+		return nil, &unmarshallJsonError{err, resource}
 	}
 
 	if mappings == nil {
-		return nil, errors.New("mappings are empty")
+		return nil, &mappingsEmpty{}
 	}
 
 	temp, err := IsTypeOK(mappings[0])
@@ -1183,17 +1195,21 @@ func GetPermissionMap(raw []byte, attributes []string, resource string) ([]strin
 		return nil, err
 	}
 
-	myAttributes, err := IsTypeOK(temp["attributes"])
+	if temp["attributes"] == nil {
+		return nil, &attributesFieldMissingError{}
+	}
+
+	resourceAttributes, err := IsTypeOK(temp["attributes"])
 
 	if err != nil {
-		return nil, err
+		return nil, &assertionFailedError{"temp[\"attributes\"]", err}
 	}
 
 	var found []string
 
 	for _, attribute := range attributes {
-		if myAttributes[attribute] != nil {
-			for _, entry := range myAttributes[attribute].([]interface{}) {
+		if resourceAttributes[attribute] != nil {
+			for _, entry := range resourceAttributes[attribute].([]interface{}) {
 				found = append(
 					found,
 					entry.(string),
@@ -1202,6 +1218,12 @@ func GetPermissionMap(raw []byte, attributes []string, resource string) ([]strin
 		}
 	}
 
+	found = getActionPermissions(temp, found)
+
+	return found, nil
+}
+
+func getActionPermissions(temp map[string]interface{}, found []string) []string {
 	for _, action := range []string{"apply", "plan", "modify", "destroy"} {
 		if temp[action] != nil {
 			for _, entry := range temp[action].([]interface{}) {
@@ -1209,15 +1231,14 @@ func GetPermissionMap(raw []byte, attributes []string, resource string) ([]strin
 			}
 		}
 	}
-
-	return found, nil
+	return found
 }
 
 func IsTypeOK(mappings interface{}) (map[string]interface{}, error) {
 	temp, ok := mappings.(map[string]interface{})
 
 	if !ok {
-		return nil, fmt.Errorf("assertion to map[string]interface{} failed")
+		return nil, &assertionError{"mappings to map[string]Interface{}"}
 	}
 
 	return temp, nil

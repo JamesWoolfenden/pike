@@ -1,7 +1,7 @@
-# todo azure 
+# todo azure
 
-Resource percentage coverage   4.62 
-Datasource percentage coverage 35.88 
+Resource percentage coverage   4.61
+Datasource percentage coverage 35.88
 
 ./resource.ps1 azurerm_aadb2c_directory
 ./resource.ps1 azurerm_active_directory_domain_service
@@ -347,6 +347,7 @@ Datasource percentage coverage 35.88
 ./resource.ps1 azurerm_eventgrid_domain
 ./resource.ps1 azurerm_eventgrid_domain_topic
 ./resource.ps1 azurerm_eventgrid_event_subscription
+./resource.ps1 azurerm_eventgrid_namespace
 ./resource.ps1 azurerm_eventgrid_system_topic
 ./resource.ps1 azurerm_eventgrid_system_topic_event_subscription
 ./resource.ps1 azurerm_eventgrid_topic

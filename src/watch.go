@@ -16,8 +16,14 @@ import (
 	"github.com/rs/zerolog/log"
 )
 
+const PollIntervalSeconds int = 5
+
 // Watch looks at IAM policy for new revisions.
 func Watch(arn string, wait int) error {
+	if arn == "" {
+		return errors.New("ARN cannot be empty")
+	}
+
 	// Load the Shared AWS Configuration (~/.aws/config)
 	cfg, err := config.LoadDefaultConfig(context.TODO())
 	if err != nil {
@@ -28,27 +34,26 @@ func Watch(arn string, wait int) error {
 
 	Version, err := GetVersion(client, arn)
 	if err != nil {
-		return err
+		return &getVersionError{err}
 	}
 
-	log.Printf("Waiting for change on policy Version %s", *Version)
+	log.Info().Msgf("Waiting for change on policy Version %s", *Version)
 
-	delay, err := WaitForPolicyChange(client, "arn:aws:iam::680235478471:policy/basic", *Version, wait)
+	delay, err := WaitForPolicyChange(client, arn, *Version, wait, PollIntervalSeconds) // Added default pollInterval of 10
 	if err != nil {
-		return err
+		return &waitForPolicyChangeError{err}
 	}
 
-	log.Printf("Policy updated after %d", delay)
+	log.Info().Msgf("Policy updated after %d", delay)
 
 	return nil
 }
 
 // WaitForPolicyChange looks at IAM policy change.
-func WaitForPolicyChange(client *iam.Client, arn string, version string, wait int) (int, error) {
-	magic := 5
+func WaitForPolicyChange(client *iam.Client, arn string, version string, wait, pollInterval int) (int, error) {
 
 	for item := 1; item < wait; item++ {
-		time.Sleep(time.Duration(magic))
+		time.Sleep(time.Duration(pollInterval))
 
 		NewVersion, err := GetVersion(client, arn)
 		if err != nil {
@@ -124,20 +129,18 @@ func SortActions(myPolicy string) (*string, error) {
 		}
 
 		Actions := blocked["Action"]
-		myType := reflect.TypeOf(Actions)
 
-		switch myType.Kind() {
-		case reflect.String:
-			// do nothing
-		case reflect.Slice:
-			theActions := sortInterfaceStrings(Actions)
+		switch v := Actions.(type) {
+		case string:
+			// handle string case
+		case []interface{}:
+			theActions := sortInterfaceStrings(v)
 
 			if theActions != nil {
 				blocked["Action"] = theActions
 			}
-
 		default:
-			log.Print(myType.Kind())
+			log.Print(reflect.TypeOf(v).Kind())
 		}
 
 		NewStatements = append(NewStatements, block)
@@ -178,4 +181,20 @@ func sortInterfaceStrings(actions interface{}) []string {
 	sort.Strings(myActions)
 
 	return myActions
+}
+
+type getVersionError struct {
+	err error
+}
+
+func (e *getVersionError) Error() string {
+	return fmt.Sprintf("failed to get version %v", e.err)
+}
+
+type waitForPolicyChangeError struct {
+	err error
+}
+
+func (e *waitForPolicyChangeError) Error() string {
+	return fmt.Sprintf("failed to wait for policy change %v", e.err)
 }

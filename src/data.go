@@ -11,9 +11,21 @@ import (
 	"github.com/rs/zerolog/log"
 )
 
+const (
+	providerAWS    = "aws"
+	providerAzure  = "azurerm"
+	providerGoogle = "google"
+	providerGCP    = "gcp"
+)
+
 // GetResources retrieves all the resources in a tf file.
 func GetResources(file string, dirName string) ([]ResourceV2, error) {
+
 	var Resources []ResourceV2
+
+	if file == "" {
+		return Resources, fmt.Errorf("no file provided")
+	}
 
 	temp, err := GetResourceBlocks(file)
 	if err != nil {
@@ -25,13 +37,13 @@ func GetResources(file string, dirName string) ([]ResourceV2, error) {
 		resource.TypeName = block.Type
 
 		switch block.Type {
-		case "terraform":
+		case terraform:
 			{
 				Resources, _ = DetectBackend(resource, block, Resources)
 
 				continue
 			}
-		case "module":
+		case module:
 			{
 				LocalResources, err := GetLocalModules(block, dirName)
 				if err == nil {
@@ -83,7 +95,7 @@ func DetectBackend(resource ResourceV2, block *hclsyntax.Block, resources []Reso
 				if terraform.Type == "backend" {
 					if terraform.Labels != nil && terraform.Labels[0] == "s3" {
 						resource.Name = "backend"
-						resource.Provider = "aws"
+						resource.Provider = providerAWS
 						resource.Attributes = []string{"s3"}
 						resources = append(resources, resource)
 
@@ -99,7 +111,11 @@ func DetectBackend(resource ResourceV2, block *hclsyntax.Block, resources []Reso
 
 // GetResourceBlocks breaks down a file into resources.
 func GetResourceBlocks(file string) (*hclsyntax.Body, error) {
-	temp, _ := filepath.Abs(file)
+	temp, err := filepath.Abs(file)
+	if err != nil {
+		return nil, fmt.Errorf("failed to get absolute path: %w", err)
+	}
+
 	src, err := os.ReadFile(temp)
 
 	if err != nil {
@@ -210,7 +226,7 @@ func GetPermission(result ResourceV2) (Sorted, error) {
 	var myPermission Sorted
 
 	switch result.Provider {
-	case "aws":
+	case providerAWS:
 		myPermission.AWS, err = GetAWSPermissions(result)
 		if err != nil {
 			log.Print(err)
@@ -219,12 +235,12 @@ func GetPermission(result ResourceV2) (Sorted, error) {
 		log.Printf("Provider %s not yet implemented", result.Provider)
 
 		return myPermission, nil
-	case "azurerm", "azuread":
+	case providerAzure, "azuread":
 		myPermission.AZURE, err = GetAZUREPermissions(result)
 		if err != nil {
 			log.Print(err)
 		}
-	case "google", "gcp":
+	case providerGoogle, providerGCP:
 		myPermission.GCP, err = GetGCPPermissions(result)
 		if err != nil {
 			log.Print(err)

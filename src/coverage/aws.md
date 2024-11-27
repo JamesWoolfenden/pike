@@ -1,7 +1,7 @@
-# todo aws 
+# todo aws
 
-Resource percentage coverage   73.79 
-Datasource percentage coverage 100.00 
+Resource percentage coverage   73.74
+Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_amplify_backend_environment
 ./resource.ps1 aws_amplify_webhook
@@ -280,6 +280,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_rds_certificate
 ./resource.ps1 aws_rds_custom_db_engine_version
 ./resource.ps1 aws_rds_export_task
+./resource.ps1 aws_rds_instance_state
 ./resource.ps1 aws_rds_reserved_instance
 ./resource.ps1 aws_redshift_cluster_snapshot
 ./resource.ps1 aws_redshift_data_share_authorization

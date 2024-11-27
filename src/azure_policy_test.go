@@ -35,7 +35,7 @@ func TestAZUREPolicy(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
-			got, err := pike.AZUREPolicy(tt.args.permissions)
+			got, err := pike.AZUREPolicy(tt.args.permissions, pike.DefaultPolicyName)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("AZUREPolicy() error = %v, wantErr %v", err, tt.wantErr)
 

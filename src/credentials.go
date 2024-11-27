@@ -11,8 +11,16 @@ import (
 	"github.com/aws/aws-sdk-go/service/sts"
 )
 
+const waitForConsistency = 900
+
 func getAWSCredentials(iamRole string, region string) (*sts.AssumeRoleOutput, error) {
-	const waitForConsistency = 900
+	if iamRole == "" {
+		return nil, errors.New("iamRole cannot be empty")
+	}
+
+	if region == "" {
+		return nil, errors.New("region cannot be empty")
+	}
 
 	config := aws.NewConfig()
 
@@ -59,14 +67,14 @@ func getAWSCredentials(iamRole string, region string) (*sts.AssumeRoleOutput, er
 }
 
 func setAWSAuth(iamRole string, region string) error {
-	creds, err := getAWSCredentials(iamRole, region)
+	credentials, err := getAWSCredentials(iamRole, region)
 	if err != nil {
 		return err
 	}
 
-	_ = os.Setenv("AWS_ACCESS_KEY_ID", *creds.Credentials.AccessKeyId)
-	_ = os.Setenv("AWS_SECRET_ACCESS_KEY", *creds.Credentials.SecretAccessKey)
-	_ = os.Setenv("AWS_SESSION_TOKEN", *creds.Credentials.SessionToken)
+	_ = os.Setenv("AWS_ACCESS_KEY_ID", *credentials.Credentials.AccessKeyId)
+	_ = os.Setenv("AWS_SECRET_ACCESS_KEY", *credentials.Credentials.SecretAccessKey)
+	_ = os.Setenv("AWS_SESSION_TOKEN", *credentials.Credentials.SessionToken)
 
 	return nil
 }

@@ -1,48 +1,7 @@
 package pike
 
-// GetAZUREPermissions for GCP resources.
-func GetAZUREPermissions(result ResourceV2) ([]string, error) {
-	var (
-		err         error
-		Permissions []string
-	)
-
-	if result.TypeName == "resource" {
-		Permissions, err = GetAZUREResourcePermissions(result)
-		if err != nil {
-			return Permissions, err
-		}
-	} else {
-		Permissions, err = GetAZUREDataPermissions(result)
-		if err != nil {
-			return Permissions, err
-		}
-	}
-
-	return Permissions, err
-}
-
-// GetAZUREResourcePermissions looks up permissions required for resources.
-func GetAZUREResourcePermissions(result ResourceV2) ([]string, error) {
-	temp := AzureLookup(result.Name)
-
-	var (
-		Permissions []string
-		err         error
-	)
-
-	if temp != nil {
-		Permissions, err = GetPermissionMap(temp.([]byte), result.Attributes, result.Name)
-	} else {
-		//goland:noinspection GoLinter
-		return nil, &notImplementedResourceError{result.Name}
-	}
-
-	return Permissions, err
-}
-
-func AzureLookup(name string) interface{} {
-	TFLookup := map[string]interface{}{
+var (
+	TFLookupAzure = map[string]interface{}{
 		"azurerm_api_management":                       azurermAPIManagement,
 		"azurerm_app_configuration":                    azurermAppConfiguration,
 		"azurerm_app_service":                          azurermAppService,
@@ -97,6 +56,49 @@ func AzureLookup(name string) interface{} {
 		"azurerm_windows_virtual_machine":              azurermVirtualMachine,
 		"azurerm_windows_virtual_machine_scale_set":    azurermLinuxVirtualMachineScaleSet,
 	}
+)
 
-	return TFLookup[name]
+// GetAZUREPermissions for GCP resources.
+func GetAZUREPermissions(result ResourceV2) ([]string, error) {
+	var (
+		err         error
+		Permissions []string
+	)
+
+	if result.TypeName == "resource" {
+		Permissions, err = GetAZUREResourcePermissions(result)
+		if err != nil {
+			return Permissions, err
+		}
+	} else {
+		Permissions, err = GetAZUREDataPermissions(result)
+		if err != nil {
+			return Permissions, err
+		}
+	}
+
+	return Permissions, err
+}
+
+// GetAZUREResourcePermissions looks up permissions required for resources.
+func GetAZUREResourcePermissions(result ResourceV2) ([]string, error) {
+	temp := AzureLookup(result.Name)
+
+	var (
+		Permissions []string
+		err         error
+	)
+
+	if temp != nil {
+		Permissions, err = GetPermissionMap(temp.([]byte), result.Attributes, result.Name)
+	} else {
+		//goland:noinspection GoLinter
+		return nil, &notImplementedResourceError{result.Name}
+	}
+
+	return Permissions, err
+}
+
+func AzureLookup(name string) interface{} {
+	return TFLookupAzure[name]
 }

@@ -659,6 +659,7 @@ func TestInitWithEmptyDir(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
+	//goland:noinspection GoUnhandledErrorResult
 	defer os.RemoveAll(tempDir)
 
 	tfPath, modules, err := pike.Init(tempDir)
@@ -673,6 +674,7 @@ func TestInitWithEmptyDir(t *testing.T) {
 	}
 }
 
+//goland:noinspection GoUnhandledErrorResult
 func TestInitWithInvalidTerraformConfig(t *testing.T) {
 	t.Parallel()
 
@@ -702,6 +704,7 @@ func TestInitWithInvalidTerraformConfig(t *testing.T) {
 	}
 }
 
+//goland:noinspection GoUnhandledErrorResult
 func TestInitWithModulesJsonOnly(t *testing.T) {
 	t.Parallel()
 
@@ -732,6 +735,7 @@ func TestInitWithModulesJsonOnly(t *testing.T) {
 	}
 }
 
+//goland:noinspection GoUnhandledErrorResult
 func TestInitWithDSStoreOnly(t *testing.T) {
 	t.Parallel()
 

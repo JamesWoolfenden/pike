@@ -139,6 +139,7 @@ func tfPlan(policyPath string) error {
 		return errors.New("terraform plan output is empty")
 	}
 
+	//goland:noinspection GoUnhandledErrorResult
 	defer os.Remove(filepath.Join(policyPath, "tf.plan"))
 
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Minute)

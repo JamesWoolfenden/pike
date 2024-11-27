@@ -55,7 +55,7 @@ func TestWaitForPolicyChange(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got, err := WaitForPolicyChange(tt.args.client, tt.args.arn, tt.args.Version, tt.args.Wait)
+			got, err := WaitForPolicyChange(tt.args.client, tt.args.arn, tt.args.Version, tt.args.Wait, PollIntervalSeconds)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("WaitForPolicyChange() error = %v, wantErr %v", err, tt.wantErr)
 				return

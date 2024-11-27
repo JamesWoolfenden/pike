@@ -1,25 +1,7 @@
 package pike
 
-// GetAZUREDataPermissions gets permissions required for datasources.
-func GetAZUREDataPermissions(result ResourceV2) ([]string, error) {
-	temp := AzureDataLookup(result.Name)
-
-	var (
-		Permissions []string
-		err         error
-	)
-
-	if temp != nil {
-		Permissions, err = GetPermissionMap(temp.([]byte), result.Attributes, result.Name)
-	} else {
-		return nil, &notImplementedDatasourceError{Name: result.Name}
-	}
-
-	return Permissions, err
-}
-
-func AzureDataLookup(name string) interface{} {
-	TFLookup := map[string]interface{}{
+var (
+	TFLookupAzureData = map[string]interface{}{
 		"azurerm_app_service":                                    dataAzurermAppService,
 		"azurerm_app_service_certificate":                        dataAzurermAppServiceCertificate,
 		"azurerm_app_service_certificate_order":                  dataAzurermAppServiceCertificateOrder,
@@ -147,6 +129,26 @@ func AzureDataLookup(name string) interface{} {
 		"azurerm_batch_certificate":                              dataAzurermBatchCertificate,
 		"azurerm_batch_pool":                                     dataAzurermBatchPool,
 	}
+)
 
-	return TFLookup[name]
+// GetAZUREDataPermissions gets permissions required for datasources.
+func GetAZUREDataPermissions(result ResourceV2) ([]string, error) {
+	temp := AzureDataLookup(result.Name)
+
+	var (
+		Permissions []string
+		err         error
+	)
+
+	if temp != nil {
+		Permissions, err = GetPermissionMap(temp.([]byte), result.Attributes, result.Name)
+	} else {
+		return nil, &notImplementedDatasourceError{Name: result.Name}
+	}
+
+	return Permissions, err
+}
+
+func AzureDataLookup(name string) interface{} {
+	return TFLookupAzureData[name]
 }
