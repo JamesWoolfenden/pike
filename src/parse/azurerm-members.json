@@ -1254,6 +1254,7 @@
         "azurerm_monitor_workspace",
         "azurerm_mssql_database",
         "azurerm_mssql_elasticpool",
+        "azurerm_mssql_managed_database",
         "azurerm_mssql_managed_instance",
         "azurerm_mssql_server",
         "azurerm_nat_gateway",
