@@ -12,7 +12,7 @@ const (
 )
 
 var (
-	TFLookup = map[string]interface{}{
+	tFLookup = map[string]interface{}{
 		"aws_accessanalyzer_analyzer":                                      awsAccessAnalyzer,
 		"aws_accessanalyzer_archive_rule":                                  awsAccessAnalyzerArchiveRule,
 		"aws_account_alternate_contact":                                    awsAccountAlternativeContact,
@@ -160,8 +160,8 @@ var (
 		"aws_chime_voice_connector_termination_credentials":                awsChimeVoiceConnectorTerminationCredentials,
 		"aws_chimesdkmediapipelines_media_insights_pipeline_configuration": awsChimesdkmediapipelinesMediaInsightsPipelineConfiguration,
 		"aws_chimesdkvoice_global_settings":                                awsChimesdkvoiceGlobalSettings,
-		"aws_chimesdkvoice_sip_media_application":                          awsChimesdkvoiceSipMediaApplication,
-		"aws_chimesdkvoice_sip_rule":                                       awsChimesdkvoiceSipRule,
+		"aws_chimesdkvoice_sip_media_application":                          awsChimesdkvoiceSIPMediaApplication,
+		"aws_chimesdkvoice_sip_rule":                                       awsChimesdkvoiceSIPRule,
 		"aws_chimesdkvoice_voice_profile_domain":                           awsChimesdkvoiceVoiceProfileDomain,
 		"aws_cleanrooms_collaboration":                                     awsCleanroomsCollaboration,
 		"aws_cleanrooms_configured_table":                                  awsCleanroomsConfiguredTable,
@@ -303,16 +303,16 @@ var (
 		"aws_db_cluster_snapshot":                                          awsDBClusterSnapshot,
 		"aws_db_event_subscription":                                        awsDBEventSubscription,
 		"aws_db_instance":                                                  awsDBInstance,
-		"aws_db_instance_automated_backups_replication":                    awsDbInstanceAutomatedBackupsReplication,
-		"aws_db_instance_role_association":                                 awsDbInstanceRoleAssociation,
+		"aws_db_instance_automated_backups_replication":                    awsDBInstanceAutomatedBackupsReplication,
+		"aws_db_instance_role_association":                                 awsDBInstanceRoleAssociation,
 		"aws_db_option_group":                                              awsDBOptionGroup,
 		"aws_db_parameter_group":                                           awsDBParameterGroup,
-		"aws_db_proxy":                                                     awsDbProxy,
-		"aws_db_proxy_default_target_group":                                awsDbProxyDefaultTargetGroup,
-		"aws_db_proxy_endpoint":                                            awsDbProxyEndpoint,
-		"aws_db_proxy_target":                                              awsDbProxyTarget,
-		"aws_db_snapshot":                                                  awsDbSnapshot,
-		"aws_db_snapshot_copy":                                             awsDbSnapshotCopy,
+		"aws_db_proxy":                                                     awsDBProxy,
+		"aws_db_proxy_default_target_group":                                awsDBProxyDefaultTargetGroup,
+		"aws_db_proxy_endpoint":                                            awsDBProxyEndpoint,
+		"aws_db_proxy_target":                                              awsDBProxyTarget,
+		"aws_db_snapshot":                                                  awsDBSnapshot,
+		"aws_db_snapshot_copy":                                             awsDBSnapshotCopy,
 		"aws_db_subnet_group":                                              awsDBSubnetGroup,
 		"aws_default_network_acl":                                          awsDefaultNetworkACL,
 		"aws_default_route_table":                                          awsDefaultRouteTable,
@@ -1055,7 +1055,7 @@ var (
 		"aws_m2_deployment":                                                awsM2Deployment,
 		"aws_m2_environment":                                               awsM2Environment,
 		"aws_memorydb_user":                                                awsMemorydbUser,
-		"aws_sagemaker_human_task_ui":                                      awsSagemakerHumanTaskUi,
+		"aws_sagemaker_human_task_ui":                                      awsSagemakerHumanTaskUI,
 		"aws_cloudfrontkeyvaluestore_key":                                  awsCloudfrontkeyvaluestoreKey,
 		"aws_ecs_tag":                                                      awsEcsTag,
 		"aws_lb_trust_store":                                               awsLbTrustStore,
@@ -1153,7 +1153,7 @@ func AwsLookup(name string) interface{} {
 		return nil
 	}
 
-	return TFLookup[name]
+	return tFLookup[name]
 }
 
 // Contains looks if slice contains string.
@@ -1171,7 +1171,7 @@ func Contains(s []string, e string) bool {
 func GetPermissionMap(raw []byte, attributes []string, resource string) ([]string, error) {
 
 	if !json.Valid(raw) || len(raw) == 0 {
-		return nil, &invalidJsonError{}
+		return nil, &invalidJSONError{}
 	}
 
 	if len(attributes) == 0 {
@@ -1182,11 +1182,11 @@ func GetPermissionMap(raw []byte, attributes []string, resource string) ([]strin
 	err := json.Unmarshal(raw, &mappings)
 
 	if err != nil {
-		return nil, &unmarshallJsonError{err, resource}
+		return nil, &unmarshallJSONError{err, resource}
 	}
 
 	if mappings == nil {
-		return nil, &mappingsEmpty{}
+		return nil, &mappingsEmptyError{}
 	}
 
 	temp, err := IsTypeOK(mappings[0])

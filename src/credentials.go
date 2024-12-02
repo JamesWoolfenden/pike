@@ -13,13 +13,25 @@ import (
 
 const waitForConsistency = 900
 
+type emptyRegionError struct{}
+
+func (m emptyRegionError) Error() string {
+	return "region cannot be empty"
+}
+
+type iamRoleEmptyError struct{}
+
+func (m iamRoleEmptyError) Error() string {
+	return "iamRole cannot be empty"
+}
+
 func getAWSCredentials(iamRole string, region string) (*sts.AssumeRoleOutput, error) {
 	if iamRole == "" {
-		return nil, errors.New("iamRole cannot be empty")
+		return nil, &iamRoleEmptyError{}
 	}
 
 	if region == "" {
-		return nil, errors.New("region cannot be empty")
+		return nil, &emptyRegionError{}
 	}
 
 	config := aws.NewConfig()

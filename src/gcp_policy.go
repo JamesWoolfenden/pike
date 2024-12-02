@@ -19,6 +19,10 @@ var policyGCPTemplate []byte
 
 // GCPPolicy create an IAM policy.
 func GCPPolicy(permissions []string) (policy string, err error) {
+	if permissions == nil {
+		return "", &emptyPermissionsError{}
+	}
+
 	test := strings.Join(permissions, "\",\n    \"")
 
 	// GCPPolicyDetails contains the configuration for generating a GCP IAM policy
@@ -36,6 +40,7 @@ func GCPPolicy(permissions []string) (policy string, err error) {
 		RoleID:      DefaultRoleID,
 		Permissions: test,
 	}
+
 	var output bytes.Buffer
 
 	tmpl, err := template.New("test").Parse(string(policyGCPTemplate))

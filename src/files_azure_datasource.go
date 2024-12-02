@@ -266,7 +266,7 @@ var dataAzurermAPIManagementGroup []byte
 var dataAzurermAPIManagmentProduct []byte
 
 //go:embed mapping/azurerm/data/apimanagement/azurerm_api_management_user.json
-var dataAzurermApiManagementUser []byte
+var dataAzurermAPIManagementUser []byte
 
 //go:embed mapping/azurerm/data/appconfiguration/azurerm_app_configuration.json
 var dataAzurermAppConfiguration []byte
@@ -302,7 +302,7 @@ var dataAzurermAvailabilitySet []byte
 var dataAzurermBackupPolicyFileShare []byte
 
 //go:embed mapping/azurerm/data/recoveryservices/azurerm_backup_policy_vm.json
-var dataAzurermBackupPolicyVm []byte
+var dataAzurermBackupPolicyVM []byte
 
 //go:embed mapping/azurerm/data/network/azurerm_bastion_host.json
 var dataAzurermBastionHost []byte

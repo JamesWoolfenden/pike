@@ -1,45 +1,49 @@
 package pike
 
-// GetGCPPermissions for GCP resources.
-func GetGCPPermissions(result ResourceV2) ([]string, error) {
-	var (
-		err         error
-		Permissions []string
-	)
+import "fmt"
 
-	if result.TypeName == "resource" {
-		Permissions, err = GetGCPResourcePermissions(result)
-		if err != nil {
-			return Permissions, err
-		}
-	} else {
-		Permissions, err = GetGCPDataPermissions(result)
-		if err != nil {
-			return Permissions, err
-		}
-	}
-
-	return Permissions, err
+type invalidGCPResourceError struct {
+	resource string
 }
 
-// GetGCPResourcePermissions looks up permissions required for resources.
-func GetGCPResourcePermissions(result ResourceV2) ([]string, error) {
-	var (
-		Permissions []string
-		err         error
-	)
+func (m invalidGCPResourceError) Error() string {
+	return fmt.Sprintf("Invalid GCP lookup sourceData type for resource %s", m.resource)
+}
 
-	if temp := GCPLookup(result.Name); temp != nil {
-		myTemp, ok := temp.([]byte)
-		if ok && myTemp != nil {
-			Permissions, err = GetPermissionMap(myTemp, result.Attributes, result.Name)
-		}
+type invalidPermissionMapError struct {
+	err error
+}
 
-	} else {
-		return nil, &notImplementedResourceError{result.Name}
+func (m invalidPermissionMapError) Error() string {
+	return fmt.Sprintf("Invalid Permission Map %v", m.err)
+}
+
+// GetGCPPermissions for GCP resources.
+func GetGCPPermissions(result ResourceV2) ([]string, error) {
+	if result.TypeName == resource {
+		return GetGCPResourcePermissions(result)
 	}
 
-	return Permissions, err
+	return GetGCPDataPermissions(result)
+}
+
+func GetGCPResourcePermissions(sourceData ResourceV2) ([]string, error) {
+	lookup := GCPLookup(sourceData.Name)
+	if lookup == nil {
+		return nil, &notImplementedResourceError{sourceData.Name}
+	}
+
+	temp, ok := lookup.([]byte)
+	if !ok || temp == nil {
+		return nil, &invalidGCPResourceError{sourceData.Name}
+	}
+
+	permissions, err := GetPermissionMap(temp, sourceData.Attributes, sourceData.Name)
+	if err != nil {
+		return nil, &invalidPermissionMapError{err}
+	}
+
+	return permissions, nil
 }
 
 func GCPLookup(result string) interface{} {

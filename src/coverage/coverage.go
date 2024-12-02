@@ -46,6 +46,7 @@ func coverageAWS() error {
 
 	target = Prepend + target
 	err := os.WriteFile("aws.md", []byte(target), 0o700)
+
 	if err != nil {
 		return err
 	}
@@ -80,6 +81,7 @@ func coverageAzure() error {
 
 	target = Prepend + target
 	err := os.WriteFile("azure.md", []byte(target), 0o700)
+
 	if err != nil {
 		return err
 	}
@@ -114,6 +116,7 @@ func coverageGcp() error {
 
 	target = Prepend + target
 	err := os.WriteFile("google.md", []byte(target), 0o700)
+
 	if err != nil {
 		return err
 	}

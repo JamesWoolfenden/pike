@@ -3,10 +3,10 @@ package pike
 import (
 	"context"
 	"encoding/json"
-	"errors"
 	"fmt"
 	"os"
 	"strings"
+	"time"
 
 	"github.com/aws/aws-sdk-go-v2/config"
 	"github.com/aws/aws-sdk-go-v2/service/iam"
@@ -17,52 +17,72 @@ import (
 // Compare IAC codebase to AWS policy.
 func Compare(directory string, arn string, init bool) (bool, error) {
 
-	if directory == "" {
-		return false, errors.New("directory cannot be empty")
-	}
-
-	if _, err := os.Stat(directory); os.IsNotExist(err) {
-		return false, fmt.Errorf("directory does not exist: %s", directory)
-	}
-
-	if arn == "" {
-		return false, errors.New("ARN cannot be empty")
-	}
-
-	if !strings.HasPrefix(arn, "arn:") {
-		return false, errors.New("invalid ARN format")
-	}
-
-	var policiesMatch bool
-	// Load the Shared AWS Configuration (~/.aws/config)
-	cfg, err := config.LoadDefaultConfig(context.TODO())
+	valid, err := inputValidationCompare(directory, arn)
 	if err != nil {
-		return false, fmt.Errorf("failed to load AWS config: %w", err)
+		return valid, &inputValidationError{err}
+	}
+
+	// Load the Shared AWS Configuration (~/.aws/config)
+	ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
+
+	defer cancel()
+
+	cfg, err := config.LoadDefaultConfig(ctx)
+
+	if err != nil {
+		return false, &awsConfigError{err}
 	}
 
 	client := iam.NewFromConfig(cfg)
 
 	version, err := GetVersion(client, arn)
+
 	if err != nil {
-		return policiesMatch, err
+		return false, &getVersionError{err}
 	}
 
-	policy, _ := GetPolicyVersion(client, arn, *version)
+	policy, err := GetPolicyVersion(client, arn, *version)
+
+	if err != nil {
+		return false, &getPolicyVersionError{err}
+	}
 
 	iacPolicy, err := MakePolicy(directory, nil, init, false)
+
 	if err != nil {
-		return policiesMatch, err
+		return false, &getIAMVersionError{err}
 	}
 
 	sorted, err := SortActions(iacPolicy.AWS.JSONOut)
+
 	if err != nil {
-		return policiesMatch, err
+		return false, &sortActionsError{iacPolicy.AWS.JSONOut}
 	}
 
 	// iam versus iac
 	fmt.Printf("IAM Policy %s versus Local %s \n", arn, directory)
 
 	return CompareIAMPolicy(*policy, *sorted)
+}
+
+func inputValidationCompare(directory string, arn string) (bool, error) {
+	if directory == "" {
+		return false, &emptyDirectoryError{}
+	}
+
+	if _, err := os.Stat(directory); os.IsNotExist(err) {
+		return false, &directoryNotFoundError{directory}
+	}
+
+	if arn == "" {
+		return false, &arnEmptyError{}
+	}
+
+	if !strings.HasPrefix(arn, "arn:") {
+		return false, &invalidARNError{arn}
+	}
+
+	return false, nil
 }
 
 // CompareIAMPolicy takes two IAM policies and compares.
@@ -75,18 +95,26 @@ func CompareIAMPolicy(policy string, oldPolicy string) (bool, error) {
 	}
 
 	if compare.Modified() {
-		return showDifferences(policy, compare)
+		return ShowDifferences(policy, compare)
 	}
 
 	return true, nil
 }
 
-func showDifferences(policy string, compare diff.Diff) (bool, error) {
+type formatterError struct {
+	err error
+}
+
+func (m *formatterError) Error() string {
+	return fmt.Sprintf("formatter failed: %v", m.err)
+}
+
+func ShowDifferences(policy string, compare diff.Diff) (bool, error) {
 	var aJSON map[string]interface{}
 	err := json.Unmarshal([]byte(policy), &aJSON)
 
 	if err != nil {
-		return false, err
+		return false, &marshallPolicyError{err}
 	}
 
 	myConfig := formatter.AsciiFormatterConfig{
@@ -98,7 +126,7 @@ func showDifferences(policy string, compare diff.Diff) (bool, error) {
 	diffString, err := myFormatter.Format(compare)
 
 	if err != nil {
-		return false, err
+		return false, &formatterError{err}
 	}
 
 	fmt.Print(diffString)

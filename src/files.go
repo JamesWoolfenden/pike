@@ -2108,28 +2108,28 @@ var awsDmsS3Endpoint []byte
 var awsDmsReplicationConfig []byte
 
 //go:embed mapping/aws/resource/rds/aws_db_instance_automated_backups_replication.json
-var awsDbInstanceAutomatedBackupsReplication []byte
+var awsDBInstanceAutomatedBackupsReplication []byte
 
 //go:embed mapping/aws/resource/rds/aws_db_instance_role_association.json
-var awsDbInstanceRoleAssociation []byte
+var awsDBInstanceRoleAssociation []byte
 
 //go:embed mapping/aws/resource/rds/aws_db_proxy.json
-var awsDbProxy []byte
+var awsDBProxy []byte
 
 //go:embed mapping/aws/resource/rds/aws_db_proxy_default_target_group.json
-var awsDbProxyDefaultTargetGroup []byte
+var awsDBProxyDefaultTargetGroup []byte
 
 //go:embed mapping/aws/resource/rds/aws_db_proxy_endpoint.json
-var awsDbProxyEndpoint []byte
+var awsDBProxyEndpoint []byte
 
 //go:embed mapping/aws/resource/rds/aws_db_proxy_target.json
-var awsDbProxyTarget []byte
+var awsDBProxyTarget []byte
 
 //go:embed mapping/aws/resource/rds/aws_db_snapshot.json
-var awsDbSnapshot []byte
+var awsDBSnapshot []byte
 
 //go:embed mapping/aws/resource/rds/aws_db_snapshot_copy.json
-var awsDbSnapshotCopy []byte
+var awsDBSnapshotCopy []byte
 
 //go:embed mapping/aws/resource/transcribe/aws_transcribe_language_model.json
 var awsTranscribeLanguageModel []byte
@@ -2195,10 +2195,10 @@ var awsChimesdkmediapipelinesMediaInsightsPipelineConfiguration []byte
 var awsChimesdkvoiceGlobalSettings []byte
 
 //go:embed mapping/aws/resource/chime/aws_chimesdkvoice_sip_media_application.json
-var awsChimesdkvoiceSipMediaApplication []byte
+var awsChimesdkvoiceSIPMediaApplication []byte
 
 //go:embed mapping/aws/resource/chime/aws_chimesdkvoice_sip_rule.json
-var awsChimesdkvoiceSipRule []byte
+var awsChimesdkvoiceSIPRule []byte
 
 //go:embed mapping/aws/resource/chime/aws_chimesdkvoice_voice_profile_domain.json
 var awsChimesdkvoiceVoiceProfileDomain []byte
@@ -2966,7 +2966,7 @@ var awsM2Environment []byte
 var awsMemorydbUser []byte
 
 //go:embed mapping/aws/resource/sagemaker/aws_sagemaker_human_task_ui.json
-var awsSagemakerHumanTaskUi []byte
+var awsSagemakerHumanTaskUI []byte
 
 //go:embed mapping/aws/resource/cloudfront-keyvaluestore/aws_cloudfrontkeyvaluestore_key.json
 var awsCloudfrontkeyvaluestoreKey []byte

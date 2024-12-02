@@ -1,7 +1,25 @@
 package pike
 
-var (
-	TFLookupAzureData = map[string]interface{}{
+// GetAZUREDataPermissions gets permissions required for datasources.
+func GetAZUREDataPermissions(result ResourceV2) ([]string, error) {
+	temp := AzureDataLookup(result.Name)
+
+	var (
+		Permissions []string
+		err         error
+	)
+
+	if temp != nil {
+		Permissions, err = GetPermissionMap(temp.([]byte), result.Attributes, result.Name)
+	} else {
+		return nil, &notImplementedDatasourceError{Name: result.Name}
+	}
+
+	return Permissions, err
+}
+
+func AzureDataLookup(name string) interface{} {
+	var TFLookupAzureData = map[string]interface{}{
 		"azurerm_app_service":                                    dataAzurermAppService,
 		"azurerm_app_service_certificate":                        dataAzurermAppServiceCertificate,
 		"azurerm_app_service_certificate_order":                  dataAzurermAppServiceCertificateOrder,
@@ -105,7 +123,7 @@ var (
 		"azurerm_api_management_gateway_host_name_configuration": dataAzurermAPIManagementGatewayHostNameConfiguration,
 		"azurerm_api_management_group":                           dataAzurermAPIManagementGroup,
 		"azurerm_api_management_product":                         dataAzurermAPIManagmentProduct,
-		"azurerm_api_management_user":                            dataAzurermApiManagementUser,
+		"azurerm_api_management_user":                            dataAzurermAPIManagementUser,
 		"azurerm_app_configuration":                              dataAzurermAppConfiguration,
 		"azurerm_app_configuration_key":                          dataAzurermAppConfigurationKey,
 		"azurerm_app_configuration_keys":                         dataAzurermAppConfigurationKeys,
@@ -122,33 +140,13 @@ var (
 		"azurerm_automation_variables":                           dataAzurermAutomationVariable,
 		"azurerm_availability_set":                               dataAzurermAvailabilitySet,
 		"azurerm_backup_policy_file_share":                       dataAzurermBackupPolicyFileShare,
-		"azurerm_backup_policy_vm":                               dataAzurermBackupPolicyVm,
+		"azurerm_backup_policy_vm":                               dataAzurermBackupPolicyVM,
 		"azurerm_bastion_host":                                   dataAzurermBastionHost,
 		"azurerm_batch_account":                                  dataAzurermBatchAccount,
 		"azurerm_batch_application":                              dataAzurermBatchApplication,
 		"azurerm_batch_certificate":                              dataAzurermBatchCertificate,
 		"azurerm_batch_pool":                                     dataAzurermBatchPool,
 	}
-)
 
-// GetAZUREDataPermissions gets permissions required for datasources.
-func GetAZUREDataPermissions(result ResourceV2) ([]string, error) {
-	temp := AzureDataLookup(result.Name)
-
-	var (
-		Permissions []string
-		err         error
-	)
-
-	if temp != nil {
-		Permissions, err = GetPermissionMap(temp.([]byte), result.Attributes, result.Name)
-	} else {
-		return nil, &notImplementedDatasourceError{Name: result.Name}
-	}
-
-	return Permissions, err
-}
-
-func AzureDataLookup(name string) interface{} {
 	return TFLookupAzureData[name]
 }

@@ -1,7 +1,7 @@
-# todo google 
+# todo google
 
-Resource percentage coverage   19.19 
-Datasource percentage coverage 75.47 
+Resource percentage coverage   19.06
+Datasource percentage coverage 75.23
 
 ./resource.ps1 google_access_context_manager_access_level_condition
 ./resource.ps1 google_access_context_manager_service_perimeter_dry_run_egress_policy
@@ -446,6 +446,7 @@ Datasource percentage coverage 75.47
 ./resource.ps1 google_folder_iam_member
 ./resource.ps1 google_folder_iam_policy
 ./resource.ps1 google_folder_organization_policy
+./resource.ps1 google_gemini_code_repository_index
 ./resource.ps1 google_gke_backup_backup_plan
 ./resource.ps1 google_gke_backup_backup_plan_iam_binding
 ./resource.ps1 google_gke_backup_backup_plan_iam_member
@@ -504,6 +505,7 @@ Datasource percentage coverage 75.47
 ./resource.ps1 google_iam_folders_policy_binding
 ./resource.ps1 google_iam_organizations_policy_binding
 ./resource.ps1 google_iam_principal_access_boundary_policy
+./resource.ps1 google_iam_projects_policy_binding
 ./resource.ps1 google_iam_workforce_pool
 ./resource.ps1 google_iam_workforce_pool_provider
 ./resource.ps1 google_iam_workload_identity_pool
@@ -633,6 +635,10 @@ Datasource percentage coverage 75.47
 ./resource.ps1 google_network_security_firewall_endpoint_association
 ./resource.ps1 google_network_security_gateway_security_policy
 ./resource.ps1 google_network_security_gateway_security_policy_rule
+./resource.ps1 google_network_security_mirroring_deployment
+./resource.ps1 google_network_security_mirroring_deployment_group
+./resource.ps1 google_network_security_mirroring_endpoint_group
+./resource.ps1 google_network_security_mirroring_endpoint_group_association
 ./resource.ps1 google_network_security_security_profile
 ./resource.ps1 google_network_security_security_profile_group
 ./resource.ps1 google_network_security_server_tls_policy
@@ -792,6 +798,7 @@ Datasource percentage coverage 75.47
 ./resource.ps1 google_tags_tag_value_iam_member
 ./resource.ps1 google_tags_tag_value_iam_policy
 ./resource.ps1 google_tpu_node
+./resource.ps1 google_tpu_v2_queued_resource
 ./resource.ps1 google_tpu_v2_vm
 ./resource.ps1 google_transcoder_job
 ./resource.ps1 google_transcoder_job_template
@@ -827,6 +834,7 @@ Datasource percentage coverage 75.47
 ./resource.ps1 google_artifact_registry_docker_image -type data
 ./resource.ps1 google_artifact_registry_locations -type data
 ./resource.ps1 google_backup_dr_backup_plan_association -type data
+./resource.ps1 google_backup_dr_backup_vault -type data
 ./resource.ps1 google_bigquery_tables -type data
 ./resource.ps1 google_certificate_manager_certificates -type data
 ./resource.ps1 google_cloud_identity_group_transitive_memberships -type data

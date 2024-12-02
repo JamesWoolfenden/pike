@@ -178,6 +178,7 @@ func TestGetAWSResourcePermissions(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
+
 			got, err := pike.GetAWSResourcePermissions(tt.args.result)
 
 			if (err != nil) != tt.wantErr {
@@ -225,6 +226,7 @@ func Test_contains(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
+
 			if got := pike.Contains(tt.args.s, tt.args.e); got != tt.want {
 				t.Errorf("Contains() = %v, want %v", got, tt.want)
 			}
@@ -279,12 +281,15 @@ func TestGetPermissionMap(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
+
 			got, err := pike.GetPermissionMap(tt.args.raw, tt.args.attributes, tt.args.resource)
+
 			if (err != nil) != tt.wantErr {
 				t.Errorf("GetPermissionMap() error = %v, wantErr %v", err, tt.wantErr)
 
 				return
 			}
+
 			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("GetPermissionMap() = %v, want %v", got, tt.want)
 			}
@@ -359,6 +364,7 @@ func TestIsTypeOK(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
+
 			got, err := pike.IsTypeOK(tt.args)
 
 			if (err != nil) != tt.wantErr {

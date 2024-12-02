@@ -1,6 +1,10 @@
 package pike
 
-import "testing"
+import (
+	"errors"
+	"fmt"
+	"testing"
+)
 
 func Test_notImplementedResourceError_Error(t *testing.T) {
 	t.Parallel()
@@ -19,9 +23,12 @@ func Test_notImplementedResourceError_Error(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
+
 			m := &notImplementedResourceError{
 				Name: tt.fields.Name,
 			}
+
 			if got := m.Error(); got != tt.want {
 				t.Errorf("Error() = %v, want %v", got, tt.want)
 			}
@@ -46,9 +53,12 @@ func Test_notImplementedDatasourceError_Error(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
+
 			m := &notImplementedDatasourceError{
 				Name: tt.fields.Name,
 			}
+
 			if got := m.Error(); got != tt.want {
 				t.Errorf("Error() = %v, want %v", got, tt.want)
 			}
@@ -58,6 +68,7 @@ func Test_notImplementedDatasourceError_Error(t *testing.T) {
 
 func Test_unknownPermissionError_Error(t *testing.T) {
 	t.Parallel()
+
 	type fields struct {
 		Name string
 	}
@@ -72,9 +83,12 @@ func Test_unknownPermissionError_Error(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
+
 			m := &unknownPermissionError{
 				Name: tt.fields.Name,
 			}
+
 			if got := m.Error(); got != tt.want {
 				t.Errorf("Error() = %v, want %v", got, tt.want)
 			}
@@ -276,27 +290,27 @@ func TestMappingsEmpty_Error(t *testing.T) {
 
 	tests := []struct {
 		name string
-		m    *mappingsEmpty
+		m    *mappingsEmptyError
 		want string
 	}{
 		{
 			name: "basic empty mappings",
-			m:    &mappingsEmpty{},
+			m:    &mappingsEmptyError{},
 			want: "mappings are empty",
 		},
 		{
 			name: "new instance",
-			m:    new(mappingsEmpty),
+			m:    new(mappingsEmptyError),
 			want: "mappings are empty",
 		},
 		{
 			name: "nil pointer",
-			m:    (*mappingsEmpty)(nil),
+			m:    (*mappingsEmptyError)(nil),
 			want: "mappings are empty",
 		},
 		{
 			name: "multiple calls",
-			m:    &mappingsEmpty{},
+			m:    &mappingsEmptyError{},
 			want: "mappings are empty",
 		},
 	}
@@ -305,17 +319,404 @@ func TestMappingsEmpty_Error(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
+
 			if got := tt.m.Error(); got != tt.want {
-				t.Errorf("mappingsEmpty.Error() = %v, want %v", got, tt.want)
+				t.Errorf("mappingsEmptyError.Error() = %v, want %v", got, tt.want)
 			}
-			// Test multiple calls return same result
+
+			// Test multiple calls return the same result
 			if tt.name == "multiple calls" {
 				for i := 0; i < 3; i++ {
 					if got := tt.m.Error(); got != tt.want {
-						t.Errorf("mappingsEmpty.Error() iteration %d = %v, want %v", i, got, tt.want)
+						t.Errorf("mappingsEmptyError.Error() iteration %d = %v, want %v", i, got, tt.want)
 					}
 				}
 			}
 		})
 	}
+}
+
+func TestEmptyPermissionsError(t *testing.T) {
+	t.Parallel()
+
+	tests := []struct {
+		name string
+		want string
+	}{
+		{
+			name: "returns correct error message",
+			want: "permissions list cannot be empty",
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
+
+			err := &emptyPermissionsError{}
+
+			if got := err.Error(); got != tt.want {
+				t.Errorf("emptyPermissionsError.Error() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+
+	// Verify it implements error interface
+	var _ error = &emptyPermissionsError{}
+}
+
+func TestEmptyTypeNameError(t *testing.T) {
+	t.Run("returns correct error message", func(t *testing.T) {
+		t.Parallel()
+
+		err := &emptyTypeNameError{}
+
+		expected := "TypeName cannot be empty"
+
+		if got := err.Error(); got != expected {
+			t.Errorf("emptyTypeNameError.Error() = %v, want %v", got, expected)
+		}
+	})
+
+	t.Run("implements error interface", func(t *testing.T) {
+		t.Parallel()
+		var err error = &emptyTypeNameError{} // Verify it satisfies error interface
+		if err == nil {
+			t.Error("emptyTypeNameError should implement error interface")
+		}
+	})
+}
+
+func TestEmptyNameError(t *testing.T) {
+	err := &emptyNameError{}
+
+	expected := "Name cannot be empty"
+	if got := err.Error(); got != expected {
+		t.Errorf("emptyNameError.Error() = %v, want %v", got, expected)
+	}
+}
+
+func TestEmptyNameError_ImplementsError(t *testing.T) {
+	var _ error = (*emptyNameError)(nil)
+}
+
+func TestAssertionFailedError(t *testing.T) {
+	testCases := []struct {
+		name     string
+		message  string
+		err      error
+		expected string
+	}{
+		{
+			name:     "basic error message",
+			message:  "test failed",
+			err:      errors.New("invalid input"),
+			expected: "assertion failed: test failed invalid input",
+		},
+		{
+			name:     "empty message",
+			message:  "",
+			err:      errors.New("error only"),
+			expected: "assertion failed:  error only",
+		},
+		{
+			name:     "nil error",
+			message:  "test message",
+			err:      nil,
+			expected: "assertion failed: test message <nil>",
+		},
+		{
+			name:     "empty message and nil error",
+			message:  "",
+			err:      nil,
+			expected: "assertion failed:  <nil>",
+		},
+	}
+
+	for _, tc := range testCases {
+		t.Run(tc.name, func(t *testing.T) {
+			t.Parallel()
+
+			err := &assertionFailedError{
+				message: tc.message,
+				err:     tc.err,
+			}
+
+			if got := err.Error(); got != tc.expected {
+				t.Errorf("assertionFailedError.Error() = %v, want %v", got, tc.expected)
+			}
+		})
+	}
+}
+
+func TestInvalidJSONError(t *testing.T) {
+	t.Run("implements error interface", func(t *testing.T) {
+		t.Parallel()
+		var _ error = &invalidJSONError{}
+	})
+
+	t.Run("returns correct error message", func(t *testing.T) {
+		t.Parallel()
+
+		err := &invalidJSONError{}
+		expected := "invalid json, was empty or corrupt"
+
+		if got := err.Error(); got != expected {
+			t.Errorf("invalidJSONError.Error() = %v, want %v", got, expected)
+		}
+	})
+}
+
+func TestUnmarshallJSONError(t *testing.T) {
+	testCases := []struct {
+		name     string
+		err      error
+		resource string
+		want     string
+	}{
+		{
+			name:     "basic error",
+			err:      errors.New("parse error"),
+			resource: "test-resource",
+			want:     "failed to unmarshal json parse error for test-resource",
+		},
+		{
+			name:     "nil error",
+			err:      nil,
+			resource: "test-resource",
+			want:     "failed to unmarshal json <nil> for test-resource",
+		},
+		{
+			name:     "empty resource",
+			err:      errors.New("parse error"),
+			resource: "",
+			want:     "failed to unmarshal json parse error for ",
+		},
+	}
+
+	for _, tc := range testCases {
+		t.Run(tc.name, func(t *testing.T) {
+			t.Parallel()
+			err := &unmarshallJSONError{
+				err:      tc.err,
+				resource: tc.resource,
+			}
+			if got := err.Error(); got != tc.want {
+				t.Errorf("unmarshallJSONError.Error() = %v, want %v", got, tc.want)
+			}
+		})
+	}
+}
+
+func TestAttributesFieldMissingError(t *testing.T) {
+	err := &attributesFieldMissingError{}
+	want := "attributes field missing"
+	if got := err.Error(); got != want {
+		t.Errorf("attributesFieldMissingError.Error() = %v, want %v", got, want)
+	}
+}
+
+func TestAssertionError(t *testing.T) {
+	testCases := []struct {
+		name    string
+		message string
+		want    string
+	}{
+		{
+			name:    "basic message",
+			message: "test failed",
+			want:    "assertion failed for: test failed",
+		},
+		{
+			name:    "empty message",
+			message: "",
+			want:    "assertion failed for: ",
+		},
+	}
+
+	for _, tc := range testCases {
+		t.Run(tc.name, func(t *testing.T) {
+			err := &assertionError{message: tc.message}
+			if got := err.Error(); got != tc.want {
+				t.Errorf("assertionError.Error() = %v, want %v", got, tc.want)
+			}
+		})
+	}
+}
+
+func TestTemplateParseError(t *testing.T) {
+	testCases := []struct {
+		name string
+		err  error
+		want string
+	}{
+		{
+			name: "with error",
+			err:  errors.New("invalid syntax"),
+			want: "failed to parse template invalid syntax",
+		},
+		{
+			name: "nil error",
+			err:  nil,
+			want: "failed to parse template <nil>",
+		},
+	}
+
+	for _, tc := range testCases {
+		t.Run(tc.name, func(t *testing.T) {
+			err := &templateParseError{err: tc.err}
+			if got := err.Error(); got != tc.want {
+				t.Errorf("templateParseError.Error() = %v, want %v", got, tc.want)
+			}
+		})
+	}
+}
+
+func TestTemplateExecuteError(t *testing.T) {
+	testCases := []struct {
+		name string
+		err  error
+		want string
+	}{
+		{
+			name: "with error",
+			err:  errors.New("execution failed"),
+			want: "failed to execute template execution failed",
+		},
+		{
+			name: "nil error",
+			err:  nil,
+			want: "failed to execute template <nil>",
+		},
+	}
+
+	for _, tc := range testCases {
+		t.Run(tc.name, func(t *testing.T) {
+			err := &templateExecuteError{err: tc.err}
+			if got := err.Error(); got != tc.want {
+				t.Errorf("templateExecuteError.Error() = %v, want %v", got, tc.want)
+			}
+		})
+	}
+}
+
+func TestMarshallAWSPolicyError(t *testing.T) {
+	tests := []struct {
+		name     string
+		err      error
+		expected string
+	}{
+		{
+			name:     "with nil error",
+			err:      nil,
+			expected: "failed to marshal policy: <nil>",
+		},
+		{
+			name:     "with simple error",
+			err:      errors.New("invalid format"),
+			expected: "failed to marshal policy: invalid format",
+		},
+		{
+			name:     "with wrapped error",
+			err:      fmt.Errorf("wrapped: %w", errors.New("base error")),
+			expected: "failed to marshal policy: wrapped: base error",
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			err := &marshallAWSPolicyError{err: tt.err}
+			if got := err.Error(); got != tt.expected {
+				t.Errorf("marshallAWSPolicyError.Error() = %v, want %v", got, tt.expected)
+			}
+		})
+	}
+}
+
+func TestDirectoryErrors(t *testing.T) {
+	t.Run("empty directory error", func(t *testing.T) {
+		err := &emptyDirectoryError{}
+		expected := "directory value cannot be an empty string"
+		if err.Error() != expected {
+			t.Errorf("expected %q, got %q", expected, err.Error())
+		}
+	})
+
+	t.Run("directory not found error", func(t *testing.T) {
+		err := &directoryNotFoundError{directory: "/tmp/nonexistent"}
+		expected := "directory does not exist: /tmp/nonexistent"
+		if err.Error() != expected {
+			t.Errorf("expected %q, got %q", expected, err.Error())
+		}
+	})
+}
+
+func TestARNErrors(t *testing.T) {
+	t.Run("empty ARN error", func(t *testing.T) {
+		err := &arnEmptyError{}
+		expected := "ARN cannot be empty"
+		if err.Error() != expected {
+			t.Errorf("expected %q, got %q", expected, err.Error())
+		}
+	})
+
+	t.Run("invalid ARN error", func(t *testing.T) {
+		err := &invalidARNError{arn: "invalid:arn"}
+		expected := "invalid ARN: invalid:arn"
+		if err.Error() != expected {
+			t.Errorf("expected %q, got %q", expected, err.Error())
+		}
+	})
+}
+
+func TestAWSErrors(t *testing.T) {
+	t.Run("AWS config error", func(t *testing.T) {
+		err := &awsConfigError{err: &emptyNameError{}}
+		expected := "failed to load AWS config: Name cannot be empty"
+		if err.Error() != expected {
+			t.Errorf("expected %q, got %q", expected, err.Error())
+		}
+	})
+
+	t.Run("get IAM version error", func(t *testing.T) {
+		err := &getIAMVersionError{err: &emptyNameError{}}
+		expected := "failed to get IAM version: Name cannot be empty"
+		if err.Error() != expected {
+			t.Errorf("expected %q, got %q", expected, err.Error())
+		}
+	})
+}
+
+func TestPolicyErrors(t *testing.T) {
+	t.Run("sort actions error", func(t *testing.T) {
+		err := &sortActionsError{json: "invalid-json"}
+		expected := "failed to sort actions: invalid-json"
+		if err.Error() != expected {
+			t.Errorf("expected %q, got %q", expected, err.Error())
+		}
+	})
+
+	t.Run("get policy version error", func(t *testing.T) {
+		err := &getPolicyVersionError{err: &emptyNameError{}}
+		expected := "failed to get policy version: Name cannot be empty"
+		if err.Error() != expected {
+			t.Errorf("expected %q, got %q", expected, err.Error())
+		}
+	})
+
+	t.Run("input validation error", func(t *testing.T) {
+		err := &inputValidationError{err: &emptyNameError{}}
+		expected := "input validation failed: Name cannot be empty"
+		if err.Error() != expected {
+			t.Errorf("expected %q, got %q", expected, err.Error())
+		}
+	})
+
+	t.Run("marshall policy error", func(t *testing.T) {
+		err := &marshallPolicyError{err: &emptyNameError{}}
+		expected := "failed to marshal policy: Name cannot be empty"
+		if err.Error() != expected {
+			t.Errorf("expected %q, got %q", expected, err.Error())
+		}
+	})
 }

@@ -8,21 +8,22 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
+	"time"
 
 	"github.com/rs/zerolog/log"
 )
 
 var letters = []rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ") //nolint:gochecknoglobals
 
-// RandSeq generate a randown sequence.
+// RandSeq generate a random sequence.
 func RandSeq(n int) string {
 	sequence := make([]rune, n)
 	for i := range sequence {
-		//goland:noinspection GoLinter
-		sequence[i] = letters[rand.Intn(len(letters))]
+		r := rand.New(rand.NewSource(time.Now().UnixNano()))
+		sequence[i] = letters[r.Intn(len(letters))]
 	}
 
-	last := "XVlBzgba"
+	const last = "XVlBzgba"
 
 	temp := string(sequence)
 

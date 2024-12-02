@@ -34,7 +34,7 @@ type Statement struct {
 
 // NewStatement constructor.
 func NewStatement(sid string, effect string, action []string, resource []string) *Statement {
-	if effect != "Allow" && effect != "Deny" {
+	if effect != Allow && effect != "Deny" {
 		effect = "Deny" // Default to restrictive
 	}
 

@@ -1,12 +1,22 @@
 //go:build auth
 
-package pike_test
+package pike
 
 import (
+	"os"
+	"path/filepath"
 	"testing"
 
-	pike "github.com/jameswoolfenden/pike/src"
+	diff "github.com/yudai/gojsondiff"
 )
+
+type mockDiff struct {
+	diff.Diff
+}
+
+func (m mockDiff) Modified() bool {
+	return true
+}
 
 func TestCompareIAMPolicy(t *testing.T) {
 	t.Parallel()
@@ -55,7 +65,7 @@ func TestCompareIAMPolicy(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
-			got, err := pike.CompareIAMPolicy(tt.args.Policy, tt.args.OldPolicy)
+			got, err := CompareIAMPolicy(tt.args.Policy, tt.args.OldPolicy)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("CompareIAMPolicy() error = %v, wantErr %v", err, tt.wantErr)
 
@@ -92,13 +102,124 @@ func TestCompare(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
-			got, err := pike.Compare(tt.args.directory, tt.args.arn, tt.args.init)
+			got, err := Compare(tt.args.directory, tt.args.arn, tt.args.init)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("Compare() error = %v, wantErr %v", err, tt.wantErr)
 				return
 			}
 			if got != tt.want {
 				t.Errorf("Compare() got = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestShowDifferences(t *testing.T) {
+	tests := []struct {
+		name        string
+		policy      string
+		diff        diff.Diff
+		wantBool    bool
+		wantErr     bool
+		description string
+	}{
+		//{
+		//	name:        "Valid policy and diff",
+		//	policy:      `{"Version": "2012-10-17", "Statement": [{"Effect": "Allow"}]}`,
+		//	diff:        &mockDiff{},
+		//	wantBool:    false,
+		//	wantErr:     false,
+		//	description: "Should successfully format and display differences",
+		//},
+		{
+			name:        "Invalid JSON policy",
+			policy:      `{invalid-json}`,
+			diff:        &mockDiff{},
+			wantBool:    false,
+			wantErr:     true,
+			description: "Should return error for invalid JSON",
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			gotBool, err := ShowDifferences(tt.policy, tt.diff)
+
+			if (err != nil) != tt.wantErr {
+				t.Errorf("ShowDifferences() error = %v, wantErr %v", err, tt.wantErr)
+				return
+			}
+
+			if gotBool != tt.wantBool {
+				t.Errorf("ShowDifferences() = %v, want %v", gotBool, tt.wantBool)
+			}
+		})
+	}
+}
+
+func TestInputValidationCompare(t *testing.T) {
+	// Create a temporary directory for testing
+	tmpDir, err := os.MkdirTemp("", "pike-test-*")
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer os.RemoveAll(tmpDir)
+
+	tests := []struct {
+		name      string
+		directory string
+		arn       string
+		wantBool  bool
+		wantErr   error
+	}{
+		{
+			name:      "empty directory",
+			directory: "",
+			arn:       "arn:aws:iam::123456789012:policy/test",
+			wantBool:  false,
+			wantErr:   &emptyDirectoryError{},
+		},
+		{
+			name:      "non-existent directory",
+			directory: filepath.Join(tmpDir, "nonexistent"),
+			arn:       "arn:aws:iam::123456789012:policy/test",
+			wantBool:  false,
+			wantErr:   &directoryNotFoundError{filepath.Join(tmpDir, "nonexistent")},
+		},
+		{
+			name:      "empty ARN",
+			directory: tmpDir,
+			arn:       "",
+			wantBool:  false,
+			wantErr:   &arnEmptyError{},
+		},
+		{
+			name:      "invalid ARN format",
+			directory: tmpDir,
+			arn:       "invalid:arn",
+			wantBool:  false,
+			wantErr:   &invalidARNError{},
+		},
+		{
+			name:      "valid inputs",
+			directory: tmpDir,
+			arn:       "arn:aws:iam::123456789012:policy/test",
+			wantBool:  false,
+			wantErr:   nil,
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			gotBool, gotErr := inputValidationCompare(tt.directory, tt.arn)
+			if gotBool != tt.wantBool {
+				t.Errorf("inputValidationCompare() bool = %v, want %v", gotBool, tt.wantBool)
+			}
+			if (gotErr == nil && tt.wantErr != nil) || (gotErr != nil && tt.wantErr == nil) {
+				t.Errorf("inputValidationCompare() error = %v, want %v", gotErr, tt.wantErr)
+			}
+			if gotErr != nil && tt.wantErr != nil && gotErr.Error() != tt.wantErr.Error() {
+				t.Errorf("inputValidationCompare() error = %v, want %v", gotErr, tt.wantErr)
 			}
 		})
 	}

@@ -97,6 +97,7 @@ func TestReplaceSection(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
+
 			if err := pike.ReplaceSection(tt.args.source, tt.args.middle, tt.args.autoadd); (err != nil) != tt.wantErr {
 				t.Errorf("ReplaceSection() error = %v, wantErr %v", err, tt.wantErr)
 			}
@@ -125,6 +126,7 @@ func Test_fileExists(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
+
 			if got := pike.FileExists(tt.args.filename); got != tt.want {
 				t.Errorf("FileExists() = %v, want %v", got, tt.want)
 			}
@@ -151,6 +153,7 @@ func TestRandSeq(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
+
 			if got := pike.RandSeq(tt.args.n); got == tt.notWant {
 				t.Errorf("RandSeq() = %v, want %v", got, tt.notWant)
 			}
@@ -209,6 +212,7 @@ func TestAlmostEqual(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
+
 			if got := pike.AlmostEqual(tt.args.a, tt.args.b); got != tt.want {
 				t.Errorf("AlmostEqual() = %v, want %v", got, tt.want)
 			}

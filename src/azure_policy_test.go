@@ -12,6 +12,7 @@ func TestAZUREPolicy(t *testing.T) {
 
 	type args struct {
 		permissions []string
+		policyName  string
 	}
 
 	tests := []struct {
@@ -22,12 +23,28 @@ func TestAZUREPolicy(t *testing.T) {
 	}{
 		{
 			name: "pass",
-			args: args{[]string{"woof"}},
+			args: args{[]string{"woof"}, ""},
 			want: "resource \"azurerm_role_definition\" \"terraform_pike\" {\n  role_definition_id = local.uuid\n" +
 				"  name               = \"terraform_pike\"\n  scope              = data.azurerm_subscription.primary.id\n\n" +
 				"  permissions {\n    actions = [\n    \"woof\"]\n    not_actions = []\n  }\n\n  assignable_scopes = [\n" +
 				"    data.azurerm_subscription.primary.id,\n  ]\n}\n\nlocals {\n  uuid = uuid()\n}\n\ndata" +
 				" \"azurerm_subscription\" \"primary\" {\n}\n",
+		},
+		{
+			name:    "fail",
+			args:    args{[]string{}, ""},
+			want:    "",
+			wantErr: true,
+		},
+		{
+			name: "Policy named",
+			args: args{[]string{"woof"}, "pike"},
+			want: "resource \"azurerm_role_definition\" \"pike\" {\n  role_definition_id = local.uuid\n" +
+				"  name               = \"pike\"\n  scope              = data.azurerm_subscription.primary.id\n\n" +
+				"  permissions {\n    actions = [\n    \"woof\"]\n    not_actions = []\n  }\n\n  assignable_scopes = [\n" +
+				"    data.azurerm_subscription.primary.id,\n  ]\n}\n\nlocals {\n  uuid = uuid()\n}\n\ndata" +
+				" \"azurerm_subscription\" \"primary\" {\n}\n",
+			wantErr: false,
 		},
 	}
 
@@ -35,14 +52,18 @@ func TestAZUREPolicy(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
-			got, err := pike.AZUREPolicy(tt.args.permissions, pike.DefaultPolicyName)
+
+			got, err := pike.AZUREPolicy(tt.args.permissions, tt.args.policyName)
+
 			if (err != nil) != tt.wantErr {
 				t.Errorf("AZUREPolicy() error = %v, wantErr %v", err, tt.wantErr)
 
 				return
 			}
+
 			mingot := Minify(got)
 			minwant := Minify(tt.want)
+
 			if mingot != minwant {
 				t.Errorf("AZUREPolicy() = %v, want %v", mingot, minwant)
 			}

@@ -70,6 +70,7 @@ func TestGetGCPPermissions(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
+
 			got, err := pike.GetGCPPermissions(tt.args.result)
 
 			if (err != nil) != tt.wantErr {

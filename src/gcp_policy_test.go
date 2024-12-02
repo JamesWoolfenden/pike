@@ -31,7 +31,9 @@ func TestGCPPolicy(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
+
 			got, err := pike.GCPPolicy(tt.args.permissions)
+
 			if (err != nil) != tt.wantErr {
 				t.Errorf("GCPPolicy() error = %v, wantErr %v", err, tt.wantErr)
 
@@ -40,6 +42,7 @@ func TestGCPPolicy(t *testing.T) {
 
 			original := Minify(got)
 			target := Minify(tt.want)
+
 			if original != target {
 				t.Errorf("GCPPolicy() = %v, want %v", got, tt.want)
 				t.Errorf("GCPPolicy() = %v, want %v", original, target)

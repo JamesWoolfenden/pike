@@ -1,6 +1,6 @@
 # todo aws
 
-Resource percentage coverage   73.74
+Resource percentage coverage   73.58
 Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_amplify_backend_environment
@@ -160,6 +160,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_guardduty_organization_configuration_feature
 ./resource.ps1 aws_guardduty_publishing_destination
 ./resource.ps1 aws_iam_group_policy_attachments_exclusive
+./resource.ps1 aws_iam_organizations_features
 ./resource.ps1 aws_iam_role_policy_attachments_exclusive
 ./resource.ps1 aws_iam_user_policy_attachments_exclusive
 ./resource.ps1 aws_identitystore_group
@@ -369,6 +370,8 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_transfer_user
 ./resource.ps1 aws_verifiedaccess_instance_trust_provider_attachment
 ./resource.ps1 aws_verifiedpermissions_schema
+./resource.ps1 aws_vpc_block_public_access_exclusion
+./resource.ps1 aws_vpc_block_public_access_options
 ./resource.ps1 aws_vpc_endpoint_connection_accepter
 ./resource.ps1 aws_vpc_endpoint_policy
 ./resource.ps1 aws_vpc_endpoint_private_dns

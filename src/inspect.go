@@ -12,6 +12,8 @@ type PolicyDiff struct {
 	Under []string
 }
 
+const Allow = "Allow"
+
 func Inspect(directory string, init bool) (PolicyDiff, error) {
 	var iacPolicy Identity.Policy
 
@@ -63,7 +65,7 @@ func CompareAllow(identity Identity.IAM, policy Identity.Policy) (PolicyDiff, er
 
 		if statements != nil {
 			for _, statement := range identityPolicy.Statements {
-				if statement.Effect == "Allow" {
+				if statement.Effect == Allow {
 					identityAllows = append(identityAllows, statement.Action...)
 				}
 			}
@@ -71,7 +73,7 @@ func CompareAllow(identity Identity.IAM, policy Identity.Policy) (PolicyDiff, er
 	}
 
 	for _, policyStatement := range policy.Statements {
-		if policyStatement.Effect == "Allow" {
+		if policyStatement.Effect == Allow {
 			policyAllows = append(policyAllows, policyStatement.Action...)
 		}
 	}

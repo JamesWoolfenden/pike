@@ -42,22 +42,21 @@ func (m *gitReferenceError) Error() string {
 	return fmt.Sprintf("git reference in module source path unsupported %s", m.name)
 }
 
-type backendExistsError struct {
-}
+type backendExistsError struct{}
 
 func (m *backendExistsError) Error() string {
 	return "backend already exists"
 }
 
-type mappingsEmpty struct{}
+type mappingsEmptyError struct{}
 
-func (m *mappingsEmpty) Error() string {
+func (m *mappingsEmptyError) Error() string {
 	return "mappings are empty"
 }
 
-type invalidJsonError struct{}
+type invalidJSONError struct{}
 
-func (m *invalidJsonError) Error() string {
+func (m *invalidJSONError) Error() string {
 	return "invalid json, was empty or corrupt"
 }
 
@@ -106,17 +105,16 @@ func (m *getAWSDataPermissionsError) Error() string {
 	return fmt.Sprintf("failed to get AWS data permissions %v", m.err)
 }
 
-type unmarshallJsonError struct {
+type unmarshallJSONError struct {
 	err      error
 	resource string
 }
 
-func (m *unmarshallJsonError) Error() string {
+func (m *unmarshallJSONError) Error() string {
 	return fmt.Sprintf("failed to unmarshal json %v for %s", m.err, m.resource)
 }
 
-type attributesFieldMissingError struct {
-}
+type attributesFieldMissingError struct{}
 
 func (m *attributesFieldMissingError) Error() string {
 	return "attributes field missing"
@@ -144,4 +142,108 @@ type templateExecuteError struct {
 
 func (m *templateExecuteError) Error() string {
 	return fmt.Sprintf("failed to execute template %v", m.err)
+}
+
+type emptyPermissionsError struct{}
+
+func (m *emptyPermissionsError) Error() string {
+	return "permissions list cannot be empty"
+}
+
+type newAWSPolicyError struct {
+	err error
+}
+
+func (m *newAWSPolicyError) Error() string {
+	return fmt.Sprintf("failed to create new AWS policy %v ", m.err)
+}
+
+type marshallAWSPolicyError struct {
+	err error
+}
+
+func (m *marshallAWSPolicyError) Error() string {
+	return fmt.Sprintf("failed to marshal policy: %v", m.err)
+}
+
+type emptyActionsError struct{}
+
+func (m *emptyActionsError) Error() string {
+	return "actions list cannot be empty"
+}
+
+type emptyDirectoryError struct{}
+
+func (m *emptyDirectoryError) Error() string {
+	return "directory value cannot be an empty string"
+}
+
+type directoryNotFoundError struct {
+	directory string
+}
+
+func (m *directoryNotFoundError) Error() string {
+	return fmt.Sprintf("directory does not exist: %s", m.directory)
+}
+
+type arnEmptyError struct{}
+
+func (m *arnEmptyError) Error() string {
+	return "ARN cannot be empty"
+}
+
+type invalidARNError struct {
+	arn string
+}
+
+func (m *invalidARNError) Error() string {
+	return fmt.Sprintf("invalid ARN: %s", m.arn)
+}
+
+type awsConfigError struct {
+	err error
+}
+
+func (m *awsConfigError) Error() string {
+	return fmt.Sprintf("failed to load AWS config: %v", m.err)
+}
+
+type getIAMVersionError struct {
+	err error
+}
+
+func (m *getIAMVersionError) Error() string {
+	return fmt.Sprintf("failed to get IAM version: %v", m.err)
+}
+
+type sortActionsError struct {
+	json string
+}
+
+func (m *sortActionsError) Error() string {
+	return fmt.Sprintf("failed to sort actions: %s", m.json)
+}
+
+type getPolicyVersionError struct {
+	err error
+}
+
+func (m *getPolicyVersionError) Error() string {
+	return fmt.Sprintf("failed to get policy version: %v", m.err)
+}
+
+type inputValidationError struct {
+	err error
+}
+
+func (m *inputValidationError) Error() string {
+	return fmt.Sprintf("input validation failed: %v", m.err)
+}
+
+type marshallPolicyError struct {
+	err error
+}
+
+func (e *marshallPolicyError) Error() string {
+	return fmt.Sprintf("failed to marshal policy: %v", e.err)
 }

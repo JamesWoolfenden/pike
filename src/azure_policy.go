@@ -3,7 +3,6 @@ package pike
 import (
 	"bytes"
 	_ "embed" // required for embed
-	"fmt"
 	"strings"
 	"text/template"
 )
@@ -17,12 +16,12 @@ var policyAZURETemplate []byte
 func AZUREPolicy(permissions []string, policyName string) (string, error) {
 	// Add validation for empty permissions slice
 	if len(permissions) == 0 {
-		return "", fmt.Errorf("permissions list cannot be empty")
+		return "", &emptyPermissionsError{}
 	}
 
 	test := strings.Join(permissions, "\",\n    \"")
 
-	type AzurePolicyDetails struct {
+	type azurePolicyDetails struct {
 		Name        string `json:"name"`
 		Permissions string `json:"permissions"`
 	}
@@ -31,7 +30,7 @@ func AZUREPolicy(permissions []string, policyName string) (string, error) {
 		policyName = DefaultPolicyName
 	}
 
-	theDetails := AzurePolicyDetails{policyName, test}
+	theDetails := azurePolicyDetails{policyName, test}
 
 	var output bytes.Buffer
 

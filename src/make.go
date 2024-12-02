@@ -69,7 +69,9 @@ func tfApply(policyPath string) (*tfexec.Terraform, error) {
 
 	ctx, cancel := context.WithTimeout(context.Background(), 30*time.Minute)
 	defer cancel()
+
 	err = terraform.Apply(ctx)
+
 	if err != nil {
 		return nil, fmt.Errorf("terraform apply failed %w", err)
 	}
@@ -98,6 +100,7 @@ func Apply(target string, region string) error {
 
 	log.Debug().Msgf("Starting terraform apply in directory: %s", target)
 	defer log.Debug().Msg("Completed terraform apply")
+
 	_, err = tfApply(target)
 
 	if err == nil {

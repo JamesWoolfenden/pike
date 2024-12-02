@@ -51,6 +51,7 @@ func TestOutputPolicy_AsString(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
+
 			Out := pike.OutputPolicy{
 				AWS:   tt.fields.AWS,
 				GCP:   tt.fields.GCP,
