@@ -33,12 +33,12 @@ type Statement struct {
 }
 
 // NewStatement constructor.
-func NewStatement(sid string, effect string, action []string, resource []string) *Statement {
+func NewStatement(sid string, effect string, action []string, resource []string) Statement {
 	if effect != Allow && effect != "Deny" {
 		effect = "Deny" // Default to restrictive
 	}
 
-	return &Statement{Sid: sid, Effect: effect, Action: action, Resource: resource}
+	return Statement{Sid: sid, Effect: effect, Action: action, Resource: resource}
 }
 
 // OutputPolicy is the main output type.

@@ -79,9 +79,11 @@ func NewAWSPolicy(actions []string, resources bool) (Policy, error) {
 			myResource = myArn.Builder()
 		}
 
-		state := Statement{
-			Sid: "VisualEditor" + strconv.Itoa(count), Effect: "Allow", Action: myActions, Resource: myResource,
-		}
+		state := NewStatement(
+			"VisualEditor"+strconv.Itoa(count),
+			Allow,
+			myActions,
+			myResource)
 
 		statements = append(statements, state)
 	}
