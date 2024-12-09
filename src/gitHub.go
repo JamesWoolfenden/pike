@@ -39,7 +39,7 @@ type nilResponseError struct {
 }
 
 func (m *nilResponseError) Error() string {
-	return fmt.Sprintf("nil response")
+	return "nil response"
 }
 
 type nonSuccessError struct {
@@ -62,13 +62,13 @@ func (m *workflowInvokeError) Error() string {
 type gitHubRateLimitingError struct{}
 
 func (m *gitHubRateLimitingError) Error() string {
-	return fmt.Sprintf("your are being GitHub Ratelimited")
+	return "you are being GitHub Rate-limited"
 }
 
 type insecureProtocolError struct{}
 
 func (m *insecureProtocolError) Error() string {
-	return fmt.Sprintf("insecure protocol")
+	return "insecure protocol"
 }
 
 // InvokeGithubDispatchEvent uses your GitHub api key (if sufficiently enabled) to invoke a GitHub action workflow.
