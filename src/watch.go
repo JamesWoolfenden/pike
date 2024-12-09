@@ -21,13 +21,17 @@ const PollIntervalSeconds int = 5
 // Watch looks at IAM policy for new revisions.
 func Watch(arn string, wait int) error {
 	if arn == "" {
-		return errors.New("ARN cannot be empty")
+		return &arnEmptyError{}
 	}
-
 	// Load the Shared AWS Configuration (~/.aws/config)
-	cfg, err := config.LoadDefaultConfig(context.TODO())
+	ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
+
+	defer cancel()
+
+	cfg, err := config.LoadDefaultConfig(ctx)
+
 	if err != nil {
-		return fmt.Errorf("failed to load default config %w", err)
+		return &awsConfigError{err}
 	}
 
 	client := iam.NewFromConfig(cfg)
@@ -74,10 +78,18 @@ func WaitForPolicyChange(client *iam.Client, arn string, version string, wait, p
 func GetVersion(client *iam.Client, policyArn string) (*string, error) {
 	output, err := client.GetPolicy(context.TODO(), &iam.GetPolicyInput{PolicyArn: aws.String(policyArn)})
 	if err != nil {
-		return nil, err
+		return nil, &getVersionError{err}
 	}
 
 	return output.Policy.DefaultVersionId, nil
+}
+
+type urlEscapeError struct {
+	err error
+}
+
+func (e *urlEscapeError) Error() string {
+	return fmt.Sprintf("failed to unescape url: %v", e.err)
 }
 
 // GetPolicyVersion Obtains the versioned IAM policy.
@@ -89,17 +101,18 @@ func GetPolicyVersion(client *iam.Client, policyArn string, version string) (*st
 			VersionId: &version,
 		})
 	if err != nil {
-		return nil, err
+		return nil, &getVersionError{err}
 	}
 
 	Policy, err := url.QueryUnescape(*(output.PolicyVersion.Document))
+
 	if err != nil {
-		return nil, err
+		return nil, &urlEscapeError{err}
 	}
 
 	fixed, err := SortActions(Policy)
 	if err != nil {
-		return nil, err
+		return nil, &sortActionsError{Policy}
 	}
 
 	return fixed, err
@@ -151,6 +164,10 @@ func SortActions(myPolicy string) (*string, error) {
 	}
 
 	fixed, err := json.Marshal(raw)
+	if err != nil {
+		return nil, &marshallPolicyError{err}
+	}
+
 	result := string(fixed)
 
 	return &result, err

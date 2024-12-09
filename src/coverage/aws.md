@@ -1,6 +1,6 @@
 # todo aws
 
-Resource percentage coverage   73.58
+Resource percentage coverage   73.13
 Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_amplify_backend_environment
@@ -36,6 +36,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_appsync_type
 ./resource.ps1 aws_bedrock_guardrail
 ./resource.ps1 aws_bedrock_guardrail_version
+./resource.ps1 aws_bedrock_inference_profile
 ./resource.ps1 aws_bedrockagent_agent_knowledge_base_association
 ./resource.ps1 aws_cloud9_environment_membership
 ./resource.ps1 aws_cloudcontrolapi_resource
@@ -44,6 +45,8 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_cloudhsm_v2_hsm
 ./resource.ps1 aws_cloudtrail_organization_delegated_admin_account
 ./resource.ps1 aws_codebuild_fleet
+./resource.ps1 aws_codeconnections_connection
+./resource.ps1 aws_codeconnections_host
 ./resource.ps1 aws_cognito_managed_user_pool_client
 ./resource.ps1 aws_comprehend_entity_recognizer
 ./resource.ps1 aws_computeoptimizer_enrollment_status
@@ -118,6 +121,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_ec2_transit_gateway_policy_table_association
 ./resource.ps1 aws_ec2_transit_gateway_prefix_list_reference
 ./resource.ps1 aws_ec2_transit_gateway_vpc_attachment_accepter
+./resource.ps1 aws_ecr_account_setting
 ./resource.ps1 aws_ecs_account_setting_default
 ./resource.ps1 aws_ecs_cluster_capacity_providers
 ./resource.ps1 aws_eip_domain_name
@@ -313,6 +317,11 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_s3control_object_lambda_access_point
 ./resource.ps1 aws_s3control_object_lambda_access_point_policy
 ./resource.ps1 aws_s3control_storage_lens_configuration
+./resource.ps1 aws_s3tables_namespace
+./resource.ps1 aws_s3tables_table
+./resource.ps1 aws_s3tables_table_bucket
+./resource.ps1 aws_s3tables_table_bucket_policy
+./resource.ps1 aws_s3tables_table_policy
 ./resource.ps1 aws_sagemaker_flow_definition
 ./resource.ps1 aws_sagemaker_hub
 ./resource.ps1 aws_sagemaker_mlflow_tracking_server
@@ -332,6 +341,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_service_discovery_public_dns_namespace
 ./resource.ps1 aws_service_discovery_service
 ./resource.ps1 aws_servicecatalog_provisioning_artifact
+./resource.ps1 aws_servicecatalogappregistry_attribute_group
 ./resource.ps1 aws_sesv2_account_suppression_attributes
 ./resource.ps1 aws_sesv2_account_vdm_attributes
 ./resource.ps1 aws_sesv2_configuration_set
@@ -362,7 +372,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_ssoadmin_permission_set_inline_policy
 ./resource.ps1 aws_ssoadmin_permissions_boundary_attachment
 ./resource.ps1 aws_ssoadmin_trusted_token_issuer
-./resource.ps1 aws_standards_control_association
 ./resource.ps1 aws_transfer_access
 ./resource.ps1 aws_transfer_server
 ./resource.ps1 aws_transfer_ssh_key

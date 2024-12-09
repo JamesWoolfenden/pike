@@ -1,6 +1,8 @@
 package pike
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type notImplementedResourceError struct {
 	Name string
@@ -246,4 +248,117 @@ type marshallPolicyError struct {
 
 func (e *marshallPolicyError) Error() string {
 	return fmt.Sprintf("failed to marshal policy: %v", e.err)
+}
+
+type makeRoleError struct {
+	err error
+}
+
+func (e *makeRoleError) Error() string {
+	return fmt.Sprintf("failed to make role: %v", e.err)
+}
+
+type setRepoSecretError struct {
+	repository string
+	err        error
+}
+
+func (e *setRepoSecretError) Error() string {
+	return fmt.Sprintf("failed to set repo secret:%s %v", e.repository, e.err)
+}
+
+type setAWSAuthError struct {
+	err error
+}
+
+func (m *setAWSAuthError) Error() string {
+	return fmt.Sprintf("failed to set AWS auth %v", m.err)
+}
+
+type terraformPlanError struct {
+	err error
+}
+
+func (m *terraformPlanError) Error() string {
+	return fmt.Sprintf("failed to plan terraform %v", m.err)
+}
+
+type terraformNewError struct {
+	err error
+}
+
+func (m *terraformNewError) Error() string {
+	return fmt.Sprintf("failed to create terraform %v", m.err)
+}
+
+type terraformOutputError struct{}
+
+func (m *terraformOutputError) Error() string {
+	return "terraform output is empty"
+}
+
+type terraformApplyError struct {
+	target string
+	err    error
+}
+
+func (m *terraformApplyError) Error() string {
+	if m.target == "" {
+		return fmt.Sprintf("failed to apply terraform %v", m.err)
+	}
+	return fmt.Sprintf("failed to apply terraform %s %v", m.target, m.err)
+}
+
+type getPublicKeyDetailsError struct {
+	err error
+}
+
+func (e *getPublicKeyDetailsError) Error() string {
+	return fmt.Sprintf("failed to get public key details: %v", e.err)
+}
+
+type splitHubError struct {
+	err error
+}
+
+func (e *splitHubError) Error() string {
+	return fmt.Sprintf("failed to split hub: %v", e.err)
+}
+
+type updateSecretError struct {
+	err error
+}
+
+func (e *updateSecretError) Error() string {
+	return fmt.Sprintf("failed to update secret: %v", e.err)
+}
+
+type decodeStringError struct {
+	err error
+}
+
+func (e *decodeStringError) Error() string {
+	return fmt.Sprintf("failed to decode string: %v", e.err)
+}
+
+type encryptPlaintextError struct {
+	err error
+}
+
+func (e *encryptPlaintextError) Error() string {
+	return fmt.Sprintf("failed to encrypt plaintext: %v", e.err)
+}
+
+type emptyKeyError struct{}
+
+func (e *emptyKeyError) Error() string {
+	return "empty key"
+}
+
+type encryptError struct {
+	err error
+}
+
+func (e *encryptError) Error() string {
+	return fmt.Sprintf("failed to encrypt: %v", e.err)
 }

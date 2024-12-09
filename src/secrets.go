@@ -19,21 +19,21 @@ import (
 func Remote(target string, repository string, region string) error {
 	iamRole, err := Make(target)
 
+	if err != nil {
+		return &makeRoleError{err}
+	}
+
 	const magic = 5
 
 	time.Sleep(magic * time.Second)
 
+	Credentials, err := getAWSCredentials(*iamRole, region)
+
 	if err != nil {
-		return err
+		return fmt.Errorf("failed to get AWS credentials: %v", err)
 	}
 
-	Creds, err2 := getAWSCredentials(*iamRole, region)
-
-	if err2 != nil {
-		return err2
-	}
-
-	myCredentials := Creds.Credentials
+	myCredentials := Credentials.Credentials
 
 	_, err = SetRepoSecret(repository, *myCredentials.AccessKeyId, "AWS_ACCESS_KEY_ID")
 
@@ -42,20 +42,20 @@ func Remote(target string, repository string, region string) error {
 
 		errors.As(err, &response)
 
-		log.Printf("failed to set repo secrets: %s for repository %s", response.Message, repository)
+		log.Info().Msgf("failed to set repo secrets: %s for repository %s", response.Message, repository)
 
-		return fmt.Errorf("failed to set repo secrets: %s for repository %s", response.Message, repository)
+		return &setRepoSecretError{repository, err}
 	}
 
 	_, err = SetRepoSecret(repository, *myCredentials.SecretAccessKey, "AWS_SECRET_ACCESS_KEY")
 	if err != nil {
-		return err
+		return &setRepoSecretError{repository, err}
 	}
 
 	_, err = SetRepoSecret(repository, *myCredentials.SessionToken, "AWS_SESSION_TOKEN")
 
 	if err != nil {
-		return err
+		return &setRepoSecretError{repository, err}
 	}
 
 	return nil
@@ -63,19 +63,19 @@ func Remote(target string, repository string, region string) error {
 
 // SetRepoSecret sets an encrypted GitHub action secret.
 func SetRepoSecret(repository string, keyText string, keyName string) (*github.Response, error) {
-	owner, repo, err2 := SplitHub(repository)
-	if err2 != nil {
-		return nil, err2
+	owner, repo, err := SplitHub(repository)
+	if err != nil {
+		return nil, &splitHubError{err: err}
 	}
 
 	keyID, publicKey, err := GetPublicKeyDetails(owner, repo)
 	if err != nil {
-		return nil, err
+		return nil, &getPublicKeyDetailsError{err}
 	}
 
 	encryptedBytes, err := EncryptPlaintext(keyText, publicKey)
 	if err != nil {
-		return nil, err
+		return nil, &encryptPlaintextError{err: err}
 	}
 
 	encryptedValue := base64.StdEncoding.EncodeToString(encryptedBytes)
@@ -91,7 +91,7 @@ func SetRepoSecret(repository string, keyText string, keyName string) (*github.R
 
 	response, err := client.Actions.CreateOrUpdateRepoSecret(ctx, owner, repo, eSecret)
 	if err != nil {
-		return response, err
+		return response, &updateSecretError{err: err}
 	}
 
 	return response, nil
@@ -148,7 +148,7 @@ func GetPublicKeyDetails(owner string, repository string) (string, string, error
 
 	publicKey, _, err := client.Actions.GetRepoPublicKey(ctx, owner, repository)
 	if err != nil {
-		return "", "", err
+		return "", "", &getPublicKeyDetailsError{err}
 	}
 
 	return publicKey.GetKeyID(), publicKey.GetKey(), nil
@@ -158,14 +158,14 @@ func GetPublicKeyDetails(owner string, repository string) (string, string, error
 func EncryptPlaintext(plaintext string, publicKeyB64 string) ([]byte, error) {
 	publicKeyBytes, err := base64.StdEncoding.DecodeString(publicKeyB64)
 	if err != nil {
-		return nil, err
+		return nil, &decodeStringError{err: err}
 	}
 
 	var publicKeyBytes32 [32]byte
 	copiedLen := copy(publicKeyBytes32[:], publicKeyBytes)
 
 	if copiedLen == 0 {
-		return nil, fmt.Errorf("could not convert publicKey to bytes")
+		return nil, &emptyKeyError{}
 	}
 
 	plaintextBytes := []byte(plaintext)
@@ -174,7 +174,7 @@ func EncryptPlaintext(plaintext string, publicKeyB64 string) ([]byte, error) {
 
 	cipherText, err := box.SealAnonymous(encryptedBytes, plaintextBytes, &publicKeyBytes32, nil)
 	if err != nil {
-		return nil, err
+		return nil, &encryptError{err: err}
 	}
 
 	return cipherText, nil

@@ -2,25 +2,35 @@ package pike
 
 import (
 	"errors"
+	"fmt"
 	"os"
+	"path"
 	"strings"
 
 	"github.com/rs/zerolog/log"
 )
 
+type replaceSectionError struct {
+	err error
+}
+
+func (m *replaceSectionError) Error() string {
+	return fmt.Sprintf("failed to replace section %v", m.err)
+}
+
 // Readme Updates a README.md file.
 func Readme(dirName string, output string, init bool, autoAppend bool) error {
-	file := dirName + "/README.md"
+	file := path.Join(dirName, "README.md")
 
 	if _, err := os.Stat(file); errors.Is(err, os.ErrNotExist) {
 		return err
 	}
 
-	OutPolicy, err2 := MakePolicy(dirName, nil, init, false)
-	if err2 != nil {
-		log.Print("failed to make policy")
+	OutPolicy, err := MakePolicy(dirName, nil, init, false)
+	if err != nil {
+		log.Info().Msg("failed to make policy")
 
-		return err2
+		return &makePolicyError{err}
 	}
 
 	var markdown string
@@ -31,12 +41,15 @@ func Readme(dirName string, output string, init bool, autoAppend bool) error {
 	case "json":
 		markdown = "\nThe Policy required is:\n\n```json\n" + OutPolicy.AsString(output) + "\n```\n"
 	default:
-		return errors.New("output formats are terraform or json")
+		return errors.New("output formats are Terraform and JSON")
 	}
 
-	err := ReplaceSection(file, markdown, autoAppend)
+	err = ReplaceSection(file, markdown, autoAppend)
+	if err != nil {
+		return &replaceSectionError{err}
+	}
 
-	log.Print("readme updated")
+	log.Info().Msg("readme updated")
 
 	return err
 }

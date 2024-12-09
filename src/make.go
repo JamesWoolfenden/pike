@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"os"
 	"os/exec"
+	"path"
 	"path/filepath"
 	"time"
 
@@ -25,9 +26,9 @@ func Make(directory string) (*string, error) {
 		return nil, fmt.Errorf("failed to find path: %w", err)
 	}
 
-	policyPath, err := filepath.Abs(directory + "/.pike/")
+	policyPath, err := filepath.Abs(path.Join(directory, ".pike/"))
 	if err != nil {
-		return nil, fmt.Errorf("failed to get absolute path for policy: %w", err)
+		return nil, &absolutePathError{directory, err}
 	}
 
 	tf, err := tfApply(policyPath)
@@ -54,7 +55,7 @@ func Make(directory string) (*string, error) {
 func tfApply(policyPath string) (*tfexec.Terraform, error) {
 	tfPath, err := LocateTerraform()
 	if err != nil {
-		return nil, err
+		return nil, &locateTerraformError{err}
 	}
 
 	terraform, err := tfexec.NewTerraform(policyPath, tfPath)
@@ -64,7 +65,7 @@ func tfApply(policyPath string) (*tfexec.Terraform, error) {
 
 	err = terraform.Init(context.Background(), tfexec.Upgrade(true))
 	if err != nil {
-		return nil, err
+		return nil, &terraformInitError{err}
 	}
 
 	ctx, cancel := context.WithTimeout(context.Background(), 30*time.Minute)
@@ -73,7 +74,7 @@ func tfApply(policyPath string) (*tfexec.Terraform, error) {
 	err = terraform.Apply(ctx)
 
 	if err != nil {
-		return nil, fmt.Errorf("terraform apply failed %w", err)
+		return nil, &terraformApplyError{err: err}
 	}
 
 	return terraform, nil
@@ -86,16 +87,16 @@ func Apply(target string, region string) error {
 	time.Sleep(5 * time.Second)
 
 	if err != nil {
-		return err
+		return &makeRoleError{err}
 	}
-	// clear any temp creds
+	// clear any temp credentials
 	unSetAWSAuth()
 
 	err = setAWSAuth(*iamRole, region)
 	if err != nil {
 		unSetAWSAuth()
 
-		return err
+		return &setAWSAuthError{err}
 	}
 
 	log.Debug().Msgf("Starting terraform apply in directory: %s", target)
@@ -104,7 +105,9 @@ func Apply(target string, region string) error {
 	_, err = tfApply(target)
 
 	if err == nil {
-		log.Printf("provisioned %s", target)
+		log.Info().Msgf("provisioned %s", target)
+	} else {
+		err = &terraformApplyError{target, err}
 	}
 
 	unSetAWSAuth()
@@ -116,17 +119,17 @@ func Apply(target string, region string) error {
 func tfPlan(policyPath string) error {
 	tfPath, err := LocateTerraform()
 	if err != nil {
-		return err
+		return &locateTerraformError{err}
 	}
 
 	terraform, err := tfexec.NewTerraform(policyPath, tfPath)
 	if err != nil {
-		return err
+		return &terraformNewError{err}
 	}
 
 	err = terraform.Init(context.Background(), tfexec.Upgrade(true))
 	if err != nil {
-		return err
+		return &terraformInitError{err: err}
 	}
 
 	chdir := "-chdir=" + policyPath
@@ -135,11 +138,11 @@ func tfPlan(policyPath string) error {
 	stdout, err := cmd.Output()
 
 	if err != nil {
-		return fmt.Errorf("terraform plan generation failed: %w", err)
+		return &terraformPlanError{err}
 	}
 
 	if len(stdout) == 0 {
-		return errors.New("terraform plan output is empty")
+		return &terraformOutputError{}
 	}
 
 	//goland:noinspection GoUnhandledErrorResult
@@ -152,14 +155,14 @@ func tfPlan(policyPath string) error {
 	stdout, err = cmd.Output()
 
 	if err != nil {
-		return fmt.Errorf("terraform plan failed: %w", err)
+		return &terraformPlanError{err}
 	}
 
 	outfile := filepath.Join(policyPath, "tf.json")
 	err = os.WriteFile(outfile, stdout, 0o666)
 
 	if err != nil {
-		return fmt.Errorf("terraform show failed %w", err)
+		return &writeFileError{file: outfile, err: err}
 	}
 
 	return nil

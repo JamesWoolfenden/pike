@@ -15,31 +15,87 @@ import (
 
 const lastOK = 299
 
+type verifyURLError struct {
+	url string
+	err error
+}
+
+func (m *verifyURLError) Error() string {
+	return fmt.Sprintf("failed to verify URL %s %v", m.url, m.err)
+}
+
+type verifyBranchError struct {
+	branch string
+	repo   string
+	owner  string
+	err    error
+}
+
+func (m *verifyBranchError) Error() string {
+	return fmt.Sprintf("failed to verify branch %s %s %s %v", m.branch, m.repo, m.owner, m.err)
+}
+
+type nilResponseError struct {
+}
+
+func (m *nilResponseError) Error() string {
+	return fmt.Sprintf("nil response")
+}
+
+type nonSuccessError struct {
+	response string
+	err      error
+}
+
+func (m *nonSuccessError) Error() string {
+	return fmt.Sprintf("non success response %s %v", m.response, m.err)
+}
+
+type workflowInvokeError struct {
+	err error
+}
+
+func (m *workflowInvokeError) Error() string {
+	return fmt.Sprintf("failed to invoke workflow %v", m.err)
+}
+
+type gitHubRateLimitingError struct{}
+
+func (m *gitHubRateLimitingError) Error() string {
+	return fmt.Sprintf("your are being GitHub Ratelimited")
+}
+
+type insecureProtocolError struct{}
+
+func (m *insecureProtocolError) Error() string {
+	return fmt.Sprintf("insecure protocol")
+}
+
 // InvokeGithubDispatchEvent uses your GitHub api key (if sufficiently enabled) to invoke a GitHub action workflow.
 func InvokeGithubDispatchEvent(repository string, workflowFileName string, branch string) error {
 	owner, repo, err := SplitHub(repository)
 	if err != nil {
 		log.Print(err)
 
-		return fmt.Errorf("failed to SplitHub %w", err)
+		return &splitHubError{err}
 	}
 
 	url := "https://api.github.com/repos/" + owner + "/" + repo + "/actions/workflows/" + workflowFileName
 
-	err2 := VerifyURL(url)
-	if err2 != nil {
-		log.Print(err2)
+	err = VerifyURL(url)
+	if err != nil {
+		log.Error().Err(err)
 
-		return err2
+		return &verifyURLError{url, err}
 	}
 
 	ctx, client := GetGithubClient()
 
-	err3 := VerifyBranch(client, owner, repo, branch)
-	if err3 != nil {
-		log.Print(err3)
+	err = VerifyBranch(client, owner, repo, branch)
+	if err != nil {
+		log.Error().Err(err)
 
-		return err3
+		return &verifyBranchError{branch, repo, owner, err}
 	}
 
 	event := github.CreateWorkflowDispatchEventRequest{
@@ -54,17 +110,17 @@ func InvokeGithubDispatchEvent(repository string, workflowFileName string, branc
 		event)
 
 	if response == nil {
-		return fmt.Errorf("query failed")
+		return &nilResponseError{}
 	}
 
 	if response.StatusCode > lastOK {
-		return fmt.Errorf("non success status code %s for %s", response.Status, url)
+		return &nonSuccessError{response.Status, err}
 	}
 
 	if err != nil {
-		log.Printf("invoke failed %s", response.Response.Status)
+		log.Info().Msgf("invoke failed %s", response.Response.Status)
 
-		return err
+		return &workflowInvokeError{err: err}
 	}
 
 	myResponse := *response.Response
@@ -74,10 +130,10 @@ func InvokeGithubDispatchEvent(repository string, workflowFileName string, branc
 	if len(remains) != 0 {
 		if left, err := strconv.Atoi(remains[0]); err == nil {
 			if left == 0 {
-				return errors.New("you are being gitHub rate limited")
+				return &gitHubRateLimitingError{}
 			}
 
-			log.Printf("Invoked: Github rate limit remaining: %s", remains[0])
+			log.Info().Msgf("Invoked: Github rate limit remaining: %s", remains[0])
 		}
 	}
 
@@ -113,13 +169,13 @@ func VerifyBranch(client *github.Client, owner string, repo string, branch strin
 func VerifyURL(url string) error {
 	if //goland:noinspection HttpUrlsUsage
 	strings.Contains(strings.ToLower(url), "http://") {
-		return errors.New("http is insecure")
+		return &insecureProtocolError{}
 	}
 
 	resp, err := http.Get(url)
 
 	if resp == nil {
-		return errors.New("response was nil")
+		return &nilResponseError{}
 	}
 
 	defer func(Body io.ReadCloser) {
@@ -127,13 +183,13 @@ func VerifyURL(url string) error {
 	}(resp.Body)
 
 	if resp.StatusCode > lastOK {
-		return fmt.Errorf("non success status code %s for %s", resp.Status, url)
+		return &nonSuccessError{response: strconv.Itoa(resp.StatusCode), err: err}
 	}
 
 	if err != nil {
-		log.Printf("failed to reach %s for %s", url, resp.Status)
+		log.Info().Msgf("failed to reach %s for %s", url, resp.Status)
 
-		return err
+		return &verifyURLError{url, err}
 	}
 
 	return nil

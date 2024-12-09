@@ -1,7 +1,7 @@
 # todo google
 
-Resource percentage coverage   19.06
-Datasource percentage coverage 75.23
+Resource percentage coverage   18.93
+Datasource percentage coverage 75.00
 
 ./resource.ps1 google_access_context_manager_access_level_condition
 ./resource.ps1 google_access_context_manager_service_perimeter_dry_run_egress_policy
@@ -447,6 +447,10 @@ Datasource percentage coverage 75.23
 ./resource.ps1 google_folder_iam_policy
 ./resource.ps1 google_folder_organization_policy
 ./resource.ps1 google_gemini_code_repository_index
+./resource.ps1 google_gemini_repository_group
+./resource.ps1 google_gemini_repository_group_iam_binding
+./resource.ps1 google_gemini_repository_group_iam_member
+./resource.ps1 google_gemini_repository_group_iam_policy
 ./resource.ps1 google_gke_backup_backup_plan
 ./resource.ps1 google_gke_backup_backup_plan_iam_binding
 ./resource.ps1 google_gke_backup_backup_plan_iam_member
@@ -630,11 +634,13 @@ Datasource percentage coverage 75.23
 ./resource.ps1 google_network_security_address_group_iam_member
 ./resource.ps1 google_network_security_address_group_iam_policy
 ./resource.ps1 google_network_security_authorization_policy
+./resource.ps1 google_network_security_authz_policy
 ./resource.ps1 google_network_security_client_tls_policy
 ./resource.ps1 google_network_security_firewall_endpoint
 ./resource.ps1 google_network_security_firewall_endpoint_association
 ./resource.ps1 google_network_security_gateway_security_policy
 ./resource.ps1 google_network_security_gateway_security_policy_rule
+./resource.ps1 google_network_security_intercept_deployment_group
 ./resource.ps1 google_network_security_mirroring_deployment
 ./resource.ps1 google_network_security_mirroring_deployment_group
 ./resource.ps1 google_network_security_mirroring_endpoint_group
@@ -644,6 +650,7 @@ Datasource percentage coverage 75.23
 ./resource.ps1 google_network_security_server_tls_policy
 ./resource.ps1 google_network_security_tls_inspection_policy
 ./resource.ps1 google_network_security_url_lists
+./resource.ps1 google_network_services_authz_extension
 ./resource.ps1 google_network_services_edge_cache_keyset
 ./resource.ps1 google_network_services_edge_cache_origin
 ./resource.ps1 google_network_services_edge_cache_service
@@ -862,6 +869,7 @@ Datasource percentage coverage 75.23
 ./resource.ps1 google_folder -type data
 ./resource.ps1 google_folder_iam_policy -type data
 ./resource.ps1 google_folders -type data
+./resource.ps1 google_gemini_repository_group_iam_policy -type data
 ./resource.ps1 google_iap_tunnel_dest_group_iam_policy -type data
 ./resource.ps1 google_kms_crypto_key_latest_version -type data
 ./resource.ps1 google_kms_crypto_key_versions -type data

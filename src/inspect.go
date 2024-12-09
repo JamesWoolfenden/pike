@@ -2,6 +2,7 @@ package pike
 
 import (
 	"errors"
+	"fmt"
 
 	Identity "github.com/jameswoolfenden/identity/src"
 	"github.com/rs/zerolog/log"
@@ -14,6 +15,30 @@ type PolicyDiff struct {
 
 const Allow = "Allow"
 
+type identityParseError struct {
+	err error
+}
+
+func (m *identityParseError) Error() string {
+	return fmt.Sprintf("Identity parsing error %v", m.err)
+}
+
+type getIAMError struct {
+	err error
+}
+
+func (m *getIAMError) Error() string {
+	return fmt.Sprintf("get IAM error %v", m.err)
+}
+
+type compareAllowError struct {
+	err error
+}
+
+func (m *compareAllowError) Error() string {
+	return fmt.Sprintf("compare allow error %v", m.err)
+}
+
 func Inspect(directory string, init bool) (PolicyDiff, error) {
 	var iacPolicy Identity.Policy
 
@@ -24,7 +49,7 @@ func Inspect(directory string, init bool) (PolicyDiff, error) {
 		if errors.Is(err, &emptyIACError{}) {
 			log.Info().Msgf("nothing to do for IAC as %s for directory %s", err, directory)
 		} else {
-			return Difference, err
+			return Difference, &makePolicyError{err: err}
 		}
 	}
 
@@ -34,7 +59,7 @@ func Inspect(directory string, init bool) (PolicyDiff, error) {
 		if errors.Is(err, &Identity.EmptyParseError{}) {
 			log.Info().Msgf("nothing to do for IAC as parse for %s was empty", directory)
 		} else {
-			return Difference, err
+			return Difference, &identityParseError{err}
 		}
 	}
 
@@ -42,21 +67,29 @@ func Inspect(directory string, init bool) (PolicyDiff, error) {
 	if err != nil {
 		log.Info().Msgf("nothing to do for AWS as %s ", err)
 
-		return Difference, err
+		return Difference, &getIAMError{err: err}
 	}
 
 	Difference, err = CompareAllow(iamIdentity, iacPolicy)
 	if err != nil {
-		return Difference, err
+		return Difference, &compareAllowError{err: err}
 	}
 
 	return Difference, nil
 }
 
 func CompareAllow(identity Identity.IAM, policy Identity.Policy) (PolicyDiff, error) {
-	var identityAllows []string
+	// Add at start of function
+	if identity.Policies == nil || policy.Statements == nil {
+		return PolicyDiff{}, errors.New("invalid input: nil policies or statements")
+	}
 
-	var policyAllows []string
+	if len(identity.Policies) == 0 || len(policy.Statements) == 0 {
+		return PolicyDiff{}, errors.New("invalid input: empty policies or statements")
+	}
+
+	identityAllows := make([]string, 0, len(identity.Policies)*2)
+	policyAllows := make([]string, 0, len(policy.Statements))
 
 	var difference PolicyDiff
 

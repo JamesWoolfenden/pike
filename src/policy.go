@@ -4,7 +4,6 @@ import (
 	"bytes"
 	_ "embed" // required for embed
 	"encoding/json"
-	"errors"
 	"reflect"
 	"sort"
 	"strconv"
@@ -163,7 +162,7 @@ func GetPolicy(actions Sorted, resources bool) (OutputPolicy, error) {
 	}
 
 	if Empty {
-		return OutPolicy, errors.New("no permissions found")
+		return OutPolicy, &emptyPermissionsError{}
 	}
 
 	return OutPolicy, nil

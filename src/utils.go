@@ -2,7 +2,7 @@ package pike
 
 import (
 	"bytes"
-	"errors"
+	"fmt"
 	"math"
 	"math/rand"
 	"os"
@@ -34,6 +34,36 @@ func RandSeq(n int) string {
 	return temp
 }
 
+type readFileError struct {
+	file string
+	err  error
+}
+
+func (e *readFileError) Error() string {
+	return fmt.Sprintf("failed to read file %s %v", e.file, e.err)
+}
+
+type delimiterMismatchError struct{}
+
+func (e *delimiterMismatchError) Error() string {
+	return "pike delimiters mismatch in Readme"
+}
+
+type delimiterHooksMissingError struct{}
+
+func (e *delimiterHooksMissingError) Error() string {
+	return "pike hooks delimiter missing in Readme,  consider using the flag -auto"
+}
+
+type writeFileError struct {
+	file string
+	err  error
+}
+
+func (e *writeFileError) Error() string {
+	return fmt.Sprintf("failed to write file %s %v", e.file, e.err)
+}
+
 // ReplaceSection find a section in a readme and replaces the section.
 func ReplaceSection(source string, middle string, autoadd bool) error {
 	const (
@@ -45,7 +75,7 @@ func ReplaceSection(source string, middle string, autoadd bool) error {
 	dat, err := os.ReadFile(newSource)
 
 	if (err) != nil {
-		return err
+		return &readFileError{newSource, err}
 	}
 
 	file := string(dat)
@@ -56,16 +86,16 @@ func ReplaceSection(source string, middle string, autoadd bool) error {
 			if autoadd {
 				file = file + "\n\n" + start + stop
 			} else {
-				return errors.New("missing both hooks in Readme, consider using the flag -auto")
+				return &delimiterHooksMissingError{}
 			}
 		} else {
-			return errors.New("pike delimiters mismatch in Readme")
+			return &delimiterMismatchError{}
 		}
 	}
 
 	section1 := (strings.Split(file, start)[0]) + start
 	if strings.Contains(section1, stop) {
-		return errors.New("pike delimiters mismatch in Readme")
+		return &delimiterMismatchError{}
 	}
 
 	section2 := stop + (strings.Split(file, stop)[1])
@@ -77,8 +107,8 @@ func ReplaceSection(source string, middle string, autoadd bool) error {
 	Output.WriteString(section2)
 
 	err = os.WriteFile(source, Output.Bytes(), 0o644)
-	if (err) != nil {
-		return err
+	if err != nil {
+		return &writeFileError{source, err}
 	}
 
 	return err
