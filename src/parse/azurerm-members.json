@@ -533,6 +533,7 @@
         "azurerm_machine_learning_synapse_spark",
         "azurerm_machine_learning_workspace",
         "azurerm_machine_learning_workspace_network_outbound_rule_fqdn",
+        "azurerm_machine_learning_workspace_network_outbound_rule_private_endpoint",
         "azurerm_maintenance_assignment_dedicated_host",
         "azurerm_maintenance_assignment_dynamic_scope",
         "azurerm_maintenance_assignment_virtual_machine",
