@@ -62,14 +62,6 @@ func (m *invalidJSONError) Error() string {
 	return "invalid json, was empty or corrupt"
 }
 
-type zeroLengthAttributesError struct {
-	resource string
-}
-
-func (m *zeroLengthAttributesError) Error() string {
-	return fmt.Sprintf("no attributes provided for resource %s", m.resource)
-}
-
 type emptyTypeNameError struct{}
 
 func (m *emptyTypeNameError) Error() string {
@@ -97,14 +89,6 @@ type getAWSResourcePermissionsError struct {
 
 func (m *getAWSResourcePermissionsError) Error() string {
 	return fmt.Sprintf("failed to get AWS resource permissions %v", m.err)
-}
-
-type getAWSDataPermissionsError struct {
-	err error
-}
-
-func (m *getAWSDataPermissionsError) Error() string {
-	return fmt.Sprintf("failed to get AWS data permissions %v", m.err)
 }
 
 type unmarshallJSONError struct {
@@ -317,14 +301,6 @@ func (e *getPublicKeyDetailsError) Error() string {
 	return fmt.Sprintf("failed to get public key details: %v", e.err)
 }
 
-type splitHubError struct {
-	err error
-}
-
-func (e *splitHubError) Error() string {
-	return fmt.Sprintf("failed to split hub: %v", e.err)
-}
-
 type updateSecretError struct {
 	err error
 }
@@ -361,4 +337,29 @@ type encryptError struct {
 
 func (e *encryptError) Error() string {
 	return fmt.Sprintf("failed to encrypt: %v", e.err)
+}
+
+//
+//type zeroLengthAttributesError struct {
+//	resource string
+//}
+//
+//func (m *zeroLengthAttributesError) Error() string {
+//	return fmt.Sprintf("no attributes provided for resource %s", m.resource)
+//}
+
+type getAWSDataPermissionsError struct {
+	err error
+}
+
+func (m *getAWSDataPermissionsError) Error() string {
+	return fmt.Sprintf("failed to get AWS data permissions %v", m.err)
+}
+
+type splitHubError struct {
+	err error
+}
+
+func (e *splitHubError) Error() string {
+	return fmt.Sprintf("failed to split hub: %v", e.err)
 }

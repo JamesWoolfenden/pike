@@ -349,6 +349,10 @@ func GetTF(dirName string) ([]string, error) {
 func GetTFFiles(dirName string) ([]string, error) {
 	rawFiles, err := os.ReadDir(dirName)
 
+	if err != nil {
+		return nil, err
+	}
+
 	var files []string
 
 	for _, file := range rawFiles {
@@ -362,7 +366,7 @@ func GetTFFiles(dirName string) ([]string, error) {
 		files = append(files, newFile)
 	}
 
-	return files, err
+	return files, nil
 }
 
 // StringInSlice looks for item in slice.

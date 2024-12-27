@@ -2,6 +2,8 @@ package parse
 
 import (
 	"encoding/json"
+	"errors"
+	"fmt"
 	"os"
 	"path/filepath"
 	"regexp"
@@ -17,6 +19,11 @@ type provider struct {
 }
 
 func Parse(codebase string, name string) error {
+
+	if name == "" || codebase == "" {
+		return errors.New("name or codebase is required")
+	}
+
 	var err error
 
 	var jsonOut []byte
@@ -29,25 +36,25 @@ func Parse(codebase string, name string) error {
 	case "google":
 		{
 			match := `resource "(` + name + `_.*?)"`
-			myProvider.Resources, err = GetMatches(codebase, match, "markdown")
+			myProvider.Resources, err = getMatches(codebase, match, "markdown")
 			if err != nil {
 				return err
 			}
 
-			myProvider.DataSources, err = GetMatches(codebase, `data "(`+name+`_.*?)"`, "markdown")
+			myProvider.DataSources, err = getMatches(codebase, `data "(`+name+`_.*?)"`, "markdown")
 			if err != nil {
 				return err
 			}
 		}
 	default:
 		match := `resource "(` + name + `_.*?)"`
-		myProvider.Resources, err = GetMatches(codebase, match, "markdown")
+		myProvider.Resources, err = getMatches(codebase, match, "markdown")
 
 		if err != nil {
 			return err
 		}
 
-		myProvider.DataSources, err = GetMatches(codebase, `# Data Source:(.*)`, "markdown")
+		myProvider.DataSources, err = getMatches(codebase, `# Data Source:(.*)`, "markdown")
 		if err != nil {
 			return err
 		}
@@ -69,8 +76,8 @@ func Parse(codebase string, name string) error {
 	return nil
 }
 
-func GetMatches(source string, match string, extension string) ([]string, error) {
-	files, err := GetGoFiles(source, extension)
+func getMatches(source string, match string, extension string) ([]string, error) {
+	files, err := getGoFiles(source, extension)
 	if err != nil {
 		return nil, err
 	}
@@ -100,12 +107,16 @@ func GetMatches(source string, match string, extension string) ([]string, error)
 		}
 	}
 
-	keys := GetKeys(matches)
+	keys := getKeys(matches)
 
 	return keys, nil
 }
 
-func GetGoFiles(path string, extension string) ([]string, error) {
+func getGoFiles(path string, extension string) ([]string, error) {
+	if path == "" || extension == "" {
+		return nil, errors.New("path or extension are required")
+	}
+
 	libRegEx, err := regexp.Compile("^.+\\." + extension + "$")
 	if err != nil {
 		return nil, err
@@ -116,7 +127,13 @@ func GetGoFiles(path string, extension string) ([]string, error) {
 	log.Info().Msgf(absPath)
 
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("absolute path error %v", err)
+	}
+
+	_, err = os.Stat(absPath)
+
+	if err != nil {
+		return nil, fmt.Errorf("path does not exist error %v", err)
 	}
 
 	var files []string
@@ -139,7 +156,7 @@ func GetGoFiles(path string, extension string) ([]string, error) {
 	return files, nil
 }
 
-func GetKeys(m map[string]bool) []string {
+func getKeys(m map[string]bool) []string {
 	var keys []string
 
 	for k := range m {

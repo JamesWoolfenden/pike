@@ -1,7 +1,7 @@
 # todo google
 
-Resource percentage coverage   18.93
-Datasource percentage coverage 75.00
+Resource percentage coverage   18.89
+Datasource percentage coverage 74.54
 
 ./resource.ps1 google_access_context_manager_access_level_condition
 ./resource.ps1 google_access_context_manager_service_perimeter_dry_run_egress_policy
@@ -640,7 +640,9 @@ Datasource percentage coverage 75.00
 ./resource.ps1 google_network_security_firewall_endpoint_association
 ./resource.ps1 google_network_security_gateway_security_policy
 ./resource.ps1 google_network_security_gateway_security_policy_rule
+./resource.ps1 google_network_security_intercept_deployment
 ./resource.ps1 google_network_security_intercept_deployment_group
+./resource.ps1 google_network_security_intercept_endpoint_group
 ./resource.ps1 google_network_security_mirroring_deployment
 ./resource.ps1 google_network_security_mirroring_deployment_group
 ./resource.ps1 google_network_security_mirroring_endpoint_group
@@ -840,8 +842,10 @@ Datasource percentage coverage 75.00
 ./resource.ps1 google_apphub_discovered_workload -type data
 ./resource.ps1 google_artifact_registry_docker_image -type data
 ./resource.ps1 google_artifact_registry_locations -type data
+./resource.ps1 google_backup_dr_backup -type data
 ./resource.ps1 google_backup_dr_backup_plan_association -type data
 ./resource.ps1 google_backup_dr_backup_vault -type data
+./resource.ps1 google_backup_dr_data_source -type data
 ./resource.ps1 google_bigquery_tables -type data
 ./resource.ps1 google_certificate_manager_certificates -type data
 ./resource.ps1 google_cloud_identity_group_transitive_memberships -type data

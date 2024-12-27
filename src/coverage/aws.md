@@ -1,6 +1,6 @@
 # todo aws
 
-Resource percentage coverage   73.13
+Resource percentage coverage   72.93
 Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_amplify_backend_environment
@@ -44,6 +44,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_cloudhsm_v2_cluster
 ./resource.ps1 aws_cloudhsm_v2_hsm
 ./resource.ps1 aws_cloudtrail_organization_delegated_admin_account
+./resource.ps1 aws_cloudwatch_log_anomaly_detector
 ./resource.ps1 aws_codebuild_fleet
 ./resource.ps1 aws_codeconnections_connection
 ./resource.ps1 aws_codeconnections_host
@@ -223,6 +224,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_media_store_container
 ./resource.ps1 aws_media_store_container_policy
 ./resource.ps1 aws_medialive_channel
+./resource.ps1 aws_msk_single_scram_secret_association
 ./resource.ps1 aws_mskconnect_connector
 ./resource.ps1 aws_mskconnect_custom_plugin
 ./resource.ps1 aws_mskconnect_worker_configuration
@@ -283,6 +285,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_ram_sharing_with_organization
 ./resource.ps1 aws_rbin_rule
 ./resource.ps1 aws_rds_certificate
+./resource.ps1 aws_rds_cluster_snapshot_copy
 ./resource.ps1 aws_rds_custom_db_engine_version
 ./resource.ps1 aws_rds_export_task
 ./resource.ps1 aws_rds_instance_state
@@ -342,6 +345,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_service_discovery_service
 ./resource.ps1 aws_servicecatalog_provisioning_artifact
 ./resource.ps1 aws_servicecatalogappregistry_attribute_group
+./resource.ps1 aws_servicecatalogappregistry_attribute_group_association
 ./resource.ps1 aws_sesv2_account_suppression_attributes
 ./resource.ps1 aws_sesv2_account_vdm_attributes
 ./resource.ps1 aws_sesv2_configuration_set

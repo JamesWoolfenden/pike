@@ -241,7 +241,7 @@ func GetPermission(result ResourceV2) (Sorted, error) {
 			log.Print(err)
 		}
 	case providerGoogle, providerGCP:
-		myPermission.GCP, err = GetGCPPermissions(result)
+		myPermission.GCP, err = getGCPPermissions(result)
 		if err != nil {
 			log.Print(err)
 		}

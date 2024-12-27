@@ -510,7 +510,9 @@ func TestDetectBackend(t *testing.T) {
 	}
 
 	var empty []pike.ResourceV2
+
 	var found []pike.ResourceV2
+
 	var nought []pike.ResourceV2
 
 	found = append(found, item)
@@ -529,11 +531,14 @@ func TestDetectBackend(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
+
 			got, err := pike.DetectBackend(tt.args.resource, tt.args.block, tt.args.resources)
+
 			if (err != nil) != tt.wantErr {
 				t.Errorf("DetectBackend() error = %v, wantErr %v", err, tt.wantErr)
 				return
 			}
+
 			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("DetectBackend() got = %v, want %v", got, tt.want)
 			}

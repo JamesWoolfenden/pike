@@ -18,16 +18,16 @@ func (m invalidPermissionMapError) Error() string {
 	return fmt.Sprintf("Invalid Permission Map %v", m.err)
 }
 
-// GetGCPPermissions for GCP resources.
-func GetGCPPermissions(result ResourceV2) ([]string, error) {
+// getGCPPermissions for GCP resources.
+func getGCPPermissions(result ResourceV2) ([]string, error) {
 	if result.TypeName == resource {
-		return GetGCPResourcePermissions(result)
+		return getGCPResourcePermissions(result)
 	}
 
 	return GetGCPDataPermissions(result)
 }
 
-func GetGCPResourcePermissions(sourceData ResourceV2) ([]string, error) {
+func getGCPResourcePermissions(sourceData ResourceV2) ([]string, error) {
 	lookup := GCPLookup(sourceData.Name)
 	if lookup == nil {
 		return nil, &notImplementedResourceError{sourceData.Name}
@@ -47,7 +47,11 @@ func GetGCPResourcePermissions(sourceData ResourceV2) ([]string, error) {
 }
 
 func GCPLookup(result string) interface{} {
-	TFLookup := map[string]interface{}{
+	return gCPTfLookup[result]
+}
+
+var (
+	gCPTfLookup = map[string]interface{}{
 		"google_access_context_manager_access_level":              googleAccessContextManagerAccessLevel,
 		"google_access_context_manager_access_levels":             googleAccessContextManagerAccessLevels,
 		"google_access_context_manager_access_policy":             googleAccessContextManagerAccessPolicy,
@@ -243,6 +247,4 @@ func GCPLookup(result string) interface{} {
 		"google_bigquery_table_iam_member":                        googleBigqueryTableIam,
 		"google_bigquery_table_iam_policy":                        googleBigqueryTableIam,
 	}
-
-	return TFLookup[result]
-}
+)

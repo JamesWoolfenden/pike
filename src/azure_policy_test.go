@@ -7,6 +7,7 @@ import (
 	pike "github.com/jameswoolfenden/pike/src"
 )
 
+//nolint:funlen
 func TestAZUREPolicy(t *testing.T) {
 	t.Parallel()
 
@@ -29,6 +30,7 @@ func TestAZUREPolicy(t *testing.T) {
 				"  permissions {\n    actions = [\n    \"woof\"]\n    not_actions = []\n  }\n\n  assignable_scopes = [\n" +
 				"    data.azurerm_subscription.primary.id,\n  ]\n}\n\nlocals {\n  uuid = uuid()\n}\n\ndata" +
 				" \"azurerm_subscription\" \"primary\" {\n}\n",
+			wantErr: false,
 		},
 		{
 			name:    "fail",
@@ -61,11 +63,11 @@ func TestAZUREPolicy(t *testing.T) {
 				return
 			}
 
-			mingot := Minify(got)
-			minwant := Minify(tt.want)
+			minGot := Minify(got)
+			minWant := Minify(tt.want)
 
-			if mingot != minwant {
-				t.Errorf("AZUREPolicy() = %v, want %v", mingot, minwant)
+			if minGot != minWant {
+				t.Errorf("AZUREPolicy() = %v, want %v", minGot, minWant)
 			}
 		})
 	}
