@@ -404,6 +404,8 @@ func TestEmptyNameError_ImplementsError(t *testing.T) {
 }
 
 func TestAssertionFailedError(t *testing.T) {
+	t.Parallel()
+
 	testCases := []struct {
 		name     string
 		message  string
@@ -669,6 +671,7 @@ func TestARNErrors(t *testing.T) {
 	t.Run("invalid ARN error", func(t *testing.T) {
 		err := &invalidARNError{arn: "invalid:arn"}
 		expected := "invalid ARN: invalid:arn"
+
 		if err.Error() != expected {
 			t.Errorf("expected %q, got %q", expected, err.Error())
 		}
@@ -679,6 +682,7 @@ func TestAWSErrors(t *testing.T) {
 	t.Run("AWS config error", func(t *testing.T) {
 		err := &awsConfigError{err: &emptyNameError{}}
 		expected := "failed to load AWS config: Name cannot be empty"
+
 		if err.Error() != expected {
 			t.Errorf("expected %q, got %q", expected, err.Error())
 		}
@@ -687,6 +691,7 @@ func TestAWSErrors(t *testing.T) {
 	t.Run("get IAM version error", func(t *testing.T) {
 		err := &getIAMVersionError{err: &emptyNameError{}}
 		expected := "failed to get IAM version: Name cannot be empty"
+
 		if err.Error() != expected {
 			t.Errorf("expected %q, got %q", expected, err.Error())
 		}
@@ -697,6 +702,7 @@ func TestPolicyErrors(t *testing.T) {
 	t.Run("sort actions error", func(t *testing.T) {
 		err := &sortActionsError{json: "invalid-json"}
 		expected := "failed to sort actions: invalid-json"
+
 		if err.Error() != expected {
 			t.Errorf("expected %q, got %q", expected, err.Error())
 		}
@@ -705,6 +711,7 @@ func TestPolicyErrors(t *testing.T) {
 	t.Run("get policy version error", func(t *testing.T) {
 		err := &getPolicyVersionError{err: &emptyNameError{}}
 		expected := "failed to get policy version: Name cannot be empty"
+
 		if err.Error() != expected {
 			t.Errorf("expected %q, got %q", expected, err.Error())
 		}
@@ -713,6 +720,7 @@ func TestPolicyErrors(t *testing.T) {
 	t.Run("input validation error", func(t *testing.T) {
 		err := &inputValidationError{err: &emptyNameError{}}
 		expected := "input validation failed: Name cannot be empty"
+
 		if err.Error() != expected {
 			t.Errorf("expected %q, got %q", expected, err.Error())
 		}
@@ -721,6 +729,7 @@ func TestPolicyErrors(t *testing.T) {
 	t.Run("marshall policy error", func(t *testing.T) {
 		err := &marshallPolicyError{err: &emptyNameError{}}
 		expected := "failed to marshal policy: Name cannot be empty"
+
 		if err.Error() != expected {
 			t.Errorf("expected %q, got %q", expected, err.Error())
 		}
@@ -777,6 +786,7 @@ func TestSecretAndEncryptionErrors(t *testing.T) {
 	t.Run("getPublicKeyDetailsError", func(t *testing.T) {
 		err := &getPublicKeyDetailsError{err: testErr}
 		expected := "failed to get public key details: test error"
+
 		if err.Error() != expected {
 			t.Errorf("got %q, want %q", err.Error(), expected)
 		}
@@ -785,6 +795,7 @@ func TestSecretAndEncryptionErrors(t *testing.T) {
 	t.Run("updateSecretError", func(t *testing.T) {
 		err := &updateSecretError{err: testErr}
 		expected := "failed to update secret: test error"
+
 		if err.Error() != expected {
 			t.Errorf("got %q, want %q", err.Error(), expected)
 		}
@@ -793,6 +804,7 @@ func TestSecretAndEncryptionErrors(t *testing.T) {
 	t.Run("decodeStringError", func(t *testing.T) {
 		err := &decodeStringError{err: testErr}
 		expected := "failed to decode string: test error"
+
 		if err.Error() != expected {
 			t.Errorf("got %q, want %q", err.Error(), expected)
 		}
@@ -850,6 +862,7 @@ func TestSetRepoSecretError(t *testing.T) {
 	originalErr := errors.New("some error")
 	customErr := &setRepoSecretError{repository: "my-repo", err: originalErr}
 	expected := "failed to set repo secret:my-repo some error"
+
 	if customErr.Error() != expected {
 		t.Errorf("Expected %s, but got %s", expected, customErr.Error())
 	}
@@ -859,6 +872,7 @@ func TestSetAWSAuthError(t *testing.T) {
 	originalErr := errors.New("auth error")
 	customErr := &setAWSAuthError{err: originalErr}
 	expected := "failed to set AWS auth auth error"
+
 	if customErr.Error() != expected {
 		t.Errorf("Expected %s, but got %s", expected, customErr.Error())
 	}
@@ -868,6 +882,7 @@ func TestMakeRoleError(t *testing.T) {
 	originalErr := errors.New("role error")
 	customErr := &makeRoleError{err: originalErr}
 	expected := "failed to make role: role error"
+
 	if customErr.Error() != expected {
 		t.Errorf("Expected %s, but got %s", expected, customErr.Error())
 	}

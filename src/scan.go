@@ -2,7 +2,6 @@ package pike
 
 import (
 	"context"
-	"errors"
 	"fmt"
 	"os"
 	"os/exec"
@@ -127,7 +126,7 @@ func Scan(dirName string, output string, file *string, init bool, write bool, en
 		}
 	} else {
 
-		fmt.Print(OutPolicy.AsString(output))
+		fmt.Print(OutPolicy.AsString(output)) //permit
 	}
 
 	return err
@@ -157,6 +156,7 @@ func WriteOutput(outPolicy OutputPolicy, output, location string) error {
 		if outPolicy.AWS.Terraform != "" {
 			roleFile := path.Join(newPath, "aws_iam_role.terraform_pike.tf")
 			err = os.WriteFile(roleFile, roleTemplate, 0o644)
+
 			if err != nil {
 				return &writeFileError{file: roleFile, err: err}
 			}
@@ -165,7 +165,7 @@ func WriteOutput(outPolicy OutputPolicy, output, location string) error {
 	case "json":
 		outFile = newPath + "/pike.generated_policy.json"
 	default:
-		return errors.New("output format supports only json and terraform")
+		return &tfPolicyFormatError{}
 	}
 
 	err = os.WriteFile(outFile, d1, 0o644)
@@ -272,7 +272,7 @@ func MakePolicy(dirName string, file *string, init bool, EnableResources bool) (
 	} else {
 		myFile, err := filepath.Abs(*file)
 		if err != nil {
-			return Output, &absolutePathError{err: err}
+			return Output, &absolutePathError{directory: *file, err: err}
 		}
 
 		// is this a tfFile?

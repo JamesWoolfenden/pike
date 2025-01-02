@@ -41,7 +41,7 @@ func Readme(dirName string, output string, init bool, autoAppend bool) error {
 	case "json":
 		markdown = "\nThe Policy required is:\n\n```json\n" + OutPolicy.AsString(output) + "\n```\n"
 	default:
-		return errors.New("output formats are Terraform and JSON")
+		return &tfPolicyFormatError{}
 	}
 
 	err = ReplaceSection(file, markdown, autoAppend)
@@ -52,4 +52,10 @@ func Readme(dirName string, output string, init bool, autoAppend bool) error {
 	log.Info().Msg("readme updated")
 
 	return err
+}
+
+type tfPolicyFormatError struct{}
+
+func (m *tfPolicyFormatError) Error() string {
+	return "output formats are Terraform and JSON"
 }

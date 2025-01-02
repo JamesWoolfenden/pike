@@ -1,10 +1,11 @@
 # todo aws
 
-Resource percentage coverage   72.93
-Datasource percentage coverage 100.00
+Resource percentage coverage   72.68
+Datasource percentage coverage 99.47
 
 ./resource.ps1 aws_amplify_backend_environment
 ./resource.ps1 aws_amplify_webhook
+./resource.ps1 aws_api_gateway_domain_name_access_association
 ./resource.ps1 aws_appconfig_deployment
 ./resource.ps1 aws_appconfig_deployment_strategy
 ./resource.ps1 aws_appfabric_app_authorization
@@ -41,10 +42,12 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_cloud9_environment_membership
 ./resource.ps1 aws_cloudcontrolapi_resource
 ./resource.ps1 aws_cloudformation_stack_instances
+./resource.ps1 aws_cloudfront_vpc_origin
 ./resource.ps1 aws_cloudhsm_v2_cluster
 ./resource.ps1 aws_cloudhsm_v2_hsm
 ./resource.ps1 aws_cloudtrail_organization_delegated_admin_account
 ./resource.ps1 aws_cloudwatch_log_anomaly_detector
+./resource.ps1 aws_cloudwatch_log_index_policy
 ./resource.ps1 aws_codebuild_fleet
 ./resource.ps1 aws_codeconnections_connection
 ./resource.ps1 aws_codeconnections_host
@@ -224,6 +227,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_media_store_container
 ./resource.ps1 aws_media_store_container_policy
 ./resource.ps1 aws_medialive_channel
+./resource.ps1 aws_memorydb_multi_region_cluster
 ./resource.ps1 aws_msk_single_scram_secret_association
 ./resource.ps1 aws_mskconnect_connector
 ./resource.ps1 aws_mskconnect_custom_plugin
@@ -233,6 +237,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_networkmanager_attachment_accepter
 ./resource.ps1 aws_networkmanager_connection
 ./resource.ps1 aws_networkmanager_core_network_policy_attachment
+./resource.ps1 aws_networkmanager_dx_gateway_attachment
 ./resource.ps1 aws_networkmanager_transit_gateway_connect_peer_association
 ./resource.ps1 aws_networkmonitor_monitor
 ./resource.ps1 aws_networkmonitor_probe
@@ -398,3 +403,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_wafregional_web_acl_association
 ./resource.ps1 aws_worklink_fleet
 ./resource.ps1 aws_worklink_website_certificate_authority_association
+./resource.ps1 aws_cloudwatch_event_buses -type data
+./resource.ps1 aws_ecs_clusters -type data
+./resource.ps1 aws_servicecatalogappregistry_attribute_group_associations -type data

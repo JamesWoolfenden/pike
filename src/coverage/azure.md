@@ -1,6 +1,6 @@
 # todo azure
 
-Resource percentage coverage   4.61
+Resource percentage coverage   4.60
 Datasource percentage coverage 35.67
 
 ./resource.ps1 azurerm_aadb2c_directory
@@ -519,6 +519,7 @@ Datasource percentage coverage 35.67
 ./resource.ps1 azurerm_machine_learning_synapse_spark
 ./resource.ps1 azurerm_machine_learning_workspace
 ./resource.ps1 azurerm_machine_learning_workspace_network_outbound_rule_fqdn
+./resource.ps1 azurerm_machine_learning_workspace_network_outbound_rule_private_endpoint
 ./resource.ps1 azurerm_maintenance_assignment_dedicated_host
 ./resource.ps1 azurerm_maintenance_assignment_dynamic_scope
 ./resource.ps1 azurerm_maintenance_assignment_virtual_machine

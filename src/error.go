@@ -290,6 +290,7 @@ func (m *terraformApplyError) Error() string {
 	if m.target == "" {
 		return fmt.Sprintf("failed to apply terraform %v", m.err)
 	}
+
 	return fmt.Sprintf("failed to apply terraform %s %v", m.target, m.err)
 }
 
@@ -338,15 +339,6 @@ type encryptError struct {
 func (e *encryptError) Error() string {
 	return fmt.Sprintf("failed to encrypt: %v", e.err)
 }
-
-//
-//type zeroLengthAttributesError struct {
-//	resource string
-//}
-//
-//func (m *zeroLengthAttributesError) Error() string {
-//	return fmt.Sprintf("no attributes provided for resource %s", m.resource)
-//}
 
 type getAWSDataPermissionsError struct {
 	err error

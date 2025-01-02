@@ -3,7 +3,6 @@ package pike
 import (
 	"bytes"
 	_ "embed" // required for embed
-	"fmt"
 	"strings"
 	"text/template"
 )
@@ -25,8 +24,8 @@ func GCPPolicy(permissions []string) (policy string, err error) {
 
 	test := strings.Join(permissions, "\",\n    \"")
 
-	// GCPPolicyDetails contains the configuration for generating a GCP IAM policy
-	type GCPPolicyDetails struct {
+	// gCPPolicyDetails contains the configuration for generating a GCP IAM policy
+	type gCPPolicyDetails struct {
 		Name        string // Custom name for the policy
 		Project     string // GCP project identifier
 		RoleID      string // Unique role identifier
@@ -34,7 +33,7 @@ func GCPPolicy(permissions []string) (policy string, err error) {
 	}
 
 	PolicyName := DefaultPolicyName
-	theDetails := GCPPolicyDetails{
+	theDetails := gCPPolicyDetails{
 		Name:        PolicyName,
 		Project:     DefaultProject,
 		RoleID:      DefaultRoleID,
@@ -45,13 +44,13 @@ func GCPPolicy(permissions []string) (policy string, err error) {
 
 	tmpl, err := template.New("test").Parse(string(policyGCPTemplate))
 	if err != nil {
-		return "", fmt.Errorf("failed to parse template %w", err)
+		return "", &templateParseError{err}
 	}
 
 	err = tmpl.Execute(&output, theDetails)
 
 	if err != nil {
-		return "", err
+		return "", &templateExecuteError{err}
 	}
 
 	return output.String(), nil

@@ -77,11 +77,13 @@ func TestGetResources(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
 			got, err := pike.GetResources(tt.args.file, tt.args.dirName)
+
 			if (err != nil) != tt.wantErr {
 				t.Errorf("GetResources() error = %v, wantErr %v", err, tt.wantErr)
 
 				return
 			}
+
 			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("GetResources() = %v, want %v", got, tt.want)
 			}
@@ -125,7 +127,9 @@ func Test_getLocalModules(t *testing.T) {
 		{name: "rubbish", args: args{duffBlock, duffName}, wantErr: false},
 		{name: "notLocal", args: args{notBlock, notLocal}, wantErr: false},
 	}
+
 	for _, tt := range tests {
+		t.Parallel()
 		t.Run(tt.name, func(t *testing.T) {
 			got, err := pike.GetLocalModules(tt.args.block, tt.args.dirName)
 			if (err != nil) != tt.wantErr {
@@ -133,6 +137,7 @@ func Test_getLocalModules(t *testing.T) {
 
 				return
 			}
+
 			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("GetLocalModules() = %v, want %v", got, tt.want)
 			}
@@ -145,6 +150,7 @@ func getInitialBlock(file string) *hclsyntax.Block {
 	if body != nil {
 		blocks := body.Blocks
 		block := blocks[0]
+
 		return block
 	}
 
