@@ -104,6 +104,75 @@ func TestGetAWSPermissions(t *testing.T) {
 			},
 			wantErr: true,
 		},
+		{
+			name: "empty type name",
+			args: args{pike.ResourceV2{
+				Name:     "aws_s3_bucket",
+				TypeName: "",
+			}},
+			wantErr: true,
+		},
+		{
+			name: "empty resource name",
+			args: args{pike.ResourceV2{
+				Name:     "",
+				TypeName: "resource",
+			}},
+			wantErr: true,
+		},
+		{
+			name: "valid resource type",
+			args: args{pike.ResourceV2{
+				Name:     "aws_s3_bucket",
+				TypeName: "resource",
+			}},
+			want: []string{
+				"s3:DeleteBucket",
+				"s3:CreateBucket",
+				"s3:GetLifecycleConfiguration",
+				"s3:GetBucketTagging",
+				"s3:GetBucketWebsite",
+				"s3:GetBucketLogging",
+				"s3:ListBucket",
+				"s3:GetAccelerateConfiguration",
+				"s3:GetBucketVersioning",
+				"s3:GetBucketAcl",
+				"s3:GetBucketPolicy",
+				"s3:GetReplicationConfiguration",
+				"s3:GetBucketObjectLockConfiguration",
+				"s3:GetObjectAcl",
+				"s3:GetObject",
+				"s3:GetEncryptionConfiguration",
+				"s3:GetBucketRequestPayment",
+				"s3:GetBucketCORS",
+				"s3:DeleteBucket"},
+			wantErr: false,
+		},
+		{
+			name: "valid data type",
+			args: args{pike.ResourceV2{
+				Name:     "aws_s3_bucket",
+				TypeName: "data",
+			}},
+			want:    []string{"s3:ListBucket"},
+			wantErr: false,
+		},
+		{
+			name: "module type",
+			args: args{pike.ResourceV2{
+				Name:     "s3_module",
+				TypeName: "module",
+			}},
+			wantErr: false,
+		},
+		{
+			name: "unknown type",
+			args: args{pike.ResourceV2{
+				Name:     "aws_s3_bucket",
+				TypeName: "unknown",
+			}},
+			wantErr: true,
+		},
 	}
 
 	for _, tt := range tests {
@@ -170,6 +239,41 @@ func TestGetAWSResourcePermissions(t *testing.T) {
 					Attributes:   []string{"name"},
 				},
 			},
+			wantErr: true,
+		},
+		{
+			name: "valid resource",
+			args: args{pike.ResourceV2{
+				Name:       "aws_s3_bucket",
+				Attributes: []string{"bucket"},
+			}},
+			want: []string{
+				"s3:DeleteBucket",
+				"s3:CreateBucket",
+				"s3:GetLifecycleConfiguration",
+				"s3:GetBucketTagging",
+				"s3:GetBucketWebsite",
+				"s3:GetBucketLogging",
+				"s3:ListBucket",
+				"s3:GetAccelerateConfiguration",
+				"s3:GetBucketVersioning",
+				"s3:GetBucketAcl",
+				"s3:GetBucketPolicy",
+				"s3:GetReplicationConfiguration",
+				"s3:GetBucketObjectLockConfiguration",
+				"s3:GetObjectAcl",
+				"s3:GetObject",
+				"s3:GetEncryptionConfiguration",
+				"s3:GetBucketRequestPayment",
+				"s3:GetBucketCORS",
+				"s3:DeleteBucket"},
+			wantErr: false,
+		},
+		{
+			name: "non-existent resource",
+			args: args{pike.ResourceV2{
+				Name: "aws_nonexistent_resource",
+			}},
 			wantErr: true,
 		},
 	}
@@ -375,6 +479,44 @@ func TestIsTypeOK(t *testing.T) {
 
 			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("IsTypeOK() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestAwsLookup(t *testing.T) {
+	tests := []struct {
+		name         string
+		resourceName string
+		expectNil    bool
+	}{
+		{
+			name:         "empty resource name",
+			resourceName: "",
+			expectNil:    true,
+		},
+		{
+			name:         "valid resource",
+			resourceName: "aws_s3_bucket",
+			expectNil:    false,
+		},
+		{
+			name:         "non-existent resource",
+			resourceName: "aws_nonexistent_resource",
+			expectNil:    true,
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			result := pike.AwsLookup(tt.resourceName)
+
+			if tt.expectNil && result != nil {
+				t.Errorf("expected nil but got %v", result)
+			}
+
+			if !tt.expectNil && result == nil {
+				t.Errorf("expected non-nil result but got nil")
 			}
 		})
 	}

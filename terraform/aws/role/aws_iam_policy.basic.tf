@@ -7,7 +7,7 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "VisualEditor0",
         "Effect" : "Allow",
         "Action" : [
-          "ec2:DescribeSpotDatafeedSubscription",
+          "servicecatalog:GetAttributeGroup",
         ],
         "Resource" : [
           "*"

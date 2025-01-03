@@ -1,7 +1,7 @@
 # todo azure
 
-Resource percentage coverage   4.61
-Datasource percentage coverage 35.78
+Resource percentage coverage   4.60
+Datasource percentage coverage 35.67
 
 ./resource.ps1 azurerm_aadb2c_directory
 ./resource.ps1 azurerm_active_directory_domain_service
@@ -175,6 +175,7 @@ Datasource percentage coverage 35.78
 ./resource.ps1 azurerm_chaos_studio_experiment
 ./resource.ps1 azurerm_chaos_studio_target
 ./resource.ps1 azurerm_cognitive_account_customer_managed_key
+./resource.ps1 azurerm_cognitive_account_rai_blocklist
 ./resource.ps1 azurerm_cognitive_deployment
 ./resource.ps1 azurerm_communication_service
 ./resource.ps1 azurerm_communication_service_email_domain_association
@@ -369,6 +370,7 @@ Datasource percentage coverage 35.78
 ./resource.ps1 azurerm_express_route_port
 ./resource.ps1 azurerm_express_route_port_authorization
 ./resource.ps1 azurerm_extended_location_custom_location
+./resource.ps1 azurerm_fabric_capacity
 ./resource.ps1 azurerm_federated_identity_credential
 ./resource.ps1 azurerm_firewall
 ./resource.ps1 azurerm_firewall_application_rule_collection
@@ -517,6 +519,7 @@ Datasource percentage coverage 35.78
 ./resource.ps1 azurerm_machine_learning_synapse_spark
 ./resource.ps1 azurerm_machine_learning_workspace
 ./resource.ps1 azurerm_machine_learning_workspace_network_outbound_rule_fqdn
+./resource.ps1 azurerm_machine_learning_workspace_network_outbound_rule_private_endpoint
 ./resource.ps1 azurerm_maintenance_assignment_dedicated_host
 ./resource.ps1 azurerm_maintenance_assignment_dynamic_scope
 ./resource.ps1 azurerm_maintenance_assignment_virtual_machine
@@ -1126,6 +1129,7 @@ Datasource percentage coverage 35.78
 ./resource.ps1 azurerm_key_vault_managed_hardware_security_module_role_definition -type data
 ./resource.ps1 azurerm_kubernetes_cluster -type data
 ./resource.ps1 azurerm_kubernetes_cluster_node_pool -type data
+./resource.ps1 azurerm_kubernetes_fleet_manager -type data
 ./resource.ps1 azurerm_kubernetes_node_pool_snapshot -type data
 ./resource.ps1 azurerm_kubernetes_service_versions -type data
 ./resource.ps1 azurerm_kusto_cluster -type data

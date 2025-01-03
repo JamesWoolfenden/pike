@@ -2,6 +2,9 @@ package pike
 
 import (
 	"encoding/json"
+	"fmt"
+
+	"github.com/rs/zerolog/log"
 )
 
 const (
@@ -12,7 +15,7 @@ const (
 )
 
 var (
-	tFLookup = map[string]interface{}{
+	tFLookup = map[string]interface{}{ //nolint:gochecknoglobals
 		"aws_accessanalyzer_analyzer":                                      awsAccessAnalyzer,
 		"aws_accessanalyzer_archive_rule":                                  awsAccessAnalyzerArchiveRule,
 		"aws_account_alternate_contact":                                    awsAccountAlternativeContact,
@@ -1174,9 +1177,10 @@ func GetPermissionMap(raw []byte, attributes []string, resource string) ([]strin
 		return nil, &invalidJSONError{}
 	}
 
-	if len(attributes) == 0 {
-		return nil, &zeroLengthAttributesError{resource}
-	}
+	//zero length is perfectly valid if no permissions required
+	//if len(attributes) == 0 {
+	//	return nil, &zeroLengthAttributesError{resource}
+	//}
 
 	var mappings []interface{}
 	err := json.Unmarshal(raw, &mappings)
@@ -1218,20 +1222,44 @@ func GetPermissionMap(raw []byte, attributes []string, resource string) ([]strin
 		}
 	}
 
-	found = getActionPermissions(temp, found)
+	found, err = getActionPermissions(temp, found)
+
+	if err != nil {
+		return found, fmt.Errorf("getActionPermissions: %w", err)
+	}
 
 	return found, nil
 }
 
-func getActionPermissions(temp map[string]interface{}, found []string) []string {
-	for _, action := range []string{"apply", "plan", "modify", "destroy"} {
-		if temp[action] != nil {
-			for _, entry := range temp[action].([]interface{}) {
+const (
+	apply   = "apply"
+	plan    = "plan"
+	modify  = "modify"
+	destroy = "destroy"
+)
+
+func getActionPermissions(permissionMap map[string]interface{}, found []string) ([]string, error) {
+
+	if permissionMap == nil {
+		return nil, fmt.Errorf("permissionMap was nil")
+	}
+
+	for _, action := range []string{apply, plan, modify, destroy} {
+		if permissionMap[action] != nil {
+
+			temp, ok := permissionMap[action].([]interface{})
+
+			if !ok {
+				log.Error().Msg("failed to cast permission map to list")
+			}
+
+			for _, entry := range temp {
 				found = append(found, entry.(string))
 			}
 		}
 	}
-	return found
+
+	return found, nil
 }
 
 func IsTypeOK(mappings interface{}) (map[string]interface{}, error) {

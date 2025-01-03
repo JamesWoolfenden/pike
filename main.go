@@ -7,7 +7,7 @@ import (
 	"sort"
 	"time"
 
-	pike "github.com/jameswoolfenden/pike/src" //nolint:goimports
+	pike "github.com/jameswoolfenden/pike/src"
 	"github.com/jameswoolfenden/pike/src/parse"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
@@ -198,6 +198,7 @@ func main() {
 				Action: func(*cli.Context) error {
 					theSame, err := pike.Compare(directory, arn, init)
 					log.Print("The same: ", theSame)
+
 					return err
 				},
 			},

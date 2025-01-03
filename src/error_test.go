@@ -366,6 +366,7 @@ func TestEmptyPermissionsError(t *testing.T) {
 }
 
 func TestEmptyTypeNameError(t *testing.T) {
+	t.Parallel()
 	t.Run("returns correct error message", func(t *testing.T) {
 		t.Parallel()
 
@@ -388,6 +389,8 @@ func TestEmptyTypeNameError(t *testing.T) {
 }
 
 func TestEmptyNameError(t *testing.T) {
+	t.Parallel()
+
 	err := &emptyNameError{}
 
 	expected := "Name cannot be empty"
@@ -401,6 +404,8 @@ func TestEmptyNameError_ImplementsError(t *testing.T) {
 }
 
 func TestAssertionFailedError(t *testing.T) {
+	t.Parallel()
+
 	testCases := []struct {
 		name     string
 		message  string
@@ -452,6 +457,7 @@ func TestAssertionFailedError(t *testing.T) {
 func TestInvalidJSONError(t *testing.T) {
 	t.Run("implements error interface", func(t *testing.T) {
 		t.Parallel()
+
 		var _ error = &invalidJSONError{}
 	})
 
@@ -501,6 +507,7 @@ func TestUnmarshallJSONError(t *testing.T) {
 				err:      tc.err,
 				resource: tc.resource,
 			}
+
 			if got := err.Error(); got != tc.want {
 				t.Errorf("unmarshallJSONError.Error() = %v, want %v", got, tc.want)
 			}
@@ -511,6 +518,7 @@ func TestUnmarshallJSONError(t *testing.T) {
 func TestAttributesFieldMissingError(t *testing.T) {
 	err := &attributesFieldMissingError{}
 	want := "attributes field missing"
+
 	if got := err.Error(); got != want {
 		t.Errorf("attributesFieldMissingError.Error() = %v, want %v", got, want)
 	}
@@ -663,6 +671,7 @@ func TestARNErrors(t *testing.T) {
 	t.Run("invalid ARN error", func(t *testing.T) {
 		err := &invalidARNError{arn: "invalid:arn"}
 		expected := "invalid ARN: invalid:arn"
+
 		if err.Error() != expected {
 			t.Errorf("expected %q, got %q", expected, err.Error())
 		}
@@ -673,6 +682,7 @@ func TestAWSErrors(t *testing.T) {
 	t.Run("AWS config error", func(t *testing.T) {
 		err := &awsConfigError{err: &emptyNameError{}}
 		expected := "failed to load AWS config: Name cannot be empty"
+
 		if err.Error() != expected {
 			t.Errorf("expected %q, got %q", expected, err.Error())
 		}
@@ -681,6 +691,7 @@ func TestAWSErrors(t *testing.T) {
 	t.Run("get IAM version error", func(t *testing.T) {
 		err := &getIAMVersionError{err: &emptyNameError{}}
 		expected := "failed to get IAM version: Name cannot be empty"
+
 		if err.Error() != expected {
 			t.Errorf("expected %q, got %q", expected, err.Error())
 		}
@@ -691,6 +702,7 @@ func TestPolicyErrors(t *testing.T) {
 	t.Run("sort actions error", func(t *testing.T) {
 		err := &sortActionsError{json: "invalid-json"}
 		expected := "failed to sort actions: invalid-json"
+
 		if err.Error() != expected {
 			t.Errorf("expected %q, got %q", expected, err.Error())
 		}
@@ -699,6 +711,7 @@ func TestPolicyErrors(t *testing.T) {
 	t.Run("get policy version error", func(t *testing.T) {
 		err := &getPolicyVersionError{err: &emptyNameError{}}
 		expected := "failed to get policy version: Name cannot be empty"
+
 		if err.Error() != expected {
 			t.Errorf("expected %q, got %q", expected, err.Error())
 		}
@@ -707,6 +720,7 @@ func TestPolicyErrors(t *testing.T) {
 	t.Run("input validation error", func(t *testing.T) {
 		err := &inputValidationError{err: &emptyNameError{}}
 		expected := "input validation failed: Name cannot be empty"
+
 		if err.Error() != expected {
 			t.Errorf("expected %q, got %q", expected, err.Error())
 		}
@@ -715,8 +729,161 @@ func TestPolicyErrors(t *testing.T) {
 	t.Run("marshall policy error", func(t *testing.T) {
 		err := &marshallPolicyError{err: &emptyNameError{}}
 		expected := "failed to marshal policy: Name cannot be empty"
+
 		if err.Error() != expected {
 			t.Errorf("expected %q, got %q", expected, err.Error())
 		}
 	})
+}
+
+func TestTerraformErrors(t *testing.T) {
+	testErr := errors.New("test error")
+
+	t.Run("terraformPlanError", func(t *testing.T) {
+		err := &terraformPlanError{err: testErr}
+		expected := "failed to plan terraform test error"
+		if err.Error() != expected {
+			t.Errorf("got %q, want %q", err.Error(), expected)
+		}
+	})
+
+	t.Run("terraformNewError", func(t *testing.T) {
+		err := &terraformNewError{err: testErr}
+		expected := "failed to create terraform test error"
+		if err.Error() != expected {
+			t.Errorf("got %q, want %q", err.Error(), expected)
+		}
+	})
+
+	t.Run("terraformOutputError", func(t *testing.T) {
+		err := &terraformOutputError{}
+		expected := "terraform output is empty"
+		if err.Error() != expected {
+			t.Errorf("got %q, want %q", err.Error(), expected)
+		}
+	})
+
+	t.Run("terraformApplyError with target", func(t *testing.T) {
+		err := &terraformApplyError{target: "module.test", err: testErr}
+		expected := "failed to apply terraform module.test test error"
+		if err.Error() != expected {
+			t.Errorf("got %q, want %q", err.Error(), expected)
+		}
+	})
+
+	t.Run("terraformApplyError without target", func(t *testing.T) {
+		err := &terraformApplyError{target: "", err: testErr}
+		expected := "failed to apply terraform test error"
+		if err.Error() != expected {
+			t.Errorf("got %q, want %q", err.Error(), expected)
+		}
+	})
+}
+
+func TestSecretAndEncryptionErrors(t *testing.T) {
+	testErr := errors.New("test error")
+
+	t.Run("getPublicKeyDetailsError", func(t *testing.T) {
+		err := &getPublicKeyDetailsError{err: testErr}
+		expected := "failed to get public key details: test error"
+
+		if err.Error() != expected {
+			t.Errorf("got %q, want %q", err.Error(), expected)
+		}
+	})
+
+	t.Run("updateSecretError", func(t *testing.T) {
+		err := &updateSecretError{err: testErr}
+		expected := "failed to update secret: test error"
+
+		if err.Error() != expected {
+			t.Errorf("got %q, want %q", err.Error(), expected)
+		}
+	})
+
+	t.Run("decodeStringError", func(t *testing.T) {
+		err := &decodeStringError{err: testErr}
+		expected := "failed to decode string: test error"
+
+		if err.Error() != expected {
+			t.Errorf("got %q, want %q", err.Error(), expected)
+		}
+	})
+
+	t.Run("encryptPlaintextError", func(t *testing.T) {
+		err := &encryptPlaintextError{err: testErr}
+		expected := "failed to encrypt plaintext: test error"
+
+		if err.Error() != expected {
+			t.Errorf("got %q, want %q", err.Error(), expected)
+		}
+	})
+
+	t.Run("emptyKeyError", func(t *testing.T) {
+		err := &emptyKeyError{}
+		expected := "empty key"
+
+		if err.Error() != expected {
+			t.Errorf("got %q, want %q", err.Error(), expected)
+		}
+	})
+
+	t.Run("encryptError", func(t *testing.T) {
+		err := &encryptError{err: testErr}
+		expected := "failed to encrypt: test error"
+
+		if err.Error() != expected {
+			t.Errorf("got %q, want %q", err.Error(), expected)
+		}
+	})
+}
+
+func TestGetAWSDataPermissionsError(t *testing.T) {
+	originalErr := errors.New("original error")
+	customErr := &getAWSDataPermissionsError{err: originalErr}
+	expected := "failed to get AWS data permissions original error"
+
+	if customErr.Error() != expected {
+		t.Errorf("Expected %s, but got %s", expected, customErr.Error())
+	}
+}
+
+func TestSplitHubError(t *testing.T) {
+	originalErr := errors.New("another error")
+	customErr := &splitHubError{err: originalErr}
+	expected := "failed to split hub: another error"
+
+	if customErr.Error() != expected {
+		t.Errorf("Expected %s, but got %s", expected, customErr.Error())
+	}
+}
+
+func TestSetRepoSecretError(t *testing.T) {
+	originalErr := errors.New("some error")
+	customErr := &setRepoSecretError{repository: "my-repo", err: originalErr}
+	expected := "failed to set repo secret:my-repo some error"
+
+	if customErr.Error() != expected {
+		t.Errorf("Expected %s, but got %s", expected, customErr.Error())
+	}
+}
+
+func TestSetAWSAuthError(t *testing.T) {
+	originalErr := errors.New("auth error")
+	customErr := &setAWSAuthError{err: originalErr}
+	expected := "failed to set AWS auth auth error"
+
+	if customErr.Error() != expected {
+		t.Errorf("Expected %s, but got %s", expected, customErr.Error())
+	}
+}
+
+func TestMakeRoleError(t *testing.T) {
+	originalErr := errors.New("role error")
+	customErr := &makeRoleError{err: originalErr}
+	expected := "failed to make role: role error"
+
+	if customErr.Error() != expected {
+		t.Errorf("Expected %s, but got %s", expected, customErr.Error())
+	}
 }

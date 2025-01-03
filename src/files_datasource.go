@@ -1536,3 +1536,6 @@ var dataAwsLbListenerRule []byte
 
 //go:embed mapping/aws/data/ec2/aws_spot_datafeed_subscription.json
 var dataAwsSpotDatafeedSubscription []byte
+
+//go:embed mapping/aws/data/servicecatalog/aws_servicecatalogappregistry_attribute_group.json
+var dataServicecatalogappregistryAttributeGroup []byte

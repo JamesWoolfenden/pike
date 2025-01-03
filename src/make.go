@@ -16,14 +16,19 @@ import (
 
 // Make creates the required role.
 func Make(directory string) (*string, error) {
+	if directory == "" {
+		return nil, errors.New("directory is required")
+	}
+
 	err := Scan(directory, "terraform", nil, true, true, false)
+
 	if err != nil {
 		return nil, fmt.Errorf("failed to scan directory: %w", err)
 	}
 
 	directory, err = filepath.Abs(directory)
 	if err != nil {
-		return nil, fmt.Errorf("failed to find path: %w", err)
+		return nil, &absolutePathError{directory, err}
 	}
 
 	policyPath, err := filepath.Abs(path.Join(directory, ".pike/"))
@@ -43,8 +48,19 @@ func Make(directory string) (*string, error) {
 
 	if (state.Values.Outputs["arn"]) != nil {
 		arn := state.Values.Outputs["arn"]
-		log.Info().Msgf("aws role create/updated %s", arn.Value.(string))
-		role := arn.Value.(string)
+
+		myValue, ok := arn.Value.(string)
+		if !ok {
+			return nil, fmt.Errorf("arn value is not a string")
+		}
+
+		log.Info().Msgf("aws role create/updated %s", myValue)
+
+		role, ok := arn.Value.(string)
+
+		if !ok {
+			return nil, fmt.Errorf("arn value is not a string")
+		}
 
 		return &role, nil
 	}

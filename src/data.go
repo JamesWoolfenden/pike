@@ -18,13 +18,19 @@ const (
 	providerGCP    = "gcp"
 )
 
+type fileStringEmptyError struct{}
+
+func (e *fileStringEmptyError) Error() string {
+	return "no file provided"
+}
+
 // GetResources retrieves all the resources in a tf file.
 func GetResources(file string, dirName string) ([]ResourceV2, error) {
 
 	var Resources []ResourceV2
 
 	if file == "" {
-		return Resources, fmt.Errorf("no file provided")
+		return Resources, &fileStringEmptyError{}
 	}
 
 	temp, err := GetResourceBlocks(file)
@@ -241,7 +247,7 @@ func GetPermission(result ResourceV2) (Sorted, error) {
 			log.Print(err)
 		}
 	case providerGoogle, providerGCP:
-		myPermission.GCP, err = GetGCPPermissions(result)
+		myPermission.GCP, err = getGCPPermissions(result)
 		if err != nil {
 			log.Print(err)
 		}

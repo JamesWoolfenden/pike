@@ -1,15 +1,13 @@
 [
   {
-    "apply": [
-      "ec2:GetEbsDefaultKmsKeyId"
-    ],
+    "apply": [],
     "attributes": {
       "tags": []
     },
     "destroy": [],
     "modify": [],
     "plan": [
-      "ec2:GetEbsDefaultKmsKeyId"
+      "servicecatalog:GetAttributeGroup"
     ]
   }
 ]

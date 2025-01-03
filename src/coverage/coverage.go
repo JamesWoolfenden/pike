@@ -48,10 +48,18 @@ func coverageAWS() error {
 	err := os.WriteFile("aws.md", []byte(target), 0o700)
 
 	if err != nil {
-		return err
+		return &fileWriteError{err}
 	}
 
 	return nil
+}
+
+type fileWriteError struct {
+	err error
+}
+
+func (e *fileWriteError) Error() string {
+	return e.err.Error()
 }
 
 //goland:noinspection GoUnusedFunction
@@ -83,7 +91,7 @@ func coverageAzure() error {
 	err := os.WriteFile("azure.md", []byte(target), 0o700)
 
 	if err != nil {
-		return err
+		return &fileWriteError{err}
 	}
 
 	return nil
@@ -118,7 +126,7 @@ func coverageGcp() error {
 	err := os.WriteFile("google.md", []byte(target), 0o700)
 
 	if err != nil {
-		return err
+		return &fileWriteError{}
 	}
 
 	return nil

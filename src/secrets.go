@@ -15,6 +15,14 @@ import (
 	"golang.org/x/oauth2"
 )
 
+type awsCredentialsError struct {
+	err error
+}
+
+func (e *awsCredentialsError) Error() string {
+	return fmt.Sprintf("failed to get AWS credentials: %v", e.err)
+}
+
 // Remote updates a repo with AWS credentials.
 func Remote(target string, repository string, region string) error {
 	iamRole, err := Make(target)
@@ -30,7 +38,7 @@ func Remote(target string, repository string, region string) error {
 	Credentials, err := getAWSCredentials(*iamRole, region)
 
 	if err != nil {
-		return fmt.Errorf("failed to get AWS credentials: %v", err)
+		return &awsCredentialsError{err}
 	}
 
 	myCredentials := Credentials.Credentials
@@ -81,7 +89,7 @@ func SetRepoSecret(repository string, keyText string, keyName string) (*github.R
 	encryptedValue := base64.StdEncoding.EncodeToString(encryptedBytes)
 
 	// Create an EncryptedSecret and encrypt the plaintext value into it
-	eSecret := &github.EncryptedSecret{
+	eSecret := &github.EncryptedSecret{ //permit
 		Name:           keyName,
 		KeyID:          keyID,
 		EncryptedValue: encryptedValue,
@@ -133,7 +141,7 @@ func GetGithubClient() (context.Context, *github.Client) {
 
 	ctx := context.Background()
 	ts := oauth2.StaticTokenSource(
-		&oauth2.Token{AccessToken: token},
+		&oauth2.Token{AccessToken: token}, //permit
 	)
 	tc := oauth2.NewClient(ctx, ts)
 

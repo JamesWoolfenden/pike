@@ -2,7 +2,6 @@
   {
     "apply": [
       "acm:DescribeCertificate",
-      "acm:DescribeCertificate",
       "acm:GetCertificate",
       "acm:ListTagsForCertificate"
     ],

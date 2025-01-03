@@ -579,6 +579,7 @@ var tFLookupDataAWS = map[string]interface{}{
 	"aws_ssm_patch_baselines":                                               dataAwsSsmPatchBaselines,
 	"aws_lb_listener_rule":                                                  dataAwsLbListenerRule,
 	"aws_spot_datafeed_subscription":                                        dataAwsSpotDatafeedSubscription,
+	"aws_servicecatalogappregistry_attribute_group":                         dataServicecatalogappregistryAttributeGroup,
 }
 
 // GetAWSDataPermissions gets permissions required for datasource's.
