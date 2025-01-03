@@ -2034,7 +2034,5 @@
     "aws_xray_encryption_config",
     "aws_xray_group",
     "aws_xray_sampling_rule"
-        "aws_cloudwatch_event_buses",
-        "aws_ecs_clusters",
   ]
 }

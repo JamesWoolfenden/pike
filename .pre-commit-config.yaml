@@ -39,7 +39,7 @@ repos:
       - id: terraform-fmt
         language_version: python3.11
   - repo: https://github.com/gruntwork-io/pre-commit
-    rev: v0.1.24
+    rev: v0.1.25
     hooks:
       - id: gofmt
       - id: goimports

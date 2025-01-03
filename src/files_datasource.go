@@ -1539,3 +1539,6 @@ var dataAwsSpotDatafeedSubscription []byte
 
 //go:embed mapping/aws/data/servicecatalog/aws_servicecatalogappregistry_attribute_group.json
 var dataServicecatalogappregistryAttributeGroup []byte
+
+//go:embed mapping/aws/data/servicecatalog/aws_servicecatalogappregistry_attribute_group_associations.json
+var dataServicecatalogappregistryAttributeGroupAssociations []byte
