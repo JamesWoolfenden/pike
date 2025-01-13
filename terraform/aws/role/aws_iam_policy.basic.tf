@@ -8,6 +8,12 @@ resource "aws_iam_policy" "basic" {
         "Effect" : "Allow",
         "Action" : [
           "servicecatalog:GetAttributeGroup",
+
+          "route53:ListResourceRecordSets",
+
+          "events:ListEventBuses",
+
+          "ecs:ListClusters"
         ],
         "Resource" : [
           "*"

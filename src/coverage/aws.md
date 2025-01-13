@@ -1,7 +1,7 @@
 # todo aws
 
-Resource percentage coverage   72.68
-Datasource percentage coverage 99.65
+Resource percentage coverage   72.33
+Datasource percentage coverage 99.47
 
 ./resource.ps1 aws_amplify_backend_environment
 ./resource.ps1 aws_amplify_webhook
@@ -38,7 +38,9 @@ Datasource percentage coverage 99.65
 ./resource.ps1 aws_bedrock_guardrail
 ./resource.ps1 aws_bedrock_guardrail_version
 ./resource.ps1 aws_bedrock_inference_profile
+./resource.ps1 aws_bedrockagent_agent_collaborator
 ./resource.ps1 aws_bedrockagent_agent_knowledge_base_association
+./resource.ps1 aws_cleanrooms_membership
 ./resource.ps1 aws_cloud9_environment_membership
 ./resource.ps1 aws_cloudcontrolapi_resource
 ./resource.ps1 aws_cloudformation_stack_instances
@@ -47,6 +49,10 @@ Datasource percentage coverage 99.65
 ./resource.ps1 aws_cloudhsm_v2_hsm
 ./resource.ps1 aws_cloudtrail_organization_delegated_admin_account
 ./resource.ps1 aws_cloudwatch_log_anomaly_detector
+./resource.ps1 aws_cloudwatch_log_delivery
+./resource.ps1 aws_cloudwatch_log_delivery_destination
+./resource.ps1 aws_cloudwatch_log_delivery_destination_policy
+./resource.ps1 aws_cloudwatch_log_delivery_source
 ./resource.ps1 aws_cloudwatch_log_index_policy
 ./resource.ps1 aws_codebuild_fleet
 ./resource.ps1 aws_codeconnections_connection
@@ -400,8 +406,7 @@ Datasource percentage coverage 99.65
 ./resource.ps1 aws_vpc_ipv6_cidr_block_association
 ./resource.ps1 aws_vpc_network_performance_metric_subscription
 ./resource.ps1 aws_vpc_security_group_vpc_association
+./resource.ps1 aws_vpclattice_resource_gateway
 ./resource.ps1 aws_wafregional_web_acl_association
 ./resource.ps1 aws_worklink_fleet
 ./resource.ps1 aws_worklink_website_certificate_authority_association
-./resource.ps1 aws_cloudwatch_event_buses -type data
-./resource.ps1 aws_ecs_clusters -type data

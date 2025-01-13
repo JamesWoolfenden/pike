@@ -1542,3 +1542,12 @@ var dataServicecatalogappregistryAttributeGroup []byte
 
 //go:embed mapping/aws/data/servicecatalog/aws_servicecatalogappregistry_attribute_group_associations.json
 var dataServicecatalogappregistryAttributeGroupAssociations []byte
+
+//go:embed mapping/aws/data/route53/aws_route53_records.json
+var dataAwsRoute53Records []byte
+
+//go:embed mapping/aws/data/cloudwatch/aws_cloudwatch_event_buses.json
+var dataAwsCloudwatchEventBuses []byte
+
+//go:embed  mapping/aws/data/ecs/aws_ecs_clusters.json
+var dataAwsEcsClusters []byte
