@@ -858,6 +858,7 @@
         "aws_main_route_table_association",
         "aws_media_convert_queue",
         "aws_media_package_channel",
+        "aws_media_packagev2_channel_group",
         "aws_media_store_container",
         "aws_media_store_container_policy",
         "aws_medialive_channel",
