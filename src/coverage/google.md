@@ -1,7 +1,7 @@
 # todo google
 
-Resource percentage coverage   18.82
-Datasource percentage coverage 74.09
+Resource percentage coverage   18.44
+Datasource percentage coverage 72.75
 
 ./resource.ps1 google_access_context_manager_access_level_condition
 ./resource.ps1 google_access_context_manager_service_perimeter_dry_run_egress_policy
@@ -16,11 +16,11 @@ Datasource percentage coverage 74.09
 ./resource.ps1 google_apigee_addons_config
 ./resource.ps1 google_apigee_app_group
 ./resource.ps1 google_apigee_developer
-./resource.ps1 google_apigee_endpoint_attachment
 ./resource.ps1 google_apigee_env_keystore
 ./resource.ps1 google_apigee_envgroup
 ./resource.ps1 google_apigee_envgroup_attachment
 ./resource.ps1 google_apigee_environment
+./resource.ps1 google_apigee_environment_addons_config
 ./resource.ps1 google_apigee_environment_iam_binding
 ./resource.ps1 google_apigee_environment_iam_member
 ./resource.ps1 google_apigee_environment_iam_policy
@@ -34,6 +34,7 @@ Datasource percentage coverage 74.09
 ./resource.ps1 google_apigee_sharedflow
 ./resource.ps1 google_apigee_sync_authorization
 ./resource.ps1 google_apigee_target_server
+./resource.ps1 google_apihub_api_hub_instance
 ./resource.ps1 google_apikeys_key
 ./resource.ps1 google_app_engine_application
 ./resource.ps1 google_app_engine_application_url_dispatch_rules
@@ -56,6 +57,7 @@ Datasource percentage coverage 74.09
 ./resource.ps1 google_beyondcorp_app_connection
 ./resource.ps1 google_beyondcorp_app_connector
 ./resource.ps1 google_beyondcorp_app_gateway
+./resource.ps1 google_beyondcorp_security_gateway
 ./resource.ps1 google_biglake_catalog
 ./resource.ps1 google_biglake_database
 ./resource.ps1 google_biglake_table
@@ -83,6 +85,12 @@ Datasource percentage coverage 74.09
 ./resource.ps1 google_certificate_manager_certificate_map_entry
 ./resource.ps1 google_certificate_manager_dns_authorization
 ./resource.ps1 google_certificate_manager_trust_config
+./resource.ps1 google_chronicle_data_access_label
+./resource.ps1 google_chronicle_data_access_scope
+./resource.ps1 google_chronicle_reference_list
+./resource.ps1 google_chronicle_retrohunt
+./resource.ps1 google_chronicle_rule
+./resource.ps1 google_chronicle_rule_deployment
 ./resource.ps1 google_chronicle_watchlist
 ./resource.ps1 google_cloud_asset_folder_feed
 ./resource.ps1 google_cloud_asset_organization_feed
@@ -90,6 +98,7 @@ Datasource percentage coverage 74.09
 ./resource.ps1 google_cloud_identity_group
 ./resource.ps1 google_cloud_identity_group_membership
 ./resource.ps1 google_cloud_ids_endpoint
+./resource.ps1 google_cloud_quotas_quota_adjuster_settings
 ./resource.ps1 google_cloud_quotas_quota_preference
 ./resource.ps1 google_cloud_run_domain_mapping
 ./resource.ps1 google_cloud_run_service
@@ -127,6 +136,11 @@ Datasource percentage coverage 74.09
 ./resource.ps1 google_cloudfunctions2_function_iam_policy
 ./resource.ps1 google_cloudfunctions_function_iam_binding
 ./resource.ps1 google_cloudiot_registry
+./resource.ps1 google_colab_runtime
+./resource.ps1 google_colab_runtime_template
+./resource.ps1 google_colab_runtime_template_iam_binding
+./resource.ps1 google_colab_runtime_template_iam_member
+./resource.ps1 google_colab_runtime_template_iam_policy
 ./resource.ps1 google_composer_environment
 ./resource.ps1 google_composer_user_workloads_config_map
 ./resource.ps1 google_composer_user_workloads_secret
@@ -175,6 +189,9 @@ Datasource percentage coverage 74.09
 ./resource.ps1 google_compute_instance_iam_member
 ./resource.ps1 google_compute_instance_iam_policy
 ./resource.ps1 google_compute_instance_settings
+./resource.ps1 google_compute_instance_template_iam_binding
+./resource.ps1 google_compute_instance_template_iam_member
+./resource.ps1 google_compute_instance_template_iam_policy
 ./resource.ps1 google_compute_interconnect
 ./resource.ps1 google_compute_interconnect_attachment
 ./resource.ps1 google_compute_machine_image
@@ -410,6 +427,7 @@ Datasource percentage coverage 74.09
 ./resource.ps1 google_edgecontainer_cluster
 ./resource.ps1 google_edgecontainer_node_pool
 ./resource.ps1 google_edgecontainer_vpn_connection
+./resource.ps1 google_edgenetwork_interconnect_attachment
 ./resource.ps1 google_edgenetwork_network
 ./resource.ps1 google_edgenetwork_subnet
 ./resource.ps1 google_endpoints_service
@@ -696,6 +714,9 @@ Datasource percentage coverage 74.09
 ./resource.ps1 google_os_config_patch_deployment
 ./resource.ps1 google_os_login_ssh_public_key
 ./resource.ps1 google_parallelstore_instance
+./resource.ps1 google_parameter_manager_parameter
+./resource.ps1 google_parameter_manager_regional_parameter
+./resource.ps1 google_parameter_manager_regional_parameter_version
 ./resource.ps1 google_privateca_ca_pool
 ./resource.ps1 google_privateca_ca_pool_iam_binding
 ./resource.ps1 google_privateca_ca_pool_iam_member
@@ -858,10 +879,12 @@ Datasource percentage coverage 74.09
 ./resource.ps1 google_clouddeploy_custom_target_type_iam_policy -type data
 ./resource.ps1 google_clouddeploy_delivery_pipeline_iam_policy -type data
 ./resource.ps1 google_clouddeploy_target_iam_policy -type data
+./resource.ps1 google_colab_runtime_template_iam_policy -type data
 ./resource.ps1 google_composer_user_workloads_config_map -type data
 ./resource.ps1 google_composer_user_workloads_secret -type data
 ./resource.ps1 google_compute_forwarding_rules -type data
 ./resource.ps1 google_compute_instance_guest_attributes -type data
+./resource.ps1 google_compute_instance_template_iam_policy -type data
 ./resource.ps1 google_compute_machine_types -type data
 ./resource.ps1 google_compute_region_instance_group_manager -type data
 ./resource.ps1 google_compute_security_policy -type data
@@ -896,6 +919,10 @@ Datasource percentage coverage 74.09
 ./resource.ps1 google_oracle_database_db_nodes -type data
 ./resource.ps1 google_oracle_database_db_servers -type data
 ./resource.ps1 google_organization_iam_policy -type data
+./resource.ps1 google_organizations -type data
+./resource.ps1 google_parameter_manager_parameter -type data
+./resource.ps1 google_parameter_manager_regional_parameter -type data
+./resource.ps1 google_parameter_manager_regional_parameters -type data
 ./resource.ps1 google_privateca_ca_pool_iam_policy -type data
 ./resource.ps1 google_privateca_certificate_authority -type data
 ./resource.ps1 google_privateca_certificate_template_iam_policy -type data

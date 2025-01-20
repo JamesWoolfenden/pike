@@ -1,6 +1,6 @@
 # todo aws
 
-Resource percentage coverage   72.28
+Resource percentage coverage   72.49
 Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_amplify_backend_environment

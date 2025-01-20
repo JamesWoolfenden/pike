@@ -77,7 +77,9 @@ func TestGetTF(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
+
 			got, err := pike.GetTF(tt.args.dirname)
+
 			if (err != nil) != tt.wantErr {
 				t.Errorf("GetTF() error = %v, wantErr %v", err, tt.wantErr)
 
@@ -183,6 +185,7 @@ func TestMakePolicy(t *testing.T) {
       "Action": [
         "cloudwatch:DeleteAlarms",
         "cloudwatch:DescribeAlarms",
+ 		"cloudwatch:GetMetricData",
         "cloudwatch:PutMetricAlarm"
       ],
       "Resource": [
@@ -529,6 +532,7 @@ func TestGetHCLType(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
+
 			if got := pike.GetHCLType(tt.args.resourceName); got != tt.want {
 				t.Errorf("GetHCLType() = %v, want %v", got, tt.want)
 			}
@@ -570,12 +574,15 @@ func Test_getTFFiles(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
+
 			got, err := pike.GetTFFiles(tt.args.dirName)
+
 			if (err != nil) != tt.wantErr {
 				t.Errorf("GetTFFiles() error = %v, wantErr %v", err, tt.wantErr)
 
 				return
 			}
+
 			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("GetTFFiles() = %v, want %v", got, tt.want)
 			}

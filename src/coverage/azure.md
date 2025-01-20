@@ -1,6 +1,6 @@
 # todo azure
 
-Resource percentage coverage   4.60
+Resource percentage coverage   4.58
 Datasource percentage coverage 35.67
 
 ./resource.ps1 azurerm_aadb2c_directory
@@ -91,6 +91,7 @@ Datasource percentage coverage 35.67
 ./resource.ps1 azurerm_arc_kubernetes_cluster
 ./resource.ps1 azurerm_arc_kubernetes_cluster_extension
 ./resource.ps1 azurerm_arc_kubernetes_flux_configuration
+./resource.ps1 azurerm_arc_kubernetes_provisioned_cluster
 ./resource.ps1 azurerm_arc_machine
 ./resource.ps1 azurerm_arc_machine_automanage_configuration_assignment
 ./resource.ps1 azurerm_arc_machine_extension
@@ -195,6 +196,7 @@ Datasource percentage coverage 35.67
 ./resource.ps1 azurerm_container_group
 ./resource.ps1 azurerm_container_registry_agent_pool
 ./resource.ps1 azurerm_container_registry_cache_rule
+./resource.ps1 azurerm_container_registry_credential_set
 ./resource.ps1 azurerm_container_registry_scope_map
 ./resource.ps1 azurerm_container_registry_task
 ./resource.ps1 azurerm_container_registry_task_schedule_run_now
@@ -339,6 +341,7 @@ Datasource percentage coverage 35.67
 ./resource.ps1 azurerm_dns_srv_record
 ./resource.ps1 azurerm_dns_txt_record
 ./resource.ps1 azurerm_dynatrace_monitor
+./resource.ps1 azurerm_dynatrace_tag_rules
 ./resource.ps1 azurerm_elastic_cloud_elasticsearch
 ./resource.ps1 azurerm_elastic_san
 ./resource.ps1 azurerm_elastic_san_volume
@@ -520,6 +523,7 @@ Datasource percentage coverage 35.67
 ./resource.ps1 azurerm_machine_learning_workspace
 ./resource.ps1 azurerm_machine_learning_workspace_network_outbound_rule_fqdn
 ./resource.ps1 azurerm_machine_learning_workspace_network_outbound_rule_private_endpoint
+./resource.ps1 azurerm_machine_learning_workspace_network_outbound_rule_service_tag
 ./resource.ps1 azurerm_maintenance_assignment_dedicated_host
 ./resource.ps1 azurerm_maintenance_assignment_dynamic_scope
 ./resource.ps1 azurerm_maintenance_assignment_virtual_machine
@@ -578,8 +582,10 @@ Datasource percentage coverage 35.67
 ./resource.ps1 azurerm_mssql_elasticpool
 ./resource.ps1 azurerm_mssql_failover_group
 ./resource.ps1 azurerm_mssql_firewall_rule
+./resource.ps1 azurerm_mssql_job
 ./resource.ps1 azurerm_mssql_job_agent
 ./resource.ps1 azurerm_mssql_job_credential
+./resource.ps1 azurerm_mssql_job_schedule
 ./resource.ps1 azurerm_mssql_managed_database
 ./resource.ps1 azurerm_mssql_managed_instance
 ./resource.ps1 azurerm_mssql_managed_instance_active_directory_administrator
