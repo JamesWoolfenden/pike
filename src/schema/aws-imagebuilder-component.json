@@ -51,12 +51,14 @@
         ]
       },
       "permissions": [
-        "imagebuilder:ListComponents"
+        "imagebuilder:ListComponents",
+        "imagebuilder:ListComponentBuildVersions"
       ]
     },
     "read": {
       "permissions": [
-        "imagebuilder:GetComponent"
+        "imagebuilder:GetComponent",
+        "kms:Decrypt"
       ]
     }
   },

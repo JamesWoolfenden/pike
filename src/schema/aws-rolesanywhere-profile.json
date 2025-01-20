@@ -1,5 +1,8 @@
 {
   "additionalProperties": false,
+  "createOnlyProperties": [
+    "/properties/RequireInstanceProperties"
+  ],
   "definitions": {
     "AttributeMapping": {
       "additionalProperties": false,
@@ -179,10 +182,18 @@
   ],
   "tagging": {
     "cloudFormationSystemTags": true,
+    "permissions": [
+      "rolesanywhere:UntagResource",
+      "rolesanywhere:TagResource",
+      "rolesanywhere:ListTagsForResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,
     "taggable": true
   },
-  "typeName": "AWS::RolesAnywhere::Profile"
+  "typeName": "AWS::RolesAnywhere::Profile",
+  "writeOnlyProperties": [
+    "/properties/RequireInstanceProperties"
+  ]
 }

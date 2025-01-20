@@ -3,7 +3,10 @@
     "apply": [
       "datasync:DescribeLocationEfs",
       "datasync:CreateLocationEfs",
-      "datasync:ListTagsForResource"
+      "datasync:ListTagsForResource",
+      "datasync:UpdateLocationEfs",
+      "elasticfilesystem:DescribeFileSystems",
+      "elasticfilesystem:DescribeAccessPoints"
     ],
     "attributes": {
       "tags": [
@@ -14,7 +17,11 @@
     "destroy": [
       "datasync:DeleteLocation"
     ],
-    "modify": [],
+    "modify": [
+      "datasync:UpdateLocationEfs",
+      "elasticfilesystem:DescribeFileSystems",
+      "elasticfilesystem:DescribeAccessPoints"
+    ],
     "plan": []
   }
 ]

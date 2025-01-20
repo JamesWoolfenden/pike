@@ -10,7 +10,9 @@
         "oam:CreateSink",
         "oam:PutSinkPolicy",
         "oam:GetSinkPolicy",
-        "oam:GetSink"
+        "oam:GetSink",
+        "oam:TagResource",
+        "oam:ListTagsForResource"
       ]
     },
     "delete": {
@@ -28,7 +30,8 @@
     "read": {
       "permissions": [
         "oam:GetSinkPolicy",
-        "oam:GetSink"
+        "oam:GetSink",
+        "oam:ListTagsForResource"
       ]
     },
     "update": {
@@ -37,7 +40,8 @@
         "oam:GetSinkPolicy",
         "oam:GetSink",
         "oam:TagResource",
-        "oam:UntagResource"
+        "oam:UntagResource",
+        "oam:ListTagsForResource"
       ]
     }
   },

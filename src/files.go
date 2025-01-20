@@ -3042,3 +3042,12 @@ var awsBackupLogicallyAirGappedVault []byte
 
 //go:embed mapping/aws/resource/kinesis/aws_kinesis_resource_policy.json
 var awsKinesisResourcePolicy []byte
+
+//go:embed mapping/aws/resource/appconfig/aws_appconfig_deployment.json
+var awsAppconfigDeployment []byte
+
+//go:embed mapping/aws/resource/appsync/aws_appsync_graphql_api.json
+var awsAppsyncGraphApi []byte
+
+//go:embed mapping/aws/resource/bedrock/aws_bedrock_inference_profile.json
+var awsBedrockInferenceProfile []byte

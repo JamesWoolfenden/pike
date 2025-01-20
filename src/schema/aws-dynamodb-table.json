@@ -1,5 +1,8 @@
 {
   "additionalProperties": false,
+  "conditionalCreateOnlyProperties": [
+    "/properties/KeySchema"
+  ],
   "createOnlyProperties": [
     "/properties/TableName",
     "/properties/ImportSourceSpecification"
@@ -121,7 +124,7 @@
         },
         "WarmThroughput": {
           "$ref": "#/definitions/WarmThroughput",
-          "description": ""
+          "description": "Represents the warm throughput value (in read units per second and write units per second) for the specified secondary index. If you use this parameter, you must specify ``ReadUnitsPerSecond``, ``WriteUnitsPerSecond``, or both."
         }
       },
       "required": [
@@ -261,11 +264,22 @@
     },
     "PointInTimeRecoverySpecification": {
       "additionalProperties": false,
+      "dependencies": {
+        "RecoveryPeriodInDays": [
+          "PointInTimeRecoveryEnabled"
+        ]
+      },
       "description": "The settings used to enable point in time recovery.",
       "properties": {
         "PointInTimeRecoveryEnabled": {
           "description": "Indicates whether point in time recovery is enabled (true) or disabled (false) on the table.",
           "type": "boolean"
+        },
+        "RecoveryPeriodInDays": {
+          "description": "",
+          "maximum": 35,
+          "minimum": 1,
+          "type": "integer"
         }
       },
       "type": "object"
@@ -459,13 +473,15 @@
           ]
         }
       ],
-      "description": "",
+      "description": "Provides visibility into the number of read and write operations your table or secondary index can instantaneously support. The settings can be modified using the ``UpdateTable`` operation to meet the throughput requirements of an upcoming peak event.",
       "properties": {
         "ReadUnitsPerSecond": {
+          "description": "Represents the number of read operations your base table can instantaneously support.",
           "minimum": 1,
           "type": "integer"
         },
         "WriteUnitsPerSecond": {
+          "description": "Represents the number of write operations your base table can instantaneously support.",
           "minimum": 1,
           "type": "integer"
         }
@@ -607,7 +623,7 @@
     },
     "ImportSourceSpecification": {
       "$ref": "#/definitions/ImportSourceSpecification",
-      "description": "Specifies the properties of data being imported from the S3 bucket source to the table.\n  If you specify the ``ImportSourceSpecification`` property, and also specify either the ``StreamSpecification``, the ``TableClass`` property, or the ``DeletionProtectionEnabled`` property, the IAM entity creating/updating stack must have ``UpdateTable`` permission."
+      "description": "Specifies the properties of data being imported from the S3 bucket source to the\" table.\n  If you specify the ``ImportSourceSpecification`` property, and also specify either the ``StreamSpecification``, the ``TableClass`` property, the ``DeletionProtectionEnabled`` property, or the ``WarmThroughput`` property, the IAM entity creating/updating stack must have ``UpdateTable`` permission."
     },
     "KeySchema": {
       "description": "Specifies the attributes that make up the primary key for the table. The attributes in the ``KeySchema`` property must also be defined in the ``AttributeDefinitions`` property.",
@@ -686,7 +702,7 @@
     },
     "WarmThroughput": {
       "$ref": "#/definitions/WarmThroughput",
-      "description": ""
+      "description": "Represents the warm throughput (in read units per second and write units per second) for creating a table."
     }
   },
   "propertyTransform": {

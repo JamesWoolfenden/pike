@@ -9,7 +9,8 @@
     "/properties/Ipv4IpamPoolId",
     "/properties/Ipv4NetmaskLength",
     "/properties/Ipv6IpamPoolId",
-    "/properties/Ipv6NetmaskLength"
+    "/properties/Ipv6NetmaskLength",
+    "/properties/Ipv6CidrBlockNetworkBorderGroup"
   ],
   "description": "Resource Type definition for AWS::EC2::VPCCidrBlock",
   "handlers": {
@@ -83,6 +84,10 @@
     },
     "Ipv6CidrBlock": {
       "description": "An IPv6 CIDR block from the IPv6 address pool.",
+      "type": "string"
+    },
+    "Ipv6CidrBlockNetworkBorderGroup": {
+      "description": "The name of the location from which we advertise the IPV6 CIDR block.",
       "type": "string"
     },
     "Ipv6IpamPoolId": {

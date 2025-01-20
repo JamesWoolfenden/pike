@@ -5,10 +5,17 @@
       "oam:GetLink",
       "oam:UpdateLink",
       "oam:DeleteLink",
-      "cloudwatch:Link"
+      "cloudwatch:Link",
+      "logs:Link",
+      "xray:Link",
+      "applicationinsights:Link",
+      "internetmonitor:Link"
     ],
     "attributes": {
-      "tags": []
+      "tags": [
+        "oam:TagResource",
+        "oam:ListTagsForResource"
+      ]
     },
     "destroy": [
       "oam:DeleteLink"

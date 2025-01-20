@@ -195,6 +195,9 @@
         },
         "Parameters": {
           "$ref": "#/definitions/ParameterMap"
+        },
+        "RequireConfirmation": {
+          "$ref": "#/definitions/RequireConfirmation"
         }
       },
       "required": [
@@ -389,6 +392,14 @@
         "ORCHESTRATION",
         "POST_PROCESSING",
         "KNOWLEDGE_BASE_RESPONSE_GENERATION"
+      ],
+      "type": "string"
+    },
+    "RequireConfirmation": {
+      "description": "ENUM to check if action requires user confirmation",
+      "enum": [
+        "ENABLED",
+        "DISABLED"
       ],
       "type": "string"
     },

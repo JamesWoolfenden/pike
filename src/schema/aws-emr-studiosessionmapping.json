@@ -7,7 +7,7 @@
   ],
   "definitions": {
     "IamPolicyArn": {
-      "pattern": "^arn:aws(-(cn|us-gov))?:iam::([0-9]{12})?:policy\\/[^.]+$",
+      "pattern": "^arn:aws(-(cn|us-gov|iso-f|iso-e))?:iam::([0-9]{12})?:policy\\/[^.]+$",
       "type": "string"
     }
   },
@@ -25,7 +25,24 @@
         "sso:ListDirectoryAssociations",
         "sso:GetProfile",
         "sso:ListProfiles",
-        "sso:AssociateProfile"
+        "sso:AssociateProfile",
+        "sso:CreateApplication",
+        "sso:PutApplicationAuthenticationMethod",
+        "sso:PutApplicationGrant",
+        "sso:PutApplicationAccessScope",
+        "sso:PutApplicationAssignmentConfiguration",
+        "sso:DescribeApplication",
+        "sso:DeleteApplication",
+        "sso:DeleteApplicationAuthenticationMethod",
+        "sso:DeleteApplicationAccessScope",
+        "sso:DeleteApplicationGrant",
+        "sso:ListInstances",
+        "sso-directory:CreateUser",
+        "sso-directory:CreateGroup",
+        "sso:CreateApplicationAssignment",
+        "sso:DescribeInstance",
+        "sso:DeleteApplicationAssignment",
+        "sso:ListApplicationAssignments"
       ]
     },
     "delete": {
@@ -110,5 +127,11 @@
     "SessionPolicyArn"
   ],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-rpdk.git",
+  "tagging": {
+    "cloudFormationSystemTags": false,
+    "tagOnCreate": false,
+    "tagUpdatable": false,
+    "taggable": false
+  },
   "typeName": "AWS::EMR::StudioSessionMapping"
 }

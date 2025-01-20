@@ -1,0 +1,29 @@
+[
+  {
+    "apply": [
+      "appsync:CreateApi",
+      "appsync:GetApi",
+      "appsync:ListTagsForResource",
+      "iam:PassRole",
+      "appsync:DeleteApi"
+    ],
+    "attributes": {
+      "tags": [
+        "appsync:TagResource",
+        "appsync:UntagResource"
+      ]
+    },
+    "destroy": [
+      "appsync:DeleteApi"
+    ],
+    "modify": [
+      "appsync:UpdateApi",
+      "appsync:GetApi",
+      "iam:PassRole"
+    ],
+    "plan": [
+      "appsync:GetApi",
+      "appsync:ListTagsForResource"
+    ]
+  }
+]

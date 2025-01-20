@@ -9,6 +9,7 @@
     "create": {
       "permissions": [
         "logs:PutAccountPolicy",
+        "logs:PutIndexPolicy",
         "logs:PutDataProtectionPolicy",
         "logs:DescribeAccountPolicies",
         "logs:CreateLogDelivery",
@@ -16,15 +17,18 @@
         "firehose:TagDeliveryStream",
         "logs:PutSubscriptionFilter",
         "logs:DeleteSubscriptionFilter",
+        "logs:PutTransformer",
         "iam:PassRole"
       ]
     },
     "delete": {
       "permissions": [
         "logs:DeleteAccountPolicy",
+        "logs:DeleteIndexPolicy",
         "logs:DeleteDataProtectionPolicy",
         "logs:DescribeAccountPolicies",
         "logs:DeleteSubscriptionFilter",
+        "logs:DeleteTransformer",
         "iam:PassRole"
       ]
     },
@@ -40,24 +44,30 @@
         ]
       },
       "permissions": [
-        "logs:DescribeAccountPolicies"
+        "logs:DescribeAccountPolicies",
+        "logs:GetTransformer"
       ]
     },
     "read": {
       "permissions": [
-        "logs:DescribeAccountPolicies"
+        "logs:DescribeAccountPolicies",
+        "logs:GetTransformer"
       ]
     },
     "update": {
       "permissions": [
         "logs:PutAccountPolicy",
+        "logs:PutIndexPolicy",
         "logs:PutDataProtectionPolicy",
         "logs:DescribeAccountPolicies",
         "logs:DeleteAccountPolicy",
+        "logs:DeleteIndexPolicy",
         "logs:DeleteDataProtectionPolicy",
         "logs:CreateLogDelivery",
         "logs:PutSubscriptionFilter",
         "logs:DeleteSubscriptionFilter",
+        "logs:PutTransformer",
+        "logs:DeleteTransformer",
         "s3:REST.PUT.OBJECT",
         "firehose:TagDeliveryStream",
         "iam:PassRole"
@@ -92,7 +102,9 @@
       "description": "Type of the policy.",
       "enum": [
         "DATA_PROTECTION_POLICY",
-        "SUBSCRIPTION_FILTER_POLICY"
+        "SUBSCRIPTION_FILTER_POLICY",
+        "FIELD_INDEX_POLICY",
+        "TRANSFORMER_POLICY"
       ],
       "type": "string"
     },

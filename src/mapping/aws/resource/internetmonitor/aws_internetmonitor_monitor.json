@@ -4,20 +4,35 @@
       "internetmonitor:CreateMonitor",
       "internetmonitor:GetMonitor",
       "internetmonitor:UpdateMonitor",
-      "internetmonitor:DeleteMonitor"
+      "internetmonitor:DeleteMonitor",
+      "internetmonitor:ListTagsForResource",
+      "logs:CreateLogDelivery",
+      "logs:GetLogDelivery",
+      "logs:UpdateLogDelivery",
+      "logs:DeleteLogDelivery",
+      "logs:ListLogDeliveries",
+      "iam:PassRole"
     ],
     "attributes": {
+      "internet_measurements_log_delivery": [
+        "s3:GetBucketPolicy",
+        "s3:PutBucketPolicy",
+        "s3:ListBucket"
+      ],
       "tags": [
         "internetmonitor:TagResource",
         "internetmonitor:UntagResource"
       ]
     },
     "destroy": [
-      "internetmonitor:DeleteMonitor"
+      "internetmonitor:DeleteMonitor",
+      "logs:DeleteLogDelivery"
     ],
     "modify": [
       "internetmonitor:UpdateMonitor"
     ],
-    "plan": []
+    "plan": [
+      "logs:GetLogDelivery"
+    ]
   }
 ]

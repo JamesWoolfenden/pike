@@ -122,13 +122,15 @@
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-route53-recovery-control.git",
   "tagging": {
     "cloudFormationSystemTags": false,
+    "permissions": [
+      "route53-recovery-control-config:TagResource",
+      "route53-recovery-control-config:UntagResource",
+      "route53-recovery-control-config:ListTagsForResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,
     "taggable": true
   },
-  "typeName": "AWS::Route53RecoveryControl::ControlPanel",
-  "writeOnlyProperties": [
-    "/properties/Tags"
-  ]
+  "typeName": "AWS::Route53RecoveryControl::ControlPanel"
 }

@@ -14,7 +14,6 @@
           "description": "The key-value string map. The tag key can be up to 128 characters and must not start with aws:.",
           "maxLength": 128,
           "minLength": 1,
-          "pattern": "^(?!aws:.)[a-zA-Z0-9 +=._:/-]*$",
           "type": "string"
         },
         "Value": {
@@ -104,6 +103,15 @@
       "description": "The configuration profile ID",
       "type": "string"
     },
+    "DeletionProtectionCheck": {
+      "description": "On resource deletion this controls whether the Deletion Protection check should be applied, bypassed, or (the default) whether the behavior should be controlled by the account-level Deletion Protection setting. See https://docs.aws.amazon.com/appconfig/latest/userguide/deletion-protection.html",
+      "enum": [
+        "ACCOUNT_DEFAULT",
+        "APPLY",
+        "BYPASS"
+      ],
+      "type": "string"
+    },
     "Description": {
       "description": "A description of the configuration profile.",
       "maxLength": 1024,
@@ -188,5 +196,8 @@
     "tagUpdatable": true,
     "taggable": true
   },
-  "typeName": "AWS::AppConfig::ConfigurationProfile"
+  "typeName": "AWS::AppConfig::ConfigurationProfile",
+  "writeOnlyProperties": [
+    "/properties/DeletionProtectionCheck"
+  ]
 }

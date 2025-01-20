@@ -1,300 +1,424 @@
 {
-  "typeName" : "AWS::Wisdom::AIAgent",
-  "description" : "Definition of AWS::Wisdom::AIAgent Resource Type",
-  "sourceUrl" : "https://github.com/aws-cloudformation/aws-cloudformation-rpdk.git",
-  "definitions" : {
-    "AIAgentAssociationConfigurationType" : {
-      "type" : "string",
-      "enum" : [ "KNOWLEDGE_BASE" ]
+  "additionalIdentifiers": [
+    [
+      "/properties/AIAgentArn",
+      "/properties/AssistantArn"
+    ]
+  ],
+  "additionalProperties": false,
+  "createOnlyProperties": [
+    "/properties/AssistantId",
+    "/properties/Name",
+    "/properties/Tags",
+    "/properties/Type"
+  ],
+  "definitions": {
+    "AIAgentAssociationConfigurationType": {
+      "enum": [
+        "KNOWLEDGE_BASE"
+      ],
+      "type": "string"
     },
-    "AIAgentConfiguration" : {
-      "oneOf" : [ {
-        "type" : "object",
-        "title" : "ManualSearchAIAgentConfiguration",
-        "properties" : {
-          "ManualSearchAIAgentConfiguration" : {
-            "$ref" : "#/definitions/ManualSearchAIAgentConfiguration"
-          }
-        },
-        "required" : [ "ManualSearchAIAgentConfiguration" ],
-        "additionalProperties" : false
-      }, {
-        "type" : "object",
-        "title" : "AnswerRecommendationAIAgentConfiguration",
-        "properties" : {
-          "AnswerRecommendationAIAgentConfiguration" : {
-            "$ref" : "#/definitions/AnswerRecommendationAIAgentConfiguration"
-          }
-        },
-        "required" : [ "AnswerRecommendationAIAgentConfiguration" ],
-        "additionalProperties" : false
-      } ]
-    },
-    "AIAgentType" : {
-      "type" : "string",
-      "enum" : [ "MANUAL_SEARCH", "ANSWER_RECOMMENDATION" ]
-    },
-    "AnswerRecommendationAIAgentConfiguration" : {
-      "type" : "object",
-      "properties" : {
-        "IntentLabelingGenerationAIPromptId" : {
-          "type" : "string",
-          "pattern" : "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(:[A-Z0-9_$]+){0,1}$"
-        },
-        "QueryReformulationAIPromptId" : {
-          "type" : "string",
-          "pattern" : "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(:[A-Z0-9_$]+){0,1}$"
-        },
-        "AnswerGenerationAIPromptId" : {
-          "type" : "string",
-          "pattern" : "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(:[A-Z0-9_$]+){0,1}$"
-        },
-        "AssociationConfigurations" : {
-          "type" : "array",
-          "items" : {
-            "$ref" : "#/definitions/AssociationConfiguration"
-          }
-        }
-      },
-      "additionalProperties" : false
-    },
-    "AssociationConfiguration" : {
-      "type" : "object",
-      "properties" : {
-        "AssociationId" : {
-          "type" : "string",
-          "pattern" : "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$"
-        },
-        "AssociationType" : {
-          "$ref" : "#/definitions/AIAgentAssociationConfigurationType"
-        },
-        "AssociationConfigurationData" : {
-          "$ref" : "#/definitions/AssociationConfigurationData"
-        }
-      },
-      "additionalProperties" : false
-    },
-    "AssociationConfigurationData" : {
-      "oneOf" : [ {
-        "type" : "object",
-        "title" : "KnowledgeBaseAssociationConfigurationData",
-        "properties" : {
-          "KnowledgeBaseAssociationConfigurationData" : {
-            "$ref" : "#/definitions/KnowledgeBaseAssociationConfigurationData"
-          }
-        },
-        "required" : [ "KnowledgeBaseAssociationConfigurationData" ],
-        "additionalProperties" : false
-      } ]
-    },
-    "KnowledgeBaseAssociationConfigurationData" : {
-      "type" : "object",
-      "properties" : {
-        "ContentTagFilter" : {
-          "$ref" : "#/definitions/TagFilter"
-        },
-        "MaxResults" : {
-          "type" : "number",
-          "maximum" : 100,
-          "minimum" : 1
-        },
-        "OverrideKnowledgeBaseSearchType" : {
-          "$ref" : "#/definitions/KnowledgeBaseSearchType"
-        }
-      },
-      "additionalProperties" : false
-    },
-    "KnowledgeBaseSearchType" : {
-      "type" : "string",
-      "enum" : [ "HYBRID", "SEMANTIC" ]
-    },
-    "ManualSearchAIAgentConfiguration" : {
-      "type" : "object",
-      "properties" : {
-        "AnswerGenerationAIPromptId" : {
-          "type" : "string",
-          "pattern" : "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(:[A-Z0-9_$]+){0,1}$"
-        },
-        "AssociationConfigurations" : {
-          "type" : "array",
-          "items" : {
-            "$ref" : "#/definitions/AssociationConfiguration"
-          }
-        }
-      },
-      "additionalProperties" : false
-    },
-    "OrCondition" : {
-      "oneOf" : [ {
-        "type" : "object",
-        "title" : "AndConditions",
-        "properties" : {
-          "AndConditions" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/TagCondition"
+    "AIAgentConfiguration": {
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "ManualSearchAIAgentConfiguration": {
+              "$ref": "#/definitions/ManualSearchAIAgentConfiguration"
             }
-          }
+          },
+          "required": [
+            "ManualSearchAIAgentConfiguration"
+          ],
+          "title": "ManualSearchAIAgentConfiguration",
+          "type": "object"
         },
-        "required" : [ "AndConditions" ],
-        "additionalProperties" : false
-      }, {
-        "type" : "object",
-        "title" : "TagCondition",
-        "properties" : {
-          "TagCondition" : {
-            "$ref" : "#/definitions/TagCondition"
-          }
+        {
+          "additionalProperties": false,
+          "properties": {
+            "AnswerRecommendationAIAgentConfiguration": {
+              "$ref": "#/definitions/AnswerRecommendationAIAgentConfiguration"
+            }
+          },
+          "required": [
+            "AnswerRecommendationAIAgentConfiguration"
+          ],
+          "title": "AnswerRecommendationAIAgentConfiguration",
+          "type": "object"
         },
-        "required" : [ "TagCondition" ],
-        "additionalProperties" : false
-      } ]
+        {
+          "additionalProperties": false,
+          "properties": {
+            "SelfServiceAIAgentConfiguration": {
+              "$ref": "#/definitions/SelfServiceAIAgentConfiguration"
+            }
+          },
+          "required": [
+            "SelfServiceAIAgentConfiguration"
+          ],
+          "title": "SelfServiceAIAgentConfiguration",
+          "type": "object"
+        }
+      ]
     },
-    "TagCondition" : {
-      "type" : "object",
-      "properties" : {
-        "Key" : {
-          "type" : "string",
-          "maxLength" : 128,
-          "minLength" : 1,
-          "pattern" : "^(?!aws:)[a-zA-Z+-=._:/]+$"
+    "AIAgentType": {
+      "enum": [
+        "MANUAL_SEARCH",
+        "ANSWER_RECOMMENDATION",
+        "SELF_SERVICE"
+      ],
+      "type": "string"
+    },
+    "AnswerRecommendationAIAgentConfiguration": {
+      "additionalProperties": false,
+      "properties": {
+        "AnswerGenerationAIGuardrailId": {
+          "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(:[A-Z0-9_$]+){0,1}$",
+          "type": "string"
         },
-        "Value" : {
-          "type" : "string",
-          "maxLength" : 256,
-          "minLength" : 1
+        "AnswerGenerationAIPromptId": {
+          "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(:[A-Z0-9_$]+){0,1}$",
+          "type": "string"
+        },
+        "AssociationConfigurations": {
+          "items": {
+            "$ref": "#/definitions/AssociationConfiguration"
+          },
+          "type": "array"
+        },
+        "IntentLabelingGenerationAIPromptId": {
+          "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(:[A-Z0-9_$]+){0,1}$",
+          "type": "string"
+        },
+        "QueryReformulationAIPromptId": {
+          "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(:[A-Z0-9_$]+){0,1}$",
+          "type": "string"
         }
       },
-      "required" : [ "Key" ],
-      "additionalProperties" : false
+      "type": "object"
     },
-    "TagFilter" : {
-      "oneOf" : [ {
-        "type" : "object",
-        "title" : "TagCondition",
-        "properties" : {
-          "TagCondition" : {
-            "$ref" : "#/definitions/TagCondition"
-          }
+    "AssociationConfiguration": {
+      "additionalProperties": false,
+      "properties": {
+        "AssociationConfigurationData": {
+          "$ref": "#/definitions/AssociationConfigurationData"
         },
-        "required" : [ "TagCondition" ],
-        "additionalProperties" : false
-      }, {
-        "type" : "object",
-        "title" : "AndConditions",
-        "properties" : {
-          "AndConditions" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/TagCondition"
-            }
-          }
+        "AssociationId": {
+          "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
+          "type": "string"
         },
-        "required" : [ "AndConditions" ],
-        "additionalProperties" : false
-      }, {
-        "type" : "object",
-        "title" : "OrConditions",
-        "properties" : {
-          "OrConditions" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/OrCondition"
-            }
-          }
-        },
-        "required" : [ "OrConditions" ],
-        "additionalProperties" : false
-      } ]
-    },
-    "Tags" : {
-      "type" : "object",
-      "patternProperties" : {
-        "^(?!aws:)[a-zA-Z+-=._:/]+$" : {
-          "type" : "string",
-          "maxLength" : 256,
-          "minLength" : 1
+        "AssociationType": {
+          "$ref": "#/definitions/AIAgentAssociationConfigurationType"
         }
       },
-      "additionalProperties" : false
+      "type": "object"
+    },
+    "AssociationConfigurationData": {
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "KnowledgeBaseAssociationConfigurationData": {
+              "$ref": "#/definitions/KnowledgeBaseAssociationConfigurationData"
+            }
+          },
+          "required": [
+            "KnowledgeBaseAssociationConfigurationData"
+          ],
+          "title": "KnowledgeBaseAssociationConfigurationData",
+          "type": "object"
+        }
+      ]
+    },
+    "KnowledgeBaseAssociationConfigurationData": {
+      "additionalProperties": false,
+      "properties": {
+        "ContentTagFilter": {
+          "$ref": "#/definitions/TagFilter"
+        },
+        "MaxResults": {
+          "maximum": 100,
+          "minimum": 1,
+          "type": "number"
+        },
+        "OverrideKnowledgeBaseSearchType": {
+          "$ref": "#/definitions/KnowledgeBaseSearchType"
+        }
+      },
+      "type": "object"
+    },
+    "KnowledgeBaseSearchType": {
+      "enum": [
+        "HYBRID",
+        "SEMANTIC"
+      ],
+      "type": "string"
+    },
+    "ManualSearchAIAgentConfiguration": {
+      "additionalProperties": false,
+      "properties": {
+        "AnswerGenerationAIGuardrailId": {
+          "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(:[A-Z0-9_$]+){0,1}$",
+          "type": "string"
+        },
+        "AnswerGenerationAIPromptId": {
+          "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(:[A-Z0-9_$]+){0,1}$",
+          "type": "string"
+        },
+        "AssociationConfigurations": {
+          "items": {
+            "$ref": "#/definitions/AssociationConfiguration"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "OrCondition": {
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "AndConditions": {
+              "items": {
+                "$ref": "#/definitions/TagCondition"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "AndConditions"
+          ],
+          "title": "AndConditions",
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "TagCondition": {
+              "$ref": "#/definitions/TagCondition"
+            }
+          },
+          "required": [
+            "TagCondition"
+          ],
+          "title": "TagCondition",
+          "type": "object"
+        }
+      ]
+    },
+    "SelfServiceAIAgentConfiguration": {
+      "additionalProperties": false,
+      "properties": {
+        "AssociationConfigurations": {
+          "items": {
+            "$ref": "#/definitions/AssociationConfiguration"
+          },
+          "type": "array"
+        },
+        "SelfServiceAIGuardrailId": {
+          "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(:[A-Z0-9_$]+){0,1}$",
+          "type": "string"
+        },
+        "SelfServiceAnswerGenerationAIPromptId": {
+          "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(:[A-Z0-9_$]+){0,1}$",
+          "type": "string"
+        },
+        "SelfServicePreProcessingAIPromptId": {
+          "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(:[A-Z0-9_$]+){0,1}$",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "TagCondition": {
+      "additionalProperties": false,
+      "properties": {
+        "Key": {
+          "maxLength": 128,
+          "minLength": 1,
+          "pattern": "^(?!aws:)[a-zA-Z+-=._:/]+$",
+          "type": "string"
+        },
+        "Value": {
+          "maxLength": 256,
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "Key"
+      ],
+      "type": "object"
+    },
+    "TagFilter": {
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "TagCondition": {
+              "$ref": "#/definitions/TagCondition"
+            }
+          },
+          "required": [
+            "TagCondition"
+          ],
+          "title": "TagCondition",
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "AndConditions": {
+              "items": {
+                "$ref": "#/definitions/TagCondition"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "AndConditions"
+          ],
+          "title": "AndConditions",
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "OrConditions": {
+              "items": {
+                "$ref": "#/definitions/OrCondition"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "OrConditions"
+          ],
+          "title": "OrConditions",
+          "type": "object"
+        }
+      ]
+    },
+    "Tags": {
+      "additionalProperties": false,
+      "patternProperties": {
+        "^(?!aws:)[a-zA-Z+-=._:/]+$": {
+          "maxLength": 256,
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "type": "object"
     }
   },
-  "properties" : {
-    "AIAgentId" : {
-      "type" : "string",
-      "pattern" : "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(:[A-Z0-9_$]+){0,1}$|^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}){0,2}(:[A-Z0-9_$]+){0,1}$"
+  "description": "Definition of AWS::Wisdom::AIAgent Resource Type",
+  "handlers": {
+    "create": {
+      "permissions": [
+        "wisdom:CreateAIAgent",
+        "wisdom:TagResource"
+      ]
     },
-    "AIAgentArn" : {
-      "type" : "string",
-      "pattern" : "^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}){0,2}$"
+    "delete": {
+      "permissions": [
+        "wisdom:DeleteAIAgent"
+      ]
     },
-    "AssistantId" : {
-      "type" : "string",
-      "pattern" : "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$|^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}){0,2}$"
-    },
-    "AssistantArn" : {
-      "type" : "string",
-      "pattern" : "^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}){0,2}$"
-    },
-    "Configuration" : {
-      "$ref" : "#/definitions/AIAgentConfiguration"
-    },
-    "Description" : {
-      "type" : "string",
-      "maxLength" : 255,
-      "minLength" : 1,
-      "pattern" : "^[a-zA-Z0-9\\s_.,-]+"
-    },
-    "Name" : {
-      "type" : "string",
-      "maxLength" : 255,
-      "minLength" : 1,
-      "pattern" : "^[a-zA-Z0-9\\s_.,-]+"
-    },
-    "Tags" : {
-      "$ref" : "#/definitions/Tags"
-    },
-    "Type" : {
-      "$ref" : "#/definitions/AIAgentType"
-    }
-  },
-  "required" : [ "AssistantId", "Configuration", "Type" ],
-  "readOnlyProperties" : [ "/properties/AIAgentArn", "/properties/AIAgentId", "/properties/AssistantArn" ],
-  "createOnlyProperties" : [ "/properties/AssistantId", "/properties/Name", "/properties/Tags", "/properties/Type" ],
-  "primaryIdentifier" : [ "/properties/AIAgentId", "/properties/AssistantId" ],
-  "additionalIdentifiers" : [ [ "/properties/AIAgentArn", "/properties/AssistantArn" ] ],
-  "tagging" : {
-    "taggable" : true,
-    "tagOnCreate" : true,
-    "tagUpdatable" : false,
-    "cloudFormationSystemTags" : false,
-    "tagProperty" : "/properties/Tags",
-    "permissions" : [ "wisdom:TagResource" ]
-  },
-  "handlers" : {
-    "create" : {
-      "permissions" : [ "wisdom:CreateAIAgent", "wisdom:TagResource" ]
-    },
-    "read" : {
-      "permissions" : [ "wisdom:GetAIAgent" ]
-    },
-    "update" : {
-      "permissions" : [ "wisdom:UpdateAIAgent" ]
-    },
-    "delete" : {
-      "permissions" : [ "wisdom:DeleteAIAgent" ]
-    },
-    "list" : {
-      "permissions" : [ "wisdom:ListAIAgents" ],
-      "handlerSchema" : {
-        "properties" : {
-          "AssistantId" : {
-            "$ref" : "resource-schema.json#/properties/AssistantId"
+    "list": {
+      "handlerSchema": {
+        "properties": {
+          "AssistantId": {
+            "$ref": "resource-schema.json#/properties/AssistantId"
           }
         },
-        "required" : [ "AssistantId" ]
-      }
+        "required": [
+          "AssistantId"
+        ]
+      },
+      "permissions": [
+        "wisdom:ListAIAgents"
+      ]
+    },
+    "read": {
+      "permissions": [
+        "wisdom:GetAIAgent"
+      ]
+    },
+    "update": {
+      "permissions": [
+        "wisdom:UpdateAIAgent"
+      ]
     }
   },
-  "additionalProperties" : false
+  "primaryIdentifier": [
+    "/properties/AIAgentId",
+    "/properties/AssistantId"
+  ],
+  "properties": {
+    "AIAgentArn": {
+      "pattern": "^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}){0,2}$",
+      "type": "string"
+    },
+    "AIAgentId": {
+      "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(:[A-Z0-9_$]+){0,1}$|^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}){0,2}(:[A-Z0-9_$]+){0,1}$",
+      "type": "string"
+    },
+    "AssistantArn": {
+      "pattern": "^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}){0,2}$",
+      "type": "string"
+    },
+    "AssistantId": {
+      "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$|^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}){0,2}$",
+      "type": "string"
+    },
+    "Configuration": {
+      "$ref": "#/definitions/AIAgentConfiguration"
+    },
+    "Description": {
+      "maxLength": 255,
+      "minLength": 1,
+      "pattern": "^[a-zA-Z0-9\\s_.,-]+",
+      "type": "string"
+    },
+    "ModifiedTimeSeconds": {
+      "type": "number"
+    },
+    "Name": {
+      "maxLength": 255,
+      "minLength": 1,
+      "pattern": "^[a-zA-Z0-9\\s_.,-]+",
+      "type": "string"
+    },
+    "Tags": {
+      "$ref": "#/definitions/Tags"
+    },
+    "Type": {
+      "$ref": "#/definitions/AIAgentType"
+    }
+  },
+  "readOnlyProperties": [
+    "/properties/AIAgentArn",
+    "/properties/AIAgentId",
+    "/properties/AssistantArn",
+    "/properties/ModifiedTimeSeconds"
+  ],
+  "required": [
+    "AssistantId",
+    "Configuration",
+    "Type"
+  ],
+  "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-rpdk.git",
+  "tagging": {
+    "cloudFormationSystemTags": false,
+    "permissions": [
+      "wisdom:TagResource"
+    ],
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": false,
+    "taggable": true
+  },
+  "typeName": "AWS::Wisdom::AIAgent"
 }

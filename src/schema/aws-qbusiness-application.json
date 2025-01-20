@@ -4,7 +4,8 @@
     "/properties/ClientIdsForOIDC",
     "/properties/EncryptionConfiguration",
     "/properties/IamIdentityProviderArn",
-    "/properties/IdentityType"
+    "/properties/IdentityType",
+    "/properties/QuickSightConfiguration"
   ],
   "definitions": {
     "ApplicationStatus": {
@@ -73,7 +74,8 @@
       "enum": [
         "AWS_IAM_IDP_SAML",
         "AWS_IAM_IDP_OIDC",
-        "AWS_IAM_IDC"
+        "AWS_IAM_IDC",
+        "AWS_QUICKSIGHT_IDP"
       ],
       "type": "string"
     },
@@ -115,6 +117,21 @@
       ],
       "type": "string"
     },
+    "QuickSightConfiguration": {
+      "additionalProperties": false,
+      "properties": {
+        "ClientNamespace": {
+          "maxLength": 64,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9._-]*$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "ClientNamespace"
+      ],
+      "type": "object"
+    },
     "SubscriptionType": {
       "enum": [
         "Q_LITE",
@@ -153,9 +170,11 @@
         "kms:DescribeKey",
         "qbusiness:CreateApplication",
         "qbusiness:GetApplication",
-        "qbusiness:UpdateApplication",
         "qbusiness:ListTagsForResource",
         "qbusiness:TagResource",
+        "qbusiness:UpdateApplication",
+        "quicksight:DescribeAccountSubscription",
+        "quicksight:ListNamespaces",
         "sso:CreateApplication",
         "sso:DeleteApplication",
         "sso:DescribeInstance",
@@ -223,7 +242,6 @@
       "$ref": "#/definitions/AutoSubscriptionConfiguration"
     },
     "ClientIdsForOIDC": {
-      "insertionOrder": false,
       "items": {
         "maxLength": 255,
         "minLength": 1,
@@ -278,6 +296,9 @@
     "QAppsConfiguration": {
       "$ref": "#/definitions/QAppsConfiguration"
     },
+    "QuickSightConfiguration": {
+      "$ref": "#/definitions/QuickSightConfiguration"
+    },
     "RoleArn": {
       "maxLength": 1284,
       "minLength": 0,
@@ -288,7 +309,6 @@
       "$ref": "#/definitions/ApplicationStatus"
     },
     "Tags": {
-      "insertionOrder": false,
       "items": {
         "$ref": "#/definitions/Tag"
       },
@@ -313,6 +333,15 @@
     "DisplayName"
   ],
   "tagging": {
+    "cloudFormationSystemTags": true,
+    "permissions": [
+      "qbusiness:UntagResource",
+      "qbusiness:TagResource",
+      "qbusiness:ListTagsForResource"
+    ],
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": true,
     "taggable": true
   },
   "typeName": "AWS::QBusiness::Application",

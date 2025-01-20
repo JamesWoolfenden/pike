@@ -5,6 +5,14 @@
     "/properties/FirewallName"
   ],
   "definitions": {
+    "EnabledAnalysisType": {
+      "description": "An analysis type.",
+      "enum": [
+        "TLS_SNI",
+        "HTTP_HOST"
+      ],
+      "type": "string"
+    },
     "EndpointId": {
       "description": "An endpoint Id.",
       "type": "string"
@@ -107,7 +115,8 @@
         "network-firewall:AssociateFirewallPolicy",
         "network-firewall:TagResource",
         "network-firewall:UntagResource",
-        "network-firewall:DescribeFirewall"
+        "network-firewall:DescribeFirewall",
+        "network-firewall:UpdateFirewallAnalysisSettings"
       ]
     }
   },

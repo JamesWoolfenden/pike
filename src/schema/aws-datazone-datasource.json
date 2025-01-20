@@ -19,7 +19,7 @@
       "type": "string"
     },
     "DataSourceConfigurationInput": {
-      "description": "Specifies the configuration of the data source. It can be set to either glueRunConfiguration or redshiftRunConfiguration.",
+      "description": "Specifies the configuration of the data source. It can be set to either glueRunConfiguration or redshiftRunConfiguration or sageMakerRunConfiguration.",
       "oneOf": [
         {
           "additionalProperties": false,
@@ -39,6 +39,16 @@
             }
           },
           "title": "RedshiftRunConfiguration",
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "SageMakerRunConfiguration": {
+              "$ref": "#/definitions/SageMakerRunConfigurationInput"
+            }
+          },
+          "title": "SageMakerRunConfiguration",
           "type": "object"
         }
       ]
@@ -319,6 +329,20 @@
       },
       "type": "array"
     },
+    "SageMakerRunConfigurationInput": {
+      "additionalProperties": false,
+      "description": "The configuration details of the Amazon SageMaker data source.",
+      "properties": {
+        "TrackingAssets": {
+          "$ref": "#/definitions/TrackingAssets",
+          "description": "The tracking assets of the Amazon SageMaker run."
+        }
+      },
+      "required": [
+        "TrackingAssets"
+      ],
+      "type": "object"
+    },
     "ScheduleConfiguration": {
       "additionalProperties": false,
       "description": "The schedule of the data source runs.",
@@ -339,6 +363,23 @@
     },
     "Timezone": {
       "type": "string"
+    },
+    "TrackingAssets": {
+      "additionalProperties": false,
+      "description": "The tracking assets of the Amazon SageMaker run.",
+      "maxProperties": 1,
+      "patternProperties": {
+        "^.{1,64}$": {
+          "items": {
+            "pattern": "^arn:aws[^:]*:sagemaker:[a-z]{2}-?(iso|gov)?-{1}[a-z]*-{1}[0-9]:\\d{12}:[\\w+=,.@-]{1,128}/[\\w+=,.@-]{1,256}$",
+            "type": "string"
+          },
+          "maxItems": 500,
+          "minItems": 0,
+          "type": "array"
+        }
+      },
+      "type": "object"
     },
     "TypeRevision": {
       "description": "The revision of the metadata form type.",

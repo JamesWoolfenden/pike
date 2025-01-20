@@ -1,12 +1,11 @@
 # todo aws
 
-Resource percentage coverage   72.33
-Datasource percentage coverage 99.47
+Resource percentage coverage   72.28
+Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_amplify_backend_environment
 ./resource.ps1 aws_amplify_webhook
 ./resource.ps1 aws_api_gateway_domain_name_access_association
-./resource.ps1 aws_appconfig_deployment
 ./resource.ps1 aws_appconfig_deployment_strategy
 ./resource.ps1 aws_appfabric_app_authorization
 ./resource.ps1 aws_appfabric_app_authorization_connection
@@ -32,12 +31,10 @@ Datasource percentage coverage 99.47
 ./resource.ps1 aws_appsync_api_cache
 ./resource.ps1 aws_appsync_api_key
 ./resource.ps1 aws_appsync_datasource
-./resource.ps1 aws_appsync_graphql_api
 ./resource.ps1 aws_appsync_source_api_association
 ./resource.ps1 aws_appsync_type
 ./resource.ps1 aws_bedrock_guardrail
 ./resource.ps1 aws_bedrock_guardrail_version
-./resource.ps1 aws_bedrock_inference_profile
 ./resource.ps1 aws_bedrockagent_agent_collaborator
 ./resource.ps1 aws_bedrockagent_agent_knowledge_base_association
 ./resource.ps1 aws_cleanrooms_membership
@@ -230,6 +227,7 @@ Datasource percentage coverage 99.47
 ./resource.ps1 aws_macie2_member
 ./resource.ps1 aws_macie2_organization_admin_account
 ./resource.ps1 aws_main_route_table_association
+./resource.ps1 aws_media_packagev2_channel_group
 ./resource.ps1 aws_media_store_container
 ./resource.ps1 aws_media_store_container_policy
 ./resource.ps1 aws_medialive_channel

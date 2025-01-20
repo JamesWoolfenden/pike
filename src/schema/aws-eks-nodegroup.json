@@ -31,6 +31,17 @@
       },
       "type": "object"
     },
+    "NodeRepairConfig": {
+      "additionalProperties": false,
+      "description": "The node auto repair configuration for node group.",
+      "properties": {
+        "Enabled": {
+          "description": "Set this value to true to enable node auto repair for the node group.",
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
     "RemoteAccess": {
       "additionalProperties": false,
       "description": "An object representing a remote access configuration specification for AWS EKS Nodegroup.",
@@ -104,6 +115,10 @@
           "maximum": 100,
           "minimum": 1,
           "type": "number"
+        },
+        "UpdateStrategy": {
+          "description": "The configuration for the behavior to follow during an node group version update of this managed node group. You choose between two possible strategies for replacing nodes during an UpdateNodegroupVersion action.",
+          "type": "string"
         }
       },
       "type": "object"
@@ -227,6 +242,10 @@
     "LaunchTemplate": {
       "$ref": "#/definitions/LaunchTemplateSpecification",
       "description": "An object representing a node group's launch template specification."
+    },
+    "NodeRepairConfig": {
+      "$ref": "#/definitions/NodeRepairConfig",
+      "description": "The node auto repair configuration for node group."
     },
     "NodeRole": {
       "description": "The Amazon Resource Name (ARN) of the IAM role to associate with your node group.",

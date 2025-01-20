@@ -1,145 +1,207 @@
 {
-  "typeName" : "AWS::Wisdom::AIPrompt",
-  "description" : "Definition of AWS::Wisdom::AIPrompt Resource Type",
-  "sourceUrl" : "https://github.com/aws-cloudformation/aws-cloudformation-rpdk.git",
-  "definitions" : {
-    "AIPromptAPIFormat" : {
-      "type" : "string",
-      "enum" : [ "ANTHROPIC_CLAUDE_MESSAGES", "ANTHROPIC_CLAUDE_TEXT_COMPLETIONS" ]
+  "additionalIdentifiers": [
+    [
+      "/properties/AIPromptArn",
+      "/properties/AssistantArn"
+    ]
+  ],
+  "additionalProperties": false,
+  "createOnlyProperties": [
+    "/properties/ApiFormat",
+    "/properties/AssistantId",
+    "/properties/ModelId",
+    "/properties/Name",
+    "/properties/Tags",
+    "/properties/TemplateType",
+    "/properties/Type"
+  ],
+  "definitions": {
+    "AIPromptAPIFormat": {
+      "enum": [
+        "ANTHROPIC_CLAUDE_MESSAGES",
+        "ANTHROPIC_CLAUDE_TEXT_COMPLETIONS"
+      ],
+      "type": "string"
     },
-    "AIPromptTemplateConfiguration" : {
-      "type" : "object",
-      "oneOf" : [ {
-        "type" : "object",
-        "title" : "TextFullAIPromptEditTemplateConfiguration",
-        "properties" : {
-          "TextFullAIPromptEditTemplateConfiguration" : {
-            "$ref" : "#/definitions/TextFullAIPromptEditTemplateConfiguration"
-          }
-        },
-        "required" : [ "TextFullAIPromptEditTemplateConfiguration" ],
-        "additionalProperties" : false
-      } ]
+    "AIPromptTemplateConfiguration": {
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "TextFullAIPromptEditTemplateConfiguration": {
+              "$ref": "#/definitions/TextFullAIPromptEditTemplateConfiguration"
+            }
+          },
+          "required": [
+            "TextFullAIPromptEditTemplateConfiguration"
+          ],
+          "title": "TextFullAIPromptEditTemplateConfiguration",
+          "type": "object"
+        }
+      ],
+      "type": "object"
     },
-    "AIPromptTemplateType" : {
-      "type" : "string",
-      "enum" : [ "TEXT" ]
+    "AIPromptTemplateType": {
+      "enum": [
+        "TEXT"
+      ],
+      "type": "string"
     },
-    "AIPromptType" : {
-      "type" : "string",
-      "enum" : [ "ANSWER_GENERATION", "INTENT_LABELING_GENERATION", "QUERY_REFORMULATION" ]
+    "AIPromptType": {
+      "enum": [
+        "ANSWER_GENERATION",
+        "INTENT_LABELING_GENERATION",
+        "QUERY_REFORMULATION",
+        "SELF_SERVICE_PRE_PROCESSING",
+        "SELF_SERVICE_ANSWER_GENERATION"
+      ],
+      "type": "string"
     },
-    "Tags" : {
-      "type" : "object",
-      "patternProperties" : {
-        "^(?!aws:)[a-zA-Z+-=._:/]+$" : {
-          "type" : "string",
-          "maxLength" : 256,
-          "minLength" : 1
+    "Tags": {
+      "additionalProperties": false,
+      "patternProperties": {
+        "^(?!aws:)[a-zA-Z+-=._:/]+$": {
+          "maxLength": 256,
+          "minLength": 1,
+          "type": "string"
         }
       },
-      "additionalProperties" : false
+      "type": "object"
     },
-    "TextFullAIPromptEditTemplateConfiguration" : {
-      "type" : "object",
-      "properties" : {
-        "Text" : {
-          "type" : "string",
-          "maxLength" : 200000,
-          "minLength" : 1
+    "TextFullAIPromptEditTemplateConfiguration": {
+      "additionalProperties": false,
+      "properties": {
+        "Text": {
+          "maxLength": 200000,
+          "minLength": 1,
+          "type": "string"
         }
       },
-      "required" : [ "Text" ],
-      "additionalProperties" : false
+      "required": [
+        "Text"
+      ],
+      "type": "object"
     }
   },
-  "properties" : {
-    "AIPromptId" : {
-      "type" : "string",
-      "pattern" : "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(:[A-Z0-9_$]+){0,1}$|^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}){0,2}(:[A-Z0-9_$]+){0,1}$"
+  "description": "Definition of AWS::Wisdom::AIPrompt Resource Type",
+  "handlers": {
+    "create": {
+      "permissions": [
+        "wisdom:CreateAIPrompt",
+        "wisdom:TagResource"
+      ]
     },
-    "AIPromptArn" : {
-      "type" : "string",
-      "pattern" : "^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}){0,2}$"
+    "delete": {
+      "permissions": [
+        "wisdom:DeleteAIPrompt"
+      ]
     },
-    "ApiFormat" : {
-      "$ref" : "#/definitions/AIPromptAPIFormat"
-    },
-    "AssistantId" : {
-      "type" : "string",
-      "pattern" : "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$|^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}){0,2}$"
-    },
-    "AssistantArn" : {
-      "type" : "string",
-      "pattern" : "^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}){0,2}$"
-    },
-    "Description" : {
-      "type" : "string",
-      "maxLength" : 255,
-      "minLength" : 1,
-      "pattern" : "^[a-zA-Z0-9\\s_.,-]+"
-    },
-    "ModelId" : {
-      "type" : "string",
-      "maxLength" : 2048,
-      "minLength" : 1
-    },
-    "Name" : {
-      "type" : "string",
-      "maxLength" : 255,
-      "minLength" : 1,
-      "pattern" : "^[a-zA-Z0-9\\s_.,-]+"
-    },
-    "Tags" : {
-      "$ref" : "#/definitions/Tags"
-    },
-    "TemplateConfiguration" : {
-      "$ref" : "#/definitions/AIPromptTemplateConfiguration"
-    },
-    "TemplateType" : {
-      "$ref" : "#/definitions/AIPromptTemplateType"
-    },
-    "Type" : {
-      "$ref" : "#/definitions/AIPromptType"
-    }
-  },
-  "required" : [ "ApiFormat", "ModelId", "TemplateConfiguration", "TemplateType", "Type" ],
-  "readOnlyProperties" : [ "/properties/AIPromptArn", "/properties/AIPromptId", "/properties/AssistantArn" ],
-  "createOnlyProperties" : [ "/properties/ApiFormat", "/properties/AssistantId", "/properties/ModelId", "/properties/Name", "/properties/Tags", "/properties/TemplateType", "/properties/Type" ],
-  "primaryIdentifier" : [ "/properties/AIPromptId", "/properties/AssistantId" ],
-  "additionalIdentifiers" : [ [ "/properties/AIPromptArn", "/properties/AssistantArn" ] ],
-  "tagging" : {
-    "taggable" : true,
-    "tagOnCreate" : true,
-    "tagUpdatable" : false,
-    "cloudFormationSystemTags" : false,
-    "tagProperty" : "/properties/Tags",
-    "permissions" : [ "wisdom:TagResource" ]
-  },
-  "handlers" : {
-    "create" : {
-      "permissions" : [ "wisdom:CreateAIPrompt", "wisdom:TagResource" ]
-    },
-    "read" : {
-      "permissions" : [ "wisdom:GetAIPrompt" ]
-    },
-    "update" : {
-      "permissions" : [ "wisdom:UpdateAIPrompt" ]
-    },
-    "delete" : {
-      "permissions" : [ "wisdom:DeleteAIPrompt" ]
-    },
-    "list" : {
-      "permissions" : [ "wisdom:ListAIPrompts" ],
-      "handlerSchema" : {
-        "properties" : {
-          "AssistantId" : {
-            "$ref" : "resource-schema.json#/properties/AssistantId"
+    "list": {
+      "handlerSchema": {
+        "properties": {
+          "AssistantId": {
+            "$ref": "resource-schema.json#/properties/AssistantId"
           }
         },
-        "required" : [ "AssistantId" ]
-      }
+        "required": [
+          "AssistantId"
+        ]
+      },
+      "permissions": [
+        "wisdom:ListAIPrompts"
+      ]
+    },
+    "read": {
+      "permissions": [
+        "wisdom:GetAIPrompt"
+      ]
+    },
+    "update": {
+      "permissions": [
+        "wisdom:UpdateAIPrompt"
+      ]
     }
   },
-  "additionalProperties" : false
+  "primaryIdentifier": [
+    "/properties/AIPromptId",
+    "/properties/AssistantId"
+  ],
+  "properties": {
+    "AIPromptArn": {
+      "pattern": "^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}){0,2}$",
+      "type": "string"
+    },
+    "AIPromptId": {
+      "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(:[A-Z0-9_$]+){0,1}$|^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}){0,2}(:[A-Z0-9_$]+){0,1}$",
+      "type": "string"
+    },
+    "ApiFormat": {
+      "$ref": "#/definitions/AIPromptAPIFormat"
+    },
+    "AssistantArn": {
+      "pattern": "^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}){0,2}$",
+      "type": "string"
+    },
+    "AssistantId": {
+      "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$|^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}){0,2}$",
+      "type": "string"
+    },
+    "Description": {
+      "maxLength": 255,
+      "minLength": 1,
+      "pattern": "^[a-zA-Z0-9\\s_.,-]+",
+      "type": "string"
+    },
+    "ModelId": {
+      "maxLength": 2048,
+      "minLength": 1,
+      "type": "string"
+    },
+    "ModifiedTimeSeconds": {
+      "type": "number"
+    },
+    "Name": {
+      "maxLength": 255,
+      "minLength": 1,
+      "pattern": "^[a-zA-Z0-9\\s_.,-]+",
+      "type": "string"
+    },
+    "Tags": {
+      "$ref": "#/definitions/Tags"
+    },
+    "TemplateConfiguration": {
+      "$ref": "#/definitions/AIPromptTemplateConfiguration"
+    },
+    "TemplateType": {
+      "$ref": "#/definitions/AIPromptTemplateType"
+    },
+    "Type": {
+      "$ref": "#/definitions/AIPromptType"
+    }
+  },
+  "readOnlyProperties": [
+    "/properties/AIPromptArn",
+    "/properties/AIPromptId",
+    "/properties/AssistantArn",
+    "/properties/ModifiedTimeSeconds"
+  ],
+  "required": [
+    "ApiFormat",
+    "ModelId",
+    "TemplateConfiguration",
+    "TemplateType",
+    "Type"
+  ],
+  "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-rpdk.git",
+  "tagging": {
+    "cloudFormationSystemTags": false,
+    "permissions": [
+      "wisdom:TagResource"
+    ],
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": false,
+    "taggable": true
+  },
+  "typeName": "AWS::Wisdom::AIPrompt"
 }

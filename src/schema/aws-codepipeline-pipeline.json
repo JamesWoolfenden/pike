@@ -464,6 +464,14 @@
       "additionalProperties": false,
       "description": "Represents information about condition.",
       "properties": {
+        "Commands": {
+          "description": "The shell commands to run with your compute action in CodePipeline.",
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": false
+        },
         "Configuration": {
           "description": "The rule's configuration. These are key-value pairs that specify input values for a rule.",
           "type": "object"

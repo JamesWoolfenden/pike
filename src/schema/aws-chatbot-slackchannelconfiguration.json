@@ -28,23 +28,29 @@
       "permissions": [
         "chatbot:CreateSlackChannelConfiguration",
         "chatbot:TagResource",
+        "chatbot:AssociateToConfiguration",
+        "chatbot:ListAssociations",
         "iam:PassRole",
         "iam:CreateServiceLinkedRole"
       ]
     },
     "delete": {
       "permissions": [
-        "chatbot:DeleteSlackChannelConfiguration"
+        "chatbot:DeleteSlackChannelConfiguration",
+        "chatbot:DisassociateFromConfiguration",
+        "chatbot:ListAssociations"
       ]
     },
     "list": {
       "permissions": [
-        "chatbot:DescribeSlackChannelConfigurations"
+        "chatbot:DescribeSlackChannelConfigurations",
+        "chatbot:ListAssociations"
       ]
     },
     "read": {
       "permissions": [
-        "chatbot:DescribeSlackChannelConfigurations"
+        "chatbot:DescribeSlackChannelConfigurations",
+        "chatbot:ListAssociations"
       ]
     },
     "update": {
@@ -53,6 +59,9 @@
         "chatbot:TagResource",
         "chatbot:UntagResource",
         "chatbot:ListTagsForResource",
+        "chatbot:AssociateToConfiguration",
+        "chatbot:DisassociateFromConfiguration",
+        "chatbot:ListAssociations",
         "iam:PassRole"
       ]
     }
@@ -72,6 +81,15 @@
       "minLength": 1,
       "pattern": "^[A-Za-z0-9-_]+$",
       "type": "string"
+    },
+    "CustomizationResourceArns": {
+      "description": "ARNs of Custom Actions to associate with notifications in the provided chat channel.",
+      "insertionOrder": false,
+      "items": {
+        "pattern": "^arn:aws:chatbot:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:custom-action/[a-zA-Z0-9_-]{1,64}$",
+        "type": "string"
+      },
+      "type": "array"
     },
     "GuardrailPolicies": {
       "description": "The list of IAM policy ARNs that are applied as channel guardrails. The AWS managed 'AdministratorAccess' policy is applied as a default if this is not set.",
@@ -143,6 +161,11 @@
   "sourceUrl": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-slackchannelconfiguration.html",
   "tagging": {
     "cloudFormationSystemTags": true,
+    "permissions": [
+      "chatbot:TagResource",
+      "chatbot:ListTagsForResource",
+      "chatbot:UntagResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

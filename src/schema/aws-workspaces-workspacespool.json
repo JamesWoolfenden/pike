@@ -81,6 +81,7 @@
     }
   },
   "deprecatedProperties": [
+    "/properties/Tags",
     "/properties/Tags/TagKey",
     "/properties/Tags/TagValue"
   ],
@@ -89,8 +90,7 @@
     "create": {
       "permissions": [
         "workspaces:CreateWorkspacesPool",
-        "workspaces:DescribeWorkspacesPools",
-        "workspaces:CreateTags"
+        "workspaces:DescribeWorkspacesPools"
       ]
     },
     "delete": {
@@ -186,8 +186,5 @@
     "tagUpdatable": false,
     "taggable": true
   },
-  "typeName": "AWS::WorkSpaces::WorkspacesPool",
-  "writeOnlyProperties": [
-    "/properties/Tags"
-  ]
+  "typeName": "AWS::WorkSpaces::WorkspacesPool"
 }

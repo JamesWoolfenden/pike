@@ -49,12 +49,14 @@
         ]
       },
       "permissions": [
-        "imagebuilder:ListWorkflows"
+        "imagebuilder:ListWorkflows",
+        "imagebuilder:ListWorkflowBuildVersions"
       ]
     },
     "read": {
       "permissions": [
-        "imagebuilder:GetWorkflow"
+        "imagebuilder:GetWorkflow",
+        "kms:Decrypt"
       ]
     }
   },

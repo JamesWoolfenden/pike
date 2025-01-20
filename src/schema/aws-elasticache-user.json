@@ -2,8 +2,7 @@
   "additionalProperties": false,
   "createOnlyProperties": [
     "/properties/UserId",
-    "/properties/UserName",
-    "/properties/Engine"
+    "/properties/UserName"
   ],
   "definitions": {
     "Tag": {
@@ -110,9 +109,10 @@
       "type": "object"
     },
     "Engine": {
-      "description": "Must be redis.",
+      "description": "The target cache engine for the user.",
       "enum": [
-        "redis"
+        "redis",
+        "valkey"
       ],
       "type": "string"
     },

@@ -3,11 +3,14 @@
   "definitions": {
     "FunctionConfig": {
       "additionalProperties": false,
+      "description": "Contains configuration information about a CloudFront function.",
       "properties": {
         "Comment": {
+          "description": "A comment to describe the function.",
           "type": "string"
         },
         "KeyValueStoreAssociations": {
+          "description": "The configuration for the key value store associations.",
           "items": {
             "$ref": "#/definitions/KeyValueStoreAssociation"
           },
@@ -15,6 +18,7 @@
           "uniqueItems": true
         },
         "Runtime": {
+          "description": "The function's runtime environment version.",
           "type": "string"
         }
       },
@@ -26,8 +30,10 @@
     },
     "FunctionMetadata": {
       "additionalProperties": false,
+      "description": "Contains metadata about a CloudFront function.",
       "properties": {
         "FunctionARN": {
+          "description": "The Amazon Resource Name (ARN) of the function. The ARN uniquely identifies the function.",
           "type": "string"
         }
       },
@@ -35,8 +41,10 @@
     },
     "KeyValueStoreAssociation": {
       "additionalProperties": false,
+      "description": "The key value store association.",
       "properties": {
         "KeyValueStoreARN": {
+          "description": "The Amazon Resource Name (ARN) of the key value store association.",
           "type": "string"
         }
       },
@@ -46,7 +54,7 @@
       "type": "object"
     }
   },
-  "description": "Resource Type definition for AWS::CloudFront::Function",
+  "description": "Creates a CF function.\n To create a function, you provide the function code and some configuration information about the function. The response contains an Amazon Resource Name (ARN) that uniquely identifies the function, and the function\u2019s stage.\n By default, when you create a function, it\u2019s in the ``DEVELOPMENT`` stage. In this stage, you can [test the function](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/test-function.html) in the CF console (or with ``TestFunction`` in the CF API).\n When you\u2019re ready to use your function with a CF distribution, publish the function to the ``LIVE`` stage. You can do this in the CF console, with ``PublishFunction`` in the CF API, or by updating the ``AWS::CloudFront::Function`` resource with the ``AutoPublish`` property set to ``true``. When the function is published to the ``LIVE`` stage, you can attach it to a distribution\u2019s cache behavior, using the function\u2019s ARN.\n To automatically publish the function to the ``LIVE`` stage when it\u2019s created, set the ``AutoPublish`` property to ``true``.",
   "handlers": {
     "create": {
       "permissions": [
@@ -85,24 +93,31 @@
   ],
   "properties": {
     "AutoPublish": {
+      "description": "A flag that determines whether to automatically publish the function to the ``LIVE`` stage when it\u2019s created. To automatically publish to the ``LIVE`` stage, set this property to ``true``.",
       "type": "boolean"
     },
     "FunctionARN": {
+      "description": "",
       "type": "string"
     },
     "FunctionCode": {
+      "description": "The function code. For more information about writing a CloudFront function, see [Writing function code for CloudFront Functions](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html) in the *Amazon CloudFront Developer Guide*.",
       "type": "string"
     },
     "FunctionConfig": {
-      "$ref": "#/definitions/FunctionConfig"
+      "$ref": "#/definitions/FunctionConfig",
+      "description": "Contains configuration information about a CloudFront function."
     },
     "FunctionMetadata": {
-      "$ref": "#/definitions/FunctionMetadata"
+      "$ref": "#/definitions/FunctionMetadata",
+      "description": "Contains metadata about a CloudFront function."
     },
     "Name": {
+      "description": "A name to identify the function.",
       "type": "string"
     },
     "Stage": {
+      "description": "",
       "type": "string"
     }
   },

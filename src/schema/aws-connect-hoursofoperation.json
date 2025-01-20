@@ -1,6 +1,16 @@
 {
   "additionalProperties": false,
   "definitions": {
+    "EffectiveFrom": {
+      "description": "The date from which the hours of operation override would be effective.",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "type": "string"
+    },
+    "EffectiveTill": {
+      "description": "The date till which the hours of operation override would be effective.",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "type": "string"
+    },
     "HoursOfOperationConfig": {
       "additionalProperties": false,
       "description": "Contains information about the hours of operation.",
@@ -34,9 +44,123 @@
       ],
       "type": "object"
     },
+    "HoursOfOperationOverride": {
+      "additionalProperties": false,
+      "description": "Overrides attached to the hours of operation.",
+      "properties": {
+        "EffectiveFrom": {
+          "$ref": "#/definitions/EffectiveFrom"
+        },
+        "EffectiveTill": {
+          "$ref": "#/definitions/EffectiveTill"
+        },
+        "HoursOfOperationOverrideId": {
+          "$ref": "#/definitions/HoursOfOperationOverrideId"
+        },
+        "OverrideConfig": {
+          "$ref": "#/definitions/OverrideConfig"
+        },
+        "OverrideDescription": {
+          "$ref": "#/definitions/OverrideDescription"
+        },
+        "OverrideName": {
+          "$ref": "#/definitions/OverrideName"
+        }
+      },
+      "required": [
+        "OverrideName",
+        "EffectiveFrom",
+        "EffectiveTill",
+        "OverrideConfig"
+      ],
+      "type": "object"
+    },
+    "HoursOfOperationOverrideConfig": {
+      "additionalProperties": false,
+      "description": "Contains information about the hours of operation override.",
+      "properties": {
+        "Day": {
+          "description": "The day that the hours of operation override applies to.",
+          "enum": [
+            "SUNDAY",
+            "MONDAY",
+            "TUESDAY",
+            "WEDNESDAY",
+            "THURSDAY",
+            "FRIDAY",
+            "SATURDAY"
+          ],
+          "type": "string"
+        },
+        "EndTime": {
+          "$ref": "#/definitions/OverrideTimeSlice",
+          "description": "The new end time that your contact center closes for the overriden days."
+        },
+        "StartTime": {
+          "$ref": "#/definitions/OverrideTimeSlice",
+          "description": "The new start time that your contact center opens for the overriden days."
+        }
+      },
+      "required": [
+        "Day",
+        "StartTime",
+        "EndTime"
+      ],
+      "type": "object"
+    },
+    "HoursOfOperationOverrideId": {
+      "description": "The Resource Identifier for the hours of operation override.",
+      "pattern": "^[-a-zA-Z0-9]*$",
+      "type": "string"
+    },
     "HoursOfOperationTimeSlice": {
       "additionalProperties": false,
       "description": "The start time or end time for an hours of operation.",
+      "properties": {
+        "Hours": {
+          "description": "The hours.",
+          "maximum": 23,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "Minutes": {
+          "description": "The minutes.",
+          "maximum": 59,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "Hours",
+        "Minutes"
+      ],
+      "type": "object"
+    },
+    "OverrideConfig": {
+      "description": "Configuration information for the hours of operation override: day, start time, and end time.",
+      "insertionOrder": false,
+      "items": {
+        "$ref": "#/definitions/HoursOfOperationOverrideConfig"
+      },
+      "maxItems": 100,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "OverrideDescription": {
+      "description": "The description of the hours of operation override.",
+      "maxLength": 250,
+      "minLength": 1,
+      "type": "string"
+    },
+    "OverrideName": {
+      "description": "The name of the hours of operation override.",
+      "maxLength": 127,
+      "minLength": 1,
+      "type": "string"
+    },
+    "OverrideTimeSlice": {
+      "additionalProperties": false,
+      "description": "The start time or end time for an an hours of operation override.",
       "properties": {
         "Hours": {
           "description": "The hours.",
@@ -153,6 +277,15 @@
       "description": "The Amazon Resource Name (ARN) for the hours of operation.",
       "pattern": "^arn:aws[-a-z0-9]*:connect:[-a-z0-9]*:[0-9]{12}:instance/[-a-zA-Z0-9]*/operating-hours/[-a-zA-Z0-9]*$",
       "type": "string"
+    },
+    "HoursOfOperationOverrides": {
+      "description": "One or more hours of operation overrides assigned to an hour of operation.",
+      "insertionOrder": false,
+      "items": {
+        "$ref": "#/definitions/HoursOfOperationOverride"
+      },
+      "maxItems": 50,
+      "type": "array"
     },
     "InstanceArn": {
       "description": "The identifier of the Amazon Connect instance.",

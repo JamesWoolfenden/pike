@@ -9,6 +9,7 @@
     "/properties/ClusterName",
     "/properties/VpcConfig",
     "/properties/Orchestrator",
+    "/properties/InstanceGroups/*/OverrideVpcConfig",
     "/properties/InstanceGroups/*/ExecutionRole",
     "/properties/InstanceGroups/*/InstanceGroupName",
     "/properties/InstanceGroups/*/InstanceType",
@@ -59,6 +60,9 @@
         },
         "OnStartDeepHealthChecks": {
           "$ref": "#/definitions/OnStartDeepHealthChecks"
+        },
+        "OverrideVpcConfig": {
+          "$ref": "#/definitions/VpcConfig"
         },
         "ThreadsPerCore": {
           "description": "The number you specified to TreadsPerCore in CreateCluster for enabling or disabling multithreading. For instance types that support multithreading, you can specify 1 for disabling multithreading and 2 for enabling multithreading.",

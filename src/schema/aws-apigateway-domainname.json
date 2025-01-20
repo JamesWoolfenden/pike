@@ -45,27 +45,32 @@
   "handlers": {
     "create": {
       "permissions": [
-        "apigateway:*"
+        "apigateway:POST",
+        "apigateway:PUT",
+        "apigateway:GET"
       ]
     },
     "delete": {
       "permissions": [
-        "apigateway:*"
+        "apigateway:GET",
+        "apigateway:DELETE"
       ]
     },
     "list": {
       "permissions": [
-        "apigateway:*"
+        "apigateway:GET"
       ]
     },
     "read": {
       "permissions": [
-        "apigateway:*"
+        "apigateway:GET"
       ]
     },
     "update": {
       "permissions": [
-        "apigateway:*"
+        "apigateway:GET",
+        "apigateway:PUT",
+        "apigateway:PATCH"
       ]
     }
   },

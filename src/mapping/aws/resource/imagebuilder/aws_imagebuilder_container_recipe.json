@@ -9,7 +9,20 @@
       "imagebuilder:DeleteImageRecipe"
     ],
     "attributes": {
-      "tags": []
+      "kms_key_id": [
+        "kms:Encrypt",
+        "kms:Decrypt",
+        "kms:ReEncryptFrom",
+        "kms:ReEncryptTo",
+        "kms:GenerateDataKey",
+        "kms:GenerateDataKeyPair",
+        "kms:GenerateDataKeyPairWithoutPlaintext",
+        "kms:GenerateDataKeyWithoutPlaintext"
+      ],
+      "tags": [
+        "imagebuilder:TagResource",
+        "imagebuilder:UnTagResource"
+      ]
     },
     "destroy": [
       "imagebuilder:DeleteContainerRecipe",

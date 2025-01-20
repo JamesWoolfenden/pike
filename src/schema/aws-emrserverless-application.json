@@ -12,7 +12,8 @@
     "/properties/ImageConfiguration",
     "/properties/MonitoringConfiguration",
     "/properties/RuntimeConfiguration",
-    "/properties/InteractiveConfiguration"
+    "/properties/InteractiveConfiguration",
+    "/properties/SchedulerConfiguration"
   ],
   "createOnlyProperties": [
     "/properties/Name",
@@ -337,6 +338,10 @@
           "$ref": "#/definitions/ManagedPersistenceMonitoringConfiguration",
           "description": "Managed log persistence configurations for a JobRun."
         },
+        "PrometheusMonitoringConfiguration": {
+          "$ref": "#/definitions/PrometheusMonitoringConfiguration",
+          "description": "Prometheus monitoring configurations for a JobRun."
+        },
         "S3MonitoringConfiguration": {
           "$ref": "#/definitions/S3MonitoringConfiguration",
           "description": "S3 monitoring configurations for a JobRun."
@@ -373,6 +378,21 @@
       "required": [],
       "type": "object"
     },
+    "PrometheusMonitoringConfiguration": {
+      "additionalProperties": false,
+      "properties": {
+        "RemoteWriteUrl": {
+          "$ref": "#/definitions/RemoteWriteUrl",
+          "description": "The remote write URL in the Amazon Managed Service for Prometheus workspace to send metrics to."
+        }
+      }
+    },
+    "RemoteWriteUrl": {
+      "maxLength": 10280,
+      "minLength": 1,
+      "pattern": "^https://aps-workspaces.([a-z]{2}-[a-z-]{1,20}-[1-9]).amazonaws(.[0-9A-Za-z]{2,4})+/workspaces/[-_.0-9A-Za-z]{1,100}/api/v1/remote_write$",
+      "type": "string"
+    },
     "S3MonitoringConfiguration": {
       "additionalProperties": false,
       "properties": {
@@ -384,6 +404,21 @@
           "$ref": "#/definitions/UriString"
         }
       }
+    },
+    "SchedulerConfiguration": {
+      "additionalProperties": false,
+      "description": "The scheduler configuration for batch and streaming jobs running on this application. Supported with release labels emr-7.0.0 and above.",
+      "properties": {
+        "MaxConcurrentRuns": {
+          "description": "The maximum concurrent job runs on this application. If scheduler configuration is enabled on your application, the default value is 15. The valid range is 1 to 1000.",
+          "type": "integer"
+        },
+        "QueueTimeoutMinutes": {
+          "description": "The maximum duration in minutes for the job in QUEUED state. If scheduler configuration is enabled on your application, the default value is 360 minutes (6 hours). The valid range is from 15 to 720.",
+          "type": "integer"
+        }
+      },
+      "type": "object"
     },
     "SecurityGroupId": {
       "description": "Identifier of a security group",
@@ -649,6 +684,10 @@
     "RuntimeConfiguration": {
       "$ref": "#/definitions/ConfigurationList"
     },
+    "SchedulerConfiguration": {
+      "$ref": "#/definitions/SchedulerConfiguration",
+      "description": "The scheduler configuration for batch and streaming jobs running on this application. Supported with release labels emr-7.0.0 and above."
+    },
     "Tags": {
       "description": "Tag map with key and value",
       "insertionOrder": false,
@@ -678,6 +717,12 @@
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-rpdk.git",
   "tagging": {
     "cloudFormationSystemTags": false,
+    "permissions": [
+      "emr-serverless:TagResource",
+      "emr-serverless:UntagResource",
+      "kms:TagResource",
+      "kms:UntagResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

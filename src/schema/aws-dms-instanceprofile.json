@@ -65,7 +65,7 @@
         "dms:UpdateInstanceProfile",
         "dms:ModifyInstanceProfile",
         "dms:AddTagsToResource",
-        "dms:RemoveTagsToResource",
+        "dms:RemoveTagsFromResource",
         "dms:ListTagsForResource"
       ]
     }
@@ -161,6 +161,11 @@
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-csf.git",
   "tagging": {
     "cloudFormationSystemTags": false,
+    "permissions": [
+      "dms:AddTagsToResource",
+      "dms:RemoveTagsFromResource",
+      "dms:ListTagsForResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

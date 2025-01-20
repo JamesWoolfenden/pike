@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "appconfig:StartDeployment",
+      "appconfig:GetDeployment",
+      "appconfig:ListTagsForResource",
+      "kms:GenerateDataKey",
+      "appconfig:StopDeployment"
+    ],
+    "attributes": {
+      "tags": [
+        "appconfig:TagResource",
+        "appconfig:UntagResource"
+      ]
+    },
+    "destroy": [
+      "appconfig:StopDeployment"
+    ],
+    "modify": [],
+    "plan": [
+      "appconfig:GetDeployment"
+    ]
+  }
+]

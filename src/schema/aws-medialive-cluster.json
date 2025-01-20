@@ -100,13 +100,15 @@
         "ecs:RegisterTaskDefinition",
         "ecs:TagResource",
         "ecs:CreateService",
-        "iam:PassRole"
+        "iam:PassRole",
+        "medialive:ListTagsForResource"
       ]
     },
     "delete": {
       "permissions": [
         "medialive:DeleteCluster",
-        "medialive:DescribeCluster"
+        "medialive:DescribeCluster",
+        "ecs:DeleteService"
       ]
     },
     "list": {
@@ -116,7 +118,8 @@
     },
     "read": {
       "permissions": [
-        "medialive:DescribeCluster"
+        "medialive:DescribeCluster",
+        "medialive:ListTagsForResource"
       ]
     },
     "update": {
@@ -124,7 +127,8 @@
         "medialive:UpdateCluster",
         "medialive:DescribeCluster",
         "medialive:CreateTags",
-        "medialive:DeleteTags"
+        "medialive:DeleteTags",
+        "medialive:ListTagsForResource"
       ]
     }
   },

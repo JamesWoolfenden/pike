@@ -2,6 +2,9 @@
   {
     "apply": [
       "chatbot:CreateSlackChannelConfiguration",
+      "chatbot:AssociateToConfiguration",
+      "chatbot:DisassociateFromConfiguration",
+      "chatbot:ListAssociations",
       "chatbot:DeleteSlackChannelConfiguration",
       "chatbot:DescribeSlackChannelConfigurations",
       "chatbot:UpdateSlackChannelConfiguration"
@@ -17,10 +20,15 @@
       ]
     },
     "destroy": [
-      "chatbot:DeleteSlackChannelConfiguration"
+      "chatbot:DeleteSlackChannelConfiguration",
+      "chatbot:DisassociateFromConfiguration",
+      "chatbot:ListAssociations"
     ],
     "modify": [
-      "chatbot:UpdateSlackChannelConfiguration"
+      "chatbot:UpdateSlackChannelConfiguration",
+      "chatbot:AssociateToConfiguration",
+      "chatbot:DisassociateFromConfiguration",
+      "chatbot:ListAssociations"
     ],
     "plan": [
       "chatbot:DescribeSlackChannelConfigurations"

@@ -4,13 +4,27 @@
       "quicksight:CreateFolder",
       "quicksight:DescribeFolder",
       "quicksight:DeleteFolder",
-      "quicksight:UpdateFolder"
+      "quicksight:UpdateFolder",
+      "quicksight:UpdateFolderPermissions",
+      "quicksight:DescribeFolderPermissions",
+      "quicksight:ListTagsForResource"
     ],
     "attributes": {
-      "tags": []
+      "tags": [
+        "quicksight:TagResource",
+        "quicksight:UntagResource"
+      ]
     },
-    "destroy": [],
-    "modify": [],
+    "destroy": [
+      "quicksight:DeleteFolder"
+    ],
+    "modify": [
+      "quicksight:DescribeFolder",
+      "quicksight:UpdateFolder",
+      "quicksight:DescribeFolderPermissions",
+      "quicksight:UpdateFolderPermissions",
+      "quicksight:ListTagsForResource"
+    ],
     "plan": []
   }
 ]

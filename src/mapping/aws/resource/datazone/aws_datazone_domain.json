@@ -5,9 +5,16 @@
       "datazone:GetDomain",
       "datazone:ListTagsForResource",
       "datazone:DeleteDomain",
-      "datazone:UpdateDomain"
+      "datazone:UpdateDomain",
+      "iam:PassRole"
     ],
     "attributes": {
+      "single_sign_on": [
+        "sso:CreateManagedApplicationInstance",
+        "sso:DeleteManagedApplicationInstance",
+        "sso:PutApplicationAssignmentConfiguration",
+        "sso:ListInstances"
+      ],
       "tags": [
         "datazone:TagResource",
         "datazone:UntagResource"

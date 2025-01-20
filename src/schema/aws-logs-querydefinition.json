@@ -61,6 +61,16 @@
       "minLength": 0,
       "type": "string"
     },
+    "QueryLanguage": {
+      "default": "CWLI",
+      "description": "Query language of the query string. Possible values are CWLI, SQL, PPL, with CWLI being the default.",
+      "enum": [
+        "CWLI",
+        "SQL",
+        "PPL"
+      ],
+      "type": "string"
+    },
     "QueryString": {
       "description": "The query string to use for this definition",
       "maxLength": 10000,

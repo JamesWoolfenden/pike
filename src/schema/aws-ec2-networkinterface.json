@@ -103,7 +103,8 @@
         "ec2:CreateNetworkInterface",
         "ec2:DescribeNetworkInterfaces",
         "ec2:CreateTags",
-        "ec2:ModifyNetworkInterfaceAttribute"
+        "ec2:ModifyNetworkInterfaceAttribute",
+        "ec2:ModifyPublicIpDnsNameOptions"
       ]
     },
     "delete": {
@@ -131,7 +132,8 @@
         "ec2:DeleteTags",
         "ec2:CreateTags",
         "ec2:UnassignPrivateIpAddresses",
-        "ec2:AssignPrivateIpAddresses"
+        "ec2:AssignPrivateIpAddresses",
+        "ec2:ModifyPublicIpDnsNameOptions"
       ]
     }
   },

@@ -130,7 +130,7 @@
     },
     "list": {
       "permissions": [
-        "thinclient:ListEnvironment",
+        "thinclient:ListEnvironments",
         "thinclient:ListTagsForResource",
         "kms:Decrypt"
       ]

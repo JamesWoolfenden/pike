@@ -192,7 +192,6 @@
     "AuthorizedPrincipals",
     "DomainIdentifier",
     "EnvironmentIdentifier",
-    "ManageAccessRole",
     "Name",
     "SubscriptionTargetConfig",
     "Type"

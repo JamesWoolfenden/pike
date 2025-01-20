@@ -85,5 +85,17 @@
     "/properties/Arn"
   ],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-detective.git",
+  "tagging": {
+    "cloudFormationSystemTags": true,
+    "permissions": [
+      "detective:UntagResource",
+      "detective:TagResource",
+      "detective:ListTagsForResource"
+    ],
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": true,
+    "taggable": true
+  },
   "typeName": "AWS::Detective::Graph"
 }

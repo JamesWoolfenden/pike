@@ -5,6 +5,12 @@
     "/properties/Tags"
   ],
   "definitions": {
+    "BucketOwner": {
+      "description": "Bucket owner",
+      "maxLength": 12,
+      "minLength": 12,
+      "type": "string"
+    },
     "CsvOptions": {
       "additionalProperties": false,
       "description": "Csv options",
@@ -345,6 +351,9 @@
         "Bucket": {
           "type": "string"
         },
+        "BucketOwner": {
+          "$ref": "#/definitions/BucketOwner"
+        },
         "Key": {
           "type": "string"
         }
@@ -381,6 +390,7 @@
     "create": {
       "permissions": [
         "databrew:CreateDataset",
+        "databrew:DescribeDataset",
         "databrew:TagResource",
         "databrew:UntagResource",
         "glue:GetConnection",
@@ -447,6 +457,15 @@
     "PathOptions": {
       "$ref": "#/definitions/PathOptions",
       "description": "PathOptions"
+    },
+    "Source": {
+      "description": "Source type of the dataset",
+      "enum": [
+        "S3",
+        "DATA-CATALOG",
+        "DATABASE"
+      ],
+      "type": "string"
     },
     "Tags": {
       "insertionOrder": false,

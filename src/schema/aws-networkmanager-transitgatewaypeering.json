@@ -58,8 +58,7 @@
     },
     "read": {
       "permissions": [
-        "networkmanager:GetTransitGatewayPeering",
-        "networkmanager:TagResource"
+        "networkmanager:GetTransitGatewayPeering"
       ]
     },
     "update": {

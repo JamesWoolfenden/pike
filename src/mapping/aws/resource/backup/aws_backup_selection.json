@@ -16,6 +16,8 @@
       "Backup:DeleteBackupSelection"
     ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "Backup:GetBackupSelection"
+    ]
   }
 ]

@@ -240,7 +240,7 @@
   ],
   "properties": {
     "Arn": {
-      "maxLength": 100,
+      "maxLength": 256,
       "type": "string"
     },
     "ConfiguredTableAssociationAnalysisRules": {

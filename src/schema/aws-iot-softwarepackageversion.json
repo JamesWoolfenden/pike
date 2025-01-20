@@ -113,6 +113,7 @@
       "type": "string"
     },
     "PackageVersionArn": {
+      "pattern": "^arn:[!-~]+$",
       "type": "string"
     },
     "Status": {
@@ -145,6 +146,11 @@
   ],
   "tagging": {
     "cloudFormationSystemTags": true,
+    "permissions": [
+      "iot:TagResource",
+      "iot:UntagResource",
+      "iot:ListTagsForResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

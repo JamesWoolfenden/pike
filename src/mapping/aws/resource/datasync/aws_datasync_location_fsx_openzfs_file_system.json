@@ -4,7 +4,12 @@
       "datasync:DescribeLocationFsxOpenZfs",
       "datasync:CreateLocationFsxOpenZfs",
       "datasync:DeleteLocation",
-      "datasync:ListTagsForResource"
+      "datasync:ListTagsForResource",
+      "datasync:UpdateLocationFsxOpenZfs",
+      "fsx:DescribeFileSystems",
+      "ec2:DescribeNetworkInterfaces",
+      "ec2:DescribeSubnets",
+      "ec2:DescribeSecurityGroups"
     ],
     "attributes": {
       "tags": [
@@ -15,7 +20,13 @@
     "destroy": [
       "datasync:DeleteLocation"
     ],
-    "modify": [],
+    "modify": [
+      "datasync:DescribeLocationFsxOpenZfs",
+      "datasync:UpdateLocationFsxOpenZfs",
+      "datasync:ListTagsForResource",
+      "fsx:DescribeFileSystems",
+      "ec2:DescribeNetworkInterfaces"
+    ],
     "plan": []
   }
 ]

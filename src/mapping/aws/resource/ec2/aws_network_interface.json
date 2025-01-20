@@ -8,7 +8,8 @@
       "ec2:UnassignIpv6Addresses",
       "ec2:AssignIpv6Addresses",
       "ec2:UnassignPrivateIpAddresses",
-      "ec2:AssignPrivateIpAddresses"
+      "ec2:AssignPrivateIpAddresses",
+      "ec2:ModifyPublicIpDnsNameOptions"
     ],
     "attributes": {
       "tags": [
@@ -23,7 +24,8 @@
       "ec2:UnassignIpv6Addresses",
       "ec2:AssignIpv6Addresses",
       "ec2:UnassignPrivateIpAddresses",
-      "ec2:AssignPrivateIpAddresses"
+      "ec2:AssignPrivateIpAddresses",
+      "ec2:ModifyPublicIpDnsNameOptions"
     ],
     "plan": []
   }

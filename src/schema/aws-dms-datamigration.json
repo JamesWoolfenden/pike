@@ -1,169 +1,216 @@
 {
-  "typeName" : "AWS::DMS::DataMigration",
-  "description" : "Resource schema for AWS::DMS::DataMigration.",
-  "sourceUrl" : "https://github.com/aws-cloudformation/aws-cloudformation-rpdk.git",
-  "tagging" : {
-    "taggable" : true,
-    "tagOnCreate" : true,
-    "tagUpdatable" : true,
-    "cloudFormationSystemTags" : false,
-    "tagProperty" : "/properties/Tags",
-    "permissions" : [ "dms:AddTagsToResource", "dms:RemoveTagsFromResource", "dms:ListTagsForResource" ]
-  },
-  "definitions" : {
-    "Tag" : {
-      "description" : "A key-value pair to associate with a resource.",
-      "type" : "object",
-      "properties" : {
-        "Key" : {
-          "type" : "string",
-          "description" : "The key name of the tag. You can specify a value that is 1 to 128 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
-          "minLength" : 1,
-          "maxLength" : 128
+  "additionalIdentifiers": [
+    [
+      "/properties/DataMigrationName"
+    ]
+  ],
+  "additionalProperties": false,
+  "definitions": {
+    "DataMigrationSettings": {
+      "additionalProperties": false,
+      "properties": {
+        "CloudwatchLogsEnabled": {
+          "description": "The property specifies whether to enable the Cloudwatch log.",
+          "type": "boolean"
         },
-        "Value" : {
-          "type" : "string",
-          "description" : "The value for the tag. You can specify a value that is 0 to 256 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
-          "minLength" : 0,
-          "maxLength" : 256
+        "NumberOfJobs": {
+          "description": "The number of parallel jobs that trigger parallel threads to unload the tables from the source, and then load them to the target.",
+          "maximum": 50,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "SelectionRules": {
+          "description": "The property specifies the rules of selecting objects for data migration.",
+          "type": "string"
         }
       },
-      "required" : [ "Key", "Value" ],
-      "additionalProperties" : false
+      "type": "object"
     },
-    "DataMigrationSettings" : {
-      "type" : "object",
-      "properties" : {
-        "CloudwatchLogsEnabled" : {
-          "type" : "boolean",
-          "description" : "The property specifies whether to enable the Cloudwatch log."
+    "SourceDataSettings": {
+      "additionalProperties": false,
+      "properties": {
+        "CDCStartPosition": {
+          "description": "The property is a point in the database engine's log that defines a time where you can begin CDC.",
+          "maxLength": 40,
+          "type": "string"
         },
-        "NumberOfJobs" : {
-          "type" : "integer",
-          "description" : "The number of parallel jobs that trigger parallel threads to unload the tables from the source, and then load them to the target.",
-          "minimum" : 1,
-          "maximum" : 50
+        "CDCStartTime": {
+          "description": "The property indicates the start time for a change data capture (CDC) operation. The value is server time in UTC format.",
+          "maxLength": 40,
+          "type": "string"
         },
-        "SelectionRules" : {
-          "type" : "string",
-          "description" : "The property specifies the rules of selecting objects for data migration."
+        "CDCStopTime": {
+          "description": "The property indicates the stop time for a change data capture (CDC) operation. The value is server time in UTC format.",
+          "maxLength": 40,
+          "type": "string"
+        },
+        "SlotName": {
+          "description": "The property sets the name of a previously created logical replication slot for a change data capture (CDC) load of the source instance.",
+          "maxLength": 255,
+          "type": "string"
         }
       },
-      "additionalProperties" : false
+      "type": "object"
     },
-    "SourceDataSettings" : {
-      "type" : "object",
-      "properties" : {
-        "CDCStartPosition" : {
-          "type" : "string",
-          "description" : "The property is a point in the database engine's log that defines a time where you can begin CDC.",
-          "maxLength" : 40
+    "Tag": {
+      "additionalProperties": false,
+      "description": "A key-value pair to associate with a resource.",
+      "properties": {
+        "Key": {
+          "description": "The key name of the tag. You can specify a value that is 1 to 128 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
+          "maxLength": 128,
+          "minLength": 1,
+          "type": "string"
         },
-        "CDCStartTime" : {
-          "type" : "string",
-          "description" : "The property indicates the start time for a change data capture (CDC) operation. The value is server time in UTC format.",
-          "maxLength" : 40
-        },
-        "CDCStopTime" : {
-          "type" : "string",
-          "description" : "The property indicates the stop time for a change data capture (CDC) operation. The value is server time in UTC format.",
-          "maxLength" : 40
-        },
-        "SlotName" : {
-          "type" : "string",
-          "description" : "The property sets the name of a previously created logical replication slot for a change data capture (CDC) load of the source instance.",
-          "maxLength" : 255
+        "Value": {
+          "description": "The value for the tag. You can specify a value that is 0 to 256 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
+          "maxLength": 256,
+          "minLength": 0,
+          "type": "string"
         }
       },
-      "additionalProperties" : false
+      "required": [
+        "Key",
+        "Value"
+      ],
+      "type": "object"
     }
   },
-  "properties" : {
-    "DataMigrationName" : {
-      "description" : "The property describes a name to identify the data migration.",
-      "type" : "string",
-      "minLength" : 1,
-      "maxLength" : 300
+  "description": "Resource schema for AWS::DMS::DataMigration.",
+  "handlers": {
+    "create": {
+      "permissions": [
+        "dms:CreateDataMigration",
+        "dms:DescribeDataMigrations",
+        "dms:AddTagsToResource",
+        "dms:ListTagsForResource",
+        "iam:PassRole"
+      ]
     },
-    "DataMigrationArn" : {
-      "description" : "The property describes an ARN of the data migration.",
-      "type" : "string",
-      "minLength" : 1,
-      "maxLength" : 300
+    "delete": {
+      "permissions": [
+        "dms:DeleteDataMigration",
+        "dms:RemoveTagsFromResource"
+      ]
     },
-    "DataMigrationIdentifier" : {
-      "description" : "The property describes an ARN of the data migration.",
-      "type" : "string",
-      "minLength" : 1,
-      "maxLength" : 300
+    "list": {
+      "permissions": [
+        "dms:DescribeDataMigrations",
+        "dms:ListTagsForResource"
+      ]
     },
-    "DataMigrationCreateTime" : {
-      "description" : "The property describes the create time of the data migration.",
-      "type" : "string",
-      "minLength" : 1,
-      "maxLength" : 40
+    "read": {
+      "permissions": [
+        "dms:DescribeDataMigrations",
+        "dms:ListTagsForResource"
+      ]
     },
-    "ServiceAccessRoleArn" : {
-      "description" : "The property describes Amazon Resource Name (ARN) of the service access role.",
-      "type" : "string",
-      "minLength" : 1,
-      "maxLength" : 300
-    },
-    "MigrationProjectIdentifier" : {
-      "description" : "The property describes an identifier for the migration project. It is used for describing/deleting/modifying can be name/arn",
-      "type" : "string",
-      "minLength" : 1,
-      "maxLength" : 255
-    },
-    "DataMigrationType" : {
-      "description" : "The property describes the type of migration.",
-      "type" : "string",
-      "enum" : [ "full-load", "cdc", "full-load-and-cdc" ]
-    },
-    "DataMigrationSettings" : {
-      "description" : "The property describes the settings for the data migration.",
-      "$ref" : "#/definitions/DataMigrationSettings"
-    },
-    "SourceDataSettings" : {
-      "description" : "The property describes the settings for the data migration.",
-      "type" : "array",
-      "uniqueItems" : true,
-      "insertionOrder" : false,
-      "items" : {
-        "$ref" : "#/definitions/SourceDataSettings"
-      }
-    },
-    "Tags" : {
-      "description" : "An array of key-value pairs to apply to this resource.",
-      "type" : "array",
-      "uniqueItems" : true,
-      "insertionOrder" : false,
-      "items" : {
-        "$ref" : "#/definitions/Tag"
-      }
+    "update": {
+      "permissions": [
+        "dms:ModifyDataMigration",
+        "dms:AddTagsToResource",
+        "dms:RemoveTagsFromResource",
+        "dms:ListTagsForResource",
+        "iam:PassRole"
+      ]
     }
   },
-  "primaryIdentifier" : [ "/properties/DataMigrationArn" ],
-  "additionalIdentifiers" : [ [ "/properties/DataMigrationName" ] ],
-  "readOnlyProperties" : [ "/properties/DataMigrationArn", "/properties/DataMigrationCreateTime" ],
-  "writeOnlyProperties" : [ "/properties/DataMigrationIdentifier" ],
-  "required" : [ "DataMigrationType", "MigrationProjectIdentifier", "ServiceAccessRoleArn" ],
-  "additionalProperties" : false,
-  "handlers" : {
-    "create" : {
-      "permissions" : [ "dms:CreateDataMigration", "dms:DescribeDataMigrations", "dms:AddTagsToResource", "dms:ListTagsForResource", "iam:PassRole" ]
+  "primaryIdentifier": [
+    "/properties/DataMigrationArn"
+  ],
+  "properties": {
+    "DataMigrationArn": {
+      "description": "The property describes an ARN of the data migration.",
+      "maxLength": 300,
+      "minLength": 1,
+      "type": "string"
     },
-    "read" : {
-      "permissions" : [ "dms:DescribeDataMigrations", "dms:ListTagsForResource" ]
+    "DataMigrationCreateTime": {
+      "description": "The property describes the create time of the data migration.",
+      "maxLength": 40,
+      "minLength": 1,
+      "type": "string"
     },
-    "update" : {
-      "permissions" : [ "dms:ModifyDataMigration", "dms:AddTagsToResource", "dms:RemoveTagsFromResource", "dms:ListTagsForResource", "iam:PassRole" ]
+    "DataMigrationIdentifier": {
+      "description": "The property describes an ARN of the data migration.",
+      "maxLength": 300,
+      "minLength": 1,
+      "type": "string"
     },
-    "delete" : {
-      "permissions" : [ "dms:DeleteDataMigration", "dms:RemoveTagsFromResource" ]
+    "DataMigrationName": {
+      "description": "The property describes a name to identify the data migration.",
+      "maxLength": 300,
+      "minLength": 1,
+      "type": "string"
     },
-    "list" : {
-      "permissions" : [ "dms:DescribeDataMigrations", "dms:ListTagsForResource" ]
+    "DataMigrationSettings": {
+      "$ref": "#/definitions/DataMigrationSettings",
+      "description": "The property describes the settings for the data migration."
+    },
+    "DataMigrationType": {
+      "description": "The property describes the type of migration.",
+      "enum": [
+        "full-load",
+        "cdc",
+        "full-load-and-cdc"
+      ],
+      "type": "string"
+    },
+    "MigrationProjectIdentifier": {
+      "description": "The property describes an identifier for the migration project. It is used for describing/deleting/modifying can be name/arn",
+      "maxLength": 255,
+      "minLength": 1,
+      "type": "string"
+    },
+    "ServiceAccessRoleArn": {
+      "description": "The property describes Amazon Resource Name (ARN) of the service access role.",
+      "maxLength": 300,
+      "minLength": 1,
+      "type": "string"
+    },
+    "SourceDataSettings": {
+      "description": "The property describes the settings for the data migration.",
+      "insertionOrder": false,
+      "items": {
+        "$ref": "#/definitions/SourceDataSettings"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "Tags": {
+      "description": "An array of key-value pairs to apply to this resource.",
+      "insertionOrder": false,
+      "items": {
+        "$ref": "#/definitions/Tag"
+      },
+      "type": "array",
+      "uniqueItems": true
     }
-  }
+  },
+  "readOnlyProperties": [
+    "/properties/DataMigrationArn",
+    "/properties/DataMigrationCreateTime"
+  ],
+  "required": [
+    "DataMigrationType",
+    "MigrationProjectIdentifier",
+    "ServiceAccessRoleArn"
+  ],
+  "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-rpdk.git",
+  "tagging": {
+    "cloudFormationSystemTags": false,
+    "permissions": [
+      "dms:AddTagsToResource",
+      "dms:RemoveTagsFromResource",
+      "dms:ListTagsForResource"
+    ],
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": true,
+    "taggable": true
+  },
+  "typeName": "AWS::DMS::DataMigration",
+  "writeOnlyProperties": [
+    "/properties/DataMigrationIdentifier"
+  ]
 }

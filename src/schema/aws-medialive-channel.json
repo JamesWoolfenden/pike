@@ -1,7 +1,8 @@
 {
   "additionalProperties": false,
   "createOnlyProperties": [
-    "/properties/Vpc"
+    "/properties/Vpc",
+    "/properties/AnywhereSettings"
   ],
   "definitions": {
     "AacSettings": {
@@ -72,6 +73,18 @@
       "properties": {
         "SourceAncillaryChannelNumber": {
           "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "AnywhereSettings": {
+      "additionalProperties": false,
+      "properties": {
+        "ChannelPlacementGroupId": {
+          "type": "string"
+        },
+        "ClusterId": {
+          "type": "string"
         }
       },
       "type": "object"
@@ -409,6 +422,81 @@
       },
       "type": "object"
     },
+    "Av1ColorSpaceSettings": {
+      "additionalProperties": false,
+      "properties": {
+        "ColorSpacePassthroughSettings": {
+          "$ref": "#/definitions/ColorSpacePassthroughSettings"
+        },
+        "Hdr10Settings": {
+          "$ref": "#/definitions/Hdr10Settings"
+        },
+        "Rec601Settings": {
+          "$ref": "#/definitions/Rec601Settings"
+        },
+        "Rec709Settings": {
+          "$ref": "#/definitions/Rec709Settings"
+        }
+      },
+      "type": "object"
+    },
+    "Av1Settings": {
+      "additionalProperties": false,
+      "properties": {
+        "AfdSignaling": {
+          "type": "string"
+        },
+        "BufSize": {
+          "type": "integer"
+        },
+        "ColorSpaceSettings": {
+          "$ref": "#/definitions/Av1ColorSpaceSettings"
+        },
+        "FixedAfd": {
+          "type": "string"
+        },
+        "FramerateDenominator": {
+          "type": "integer"
+        },
+        "FramerateNumerator": {
+          "type": "integer"
+        },
+        "GopSize": {
+          "type": "number"
+        },
+        "GopSizeUnits": {
+          "type": "string"
+        },
+        "Level": {
+          "type": "string"
+        },
+        "LookAheadRateControl": {
+          "type": "string"
+        },
+        "MaxBitrate": {
+          "type": "integer"
+        },
+        "MinIInterval": {
+          "type": "integer"
+        },
+        "ParDenominator": {
+          "type": "integer"
+        },
+        "ParNumerator": {
+          "type": "integer"
+        },
+        "QvbrQualityLevel": {
+          "type": "integer"
+        },
+        "SceneChangeDetect": {
+          "type": "string"
+        },
+        "TimecodeBurninSettings": {
+          "$ref": "#/definitions/TimecodeBurninSettings"
+        }
+      },
+      "type": "object"
+    },
     "AvailBlanking": {
       "additionalProperties": false,
       "properties": {
@@ -444,6 +532,18 @@
         },
         "Scte35TimeSignalApos": {
           "$ref": "#/definitions/Scte35TimeSignalApos"
+        }
+      },
+      "type": "object"
+    },
+    "BandwidthReductionFilterSettings": {
+      "additionalProperties": false,
+      "properties": {
+        "PostFilterSharpening": {
+          "type": "string"
+        },
+        "Strength": {
+          "type": "string"
         }
       },
       "type": "object"
@@ -1275,6 +1375,9 @@
     "H264FilterSettings": {
       "additionalProperties": false,
       "properties": {
+        "BandwidthReductionFilterSettings": {
+          "$ref": "#/definitions/BandwidthReductionFilterSettings"
+        },
         "TemporalFilterSettings": {
           "$ref": "#/definitions/TemporalFilterSettings"
         }
@@ -1440,6 +1543,9 @@
     "H265FilterSettings": {
       "additionalProperties": false,
       "properties": {
+        "BandwidthReductionFilterSettings": {
+          "$ref": "#/definitions/BandwidthReductionFilterSettings"
+        },
         "TemporalFilterSettings": {
           "$ref": "#/definitions/TemporalFilterSettings"
         }
@@ -1910,6 +2016,13 @@
         },
         "InputSettings": {
           "$ref": "#/definitions/InputSettings"
+        },
+        "LogicalInterfaceNames": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": false
         }
       },
       "type": "object"
@@ -2466,13 +2579,82 @@
       },
       "type": "object"
     },
+    "MulticastInputSettings": {
+      "additionalProperties": false,
+      "properties": {
+        "SourceIpAddress": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "MultiplexContainerSettings": {
+      "additionalProperties": false,
+      "properties": {
+        "MultiplexM2tsSettings": {
+          "$ref": "#/definitions/MultiplexM2tsSettings"
+        }
+      },
+      "type": "object"
+    },
     "MultiplexGroupSettings": {
       "additionalProperties": false,
+      "type": "object"
+    },
+    "MultiplexM2tsSettings": {
+      "additionalProperties": false,
+      "properties": {
+        "AbsentInputAudioBehavior": {
+          "type": "string"
+        },
+        "Arib": {
+          "type": "string"
+        },
+        "AudioBufferModel": {
+          "type": "string"
+        },
+        "AudioFramesPerPes": {
+          "type": "integer"
+        },
+        "AudioStreamType": {
+          "type": "string"
+        },
+        "CcDescriptor": {
+          "type": "string"
+        },
+        "Ebif": {
+          "type": "string"
+        },
+        "EsRateInPes": {
+          "type": "string"
+        },
+        "Klv": {
+          "type": "string"
+        },
+        "NielsenId3Behavior": {
+          "type": "string"
+        },
+        "PcrControl": {
+          "type": "string"
+        },
+        "PcrPeriod": {
+          "type": "integer"
+        },
+        "Scte35Control": {
+          "type": "string"
+        },
+        "Scte35PrerollPullupMilliseconds": {
+          "type": "number"
+        }
+      },
       "type": "object"
     },
     "MultiplexOutputSettings": {
       "additionalProperties": false,
       "properties": {
+        "ContainerSettings": {
+          "$ref": "#/definitions/MultiplexContainerSettings"
+        },
         "Destination": {
           "$ref": "#/definitions/OutputLocationRef"
         }
@@ -2496,6 +2678,9 @@
       "properties": {
         "HlsInputSettings": {
           "$ref": "#/definitions/HlsInputSettings"
+        },
+        "MulticastInputSettings": {
+          "$ref": "#/definitions/MulticastInputSettings"
         },
         "ServerValidation": {
           "type": "string"
@@ -2611,6 +2796,13 @@
           },
           "type": "array",
           "uniqueItems": false
+        },
+        "SrtSettings": {
+          "items": {
+            "$ref": "#/definitions/SrtOutputDestinationSettings"
+          },
+          "type": "array",
+          "uniqueItems": false
         }
       },
       "type": "object"
@@ -2679,6 +2871,9 @@
         "RtmpGroupSettings": {
           "$ref": "#/definitions/RtmpGroupSettings"
         },
+        "SrtGroupSettings": {
+          "$ref": "#/definitions/SrtGroupSettings"
+        },
         "UdpGroupSettings": {
           "$ref": "#/definitions/UdpGroupSettings"
         }
@@ -2732,6 +2927,9 @@
         },
         "RtmpOutputSettings": {
           "$ref": "#/definitions/RtmpOutputSettings"
+        },
+        "SrtOutputSettings": {
+          "$ref": "#/definitions/SrtOutputSettings"
         },
         "UdpOutputSettings": {
           "$ref": "#/definitions/UdpOutputSettings"
@@ -2900,6 +3098,51 @@
       "additionalProperties": false,
       "type": "object"
     },
+    "SrtGroupSettings": {
+      "additionalProperties": false,
+      "properties": {
+        "InputLossAction": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "SrtOutputDestinationSettings": {
+      "additionalProperties": false,
+      "properties": {
+        "EncryptionPassphraseSecretArn": {
+          "type": "string"
+        },
+        "StreamId": {
+          "type": "string"
+        },
+        "Url": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "SrtOutputSettings": {
+      "additionalProperties": false,
+      "properties": {
+        "BufferMsec": {
+          "type": "integer"
+        },
+        "ContainerSettings": {
+          "$ref": "#/definitions/UdpContainerSettings"
+        },
+        "Destination": {
+          "$ref": "#/definitions/OutputLocationRef"
+        },
+        "EncryptionType": {
+          "type": "string"
+        },
+        "Latency": {
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
     "StandardHlsSettings": {
       "additionalProperties": false,
       "properties": {
@@ -3054,6 +3297,9 @@
     "VideoCodecSettings": {
       "additionalProperties": false,
       "properties": {
+        "Av1Settings": {
+          "$ref": "#/definitions/Av1Settings"
+        },
         "FrameCaptureSettings": {
           "$ref": "#/definitions/FrameCaptureSettings"
         },
@@ -3210,6 +3456,9 @@
     "/properties/Id"
   ],
   "properties": {
+    "AnywhereSettings": {
+      "$ref": "#/definitions/AnywhereSettings"
+    },
     "Arn": {
       "type": "string"
     },

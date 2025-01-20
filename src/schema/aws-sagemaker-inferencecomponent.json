@@ -1,6 +1,12 @@
 {
   "additionalProperties": false,
   "definitions": {
+    "BaseInferenceComponentName": {
+      "description": "The name of the base inference component",
+      "maxLength": 63,
+      "pattern": "^[a-zA-Z0-9](-*[a-zA-Z0-9])*$",
+      "type": "string"
+    },
     "ContainerImage": {
       "description": "The image to use for the container that will be materialized for the inference component",
       "maxLength": 255,
@@ -128,6 +134,9 @@
       "additionalProperties": false,
       "description": "The specification for the inference component",
       "properties": {
+        "BaseInferenceComponentName": {
+          "$ref": "#/definitions/BaseInferenceComponentName"
+        },
         "ComputeResourceRequirements": {
           "$ref": "#/definitions/InferenceComponentComputeResourceRequirements"
         },
@@ -141,9 +150,6 @@
           "$ref": "#/definitions/InferenceComponentStartupParameters"
         }
       },
-      "required": [
-        "ComputeResourceRequirements"
-      ],
       "type": "object"
     },
     "InferenceComponentStartupParameters": {
@@ -332,9 +338,7 @@
   ],
   "required": [
     "EndpointName",
-    "VariantName",
-    "Specification",
-    "RuntimeConfig"
+    "Specification"
   ],
   "tagging": {
     "cloudFormationSystemTags": false,

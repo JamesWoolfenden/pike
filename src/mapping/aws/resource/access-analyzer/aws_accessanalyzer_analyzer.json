@@ -4,6 +4,7 @@
       "access-analyzer:CreateAnalyzer",
       "access-analyzer:DeleteAnalyzer",
       "access-analyzer:GetAnalyzer",
+      "access-analyzer:UpdateAnalyzer",
       "access-analyzer:ListAnalyzers",
       "access-analyzer:DeleteArchiveRule",
       "access-analyzer:UpdateArchiveRule",
@@ -20,7 +21,8 @@
     ],
     "modify": [
       "access-analyzer:DeleteArchiveRule",
-      "access-analyzer:UpdateArchiveRule"
+      "access-analyzer:UpdateArchiveRule",
+      "access-analyzer:UpdateAnalyzer"
     ],
     "plan": []
   }

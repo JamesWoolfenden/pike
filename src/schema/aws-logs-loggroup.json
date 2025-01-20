@@ -6,7 +6,7 @@
   "definitions": {
     "Tag": {
       "additionalProperties": false,
-      "description": "",
+      "description": "The value of this key-value pair.",
       "properties": {
         "Key": {
           "description": "",
@@ -15,7 +15,7 @@
           "type": "string"
         },
         "Value": {
-          "description": "",
+          "description": "The value of this key-value pair.",
           "maxLength": 256,
           "minLength": 0,
           "type": "string"
@@ -42,7 +42,9 @@
         "s3:REST.PUT.OBJECT",
         "firehose:TagDeliveryStream",
         "logs:PutResourcePolicy",
-        "logs:DescribeResourcePolicies"
+        "logs:DescribeResourcePolicies",
+        "logs:PutIndexPolicy",
+        "logs:DescribeIndexPolicies"
       ]
     },
     "delete": {
@@ -70,7 +72,8 @@
       "permissions": [
         "logs:DescribeLogGroups",
         "logs:ListTagsForResource",
-        "logs:GetDataProtectionPolicy"
+        "logs:GetDataProtectionPolicy",
+        "logs:DescribeIndexPolicies"
       ]
     },
     "update": {
@@ -86,7 +89,9 @@
         "logs:PutDataProtectionPolicy",
         "logs:CreateLogDelivery",
         "s3:REST.PUT.OBJECT",
-        "firehose:TagDeliveryStream"
+        "firehose:TagDeliveryStream",
+        "logs:PutIndexPolicy",
+        "logs:DeleteIndexPolicy"
       ]
     }
   },
@@ -101,6 +106,16 @@
     "DataProtectionPolicy": {
       "description": "Creates a data protection policy and assigns it to the log group. A data protection policy can help safeguard sensitive data that's ingested by the log group by auditing and masking the sensitive log data. When a user who does not have permission to view masked data views a log event that includes masked data, the sensitive data is replaced by asterisks.\n For more information, including a list of types of data that can be audited and masked, see [Protect sensitive log data with masking](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data.html).",
       "type": "object"
+    },
+    "FieldIndexPolicies": {
+      "description": "Creates or updates a *field index policy* for the specified log group. Only log groups in the Standard log class support field index policies. For more information about log classes, see [Log classes](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html).\n You can use field index policies to create *field indexes* on fields found in log events in the log group. Creating field indexes lowers the costs for CWL Insights queries that reference those field indexes, because these queries attempt to skip the processing of log events that are known to not match the indexed field. Good fields to index are fields that you often need to query for and fields that have high cardinality of values Common examples of indexes include request ID, session ID, userID, and instance IDs. For more information, see [Create field indexes to improve query performance and reduce costs](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Field-Indexing.html).\n Currently, this array supports only one field index policy object.",
+      "insertionOrder": false,
+      "items": {
+        "description": "Index policy for log group in JSON format",
+        "type": "object"
+      },
+      "type": "array",
+      "uniqueItems": true
     },
     "KmsKeyId": {
       "description": "The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data.\n To associate an KMS key with the log group, specify the ARN of that KMS key here. If you do so, ingested data is encrypted using this key. This association is stored as long as the data encrypted with the KMS key is still within CWL. This enables CWL to decrypt this data whenever it is requested.\n If you attempt to associate a KMS key with the log group but the KMS key doesn't exist or is deactivated, you will receive an ``InvalidParameterException`` error.\n Log group data is always encrypted in CWL. If you omit this key, the encryption does not use KMS. For more information, see [Encrypt log data in using](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/encrypt-log-data-kms.html)",

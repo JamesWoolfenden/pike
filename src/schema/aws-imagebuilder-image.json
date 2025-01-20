@@ -155,7 +155,8 @@
         ]
       },
       "permissions": [
-        "imagebuilder:ListImages"
+        "imagebuilder:ListImages",
+        "imagebuilder:ListImageBuildVersions"
       ]
     },
     "read": {
@@ -175,6 +176,11 @@
       "required": [
         "ImageRecipeArn",
         "InfrastructureConfigurationArn"
+      ]
+    },
+    {
+      "required": [
+        "ImportDiskImageSettings"
       ]
     }
   ],

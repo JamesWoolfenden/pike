@@ -6,7 +6,9 @@
       "ec2:DescribeAccountAttributes",
       "elasticfilesystem:DescribeLifecycleConfiguration",
       "elasticfilesystem:DeleteFileSystem",
-      "elasticfilesystem:ListTagsForResource"
+      "elasticfilesystem:ListTagsForResource",
+      "iam:PassRole",
+      "iam:CreateServiceLinkedRole"
     ],
     "attributes": {
       "kms_key_id": [
@@ -17,6 +19,10 @@
         "kms:CreateGrant",
         "kms:DescribeKey"
       ],
+      "lifecycle_policy": [
+        "elasticfilesystem:PutLifecycleConfiguration",
+        "elasticfilesystem:DescribeLifecycleConfiguration"
+      ],
       "tags": [
         "elasticfilesystem:UntagResource",
         "elasticfilesystem:TagResource",
@@ -25,9 +31,6 @@
     },
     "destroy": [
       "elasticfilesystem:DeleteFileSystem"
-    ],
-    "lifecycle_policy": [
-      "elasticfilesystem:PutLifecycleConfiguration"
     ],
     "modify": [],
     "plan": []

@@ -32,6 +32,9 @@
     "Id": {
       "type": "string"
     },
+    "ManagedLoginVersion": {
+      "type": "integer"
+    },
     "UserPoolId": {
       "type": "string"
     }

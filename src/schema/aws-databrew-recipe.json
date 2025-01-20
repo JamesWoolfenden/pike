@@ -516,6 +516,7 @@
     "create": {
       "permissions": [
         "databrew:CreateRecipe",
+        "databrew:DescribeRecipe",
         "databrew:TagResource",
         "databrew:UntagResource",
         "iam:PassRole"

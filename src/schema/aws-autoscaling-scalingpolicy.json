@@ -29,6 +29,9 @@
         "Namespace": {
           "type": "string"
         },
+        "Period": {
+          "type": "integer"
+        },
         "Statistic": {
           "type": "string"
         },
@@ -347,6 +350,9 @@
         "MetricStat": {
           "$ref": "#/definitions/TargetTrackingMetricStat"
         },
+        "Period": {
+          "type": "integer"
+        },
         "ReturnData": {
           "type": "boolean"
         }
@@ -361,6 +367,9 @@
       "properties": {
         "Metric": {
           "$ref": "#/definitions/Metric"
+        },
+        "Period": {
+          "type": "integer"
         },
         "Stat": {
           "type": "string"

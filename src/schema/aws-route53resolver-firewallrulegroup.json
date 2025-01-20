@@ -45,6 +45,23 @@
           ],
           "type": "string"
         },
+        "ConfidenceThreshold": {
+          "description": "FirewallDomainRedirectionAction",
+          "enum": [
+            "LOW",
+            "MEDIUM",
+            "HIGH"
+          ],
+          "type": "string"
+        },
+        "DnsThreatProtection": {
+          "description": "FirewallDomainRedirectionAction",
+          "enum": [
+            "DGA",
+            "DNS_TUNNELING"
+          ],
+          "type": "string"
+        },
         "FirewallDomainListId": {
           "description": "ResourceId",
           "maxLength": 64,
@@ -59,6 +76,12 @@
           ],
           "type": "string"
         },
+        "FirewallThreatProtectionId": {
+          "description": "ResourceId",
+          "maxLength": 64,
+          "minLength": 1,
+          "type": "string"
+        },
         "Priority": {
           "description": "Rule Priority",
           "type": "integer"
@@ -71,7 +94,6 @@
         }
       },
       "required": [
-        "FirewallDomainListId",
         "Priority",
         "Action"
       ],
@@ -253,7 +275,8 @@
     "/properties/ShareStatus",
     "/properties/CreatorRequestId",
     "/properties/CreationTime",
-    "/properties/ModificationTime"
+    "/properties/ModificationTime",
+    "/properties/FirewallRules/*/FirewallThreatProtectionId"
   ],
   "tagging": {
     "cloudFormationSystemTags": false,

@@ -2,6 +2,7 @@
   {
     "apply": [
       "iam:PassRole",
+      "iam:CreateServiceLinkedRole",
       "redshift-serverless:CreateNamespace",
       "redshift-serverless:GetNamespace",
       "redshift-serverless:ListSnapshotCopyConfigurations",
@@ -9,7 +10,8 @@
       "redshift:GetResourcePolicy",
       "redshift:PutResourcePolicy",
       "redshift-serverless:UpdateNamespace",
-      "redshift-serverless:DeleteNamespace"
+      "redshift-serverless:DeleteNamespace",
+      "redshift-serverless:ListTagsForResource"
     ],
     "attributes": {
       "kms_key_id": [
@@ -33,7 +35,10 @@
         "secretsmanager:RotateSecret",
         "secretsmanager:DescribeSecret"
       ],
-      "tags": []
+      "tags": [
+        "redshift-serverless:TagResource",
+        "redshift-serverless:UntagResource"
+      ]
     },
     "destroy": [
       "redshift-serverless:DeleteNamespace"

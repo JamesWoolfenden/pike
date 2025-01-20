@@ -16,7 +16,18 @@
       "cassandra:Drop"
     ],
     "modify": [
-      "cassandra:Alter"
+      "cassandra:Alter",
+      "cassandra:Modify",
+      "cassandra:Select",
+      "application-autoscaling:RegisterScalableTarget",
+      "application-autoscaling:DeregisterScalableTarget",
+      "application-autoscaling:DescribeScalableTargets",
+      "application-autoscaling:DescribeScalingPolicies",
+      "application-autoscaling:PutScalingPolicy",
+      "cloudwatch:DeleteAlarms",
+      "cloudwatch:DescribeAlarms",
+      "cloudwatch:PutMetricAlarm",
+      "iam:CreateServiceLinkedRole"
     ],
     "plan": [
       "cassandra:Select"

@@ -5,7 +5,11 @@
       "ec2:DescribeVpcEndpoints",
       "ec2:DescribePrefixLists",
       "ec2:DeleteVpcEndpoints",
-      "ec2:ModifyVpcEndpoint"
+      "ec2:ModifyVpcEndpoint",
+      "ec2:DescribeSubnets",
+      "ec2:DescribeSecurityGroups",
+      "vpc-lattice:CreateServiceNetworkVpcEndpointAssociation",
+      "vpc-lattice:DescribeServiceNetworkVpcEndpointAssociation"
     ],
     "attributes": {
       "tags": [

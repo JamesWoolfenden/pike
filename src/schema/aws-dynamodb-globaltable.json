@@ -177,9 +177,19 @@
     },
     "PointInTimeRecoverySpecification": {
       "additionalProperties": false,
+      "dependencies": {
+        "RecoveryPeriodInDays": [
+          "PointInTimeRecoveryEnabled"
+        ]
+      },
       "properties": {
         "PointInTimeRecoveryEnabled": {
           "type": "boolean"
+        },
+        "RecoveryPeriodInDays": {
+          "maximum": 35,
+          "minimum": 1,
+          "type": "integer"
         }
       },
       "type": "object"
@@ -653,6 +663,9 @@
       },
       "type": "array",
       "uniqueItems": true
+    },
+    "PointInTimeRecoverySpecification": {
+      "$ref": "#/definitions/PointInTimeRecoverySpecification"
     },
     "Replicas": {
       "insertionOrder": false,

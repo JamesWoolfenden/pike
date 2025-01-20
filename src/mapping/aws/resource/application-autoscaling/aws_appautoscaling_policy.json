@@ -3,7 +3,8 @@
     "apply": [
       "application-autoscaling:PutScalingPolicy",
       "application-autoscaling:DescribeScalingPolicies",
-      "application-autoscaling:DeleteScalingPolicy"
+      "application-autoscaling:DeleteScalingPolicy",
+      "cloudwatch:GetMetricData"
     ],
     "attributes": {
       "tags": []
@@ -11,7 +12,11 @@
     "destroy": [
       "application-autoscaling:DeleteScalingPolicy"
     ],
-    "modify": [],
+    "modify": [
+      "application-autoscaling:DescribeScalingPolicies",
+      "application-autoscaling:PutScalingPolicy",
+      "cloudwatch:GetMetricData"
+    ],
     "plan": []
   }
 ]

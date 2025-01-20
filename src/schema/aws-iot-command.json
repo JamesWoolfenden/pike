@@ -1,0 +1,254 @@
+{
+  "additionalProperties": false,
+  "createOnlyProperties": [
+    "/properties/CommandId"
+  ],
+  "definitions": {
+    "CommandParameter": {
+      "additionalProperties": false,
+      "properties": {
+        "DefaultValue": {
+          "$ref": "#/definitions/CommandParameterValue"
+        },
+        "Description": {
+          "$ref": "#/definitions/CommandParameterDescription"
+        },
+        "Name": {
+          "$ref": "#/definitions/CommandParameterName"
+        },
+        "Value": {
+          "$ref": "#/definitions/CommandParameterValue"
+        }
+      },
+      "required": [
+        "Name"
+      ],
+      "type": "object"
+    },
+    "CommandParameterDescription": {
+      "maxLength": 2028,
+      "type": "string"
+    },
+    "CommandParameterList": {
+      "insertionOrder": false,
+      "items": {
+        "$ref": "#/definitions/CommandParameter"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "CommandParameterName": {
+      "maxLength": 192,
+      "minLength": 1,
+      "pattern": "^[.$a-zA-Z0-9_-]+$",
+      "type": "string"
+    },
+    "CommandParameterValue": {
+      "additionalProperties": false,
+      "properties": {
+        "B": {
+          "type": "boolean"
+        },
+        "BIN": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "D": {
+          "type": "number"
+        },
+        "I": {
+          "type": "integer"
+        },
+        "L": {
+          "maxLength": 19,
+          "pattern": "^-?\\d+$",
+          "type": "string"
+        },
+        "S": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "UL": {
+          "maxLength": 20,
+          "minLength": 1,
+          "pattern": "^[0-9]*$",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "CommandPayload": {
+      "additionalProperties": false,
+      "properties": {
+        "Content": {
+          "$ref": "#/definitions/CommandPayloadContent"
+        },
+        "ContentType": {
+          "$ref": "#/definitions/MimeType"
+        }
+      },
+      "type": "object"
+    },
+    "CommandPayloadContent": {
+      "type": "string"
+    },
+    "MimeType": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "Tag": {
+      "additionalProperties": false,
+      "description": "A key-value pair to associate with a resource.",
+      "properties": {
+        "Key": {
+          "description": "The tag's key.",
+          "maxLength": 128,
+          "minLength": 1,
+          "type": "string"
+        },
+        "Value": {
+          "description": "The tag's value.",
+          "maxLength": 256,
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "Value",
+        "Key"
+      ],
+      "type": "object"
+    }
+  },
+  "description": "Represents the resource definition of AWS IoT Command.",
+  "handlers": {
+    "create": {
+      "permissions": [
+        "iam:PassRole",
+        "iot:CreateCommand",
+        "iot:TagResource"
+      ]
+    },
+    "delete": {
+      "permissions": [
+        "iot:GetCommand",
+        "iot:UpdateCommand",
+        "iot:DeleteCommand"
+      ]
+    },
+    "list": {
+      "permissions": [
+        "iot:ListCommands"
+      ]
+    },
+    "read": {
+      "permissions": [
+        "iot:GetCommand",
+        "iot:ListTagsForResource"
+      ]
+    },
+    "update": {
+      "permissions": [
+        "iam:PassRole",
+        "iot:UpdateCommand",
+        "iot:GetCommand",
+        "iot:TagResource",
+        "iot:UntagResource",
+        "iot:ListTagsForResource"
+      ]
+    }
+  },
+  "primaryIdentifier": [
+    "/properties/CommandId"
+  ],
+  "properties": {
+    "CommandArn": {
+      "description": "The Amazon Resource Name (ARN) of the command.",
+      "type": "string"
+    },
+    "CommandId": {
+      "description": "The unique identifier for the command.",
+      "maxLength": 64,
+      "minLength": 1,
+      "pattern": "^[a-zA-Z0-9_-]+$",
+      "type": "string"
+    },
+    "CreatedAt": {
+      "description": "The date and time when the command was created.",
+      "type": "string"
+    },
+    "Deprecated": {
+      "description": "A flag indicating whether the command is deprecated.",
+      "type": "boolean"
+    },
+    "Description": {
+      "description": "The description of the command.",
+      "maxLength": 2028,
+      "type": "string"
+    },
+    "DisplayName": {
+      "description": "The display name for the command.",
+      "type": "string"
+    },
+    "LastUpdatedAt": {
+      "description": "The date and time when the command was last updated.",
+      "type": "string"
+    },
+    "MandatoryParameters": {
+      "$ref": "#/definitions/CommandParameterList",
+      "description": "The list of mandatory parameters for the command."
+    },
+    "Namespace": {
+      "description": "The namespace to which the command belongs.",
+      "enum": [
+        "AWS-IoT",
+        "AWS-IoT-FleetWise"
+      ],
+      "type": "string"
+    },
+    "Payload": {
+      "$ref": "#/definitions/CommandPayload",
+      "description": "The payload associated with the command."
+    },
+    "PendingDeletion": {
+      "description": "A flag indicating whether the command is pending deletion.",
+      "type": "boolean"
+    },
+    "RoleArn": {
+      "description": "The customer role associated with the command.",
+      "maxLength": 2028,
+      "minLength": 20,
+      "type": "string"
+    },
+    "Tags": {
+      "description": "The tags to be associated with the command.",
+      "insertionOrder": true,
+      "items": {
+        "$ref": "#/definitions/Tag"
+      },
+      "type": "array"
+    }
+  },
+  "readOnlyProperties": [
+    "/properties/CommandArn"
+  ],
+  "required": [
+    "CommandId"
+  ],
+  "tagging": {
+    "cloudFormationSystemTags": false,
+    "permissions": [
+      "iot:TagResource",
+      "iot:UntagResource",
+      "iot:ListTagsForResource"
+    ],
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": true,
+    "taggable": true
+  },
+  "typeName": "AWS::IoT::Command",
+  "writeOnlyProperties": [
+    "/properties/LastUpdatedAt"
+  ]
+}

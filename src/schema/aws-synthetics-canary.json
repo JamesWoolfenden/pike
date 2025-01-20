@@ -164,6 +164,10 @@
     "VPCConfig": {
       "additionalProperties": false,
       "properties": {
+        "Ipv6AllowedForDualStack": {
+          "description": "Allow outbound IPv6 traffic on VPC canaries that are connected to dual-stack subnets if set to true",
+          "type": "boolean"
+        },
         "SecurityGroupIds": {
           "items": {
             "type": "string"
@@ -227,6 +231,7 @@
         "lambda:CreateFunction",
         "lambda:AddPermission",
         "lambda:PublishVersion",
+        "lambda:UpdateFunctionCode",
         "lambda:UpdateFunctionConfiguration",
         "lambda:GetFunctionConfiguration",
         "lambda:GetLayerVersionByArn",
@@ -242,7 +247,9 @@
     "delete": {
       "permissions": [
         "synthetics:DeleteCanary",
-        "synthetics:GetCanary"
+        "synthetics:GetCanary",
+        "lambda:DeleteFunction",
+        "lambda:DeleteLayerVersion"
       ]
     },
     "list": {
@@ -275,6 +282,7 @@
         "s3:GetBucketLocation",
         "lambda:AddPermission",
         "lambda:PublishVersion",
+        "lambda:UpdateFunctionCode",
         "lambda:UpdateFunctionConfiguration",
         "lambda:GetFunctionConfiguration",
         "lambda:GetLayerVersionByArn",
@@ -283,7 +291,10 @@
         "lambda:ListTags",
         "lambda:TagResource",
         "lambda:UntagResource",
-        "iam:PassRole"
+        "iam:PassRole",
+        "ec2:DescribeVpcs",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeSecurityGroups"
       ]
     }
   },
@@ -323,6 +334,14 @@
     "Name": {
       "description": "Name of the canary.",
       "pattern": "^[0-9a-z_\\-]{1,255}$",
+      "type": "string"
+    },
+    "ProvisionedResourceCleanup": {
+      "description": "Setting to control if provisioned resources created by Synthetics are deleted alongside the canary. Default is AUTOMATIC.",
+      "enum": [
+        "AUTOMATIC",
+        "OFF"
+      ],
       "type": "string"
     },
     "ResourcesToReplicateTags": {

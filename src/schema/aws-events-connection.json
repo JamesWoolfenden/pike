@@ -50,6 +50,9 @@
         "BasicAuthParameters": {
           "$ref": "#/definitions/BasicAuthParameters"
         },
+        "ConnectivityParameters": {
+          "$ref": "#/definitions/ConnectivityParameters"
+        },
         "InvocationHttpParameters": {
           "$ref": "#/definitions/ConnectionHttpParameters"
         },
@@ -119,6 +122,18 @@
       },
       "type": "object"
     },
+    "ConnectivityParameters": {
+      "additionalProperties": false,
+      "properties": {
+        "ResourceParameters": {
+          "$ref": "#/definitions/ResourceParameters"
+        }
+      },
+      "required": [
+        "ResourceParameters"
+      ],
+      "type": "object"
+    },
     "OAuthParameters": {
       "additionalProperties": false,
       "properties": {
@@ -167,6 +182,26 @@
       "required": [
         "Key",
         "Value"
+      ],
+      "type": "object"
+    },
+    "ResourceParameters": {
+      "additionalProperties": false,
+      "properties": {
+        "ResourceAssociationArn": {
+          "maxLength": 2048,
+          "minLength": 20,
+          "pattern": "^arn:[a-z0-9\\-]+:vpc-lattice:[a-zA-Z0-9\\-]+:\\d{12}:servicenetworkresourceassociation/snra-[0-9a-z]{17}$",
+          "type": "string"
+        },
+        "ResourceConfigurationArn": {
+          "maxLength": 2048,
+          "pattern": "^arn:[a-z0-9f\\-]+:vpc-lattice:[a-zA-Z0-9\\-]+:\\d{12}:resourceconfiguration/rcfg-[0-9a-z]{17}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "ResourceConfigurationArn"
       ],
       "type": "object"
     }
@@ -235,6 +270,19 @@
       "maxLength": 512,
       "type": "string"
     },
+    "InvocationConnectivityParameters": {
+      "additionalProperties": false,
+      "description": "The private resource the HTTP request will be sent to.",
+      "properties": {
+        "ResourceParameters": {
+          "$ref": "#/definitions/ResourceParameters"
+        }
+      },
+      "required": [
+        "ResourceParameters"
+      ],
+      "type": "object"
+    },
     "Name": {
       "description": "Name of the connection.",
       "maxLength": 64,
@@ -251,7 +299,8 @@
   "readOnlyProperties": [
     "/properties/Arn",
     "/properties/SecretArn",
-    "/properties/AuthParameters/ConnectivityParameters/ResourceParameters/ResourceAssociationIdentifier"
+    "/properties/AuthParameters/ConnectivityParameters/ResourceParameters/ResourceAssociationArn",
+    "/properties/InvocationConnectivityParameters/ResourceParameters/ResourceAssociationArn"
   ],
   "tagging": {
     "cloudFormationSystemTags": false,

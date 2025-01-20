@@ -23,6 +23,45 @@
       },
       "type": "object"
     },
+    "NativeApplicationOidcOptions": {
+      "additionalProperties": false,
+      "description": "The OpenID Connect details for an oidc -type, user-identity based trust provider for L4.",
+      "properties": {
+        "AuthorizationEndpoint": {
+          "description": "The OIDC authorization endpoint.",
+          "type": "string"
+        },
+        "ClientId": {
+          "description": "The client identifier.",
+          "type": "string"
+        },
+        "ClientSecret": {
+          "description": "The client secret.",
+          "type": "string"
+        },
+        "Issuer": {
+          "description": "The OIDC issuer.",
+          "type": "string"
+        },
+        "PublicSigningKeyEndpoint": {
+          "description": "The public signing key for endpoint",
+          "type": "string"
+        },
+        "Scope": {
+          "description": "OpenID Connect (OIDC) scopes are used by an application during authentication to authorize access to details of a user. Each scope returns a specific set of user attributes.",
+          "type": "string"
+        },
+        "TokenEndpoint": {
+          "description": "The OIDC token endpoint.",
+          "type": "string"
+        },
+        "UserInfoEndpoint": {
+          "description": "The OIDC user info endpoint.",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "OidcOptions": {
       "additionalProperties": false,
       "description": "The OpenID Connect details for an oidc -type, user-identity based trust provider.",
@@ -171,6 +210,9 @@
       "description": "The last updated time.",
       "type": "string"
     },
+    "NativeApplicationOidcOptions": {
+      "$ref": "#/definitions/NativeApplicationOidcOptions"
+    },
     "OidcOptions": {
       "$ref": "#/definitions/OidcOptions"
     },
@@ -237,5 +279,8 @@
     "tagUpdatable": true,
     "taggable": true
   },
-  "typeName": "AWS::EC2::VerifiedAccessTrustProvider"
+  "typeName": "AWS::EC2::VerifiedAccessTrustProvider",
+  "writeOnlyProperties": [
+    "/properties/NativeApplicationOidcOptions/ClientSecret"
+  ]
 }

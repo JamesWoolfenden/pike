@@ -164,7 +164,17 @@
         "sns:GetTopicAttributes",
         "route53:List*",
         "iam:PassRole",
-        "resiliencehub:*"
+        "resiliencehub:CreateApp",
+        "resiliencehub:DescribeApp",
+        "resiliencehub:DescribeAppVersionTemplate",
+        "resiliencehub:PutDraftAppVersionTemplate",
+        "resiliencehub:AddDraftAppVersionResourceMappings",
+        "resiliencehub:ListAppVersionResourceMappings",
+        "resiliencehub:ListAppVersions",
+        "resiliencehub:PublishAppVersion",
+        "resiliencehub:ListTagsForResource",
+        "resiliencehub:TagResource",
+        "resiliencehub:UntagResource"
       ]
     },
     "delete": {
@@ -209,7 +219,18 @@
         "sns:GetTopicAttributes",
         "route53:List*",
         "iam:PassRole",
-        "resiliencehub:*"
+        "resiliencehub:UpdateApp",
+        "resiliencehub:DescribeApp",
+        "resiliencehub:DescribeAppVersionTemplate",
+        "resiliencehub:PutDraftAppVersionTemplate",
+        "resiliencehub:AddDraftAppVersionResourceMappings",
+        "resiliencehub:RemoveDraftAppVersionResourceMappings",
+        "resiliencehub:ListAppVersionResourceMappings",
+        "resiliencehub:ListAppVersions",
+        "resiliencehub:PublishAppVersion",
+        "resiliencehub:ListTagsForResource",
+        "resiliencehub:TagResource",
+        "resiliencehub:UntagResource"
       ]
     }
   },
@@ -269,6 +290,11 @@
     "PermissionModel": {
       "$ref": "#/definitions/PermissionModel"
     },
+    "RegulatoryPolicyArn": {
+      "description": "Amazon Resource Name (ARN) of the Regulatory Policy.",
+      "pattern": "^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$",
+      "type": "string"
+    },
     "ResiliencyPolicyArn": {
       "description": "Amazon Resource Name (ARN) of the Resiliency Policy.",
       "pattern": "^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$",
@@ -299,6 +325,11 @@
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-resiliencehub",
   "tagging": {
     "cloudFormationSystemTags": true,
+    "permissions": [
+      "resiliencehub:TagResource",
+      "resiliencehub:ListTagsForResource",
+      "resiliencehub:UntagResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

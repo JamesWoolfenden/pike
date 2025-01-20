@@ -3,7 +3,13 @@
     "apply": [
       "datasync:CreateLocationS3",
       "datasync:DescribeLocationS3",
-      "datasync:DeleteLocation"
+      "datasync:DeleteLocation",
+      "datasync:ListTagsForResource",
+      "datasync:UpdateLocationS3",
+      "s3:ListAllMyBuckets",
+      "s3:ListBucket",
+      "iam:GetRole",
+      "iam:PassRole"
     ],
     "attributes": {
       "tags": [
@@ -14,7 +20,11 @@
     "destroy": [
       "datasync:DeleteLocation"
     ],
-    "modify": [],
+    "modify": [
+      "datasync:DescribeLocationS3",
+      "datasync:ListTagsForResource",
+      "datasync:UpdateLocationS3"
+    ],
     "plan": []
   }
 ]

@@ -851,6 +851,20 @@
       ],
       "type": "object"
     },
+    "PerformanceConfiguration": {
+      "additionalProperties": false,
+      "properties": {
+        "UniqueKeys": {
+          "items": {
+            "$ref": "#/definitions/UniqueKey"
+          },
+          "maxItems": 1,
+          "minItems": 1,
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
     "PhysicalTable": {
       "additionalProperties": false,
       "description": "<p>A view of a data source that contains information about the shape of the data in the\n            underlying source. This is a variant type structure. For this structure to be valid,\n            only one of the attributes can be non-null.</p>",
@@ -1134,9 +1148,7 @@
           "minItems": 1,
           "type": "array"
         },
-        "UploadSettings": {
-          "$ref": "#/definitions/UploadSettings"
-        }
+        "UploadSettings": {}
       },
       "required": [
         "DataSourceArn",
@@ -1301,6 +1313,25 @@
           "$ref": "#/definitions/UntagColumnOperation"
         }
       },
+      "type": "object"
+    },
+    "UniqueKey": {
+      "additionalProperties": false,
+      "properties": {
+        "ColumnNames": {
+          "items": {
+            "maxLength": 127,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 1,
+          "minItems": 1,
+          "type": "array"
+        }
+      },
+      "required": [
+        "ColumnNames"
+      ],
       "type": "object"
     },
     "UntagColumnOperation": {
@@ -1521,6 +1552,9 @@
         "$ref": "#/definitions/OutputColumn"
       },
       "type": "array"
+    },
+    "PerformanceConfiguration": {
+      "$ref": "#/definitions/PerformanceConfiguration"
     },
     "Permissions": {
       "description": "<p>A list of resource permissions on the dataset.</p>",

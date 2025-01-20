@@ -18,7 +18,8 @@
       "cleanrooms:ListTagsForResource",
       "cleanrooms:ListConfiguredTables",
       "cleanrooms:UpdateConfiguredTable",
-      "cleanrooms:UpdateConfiguredTableAnalysisRule"
+      "cleanrooms:UpdateConfiguredTableAnalysisRule",
+      "athena:GetTableMetadata"
     ],
     "attributes": {
       "tags": [

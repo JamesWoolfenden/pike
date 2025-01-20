@@ -1,10 +1,16 @@
 [
   {
     "apply": [
-      "datasync:DescribeLocationFsxOntap",
       "datasync:CreateLocationFsxOntap",
       "datasync:DeleteLocation",
-      "datasync:ListTagsForResource"
+      "datasync:DescribeLocationFsxOntap",
+      "datasync:ListTagsForResource",
+      "datasync:UpdateLocationFsxOntap",
+      "ec2:DescribeNetworkInterfaces",
+      "ec2:DescribeSecurityGroups",
+      "ec2:DescribeSubnets",
+      "fsx:DescribeFileSystems",
+      "fsx:DescribeStorageVirtualMachines"
     ],
     "attributes": {
       "tags": [
@@ -15,7 +21,14 @@
     "destroy": [
       "datasync:DeleteLocation"
     ],
-    "modify": [],
+    "modify": [
+      "datasync:UpdateLocationFsxOntap",
+      "datasync:DescribeLocationFsxOntap",
+      "datasync:ListTagsForResource",
+      "fsx:DescribeFileSystems",
+      "fsx:DescribeStorageVirtualMachines",
+      "ec2:DescribeNetworkInterfaces"
+    ],
     "plan": []
   }
 ]

@@ -4,6 +4,33 @@
     "/properties/Name"
   ],
   "definitions": {
+    "BurnRateConfiguration": {
+      "additionalProperties": false,
+      "description": "This object defines the length of the look-back window used to calculate one burn rate metric for this SLO. The burn rate measures how fast the service is consuming the error budget, relative to the attainment goal of the SLO. A burn rate of exactly 1 indicates that the SLO goal will be met exactly.\nFor example, if you specify 60 as the number of minutes in the look-back window, the burn rate is calculated as the following:\nburn rate = error rate over the look-back window / (1 - attainment goal percentage)",
+      "properties": {
+        "LookBackWindowMinutes": {
+          "description": "The number of minutes to use as the look-back window.",
+          "maximum": 10080,
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "LookBackWindowMinutes"
+      ],
+      "type": "object"
+    },
+    "BurnRateConfigurations": {
+      "description": "Each object in this array defines the length of the look-back window used to calculate one burn rate metric for this SLO. The burn rate measures how fast the service is consuming the error budget, relative to the attainment goal of the SLO.",
+      "insertionOrder": false,
+      "items": {
+        "$ref": "#/definitions/BurnRateConfiguration"
+      },
+      "maxItems": 10,
+      "minItems": 0,
+      "type": "array",
+      "uniqueItems": true
+    },
     "CalendarInterval": {
       "additionalProperties": false,
       "description": "If the interval for this service level objective is a calendar interval, this structure contains the interval specifications.",
@@ -433,6 +460,9 @@
       "description": "The ARN of this SLO.",
       "pattern": "^arn:[^:]*:application-signals:[^:]*:[^:]*:slo\\/[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]$",
       "type": "string"
+    },
+    "BurnRateConfigurations": {
+      "$ref": "#/definitions/BurnRateConfigurations"
     },
     "CreatedTime": {
       "description": "Epoch time in seconds of the time that this SLO was created",

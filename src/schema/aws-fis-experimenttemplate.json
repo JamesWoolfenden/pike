@@ -175,8 +175,7 @@
         }
       },
       "required": [
-        "Outputs",
-        "DataSources"
+        "Outputs"
       ],
       "type": "object"
     },

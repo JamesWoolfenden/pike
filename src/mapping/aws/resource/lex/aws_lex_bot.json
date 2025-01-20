@@ -7,7 +7,12 @@
       "lex:UpdateBot",
       "lex:DeleteBot",
       "lex:ListBots",
-      "lex:ListTagsForResource"
+      "lex:ListTagsForResource",
+      "iam:CreateServiceLinkedRole",
+      "iam:GetRole",
+      "lex:CreateBotReplica",
+      "lex:DescribeBotReplica",
+      "lex:DeleteBotReplica"
     ],
     "attributes": {
       "tags": [

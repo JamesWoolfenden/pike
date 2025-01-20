@@ -1,16 +1,34 @@
 {
   "additionalProperties": false,
+  "definitions": {
+    "Tag": {
+      "additionalProperties": false,
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "Value",
+        "Key"
+      ],
+      "type": "object"
+    }
+  },
   "description": "Resource Type definition for AWS::EC2::VPCEndpointService",
   "handlers": {
     "create": {
       "permissions": [
         "ec2:CreateVpcEndpointServiceConfiguration",
-        "ec2:ModifyVpcEndpointServiceConfiguration",
         "ec2:ModifyVpcEndpointServicePayerResponsibility",
         "cloudwatch:ListManagedInsightRules",
         "cloudwatch:DeleteInsightRules",
         "cloudwatch:PutManagedInsightRules",
-        "ec2:DescribeVpcEndpointServiceConfigurations"
+        "ec2:DescribeVpcEndpointServiceConfigurations",
+        "ec2:CreateTags"
       ]
     },
     "delete": {
@@ -18,7 +36,8 @@
         "ec2:DeleteVpcEndpointServiceConfigurations",
         "ec2:DescribeVpcEndpointServiceConfigurations",
         "cloudwatch:ListManagedInsightRules",
-        "cloudwatch:DeleteInsightRules"
+        "cloudwatch:DeleteInsightRules",
+        "ec2:DeleteTags"
       ]
     },
     "list": {
@@ -36,12 +55,13 @@
     "update": {
       "permissions": [
         "ec2:ModifyVpcEndpointServiceConfiguration",
-        "ec2:DeleteVpcEndpointServiceConfigurations",
         "ec2:DescribeVpcEndpointServiceConfigurations",
         "ec2:ModifyVpcEndpointServicePayerResponsibility",
         "cloudwatch:ListManagedInsightRules",
         "cloudwatch:DeleteInsightRules",
-        "cloudwatch:PutManagedInsightRules"
+        "cloudwatch:PutManagedInsightRules",
+        "ec2:CreateTags",
+        "ec2:DeleteTags"
       ]
     }
   },
@@ -78,6 +98,15 @@
     },
     "ServiceId": {
       "type": "string"
+    },
+    "Tags": {
+      "description": "The tags to add to the VPC endpoint service.",
+      "insertionOrder": false,
+      "items": {
+        "$ref": "#/definitions/Tag"
+      },
+      "type": "array",
+      "uniqueItems": false
     }
   },
   "readOnlyProperties": [
@@ -85,9 +114,14 @@
   ],
   "tagging": {
     "cloudFormationSystemTags": false,
-    "tagOnCreate": false,
-    "tagUpdatable": false,
-    "taggable": false
+    "permissions": [
+      "ec2:CreateTags",
+      "ec2:DeleteTags"
+    ],
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": true,
+    "taggable": true
   },
   "typeName": "AWS::EC2::VPCEndpointService",
   "writeOnlyProperties": [

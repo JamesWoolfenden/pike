@@ -6,6 +6,7 @@
       "network-firewall:DeleteFirewall",
       "network-firewall:DescribeFirewall",
       "network-firewall:AssociateFirewallPolicy",
+      "network-firewall:UpdateFirewallAnalysisSettings",
       "iam:CreateServiceLinkedRole",
       "network-firewall:AssociateSubnets",
       "ec2:DescribeSubnets",
@@ -36,7 +37,9 @@
       "ec2:DescribeRouteTables",
       "ec2:DeleteVpcEndpoints"
     ],
-    "modify": [],
+    "modify": [
+      "network-firewall:UpdateFirewallAnalysisSettings"
+    ],
     "plan": []
   }
 ]

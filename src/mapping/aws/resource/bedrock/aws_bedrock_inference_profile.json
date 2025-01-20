@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "bedrock:CreateInferenceProfile",
+      "bedrock:GetInferenceProfile",
+      "bedrock:ListTagsForResource",
+      "bedrock:DeleteInferenceProfile"
+    ],
+    "attributes": {
+      "tags": [
+        "bedrock:TagResource",
+        "bedrock:UntagResource"
+      ]
+    },
+    "destroy": [
+      "bedrock:DeleteInferenceProfile",
+      "bedrock:GetInferenceProfile"
+    ],
+    "modify": [
+      "bedrock:GetInferenceProfile",
+      "bedrock:ListTagsForResource"
+    ],
+    "plan": []
+  }
+]

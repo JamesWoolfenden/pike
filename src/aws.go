@@ -1084,6 +1084,9 @@ var (
 		"aws_s3_bucket_analytics_configuration":                            awsS3BucketAnalyticsConfiguration,
 		"aws_backup_logically_air_gapped_vault":                            awsBackupLogicallyAirGappedVault,
 		"aws_kinesis_resource_policy":                                      awsKinesisResourcePolicy,
+		"aws_appconfig_deployment":                                         awsAppconfigDeployment,
+		"aws_appsync_graphql_api":                                          awsAppsyncGraphApi,
+		"aws_bedrock_inference_profile":                                    awsBedrockInferenceProfile,
 	}
 )
 

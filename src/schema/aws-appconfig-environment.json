@@ -116,6 +116,15 @@
       "pattern": "[a-z0-9]{4,7}",
       "type": "string"
     },
+    "DeletionProtectionCheck": {
+      "description": "On resource deletion this controls whether the Deletion Protection check should be applied, bypassed, or (the default) whether the behavior should be controlled by the account-level Deletion Protection setting. See https://docs.aws.amazon.com/appconfig/latest/userguide/deletion-protection.html",
+      "enum": [
+        "ACCOUNT_DEFAULT",
+        "APPLY",
+        "BYPASS"
+      ],
+      "type": "string"
+    },
     "Description": {
       "description": "A description of the environment.",
       "maxLength": 1024,
@@ -173,5 +182,8 @@
     "tagUpdatable": true,
     "taggable": true
   },
-  "typeName": "AWS::AppConfig::Environment"
+  "typeName": "AWS::AppConfig::Environment",
+  "writeOnlyProperties": [
+    "/properties/DeletionProtectionCheck"
+  ]
 }

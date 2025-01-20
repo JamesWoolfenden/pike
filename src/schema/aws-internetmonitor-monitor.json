@@ -145,6 +145,7 @@
       "permissions": [
         "internetmonitor:ListMonitors",
         "internetmonitor:GetMonitor",
+        "internetmonitor:ListTagsForResource",
         "logs:GetLogDelivery"
       ]
     },
@@ -278,6 +279,11 @@
   ],
   "tagging": {
     "cloudFormationSystemTags": true,
+    "permissions": [
+      "internetmonitor:TagResource",
+      "internetmonitor:UntagResource",
+      "internetmonitor:ListTagsForResource"
+    ],
     "tagOnCreate": false,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

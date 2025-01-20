@@ -1,15 +1,15 @@
 {
   "additionalProperties": false,
   "createOnlyProperties": [
-    "/properties/KmsKeyIdentifier",
-    "/properties/DeploymentStrategyId",
-    "/properties/ConfigurationVersion",
     "/properties/ApplicationId",
     "/properties/ConfigurationProfileId",
-    "/properties/Tags",
+    "/properties/DeploymentStrategyId",
     "/properties/EnvironmentId",
     "/properties/Description",
-    "/properties/DynamicExtensionParameters"
+    "/properties/ConfigurationVersion",
+    "/properties/KmsKeyIdentifier",
+    "/properties/DynamicExtensionParameters",
+    "/properties/Tags"
   ],
   "definitions": {
     "DynamicExtensionParameters": {
@@ -27,13 +27,16 @@
       },
       "type": "object"
     },
-    "Tags": {
+    "Tag": {
       "additionalProperties": false,
+      "description": "Metadata to assign to the deployment. Tags help organize and categorize your AWS AppConfig resources. Each tag consists of a key and an optional value, both of which you define.",
       "properties": {
         "Key": {
+          "description": "The key-value string map. The valid character set is [a-zA-Z1-9+-=._:/]. The tag key can be up to 128 characters and must not start with aws:.",
           "type": "string"
         },
         "Value": {
+          "description": "The tag value can be up to 256 characters.",
           "type": "string"
         }
       },
@@ -41,23 +44,76 @@
     }
   },
   "description": "Resource Type definition for AWS::AppConfig::Deployment",
+  "handlers": {
+    "create": {
+      "permissions": [
+        "appconfig:StartDeployment",
+        "appconfig:GetDeployment",
+        "appconfig:TagResource",
+        "appconfig:ListTagsForResource",
+        "kms:GenerateDataKey"
+      ],
+      "timeoutInMinutes": 1445
+    },
+    "delete": {
+      "permissions": [
+        "appconfig:StopDeployment"
+      ]
+    },
+    "list": {
+      "handlerSchema": {
+        "properties": {
+          "ApplicationId": {
+            "$ref": "resource-schema.json#/properties/ApplicationId"
+          },
+          "EnvironmentId": {
+            "$ref": "resource-schema.json#/properties/EnvironmentId"
+          }
+        },
+        "required": [
+          "ApplicationId",
+          "EnvironmentId"
+        ]
+      },
+      "permissions": [
+        "appconfig:ListDeployments"
+      ]
+    },
+    "read": {
+      "permissions": [
+        "appconfig:GetDeployment",
+        "appconfig:ListTagsForResource"
+      ]
+    }
+  },
   "primaryIdentifier": [
-    "/properties/Id"
+    "/properties/ApplicationId",
+    "/properties/EnvironmentId",
+    "/properties/DeploymentNumber"
   ],
   "properties": {
     "ApplicationId": {
+      "description": "The application ID.",
       "type": "string"
     },
     "ConfigurationProfileId": {
+      "description": "The configuration profile ID.",
       "type": "string"
     },
     "ConfigurationVersion": {
+      "description": "The configuration version to deploy. If deploying an AWS AppConfig hosted configuration version, you can specify either the version number or version label. For all other configurations, you must specify the version number.",
+      "type": "string"
+    },
+    "DeploymentNumber": {
+      "description": "The sequence number of the deployment.",
       "type": "string"
     },
     "DeploymentStrategyId": {
+      "description": "The deployment strategy ID.",
       "type": "string"
     },
     "Description": {
+      "description": "A description of the deployment.",
       "type": "string"
     },
     "DynamicExtensionParameters": {
@@ -68,31 +124,49 @@
       "uniqueItems": false
     },
     "EnvironmentId": {
-      "type": "string"
-    },
-    "Id": {
+      "description": "The environment ID.",
       "type": "string"
     },
     "KmsKeyIdentifier": {
+      "description": "The AWS Key Management Service key identifier (key ID, key alias, or key ARN) provided when the resource was created or updated.",
+      "pattern": "^[\\da-f]{8}-[\\da-f]{4}-[\\da-f]{4}-[\\da-f]{4}-[\\da-f]{12}|alias/[a-zA-Z0-9/_-]{1,250}|arn:aws[a-zA-Z-]*:kms:[a-z]{2}(-gov|-iso(b?))?-[a-z]+-\\d{1}:\\d{12}:(key/[0-9a-f-]{36}|alias/[a-zA-Z0-9/_-]{1,250})$",
       "type": "string"
     },
     "Tags": {
+      "description": "An array of key-value pairs to apply to this resource.",
+      "insertionOrder": false,
       "items": {
-        "$ref": "#/definitions/Tags"
+        "$ref": "#/definitions/Tag"
       },
       "type": "array",
-      "uniqueItems": false
+      "uniqueItems": true
     }
   },
   "readOnlyProperties": [
-    "/properties/Id"
+    "/properties/DeploymentNumber"
   ],
   "required": [
-    "DeploymentStrategyId",
+    "ApplicationId",
     "ConfigurationProfileId",
+    "DeploymentStrategyId",
     "EnvironmentId",
-    "ConfigurationVersion",
-    "ApplicationId"
+    "ConfigurationVersion"
   ],
-  "typeName": "AWS::AppConfig::Deployment"
+  "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-rpdk.git",
+  "tagging": {
+    "cloudFormationSystemTags": true,
+    "permissions": [
+      "appconfig:TagResource",
+      "appconfig:UntagResource",
+      "appconfig:ListTagsForResource"
+    ],
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": false,
+    "taggable": true
+  },
+  "typeName": "AWS::AppConfig::Deployment",
+  "writeOnlyProperties": [
+    "/properties/DynamicExtensionParameters"
+  ]
 }

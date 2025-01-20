@@ -3,7 +3,8 @@
     "apply": [
       "batch:DeregisterJobDefinition",
       "batch:DescribeJobDefinitions",
-      "batch:RegisterJobDefinition"
+      "batch:RegisterJobDefinition",
+      "Iam:PassRole"
     ],
     "attributes": {
       "tags": [

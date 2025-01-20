@@ -155,6 +155,10 @@
       "description": "The display name to use for an SNS topic with SMS subscriptions. The display name must be maximum 100 characters long, including hyphens (-), underscores (_), spaces, and tabs.",
       "type": "string"
     },
+    "FifoThroughputScope": {
+      "description": "",
+      "type": "string"
+    },
     "FifoTopic": {
       "description": "Set to true to create a FIFO topic.",
       "type": "boolean"

@@ -57,17 +57,24 @@
   "handlers": {
     "create": {
       "permissions": [
-        "workspaces:CreateConnectionAlias"
+        "workspaces:CreateConnectionAlias",
+        "workspaces:CreateTags",
+        "workspaces:DescribeConnectionAliases",
+        "workspaces:DescribeTags"
       ]
     },
     "delete": {
       "permissions": [
-        "workspaces:DeleteConnectionAlias"
+        "workspaces:DeleteConnectionAlias",
+        "workspaces:DeleteTags",
+        "workspaces:DescribeTags",
+        "workspaces:DescribeConnectionAliases"
       ]
     },
     "read": {
       "permissions": [
-        "workspaces:DescribeConnectionAliases"
+        "workspaces:DescribeConnectionAliases",
+        "workspaces:DescribeTags"
       ]
     }
   },
@@ -82,6 +89,7 @@
       "type": "string"
     },
     "Associations": {
+      "insertionOrder": false,
       "items": {
         "$ref": "#/definitions/ConnectionAliasAssociation"
       },
@@ -104,6 +112,7 @@
       "type": "string"
     },
     "Tags": {
+      "insertionOrder": false,
       "items": {
         "$ref": "#/definitions/Tag"
       },

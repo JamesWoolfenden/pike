@@ -36,7 +36,8 @@
       "permissions": [
         "medialive:CreateChannelPlacementGroup",
         "medialive:DescribeChannelPlacementGroup",
-        "medialive:CreateTags"
+        "medialive:CreateTags",
+        "medialive:ListTagsForResource"
       ]
     },
     "delete": {
@@ -62,7 +63,8 @@
     },
     "read": {
       "permissions": [
-        "medialive:DescribeChannelPlacementGroup"
+        "medialive:DescribeChannelPlacementGroup",
+        "medialive:ListTagsForResource"
       ]
     },
     "update": {
@@ -70,7 +72,8 @@
         "medialive:UpdateChannelPlacementGroup",
         "medialive:DescribeChannelPlacementGroup",
         "medialive:CreateTags",
-        "medialive:DeleteTags"
+        "medialive:DeleteTags",
+        "medialive:ListTagsForResource"
       ]
     }
   },
@@ -136,9 +139,9 @@
       "medialive:CreateTags",
       "medialive:DeleteTags"
     ],
-    "tagOnCreate": false,
+    "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
-    "tagUpdatable": false,
+    "tagUpdatable": true,
     "taggable": true
   },
   "typeName": "AWS::MediaLive::ChannelPlacementGroup"

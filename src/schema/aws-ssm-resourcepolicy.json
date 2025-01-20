@@ -12,6 +12,7 @@
     },
     "delete": {
       "permissions": [
+        "ssm:GetResourcePolicies",
         "ssm:DeleteResourcePolicy"
       ]
     },
@@ -27,6 +28,7 @@
     },
     "update": {
       "permissions": [
+        "ssm:GetResourcePolicies",
         "ssm:PutResourcePolicy"
       ]
     }

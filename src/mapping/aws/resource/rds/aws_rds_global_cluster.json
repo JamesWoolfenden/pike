@@ -9,7 +9,10 @@
       "rds:ModifyGlobalCluster"
     ],
     "attributes": {
-      "tags": []
+      "tags": [
+        "rds:AddTagsToResource",
+        "rds:RemoveTagsFromResource"
+      ]
     },
     "destroy": [
       "rds:DeleteGlobalCluster",

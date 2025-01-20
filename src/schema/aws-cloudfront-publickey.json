@@ -3,17 +3,22 @@
   "definitions": {
     "PublicKeyConfig": {
       "additionalProperties": false,
+      "description": "Configuration information about a public key that you can use with [signed URLs and signed cookies](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html), or with [field-level encryption](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html).",
       "properties": {
         "CallerReference": {
+          "description": "A string included in the request to help make sure that the request can't be replayed.",
           "type": "string"
         },
         "Comment": {
+          "description": "A comment to describe the public key. The comment cannot be longer than 128 characters.",
           "type": "string"
         },
         "EncodedKey": {
+          "description": "The public key that you can use with [signed URLs and signed cookies](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html), or with [field-level encryption](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html).",
           "type": "string"
         },
         "Name": {
+          "description": "A name to help identify the public key.",
           "type": "string"
         }
       },
@@ -25,7 +30,7 @@
       "type": "object"
     }
   },
-  "description": "Resource Type definition for AWS::CloudFront::PublicKey",
+  "description": "A public key that you can use with [signed URLs and signed cookies](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html), or with [field-level encryption](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html).",
   "handlers": {
     "create": {
       "permissions": [
@@ -60,13 +65,16 @@
   ],
   "properties": {
     "CreatedTime": {
+      "description": "",
       "type": "string"
     },
     "Id": {
+      "description": "",
       "type": "string"
     },
     "PublicKeyConfig": {
-      "$ref": "#/definitions/PublicKeyConfig"
+      "$ref": "#/definitions/PublicKeyConfig",
+      "description": "Configuration information about a public key that you can use with [signed URLs and signed cookies](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html), or with [field-level encryption](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html)."
     }
   },
   "readOnlyProperties": [

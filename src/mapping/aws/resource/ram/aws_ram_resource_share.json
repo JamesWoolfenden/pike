@@ -2,7 +2,14 @@
   {
     "apply": [
       "ram:CreateResourceShare",
-      "ram:GetResourceShares"
+      "ram:GetResourceShares",
+      "ram:GetPermission",
+      "ram:GetResourceShareAssociations",
+      "ram:ListResourceSharePermissions",
+      "ram:UpdateResourceShare",
+      "ram:AssociateResourceSharePermission",
+      "ram:AssociateResourceShare",
+      "ram:DisassociateResourceShare"
     ],
     "attributes": {
       "tags": [
@@ -13,7 +20,16 @@
     "destroy": [
       "ram:DeleteResourceShare"
     ],
-    "modify": [],
+    "modify": [
+      "ram:GetPermission",
+      "ram:GetResourceShares",
+      "ram:GetResourceShareAssociations",
+      "ram:ListResourceSharePermissions",
+      "ram:UpdateResourceShare",
+      "ram:AssociateResourceSharePermission",
+      "ram:AssociateResourceShare",
+      "ram:DisassociateResourceShare"
+    ],
     "plan": []
   }
 ]

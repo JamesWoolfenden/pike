@@ -26,6 +26,7 @@
     "/properties/DBInstanceIdentifier",
     "/properties/DBName",
     "/properties/DBSubnetGroupName",
+    "/properties/DBSystemId",
     "/properties/KmsKeyId",
     "/properties/MasterUsername",
     "/properties/NcharCharacterSetName",
@@ -363,6 +364,10 @@
       "description": "The Oracle system identifier (SID), which is the name of the Oracle database instance that manages your database files. In this context, the term \"Oracle database instance\" refers exclusively to the system global area (SGA) and Oracle background processes. If you don't specify a SID, the value defaults to ``RDSCDB``. The Oracle SID is also the name of your CDB.",
       "type": "string"
     },
+    "DatabaseInsightsMode": {
+      "description": "",
+      "type": "string"
+    },
     "DbiResourceId": {
       "description": "",
       "type": "string"
@@ -620,6 +625,7 @@
     "/properties/DBParameterGroupName": "$lowercase(DBParameterGroupName)",
     "/properties/DBSnapshotIdentifier": "$lowercase(DBSnapshotIdentifier)",
     "/properties/DBSubnetGroupName": "$lowercase(DBSubnetGroupName)",
+    "/properties/DBSystemId": "$uppercase(DBSystemId)",
     "/properties/Engine": "$lowercase(Engine)",
     "/properties/EngineVersion": "$join([$string(EngineVersion), \".*\"])",
     "/properties/KmsKeyId": "$join([\"arn:.+?:kms:.+?:.+?:key\\/\", KmsKeyId])",
@@ -638,10 +644,10 @@
     "/properties/Endpoint/HostedZoneId",
     "/properties/DbiResourceId",
     "/properties/DBInstanceArn",
-    "/properties/DBSystemId",
     "/properties/MasterUserSecret/SecretArn",
     "/properties/CertificateDetails/CAIdentifier",
-    "/properties/CertificateDetails/ValidTill"
+    "/properties/CertificateDetails/ValidTill",
+    "/properties/DatabaseInsightsMode"
   ],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-rpdk.git",
   "tagging": {

@@ -3,80 +3,143 @@
   "definitions": {
     "Tag": {
       "additionalProperties": false,
+      "description": "A key-value pair to associate with a resource.",
       "properties": {
         "Key": {
+          "description": "The key name of the tag. You can specify a value that is 1 to 128 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
           "type": "string"
         },
         "Value": {
+          "description": "The value for the tag. You can specify a value that is 0 to 256 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
           "type": "string"
         }
       },
       "required": [
-        "Value",
-        "Key"
+        "Key",
+        "Value"
       ],
       "type": "object"
     }
   },
-  "description": "Resource Type definition for AWS::RAM::ResourceShare",
+  "description": "Resource type definition for AWS::RAM::ResourceShare",
+  "handlers": {
+    "create": {
+      "permissions": [
+        "ram:CreateResourceShare",
+        "ram:TagResource"
+      ]
+    },
+    "delete": {
+      "permissions": [
+        "ram:DeleteResourceShare",
+        "ram:GetResourceShares"
+      ]
+    },
+    "list": {
+      "permissions": [
+        "ram:GetResourceShares"
+      ]
+    },
+    "read": {
+      "permissions": [
+        "ram:GetResourceShares"
+      ]
+    },
+    "update": {
+      "permissions": [
+        "ram:GetPermission",
+        "ram:GetResourceShares",
+        "ram:GetResourceShareAssociations",
+        "ram:ListResourceSharePermissions",
+        "ram:UpdateResourceShare",
+        "ram:AssociateResourceSharePermission",
+        "ram:AssociateResourceShare",
+        "ram:DisassociateResourceShare",
+        "ram:UntagResource",
+        "ram:TagResource"
+      ]
+    }
+  },
   "primaryIdentifier": [
-    "/properties/Id"
+    "/properties/Arn"
   ],
   "properties": {
     "AllowExternalPrincipals": {
+      "description": "Specifies whether principals outside your organization in AWS Organizations can be associated with a resource share. A value of `true` lets you share with individual AWS accounts that are not in your organization. A value of `false` only has meaning if your account is a member of an AWS Organization. The default value is `true`.",
       "type": "boolean"
     },
     "Arn": {
       "type": "string"
     },
-    "Id": {
-      "type": "string"
-    },
     "Name": {
+      "description": "Specifies the name of the resource share.",
       "type": "string"
     },
     "PermissionArns": {
+      "description": "Specifies the [Amazon Resource Names (ARNs)](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) of the AWS RAM permission to associate with the resource share. If you do not specify an ARN for the permission, AWS RAM automatically attaches the default version of the permission for each resource type. You can associate only one permission with each resource type included in the resource share.",
+      "insertionOrder": false,
       "items": {
         "type": "string"
       },
-      "type": "array",
-      "uniqueItems": false
+      "type": "array"
     },
     "Principals": {
+      "description": "Specifies the principals to associate with the resource share. The possible values are:\n\n- An AWS account ID\n\n- An Amazon Resource Name (ARN) of an organization in AWS Organizations\n\n- An ARN of an organizational unit (OU) in AWS Organizations\n\n- An ARN of an IAM role\n\n- An ARN of an IAM user",
+      "insertionOrder": false,
       "items": {
         "type": "string"
       },
-      "type": "array",
-      "uniqueItems": false
+      "type": "array"
     },
     "ResourceArns": {
+      "description": "Specifies a list of one or more ARNs of the resources to associate with the resource share.",
+      "insertionOrder": false,
       "items": {
         "type": "string"
       },
-      "type": "array",
-      "uniqueItems": false
+      "type": "array"
     },
     "Sources": {
+      "description": "Specifies from which source accounts the service principal has access to the resources in this resource share.",
+      "insertionOrder": false,
       "items": {
         "type": "string"
       },
-      "type": "array",
-      "uniqueItems": false
+      "type": "array"
     },
     "Tags": {
+      "description": "Specifies one or more tags to attach to the resource share itself. It doesn't attach the tags to the resources associated with the resource share.",
+      "insertionOrder": false,
       "items": {
         "$ref": "#/definitions/Tag"
       },
       "type": "array",
-      "uniqueItems": false
+      "uniqueItems": true
     }
   },
   "readOnlyProperties": [
-    "/properties/Id",
     "/properties/Arn"
   ],
   "required": [
     "Name"
   ],
-  "typeName": "AWS::RAM::ResourceShare"
+  "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-ram",
+  "tagging": {
+    "cloudFormationSystemTags": false,
+    "permissions": [
+      "ram:TagResource",
+      "ram:UntagResource"
+    ],
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": true,
+    "taggable": true
+  },
+  "typeName": "AWS::RAM::ResourceShare",
+  "writeOnlyProperties": [
+    "/properties/PermissionArns",
+    "/properties/Principals",
+    "/properties/ResourceArns",
+    "/properties/Sources"
+  ]
 }

@@ -89,7 +89,6 @@
     "/properties/Id",
     "/properties/ResourceType"
   ],
-  "replacementStrategy": "delete_then_create",
   "required": [
     "ProfileId",
     "Name",
