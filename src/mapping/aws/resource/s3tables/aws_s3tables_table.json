@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "s3tables:GetTable",
+      "s3tables:CreateTable",
+      "s3tables:DeleteTable"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "s3tables:DeleteTable"
+    ],
+    "modify": [],
+    "plan": [
+      "s3tables:GetTable"
+    ]
+  }
+]

@@ -15,7 +15,7 @@ jobs:
       ## this will contain a matrix of all the combinations
       ## we wish to test again:
       matrix:
-        go-version: [ 1.22.x ]
+        go-version: [ 1.23.x ]
         platform: [ ubuntu-latest, macos-latest, windows-latest ]
 
     ## Defines the platform for each test run
@@ -26,7 +26,7 @@ jobs:
     steps:
       ## sets up go based on the version
       - name: Install Go
-        uses: actions/setup-go@3041bf56c941b39c61721a86cd11f3bb1338122a # v5.2.0
+        uses: actions/setup-go@f111f3307d8850f501ac008e886eec1fd1932a34 # v5.3.0
         with:
           go-version: ${{ matrix.go-version }}
 

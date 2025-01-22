@@ -1,0 +1,33 @@
+[
+  {
+    "apply": [
+      "networkmanager:CreateDirectConnectGatewayAttachment",
+      "networkmanager:GetDirectConnectGatewayAttachment",
+      "ec2:DescribeRegions",
+      "iam:CreateServiceLinkedRole",
+      "networkmanager:UpdateDirectConnectGatewayAttachment",
+      "networkmanager:ListTagsForResource",
+      "networkmanager:DeleteAttachment"
+    ],
+    "attributes": {
+      "tags": [
+        "networkmanager:TagResource",
+        "networkmanager:UntagResource"
+      ]
+    },
+    "destroy": [
+      "networkmanager:DeleteAttachment",
+      "networkmanager:GetDirectConnectGatewayAttachment",
+      "ec2:DescribeRegions"
+    ],
+    "modify": [
+      "networkmanager:UpdateDirectConnectGatewayAttachment",
+      "networkmanager:GetDirectConnectGatewayAttachment",
+      "networkmanager:ListTagsForResource",
+      "ec2:DescribeRegions"
+    ],
+    "plan": [
+      "networkmanager:GetDirectConnectGatewayAttachment"
+    ]
+  }
+]

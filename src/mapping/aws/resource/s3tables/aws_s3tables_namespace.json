@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "s3tables:CreateNamespace",
+      "s3tables:GetNamespace",
+      "s3tables:DeleteNamespace"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "s3tables:DeleteNamespace"
+    ],
+    "modify": [],
+    "plan": [
+      "s3tables:GetNamespace"
+    ]
+  }
+]

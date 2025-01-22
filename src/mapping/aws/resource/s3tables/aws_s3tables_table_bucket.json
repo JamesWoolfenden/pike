@@ -1,0 +1,26 @@
+[
+  {
+    "apply": [
+      "s3tables:CreateTableBucket",
+      "s3tables:PutTableBucketMaintenanceConfiguration",
+      "s3tables:GetTableBucket",
+      "s3tables:GetTableBucketMaintenanceConfiguration",
+      "s3tables:DeleteTableBucket"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "s3tables:DeleteTableBucket"
+    ],
+    "modify": [
+      "s3tables:PutTableBucketMaintenanceConfiguration",
+      "s3tables:GetTableBucket",
+      "s3tables:GetTableBucketMaintenanceConfiguration"
+    ],
+    "plan": [
+      "s3tables:GetTableBucket",
+      "s3tables:GetTableBucketMaintenanceConfiguration"
+    ]
+  }
+]

@@ -7,13 +7,27 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "VisualEditor0",
         "Effect" : "Allow",
         "Action" : [
-          "servicecatalog:GetAttributeGroup",
+          # aws_s3tables_namespace
+          "s3tables:CreateNamespace",
+          "s3tables:GetNamespace",
+          "s3tables:DeleteNamespace",
 
-          "route53:ListResourceRecordSets",
+          # aws_s3tables_table
+          "s3tables:GetTable",
+          "s3tables:CreateTable",
+          "s3tables:DeleteTable",
 
-          "events:ListEventBuses",
+          # aws_s3tables_policy
+          "s3tables:GetTablePolicy",
+          "s3tables:DeleteTablePolicy",
+          "s3tables:PutTablePolicy",
 
-          "ecs:ListClusters"
+          # others
+          "s3tables:CreateTableBucket",
+          "s3tables:PutTableBucketMaintenanceConfiguration",
+          "s3tables:GetTableBucket",
+          "s3tables:GetTableBucketMaintenanceConfiguration",
+          "s3tables:DeleteTableBucket"
         ],
         "Resource" : [
           "*"

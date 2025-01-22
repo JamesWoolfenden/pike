@@ -241,7 +241,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_networkmanager_attachment_accepter
 ./resource.ps1 aws_networkmanager_connection
 ./resource.ps1 aws_networkmanager_core_network_policy_attachment
-./resource.ps1 aws_networkmanager_dx_gateway_attachment
 ./resource.ps1 aws_networkmanager_transit_gateway_connect_peer_association
 ./resource.ps1 aws_networkmonitor_monitor
 ./resource.ps1 aws_networkmonitor_probe
@@ -329,11 +328,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_s3control_object_lambda_access_point
 ./resource.ps1 aws_s3control_object_lambda_access_point_policy
 ./resource.ps1 aws_s3control_storage_lens_configuration
-./resource.ps1 aws_s3tables_namespace
-./resource.ps1 aws_s3tables_table
-./resource.ps1 aws_s3tables_table_bucket
-./resource.ps1 aws_s3tables_table_bucket_policy
-./resource.ps1 aws_s3tables_table_policy
 ./resource.ps1 aws_sagemaker_flow_definition
 ./resource.ps1 aws_sagemaker_hub
 ./resource.ps1 aws_sagemaker_mlflow_tracking_server

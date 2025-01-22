@@ -3051,3 +3051,21 @@ var awsAppsyncGraphApi []byte
 
 //go:embed mapping/aws/resource/bedrock/aws_bedrock_inference_profile.json
 var awsBedrockInferenceProfile []byte
+
+//go:embed mapping/aws/resource/networkmanager/aws_networkmanager_dx_gateway_attachment.json
+var awsNetworkmanagerDxGatewayAttachment []byte
+
+//go:embed mapping/aws/resource/s3tables/aws_s3tables_namespace.json
+var awsS3tablesNamespace []byte
+
+//go:embed mapping/aws/resource/s3tables/aws_s3tables_table.json
+var awsS3tablesTable []byte
+
+//go:embed mapping/aws/resource/s3tables/aws_s3tables_table_bucket_policy.json
+var awsS3tablesTableBucketPolicy []byte
+
+//go:embed mapping/aws/resource/s3tables/aws_s3tables_table_policy.json
+var awsS3tablesTablePolicy []byte
+
+//go:embed mapping/aws/resource/s3tables/aws_s3tables_table_bucket.json
+var awsS3tablesTableBucket []byte

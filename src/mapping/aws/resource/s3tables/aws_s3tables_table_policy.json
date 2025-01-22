@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "s3tables:GetTablePolicy",
+      "s3tables:DeleteTablePolicy",
+      "s3tables:PutTablePolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "s3tables:DeleteTablePolicy"
+    ],
+    "modify": [],
+    "plan": [
+      "s3tables:GetTablePolicy"
+    ]
+  }
+]

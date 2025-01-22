@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "s3tables:GetTableBucket",
+      "s3tables:GetTableBucketPolicy",
+      "s3tables:PutTableBucketPolicy",
+      "s3tables:DeleteTableBucketPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "s3tables:GetTableBucketPolicy",
+      "s3tables:DeleteTableBucketPolicy"
+    ],
+    "modify": [
+      "s3tables:GetTableBucketPolicy",
+      "s3tables:PutTableBucketPolicy"
+    ],
+    "plan": [
+      "s3tables:GetTableBucketPolicy"
+    ]
+  }
+]
