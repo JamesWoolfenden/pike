@@ -3047,7 +3047,7 @@ var awsKinesisResourcePolicy []byte
 var awsAppconfigDeployment []byte
 
 //go:embed mapping/aws/resource/appsync/aws_appsync_graphql_api.json
-var awsAppsyncGraphApi []byte
+var awsAppsyncGraphAPI []byte
 
 //go:embed mapping/aws/resource/bedrock/aws_bedrock_inference_profile.json
 var awsBedrockInferenceProfile []byte

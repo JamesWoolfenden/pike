@@ -101,7 +101,7 @@ var (
 		"aws_appsync_domain_name":                                          awsAppsyncDomainName,
 		"aws_appsync_domain_name_api_association":                          awsAppsyncDomainNameAPIAssociation,
 		"aws_appsync_function":                                             awsAppsyncFunction,
-		"aws_appsync_graphql_api":                                          awsAppsyncGraphApi,
+		"aws_appsync_graphql_api":                                          awsAppsyncGraphAPI,
 		"aws_appsync_resolver":                                             awsAppsyncResolver,
 		"aws_athena_data_catalog":                                          awsAthenaDataCatalog,
 		"aws_athena_database":                                              awsAthenaDatabase,
