@@ -3096,3 +3096,36 @@ var awsAppmeshVirtualRouter []byte
 
 //go:embed mapping/aws/resource/appmesh/aws_appmesh_virtual_service.json
 var awsAppmeshVirtualService []byte
+
+//go:embed mapping/aws/resource/appstream/aws_appstream_directory_config.json
+var awsAppstreamDirectoryConfig []byte
+
+//go:embed mapping/aws/resource/appstream/aws_appstream_fleet.json
+var awsAppstreamFleet []byte
+
+//go:embed mapping/aws/resource/appstream/aws_appstream_fleet_stack_association.json
+var awsAppstreamFleetStackAssociation []byte
+
+//go:embed mapping/aws/resource/appstream/aws_appstream_stack.json
+var awsAppstreamStack []byte
+
+//go:embed mapping/aws/resource/appstream/aws_appstream_user.json
+var awsAppstreamUser []byte
+
+//go:embed mapping/aws/resource/appstream/aws_appstream_user_stack_association.json
+var awsAppstreamUserStackAssociation []byte
+
+//go:embed mapping/aws/resource/appsync/aws_appsync_api_cache.json
+var awsAppsyncApiCache []byte
+
+//go:embed mapping/aws/resource/appsync/aws_appsync_api_key.json
+var awsAppsyncApiKey []byte
+
+//go:embed mapping/aws/resource/appsync/aws_appsync_datasource.json
+var awsAppsyncDatasource []byte
+
+//go:embed mapping/aws/resource/appsync/aws_appsync_source_api_association.json
+var awsAppsyncSourceApiAssociation []byte
+
+//go:embed mapping/aws/resource/appsync/aws_appsync_type.json
+var awsAppsyncType []byte

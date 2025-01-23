@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "appstream:DescribeStacks",
+      "appstream:CreateStack",
+      "appstream:DeleteStack",
+      "appstream:UpdateStack"
+    ],
+    "attributes": {
+      "tags": [
+        "appstream:TagResource",
+        "appstream:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

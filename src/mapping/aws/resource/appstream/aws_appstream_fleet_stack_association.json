@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "appstream:AssociateFleet",
+      "appstream:DisassociateFleet"
+    ],
+    "attributes": {
+      "tags": [
+        "appstream:TagResource",
+        "appstream:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -38,19 +38,26 @@ resource "aws_iam_policy" "basic" {
           "appmesh:DescribeVirtualNode",
           "appmesh:CreateVirtualNode",
           "appmesh:DeleteVirtualNode",
-          "appmesh:UpdateVirtualNode",
-
-          # aws_appmesh_virtual_router
-          "appmesh:DescribeVirtualRouter",
-          "appmesh:CreateVirtualRouter",
-          "appmesh:UpdateVirtualRouter",
-          "appmesh:DeleteVirtualRouter",
-
-          # aws_appmesh_virtual_service
-          "appmesh:DescribeVirtualService",
-          "appmesh:CreateVirtualService",
-          "appmesh:DeleteVirtualService",
-          "appmesh:UpdateVirtualService"
+          "appstream:DescribeUsers",
+          "appstream:CreateUser",
+          "appstream:DeleteUser",
+          "appstream:DescribeStacks",
+          "appstream:CreateStack",
+          "appstream:DeleteStack",
+          "appstream:UpdateStack",
+          "appstream:DescribeFleets",
+          "appstream:CreateFleet",
+          "appstream:DeleteFleet",
+          "appstream:UpdateFleet",
+          "appstream:ListTagsForResource",
+          "appstream:CreateDirectoryConfig",
+          "appstream:DeleteDirectoryConfig",
+          "appstream:DeleteDirectoryConfig",
+          "appstream:DescribeDirectoryConfigs",
+          "appstream:UpdateDirectoryConfig",
+          "appstream:DescribeUserStackAssociations",
+          "appstream:BatchAssociateUserStack",
+          "appstream:BatchDisassociateUserStack",
         ],
         "Resource" : [
           "*"

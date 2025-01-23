@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "appsync:CreateApiKey",
+      "appsync:DeleteApiKey",
+      "appsync:UpdateApiKey"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

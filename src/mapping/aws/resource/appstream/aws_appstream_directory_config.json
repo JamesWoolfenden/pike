@@ -1,0 +1,47 @@
+[
+  {
+    "apply": [
+      "appstream:CreateDirectoryConfig",
+      "appstream:DeleteDirectoryConfig",
+      "appstream:DeleteDirectoryConfig",
+      "appstream:DescribeDirectoryConfigs",
+      "appstream:UpdateDirectoryConfig",
+      "iam:CreateServiceLinkedRole",
+      "iam:DeleteServiceLinkedRole",
+      "iam:GetServiceLinkedRoleDeletionStatus"
+    ],
+    "attributes": {
+      "tags": [
+        "appstream:TagResource",
+        "appstream:UntagResource"
+      ]
+    },
+    "destroy": [
+      "appstream:CreateDirectoryConfig",
+      "appstream:DeleteDirectoryConfig",
+      "appstream:DescribeDirectoryConfigs",
+      "appstream:UpdateDirectoryConfig",
+      "iam:CreateServiceLinkedRole",
+      "iam:DeleteServiceLinkedRole",
+      "iam:GetServiceLinkedRoleDeletionStatus"
+    ],
+    "modify": [
+      "appstream:CreateDirectoryConfig",
+      "appstream:DeleteDirectoryConfig",
+      "appstream:DescribeDirectoryConfigs",
+      "appstream:UpdateDirectoryConfig",
+      "iam:CreateServiceLinkedRole",
+      "iam:DeleteServiceLinkedRole",
+      "iam:GetServiceLinkedRoleDeletionStatus"
+    ],
+    "plan": [
+      "appstream:CreateDirectoryConfig",
+      "appstream:DeleteDirectoryConfig",
+      "appstream:DescribeDirectoryConfigs",
+      "appstream:UpdateDirectoryConfig",
+      "iam:CreateServiceLinkedRole",
+      "iam:DeleteServiceLinkedRole",
+      "iam:GetServiceLinkedRoleDeletionStatus"
+    ]
+  }
+]

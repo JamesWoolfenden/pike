@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "appstream:DescribeUserStackAssociations",
+      "appstream:BatchAssociateUserStack",
+      "appstream:BatchDisassociateUserStack"
+    ],
+    "attributes": {
+      "tags": [
+        "appstream:TagResource",
+        "appstream:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

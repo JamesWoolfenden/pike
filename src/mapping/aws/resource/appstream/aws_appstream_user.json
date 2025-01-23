@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "appstream:DescribeUsers",
+      "appstream:CreateUser",
+      "appstream:DeleteUser"
+    ],
+    "attributes": {
+      "tags": [
+        "appstream:TagResource",
+        "appstream:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

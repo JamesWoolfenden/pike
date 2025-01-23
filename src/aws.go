@@ -1102,6 +1102,17 @@ var (
 		"aws_appmesh_virtual_node":                                         awsAppmeshVirtualNode,
 		"aws_appmesh_virtual_router":                                       awsAppmeshVirtualRouter,
 		"aws_appmesh_virtual_service":                                      awsAppmeshVirtualService,
+		"aws_appstream_directory_config":                                   awsAppstreamDirectoryConfig,
+		"aws_appstream_fleet":                                              awsAppstreamFleet,
+		"aws_appstream_fleet_stack_association":                            awsAppstreamFleetStackAssociation,
+		"aws_appstream_stack":                                              awsAppstreamStack,
+		"aws_appstream_user":                                               awsAppstreamUser,
+		"aws_appstream_user_stack_association":                             awsAppstreamUserStackAssociation,
+		"aws_appsync_api_cache":                                            awsAppsyncApiCache,
+		"aws_appsync_api_key":                                              awsAppsyncApiKey,
+		"aws_appsync_datasource":                                           awsAppsyncDatasource,
+		"aws_appsync_source_api_association":                               awsAppsyncSourceApiAssociation,
+		"aws_appsync_type":                                                 awsAppsyncType,
 	}
 )
 

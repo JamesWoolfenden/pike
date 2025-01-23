@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "appsync:GetApiCache",
+      "appsync:CreateApiCache",
+      "appsync:DeleteApiCache",
+      "appsync:UpdateApiCache"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

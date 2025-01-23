@@ -1,0 +1,30 @@
+[
+  {
+    "apply": [
+      "appsync:AssociateSourceGraphqlApi",
+      "appsync:AssociateMergedGraphqlApi",
+      "appsync:UpdateSourceApiAssociation",
+      "appsync:GetSourceApiAssociation",
+      "appsync:DisassociateSourceGraphqlApi",
+      "appsync:DisassociateMergedGraphqlApi",
+      "appsync:ListSourceApiAssociations"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "appsync:GetSourceApiAssociation",
+      "appsync:DisassociateSourceGraphqlApi",
+      "appsync:DisassociateMergedGraphqlApi",
+      "appsync:ListSourceApiAssociations"
+    ],
+    "modify": [
+      "appsync:UpdateSourceApiAssociation",
+      "appsync:GetSourceApiAssociation"
+    ],
+    "plan": [
+      "appsync:GetSourceApiAssociation",
+      "appsync:ListSourceApiAssociations"
+    ]
+  }
+]

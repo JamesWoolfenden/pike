@@ -1,6 +1,6 @@
 # todo aws
 
-Resource percentage coverage   72.49
+Resource percentage coverage   74.25
 Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_amplify_backend_environment
@@ -13,17 +13,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_apprunner_connection
 ./resource.ps1 aws_apprunner_custom_domain_association
 ./resource.ps1 aws_apprunner_deployment
-./resource.ps1 aws_appstream_directory_config
-./resource.ps1 aws_appstream_fleet
-./resource.ps1 aws_appstream_fleet_stack_association
-./resource.ps1 aws_appstream_stack
-./resource.ps1 aws_appstream_user
-./resource.ps1 aws_appstream_user_stack_association
-./resource.ps1 aws_appsync_api_cache
-./resource.ps1 aws_appsync_api_key
-./resource.ps1 aws_appsync_datasource
-./resource.ps1 aws_appsync_source_api_association
-./resource.ps1 aws_appsync_type
 ./resource.ps1 aws_bedrock_guardrail
 ./resource.ps1 aws_bedrock_guardrail_version
 ./resource.ps1 aws_bedrockagent_agent_collaborator

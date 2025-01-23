@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "appsync:GetType",
+      "appsync:CreateType",
+      "appsync:DeleteType",
+      "appsync:UpdateType"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

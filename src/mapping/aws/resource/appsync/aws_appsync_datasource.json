@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "appsync:CreateDataSource",
+      "appsync:GetDataSource",
+      "appsync:UpdateDataSource",
+      "iam:PassRole"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "appsync:DeleteDataSource",
+      "appsync:GetDataSource"
+    ],
+    "modify": [
+      "appsync:UpdateDataSource",
+      "iam:PassRole"
+    ],
+    "plan": [
+      "appsync:GetDataSource"
+    ]
+  }
+]

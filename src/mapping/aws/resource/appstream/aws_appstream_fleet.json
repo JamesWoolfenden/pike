@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "appstream:DescribeFleets",
+      "appstream:CreateFleet",
+      "appstream:DeleteFleet",
+      "appstream:UpdateFleet",
+      "appstream:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "appstream:TagResource",
+        "appstream:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
