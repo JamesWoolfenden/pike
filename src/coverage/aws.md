@@ -1,6 +1,6 @@
 # todo aws
 
-Resource percentage coverage   74.25
+Resource percentage coverage   75.34
 Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_amplify_backend_environment
@@ -143,7 +143,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_iam_organizations_features
 ./resource.ps1 aws_iam_role_policy_attachments_exclusive
 ./resource.ps1 aws_iam_user_policy_attachments_exclusive
-./resource.ps1 aws_identitystore_user
 ./resource.ps1 aws_internet_gateway_attachment
 ./resource.ps1 aws_iot_event_configurations
 ./resource.ps1 aws_iot_indexing_configuration
