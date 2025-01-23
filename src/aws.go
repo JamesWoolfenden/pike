@@ -1093,6 +1093,15 @@ var (
 		"aws_xray_group":                                                   awsXrayGroup,
 		"aws_xray_sampling_rule":                                           awsXraySamplingRule,
 		"backend":                                                          s3backend,
+		"aws_api_gateway_domain_name_access_association":                   awsApiGatewayDomainNameAccessAssociation,
+		"aws_appconfig_deployment_strategy":                                awsAppconfigDeploymentStrategy,
+		"aws_appmesh_gateway_route":                                        awsAppmeshGatewayRoute,
+		"aws_appmesh_mesh":                                                 awsAppmeshMesh,
+		"aws_appmesh_route":                                                awsAppmeshRoute,
+		"aws_appmesh_virtual_gateway":                                      awsAppmeshVirtualGateway,
+		"aws_appmesh_virtual_node":                                         awsAppmeshVirtualNode,
+		"aws_appmesh_virtual_router":                                       awsAppmeshVirtualRouter,
+		"aws_appmesh_virtual_service":                                      awsAppmeshVirtualService,
 	}
 )
 

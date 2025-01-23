@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "appconfig:CreateDeploymentStrategy",
+      "appconfig:DeleteDeploymentStrategy",
+      "appconfig:GetDeploymentStrategy",
+      "appconfig:ListTagsForResource",
+      "appconfig:UpdateDeploymentStrategy"
+    ],
+    "attributes": {
+      "tags": [
+        "appconfig:TagResource",
+        "appconfig:UntagResource"
+      ]
+    },
+    "destroy": [
+      "appconfig:DeleteDeploymentStrategy"
+    ],
+    "modify": [
+      "appconfig:UpdateDeploymentStrategy"
+    ],
+    "plan": [
+      "appconfig:GetDeploymentStrategy",
+      "appconfig:ListTagsForResource"
+    ]
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "appmesh:DescribeVirtualNode",
+      "appmesh:CreateVirtualNode",
+      "appmesh:DeleteVirtualNode",
+      "appmesh:UpdateVirtualNode",
+      "appmesh:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "appmesh:TagResource",
+        "appmesh:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

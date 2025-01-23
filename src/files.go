@@ -3069,3 +3069,30 @@ var awsS3tablesTablePolicy []byte
 
 //go:embed mapping/aws/resource/s3tables/aws_s3tables_table_bucket.json
 var awsS3tablesTableBucket []byte
+
+//go:embed mapping/aws/resource/apigateway/aws_api_gateway_domain_name_access_association.json
+var awsApiGatewayDomainNameAccessAssociation []byte
+
+//go:embed mapping/aws/resource/appconfig/aws_appconfig_deployment_strategy.json
+var awsAppconfigDeploymentStrategy []byte
+
+//go:embed mapping/aws/resource/appmesh/aws_appmesh_gateway_route.json
+var awsAppmeshGatewayRoute []byte
+
+//go:embed mapping/aws/resource/appmesh/aws_appmesh_mesh.json
+var awsAppmeshMesh []byte
+
+//go:embed mapping/aws/resource/appmesh/aws_appmesh_route.json
+var awsAppmeshRoute []byte
+
+//go:embed mapping/aws/resource/appmesh/aws_appmesh_virtual_gateway.json
+var awsAppmeshVirtualGateway []byte
+
+//go:embed mapping/aws/resource/appmesh/aws_appmesh_virtual_node.json
+var awsAppmeshVirtualNode []byte
+
+//go:embed mapping/aws/resource/appmesh/aws_appmesh_virtual_router.json
+var awsAppmeshVirtualRouter []byte
+
+//go:embed mapping/aws/resource/appmesh/aws_appmesh_virtual_service.json
+var awsAppmeshVirtualService []byte

@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "appmesh:DescribeVirtualGateway",
+      "appmesh:CreateVirtualGateway",
+      "appmesh:DeleteVirtualGateway",
+      "appmesh:UpdateVirtualGateway",
+      "appmesh:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "appmesh:TagResource",
+        "appmesh:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -7,27 +7,50 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "VisualEditor0",
         "Effect" : "Allow",
         "Action" : [
-          # aws_s3tables_namespace
-          "s3tables:CreateNamespace",
-          "s3tables:GetNamespace",
-          "s3tables:DeleteNamespace",
+          # aws_appmesh_virtual_gateway
+          "appmesh:DescribeVirtualGateway",
+          "appmesh:CreateVirtualGateway",
+          "appmesh:DeleteVirtualGateway",
+          "appmesh:UpdateVirtualGateway",
+          "appmesh:TagResource",
+          "appmesh:UntagResource",
 
-          # aws_s3tables_table
-          "s3tables:GetTable",
-          "s3tables:CreateTable",
-          "s3tables:DeleteTable",
+          # aws_appmesh_mesh
+          "appmesh:DescribeMesh",
+          "appmesh:CreateMesh",
+          "appmesh:DeleteMesh",
+          "appmesh:UpdateMesh",
+          "appmesh:ListTagsForResource",
 
-          # aws_s3tables_policy
-          "s3tables:GetTablePolicy",
-          "s3tables:DeleteTablePolicy",
-          "s3tables:PutTablePolicy",
+          # aws_appmesh_route
+          "appmesh:DescribeRoute",
+          "appmesh:CreateRoute",
+          "appmesh:DeleteRoute",
+          "appmesh:UpdateRoute",
 
-          # others
-          "s3tables:CreateTableBucket",
-          "s3tables:PutTableBucketMaintenanceConfiguration",
-          "s3tables:GetTableBucket",
-          "s3tables:GetTableBucketMaintenanceConfiguration",
-          "s3tables:DeleteTableBucket"
+          # aws_appmesh_gateway_route
+          "appmesh:DescribeGatewayRoute",
+          "appmesh:CreateGatewayRoute",
+          "appmesh:DeleteGatewayRoute",
+          "appmesh:UpdateGatewayRoute",
+
+          # aws_appmesh_virtual_node
+          "appmesh:DescribeVirtualNode",
+          "appmesh:CreateVirtualNode",
+          "appmesh:DeleteVirtualNode",
+          "appmesh:UpdateVirtualNode",
+
+          # aws_appmesh_virtual_router
+          "appmesh:DescribeVirtualRouter",
+          "appmesh:CreateVirtualRouter",
+          "appmesh:UpdateVirtualRouter",
+          "appmesh:DeleteVirtualRouter",
+
+          # aws_appmesh_virtual_service
+          "appmesh:DescribeVirtualService",
+          "appmesh:CreateVirtualService",
+          "appmesh:DeleteVirtualService",
+          "appmesh:UpdateVirtualService"
         ],
         "Resource" : [
           "*"

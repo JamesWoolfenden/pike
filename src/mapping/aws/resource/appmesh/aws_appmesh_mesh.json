@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "appmesh:DescribeMesh",
+      "appmesh:CreateMesh",
+      "appmesh:DeleteMesh",
+      "appmesh:UpdateMesh",
+      "appmesh:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "appmesh:TagResource",
+        "appmesh:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

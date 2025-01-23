@@ -5,20 +5,11 @@ Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_amplify_backend_environment
 ./resource.ps1 aws_amplify_webhook
-./resource.ps1 aws_api_gateway_domain_name_access_association
-./resource.ps1 aws_appconfig_deployment_strategy
 ./resource.ps1 aws_appfabric_app_authorization
 ./resource.ps1 aws_appfabric_app_authorization_connection
 ./resource.ps1 aws_appfabric_app_bundle
 ./resource.ps1 aws_appfabric_ingestion
 ./resource.ps1 aws_appfabric_ingestion_destination
-./resource.ps1 aws_appmesh_gateway_route
-./resource.ps1 aws_appmesh_mesh
-./resource.ps1 aws_appmesh_route
-./resource.ps1 aws_appmesh_virtual_gateway
-./resource.ps1 aws_appmesh_virtual_node
-./resource.ps1 aws_appmesh_virtual_router
-./resource.ps1 aws_appmesh_virtual_service
 ./resource.ps1 aws_apprunner_connection
 ./resource.ps1 aws_apprunner_custom_domain_association
 ./resource.ps1 aws_apprunner_deployment

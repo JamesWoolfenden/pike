@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "appmesh:DescribeVirtualService",
+      "appmesh:CreateVirtualService",
+      "appmesh:DeleteVirtualService",
+      "appmesh:UpdateVirtualService",
+      "appmesh:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "appmesh:TagResource",
+        "appmesh:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
