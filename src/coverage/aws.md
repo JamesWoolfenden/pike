@@ -13,11 +13,8 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_apprunner_connection
 ./resource.ps1 aws_apprunner_custom_domain_association
 ./resource.ps1 aws_apprunner_deployment
-./resource.ps1 aws_bedrock_guardrail
-./resource.ps1 aws_bedrock_guardrail_version
 ./resource.ps1 aws_bedrockagent_agent_collaborator
 ./resource.ps1 aws_bedrockagent_agent_knowledge_base_association
-./resource.ps1 aws_cleanrooms_membership
 ./resource.ps1 aws_cloud9_environment_membership
 ./resource.ps1 aws_cloudcontrolapi_resource
 ./resource.ps1 aws_cloudformation_stack_instances
@@ -32,7 +29,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_cloudwatch_log_delivery_source
 ./resource.ps1 aws_cloudwatch_log_index_policy
 ./resource.ps1 aws_codebuild_fleet
-./resource.ps1 aws_codeconnections_connection
 ./resource.ps1 aws_codeconnections_host
 ./resource.ps1 aws_cognito_managed_user_pool_client
 ./resource.ps1 aws_comprehend_entity_recognizer
@@ -47,7 +43,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_connect_lambda_function_association
 ./resource.ps1 aws_costoptimizationhub_enrollment_status
 ./resource.ps1 aws_costoptimizationhub_preferences
-./resource.ps1 aws_customerprofiles_domain
 ./resource.ps1 aws_customerprofiles_profile
 ./resource.ps1 aws_dataexchange_data_set
 ./resource.ps1 aws_dataexchange_revision
@@ -120,8 +115,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_elasticsearch_vpc_endpoint
 ./resource.ps1 aws_elastictranscoder_pipeline
 ./resource.ps1 aws_elastictranscoder_preset
-./resource.ps1 aws_emr_instance_fleet
-./resource.ps1 aws_emr_instance_group
 ./resource.ps1 aws_emrcontainers_job_template
 ./resource.ps1 aws_finspace_kx_cluster
 ./resource.ps1 aws_finspace_kx_database
@@ -130,13 +123,9 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_finspace_kx_user
 ./resource.ps1 aws_finspace_kx_volume
 ./resource.ps1 aws_fms_admin_account
-./resource.ps1 aws_globalaccelerator_custom_routing_accelerator
-./resource.ps1 aws_globalaccelerator_custom_routing_endpoint_group
-./resource.ps1 aws_globalaccelerator_custom_routing_listener
 ./resource.ps1 aws_glue_catalog_table_optimizer
 ./resource.ps1 aws_glue_data_quality_ruleset
 ./resource.ps1 aws_glue_dev_endpoint
-./resource.ps1 aws_glue_partition
 ./resource.ps1 aws_glue_partition_index
 ./resource.ps1 aws_grafana_license_association
 ./resource.ps1 aws_grafana_role_association
@@ -154,12 +143,8 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_iam_organizations_features
 ./resource.ps1 aws_iam_role_policy_attachments_exclusive
 ./resource.ps1 aws_iam_user_policy_attachments_exclusive
-./resource.ps1 aws_identitystore_group
-./resource.ps1 aws_identitystore_group_membership
 ./resource.ps1 aws_identitystore_user
-./resource.ps1 aws_imagebuilder_lifecycle_policy
 ./resource.ps1 aws_internet_gateway_attachment
-./resource.ps1 aws_iot_domain_configuration
 ./resource.ps1 aws_iot_event_configurations
 ./resource.ps1 aws_iot_indexing_configuration
 ./resource.ps1 aws_iot_logging_options

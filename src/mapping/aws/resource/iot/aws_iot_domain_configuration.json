@@ -1,0 +1,33 @@
+[
+  {
+    "apply": [
+      "iot:CreateDomainConfiguration",
+      "iot:UpdateDomainConfiguration",
+      "iot:DescribeDomainConfiguration",
+      "iot:DeleteDomainConfiguration",
+      "iot:UpdateDomainConfiguration",
+      "acm:GetCertificate",
+      "iot:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "iot:TagResource",
+        "iot:UntagResource"
+      ]
+    },
+    "destroy": [
+      "iot:DescribeDomainConfiguration",
+      "iot:DeleteDomainConfiguration",
+      "iot:UpdateDomainConfiguration"
+    ],
+    "modify": [
+      "iot:UpdateDomainConfiguration",
+      "iot:DescribeDomainConfiguration",
+      "iot:ListTagsForResource"
+    ],
+    "plan": [
+      "iot:DescribeDomainConfiguration",
+      "iot:ListTagsForResource"
+    ]
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "identitystore:CreateUser",
+      "identitystore:DescribeUser",
+      "identitystore:UpdateUser",
+      "identitystore:DeleteUser"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "identitystore:DescribeUser",
+      "identitystore:DeleteUser"
+    ],
+    "modify": [
+      "identitystore:DescribeUser",
+      "identitystore:UpdateUser"
+    ],
+    "plan": [
+      "identitystore:DescribeUser"
+    ]
+  }
+]

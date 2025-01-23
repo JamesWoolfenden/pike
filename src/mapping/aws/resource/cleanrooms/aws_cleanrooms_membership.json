@@ -1,0 +1,61 @@
+[
+  {
+    "apply": [
+      "cleanrooms:CreateMembership",
+      "cleanrooms:GetMembership",
+      "cleanrooms:ListTagsForResource",
+      "cleanrooms:ListMemberships",
+      "cleanrooms:DeleteMembership",
+      "cleanrooms:UpdateMembership",
+      "logs:CreateLogDelivery",
+      "logs:GetLogDelivery",
+      "logs:UpdateLogDelivery",
+      "logs:DeleteLogDelivery",
+      "logs:ListLogDeliveries",
+      "logs:DescribeLogGroups",
+      "logs:DescribeResourcePolicies",
+      "logs:PutResourcePolicy",
+      "logs:CreateLogGroup",
+      "iam:PassRole"
+    ],
+    "attributes": {
+      "tags": [
+        "cleanrooms:TagResource",
+        "cleanrooms:UntagResource"
+      ]
+    },
+    "destroy": [
+      "cleanrooms:DeleteMembership",
+      "cleanrooms:GetMembership",
+      "cleanrooms:ListMemberships",
+      "cleanrooms:ListTagsForResource",
+      "logs:ListLogDeliveries",
+      "logs:DescribeLogGroups",
+      "logs:DescribeResourcePolicies",
+      "logs:GetLogDelivery"
+    ],
+    "modify": [
+      "cleanrooms:UpdateMembership",
+      "cleanrooms:GetMembership",
+      "logs:CreateLogDelivery",
+      "logs:GetLogDelivery",
+      "logs:UpdateLogDelivery",
+      "logs:DeleteLogDelivery",
+      "logs:ListLogDeliveries",
+      "logs:DescribeLogGroups",
+      "logs:DescribeResourcePolicies",
+      "logs:PutResourcePolicy",
+      "logs:CreateLogGroup",
+      "cleanrooms:ListTagsForResource",
+      "iam:PassRole"
+    ],
+    "plan": [
+      "cleanrooms:GetMembership",
+      "cleanrooms:ListTagsForResource",
+      "logs:ListLogDeliveries",
+      "logs:DescribeLogGroups",
+      "logs:DescribeResourcePolicies",
+      "logs:GetLogDelivery"
+    ]
+  }
+]

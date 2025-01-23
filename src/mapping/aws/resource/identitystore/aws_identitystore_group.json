@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "identitystore:CreateGroup",
+      "identitystore:DescribeGroup",
+      "identitystore:UpdateGroup",
+      "identitystore:DeleteGroup"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "identitystore:DescribeGroup",
+      "identitystore:DeleteGroup"
+    ],
+    "modify": [
+      "identitystore:DescribeGroup",
+      "identitystore:UpdateGroup"
+    ],
+    "plan": [
+      "identitystore:DescribeGroup"
+    ]
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "identitystore:CreateGroupMembership",
+      "identitystore:DescribeGroupMembership",
+      "identitystore:DeleteGroupMembership"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "identitystore:DeleteGroupMembership",
+      "identitystore:DescribeGroupMembership"
+    ],
+    "modify": [],
+    "plan": [
+      "identitystore:DescribeGroupMembership"
+    ]
+  }
+]

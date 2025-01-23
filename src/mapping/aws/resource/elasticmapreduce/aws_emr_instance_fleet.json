@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "elasticmapreduce:AddInstanceFleet",
+      "elasticmapreduce:ModifyInstanceFleet"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

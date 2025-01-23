@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "elasticmapreduce:AddInstanceGroups",
+      "elasticmapreduce:ModifyInstanceGroups"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

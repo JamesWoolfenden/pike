@@ -1113,6 +1113,22 @@ var (
 		"aws_appsync_datasource":                                           awsAppsyncDatasource,
 		"aws_appsync_source_api_association":                               awsAppsyncSourceApiAssociation,
 		"aws_appsync_type":                                                 awsAppsyncType,
+		"aws_bedrock_guardrail":                                            awsBedrockGuardrail,
+		"aws_bedrock_guardrail_version":                                    awsBedrockGuardrailVersion,
+		"aws_cleanrooms_membership":                                        awsCleanroomsMembership,
+		"aws_codeconnections_connection":                                   awsCodeconnectionsConnection,
+		"aws_customerprofiles_domain":                                      awsCustomerprofilesDomain,
+		"aws_emr_instance_fleet":                                           awsEmrInstanceFleet,
+		"aws_emr_instance_group":                                           awsEmrInstanceGroup,
+		"aws_globalaccelerator_custom_routing_accelerator":                 awsGlobalacceleratorCustomRoutingAccelerator,
+		"aws_globalaccelerator_custom_routing_endpoint_group":              awsGlobalacceleratorCustomRoutingEndpointGroup,
+		"aws_globalaccelerator_custom_routing_listener":                    awsGlobalacceleratorCustomRoutingListener,
+		"aws_glue_partition":                                               awsGluePartition,
+		"aws_identitystore_group":                                          awsIdentitystoreGroup,
+		"aws_identitystore_user":                                           awsIdentitystoreUser,
+		"aws_identitystore_group_membership":                               awsIdentitystoreGroupMembership,
+		"aws_imagebuilder_lifecycle_policy":                                awsImagebuilderLifecyclePolicy,
+		"aws_iot_domain_configuration":                                     awsIotDomainConfiguration,
 	}
 )
 

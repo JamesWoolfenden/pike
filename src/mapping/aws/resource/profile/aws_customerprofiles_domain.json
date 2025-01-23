@@ -1,0 +1,26 @@
+[
+  {
+    "apply": [
+      "profile:CreateDomain",
+      "profile:DeleteDomain",
+      "profile:GetDomain",
+      "profile:UpdateDomain"
+    ],
+    "attributes": {
+      "tags": [
+        "profile:UntagResource",
+        "profile:TagResource"
+      ]
+    },
+    "destroy": [
+      "profile:DeleteDomain"
+    ],
+    "modify": [
+      "profile:GetDomain",
+      "profile:UpdateDomain"
+    ],
+    "plan": [
+      "profile:GetDomain"
+    ]
+  }
+]

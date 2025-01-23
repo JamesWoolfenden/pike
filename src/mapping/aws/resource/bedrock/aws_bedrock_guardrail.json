@@ -1,0 +1,37 @@
+[
+  {
+    "apply": [
+      "bedrock:CreateGuardrail",
+      "bedrock:GetGuardrail",
+      "bedrock:ListTagsForResource",
+      "bedrock:DeleteGuardrail",
+      "bedrock:UpdateGuardrail"
+    ],
+    "attributes": {
+      "kms_key_arn": [
+        "kms:DescribeKey",
+        "kms:CreateGrant",
+        "kms:GenerateDataKey",
+        "kms:Decrypt",
+        "kms:RetireGrant"
+      ],
+      "tags": [
+        "bedrock:TagResource",
+        "bedrock:UntagResource"
+      ]
+    },
+    "destroy": [
+      "bedrock:DeleteGuardrail",
+      "bedrock:GetGuardrail"
+    ],
+    "modify": [
+      "bedrock:UpdateGuardrail",
+      "bedrock:GetGuardrail",
+      "bedrock:ListTagsForResource"
+    ],
+    "plan": [
+      "bedrock:GetGuardrail",
+      "bedrock:ListTagsForResource"
+    ]
+  }
+]

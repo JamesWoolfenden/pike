@@ -1,0 +1,26 @@
+[
+  {
+    "apply": [
+      "codeconnections:GetConnection",
+      "codeconnections:CreateConnection",
+      "codeconnections:ListTagsForResource",
+      "codeconnections:DeleteConnection"
+    ],
+    "attributes": {
+      "tags": [
+        "codeconnections:TagResource",
+        "codeconnections:UntagResource"
+      ]
+    },
+    "destroy": [
+      "codeconnections:DeleteConnection"
+    ],
+    "modify": [
+      "codeconnections:ListTagsForResource"
+    ],
+    "plan": [
+      "codeconnections:GetConnection",
+      "codeconnections:ListTagsForResource"
+    ]
+  }
+]

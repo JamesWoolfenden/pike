@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "globalaccelerator:DescribeCustomRoutingEndpointGroup",
+      "globalaccelerator:CreateCustomRoutingEndpointGroup",
+      "globalaccelerator:DeleteCustomRoutingEndpointGroup",
+      "globalaccelerator:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "globalaccelerator:TagResource",
+        "globalaccelerator:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

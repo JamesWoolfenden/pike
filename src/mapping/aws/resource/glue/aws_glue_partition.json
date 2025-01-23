@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "glue:GetPartition",
+      "glue:CreatePartition",
+      "glue:DeletePartition",
+      "glue:UpdatePartition",
+      "glue:GetTags"
+    ],
+    "attributes": {
+      "tags": [
+        "glue:TagResource",
+        "glue:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

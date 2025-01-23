@@ -3129,3 +3129,51 @@ var awsAppsyncSourceApiAssociation []byte
 
 //go:embed mapping/aws/resource/appsync/aws_appsync_type.json
 var awsAppsyncType []byte
+
+//go:embed mapping/aws/resource/bedrock/aws_bedrock_guardrail.json
+var awsBedrockGuardrail []byte
+
+//go:embed mapping/aws/resource/bedrock/aws_bedrock_guardrail_version.json
+var awsBedrockGuardrailVersion []byte
+
+//go:embed mapping/aws/resource/cleanrooms/aws_cleanrooms_membership.json
+var awsCleanroomsMembership []byte
+
+//go:embed mapping/aws/resource/codeconnections/aws_codeconnections_connection.json
+var awsCodeconnectionsConnection []byte
+
+//go:embed mapping/aws/resource/profile/aws_customerprofiles_domain.json
+var awsCustomerprofilesDomain []byte
+
+//go:embed mapping/aws/resource/elasticmapreduce/aws_emr_instance_fleet.json
+var awsEmrInstanceFleet []byte
+
+//go:embed mapping/aws/resource/elasticmapreduce/aws_emr_instance_group.json
+var awsEmrInstanceGroup []byte
+
+//go:embed mapping/aws/resource/globalaccelerator/aws_globalaccelerator_custom_routing_accelerator.json
+var awsGlobalacceleratorCustomRoutingAccelerator []byte
+
+//go:embed mapping/aws/resource/globalaccelerator/aws_globalaccelerator_custom_routing_endpoint_group.json
+var awsGlobalacceleratorCustomRoutingEndpointGroup []byte
+
+//go:embed mapping/aws/resource/globalaccelerator/aws_globalaccelerator_custom_routing_listener.json
+var awsGlobalacceleratorCustomRoutingListener []byte
+
+//go:embed mapping/aws/resource/glue/aws_glue_partition.json
+var awsGluePartition []byte
+
+//go:embed mapping/aws/resource/identitystore/aws_identitystore_group.json
+var awsIdentitystoreGroup []byte
+
+//go:embed mapping/aws/resource/identitystore/aws_identitystore_user.json
+var awsIdentitystoreUser []byte
+
+//go:embed mapping/aws/resource/identitystore/aws_identitystore_group_membership.json
+var awsIdentitystoreGroupMembership []byte
+
+//go:embed mapping/aws/resource/imagebuilder/aws_imagebuilder_lifecycle_policy.json
+var awsImagebuilderLifecyclePolicy []byte
+
+//go:embed mapping/aws/resource/iot/aws_iot_domain_configuration.json
+var awsIotDomainConfiguration []byte

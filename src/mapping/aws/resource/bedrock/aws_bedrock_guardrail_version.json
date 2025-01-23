@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "bedrock:CreateGuardrailVersion",
+      "bedrock:GetGuardrail",
+      "kms:CreateGrant",
+      "kms:Decrypt"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "bedrock:DeleteGuardrail",
+      "bedrock:GetGuardrail",
+      "kms:RetireGrant"
+    ],
+    "modify": [],
+    "plan": [
+      "bedrock:GetGuardrail",
+      "kms:Decrypt"
+    ]
+  }
+]

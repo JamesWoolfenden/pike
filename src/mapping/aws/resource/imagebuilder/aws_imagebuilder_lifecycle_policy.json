@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "iam:PassRole",
+      "imagebuilder:CreateLifecyclePolicy",
+      "imagebuilder:GetLifecyclePolicy",
+      "imagebuilder:DeleteLifecyclePolicy",
+      "imagebuilder:UpdateLifecyclePolicy"
+    ],
+    "attributes": {
+      "tags": [
+        "imagebuilder:TagResource",
+        "imagebuilder:UnTagResource"
+      ]
+    },
+    "destroy": [
+      "imagebuilder:GetLifecyclePolicy",
+      "imagebuilder:DeleteLifecyclePolicy"
+    ],
+    "modify": [
+      "iam:PassRole",
+      "imagebuilder:GetLifecyclePolicy",
+      "imagebuilder:UpdateLifecyclePolicy"
+    ],
+    "plan": []
+  }
+]

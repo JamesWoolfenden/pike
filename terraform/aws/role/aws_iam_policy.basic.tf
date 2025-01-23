@@ -7,57 +7,35 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "VisualEditor0",
         "Effect" : "Allow",
         "Action" : [
-          # aws_appmesh_virtual_gateway
-          "appmesh:DescribeVirtualGateway",
-          "appmesh:CreateVirtualGateway",
-          "appmesh:DeleteVirtualGateway",
-          "appmesh:UpdateVirtualGateway",
-          "appmesh:TagResource",
-          "appmesh:UntagResource",
+          "dynamodb:DeleteItem",
+          "dynamodb:DescribeTable",
+          "dynamodb:GetItem",
+          "dynamodb:PutItem",
+          "ec2:DescribeSubnets",
+          "iam:AttachRolePolicy",
+          "iam:CreateRole",
+          "iam:DeleteRole",
+          "iam:DetachRolePolicy",
+          "iam:GetRole",
+          "iam:ListAttachedRolePolicies",
+          "iam:ListInstanceProfilesForRole",
+          "iam:ListRolePolicies",
+          "s3:DeleteObject",
+          "s3:GetObject",
+          "s3:ListBucket",
+          "s3:PutObject",
+          "sso:ListInstances",
 
-          # aws_appmesh_mesh
-          "appmesh:DescribeMesh",
-          "appmesh:CreateMesh",
-          "appmesh:DeleteMesh",
-          "appmesh:UpdateMesh",
-          "appmesh:ListTagsForResource",
+          # aws_globalaccelerator_custom_routing_accelerator
+          "globalaccelerator:CreateCustomRoutingAccelerator",
 
-          # aws_appmesh_route
-          "appmesh:DescribeRoute",
-          "appmesh:CreateRoute",
-          "appmesh:DeleteRoute",
-          "appmesh:UpdateRoute",
+          # aws_glue_partition
+          "glue:CreatePartition",
 
-          # aws_appmesh_gateway_route
-          "appmesh:DescribeGatewayRoute",
-          "appmesh:CreateGatewayRoute",
-          "appmesh:DeleteGatewayRoute",
-          "appmesh:UpdateGatewayRoute",
+          # aws_imagebuilder_lifecycle_policy
+          "imagebuilder:CreateLifecyclePolicy",
+          "imagebuilder:TagResource"
 
-          # aws_appmesh_virtual_node
-          "appmesh:DescribeVirtualNode",
-          "appmesh:CreateVirtualNode",
-          "appmesh:DeleteVirtualNode",
-          "appstream:DescribeUsers",
-          "appstream:CreateUser",
-          "appstream:DeleteUser",
-          "appstream:DescribeStacks",
-          "appstream:CreateStack",
-          "appstream:DeleteStack",
-          "appstream:UpdateStack",
-          "appstream:DescribeFleets",
-          "appstream:CreateFleet",
-          "appstream:DeleteFleet",
-          "appstream:UpdateFleet",
-          "appstream:ListTagsForResource",
-          "appstream:CreateDirectoryConfig",
-          "appstream:DeleteDirectoryConfig",
-          "appstream:DeleteDirectoryConfig",
-          "appstream:DescribeDirectoryConfigs",
-          "appstream:UpdateDirectoryConfig",
-          "appstream:DescribeUserStackAssociations",
-          "appstream:BatchAssociateUserStack",
-          "appstream:BatchDisassociateUserStack",
         ],
         "Resource" : [
           "*"
