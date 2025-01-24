@@ -26,7 +26,6 @@ func (e *fileStringEmptyError) Error() string {
 
 // GetResources retrieves all the resources in a tf file.
 func GetResources(file string, dirName string) ([]ResourceV2, error) {
-
 	var Resources []ResourceV2
 
 	if file == "" {
@@ -123,7 +122,6 @@ func GetResourceBlocks(file string) (*hclsyntax.Body, error) {
 	}
 
 	src, err := os.ReadFile(temp)
-
 	if err != nil {
 		return nil, fmt.Errorf("failed to read file: %w", err)
 	}

@@ -17,7 +17,7 @@ const (
 var policyGCPTemplate []byte
 
 // GCPPolicy create an IAM policy.
-func GCPPolicy(permissions []string) (policy string, err error) {
+func GCPPolicy(permissions []string) (string, error) {
 	if permissions == nil {
 		return "", &emptyPermissionsError{}
 	}
@@ -48,7 +48,6 @@ func GCPPolicy(permissions []string) (policy string, err error) {
 	}
 
 	err = tmpl.Execute(&output, theDetails)
-
 	if err != nil {
 		return "", &templateExecuteError{err}
 	}

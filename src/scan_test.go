@@ -697,7 +697,7 @@ func TestInitWithInvalidTerraformConfig(t *testing.T) {
 			bad config
 		}
 	`)
-	err = os.WriteFile(filepath.Join(tempDir, "main.tf"), invalidConfig, 0644)
+	err = os.WriteFile(filepath.Join(tempDir, "main.tf"), invalidConfig, 0o644)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -723,12 +723,12 @@ func TestInitWithModulesJsonOnly(t *testing.T) {
 
 	// Create .terraform/modules directory with only modules.json
 	modulesDir := filepath.Join(tempDir, ".terraform", "modules")
-	err = os.MkdirAll(modulesDir, 0755)
+	err = os.MkdirAll(modulesDir, 0o755)
 	if err != nil {
 		t.Fatal(err)
 	}
 
-	err = os.WriteFile(filepath.Join(modulesDir, "modules.json"), []byte("{}"), 0644)
+	err = os.WriteFile(filepath.Join(modulesDir, "modules.json"), []byte("{}"), 0o644)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -754,12 +754,12 @@ func TestInitWithDSStoreOnly(t *testing.T) {
 
 	// Create .terraform/modules directory with only .DS_Store
 	modulesDir := filepath.Join(tempDir, ".terraform", "modules")
-	err = os.MkdirAll(modulesDir, 0755)
+	err = os.MkdirAll(modulesDir, 0o755)
 	if err != nil {
 		t.Fatal(err)
 	}
 
-	err = os.WriteFile(filepath.Join(modulesDir, ".DS_Store"), []byte{}, 0644)
+	err = os.WriteFile(filepath.Join(modulesDir, ".DS_Store"), []byte{}, 0o644)
 	if err != nil {
 		t.Fatal(err)
 	}

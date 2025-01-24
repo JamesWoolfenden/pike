@@ -125,8 +125,7 @@ func Scan(dirName string, output string, file *string, init bool, write bool, en
 			return &writeFileError{file: output, err: err}
 		}
 	} else {
-
-		fmt.Print(OutPolicy.AsString(output)) //permit
+		fmt.Print(OutPolicy.AsString(output)) // permit
 	}
 
 	return err
@@ -140,7 +139,6 @@ func WriteOutput(outPolicy OutputPolicy, output, location string) error {
 
 	newPath, _ := filepath.Abs(location + "/.pike")
 	err := os.MkdirAll(newPath, os.ModePerm)
-
 	if err != nil {
 		return &makeDirectoryError{directory: newPath, err: err}
 	}
@@ -156,7 +154,6 @@ func WriteOutput(outPolicy OutputPolicy, output, location string) error {
 		if outPolicy.AWS.Terraform != "" {
 			roleFile := path.Join(newPath, "aws_iam_role.terraform_pike.tf")
 			err = os.WriteFile(roleFile, roleTemplate, 0o644)
-
 			if err != nil {
 				return &writeFileError{file: roleFile, err: err}
 			}
@@ -169,7 +166,6 @@ func WriteOutput(outPolicy OutputPolicy, output, location string) error {
 	}
 
 	err = os.WriteFile(outFile, d1, 0o644)
-
 	if err != nil {
 		return &writeFileError{file: outFile, err: err}
 	}
@@ -198,7 +194,6 @@ func Init(dirName string) (*string, []string, error) {
 
 	modulesDir := path.Join(dirName, dotTfModules)
 	modules, err := os.ReadDir(modulesDir)
-
 	if err != nil {
 		return &tfPath, nil, &readDirectoryError{directory: modulesDir, err: err}
 	}
@@ -265,7 +260,6 @@ func MakePolicy(dirName string, file *string, init bool, EnableResources bool) (
 		}
 
 		files, err = GetTF(fullPath)
-
 		if err != nil {
 			return Output, &getTFError{directory: fullPath, err: err}
 		}
@@ -308,7 +302,6 @@ func MakePolicy(dirName string, file *string, init bool, EnableResources bool) (
 	for _, resource := range resources {
 		var err error
 		newPerms, err = GetPermission(resource)
-
 		if err != nil {
 			continue
 		}
@@ -348,7 +341,6 @@ func GetTF(dirName string) ([]string, error) {
 // GetTFFiles get tf files in directory.
 func GetTFFiles(dirName string) ([]string, error) {
 	rawFiles, err := os.ReadDir(dirName)
-
 	if err != nil {
 		return nil, err
 	}

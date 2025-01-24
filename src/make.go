@@ -17,11 +17,10 @@ import (
 // Make creates the required role.
 func Make(directory string) (*string, error) {
 	if directory == "" {
-		return nil, errors.New("directory is required")
+		return nil, &directoryNotFoundError{directory: directory}
 	}
 
 	err := Scan(directory, "terraform", nil, true, true, false)
-
 	if err != nil {
 		return nil, fmt.Errorf("failed to scan directory: %w", err)
 	}
@@ -88,7 +87,6 @@ func tfApply(policyPath string) (*tfexec.Terraform, error) {
 	defer cancel()
 
 	err = terraform.Apply(ctx)
-
 	if err != nil {
 		return nil, &terraformApplyError{err: err}
 	}
@@ -152,7 +150,6 @@ func tfPlan(policyPath string) error {
 	cmd := exec.Command(terraform.ExecPath(), chdir, "plan", "--out", "tf.plan")
 
 	stdout, err := cmd.Output()
-
 	if err != nil {
 		return &terraformPlanError{err}
 	}
@@ -169,14 +166,12 @@ func tfPlan(policyPath string) error {
 
 	cmd = exec.CommandContext(ctx, terraform.ExecPath(), chdir, "show", "--json", "tf.plan")
 	stdout, err = cmd.Output()
-
 	if err != nil {
 		return &terraformPlanError{err}
 	}
 
 	outfile := filepath.Join(policyPath, "tf.json")
 	err = os.WriteFile(outfile, stdout, 0o666)
-
 	if err != nil {
 		return &writeFileError{file: outfile, err: err}
 	}

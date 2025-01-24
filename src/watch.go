@@ -29,7 +29,6 @@ func Watch(arn string, wait int) error {
 	defer cancel()
 
 	cfg, err := config.LoadDefaultConfig(ctx)
-
 	if err != nil {
 		return &awsConfigError{err}
 	}
@@ -55,7 +54,6 @@ func Watch(arn string, wait int) error {
 
 // WaitForPolicyChange looks at IAM policy change.
 func WaitForPolicyChange(client *iam.Client, arn string, version string, wait, pollInterval int) (int, error) {
-
 	for item := 1; item < wait; item++ {
 		time.Sleep(time.Duration(pollInterval))
 
@@ -105,7 +103,6 @@ func GetPolicyVersion(client *iam.Client, policyArn string, version string) (*st
 	}
 
 	Policy, err := url.QueryUnescape(*(output.PolicyVersion.Document))
-
 	if err != nil {
 		return nil, &urlEscapeError{err}
 	}
@@ -122,7 +119,6 @@ func GetPolicyVersion(client *iam.Client, policyArn string, version string) (*st
 func SortActions(myPolicy string) (*string, error) {
 	var raw map[string]interface{}
 	err := json.Unmarshal([]byte(myPolicy), &raw)
-
 	if err != nil {
 		return nil, err
 	}

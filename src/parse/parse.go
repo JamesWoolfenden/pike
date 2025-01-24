@@ -19,7 +19,6 @@ type provider struct {
 }
 
 func Parse(codebase string, name string) error {
-
 	if name == "" || codebase == "" {
 		return errors.New("name or codebase is required")
 	}
@@ -49,7 +48,6 @@ func Parse(codebase string, name string) error {
 	default:
 		match := `resource "(` + name + `_.*?)"`
 		myProvider.Resources, err = getMatches(codebase, match, "markdown")
-
 		if err != nil {
 			return err
 		}
@@ -61,14 +59,12 @@ func Parse(codebase string, name string) error {
 	}
 
 	jsonOut, err = json.MarshalIndent(myProvider, "", "    ")
-
 	if err != nil {
 		return err
 	}
 
 	log.Info().Msgf("creating %s-members.json", name)
 	err = os.WriteFile(name+"-members.json", jsonOut, 0o700)
-
 	if err != nil {
 		return err
 	}
@@ -131,7 +127,6 @@ func getGoFiles(path string, extension string) ([]string, error) {
 	}
 
 	_, err = os.Stat(absPath)
-
 	if err != nil {
 		return nil, fmt.Errorf("path does not exist error %v", err)
 	}
@@ -148,7 +143,6 @@ func getGoFiles(path string, extension string) ([]string, error) {
 
 		return nil
 	})
-
 	if err != nil {
 		return nil, err
 	}

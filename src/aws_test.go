@@ -145,7 +145,8 @@ func TestGetAWSPermissions(t *testing.T) {
 				"s3:GetEncryptionConfiguration",
 				"s3:GetBucketRequestPayment",
 				"s3:GetBucketCORS",
-				"s3:DeleteBucket"},
+				"s3:DeleteBucket",
+			},
 			wantErr: false,
 		},
 		{
@@ -266,7 +267,8 @@ func TestGetAWSResourcePermissions(t *testing.T) {
 				"s3:GetEncryptionConfiguration",
 				"s3:GetBucketRequestPayment",
 				"s3:GetBucketCORS",
-				"s3:DeleteBucket"},
+				"s3:DeleteBucket",
+			},
 			wantErr: false,
 		},
 		{

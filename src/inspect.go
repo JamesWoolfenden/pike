@@ -54,7 +54,6 @@ func Inspect(directory string, init bool) (PolicyDiff, error) {
 	}
 
 	iacPolicy, err = Identity.Parse(rawIACPolicy.AWS.JSONOut)
-
 	if err != nil {
 		if errors.Is(err, &Identity.EmptyParseError{}) {
 			log.Info().Msgf("nothing to do for IAC as parse for %s was empty", directory)
@@ -78,14 +77,20 @@ func Inspect(directory string, init bool) (PolicyDiff, error) {
 	return Difference, nil
 }
 
+type policyDifferenceError struct{}
+
+func (m *policyDifferenceError) Error() string {
+	return "invalid input: empty or nil policies/statements"
+}
+
 func CompareAllow(identity Identity.IAM, policy Identity.Policy) (PolicyDiff, error) {
 	// Add at start of function
 	if identity.Policies == nil || policy.Statements == nil {
-		return PolicyDiff{}, errors.New("invalid input: nil policies or statements")
+		return PolicyDiff{}, &policyDifferenceError{}
 	}
 
 	if len(identity.Policies) == 0 || len(policy.Statements) == 0 {
-		return PolicyDiff{}, errors.New("invalid input: empty policies or statements")
+		return PolicyDiff{}, &policyDifferenceError{}
 	}
 
 	identityAllows := make([]string, 0, len(identity.Policies)*2)

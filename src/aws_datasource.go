@@ -580,7 +580,7 @@ var tFLookupDataAWS = map[string]interface{}{
 	"aws_lb_listener_rule":                                                  dataAwsLbListenerRule,
 	"aws_spot_datafeed_subscription":                                        dataAwsSpotDatafeedSubscription,
 	"aws_servicecatalogappregistry_attribute_group":                         dataServicecatalogappregistryAttributeGroup,
-	"aws_servicecatalogappregistry_attribute_group_associations":            dataServicecatalogappregistryAttributeGroupAssociations,
+	"aws_servicecatalogappregistry_attribute_group_associations":            dataServicecatalogappregistryAttributeGroupAssociations, //nolint:lll
 	"aws_route53_records":                                                   dataAwsRoute53Records,
 	"aws_cloudwatch_event_buses":                                            dataAwsCloudwatchEventBuses,
 	"aws_ecs_clusters":                                                      dataAwsEcsClusters,
@@ -604,7 +604,7 @@ func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
 	return Permissions, err
 }
 
-// AwsDataLookup is a map to connect resource name to an object map
+// AwsDataLookup is a map to connect resource name to an object map.
 func AwsDataLookup(find string) interface{} {
 	return tFLookupDataAWS[find]
 }
