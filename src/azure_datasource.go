@@ -19,7 +19,7 @@ func GetAZUREDataPermissions(result ResourceV2) ([]string, error) {
 }
 
 func AzureDataLookup(name string) interface{} {
-	var TFLookupAzureData = map[string]interface{}{
+	TFLookupAzureData := map[string]interface{}{
 		"azurerm_app_service":                                    dataAzurermAppService,
 		"azurerm_app_service_certificate":                        dataAzurermAppServiceCertificate,
 		"azurerm_app_service_certificate_order":                  dataAzurermAppServiceCertificateOrder,

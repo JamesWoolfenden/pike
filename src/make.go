@@ -17,11 +17,10 @@ import (
 // Make creates the required role.
 func Make(directory string) (*string, error) {
 	if directory == "" {
-		return nil, errors.New("directory is required")
+		return nil, &directoryNotFoundError{directory: directory}
 	}
 
 	err := Scan(directory, "terraform", nil, true, true, false)
-
 	if err != nil {
 		return nil, fmt.Errorf("failed to scan directory: %w", err)
 	}
@@ -152,7 +151,6 @@ func tfPlan(policyPath string) error {
 	cmd := exec.Command(terraform.ExecPath(), chdir, "plan", "--out", "tf.plan")
 
 	stdout, err := cmd.Output()
-
 	if err != nil {
 		return &terraformPlanError{err}
 	}

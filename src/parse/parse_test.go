@@ -30,14 +30,18 @@ func TestGetGoFiles(t *testing.T) {
 		{name: "None", args: args{path: "../mapping", extension: "go"}},
 		{
 			name: "Valid path",
-			args: args{path: "./testdata",
-				extension: "markdown"},
+			args: args{
+				path:      "./testdata",
+				extension: "markdown",
+			},
 			wantErr: false,
 		},
 		{
 			name: "Invalid path",
-			args: args{path: "/nonexistent",
-				extension: "markdown"},
+			args: args{
+				path:      "/nonexistent",
+				extension: "markdown",
+			},
 			wantErr: true,
 		},
 	}
@@ -90,7 +94,8 @@ func TestGetKeys(t *testing.T) {
 				m: map[string]bool{
 					"key1": true,
 					"key2": true,
-				}},
+				},
+			},
 			want: []string{"key1", "key2"},
 		},
 		{
@@ -133,17 +138,21 @@ func TestGetMatches(t *testing.T) {
 		{name: "go", args: args{source: "./testdata", match: "(aws_.*?)", extension: "go"}, want: []string{"aws_"}},
 		{
 			name: "Valid pattern",
-			args: args{source: "./testdata",
+			args: args{
+				source:    "./testdata",
 				match:     `resource "(test_.*?)"`,
-				extension: "markdown"},
+				extension: "markdown",
+			},
 			want:    empty,
 			wantErr: false,
 		},
 		{
 			name: "Invalid regex pattern",
-			args: args{source: "./testdata",
+			args: args{
+				source:    "./testdata",
 				match:     "[",
-				extension: "markdown"},
+				extension: "markdown",
+			},
 			want:    empty,
 			wantErr: false,
 		},
@@ -202,11 +211,9 @@ func teardown(cloud string) {
 	case "google":
 		_ = os.RemoveAll("./terraform-provider-google")
 	}
-
 }
 
 func TestParse(t *testing.T) {
-
 	type args struct {
 		codebase string
 		name     string

@@ -19,7 +19,6 @@ type provider struct {
 }
 
 func Parse(codebase string, name string) error {
-
 	if name == "" || codebase == "" {
 		return errors.New("name or codebase is required")
 	}

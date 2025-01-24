@@ -125,8 +125,7 @@ func Scan(dirName string, output string, file *string, init bool, write bool, en
 			return &writeFileError{file: output, err: err}
 		}
 	} else {
-
-		fmt.Print(OutPolicy.AsString(output)) //permit
+		fmt.Print(OutPolicy.AsString(output)) // permit
 	}
 
 	return err
@@ -140,7 +139,6 @@ func WriteOutput(outPolicy OutputPolicy, output, location string) error {
 
 	newPath, _ := filepath.Abs(location + "/.pike")
 	err := os.MkdirAll(newPath, os.ModePerm)
-
 	if err != nil {
 		return &makeDirectoryError{directory: newPath, err: err}
 	}
@@ -198,7 +196,6 @@ func Init(dirName string) (*string, []string, error) {
 
 	modulesDir := path.Join(dirName, dotTfModules)
 	modules, err := os.ReadDir(modulesDir)
-
 	if err != nil {
 		return &tfPath, nil, &readDirectoryError{directory: modulesDir, err: err}
 	}
@@ -348,7 +345,6 @@ func GetTF(dirName string) ([]string, error) {
 // GetTFFiles get tf files in directory.
 func GetTFFiles(dirName string) ([]string, error) {
 	rawFiles, err := os.ReadDir(dirName)
-
 	if err != nil {
 		return nil, err
 	}

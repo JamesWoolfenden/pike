@@ -129,7 +129,7 @@ func Test_getLocalModules(t *testing.T) {
 	}
 
 	for _, tt := range tests {
-		//t.Parallel()
+		// t.Parallel()
 		t.Run(tt.name, func(t *testing.T) {
 			got, err := pike.GetLocalModules(tt.args.block, tt.args.dirName)
 			if (err != nil) != tt.wantErr {

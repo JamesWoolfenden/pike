@@ -101,7 +101,7 @@ func GetPolicy(actions Sorted, resources bool) (OutputPolicy, error) {
 
 	Empty = true
 
-	var actionsValue = reflect.ValueOf(actions)
+	actionsValue := reflect.ValueOf(actions)
 	typeOfV := actionsValue.Type()
 	values := make([]interface{}, actionsValue.NumField())
 

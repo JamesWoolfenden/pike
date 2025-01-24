@@ -16,7 +16,6 @@ import (
 
 // Compare IAC codebase to AWS policy.
 func Compare(directory string, arn string, init bool) (bool, error) {
-
 	valid, err := inputValidationCompare(directory, arn)
 	if err != nil {
 		return valid, &inputValidationError{err}
@@ -28,7 +27,6 @@ func Compare(directory string, arn string, init bool) (bool, error) {
 	defer cancel()
 
 	cfg, err := config.LoadDefaultConfig(ctx)
-
 	if err != nil {
 		return false, &awsConfigError{err}
 	}
@@ -36,25 +34,21 @@ func Compare(directory string, arn string, init bool) (bool, error) {
 	client := iam.NewFromConfig(cfg)
 
 	version, err := GetVersion(client, arn)
-
 	if err != nil {
 		return false, &getVersionError{err}
 	}
 
 	policy, err := GetPolicyVersion(client, arn, *version)
-
 	if err != nil {
 		return false, &getPolicyVersionError{err}
 	}
 
 	iacPolicy, err := MakePolicy(directory, nil, init, false)
-
 	if err != nil {
 		return false, &getIAMVersionError{err}
 	}
 
 	sorted, err := SortActions(iacPolicy.AWS.JSONOut)
-
 	if err != nil {
 		return false, &sortActionsError{iacPolicy.AWS.JSONOut}
 	}
@@ -85,13 +79,20 @@ func inputValidationCompare(directory string, arn string) (bool, error) {
 	return false, nil
 }
 
+type compareDifferenceError struct {
+	err error
+}
+
+func (m *compareDifferenceError) Error() string {
+	return fmt.Sprintf("compare difference failed: %v", m.err)
+}
+
 // CompareIAMPolicy takes two IAM policies and compares.
 func CompareIAMPolicy(policy string, oldPolicy string) (bool, error) {
 	differ := diff.New()
 	compare, err := differ.Compare([]byte(policy), []byte(oldPolicy))
-
 	if err != nil {
-		return false, err
+		return false, &compareDifferenceError{err}
 	}
 
 	if compare.Modified() {
@@ -112,7 +113,6 @@ func (m *formatterError) Error() string {
 func ShowDifferences(policy string, compare diff.Diff) (bool, error) {
 	var aJSON map[string]interface{}
 	err := json.Unmarshal([]byte(policy), &aJSON)
-
 	if err != nil {
 		return false, &marshallPolicyError{err}
 	}
@@ -124,7 +124,6 @@ func ShowDifferences(policy string, compare diff.Diff) (bool, error) {
 
 	myFormatter := formatter.NewAsciiFormatter(aJSON, myConfig)
 	diffString, err := myFormatter.Format(compare)
-
 	if err != nil {
 		return false, &formatterError{err}
 	}

@@ -26,7 +26,6 @@ func (e *awsCredentialsError) Error() string {
 // Remote updates a repo with AWS credentials.
 func Remote(target string, repository string, region string) error {
 	iamRole, err := Make(target)
-
 	if err != nil {
 		return &makeRoleError{err}
 	}
@@ -36,7 +35,6 @@ func Remote(target string, repository string, region string) error {
 	time.Sleep(magic * time.Second)
 
 	Credentials, err := getAWSCredentials(*iamRole, region)
-
 	if err != nil {
 		return &awsCredentialsError{err}
 	}
@@ -89,7 +87,7 @@ func SetRepoSecret(repository string, keyText string, keyName string) (*github.R
 	encryptedValue := base64.StdEncoding.EncodeToString(encryptedBytes)
 
 	// Create an EncryptedSecret and encrypt the plaintext value into it
-	eSecret := &github.EncryptedSecret{ //permit
+	eSecret := &github.EncryptedSecret{ // permit
 		Name:           keyName,
 		KeyID:          keyID,
 		EncryptedValue: encryptedValue,
@@ -141,7 +139,7 @@ func GetGithubClient() (context.Context, *github.Client) {
 
 	ctx := context.Background()
 	ts := oauth2.StaticTokenSource(
-		&oauth2.Token{AccessToken: token}, //permit
+		&oauth2.Token{AccessToken: token}, // permit
 	)
 	tc := oauth2.NewClient(ctx, ts)
 

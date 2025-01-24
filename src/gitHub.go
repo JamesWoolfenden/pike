@@ -35,8 +35,7 @@ func (m *verifyBranchError) Error() string {
 	return fmt.Sprintf("failed to verify branch %s %s %s %v", m.branch, m.repo, m.owner, m.err)
 }
 
-type nilResponseError struct {
-}
+type nilResponseError struct{}
 
 func (m *nilResponseError) Error() string {
 	return "nil response"
@@ -140,13 +139,20 @@ func InvokeGithubDispatchEvent(repository string, workflowFileName string, branc
 	return nil
 }
 
+type listBranchesError struct {
+	err error
+}
+
+func (m *listBranchesError) Error() string {
+	return fmt.Sprintf("failed to list branches %v", m.err)
+}
+
 // VerifyBranch checks that a branch exists in a repo.
 func VerifyBranch(client *github.Client, owner string, repo string, branch string) error {
 	ctx := context.Background()
 	branches, _, err := client.Repositories.ListBranches(ctx, owner, repo, nil)
-
 	if err != nil {
-		return err
+		return &listBranchesError{err}
 	}
 
 	found := false

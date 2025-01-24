@@ -78,10 +78,18 @@ func getAWSCredentials(iamRole string, region string) (*sts.AssumeRoleOutput, er
 	return result, nil
 }
 
+type getAWSCredentialsError struct {
+	err error
+}
+
+func (e getAWSCredentialsError) Error() string {
+	return fmt.Sprintf("failed to get AWS credentials: %v", e.err)
+}
+
 func setAWSAuth(iamRole string, region string) error {
 	credentials, err := getAWSCredentials(iamRole, region)
 	if err != nil {
-		return err
+		return &getAWSCredentialsError{err}
 	}
 
 	_ = os.Setenv("AWS_ACCESS_KEY_ID", *credentials.Credentials.AccessKeyId)

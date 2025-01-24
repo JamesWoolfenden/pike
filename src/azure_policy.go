@@ -35,7 +35,6 @@ func AZUREPolicy(permissions []string, policyName string) (string, error) {
 	var output bytes.Buffer
 
 	tmpl, err := template.New("test").Parse(string(policyAZURETemplate))
-
 	if err != nil {
 		return "", &templateParseError{err}
 	}
