@@ -3237,3 +3237,6 @@ var awsCloudwatchLogDeliverySource []byte
 
 //go:embed mapping/aws/resource/logs/aws_cloudwatch_log_index_policy.json
 var awsCloudwatchLogIndexPolicy []byte
+
+//go:embed mapping/aws/resource/logs/aws_cloudwatch_log_anomaly_detector.json
+var awsCloudwatchLogAnomalyDetector []byte

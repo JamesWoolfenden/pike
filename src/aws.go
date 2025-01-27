@@ -1149,6 +1149,7 @@ var tFLookup = map[string]interface{}{ //nolint:gochecknoglobals
 	"aws_cloudwatch_log_delivery_destination_policy":                   awsCloudwatchLogDeliveryDestinationPolicy,
 	"aws_cloudwatch_log_delivery_source":                               awsCloudwatchLogDeliverySource,
 	"aws_cloudwatch_log_index_policy":                                  awsCloudwatchLogIndexPolicy,
+	"aws_cloudwatch_log_anomaly_detector":                              awsCloudwatchLogAnomalyDetector,
 }
 
 // GetAWSPermissions for AWS resources.
