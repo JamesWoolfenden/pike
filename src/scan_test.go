@@ -81,6 +81,7 @@ func TestGetTF(t *testing.T) {
 
 				return
 			}
+
 			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("GetTF() = %v, want %v", got, tt.want)
 			}
@@ -338,6 +339,7 @@ func TestMakePolicy(t *testing.T) {
         "logs:DeleteRetentionPolicy",
         "logs:DescribeLogGroups",
         "logs:DisassociateKmsKey",
+ 		"logs:ListTagsForResource",
         "logs:ListTagsLogGroup",
         "logs:PutRetentionPolicy",
         "logs:TagLogGroup",
@@ -614,6 +616,7 @@ func TestWriteOutput(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
+
 			if err := pike.WriteOutput(tt.args.OutPolicy, tt.args.output, tt.args.location); (err != nil) != tt.wantErr {
 				t.Errorf("WriteOutput() error = %v, wantErr %v", err, tt.wantErr)
 			}
@@ -669,9 +672,11 @@ func TestInitWithEmptyDir(t *testing.T) {
 	if err == nil {
 		t.Error("Expected error for empty directory, got nil")
 	}
+
 	if tfPath == nil {
 		t.Error("TFPath was not set")
 	}
+
 	if modules != nil {
 		t.Errorf("Expected nil modules for empty directory, got %v", modules)
 	}
