@@ -109,12 +109,12 @@ func (m *getPolicyError) Error() string {
 }
 
 // Scan looks for resources in a given directory.
-func Scan(dirName string, output string, file *string, init bool, write bool, enableResources bool) error {
+func Scan(dirName string, output string, file *string, init bool, write bool, enableResources bool, provider string) error {
 	if dirName == "" && file == nil {
 		return &emptyScanLocationError{}
 	}
 
-	OutPolicy, err := MakePolicy(dirName, file, init, enableResources)
+	OutPolicy, err := MakePolicy(dirName, file, init, enableResources, provider)
 	if err != nil {
 		return &makePolicyError{err}
 	}
@@ -236,7 +236,7 @@ func LocateTerraform() (string, error) {
 }
 
 // MakePolicy does the guts of determining a policy from code.
-func MakePolicy(dirName string, file *string, init bool, EnableResources bool) (OutputPolicy, error) {
+func MakePolicy(dirName string, file *string, init bool, EnableResources bool, provider string) (OutputPolicy, error) {
 	var (
 		files  []string
 		Output OutputPolicy
@@ -301,14 +301,30 @@ func MakePolicy(dirName string, file *string, init bool, EnableResources bool) (
 
 	for _, resource := range resources {
 		var err error
-		newPerms, err = GetPermission(resource)
+
+		// implement provider filter
+		if provider == "" || provider == resource.Provider {
+			newPerms, err = GetPermission(resource)
+		} else {
+			continue
+		}
+
 		if err != nil {
 			continue
 		}
 
-		PermissionBag.AWS = append(PermissionBag.AWS, newPerms.AWS...)
-		PermissionBag.GCP = append(PermissionBag.GCP, newPerms.GCP...)
-		PermissionBag.AZURE = append(PermissionBag.AZURE, newPerms.AZURE...)
+		switch strings.ToLower(provider) {
+		case "aws":
+			PermissionBag.AWS = append(PermissionBag.AWS, newPerms.AWS...)
+		case "gcp", "google":
+			PermissionBag.GCP = append(PermissionBag.GCP, newPerms.GCP...)
+		case "azure", "azurerm":
+			PermissionBag.AZURE = append(PermissionBag.AZURE, newPerms.AZURE...)
+		case "":
+			PermissionBag.AWS = append(PermissionBag.AWS, newPerms.AWS...)
+			PermissionBag.GCP = append(PermissionBag.GCP, newPerms.GCP...)
+			PermissionBag.AZURE = append(PermissionBag.AZURE, newPerms.AZURE...)
+		}
 	}
 
 	Output, err := GetPolicy(PermissionBag, EnableResources)

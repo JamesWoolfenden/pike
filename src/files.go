@@ -3177,3 +3177,48 @@ var awsImagebuilderLifecyclePolicy []byte
 
 //go:embed mapping/aws/resource/iot/aws_iot_domain_configuration.json
 var awsIotDomainConfiguration []byte
+
+//go:embed mapping/aws/resource/codebuild/aws_codebuild_fleet.json
+var awsCodeBuildFleet []byte
+
+//go:embed mapping/aws/resource/config/aws_config_aggregate_authorization.json
+var awsConfigAggregateAuthorization []byte
+
+//go:embed mapping/aws/resource/config/aws_config_organization_managed_rule.json
+var awsConfigOrganizationManagedRule []byte
+
+//go:embed mapping/aws/resource/config/aws_config_remediation_configuration.json
+var awsConfigRemediationConfiguration []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ec2_instance_connect_endpoint.json
+var awsEc2InstanceConnectEndpoint []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ec2_traffic_mirror_filter_rule.json
+var awsEc2TrafficMirrorFilterRule []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ec2_traffic_mirror_session.json
+var awsEc2TrafficMirrorSession []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ec2_traffic_mirror_filter.json
+var awsEc2TrafficMirrorFilter []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ec2_traffic_mirror_target.json
+var awsEc2TrafficMirrorTarget []byte
+
+//go:embed mapping/aws/resource/glue/aws_glue_data_quality_ruleset.json
+var awsGlueDataQualityRuleset []byte
+
+//go:embed mapping/aws/resource/glue/aws_glue_dev_endpoint.json
+var awsGlueDevEndpoint []byte
+
+//go:embed mapping/aws/resource/grafana/aws_grafana_workspace.json
+var awsGrafanaWorkspace []byte
+
+//go:embed mapping/aws/resource/lakeformation/aws_lakeformation_data_lake_settings.json
+var awsLakeformationDataLakeSettings []byte
+
+//go:embed mapping/aws/resource/lakeformation/aws_lakeformation_permissions.json
+var awsLakeformationPermissions []byte
+
+//go:embed mapping/aws/resource/lakeformation/aws_lakeformation_resource.json
+var awsLakeformationResource []byte

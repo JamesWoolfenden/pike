@@ -1,0 +1,26 @@
+[
+  {
+    "apply": [
+      "codebuild:BatchGetFleets",
+      "codebuild:CreateFleet",
+      "codebuild:UpdateFleet",
+      "codebuild:DeleteFleet",
+      "iam:PassRole"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "codebuild:BatchGetFleets",
+      "codebuild:DeleteFleet"
+    ],
+    "modify": [
+      "codebuild:BatchGetFleets",
+      "codebuild:UpdateFleet",
+      "iam:PassRole"
+    ],
+    "plan": [
+      "codebuild:BatchGetFleets"
+    ]
+  }
+]

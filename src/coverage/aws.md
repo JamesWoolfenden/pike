@@ -1,6 +1,6 @@
 # todo aws
 
-Resource percentage coverage   75.34
+Resource percentage coverage   76.43
 Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_amplify_backend_environment
@@ -28,17 +28,13 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_cloudwatch_log_delivery_destination_policy
 ./resource.ps1 aws_cloudwatch_log_delivery_source
 ./resource.ps1 aws_cloudwatch_log_index_policy
-./resource.ps1 aws_codebuild_fleet
 ./resource.ps1 aws_codeconnections_host
 ./resource.ps1 aws_cognito_managed_user_pool_client
 ./resource.ps1 aws_comprehend_entity_recognizer
 ./resource.ps1 aws_computeoptimizer_enrollment_status
 ./resource.ps1 aws_computeoptimizer_recommendation_preferences
-./resource.ps1 aws_config_aggregate_authorization
 ./resource.ps1 aws_config_organization_custom_policy_rule
 ./resource.ps1 aws_config_organization_custom_rule
-./resource.ps1 aws_config_organization_managed_rule
-./resource.ps1 aws_config_remediation_configuration
 ./resource.ps1 aws_config_retention_configuration
 ./resource.ps1 aws_connect_lambda_function_association
 ./resource.ps1 aws_costoptimizationhub_enrollment_status
@@ -85,16 +81,10 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_ebs_fast_snapshot_restore
 ./resource.ps1 aws_ebs_snapshot_import
 ./resource.ps1 aws_ec2_capacity_block_reservation
-./resource.ps1 aws_ec2_instance
-./resource.ps1 aws_ec2_instance_connect_endpoint
 ./resource.ps1 aws_ec2_instance_metadata_defaults
 ./resource.ps1 aws_ec2_instance_state
 ./resource.ps1 aws_ec2_managed_prefix_list_entry
 ./resource.ps1 aws_ec2_subnet_cidr_reservation
-./resource.ps1 aws_ec2_traffic_mirror_filter
-./resource.ps1 aws_ec2_traffic_mirror_filter_rule
-./resource.ps1 aws_ec2_traffic_mirror_session
-./resource.ps1 aws_ec2_traffic_mirror_target
 ./resource.ps1 aws_ec2_transit_gateway_connect_peer
 ./resource.ps1 aws_ec2_transit_gateway_default_route_table_association
 ./resource.ps1 aws_ec2_transit_gateway_default_route_table_propagation
@@ -124,12 +114,9 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_finspace_kx_volume
 ./resource.ps1 aws_fms_admin_account
 ./resource.ps1 aws_glue_catalog_table_optimizer
-./resource.ps1 aws_glue_data_quality_ruleset
-./resource.ps1 aws_glue_dev_endpoint
 ./resource.ps1 aws_glue_partition_index
 ./resource.ps1 aws_grafana_license_association
 ./resource.ps1 aws_grafana_role_association
-./resource.ps1 aws_grafana_workspace
 ./resource.ps1 aws_grafana_workspace_saml_configuration
 ./resource.ps1 aws_grafana_workspace_service_account
 ./resource.ps1 aws_grafana_workspace_service_account_token
@@ -155,10 +142,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_kendra_thesaurus
 ./resource.ps1 aws_kinesis_analytics_application
 ./resource.ps1 aws_kinesisanalyticsv2_application_snapshot
-./resource.ps1 aws_lakeformation_data_lake_settings
 ./resource.ps1 aws_lakeformation_lf_tag
-./resource.ps1 aws_lakeformation_permissions
-./resource.ps1 aws_lakeformation_resource
 ./resource.ps1 aws_lakeformation_resource_lf_tags
 ./resource.ps1 aws_lambda_function_recursion_config
 ./resource.ps1 aws_lambda_runtime_management_config

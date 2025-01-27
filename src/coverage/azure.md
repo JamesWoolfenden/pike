@@ -1,7 +1,7 @@
 # todo azure
 
 Resource percentage coverage   4.58
-Datasource percentage coverage 35.67
+Datasource percentage coverage 35.57
 
 ./resource.ps1 azurerm_aadb2c_directory
 ./resource.ps1 azurerm_active_directory_domain_service
@@ -1028,6 +1028,7 @@ Datasource percentage coverage 35.67
 ./resource.ps1 azurerm_aadb2c_directory -type data
 ./resource.ps1 azurerm_active_directory_domain_service -type data
 ./resource.ps1 azurerm_advisor_recommendations -type data
+./resource.ps1 azurerm_api_management_subscription -type data
 ./resource.ps1 azurerm_arc_resource_bridge_appliance -type data
 ./resource.ps1 azurerm_attestation -type data
 ./resource.ps1 azurerm_automation_runbook -type data

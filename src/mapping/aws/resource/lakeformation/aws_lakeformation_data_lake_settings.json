@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "lakeformation:PutDataLakeSettings",
+      "lakeformation:GetDataLakeSettings"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

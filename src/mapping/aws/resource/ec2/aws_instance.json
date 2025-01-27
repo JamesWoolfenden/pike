@@ -7,15 +7,50 @@
       "ec2:DescribeVolumes",
       "ec2:DescribeInstanceTypes",
       "ec2:RunInstances",
-      "ec2:DescribeInstanceCreditSpecifications",
       "ec2:StopInstances",
       "ec2:TerminateInstances",
       "ec2:DescribeNetworkInterfaces"
     ],
     "attributes": {
+      "credit_specification": [
+        "ec2:ModifyInstanceCreditSpecification",
+        "ec2:DescribeInstanceCreditSpecifications"
+      ],
+      "iam_instance_profile": [
+        "ec2:AssociateIamInstanceProfile",
+        "ec2:DescribeIamInstanceProfileAssociations",
+        "ec2:DisassociateIamInstanceProfile",
+        "ec2:ReplaceIamInstanceProfileAssociation",
+        "iam:PassRole"
+      ],
+      "key_name": [
+        "ec2:DescribeKeyPairs"
+      ],
+      "launch_template": [
+        "ec2:DescribeLaunchTemplates",
+        "ec2:DescribeLaunchTemplateVersions"
+      ],
+      "maintenance_options": [
+        "ec2:ModifyInstanceMaintenanceOptions"
+      ],
       "monitoring": [
         "ec2:MonitorInstances",
         "ec2:UnmonitorInstances"
+      ],
+      "network_interface": [
+        "ec2:DescribeNetworkInterfaces"
+      ],
+      "placement_group": [
+        "ec2:ModifyInstancePlacement"
+      ],
+      "private_dns_name_options": [
+        "ec2:ModifyPrivateDnsNameOptions"
+      ],
+      "security_groups": [
+        "ec2:DescribeSecurityGroups"
+      ],
+      "subnet_id": [
+        "ec2:DescribeSubnets"
       ],
       "tags": [
         "ec2:CreateTags",

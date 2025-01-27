@@ -1,0 +1,57 @@
+[
+  {
+    "apply": [
+      "grafana:CreateWorkspace",
+      "grafana:DescribeWorkspace",
+      "grafana:DescribeWorkspaceAuthentication",
+      "grafana:DescribeWorkspaceConfiguration",
+      "grafana:UpdateWorkspaceAuthentication",
+      "sso:DescribeRegisteredRegions",
+      "sso:CreateManagedApplicationInstance",
+      "organizations:DescribeOrganization",
+      "sso:GetSharedSsoConfiguration",
+      "iam:PassRole",
+      "ec2:GetManagedPrefixListEntries",
+      "ec2:DescribeSecurityGroups",
+      "ec2:DescribeSubnets",
+      "ec2:DescribeVpcs",
+      "iam:CreateServiceLinkedRole",
+      "sso:ListApplicationInstances",
+      "sso:GetApplicationInstance"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "grafana:DeleteWorkspace",
+      "grafana:DescribeWorkspace",
+      "grafana:DescribeWorkspaceAuthentication",
+      "grafana:DescribeWorkspaceConfiguration",
+      "sso:DeleteManagedApplicationInstance",
+      "sso:DescribeRegisteredRegions"
+    ],
+    "modify": [
+      "grafana:DescribeWorkspace",
+      "grafana:DescribeWorkspaceAuthentication",
+      "grafana:DescribeWorkspaceConfiguration",
+      "grafana:UpdateWorkspace",
+      "grafana:UpdateWorkspaceAuthentication",
+      "grafana:UpdateWorkspaceConfiguration",
+      "sso:DescribeRegisteredRegions",
+      "sso:CreateManagedApplicationInstance",
+      "ec2:GetManagedPrefixListEntries",
+      "iam:PassRole",
+      "ec2:DescribeSecurityGroups",
+      "ec2:DescribeSubnets",
+      "ec2:DescribeVpcs",
+      "iam:CreateServiceLinkedRole",
+      "sso:ListApplicationInstances",
+      "sso:GetApplicationInstance"
+    ],
+    "plan": [
+      "grafana:DescribeWorkspace",
+      "grafana:DescribeWorkspaceAuthentication",
+      "grafana:DescribeWorkspaceConfiguration"
+    ]
+  }
+]

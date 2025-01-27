@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "ec2:CreateTrafficMirrorSession",
+      "ec2:DeleteTrafficMirrorSession",
+      "ec2:ModifyTrafficMirrorSession",
+      "ec2:DescribeTrafficMirrorSessions"
+    ],
+    "attributes": {
+      "tags": [
+        "ec2:CreateTags",
+        "ec2:DeleteTags"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

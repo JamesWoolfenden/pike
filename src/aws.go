@@ -1127,7 +1127,23 @@ var tFLookup = map[string]interface{}{ //nolint:gochecknoglobals
 	"aws_xray_encryption_config":                                       awsXrayEncryptionConfig,
 	"aws_xray_group":                                                   awsXrayGroup,
 	"aws_xray_sampling_rule":                                           awsXraySamplingRule,
+	"aws_ec2_instance":                                                 awsInstance,
 	"backend":                                                          s3backend,
+	"aws_codebuild_fleet":                                              awsCodeBuildFleet,
+	"aws_config_aggregate_authorization":                               awsConfigAggregateAuthorization,
+	"aws_config_organization_managed_rule":                             awsConfigOrganizationManagedRule,
+	"aws_config_remediation_configuration":                             awsConfigRemediationConfiguration,
+	"aws_ec2_instance_connect_endpoint":                                awsEc2InstanceConnectEndpoint,
+	"aws_ec2_traffic_mirror_filter_rule":                               awsEc2TrafficMirrorFilterRule,
+	"aws_ec2_traffic_mirror_session":                                   awsEc2TrafficMirrorSession,
+	"aws_ec2_traffic_mirror_filter":                                    awsEc2TrafficMirrorFilter,
+	"aws_ec2_traffic_mirror_target":                                    awsEc2TrafficMirrorTarget,
+	"aws_glue_data_quality_ruleset":                                    awsGlueDataQualityRuleset,
+	"aws_glue_dev_endpoint":                                            awsGlueDevEndpoint,
+	"aws_grafana_workspace":                                            awsGrafanaWorkspace,
+	"aws_lakeformation_data_lake_settings":                             awsLakeformationDataLakeSettings,
+	"aws_lakeformation_permissions":                                    awsLakeformationPermissions,
+	"aws_lakeformation_resource":                                       awsLakeformationResource,
 }
 
 // GetAWSPermissions for AWS resources.

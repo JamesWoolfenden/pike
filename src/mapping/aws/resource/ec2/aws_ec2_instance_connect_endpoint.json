@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "ec2:CreateInstanceConnectEndpoint",
+      "ec2:DescribeInstanceConnectEndpoints",
+      "ec2:DescribeInstanceConnectEndpoints",
+      "ec2:CreateNetworkInterface",
+      "iam:CreateServiceLinkedRole"
+    ],
+    "attributes": {
+      "tags": [
+        "ec2:CreateTags",
+        "ec2:DeleteTags"
+      ]
+    },
+    "destroy": [
+      "ec2:DeleteInstanceConnectEndpoint",
+      "ec2:DescribeInstanceConnectEndpoints"
+    ],
+    "modify": [
+      "ec2:DescribeInstanceConnectEndpoints"
+    ],
+    "plan": [
+      "ec2:DescribeInstanceConnectEndpoints"
+    ]
+  }
+]

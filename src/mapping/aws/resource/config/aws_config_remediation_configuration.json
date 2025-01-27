@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "config:DescribeRemediationConfigurations",
+      "config:DeleteRemediationConfiguration",
+      "config:PutRemediationConfigurations"
+    ],
+    "attributes": {
+      "tags": [
+        "config:TagResource",
+        "config:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

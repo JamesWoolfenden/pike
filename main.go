@@ -31,6 +31,7 @@ func main() {
 		region          string
 		workflow        string
 		name            string
+		provider        string
 	)
 
 	log.Logger = log.Output(zerolog.ConsoleWriter{Out: os.Stderr})
@@ -159,13 +160,19 @@ func main() {
 						Usage:       "Add resource constraints to policy (AWS only)",
 						Destination: &enableResources,
 					},
+					&cli.StringFlag{
+						Name:        "provider",
+						Aliases:     []string{"p"},
+						Usage:       "Filter results for just this provider (e.g. aws, gcp, azure)",
+						Destination: &provider,
+					},
 				},
 				Action: func(*cli.Context) error {
 					if file == "" {
-						return pike.Scan(directory, output, nil, init, write, enableResources)
+						return pike.Scan(directory, output, nil, init, write, enableResources, provider)
 					}
 
-					return pike.Scan(directory, output, &file, init, write, enableResources)
+					return pike.Scan(directory, output, &file, init, write, enableResources, provider)
 				},
 			},
 			{

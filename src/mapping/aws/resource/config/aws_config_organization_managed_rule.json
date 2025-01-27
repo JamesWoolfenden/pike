@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "config:DescribeOrganizationConfigRules",
+      "config:DeleteOrganizationConfigRule",
+      "config:PutOrganizationConfigRule"
+    ],
+    "attributes": {
+      "tags": [
+        "config:TagResource",
+        "config:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,28 @@
+[
+  {
+    "apply": [
+      "config:DescribeAggregationAuthorizations",
+      "config:PutAggregationAuthorization",
+      "config:ListTagsForResource",
+      "config:DeleteAggregationAuthorization"
+    ],
+    "attributes": {
+      "tags": [
+        "config:TagResource",
+        "config:UntagResource"
+      ]
+    },
+    "destroy": [
+      "config:DescribeAggregationAuthorizations",
+      "config:DeleteAggregationAuthorization"
+    ],
+    "modify": [
+      "config:DescribeAggregationAuthorizations",
+      "config:ListTagsForResource"
+    ],
+    "plan": [
+      "config:DescribeAggregationAuthorizations",
+      "config:ListTagsForResource"
+    ]
+  }
+]

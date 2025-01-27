@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "ec2:CreateTrafficMirrorFilter",
+      "ec2:ModifyTrafficMirrorFilterNetworkServices",
+      "ec2:DescribeTrafficMirrorFilters",
+      "ec2:DeleteTrafficMirrorFilter"
+    ],
+    "attributes": {
+      "tags": [
+        "ec2:CreateTags",
+        "ec2:DeleteTags"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

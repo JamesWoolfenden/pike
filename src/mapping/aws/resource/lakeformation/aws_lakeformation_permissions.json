@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "lakeformation:GrantPermissions",
+      "lakeformation:RevokePermissions"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

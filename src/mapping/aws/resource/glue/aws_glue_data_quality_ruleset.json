@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "glue:CreateDataQualityRuleset",
+      "glue:GetDataQualityRuleset",
+      "glue:DeleteDataQualityRuleset",
+      "glue:UpdateDataQualityRuleset",
+      "glue:GetTags"
+    ],
+    "attributes": {
+      "tags": [
+        "glue:TagResource",
+        "glue:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

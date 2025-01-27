@@ -10,6 +10,7 @@
     "azurerm_api_management_gateway_host_name_configuration",
     "azurerm_api_management_group",
     "azurerm_api_management_product",
+    "azurerm_api_management_subscription",
     "azurerm_api_management_user",
     "azurerm_app_configuration",
     "azurerm_app_configuration_key",

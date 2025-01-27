@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "lakeformation:RegisterResource",
+      "iam:PutRolePolicy",
+      "lakeformation:DescribeResource",
+      "lakeformation:DeregisterResource",
+      "iam:GetRolePolicy",
+      "lakeformation:UpdateResource"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

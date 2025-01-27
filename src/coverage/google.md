@@ -1,7 +1,7 @@
 # todo google
 
-Resource percentage coverage   18.44
-Datasource percentage coverage 72.75
+Resource percentage coverage   18.41
+Datasource percentage coverage 72.32
 
 ./resource.ps1 google_access_context_manager_access_level_condition
 ./resource.ps1 google_access_context_manager_service_perimeter_dry_run_egress_policy
@@ -715,6 +715,7 @@ Datasource percentage coverage 72.75
 ./resource.ps1 google_os_login_ssh_public_key
 ./resource.ps1 google_parallelstore_instance
 ./resource.ps1 google_parameter_manager_parameter
+./resource.ps1 google_parameter_manager_parameter_version
 ./resource.ps1 google_parameter_manager_regional_parameter
 ./resource.ps1 google_parameter_manager_regional_parameter_version
 ./resource.ps1 google_privateca_ca_pool
@@ -746,6 +747,7 @@ Datasource percentage coverage 72.75
 ./resource.ps1 google_pubsub_subscription_iam_policy
 ./resource.ps1 google_recaptcha_enterprise_key
 ./resource.ps1 google_redis_cluster
+./resource.ps1 google_redis_cluster_user_created_connections
 ./resource.ps1 google_resource_manager_lien
 ./resource.ps1 google_runtimeconfig_config
 ./resource.ps1 google_runtimeconfig_config_iam_binding
@@ -908,6 +910,7 @@ Datasource percentage coverage 72.75
 ./resource.ps1 google_kms_crypto_keys -type data
 ./resource.ps1 google_kms_ekm_connection_iam_policy -type data
 ./resource.ps1 google_kms_key_handle -type data
+./resource.ps1 google_kms_key_handles -type data
 ./resource.ps1 google_kms_key_rings -type data
 ./resource.ps1 google_logging_log_view_iam_policy -type data
 ./resource.ps1 google_oracle_database_autonomous_database -type data
@@ -921,6 +924,7 @@ Datasource percentage coverage 72.75
 ./resource.ps1 google_organization_iam_policy -type data
 ./resource.ps1 google_organizations -type data
 ./resource.ps1 google_parameter_manager_parameter -type data
+./resource.ps1 google_parameter_manager_parameters -type data
 ./resource.ps1 google_parameter_manager_regional_parameter -type data
 ./resource.ps1 google_parameter_manager_regional_parameters -type data
 ./resource.ps1 google_privateca_ca_pool_iam_policy -type data
