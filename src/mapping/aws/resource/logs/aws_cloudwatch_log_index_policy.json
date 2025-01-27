@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "logs:PutIndexPolicy",
+      "logs:DeleteIndexPolicy",
+      "logs:DescribeIndexPolicies"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "logs:CreateLogAnomalyDetector",
+      "logs:GetLogAnomalyDetector",
+      "logs:DeleteLogAnomalyDetector",
+      "logs:UpdateLogAnomalyDetector"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

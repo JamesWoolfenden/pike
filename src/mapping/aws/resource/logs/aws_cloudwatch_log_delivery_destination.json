@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "logs:PutDeliveryDestination",
+      "logs:GetDeliveryDestination",
+      "logs:DescribeDeliveryDestinations",
+      "logs:DeleteDeliveryDestination"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

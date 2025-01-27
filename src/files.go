@@ -3222,3 +3222,18 @@ var awsLakeformationPermissions []byte
 
 //go:embed mapping/aws/resource/lakeformation/aws_lakeformation_resource.json
 var awsLakeformationResource []byte
+
+//go:embed mapping/aws/resource/logs/aws_cloudwatch_log_delivery.json
+var awsCloudwatchLogDelivery []byte
+
+//go:embed mapping/aws/resource/logs/aws_cloudwatch_log_delivery_destination.json
+var awsCloudwatchLogDeliveryDestination []byte
+
+//go:embed mapping/aws/resource/logs/aws_cloudwatch_log_delivery_destination_policy.json
+var awsCloudwatchLogDeliveryDestinationPolicy []byte
+
+//go:embed mapping/aws/resource/logs/aws_cloudwatch_log_delivery_source.json
+var awsCloudwatchLogDeliverySource []byte
+
+//go:embed mapping/aws/resource/logs/aws_cloudwatch_log_index_policy.json
+var awsCloudwatchLogIndexPolicy []byte

@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "logs:GetLogDelivery",
+      "logs:CreateLogDelivery",
+      "logs:DeleteLogDelivery",
+      "logs:UpdateLogDelivery"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

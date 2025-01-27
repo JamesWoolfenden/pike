@@ -4,7 +4,8 @@
       "logs:CreateLogGroup",
       "logs:DescribeLogGroups",
       "logs:ListTagsLogGroup",
-      "logs:DeleteLogGroup"
+      "logs:DeleteLogGroup",
+      "logs:ListTagsForResource"
     ],
     "attributes": {
       "kms_key_id": [

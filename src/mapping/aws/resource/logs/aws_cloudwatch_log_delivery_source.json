@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "logs:GetDeliverySource",
+      "logs:PutDeliverySource",
+      "logs:DeleteDeliverySource"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1144,6 +1144,11 @@ var tFLookup = map[string]interface{}{ //nolint:gochecknoglobals
 	"aws_lakeformation_data_lake_settings":                             awsLakeformationDataLakeSettings,
 	"aws_lakeformation_permissions":                                    awsLakeformationPermissions,
 	"aws_lakeformation_resource":                                       awsLakeformationResource,
+	"aws_cloudwatch_log_delivery":                                      awsCloudwatchLogDelivery,
+	"aws_cloudwatch_log_delivery_destination":                          awsCloudwatchLogDeliveryDestination,
+	"aws_cloudwatch_log_delivery_destination_policy":                   awsCloudwatchLogDeliveryDestinationPolicy,
+	"aws_cloudwatch_log_delivery_source":                               awsCloudwatchLogDeliverySource,
+	"aws_cloudwatch_log_index_policy":                                  awsCloudwatchLogIndexPolicy,
 }
 
 // GetAWSPermissions for AWS resources.
