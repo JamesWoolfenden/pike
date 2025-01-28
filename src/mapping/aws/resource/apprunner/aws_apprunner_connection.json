@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "apprunner:CreateConnection",
+      "apprunner:DeleteConnection",
+      "apprunner:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "apprunner:TagResource",
+        "apprunner:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

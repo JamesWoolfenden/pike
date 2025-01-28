@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "shield:DescribeSubscription",
+      "shield:CreateSubscription",
+      "shield:DeleteSubscription",
+      "shield:UpdateSubscription"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

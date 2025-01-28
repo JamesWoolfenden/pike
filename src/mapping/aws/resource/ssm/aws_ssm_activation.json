@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "ssm:DescribeActivations",
+      "ssm:CreateActivation",
+      "ssm:DeleteActivation"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,36 @@
+[
+  {
+    "apply": [
+      "vpc-lattice:CreateResourceGateway",
+      "vpc-lattice:GetResourceGateway",
+      "vpc-lattice:ListTagsForResource",
+      "ec2:DescribeVpcs",
+      "ec2:DescribeSubnets",
+      "ec2:DescribeSecurityGroups",
+      "vpc-lattice:DeleteResourceGateway",
+      "vpc-lattice:UpdateResourceGateway"
+    ],
+    "attributes": {
+      "tags": [
+        "vpc-lattice:TagResource",
+        "vpc-lattice:UntagResource"
+      ]
+    },
+    "destroy": [
+      "vpc-lattice:DeleteResourceGateway",
+      "vpc-lattice:GetResourceGateway"
+    ],
+    "modify": [
+      "vpc-lattice:UpdateResourceGateway",
+      "vpc-lattice:GetResourceGateway",
+      "vpc-lattice:ListTagsForResource",
+      "ec2:DescribeVpcs",
+      "ec2:DescribeSubnets",
+      "ec2:DescribeSecurityGroups"
+    ],
+    "plan": [
+      "vpc-lattice:GetResourceGateway",
+      "vpc-lattice:ListTagsForResource"
+    ]
+  }
+]

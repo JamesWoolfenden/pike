@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "ssm:GetServiceSetting",
+      "ssm:ResetServiceSetting",
+      "ssm:UpdateServiceSetting"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

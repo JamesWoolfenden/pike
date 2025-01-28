@@ -1,0 +1,32 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeSubnets",
+      "vpc-lattice:CreateResourceConfiguration",
+      "vpc-lattice:GetResourceConfiguration",
+      "vpc-lattice:ListTagsForResource",
+      "vpc-lattice:DeleteResourceConfiguration",
+      "vpc-lattice:UpdateResourceConfiguration"
+    ],
+    "attributes": {
+      "tags": [
+        "vpc-lattice:TagResource",
+        "vpc-lattice:UntagResource"
+      ]
+    },
+    "destroy": [
+      "vpc-lattice:DeleteResourceConfiguration",
+      "vpc-lattice:GetResourceConfiguration"
+    ],
+    "modify": [
+      "ec2:DescribeSubnets",
+      "vpc-lattice:ListTagsForResource",
+      "vpc-lattice:UpdateResourceConfiguration",
+      "vpc-lattice:GetResourceConfiguration"
+    ],
+    "plan": [
+      "vpc-lattice:GetResourceConfiguration",
+      "vpc-lattice:ListTagsForResource"
+    ]
+  }
+]

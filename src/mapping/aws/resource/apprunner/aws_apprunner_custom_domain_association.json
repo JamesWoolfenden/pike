@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "apprunner:AssociateCustomDomain",
+      "apprunner:DisassociateCustomDomain"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

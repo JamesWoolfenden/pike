@@ -1,0 +1,30 @@
+[
+  {
+    "apply": [
+      "route53profiles:AssociateProfile",
+      "route53profiles:GetProfileAssociation",
+      "ec2:DescribeVpcs",
+      "route53profiles:ListTagsForResource",
+      "route53profiles:DisassociateProfile"
+    ],
+    "attributes": {
+      "tags": [
+        "route53profiles:TagResource",
+        "route53profiles:UntagResource"
+      ]
+    },
+    "destroy": [
+      "route53profiles:DisassociateProfile",
+      "route53profiles:GetProfileAssociation",
+      "route53profiles:ListTagsForResource"
+    ],
+    "modify": [
+      "route53profiles:GetProfileAssociation",
+      "route53profiles:ListTagsForResource"
+    ],
+    "plan": [
+      "route53profiles:GetProfileAssociation",
+      "route53profiles:ListTagsForResource"
+    ]
+  }
+]

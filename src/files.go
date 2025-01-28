@@ -3240,3 +3240,102 @@ var awsCloudwatchLogIndexPolicy []byte
 
 //go:embed mapping/aws/resource/logs/aws_cloudwatch_log_anomaly_detector.json
 var awsCloudwatchLogAnomalyDetector []byte
+
+//go:embed mapping/aws/resource/route53profiles/aws_route53profiles_association.json
+var awsRoute53profilesAssociation []byte
+
+//go:embed mapping/aws/resource/route53profiles/aws_route53profiles_profile.json
+var awsRoute53profilesProfile []byte
+
+//go:embed mapping/aws/resource/servicecatalog/aws_servicecatalogappregistry_attribute_group.json
+var awsServicecatalogappregistryAttributeGroup []byte
+
+//go:embed mapping/aws/resource/servicecatalog/aws_servicecatalogappregistry_attribute_group_association.json
+var awsServicecatalogappregistryAttributeGroupAssociation []byte
+
+//go:embed mapping/aws/resource/transfer/aws_transfer_server.json
+var awsTransferServer []byte
+
+//go:embed mapping/aws/resource/transfer/aws_transfer_ssh_key.json
+var awsTransferSshKey []byte
+
+//go:embed mapping/aws/resource/transfer/aws_transfer_user.json
+var awsTransferUser []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpc_block_public_access_exclusion.json
+var awsVpcBlockPublicAccessExclusion []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpc_block_public_access_options.json
+var awsVpcBlockPublicAccessOptions []byte
+
+//go:embed mapping/aws/resource/vpc-lattice/aws_vpclattice_resource_configuration.json
+var awsVpclatticeResourceConfiguration []byte
+
+//go:embed mapping/aws/resource/vpc-lattice/aws_vpclattice_resource_gateway.json
+var awsVpclatticeResourceGateway []byte
+
+//go:embed mapping/aws/resource/amplify/aws_amplify_backend_environment.json
+var awsAmplifyBackendEnvironment []byte
+
+//go:embed mapping/aws/resource/amplify/aws_amplify_webhook.json
+var awsAmplifyWebhook []byte
+
+//go:embed mapping/aws/resource/appfabric/aws_appfabric_app_authorization.json
+var awsAppfabricAppAuthorization []byte
+
+//go:embed mapping/aws/resource/appfabric/aws_appfabric_app_authorization_connection.json
+var awsAppfabricAppAuthorizationConnection []byte
+
+//go:embed mapping/aws/resource/appfabric/aws_appfabric_app_bundle.json
+var awsAppfabricAppBundle []byte
+
+//go:embed mapping/aws/resource/appfabric/aws_appfabric_ingestion.json
+var awsAppfabricIngestion []byte
+
+//go:embed mapping/aws/resource/appfabric/aws_appfabric_ingestion_destination.json
+var awsAppfabricIngestionDestination []byte
+
+//go:embed mapping/aws/resource/apprunner/aws_apprunner_connection.json
+var awsApprunnerConnection []byte
+
+//go:embed mapping/aws/resource/apprunner/aws_apprunner_custom_domain_association.json
+var awsApprunnerCustomDomainAssociation []byte
+
+//go:embed mapping/aws/resource/apprunner/aws_apprunner_deployment.json
+var awsApprunnerDeployment []byte
+
+//go:embed mapping/aws/resource/cloud9/aws_cloud9_environment_membership.json
+var awsCloud9EnvironmentMembership []byte
+
+//go:embed mapping/aws/resource/cloudformation/aws_cloudcontrolapi_resource.json
+var awsCloudcontrolapiResource []byte
+
+//go:embed mapping/aws/resource/sagemaker/aws_sagemaker_flow_definition.json
+var awsSagemakerFlowDefinition []byte
+
+//go:embed mapping/aws/resource/sagemaker/aws_sagemaker_hub.json
+var awsSagemakerHub []byte
+
+//go:embed mapping/aws/resource/sagemaker/aws_sagemaker_mlflow_tracking_server.json
+var awsSagemakerMlflowTrackingServer []byte
+
+//go:embed mapping/aws/resource/shield/aws_shield_subscription.json
+var awsShieldSubscription []byte
+
+//go:embed mapping/aws/resource/ec2/aws_spot_datafeed_subscription.json
+var awsSpotDatafeedSubscription []byte
+
+//go:embed mapping/aws/resource/ssm/aws_ssm_activation.json
+var awsSsmActivation []byte
+
+//go:embed mapping/aws/resource/ssm/aws_ssm_default_patch_baseline.json
+var awsSsmDefaultPatchBaseline []byte
+
+//go:embed mapping/aws/resource/ssm/aws_ssm_service_setting.json
+var awsSsmServiceSetting []byte
+
+//go:embed mapping/aws/resource/ssm-quicksetup/aws_ssmquicksetup_configuration_manager.json
+var awsSsmquicksetupConfigurationManager []byte
+
+//go:embed mapping/aws/resource/wafregional/aws_wafregional_web_acl_association.json
+var awsWafregionalWebAclAssociation []byte

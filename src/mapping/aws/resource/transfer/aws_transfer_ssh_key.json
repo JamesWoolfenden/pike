@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "transfer:ImportSshPublicKey",
+      "transfer:DeleteSshPublicKey"
+    ],
+    "attributes": {
+      "tags": [
+        "transfer:TagResource",
+        "transfer:UnTagResource"
+      ]
+    },
+    "destroy": [
+      "transfer:DeleteSshPublicKey"
+    ],
+    "modify": [
+      "transfer:DeleteSshPublicKey",
+      "transfer:ImportSshPublicKey"
+    ],
+    "plan": []
+  }
+]

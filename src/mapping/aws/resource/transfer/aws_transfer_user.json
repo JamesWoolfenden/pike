@@ -1,0 +1,28 @@
+[
+  {
+    "apply": [
+      "iam:PassRole",
+      "transfer:CreateUser",
+      "transfer:DescribeUser",
+      "transfer:UpdateUser",
+      "transfer:DeleteUser"
+    ],
+    "attributes": {
+      "tags": [
+        "transfer:TagResource",
+        "transfer:UnTagResource"
+      ]
+    },
+    "destroy": [
+      "transfer:DeleteUser"
+    ],
+    "modify": [
+      "iam:PassRole",
+      "transfer:DescribeUser",
+      "transfer:UpdateUser"
+    ],
+    "plan": [
+      "transfer:DescribeUser"
+    ]
+  }
+]

@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeSpotDatafeedSubscription",
+      "ec2:CreateSpotDatafeedSubscription",
+      "ec2:DeleteSpotDatafeedSubscription"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

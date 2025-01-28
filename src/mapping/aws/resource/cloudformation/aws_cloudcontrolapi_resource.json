@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "cloudformation:GetResource",
+      "cloudformation:UpdateResource",
+      "cloudformation:DeleteResource",
+      "cloudformation:CreateResource"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

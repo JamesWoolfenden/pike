@@ -1,0 +1,28 @@
+[
+  {
+    "apply": [
+      "servicecatalog:CreateAttributeGroup",
+      "servicecatalog:DeleteAttributeGroup",
+      "servicecatalog:GetAttributeGroup",
+      "servicecatalog:UpdateAttributeGroup",
+      "servicecatalog:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "servicecatalog:TagResource",
+        "servicecatalog:UntagResource"
+      ]
+    },
+    "destroy": [
+      "servicecatalog:DeleteAttributeGroup"
+    ],
+    "modify": [
+      "servicecatalog:GetAttributeGroup",
+      "servicecatalog:UpdateAttributeGroup",
+      "servicecatalog:ListTagsForResource"
+    ],
+    "plan": [
+      "servicecatalog:GetAttributeGroup"
+    ]
+  }
+]

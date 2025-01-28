@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "appfabric:GetIngestion",
+      "appfabric:CreateIngestion",
+      "appfabric:DeleteIngestion",
+      "appfabric:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "appfabric:TagResource",
+        "appfabric:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

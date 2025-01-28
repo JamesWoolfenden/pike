@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "appfabric:ConnectAppAuthorization"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

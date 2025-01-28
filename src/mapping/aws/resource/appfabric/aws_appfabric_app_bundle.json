@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "appfabric:GetAppBundle",
+      "appfabric:CreateAppBundle",
+      "appfabric:DeleteAppBundle",
+      "appfabric:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "appfabric:TagResource",
+        "appfabric:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

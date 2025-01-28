@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "apprunner:StartDeployment"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "ssm-quicksetup:CreateConfigurationManager",
+      "ssm-quicksetup:DeleteConfigurationManager",
+      "ssm-quicksetup:GetConfigurationManager",
+      "ssm-quicksetup:UpdateConfigurationManager"
+    ],
+    "attributes": {
+      "tags": [
+        "ssm-quicksetup:TagResource",
+        "ssm-quicksetup:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

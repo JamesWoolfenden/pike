@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "ssm:GetDefaultPatchBaseline",
+      "ssm:RegisterDefaultPatchBaseline"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

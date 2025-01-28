@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "appfabric:GetIngestionDestination",
+      "appfabric:CreateIngestionDestination",
+      "appfabric:DeleteIngestionDestination",
+      "appfabric:UpdateIngestionDestination",
+      "appfabric:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "appfabric:TagResource",
+        "appfabric:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,59 @@
+[
+  {
+    "apply": [
+      "apigateway:GET",
+      "iam:PassRole",
+      "transfer:CreateServer",
+      "transfer:DescribeServer",
+      "transfer:StartServer",
+      "transfer:StopServer",
+      "transfer:UpdateServer"
+    ],
+    "attributes": {
+      "directory_id": [
+        "ds:AuthorizeApplication",
+        "ds:DescribeDirectories",
+        "ds:UnauthorizeApplication"
+      ],
+      "endpoint_details": [
+        "ec2:AssociateAddress",
+        "ec2:CreateVpcEndpoint",
+        "ec2:DescribeAddresses",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeVpcEndpoints",
+        "ec2:DeleteVpcEndpoints",
+        "ec2:DisassociateAddress",
+        "ec2:ModifyVpcEndpoint"
+      ],
+      "logging_role": [
+        "logs:CreateLogDelivery",
+        "logs:DeleteLogDelivery",
+        "logs:DescribeLogGroups",
+        "logs:DescribeResourcePolicies",
+        "logs:GetLogDelivery",
+        "logs:ListLogDeliveries",
+        "logs:PutResourcePolicy",
+        "logs:UpdateLogDelivery"
+      ],
+      "tags": [
+        "transfer:TagResource",
+        "transfer:UnTagResource"
+      ]
+    },
+    "destroy": [
+      "transfer:DeleteServer"
+    ],
+    "modify": [
+      "apigateway:GET",
+      "iam:PassRole",
+      "transfer:DescribeServer",
+      "transfer:StartServer",
+      "transfer:StopServer",
+      "transfer:UpdateServer"
+    ],
+    "plan": [
+      "ec2:DescribeVpcEndpoints",
+      "transfer:DescribeServer"
+    ]
+  }
+]

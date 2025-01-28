@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "apigateway:SetWebACL",
+      "elasticloadbalancing:SetWebAcl",
+      "waf-regional:AssociateWebACL",
+      "waf-regional:GetWebACLForResource",
+      "waf-regional:DisassociateWebACL"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "waf-regional:DisassociateWebACL"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

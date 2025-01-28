@@ -1,0 +1,26 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeVpcBlockPublicAccessExclusions",
+      "ec2:CreateVpcBlockPublicAccessExclusion",
+      "ec2:DeleteVpcBlockPublicAccessExclusion"
+    ],
+    "attributes": {
+      "tags": [
+        "ec2:CreateTags",
+        "ec2:DeleteTags"
+      ]
+    },
+    "destroy": [
+      "ec2:DescribeVpcBlockPublicAccessExclusions",
+      "ec2:DeleteVpcBlockPublicAccessExclusion"
+    ],
+    "modify": [
+      "ec2:DescribeVpcBlockPublicAccessExclusions",
+      "ec2:ModifyVpcBlockPublicAccessExclusion"
+    ],
+    "plan": [
+      "ec2:DescribeVpcBlockPublicAccessExclusions"
+    ]
+  }
+]

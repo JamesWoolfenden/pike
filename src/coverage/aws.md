@@ -1,22 +1,10 @@
 # todo aws
 
-Resource percentage coverage   76.83
+Resource percentage coverage   79.10
 Datasource percentage coverage 100.00
 
-./resource.ps1 aws_amplify_backend_environment
-./resource.ps1 aws_amplify_webhook
-./resource.ps1 aws_appfabric_app_authorization
-./resource.ps1 aws_appfabric_app_authorization_connection
-./resource.ps1 aws_appfabric_app_bundle
-./resource.ps1 aws_appfabric_ingestion
-./resource.ps1 aws_appfabric_ingestion_destination
-./resource.ps1 aws_apprunner_connection
-./resource.ps1 aws_apprunner_custom_domain_association
-./resource.ps1 aws_apprunner_deployment
 ./resource.ps1 aws_bedrockagent_agent_collaborator
 ./resource.ps1 aws_bedrockagent_agent_knowledge_base_association
-./resource.ps1 aws_cloud9_environment_membership
-./resource.ps1 aws_cloudcontrolapi_resource
 ./resource.ps1 aws_cloudformation_stack_instances
 ./resource.ps1 aws_cloudfront_vpc_origin
 ./resource.ps1 aws_cloudhsm_v2_cluster
@@ -256,9 +244,8 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_resiliencehub_resiliency_policy
 ./resource.ps1 aws_resourcegroups_resource
 ./resource.ps1 aws_route53domains_delegation_signer_record
+./resource.ps1 aws_route53domains_domain
 ./resource.ps1 aws_route53domains_registered_domain
-./resource.ps1 aws_route53profiles_association
-./resource.ps1 aws_route53profiles_profile
 ./resource.ps1 aws_route53profiles_resource_association
 ./resource.ps1 aws_rum_metrics_destination
 ./resource.ps1 aws_s3_directory_bucket
@@ -270,9 +257,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_s3control_object_lambda_access_point
 ./resource.ps1 aws_s3control_object_lambda_access_point_policy
 ./resource.ps1 aws_s3control_storage_lens_configuration
-./resource.ps1 aws_sagemaker_flow_definition
-./resource.ps1 aws_sagemaker_hub
-./resource.ps1 aws_sagemaker_mlflow_tracking_server
 ./resource.ps1 aws_securityhub_account
 ./resource.ps1 aws_securityhub_action_target
 ./resource.ps1 aws_securityhub_configuration_policy_association
@@ -289,8 +273,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_service_discovery_public_dns_namespace
 ./resource.ps1 aws_service_discovery_service
 ./resource.ps1 aws_servicecatalog_provisioning_artifact
-./resource.ps1 aws_servicecatalogappregistry_attribute_group
-./resource.ps1 aws_servicecatalogappregistry_attribute_group_association
 ./resource.ps1 aws_sesv2_account_suppression_attributes
 ./resource.ps1 aws_sesv2_account_vdm_attributes
 ./resource.ps1 aws_sesv2_configuration_set
@@ -306,12 +288,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_shield_drt_access_log_bucket_association
 ./resource.ps1 aws_shield_drt_access_role_arn_association
 ./resource.ps1 aws_shield_protection_health_check_association
-./resource.ps1 aws_shield_subscription
-./resource.ps1 aws_spot_datafeed_subscription
-./resource.ps1 aws_ssm_activation
-./resource.ps1 aws_ssm_default_patch_baseline
-./resource.ps1 aws_ssm_service_setting
-./resource.ps1 aws_ssmquicksetup_configuration_manager
 ./resource.ps1 aws_ssoadmin_account_assignment
 ./resource.ps1 aws_ssoadmin_application_access_scope
 ./resource.ps1 aws_ssoadmin_application_assignment_configuration
@@ -322,14 +298,9 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_ssoadmin_permissions_boundary_attachment
 ./resource.ps1 aws_ssoadmin_trusted_token_issuer
 ./resource.ps1 aws_transfer_access
-./resource.ps1 aws_transfer_server
-./resource.ps1 aws_transfer_ssh_key
 ./resource.ps1 aws_transfer_tag
-./resource.ps1 aws_transfer_user
 ./resource.ps1 aws_verifiedaccess_instance_trust_provider_attachment
 ./resource.ps1 aws_verifiedpermissions_schema
-./resource.ps1 aws_vpc_block_public_access_exclusion
-./resource.ps1 aws_vpc_block_public_access_options
 ./resource.ps1 aws_vpc_endpoint_connection_accepter
 ./resource.ps1 aws_vpc_endpoint_policy
 ./resource.ps1 aws_vpc_endpoint_private_dns
@@ -340,7 +311,3 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_vpc_ipv6_cidr_block_association
 ./resource.ps1 aws_vpc_network_performance_metric_subscription
 ./resource.ps1 aws_vpc_security_group_vpc_association
-./resource.ps1 aws_vpclattice_resource_gateway
-./resource.ps1 aws_wafregional_web_acl_association
-./resource.ps1 aws_worklink_fleet
-./resource.ps1 aws_worklink_website_certificate_authority_association

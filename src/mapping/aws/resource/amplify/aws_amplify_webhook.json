@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "amplify:GetWebHook",
+      "amplify:CreateWebHook",
+      "amplify:DeleteWebHook",
+      "amplify:UpdateWebHook"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

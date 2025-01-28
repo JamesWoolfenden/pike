@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "appfabric:GetAppAuthorization",
+      "appfabric:CreateAppAuthorization",
+      "appfabric:DeleteAppAuthorization",
+      "appfabric:UpdateAppAuthorization"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

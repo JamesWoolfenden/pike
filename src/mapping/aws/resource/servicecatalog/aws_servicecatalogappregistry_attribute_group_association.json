@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "servicecatalog:AssociateAttributeGroup",
+      "servicecatalog:DisassociateAttributeGroup",
+      "servicecatalog:ListAttributeGroupsForApplication"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "servicecatalog:DisassociateAttributeGroup"
+    ],
+    "modify": [],
+    "plan": [
+      "servicecatalog:ListAttributeGroupsForApplication"
+    ]
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "apply": [
+      "route53profiles:CreateProfile",
+      "route53profiles:GetProfile",
+      "route53profiles:ListTagsForResource",
+      "route53profiles:DeleteProfile"
+    ],
+    "attributes": {
+      "tags": [
+        "route53profiles:TagResource",
+        "route53profiles:UntagResource"
+      ]
+    },
+    "destroy": [
+      "route53profiles:DeleteProfile",
+      "route53profiles:GetProfile",
+      "route53profiles:ListTagsForResource"
+    ],
+    "modify": [
+      "route53profiles:GetProfile",
+      "route53profiles:ListTagsForResource"
+    ],
+    "plan": [
+      "route53profiles:GetProfile",
+      "route53profiles:ListTagsForResource"
+    ]
+  }
+]

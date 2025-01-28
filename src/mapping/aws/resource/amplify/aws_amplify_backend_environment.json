@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "amplify:GetBackendEnvironment",
+      "amplify:CreateBackendEnvironment",
+      "amplify:DeleteBackendEnvironment"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeVpcBlockPublicAccessOptions",
+      "ec2:ModifyVpcBlockPublicAccessOptions"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "ec2:DescribeVpcBlockPublicAccessOptions",
+      "ec2:ModifyVpcBlockPublicAccessOptions"
+    ],
+    "modify": [
+      "ec2:DescribeVpcBlockPublicAccessOptions",
+      "ec2:ModifyVpcBlockPublicAccessOptions"
+    ],
+    "plan": [
+      "ec2:DescribeVpcBlockPublicAccessOptions"
+    ]
+  }
+]

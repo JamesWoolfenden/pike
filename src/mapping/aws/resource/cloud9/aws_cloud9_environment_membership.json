@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "cloud9:CreateEnvironmentMembership",
+      "cloud9:DeleteEnvironmentMembership",
+      "cloud9:UpdateEnvironmentMembership",
+      "cloud9:DescribeEnvironmentMemberships"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
