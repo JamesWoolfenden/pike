@@ -1185,6 +1185,20 @@ var tFLookup = map[string]interface{}{ //nolint:gochecknoglobals
 	"aws_ssm_service_setting":                                          awsSsmServiceSetting,
 	"aws_ssmquicksetup_configuration_manager":                          awsSsmquicksetupConfigurationManager,
 	"aws_wafregional_web_acl_association":                              awsWafregionalWebAclAssociation,
+	"aws_bedrockagent_agent_collaborator":                              awsBedrockagentAgentCollaborator,
+	"aws_bedrockagent_agent_knowledge_base_association":                awsBedrockagentKnowledgeBaseAssociation,
+	"aws_cloudformation_stack_instances":                               awsCloudformationStackInstances,
+	"aws_cloudfront_vpc_origin":                                        awsCloudfrontVpcOrigin,
+	"aws_cloudhsm_v2_cluster":                                          awsCloudhsmV2Vluster,
+	"aws_cloudhsm_v2_hsm":                                              awsCloudhsmV2Hsm,
+	"aws_cloudtrail_organization_delegated_admin_account":              awsCloudtrailOrganizationDelegatedAdminAccount,
+	"aws_codeconnections_host":                                         awsCodeconnectionsHost,
+	"aws_comprehend_entity_recognizer":                                 awsComprehendEntityRecognizer,
+	"aws_computeoptimizer_enrollment_status":                           awsComputeoptimizerEnrollmentStatus,
+	"aws_computeoptimizer_recommendation_preferences":                  awsComputeoptimizerRecommendationPreferences,
+	"aws_config_organization_custom_policy_rule":                       awsConfigOrganizationCustomPolicyRule,
+	"aws_config_organization_custom_rule":                              awsConfigOrganizationCustomRule,
+	"aws_config_retention_configuration":                               awsConfigRetentionConfiguration,
 }
 
 // GetAWSPermissions for AWS resources.

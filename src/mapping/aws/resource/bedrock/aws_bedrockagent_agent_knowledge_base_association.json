@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "bedrock:DisassociateAgentKnowledgeBase",
+      "bedrock:AssociateAgentKnowledgeBase",
+      "bedrock:GetAgentKnowledgeBase",
+      "bedrock:UpdateAgentKnowledgeBase"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

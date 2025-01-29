@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "cloudfront:GetVpcOrigin",
+      "cloudfront:CreateVpcOrigin",
+      "cloudfront:DeleteVpcOrigin",
+      "cloudfront:UpdateVpcOrigin",
+      "cloudfront:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "cloudfront:TagResource",
+        "cloudfront:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

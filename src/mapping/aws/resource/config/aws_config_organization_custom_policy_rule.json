@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "config:GetOrganizationCustomRulePolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "config:GetOrganizationCustomRulePolicy"
+    ]
+  }
+]

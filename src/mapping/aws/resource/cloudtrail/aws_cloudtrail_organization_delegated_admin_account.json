@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "cloudtrail:DeregisterOrganizationDelegatedAdmin",
+      "cloudtrail:RegisterOrganizationDelegatedAdmin"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

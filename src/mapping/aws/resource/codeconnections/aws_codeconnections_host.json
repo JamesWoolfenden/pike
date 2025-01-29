@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "codeconnections:GetHost",
+      "codeconnections:CreateHost",
+      "codeconnections:DeleteHost",
+      "codeconnections:UpdateHost",
+      "codeconnections:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "codeconnections:TagResource",
+        "codeconnections:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

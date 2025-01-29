@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "comprehend:CreateEntityRecognizer",
+      "comprehend:DeleteEntityRecognizer",
+      "comprehend:ListEntityRecognizers"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

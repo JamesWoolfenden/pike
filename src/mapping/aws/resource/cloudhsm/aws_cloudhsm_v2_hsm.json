@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "cloudhsm:CreateHsm",
+      "cloudhsm:DeleteHsm"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

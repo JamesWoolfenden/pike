@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "cloudhsm:DescribeClusters",
+      "cloudhsm:CreateCluster",
+      "cloudhsm:DeleteCluster",
+      "cloudhsm:ModifyCluster",
+      "cloudhsm:ListTags"
+    ],
+    "attributes": {
+      "tags": [
+        "cloudhsm:TagResource",
+        "cloudhsm:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

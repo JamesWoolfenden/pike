@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "bedrock:GetAgentCollaborator",
+      "bedrock:AssociateAgentCollaborator",
+      "bedrock:DisassociateAgentCollaborator",
+      "bedrock:UpdateAgentCollaborator"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

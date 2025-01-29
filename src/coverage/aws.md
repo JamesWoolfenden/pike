@@ -1,23 +1,9 @@
 # todo aws
 
-Resource percentage coverage   79.10
+Resource percentage coverage   80.05
 Datasource percentage coverage 100.00
 
-./resource.ps1 aws_bedrockagent_agent_collaborator
-./resource.ps1 aws_bedrockagent_agent_knowledge_base_association
-./resource.ps1 aws_cloudformation_stack_instances
-./resource.ps1 aws_cloudfront_vpc_origin
-./resource.ps1 aws_cloudhsm_v2_cluster
-./resource.ps1 aws_cloudhsm_v2_hsm
-./resource.ps1 aws_cloudtrail_organization_delegated_admin_account
-./resource.ps1 aws_codeconnections_host
 ./resource.ps1 aws_cognito_managed_user_pool_client
-./resource.ps1 aws_comprehend_entity_recognizer
-./resource.ps1 aws_computeoptimizer_enrollment_status
-./resource.ps1 aws_computeoptimizer_recommendation_preferences
-./resource.ps1 aws_config_organization_custom_policy_rule
-./resource.ps1 aws_config_organization_custom_rule
-./resource.ps1 aws_config_retention_configuration
 ./resource.ps1 aws_connect_lambda_function_association
 ./resource.ps1 aws_costoptimizationhub_enrollment_status
 ./resource.ps1 aws_costoptimizationhub_preferences

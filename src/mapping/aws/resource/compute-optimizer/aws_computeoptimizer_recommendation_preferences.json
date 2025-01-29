@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "compute-optimizer:DeleteRecommendationPreferences",
+      "compute-optimizer:PutRecommendationPreferences",
+      "compute-optimizer:GetRecommendationPreferences"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "cloudformation:UpdateStackInstances",
+      "cloudformation:DeleteStackInstances",
+      "cloudformation:CreateStackInstances",
+      "cloudformation:ListStackInstances"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

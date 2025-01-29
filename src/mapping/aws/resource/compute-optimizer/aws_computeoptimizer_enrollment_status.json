@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "compute-optimizer:GetEnrollmentStatus",
+      "compute-optimizer:UpdateEnrollmentStatus"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

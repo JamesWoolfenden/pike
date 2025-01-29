@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "config:DescribeRetentionConfigurations",
+      "config:DeleteRetentionConfiguration",
+      "config:PutRetentionConfiguration"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

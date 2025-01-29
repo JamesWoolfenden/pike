@@ -3339,3 +3339,45 @@ var awsSsmquicksetupConfigurationManager []byte
 
 //go:embed mapping/aws/resource/wafregional/aws_wafregional_web_acl_association.json
 var awsWafregionalWebAclAssociation []byte
+
+//go:embed mapping/aws/resource/bedrock/aws_bedrockagent_agent_collaborator.json
+var awsBedrockagentAgentCollaborator []byte
+
+//go:embed mapping/aws/resource/bedrock/aws_bedrockagent_agent_knowledge_base_association.json
+var awsBedrockagentKnowledgeBaseAssociation []byte
+
+//go:embed mapping/aws/resource/cloudformation/aws_cloudformation_stack_instances.json
+var awsCloudformationStackInstances []byte
+
+//go:embed mapping/aws/resource/cloudfront/aws_cloudfront_vpc_origin.json
+var awsCloudfrontVpcOrigin []byte
+
+//go:embed mapping/aws/resource/cloudhsm/aws_cloudhsm_v2_cluster.json
+var awsCloudhsmV2Vluster []byte
+
+//go:embed mapping/aws/resource/cloudhsm/aws_cloudhsm_v2_hsm.json
+var awsCloudhsmV2Hsm []byte
+
+//go:embed mapping/aws/resource/cloudtrail/aws_cloudtrail_organization_delegated_admin_account.json
+var awsCloudtrailOrganizationDelegatedAdminAccount []byte
+
+//go:embed mapping/aws/resource/codeconnections/aws_codeconnections_host.json
+var awsCodeconnectionsHost []byte
+
+//go:embed mapping/aws/resource/comprehend/aws_comprehend_entity_recognizer.json
+var awsComprehendEntityRecognizer []byte
+
+//go:embed mapping/aws/resource/compute-optimizer/aws_computeoptimizer_enrollment_status.json
+var awsComputeoptimizerEnrollmentStatus []byte
+
+//go:embed mapping/aws/resource/compute-optimizer/aws_computeoptimizer_recommendation_preferences.json
+var awsComputeoptimizerRecommendationPreferences []byte
+
+//go:embed mapping/aws/resource/config/aws_config_organization_custom_policy_rule.json
+var awsConfigOrganizationCustomPolicyRule []byte
+
+//go:embed mapping/aws/resource/config/aws_config_organization_custom_rule.json
+var awsConfigOrganizationCustomRule []byte
+
+//go:embed mapping/aws/resource/config/aws_config_retention_configuration.json
+var awsConfigRetentionConfiguration []byte
