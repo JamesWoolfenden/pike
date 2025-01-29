@@ -3381,3 +3381,12 @@ var awsConfigOrganizationCustomRule []byte
 
 //go:embed mapping/aws/resource/config/aws_config_retention_configuration.json
 var awsConfigRetentionConfiguration []byte
+
+//go:embed mapping/aws/resource/cost-optimization-hub/aws_costoptimizationhub_enrollment_status.json
+var awsCostoptimizationhubEnrollmentStatus []byte
+
+//go:embed mapping/aws/resource/cost-optimization-hub/aws_costoptimizationhub_preferences.json
+var awsCostoptimizationhubPreferences []byte
+
+//go:embed mapping/aws/resource/profile/aws_customerprofiles_profile.json
+var awsCustomerprofilesProfile []byte

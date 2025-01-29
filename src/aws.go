@@ -1199,6 +1199,9 @@ var tFLookup = map[string]interface{}{ //nolint:gochecknoglobals
 	"aws_config_organization_custom_policy_rule":                       awsConfigOrganizationCustomPolicyRule,
 	"aws_config_organization_custom_rule":                              awsConfigOrganizationCustomRule,
 	"aws_config_retention_configuration":                               awsConfigRetentionConfiguration,
+	"aws_costoptimizationhub_enrollment_status":                        awsCostoptimizationhubEnrollmentStatus,
+	"aws_costoptimizationhub_preferences":                              awsCostoptimizationhubPreferences,
+	"aws_customerprofiles_profile":                                     awsCustomerprofilesProfile,
 }
 
 // GetAWSPermissions for AWS resources.

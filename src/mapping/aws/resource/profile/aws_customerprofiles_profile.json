@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "profile:CreateProfile",
+      "profile:DeleteProfile",
+      "profile:UpdateProfile",
+      "profile:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "profile:UntagResource",
+        "profile:TagResource"
+      ]
+    },
+    "destroy": [
+      "profile:DeleteProfile"
+    ],
+    "modify": [
+      "profile:UpdateProfile"
+    ],
+    "plan": []
+  }
+]

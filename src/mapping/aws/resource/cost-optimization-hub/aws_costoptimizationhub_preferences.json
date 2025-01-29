@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "cost-optimization-hub:GetPreferences",
+      "cost-optimization-hub:UpdatePreferences"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

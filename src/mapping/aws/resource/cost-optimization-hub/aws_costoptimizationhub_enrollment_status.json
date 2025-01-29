@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "cost-optimization-hub:UpdateEnrollmentStatus",
+      "cost-optimization-hub:ListEnrollmentStatuses"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

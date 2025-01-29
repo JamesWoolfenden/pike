@@ -4,10 +4,6 @@ Resource percentage coverage   80.05
 Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_cognito_managed_user_pool_client
-./resource.ps1 aws_connect_lambda_function_association
-./resource.ps1 aws_costoptimizationhub_enrollment_status
-./resource.ps1 aws_costoptimizationhub_preferences
-./resource.ps1 aws_customerprofiles_profile
 ./resource.ps1 aws_dataexchange_data_set
 ./resource.ps1 aws_dataexchange_revision
 ./resource.ps1 aws_detective_member
