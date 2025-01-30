@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "grafana:AssociateLicense",
+      "grafana:DisassociateLicense"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

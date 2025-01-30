@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "kendra:DescribeQuerySuggestionsBlockList",
+      "kendra:CreateQuerySuggestionsBlockList",
+      "kendra:DeleteQuerySuggestionsBlockList",
+      "kendra:UpdateQuerySuggestionsBlockList"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

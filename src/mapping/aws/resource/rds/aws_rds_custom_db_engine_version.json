@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "rds:CopyCustomDBEngineVersion",
+      "rds:CreateCustomDBEngineVersion",
+      "rds:DeleteCustomDBEngineVersion",
+      "rds:ModifyCustomDBEngineVersion"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

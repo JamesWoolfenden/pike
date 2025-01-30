@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "rds:DescribeCertificates",
+      "rds:ModifyCertificates"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

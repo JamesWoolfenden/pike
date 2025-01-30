@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "emr-containers:DescribeJobTemplate",
+      "emr-containers:CreateJobTemplate",
+      "emr-containers:DeleteJobTemplate"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "rds:CopyDBSnapshot"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

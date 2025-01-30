@@ -1,0 +1,45 @@
+[
+  {
+    "apply": [
+      "aps:CreateWorkspace",
+      "aps:DescribeWorkspace",
+      "aps:ListTagsForResource"
+    ],
+    "attributes": {
+      "kms_key_arn": [
+        "kms:CreateGrant",
+        "kms:Decrypt",
+        "kms:GenerateDataKey"
+      ],
+      "logging-configuration": [
+        "aps:CreateLoggingConfiguration",
+        "aps:DeleteLoggingConfiguration",
+        "aps:DescribeLoggingConfiguration",
+        "aps:UpdateLoggingConfiguration",
+        "logs:CreateLogDelivery",
+        "logs:DeleteLogDelivery",
+        "logs:GetLogDelivery",
+        "logs:ListLogDeliveries",
+        "logs:PutResourcePolicy",
+        "logs:UpdateLogDelivery"
+      ],
+      "tags": [
+        "aps:TagResource",
+        "aps:UntagResource"
+      ]
+    },
+    "destroy": [
+      "aps:DeleteWorkspace",
+      "aps:DescribeWorkspace"
+    ],
+    "modify": [
+      "aps:UpdateWorkspaceAlias",
+      "aps:DescribeWorkspace",
+      "aps:ListTagsForResource"
+    ],
+    "plan": [
+      "aps:DescribeWorkspace",
+      "aps:ListTagsForResource"
+    ]
+  }
+]

@@ -1,13 +1,11 @@
 # todo aws
 
-Resource percentage coverage   80.94
+Resource percentage coverage   82.43
 Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_cognito_managed_user_pool_client
 ./resource.ps1 aws_dataexchange_data_set
 ./resource.ps1 aws_dataexchange_revision
-./resource.ps1 aws_detective_member
-./resource.ps1 aws_detective_organization_configuration
 ./resource.ps1 aws_devicefarm_device_pool
 ./resource.ps1 aws_devicefarm_instance_profile
 ./resource.ps1 aws_devicefarm_network_profile
@@ -61,7 +59,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_ecs_account_setting_default
 ./resource.ps1 aws_ecs_cluster_capacity_providers
 ./resource.ps1 aws_eip_domain_name
-./resource.ps1 aws_eks_access_policy_association
 ./resource.ps1 aws_elasticache_reserved_cache_node
 ./resource.ps1 aws_elasticache_serverless_cache
 ./resource.ps1 aws_elasticache_user_group_association
@@ -69,21 +66,14 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_elasticsearch_vpc_endpoint
 ./resource.ps1 aws_elastictranscoder_pipeline
 ./resource.ps1 aws_elastictranscoder_preset
-./resource.ps1 aws_emrcontainers_job_template
 ./resource.ps1 aws_finspace_kx_cluster
 ./resource.ps1 aws_finspace_kx_database
 ./resource.ps1 aws_finspace_kx_dataview
 ./resource.ps1 aws_finspace_kx_scaling_group
 ./resource.ps1 aws_finspace_kx_user
 ./resource.ps1 aws_finspace_kx_volume
-./resource.ps1 aws_fms_admin_account
-./resource.ps1 aws_glue_catalog_table_optimizer
-./resource.ps1 aws_glue_partition_index
-./resource.ps1 aws_grafana_license_association
 ./resource.ps1 aws_grafana_role_association
 ./resource.ps1 aws_grafana_workspace_saml_configuration
-./resource.ps1 aws_grafana_workspace_service_account
-./resource.ps1 aws_grafana_workspace_service_account_token
 ./resource.ps1 aws_guardduty_detector_feature
 ./resource.ps1 aws_guardduty_invite_accepter
 ./resource.ps1 aws_guardduty_organization_admin_account
@@ -94,16 +84,12 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_iam_organizations_features
 ./resource.ps1 aws_iam_role_policy_attachments_exclusive
 ./resource.ps1 aws_iam_user_policy_attachments_exclusive
-./resource.ps1 aws_internet_gateway_attachment
 ./resource.ps1 aws_iot_event_configurations
 ./resource.ps1 aws_iot_indexing_configuration
 ./resource.ps1 aws_iot_logging_options
 ./resource.ps1 aws_iot_policy_attachment
 ./resource.ps1 aws_iot_thing_group_membership
 ./resource.ps1 aws_iot_thing_principal_attachment
-./resource.ps1 aws_kendra_experience
-./resource.ps1 aws_kendra_query_suggestions_block_list
-./resource.ps1 aws_kendra_thesaurus
 ./resource.ps1 aws_kinesis_analytics_application
 ./resource.ps1 aws_kinesisanalyticsv2_application_snapshot
 ./resource.ps1 aws_lakeformation_lf_tag
@@ -196,20 +182,12 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_pinpointsmsvoicev2_configuration_set
 ./resource.ps1 aws_pinpointsmsvoicev2_opt_out_list
 ./resource.ps1 aws_pinpointsmsvoicev2_phone_number
-./resource.ps1 aws_prometheus_alert_manager_definition
 ./resource.ps1 aws_prometheus_rule_group_namespace
-./resource.ps1 aws_prometheus_scraper
-./resource.ps1 aws_prometheus_workspace
 ./resource.ps1 aws_qldb_ledger
 ./resource.ps1 aws_ram_resource_share_accepter
 ./resource.ps1 aws_ram_sharing_with_organization
 ./resource.ps1 aws_rbin_rule
-./resource.ps1 aws_rds_certificate
-./resource.ps1 aws_rds_cluster_snapshot_copy
-./resource.ps1 aws_rds_custom_db_engine_version
-./resource.ps1 aws_rds_export_task
 ./resource.ps1 aws_rds_instance_state
-./resource.ps1 aws_rds_reserved_instance
 ./resource.ps1 aws_redshift_cluster_snapshot
 ./resource.ps1 aws_redshift_data_share_authorization
 ./resource.ps1 aws_redshift_data_share_consumer_association

@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "detective:DescribeOrganizationConfiguration",
+      "detective:UpdateOrganizationConfiguration"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

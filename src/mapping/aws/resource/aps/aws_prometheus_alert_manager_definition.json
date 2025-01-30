@@ -1,0 +1,26 @@
+[
+  {
+    "apply": [
+      "aps:CreateAlertManagerDefinition",
+      "aps:DescribeAlertManagerDefinition",
+      "aps:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "aps:TagResource",
+        "aps:UntagResource"
+      ]
+    },
+    "destroy": [
+      "aps:DeleteAlertManagerDefinition"
+    ],
+    "modify": [
+      "aps:CreateAlertManagerDefinition",
+      "aps:PutAlertManagerDefinition",
+      "aps:DeleteAlertManagerDefinition"
+    ],
+    "plan": [
+      "aps:DescribeAlertManagerDefinition"
+    ]
+  }
+]

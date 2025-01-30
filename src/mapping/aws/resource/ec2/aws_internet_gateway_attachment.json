@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "ec2:AttachInternetGateway",
+      "ec2:DetachInternetGateway"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

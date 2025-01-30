@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "eks:DisassociateAccessPolicy",
+      "eks:AssociateAccessPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

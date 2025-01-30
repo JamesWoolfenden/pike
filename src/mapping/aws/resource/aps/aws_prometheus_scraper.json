@@ -1,0 +1,46 @@
+[
+  {
+    "apply": [
+      "aps:CreateScraper",
+      "aps:DeleteScraper",
+      "aps:DescribeScraper",
+      "aps:DescribeWorkspace",
+      "aps:ListTagsForResource",
+      "aps:UpdateScraper",
+      "ec2:DescribeSecurityGroups",
+      "ec2:DescribeSubnets",
+      "eks:AssociateAccessPolicy",
+      "eks:CreateAccessEntry",
+      "eks:DescribeCluster",
+      "iam:CreateServiceLinkedRole",
+      "iam:DeleteServiceLinkedRole"
+    ],
+    "attributes": {
+      "tags": [
+        "aps:TagResource",
+        "aps:UntagResource"
+      ]
+    },
+    "destroy": [
+      "aps:DeleteScraper",
+      "aps:DescribeScraper",
+      "aps:DescribeWorkspace",
+      "eks:AssociateAccessPolicy",
+      "eks:DescribeCluster",
+      "ec2:DescribeSubnets",
+      "ec2:DescribeSecurityGroups",
+      "iam:DeleteServiceLinkedRole"
+    ],
+    "modify": [
+      "aps:CreateScraper",
+      "aps:DescribeScraper",
+      "aps:UpdateScraper",
+      "aps:DescribeWorkspace",
+      "aps:ListTagsForResource"
+    ],
+    "plan": [
+      "aps:DescribeScraper",
+      "aps:ListTagsForResource"
+    ]
+  }
+]

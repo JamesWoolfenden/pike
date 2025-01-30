@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "glue:GetTableOptimizer",
+      "glue:CreateTableOptimizer",
+      "glue:DeleteTableOptimizer",
+      "glue:UpdateTableOptimizer"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

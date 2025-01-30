@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "kendra:DescribeThesaurus",
+      "kendra:CreateThesaurus",
+      "kendra:DeleteThesaurus",
+      "kendra:UpdateThesaurus"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

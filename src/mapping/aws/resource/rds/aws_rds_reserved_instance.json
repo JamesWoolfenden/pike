@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "rds:PurchaseReservedDBInstancesOffering",
+      "rds:DescribeReservedDBInstancesOfferings"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "kendra:DescribeExperience",
+      "kendra:CreateExperience",
+      "kendra:DeleteExperience",
+      "kendra:UpdateExperience"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

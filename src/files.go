@@ -3420,3 +3420,69 @@ var awsTransferAccess []byte
 
 //go:embed mapping/aws/resource/transfer/aws_transfer_tag.json
 var awsTransferTag []byte
+
+//go:embed mapping/aws/resource/detective/aws_detective_member.json
+var awsDetectiveMember []byte
+
+//go:embed mapping/aws/resource/detective/aws_detective_organization_configuration.json
+var awsDetectiveOrganizationConfiguration []byte
+
+//go:embed mapping/aws/resource/eks/aws_eks_access_policy_association.json
+var awsEksAccessPolicyAssociation []byte
+
+//go:embed mapping/aws/resource/elasticmapreduce/aws_emrcontainers_job_template.json
+var awsEmrcontainersJobTemplate []byte
+
+//go:embed mapping/aws/resource/fms/aws_fms_admin_account.json
+var awsFmsAdminAccount []byte
+
+//go:embed mapping/aws/resource/glue/aws_glue_catalog_table_optimizer.json
+var awsGlueCatalogTableOptimizer []byte
+
+//go:embed mapping/aws/resource/glue/aws_glue_partition_index.json
+var awsGluePartitionIndex []byte
+
+//go:embed mapping/aws/resource/grafana/aws_grafana_license_association.json
+var awsGrafanaLicenseAssociation []byte
+
+//go:embed mapping/aws/resource/grafana/aws_grafana_workspace_service_account.json
+var awsGrafanaWorkspaceServiceAccount []byte
+
+//go:embed mapping/aws/resource/grafana/aws_grafana_workspace_service_account_token.json
+var awsGrafanaWorkspaceServiceAccountToken []byte
+
+//go:embed mapping/aws/resource/ec2/aws_internet_gateway_attachment.json
+var awsInternetGatewayAttachment []byte
+
+//go:embed mapping/aws/resource/kendra/aws_kendra_experience.json
+var awsKendraExperience []byte
+
+//go:embed mapping/aws/resource/kendra/aws_kendra_query_suggestions_block_list.json
+var awsKendraQuerySuggestionsBlockList []byte
+
+//go:embed mapping/aws/resource/kendra/aws_kendra_thesaurus.json
+var awsKendraThesaurus []byte
+
+//go:embed mapping/aws/resource/aps/aws_prometheus_alert_manager_definition.json
+var awsPrometheusAlertManagerDefinition []byte
+
+//go:embed mapping/aws/resource/aps/aws_prometheus_scraper.json
+var awsPrometheusScraper []byte
+
+//go:embed mapping/aws/resource/aps/aws_prometheus_workspace.json
+var awsPrometheusWorkspace []byte
+
+//go:embed mapping/aws/resource/rds/aws_rds_certificate.json
+var awsRdsCertificate []byte
+
+//go:embed mapping/aws/resource/rds/aws_rds_cluster_snapshot_copy.json
+var awsRdsClusterSnapshotCopy []byte
+
+//go:embed mapping/aws/resource/rds/aws_rds_custom_db_engine_version.json
+var awsRdsCustomDbEngineVersion []byte
+
+//go:embed mapping/aws/resource/rds/aws_rds_export_task.json
+var awsRdsExportTask []byte
+
+//go:embed mapping/aws/resource/rds/aws_rds_reserved_instance.json
+var awsRdsReservedInstance []byte

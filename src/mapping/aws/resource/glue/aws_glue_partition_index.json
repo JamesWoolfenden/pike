@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "glue:GetPartitionIndexes",
+      "glue:CreatePartitionIndex",
+      "glue:DeletePartitionIndex"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

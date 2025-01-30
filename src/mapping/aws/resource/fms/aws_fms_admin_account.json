@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "fms:AssociateAdminAccount",
+      "fms:DisassociateAdminAccount"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
