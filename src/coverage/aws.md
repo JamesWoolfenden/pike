@@ -1,6 +1,6 @@
 # todo aws
 
-Resource percentage coverage   80.05
+Resource percentage coverage   80.94
 Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_cognito_managed_user_pool_client
@@ -239,15 +239,8 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_s3control_object_lambda_access_point
 ./resource.ps1 aws_s3control_object_lambda_access_point_policy
 ./resource.ps1 aws_s3control_storage_lens_configuration
-./resource.ps1 aws_securityhub_account
-./resource.ps1 aws_securityhub_action_target
-./resource.ps1 aws_securityhub_configuration_policy_association
 ./resource.ps1 aws_securityhub_invite_accepter
 ./resource.ps1 aws_securityhub_member
-./resource.ps1 aws_securityhub_organization_admin_account
-./resource.ps1 aws_securityhub_standards_control_association
-./resource.ps1 aws_securityhub_standards_subscription
-./resource.ps1 aws_securitylake_custom_log_source
 ./resource.ps1 aws_serverlessapplicationrepository_cloudformation_stack
 ./resource.ps1 aws_service_discovery_http_namespace
 ./resource.ps1 aws_service_discovery_instance
@@ -279,8 +272,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_ssoadmin_permission_set_inline_policy
 ./resource.ps1 aws_ssoadmin_permissions_boundary_attachment
 ./resource.ps1 aws_ssoadmin_trusted_token_issuer
-./resource.ps1 aws_transfer_access
-./resource.ps1 aws_transfer_tag
 ./resource.ps1 aws_verifiedaccess_instance_trust_provider_attachment
 ./resource.ps1 aws_verifiedpermissions_schema
 ./resource.ps1 aws_vpc_endpoint_connection_accepter

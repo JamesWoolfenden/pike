@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "securityhub:DescribeActionTargets",
+      "securityhub:CreateActionTarget",
+      "securityhub:DeleteActionTarget",
+      "securityhub:UpdateActionTarget"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "securityhub:DeleteActionTarget"
+    ],
+    "modify": [
+      "securityhub:UpdateActionTarget"
+    ],
+    "plan": []
+  }
+]

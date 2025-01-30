@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "securityhub:BatchEnableStandards",
+      "securityhub:BatchDisableStandards"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

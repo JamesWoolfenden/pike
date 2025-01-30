@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "transfer:TagResource",
+      "transfer:UntagResource"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

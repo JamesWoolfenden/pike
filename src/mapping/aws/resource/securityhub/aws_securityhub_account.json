@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "securityhub:EnableSecurityHub",
+      "securityhub:UpdateSecurityHubConfiguration",
+      "securityhub:DescribeHub",
+      "securityhub:DisableSecurityHub"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

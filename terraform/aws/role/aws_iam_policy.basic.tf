@@ -7,9 +7,27 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "VisualEditor0",
         "Effect" : "Allow",
         "Action" : [
-          "profile:CreateProfile",
-          "profile:DeleteProfile",
-          "profile:UpdateProfile"
+          "securityhub:CreateConfigurationPolicy",
+          "securityhub:DeleteConfigurationPolicy",
+          "securityhub:DescribeOrganizationConfiguration",
+          "securityhub:GetConfigurationPolicy",
+          "securityhub:ListFindingAggregators",
+          "securityhub:ListTagsForResource",
+          "securityhub:UpdateConfigurationPolicy",
+          "securityhub:UpdateOrganizationConfiguration",
+
+          # aws_securityhub_account
+          "securityhub:EnableSecurityHub",
+          "securityhub:UpdateSecurityHubConfiguration",
+          "securityhub:DescribeHub",
+          "securityhub:DisableSecurityHub",
+
+          # aws_securityhub_action_target
+          "securityhub:DescribeActionTargets",
+          "securityhub:CreateActionTarget",
+          "securityhub:DeleteActionTarget",
+          "securityhub:UpdateActionTarget"
+
         ],
         "Resource" : [
           "*"

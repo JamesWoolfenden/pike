@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "serverlessrepo:GetCloudFormationTemplate",
+      "serverlessrepo:CreateCloudFormationTemplate"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -3390,3 +3390,33 @@ var awsCostoptimizationhubPreferences []byte
 
 //go:embed mapping/aws/resource/profile/aws_customerprofiles_profile.json
 var awsCustomerprofilesProfile []byte
+
+//go:embed mapping/aws/resource/connect/aws_connect_lambda_function_association.json
+var awsConnectLambdaFunctionAssociation []byte
+
+//go:embed mapping/aws/resource/securityhub/aws_securityhub_account.json
+var awsSecurityhubAccount []byte
+
+//go:embed mapping/aws/resource/securityhub/aws_securityhub_action_target.json
+var awsSecurityhubActionTarget []byte
+
+//go:embed mapping/aws/resource/securityhub/aws_securityhub_configuration_policy_association.json
+var awsSecurityhubConfigurationPolicyAssociation []byte
+
+//go:embed mapping/aws/resource/securityhub/aws_securityhub_organization_admin_account.json
+var awsSecurityhubOrganizationAdminAccount []byte
+
+//go:embed mapping/aws/resource/securityhub/aws_securityhub_standards_control_association.json
+var awsSecurityhubStandardsControlAssociation []byte
+
+//go:embed mapping/aws/resource/securityhub/aws_securityhub_standards_subscription.json
+var awsSecurityhubStandardsSubscription []byte
+
+//go:embed mapping/aws/resource/securitylake/aws_securitylake_custom_log_source.json
+var awsSecuritylakeCustomLogSource []byte
+
+//go:embed mapping/aws/resource/transfer/aws_transfer_access.json
+var awsTransferAccess []byte
+
+//go:embed mapping/aws/resource/transfer/aws_transfer_tag.json
+var awsTransferTag []byte

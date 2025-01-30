@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "securitylake:CreateCustomLogSource",
+      "securitylake:DeleteCustomLogSource"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

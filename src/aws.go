@@ -1202,6 +1202,16 @@ var tFLookup = map[string]interface{}{ //nolint:gochecknoglobals
 	"aws_costoptimizationhub_enrollment_status":                        awsCostoptimizationhubEnrollmentStatus,
 	"aws_costoptimizationhub_preferences":                              awsCostoptimizationhubPreferences,
 	"aws_customerprofiles_profile":                                     awsCustomerprofilesProfile,
+	"aws_connect_lambda_function_association":                          awsConnectLambdaFunctionAssociation,
+	"aws_securityhub_account":                                          awsSecurityhubAccount,
+	"aws_securityhub_action_target":                                    awsSecurityhubActionTarget,
+	"aws_securityhub_configuration_policy_association":                 awsSecurityhubConfigurationPolicyAssociation,
+	"aws_securityhub_organization_admin_account":                       awsSecurityhubOrganizationAdminAccount,
+	"aws_securityhub_standards_control_association":                    awsSecurityhubStandardsControlAssociation,
+	"aws_securityhub_standards_subscription":                           awsSecurityhubStandardsSubscription,
+	"aws_securitylake_custom_log_source":                               awsSecuritylakeCustomLogSource,
+	"aws_transfer_access":                                              awsTransferAccess,
+	"aws_transfer_tag":                                                 awsTransferTag,
 }
 
 // GetAWSPermissions for AWS resources.

@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "securityhub:GetConfigurationPolicyAssociation",
+      "securityhub:StartConfigurationPolicyAssociation"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

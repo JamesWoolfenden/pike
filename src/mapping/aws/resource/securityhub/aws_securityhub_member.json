@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "securityhub:GetMembers",
+      "securityhub:CreateMembers",
+      "securityhub:DeleteMembers"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

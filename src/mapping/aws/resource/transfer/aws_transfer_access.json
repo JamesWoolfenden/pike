@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "transfer:CreateAccess",
+      "transfer:DescribeAccess",
+      "transfer:DeleteAccess",
+      "transfer:UpdateAccess"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "securityhub:DisableOrganizationAdminAccount",
+      "securityhub:EnableOrganizationAdminAccount"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
