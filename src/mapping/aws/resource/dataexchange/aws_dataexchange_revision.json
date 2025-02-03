@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "dataexchange:GetRevision",
+      "dataexchange:CreateRevision",
+      "dataexchange:DeleteRevision",
+      "dataexchange:UpdateRevision"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

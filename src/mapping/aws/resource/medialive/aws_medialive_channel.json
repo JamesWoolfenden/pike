@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "medialive:DescribeChannel",
+      "medialive:CreateChannel",
+      "medialive:DeleteChannel",
+      "medialive:UpdateChannel"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

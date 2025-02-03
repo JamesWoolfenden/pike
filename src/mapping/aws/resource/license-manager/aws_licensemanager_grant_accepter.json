@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "license-manager:AcceptGrant",
+      "license-manager:RejectGrant"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -4,22 +4,17 @@ Resource percentage coverage   82.43
 Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_cognito_managed_user_pool_client
-./resource.ps1 aws_dataexchange_data_set
-./resource.ps1 aws_dataexchange_revision
 ./resource.ps1 aws_devicefarm_device_pool
 ./resource.ps1 aws_devicefarm_instance_profile
 ./resource.ps1 aws_devicefarm_network_profile
 ./resource.ps1 aws_devicefarm_project
 ./resource.ps1 aws_devicefarm_upload
-./resource.ps1 aws_devopsguru_event_sources_config
-./resource.ps1 aws_devopsguru_service_integration
 ./resource.ps1 aws_directory_service_conditional_forwarder
 ./resource.ps1 aws_directory_service_radius_settings
 ./resource.ps1 aws_directory_service_region
 ./resource.ps1 aws_directory_service_shared_directory
 ./resource.ps1 aws_directory_service_shared_directory_accepter
 ./resource.ps1 aws_directory_service_trust
-./resource.ps1 aws_drs_replication_configuration_template
 ./resource.ps1 aws_dx_bgp_peer
 ./resource.ps1 aws_dx_connection
 ./resource.ps1 aws_dx_connection_association
@@ -64,8 +59,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_elasticache_user_group_association
 ./resource.ps1 aws_elasticsearch_domain_saml_options
 ./resource.ps1 aws_elasticsearch_vpc_endpoint
-./resource.ps1 aws_elastictranscoder_pipeline
-./resource.ps1 aws_elastictranscoder_preset
 ./resource.ps1 aws_finspace_kx_cluster
 ./resource.ps1 aws_finspace_kx_database
 ./resource.ps1 aws_finspace_kx_dataview
@@ -90,12 +83,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_iot_policy_attachment
 ./resource.ps1 aws_iot_thing_group_membership
 ./resource.ps1 aws_iot_thing_principal_attachment
-./resource.ps1 aws_kinesis_analytics_application
-./resource.ps1 aws_kinesisanalyticsv2_application_snapshot
-./resource.ps1 aws_lakeformation_lf_tag
-./resource.ps1 aws_lakeformation_resource_lf_tags
-./resource.ps1 aws_lambda_function_recursion_config
-./resource.ps1 aws_lambda_runtime_management_config
 ./resource.ps1 aws_lb_listener_certificate
 ./resource.ps1 aws_lb_ssl_negotiation_policy
 ./resource.ps1 aws_lexv2models_bot
@@ -104,8 +91,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_lexv2models_intent
 ./resource.ps1 aws_lexv2models_slot
 ./resource.ps1 aws_lexv2models_slot_type
-./resource.ps1 aws_licensemanager_association
-./resource.ps1 aws_licensemanager_grant_accepter
 ./resource.ps1 aws_lightsail_bucket_access_key_access_key
 ./resource.ps1 aws_lightsail_bucket_resource_access
 ./resource.ps1 aws_lightsail_container_service
@@ -125,10 +110,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_macie2_member
 ./resource.ps1 aws_macie2_organization_admin_account
 ./resource.ps1 aws_main_route_table_association
-./resource.ps1 aws_media_packagev2_channel_group
-./resource.ps1 aws_media_store_container
-./resource.ps1 aws_media_store_container_policy
-./resource.ps1 aws_medialive_channel
 ./resource.ps1 aws_memorydb_multi_region_cluster
 ./resource.ps1 aws_msk_single_scram_secret_association
 ./resource.ps1 aws_mskconnect_connector

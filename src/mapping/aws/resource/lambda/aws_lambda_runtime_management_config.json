@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "lambda:GetRuntimeManagementConfig",
+      "lambda:PutRuntimeManagementConfig"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

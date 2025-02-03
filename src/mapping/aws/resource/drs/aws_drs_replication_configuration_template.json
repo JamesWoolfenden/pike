@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "drs:CreateReplicationConfigurationTemplate",
+      "drs:DescribeReplicationConfigurationTemplates",
+      "drs:DeleteReplicationConfigurationTemplate",
+      "drs:UpdateReplicationConfigurationTemplate",
+      "drs:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "drs:TagResource",
+        "drs:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

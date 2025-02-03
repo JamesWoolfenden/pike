@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "dataexchange:GetDataSet",
+      "dataexchange:CreateDataSet",
+      "dataexchange:DeleteDataSet",
+      "dataexchange:UpdateDataSet"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

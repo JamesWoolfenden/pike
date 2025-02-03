@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "lakeformation:CreateLFTag",
+      "lakeformation:DeleteLFTag",
+      "lakeformation:GetLFTag",
+      "lakeformation:UpdateLFTag",
+      "lakeformation:GetResourceLFTags"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "lakeformation:DeleteLFTag"
+    ],
+    "modify": [
+      "lakeformation:UpdateLFTag"
+    ],
+    "plan": [
+      "lakeformation:GetLFTag"
+    ]
+  }
+]

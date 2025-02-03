@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "lambda:GetFunctionRecursionConfig",
+      "lambda:PutFunctionRecursionConfig"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

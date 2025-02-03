@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "kinesisanalytics:DescribeApplication",
+      "kinesisanalytics:CreateApplication",
+      "kinesisanalytics:DeleteApplication",
+      "kinesisanalytics:UpdateApplication",
+      "kinesisanalytics:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "kinesisanalytics:TagResource",
+        "kinesisanalytics:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

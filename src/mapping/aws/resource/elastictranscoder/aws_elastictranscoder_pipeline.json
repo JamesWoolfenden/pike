@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "elastictranscoder:ReadPipeline",
+      "elastictranscoder:CreatePipeline",
+      "elastictranscoder:DeletePipeline"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

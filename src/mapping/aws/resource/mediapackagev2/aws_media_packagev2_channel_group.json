@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "mediapackagev2:GetChannelGroup",
+      "mediapackagev2:DeleteChannelGroup",
+      "mediapackagev2:CreateChannelGroup",
+      "mediapackagev2:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "mediapackagev2:TagResource",
+        "mediapackagev2:UntagResource"
+      ]
+    },
+    "destroy": [
+      "mediapackagev2:GetChannelGroup",
+      "mediapackagev2:DeleteChannelGroup"
+    ],
+    "modify": [
+      "mediapackagev2:ListTagsForResource",
+      "mediapackagev2:UpdateChannelGroup"
+    ],
+    "plan": [
+      "mediapackagev2:GetChannelGroup"
+    ]
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "mediastore:DeleteContainerPolicy",
+      "mediastore:PutContainerPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

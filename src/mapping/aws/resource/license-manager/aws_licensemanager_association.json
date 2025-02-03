@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "license-manager:ListAssociationsForLicenseConfiguration"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

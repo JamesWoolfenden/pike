@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "mediastore:DescribeContainer",
+      "mediastore:CreateContainer",
+      "mediastore:DeleteContainer",
+      "mediastore:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "mediastore:TagResource",
+        "mediastore:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

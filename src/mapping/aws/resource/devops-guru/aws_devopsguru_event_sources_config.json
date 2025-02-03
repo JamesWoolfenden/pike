@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "devops-guru:DescribeEventSourcesConfig",
+      "devops-guru:UpdateEventSourcesConfig"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

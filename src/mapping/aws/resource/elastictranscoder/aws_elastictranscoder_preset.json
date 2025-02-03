@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "elastictranscoder:ReadPreset",
+      "elastictranscoder:CreatePreset",
+      "elastictranscoder:DeletePreset"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

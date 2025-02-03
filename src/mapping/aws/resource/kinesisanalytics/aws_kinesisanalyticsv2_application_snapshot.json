@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "kinesisanalytics:CreateApplicationSnapshot",
+      "kinesisanalytics:DeleteApplicationSnapshot",
+      "kinesisanalytics:DescribeApplicationSnapshot"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

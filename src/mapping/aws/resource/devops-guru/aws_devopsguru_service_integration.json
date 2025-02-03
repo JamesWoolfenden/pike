@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "devops-guru:UpdateServiceIntegration",
+      "devops-guru:DescribeServiceIntegration"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
