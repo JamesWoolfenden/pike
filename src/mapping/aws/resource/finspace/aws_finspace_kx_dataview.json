@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "finspace:GetKxDataview",
+      "finspace:CreateKxDataview",
+      "finspace:UpdateKxDataview",
+      "finspace:DeleteKxDataview"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

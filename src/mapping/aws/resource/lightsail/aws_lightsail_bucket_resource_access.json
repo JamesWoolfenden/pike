@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "lightsail:SetResourceAccessForBucket"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

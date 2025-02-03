@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "finspace:GetKxCluster",
+      "finspace:CreateKxCluster",
+      "finspace:DeleteKxCluster",
+      "finspace:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "finspace:TagResource",
+        "finspace:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

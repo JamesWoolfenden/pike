@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "devicefarm:GetInstanceProfile",
+      "devicefarm:CreateInstanceProfile",
+      "devicefarm:DeleteInstanceProfile",
+      "devicefarm:UpdateInstanceProfile",
+      "devicefarm:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "devicefarm:TagResource",
+        "devicefarm:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

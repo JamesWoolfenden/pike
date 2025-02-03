@@ -60,3 +60,72 @@ var awsMediaStoreContainerPolicy []byte
 
 //go:embed mapping/aws/resource/medialive/aws_medialive_channel.json
 var awsMedialiveChannel []byte
+
+//go:embed mapping/aws/resource/devicefarm/aws_devicefarm_device_pool.json
+var awsDevicefarmDevicePool []byte
+
+//go:embed mapping/aws/resource/devicefarm/aws_devicefarm_instance_profile.json
+var awsDevicefarmInstanceProfile []byte
+
+//go:embed mapping/aws/resource/devicefarm/aws_devicefarm_network_profile.json
+var awsDevicefarmNetworkProfile []byte
+
+//go:embed mapping/aws/resource/devicefarm/aws_devicefarm_project.json
+var awsDevicefarmProject []byte
+
+//go:embed mapping/aws/resource/devicefarm/aws_devicefarm_upload.json
+var awsDevicefarmUpload []byte
+
+//go:embed mapping/aws/resource/finspace/aws_finspace_kx_cluster.json
+var awsFinspaceKxCluster []byte
+
+//go:embed mapping/aws/resource/finspace/aws_finspace_kx_database.json
+var awsFinspaceKxDatabase []byte
+
+//go:embed mapping/aws/resource/finspace/aws_finspace_kx_dataview.json
+var awsFinspaceKxDataview []byte
+
+//go:embed mapping/aws/resource/finspace/aws_finspace_kx_scaling_group.json
+var awsFinspaceKxScalingGroup []byte
+
+//go:embed mapping/aws/resource/finspace/aws_finspace_kx_user.json
+var awsFinspaceKxUser []byte
+
+//go:embed mapping/aws/resource/finspace/aws_finspace_kx_volume.json
+var awsFinspaceKxVolume []byte
+
+//go:embed mapping/aws/resource/lightsail/aws_lightsail_bucket_access_key_access_key.json
+var awsLightsailBucketAccessKeyAccessKey []byte
+
+//go:embed mapping/aws/resource/lightsail/aws_lightsail_bucket_resource_access.json
+var awsLightsailBucketResourceAccess []byte
+
+//go:embed mapping/aws/resource/lightsail/aws_lightsail_container_service.json
+var awsLightsailContainerService []byte
+
+//go:embed mapping/aws/resource/lightsail/aws_lightsail_container_service_deployment_version.json
+var awsLightsailContainerServiceDeploymentVersion []byte
+
+//go:embed mapping/aws/resource/lightsail/aws_lightsail_disk_attachment.json
+var awsLightsailDiskAttachment []byte
+
+//go:embed mapping/aws/resource/lightsail/aws_lightsail_domain.json
+var awsLightsailDomain []byte
+
+//go:embed mapping/aws/resource/lightsail/aws_lightsail_domain_entry.json
+var awsLightsailDomainEntry []byte
+
+//go:embed mapping/aws/resource/lightsail/aws_lightsail_lb_attachment.json
+var awsLightsailLbAttachment []byte
+
+//go:embed mapping/aws/resource/lightsail/aws_lightsail_lb_certificate.json
+var awsLightsailLbCertificate []byte
+
+//go:embed mapping/aws/resource/lightsail/aws_lightsail_lb_certificate_attachment.json
+var awsLightsailLbCertificateAttachment []byte
+
+//go:embed mapping/aws/resource/lightsail/aws_lightsail_lb_https_redirection_policy.json
+var awsLightsailLbHttpsRedirectionPolicy []byte
+
+//go:embed mapping/aws/resource/lightsail/aws_lightsail_lb_stickiness_policy.json
+var awsLightsailLbStickinessPolicy []byte

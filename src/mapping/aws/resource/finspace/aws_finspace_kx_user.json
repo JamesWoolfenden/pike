@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "finspace:ListTagsForResource",
+      "finspace:GetKxUser",
+      "finspace:CreateKxUser",
+      "finspace:DeleteKxUser",
+      "finspace:UpdateKxUser"
+    ],
+    "attributes": {
+      "tags": [
+        "finspace:TagResource",
+        "finspace:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

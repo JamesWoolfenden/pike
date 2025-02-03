@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "devicefarm:GetUpload",
+      "devicefarm:CreateUpload",
+      "devicefarm:DeleteUpload",
+      "devicefarm:UpdateUpload"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

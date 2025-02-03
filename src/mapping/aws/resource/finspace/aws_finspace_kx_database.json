@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "finspace:ListTagsForResource",
+      "finspace:GetKxDatabase",
+      "finspace:CreateKxDatabase",
+      "finspace:DeleteKxDatabase",
+      "finspace:UpdateKxDatabase"
+    ],
+    "attributes": {
+      "tags": [
+        "finspace:TagResource",
+        "finspace:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

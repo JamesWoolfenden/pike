@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "lightsail:GetContainerServiceDeployments",
+      "lightsail:CreateContainerServiceDeployment"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "lightsail:AttachInstancesToLoadBalancer",
+      "lightsail:DetachInstancesFromLoadBalancer"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "lightsail:GetDomain",
+      "lightsail:CreateDomain",
+      "lightsail:DeleteDomain"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

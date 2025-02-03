@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "devicefarm:GetProject",
+      "devicefarm:CreateProject",
+      "devicefarm:DeleteProject",
+      "devicefarm:UpdateProject",
+      "devicefarm:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "devicefarm:TagResource",
+        "devicefarm:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

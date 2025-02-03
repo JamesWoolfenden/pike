@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "lightsail:GetContainerServices",
+      "lightsail:CreateContainerService",
+      "lightsail:DeleteContainerService",
+      "lightsail:UpdateContainerService"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

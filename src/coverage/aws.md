@@ -1,14 +1,9 @@
 # todo aws
 
-Resource percentage coverage   82.43
+Resource percentage coverage   83.55
 Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_cognito_managed_user_pool_client
-./resource.ps1 aws_devicefarm_device_pool
-./resource.ps1 aws_devicefarm_instance_profile
-./resource.ps1 aws_devicefarm_network_profile
-./resource.ps1 aws_devicefarm_project
-./resource.ps1 aws_devicefarm_upload
 ./resource.ps1 aws_directory_service_conditional_forwarder
 ./resource.ps1 aws_directory_service_radius_settings
 ./resource.ps1 aws_directory_service_region
@@ -59,20 +54,18 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_elasticache_user_group_association
 ./resource.ps1 aws_elasticsearch_domain_saml_options
 ./resource.ps1 aws_elasticsearch_vpc_endpoint
-./resource.ps1 aws_finspace_kx_cluster
-./resource.ps1 aws_finspace_kx_database
-./resource.ps1 aws_finspace_kx_dataview
-./resource.ps1 aws_finspace_kx_scaling_group
-./resource.ps1 aws_finspace_kx_user
-./resource.ps1 aws_finspace_kx_volume
+
 ./resource.ps1 aws_grafana_role_association
 ./resource.ps1 aws_grafana_workspace_saml_configuration
+
 ./resource.ps1 aws_guardduty_detector_feature
 ./resource.ps1 aws_guardduty_invite_accepter
+./resource.ps1 aws_guardduty_member_detector_feature
 ./resource.ps1 aws_guardduty_organization_admin_account
 ./resource.ps1 aws_guardduty_organization_configuration
 ./resource.ps1 aws_guardduty_organization_configuration_feature
 ./resource.ps1 aws_guardduty_publishing_destination
+
 ./resource.ps1 aws_iam_group_policy_attachments_exclusive
 ./resource.ps1 aws_iam_organizations_features
 ./resource.ps1 aws_iam_role_policy_attachments_exclusive
@@ -91,18 +84,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_lexv2models_intent
 ./resource.ps1 aws_lexv2models_slot
 ./resource.ps1 aws_lexv2models_slot_type
-./resource.ps1 aws_lightsail_bucket_access_key_access_key
-./resource.ps1 aws_lightsail_bucket_resource_access
-./resource.ps1 aws_lightsail_container_service
-./resource.ps1 aws_lightsail_container_service_deployment_version
-./resource.ps1 aws_lightsail_disk_attachment
-./resource.ps1 aws_lightsail_domain
-./resource.ps1 aws_lightsail_domain_entry
-./resource.ps1 aws_lightsail_lb_attachment
-./resource.ps1 aws_lightsail_lb_certificate
-./resource.ps1 aws_lightsail_lb_certificate_attachment
-./resource.ps1 aws_lightsail_lb_https_redirection_policy
-./resource.ps1 aws_lightsail_lb_stickiness_policy
+
 ./resource.ps1 aws_macie2_account
 ./resource.ps1 aws_macie2_classification_export_configuration
 ./resource.ps1 aws_macie2_classification_job
@@ -231,6 +213,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_ssoadmin_permission_set_inline_policy
 ./resource.ps1 aws_ssoadmin_permissions_boundary_attachment
 ./resource.ps1 aws_ssoadmin_trusted_token_issuer
+./resource.ps1 aws_timestreamquery_scheduled_query
 ./resource.ps1 aws_verifiedaccess_instance_trust_provider_attachment
 ./resource.ps1 aws_verifiedpermissions_schema
 ./resource.ps1 aws_vpc_endpoint_connection_accepter
@@ -243,3 +226,4 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_vpc_ipv6_cidr_block_association
 ./resource.ps1 aws_vpc_network_performance_metric_subscription
 ./resource.ps1 aws_vpc_security_group_vpc_association
+./resource.ps1 aws_vpclattice_service_network_resource_association

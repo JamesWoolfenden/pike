@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "finspace:ListTagsForResource",
+      "finspace:GetKxVolume",
+      "finspace:CreateKxVolume",
+      "finspace:DeleteKxVolume",
+      "finspace:UpdateKxVolume"
+    ],
+    "attributes": {
+      "tags": [
+        "finspace:TagResource",
+        "finspace:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

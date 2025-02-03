@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "finspace:ListTagsForResource",
+      "finspace:GetKxScalingGroup",
+      "finspace:CreateKxScalingGroup",
+      "finspace:DeleteKxScalingGroup"
+    ],
+    "attributes": {
+      "tags": [
+        "finspace:TagResource",
+        "finspace:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

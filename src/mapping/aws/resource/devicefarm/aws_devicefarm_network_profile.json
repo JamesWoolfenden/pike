@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "devicefarm:GetNetworkProfile",
+      "devicefarm:CreateNetworkProfile",
+      "devicefarm:DeleteNetworkProfile",
+      "devicefarm:UpdateNetworkProfile",
+      "devicefarm:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "devicefarm:TagResource",
+        "devicefarm:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

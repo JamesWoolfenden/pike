@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "lightsail:AttachLoadBalancerTlsCertificate"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
