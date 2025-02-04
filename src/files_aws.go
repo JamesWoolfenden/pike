@@ -129,3 +129,120 @@ var awsLightsailLbHttpsRedirectionPolicy []byte
 
 //go:embed mapping/aws/resource/lightsail/aws_lightsail_lb_stickiness_policy.json
 var awsLightsailLbStickinessPolicy []byte
+
+//go:embed mapping/aws/resource/directconnect/aws_dx_bgp_peer.json
+var awsDxBgpPeer []byte
+
+//go:embed mapping/aws/resource/directconnect/aws_dx_connection.json
+var awsDxConnection []byte
+
+//go:embed mapping/aws/resource/directconnect/aws_dx_connection_association.json
+var awsDxConnectionAssociation []byte
+
+//go:embed mapping/aws/resource/directconnect/aws_dx_connection_confirmation.json
+var awsDxConnectionConfirmation []byte
+
+//go:embed mapping/aws/resource/directconnect/aws_dx_gateway_association_proposal.json
+var awsDxGatewayAssociationProposal []byte
+
+//go:embed mapping/aws/resource/directconnect/aws_dx_hosted_connection.json
+var awsDxHostedConnection []byte
+
+//go:embed mapping/aws/resource/directconnect/aws_dx_hosted_private_virtual_interface.json
+var awsDxHostedPrivateVirtualInterface []byte
+
+//go:embed mapping/aws/resource/directconnect/aws_dx_hosted_private_virtual_interface_accepter.json
+var awsDxHostedPrivateVirtualInterfaceAccepter []byte
+
+//go:embed mapping/aws/resource/directconnect/aws_dx_hosted_public_virtual_interface.json
+var awsDxHostedPublicVirtualInterface []byte
+
+//go:embed mapping/aws/resource/directconnect/aws_dx_hosted_public_virtual_interface_accepter.json
+var awsDxHostedPublicVirtualInterfaceAccepter []byte
+
+//go:embed mapping/aws/resource/directconnect/aws_dx_hosted_transit_virtual_interface.json
+var awsDxHostedTransitVirtualInterface []byte
+
+//go:embed mapping/aws/resource/directconnect/aws_dx_lag.json
+var awsDxLag []byte
+
+//go:embed mapping/aws/resource/directconnect/aws_dx_macsec_key_association.json
+var awsDxMacsecKeyAssociation []byte
+
+//go:embed mapping/aws/resource/directconnect/aws_dx_private_virtual_interface.json
+var awsDxPrivateVirtualInterface []byte
+
+//go:embed mapping/aws/resource/directconnect/aws_dx_public_virtual_interface.json
+var awsDxPublicVirtualInterface []byte
+
+//go:embed mapping/aws/resource/directconnect/aws_dx_transit_virtual_interface.json
+var awsDxTransitVirtualInterface []byte
+
+//go:embed mapping/aws/resource/directoryservice/aws_directory_service_conditional_forwarder.json
+var awsDirectoryServiceConditionalForwarder []byte
+
+//go:embed mapping/aws/resource/directoryservice/aws_directory_service_radius_settings.json
+var awsDirectoryServiceRadiusSettings []byte
+
+//go:embed mapping/aws/resource/directoryservice/aws_directory_service_region.json
+var awsDirectoryServiceRegion []byte
+
+//go:embed mapping/aws/resource/directoryservice/aws_directory_service_shared_directory.json
+var awsDirectoryServiceSharedDirectory []byte
+
+//go:embed mapping/aws/resource/directoryservice/aws_directory_service_shared_directory_accepter.json
+var awsDirectoryServiceSharedDirectoryAccepter []byte
+
+//go:embed mapping/aws/resource/directoryservice/aws_directory_service_trust.json
+var awsDirectoryServiceTrust []byte
+
+//go:embed mapping/aws/resource/opsworks/aws_opsworks_application.json
+var awsOpsworksApplication []byte
+
+//go:embed mapping/aws/resource/opsworks/aws_opsworks_custom_layer.json
+var awsOpsworksCustomLayer []byte
+
+//go:embed mapping/aws/resource/opsworks/aws_opsworks_ecs_cluster_layer.json
+var awsOpsworksEcsClusterLayer []byte
+
+//go:embed mapping/aws/resource/opsworks/aws_opsworks_ganglia_layer.json
+var awsOpsworksGangliaLayer []byte
+
+//go:embed mapping/aws/resource/opsworks/aws_opsworks_haproxy_layer.json
+var awsOpsworksHaproxyLayer []byte
+
+//go:embed mapping/aws/resource/opsworks/aws_opsworks_instance.json
+var awsOpsworksInstance []byte
+
+//go:embed mapping/aws/resource/opsworks/aws_opsworks_java_app_layer.json
+var awsOpsworksJavaAppLayer []byte
+
+//go:embed mapping/aws/resource/opsworks/aws_opsworks_memcached_layer.json
+var awsOpsworksMemcachedLayer []byte
+
+//go:embed mapping/aws/resource/opsworks/aws_opsworks_mysql_layer.json
+var awsOpsworksMysqlLayer []byte
+
+//go:embed mapping/aws/resource/opsworks/aws_opsworks_nodejs_app_layer.json
+var awsOpsworksNodejsAppLayer []byte
+
+//go:embed mapping/aws/resource/opsworks/aws_opsworks_permission.json
+var awsOpsworksPermission []byte
+
+//go:embed mapping/aws/resource/opsworks/aws_opsworks_php_app_layer.json
+var awsOpsworksPhpAppLayer []byte
+
+//go:embed mapping/aws/resource/opsworks/aws_opsworks_rails_app_layer.json
+var awsOpsworksRailsAppLayer []byte
+
+//go:embed mapping/aws/resource/opsworks/aws_opsworks_rds_db_instance.json
+var awsOpsworksRdsDbInstance []byte
+
+//go:embed mapping/aws/resource/opsworks/aws_opsworks_stack.json
+var awsOpsworksStack []byte
+
+//go:embed mapping/aws/resource/opsworks/aws_opsworks_static_web_layer.json
+var awsOpsworksStaticWebLayer []byte
+
+//go:embed mapping/aws/resource/opsworks/aws_opsworks_user_profile.json
+var awsOpsworksUserProfile []byte

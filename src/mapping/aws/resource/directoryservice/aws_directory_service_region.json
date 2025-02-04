@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "ds:DescribeRegions",
+      "ds:AddRegion",
+      "ds:RemoveRegion"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

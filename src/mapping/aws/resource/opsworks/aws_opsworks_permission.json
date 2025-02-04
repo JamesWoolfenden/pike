@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "opsworks:DescribePermissions",
+      "opsworks:SetPermission"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

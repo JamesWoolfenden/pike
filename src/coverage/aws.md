@@ -1,31 +1,9 @@
 # todo aws
 
-Resource percentage coverage   83.55
+Resource percentage coverage   87.75
 Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_cognito_managed_user_pool_client
-./resource.ps1 aws_directory_service_conditional_forwarder
-./resource.ps1 aws_directory_service_radius_settings
-./resource.ps1 aws_directory_service_region
-./resource.ps1 aws_directory_service_shared_directory
-./resource.ps1 aws_directory_service_shared_directory_accepter
-./resource.ps1 aws_directory_service_trust
-./resource.ps1 aws_dx_bgp_peer
-./resource.ps1 aws_dx_connection
-./resource.ps1 aws_dx_connection_association
-./resource.ps1 aws_dx_connection_confirmation
-./resource.ps1 aws_dx_gateway_association_proposal
-./resource.ps1 aws_dx_hosted_connection
-./resource.ps1 aws_dx_hosted_private_virtual_interface
-./resource.ps1 aws_dx_hosted_private_virtual_interface_accepter
-./resource.ps1 aws_dx_hosted_public_virtual_interface
-./resource.ps1 aws_dx_hosted_public_virtual_interface_accepter
-./resource.ps1 aws_dx_hosted_transit_virtual_interface
-./resource.ps1 aws_dx_lag
-./resource.ps1 aws_dx_macsec_key_association
-./resource.ps1 aws_dx_private_virtual_interface
-./resource.ps1 aws_dx_public_virtual_interface
-./resource.ps1 aws_dx_transit_virtual_interface
 ./resource.ps1 aws_dynamodb_kinesis_streaming_destination
 ./resource.ps1 aws_dynamodb_resource_policy
 ./resource.ps1 aws_dynamodb_table_export
@@ -54,7 +32,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_elasticache_user_group_association
 ./resource.ps1 aws_elasticsearch_domain_saml_options
 ./resource.ps1 aws_elasticsearch_vpc_endpoint
-
 ./resource.ps1 aws_grafana_role_association
 ./resource.ps1 aws_grafana_workspace_saml_configuration
 
@@ -84,7 +61,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_lexv2models_intent
 ./resource.ps1 aws_lexv2models_slot
 ./resource.ps1 aws_lexv2models_slot_type
-
 ./resource.ps1 aws_macie2_account
 ./resource.ps1 aws_macie2_classification_export_configuration
 ./resource.ps1 aws_macie2_classification_job
@@ -112,23 +88,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_opensearch_package
 ./resource.ps1 aws_opensearch_package_association
 ./resource.ps1 aws_opensearch_vpc_endpoint
-./resource.ps1 aws_opsworks_application
-./resource.ps1 aws_opsworks_custom_layer
-./resource.ps1 aws_opsworks_ecs_cluster_layer
-./resource.ps1 aws_opsworks_ganglia_layer
-./resource.ps1 aws_opsworks_haproxy_layer
-./resource.ps1 aws_opsworks_instance
-./resource.ps1 aws_opsworks_java_app_layer
-./resource.ps1 aws_opsworks_memcached_layer
-./resource.ps1 aws_opsworks_mysql_layer
-./resource.ps1 aws_opsworks_nodejs_app_layer
-./resource.ps1 aws_opsworks_permission
-./resource.ps1 aws_opsworks_php_app_layer
-./resource.ps1 aws_opsworks_rails_app_layer
-./resource.ps1 aws_opsworks_rds_db_instance
-./resource.ps1 aws_opsworks_stack
-./resource.ps1 aws_opsworks_static_web_layer
-./resource.ps1 aws_opsworks_user_profile
 ./resource.ps1 aws_organizations_delegated_administrator
 ./resource.ps1 aws_pinpoint_adm_channel
 ./resource.ps1 aws_pinpoint_apns_channel

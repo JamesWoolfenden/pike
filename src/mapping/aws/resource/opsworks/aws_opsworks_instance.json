@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "opsworks:DescribeInstances",
+      "opsworks:DeleteInstance",
+      "opsworks:CreateInstance",
+      "opsworks:UpdateInstance",
+      "opsworks:ListTags"
+    ],
+    "attributes": {
+      "tags": [
+        "opsworks:TagResource",
+        "opsworks:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

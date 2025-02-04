@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "opsworks:DescribeStacks",
+      "opsworks:CreateStack",
+      "opsworks:DeleteStack",
+      "opsworks:UpdateStack",
+      "opsworks:ListTags"
+    ],
+    "attributes": {
+      "tags": [
+        "opsworks:TagResource",
+        "opsworks:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

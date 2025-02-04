@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "opsworks:DescribeApps",
+      "opsworks:CreateApp",
+      "opsworks:DeleteApp",
+      "opsworks:UpdateApp"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

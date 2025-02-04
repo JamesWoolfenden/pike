@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "ds:RejectSharedDirectory",
+      "ds:AcceptSharedDirectory"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

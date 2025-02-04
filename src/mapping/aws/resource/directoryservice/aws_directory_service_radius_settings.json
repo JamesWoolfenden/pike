@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "ds:DisableRadius",
+      "ds:EnableRadius",
+      "ds:UpdateRadius"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

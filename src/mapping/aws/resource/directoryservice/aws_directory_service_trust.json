@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "ds:DescribeTrusts",
+      "ds:CreateTrust",
+      "ds:DeleteTrust",
+      "ds:UpdateTrust"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

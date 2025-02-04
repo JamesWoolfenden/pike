@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "directconnect:CreateBGPPeer",
+      "directconnect:DeleteBGPPeer"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

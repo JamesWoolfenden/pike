@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "directconnect:AssociateMacSecKey",
+      "directconnect:DisassociateMacSecKey"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

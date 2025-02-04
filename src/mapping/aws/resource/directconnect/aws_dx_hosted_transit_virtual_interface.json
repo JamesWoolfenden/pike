@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "directconnect:CreateTransitVirtualInterface",
+      "directconnect:DescribeVirtualInterfaces",
+      "directconnect:DeleteVirtualInterface"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

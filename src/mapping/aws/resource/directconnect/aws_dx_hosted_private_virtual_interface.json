@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "directconnect:DescribeVirtualInterfaces",
+      "directconnect:CreatePrivateVirtualInterface",
+      "directconnect:DeleteVirtualInterface"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

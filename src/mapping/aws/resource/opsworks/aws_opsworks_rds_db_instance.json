@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "opsworks:DescribeRdsDbInstances",
+      "opsworks:DeregisterRdsDbInstance",
+      "opsworks:RegisterRdsDbInstance",
+      "opsworks:UpdateRdsDbInstance",
+      "opsworks:ListTags"
+    ],
+    "attributes": {
+      "tags": [
+        "opsworks:TagResource",
+        "opsworks:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

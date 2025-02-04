@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "directconnect:DescribeLags",
+      "directconnect:CreateLag",
+      "directconnect:DeleteLag",
+      "directconnect:UpdateLag",
+      "directconnect:DescribeTags"
+    ],
+    "attributes": {
+      "tags": [
+        "directconnect:TagResource",
+        "directconnect:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "directconnect:AcceptDirectConnectGatewayAssociationProposal",
+      "directconnect:CreateDirectConnectGatewayAssociationProposal",
+      "directconnect:DeleteDirectConnectGatewayAssociationProposal"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "ds:DescribeSharedDirectories",
+      "ds:UnshareDirectory",
+      "ds:ShareDirectory"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

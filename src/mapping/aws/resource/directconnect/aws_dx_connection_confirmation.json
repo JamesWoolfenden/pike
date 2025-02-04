@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "directconnect:ConfirmConnection"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

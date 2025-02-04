@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "opsworks:DescribeLayers",
+      "opsworks:CreateLayer",
+      "opsworks:DeleteLayer",
+      "opsworks:UpdateLayer",
+      "opsworks:ListTags"
+    ],
+    "attributes": {
+      "tags": [
+        "opsworks:TagResource",
+        "opsworks:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

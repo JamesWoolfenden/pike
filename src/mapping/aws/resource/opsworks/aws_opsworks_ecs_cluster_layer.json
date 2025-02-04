@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "opsworks:DescribeLayers",
+      "opsworks:CreateLayer",
+      "opsworks:DeleteLayer",
+      "opsworks:UpdateLayer",
+      "opsworks:DescribeEcsClusters",
+      "opsworks:DeregisterEcsCluster",
+      "opsworks:RegisterEcsCluster",
+      "opsworks:ListTags"
+    ],
+    "attributes": {
+      "tags": [
+        "opsworks:TagResource",
+        "opsworks:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

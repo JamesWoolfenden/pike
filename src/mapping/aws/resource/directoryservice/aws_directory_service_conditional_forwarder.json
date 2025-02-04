@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "ds:DescribeConditionalForwarders",
+      "ds:CreateConditionalForwarder",
+      "ds:DeleteConditionalForwarder",
+      "ds:UpdateConditionalForwarder"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

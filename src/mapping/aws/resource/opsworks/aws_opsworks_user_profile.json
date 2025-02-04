@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "opsworks:DescribeUserProfiles",
+      "opsworks:CreateUserProfile",
+      "opsworks:DeleteUserProfile",
+      "opsworks:UpdateUserProfile",
+      "opsworks:ListTags"
+    ],
+    "attributes": {
+      "tags": [
+        "opsworks:TagResource",
+        "opsworks:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

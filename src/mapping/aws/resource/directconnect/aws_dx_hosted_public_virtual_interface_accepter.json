@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "directconnect:ConfirmPublicVirtualInterface"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

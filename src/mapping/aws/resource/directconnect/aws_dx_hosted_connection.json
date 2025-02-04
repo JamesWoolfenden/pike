@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "directconnect:DescribeHostedConnections",
+      "directconnect:AssociateHostedConnection"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "directconnect:CreatePublicVirtualInterface",
+      "directconnect:DescribeVirtualInterfaces",
+      "directconnect:DeleteVirtualInterface",
+      "directconnect:DescribeTags"
+    ],
+    "attributes": {
+      "tags": [
+        "directconnect:TagResource",
+        "directconnect:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
