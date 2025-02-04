@@ -1,7 +1,8 @@
 {
   "additionalProperties": false,
   "createOnlyProperties": [
-    "/properties/GatewayPlatform"
+    "/properties/GatewayPlatform",
+    "/properties/GatewayVersion"
   ],
   "definitions": {
     "CapabilityConfiguration": {
@@ -50,7 +51,6 @@
       ],
       "properties": {
         "Greengrass": {
-          "$ref": "#/definitions/Greengrass",
           "description": "A gateway that runs on AWS IoT Greengrass V1."
         },
         "GreengrassV2": {
@@ -64,24 +64,23 @@
       },
       "type": "object"
     },
-    "Greengrass": {
-      "additionalProperties": false,
-      "description": "Contains the ARN of AWS IoT Greengrass Group V1 that the gateway runs on.",
-      "properties": {
-        "GroupArn": {
-          "description": "The ARN of the Greengrass group.",
-          "type": "string"
-        }
-      },
-      "required": [
-        "GroupArn"
-      ],
-      "type": "object"
+    "GatewayVersion": {
+      "description": "The version of the gateway you want to create.",
+      "type": "string"
     },
     "GreengrassV2": {
       "additionalProperties": false,
       "description": "Contains the CoreDeviceThingName of AWS IoT Greengrass Group V2 that the gateway runs on.",
       "properties": {
+        "CoreDeviceOperatingSystem": {
+          "description": "The operating system of the core device in AWS IoT Greengrass V2.",
+          "enum": [
+            "LINUX_AARCH64",
+            "LINUX_AMD64",
+            "WINDOWS_AMD64"
+          ],
+          "type": "string"
+        },
         "CoreDeviceThingName": {
           "description": "The name of the CoreDevice in GreenGrass V2.",
           "type": "string"
@@ -124,6 +123,9 @@
       "type": "object"
     }
   },
+  "deprecatedProperties": [
+    "/properties/GatewayPlatform/Greengrass"
+  ],
   "description": "Resource schema for AWS::IoTSiteWise::Gateway",
   "handlers": {
     "create": {
@@ -196,6 +198,10 @@
     "GatewayPlatform": {
       "$ref": "#/definitions/GatewayPlatform",
       "description": "The gateway's platform. You can only specify one platform in a gateway."
+    },
+    "GatewayVersion": {
+      "description": "The version of the gateway you want to create.",
+      "type": "string"
     },
     "Tags": {
       "description": "A list of key-value pairs that contain metadata for the gateway.",

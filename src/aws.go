@@ -47,7 +47,7 @@ var tFLookup = map[string]interface{}{ //nolint:gochecknoglobals
 	"aws_api_gateway_documentation_part":                               awsApigatewayv2Api,
 	"aws_api_gateway_documentation_version":                            awsApigatewayv2Api,
 	"aws_api_gateway_domain_name":                                      awsApigatewayv2Api,
-	"aws_api_gateway_domain_name_access_association":                   awsApiGatewayDomainNameAccessAssociation,
+	"aws_api_gateway_domain_name_access_association":                   awsAPIGatewayDomainNameAccessAssociation,
 	"aws_api_gateway_gateway_response":                                 awsApigatewayv2Api,
 	"aws_api_gateway_integration":                                      awsApigatewayv2Api,
 	"aws_api_gateway_integration_response":                             awsApigatewayv2Api,
@@ -112,15 +112,15 @@ var tFLookup = map[string]interface{}{ //nolint:gochecknoglobals
 	"aws_appstream_stack":                                              awsAppstreamStack,
 	"aws_appstream_user":                                               awsAppstreamUser,
 	"aws_appstream_user_stack_association":                             awsAppstreamUserStackAssociation,
-	"aws_appsync_api_cache":                                            awsAppsyncApiCache,
-	"aws_appsync_api_key":                                              awsAppsyncApiKey,
+	"aws_appsync_api_cache":                                            awsAppsyncAPICache,
+	"aws_appsync_api_key":                                              awsAppsyncAPIKey,
 	"aws_appsync_datasource":                                           awsAppsyncDatasource,
 	"aws_appsync_domain_name":                                          awsAppsyncDomainName,
 	"aws_appsync_domain_name_api_association":                          awsAppsyncDomainNameAPIAssociation,
 	"aws_appsync_function":                                             awsAppsyncFunction,
 	"aws_appsync_graphql_api":                                          awsAppsyncGraphAPI,
 	"aws_appsync_resolver":                                             awsAppsyncResolver,
-	"aws_appsync_source_api_association":                               awsAppsyncSourceApiAssociation,
+	"aws_appsync_source_api_association":                               awsAppsyncSourceAPIAssociation,
 	"aws_appsync_type":                                                 awsAppsyncType,
 	"aws_athena_data_catalog":                                          awsAthenaDataCatalog,
 	"aws_athena_database":                                              awsAthenaDatabase,
@@ -134,7 +134,7 @@ var tFLookup = map[string]interface{}{ //nolint:gochecknoglobals
 	"aws_auditmanager_control":                                         awsAuditmanagerControl,
 	"aws_auditmanager_framework":                                       awsAuditmanagerFramework,
 	"aws_auditmanager_framework_share":                                 awsAuditmanagerFrameworkShare,
-	"aws_auditmanager_organization_admin_account_registration":         awsAuditmanagerOrganizationAdminAccountRegistration,
+	"aws_auditmanager_organization_admin_account_registration":         awsAuditmanagerOrganizationAdminAccountRegistration, //nolint:lll
 	"aws_autoscaling_attachment":                                       awsAutoscalingAttachment,
 	"aws_autoscaling_group":                                            awsAutoscalingGroup,
 	"aws_autoscaling_group_tag":                                        awsAutoscalingGroupTag,
@@ -1155,7 +1155,7 @@ var tFLookup = map[string]interface{}{ //nolint:gochecknoglobals
 	"aws_servicecatalogappregistry_attribute_group":                    awsServicecatalogappregistryAttributeGroup,
 	"aws_servicecatalogappregistry_attribute_group_association":        awsServicecatalogappregistryAttributeGroupAssociation,
 	"aws_transfer_server":                                              awsTransferServer,
-	"aws_transfer_ssh_key":                                             awsTransferSshKey,
+	"aws_transfer_ssh_key":                                             awsTransferSSHKey,
 	"aws_transfer_user":                                                awsTransferUser,
 	"aws_vpc_block_public_access_exclusion":                            awsVpcBlockPublicAccessExclusion,
 	"aws_vpc_block_public_access_options":                              awsVpcBlockPublicAccessOptions,
@@ -1184,7 +1184,7 @@ var tFLookup = map[string]interface{}{ //nolint:gochecknoglobals
 	"aws_ssm_default_patch_baseline":                                   awsSsmDefaultPatchBaseline,
 	"aws_ssm_service_setting":                                          awsSsmServiceSetting,
 	"aws_ssmquicksetup_configuration_manager":                          awsSsmquicksetupConfigurationManager,
-	"aws_wafregional_web_acl_association":                              awsWafregionalWebAclAssociation,
+	"aws_wafregional_web_acl_association":                              awsWafregionalWebACLAssociation,
 	"aws_bedrockagent_agent_collaborator":                              awsBedrockagentAgentCollaborator,
 	"aws_bedrockagent_agent_knowledge_base_association":                awsBedrockagentKnowledgeBaseAssociation,
 	"aws_cloudformation_stack_instances":                               awsCloudformationStackInstances,
@@ -1231,7 +1231,7 @@ var tFLookup = map[string]interface{}{ //nolint:gochecknoglobals
 	"aws_prometheus_workspace":                                         awsPrometheusWorkspace,
 	"aws_rds_certificate":                                              awsRdsCertificate,
 	"aws_rds_cluster_snapshot_copy":                                    awsRdsClusterSnapshotCopy,
-	"aws_rds_custom_db_engine_version":                                 awsRdsCustomDbEngineVersion,
+	"aws_rds_custom_db_engine_version":                                 awsRdsCustomDBEngineVersion,
 	"aws_rds_export_task":                                              awsRdsExportTask,
 	"aws_rds_reserved_instance":                                        awsRdsReservedInstance,
 	"aws_dataexchange_data_set":                                        awsDataexchangeDataSet,
@@ -1274,7 +1274,7 @@ var tFLookup = map[string]interface{}{ //nolint:gochecknoglobals
 	"aws_lightsail_lb_attachment":                                      awsLightsailLbAttachment,
 	"aws_lightsail_lb_certificate":                                     awsLightsailLbCertificate,
 	"aws_lightsail_lb_certificate_attachment":                          awsLightsailLbCertificateAttachment,
-	"aws_lightsail_lb_https_redirection_policy":                        awsLightsailLbHttpsRedirectionPolicy,
+	"aws_lightsail_lb_https_redirection_policy":                        awsLightsailLbHTTPSRedirectionPolicy,
 	"aws_lightsail_lb_stickiness_policy":                               awsLightsailLbStickinessPolicy,
 	"aws_dx_bgp_peer":                                                  awsDxBgpPeer,
 	"aws_dx_connection":                                                awsDxConnection,
@@ -1311,10 +1311,11 @@ var tFLookup = map[string]interface{}{ //nolint:gochecknoglobals
 	"aws_opsworks_permission":                                          awsOpsworksPermission,
 	"aws_opsworks_php_app_layer":                                       awsOpsworksPhpAppLayer,
 	"aws_opsworks_rails_app_layer":                                     awsOpsworksRailsAppLayer,
-	"aws_opsworks_rds_db_instance":                                     awsOpsworksRdsDbInstance,
+	"aws_opsworks_rds_db_instance":                                     awsOpsworksRdsDBInstance,
 	"aws_opsworks_stack":                                               awsOpsworksStack,
 	"aws_opsworks_static_web_layer":                                    awsOpsworksStaticWebLayer,
 	"aws_opsworks_user_profile":                                        awsOpsworksUserProfile,
+	"aws_mskconnect_connector":                                         awsMskconnectConnector,
 }
 
 // GetAWSPermissions for AWS resources.
@@ -1405,13 +1406,9 @@ func GetPermissionMap(raw []byte, attributes []string, resource string) ([]strin
 		return nil, &invalidJSONError{}
 	}
 
-	//zero length is perfectly valid if no permissions required
-	//if len(attributes) == 0 {
-	//	return nil, &zeroLengthAttributesError{resource}
-	//}
-
 	var mappings []interface{}
 	err := json.Unmarshal(raw, &mappings)
+
 	if err != nil {
 		return nil, &unmarshallJSONError{err, resource}
 	}
@@ -1439,9 +1436,16 @@ func GetPermissionMap(raw []byte, attributes []string, resource string) ([]strin
 	for _, attribute := range attributes {
 		if resourceAttributes[attribute] != nil {
 			for _, entry := range resourceAttributes[attribute].([]interface{}) {
+				value, ok := entry.(string)
+
+				if !ok {
+					log.Error().Msg("failed to cast to string")
+					continue
+				}
+
 				found = append(
 					found,
-					entry.(string),
+					value,
 				)
 			}
 		}
@@ -1462,9 +1466,17 @@ const (
 	destroy = "destroy"
 )
 
+type parameterNilError struct {
+	parameter string
+}
+
+func (m *parameterNilError) Error() string {
+	return fmt.Sprintf("%s was nil", m.parameter)
+}
+
 func getActionPermissions(permissionMap map[string]interface{}, found []string) ([]string, error) {
 	if permissionMap == nil {
-		return nil, fmt.Errorf("permissionMap was nil")
+		return nil, &parameterNilError{parameter: "permissionMap"}
 	}
 
 	for _, action := range []string{apply, plan, modify, destroy} {
@@ -1477,7 +1489,14 @@ func getActionPermissions(permissionMap map[string]interface{}, found []string) 
 			}
 
 			for _, entry := range temp {
-				found = append(found, entry.(string))
+				value, ok := entry.(string)
+				if !ok {
+					log.Error().Msg("failed to cast string")
+
+					continue
+				}
+
+				found = append(found, value)
 			}
 		}
 	}

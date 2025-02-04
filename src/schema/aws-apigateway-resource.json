@@ -50,11 +50,11 @@
   ],
   "properties": {
     "ParentId": {
-      "description": "The parent resource's identifier.",
+      "description": "",
       "type": "string"
     },
     "PathPart": {
-      "description": "The last path segment for this resource.",
+      "description": "",
       "type": "string"
     },
     "ResourceId": {
@@ -62,7 +62,7 @@
       "type": "string"
     },
     "RestApiId": {
-      "description": "The string identifier of the associated RestApi.",
+      "description": "",
       "type": "string"
     }
   },

@@ -4,8 +4,8 @@
       "detective:CreateGraph",
       "detective:UpdateOrganizationConfiguration",
       "organizations:DescribeOrganization",
-      "detective:DeleteGraph",
       "detective:ListGraphs",
+      "detective:DeleteGraph",
       "detective:ListTagsForResource",
       "detective:DescribeOrganizationConfiguration",
       "detective:UpdateOrganizationConfiguration"
@@ -17,9 +17,11 @@
       ]
     },
     "destroy": [
-      "detective:DeleteGraph"
+      "detective:DeleteGraph",
+      "detective:ListGraphs"
     ],
     "modify": [
+      "detective:ListGraphs",
       "detective:UpdateOrganizationConfiguration"
     ],
     "plan": []

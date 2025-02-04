@@ -36,6 +36,7 @@ func Parse(codebase string, name string) error {
 		{
 			match := `resource "(` + name + `_.*?)"`
 			myProvider.Resources, err = getMatches(codebase, match, "markdown")
+
 			if err != nil {
 				return err
 			}
@@ -48,6 +49,7 @@ func Parse(codebase string, name string) error {
 	default:
 		match := `resource "(` + name + `_.*?)"`
 		myProvider.Resources, err = getMatches(codebase, match, "markdown")
+
 		if err != nil {
 			return err
 		}
@@ -65,6 +67,7 @@ func Parse(codebase string, name string) error {
 
 	log.Info().Msgf("creating %s-members.json", name)
 	err = os.WriteFile(name+"-members.json", jsonOut, 0o700)
+
 	if err != nil {
 		return err
 	}

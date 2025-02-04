@@ -120,6 +120,7 @@ func GetPolicy(actions Sorted, resources bool) (OutputPolicy, error) {
 			// dedupe
 			AWSPermissions := Unique(actions.AWS)
 			OutPolicy.AWS, err = AWSPolicy(AWSPermissions, resources)
+
 			if err != nil {
 				log.Error().Err(err)
 
@@ -135,6 +136,7 @@ func GetPolicy(actions Sorted, resources bool) (OutputPolicy, error) {
 			// dedupe
 			GCPPermissions := Unique(actions.GCP)
 			OutPolicy.GCP, err = GCPPolicy(GCPPermissions)
+
 			if err != nil {
 				log.Error().Err(err)
 
@@ -150,6 +152,7 @@ func GetPolicy(actions Sorted, resources bool) (OutputPolicy, error) {
 			// dedupe
 			AZUREPermissions := Unique(actions.AZURE)
 			OutPolicy.AZURE, err = AZUREPolicy(AZUREPermissions, DefaultPolicyName)
+
 			if err != nil {
 				log.Error().Err(err)
 

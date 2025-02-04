@@ -13,13 +13,23 @@
       "ec2:DescribeTags",
       "ec2:DescribeVerifiedAccessEndpoints",
       "ec2:ModifyVerifiedAccessEndpoint",
+      "ec2:DescribeVerifiedAccessEndpoints",
+      "ec2:DescribeSecurityGroups",
+      "ec2:DescribeVpcs",
       "iam:CreateServiceLinkedRole",
       "iam:ListRoles",
       "sso:CreateManagedApplicationInstance",
       "sso:DeleteManagedApplicationInstance",
       "sso:GetManagedApplicationInstance",
       "sso:GetPeregrineStatus",
-      "sso:GetSharedSsoConfiguration"
+      "sso:GetSharedSsoConfiguration",
+      "sso:PutApplicationAccessScope",
+      "sso:GetSharedSsoConfiguration",
+      "rds:DescribeDbInstances",
+      "rds:DescribeDbProxies",
+      "rds:DescribeDbClusters",
+      "ec2:DescribeAvailabilityZones",
+      "ec2:DescribeVpcEndpointServiceConfigurations"
     ],
     "attributes": {
       "load_balancer_options": [
@@ -57,6 +67,13 @@
       "acm:DeleteCertificateRelation",
       "sso:DeleteManagedApplicationInstance"
     ],
-    "plan": []
+    "plan": [
+      "ec2:DescribeVerifiedAccessEndpoints",
+      "ec2:GetVerifiedAccessEndpointPolicy",
+      "ec2:DescribeTags",
+      "rds:DescribeDbInstances",
+      "rds:DescribeDbProxies",
+      "rds:DescribeDbClusters"
+    ]
   }
 ]

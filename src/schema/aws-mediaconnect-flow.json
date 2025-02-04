@@ -6,6 +6,35 @@
     "/properties/Source/Name"
   ],
   "definitions": {
+    "AudioMonitoringSetting": {
+      "additionalProperties": false,
+      "description": "Specifies the configuration for audio stream metrics monitoring.",
+      "properties": {
+        "SilentAudio": {
+          "$ref": "#/definitions/SilentAudio"
+        }
+      },
+      "type": "object"
+    },
+    "BlackFrames": {
+      "additionalProperties": false,
+      "description": "Configures settings for the BlackFrames metric.",
+      "properties": {
+        "State": {
+          "description": "Indicates whether the BlackFrames metric is enabled or disabled.",
+          "enum": [
+            "ENABLED",
+            "DISABLED"
+          ],
+          "type": "string"
+        },
+        "ThresholdSeconds": {
+          "description": "Specifies the number of consecutive seconds of black frames that triggers an event or alert.",
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
     "Encryption": {
       "additionalProperties": false,
       "description": "Information about the encryption of the flow.",
@@ -164,6 +193,25 @@
             "DENSITY"
           ],
           "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "FrozenFrames": {
+      "additionalProperties": false,
+      "description": "Configures settings for the FrozenFrames metric.",
+      "properties": {
+        "State": {
+          "description": "Indicates whether the FrozenFrames metric is enabled or disabled.",
+          "enum": [
+            "ENABLED",
+            "DISABLED"
+          ],
+          "type": "string"
+        },
+        "ThresholdSeconds": {
+          "description": "Specifies the number of consecutive seconds of a static image that triggers an event or alert.",
+          "type": "integer"
         }
       },
       "type": "object"
@@ -350,6 +398,25 @@
       ],
       "type": "object"
     },
+    "SilentAudio": {
+      "additionalProperties": false,
+      "description": "Configures settings for the SilentAudio metric.",
+      "properties": {
+        "State": {
+          "description": "Indicates whether the SilentAudio metric is enabled or disabled.",
+          "enum": [
+            "ENABLED",
+            "DISABLED"
+          ],
+          "type": "string"
+        },
+        "ThresholdSeconds": {
+          "description": "Specifies the number of consecutive seconds of silence that triggers an event or alert.",
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
     "Source": {
       "additionalProperties": false,
       "description": "The settings for the source of the flow.",
@@ -463,6 +530,21 @@
       "additionalProperties": false,
       "description": "The settings for source monitoring.",
       "properties": {
+        "AudioMonitoringSettings": {
+          "description": "Contains the settings for audio stream metrics monitoring.",
+          "items": {
+            "$ref": "#/definitions/AudioMonitoringSetting"
+          },
+          "type": "array"
+        },
+        "ContentQualityAnalysisState": {
+          "description": "Indicates whether content quality analysis is enabled or disabled.",
+          "enum": [
+            "ENABLED",
+            "DISABLED"
+          ],
+          "type": "string"
+        },
         "ThumbnailState": {
           "description": "The state of thumbnail monitoring.",
           "enum": [
@@ -470,11 +552,28 @@
             "DISABLED"
           ],
           "type": "string"
+        },
+        "VideoMonitoringSettings": {
+          "description": "Contains the settings for video stream metrics monitoring.",
+          "items": {
+            "$ref": "#/definitions/VideoMonitoringSetting"
+          },
+          "type": "array"
         }
       },
-      "required": [
-        "ThumbnailState"
-      ],
+      "type": "object"
+    },
+    "VideoMonitoringSetting": {
+      "additionalProperties": false,
+      "description": "Specifies the configuration for video stream metrics monitoring.",
+      "properties": {
+        "BlackFrames": {
+          "$ref": "#/definitions/BlackFrames"
+        },
+        "FrozenFrames": {
+          "$ref": "#/definitions/FrozenFrames"
+        }
+      },
       "type": "object"
     },
     "VpcInterface": {

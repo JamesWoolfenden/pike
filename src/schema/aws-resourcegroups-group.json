@@ -202,7 +202,8 @@
     "cloudFormationSystemTags": true,
     "permissions": [
       "resource-groups:Tag",
-      "resource-groups:Untag"
+      "resource-groups:Untag",
+      "resource-groups:GetTags"
     ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",

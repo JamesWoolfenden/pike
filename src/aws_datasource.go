@@ -394,7 +394,7 @@ var tFLookupDataAWS = map[string]interface{}{
 	"aws_organizations_organizational_unit":                     dataAwsOrganizationsOrganizationalUnit,
 	"aws_organizations_organizational_unit_child_accounts":      dataAwsOrganizationsOrganizationalUnitChildsAccounts,
 	"aws_organizations_organizational_unit_descendant_accounts": dataAwsOrganizationsOrganizationalUnitDescendantAccounts,
-	"aws_organizations_organizational_unit_descendant_organizational_units": dataAwsOrganizationsOrganizationalUnitDescendantOrganizationalUnits,
+	"aws_organizations_organizational_unit_descendant_organizational_units": dataAwsOrganizationsOrganizationalUnitDescendantOrganizationalUnits, //nolint:lll
 	"aws_organizations_organizational_units":                                dataAwsOrganizationsOrganizationalUnits,
 	"aws_organizations_policies":                                            dataAwsOrganizationsPolicies,
 	"aws_organizations_policies_for_target":                                 dataAwsOrganizationsPoliciesForTarget,
@@ -449,7 +449,7 @@ var tFLookupDataAWS = map[string]interface{}{
 	"aws_route53_resolver_firewall_config":                                  dataAwsRoute53ResolverFirewallConfig,
 	"aws_route53_resolver_firewall_domain_list":                             dataAwsRoute53ResolverFirewallDomainList,
 	"aws_route53_resolver_firewall_rule_group":                              dataAwsRoute53ResolverFirewallRuleGroup,
-	"aws_route53_resolver_firewall_rule_group_association":                  dataAwsRoute53ResolverFirewallGroupAssociation,
+	"aws_route53_resolver_firewall_rule_group_association":                  dataAwsRoute53ResolverFirewallGroupAssociation, //nolint:lll
 	"aws_route53_resolver_firewall_rules":                                   dataAwsRoute53ResolverFirewallRules,
 	"aws_route53_resolver_query_log_config":                                 dataAwsRoute53ResolverQueryLogConfig,
 	"aws_route53_resolver_rule":                                             dataAwsRoute53ResolverRule,
@@ -479,7 +479,7 @@ var tFLookupDataAWS = map[string]interface{}{
 	"aws_secretsmanager_secrets":                                            dataAwsSecretsmanagerSecrets,
 	"aws_security_group":                                                    dataAwsSecurityGroup,
 	"aws_security_groups":                                                   dataAwsSecurityGroup,
-	"aws_serverlessapplicationrepository_application":                       dataAwsServerlessapplicationrepositoryApplication,
+	"aws_serverlessapplicationrepository_application":                       dataAwsServerlessapplicationrepositoryApplication, //nolint:lll
 	"aws_service":                                                           placeholder,
 	"aws_service_discovery_dns_namespace":                                   dataAwsServiceDiscoveryDNSNamespace,
 	"aws_service_discovery_http_namespace":                                  dataAwsServiceDiscoveryHTTPNamespace,
@@ -530,7 +530,7 @@ var tFLookupDataAWS = map[string]interface{}{
 	"aws_ssoadmin_instances":                                                dataAwsSsoadminInstances,
 	"aws_ssoadmin_permission_set":                                           dataAwsSsoadminPermissionSet,
 	"aws_ssoadmin_permission_sets":                                          dataAwsSsoadminPermissionSets,
-	"aws_ssoadmin_principal_application_assignments":                        dataAwsSsoadminPrincipalApplicationAssignments,
+	"aws_ssoadmin_principal_application_assignments":                        dataAwsSsoadminPrincipalApplicationAssignments, //nolint:lll
 	"aws_storagegateway_local_disk":                                         placeholder,
 	"aws_subnet":                                                            dataAwsSubnetIDs,
 	"aws_subnet_ids":                                                        dataAwsSubnetIDs,

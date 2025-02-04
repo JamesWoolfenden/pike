@@ -14,6 +14,15 @@ type replaceSectionError struct {
 	err error
 }
 
+type fileDoesNotExistError struct {
+	file string
+	err  error
+}
+
+func (e fileDoesNotExistError) Error() string {
+	return fmt.Sprintf("file %s does not exist %v", e.file, e.err)
+}
+
 func (m *replaceSectionError) Error() string {
 	return fmt.Sprintf("failed to replace section %v", m.err)
 }
@@ -23,7 +32,7 @@ func Readme(dirName string, output string, init bool, autoAppend bool) error {
 	file := path.Join(dirName, "README.md")
 
 	if _, err := os.Stat(file); errors.Is(err, os.ErrNotExist) {
-		return err
+		return &fileDoesNotExistError{file, err}
 	}
 
 	OutPolicy, err := MakePolicy(dirName, nil, init, false, "")

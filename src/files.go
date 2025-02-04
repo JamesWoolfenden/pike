@@ -3071,7 +3071,7 @@ var awsS3tablesTablePolicy []byte
 var awsS3tablesTableBucket []byte
 
 //go:embed mapping/aws/resource/apigateway/aws_api_gateway_domain_name_access_association.json
-var awsApiGatewayDomainNameAccessAssociation []byte
+var awsAPIGatewayDomainNameAccessAssociation []byte
 
 //go:embed mapping/aws/resource/appconfig/aws_appconfig_deployment_strategy.json
 var awsAppconfigDeploymentStrategy []byte
@@ -3116,16 +3116,16 @@ var awsAppstreamUser []byte
 var awsAppstreamUserStackAssociation []byte
 
 //go:embed mapping/aws/resource/appsync/aws_appsync_api_cache.json
-var awsAppsyncApiCache []byte
+var awsAppsyncAPICache []byte
 
 //go:embed mapping/aws/resource/appsync/aws_appsync_api_key.json
-var awsAppsyncApiKey []byte
+var awsAppsyncAPIKey []byte
 
 //go:embed mapping/aws/resource/appsync/aws_appsync_datasource.json
 var awsAppsyncDatasource []byte
 
 //go:embed mapping/aws/resource/appsync/aws_appsync_source_api_association.json
-var awsAppsyncSourceApiAssociation []byte
+var awsAppsyncSourceAPIAssociation []byte
 
 //go:embed mapping/aws/resource/appsync/aws_appsync_type.json
 var awsAppsyncType []byte
@@ -3257,7 +3257,7 @@ var awsServicecatalogappregistryAttributeGroupAssociation []byte
 var awsTransferServer []byte
 
 //go:embed mapping/aws/resource/transfer/aws_transfer_ssh_key.json
-var awsTransferSshKey []byte
+var awsTransferSSHKey []byte
 
 //go:embed mapping/aws/resource/transfer/aws_transfer_user.json
 var awsTransferUser []byte
@@ -3338,7 +3338,7 @@ var awsSsmServiceSetting []byte
 var awsSsmquicksetupConfigurationManager []byte
 
 //go:embed mapping/aws/resource/wafregional/aws_wafregional_web_acl_association.json
-var awsWafregionalWebAclAssociation []byte
+var awsWafregionalWebACLAssociation []byte
 
 //go:embed mapping/aws/resource/bedrock/aws_bedrockagent_agent_collaborator.json
 var awsBedrockagentAgentCollaborator []byte
@@ -3479,7 +3479,7 @@ var awsRdsCertificate []byte
 var awsRdsClusterSnapshotCopy []byte
 
 //go:embed mapping/aws/resource/rds/aws_rds_custom_db_engine_version.json
-var awsRdsCustomDbEngineVersion []byte
+var awsRdsCustomDBEngineVersion []byte
 
 //go:embed mapping/aws/resource/rds/aws_rds_export_task.json
 var awsRdsExportTask []byte

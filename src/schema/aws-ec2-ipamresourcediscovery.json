@@ -45,7 +45,9 @@
       "permissions": [
         "ec2:CreateIpamResourceDiscovery",
         "ec2:DescribeIpamResourceDiscoveries",
-        "ec2:CreateTags"
+        "ec2:ModifyIpamResourceDiscovery",
+        "ec2:CreateTags",
+        "iam:CreateServiceLinkedRole"
       ]
     },
     "delete": {

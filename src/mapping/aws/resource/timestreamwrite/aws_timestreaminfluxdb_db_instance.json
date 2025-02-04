@@ -32,7 +32,9 @@
       "timestream-influxdb:GetDbInstance",
       "timestream-influxdb:ListDbInstances",
       "timestream-influxdb:UpdateDbInstance",
-      "timestream-influxdb:ListTagsForResource"
+      "timestream-influxdb:ListTagsForResource",
+      "ec2:DescribeSubnets",
+      "ec2:DescribeVpcs"
     ],
     "plan": [
       "timestream-influxdb:GetDbInstance",

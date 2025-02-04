@@ -146,6 +146,11 @@
   "required": [],
   "tagging": {
     "cloudFormationSystemTags": false,
+    "permissions": [
+      "medical-imaging:TagResource",
+      "medical-imaging:UntagResource",
+      "medical-imaging:ListTagsForResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": false,

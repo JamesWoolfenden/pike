@@ -388,7 +388,6 @@
     },
     "update": {
       "permissions": [
-        "acm-pca:ListTags",
         "acm-pca:TagCertificateAuthority",
         "acm-pca:UntagCertificateAuthority",
         "acm-pca:UpdateCertificateAuthority"
@@ -473,7 +472,6 @@
     "/properties/Subject",
     "/properties/Subject",
     "/properties/CsrExtensions",
-    "/properties/Tags",
     "/properties/RevocationConfiguration",
     "/properties/KeyStorageSecurityStandard"
   ]

@@ -79,6 +79,7 @@ func TestGetKeys(t *testing.T) {
 
 	nothing := map[string]bool{}
 	var bumpkis []string
+
 	myKeys := []string{"first"}
 
 	tests := []struct {
@@ -169,6 +170,7 @@ func TestGetMatches(t *testing.T) {
 				t.Errorf("GetMatches() error = %v, wantErr %v", err, tt.wantErr)
 				return
 			}
+
 			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("GetMatches() got = %v, want %v", got, tt.want)
 			}
@@ -240,9 +242,11 @@ func TestParse(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
 			setup(tt.args.name)
+
 			if err := Parse(tt.args.codebase, tt.args.name); (err != nil) != tt.wantErr {
 				t.Errorf("Parse() error = %v, wantErr %v", err, tt.wantErr)
 			}
+
 			teardown(tt.args.name)
 		})
 	}
@@ -289,9 +293,11 @@ func Test_add(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
 			got, got1 := add(tt.args.s, tt.args.m, tt.args.a)
+
 			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("add() got = %v, want %v", got, tt.want)
 			}
+
 			if !reflect.DeepEqual(got1, tt.want1) {
 				t.Errorf("add() got1 = %v, want %v", got1, tt.want1)
 			}
@@ -329,9 +335,11 @@ func TestAdd(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			gotSlice, gotMap := add(tt.s, tt.m, tt.a)
+
 			if !reflect.DeepEqual(gotSlice, tt.wantSlice) {
 				t.Errorf("add() gotSlice = %v, want %v", gotSlice, tt.wantSlice)
 			}
+
 			if !reflect.DeepEqual(gotMap, tt.wantMap) {
 				t.Errorf("add() gotMap = %v, want %v", gotMap, tt.wantMap)
 			}

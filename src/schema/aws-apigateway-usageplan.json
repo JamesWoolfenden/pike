@@ -3,19 +3,19 @@
   "definitions": {
     "ApiStage": {
       "additionalProperties": false,
-      "description": "API stage name of the associated API stage in a usage plan.",
+      "description": "",
       "properties": {
         "ApiId": {
-          "description": "API Id of the associated API stage in a usage plan.",
+          "description": "",
           "type": "string"
         },
         "Stage": {
-          "description": "API stage name of the associated API stage in a usage plan.",
+          "description": "",
           "type": "string"
         },
         "Throttle": {
           "additionalProperties": false,
-          "description": "Map containing method level throttling information for API stage in a usage plan.",
+          "description": "",
           "patternProperties": {
             ".*": {
               "$ref": "#/definitions/ThrottleSettings"
@@ -31,17 +31,17 @@
       "description": "``QuotaSettings`` is a property of the [AWS::ApiGateway::UsagePlan](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html) resource that specifies a target for the maximum number of requests users can make to your REST APIs.\n In some cases clients can exceed the targets that you set. Don\u2019t rely on usage plans to control costs. Consider using [](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html) to monitor costs and [](https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html) to manage API requests.",
       "properties": {
         "Limit": {
-          "description": "The target maximum number of requests that can be made in a given time period.",
+          "description": "",
           "minimum": 0,
           "type": "integer"
         },
         "Offset": {
-          "description": "The number of requests subtracted from the given limit in the initial time period.",
+          "description": "",
           "minimum": 0,
           "type": "integer"
         },
         "Period": {
-          "description": "The time period in which the limit applies. Valid values are \"DAY\", \"WEEK\" or \"MONTH\".",
+          "description": "",
           "type": "string"
         }
       },
@@ -75,12 +75,12 @@
       "description": "``ThrottleSettings`` is a property of the [AWS::ApiGateway::UsagePlan](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html) resource that specifies the overall request rate (average requests per second) and burst capacity when users call your REST APIs.",
       "properties": {
         "BurstLimit": {
-          "description": "The API target request burst rate limit. This allows more requests through for a period of time than the target rate limit.",
+          "description": "",
           "minimum": 0,
           "type": "integer"
         },
         "RateLimit": {
-          "description": "The API target request rate limit.",
+          "description": "",
           "minimum": 0,
           "type": "number"
         }
@@ -128,7 +128,7 @@
   ],
   "properties": {
     "ApiStages": {
-      "description": "The associated API stages of a usage plan.",
+      "description": "",
       "items": {
         "$ref": "#/definitions/ApiStage"
       },
@@ -136,7 +136,7 @@
       "uniqueItems": true
     },
     "Description": {
-      "description": "The description of a usage plan.",
+      "description": "",
       "type": "string"
     },
     "Id": {
@@ -145,10 +145,10 @@
     },
     "Quota": {
       "$ref": "#/definitions/QuotaSettings",
-      "description": "The target maximum number of permitted requests per a given unit time interval."
+      "description": ""
     },
     "Tags": {
-      "description": "The collection of tags. Each tag element is associated with a given resource.",
+      "description": "",
       "insertionOrder": false,
       "items": {
         "$ref": "#/definitions/Tag"
@@ -158,10 +158,10 @@
     },
     "Throttle": {
       "$ref": "#/definitions/ThrottleSettings",
-      "description": "A map containing method level throttling information for API stage in a usage plan."
+      "description": ""
     },
     "UsagePlanName": {
-      "description": "The name of a usage plan.",
+      "description": "",
       "type": "string"
     }
   },

@@ -16,7 +16,9 @@
       "description": "The ReplicationSet regional configuration.",
       "properties": {
         "SseKmsKeyId": {
-          "$ref": "#/definitions/Arn"
+          "description": "The AWS Key Management Service key ID or Key Alias to use to encrypt your replication set.",
+          "maxLength": 2048,
+          "type": "string"
         }
       },
       "required": [
@@ -155,6 +157,11 @@
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-ssm-incidents.git",
   "tagging": {
     "cloudFormationSystemTags": false,
+    "permissions": [
+      "ssm-incidents:TagResource",
+      "ssm-incidents:UntagResource",
+      "ssm-incidents:ListTagsForResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

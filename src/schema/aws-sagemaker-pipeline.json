@@ -173,5 +173,17 @@
     "PipelineDefinition",
     "RoleArn"
   ],
+  "tagging": {
+    "cloudFormationSystemTags": true,
+    "permissions": [
+      "sagemaker:AddTags",
+      "sagemaker:ListTags",
+      "sagemaker:DeleteTags"
+    ],
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": true,
+    "taggable": true
+  },
   "typeName": "AWS::SageMaker::Pipeline"
 }

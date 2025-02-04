@@ -1,6 +1,6 @@
 # todo aws
 
-Resource percentage coverage   87.75
+Resource percentage coverage   82.43
 Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_cognito_managed_user_pool_client
@@ -70,7 +70,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_main_route_table_association
 ./resource.ps1 aws_memorydb_multi_region_cluster
 ./resource.ps1 aws_msk_single_scram_secret_association
-./resource.ps1 aws_mskconnect_connector
+
 ./resource.ps1 aws_mskconnect_custom_plugin
 ./resource.ps1 aws_mskconnect_worker_configuration
 ./resource.ps1 aws_neptune_global_cluster

@@ -1,0 +1,61 @@
+[
+  {
+    "apply": [
+      "kafkaconnect:CreateConnector",
+      "kafkaconnect:DescribeConnector",
+      "kafkaconnect:ListTagsForResource",
+      "iam:CreateServiceLinkedRole",
+      "iam:PassRole",
+      "ec2:CreateNetworkInterface",
+      "ec2:DescribeSecurityGroups",
+      "ec2:DescribeSubnets",
+      "ec2:DescribeVpcs",
+      "logs:CreateLogDelivery",
+      "logs:GetLogDelivery",
+      "logs:ListLogDeliveries",
+      "logs:PutResourcePolicy",
+      "logs:DescribeResourcePolicies",
+      "logs:DescribeLogGroups",
+      "s3:GetBucketPolicy",
+      "s3:PutBucketPolicy",
+      "firehose:TagDeliveryStream",
+      "kafkaconnect:UpdateConnector",
+      "kafkaconnect:DeleteConnector",
+      "logs:DeleteLogDelivery",
+      "logs:UpdateLogDelivery"
+    ],
+    "attributes": {
+      "tags": [
+        "kafkaconnect:TagResource",
+        "kafkaconnect:UntagResource"
+      ]
+    },
+    "destroy": [
+      "kafkaconnect:DeleteConnector",
+      "kafkaconnect:DescribeConnector",
+      "logs:DeleteLogDelivery",
+      "logs:GetLogDelivery",
+      "logs:ListLogDeliveries"
+    ],
+    "modify": [
+      "kafkaconnect:UpdateConnector",
+      "kafkaconnect:DescribeConnector",
+      "kafkaconnect:DescribeConnectorOperation",
+      "kafkaconnect:ListTagsForResource",
+      "iam:CreateServiceLinkedRole",
+      "logs:UpdateLogDelivery",
+      "logs:GetLogDelivery",
+      "logs:ListLogDeliveries",
+      "logs:PutResourcePolicy",
+      "logs:DescribeResourcePolicies",
+      "logs:DescribeLogGroups",
+      "s3:GetBucketPolicy",
+      "s3:PutBucketPolicy",
+      "firehose:TagDeliveryStream"
+    ],
+    "plan": [
+      "kafkaconnect:DescribeConnector",
+      "kafkaconnect:ListTagsForResource"
+    ]
+  }
+]

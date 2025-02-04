@@ -1659,6 +1659,7 @@
     },
     "update": {
       "permissions": [
+        "appflow:DescribeFlow",
         "appflow:UpdateFlow",
         "appflow:StartFlow",
         "appflow:StopFlow",
@@ -1762,7 +1763,13 @@
   "sourceUrl": "https://docs.aws.amazon.com/appflow/latest/userguide/what-is-appflow.html",
   "tagging": {
     "cloudFormationSystemTags": false,
+    "permissions": [
+      "appflow:TagResource",
+      "appflow:UntagResource",
+      "appflow:ListTagsForResource"
+    ],
     "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
     "tagUpdatable": false,
     "taggable": true
   },

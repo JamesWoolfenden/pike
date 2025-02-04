@@ -729,6 +729,10 @@
         "S3OriginConfig": {
           "$ref": "#/definitions/S3OriginConfig",
           "description": "Use this type to specify an origin that is an Amazon S3 bucket that is not configured with static website hosting. To specify any other type of origin, including an Amazon S3 bucket that is configured with static website hosting, use the ``CustomOriginConfig`` type instead."
+        },
+        "VpcOriginConfig": {
+          "$ref": "#/definitions/VpcOriginConfig",
+          "description": ""
         }
       },
       "required": [
@@ -972,6 +976,27 @@
           "type": "string"
         }
       },
+      "type": "object"
+    },
+    "VpcOriginConfig": {
+      "additionalProperties": false,
+      "description": "",
+      "properties": {
+        "OriginKeepaliveTimeout": {
+          "default": 5,
+          "type": "integer"
+        },
+        "OriginReadTimeout": {
+          "default": 30,
+          "type": "integer"
+        },
+        "VpcOriginId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "VpcOriginId"
+      ],
       "type": "object"
     }
   },

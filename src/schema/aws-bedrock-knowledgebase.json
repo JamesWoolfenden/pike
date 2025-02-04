@@ -36,6 +36,14 @@
           "maximum": 4096,
           "minimum": 0,
           "type": "integer"
+        },
+        "EmbeddingDataType": {
+          "description": "The data type for the vectors when using a model to convert text into vector embeddings.",
+          "enum": [
+            "FLOAT32",
+            "BINARY"
+          ],
+          "type": "string"
         }
       },
       "type": "object"

@@ -16,7 +16,14 @@
     "destroy": [
       "cloudwatch:DeleteMetricStream"
     ],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "cloudwatch:PutMetricStream",
+      "cloudwatch:GetMetricStream",
+      "iam:PassRole"
+    ],
+    "plan": [
+      "cloudwatch:GetMetricStream",
+      "cloudwatch:ListTagsForResource"
+    ]
   }
 ]

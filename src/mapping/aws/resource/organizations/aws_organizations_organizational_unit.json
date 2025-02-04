@@ -5,7 +5,8 @@
       "organizations:DescribeOrganizationalUnit",
       "organizations:ListParents",
       "organizations:ListTagsForResource",
-      "organizations:UpdateOrganizationalUnit"
+      "organizations:UpdateOrganizationalUnit",
+      "organizations:ListOrganizationalUnitsForParent"
     ],
     "attributes": {
       "tags": [

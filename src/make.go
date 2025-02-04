@@ -2,7 +2,6 @@ package pike
 
 import (
 	"context"
-	"errors"
 	"fmt"
 	"os"
 	"os/exec"
@@ -50,7 +49,7 @@ func Make(directory string) (*string, error) {
 
 		myValue, ok := arn.Value.(string)
 		if !ok {
-			return nil, fmt.Errorf("arn value is not a string")
+			return nil, &castToStringError{"arn"}
 		}
 
 		log.Info().Msgf("aws role create/updated %s", myValue)
@@ -58,13 +57,27 @@ func Make(directory string) (*string, error) {
 		role, ok := arn.Value.(string)
 
 		if !ok {
-			return nil, fmt.Errorf("arn value is not a string")
+			return nil, &castToStringError{"arn"}
 		}
 
 		return &role, nil
 	}
 
-	return nil, errors.New("no arn found in state")
+	return nil, &arnNotFoundInStateError{}
+}
+
+type castToStringError struct {
+	value string
+}
+
+func (e *castToStringError) Error() string {
+	return fmt.Sprint("cannot convert ", e.value, " to a string")
+}
+
+type arnNotFoundInStateError struct{}
+
+func (e *arnNotFoundInStateError) Error() string {
+	return "no arn found in state"
 }
 
 func tfApply(policyPath string) (*tfexec.Terraform, error) {
@@ -75,7 +88,7 @@ func tfApply(policyPath string) (*tfexec.Terraform, error) {
 
 	terraform, err := tfexec.NewTerraform(policyPath, tfPath)
 	if err != nil {
-		return nil, err
+		return nil, &terraformNewError{err: err}
 	}
 
 	err = terraform.Init(context.Background(), tfexec.Upgrade(true))
@@ -88,7 +101,7 @@ func tfApply(policyPath string) (*tfexec.Terraform, error) {
 
 	err = terraform.Apply(ctx)
 	if err != nil {
-		return nil, &terraformApplyError{err: err}
+		return nil, &terraformApplyError{err: err, target: policyPath}
 	}
 
 	return terraform, nil
@@ -166,12 +179,14 @@ func tfPlan(policyPath string) error {
 
 	cmd = exec.CommandContext(ctx, terraform.ExecPath(), chdir, "show", "--json", "tf.plan")
 	stdout, err = cmd.Output()
+
 	if err != nil {
 		return &terraformPlanError{err}
 	}
 
 	outfile := filepath.Join(policyPath, "tf.json")
 	err = os.WriteFile(outfile, stdout, 0o666)
+
 	if err != nil {
 		return &writeFileError{file: outfile, err: err}
 	}

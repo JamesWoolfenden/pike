@@ -51,7 +51,8 @@
     "list": {
       "permissions": [
         "neptune-graph:GetPrivateGraphEndpoint",
-        "neptune-graph:ListPrivateGraphEndpoints"
+        "neptune-graph:ListPrivateGraphEndpoints",
+        "neptune-graph:ListGraphs"
       ],
       "timeoutInMinutes": 2160
     },

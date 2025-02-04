@@ -96,6 +96,7 @@
     "permissions": [
       "ec2:CreateTags"
     ],
+    "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": false,
     "taggable": true

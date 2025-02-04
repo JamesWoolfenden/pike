@@ -50,6 +50,7 @@
   "handlers": {
     "create": {
       "permissions": [
+        "backup-gateway:ListTagsForResource",
         "backup-gateway:ImportHypervisorConfiguration",
         "backup-gateway:GetHypervisor",
         "backup-gateway:ListHypervisors",
@@ -74,7 +75,8 @@
     "read": {
       "permissions": [
         "backup-gateway:GetHypervisor",
-        "backup-gateway:ListHypervisors"
+        "backup-gateway:ListHypervisors",
+        "backup-gateway:ListTagsForResource"
       ]
     },
     "update": {
@@ -83,7 +85,8 @@
         "backup-gateway:GetHypervisor",
         "backup-gateway:ListHypervisors",
         "backup-gateway:ImportHypervisorConfiguration",
-        "backup-gateway:DeleteHypervisor"
+        "backup-gateway:DeleteHypervisor",
+        "backup-gateway:ListTagsForResource"
       ]
     }
   },
@@ -145,6 +148,11 @@
   ],
   "tagging": {
     "cloudFormationSystemTags": true,
+    "permissions": [
+      "backup-gateway:UntagResource",
+      "backup-gateway:TagResource",
+      "backup-gateway:ListTagsForResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": false,
@@ -156,7 +164,6 @@
     "/properties/LogGroupArn",
     "/properties/Name",
     "/properties/Password",
-    "/properties/Tags",
     "/properties/Username"
   ]
 }

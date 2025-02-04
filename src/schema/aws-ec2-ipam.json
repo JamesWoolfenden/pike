@@ -46,7 +46,9 @@
         "ec2:CreateIpam",
         "iam:CreateServiceLinkedRole",
         "ec2:CreateTags",
-        "ec2:DescribeIpams"
+        "ec2:DescribeIpams",
+        "ec2:DescribeIpamResourceDiscoveries",
+        "ec2:ModifyIpamResourceDiscovery"
       ]
     },
     "delete": {
@@ -63,7 +65,8 @@
     },
     "read": {
       "permissions": [
-        "ec2:DescribeIpams"
+        "ec2:DescribeIpams",
+        "ec2:DescribeIpamResourceDiscoveries"
       ]
     },
     "update": {
@@ -71,7 +74,9 @@
         "ec2:ModifyIpam",
         "ec2:CreateTags",
         "ec2:DeleteTags",
-        "ec2:DescribeIpams"
+        "ec2:DescribeIpams",
+        "ec2:DescribeIpamResourceDiscoveries",
+        "ec2:ModifyIpamResourceDiscovery"
       ]
     }
   },

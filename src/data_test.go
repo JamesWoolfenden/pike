@@ -76,6 +76,7 @@ func TestGetResources(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
+
 			got, err := pike.GetResources(tt.args.file, tt.args.dirName)
 
 			if (err != nil) != tt.wantErr {
@@ -382,11 +383,13 @@ func TestGetPermission(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
 			got, err := pike.GetPermission(tt.args.result)
+
 			if (err != nil) != tt.wantErr {
 				t.Errorf("GetPermission() error = %v, wantErr %v", err, tt.wantErr)
 
 				return
 			}
+
 			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("GetPermission() = %v, want %v", got, tt.want)
 			}
@@ -434,12 +437,15 @@ func TestGetResourceBlocks(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
+
 			got, err := pike.GetResourceBlocks(tt.args.file)
+
 			if (err != nil) != tt.wantErr {
 				t.Errorf("GetResourceBlocks() error = %v, wantErr %v", err, tt.wantErr)
 
 				return
 			}
+
 			if !reflect.DeepEqual(got.SrcRange, tt.want) {
 				t.Errorf("GetResourceBlocks() = %v, want %v", got.SrcRange, tt.want)
 			}
@@ -542,6 +548,7 @@ func TestDetectBackend(t *testing.T) {
 
 			if (err != nil) != tt.wantErr {
 				t.Errorf("DetectBackend() error = %v, wantErr %v", err, tt.wantErr)
+
 				return
 			}
 

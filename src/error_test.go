@@ -382,6 +382,7 @@ func TestEmptyTypeNameError(t *testing.T) {
 	t.Run("implements error interface", func(t *testing.T) {
 		t.Parallel()
 		var err error = &emptyTypeNameError{} // Verify it satisfies error interface
+
 		if err == nil {
 			t.Error("emptyTypeNameError should implement error interface")
 		}
@@ -645,6 +646,7 @@ func TestDirectoryErrors(t *testing.T) {
 	t.Run("empty directory error", func(t *testing.T) {
 		err := &emptyDirectoryError{}
 		expected := "directory value cannot be an empty string"
+
 		if err.Error() != expected {
 			t.Errorf("expected %q, got %q", expected, err.Error())
 		}
@@ -653,6 +655,7 @@ func TestDirectoryErrors(t *testing.T) {
 	t.Run("directory not found error", func(t *testing.T) {
 		err := &directoryNotFoundError{directory: "/tmp/nonexistent"}
 		expected := "directory does not exist: /tmp/nonexistent"
+
 		if err.Error() != expected {
 			t.Errorf("expected %q, got %q", expected, err.Error())
 		}
@@ -663,12 +666,14 @@ func TestARNErrors(t *testing.T) {
 	t.Run("empty ARN error", func(t *testing.T) {
 		err := &arnEmptyError{}
 		expected := "ARN cannot be empty"
+
 		if err.Error() != expected {
 			t.Errorf("expected %q, got %q", expected, err.Error())
 		}
 	})
 
 	t.Run("invalid ARN error", func(t *testing.T) {
+		t.Parallel()
 		err := &invalidARNError{arn: "invalid:arn"}
 		expected := "invalid ARN: invalid:arn"
 
@@ -679,7 +684,9 @@ func TestARNErrors(t *testing.T) {
 }
 
 func TestAWSErrors(t *testing.T) {
+
 	t.Run("AWS config error", func(t *testing.T) {
+		t.Parallel()
 		err := &awsConfigError{err: &emptyNameError{}}
 		expected := "failed to load AWS config: Name cannot be empty"
 
@@ -689,6 +696,7 @@ func TestAWSErrors(t *testing.T) {
 	})
 
 	t.Run("get IAM version error", func(t *testing.T) {
+		t.Parallel()
 		err := &getIAMVersionError{err: &emptyNameError{}}
 		expected := "failed to get IAM version: Name cannot be empty"
 
@@ -727,6 +735,7 @@ func TestPolicyErrors(t *testing.T) {
 	})
 
 	t.Run("marshall policy error", func(t *testing.T) {
+		t.Parallel()
 		err := &marshallPolicyError{err: &emptyNameError{}}
 		expected := "failed to marshal policy: Name cannot be empty"
 

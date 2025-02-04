@@ -6,7 +6,9 @@
       "ec2:DescribeIpams",
       "ec2:DeleteIpam",
       "ec2:ModifyIpam",
-      "ec2:DescribeTags"
+      "ec2:DescribeTags",
+      "ec2:DescribeIpamResourceDiscoveries",
+      "ec2:ModifyIpamResourceDiscovery"
     ],
     "attributes": {
       "tags": [
@@ -18,8 +20,13 @@
       "ec2:DeleteIpam"
     ],
     "modify": [
-      "ec2:ModifyIpam"
+      "ec2:ModifyIpam",
+      "ec2:DescribeIpamResourceDiscoveries",
+      "ec2:ModifyIpamResourceDiscovery"
     ],
-    "plan": []
+    "plan": [
+      "ec2:DescribeIpams",
+      "ec2:DescribeIpamResourceDiscoveries"
+    ]
   }
 ]

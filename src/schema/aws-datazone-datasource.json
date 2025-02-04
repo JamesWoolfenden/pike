@@ -1,6 +1,7 @@
 {
   "additionalProperties": false,
   "createOnlyProperties": [
+    "/properties/ConnectionIdentifier",
     "/properties/EnvironmentIdentifier",
     "/properties/DomainIdentifier",
     "/properties/ProjectIdentifier",
@@ -146,6 +147,12 @@
           "description": "Specifies whether to automatically import data quality metrics as part of the data source run.",
           "type": "boolean"
         },
+        "CatalogName": {
+          "description": "The catalog name in the AWS Glue run configuration.",
+          "maxLength": 128,
+          "minLength": 1,
+          "type": "string"
+        },
         "DataAccessRole": {
           "$ref": "#/definitions/DataAccessRole",
           "description": "The data access role included in the configuration details of the AWS Glue data source."
@@ -229,8 +236,6 @@
         }
       },
       "required": [
-        "RedshiftCredentialConfiguration",
-        "RedshiftStorage",
         "RelationalFilterConfigurations"
       ],
       "type": "object"
@@ -454,6 +459,14 @@
       "$ref": "#/definitions/DataSourceConfigurationInput",
       "description": "Configuration of the data source. It can be set to either glueRunConfiguration or redshiftRunConfiguration."
     },
+    "ConnectionId": {
+      "description": "The unique identifier of a connection used to fetch relevant parameters from connection during Datasource run",
+      "type": "string"
+    },
+    "ConnectionIdentifier": {
+      "description": "The unique identifier of a connection used to fetch relevant parameters from connection during Datasource run",
+      "type": "string"
+    },
     "CreatedAt": {
       "description": "The timestamp of when the data source was created.",
       "format": "date-time",
@@ -480,7 +493,6 @@
     },
     "EnvironmentId": {
       "description": "The unique identifier of the Amazon DataZone environment to which the data source publishes assets.",
-      "pattern": "^[a-zA-Z0-9_-]{1,36}$",
       "type": "string"
     },
     "EnvironmentIdentifier": {
@@ -548,6 +560,7 @@
     }
   },
   "readOnlyProperties": [
+    "/properties/ConnectionId",
     "/properties/CreatedAt",
     "/properties/DomainId",
     "/properties/EnvironmentId",
@@ -563,7 +576,6 @@
     "Name",
     "DomainIdentifier",
     "ProjectIdentifier",
-    "EnvironmentIdentifier",
     "Type"
   ],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-datazone",
@@ -576,6 +588,7 @@
   "typeName": "AWS::DataZone::DataSource",
   "writeOnlyProperties": [
     "/properties/AssetFormsInput",
+    "/properties/ConnectionIdentifier",
     "/properties/EnvironmentIdentifier",
     "/properties/DomainIdentifier",
     "/properties/Configuration",

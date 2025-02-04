@@ -3,7 +3,8 @@
     "apply": [
       "sso:CreateApplication",
       "sso:DescribeApplication",
-      "sso:DeleteApplication"
+      "sso:DeleteApplication",
+      "sso:ListTagsForResource"
     ],
     "attributes": {
       "tags": [

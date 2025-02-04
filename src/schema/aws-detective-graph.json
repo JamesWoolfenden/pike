@@ -26,13 +26,16 @@
     "create": {
       "permissions": [
         "detective:CreateGraph",
+        "detective:ListGraphs",
+        "detective:TagResource",
         "detective:UpdateOrganizationConfiguration",
         "organizations:DescribeOrganization"
       ]
     },
     "delete": {
       "permissions": [
-        "detective:DeleteGraph"
+        "detective:DeleteGraph",
+        "detective:ListGraphs"
       ]
     },
     "list": {
@@ -53,6 +56,7 @@
     },
     "update": {
       "permissions": [
+        "detective:ListGraphs",
         "detective:UntagResource",
         "detective:TagResource",
         "detective:ListTagsForResource",

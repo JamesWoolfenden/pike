@@ -80,7 +80,8 @@
       "permissions": [
         "sso:CreateApplication",
         "sso:DescribeApplication",
-        "sso:TagResource"
+        "sso:TagResource",
+        "sso:ListTagsForResource"
       ]
     },
     "delete": {
@@ -100,7 +101,8 @@
         ]
       },
       "permissions": [
-        "sso:ListApplications"
+        "sso:ListApplications",
+        "sso:ListTagsForResource"
       ]
     },
     "read": {
@@ -191,6 +193,10 @@
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-sso/aws-sso-application",
   "tagging": {
     "cloudFormationSystemTags": true,
+    "permissions": [
+      "sso:TagResource",
+      "sso:UntagResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

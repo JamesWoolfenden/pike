@@ -13,7 +13,8 @@
       "eks:CreateAccessEntry",
       "eks:DescribeCluster",
       "iam:CreateServiceLinkedRole",
-      "iam:DeleteServiceLinkedRole"
+      "iam:DeleteServiceLinkedRole",
+      "iam:PassRole"
     ],
     "attributes": {
       "tags": [
@@ -36,7 +37,8 @@
       "aps:DescribeScraper",
       "aps:UpdateScraper",
       "aps:DescribeWorkspace",
-      "aps:ListTagsForResource"
+      "aps:ListTagsForResource",
+      "iam:PassRole"
     ],
     "plan": [
       "aps:DescribeScraper",

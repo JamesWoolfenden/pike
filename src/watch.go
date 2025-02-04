@@ -3,7 +3,6 @@ package pike
 import (
 	"context"
 	"encoding/json"
-	"errors"
 	"fmt"
 	"net/url"
 	"reflect"
@@ -69,7 +68,13 @@ func WaitForPolicyChange(client *iam.Client, arn string, version string, wait, p
 		log.Print("Not equal")
 	}
 
-	return wait, errors.New("wait expired with no change")
+	return wait, &waitExpiredError{}
+}
+
+type waitExpiredError struct{}
+
+func (e *waitExpiredError) Error() string {
+	return "wait expired with no change"
 }
 
 // GetVersion gets the version of the IAM policy.
@@ -115,18 +120,25 @@ func GetPolicyVersion(client *iam.Client, policyArn string, version string) (*st
 	return fixed, err
 }
 
+type castToListOfInterfaceError struct{}
+
+func (e *castToListOfInterfaceError) Error() string {
+	return "failed to convert to list of interfaces"
+}
+
 // SortActions sorts the actions list of an IAM policy.
 func SortActions(myPolicy string) (*string, error) {
 	var raw map[string]interface{}
 	err := json.Unmarshal([]byte(myPolicy), &raw)
+
 	if err != nil {
-		return nil, err
+		return nil, &unmarshallJSONError{err, myPolicy}
 	}
 
 	Statements, ok := raw["Statement"].([]interface{})
 
 	if !ok {
-		return nil, fmt.Errorf("failed to assert list of interface for Statements")
+		return nil, &castToListOfInterfaceError{}
 	}
 
 	var NewStatements []interface{}
@@ -160,13 +172,14 @@ func SortActions(myPolicy string) (*string, error) {
 	}
 
 	fixed, err := json.Marshal(raw)
+
 	if err != nil {
 		return nil, &marshallPolicyError{err}
 	}
 
 	result := string(fixed)
 
-	return &result, err
+	return &result, nil
 }
 
 func sortInterfaceStrings(actions interface{}) []string {

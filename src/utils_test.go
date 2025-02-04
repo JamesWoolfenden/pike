@@ -25,6 +25,7 @@ func Test_randSeq(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
+
 			if got := pike.RandSeq(tt.args.n); len(got) != tt.want {
 				t.Errorf("RandSeq() = %v, want %v", got, tt.want)
 			}

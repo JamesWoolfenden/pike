@@ -369,6 +369,9 @@
         },
         "ReadOnly": {
           "type": "boolean"
+        },
+        "SubPath": {
+          "type": "string"
         }
       },
       "type": "object"
@@ -397,6 +400,15 @@
     "EksMetadata": {
       "additionalProperties": false,
       "properties": {
+        "Annotations": {
+          "additionalProperties": false,
+          "patternProperties": {
+            ".*": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
         "Labels": {
           "additionalProperties": false,
           "patternProperties": {
@@ -405,8 +417,26 @@
             }
           },
           "type": "object"
+        },
+        "Namespace": {
+          "type": "string"
         }
       },
+      "type": "object"
+    },
+    "EksPersistentVolumeClaim": {
+      "additionalProperties": false,
+      "properties": {
+        "ClaimName": {
+          "type": "string"
+        },
+        "ReadOnly": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "ClaimName"
+      ],
       "type": "object"
     },
     "EksPodProperties": {
@@ -497,6 +527,9 @@
         },
         "Name": {
           "type": "string"
+        },
+        "PersistentVolumeClaim": {
+          "$ref": "#/definitions/EksPersistentVolumeClaim"
         },
         "Secret": {
           "$ref": "#/definitions/EksSecret"

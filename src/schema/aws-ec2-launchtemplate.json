@@ -334,7 +334,7 @@
           "description": "The minimum and maximum amount of total accelerator memory, in MiB.\n Default: No minimum or maximum limits"
         },
         "AcceleratorTypes": {
-          "description": "The accelerator types that must be on the instance type.\n  +  For instance types with GPU accelerators, specify ``gpu``.\n  +  For instance types with FPGA accelerators, specify ``fpga``.\n  \n Default: Any accelerator type",
+          "description": "The accelerator types that must be on the instance type.\n  +  For instance types with FPGA accelerators, specify ``fpga``.\n  +  For instance types with GPU accelerators, specify ``gpu``.\n  +  For instance types with Inference accelerators, specify ``inference``.\n  \n Default: Any accelerator type",
           "items": {
             "type": "string"
           },
@@ -808,7 +808,7 @@
           "type": "string"
         },
         "DeviceIndex": {
-          "description": "The device index for the network interface attachment. Each network interface requires a device index. If you create a launch template that includes secondary network interfaces but not a primary network interface, then you must add a primary network interface as a launch parameter when you launch an instance from the template.",
+          "description": "The device index for the network interface attachment. If the network interface is of type ``interface``, you must specify a device index.\n If you create a launch template that includes secondary network interfaces but no primary network interface, and you specify it using the ``LaunchTemplate`` property of ``AWS::EC2::Instance``, then you must include a primary network interface using the ``NetworkInterfaces`` property of ``AWS::EC2::Instance``.",
           "type": "integer"
         },
         "EnaSrdSpecification": {

@@ -2,7 +2,6 @@ package pike
 
 import (
 	"context"
-	"errors"
 	"fmt"
 	"io"
 	"net/http"
@@ -151,6 +150,7 @@ func (m *listBranchesError) Error() string {
 func VerifyBranch(client *github.Client, owner string, repo string, branch string) error {
 	ctx := context.Background()
 	branches, _, err := client.Repositories.ListBranches(ctx, owner, repo, nil)
+
 	if err != nil {
 		return &listBranchesError{err}
 	}
@@ -168,7 +168,16 @@ func VerifyBranch(client *github.Client, owner string, repo string, branch strin
 		return nil
 	}
 
-	return errors.New("branch " + branch + " not found for " + repo)
+	return &branchNotFoundError{branch, repo}
+}
+
+type branchNotFoundError struct {
+	branch string
+	repo   string
+}
+
+func (m *branchNotFoundError) Error() string {
+	return fmt.Sprintf("branch %s not found for repo %s", m.branch, m.repo)
 }
 
 // VerifyURL tests a url.

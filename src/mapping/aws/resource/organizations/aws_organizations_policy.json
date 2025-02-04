@@ -8,7 +8,8 @@
       "organizations:AttachPolicy",
       "organizations:DetachPolicy",
       "organizations:ListTagsForResource",
-      "organizations:ListTargetsForPolicy"
+      "organizations:ListTargetsForPolicy",
+      "organizations:ListPolicies"
     ],
     "attributes": {
       "tags": [

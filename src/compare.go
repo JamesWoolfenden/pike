@@ -91,6 +91,7 @@ func (m *compareDifferenceError) Error() string {
 func CompareIAMPolicy(policy string, oldPolicy string) (bool, error) {
 	differ := diff.New()
 	compare, err := differ.Compare([]byte(policy), []byte(oldPolicy))
+
 	if err != nil {
 		return false, &compareDifferenceError{err}
 	}
@@ -113,6 +114,7 @@ func (m *formatterError) Error() string {
 func ShowDifferences(policy string, compare diff.Diff) (bool, error) {
 	var aJSON map[string]interface{}
 	err := json.Unmarshal([]byte(policy), &aJSON)
+
 	if err != nil {
 		return false, &marshallPolicyError{err}
 	}
@@ -124,6 +126,7 @@ func ShowDifferences(policy string, compare diff.Diff) (bool, error) {
 
 	myFormatter := formatter.NewAsciiFormatter(aJSON, myConfig)
 	diffString, err := myFormatter.Format(compare)
+
 	if err != nil {
 		return false, &formatterError{err}
 	}

@@ -125,7 +125,7 @@ var awsLightsailLbCertificate []byte
 var awsLightsailLbCertificateAttachment []byte
 
 //go:embed mapping/aws/resource/lightsail/aws_lightsail_lb_https_redirection_policy.json
-var awsLightsailLbHttpsRedirectionPolicy []byte
+var awsLightsailLbHTTPSRedirectionPolicy []byte
 
 //go:embed mapping/aws/resource/lightsail/aws_lightsail_lb_stickiness_policy.json
 var awsLightsailLbStickinessPolicy []byte
@@ -236,7 +236,7 @@ var awsOpsworksPhpAppLayer []byte
 var awsOpsworksRailsAppLayer []byte
 
 //go:embed mapping/aws/resource/opsworks/aws_opsworks_rds_db_instance.json
-var awsOpsworksRdsDbInstance []byte
+var awsOpsworksRdsDBInstance []byte
 
 //go:embed mapping/aws/resource/opsworks/aws_opsworks_stack.json
 var awsOpsworksStack []byte
@@ -246,3 +246,6 @@ var awsOpsworksStaticWebLayer []byte
 
 //go:embed mapping/aws/resource/opsworks/aws_opsworks_user_profile.json
 var awsOpsworksUserProfile []byte
+
+//go:embed mapping/aws/resource/kafka/aws_mskconnect_connector.json
+var awsMskconnectConnector []byte

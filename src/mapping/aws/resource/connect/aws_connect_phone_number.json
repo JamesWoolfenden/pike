@@ -8,7 +8,9 @@
       "connect:ReleasePhoneNumber",
       "connect:ImportPhoneNumber",
       "sms-voice:DescribePhoneNumbers",
-      "connect:UpdatePhoneNumberMetadata"
+      "connect:UpdatePhoneNumberMetadata",
+      "social-messaging:GetLinkedWhatsAppBusinessAccountPhoneNumber",
+      "social-messaging:TagResource"
     ],
     "attributes": {
       "tags": [

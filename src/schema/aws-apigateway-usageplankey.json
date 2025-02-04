@@ -53,7 +53,7 @@
       "type": "string"
     },
     "KeyType": {
-      "description": "The type of a UsagePlanKey resource for a plan customer.",
+      "description": "",
       "enum": [
         "API_KEY"
       ],

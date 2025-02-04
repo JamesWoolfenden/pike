@@ -292,6 +292,7 @@ func Test_unique(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
+
 			if got := pike.Unique(tt.args.s); !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("Unique() = %v, want %v", got, tt.want)
 			}

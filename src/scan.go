@@ -139,6 +139,7 @@ func WriteOutput(outPolicy OutputPolicy, output, location string) error {
 
 	newPath, _ := filepath.Abs(location + "/.pike")
 	err := os.MkdirAll(newPath, os.ModePerm)
+
 	if err != nil {
 		return &makeDirectoryError{directory: newPath, err: err}
 	}
@@ -154,6 +155,7 @@ func WriteOutput(outPolicy OutputPolicy, output, location string) error {
 		if outPolicy.AWS.Terraform != "" {
 			roleFile := path.Join(newPath, "aws_iam_role.terraform_pike.tf")
 			err = os.WriteFile(roleFile, roleTemplate, 0o644)
+
 			if err != nil {
 				return &writeFileError{file: roleFile, err: err}
 			}
@@ -194,6 +196,7 @@ func Init(dirName string) (*string, []string, error) {
 
 	modulesDir := path.Join(dirName, dotTfModules)
 	modules, err := os.ReadDir(modulesDir)
+
 	if err != nil {
 		return &tfPath, nil, &readDirectoryError{directory: modulesDir, err: err}
 	}
@@ -338,8 +341,9 @@ func MakePolicy(dirName string, file *string, init bool, EnableResources bool, p
 // GetTF return tf files in a directory.
 func GetTF(dirName string) ([]string, error) {
 	files, err := GetTFFiles(dirName)
+
 	if err != nil {
-		return nil, fmt.Errorf("folder %s can't be found, may not be local path", dirName)
+		return nil, &directoryNotFoundError{dirName}
 	}
 
 	modulePath := path.Join(dirName, dotTfModules)

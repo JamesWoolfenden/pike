@@ -4,6 +4,7 @@
       "organizations:CreateAccount",
       "organizations:DescribeCreateAccountStatus",
       "organizations:MoveAccount",
+      "organizations:ListAccounts",
       "organizations:ListParents",
       "organizations:DescribeAccount",
       "organizations:ListTagsForResource",
