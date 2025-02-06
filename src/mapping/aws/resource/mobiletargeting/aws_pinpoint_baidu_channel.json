@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "mobiletargeting:GetBaiduChannel",
+      "mobiletargeting:DeleteBaiduChannel",
+      "mobiletargeting:UpdateBaiduChannel"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

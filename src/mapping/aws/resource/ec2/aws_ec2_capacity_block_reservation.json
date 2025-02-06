@@ -1,0 +1,32 @@
+[
+  {
+    "apply": [
+      "ec2:CreateCapacityReservation",
+      "ec2:DescribeCapacityReservations",
+      "ec2:CancelCapacityReservation",
+      "ec2:ModifyCapacityReservation",
+      "ec2:AssociateCapacityReservationBillingOwner"
+    ],
+    "attributes": {
+      "tags": [
+        "ec2:CreateTags",
+        "ec2:DeleteTags"
+      ]
+    },
+    "destroy": [
+      "ec2:CreateCapacityReservation",
+      "ec2:DescribeCapacityReservations",
+      "ec2:CancelCapacityReservation"
+    ],
+    "modify": [
+      "ec2:ModifyCapacityReservation",
+      "ec2:CreateCapacityReservation",
+      "ec2:DescribeCapacityReservations",
+      "ec2:CancelCapacityReservation",
+      "ec2:AssociateCapacityReservationBillingOwner"
+    ],
+    "plan": [
+      "ec2:DescribeCapacityReservations"
+    ]
+  }
+]

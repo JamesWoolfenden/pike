@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "dynamodb:DescribeExport",
+      "dynamodb:ExportTableToPointInTime"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

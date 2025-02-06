@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "ec2:AcceptTransitGatewayPeeringAttachment"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

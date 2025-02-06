@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "ec2:GetTransitGatewayPrefixListReferences",
+      "ec2:CreateTransitGatewayPrefixListReference",
+      "ec2:DeleteTransitGatewayPrefixListReference",
+      "ec2:ModifyTransitGatewayPrefixListReference"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

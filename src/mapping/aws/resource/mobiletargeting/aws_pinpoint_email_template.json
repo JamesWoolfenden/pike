@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "mobiletargeting:GetEmailTemplate",
+      "mobiletargeting:CreateEmailTemplate",
+      "mobiletargeting:DeleteEmailTemplate",
+      "mobiletargeting:UpdateEmailTemplate"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

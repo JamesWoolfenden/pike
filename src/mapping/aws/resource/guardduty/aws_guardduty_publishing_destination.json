@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "guardduty:DescribePublishingDestination",
+      "guardduty:CreatePublishingDestination",
+      "guardduty:DeletePublishingDestination",
+      "guardduty:UpdatePublishingDestination"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

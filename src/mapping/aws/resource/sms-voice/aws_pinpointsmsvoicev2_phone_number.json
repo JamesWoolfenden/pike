@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "sms-voice:ListTagsForResource",
+      "sms-voice:DescribePhoneNumbers",
+      "sms-voice:RequestPhoneNumber",
+      "sms-voice:UpdatePhoneNumber",
+      "sms-voice:ReleasePhoneNumber"
+    ],
+    "attributes": {
+      "tags": [
+        "sms-voice:TagResource",
+        "sms-voice:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

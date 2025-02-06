@@ -1,28 +1,10 @@
 # todo aws
 
-Resource percentage coverage   82.43
+Resource percentage coverage   90.93
 Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_cognito_managed_user_pool_client
-./resource.ps1 aws_dynamodb_kinesis_streaming_destination
-./resource.ps1 aws_dynamodb_resource_policy
-./resource.ps1 aws_dynamodb_table_export
-./resource.ps1 aws_dynamodb_table_replica
 ./resource.ps1 aws_ebs_fast_snapshot_restore
-./resource.ps1 aws_ebs_snapshot_import
-./resource.ps1 aws_ec2_capacity_block_reservation
-./resource.ps1 aws_ec2_instance_metadata_defaults
-./resource.ps1 aws_ec2_instance_state
-./resource.ps1 aws_ec2_managed_prefix_list_entry
-./resource.ps1 aws_ec2_subnet_cidr_reservation
-./resource.ps1 aws_ec2_transit_gateway_connect_peer
-./resource.ps1 aws_ec2_transit_gateway_default_route_table_association
-./resource.ps1 aws_ec2_transit_gateway_default_route_table_propagation
-./resource.ps1 aws_ec2_transit_gateway_peering_attachment_accepter
-./resource.ps1 aws_ec2_transit_gateway_policy_table
-./resource.ps1 aws_ec2_transit_gateway_policy_table_association
-./resource.ps1 aws_ec2_transit_gateway_prefix_list_reference
-./resource.ps1 aws_ec2_transit_gateway_vpc_attachment_accepter
 ./resource.ps1 aws_ecr_account_setting
 ./resource.ps1 aws_ecs_account_setting_default
 ./resource.ps1 aws_ecs_cluster_capacity_providers
@@ -34,15 +16,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_elasticsearch_vpc_endpoint
 ./resource.ps1 aws_grafana_role_association
 ./resource.ps1 aws_grafana_workspace_saml_configuration
-
-./resource.ps1 aws_guardduty_detector_feature
-./resource.ps1 aws_guardduty_invite_accepter
-./resource.ps1 aws_guardduty_member_detector_feature
-./resource.ps1 aws_guardduty_organization_admin_account
-./resource.ps1 aws_guardduty_organization_configuration
-./resource.ps1 aws_guardduty_organization_configuration_feature
-./resource.ps1 aws_guardduty_publishing_destination
-
 ./resource.ps1 aws_iam_group_policy_attachments_exclusive
 ./resource.ps1 aws_iam_organizations_features
 ./resource.ps1 aws_iam_role_policy_attachments_exclusive
@@ -55,12 +28,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_iot_thing_principal_attachment
 ./resource.ps1 aws_lb_listener_certificate
 ./resource.ps1 aws_lb_ssl_negotiation_policy
-./resource.ps1 aws_lexv2models_bot
-./resource.ps1 aws_lexv2models_bot_locale
-./resource.ps1 aws_lexv2models_bot_version
-./resource.ps1 aws_lexv2models_intent
-./resource.ps1 aws_lexv2models_slot
-./resource.ps1 aws_lexv2models_slot_type
 ./resource.ps1 aws_macie2_account
 ./resource.ps1 aws_macie2_classification_export_configuration
 ./resource.ps1 aws_macie2_classification_job
@@ -70,7 +37,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_main_route_table_association
 ./resource.ps1 aws_memorydb_multi_region_cluster
 ./resource.ps1 aws_msk_single_scram_secret_association
-
 ./resource.ps1 aws_mskconnect_custom_plugin
 ./resource.ps1 aws_mskconnect_worker_configuration
 ./resource.ps1 aws_neptune_global_cluster
@@ -89,21 +55,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_opensearch_package_association
 ./resource.ps1 aws_opensearch_vpc_endpoint
 ./resource.ps1 aws_organizations_delegated_administrator
-./resource.ps1 aws_pinpoint_adm_channel
-./resource.ps1 aws_pinpoint_apns_channel
-./resource.ps1 aws_pinpoint_apns_sandbox_channel
-./resource.ps1 aws_pinpoint_apns_voip_channel
-./resource.ps1 aws_pinpoint_apns_voip_sandbox_channel
-./resource.ps1 aws_pinpoint_app
-./resource.ps1 aws_pinpoint_baidu_channel
-./resource.ps1 aws_pinpoint_email_channel
-./resource.ps1 aws_pinpoint_email_template
-./resource.ps1 aws_pinpoint_event_stream
-./resource.ps1 aws_pinpoint_gcm_channel
-./resource.ps1 aws_pinpoint_sms_channel
-./resource.ps1 aws_pinpointsmsvoicev2_configuration_set
-./resource.ps1 aws_pinpointsmsvoicev2_opt_out_list
-./resource.ps1 aws_pinpointsmsvoicev2_phone_number
 ./resource.ps1 aws_prometheus_rule_group_namespace
 ./resource.ps1 aws_qldb_ledger
 ./resource.ps1 aws_ram_resource_share_accepter

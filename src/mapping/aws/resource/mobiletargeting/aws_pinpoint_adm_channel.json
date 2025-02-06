@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "mobiletargeting:GetAdmChannel",
+      "mobiletargeting:DeleteAdmChannel",
+      "mobiletargeting:UpdateAdmChannel"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

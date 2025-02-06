@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "mobiletargeting:GetApp",
+      "mobiletargeting:CreateApp",
+      "mobiletargeting:DeleteApp",
+      "mobiletargeting:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "mobiletargeting:TagResource",
+        "mobiletargeting:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

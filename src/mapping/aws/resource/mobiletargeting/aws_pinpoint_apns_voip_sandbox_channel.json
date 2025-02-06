@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "mobiletargeting:GetApnsVoipSandboxChannel",
+      "mobiletargeting:DeleteApnsVoipSandboxChannel",
+      "mobiletargeting:UpdateApnsVoipSandboxChannel"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

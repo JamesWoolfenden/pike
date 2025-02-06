@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "ec2:GetInstanceMetadataDefaults",
+      "ec2:ModifyInstanceMetadataDefaults"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

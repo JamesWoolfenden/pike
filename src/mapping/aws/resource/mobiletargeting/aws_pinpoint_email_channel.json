@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "mobiletargeting:GetEmailChannel",
+      "mobiletargeting:DeleteEmailChannel",
+      "mobiletargeting:UpdateEmailChannel"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "lex:CreateBotVersion",
+      "lex:DescribeBotVersion",
+      "lex:DescribeBot",
+      "lex:DescribeBotLocale",
+      "lex:BuildBotLocale"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "lex:DeleteBotVersion",
+      "lex:DescribeBotVersion"
+    ],
+    "modify": [],
+    "plan": [
+      "lex:DescribeBotVersion"
+    ]
+  }
+]

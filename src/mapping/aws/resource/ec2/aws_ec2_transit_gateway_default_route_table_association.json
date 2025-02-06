@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "ec2:GetTransitGatewayRouteTableAssociations",
+      "ec2:ReplaceRouteTableAssociation"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

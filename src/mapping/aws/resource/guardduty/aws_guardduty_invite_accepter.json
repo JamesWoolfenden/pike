@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "guardduty:AcceptInvitation"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

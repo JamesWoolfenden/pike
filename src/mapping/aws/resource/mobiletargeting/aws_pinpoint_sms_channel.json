@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "mobiletargeting:GetSmsChannel",
+      "mobiletargeting:DeleteSmsChannel",
+      "mobiletargeting:UpdateSmsChannel"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

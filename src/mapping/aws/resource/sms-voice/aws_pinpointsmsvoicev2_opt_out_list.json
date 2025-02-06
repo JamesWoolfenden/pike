@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "sms-voice:CreateOptOutList",
+      "sms-voice:DescribeOptOutLists",
+      "sms-voice:DeleteOptOutList",
+      "sms-voice:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "sms-voice:TagResource",
+        "sms-voice:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

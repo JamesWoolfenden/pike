@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeTransitGatewayPolicyTables",
+      "ec2:DeleteTransitGatewayPolicyTable",
+      "ec2:CreateTransitGatewayPolicyTable"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

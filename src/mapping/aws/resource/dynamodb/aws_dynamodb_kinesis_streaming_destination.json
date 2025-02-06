@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "dynamodb:DescribeKinesisStreamingDestination",
+      "dynamodb:DisableKinesisStreamingDestination",
+      "dynamodb:EnableKinesisStreamingDestination",
+      "dynamodb:UpdateKinesisStreamingDestination"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

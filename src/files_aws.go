@@ -249,3 +249,141 @@ var awsOpsworksUserProfile []byte
 
 //go:embed mapping/aws/resource/kafka/aws_mskconnect_connector.json
 var awsMskconnectConnector []byte
+
+//go:embed mapping/aws/resource/dynamodb/aws_dynamodb_kinesis_streaming_destination.json
+var awsDynamodbKinesisStreamingDestination []byte
+
+//go:embed mapping/aws/resource/dynamodb/aws_dynamodb_resource_policy.json
+var awsDynamodbResourcePolicy []byte
+
+//go:embed mapping/aws/resource/dynamodb/aws_dynamodb_table_export.json
+var awsDynamodbTableExport []byte
+
+//go:embed mapping/aws/resource/dynamodb/aws_dynamodb_table_replica.json
+var awsDynamodbTableReplica []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ebs_snapshot_import.json
+var awsEbsSnapshotImport []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ec2_capacity_block_reservation.json
+var awsEc2CapacityBlockReservation []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ec2_instance_metadata_defaults.json
+var awsEc2InstanceMetadataDefaults []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ec2_instance_state.json
+var awsEc2InstanceState []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ec2_managed_prefix_list_entry.json
+var awsEc2ManagedPrefixListEntry []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ec2_subnet_cidr_reservation.json
+var awsEc2SubnetCidrReservation []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ec2_transit_gateway_connect.json
+var awsEc2TransitGatewayConnectPeer []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ec2_transit_gateway_default_route_table_association.json
+var awsEc2TransitGatewayDefaultRouteTableAssociation []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ec2_transit_gateway_route_table_propagation.json
+var awsEc2TransitGatewayDefaultRouteTablePropagation []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ec2_transit_gateway_peering_attachment_accepter.json
+var awsEc2TransitGatewayPeeringAttachmentAccepter []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ec2_transit_gateway_policy_table.json
+var awsEc2TransitGatewayPolicyTable []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ec2_transit_gateway_policy_table_association.json
+var awsEc2TransitGatewayPolicyTableAssociation []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ec2_transit_gateway_prefix_list_reference.json
+var awsEc2TransitGatewayPrefixListReference []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ec2_transit_gateway_vpc_attachment_accepter.json
+var awsEc2TransitGatewayVpcAttachmentAccepter []byte
+
+//go:embed mapping/aws/resource/guardduty/aws_guardduty_detector_feature.json
+var awsGuarddutyDetectorFeature []byte
+
+//go:embed mapping/aws/resource/guardduty/aws_guardduty_invite_accepter.json
+var awsGuarddutyInviteAcceptor []byte
+
+//go:embed mapping/aws/resource/guardduty/aws_guardduty_member_detector_feature.json
+var awsGuarddutyMemberDetectorFeature []byte
+
+//go:embed mapping/aws/resource/guardduty/aws_guardduty_organization_admin_account.json
+var awsGuarddutyOrganizationAdminAccount []byte
+
+//go:embed mapping/aws/resource/guardduty/aws_guardduty_organization_configuration.json
+var awsGuarddutyOrganizationConfiguration []byte
+
+//go:embed mapping/aws/resource/guardduty/aws_guardduty_publishing_destination.json
+var awsGuarddutyPublishingDestination []byte
+
+//go:embed mapping/aws/resource/lex/aws_lexv2models_bot.json
+var awsLexv2ModelsBot []byte
+
+//go:embed mapping/aws/resource/lex/aws_lexv2models_bot_locale.json
+var awsLexv2ModelsBotLocale []byte
+
+//go:embed mapping/aws/resource/lex/aws_lexv2models_bot_version.json
+var awsLexv2ModelsBotVersion []byte
+
+//go:embed mapping/aws/resource/lex/aws_lexv2models_intent.json
+var awsLexv2ModelsIntent []byte
+
+//go:embed mapping/aws/resource/lex/aws_lexv2models_slot.json
+var awsLexv2ModelsSlot []byte
+
+//go:embed mapping/aws/resource/lex/aws_lexv2models_slot_type.json
+var awsLexv2ModelsSlotType []byte
+
+//go:embed mapping/aws/resource/guardduty/aws_guardduty_organization_configuration_feature.json
+var awsGuarddutyOrganizationConfigurationFeature []byte
+
+//go:embed mapping/aws/resource/mobiletargeting/aws_pinpoint_adm_channel.json
+var awsPinpointAdmChannel []byte
+
+//go:embed mapping/aws/resource/mobiletargeting/aws_pinpoint_apns_channel.json
+var awsPinpointApnsChannel []byte
+
+//go:embed mapping/aws/resource/mobiletargeting/aws_pinpoint_apns_sandbox_channel.json
+var awsPinpointApnsSandboxChannel []byte
+
+//go:embed mapping/aws/resource/mobiletargeting/aws_pinpoint_apns_voip_channel.json
+var awsPinpointApnsVoipChannel []byte
+
+//go:embed mapping/aws/resource/mobiletargeting/aws_pinpoint_apns_voip_sandbox_channel.json
+var awsPinpointApnsVoipSandboxChannel []byte
+
+//go:embed mapping/aws/resource/mobiletargeting/aws_pinpoint_app.json
+var awsPinpointApp []byte
+
+//go:embed mapping/aws/resource/mobiletargeting/aws_pinpoint_baidu_channel.json
+var awsPinpointBaiduChannel []byte
+
+//go:embed mapping/aws/resource/mobiletargeting/aws_pinpoint_email_channel.json
+var awsPinpointEmailChannel []byte
+
+//go:embed mapping/aws/resource/mobiletargeting/aws_pinpoint_email_template.json
+var awsPinpointEmailTemplate []byte
+
+//go:embed mapping/aws/resource/mobiletargeting/aws_pinpoint_event_stream.json
+var awsPinpointEventStream []byte
+
+//go:embed mapping/aws/resource/mobiletargeting/aws_pinpoint_gcm_channel.json
+var awsPinpointGcmChannel []byte
+
+//go:embed mapping/aws/resource/mobiletargeting/aws_pinpoint_sms_channel.json
+var awsPinpointSmsChannel []byte
+
+//go:embed mapping/aws/resource/sms-voice/aws_pinpointsmsvoicev2_configuration_set.json
+var awsPinpointsmsvoicev2ConfigurationSet []byte
+
+//go:embed mapping/aws/resource/sms-voice/aws_pinpointsmsvoicev2_opt_out_list.json
+var awsPinpointsmsvoicev2OptOutList []byte
+
+//go:embed mapping/aws/resource/sms-voice/aws_pinpointsmsvoicev2_phone_number.json
+var awsPinpointsmsvoicev2PhoneNumber []byte

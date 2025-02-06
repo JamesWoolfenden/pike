@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "guardduty:GetAdministratorAccount",
+      "guardduty:EnableOrganizationAdminAccount",
+      "guardduty:DisableOrganizationAdminAccount"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "ec2:GetTransitGatewayRouteTablePropagations",
+      "ec2:DisableTransitGatewayRouteTablePropagation",
+      "ec2:EnableTransitGatewayRouteTablePropagation"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "lex:DescribeSlot",
+      "lex:CreateSlot",
+      "lex:DeleteSlot",
+      "lex:UpdateSlot"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

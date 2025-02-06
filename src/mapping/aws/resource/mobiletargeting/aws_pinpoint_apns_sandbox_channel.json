@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "mobiletargeting:GetApnsSandboxChannel",
+      "mobiletargeting:DeleteApnsSandboxChannel",
+      "mobiletargeting:UpdateApnsSandboxChannel"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "ec2:ImportSnapshot",
+      "ec2:DescribeTags"
+    ],
+    "attributes": {
+      "tags": [
+        "ec2:CreateTags",
+        "ec2:DeleteTags"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

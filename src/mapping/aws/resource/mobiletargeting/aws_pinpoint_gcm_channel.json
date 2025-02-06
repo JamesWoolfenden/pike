@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "mobiletargeting:GetGcmChannel",
+      "mobiletargeting:DeleteGcmChannel",
+      "mobiletargeting:UpdateGcmChannel"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

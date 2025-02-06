@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "dynamodb:GetResourcePolicy",
+      "dynamodb:DeleteResourcePolicy",
+      "dynamodb:PutResourcePolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

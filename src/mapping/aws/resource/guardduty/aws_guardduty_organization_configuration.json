@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "guardduty:DescribeOrganizationConfiguration",
+      "guardduty:UpdateOrganizationConfiguration"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "ec2:GetTransitGatewayPolicyTableAssociations",
+      "ec2:AssociateTransitGatewayPolicyTable",
+      "ec2:DisassociateTransitGatewayPolicyTable"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

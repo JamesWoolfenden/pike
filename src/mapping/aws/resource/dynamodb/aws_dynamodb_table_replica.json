@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "dynamodb:CreateTableReplica",
+      "dynamodb:DeleteTableReplica"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

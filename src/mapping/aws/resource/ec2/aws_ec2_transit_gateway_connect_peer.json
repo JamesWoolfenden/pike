@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeTransitGatewayConnectPeers",
+      "ec2:CreateTransitGatewayConnectPeer",
+      "ec2:DeleteTransitGatewayConnectPeer"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -7,27 +7,28 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "VisualEditor0",
         "Effect" : "Allow",
         "Action" : [
-          "securityhub:CreateConfigurationPolicy",
-          "securityhub:DeleteConfigurationPolicy",
-          "securityhub:DescribeOrganizationConfiguration",
-          "securityhub:GetConfigurationPolicy",
-          "securityhub:ListFindingAggregators",
-          "securityhub:ListTagsForResource",
-          "securityhub:UpdateConfigurationPolicy",
-          "securityhub:UpdateOrganizationConfiguration",
 
-          # aws_securityhub_account
-          "securityhub:EnableSecurityHub",
-          "securityhub:UpdateSecurityHubConfiguration",
-          "securityhub:DescribeHub",
-          "securityhub:DisableSecurityHub",
+          # aws_pinpointsmsvoicev2_configuration_set
+          "sms-voice:CreateConfigurationSet",
+          "sms-voice:DescribeConfigurationSets",
+          "sms-voice:DeleteConfigurationSet",
+          "sms-voice:ListTagsForResource",
 
-          # aws_securityhub_action_target
-          "securityhub:DescribeActionTargets",
-          "securityhub:CreateActionTarget",
-          "securityhub:DeleteActionTarget",
-          "securityhub:UpdateActionTarget"
+          # aws_pinpointsmsvoicev2_opt_out_list
+          "sms-voice:CreateOptOutList",
+          "sms-voice:DescribeOptOutLists",
+          "sms-voice:DeleteOptOutList",
+          "sms-voice:ListTagsForResource",
 
+          "sms-voice:TagResource",
+          "sms-voice:UntagResource",
+
+          # aws_pinpointsmsvoicev2_phone_number
+          "sms-voice:ListTagsForResource",
+          "sms-voice:DescribePhoneNumbers",
+          "sms-voice:RequestPhoneNumber",
+          "sms-voice:UpdatePhoneNumber",
+          "sms-voice:ReleasePhoneNumber"
         ],
         "Resource" : [
           "*"

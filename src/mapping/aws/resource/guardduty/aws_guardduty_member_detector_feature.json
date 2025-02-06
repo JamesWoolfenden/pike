@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "guardduty:GetMemberDetectors",
+      "guardduty:UpdateMemberDetectors"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

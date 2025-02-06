@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "mobiletargeting:GetApnsVoipChannel",
+      "mobiletargeting:DeleteApnsVoipChannel",
+      "mobiletargeting:UpdateApnsVoipChannel"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
