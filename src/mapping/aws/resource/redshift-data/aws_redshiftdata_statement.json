@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "redshift-data:DescribeStatement",
+      "redshift-data:ExecuteStatement",
+      "redshift-data:CancelStatement"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

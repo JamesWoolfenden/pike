@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "ses:CreateEmailIdentityPolicy",
+      "ses:DeleteEmailIdentityPolicy",
+      "ses:UpdateEmailIdentityPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

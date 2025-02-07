@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "ses:PutDedicatedIpInPool"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

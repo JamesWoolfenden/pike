@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "ses:PutEmailIdentityFeedbackAttributes"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

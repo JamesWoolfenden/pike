@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "sso:GetInlinePolicyForPermissionSet",
+      "sso:DeleteInlinePolicyFromPermissionSet",
+      "sso:PutInlinePolicyToPermissionSet"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

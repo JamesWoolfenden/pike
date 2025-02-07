@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "ses:CreateDedicatedIpPool",
+      "ses:GetDedicatedIpPool",
+      "ses:GetDedicatedIps",
+      "ses:DeleteDedicatedIpPool",
+      "ses:PutDedicatedIpPoolScalingAttributes"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "ses:DeleteDedicatedIpPool"
+    ],
+    "modify": [
+      "ses:PutDedicatedIpPoolScalingAttributes",
+      "ses:GetDedicatedIpPool"
+    ],
+    "plan": [
+      "ses:GetDedicatedIpPool",
+      "ses:GetDedicatedIps"
+    ]
+  }
+]

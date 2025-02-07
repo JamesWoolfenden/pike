@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "ses:PutAccountSuppressionAttributes"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

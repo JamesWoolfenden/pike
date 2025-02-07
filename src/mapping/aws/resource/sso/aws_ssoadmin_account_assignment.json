@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "sso:CreateAccountAssignment",
+      "sso:DeleteAccountAssignment"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

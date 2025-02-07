@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "redshift-serverless:GetResourcePolicy",
+      "redshift-serverless:DeleteResourcePolicy",
+      "redshift-serverless:PutResourcePolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

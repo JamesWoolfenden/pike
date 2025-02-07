@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "redshift:DescribePartners",
+      "redshift:AddPartner",
+      "redshift:DeletePartner",
+      "redshift:UpdatePartnerStatus"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "apply": [
+      "ses:CreateConfigurationSet",
+      "ses:GetConfigurationSet",
+      "ses:DescribeConfigurationSet",
+      "ses:DeleteConfigurationSet",
+      "ses:PutConfigurationSetTrackingOptions",
+      "ses:PutConfigurationSetDeliveryOptions",
+      "ses:PutConfigurationSetReputationOptions",
+      "ses:PutConfigurationSetSendingOptions",
+      "ses:PutConfigurationSetSuppressionOptions",
+      "ses:PutConfigurationSetVdmOptions"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "ses:DeleteConfigurationSet"
+    ],
+    "modify": [
+      "ses:PutConfigurationSetTrackingOptions",
+      "ses:PutConfigurationSetDeliveryOptions",
+      "ses:PutConfigurationSetReputationOptions",
+      "ses:PutConfigurationSetSendingOptions",
+      "ses:PutConfigurationSetSuppressionOptions",
+      "ses:PutConfigurationSetVdmOptions"
+    ],
+    "plan": [
+      "ses:GetConfigurationSet",
+      "ses:DescribeConfigurationSet"
+    ]
+  }
+]

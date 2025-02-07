@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "ses:CreateConfigurationSetEventDestination",
+      "ses:GetConfigurationSetEventDestinations",
+      "ses:DescribeConfigurationSet",
+      "ses:DeleteConfigurationSetEventDestination",
+      "ses:UpdateConfigurationSetEventDestination"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "ses:DeleteConfigurationSetEventDestination"
+    ],
+    "modify": [
+      "ses:UpdateConfigurationSetEventDestination",
+      "ses:GetConfigurationSetEventDestinations"
+    ],
+    "plan": [
+      "ses:GetConfigurationSetEventDestinations",
+      "ses:DescribeConfigurationSet"
+    ]
+  }
+]

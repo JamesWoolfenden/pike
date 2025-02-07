@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "sso:GetApplicationAccessScope",
+      "sso:DeleteApplicationAccessScope",
+      "sso:PutApplicationAccessScope"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

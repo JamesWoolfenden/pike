@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "sso:DetachCustomerManagedPolicyReferenceFromPermissionSet",
+      "sso:AttachCustomerManagedPolicyReferenceToPermissionSet"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

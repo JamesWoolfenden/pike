@@ -387,3 +387,102 @@ var awsPinpointsmsvoicev2OptOutList []byte
 
 //go:embed mapping/aws/resource/sms-voice/aws_pinpointsmsvoicev2_phone_number.json
 var awsPinpointsmsvoicev2PhoneNumber []byte
+
+//go:embed mapping/aws/resource/sso/aws_ssoadmin_account_assignment.json
+var awsSsoadminAccountAssignment []byte
+
+//go:embed mapping/aws/resource/sso/aws_ssoadmin_application_access_scope.json
+var awsSsoadminApplicationAccessScope []byte
+
+//go:embed mapping/aws/resource/sso/aws_ssoadmin_application_assignment_configuration.json
+var awsSsoadminApplicationAssignmentConfiguration []byte
+
+//go:embed mapping/aws/resource/sso/aws_ssoadmin_customer_managed_policy_attachment.json
+var awsSsoadminCustomerManagedPolicyAttachment []byte
+
+//go:embed mapping/aws/resource/sso/aws_ssoadmin_instance_access_control_attributes.json
+var awsSsoadminInstanceAccessControlAttributes []byte
+
+//go:embed mapping/aws/resource/sso/aws_ssoadmin_managed_policy_attachment.json
+var awsSsoadminManagedPolicyAttachment []byte
+
+//go:embed mapping/aws/resource/sso/aws_ssoadmin_permission_set_inline_policy.json
+var awsSsoadminPermissionSetInlinePolicy []byte
+
+//go:embed mapping/aws/resource/sso/aws_ssoadmin_permissions_boundary_attachment.json
+var awsSsoadminPermissionsBoundaryAttachment []byte
+
+//go:embed mapping/aws/resource/sso/aws_ssoadmin_trusted_token_issuer.json
+var awsSsoadminTrustedTokenIssuer []byte
+
+//go:embed mapping/aws/resource/ses/aws_sesv2_account_suppression_attributes.json
+var awsSesv2AccountSuppressionAttributes []byte
+
+//go:embed mapping/aws/resource/ses/aws_sesv2_account_vdm_attributes.json
+var awsSesv2AccountVdmAttributes []byte
+
+//go:embed mapping/aws/resource/ses/aws_sesv2_configuration_set.json
+var awsSesv2ConfigurationSet []byte
+
+//go:embed mapping/aws/resource/ses/aws_sesv2_configuration_set_event_destination.json
+var awsSesv2ConfigurationSetEventDestination []byte
+
+//go:embed mapping/aws/resource/ses/aws_sesv2_contact_list.json
+var awsSesv2ContactList []byte
+
+//go:embed mapping/aws/resource/ses/aws_sesv2_dedicated_ip_assignment.json
+var awsSesv2DedicatedIpAssignment []byte
+
+//go:embed mapping/aws/resource/ses/aws_sesv2_dedicated_ip_pool.json
+var awsSesv2DedicatedIpPool []byte
+
+//go:embed mapping/aws/resource/ses/aws_sesv2_email_identity.json
+var awsSesv2EmailIdentity []byte
+
+//go:embed mapping/aws/resource/ses/aws_sesv2_email_identity_feedback_attributes.json
+var awsSesv2EmailIdentityFeedbackAttributes []byte
+
+//go:embed mapping/aws/resource/ses/aws_sesv2_email_identity_mail_from_attributes.json
+var awsSesv2EmailIdentityMailFromAttributes []byte
+
+//go:embed mapping/aws/resource/ses/aws_sesv2_email_identity_policy.json
+var awsSesv2EmailIdentityPolicy []byte
+
+//go:embed mapping/aws/resource/redshift/aws_redshift_cluster_snapshot.json
+var awsRedshiftClusterSnapshot []byte
+
+//go:embed mapping/aws/resource/redshift/aws_redshift_data_share_authorization.json
+var awsRedshiftDataShareAuthorization []byte
+
+//go:embed mapping/aws/resource/redshift/aws_redshift_data_share_consumer_association.json
+var awsRedshiftDataShareConsumerAssociation []byte
+
+//go:embed mapping/aws/resource/redshift/aws_redshift_logging.json
+var awsRedshiftLogging []byte
+
+//go:embed mapping/aws/resource/redshift/aws_redshift_partner.json
+var awsRedshiftPartner []byte
+
+//go:embed mapping/aws/resource/redshift/aws_redshift_resource_policy.json
+var awsRedshiftResourcePolicy []byte
+
+//go:embed mapping/aws/resource/redshift/aws_redshift_snapshot_copy.json
+var awsRedshiftSnapshotCopy []byte
+
+//go:embed mapping/aws/resource/redshift-data/aws_redshiftdata_statement.json
+var awsRedshiftdataStatement []byte
+
+//go:embed mapping/aws/resource/redshift-serverless/aws_redshiftserverless_custom_domain_association.json
+var awsRedshiftserverlessCustomDomainAssociation []byte
+
+//go:embed mapping/aws/resource/redshift-serverless/aws_redshiftserverless_endpoint_access.json
+var awsRedshiftserverlessEndpointAccess []byte
+
+//go:embed mapping/aws/resource/redshift-serverless/aws_redshiftserverless_resource_policy.json
+var awsRedshiftserverlessResourcePolicy []byte
+
+//go:embed mapping/aws/resource/redshift-serverless/aws_redshiftserverless_snapshot.json
+var awsRedshiftserverlessSnapshot []byte
+
+//go:embed mapping/aws/resource/redshift-serverless/aws_redshiftserverless_usage_limit.json
+var awsRedshiftserverlessUsageLimit []byte

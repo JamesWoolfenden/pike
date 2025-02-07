@@ -1,0 +1,31 @@
+[
+  {
+    "apply": [
+      "ses:CreateEmailIdentity",
+      "ses:PutEmailIdentityMailFromAttributes",
+      "ses:PutEmailIdentityFeedbackAttributes",
+      "ses:PutEmailIdentityDkimAttributes",
+      "ses:GetEmailIdentity",
+      "ses:DeleteEmailIdentity",
+      "ses:PutEmailIdentityConfigurationSetAttributes",
+      "ses:PutEmailIdentityDkimSigningAttributes"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "ses:DeleteEmailIdentity"
+    ],
+    "modify": [
+      "ses:PutEmailIdentityMailFromAttributes",
+      "ses:PutEmailIdentityFeedbackAttributes",
+      "ses:PutEmailIdentityConfigurationSetAttributes",
+      "ses:PutEmailIdentityDkimSigningAttributes",
+      "ses:PutEmailIdentityDkimAttributes",
+      "ses:GetEmailIdentity"
+    ],
+    "plan": [
+      "ses:GetEmailIdentity"
+    ]
+  }
+]

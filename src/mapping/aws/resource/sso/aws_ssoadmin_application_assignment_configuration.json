@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "sso:GetApplicationAssignmentConfiguration",
+      "sso:PutApplicationAssignmentConfiguration"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "ses:PutAccountVdmAttributes"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

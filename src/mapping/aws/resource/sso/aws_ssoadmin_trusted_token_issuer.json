@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "sso:DescribeTrustedTokenIssuer",
+      "sso:UpdateTrustedTokenIssuer",
+      "sso:DeleteTrustedTokenIssuer",
+      "sso:CreateTrustedTokenIssuer"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

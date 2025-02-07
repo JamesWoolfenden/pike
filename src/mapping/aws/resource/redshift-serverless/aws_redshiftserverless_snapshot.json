@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "redshift-serverless:GetSnapshot",
+      "redshift-serverless:CreateSnapshot",
+      "redshift-serverless:DeleteSnapshot",
+      "redshift-serverless:UpdateSnapshot"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "redshift:AssociateDataShareConsumer",
+      "redshift:DisassociateDataShareConsumer"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

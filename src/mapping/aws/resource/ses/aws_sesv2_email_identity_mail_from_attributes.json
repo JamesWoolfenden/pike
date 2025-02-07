@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "ses:PutEmailIdentityMailFromAttributes"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

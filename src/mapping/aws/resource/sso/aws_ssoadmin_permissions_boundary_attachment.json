@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "sso:PutPermissionsBoundaryToPermissionSet",
+      "sso:DeletePermissionsBoundaryFromPermissionSet",
+      "sso:GetPermissionsBoundaryForPermissionSet"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "redshift:GetResourcePolicy",
+      "redshift:DeleteResourcePolicy",
+      "redshift:PutResourcePolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "sso:DescribeInstanceAccessControlAttributeConfiguration",
+      "sso:CreateInstanceAccessControlAttributeConfiguration",
+      "sso:DeleteInstanceAccessControlAttributeConfiguration",
+      "sso:UpdateInstanceAccessControlAttributeConfiguration"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

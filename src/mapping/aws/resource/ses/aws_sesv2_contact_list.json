@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "ses:CreateContactList",
+      "ses:DeleteContactList",
+      "ses:UpdateContactList"
+    ],
+    "attributes": {
+      "tags": [
+        "ses:UntagResource",
+        "ses:TagResource"
+      ]
+    },
+    "destroy": [
+      "ses:DeleteContactList"
+    ],
+    "modify": [
+      "ses:UpdateContactList"
+    ],
+    "plan": [
+      "ses:GetContactList"
+    ]
+  }
+]

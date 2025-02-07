@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "redshift-serverless:GetUsageLimit",
+      "redshift-serverless:CreateUsageLimit",
+      "redshift-serverless:DeleteUsageLimit",
+      "redshift-serverless:UpdateUsageLimit"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

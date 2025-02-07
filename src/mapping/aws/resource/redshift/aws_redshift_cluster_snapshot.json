@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "redshift:DescribeClusterSnapshots",
+      "redshift:CreateClusterSnapshot",
+      "redshift:DeleteClusterSnapshot",
+      "redshift:ModifyClusterSnapshot",
+      "redshift:DescribeTags"
+    ],
+    "attributes": {
+      "tags": [
+        "redshift:CreateTags",
+        "redshift:DeleteTags"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

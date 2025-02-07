@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "redshift:EnableLogging",
+      "redshift:DisableLogging",
+      "redshift:DescribeLoggingStatus"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

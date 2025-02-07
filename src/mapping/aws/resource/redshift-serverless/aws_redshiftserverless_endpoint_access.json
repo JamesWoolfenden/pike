@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "redshift-serverless:GetEndpointAccess",
+      "redshift-serverless:CreateEndpointAccess",
+      "redshift-serverless:DeleteEndpointAccess",
+      "redshift-serverless:UpdateEndpointAccess"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "redshift:AuthorizeDataShare",
+      "redshift:DeauthorizeDataShare",
+      "redshift:DescribeDataShares"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

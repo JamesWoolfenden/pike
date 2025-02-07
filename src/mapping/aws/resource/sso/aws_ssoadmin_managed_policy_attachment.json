@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "sso:AttachManagedPolicyToPermissionSet"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

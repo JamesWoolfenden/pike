@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "redshift-serverless:GetCustomDomainAssociation",
+      "redshift-serverless:CreateCustomDomainAssociation",
+      "redshift-serverless:DeleteCustomDomainAssociation",
+      "redshift-serverless:UpdateCustomDomainAssociation"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

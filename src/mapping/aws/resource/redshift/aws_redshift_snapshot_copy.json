@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "redshift:DisableSnapshotCopy",
+      "redshift:EnableSnapshotCopy",
+      "redshift:ModifySnapshotCopyRetentionPeriod"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

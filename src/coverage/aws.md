@@ -1,6 +1,6 @@
 # todo aws
 
-Resource percentage coverage   90.93
+Resource percentage coverage   93.16
 Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_cognito_managed_user_pool_client
@@ -61,19 +61,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_ram_sharing_with_organization
 ./resource.ps1 aws_rbin_rule
 ./resource.ps1 aws_rds_instance_state
-./resource.ps1 aws_redshift_cluster_snapshot
-./resource.ps1 aws_redshift_data_share_authorization
-./resource.ps1 aws_redshift_data_share_consumer_association
-./resource.ps1 aws_redshift_logging
-./resource.ps1 aws_redshift_partner
-./resource.ps1 aws_redshift_resource_policy
-./resource.ps1 aws_redshift_snapshot_copy
-./resource.ps1 aws_redshiftdata_statement
-./resource.ps1 aws_redshiftserverless_custom_domain_association
-./resource.ps1 aws_redshiftserverless_endpoint_access
-./resource.ps1 aws_redshiftserverless_resource_policy
-./resource.ps1 aws_redshiftserverless_snapshot
-./resource.ps1 aws_redshiftserverless_usage_limit
 ./resource.ps1 aws_resiliencehub_resiliency_policy
 ./resource.ps1 aws_resourcegroups_resource
 ./resource.ps1 aws_route53domains_delegation_signer_record
@@ -99,30 +86,10 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_service_discovery_public_dns_namespace
 ./resource.ps1 aws_service_discovery_service
 ./resource.ps1 aws_servicecatalog_provisioning_artifact
-./resource.ps1 aws_sesv2_account_suppression_attributes
-./resource.ps1 aws_sesv2_account_vdm_attributes
-./resource.ps1 aws_sesv2_configuration_set
-./resource.ps1 aws_sesv2_configuration_set_event_destination
-./resource.ps1 aws_sesv2_contact_list
-./resource.ps1 aws_sesv2_dedicated_ip_assignment
-./resource.ps1 aws_sesv2_dedicated_ip_pool
-./resource.ps1 aws_sesv2_email_identity
-./resource.ps1 aws_sesv2_email_identity_feedback_attributes
-./resource.ps1 aws_sesv2_email_identity_mail_from_attributes
-./resource.ps1 aws_sesv2_email_identity_policy
 ./resource.ps1 aws_shield_application_layer_automatic_response
 ./resource.ps1 aws_shield_drt_access_log_bucket_association
 ./resource.ps1 aws_shield_drt_access_role_arn_association
 ./resource.ps1 aws_shield_protection_health_check_association
-./resource.ps1 aws_ssoadmin_account_assignment
-./resource.ps1 aws_ssoadmin_application_access_scope
-./resource.ps1 aws_ssoadmin_application_assignment_configuration
-./resource.ps1 aws_ssoadmin_customer_managed_policy_attachment
-./resource.ps1 aws_ssoadmin_instance_access_control_attributes
-./resource.ps1 aws_ssoadmin_managed_policy_attachment
-./resource.ps1 aws_ssoadmin_permission_set_inline_policy
-./resource.ps1 aws_ssoadmin_permissions_boundary_attachment
-./resource.ps1 aws_ssoadmin_trusted_token_issuer
 ./resource.ps1 aws_timestreamquery_scheduled_query
 ./resource.ps1 aws_verifiedaccess_instance_trust_provider_attachment
 ./resource.ps1 aws_verifiedpermissions_schema
