@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "s3:GetStorageLensConfiguration",
+      "s3:PutStorageLensConfiguration"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

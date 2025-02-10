@@ -486,3 +486,42 @@ var awsRedshiftserverlessSnapshot []byte
 
 //go:embed mapping/aws/resource/redshift-serverless/aws_redshiftserverless_usage_limit.json
 var awsRedshiftserverlessUsageLimit []byte
+
+//go:embed mapping/aws/resource/route53domains/aws_route53domains_delegation_signer_record.json
+var awsRoute53DomainsDelegationSignerRecord []byte
+
+//go:embed mapping/aws/resource/route53domains/aws_route53domains_domain.json
+var awsRoute53DomainsDomain []byte
+
+//go:embed mapping/aws/resource/route53domains/aws_route53domains_registered_domain.json
+var awsRoute53DomainsRegisteredDomain []byte
+
+//go:embed mapping/aws/resource/route53profiles/aws_route53profiles_resource_association.json
+var awsRoute53profilesResourceAssociation []byte
+
+//go:embed mapping/aws/resource/s3-express/aws_s3_directory_bucket.json
+var awsS3DirectoryBucket []byte
+
+//go:embed mapping/aws/resource/s3/aws_s3_object_copy.json
+var awsS3ObjectCopy []byte
+
+//go:embed mapping/aws/resource/s3-outposts/aws_s3control_access_grants_instance_resource_policy.json
+var awsS3controlAccessGrantInstanceResourcePolicy []byte
+
+//go:embed mapping/aws/resource/s3-outposts/aws_s3control_bucket.json
+var awsS3ControlBucket []byte
+
+//go:embed mapping/aws/resource/s3-outposts/aws_s3control_bucket_lifecycle_configuration.json
+var awsS3ControlBucketLifecycleAssociation []byte
+
+//go:embed mapping/aws/resource/s3-outposts/aws_s3control_bucket_policy.json
+var awsS3ControlBucketPolicy []byte
+
+//go:embed mapping/aws/resource/s3-outposts/aws_s3control_object_lambda_access_point.json
+var awsS3ControlObjectLambdaAccessPoint []byte
+
+//go:embed mapping/aws/resource/s3-outposts/aws_s3control_object_lambda_access_point_policy.json
+var awsS3ControlObjectLambdaAccessPointPolicy []byte
+
+//go:embed mapping/aws/resource/s3/aws_s3control_storage_lens_configuration.json
+var awsS3ControlStorageLensConfiguration []byte

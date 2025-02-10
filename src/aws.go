@@ -1395,6 +1395,19 @@ var tFLookup = map[string]interface{}{ //nolint:gochecknoglobals
 	"aws_redshiftserverless_resource_policy":                           awsRedshiftserverlessResourcePolicy,
 	"aws_redshiftserverless_snapshot":                                  awsRedshiftserverlessSnapshot,
 	"aws_redshiftserverless_usage_limit":                               awsRedshiftserverlessUsageLimit,
+	"aws_route53domains_delegation_signer_record":                      awsRoute53DomainsDelegationSignerRecord,
+	"aws_route53domains_domain":                                        awsRoute53DomainsDomain,
+	"aws_route53domains_registered_domain":                             awsRoute53DomainsRegisteredDomain,
+	"aws_route53profiles_resource_association":                         awsRoute53profilesResourceAssociation,
+	"aws_s3_directory_bucket":                                          awsS3DirectoryBucket,
+	"aws_s3_object_copy":                                               awsS3ObjectCopy,
+	"aws_s3control_access_grants_instance_resource_policy":             awsS3controlAccessGrantInstanceResourcePolicy,
+	"aws_s3control_bucket":                                             awsS3ControlBucket,
+	"aws_s3control_bucket_lifecycle_configuration":                     awsS3ControlBucketLifecycleAssociation,
+	"aws_s3control_bucket_policy":                                      awsS3ControlBucketPolicy,
+	"aws_s3control_object_lambda_access_point":                         awsS3ControlObjectLambdaAccessPoint,
+	"aws_s3control_object_lambda_access_point_policy":                  awsS3ControlObjectLambdaAccessPointPolicy,
+	"aws_s3control_storage_lens_configuration":                         awsS3ControlStorageLensConfiguration,
 }
 
 // GetAWSPermissions for AWS resources.

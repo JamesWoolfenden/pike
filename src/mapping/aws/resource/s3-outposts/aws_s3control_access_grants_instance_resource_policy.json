@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "s3:DeleteAccessGrantsInstanceResourcePolicy",
+      "s3:PutAccessGrantsInstanceResourcePolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
