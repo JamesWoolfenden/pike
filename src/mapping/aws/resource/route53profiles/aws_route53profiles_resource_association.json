@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "route53profiles:AssociateResourceToProfile",
+      "route53profiles:GetProfileResourceAssociation",
+      "route53profiles:UpdateProfileResourceAssociation",
+      "route53profiles:DisassociateResourceFromProfile"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "route53profiles:DisassociateResourceFromProfile",
+      "route53profiles:GetProfileResourceAssociation"
+    ],
+    "modify": [
+      "route53profiles:UpdateProfileResourceAssociation",
+      "route53profiles:GetProfileResourceAssociation"
+    ],
+    "plan": [
+      "route53profiles:GetProfileResourceAssociation"
+    ]
+  }
+]

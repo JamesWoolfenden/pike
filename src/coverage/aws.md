@@ -1,7 +1,7 @@
 # todo aws
 
-Resource percentage coverage   93.16
-Datasource percentage coverage 99.65
+Resource percentage coverage   94.04
+Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_cognito_managed_user_pool_client
 ./resource.ps1 aws_ebs_fast_snapshot_restore
@@ -63,20 +63,7 @@ Datasource percentage coverage 99.65
 ./resource.ps1 aws_rds_instance_state
 ./resource.ps1 aws_resiliencehub_resiliency_policy
 ./resource.ps1 aws_resourcegroups_resource
-./resource.ps1 aws_route53domains_delegation_signer_record
-./resource.ps1 aws_route53domains_domain
-./resource.ps1 aws_route53domains_registered_domain
-./resource.ps1 aws_route53profiles_resource_association
 ./resource.ps1 aws_rum_metrics_destination
-./resource.ps1 aws_s3_directory_bucket
-./resource.ps1 aws_s3_object_copy
-./resource.ps1 aws_s3control_access_grants_instance_resource_policy
-./resource.ps1 aws_s3control_bucket
-./resource.ps1 aws_s3control_bucket_lifecycle_configuration
-./resource.ps1 aws_s3control_bucket_policy
-./resource.ps1 aws_s3control_object_lambda_access_point
-./resource.ps1 aws_s3control_object_lambda_access_point_policy
-./resource.ps1 aws_s3control_storage_lens_configuration
 ./resource.ps1 aws_securityhub_invite_accepter
 ./resource.ps1 aws_securityhub_member
 ./resource.ps1 aws_serverlessapplicationrepository_cloudformation_stack

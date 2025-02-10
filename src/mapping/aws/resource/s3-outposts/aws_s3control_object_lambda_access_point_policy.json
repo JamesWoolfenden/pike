@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "s3-outposts:GetAccessPointPolicy",
+      "s3-outposts:DeleteAccessPointPolicy",
+      "s3-outposts:PutAccessPointPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

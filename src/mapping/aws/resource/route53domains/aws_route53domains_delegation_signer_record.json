@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "route53domains:AssociateDelegationSignerToDomain",
+      "route53domains:DisassociateDelegationSignerFromDomain"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

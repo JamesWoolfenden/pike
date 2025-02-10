@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "s3express:DeleteBucket",
+      "s3express:CreateBucket"
+    ],
+    "attributes": {},
+    "destroy": [
+      "s3express:DeleteBucket"
+    ],
+    "plan": []
+  }
+]

@@ -7,7 +7,15 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "VisualEditor0",
         "Effect" : "Allow",
         "Action" : [
-          "ec2:DescribeIpams"
+          "s3:ListBucket",
+          "s3:PutObject",
+          "s3:GetObject",
+          "s3:GetObjectTagging",
+          "kms:DescribeKey",
+          "kms:Encrypt",
+
+          "s3:ListBucketVersions",
+          "s3:DeleteObjectVersion"
         ],
         "Resource" : [
           "*"

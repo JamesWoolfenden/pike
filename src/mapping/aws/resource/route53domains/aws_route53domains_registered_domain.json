@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "route53domains:UpdateDomainContact",
+      "route53domains:EnableDomainAutoRenew",
+      "route53domains:UpdateDomainContactPrivacy",
+      "route53domains:ListTagsForDomain",
+      "route53domains:GetDomainDetail",
+      "route53domains:ListTagsForDomain"
+    ],
+    "attributes": {
+      "tags": [
+        "route53domains:DeleteTagsForDomain",
+        "route53domains:UpdateTagsForDomain"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

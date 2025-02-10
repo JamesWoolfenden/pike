@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "s3-outposts:DeleteBucket",
+      "s3-outposts:CreateBucket",
+      "s3-outposts:GetLifecycleConfiguration",
+      "s3-outposts:PutLifecycleConfiguration",
+      "s3-outposts:PutObjectAcl",
+      "s3-outposts:GetBucketPolicy",
+      "s3-outposts:GetBucketVersioning"
+    ],
+    "attributes": {
+      "tags": [
+        "s3-outposts:GetBucketTagging",
+        "s3-outposts:PutBucketTagging"
+      ]
+    },
+    "destroy": [
+      "s3-outposts:DeleteBucket"
+    ],
+    "plan": []
+  }
+]

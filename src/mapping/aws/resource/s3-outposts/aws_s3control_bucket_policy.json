@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "s3-outposts:GetBucketPolicy",
+      "s3-outposts:DeleteBucketPolicy",
+      "s3-outposts:PutBucketPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
