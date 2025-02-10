@@ -1,6 +1,6 @@
 # todo azure
 
-Resource percentage coverage   4.57
+Resource percentage coverage   4.56
 Datasource percentage coverage 35.57
 
 ./resource.ps1 azurerm_aadb2c_directory
@@ -587,6 +587,7 @@ Datasource percentage coverage 35.57
 ./resource.ps1 azurerm_mssql_job_agent
 ./resource.ps1 azurerm_mssql_job_credential
 ./resource.ps1 azurerm_mssql_job_schedule
+./resource.ps1 azurerm_mssql_job_step
 ./resource.ps1 azurerm_mssql_job_target_group
 ./resource.ps1 azurerm_mssql_managed_database
 ./resource.ps1 azurerm_mssql_managed_instance

@@ -667,6 +667,7 @@ func TestMarshallAWSPolicyError(t *testing.T) {
 }
 
 func TestDirectoryErrors(t *testing.T) {
+	t.Parallel()
 	t.Run("empty directory error", func(t *testing.T) {
 		t.Parallel()
 
@@ -679,6 +680,7 @@ func TestDirectoryErrors(t *testing.T) {
 	})
 
 	t.Run("directory not found error", func(t *testing.T) {
+		t.Parallel()
 		err := &directoryNotFoundError{directory: "/tmp/nonexistent"}
 		expected := "directory does not exist: /tmp/nonexistent"
 
@@ -690,6 +692,7 @@ func TestDirectoryErrors(t *testing.T) {
 
 func TestARNErrors(t *testing.T) {
 	t.Run("empty ARN error", func(t *testing.T) {
+		t.Parallel()
 		err := &arnEmptyError{}
 		expected := "ARN cannot be empty"
 
@@ -727,7 +730,9 @@ func TestAWSErrors(t *testing.T) {
 
 	t.Run("get IAM version error", func(t *testing.T) {
 		t.Parallel()
+
 		err := &getIAMVersionError{err: &emptyNameError{}}
+
 		expected := "failed to get IAM version: Name cannot be empty"
 
 		if err.Error() != expected {
@@ -737,7 +742,10 @@ func TestAWSErrors(t *testing.T) {
 }
 
 func TestPolicyErrors(t *testing.T) {
+	t.Parallel()
 	t.Run("sort actions error", func(t *testing.T) {
+		t.Parallel()
+
 		err := &sortActionsError{json: "invalid-json"}
 		expected := "failed to sort actions: invalid-json"
 
@@ -747,6 +755,8 @@ func TestPolicyErrors(t *testing.T) {
 	})
 
 	t.Run("get policy version error", func(t *testing.T) {
+		t.Parallel()
+
 		err := &getPolicyVersionError{err: &emptyNameError{}}
 		expected := "failed to get policy version: Name cannot be empty"
 
@@ -756,6 +766,8 @@ func TestPolicyErrors(t *testing.T) {
 	})
 
 	t.Run("input validation error", func(t *testing.T) {
+		t.Parallel()
+
 		err := &inputValidationError{err: &emptyNameError{}}
 		expected := "input validation failed: Name cannot be empty"
 
@@ -766,7 +778,9 @@ func TestPolicyErrors(t *testing.T) {
 
 	t.Run("marshall policy error", func(t *testing.T) {
 		t.Parallel()
+
 		err := &marshallPolicyError{err: &emptyNameError{}}
+
 		expected := "failed to marshal policy: Name cannot be empty"
 
 		if err.Error() != expected {
@@ -779,32 +793,44 @@ func TestTerraformErrors(t *testing.T) {
 	testErr := errors.New("test error")
 
 	t.Run("terraformPlanError", func(t *testing.T) {
+		t.Parallel()
+
 		err := &terraformPlanError{err: testErr}
 		expected := "failed to plan terraform test error"
+
 		if err.Error() != expected {
 			t.Errorf("got %q, want %q", err.Error(), expected)
 		}
 	})
 
 	t.Run("terraformNewError", func(t *testing.T) {
+		t.Parallel()
+
 		err := &terraformNewError{err: testErr}
 		expected := "failed to create terraform test error"
+
 		if err.Error() != expected {
 			t.Errorf("got %q, want %q", err.Error(), expected)
 		}
 	})
 
 	t.Run("terraformOutputError", func(t *testing.T) {
+		t.Parallel()
+
 		err := &terraformOutputError{}
 		expected := "terraform output is empty"
+
 		if err.Error() != expected {
 			t.Errorf("got %q, want %q", err.Error(), expected)
 		}
 	})
 
 	t.Run("terraformApplyError with target", func(t *testing.T) {
+		t.Parallel()
+
 		err := &terraformApplyError{target: "module.test", err: testErr}
 		expected := "failed to apply terraform module.test test error"
+
 		if err.Error() != expected {
 			t.Errorf("got %q, want %q", err.Error(), expected)
 		}
@@ -841,6 +867,8 @@ func TestSecretAndEncryptionErrors(t *testing.T) {
 	})
 
 	t.Run("decodeStringError", func(t *testing.T) {
+		t.Parallel()
+
 		err := &decodeStringError{err: testErr}
 		expected := "failed to decode string: test error"
 
@@ -850,6 +878,8 @@ func TestSecretAndEncryptionErrors(t *testing.T) {
 	})
 
 	t.Run("encryptPlaintextError", func(t *testing.T) {
+		t.Parallel()
+
 		err := &encryptPlaintextError{err: testErr}
 		expected := "failed to encrypt plaintext: test error"
 
@@ -888,6 +918,8 @@ func TestGetAWSDataPermissionsError(t *testing.T) {
 }
 
 func TestSplitHubError(t *testing.T) {
+	t.Parallel()
+
 	originalErr := errors.New("another error")
 	customErr := &splitHubError{err: originalErr}
 	expected := "failed to split hub: another error"
@@ -910,7 +942,7 @@ func TestSetRepoSecretError(t *testing.T) {
 func TestSetAWSAuthError(t *testing.T) {
 	originalErr := errors.New("auth error")
 	customErr := &setAWSAuthError{err: originalErr}
-	expected := "failed to set AWS auth auth error"
+	expected := "failed to set AWS auth error"
 
 	if customErr.Error() != expected {
 		t.Errorf("Expected %s, but got %s", expected, customErr.Error())

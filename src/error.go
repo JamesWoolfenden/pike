@@ -256,7 +256,7 @@ type setAWSAuthError struct {
 }
 
 func (m *setAWSAuthError) Error() string {
-	return fmt.Sprintf("failed to set AWS auth %v", m.err)
+	return fmt.Sprintf("failed to set AWS %v", m.err)
 }
 
 type terraformPlanError struct {

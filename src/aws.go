@@ -1519,6 +1519,7 @@ func GetPermissionMap(raw []byte, attributes []string, resource string) ([]strin
 
 				if !ok {
 					log.Error().Msg("failed to cast to string")
+
 					continue
 				}
 

@@ -1,7 +1,7 @@
 # todo google
 
-Resource percentage coverage   18.34
-Datasource percentage coverage 71.47
+Resource percentage coverage   18.13
+Datasource percentage coverage 71.05
 
 ./resource.ps1 google_access_context_manager_access_level_condition
 ./resource.ps1 google_access_context_manager_service_perimeter_dry_run_egress_policy
@@ -14,6 +14,7 @@ Datasource percentage coverage 71.47
 ./resource.ps1 google_active_directory_domain_trust
 ./resource.ps1 google_active_directory_peering
 ./resource.ps1 google_apigee_addons_config
+./resource.ps1 google_apigee_api
 ./resource.ps1 google_apigee_app_group
 ./resource.ps1 google_apigee_developer
 ./resource.ps1 google_apigee_env_keystore
@@ -31,7 +32,6 @@ Datasource percentage coverage 71.47
 ./resource.ps1 google_apigee_keystores_aliases_self_signed_cert
 ./resource.ps1 google_apigee_nat_address
 ./resource.ps1 google_apigee_organization
-./resource.ps1 google_apigee_sharedflow
 ./resource.ps1 google_apigee_sync_authorization
 ./resource.ps1 google_apigee_target_server
 ./resource.ps1 google_apihub_api_hub_instance
@@ -57,6 +57,10 @@ Datasource percentage coverage 71.47
 ./resource.ps1 google_beyondcorp_app_connection
 ./resource.ps1 google_beyondcorp_app_connector
 ./resource.ps1 google_beyondcorp_app_gateway
+./resource.ps1 google_beyondcorp_application
+./resource.ps1 google_beyondcorp_application_iam_binding
+./resource.ps1 google_beyondcorp_application_iam_member
+./resource.ps1 google_beyondcorp_application_iam_policy
 ./resource.ps1 google_beyondcorp_security_gateway
 ./resource.ps1 google_beyondcorp_security_gateway_iam_binding
 ./resource.ps1 google_beyondcorp_security_gateway_iam_member
@@ -64,6 +68,7 @@ Datasource percentage coverage 71.47
 ./resource.ps1 google_biglake_catalog
 ./resource.ps1 google_biglake_database
 ./resource.ps1 google_biglake_table
+./resource.ps1 google_bigquery_analytics_hub_listing_subscription
 ./resource.ps1 google_bigquery_datapolicy_data_policy
 ./resource.ps1 google_bigquery_datapolicy_data_policy_iam_binding
 ./resource.ps1 google_bigquery_datapolicy_data_policy_iam_member
@@ -145,6 +150,7 @@ Datasource percentage coverage 71.47
 ./resource.ps1 google_colab_runtime_template_iam_binding
 ./resource.ps1 google_colab_runtime_template_iam_member
 ./resource.ps1 google_colab_runtime_template_iam_policy
+./resource.ps1 google_colab_schedule
 ./resource.ps1 google_composer_environment
 ./resource.ps1 google_composer_user_workloads_config_map
 ./resource.ps1 google_composer_user_workloads_secret
@@ -210,6 +216,7 @@ Datasource percentage coverage 71.47
 ./resource.ps1 google_compute_network_endpoints
 ./resource.ps1 google_compute_network_firewall_policy
 ./resource.ps1 google_compute_network_firewall_policy_association
+./resource.ps1 google_compute_network_firewall_policy_packet_mirroring_rule
 ./resource.ps1 google_compute_network_firewall_policy_rule
 ./resource.ps1 google_compute_network_firewall_policy_with_rules
 ./resource.ps1 google_compute_network_peering
@@ -470,6 +477,10 @@ Datasource percentage coverage 71.47
 ./resource.ps1 google_folder_iam_policy
 ./resource.ps1 google_folder_organization_policy
 ./resource.ps1 google_gemini_code_repository_index
+./resource.ps1 google_gemini_data_sharing_with_google_setting
+./resource.ps1 google_gemini_gemini_gcp_enablement_setting
+./resource.ps1 google_gemini_logging_setting
+./resource.ps1 google_gemini_release_channel_setting
 ./resource.ps1 google_gemini_repository_group
 ./resource.ps1 google_gemini_repository_group_iam_binding
 ./resource.ps1 google_gemini_repository_group_iam_member
@@ -643,6 +654,7 @@ Datasource percentage coverage 71.47
 ./resource.ps1 google_netapp_kmsconfig
 ./resource.ps1 google_netapp_storage_pool
 ./resource.ps1 google_netapp_volume
+./resource.ps1 google_netapp_volume_quota_rule
 ./resource.ps1 google_netapp_volume_replication
 ./resource.ps1 google_netapp_volume_snapshot
 ./resource.ps1 google_network_connectivity_group
@@ -877,6 +889,7 @@ Datasource percentage coverage 71.47
 ./resource.ps1 google_backup_dr_backup_plan_association -type data
 ./resource.ps1 google_backup_dr_backup_vault -type data
 ./resource.ps1 google_backup_dr_data_source -type data
+./resource.ps1 google_beyondcorp_application_iam_policy -type data
 ./resource.ps1 google_beyondcorp_security_gateway_iam_policy -type data
 ./resource.ps1 google_bigquery_tables -type data
 ./resource.ps1 google_certificate_manager_certificates -type data
@@ -934,6 +947,7 @@ Datasource percentage coverage 71.47
 ./resource.ps1 google_parameter_manager_parameters -type data
 ./resource.ps1 google_parameter_manager_regional_parameter -type data
 ./resource.ps1 google_parameter_manager_regional_parameter_version -type data
+./resource.ps1 google_parameter_manager_regional_parameter_version_render -type data
 ./resource.ps1 google_parameter_manager_regional_parameters -type data
 ./resource.ps1 google_privateca_ca_pool_iam_policy -type data
 ./resource.ps1 google_privateca_certificate_authority -type data

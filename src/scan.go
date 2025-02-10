@@ -212,7 +212,7 @@ func Init(dirName string) (*string, []string, error) {
 		found = append(found, module.Name())
 	}
 
-	return &tfPath, found, err
+	return &tfPath, found, nil
 }
 
 // LocateTerraform finds the Terraform executable or installs it.

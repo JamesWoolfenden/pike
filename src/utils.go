@@ -107,11 +107,12 @@ func ReplaceSection(source string, middle string, autoadd bool) error {
 	Output.WriteString(section2)
 
 	err = os.WriteFile(source, Output.Bytes(), 0o644)
+
 	if err != nil {
 		return &writeFileError{source, err}
 	}
 
-	return err
+	return nil
 }
 
 // FileExists looks for a file.
