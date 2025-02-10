@@ -1,6 +1,6 @@
 # todo azure
 
-Resource percentage coverage   4.58
+Resource percentage coverage   4.57
 Datasource percentage coverage 35.57
 
 ./resource.ps1 azurerm_aadb2c_directory
@@ -177,6 +177,7 @@ Datasource percentage coverage 35.57
 ./resource.ps1 azurerm_chaos_studio_target
 ./resource.ps1 azurerm_cognitive_account_customer_managed_key
 ./resource.ps1 azurerm_cognitive_account_rai_blocklist
+./resource.ps1 azurerm_cognitive_account_rai_policy
 ./resource.ps1 azurerm_cognitive_deployment
 ./resource.ps1 azurerm_communication_service
 ./resource.ps1 azurerm_communication_service_email_domain_association
@@ -586,6 +587,7 @@ Datasource percentage coverage 35.57
 ./resource.ps1 azurerm_mssql_job_agent
 ./resource.ps1 azurerm_mssql_job_credential
 ./resource.ps1 azurerm_mssql_job_schedule
+./resource.ps1 azurerm_mssql_job_target_group
 ./resource.ps1 azurerm_mssql_managed_database
 ./resource.ps1 azurerm_mssql_managed_instance
 ./resource.ps1 azurerm_mssql_managed_instance_active_directory_administrator

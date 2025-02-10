@@ -1551,3 +1551,6 @@ var dataAwsCloudwatchEventBuses []byte
 
 //go:embed  mapping/aws/data/ecs/aws_ecs_clusters.json
 var dataAwsEcsClusters []byte
+
+//go:embed  mapping/aws/data/ec2/aws_vpc_ipam.json
+var dataAwsVpcIpam []byte

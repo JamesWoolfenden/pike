@@ -584,6 +584,8 @@ var tFLookupDataAWS = map[string]interface{}{
 	"aws_route53_records":                                                   dataAwsRoute53Records,
 	"aws_cloudwatch_event_buses":                                            dataAwsCloudwatchEventBuses,
 	"aws_ecs_clusters":                                                      dataAwsEcsClusters,
+	"aws_vpc_ipam":                                                          dataAwsVpcIpam,
+	"aws_vpc_ipams":                                                         dataAwsVpcIpam,
 }
 
 // GetAWSDataPermissions gets permissions required for datasource's.

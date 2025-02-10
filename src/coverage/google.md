@@ -1,7 +1,7 @@
 # todo google
 
-Resource percentage coverage   18.41
-Datasource percentage coverage 72.11
+Resource percentage coverage   18.34
+Datasource percentage coverage 71.47
 
 ./resource.ps1 google_access_context_manager_access_level_condition
 ./resource.ps1 google_access_context_manager_service_perimeter_dry_run_egress_policy
@@ -58,6 +58,9 @@ Datasource percentage coverage 72.11
 ./resource.ps1 google_beyondcorp_app_connector
 ./resource.ps1 google_beyondcorp_app_gateway
 ./resource.ps1 google_beyondcorp_security_gateway
+./resource.ps1 google_beyondcorp_security_gateway_iam_binding
+./resource.ps1 google_beyondcorp_security_gateway_iam_member
+./resource.ps1 google_beyondcorp_security_gateway_iam_policy
 ./resource.ps1 google_biglake_catalog
 ./resource.ps1 google_biglake_database
 ./resource.ps1 google_biglake_table
@@ -136,6 +139,7 @@ Datasource percentage coverage 72.11
 ./resource.ps1 google_cloudfunctions2_function_iam_policy
 ./resource.ps1 google_cloudfunctions_function_iam_binding
 ./resource.ps1 google_cloudiot_registry
+./resource.ps1 google_colab_notebook_execution
 ./resource.ps1 google_colab_runtime
 ./resource.ps1 google_colab_runtime_template
 ./resource.ps1 google_colab_runtime_template_iam_binding
@@ -873,6 +877,7 @@ Datasource percentage coverage 72.11
 ./resource.ps1 google_backup_dr_backup_plan_association -type data
 ./resource.ps1 google_backup_dr_backup_vault -type data
 ./resource.ps1 google_backup_dr_data_source -type data
+./resource.ps1 google_beyondcorp_security_gateway_iam_policy -type data
 ./resource.ps1 google_bigquery_tables -type data
 ./resource.ps1 google_certificate_manager_certificates -type data
 ./resource.ps1 google_cloud_identity_group_transitive_memberships -type data
@@ -925,8 +930,10 @@ Datasource percentage coverage 72.11
 ./resource.ps1 google_organizations -type data
 ./resource.ps1 google_parameter_manager_parameter -type data
 ./resource.ps1 google_parameter_manager_parameter_version -type data
+./resource.ps1 google_parameter_manager_parameter_version_render -type data
 ./resource.ps1 google_parameter_manager_parameters -type data
 ./resource.ps1 google_parameter_manager_regional_parameter -type data
+./resource.ps1 google_parameter_manager_regional_parameter_version -type data
 ./resource.ps1 google_parameter_manager_regional_parameters -type data
 ./resource.ps1 google_privateca_ca_pool_iam_policy -type data
 ./resource.ps1 google_privateca_certificate_authority -type data

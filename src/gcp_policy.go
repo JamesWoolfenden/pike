@@ -8,9 +8,9 @@ import (
 )
 
 const (
-	DefaultPolicyName = "terraform_pike"
-	DefaultProject    = "pike"
-	DefaultRoleID     = "terraform_pike"
+	defaultPolicyName = "terraform_pike"
+	defaultProject    = "pike"
+	defaultRoleID     = "terraform_pike"
 )
 
 //go:embed terraform.gcppolicy.template
@@ -32,11 +32,11 @@ func GCPPolicy(permissions []string) (string, error) {
 		Permissions string // Comma-separated list of permissions
 	}
 
-	PolicyName := DefaultPolicyName
+	PolicyName := defaultPolicyName
 	theDetails := gCPPolicyDetails{
 		Name:        PolicyName,
-		Project:     DefaultProject,
-		RoleID:      DefaultRoleID,
+		Project:     defaultProject,
+		RoleID:      defaultRoleID,
 		Permissions: test,
 	}
 

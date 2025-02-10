@@ -456,6 +456,7 @@ func TestAssertionFailedError(t *testing.T) {
 }
 
 func TestInvalidJSONError(t *testing.T) {
+	t.Parallel()
 	t.Run("implements error interface", func(t *testing.T) {
 		t.Parallel()
 
@@ -475,6 +476,8 @@ func TestInvalidJSONError(t *testing.T) {
 }
 
 func TestUnmarshallJSONError(t *testing.T) {
+	t.Parallel()
+
 	testCases := []struct {
 		name     string
 		err      error
@@ -504,6 +507,7 @@ func TestUnmarshallJSONError(t *testing.T) {
 	for _, tc := range testCases {
 		t.Run(tc.name, func(t *testing.T) {
 			t.Parallel()
+
 			err := &unmarshallJSONError{
 				err:      tc.err,
 				resource: tc.resource,
@@ -526,6 +530,8 @@ func TestAttributesFieldMissingError(t *testing.T) {
 }
 
 func TestAssertionError(t *testing.T) {
+	t.Parallel()
+
 	testCases := []struct {
 		name    string
 		message string
@@ -545,7 +551,10 @@ func TestAssertionError(t *testing.T) {
 
 	for _, tc := range testCases {
 		t.Run(tc.name, func(t *testing.T) {
+			t.Parallel()
+
 			err := &assertionError{message: tc.message}
+
 			if got := err.Error(); got != tc.want {
 				t.Errorf("assertionError.Error() = %v, want %v", got, tc.want)
 			}
@@ -554,6 +563,8 @@ func TestAssertionError(t *testing.T) {
 }
 
 func TestTemplateParseError(t *testing.T) {
+	t.Parallel()
+
 	testCases := []struct {
 		name string
 		err  error
@@ -573,7 +584,10 @@ func TestTemplateParseError(t *testing.T) {
 
 	for _, tc := range testCases {
 		t.Run(tc.name, func(t *testing.T) {
+			t.Parallel()
+
 			err := &templateParseError{err: tc.err}
+
 			if got := err.Error(); got != tc.want {
 				t.Errorf("templateParseError.Error() = %v, want %v", got, tc.want)
 			}
@@ -582,6 +596,8 @@ func TestTemplateParseError(t *testing.T) {
 }
 
 func TestTemplateExecuteError(t *testing.T) {
+	t.Parallel()
+
 	testCases := []struct {
 		name string
 		err  error
@@ -601,7 +617,10 @@ func TestTemplateExecuteError(t *testing.T) {
 
 	for _, tc := range testCases {
 		t.Run(tc.name, func(t *testing.T) {
+			t.Parallel()
+
 			err := &templateExecuteError{err: tc.err}
+
 			if got := err.Error(); got != tc.want {
 				t.Errorf("templateExecuteError.Error() = %v, want %v", got, tc.want)
 			}
@@ -610,6 +629,8 @@ func TestTemplateExecuteError(t *testing.T) {
 }
 
 func TestMarshallAWSPolicyError(t *testing.T) {
+	t.Parallel()
+
 	tests := []struct {
 		name     string
 		err      error
@@ -634,7 +655,10 @@ func TestMarshallAWSPolicyError(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
+
 			err := &marshallAWSPolicyError{err: tt.err}
+
 			if got := err.Error(); got != tt.expected {
 				t.Errorf("marshallAWSPolicyError.Error() = %v, want %v", got, tt.expected)
 			}
@@ -644,6 +668,8 @@ func TestMarshallAWSPolicyError(t *testing.T) {
 
 func TestDirectoryErrors(t *testing.T) {
 	t.Run("empty directory error", func(t *testing.T) {
+		t.Parallel()
+
 		err := &emptyDirectoryError{}
 		expected := "directory value cannot be an empty string"
 
@@ -674,7 +700,9 @@ func TestARNErrors(t *testing.T) {
 
 	t.Run("invalid ARN error", func(t *testing.T) {
 		t.Parallel()
+
 		err := &invalidARNError{arn: "invalid:arn"}
+
 		expected := "invalid ARN: invalid:arn"
 
 		if err.Error() != expected {
@@ -684,10 +712,12 @@ func TestARNErrors(t *testing.T) {
 }
 
 func TestAWSErrors(t *testing.T) {
-
+	t.Parallel()
 	t.Run("AWS config error", func(t *testing.T) {
 		t.Parallel()
+
 		err := &awsConfigError{err: &emptyNameError{}}
+
 		expected := "failed to load AWS config: Name cannot be empty"
 
 		if err.Error() != expected {

@@ -7,28 +7,7 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "VisualEditor0",
         "Effect" : "Allow",
         "Action" : [
-
-          # aws_pinpointsmsvoicev2_configuration_set
-          "sms-voice:CreateConfigurationSet",
-          "sms-voice:DescribeConfigurationSets",
-          "sms-voice:DeleteConfigurationSet",
-          "sms-voice:ListTagsForResource",
-
-          # aws_pinpointsmsvoicev2_opt_out_list
-          "sms-voice:CreateOptOutList",
-          "sms-voice:DescribeOptOutLists",
-          "sms-voice:DeleteOptOutList",
-          "sms-voice:ListTagsForResource",
-
-          "sms-voice:TagResource",
-          "sms-voice:UntagResource",
-
-          # aws_pinpointsmsvoicev2_phone_number
-          "sms-voice:ListTagsForResource",
-          "sms-voice:DescribePhoneNumbers",
-          "sms-voice:RequestPhoneNumber",
-          "sms-voice:UpdatePhoneNumber",
-          "sms-voice:ReleasePhoneNumber"
+          "ec2:DescribeIpams"
         ],
         "Resource" : [
           "*"

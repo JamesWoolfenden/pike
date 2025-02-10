@@ -27,7 +27,7 @@ func AZUREPolicy(permissions []string, policyName string) (string, error) {
 	}
 
 	if policyName == "" {
-		policyName = DefaultPolicyName
+		policyName = defaultPolicyName
 	}
 
 	theDetails := azurePolicyDetails{policyName, test}

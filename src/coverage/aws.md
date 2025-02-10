@@ -1,7 +1,7 @@
 # todo aws
 
 Resource percentage coverage   93.16
-Datasource percentage coverage 100.00
+Datasource percentage coverage 99.65
 
 ./resource.ps1 aws_cognito_managed_user_pool_client
 ./resource.ps1 aws_ebs_fast_snapshot_restore
