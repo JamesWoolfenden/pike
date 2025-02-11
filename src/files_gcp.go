@@ -332,16 +332,16 @@ var googleAPIGatewayGateway []byte
 var googleAPIGatewayGatewayIam []byte
 
 //go:embed mapping/google/resource/spanner/google_spanner_database.json
-var GoogleSpannerDatabase []byte
+var googleSpannerDatabase []byte
 
 //go:embed mapping/google/resource/spanner/google_spanner_database_iam.json
-var GoogleSpannerDatabaseIam []byte
+var googleSpannerDatabaseIam []byte
 
 //go:embed mapping/google/resource/spanner/google_spanner_instance.json
-var GoogleSpannerInstance []byte
+var googleSpannerInstance []byte
 
 //go:embed mapping/google/resource/spanner/google_spanner_instance_iam.json
-var GoogleSpannerInstanceIam []byte
+var googleSpannerInstanceIam []byte
 
 //go:embed mapping/google/resource/run/google_cloud_run_v2_service.json
 var googleCloudRunV2Service []byte

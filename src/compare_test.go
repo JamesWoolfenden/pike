@@ -65,7 +65,7 @@ func TestCompareIAMPolicy(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
-			got, err := CompareIAMPolicy(tt.args.Policy, tt.args.OldPolicy)
+			got, err := compareIAMPolicy(tt.args.Policy, tt.args.OldPolicy)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("CompareIAMPolicy() error = %v, wantErr %v", err, tt.wantErr)
 
@@ -143,7 +143,7 @@ func TestShowDifferences(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			gotBool, err := ShowDifferences(tt.policy, tt.diff)
+			gotBool, err := showDifferences(tt.policy, tt.diff)
 
 			if (err != nil) != tt.wantErr {
 				t.Errorf("ShowDifferences() error = %v, wantErr %v", err, tt.wantErr)

@@ -948,6 +948,7 @@
     "azurerm_mssql_job_agent",
     "azurerm_mssql_job_credential",
     "azurerm_mssql_job_schedule",
+    "azurerm_mssql_job_step",
     "azurerm_mssql_job_target_group",
     "azurerm_mssql_managed_database",
     "azurerm_mssql_managed_instance",

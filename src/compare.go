@@ -33,12 +33,12 @@ func Compare(directory string, arn string, init bool) (bool, error) {
 
 	client := iam.NewFromConfig(cfg)
 
-	version, err := GetVersion(client, arn)
+	version, err := getVersion(client, arn)
 	if err != nil {
 		return false, &getVersionError{err}
 	}
 
-	policy, err := GetPolicyVersion(client, arn, *version)
+	policy, err := getPolicyVersion(client, arn, *version)
 	if err != nil {
 		return false, &getPolicyVersionError{err}
 	}
@@ -48,7 +48,7 @@ func Compare(directory string, arn string, init bool) (bool, error) {
 		return false, &getIAMVersionError{err}
 	}
 
-	sorted, err := SortActions(iacPolicy.AWS.JSONOut)
+	sorted, err := sortActions(iacPolicy.AWS.JSONOut)
 	if err != nil {
 		return false, &sortActionsError{iacPolicy.AWS.JSONOut}
 	}
@@ -56,7 +56,7 @@ func Compare(directory string, arn string, init bool) (bool, error) {
 	// iam versus iac
 	fmt.Printf("IAM Policy %s versus Local %s \n", arn, directory)
 
-	return CompareIAMPolicy(*policy, *sorted)
+	return compareIAMPolicy(*policy, *sorted)
 }
 
 func inputValidationCompare(directory string, arn string) (bool, error) {
@@ -87,8 +87,8 @@ func (m *compareDifferenceError) Error() string {
 	return fmt.Sprintf("compare difference failed: %v", m.err)
 }
 
-// CompareIAMPolicy takes two IAM policies and compares.
-func CompareIAMPolicy(policy string, oldPolicy string) (bool, error) {
+// compareIAMPolicy takes two IAM policies and compares.
+func compareIAMPolicy(policy string, oldPolicy string) (bool, error) {
 	differ := diff.New()
 	compare, err := differ.Compare([]byte(policy), []byte(oldPolicy))
 
@@ -97,7 +97,7 @@ func CompareIAMPolicy(policy string, oldPolicy string) (bool, error) {
 	}
 
 	if compare.Modified() {
-		return ShowDifferences(policy, compare)
+		return showDifferences(policy, compare)
 	}
 
 	return true, nil
@@ -111,7 +111,7 @@ func (m *formatterError) Error() string {
 	return fmt.Sprintf("formatter failed: %v", m.err)
 }
 
-func ShowDifferences(policy string, compare diff.Diff) (bool, error) {
+func showDifferences(policy string, compare diff.Diff) (bool, error) {
 	var aJSON map[string]interface{}
 	err := json.Unmarshal([]byte(policy), &aJSON)
 

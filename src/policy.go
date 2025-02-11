@@ -80,7 +80,7 @@ func NewAWSPolicy(actions []string, resources bool) (Policy, error) {
 
 		state := NewStatement(
 			"VisualEditor"+strconv.Itoa(count),
-			Allow,
+			allow,
 			myActions,
 			myResource)
 

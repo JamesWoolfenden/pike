@@ -8,12 +8,12 @@ import (
 	"github.com/rs/zerolog/log"
 )
 
-type PolicyDiff struct {
+type policyDiff struct {
 	Over  []string
 	Under []string
 }
 
-const Allow = "Allow"
+const allow = "Allow"
 
 type identityParseError struct {
 	err error
@@ -39,10 +39,10 @@ func (m *compareAllowError) Error() string {
 	return fmt.Sprintf("compare allow error %v", m.err)
 }
 
-func Inspect(directory string, init bool) (PolicyDiff, error) {
+func Inspect(directory string, init bool) (policyDiff, error) {
 	var iacPolicy Identity.Policy
 
-	var Difference PolicyDiff
+	var Difference policyDiff
 
 	rawIACPolicy, err := MakePolicy(directory, nil, init, false, "")
 	if err != nil {
@@ -69,7 +69,7 @@ func Inspect(directory string, init bool) (PolicyDiff, error) {
 		return Difference, &getIAMError{err: err}
 	}
 
-	Difference, err = CompareAllow(iamIdentity, iacPolicy)
+	Difference, err = compareAllow(iamIdentity, iacPolicy)
 	if err != nil {
 		return Difference, &compareAllowError{err: err}
 	}
@@ -83,27 +83,27 @@ func (m *policyDifferenceError) Error() string {
 	return "invalid input: empty or nil policies/statements"
 }
 
-func CompareAllow(identity Identity.IAM, policy Identity.Policy) (PolicyDiff, error) {
+func compareAllow(identity Identity.IAM, policy Identity.Policy) (policyDiff, error) {
 	// Add at start of function
 	if identity.Policies == nil || policy.Statements == nil {
-		return PolicyDiff{}, &policyDifferenceError{}
+		return policyDiff{}, &policyDifferenceError{}
 	}
 
 	if len(identity.Policies) == 0 || len(policy.Statements) == 0 {
-		return PolicyDiff{}, &policyDifferenceError{}
+		return policyDiff{}, &policyDifferenceError{}
 	}
 
 	identityAllows := make([]string, 0, len(identity.Policies)*2)
 	policyAllows := make([]string, 0, len(policy.Statements))
 
-	var difference PolicyDiff
+	var difference policyDiff
 
 	for _, identityPolicy := range identity.Policies {
 		statements := identityPolicy.Statements
 
 		if statements != nil {
 			for _, statement := range identityPolicy.Statements {
-				if statement.Effect == Allow {
+				if statement.Effect == allow {
 					identityAllows = append(identityAllows, statement.Action...)
 				}
 			}
@@ -111,7 +111,7 @@ func CompareAllow(identity Identity.IAM, policy Identity.Policy) (PolicyDiff, er
 	}
 
 	for _, policyStatement := range policy.Statements {
-		if policyStatement.Effect == Allow {
+		if policyStatement.Effect == allow {
 			policyAllows = append(policyAllows, policyStatement.Action...)
 		}
 	}

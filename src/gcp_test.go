@@ -167,6 +167,8 @@ func TestInvalidGCPResourceError(t *testing.T) {
 }
 
 func TestInvalidPermissionMapError(t *testing.T) {
+	t.Parallel()
+
 	tests := []struct {
 		name string
 		err  error
@@ -191,7 +193,10 @@ func TestInvalidPermissionMapError(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
+
 			err := invalidPermissionMapError{err: tt.err}
+
 			if got := err.Error(); got != tt.want {
 				t.Errorf("invalidPermissionMapError.Error() = %v, want %v", got, tt.want)
 			}

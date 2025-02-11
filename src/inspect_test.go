@@ -42,37 +42,37 @@ func TestCompareAllow(t *testing.T) {
 	tests := []struct {
 		name    string
 		args    args
-		want    PolicyDiff
+		want    policyDiff
 		wantErr bool
 	}{
 		{
 			"pass empty",
 			args{identity, policy},
-			PolicyDiff{},
+			policyDiff{},
 			false,
 		},
 		{
 			"pass not empty",
 			args{identity, morePolicy},
-			PolicyDiff{nil, []string{"s3:*", "s3-object-lambda:*"}},
+			policyDiff{nil, []string{"s3:*", "s3-object-lambda:*"}},
 			false,
 		},
 		{
 			"pass",
 			args{moreIdentity, morePolicy},
-			PolicyDiff{},
+			policyDiff{},
 			false,
 		},
 		{
 			"different",
 			args{moreIdentity, policy},
-			PolicyDiff{[]string{"s3:*", "s3-object-lambda:*"}, nil},
+			policyDiff{[]string{"s3:*", "s3-object-lambda:*"}, nil},
 			false,
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got, err := CompareAllow(tt.args.identity, tt.args.policy)
+			got, err := compareAllow(tt.args.identity, tt.args.policy)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("CompareAllow() error = %v, wantErr %v", err, tt.wantErr)
 				return
@@ -93,11 +93,11 @@ func TestInspect(t *testing.T) {
 	tests := []struct {
 		name    string
 		args    args
-		want    PolicyDiff
+		want    policyDiff
 		wantErr bool
 	}{
 		//	{"Pass", args{"../terraform/aws/backup", false}, []string{"foo", "bar"}, false},
-		{"no dir", args{"../terraform/aws/nodir", false}, PolicyDiff{}, true},
+		{"no dir", args{"../terraform/aws/nodir", false}, policyDiff{}, true},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -138,42 +138,42 @@ func Test_contains(t *testing.T) {
 func TestPolicyDiff_Empty(t *testing.T) {
 	tests := []struct {
 		name string
-		pd   PolicyDiff
+		pd   policyDiff
 		want bool
 	}{
 		{
 			name: "both nil",
-			pd:   PolicyDiff{nil, nil},
+			pd:   policyDiff{nil, nil},
 			want: true,
 		},
 		{
 			name: "empty slices",
-			pd:   PolicyDiff{[]string{}, []string{}},
+			pd:   policyDiff{[]string{}, []string{}},
 			want: true,
 		},
 		{
 			name: "over nil under empty",
-			pd:   PolicyDiff{nil, []string{}},
+			pd:   policyDiff{nil, []string{}},
 			want: true,
 		},
 		{
 			name: "over empty under nil",
-			pd:   PolicyDiff{[]string{}, nil},
+			pd:   policyDiff{[]string{}, nil},
 			want: true,
 		},
 		{
 			name: "over with content",
-			pd:   PolicyDiff{[]string{"s3:GetObject"}, nil},
+			pd:   policyDiff{[]string{"s3:GetObject"}, nil},
 			want: false,
 		},
 		{
 			name: "under with content",
-			pd:   PolicyDiff{nil, []string{"s3:PutObject"}},
+			pd:   policyDiff{nil, []string{"s3:PutObject"}},
 			want: false,
 		},
 		{
 			name: "both with content",
-			pd:   PolicyDiff{[]string{"s3:GetObject"}, []string{"s3:PutObject"}},
+			pd:   policyDiff{[]string{"s3:GetObject"}, []string{"s3:PutObject"}},
 			want: false,
 		},
 	}
@@ -191,38 +191,38 @@ func TestPolicyDiff_Empty(t *testing.T) {
 func TestPolicyDiff_Equal(t *testing.T) {
 	tests := []struct {
 		name     string
-		first    PolicyDiff
-		second   PolicyDiff
+		first    policyDiff
+		second   policyDiff
 		wantSame bool
 	}{
 		{
 			name:     "identical empty",
-			first:    PolicyDiff{},
-			second:   PolicyDiff{},
+			first:    policyDiff{},
+			second:   policyDiff{},
 			wantSame: true,
 		},
 		{
 			name:     "identical with content",
-			first:    PolicyDiff{[]string{"s3:GetObject"}, []string{"s3:PutObject"}},
-			second:   PolicyDiff{[]string{"s3:GetObject"}, []string{"s3:PutObject"}},
+			first:    policyDiff{[]string{"s3:GetObject"}, []string{"s3:PutObject"}},
+			second:   policyDiff{[]string{"s3:GetObject"}, []string{"s3:PutObject"}},
 			wantSame: true,
 		},
 		{
 			name:     "different over",
-			first:    PolicyDiff{[]string{"s3:GetObject"}, []string{"s3:PutObject"}},
-			second:   PolicyDiff{[]string{"s3:ListBucket"}, []string{"s3:PutObject"}},
+			first:    policyDiff{[]string{"s3:GetObject"}, []string{"s3:PutObject"}},
+			second:   policyDiff{[]string{"s3:ListBucket"}, []string{"s3:PutObject"}},
 			wantSame: false,
 		},
 		{
 			name:     "different under",
-			first:    PolicyDiff{[]string{"s3:GetObject"}, []string{"s3:PutObject"}},
-			second:   PolicyDiff{[]string{"s3:GetObject"}, []string{"s3:DeleteObject"}},
+			first:    policyDiff{[]string{"s3:GetObject"}, []string{"s3:PutObject"}},
+			second:   policyDiff{[]string{"s3:GetObject"}, []string{"s3:DeleteObject"}},
 			wantSame: false,
 		},
 		{
 			name:     "different lengths",
-			first:    PolicyDiff{[]string{"s3:GetObject"}, []string{"s3:PutObject"}},
-			second:   PolicyDiff{[]string{"s3:GetObject"}, []string{"s3:PutObject", "s3:DeleteObject"}},
+			first:    policyDiff{[]string{"s3:GetObject"}, []string{"s3:PutObject"}},
+			second:   policyDiff{[]string{"s3:GetObject"}, []string{"s3:PutObject", "s3:DeleteObject"}},
 			wantSame: false,
 		},
 	}
@@ -243,7 +243,7 @@ func TestInspectExtended(t *testing.T) {
 		init      bool
 	}
 
-	myDiff := PolicyDiff{
+	myDiff := policyDiff{
 		Over: []string{"ssm:DescribePatchBaselines"},
 		Under: []string{
 			"dynamodb:DeleteItem", "dynamodb:DescribeTable", "dynamodb:GetItem", "dynamodb:PutItem",
@@ -254,7 +254,7 @@ func TestInspectExtended(t *testing.T) {
 	tests := []struct {
 		name    string
 		args    args
-		want    PolicyDiff
+		want    policyDiff
 		wantErr bool
 	}{
 		//{
@@ -282,7 +282,7 @@ func TestInspectExtended(t *testing.T) {
 				directory: "../terraform/aws/test dir",
 				init:      false,
 			},
-			want:    PolicyDiff{},
+			want:    policyDiff{},
 			wantErr: true,
 		},
 		{
@@ -291,7 +291,7 @@ func TestInspectExtended(t *testing.T) {
 				directory: "./test",
 				init:      false,
 			},
-			want:    PolicyDiff{},
+			want:    policyDiff{},
 			wantErr: true,
 		},
 		{
@@ -300,7 +300,7 @@ func TestInspectExtended(t *testing.T) {
 				directory: "/absolute/path/test",
 				init:      false,
 			},
-			want:    PolicyDiff{},
+			want:    policyDiff{},
 			wantErr: true,
 		},
 		{
@@ -309,7 +309,7 @@ func TestInspectExtended(t *testing.T) {
 				directory: "../terraform/aws/test@#$",
 				init:      false,
 			},
-			want:    PolicyDiff{},
+			want:    policyDiff{},
 			wantErr: true,
 		},
 	}

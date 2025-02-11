@@ -89,7 +89,7 @@ func InvokeGithubDispatchEvent(repository string, workflowFileName string, branc
 
 	ctx, client := GetGithubClient()
 
-	err = VerifyBranch(client, owner, repo, branch)
+	err = verifyBranch(client, owner, repo, branch)
 	if err != nil {
 		log.Error().Err(err)
 
@@ -146,8 +146,8 @@ func (m *listBranchesError) Error() string {
 	return fmt.Sprintf("failed to list branches %v", m.err)
 }
 
-// VerifyBranch checks that a branch exists in a repo.
-func VerifyBranch(client *github.Client, owner string, repo string, branch string) error {
+// verifyBranch checks that a branch exists in a repo.
+func verifyBranch(client *github.Client, owner string, repo string, branch string) error {
 	ctx := context.Background()
 	branches, _, err := client.Repositories.ListBranches(ctx, owner, repo, nil)
 

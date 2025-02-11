@@ -15,7 +15,7 @@ import (
 	"github.com/rs/zerolog/log"
 )
 
-const PollIntervalSeconds int = 5
+const pollIntervalSeconds int = 5
 
 // Watch looks at IAM policy for new revisions.
 func Watch(arn string, wait int) error {
@@ -34,14 +34,14 @@ func Watch(arn string, wait int) error {
 
 	client := iam.NewFromConfig(cfg)
 
-	Version, err := GetVersion(client, arn)
+	Version, err := getVersion(client, arn)
 	if err != nil {
 		return &getVersionError{err}
 	}
 
 	log.Info().Msgf("Waiting for change on policy Version %s", *Version)
 
-	delay, err := WaitForPolicyChange(client, arn, *Version, wait, PollIntervalSeconds) // Added default pollInterval of 10
+	delay, err := waitForPolicyChange(client, arn, *Version, wait, pollIntervalSeconds) // Added default pollInterval of 10
 	if err != nil {
 		return &waitForPolicyChangeError{err}
 	}
@@ -51,12 +51,12 @@ func Watch(arn string, wait int) error {
 	return nil
 }
 
-// WaitForPolicyChange looks at IAM policy change.
-func WaitForPolicyChange(client *iam.Client, arn string, version string, wait, pollInterval int) (int, error) {
+// waitForPolicyChange looks at IAM policy change.
+func waitForPolicyChange(client *iam.Client, arn string, version string, wait, pollInterval int) (int, error) {
 	for item := 1; item < wait; item++ {
 		time.Sleep(time.Duration(pollInterval))
 
-		NewVersion, err := GetVersion(client, arn)
+		NewVersion, err := getVersion(client, arn)
 		if err != nil {
 			continue
 		}
@@ -77,8 +77,8 @@ func (e *waitExpiredError) Error() string {
 	return "wait expired with no change"
 }
 
-// GetVersion gets the version of the IAM policy.
-func GetVersion(client *iam.Client, policyArn string) (*string, error) {
+// getVersion gets the version of the IAM policy.
+func getVersion(client *iam.Client, policyArn string) (*string, error) {
 	output, err := client.GetPolicy(context.TODO(), &iam.GetPolicyInput{PolicyArn: aws.String(policyArn)})
 	if err != nil {
 		return nil, &getVersionError{err}
@@ -95,8 +95,8 @@ func (e *urlEscapeError) Error() string {
 	return fmt.Sprintf("failed to unescape url: %v", e.err)
 }
 
-// GetPolicyVersion Obtains the versioned IAM policy.
-func GetPolicyVersion(client *iam.Client, policyArn string, version string) (*string, error) {
+// getPolicyVersion Obtains the versioned IAM policy.
+func getPolicyVersion(client *iam.Client, policyArn string, version string) (*string, error) {
 	output, err := client.GetPolicyVersion(
 		context.TODO(),
 		&iam.GetPolicyVersionInput{
@@ -112,7 +112,7 @@ func GetPolicyVersion(client *iam.Client, policyArn string, version string) (*st
 		return nil, &urlEscapeError{err}
 	}
 
-	fixed, err := SortActions(Policy)
+	fixed, err := sortActions(Policy)
 	if err != nil {
 		return nil, &sortActionsError{Policy}
 	}
@@ -126,8 +126,8 @@ func (e *castToListOfInterfaceError) Error() string {
 	return "failed to convert to list of interfaces"
 }
 
-// SortActions sorts the actions list of an IAM policy.
-func SortActions(myPolicy string) (*string, error) {
+// sortActions sorts the actions list of an IAM policy.
+func sortActions(myPolicy string) (*string, error) {
 	var raw map[string]interface{}
 	err := json.Unmarshal([]byte(myPolicy), &raw)
 

@@ -382,6 +382,7 @@ func TestGetPermission(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
+
 			got, err := pike.GetPermission(tt.args.result)
 
 			if (err != nil) != tt.wantErr {
