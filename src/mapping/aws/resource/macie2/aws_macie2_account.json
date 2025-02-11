@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "macie2:EnableMacie",
+      "iam:CreateServiceLinkedRole",
+      "macie2:GetMacieSession",
+      "macie2:DisableMacie"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

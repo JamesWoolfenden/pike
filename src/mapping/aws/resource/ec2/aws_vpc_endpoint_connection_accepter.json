@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "ec2:AcceptVpcEndpointConnections",
+      "ec2:RejectVpcEndpointConnections",
+      "ec2:DescribeVpcEndpointConnections"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

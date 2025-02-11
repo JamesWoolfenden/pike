@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "es:AssociatePackage"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

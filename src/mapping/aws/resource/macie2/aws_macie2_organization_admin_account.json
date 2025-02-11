@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "macie2:EnableOrganizationAdminAccount",
+      "macie2:DisableOrganizationAdminAccount"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

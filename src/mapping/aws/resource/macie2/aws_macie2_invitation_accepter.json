@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "macie2:AcceptInvitation"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

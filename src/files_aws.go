@@ -525,3 +525,87 @@ var awsS3ControlObjectLambdaAccessPointPolicy []byte
 
 //go:embed mapping/aws/resource/s3/aws_s3control_storage_lens_configuration.json
 var awsS3ControlStorageLensConfiguration []byte
+
+//go:embed mapping/aws/resource/es/aws_opensearch_authorize_vpc_endpoint_access.json
+var awsOpensearchAuthorizeVpcEndpointAccess []byte
+
+//go:embed mapping/aws/resource/es/aws_opensearch_domain_saml_options.json
+var awsOpensearchDomainSamlOptions []byte
+
+//go:embed mapping/aws/resource/es/aws_opensearch_inbound_connection_accepter.json
+var awsOpensearchInboundConnectionAccepter []byte
+
+//go:embed mapping/aws/resource/es/aws_opensearch_outbound_connection.json
+var awsOpensearchOutboundConnection []byte
+
+//go:embed mapping/aws/resource/es/aws_opensearch_package.json
+var awsOpensearchPackage []byte
+
+//go:embed mapping/aws/resource/es/aws_opensearch_package_association.json
+var awsOpensearchPackageAssociation []byte
+
+//go:embed mapping/aws/resource/es/aws_opensearch_vpc_endpoint.json
+var awsOpensearchVPCEndpoint []byte
+
+//go:embed mapping/aws/resource/servicediscovery/aws_service_discovery_http_namespace.json
+var awsServiceDiscoveryHttpNamespace []byte
+
+//go:embed mapping/aws/resource/servicediscovery/aws_service_discovery_instance.json
+var awsServiceDiscoveryInstance []byte
+
+//go:embed mapping/aws/resource/servicediscovery/aws_service_discovery_private_dns_namespace.json
+var awsServiceDiscoveryPrivateDNSNamespace []byte
+
+//go:embed mapping/aws/resource/servicediscovery/aws_service_discovery_public_dns_namespace.json
+var awsServiceDiscoveryPublicDNSNamespace []byte
+
+//go:embed mapping/aws/resource/servicediscovery/aws_service_discovery_service.json
+var awsServiceDiscoveryService []byte
+
+//go:embed mapping/aws/resource/macie2/aws_macie2_account.json
+var awsMacieAccount []byte
+
+//go:embed mapping/aws/resource/macie2/aws_macie2_classification_export_configuration.json
+var awsMacieClassificationExportConfiguration []byte
+
+//go:embed mapping/aws/resource/macie2/aws_macie2_classification_job.json
+var awsMacieClassificationJob []byte
+
+//go:embed mapping/aws/resource/macie2/aws_macie2_invitation_accepter.json
+var awsMacieInvitationAccepter []byte
+
+//go:embed mapping/aws/resource/macie2/aws_macie2_member.json
+var awsMacieMember []byte
+
+//go:embed mapping/aws/resource/macie2/aws_macie2_organization_admin_account.json
+var awsMacieOrganizationAdminAccount []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpc_endpoint_policy.json
+var awsVpcEndpointPolicy []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpc_endpoint_private_dns.json
+var awsVpcEndpointPrivateDns []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpc_endpoint_security_group_association.json
+var awsVpcEndpointSecurityGroupAssociation []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpc_endpoint_service_allowed_principal.json
+var awsVpcEndpointServiceAllowedPrincipal []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpc_endpoint_service_private_dns_verification.json
+var awsVpcEndpointServicePrivateDnsVerification []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpc_ipam_organization_admin_account.json
+var awsVpcIpamOrganizationAdminAccount []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpc_ipv6_cidr_block_association.json
+var awsVpcIpv6CidrBlockAssociation []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpc_network_performance_metric_subscription.json
+var awsVpcNetworkPerformanceMetricSubscription []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpc_security_group_vpc_association.json
+var awsVpcSecurityGroupAssociation []byte
+
+//go:embed mapping/aws/resource/vpc-lattice/aws_vpclattice_service_network_resource_association.json
+var awsVpclatticeServiceNetworkResourceAssociation []byte

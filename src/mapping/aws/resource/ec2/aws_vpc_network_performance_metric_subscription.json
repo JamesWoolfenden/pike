@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAwsNetworkPerformanceMetricSubscriptions",
+      "ec2:DisableAwsNetworkPerformanceMetricSubscription",
+      "ec2:EnableAwsNetworkPerformanceMetricSubscription"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

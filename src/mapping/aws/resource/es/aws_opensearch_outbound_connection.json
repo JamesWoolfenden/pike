@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "es:DescribeOutboundConnections",
+      "es:CreateOutboundConnection",
+      "es:DeleteOutboundConnection"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

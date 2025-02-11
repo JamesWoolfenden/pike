@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "macie2:GetClassificationExportConfiguration",
+      "macie2:PutClassificationExportConfiguration"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

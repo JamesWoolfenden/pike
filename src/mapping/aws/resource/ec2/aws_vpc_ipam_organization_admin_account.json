@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "ec2:DisableIpamOrganizationAdminAccount",
+      "ec2:EnableIpamOrganizationAdminAccount"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "ec2:AssociateVpcCidrBlock",
+      "ec2:AllocateIpamPoolCidr",
+      "ec2:DisassociateVpcCidrBlock"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "servicediscovery:GetNamespace",
+      "servicediscovery:CreateHttpNamespace",
+      "servicediscovery:DeleteNamespace",
+      "servicediscovery:UpdateHttpNamespace",
+      "servicediscovery:ListTagsForResource",
+      "servicediscovery:GetOperation"
+    ],
+    "attributes": {
+      "tags": [
+        "servicediscovery:TagResource",
+        "servicediscovery:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

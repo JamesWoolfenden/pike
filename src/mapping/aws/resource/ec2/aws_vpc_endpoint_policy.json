@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "ec2:ModifyVerifiedAccessEndpointPolicy",
+      "ec2:GetVerifiedAccessEndpointPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

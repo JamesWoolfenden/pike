@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "servicediscovery:CreatePublicDnsNamespace",
+      "servicediscovery:UpdatePublicDnsNamespace",
+      "servicediscovery:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "servicediscovery:TagResource",
+        "servicediscovery:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

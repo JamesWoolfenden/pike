@@ -4,7 +4,8 @@
       "ec2:CreateIpamPool",
       "ec2:DescribeIpamPools",
       "ec2:DeleteIpamPool",
-      "ec2:ModifyIpamPool"
+      "ec2:ModifyIpamPool",
+      "ec2:DescribeIpamScopes"
     ],
     "attributes": {
       "tags": [

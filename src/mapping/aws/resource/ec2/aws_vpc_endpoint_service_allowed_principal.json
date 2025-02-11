@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "ec2:ModifyVpcEndpointServicePermissions"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

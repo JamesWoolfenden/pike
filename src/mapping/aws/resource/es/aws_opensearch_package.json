@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "es:CreatePackage",
+      "es:DeletePackage",
+      "es:UpdatePackage"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

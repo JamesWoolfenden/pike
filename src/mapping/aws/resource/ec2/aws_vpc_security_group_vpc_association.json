@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "ec2:AssociateSecurityGroupVpc",
+      "ec2:DescribeSecurityGroupVpcAssociations",
+      "ec2:DisassociateSecurityGroupVpc"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

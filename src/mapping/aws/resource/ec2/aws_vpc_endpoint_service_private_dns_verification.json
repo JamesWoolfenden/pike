@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "ec2:StartVpcEndpointServicePrivateDnsVerification"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

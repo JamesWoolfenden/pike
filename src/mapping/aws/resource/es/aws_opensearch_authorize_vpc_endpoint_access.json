@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "es:AuthorizeVpcEndpointAccess",
+      "es:RevokeVpcEndpointAccess"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

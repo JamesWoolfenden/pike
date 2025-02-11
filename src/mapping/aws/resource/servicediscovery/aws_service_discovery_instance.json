@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "servicediscovery:GetInstance",
+      "servicediscovery:DeregisterInstance",
+      "servicediscovery:RegisterInstance"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

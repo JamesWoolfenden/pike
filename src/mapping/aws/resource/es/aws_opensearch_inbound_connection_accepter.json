@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "es:AcceptInboundConnection"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,6 +1,6 @@
 # todo aws
 
-Resource percentage coverage   94.04
+Resource percentage coverage   95.94
 Datasource percentage coverage 100.00
 
 ./resource.ps1 aws_cognito_managed_user_pool_client
@@ -28,12 +28,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_iot_thing_principal_attachment
 ./resource.ps1 aws_lb_listener_certificate
 ./resource.ps1 aws_lb_ssl_negotiation_policy
-./resource.ps1 aws_macie2_account
-./resource.ps1 aws_macie2_classification_export_configuration
-./resource.ps1 aws_macie2_classification_job
-./resource.ps1 aws_macie2_invitation_accepter
-./resource.ps1 aws_macie2_member
-./resource.ps1 aws_macie2_organization_admin_account
 ./resource.ps1 aws_main_route_table_association
 ./resource.ps1 aws_memorydb_multi_region_cluster
 ./resource.ps1 aws_msk_single_scram_secret_association
@@ -47,13 +41,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_networkmanager_transit_gateway_connect_peer_association
 ./resource.ps1 aws_networkmonitor_monitor
 ./resource.ps1 aws_networkmonitor_probe
-./resource.ps1 aws_opensearch_authorize_vpc_endpoint_access
-./resource.ps1 aws_opensearch_domain_saml_options
-./resource.ps1 aws_opensearch_inbound_connection_accepter
-./resource.ps1 aws_opensearch_outbound_connection
-./resource.ps1 aws_opensearch_package
-./resource.ps1 aws_opensearch_package_association
-./resource.ps1 aws_opensearch_vpc_endpoint
 ./resource.ps1 aws_organizations_delegated_administrator
 ./resource.ps1 aws_prometheus_rule_group_namespace
 ./resource.ps1 aws_qldb_ledger
@@ -67,11 +54,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_securityhub_invite_accepter
 ./resource.ps1 aws_securityhub_member
 ./resource.ps1 aws_serverlessapplicationrepository_cloudformation_stack
-./resource.ps1 aws_service_discovery_http_namespace
-./resource.ps1 aws_service_discovery_instance
-./resource.ps1 aws_service_discovery_private_dns_namespace
-./resource.ps1 aws_service_discovery_public_dns_namespace
-./resource.ps1 aws_service_discovery_service
 ./resource.ps1 aws_servicecatalog_provisioning_artifact
 ./resource.ps1 aws_shield_application_layer_automatic_response
 ./resource.ps1 aws_shield_drt_access_log_bucket_association
@@ -81,13 +63,3 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_verifiedaccess_instance_trust_provider_attachment
 ./resource.ps1 aws_verifiedpermissions_schema
 ./resource.ps1 aws_vpc_endpoint_connection_accepter
-./resource.ps1 aws_vpc_endpoint_policy
-./resource.ps1 aws_vpc_endpoint_private_dns
-./resource.ps1 aws_vpc_endpoint_security_group_association
-./resource.ps1 aws_vpc_endpoint_service_allowed_principal
-./resource.ps1 aws_vpc_endpoint_service_private_dns_verification
-./resource.ps1 aws_vpc_ipam_organization_admin_account
-./resource.ps1 aws_vpc_ipv6_cidr_block_association
-./resource.ps1 aws_vpc_network_performance_metric_subscription
-./resource.ps1 aws_vpc_security_group_vpc_association
-./resource.ps1 aws_vpclattice_service_network_resource_association

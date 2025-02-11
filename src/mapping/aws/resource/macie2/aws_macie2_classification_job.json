@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "macie2:DescribeClassificationJob",
+      "macie2:CreateClassificationJob",
+      "macie2:UpdateClassificationJob"
+    ],
+    "attributes": {
+      "tags": [
+        "macie2:TagResource",
+        "macie2:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

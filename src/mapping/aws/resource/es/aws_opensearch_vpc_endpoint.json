@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "es:DescribeVpcEndpoints",
+      "es:CreateVpcEndpoint",
+      "es:DeleteVpcEndpoint",
+      "es:UpdateVpcEndpoint"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "servicediscovery:ListTagsForResource",
+      "servicediscovery:GetService",
+      "servicediscovery:CreateService",
+      "servicediscovery:DeleteService",
+      "servicediscovery:UpdateService"
+    ],
+    "attributes": {
+      "tags": [
+        "servicediscovery:TagResource",
+        "servicediscovery:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "macie2:GetMember",
+      "macie2:DeleteMember",
+      "macie2:CreateMember"
+    ],
+    "attributes": {
+      "tags": [
+        "macie2:TagResource",
+        "macie2:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
