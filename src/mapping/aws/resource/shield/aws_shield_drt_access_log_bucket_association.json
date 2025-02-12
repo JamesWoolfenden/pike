@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "shield:AssociateDRTLogBucket",
+      "shield:DisassociateDRTLogBucket"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

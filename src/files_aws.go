@@ -609,3 +609,180 @@ var awsVpcSecurityGroupAssociation []byte
 
 //go:embed mapping/aws/resource/vpc-lattice/aws_vpclattice_service_network_resource_association.json
 var awsVpclatticeServiceNetworkResourceAssociation []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpc_endpoint_connection_accepter.json
+var awsVpcEndpointConnectionAccepter []byte
+
+//go:embed mapping/aws/resource/iot/aws_iot_event_configurations.json
+var awsIotEventConfigurations []byte
+
+//go:embed mapping/aws/resource/iot/aws_iot_indexing_configuration.json
+var awsIotIndexingConfiguration []byte
+
+//go:embed mapping/aws/resource/iot/aws_iot_logging_options.json
+var awsIotLoggingOptions []byte
+
+//go:embed mapping/aws/resource/iot/aws_iot_policy_attachment.json
+var awsIotPolicyAttachment []byte
+
+//go:embed mapping/aws/resource/iot/aws_iot_thing_group_membership.json
+var awsIotThingGroupMembership []byte
+
+//go:embed mapping/aws/resource/iot/aws_iot_thing_principal_attachment.json
+var awsIotThingPrincipalAttachment []byte
+
+//go:embed mapping/aws/resource/elasticloadbalancing/aws_lb_listener_certificate.json
+var awsLbListenerCertificate []byte
+
+//go:embed mapping/aws/resource/elasticloadbalancing/aws_lb_ssl_negotiation_policy.json
+var awsLbSslNegotiationPolicy []byte
+
+//go:embed mapping/aws/resource/ec2/aws_main_route_table_association.json
+var awsMainRouteTableAssociation []byte
+
+//go:embed mapping/aws/resource/memorydb/aws_memorydb_multi_region_cluster.json
+var awsMemorydbMultiRegionCluster []byte
+
+//go:embed mapping/aws/resource/kafka/aws_msk_single_scram_secret_association.json
+var awsMskSingleScramSecretAssociation []byte
+
+//go:embed mapping/aws/resource/kafkaconnect/aws_mskconnect_custom_plugin.json
+var awsMskconnectCustomPlugin []byte
+
+//go:embed mapping/aws/resource/kafkaconnect/aws_mskconnect_worker_configuration.json
+var awsMskconnectWorkerConfiguration []byte
+
+//go:embed mapping/aws/resource/ec2/aws_network_interface_sg_attachment.json
+var awsNetworkInterfaceSgAttachment []byte
+
+//go:embed mapping/aws/resource/networkmanager/aws_networkmanager_attachment_accepter.json
+var awsNetworkmanagerAttachmentAccepter []byte
+
+//go:embed mapping/aws/resource/networkmanager/aws_networkmanager_connection.json
+var awsNetworkmanagerConnection []byte
+
+//go:embed mapping/aws/resource/networkmanager/aws_networkmanager_core_network_policy_attachment.json
+var awsNetworkmanagerCoreNetworkPolicyAttachment []byte
+
+//go:embed mapping/aws/resource/networkmanager/aws_networkmanager_transit_gateway_connect_peer_association.json
+var awsNetworkmanagerTransitGatewayConnectPeerAssociation []byte
+
+//go:embed mapping/aws/resource/networkmonitor/aws_networkmonitor_monitor.json
+var awsNetworkmonitorMonitor []byte
+
+//go:embed mapping/aws/resource/networkmonitor/aws_networkmonitor_probe.json
+var awsNetworkmonitorProbe []byte
+
+//go:embed mapping/aws/resource/organizations/aws_organizations_delegated_administrator.json
+var awsOrganizationsDelegatedAdministrator []byte
+
+//go:embed mapping/aws/resource/aps/aws_prometheus_rule_group_namespace.json
+var awsPrometheusRuleGroupNamespace []byte
+
+//go:embed mapping/aws/resource/qldb/aws_qldb_ledger.json
+var awsQlbdLedger []byte
+
+//go:embed mapping/aws/resource/ram/aws_ram_resource_share_accepter.json
+var awsRamResourceShareAccepter []byte
+
+//go:embed mapping/aws/resource/ram/aws_ram_sharing_with_organization.json
+var awsRamSharingWithOrganization []byte
+
+//go:embed mapping/aws/resource/rbin/aws_rbin_rule.json
+var awsRbinRule []byte
+
+//go:embed mapping/aws/resource/rds/aws_rds_instance_state.json
+var awsRdsInstanceState []byte
+
+//go:embed mapping/aws/resource/resiliencehub/aws_resiliencehub_resiliency_policy.json
+var awsResilienceResiliencePolicy []byte
+
+//go:embed mapping/aws/resource/resource-groups/aws_resourcegroups_resource.json
+var awsResourcegroupsResource []byte
+
+//go:embed mapping/aws/resource/rum/aws_rum_metrics_destination.json
+var awsRumMetricsDestination []byte
+
+//go:embed mapping/aws/resource/securityhub/aws_securityhub_invite_accepter.json
+var awsSecurityHubInviteAccepter []byte
+
+//go:embed mapping/aws/resource/securityhub/aws_securityhub_member.json
+var awsSecurityhubMember []byte
+
+//go:embed mapping/aws/resource/serverlessrepo/aws_serverlessapplicationrepository_cloudformation_stack.json
+var awsServerlessapplicationrepositoryCloudformationStack []byte
+
+//go:embed mapping/aws/resource/servicecatalog/aws_servicecatalog_provisioning_artifact.json
+var awsServiceCatalogProvisioningArtifact []byte
+
+//go:embed mapping/aws/resource/shield/aws_shield_application_layer_automatic_response.json
+var awsShieldApplicationLayerAutomaticsResponse []byte
+
+//go:embed mapping/aws/resource/shield/aws_shield_drt_access_log_bucket_association.json
+var awsShieldDrtAccessLogBucketAssociation []byte
+
+//go:embed mapping/aws/resource/shield/aws_shield_drt_access_role_arn_association.json
+var awsShieldDrtAccessRoleArnAssociation []byte
+
+//go:embed mapping/aws/resource/shield/aws_shield_protection_health_check_association.json
+var awsShieldProtectionHealthCheckAssociation []byte
+
+//go:embed mapping/aws/resource/timestream/aws_timestreamquery_scheduled_query.json
+var awsTimestreamqueryScheduledQuery []byte
+
+//go:embed mapping/aws/resource/verified-access/aws_verifiedaccess_instance_trust_provider_attachment.json
+var awsVerifiedaccessInstanceTrustProviderAttachment []byte
+
+//go:embed mapping/aws/resource/verifiedpermissions/aws_verifiedpermissions_schema.json
+var awsVerifiedpermissionsSchema []byte
+
+//go:embed mapping/aws/resource/cognito-idp/aws_cognito_managed_user_pool_client.json
+var awsCognitoManagedUserPoolClient []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ebs_fast_snapshot_restore.json
+var awsEbsFastSnapshotRestore []byte
+
+//go:embed mapping/aws/resource/ecr/aws_ecr_account_setting.json
+var awsEcrAccountSetting []byte
+
+//go:embed mapping/aws/resource/ecs/aws_ecs_account_setting_default.json
+var awsEcsAccountSettingDefault []byte
+
+//go:embed mapping/aws/resource/ecs/aws_ecs_cluster_capacity_providers.json
+var awsEcsClusterCapacityProviders []byte
+
+//go:embed mapping/aws/resource/ec2/aws_eip_domain_name.json
+var awsEipDomainName []byte
+
+//go:embed mapping/aws/resource/elasticache/aws_elasticache_reserved_cache_node.json
+var awsElasticacheReservedCacheNode []byte
+
+//go:embed mapping/aws/resource/elasticache/aws_elasticache_serverless_cache.json
+var awsElasticacheServerlessCache []byte
+
+//go:embed mapping/aws/resource/elasticache/aws_elasticache_user_group_association.json
+var awsElasticacheUserGroupAssociation []byte
+
+//go:embed mapping/aws/resource/iam/aws_iam_group_policy_attachments_exclusive.json
+var awsIamGroupPolicyAttachmentExclusive []byte
+
+//go:embed mapping/aws/resource/iam/aws_iam_organizations_features.json
+var awsIamOrganizationsFeatures []byte
+
+//go:embed mapping/aws/resource/iam/aws_iam_role_policy_attachments_exclusive.json
+var awsIamRolePolicyAttachmentsExclusive []byte
+
+//go:embed mapping/aws/resource/iam/aws_iam_user_policy_attachments_exclusive.json
+var awsIamUserPolicyAttachmentsExclusive []byte
+
+//go:embed mapping/aws/resource/grafana/aws_grafana_workspace_saml_configuration.json
+var awsGrafanaWorkspaceSamlConfiguration []byte
+
+//go:embed mapping/aws/resource/grafana/aws_grafana_role_association.json
+var awsGrafanaRoleAssociation []byte
+
+//go:embed mapping/aws/resource/es/aws_elasticsearch_domain_saml_options.json
+var awsElasticsearchDomainSamlOptions []byte
+
+//go:embed mapping/aws/resource/es/aws_opensearch_vpc_endpoint.json
+var awsElasticsearchVpcEndpoint []byte

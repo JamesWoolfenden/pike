@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "elasticache:DescribeReservedCacheNodes",
+      "elasticache:PurchaseReservedCacheNodesOffering",
+      "elasticache:DescribeReservedCacheNodesOfferings",
+      "elasticache:RemoveTagsFromResource"
+    ],
+    "attributes": {
+      "tags": [
+        "elasticache:AddTagsToResource",
+        "elasticache:ListTagsForResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

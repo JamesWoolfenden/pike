@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "iam:AttachRolePolicy",
+      "iam:DetachRolePolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

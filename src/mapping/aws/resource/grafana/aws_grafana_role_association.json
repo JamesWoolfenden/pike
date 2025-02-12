@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "grafana:UpdatePermissions"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "iot:AttachThingPrincipal",
+      "iot:DetachThingPrincipal"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

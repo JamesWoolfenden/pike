@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "iot:AttachPolicy",
+      "iot:DetachPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

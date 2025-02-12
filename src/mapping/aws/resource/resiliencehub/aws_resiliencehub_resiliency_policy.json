@@ -1,0 +1,28 @@
+[
+  {
+    "apply": [
+      "resiliencehub:CreateResiliencyPolicy",
+      "resiliencehub:DescribeResiliencyPolicy",
+      "resiliencehub:UpdateResiliencyPolicy",
+      "resiliencehub:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "resiliencehub:TagResource",
+        "resiliencehub:UntagResource"
+      ]
+    },
+    "destroy": [
+      "resiliencehub:DeleteResiliencyPolicy"
+    ],
+    "modify": [
+      "resiliencehub:DescribeResiliencyPolicy",
+      "resiliencehub:UpdateResiliencyPolicy",
+      "resiliencehub:ListTagsForResource"
+    ],
+    "plan": [
+      "resiliencehub:DescribeResiliencyPolicy",
+      "resiliencehub:ListTagsForResource"
+    ]
+  }
+]

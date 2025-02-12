@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "ec2:AssociateRouteTable",
+      "ec2:DisassociateRouteTable"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

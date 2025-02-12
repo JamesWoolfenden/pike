@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "verifiedpermissions:PutSchema",
+      "verifiedpermissions:GetSchema"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

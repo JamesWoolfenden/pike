@@ -1,10 +1,10 @@
 [
   {
     "apply": [
+      "servicecatalog:DescribeProvisioningArtifact",
       "servicecatalog:CreateProvisioningArtifact",
       "servicecatalog:DeleteProvisioningArtifact",
-      "servicecatalog:UpdateProvisioningArtifact",
-      "servicecatalog:DescribeProvisioningArtifact"
+      "servicecatalog:UpdateProvisioningArtifact"
     ],
     "attributes": {
       "tags": []

@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "cognito-idp:DescribeUserPoolClient",
+      "cognito-idp:CreateUserPoolClient",
+      "cognito-idp:DeleteUserPoolClient",
+      "cognito-idp:UpdateUserPoolClient"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

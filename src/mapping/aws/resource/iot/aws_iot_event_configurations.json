@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "iot:DescribeEventConfigurations",
+      "iot:UpdateEventConfigurations"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

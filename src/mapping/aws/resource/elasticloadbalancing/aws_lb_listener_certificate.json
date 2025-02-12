@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "elasticloadbalancing:DescribeListenerCertificates",
+      "elasticloadbalancing:AddListenerCertificates",
+      "elasticloadbalancing:RemoveListenerCertificates"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

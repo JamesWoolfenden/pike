@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "elasticloadbalancing:DescribeSSLPolicies"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

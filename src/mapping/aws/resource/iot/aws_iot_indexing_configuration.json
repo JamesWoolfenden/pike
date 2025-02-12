@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "iot:GetIndexingConfiguration",
+      "iot:UpdateIndexingConfiguration"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

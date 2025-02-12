@@ -1,0 +1,31 @@
+[
+  {
+    "apply": [
+      "timestream:CreateScheduledQuery",
+      "timestream:DescribeScheduledQuery",
+      "timestream:ListTagsForResource",
+      "timestream:DescribeEndpoints",
+      "timestream:UpdateScheduledQuery",
+      "timestream:DeleteScheduledQuery"
+    ],
+    "attributes": {
+      "tags": [
+        "timestream:TagResource",
+        "timestream:UntagResource"
+      ]
+    },
+    "destroy": [
+      "timestream:DeleteScheduledQuery",
+      "timestream:DescribeEndpoints"
+    ],
+    "modify": [
+      "timestream:UpdateScheduledQuery",
+      "timestream:DescribeEndpoints"
+    ],
+    "plan": [
+      "timestream:DescribeScheduledQuery",
+      "timestream:ListTagsForResource",
+      "timestream:DescribeEndpoints"
+    ]
+  }
+]

@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "ram:AcceptResourceShareInvitation"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

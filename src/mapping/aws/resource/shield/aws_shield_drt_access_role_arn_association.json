@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "shield:AssociateDRTRole",
+      "shield:DisassociateDRTRole"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

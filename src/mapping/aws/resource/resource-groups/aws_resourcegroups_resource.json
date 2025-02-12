@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "resource-groups:AssociateResource",
+      "resource-groups:DisassociateResource"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

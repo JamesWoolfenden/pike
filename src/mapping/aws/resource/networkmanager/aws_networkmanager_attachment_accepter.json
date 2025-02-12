@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "networkmanager:AcceptAttachment"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

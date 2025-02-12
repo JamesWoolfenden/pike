@@ -1,0 +1,38 @@
+[
+  {
+    "apply": [
+      "rbin:GetRule",
+      "rbin:UpdateRule",
+      "rbin:LockRule",
+      "rbin:UnlockRule",
+      "rbin:ListTagsForResource",
+      "iam:PassRole",
+      "rbin:CreateRule",
+      "rbin:DeleteRule"
+    ],
+    "attributes": {
+      "tags": [
+        "rbin:TagResource",
+        "rbin:UntagResource"
+      ]
+    },
+    "destroy": [
+      "rbin:GetRule",
+      "rbin:DeleteRule",
+      "iam:PassRole"
+    ],
+    "modify": [
+      "rbin:GetRule",
+      "rbin:UpdateRule",
+      "rbin:LockRule",
+      "rbin:UnlockRule",
+      "rbin:ListTagsForResource",
+      "iam:PassRole"
+    ],
+    "plan": [
+      "rbin:GetRule",
+      "rbin:ListTagsForResource",
+      "iam:PassRole"
+    ]
+  }
+]

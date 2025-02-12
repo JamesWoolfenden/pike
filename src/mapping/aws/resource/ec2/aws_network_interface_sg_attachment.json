@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "ec2:ModifyNetworkInterfaceAttribute"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "ecr:GetAccountSetting",
+      "ecr:PutAccountSetting"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

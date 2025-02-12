@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "iot:GetLoggingOptions",
+      "iot:GetV2LoggingOptions",
+      "iot:SetV2LoggingOptions",
+      "iot:SetLoggingOptions"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

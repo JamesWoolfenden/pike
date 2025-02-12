@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "shield:DisableApplicationLayerAutomaticResponse",
+      "shield:EnableApplicationLayerAutomaticResponse",
+      "shield:UpdateApplicationLayerAutomaticResponse"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

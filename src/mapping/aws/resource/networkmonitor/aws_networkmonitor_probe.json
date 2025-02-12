@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "networkmonitor:ListTagsForResource",
+      "networkmonitor:GetProbe",
+      "networkmonitor:CreateProbe",
+      "networkmonitor:DeleteProbe",
+      "networkmonitor:UpdateProbe"
+    ],
+    "attributes": {
+      "tags": [
+        "networkmonitor:TagResource",
+        "networkmonitor:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

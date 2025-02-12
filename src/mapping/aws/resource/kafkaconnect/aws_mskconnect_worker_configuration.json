@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "kafkaconnect:DescribeWorkerConfiguration",
+      "kafkaconnect:CreateWorkerConfiguration",
+      "kafkaconnect:DeleteWorkerConfiguration"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

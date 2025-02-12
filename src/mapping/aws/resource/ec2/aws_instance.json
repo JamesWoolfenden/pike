@@ -9,7 +9,8 @@
       "ec2:RunInstances",
       "ec2:StopInstances",
       "ec2:TerminateInstances",
-      "ec2:DescribeNetworkInterfaces"
+      "ec2:DescribeNetworkInterfaces",
+      "ec2:DescribeInstanceCreditSpecifications"
     ],
     "attributes": {
       "credit_specification": [

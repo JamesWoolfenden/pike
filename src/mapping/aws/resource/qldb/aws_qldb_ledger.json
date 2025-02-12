@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "qldb:DescribeLedger",
+      "qldb:CreateLedger",
+      "qldb:DeleteLedger",
+      "qldb:UpdateLedger",
+      "qldb:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "qldb:TagResource",
+        "qldb:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

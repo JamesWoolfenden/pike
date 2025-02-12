@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "ecs:PutAccountSettingDefault"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

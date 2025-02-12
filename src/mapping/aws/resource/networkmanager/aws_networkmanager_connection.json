@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "networkmanager:GetConnections",
+      "networkmanager:CreateConnection",
+      "networkmanager:DeleteConnection",
+      "networkmanager:UpdateConnection"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

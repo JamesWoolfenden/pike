@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "aps:DescribeRuleGroupsNamespace",
+      "aps:CreateRuleGroupsNamespace",
+      "aps:DeleteRuleGroupsNamespace",
+      "aps:PutRuleGroupsNamespace"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

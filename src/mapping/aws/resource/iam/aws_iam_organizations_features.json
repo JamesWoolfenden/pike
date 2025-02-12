@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "iam:EnableOrganizationsRootCredentialsManagement",
+      "iam:DisableOrganizationsRootCredentialsManagement"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

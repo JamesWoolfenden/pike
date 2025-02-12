@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "networkmonitor:GetMonitor",
+      "networkmonitor:CreateMonitor",
+      "networkmonitor:DeleteMonitor",
+      "networkmonitor:UpdateMonitor",
+      "networkmonitor:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "networkmonitor:TagResource",
+        "networkmonitor:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

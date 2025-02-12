@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "rds:StartDBInstance",
+      "rds:StopDBInstance"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

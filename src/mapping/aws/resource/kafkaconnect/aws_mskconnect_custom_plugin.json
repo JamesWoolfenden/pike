@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "kafkaconnect:DeleteCustomPlugin",
+      "kafkaconnect:CreateCustomPlugin",
+      "kafkaconnect:DescribeCustomPlugin"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

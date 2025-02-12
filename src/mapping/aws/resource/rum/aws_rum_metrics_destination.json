@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "rum:DeleteRumMetricsDestination",
+      "rum:PutRumMetricsDestination"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

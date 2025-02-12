@@ -1,0 +1,37 @@
+[
+  {
+    "apply": [
+      "elasticache:ModifyServerlessCache",
+      "elasticache:DescribeServerlessCaches",
+      "elasticache:ListTagsForResource",
+      "elasticache:CreateServerlessCache",
+      "elasticache:DeleteServerlessCache",
+      "ec2:CreateTags",
+      "ec2:CreateVpcEndpoint"
+    ],
+    "attributes": {
+      "kms_key_id": [
+        "kms:CreateGrant",
+        "kms:DescribeKey"
+      ],
+      "tags": [
+        "elasticache:AddTagsToResource",
+        "elasticache:RemoveTagsFromResource"
+      ]
+    },
+    "destroy": [
+      "elasticache:DeleteServerlessCache",
+      "elasticache:DescribeServerlessCaches",
+      "elasticache:ListTagsForResource"
+    ],
+    "modify": [
+      "elasticache:ModifyServerlessCache",
+      "elasticache:DescribeServerlessCaches",
+      "elasticache:ListTagsForResource"
+    ],
+    "plan": [
+      "elasticache:DescribeServerlessCaches",
+      "elasticache:ListTagsForResource"
+    ]
+  }
+]

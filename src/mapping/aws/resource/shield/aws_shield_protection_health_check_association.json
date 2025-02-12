@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "shield:AssociateHealthCheck",
+      "shield:DisassociateHealthCheck"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "iot:DescribeThingGroup",
+      "iot:AddThingToThingGroup",
+      "iot:RemoveThingFromThingGroup"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

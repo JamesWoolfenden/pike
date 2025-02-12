@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "organizations:RegisterDelegatedAdministrator",
+      "organizations:DeregisterDelegatedAdministrator"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

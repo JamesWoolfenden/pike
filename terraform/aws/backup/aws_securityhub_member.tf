@@ -1,1 +1,1 @@
-# resource "aws_securityhub_member" "pike" {}
+resource "aws_securityhub_member" "pike" {}

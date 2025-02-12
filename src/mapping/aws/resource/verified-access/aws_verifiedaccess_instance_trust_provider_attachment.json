@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "verified-access:AllowVerifiedAccess"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -6,6 +6,9 @@
       "securityhub:DeleteMembers"
     ],
     "attributes": {
+      "invite": [
+        "securityhub:InviteMembers"
+      ],
       "tags": []
     },
     "destroy": [],

@@ -1,1 +1,1 @@
-# resource "aws_serverlessapplicationrepository_cloudformation_stack" "pike" {}
+resource "aws_serverlessapplicationrepository_cloudformation_stack" "pike" {}

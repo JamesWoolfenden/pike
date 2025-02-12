@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "networkmanager:GetTransitGatewayConnectPeerAssociations",
+      "networkmanager:AssociateTransitGatewayConnectPeer",
+      "networkmanager:DisassociateTransitGatewayConnectPeer"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
