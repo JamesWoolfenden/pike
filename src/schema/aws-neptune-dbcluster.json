@@ -320,6 +320,11 @@
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-neptune",
   "tagging": {
     "cloudFormationSystemTags": true,
+    "permissions": [
+      "rds:AddTagsToResource",
+      "rds:ListTagsForResource",
+      "rds:RemoveTagsFromResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

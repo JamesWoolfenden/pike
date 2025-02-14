@@ -287,6 +287,11 @@
   ],
   "tagging": {
     "cloudFormationSystemTags": false,
+    "permissions": [
+      "bcm-data-exports:ListTagsForResource",
+      "bcm-data-exports:TagResource",
+      "bcm-data-exports:UntagResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

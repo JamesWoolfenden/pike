@@ -41,14 +41,14 @@
         "sagemaker:ListTags",
         "iam:PassRole"
       ],
-      "timeoutInMinutes": 65
+      "timeoutInMinutes": 95
     },
     "delete": {
       "permissions": [
         "sagemaker:DeleteMlflowTrackingServer",
         "sagemaker:DescribeMlflowTrackingServer"
       ],
-      "timeoutInMinutes": 65
+      "timeoutInMinutes": 95
     },
     "list": {
       "permissions": [

@@ -3,15 +3,27 @@
     "apply": [
       "ec2:CreateTransitGatewayPeeringAttachment",
       "ec2:DescribeTransitGatewayPeeringAttachments",
-      "ec2:DeleteTransitGatewayPeeringAttachment"
+      "ec2:DeleteTransitGatewayPeeringAttachment",
+      "ec2:DescribeTags"
     ],
     "attributes": {
-      "tags": []
+      "tags": [
+        "ec2:CreateTags",
+        "ec2:DeleteTags"
+      ]
     },
     "destroy": [
-      "ec2:DeleteTransitGatewayPeeringAttachment"
+      "ec2:DeleteTransitGatewayPeeringAttachment",
+      "ec2:DescribeTransitGatewayPeeringAttachments",
+      "ec2:DescribeTags"
     ],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "ec2:DescribeTransitGatewayPeeringAttachments",
+      "ec2:DescribeTags"
+    ],
+    "plan": [
+      "ec2:DescribeTransitGatewayPeeringAttachments",
+      "ec2:DescribeTags"
+    ]
   }
 ]

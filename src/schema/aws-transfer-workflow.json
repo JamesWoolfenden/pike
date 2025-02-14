@@ -391,6 +391,11 @@
   ],
   "tagging": {
     "cloudFormationSystemTags": true,
+    "permissions": [
+      "transfer:ListTagsForResource",
+      "transfer:UnTagResource",
+      "transfer:TagResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

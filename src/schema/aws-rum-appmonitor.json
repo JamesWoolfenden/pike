@@ -418,6 +418,15 @@
   ],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-rpdk.git",
   "tagging": {
+    "cloudFormationSystemTags": true,
+    "permissions": [
+      "rum:UntagResource",
+      "rum:TagResource",
+      "rum:ListTagsForResource"
+    ],
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": true,
     "taggable": true
   },
   "typeName": "AWS::RUM::AppMonitor"

@@ -135,6 +135,13 @@
       "pattern": "[\\.\\-_/#A-Za-z0-9]+",
       "type": "string"
     },
+    "SecurityConfigurationId": {
+      "description": "The ID of the security configuration.",
+      "maxLength": 64,
+      "minLength": 1,
+      "pattern": "[0-9a-z]+",
+      "type": "string"
+    },
     "Tags": {
       "description": "An array of key-value pairs to apply to this virtual cluster.",
       "insertionOrder": false,

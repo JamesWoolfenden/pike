@@ -3,15 +3,24 @@
     "apply": [
       "cognito-idp:CreateUserPoolDomain",
       "cognito-idp:DescribeUserPoolDomain",
-      "cognito-idp:DeleteUserPoolDomain"
+      "cloudfront:updateDistribution",
+      "cognito-idp:DeleteUserPoolDomain",
+      "cognito-idp:UpdateUserPoolDomain"
     ],
     "attributes": {
       "tags": []
     },
     "destroy": [
-      "cognito-idp:DeleteUserPoolDomain"
+      "cognito-idp:DeleteUserPoolDomain",
+      "cognito-idp:DescribeUserPoolDomain"
     ],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "cognito-idp:UpdateUserPoolDomain",
+      "cognito-idp:DescribeUserPoolDomain",
+      "cloudfront:updateDistribution"
+    ],
+    "plan": [
+      "cognito-idp:DescribeUserPoolDomain"
+    ]
   }
 ]

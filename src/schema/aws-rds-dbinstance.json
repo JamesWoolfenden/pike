@@ -261,6 +261,10 @@
       "description": "A value that indicates whether major version upgrades are allowed. Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible.\n Constraints: Major version upgrades must be allowed when specifying a value for the ``EngineVersion`` parameter that is a different major version than the DB instance's current version.",
       "type": "boolean"
     },
+    "ApplyImmediately": {
+      "description": "",
+      "type": "boolean"
+    },
     "AssociatedRoles": {
       "description": "The IAMlong (IAM) roles associated with the DB instance. \n  *Amazon Aurora* \n Not applicable. The associated roles are managed by the DB cluster.",
       "items": {
@@ -676,6 +680,7 @@
     "/properties/SourceRegion",
     "/properties/TdeCredentialPassword",
     "/properties/UseDefaultProcessorFeatures",
-    "/properties/UseLatestRestorableTime"
+    "/properties/UseLatestRestorableTime",
+    "/properties/ApplyImmediately"
   ]
 }

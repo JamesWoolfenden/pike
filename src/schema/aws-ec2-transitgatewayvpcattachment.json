@@ -27,58 +27,34 @@
   "handlers": {
     "create": {
       "permissions": [
-        "ec2:DescribeTransitGatewayAttachments",
         "ec2:DescribeTransitGatewayVpcAttachments",
         "ec2:CreateTransitGatewayVpcAttachment",
-        "ec2:DeleteTransitGatewayVpcAttachment",
         "ec2:CreateTags",
-        "ec2:DeleteTags",
-        "ec2:DescribeTags",
-        "ec2:DescribeTransitGatewayAttachments",
-        "ec2:ModifyTransitGatewayVpcAttachment"
+        "ec2:DescribeTags"
       ]
     },
     "delete": {
       "permissions": [
-        "ec2:DescribeTransitGatewayAttachments",
         "ec2:DescribeTransitGatewayVpcAttachments",
-        "ec2:CreateTransitGatewayVpcAttachment",
         "ec2:DeleteTransitGatewayVpcAttachment",
-        "ec2:CreateTags",
         "ec2:DeleteTags",
-        "ec2:DescribeTags",
-        "ec2:DescribeTransitGatewayAttachments",
-        "ec2:ModifyTransitGatewayVpcAttachment"
+        "ec2:DescribeTags"
       ]
     },
     "list": {
       "permissions": [
-        "ec2:DescribeTransitGatewayAttachments",
         "ec2:DescribeTransitGatewayVpcAttachments",
-        "ec2:DescribeTags",
-        "ec2:CreateTransitGatewayVpcAttachment",
-        "ec2:CreateTags",
-        "ec2:DeleteTransitGatewayVpcAttachment",
-        "ec2:DeleteTags",
-        "ec2:ModifyTransitGatewayVpcAttachment"
+        "ec2:DescribeTags"
       ]
     },
     "read": {
       "permissions": [
-        "ec2:DescribeTransitGatewayAttachments",
         "ec2:DescribeTransitGatewayVpcAttachments",
-        "ec2:CreateTransitGatewayVpcAttachment",
-        "ec2:DeleteTransitGatewayVpcAttachment",
-        "ec2:CreateTags",
-        "ec2:DeleteTags",
-        "ec2:DescribeTags",
-        "ec2:DescribeTransitGatewayAttachments",
-        "ec2:ModifyTransitGatewayVpcAttachment"
+        "ec2:DescribeTags"
       ]
     },
     "update": {
       "permissions": [
-        "ec2:DescribeTransitGatewayAttachments",
         "ec2:DescribeTransitGatewayVpcAttachments",
         "ec2:DescribeTags",
         "ec2:CreateTransitGatewayVpcAttachment",
@@ -169,6 +145,10 @@
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-transitgateway",
   "tagging": {
     "cloudFormationSystemTags": false,
+    "permissions": [
+      "ec2:CreateTags",
+      "ec2:DeleteTags"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

@@ -74,6 +74,37 @@
       },
       "type": "object"
     },
+    "HudiTarget": {
+      "additionalProperties": false,
+      "description": "Specifies Apache Hudi data store targets.",
+      "properties": {
+        "ConnectionName": {
+          "description": "The name of the connection to use to connect to the Hudi target.",
+          "type": "string"
+        },
+        "Exclusions": {
+          "description": "A list of global patterns used to exclude from the crawl.",
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": false
+        },
+        "MaximumTraversalDepth": {
+          "description": "The maximum depth of Amazon S3 paths that the crawler can traverse to discover the Hudi metadata folder in your Amazon S3 path. Used to limit the crawler run time.",
+          "type": "integer"
+        },
+        "Paths": {
+          "description": "One or more Amazon S3 paths that contains Hudi metadata folders as s3://bucket/prefix .",
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": false
+        }
+      },
+      "type": "object"
+    },
     "IcebergTarget": {
       "additionalProperties": false,
       "description": "Specifies Apache Iceberg data store targets.",
@@ -266,6 +297,14 @@
           "type": "array",
           "uniqueItems": false
         },
+        "HudiTargets": {
+          "description": "Specifies Apache Hudi data store targets.",
+          "items": {
+            "$ref": "#/definitions/HudiTarget"
+          },
+          "type": "array",
+          "uniqueItems": false
+        },
         "IcebergTargets": {
           "description": "Specifies Apache Iceberg data store targets.",
           "items": {
@@ -409,6 +448,10 @@
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-glue.git",
   "tagging": {
     "cloudFormationSystemTags": false,
+    "permissions": [
+      "glue:TagResource",
+      "glue:UntagResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

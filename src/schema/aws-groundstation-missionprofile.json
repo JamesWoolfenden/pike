@@ -25,11 +25,20 @@
           "required": [
             "KmsAliasArn"
           ]
+        },
+        {
+          "required": [
+            "KmsAliasName"
+          ]
         }
       ],
       "properties": {
         "KmsAliasArn": {
           "pattern": "^(arn:(aws[a-zA-Z-]*)?:[a-z0-9-.]+:.*)|()$",
+          "type": "string"
+        },
+        "KmsAliasName": {
+          "pattern": "^alias/[a-zA-Z0-9:/_-]+$",
           "type": "string"
         },
         "KmsKeyArn": {

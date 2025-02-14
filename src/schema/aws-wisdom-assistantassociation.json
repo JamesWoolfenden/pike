@@ -141,6 +141,15 @@
     "AssistantId"
   ],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-rpdk",
-  "taggable": false,
+  "tagging": {
+    "cloudFormationSystemTags": false,
+    "permissions": [
+      "wisdom:TagResource"
+    ],
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": false,
+    "taggable": true
+  },
   "typeName": "AWS::Wisdom::AssistantAssociation"
 }

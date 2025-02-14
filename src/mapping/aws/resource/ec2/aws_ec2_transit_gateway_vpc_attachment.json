@@ -16,11 +16,20 @@
       ]
     },
     "destroy": [
-      "ec2:DeleteTransitGatewayVpcAttachment"
+      "ec2:DescribeTransitGatewayVpcAttachments",
+      "ec2:DeleteTransitGatewayVpcAttachment",
+      "ec2:DescribeTags"
     ],
     "modify": [
+      "ec2:DescribeTransitGatewayVpcAttachments",
+      "ec2:DescribeTags",
+      "ec2:CreateTransitGatewayVpcAttachment",
+      "ec2:DeleteTransitGatewayVpcAttachment",
       "ec2:ModifyTransitGatewayVpcAttachment"
     ],
-    "plan": []
+    "plan": [
+      "ec2:DescribeTransitGatewayVpcAttachments",
+      "ec2:DescribeTags"
+    ]
   }
 ]

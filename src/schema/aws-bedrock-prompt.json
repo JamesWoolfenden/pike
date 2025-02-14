@@ -1,6 +1,10 @@
 {
   "additionalProperties": false,
   "definitions": {
+    "AdditionalModelRequestFields": {
+      "description": "Contains model-specific configurations",
+      "type": "object"
+    },
     "AnyToolChoice": {
       "additionalProperties": false,
       "description": "Any Tool choice",
@@ -10,6 +14,26 @@
       "additionalProperties": false,
       "description": "Auto Tool choice",
       "type": "object"
+    },
+    "CachePointBlock": {
+      "additionalProperties": false,
+      "description": "CachePointBlock",
+      "properties": {
+        "Type": {
+          "$ref": "#/definitions/CachePointType"
+        }
+      },
+      "required": [
+        "Type"
+      ],
+      "type": "object"
+    },
+    "CachePointType": {
+      "description": "CachePoint types for CachePointBlock",
+      "enum": [
+        "default"
+      ],
+      "type": "string"
     },
     "ChatPromptTemplateConfiguration": {
       "additionalProperties": false,
@@ -68,6 +92,19 @@
             "Text"
           ],
           "title": "Text",
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "CachePoint": {
+              "$ref": "#/definitions/CachePointBlock"
+            }
+          },
+          "required": [
+            "CachePoint"
+          ],
+          "title": "CachePoint",
           "type": "object"
         }
       ]
@@ -245,6 +282,9 @@
       "additionalProperties": false,
       "description": "Prompt variant",
       "properties": {
+        "AdditionalModelRequestFields": {
+          "$ref": "#/definitions/AdditionalModelRequestFields"
+        },
         "GenAiResource": {
           "$ref": "#/definitions/PromptGenAiResource"
         },
@@ -311,6 +351,19 @@
           ],
           "title": "Text",
           "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "CachePoint": {
+              "$ref": "#/definitions/CachePointBlock"
+            }
+          },
+          "required": [
+            "CachePoint"
+          ],
+          "title": "CachePoint",
+          "type": "object"
         }
       ]
     },
@@ -332,6 +385,9 @@
       "additionalProperties": false,
       "description": "Configuration for text prompt template",
       "properties": {
+        "CachePoint": {
+          "$ref": "#/definitions/CachePointBlock"
+        },
         "InputVariables": {
           "description": "List of input variables",
           "insertionOrder": true,
@@ -399,6 +455,19 @@
             "ToolSpec"
           ],
           "title": "ToolSpec",
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "CachePoint": {
+              "$ref": "#/definitions/CachePointBlock"
+            }
+          },
+          "required": [
+            "CachePoint"
+          ],
+          "title": "CachePoint",
           "type": "object"
         }
       ]
