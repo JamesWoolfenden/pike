@@ -431,10 +431,10 @@ var awsSesv2ConfigurationSetEventDestination []byte
 var awsSesv2ContactList []byte
 
 //go:embed mapping/aws/resource/ses/aws_sesv2_dedicated_ip_assignment.json
-var awsSesv2DedicatedIpAssignment []byte
+var awsSesv2DedicatedIPAssignment []byte
 
 //go:embed mapping/aws/resource/ses/aws_sesv2_dedicated_ip_pool.json
-var awsSesv2DedicatedIpPool []byte
+var awsSesv2DedicatedIPPool []byte
 
 //go:embed mapping/aws/resource/ses/aws_sesv2_email_identity.json
 var awsSesv2EmailIdentity []byte
@@ -786,3 +786,6 @@ var awsElasticsearchDomainSamlOptions []byte
 
 //go:embed mapping/aws/resource/es/aws_opensearch_vpc_endpoint.json
 var awsElasticsearchVpcEndpoint []byte
+
+//go:embed mapping/aws/resource/cloudwatch/aws_cloudwatch_contributor_insight_rule.json
+var awsCloudwatchContributorInsightRule []byte

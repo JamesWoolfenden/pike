@@ -79,7 +79,8 @@ func (e *waitExpiredError) Error() string {
 
 // getVersion gets the version of the IAM policy.
 func getVersion(client *iam.Client, policyArn string) (*string, error) {
-	output, err := client.GetPolicy(context.TODO(), &iam.GetPolicyInput{PolicyArn: aws.String(policyArn)})
+	output, err := client.GetPolicy(context.Background(), &iam.GetPolicyInput{PolicyArn: aws.String(policyArn)})
+
 	if err != nil {
 		return nil, &getVersionError{err}
 	}
@@ -98,7 +99,7 @@ func (e *urlEscapeError) Error() string {
 // getPolicyVersion Obtains the versioned IAM policy.
 func getPolicyVersion(client *iam.Client, policyArn string, version string) (*string, error) {
 	output, err := client.GetPolicyVersion(
-		context.TODO(),
+		context.Background(),
 		&iam.GetPolicyVersionInput{
 			PolicyArn: aws.String(policyArn),
 			VersionId: &version,

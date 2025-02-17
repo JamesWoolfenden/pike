@@ -8,7 +8,7 @@ import (
 	"github.com/rs/zerolog/log"
 )
 
-type policyDiff struct {
+type PolicyDiff struct {
 	Over  []string
 	Under []string
 }
@@ -39,10 +39,10 @@ func (m *compareAllowError) Error() string {
 	return fmt.Sprintf("compare allow error %v", m.err)
 }
 
-func Inspect(directory string, init bool) (policyDiff, error) {
+func Inspect(directory string, init bool) (PolicyDiff, error) {
 	var iacPolicy Identity.Policy
 
-	var Difference policyDiff
+	var Difference PolicyDiff
 
 	rawIACPolicy, err := MakePolicy(directory, nil, init, false, "")
 	if err != nil {
@@ -83,20 +83,20 @@ func (m *policyDifferenceError) Error() string {
 	return "invalid input: empty or nil policies/statements"
 }
 
-func compareAllow(identity Identity.IAM, policy Identity.Policy) (policyDiff, error) {
+func compareAllow(identity Identity.IAM, policy Identity.Policy) (PolicyDiff, error) {
 	// Add at start of function
 	if identity.Policies == nil || policy.Statements == nil {
-		return policyDiff{}, &policyDifferenceError{}
+		return PolicyDiff{}, &policyDifferenceError{}
 	}
 
 	if len(identity.Policies) == 0 || len(policy.Statements) == 0 {
-		return policyDiff{}, &policyDifferenceError{}
+		return PolicyDiff{}, &policyDifferenceError{}
 	}
 
 	identityAllows := make([]string, 0, len(identity.Policies)*2)
 	policyAllows := make([]string, 0, len(policy.Statements))
 
-	var difference policyDiff
+	var difference PolicyDiff
 
 	for _, identityPolicy := range identity.Policies {
 		statements := identityPolicy.Statements

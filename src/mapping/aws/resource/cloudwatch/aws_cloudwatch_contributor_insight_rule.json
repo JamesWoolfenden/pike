@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "cloudwatch:PutInsightRule",
+      "cloudwatch:DescribeInsightRules",
+      "cloudwatch:ListTagsForResource",
+      "cloudwatch:DeleteInsightRules"
+    ],
+    "attributes": {
+      "tags": [
+        "cloudwatch:TagResource",
+        "cloudwatch:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

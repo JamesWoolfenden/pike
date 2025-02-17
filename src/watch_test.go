@@ -41,7 +41,7 @@ func TestWaitForPolicyChange(t *testing.T) {
 		Wait    int
 	}
 
-	cfg, _ := config.LoadDefaultConfig(context.TODO())
+	cfg, _ := config.LoadDefaultConfig(context.Background())
 	client := iam.NewFromConfig(cfg)
 
 	tests := []struct {
@@ -72,7 +72,7 @@ func TestGetVersion(t *testing.T) {
 		client    *iam.Client
 		PolicyArn string
 	}
-	cfg, _ := config.LoadDefaultConfig(context.TODO())
+	cfg, _ := config.LoadDefaultConfig(context.Background())
 	client := iam.NewFromConfig(cfg)
 	want := "v1"
 	tests := []struct {
@@ -104,7 +104,7 @@ func TestGetPolicyVersion(t *testing.T) {
 		PolicyArn string
 		Version   string
 	}
-	cfg, _ := config.LoadDefaultConfig(context.TODO())
+	cfg, _ := config.LoadDefaultConfig(context.Background())
 	client := iam.NewFromConfig(cfg)
 	wantPass := "{\"Statement\":[{\"Action\":\"s3:*\",\"Effect\":\"Allow\",\"Resource\":\"*\"," +
 		"\"Sid\":\"VisualEditor0\"}],\"Version\":\"2012-10-17\"}"

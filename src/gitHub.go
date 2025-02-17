@@ -187,7 +187,7 @@ func VerifyURL(url string) error {
 		return &insecureProtocolError{}
 	}
 
-	resp, err := http.Get(url)
+	resp, err := http.Get(url) //nolint:gosec
 
 	if resp == nil {
 		return &nilResponseError{}

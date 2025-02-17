@@ -362,7 +362,7 @@ func GetTF(dirName string) ([]string, error) {
 func GetTFFiles(dirName string) ([]string, error) {
 	rawFiles, err := os.ReadDir(dirName)
 	if err != nil {
-		return nil, err
+		return nil, &readDirectoryError{dirName, err}
 	}
 
 	var files []string
