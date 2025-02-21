@@ -1189,6 +1189,7 @@
         "azurerm_dns_srv_record",
         "azurerm_dns_txt_record",
         "azurerm_dns_zone",
+        "azurerm_dynatrace_monitor.",
         "azurerm_elastic_cloud_elasticsearch",
         "azurerm_elastic_san",
         "azurerm_elastic_san_volume_group",
