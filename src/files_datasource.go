@@ -1554,3 +1554,6 @@ var dataAwsEcsClusters []byte
 
 //go:embed  mapping/aws/data/ec2/aws_vpc_ipam.json
 var dataAwsVpcIpam []byte
+
+//go:embed  mapping/aws/data/cloudwatch/aws_cloudwatch_contributor_managed_insight_rules.json
+var dataAwsCloudwatchContributorManagedInsightRules []byte

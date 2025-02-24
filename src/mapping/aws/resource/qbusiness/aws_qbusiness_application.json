@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "qbusiness:GetApplication",
+      "qbusiness:CreateApplication",
+      "qbusiness:DeleteApplication",
+      "qbusiness:UpdateApplication"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

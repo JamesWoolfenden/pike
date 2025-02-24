@@ -789,3 +789,9 @@ var awsElasticsearchVpcEndpoint []byte
 
 //go:embed mapping/aws/resource/cloudwatch/aws_cloudwatch_contributor_insight_rule.json
 var awsCloudwatchContributorInsightRule []byte
+
+//go:embed mapping/aws/resource/cloudwatch/aws_cloudwatch_contributor_managed_insight_rule.json
+var awsCloudwatchContributorManagedInsightRule []byte
+
+//go:embed mapping/aws/resource/qbusiness/aws_qbusiness_application.json
+var awsQbusinessApplication []byte

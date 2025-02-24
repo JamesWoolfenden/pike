@@ -1497,6 +1497,8 @@ var tFLookup = map[string]interface{}{ //nolint:gochecknoglobals
 	"aws_xray_sampling_rule":                                           awsXraySamplingRule,
 	"backend":                                                          s3backend,
 	"aws_cloudwatch_contributor_insight_rule":                          awsCloudwatchContributorInsightRule,
+	"aws_cloudwatch_contributor_managed_insight_rule":                  awsCloudwatchContributorManagedInsightRule,
+	"aws_qbusiness_application":                                        awsQbusinessApplication,
 }
 
 // GetAWSPermissions for AWS resources.

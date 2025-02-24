@@ -1,4 +1,4 @@
 # todo aws
 
-Resource percentage coverage   100.00
-Datasource percentage coverage 100.00
+Resource percentage coverage   99.86
+Datasource percentage coverage 99.83

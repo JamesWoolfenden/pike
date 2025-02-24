@@ -7,14 +7,18 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "VisualEditor0",
         "Effect" : "Allow",
         "Action" : [
-          "cloudwatch:PutInsightRule",
-          "cloudwatch:DescribeInsightRules",
+          # "cloudwatch:PutInsightRule",
+          # "cloudwatch:DescribeInsightRules",
+          # "cloudwatch:ListTagsForResource",
+          # "cloudwatch:DeleteInsightRules",
+          # //,
+          #
+          # "cloudwatch:TagResource",
+          # "cloudwatch:UntagResource"
+          "cloudwatch:ListManagedInsightRules",
           "cloudwatch:ListTagsForResource",
           "cloudwatch:DeleteInsightRules",
-          //,
-
-          "cloudwatch:TagResource",
-          "cloudwatch:UntagResource"
+          "cloudwatch:PutManagedInsightRules"
         ],
         "Resource" : [
           "*"
