@@ -6,13 +6,22 @@
       "apigateway:PATCH",
       "apigateway:GET",
       "apigateway:DELETE",
-      "iam:PassRole"
+      "iam:PassRole",
+      "iam:GetRole"
     ],
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "apigateway:PATCH"
+    ],
+    "modify": [
+      "apigateway:PATCH",
+      "iam:PassRole",
+      "iam:GetRole"
+    ],
+    "plan": [
+      "apigateway:GET"
+    ]
   }
 ]

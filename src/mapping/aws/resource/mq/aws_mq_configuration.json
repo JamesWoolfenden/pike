@@ -15,8 +15,11 @@
       ]
     },
     "destroy": [],
-    "modify": [],
+    "modify": [
+      "mq:UpdateConfiguration"
+    ],
     "plan": [
+      "mq:DescribeConfiguration",
       "mq:ListTags"
     ]
   }

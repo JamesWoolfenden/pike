@@ -304,6 +304,9 @@
         "EnableSSMAccess": {
           "type": "boolean"
         },
+        "InferenceAmiVersion": {
+          "type": "string"
+        },
         "InitialInstanceCount": {
           "type": "integer"
         },

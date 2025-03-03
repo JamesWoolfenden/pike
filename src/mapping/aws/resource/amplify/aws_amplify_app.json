@@ -3,7 +3,6 @@
     "apply": [
       "amplify:GetApp",
       "amplify:CreateApp",
-      "amplify:TagResource",
       "codecommit:GetRepository",
       "codecommit:PutRepositoryTriggers",
       "codecommit:GetRepositoryTriggers",
@@ -22,12 +21,32 @@
       ]
     },
     "destroy": [
+      "amplify:GetApp",
       "amplify:DeleteApp",
-      "sns:Unsubscribe"
+      "codecommit:GetRepository",
+      "codecommit:GetRepositoryTriggers",
+      "codecommit:PutRepositoryTriggers",
+      "sns:Unsubscribe",
+      "iam:PassRole"
     ],
     "modify": [
-      "amplify:UpdateApp"
+      "amplify:GetApp",
+      "amplify:UpdateApp",
+      "amplify:ListTagsForResource",
+      "codecommit:GetRepository",
+      "codecommit:PutRepositoryTriggers",
+      "codecommit:GetRepositoryTriggers",
+      "sns:CreateTopic",
+      "sns:Subscribe",
+      "sns:Unsubscribe",
+      "iam:PassRole"
     ],
-    "plan": []
+    "plan": [
+      "amplify:GetApp",
+      "amplify:ListTagsForResource",
+      "codecommit:GetRepository",
+      "codecommit:GetRepositoryTriggers",
+      "iam:PassRole"
+    ]
   }
 ]

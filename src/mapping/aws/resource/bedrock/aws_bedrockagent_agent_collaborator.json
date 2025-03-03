@@ -2,6 +2,7 @@
   {
     "apply": [
       "bedrock:GetAgentCollaborator",
+      "bedrock:ListAgentCollaborators",
       "bedrock:AssociateAgentCollaborator",
       "bedrock:DisassociateAgentCollaborator",
       "bedrock:UpdateAgentCollaborator"
@@ -10,7 +11,16 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "bedrock:AssociateAgentCollaborator",
+      "bedrock:GetAgentCollaborator",
+      "bedrock:ListAgentCollaborators",
+      "bedrock:DisassociateAgentCollaborator",
+      "bedrock:UpdateAgentCollaborator"
+    ],
+    "plan": [
+      "bedrock:GetAgentCollaborator",
+      "bedrock:ListAgentCollaborators"
+    ]
   }
 ]

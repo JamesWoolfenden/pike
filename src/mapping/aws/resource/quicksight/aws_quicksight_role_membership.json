@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "quicksight:CreateRoleMembership",
+      "quicksight:DeleteRoleMembership"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

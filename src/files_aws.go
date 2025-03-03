@@ -795,3 +795,21 @@ var awsCloudwatchContributorManagedInsightRule []byte
 
 //go:embed mapping/aws/resource/qbusiness/aws_qbusiness_application.json
 var awsQbusinessApplication []byte
+
+//go:embed mapping/aws/resource/dataexchange/aws_dataexchange_event_action.json
+var awsDataexchangeEventAction []byte
+
+//go:embed mapping/aws/resource/macie2/aws_macie2_organization_configuration.json
+var awsMacie2OrganizationConfiguration []byte
+
+//go:embed mapping/aws/resource/neptune-graph/aws_neptunegraph_graph.json
+var awsNeptunegraphGraph []byte
+
+//go:embed mapping/aws/resource/quicksight/aws_quicksight_role_membership.json
+var awsQuicksightRoleMembership []byte
+
+//go:embed mapping/aws/resource/rds/aws_rds_shard_group.json
+var awsRdsShardGroup []byte
+
+//go:embed mapping/aws/resource/xray/aws_xray_resource_policy.json
+var awsXrayResourcePolicy []byte

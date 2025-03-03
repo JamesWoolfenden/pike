@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "xray:DeleteResourcePolicy",
+      "xray:ListResourcePolicies",
+      "xray:PutResourcePolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "xray:DeleteResourcePolicy"
+    ],
+    "modify": [
+      "xray:PutResourcePolicy",
+      "xray:ListResourcePolicies"
+    ],
+    "plan": [
+      "xray:ListResourcePolicies"
+    ]
+  }
+]

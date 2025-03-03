@@ -336,6 +336,9 @@
         "JA3Fingerprint": {
           "$ref": "#/definitions/JA3Fingerprint"
         },
+        "JA4Fingerprint": {
+          "$ref": "#/definitions/JA4Fingerprint"
+        },
         "JsonBody": {
           "$ref": "#/definitions/JsonBody"
         },
@@ -533,6 +536,23 @@
     "JA3Fingerprint": {
       "additionalProperties": false,
       "description": "Includes the JA3 fingerprint of a web request.",
+      "properties": {
+        "FallbackBehavior": {
+          "enum": [
+            "MATCH",
+            "NO_MATCH"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "FallbackBehavior"
+      ],
+      "type": "object"
+    },
+    "JA4Fingerprint": {
+      "additionalProperties": false,
+      "description": "Includes the JA4 fingerprint of a web request.",
       "properties": {
         "FallbackBehavior": {
           "enum": [
@@ -768,6 +788,12 @@
         "IP": {
           "$ref": "#/definitions/RateLimitIP"
         },
+        "JA3Fingerprint": {
+          "$ref": "#/definitions/RateLimitJA3Fingerprint"
+        },
+        "JA4Fingerprint": {
+          "$ref": "#/definitions/RateLimitJA4Fingerprint"
+        },
         "LabelNamespace": {
           "$ref": "#/definitions/RateLimitLabelNamespace"
         },
@@ -846,6 +872,40 @@
     },
     "RateLimitIP": {
       "description": "Specifies the IP address in the web request as an aggregate key for a rate-based rule.",
+      "type": "object"
+    },
+    "RateLimitJA3Fingerprint": {
+      "additionalProperties": false,
+      "description": "Specifies the request's JA3 fingerprint as an aggregate key for a rate-based rule.",
+      "properties": {
+        "FallbackBehavior": {
+          "enum": [
+            "MATCH",
+            "NO_MATCH"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "FallbackBehavior"
+      ],
+      "type": "object"
+    },
+    "RateLimitJA4Fingerprint": {
+      "additionalProperties": false,
+      "description": "Specifies the request's JA4 fingerprint as an aggregate key for a rate-based rule.",
+      "properties": {
+        "FallbackBehavior": {
+          "enum": [
+            "MATCH",
+            "NO_MATCH"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "FallbackBehavior"
+      ],
       "type": "object"
     },
     "RateLimitLabelNamespace": {

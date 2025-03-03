@@ -13,6 +13,7 @@
         "sso:CreateManagedApplicationInstance",
         "sso:DeleteManagedApplicationInstance",
         "sso:PutApplicationAssignmentConfiguration",
+        "sso:PutApplicationAccessScope",
         "sso:ListInstances"
       ],
       "tags": [

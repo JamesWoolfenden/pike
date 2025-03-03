@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "macie2:DescribeOrganizationConfiguration",
+      "macie2:UpdateOrganizationConfiguration"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

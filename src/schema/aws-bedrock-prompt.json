@@ -45,7 +45,7 @@
           "items": {
             "$ref": "#/definitions/PromptInputVariable"
           },
-          "maxItems": 5,
+          "maxItems": 20,
           "minItems": 0,
           "type": "array"
         },
@@ -204,6 +204,47 @@
       },
       "type": "object"
     },
+    "PromptMetadataEntry": {
+      "additionalProperties": false,
+      "description": "Contains a key-value pair that defines a metadata tag and value to attach to a prompt variant.",
+      "properties": {
+        "Key": {
+          "$ref": "#/definitions/PromptMetadataKey"
+        },
+        "Value": {
+          "$ref": "#/definitions/PromptMetadataValue"
+        }
+      },
+      "required": [
+        "Key",
+        "Value"
+      ],
+      "type": "object"
+    },
+    "PromptMetadataKey": {
+      "description": "The key of a metadata tag for a prompt variant.",
+      "maxLength": 128,
+      "minLength": 1,
+      "pattern": "^[a-zA-Z0-9\\s._:/=+@-]*$",
+      "type": "string"
+    },
+    "PromptMetadataList": {
+      "description": "List of metadata to associate with the prompt variant.",
+      "insertionOrder": true,
+      "items": {
+        "$ref": "#/definitions/PromptMetadataEntry"
+      },
+      "maxItems": 50,
+      "minItems": 0,
+      "type": "array"
+    },
+    "PromptMetadataValue": {
+      "description": "The value of a metadata tag for a prompt variant.",
+      "maxLength": 1024,
+      "minLength": 1,
+      "pattern": "^[a-zA-Z0-9\\s._:/=+@-]*$",
+      "type": "string"
+    },
     "PromptModelInferenceConfiguration": {
       "additionalProperties": false,
       "description": "Prompt model inference configuration",
@@ -290,6 +331,9 @@
         },
         "InferenceConfiguration": {
           "$ref": "#/definitions/PromptInferenceConfiguration"
+        },
+        "Metadata": {
+          "$ref": "#/definitions/PromptMetadataList"
         },
         "ModelId": {
           "description": "ARN or Id of a Bedrock Foundational Model or Inference Profile, or the ARN of a imported model, or a provisioned throughput ARN for custom models.",
@@ -394,7 +438,7 @@
           "items": {
             "$ref": "#/definitions/PromptInputVariable"
           },
-          "maxItems": 5,
+          "maxItems": 20,
           "minItems": 0,
           "type": "array"
         },

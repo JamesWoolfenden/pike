@@ -3,7 +3,8 @@
     "apply": [
       "ec2:CreateLocalGatewayRouteTable",
       "ec2:DescribeLocalGatewayRouteTables",
-      "ec2:DeleteLocalGatewayRouteTable"
+      "ec2:DeleteLocalGatewayRouteTable",
+      "ec2:DescribeTags"
     ],
     "attributes": {
       "tags": [
@@ -14,7 +15,13 @@
     "destroy": [
       "ec2:DeleteLocalGatewayRouteTable"
     ],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "ec2:DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations",
+      "ec2:DescribeTags"
+    ],
+    "plan": [
+      "ec2:DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations",
+      "ec2:DescribeTags"
+    ]
   }
 ]

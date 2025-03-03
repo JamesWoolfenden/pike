@@ -78,6 +78,7 @@
       "permissions": [
         "controltower:EnableBaseline",
         "controltower:TagResource",
+        "controltower:UntagResource",
         "controltower:GetBaselineOperation",
         "controltower:GetEnabledBaseline",
         "controltower:ListTagsForResource",
@@ -172,7 +173,7 @@
         "servicecatalog:ListPrincipalsForPortfolio",
         "servicecatalog:DeleteProvisioningArtifact",
         "controltower:TagResource",
-        "controltower:ListTagsForResource",
+        "controltower:UntagResource",
         "controltower:GetEnabledBaseline"
       ]
     }
@@ -228,6 +229,11 @@
   ],
   "tagging": {
     "cloudFormationSystemTags": true,
+    "permissions": [
+      "controltower:TagResource",
+      "controltower:UntagResource",
+      "controltower:ListTagsForResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

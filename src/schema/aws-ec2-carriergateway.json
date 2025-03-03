@@ -31,7 +31,7 @@
       "uniqueItems": true
     }
   },
-  "description": "An example resource schema demonstrating some basic constructs and validation rules.",
+  "description": "Resource Type definition for Carrier Gateway which describes the Carrier Gateway resource",
   "handlers": {
     "create": {
       "permissions": [
@@ -43,7 +43,8 @@
     "delete": {
       "permissions": [
         "ec2:DeleteCarrierGateway",
-        "ec2:DescribeCarrierGateways"
+        "ec2:DescribeCarrierGateways",
+        "ec2:DeleteTags"
       ]
     },
     "list": {

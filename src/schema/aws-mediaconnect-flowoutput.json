@@ -165,7 +165,8 @@
     },
     "list": {
       "permissions": [
-        "mediaconnect:DescribeFlow"
+        "mediaconnect:DescribeFlow",
+        "mediaconnect:ListFlows"
       ]
     },
     "read": {

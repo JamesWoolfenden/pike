@@ -45,9 +45,6 @@
         }
       ],
       "properties": {
-        "Greengrass": {
-          "description": "A gateway that runs on AWS IoT Greengrass V1."
-        },
         "GreengrassV2": {
           "$ref": "#/definitions/GreengrassV2",
           "description": "A gateway that runs on AWS IoT Greengrass V2."
@@ -118,9 +115,6 @@
       "type": "object"
     }
   },
-  "deprecatedProperties": [
-    "/properties/GatewayPlatform/Greengrass"
-  ],
   "description": "Resource schema for AWS::IoTSiteWise::Gateway",
   "handlers": {
     "create": {

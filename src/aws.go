@@ -1499,6 +1499,12 @@ var tFLookup = map[string]interface{}{ //nolint:gochecknoglobals
 	"aws_cloudwatch_contributor_insight_rule":                          awsCloudwatchContributorInsightRule,
 	"aws_cloudwatch_contributor_managed_insight_rule":                  awsCloudwatchContributorManagedInsightRule,
 	"aws_qbusiness_application":                                        awsQbusinessApplication,
+	"aws_dataexchange_event_action":                                    awsDataexchangeEventAction,
+	"aws_macie2_organization_configuration":                            awsMacie2OrganizationConfiguration,
+	"aws_neptunegraph_graph":                                           awsNeptunegraphGraph,
+	"aws_quicksight_role_membership":                                   awsQuicksightRoleMembership,
+	"aws_rds_shard_group":                                              awsRdsShardGroup,
+	"aws_xray_resource_policy":                                         awsXrayResourcePolicy,
 }
 
 // GetAWSPermissions for AWS resources.

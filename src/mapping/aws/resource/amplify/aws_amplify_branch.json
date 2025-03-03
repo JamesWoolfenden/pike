@@ -3,7 +3,6 @@
     "apply": [
       "amplify:GetBranch",
       "amplify:CreateBranch",
-      "amplify:TagResource",
       "codecommit:GetRepository",
       "codecommit:PutRepositoryTriggers",
       "codecommit:GetRepositoryTriggers",

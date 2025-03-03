@@ -124,6 +124,50 @@
       ],
       "type": "object"
     },
+    "AgentCollaboration": {
+      "description": "Agent collaboration state",
+      "enum": [
+        "DISABLED",
+        "SUPERVISOR",
+        "SUPERVISOR_ROUTER"
+      ],
+      "type": "string"
+    },
+    "AgentCollaborator": {
+      "additionalProperties": false,
+      "description": "Agent Collaborator",
+      "properties": {
+        "AgentDescriptor": {
+          "additionalProperties": false,
+          "description": "Agent descriptor for agent collaborator",
+          "properties": {
+            "AliasArn": {
+              "description": "Alias ARN for agent descriptor",
+              "pattern": "^arn:aws(|-cn|-us-gov):bedrock:[a-z0-9-]{1,20}:[0-9]{12}:agent-alias/[0-9a-zA-Z]{10}/[0-9a-zA-Z]{10}$",
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "CollaborationInstruction": {
+          "description": "Agent collaborator instruction",
+          "type": "string"
+        },
+        "CollaboratorName": {
+          "description": "Agent collaborator name",
+          "type": "string"
+        },
+        "RelayConversationHistory": {
+          "$ref": "#/definitions/RelayConversationHistory"
+        }
+      },
+      "required": [
+        "AgentDescriptor",
+        "CollaborationInstruction",
+        "CollaboratorName"
+      ],
+      "type": "object"
+    },
     "AgentKnowledgeBase": {
       "additionalProperties": false,
       "description": "Agent Knowledge Base",
@@ -176,6 +220,31 @@
       "enum": [
         "RETURN_CONTROL"
       ],
+      "type": "string"
+    },
+    "CustomOrchestration": {
+      "additionalProperties": false,
+      "description": "Structure for custom orchestration",
+      "properties": {
+        "Executor": {
+          "$ref": "#/definitions/OrchestrationExecutor"
+        }
+      },
+      "type": "object"
+    },
+    "EnabledMemoryTypes": {
+      "description": "Types of session storage persisted in memory",
+      "insertionOrder": false,
+      "items": {
+        "$ref": "#/definitions/MemoryType"
+      },
+      "type": "array"
+    },
+    "FoundationModel": {
+      "description": "ARN or name of a Bedrock model.",
+      "maxLength": 2048,
+      "minLength": 1,
+      "pattern": "^arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:(([0-9]{12}:custom-model/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}(([:][a-z0-9-]{1,63}){0,2})?/[a-z0-9]{12})|(:foundation-model/([a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([.]?[a-z0-9-]{1,63})([:][a-z0-9-]{1,63}){0,2}))|([0-9]{12}:(inference-profile|application-inference-profile)/[a-zA-Z0-9-:.]+))|(([a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([.]?[a-z0-9-]{1,63})([:][a-z0-9-]{1,63}){0,2}))|(([0-9a-zA-Z][_-]?)+)$",
       "type": "string"
     },
     "Function": {
@@ -291,6 +360,55 @@
       ],
       "type": "string"
     },
+    "MemoryConfiguration": {
+      "additionalProperties": false,
+      "description": "Configuration for memory storage",
+      "properties": {
+        "EnabledMemoryTypes": {
+          "$ref": "#/definitions/EnabledMemoryTypes"
+        },
+        "SessionSummaryConfiguration": {
+          "$ref": "#/definitions/SessionSummaryConfiguration"
+        },
+        "StorageDays": {
+          "description": "Maximum number of days to store session details",
+          "type": "number"
+        }
+      },
+      "type": "object"
+    },
+    "MemoryType": {
+      "description": "Memory type",
+      "enum": [
+        "SESSION_SUMMARY"
+      ],
+      "type": "string"
+    },
+    "OrchestrationExecutor": {
+      "additionalProperties": false,
+      "description": "Types of executors for custom orchestration strategy",
+      "properties": {
+        "Lambda": {
+          "description": "ARN of a Lambda.",
+          "maxLength": 2048,
+          "pattern": "^arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\\d{1}:\\d{12}:function:[a-zA-Z0-9-_\\.]+(:(\\$LATEST|[a-zA-Z0-9-_]+))?$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "Lambda"
+      ],
+      "title": "Lambda",
+      "type": "object"
+    },
+    "OrchestrationType": {
+      "description": "Types of orchestration strategy for agents",
+      "enum": [
+        "DEFAULT",
+        "CUSTOM_ORCHESTRATION"
+      ],
+      "type": "string"
+    },
     "ParameterDetail": {
       "additionalProperties": false,
       "description": "Parameter detail",
@@ -333,6 +451,9 @@
           "maxLength": 100000,
           "minLength": 1,
           "type": "string"
+        },
+        "FoundationModel": {
+          "$ref": "#/definitions/FoundationModel"
         },
         "InferenceConfiguration": {
           "$ref": "#/definitions/InferenceConfiguration"
@@ -391,7 +512,17 @@
         "PRE_PROCESSING",
         "ORCHESTRATION",
         "POST_PROCESSING",
+        "ROUTING_CLASSIFIER",
+        "MEMORY_SUMMARIZATION",
         "KNOWLEDGE_BASE_RESPONSE_GENERATION"
+      ],
+      "type": "string"
+    },
+    "RelayConversationHistory": {
+      "description": "Relay conversation history state",
+      "enum": [
+        "TO_COLLABORATOR",
+        "DISABLED"
       ],
       "type": "string"
     },
@@ -420,6 +551,17 @@
           "minLength": 1,
           "pattern": "^[\\.\\-\\!\\*\\_\\'\\(\\)a-zA-Z0-9][\\.\\-\\!\\*\\_\\'\\(\\)\\/a-zA-Z0-9]*$",
           "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "SessionSummaryConfiguration": {
+      "additionalProperties": false,
+      "description": "Configuration for Session Summarization",
+      "properties": {
+        "MaxRecentSessions": {
+          "description": "Maximum number of Sessions to Summarize",
+          "type": "number"
         }
       },
       "type": "object"
@@ -468,7 +610,15 @@
         "bedrock:CreateGuardrail",
         "bedrock:CreateGuardrailVersion",
         "bedrock:GetGuardrail",
-        "iam:PassRole"
+        "bedrock:AssociateAgentCollaborator",
+        "bedrock:GetAgentCollaborator",
+        "bedrock:ListAgentCollaborators",
+        "iam:PassRole",
+        "kms:GenerateDataKeyWithoutPlainText",
+        "kms:ReEncryptFrom",
+        "kms:ReEncryptTo",
+        "kms:Decrypt",
+        "kms:GenerateDataKey"
       ]
     },
     "delete": {
@@ -476,7 +626,10 @@
         "bedrock:GetAgent",
         "bedrock:DeleteAgent",
         "bedrock:DeleteGuardrail",
-        "bedrock:GetGuardrail"
+        "bedrock:GetGuardrail",
+        "kms:Decrypt",
+        "kms:Encrypt",
+        "kms:GenerateDataKey"
       ]
     },
     "list": {
@@ -494,7 +647,11 @@
         "bedrock:ListAgentKnowledgeBases",
         "bedrock:ListTagsForResource",
         "bedrock:GetGuardrail",
-        "kms:Decrypt"
+        "bedrock:GetAgentCollaborator",
+        "bedrock:ListAgentCollaborators",
+        "kms:Decrypt",
+        "kms:GenerateDataKey",
+        "kms:Encrypt"
       ]
     },
     "update": {
@@ -517,7 +674,17 @@
         "bedrock:ListTagsForResource",
         "bedrock:UpdateGuardrail",
         "bedrock:GetGuardrail",
+        "bedrock:AssociateAgentCollaborator",
+        "bedrock:GetAgentCollaborator",
+        "bedrock:ListAgentCollaborators",
+        "bedrock:DisassociateAgentCollaborator",
+        "bedrock:UpdateAgentCollaborator",
         "kms:Decrypt",
+        "kms:Encrypt",
+        "kms:GenerateDataKey",
+        "kms:GenerateDataKeyWithoutPlainText",
+        "kms:ReEncryptFrom",
+        "kms:ReEncryptTo",
         "iam:PassRole"
       ]
     }
@@ -539,6 +706,17 @@
       "maxLength": 2048,
       "pattern": "^arn:aws(|-cn|-us-gov):bedrock:[a-z0-9-]{1,20}:[0-9]{12}:agent/[0-9a-zA-Z]{10}$",
       "type": "string"
+    },
+    "AgentCollaboration": {
+      "$ref": "#/definitions/AgentCollaboration"
+    },
+    "AgentCollaborators": {
+      "description": "List of Agent Collaborators",
+      "insertionOrder": false,
+      "items": {
+        "$ref": "#/definitions/AgentCollaborator"
+      },
+      "type": "array"
     },
     "AgentId": {
       "description": "Identifier for a resource.",
@@ -575,6 +753,9 @@
       "format": "date-time",
       "type": "string"
     },
+    "CustomOrchestration": {
+      "$ref": "#/definitions/CustomOrchestration"
+    },
     "CustomerEncryptionKeyArn": {
       "description": "A KMS key ARN",
       "maxLength": 2048,
@@ -600,11 +781,7 @@
       "type": "array"
     },
     "FoundationModel": {
-      "description": "ARN or name of a Bedrock model.",
-      "maxLength": 2048,
-      "minLength": 1,
-      "pattern": "^arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:(([0-9]{12}:custom-model/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}(([:][a-z0-9-]{1,63}){0,2})?/[a-z0-9]{12})|(:foundation-model/([a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([.]?[a-z0-9-]{1,63})([:][a-z0-9-]{1,63}){0,2}))|([0-9]{12}:(inference-profile|application-inference-profile)/[a-zA-Z0-9-:.]+))|(([a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([.]?[a-z0-9-]{1,63})([:][a-z0-9-]{1,63}){0,2}))|(([0-9a-zA-Z][_-]?)+)$",
-      "type": "string"
+      "$ref": "#/definitions/FoundationModel"
     },
     "GuardrailConfiguration": {
       "$ref": "#/definitions/GuardrailConfiguration"
@@ -627,6 +804,12 @@
         "$ref": "#/definitions/AgentKnowledgeBase"
       },
       "type": "array"
+    },
+    "MemoryConfiguration": {
+      "$ref": "#/definitions/MemoryConfiguration"
+    },
+    "OrchestrationType": {
+      "$ref": "#/definitions/OrchestrationType"
     },
     "PreparedAt": {
       "description": "Time Stamp.",
@@ -680,6 +863,11 @@
   ],
   "tagging": {
     "cloudFormationSystemTags": false,
+    "permissions": [
+      "bedrock:TagResource",
+      "bedrock:UntagResource",
+      "bedrock:ListTagsForResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

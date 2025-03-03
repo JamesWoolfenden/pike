@@ -91,6 +91,10 @@
           "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(:[A-Z0-9_$]+){0,1}$",
           "type": "string"
         },
+        "Locale": {
+          "minLength": 1,
+          "type": "string"
+        },
         "QueryReformulationAIPromptId": {
           "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(:[A-Z0-9_$]+){0,1}$",
           "type": "string"
@@ -171,6 +175,10 @@
             "$ref": "#/definitions/AssociationConfiguration"
           },
           "type": "array"
+        },
+        "Locale": {
+          "minLength": 1,
+          "type": "string"
         }
       },
       "type": "object"

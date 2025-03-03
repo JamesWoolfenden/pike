@@ -402,7 +402,18 @@
     "Name"
   ],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-athena.git",
-  "taggable": true,
+  "tagging": {
+    "cloudFormationSystemTags": true,
+    "permissions": [
+      "athena:UntagResource",
+      "athena:TagResource",
+      "athena:ListTagsForResource"
+    ],
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": true,
+    "taggable": true
+  },
   "typeName": "AWS::Athena::WorkGroup",
   "writeOnlyProperties": [
     "/properties/WorkGroupConfigurationUpdates",

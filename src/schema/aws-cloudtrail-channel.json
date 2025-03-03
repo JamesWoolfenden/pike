@@ -97,7 +97,8 @@
     "read": {
       "permissions": [
         "CloudTrail:GetChannel",
-        "CloudTrail:ListChannels"
+        "CloudTrail:ListChannels",
+        "CloudTrail:ListTags"
       ]
     },
     "update": {
@@ -153,13 +154,15 @@
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-cloudtrail.git",
   "tagging": {
     "cloudFormationSystemTags": true,
+    "permissions": [
+      "CloudTrail:AddTags",
+      "CloudTrail:RemoveTags",
+      "CloudTrail:ListTags"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,
     "taggable": true
   },
-  "typeName": "AWS::CloudTrail::Channel",
-  "writeOnlyProperties": [
-    "/properties/Tags"
-  ]
+  "typeName": "AWS::CloudTrail::Channel"
 }

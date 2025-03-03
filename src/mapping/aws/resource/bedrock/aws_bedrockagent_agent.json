@@ -10,6 +10,13 @@
       "bedrock:ListTagsForResource"
     ],
     "attributes": {
+      "customer_encryption_key_arn": [
+        "kms:GenerateDataKeyWithoutPlainText",
+        "kms:ReEncryptFrom",
+        "kms:ReEncryptTo",
+        "kms:Decrypt",
+        "kms:GenerateDataKey"
+      ],
       "tags": [
         "bedrock:TagResource",
         "bedrock:UntagResource"

@@ -151,7 +151,7 @@
                   "type": "string"
                 },
                 "Prefix": {
-                  "maxLength": 1024,
+                  "maxLength": 256,
                   "minLength": 1,
                   "type": "string"
                 }
@@ -212,7 +212,7 @@
               "type": "string"
             },
             "Prefix": {
-              "maxLength": 1024,
+              "maxLength": 700,
               "minLength": 1,
               "type": "string"
             }

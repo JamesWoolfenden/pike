@@ -34,12 +34,15 @@
     "create": {
       "permissions": [
         "s3:CreateAccessGrantsInstance",
+        "s3:AssociateAccessGrantsIdentityCenter",
         "s3:TagResource"
       ]
     },
     "delete": {
       "permissions": [
-        "s3:DeleteAccessGrantsInstance"
+        "s3:GetAccessGrantsInstance",
+        "s3:DeleteAccessGrantsInstance",
+        "s3:DissociateAccessGrantsIdentityCenter"
       ]
     },
     "list": {
@@ -109,8 +112,5 @@
     "tagUpdatable": true,
     "taggable": true
   },
-  "typeName": "AWS::S3::AccessGrantsInstance",
-  "writeOnlyProperties": [
-    "/properties/Tags"
-  ]
+  "typeName": "AWS::S3::AccessGrantsInstance"
 }

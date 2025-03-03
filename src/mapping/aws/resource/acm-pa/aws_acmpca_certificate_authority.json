@@ -4,10 +4,10 @@
       "acm-pca:CreateCertificateAuthority",
       "acm-pca:GetCertificateAuthorityCertificate",
       "acm-pca:DeleteCertificateAuthority",
-      "acm-pa:DescribeCertificateAuthority",
+      "acm-pca:DescribeCertificateAuthority",
       "acm-pca:UpdateCertificateAuthority",
       "acm-pca:GetCertificateAuthorityCsr",
-      "acm-pa:ListTags"
+      "acm-pca:ListTags"
     ],
     "attributes": {
       "tags": [
@@ -16,11 +16,16 @@
       ]
     },
     "destroy": [
-      "acm-pca:DeleteCertificateAuthority"
+      "acm-pca:DeleteCertificateAuthority",
+      "acm-pca:DescribeCertificateAuthority"
     ],
     "modify": [
       "acm-pca:UpdateCertificateAuthority"
     ],
-    "plan": []
+    "plan": [
+      "acm-pca:DescribeCertificateAuthority",
+      "acm-pca:GetCertificateAuthorityCsr",
+      "acm-pca:ListTags"
+    ]
   }
 ]

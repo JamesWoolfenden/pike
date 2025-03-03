@@ -4,7 +4,7 @@
     "/properties/DestinationCidrBlock",
     "/properties/LocalGatewayRouteTableId"
   ],
-  "description": "Describes a route for a local gateway route table.",
+  "description": "Resource Type definition for Local Gateway Route which describes a route for a local gateway route table.",
   "handlers": {
     "create": {
       "permissions": [

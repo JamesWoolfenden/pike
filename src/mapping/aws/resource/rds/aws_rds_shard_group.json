@@ -1,0 +1,33 @@
+[
+  {
+    "apply": [
+      "rds:CreateDBShardGroup",
+      "rds:DescribeDBClusters",
+      "rds:ListTagsForResource",
+      "rds:DeleteDBShardGroup",
+      "rds:ModifyDBShardGroup",
+      "rds:DescribeDBShardGroups"
+    ],
+    "attributes": {
+      "tags": [
+        "rds:AddTagsToResource",
+        "rds:RemoveTagsFromResource"
+      ]
+    },
+    "destroy": [
+      "rds:DeleteDBShardGroup",
+      "rds:DescribeDBClusters",
+      "rds:DescribeDbShardGroups"
+    ],
+    "modify": [
+      "rds:DescribeDBShardGroups",
+      "rds:DescribeDBClusters",
+      "rds:ModifyDBShardGroup",
+      "rds:ListTagsForResource"
+    ],
+    "plan": [
+      "rds:DescribeDBShardGroups",
+      "rds:ListTagsForResource"
+    ]
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "apply": [
+      "neptune-graph:GetGraph",
+      "neptune-graph:CreateGraph",
+      "neptune-graph:ListTagsForResource",
+      "neptune-graph:DeleteGraph",
+      "neptune-graph:UpdateGraph",
+      "iam:PassRole",
+      "iam:CreateServiceLinkedRole"
+    ],
+    "attributes": {
+      "kms_key_identifier": [
+        "kms:DescribeKey",
+        "kms:CreateGrant",
+        "kms:Decrypt"
+      ],
+      "tags": [
+        "neptune-graph:TagResource",
+        "neptune-graph:UntagResource"
+      ]
+    },
+    "destroy": [
+      "neptune-graph:DeleteGraph",
+      "neptune-graph:GetGraph"
+    ],
+    "modify": [
+      "iam:PassRole",
+      "neptune-graph:GetGraph",
+      "neptune-graph:ListTagsForResource",
+      "neptune-graph:UpdateGraph"
+    ],
+    "plan": [
+      "neptune-graph:GetGraph",
+      "neptune-graph:ListTagsForResource"
+    ]
+  }
+]

@@ -15,6 +15,21 @@
       ],
       "type": "object"
     },
+    "IpamResourceDiscoveryOrganizationalUnitExclusion": {
+      "additionalProperties": false,
+      "description": "If your IPAM is integrated with AWS Organizations and you add an organizational unit (OU) exclusion, IPAM will not manage the IP addresses in accounts in that OU exclusion.",
+      "properties": {
+        "OrganizationsEntityPath": {
+          "description": "An AWS Organizations entity path. Build the path for the OU(s) using AWS Organizations IDs separated by a '/'. Include all child OUs by ending the path with '/*'.",
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "OrganizationsEntityPath"
+      ],
+      "type": "object"
+    },
     "Tag": {
       "additionalProperties": false,
       "description": "A key-value pair to associate with a resource.",
@@ -104,6 +119,15 @@
       "insertionOrder": false,
       "items": {
         "$ref": "#/definitions/IpamOperatingRegion"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "OrganizationalUnitExclusions": {
+      "description": "A set of organizational unit (OU) exclusions for this resource.",
+      "insertionOrder": false,
+      "items": {
+        "$ref": "#/definitions/IpamResourceDiscoveryOrganizationalUnitExclusion"
       },
       "type": "array",
       "uniqueItems": true

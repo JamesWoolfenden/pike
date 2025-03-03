@@ -15,7 +15,12 @@
     "destroy": [
       "ecr-public:DeleteRepository"
     ],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "ecr-public:DescribeRepositories"
+    ],
+    "plan": [
+      "ecr-public:DescribeRepositories",
+      "ecr-public:ListTagsForResource"
+    ]
   }
 ]

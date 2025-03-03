@@ -90,6 +90,8 @@
       "permissions": [
         "notifications-contacts:CreateEmailContact",
         "notifications-contacts:GetEmailContact",
+        "notifications-contacts:SendActivationCode",
+        "notifications-contacts:ListEmailContacts",
         "notifications-contacts:TagResource",
         "notifications-contacts:UntagResource",
         "notifications-contacts:ListTagsForResource"

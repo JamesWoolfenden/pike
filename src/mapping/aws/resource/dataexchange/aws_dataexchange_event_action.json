@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "dataexchange:GetEventAction",
+      "dataexchange:CreateEventAction",
+      "dataexchange:DeleteEventAction",
+      "dataexchange:UpdateEventAction"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

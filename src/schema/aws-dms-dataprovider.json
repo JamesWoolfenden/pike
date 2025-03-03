@@ -222,8 +222,7 @@
               "type": "string"
             },
             "SslMode": {
-              "$ref": "#/definitions/MongoDbSslModeValue",
-              "type": "object"
+              "$ref": "#/definitions/MongoDbSslModeValue"
             }
           },
           "required": [
@@ -247,8 +246,7 @@
               "type": "string"
             },
             "SslMode": {
-              "$ref": "#/definitions/DmsSslModeValue",
-              "type": "object"
+              "$ref": "#/definitions/DmsSslModeValue"
             }
           },
           "required": [
@@ -275,8 +273,7 @@
               "type": "string"
             },
             "SslMode": {
-              "$ref": "#/definitions/DmsSslModeValue",
-              "type": "object"
+              "$ref": "#/definitions/DmsSslModeValue"
             }
           },
           "required": [
@@ -292,15 +289,13 @@
           "description": "MongoDbSettings property identifier.",
           "properties": {
             "AuthMechanism": {
-              "$ref": "#/definitions/MongoDbAuthMechanism",
-              "type": "object"
+              "$ref": "#/definitions/MongoDbAuthMechanism"
             },
             "AuthSource": {
               "type": "string"
             },
             "AuthType": {
-              "$ref": "#/definitions/MongoDbAuthType",
-              "type": "object"
+              "$ref": "#/definitions/MongoDbAuthType"
             },
             "CertificateArn": {
               "type": "string"
@@ -315,8 +310,7 @@
               "type": "string"
             },
             "SslMode": {
-              "$ref": "#/definitions/MongoDbSslModeValue",
-              "type": "object"
+              "$ref": "#/definitions/MongoDbSslModeValue"
             }
           },
           "required": [
@@ -339,8 +333,7 @@
               "type": "string"
             },
             "SslMode": {
-              "$ref": "#/definitions/DmsSslModeValue",
-              "type": "object"
+              "$ref": "#/definitions/DmsSslModeValue"
             }
           },
           "required": [
@@ -382,8 +375,7 @@
               "type": "string"
             },
             "SslMode": {
-              "$ref": "#/definitions/DmsSslModeValue",
-              "type": "object"
+              "$ref": "#/definitions/DmsSslModeValue"
             }
           },
           "required": [
@@ -411,8 +403,7 @@
               "type": "string"
             },
             "SslMode": {
-              "$ref": "#/definitions/DmsSslModeValue",
-              "type": "object"
+              "$ref": "#/definitions/DmsSslModeValue"
             }
           },
           "required": [
