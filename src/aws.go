@@ -1505,6 +1505,7 @@ var tFLookup = map[string]interface{}{ //nolint:gochecknoglobals
 	"aws_quicksight_role_membership":                                   awsQuicksightRoleMembership,
 	"aws_rds_shard_group":                                              awsRdsShardGroup,
 	"aws_xray_resource_policy":                                         awsXrayResourcePolicy,
+	"aws_lakeformation_opt_in":                                         awsLakeformationOptIn,
 }
 
 // GetAWSPermissions for AWS resources.

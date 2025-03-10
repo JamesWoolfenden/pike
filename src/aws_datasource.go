@@ -587,6 +587,7 @@ var tFLookupDataAWS = map[string]interface{}{
 	"aws_vpc_ipam":                                                          dataAwsVpcIpam,
 	"aws_vpc_ipams":                                                         dataAwsVpcIpam,
 	"aws_cloudwatch_contributor_managed_insight_rules":                      dataAwsCloudwatchContributorManagedInsightRules,
+	"aws_datazone_domain":                                                   dataAwsDatazoneDomain,
 }
 
 // GetAWSDataPermissions gets permissions required for datasource's.

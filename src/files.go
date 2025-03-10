@@ -3486,3 +3486,6 @@ var awsRdsExportTask []byte
 
 //go:embed mapping/aws/resource/rds/aws_rds_reserved_instance.json
 var awsRdsReservedInstance []byte
+
+//go:embed mapping/aws/resource/lakeformation/aws_lakeformation_opt_in.json
+var awsLakeformationOptIn []byte

@@ -1557,3 +1557,6 @@ var dataAwsVpcIpam []byte
 
 //go:embed  mapping/aws/data/cloudwatch/aws_cloudwatch_contributor_managed_insight_rules.json
 var dataAwsCloudwatchContributorManagedInsightRules []byte
+
+//go:embed  mapping/aws/data/datazone/aws_datazone_domain.json
+var dataAwsDatazoneDomain []byte

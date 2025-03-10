@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "lakeformation:CreateLakeFormationOptIn",
+      "lakeformation:DeleteLakeFormationOptIn"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
