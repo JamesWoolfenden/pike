@@ -662,6 +662,7 @@
         "azurerm_network_manager_admin_rule_collection",
         "azurerm_network_manager_connectivity_configuration",
         "azurerm_network_manager_deployment",
+        "azurerm_network_manager_ipam_pool",
         "azurerm_network_manager_management_group_connection",
         "azurerm_network_manager_network_group",
         "azurerm_network_manager_scope_connection",
