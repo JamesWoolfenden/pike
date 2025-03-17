@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "ec2:CreateNetworkInterfacePermission",
+      "ec2:DescribeNetworkInterfacePermissions",
+      "ec2:DeleteNetworkInterfacePermission"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

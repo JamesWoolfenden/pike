@@ -1506,6 +1506,8 @@ var tFLookup = map[string]interface{}{ //nolint:gochecknoglobals
 	"aws_rds_shard_group":                                              awsRdsShardGroup,
 	"aws_xray_resource_policy":                                         awsXrayResourcePolicy,
 	"aws_lakeformation_opt_in":                                         awsLakeformationOptIn,
+	"aws_network_interface_permission":                                 awsNetworkInterfacePermission,
+	"aws_route53_records_exclusive":                                    awsRoute53RecordsExclusive,
 }
 
 // GetAWSPermissions for AWS resources.

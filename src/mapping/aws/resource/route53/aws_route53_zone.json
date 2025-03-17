@@ -5,7 +5,8 @@
       "route53:GetChange",
       "route53:GetHostedZone",
       "route53:ListTagsForResource",
-      "route53:ListResourceRecordSets"
+      "route53:ListResourceRecordSets",
+      "route53:GetDNSSEC"
     ],
     "attributes": {
       "tags": [
@@ -17,7 +18,8 @@
       ]
     },
     "destroy": [
-      "route53:DeleteHostedZone"
+      "route53:DeleteHostedZone",
+      "route53:GetDNSSEC"
     ],
     "modify": [
       "route53:DeleteHostedZone",

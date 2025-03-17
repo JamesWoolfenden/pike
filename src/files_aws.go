@@ -813,3 +813,9 @@ var awsRdsShardGroup []byte
 
 //go:embed mapping/aws/resource/xray/aws_xray_resource_policy.json
 var awsXrayResourcePolicy []byte
+
+//go:embed mapping/aws/resource/ec2/aws_network_interface_permission.json
+var awsNetworkInterfacePermission []byte
+
+//go:embed mapping/aws/resource/route53/aws_route53_records_exclusive.json
+var awsRoute53RecordsExclusive []byte
