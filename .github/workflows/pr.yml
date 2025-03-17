@@ -42,9 +42,11 @@ jobs:
           path: ~/go/pkg/mod
           key: ${{ runner.os }}-go-mod-${{ hashFiles('**/go.sum') }}
           restore-keys: |
-            ${{ runner.os }}-go-mod-
+      ## runs go test ./...
+      - name: Build
+        run: go build ./...
       - name: Test
-        run: make test
+        run: go test ./... -coverprofile=./cover.out
   docs:
     runs-on: ubuntu-latest
     steps:
