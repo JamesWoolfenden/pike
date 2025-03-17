@@ -1,7 +1,7 @@
 # todo azure
 
-Resource percentage coverage   4.56
-Datasource percentage coverage 35.57
+Resource percentage coverage   4.52
+Datasource percentage coverage 35.06
 
 ./resource.ps1 azurerm_aadb2c_directory
 ./resource.ps1 azurerm_active_directory_domain_service
@@ -9,6 +9,8 @@ Datasource percentage coverage 35.57
 ./resource.ps1 azurerm_active_directory_domain_service_trust
 ./resource.ps1 azurerm_advanced_threat_protection
 ./resource.ps1 azurerm_advisor_suppression
+./resource.ps1 azurerm_ai_foundry
+./resource.ps1 azurerm_ai_foundry_project
 ./resource.ps1 azurerm_ai_services
 ./resource.ps1 azurerm_analysis_services_server
 ./resource.ps1 azurerm_api_connection
@@ -296,6 +298,7 @@ Datasource percentage coverage 35.57
 ./resource.ps1 azurerm_data_protection_backup_policy_postgresql
 ./resource.ps1 azurerm_data_protection_backup_policy_postgresql_flexible_server
 ./resource.ps1 azurerm_data_protection_backup_vault
+./resource.ps1 azurerm_data_protection_backup_vault_customer_managed_key
 ./resource.ps1 azurerm_data_protection_resource_guard
 ./resource.ps1 azurerm_data_share
 ./resource.ps1 azurerm_data_share_account
@@ -390,6 +393,7 @@ Datasource percentage coverage 35.57
 ./resource.ps1 azurerm_function_app
 ./resource.ps1 azurerm_function_app_active_slot
 ./resource.ps1 azurerm_function_app_connection
+./resource.ps1 azurerm_function_app_flex_consumption
 ./resource.ps1 azurerm_function_app_function
 ./resource.ps1 azurerm_function_app_hybrid_connection
 ./resource.ps1 azurerm_function_app_slot
@@ -624,6 +628,7 @@ Datasource percentage coverage 35.57
 ./resource.ps1 azurerm_netapp_snapshot
 ./resource.ps1 azurerm_netapp_snapshot_policy
 ./resource.ps1 azurerm_netapp_volume
+./resource.ps1 azurerm_netapp_volume_group_oracle
 ./resource.ps1 azurerm_netapp_volume_group_sap_hana
 ./resource.ps1 azurerm_netapp_volume_quota_rule
 ./resource.ps1 azurerm_network_connection_monitor
@@ -640,12 +645,14 @@ Datasource percentage coverage 35.57
 ./resource.ps1 azurerm_network_manager_admin_rule_collection
 ./resource.ps1 azurerm_network_manager_connectivity_configuration
 ./resource.ps1 azurerm_network_manager_deployment
+./resource.ps1 azurerm_network_manager_ipam_pool
 ./resource.ps1 azurerm_network_manager_management_group_connection
 ./resource.ps1 azurerm_network_manager_network_group
 ./resource.ps1 azurerm_network_manager_scope_connection
 ./resource.ps1 azurerm_network_manager_security_admin_configuration
 ./resource.ps1 azurerm_network_manager_static_member
 ./resource.ps1 azurerm_network_manager_subscription_connection
+./resource.ps1 azurerm_network_manager_verifier_workspace
 ./resource.ps1 azurerm_network_profile
 ./resource.ps1 azurerm_new_relic_monitor
 ./resource.ps1 azurerm_new_relic_tag_rule
@@ -960,6 +967,7 @@ Datasource percentage coverage 35.57
 ./resource.ps1 azurerm_system_center_virtual_machine_manager_availability_set
 ./resource.ps1 azurerm_system_center_virtual_machine_manager_cloud
 ./resource.ps1 azurerm_system_center_virtual_machine_manager_server
+./resource.ps1 azurerm_system_center_virtual_machine_manager_virtual_machine_instance
 ./resource.ps1 azurerm_system_center_virtual_machine_manager_virtual_machine_template
 ./resource.ps1 azurerm_system_center_virtual_machine_manager_virtual_network
 ./resource.ps1 azurerm_tenant_template_deployment
@@ -996,6 +1004,7 @@ Datasource percentage coverage 35.57
 ./resource.ps1 azurerm_virtual_machine_run_command
 ./resource.ps1 azurerm_virtual_machine_scale_set_extension
 ./resource.ps1 azurerm_virtual_machine_scale_set_packet_capture
+./resource.ps1 azurerm_virtual_machine_scale_set_standby_pool
 ./resource.ps1 azurerm_virtual_network_dns_servers
 ./resource.ps1 azurerm_virtual_network_gateway
 ./resource.ps1 azurerm_virtual_network_gateway_connection
@@ -1100,6 +1109,7 @@ Datasource percentage coverage 35.57
 ./resource.ps1 azurerm_dns_srv_record -type data
 ./resource.ps1 azurerm_dns_txt_record -type data
 ./resource.ps1 azurerm_dns_zone -type data
+./resource.ps1 azurerm_dynatrace_monitor. -type data
 ./resource.ps1 azurerm_elastic_cloud_elasticsearch -type data
 ./resource.ps1 azurerm_elastic_san -type data
 ./resource.ps1 azurerm_elastic_san_volume_group -type data
@@ -1116,6 +1126,7 @@ Datasource percentage coverage 35.57
 ./resource.ps1 azurerm_eventhub_sas -type data
 ./resource.ps1 azurerm_express_route_circuit -type data
 ./resource.ps1 azurerm_express_route_circuit_peering -type data
+./resource.ps1 azurerm_extended_location_custom_location -type data
 ./resource.ps1 azurerm_extended_locations -type data
 ./resource.ps1 azurerm_firewall -type data
 ./resource.ps1 azurerm_firewall_policy -type data
@@ -1183,6 +1194,7 @@ Datasource percentage coverage 35.57
 ./resource.ps1 azurerm_netapp_snapshot -type data
 ./resource.ps1 azurerm_netapp_snapshot_policy -type data
 ./resource.ps1 azurerm_netapp_volume -type data
+./resource.ps1 azurerm_netapp_volume_group_oracle -type data
 ./resource.ps1 azurerm_netapp_volume_group_sap_hana -type data
 ./resource.ps1 azurerm_netapp_volume_quota_rule -type data
 ./resource.ps1 azurerm_network_ddos_protection_plan -type data
@@ -1238,7 +1250,9 @@ Datasource percentage coverage 35.57
 ./resource.ps1 azurerm_recovery_services_vault -type data
 ./resource.ps1 azurerm_role_management_policy -type data
 ./resource.ps1 azurerm_sentinel_alert_rule_anomaly -type data
+./resource.ps1 azurerm_servicebus_namespace_disaster_recovery_config -type data
 ./resource.ps1 azurerm_servicebus_topic_authorization_rule -type data
+./resource.ps1 azurerm_stack_hci_storage_path -type data
 ./resource.ps1 azurerm_static_web_app -type data
 ./resource.ps1 azurerm_storage_queue -type data
 ./resource.ps1 azurerm_storage_table -type data

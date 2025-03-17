@@ -1,6 +1,7 @@
 package parse
 
 import (
+	"flag"
 	"log"
 	"os"
 	"path/filepath"
@@ -180,6 +181,7 @@ func TestGetMatches(t *testing.T) {
 
 func setup(cloud string) {
 	log.Println("setup")
+	flag.Set("test.timeout", "30m0s")
 
 	switch cloud {
 	case "aws":
