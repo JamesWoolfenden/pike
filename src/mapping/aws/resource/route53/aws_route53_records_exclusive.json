@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "route53:ChangeResourceRecordSets"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
