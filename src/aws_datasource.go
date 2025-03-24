@@ -10,6 +10,7 @@ var tFLookupDataAWS = map[string]interface{}{
 	"aws_ami":                                                   dataAwsAmi,
 	"aws_ami_ids":                                               dataAwsAmiIDs,
 	"aws_api_gateway_api_key":                                   dataAwsAPIGateway,
+	"aws_api_gateway_api_keys":                                  dataAwsAPIGateway,
 	"aws_api_gateway_authorizer":                                dataAwsAPIGateway,
 	"aws_api_gateway_authorizers":                               dataAwsAPIGateway,
 	"aws_api_gateway_domain_name":                               dataAwsAPIGateway,
@@ -588,6 +589,10 @@ var tFLookupDataAWS = map[string]interface{}{
 	"aws_vpc_ipams":                                                         dataAwsVpcIpam,
 	"aws_cloudwatch_contributor_managed_insight_rules":                      dataAwsCloudwatchContributorManagedInsightRules,
 	"aws_datazone_domain":                                                   dataAwsDatazoneDomain,
+	"aws_apigateway_api_keys":                                               dataAwsAPIGateway,
+	"aws_eks_cluster_versions":                                              dataAwsEksClusterVersions,
+	"aws_identitystore_group_memberships":                                   dataAwsIdentitystoreGroupMembership,
+	"aws_identitystore_users":                                               dataAwsIdentitystoreGroupUsers,
 }
 
 // GetAWSDataPermissions gets permissions required for datasource's.

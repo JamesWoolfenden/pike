@@ -819,3 +819,6 @@ var awsNetworkInterfacePermission []byte
 
 //go:embed mapping/aws/resource/route53/aws_route53_records_exclusive.json
 var awsRoute53RecordsExclusive []byte
+
+//go:embed mapping/aws/resource/athena/aws_athena_capacity_reservation.json
+var awsAthenaCapacityReservation []byte

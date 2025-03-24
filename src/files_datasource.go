@@ -1560,3 +1560,12 @@ var dataAwsCloudwatchContributorManagedInsightRules []byte
 
 //go:embed  mapping/aws/data/datazone/aws_datazone_domain.json
 var dataAwsDatazoneDomain []byte
+
+//go:embed  mapping/aws/data/eks/aws_eks_cluster_versions.json
+var dataAwsEksClusterVersions []byte
+
+//go:embed  mapping/aws/data/identitystore/aws_identitystore_group_memberships.json
+var dataAwsIdentitystoreGroupMembership []byte
+
+//go:embed  mapping/aws/data/identitystore/aws_identitystore_user.json
+var dataAwsIdentitystoreGroupUsers []byte

@@ -379,10 +379,12 @@ func TestEmptyTypeNameError(t *testing.T) {
 		}
 	})
 
+	//goland:noinspection GoLinter
 	t.Run("implements error interface", func(t *testing.T) {
 		t.Parallel()
 		var err error = &emptyTypeNameError{} // Verify it satisfies error interface
 
+		//goland:noinspection GoLinter
 		if err == nil {
 			t.Error("emptyTypeNameError should implement error interface")
 		}
