@@ -21,6 +21,8 @@
       "rum:BatchCreateRumMetricDefinitions",
       "rum:BatchDeleteRumMetricDefinitions",
       "rum:BatchGetRumMetricDefinitions",
+      "rum:GetResourcePolicy",
+      "rum:PutResourcePolicy",
       "rum:CreateAppMonitor",
       "rum:DeleteRumMetricsDestination",
       "rum:GetAppMonitor",
@@ -56,7 +58,9 @@
       "rum:DeleteRumMetricsDestination",
       "rum:BatchDeleteRumMetricDefinitions",
       "rum:ListRumMetricsDestinations",
-      "rum:BatchGetRumMetricDefinitions"
+      "rum:BatchGetRumMetricDefinitions",
+      "rum:GetResourcePolicy",
+      "rum:PutResourcePolicy"
     ],
     "modify": [
       "rum:GetAppMonitor",
@@ -87,7 +91,9 @@
       "rum:BatchCreateRumMetricDefinitions",
       "rum:BatchDeleteRumMetricDefinitions",
       "rum:BatchGetRumMetricDefinitions",
-      "rum:UpdateRumMetricDefinition"
+      "rum:UpdateRumMetricDefinition",
+      "rum:GetResourcePolicy",
+      "rum:PutResourcePolicy"
     ],
     "plan": [
       "rum:GetAppMonitor",
@@ -97,7 +103,9 @@
       "s3:GetObjectAcl",
       "rum:ListTagsForResource",
       "rum:ListRumMetricsDestinations",
-      "rum:BatchGetRumMetricDefinitions"
+      "rum:BatchGetRumMetricDefinitions",
+      "rum:GetResourcePolicy",
+      "rum:PutResourcePolicy"
     ]
   }
 ]

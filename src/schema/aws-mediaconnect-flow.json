@@ -398,6 +398,56 @@
       ],
       "type": "object"
     },
+    "NdiConfig": {
+      "additionalProperties": false,
+      "description": "Specifies the configuration settings for NDI outputs. Required when the flow includes NDI outputs.",
+      "properties": {
+        "MachineName": {
+          "description": "A prefix for the names of the NDI sources that the flow creates. If a custom name isn't specified, MediaConnect generates a unique 12-character ID as the prefix.",
+          "type": "string"
+        },
+        "NdiDiscoveryServers": {
+          "description": "A list of up to three NDI discovery server configurations. While not required by the API, this configuration is necessary for NDI functionality to work properly.",
+          "items": {
+            "$ref": "#/definitions/NdiDiscoveryServerConfig"
+          },
+          "type": "array"
+        },
+        "NdiState": {
+          "description": "A setting that controls whether NDI outputs can be used in the flow. Must be ENABLED to add NDI outputs. Default is DISABLED.",
+          "enum": [
+            "ENABLED",
+            "DISABLED"
+          ],
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "NdiDiscoveryServerConfig": {
+      "additionalProperties": false,
+      "description": "Specifies the configuration settings for individual NDI discovery servers. A maximum of 3 servers is allowed.",
+      "properties": {
+        "DiscoveryServerAddress": {
+          "description": "The unique network address of the NDI discovery server.",
+          "type": "string"
+        },
+        "DiscoveryServerPort": {
+          "description": "The port for the NDI discovery server. Defaults to 5959 if a custom port isn't specified.",
+          "format": "int32",
+          "type": "integer"
+        },
+        "VpcInterfaceAdapter": {
+          "description": "The identifier for the Virtual Private Cloud (VPC) network interface used by the flow.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "DiscoveryServerAddress",
+        "VpcInterfaceAdapter"
+      ],
+      "type": "object"
+    },
     "SilentAudio": {
       "additionalProperties": false,
       "description": "Configures settings for the SilentAudio metric.",
@@ -700,6 +750,18 @@
       "description": "The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS.(ReadOnly)",
       "type": "string"
     },
+    "FlowNdiMachineName": {
+      "description": "A prefix for the names of the NDI sources that the flow creates.(ReadOnly)",
+      "type": "string"
+    },
+    "FlowSize": {
+      "description": "Determines the processing capacity and feature set of the flow. Set this optional parameter to LARGE if you want to enable NDI outputs on the flow.",
+      "enum": [
+        "MEDIUM",
+        "LARGE"
+      ],
+      "type": "string"
+    },
     "Maintenance": {
       "$ref": "#/definitions/Maintenance",
       "description": "The maintenance settings you want to use for the flow."
@@ -714,6 +776,10 @@
     "Name": {
       "description": "The name of the flow.",
       "type": "string"
+    },
+    "NdiConfig": {
+      "$ref": "#/definitions/NdiConfig",
+      "description": "Specifies the configuration settings for NDI outputs. Required when the flow includes NDI outputs."
     },
     "Source": {
       "$ref": "#/definitions/Source",
@@ -743,7 +809,8 @@
     "/properties/Source/SourceIngestPort",
     "/properties/VpcInterfaces/*/NetworkInterfaceIds",
     "/properties/MediaStreams/*/Fmt",
-    "/properties/EgressIp"
+    "/properties/EgressIp",
+    "/properties/FlowNdiMachineName"
   ],
   "required": [
     "Name",

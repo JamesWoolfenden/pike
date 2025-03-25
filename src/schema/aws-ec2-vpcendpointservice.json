@@ -1,6 +1,13 @@
 {
   "additionalProperties": false,
   "definitions": {
+    "IpAddressType": {
+      "enum": [
+        "ipv4",
+        "ipv6"
+      ],
+      "type": "string"
+    },
     "Tag": {
       "additionalProperties": false,
       "properties": {
@@ -28,6 +35,7 @@
         "cloudwatch:DeleteInsightRules",
         "cloudwatch:PutManagedInsightRules",
         "ec2:DescribeVpcEndpointServiceConfigurations",
+        "vpce:AllowMultiRegion",
         "ec2:CreateTags"
       ]
     },
@@ -37,7 +45,8 @@
         "ec2:DescribeVpcEndpointServiceConfigurations",
         "cloudwatch:ListManagedInsightRules",
         "cloudwatch:DeleteInsightRules",
-        "ec2:DeleteTags"
+        "ec2:DeleteTags",
+        "vpce:AllowMultiRegion"
       ]
     },
     "list": {
@@ -61,7 +70,8 @@
         "cloudwatch:DeleteInsightRules",
         "cloudwatch:PutManagedInsightRules",
         "ec2:CreateTags",
-        "ec2:DeleteTags"
+        "ec2:DeleteTags",
+        "vpce:AllowMultiRegion"
       ]
     }
   },
@@ -98,6 +108,24 @@
     },
     "ServiceId": {
       "type": "string"
+    },
+    "SupportedIpAddressTypes": {
+      "description": "Specify which Ip Address types are supported for VPC endpoint service.",
+      "insertionOrder": false,
+      "items": {
+        "$ref": "#/definitions/IpAddressType"
+      },
+      "type": "array",
+      "uniqueItems": false
+    },
+    "SupportedRegions": {
+      "description": "The Regions from which service consumers can access the service.",
+      "insertionOrder": false,
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
     },
     "Tags": {
       "description": "The tags to add to the VPC endpoint service.",

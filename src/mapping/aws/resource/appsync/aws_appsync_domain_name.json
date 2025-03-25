@@ -6,16 +6,21 @@
       "acm:DescribeCertificate",
       "cloudfront:UpdateDistribution",
       "appsync:UpdateDomainName",
-      "appsync:DeleteDomainName"
+      "appsync:DeleteDomainName",
+      "appsync:TagResource"
     ],
     "attributes": {
       "tags": []
     },
     "destroy": [
-      "appsync:DeleteDomainName"
+      "appsync:DeleteDomainName",
+      "appsync:UntagResource"
     ],
     "modify": [
-      "appsync:UpdateDomainName"
+      "appsync:UpdateDomainName",
+      "appsync:GetDomainName",
+      "appsync:TagResource",
+      "appsync:UntagResource"
     ],
     "plan": [
       "appsync:GetDomainName"

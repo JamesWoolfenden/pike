@@ -31,8 +31,11 @@
         "ConflictingClientIdsCheck": {
           "$ref": "#/definitions/AuditCheckConfiguration"
         },
+        "DeviceCertificateAgeCheck": {
+          "$ref": "#/definitions/DeviceCertAgeAuditCheckConfiguration"
+        },
         "DeviceCertificateExpiringCheck": {
-          "$ref": "#/definitions/AuditCheckConfiguration"
+          "$ref": "#/definitions/DeviceCertExpirationAuditCheckConfiguration"
         },
         "DeviceCertificateKeyQualityCheck": {
           "$ref": "#/definitions/AuditCheckConfiguration"
@@ -97,6 +100,60 @@
       "properties": {
         "Sns": {
           "$ref": "#/definitions/AuditNotificationTarget"
+        }
+      },
+      "type": "object"
+    },
+    "CertAgeCheckCustomConfiguration": {
+      "additionalProperties": false,
+      "description": "A structure containing the configName and corresponding configValue for configuring audit checks.",
+      "properties": {
+        "CertAgeThresholdInDays": {
+          "$ref": "#/definitions/ConfigValue"
+        }
+      },
+      "type": "object"
+    },
+    "CertExpirationCheckCustomConfiguration": {
+      "additionalProperties": false,
+      "description": "A structure containing the configName and corresponding configValue for configuring audit checks.",
+      "properties": {
+        "CertExpirationThresholdInDays": {
+          "$ref": "#/definitions/ConfigValue"
+        }
+      },
+      "type": "object"
+    },
+    "ConfigValue": {
+      "description": "The configValue for configuring audit checks.",
+      "maxLength": 64,
+      "minLength": 1,
+      "type": "string"
+    },
+    "DeviceCertAgeAuditCheckConfiguration": {
+      "additionalProperties": false,
+      "description": "A structure containing the configName and corresponding configValue for configuring DeviceCertAgeCheck.",
+      "properties": {
+        "Configuration": {
+          "$ref": "#/definitions/CertAgeCheckCustomConfiguration"
+        },
+        "Enabled": {
+          "description": "True if the check is enabled.",
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "DeviceCertExpirationAuditCheckConfiguration": {
+      "additionalProperties": false,
+      "description": "A structure containing the configName and corresponding configValue for configuring DeviceCertExpirationCheck.",
+      "properties": {
+        "Configuration": {
+          "$ref": "#/definitions/CertExpirationCheckCustomConfiguration"
+        },
+        "Enabled": {
+          "description": "True if the check is enabled.",
+          "type": "boolean"
         }
       },
       "type": "object"

@@ -252,13 +252,17 @@
     "create": {
       "permissions": [
         "mediaconnect:CreateBridge",
-        "mediaconnect:DescribeBridge"
+        "mediaconnect:DescribeBridge",
+        "mediaconnect:AddBridgeOutputs",
+        "mediaconnect:AddBridgeSources"
       ]
     },
     "delete": {
       "permissions": [
         "mediaconnect:DescribeBridge",
-        "mediaconnect:DeleteBridge"
+        "mediaconnect:DeleteBridge",
+        "mediaconnect:RemoveBridgeOutput",
+        "mediaconnect:RemoveBridgeSource"
       ]
     },
     "list": {

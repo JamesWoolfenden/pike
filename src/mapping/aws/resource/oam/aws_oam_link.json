@@ -9,20 +9,33 @@
       "logs:Link",
       "xray:Link",
       "applicationinsights:Link",
-      "internetmonitor:Link"
+      "internetmonitor:Link",
+      "application-signals:Link",
+      "oam:ListTagsForResource"
     ],
     "attributes": {
       "tags": [
         "oam:TagResource",
-        "oam:ListTagsForResource"
+        "oam:UntagResource"
       ]
     },
     "destroy": [
       "oam:DeleteLink"
     ],
     "modify": [
-      "oam:UpdateLink"
+      "oam:GetLink",
+      "oam:UpdateLink",
+      "cloudwatch:Link",
+      "logs:Link",
+      "xray:Link",
+      "applicationinsights:Link",
+      "internetmonitor:Link",
+      "application-signals:Link",
+      "oam:ListTagsForResource"
     ],
-    "plan": []
+    "plan": [
+      "oam:GetLink",
+      "oam:ListTagsForResource"
+    ]
   }
 ]

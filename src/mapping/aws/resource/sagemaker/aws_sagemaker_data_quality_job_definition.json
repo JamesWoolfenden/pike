@@ -5,7 +5,8 @@
       "sagemaker:DescribeDataQualityJobDefinition",
       "sagemaker:DeleteDataQualityJobDefinition",
       "sagemaker:UpdateDataQualityJobDefinition",
-      "iam:PassRole"
+      "iam:PassRole",
+      "sagemaker:ListTags"
     ],
     "attributes": {
       "tags": [
@@ -13,8 +14,13 @@
         "sagemaker:DeleteTags"
       ]
     },
-    "destroy": [],
+    "destroy": [
+      "sagemaker:DeleteDataQualityJobDefinition"
+    ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "sagemaker:DescribeDataQualityJobDefinition",
+      "sagemaker:ListTags"
+    ]
   }
 ]

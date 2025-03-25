@@ -7,7 +7,10 @@
       "ce:UpdateCostCategoryDefinition"
     ],
     "attributes": {
-      "tags": []
+      "tags": [
+        "ce:TagResource",
+        "ce:UntagResource"
+      ]
     },
     "destroy": [
       "ce:DeleteCostCategoryDefinition"
@@ -15,6 +18,9 @@
     "modify": [
       "ce:UpdateCostCategoryDefinition"
     ],
-    "plan": []
+    "plan": [
+      "ce:DescribeCostCategoryDefinition",
+      "ce:ListTagsForResource"
+    ]
   }
 ]

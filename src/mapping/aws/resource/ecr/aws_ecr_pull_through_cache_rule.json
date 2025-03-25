@@ -4,7 +4,8 @@
       "ecr:CreatePullThroughCacheRule",
       "ecr:DescribePullThroughCacheRules",
       "ecr:DeletePullThroughCacheRule",
-      "iam:CreateServiceLinkedRole"
+      "iam:CreateServiceLinkedRole",
+      "iam:PassRole"
     ],
     "attributes": {
       "credential_arn": [
@@ -13,9 +14,18 @@
       "tags": []
     },
     "destroy": [
+      "ecr:DescribePullThroughCacheRules",
       "ecr:DeletePullThroughCacheRule"
     ],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "ecr:DescribePullThroughCacheRules",
+      "ecr:CreatePullThroughCacheRule",
+      "ecr:DeletePullThroughCacheRule",
+      "iam:CreateServiceLinkedRole",
+      "iam:PassRole"
+    ],
+    "plan": [
+      "ecr:DescribePullThroughCacheRules"
+    ]
   }
 ]
