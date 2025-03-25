@@ -77,7 +77,7 @@
       "additionalProperties": false,
       "properties": {
         "CommandText": {
-          "maxLength": 100,
+          "maxLength": 5000,
           "minLength": 1,
           "type": "string"
         }

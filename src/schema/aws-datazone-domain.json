@@ -185,6 +185,13 @@
       "description": "The URL of the data portal for this Amazon DataZone domain.",
       "type": "string"
     },
+    "RootDomainUnitId": {
+      "description": "The ID of the root domain in Amazon Datazone.",
+      "maxLength": 256,
+      "minLength": 1,
+      "pattern": "^[a-z0-9_\\-]+$",
+      "type": "string"
+    },
     "ServiceRole": {
       "description": "The service role of the domain that is created.",
       "pattern": "^arn:aws[^:]*:iam::\\d{12}:(role|role/service-role)/[\\w+=,.@-]*$",
@@ -209,6 +216,7 @@
     }
   },
   "readOnlyProperties": [
+    "/properties/RootDomainUnitId",
     "/properties/Arn",
     "/properties/CreatedAt",
     "/properties/Id",

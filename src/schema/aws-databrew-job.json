@@ -2,8 +2,7 @@
   "additionalProperties": false,
   "createOnlyProperties": [
     "/properties/Name",
-    "/properties/Type",
-    "/properties/Tags"
+    "/properties/Type"
   ],
   "definitions": {
     "AllowedStatistics": {
@@ -489,7 +488,6 @@
     "read": {
       "permissions": [
         "databrew:DescribeJob",
-        "databrew:ListTagsForResource",
         "iam:ListRoles"
       ]
     },
@@ -497,6 +495,8 @@
       "permissions": [
         "databrew:UpdateProfileJob",
         "databrew:UpdateRecipeJob",
+        "databrew:TagResource",
+        "databrew:UntagResource",
         "iam:PassRole"
       ]
     }
@@ -637,7 +637,7 @@
     ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
-    "tagUpdatable": false,
+    "tagUpdatable": true,
     "taggable": true
   },
   "typeName": "AWS::DataBrew::Job"

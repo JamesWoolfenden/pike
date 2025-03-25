@@ -252,6 +252,18 @@
     "BranchName"
   ],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-amplify",
+  "tagging": {
+    "cloudFormationSystemTags": false,
+    "permissions": [
+      "amplify:TagResource",
+      "amplify:ListTagsForResource",
+      "amplify:UntagResource"
+    ],
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": true,
+    "taggable": true
+  },
   "typeName": "AWS::Amplify::Branch",
   "writeOnlyProperties": [
     "/properties/BasicAuthConfig"

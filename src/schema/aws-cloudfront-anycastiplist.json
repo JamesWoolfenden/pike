@@ -8,33 +8,41 @@
   "definitions": {
     "AnycastIpList": {
       "additionalProperties": false,
+      "description": "An Anycast static IP list. For more information, see [Request Anycast static IPs to use for allowlisting](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/request-static-ips.html) in the *Amazon CloudFront Developer Guide*.",
       "properties": {
         "AnycastIps": {
+          "description": "The static IP addresses that are allocated to the Anycast static IP list.",
           "items": {
             "type": "string"
           },
           "type": "array"
         },
         "Arn": {
+          "description": "The Amazon Resource Name (ARN) of the Anycast static IP list.",
           "type": "string"
         },
         "Id": {
+          "description": "The ID of the Anycast static IP list.",
           "type": "string"
         },
         "IpCount": {
+          "description": "The number of IP addresses in the Anycast static IP list.",
           "type": "integer"
         },
         "LastModifiedTime": {
+          "description": "The last time the Anycast static IP list was modified.",
           "format": "date-time",
           "type": "string"
         },
         "Name": {
+          "description": "The name of the Anycast static IP list.",
           "maxLength": 64,
           "minLength": 1,
           "pattern": "^[a-zA-Z0-9-_]{1,64}$",
           "type": "string"
         },
         "Status": {
+          "description": "The status of the Anycast static IP list. Valid values: ``Deployed``, ``Deploying``, or ``Failed``.",
           "type": "string"
         }
       },
@@ -51,14 +59,17 @@
     },
     "Tag": {
       "additionalProperties": false,
+      "description": "A complex type that contains ``Tag`` key and ``Tag`` value.",
       "properties": {
         "Key": {
+          "description": "A string that contains ``Tag`` key.\n The string length should be between 1 and 128 characters. Valid characters include ``a-z``, ``A-Z``, ``0-9``, space, and the special characters ``_ - . : / = + @``.",
           "maxLength": 128,
           "minLength": 1,
           "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
           "type": "string"
         },
         "Value": {
+          "description": "A string that contains an optional ``Tag`` value.\n The string length should be between 0 and 256 characters. Valid characters include ``a-z``, ``A-Z``, ``0-9``, space, and the special characters ``_ - . : / = + @``.",
           "maxLength": 256,
           "minLength": 0,
           "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
@@ -72,8 +83,10 @@
     },
     "Tags": {
       "additionalProperties": false,
+      "description": "A complex type that contains zero or more ``Tag`` elements.",
       "properties": {
         "Items": {
+          "description": "A complex type that contains ``Tag`` elements.",
           "items": {
             "$ref": "#/definitions/Tag"
           },
@@ -83,7 +96,7 @@
       "type": "object"
     }
   },
-  "description": "Definition of AWS::CloudFront::AnycastIpList Resource Type",
+  "description": "An Anycast static IP list. For more information, see [Request Anycast static IPs to use for allowlisting](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/request-static-ips.html) in the *Amazon CloudFront Developer Guide*.",
   "handlers": {
     "create": {
       "permissions": [
@@ -114,25 +127,31 @@
   ],
   "properties": {
     "AnycastIpList": {
-      "$ref": "#/definitions/AnycastIpList"
+      "$ref": "#/definitions/AnycastIpList",
+      "description": ""
     },
     "ETag": {
+      "description": "",
       "type": "string"
     },
     "Id": {
+      "description": "",
       "type": "string"
     },
     "IpCount": {
+      "description": "The number of IP addresses in the Anycast static IP list.",
       "type": "integer"
     },
     "Name": {
+      "description": "The name of the Anycast static IP list.",
       "maxLength": 64,
       "minLength": 1,
       "pattern": "^[a-zA-Z0-9-_]{1,64}$",
       "type": "string"
     },
     "Tags": {
-      "$ref": "#/definitions/Tags"
+      "$ref": "#/definitions/Tags",
+      "description": "A complex type that contains zero or more ``Tag`` elements."
     }
   },
   "readOnlyProperties": [

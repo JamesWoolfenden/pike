@@ -88,6 +88,10 @@
       "description": "The custom domain name for your API in Amazon API Gateway. Uppercase letters and the underscore (``_``) character are not supported.",
       "type": "string"
     },
+    "DomainNameArn": {
+      "description": "",
+      "type": "string"
+    },
     "DomainNameConfigurations": {
       "description": "The domain name configurations.",
       "items": {
@@ -121,7 +125,8 @@
   },
   "readOnlyProperties": [
     "/properties/RegionalDomainName",
-    "/properties/RegionalHostedZoneId"
+    "/properties/RegionalHostedZoneId",
+    "/properties/DomainNameArn"
   ],
   "required": [
     "DomainName"
