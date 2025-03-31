@@ -7,10 +7,12 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "VisualEditor0",
         "Effect" : "Allow",
         "Action" : [
-          "sso:ListInstances",
-          "identitystore:GetGroupId",
-
-          "eks:DescribeClusterVersions"
+          "apigateway:DELETE",
+          "apigateway:GET",
+          "apigateway:PATCH",
+          "apigateway:POST",
+          "apigateway:PUT",
+          "apigateway:UpdateRestApiPolicy"
         ],
         "Resource" : [
           "*"

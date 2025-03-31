@@ -60,6 +60,7 @@ var tFLookup = map[string]interface{}{ //nolint:gochecknoglobals
 	"aws_api_gateway_request_validator":                                awsAPIGatewayRestAPI,
 	"aws_api_gateway_resource":                                         awsApigatewayv2Api,
 	"aws_api_gateway_rest_api":                                         awsAPIGatewayRestAPI,
+	"aws_api_gateway_rest_api_put":                                     awsAPIGatewayRestAPI,
 	"aws_api_gateway_rest_api_policy":                                  awsApigatewayv2Api,
 	"aws_api_gateway_stage":                                            awsApigatewayv2Api,
 	"aws_api_gateway_usage_plan":                                       awsApigatewayv2Api,
