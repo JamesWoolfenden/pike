@@ -95,6 +95,36 @@
       ],
       "type": "string"
     },
+    "DeobfuscationConfiguration": {
+      "additionalProperties": false,
+      "description": "A structure that contains the configuration for how an app monitor can deobfuscate stack traces.",
+      "properties": {
+        "JavaScriptSourceMaps": {
+          "additionalProperties": false,
+          "description": "A structure that contains the configuration for how an app monitor can unminify JavaScript error stack traces using source maps.",
+          "properties": {
+            "S3Uri": {
+              "description": "The S3Uri of the bucket or folder that stores the source map files. It is required if status is ENABLED.",
+              "pattern": "^s3://[a-z0-9][-.a-z0-9]{1,61}(?:/[-!_*'().a-z0-9A-Z]+(?:/[-!_*'().a-z0-9A-Z]+)*)?/?$",
+              "type": "string"
+            },
+            "Status": {
+              "description": "Specifies whether JavaScript error stack traces should be unminified for this app monitor. The default is for JavaScript error stack trace unminification to be DISABLED",
+              "enum": [
+                "ENABLED",
+                "DISABLED"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "Status"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "FavoritePages": {
       "description": "List of favorite pages",
       "insertionOrder": false,
@@ -209,6 +239,26 @@
       "minItems": 0,
       "type": "array"
     },
+    "ResourcePolicy": {
+      "additionalProperties": false,
+      "description": "A structure that defines resource policy attached to your app monitor.",
+      "properties": {
+        "PolicyDocument": {
+          "description": "The JSON to use as the resource policy. The document can be up to 4 KB in size. ",
+          "type": "string"
+        },
+        "PolicyRevisionId": {
+          "description": "A string value that you can use to conditionally update your policy. You can provide the revision ID of your existing policy to make mutating requests against that policy. \n\n When you assign a policy revision ID, then later requests about that policy will be rejected with an InvalidPolicyRevisionIdException error if they don't provide the correct current revision ID.",
+          "maxLength": 255,
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "PolicyDocument"
+      ],
+      "type": "object"
+    },
     "Tag": {
       "additionalProperties": false,
       "description": "A key-value pair to associate with a resource.",
@@ -287,7 +337,9 @@
         "rum:PutRumMetricsDestination",
         "rum:BatchCreateRumMetricDefinitions",
         "rum:ListRumMetricsDestinations",
-        "rum:BatchGetRumMetricDefinitions"
+        "rum:BatchGetRumMetricDefinitions",
+        "rum:GetResourcePolicy",
+        "rum:PutResourcePolicy"
       ]
     },
     "delete": {
@@ -304,7 +356,10 @@
         "rum:DeleteRumMetricsDestination",
         "rum:BatchDeleteRumMetricDefinitions",
         "rum:ListRumMetricsDestinations",
-        "rum:BatchGetRumMetricDefinitions"
+        "rum:BatchGetRumMetricDefinitions",
+        "rum:GetResourcePolicy",
+        "rum:PutResourcePolicy",
+        "rum:DeleteResourcePolicy"
       ]
     },
     "list": {
@@ -331,7 +386,8 @@
         "s3:GetObjectAcl",
         "rum:ListTagsForResource",
         "rum:ListRumMetricsDestinations",
-        "rum:BatchGetRumMetricDefinitions"
+        "rum:BatchGetRumMetricDefinitions",
+        "rum:GetResourcePolicy"
       ]
     },
     "update": {
@@ -366,10 +422,25 @@
         "rum:BatchCreateRumMetricDefinitions",
         "rum:BatchDeleteRumMetricDefinitions",
         "rum:BatchGetRumMetricDefinitions",
-        "rum:UpdateRumMetricDefinition"
+        "rum:UpdateRumMetricDefinition",
+        "rum:GetResourcePolicy",
+        "rum:PutResourcePolicy",
+        "rum:DeleteResourcePolicy"
       ]
     }
   },
+  "oneOf": [
+    {
+      "required": [
+        "Domain"
+      ]
+    },
+    {
+      "required": [
+        "DomainList"
+      ]
+    }
+  ],
   "primaryIdentifier": [
     "/properties/Name"
   ],
@@ -384,12 +455,24 @@
       "description": "Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM sends a copy of this telemetry data to CWLlong in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur CWLlong charges. If you omit this parameter, the default is false",
       "type": "boolean"
     },
+    "DeobfuscationConfiguration": {
+      "$ref": "#/definitions/DeobfuscationConfiguration"
+    },
     "Domain": {
-      "description": "The top-level internet domain name for which your application has administrative authority.",
+      "description": "The top-level internet domain name for which your application has administrative authority. The CreateAppMonitor requires either the domain or the domain list.",
       "maxLength": 253,
       "minLength": 1,
       "pattern": "^(localhost)|^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$|^(?![-.])([A-Za-z0-9-\\.\\-]{0,63})((?![-])([a-zA-Z0-9]{1}|^[a-zA-Z0-9]{0,1}))\\.(?![-])[A-Za-z-0-9]{1,63}((?![-])([a-zA-Z0-9]{1}|^[a-zA-Z0-9]{0,1}))|^(\\*\\.)(?![-.])([A-Za-z0-9-\\.\\-]{0,63})((?![-])([a-zA-Z0-9]{1}|^[a-zA-Z0-9]{0,1}))\\.(?![-])[A-Za-z-0-9]{1,63}((?![-])([a-zA-Z0-9]{1}|^[a-zA-Z0-9]{0,1}))",
       "type": "string"
+    },
+    "DomainList": {
+      "description": "The top-level internet domain names for which your application has administrative authority. The CreateAppMonitor requires either the domain or the domain list.",
+      "items": {
+        "$ref": "#/properties/Domain"
+      },
+      "maxItems": 5,
+      "minItems": 1,
+      "type": "array"
     },
     "Id": {
       "description": "The unique ID of the new app monitor.",
@@ -405,6 +488,9 @@
       "pattern": "[\\.\\-_/#A-Za-z0-9]+",
       "type": "string"
     },
+    "ResourcePolicy": {
+      "$ref": "#/definitions/ResourcePolicy"
+    },
     "Tags": {
       "$ref": "#/definitions/TagDef"
     }
@@ -413,8 +499,7 @@
     "/properties/Id"
   ],
   "required": [
-    "Name",
-    "Domain"
+    "Name"
   ],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-rpdk.git",
   "tagging": {

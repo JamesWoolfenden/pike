@@ -529,7 +529,8 @@
         "sagemaker:CreateModelBiasJobDefinition",
         "sagemaker:DescribeModelBiasJobDefinition",
         "iam:PassRole",
-        "sagemaker:AddTags"
+        "sagemaker:AddTags",
+        "sagemaker:ListTags"
       ]
     },
     "delete": {
@@ -545,7 +546,8 @@
     },
     "read": {
       "permissions": [
-        "sagemaker:DescribeModelBiasJobDefinition"
+        "sagemaker:DescribeModelBiasJobDefinition",
+        "sagemaker:ListTags"
       ]
     }
   },
@@ -630,9 +632,6 @@
   },
   "typeName": "AWS::SageMaker::ModelBiasJobDefinition",
   "writeOnlyProperties": [
-    "/properties/EndpointName",
-    "/properties/Tags",
-    "/properties/Tags/*/Key",
-    "/properties/Tags/*/Value"
+    "/properties/EndpointName"
   ]
 }

@@ -27,8 +27,7 @@
     "create": {
       "permissions": [
         "rolesanywhere:ImportCrl",
-        "rolesanywhere:TagResource",
-        "rolesanywhere:ListTagsForResource"
+        "rolesanywhere:TagResource"
       ]
     },
     "delete": {

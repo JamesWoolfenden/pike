@@ -7,40 +7,12 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "VisualEditor0",
         "Effect" : "Allow",
         "Action" : [
-          "dynamodb:DeleteItem",
-          "dynamodb:DescribeTable",
-          "dynamodb:GetItem",
-          "dynamodb:PutItem",
-          "route53:CreateHostedZone",
-          "route53:DeleteHostedZone",
-          "route53:GetChange",
-          "route53:GetHostedZone",
-          "route53:ListResourceRecordSets",
-          "route53:ListTagsForResource",
-          "s3:DeleteObject",
-          "s3:GetObject",
-          "s3:ListBucket",
-          "s3:PutObject",
-          "ec2:AssignIpv6Addresses",
-          "ec2:AssignPrivateIpAddresses",
-          "ec2:CreateNetworkInterface",
-          "ec2:DeleteNetworkInterface",
-          "ec2:DescribeNetworkInterfaces",
-          "ec2:ModifyNetworkInterfaceAttribute",
-          "ec2:ModifyPublicIpDnsNameOptions",
-          "ec2:UnassignIpv6Addresses",
-          "ec2:UnassignPrivateIpAddresses",
-
-          //aws_route53_records_exclusive
-          "route53:ChangeResourceRecordSets",
-          //aws_route53_zone
-          "route53:GetDNSSEC",
-
-          //aws_network_interface_permission
-          "ec2:CreateNetworkInterfacePermission",
-          "ec2:DescribeNetworkInterfacePermissions",
-          "ec2:DeleteNetworkInterfacePermission"
-
+          "apigateway:DELETE",
+          "apigateway:GET",
+          "apigateway:PATCH",
+          "apigateway:POST",
+          "apigateway:PUT",
+          "apigateway:UpdateRestApiPolicy"
         ],
         "Resource" : [
           "*"

@@ -103,6 +103,45 @@
       "pattern": "^(|/.*)$",
       "type": "string"
     },
+    "CustomDirectories": {
+      "additionalProperties": false,
+      "description": "Specifies a separate directory for each type of file to store for an AS2 message.",
+      "properties": {
+        "FailedFilesDirectory": {
+          "description": "Specifies a location to store the failed files for an AS2 message.",
+          "pattern": "(|/.*)",
+          "type": "string"
+        },
+        "MdnFilesDirectory": {
+          "description": "Specifies a location to store the MDN file for an AS2 message.",
+          "pattern": "(|/.*)",
+          "type": "string"
+        },
+        "PayloadFilesDirectory": {
+          "description": "Specifies a location to store the payload file for an AS2 message.",
+          "pattern": "(|/.*)",
+          "type": "string"
+        },
+        "StatusFilesDirectory": {
+          "description": "Specifies a location to store the status file for an AS2 message.",
+          "pattern": "(|/.*)",
+          "type": "string"
+        },
+        "TemporaryFilesDirectory": {
+          "description": "Specifies a location to store the temporary processing file for an AS2 message.",
+          "pattern": "(|/.*)",
+          "type": "string"
+        }
+      },
+      "required": [
+        "FailedFilesDirectory",
+        "MdnFilesDirectory",
+        "PayloadFilesDirectory",
+        "StatusFilesDirectory",
+        "TemporaryFilesDirectory"
+      ],
+      "type": "object"
+    },
     "Description": {
       "description": "A textual description for the agreement.",
       "maxLength": 200,
@@ -174,7 +213,6 @@
     "ServerId",
     "LocalProfileId",
     "PartnerProfileId",
-    "BaseDirectory",
     "AccessRole"
   ],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-transfer",

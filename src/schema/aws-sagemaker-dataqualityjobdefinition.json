@@ -493,6 +493,7 @@
         "sagemaker:CreateDataQualityJobDefinition",
         "sagemaker:DescribeDataQualityJobDefinition",
         "sagemaker:AddTags",
+        "sagemaker:ListTags",
         "iam:PassRole"
       ]
     },
@@ -509,7 +510,8 @@
     },
     "read": {
       "permissions": [
-        "sagemaker:DescribeDataQualityJobDefinition"
+        "sagemaker:DescribeDataQualityJobDefinition",
+        "sagemaker:ListTags"
       ]
     }
   },
@@ -594,9 +596,6 @@
   },
   "typeName": "AWS::SageMaker::DataQualityJobDefinition",
   "writeOnlyProperties": [
-    "/properties/EndpointName",
-    "/properties/Tags",
-    "/properties/Tags/*/Key",
-    "/properties/Tags/*/Value"
+    "/properties/EndpointName"
   ]
 }

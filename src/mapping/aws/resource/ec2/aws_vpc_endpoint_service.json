@@ -1,12 +1,16 @@
 [
   {
     "apply": [
-      "ec2:DescribeAccountAttributes",
       "ec2:CreateVpcEndpointServiceConfiguration",
+      "ec2:ModifyVpcEndpointServicePayerResponsibility",
+      "cloudwatch:ListManagedInsightRules",
+      "cloudwatch:DeleteInsightRules",
+      "cloudwatch:PutManagedInsightRules",
       "ec2:DescribeVpcEndpointServiceConfigurations",
       "ec2:DescribeVpcEndpointServicePermissions",
       "ec2:DeleteVpcEndpointServiceConfigurations",
-      "ec2:ModifyVpcEndpointServiceConfiguration"
+      "ec2:ModifyVpcEndpointServiceConfiguration",
+      "vpce:AllowMultiRegion"
     ],
     "attributes": {
       "tags": [
@@ -15,11 +19,24 @@
       ]
     },
     "destroy": [
-      "ec2:DeleteVpcEndpointServiceConfigurations"
+      "ec2:DeleteVpcEndpointServiceConfigurations",
+      "ec2:DescribeVpcEndpointServiceConfigurations",
+      "cloudwatch:ListManagedInsightRules",
+      "cloudwatch:DeleteInsightRules",
+      "vpce:AllowMultiRegion"
     ],
     "modify": [
-      "ec2:ModifyVpcEndpointServiceConfiguration"
+      "ec2:ModifyVpcEndpointServiceConfiguration",
+      "ec2:DescribeVpcEndpointServiceConfigurations",
+      "ec2:ModifyVpcEndpointServicePayerResponsibility",
+      "cloudwatch:ListManagedInsightRules",
+      "cloudwatch:DeleteInsightRules",
+      "cloudwatch:PutManagedInsightRules",
+      "vpce:AllowMultiRegion"
     ],
-    "plan": []
+    "plan": [
+      "ec2:DescribeVpcEndpointServiceConfigurations",
+      "cloudwatch:ListManagedInsightRules"
+    ]
   }
 ]

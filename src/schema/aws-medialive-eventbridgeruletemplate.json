@@ -164,7 +164,6 @@
   ],
   "required": [
     "EventType",
-    "GroupIdentifier",
     "Name"
   ],
   "tagging": {

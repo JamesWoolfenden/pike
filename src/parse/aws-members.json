@@ -43,6 +43,7 @@
         "aws_api_gateway_resource",
         "aws_api_gateway_rest_api",
         "aws_api_gateway_rest_api_policy",
+        "aws_api_gateway_rest_api_put",
         "aws_api_gateway_stage",
         "aws_api_gateway_usage_plan",
         "aws_api_gateway_usage_plan_key",

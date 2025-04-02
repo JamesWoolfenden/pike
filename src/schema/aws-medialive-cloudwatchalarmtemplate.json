@@ -35,6 +35,7 @@
         "MEDIAPACKAGE_CHANNEL",
         "MEDIAPACKAGE_ORIGIN_ENDPOINT",
         "MEDIACONNECT_FLOW",
+        "MEDIATAILOR_PLAYBACK_CONFIGURATION",
         "S3_BUCKET"
       ],
       "type": "string"
@@ -202,7 +203,6 @@
   "required": [
     "ComparisonOperator",
     "EvaluationPeriods",
-    "GroupIdentifier",
     "MetricName",
     "Name",
     "Period",

@@ -14,7 +14,7 @@
       "description": "An object representing the networking details for a task or service. For example ``awsVpcConfiguration={subnets=[\"subnet-12344321\"],securityGroups=[\"sg-12344321\"]}``.",
       "properties": {
         "AssignPublicIp": {
-          "description": "Whether the task's elastic network interface receives a public IP address. The default value is ``ENABLED``.",
+          "description": "Whether the task's elastic network interface receives a public IP address. \n Consider the following when you set this value:\n  +  When you use ``create-service`` or ``update-service``, the default is ``DISABLED``. \n  +  When the service ``deploymentController`` is ``ECS``, the value must be ``DISABLED``.",
           "enum": [
             "DISABLED",
             "ENABLED"
@@ -511,7 +511,7 @@
     },
     "Tag": {
       "additionalProperties": false,
-      "description": "The metadata that you apply to a resource to help you categorize and organize them. Each tag consists of a key and an optional value. You define them.\n The following basic restrictions apply to tags:\n  +  Maximum number of tags per resource - 50\n  +  For each resource, each tag key must be unique, and each tag key can have only one value.\n  +  Maximum key length - 128 Unicode characters in UTF-8\n  +  Maximum value length - 256 Unicode characters in UTF-8\n  +  If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.\n  +  Tag keys and values are case-sensitive.\n  +  Do not use ``aws:``, ``AWS:``, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for AWS use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.",
+      "description": "The metadata that you apply to a resource to help you categorize and organize them. Each tag consists of a key and an optional value. You define them.\n The following basic restrictions apply to tags:\n  +  Maximum number of tags per resource - 50\n  +  For each resource, each tag key must be unique, and each tag key can have only one value.\n  +  Maximum key length - 128 Unicode characters in UTF-8\n  +  Maximum value length - 256 Unicode characters in UTF-8\n  +  If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.\n  +  Tag keys and values are case-sensitive.\n  +  Do not use ``aws:``, ``AWS:``, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for AWS use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.\n  \n In order to tag a service that has the following ARN format, you need to migrate the service to the long ARN. You must use the API, CLI or console to migrate the service ARN. For more information, see [Migrate an short service ARN to a long ARN](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-arn-migration.html) in the *Developer Guide*.\n  ``arn:aws:ecs:region:aws_account_id:service/service-name`` \n After the migration is complete, the following are true:\n  +   The service ARN is: ``arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name`` \n  +  You can use CFN to tag the service as you would a service with a long ARN format.\n  +  When the ``PhysicalResourceId`` in the CFN stack represents a service, the value does not change and will be the short service ARN.",
       "properties": {
         "Key": {
           "description": "One part of a key-value pair that make up a tag. A ``key`` is a general label that acts like a category for more specific tag values.",
@@ -620,7 +620,7 @@
       "type": "string"
     },
     "CapacityProviderStrategy": {
-      "description": "The capacity provider strategy to use for the service.\n If a ``capacityProviderStrategy`` is specified, the ``launchType`` parameter must be omitted. If no ``capacityProviderStrategy`` or ``launchType`` is specified, the ``defaultCapacityProviderStrategy`` for the cluster is used.\n A capacity provider strategy may contain a maximum of 6 capacity providers.\n  To remove this property from your service resource, specify an empty ``CapacityProviderStrategyItem`` array.",
+      "description": "The capacity provider strategy to use for the service.\n If a ``capacityProviderStrategy`` is specified, the ``launchType`` parameter must be omitted. If no ``capacityProviderStrategy`` or ``launchType`` is specified, the ``defaultCapacityProviderStrategy`` for the cluster is used.\n A capacity provider strategy can contain a maximum of 20 capacity providers.\n  To remove this property from your service resource, specify an empty ``CapacityProviderStrategyItem`` array.",
       "items": {
         "$ref": "#/definitions/CapacityProviderStrategyItem"
       },

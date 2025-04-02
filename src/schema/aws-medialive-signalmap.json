@@ -27,7 +27,7 @@
         "Name": {
           "description": "The logical name of an AWS media resource.",
           "maxLength": 256,
-          "minLength": 1,
+          "minLength": 0,
           "type": "string"
         },
         "Sources": {
@@ -63,7 +63,7 @@
         "Name": {
           "description": "The logical name of an AWS media resource.",
           "maxLength": 256,
-          "minLength": 1,
+          "minLength": 0,
           "type": "string"
         }
       },
@@ -79,13 +79,13 @@
         "DetailsUri": {
           "description": "URI associated with a signal map's monitor deployment.",
           "maxLength": 2048,
-          "minLength": 1,
+          "minLength": 0,
           "type": "string"
         },
         "ErrorMessage": {
           "description": "Error message associated with a failed monitor deployment of a signal map.",
           "maxLength": 2048,
-          "minLength": 1,
+          "minLength": 0,
           "type": "string"
         },
         "Status": {
@@ -135,7 +135,7 @@
         "DetailsUri": {
           "description": "URI associated with a signal map's monitor deployment.",
           "maxLength": 2048,
-          "minLength": 1,
+          "minLength": 0,
           "type": "string"
         },
         "Status": {
@@ -310,7 +310,7 @@
     "ErrorMessage": {
       "description": "Error message associated with a failed creation or failed update attempt of a signal map.",
       "maxLength": 2048,
-      "minLength": 1,
+      "minLength": 0,
       "type": "string"
     },
     "EventBridgeRuleTemplateGroupIdentifiers": {

@@ -129,7 +129,8 @@
     },
     "list": {
       "permissions": [
-        "proton:ListServiceTemplates"
+        "proton:ListServiceTemplates",
+        "proton:ListTagsForResource"
       ]
     },
     "read": {

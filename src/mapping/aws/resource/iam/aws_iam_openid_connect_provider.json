@@ -4,7 +4,11 @@
       "ec2:DescribeAccountAttributes",
       "iam:DeleteOpenIDConnectProvider",
       "iam:GetOpenIDConnectProvider",
-      "iam:CreateOpenIDConnectProvider"
+      "iam:CreateOpenIDConnectProvider",
+      "iam:ListOpenIDConnectProviderTags",
+      "iam:UpdateOpenIDConnectProviderThumbprint",
+      "iam:RemoveClientIDFromOpenIDConnectProvider",
+      "iam:AddClientIDToOpenIDConnectProvider"
     ],
     "attributes": {
       "tags": [
@@ -12,10 +16,18 @@
         "iam:TagOpenIDConnectProvider"
       ]
     },
-    "destroy": [],
-    "modify": [
-      "iam:UpdateOpenIDConnectProviderThumbprint"
+    "destroy": [
+      "iam:DeleteOpenIDConnectProvider"
     ],
-    "plan": []
+    "modify": [
+      "iam:UpdateOpenIDConnectProviderThumbprint",
+      "iam:RemoveClientIDFromOpenIDConnectProvider",
+      "iam:AddClientIDToOpenIDConnectProvider",
+      "iam:GetOpenIDConnectProvider",
+      "iam:ListOpenIDConnectProviderTags"
+    ],
+    "plan": [
+      "iam:GetOpenIDConnectProvider"
+    ]
   }
 ]

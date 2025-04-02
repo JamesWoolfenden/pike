@@ -90,28 +90,36 @@
     "create": {
       "permissions": [
         "workspaces:CreateWorkspacesPool",
-        "workspaces:DescribeWorkspacesPools"
+        "workspaces:DescribeWorkspacesPools",
+        "workspaces:CreateTags"
       ]
     },
     "delete": {
       "permissions": [
         "workspaces:DescribeWorkspacesPools",
-        "workspaces:TerminateWorkspacesPool"
+        "workspaces:TerminateWorkspacesPool",
+        "workspaces:DeleteTags"
       ]
     },
     "list": {
       "permissions": [
-        "workspaces:DescribeWorkspacesPools"
+        "workspaces:DescribeWorkspacesPools",
+        "workspaces:DescribeTags"
       ]
     },
     "read": {
       "permissions": [
-        "workspaces:DescribeWorkspacesPools"
+        "workspaces:DescribeWorkspacesPools",
+        "workspaces:DescribeTags"
       ]
     },
     "update": {
       "permissions": [
-        "workspaces:UpdateWorkspacesPool"
+        "workspaces:UpdateWorkspacesPool",
+        "workspaces:CreateTags",
+        "workspaces:DeleteTags",
+        "workspaces:DescribeWorkspacesPools",
+        "workspaces:DescribeTags"
       ]
     }
   },
@@ -180,7 +188,12 @@
     "Capacity"
   ],
   "tagging": {
-    "cloudFormationSystemTags": false,
+    "cloudFormationSystemTags": true,
+    "permissions": [
+      "workspaces:CreateTags",
+      "workspaces:DescribeTags",
+      "workspaces:DeleteTags"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": false,

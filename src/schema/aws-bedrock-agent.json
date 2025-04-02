@@ -83,6 +83,10 @@
       ],
       "type": "string"
     },
+    "AdditionalModelRequestFields": {
+      "description": "Additional Model Request Fields for Prompt Configuration",
+      "type": "object"
+    },
     "AgentActionGroup": {
       "additionalProperties": false,
       "description": "Contains the information of an Agent Action Group",
@@ -446,6 +450,9 @@
       "additionalProperties": false,
       "description": "BasePromptConfiguration per Prompt Type.",
       "properties": {
+        "AdditionalModelRequestFields": {
+          "$ref": "#/definitions/AdditionalModelRequestFields"
+        },
         "BasePromptTemplate": {
           "description": "Base Prompt Template.",
           "maxLength": 100000,

@@ -1,8 +1,7 @@
 {
   "additionalProperties": false,
   "createOnlyProperties": [
-    "/properties/Name",
-    "/properties/Tags"
+    "/properties/Name"
   ],
   "definitions": {
     "Action": {
@@ -530,7 +529,6 @@
     "list": {
       "permissions": [
         "databrew:ListRecipes",
-        "databrew:ListTagsForResource",
         "iam:ListRoles"
       ]
     },
@@ -543,7 +541,9 @@
     },
     "update": {
       "permissions": [
-        "databrew:UpdateRecipe"
+        "databrew:UpdateRecipe",
+        "databrew:TagResource",
+        "databrew:UntagResource"
       ]
     }
   },
@@ -594,7 +594,7 @@
     ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
-    "tagUpdatable": false,
+    "tagUpdatable": true,
     "taggable": true
   },
   "typeName": "AWS::DataBrew::Recipe"

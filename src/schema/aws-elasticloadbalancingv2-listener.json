@@ -283,10 +283,10 @@
     },
     "MutualAuthentication": {
       "additionalProperties": false,
-      "description": "Specifies the configuration information for mutual authentication.",
+      "description": "The mutual authentication configuration information.",
       "properties": {
         "AdvertiseTrustStoreCaNames": {
-          "description": "",
+          "description": "Indicates whether trust store CA certificate names are advertised. The default value is ``off``.",
           "type": "string"
         },
         "IgnoreClientCertificateExpiry": {
@@ -294,7 +294,7 @@
           "type": "boolean"
         },
         "Mode": {
-          "description": "The client certificate handling method. Options are ``off``, ``passthrough`` or ``verify``. The default value is ``off``.",
+          "description": "The client certificate handling method. The possible values are ``off``, ``passthrough``, and ``verify``. The default value is ``off``.",
           "type": "string"
         },
         "TrustStoreArn": {

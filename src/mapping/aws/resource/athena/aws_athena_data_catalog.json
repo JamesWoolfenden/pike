@@ -5,7 +5,39 @@
       "athena:DeleteDataCatalog",
       "athena:GetDataCatalog",
       "athena:ListTagsForResource",
-      "athena:UpdateDataCatalog"
+      "athena:UpdateDataCatalog",
+      "s3:ListBucket",
+      "glue:TagResource",
+      "glue:CreateConnection",
+      "glue:DeleteConnection",
+      "glue:UpdateConnection",
+      "serverlessrepo:CreateCloudFormationTemplate",
+      "serverlessrepo:GetCloudFormationTemplate",
+      "cloudformation:CreateStack",
+      "cloudformation:CreateChangeSet",
+      "cloudformation:DeleteStack",
+      "cloudformation:DescribeStacks",
+      "ec2:DescribeSecurityGroups",
+      "ec2:DescribeSubnets",
+      "ec2:DescribeVpcs",
+      "ecr:BatchGetImage",
+      "ecr:GetDownloadUrlForLayer",
+      "glue:GetConnection",
+      "iam:AttachRolePolicy",
+      "iam:CreateRole",
+      "iam:DeleteRole",
+      "iam:DeleteRolePolicy",
+      "iam:DetachRolePolicy",
+      "iam:GetRole",
+      "iam:GetRolePolicy",
+      "iam:PassRole",
+      "iam:PutRolePolicy",
+      "iam:TagRole",
+      "lambda:CreateFunction",
+      "lambda:DeleteFunction",
+      "lambda:GetFunction",
+      "lambda:TagResource",
+      "secretsmanager:ListSecrets"
     ],
     "attributes": {
       "tags": [
@@ -14,10 +46,22 @@
       ]
     },
     "destroy": [
-      "athena:DeleteDataCatalog"
+      "athena:DeleteDataCatalog",
+      "athena:GetDataCatalog",
+      "glue:GetConnection",
+      "glue:UpdateConnection",
+      "cloudformation:DeleteStack",
+      "cloudformation:DescribeStacks",
+      "lambda:DeleteFunction",
+      "iam:DeleteRole",
+      "iam:DeleteRolePolicy",
+      "iam:DetachRolePolicy",
+      "s3:ListBucket"
     ],
     "modify": [
-      "athena:UpdateDataCatalog"
+      "athena:UpdateDataCatalog",
+      "athena:GetDataCatalog",
+      "athena:ListTagsForResource"
     ],
     "plan": [
       "athena:GetDataCatalog",

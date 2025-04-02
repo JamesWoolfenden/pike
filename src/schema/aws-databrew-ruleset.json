@@ -2,8 +2,7 @@
   "additionalProperties": false,
   "createOnlyProperties": [
     "/properties/Name",
-    "/properties/TargetArn",
-    "/properties/Tags"
+    "/properties/TargetArn"
   ],
   "definitions": {
     "ColumnSelector": {
@@ -192,13 +191,14 @@
     "read": {
       "permissions": [
         "databrew:DescribeRuleset",
-        "databrew:ListTagsForResource",
         "iam:ListRoles"
       ]
     },
     "update": {
       "permissions": [
-        "databrew:UpdateRuleset"
+        "databrew:UpdateRuleset",
+        "databrew:TagResource",
+        "databrew:UntagResource"
       ]
     }
   },
@@ -256,7 +256,7 @@
     ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
-    "tagUpdatable": false,
+    "tagUpdatable": true,
     "taggable": true
   },
   "typeName": "AWS::DataBrew::Ruleset"

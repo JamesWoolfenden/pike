@@ -74,17 +74,57 @@
       "type": "object"
     },
     "Duration": {
-      "description": "Specifies the duration of each calendar interval. For example, if `Duration` is 1 and `DurationUnit` is `MONTH`, each interval is one month, aligned with the calendar.",
+      "description": "Specifies the duration of each interval. For example, if `Duration` is 1 and `DurationUnit` is `MONTH`, each interval is one month, aligned with the calendar.",
       "minimum": 1,
       "type": "integer"
     },
     "DurationUnit": {
-      "description": "Specifies the calendar interval unit.",
+      "description": "Specifies the interval unit.",
       "enum": [
+        "MINUTE",
+        "HOUR",
         "DAY",
         "MONTH"
       ],
       "type": "string"
+    },
+    "ExclusionWindow": {
+      "additionalProperties": false,
+      "description": "This object defines a time exclusion window for this SLO. The time exclusion window is used to exclude breaching data points from affecting attainment rate, error budget, and burn rate metrics.",
+      "properties": {
+        "Reason": {
+          "default": "No reason",
+          "description": "An optional reason for scheduling this time exclusion window. Default is 'No reason'.",
+          "maxLength": 1024,
+          "minLength": 1,
+          "type": "string"
+        },
+        "RecurrenceRule": {
+          "$ref": "#/definitions/RecurrenceRule"
+        },
+        "StartTime": {
+          "description": "The time you want the exclusion window to start at. Note that time exclusion windows can only be scheduled in the future, not the past.",
+          "type": "string"
+        },
+        "Window": {
+          "$ref": "#/definitions/Window"
+        }
+      },
+      "required": [
+        "Window"
+      ],
+      "type": "object"
+    },
+    "ExclusionWindows": {
+      "description": "Each object in this array defines a time exclusion window for this SLO. The time exclusion window is used to exclude breaching data points from affecting attainment rate, error budget, and burn rate metrics.",
+      "insertionOrder": false,
+      "items": {
+        "$ref": "#/definitions/ExclusionWindow"
+      },
+      "maxItems": 10,
+      "minItems": 0,
+      "type": "array",
+      "uniqueItems": true
     },
     "Goal": {
       "additionalProperties": false,
@@ -229,6 +269,22 @@
           "description": "If you want to count \"good requests\" to determine the percentage of successful requests for this request-based SLO, specify the metric to use as \"good requests\" in this structure."
         }
       },
+      "type": "object"
+    },
+    "RecurrenceRule": {
+      "additionalProperties": false,
+      "description": "This object defines how often to repeat a time exclusion window.",
+      "properties": {
+        "Expression": {
+          "description": "A cron or rate expression denoting how often to repeat this exclusion window.",
+          "maxLength": 1024,
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "Expression"
+      ],
       "type": "object"
     },
     "RequestBasedSli": {
@@ -407,6 +463,23 @@
       "minItems": 1,
       "type": "array",
       "uniqueItems": true
+    },
+    "Window": {
+      "additionalProperties": false,
+      "description": "This object defines the length of time an exclusion window should span.",
+      "properties": {
+        "Duration": {
+          "$ref": "#/definitions/Duration"
+        },
+        "DurationUnit": {
+          "$ref": "#/definitions/DurationUnit"
+        }
+      },
+      "required": [
+        "DurationUnit",
+        "Duration"
+      ],
+      "type": "object"
     }
   },
   "description": "Resource Type definition for AWS::ApplicationSignals::ServiceLevelObjective",
@@ -419,7 +492,9 @@
         "application-signals:GetServiceLevelObjective",
         "application-signals:ListTagsForResource",
         "iam:GetRole",
-        "iam:CreateServiceLinkedRole"
+        "iam:CreateServiceLinkedRole",
+        "application-signals:ListServiceLevelObjectiveExclusionWindows",
+        "application-signals:BatchUpdateExclusionWindows"
       ]
     },
     "delete": {
@@ -432,13 +507,15 @@
     "list": {
       "permissions": [
         "application-signals:ListServiceLevelObjectives",
-        "application-signals:ListTagsForResource"
+        "application-signals:ListTagsForResource",
+        "application-signals:ListServiceLevelObjectiveExclusionWindows"
       ]
     },
     "read": {
       "permissions": [
         "application-signals:GetServiceLevelObjective",
-        "application-signals:ListTagsForResource"
+        "application-signals:ListTagsForResource",
+        "application-signals:ListServiceLevelObjectiveExclusionWindows"
       ]
     },
     "update": {
@@ -448,7 +525,9 @@
         "application-signals:TagResource",
         "application-signals:UntagResource",
         "application-signals:GetServiceLevelObjective",
-        "application-signals:ListTagsForResource"
+        "application-signals:ListTagsForResource",
+        "application-signals:ListServiceLevelObjectiveExclusionWindows",
+        "application-signals:BatchUpdateExclusionWindows"
       ]
     }
   },
@@ -483,6 +562,9 @@
         "RequestBased"
       ],
       "type": "string"
+    },
+    "ExclusionWindows": {
+      "$ref": "#/definitions/ExclusionWindows"
     },
     "Goal": {
       "$ref": "#/definitions/Goal"

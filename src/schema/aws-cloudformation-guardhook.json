@@ -69,7 +69,20 @@
     "StackName": {
       "description": "CloudFormation Stack name",
       "maxLength": 128,
-      "pattern": "^[a-zA-Z][-a-zA-Z0-9]*$",
+      "pattern": "^[a-zA-Z*?][-a-zA-Z0-9*?]*$",
+      "type": "string"
+    },
+    "StackRole": {
+      "anyOf": [
+        {
+          "pattern": "arn:.+:iam::[0-9]{12}:role/.+"
+        },
+        {
+          "pattern": "^(arn:.+:iam::((?!\\*|\\?)[0-9]{12}|(?=.*\\*)[0-9*?]{1,12}|[0-9?]{12}):role/.+|\\*)$"
+        }
+      ],
+      "description": "IAM Stack Role ARN filter",
+      "maxLength": 256,
       "type": "string"
     },
     "TargetName": {
@@ -236,7 +249,7 @@
               "description": "List of stack roles that the hook is going to be excluded from",
               "insertionOrder": false,
               "items": {
-                "$ref": "#/definitions/Role"
+                "$ref": "#/definitions/StackRole"
               },
               "maxItems": 50,
               "minItems": 1,
@@ -247,7 +260,7 @@
               "description": "List of stack roles that the hook is going to target",
               "insertionOrder": false,
               "items": {
-                "$ref": "#/definitions/Role"
+                "$ref": "#/definitions/StackRole"
               },
               "maxItems": 50,
               "minItems": 1,

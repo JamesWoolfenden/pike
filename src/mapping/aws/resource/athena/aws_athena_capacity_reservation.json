@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "athena:GetCapacityReservation",
+      "athena:CreateCapacityReservation",
+      "athena:CancelCapacityReservation",
+      "athena:DeleteCapacityReservation",
+      "athena:UpdateCapacityReservation",
+      "athena:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "athena:TagResource",
+        "athena:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

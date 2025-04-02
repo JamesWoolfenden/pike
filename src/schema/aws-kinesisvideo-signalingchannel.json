@@ -33,7 +33,8 @@
     "create": {
       "permissions": [
         "kinesisvideo:CreateSignalingChannel",
-        "kinesisvideo:DescribeSignalingChannel"
+        "kinesisvideo:DescribeSignalingChannel",
+        "kinesisvideo:TagResource"
       ]
     },
     "delete": {
@@ -42,15 +43,24 @@
         "kinesisvideo:DescribeSignalingChannel"
       ]
     },
+    "list": {
+      "permissions": [
+        "kinesisvideo:ListSignalingChannels"
+      ]
+    },
     "read": {
       "permissions": [
-        "kinesisvideo:DescribeSignalingChannel"
+        "kinesisvideo:DescribeSignalingChannel",
+        "kinesisvideo:ListTagsForResource"
       ]
     },
     "update": {
       "permissions": [
         "kinesisvideo:UpdateSignalingChannel",
-        "kinesisvideo:DescribeSignalingChannel"
+        "kinesisvideo:DescribeSignalingChannel",
+        "kinesisvideo:TagResource",
+        "kinesisvideo:UntagResource",
+        "kinesisvideo:ListTagsForResource"
       ]
     }
   },
@@ -99,5 +109,16 @@
   ],
   "required": [],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-kinesisvideo.git",
+  "tagging": {
+    "cloudFormationSystemTags": false,
+    "permissions": [
+      "kinesisvideo:TagResource",
+      "kinesisvideo:UntagResource"
+    ],
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": true,
+    "taggable": true
+  },
   "typeName": "AWS::KinesisVideo::SignalingChannel"
 }

@@ -170,7 +170,7 @@
       "additionalProperties": false,
       "description": "An Amazon EC2 launch template AWS PCS uses to launch compute nodes.",
       "properties": {
-        "Id": {
+        "TemplateId": {
           "description": "The ID of the EC2 launch template to use to provision instances.",
           "type": "string"
         },
@@ -180,7 +180,6 @@
         }
       },
       "required": [
-        "Id",
         "Version"
       ],
       "type": "object"

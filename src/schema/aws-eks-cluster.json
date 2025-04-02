@@ -492,6 +492,11 @@
       "description": "The endpoint for your Kubernetes API server, such as https://5E1D0CEXAMPLEA591B746AFC5AB30262.yl4.us-west-2.eks.amazonaws.com.",
       "type": "string"
     },
+    "Force": {
+      "default": false,
+      "description": "Force cluster version update",
+      "type": "boolean"
+    },
     "Id": {
       "description": "The unique ID given to your cluster.",
       "type": "string"
@@ -579,6 +584,7 @@
   "typeName": "AWS::EKS::Cluster",
   "writeOnlyProperties": [
     "/properties/AccessConfig/BootstrapClusterCreatorAdminPermissions",
-    "/properties/BootstrapSelfManagedAddons"
+    "/properties/BootstrapSelfManagedAddons",
+    "/properties/Force"
   ]
 }
