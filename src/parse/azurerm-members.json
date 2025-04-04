@@ -1355,6 +1355,7 @@
         "azurerm_resource_group",
         "azurerm_resource_group_template_deployment",
         "azurerm_resources",
+        "azurerm_role_assignments",
         "azurerm_role_definition",
         "azurerm_role_management_policy",
         "azurerm_route_filter",
