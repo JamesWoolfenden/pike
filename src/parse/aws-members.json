@@ -1061,6 +1061,7 @@
         "aws_redshift_event_subscription",
         "aws_redshift_hsm_client_certificate",
         "aws_redshift_hsm_configuration",
+        "aws_redshift_integration",
         "aws_redshift_logging",
         "aws_redshift_parameter_group",
         "aws_redshift_partner",
