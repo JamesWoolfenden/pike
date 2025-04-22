@@ -822,3 +822,6 @@ var awsRoute53RecordsExclusive []byte
 
 //go:embed mapping/aws/resource/athena/aws_athena_capacity_reservation.json
 var awsAthenaCapacityReservation []byte
+
+//go:embed mapping/aws/resource/redshift/aws_redshift_integration.json
+var awsRedshiftIntegration []byte
