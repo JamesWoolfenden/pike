@@ -1510,6 +1510,7 @@ var tFLookup = map[string]interface{}{ //nolint:gochecknoglobals
 	"aws_network_interface_permission":                                 awsNetworkInterfacePermission,
 	"aws_route53_records_exclusive":                                    awsRoute53RecordsExclusive,
 	"aws_athena_capacity_reservation":                                  awsAthenaCapacityReservation,
+	"aws_redshift_integration":                                         awsRedshiftIntegration,
 	"aws_backup_restore_testing_plan":                                  awsBackupRestoreTestingPlan,
 }
 

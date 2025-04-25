@@ -4,6 +4,9 @@
       "kms:CreateKey"
     ],
     "attributes": {
+      "description": [
+        "kms:UpdateKeyDescription"
+      ],
       "enable_key_rotation": [
         "kms:EnableKeyRotation"
       ],

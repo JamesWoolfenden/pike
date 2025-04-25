@@ -593,6 +593,8 @@ var tFLookupDataAWS = map[string]interface{}{
 	"aws_workspaces_bundle":                                                 dataAwsWorkspacesBundle,
 	"aws_workspaces_directory":                                              dataAwsWorkspaceDirectory,
 	"aws_workspaces_image":                                                  dataAwsWorkspaceImage,
+	"aws_vpc_endpoint_associations":                                         dataAwsVpcEndpointAssociations,
+	"aws_fis_experiment_templates":                                          dataAwsFisExperimentTemplates,
 }
 
 // GetAWSDataPermissions gets permissions required for datasource's.

@@ -17,6 +17,9 @@
         "kms:Encrypt",
         "kms:RevokeGrant"
       ],
+      "point_in_time_recovery": [
+        "dynamodb:UpdateContinuousBackups"
+      ],
       "replica": [
         "dynamodb:CreateTableReplica",
         "dynamodb:Query",

@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "redshift:CreateIntegration",
+      "redshift:DescribeIntegrations",
+      "redshift:DeleteIntegration",
+      "redshift:ModifyIntegration"
+    ],
+    "attributes": {
+      "tags": [
+        "redshift:CreateTags",
+        "redshift:DeleteTags"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,9 +1,8 @@
 [
   {
     "apply": [
-      "s3:GetIntelligentTieringConfiguration",
-      "s3:PutIntelligentTieringConfiguration",
-      "ec2:DescribeAccountAttributes"
+      "s3:PutBucketOwnershipControls",
+      "s3:GetBucketOwnershipControls"
     ],
     "attributes": {
       "tags": []

@@ -7,12 +7,8 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "VisualEditor0",
         "Effect" : "Allow",
         "Action" : [
-          "apigateway:DELETE",
-          "apigateway:GET",
-          "apigateway:PATCH",
-          "apigateway:POST",
-          "apigateway:PUT",
-          "apigateway:UpdateRestApiPolicy"
+          "ec2:DescribeVpcEndpointAssociations",
+          "fis:ListExperimentTemplates"
         ],
         "Resource" : [
           "*"

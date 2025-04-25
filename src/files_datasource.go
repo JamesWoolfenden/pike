@@ -1569,3 +1569,9 @@ var dataAwsIdentitystoreGroupMembership []byte
 
 //go:embed  mapping/aws/data/identitystore/aws_identitystore_user.json
 var dataAwsIdentitystoreGroupUsers []byte
+
+//go:embed  mapping/aws/data/ec2/aws_vpc_endpoint_associations.json
+var dataAwsVpcEndpointAssociations []byte
+
+//go:embed  mapping/aws/data/fis/aws_fis_experiment_templates.json
+var dataAwsFisExperimentTemplates []byte
