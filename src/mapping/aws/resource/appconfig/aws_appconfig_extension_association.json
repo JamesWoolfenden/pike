@@ -19,7 +19,8 @@
       "appconfig:UpdateExtensionAssociation"
     ],
     "plan": [
-      "appconfig:GetExtensionAssociation"
+      "appconfig:GetExtensionAssociation",
+      "appconfig:ListTagsForResource"
     ]
   }
 ]

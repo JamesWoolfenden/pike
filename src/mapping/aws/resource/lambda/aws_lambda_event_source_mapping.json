@@ -1,21 +1,33 @@
 [
   {
     "apply": [
-      "ec2:DescribeAccountAttributes",
       "lambda:CreateEventSourceMapping",
       "lambda:GetEventSourceMapping",
       "lambda:DeleteEventSourceMapping",
-      "lambda:UpdateEventSourceMapping"
+      "lambda:UpdateEventSourceMapping",
+      "lambda:ListTags"
     ],
     "attributes": {
-      "tags": []
+      "kms_key_arn": [
+        "kms:DescribeKey",
+        "kms:GenerateDataKey",
+        "kms:Decrypt"
+      ],
+      "tags": [
+        "lambda:TagResource",
+        "lambda:UntagResource"
+      ]
     },
     "destroy": [
-      "lambda:DeleteEventSourceMapping"
+      "lambda:DeleteEventSourceMapping",
+      "lambda:GetEventSourceMapping"
     ],
     "modify": [
       "lambda:UpdateEventSourceMapping"
     ],
-    "plan": []
+    "plan": [
+      "lambda:GetEventSourceMapping",
+      "lambda:ListTags"
+    ]
   }
 ]

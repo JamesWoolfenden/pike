@@ -375,7 +375,6 @@
         "lambda:DeleteFunctionConcurrency",
         "lambda:GetFunction",
         "lambda:PutFunctionConcurrency",
-        "lambda:ListTags",
         "lambda:TagResource",
         "lambda:UntagResource",
         "lambda:UpdateFunctionConfiguration",
@@ -566,6 +565,11 @@
   ],
   "tagging": {
     "cloudFormationSystemTags": true,
+    "permissions": [
+      "lambda:ListTags",
+      "lambda:TagResource",
+      "lambda:UntagResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,
@@ -575,7 +579,6 @@
   "writeOnlyProperties": [
     "/properties/SnapStart",
     "/properties/SnapStart/ApplyOn",
-    "/properties/Code",
     "/properties/Code/ImageUri",
     "/properties/Code/S3Bucket",
     "/properties/Code/S3Key",

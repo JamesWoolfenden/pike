@@ -128,5 +128,16 @@
   "required": [
     "ConnectionString"
   ],
+  "tagging": {
+    "cloudFormationSystemTags": false,
+    "permissions": [
+      "workspaces:CreateTags",
+      "workspaces:DescribeTags"
+    ],
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": false,
+    "taggable": true
+  },
   "typeName": "AWS::WorkSpaces::ConnectionAlias"
 }

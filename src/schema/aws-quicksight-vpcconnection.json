@@ -249,6 +249,11 @@
   ],
   "tagging": {
     "cloudFormationSystemTags": true,
+    "permissions": [
+      "quicksight:TagResource",
+      "quicksight:UntagResource",
+      "quicksight:ListTagsForResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

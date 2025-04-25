@@ -390,12 +390,12 @@
         "ecr:BatchCheckLayerAvailability",
         "ecr:BatchGetImage",
         "ecr:GetDownloadUrlForLayer",
-        "ecr:DescribeImages"
+        "ecr:DescribeImages",
+        "ecr:GetAuthorizationToken"
       ]
     },
     "delete": {
       "permissions": [
-        "gamelift:DescribeContainerGroupDefinition",
         "gamelift:DeleteContainerGroupDefinition"
       ]
     },
@@ -412,6 +412,7 @@
     },
     "update": {
       "permissions": [
+        "gamelift:DescribeContainerGroupDefinition",
         "gamelift:UpdateContainerGroupDefinition",
         "gamelift:ListTagsForResource",
         "gamelift:TagResource",
@@ -549,5 +550,8 @@
     "tagUpdatable": true,
     "taggable": true
   },
-  "typeName": "AWS::GameLift::ContainerGroupDefinition"
+  "typeName": "AWS::GameLift::ContainerGroupDefinition",
+  "writeOnlyProperties": [
+    "/properties/SourceVersionNumber"
+  ]
 }

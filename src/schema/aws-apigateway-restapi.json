@@ -5,6 +5,10 @@
       "additionalProperties": false,
       "description": "The ``EndpointConfiguration`` property type specifies the endpoint types of a REST API.\n ``EndpointConfiguration`` is a property of the [AWS::ApiGateway::RestApi](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html) resource.",
       "properties": {
+        "IpAddressType": {
+          "description": "",
+          "type": "string"
+        },
         "Types": {
           "description": "",
           "items": {

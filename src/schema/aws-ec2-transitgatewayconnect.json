@@ -36,31 +36,36 @@
       "permissions": [
         "ec2:CreateTransitGatewayConnect",
         "ec2:DescribeTransitGatewayConnects",
-        "ec2:CreateTags"
+        "ec2:CreateTags",
+        "ec2:DescribeTags"
       ]
     },
     "delete": {
       "permissions": [
         "ec2:DeleteTransitGatewayConnect",
         "ec2:DescribeTransitGatewayConnects",
-        "ec2:DeleteTags"
+        "ec2:DeleteTags",
+        "ec2:DescribeTags"
       ]
     },
     "list": {
       "permissions": [
-        "ec2:DescribeTransitGatewayConnects"
+        "ec2:DescribeTransitGatewayConnects",
+        "ec2:DescribeTags"
       ]
     },
     "read": {
       "permissions": [
-        "ec2:DescribeTransitGatewayConnects"
+        "ec2:DescribeTransitGatewayConnects",
+        "ec2:DescribeTags"
       ]
     },
     "update": {
       "permissions": [
         "ec2:DescribeTransitGatewayConnects",
         "ec2:DeleteTags",
-        "ec2:CreateTags"
+        "ec2:CreateTags",
+        "ec2:DescribeTags"
       ]
     }
   },

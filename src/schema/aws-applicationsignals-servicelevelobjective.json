@@ -54,6 +54,35 @@
       ],
       "type": "object"
     },
+    "DependencyConfig": {
+      "additionalProperties": false,
+      "description": "Configuration for identifying a dependency and its operation",
+      "properties": {
+        "DependencyKeyAttributes": {
+          "$ref": "#/definitions/DependencyKeyAttributes"
+        },
+        "DependencyOperationName": {
+          "description": "When the SLO monitors a specific operation of the dependency, this field specifies the name of that operation in the dependency.",
+          "maxLength": 255,
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "DependencyKeyAttributes",
+        "DependencyOperationName"
+      ],
+      "type": "object"
+    },
+    "DependencyKeyAttributes": {
+      "additionalProperties": false,
+      "description": "If this SLO is related to a metric collected by Application Signals, you must use this field to specify which dependency the SLO metric is related to.",
+      "patternProperties": {
+        "^.+$": {
+          "type": "string"
+        }
+      }
+    },
     "Dimension": {
       "additionalProperties": false,
       "description": "A dimension is a name/value pair that is part of the identity of a metric. Because dimensions are part of the unique identifier for a metric, whenever you add a unique name/value pair to one of your metrics, you are creating a new variation of that metric. For example, many Amazon EC2 metrics publish `InstanceId` as a dimension name, and the actual instance ID as the value for that dimension. You can assign up to 30 dimensions to a metric.",
@@ -318,6 +347,9 @@
       "additionalProperties": false,
       "description": "This structure contains the information about the metric that is used for a request-based SLO.",
       "properties": {
+        "DependencyConfig": {
+          "$ref": "#/definitions/DependencyConfig"
+        },
         "KeyAttributes": {
           "$ref": "#/definitions/KeyAttributes"
         },
@@ -395,6 +427,9 @@
       "additionalProperties": false,
       "description": "A structure that contains information about the metric that the SLO monitors.",
       "properties": {
+        "DependencyConfig": {
+          "$ref": "#/definitions/DependencyConfig"
+        },
         "KeyAttributes": {
           "$ref": "#/definitions/KeyAttributes"
         },

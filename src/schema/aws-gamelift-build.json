@@ -33,6 +33,29 @@
         "RoleArn"
       ],
       "type": "object"
+    },
+    "Tag": {
+      "additionalProperties": false,
+      "description": "A key-value pair to associate with a resource.",
+      "properties": {
+        "Key": {
+          "description": "The key name of the tag. You can specify a value that is 1 to 128 Unicode characters in length.",
+          "maxLength": 128,
+          "minLength": 1,
+          "type": "string"
+        },
+        "Value": {
+          "description": "The value for the tag. You can specify a value that is 0 to 256 Unicode characters in length.",
+          "maxLength": 256,
+          "minLength": 0,
+          "type": "string"
+        }
+      },
+      "required": [
+        "Key",
+        "Value"
+      ],
+      "type": "object"
     }
   },
   "description": "Resource Type definition for AWS::GameLift::Build",
@@ -40,7 +63,9 @@
     "create": {
       "permissions": [
         "gamelift:DescribeBuild",
-        "gamelift:CreateBuild"
+        "gamelift:CreateBuild",
+        "gamelift:ListTagsForResource",
+        "gamelift:TagResource"
       ]
     },
     "delete": {
@@ -56,12 +81,17 @@
     },
     "read": {
       "permissions": [
-        "gamelift:DescribeBuild"
+        "gamelift:DescribeBuild",
+        "gamelift:ListTagsForResource"
       ]
     },
     "update": {
       "permissions": [
-        "gamelift:UpdateBuild"
+        "gamelift:UpdateBuild",
+        "gamelift:DescribeBuild",
+        "gamelift:TagResource",
+        "gamelift:UntagResource",
+        "gamelift:ListTagsForResource"
       ]
     }
   },
@@ -69,6 +99,11 @@
     "/properties/BuildId"
   ],
   "properties": {
+    "BuildArn": {
+      "description": "The Amazon Resource Name (ARN) that is assigned to a Amazon GameLift build resource and uniquely identifies it. ARNs are unique across all Regions. In a GameLift build ARN, the resource ID matches the BuildId value.",
+      "pattern": "^arn:.*:build\\/build-\\S+",
+      "type": "string"
+    },
     "BuildId": {
       "description": "A unique identifier for a build to be deployed on the new fleet. If you are deploying the fleet with a custom game build, you must specify this property. The build must have been successfully uploaded to Amazon GameLift and be in a READY status. This fleet setting cannot be changed once the fleet is created.",
       "type": "string"
@@ -96,21 +131,38 @@
       "$ref": "#/definitions/StorageLocation",
       "description": "Information indicating where your game build files are stored. Use this parameter only when creating a build with files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon S3 bucket name and key. The location must also specify a role ARN that you set up to allow Amazon GameLift to access your Amazon S3 bucket. The S3 bucket and your new build must be in the same Region."
     },
+    "Tags": {
+      "description": "An array of key-value pairs to apply to this resource.",
+      "insertionOrder": false,
+      "items": {
+        "$ref": "#/definitions/Tag"
+      },
+      "maxItems": 200,
+      "type": "array",
+      "uniqueItems": true
+    },
     "Version": {
       "description": "Version information that is associated with this build. Version strings do not need to be unique.",
       "type": "string"
     }
   },
   "readOnlyProperties": [
-    "/properties/BuildId"
+    "/properties/BuildId",
+    "/properties/BuildArn"
   ],
   "required": [],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-rpdk.git",
   "tagging": {
     "cloudFormationSystemTags": false,
-    "tagOnCreate": false,
-    "tagUpdatable": false,
-    "taggable": false
+    "permissions": [
+      "gamelift:ListTagsForResource",
+      "gamelift:TagResource",
+      "gamelift:UntagResource"
+    ],
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": true,
+    "taggable": true
   },
   "typeName": "AWS::GameLift::Build",
   "writeOnlyProperties": [

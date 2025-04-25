@@ -113,6 +113,9 @@
       "uniqueItems": true
     }
   },
+  "propertyTransform": {
+    "/properties/PublicKeyMaterial": "$join([PublicKeyMaterial, \"\n\"])"
+  },
   "readOnlyProperties": [
     "/properties/KeyPairId",
     "/properties/KeyFingerprint"
@@ -126,6 +129,7 @@
     "permissions": [
       "ec2:CreateTags"
     ],
+    "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": false,
     "taggable": true

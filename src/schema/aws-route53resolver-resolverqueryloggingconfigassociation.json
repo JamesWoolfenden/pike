@@ -98,5 +98,8 @@
     "/properties/CreationTime",
     "/properties/Id"
   ],
+  "tagging": {
+    "taggable": false
+  },
   "typeName": "AWS::Route53Resolver::ResolverQueryLoggingConfigAssociation"
 }

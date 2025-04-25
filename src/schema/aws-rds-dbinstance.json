@@ -286,8 +286,7 @@
       "type": "string"
     },
     "AutomaticBackupReplicationRetentionPeriod": {
-      "description": "",
-      "maximum": 35,
+      "description": "The retention period for automated backups in a different AWS Region. Use this parameter to set a unique retention period that only applies to cross-Region automated backups. To enable automated backups in a different Region, specify a positive value for the ``AutomaticBackupReplicationRegion`` parameter. \n If not specified, this parameter defaults to the value of the ``BackupRetentionPeriod`` parameter. The maximum allowed value is 35.",
       "minimum": 1,
       "type": "integer"
     },
@@ -297,7 +296,6 @@
     },
     "BackupRetentionPeriod": {
       "description": "The number of days for which automated backups are retained. Setting this parameter to a positive number enables backups. Setting this parameter to 0 disables automated backups.\n  *Amazon Aurora* \n Not applicable. The retention period for automated backups is managed by the DB cluster.\n Default: 1\n Constraints:\n  +  Must be a value from 0 to 35\n  +  Can't be set to 0 if the DB instance is a source to read replicas",
-      "maximum": 35,
       "minimum": 0,
       "type": "integer"
     },
@@ -307,7 +305,7 @@
     },
     "CertificateDetails": {
       "$ref": "#/definitions/CertificateDetails",
-      "description": "The details of the DB instance's server certificate."
+      "description": ""
     },
     "CertificateRotationRestart": {
       "description": "Specifies whether the DB instance is restarted when you rotate your SSL/TLS certificate.\n By default, the DB instance is restarted when you rotate your SSL/TLS certificate. The certificate is not updated until the DB instance is restarted.\n  Set this parameter only if you are *not* using SSL/TLS to connect to the DB instance.\n  If you are using SSL/TLS to connect to the DB instance, follow the appropriate instructions for your DB engine to rotate your SSL/TLS certificate:\n  +  For more information about rotating your SSL/TLS certificate for RDS DB engines, see [Rotating Your SSL/TLS Certificate.](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html) in the *Amazon RDS User Guide.* \n  +  For more information about rotating your SSL/TLS certificate for Aurora DB engines, see [Rotating Your SSL/TLS Certificate](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html) in the *Amazon Aurora User Guide*.\n  \n This setting doesn't apply to RDS Custom DB instances.",
@@ -440,7 +438,7 @@
     },
     "Endpoint": {
       "$ref": "#/definitions/Endpoint",
-      "description": "The connection endpoint for the DB instance.\n  The endpoint might not be shown for instances with the status of ``creating``."
+      "description": ""
     },
     "Engine": {
       "description": "The name of the database engine to use for this DB instance. Not every database engine is available in every AWS Region.\n This property is required when creating a DB instance.\n  You can convert an Oracle database from the non-CDB architecture to the container database (CDB) architecture by updating the ``Engine`` value in your templates from ``oracle-ee`` to ``oracle-ee-cdb`` or from ``oracle-se2`` to ``oracle-se2-cdb``. Converting to the CDB architecture requires an interruption.\n  Valid Values:\n  +   ``aurora-mysql`` (for Aurora MySQL DB instances)\n  +   ``aurora-postgresql`` (for Aurora PostgreSQL DB instances)\n  +   ``custom-oracle-ee`` (for RDS Custom for Oracle DB instances)\n  +   ``custom-oracle-ee-cdb`` (for RDS Custom for Oracle DB instances)\n  +   ``custom-sqlserver-ee`` (for RDS Custom for SQL Server DB instances)\n  +   ``custom-sqlserver-se`` (for RDS Custom for SQL Server DB instances)\n  +   ``custom-sqlserver-web`` (for RDS Custom for SQL Server DB instances)\n  +   ``db2-ae`` \n  +   ``db2-se`` \n  +   ``mariadb`` \n  +   ``mysql`` \n  +   ``oracle-ee`` \n  +   ``oracle-ee-cdb`` \n  +   ``oracle-se2`` \n  +   ``oracle-se2-cdb`` \n  +   ``postgres`` \n  +   ``sqlserver-ee`` \n  +   ``sqlserver-se`` \n  +   ``sqlserver-ex`` \n  +   ``sqlserver-web``",
@@ -660,8 +658,7 @@
     "/properties/MasterUserSecret/SecretArn",
     "/properties/CertificateDetails",
     "/properties/CertificateDetails/CAIdentifier",
-    "/properties/CertificateDetails/ValidTill",
-    "/properties/DatabaseInsightsMode"
+    "/properties/CertificateDetails/ValidTill"
   ],
   "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-rpdk.git",
   "tagging": {

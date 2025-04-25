@@ -9,7 +9,8 @@
       "ec2:DescribeSubnets",
       "ec2:DescribeSecurityGroups",
       "vpc-lattice:CreateServiceNetworkVpcEndpointAssociation",
-      "vpc-lattice:DescribeServiceNetworkVpcEndpointAssociation"
+      "vpc-lattice:DescribeServiceNetworkVpcEndpointAssociation",
+      "vpce:AllowMultiRegion"
     ],
     "attributes": {
       "tags": [
@@ -18,11 +19,27 @@
       ]
     },
     "destroy": [
-      "ec2:DeleteVpcEndpoints"
+      "ec2:DeleteVpcEndpoints",
+      "ec2:DescribeVpcEndpoints",
+      "ec2:DescribeSubnets",
+      "ec2:DescribeSecurityGroups",
+      "vpc-lattice:DescribeServiceNetworkVpcEndpointAssociation",
+      "vpce:AllowMultiRegion"
     ],
     "modify": [
-      "ec2:ModifyVpcEndpoint"
+      "ec2:ModifyVpcEndpoint",
+      "ec2:DescribeVpcEndpoints",
+      "ec2:DescribeSubnets",
+      "ec2:DescribeSecurityGroups",
+      "vpc-lattice:CreateServiceNetworkVpcEndpointAssociation",
+      "vpc-lattice:DescribeServiceNetworkVpcEndpointAssociation",
+      "vpce:AllowMultiRegion"
     ],
-    "plan": []
+    "plan": [
+      "ec2:DescribeVpcEndpoints",
+      "ec2:DescribeSubnets",
+      "ec2:DescribeSecurityGroups",
+      "vpc-lattice:DescribeServiceNetworkVpcEndpointAssociation"
+    ]
   }
 ]

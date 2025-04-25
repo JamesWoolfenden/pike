@@ -6,7 +6,8 @@
       "memorydb:ListTags",
       "memorydb:UpdateParameterGroup",
       "memorydb:DescribeParameters",
-      "memorydb:DescribeClusters"
+      "memorydb:DescribeClusters",
+      "iam:CreateServiceLinkedRole"
     ],
     "attributes": {
       "tags": [

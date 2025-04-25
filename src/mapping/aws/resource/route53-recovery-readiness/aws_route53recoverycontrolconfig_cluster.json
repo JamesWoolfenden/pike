@@ -16,7 +16,11 @@
       "route53-recovery-control-config:DescribeCluster",
       "route53-recovery-control-config:DeleteCluster"
     ],
-    "modify": [],
+    "modify": [
+      "route53-recovery-control-config:DescribeCluster",
+      "route53-recovery-control-config:ListTagsForResource",
+      "route53-recovery-control-config:UpdateCluster"
+    ],
     "plan": [
       "route53-recovery-control-config:DescribeCluster",
       "route53-recovery-control-config:ListTagsForResource"

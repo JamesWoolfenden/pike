@@ -4,20 +4,30 @@
       "memorydb:CreateCluster",
       "memorydb:DescribeClusters",
       "memorydb:DeleteCluster",
-      "memorydb:ListTags"
+      "memorydb:ListTags",
+      "iam:CreateServiceLinkedRole"
     ],
     "attributes": {
+      "kms_key_arn": [
+        "kms:DescribeKey",
+        "kms:CreateGrant"
+      ],
       "tags": [
         "memorydb:TagResource",
         "memorydb:UntagResource"
       ]
     },
     "destroy": [
-      "memorydb:DeleteCluster"
+      "memorydb:DeleteCluster",
+      "memorydb:DescribeClusters"
     ],
     "modify": [
-      "memorydb:UpdateCluster"
+      "memorydb:UpdateCluster",
+      "memorydb:DescribeClusters"
     ],
-    "plan": []
+    "plan": [
+      "memorydb:DescribeClusters",
+      "memorydb:ListTags"
+    ]
   }
 ]

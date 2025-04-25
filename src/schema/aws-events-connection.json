@@ -215,7 +215,9 @@
         "secretsmanager:CreateSecret",
         "secretsmanager:GetSecretValue",
         "secretsmanager:PutSecretValue",
-        "iam:CreateServiceLinkedRole"
+        "iam:CreateServiceLinkedRole",
+        "kms:DescribeKey",
+        "kms:GenerateDataKey"
       ]
     },
     "delete": {
@@ -231,7 +233,8 @@
     },
     "read": {
       "permissions": [
-        "events:DescribeConnection"
+        "events:DescribeConnection",
+        "kms:Decrypt"
       ]
     },
     "update": {
@@ -241,7 +244,11 @@
         "secretsmanager:CreateSecret",
         "secretsmanager:UpdateSecret",
         "secretsmanager:GetSecretValue",
-        "secretsmanager:PutSecretValue"
+        "secretsmanager:PutSecretValue",
+        "kms:Decrypt",
+        "kms:DescribeKey",
+        "kms:Encrypt",
+        "kms:GenerateDataKey"
       ]
     }
   },
@@ -252,6 +259,11 @@
     "Arn": {
       "description": "The arn of the connection resource.",
       "pattern": "^arn:aws([a-z]|\\-)*:events:([a-z]|\\d|\\-)*:([0-9]{12})?:connection\\/[\\.\\-_A-Za-z0-9]+\\/[\\-A-Za-z0-9]+$",
+      "type": "string"
+    },
+    "ArnForPolicy": {
+      "description": "The arn of the connection resource to be used in IAM policies.",
+      "pattern": "^arn:aws([a-z]|\\-)*:events:([a-z]|\\d|\\-)*:([0-9]{12})?:connection\\/[\\.\\-_A-Za-z0-9]+$",
       "type": "string"
     },
     "AuthParameters": {
@@ -283,6 +295,11 @@
       ],
       "type": "object"
     },
+    "KmsKeyIdentifier": {
+      "maxLength": 2048,
+      "pattern": "^[a-zA-Z0-9_\\-/:]*$",
+      "type": "string"
+    },
     "Name": {
       "description": "Name of the connection.",
       "maxLength": 64,
@@ -298,6 +315,7 @@
   },
   "readOnlyProperties": [
     "/properties/Arn",
+    "/properties/ArnForPolicy",
     "/properties/SecretArn",
     "/properties/AuthParameters/ConnectivityParameters/ResourceParameters/ResourceAssociationArn",
     "/properties/InvocationConnectivityParameters/ResourceParameters/ResourceAssociationArn"

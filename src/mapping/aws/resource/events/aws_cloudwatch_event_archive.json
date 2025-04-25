@@ -1,0 +1,31 @@
+[
+  {
+    "apply": [
+      "events:DescribeArchive",
+      "events:CreateArchive",
+      "kms:DescribeKey",
+      "kms:GenerateDataKey",
+      "kms:Decrypt"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "events:DescribeArchive",
+      "events:DeleteArchive"
+    ],
+    "modify": [
+      "events:DescribeArchive",
+      "events:UpdateArchive",
+      "kms:DescribeKey",
+      "kms:GenerateDataKey",
+      "kms:Decrypt",
+      "kms:ReEncryptTo",
+      "kms:ReEncryptFrom"
+    ],
+    "plan": [
+      "events:DescribeArchive",
+      "kms:Decrypt"
+    ]
+  }
+]

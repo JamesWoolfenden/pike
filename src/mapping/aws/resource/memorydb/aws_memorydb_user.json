@@ -4,7 +4,8 @@
       "memorydb:CreateUser",
       "memorydb:DescribeUsers",
       "memorydb:ListTags",
-      "memorydb:DeleteUser"
+      "memorydb:DeleteUser",
+      "iam:CreateServiceLinkedRole"
     ],
     "attributes": {
       "tags": [
@@ -12,8 +13,18 @@
         "memorydb:UntagResource"
       ]
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "memorydb:DeleteUser",
+      "memorydb:DescribeUsers"
+    ],
+    "modify": [
+      "memorydb:UpdateUser",
+      "memorydb:DescribeUsers",
+      "memorydb:ListTags"
+    ],
+    "plan": [
+      "memorydb:DescribeUsers",
+      "memorydb:ListTags"
+    ]
   }
 ]

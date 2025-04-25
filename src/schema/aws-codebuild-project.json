@@ -199,6 +199,9 @@
     "ProjectCache": {
       "additionalProperties": false,
       "properties": {
+        "CacheNamespace": {
+          "type": "string"
+        },
         "Location": {
           "type": "string"
         },
@@ -328,7 +331,13 @@
     "ScopeConfiguration": {
       "additionalProperties": false,
       "properties": {
+        "Domain": {
+          "type": "string"
+        },
         "Name": {
+          "type": "string"
+        },
+        "Scope": {
           "type": "string"
         }
       },

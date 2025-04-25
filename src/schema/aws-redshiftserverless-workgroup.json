@@ -226,7 +226,9 @@
         "redshift-serverless:GetWorkgroup",
         "redshift-serverless:GetNamespace",
         "redshift-serverless:ListTagsForResource",
-        "redshift-serverless:TagResource"
+        "redshift-serverless:TagResource",
+        "redshift-serverless:RestoreFromSnapshot",
+        "redshift-serverless:RestoreFromRecoveryPoint"
       ]
     },
     "delete": {
@@ -287,7 +289,9 @@
         "redshift-serverless:UpdateWorkgroup",
         "redshift-serverless:ListTagsForResource",
         "redshift-serverless:TagResource",
-        "redshift-serverless:UntagResource"
+        "redshift-serverless:UntagResource",
+        "redshift-serverless:RestoreFromSnapshot",
+        "redshift-serverless:RestoreFromRecoveryPoint"
       ]
     }
   },
@@ -339,6 +343,10 @@
       "description": "A value that specifies whether the workgroup can be accessible from a public network.",
       "type": "boolean"
     },
+    "RecoveryPointId": {
+      "description": "The recovery point id to restore from.",
+      "type": "string"
+    },
     "SecurityGroupIds": {
       "description": "A list of security group IDs to associate with the workgroup.",
       "insertionOrder": false,
@@ -351,6 +359,18 @@
       "maxItems": 32,
       "minItems": 1,
       "type": "array"
+    },
+    "SnapshotArn": {
+      "description": "The Amazon Resource Name (ARN) of the snapshot to restore from.",
+      "type": "string"
+    },
+    "SnapshotName": {
+      "description": "The snapshot name to restore from.",
+      "type": "string"
+    },
+    "SnapshotOwnerAccount": {
+      "description": "The Amazon Web Services account that owns the snapshot.",
+      "type": "string"
     },
     "SubnetIds": {
       "description": "A list of subnet IDs the workgroup is associated with.",
@@ -398,6 +418,8 @@
     "/properties/Workgroup/WorkgroupArn",
     "/properties/Workgroup/WorkgroupName",
     "/properties/Workgroup/NamespaceName",
+    "/properties/Workgroup/BaseCapacity",
+    "/properties/Workgroup/MaxCapacity",
     "/properties/Workgroup/EnhancedVpcRouting",
     "/properties/Workgroup/ConfigParameters/*/ParameterKey",
     "/properties/Workgroup/ConfigParameters/*/ParameterValue",
@@ -436,6 +458,10 @@
   "writeOnlyProperties": [
     "/properties/ConfigParameters",
     "/properties/SecurityGroupIds",
-    "/properties/SubnetIds"
+    "/properties/SubnetIds",
+    "/properties/SnapshotArn",
+    "/properties/SnapshotName",
+    "/properties/SnapshotOwnerAccount",
+    "/properties/RecoveryPointId"
   ]
 }

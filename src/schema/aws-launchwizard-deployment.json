@@ -232,11 +232,15 @@
   "required": [
     "DeploymentPatternName",
     "Name",
-    "Specifications",
     "WorkloadName"
   ],
   "tagging": {
     "cloudFormationSystemTags": true,
+    "permissions": [
+      "launchwizard:ListTagsForResource",
+      "launchwizard:TagResource",
+      "launchwizard:UntagResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

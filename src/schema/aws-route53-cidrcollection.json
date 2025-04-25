@@ -30,7 +30,7 @@
       "type": "object"
     }
   },
-  "description": "Resource schema for AWS::Route53::CidrCollection.",
+  "description": "Resource Type definition for AWS::Route53::CidrCollection.",
   "handlers": {
     "create": {
       "permissions": [

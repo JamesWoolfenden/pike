@@ -48,7 +48,8 @@
     "delete": {
       "permissions": [
         "vpc-lattice:DeleteResourceGateway",
-        "vpc-lattice:GetResourceGateway"
+        "vpc-lattice:GetResourceGateway",
+        "vpc-lattice:UntagResource"
       ]
     },
     "list": {
@@ -167,8 +168,13 @@
     "/properties/Id",
     "/properties/Arn"
   ],
+  "required": [
+    "Name",
+    "VpcIdentifier",
+    "SubnetIds"
+  ],
   "tagging": {
-    "cloudFormationSystemTags": false,
+    "cloudFormationSystemTags": true,
     "permissions": [
       "vpc-lattice:UntagResource",
       "vpc-lattice:TagResource",

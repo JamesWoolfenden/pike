@@ -1,0 +1,30 @@
+[
+  {
+    "apply": [
+      "backup:CreateRestoreTestingPlan",
+      "backup:GetRestoreTestingPlan",
+      "backup:DeleteRestoreTestingPlan",
+      "backup:UpdateRestoreTestingPlan",
+      "backup:ListTags"
+    ],
+    "attributes": {
+      "tags": [
+        "backup:TagResource",
+        "backup:UntagResource"
+      ]
+    },
+    "destroy": [
+      "backup:DeleteRestoreTestingPlan",
+      "backup:GetRestoreTestingPlan"
+    ],
+    "modify": [
+      "backup:UpdateRestoreTestingPlan",
+      "backup:GetRestoreTestingPlan",
+      "backup:ListTags"
+    ],
+    "plan": [
+      "backup:GetRestoreTestingPlan",
+      "backup:ListTags"
+    ]
+  }
+]

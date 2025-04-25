@@ -20,7 +20,8 @@
       "appconfig:UpdateExtension"
     ],
     "plan": [
-      "appconfig:GetExtension"
+      "appconfig:GetExtension",
+      "appconfig:ListTagsForResource"
     ]
   }
 ]

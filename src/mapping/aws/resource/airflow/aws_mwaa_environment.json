@@ -4,9 +4,35 @@
       "airflow:CreateEnvironment",
       "airflow:DeleteEnvironment",
       "airflow:GetEnvironment",
-      "airflow:UpdateEnvironment"
+      "airflow:UpdateEnvironment",
+      "iam:PassRole",
+      "iam:ListRoles",
+      "iam:CreatePolicy",
+      "iam:AttachRolePolicy",
+      "iam:CreateRole",
+      "iam:CreateServiceLinkedRole",
+      "s3:GetBucketLocation",
+      "s3:ListAllMyBuckets",
+      "s3:ListBucket",
+      "s3:ListBucketVersions",
+      "s3:CreateBucket",
+      "s3:PutObject",
+      "s3:GetEncryptionConfiguration",
+      "ec2:DescribeSecurityGroups",
+      "ec2:DescribeSubnets",
+      "ec2:DescribeVpcs",
+      "ec2:DescribeRouteTables",
+      "ec2:AuthorizeSecurityGroupIngress",
+      "ec2:CreateSecurityGroup",
+      "ec2:CreateVpcEndpoint",
+      "ec2:CreateNetworkInterface"
     ],
     "attributes": {
+      "kms_key": [
+        "kms:CreateGrant",
+        "kms:DescribeKey",
+        "kms:ListAliases"
+      ],
       "tags": [
         "airflow:TagResource",
         "airflow:UntagResource"

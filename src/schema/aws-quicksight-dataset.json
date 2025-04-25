@@ -157,13 +157,10 @@
             "$ref": "#/definitions/CalculatedColumn"
           },
           "maxItems": 128,
-          "minItems": 1,
+          "minItems": 0,
           "type": "array"
         }
       },
-      "required": [
-        "Columns"
-      ],
       "type": "object"
     },
     "CustomSql": {
@@ -214,6 +211,9 @@
       "additionalProperties": false,
       "description": "<p>The refresh properties of a dataset.</p>",
       "properties": {
+        "FailureConfiguration": {
+          "$ref": "#/definitions/RefreshFailureConfiguration"
+        },
         "RefreshConfiguration": {
           "$ref": "#/definitions/RefreshConfiguration"
         }
@@ -236,6 +236,12 @@
         }
       },
       "type": "object"
+    },
+    "DataSetUseAs": {
+      "enum": [
+        "RLS_RULES"
+      ],
+      "type": "string"
     },
     "DatasetParameter": {
       "additionalProperties": false,
@@ -902,7 +908,7 @@
             "type": "string"
           },
           "maxItems": 2000,
-          "minItems": 1,
+          "minItems": 0,
           "type": "array"
         }
       },
@@ -922,6 +928,31 @@
       "required": [
         "IncrementalRefresh"
       ],
+      "type": "object"
+    },
+    "RefreshFailureAlertStatus": {
+      "enum": [
+        "ENABLED",
+        "DISABLED"
+      ],
+      "type": "string"
+    },
+    "RefreshFailureConfiguration": {
+      "additionalProperties": false,
+      "properties": {
+        "EmailAlert": {
+          "$ref": "#/definitions/RefreshFailureEmailAlert"
+        }
+      },
+      "type": "object"
+    },
+    "RefreshFailureEmailAlert": {
+      "additionalProperties": false,
+      "properties": {
+        "AlertStatus": {
+          "$ref": "#/definitions/RefreshFailureAlertStatus"
+        }
+      },
       "type": "object"
     },
     "RelationalTable": {
@@ -984,8 +1015,7 @@
         }
       },
       "required": [
-        "ColumnName",
-        "NewColumnName"
+        "ColumnName"
       ],
       "type": "object"
     },
@@ -1148,11 +1178,12 @@
           "minItems": 1,
           "type": "array"
         },
-        "UploadSettings": {}
+        "UploadSettings": {
+          "$ref": "#/definitions/UploadSettings"
+        }
       },
       "required": [
-        "DataSourceArn",
-        "InputColumns"
+        "DataSourceArn"
       ],
       "type": "object"
     },
@@ -1582,6 +1613,9 @@
       "maxItems": 200,
       "minItems": 1,
       "type": "array"
+    },
+    "UseAs": {
+      "$ref": "#/definitions/DataSetUseAs"
     }
   },
   "readOnlyProperties": [
@@ -1593,6 +1627,11 @@
   ],
   "tagging": {
     "cloudFormationSystemTags": true,
+    "permissions": [
+      "quicksight:TagResource",
+      "quicksight:UntagResource",
+      "quicksight:ListTagsForResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

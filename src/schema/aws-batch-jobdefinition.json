@@ -51,6 +51,9 @@
           "type": "array",
           "uniqueItems": false
         },
+        "EnableExecuteCommand": {
+          "type": "boolean"
+        },
         "Environment": {
           "insertionOrder": true,
           "items": {
@@ -239,6 +242,9 @@
           },
           "type": "array",
           "uniqueItems": false
+        },
+        "EnableExecuteCommand": {
+          "type": "boolean"
         },
         "EphemeralStorage": {
           "$ref": "#/definitions/EphemeralStorage"
@@ -737,6 +743,9 @@
           "type": "array",
           "uniqueItems": false
         },
+        "EnableExecuteCommand": {
+          "type": "boolean"
+        },
         "Environment": {
           "insertionOrder": true,
           "items": {
@@ -860,6 +869,9 @@
           },
           "type": "array",
           "uniqueItems": false
+        },
+        "EnableExecuteCommand": {
+          "type": "boolean"
         },
         "ExecutionRoleArn": {
           "type": "string"
@@ -1064,6 +1076,27 @@
         },
         "Essential": {
           "type": "boolean"
+        },
+        "FirelensConfiguration": {
+          "additionalProperties": false,
+          "properties": {
+            "Options": {
+              "additionalProperties": false,
+              "patternProperties": {
+                ".*": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "Type": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "Type"
+          ],
+          "type": "object"
         },
         "Image": {
           "type": "string"
@@ -1305,7 +1338,7 @@
     "cloudFormationSystemTags": true,
     "permissions": [
       "Batch:TagResource",
-      "Batch:UntagResource"
+      "Batch:UnTagResource"
     ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",

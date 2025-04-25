@@ -3,6 +3,7 @@
     "apply": [
       "mq:CreateConfiguration",
       "mq:UpdateConfiguration",
+      "mq:DeleteConfiguration",
       "mq:DescribeConfiguration",
       "mq:DescribeConfigurationRevision",
       "mq:RebootBroker",
@@ -14,7 +15,9 @@
         "mq:DeleteTags"
       ]
     },
-    "destroy": [],
+    "destroy": [
+      "mq:DeleteConfiguration"
+    ],
     "modify": [
       "mq:UpdateConfiguration"
     ],

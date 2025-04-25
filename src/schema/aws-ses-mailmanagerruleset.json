@@ -39,7 +39,7 @@
         "ResultField": {
           "maxLength": 256,
           "minLength": 1,
-          "pattern": "^[\\sa-zA-Z0-9_]+$",
+          "pattern": "^(addon\\.)?[\\sa-zA-Z0-9_]+$",
           "type": "string"
         }
       },
@@ -379,6 +379,19 @@
           ],
           "title": "Attribute",
           "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "Analysis": {
+              "$ref": "#/definitions/Analysis"
+            }
+          },
+          "required": [
+            "Analysis"
+          ],
+          "title": "Analysis",
+          "type": "object"
         }
       ]
     },
@@ -517,9 +530,9 @@
         },
         "Values": {
           "items": {
-            "maxLength": 18,
+            "maxLength": 43,
             "minLength": 1,
-            "pattern": "^(([0-9]|.|/)*)$",
+            "pattern": "^(([0-9]|.|:|/)*)$",
             "type": "string"
           },
           "maxItems": 10,
@@ -689,6 +702,19 @@
             "MimeHeaderAttribute"
           ],
           "title": "MimeHeaderAttribute",
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "Analysis": {
+              "$ref": "#/definitions/Analysis"
+            }
+          },
+          "required": [
+            "Analysis"
+          ],
+          "title": "Analysis",
           "type": "object"
         }
       ]

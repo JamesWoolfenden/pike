@@ -4,6 +4,64 @@
     "/properties/KmsKeyArn"
   ],
   "definitions": {
+    "Label": {
+      "additionalProperties": false,
+      "description": "Series label",
+      "properties": {
+        "Name": {
+          "description": "Name of the label",
+          "minLength": 1,
+          "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+          "type": "string"
+        },
+        "Value": {
+          "description": "Value of the label",
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "Name",
+        "Value"
+      ],
+      "type": "object"
+    },
+    "LimitsPerLabelSet": {
+      "additionalProperties": false,
+      "description": "Label set and its associated limits",
+      "properties": {
+        "LabelSet": {
+          "description": "An array of series labels",
+          "insertionOrder": false,
+          "items": {
+            "$ref": "#/definitions/Label"
+          },
+          "minItems": 0,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "Limits": {
+          "$ref": "#/definitions/LimitsPerLabelSetEntry"
+        }
+      },
+      "required": [
+        "Limits",
+        "LabelSet"
+      ],
+      "type": "object"
+    },
+    "LimitsPerLabelSetEntry": {
+      "additionalProperties": false,
+      "description": "Limits that can be applied to a label set",
+      "properties": {
+        "MaxSeries": {
+          "description": "The maximum number of active series that can be ingested for this label set",
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
     "LoggingConfiguration": {
       "additionalProperties": false,
       "description": "Logging configuration",
@@ -39,6 +97,28 @@
         "Value"
       ],
       "type": "object"
+    },
+    "WorkspaceConfiguration": {
+      "additionalProperties": false,
+      "description": "Workspace configuration",
+      "properties": {
+        "LimitsPerLabelSets": {
+          "description": "An array of label set and associated limits",
+          "insertionOrder": false,
+          "items": {
+            "$ref": "#/definitions/LimitsPerLabelSet"
+          },
+          "minItems": 0,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "RetentionPeriodInDays": {
+          "description": "How many days that metrics are retained in the workspace",
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "type": "object"
     }
   },
   "description": "Resource Type definition for AWS::APS::Workspace",
@@ -51,6 +131,8 @@
         "aps:CreateAlertManagerDefinition",
         "aps:DescribeAlertManagerDefinition",
         "aps:CreateLoggingConfiguration",
+        "aps:DescribeWorkspaceConfiguration",
+        "aps:UpdateWorkspaceConfiguration",
         "logs:CreateLogDelivery",
         "logs:GetLogDelivery",
         "logs:ListLogDeliveries",
@@ -80,7 +162,8 @@
         "aps:DescribeWorkspace",
         "aps:ListTagsForResource",
         "aps:DescribeAlertManagerDefinition",
-        "aps:DescribeLoggingConfiguration"
+        "aps:DescribeLoggingConfiguration",
+        "aps:DescribeWorkspaceConfiguration"
       ]
     },
     "update": {
@@ -97,6 +180,8 @@
         "aps:DescribeLoggingConfiguration",
         "aps:UpdateLoggingConfiguration",
         "aps:DeleteLoggingConfiguration",
+        "aps:DescribeWorkspaceConfiguration",
+        "aps:UpdateWorkspaceConfiguration",
         "logs:CreateLogDelivery",
         "logs:GetLogDelivery",
         "logs:UpdateLogDelivery",
@@ -149,6 +234,9 @@
       },
       "type": "array",
       "uniqueItems": true
+    },
+    "WorkspaceConfiguration": {
+      "$ref": "#/definitions/WorkspaceConfiguration"
     },
     "WorkspaceId": {
       "description": "Required to identify a specific APS Workspace.",

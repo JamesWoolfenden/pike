@@ -5,6 +5,21 @@
     "/properties/Name"
   ],
   "definitions": {
+    "EnhancedMetric": {
+      "additionalProperties": false,
+      "description": "Value of an enhanced metric",
+      "enum": [
+        "IncomingBytes",
+        "IncomingRecords",
+        "OutgoingBytes",
+        "OutgoingRecords",
+        "WriteProvisionedThroughputExceeded",
+        "ReadProvisionedThroughputExceeded",
+        "IteratorAgeMilliseconds",
+        "ALL"
+      ],
+      "type": "string"
+    },
     "StreamEncryption": {
       "additionalProperties": false,
       "description": "When specified, enables or updates server-side encryption using an AWS KMS key for a specified stream. Removing this property from your stack template and updating your stack disables encryption.",
@@ -141,6 +156,16 @@
     "Arn": {
       "description": "The Amazon resource name (ARN) of the Kinesis stream",
       "type": "string"
+    },
+    "DesiredShardLevelMetrics": {
+      "description": "The final list of shard-level metrics",
+      "insertionOrder": false,
+      "items": {
+        "$ref": "#/definitions/EnhancedMetric"
+      },
+      "maxItems": 7,
+      "type": "array",
+      "uniqueItems": true
     },
     "Name": {
       "description": "The name of the Kinesis stream.",

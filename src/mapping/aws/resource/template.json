@@ -1,11 +1,37 @@
 [
   {
-    "apply": [],
+    "apply": [
+      "events:CreateConnection",
+      "events:DescribeConnection",
+      "secretsmanager:CreateSecret",
+      "secretsmanager:GetSecretValue",
+      "secretsmanager:PutSecretValue",
+      "iam:CreateServiceLinkedRole",
+      "kms:DescribeKey",
+      "kms:GenerateDataKey"
+    ],
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "events:DeleteConnection",
+      "events:DescribeConnection"
+    ],
+    "modify": [
+      "events:UpdateConnection",
+      "events:DescribeConnection",
+      "secretsmanager:CreateSecret",
+      "secretsmanager:UpdateSecret",
+      "secretsmanager:GetSecretValue",
+      "secretsmanager:PutSecretValue",
+      "kms:Decrypt",
+      "kms:DescribeKey",
+      "kms:Encrypt",
+      "kms:GenerateDataKey"
+    ],
+    "plan": [
+      "events:DescribeConnection",
+      "kms:Decrypt"
+    ]
   }
 ]

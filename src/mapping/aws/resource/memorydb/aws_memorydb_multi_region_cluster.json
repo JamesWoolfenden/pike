@@ -5,7 +5,8 @@
       "memorydb:DescribeMultiRegionClusters",
       "memorydb:DeleteMultiRegionCluster",
       "memorydb:UpdateMultiRegionCluster",
-      "memorydb:ListTags"
+      "memorydb:ListTags",
+      "iam:CreateServiceLinkedRole"
     ],
     "attributes": {
       "tags": [

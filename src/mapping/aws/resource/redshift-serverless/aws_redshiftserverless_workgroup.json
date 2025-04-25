@@ -14,7 +14,9 @@
       "redshift-serverless:GetNamespace",
       "redshift-serverless:DeleteWorkgroup",
       "redshift-serverless:UpdateWorkgroup",
-      "redshift-serverless:ListTagsForResource"
+      "redshift-serverless:ListTagsForResource",
+      "redshift-serverless:RestoreFromSnapshot",
+      "redshift-serverless:RestoreFromRecoveryPoint"
     ],
     "attributes": {
       "tags": [
@@ -35,7 +37,9 @@
       "redshift-serverless:DeleteWorkgroup"
     ],
     "modify": [
-      "redshift-serverless:UpdateWorkgroup"
+      "redshift-serverless:UpdateWorkgroup",
+      "redshift-serverless:RestoreFromSnapshot",
+      "redshift-serverless:RestoreFromRecoveryPoint"
     ],
     "plan": []
   }

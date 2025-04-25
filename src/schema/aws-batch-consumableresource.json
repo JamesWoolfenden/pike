@@ -19,7 +19,7 @@
       "type": "string"
     }
   },
-  "description": "Resource Type schema for AWS::Batch::ConsumableResource",
+  "description": "Resource Type definition for AWS::Batch::ConsumableResource",
   "handlers": {
     "create": {
       "permissions": [

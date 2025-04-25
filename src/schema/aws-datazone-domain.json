@@ -30,10 +30,20 @@
       ],
       "type": "string"
     },
+    "IdcInstanceArn": {
+      "description": "The ARN of the AWS Identity Center instance.",
+      "maxLength": 1224,
+      "minLength": 10,
+      "pattern": "arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}",
+      "type": "string"
+    },
     "SingleSignOn": {
       "additionalProperties": false,
       "description": "The single-sign on configuration of the Amazon DataZone domain.",
       "properties": {
+        "IdcInstanceArn": {
+          "$ref": "#/definitions/IdcInstanceArn"
+        },
         "Type": {
           "$ref": "#/definitions/AuthType"
         },
@@ -88,6 +98,13 @@
         "sso:PutApplicationAssignmentConfiguration",
         "sso:ListInstances",
         "sso:PutApplicationAccessScope",
+        "sso:PutApplicationGrant",
+        "sso:PutApplicationAuthenticationMethod",
+        "sso:PutApplicationAccessScope",
+        "sso:CreateApplication",
+        "sso:DeleteApplication",
+        "sso:CreateApplicationAssignment",
+        "sso:DeleteApplicationAssignment",
         "iam:PassRole"
       ]
     },
@@ -97,6 +114,8 @@
         "datazone:GetDomain",
         "sso:DeleteManagedApplicationInstance",
         "sso:PutApplicationAssignmentConfiguration",
+        "sso:DeleteApplication",
+        "sso:DeleteApplicationAssignment",
         "sso:ListInstances"
       ]
     },

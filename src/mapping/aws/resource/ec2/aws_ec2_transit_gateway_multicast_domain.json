@@ -2,7 +2,8 @@
   {
     "apply": [
       "ec2:DescribeTransitGatewayMulticastDomains",
-      "ec2:CreateTransitGatewayMulticastDomain"
+      "ec2:CreateTransitGatewayMulticastDomain",
+      "ec2:DescribeTags"
     ],
     "attributes": {
       "tags": [
@@ -11,11 +12,16 @@
       ]
     },
     "destroy": [
-      "ec2:DeleteTransitGatewayMulticastDomain"
+      "ec2:DeleteTransitGatewayMulticastDomain",
+      "ec2:DescribeTags"
     ],
-    "modify": [],
+    "modify": [
+      "ec2:DescribeTransitGatewayMulticastDomains",
+      "ec2:DescribeTags"
+    ],
     "plan": [
-      "ec2:DescribeTransitGatewayMulticastDomains"
+      "ec2:DescribeTransitGatewayMulticastDomains",
+      "ec2:DescribeTags"
     ]
   }
 ]

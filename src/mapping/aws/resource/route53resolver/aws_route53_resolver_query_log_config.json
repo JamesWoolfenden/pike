@@ -15,12 +15,14 @@
       "resolverquerylogging:GetConfig",
       "resolverquerylogging:ListConfig",
       "route53resolver:DeleteResolverQueryLogConfig",
-      "route53resolver:GetResolverQueryLogConfig"
+      "route53resolver:GetResolverQueryLogConfig",
+      "route53resolver:ListTagsForResource",
+      "route53resolver:ListResolverQueryLogConfigs"
     ],
     "attributes": {
       "tags": [
-        "route53resolver:ListTagsForResource",
-        "route53resolver:TagResource"
+        "route53resolver:TagResource",
+        "route53resolver:UntagResource"
       ]
     },
     "destroy": [
@@ -29,6 +31,11 @@
       "resolverquerylogging:ListConfig"
     ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "resolverquerylogging:GetConfig",
+      "route53resolver:GetResolverQueryLogConfig",
+      "route53resolver:ListTagsForResource",
+      "route53resolver:ListResolverQueryLogConfigs"
+    ]
   }
 ]

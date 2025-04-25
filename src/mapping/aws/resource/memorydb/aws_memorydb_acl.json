@@ -6,7 +6,8 @@
       "memorydb:ListTags",
       "memorydb:ModifyReplicationGroup",
       "memorydb:DeleteACL",
-      "memorydb:UpdateACL"
+      "memorydb:UpdateACL",
+      "iam:CreateServiceLinkedRole"
     ],
     "attributes": {
       "tags": [
@@ -22,6 +23,9 @@
     "modify": [
       "memorydb:UpdateACL"
     ],
-    "plan": []
+    "plan": [
+      "memorydb:DescribeACLs",
+      "memorydb:ListTags"
+    ]
   }
 ]

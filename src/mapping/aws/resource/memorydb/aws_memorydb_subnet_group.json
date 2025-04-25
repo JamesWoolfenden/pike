@@ -4,7 +4,8 @@
       "memorydb:CreateSubnetGroup",
       "memorydb:DescribeSubnetGroups",
       "memorydb:ListTags",
-      "memorydb:DeleteSubnetGroup"
+      "memorydb:DeleteSubnetGroup",
+      "iam:CreateServiceLinkedRole"
     ],
     "attributes": {
       "tags": [

@@ -19,6 +19,9 @@
     "modify": [
       "ce:UpdateAnomalyMonitor"
     ],
-    "plan": []
+    "plan": [
+      "ce:GetAnomalyMonitors",
+      "ce:ListTagsForResource"
+    ]
   }
 ]

@@ -73,6 +73,7 @@
     "delete": {
       "permissions": [
         "redshift:DescribeTags",
+        "redshift:DeleteTags",
         "redshift:DescribeClusterParameterGroups",
         "redshift:DeleteClusterParameterGroup",
         "redshift:DescribeClusterParameters",
@@ -147,12 +148,16 @@
     "ParameterGroupFamily"
   ],
   "tagging": {
+    "cloudFormationSystemTags": false,
+    "permissions": [
+      "redshift:DescribeTags",
+      "redshift:CreateTags",
+      "redshift:DeleteTags"
+    ],
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": true,
     "taggable": true
   },
-  "typeName": "AWS::Redshift::ClusterParameterGroup",
-  "writeOnlyProperties": [
-    "/properties/Tags",
-    "/properties/Tags/*/Key",
-    "/properties/Tags/*/Value"
-  ]
+  "typeName": "AWS::Redshift::ClusterParameterGroup"
 }

@@ -3,8 +3,11 @@
     "apply": [
       "s3tables:CreateTableBucket",
       "s3tables:PutTableBucketMaintenanceConfiguration",
+      "s3tables:PutTableBucketEncryption",
       "s3tables:GetTableBucket",
       "s3tables:GetTableBucketMaintenanceConfiguration",
+      "s3tables:GetTableBucketEncryption",
+      "kms:DescribeKey",
       "s3tables:DeleteTableBucket"
     ],
     "attributes": {
@@ -15,12 +18,16 @@
     ],
     "modify": [
       "s3tables:PutTableBucketMaintenanceConfiguration",
+      "s3tables:PutTableBucketEncryption",
+      "s3tables:GetTableBucketMaintenanceConfiguration",
+      "s3tables:GetTableBucketEncryption",
       "s3tables:GetTableBucket",
-      "s3tables:GetTableBucketMaintenanceConfiguration"
+      "kms:DescribeKey"
     ],
     "plan": [
       "s3tables:GetTableBucket",
-      "s3tables:GetTableBucketMaintenanceConfiguration"
+      "s3tables:GetTableBucketMaintenanceConfiguration",
+      "s3tables:GetTableBucketEncryption"
     ]
   }
 ]

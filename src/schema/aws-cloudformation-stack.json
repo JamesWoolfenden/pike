@@ -203,7 +203,10 @@
       "uniqueItems": false
     },
     "TemplateBody": {
-      "type": "object"
+      "type": [
+        "object",
+        "string"
+      ]
     },
     "TemplateURL": {
       "maxLength": 1024,

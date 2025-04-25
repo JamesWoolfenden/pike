@@ -4,10 +4,14 @@
       "gamelift:CreateAlias",
       "gamelift:UpdateAlias",
       "gamelift:DeleteAlias",
-      "gamelift:DescribeAlias"
+      "gamelift:DescribeAlias",
+      "gamelift:ListTagsForResource"
     ],
     "attributes": {
-      "tags": []
+      "tags": [
+        "gamelift:TagResource",
+        "gamelift:UntagResource"
+      ]
     },
     "destroy": [
       "gamelift:DeleteAlias"
@@ -16,7 +20,8 @@
       "gamelift:UpdateAlias"
     ],
     "plan": [
-      "gamelift:DescribeAlias"
+      "gamelift:DescribeAlias",
+      "gamelift:ListTagsForResource"
     ]
   }
 ]

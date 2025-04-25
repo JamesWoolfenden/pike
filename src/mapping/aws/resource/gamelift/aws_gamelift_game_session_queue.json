@@ -4,7 +4,8 @@
       "gamelift:CreateGameSessionQueue",
       "gamelift:ListTagsForResource",
       "gamelift:DescribeGameSessionQueues",
-      "gamelift:UpdateGameSessionQueue"
+      "gamelift:UpdateGameSessionQueue",
+      "gamelift:DeleteGameSessionQueue"
     ],
     "attributes": {
       "tags": [
@@ -16,7 +17,8 @@
       "gamelift:DeleteGameSessionQueue"
     ],
     "modify": [
-      "gamelift:UpdateGameSessionQueue"
+      "gamelift:UpdateGameSessionQueue",
+      "gamelift:DescribeGameSessionQueues"
     ],
     "plan": [
       "gamelift:DescribeGameSessionQueues"

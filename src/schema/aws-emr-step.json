@@ -58,6 +58,9 @@
     },
     "delete": {
       "permissions": []
+    },
+    "read": {
+      "permissions": []
     }
   },
   "primaryIdentifier": [

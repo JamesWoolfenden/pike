@@ -5,10 +5,14 @@
       "gamelift:CreateBuild",
       "gamelift:DescribeBuild",
       "gamelift:DeleteBuild",
-      "gamelift:UpdateBuild"
+      "gamelift:UpdateBuild",
+      "gamelift:ListTagsForResource"
     ],
     "attributes": {
-      "tags": []
+      "tags": [
+        "gamelift:TagResource",
+        "gamelift:UntagResource"
+      ]
     },
     "destroy": [
       "gamelift:DescribeBuild",

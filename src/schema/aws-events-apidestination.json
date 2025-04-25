@@ -43,6 +43,11 @@
       "pattern": "^arn:aws([a-z]|\\-)*:events:([a-z]|\\d|\\-)*:([0-9]{12})?:api-destination/[\\.\\-_A-Za-z0-9]+/[\\-A-Za-z0-9]+$",
       "type": "string"
     },
+    "ArnForPolicy": {
+      "description": "The arn of the api destination to be used in IAM policies.",
+      "pattern": "^arn:aws([a-z]|\\-)*:events:([a-z]|\\d|\\-)*:([0-9]{12})?:api-destination/[\\.\\-_A-Za-z0-9]+$",
+      "type": "string"
+    },
     "ConnectionArn": {
       "description": "The arn of the connection.",
       "pattern": "^arn:aws([a-z]|\\-)*:events:([a-z]|\\d|\\-)*:([0-9]{12})?:connection/[\\.\\-_A-Za-z0-9]+/[\\-A-Za-z0-9]+$",
@@ -82,7 +87,8 @@
     }
   },
   "readOnlyProperties": [
-    "/properties/Arn"
+    "/properties/Arn",
+    "/properties/ArnForPolicy"
   ],
   "required": [
     "ConnectionArn",

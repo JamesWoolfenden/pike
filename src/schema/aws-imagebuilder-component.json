@@ -177,7 +177,6 @@
   "typeName": "AWS::ImageBuilder::Component",
   "writeOnlyProperties": [
     "/properties/Data",
-    "/properties/Uri",
-    "/properties/Platform"
+    "/properties/Uri"
   ]
 }

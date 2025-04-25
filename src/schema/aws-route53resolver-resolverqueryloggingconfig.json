@@ -2,8 +2,34 @@
   "additionalProperties": false,
   "createOnlyProperties": [
     "/properties/Name",
-    "/properties/DestinationArn"
+    "/properties/DestinationArn",
+    "/properties/Tags"
   ],
+  "definitions": {
+    "Tag": {
+      "additionalProperties": false,
+      "description": "A key-value pair to associate with a resource.",
+      "properties": {
+        "Key": {
+          "description": "The key name of the tag. You can specify a value that is 1 to 128 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
+          "maxLength": 128,
+          "minLength": 1,
+          "type": "string"
+        },
+        "Value": {
+          "description": "The value for the tag. You can specify a value that is 0 to 256 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
+          "maxLength": 256,
+          "minLength": 0,
+          "type": "string"
+        }
+      },
+      "required": [
+        "Key",
+        "Value"
+      ],
+      "type": "object"
+    }
+  },
   "description": "Resource schema for AWS::Route53Resolver::ResolverQueryLoggingConfig.",
   "handlers": {
     "create": {
@@ -20,7 +46,10 @@
         "logs:PutResourcePolicy",
         "logs:DescribeResourcePolicies",
         "logs:DescribeLogGroups",
-        "iam:CreateServiceLinkedRole"
+        "iam:CreateServiceLinkedRole",
+        "route53resolver:ListTagsForResource",
+        "route53resolver:TagResource",
+        "route53resolver:ListResolverQueryLogConfigs"
       ]
     },
     "delete": {
@@ -28,19 +57,24 @@
         "resolverquerylogging:DeleteConfig",
         "resolverquerylogging:ListConfig",
         "route53resolver:DeleteResolverQueryLogConfig",
-        "route53resolver:ListResolverQueryLogConfigs"
+        "route53resolver:ListResolverQueryLogConfigs",
+        "route53resolver:UntagResource",
+        "route53resolver:ListTagsForResource"
       ]
     },
     "list": {
       "permissions": [
         "resolverquerylogging:ListConfig",
-        "route53resolver:ListResolverQueryLogConfigs"
+        "route53resolver:ListResolverQueryLogConfigs",
+        "route53resolver:ListTagsForResource"
       ]
     },
     "read": {
       "permissions": [
         "resolverquerylogging:GetConfig",
-        "route53resolver:GetResolverQueryLogConfig"
+        "route53resolver:GetResolverQueryLogConfig",
+        "route53resolver:ListTagsForResource",
+        "route53resolver:ListResolverQueryLogConfigs"
       ]
     }
   },
@@ -113,6 +147,15 @@
         "FAILED"
       ],
       "type": "string"
+    },
+    "Tags": {
+      "description": "An array of key-value pairs to apply to this resource.",
+      "insertionOrder": false,
+      "items": {
+        "$ref": "#/definitions/Tag"
+      },
+      "type": "array",
+      "uniqueItems": true
     }
   },
   "readOnlyProperties": [
@@ -125,6 +168,16 @@
     "/properties/CreationTime",
     "/properties/Id"
   ],
-  "taggable": false,
+  "tagging": {
+    "cloudFormationSystemTags": true,
+    "permissions": [
+      "route53resolver:TagResource",
+      "route53resolver:UntagResource"
+    ],
+    "tagOnCreate": true,
+    "tagProperty": "/properties/Tags",
+    "tagUpdatable": false,
+    "taggable": true
+  },
   "typeName": "AWS::Route53Resolver::ResolverQueryLoggingConfig"
 }

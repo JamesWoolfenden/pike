@@ -1,33 +1,47 @@
 {
   "additionalProperties": false,
   "definitions": {
-    "ContentFilter": {
-      "additionalProperties": false,
-      "description": "Content filter in content policy.",
-      "properties": {
-        "InputStrength": {
-          "$ref": "#/definitions/FilterStrength"
-        },
-        "OutputStrength": {
-          "$ref": "#/definitions/FilterStrength"
-        },
-        "Type": {
-          "$ref": "#/definitions/ContentFilterType"
-        }
-      },
-      "required": [
-        "InputStrength",
-        "OutputStrength",
-        "Type"
+    "ContentFilterAction": {
+      "enum": [
+        "BLOCK",
+        "NONE"
       ],
-      "type": "object"
+      "type": "string"
     },
     "ContentFilterConfig": {
       "additionalProperties": false,
       "description": "Content filter config in content policy.",
       "properties": {
+        "InputAction": {
+          "$ref": "#/definitions/ContentFilterAction"
+        },
+        "InputEnabled": {
+          "type": "boolean"
+        },
+        "InputModalities": {
+          "description": "List of modalities",
+          "items": {
+            "$ref": "#/definitions/Modality"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
         "InputStrength": {
           "$ref": "#/definitions/FilterStrength"
+        },
+        "OutputAction": {
+          "$ref": "#/definitions/ContentFilterAction"
+        },
+        "OutputEnabled": {
+          "type": "boolean"
+        },
+        "OutputModalities": {
+          "description": "List of modalities",
+          "items": {
+            "$ref": "#/definitions/Modality"
+          },
+          "minItems": 1,
+          "type": "array"
         },
         "OutputStrength": {
           "$ref": "#/definitions/FilterStrength"
@@ -74,10 +88,23 @@
       ],
       "type": "object"
     },
+    "ContextualGroundingAction": {
+      "enum": [
+        "BLOCK",
+        "NONE"
+      ],
+      "type": "string"
+    },
     "ContextualGroundingFilterConfig": {
       "additionalProperties": false,
       "description": "A config for grounding filter.",
       "properties": {
+        "Action": {
+          "$ref": "#/definitions/ContextualGroundingAction"
+        },
+        "Enabled": {
+          "type": "boolean"
+        },
         "Threshold": {
           "description": "The threshold for this filter.",
           "minimum": 0,
@@ -141,23 +168,22 @@
       ],
       "type": "string"
     },
-    "ManagedWords": {
-      "additionalProperties": false,
-      "description": "A managed words definition.",
-      "properties": {
-        "Type": {
-          "$ref": "#/definitions/ManagedWordsType"
-        }
-      },
-      "required": [
-        "Type"
-      ],
-      "type": "object"
-    },
     "ManagedWordsConfig": {
       "additionalProperties": false,
       "description": "A managed words config.",
       "properties": {
+        "InputAction": {
+          "$ref": "#/definitions/WordAction"
+        },
+        "InputEnabled": {
+          "type": "boolean"
+        },
+        "OutputAction": {
+          "$ref": "#/definitions/WordAction"
+        },
+        "OutputEnabled": {
+          "type": "boolean"
+        },
         "Type": {
           "$ref": "#/definitions/ManagedWordsType"
         }
@@ -174,22 +200,13 @@
       ],
       "type": "string"
     },
-    "PiiEntity": {
-      "additionalProperties": false,
-      "description": "Entity name and behavior.",
-      "properties": {
-        "Action": {
-          "$ref": "#/definitions/SensitiveInformationAction"
-        },
-        "Type": {
-          "$ref": "#/definitions/PiiEntityType"
-        }
-      },
-      "required": [
-        "Action",
-        "Type"
+    "Modality": {
+      "description": "Modality for filters",
+      "enum": [
+        "TEXT",
+        "IMAGE"
       ],
-      "type": "object"
+      "type": "string"
     },
     "PiiEntityConfig": {
       "additionalProperties": false,
@@ -197,6 +214,18 @@
       "properties": {
         "Action": {
           "$ref": "#/definitions/SensitiveInformationAction"
+        },
+        "InputAction": {
+          "$ref": "#/definitions/SensitiveInformationAction"
+        },
+        "InputEnabled": {
+          "type": "boolean"
+        },
+        "OutputAction": {
+          "$ref": "#/definitions/SensitiveInformationAction"
+        },
+        "OutputEnabled": {
+          "type": "boolean"
         },
         "Type": {
           "$ref": "#/definitions/PiiEntityType"
@@ -258,11 +287,23 @@
           "minLength": 1,
           "type": "string"
         },
+        "InputAction": {
+          "$ref": "#/definitions/SensitiveInformationAction"
+        },
+        "InputEnabled": {
+          "type": "boolean"
+        },
         "Name": {
           "description": "The regex name.",
           "maxLength": 100,
           "minLength": 1,
           "type": "string"
+        },
+        "OutputAction": {
+          "$ref": "#/definitions/SensitiveInformationAction"
+        },
+        "OutputEnabled": {
+          "type": "boolean"
         },
         "Pattern": {
           "description": "The regex pattern.",
@@ -281,7 +322,8 @@
       "description": "Options for sensitive information action.",
       "enum": [
         "BLOCK",
-        "ANONYMIZE"
+        "ANONYMIZE",
+        "NONE"
       ],
       "type": "string"
     },
@@ -334,44 +376,12 @@
       ],
       "type": "object"
     },
-    "Topic": {
-      "additionalProperties": false,
-      "description": "Topic in topic policy.",
-      "properties": {
-        "Definition": {
-          "description": "Definition of topic in topic policy",
-          "maxLength": 200,
-          "minLength": 1,
-          "type": "string"
-        },
-        "Examples": {
-          "description": "List of text examples",
-          "items": {
-            "description": "Text example in topic policy",
-            "maxLength": 100,
-            "minLength": 1,
-            "type": "string"
-          },
-          "minItems": 0,
-          "type": "array"
-        },
-        "Name": {
-          "description": "Name of topic in topic policy",
-          "maxLength": 100,
-          "minLength": 1,
-          "pattern": "^[0-9a-zA-Z-_ !?.]+$",
-          "type": "string"
-        },
-        "Type": {
-          "$ref": "#/definitions/TopicType"
-        }
-      },
-      "required": [
-        "Definition",
-        "Name",
-        "Type"
+    "TopicAction": {
+      "enum": [
+        "BLOCK",
+        "NONE"
       ],
-      "type": "object"
+      "type": "string"
     },
     "TopicConfig": {
       "additionalProperties": false,
@@ -394,12 +404,24 @@
           "minItems": 0,
           "type": "array"
         },
+        "InputAction": {
+          "$ref": "#/definitions/TopicAction"
+        },
+        "InputEnabled": {
+          "type": "boolean"
+        },
         "Name": {
           "description": "Name of topic in topic policy",
           "maxLength": 100,
           "minLength": 1,
           "pattern": "^[0-9a-zA-Z-_ !?.]+$",
           "type": "string"
+        },
+        "OutputAction": {
+          "$ref": "#/definitions/TopicAction"
+        },
+        "OutputEnabled": {
+          "type": "boolean"
         },
         "Type": {
           "$ref": "#/definitions/TopicType"
@@ -437,10 +459,29 @@
       ],
       "type": "string"
     },
+    "WordAction": {
+      "enum": [
+        "BLOCK",
+        "NONE"
+      ],
+      "type": "string"
+    },
     "WordConfig": {
       "additionalProperties": false,
       "description": "A custom word config.",
       "properties": {
+        "InputAction": {
+          "$ref": "#/definitions/WordAction"
+        },
+        "InputEnabled": {
+          "type": "boolean"
+        },
+        "OutputAction": {
+          "$ref": "#/definitions/WordAction"
+        },
+        "OutputEnabled": {
+          "type": "boolean"
+        },
         "Text": {
           "description": "The custom word text.",
           "minLength": 1,
@@ -653,6 +694,11 @@
   ],
   "tagging": {
     "cloudFormationSystemTags": false,
+    "permissions": [
+      "bedrock:ListTagsForResource",
+      "bedrock:TagResource",
+      "bedrock:UntagResource"
+    ],
     "tagOnCreate": true,
     "tagProperty": "/properties/Tags",
     "tagUpdatable": true,

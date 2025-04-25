@@ -4,6 +4,25 @@
     "/properties/TableBucketName"
   ],
   "definitions": {
+    "EncryptionConfiguration": {
+      "additionalProperties": false,
+      "description": "Specifies encryption settings for the table bucket",
+      "properties": {
+        "KMSKeyArn": {
+          "description": "ARN of the KMS key to use for encryption",
+          "type": "string"
+        },
+        "SSEAlgorithm": {
+          "description": "Server-side encryption algorithm",
+          "enum": [
+            "AES256",
+            "aws:kms"
+          ],
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "TableBucketARN": {
       "description": "The Amazon Resource Name (ARN) of the specified table bucket.",
       "examples": [
@@ -49,8 +68,11 @@
       "permissions": [
         "s3tables:CreateTableBucket",
         "s3tables:PutTableBucketMaintenanceConfiguration",
+        "s3tables:PutTableBucketEncryption",
         "s3tables:GetTableBucket",
-        "s3tables:GetTableBucketMaintenanceConfiguration"
+        "s3tables:GetTableBucketMaintenanceConfiguration",
+        "s3tables:GetTableBucketEncryption",
+        "kms:DescribeKey"
       ]
     },
     "delete": {
@@ -66,14 +88,18 @@
     "read": {
       "permissions": [
         "s3tables:GetTableBucket",
-        "s3tables:GetTableBucketMaintenanceConfiguration"
+        "s3tables:GetTableBucketMaintenanceConfiguration",
+        "s3tables:GetTableBucketEncryption"
       ]
     },
     "update": {
       "permissions": [
         "s3tables:PutTableBucketMaintenanceConfiguration",
+        "s3tables:PutTableBucketEncryption",
+        "s3tables:GetTableBucketMaintenanceConfiguration",
+        "s3tables:GetTableBucketEncryption",
         "s3tables:GetTableBucket",
-        "s3tables:GetTableBucketMaintenanceConfiguration"
+        "kms:DescribeKey"
       ]
     }
   },
@@ -81,6 +107,9 @@
     "/properties/TableBucketARN"
   ],
   "properties": {
+    "EncryptionConfiguration": {
+      "$ref": "#/definitions/EncryptionConfiguration"
+    },
     "TableBucketARN": {
       "$ref": "#/definitions/TableBucketARN"
     },

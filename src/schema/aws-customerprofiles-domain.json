@@ -357,16 +357,6 @@
       ]
     },
     "list": {
-      "handlerSchema": {
-        "properties": {
-          "DomainName": {
-            "$ref": "resource-schema.json#/properties/DomainName"
-          }
-        },
-        "required": [
-          "DomainName"
-        ]
-      },
       "permissions": [
         "profile:ListDomains"
       ]

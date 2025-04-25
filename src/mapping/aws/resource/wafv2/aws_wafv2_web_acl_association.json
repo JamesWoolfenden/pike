@@ -3,6 +3,10 @@
     "apply": [
       "wafv2:AssociateWebACL",
       "wafv2:GetWebACLForResource",
+      "wafv2:GetWebACL",
+      "wafv2:DisassociateWebACL",
+      "wafv2:PutPermissionPolicy",
+      "wafv2:GetPermissionPolicy",
       "apigateway:SetWebACL",
       "elasticloadbalancing:SetWebAcl",
       "appsync:SetWebACL",
@@ -11,17 +15,75 @@
       "cognito-idp:ListResourcesForWebACL",
       "apprunner:ListAssociatedServicesForWebAcl",
       "apprunner:AssociateWebAcl",
-      "apprunner:DescribeWebAclForService"
+      "apprunner:DescribeWebAclForService",
+      "ec2:AssociateVerifiedAccessInstanceWebAcl",
+      "ec2:DisassociateVerifiedAccessInstanceWebAcl",
+      "ec2:DescribeVerifiedAccessInstanceWebAclAssociations",
+      "ec2:GetVerifiedAccessInstanceWebAcl"
     ],
     "attributes": {
       "tags": []
     },
     "destroy": [
+      "wafv2:AssociateWebACL",
+      "wafv2:GetWebACLForResource",
+      "wafv2:GetWebACL",
+      "wafv2:DisassociateWebACL",
+      "wafv2:PutPermissionPolicy",
+      "elasticloadbalancing:SetWebACL",
+      "apigateway:SetWebACL",
+      "appsync:SetWebACL",
+      "cognito-idp:AssociateWebACL",
       "cognito-idp:DisassociateWebACL",
+      "cognito-idp:GetWebACLForResource",
+      "apprunner:AssociateWebAcl",
       "apprunner:DisassociateWebAcl",
-      "wafv2:DisassociateWebACL"
+      "apprunner:DescribeWebAclForService",
+      "ec2:AssociateVerifiedAccessInstanceWebAcl",
+      "ec2:DisassociateVerifiedAccessInstanceWebAcl",
+      "ec2:DescribeVerifiedAccessInstanceWebAclAssociations",
+      "ec2:GetVerifiedAccessInstanceWebAcl",
+      "amplify:DisassociateWebACL",
+      "amplify:GetWebACLForResource"
     ],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "wafv2:AssociateWebACL",
+      "wafv2:GetWebACLForResource",
+      "wafv2:GetWebACL",
+      "wafv2:DisassociateWebACL",
+      "elasticloadbalancing:SetWebACL",
+      "apigateway:SetWebACL",
+      "appsync:SetWebACL",
+      "cognito-idp:AssociateWebACL",
+      "cognito-idp:DisassociateWebACL",
+      "cognito-idp:GetWebACLForResource",
+      "apprunner:AssociateWebAcl",
+      "apprunner:DisassociateWebAcl",
+      "apprunner:DescribeWebAclForService",
+      "ec2:AssociateVerifiedAccessInstanceWebAcl",
+      "ec2:DisassociateVerifiedAccessInstanceWebAcl",
+      "ec2:DescribeVerifiedAccessInstanceWebAclAssociations",
+      "ec2:GetVerifiedAccessInstanceWebAcl"
+    ],
+    "plan": [
+      "wafv2:AssociateWebACL",
+      "wafv2:GetWebACLForResource",
+      "wafv2:GetWebACL",
+      "wafv2:DisassociateWebACL",
+      "elasticloadbalancing:SetWebACL",
+      "apigateway:SetWebACL",
+      "appsync:SetWebACL",
+      "cognito-idp:AssociateWebACL",
+      "cognito-idp:DisassociateWebACL",
+      "cognito-idp:GetWebACLForResource",
+      "apprunner:AssociateWebAcl",
+      "apprunner:DisassociateWebAcl",
+      "apprunner:DescribeWebAclForService",
+      "ec2:AssociateVerifiedAccessInstanceWebAcl",
+      "ec2:DisassociateVerifiedAccessInstanceWebAcl",
+      "ec2:DescribeVerifiedAccessInstanceWebAclAssociations",
+      "ec2:GetVerifiedAccessInstanceWebAcl",
+      "amplify:GetWebACLForResource"
+    ]
   }
 ]

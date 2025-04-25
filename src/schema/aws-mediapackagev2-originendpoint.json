@@ -263,7 +263,7 @@
       "description": "<p>The failover settings for the endpoint.</p>",
       "properties": {
         "EndpointErrorConditions": {
-          "description": "<p>The failover settings for the endpoint. The options are:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>STALE_MANIFEST</code> - The manifest stalled and there a no new segments or parts.</p>\n            </li>\n            <li>\n               <p>\n                  <code>INCOMPLETE_MANIFEST</code> - There is a gap in the manifest.</p>\n            </li>\n            <li>\n               <p>\n                  <code>MISSING_DRM_KEY</code> - Key rotation is enabled but we're unable to fetch the key for the current key period.</p>\n            </li>\n         </ul>",
+          "description": "<p>The failover conditions for the endpoint. The options are:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>STALE_MANIFEST</code> - The manifest stalled and there are no new segments or parts.</p>\n            </li>\n            <li>\n               <p>\n                  <code>INCOMPLETE_MANIFEST</code> - There is a gap in the manifest.</p>\n            </li>\n            <li>\n               <p>\n                  <code>MISSING_DRM_KEY</code> - Key rotation is enabled but we're unable to fetch the key for the current key period.</p>\n            </li>\n            <li>\n               <p>\n                  <code>SLATE_INPUT</code> - The segments which contain slate content are considered to be missing content.</p>\n            </li>\n         </ul>",
           "items": {
             "$ref": "#/definitions/EndpointErrorCondition"
           },
@@ -298,7 +298,7 @@
           "type": "integer"
         },
         "ProgramDateTimeIntervalSeconds": {
-          "description": "<p>Inserts EXT-X-PROGRAM-DATE-TIME tags in the output manifest at the interval that you specify. If you don't enter an interval, \n         EXT-X-PROGRAM-DATE-TIME tags aren't included in the manifest. \n         The tags sync the stream to the wall clock so that viewers can seek to a specific time in the playback timeline on the player. \n         ID3Timed metadata messages generate every 5 seconds whenever the content is ingested.</p>\n         <p>Irrespective of this parameter, if any ID3Timed metadata is in the HLS input, it is passed through to the HLS output.</p>",
+          "description": "<p>Inserts EXT-X-PROGRAM-DATE-TIME tags in the output manifest at the interval that you specify. If you don't enter an interval,\n         EXT-X-PROGRAM-DATE-TIME tags aren't included in the manifest.\n         The tags sync the stream to the wall clock so that viewers can seek to a specific time in the playback timeline on the player.</p>\n         <p>Irrespective of this parameter, if any ID3Timed metadata is in the HLS input, it is passed through to the HLS output.</p>",
           "type": "integer"
         },
         "ScteHls": {
@@ -310,6 +310,10 @@
         "Url": {
           "description": "<p>The egress domain URL for stream delivery from MediaPackage.</p>",
           "type": "string"
+        },
+        "UrlEncodeChildManifest": {
+          "description": "<p>When enabled, MediaPackage URL-encodes the query string for API requests for HLS child manifests to comply with Amazon Web Services Signature Version 4 (SigV4) signature signing protocol.\n         For more information, see <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html\">Amazon Web Services Signature Version 4 for API requests</a> in <i>Identity and Access Management User Guide</i>.</p>",
+          "type": "boolean"
         }
       },
       "required": [
@@ -343,7 +347,7 @@
           "type": "integer"
         },
         "ProgramDateTimeIntervalSeconds": {
-          "description": "<p>Inserts EXT-X-PROGRAM-DATE-TIME tags in the output manifest at the interval that you specify. If you don't enter an interval, \n         EXT-X-PROGRAM-DATE-TIME tags aren't included in the manifest. \n         The tags sync the stream to the wall clock so that viewers can seek to a specific time in the playback timeline on the player. \n         ID3Timed metadata messages generate every 5 seconds whenever the content is ingested.</p>\n         <p>Irrespective of this parameter, if any ID3Timed metadata is in the HLS input, it is passed through to the HLS output.</p>",
+          "description": "<p>Inserts EXT-X-PROGRAM-DATE-TIME tags in the output manifest at the interval that you specify. If you don't enter an interval,\n         EXT-X-PROGRAM-DATE-TIME tags aren't included in the manifest.\n         The tags sync the stream to the wall clock so that viewers can seek to a specific time in the playback timeline on the player.</p>\n         <p>Irrespective of this parameter, if any ID3Timed metadata is in the HLS input, it is passed through to the HLS output.</p>",
           "type": "integer"
         },
         "ScteHls": {
@@ -355,6 +359,10 @@
         "Url": {
           "description": "<p>The egress domain URL for stream delivery from MediaPackage.</p>",
           "type": "string"
+        },
+        "UrlEncodeChildManifest": {
+          "description": "<p>When enabled, MediaPackage URL-encodes the query string for API requests for LL-HLS child manifests to comply with Amazon Web Services Signature Version 4 (SigV4) signature signing protocol.\n         For more information, see <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html\">Amazon Web Services Signature Version 4 for API requests</a> in <i>Identity and Access Management User Guide</i>.</p>",
+          "type": "boolean"
         }
       },
       "required": [
