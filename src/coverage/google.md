@@ -1,7 +1,7 @@
 # todo google
 
-Resource percentage coverage   17.78
-Datasource percentage coverage 69.43
+Resource percentage coverage   17.06
+Datasource percentage coverage 66.58
 
 ./resource.ps1 google_access_context_manager_access_level_condition
 ./resource.ps1 google_access_context_manager_service_perimeter_dry_run_egress_policy
@@ -16,7 +16,9 @@ Datasource percentage coverage 69.43
 ./resource.ps1 google_apigee_addons_config
 ./resource.ps1 google_apigee_api
 ./resource.ps1 google_apigee_app_group
+./resource.ps1 google_apigee_control_plane_access
 ./resource.ps1 google_apigee_developer
+./resource.ps1 google_apigee_dns_zone
 ./resource.ps1 google_apigee_env_keystore
 ./resource.ps1 google_apigee_envgroup
 ./resource.ps1 google_apigee_envgroup_attachment
@@ -76,6 +78,8 @@ Datasource percentage coverage 69.43
 ./resource.ps1 google_bigquery_datapolicy_data_policy_iam_policy
 ./resource.ps1 google_bigquery_dataset_access
 ./resource.ps1 google_bigtable_authorized_view
+./resource.ps1 google_bigtable_logical_view
+./resource.ps1 google_bigtable_materialized_view
 ./resource.ps1 google_billing_account_iam_binding
 ./resource.ps1 google_billing_account_iam_member
 ./resource.ps1 google_billing_account_iam_policy
@@ -134,6 +138,7 @@ Datasource percentage coverage 69.43
 ./resource.ps1 google_clouddeploy_delivery_pipeline_iam_binding
 ./resource.ps1 google_clouddeploy_delivery_pipeline_iam_member
 ./resource.ps1 google_clouddeploy_delivery_pipeline_iam_policy
+./resource.ps1 google_clouddeploy_deploy_policy
 ./resource.ps1 google_clouddeploy_target
 ./resource.ps1 google_clouddeploy_target_iam_binding
 ./resource.ps1 google_clouddeploy_target_iam_member
@@ -269,6 +274,7 @@ Datasource percentage coverage 69.43
 ./resource.ps1 google_compute_reservation
 ./resource.ps1 google_compute_resize_request
 ./resource.ps1 google_compute_resource_policy
+./resource.ps1 google_compute_resource_policy_attachment
 ./resource.ps1 google_compute_route
 ./resource.ps1 google_compute_router
 ./resource.ps1 google_compute_router_interface
@@ -286,6 +292,10 @@ Datasource percentage coverage 69.43
 ./resource.ps1 google_compute_snapshot_iam_policy
 ./resource.ps1 google_compute_ssl_certificate
 ./resource.ps1 google_compute_ssl_policy
+./resource.ps1 google_compute_storage_pool
+./resource.ps1 google_compute_storage_pool_iam_binding
+./resource.ps1 google_compute_storage_pool_iam_member
+./resource.ps1 google_compute_storage_pool_iam_policy
 ./resource.ps1 google_compute_subnetwork_iam_binding
 ./resource.ps1 google_compute_subnetwork_iam_member
 ./resource.ps1 google_compute_subnetwork_iam_policy
@@ -398,6 +408,9 @@ Datasource percentage coverage 69.43
 ./resource.ps1 google_dataproc_job_iam_binding
 ./resource.ps1 google_dataproc_job_iam_member
 ./resource.ps1 google_dataproc_job_iam_policy
+./resource.ps1 google_dataproc_metastore_database_iam_binding
+./resource.ps1 google_dataproc_metastore_database_iam_member
+./resource.ps1 google_dataproc_metastore_database_iam_policy
 ./resource.ps1 google_dataproc_metastore_federation
 ./resource.ps1 google_dataproc_metastore_federation_iam_binding
 ./resource.ps1 google_dataproc_metastore_federation_iam_member
@@ -406,11 +419,15 @@ Datasource percentage coverage 69.43
 ./resource.ps1 google_dataproc_metastore_service_iam_binding
 ./resource.ps1 google_dataproc_metastore_service_iam_member
 ./resource.ps1 google_dataproc_metastore_service_iam_policy
+./resource.ps1 google_dataproc_metastore_table_iam_binding
+./resource.ps1 google_dataproc_metastore_table_iam_member
+./resource.ps1 google_dataproc_metastore_table_iam_policy
 ./resource.ps1 google_dataproc_workflow_template
 ./resource.ps1 google_datastream_connection_profile
 ./resource.ps1 google_datastream_private_connection
 ./resource.ps1 google_datastream_stream
 ./resource.ps1 google_deployment_manager_deployment
+./resource.ps1 google_developer_connect_account_connector
 ./resource.ps1 google_developer_connect_connection
 ./resource.ps1 google_developer_connect_git_repository_link
 ./resource.ps1 google_dialogflow_agent
@@ -430,6 +447,7 @@ Datasource percentage coverage 69.43
 ./resource.ps1 google_discovery_engine_data_store
 ./resource.ps1 google_discovery_engine_schema
 ./resource.ps1 google_discovery_engine_search_engine
+./resource.ps1 google_discovery_engine_sitemap
 ./resource.ps1 google_discovery_engine_target_site
 ./resource.ps1 google_dns_managed_zone_iam_binding
 ./resource.ps1 google_dns_managed_zone_iam_member
@@ -455,6 +473,7 @@ Datasource percentage coverage 69.43
 ./resource.ps1 google_endpoints_service_iam_policy
 ./resource.ps1 google_essential_contacts_contact
 ./resource.ps1 google_eventarc_channel
+./resource.ps1 google_eventarc_enrollment
 ./resource.ps1 google_eventarc_google_api_source
 ./resource.ps1 google_eventarc_google_channel_config
 ./resource.ps1 google_eventarc_message_bus
@@ -471,6 +490,7 @@ Datasource percentage coverage 69.43
 ./resource.ps1 google_firebase_app_check_recaptcha_v3_config
 ./resource.ps1 google_firebase_app_check_service_config
 ./resource.ps1 google_firebase_app_hosting_backend
+./resource.ps1 google_firebase_app_hosting_build
 ./resource.ps1 google_firebase_data_connect_service
 ./resource.ps1 google_firebase_extensions_instance
 ./resource.ps1 google_firebase_project_location
@@ -486,7 +506,10 @@ Datasource percentage coverage 69.43
 ./resource.ps1 google_folder_iam_member
 ./resource.ps1 google_folder_iam_policy
 ./resource.ps1 google_folder_organization_policy
+./resource.ps1 google_folder_service_identity
 ./resource.ps1 google_gemini_code_repository_index
+./resource.ps1 google_gemini_code_tools_setting
+./resource.ps1 google_gemini_code_tools_setting_binding
 ./resource.ps1 google_gemini_data_sharing_with_google_setting
 ./resource.ps1 google_gemini_data_sharing_with_google_setting_binding
 ./resource.ps1 google_gemini_gemini_gcp_enablement_setting
@@ -499,10 +522,12 @@ Datasource percentage coverage 69.43
 ./resource.ps1 google_gemini_repository_group_iam_binding
 ./resource.ps1 google_gemini_repository_group_iam_member
 ./resource.ps1 google_gemini_repository_group_iam_policy
+./resource.ps1 google_gke_backup_backup_channel
 ./resource.ps1 google_gke_backup_backup_plan
 ./resource.ps1 google_gke_backup_backup_plan_iam_binding
 ./resource.ps1 google_gke_backup_backup_plan_iam_member
 ./resource.ps1 google_gke_backup_backup_plan_iam_policy
+./resource.ps1 google_gke_backup_restore_channel
 ./resource.ps1 google_gke_backup_restore_plan
 ./resource.ps1 google_gke_backup_restore_plan_iam_binding
 ./resource.ps1 google_gke_backup_restore_plan_iam_member
@@ -587,6 +612,9 @@ Datasource percentage coverage 69.43
 ./resource.ps1 google_iap_web_backend_service_iam_binding
 ./resource.ps1 google_iap_web_backend_service_iam_member
 ./resource.ps1 google_iap_web_backend_service_iam_policy
+./resource.ps1 google_iap_web_cloud_run_service_iam_binding
+./resource.ps1 google_iap_web_cloud_run_service_iam_member
+./resource.ps1 google_iap_web_cloud_run_service_iam_policy
 ./resource.ps1 google_iap_web_iam_binding
 ./resource.ps1 google_iap_web_iam_member
 ./resource.ps1 google_iap_web_iam_policy
@@ -646,12 +674,14 @@ Datasource percentage coverage 69.43
 ./resource.ps1 google_logging_project_exclusion
 ./resource.ps1 google_logging_project_sink
 ./resource.ps1 google_looker_instance
+./resource.ps1 google_lustre_instance
 ./resource.ps1 google_managed_kafka_cluster
 ./resource.ps1 google_managed_kafka_connect_cluster
 ./resource.ps1 google_managed_kafka_connector
 ./resource.ps1 google_managed_kafka_topic
 ./resource.ps1 google_memcache_instance
 ./resource.ps1 google_memorystore_instance
+./resource.ps1 google_memorystore_instance_desired_user_created_endpoints
 ./resource.ps1 google_migration_center_group
 ./resource.ps1 google_migration_center_preference_set
 ./resource.ps1 google_ml_engine_model
@@ -747,6 +777,9 @@ Datasource percentage coverage 69.43
 ./resource.ps1 google_os_config_guest_policies
 ./resource.ps1 google_os_config_os_policy_assignment
 ./resource.ps1 google_os_config_patch_deployment
+./resource.ps1 google_os_config_v2_policy_orchestrator
+./resource.ps1 google_os_config_v2_policy_orchestrator_for_folder
+./resource.ps1 google_os_config_v2_policy_orchestrator_for_organization
 ./resource.ps1 google_os_login_ssh_public_key
 ./resource.ps1 google_parallelstore_instance
 ./resource.ps1 google_parameter_manager_parameter
@@ -851,6 +884,10 @@ Datasource percentage coverage 69.43
 ./resource.ps1 google_sql_source_representation_instance
 ./resource.ps1 google_sql_ssl_cert
 ./resource.ps1 google_storage_anywhere_cache
+./resource.ps1 google_storage_batch_operations_job
+./resource.ps1 google_storage_control_folder_intelligence_config
+./resource.ps1 google_storage_control_organization_intelligence_config
+./resource.ps1 google_storage_control_project_intelligence_config
 ./resource.ps1 google_storage_folder
 ./resource.ps1 google_storage_managed_folder
 ./resource.ps1 google_storage_managed_folder_iam_binding
@@ -876,6 +913,15 @@ Datasource percentage coverage 69.43
 ./resource.ps1 google_transcoder_job
 ./resource.ps1 google_transcoder_job_template
 ./resource.ps1 google_vertex_ai_deployment_resource_pool
+./resource.ps1 google_vertex_ai_feature_group_iam_binding
+./resource.ps1 google_vertex_ai_feature_group_iam_member
+./resource.ps1 google_vertex_ai_feature_group_iam_policy
+./resource.ps1 google_vertex_ai_feature_online_store_featureview_iam_binding
+./resource.ps1 google_vertex_ai_feature_online_store_featureview_iam_member
+./resource.ps1 google_vertex_ai_feature_online_store_featureview_iam_policy
+./resource.ps1 google_vertex_ai_feature_online_store_iam_binding
+./resource.ps1 google_vertex_ai_feature_online_store_iam_member
+./resource.ps1 google_vertex_ai_feature_online_store_iam_policy
 ./resource.ps1 google_vertex_ai_index_endpoint_deployed_index
 ./resource.ps1 google_vmwareengine_cluster
 ./resource.ps1 google_vmwareengine_external_access_rule
@@ -931,8 +977,11 @@ Datasource percentage coverage 69.43
 ./resource.ps1 google_compute_instance_template_iam_policy -type data
 ./resource.ps1 google_compute_instant_snapshot_iam_policy -type data
 ./resource.ps1 google_compute_machine_types -type data
+./resource.ps1 google_compute_region_backend_service -type data
 ./resource.ps1 google_compute_region_instance_group_manager -type data
 ./resource.ps1 google_compute_security_policy -type data
+./resource.ps1 google_compute_storage_pool_iam_policy -type data
+./resource.ps1 google_compute_storage_pool_types -type data
 ./resource.ps1 google_compute_subnetworks -type data
 ./resource.ps1 google_container_attached_install_manifest -type data
 ./resource.ps1 google_container_aws_versions -type data
@@ -940,6 +989,8 @@ Datasource percentage coverage 69.43
 ./resource.ps1 google_dataplex_aspect_type_iam_policy -type data
 ./resource.ps1 google_dataplex_entry_group_iam_policy -type data
 ./resource.ps1 google_dataplex_entry_type_iam_policy -type data
+./resource.ps1 google_dataproc_metastore_database_iam_policy -type data
+./resource.ps1 google_dataproc_metastore_table_iam_policy -type data
 ./resource.ps1 google_dns_managed_zones -type data
 ./resource.ps1 google_firebase_web_app_config -type data
 ./resource.ps1 google_folder -type data
@@ -947,6 +998,7 @@ Datasource percentage coverage 69.43
 ./resource.ps1 google_folders -type data
 ./resource.ps1 google_gemini_repository_group_iam_policy -type data
 ./resource.ps1 google_iap_tunnel_dest_group_iam_policy -type data
+./resource.ps1 google_iap_web_cloud_run_service_iam_policy -type data
 ./resource.ps1 google_kms_autokey_config -type data
 ./resource.ps1 google_kms_crypto_key_latest_version -type data
 ./resource.ps1 google_kms_crypto_key_versions -type data
@@ -956,6 +1008,7 @@ Datasource percentage coverage 69.43
 ./resource.ps1 google_kms_key_handles -type data
 ./resource.ps1 google_kms_key_rings -type data
 ./resource.ps1 google_logging_log_view_iam_policy -type data
+./resource.ps1 google_memcache_instance -type data
 ./resource.ps1 google_memorystore_instance -type data
 ./resource.ps1 google_oracle_database_autonomous_database -type data
 ./resource.ps1 google_oracle_database_autonomous_databases -type data
@@ -965,6 +1018,8 @@ Datasource percentage coverage 69.43
 ./resource.ps1 google_oracle_database_cloud_vm_clusters -type data
 ./resource.ps1 google_oracle_database_db_nodes -type data
 ./resource.ps1 google_oracle_database_db_servers -type data
+./resource.ps1 google_organization_iam_custom_role -type data
+./resource.ps1 google_organization_iam_custom_roles -type data
 ./resource.ps1 google_organization_iam_policy -type data
 ./resource.ps1 google_organizations -type data
 ./resource.ps1 google_parameter_manager_parameter -type data
@@ -1002,8 +1057,14 @@ Datasource percentage coverage 69.43
 ./resource.ps1 google_spanner_database -type data
 ./resource.ps1 google_storage_bucket_objects -type data
 ./resource.ps1 google_storage_buckets -type data
+./resource.ps1 google_storage_control_folder_intelligence_config -type data
+./resource.ps1 google_storage_control_organization_intelligence_config -type data
+./resource.ps1 google_storage_control_project_intelligence_config -type data
 ./resource.ps1 google_tags_tag_key_iam_policy -type data
 ./resource.ps1 google_tags_tag_keys -type data
 ./resource.ps1 google_tags_tag_value -type data
 ./resource.ps1 google_tags_tag_value_iam_policy -type data
 ./resource.ps1 google_tags_tag_values -type data
+./resource.ps1 google_vertex_ai_feature_group_iam_policy -type data
+./resource.ps1 google_vertex_ai_feature_online_store_featureview_iam_policy -type data
+./resource.ps1 google_vertex_ai_feature_online_store_iam_policy -type data

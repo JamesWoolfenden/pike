@@ -1,7 +1,7 @@
 # todo azure
 
-Resource percentage coverage   4.52
-Datasource percentage coverage 35.06
+Resource percentage coverage   4.51
+Datasource percentage coverage 34.96
 
 ./resource.ps1 azurerm_aadb2c_directory
 ./resource.ps1 azurerm_active_directory_domain_service
@@ -356,6 +356,7 @@ Datasource percentage coverage 35.06
 ./resource.ps1 azurerm_eventgrid_domain_topic
 ./resource.ps1 azurerm_eventgrid_event_subscription
 ./resource.ps1 azurerm_eventgrid_namespace
+./resource.ps1 azurerm_eventgrid_partner_configuration
 ./resource.ps1 azurerm_eventgrid_system_topic
 ./resource.ps1 azurerm_eventgrid_system_topic_event_subscription
 ./resource.ps1 azurerm_eventgrid_topic
@@ -804,6 +805,7 @@ Datasource percentage coverage 35.06
 ./resource.ps1 azurerm_service_fabric_managed_cluster
 ./resource.ps1 azurerm_servicebus_namespace
 ./resource.ps1 azurerm_servicebus_namespace_authorization_rule
+./resource.ps1 azurerm_servicebus_namespace_customer_managed_key
 ./resource.ps1 azurerm_servicebus_namespace_disaster_recovery_config
 ./resource.ps1 azurerm_servicebus_queue
 ./resource.ps1 azurerm_servicebus_queue_authorization_rule
@@ -914,6 +916,7 @@ Datasource percentage coverage 35.06
 ./resource.ps1 azurerm_stream_analytics_function_javascript_udf
 ./resource.ps1 azurerm_stream_analytics_job
 ./resource.ps1 azurerm_stream_analytics_job_schedule
+./resource.ps1 azurerm_stream_analytics_job_storage_account
 ./resource.ps1 azurerm_stream_analytics_managed_private_endpoint
 ./resource.ps1 azurerm_stream_analytics_output_blob
 ./resource.ps1 azurerm_stream_analytics_output_cosmosdb
@@ -1030,6 +1033,7 @@ Datasource percentage coverage 35.06
 ./resource.ps1 azurerm_web_pubsub_network_acl
 ./resource.ps1 azurerm_web_pubsub_service
 ./resource.ps1 azurerm_web_pubsub_shared_private_link_resource
+./resource.ps1 azurerm_web_pubsub_socketio
 ./resource.ps1 azurerm_windows_function_app
 ./resource.ps1 azurerm_windows_function_app_slot
 ./resource.ps1 azurerm_windows_web_app
@@ -1248,6 +1252,7 @@ Datasource percentage coverage 35.06
 ./resource.ps1 azurerm_proximity_placement_group -type data
 ./resource.ps1 azurerm_public_maintenance_configurations -type data
 ./resource.ps1 azurerm_recovery_services_vault -type data
+./resource.ps1 azurerm_role_assignments -type data
 ./resource.ps1 azurerm_role_management_policy -type data
 ./resource.ps1 azurerm_sentinel_alert_rule_anomaly -type data
 ./resource.ps1 azurerm_servicebus_namespace_disaster_recovery_config -type data
