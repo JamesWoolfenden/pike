@@ -942,6 +942,7 @@
         "google_redis_cluster",
         "google_redis_cluster_user_created_connections",
         "google_redis_instance",
+        "google_resource_manager_capability",
         "google_resource_manager_lien",
         "google_runtimeconfig_config",
         "google_runtimeconfig_config_iam_binding",
