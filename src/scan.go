@@ -242,13 +242,13 @@ func LocateTerraform() (string, error) {
 func MakePolicy(dirName string, file *string, init bool, EnableResources bool, provider string) (OutputPolicy, error) {
 	var (
 		files  []string
-		Output OutputPolicy
+		output OutputPolicy
 	)
 
 	if file == nil {
 		fullPath, err := filepath.Abs(dirName)
 		if err != nil {
-			return Output, &absolutePathError{directory: dirName, err: err}
+			return output, &absolutePathError{directory: dirName, err: err}
 		}
 
 		if init {
@@ -264,24 +264,24 @@ func MakePolicy(dirName string, file *string, init bool, EnableResources bool, p
 
 		files, err = GetTF(fullPath)
 		if err != nil {
-			return Output, &getTFError{directory: fullPath, err: err}
+			return output, &getTFError{directory: fullPath, err: err}
 		}
 	} else {
 		myFile, err := filepath.Abs(*file)
 		if err != nil {
-			return Output, &absolutePathError{directory: *file, err: err}
+			return output, &absolutePathError{directory: *file, err: err}
 		}
 
 		// is this a tfFile?
 		if !(FileExists(myFile)) {
-			return Output, os.ErrNotExist
+			return output, os.ErrNotExist
 		}
 
 		files = append(files, myFile)
 	}
 
 	if len(files) == 0 {
-		return Output, &emptyIACError{}
+		return output, &emptyIACError{}
 	}
 
 	var resources []ResourceV2
@@ -297,9 +297,18 @@ func MakePolicy(dirName string, file *string, init bool, EnableResources bool, p
 			resources = append(resources, resource...)
 		}
 	}
+	permissionsBag := GetPermissionBag(resources, provider)
 
-	var PermissionBag Sorted
+	output, err := GetPolicy(permissionsBag, EnableResources)
+	if err != nil {
+		return output, &getPolicyError{err: err}
+	}
 
+	return output, nil
+}
+
+func GetPermissionBag(resources []ResourceV2, provider string) Sorted {
+	var permissionBag Sorted
 	var newPerms Sorted
 
 	for _, resource := range resources {
@@ -318,24 +327,18 @@ func MakePolicy(dirName string, file *string, init bool, EnableResources bool, p
 
 		switch strings.ToLower(provider) {
 		case "aws":
-			PermissionBag.AWS = append(PermissionBag.AWS, newPerms.AWS...)
+			permissionBag.AWS = append(permissionBag.AWS, newPerms.AWS...)
 		case "gcp", "google":
-			PermissionBag.GCP = append(PermissionBag.GCP, newPerms.GCP...)
+			permissionBag.GCP = append(permissionBag.GCP, newPerms.GCP...)
 		case "azure", "azurerm":
-			PermissionBag.AZURE = append(PermissionBag.AZURE, newPerms.AZURE...)
+			permissionBag.AZURE = append(permissionBag.AZURE, newPerms.AZURE...)
 		case "":
-			PermissionBag.AWS = append(PermissionBag.AWS, newPerms.AWS...)
-			PermissionBag.GCP = append(PermissionBag.GCP, newPerms.GCP...)
-			PermissionBag.AZURE = append(PermissionBag.AZURE, newPerms.AZURE...)
+			permissionBag.AWS = append(permissionBag.AWS, newPerms.AWS...)
+			permissionBag.GCP = append(permissionBag.GCP, newPerms.GCP...)
+			permissionBag.AZURE = append(permissionBag.AZURE, newPerms.AZURE...)
 		}
 	}
-
-	Output, err := GetPolicy(PermissionBag, EnableResources)
-	if err != nil {
-		return Output, &getPolicyError{err: err}
-	}
-
-	return Output, nil
+	return permissionBag
 }
 
 // GetTF return tf files in a directory.
