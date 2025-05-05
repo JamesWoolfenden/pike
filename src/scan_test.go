@@ -95,6 +95,75 @@ func TestGetTF(t *testing.T) {
 	}
 }
 
+func TestGetPermissionBag(t *testing.T) {
+	t.Parallel()
+
+	type args struct {
+		resources []pike.ResourceV2
+		provider  string
+	}
+
+	//goland:noinspection GoLinter
+	tests := []struct {
+		name string
+		args args
+		want pike.Sorted
+	}{
+		{
+			"basic_aws",
+			args{
+				resources: []pike.ResourceV2{
+					{
+						TypeName: "terraform",
+						Name:     "aws_s3_bucket",
+						Provider: "aws",
+						Attributes: []string{
+							"tags",
+						},
+					},
+				},
+			},
+			pike.Sorted{
+				AWS: []string{
+					"s3:PutBucketTagging",
+					"s3:DeleteBucket",
+					"s3:CreateBucket",
+					"s3:GetLifecycleConfiguration",
+					"s3:GetBucketTagging",
+					"s3:GetBucketWebsite",
+					"s3:GetBucketLogging",
+					"s3:ListBucket",
+					"s3:GetAccelerateConfiguration",
+					"s3:GetBucketVersioning",
+					"s3:GetBucketAcl",
+					"s3:GetBucketPolicy",
+					"s3:GetReplicationConfiguration",
+					"s3:GetBucketObjectLockConfiguration",
+					"s3:GetObjectAcl",
+					"s3:GetObject",
+					"s3:GetEncryptionConfiguration",
+					"s3:GetBucketRequestPayment",
+					"s3:GetBucketCORS",
+					"s3:DeleteBucket",
+				},
+			},
+		},
+	}
+
+	for _, tt := range tests {
+		tt := tt
+		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
+
+			permissionBag := pike.GetPermissionBag(tt.args.resources, tt.args.provider)
+
+			if !reflect.DeepEqual(permissionBag, tt.want) {
+				t.Errorf("MakePolicy() = %v, want %v", permissionBag, tt.want)
+			}
+		})
+	}
+}
+
 func Test_stringInSlice(t *testing.T) {
 	t.Parallel()
 
