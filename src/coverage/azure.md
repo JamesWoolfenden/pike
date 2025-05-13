@@ -1,7 +1,7 @@
 # todo azure
 
-Resource percentage coverage   4.51
-Datasource percentage coverage 34.96
+Resource percentage coverage   4.50
+Datasource percentage coverage 34.86
 
 ./resource.ps1 azurerm_aadb2c_directory
 ./resource.ps1 azurerm_active_directory_domain_service
@@ -657,6 +657,7 @@ Datasource percentage coverage 34.96
 ./resource.ps1 azurerm_network_profile
 ./resource.ps1 azurerm_new_relic_monitor
 ./resource.ps1 azurerm_new_relic_tag_rule
+./resource.ps1 azurerm_nginx_api_key
 ./resource.ps1 azurerm_nginx_certificate
 ./resource.ps1 azurerm_nginx_configuration
 ./resource.ps1 azurerm_nginx_deployment
@@ -971,6 +972,7 @@ Datasource percentage coverage 34.96
 ./resource.ps1 azurerm_system_center_virtual_machine_manager_cloud
 ./resource.ps1 azurerm_system_center_virtual_machine_manager_server
 ./resource.ps1 azurerm_system_center_virtual_machine_manager_virtual_machine_instance
+./resource.ps1 azurerm_system_center_virtual_machine_manager_virtual_machine_instance_guest_agent
 ./resource.ps1 azurerm_system_center_virtual_machine_manager_virtual_machine_template
 ./resource.ps1 azurerm_system_center_virtual_machine_manager_virtual_network
 ./resource.ps1 azurerm_tenant_template_deployment
@@ -1113,7 +1115,7 @@ Datasource percentage coverage 34.96
 ./resource.ps1 azurerm_dns_srv_record -type data
 ./resource.ps1 azurerm_dns_txt_record -type data
 ./resource.ps1 azurerm_dns_zone -type data
-./resource.ps1 azurerm_dynatrace_monitor. -type data
+./resource.ps1 azurerm_dynatrace_monitor -type data
 ./resource.ps1 azurerm_elastic_cloud_elasticsearch -type data
 ./resource.ps1 azurerm_elastic_san -type data
 ./resource.ps1 azurerm_elastic_san_volume_group -type data
@@ -1206,6 +1208,7 @@ Datasource percentage coverage 34.96
 ./resource.ps1 azurerm_network_manager_connectivity_configuration -type data
 ./resource.ps1 azurerm_network_security_group -type data
 ./resource.ps1 azurerm_network_service_tags -type data
+./resource.ps1 azurerm_nginx_api_key -type data
 ./resource.ps1 azurerm_nginx_certificate -type data
 ./resource.ps1 azurerm_nginx_configuration -type data
 ./resource.ps1 azurerm_nginx_deployment -type data

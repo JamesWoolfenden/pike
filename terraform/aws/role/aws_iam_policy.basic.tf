@@ -7,8 +7,10 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "VisualEditor0",
         "Effect" : "Allow",
         "Action" : [
-          "ec2:DescribeVpcEndpointAssociations",
-          "fis:ListExperimentTemplates"
+
+          //aws_elb
+          "elasticloadbalancing:DescribeLoadBalancers",
+
         ],
         "Resource" : [
           "*"

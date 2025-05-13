@@ -1,6 +1,6 @@
 # todo google
 
-Resource percentage coverage   17.06
+Resource percentage coverage   17.00
 Datasource percentage coverage 66.58
 
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -34,6 +34,7 @@ Datasource percentage coverage 66.58
 ./resource.ps1 google_apigee_keystores_aliases_self_signed_cert
 ./resource.ps1 google_apigee_nat_address
 ./resource.ps1 google_apigee_organization
+./resource.ps1 google_apigee_security_profile_v2
 ./resource.ps1 google_apigee_sync_authorization
 ./resource.ps1 google_apigee_target_server
 ./resource.ps1 google_apihub_api_hub_instance
@@ -172,6 +173,7 @@ Datasource percentage coverage 66.58
 ./resource.ps1 google_compute_backend_service_iam_member
 ./resource.ps1 google_compute_backend_service_iam_policy
 ./resource.ps1 google_compute_backend_service_signed_url_key
+./resource.ps1 google_compute_cross_site_network
 ./resource.ps1 google_compute_disk
 ./resource.ps1 google_compute_disk_async_replication
 ./resource.ps1 google_compute_disk_iam_binding
@@ -372,6 +374,7 @@ Datasource percentage coverage 66.58
 ./resource.ps1 google_dataplex_datascan_iam_binding
 ./resource.ps1 google_dataplex_datascan_iam_member
 ./resource.ps1 google_dataplex_datascan_iam_policy
+./resource.ps1 google_dataplex_entry
 ./resource.ps1 google_dataplex_entry_group
 ./resource.ps1 google_dataplex_entry_group_iam_binding
 ./resource.ps1 google_dataplex_entry_group_iam_member
@@ -816,6 +819,7 @@ Datasource percentage coverage 66.58
 ./resource.ps1 google_recaptcha_enterprise_key
 ./resource.ps1 google_redis_cluster
 ./resource.ps1 google_redis_cluster_user_created_connections
+./resource.ps1 google_resource_manager_capability
 ./resource.ps1 google_resource_manager_lien
 ./resource.ps1 google_runtimeconfig_config
 ./resource.ps1 google_runtimeconfig_config_iam_binding

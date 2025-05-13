@@ -595,6 +595,14 @@ var tFLookupDataAWS = map[string]interface{}{
 	"aws_workspaces_image":                                                  dataAwsWorkspaceImage,
 	"aws_vpc_endpoint_associations":                                         dataAwsVpcEndpointAssociations,
 	"aws_fis_experiment_templates":                                          dataAwsFisExperimentTemplates,
+	"aws_kms_public_key":                                                    dataAwsKmsPublicKey,
+	"aws_lambda_function_url":                                               dataAwsLambdaFunctionUrl,
+	"aws_lambda_functions":                                                  dataAwsLambdaFunctions,
+	"aws_lambda_layer_version":                                              dataAwsLambdaLayerVersion,
+	"aws_network_interface":                                                 dataAwsNetworkInterface,
+	"aws_waf_subscribed_rule_group":                                         dataAwsWafSubscribedRuleGroup,
+	"aws_wafregional_subscribed_rule_group":                                 dataAwsWafRegionalSubscribedRuleGroup,
+	"aws_elb":                                                               dataAwsElb,
 }
 
 // GetAWSDataPermissions gets permissions required for datasource's.

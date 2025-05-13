@@ -55,6 +55,8 @@
       "dynamodb:UpdateTable",
       "dynamodb:UpdateTimeToLive"
     ],
-    "plan": []
+    "plan": [
+      "dynamodb:DescribeTable"
+    ]
   }
 ]

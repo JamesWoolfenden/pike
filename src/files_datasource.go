@@ -1575,3 +1575,27 @@ var dataAwsVpcEndpointAssociations []byte
 
 //go:embed  mapping/aws/data/fis/aws_fis_experiment_templates.json
 var dataAwsFisExperimentTemplates []byte
+
+//go:embed  mapping/aws/data/kms/aws_kms_public_key.json
+var dataAwsKmsPublicKey []byte
+
+//go:embed  mapping/aws/data/lambda/aws_lambda_function_url.json
+var dataAwsLambdaFunctionUrl []byte
+
+//go:embed  mapping/aws/data/lambda/aws_lambda_functions.json
+var dataAwsLambdaFunctions []byte
+
+//go:embed  mapping/aws/data/lambda/aws_lambda_layer_version.json
+var dataAwsLambdaLayerVersion []byte
+
+//go:embed  mapping/aws/data/ec2/aws_network_interface.json
+var dataAwsNetworkInterface []byte
+
+//go:embed  mapping/aws/data/waf/aws_waf_subscribed_rule_group.json
+var dataAwsWafSubscribedRuleGroup []byte
+
+//go:embed  mapping/aws/data/wafregional/aws_wafregional_subscribed_rule_group.json
+var dataAwsWafRegionalSubscribedRuleGroup []byte
+
+//go:embed  mapping/aws/data/elasticloadbalancing/aws_elb.json
+var dataAwsElb []byte
