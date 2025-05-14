@@ -8,8 +8,8 @@ resource "aws_iam_policy" "basic" {
         "Effect" : "Allow",
         "Action" : [
 
-          //aws_elb
-          "elasticloadbalancing:DescribeLoadBalancers",
+          "ec2:GetDefaultCreditSpecification",
+          "ec2:ModifyDefaultCreditSpecification",
 
         ],
         "Resource" : [

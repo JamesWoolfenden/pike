@@ -1,6 +1,6 @@
 # todo google
 
-Resource percentage coverage   17.00
+Resource percentage coverage   16.97
 Datasource percentage coverage 66.58
 
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -374,7 +374,6 @@ Datasource percentage coverage 66.58
 ./resource.ps1 google_dataplex_datascan_iam_binding
 ./resource.ps1 google_dataplex_datascan_iam_member
 ./resource.ps1 google_dataplex_datascan_iam_policy
-./resource.ps1 google_dataplex_entry
 ./resource.ps1 google_dataplex_entry_group
 ./resource.ps1 google_dataplex_entry_group_iam_binding
 ./resource.ps1 google_dataplex_entry_group_iam_member
@@ -494,6 +493,9 @@ Datasource percentage coverage 66.58
 ./resource.ps1 google_firebase_app_check_service_config
 ./resource.ps1 google_firebase_app_hosting_backend
 ./resource.ps1 google_firebase_app_hosting_build
+./resource.ps1 google_firebase_app_hosting_default_domain
+./resource.ps1 google_firebase_app_hosting_domain
+./resource.ps1 google_firebase_app_hosting_traffic
 ./resource.ps1 google_firebase_data_connect_service
 ./resource.ps1 google_firebase_extensions_instance
 ./resource.ps1 google_firebase_project_location

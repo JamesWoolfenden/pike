@@ -828,3 +828,6 @@ var awsRedshiftIntegration []byte
 
 //go:embed mapping/aws/resource/backup/aws_backup_restore_testing_plan.json
 var awsBackupRestoreTestingPlan []byte
+
+//go:embed mapping/aws/resource/ec2/aws_ec2_default_credit_specification.json
+var awsEc2DefaultCreditSpecification []byte

@@ -232,6 +232,7 @@
     "google_logging_organization_settings",
     "google_logging_project_cmek_settings",
     "google_logging_project_settings",
+    "google_lustre_instance",
     "google_memcache_instance",
     "google_memorystore_instance",
     "google_monitoring_app_engine_service",

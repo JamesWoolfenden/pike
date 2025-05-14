@@ -1512,6 +1512,7 @@ var tFLookup = map[string]interface{}{ //nolint:gochecknoglobals
 	"aws_athena_capacity_reservation":                                  awsAthenaCapacityReservation,
 	"aws_redshift_integration":                                         awsRedshiftIntegration,
 	"aws_backup_restore_testing_plan":                                  awsBackupRestoreTestingPlan,
+	"aws_ec2_default_credit_specification":                             awsEc2DefaultCreditSpecification,
 }
 
 // GetAWSPermissions for AWS resources.

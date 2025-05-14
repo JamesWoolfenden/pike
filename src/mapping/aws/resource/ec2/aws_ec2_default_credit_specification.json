@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "ec2:GetDefaultCreditSpecification",
+      "ec2:ModifyDefaultCreditSpecification"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
