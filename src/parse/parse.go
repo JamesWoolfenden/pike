@@ -123,7 +123,7 @@ func getGoFiles(path string, extension string) ([]string, error) {
 
 	absPath, err := filepath.Abs(path)
 
-	log.Info().Msgf(absPath)
+	log.Info().Msg(absPath)
 
 	if err != nil {
 		return nil, fmt.Errorf("absolute path error %v", err)

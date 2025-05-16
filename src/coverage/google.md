@@ -1,7 +1,7 @@
 # todo google
 
 Resource percentage coverage   16.97
-Datasource percentage coverage 66.58
+Datasource percentage coverage 66.39
 
 ./resource.ps1 google_access_context_manager_access_level_condition
 ./resource.ps1 google_access_context_manager_service_perimeter_dry_run_egress_policy
@@ -1014,6 +1014,7 @@ Datasource percentage coverage 66.58
 ./resource.ps1 google_kms_key_handles -type data
 ./resource.ps1 google_kms_key_rings -type data
 ./resource.ps1 google_logging_log_view_iam_policy -type data
+./resource.ps1 google_lustre_instance -type data
 ./resource.ps1 google_memcache_instance -type data
 ./resource.ps1 google_memorystore_instance -type data
 ./resource.ps1 google_oracle_database_autonomous_database -type data
