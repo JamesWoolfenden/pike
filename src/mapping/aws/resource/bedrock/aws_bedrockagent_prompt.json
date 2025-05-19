@@ -1,0 +1,30 @@
+[
+  {
+    "apply": [
+      "bedrock:CreatePrompt",
+      "bedrock:DeletePrompt",
+      "bedrock:UpdatePrompt",
+      "bedrock:GetPrompt",
+      "bedrock:ListTagsForResource"
+    ],
+    "attributes": {
+      "customer_encryption_key_arn": [
+        "kms:GenerateDataKey",
+        "kms:Decrypt"
+      ],
+      "tags": [
+        "bedrock:UntagResource",
+        "bedrock:TagResource"
+      ]
+    },
+    "destroy": [
+      "bedrock:DeletePrompt"
+    ],
+    "modify": [
+      "bedrock:UpdatePrompt"
+    ],
+    "plan": [
+      "bedrock:GetPrompt"
+    ]
+  }
+]

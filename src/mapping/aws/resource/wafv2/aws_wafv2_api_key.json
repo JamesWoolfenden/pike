@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "wafv2:CreateAPIKey",
+      "wafv2:DeleteAPIKey",
+      "wafv2:ListAPIKeys"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "wafv2:DeleteAPIKey"
+    ],
+    "modify": [],
+    "plan": [
+      "wafv2:ListAPIKeys"
+    ]
+  }
+]

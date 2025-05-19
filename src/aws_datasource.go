@@ -603,6 +603,8 @@ var tFLookupDataAWS = map[string]interface{}{
 	"aws_waf_subscribed_rule_group":                                         dataAwsWafSubscribedRuleGroup,
 	"aws_wafregional_subscribed_rule_group":                                 dataAwsWafRegionalSubscribedRuleGroup,
 	"aws_elb":                                                               dataAwsElb,
+	"aws_account_primary_contact":                                           dataAwsAccountPrimaryContact,
+	"aws_dynamodb_tables":                                                   dataAwsDynamodbTables,
 }
 
 // GetAWSDataPermissions gets permissions required for datasource's.

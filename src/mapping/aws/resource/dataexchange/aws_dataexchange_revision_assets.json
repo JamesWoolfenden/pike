@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "dataexchange:ListTagsForResource",
+      "dataexchange:CreateRevision",
+      "dataexchange:DeleteRevision",
+      "dataexchange:UpdateRevision",
+      "dataexchange:GetRevision"
+    ],
+    "attributes": {
+      "tags": [
+        "dataexchange:TagResource",
+        "dataexchange:UntagResource"
+      ]
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

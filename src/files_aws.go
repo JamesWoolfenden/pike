@@ -831,3 +831,18 @@ var awsBackupRestoreTestingPlan []byte
 
 //go:embed mapping/aws/resource/ec2/aws_ec2_default_credit_specification.json
 var awsEc2DefaultCreditSpecification []byte
+
+//go:embed mapping/aws/resource/bedrock/aws_bedrockagent_prompt.json
+var awsBedrockagentPrompt []byte
+
+//go:embed mapping/aws/resource/cloudfront-keyvaluestore/aws_cloudfrontkeyvaluestore_keys_exclusive.json
+var awsCloudfrontkeyvaluestoreKeysExclusive []byte
+
+//go:embed mapping/aws/resource/dataexchange/aws_dataexchange_revision_assets.json
+var awsDataexchangeRevisionAssets []byte
+
+//go:embed mapping/aws/resource/inspector2/aws_inspector2_filter.json
+var awsInspector2Filter []byte
+
+//go:embed mapping/aws/resource/wafv2/aws_wafv2_api_key.json
+var awsWafv2ApiKey []byte

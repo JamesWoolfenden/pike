@@ -869,7 +869,6 @@ Datasource percentage coverage 34.76
 ./resource.ps1 azurerm_spring_cloud_new_relic_application_performance_monitoring
 ./resource.ps1 azurerm_spring_cloud_service
 ./resource.ps1 azurerm_spring_cloud_storage
-./resource.ps1 azurerm_sql_database
 ./resource.ps1 azurerm_sql_firewall_rule
 ./resource.ps1 azurerm_sql_server
 ./resource.ps1 azurerm_sql_virtual_network_rule

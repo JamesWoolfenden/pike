@@ -1599,3 +1599,9 @@ var dataAwsWafRegionalSubscribedRuleGroup []byte
 
 //go:embed  mapping/aws/data/elasticloadbalancing/aws_elb.json
 var dataAwsElb []byte
+
+//go:embed  mapping/aws/data/account/aws_account_primary_contact.json
+var dataAwsAccountPrimaryContact []byte
+
+//go:embed  mapping/aws/data/dynamodb/aws_dynamodb_tables.json
+var dataAwsDynamodbTables []byte

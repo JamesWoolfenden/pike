@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "cloudfront-keyvaluestore:DescribeKeyValueStore",
+      "cloudfront-keyvaluestore:ListKeys",
+      "cloudfront-keyvaluestore:UpdateKeys"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

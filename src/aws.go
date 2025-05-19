@@ -1513,6 +1513,11 @@ var tFLookup = map[string]interface{}{ //nolint:gochecknoglobals
 	"aws_redshift_integration":                                         awsRedshiftIntegration,
 	"aws_backup_restore_testing_plan":                                  awsBackupRestoreTestingPlan,
 	"aws_ec2_default_credit_specification":                             awsEc2DefaultCreditSpecification,
+	"aws_bedrockagent_prompt":                                          awsBedrockagentPrompt,
+	"aws_cloudfrontkeyvaluestore_keys_exclusive":                       awsCloudfrontkeyvaluestoreKeysExclusive,
+	"aws_dataexchange_revision_assets":                                 awsDataexchangeRevisionAssets,
+	"aws_inspector2_filter":                                            awsInspector2Filter,
+	"aws_wafv2_api_key":                                                awsWafv2ApiKey,
 }
 
 // GetAWSPermissions for AWS resources.

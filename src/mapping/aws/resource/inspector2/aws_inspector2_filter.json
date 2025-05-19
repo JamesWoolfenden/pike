@@ -1,0 +1,26 @@
+[
+  {
+    "apply": [
+      "inspector2:ListTagsForResource",
+      "inspector2:CreateFilter",
+      "inspector2:ListFilters",
+      "inspector2:DeleteFilter",
+      "inspector2:UpdateFilter"
+    ],
+    "attributes": {
+      "tags": [
+        "inspector2:TagResource",
+        "inspector2:UntagResource"
+      ]
+    },
+    "destroy": [
+      "inspector2:DeleteFilter"
+    ],
+    "modify": [
+      "inspector2:UpdateFilter"
+    ],
+    "plan": [
+      "inspector2:ListFilters"
+    ]
+  }
+]
