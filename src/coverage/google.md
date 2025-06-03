@@ -159,7 +159,6 @@ Datasource percentage coverage 65.85
 ./resource.ps1 google_colab_runtime_template_iam_member
 ./resource.ps1 google_colab_runtime_template_iam_policy
 ./resource.ps1 google_colab_schedule
-./resource.ps1 google_composer_environment
 ./resource.ps1 google_composer_user_workloads_config_map
 ./resource.ps1 google_composer_user_workloads_secret
 ./resource.ps1 google_compute_attached_disk

@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "quicksight:UpdateAccountSettings"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

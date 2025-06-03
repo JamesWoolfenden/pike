@@ -846,3 +846,30 @@ var awsInspector2Filter []byte
 
 //go:embed mapping/aws/resource/wafv2/aws_wafv2_api_key.json
 var awsWafv2ApiKey []byte
+
+//go:embed mapping/aws/resource/notifications/aws_notifications_channel_association.json
+var awsNotificationsChannelAssociation []byte
+
+//go:embed mapping/aws/resource/notifications/aws_notifications_event_rule.json
+var awsNotificationsEventRule []byte
+
+//go:embed mapping/aws/resource/notifications/aws_notifications_notification_configuration.json
+var awsNotificationsNotificationConfiguration []byte
+
+//go:embed mapping/aws/resource/notifications/aws_notifications_notification_hub.json
+var awsNotificationsNotificationHub []byte
+
+//go:embed mapping/aws/resource/notifications-contacts/aws_notificationscontacts_email_contact.json
+var awsNotificationscontactsEmailContact []byte
+
+//go:embed mapping/aws/resource/quicksight/aws_quicksight_account_settings.json
+var awsQuicksightAccountSettings []byte
+
+//go:embed mapping/aws/resource/workspaces-web/aws_workspacesweb_browser_settings.json
+var awsWorkspaceswebBrowserSettings []byte
+
+//go:embed mapping/aws/resource/workspaces-web/aws_workspacesweb_network_settings.json
+var awsWorkspaceswebNetworkSettings []byte
+
+//go:embed mapping/aws/resource/workspaces-web/aws_workspacesweb_user_settings.json
+var awsWorkspaceswebUserSettings []byte

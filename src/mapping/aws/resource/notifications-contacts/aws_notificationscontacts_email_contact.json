@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "notifications-contacts:CreateEmailContact",
+      "notifications-contacts:GetEmailContact",
+      "notifications-contacts:SendActivationCode",
+      "notifications-contacts:ListTagsForResource",
+      "notifications-contacts:DeleteEmailContact"
+    ],
+    "attributes": {
+      "tags": [
+        "notifications-contacts:TagResource",
+        "notifications-contacts:UntagResource"
+      ]
+    },
+    "destroy": [
+      "notifications-contacts:DeleteEmailContact"
+    ],
+    "modify": [],
+    "plan": [
+      "notifications-contacts:GetEmailContact"
+    ]
+  }
+]

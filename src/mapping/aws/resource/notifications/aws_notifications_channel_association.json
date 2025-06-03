@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "notifications:AssociateChannel",
+      "notifications:DisassociateChannel",
+      "notifications:ListChannels"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "notifications:DisassociateChannel"
+    ],
+    "modify": [],
+    "plan": [
+      "notifications:ListChannels"
+    ]
+  }
+]

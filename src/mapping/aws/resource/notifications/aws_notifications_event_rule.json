@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "notifications:CreateEventRule",
+      "notifications:GetEventRule",
+      "notifications:DeleteEventRule"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "notifications:DeleteEventRule"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

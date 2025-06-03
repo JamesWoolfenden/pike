@@ -1518,6 +1518,15 @@ var tFLookup = map[string]interface{}{ //nolint:gochecknoglobals
 	"aws_dataexchange_revision_assets":                                 awsDataexchangeRevisionAssets,
 	"aws_inspector2_filter":                                            awsInspector2Filter,
 	"aws_wafv2_api_key":                                                awsWafv2ApiKey,
+	"aws_notifications_channel_association":                            awsNotificationsChannelAssociation,
+	"aws_notifications_event_rule":                                     awsNotificationsEventRule,
+	"aws_notifications_notification_configuration":                     awsNotificationsNotificationConfiguration,
+	"aws_notifications_notification_hub":                               awsNotificationsNotificationHub,
+	"aws_notificationscontacts_email_contact":                          awsNotificationscontactsEmailContact,
+	"aws_quicksight_account_settings":                                  awsQuicksightAccountSettings,
+	"aws_workspacesweb_browser_settings":                               awsWorkspaceswebBrowserSettings,
+	"aws_workspacesweb_network_settings":                               awsWorkspaceswebNetworkSettings,
+	"aws_workspacesweb_user_settings":                                  awsWorkspaceswebUserSettings,
 }
 
 // GetAWSPermissions for AWS resources.

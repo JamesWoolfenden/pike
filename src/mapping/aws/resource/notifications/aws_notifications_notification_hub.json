@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "notifications:RegisterNotificationHub",
+      "notifications:DeregisterNotificationHub",
+      "iam:CreateServiceLinkedRole",
+      "notifications:ListNotificationHubs"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "notifications:DeregisterNotificationHub"
+    ],
+    "modify": [],
+    "plan": [
+      "notifications:ListNotificationHubs"
+    ]
+  }
+]

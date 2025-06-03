@@ -1,0 +1,26 @@
+[
+  {
+    "apply": [
+      "notifications:ListTagsForResource",
+      "notifications:CreateNotificationConfiguration",
+      "notifications:GetNotificationConfiguration",
+      "notifications:DeleteNotificationConfiguration",
+      "notifications:UpdateNotificationConfiguration"
+    ],
+    "attributes": {
+      "tags": [
+        "notifications:TagResource",
+        "notifications:UntagResource"
+      ]
+    },
+    "destroy": [
+      "notifications:DeleteNotificationConfiguration"
+    ],
+    "modify": [
+      "notifications:UpdateNotificationConfiguration"
+    ],
+    "plan": [
+      "notifications:GetNotificationConfiguration"
+    ]
+  }
+]

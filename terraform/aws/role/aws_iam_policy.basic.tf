@@ -7,55 +7,62 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "VisualEditor0",
         "Effect" : "Allow",
         "Action" : [
-          "cloudfront:CreateKeyValueStore",
-          "cloudfront:DeleteKeyValueStore",
-          "cloudfront:DescribeKeyValueStore",
-          "cloudfront:UpdateKeyValueStore",
+          "ec2:AssociateSubnetCidrBlock",
+          "ec2:CreateSecurityGroup",
+          "ec2:CreateSubnet",
+          "ec2:CreateVPC",
+          "ec2:DeleteSecurityGroup",
+          "ec2:DeleteSubnet",
+          "ec2:DeleteVPC",
+          "ec2:DescribeAccountAttributes",
+          "ec2:DescribeNetworkAcls",
+          "ec2:DescribeNetworkInterfaces",
+          "ec2:DescribeSecurityGroups",
+          "ec2:DescribeSubnets",
+          "ec2:DescribeVpcAttribute",
+          "ec2:DescribeVpcs",
+          "ec2:DisassociateSubnetCidrBlock",
+          "ec2:ModifySubnetAttribute",
+          "ec2:ModifyVpcAttribute",
+          "ec2:ModifyVpcTenancy",
+          "ec2:RevokeSecurityGroupEgress",
+          "ec2:DescribeAvailabilityZones",
+          "kms:CreateKey",
+          "kms:DescribeKey",
+          "kms:GetKeyPolicy",
+          "kms:GetKeyRotationStatus",
+          "kms:ListResourceTags",
+          "kms:ScheduleKeyDeletion",
+          "kms:PutKeyPolicy",
 
-          //aws_bedrockagent_prompt
-          "bedrock:CreatePrompt",
-          "bedrock:DeletePrompt",
-          "bedrock:UpdatePrompt",
-          "bedrock:GetPrompt",
-          "bedrock:ListTagsForResource",
-          "bedrock:UntagResource",
-          "bedrock:TagResource",
-          "kms:GenerateDataKey",
+
+          //aws_quicksight_account_settings
+          "quicksight:UpdateAccountSettings",
+
+          //aws_workspacesweb_browser_settings
+          "workspaces-web:CreateBrowserSettings",
+          "workspaces-web:GetBrowserSettings",
+          "workspaces-web:ListTagsForResource",
+          "workspaces-web:DeleteBrowserSettings",
+          "workspaces-web:TagResource",
+          "workspaces-web:UntagResource",
+
+          //aws_workspacesweb_network_settings
+          "workspaces-web:CreateNetworkSettings",
+          "iam:CreateServiceLinkedRole",
+          "workspaces-web:GetNetworkSettings",
+          "workspaces-web:DeleteNetworkSettings",
+
+          //aws_workspacesweb_user_settings
+          "workspaces-web:CreateUserSettings",
+          "workspaces-web:TagResource",
+          "workspaces-web:UntagResource",
+          "workspaces-web:GetUserSettings",
+          "workspaces-web:DeleteUserSettings",
+          "kms:CreateGrant",
           "kms:Decrypt",
+          "kms:GenerateDataKey"
 
-          //aws_cloudfrontkeyvaluestore_keys_exclusive
-          "cloudfront-keyvaluestore:DescribeKeyValueStore",
-          "cloudfront-keyvaluestore:ListKeys",
-          "cloudfront-keyvaluestore:UpdateKeys",
-
-          //aws_dataexchange_revision_assets
-          "dataexchange:TagResource",
-          "dataexchange:ListTagsForResource",
-          "dataexchange:UntagResource",
-          "dataexchange:CreateRevision",
-          "dataexchange:DeleteRevision",
-          "dataexchange:UpdateRevision",
-          "dataexchange:GetRevision",
-
-          //aws_inspector2_filter
-          "inspector2:TagResource",
-          "inspector2:ListTagsForResource",
-          "inspector2:UntagResource",
-          "inspector2:CreateFilter",
-          "inspector2:ListFilters",
-          "inspector2:DeleteFilter",
-          "inspector2:UpdateFilter",
-
-          //aws_wafv2_api_key
-          "wafv2:CreateAPIKey",
-          "wafv2:DeleteAPIKey",
-          "wafv2:ListAPIKeys",
-
-          //aws_account_primary_contact
-          "account:GetContactInformation",
-
-          //aws_dynamodb_tables
-          "dynamodb:ListTables"
         ],
         "Resource" : [
           "*"
