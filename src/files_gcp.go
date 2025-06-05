@@ -441,3 +441,15 @@ var googleBigqueryRoutine []byte
 
 //go:embed mapping/google/resource/bigquery/google_bigquery_table_iam.json
 var googleBigqueryTableIam []byte
+
+//go:embed mapping/google/resource/composer/google_composer_environment.json
+var googleComposerEnvironment []byte
+
+//go:embed mapping/google/resource/iam/google_iam_workload_identity_pool.json
+var googleIamWorkloadIdentityPool []byte
+
+//go:embed mapping/google/resource/iam/google_iam_workload_identity_pool_provider.json
+var googleIamWorkloadIdentityPoolProvider []byte
+
+//go:embed mapping/google/resource/iam/google_project_iam_audit_config.json
+var googleProjectIamAuditConfig []byte

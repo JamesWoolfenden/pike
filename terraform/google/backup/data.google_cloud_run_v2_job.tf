@@ -1,7 +1,7 @@
 data "google_cloud_run_v2_job" "pike" {
   provider = google-beta
   name     = "pike"
-  project  = "pike-gcp"
+  project  = "pike"
   location = "europe-west2"
 }
 

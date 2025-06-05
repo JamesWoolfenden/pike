@@ -9,3 +9,7 @@ output "iam_binding" {
 output "custom_role" {
   value = google_project_iam_custom_role.pike
 }
+
+output "state_bucket" {
+  value = google_storage_bucket.default
+}

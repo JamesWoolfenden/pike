@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "composer.environments.create",
+      "composer.environments.delete",
+      "composer.environments.get",
+      "composer.environments.update",
+      "iam.serviceAccounts.actAs",
+      "composer.operations.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "composer.environments.delete"
+    ],
+    "modify": [
+      "composer.environments.update"
+    ],
+    "plan": [
+      "composer.environments.get"
+    ]
+  }
+]

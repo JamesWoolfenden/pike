@@ -245,4 +245,8 @@ var gCPTfLookup = map[string]interface{}{
 	"google_bigquery_table_iam_binding":                       googleBigqueryTableIam,
 	"google_bigquery_table_iam_member":                        googleBigqueryTableIam,
 	"google_bigquery_table_iam_policy":                        googleBigqueryTableIam,
+	"google_composer_environment":                             googleComposerEnvironment,
+	"google_iam_workload_identity_pool":                       googleIamWorkloadIdentityPool,
+	"google_iam_workload_identity_pool_provider":              googleIamWorkloadIdentityPoolProvider,
+	"google_project_iam_audit_config":                         googleProjectIamAuditConfig,
 }

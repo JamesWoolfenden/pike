@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "iam.workloadIdentityPools.create",
+      "iam.workloadIdentityPools.delete",
+      "iam.workloadIdentityPools.get",
+      "iam.workloadIdentityPools.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "iam.workloadIdentityPools.delete"
+    ],
+    "modify": [
+      "iam.workloadIdentityPools.update"
+    ],
+    "plan": [
+      "iam.workloadIdentityPools.get"
+    ]
+  }
+]

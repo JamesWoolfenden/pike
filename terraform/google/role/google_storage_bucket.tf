@@ -7,9 +7,9 @@ resource "google_storage_bucket" "default" {
   versioning {
     enabled = true
   }
-  encryption {
-    default_kms_key_name = "projects/pike-gcp/locations/europe-west2/keyRings/pike/cryptoKeys/state"
-  }
+  # encryption {
+  #   default_kms_key_name = "projects/pike/locations/europe-west2/keyRings/pike/cryptoKeys/state"
+  # }
 
   lifecycle_rule {
     action {

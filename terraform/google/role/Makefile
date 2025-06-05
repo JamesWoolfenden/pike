@@ -4,16 +4,16 @@ clean:
 	-rm terraform.tfstate
 	-rm terraform.tfstate.backup
 apply: init
-	terraform apply -auto-approve
+	tofu apply -auto-approve
 
 plan: init
-	terraform plan
+	tofu plan
 
 destroy: init
-	terraform destroy -auto-approve
+	tofu destroy -auto-approve
 
 init:
-	terraform init
+	tofu init
 
 role: FORCE
 	GOOGLE_CLOUD_KEYFILE_JSON="" terraform  -chdir=apply -auto-approve
