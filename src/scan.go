@@ -241,14 +241,31 @@ func LocateTerraform() (string, error) {
 // MakePolicy does the guts of determining a policy from code.
 func MakePolicy(dirName string, file *string, init bool, EnableResources bool, provider string) (OutputPolicy, error) {
 	var (
-		files  []string
 		output OutputPolicy
 	)
+
+	permissionsBag, err := MakePermissionBag(dirName, file, init, provider)
+
+	if err != nil {
+		return output, err
+	}
+
+	output, err = GetPolicy(permissionsBag, EnableResources)
+	if err != nil {
+		return output, &getPolicyError{err: err}
+	}
+
+	return output, nil
+}
+
+func MakePermissionBag(dirName string, file *string, init bool, provider string) (Sorted, error) {
+
+	var files []string
 
 	if file == nil {
 		fullPath, err := filepath.Abs(dirName)
 		if err != nil {
-			return output, &absolutePathError{directory: dirName, err: err}
+			return Sorted{}, &absolutePathError{directory: dirName, err: err}
 		}
 
 		if init {
@@ -264,24 +281,24 @@ func MakePolicy(dirName string, file *string, init bool, EnableResources bool, p
 
 		files, err = GetTF(fullPath)
 		if err != nil {
-			return output, &getTFError{directory: fullPath, err: err}
+			return Sorted{}, &getTFError{directory: fullPath, err: err}
 		}
 	} else {
 		myFile, err := filepath.Abs(*file)
 		if err != nil {
-			return output, &absolutePathError{directory: *file, err: err}
+			return Sorted{}, &absolutePathError{directory: *file, err: err}
 		}
 
 		// is this a tfFile?
 		if !(FileExists(myFile)) {
-			return output, os.ErrNotExist
+			return Sorted{}, os.ErrNotExist
 		}
 
 		files = append(files, myFile)
 	}
 
 	if len(files) == 0 {
-		return output, &emptyIACError{}
+		return Sorted{}, &emptyIACError{}
 	}
 
 	var resources []ResourceV2
@@ -298,13 +315,7 @@ func MakePolicy(dirName string, file *string, init bool, EnableResources bool, p
 		}
 	}
 	permissionsBag := GetPermissionBag(resources, provider)
-
-	output, err := GetPolicy(permissionsBag, EnableResources)
-	if err != nil {
-		return output, &getPolicyError{err: err}
-	}
-
-	return output, nil
+	return permissionsBag, nil
 }
 
 func GetPermissionBag(resources []ResourceV2, provider string) Sorted {

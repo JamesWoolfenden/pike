@@ -240,7 +240,7 @@ func Test_listEnabledAPIs(t *testing.T) {
 		wantErr bool
 	}{
 		{"All", args{"pike-"}, nil, true},
-		{"Enabled", args{"pike-412922"}, []string{"analyticshub.googleapis.com",
+		{"Enabled", args{"488072219970"}, []string{"analyticshub.googleapis.com",
 			"artifactregistry.googleapis.com", "autoscaling.googleapis.com", "bigquery.googleapis.com",
 			"bigqueryconnection.googleapis.com", "bigquerydatapolicy.googleapis.com", "bigquerymigration.googleapis.com",
 			"bigqueryreservation.googleapis.com", "bigquerystorage.googleapis.com", "bigtable.googleapis.com",
@@ -276,13 +276,15 @@ func Test_compareGCPRole(t *testing.T) {
 		arn       string
 		init      bool
 	}
+
+	os.Setenv("GCP_PROJECT", "pike-412922")
 	tests := []struct {
 		name    string
 		args    args
 		want    bool
 		wantErr bool
 	}{
-		{"pass", args{"./testdata/", "roles/terraform_pike", false}, true, false},
+		{"pass", args{"./testdata/gcp/basic", "projects/pike-412922/roles/terraform_pike", false}, true, false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -293,6 +295,60 @@ func Test_compareGCPRole(t *testing.T) {
 			}
 			if got != tt.want {
 				t.Errorf("compareGCPRole() got = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestGcpRoleNotVerified_Error(t *testing.T) {
+	type fields struct {
+		role string
+	}
+	tests := []struct {
+		name   string
+		fields fields
+		want   string
+	}{
+		{"fail", fields{"pike-fail"}, ""},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			e := &GcpRoleNotVerified{
+				role: tt.fields.role,
+			}
+			if got := e.Error(); got != tt.want {
+				t.Errorf("Error() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestVerifyRole(t *testing.T) {
+	type args struct {
+		role string
+	}
+	tests := []struct {
+		name    string
+		args    args
+		want    bool
+		wantErr bool
+	}{
+		{"Fail", args{"projectsmine/duff/roles/mine"}, false, true},
+		{"Fail2", args{"projects/duff/noroles/mine"}, false, true},
+		{"Fail3", args{"projects/duff/roles"}, false, true},
+		{"Fail4", args{"projects/roles/a"}, false, true},
+		{"Fail5", args{"mine/duff/roles/mine"}, false, true},
+
+		{"Pass", args{"projects/a/roles/a"}, false, false},
+		{"Pass2", args{"projects/duff/roles/mine"}, false, false},
+		{"Pass3", args{role: "projects/pike-412922/roles/terraform_pike"}, false, false},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			err := VerifyGCPRole(tt.args.role)
+			if (err != nil) != tt.wantErr {
+				t.Errorf("VerifyRole() error = %v, wantErr %v", err, tt.wantErr)
+				return
 			}
 		})
 	}

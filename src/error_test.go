@@ -708,7 +708,7 @@ func TestARNErrors(t *testing.T) {
 
 		err := &invalidARNError{arn: "invalid:arn"}
 
-		expected := "invalid ARN: invalid:arn"
+		expected := "invalid role or ARN: invalid:arn"
 
 		if err.Error() != expected {
 			t.Errorf("expected %q, got %q", expected, err.Error())

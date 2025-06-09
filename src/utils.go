@@ -134,3 +134,18 @@ const float64EqualityThreshold = 1e-9
 func AlmostEqual(a, b float64) bool {
 	return math.Abs(a-b) <= float64EqualityThreshold
 }
+
+type EnvVariableNotSetError struct {
+	Key string
+}
+
+func (e *EnvVariableNotSetError) Error() string {
+	return fmt.Sprintf("environment variable %s not set", e.Key)
+}
+
+func GetEnv(key string) (*string, error) {
+	if value, ok := os.LookupEnv(key); ok {
+		return &value, nil
+	}
+	return nil, &EnvVariableNotSetError{key}
+}

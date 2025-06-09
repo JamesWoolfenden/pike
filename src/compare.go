@@ -6,12 +6,14 @@ import (
 	"errors"
 	"fmt"
 	"os"
+	"regexp"
 	"slices"
 	"strings"
 	"time"
 
 	"github.com/aws/aws-sdk-go-v2/config"
 	"github.com/aws/aws-sdk-go-v2/service/iam"
+	"github.com/google/go-cmp/cmp"
 	"github.com/rs/zerolog/log"
 	diff "github.com/yudai/gojsondiff"
 	"github.com/yudai/gojsondiff/formatter"
@@ -75,13 +77,26 @@ func (m *apiNotEnabledError) Error() string {
 }
 
 func compareGCPRole(directory string, arn string, init bool) (bool, error) {
+	iacPolicy, err := MakePermissionBag(directory, nil, init, "")
+	if err != nil {
+		return false, &getIAMVersionError{err}
+	}
+
 	ctx := context.Background()
 
-	projectID := "pike-412922"
+	var projectID string
+	temp, err := GetEnv("GCP_PROJECT")
+
+	projectID = *temp
+
+	if err != nil {
+		return false, &EnvVariableNotSetError{"GCP_PROJECT"}
+	}
+
 	var API string
 	API = "iam.googleapis.com"
 
-	enabled, err := isAPIEnabled(projectID, API)
+	enabled, err := isGCPAPIEnabled(projectID, API)
 
 	if err != nil {
 		return enabled, &apiNotFoundError{API}
@@ -96,18 +111,35 @@ func compareGCPRole(directory string, arn string, init bool) (bool, error) {
 		log.Error().Msgf("Failed to create IAM Service %v", err)
 	}
 
-	Roles, err := iamService.Roles.Get(arn).Do()
-
-	log.Info().Msg(Roles.Name)
+	// The resource name of the role in one of the following formats:
+	// `roles/{ROLE_NAME}`
+	// `organizations/{ORGANIZATION_ID}/roles/{ROLE_NAME}`
+	// `projects/{PROJECT_ID}/roles/{ROLE_NAME}`
+	err = VerifyGCPRole(arn)
 
 	if err != nil {
+		return false, &GcpRoleNotVerified{arn}
+	}
+
+	Roles, err := iamService.Roles.Get(arn).Context(ctx).Do()
+
+	if Roles == nil || err != nil {
 		log.Error().Msgf("Failed to get role %v", err)
 	}
 
+	//reflect.DeepEqual(iacPolicy.GCP, Roles.IncludedPermissions)
+	results := cmp.Diff(Roles.IncludedPermissions, iacPolicy.GCP)
+	if results != "" {
+		results = strings.Replace(results, "[]string{", "", -1)
+		results = strings.Replace(results, "}", "", -1)
+		fmt.Print("Policy Comparison mismatch mismatch (-excess +needs):")
+		fmt.Print(results)
+		return true, nil
+	}
 	return false, nil
 }
 
-func isAPIEnabled(projectID string, want string) (bool, error) {
+func isGCPAPIEnabled(projectID string, want string) (bool, error) {
 	enabledAPIs, err := listEnabledAPIs(projectID)
 
 	if err != nil {
@@ -258,4 +290,27 @@ func listEnabledAPIs(projectID string) ([]string, error) {
 	}
 
 	return services, nil
+}
+
+type GcpRoleNotVerified struct {
+	role string
+}
+
+func (e *GcpRoleNotVerified) Error() string {
+	log.Info().Msg(
+		`The resource name of the role in one of the following formats:")
+	roles/{ROLE_NAME}
+	organizations/{ORGANIZATION_ID}/roles/{ROLE_NAME}
+	projects/{PROJECT_ID}/roles/{ROLE_NAME}`)
+	return e.role
+}
+
+func VerifyGCPRole(role string) error {
+	r, err := regexp.Compile("projects/(.*\\S)/roles/(.*\\S)")
+	if err == nil {
+		if r.MatchString(role) {
+			return nil
+		}
+	}
+	return &GcpRoleNotVerified{role}
 }
