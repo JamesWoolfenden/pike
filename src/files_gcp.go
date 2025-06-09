@@ -453,3 +453,6 @@ var googleIamWorkloadIdentityPoolProvider []byte
 
 //go:embed mapping/google/resource/iam/google_project_iam_audit_config.json
 var googleProjectIamAuditConfig []byte
+
+//go:embed mapping/google/resource/bigquery/google_bigquery_table.json
+var googleBigQueryTable []byte
