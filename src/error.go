@@ -183,7 +183,7 @@ type invalidARNError struct {
 }
 
 func (m *invalidARNError) Error() string {
-	return fmt.Sprintf("invalid ARN: %s", m.arn)
+	return fmt.Sprintf("invalid role or ARN: %s", m.arn)
 }
 
 type awsConfigError struct {
