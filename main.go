@@ -205,7 +205,7 @@ func main() {
 				Action: func(*cli.Context) error {
 					theSame, err := pike.Compare(directory, arn, init)
 					if err != nil {
-						log.Fatal().Msgf(err.Error())
+						log.Fatal().Msg(err.Error())
 						os.Exit(1)
 					}
 
