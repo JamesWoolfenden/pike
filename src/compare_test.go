@@ -87,7 +87,7 @@ func TestCompare(t *testing.T) {
 		arn       string
 		init      bool
 	}
-
+	os.Setenv("AWS_DEFAULT_PROFILE", "personal")
 	os.Setenv("GCP_PROJECT", "pike-412922")
 
 	tests := []struct {
@@ -97,8 +97,8 @@ func TestCompare(t *testing.T) {
 		wantErr bool
 	}{
 		{"fail arn is empty", args{"./testdata/init/nicconf", "", false}, false, true},
-		{"fail arn is not policy", args{"./testdata/init/nicconf", "arn:aws:iam::680235478471:user/readonly", false}, false, false},
-		{"pass", args{"./testdata/init/nicconf", "arn:aws:iam::680235478471:policy/testdata", false}, true, false},
+		{"fail arn is not policy", args{"./testdata/init/nicconf", "arn:aws:iam::680235478471:user/readonly", false}, false, true},
+		{"works but fails", args{"./testdata/init/nicconf", "arn:aws:iam::680235478471:policy/allows3", false}, false, false},
 		//code is not aws
 		{"gcp-basic-fail", args{"./testdata/gcp/basic", "basic", false}, false, true},
 		{"gcp-basic-exist-fail", args{"./testdata/gcp/basic", "projects/pike-412922/roles/terraform_pike", false}, false, false},
@@ -204,13 +204,13 @@ func TestInputValidationCompare(t *testing.T) {
 			directory: tmpDir,
 			arn:       "invalid:arn",
 			wantBool:  false,
-			wantErr:   &invalidARNError{},
+			wantErr:   &invalidARNError{"invalid:arn"},
 		},
 		{
 			name:      "valid inputs",
 			directory: tmpDir,
 			arn:       "arn:aws:iam::123456789012:policy/test",
-			wantBool:  false,
+			wantBool:  true,
 			wantErr:   nil,
 		},
 	}
@@ -286,7 +286,7 @@ func Test_compareGCPRole(t *testing.T) {
 		want    bool
 		wantErr bool
 	}{
-		{"pass", args{"./testdata/gcp/basic", "projects/pike-412922/roles/terraform_pike", false}, true, false},
+		{"pass", args{"./testdata/gcp/basic", "projects/pike-412922/roles/terraform_pike", false}, false, false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

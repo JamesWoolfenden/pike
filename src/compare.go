@@ -36,7 +36,7 @@ func Compare(directory string, arn string, init bool) (bool, error) {
 	result, err := inputValidationCompare(directory, arn)
 	if err != nil {
 		log.Error().Msgf("Failed to validate input %v", err)
-		os.Exit(1)
+		return false, &inputValidationError{err: err}
 	}
 
 	switch *getCloudFromRole(arn) {
@@ -143,19 +143,19 @@ func compareGCPRole(directory string, arn string, init bool) (bool, error) {
 		return false, &GCPIAMRoleError{err}
 	}
 
-	return compareGCPPolicy(Roles, iacPolicy)
+	return compareGCPPolicy(Roles, iacPolicy), nil
 }
 
-func compareGCPPolicy(Roles *gcpiam.Role, iacPolicy Sorted) (bool, error) {
+func compareGCPPolicy(Roles *gcpiam.Role, iacPolicy Sorted) bool {
 	results := cmp.Diff(Roles.IncludedPermissions, iacPolicy.GCP)
 	if results != "" {
 		results = strings.Replace(results, "[]string{", "", -1)
 		results = strings.Replace(results, "}", "", -1)
 		fmt.Print("Policy Comparison mismatch mismatch (-excess +needs):")
 		fmt.Print(results)
-		return false, nil
+		return false
 	}
-	return true, nil
+	return true
 }
 
 type GCPIAMRoleError struct {
