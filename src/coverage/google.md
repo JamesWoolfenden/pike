@@ -1,6 +1,6 @@
 # todo google
 
-Resource percentage coverage   16.95
+Resource percentage coverage   16.87
 Datasource percentage coverage 64.63
 
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -39,6 +39,7 @@ Datasource percentage coverage 64.63
 ./resource.ps1 google_apigee_sync_authorization
 ./resource.ps1 google_apigee_target_server
 ./resource.ps1 google_apihub_api_hub_instance
+./resource.ps1 google_apihub_curation
 ./resource.ps1 google_apihub_host_project_registration
 ./resource.ps1 google_apikeys_key
 ./resource.ps1 google_app_engine_application
@@ -226,6 +227,8 @@ Datasource percentage coverage 64.63
 ./resource.ps1 google_compute_instant_snapshot_iam_policy
 ./resource.ps1 google_compute_interconnect
 ./resource.ps1 google_compute_interconnect_attachment
+./resource.ps1 google_compute_interconnect_attachment_group
+./resource.ps1 google_compute_interconnect_group
 ./resource.ps1 google_compute_machine_image
 ./resource.ps1 google_compute_machine_image_iam_binding
 ./resource.ps1 google_compute_machine_image_iam_member
@@ -302,6 +305,7 @@ Datasource percentage coverage 64.63
 ./resource.ps1 google_compute_snapshot_iam_binding
 ./resource.ps1 google_compute_snapshot_iam_member
 ./resource.ps1 google_compute_snapshot_iam_policy
+./resource.ps1 google_compute_snapshot_settings
 ./resource.ps1 google_compute_ssl_certificate
 ./resource.ps1 google_compute_ssl_policy
 ./resource.ps1 google_compute_storage_pool
@@ -321,6 +325,7 @@ Datasource percentage coverage 64.63
 ./resource.ps1 google_compute_url_map
 ./resource.ps1 google_compute_vpn_gateway
 ./resource.ps1 google_compute_vpn_tunnel
+./resource.ps1 google_compute_wire_group
 ./resource.ps1 google_container_analysis_note
 ./resource.ps1 google_container_analysis_note_iam_binding
 ./resource.ps1 google_container_analysis_note_iam_member
@@ -457,6 +462,7 @@ Datasource percentage coverage 64.63
 ./resource.ps1 google_dialogflow_cx_intent
 ./resource.ps1 google_dialogflow_cx_page
 ./resource.ps1 google_dialogflow_cx_security_settings
+./resource.ps1 google_dialogflow_cx_tool
 ./resource.ps1 google_dialogflow_cx_version
 ./resource.ps1 google_dialogflow_cx_webhook
 ./resource.ps1 google_dialogflow_entity_type

@@ -1,6 +1,8 @@
 package pike_test
 
 import (
+	"os"
+	"reflect"
 	"testing"
 
 	pike "github.com/jameswoolfenden/pike/src"
@@ -216,6 +218,59 @@ func TestAlmostEqual(t *testing.T) {
 
 			if got := pike.AlmostEqual(tt.args.a, tt.args.b); got != tt.want {
 				t.Errorf("AlmostEqual() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestEnvVariableNotSetError_Error(t *testing.T) {
+	type fields struct {
+		Key string
+	}
+	tests := []struct {
+		name   string
+		fields fields
+		want   string
+	}{
+		{"fail", fields{"key"}, "environment variable key not set"},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			e := &pike.EnvVariableNotSetError{
+				Key: tt.fields.Key,
+			}
+			if got := e.Error(); got != tt.want {
+				t.Errorf("Error() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func Test_getEnv(t *testing.T) {
+	type args struct {
+		key string
+	}
+
+	os.Setenv("fortest", "value")
+
+	tests := []struct {
+		name    string
+		args    args
+		want    *string
+		wantErr bool
+	}{
+		{"fail", args{"key"}, nil, true},
+		{"pass", args{"fortest"}, &[]string{"value"}[0], false},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			got, err := pike.GetEnv(tt.args.key)
+			if (err != nil) != tt.wantErr {
+				t.Errorf("GetEnv() error = %v, wantErr %v", err, tt.wantErr)
+				return
+			}
+			if !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("GetEnv() got = %v, want %v", got, tt.want)
 			}
 		})
 	}

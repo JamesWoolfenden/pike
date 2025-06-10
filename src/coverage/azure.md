@@ -1,7 +1,7 @@
 # todo azure
 
 Resource percentage coverage   4.50
-Datasource percentage coverage 34.76
+Datasource percentage coverage 34.17
 
 ./resource.ps1 azurerm_aadb2c_directory
 ./resource.ps1 azurerm_active_directory_domain_service
@@ -649,6 +649,7 @@ Datasource percentage coverage 34.76
 ./resource.ps1 azurerm_network_manager_ipam_pool
 ./resource.ps1 azurerm_network_manager_management_group_connection
 ./resource.ps1 azurerm_network_manager_network_group
+./resource.ps1 azurerm_network_manager_routing_configuration
 ./resource.ps1 azurerm_network_manager_scope_connection
 ./resource.ps1 azurerm_network_manager_security_admin_configuration
 ./resource.ps1 azurerm_network_manager_static_member
@@ -726,6 +727,7 @@ Datasource percentage coverage 34.76
 ./resource.ps1 azurerm_public_ip
 ./resource.ps1 azurerm_public_ip_prefix
 ./resource.ps1 azurerm_purview_account
+./resource.ps1 azurerm_qumulo_file_system
 ./resource.ps1 azurerm_recovery_services_vault
 ./resource.ps1 azurerm_recovery_services_vault_resource_guard_association
 ./resource.ps1 azurerm_redhat_openshift_cluster
@@ -1100,6 +1102,12 @@ Datasource percentage coverage 34.76
 ./resource.ps1 azurerm_databricks_workspace_private_endpoint_connection -type data
 ./resource.ps1 azurerm_dedicated_host -type data
 ./resource.ps1 azurerm_dedicated_host_group -type data
+./resource.ps1 azurerm_dev_center -type data
+./resource.ps1 azurerm_dev_center_catalog -type data
+./resource.ps1 azurerm_dev_center_gallery -type data
+./resource.ps1 azurerm_dev_center_network_connection -type data
+./resource.ps1 azurerm_dev_center_project -type data
+./resource.ps1 azurerm_dev_center_project_environment_type -type data
 ./resource.ps1 azurerm_digital_twins_instance -type data
 ./resource.ps1 azurerm_disk_access -type data
 ./resource.ps1 azurerm_disk_encryption_set -type data

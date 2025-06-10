@@ -190,8 +190,8 @@ func main() {
 					&cli.StringFlag{
 						Name:        "arn",
 						Aliases:     []string{"a"},
-						Usage:       "Policy identifier e.g. arn",
-						Value:       "arn:aws:iam::680235478471:policy/basic",
+						Usage:       "Policy identifier e.g. arn, gcp role path",
+						Required:    true,
 						Destination: &arn,
 						EnvVars:     []string{"ARN"},
 					},
@@ -204,7 +204,14 @@ func main() {
 				},
 				Action: func(*cli.Context) error {
 					theSame, err := pike.Compare(directory, arn, init)
-					log.Print("The same: ", theSame)
+					if err != nil {
+						log.Fatal().Msg(err.Error())
+						os.Exit(1)
+					}
+
+					if !theSame {
+						os.Exit(1)
+					}
 
 					return err
 				},
