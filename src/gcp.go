@@ -83,7 +83,7 @@ var gCPTfLookup = map[string]interface{}{
 	"google_artifact_registry_repository_iam_policy":          googleArtifactRegistryRepositoryIamPolicy,
 	"google_bigquery_dataset":                                 googleBigqueryDataset,
 	"google_bigquery_job":                                     googleBigqueryJob,
-	"google_bigquery_table":                                   placeholder,
+	"google_bigquery_table":                                   googleBigQueryTable,
 	"google_bigtable_app_profile":                             googleBigtableAppProfile,
 	"google_bigtable_gc_policy":                               googleBigtableGcPolicy,
 	"google_bigtable_instance":                                googleBigtableInstance,
