@@ -1605,3 +1605,6 @@ var dataAwsAccountPrimaryContact []byte
 
 //go:embed  mapping/aws/data/dynamodb/aws_dynamodb_tables.json
 var dataAwsDynamodbTables []byte
+
+//go:embed  mapping/aws/data/backend/s3.json
+var dataBackend []byte

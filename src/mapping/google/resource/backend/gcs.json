@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "storage.buckets.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
