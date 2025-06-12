@@ -60,12 +60,19 @@ func Compare(directory string, arn string, init bool) (bool, error) {
 func getCloudFromRole(arn string) *string {
 	var result string
 
-	if strings.Contains(arn, "arn:") {
-		result = "aws"
-	}
-
-	if strings.Contains(arn, "projects") {
-		result = "gcp"
+	switch {
+	case strings.Contains(arn, "arn:"):
+		{
+			result = "aws"
+		}
+	case strings.Contains(arn, "projects"):
+		{
+			result = "gcp"
+		}
+	default:
+		{
+			result = "unknown"
+		}
 	}
 
 	return &result
@@ -120,27 +127,27 @@ func compareGCPRole(directory string, arn string, init bool) (bool, error) {
 
 	iamService, err := gcpiam.NewService(ctx)
 	if err != nil {
-		return false, &IAMServiceError{err}
+		return false, &iamServiceError{err}
 	}
 
 	// The resource name of the role in one of the following formats:
 	// `roles/{ROLE_NAME}`
 	// `organizations/{ORGANIZATION_ID}/roles/{ROLE_NAME}`
 	// `projects/{PROJECT_ID}/roles/{ROLE_NAME}`
-	err = VerifyGCPRole(arn)
+	err = verifyGCPRole(arn)
 
 	if err != nil {
-		return false, &GcpRoleNotVerified{arn}
+		return false, &gcpRoleNotVerified{arn}
 	}
 
 	Roles, err := iamService.Roles.Get(arn).Context(ctx).Do()
 
 	if Roles == nil {
-		return false, &GCPRoleNotFound{arn}
+		return false, &gcpRoleNotFound{arn}
 	}
 
 	if err != nil {
-		return false, &GCPIAMRoleError{err}
+		return false, &gcpIAMRoleError{err}
 	}
 
 	return compareGCPPolicy(Roles, iacPolicy), nil
@@ -158,27 +165,27 @@ func compareGCPPolicy(Roles *gcpiam.Role, iacPolicy Sorted) bool {
 	return true
 }
 
-type GCPIAMRoleError struct {
+type gcpIAMRoleError struct {
 	err error
 }
 
-func (m *GCPIAMRoleError) Error() string {
+func (m *gcpIAMRoleError) Error() string {
 	return fmt.Sprintf("IAM Role Error: %v", m.err)
 }
 
-type GCPRoleNotFound struct {
+type gcpRoleNotFound struct {
 	role string
 }
 
-func (e *GCPRoleNotFound) Error() string {
+func (e *gcpRoleNotFound) Error() string {
 	return fmt.Sprintf("IAM Role Error: %v", e.role)
 }
 
-type IAMServiceError struct {
+type iamServiceError struct {
 	err error
 }
 
-func (m *IAMServiceError) Error() string {
+func (m *iamServiceError) Error() string {
 	return m.err.Error()
 }
 
@@ -339,11 +346,11 @@ func listEnabledAPIs(projectID string) ([]string, error) {
 	return services, nil
 }
 
-type GcpRoleNotVerified struct {
+type gcpRoleNotVerified struct {
 	role string
 }
 
-func (e *GcpRoleNotVerified) Error() string {
+func (e *gcpRoleNotVerified) Error() string {
 	fmt.Print(
 		`The resource name of the role in one of the following formats:
         roles/{ROLE_NAME}
@@ -352,12 +359,12 @@ func (e *GcpRoleNotVerified) Error() string {
 	return e.role
 }
 
-func VerifyGCPRole(role string) error {
+func verifyGCPRole(role string) error {
 	r, err := regexp.Compile("projects/(.*\\S)/roles/(.*\\S)")
 	if err == nil {
 		if r.MatchString(role) {
 			return nil
 		}
 	}
-	return &GcpRoleNotVerified{role}
+	return &gcpRoleNotVerified{role}
 }
