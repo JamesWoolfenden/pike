@@ -2,6 +2,7 @@ package pike
 
 //goland:noinspection GoLinter
 var tFLookupDataAWS = map[string]interface{}{
+	"backend":                                                   dataBackend,
 	"aws_acm_certificate":                                       dataAwsAcmCertificate,
 	"aws_acmpca_certificate":                                    dataAwsAcmpcaCertificate,
 	"aws_acmpca_certificate_authority":                          dataAwsAcmpcaCertificateAuthority,

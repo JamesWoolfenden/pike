@@ -106,6 +106,16 @@ func DetectBackend(resource ResourceV2, block *hclsyntax.Block, resources []Reso
 
 						return resources, nil
 					}
+
+					if terraform.Labels != nil && terraform.Labels[0] == "gcs" {
+						resource.Name = "backend"
+						resource.Provider = providerGCP
+						resource.Attributes = []string{"gcs"}
+						resources = append(resources, resource)
+
+						return resources, nil
+					}
+
 				}
 			}
 		}

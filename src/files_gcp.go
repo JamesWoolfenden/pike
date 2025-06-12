@@ -456,3 +456,6 @@ var googleProjectIamAuditConfig []byte
 
 //go:embed mapping/google/resource/bigquery/google_bigquery_table.json
 var googleBigQueryTable []byte
+
+//go:embed mapping/google/resource/backend/gcs.json
+var gcsBackend []byte

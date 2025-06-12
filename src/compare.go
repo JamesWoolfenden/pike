@@ -154,7 +154,10 @@ func compareGCPRole(directory string, arn string, init bool) (bool, error) {
 }
 
 func compareGCPPolicy(Roles *gcpiam.Role, iacPolicy Sorted) bool {
-	results := cmp.Diff(Roles.IncludedPermissions, iacPolicy.GCP)
+	slices.Sort(Roles.IncludedPermissions)
+	slices.Sort(iacPolicy.GCP)
+
+	results := cmp.Diff(Unique(Roles.IncludedPermissions), Unique(iacPolicy.GCP))
 	if results != "" {
 		results = strings.Replace(results, "[]string{", "", -1)
 		results = strings.Replace(results, "}", "", -1)

@@ -20,7 +20,7 @@ func (m invalidPermissionMapError) Error() string {
 
 // getGCPPermissions for GCP resources.
 func getGCPPermissions(result ResourceV2) ([]string, error) {
-	if result.TypeName == resource {
+	if result.TypeName == resource || result.TypeName == "terraform" {
 		return getGCPResourcePermissions(result)
 	}
 
@@ -51,6 +51,7 @@ func GCPLookup(result string) interface{} {
 }
 
 var gCPTfLookup = map[string]interface{}{
+	"backend": gcsBackend,
 	"google_access_context_manager_access_level":              googleAccessContextManagerAccessLevel,
 	"google_access_context_manager_access_levels":             googleAccessContextManagerAccessLevels,
 	"google_access_context_manager_access_policy":             googleAccessContextManagerAccessPolicy,
