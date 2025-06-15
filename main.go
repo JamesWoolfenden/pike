@@ -54,11 +54,15 @@ func main() {
 				},
 				Action: func(*cli.Context) error {
 					arn, err := pike.Make(directory)
-					if arn != nil {
-						log.Print(*arn)
+					if err != nil {
+						return fmt.Errorf("make failed: %w", err)
 					}
 
-					return fmt.Errorf("make failed: %w", err)
+					if arn != nil {
+						fmt.Print(*arn)
+					}
+
+					return nil
 				},
 			},
 			{

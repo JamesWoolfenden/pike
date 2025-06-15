@@ -21,6 +21,14 @@ import (
 	"google.golang.org/api/serviceusage/v1"
 )
 
+// Replace hardcoded values with constants
+const (
+	defaultTimeout   = 30 * time.Second
+	gcpIAMAPIName    = "iam.googleapis.com"
+	awsARNPrefix     = "arn:"
+	gcpProjectPrefix = "projects/"
+)
+
 type invalidCloudError struct {
 	arn string
 }
@@ -39,7 +47,7 @@ func Compare(directory string, arn string, init bool) (bool, error) {
 		return false, &inputValidationError{err: err}
 	}
 
-	switch *getCloudFromRole(arn) {
+	switch getCloudFromRole(arn) {
 	case "aws":
 		{
 			result, err = compareAWSRole(directory, arn, init)
@@ -57,25 +65,19 @@ func Compare(directory string, arn string, init bool) (bool, error) {
 	return result, err
 }
 
-func getCloudFromRole(arn string) *string {
+func getCloudFromRole(arn string) string {
+
 	var result string
 
-	switch {
-	case strings.Contains(arn, "arn:"):
-		{
-			result = "aws"
-		}
-	case strings.Contains(arn, "projects"):
-		{
-			result = "gcp"
-		}
-	default:
-		{
-			result = "unknown"
-		}
+	if strings.Contains(arn, "arn:") {
+		result = "aws"
+	} else if strings.Contains(arn, "projects") {
+		result = "gcp"
+	} else {
+		result = "unknown"
 	}
 
-	return &result
+	return result
 }
 
 type apiNotFoundError struct {
@@ -95,7 +97,17 @@ func (m *apiNotEnabledError) Error() string {
 }
 
 func compareGCPRole(directory string, arn string, init bool) (bool, error) {
-	iacPolicy, err := MakePermissionBag(directory, nil, init, "")
+	// The resource name of the role in one of the following formats:
+	// `roles/{ROLE_NAME}`
+	// `organizations/{ORGANIZATION_ID}/roles/{ROLE_NAME}`
+	// `projects/{PROJECT_ID}/roles/{ROLE_NAME}`
+	err := verifyGCPRole(arn)
+
+	if err != nil {
+		return false, &gcpRoleNotVerified{arn}
+	}
+
+	iacPolicy, err := makePermissionBag(directory, nil, init, "")
 	if err != nil {
 		return false, &getIAMVersionError{err}
 	}
@@ -107,10 +119,8 @@ func compareGCPRole(directory string, arn string, init bool) (bool, error) {
 		return false, &EnvVariableNotSetError{"GCP_PROJECT"}
 	}
 
-	//projectID = *temp
-
 	var API string
-	API = "iam.googleapis.com"
+	API = gcpIAMAPIName
 
 	enabled, err := isGCPAPIEnabled(*projectID, API)
 
@@ -128,16 +138,6 @@ func compareGCPRole(directory string, arn string, init bool) (bool, error) {
 	iamService, err := gcpiam.NewService(ctx)
 	if err != nil {
 		return false, &iamServiceError{err}
-	}
-
-	// The resource name of the role in one of the following formats:
-	// `roles/{ROLE_NAME}`
-	// `organizations/{ORGANIZATION_ID}/roles/{ROLE_NAME}`
-	// `projects/{PROJECT_ID}/roles/{ROLE_NAME}`
-	err = verifyGCPRole(arn)
-
-	if err != nil {
-		return false, &gcpRoleNotVerified{arn}
 	}
 
 	Roles, err := iamService.Roles.Get(arn).Context(ctx).Do()
@@ -159,8 +159,8 @@ func compareGCPPolicy(Roles *gcpiam.Role, iacPolicy Sorted) bool {
 
 	results := cmp.Diff(Unique(Roles.IncludedPermissions), Unique(iacPolicy.GCP))
 	if results != "" {
-		results = strings.Replace(results, "[]string{", "", -1)
-		results = strings.Replace(results, "}", "", -1)
+		replacer := strings.NewReplacer("[]string{", "", "}", "")
+		results = replacer.Replace(results)
 		fmt.Print("Policy Comparison mismatch mismatch (-excess +needs):")
 		fmt.Print(results)
 		return false
@@ -195,7 +195,7 @@ func (m *iamServiceError) Error() string {
 func isGCPAPIEnabled(projectID string, want string) (bool, error) {
 	enabledAPIs, err := listEnabledAPIs(projectID)
 
-	if err != nil {
+	if err != nil || enabledAPIs == nil {
 		log.Error().Msgf("Failed to list enabled APIs %v", err)
 	}
 
@@ -207,8 +207,9 @@ func isGCPAPIEnabled(projectID string, want string) (bool, error) {
 }
 
 func compareAWSRole(directory string, arn string, init bool) (bool, error) {
+
 	// Load the Shared AWS Configuration (~/.aws/config)
-	ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
+	ctx, cancel := context.WithTimeout(context.Background(), defaultTimeout)
 
 	defer cancel()
 
@@ -261,7 +262,7 @@ func inputValidationCompare(directory string, arn string) (bool, error) {
 		return false, &directoryNotFoundError{directory}
 	}
 
-	if !strings.HasPrefix(arn, "arn:") && !strings.HasPrefix(arn, "projects/") {
+	if !strings.HasPrefix(arn, awsARNPrefix) && !strings.HasPrefix(arn, gcpProjectPrefix) {
 		log.Error().Msgf("Invalid ARN %s cant determine cloud in use", arn)
 		return false, &invalidARNError{arn}
 	}
@@ -364,10 +365,12 @@ func (e *gcpRoleNotVerified) Error() string {
 
 func verifyGCPRole(role string) error {
 	r, err := regexp.Compile("projects/(.*\\S)/roles/(.*\\S)")
+	// Regex should be compiled once as package variable
 	if err == nil {
 		if r.MatchString(role) {
 			return nil
 		}
 	}
+
 	return &gcpRoleNotVerified{role}
 }

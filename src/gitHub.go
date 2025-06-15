@@ -80,7 +80,7 @@ func InvokeGithubDispatchEvent(repository string, workflowFileName string, branc
 
 	url := "https://api.github.com/repos/" + owner + "/" + repo + "/actions/workflows/" + workflowFileName
 
-	err = VerifyURL(url)
+	err = verifyURL(url)
 	if err != nil {
 		log.Error().Err(err)
 
@@ -180,8 +180,8 @@ func (m *branchNotFoundError) Error() string {
 	return fmt.Sprintf("branch %s not found for repo %s", m.branch, m.repo)
 }
 
-// VerifyURL tests a url.
-func VerifyURL(url string) error {
+// verifyURL tests a url.
+func verifyURL(url string) error {
 	if //goland:noinspection HttpUrlsUsage
 	strings.Contains(strings.ToLower(url), "http://") {
 		return &insecureProtocolError{}

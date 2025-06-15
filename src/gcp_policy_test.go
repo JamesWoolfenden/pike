@@ -26,6 +26,12 @@ func TestGCPPolicy(t *testing.T) {
 			"resource\"google_project_iam_custom_role\"\"terraform_pike\"{project=\"pike\"role_id=\"terraform_pike\"title=\"terraform_pike\"description=\"Auserwithleastprivileges\"permissions=[\"bigquery.datasets.create\",\"bigquery.jobs.create\"]}",
 			false,
 		},
+		{
+			"empty",
+			args{[]string{}},
+			"",
+			true,
+		},
 	}
 	for _, tt := range tests {
 		tt := tt

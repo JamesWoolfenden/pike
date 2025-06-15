@@ -1,12 +1,14 @@
 package pike
 
 import (
+	"errors"
 	"os"
 	"path/filepath"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
 	diff "github.com/yudai/gojsondiff"
+	gcpiam "google.golang.org/api/iam/v1"
 )
 
 type mockDiff struct {
@@ -86,14 +88,6 @@ func TestShowDifferences(t *testing.T) {
 		wantErr     bool
 		description string
 	}{
-		//{
-		//	name:        "Valid policy and diff",
-		//	policy:      `{"Version": "2012-10-17", "Statement": [{"Effect": "Allow"}]}`,
-		//	diff:        &mockDiff{},
-		//	wantBool:    false,
-		//	wantErr:     false,
-		//	description: "Should successfully format and display differences",
-		//},
 		{
 			name:        "Invalid JSON policy",
 			policy:      `{invalid-json}`,
@@ -229,7 +223,7 @@ func TestGetCloudFromRole(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			result := getCloudFromRole(tt.arn)
-			assert.Equal(t, tt.expected, *result)
+			assert.Equal(t, tt.expected, result)
 		})
 	}
 }
@@ -334,5 +328,115 @@ func TestVerifyGCPRole_ErrorMessage(t *testing.T) {
 
 	if gcpErr.role != invalidRole {
 		t.Errorf("expected error to contain role %q, got %q", invalidRole, gcpErr.role)
+	}
+}
+
+func Test_gcpIAMRoleError_Error(t *testing.T) {
+	type fields struct {
+		err error
+	}
+	tests := []struct {
+		name   string
+		fields fields
+		want   string
+	}{
+		{"invoke", fields{err: &gcpRoleNotVerified{role: "test"}}, "IAM Role Error: test"},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			m := &gcpIAMRoleError{
+				err: tt.fields.err,
+			}
+			assert.Equalf(t, tt.want, m.Error(), "Error()")
+		})
+	}
+}
+
+func Test_gcpRoleNotFound_Error(t *testing.T) {
+	type fields struct {
+		role string
+	}
+	tests := []struct {
+		name   string
+		fields fields
+		want   string
+	}{
+		{"Invoke", fields{role: "test"}, "IAM Role Error: test"},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			e := &gcpRoleNotFound{
+				role: tt.fields.role,
+			}
+			assert.Equalf(t, tt.want, e.Error(), "Error()")
+		})
+	}
+}
+
+func Test_compareDifferenceError_Error(t *testing.T) {
+	type fields struct {
+		err error
+	}
+	tests := []struct {
+		name   string
+		fields fields
+		want   string
+	}{
+		{"Invoke", fields{errors.New("test")}, "compare difference failed: test"},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			m := &compareDifferenceError{
+				err: tt.fields.err,
+			}
+			assert.Equalf(t, tt.want, m.Error(), "Error()")
+		})
+	}
+}
+
+func Test_iamServiceError_Error(t *testing.T) {
+	type fields struct {
+		err error
+	}
+	tests := []struct {
+		name   string
+		fields fields
+		want   string
+	}{
+		{"invoke", fields{errors.New("test")}, "test"},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			m := &iamServiceError{
+				err: tt.fields.err,
+			}
+			assert.Equalf(t, tt.want, m.Error(), "Error()")
+		})
+	}
+}
+
+func Test_compareGCPPolicy(t *testing.T) {
+	type args struct {
+		Roles     *gcpiam.Role
+		iacPolicy Sorted
+	}
+	tests := []struct {
+		name string
+		args args
+		want bool
+	}{
+		{"Pass",
+			args{Roles: &gcpiam.Role{IncludedPermissions: []string{"Fred"}},
+				iacPolicy: Sorted{GCP: []string{"Fred"}}},
+			true},
+		{"False",
+			args{Roles: &gcpiam.Role{IncludedPermissions: []string{"Fred"}},
+				iacPolicy: Sorted{GCP: []string{"Jane"}}},
+			false},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			assert.Equalf(t, tt.want, compareGCPPolicy(tt.args.Roles, tt.args.iacPolicy), "compareGCPPolicy(%v, %v)", tt.args.Roles, tt.args.iacPolicy)
+		})
 	}
 }
