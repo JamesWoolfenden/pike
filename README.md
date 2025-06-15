@@ -10,7 +10,7 @@
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 [![checkov](https://img.shields.io/badge/checkov-verified-brightgreen)](https://www.checkov.io/)
 [![Github All Releases](https://img.shields.io/github/downloads/jameswoolfenden/pike/total.svg)](https://github.com/JamesWoolfenden/pike/releases)
-[![codecov](https://codecov.io/gh/JamesWoolfenden/pike/graph/badge.svg?token=S5SW3BHIQQ)](https://codecov.io/gh/JamesWoolfenden/pike)
+[![codecov](https://codecov.io/gh/JamesWoolfenden/pike/branch/master/graph/badge.svg?token=S5SW3BHIQQ)](https://codecov.io/gh/JamesWoolfenden/pike)
 [![OpenSSF Best Practices](https://www.bestpractices.dev/projects/7032/badge)](https://www.bestpractices.dev/projects/7032)
 
 Pike is a tool to determine the minimum permissions required to run a TF/IAC run:
