@@ -1,11 +1,11 @@
-package pike_test
+package pike
 
 import (
+	"errors"
 	"os"
 	"reflect"
+	"strings"
 	"testing"
-
-	pike "github.com/jameswoolfenden/pike/src"
 )
 
 func Test_randSeq(t *testing.T) {
@@ -28,7 +28,7 @@ func Test_randSeq(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
 
-			if got := pike.RandSeq(tt.args.n); len(got) != tt.want {
+			if got := RandSeq(tt.args.n); len(got) != tt.want {
 				t.Errorf("RandSeq() = %v, want %v", got, tt.want)
 			}
 		})
@@ -101,7 +101,7 @@ func TestReplaceSection(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
 
-			if err := pike.ReplaceSection(tt.args.source, tt.args.middle, tt.args.autoadd); (err != nil) != tt.wantErr {
+			if err := ReplaceSection(tt.args.source, tt.args.middle, tt.args.autoadd); (err != nil) != tt.wantErr {
 				t.Errorf("ReplaceSection() error = %v, wantErr %v", err, tt.wantErr)
 			}
 		})
@@ -130,7 +130,7 @@ func Test_fileExists(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
 
-			if got := pike.FileExists(tt.args.filename); got != tt.want {
+			if got := FileExists(tt.args.filename); got != tt.want {
 				t.Errorf("FileExists() = %v, want %v", got, tt.want)
 			}
 		})
@@ -157,7 +157,7 @@ func TestRandSeq(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
 
-			if got := pike.RandSeq(tt.args.n); got == tt.notWant {
+			if got := RandSeq(tt.args.n); got == tt.notWant {
 				t.Errorf("RandSeq() = %v, want %v", got, tt.notWant)
 			}
 		})
@@ -216,7 +216,7 @@ func TestAlmostEqual(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
 
-			if got := pike.AlmostEqual(tt.args.a, tt.args.b); got != tt.want {
+			if got := AlmostEqual(tt.args.a, tt.args.b); got != tt.want {
 				t.Errorf("AlmostEqual() = %v, want %v", got, tt.want)
 			}
 		})
@@ -236,7 +236,7 @@ func TestEnvVariableNotSetError_Error(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			e := &pike.EnvVariableNotSetError{
+			e := &EnvVariableNotSetError{
 				Key: tt.fields.Key,
 			}
 			if got := e.Error(); got != tt.want {
@@ -251,7 +251,10 @@ func Test_getEnv(t *testing.T) {
 		key string
 	}
 
-	os.Setenv("fortest", "value")
+	err := os.Setenv("fortest", "value")
+	if err != nil {
+		return
+	}
 
 	tests := []struct {
 		name    string
@@ -264,7 +267,7 @@ func Test_getEnv(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got, err := pike.GetEnv(tt.args.key)
+			got, err := GetEnv(tt.args.key)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("GetEnv() error = %v, wantErr %v", err, tt.wantErr)
 				return
@@ -274,4 +277,111 @@ func Test_getEnv(t *testing.T) {
 			}
 		})
 	}
+}
+
+func TestWriteFileError_Error(t *testing.T) {
+	tests := []struct {
+		name     string
+		file     string
+		err      error
+		expected string
+	}{
+		{
+			name:     "normal file and error",
+			file:     "/path/to/file.txt",
+			err:      errors.New("permission denied"),
+			expected: "failed to write file /path/to/file.txt permission denied",
+		},
+		{
+			name:     "empty file path",
+			file:     "",
+			err:      errors.New("some error"),
+			expected: "failed to write file  some error",
+		},
+		{
+			name:     "nil error",
+			file:     "/path/to/file.txt",
+			err:      nil,
+			expected: "failed to write file /path/to/file.txt <nil>",
+		},
+		{
+			name:     "file path with spaces",
+			file:     "/path/to/file with spaces.txt",
+			err:      errors.New("write failed"),
+			expected: "failed to write file /path/to/file with spaces.txt write failed",
+		},
+		{
+			name:     "file path with special characters",
+			file:     "/path/to/file-name_123.txt",
+			err:      errors.New("disk full"),
+			expected: "failed to write file /path/to/file-name_123.txt disk full",
+		},
+		{
+			name:     "long file path",
+			file:     strings.Repeat("/very/long/path", 10) + "/file.txt",
+			err:      errors.New("timeout"),
+			expected: "failed to write file " + strings.Repeat("/very/long/path", 10) + "/file.txt timeout",
+		},
+		{
+			name:     "error with newlines",
+			file:     "/path/to/file.txt",
+			err:      errors.New("error\nwith\nnewlines"),
+			expected: "failed to write file /path/to/file.txt error\nwith\nnewlines",
+		},
+		{
+			name:     "both file and error empty/nil",
+			file:     "",
+			err:      nil,
+			expected: "failed to write file  <nil>",
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			e := &writeFileError{
+				file: tt.file,
+				err:  tt.err,
+			}
+
+			result := e.Error()
+
+			if result != tt.expected {
+				t.Errorf("writeFileError.Error() = %q, expected %q", result, tt.expected)
+			}
+		})
+	}
+}
+
+func TestCustomErrors(t *testing.T) {
+	t.Run("readFileError", func(t *testing.T) {
+		err := &readFileError{file: "test.txt", err: errors.New("permission denied")}
+		expected := "failed to read file test.txt permission denied"
+		if err.Error() != expected {
+			t.Errorf("Expected: %s, got: %s", expected, err.Error())
+		}
+	})
+
+	t.Run("delimiterMismatchError", func(t *testing.T) {
+		err := &delimiterMismatchError{}
+		expected := "pike delimiters mismatch in Readme"
+		if err.Error() != expected {
+			t.Errorf("Expected: %s, got: %s", expected, err.Error())
+		}
+	})
+
+	t.Run("delimiterHooksMissingError", func(t *testing.T) {
+		err := &delimiterHooksMissingError{}
+		expected := "pike hooks delimiter missing in Readme,  consider using the flag -auto"
+		if err.Error() != expected {
+			t.Errorf("Expected: %s, got: %s", expected, err.Error())
+		}
+	})
+
+	t.Run("writeFileError", func(t *testing.T) {
+		err := &writeFileError{file: "output.txt", err: errors.New("disk full")}
+		expected := "failed to write file output.txt disk full"
+		if err.Error() != expected {
+			t.Errorf("Expected: %s, got: %s", expected, err.Error())
+		}
+	})
 }

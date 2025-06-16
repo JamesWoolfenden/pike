@@ -38,26 +38,3 @@ func TestInvokeGithubDispatchEvent(t *testing.T) {
 		})
 	}
 }
-
-func TestVerifyURL(t *testing.T) {
-	type args struct {
-		url string
-	}
-	//goland:noinspection HttpUrlsUsage
-	tests := []struct {
-		name    string
-		args    args
-		wantErr bool
-	}{
-		{"google", args{"www.google.com"}, true},
-		{"http", args{"http://www.google.com"}, true},
-		{"https", args{"https://www.google.com"}, false},
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			if err := pike.VerifyURL(tt.args.url); (err != nil) != tt.wantErr {
-				t.Errorf("VerifyURL() error = %v, wantErr %v", err, tt.wantErr)
-			}
-		})
-	}
-}

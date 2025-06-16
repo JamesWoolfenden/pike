@@ -244,7 +244,7 @@ func MakePolicy(dirName string, file *string, init bool, EnableResources bool, p
 		output OutputPolicy
 	)
 
-	permissionsBag, err := MakePermissionBag(dirName, file, init, provider)
+	permissionsBag, err := makePermissionBag(dirName, file, init, provider)
 
 	if err != nil {
 		return output, err
@@ -258,7 +258,7 @@ func MakePolicy(dirName string, file *string, init bool, EnableResources bool, p
 	return output, nil
 }
 
-func MakePermissionBag(dirName string, file *string, init bool, provider string) (Sorted, error) {
+func makePermissionBag(dirName string, file *string, init bool, provider string) (Sorted, error) {
 
 	var files []string
 
