@@ -22,8 +22,17 @@ func Watch(arn string, wait int) error {
 	if arn == "" {
 		return &arnEmptyError{}
 	}
+
+	if wait <= 0 {
+		return fmt.Errorf("wait time must be positive, got %d", wait)
+	}
+
+	if err := verifyAWSARN(arn); err != nil {
+		return fmt.Errorf("invalid ARN format: %s", arn)
+	}
+
 	// Load the Shared AWS Configuration (~/.aws/config)
-	ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
+	ctx, cancel := context.WithTimeout(context.Background(), defaultTimeout)
 
 	defer cancel()
 
@@ -61,7 +70,7 @@ func waitForPolicyChange(client *iam.Client, arn string, version string, wait, p
 			continue
 		}
 
-		if NewVersion == &version {
+		if *NewVersion != version {
 			return item, nil
 		}
 

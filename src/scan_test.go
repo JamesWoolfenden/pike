@@ -601,6 +601,8 @@ func TestGetHCLType(t *testing.T) {
 		want string
 	}{
 		{"basic", args{"aws_s3_bucket"}, "aws"},
+		{"gcp", args{"google_storage_bucket"}, "google"},
+		{"azurerm", args{"azurerm_storage_account"}, "azurerm"},
 	}
 
 	for _, tt := range tests {

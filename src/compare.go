@@ -350,6 +350,16 @@ func listEnabledAPIs(projectID string) ([]string, error) {
 	return services, nil
 }
 
+type arnNotVerified struct {
+	arn string
+}
+
+func (e *arnNotVerified) Error() string {
+	fmt.Print("ARN must be in the following format:")
+	fmt.Print("arn:aws:iam::123456789012:role/role-name")
+	return fmt.Sprintf("ARN %s not verified", e.arn)
+}
+
 type gcpRoleNotVerified struct {
 	role string
 }
@@ -373,4 +383,15 @@ func verifyGCPRole(role string) error {
 	}
 
 	return &gcpRoleNotVerified{role}
+}
+
+func verifyAWSARN(ARN string) error {
+	r, err := regexp.Compile("arn:aws:iam::(.*\\S):role/(.*\\S)")
+	// Regex should be compiled once as package variable
+	if err == nil {
+		if r.MatchString(ARN) {
+			return nil
+		}
+	}
+	return &arnNotVerified{ARN}
 }
