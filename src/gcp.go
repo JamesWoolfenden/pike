@@ -250,4 +250,13 @@ var gCPTfLookup = map[string]interface{}{
 	"google_iam_workload_identity_pool":                       googleIamWorkloadIdentityPool,
 	"google_iam_workload_identity_pool_provider":              googleIamWorkloadIdentityPoolProvider,
 	"google_project_iam_audit_config":                         googleProjectIamAuditConfig,
+	"google_privateca_ca_pool":                                googlePrivateCaPool,
+	"google_privateca_ca_pool_iam_binding":                    googlePrivateCaPoolIamBinding,
+	"google_privateca_ca_pool_iam_member":                     googlePrivateCaPoolIamMember,
+	"google_privateca_ca_pool_iam_policy":                     googlePrivateCaPoolIamPolicy,
+	"google_privateca_certificate_template":                   googlePrivatecaCertificateTemplate,
+	"google_privateca_certificate_template_iam_binding":       googlePrivatecaCertificateTemplateIamBinding,
+	"google_privateca_certificate_template_iam_member":        googlePrivatecaCertificateTemplateIamMember,
+	"google_privateca_certificate_template_iam_policy":        googlePrivatecaCertificateTemplateIamPolicy,
+	"google_privileged_access_manager_entitlement":            googlePrivilegedAccessManagerEntitlement,
 }

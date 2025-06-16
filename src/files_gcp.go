@@ -459,3 +459,30 @@ var googleBigQueryTable []byte
 
 //go:embed mapping/google/resource/backend/gcs.json
 var gcsBackend []byte
+
+//go:embed mapping/google/resource/privateca/google_privateca_ca_pool.json
+var googlePrivateCaPool []byte
+
+//go:embed mapping/google/resource/privateca/google_privateca_ca_pool_iam_binding.json
+var googlePrivateCaPoolIamBinding []byte
+
+//go:embed mapping/google/resource/privateca/google_privateca_ca_pool_iam_member.json
+var googlePrivateCaPoolIamMember []byte
+
+//go:embed mapping/google/resource/privateca/google_privateca_ca_pool_iam_policy.json
+var googlePrivateCaPoolIamPolicy []byte
+
+//go:embed mapping/google/resource/privateca/google_privateca_certificate_template.json
+var googlePrivatecaCertificateTemplate []byte
+
+//go:embed mapping/google/resource/privateca/google_privateca_certificate_template_iam_binding.json
+var googlePrivatecaCertificateTemplateIamBinding []byte
+
+//go:embed mapping/google/resource/privateca/google_privateca_certificate_template_iam_member.json
+var googlePrivatecaCertificateTemplateIamMember []byte
+
+//go:embed mapping/google/resource/privateca/google_privateca_certificate_template_iam_policy.json
+var googlePrivatecaCertificateTemplateIamPolicy []byte
+
+//go:embed mapping/google/resource/privilegedaccessmanager/google_privileged_access_manager_entitlement.json
+var googlePrivilegedAccessManagerEntitlement []byte

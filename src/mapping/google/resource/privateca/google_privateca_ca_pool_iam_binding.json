@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "privateca.caPools.getIamPolicy",
+      "privateca.caPools.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

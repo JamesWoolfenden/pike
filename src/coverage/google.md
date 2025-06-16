@@ -1,7 +1,7 @@
 # todo google
 
-Resource percentage coverage   16.87
-Datasource percentage coverage 64.63
+Resource percentage coverage   17.63
+Datasource percentage coverage 92.02
 
 ./resource.ps1 google_access_context_manager_access_level_condition
 ./resource.ps1 google_access_context_manager_service_perimeter_dry_run_egress_policy
@@ -819,17 +819,8 @@ Datasource percentage coverage 64.63
 ./resource.ps1 google_parameter_manager_parameter_version
 ./resource.ps1 google_parameter_manager_regional_parameter
 ./resource.ps1 google_parameter_manager_regional_parameter_version
-./resource.ps1 google_privateca_ca_pool
-./resource.ps1 google_privateca_ca_pool_iam_binding
-./resource.ps1 google_privateca_ca_pool_iam_member
-./resource.ps1 google_privateca_ca_pool_iam_policy
 ./resource.ps1 google_privateca_certificate
 ./resource.ps1 google_privateca_certificate_authority
-./resource.ps1 google_privateca_certificate_template
-./resource.ps1 google_privateca_certificate_template_iam_binding
-./resource.ps1 google_privateca_certificate_template_iam_member
-./resource.ps1 google_privateca_certificate_template_iam_policy
-./resource.ps1 google_privileged_access_manager_entitlement
 ./resource.ps1 google_project
 ./resource.ps1 google_project_access_approval_settings
 ./resource.ps1 google_project_default_service_accounts
@@ -980,127 +971,24 @@ Datasource percentage coverage 64.63
 ./resource.ps1 google_workstations_workstation_iam_member
 ./resource.ps1 google_workstations_workstation_iam_policy
 ./resource.ps1 google_access_context_manager_access_policy -type data
-./resource.ps1 google_alloydb_cluster -type data
-./resource.ps1 google_alloydb_instance -type data
-./resource.ps1 google_apphub_application -type data
-./resource.ps1 google_apphub_discovered_service -type data
-./resource.ps1 google_apphub_discovered_workload -type data
-./resource.ps1 google_artifact_registry_docker_image -type data
-./resource.ps1 google_artifact_registry_locations -type data
-./resource.ps1 google_backup_dr_backup -type data
-./resource.ps1 google_backup_dr_backup_plan_association -type data
-./resource.ps1 google_backup_dr_backup_vault -type data
-./resource.ps1 google_backup_dr_data_source -type data
-./resource.ps1 google_beyondcorp_application_iam_policy -type data
-./resource.ps1 google_beyondcorp_security_gateway -type data
-./resource.ps1 google_beyondcorp_security_gateway_application_iam_policy -type data
-./resource.ps1 google_beyondcorp_security_gateway_iam_policy -type data
-./resource.ps1 google_bigquery_datasets -type data
-./resource.ps1 google_bigquery_table -type data
-./resource.ps1 google_bigquery_tables -type data
-./resource.ps1 google_certificate_manager_certificates -type data
 ./resource.ps1 google_cloud_identity_group_transitive_memberships -type data
-./resource.ps1 google_cloud_quotas_quota_info -type data
-./resource.ps1 google_cloud_quotas_quota_infos -type data
-./resource.ps1 google_cloud_run_v2_worker_pool -type data
-./resource.ps1 google_cloud_run_v2_worker_pool_iam_policy -type data
-./resource.ps1 google_clouddeploy_custom_target_type_iam_policy -type data
-./resource.ps1 google_clouddeploy_delivery_pipeline_iam_policy -type data
-./resource.ps1 google_clouddeploy_target_iam_policy -type data
-./resource.ps1 google_colab_runtime_template_iam_policy -type data
-./resource.ps1 google_composer_user_workloads_config_map -type data
-./resource.ps1 google_composer_user_workloads_secret -type data
-./resource.ps1 google_compute_forwarding_rules -type data
-./resource.ps1 google_compute_images -type data
-./resource.ps1 google_compute_instance_guest_attributes -type data
-./resource.ps1 google_compute_instance_template_iam_policy -type data
-./resource.ps1 google_compute_instant_snapshot_iam_policy -type data
-./resource.ps1 google_compute_machine_types -type data
-./resource.ps1 google_compute_region_backend_service -type data
-./resource.ps1 google_compute_region_instance_group_manager -type data
-./resource.ps1 google_compute_security_policy -type data
-./resource.ps1 google_compute_storage_pool_iam_policy -type data
-./resource.ps1 google_compute_storage_pool_types -type data
-./resource.ps1 google_compute_subnetworks -type data
-./resource.ps1 google_container_attached_install_manifest -type data
-./resource.ps1 google_container_aws_versions -type data
-./resource.ps1 google_container_azure_versions -type data
-./resource.ps1 google_dataplex_aspect_type_iam_policy -type data
-./resource.ps1 google_dataplex_entry_group_iam_policy -type data
-./resource.ps1 google_dataplex_entry_type_iam_policy -type data
-./resource.ps1 google_dataplex_glossary_iam_policy -type data
-./resource.ps1 google_dataproc_metastore_database_iam_policy -type data
-./resource.ps1 google_dataproc_metastore_table_iam_policy -type data
 ./resource.ps1 google_dns_managed_zones -type data
 ./resource.ps1 google_firebase_web_app_config -type data
-./resource.ps1 google_folder -type data
-./resource.ps1 google_folder_iam_policy -type data
-./resource.ps1 google_folders -type data
-./resource.ps1 google_gemini_repository_group_iam_policy -type data
-./resource.ps1 google_gke_hub_feature -type data
-./resource.ps1 google_gke_hub_membership -type data
-./resource.ps1 google_iam_workload_identity_pool_iam_policy -type data
-./resource.ps1 google_iap_tunnel_dest_group_iam_policy -type data
-./resource.ps1 google_iap_web_cloud_run_service_iam_policy -type data
-./resource.ps1 google_kms_autokey_config -type data
-./resource.ps1 google_kms_crypto_key_latest_version -type data
-./resource.ps1 google_kms_crypto_key_versions -type data
-./resource.ps1 google_kms_crypto_keys -type data
-./resource.ps1 google_kms_ekm_connection_iam_policy -type data
-./resource.ps1 google_kms_key_handle -type data
-./resource.ps1 google_kms_key_handles -type data
-./resource.ps1 google_kms_key_rings -type data
-./resource.ps1 google_logging_log_view_iam_policy -type data
-./resource.ps1 google_lustre_instance -type data
-./resource.ps1 google_memcache_instance -type data
-./resource.ps1 google_memorystore_instance -type data
-./resource.ps1 google_oracle_database_autonomous_database -type data
-./resource.ps1 google_oracle_database_autonomous_databases -type data
-./resource.ps1 google_oracle_database_cloud_exadata_infrastructure -type data
-./resource.ps1 google_oracle_database_cloud_exadata_infrastructures -type data
-./resource.ps1 google_oracle_database_cloud_vm_cluster -type data
-./resource.ps1 google_oracle_database_cloud_vm_clusters -type data
-./resource.ps1 google_oracle_database_db_nodes -type data
-./resource.ps1 google_oracle_database_db_servers -type data
 ./resource.ps1 google_organization_iam_custom_role -type data
 ./resource.ps1 google_organization_iam_custom_roles -type data
 ./resource.ps1 google_organization_iam_policy -type data
 ./resource.ps1 google_organizations -type data
-./resource.ps1 google_parameter_manager_parameter -type data
-./resource.ps1 google_parameter_manager_parameter_version -type data
-./resource.ps1 google_parameter_manager_parameter_version_render -type data
-./resource.ps1 google_parameter_manager_parameters -type data
-./resource.ps1 google_parameter_manager_regional_parameter -type data
-./resource.ps1 google_parameter_manager_regional_parameter_version -type data
-./resource.ps1 google_parameter_manager_regional_parameter_version_render -type data
-./resource.ps1 google_parameter_manager_regional_parameters -type data
-./resource.ps1 google_privateca_ca_pool_iam_policy -type data
-./resource.ps1 google_privateca_certificate_authority -type data
-./resource.ps1 google_privateca_certificate_template_iam_policy -type data
-./resource.ps1 google_privileged_access_manager_entitlement -type data
 ./resource.ps1 google_project_ancestry -type data
-./resource.ps1 google_project_iam_custom_role -type data
-./resource.ps1 google_project_iam_custom_roles -type data
 ./resource.ps1 google_project_iam_policy -type data
 ./resource.ps1 google_project_organization_policy -type data
-./resource.ps1 google_pubsub_schema_iam_policy -type data
 ./resource.ps1 google_runtimeconfig_config -type data
 ./resource.ps1 google_runtimeconfig_config_iam_policy -type data
 ./resource.ps1 google_runtimeconfig_variable -type data
 ./resource.ps1 google_scc_source_iam_policy -type data
 ./resource.ps1 google_scc_v2_organization_source_iam_policy -type data
-./resource.ps1 google_secret_manager_regional_secret -type data
-./resource.ps1 google_secret_manager_regional_secret_iam_policy -type data
-./resource.ps1 google_secret_manager_regional_secret_version -type data
-./resource.ps1 google_secret_manager_regional_secret_version_access -type data
-./resource.ps1 google_secret_manager_regional_secrets -type data
 ./resource.ps1 google_secure_source_manager_instance_iam_policy -type data
 ./resource.ps1 google_secure_source_manager_repository_iam_policy -type data
-./resource.ps1 google_service_accounts -type data
 ./resource.ps1 google_site_verification_token -type data
-./resource.ps1 google_spanner_database -type data
-./resource.ps1 google_storage_bucket_objects -type data
-./resource.ps1 google_storage_buckets -type data
 ./resource.ps1 google_storage_control_folder_intelligence_config -type data
 ./resource.ps1 google_storage_control_organization_intelligence_config -type data
 ./resource.ps1 google_storage_control_project_intelligence_config -type data

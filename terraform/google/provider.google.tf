@@ -1,6 +1,7 @@
 provider "google" {
   project = "pike-412922"
   region  = "europe-west2"
+
   //credentials = "C:\\Users\\jim_w\\pike-gcp-basic.json"
   credentials = "/Users/jwoolfenden/pike-gcp-basic.json"
 }

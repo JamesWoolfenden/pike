@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "privateca.caPools.create",
+      "privateca.caPools.get",
+      "privateca.caPools.delete",
+      "privateca.caPools.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "privateca.caPools.delete"
+    ],
+    "modify": [
+      "privateca.caPools.update"
+    ],
+    "plan": [
+      "privateca.caPools.get"
+    ]
+  }
+]

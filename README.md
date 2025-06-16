@@ -13,7 +13,12 @@
 [![codecov](https://codecov.io/gh/JamesWoolfenden/pike/graph/badge.svg?token=S5SW3BHIQQ)](https://codecov.io/gh/JamesWoolfenden/pike)
 [![OpenSSF Best Practices](https://www.bestpractices.dev/projects/7032/badge)](https://www.bestpractices.dev/projects/7032)
 
-Pike is a tool to determine the minimum permissions required to run a TF/IAC run:
+Pike is a tool to determine the minimum permissions required to run a TF/IAC run.
+
+**What's new?**
+
+- GCP compare, checks IAC permissions required versus a deployed role.
+- Backend detection S3 and GCP.
 
 Pike currently supports Terraform and supports multiple providers (AWS, GCP and AZURE);
 Azure is the newest with AWS having the most supported resources
@@ -474,6 +479,8 @@ You can see an example here <https://github.com/jamesWoolfenden/terraform-aws-ac
 ## Compare
 
 Want to check your deployed IAM policy against your IAC requirement?
+
+This works for AWS and GCP.
 
 >$./pike compare -d ../modules/aws/terraform-aws-appsync -a arn:aws:iam::680235478471:policy/basic
 

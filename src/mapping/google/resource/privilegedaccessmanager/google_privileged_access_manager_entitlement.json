@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "privilegedaccessmanager.entitlements.get",
+      "privilegedaccessmanager.entitlements.list",
+      "privilegedaccessmanager.entitlements.update",
+      "privilegedaccessmanager.entitlements.create",
+      "privilegedaccessmanager.entitlements.delete",
+      "privilegedaccessmanager.entitlements.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
