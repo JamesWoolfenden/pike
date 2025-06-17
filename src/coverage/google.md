@@ -1,6 +1,6 @@
 # todo google
 
-Resource percentage coverage   17.63
+Resource percentage coverage   17.62
 Datasource percentage coverage 91.78
 
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -446,6 +446,7 @@ Datasource percentage coverage 91.78
 ./resource.ps1 google_dataproc_metastore_table_iam_binding
 ./resource.ps1 google_dataproc_metastore_table_iam_member
 ./resource.ps1 google_dataproc_metastore_table_iam_policy
+./resource.ps1 google_dataproc_session_template
 ./resource.ps1 google_dataproc_workflow_template
 ./resource.ps1 google_datastream_connection_profile
 ./resource.ps1 google_datastream_private_connection
