@@ -36,5 +36,10 @@ resource "google_project_iam_custom_role" "pike" {
     //google_cloud_run_v2_worker_pool_iam_binding
     "run.workerpools.getIamPolicy",
     "run.workerpools.setIamPolicy",
+
+    //google_service_account_iam_member
+    "iam.serviceAccounts.getIamPolicy",
+    "iam.serviceAccounts.setIamPolicy",
+
   ]
 }
