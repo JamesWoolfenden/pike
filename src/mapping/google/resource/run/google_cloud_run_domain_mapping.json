@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "run.domainmappings.create",
+      "run.domainmappings.get",
+      "run.domainmappings.delete",
+      "run.domainmappings.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "run.domainmappings.delete"
+    ],
+    "modify": [
+      "run.domainmappings.update"
+    ],
+    "plan": []
+  }
+]

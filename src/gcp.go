@@ -259,4 +259,13 @@ var gCPTfLookup = map[string]interface{}{
 	"google_privateca_certificate_template_iam_member":        googlePrivatecaCertificateTemplateIamMember,
 	"google_privateca_certificate_template_iam_policy":        googlePrivatecaCertificateTemplateIamPolicy,
 	"google_privileged_access_manager_entitlement":            googlePrivilegedAccessManagerEntitlement,
+	"google_cloud_run_domain_mapping":                         googleCloudRunDomainMapping,
+	"google_cloud_run_service":                                googleCloudRunService,
+	"google_cloud_run_service_iam_binding":                    googleCloudRunServiceIamBinding,
+	"google_cloud_run_service_iam_member":                     googleCloudRunServiceIamMember,
+	"google_cloud_run_service_iam_policy":                     googleCloudRunServiceIamPolicy,
+	"google_cloud_run_v2_worker_pool":                         googleCloudRunV2WorkerPool,
+	"google_cloud_run_v2_worker_pool_iam_binding":             googleCloudRunV2WorkerPoolIamBinding,
+	"google_cloud_run_v2_worker_pool_iam_member":              googleCloudRunV2WorkerPoolIamMember,
+	"google_cloud_run_v2_worker_pool_iam_policy":              googleCloudRunV2WorkerPoolIamPolicy,
 }

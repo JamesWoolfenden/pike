@@ -121,15 +121,6 @@ Datasource percentage coverage 91.78
 ./resource.ps1 google_cloud_ids_endpoint
 ./resource.ps1 google_cloud_quotas_quota_adjuster_settings
 ./resource.ps1 google_cloud_quotas_quota_preference
-./resource.ps1 google_cloud_run_domain_mapping
-./resource.ps1 google_cloud_run_service
-./resource.ps1 google_cloud_run_service_iam_binding
-./resource.ps1 google_cloud_run_service_iam_member
-./resource.ps1 google_cloud_run_service_iam_policy
-./resource.ps1 google_cloud_run_v2_worker_pool
-./resource.ps1 google_cloud_run_v2_worker_pool_iam_binding
-./resource.ps1 google_cloud_run_v2_worker_pool_iam_member
-./resource.ps1 google_cloud_run_v2_worker_pool_iam_policy
 ./resource.ps1 google_cloud_tasks_queue
 ./resource.ps1 google_cloud_tasks_queue_iam_binding
 ./resource.ps1 google_cloud_tasks_queue_iam_member

@@ -486,3 +486,30 @@ var googlePrivatecaCertificateTemplateIamPolicy []byte
 
 //go:embed mapping/google/resource/privilegedaccessmanager/google_privileged_access_manager_entitlement.json
 var googlePrivilegedAccessManagerEntitlement []byte
+
+//go:embed mapping/google/resource/run/google_cloud_run_domain_mapping.json
+var googleCloudRunDomainMapping []byte
+
+//go:embed mapping/google/resource/run/google_cloud_run_service.json
+var googleCloudRunService []byte
+
+//go:embed mapping/google/resource/run/google_cloud_run_service_iam_binding.json
+var googleCloudRunServiceIamBinding []byte
+
+//go:embed mapping/google/resource/run/google_cloud_run_service_iam_member.json
+var googleCloudRunServiceIamMember []byte
+
+//go:embed mapping/google/resource/run/google_cloud_run_service_iam_policy.json
+var googleCloudRunServiceIamPolicy []byte
+
+//go:embed mapping/google/resource/run/google_cloud_run_v2_worker_pool.json
+var googleCloudRunV2WorkerPool []byte
+
+//go:embed mapping/google/resource/run/google_cloud_run_v2_worker_pool_iam_binding.json
+var googleCloudRunV2WorkerPoolIamBinding []byte
+
+//go:embed mapping/google/resource/run/google_cloud_run_v2_worker_pool_iam_member.json
+var googleCloudRunV2WorkerPoolIamMember []byte
+
+//go:embed mapping/google/resource/run/google_cloud_run_v2_worker_pool_iam_policy.json
+var googleCloudRunV2WorkerPoolIamPolicy []byte

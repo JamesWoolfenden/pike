@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "run.workerpools.getIamPolicy",
+      "run.workerpools.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
