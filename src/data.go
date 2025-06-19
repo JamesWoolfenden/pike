@@ -167,7 +167,7 @@ func GetLocalModules(block *hclsyntax.Block, dirName string, listModulesJson Mod
 		modulePath = ReturnLocalAddrFromSource(modulePath, listModulesJson)
 	}
 	// have the path to the module
-	modulePath = filepath.Join(dirName, "/", modulePath)
+	modulePath = filepath.Join(dirName, modulePath)
 	// now process these extras
 	ExtraFiles, err := GetTF(modulePath)
 	if err != nil {
