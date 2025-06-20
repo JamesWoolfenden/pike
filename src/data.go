@@ -37,6 +37,11 @@ func GetResources(file string, dirName string) ([]ResourceV2, error) {
 		return Resources, err
 	}
 
+	moduleJson, err := GetModuleJson(filepath.Join(dirName, "/", ".terraform", "modules"))
+	if err != nil {
+		return Resources, err
+	}
+
 	for _, block := range temp.Blocks {
 		var resource ResourceV2
 		resource.TypeName = block.Type
@@ -50,7 +55,7 @@ func GetResources(file string, dirName string) ([]ResourceV2, error) {
 			}
 		case module:
 			{
-				LocalResources, err := GetLocalModules(block, dirName)
+				LocalResources, err := GetLocalModules(block, dirName, moduleJson)
 				if err == nil {
 					Resources = append(LocalResources, Resources...)
 				} else {
@@ -147,7 +152,7 @@ func GetResourceBlocks(file string) (*hclsyntax.Body, error) {
 }
 
 // GetLocalModules return resource from a path.
-func GetLocalModules(block *hclsyntax.Block, dirName string) ([]ResourceV2, error) {
+func GetLocalModules(block *hclsyntax.Block, dirName string, listModulesJson ModuleJson) ([]ResourceV2, error) {
 	var Resources []ResourceV2
 
 	modulePath := GetModulePath(block)
@@ -157,9 +162,12 @@ func GetLocalModules(block *hclsyntax.Block, dirName string) ([]ResourceV2, erro
 		return nil, &gitReferenceError{modulePath}
 	}
 
+	// Module is coming from HCP Terraform Cloud
+	if strings.HasPrefix(modulePath, "app.terraform.io") {
+		modulePath = ReturnLocalAddrFromSource(modulePath, listModulesJson)
+	}
 	// have the path to the module
-	modulePath = filepath.Join(dirName, "/", modulePath)
-
+	modulePath = filepath.Join(dirName, modulePath)
 	// now process these extras
 	ExtraFiles, err := GetTF(modulePath)
 	if err != nil {
@@ -272,4 +280,8 @@ func GetPermission(result ResourceV2) (Sorted, error) {
 	}
 
 	return myPermission, err
+}
+
+func GetModuleJson(dir string) (ModuleJson, error) {
+	return ReadModuleJsonForDir(dir)
 }
