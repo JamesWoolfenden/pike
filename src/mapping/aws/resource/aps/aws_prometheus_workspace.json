@@ -3,7 +3,8 @@
     "apply": [
       "aps:CreateWorkspace",
       "aps:DescribeWorkspace",
-      "aps:ListTagsForResource"
+      "aps:ListTagsForResource",
+      "aps:DescribeLoggingConfiguration"
     ],
     "attributes": {
       "kms_key_arn": [
@@ -39,7 +40,8 @@
     ],
     "plan": [
       "aps:DescribeWorkspace",
-      "aps:ListTagsForResource"
+      "aps:ListTagsForResource",
+      "aps:DescribeLoggingConfiguration"
     ]
   }
 ]

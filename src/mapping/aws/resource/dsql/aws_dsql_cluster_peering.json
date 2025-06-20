@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "dsql:AddPeerCluster",
+      "dsql:RemovePeerCluster"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "dsql:RemovePeerCluster"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

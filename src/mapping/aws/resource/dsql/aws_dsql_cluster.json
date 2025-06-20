@@ -1,0 +1,28 @@
+[
+  {
+    "apply": [
+      "dsql:CreateCluster",
+      "dsql:GetCluster",
+      "iam:CreateServiceLinkedRole",
+      "dsql:GetVpcEndpointServiceName",
+      "dsql:ListTagsForResource",
+      "dsql:UpdateCluster",
+      "dsql:DeleteCluster"
+    ],
+    "attributes": {
+      "tags": [
+        "dsql:TagResource",
+        "dsql:UntagResource"
+      ]
+    },
+    "destroy": [
+      "dsql:DeleteCluster"
+    ],
+    "modify": [
+      "dsql:UpdateCluster"
+    ],
+    "plan": [
+      "dsql:GetCluster"
+    ]
+  }
+]

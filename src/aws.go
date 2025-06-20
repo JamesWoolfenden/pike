@@ -1527,6 +1527,11 @@ var tFLookup = map[string]interface{}{ //nolint:gochecknoglobals
 	"aws_workspacesweb_browser_settings":                               awsWorkspaceswebBrowserSettings,
 	"aws_workspacesweb_network_settings":                               awsWorkspaceswebNetworkSettings,
 	"aws_workspacesweb_user_settings":                                  awsWorkspaceswebUserSettings,
+	"aws_dsql_cluster":                                                 awsDsqlCluster,
+	"aws_dsql_cluster_peering":                                         awsDsqlClusterPeering,
+	"aws_lightsail_bucket_access_key":                                  awsLightsailBucketAccessKey,
+	"aws_prometheus_workspace_configuration":                           awsPrometheusWorkspaceConfiguration,
+	"aws_s3control_directory_bucket_access_point_scope":                awsS3controlDirectoryBucketAccessPointScope,
 }
 
 // GetAWSPermissions for AWS resources.
