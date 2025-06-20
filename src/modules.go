@@ -7,7 +7,7 @@ import (
 	"os"
 	"path/filepath"
 
-	version "github.com/hashicorp/go-version"
+	"github.com/hashicorp/go-version"
 )
 
 const (
@@ -15,7 +15,7 @@ const (
 )
 
 // Record represents some metadata about an installed module, as part
-// of a modules json.
+// of a module JSON.
 type Record struct {
 	Key        string           `json:"Key"`
 	SourceAddr string           `json:"Source"`
@@ -30,8 +30,19 @@ type modulesJson struct {
 	Records []Record `json:"Modules"`
 }
 
+type invalidVersionError struct {
+	err     error
+	key     string
+	version string
+}
+
+func (m *invalidVersionError) Error() string {
+	return fmt.Sprintf("invalid version %q for %s: %s", m.version, m.key, m.err)
+}
+
 func ReadModuleJson(r io.Reader) (ModuleJson, error) {
 	src, err := io.ReadAll(r)
+
 	if err != nil {
 		return nil, err
 	}
@@ -42,27 +53,29 @@ func ReadModuleJson(r io.Reader) (ModuleJson, error) {
 
 	var read modulesJson
 	err = json.Unmarshal(src, &read)
+
 	if err != nil {
-		return nil, fmt.Errorf("error unmarshalling snapshot: %v", err)
+		return nil, &unmarshallJSONError{err, ""}
 	}
-	new := make(ModuleJson)
+
+	newModuleJson := make(ModuleJson)
 	for _, record := range read.Records {
 		if record.VersionStr != "" {
 			record.Version, err = version.NewVersion(record.VersionStr)
 			if err != nil {
-				return nil, fmt.Errorf("invalid version %q for %s: %s", record.VersionStr, record.Key, err)
+				return nil, &invalidVersionError{err, record.Key, record.VersionStr}
 			}
 		}
 		// Ensure Windows is using the proper modules path format after
-		// reading the modules manifest Dir records
+		// reading the module's manifest Dir records
 		record.Dir = filepath.FromSlash(record.Dir)
 
-		if _, exists := new[record.Key]; exists {
+		if _, exists := newModuleJson[record.Key]; exists {
 			return nil, fmt.Errorf("snapshot file contains two records for path %s", record.Key)
 		}
-		new[record.Key] = record
+		newModuleJson[record.Key] = record
 	}
-	return new, nil
+	return newModuleJson, nil
 }
 
 func ReadModuleJsonForDir(dir string) (ModuleJson, error) {
@@ -74,6 +87,7 @@ func ReadModuleJsonForDir(dir string) (ModuleJson, error) {
 		}
 		return nil, err
 	}
+	defer r.Close()
 	return ReadModuleJson(r)
 }
 
