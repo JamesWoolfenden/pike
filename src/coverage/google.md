@@ -1,6 +1,6 @@
 # todo google
 
-Resource percentage coverage   18.38
+Resource percentage coverage   18.35
 Datasource percentage coverage 91.78
 
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -41,6 +41,7 @@ Datasource percentage coverage 91.78
 ./resource.ps1 google_apihub_api_hub_instance
 ./resource.ps1 google_apihub_curation
 ./resource.ps1 google_apihub_host_project_registration
+./resource.ps1 google_apihub_plugin_instance
 ./resource.ps1 google_apikeys_key
 ./resource.ps1 google_app_engine_application
 ./resource.ps1 google_app_engine_application_url_dispatch_rules
@@ -457,6 +458,7 @@ Datasource percentage coverage 91.78
 ./resource.ps1 google_dialogflow_cx_tool
 ./resource.ps1 google_dialogflow_cx_version
 ./resource.ps1 google_dialogflow_cx_webhook
+./resource.ps1 google_dialogflow_encryption_spec
 ./resource.ps1 google_dialogflow_entity_type
 ./resource.ps1 google_dialogflow_fulfillment
 ./resource.ps1 google_dialogflow_intent

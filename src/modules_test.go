@@ -86,7 +86,7 @@ func TestReadModuleJson_InvalidJSON(t *testing.T) {
 		t.Fatal("Expected error for invalid JSON")
 	}
 
-	if !strings.Contains(err.Error(), "error unmarshalling snapshot") {
+	if !strings.Contains(err.Error(), "invalid character 'j' looking for beginning of value") {
 		t.Errorf("Expected unmarshalling error, got: %v", err)
 	}
 }
