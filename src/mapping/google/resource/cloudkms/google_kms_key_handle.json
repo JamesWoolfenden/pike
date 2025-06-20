@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "cloudkms.keyHandles.create",
+      "cloudkms.keyHandles.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "cloudkms.keyHandles.get"
+    ]
+  }
+]

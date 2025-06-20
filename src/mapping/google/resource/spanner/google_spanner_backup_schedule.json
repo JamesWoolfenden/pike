@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "spanner.databases.createBackup",
+      "spanner.backupSchedules.create",
+      "spanner.backupSchedules.get",
+      "spanner.backupSchedules.delete",
+      "spanner.backupSchedules.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "spanner.backupSchedules.delete"
+    ],
+    "modify": [
+      "spanner.backupSchedules.update"
+    ],
+    "plan": []
+  }
+]

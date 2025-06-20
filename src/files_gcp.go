@@ -513,3 +513,72 @@ var googleCloudRunV2WorkerPoolIamMember []byte
 
 //go:embed mapping/google/resource/run/google_cloud_run_v2_worker_pool_iam_policy.json
 var googleCloudRunV2WorkerPoolIamPolicy []byte
+
+//go:embed mapping/google/resource/cloudfunctions/google_cloudfunctions2_function.json
+var googleCloudfunction2Function []byte
+
+//go:embed mapping/google/resource/cloudfunctions/google_cloudfunctions2_function_iam_binding.json
+var googleCloudfunction2FunctionIamBinding []byte
+
+//go:embed mapping/google/resource/cloudfunctions/google_cloudfunctions2_function_iam_member.json
+var googleCloudfunction2FunctionIamMember []byte
+
+//go:embed mapping/google/resource/cloudfunctions/google_cloudfunctions2_function_iam_policy.json
+var googleCloudfunction2FunctionIamPolicy []byte
+
+//go:embed mapping/google/resource/cloudfunctions/google_cloudfunctions_function_iam_binding.json
+var googleCloudfunctionsFunctionIamBinding []byte
+
+//go:embed mapping/google/resource/cloudkms/google_kms_crypto_key_version.json
+var googleKmsCryptoKeyVersions []byte
+
+//go:embed mapping/google/resource/cloudkms/google_kms_key_handle.json
+var googleKmsKeyHandle []byte
+
+//go:embed mapping/google/resource/cloudkms/google_kms_key_ring_iam_binding.json
+var googleKmsKeyRingIamBinding []byte
+
+//go:embed mapping/google/resource/cloudkms/google_kms_key_ring_iam_member.json
+var googleKmsKeyRingIamMember []byte
+
+//go:embed mapping/google/resource/cloudkms/google_kms_key_ring_iam_policy.json
+var googleKmsKeyRingIamPolicy []byte
+
+//go:embed mapping/google/resource/cloudkms/google_kms_key_ring_import_job.json
+var googleKmsKeyRingImportJob []byte
+
+//go:embed mapping/google/resource/cloudkms/google_kms_secret_ciphertext.json
+var googleKmsSecretCiphertext []byte
+
+//go:embed mapping/google/resource/compute/google_project_usage_export_bucket.json
+var googleProjectUsageExportBucket []byte
+
+//go:embed mapping/google/resource/iam/google_default_service_accounts.json
+var googleDefaultServiceAccounts []byte
+
+//go:embed mapping/google/resource/iam/google_project_default_service_accounts.json
+var googleProjectDefaultServiceAccounts []byte
+
+//go:embed mapping/google/resource/secretmanager/google_secret_manager_regional_secret.json
+var googleSecretManagerRegionalSecret []byte
+
+//go:embed mapping/google/resource/secretmanager/google_secret_manager_regional_secret_iam_binding.json
+var googleSecretManagerRegionalSecretsIamBinding []byte
+
+//go:embed mapping/google/resource/secretmanager/google_secret_manager_regional_secret_iam_member.json
+var googleSecretManagerRegionalSecretIamMember []byte
+
+//go:embed mapping/google/resource/secretmanager/google_secret_manager_regional_secret_iam_policy.json
+var googleSecretManagerRegionalSecretIamPolicy []byte
+
+//go:embed mapping/google/resource/secretmanager/google_secret_manager_regional_secret_version.json
+var googleSecretManagerRegionalSecretVersion []byte
+
+//go:embed mapping/google/resource/spanner/google_spanner_backup_schedule.json
+var googleSpannerBackupSchedule []byte
+
+//go:embed mapping/google/resource/spanner/google_spanner_instance_config.json
+var googleSpannerInstanceConfig []byte
+
+//go:embed mapping/google/resource/spanner/google_spanner_instance_partition.json
+var googleSpannerInstancePartition []byte

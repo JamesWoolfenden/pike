@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "cloudkms.importJobs.create",
+      "cloudkms.importJobs.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "cloudkms.importJobs.get"
+    ]
+  }
+]

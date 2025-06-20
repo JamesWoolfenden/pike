@@ -1,21 +1,32 @@
-resource "google_cloudfunctions_function" "pikey" {
+resource "google_storage_bucket" "bucket" {
+  name     = "test-bucket-jgw"
+  location = "US"
+}
 
-  docker_registry              = "CONTAINER_REGISTRY"
-  entry_point                  = "helloWorld"
-  environment_variables        = {}
-  https_trigger_security_level = "SECURE_ALWAYS"
-  https_trigger_url            = "https://europe-west2-pike-361314.cloudfunctions.net/pikey"
-  labels = {
-    deployment-tool = "console-cloud"
-    tag             = "deployment-tool"
-    pike            = "permissions"
-  }
-  max_instances         = 3000
-  min_instances         = 0
-  name                  = "pikey"
-  project               = "pike-361314"
-  region                = "europe-west2"
-  runtime               = "nodejs16"
-  service_account_email = "pike-361314@appspot.gserviceaccount.com"
+resource "google_storage_bucket_object" "archive" {
+  name   = "test.zip"
+  bucket = google_storage_bucket.bucket.name
+  source = "./test.zip"
+}
+
+resource "google_cloudfunctions_function" "function" {
+  name        = "function-test"
+  description = "My function"
+  runtime     = "go121"
+
+  available_memory_mb   = 128
+  source_archive_bucket = google_storage_bucket.bucket.name
+  source_archive_object = google_storage_bucket_object.archive.name
   trigger_http          = true
+  entry_point           = "helloHTTP"
+}
+
+# IAM entry for all users to invoke the function
+resource "google_cloudfunctions_function_iam_member" "invoker" {
+  project        = google_cloudfunctions_function.function.project
+  region         = google_cloudfunctions_function.function.region
+  cloud_function = google_cloudfunctions_function.function.name
+
+  role   = "roles/cloudfunctions.invoker"
+  member = "allUsers"
 }
