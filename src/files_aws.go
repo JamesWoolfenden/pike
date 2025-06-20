@@ -888,3 +888,21 @@ var awsPrometheusWorkspaceConfiguration []byte
 
 //go:embed mapping/aws/resource/s3control/aws_s3control_directory_bucket_access_point_scope.json
 var awsS3controlDirectoryBucketAccessPointScope []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpc_route_server.json
+var awsVpcRouteServer []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpc_route_server_propagation.json
+var awsVpcRouteServerPropagation []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpc_route_server_vpc_association.json
+var awsVpcRouteServerVpcAssociation []byte
+
+//go:embed mapping/aws/resource/workspaces-web/aws_workspacesweb_data_protection_settings.json
+var awsWorkspaceswebDataProtectionSettings []byte
+
+//go:embed mapping/aws/resource/workspaces-web/aws_workspacesweb_ip_access_settings.json
+var awsWorkspaceswebIpAccessSettings []byte
+
+//go:embed mapping/aws/resource/workspaces-web/aws_workspacesweb_user_access_logging_settings.json
+var awsWorkspaceswebUserAccessLoggingSettings []byte

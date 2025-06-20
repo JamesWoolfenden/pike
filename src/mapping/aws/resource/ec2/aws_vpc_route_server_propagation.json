@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "ec2:DisableRouteServerPropagation",
+      "ec2:EnableRouteServerPropagation",
+      "ec2:GetRouteServerPropagations"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "ec2:DisableRouteServerPropagation"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

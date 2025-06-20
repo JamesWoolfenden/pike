@@ -1,0 +1,34 @@
+[
+  {
+    "apply": [
+      "workspaces-web:GetDataProtectionSettings",
+      "workspaces-web:AssociateDataProtectionSettings",
+      "workspaces-web:CreateDataProtectionSettings",
+      "workspaces-web:DeleteDataProtectionSettings",
+      "workspaces-web:DisassociateDataProtectionSettings",
+      "workspaces-web:UpdateDataProtectionSettings",
+      "workspaces-web:ListTagsForResource"
+    ],
+    "attributes": {
+      "customer_managed_key": [
+        "kms:DescribeKey",
+        "kms:GenerateDataKey",
+        "kms:Decrypt"
+      ],
+      "tags": [
+        "workspaces-web:TagResource",
+        "workspaces-web:UntagResource"
+      ]
+    },
+    "destroy": [
+      "workspaces-web:DeleteDataProtectionSettings",
+      "workspaces-web:DisassociateDataProtectionSettings"
+    ],
+    "modify": [
+      "workspaces-web:UpdateDataProtectionSettings"
+    ],
+    "plan": [
+      "workspaces-web:GetDataProtectionSettings"
+    ]
+  }
+]

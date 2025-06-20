@@ -1,0 +1,31 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeRouteServers",
+      "ec2:DeleteRouteServer",
+      "ec2:CreateRouteServer",
+      "ec2:DisassociateRouteServer",
+      "ec2:ModifyRouteServer"
+    ],
+    "attributes": {
+      "sns_notifications_enabled": [
+        "sns:DeleteTopic",
+        "sns:CreateTopic"
+      ],
+      "tags": [
+        "ec2:CreateTags",
+        "ec2:DeleteTags"
+      ]
+    },
+    "destroy": [
+      "ec2:DeleteRouteServer",
+      "ec2:DisassociateRouteServer"
+    ],
+    "modify": [
+      "ec2:ModifyRouteServer"
+    ],
+    "plan": [
+      "ec2:DescribeRouteServers"
+    ]
+  }
+]

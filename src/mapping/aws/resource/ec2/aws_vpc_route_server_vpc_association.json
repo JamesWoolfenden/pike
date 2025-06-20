@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "ec2:AssociateRouteServer",
+      "ec2:DisassociateRouteServer"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

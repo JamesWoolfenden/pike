@@ -12,8 +12,12 @@
         "workspaces-web:UntagResource"
       ]
     },
-    "destroy": [],
+    "destroy": [
+      "workspaces-web:DeleteBrowserSettings"
+    ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "workspaces-web:GetBrowserSettings"
+    ]
   }
 ]

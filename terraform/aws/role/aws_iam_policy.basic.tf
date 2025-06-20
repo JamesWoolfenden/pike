@@ -7,46 +7,27 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "VisualEditor0",
         "Effect" : "Allow",
         "Action" : [
-          "aps:CreateWorkspace",
-          "aps:DeleteWorkspace",
-          "aps:DescribeWorkspace",
-          "aps:ListTagsForResource",
-          "aps:UpdateWorkspaceAlias",
-          "s3express:CreateBucket",
-          "s3express:DeleteBucket",
-          "s3:CreateAccessPoint",
-          "s3:DeleteAccessPoint",
-          "s3:DeleteAccessPointPolicy",
-          "s3:DeleteObject",
-          "s3:GetAccessPoint",
-          "s3:GetAccessPointPolicy",
-          "s3:GetObject",
-          "s3:ListBucket",
-          "s3:PutAccessPointPolicy",
-          "s3:PutAccessPointPublicAccessBlock",
-          "s3:PutObject",
-          "ec2:DescribeAvailabilityZones",
+          "ec2:AssociateSubnetCidrBlock",
+          "ec2:CreateRouteTable",
+          "ec2:CreateSubnet",
+          "ec2:CreateVPC",
+          "ec2:DeleteRouteTable",
+          "ec2:DeleteSubnet",
+          "ec2:DeleteVPC",
+          "ec2:DescribeAccountAttributes",
+          "ec2:DescribeNetworkAcls",
+          "ec2:DescribeNetworkInterfaces",
+          "ec2:DescribeRouteTables",
+          "ec2:DescribeSubnets",
+          "ec2:DescribeVpcAttribute",
+          "ec2:DescribeVpcs",
+          "ec2:DisassociateSubnetCidrBlock",
+          "ec2:ModifySubnetAttribute",
+          "ec2:ModifyVpcAttribute",
+          "ec2:ModifyVpcTenancy",
 
 
-
-          //aws_lightsail_bucket
-          "lightsail:CreateBucket",
-          "lightsail:DeleteBucket",
-          "lightsail:GetBuckets",
-          "lightsail:GetInstance",
-          "lightsail:SetResourceAccessForBucket",
-          "lightsail:UpdateBucket",
-          "lightsail:UpdateBucketBundle",
-
-
-          //aws_prometheus_workspace_configuration
-          "aps:UpdateWorkspaceConfiguration",
-          "aps:DescribeWorkspaceConfiguration",
-
-          //aws_prometheus_workspace
-          "aps:DescribeLoggingConfiguration",
-
-
+          //aws_vpc_route_server_vpc_association
 
         ],
         "Resource" : [

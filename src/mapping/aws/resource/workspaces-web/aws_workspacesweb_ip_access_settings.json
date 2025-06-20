@@ -1,0 +1,34 @@
+[
+  {
+    "apply": [
+      "workspaces-web:GetIpAccessSettings",
+      "workspaces-web:AssociateIpAccessSettings",
+      "workspaces-web:CreateIpAccessSettings",
+      "workspaces-web:DeleteIpAccessSettings",
+      "workspaces-web:DisassociateIpAccessSettings",
+      "workspaces-web:UpdateIpAccessSettings",
+      "workspaces-web:ListTagsForResource"
+    ],
+    "attributes": {
+      "customer_managed_key": [
+        "kms:DescribeKey",
+        "kms:GenerateDataKey",
+        "kms:Decrypt"
+      ],
+      "tags": [
+        "workspaces-web:TagResource",
+        "workspaces-web:UntagResource"
+      ]
+    },
+    "destroy": [
+      "workspaces-web:DeleteIpAccessSettings",
+      "workspaces-web:DisassociateIpAccessSettings"
+    ],
+    "modify": [
+      "workspaces-web:UpdateIpAccessSettings"
+    ],
+    "plan": [
+      "workspaces-web:GetIpAccessSettings"
+    ]
+  }
+]
