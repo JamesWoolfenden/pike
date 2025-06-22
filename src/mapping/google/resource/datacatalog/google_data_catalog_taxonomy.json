@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "datacatalog.taxonomies.create",
+      "datacatalog.taxonomies.get",
+      "datacatalog.taxonomies.update",
+      "datacatalog.taxonomies.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "datacatalog.taxonomies.delete"
+    ],
+    "modify": [
+      "datacatalog.taxonomies.update"
+    ],
+    "plan": [
+      "datacatalog.taxonomies.get"
+    ]
+  }
+]

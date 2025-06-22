@@ -513,3 +513,57 @@ var googleCloudRunV2WorkerPoolIamMember []byte
 
 //go:embed mapping/google/resource/run/google_cloud_run_v2_worker_pool_iam_policy.json
 var googleCloudRunV2WorkerPoolIamPolicy []byte
+
+//go:embed mapping/google/resource/datacatalog/google_bigquery_datapolicy_data_policy.json
+var googleBigqueryDatapolicyDataPolicy []byte
+
+//go:embed mapping/google/resource/datacatalog/google_bigquery_datapolicy_data_policy_iam_binding.json
+var googleBigqueryDatapolicyDataPolicyIamBinding []byte
+
+//go:embed mapping/google/resource/datacatalog/google_bigquery_datapolicy_data_policy_iam_member.json
+var googleBigqueryDatapolicyDataPolicyIamMember []byte
+
+//go:embed mapping/google/resource/datacatalog/google_bigquery_datapolicy_data_policy_iam_policy.json
+var googleBigqueryDatapolicyDataPolicyIamPolicy []byte
+
+//go:embed mapping/google/resource/datacatalog/google_data_catalog_entry.json
+var googleDataCatalogEntry []byte
+
+//go:embed mapping/google/resource/datacatalog/google_data_catalog_entry_group.json
+var googleDataCatalogEntryGroup []byte
+
+//go:embed mapping/google/resource/datacatalog/google_data_catalog_entry_group_iam_member.json
+var googleDataCatalogEntryGroupIamMember []byte
+
+//go:embed mapping/google/resource/datacatalog/google_data_catalog_entry_group_iam_policy.json
+var googleDataCatalogEntryGroupIamPolicy []byte
+
+//go:embed mapping/google/resource/datacatalog/google_data_catalog_policy_tag.json
+var googleDataCatalogPolicyTag []byte
+
+//go:embed mapping/google/resource/datacatalog/google_data_catalog_tag_template_iam_member.json
+var googleDataCatalogPolicyTagIamMember []byte
+
+//go:embed mapping/google/resource/datacatalog/google_data_catalog_tag_template_iam_policy.json
+var googleDataCatalogPolicyTagIamPolicy []byte
+
+//go:embed mapping/google/resource/datacatalog/google_data_catalog_tag.json
+var googleDataCatalogTag []byte
+
+//go:embed mapping/google/resource/datacatalog/google_data_catalog_tag_template.json
+var googleDataCatalogTagTemplate []byte
+
+//go:embed mapping/google/resource/datacatalog/google_data_catalog_tag_template_iam_policy.json
+var googleDataCatalogTagTemplateIamPolicy []byte
+
+//go:embed mapping/google/resource/datacatalog/google_data_catalog_taxonomy.json
+var googleDataCatalogTaxonomy []byte
+
+//go:embed mapping/google/resource/datacatalog/google_data_catalog_policy_tag_iam_policy.json
+var googleDataCatalogTaxonomyIamBinding []byte
+
+//go:embed mapping/google/resource/datacatalog/google_data_catalog_taxonomy_iam_member.json
+var googleDataCatalogTaxonomyIamMember []byte
+
+//go:embed mapping/google/resource/datacatalog/google_data_catalog_taxonomy_iam_policy.json
+var googleDataCatalogTaxonomyIamPolicy []byte

@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "datacatalog.entries.create",
+      "datacatalog.entries.get",
+      "datacatalog.entries.update",
+      "datacatalog.entries.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "datacatalog.entries.delete"
+    ],
+    "modify": [
+      "datacatalog.entries.update"
+    ],
+    "plan": []
+  }
+]

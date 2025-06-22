@@ -1,6 +1,6 @@
 # todo google
 
-Resource percentage coverage   18.35
+Resource percentage coverage   20.22
 Datasource percentage coverage 91.78
 
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -80,10 +80,6 @@ Datasource percentage coverage 91.78
 ./resource.ps1 google_biglake_database
 ./resource.ps1 google_biglake_table
 ./resource.ps1 google_bigquery_analytics_hub_listing_subscription
-./resource.ps1 google_bigquery_datapolicy_data_policy
-./resource.ps1 google_bigquery_datapolicy_data_policy_iam_binding
-./resource.ps1 google_bigquery_datapolicy_data_policy_iam_member
-./resource.ps1 google_bigquery_datapolicy_data_policy_iam_policy
 ./resource.ps1 google_bigquery_dataset_access
 ./resource.ps1 google_bigquery_row_access_policy
 ./resource.ps1 google_bigtable_authorized_view
@@ -330,24 +326,6 @@ Datasource percentage coverage 91.78
 ./resource.ps1 google_container_azure_cluster
 ./resource.ps1 google_container_azure_node_pool
 ./resource.ps1 google_container_registry
-./resource.ps1 google_data_catalog_entry
-./resource.ps1 google_data_catalog_entry_group
-./resource.ps1 google_data_catalog_entry_group_iam_binding
-./resource.ps1 google_data_catalog_entry_group_iam_member
-./resource.ps1 google_data_catalog_entry_group_iam_policy
-./resource.ps1 google_data_catalog_policy_tag
-./resource.ps1 google_data_catalog_policy_tag_iam_binding
-./resource.ps1 google_data_catalog_policy_tag_iam_member
-./resource.ps1 google_data_catalog_policy_tag_iam_policy
-./resource.ps1 google_data_catalog_tag
-./resource.ps1 google_data_catalog_tag_template
-./resource.ps1 google_data_catalog_tag_template_iam_binding
-./resource.ps1 google_data_catalog_tag_template_iam_member
-./resource.ps1 google_data_catalog_tag_template_iam_policy
-./resource.ps1 google_data_catalog_taxonomy
-./resource.ps1 google_data_catalog_taxonomy_iam_binding
-./resource.ps1 google_data_catalog_taxonomy_iam_member
-./resource.ps1 google_data_catalog_taxonomy_iam_policy
 ./resource.ps1 google_data_fusion_instance
 ./resource.ps1 google_data_fusion_instance_iam_binding
 ./resource.ps1 google_data_fusion_instance_iam_member

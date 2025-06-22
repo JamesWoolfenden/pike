@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "datacatalog.entryGroups.create",
+      "datacatalog.entryGroups.get",
+      "datacatalog.entryGroups.update",
+      "datacatalog.entryGroups.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "datacatalog.entryGroups.delete"
+    ],
+    "modify": [
+      "datacatalog.entryGroups.update"
+    ],
+    "plan": []
+  }
+]

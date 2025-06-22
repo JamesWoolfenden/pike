@@ -116,6 +116,7 @@ func Scan(dirName string, output string, file *string, init bool, write bool, en
 
 	OutPolicy, err := MakePolicy(dirName, file, init, enableResources, provider)
 	if err != nil {
+		fmt.Print(err.Error())
 		return &makePolicyError{err}
 	}
 

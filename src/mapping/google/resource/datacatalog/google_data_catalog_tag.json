@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "datacatalog.tagTemplates.get",
+      "datacatalog.tagTemplates.getTag",
+      "datacatalog.tagTemplates.use",
+      "datacatalog.tagTemplates.delete",
+      "datacatalog.entries.updateTag"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "datacatalog.tagTemplates.delete"
+    ],
+    "modify": [
+      "datacatalog.entries.updateTag"
+    ],
+    "plan": []
+  }
+]

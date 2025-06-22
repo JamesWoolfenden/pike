@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "datacatalog.tagTemplates.create",
+      "datacatalog.tagTemplates.getIamPolicy",
+      "datacatalog.tagTemplates.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

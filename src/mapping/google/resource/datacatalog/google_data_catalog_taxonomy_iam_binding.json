@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "datacatalog.taxonomies.setIamPolicy",
+      "datacatalog.taxonomies.getIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

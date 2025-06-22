@@ -4,37 +4,42 @@ resource "google_project_iam_custom_role" "pike" {
   title       = "pike terraform user"
   description = "A user with least privileges"
   permissions = [
-    //google_cloud_run_v2_worker_pool
-    "run.workerpools.create",
-    "run.workerpools.get",
-    "run.workerpools.update",
-    "run.workerpools.delete",
+    //google_data_catalog_tag_template
+    "datacatalog.tagTemplates.create",
+    "datacatalog.tagTemplates.getIamPolicy",
+    "datacatalog.tagTemplates.get",
+
+    //"datacatalog.tagTemplates.setIamPolicy",
+
+    //google_data_catalog_entry_group
+    "datacatalog.entryGroups.create",
+    "datacatalog.entryGroups.get",
+    "datacatalog.entryGroups.update",
+    "datacatalog.entryGroups.delete",
 
 
-    # //google_cloud_run_v2_service google_cloud_run_service
-    # "iam.serviceaccounts.actAs",
+    //google_data_catalog_tag
+    "datacatalog.tagTemplates.get",
+    "datacatalog.tagTemplates.getTag",
+    "datacatalog.tagTemplates.use",
+    "datacatalog.tagTemplates.delete",
+    "datacatalog.entries.updateTag",
 
-    //google_cloud_run_v2_service google_cloud_run_service
-    "run.services.create",
-    "run.services.get",
-    "run.services.delete",
-    "run.services.update",
 
-    //google_cloud_run_service_iam_binding
-    "run.services.getIamPolicy",
-    "run.services.setIamPolicy",
+    //google_data_catalog_entry
+    "datacatalog.entries.create",
+    "datacatalog.entries.get",
+    "datacatalog.entries.update",
+    "datacatalog.entries.delete",
 
-    //google_cloud_run_domain_mapping
-    "run.domainmappings.create",
-    "run.domainmappings.get",
-    "run.domainmappings.delete",
-    "run.domainmappings.update",
+    //google_bigquery_datapolicy_data_policy
+    "datacatalog.tagTemplates.setIamPolicy",
+    "datacatalog.tagTemplates.getIamPolicy",
 
-    //google_cloud_run_v2_service
-    "run.operations.get",
-
-    //google_cloud_run_v2_worker_pool_iam_binding
-    "run.workerpools.getIamPolicy",
-    "run.workerpools.setIamPolicy",
+    //google_data_catalog_taxonomy
+    "datacatalog.taxonomies.create",
+    "datacatalog.taxonomies.get",
+    "datacatalog.taxonomies.update",
+    "datacatalog.taxonomies.delete"
   ]
 }

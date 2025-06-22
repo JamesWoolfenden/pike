@@ -1,0 +1,1 @@
+resource "google_data_catalog_entry_group_iam_member" "pike" {}
