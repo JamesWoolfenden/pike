@@ -2,22 +2,22 @@
   {
     "apply": [
       "ec2:DescribeAccountAttributes",
-      "Backup:DescribeReportPlan",
-      "Backup:CreateReportPlan",
-      "Backup:DeleteReportPlan",
+      "backup:DescribeReportPlan",
+      "backup:CreateReportPlan",
+      "backup:DeleteReportPlan",
       "s3:ListBucket",
-      "Backup:ListTags",
+      "backup:ListTags",
       "iam:CreateServiceLinkedRole",
       "backup:UpdateReportPlan"
     ],
     "attributes": {
       "tags": [
-        "Backup:UntagResource",
-        "Backup:TagResource"
+        "backup:UntagResource",
+        "backup:TagResource"
       ]
     },
     "destroy": [
-      "Backup:DeleteReportPlan"
+      "backup:DeleteReportPlan"
     ],
     "modify": [
       "backup:UpdateReportPlan"

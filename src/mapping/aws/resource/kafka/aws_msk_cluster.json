@@ -1,42 +1,42 @@
 [
   {
     "apply": [
-      "Kafka:CreateCluster",
+      "kafka:CreateCluster",
       "ec2:DescribeSubnets",
       "ec2:DescribeVpcs",
       "ec2:DescribeSecurityGroups",
       "iam:CreateServiceLinkedRole",
-      "Kafka:DescribeClusterV2",
-      "Kafka:DescribeCluster",
-      "Kafka:ListTagsForResource",
-      "Kafka:GetBootstrapBrokers",
-      "Kafka:DeleteCluster",
+      "kafka:DescribeClusterV2",
+      "kafka:DescribeCluster",
+      "kafka:ListTagsForResource",
+      "kafka:GetBootstrapBrokers",
+      "kafka:DeleteCluster",
       "ec2:DeleteVpcEndpoints",
       "ec2:DescribeVpcAttribute",
       "ec2:DescribeVpcEndpoints",
-      "Kafka:DescribeClusterOperation"
+      "kafka:DescribeClusterOperation"
     ],
     "attributes": {
       "tags": [
-        "Kafka:TagResource",
-        "Kafka:UntagResource"
+        "kafka:TagResource",
+        "kafka:UntagResource"
       ]
     },
     "destroy": [
-      "Kafka:DeleteCluster",
+      "kafka:DeleteCluster",
       "ec2:DeleteVpcEndpoints"
     ],
     "modify": [
-      "Kafka:UpdateSecurity",
-      "Kafka:UpdateBrokerCount",
-      "Kafka:UpdateBrokerStorage",
-      "Kafka:UpdateBrokerType",
-      "Kafka:UpdateClusterConfiguration",
-      "Kafka:UpdateClusterKafkaVersion",
-      "Kafka:UpdateConnectivity",
-      "Kafka:UpdateMonitoring",
-      "Kafka:UpdateSecurity",
-      "Kafka:UpdateStorage"
+      "kafka:UpdateSecurity",
+      "kafka:UpdateBrokerCount",
+      "kafka:UpdateBrokerStorage",
+      "kafka:UpdateBrokerType",
+      "kafka:UpdateClusterConfiguration",
+      "kafka:UpdateClusterKafkaVersion",
+      "kafka:UpdateConnectivity",
+      "kafka:UpdateMonitoring",
+      "kafka:UpdateSecurity",
+      "kafka:UpdateStorage"
     ],
     "plan": []
   }

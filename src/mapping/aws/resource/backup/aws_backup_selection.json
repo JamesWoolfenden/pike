@@ -2,9 +2,9 @@
   {
     "apply": [
       "ec2:DescribeAccountAttributes",
-      "Backup:CreateBackupSelection",
-      "Backup:DeleteBackupSelection",
-      "Backup:GetBackupSelection",
+      "backup:CreateBackupSelection",
+      "backup:DeleteBackupSelection",
+      "backup:GetBackupSelection",
       "iam:GetRole",
       "iam:PassRole",
       "iam:CreateServiceLinkedRole"
@@ -13,11 +13,11 @@
       "tags": []
     },
     "destroy": [
-      "Backup:DeleteBackupSelection"
+      "backup:DeleteBackupSelection"
     ],
     "modify": [],
     "plan": [
-      "Backup:GetBackupSelection"
+      "backup:GetBackupSelection"
     ]
   }
 ]
