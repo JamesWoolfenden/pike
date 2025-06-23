@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "lightsail:CreateBucketAccessKey",
+      "lightsail:DeleteBucketAccessKey",
+      "lightsail:GetBucketAccessKeys"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

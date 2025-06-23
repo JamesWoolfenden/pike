@@ -18,6 +18,8 @@ init:
 upgrade:
 	terraform init --upgrade
 
+update: upgrade
+
 role: FORCE
 	terraform  -chdir=./role apply -auto-approve
 

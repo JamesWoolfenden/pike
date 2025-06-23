@@ -1,0 +1,29 @@
+[
+  {
+    "apply": [
+      "workspaces-web:GetUserAccessLoggingSettings",
+      "workspaces-web:AssociateUserAccessLoggingSettings",
+      "workspaces-web:CreateUserAccessLoggingSettings",
+      "workspaces-web:DeleteUserAccessLoggingSettings",
+      "workspaces-web:DisassociateUserAccessLoggingSettings",
+      "workspaces-web:UpdateUserAccessLoggingSettings",
+      "workspaces-web:ListTagsForResource"
+    ],
+    "attributes": {
+      "tags": [
+        "workspaces-web:TagResource",
+        "workspaces-web:UntagResource"
+      ]
+    },
+    "destroy": [
+      "workspaces-web:DeleteUserAccessLoggingSettings",
+      "workspaces-web:DisassociateUserAccessLoggingSettings"
+    ],
+    "modify": [
+      "workspaces-web:UpdateUserAccessLoggingSettings"
+    ],
+    "plan": [
+      "workspaces-web:GetUserAccessLoggingSettings"
+    ]
+  }
+]

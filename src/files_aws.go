@@ -873,3 +873,36 @@ var awsWorkspaceswebNetworkSettings []byte
 
 //go:embed mapping/aws/resource/workspaces-web/aws_workspacesweb_user_settings.json
 var awsWorkspaceswebUserSettings []byte
+
+//go:embed mapping/aws/resource/dsql/aws_dsql_cluster.json
+var awsDsqlCluster []byte
+
+//go:embed mapping/aws/resource/dsql/aws_dsql_cluster_peering.json
+var awsDsqlClusterPeering []byte
+
+//go:embed mapping/aws/resource/lightsail/aws_lightsail_bucket_access_key_access_key.json
+var awsLightsailBucketAccessKey []byte
+
+//go:embed mapping/aws/resource/aps/aws_prometheus_workspace_configuration.json
+var awsPrometheusWorkspaceConfiguration []byte
+
+//go:embed mapping/aws/resource/s3control/aws_s3control_directory_bucket_access_point_scope.json
+var awsS3controlDirectoryBucketAccessPointScope []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpc_route_server.json
+var awsVpcRouteServer []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpc_route_server_propagation.json
+var awsVpcRouteServerPropagation []byte
+
+//go:embed mapping/aws/resource/ec2/aws_vpc_route_server_vpc_association.json
+var awsVpcRouteServerVpcAssociation []byte
+
+//go:embed mapping/aws/resource/workspaces-web/aws_workspacesweb_data_protection_settings.json
+var awsWorkspaceswebDataProtectionSettings []byte
+
+//go:embed mapping/aws/resource/workspaces-web/aws_workspacesweb_ip_access_settings.json
+var awsWorkspaceswebIpAccessSettings []byte
+
+//go:embed mapping/aws/resource/workspaces-web/aws_workspacesweb_user_access_logging_settings.json
+var awsWorkspaceswebUserAccessLoggingSettings []byte

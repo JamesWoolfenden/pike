@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "aps:UpdateWorkspaceConfiguration",
+      "aps:DescribeWorkspaceConfiguration"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

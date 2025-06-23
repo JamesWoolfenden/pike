@@ -107,6 +107,7 @@ func Test_getLocalModules(t *testing.T) {
 	notLocal, _ := filepath.Abs("../testdata/modules/examples/notlocal")
 	notBlock := getInitialBlock(notLocal + "/module.local.tf")
 
+	moduleJson := make(pike.ModuleJson)
 	tests := []struct {
 		name    string
 		args    args
@@ -132,7 +133,7 @@ func Test_getLocalModules(t *testing.T) {
 	for _, tt := range tests {
 		// t.Parallel()
 		t.Run(tt.name, func(t *testing.T) {
-			got, err := pike.GetLocalModules(tt.args.block, tt.args.dirName)
+			got, err := pike.GetLocalModules(tt.args.block, tt.args.dirName, moduleJson)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("GetResources() error = %v, wantErr %v", err, tt.wantErr)
 

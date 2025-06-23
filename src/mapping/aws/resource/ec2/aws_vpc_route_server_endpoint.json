@@ -1,0 +1,33 @@
+[
+  {
+    "apply": [
+      "ec2:CreateRouteServerEndpoint",
+      "ec2:DeleteRouteServerEndpoint",
+      "ec2:DescribeRouteServerEndpoints",
+      "ec2:CreateSecurityGroup",
+      "ec2:DescribeSecurityGroups",
+      "ec2:DescribeAccountAttributes",
+      "ec2:DescribeNetworkInterfaces",
+      "ec2:DeleteSecurityGroup",
+      "ec2:AuthorizeSecurityGroupIngress",
+      "ec2:RevokeSecurityGroupIngress",
+      "ec2:AuthorizeSecurityGroupEgress",
+      "ec2:RevokeSecurityGroupEgress",
+      "ec2:CreateNetworkInterface",
+      "ec2:DescribeNetworkInterfaces",
+      "ec2:DeleteNetworkInterface",
+      "ec2:ModifyNetworkInterfaceAttribute",
+      "ec2:UnassignIpv6Addresses",
+      "ec2:AssignIpv6Addresses",
+      "ec2:UnassignPrivateIpAddresses",
+      "ec2:AssignPrivateIpAddresses",
+      "ec2:ModifyPublicIpDnsNameOptions"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

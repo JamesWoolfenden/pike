@@ -1527,6 +1527,18 @@ var tFLookup = map[string]interface{}{ //nolint:gochecknoglobals
 	"aws_workspacesweb_browser_settings":                               awsWorkspaceswebBrowserSettings,
 	"aws_workspacesweb_network_settings":                               awsWorkspaceswebNetworkSettings,
 	"aws_workspacesweb_user_settings":                                  awsWorkspaceswebUserSettings,
+	"aws_dsql_cluster":                                                 awsDsqlCluster,
+	"aws_dsql_cluster_peering":                                         awsDsqlClusterPeering,
+	"aws_lightsail_bucket_access_key":                                  awsLightsailBucketAccessKey,
+	"aws_prometheus_workspace_configuration":                           awsPrometheusWorkspaceConfiguration,
+	"aws_s3control_directory_bucket_access_point_scope":                awsS3controlDirectoryBucketAccessPointScope,
+	"aws_vpc_route_server":                                             awsVpcRouteServer,
+	"aws_vpc_route_server_association":                                 placeholder,
+	"aws_vpc_route_server_propagation":                                 awsVpcRouteServerPropagation,
+	"aws_vpc_route_server_vpc_association":                             awsVpcRouteServerVpcAssociation,
+	"aws_workspacesweb_data_protection_settings":                       awsWorkspaceswebDataProtectionSettings,
+	"aws_workspacesweb_ip_access_settings":                             awsWorkspaceswebIpAccessSettings,
+	"aws_workspacesweb_user_access_logging_settings":                   awsWorkspaceswebUserAccessLoggingSettings,
 }
 
 // GetAWSPermissions for AWS resources.

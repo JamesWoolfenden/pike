@@ -13,6 +13,8 @@
       "workspaces-web:DeleteNetworkSettings"
     ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "workspaces-web:GetNetworkSettings"
+    ]
   }
 ]

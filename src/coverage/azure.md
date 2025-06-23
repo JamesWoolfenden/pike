@@ -1,7 +1,7 @@
 # todo azure
 
-Resource percentage coverage   4.50
-Datasource percentage coverage 33.98
+Resource percentage coverage   4.49
+Datasource percentage coverage 33.80
 
 ./resource.ps1 azurerm_aadb2c_directory
 ./resource.ps1 azurerm_active_directory_domain_service
@@ -542,6 +542,7 @@ Datasource percentage coverage 33.98
 ./resource.ps1 azurerm_management_group_policy_assignment
 ./resource.ps1 azurerm_management_group_policy_exemption
 ./resource.ps1 azurerm_management_group_policy_remediation
+./resource.ps1 azurerm_management_group_policy_set_definition
 ./resource.ps1 azurerm_management_group_subscription_association
 ./resource.ps1 azurerm_management_group_template_deployment
 ./resource.ps1 azurerm_management_lock
@@ -1106,10 +1107,12 @@ Datasource percentage coverage 33.98
 ./resource.ps1 azurerm_dev_center_attached_network -type data
 ./resource.ps1 azurerm_dev_center_catalog -type data
 ./resource.ps1 azurerm_dev_center_dev_box_definition -type data
+./resource.ps1 azurerm_dev_center_environment_type -type data
 ./resource.ps1 azurerm_dev_center_gallery -type data
 ./resource.ps1 azurerm_dev_center_network_connection -type data
 ./resource.ps1 azurerm_dev_center_project -type data
 ./resource.ps1 azurerm_dev_center_project_environment_type -type data
+./resource.ps1 azurerm_dev_center_project_pool -type data
 ./resource.ps1 azurerm_digital_twins_instance -type data
 ./resource.ps1 azurerm_disk_access -type data
 ./resource.ps1 azurerm_disk_encryption_set -type data

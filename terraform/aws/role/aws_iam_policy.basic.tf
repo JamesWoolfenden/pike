@@ -7,61 +7,43 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "VisualEditor0",
         "Effect" : "Allow",
         "Action" : [
-          "ec2:AssociateSubnetCidrBlock",
-          "ec2:CreateSecurityGroup",
-          "ec2:CreateSubnet",
-          "ec2:CreateVPC",
-          "ec2:DeleteSecurityGroup",
-          "ec2:DeleteSubnet",
-          "ec2:DeleteVPC",
-          "ec2:DescribeAccountAttributes",
-          "ec2:DescribeNetworkAcls",
-          "ec2:DescribeNetworkInterfaces",
-          "ec2:DescribeSecurityGroups",
-          "ec2:DescribeSubnets",
-          "ec2:DescribeVpcAttribute",
-          "ec2:DescribeVpcs",
-          "ec2:DisassociateSubnetCidrBlock",
-          "ec2:ModifySubnetAttribute",
-          "ec2:ModifyVpcAttribute",
-          "ec2:ModifyVpcTenancy",
-          "ec2:RevokeSecurityGroupEgress",
-          "ec2:DescribeAvailabilityZones",
-          "kms:CreateKey",
-          "kms:DescribeKey",
-          "kms:GetKeyPolicy",
-          "kms:GetKeyRotationStatus",
-          "kms:ListResourceTags",
-          "kms:ScheduleKeyDeletion",
-          "kms:PutKeyPolicy",
+          "aps:CreateWorkspace",
+          "aps:DeleteWorkspace",
+          "aps:DescribeWorkspace",
+          "aps:ListTagsForResource",
+          "aps:UpdateWorkspaceAlias",
+          "s3express:CreateBucket",
+          "s3express:DeleteBucket",
+          "s3:CreateAccessPoint",
+          "s3:DeleteAccessPoint",
+          "s3:DeleteAccessPointPolicy",
+          "s3:DeleteObject",
+          "s3:GetAccessPoint",
+          "s3:GetAccessPointPolicy",
+          "s3:GetObject",
+          "s3:ListBucket",
+          "s3:PutAccessPointPolicy",
+          "s3:PutAccessPointPublicAccessBlock",
+          "s3:PutObject",
 
 
-          //aws_quicksight_account_settings
-          "quicksight:UpdateAccountSettings",
 
-          //aws_workspacesweb_browser_settings
-          "workspaces-web:CreateBrowserSettings",
-          "workspaces-web:GetBrowserSettings",
-          "workspaces-web:ListTagsForResource",
-          "workspaces-web:DeleteBrowserSettings",
-          "workspaces-web:TagResource",
-          "workspaces-web:UntagResource",
 
-          //aws_workspacesweb_network_settings
-          "workspaces-web:CreateNetworkSettings",
-          "iam:CreateServiceLinkedRole",
-          "workspaces-web:GetNetworkSettings",
-          "workspaces-web:DeleteNetworkSettings",
+          //aws_lightsail_bucket
+          "lightsail:CreateBucket",
+          "lightsail:DeleteBucket",
+          "lightsail:GetBuckets",
+          "lightsail:GetInstance",
+          "lightsail:SetResourceAccessForBucket",
+          "lightsail:UpdateBucket",
+          "lightsail:UpdateBucketBundle",
 
-          //aws_workspacesweb_user_settings
-          "workspaces-web:CreateUserSettings",
-          "workspaces-web:TagResource",
-          "workspaces-web:UntagResource",
-          "workspaces-web:GetUserSettings",
-          "workspaces-web:DeleteUserSettings",
-          "kms:CreateGrant",
-          "kms:Decrypt",
-          "kms:GenerateDataKey"
+
+          //aws_prometheus_workspace_configuration
+          "aps:UpdateWorkspaceConfiguration",
+          "aps:DescribeWorkspaceConfiguration",
+          //aws_prometheus_workspace
+          "aps:DescribeLoggingConfiguration",
 
         ],
         "Resource" : [
