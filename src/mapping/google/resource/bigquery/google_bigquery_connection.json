@@ -4,21 +4,15 @@
       "bigquery.connections.get",
       "bigquery.connections.create",
       "bigquery.connections.delete",
-      "bigquery.connections.update",
-      "accesscontextmanager.servicePerimeters.create",
-      "accesscontextmanager.servicePerimeters.delete",
-      "accesscontextmanager.servicePerimeters.get",
-      "accesscontextmanager.servicePerimeters.update"
+      "bigquery.connections.update"
     ],
     "attributes": {
       "tags": []
     },
     "destroy": [
-      "accesscontextmanager.servicePerimeters.delete",
       "bigquery.connections.delete"
     ],
     "modify": [
-      "accesscontextmanager.servicePerimeters.update",
       "bigquery.connections.update"
     ],
     "plan": []

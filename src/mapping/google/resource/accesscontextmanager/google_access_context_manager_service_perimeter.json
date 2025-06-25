@@ -1,20 +1,11 @@
 [
   {
-    "apply": [
-      "accesscontextmanager.servicePerimeters.create",
-      "accesscontextmanager.servicePerimeters.delete",
-      "accesscontextmanager.servicePerimeters.get",
-      "accesscontextmanager.servicePerimeters.update"
-    ],
+    "apply": [],
     "attributes": {
       "tags": []
     },
-    "destroy": [
-      "accesscontextmanager.servicePerimeters.delete"
-    ],
-    "modify": [
-      "accesscontextmanager.servicePerimeters.update"
-    ],
+    "destroy": [],
+    "modify": [],
     "plan": []
   }
 ]

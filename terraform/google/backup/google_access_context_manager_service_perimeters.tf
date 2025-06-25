@@ -17,3 +17,13 @@ resource "google_access_context_manager_service_perimeters" "pike" {
     }
   }
 }
+
+
+resource "google_access_context_manager_access_policy" "access-policy" {
+  parent = data.google_organization.this.id
+  title  = "pike"
+}
+
+data "google_organization" "this" {
+  organization = "12345354"
+}
