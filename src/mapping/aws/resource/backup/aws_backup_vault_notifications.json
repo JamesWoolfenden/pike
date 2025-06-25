@@ -8,7 +8,7 @@
     },
     "destroy": [
       "backup:DeleteBackupVaultNotifications",
-      "Backup:GetBackupVaultNotifications"
+      "backup:GetBackupVaultNotifications"
     ],
     "modify": [],
     "plan": []

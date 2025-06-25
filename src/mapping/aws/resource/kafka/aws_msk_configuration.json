@@ -1,22 +1,22 @@
 [
   {
     "apply": [
-      "Kafka:CreateConfiguration",
-      "Kafka:DeleteConfiguration",
-      "Kafka:DescribeConfiguration",
-      "Kafka:DescribeConfigurationRevision"
+      "kafka:CreateConfiguration",
+      "kafka:DeleteConfiguration",
+      "kafka:DescribeConfiguration",
+      "kafka:DescribeConfigurationRevision"
     ],
     "attributes": {
       "tags": []
     },
     "destroy": [
-      "Kafka:DeleteConfiguration"
+      "kafka:DeleteConfiguration"
     ],
     "modify": [
-      "Kafka:UpdateConfiguration",
-      "Kafka:DescribeConfigurationRevision",
-      "Kafka:UpdateClusterConfiguration",
-      "Kafka:UpdateConfiguration"
+      "kafka:UpdateConfiguration",
+      "kafka:DescribeConfigurationRevision",
+      "kafka:UpdateClusterConfiguration",
+      "kafka:UpdateConfiguration"
     ],
     "plan": []
   }

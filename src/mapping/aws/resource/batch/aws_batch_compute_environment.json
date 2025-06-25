@@ -20,7 +20,7 @@
     ],
     "attributes": {
       "eks_configuration": [
-        "Eks:DescribeCluster"
+        "eks:DescribeCluster"
       ],
       "tags": [
         "batch:TagResource",

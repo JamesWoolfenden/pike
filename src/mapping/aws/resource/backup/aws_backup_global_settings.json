@@ -2,8 +2,8 @@
   {
     "apply": [
       "ec2:DescribeAccountAttributes",
-      "Backup:UpdateGlobalSettings",
-      "Backup:DescribeGlobalSettings"
+      "backup:UpdateGlobalSettings",
+      "backup:DescribeGlobalSettings"
     ],
     "attributes": {
       "tags": []

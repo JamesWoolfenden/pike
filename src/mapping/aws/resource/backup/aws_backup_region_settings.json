@@ -2,8 +2,8 @@
   {
     "apply": [
       "ec2:DescribeAccountAttributes",
-      "Backup:UpdateRegionSettings",
-      "Backup:DescribeRegionSettings"
+      "backup:UpdateRegionSettings",
+      "backup:DescribeRegionSettings"
     ],
     "attributes": {
       "tags": []

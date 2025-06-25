@@ -1,23 +1,23 @@
 [
   {
     "apply": [
-      "EC2:CreateManagedPrefixList",
-      "EC2:DescribeManagedPrefixLists",
-      "EC2:DeleteManagedPrefixList",
-      "EC2:GetManagedPrefixListEntries",
-      "EC2:ModifyManagedPrefixList"
+      "ec2:CreateManagedPrefixList",
+      "ec2:DescribeManagedPrefixLists",
+      "ec2:DeleteManagedPrefixList",
+      "ec2:GetManagedPrefixListEntries",
+      "ec2:ModifyManagedPrefixList"
     ],
     "attributes": {
       "tags": [
-        "EC2:CreateTags"
+        "ec2:CreateTags"
       ]
     },
     "destroy": [
-      "EC2:DeleteManagedPrefixList"
+      "ec2:DeleteManagedPrefixList"
     ],
     "modify": [
-      "EC2:GetManagedPrefixListEntries",
-      "EC2:ModifyManagedPrefixList"
+      "ec2:GetManagedPrefixListEntries",
+      "ec2:ModifyManagedPrefixList"
     ],
     "plan": []
   }

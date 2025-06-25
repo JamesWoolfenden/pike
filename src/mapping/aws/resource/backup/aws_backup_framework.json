@@ -2,21 +2,21 @@
   {
     "apply": [
       "ec2:DescribeAccountAttributes",
-      "Backup:CreateFramework",
-      "Backup:DescribeFramework",
-      "Backup:DeleteFramework",
-      "Backup:ListTags",
+      "backup:CreateFramework",
+      "backup:DescribeFramework",
+      "backup:DeleteFramework",
+      "backup:ListTags",
       "iam:CreateServiceLinkedRole"
     ],
     "attributes": {
       "tags": [
-        "Backup:UntagResource",
-        "Backup:TagResource"
+        "backup:UntagResource",
+        "backup:TagResource"
       ]
     },
     "destroy": [],
     "modify": [
-      "Backup:UpdateFramework"
+      "backup:UpdateFramework"
     ],
     "plan": []
   }
