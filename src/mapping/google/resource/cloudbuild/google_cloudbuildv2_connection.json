@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "cloudbuild.connections.create",
+      "cloudbuild.connections.delete",
+      "cloudbuild.connections.get",
+      "cloudbuild.connections.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "cloudbuild.connections.delete"
+    ],
+    "modify": [
+      "cloudbuild.connections.update"
+    ],
+    "plan": [
+      "cloudbuild.connections.get"
+    ]
+  }
+]

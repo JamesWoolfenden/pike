@@ -663,3 +663,51 @@ var googleBigtableLogicalView []byte
 
 //go:embed mapping/google/resource/bigtable/google_bigtable_materialized_view.json
 var googleBigtableMaterializedView []byte
+
+//go:embed mapping/google/resource/cloudbuild/google_cloudbuildv2_connection.json
+var googleCloudbuildv2Connection []byte
+
+//go:embed mapping/google/resource/cloudbuild/google_cloudbuildv2_connection_iam_binding.json
+var googleCloudbuildv2ConnectionIamBinding []byte
+
+//go:embed mapping/google/resource/cloudbuild/google_cloudbuildv2_connection_iam_member.json
+var googleCloudbuildv2ConnectionIamMember []byte
+
+//go:embed mapping/google/resource/cloudbuild/google_cloudbuildv2_connection_iam_policy.json
+var googleCloudbuildv2ConnectionIamPolicy []byte
+
+//go:embed mapping/google/resource/cloudbuild/google_cloudbuildv2_repository.json
+var googleCloudbuildv2Repository []byte
+
+//go:embed mapping/google/resource/dataplex/google_dataplex_asset.json
+var googleDataplexAsset []byte
+
+//go:embed mapping/google/resource/dataplex/google_dataplex_asset_iam_binding.json
+var googleDataplexAssetIamBinding []byte
+
+//go:embed mapping/google/resource/dataplex/google_dataplex_asset_iam_member.json
+var googleDataplexAssetIamMember []byte
+
+//go:embed mapping/google/resource/dataplex/google_dataplex_asset_iam_policy.json
+var googleDataplexAssetIamPolicy []byte
+
+//go:embed mapping/google/resource/dataplex/google_dataplex_datascan.json
+var googleDataplexDatascan []byte
+
+//go:embed mapping/google/resource/dataplex/google_dataplex_datascan_iam_binding.json
+var googleDataplexDatascanIamBinding []byte
+
+//go:embed mapping/google/resource/dataplex/google_dataplex_datascan_iam_member.json
+var googleDataplexDatascanIamMember []byte
+
+//go:embed mapping/google/resource/dataplex/google_dataplex_datascan_iam_policy.json
+var googleDataplexDatascanIamPolicy []byte
+
+//go:embed mapping/google/resource/dataplex/google_dataplex_glossary.json
+var googleDataplexGlossary []byte
+
+//go:embed mapping/google/resource/dataplex/google_dataplex_glossary_category.json
+var googleDataplexGlossaryCategory []byte
+
+//go:embed mapping/google/resource/dataplex/google_dataplex_glossary_term.json
+var googleDataplexGlossaryTerm []byte

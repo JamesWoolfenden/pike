@@ -1,6 +1,6 @@
 # todo google
 
-Resource percentage coverage   22.94
+Resource percentage coverage   24.30
 Datasource percentage coverage 91.78
 
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -115,11 +115,6 @@ Datasource percentage coverage 91.78
 ./resource.ps1 google_cloud_tasks_queue_iam_policy
 ./resource.ps1 google_cloudbuild_bitbucket_server_config
 ./resource.ps1 google_cloudbuild_worker_pool
-./resource.ps1 google_cloudbuildv2_connection
-./resource.ps1 google_cloudbuildv2_connection_iam_binding
-./resource.ps1 google_cloudbuildv2_connection_iam_member
-./resource.ps1 google_cloudbuildv2_connection_iam_policy
-./resource.ps1 google_cloudbuildv2_repository
 ./resource.ps1 google_clouddeploy_automation
 ./resource.ps1 google_clouddeploy_custom_target_type
 ./resource.ps1 google_clouddeploy_custom_target_type_iam_binding
@@ -337,14 +332,6 @@ Datasource percentage coverage 91.78
 ./resource.ps1 google_dataplex_aspect_type_iam_binding
 ./resource.ps1 google_dataplex_aspect_type_iam_member
 ./resource.ps1 google_dataplex_aspect_type_iam_policy
-./resource.ps1 google_dataplex_asset
-./resource.ps1 google_dataplex_asset_iam_binding
-./resource.ps1 google_dataplex_asset_iam_member
-./resource.ps1 google_dataplex_asset_iam_policy
-./resource.ps1 google_dataplex_datascan
-./resource.ps1 google_dataplex_datascan_iam_binding
-./resource.ps1 google_dataplex_datascan_iam_member
-./resource.ps1 google_dataplex_datascan_iam_policy
 ./resource.ps1 google_dataplex_entry
 ./resource.ps1 google_dataplex_entry_group
 ./resource.ps1 google_dataplex_entry_group_iam_binding
@@ -354,12 +341,9 @@ Datasource percentage coverage 91.78
 ./resource.ps1 google_dataplex_entry_type_iam_binding
 ./resource.ps1 google_dataplex_entry_type_iam_member
 ./resource.ps1 google_dataplex_entry_type_iam_policy
-./resource.ps1 google_dataplex_glossary
-./resource.ps1 google_dataplex_glossary_category
 ./resource.ps1 google_dataplex_glossary_iam_binding
 ./resource.ps1 google_dataplex_glossary_iam_member
 ./resource.ps1 google_dataplex_glossary_iam_policy
-./resource.ps1 google_dataplex_glossary_term
 ./resource.ps1 google_dataplex_lake
 ./resource.ps1 google_dataplex_lake_iam_binding
 ./resource.ps1 google_dataplex_lake_iam_member

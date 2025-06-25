@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "dataplex.datascans.create",
+      "dataplex.datascans.delete",
+      "dataplex.datascans.get",
+      "dataplex.datascans.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

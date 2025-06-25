@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "dataplex.datascans.getIamPolicy",
+      "dataplex.datascans.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

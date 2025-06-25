@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "cloudbuild.connections.getIamPolicy",
+      "cloudbuild.connections.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "cloudbuild.connections.setIamPolicy"
+    ],
+    "modify": [
+      "cloudbuild.connections.setIamPolicy"
+    ],
+    "plan": [
+      "cloudbuild.connections.getIamPolicy"
+    ]
+  }
+]

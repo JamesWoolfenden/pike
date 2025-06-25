@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "dataplex.glossaries.getIamPolicy",
+      "dataplex.glossaries.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

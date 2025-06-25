@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "dataplex.assets.create",
+      "dataplex.assets.delete",
+      "dataplex.assets.get",
+      "dataplex.assets.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

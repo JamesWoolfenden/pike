@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "cloudbuild.repositories.create",
+      "cloudbuild.repositories.delete",
+      "cloudbuild.repositories.fetchGitRefs",
+      "cloudbuild.repositories.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

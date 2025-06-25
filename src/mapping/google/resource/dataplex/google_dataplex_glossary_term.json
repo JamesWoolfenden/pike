@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "dataplex.glossaryTerms.create",
+      "dataplex.glossaryTerms.get",
+      "dataplex.glossaryTerms.update",
+      "dataplex.glossaryTerms.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
