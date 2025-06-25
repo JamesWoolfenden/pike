@@ -2,10 +2,10 @@
   {
     "apply": [
       "cloudfunctions.functions.create",
-      "cloudfunctions.operations.get",
       "cloudfunctions.functions.get",
-      "cloudfunctions.functions.delete",
       "cloudfunctions.functions.update",
+      "cloudfunctions.functions.delete",
+      "cloudfunctions.operations.get",
       "storage.objects.list"
     ],
     "attributes": {
@@ -14,7 +14,11 @@
     "destroy": [
       "cloudfunctions.functions.delete"
     ],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "cloudfunctions.functions.update"
+    ],
+    "plan": [
+      "cloudfunctions.functions.get"
+    ]
   }
 ]

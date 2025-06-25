@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "bigtable.logicalViews.create",
+      "bigtable.logicalViews.delete",
+      "bigtable.logicalViews.get",
+      "bigtable.logicalViews.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "bigtable.logicalViews.delete"
+    ],
+    "modify": [
+      "bigtable.logicalViews.update"
+    ],
+    "plan": []
+  }
+]

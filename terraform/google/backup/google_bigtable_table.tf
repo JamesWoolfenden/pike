@@ -60,6 +60,6 @@ resource "google_bigtable_table" "table" {
     family = "family-second"
   }
 
-  change_stream_retention = "0"
+  // change_stream_retention = "0"
 
 }

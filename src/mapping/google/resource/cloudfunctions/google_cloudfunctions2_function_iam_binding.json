@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "run.services.getIamPolicy",
+      "run.services.setIamPolicy",
+      "cloudfunctions.functions.getIamPolicy",
+      "cloudfunctions.functions.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "compute.projects.setUsageExportBucket",
+      "compute.globalOperations.get",
+      "compute.projects.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

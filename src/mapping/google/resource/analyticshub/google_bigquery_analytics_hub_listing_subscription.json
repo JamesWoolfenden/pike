@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "analyticshub.subscriptions.get",
+      "analyticshub.subscriptions.update",
+      "analyticshub.subscriptions.delete",
+      "analyticshub.subscriptions.create",
+      "analyticshub.listings.subscribe"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

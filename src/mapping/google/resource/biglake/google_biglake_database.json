@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "biglake.databases.create",
+      "biglake.databases.delete",
+      "biglake.databases.get",
+      "biglake.databases.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "biglake.databases.delete"
+    ],
+    "modify": [
+      "biglake.databases.update"
+    ],
+    "plan": [
+      "biglake.databases.get"
+    ]
+  }
+]

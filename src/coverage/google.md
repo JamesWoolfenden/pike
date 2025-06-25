@@ -1,6 +1,6 @@
 # todo google
 
-Resource percentage coverage   20.22
+Resource percentage coverage   22.94
 Datasource percentage coverage 91.78
 
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -76,15 +76,6 @@ Datasource percentage coverage 91.78
 ./resource.ps1 google_beyondcorp_security_gateway_iam_binding
 ./resource.ps1 google_beyondcorp_security_gateway_iam_member
 ./resource.ps1 google_beyondcorp_security_gateway_iam_policy
-./resource.ps1 google_biglake_catalog
-./resource.ps1 google_biglake_database
-./resource.ps1 google_biglake_table
-./resource.ps1 google_bigquery_analytics_hub_listing_subscription
-./resource.ps1 google_bigquery_dataset_access
-./resource.ps1 google_bigquery_row_access_policy
-./resource.ps1 google_bigtable_authorized_view
-./resource.ps1 google_bigtable_logical_view
-./resource.ps1 google_bigtable_materialized_view
 ./resource.ps1 google_billing_account_iam_binding
 ./resource.ps1 google_billing_account_iam_member
 ./resource.ps1 google_billing_account_iam_policy
@@ -144,11 +135,6 @@ Datasource percentage coverage 91.78
 ./resource.ps1 google_clouddeploy_target_iam_member
 ./resource.ps1 google_clouddeploy_target_iam_policy
 ./resource.ps1 google_clouddomains_registration
-./resource.ps1 google_cloudfunctions2_function
-./resource.ps1 google_cloudfunctions2_function_iam_binding
-./resource.ps1 google_cloudfunctions2_function_iam_member
-./resource.ps1 google_cloudfunctions2_function_iam_policy
-./resource.ps1 google_cloudfunctions_function_iam_binding
 ./resource.ps1 google_cloudiot_registry
 ./resource.ps1 google_colab_notebook_execution
 ./resource.ps1 google_colab_runtime
@@ -645,17 +631,10 @@ Datasource percentage coverage 91.78
 ./resource.ps1 google_integrations_auth_config
 ./resource.ps1 google_integrations_client
 ./resource.ps1 google_kms_autokey_config
-./resource.ps1 google_kms_crypto_key_version
 ./resource.ps1 google_kms_ekm_connection
 ./resource.ps1 google_kms_ekm_connection_iam_binding
 ./resource.ps1 google_kms_ekm_connection_iam_member
 ./resource.ps1 google_kms_ekm_connection_iam_policy
-./resource.ps1 google_kms_key_handle
-./resource.ps1 google_kms_key_ring_iam_binding
-./resource.ps1 google_kms_key_ring_iam_member
-./resource.ps1 google_kms_key_ring_iam_policy
-./resource.ps1 google_kms_key_ring_import_job
-./resource.ps1 google_kms_secret_ciphertext
 ./resource.ps1 google_logging_billing_account_bucket_config
 ./resource.ps1 google_logging_billing_account_exclusion
 ./resource.ps1 google_logging_billing_account_sink
@@ -795,12 +774,9 @@ Datasource percentage coverage 91.78
 ./resource.ps1 google_privateca_certificate_authority
 ./resource.ps1 google_project
 ./resource.ps1 google_project_access_approval_settings
-./resource.ps1 google_project_default_service_accounts
 ./resource.ps1 google_project_iam_member_remove
 ./resource.ps1 google_project_iam_policy
 ./resource.ps1 google_project_organization_policy
-./resource.ps1 google_project_services
-./resource.ps1 google_project_usage_export_bucket
 ./resource.ps1 google_public_ca_external_account_key
 ./resource.ps1 google_pubsub_schema_iam_binding
 ./resource.ps1 google_pubsub_schema_iam_member
@@ -850,11 +826,6 @@ Datasource percentage coverage 91.78
 ./resource.ps1 google_scc_v2_project_mute_config
 ./resource.ps1 google_scc_v2_project_notification_config
 ./resource.ps1 google_scc_v2_project_scc_big_query_export
-./resource.ps1 google_secret_manager_regional_secret
-./resource.ps1 google_secret_manager_regional_secret_iam_binding
-./resource.ps1 google_secret_manager_regional_secret_iam_member
-./resource.ps1 google_secret_manager_regional_secret_iam_policy
-./resource.ps1 google_secret_manager_regional_secret_version
 ./resource.ps1 google_secure_source_manager_branch_rule
 ./resource.ps1 google_secure_source_manager_instance
 ./resource.ps1 google_secure_source_manager_instance_iam_binding
@@ -874,9 +845,6 @@ Datasource percentage coverage 91.78
 ./resource.ps1 google_sourcerepo_repository_iam_binding
 ./resource.ps1 google_sourcerepo_repository_iam_member
 ./resource.ps1 google_sourcerepo_repository_iam_policy
-./resource.ps1 google_spanner_backup_schedule
-./resource.ps1 google_spanner_instance_config
-./resource.ps1 google_spanner_instance_partition
 ./resource.ps1 google_sql_source_representation_instance
 ./resource.ps1 google_sql_ssl_cert
 ./resource.ps1 google_storage_anywhere_cache

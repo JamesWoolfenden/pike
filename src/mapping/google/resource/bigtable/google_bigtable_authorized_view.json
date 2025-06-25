@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "bigtable.authorizedViews.create",
+      "bigtable.authorizedViews.delete",
+      "bigtable.authorizedViews.get",
+      "bigtable.authorizedViews.update",
+      "bigtable.tables.mutateRows",
+      "bigtable.tables.readRows"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "bigtable.authorizedViews.delete"
+    ],
+    "modify": [
+      "bigtable.authorizedViews.update"
+    ],
+    "plan": []
+  }
+]

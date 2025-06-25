@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "cloudkms.cryptoKeyVersions.create",
+      "cloudkms.cryptoKeyVersions.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

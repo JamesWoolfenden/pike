@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "spanner.instanceConfigs.get",
+      "spanner.instanceConfigs.create",
+      "spanner.instanceConfigs.update",
+      "spanner.instanceConfigs.delete",
+      "spanner.instanceConfigOperations.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "spanner.instanceConfigs.delete"
+    ],
+    "modify": [
+      "spanner.instanceConfigs.update"
+    ],
+    "plan": [
+      "spanner.instanceConfigOperations.get"
+    ]
+  }
+]

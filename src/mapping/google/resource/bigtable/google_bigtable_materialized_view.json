@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "bigtable.materializedViews.create",
+      "bigtable.materializedViews.delete",
+      "bigtable.materializedViews.get",
+      "bigtable.materializedViews.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "bigtable.materializedViews.delete"
+    ],
+    "modify": [
+      "bigtable.materializedViews.update"
+    ],
+    "plan": []
+  }
+]

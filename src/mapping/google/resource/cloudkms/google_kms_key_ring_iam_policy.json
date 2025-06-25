@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "cloudkms.keyRings.setIamPolicy",
+      "cloudkms.keyRings.getIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

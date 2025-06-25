@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "spanner.instancePartitions.create",
+      "spanner.instancePartitions.get",
+      "spanner.instancePartitions.update",
+      "spanner.instancePartitions.delete",
+      "spanner.instancePartitionOperations.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "spanner.instancePartitions.delete"
+    ],
+    "modify": [
+      "spanner.instancePartitions.update"
+    ],
+    "plan": [
+      "spanner.instancePartitions.get"
+    ]
+  }
+]
