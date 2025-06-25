@@ -62,7 +62,7 @@ func GetResources(file string, dirName string) ([]ResourceV2, error) {
 					log.Info().Msg(err.Error())
 				}
 			}
-		case "output", "variable", "locals", "provider":
+		case "output", "variable", "locals", "provider", "import":
 			{
 				continue
 			}
