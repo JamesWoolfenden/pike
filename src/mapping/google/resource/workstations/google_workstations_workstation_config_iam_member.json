@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "workstations.workstationConfigs.getIamPolicy",
+      "workstations.workstationConfigs.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

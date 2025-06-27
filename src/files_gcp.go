@@ -711,3 +711,159 @@ var googleDataplexGlossaryCategory []byte
 
 //go:embed mapping/google/resource/dataplex/google_dataplex_glossary_term.json
 var googleDataplexGlossaryTerm []byte
+
+//go:embed mapping/google/resource/apigee/google_apigee_environment_iam_binding.json
+var googleApigeeEnvironmentIamBinding []byte
+
+//go:embed mapping/google/resource/apigee/google_apigee_environment_iam_member.json
+var googleApigeeEnvironmentIamMember []byte
+
+//go:embed mapping/google/resource/apigee/google_apigee_environment_iam_policy.json
+var googleApigeeEnvironmentIamPolicy []byte
+
+//go:embed mapping/google/resource/beyondcorp/google_beyondcorp_application_iam_binding.json
+var googleBeyondcorpApplicationIamBinding []byte
+
+//go:embed mapping/google/resource/beyondcorp/google_beyondcorp_application_iam_member.json
+var googleBeyondcorpApplicationIamMember []byte
+
+//go:embed mapping/google/resource/beyondcorp/google_beyondcorp_application_iam_policy.json
+var googleBeyondcorpApplicationIamPolicy []byte
+
+//go:embed mapping/google/resource/beyondcorp/google_beyondcorp_security_gateway_application_iam_binding.json
+var googleBeyondcorpSecurityGatewayApplicationIamBinding []byte
+
+//go:embed mapping/google/resource/beyondcorp/google_beyondcorp_security_gateway_application_iam_member.json
+var googleBeyondcorpSecurityGatewayApplicationIamMember []byte
+
+//go:embed mapping/google/resource/beyondcorp/google_beyondcorp_security_gateway_application_iam_policy.json
+var googleBeyondcorpSecurityGatewayApplicationIamPolicy []byte
+
+//go:embed mapping/google/resource/beyondcorp/google_beyondcorp_security_gateway_iam_binding.json
+var googleBeyondcorpSecurityGatewayIamBinding []byte
+
+//go:embed mapping/google/resource/beyondcorp/google_beyondcorp_security_gateway_iam_member.json
+var googleBeyondcorpSecurityGatewayIamMember []byte
+
+//go:embed mapping/google/resource/beyondcorp/google_beyondcorp_security_gateway_iam_policy.json
+var googleBeyondcorpSecurityGatewayIamPolicy []byte
+
+//go:embed mapping/google/resource/billing/google_billing_account_iam_binding.json
+var googleBillingAccountIamBinding []byte
+
+//go:embed mapping/google/resource/billing/google_billing_account_iam_member.json
+var googleBillingAccountIamMember []byte
+
+//go:embed mapping/google/resource/billing/google_billing_account_iam_policy.json
+var googleBillingAccountIamPolicy []byte
+
+//go:embed mapping/google/resource/pubsub/google_pubsub_schema_iam_binding.json
+var googlePubsubSchemaIamBinding []byte
+
+//go:embed mapping/google/resource/pubsub/google_pubsub_schema_iam_member.json
+var googlePubsubSchemaIamMember []byte
+
+//go:embed mapping/google/resource/pubsub/google_pubsub_schema_iam_policy.json
+var googlePubsubSchemaIamPolicy []byte
+
+//go:embed mapping/google/resource/pubsub/google_pubsub_subscription_iam_binding.json
+var googlePubsubSubscriptionIamBinding []byte
+
+//go:embed mapping/google/resource/pubsub/google_pubsub_subscription_iam_member.json
+var googlePubsubSubscriptionIamMember []byte
+
+//go:embed mapping/google/resource/securesourcemanager/google_secure_source_manager_instance_iam_binding.json
+var googleSecureSourceManagerInstanceIamBinding []byte
+
+//go:embed mapping/google/resource/securesourcemanager/google_secure_source_manager_instance_iam_member.json
+var googleSecureSourceManagerInstanceIamMember []byte
+
+//go:embed mapping/google/resource/securesourcemanager/google_secure_source_manager_instance_iam_policy.json
+var googleSecureSourceManagerInstanceIamPolicy []byte
+
+//go:embed mapping/google/resource/securesourcemanager/google_secure_source_manager_repository_iam_binding.json
+var googleSecureSourceManagerRepositoryIamBinding []byte
+
+//go:embed mapping/google/resource/securesourcemanager/google_secure_source_manager_repository_iam_member.json
+var googleSecureSourceManagerRepositoryIamMember []byte
+
+//go:embed mapping/google/resource/securesourcemanager/google_secure_source_manager_repository_iam_policy.json
+var googleSecureSourceManagerRepositoryIamPolicy []byte
+
+//go:embed mapping/google/resource/source/google_sourcerepo_repository_iam_binding.json
+var googleSourcerepoRepositoryIamBinding []byte
+
+//go:embed mapping/google/resource/source/google_sourcerepo_repository_iam_member.json
+var googleSourcerepoRepositoryIamMember []byte
+
+//go:embed mapping/google/resource/source/google_sourcerepo_repository_iam_policy.json
+var googleSourcerepoRepositoryIamPolicy []byte
+
+//go:embed mapping/google/resource/resourcemanager/google_tags_tag_key_iam_binding.json
+var googleTagsTagKeyIamBinding []byte
+
+//go:embed mapping/google/resource/resourcemanager/google_tags_tag_key_iam_member.json
+var googleTagsTagKeyIamMember []byte
+
+//go:embed mapping/google/resource/resourcemanager/google_tags_tag_key_iam_policy.json
+var googleTagsTagKeyIamPolicy []byte
+
+//go:embed mapping/google/resource/resourcemanager/google_tags_tag_value_iam_binding.json
+var googleTagsTagValueIamBinding []byte
+
+//go:embed mapping/google/resource/resourcemanager/google_tags_tag_value_iam_member.json
+var googleTagsTagValueIamMember []byte
+
+//go:embed mapping/google/resource/resourcemanager/google_tags_tag_value_iam_policy.json
+var googleTagsTagValueIamPolicy []byte
+
+//go:embed mapping/google/resource/aiplatform/google_vertex_ai_feature_group_iam_binding.json
+var googleVertexAIFeatureGroupIamBinding []byte
+
+//go:embed mapping/google/resource/aiplatform/google_vertex_ai_feature_group_iam_member.json
+var googleVertexAIFeatureGroupIamMember []byte
+
+//go:embed mapping/google/resource/aiplatform/google_vertex_ai_feature_group_iam_policy.json
+var googleVertexAIFeatureGroupIamPolicy []byte
+
+//go:embed mapping/google/resource/aiplatform/google_vertex_ai_feature_online_store_featureview_iam_binding.json
+var googleVertexAIFeatureOnlineStoreFeatureviewIamBinding []byte
+
+//go:embed mapping/google/resource/aiplatform/google_vertex_ai_feature_online_store_featureview_iam_member.json
+var googleVertexAIFeatureOnlineStoreFeatureviewIamMember []byte
+
+//go:embed mapping/google/resource/aiplatform/google_vertex_ai_feature_online_store_featureview_iam_policy.json
+var googleVertexAIFeatureOnlineStoreFeatureviewIamPolicy []byte
+
+//go:embed mapping/google/resource/aiplatform/google_vertex_ai_feature_online_store_iam_binding.json
+var googleVertexAIFeatureOnlineStoreIamBinding []byte
+
+//go:embed mapping/google/resource/aiplatform/google_vertex_ai_feature_online_store_iam_member.json
+var googleVertexAIFeatureOnlineStoreIamMember []byte
+
+//go:embed mapping/google/resource/aiplatform/google_vertex_ai_feature_online_store_iam_policy.json
+var googleVertexAIFeatureOnlineStoreIamPolicy []byte
+
+//go:embed mapping/google/resource/notebooks/google_workbench_instance_iam_binding.json
+var googleWorkbenchInstanceIamBinding []byte
+
+//go:embed mapping/google/resource/notebooks/google_workbench_instance_iam_member.json
+var googleWorkbenchInstanceIamMember []byte
+
+//go:embed mapping/google/resource/notebooks/google_workbench_instance_iam_policy.json
+var googleWorkbenchInstanceIamPolicy []byte
+
+//go:embed mapping/google/resource/workstations/google_workstations_workstation_config_iam_binding.json
+var googleWorkstationsWorkstationConfigIamBinding []byte
+
+//go:embed mapping/google/resource/workstations/google_workstations_workstation_config_iam_member.json
+var googleWorkstationsWorkstationConfigIamMember []byte
+
+//go:embed mapping/google/resource/workstations/google_workstations_workstation_config_iam_policy.json
+var googleWorkstationsWorkstationConfigIamPolicy []byte
+
+//go:embed mapping/google/resource/workstations/google_workstations_workstation_iam_binding.json
+var googleWorkstationsWorkstationIamBinding []byte
+
+//go:embed mapping/google/resource/workstations/google_workstations_workstation_iam_member.json
+var googleWorkstationsWorkstationIamMember []byte

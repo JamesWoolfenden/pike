@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "source.repos.getIamPolicy",
+      "source.repos.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "aiplatform.featureViews.getIamPolicy",
+      "aiplatform.featureViews.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

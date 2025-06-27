@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "resourcemanager.tagKeys.getIamPolicy",
+      "resourcemanager.tagKeys.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

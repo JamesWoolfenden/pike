@@ -843,3 +843,6 @@ var dataGoogleMemcacheInstance []byte
 
 //go:embed mapping/google/data/memorystore/google_memorystore_instance.json
 var dataGoogleMemorystoreInstance []byte
+
+//go:embed mapping/google/data/orgpolicy/google_project_organization_policy.json
+var dataGoogleProjectOrganizationPolicy []byte

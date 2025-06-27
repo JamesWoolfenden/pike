@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "apigee.environments.setIamPolicy",
+      "apigee.environments.getIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

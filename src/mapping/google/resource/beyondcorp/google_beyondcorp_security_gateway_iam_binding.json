@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "beyondcorp.securityGateways.getIamPolicy",
+      "beyondcorp.securityGateways.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

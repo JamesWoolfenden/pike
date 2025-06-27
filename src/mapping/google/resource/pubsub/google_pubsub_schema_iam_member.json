@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "pubsub.schemas.getIamPolicy",
+      "pubsub.schemas.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

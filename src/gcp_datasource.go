@@ -366,6 +366,7 @@ func GCPDataLookup(result string) interface{} {
 		"google_lustre_instance":                                     dataGoogleLustreInstance,
 		"google_memcache_instance":                                   dataGoogleMemcacheInstance,
 		"google_memorystore_instance":                                dataGoogleMemorystoreInstance,
+		"google_project_organization_policy":                         dataGoogleProjectOrganizationPolicy,
 	}
 
 	return TFLookup[result]

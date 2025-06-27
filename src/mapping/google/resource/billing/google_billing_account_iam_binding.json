@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "billing.accounts.getIamPolicy",
+      "billing.accounts.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
