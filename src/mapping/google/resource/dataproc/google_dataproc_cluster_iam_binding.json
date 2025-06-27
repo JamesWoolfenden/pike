@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "dataproc.clusters.getIamPolicy",
+      "dataproc.clusters.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

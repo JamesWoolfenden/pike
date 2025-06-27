@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "dataproc.jobs.getIamPolicy",
+      "dataproc.jobs.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

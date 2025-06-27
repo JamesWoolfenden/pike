@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "clouddeploy.targets.getIamPolicy",
+      "clouddeploy.targets.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

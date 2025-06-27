@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "clouddeploy.deliveryPipelines.getIamPolicy",
+      "clouddeploy.deliveryPipelines.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

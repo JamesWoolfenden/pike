@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "resourcemanager.folders.getIamPolicy",
+      "resourcemanager.folders.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "aiplatform.notebookRuntimeTemplates.getIamPolicy",
+      "aiplatform.notebookRuntimeTemplates.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

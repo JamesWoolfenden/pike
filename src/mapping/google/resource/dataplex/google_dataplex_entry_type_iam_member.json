@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "dataplex.entryTypes.getIamPolicy",
+      "dataplex.entryTypes.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "compute.disks.getIamPolicy",
+      "compute.disks.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

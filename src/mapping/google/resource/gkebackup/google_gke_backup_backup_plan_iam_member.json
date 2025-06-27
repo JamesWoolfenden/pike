@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "gkebackup.backupPlans.getIamPolicy",
+      "gkebackup.backupPlans.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "binaryauthorization.attestors.getIamPolicy",
+      "binaryauthorization.attestors.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

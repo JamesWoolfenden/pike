@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "dataplex.zones.getIamPolicy",
+      "dataplex.zones.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

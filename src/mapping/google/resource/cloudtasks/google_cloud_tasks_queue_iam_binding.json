@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "cloudtasks.queues.getIamPolicy",
+      "cloudtasks.queues.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

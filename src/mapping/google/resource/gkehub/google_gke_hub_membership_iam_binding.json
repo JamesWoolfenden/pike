@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "gkehub.memberships.getIamPolicy",
+      "gkehub.memberships.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

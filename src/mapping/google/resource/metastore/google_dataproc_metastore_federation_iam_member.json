@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "metastore.federations.getIamPolicy",
+      "metastore.federations.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

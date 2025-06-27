@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "metastore.databases.getIamPolicy",
+      "metastore.databases.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

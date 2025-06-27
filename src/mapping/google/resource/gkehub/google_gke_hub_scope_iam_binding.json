@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "gkehub.scopes.getIamPolicy",
+      "gkehub.scopes.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
