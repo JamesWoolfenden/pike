@@ -16,7 +16,7 @@
 Pike is a tool to determine the minimum permissions required to run a TF/IAC run.
 
 **What's new?**
-
+- json modules support.
 - GCP compare, checks IAC permissions required versus a deployed role.
 - Backend detection S3 and GCP.
 
