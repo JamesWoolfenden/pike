@@ -1,11 +1,16 @@
 [
   {
-    "apply": [],
+    "apply": [
+      "beyondcorp.sgApplications.getIamPolicy",
+      "beyondcorp.sgApplications.setIamPolicy"
+    ],
     "attributes": {
       "tags": []
     },
     "destroy": [],
     "modify": [],
-    "plan": []
+    "plan": [
+      "beyondcorp.sgApplications.getIamPolicy"
+    ]
   }
 ]

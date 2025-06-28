@@ -16,6 +16,8 @@
     "modify": [
       "run.jobs.update"
     ],
-    "plan": []
+    "plan": [
+      "run.jobs.get"
+    ]
   }
 ]

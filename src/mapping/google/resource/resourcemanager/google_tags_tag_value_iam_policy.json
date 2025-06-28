@@ -9,6 +9,8 @@
     },
     "destroy": [],
     "modify": [],
-    "plan": []
+    "plan": [
+      "resourcemanager.tagValues.getIamPolicy"
+    ]
   }
 ]

@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "healthcare.datasets.getIamPolicy",
+      "healthcare.datasets.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "healthcare.datasets.getIamPolicy"
+    ]
+  }
+]

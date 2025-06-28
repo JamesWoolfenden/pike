@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "iap.tunnel.getIamPolicy",
+      "iap.tunnel.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "iap.tunnel.getIamPolicy"
+    ]
+  }
+]

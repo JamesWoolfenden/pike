@@ -1272,3 +1272,252 @@ var googleGkeHubScopeIamMember []byte
 
 //go:embed mapping/google/resource/gkehub/google_gke_hub_scope_iam_policy.json
 var googleGkeHubScopeIamPolicy []byte
+
+//go:embed mapping/google/resource/healthcare/google_healthcare_consent_store_iam_binding.json
+var googleHealthcareConsentStoreIamBinding []byte
+
+//go:embed mapping/google/resource/healthcare/google_healthcare_consent_store_iam_member.json
+var googleHealthcareConsentStoreIamMember []byte
+
+//go:embed mapping/google/resource/healthcare/google_healthcare_consent_store_iam_policy.json
+var googleHealthcareConsentStoreIamPolicy []byte
+
+//go:embed mapping/google/resource/healthcare/google_healthcare_dataset_iam_binding.json
+var googleHealthcareDatasetIamBinding []byte
+
+//go:embed mapping/google/resource/healthcare/google_healthcare_dataset_iam_member.json
+var googleHealthcareDatasetIamMember []byte
+
+//go:embed mapping/google/resource/healthcare/google_healthcare_dataset_iam_policy.json
+var googleHealthcareDatasetIamPolicy []byte
+
+//go:embed mapping/google/resource/healthcare/google_healthcare_dicom_store_iam_binding.json
+var googleHealthcareDicomStoreIamBinding []byte
+
+//go:embed mapping/google/resource/healthcare/google_healthcare_dicom_store_iam_member.json
+var googleHealthcareDicomStoreIamMember []byte
+
+//go:embed mapping/google/resource/healthcare/google_healthcare_dicom_store_iam_policy.json
+var googleHealthcareDicomStoreIamPolicy []byte
+
+//go:embed mapping/google/resource/healthcare/google_healthcare_fhir_store_iam_binding.json
+var googleHealthcareFhirStoreIamBinding []byte
+
+//go:embed mapping/google/resource/healthcare/google_healthcare_fhir_store_iam_member.json
+var googleHealthcareFhirStoreIamMember []byte
+
+//go:embed mapping/google/resource/healthcare/google_healthcare_fhir_store_iam_policy.json
+var googleHealthcareFhirStoreIamPolicy []byte
+
+//go:embed mapping/google/resource/healthcare/google_healthcare_hl7_v2_store_iam_binding.json
+var googleHealthcareHl7V2StoreIamBinding []byte
+
+//go:embed mapping/google/resource/healthcare/google_healthcare_hl7_v2_store_iam_member.json
+var googleHealthcareHl7V2StoreIamMember []byte
+
+//go:embed mapping/google/resource/healthcare/google_healthcare_hl7_v2_store_iam_policy.json
+var googleHealthcareHl7V2StoreIamPolicy []byte
+
+//go:embed mapping/google/resource/iam.googleapis.com/google_iam_workload_identity_pool_iam_binding.json
+var googleIamWorkloadIdentityPoolIamBinding []byte
+
+//go:embed mapping/google/resource/iam.googleapis.com/google_iam_workload_identity_pool_iam_member.json
+var googleIamWorkloadIdentityPoolIamMember []byte
+
+//go:embed mapping/google/resource/iam.googleapis.com/google_iam_workload_identity_pool_iam_policy.json
+var googleIamWorkloadIdentityPoolIamPolicy []byte
+
+//go:embed mapping/google/resource/iap/google_iap_app_engine_service_iam_binding.json
+var googleIapAppEngineServiceIamBinding []byte
+
+//go:embed mapping/google/resource/iap/google_iap_app_engine_service_iam_member.json
+var googleIapAppEngineServiceIamMember []byte
+
+//go:embed mapping/google/resource/iap/google_iap_app_engine_service_iam_policy.json
+var googleIapAppEngineServiceIamPolicy []byte
+
+//go:embed mapping/google/resource/iap/google_iap_app_engine_version_iam_binding.json
+var googleIapAppEngineVersionIamBinding []byte
+
+//go:embed mapping/google/resource/iap/google_iap_app_engine_version_iam_member.json
+var googleIapAppEngineVersionIamMember []byte
+
+//go:embed mapping/google/resource/iap/google_iap_app_engine_version_iam_policy.json
+var googleIapAppEngineVersionIamPolicy []byte
+
+//go:embed mapping/google/resource/iap/google_iap_tunnel_dest_group_iam_binding.json
+var googleIapTunnelDestGroupIamBinding []byte
+
+//go:embed mapping/google/resource/iap/google_iap_tunnel_dest_group_iam_member.json
+var googleIapTunnelDestGroupIamMember []byte
+
+//go:embed mapping/google/resource/iap/google_iap_tunnel_dest_group_iam_policy.json
+var googleIapTunnelDestGroupIamPolicy []byte
+
+//go:embed mapping/google/resource/iap/google_iap_tunnel_iam_binding.json
+var googleIapTunnelIamBinding []byte
+
+//go:embed mapping/google/resource/iap/google_iap_tunnel_iam_member.json
+var googleIapTunnelIamMember []byte
+
+//go:embed mapping/google/resource/iap/google_iap_tunnel_iam_policy.json
+var googleIapTunnelIamPolicy []byte
+
+//go:embed mapping/google/resource/iap/google_iap_tunnel_instance_iam_binding.json
+var googleIapTunnelInstanceIamBinding []byte
+
+//go:embed mapping/google/resource/iap/google_iap_tunnel_instance_iam_member.json
+var googleIapTunnelInstanceIamMember []byte
+
+//go:embed mapping/google/resource/iap/google_iap_tunnel_instance_iam_policy.json
+var googleIapTunnelInstanceIamPolicy []byte
+
+//go:embed mapping/google/resource/iap/google_iap_web_backend_service_iam_binding.json
+var googleIapWebBackendServiceIamBinding []byte
+
+//go:embed mapping/google/resource/iap/google_iap_web_backend_service_iam_member.json
+var googleIapWebBackendServiceIamMember []byte
+
+//go:embed mapping/google/resource/iap/google_iap_web_backend_service_iam_policy.json
+var googleIapWebBackendServiceIamPolicy []byte
+
+//go:embed mapping/google/resource/iap/google_iap_web_cloud_run_service_iam_binding.json
+var googleIapWebCloudRunServiceIamBinding []byte
+
+//go:embed mapping/google/resource/iap/google_iap_web_cloud_run_service_iam_member.json
+var googleIapWebCloudRunServiceIamMember []byte
+
+//go:embed mapping/google/resource/iap/google_iap_web_cloud_run_service_iam_policy.json
+var googleIapWebCloudRunServiceIamPolicy []byte
+
+//go:embed mapping/google/resource/iap/google_iap_web_iam_binding.json
+var googleIapWebIamBinding []byte
+
+//go:embed mapping/google/resource/iap/google_iap_web_iam_member.json
+var googleIapWebIamMember []byte
+
+//go:embed mapping/google/resource/iap/google_iap_web_iam_policy.json
+var googleIapWebIamPolicy []byte
+
+//go:embed mapping/google/resource/iap/google_iap_web_region_backend_service_iam_binding.json
+var googleIapWebRegionBackendServiceIamBinding []byte
+
+//go:embed mapping/google/resource/iap/google_iap_web_region_backend_service_iam_member.json
+var googleIapWebRegionBackendServiceIamMember []byte
+
+//go:embed mapping/google/resource/iap/google_iap_web_region_backend_service_iam_policy.json
+var googleIapWebRegionBackendServiceIamPolicy []byte
+
+//go:embed mapping/google/resource/iap/google_iap_web_type_app_engine_iam_binding.json
+var googleIapWebTypeAppEngineIamBinding []byte
+
+//go:embed mapping/google/resource/iap/google_iap_web_type_app_engine_iam_member.json
+var googleIapWebTypeAppEngineIamMember []byte
+
+//go:embed mapping/google/resource/iap/google_iap_web_type_app_engine_iam_policy.json
+var googleIapWebTypeAppEngineIamPolicy []byte
+
+//go:embed mapping/google/resource/iap/google_iap_web_type_compute_iam_binding.json
+var googleIapWebTypeComputeIamBinding []byte
+
+//go:embed mapping/google/resource/iap/google_iap_web_type_compute_iam_member.json
+var googleIapWebTypeComputeIamMember []byte
+
+//go:embed mapping/google/resource/iap/google_iap_web_type_compute_iam_policy.json
+var googleIapWebTypeComputeIamPolicy []byte
+
+//go:embed mapping/google/resource/compute/google_compute_disk_iam_policy.json
+var googleComputeDiskIamPolicy []byte
+
+//go:embed mapping/google/resource/kms/google_kms_ekm_connection_iam_binding.json
+var googleKmsEkmConnectionIamBinding []byte
+
+//go:embed mapping/google/resource/kms/google_kms_ekm_connection_iam_member.json
+var googleKmsEkmConnectionIamMember []byte
+
+//go:embed mapping/google/resource/kms/google_kms_ekm_connection_iam_policy.json
+var googleKmsEkmConnectionIamPolicy []byte
+
+//go:embed mapping/google/resource/logging/google_logging_log_view_iam_binding.json
+var googleLoggingLogViewIamBinding []byte
+
+//go:embed mapping/google/resource/logging/google_logging_log_view_iam_member.json
+var googleLoggingLogViewIamMember []byte
+
+//go:embed mapping/google/resource/networksecurity/google_network_security_address_group_iam_binding.json
+var googleNetworkSecurityAddressGroupIamBinding []byte
+
+//go:embed mapping/google/resource/networksecurity/google_network_security_address_group_iam_member.json
+var googleNetworkSecurityAddressGroupIamMember []byte
+
+//go:embed mapping/google/resource/networksecurity/google_network_security_address_group_iam_policy.json
+var googleNetworkSecurityAddressGroupIamPolicy []byte
+
+//go:embed mapping/google/resource/notebooks/google_notebooks_instance_iam_binding.json
+var googleNotebooksInstanceIamBinding []byte
+
+//go:embed mapping/google/resource/notebooks/google_notebooks_instance_iam_member.json
+var googleNotebooksInstanceIamMember []byte
+
+//go:embed mapping/google/resource/notebooks/google_notebooks_instance_iam_policy.json
+var googleNotebooksInstanceIamPolicy []byte
+
+//go:embed mapping/google/resource/notebooks/google_notebooks_runtime_iam_binding.json
+var googleNotebooksRuntimeIamBinding []byte
+
+//go:embed mapping/google/resource/notebooks/google_notebooks_runtime_iam_member.json
+var googleNotebooksRuntimeIamMember []byte
+
+//go:embed mapping/google/resource/logging/google_logging_log_view_iam_policy.json
+var googleLoggingLogViewIamPolicy []byte
+
+//go:embed mapping/google/resource/pubsub/google_pubsub_subscription_iam_policy.json
+var googlePubsubSubscriptionIamPolicy []byte
+
+//go:embed mapping/google/resource/workstations/google_workstations_workstation_iam_policy.json
+var googleWorkstationsWorkstationIamPolicy []byte
+
+//go:embed mapping/google/resource/resourcemanager/google_organization_iam_binding.json
+var googleOrganizationIamBinding []byte
+
+//go:embed mapping/google/resource/resourcemanager/google_organization_iam_member.json
+var googleOrganizationIamMember []byte
+
+//go:embed mapping/google/resource/resourcemanager/google_organization_iam_policy.json
+var googleOrganizationIamPolicy []byte
+
+//go:embed mapping/google/resource/resourcemanager/google_project_iam_policy.json
+var googleProjectIamPolicy []byte
+
+//go:embed mapping/google/resource/notebooks/google_notebooks_runtime_iam_policy.json
+var googleNotebooksRuntimeIamPolicy []byte
+
+//go:embed mapping/google/resource/runtimeconfig/google_runtimeconfig_config_iam_binding.json
+var googleRuntimeconfigConfigIamBinding []byte
+
+//go:embed mapping/google/resource/runtimeconfig/google_runtimeconfig_config_iam_member.json
+var googleRuntimeconfigConfigIamMember []byte
+
+//go:embed mapping/google/resource/runtimeconfig/google_runtimeconfig_config_iam_policy.json
+var googleRuntimeconfigConfigIamPolicy []byte
+
+//go:embed mapping/google/resource/securitycenter/google_scc_source_iam_binding.json
+var googleSccSourceIamBinding []byte
+
+//go:embed mapping/google/resource/securitycenter/google_scc_source_iam_member.json
+var googleSccSourceIamMember []byte
+
+//go:embed mapping/google/resource/securitycenter/google_scc_v2_organization_source_iam_binding.json
+var googleSccV2OrganizationSourceIamPolicy []byte
+
+//go:embed mapping/google/resource/securitycenter/google_scc_v2_organization_source_iam_member.json
+var googleSccV2OrganizationSourceIamMember []byte
+
+//go:embed mapping/google/resource/storage/google_storage_managed_folder_iam_binding.json
+var googleStorageManagedFolderIamBinding []byte
+
+//go:embed mapping/google/resource/storage/google_storage_managed_folder_iam_member.json
+var googleStorageManagedFolderIamMember []byte
+
+//go:embed mapping/google/resource/storage/google_storage_managed_folder_iam_policy.json
+var googleStorageManagedFolderIamPolicy []byte

@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "healthcare.hl7V2Stores.getIamPolicy",
+      "healthcare.hl7V2Stores.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

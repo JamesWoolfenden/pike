@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "runtimeconfig.configs.getIamPolicy",
+      "runtimeconfig.configs.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,13 +1,16 @@
 [
   {
     "apply": [
-      "dns.managedZones.getIamPolicy"
+      "dns.managedZones.getIamPolicy",
+      "dns.managedZones.setIamPolicy"
     ],
     "attributes": {
       "tags": []
     },
     "destroy": [],
     "modify": [],
-    "plan": []
+    "plan": [
+      "dns.managedZones.getIamPolicy"
+    ]
   }
 ]

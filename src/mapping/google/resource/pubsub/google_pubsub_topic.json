@@ -11,6 +11,8 @@
     },
     "destroy": [],
     "modify": [],
-    "plan": []
+    "plan": [
+      "pubsub.topics.get"
+    ]
   }
 ]

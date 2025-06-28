@@ -17,6 +17,8 @@
     "modify": [
       "cloudsql.instances.update"
     ],
-    "plan": []
+    "plan": [
+      "cloudsql.instances.get"
+    ]
   }
 ]

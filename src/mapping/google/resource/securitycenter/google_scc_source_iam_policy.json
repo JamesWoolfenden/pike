@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "securitycenter.sources.getIamPolicy",
+      "securitycenter.sources.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "securitycenter.sources.getIamPolicy"
+    ]
+  }
+]

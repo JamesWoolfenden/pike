@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "iam.googleapis.com/workloadIdentityPools.getIamPolicy",
+      "iam.googleapis.com/workloadIdentityPools.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "iam.googleapis.com/workloadIdentityPools.getIamPolicy"
+    ]
+  }
+]

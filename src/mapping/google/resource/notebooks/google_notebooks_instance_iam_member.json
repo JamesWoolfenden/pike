@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "notebooks.instances.getIamPolicy",
+      "notebooks.instances.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

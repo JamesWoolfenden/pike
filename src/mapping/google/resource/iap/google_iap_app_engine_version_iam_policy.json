@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "iap.webServices.getIamPolicy",
+      "iap.webServices.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "iap.webServiceVersions.getIamPolicy"
+    ]
+  }
+]

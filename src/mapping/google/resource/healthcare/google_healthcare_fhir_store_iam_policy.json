@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "healthcare.fhirStores.getIamPolicy",
+      "healthcare.fhirStores.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "healthcare.fhirStores.getIamPolicy"
+    ]
+  }
+]

@@ -16,6 +16,8 @@
     "modify": [
       "spanner.instances.update"
     ],
-    "plan": []
+    "plan": [
+      "spanner.instances.get"
+    ]
   }
 ]

@@ -9,6 +9,8 @@
     },
     "destroy": [],
     "modify": [],
-    "plan": []
+    "plan": [
+      "servicedirectory.services.getIamPolicy"
+    ]
   }
 ]

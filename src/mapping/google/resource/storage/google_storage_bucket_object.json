@@ -13,6 +13,8 @@
     "modify": [
       "storage.objects.get"
     ],
-    "plan": []
+    "plan": [
+      "storage.objects.list"
+    ]
   }
 ]

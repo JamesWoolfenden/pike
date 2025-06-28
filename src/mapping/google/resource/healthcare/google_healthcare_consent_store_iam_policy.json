@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "healthcare.consentStores.getIamPolicy",
+      "healthcare.consentStores.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "healthcare.consentStores.getIamPolicy"
+    ]
+  }
+]

@@ -17,6 +17,8 @@
     "modify": [
       "container.clusters.update"
     ],
-    "plan": []
+    "plan": [
+      "container.clusters.get"
+    ]
   }
 ]

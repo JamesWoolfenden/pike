@@ -1,11 +1,15 @@
 [
   {
-    "apply": [],
+    "apply": [
+      "run.workerpools.get"
+    ],
     "attributes": {
       "tags": []
     },
     "destroy": [],
     "modify": [],
-    "plan": []
+    "plan": [
+      "run.workerpools.get"
+    ]
   }
 ]

@@ -16,6 +16,8 @@
     "modify": [
       "alloydb.clusters.update"
     ],
-    "plan": []
+    "plan": [
+      "alloydb.clusters.get"
+    ]
   }
 ]

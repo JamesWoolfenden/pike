@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "logging.views.getIamPolicy",
+      "logging.views.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

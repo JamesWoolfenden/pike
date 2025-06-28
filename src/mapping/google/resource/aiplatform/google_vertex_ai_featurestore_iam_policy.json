@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "aiplatform.featurestores.getIamPolicy",
+      "aiplatform.featurestores.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "aiplatform.featurestores.getIamPolicy"
+    ]
+  }
+]

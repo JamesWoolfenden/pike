@@ -13,6 +13,8 @@
     },
     "destroy": [],
     "modify": [],
-    "plan": []
+    "plan": [
+      "privilegedaccessmanager.entitlements.get"
+    ]
   }
 ]

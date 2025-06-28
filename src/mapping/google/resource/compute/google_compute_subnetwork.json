@@ -13,6 +13,8 @@
       "compute.subnetworks.delete"
     ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "compute.subnetworks.get"
+    ]
   }
 ]

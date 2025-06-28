@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "pubsub.subscriptions.getIamPolicy",
+      "pubsub.subscriptions.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "pubsub.subscriptions.getIamPolicy"
+    ]
+  }
+]

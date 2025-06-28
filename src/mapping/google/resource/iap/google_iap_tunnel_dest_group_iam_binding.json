@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "iap.tunnelDestGroups.getIamPolicy",
+      "iap.tunnelDestGroups.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

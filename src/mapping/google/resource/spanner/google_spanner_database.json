@@ -18,6 +18,8 @@
       "spanner.databases.updateDdl",
       "spanner.databases.update"
     ],
-    "plan": []
+    "plan": [
+      "spanner.databases.get"
+    ]
   }
 ]

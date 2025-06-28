@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "resourcemanager.organizations.getIamPolicy",
+      "resourcemanager.organizations.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "resourcemanager.organizations.getIamPolicy"
+    ]
+  }
+]

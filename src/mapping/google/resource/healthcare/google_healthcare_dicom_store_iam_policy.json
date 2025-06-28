@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "healthcare.dicomStores.getIamPolicy",
+      "healthcare.dicomStores.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "healthcare.dicomStores.getIamPolicy"
+    ]
+  }
+]

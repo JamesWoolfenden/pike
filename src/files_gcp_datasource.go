@@ -445,10 +445,10 @@ var dataGoogleIapAppEngineVersionIamPolicy []byte
 //go:embed mapping/google/data/iap/google_iap_app_engine_service_iam_policy.json
 var dataGoogleIapAppEngineServiceIamPolicy []byte
 
-//go:embed mapping/google/data/iam/google_iam_workload_identity_pool_provider.json
+//go:embed mapping/google/data/iam.googleapis.com/google_iam_workload_identity_pool_provider.json
 var dataGoogleIamWorkloadIdentityPoolProvider []byte
 
-//go:embed mapping/google/data/iam/google_iam_workload_identity_pool.json
+//go:embed mapping/google/data/iam.googleapis.com/google_iam_workload_identity_pool.json
 var dataGoogleIamWorkloadIdentityPool []byte
 
 //go:embed mapping/google/data/dataplex/google_dataplex_asset_iam_policy.json
@@ -846,3 +846,39 @@ var dataGoogleMemorystoreInstance []byte
 
 //go:embed mapping/google/data/orgpolicy/google_project_organization_policy.json
 var dataGoogleProjectOrganizationPolicy []byte
+
+//go:embed mapping/google/data/resourcemanager/google_organization_iam_policy.json
+var dataGoogleOrganizationIamPolicy []byte
+
+//go:embed mapping/google/data/resourcemanager/google_project_iam_policy.json
+var dataGoogleProjectIamPolicy []byte
+
+//go:embed mapping/google/data/runtimeconfig/google_runtimeconfig_config_iam_policy.json
+var dataGoogleRuntimeconfigConfigIamPolicy []byte
+
+//go:embed mapping/google/data/securitycenter/google_scc_source_iam_policy.json
+var dataGoogleSccSourceIamPolicy []byte
+
+//go:embed mapping/google/data/securitycenter/google_scc_v2_organization_source_iam_policy.json
+var dataGoogleSccV2OrganizationSourceIamPolicy []byte
+
+//go:embed mapping/google/data/securesourcemanager/google_secure_source_manager_instance_iam_policy.json
+var dataGoogleSecureSourceManagerInstanceIamPolicy []byte
+
+//go:embed mapping/google/data/securesourcemanager/google_secure_source_manager_repository_iam_policy.json
+var dataGoogleSecureSourceManagerRepositoryIamPolicy []byte
+
+//go:embed mapping/google/data/resourcemanager/google_tags_tag_key_iam_policy.json
+var dataGoogleTagsTagKeyIamPolicy []byte
+
+//go:embed mapping/google/data/aiplatform/google_vertex_ai_feature_group_iam_policy.json
+var dataGoogleVertexAiFeatureGroupIamPolicy []byte
+
+//go:embed mapping/google/data/aiplatform/google_vertex_ai_feature_online_store_featureview_iam_policy.json
+var dataGoogleVertexAiFeatureOnlineStoreFeatureviewIamPolicy []byte
+
+//go:embed mapping/google/data/tags/google_tags_tag_value_iam_policy.json
+var dataGoogleTagsTagValueIamPolicy []byte
+
+//go:embed mapping/google/data/aiplatform/google_vertex_ai_feature_online_store_iam_policy.json
+var dataGoogleVertexAiFeatureOnlineStoreIamPolicy []byte

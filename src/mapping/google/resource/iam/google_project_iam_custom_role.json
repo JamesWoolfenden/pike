@@ -13,6 +13,8 @@
     "modify": [
       "iam.roles.update"
     ],
-    "plan": []
+    "plan": [
+      "iam.roles.get"
+    ]
   }
 ]

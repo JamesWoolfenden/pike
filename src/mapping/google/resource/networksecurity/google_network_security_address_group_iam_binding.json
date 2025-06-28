@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "networksecurity.addressGroups.getIamPolicy",
+      "networksecurity.addressGroups.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

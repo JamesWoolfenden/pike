@@ -19,9 +19,11 @@
     "destroy": [
       "dns.managedZones.delete"
     ],
-    "modify": [],
-    "plan": [
+    "modify": [
       "dns.managedZones.update"
+    ],
+    "plan": [
+      "dns.managedZones.get"
     ]
   }
 ]

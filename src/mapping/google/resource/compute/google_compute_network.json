@@ -11,6 +11,8 @@
       "compute.networks.delete"
     ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "compute.networks.get"
+    ]
   }
 ]

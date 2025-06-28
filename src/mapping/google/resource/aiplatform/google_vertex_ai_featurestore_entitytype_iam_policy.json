@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "aiplatform.entityTypes.getIamPolicy",
+      "aiplatform.entityTypes.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "aiplatform.entityTypes.getIamPolicy"
+    ]
+  }
+]

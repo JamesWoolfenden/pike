@@ -17,6 +17,8 @@
       "compute.addresses.delete"
     ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "compute.addresses.get"
+    ]
   }
 ]

@@ -20,6 +20,8 @@
       "compute.instances.delete"
     ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "compute.instances.get"
+    ]
   }
 ]

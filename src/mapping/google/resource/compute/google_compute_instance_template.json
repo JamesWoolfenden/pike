@@ -13,6 +13,8 @@
       "compute.instanceTemplates.delete"
     ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "compute.instanceTemplates.get"
+    ]
   }
 ]

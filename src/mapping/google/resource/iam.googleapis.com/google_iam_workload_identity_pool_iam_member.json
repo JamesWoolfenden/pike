@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "iam.googleapis.com/workforcePools.getIamPolicy",
+      "iam.googleapis.com/workforcePools.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

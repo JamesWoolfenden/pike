@@ -16,6 +16,8 @@
     "modify": [
       "run.services.update"
     ],
-    "plan": []
+    "plan": [
+      "run.services.get"
+    ]
   }
 ]

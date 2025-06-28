@@ -16,6 +16,8 @@
     "modify": [
       "cloudkms.cryptoKeys.update"
     ],
-    "plan": []
+    "plan": [
+      "cloudkms.cryptoKeys.get"
+    ]
   }
 ]

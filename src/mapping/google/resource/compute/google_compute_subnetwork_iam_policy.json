@@ -1,11 +1,16 @@
 [
   {
-    "apply": [],
+    "apply": [
+      "compute.subnetworks.getIamPolicy",
+      "compute.subnetworks.setIamPolicy"
+    ],
     "attributes": {
       "tags": []
     },
     "destroy": [],
     "modify": [],
-    "plan": []
+    "plan": [
+      "compute.subnetworks.getIamPolicy"
+    ]
   }
 ]
