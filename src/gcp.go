@@ -500,7 +500,7 @@ var gCPTfLookup = map[string]interface{}{
 	"google_runtimeconfig_config_iam_policy":                        googleRuntimeconfigConfigIamPolicy,
 	"google_scc_source_iam_binding":                                 googleSccSourceIamBinding,
 	"google_scc_source_iam_member":                                  googleSccSourceIamMember,
-	"google_scc_v2_organization_source_iam_binding":                 googleSccV2OrganizationSourceIamPolicy,
+	"google_scc_v2_organization_source_iam_binding":                 googleSccV2OrganizationSourceIamBinding,
 	"google_scc_v2_organization_source_iam_member":                  googleSccV2OrganizationSourceIamMember,
 	"google_secret_manager_regional_secret":                         googleSecretManagerRegionalSecret,
 	"google_secret_manager_regional_secret_iam_binding":             googleSecretManagerRegionalSecretsIamBinding,
@@ -612,4 +612,6 @@ var gCPTfLookup = map[string]interface{}{
 	"google_workstations_workstation_iam_binding":                   googleWorkstationsWorkstationIamBinding,
 	"google_workstations_workstation_iam_member":                    googleWorkstationsWorkstationIamMember,
 	"google_workstations_workstation_iam_policy":                    googleWorkstationsWorkstationIamPolicy,
+	"google_scc_source_iam_policy":                                  googleSccSourceIamPolicy,
+	"google_scc_v2_organization_source_iam_policy":                  googleSccV2OrganizationSourceIamPolicy,
 }

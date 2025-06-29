@@ -1,7 +1,7 @@
 # todo google
 
-Resource percentage coverage   44.69
-Datasource percentage coverage 94.69
+Resource percentage coverage   47.58
+Datasource percentage coverage 95.23
 
 ./resource.ps1 google_access_context_manager_access_level_condition
 ./resource.ps1 google_access_context_manager_service_perimeter_dry_run_egress_policy
@@ -422,7 +422,6 @@ Datasource percentage coverage 94.69
 ./resource.ps1 google_logging_linked_dataset
 ./resource.ps1 google_logging_log_scope
 ./resource.ps1 google_logging_log_view
-
 ./resource.ps1 google_logging_metric
 ./resource.ps1 google_logging_organization_bucket_config
 ./resource.ps1 google_logging_organization_exclusion
@@ -473,7 +472,6 @@ Datasource percentage coverage 94.69
 ./resource.ps1 google_network_connectivity_spoke
 ./resource.ps1 google_network_management_vpc_flow_logs_config
 ./resource.ps1 google_network_security_address_group
-
 ./resource.ps1 google_network_security_authorization_policy
 ./resource.ps1 google_network_security_authz_policy
 ./resource.ps1 google_network_security_backend_authentication_config
@@ -513,7 +511,6 @@ Datasource percentage coverage 94.69
 ./resource.ps1 google_notebooks_environment
 ./resource.ps1 google_notebooks_instance
 ./resource.ps1 google_notebooks_runtime
-
 ./resource.ps1 google_oracle_database_autonomous_database
 ./resource.ps1 google_oracle_database_cloud_exadata_infrastructure
 ./resource.ps1 google_oracle_database_cloud_vm_cluster
@@ -540,10 +537,8 @@ Datasource percentage coverage 94.69
 ./resource.ps1 google_project
 ./resource.ps1 google_project_access_approval_settings
 ./resource.ps1 google_project_iam_member_remove
-
 ./resource.ps1 google_project_organization_policy
 ./resource.ps1 google_public_ca_external_account_key
-
 ./resource.ps1 google_recaptcha_enterprise_key
 ./resource.ps1 google_redis_cluster
 ./resource.ps1 google_redis_cluster_user_created_connections
@@ -625,7 +620,6 @@ Datasource percentage coverage 94.69
 ./resource.ps1 google_workstations_workstation
 ./resource.ps1 google_workstations_workstation_cluster
 ./resource.ps1 google_workstations_workstation_config
-
 ./resource.ps1 google_access_context_manager_access_policy -type data
 ./resource.ps1 google_cloud_identity_group_transitive_memberships -type data
 ./resource.ps1 google_dataplex_data_quality_rules -type data

@@ -1508,10 +1508,13 @@ var googleSccSourceIamBinding []byte
 var googleSccSourceIamMember []byte
 
 //go:embed mapping/google/resource/securitycenter/google_scc_v2_organization_source_iam_binding.json
-var googleSccV2OrganizationSourceIamPolicy []byte
+var googleSccV2OrganizationSourceIamBinding []byte
 
 //go:embed mapping/google/resource/securitycenter/google_scc_v2_organization_source_iam_member.json
 var googleSccV2OrganizationSourceIamMember []byte
+
+//go:embed mapping/google/resource/securitycenter/google_scc_v2_organization_source_iam_policy.json
+var googleSccV2OrganizationSourceIamPolicy []byte
 
 //go:embed mapping/google/resource/storage/google_storage_managed_folder_iam_binding.json
 var googleStorageManagedFolderIamBinding []byte
@@ -1521,3 +1524,6 @@ var googleStorageManagedFolderIamMember []byte
 
 //go:embed mapping/google/resource/storage/google_storage_managed_folder_iam_policy.json
 var googleStorageManagedFolderIamPolicy []byte
+
+//go:embed mapping/google/resource/securitycenter/google_scc_source_iam_policy.json
+var googleSccSourceIamPolicy []byte
