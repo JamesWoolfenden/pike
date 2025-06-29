@@ -379,6 +379,9 @@ func GCPDataLookup(result string) interface{} {
 		"google_workbench_instance_iam_policy":                         dataGoogleWorkbenchInstanceIamPolicy,
 		"google_workstations_workstation_config_iam_policy":            dataGoogleWorkstationsWorkstationConfigIamPolicy,
 		"google_workstations_workstation_iam_policy":                   dataGoogleWorkstationsWorkstationIamPolicy,
+		"google_tags_tag_keys":                                         dataGoogleTagsTagKeys,
+		"google_tags_tag_value":                                        dataGoogleTagsTagValue,
+		"google_tags_tag_values":                                       dataGoogleTagsTagValues,
 	}
 
 	return TFLookup[result]

@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "resourcemanager.tagValueBindings.create",
+      "resourcemanager.tagValueBindings.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

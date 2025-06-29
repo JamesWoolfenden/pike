@@ -614,4 +614,8 @@ var gCPTfLookup = map[string]interface{}{
 	"google_workstations_workstation_iam_policy":                    googleWorkstationsWorkstationIamPolicy,
 	"google_scc_source_iam_policy":                                  googleSccSourceIamPolicy,
 	"google_scc_v2_organization_source_iam_policy":                  googleSccV2OrganizationSourceIamPolicy,
+	"google_tags_location_tag_binding":                              googleTagsLocationTagBinding,
+	"google_tags_tag_binding":                                       googleTagsTagBinding,
+	"google_tags_tag_key":                                           googleTagsTagKey,
+	"google_tags_tag_value":                                         googleTagsTagValue,
 }

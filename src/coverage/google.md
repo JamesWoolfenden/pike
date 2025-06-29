@@ -1,7 +1,7 @@
 # todo google
 
-Resource percentage coverage   47.58
-Datasource percentage coverage 95.23
+Resource percentage coverage   47.80
+Datasource percentage coverage 96.02
 
 ./resource.ps1 google_access_context_manager_access_level_condition
 ./resource.ps1 google_access_context_manager_service_perimeter_dry_run_egress_policy
@@ -38,6 +38,7 @@ Datasource percentage coverage 95.23
 ./resource.ps1 google_apihub_api_hub_instance
 ./resource.ps1 google_apihub_curation
 ./resource.ps1 google_apihub_host_project_registration
+./resource.ps1 google_apihub_plugin
 ./resource.ps1 google_apihub_plugin_instance
 ./resource.ps1 google_apikeys_key
 ./resource.ps1 google_app_engine_application
@@ -222,6 +223,7 @@ Datasource percentage coverage 95.23
 ./resource.ps1 google_compute_url_map
 ./resource.ps1 google_compute_vpn_gateway
 ./resource.ps1 google_compute_vpn_tunnel
+./resource.ps1 google_compute_wire_group
 ./resource.ps1 google_contact_center_insights_view
 ./resource.ps1 google_container_analysis_note
 ./resource.ps1 google_container_analysis_occurrence
@@ -277,6 +279,7 @@ Datasource percentage coverage 95.23
 ./resource.ps1 google_dialogflow_cx_entity_type
 ./resource.ps1 google_dialogflow_cx_environment
 ./resource.ps1 google_dialogflow_cx_flow
+./resource.ps1 google_dialogflow_cx_generative_settings
 ./resource.ps1 google_dialogflow_cx_intent
 ./resource.ps1 google_dialogflow_cx_page
 ./resource.ps1 google_dialogflow_cx_security_settings
@@ -595,10 +598,6 @@ Datasource percentage coverage 95.23
 ./resource.ps1 google_storage_object_acl
 ./resource.ps1 google_storage_transfer_agent_pool
 ./resource.ps1 google_storage_transfer_job
-./resource.ps1 google_tags_location_tag_binding
-./resource.ps1 google_tags_tag_binding
-./resource.ps1 google_tags_tag_key
-./resource.ps1 google_tags_tag_value
 ./resource.ps1 google_tpu_node
 ./resource.ps1 google_tpu_v2_queued_resource
 ./resource.ps1 google_tpu_v2_vm
@@ -632,9 +631,3 @@ Datasource percentage coverage 95.23
 ./resource.ps1 google_runtimeconfig_config -type data
 ./resource.ps1 google_runtimeconfig_variable -type data
 ./resource.ps1 google_site_verification_token -type data
-./resource.ps1 google_storage_control_folder_intelligence_config -type data
-./resource.ps1 google_storage_control_organization_intelligence_config -type data
-./resource.ps1 google_storage_control_project_intelligence_config -type data
-./resource.ps1 google_tags_tag_keys -type data
-./resource.ps1 google_tags_tag_value -type data
-./resource.ps1 google_tags_tag_values -type data

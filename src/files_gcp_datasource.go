@@ -882,3 +882,12 @@ var dataGoogleTagsTagValueIamPolicy []byte
 
 //go:embed mapping/google/data/aiplatform/google_vertex_ai_feature_online_store_iam_policy.json
 var dataGoogleVertexAiFeatureOnlineStoreIamPolicy []byte
+
+//go:embed mapping/google/data/resourcemanager/google_tags_tag_keys.json
+var dataGoogleTagsTagKeys []byte
+
+//go:embed mapping/google/data/resourcemanager/google_tags_tag_value.json
+var dataGoogleTagsTagValue []byte
+
+//go:embed mapping/google/data/resourcemanager/google_tags_tag_values.json
+var dataGoogleTagsTagValues []byte

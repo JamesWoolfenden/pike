@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "resourcemanager.tagValues.get",
+      "resourcemanager.tagValues.list"
+    ]
+  }
+]

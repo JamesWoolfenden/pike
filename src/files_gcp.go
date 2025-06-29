@@ -1527,3 +1527,15 @@ var googleStorageManagedFolderIamPolicy []byte
 
 //go:embed mapping/google/resource/securitycenter/google_scc_source_iam_policy.json
 var googleSccSourceIamPolicy []byte
+
+//go:embed mapping/google/resource/resourcemanager/google_tags_location_tag_binding.json
+var googleTagsLocationTagBinding []byte
+
+//go:embed mapping/google/resource/resourcemanager/google_tags_tag_binding.json
+var googleTagsTagBinding []byte
+
+//go:embed mapping/google/resource/resourcemanager/google_tags_tag_key.json
+var googleTagsTagKey []byte
+
+//go:embed mapping/google/resource/resourcemanager/google_tags_tag_value.json
+var googleTagsTagValue []byte

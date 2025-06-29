@@ -352,6 +352,7 @@ Datasource percentage coverage 33.80
 ./resource.ps1 azurerm_elastic_san_volume_group
 ./resource.ps1 azurerm_email_communication_service
 ./resource.ps1 azurerm_email_communication_service_domain
+./resource.ps1 azurerm_email_communication_service_domain_sender_username
 ./resource.ps1 azurerm_eventgrid_domain
 ./resource.ps1 azurerm_eventgrid_domain_topic
 ./resource.ps1 azurerm_eventgrid_event_subscription
