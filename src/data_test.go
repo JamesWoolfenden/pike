@@ -374,6 +374,7 @@ func TestGetPermission(t *testing.T) {
 				"compute.subnetworks.useExternalIp",
 				"compute.instances.setMetadata",
 				"compute.instances.delete",
+				"compute.instances.get",
 				"compute.instances.delete",
 			}},
 		},

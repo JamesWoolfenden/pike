@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "runtimeconfig.configs.create",
+      "runtimeconfig.configs.get",
+      "runtimeconfig.configs.update",
+      "runtimeconfig.configs.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

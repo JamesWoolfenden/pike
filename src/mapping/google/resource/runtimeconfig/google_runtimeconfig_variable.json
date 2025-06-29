@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "runtimeconfig.variables.create",
+      "runtimeconfig.variables.delete",
+      "runtimeconfig.variables.get",
+      "runtimeconfig.variables.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

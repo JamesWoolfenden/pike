@@ -1,7 +1,7 @@
 # todo google
 
-Resource percentage coverage   47.80
-Datasource percentage coverage 96.02
+Resource percentage coverage   48.31
+Datasource percentage coverage 97.35
 
 ./resource.ps1 google_access_context_manager_access_level_condition
 ./resource.ps1 google_access_context_manager_service_perimeter_dry_run_egress_policy
@@ -224,6 +224,7 @@ Datasource percentage coverage 96.02
 ./resource.ps1 google_compute_vpn_gateway
 ./resource.ps1 google_compute_vpn_tunnel
 ./resource.ps1 google_compute_wire_group
+./resource.ps1 google_contact_center_insights_analysis_rule
 ./resource.ps1 google_contact_center_insights_view
 ./resource.ps1 google_container_analysis_note
 ./resource.ps1 google_container_analysis_occurrence
@@ -446,6 +447,7 @@ Datasource percentage coverage 96.02
 ./resource.ps1 google_migration_center_group
 ./resource.ps1 google_migration_center_preference_set
 ./resource.ps1 google_ml_engine_model
+./resource.ps1 google_model_armor_template
 ./resource.ps1 google_monitoring_alert_policy
 ./resource.ps1 google_monitoring_custom_service
 ./resource.ps1 google_monitoring_dashboard
@@ -547,8 +549,6 @@ Datasource percentage coverage 96.02
 ./resource.ps1 google_redis_cluster_user_created_connections
 ./resource.ps1 google_resource_manager_capability
 ./resource.ps1 google_resource_manager_lien
-./resource.ps1 google_runtimeconfig_config
-./resource.ps1 google_runtimeconfig_variable
 ./resource.ps1 google_scc_event_threat_detection_custom_module
 ./resource.ps1 google_scc_folder_custom_module
 ./resource.ps1 google_scc_folder_notification_config
@@ -583,15 +583,10 @@ Datasource percentage coverage 96.02
 ./resource.ps1 google_service_networking_peered_dns_domain
 ./resource.ps1 google_service_networking_vpc_service_controls
 ./resource.ps1 google_service_usage_consumer_quota_override
-./resource.ps1 google_site_verification_owner
-./resource.ps1 google_site_verification_web_resource
 ./resource.ps1 google_sql_source_representation_instance
 ./resource.ps1 google_sql_ssl_cert
 ./resource.ps1 google_storage_anywhere_cache
 ./resource.ps1 google_storage_batch_operations_job
-./resource.ps1 google_storage_control_folder_intelligence_config
-./resource.ps1 google_storage_control_organization_intelligence_config
-./resource.ps1 google_storage_control_project_intelligence_config
 ./resource.ps1 google_storage_folder
 ./resource.ps1 google_storage_managed_folder
 ./resource.ps1 google_storage_notification
@@ -628,6 +623,4 @@ Datasource percentage coverage 96.02
 ./resource.ps1 google_organization_iam_custom_roles -type data
 ./resource.ps1 google_organizations -type data
 ./resource.ps1 google_project_ancestry -type data
-./resource.ps1 google_runtimeconfig_config -type data
-./resource.ps1 google_runtimeconfig_variable -type data
-./resource.ps1 google_site_verification_token -type data
+./resource.ps1 google_redis_cluster -type data

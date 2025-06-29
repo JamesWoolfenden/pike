@@ -382,6 +382,12 @@ func GCPDataLookup(result string) interface{} {
 		"google_tags_tag_keys":                                         dataGoogleTagsTagKeys,
 		"google_tags_tag_value":                                        dataGoogleTagsTagValue,
 		"google_tags_tag_values":                                       dataGoogleTagsTagValues,
+		"google_storage_control_folder_intelligence_config":            dataGoogleStorageControlFolderIntelligenceConfig,
+		"google_storage_control_organization_intelligence_config":      dataGoogleStorageControlOrganizationIntelligenceConfig,
+		"google_storage_control_project_intelligence_config":           dataGoogleStorageControlProjectIntelligenceConfig,
+		"google_site_verification_token":                               placeholder,
+		"google_runtimeconfig_config":                                  dataGoogleRuntimeconfigConfig,
+		"google_runtimeconfig_variable":                                dataGoogleRuntimeconfigVariable,
 	}
 
 	return TFLookup[result]

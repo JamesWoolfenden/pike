@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "storage.intelligenceConfigs.get",
+      "storage.intelligenceConfigs.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

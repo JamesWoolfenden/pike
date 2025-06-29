@@ -618,4 +618,11 @@ var gCPTfLookup = map[string]interface{}{
 	"google_tags_tag_binding":                                       googleTagsTagBinding,
 	"google_tags_tag_key":                                           googleTagsTagKey,
 	"google_tags_tag_value":                                         googleTagsTagValue,
+	"google_storage_control_folder_intelligence_config":             googleStorageControlFolderIntelligenceConfig,
+	"google_storage_control_organization_intelligence_config":       googleStorageControlOrganizationIntelligenceConfig,
+	"google_storage_control_project_intelligence_config":            googleStorageControlProjectIntelligenceConfig,
+	"google_site_verification_web_resource":                         placeholder,
+	"google_site_verification_owner":                                placeholder,
+	"google_runtimeconfig_config":                                   googleRuntimeconfigConfig,
+	"google_runtimeconfig_variable":                                 googleRuntimeconfigVariable,
 }

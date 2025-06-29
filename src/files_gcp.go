@@ -1539,3 +1539,18 @@ var googleTagsTagKey []byte
 
 //go:embed mapping/google/resource/resourcemanager/google_tags_tag_value.json
 var googleTagsTagValue []byte
+
+//go:embed mapping/google/resource/storage/google_storage_control_folder_intelligence_config.json
+var googleStorageControlFolderIntelligenceConfig []byte
+
+//go:embed mapping/google/resource/storage/google_storage_control_organization_intelligence_config.json
+var googleStorageControlOrganizationIntelligenceConfig []byte
+
+//go:embed mapping/google/resource/storage/google_storage_control_project_intelligence_config.json
+var googleStorageControlProjectIntelligenceConfig []byte
+
+//go:embed mapping/google/resource/runtimeconfig/google_runtimeconfig_config.json
+var googleRuntimeconfigConfig []byte
+
+//go:embed mapping/google/resource/runtimeconfig/google_runtimeconfig_variable.json
+var googleRuntimeconfigVariable []byte
