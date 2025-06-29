@@ -625,4 +625,10 @@ var gCPTfLookup = map[string]interface{}{
 	"google_site_verification_owner":                                placeholder,
 	"google_runtimeconfig_config":                                   googleRuntimeconfigConfig,
 	"google_runtimeconfig_variable":                                 googleRuntimeconfigVariable,
+	"google_redis_cluster":                                          googleRedisCluster,
+	"google_redis_cluster_user_created_connections":                 googleRedisClusterUserCreatedConnections,
+	"google_project":                                                gooleProject,
+	"google_project_access_approval_settings":                       googleProjectAccessApprovalSettings,
+	"google_project_iam_member_remove":                              googleProjectIamMemberRemove,
+	"google_project_organization_policy":                            googleProjectOrganizationPolicy,
 }

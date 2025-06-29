@@ -906,3 +906,9 @@ var dataGoogleRuntimeconfigConfig []byte
 
 //go:embed mapping/google/resource/runtimeconfig/google_runtimeconfig_variable.json
 var dataGoogleRuntimeconfigVariable []byte
+
+//go:embed mapping/google/data/redis/google_redis_cluster.json
+var dataGoogleRedisCluster []byte
+
+//go:embed mapping/google/data/resourcemanager/google_project_ancestry.json
+var dataGoogleProjectAncestry []byte

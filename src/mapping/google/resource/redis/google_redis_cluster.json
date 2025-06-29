@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "redis.clusters.get",
+      "redis.clusters.create",
+      "redis.operations.get",
+      "redis.clusters.update",
+      "redis.clusters.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

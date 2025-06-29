@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "resourcemanager.organizations.get",
+      "resourcemanager.projects.create",
+      "resourcemanager.projects.delete",
+      "resourcemanager.projects.get",
+      "resourcemanager.projects.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

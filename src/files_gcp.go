@@ -1554,3 +1554,21 @@ var googleRuntimeconfigConfig []byte
 
 //go:embed mapping/google/resource/runtimeconfig/google_runtimeconfig_variable.json
 var googleRuntimeconfigVariable []byte
+
+//go:embed mapping/google/resource/redis/google_redis_cluster.json
+var googleRedisCluster []byte
+
+//go:embed mapping/google/resource/redis/google_redis_cluster_user_created_connections.json
+var googleRedisClusterUserCreatedConnections []byte
+
+//go:embed mapping/google/resource/resourcemanager/google_project.json
+var gooleProject []byte
+
+//go:embed mapping/google/resource/accessapproval/google_project_access_approval_settings.json
+var googleProjectAccessApprovalSettings []byte
+
+//go:embed mapping/google/resource/resourcemanager/google_project_iam_member_remove.json
+var googleProjectIamMemberRemove []byte
+
+//go:embed mapping/google/resource/orgpolicy/google_project_organization_policy.json
+var googleProjectOrganizationPolicy []byte

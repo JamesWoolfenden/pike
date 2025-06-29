@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "accessapproval.settings.delete",
+      "accessapproval.settings.get",
+      "accessapproval.settings.create",
+      "accessapproval.settings.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "orgpolicy.policy.set",
+      "orgpolicy.policy.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

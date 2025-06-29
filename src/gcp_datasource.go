@@ -388,6 +388,8 @@ func GCPDataLookup(result string) interface{} {
 		"google_site_verification_token":                               placeholder,
 		"google_runtimeconfig_config":                                  dataGoogleRuntimeconfigConfig,
 		"google_runtimeconfig_variable":                                dataGoogleRuntimeconfigVariable,
+		"google_redis_cluster":                                         dataGoogleRedisCluster,
+		"google_project_ancestry":                                      dataGoogleProjectAncestry,
 	}
 
 	return TFLookup[result]

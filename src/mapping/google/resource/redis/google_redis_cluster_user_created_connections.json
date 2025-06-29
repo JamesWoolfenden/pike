@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "redis.clusters.connect"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

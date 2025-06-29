@@ -1,7 +1,7 @@
 # todo google
 
-Resource percentage coverage   48.31
-Datasource percentage coverage 97.35
+Resource percentage coverage   48.82
+Datasource percentage coverage 97.88
 
 ./resource.ps1 google_access_context_manager_access_level_condition
 ./resource.ps1 google_access_context_manager_service_perimeter_dry_run_egress_policy
@@ -539,14 +539,8 @@ Datasource percentage coverage 97.35
 ./resource.ps1 google_parameter_manager_regional_parameter_version
 ./resource.ps1 google_privateca_certificate
 ./resource.ps1 google_privateca_certificate_authority
-./resource.ps1 google_project
-./resource.ps1 google_project_access_approval_settings
-./resource.ps1 google_project_iam_member_remove
-./resource.ps1 google_project_organization_policy
 ./resource.ps1 google_public_ca_external_account_key
 ./resource.ps1 google_recaptcha_enterprise_key
-./resource.ps1 google_redis_cluster
-./resource.ps1 google_redis_cluster_user_created_connections
 ./resource.ps1 google_resource_manager_capability
 ./resource.ps1 google_resource_manager_lien
 ./resource.ps1 google_scc_event_threat_detection_custom_module
@@ -619,8 +613,3 @@ Datasource percentage coverage 97.35
 ./resource.ps1 google_dataplex_data_quality_rules -type data
 ./resource.ps1 google_dns_managed_zones -type data
 ./resource.ps1 google_firebase_web_app_config -type data
-./resource.ps1 google_organization_iam_custom_role -type data
-./resource.ps1 google_organization_iam_custom_roles -type data
-./resource.ps1 google_organizations -type data
-./resource.ps1 google_project_ancestry -type data
-./resource.ps1 google_redis_cluster -type data
