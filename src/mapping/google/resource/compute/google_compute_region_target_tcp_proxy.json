@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "compute.regionTargetTcpProxies.create",
+      "compute.regionTargetTcpProxies.get",
+      "compute.regionTargetTcpProxies.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

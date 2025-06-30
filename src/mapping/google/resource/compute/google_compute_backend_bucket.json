@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "compute.backendBuckets.create",
+      "compute.backendBuckets.get",
+      "compute.backendBuckets.update",
+      "compute.backendBuckets.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

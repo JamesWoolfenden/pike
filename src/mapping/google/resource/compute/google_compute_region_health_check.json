@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "compute.regionHealthChecks.create",
+      "compute.regionHealthChecks.delete",
+      "compute.regionHealthChecks.update",
+      "compute.regionHealthChecks.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

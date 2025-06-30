@@ -1572,3 +1572,51 @@ var googleProjectIamMemberRemove []byte
 
 //go:embed mapping/google/resource/orgpolicy/google_project_organization_policy.json
 var googleProjectOrganizationPolicy []byte
+
+//go:embed mapping/google/resource/compute/google_compute_forwarding_rule.json
+var googleComputeForwardingRule []byte
+
+//go:embed mapping/google/resource/compute/google_compute_global_forwarding_rule.json
+var googleComputeGlobalForwardingRule []byte
+
+//go:embed mapping/google/resource/compute/google_compute_health_check.json
+var googleComputeHealthcheck []byte
+
+//go:embed mapping/google/resource/compute/google_compute_http_health_check.json
+var googleComputeHttpHealthCheck []byte
+
+//go:embed mapping/google/resource/compute/google_compute_https_health_check.json
+var googleComputeHttpsHealthCheck []byte
+
+//go:embed mapping/google/resource/compute/google_compute_region_backend_service.json
+var googleComputeRgionBackendService []byte
+
+//go:embed mapping/google/resource/compute/google_compute_region_health_check.json
+var googleComputeRegioHealthCheck []byte
+
+//go:embed mapping/google/resource/compute/google_compute_region_target_http_proxy.json
+var googleComputeRegionTargetHttpProxy []byte
+
+//go:embed mapping/google/resource/compute/google_compute_region_target_https_proxy.json
+var googleComputeRegionTargetHttpsProxy []byte
+
+//go:embed mapping/google/resource/compute/google_compute_region_target_tcp_proxy.json
+var googleComputeRegionTargetTcpProxy []byte
+
+//go:embed mapping/google/resource/compute/google_compute_region_url_map.json
+var googleComputeRegionUrlMap []byte
+
+//go:embed mapping/google/resource/compute/google_compute_target_http_proxy.json
+var googleComputeTargetHttpProxy []byte
+
+//go:embed mapping/google/resource/compute/google_compute_target_https_proxy.json
+var googleComputeTargetHttpsProxy []byte
+
+//go:embed mapping/google/resource/compute/google_compute_url_map.json
+var googleComputeUrlMap []byte
+
+//go:embed mapping/google/resource/compute/google_compute_backend_service.json
+var googleComputeBackendService []byte
+
+//go:embed mapping/google/resource/compute/google_compute_backend_bucket.json
+var googleComputeBackendBucket []byte

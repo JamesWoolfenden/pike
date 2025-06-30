@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "compute.globalForwardingRules.delete",
+      "compute.globalForwardingRules.create",
+      "compute.globalForwardingRules.get",
+      "compute.globalForwardingRules.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

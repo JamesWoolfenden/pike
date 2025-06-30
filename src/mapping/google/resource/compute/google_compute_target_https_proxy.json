@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "compute.targetHttpsProxies.create",
+      "compute.targetHttpsProxies.delete",
+      "compute.targetHttpsProxies.update",
+      "compute.targetHttpsProxies.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

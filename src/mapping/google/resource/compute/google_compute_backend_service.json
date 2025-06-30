@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "compute.backendServices.create",
+      "compute.backendServices.get",
+      "compute.backendServices.update",
+      "compute.backendServices.delete",
+      "compute.httpHealthChecks.useReadOnly",
+      "compute.healthChecks.useReadOnly",
+      "compute.httpsHealthChecks.useReadOnly"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

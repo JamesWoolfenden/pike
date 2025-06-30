@@ -1,6 +1,6 @@
 # todo google
 
-Resource percentage coverage   48.82
+Resource percentage coverage   50.17
 Datasource percentage coverage 97.88
 
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -110,9 +110,7 @@ Datasource percentage coverage 97.88
 ./resource.ps1 google_composer_user_workloads_secret
 ./resource.ps1 google_compute_attached_disk
 ./resource.ps1 google_compute_autoscaler
-./resource.ps1 google_compute_backend_bucket
 ./resource.ps1 google_compute_backend_bucket_signed_url_key
-./resource.ps1 google_compute_backend_service
 ./resource.ps1 google_compute_backend_service_signed_url_key
 ./resource.ps1 google_compute_cross_site_network
 ./resource.ps1 google_compute_disk
@@ -123,15 +121,10 @@ Datasource percentage coverage 97.88
 ./resource.ps1 google_compute_firewall_policy_association
 ./resource.ps1 google_compute_firewall_policy_rule
 ./resource.ps1 google_compute_firewall_policy_with_rules
-./resource.ps1 google_compute_forwarding_rule
 ./resource.ps1 google_compute_future_reservation
-./resource.ps1 google_compute_global_forwarding_rule
 ./resource.ps1 google_compute_global_network_endpoint
 ./resource.ps1 google_compute_global_network_endpoint_group
 ./resource.ps1 google_compute_ha_vpn_gateway
-./resource.ps1 google_compute_health_check
-./resource.ps1 google_compute_http_health_check
-./resource.ps1 google_compute_https_health_check
 ./resource.ps1 google_compute_image
 ./resource.ps1 google_compute_instance_from_machine_image
 ./resource.ps1 google_compute_instance_from_template
@@ -172,11 +165,9 @@ Datasource percentage coverage 97.88
 ./resource.ps1 google_compute_public_advertised_prefix
 ./resource.ps1 google_compute_public_delegated_prefix
 ./resource.ps1 google_compute_region_autoscaler
-./resource.ps1 google_compute_region_backend_service
 ./resource.ps1 google_compute_region_commitment
 ./resource.ps1 google_compute_region_disk
 ./resource.ps1 google_compute_region_disk_resource_policy_attachment
-./resource.ps1 google_compute_region_health_check
 ./resource.ps1 google_compute_region_instance_group_manager
 ./resource.ps1 google_compute_region_instance_template
 ./resource.ps1 google_compute_region_network_endpoint
@@ -189,10 +180,6 @@ Datasource percentage coverage 97.88
 ./resource.ps1 google_compute_region_resize_request
 ./resource.ps1 google_compute_region_security_policy
 ./resource.ps1 google_compute_region_security_policy_rule
-./resource.ps1 google_compute_region_target_http_proxy
-./resource.ps1 google_compute_region_target_https_proxy
-./resource.ps1 google_compute_region_target_tcp_proxy
-./resource.ps1 google_compute_region_url_map
 ./resource.ps1 google_compute_reservation
 ./resource.ps1 google_compute_resize_request
 ./resource.ps1 google_compute_resource_policy
@@ -214,13 +201,10 @@ Datasource percentage coverage 97.88
 ./resource.ps1 google_compute_ssl_policy
 ./resource.ps1 google_compute_storage_pool
 ./resource.ps1 google_compute_target_grpc_proxy
-./resource.ps1 google_compute_target_http_proxy
-./resource.ps1 google_compute_target_https_proxy
 ./resource.ps1 google_compute_target_instance
 ./resource.ps1 google_compute_target_pool
 ./resource.ps1 google_compute_target_ssl_proxy
 ./resource.ps1 google_compute_target_tcp_proxy
-./resource.ps1 google_compute_url_map
 ./resource.ps1 google_compute_vpn_gateway
 ./resource.ps1 google_compute_vpn_tunnel
 ./resource.ps1 google_compute_wire_group
@@ -613,3 +597,6 @@ Datasource percentage coverage 97.88
 ./resource.ps1 google_dataplex_data_quality_rules -type data
 ./resource.ps1 google_dns_managed_zones -type data
 ./resource.ps1 google_firebase_web_app_config -type data
+./resource.ps1 google_organization_iam_custom_role -type data
+./resource.ps1 google_organization_iam_custom_roles -type data
+./resource.ps1 google_organizations -type data

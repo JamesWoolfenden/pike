@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "compute.httpHealthChecks.create",
+      "compute.httpHealthChecks.get",
+      "compute.httpHealthChecks.update",
+      "compute.httpHealthChecks.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

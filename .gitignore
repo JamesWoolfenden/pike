@@ -15,6 +15,9 @@ __debug_bin.exe
 provider.azure.tf
 provider.azurerm.tf
 terraform-provider-*
+terraform-provider-azurerm/
+terraform-provider-google/
+terraform-provider-aws/
 *.pem
 *.csr
 .destination

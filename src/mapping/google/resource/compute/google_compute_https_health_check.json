@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "compute.httpsHealthChecks.create",
+      "compute.httpsHealthChecks.get",
+      "compute.httpsHealthChecks.update",
+      "compute.httpsHealthChecks.delete",
+      "compute.globalOperations.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

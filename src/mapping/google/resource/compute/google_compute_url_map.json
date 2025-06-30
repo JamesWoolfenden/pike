@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "compute.backendBuckets.use",
+      "compute.backendServices.use",
+      "compute.urlMaps.create",
+      "compute.urlMaps.get",
+      "compute.urlMaps.update",
+      "compute.urlMaps.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

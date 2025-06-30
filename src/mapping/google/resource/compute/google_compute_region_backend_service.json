@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "compute.regionBackendServices.create",
+      "compute.regionBackendServices.get",
+      "compute.regionBackendServices.update",
+      "compute.regionBackendServices.delete",
+      "compute.healthChecks.useReadOnly",
+      "compute.httpHealthChecks.useReadOnly",
+      "compute.httpsHealthChecks.useReadOnly",
+      "compute.regionHealthChecks.useReadOnly"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "compute.regionBackendServices.use",
+      "compute.regionUrlMaps.create",
+      "compute.regionUrlMaps.get",
+      "compute.regionUrlMaps.update",
+      "compute.regionUrlMaps.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -4,29 +4,52 @@ resource "google_project_iam_custom_role" "pike" {
   title       = "pike terraform user"
   description = "A user with least privileges"
   permissions = [
-    //data.google_project_ancestry google_project
-    "resourcemanager.projects.get",
+    "storage.buckets.create",
+    "storage.buckets.delete",
+    "storage.buckets.get",
+    "storage.buckets.update",
 
-    //google_project
-    "resourcemanager.organizations.get",
-    "resourcemanager.projects.create",
-    "resourcemanager.projects.delete",
-    "resourcemanager.projects.get",
-    "resourcemanager.projects.update",
+    //google_compute_region_health_check
 
-    //google_project_access_approval_settings
-    "accessapproval.settings.delete",
-    "accessapproval.settings.get",
-    "accessapproval.settings.create",
-    "accessapproval.settings.update",
 
-    # //google_project_organization_policy
-    "orgpolicy.policy.set",
-    "orgpolicy.policy.get",
+    //google_compute_https_health_check
 
-    //google_project_iam_member_remove
-    "resourcemanager.projects.setIamPolicy",
-    "resourcemanager.projects.getIamPolicy",
+
+    //google_compute_http_health_check
+
+
+    //google_compute_health_check
+
+
+    //google_compute_backend_service
+
+
+    //google_compute_region_backend_service
+
+
+    //google_compute_backend_bucket
+
+
+    //google_compute_region_url_map
+
+
+    //google_compute_url_map
+
+
+    //google_compute_target_http_proxy
+
+
+    //google_compute_region_target_http_proxy
+
+
+
+
+
+
+
+
+
+
 
   ]
 }
