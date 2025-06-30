@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "compute.regionNetworkEndpointGroups.create",
+      "compute.regionNetworkEndpointGroups.get",
+      "compute.regionNetworkEndpointGroups.update",
+      "compute.regionNetworkEndpointGroups.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

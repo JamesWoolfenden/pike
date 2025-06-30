@@ -1,6 +1,6 @@
 # todo google
 
-Resource percentage coverage   50.17
+Resource percentage coverage   50.42
 Datasource percentage coverage 97.88
 
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -123,7 +123,6 @@ Datasource percentage coverage 97.88
 ./resource.ps1 google_compute_firewall_policy_with_rules
 ./resource.ps1 google_compute_future_reservation
 ./resource.ps1 google_compute_global_network_endpoint
-./resource.ps1 google_compute_global_network_endpoint_group
 ./resource.ps1 google_compute_ha_vpn_gateway
 ./resource.ps1 google_compute_image
 ./resource.ps1 google_compute_instance_from_machine_image
@@ -143,7 +142,6 @@ Datasource percentage coverage 97.88
 ./resource.ps1 google_compute_network_attachment
 ./resource.ps1 google_compute_network_edge_security_service
 ./resource.ps1 google_compute_network_endpoint
-./resource.ps1 google_compute_network_endpoint_group
 ./resource.ps1 google_compute_network_endpoints
 ./resource.ps1 google_compute_network_firewall_policy
 ./resource.ps1 google_compute_network_firewall_policy_association
@@ -171,7 +169,6 @@ Datasource percentage coverage 97.88
 ./resource.ps1 google_compute_region_instance_group_manager
 ./resource.ps1 google_compute_region_instance_template
 ./resource.ps1 google_compute_region_network_endpoint
-./resource.ps1 google_compute_region_network_endpoint_group
 ./resource.ps1 google_compute_region_network_firewall_policy
 ./resource.ps1 google_compute_region_network_firewall_policy_association
 ./resource.ps1 google_compute_region_network_firewall_policy_rule

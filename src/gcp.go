@@ -647,4 +647,7 @@ var gCPTfLookup = map[string]interface{}{
 	"google_compute_url_map":                                        googleComputeUrlMap,
 	"google_compute_backend_service":                                googleComputeBackendService,
 	"google_compute_backend_bucket":                                 googleComputeBackendBucket,
+	"google_compute_global_network_endpoint_group":                  googleComputeGlobalNetworkEndpointGroup,
+	"google_compute_network_endpoint_group":                         googleComputeNetworkEndpointGroup,
+	"google_compute_region_network_endpoint_group":                  googleComputeRegionNetworkEndpointGroup,
 }

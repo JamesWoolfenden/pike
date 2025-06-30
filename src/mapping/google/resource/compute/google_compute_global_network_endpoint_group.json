@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "compute.globalNetworkEndpointGroups.delete",
+      "compute.globalNetworkEndpointGroups.get",
+      "compute.globalNetworkEndpointGroups.create",
+      "compute.globalNetworkEndpointGroups.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1620,3 +1620,12 @@ var googleComputeBackendService []byte
 
 //go:embed mapping/google/resource/compute/google_compute_backend_bucket.json
 var googleComputeBackendBucket []byte
+
+//go:embed mapping/google/resource/compute/google_compute_global_network_endpoint_group.json
+var googleComputeGlobalNetworkEndpointGroup []byte
+
+//go:embed mapping/google/resource/compute/google_compute_network_endpoint_group.json
+var googleComputeNetworkEndpointGroup []byte
+
+//go:embed mapping/google/resource/compute/google_compute_region_network_endpoint_group.json
+var googleComputeRegionNetworkEndpointGroup []byte
