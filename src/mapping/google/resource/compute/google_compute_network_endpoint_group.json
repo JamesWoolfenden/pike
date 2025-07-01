@@ -1,6 +1,10 @@
 [
   {
-    "apply": [],
+    "apply": [
+      "compute.networkEndpointGroups.create",
+      "compute.networkEndpointGroups.get",
+      "compute.networkEndpointGroups.delete"
+    ],
     "attributes": {
       "tags": []
     },

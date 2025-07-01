@@ -9,47 +9,21 @@ resource "google_project_iam_custom_role" "pike" {
     "storage.buckets.get",
     "storage.buckets.update",
 
-    //google_compute_region_health_check
+    "compute.globalNetworkEndpointGroups.delete",
+    "compute.globalNetworkEndpointGroups.get",
+    "compute.globalNetworkEndpointGroups.create",
+    # "compute.globalNetworkEndpointGroups.update",
+    "compute.globalOperations.get",
 
+    "compute.regionNetworkEndpointGroups.create",
+    "compute.regionNetworkEndpointGroups.get",
+    "compute.regionNetworkEndpointGroups.delete",
+    "compute.regionOperations.get",
 
-    //google_compute_https_health_check
-
-
-    //google_compute_http_health_check
-
-
-    //google_compute_health_check
-
-
-    //google_compute_backend_service
-
-
-    //google_compute_region_backend_service
-
-
-    //google_compute_backend_bucket
-
-
-    //google_compute_region_url_map
-
-
-    //google_compute_url_map
-
-
-    //google_compute_target_http_proxy
-
-
-    //google_compute_region_target_http_proxy
-
-
-
-
-
-
-
-
-
-
+    "compute.networkEndpointGroups.create",
+    "compute.networkEndpointGroups.get",
+    "compute.networkEndpointGroups.delete",
+    //"compute.operations.get"
 
   ]
 }

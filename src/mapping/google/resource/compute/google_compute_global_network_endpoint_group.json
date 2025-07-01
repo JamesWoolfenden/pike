@@ -4,7 +4,7 @@
       "compute.globalNetworkEndpointGroups.delete",
       "compute.globalNetworkEndpointGroups.get",
       "compute.globalNetworkEndpointGroups.create",
-      "compute.globalNetworkEndpointGroups.update"
+      "compute.globalOperations.get"
     ],
     "attributes": {
       "tags": []

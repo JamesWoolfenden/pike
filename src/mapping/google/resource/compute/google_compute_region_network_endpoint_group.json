@@ -3,8 +3,8 @@
     "apply": [
       "compute.regionNetworkEndpointGroups.create",
       "compute.regionNetworkEndpointGroups.get",
-      "compute.regionNetworkEndpointGroups.update",
-      "compute.regionNetworkEndpointGroups.delete"
+      "compute.regionNetworkEndpointGroups.delete",
+      "compute.regionOperations.get"
     ],
     "attributes": {
       "tags": []
