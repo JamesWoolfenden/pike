@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"context"
 	_ "embed" // required for embed
-	"fmt"
 	"os"
 	"path/filepath"
 	"strings"
@@ -99,7 +98,7 @@ func getCurrentProject() (string, error) {
 
 		config, err := ini.Load(configPath)
 		if err != nil {
-			fmt.Println("Failed to read gcloud config or get default credentials:", err)
+			//fmt.Println("Failed to read gcloud config or get default credentials:", err)
 			return "", err
 		}
 

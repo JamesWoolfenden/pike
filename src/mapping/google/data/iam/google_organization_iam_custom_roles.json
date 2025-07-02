@@ -7,7 +7,7 @@
     "destroy": [],
     "modify": [],
     "plan": [
-      "iam.role.list"
+      "iam.roles.list"
     ]
   }
 ]

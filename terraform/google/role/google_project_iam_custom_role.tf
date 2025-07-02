@@ -6,19 +6,19 @@ resource "google_project_iam_custom_role" "terraform_pike" {
   description = "A user with least privileges"
   permissions = [
     "clientauthconfig.clients.get",
-    "firebase.clients.create",
-    "firebase.clients.delete",
-    "firebase.clients.get",
-    "firebase.clients.update",
+    "storage.buckets.create",
+    "storage.buckets.delete",
+    "storage.buckets.get",
+    "storage.buckets.update",
     "firebase.projects.create",
-    "firebase.projects.delete",
-    "firebase.projects.get",
-    "firebase.projects.update",
-    "resourcemanager.projects.delete",
-    "resourcemanager.projects.get",
-    "resourcemanager.projects.update",
-    "serviceusage.services.enable",
-    "serviceusage.services.get",
-    "storage.buckets.get"
+    "compute.globalNetworkEndpointGroups.delete",
+    "compute.globalNetworkEndpointGroups.get",
+    "compute.globalNetworkEndpointGroups.create",
+    "compute.globalOperations.get",
+    "compute.regionNetworkEndpointGroups.create",
+    "compute.regionNetworkEndpointGroups.get",
+    "compute.regionNetworkEndpointGroups.delete",
+    "compute.regionOperations.get",
+    //"compute.operations.get"
   ]
 }

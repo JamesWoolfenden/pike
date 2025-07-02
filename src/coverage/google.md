@@ -500,12 +500,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 google_oracle_database_autonomous_database
 ./resource.ps1 google_oracle_database_cloud_exadata_infrastructure
 ./resource.ps1 google_oracle_database_cloud_vm_cluster
-./resource.ps1 google_org_policy_custom_constraint
-./resource.ps1 google_org_policy_policy
-./resource.ps1 google_organization_access_approval_settings
-./resource.ps1 google_organization_iam_audit_config
-./resource.ps1 google_organization_iam_custom_role
-./resource.ps1 google_organization_policy
 ./resource.ps1 google_os_config_guest_policies
 ./resource.ps1 google_os_config_os_policy_assignment
 ./resource.ps1 google_os_config_patch_deployment
