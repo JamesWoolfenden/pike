@@ -912,3 +912,18 @@ var dataGoogleRedisCluster []byte
 
 //go:embed mapping/google/data/resourcemanager/google_project_ancestry.json
 var dataGoogleProjectAncestry []byte
+
+//go:embed mapping/google/data/dns/google_dns_managed_zones.json
+var dataGoogleDNSManagedZones []byte
+
+//go:embed mapping/google/data/accesscontextmanager/google_access_context_manager_access_policy.json
+var dataGoogleAccessContextManagerAccessPolicy []byte
+
+//go:embed mapping/google/data/dataplex/google_dataplex_data_quality_rules.json
+var dataGoogleDataplexDataQualityRules []byte
+
+//go:embed mapping/google/data/iam/google_organization_iam_custom_role.json
+var dataGoogleOrganizationIamCustomRole []byte
+
+//go:embed mapping/google/data/iam/google_organization_iam_custom_roles.json
+var dataGoogleOrganizationIamCustomRoles []byte

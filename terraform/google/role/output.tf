@@ -7,7 +7,7 @@ output "iam_binding" {
 }
 
 output "custom_role" {
-  value = google_project_iam_custom_role.pike
+  value = google_project_iam_custom_role.terraform_pike
 }
 
 output "state_bucket" {

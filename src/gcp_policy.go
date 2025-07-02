@@ -104,7 +104,7 @@ func getCurrentProject() (string, error) {
 		}
 
 		projectID := config.Section("core").Key("project").String()
-		//fmt.Println("Active Project ID:", projectID)
+
 		return projectID, nil
 	}
 	result = credentials.ProjectID

@@ -198,6 +198,7 @@ func GCPDataLookup(result string) interface{} {
 		"google_datastream_static_ips":                                 dataGoogleDataStreamStaticIps,
 		"google_dns_keys":                                              dataGoogleDNSKeys,
 		"google_dns_managed_zone":                                      dataGoogleDNSManagedZone,
+		"google_dns_managed_zones":                                     dataGoogleDNSManagedZones,
 		"google_dns_managed_zone_iam_policy":                           dataGoogleDNSManagedZoneIamPolicy,
 		"google_dns_record_set":                                        dataGoogleDNSRecordSet,
 		"google_endpoints_service_consumers_iam_policy":                placeholder,
@@ -390,6 +391,15 @@ func GCPDataLookup(result string) interface{} {
 		"google_runtimeconfig_variable":                                dataGoogleRuntimeconfigVariable,
 		"google_redis_cluster":                                         dataGoogleRedisCluster,
 		"google_project_ancestry":                                      dataGoogleProjectAncestry,
+		"google_access_context_manager_access_policy":                  dataGoogleAccessContextManagerAccessPolicy,
+		"google_cloud_identity_group_transitive_memberships":           placeholder,
+		"google_dataplex_data_quality_rules":                           dataGoogleDataplexDataQualityRules,
+		"google_firebase_android_app_config":                           placeholder,
+		"google_firebase_apple_app_config":                             placeholder,
+		"google_firebase_web_app_config":                               placeholder,
+		"google_organizations":                                         placeholder,
+		"google_organization_iam_custom_role":                          dataGoogleOrganizationIamCustomRole,
+		"google_organization_iam_custom_roles":                         dataGoogleOrganizationIamCustomRoles,
 	}
 
 	return TFLookup[result]

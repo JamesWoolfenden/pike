@@ -1,7 +1,7 @@
 # todo google
 
 Resource percentage coverage   50.42
-Datasource percentage coverage 97.88
+Datasource percentage coverage 100.00
 
 ./resource.ps1 google_access_context_manager_access_level_condition
 ./resource.ps1 google_access_context_manager_service_perimeter_dry_run_egress_policy
@@ -589,11 +589,3 @@ Datasource percentage coverage 97.88
 ./resource.ps1 google_workstations_workstation
 ./resource.ps1 google_workstations_workstation_cluster
 ./resource.ps1 google_workstations_workstation_config
-./resource.ps1 google_access_context_manager_access_policy -type data
-./resource.ps1 google_cloud_identity_group_transitive_memberships -type data
-./resource.ps1 google_dataplex_data_quality_rules -type data
-./resource.ps1 google_dns_managed_zones -type data
-./resource.ps1 google_firebase_web_app_config -type data
-./resource.ps1 google_organization_iam_custom_role -type data
-./resource.ps1 google_organization_iam_custom_roles -type data
-./resource.ps1 google_organizations -type data

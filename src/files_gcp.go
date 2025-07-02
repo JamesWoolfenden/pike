@@ -298,9 +298,6 @@ var googleFirebaseProject []byte
 //go:embed mapping/google/resource/firebasestorage/google_firebase_storage_bucket.json
 var googleFirebaseStorageBucket []byte
 
-//go:embed mapping/google/resource/firebase/google_firebase_android_app.json
-var googleFirebaseWebApp []byte
-
 //go:embed mapping/google/resource/firebaserules/google_firebaserules_release.json
 var googleFirebaserulesRelease []byte
 
@@ -1629,3 +1626,6 @@ var googleComputeNetworkEndpointGroup []byte
 
 //go:embed mapping/google/resource/compute/google_compute_region_network_endpoint_group.json
 var googleComputeRegionNetworkEndpointGroup []byte
+
+//go:embed mapping/google/resource/firebase/google_firebase_web_app.json
+var googleFirebaseWebApp []byte
