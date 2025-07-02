@@ -35,7 +35,7 @@ func Readme(dirName string, output string, init bool, autoAppend bool) error {
 		return &fileDoesNotExistError{file, err}
 	}
 
-	OutPolicy, err := MakePolicy(dirName, nil, init, false, "")
+	OutPolicy, err := MakePolicy(dirName, nil, init, false, "", "")
 	if err != nil {
 		log.Info().Msg("failed to make policy")
 

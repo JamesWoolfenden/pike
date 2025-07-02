@@ -44,7 +44,7 @@ func Inspect(directory string, init bool) (PolicyDiff, error) {
 
 	var Difference PolicyDiff
 
-	rawIACPolicy, err := MakePolicy(directory, nil, init, false, "")
+	rawIACPolicy, err := MakePolicy(directory, nil, init, false, "", "")
 	if err != nil {
 		if errors.Is(err, &emptyIACError{}) {
 			log.Info().Msgf("nothing to do for IAC as %s for directory %s", err, directory)

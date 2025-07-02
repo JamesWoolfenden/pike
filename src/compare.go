@@ -230,7 +230,7 @@ func compareAWSRole(directory string, arn string, init bool) (bool, error) {
 		return false, &getPolicyVersionError{err}
 	}
 
-	iacPolicy, err := MakePolicy(directory, nil, init, false, "")
+	iacPolicy, err := MakePolicy(directory, nil, init, false, "", "")
 	if err != nil {
 		return false, &getIAMVersionError{err}
 	}

@@ -2,9 +2,18 @@ package pike
 
 import (
 	"bytes"
+	"context"
 	_ "embed" // required for embed
+	"fmt"
+	"os"
+	"path/filepath"
 	"strings"
 	"text/template"
+
+	//"github.com/go-git/go-git/v5/plumbing/format/config"
+	"golang.org/x/oauth2/google"
+	"google.golang.org/api/compute/v1"
+	"gopkg.in/ini.v1"
 )
 
 const (
@@ -17,7 +26,7 @@ const (
 var policyGCPTemplate []byte
 
 // GCPPolicy create an IAM policy.
-func GCPPolicy(permissions []string) (string, error) {
+func GCPPolicy(permissions []string, policyName string) (string, error) {
 	if permissions == nil || len(permissions) == 0 {
 		return "", &emptyPermissionsError{}
 	}
@@ -32,11 +41,23 @@ func GCPPolicy(permissions []string) (string, error) {
 		Permissions string // Comma-separated list of permissions
 	}
 
-	PolicyName := defaultPolicyName
+	var PolicyName string
+
+	if policyName != "" {
+		PolicyName = policyName
+	} else {
+		PolicyName = defaultPolicyName
+	}
+
+	project, err := getCurrentProject()
+	if err != nil {
+		project = defaultProject
+	}
+
 	theDetails := gCPPolicyDetails{
 		Name:        PolicyName,
-		Project:     defaultProject,
-		RoleID:      defaultRoleID,
+		Project:     project,
+		RoleID:      PolicyName,
 		Permissions: test,
 	}
 
@@ -53,4 +74,41 @@ func GCPPolicy(permissions []string) (string, error) {
 	}
 
 	return output.String(), nil
+}
+
+func getCurrentProject() (string, error) {
+	//many different ways to ensure that a value for gcp project is found
+	if os.Getenv("GOOGLE_CLOUD_PROJECT") != "" {
+		return os.Getenv("GOOGLE_CLOUD_PROJECT"), nil
+	}
+
+	if os.Getenv("GOOGLE_PROJECT") != "" {
+		return os.Getenv("GOOGLE_PROJECT"), nil
+	}
+
+	if os.Getenv("GCP_PROJECT") != "" {
+		return os.Getenv("GCP_PROJECT"), nil
+	}
+
+	var result string
+	ctx := context.Background()
+	credentials, err := google.FindDefaultCredentials(ctx, compute.ComputeScope)
+
+	if err != nil || credentials.ProjectID == "" {
+		configPath := filepath.Join(os.Getenv("HOME"), ".config", "gcloud", "configurations", "config_default")
+
+		config, err := ini.Load(configPath)
+		if err != nil {
+			fmt.Println("Failed to read gcloud config or get default credentials:", err)
+			return "", err
+		}
+
+		projectID := config.Section("core").Key("project").String()
+		//fmt.Println("Active Project ID:", projectID)
+		return projectID, nil
+	}
+	result = credentials.ProjectID
+
+	return result, nil
+
 }

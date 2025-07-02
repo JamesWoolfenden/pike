@@ -109,69 +109,76 @@ func (m *getPolicyError) Error() string {
 }
 
 // Scan looks for resources in a given directory.
-func Scan(dirName string, output string, file *string, init bool, write bool, enableResources bool, provider string) error {
+func Scan(dirName string, outputType string, file *string, init bool, write bool, enableResources bool, provider string, outFile string, policyName string) error {
 	if dirName == "" && file == nil {
 		return &emptyScanLocationError{}
 	}
 
-	OutPolicy, err := MakePolicy(dirName, file, init, enableResources, provider)
+	OutPolicy, err := MakePolicy(dirName, file, init, enableResources, provider, policyName)
 	if err != nil {
 		fmt.Print(err.Error())
 		return &makePolicyError{err}
 	}
 
 	if write {
-		err = WriteOutput(OutPolicy, output, dirName)
+		err = WriteOutput(OutPolicy, outputType, dirName, outFile)
 		if err != nil {
-			return &writeFileError{file: output, err: err}
+			return &writeFileError{file: outputType, err: err}
 		}
 	} else {
-		fmt.Print(OutPolicy.AsString(output)) // permit
+		fmt.Print(OutPolicy.AsString(outputType)) // permit
 	}
 
 	return err
 }
 
 // WriteOutput writes out the policy as json or terraform.
-func WriteOutput(outPolicy OutputPolicy, output, location string) error {
-	if location == "" {
-		location = "."
-	}
+func WriteOutput(outPolicy OutputPolicy, outputType string, scanPath string, outFile string) error {
 
-	newPath, _ := filepath.Abs(location + "/.pike")
-	err := os.MkdirAll(newPath, os.ModePerm)
+	var newPath string
 
-	if err != nil {
-		return &makeDirectoryError{directory: newPath, err: err}
-	}
+	d1 := []byte(outPolicy.AsString(outputType))
 
-	var outFile string
+	if outFile != "" {
 
-	d1 := []byte(outPolicy.AsString(output))
+	} else {
+		if scanPath == "" {
+			scanPath = "."
+		}
+		newPath, _ = filepath.Abs(scanPath + "/.pike")
 
-	switch strings.ToLower(output) {
-	case terraform:
-		outFile = newPath + "/pike.generated_policy.tf"
+		err := os.MkdirAll(newPath, os.ModePerm)
 
-		if outPolicy.AWS.Terraform != "" {
-			roleFile := path.Join(newPath, "aws_iam_role.terraform_pike.tf")
-			err = os.WriteFile(roleFile, roleTemplate, 0o644)
-
-			if err != nil {
-				return &writeFileError{file: roleFile, err: err}
-			}
+		if err != nil {
+			return &makeDirectoryError{directory: newPath, err: err}
 		}
 
-	case "json":
-		outFile = newPath + "/pike.generated_policy.json"
-	default:
-		return &tfPolicyFormatError{}
+		switch strings.ToLower(outputType) {
+		case terraform:
+			outFile = newPath + "/pike.generated_policy.tf"
+
+			if outPolicy.AWS.Terraform != "" {
+				roleFile := path.Join(newPath, "aws_iam_role.terraform_pike.tf")
+				err = os.WriteFile(roleFile, roleTemplate, 0o644)
+
+				if err != nil {
+					return &writeFileError{file: roleFile, err: err}
+				}
+			}
+
+		case "json":
+			outFile = newPath + "/pike.generated_policy.json"
+		default:
+			return &tfPolicyFormatError{}
+		}
 	}
 
-	err = os.WriteFile(outFile, d1, 0o644)
+	err := os.WriteFile(outFile, d1, 0o644)
 	if err != nil {
 		return &writeFileError{file: outFile, err: err}
 	}
+
+	log.Info().Msgf("wrote %s", outFile)
 
 	return nil
 }
@@ -240,7 +247,7 @@ func LocateTerraform() (string, error) {
 }
 
 // MakePolicy does the guts of determining a policy from code.
-func MakePolicy(dirName string, file *string, init bool, EnableResources bool, provider string) (OutputPolicy, error) {
+func MakePolicy(dirName string, file *string, init bool, EnableResources bool, provider string, policyName string) (OutputPolicy, error) {
 	var (
 		output OutputPolicy
 	)
@@ -251,7 +258,7 @@ func MakePolicy(dirName string, file *string, init bool, EnableResources bool, p
 		return output, err
 	}
 
-	output, err = GetPolicy(permissionsBag, EnableResources)
+	output, err = GetPolicy(permissionsBag, EnableResources, policyName)
 	if err != nil {
 		return output, &getPolicyError{err: err}
 	}

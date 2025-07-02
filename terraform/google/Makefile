@@ -24,4 +24,7 @@ role: FORCE
 role_init:
 	GOOGLE_CLOUD_KEYFILE_JSON="" tofu  -chdir=./role init
 
+scan:
+	GCP_PROJECT=pike-412922 pike scan -w -i -e -d ./backup -outfile "./role/google_project_iam_custom_role.tf" -policyName terraform_pike
+
 FORCE:

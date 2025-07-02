@@ -19,7 +19,7 @@ func Make(directory string) (*string, error) {
 		return nil, &directoryNotFoundError{directory: directory}
 	}
 
-	err := Scan(directory, "terraform", nil, true, true, false, "")
+	err := Scan(directory, "terraform", nil, true, true, false, "", "", "")
 	if err != nil {
 		return nil, fmt.Errorf("failed to scan directory: %w", err)
 	}

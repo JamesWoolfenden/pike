@@ -32,12 +32,15 @@ func main() {
 		workflow        string
 		name            string
 		provider        string
+		outfile         string
+		policyName      string
 	)
 
 	log.Logger = log.Output(zerolog.ConsoleWriter{Out: os.Stderr})
 	app := &cli.App{
 		EnableBashCompletion: true,
 		Flags:                []cli.Flag{},
+		UsageText:            "Pike is a CLI for investigating IAM permissions",
 		Commands: []*cli.Command{
 			{
 				Name:    "make",
@@ -170,13 +173,25 @@ func main() {
 						Usage:       "Filter results for just this provider (e.g. aws, gcp, azure)",
 						Destination: &provider,
 					},
+					&cli.StringFlag{
+						Name: "outfile",
+						//Aliases:     []string{""},
+						Usage:       "filepath you want to write to the policy to",
+						Destination: &outfile,
+					},
+					&cli.StringFlag{
+						Name: "policyName",
+						//Aliases:     []string{""},
+						Usage:       "the name of the policy you want to write",
+						Destination: &policyName,
+					},
 				},
 				Action: func(*cli.Context) error {
 					if file == "" {
-						return pike.Scan(directory, output, nil, init, write, enableResources, provider)
+						return pike.Scan(directory, output, nil, init, write, enableResources, provider, outfile, policyName)
 					}
 
-					return pike.Scan(directory, output, &file, init, write, enableResources, provider)
+					return pike.Scan(directory, output, &file, init, write, enableResources, provider, outfile, policyName)
 				},
 			},
 			{
