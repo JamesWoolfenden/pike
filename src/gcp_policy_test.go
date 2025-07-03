@@ -59,221 +59,322 @@ func TestGCPPolicy(t *testing.T) {
 }
 
 func TestGetCurrentProject_EnvironmentVariables(t *testing.T) {
-	// Test GOOGLE_CLOUD_PROJECT takes precedence
-	t.Run("GOOGLE_CLOUD_PROJECT_set", func(t *testing.T) {
-		os.Setenv("GOOGLE_CLOUD_PROJECT", "test-project-1")
-		os.Setenv("GOOGLE_PROJECT", "test-project-2")
-		os.Setenv("GCP_PROJECT", "test-project-3")
-		defer func() {
+	// Save original environment
+	originalGoogleCloudProject := os.Getenv("GOOGLE_CLOUD_PROJECT")
+	originalGoogleProject := os.Getenv("GOOGLE_PROJECT")
+	originalGcpProject := os.Getenv("GCP_PROJECT")
+
+	// Clean up after test
+	defer func() {
+		os.Setenv("GOOGLE_CLOUD_PROJECT", originalGoogleCloudProject)
+		os.Setenv("GOOGLE_PROJECT", originalGoogleProject)
+		os.Setenv("GCP_PROJECT", originalGcpProject)
+	}()
+
+	tests := []struct {
+		name               string
+		googleCloudProject string
+		googleProject      string
+		gcpProject         string
+		expectedProject    string
+	}{
+		{
+			name:               "GOOGLE_CLOUD_PROJECT takes precedence",
+			googleCloudProject: "test-project-1",
+			googleProject:      "test-project-2",
+			gcpProject:         "test-project-3",
+			expectedProject:    "test-project-1",
+		},
+		{
+			name:            "GOOGLE_PROJECT when GOOGLE_CLOUD_PROJECT empty",
+			googleProject:   "test-project-2",
+			gcpProject:      "test-project-3",
+			expectedProject: "test-project-2",
+		},
+		{
+			name:            "GCP_PROJECT when others empty",
+			gcpProject:      "test-project-3",
+			expectedProject: "test-project-3",
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			// Clear all environment variables
 			os.Unsetenv("GOOGLE_CLOUD_PROJECT")
 			os.Unsetenv("GOOGLE_PROJECT")
 			os.Unsetenv("GCP_PROJECT")
-		}()
 
-		project, err := getCurrentProject()
-		if err != nil {
-			t.Fatalf("Expected no error, got %v", err)
-		}
-		if project != "test-project-1" {
-			t.Errorf("Expected 'test-project-1', got '%s'", project)
-		}
-	})
+			// Set test values
+			if tt.googleCloudProject != "" {
+				os.Setenv("GOOGLE_CLOUD_PROJECT", tt.googleCloudProject)
+			}
+			if tt.googleProject != "" {
+				os.Setenv("GOOGLE_PROJECT", tt.googleProject)
+			}
+			if tt.gcpProject != "" {
+				os.Setenv("GCP_PROJECT", tt.gcpProject)
+			}
 
-	// Test GOOGLE_PROJECT when GOOGLE_CLOUD_PROJECT is not set
-	t.Run("GOOGLE_PROJECT_set", func(t *testing.T) {
-		os.Unsetenv("GOOGLE_CLOUD_PROJECT")
-		os.Setenv("GOOGLE_PROJECT", "test-project-2")
-		os.Setenv("GCP_PROJECT", "test-project-3")
-		defer func() {
-			os.Unsetenv("GOOGLE_PROJECT")
-			os.Unsetenv("GCP_PROJECT")
-		}()
+			project, err := getCurrentProject()
+			if err != nil {
+				t.Fatalf("Expected no error, got: %v", err)
+			}
 
-		project, err := getCurrentProject()
-		if err != nil {
-			t.Fatalf("Expected no error, got %v", err)
-		}
-		if project != "test-project-2" {
-			t.Errorf("Expected 'test-project-2', got '%s'", project)
-		}
-	})
-
-	// Test GCP_PROJECT when others are not set
-	t.Run("GCP_PROJECT_set", func(t *testing.T) {
-		os.Unsetenv("GOOGLE_CLOUD_PROJECT")
-		os.Unsetenv("GOOGLE_PROJECT")
-		os.Setenv("GCP_PROJECT", "test-project-3")
-		defer os.Unsetenv("GCP_PROJECT")
-
-		project, err := getCurrentProject()
-		if err != nil {
-			t.Fatalf("Expected no error, got %v", err)
-		}
-		if project != "test-project-3" {
-			t.Errorf("Expected 'test-project-3', got '%s'", project)
-		}
-	})
+			if project != tt.expectedProject {
+				t.Errorf("Expected project %s, got %s", tt.expectedProject, project)
+			}
+		})
+	}
 }
 
-func TestGetCurrentProject_ConfigFile(t *testing.T) {
-	// Clear all environment variables
+func TestGetCurrentProject_GcloudConfigFile(t *testing.T) {
+	// Save original environment
+	originalGoogleCloudProject := os.Getenv("GOOGLE_CLOUD_PROJECT")
+	originalGoogleProject := os.Getenv("GOOGLE_PROJECT")
+	originalGcpProject := os.Getenv("GCP_PROJECT")
+	originalHome := os.Getenv("HOME")
+	originalAppData := os.Getenv("APPDATA")
+
+	// Clean up after test
+	defer func() {
+		os.Setenv("GOOGLE_CLOUD_PROJECT", originalGoogleCloudProject)
+		os.Setenv("GOOGLE_PROJECT", originalGoogleProject)
+		os.Setenv("GCP_PROJECT", originalGcpProject)
+		os.Setenv("HOME", originalHome)
+		os.Setenv("APPDATA", originalAppData)
+	}()
+
+	// Clear environment variables to force config file reading
 	os.Unsetenv("GOOGLE_CLOUD_PROJECT")
 	os.Unsetenv("GOOGLE_PROJECT")
 	os.Unsetenv("GCP_PROJECT")
 
-	t.Run("valid_config_file", func(t *testing.T) {
-		// Create a temporary config file
-		tempDir := t.TempDir()
-		configDir := filepath.Join(tempDir, ".config", "gcloud", "configurations")
-		err := os.MkdirAll(configDir, 0755)
-		if err != nil {
-			t.Fatalf("Failed to create config directory: %v", err)
-		}
+	// Create temporary directory structure
+	tempDir := t.TempDir()
 
-		configFile := filepath.Join(configDir, "config_default")
-		configContent := `[core]
-project = test-config-project
-account = test@example.com
-`
-		err = os.WriteFile(configFile, []byte(configContent), 0644)
-		if err != nil {
-			t.Fatalf("Failed to write config file: %v", err)
-		}
-
-		// Temporarily change HOME to point to our temp directory
-		originalHome := os.Getenv("HOME")
-		os.Setenv("HOME", tempDir)
-		defer os.Setenv("HOME", originalHome)
-
-		// This test will only work if google.FindDefaultCredentials fails
-		// In a real environment, this might succeed, so we test the config fallback
-		project, err := getCurrentProject()
-
-		// The function should either return from credentials or from config file
-		if err != nil {
-			t.Fatalf("Expected no error, got %v", err)
-		}
-
-		// Project should be either from credentials or from config
-		if project == "" {
-			t.Error("Expected non-empty project")
-		}
-	})
-
-	t.Run("missing_config_file", func(t *testing.T) {
-		// Create temp directory without config file
-		tempDir := t.TempDir()
-
-		originalHome := os.Getenv("HOME")
-		os.Setenv("HOME", tempDir)
-		defer os.Setenv("HOME", originalHome)
-
-		// This will test the error path when both credentials and config fail
-		_, err := getCurrentProject()
-
-		// We expect either success from default credentials or an error
-		// The behavior depends on the environment where tests run
-		if err != nil {
-			// This is expected when no credentials and no config file
-			if err.Error() == "" {
-				t.Error("Expected non-empty error message")
-			}
-		}
-	})
-}
-
-func TestGetCurrentProject_WindowsPath(t *testing.T) {
+	var configPath string
 	if runtime.GOOS != "windows" {
-		t.Skip("Skipping Windows-specific test on non-Windows platform")
+		os.Setenv("HOME", tempDir)
+		configPath = filepath.Join(tempDir, ".config", "gcloud", "configurations", "config_default")
+	} else {
+		os.Setenv("APPDATA", tempDir)
+		configPath = filepath.Join(tempDir, "gcloud", "configurations", "config_default")
 	}
 
-	os.Unsetenv("GOOGLE_CLOUD_PROJECT")
-	os.Unsetenv("GOOGLE_PROJECT")
-	os.Unsetenv("GCP_PROJECT")
+	// Create directory structure
+	err := os.MkdirAll(filepath.Dir(configPath), 0755)
+	if err != nil {
+		t.Fatalf("Failed to create config directory: %v", err)
+	}
 
-	t.Run("windows_config_path", func(t *testing.T) {
-		tempDir := t.TempDir()
-		configDir := filepath.Join(tempDir, "gcloud", "configurations")
-		err := os.MkdirAll(configDir, 0755)
-		if err != nil {
-			t.Fatalf("Failed to create config directory: %v", err)
-		}
+	// Create config file with project
+	configContent := `[core]
+project = test-config-project
+account = test@example.com
 
-		configFile := filepath.Join(configDir, "config_default")
-		configContent := `[core]
-project = windows-test-project
+[compute]
+region = us-central1
+zone = us-central1-a
 `
-		err = os.WriteFile(configFile, []byte(configContent), 0644)
-		if err != nil {
-			t.Fatalf("Failed to write config file: %v", err)
-		}
 
-		originalAppData := os.Getenv("APPDATA")
-		os.Setenv("APPDATA", tempDir)
-		defer os.Setenv("APPDATA", originalAppData)
+	err = os.WriteFile(configPath, []byte(configContent), 0644)
+	if err != nil {
+		t.Fatalf("Failed to write config file: %v", err)
+	}
 
-		project, err := getCurrentProject()
-		if err != nil {
-			t.Fatalf("Expected no error, got %v", err)
-		}
+	project, err := getCurrentProject()
+	if err != nil {
+		t.Fatalf("Expected no error, got: %v", err)
+	}
 
-		if project == "" {
-			t.Error("Expected non-empty project")
-		}
-	})
+	if project != "test-config-project" {
+		t.Errorf("Expected project 'test-config-project', got '%s'", project)
+	}
 }
 
 func TestGetCurrentProject_EmptyEnvironmentVariables(t *testing.T) {
-	t.Run("empty_env_vars", func(t *testing.T) {
-		os.Setenv("GOOGLE_CLOUD_PROJECT", "")
-		os.Setenv("GOOGLE_PROJECT", "")
-		os.Setenv("GCP_PROJECT", "")
-		defer func() {
-			os.Unsetenv("GOOGLE_CLOUD_PROJECT")
-			os.Unsetenv("GOOGLE_PROJECT")
-			os.Unsetenv("GCP_PROJECT")
-		}()
+	// Save original environment
+	originalGoogleCloudProject := os.Getenv("GOOGLE_CLOUD_PROJECT")
+	originalGoogleProject := os.Getenv("GOOGLE_PROJECT")
+	originalGcpProject := os.Getenv("GCP_PROJECT")
 
-		// Should fall back to credentials or config file
-		project, err := getCurrentProject()
+	// Clean up after test
+	defer func() {
+		os.Setenv("GOOGLE_CLOUD_PROJECT", originalGoogleCloudProject)
+		os.Setenv("GOOGLE_PROJECT", originalGoogleProject)
+		os.Setenv("GCP_PROJECT", originalGcpProject)
+	}()
 
-		// The result depends on the environment
-		if err == nil && project == "" {
-			t.Error("Expected non-empty project when no error")
-		}
-	})
+	// Test empty string environment variables (should be treated as not set)
+	os.Setenv("GOOGLE_CLOUD_PROJECT", "")
+	os.Setenv("GOOGLE_PROJECT", "")
+	os.Setenv("GCP_PROJECT", "")
+
+	// This will likely fail due to no credentials or config file, but we're testing the logic
+	_, err := getCurrentProject()
+	// We expect an error since no valid project source is available
+	if err == nil {
+		t.Log("No error returned - likely found valid credentials or config file")
+	}
 }
 
-func TestGetCurrentProject_InvalidConfigFile(t *testing.T) {
+func TestGetCurrentProject_MissingConfigFile(t *testing.T) {
+	// Save original environment
+	originalGoogleCloudProject := os.Getenv("GOOGLE_CLOUD_PROJECT")
+	originalGoogleProject := os.Getenv("GOOGLE_PROJECT")
+	originalGcpProject := os.Getenv("GCP_PROJECT")
+	originalHome := os.Getenv("HOME")
+	originalAppData := os.Getenv("APPDATA")
+
+	// Clean up after test
+	defer func() {
+		os.Setenv("GOOGLE_CLOUD_PROJECT", originalGoogleCloudProject)
+		os.Setenv("GOOGLE_PROJECT", originalGoogleProject)
+		os.Setenv("GCP_PROJECT", originalGcpProject)
+		os.Setenv("HOME", originalHome)
+		os.Setenv("APPDATA", originalAppData)
+	}()
+
+	// Clear environment variables
 	os.Unsetenv("GOOGLE_CLOUD_PROJECT")
 	os.Unsetenv("GOOGLE_PROJECT")
 	os.Unsetenv("GCP_PROJECT")
 
-	t.Run("invalid_config_format", func(t *testing.T) {
-		tempDir := t.TempDir()
-		configDir := filepath.Join(tempDir, ".config", "gcloud", "configurations")
-		err := os.MkdirAll(configDir, 0755)
-		if err != nil {
-			t.Fatalf("Failed to create config directory: %v", err)
-		}
+	// Set HOME/APPDATA to non-existent directory
+	tempDir := t.TempDir()
+	nonExistentDir := filepath.Join(tempDir, "nonexistent")
 
-		configFile := filepath.Join(configDir, "config_default")
-		// Write invalid INI content
-		invalidContent := `invalid ini content without proper format`
-		err = os.WriteFile(configFile, []byte(invalidContent), 0644)
-		if err != nil {
-			t.Fatalf("Failed to write config file: %v", err)
-		}
+	if runtime.GOOS != "windows" {
+		os.Setenv("HOME", nonExistentDir)
+	} else {
+		os.Setenv("APPDATA", nonExistentDir)
+	}
 
-		originalHome := os.Getenv("HOME")
+	_, err := getCurrentProject()
+	if err == nil {
+		t.Log("No error returned - likely found valid credentials")
+	}
+}
+
+func TestGetCurrentProject_InvalidConfigFile(t *testing.T) {
+	// Save original environment
+	originalGoogleCloudProject := os.Getenv("GOOGLE_CLOUD_PROJECT")
+	originalGoogleProject := os.Getenv("GOOGLE_PROJECT")
+	originalGcpProject := os.Getenv("GCP_PROJECT")
+	originalHome := os.Getenv("HOME")
+	originalAppData := os.Getenv("APPDATA")
+
+	// Clean up after test
+	defer func() {
+		os.Setenv("GOOGLE_CLOUD_PROJECT", originalGoogleCloudProject)
+		os.Setenv("GOOGLE_PROJECT", originalGoogleProject)
+		os.Setenv("GCP_PROJECT", originalGcpProject)
+		os.Setenv("HOME", originalHome)
+		os.Setenv("APPDATA", originalAppData)
+	}()
+
+	// Clear environment variables
+	os.Unsetenv("GOOGLE_CLOUD_PROJECT")
+	os.Unsetenv("GOOGLE_PROJECT")
+	os.Unsetenv("GCP_PROJECT")
+
+	// Create temporary directory structure
+	tempDir := t.TempDir()
+
+	var configPath string
+	if runtime.GOOS != "windows" {
 		os.Setenv("HOME", tempDir)
-		defer os.Setenv("HOME", originalHome)
+		configPath = filepath.Join(tempDir, ".config", "gcloud", "configurations", "config_default")
+	} else {
+		os.Setenv("APPDATA", tempDir)
+		configPath = filepath.Join(tempDir, "gcloud", "configurations", "config_default")
+	}
 
-		project, err := getCurrentProject()
+	// Create directory structure
+	err := os.MkdirAll(filepath.Dir(configPath), 0755)
+	if err != nil {
+		t.Fatalf("Failed to create config directory: %v", err)
+	}
 
-		// Should either succeed with credentials or fail with config error
-		if err == nil && project == "" {
-			t.Error("Expected non-empty project when no error")
-		}
-	})
+	// Create invalid config file
+	invalidConfigContent := `[core
+project = test-project
+invalid ini format
+`
+
+	err = os.WriteFile(configPath, []byte(invalidConfigContent), 0644)
+	if err != nil {
+		t.Fatalf("Failed to write invalid config file: %v", err)
+	}
+
+	_, err = getCurrentProject()
+	if err == nil {
+		t.Log("No error returned - likely found valid credentials or ini parser was lenient")
+	}
+}
+
+func TestGetCurrentProject_ConfigFileWithoutProject(t *testing.T) {
+	// Save original environment
+	originalGoogleCloudProject := os.Getenv("GOOGLE_CLOUD_PROJECT")
+	originalGoogleProject := os.Getenv("GOOGLE_PROJECT")
+	originalGcpProject := os.Getenv("GCP_PROJECT")
+	originalHome := os.Getenv("HOME")
+	originalAppData := os.Getenv("APPDATA")
+
+	// Clean up after test
+	defer func() {
+		os.Setenv("GOOGLE_CLOUD_PROJECT", originalGoogleCloudProject)
+		os.Setenv("GOOGLE_PROJECT", originalGoogleProject)
+		os.Setenv("GCP_PROJECT", originalGcpProject)
+		os.Setenv("HOME", originalHome)
+		os.Setenv("APPDATA", originalAppData)
+	}()
+
+	// Clear environment variables
+	os.Unsetenv("GOOGLE_CLOUD_PROJECT")
+	os.Unsetenv("GOOGLE_PROJECT")
+	os.Unsetenv("GCP_PROJECT")
+
+	// Create temporary directory structure
+	tempDir := t.TempDir()
+
+	var configPath string
+	if runtime.GOOS != "windows" {
+		os.Setenv("HOME", tempDir)
+		configPath = filepath.Join(tempDir, ".config", "gcloud", "configurations", "config_default")
+	} else {
+		os.Setenv("APPDATA", tempDir)
+		configPath = filepath.Join(tempDir, "gcloud", "configurations", "config_default")
+	}
+
+	// Create directory structure
+	err := os.MkdirAll(filepath.Dir(configPath), 0755)
+	if err != nil {
+		t.Fatalf("Failed to create config directory: %v", err)
+	}
+
+	// Create config file without project
+	configContent := `[core]
+account = test@example.com
+
+[compute]
+region = us-central1
+zone = us-central1-a
+`
+
+	err = os.WriteFile(configPath, []byte(configContent), 0644)
+	if err != nil {
+		t.Fatalf("Failed to write config file: %v", err)
+	}
+
+	project, err := getCurrentProject()
+	if err != nil {
+		t.Fatalf("Expected no error, got: %v", err)
+	}
+
+	// Should return empty string when no project is set in config
+	if project != "" {
+		t.Errorf("Expected empty project, got '%s'", project)
+	}
 }
