@@ -1,10 +1,8 @@
-package pike_test
+package pike
 
 import (
 	_ "embed"
 	"testing"
-
-	pike "github.com/jameswoolfenden/pike/src"
 )
 
 //nolint:funlen
@@ -55,7 +53,7 @@ func TestAZUREPolicy(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
 
-			got, err := pike.AZUREPolicy(tt.args.permissions, tt.args.policyName)
+			got, err := AZUREPolicy(tt.args.permissions, tt.args.policyName)
 
 			if (err != nil) != tt.wantErr {
 				t.Errorf("AZUREPolicy() error = %v, wantErr %v", err, tt.wantErr)

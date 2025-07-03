@@ -1,4 +1,4 @@
-package pike_test
+package pike
 
 import (
 	"os"
@@ -7,7 +7,6 @@ import (
 	"runtime"
 	"testing"
 
-	pike "github.com/jameswoolfenden/pike/src"
 	"github.com/rs/zerolog/log"
 )
 
@@ -37,7 +36,7 @@ func TestScan(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
 
-			if err := pike.Scan(tt.args.dirname, tt.args.output, nil, false, tt.args.write, false, "", "", ""); (err != nil) != tt.wantErr {
+			if err := Scan(tt.args.dirname, tt.args.output, nil, false, tt.args.write, false, "", "", ""); (err != nil) != tt.wantErr {
 				t.Errorf("Scan() error = %v, wantErr %v", err, tt.wantErr)
 			}
 		})
@@ -74,7 +73,7 @@ func TestGetTF(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
 
-			got, err := pike.GetTF(tt.args.dirname)
+			got, err := GetTF(tt.args.dirname)
 
 			if (err != nil) != tt.wantErr {
 				t.Errorf("GetTF() error = %v, wantErr %v", err, tt.wantErr)
@@ -101,12 +100,12 @@ func TestGetPermissionBag(t *testing.T) {
 	tests := []struct {
 		name string
 		args args
-		want pike.Sorted
+		want Sorted
 	}{
 		{
 			"basic_aws",
 			args{
-				resources: []pike.ResourceV2{
+				resources: []ResourceV2{
 					{
 						TypeName: "terraform",
 						Name:     "aws_s3_bucket",
@@ -117,7 +116,7 @@ func TestGetPermissionBag(t *testing.T) {
 					},
 				},
 			},
-			pike.Sorted{
+			Sorted{
 				AWS: []string{
 					"s3:PutBucketTagging",
 					"s3:DeleteBucket",

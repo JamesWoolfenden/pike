@@ -1,12 +1,9 @@
-package pike_test
+package pike
 
 import (
 	_ "embed"
 	"reflect"
-	"strings"
 	"testing"
-
-	pike "github.com/jameswoolfenden/pike/src"
 )
 
 func TestNewAWSPolicy(t *testing.T) {
@@ -19,7 +16,7 @@ func TestNewAWSPolicy(t *testing.T) {
 	tests := []struct {
 		name    string
 		args    args
-		want    pike.Policy
+		want    Policy
 		wantErr bool
 	}{
 		{
@@ -44,9 +41,9 @@ func TestNewAWSPolicy(t *testing.T) {
 				"s3:GetReplicationConfiguration",
 				"s3:ListBucket",
 			}},
-			pike.Policy{
+			Policy{
 				Version: "2012-10-17",
-				Statements: []pike.Statement{
+				Statements: []Statement{
 					{"VisualEditor0", "Allow", []string{
 						"s3:CreateBucket",
 						"s3:DeleteBucket",
@@ -78,7 +75,7 @@ func TestNewAWSPolicy(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
 
-			got, err := pike.NewAWSPolicy(tt.args.Actions, false)
+			got, err := NewAWSPolicy(tt.args.Actions, false)
 
 			if (err != nil) != tt.wantErr {
 				t.Errorf("NewAWSPolicy() error = %v, wantErr %v", err, tt.wantErr)
@@ -97,7 +94,7 @@ func TestGetPolicy(t *testing.T) {
 	t.Parallel()
 
 	type args struct {
-		actions pike.Sorted
+		actions Sorted
 	}
 
 	tests := []struct {
@@ -108,7 +105,7 @@ func TestGetPolicy(t *testing.T) {
 	}{
 		{
 			"first",
-			args{pike.Sorted{
+			args{Sorted{
 				AWS: []string{},
 			}},
 			``,
@@ -116,7 +113,7 @@ func TestGetPolicy(t *testing.T) {
 		},
 		{
 			"aws",
-			args{pike.Sorted{AWS: []string{
+			args{Sorted{AWS: []string{
 				"ec2:DescribeInstances",
 				"ec2:DescribeTags",
 				"ec2:DescribeInstanceAttribute",
@@ -160,7 +157,7 @@ func TestGetPolicy(t *testing.T) {
 		},
 		{
 			"short",
-			args{pike.Sorted{AWS: []string{"s3:*"}}},
+			args{Sorted{AWS: []string{"s3:*"}}},
 			`{
   "Version": "2012-10-17",
   "Statement": [
@@ -185,7 +182,7 @@ func TestGetPolicy(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
 
-			got, err := pike.GetPolicy(tt.args.actions, false, "")
+			got, err := GetPolicy(tt.args.actions, false, "")
 
 			if (err != nil) != tt.wantErr {
 				t.Errorf("GetPolicy() error = %v, wantErr %v", err, tt.wantErr)
@@ -203,14 +200,6 @@ func TestGetPolicy(t *testing.T) {
 	}
 }
 
-func Minify(JSONOut string) string {
-	return strings.ReplaceAll(
-		strings.ReplaceAll(
-			strings.ReplaceAll(
-				strings.ReplaceAll(
-					strings.ReplaceAll(JSONOut, "\n", ""), "	", ""), " ", ""), "\r", ""), "\t", "")
-}
-
 func TestAWSPolicy(t *testing.T) {
 	t.Parallel()
 
@@ -221,20 +210,20 @@ func TestAWSPolicy(t *testing.T) {
 	tests := []struct {
 		name    string
 		args    args
-		want    pike.AwsOutput
+		want    AwsOutput
 		wantErr bool
 	}{
 		{
 			"fail",
 			args{[]string{"woof"}},
-			pike.AwsOutput{},
+			AwsOutput{},
 			true,
 		},
-		{"fail2", args{[]string{"woof", "meow:*"}}, pike.AwsOutput{}, true},
+		{"fail2", args{[]string{"woof", "meow:*"}}, AwsOutput{}, true},
 		{
 			"pass",
 			args{[]string{"woof:*"}},
-			pike.AwsOutput{JSONOut: `{
+			AwsOutput{JSONOut: `{
   "Version": "2012-10-17",
   "Statement": [
     {
@@ -258,7 +247,7 @@ func TestAWSPolicy(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
 
-			got, err := pike.AWSPolicy(tt.args.Permissions, false, "")
+			got, err := AWSPolicy(tt.args.Permissions, false, "")
 
 			if (err != nil) != tt.wantErr {
 				t.Errorf("AWSPolicy() error = %v, wantErr %v", err, tt.wantErr)
@@ -293,7 +282,7 @@ func Test_unique(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
 
-			if got := pike.Unique(tt.args.s); !reflect.DeepEqual(got, tt.want) {
+			if got := Unique(tt.args.s); !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("Unique() = %v, want %v", got, tt.want)
 			}
 		})

@@ -228,3 +228,11 @@ func Unique(s []string) []string {
 
 	return result
 }
+
+func Minify(JSONOut string) string {
+	return strings.ReplaceAll(
+		strings.ReplaceAll(
+			strings.ReplaceAll(
+				strings.ReplaceAll(
+					strings.ReplaceAll(JSONOut, "\n", ""), "	", ""), " ", ""), "\r", ""), "\t", "")
+}

@@ -145,7 +145,7 @@ func WriteOutput(outPolicy OutputPolicy, outputType string, scanPath string, out
 		if scanPath == "" {
 			scanPath = "."
 		}
-		newPath, _ = filepath.Abs(scanPath + "/.pike")
+		newPath, _ = filepath.Abs(path.Join(scanPath, ".pike"))
 
 		err := os.MkdirAll(newPath, os.ModePerm)
 
@@ -155,7 +155,7 @@ func WriteOutput(outPolicy OutputPolicy, outputType string, scanPath string, out
 
 		switch strings.ToLower(outputType) {
 		case terraform:
-			outFile = newPath + "/pike.generated_policy.tf"
+			outFile = filepath.Join(newPath, "pike.generated_policy.tf")
 
 			if outPolicy.AWS.Terraform != "" {
 				roleFile := path.Join(newPath, "aws_iam_role.terraform_pike.tf")
@@ -167,7 +167,7 @@ func WriteOutput(outPolicy OutputPolicy, outputType string, scanPath string, out
 			}
 
 		case "json":
-			outFile = newPath + "/pike.generated_policy.json"
+			outFile = path.Join(newPath, "pike.generated_policy.json")
 		default:
 			return &tfPolicyFormatError{}
 		}

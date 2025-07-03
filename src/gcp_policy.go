@@ -90,7 +90,6 @@ func getCurrentProject() (string, error) {
 		return os.Getenv("GCP_PROJECT"), nil
 	}
 
-	var result string
 	ctx := context.Background()
 	credentials, err := google.FindDefaultCredentials(ctx, compute.ComputeScope)
 
@@ -114,7 +113,7 @@ func getCurrentProject() (string, error) {
 
 		return projectID, nil
 	}
-	result = credentials.ProjectID
+	result := credentials.ProjectID
 
 	return result, nil
 

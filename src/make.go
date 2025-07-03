@@ -29,7 +29,7 @@ func Make(directory string) (*string, error) {
 		return nil, &absolutePathError{directory, err}
 	}
 
-	policyPath, err := filepath.Abs(path.Join(directory, ".pike/"))
+	policyPath, err := filepath.Abs(path.Join(directory, ".pike"))
 	if err != nil {
 		return nil, &absolutePathError{directory, err}
 	}
