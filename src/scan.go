@@ -132,7 +132,7 @@ func Scan(dirName string, outputType string, file *string, init bool, write bool
 	return err
 }
 
-// WriteOutput writes out the policy as json or terraform.
+// WriteOutput writes out the policy as JSON or Terraform.
 func WriteOutput(outPolicy OutputPolicy, outputType string, scanPath string, outFile string) error {
 
 	var newPath string
@@ -155,7 +155,7 @@ func WriteOutput(outPolicy OutputPolicy, outputType string, scanPath string, out
 
 		switch strings.ToLower(outputType) {
 		case terraform:
-			outFile = filepath.Join(newPath, "pike.generated_policy.tf")
+			outFile = filepath.Join(newPath, "pike.generated_policy.tf") //path.join does not work here
 
 			if outPolicy.AWS.Terraform != "" {
 				roleFile := path.Join(newPath, "aws_iam_role.terraform_pike.tf")
