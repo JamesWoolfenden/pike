@@ -6,6 +6,7 @@ import (
 	_ "embed" // required for embed
 	"os"
 	"path/filepath"
+	"runtime"
 	"strings"
 	"text/template"
 
@@ -93,10 +94,17 @@ func getCurrentProject() (string, error) {
 	ctx := context.Background()
 	credentials, err := google.FindDefaultCredentials(ctx, compute.ComputeScope)
 
+	var configPath string
 	if err != nil || credentials.ProjectID == "" {
-		configPath := filepath.Join(os.Getenv("HOME"), ".config", "gcloud", "configurations", "config_default")
+		//gcloud info --format='value(config.paths.global_config_dir)'
+		if runtime.GOOS != "windows" {
+			configPath = filepath.Join(os.Getenv("HOME"), ".config", "gcloud", "configurations", "config_default")
+		} else {
+			configPath = filepath.Join(os.Getenv("APPDATA"), "gcloud", "configurations", "config_default")
+		}
 
 		config, err := ini.Load(configPath)
+
 		if err != nil {
 			//fmt.Println("Failed to read gcloud config or get default credentials:", err)
 			return "", err
