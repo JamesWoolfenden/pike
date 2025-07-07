@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "dataform.repositories.create",
+      "dataform.repositories.get",
+      "dataform.repositories.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

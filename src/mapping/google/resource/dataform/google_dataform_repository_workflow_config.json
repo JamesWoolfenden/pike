@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "dataform.workflowConfigs.create",
+      "dataform.workflowConfigs.get",
+      "dataform.workflowConfigs.update",
+      "dataform.workflowConfigs.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1629,3 +1629,15 @@ var googleComputeRegionNetworkEndpointGroup []byte
 
 //go:embed mapping/google/resource/firebase/google_firebase_web_app.json
 var googleFirebaseWebApp []byte
+
+//go:embed mapping/google/resource/dataflow/google_dataflow_job.json
+var googleDataflowJob []byte
+
+//go:embed mapping/google/resource/dataform/google_dataform_repository.json
+var googleDataformRepository []byte
+
+//go:embed mapping/google/resource/dataform/google_dataform_repository_release_config.json
+var googleDataformRepositoryReleaseConfig []byte
+
+//go:embed mapping/google/resource/dataform/google_dataform_repository_workflow_config.json
+var googleDataformRepositoryWorkflowConfig []byte

@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "dataform.releaseConfigs.create",
+      "dataform.releaseConfigs.get",
+      "dataform.releaseConfigs.update",
+      "dataform.releaseConfigs.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

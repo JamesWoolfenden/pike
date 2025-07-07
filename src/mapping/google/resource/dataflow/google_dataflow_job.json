@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "resourcemanager.projects.get",
+      "dataflow.jobs.create",
+      "dataflow.jobs.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

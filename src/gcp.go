@@ -650,4 +650,8 @@ var gCPTfLookup = map[string]interface{}{
 	"google_compute_global_network_endpoint_group":                  googleComputeGlobalNetworkEndpointGroup,
 	"google_compute_network_endpoint_group":                         googleComputeNetworkEndpointGroup,
 	"google_compute_region_network_endpoint_group":                  googleComputeRegionNetworkEndpointGroup,
+	"google_dataflow_job":                                           googleDataflowJob,
+	"google_dataform_repository":                                    googleDataformRepository,
+	"google_dataform_repository_release_config":                     googleDataformRepositoryReleaseConfig,
+	"google_dataform_repository_workflow_config":                    googleDataformRepositoryWorkflowConfig,
 }
