@@ -1,6 +1,6 @@
 # todo azure
 
-Resource percentage coverage   4.49
+Resource percentage coverage   4.48
 Datasource percentage coverage 33.80
 
 ./resource.ps1 azurerm_aadb2c_directory
@@ -60,6 +60,7 @@ Datasource percentage coverage 33.80
 ./resource.ps1 azurerm_api_management_subscription
 ./resource.ps1 azurerm_api_management_tag
 ./resource.ps1 azurerm_api_management_user
+./resource.ps1 azurerm_api_management_workspace
 ./resource.ps1 azurerm_app_configuration_feature
 ./resource.ps1 azurerm_app_configuration_key
 ./resource.ps1 azurerm_app_service_active_slot
@@ -657,6 +658,7 @@ Datasource percentage coverage 33.80
 ./resource.ps1 azurerm_network_manager_static_member
 ./resource.ps1 azurerm_network_manager_subscription_connection
 ./resource.ps1 azurerm_network_manager_verifier_workspace
+./resource.ps1 azurerm_network_manager_verifier_workspace_reachability_analysis_intent
 ./resource.ps1 azurerm_network_profile
 ./resource.ps1 azurerm_new_relic_monitor
 ./resource.ps1 azurerm_new_relic_tag_rule
