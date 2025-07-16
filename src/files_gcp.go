@@ -1641,3 +1641,15 @@ var googleDataformRepositoryReleaseConfig []byte
 
 //go:embed mapping/google/resource/dataform/google_dataform_repository_workflow_config.json
 var googleDataformRepositoryWorkflowConfig []byte
+
+//go:embed mapping/google/resource/compute/google_compute_network_attachment.json
+var googleComputeNetworkAttachment []byte
+
+//go:embed mapping/google/resource/notebooks/google_notebooks_environment.json
+var googleNotebooksEnvironment []byte
+
+//go:embed mapping/google/resource/notebooks/google_notebooks_instance.json
+var googleNotebooksInstance []byte
+
+//go:embed mapping/google/resource/notebooks/google_notebooks_runtime.json
+var gooleNotebooksRuntime []byte

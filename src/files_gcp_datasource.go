@@ -927,3 +927,6 @@ var dataGoogleOrganizationIamCustomRole []byte
 
 //go:embed mapping/google/data/iam/google_organization_iam_custom_roles.json
 var dataGoogleOrganizationIamCustomRoles []byte
+
+//go:embed mapping/google/data/compute/google_compute_network_attachment.json
+var dataGoogleComputeNetworkAttachment []byte

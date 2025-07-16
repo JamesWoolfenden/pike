@@ -654,4 +654,8 @@ var gCPTfLookup = map[string]interface{}{
 	"google_dataform_repository":                                    googleDataformRepository,
 	"google_dataform_repository_release_config":                     googleDataformRepositoryReleaseConfig,
 	"google_dataform_repository_workflow_config":                    googleDataformRepositoryWorkflowConfig,
+	"google_compute_network_attachment":                             googleComputeNetworkAttachment,
+	"google_notebooks_environment":                                  googleNotebooksEnvironment,
+	"google_notebooks_instance":                                     googleNotebooksInstance,
+	"google_notebooks_runtime":                                      gooleNotebooksRuntime,
 }

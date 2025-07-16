@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "notebooks.environments.create",
+      "notebooks.environments.get",
+      "notebooks.environments.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

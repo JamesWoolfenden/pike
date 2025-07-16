@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "notebooks.runtimes.create",
+      "notebooks.runtimes.delete",
+      "notebooks.runtimes.get",
+      "notebooks.runtimes.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

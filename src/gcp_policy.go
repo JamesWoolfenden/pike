@@ -77,7 +77,7 @@ func GCPPolicy(permissions []string, policyName string) (string, error) {
 }
 
 func getCurrentProject() (string, error) {
-	//many different ways to ensure that a value for gcp project is found
+	//many different ways to ensure that a value for a GCP project is found
 	if os.Getenv("GOOGLE_CLOUD_PROJECT") != "" {
 		return os.Getenv("GOOGLE_CLOUD_PROJECT"), nil
 	}
@@ -105,7 +105,6 @@ func getCurrentProject() (string, error) {
 		config, err := ini.Load(configPath)
 
 		if err != nil {
-			//fmt.Println("Failed to read gcloud config or get default credentials:", err)
 			return "", err
 		}
 

@@ -1,7 +1,7 @@
 # todo google
 
-Resource percentage coverage   50.68
-Datasource percentage coverage 99.74
+Resource percentage coverage   51.01
+Datasource percentage coverage 100.00
 
 ./resource.ps1 google_access_context_manager_access_level_condition
 ./resource.ps1 google_access_context_manager_service_perimeter_dry_run_egress_policy
@@ -141,7 +141,6 @@ Datasource percentage coverage 99.74
 ./resource.ps1 google_compute_interconnect_group
 ./resource.ps1 google_compute_machine_image
 ./resource.ps1 google_compute_managed_ssl_certificate
-./resource.ps1 google_compute_network_attachment
 ./resource.ps1 google_compute_network_edge_security_service
 ./resource.ps1 google_compute_network_endpoint
 ./resource.ps1 google_compute_network_endpoints
@@ -398,14 +397,6 @@ Datasource percentage coverage 99.74
 ./resource.ps1 google_logging_billing_account_bucket_config
 ./resource.ps1 google_logging_billing_account_exclusion
 ./resource.ps1 google_logging_billing_account_sink
-./resource.ps1 google_logging_folder_bucket_config
-./resource.ps1 google_logging_folder_exclusion
-./resource.ps1 google_logging_folder_settings
-./resource.ps1 google_logging_folder_sink
-./resource.ps1 google_logging_linked_dataset
-./resource.ps1 google_logging_log_scope
-./resource.ps1 google_logging_log_view
-./resource.ps1 google_logging_metric
 ./resource.ps1 google_logging_organization_bucket_config
 ./resource.ps1 google_logging_organization_exclusion
 ./resource.ps1 google_logging_organization_settings
@@ -492,9 +483,6 @@ Datasource percentage coverage 99.74
 ./resource.ps1 google_network_services_service_lb_policies
 ./resource.ps1 google_network_services_tcp_route
 ./resource.ps1 google_network_services_tls_route
-./resource.ps1 google_notebooks_environment
-./resource.ps1 google_notebooks_instance
-./resource.ps1 google_notebooks_runtime
 ./resource.ps1 google_oracle_database_autonomous_database
 ./resource.ps1 google_oracle_database_cloud_exadata_infrastructure
 ./resource.ps1 google_oracle_database_cloud_vm_cluster
@@ -587,4 +575,3 @@ Datasource percentage coverage 99.74
 ./resource.ps1 google_workstations_workstation
 ./resource.ps1 google_workstations_workstation_cluster
 ./resource.ps1 google_workstations_workstation_config
-./resource.ps1 google_compute_network_attachment -type data

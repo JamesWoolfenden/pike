@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "compute.networkAttachments.create",
+      "compute.networkAttachments.delete",
+      "compute.networkAttachments.update",
+      "compute.networkAttachments.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
