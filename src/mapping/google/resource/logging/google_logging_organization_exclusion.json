@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "logging.exclusions.create",
+      "logging.exclusions.delete",
+      "logging.exclusions.get",
+      "logging.exclusions.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

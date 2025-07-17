@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "monitoring.metricDescriptors.create",
+      "monitoring.metricDescriptors.delete",
+      "monitoring.metricDescriptors.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

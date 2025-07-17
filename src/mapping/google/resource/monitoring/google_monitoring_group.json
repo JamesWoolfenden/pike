@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "monitoring.groups.create",
+      "monitoring.groups.delete",
+      "monitoring.groups.get",
+      "monitoring.groups.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

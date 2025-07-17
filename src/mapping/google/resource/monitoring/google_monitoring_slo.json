@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "monitoring.slos.create",
+      "monitoring.slos.delete",
+      "monitoring.slos.get",
+      "monitoring.slos.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

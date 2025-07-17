@@ -1652,4 +1652,91 @@ var googleNotebooksEnvironment []byte
 var googleNotebooksInstance []byte
 
 //go:embed mapping/google/resource/notebooks/google_notebooks_runtime.json
-var gooleNotebooksRuntime []byte
+var googleNotebooksRuntime []byte
+
+//go:embed mapping/google/resource/logging/google_logging_billing_account_exclusion.json
+var googleLoggingBillingAccountExclusion []byte
+
+//go:embed mapping/google/resource/logging/google_logging_billing_account_sink.json
+var googleLoggingBillingAccountSink []byte
+
+//go:embed mapping/google/resource/logging/google_logging_folder_exclusion.json
+var googleLoggingFolderExclusion []byte
+
+//go:embed mapping/google/resource/logging/google_logging_folder_settings.json
+var googleLoggingFolderSettings []byte
+
+//go:embed mapping/google/resource/logging/google_logging_folder_sink.json
+var googleLoggingFolderSink []byte
+
+//go:embed mapping/google/resource/logging/google_logging_linked_dataset.json
+var googleLoggingLinkedDataset []byte
+
+//go:embed mapping/google/resource/logging/google_logging_log_scope.json
+var googleLoggingLogScope []byte
+
+//go:embed mapping/google/resource/logging/google_logging_log_view.json
+var googleLoggingLogView []byte
+
+//go:embed mapping/google/resource/logging/google_logging_metric.json
+var googleLoggingMetric []byte
+
+//go:embed mapping/google/resource/logging/google_logging_organization_exclusion.json
+var googleLoggingOrganizationExclusion []byte
+
+//go:embed mapping/google/resource/logging/google_logging_organization_settings.json
+var googleLoggingOrganizationSettings []byte
+
+//go:embed mapping/google/resource/logging/google_logging_organization_sink.json
+var googleLoggingOrganizationSink []byte
+
+//go:embed mapping/google/resource/logging/google_logging_project_exclusion.json
+var googleLoggingProjectExclusion []byte
+
+//go:embed mapping/google/resource/logging/google_logging_project_sink.json
+var googleLoggingProjectSink []byte
+
+//go:embed mapping/google/resource/monitoring/google_monitoring_alert_policy.json
+var googleMonitoringAlertPolicy []byte
+
+//go:embed mapping/google/resource/monitoring/google_monitoring_custom_service.json
+var googleMonitoringCustomService []byte
+
+//go:embed mapping/google/resource/monitoring/google_monitoring_dashboard.json
+var googleMonitoringDashboard []byte
+
+//go:embed mapping/google/resource/monitoring/google_monitoring_group.json
+var googleMonitoringGroup []byte
+
+//go:embed mapping/google/resource/monitoring/google_monitoring_metric_descriptor.json
+var googleMonitoringMetricDescriptor []byte
+
+//go:embed mapping/google/resource/monitoring/google_monitoring_monitored_project.json
+var googleMonitoringMonitoredProject []byte
+
+//go:embed mapping/google/resource/monitoring/google_monitoring_notification_channel.json
+var googleMonitoringNotificationChannel []byte
+
+//go:embed mapping/google/resource/backupdr/google_backup_dr_backup_plan.json
+var googleBackupDRBackupPlan []byte
+
+//go:embed mapping/google/resource/backupdr/google_backup_dr_backup_plan_association.json
+var googleBackupDRBackupPlanAssociation []byte
+
+//go:embed mapping/google/resource/backupdr/google_backup_dr_backup_vault.json
+var googleBackupDRBackupVault []byte
+
+//go:embed mapping/google/resource/backupdr/google_backup_dr_management_server.json
+var googleBackupDRManagementServer []byte
+
+//go:embed mapping/google/resource/backupdr/google_backup_dr_service_config.json
+var googleBackupDRServiceConfig []byte
+
+//go:embed mapping/google/resource/monitoring/google_monitoring_service.json
+var googleMonitoringService []byte
+
+//go:embed mapping/google/resource/monitoring/google_monitoring_slo.json
+var googleMonitoringSLO []byte
+
+//go:embed mapping/google/resource/monitoring/google_monitoring_uptime_check_config.json
+var googleMonitoringUptimeCheckConfig []byte

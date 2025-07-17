@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "monitoring.metricsScopes.link"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

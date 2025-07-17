@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "logging.logMetrics.create",
+      "logging.logMetrics.delete",
+      "logging.logMetrics.get",
+      "logging.logMetrics.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

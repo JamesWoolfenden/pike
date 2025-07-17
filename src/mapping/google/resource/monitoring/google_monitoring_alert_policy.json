@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "monitoring.alertPolicies.update",
+      "monitoring.alertPolicies.create",
+      "monitoring.alertPolicies.delete",
+      "monitoring.alertPolicies.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

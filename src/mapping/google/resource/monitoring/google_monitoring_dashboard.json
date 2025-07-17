@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "monitoring.dashboards.delete",
+      "monitoring.dashboards.create",
+      "monitoring.dashboards.update",
+      "monitoring.dashboards.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

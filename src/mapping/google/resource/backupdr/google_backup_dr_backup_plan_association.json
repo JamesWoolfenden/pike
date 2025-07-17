@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "backupdr.backupPlanAssociations.createForCloudSqlInstance",
+      "backupdr.backupPlanAssociations.createForComputeDisk",
+      "backupdr.backupPlanAssociations.createForComputeInstance",
+      "backupdr.backupPlanAssociations.deleteForCloudSqlInstance",
+      "backupdr.backupPlanAssociations.deleteForComputeDisk",
+      "backupdr.backupPlanAssociations.deleteForComputeInstance",
+      "backupdr.backupPlanAssociations.fetchForCloudSqlInstance",
+      "backupdr.backupPlanAssociations.get",
+      "backupdr.backupPlanAssociations.getForCloudSqlInstance",
+      "backupdr.backupPlanAssociations.getForComputeDisk",
+      "backupdr.backupPlanAssociations.triggerBackupForCloudSqlInstance",
+      "backupdr.backupPlanAssociations.triggerBackupForComputeDisk",
+      "backupdr.backupPlanAssociations.triggerBackupForComputeInstance",
+      "backupdr.backupPlanAssociations.updateForComputeDisk",
+      "backupdr.backupPlanAssociations.updateForComputeInstance"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

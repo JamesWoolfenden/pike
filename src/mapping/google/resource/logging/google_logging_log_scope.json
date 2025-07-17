@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "logging.logScopes.create",
+      "logging.logScopes.delete",
+      "logging.logScopes.get",
+      "logging.logScopes.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

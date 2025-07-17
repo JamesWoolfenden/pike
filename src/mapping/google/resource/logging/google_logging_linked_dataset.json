@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "logging.links.create",
+      "logging.links.delete",
+      "logging.links.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

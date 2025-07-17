@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "monitoring.services.create",
+      "monitoring.services.get",
+      "monitoring.services.delete",
+      "monitoring.services.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

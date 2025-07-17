@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "backupdr.backupVaults.create",
+      "backupdr.backupVaults.delete",
+      "backupdr.backupVaults.get",
+      "backupdr.backupVaults.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

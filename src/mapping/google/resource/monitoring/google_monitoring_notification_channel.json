@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "monitoring.notificationChannels.create",
+      "monitoring.notificationChannels.delete",
+      "monitoring.notificationChannels.get",
+      "monitoring.notificationChannels.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

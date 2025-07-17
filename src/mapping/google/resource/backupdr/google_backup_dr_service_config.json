@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "backupdr.resourceBackupConfigs.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

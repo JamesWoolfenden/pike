@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "logging.settings.get",
+      "logging.settings.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

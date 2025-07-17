@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "backupdr.managementServers.create",
+      "backupdr.managementServers.get",
+      "backupdr.managementServers.update",
+      "backupdr.managementServers.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

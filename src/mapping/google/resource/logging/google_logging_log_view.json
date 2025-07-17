@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "logging.views.create",
+      "logging.views.delete",
+      "logging.views.get",
+      "logging.views.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -5,20 +5,40 @@ resource "google_project_iam_custom_role" "terraform_pike" {
   title       = "terraform_pike"
   description = "A user with least privileges"
   permissions = [
-    "notebooks.environments.create",
-    "notebooks.environments.get",
-    // "notebooks.environments.update",
-    "notebooks.environments.delete",
+    // google_backup_dr_backup_plan
+    "backupdr.backupPlans.create",
+    "backupdr.backupPlans.delete",
+    "backupdr.backupPlans.get",
+    "backupdr.backupPlans.update",
 
-    "notebooks.instances.create",
-    "notebooks.instances.delete",
-    "notebooks.instances.update",
-    "notebooks.instances.get",
+    // google_backup_dr_backup_plan_association
+    "backupdr.backupPlanAssociations.createForCloudSqlInstance",
+    "backupdr.backupPlanAssociations.createForComputeDisk",
+    "backupdr.backupPlanAssociations.createForComputeInstance",
+    "backupdr.backupPlanAssociations.deleteForCloudSqlInstance",
+    "backupdr.backupPlanAssociations.deleteForComputeDisk",
+    "backupdr.backupPlanAssociations.deleteForComputeInstance",
+    "backupdr.backupPlanAssociations.fetchForCloudSqlInstance",
+    "backupdr.backupPlanAssociations.get",
+    "backupdr.backupPlanAssociations.getForCloudSqlInstance",
+    "backupdr.backupPlanAssociations.getForComputeDisk",
+    "backupdr.backupPlanAssociations.triggerBackupForCloudSqlInstance",
+    "backupdr.backupPlanAssociations.triggerBackupForComputeDisk",
+    "backupdr.backupPlanAssociations.triggerBackupForComputeInstance",
+    "backupdr.backupPlanAssociations.updateForComputeDisk",
+    "backupdr.backupPlanAssociations.updateForComputeInstance",
 
-    "notebooks.runtimes.create",
-    "notebooks.runtimes.delete",
-    "notebooks.runtimes.get",
-    "notebooks.runtimes.update"
-
+    // google_backup_dr_backup_vault
+    "backupdr.backupVaults.create",
+    "backupdr.backupVaults.delete",
+    "backupdr.backupVaults.get",
+    "backupdr.backupVaults.update",
+    // google_backup_dr_management_server
+    "backupdr.managementServers.create",
+    "backupdr.managementServers.get",
+    "backupdr.managementServers.update",
+    "backupdr.managementServers.delete",
+    // google_backup_dr_service_config
+    "backupdr.resourceBackupConfigs.get",
   ]
 }

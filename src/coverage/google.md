@@ -1,6 +1,6 @@
 # todo google
 
-Resource percentage coverage   51.01
+Resource percentage coverage   53.46
 Datasource percentage coverage 100.00
 
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -55,11 +55,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 google_apphub_workload
 ./resource.ps1 google_artifact_registry_vpcsc_config
 ./resource.ps1 google_assured_workloads_workload
-./resource.ps1 google_backup_dr_backup_plan
-./resource.ps1 google_backup_dr_backup_plan_association
-./resource.ps1 google_backup_dr_backup_vault
-./resource.ps1 google_backup_dr_management_server
-./resource.ps1 google_backup_dr_service_config
 ./resource.ps1 google_beyondcorp_app_connection
 ./resource.ps1 google_beyondcorp_app_connector
 ./resource.ps1 google_beyondcorp_app_gateway
@@ -395,15 +390,9 @@ Datasource percentage coverage 100.00
 ./resource.ps1 google_kms_autokey_config
 ./resource.ps1 google_kms_ekm_connection
 ./resource.ps1 google_logging_billing_account_bucket_config
-./resource.ps1 google_logging_billing_account_exclusion
-./resource.ps1 google_logging_billing_account_sink
+./resource.ps1 google_logging_folder_bucket_config
 ./resource.ps1 google_logging_organization_bucket_config
-./resource.ps1 google_logging_organization_exclusion
-./resource.ps1 google_logging_organization_settings
-./resource.ps1 google_logging_organization_sink
 ./resource.ps1 google_logging_project_bucket_config
-./resource.ps1 google_logging_project_exclusion
-./resource.ps1 google_logging_project_sink
 ./resource.ps1 google_looker_instance
 ./resource.ps1 google_lustre_instance
 ./resource.ps1 google_managed_kafka_acl
@@ -418,16 +407,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 google_migration_center_preference_set
 ./resource.ps1 google_ml_engine_model
 ./resource.ps1 google_model_armor_template
-./resource.ps1 google_monitoring_alert_policy
-./resource.ps1 google_monitoring_custom_service
-./resource.ps1 google_monitoring_dashboard
-./resource.ps1 google_monitoring_group
-./resource.ps1 google_monitoring_metric_descriptor
-./resource.ps1 google_monitoring_monitored_project
-./resource.ps1 google_monitoring_notification_channel
-./resource.ps1 google_monitoring_service
-./resource.ps1 google_monitoring_slo
-./resource.ps1 google_monitoring_uptime_check_config
 ./resource.ps1 google_netapp_active_directory
 ./resource.ps1 google_netapp_backup
 ./resource.ps1 google_netapp_backup_policy

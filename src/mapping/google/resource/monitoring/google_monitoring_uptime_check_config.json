@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "monitoring.uptimeCheckConfigs.create",
+      "monitoring.uptimeCheckConfigs.delete",
+      "monitoring.uptimeCheckConfigs.get",
+      "monitoring.uptimeCheckConfigs.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
