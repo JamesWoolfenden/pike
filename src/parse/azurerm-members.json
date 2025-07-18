@@ -1316,6 +1316,7 @@
         "azurerm_network_ddos_protection_plan",
         "azurerm_network_interface",
         "azurerm_network_manager_connectivity_configuration",
+        "azurerm_network_manager_ipam_pool",
         "azurerm_network_security_group",
         "azurerm_network_service_tags",
         "azurerm_network_watcher",
