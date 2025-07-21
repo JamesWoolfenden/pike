@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "billing.budgets.create",
+      "billing.budgets.get",
+      "billing.budgets.update",
+      "billing.budgets.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

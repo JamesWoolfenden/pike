@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "apihub.apiHubInstances.create",
+      "apihub.apiHubInstances.delete",
+      "apihub.apiHubInstances.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

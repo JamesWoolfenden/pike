@@ -1,6 +1,6 @@
 # todo google
 
-Resource percentage coverage   53.46
+Resource percentage coverage   54.67
 Datasource percentage coverage 100.00
 
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -35,11 +35,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 google_apigee_security_profile_v2
 ./resource.ps1 google_apigee_sync_authorization
 ./resource.ps1 google_apigee_target_server
-./resource.ps1 google_apihub_api_hub_instance
-./resource.ps1 google_apihub_curation
-./resource.ps1 google_apihub_host_project_registration
-./resource.ps1 google_apihub_plugin
-./resource.ps1 google_apihub_plugin_instance
 ./resource.ps1 google_apikeys_key
 ./resource.ps1 google_app_engine_application
 ./resource.ps1 google_app_engine_application_url_dispatch_rules
@@ -49,21 +44,10 @@ Datasource percentage coverage 100.00
 ./resource.ps1 google_app_engine_service_network_settings
 ./resource.ps1 google_app_engine_service_split_traffic
 ./resource.ps1 google_app_engine_standard_app_version
-./resource.ps1 google_apphub_application
-./resource.ps1 google_apphub_service
-./resource.ps1 google_apphub_service_project_attachment
-./resource.ps1 google_apphub_workload
 ./resource.ps1 google_artifact_registry_vpcsc_config
 ./resource.ps1 google_assured_workloads_workload
-./resource.ps1 google_beyondcorp_app_connection
-./resource.ps1 google_beyondcorp_app_connector
-./resource.ps1 google_beyondcorp_app_gateway
-./resource.ps1 google_beyondcorp_application
-./resource.ps1 google_beyondcorp_security_gateway
-./resource.ps1 google_beyondcorp_security_gateway_application
 ./resource.ps1 google_bigquery_analytics_hub_data_exchange_subscription
-./resource.ps1 google_billing_budget
-./resource.ps1 google_billing_project_info
+./resource.ps1 google_bigtable_schema_bundle
 ./resource.ps1 google_billing_subaccount
 ./resource.ps1 google_binary_authorization_attestor
 ./resource.ps1 google_binary_authorization_policy
@@ -153,6 +137,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 google_compute_organization_security_policy_rule
 ./resource.ps1 google_compute_packet_mirroring
 ./resource.ps1 google_compute_per_instance_config
+./resource.ps1 google_compute_preview_feature
 ./resource.ps1 google_compute_project_cloud_armor_tier
 ./resource.ps1 google_compute_project_default_network_tier
 ./resource.ps1 google_compute_project_metadata
@@ -254,6 +239,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 google_dialogflow_cx_environment
 ./resource.ps1 google_dialogflow_cx_flow
 ./resource.ps1 google_dialogflow_cx_generative_settings
+./resource.ps1 google_dialogflow_cx_generator
 ./resource.ps1 google_dialogflow_cx_intent
 ./resource.ps1 google_dialogflow_cx_page
 ./resource.ps1 google_dialogflow_cx_security_settings
@@ -406,6 +392,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 google_migration_center_group
 ./resource.ps1 google_migration_center_preference_set
 ./resource.ps1 google_ml_engine_model
+./resource.ps1 google_model_armor_floorsetting
 ./resource.ps1 google_model_armor_template
 ./resource.ps1 google_netapp_active_directory
 ./resource.ps1 google_netapp_backup
@@ -539,6 +526,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 google_transcoder_job
 ./resource.ps1 google_transcoder_job_template
 ./resource.ps1 google_vertex_ai_deployment_resource_pool
+./resource.ps1 google_vertex_ai_endpoint_with_model_garden_deployment
 ./resource.ps1 google_vertex_ai_index_endpoint_deployed_index
 ./resource.ps1 google_vmwareengine_cluster
 ./resource.ps1 google_vmwareengine_external_access_rule

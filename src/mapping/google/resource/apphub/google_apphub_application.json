@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "apphub.applications.create",
+      "apphub.applications.delete",
+      "apphub.applications.get",
+      "apphub.applications.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

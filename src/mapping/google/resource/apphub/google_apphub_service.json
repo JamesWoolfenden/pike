@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "apphub.services.create",
+      "apphub.services.delete",
+      "apphub.services.get",
+      "apphub.services.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

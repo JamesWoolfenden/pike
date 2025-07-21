@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "apphub.serviceProjectAttachments.attach",
+      "apphub.serviceProjectAttachments.create",
+      "apphub.serviceProjectAttachments.delete",
+      "apphub.serviceProjectAttachments.detach",
+      "apphub.serviceProjectAttachments.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

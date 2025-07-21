@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "beyondcorp.appConnectors.create",
+      "beyondcorp.appConnectors.get",
+      "beyondcorp.appConnectors.delete",
+      "beyondcorp.appConnectors.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

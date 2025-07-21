@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "beyondcorp.appGateways.create",
+      "beyondcorp.appGateways.delete",
+      "beyondcorp.appGateways.update",
+      "beyondcorp.appGateways.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

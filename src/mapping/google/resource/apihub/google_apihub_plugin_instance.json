@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "apihub.plugininstances.create",
+      "apihub.plugininstances.delete",
+      "apihub.plugininstances.update",
+      "apihub.plugininstances.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

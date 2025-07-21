@@ -1740,3 +1740,54 @@ var googleMonitoringSLO []byte
 
 //go:embed mapping/google/resource/monitoring/google_monitoring_uptime_check_config.json
 var googleMonitoringUptimeCheckConfig []byte
+
+//go:embed mapping/google/resource/beyondcorp/google_beyondcorp_app_connection.json
+var googleBeyondcorpAppConnection []byte
+
+//go:embed mapping/google/resource/beyondcorp/google_beyondcorp_app_connector.json
+var googleBeyondcorpAppConnector []byte
+
+//go:embed mapping/google/resource/beyondcorp/google_beyondcorp_app_gateway.json
+var googleBeyondcorpAppGateway []byte
+
+//go:embed mapping/google/resource/beyondcorp/google_beyondcorp_application.json
+var googleBeyondcorpApplication []byte
+
+//go:embed mapping/google/resource/beyondcorp/google_beyondcorp_security_gateway.json
+var googleBeyondcorpSecurityGateway []byte
+
+//go:embed mapping/google/resource/beyondcorp/google_beyondcorp_security_gateway_application.json
+var googleBeyondcorpSecurityGatewayApplication []byte
+
+//go:embed mapping/google/resource/billing/google_billing_budget.json
+var googleBillingBudget []byte
+
+//go:embed mapping/google/resource/resourcemanager/google_billing_project_info.json
+var googleBillingProjectInfo []byte
+
+//go:embed mapping/google/resource/apihub/google_apihub_api_hub_instance.json
+var googleApihubInstance []byte
+
+//go:embed mapping/google/resource/apihub/google_apihub_curation.json
+var googleApihubCuration []byte
+
+//go:embed mapping/google/resource/apihub/google_apihub_host_project_registration.json
+var googleApihubHostProjectRegistration []byte
+
+//go:embed mapping/google/resource/apihub/google_apihub_plugin.json
+var googleApihubPlugin []byte
+
+//go:embed mapping/google/resource/apihub/google_apihub_plugin_instance.json
+var googleApihubPluginInstance []byte
+
+//go:embed mapping/google/resource/apphub/google_apphub_application.json
+var googleApphubApplication []byte
+
+//go:embed mapping/google/resource/apphub/google_apphub_service.json
+var googleApphubService []byte
+
+//go:embed mapping/google/resource/apphub/google_apphub_service_project_attachment.json
+var googleApphubServiceProjectAttachment []byte
+
+//go:embed mapping/google/resource/apphub/google_apphub_workload.json
+var googleApphubWorkload []byte

@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "apihub.curations.create",
+      "apihub.curations.delete",
+      "apihub.curations.get",
+      "apihub.curations.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

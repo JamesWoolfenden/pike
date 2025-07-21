@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "beyondcorp.securityGateways.create",
+      "beyondcorp.securityGateways.get",
+      "beyondcorp.securityGateways.update",
+      "beyondcorp.securityGateways.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

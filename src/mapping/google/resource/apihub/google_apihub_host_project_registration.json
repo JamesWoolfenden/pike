@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "apihub.hostProjectRegistrations.create",
+      "apihub.hostProjectRegistrations.delete",
+      "apihub.hostProjectRegistrations.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

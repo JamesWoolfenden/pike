@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "beyondcorp.sgApplications.create",
+      "beyondcorp.sgApplications.delete",
+      "beyondcorp.sgApplications.get",
+      "beyondcorp.sgApplications.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

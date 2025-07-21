@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "resourcemanager.projects.get",
+      "resourcemanager.projects.deleteBillingAssignment",
+      "resourcemanager.projects.createBillingAssignment"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
