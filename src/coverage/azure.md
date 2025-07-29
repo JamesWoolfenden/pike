@@ -1,7 +1,7 @@
 # todo azure
 
-Resource percentage coverage   4.48
-Datasource percentage coverage 33.80
+Resource percentage coverage   4.47
+Datasource percentage coverage 33.52
 
 ./resource.ps1 azurerm_aadb2c_directory
 ./resource.ps1 azurerm_active_directory_domain_service
@@ -602,6 +602,7 @@ Datasource percentage coverage 33.80
 ./resource.ps1 azurerm_mssql_managed_instance_active_directory_administrator
 ./resource.ps1 azurerm_mssql_managed_instance_failover_group
 ./resource.ps1 azurerm_mssql_managed_instance_security_alert_policy
+./resource.ps1 azurerm_mssql_managed_instance_start_stop_schedule
 ./resource.ps1 azurerm_mssql_managed_instance_transparent_data_encryption
 ./resource.ps1 azurerm_mssql_managed_instance_vulnerability_assessment
 ./resource.ps1 azurerm_mssql_outbound_firewall_rule
@@ -1205,6 +1206,7 @@ Datasource percentage coverage 33.80
 ./resource.ps1 azurerm_monitor_workspace -type data
 ./resource.ps1 azurerm_mssql_database -type data
 ./resource.ps1 azurerm_mssql_elasticpool -type data
+./resource.ps1 azurerm_mssql_failover_group -type data
 ./resource.ps1 azurerm_mssql_managed_database -type data
 ./resource.ps1 azurerm_mssql_managed_instance -type data
 ./resource.ps1 azurerm_mssql_server -type data
@@ -1221,6 +1223,7 @@ Datasource percentage coverage 33.80
 ./resource.ps1 azurerm_network_ddos_protection_plan -type data
 ./resource.ps1 azurerm_network_interface -type data
 ./resource.ps1 azurerm_network_manager_connectivity_configuration -type data
+./resource.ps1 azurerm_network_manager_ipam_pool -type data
 ./resource.ps1 azurerm_network_security_group -type data
 ./resource.ps1 azurerm_network_service_tags -type data
 ./resource.ps1 azurerm_nginx_api_key -type data
@@ -1281,6 +1284,7 @@ Datasource percentage coverage 33.80
 ./resource.ps1 azurerm_storage_queue -type data
 ./resource.ps1 azurerm_storage_table -type data
 ./resource.ps1 azurerm_system_center_virtual_machine_manager_inventory_items -type data
+./resource.ps1 azurerm_trusted_signing_account -type data
 ./resource.ps1 azurerm_virtual_desktop_application_group -type data
 ./resource.ps1 azurerm_virtual_desktop_workspace -type data
 ./resource.ps1 azurerm_virtual_network_peering -type data

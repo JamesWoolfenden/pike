@@ -1,6 +1,6 @@
 # todo google
 
-Resource percentage coverage   54.67
+Resource percentage coverage   54.39
 Datasource percentage coverage 100.00
 
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -15,6 +15,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 google_active_directory_peering
 ./resource.ps1 google_apigee_addons_config
 ./resource.ps1 google_apigee_api
+./resource.ps1 google_apigee_api_product
 ./resource.ps1 google_apigee_app_group
 ./resource.ps1 google_apigee_control_plane_access
 ./resource.ps1 google_apigee_developer
@@ -31,6 +32,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 google_apigee_keystores_aliases_self_signed_cert
 ./resource.ps1 google_apigee_nat_address
 ./resource.ps1 google_apigee_organization
+./resource.ps1 google_apigee_security_action
 ./resource.ps1 google_apigee_security_monitoring_condition
 ./resource.ps1 google_apigee_security_profile_v2
 ./resource.ps1 google_apigee_sync_authorization
@@ -252,6 +254,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 google_dialogflow_intent
 ./resource.ps1 google_discovery_engine_chat_engine
 ./resource.ps1 google_discovery_engine_data_store
+./resource.ps1 google_discovery_engine_recommendation_engine
 ./resource.ps1 google_discovery_engine_schema
 ./resource.ps1 google_discovery_engine_search_engine
 ./resource.ps1 google_discovery_engine_sitemap
@@ -452,6 +455,8 @@ Datasource percentage coverage 100.00
 ./resource.ps1 google_oracle_database_autonomous_database
 ./resource.ps1 google_oracle_database_cloud_exadata_infrastructure
 ./resource.ps1 google_oracle_database_cloud_vm_cluster
+./resource.ps1 google_oracle_database_odb_network
+./resource.ps1 google_oracle_database_odb_subnet
 ./resource.ps1 google_org_policy_custom_constraint
 ./resource.ps1 google_org_policy_policy
 ./resource.ps1 google_organization_access_approval_settings
@@ -515,6 +520,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 google_storage_anywhere_cache
 ./resource.ps1 google_storage_batch_operations_job
 ./resource.ps1 google_storage_folder
+./resource.ps1 google_storage_insights_dataset_config
 ./resource.ps1 google_storage_managed_folder
 ./resource.ps1 google_storage_notification
 ./resource.ps1 google_storage_object_acl

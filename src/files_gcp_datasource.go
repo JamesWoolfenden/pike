@@ -930,3 +930,6 @@ var dataGoogleOrganizationIamCustomRoles []byte
 
 //go:embed mapping/google/data/compute/google_compute_network_attachment.json
 var dataGoogleComputeNetworkAttachment []byte
+
+//go:embed mapping/google/data/storageinsights/google_storage_insights_dataset_config.json
+var dataGoogleStorageInsightsDatasetConfig []byte

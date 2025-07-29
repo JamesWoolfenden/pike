@@ -1608,3 +1608,9 @@ var dataAwsDynamodbTables []byte
 
 //go:embed  mapping/aws/data/backend/s3.json
 var dataBackend []byte
+
+//go:embed  mapping/aws/data/ecr/aws_ecr_images.json
+var dataAwsEcrImages []byte
+
+//go:embed  mapping/aws/data/s3/aws_s3_access_point.json
+var dataAwsS3AccessPoint []byte

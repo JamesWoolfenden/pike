@@ -401,6 +401,7 @@ func GCPDataLookup(result string) interface{} {
 		"google_organization_iam_custom_role":                          dataGoogleOrganizationIamCustomRole,
 		"google_organization_iam_custom_roles":                         dataGoogleOrganizationIamCustomRoles,
 		"google_compute_network_attachment":                            dataGoogleComputeNetworkAttachment,
+		"google_storage_insights_dataset_config":                       dataGoogleStorageInsightsDatasetConfig,
 	}
 
 	return TFLookup[result]

@@ -606,6 +606,8 @@ var tFLookupDataAWS = map[string]interface{}{
 	"aws_elb":                                                               dataAwsElb,
 	"aws_account_primary_contact":                                           dataAwsAccountPrimaryContact,
 	"aws_dynamodb_tables":                                                   dataAwsDynamodbTables,
+	"aws_ecr_images":                                                        dataAwsEcrImages,
+	"aws_s3_access_point":                                                   dataAwsS3AccessPoint,
 }
 
 // GetAWSDataPermissions gets permissions required for datasource's.

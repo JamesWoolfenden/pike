@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "storage.buckets.get",
+      "storage.objects.list",
+      "storage.buckets.getObjectInsights",
+      "storage.objects.create",
+      "storage.buckets.get",
+      "storageinsights.reportConfigs.get",
+      "storageinsights.reportConfigs.create",
+      "storageinsights.reportConfigs.delete",
+      "storageinsights.reportConfigs.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "storageinsights.reportConfigs.delete"
+    ],
+    "modify": [
+      "storageinsights.reportConfigs.update"
+    ],
+    "plan": []
+  }
+]
