@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "chronicle.dataAccessScopes.create",
+      "chronicle.dataAccessScopes.delete",
+      "chronicle.dataAccessScopes.get",
+      "chronicle.dataAccessScopes.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

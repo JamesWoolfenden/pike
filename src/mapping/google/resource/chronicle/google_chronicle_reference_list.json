@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "chronicle.referenceLists.create",
+      "chronicle.referenceLists.get",
+      "chronicle.referenceLists.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

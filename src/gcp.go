@@ -723,4 +723,11 @@ var gCPTfLookup = map[string]interface{}{
 	"google_workstations_workstation":                               googleWorkstationsWorkstation,
 	"google_workstations_workstation_cluster":                       googleWorkstationsWorkstationCluster,
 	"google_workstations_workstation_config":                        googleWorkstationsWorkstationConfig,
+	"google_chronicle_data_access_label":                            googleChronicleDataAccessLabel,
+	"google_chronicle_data_access_scope":                            googleChronicleDataAccessScope,
+	"google_chronicle_reference_list":                               googleChronicleReferenceList,
+	"google_chronicle_retrohunt":                                    googleChronicleRetrohunt,
+	"google_chronicle_rule":                                         googleChronicleRule,
+	"google_chronicle_rule_deployment":                              googleChronicleRuleDeployment,
+	"google_chronicle_watchlist":                                    googleChronicleWatchlist,
 }

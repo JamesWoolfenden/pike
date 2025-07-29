@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "chronicle.watchlists.create",
+      "chronicle.watchlists.delete",
+      "chronicle.watchlists.get",
+      "chronicle.watchlists.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

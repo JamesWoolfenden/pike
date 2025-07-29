@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "chronicle.rules.create",
+      "chronicle.rules.delete",
+      "chronicle.rules.get",
+      "chronicle.rules.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

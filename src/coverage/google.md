@@ -1,6 +1,6 @@
 # todo google
 
-Resource percentage coverage   54.98
+Resource percentage coverage   56.57
 Datasource percentage coverage 100.00
 
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -60,13 +60,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 google_certificate_manager_certificate_map_entry
 ./resource.ps1 google_certificate_manager_dns_authorization
 ./resource.ps1 google_certificate_manager_trust_config
-./resource.ps1 google_chronicle_data_access_label
-./resource.ps1 google_chronicle_data_access_scope
-./resource.ps1 google_chronicle_reference_list
-./resource.ps1 google_chronicle_retrohunt
-./resource.ps1 google_chronicle_rule
-./resource.ps1 google_chronicle_rule_deployment
-./resource.ps1 google_chronicle_watchlist
 ./resource.ps1 google_cloud_asset_folder_feed
 ./resource.ps1 google_cloud_asset_organization_feed
 ./resource.ps1 google_cloud_asset_project_feed

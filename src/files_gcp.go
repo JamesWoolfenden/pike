@@ -1848,3 +1848,24 @@ var googleWorkstationsWorkstationCluster []byte
 
 //go:embed mapping/google/resource/workstations/google_workstations_workstation_config.json
 var googleWorkstationsWorkstationConfig []byte
+
+//go:embed mapping/google/resource/chronicle/google_chronicle_data_access_label.json
+var googleChronicleDataAccessLabel []byte
+
+//go:embed mapping/google/resource/chronicle/google_chronicle_data_access_scope.json
+var googleChronicleDataAccessScope []byte
+
+//go:embed mapping/google/resource/chronicle/google_chronicle_reference_list.json
+var googleChronicleReferenceList []byte
+
+//go:embed mapping/google/resource/chronicle/google_chronicle_retrohunt.json
+var googleChronicleRetrohunt []byte
+
+//go:embed mapping/google/resource/chronicle/google_chronicle_rule.json
+var googleChronicleRule []byte
+
+//go:embed mapping/google/resource/chronicle/google_chronicle_rule_deployment.json
+var googleChronicleRuleDeployment []byte
+
+//go:embed mapping/google/resource/chronicle/google_chronicle_watchlist.json
+var googleChronicleWatchlist []byte

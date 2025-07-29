@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "chronicle.ruleDeployments.get",
+      "chronicle.ruleDeployments.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

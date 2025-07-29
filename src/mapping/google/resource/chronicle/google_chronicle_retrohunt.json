@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "chronicle.retrohunts.create",
+      "chronicle.retrohunts.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
