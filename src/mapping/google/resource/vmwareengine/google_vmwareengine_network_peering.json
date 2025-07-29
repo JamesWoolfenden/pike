@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "vmwareengine.externalAddresses.create",
+      "vmwareengine.externalAddresses.delete",
+      "vmwareengine.externalAddresses.get",
+      "vmwareengine.externalAddresses.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

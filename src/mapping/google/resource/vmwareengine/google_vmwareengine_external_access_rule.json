@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "vmwareengine.externalAccessRules.create",
+      "vmwareengine.externalAccessRules.delete",
+      "vmwareengine.externalAccessRules.get",
+      "vmwareengine.externalAccessRules.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

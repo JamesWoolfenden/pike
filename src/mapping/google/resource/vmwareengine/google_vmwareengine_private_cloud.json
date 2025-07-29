@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "vmwareengine.privateClouds.create",
+      "vmwareengine.privateClouds.get",
+      "vmwareengine.privateClouds.delete",
+      "vmwareengine.privateClouds.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

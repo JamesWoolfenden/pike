@@ -527,17 +527,5 @@ Datasource percentage coverage 100.00
 ./resource.ps1 google_vertex_ai_deployment_resource_pool
 ./resource.ps1 google_vertex_ai_endpoint_with_model_garden_deployment
 ./resource.ps1 google_vertex_ai_index_endpoint_deployed_index
-./resource.ps1 google_vmwareengine_cluster
-./resource.ps1 google_vmwareengine_external_access_rule
-./resource.ps1 google_vmwareengine_external_address
-./resource.ps1 google_vmwareengine_network
-./resource.ps1 google_vmwareengine_network_peering
-./resource.ps1 google_vmwareengine_network_policy
-./resource.ps1 google_vmwareengine_private_cloud
-./resource.ps1 google_vmwareengine_subnet
 ./resource.ps1 google_vpc_access_connector
 ./resource.ps1 google_workbench_instance
-./resource.ps1 google_workflows_workflow
-./resource.ps1 google_workstations_workstation
-./resource.ps1 google_workstations_workstation_cluster
-./resource.ps1 google_workstations_workstation_config

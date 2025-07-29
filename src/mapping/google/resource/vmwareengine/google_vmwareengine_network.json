@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "vmwareengine.vmwareEngineNetworks.create",
+      "vmwareengine.vmwareEngineNetworks.delete",
+      "vmwareengine.vmwareEngineNetworks.get",
+      "vmwareengine.vmwareEngineNetworks.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

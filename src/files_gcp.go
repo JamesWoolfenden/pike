@@ -1812,3 +1812,39 @@ var googleDataplexTask []byte
 
 //go:embed mapping/google/resource/dataplex/google_dataplex_zone.json
 var googleDataplexZone []byte
+
+//go:embed mapping/google/resource/vmwareengine/google_vmwareengine_cluster.json
+var googleVmwareengineCluster []byte
+
+//go:embed mapping/google/resource/vmwareengine/google_vmwareengine_external_access_rule.json
+var googleVmwareengineExternalAccessRule []byte
+
+//go:embed mapping/google/resource/vmwareengine/google_vmwareengine_external_address.json
+var googleVmwareengineExternalAddress []byte
+
+//go:embed mapping/google/resource/vmwareengine/google_vmwareengine_network.json
+var googleVmwareengineNetwork []byte
+
+//go:embed mapping/google/resource/vmwareengine/google_vmwareengine_network_peering.json
+var googleVmwareengineNetworkPeering []byte
+
+//go:embed mapping/google/resource/vmwareengine/google_vmwareengine_network_policy.json
+var googleVmwareengineNetworkPolicy []byte
+
+//go:embed mapping/google/resource/vmwareengine/google_vmwareengine_private_cloud.json
+var googleVmwareenginePrivateCloud []byte
+
+//go:embed mapping/google/resource/vmwareengine/google_vmwareengine_subnet.json
+var googleVmwareengineSubnet []byte
+
+//go:embed mapping/google/resource/workflows/google_workflows_workflow.json
+var googleWorkflowsWorkflow []byte
+
+//go:embed mapping/google/resource/workstations/google_workstations_workstation.json
+var googleWorkstationsWorkstation []byte
+
+//go:embed mapping/google/resource/workstations/google_workstations_workstation_cluster.json
+var googleWorkstationsWorkstationCluster []byte
+
+//go:embed mapping/google/resource/workstations/google_workstations_workstation_config.json
+var googleWorkstationsWorkstationConfig []byte

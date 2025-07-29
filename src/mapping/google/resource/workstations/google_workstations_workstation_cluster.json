@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "workstations.workstationClusters.create",
+      "workstations.workstationClusters.delete",
+      "workstations.workstationClusters.get",
+      "workstations.workstationClusters.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "workflows.workflows.create",
+      "workflows.workflows.delete",
+      "workflows.workflows.get",
+      "workflows.workflows.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

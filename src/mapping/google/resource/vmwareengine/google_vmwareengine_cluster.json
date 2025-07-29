@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "vmwareengine.clusters.create",
+      "vmwareengine.clusters.delete",
+      "vmwareengine.clusters.get",
+      "vmwareengine.clusters.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

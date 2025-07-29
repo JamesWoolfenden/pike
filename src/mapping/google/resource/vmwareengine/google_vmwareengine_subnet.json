@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "vmwareengine.subnets.get",
+      "vmwareengine.subnets.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

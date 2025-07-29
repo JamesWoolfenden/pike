@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "vmwareengine.networkPolicies.create",
+      "vmwareengine.networkPolicies.delete",
+      "vmwareengine.networkPolicies.get",
+      "vmwareengine.networkPolicies.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "workstations.workstationConfigs.create",
+      "workstations.workstationConfigs.delete",
+      "workstations.workstationConfigs.get",
+      "workstations.workstationConfigs.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

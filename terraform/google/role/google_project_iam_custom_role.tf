@@ -5,18 +5,42 @@ resource "google_project_iam_custom_role" "terraform_pike" {
   title       = "terraform_pike"
   description = "A user with least privileges"
   permissions = [
-    // google_dataplex_aspect_type
+    // google_workstations_workstation
+
+    // google_workstations_workstation_cluster
 
 
-    // google_dataplex_entry
+    // google_workstations_workstation_config
 
 
-    // google_dataplex_entry_group
-    // google_dataplex_entry_type
+    // google_workflows_workflow
 
-    // google_dataplex_lake
-    // google_dataplex_task
 
-    // google_dataplex_zone
+    //google_vmwareengine_cluster
+    "vmwareengine.clusters.create",
+    "vmwareengine.clusters.delete",
+    "vmwareengine.clusters.get",
+    "vmwareengine.clusters.update",
+
+    //google_vmwareengine_external_access_rule
+    "vmwareengine.externalAccessRules.create",
+    "vmwareengine.externalAccessRules.delete",
+    "vmwareengine.externalAccessRules.get",
+    "vmwareengine.externalAccessRules.update",
+
+    //google_vmwareengine_external_address
+
+    //google_vmwareengine_network
+
+    //google_vmwareengine_network_peering
+
+    //google_vmwareengine_network_policy
+
+    //google_vmwareengine_private_cloud
+
+
+
+    //google_vmwareengine_subnet
+
   ]
 }
