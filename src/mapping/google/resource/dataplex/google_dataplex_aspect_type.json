@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "dataplex.aspectTypes.create",
+      "dataplex.aspectTypes.delete",
+      "dataplex.aspectTypes.get",
+      "dataplex.aspectTypes.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "dataplex.tasks.create",
+      "dataplex.tasks.delete",
+      "dataplex.tasks.get",
+      "dataplex.tasks.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

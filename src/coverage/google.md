@@ -1,6 +1,6 @@
 # todo google
 
-Resource percentage coverage   54.39
+Resource percentage coverage   54.98
 Datasource percentage coverage 100.00
 
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -210,13 +210,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 google_database_migration_service_migration_job
 ./resource.ps1 google_database_migration_service_private_connection
 ./resource.ps1 google_dataflow_flex_template_job
-./resource.ps1 google_dataplex_aspect_type
-./resource.ps1 google_dataplex_entry
-./resource.ps1 google_dataplex_entry_group
-./resource.ps1 google_dataplex_entry_type
-./resource.ps1 google_dataplex_lake
-./resource.ps1 google_dataplex_task
-./resource.ps1 google_dataplex_zone
 ./resource.ps1 google_dataproc_autoscaling_policy
 ./resource.ps1 google_dataproc_batch
 ./resource.ps1 google_dataproc_cluster

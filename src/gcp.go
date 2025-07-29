@@ -704,4 +704,11 @@ var gCPTfLookup = map[string]interface{}{
 	"google_apphub_service":                                         googleApphubService,
 	"google_apphub_service_project_attachment":                      googleApphubServiceProjectAttachment,
 	"google_apphub_workload":                                        googleApphubWorkload,
+	"google_dataplex_aspect_type":                                   googleDataplexAspectType,
+	"google_dataplex_entry":                                         googleDataplexEntry,
+	"google_dataplex_entry_group":                                   googleDataplexEntryGroup,
+	"google_dataplex_entry_type":                                    googleDataplexEntryType,
+	"google_dataplex_lake":                                          googleDataplexLake,
+	"google_dataplex_task":                                          googleDataplexTask,
+	"google_dataplex_zone":                                          googleDataplexZone,
 }

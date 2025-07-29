@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "dataplex.entryGroups.create",
+      "dataplex.entryGroups.delete",
+      "dataplex.entryGroups.get",
+      "dataplex.entryGroups.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

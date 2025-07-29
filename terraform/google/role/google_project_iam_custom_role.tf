@@ -5,24 +5,18 @@ resource "google_project_iam_custom_role" "terraform_pike" {
   title       = "terraform_pike"
   description = "A user with least privileges"
   permissions = [
-    "resourcemanager.projects.get",
-    "storage.buckets.create",
-    "storage.buckets.delete",
-    "storage.buckets.get",
-    "storage.buckets.getIamPolicy",
-    "storage.buckets.setIamPolicy",
-    "storage.buckets.update",
-    "storageinsights.reportConfigs.create",
+    // google_dataplex_aspect_type
 
 
-    "storage.buckets.get",
-    "storage.objects.list",
-    "storage.buckets.getObjectInsights",
-    "storage.objects.create",
-    "storage.buckets.get",
-    "storageinsights.reportConfigs.get",
-    "storageinsights.reportConfigs.create",
-    "storageinsights.reportConfigs.delete",
-    "storageinsights.reportConfigs.update"
+    // google_dataplex_entry
+
+
+    // google_dataplex_entry_group
+    // google_dataplex_entry_type
+
+    // google_dataplex_lake
+    // google_dataplex_task
+
+    // google_dataplex_zone
   ]
 }

@@ -1791,3 +1791,24 @@ var googleApphubServiceProjectAttachment []byte
 
 //go:embed mapping/google/resource/apphub/google_apphub_workload.json
 var googleApphubWorkload []byte
+
+//go:embed mapping/google/resource/dataplex/google_dataplex_aspect_type.json
+var googleDataplexAspectType []byte
+
+//go:embed mapping/google/resource/dataplex/google_dataplex_entry.json
+var googleDataplexEntry []byte
+
+//go:embed mapping/google/resource/dataplex/google_dataplex_entry_group.json
+var googleDataplexEntryGroup []byte
+
+//go:embed mapping/google/resource/dataplex/google_dataplex_entry_type.json
+var googleDataplexEntryType []byte
+
+//go:embed mapping/google/resource/dataplex/google_dataplex_lake.json
+var googleDataplexLake []byte
+
+//go:embed mapping/google/resource/dataplex/google_dataplex_task.json
+var googleDataplexTask []byte
+
+//go:embed mapping/google/resource/dataplex/google_dataplex_zone.json
+var googleDataplexZone []byte

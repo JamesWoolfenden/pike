@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "dataplex.lakes.create",
+      "dataplex.lakes.delete",
+      "dataplex.lakes.get",
+      "dataplex.lakes.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

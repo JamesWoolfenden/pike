@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "dataplex.entryTypes.create",
+      "dataplex.entryTypes.delete",
+      "dataplex.entryTypes.get",
+      "dataplex.entryTypes.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

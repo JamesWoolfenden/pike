@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "dataplex.zones.create",
+      "dataplex.zones.delete",
+      "dataplex.zones.get",
+      "dataplex.zones.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
