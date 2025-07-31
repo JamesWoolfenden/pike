@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "contactcenterinsights.analysisRules.create",
+      "contactcenterinsights.analysisRules.delete",
+      "contactcenterinsights.analysisRules.get",
+      "contactcenterinsights.analysisRules.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

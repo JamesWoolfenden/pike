@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "contactcenterinsights.views.create",
+      "contactcenterinsights.views.delete",
+      "contactcenterinsights.views.get",
+      "contactcenterinsights.views.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

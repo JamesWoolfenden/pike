@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "composer.userworkloadsconfigmaps.create",
+      "composer.userworkloadsconfigmaps.delete",
+      "composer.userworkloadsconfigmaps.get",
+      "composer.userworkloadsconfigmaps.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

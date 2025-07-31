@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "developerconnect.accountConnectors.create",
+      "developerconnect.accountConnectors.delete",
+      "developerconnect.accountConnectors.get",
+      "developerconnect.accountConnectors.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

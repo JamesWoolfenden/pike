@@ -730,4 +730,11 @@ var gCPTfLookup = map[string]interface{}{
 	"google_chronicle_rule":                                         googleChronicleRule,
 	"google_chronicle_rule_deployment":                              googleChronicleRuleDeployment,
 	"google_chronicle_watchlist":                                    googleChronicleWatchlist,
+	"google_composer_user_workloads_config_map":                     googleComposerUserWorkloadsConfigMap,
+	"google_composer_user_workloads_secret":                         googleComposerUserWorkloadsSecret,
+	"google_contact_center_insights_analysis_rule":                  googleContactCenterInsightsAnalysisRule,
+	"google_contact_center_insights_view":                           googleContactCenterInsightsView,
+	"google_developer_connect_account_connector":                    googleDeveloperConnectAccountConnector,
+	"google_developer_connect_connection":                           googleDeveloperConnectConnection,
+	"google_developer_connect_git_repository_link":                  googleDeveloperConnectGitRepositoryLink,
 }

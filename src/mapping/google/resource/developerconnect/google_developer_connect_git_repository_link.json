@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "developerconnect.gitRepositoryLinks.create",
+      "developerconnect.gitRepositoryLinks.delete",
+      "developerconnect.gitRepositoryLinks.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

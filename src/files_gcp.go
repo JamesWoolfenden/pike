@@ -1869,3 +1869,24 @@ var googleChronicleRuleDeployment []byte
 
 //go:embed mapping/google/resource/chronicle/google_chronicle_watchlist.json
 var googleChronicleWatchlist []byte
+
+//go:embed mapping/google/resource/composer/google_composer_user_workloads_config_map.json
+var googleComposerUserWorkloadsConfigMap []byte
+
+//go:embed mapping/google/resource/composer/google_composer_user_workloads_secret.json
+var googleComposerUserWorkloadsSecret []byte
+
+//go:embed mapping/google/resource/contactcenterinsights/google_contact_center_insights_analysis_rule.json
+var googleContactCenterInsightsAnalysisRule []byte
+
+//go:embed mapping/google/resource/contactcenterinsights/google_contact_center_insights_view.json
+var googleContactCenterInsightsView []byte
+
+//go:embed mapping/google/resource/developerconnect/google_developer_connect_account_connector.json
+var googleDeveloperConnectAccountConnector []byte
+
+//go:embed mapping/google/resource/developerconnect/google_developer_connect_connection.json
+var googleDeveloperConnectConnection []byte
+
+//go:embed mapping/google/resource/developerconnect/google_developer_connect_git_repository_link.json
+var googleDeveloperConnectGitRepositoryLink []byte

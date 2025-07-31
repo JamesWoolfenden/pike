@@ -1,6 +1,6 @@
 # todo google
 
-Resource percentage coverage   56.57
+Resource percentage coverage   57.15
 Datasource percentage coverage 100.00
 
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -82,8 +82,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 google_colab_runtime
 ./resource.ps1 google_colab_runtime_template
 ./resource.ps1 google_colab_schedule
-./resource.ps1 google_composer_user_workloads_config_map
-./resource.ps1 google_composer_user_workloads_secret
 ./resource.ps1 google_compute_attached_disk
 ./resource.ps1 google_compute_autoscaler
 ./resource.ps1 google_compute_backend_bucket_signed_url_key
@@ -181,8 +179,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 google_compute_vpn_gateway
 ./resource.ps1 google_compute_vpn_tunnel
 ./resource.ps1 google_compute_wire_group
-./resource.ps1 google_contact_center_insights_analysis_rule
-./resource.ps1 google_contact_center_insights_view
 ./resource.ps1 google_container_analysis_note
 ./resource.ps1 google_container_analysis_occurrence
 ./resource.ps1 google_container_attached_cluster
@@ -218,9 +214,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 google_datastream_private_connection
 ./resource.ps1 google_datastream_stream
 ./resource.ps1 google_deployment_manager_deployment
-./resource.ps1 google_developer_connect_account_connector
-./resource.ps1 google_developer_connect_connection
-./resource.ps1 google_developer_connect_git_repository_link
 ./resource.ps1 google_dialogflow_agent
 ./resource.ps1 google_dialogflow_cx_agent
 ./resource.ps1 google_dialogflow_cx_entity_type
