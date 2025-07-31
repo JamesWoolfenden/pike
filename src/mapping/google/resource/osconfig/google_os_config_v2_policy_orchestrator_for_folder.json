@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "osconfig.policyOrchestrators.create",
+      "osconfig.policyOrchestrators.delete",
+      "osconfig.policyOrchestrators.get",
+      "osconfig.policyOrchestrators.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

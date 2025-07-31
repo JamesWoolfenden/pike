@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "osconfig.patchDeployments.create",
+      "osconfig.patchDeployments.delete",
+      "osconfig.patchDeployments.update",
+      "osconfig.patchDeployments.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

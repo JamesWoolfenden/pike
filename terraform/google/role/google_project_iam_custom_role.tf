@@ -5,42 +5,18 @@ resource "google_project_iam_custom_role" "terraform_pike" {
   title       = "terraform_pike"
   description = "A user with least privileges"
   permissions = [
-    // google_workstations_workstation
+    "tpu.runtimeversions.list",
+    "storageinsights.reportConfigs.get",
+    "storage.buckets.get",
+    "storage.buckets.delete",
+    "storage.buckets.getIamPolicy",
+    "storageinsights.reportConfigs.delete",
+    "storage.buckets.setIamPolicy",
 
-    // google_workstations_workstation_cluster
-
-
-    // google_workstations_workstation_config
-
-
-    // google_workflows_workflow
-
-
-    //google_vmwareengine_cluster
-    "vmwareengine.clusters.create",
-    "vmwareengine.clusters.delete",
-    "vmwareengine.clusters.get",
-    "vmwareengine.clusters.update",
-
-    //google_vmwareengine_external_access_rule
-    "vmwareengine.externalAccessRules.create",
-    "vmwareengine.externalAccessRules.delete",
-    "vmwareengine.externalAccessRules.get",
-    "vmwareengine.externalAccessRules.update",
-
-    //google_vmwareengine_external_address
-
-    //google_vmwareengine_network
-
-    //google_vmwareengine_network_peering
-
-    //google_vmwareengine_network_policy
-
-    //google_vmwareengine_private_cloud
-
-
-
-    //google_vmwareengine_subnet
-
+    //google_tpu_v2_vm google_tpu_v2_queued_resource
+    "tpu.nodes.create",
+    "tpu.nodes.get",
+    "tpu.nodes.update",
+    "tpu.nodes.delete"
   ]
 }

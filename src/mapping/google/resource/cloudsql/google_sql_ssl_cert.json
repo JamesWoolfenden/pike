@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "cloudsql.sslCerts.create",
+      "cloudsql.sslCerts.delete",
+      "cloudsql.sslCerts.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

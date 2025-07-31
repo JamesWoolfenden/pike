@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "bigtable.schemaBundles.get",
+      "bigtable.schemaBundles.create",
+      "bigtable.schemaBundles.delete",
+      "bigtable.schemaBundles.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

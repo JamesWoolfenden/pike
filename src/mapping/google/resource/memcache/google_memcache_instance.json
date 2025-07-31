@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "memcache.instances.create",
+      "memcache.instances.delete",
+      "memcache.instances.get",
+      "memcache.instances.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

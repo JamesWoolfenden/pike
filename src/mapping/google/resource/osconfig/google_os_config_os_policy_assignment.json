@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "osconfig.osPolicyAssignments.create",
+      "osconfig.osPolicyAssignments.delete",
+      "osconfig.osPolicyAssignments.get",
+      "osconfig.osPolicyAssignments.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

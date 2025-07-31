@@ -1890,3 +1890,57 @@ var googleDeveloperConnectConnection []byte
 
 //go:embed mapping/google/resource/developerconnect/google_developer_connect_git_repository_link.json
 var googleDeveloperConnectGitRepositoryLink []byte
+
+//go:embed mapping/google/resource/bigtable/google_bigtable_schema_bundle.json
+var googleBigtableSchemaBundle []byte
+
+//go:embed mapping/google/resource/memcache/google_memcache_instance.json
+var googleMemcacheInstance []byte
+
+//go:embed mapping/google/resource/memorystore/google_memorystore_instance.json
+var googleMemorystoreInstance []byte
+
+//go:embed mapping/google/resource/osconfig/google_os_config_guest_policies.json
+var googleOsConfigGuestPolicies []byte
+
+//go:embed mapping/google/resource/osconfig/google_os_config_os_policy_assignment.json
+var googleOsConfigOsPolicyAssignment []byte
+
+//go:embed mapping/google/resource/osconfig/google_os_config_patch_deployment.json
+var googleOsConfigPatchDeployment []byte
+
+//go:embed mapping/google/resource/osconfig/google_os_config_v2_policy_orchestrator.json
+var googleOsConfigV2PolicyOrchestrator []byte
+
+//go:embed mapping/google/resource/osconfig/google_os_config_v2_policy_orchestrator_for_folder.json
+var googleOsConfigV2PolicyOrchestratorForFolder []byte
+
+//go:embed mapping/google/resource/osconfig/google_os_config_v2_policy_orchestrator_for_organization.json
+var googleOsConfigV2PolicyOrchestratorForOrganization []byte
+
+//go:embed mapping/google/resource/parallelstore/google_parallelstore_instance.json
+var googleParallelstoreInstance []byte
+
+//go:embed mapping/google/resource/privateca/google_privateca_certificate.json
+var googlePrivatecaCertificate []byte
+
+//go:embed mapping/google/resource/privateca/google_privateca_certificate_authority.json
+var googlePrivatecaCertificateAuthority []byte
+
+//go:embed mapping/google/resource/cloudsql/google_sql_ssl_cert.json
+var googleSqlSslCert []byte
+
+//go:embed mapping/google/resource/tpu/google_tpu_node.json
+var googleTpuNode []byte
+
+//go:embed mapping/google/resource/tpu/google_tpu_v2_queued_resource.json
+var googleTpuV2QueuedResource []byte
+
+//go:embed mapping/google/resource/tpu/google_tpu_v2_vm.json
+var googleTpuV2Vm []byte
+
+//go:embed mapping/google/resource/transcoder/google_transcoder_job.json
+var googleTranscoderJob []byte
+
+//go:embed mapping/google/resource/transcoder/google_transcoder_job_template.json
+var googleTranscoderJobTemplate []byte

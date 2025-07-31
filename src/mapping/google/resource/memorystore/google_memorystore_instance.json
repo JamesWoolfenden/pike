@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "memorystore.instances.create",
+      "memorystore.instances.delete",
+      "memorystore.instances.get",
+      "memorystore.instances.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

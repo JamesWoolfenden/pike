@@ -1,0 +1,1 @@
+resource "google_os_config_v2_policy_orchestrator_for_folder" "pike" {}

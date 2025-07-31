@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "privateca.certificates.create",
+      "privateca.certificates.get",
+      "privateca.certificates.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

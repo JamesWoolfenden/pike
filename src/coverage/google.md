@@ -1,6 +1,6 @@
 # todo google
 
-Resource percentage coverage   57.15
+Resource percentage coverage   58.66
 Datasource percentage coverage 100.00
 
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -49,7 +49,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 google_artifact_registry_vpcsc_config
 ./resource.ps1 google_assured_workloads_workload
 ./resource.ps1 google_bigquery_analytics_hub_data_exchange_subscription
-./resource.ps1 google_bigtable_schema_bundle
 ./resource.ps1 google_billing_subaccount
 ./resource.ps1 google_binary_authorization_attestor
 ./resource.ps1 google_binary_authorization_policy
@@ -368,8 +367,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 google_managed_kafka_connect_cluster
 ./resource.ps1 google_managed_kafka_connector
 ./resource.ps1 google_managed_kafka_topic
-./resource.ps1 google_memcache_instance
-./resource.ps1 google_memorystore_instance
 ./resource.ps1 google_memorystore_instance_desired_user_created_endpoints
 ./resource.ps1 google_migration_center_group
 ./resource.ps1 google_migration_center_preference_set
@@ -442,20 +439,11 @@ Datasource percentage coverage 100.00
 ./resource.ps1 google_organization_iam_audit_config
 ./resource.ps1 google_organization_iam_custom_role
 ./resource.ps1 google_organization_policy
-./resource.ps1 google_os_config_guest_policies
-./resource.ps1 google_os_config_os_policy_assignment
-./resource.ps1 google_os_config_patch_deployment
-./resource.ps1 google_os_config_v2_policy_orchestrator
-./resource.ps1 google_os_config_v2_policy_orchestrator_for_folder
-./resource.ps1 google_os_config_v2_policy_orchestrator_for_organization
 ./resource.ps1 google_os_login_ssh_public_key
-./resource.ps1 google_parallelstore_instance
 ./resource.ps1 google_parameter_manager_parameter
 ./resource.ps1 google_parameter_manager_parameter_version
 ./resource.ps1 google_parameter_manager_regional_parameter
 ./resource.ps1 google_parameter_manager_regional_parameter_version
-./resource.ps1 google_privateca_certificate
-./resource.ps1 google_privateca_certificate_authority
 ./resource.ps1 google_public_ca_external_account_key
 ./resource.ps1 google_recaptcha_enterprise_key
 ./resource.ps1 google_resource_manager_capability
@@ -495,7 +483,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 google_service_networking_vpc_service_controls
 ./resource.ps1 google_service_usage_consumer_quota_override
 ./resource.ps1 google_sql_source_representation_instance
-./resource.ps1 google_sql_ssl_cert
 ./resource.ps1 google_storage_anywhere_cache
 ./resource.ps1 google_storage_batch_operations_job
 ./resource.ps1 google_storage_folder
@@ -505,11 +492,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 google_storage_object_acl
 ./resource.ps1 google_storage_transfer_agent_pool
 ./resource.ps1 google_storage_transfer_job
-./resource.ps1 google_tpu_node
-./resource.ps1 google_tpu_v2_queued_resource
-./resource.ps1 google_tpu_v2_vm
-./resource.ps1 google_transcoder_job
-./resource.ps1 google_transcoder_job_template
 ./resource.ps1 google_vertex_ai_deployment_resource_pool
 ./resource.ps1 google_vertex_ai_endpoint_with_model_garden_deployment
 ./resource.ps1 google_vertex_ai_index_endpoint_deployed_index

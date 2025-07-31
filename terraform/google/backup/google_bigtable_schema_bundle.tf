@@ -1,0 +1,1 @@
+resource "google_bigtable_schema_bundle" "pike" {}

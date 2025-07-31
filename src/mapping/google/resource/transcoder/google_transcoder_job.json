@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "transcoder.jobs.create",
+      "transcoder.jobs.get",
+      "transcoder.jobs.delete",
+      "transcoder.jobs.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

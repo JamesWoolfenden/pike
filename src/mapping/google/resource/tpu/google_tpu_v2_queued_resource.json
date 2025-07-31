@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "tpu.nodes.create",
+      "tpu.nodes.get",
+      "tpu.nodes.delete",
+      "tpu.nodes.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "osconfig.guestPolicies.create",
+      "osconfig.guestPolicies.delete",
+      "osconfig.guestPolicies.get",
+      "osconfig.guestPolicies.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

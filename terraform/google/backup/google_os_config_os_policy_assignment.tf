@@ -1,0 +1,1 @@
+resource "google_os_config_os_policy_assignment" "pike" {}

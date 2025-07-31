@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "parallelstore.instances.create",
+      "parallelstore.instances.get",
+      "parallelstore.instances.update",
+      "parallelstore.instances.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
