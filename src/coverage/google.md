@@ -1,6 +1,6 @@
 # todo google
 
-Resource percentage coverage   58.66
+Resource percentage coverage   58.92
 Datasource percentage coverage 100.00
 
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -213,6 +213,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 google_datastream_private_connection
 ./resource.ps1 google_datastream_stream
 ./resource.ps1 google_deployment_manager_deployment
+./resource.ps1 google_developer_connect_insights_config
 ./resource.ps1 google_dialogflow_agent
 ./resource.ps1 google_dialogflow_cx_agent
 ./resource.ps1 google_dialogflow_cx_entity_type
@@ -231,6 +232,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 google_dialogflow_fulfillment
 ./resource.ps1 google_dialogflow_intent
 ./resource.ps1 google_discovery_engine_chat_engine
+./resource.ps1 google_discovery_engine_cmek_config
 ./resource.ps1 google_discovery_engine_data_store
 ./resource.ps1 google_discovery_engine_recommendation_engine
 ./resource.ps1 google_discovery_engine_schema
@@ -332,9 +334,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 google_iam_organizations_policy_binding
 ./resource.ps1 google_iam_principal_access_boundary_policy
 ./resource.ps1 google_iam_projects_policy_binding
-./resource.ps1 google_iam_workforce_pool
-./resource.ps1 google_iam_workforce_pool_provider
-./resource.ps1 google_iam_workforce_pool_provider_key
 ./resource.ps1 google_iam_workload_identity_pool_managed_identity
 ./resource.ps1 google_iam_workload_identity_pool_namespace
 ./resource.ps1 google_iap_brand

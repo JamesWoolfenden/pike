@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "iam.googleapis.com/workforcePoolProviders.create",
+      "iam.googleapis.com/workforcePoolProviders.delete",
+      "iam.googleapis.com/workforcePoolProviders.get",
+      "iam.googleapis.com/workforcePoolProviders.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

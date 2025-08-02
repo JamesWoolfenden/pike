@@ -755,4 +755,10 @@ var gCPTfLookup = map[string]interface{}{
 	"google_tpu_v2_vm":                                              googleTpuV2Vm,
 	"google_transcoder_job":                                         googleTranscoderJob,
 	"google_transcoder_job_template":                                googleTranscoderJobTemplate,
+	"google_iam_workforce_pool":                                     googleIamWorkforcePool,
+	"google_iam_workforce_pool_iam_binding":                         googleIamWorkforcePoolIamBinding,
+	"google_iam_workforce_pool_iam_member":                          googleIamWorkforcePoolIamMember,
+	"google_iam_workforce_pool_iam_policy":                          googleIamWorkforcePoolIamPolicy,
+	"google_iam_workforce_pool_provider":                            googleIamWorkforcePoolProvider,
+	"google_iam_workforce_pool_provider_key":                        googleIamWorkforcePoolProviderKey,
 }

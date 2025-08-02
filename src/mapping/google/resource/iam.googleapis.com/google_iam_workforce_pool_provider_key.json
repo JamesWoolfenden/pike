@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "iam.googleapis.com/workforcePoolProviderKeys.create",
+      "iam.googleapis.com/workforcePoolProviderKeys.delete",
+      "iam.googleapis.com/workforcePoolProviderKeys.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1944,3 +1944,21 @@ var googleTranscoderJob []byte
 
 //go:embed mapping/google/resource/transcoder/google_transcoder_job_template.json
 var googleTranscoderJobTemplate []byte
+
+//go:embed mapping/google/resource/iam.googleapis.com/google_iam_workforce_pool.json
+var googleIamWorkforcePool []byte
+
+//go:embed mapping/google/resource/iam.googleapis.com/google_iam_workforce_pool_iam_binding.json
+var googleIamWorkforcePoolIamBinding []byte
+
+//go:embed mapping/google/resource/iam.googleapis.com/google_iam_workforce_pool_iam_member.json
+var googleIamWorkforcePoolIamMember []byte
+
+//go:embed mapping/google/resource/iam.googleapis.com/google_iam_workforce_pool_iam_policy.json
+var googleIamWorkforcePoolIamPolicy []byte
+
+//go:embed mapping/google/resource/iam.googleapis.com/google_iam_workforce_pool_provider.json
+var googleIamWorkforcePoolProvider []byte
+
+//go:embed mapping/google/resource/iam.googleapis.com/google_iam_workforce_pool_provider_key.json
+var googleIamWorkforcePoolProviderKey []byte

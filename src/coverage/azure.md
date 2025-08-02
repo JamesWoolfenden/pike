@@ -1,7 +1,7 @@
 # todo azure
 
 Resource percentage coverage   4.47
-Datasource percentage coverage 33.52
+Datasource percentage coverage 33.24
 
 ./resource.ps1 azurerm_aadb2c_directory
 ./resource.ps1 azurerm_active_directory_domain_service
@@ -89,6 +89,7 @@ Datasource percentage coverage 33.52
 ./resource.ps1 azurerm_application_insights_workbook_template
 ./resource.ps1 azurerm_application_load_balancer
 ./resource.ps1 azurerm_application_load_balancer_frontend
+./resource.ps1 azurerm_application_load_balancer_security_policy
 ./resource.ps1 azurerm_application_load_balancer_subnet_association
 ./resource.ps1 azurerm_application_security_group
 ./resource.ps1 azurerm_arc_kubernetes_cluster
@@ -359,6 +360,7 @@ Datasource percentage coverage 33.52
 ./resource.ps1 azurerm_eventgrid_event_subscription
 ./resource.ps1 azurerm_eventgrid_namespace
 ./resource.ps1 azurerm_eventgrid_partner_configuration
+./resource.ps1 azurerm_eventgrid_partner_registration
 ./resource.ps1 azurerm_eventgrid_system_topic
 ./resource.ps1 azurerm_eventgrid_system_topic_event_subscription
 ./resource.ps1 azurerm_eventgrid_topic
@@ -1052,6 +1054,7 @@ Datasource percentage coverage 33.52
 ./resource.ps1 azurerm_aadb2c_directory -type data
 ./resource.ps1 azurerm_active_directory_domain_service -type data
 ./resource.ps1 azurerm_advisor_recommendations -type data
+./resource.ps1 azurerm_api_connection -type data
 ./resource.ps1 azurerm_api_management_subscription -type data
 ./resource.ps1 azurerm_arc_resource_bridge_appliance -type data
 ./resource.ps1 azurerm_attestation -type data
@@ -1138,6 +1141,7 @@ Datasource percentage coverage 33.52
 ./resource.ps1 azurerm_elastic_san_volume_snapshot -type data
 ./resource.ps1 azurerm_eventgrid_domain -type data
 ./resource.ps1 azurerm_eventgrid_domain_topic -type data
+./resource.ps1 azurerm_eventgrid_partner_registration -type data
 ./resource.ps1 azurerm_eventgrid_system_topic -type data
 ./resource.ps1 azurerm_eventgrid_topic -type data
 ./resource.ps1 azurerm_eventhub -type data
@@ -1186,6 +1190,7 @@ Datasource percentage coverage 33.52
 ./resource.ps1 azurerm_local_network_gateway -type data
 ./resource.ps1 azurerm_location -type data
 ./resource.ps1 azurerm_log_analytics_workspace -type data
+./resource.ps1 azurerm_log_analytics_workspace_table -type data
 ./resource.ps1 azurerm_logic_app_integration_account -type data
 ./resource.ps1 azurerm_logic_app_standard -type data
 ./resource.ps1 azurerm_logic_app_workflow -type data

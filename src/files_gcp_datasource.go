@@ -933,3 +933,9 @@ var dataGoogleComputeNetworkAttachment []byte
 
 //go:embed mapping/google/data/storageinsights/google_storage_insights_dataset_config.json
 var dataGoogleStorageInsightsDatasetConfig []byte
+
+//go:embed mapping/google/data/artifactregistry/google_artifact_registry_docker_images.json
+var dataGoogleArtifactRegistryDockerImages []byte
+
+//go:embed mapping/google/data/iam.googleapis.com/google_iam_workforce_pool_iam_policy.json
+var dataGoogleIamWorkforcePoolIamPolicy []byte

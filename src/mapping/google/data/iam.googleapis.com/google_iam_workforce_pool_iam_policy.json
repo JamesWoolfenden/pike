@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "iam.googleapis.com/workforcePools.getIamPolicy"
+    ]
+  }
+]
