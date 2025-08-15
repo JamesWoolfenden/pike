@@ -676,6 +676,7 @@
         "azurerm_network_manager_management_group_connection",
         "azurerm_network_manager_network_group",
         "azurerm_network_manager_routing_configuration",
+        "azurerm_network_manager_routing_rule_collection",
         "azurerm_network_manager_scope_connection",
         "azurerm_network_manager_security_admin_configuration",
         "azurerm_network_manager_static_member",
