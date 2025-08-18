@@ -939,3 +939,12 @@ var dataGoogleArtifactRegistryDockerImages []byte
 
 //go:embed mapping/google/data/iam.googleapis.com/google_iam_workforce_pool_iam_policy.json
 var dataGoogleIamWorkforcePoolIamPolicy []byte
+
+//go:embed mapping/google/data/artifactregistry/google_artifact_registry_repositories.json
+var dataGoogleArtifactRegistryRepositories []byte
+
+//go:embed mapping/google/data/artifactregistry/google_artifact_registry_version.json
+var dataGoogleArtifactRegistryVersion []byte
+
+//go:embed mapping/google/data/artifactregistry/google_artifact_registry_versions.json
+var dataGoogleArtifactRegistryVersions []byte

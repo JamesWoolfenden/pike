@@ -404,6 +404,9 @@ func GCPDataLookup(result string) interface{} {
 		"google_storage_insights_dataset_config":                       dataGoogleStorageInsightsDatasetConfig,
 		"google_artifact_registry_docker_images":                       dataGoogleArtifactRegistryDockerImages,
 		"google_iam_workforce_pool_iam_policy":                         dataGoogleIamWorkforcePoolIamPolicy,
+		"google_artifact_registry_repositories":                        dataGoogleArtifactRegistryRepositories,
+		"google_artifact_registry_version":                             dataGoogleArtifactRegistryVersion,
+		"google_artifact_registry_versions":                            dataGoogleArtifactRegistryVersions,
 	}
 
 	return TFLookup[result]

@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "eventarc.googleApiSources.create",
+      "eventarc.googleApiSources.delete",
+      "eventarc.googleApiSources.get",
+      "eventarc.googleApiSources.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

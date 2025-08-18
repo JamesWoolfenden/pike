@@ -1962,3 +1962,63 @@ var googleIamWorkforcePoolProvider []byte
 
 //go:embed mapping/google/resource/iam.googleapis.com/google_iam_workforce_pool_provider_key.json
 var googleIamWorkforcePoolProviderKey []byte
+
+//go:embed mapping/google/resource/dataproc/google_dataproc_autoscaling_policy.json
+var googleDataprocAutoscalingPolicy []byte
+
+//go:embed mapping/google/resource/dataproc/google_dataproc_batch.json
+var googleDataprocBatch []byte
+
+//go:embed mapping/google/resource/dataproc/google_dataproc_cluster.json
+var googleDataprocCluster []byte
+
+//go:embed mapping/google/resource/dataproc/google_dataproc_job.json
+var googleDataprocJob []byte
+
+//go:embed mapping/google/resource/dataproc/google_dataproc_session_template.json
+var googleDataprocSessionTemplate []byte
+
+//go:embed mapping/google/resource/dataproc/google_dataproc_workflow_template.json
+var googleDataprocWorkflowTemplate []byte
+
+//go:embed mapping/google/resource/deploymentmanager/google_deployment_manager_deployment.json
+var googleDeploymentManagerDeployment []byte
+
+//go:embed mapping/google/resource/edgecontainer/google_edgecontainer_cluster.json
+var googleEdgecontainerCluster []byte
+
+//go:embed mapping/google/resource/edgecontainer/google_edgecontainer_node_pool.json
+var googleEdgecontainerNodePool []byte
+
+//go:embed mapping/google/resource/edgecontainer/google_edgecontainer_vpn_connection.json
+var googleEdgecontainerVpnConnection []byte
+
+//go:embed mapping/google/resource/edgenetwork/google_edgenetwork_interconnect_attachment.json
+var googleEdgecontainerInterconnectAttachment []byte
+
+//go:embed mapping/google/resource/edgenetwork/google_edgenetwork_network.json
+var googleEdgecontainerNetwork []byte
+
+//go:embed mapping/google/resource/edgenetwork/google_edgenetwork_subnet.json
+var googleEdgecontainerSubnet []byte
+
+//go:embed mapping/google/resource/eventarc/google_eventarc_channel.json
+var googleEventarcChannel []byte
+
+//go:embed mapping/google/resource/eventarc/google_eventarc_enrollment.json
+var googleEventarcEnrollment []byte
+
+//go:embed mapping/google/resource/eventarc/google_eventarc_google_api_source.json
+var googleEventarcGoogleApiSource []byte
+
+//go:embed mapping/google/resource/eventarc/google_eventarc_google_channel_config.json
+var googleEventarcGoogleChannelConfig []byte
+
+//go:embed mapping/google/resource/eventarc/google_eventarc_message_bus.json
+var googleEventarcMessageBus []byte
+
+//go:embed mapping/google/resource/eventarc/google_eventarc_pipeline.json
+var googleEventarcPipeline []byte
+
+//go:embed mapping/google/resource/eventarc/google_eventarc_trigger.json
+var googleEventarcTrigger []byte

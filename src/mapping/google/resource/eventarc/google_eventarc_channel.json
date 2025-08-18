@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "eventarc.channels.create",
+      "eventarc.channels.delete",
+      "eventarc.channels.get",
+      "eventarc.channels.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,7 +1,7 @@
 # todo azure
 
-Resource percentage coverage   4.47
-Datasource percentage coverage 33.24
+Resource percentage coverage   4.45
+Datasource percentage coverage 33.15
 
 ./resource.ps1 azurerm_aadb2c_directory
 ./resource.ps1 azurerm_active_directory_domain_service
@@ -57,6 +57,7 @@ Datasource percentage coverage 33.24
 ./resource.ps1 azurerm_api_management_product_policy
 ./resource.ps1 azurerm_api_management_product_tag
 ./resource.ps1 azurerm_api_management_redis_cache
+./resource.ps1 azurerm_api_management_standalone_gateway
 ./resource.ps1 azurerm_api_management_subscription
 ./resource.ps1 azurerm_api_management_tag
 ./resource.ps1 azurerm_api_management_user
@@ -242,6 +243,7 @@ Datasource percentage coverage 33.24
 ./resource.ps1 azurerm_data_factory_credential_service_principal
 ./resource.ps1 azurerm_data_factory_credential_user_managed_identity
 ./resource.ps1 azurerm_data_factory_custom_dataset
+./resource.ps1 azurerm_data_factory_customer_managed_key
 ./resource.ps1 azurerm_data_factory_data_flow
 ./resource.ps1 azurerm_data_factory_dataset_azure_blob
 ./resource.ps1 azurerm_data_factory_dataset_azure_sql_table
@@ -360,6 +362,7 @@ Datasource percentage coverage 33.24
 ./resource.ps1 azurerm_eventgrid_event_subscription
 ./resource.ps1 azurerm_eventgrid_namespace
 ./resource.ps1 azurerm_eventgrid_partner_configuration
+./resource.ps1 azurerm_eventgrid_partner_namespace
 ./resource.ps1 azurerm_eventgrid_partner_registration
 ./resource.ps1 azurerm_eventgrid_system_topic
 ./resource.ps1 azurerm_eventgrid_system_topic_event_subscription
@@ -656,6 +659,7 @@ Datasource percentage coverage 33.24
 ./resource.ps1 azurerm_network_manager_management_group_connection
 ./resource.ps1 azurerm_network_manager_network_group
 ./resource.ps1 azurerm_network_manager_routing_configuration
+./resource.ps1 azurerm_network_manager_routing_rule_collection
 ./resource.ps1 azurerm_network_manager_scope_connection
 ./resource.ps1 azurerm_network_manager_security_admin_configuration
 ./resource.ps1 azurerm_network_manager_static_member
@@ -705,6 +709,7 @@ Datasource percentage coverage 33.24
 ./resource.ps1 azurerm_postgresql_firewall_rule
 ./resource.ps1 azurerm_postgresql_flexible_server
 ./resource.ps1 azurerm_postgresql_flexible_server_active_directory_administrator
+./resource.ps1 azurerm_postgresql_flexible_server_backup
 ./resource.ps1 azurerm_postgresql_flexible_server_configuration
 ./resource.ps1 azurerm_postgresql_flexible_server_database
 ./resource.ps1 azurerm_postgresql_flexible_server_firewall_rule
@@ -1141,6 +1146,7 @@ Datasource percentage coverage 33.24
 ./resource.ps1 azurerm_elastic_san_volume_snapshot -type data
 ./resource.ps1 azurerm_eventgrid_domain -type data
 ./resource.ps1 azurerm_eventgrid_domain_topic -type data
+./resource.ps1 azurerm_eventgrid_partner_namespace -type data
 ./resource.ps1 azurerm_eventgrid_partner_registration -type data
 ./resource.ps1 azurerm_eventgrid_system_topic -type data
 ./resource.ps1 azurerm_eventgrid_topic -type data

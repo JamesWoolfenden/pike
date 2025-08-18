@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "dataproc.jobs.update",
+      "dataproc.jobs.get",
+      "dataproc.jobs.delete",
+      "dataproc.jobs.create"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

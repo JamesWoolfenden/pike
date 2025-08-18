@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "dataproc.autoscalingPolicies.update",
+      "dataproc.autoscalingPolicies.get",
+      "dataproc.autoscalingPolicies.delete",
+      "dataproc.autoscalingPolicies.create"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

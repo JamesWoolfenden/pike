@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "edgecontainer.vpnConnections.create",
+      "edgecontainer.vpnConnections.delete",
+      "edgecontainer.vpnConnections.get",
+      "edgecontainer.vpnConnections.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

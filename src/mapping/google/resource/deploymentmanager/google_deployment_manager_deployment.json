@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "deploymentmanager.deployments.create",
+      "deploymentmanager.deployments.delete",
+      "deploymentmanager.deployments.get",
+      "deploymentmanager.deployments.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

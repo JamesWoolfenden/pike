@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "dataproc.sessionTemplates.update",
+      "dataproc.sessionTemplates.get",
+      "dataproc.sessionTemplates.delete",
+      "dataproc.sessionTemplates.create"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

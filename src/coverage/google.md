@@ -1,7 +1,7 @@
 # todo google
 
-Resource percentage coverage   58.92
-Datasource percentage coverage 100.00
+Resource percentage coverage   60.38
+Datasource percentage coverage 99.48
 
 ./resource.ps1 google_access_context_manager_access_level_condition
 ./resource.ps1 google_access_context_manager_service_perimeter_dry_run_egress_policy
@@ -46,6 +46,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 google_app_engine_service_network_settings
 ./resource.ps1 google_app_engine_service_split_traffic
 ./resource.ps1 google_app_engine_standard_app_version
+./resource.ps1 google_artifact_registry_package
 ./resource.ps1 google_artifact_registry_vpcsc_config
 ./resource.ps1 google_assured_workloads_workload
 ./resource.ps1 google_bigquery_analytics_hub_data_exchange_subscription
@@ -198,23 +199,17 @@ Datasource percentage coverage 100.00
 ./resource.ps1 google_database_migration_service_migration_job
 ./resource.ps1 google_database_migration_service_private_connection
 ./resource.ps1 google_dataflow_flex_template_job
-./resource.ps1 google_dataproc_autoscaling_policy
-./resource.ps1 google_dataproc_batch
-./resource.ps1 google_dataproc_cluster
 ./resource.ps1 google_dataproc_gdc_application_environment
 ./resource.ps1 google_dataproc_gdc_service_instance
 ./resource.ps1 google_dataproc_gdc_spark_application
-./resource.ps1 google_dataproc_job
 ./resource.ps1 google_dataproc_metastore_federation
 ./resource.ps1 google_dataproc_metastore_service
-./resource.ps1 google_dataproc_session_template
-./resource.ps1 google_dataproc_workflow_template
 ./resource.ps1 google_datastream_connection_profile
 ./resource.ps1 google_datastream_private_connection
 ./resource.ps1 google_datastream_stream
-./resource.ps1 google_deployment_manager_deployment
 ./resource.ps1 google_developer_connect_insights_config
 ./resource.ps1 google_dialogflow_agent
+./resource.ps1 google_dialogflow_conversation_profile
 ./resource.ps1 google_dialogflow_cx_agent
 ./resource.ps1 google_dialogflow_cx_entity_type
 ./resource.ps1 google_dialogflow_cx_environment
@@ -223,6 +218,7 @@ Datasource percentage coverage 100.00
 ./resource.ps1 google_dialogflow_cx_generator
 ./resource.ps1 google_dialogflow_cx_intent
 ./resource.ps1 google_dialogflow_cx_page
+./resource.ps1 google_dialogflow_cx_playbook
 ./resource.ps1 google_dialogflow_cx_security_settings
 ./resource.ps1 google_dialogflow_cx_tool
 ./resource.ps1 google_dialogflow_cx_version
@@ -245,21 +241,8 @@ Datasource percentage coverage 100.00
 ./resource.ps1 google_document_ai_processor_default_version
 ./resource.ps1 google_document_ai_warehouse_document_schema
 ./resource.ps1 google_document_ai_warehouse_location
-./resource.ps1 google_edgecontainer_cluster
-./resource.ps1 google_edgecontainer_node_pool
-./resource.ps1 google_edgecontainer_vpn_connection
-./resource.ps1 google_edgenetwork_interconnect_attachment
-./resource.ps1 google_edgenetwork_network
-./resource.ps1 google_edgenetwork_subnet
 ./resource.ps1 google_endpoints_service
 ./resource.ps1 google_essential_contacts_contact
-./resource.ps1 google_eventarc_channel
-./resource.ps1 google_eventarc_enrollment
-./resource.ps1 google_eventarc_google_api_source
-./resource.ps1 google_eventarc_google_channel_config
-./resource.ps1 google_eventarc_message_bus
-./resource.ps1 google_eventarc_pipeline
-./resource.ps1 google_eventarc_trigger
 ./resource.ps1 google_filestore_backup
 ./resource.ps1 google_filestore_instance
 ./resource.ps1 google_filestore_snapshot
@@ -494,5 +477,6 @@ Datasource percentage coverage 100.00
 ./resource.ps1 google_vertex_ai_deployment_resource_pool
 ./resource.ps1 google_vertex_ai_endpoint_with_model_garden_deployment
 ./resource.ps1 google_vertex_ai_index_endpoint_deployed_index
+./resource.ps1 google_vertex_ai_rag_engine_config
 ./resource.ps1 google_vpc_access_connector
 ./resource.ps1 google_workbench_instance

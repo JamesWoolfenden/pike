@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "eventarc.googleChannelConfigs.get",
+      "eventarc.googleChannelConfigs.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

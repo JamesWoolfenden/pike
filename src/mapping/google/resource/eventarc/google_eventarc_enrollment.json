@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "eventarc.enrollments.create",
+      "eventarc.enrollments.delete",
+      "eventarc.enrollments.get",
+      "eventarc.enrollments.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

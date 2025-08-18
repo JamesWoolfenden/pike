@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "dataproc.clusters.update",
+      "dataproc.clusters.get",
+      "dataproc.clusters.delete",
+      "dataproc.clusters.create"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

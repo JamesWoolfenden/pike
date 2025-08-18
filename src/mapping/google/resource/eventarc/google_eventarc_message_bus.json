@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "eventarc.messageBuses.create",
+      "eventarc.messageBuses.delete",
+      "eventarc.messageBuses.get",
+      "eventarc.messageBuses.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

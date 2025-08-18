@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "edgenetwork.subnetworks.create",
+      "edgenetwork.subnetworks.delete",
+      "edgenetwork.subnetworks.get",
+      "edgenetwork.subnetworks.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

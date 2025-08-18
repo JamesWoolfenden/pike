@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "edgenetwork.interconnectAttachments.create",
+      "edgenetwork.interconnectAttachments.delete",
+      "edgenetwork.interconnectAttachments.get",
+      "edgenetwork.interconnectAttachments.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

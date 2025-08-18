@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "dataproc.workflowTemplates.update",
+      "dataproc.workflowTemplates.get",
+      "dataproc.workflowTemplates.delete",
+      "dataproc.workflowTemplates.create"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

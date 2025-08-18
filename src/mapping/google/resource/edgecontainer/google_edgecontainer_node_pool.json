@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "edgecontainer.nodePools.create",
+      "edgecontainer.nodePools.delete",
+      "edgecontainer.nodePools.get",
+      "edgecontainer.nodePools.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

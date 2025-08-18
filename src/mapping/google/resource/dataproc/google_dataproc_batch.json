@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "dataproc.batches.get",
+      "dataproc.batches.delete",
+      "dataproc.batches.create"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

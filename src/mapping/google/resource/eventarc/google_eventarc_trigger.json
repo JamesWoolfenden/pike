@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "eventarc.triggers.update",
+      "eventarc.triggers.get",
+      "eventarc.triggers.delete",
+      "eventarc.triggers.create"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

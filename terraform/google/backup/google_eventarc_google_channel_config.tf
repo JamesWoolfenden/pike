@@ -1,0 +1,1 @@
+resource "google_eventarc_google_channel_config" "pike" {}

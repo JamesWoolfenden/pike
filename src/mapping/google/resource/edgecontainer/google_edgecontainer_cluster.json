@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "edgecontainer.clusters.create",
+      "edgecontainer.clusters.delete",
+      "edgecontainer.clusters.get",
+      "edgecontainer.clusters.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "eventarc.pipelines.create",
+      "eventarc.pipelines.delete",
+      "eventarc.pipelines.get",
+      "eventarc.pipelines.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

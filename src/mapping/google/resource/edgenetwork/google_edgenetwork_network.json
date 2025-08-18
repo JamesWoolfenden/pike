@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "edgenetwork.networks.create",
+      "edgenetwork.networks.delete",
+      "edgenetwork.networks.get",
+      "edgenetwork.networks.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
