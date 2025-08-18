@@ -19,7 +19,7 @@ type members struct {
 func coverageAWS() error {
 	data := importMembers("../parse/aws-members.json")
 	missing := members{}
-	target := ""
+	target := "```shell\n"
 
 	for _, myData := range data.Resources {
 		if temp := pike.AwsLookup(myData); temp == nil {
@@ -38,11 +38,9 @@ func coverageAWS() error {
 			}
 		}
 	}
+	target += "```\n"
 
-	Prepend := "# todo aws \n\n"
-
-	Prepend += fmt.Sprintf("Resource percentage coverage   %3.2f \n", percent(missing.Resources, data.Resources))
-	Prepend += fmt.Sprintf("Datasource percentage coverage %3.2f \n\n", percent(missing.DataSources, data.DataSources))
+	Prepend := resourceTable(missing, data, "AWS")
 
 	target = Prepend + target
 	err := os.WriteFile("aws.md", []byte(target), 0o700)
@@ -65,7 +63,7 @@ func (e *fileWriteError) Error() string {
 func coverageAzure() error {
 	data := importMembers("../parse/azurerm-members.json")
 	missing := members{}
-	target := ""
+	target := "```shell\n"
 
 	for _, myData := range data.Resources {
 		if temp := pike.AzureLookup(myData); temp == nil {
@@ -80,12 +78,9 @@ func coverageAzure() error {
 			target += "./resource.ps1 " + myData + " -type data\n"
 		}
 	}
+	target += "```\n"
 
-	Prepend := "# todo azure \n\n"
-
-	Prepend += fmt.Sprintf("Resource percentage coverage   %3.2f \n", percent(missing.Resources, data.Resources))
-	Prepend += fmt.Sprintf("Datasource percentage coverage %3.2f \n\n", percent(missing.DataSources, data.DataSources))
-
+	Prepend := resourceTable(missing, data, "Azure")
 	target = Prepend + target
 	err := os.WriteFile("azure.md", []byte(target), 0o700)
 
@@ -100,7 +95,7 @@ func coverageAzure() error {
 func coverageGcp() error {
 	data := importMembers("../parse/google-members.json")
 	missing := members{}
-	target := ""
+	target := "```shell\n"
 
 	for _, myData := range data.Resources {
 		if temp := pike.GCPLookup(myData); temp == nil {
@@ -115,11 +110,9 @@ func coverageGcp() error {
 			target += "./resource.ps1 " + myData + " -type data\n"
 		}
 	}
+	target += "```\n"
 
-	Prepend := "# todo google \n\n"
-
-	Prepend += fmt.Sprintf("Resource percentage coverage   %3.2f \n", percent(missing.Resources, data.Resources))
-	Prepend += fmt.Sprintf("Datasource percentage coverage %3.2f \n\n", percent(missing.DataSources, data.DataSources))
+	Prepend := resourceTable(missing, data, "Google")
 
 	target = Prepend + target
 	err := os.WriteFile("google.md", []byte(target), 0o700)
@@ -130,6 +123,19 @@ func coverageGcp() error {
 	}
 
 	return nil
+}
+
+func resourceTable(missing members, data members, cloud string) string {
+	Prepend := fmt.Sprintf("# %s Resource Status\n\n", cloud)
+	Prepend += fmt.Sprintf("| Terraform | Coverage %% | Resources | Total Resources|\n")
+	Prepend += fmt.Sprintf("|-----------|------------|-----------|-----------|\n")
+	Prepend += fmt.Sprintf("| Resources | %3.2f | %d | %d |\n",
+		percent(missing.Resources, data.Resources),
+		len(data.Resources)-len(missing.Resources), len(data.Resources))
+	Prepend += fmt.Sprintf("| Datasource | %3.2f | %d | %d |\n\n",
+		percent(missing.DataSources, data.DataSources),
+		len(data.DataSources)-len(missing.DataSources), len(data.DataSources))
+	return Prepend
 }
 
 func importMembers(targetMembers string) members {

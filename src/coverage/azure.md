@@ -1,8 +1,11 @@
-# todo azure
+# Azure Resource Status
 
-Resource percentage coverage   4.45
-Datasource percentage coverage 33.15
+| Terraform | Coverage % | Resources | Total Resources|
+|-----------|------------|-----------|-----------|
+| Resources | 4.45 | 49 | 1102 |
+| Datasource | 33.15 | 122 | 368 |
 
+```shell
 ./resource.ps1 azurerm_aadb2c_directory
 ./resource.ps1 azurerm_active_directory_domain_service
 ./resource.ps1 azurerm_active_directory_domain_service_replica_set
@@ -1302,3 +1305,4 @@ Datasource percentage coverage 33.15
 ./resource.ps1 azurerm_vpn_server_configuration -type data
 ./resource.ps1 netapp_backup_policy -type data
 ./resource.ps1 netapp_backup_vault -type data
+```

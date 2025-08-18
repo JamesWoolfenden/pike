@@ -1,8 +1,11 @@
-# todo aws
+# AWS Resource Status
 
-Resource percentage coverage   98.75
-Datasource percentage coverage 100.00
+| Terraform | Coverage % | Resources | Total Resources|
+|-----------|------------|-----------|-----------|
+| Resources | 98.75 | 1498 | 1517 |
+| Datasource | 100.00 | 596 | 596 |
 
+```shell
 ./resource.ps1 aws_appsync_api
 ./resource.ps1 aws_appsync_channel_namespace
 ./resource.ps1 aws_bedrockagent_flow
@@ -22,3 +25,4 @@ Datasource percentage coverage 100.00
 ./resource.ps1 aws_vpc_route_server_endpoint
 ./resource.ps1 aws_vpc_route_server_peer
 ./resource.ps1 aws_wafv2_web_acl_rule_group_association
+```

@@ -1,8 +1,11 @@
-# todo google
+# Google Resource Status
 
-Resource percentage coverage   60.38
-Datasource percentage coverage 99.48
+| Terraform | Coverage % | Resources | Total Resources|
+|-----------|------------|-----------|-----------|
+| Resources | 60.38 | 727 | 1204 |
+| Datasource | 99.48 | 384 | 386 |
 
+```shell
 ./resource.ps1 google_access_context_manager_access_level_condition
 ./resource.ps1 google_access_context_manager_service_perimeter_dry_run_egress_policy
 ./resource.ps1 google_access_context_manager_service_perimeter_dry_run_ingress_policy
@@ -480,3 +483,6 @@ Datasource percentage coverage 99.48
 ./resource.ps1 google_vertex_ai_rag_engine_config
 ./resource.ps1 google_vpc_access_connector
 ./resource.ps1 google_workbench_instance
+./resource.ps1 google_artifact_registry_tags -type data
+./resource.ps1 google_certificate_manager_dns_authorization -type data
+```
