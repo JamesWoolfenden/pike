@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "modelarmor.templates.create",
+      "modelarmor.templates.delete",
+      "modelarmor.templates.get",
+      "modelarmor.templates.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

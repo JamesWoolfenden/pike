@@ -5,18 +5,18 @@ resource "google_project_iam_custom_role" "terraform_pike" {
   title       = "terraform_pike"
   description = "A user with least privileges"
   permissions = [
-    "tpu.runtimeversions.list",
-    "storageinsights.reportConfigs.get",
+    "managedkafka.clusters.create",
+    "managedkafka.clusters.delete",
+    "managedkafka.clusters.get",
+    "managedkafka.clusters.update",
+    "managedkafka.operations.get",
+    "resourcemanager.projects.get",
     "storage.buckets.get",
-    "storage.buckets.delete",
-    "storage.buckets.getIamPolicy",
-    "storageinsights.reportConfigs.delete",
-    "storage.buckets.setIamPolicy",
 
-    //google_tpu_v2_vm google_tpu_v2_queued_resource
-    "tpu.nodes.create",
-    "tpu.nodes.get",
-    "tpu.nodes.update",
-    "tpu.nodes.delete"
+    "managedkafka.acls.create",
+    "managedkafka.acls.get",
+    "managedkafka.acls.update",
+    "managedkafka.acls.delete",
+
   ]
 }

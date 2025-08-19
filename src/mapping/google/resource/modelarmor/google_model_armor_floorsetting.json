@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "modelarmor.floorSettings.get",
+      "modelarmor.floorSettings.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

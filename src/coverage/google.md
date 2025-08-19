@@ -1,9 +1,9 @@
 # Google Resource Status
 
-| Terraform | Coverage % | Resources | Total Resources|
-|-----------|------------|-----------|-----------|
-| Resources | 62.21 | 749 | 1204 |
-| Datasource | 99.48 | 384 | 386 |
+| Terraform  | Coverage % | Resources | Total Resources |
+|------------|------------|-----------|-----------------|
+| Resources  | 62.79      | 756       | 1204            |
+| Datasource | 99.48      | 384       | 386             |
 
 ```shell
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -328,17 +328,10 @@
 ./resource.ps1 google_logging_project_bucket_config
 ./resource.ps1 google_looker_instance
 ./resource.ps1 google_lustre_instance
-./resource.ps1 google_managed_kafka_acl
-./resource.ps1 google_managed_kafka_cluster
-./resource.ps1 google_managed_kafka_connect_cluster
-./resource.ps1 google_managed_kafka_connector
-./resource.ps1 google_managed_kafka_topic
 ./resource.ps1 google_memorystore_instance_desired_user_created_endpoints
 ./resource.ps1 google_migration_center_group
 ./resource.ps1 google_migration_center_preference_set
 ./resource.ps1 google_ml_engine_model
-./resource.ps1 google_model_armor_floorsetting
-./resource.ps1 google_model_armor_template
 ./resource.ps1 google_netapp_active_directory
 ./resource.ps1 google_netapp_backup
 ./resource.ps1 google_netapp_backup_policy

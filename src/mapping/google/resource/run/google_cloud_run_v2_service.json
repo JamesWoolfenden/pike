@@ -8,6 +8,9 @@
       "run.operations.get"
     ],
     "attributes": {
+      "image_uri": [
+        "artifactregistry.repositories.downloadArtifacts"
+      ],
       "tags": []
     },
     "destroy": [

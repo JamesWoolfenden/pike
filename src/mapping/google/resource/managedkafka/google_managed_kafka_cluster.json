@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "managedkafka.operations.get",
+      "managedkafka.clusters.create",
+      "managedkafka.clusters.delete",
+      "managedkafka.clusters.get",
+      "managedkafka.clusters.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "managedkafka.connectClusters.create",
+      "managedkafka.connectClusters.delete",
+      "managedkafka.connectClusters.get",
+      "managedkafka.connectClusters.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

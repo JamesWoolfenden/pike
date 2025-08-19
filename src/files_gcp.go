@@ -2088,3 +2088,24 @@ var googleDialogflowFulfillment []byte
 
 //go:embed mapping/google/resource/dialogflow/google_dialogflow_intent.json
 var googleDialogflowIntent []byte
+
+//go:embed mapping/google/resource/managedkafka/google_managed_kafka_cluster.json
+var googleManagedKafkaCluster []byte
+
+//go:embed mapping/google/resource/managedkafka/google_managed_kafka_connect_cluster.json
+var googleManagedKafkaConnectCluster []byte
+
+//go:embed mapping/google/resource/managedkafka/google_managed_kafka_connector.json
+var googleManagedKafkaConnector []byte
+
+//go:embed mapping/google/resource/managedkafka/google_managed_kafka_topic.json
+var googleManagedKafkaTopics []byte
+
+//go:embed mapping/google/resource/modelarmor/google_model_armor_floorsetting.json
+var googleModelArmorFloorsetting []byte
+
+//go:embed mapping/google/resource/modelarmor/google_model_armor_template.json
+var googleModelArmorTemplate []byte
+
+//go:embed mapping/google/resource/managedkafka/google_managed_kafka_acl.json
+var googleManagedKafkaAcl []byte

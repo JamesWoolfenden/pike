@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "managedkafka.topics.create",
+      "managedkafka.topics.delete",
+      "managedkafka.topics.get",
+      "managedkafka.topics.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
