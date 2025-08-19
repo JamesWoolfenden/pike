@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "dialogflow.environments.create",
+      "dialogflow.environments.get",
+      "dialogflow.environments.update",
+      "dialogflow.environments.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

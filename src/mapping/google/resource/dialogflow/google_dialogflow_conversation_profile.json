@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "dialogflow.conversationProfiles.update",
+      "dialogflow.conversationProfiles.get",
+      "dialogflow.conversationProfiles.delete",
+      "dialogflow.conversationProfiles.create"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

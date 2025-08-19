@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "dialogflow.encryptionspec.update",
+      "dialogflow.encryptionspec.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

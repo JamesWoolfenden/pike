@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "dialogflow.securitySettings.create",
+      "dialogflow.securitySettings.get",
+      "dialogflow.securitySettings.update",
+      "dialogflow.securitySettings.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "securesourcemanager.instances.create",
+      "securesourcemanager.instances.get",
+      "securesourcemanager.instances.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

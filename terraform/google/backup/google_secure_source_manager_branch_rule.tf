@@ -1,0 +1,1 @@
+resource "google_secure_source_manager_branch_rule" "pike" {}

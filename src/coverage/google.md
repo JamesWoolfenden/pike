@@ -2,7 +2,7 @@
 
 | Terraform | Coverage % | Resources | Total Resources|
 |-----------|------------|-----------|-----------|
-| Resources | 60.38 | 727 | 1204 |
+| Resources | 62.21 | 749 | 1204 |
 | Datasource | 99.48 | 384 | 386 |
 
 ```shell
@@ -211,25 +211,6 @@
 ./resource.ps1 google_datastream_private_connection
 ./resource.ps1 google_datastream_stream
 ./resource.ps1 google_developer_connect_insights_config
-./resource.ps1 google_dialogflow_agent
-./resource.ps1 google_dialogflow_conversation_profile
-./resource.ps1 google_dialogflow_cx_agent
-./resource.ps1 google_dialogflow_cx_entity_type
-./resource.ps1 google_dialogflow_cx_environment
-./resource.ps1 google_dialogflow_cx_flow
-./resource.ps1 google_dialogflow_cx_generative_settings
-./resource.ps1 google_dialogflow_cx_generator
-./resource.ps1 google_dialogflow_cx_intent
-./resource.ps1 google_dialogflow_cx_page
-./resource.ps1 google_dialogflow_cx_playbook
-./resource.ps1 google_dialogflow_cx_security_settings
-./resource.ps1 google_dialogflow_cx_tool
-./resource.ps1 google_dialogflow_cx_version
-./resource.ps1 google_dialogflow_cx_webhook
-./resource.ps1 google_dialogflow_encryption_spec
-./resource.ps1 google_dialogflow_entity_type
-./resource.ps1 google_dialogflow_fulfillment
-./resource.ps1 google_dialogflow_intent
 ./resource.ps1 google_discovery_engine_chat_engine
 ./resource.ps1 google_discovery_engine_cmek_config
 ./resource.ps1 google_discovery_engine_data_store
@@ -459,9 +440,6 @@
 ./resource.ps1 google_scc_v2_project_mute_config
 ./resource.ps1 google_scc_v2_project_notification_config
 ./resource.ps1 google_scc_v2_project_scc_big_query_export
-./resource.ps1 google_secure_source_manager_branch_rule
-./resource.ps1 google_secure_source_manager_instance
-./resource.ps1 google_secure_source_manager_repository
 ./resource.ps1 google_security_scanner_scan_config
 ./resource.ps1 google_securityposture_posture
 ./resource.ps1 google_service_networking_peered_dns_domain

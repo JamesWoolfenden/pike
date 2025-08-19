@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "dialogflow.versions.create",
+      "dialogflow.versions.get",
+      "dialogflow.versions.update",
+      "dialogflow.versions.delete",
+      "dialogflow.operations.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

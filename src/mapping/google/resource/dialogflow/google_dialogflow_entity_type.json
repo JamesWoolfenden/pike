@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "dialogflow.entityTypes.update",
+      "dialogflow.entityTypes.get",
+      "dialogflow.entityTypes.delete",
+      "dialogflow.entityTypes.create"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

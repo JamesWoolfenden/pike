@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "dialogflow.pages.create",
+      "dialogflow.pages.get",
+      "dialogflow.pages.delete",
+      "dialogflow.pages.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

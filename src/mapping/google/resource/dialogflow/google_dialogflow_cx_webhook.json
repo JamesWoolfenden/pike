@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "dialogflow.webhooks.create",
+      "dialogflow.webhooks.delete",
+      "dialogflow.webhooks.get",
+      "dialogflow.webhooks.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

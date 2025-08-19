@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "dialogflow.intents.update",
+      "dialogflow.intents.get",
+      "dialogflow.intents.delete",
+      "dialogflow.intents.create"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

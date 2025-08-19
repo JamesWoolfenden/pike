@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "dialogflow.fulfillments.update",
+      "dialogflow.fulfillments.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

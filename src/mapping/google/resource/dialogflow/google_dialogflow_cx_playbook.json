@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "dialogflow.playbooks.create",
+      "dialogflow.playbooks.get",
+      "dialogflow.playbooks.update",
+      "dialogflow.playbooks.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

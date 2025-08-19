@@ -2022,3 +2022,69 @@ var googleEventarcPipeline []byte
 
 //go:embed mapping/google/resource/eventarc/google_eventarc_trigger.json
 var googleEventarcTrigger []byte
+
+//go:embed mapping/google/resource/securesourcemanager/google_secure_source_manager_branch_rule.json
+var googleSecureSourceManagerBranchRule []byte
+
+//go:embed mapping/google/resource/securesourcemanager/google_secure_source_manager_instance.json
+var googleSecureSourceManagerInstance []byte
+
+//go:embed mapping/google/resource/securesourcemanager/google_secure_source_manager_repository.json
+var googleSecureSourceManagerRepository []byte
+
+//go:embed mapping/google/resource/dialogflow/google_dialogflow_agent.json
+var googleDialogflowAgent []byte
+
+//go:embed mapping/google/resource/dialogflow/google_dialogflow_conversation_profile.json
+var googleDialogflowConversationProfile []byte
+
+//go:embed mapping/google/resource/dialogflow/google_dialogflow_cx_agent.json
+var googleDialogflowCxAgent []byte
+
+//go:embed mapping/google/resource/dialogflow/google_dialogflow_cx_entity_type.json
+var googleDialogflowCxEntityType []byte
+
+//go:embed mapping/google/resource/dialogflow/google_dialogflow_cx_environment.json
+var googleDialogflowCxEnvironment []byte
+
+//go:embed mapping/google/resource/dialogflow/google_dialogflow_cx_flow.json
+var googleDialogflowCxFlow []byte
+
+//go:embed mapping/google/resource/dialogflow/google_dialogflow_cx_generative_settings.json
+var googleDialogflowCxGenerativeSettings []byte
+
+//go:embed mapping/google/resource/dialogflow/google_dialogflow_cx_generator.json
+var googleDialogflowCxGenerator []byte
+
+//go:embed mapping/google/resource/dialogflow/google_dialogflow_cx_intent.json
+var googleDialogflowCxIntent []byte
+
+//go:embed mapping/google/resource/dialogflow/google_dialogflow_cx_page.json
+var googleDialogflowCxPage []byte
+
+//go:embed mapping/google/resource/dialogflow/google_dialogflow_cx_playbook.json
+var googleDialogflowCxPlaybook []byte
+
+//go:embed mapping/google/resource/dialogflow/google_dialogflow_cx_security_settings.json
+var googleDialogflowCxSecuritySettings []byte
+
+//go:embed mapping/google/resource/dialogflow/google_dialogflow_cx_tool.json
+var googleDialogflowCxTool []byte
+
+//go:embed mapping/google/resource/dialogflow/google_dialogflow_cx_version.json
+var googleDialogflowCxVersion []byte
+
+//go:embed mapping/google/resource/dialogflow/google_dialogflow_cx_webhook.json
+var googleDialogflowCxWebhook []byte
+
+//go:embed mapping/google/resource/dialogflow/google_dialogflow_encryption_spec.json
+var googleDialogflowEncryptionSpec []byte
+
+//go:embed mapping/google/resource/dialogflow/google_dialogflow_entity_type.json
+var googleDialogflowEntityType []byte
+
+//go:embed mapping/google/resource/dialogflow/google_dialogflow_fulfillment.json
+var googleDialogflowFulfillment []byte
+
+//go:embed mapping/google/resource/dialogflow/google_dialogflow_intent.json
+var googleDialogflowIntent []byte
