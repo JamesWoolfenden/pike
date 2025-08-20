@@ -2109,3 +2109,6 @@ var googleModelArmorTemplate []byte
 
 //go:embed mapping/google/resource/managedkafka/google_managed_kafka_acl.json
 var googleManagedKafkaAcl []byte
+
+//go:embed mapping/google/resource/certificatemanager/google_certificate_manager_dns_authorization.json
+var googleCertificateManagerDnsAuthorization []byte

@@ -810,4 +810,5 @@ var gCPTfLookup = map[string]interface{}{
 	"google_workstations_workstation_iam_binding":                   googleWorkstationsWorkstationIamBinding,
 	"google_workstations_workstation_iam_member":                    googleWorkstationsWorkstationIamMember,
 	"google_workstations_workstation_iam_policy":                    googleWorkstationsWorkstationIamPolicy,
+	"google_certificate_manager_dns_authorization":                  googleCertificateManagerDnsAuthorization,
 }

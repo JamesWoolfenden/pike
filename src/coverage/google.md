@@ -2,8 +2,8 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 62.79      | 756       | 1204            |
-| Datasource | 99.48      | 384       | 386             |
+| Resources  | 62.87      | 757       | 1204            |
+| Datasource | 100.00     | 386       | 386             |
 
 ```shell
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -61,7 +61,6 @@
 ./resource.ps1 google_certificate_manager_certificate_issuance_config
 ./resource.ps1 google_certificate_manager_certificate_map
 ./resource.ps1 google_certificate_manager_certificate_map_entry
-./resource.ps1 google_certificate_manager_dns_authorization
 ./resource.ps1 google_certificate_manager_trust_config
 ./resource.ps1 google_cloud_asset_folder_feed
 ./resource.ps1 google_cloud_asset_organization_feed
@@ -454,6 +453,4 @@
 ./resource.ps1 google_vertex_ai_rag_engine_config
 ./resource.ps1 google_vpc_access_connector
 ./resource.ps1 google_workbench_instance
-./resource.ps1 google_artifact_registry_tags -type data
-./resource.ps1 google_certificate_manager_dns_authorization -type data
 ```
