@@ -803,4 +803,8 @@ var gCPTfLookup = map[string]interface{}{
 	"google_dialogflow_entity_type":                                 googleDialogflowEntityType,
 	"google_dialogflow_fulfillment":                                 googleDialogflowFulfillment,
 	"google_dialogflow_intent":                                      googleDialogflowIntent,
+	"google_certificate_manager_dns_authorization":                  googleCertificateManagerDnsAuthorization,
+	"google_iap_web_region_forwarding_rule_service_iam_binding":     googleIapWebRegionForwardingRuleServiceIamBinding,
+	"google_iap_web_region_forwarding_rule_service_iam_member":      googleIapWebRegionForwardingRuleServiceIamMember,
+	"google_iap_web_region_forwarding_rule_service_iam_policy":      googleIapWebRegionForwardingRuleServiceIamPolicy,
 }

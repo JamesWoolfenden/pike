@@ -407,6 +407,10 @@ func GCPDataLookup(result string) interface{} {
 		"google_artifact_registry_repositories":                        dataGoogleArtifactRegistryRepositories,
 		"google_artifact_registry_version":                             dataGoogleArtifactRegistryVersion,
 		"google_artifact_registry_versions":                            dataGoogleArtifactRegistryVersions,
+		"google_artifact_registry_npm_package":                         dataGoogleArtifactRegistryNpmPackage,
+		"google_artifact_registry_tags":                                dataGoogleArtifactRegistryTags,
+		"google_iap_web_region_forwarding_rule_service_iam_policy":     dataGoogleIapWebRegionForwardingRuleServiceIamPolicy,
+		"google_certificate_manager_dns_authorization":                 dataGoogleCertificateManagerDnsAuthorization,
 	}
 
 	return TFLookup[result]

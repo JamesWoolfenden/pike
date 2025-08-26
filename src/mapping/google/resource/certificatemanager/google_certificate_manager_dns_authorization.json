@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "certificatemanager.operations.get",
+      "certificatemanager.operations.delete",
+      "certificatemanager.dnsauthorizations.get",
+      "certificatemanager.dnsauthorizations.delete",
+      "certificatemanager.dnsauthorizations.update",
+      "certificatemanager.dnsauthorizations.create"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

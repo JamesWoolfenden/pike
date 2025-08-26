@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "certificatemanager.operations.get",
+      "certificatemanager.dnsauthorizations.get"
+    ]
+  }
+]

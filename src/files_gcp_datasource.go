@@ -948,3 +948,15 @@ var dataGoogleArtifactRegistryVersion []byte
 
 //go:embed mapping/google/data/artifactregistry/google_artifact_registry_versions.json
 var dataGoogleArtifactRegistryVersions []byte
+
+//go:embed mapping/google/data/artifactregistry/google_artifact_registry_npm_package.json
+var dataGoogleArtifactRegistryNpmPackage []byte
+
+//go:embed mapping/google/data/artifactregistry/google_artifact_registry_tags.json
+var dataGoogleArtifactRegistryTags []byte
+
+//go:embed mapping/google/data/iap/google_iap_web_region_forwarding_rule_service_iam_policy.json
+var dataGoogleIapWebRegionForwardingRuleServiceIamPolicy []byte
+
+//go:embed mapping/google/data/certificatemanager/google_certificate_manager_dns_authorization.json
+var dataGoogleCertificateManagerDnsAuthorization []byte

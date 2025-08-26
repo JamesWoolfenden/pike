@@ -6,6 +6,9 @@
     },
     "destroy": [],
     "modify": [],
-    "plan": []
+    "plan": [
+      "artifactregistry.npmpackages.get",
+      "artifactregistry.npmpackages.list"
+    ]
   }
 ]
