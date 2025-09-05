@@ -293,6 +293,7 @@
         "aws_cognito_identity_pool_roles_attachment",
         "aws_cognito_identity_provider",
         "aws_cognito_log_delivery_configuration",
+        "aws_cognito_managed_login_branding",
         "aws_cognito_managed_user_pool_client",
         "aws_cognito_resource_server",
         "aws_cognito_risk_configuration",
