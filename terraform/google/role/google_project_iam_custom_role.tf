@@ -5,9 +5,12 @@ resource "google_project_iam_custom_role" "terraform_pike" {
   title       = "terraform_pike"
   description = "A user with least privileges"
   permissions = [
-    "certificatemanager.dnsauthorizations.create",
-    "certificatemanager.dnsauthorizations.get",
-    "certificatemanager.dnsauthorizations.update",
-    "certificatemanager.dnsauthorizations.delete"
+    "tpu.runtimeversions.list",
+    "storageinsights.reportConfigs.get",
+    "storage.buckets.get",
+    "storage.buckets.delete",
+    "storage.buckets.getIamPolicy",
+    "storageinsights.reportConfigs.delete",
+    "storage.buckets.setIamPolicy",
   ]
 }

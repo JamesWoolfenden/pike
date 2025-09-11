@@ -2,8 +2,8 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 62.87      |   757       |  1204            |
-| Datasource | 100.00      |   386       |   386             |
+| Resources  | 62.48      |   756       |  1210            |
+| Datasource | 99.23      |   387       |   390             |
 
 ```shell
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -210,6 +210,7 @@
 ./resource.ps1 google_datastream_private_connection
 ./resource.ps1 google_datastream_stream
 ./resource.ps1 google_developer_connect_insights_config
+./resource.ps1 google_discovery_engine_acl_config
 ./resource.ps1 google_discovery_engine_chat_engine
 ./resource.ps1 google_discovery_engine_cmek_config
 ./resource.ps1 google_discovery_engine_data_store
@@ -306,6 +307,9 @@
 ./resource.ps1 google_iap_client
 ./resource.ps1 google_iap_settings
 ./resource.ps1 google_iap_tunnel_dest_group
+./resource.ps1 google_iap_web_forwarding_rule_service_iam_binding
+./resource.ps1 google_iap_web_forwarding_rule_service_iam_member
+./resource.ps1 google_iap_web_forwarding_rule_service_iam_policy
 ./resource.ps1 google_identity_platform_config
 ./resource.ps1 google_identity_platform_default_supported_idp_config
 ./resource.ps1 google_identity_platform_inbound_saml_config
@@ -348,6 +352,7 @@
 ./resource.ps1 google_network_connectivity_regional_endpoint
 ./resource.ps1 google_network_connectivity_service_connection_policy
 ./resource.ps1 google_network_connectivity_spoke
+./resource.ps1 google_network_management_organization_vpc_flow_logs_config
 ./resource.ps1 google_network_management_vpc_flow_logs_config
 ./resource.ps1 google_network_security_address_group
 ./resource.ps1 google_network_security_authorization_policy
@@ -406,6 +411,8 @@
 ./resource.ps1 google_recaptcha_enterprise_key
 ./resource.ps1 google_resource_manager_capability
 ./resource.ps1 google_resource_manager_lien
+./resource.ps1 google_saas_runtime_saas
+./resource.ps1 google_saas_runtime_unit_kind
 ./resource.ps1 google_scc_event_threat_detection_custom_module
 ./resource.ps1 google_scc_folder_custom_module
 ./resource.ps1 google_scc_folder_notification_config
@@ -453,4 +460,7 @@
 ./resource.ps1 google_vertex_ai_rag_engine_config
 ./resource.ps1 google_vpc_access_connector
 ./resource.ps1 google_workbench_instance
+./resource.ps1 google_artifact_registry_python_package -type data
+./resource.ps1 google_backup_dr_data_source_references -type data
+./resource.ps1 google_iap_web_forwarding_rule_service_iam_policy -type data
 ```

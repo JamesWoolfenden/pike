@@ -1,15 +1,13 @@
 [
   {
-    "apply": [
-      "iap.webServices.getIamPolicy",
-      "iap.webServices.setIamPolicy"
-    ],
+    "apply": [],
     "attributes": {
       "tags": []
     },
     "destroy": [],
     "modify": [],
     "plan": [
+      "certificatemanager.dnsauthorizations.list",
       "iap.webServices.getIamPolicy"
     ]
   }

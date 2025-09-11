@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "artifactregistry.npmpackages.get",
+      "artifactregistry.npmpackages.list"
+    ]
+  }
+]

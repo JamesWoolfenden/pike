@@ -1,7 +1,7 @@
 data "google_artifact_registry_tags" "pike" {
-  repository_id = "pike"
-  package_name  = "pike"
   location      = "us-central1"
+  package_name  = "pike"
+  repository_id = "pike"
 }
 
 output "google_artifact_registry_tags" {

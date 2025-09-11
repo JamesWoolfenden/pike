@@ -1,9 +1,9 @@
 # Azure Resource Status
 
-| Terraform | Coverage % | Resources | Total Resources|
-|-----------|------------|-----------|-----------|
-| Resources | 4.45 | 49 | 1102 |
-| Datasource | 33.15 | 122 | 368 |
+| Terraform  | Coverage % | Resources | Total Resources |
+|------------|------------|-----------|-----------------|
+| Resources  | 4.44      |    49       |  1104            |
+| Datasource | 32.88      |   122       |   371             |
 
 ```shell
 ./resource.ps1 azurerm_aadb2c_directory
@@ -659,6 +659,7 @@
 ./resource.ps1 azurerm_network_manager_connectivity_configuration
 ./resource.ps1 azurerm_network_manager_deployment
 ./resource.ps1 azurerm_network_manager_ipam_pool
+./resource.ps1 azurerm_network_manager_ipam_pool_static_cidr
 ./resource.ps1 azurerm_network_manager_management_group_connection
 ./resource.ps1 azurerm_network_manager_network_group
 ./resource.ps1 azurerm_network_manager_routing_configuration
@@ -680,6 +681,7 @@
 ./resource.ps1 azurerm_notification_hub_authorization_rule
 ./resource.ps1 azurerm_notification_hub_namespace
 ./resource.ps1 azurerm_oracle_autonomous_database
+./resource.ps1 azurerm_oracle_autonomous_database_backup
 ./resource.ps1 azurerm_oracle_cloud_vm_cluster
 ./resource.ps1 azurerm_oracle_exadata_infrastructure
 ./resource.ps1 azurerm_orbital_contact
@@ -1208,6 +1210,7 @@
 ./resource.ps1 azurerm_managed_api -type data
 ./resource.ps1 azurerm_managed_application_definition -type data
 ./resource.ps1 azurerm_managed_disk -type data
+./resource.ps1 azurerm_managed_disks -type data
 ./resource.ps1 azurerm_management_group -type data
 ./resource.ps1 azurerm_management_group_template_deployment -type data
 ./resource.ps1 azurerm_maps_account -type data
@@ -1249,6 +1252,8 @@
 ./resource.ps1 azurerm_oracle_adbs_character_sets -type data
 ./resource.ps1 azurerm_oracle_adbs_national_character_sets -type data
 ./resource.ps1 azurerm_oracle_autonomous_database -type data
+./resource.ps1 azurerm_oracle_autonomous_database_backup -type data
+./resource.ps1 azurerm_oracle_autonomous_database_backups -type data
 ./resource.ps1 azurerm_oracle_cloud_vm_cluster -type data
 ./resource.ps1 azurerm_oracle_db_nodes -type data
 ./resource.ps1 azurerm_oracle_db_servers -type data

@@ -2112,3 +2112,12 @@ var googleManagedKafkaAcl []byte
 
 //go:embed mapping/google/resource/certificatemanager/google_certificate_manager_dns_authorization.json
 var googleCertificateManagerDnsAuthorization []byte
+
+//go:embed mapping/google/resource/iap/google_iap_web_region_forwarding_rule_service_iam_binding.json
+var googleIapWebRegionForwardingRuleServiceIamBinding []byte
+
+//go:embed mapping/google/resource/iap/google_iap_web_region_forwarding_rule_service_iam_member.json
+var googleIapWebRegionForwardingRuleServiceIamMember []byte
+
+//go:embed mapping/google/resource/iap/google_iap_web_region_forwarding_rule_service_iam_policy.json
+var googleIapWebRegionForwardingRuleServiceIamPolicy []byte
