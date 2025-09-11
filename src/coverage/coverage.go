@@ -129,10 +129,10 @@ func resourceTable(missing members, data members, cloud string) string {
 	Prepend := fmt.Sprintf("# %s Resource Status\n\n", cloud)
 	Prepend += fmt.Sprintf("| Terraform  | Coverage %% | Resources | Total Resources |\n")
 	Prepend += fmt.Sprintf("|------------|------------|-----------|-----------------|\n")
-	Prepend += fmt.Sprintf("| Resources  | %3.2f      | %d       | %d            |\n",
+	Prepend += fmt.Sprintf("| Resources  | %3.2f      | %5d       | %5d            |\n",
 		percent(missing.Resources, data.Resources),
 		len(data.Resources)-len(missing.Resources), len(data.Resources))
-	Prepend += fmt.Sprintf("| Datasource | %3.2f      | %d       | %d             |\n\n",
+	Prepend += fmt.Sprintf("| Datasource | %3.2f      | %5d       | %5d             |\n\n",
 		percent(missing.DataSources, data.DataSources),
 		len(data.DataSources)-len(missing.DataSources), len(data.DataSources))
 	return Prepend

@@ -7,6 +7,10 @@
       "compute.regionTargetHttpsProxies.delete"
     ],
     "attributes": {
+      "ssl_certificates": [
+        "compute.regionSslCertificates.get",
+        "compute.regionTargetHttpsProxies.setSslCertificates"
+      ],
       "tags": []
     },
     "destroy": [],
