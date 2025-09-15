@@ -2,7 +2,7 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 97.84      |  1498       |  1531            |
+| Resources  | 97.78      |  1498       |  1532            |
 | Datasource | 100.00      |   596       |   596             |
 
 ```shell
@@ -12,6 +12,7 @@
 ./resource.ps1 aws_cognito_log_delivery_configuration
 ./resource.ps1 aws_cognito_managed_login_branding
 ./resource.ps1 aws_connect_phone_number_contact_flow_association
+./resource.ps1 aws_controltower_baseline
 ./resource.ps1 aws_fsx_s3_access_point_attachment
 ./resource.ps1 aws_nat_gateway_eip_association
 ./resource.ps1 aws_networkfirewall_firewall_transit_gateway_attachment_accepter

@@ -2,8 +2,8 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 62.48      |   756       |  1210            |
-| Datasource | 99.23      |   387       |   390             |
+| Resources  | 62.17      |   756       |  1216            |
+| Datasource | 98.22      |   387       |   394             |
 
 ```shell
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -53,6 +53,10 @@
 ./resource.ps1 google_artifact_registry_vpcsc_config
 ./resource.ps1 google_assured_workloads_workload
 ./resource.ps1 google_bigquery_analytics_hub_data_exchange_subscription
+./resource.ps1 google_bigquery_datapolicyv2_data_policy
+./resource.ps1 google_bigquery_datapolicyv2_data_policy_iam_binding
+./resource.ps1 google_bigquery_datapolicyv2_data_policy_iam_member
+./resource.ps1 google_bigquery_datapolicyv2_data_policy_iam_policy
 ./resource.ps1 google_billing_subaccount
 ./resource.ps1 google_binary_authorization_attestor
 ./resource.ps1 google_binary_authorization_policy
@@ -411,6 +415,7 @@
 ./resource.ps1 google_recaptcha_enterprise_key
 ./resource.ps1 google_resource_manager_capability
 ./resource.ps1 google_resource_manager_lien
+./resource.ps1 google_saas_runtime_release
 ./resource.ps1 google_saas_runtime_saas
 ./resource.ps1 google_saas_runtime_unit_kind
 ./resource.ps1 google_scc_event_threat_detection_custom_module
@@ -439,6 +444,7 @@
 ./resource.ps1 google_scc_v2_project_mute_config
 ./resource.ps1 google_scc_v2_project_notification_config
 ./resource.ps1 google_scc_v2_project_scc_big_query_export
+./resource.ps1 google_secure_source_manager_hook
 ./resource.ps1 google_security_scanner_scan_config
 ./resource.ps1 google_securityposture_posture
 ./resource.ps1 google_service_networking_peered_dns_domain
@@ -460,7 +466,11 @@
 ./resource.ps1 google_vertex_ai_rag_engine_config
 ./resource.ps1 google_vpc_access_connector
 ./resource.ps1 google_workbench_instance
+./resource.ps1 google_artifact_registry_maven_artifact -type data
 ./resource.ps1 google_artifact_registry_python_package -type data
+./resource.ps1 google_backup_dr_backup_plan_associations -type data
+./resource.ps1 google_backup_dr_data_source_reference -type data
 ./resource.ps1 google_backup_dr_data_source_references -type data
+./resource.ps1 google_bigquery_datapolicyv2_data_policy_iam_policy -type data
 ./resource.ps1 google_iap_web_forwarding_rule_service_iam_policy -type data
 ```
