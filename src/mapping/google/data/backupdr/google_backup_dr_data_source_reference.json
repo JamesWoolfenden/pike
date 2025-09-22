@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "backupdr.dataSourceReferences.fetchForAlloydbCluster",
+      "backupdr.dataSourceReferences.fetchForCloudSqlInstance"
+    ]
+  }
+]

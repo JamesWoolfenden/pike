@@ -2,8 +2,8 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 97.78      |  1498       |  1532            |
-| Datasource | 100.00      |   596       |   596             |
+| Resources  | 97.46      |  1498       |  1537            |
+| Datasource | 97.55      |   598       |   613             |
 
 ```shell
 ./resource.ps1 aws_appsync_api
@@ -17,6 +17,11 @@
 ./resource.ps1 aws_nat_gateway_eip_association
 ./resource.ps1 aws_networkfirewall_firewall_transit_gateway_attachment_accepter
 ./resource.ps1 aws_networkfirewall_vpc_endpoint_association
+./resource.ps1 aws_odb_cloud_autonomous_vm_cluster
+./resource.ps1 aws_odb_cloud_exadata_infrastructure
+./resource.ps1 aws_odb_cloud_vm_cluster
+./resource.ps1 aws_odb_network
+./resource.ps1 aws_odb_network_peering_connection
 ./resource.ps1 aws_prometheus_query_logging_configuration
 ./resource.ps1 aws_quicksight_custom_permissions
 ./resource.ps1 aws_quicksight_ip_restriction
@@ -40,4 +45,19 @@
 ./resource.ps1 aws_workspacesweb_trust_store_association
 ./resource.ps1 aws_workspacesweb_user_access_logging_settings_association
 ./resource.ps1 aws_workspacesweb_user_settings_association
+./resource.ps1 aws_billing_views -type data
+./resource.ps1 aws_media_convert_queue -type data
+./resource.ps1 aws_memorydb_acl -type data
+./resource.ps1 aws_memorydb_cluster -type data
+./resource.ps1 aws_memorydb_parameter_group -type data
+./resource.ps1 aws_memorydb_snapshot -type data
+./resource.ps1 aws_memorydb_subnet_group -type data
+./resource.ps1 aws_memorydb_user -type data
+./resource.ps1 aws_odb_cloud_autonomous_vm_cluster -type data
+./resource.ps1 aws_odb_cloud_exadata_infrastructure -type data
+./resource.ps1 aws_odb_cloud_vm_cluster -type data
+./resource.ps1 aws_odb_network -type data
+./resource.ps1 aws_odb_network_peering_connection -type data
+./resource.ps1 aws_securityhub_standards_control_associations -type data
+./resource.ps1 aws_workspaces_workspace -type data
 ```

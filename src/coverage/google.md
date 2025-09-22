@@ -2,8 +2,8 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 62.17      |   756       |  1216            |
-| Datasource | 98.22      |   387       |   394             |
+| Resources  | 62.12      |   756       |  1217            |
+| Datasource | 99.24      |   393       |   396             |
 
 ```shell
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -395,6 +395,7 @@
 ./resource.ps1 google_network_services_service_lb_policies
 ./resource.ps1 google_network_services_tcp_route
 ./resource.ps1 google_network_services_tls_route
+./resource.ps1 google_network_services_wasm_plugin
 ./resource.ps1 google_oracle_database_autonomous_database
 ./resource.ps1 google_oracle_database_cloud_exadata_infrastructure
 ./resource.ps1 google_oracle_database_cloud_vm_cluster
@@ -467,10 +468,6 @@
 ./resource.ps1 google_vpc_access_connector
 ./resource.ps1 google_workbench_instance
 ./resource.ps1 google_artifact_registry_maven_artifact -type data
-./resource.ps1 google_artifact_registry_python_package -type data
-./resource.ps1 google_backup_dr_backup_plan_associations -type data
-./resource.ps1 google_backup_dr_data_source_reference -type data
-./resource.ps1 google_backup_dr_data_source_references -type data
-./resource.ps1 google_bigquery_datapolicyv2_data_policy_iam_policy -type data
-./resource.ps1 google_iap_web_forwarding_rule_service_iam_policy -type data
+./resource.ps1 google_compute_interconnect_location -type data
+./resource.ps1 google_compute_interconnect_locations -type data
 ```

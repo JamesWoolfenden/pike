@@ -960,3 +960,21 @@ var dataGoogleIapWebRegionForwardingRuleServiceIamPolicy []byte
 
 //go:embed mapping/google/data/certificatemanager/google_certificate_manager_dns_authorization.json
 var dataGoogleCertificateManagerDnsAuthorization []byte
+
+//go:embed mapping/google/data/artifactregistry/google_artifact_registry_python_package.json
+var dataGoogleArtifactRegistryPythonPackage []byte
+
+//go:embed mapping/google/data/backupdr/google_backup_dr_backup_plan_associations.json
+var dataGoogleBackupDrPlanAssociations []byte
+
+//go:embed mapping/google/data/backupdr/google_backup_dr_data_source_reference.json
+var dataGoogleBackupDrDataSourceReference []byte
+
+//go:embed mapping/google/data/backupdr/google_backup_dr_data_source_references.json
+var dataGoogleBackupDrDataSourceReferences []byte
+
+//go:embed mapping/google/data/bigquery/google_bigquery_datapolicyv2_data_policy_iam_policy.json
+var dataGoogleBigqueryDatapolicyv2DataPolicyIamPolicy []byte
+
+//go:embed mapping/google/data/iap/google_iap_web_forwarding_rule_service_iam_policy.json
+var dataGoogleIapForwardingRuleServiceIamPolicy []byte

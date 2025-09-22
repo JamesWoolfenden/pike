@@ -5,12 +5,18 @@ resource "google_project_iam_custom_role" "terraform_pike" {
   title       = "terraform_pike"
   description = "A user with least privileges"
   permissions = [
-    "tpu.runtimeversions.list",
-    "storageinsights.reportConfigs.get",
-    "storage.buckets.get",
-    "storage.buckets.delete",
-    "storage.buckets.getIamPolicy",
-    "storageinsights.reportConfigs.delete",
-    "storage.buckets.setIamPolicy",
+    "artifactregistry.pythonpackages.list",
+    "bigquery.dataPolicies.getIamPolicy",
+    "iap.webServices.getIamPolicy",
+    "backupdr.dataSourceReferences.fetchForAlloydbCluster",
+    "backupdr.dataSourceReferences.fetchForCloudSqlInstance",
+    "backupdr.backupPlanAssociations.fetchForAlloydbCluster",
+    "backupdr.backupPlanAssociations.fetchForCloudSqlInstance",
+    "backupdr.backupPlanAssociations.fetchForComputeDisk",
+    "backupdr.backupPlanAssociations.fetchForComputeInstance",
+    "backupdr.backupPlanAssociations.getForAlloydbCluster",
+    "backupdr.backupPlanAssociations.getForCloudSqlInstance",
+    "backupdr.backupPlanAssociations.getForComputeDisk",
+    "backupdr.backupPlanAssociations.getForComputeInstance"
   ]
 }

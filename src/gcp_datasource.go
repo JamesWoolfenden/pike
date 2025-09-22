@@ -411,6 +411,12 @@ func GCPDataLookup(result string) interface{} {
 		"google_artifact_registry_tags":                                dataGoogleArtifactRegistryTags,
 		"google_iap_web_region_forwarding_rule_service_iam_policy":     dataGoogleIapWebRegionForwardingRuleServiceIamPolicy,
 		"google_certificate_manager_dns_authorization":                 dataGoogleCertificateManagerDnsAuthorization,
+		"google_artifact_registry_python_package":                      dataGoogleArtifactRegistryPythonPackage,
+		"google_backup_dr_backup_plan_associations":                    dataGoogleBackupDrPlanAssociations,
+		"google_backup_dr_data_source_reference":                       dataGoogleBackupDrDataSourceReference,
+		"google_backup_dr_data_source_references":                      dataGoogleBackupDrDataSourceReferences,
+		"google_bigquery_datapolicyv2_data_policy_iam_policy":          dataGoogleBigqueryDatapolicyv2DataPolicyIamPolicy,
+		"google_iap_web_forwarding_rule_service_iam_policy":            dataGoogleIapForwardingRuleServiceIamPolicy,
 	}
 
 	return TFLookup[result]

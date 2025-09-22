@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "backupdr.backupPlanAssociations.fetchForAlloydbCluster",
+      "backupdr.backupPlanAssociations.fetchForCloudSqlInstance",
+      "backupdr.backupPlanAssociations.fetchForComputeDisk",
+      "backupdr.backupPlanAssociations.fetchForComputeInstance",
+      "backupdr.backupPlanAssociations.getForAlloydbCluster",
+      "backupdr.backupPlanAssociations.getForCloudSqlInstance",
+      "backupdr.backupPlanAssociations.getForComputeDisk",
+      "backupdr.backupPlanAssociations.getForComputeInstance"
+    ]
+  }
+]
