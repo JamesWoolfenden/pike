@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "securityhub:ListStandardsControlAssociations",
+      "securityhub:DescribeStandardsControls"
+    ]
+  }
+]

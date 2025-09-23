@@ -45,19 +45,5 @@
 ./resource.ps1 aws_workspacesweb_trust_store_association
 ./resource.ps1 aws_workspacesweb_user_access_logging_settings_association
 ./resource.ps1 aws_workspacesweb_user_settings_association
-./resource.ps1 aws_billing_views -type data
-./resource.ps1 aws_media_convert_queue -type data
-./resource.ps1 aws_memorydb_acl -type data
-./resource.ps1 aws_memorydb_cluster -type data
-./resource.ps1 aws_memorydb_parameter_group -type data
-./resource.ps1 aws_memorydb_snapshot -type data
-./resource.ps1 aws_memorydb_subnet_group -type data
-./resource.ps1 aws_memorydb_user -type data
-./resource.ps1 aws_odb_cloud_autonomous_vm_cluster -type data
-./resource.ps1 aws_odb_cloud_exadata_infrastructure -type data
-./resource.ps1 aws_odb_cloud_vm_cluster -type data
-./resource.ps1 aws_odb_network -type data
-./resource.ps1 aws_odb_network_peering_connection -type data
-./resource.ps1 aws_securityhub_standards_control_associations -type data
-./resource.ps1 aws_workspaces_workspace -type data
+
 ```

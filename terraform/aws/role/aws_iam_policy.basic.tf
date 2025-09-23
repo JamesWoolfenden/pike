@@ -7,8 +7,48 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "VisualEditor0",
         "Effect" : "Allow",
         "Action" : [
-          "ecr:ListImages",
-          "s3:ListAccessPoints"
+          //aws_prometheus_workspace
+          //placeholder
+
+          //aws_prometheus_query_logging_configuration.example
+          //placeholder
+
+          //aws_cloudwatch_log_group.example
+          //placeholder
+
+          //aws_billing_views
+          "billing:ListBillingViews",
+
+          //aws_media_convert_queue
+          "mediaconvert:GetQueue",
+          "mediaconvert:ListTagsForResource",
+
+          //aws_memorydb_acl
+          "memorydb:DescribeACLs",
+
+          //aws_memorydb_cluster
+          "memorydb:DescribeClusters",
+
+          //aws_memorydb_parameter_group
+          "memorydb:DescribeParameterGroups",
+
+          //aws_memorydb_snapshot
+          "memorydb:DescribeSnapshots",
+
+          //aws_memorydb_subnet_group
+          "memorydb:DescribeSubnetGroups",
+          "memorydb:ListTags",
+
+          //aws_memorydb_user
+          "memorydb:DescribeUser",
+          "memorydb:DescribeUsers",
+
+          //aws_securityhub_standards_control_associations
+          "securityhub:ListStandardsControlAssociations",
+          "securityhub:DescribeStandardsControls",
+
+          //aws_workspaces_workspace
+          "workspaces:DescribeWorkspaces"
         ],
         "Resource" : [
           "*"

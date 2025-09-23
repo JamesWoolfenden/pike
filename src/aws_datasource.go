@@ -608,6 +608,16 @@ var tFLookupDataAWS = map[string]interface{}{
 	"aws_dynamodb_tables":                                                   dataAwsDynamodbTables,
 	"aws_ecr_images":                                                        dataAwsEcrImages,
 	"aws_s3_access_point":                                                   dataAwsS3AccessPoint,
+	"aws_billing_views":                                                     dataAwsBillingViews,
+	"aws_media_convert_queue":                                               dataAwsMediaConvertQueue,
+	"aws_memorydb_acl":                                                      dataAwsMemorydbAcl,
+	"aws_memorydb_cluster":                                                  dataAwsMemorydbCluster,
+	"aws_memorydb_parameter_group":                                          dataAwsMemorydbParameterGroup,
+	"aws_memorydb_snapshot":                                                 dataAwsMemorydbSnapshot,
+	"aws_memorydb_subnet_group":                                             dataAwsMemorydbSubnetGroup,
+	"aws_memorydb_user":                                                     dataAwsMemorydbUser,
+	"aws_securityhub_standards_control_associations":                        dataAwsSecurityhubStandardsControlAssociations,
+	"aws_workspaces_workspace":                                              dataAwsWorkspacesWorkspace,
 }
 
 // GetAWSDataPermissions gets permissions required for datasource's.

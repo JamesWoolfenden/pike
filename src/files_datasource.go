@@ -1614,3 +1614,33 @@ var dataAwsEcrImages []byte
 
 //go:embed  mapping/aws/data/s3/aws_s3_access_point.json
 var dataAwsS3AccessPoint []byte
+
+//go:embed  mapping/aws/data/billing/aws_billing_views.json
+var dataAwsBillingViews []byte
+
+//go:embed  mapping/aws/data/mediaconvert/aws_media_convert_queue.json
+var dataAwsMediaConvertQueue []byte
+
+//go:embed  mapping/aws/data/memorydb/aws_memorydb_acl.json
+var dataAwsMemorydbAcl []byte
+
+//go:embed  mapping/aws/data/memorydb/aws_memorydb_cluster.json
+var dataAwsMemorydbCluster []byte
+
+//go:embed  mapping/aws/data/memorydb/aws_memorydb_parameter_group.json
+var dataAwsMemorydbParameterGroup []byte
+
+//go:embed  mapping/aws/data/memorydb/aws_memorydb_snapshot.json
+var dataAwsMemorydbSnapshot []byte
+
+//go:embed  mapping/aws/data/memorydb/aws_memorydb_subnet_group.json
+var dataAwsMemorydbSubnetGroup []byte
+
+//go:embed  mapping/aws/data/memorydb/aws_memorydb_user.json
+var dataAwsMemorydbUser []byte
+
+//go:embed  mapping/aws/data/securityhub/aws_securityhub_standards_control_associations.json
+var dataAwsSecurityhubStandardsControlAssociations []byte
+
+//go:embed  mapping/aws/data/workspaces/aws_workspaces_workspace.json
+var dataAwsWorkspacesWorkspace []byte
