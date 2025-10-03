@@ -60,6 +60,7 @@
         "azurerm_api_management_tag",
         "azurerm_api_management_user",
         "azurerm_api_management_workspace",
+        "azurerm_api_management_workspace_policy",
         "azurerm_app_configuration",
         "azurerm_app_configuration_feature",
         "azurerm_app_configuration_key",
