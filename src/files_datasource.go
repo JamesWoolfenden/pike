@@ -1644,3 +1644,54 @@ var dataAwsSecurityhubStandardsControlAssociations []byte
 
 //go:embed  mapping/aws/data/workspaces/aws_workspaces_workspace.json
 var dataAwsWorkspacesWorkspace []byte
+
+//go:embed  mapping/aws/data/appconfig/aws_appconfig_application.json
+var dataAwsAppconfigApplication []byte
+
+//go:embed  mapping/aws/data/odb/aws_odb_cloud_autonomous_vm_cluster.json
+var dataAwsOdbCloudAutonomousVmCluster []byte
+
+//go:embed  mapping/aws/data/odb/aws_odb_cloud_autonomous_vm_clusters.json
+var dataAwsOdbCloudAutonomousVmClusters []byte
+
+//go:embed  mapping/aws/data/odb/aws_odb_cloud_exadata_infrastructure.json
+var dataAwsOdbCloudExadataInfrastructure []byte
+
+//go:embed  mapping/aws/data/odb/aws_odb_cloud_exadata_infrastructures.json
+var dataAwsOdbCloudExadataInfrastructures []byte
+
+//go:embed  mapping/aws/data/odb/aws_odb_cloud_vm_cluster.json
+var dataAwsOdbCloudVmCluster []byte
+
+//go:embed  mapping/aws/data/odb/aws_odb_cloud_vm_clusters.json
+var dataAwsOdbCloudVmClusters []byte
+
+//go:embed  mapping/aws/data/odb/aws_odb_db_node.json
+var dataAwsOdbDbNode []byte
+
+//go:embed  mapping/aws/data/odb/aws_odb_db_nodes.json
+var dataAwsOdbDbNodes []byte
+
+//go:embed  mapping/aws/data/odb/aws_odb_db_server.json
+var dataAwsOdbServer []byte
+
+//go:embed  mapping/aws/data/odb/aws_odb_db_servers.json
+var dataAwsOdbServers []byte
+
+//go:embed  mapping/aws/data/odb/aws_odb_db_system_shapes.json
+var dataAwsOdbDbSystemShapes []byte
+
+//go:embed  mapping/aws/data/odb/aws_odb_gi_versions.json
+var dataAwsOdbGiVersions []byte
+
+//go:embed  mapping/aws/data/odb/aws_odb_network.json
+var dataAwsOdbNetwork []byte
+
+//go:embed  mapping/aws/data/odb/aws_odb_network_peering_connection.json
+var dataAwsOdbNetworkPeeringConnection []byte
+
+//go:embed  mapping/aws/data/odb/aws_odb_network_peering_connections.json
+var dataAwsOdbNetworkPeeringConnections []byte
+
+//go:embed  mapping/aws/data/odb/aws_odb_networks.json
+var dataAwsOdbNetworks []byte

@@ -618,6 +618,23 @@ var tFLookupDataAWS = map[string]interface{}{
 	"aws_memorydb_user":                                                     dataAwsMemorydbUser,
 	"aws_securityhub_standards_control_associations":                        dataAwsSecurityhubStandardsControlAssociations,
 	"aws_workspaces_workspace":                                              dataAwsWorkspacesWorkspace,
+	"aws_appconfig_application":                                             dataAwsAppconfigApplication,
+	"aws_odb_cloud_autonomous_vm_cluster":                                   dataAwsOdbCloudAutonomousVmCluster,
+	"aws_odb_cloud_autonomous_vm_clusters":                                  dataAwsOdbCloudAutonomousVmClusters,
+	"aws_odb_cloud_exadata_infrastructure":                                  dataAwsOdbCloudExadataInfrastructure,
+	"aws_odb_cloud_exadata_infrastructures":                                 dataAwsOdbCloudExadataInfrastructures,
+	"aws_odb_cloud_vm_cluster":                                              dataAwsOdbCloudVmCluster,
+	"aws_odb_cloud_vm_clusters":                                             dataAwsOdbCloudVmClusters,
+	"aws_odb_db_node":                                                       dataAwsOdbDbNode,
+	"aws_odb_db_nodes":                                                      dataAwsOdbDbNodes,
+	"aws_odb_db_server":                                                     dataAwsOdbServer,
+	"aws_odb_db_servers":                                                    dataAwsOdbServers,
+	"aws_odb_db_system_shapes":                                              dataAwsOdbDbSystemShapes,
+	"aws_odb_gi_versions":                                                   dataAwsOdbGiVersions,
+	"aws_odb_network":                                                       dataAwsOdbNetwork,
+	"aws_odb_network_peering_connection":                                    dataAwsOdbNetworkPeeringConnection,
+	"aws_odb_network_peering_connections":                                   dataAwsOdbNetworkPeeringConnections,
+	"aws_odb_networks":                                                      dataAwsOdbNetworks,
 }
 
 // GetAWSDataPermissions gets permissions required for datasource's.

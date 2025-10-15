@@ -1,6 +1,8 @@
 [
   {
-    "apply": [],
+    "apply": [
+      "odb:ListCloudAutonomousVmClusters"
+    ],
     "attributes": {
       "tags": []
     },
