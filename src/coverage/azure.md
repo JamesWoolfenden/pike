@@ -2,8 +2,8 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 4.44      |    49       |  1104            |
-| Datasource | 31.04      |   122       |   393             |
+| Resources  | 4.43      |    49       |  1107            |
+| Datasource | 30.89      |   122       |   395             |
 
 ```shell
 ./resource.ps1 azurerm_aadb2c_directory
@@ -65,6 +65,7 @@
 ./resource.ps1 azurerm_api_management_tag
 ./resource.ps1 azurerm_api_management_user
 ./resource.ps1 azurerm_api_management_workspace
+./resource.ps1 azurerm_api_management_workspace_policy
 ./resource.ps1 azurerm_app_configuration_feature
 ./resource.ps1 azurerm_app_configuration_key
 ./resource.ps1 azurerm_app_service_active_slot
@@ -682,6 +683,8 @@
 ./resource.ps1 azurerm_notification_hub_namespace
 ./resource.ps1 azurerm_oracle_autonomous_database
 ./resource.ps1 azurerm_oracle_autonomous_database_backup
+./resource.ps1 azurerm_oracle_autonomous_database_clone_from_backup
+./resource.ps1 azurerm_oracle_autonomous_database_clone_from_database
 ./resource.ps1 azurerm_oracle_cloud_vm_cluster
 ./resource.ps1 azurerm_oracle_exadata_infrastructure
 ./resource.ps1 azurerm_orbital_contact
@@ -1274,6 +1277,8 @@
 ./resource.ps1 azurerm_oracle_autonomous_database -type data
 ./resource.ps1 azurerm_oracle_autonomous_database_backup -type data
 ./resource.ps1 azurerm_oracle_autonomous_database_backups -type data
+./resource.ps1 azurerm_oracle_autonomous_database_clone_from_backup -type data
+./resource.ps1 azurerm_oracle_autonomous_database_clone_from_database -type data
 ./resource.ps1 azurerm_oracle_cloud_vm_cluster -type data
 ./resource.ps1 azurerm_oracle_db_nodes -type data
 ./resource.ps1 azurerm_oracle_db_servers -type data

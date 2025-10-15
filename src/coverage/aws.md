@@ -2,8 +2,8 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 97.46      |  1498       |  1537            |
-| Datasource | 97.55      |   598       |   613             |
+| Resources  | 97.15      |  1498       |  1542            |
+| Datasource | 97.28      |   608       |   625             |
 
 ```shell
 ./resource.ps1 aws_appsync_api
@@ -14,6 +14,7 @@
 ./resource.ps1 aws_connect_phone_number_contact_flow_association
 ./resource.ps1 aws_controltower_baseline
 ./resource.ps1 aws_fsx_s3_access_point_attachment
+./resource.ps1 aws_lakeformation_lf_tag_expression
 ./resource.ps1 aws_nat_gateway_eip_association
 ./resource.ps1 aws_networkfirewall_firewall_transit_gateway_attachment_accepter
 ./resource.ps1 aws_networkfirewall_vpc_endpoint_association
@@ -23,6 +24,7 @@
 ./resource.ps1 aws_odb_network
 ./resource.ps1 aws_odb_network_peering_connection
 ./resource.ps1 aws_prometheus_query_logging_configuration
+./resource.ps1 aws_prometheus_resource_policy
 ./resource.ps1 aws_quicksight_custom_permissions
 ./resource.ps1 aws_quicksight_ip_restriction
 ./resource.ps1 aws_quicksight_key_registration
@@ -30,6 +32,9 @@
 ./resource.ps1 aws_quicksight_user_custom_permission
 ./resource.ps1 aws_s3_bucket_metadata_configuration
 ./resource.ps1 aws_timestreaminfluxdb_db_cluster
+./resource.ps1 aws_transfer_host_key
+./resource.ps1 aws_transfer_web_app
+./resource.ps1 aws_transfer_web_app_customization
 ./resource.ps1 aws_vpc_route_server_endpoint
 ./resource.ps1 aws_vpc_route_server_peer
 ./resource.ps1 aws_wafv2_web_acl_rule_group_association
@@ -45,5 +50,4 @@
 ./resource.ps1 aws_workspacesweb_trust_store_association
 ./resource.ps1 aws_workspacesweb_user_access_logging_settings_association
 ./resource.ps1 aws_workspacesweb_user_settings_association
-
 ```

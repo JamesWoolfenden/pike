@@ -2,8 +2,8 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 62.12      |   756       |  1217            |
-| Datasource | 99.24      |   393       |   396             |
+| Resources  | 61.51      |   756       |  1229            |
+| Datasource | 98.74      |   393       |   398             |
 
 ```shell
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -18,10 +18,12 @@
 ./resource.ps1 google_active_directory_peering
 ./resource.ps1 google_apigee_addons_config
 ./resource.ps1 google_apigee_api
+./resource.ps1 google_apigee_api_deployment
 ./resource.ps1 google_apigee_api_product
 ./resource.ps1 google_apigee_app_group
 ./resource.ps1 google_apigee_control_plane_access
 ./resource.ps1 google_apigee_developer
+./resource.ps1 google_apigee_developer_app
 ./resource.ps1 google_apigee_dns_zone
 ./resource.ps1 google_apigee_env_keystore
 ./resource.ps1 google_apigee_envgroup
@@ -217,7 +219,9 @@
 ./resource.ps1 google_discovery_engine_acl_config
 ./resource.ps1 google_discovery_engine_chat_engine
 ./resource.ps1 google_discovery_engine_cmek_config
+./resource.ps1 google_discovery_engine_data_connector
 ./resource.ps1 google_discovery_engine_data_store
+./resource.ps1 google_discovery_engine_license_config
 ./resource.ps1 google_discovery_engine_recommendation_engine
 ./resource.ps1 google_discovery_engine_schema
 ./resource.ps1 google_discovery_engine_search_engine
@@ -305,6 +309,7 @@
 ./resource.ps1 google_iam_organizations_policy_binding
 ./resource.ps1 google_iam_principal_access_boundary_policy
 ./resource.ps1 google_iam_projects_policy_binding
+./resource.ps1 google_iam_workforce_pool_provider_scim_tenant
 ./resource.ps1 google_iam_workload_identity_pool_managed_identity
 ./resource.ps1 google_iam_workload_identity_pool_namespace
 ./resource.ps1 google_iap_brand
@@ -329,6 +334,9 @@
 ./resource.ps1 google_integrations_client
 ./resource.ps1 google_kms_autokey_config
 ./resource.ps1 google_kms_ekm_connection
+./resource.ps1 google_kms_folder_kaj_policy_config
+./resource.ps1 google_kms_organization_kaj_policy_config
+./resource.ps1 google_kms_project_kaj_policy_config
 ./resource.ps1 google_logging_billing_account_bucket_config
 ./resource.ps1 google_logging_folder_bucket_config
 ./resource.ps1 google_logging_organization_bucket_config
@@ -417,7 +425,9 @@
 ./resource.ps1 google_resource_manager_capability
 ./resource.ps1 google_resource_manager_lien
 ./resource.ps1 google_saas_runtime_release
+./resource.ps1 google_saas_runtime_rollout_kind
 ./resource.ps1 google_saas_runtime_saas
+./resource.ps1 google_saas_runtime_tenant
 ./resource.ps1 google_saas_runtime_unit_kind
 ./resource.ps1 google_scc_event_threat_detection_custom_module
 ./resource.ps1 google_scc_folder_custom_module
@@ -461,13 +471,17 @@
 ./resource.ps1 google_storage_object_acl
 ./resource.ps1 google_storage_transfer_agent_pool
 ./resource.ps1 google_storage_transfer_job
+./resource.ps1 google_vertex_ai_cache_config
 ./resource.ps1 google_vertex_ai_deployment_resource_pool
 ./resource.ps1 google_vertex_ai_endpoint_with_model_garden_deployment
 ./resource.ps1 google_vertex_ai_index_endpoint_deployed_index
 ./resource.ps1 google_vertex_ai_rag_engine_config
+./resource.ps1 google_vertex_ai_reasoning_engine
 ./resource.ps1 google_vpc_access_connector
 ./resource.ps1 google_workbench_instance
 ./resource.ps1 google_artifact_registry_maven_artifact -type data
+./resource.ps1 google_artifact_registry_maven_artifacts -type data
+./resource.ps1 google_artifact_registry_npm_packages -type data
 ./resource.ps1 google_compute_interconnect_location -type data
 ./resource.ps1 google_compute_interconnect_locations -type data
 ```
