@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "notebooks.instances.create",
+      "notebooks.instances.delete",
+      "notebooks.instances.get",
+      "notebooks.instances.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -5,23 +5,30 @@ resource "google_project_iam_custom_role" "terraform_pike" {
   title       = "terraform_pike"
   description = "A user with least privileges"
   permissions = [
-    "compute.globalOperations.get",
-    "compute.healthChecks.create",
-    "compute.healthChecks.delete",
-    "compute.healthChecks.get",
-    "compute.healthChecks.update",
-    "compute.healthChecks.useReadOnly",
-    "compute.httpHealthChecks.useReadOnly",
-    "compute.httpsHealthChecks.useReadOnly",
-    "compute.regionBackendServices.create",
-    "compute.regionBackendServices.delete",
-    "compute.regionBackendServices.get",
-    "compute.regionBackendServices.update",
-    "compute.regionHealthChecks.useReadOnly",
+    "aiplatform.indexEndpoints.create",
+    "aiplatform.indexes.create",
+    "compute.networks.get",
+    "iam.serviceAccounts.create",
+    "iam.serviceAccounts.delete",
+    "iam.serviceAccounts.get",
+    "iam.serviceAccounts.update",
     "resourcemanager.projects.get",
+    "storage.buckets.create",
+    "storage.buckets.delete",
     "storage.buckets.get",
+    "storage.buckets.update",
+    "storage.objects.create",
+    "storage.objects.delete",
+    "storage.objects.get",
+    "storage.objects.list",
 
-    "iap.webServices.getSettings",
-    "iap.webServices.updateSettings"
+    //new
+    //google_vertex_ai_endpoint_with_model_garden_deployment
+    "aiplatform.endpoints.create",
+    "aiplatform.endpoints.delete",
+    "aiplatform.endpoints.get",
+    "aiplatform.endpoints.update",
+    "aiplatform.endpoints.deploy",
+    "aiplatform.models.upload"
   ]
 }

@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "vpcaccess.connectors.create",
+      "vpcaccess.connectors.delete",
+      "vpcaccess.connectors.get",
+      "vpcaccess.connectors.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

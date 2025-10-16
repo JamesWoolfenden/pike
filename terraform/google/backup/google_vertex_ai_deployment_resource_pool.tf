@@ -1,0 +1,1 @@
+resource "google_vertex_ai_deployment_resource_pool" "pike" {}

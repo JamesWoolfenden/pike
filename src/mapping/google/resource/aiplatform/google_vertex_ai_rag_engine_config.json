@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "aiplatform.ragEngineConfigs.get",
+      "aiplatform.ragEngineConfigs.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "aiplatform.reasoningEngines.create",
+      "aiplatform.reasoningEngines.delete",
+      "aiplatform.reasoningEngines.get",
+      "aiplatform.reasoningEngines.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

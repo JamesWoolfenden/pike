@@ -2,7 +2,7 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 63.06      |   775       |  1229            |
+| Resources  | 63.71      |   783       |  1229            |
 | Datasource | 100.00      |   398       |   398             |
 
 ```shell
@@ -452,12 +452,4 @@
 ./resource.ps1 google_storage_object_acl
 ./resource.ps1 google_storage_transfer_agent_pool
 ./resource.ps1 google_storage_transfer_job
-./resource.ps1 google_vertex_ai_cache_config
-./resource.ps1 google_vertex_ai_deployment_resource_pool
-./resource.ps1 google_vertex_ai_endpoint_with_model_garden_deployment
-./resource.ps1 google_vertex_ai_index_endpoint_deployed_index
-./resource.ps1 google_vertex_ai_rag_engine_config
-./resource.ps1 google_vertex_ai_reasoning_engine
-./resource.ps1 google_vpc_access_connector
-./resource.ps1 google_workbench_instance
 ```

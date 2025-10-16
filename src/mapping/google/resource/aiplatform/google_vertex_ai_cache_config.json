@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "aiplatform.cacheConfigs.get",
+      "aiplatform.cacheConfigs.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

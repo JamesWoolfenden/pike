@@ -2172,3 +2172,27 @@ var googleGeminiReleaseChannelSettingBinding []byte
 
 //go:embed mapping/google/resource/cloudaicompanion/google_gemini_repository_group.json
 var googleGeminiRepositoryGroup []byte
+
+//go:embed mapping/google/resource/aiplatform/google_vertex_ai_cache_config.json
+var googleVertexAiCacheConfig []byte
+
+//go:embed mapping/google/resource/aiplatform/google_vertex_ai_deployment_resource_pool.json
+var googleVertexAiDeploymentResourcePool []byte
+
+//go:embed mapping/google/resource/aiplatform/google_vertex_ai_rag_engine_config.json
+var googleVertexAiRagEngineConfig []byte
+
+//go:embed mapping/google/resource/aiplatform/google_vertex_ai_reasoning_engine.json
+var googleVertexAiReasoningEngine []byte
+
+//go:embed mapping/google/resource/vpcaccess/google_vpc_access_connector.json
+var googleVpcAccessConnector []byte
+
+//go:embed mapping/google/resource/notebooks/google_workbench_instance.json
+var googleWorkbenchInstance []byte
+
+//go:embed mapping/google/resource/aiplatform/google_vertex_ai_endpoint_with_model_garden_deployment.json
+var googleVertexAiEndpointWithModelGardenDeployment []byte
+
+//go:embed mapping/google/resource/aiplatform/google_vertex_ai_index_endpoint_deployed_index.json
+var googleVertexAiIndexEndpointDeployedIndex []byte

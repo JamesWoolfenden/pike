@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "aiplatform.deploymentResourcePools.create",
+      "aiplatform.deploymentResourcePools.delete",
+      "aiplatform.deploymentResourcePools.get",
+      "aiplatform.deploymentResourcePools.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

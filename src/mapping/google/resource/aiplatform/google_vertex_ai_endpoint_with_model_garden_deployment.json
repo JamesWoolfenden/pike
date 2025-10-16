@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "aiplatform.endpoints.create",
+      "aiplatform.endpoints.delete",
+      "aiplatform.endpoints.get",
+      "aiplatform.endpoints.update",
+      "aiplatform.endpoints.deploy",
+      "aiplatform.endpoints.undeploy",
+      "aiplatform.models.upload"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

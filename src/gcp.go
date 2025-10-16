@@ -833,4 +833,12 @@ var gCPTfLookup = map[string]interface{}{
 	"google_gemini_release_channel_setting":                         googleGeminiReleaseChannelSetting,
 	"google_gemini_release_channel_setting_binding":                 googleGeminiReleaseChannelSettingBinding,
 	"google_gemini_repository_group":                                googleGeminiRepositoryGroup,
+	"google_vertex_ai_cache_config":                                 googleVertexAiCacheConfig,
+	"google_vertex_ai_deployment_resource_pool":                     googleVertexAiDeploymentResourcePool,
+	"google_vertex_ai_rag_engine_config":                            googleVertexAiRagEngineConfig,
+	"google_vertex_ai_reasoning_engine":                             googleVertexAiReasoningEngine,
+	"google_vpc_access_connector":                                   googleVpcAccessConnector,
+	"google_workbench_instance":                                     googleWorkbenchInstance,
+	"google_vertex_ai_endpoint_with_model_garden_deployment":        googleVertexAiEndpointWithModelGardenDeployment,
+	"google_vertex_ai_index_endpoint_deployed_index":                googleVertexAiIndexEndpointDeployedIndex,
 }

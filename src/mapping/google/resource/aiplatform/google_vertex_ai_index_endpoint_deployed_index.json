@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "aiplatform.indexEndpoints.delete",
+      "aiplatform.indexEndpoints.deploy",
+      "aiplatform.indexEndpoints.get",
+      "aiplatform.indexEndpoints.undeploy",
+      "aiplatform.indexEndpoints.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
