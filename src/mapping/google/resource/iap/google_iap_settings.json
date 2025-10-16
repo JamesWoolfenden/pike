@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "iap.webServices.getSettings",
+      "iap.webServices.updateSettings"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

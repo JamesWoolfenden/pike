@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "cloudaicompanion.repositoryGroups.create",
+      "cloudaicompanion.repositoryGroups.delete",
+      "cloudaicompanion.repositoryGroups.get",
+      "cloudaicompanion.repositoryGroups.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

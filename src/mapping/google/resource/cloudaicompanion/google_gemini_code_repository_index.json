@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "cloudaicompanion.codeRepositoryIndexes.create",
+      "cloudaicompanion.codeRepositoryIndexes.delete",
+      "cloudaicompanion.codeRepositoryIndexes.get",
+      "cloudaicompanion.codeRepositoryIndexes.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

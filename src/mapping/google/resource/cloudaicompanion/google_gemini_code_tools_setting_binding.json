@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "cloudaicompanion.settingBindings.codeToolsSettingsCreate",
+      "cloudaicompanion.settingBindings.codeToolsSettingsDelete",
+      "cloudaicompanion.settingBindings.codeToolsSettingsGet",
+      "cloudaicompanion.settingBindings.codeToolsSettingsUpdate"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

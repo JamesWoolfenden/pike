@@ -1,0 +1,1 @@
+resource "google_gemini_code_tools_setting_binding" "pike" {}

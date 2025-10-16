@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "cloudaicompanion.settingBindings.loggingSettingsCreate",
+      "cloudaicompanion.settingBindings.loggingSettingsDelete",
+      "cloudaicompanion.settingBindings.loggingSettingsGet",
+      "cloudaicompanion.settingBindings.loggingSettingsUpdate"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

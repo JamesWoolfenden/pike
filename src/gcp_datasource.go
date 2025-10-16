@@ -417,6 +417,11 @@ func GCPDataLookup(result string) interface{} {
 		"google_backup_dr_data_source_references":                      dataGoogleBackupDrDataSourceReferences,
 		"google_bigquery_datapolicyv2_data_policy_iam_policy":          dataGoogleBigqueryDatapolicyv2DataPolicyIamPolicy,
 		"google_iap_web_forwarding_rule_service_iam_policy":            dataGoogleIapForwardingRuleServiceIamPolicy,
+		"google_artifact_registry_maven_artifact":                      dataGoogleArtifactRegistryMavenArtifact,
+		"google_artifact_registry_maven_artifacts":                     dataGoogleArtifactRegistryMavenArtifacts,
+		"google_artifact_registry_npm_packages":                        dataGoogleArtifactRegistryNpmPackages,
+		"google_compute_interconnect_location":                         dataGoogleComputeInterconnectLocation,
+		"google_compute_interconnect_locations":                        dataGoogleComputeInterconnectLocations,
 	}
 
 	return TFLookup[result]

@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "cloudaicompanion.settingBindings.dataSharingWithGoogleSettingsCreate",
+      "cloudaicompanion.settingBindings.dataSharingWithGoogleSettingsDelete",
+      "cloudaicompanion.settingBindings.dataSharingWithGoogleSettingsGet",
+      "cloudaicompanion.settingBindings.dataSharingWithGoogleSettingsUpdate"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

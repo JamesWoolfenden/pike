@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "iap.tunnelDestGroups.create",
+      "iap.tunnelDestGroups.delete",
+      "iap.tunnelDestGroups.get",
+      "iap.tunnelDestGroups.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

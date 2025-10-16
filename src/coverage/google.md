@@ -2,8 +2,8 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 61.51      |   756       |  1229            |
-| Datasource | 98.74      |   393       |   398             |
+| Resources  | 63.06      |   775       |  1229            |
+| Datasource | 100.00      |   398       |   398             |
 
 ```shell
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -263,18 +263,6 @@
 ./resource.ps1 google_folder_iam_audit_config
 ./resource.ps1 google_folder_organization_policy
 ./resource.ps1 google_folder_service_identity
-./resource.ps1 google_gemini_code_repository_index
-./resource.ps1 google_gemini_code_tools_setting
-./resource.ps1 google_gemini_code_tools_setting_binding
-./resource.ps1 google_gemini_data_sharing_with_google_setting
-./resource.ps1 google_gemini_data_sharing_with_google_setting_binding
-./resource.ps1 google_gemini_gemini_gcp_enablement_setting
-./resource.ps1 google_gemini_gemini_gcp_enablement_setting_binding
-./resource.ps1 google_gemini_logging_setting
-./resource.ps1 google_gemini_logging_setting_binding
-./resource.ps1 google_gemini_release_channel_setting
-./resource.ps1 google_gemini_release_channel_setting_binding
-./resource.ps1 google_gemini_repository_group
 ./resource.ps1 google_gke_backup_backup_channel
 ./resource.ps1 google_gke_backup_backup_plan
 ./resource.ps1 google_gke_backup_restore_channel
@@ -312,13 +300,6 @@
 ./resource.ps1 google_iam_workforce_pool_provider_scim_tenant
 ./resource.ps1 google_iam_workload_identity_pool_managed_identity
 ./resource.ps1 google_iam_workload_identity_pool_namespace
-./resource.ps1 google_iap_brand
-./resource.ps1 google_iap_client
-./resource.ps1 google_iap_settings
-./resource.ps1 google_iap_tunnel_dest_group
-./resource.ps1 google_iap_web_forwarding_rule_service_iam_binding
-./resource.ps1 google_iap_web_forwarding_rule_service_iam_member
-./resource.ps1 google_iap_web_forwarding_rule_service_iam_policy
 ./resource.ps1 google_identity_platform_config
 ./resource.ps1 google_identity_platform_default_supported_idp_config
 ./resource.ps1 google_identity_platform_inbound_saml_config
@@ -479,9 +460,4 @@
 ./resource.ps1 google_vertex_ai_reasoning_engine
 ./resource.ps1 google_vpc_access_connector
 ./resource.ps1 google_workbench_instance
-./resource.ps1 google_artifact_registry_maven_artifact -type data
-./resource.ps1 google_artifact_registry_maven_artifacts -type data
-./resource.ps1 google_artifact_registry_npm_packages -type data
-./resource.ps1 google_compute_interconnect_location -type data
-./resource.ps1 google_compute_interconnect_locations -type data
 ```

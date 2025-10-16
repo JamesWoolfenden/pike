@@ -2121,3 +2121,54 @@ var googleIapWebRegionForwardingRuleServiceIamMember []byte
 
 //go:embed mapping/google/resource/iap/google_iap_web_region_forwarding_rule_service_iam_policy.json
 var googleIapWebRegionForwardingRuleServiceIamPolicy []byte
+
+//go:embed mapping/google/resource/iap/google_iap_settings.json
+var googleIapSettings []byte
+
+//go:embed mapping/google/resource/iap/google_iap_tunnel_dest_group.json
+var googleIapTunnelDestGroup []byte
+
+//go:embed mapping/google/resource/iap/google_iap_web_forwarding_rule_service_iam_binding.json
+var googleIapWebForwardingRuleServiceIamBinding []byte
+
+//go:embed mapping/google/resource/iap/google_iap_web_forwarding_rule_service_iam_member.json
+var googleIapWebForwardingRuleServiceIamMember []byte
+
+//go:embed mapping/google/resource/iap/google_iap_web_forwarding_rule_service_iam_policy.json
+var googleIapWebForwardingRuleServiceIamPolicy []byte
+
+//go:embed mapping/google/resource/cloudaicompanion/google_gemini_code_repository_index.json
+var googleGeminiCodeRepositoryIndex []byte
+
+//go:embed mapping/google/resource/cloudaicompanion/google_gemini_code_tools_setting.json
+var googleGeminiCodeToolsSetting []byte
+
+//go:embed mapping/google/resource/cloudaicompanion/google_gemini_code_tools_setting_binding.json
+var googleGeminiCodeToolsSettingBinding []byte
+
+//go:embed mapping/google/resource/cloudaicompanion/google_gemini_data_sharing_with_google_setting.json
+var googleGeminiDataSharingWithGoogleSetting []byte
+
+//go:embed mapping/google/resource/cloudaicompanion/google_gemini_data_sharing_with_google_setting_binding.json
+var googleGeminiDataSharingWithGoogleSettingBinding []byte
+
+//go:embed mapping/google/resource/cloudaicompanion/google_gemini_gemini_gcp_enablement_setting.json
+var googleGeminiGeminiGcpEnablementSetting []byte
+
+//go:embed mapping/google/resource/cloudaicompanion/google_gemini_gemini_gcp_enablement_setting_binding.json
+var googleGeminiGeminiGcpEnablementSettingBinding []byte
+
+//go:embed mapping/google/resource/cloudaicompanion/google_gemini_logging_setting.json
+var googleGeminiLoggingSetting []byte
+
+//go:embed mapping/google/resource/cloudaicompanion/google_gemini_logging_setting_binding.json
+var googleGeminiLoggingSettingBinding []byte
+
+//go:embed mapping/google/resource/cloudaicompanion/google_gemini_release_channel_setting.json
+var googleGeminiReleaseChannelSetting []byte
+
+//go:embed mapping/google/resource/cloudaicompanion/google_gemini_release_channel_setting_binding.json
+var googleGeminiReleaseChannelSettingBinding []byte
+
+//go:embed mapping/google/resource/cloudaicompanion/google_gemini_repository_group.json
+var googleGeminiRepositoryGroup []byte

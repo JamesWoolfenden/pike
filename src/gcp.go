@@ -814,4 +814,23 @@ var gCPTfLookup = map[string]interface{}{
 	"google_iap_web_region_forwarding_rule_service_iam_binding":     googleIapWebRegionForwardingRuleServiceIamBinding,
 	"google_iap_web_region_forwarding_rule_service_iam_member":      googleIapWebRegionForwardingRuleServiceIamMember,
 	"google_iap_web_region_forwarding_rule_service_iam_policy":      googleIapWebRegionForwardingRuleServiceIamPolicy,
+	"google_iap_brand":                                              placeholder, //being deprecated
+	"google_iap_client":                                             placeholder, //being deprecated
+	"google_iap_settings":                                           googleIapSettings,
+	"google_iap_tunnel_dest_group":                                  googleIapTunnelDestGroup,
+	"google_iap_web_forwarding_rule_service_iam_binding":            googleIapWebForwardingRuleServiceIamBinding,
+	"google_iap_web_forwarding_rule_service_iam_member":             googleIapWebForwardingRuleServiceIamMember,
+	"google_iap_web_forwarding_rule_service_iam_policy":             googleIapWebForwardingRuleServiceIamPolicy,
+	"google_gemini_code_repository_index":                           googleGeminiCodeRepositoryIndex,
+	"google_gemini_code_tools_setting":                              googleGeminiCodeToolsSetting,
+	"google_gemini_code_tools_setting_binding":                      googleGeminiCodeToolsSettingBinding,
+	"google_gemini_data_sharing_with_google_setting":                googleGeminiDataSharingWithGoogleSetting,
+	"google_gemini_data_sharing_with_google_setting_binding":        googleGeminiDataSharingWithGoogleSettingBinding,
+	"google_gemini_gemini_gcp_enablement_setting":                   googleGeminiGeminiGcpEnablementSetting,
+	"google_gemini_gemini_gcp_enablement_setting_binding":           googleGeminiGeminiGcpEnablementSettingBinding,
+	"google_gemini_logging_setting":                                 googleGeminiLoggingSetting,
+	"google_gemini_logging_setting_binding":                         googleGeminiLoggingSettingBinding,
+	"google_gemini_release_channel_setting":                         googleGeminiReleaseChannelSetting,
+	"google_gemini_release_channel_setting_binding":                 googleGeminiReleaseChannelSettingBinding,
+	"google_gemini_repository_group":                                googleGeminiRepositoryGroup,
 }

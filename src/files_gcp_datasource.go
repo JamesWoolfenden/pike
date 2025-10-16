@@ -978,3 +978,18 @@ var dataGoogleBigqueryDatapolicyv2DataPolicyIamPolicy []byte
 
 //go:embed mapping/google/data/iap/google_iap_web_forwarding_rule_service_iam_policy.json
 var dataGoogleIapForwardingRuleServiceIamPolicy []byte
+
+//go:embed mapping/google/data/artifactregistry/google_artifact_registry_maven_artifact.json
+var dataGoogleArtifactRegistryMavenArtifact []byte
+
+//go:embed mapping/google/data/artifactregistry/google_artifact_registry_maven_artifacts.json
+var dataGoogleArtifactRegistryMavenArtifacts []byte
+
+//go:embed mapping/google/data/artifactregistry/google_artifact_registry_npm_packages.json
+var dataGoogleArtifactRegistryNpmPackages []byte
+
+//go:embed mapping/google/data/compute/google_compute_interconnect_location.json
+var dataGoogleComputeInterconnectLocation []byte
+
+//go:embed mapping/google/data/compute/google_compute_interconnect_locations.json
+var dataGoogleComputeInterconnectLocations []byte

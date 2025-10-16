@@ -5,18 +5,23 @@ resource "google_project_iam_custom_role" "terraform_pike" {
   title       = "terraform_pike"
   description = "A user with least privileges"
   permissions = [
-    "artifactregistry.pythonpackages.list",
-    "bigquery.dataPolicies.getIamPolicy",
-    "iap.webServices.getIamPolicy",
-    "backupdr.dataSourceReferences.fetchForAlloydbCluster",
-    "backupdr.dataSourceReferences.fetchForCloudSqlInstance",
-    "backupdr.backupPlanAssociations.fetchForAlloydbCluster",
-    "backupdr.backupPlanAssociations.fetchForCloudSqlInstance",
-    "backupdr.backupPlanAssociations.fetchForComputeDisk",
-    "backupdr.backupPlanAssociations.fetchForComputeInstance",
-    "backupdr.backupPlanAssociations.getForAlloydbCluster",
-    "backupdr.backupPlanAssociations.getForCloudSqlInstance",
-    "backupdr.backupPlanAssociations.getForComputeDisk",
-    "backupdr.backupPlanAssociations.getForComputeInstance"
+    "compute.globalOperations.get",
+    "compute.healthChecks.create",
+    "compute.healthChecks.delete",
+    "compute.healthChecks.get",
+    "compute.healthChecks.update",
+    "compute.healthChecks.useReadOnly",
+    "compute.httpHealthChecks.useReadOnly",
+    "compute.httpsHealthChecks.useReadOnly",
+    "compute.regionBackendServices.create",
+    "compute.regionBackendServices.delete",
+    "compute.regionBackendServices.get",
+    "compute.regionBackendServices.update",
+    "compute.regionHealthChecks.useReadOnly",
+    "resourcemanager.projects.get",
+    "storage.buckets.get",
+
+    "iap.webServices.getSettings",
+    "iap.webServices.updateSettings"
   ]
 }

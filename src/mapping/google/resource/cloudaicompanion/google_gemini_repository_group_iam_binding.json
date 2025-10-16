@@ -1,13 +1,16 @@
 [
   {
     "apply": [
-      "cloudaicompanion.repositoryGroups.getIamPolicy"
+      "cloudaicompanion.repositoryGroups.getIamPolicy",
+      "cloudaicompanion.repositoryGroups.setIamPolicy"
     ],
     "attributes": {
       "tags": []
     },
     "destroy": [],
     "modify": [],
-    "plan": []
+    "plan": [
+      "cloudaicompanion.repositoryGroups.getIamPolicy"
+    ]
   }
 ]

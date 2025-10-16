@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "cloudaicompanion.settingBindings.geminiGcpEnablementSettingsCreate",
+      "cloudaicompanion.settingBindings.geminiGcpEnablementSettingsDelete",
+      "cloudaicompanion.settingBindings.geminiGcpEnablementSettingsGet",
+      "cloudaicompanion.settingBindings.geminiGcpEnablementSettingsUpdate"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

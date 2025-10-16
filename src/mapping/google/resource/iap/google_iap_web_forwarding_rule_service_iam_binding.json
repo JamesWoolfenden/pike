@@ -1,6 +1,9 @@
 [
   {
-    "apply": [],
+    "apply": [
+      "iap.webServices.getIamPolicy",
+      "iap.webServices.setIamPolicy"
+    ],
     "attributes": {
       "tags": []
     },

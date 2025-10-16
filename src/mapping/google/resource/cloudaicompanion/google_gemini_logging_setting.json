@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "cloudaicompanion.loggingSettings.create",
+      "cloudaicompanion.loggingSettings.delete",
+      "cloudaicompanion.loggingSettings.get",
+      "cloudaicompanion.loggingSettings.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

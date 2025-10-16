@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "cloudaicompanion.settingBindings.releaseChannelSettingsCreate",
+      "cloudaicompanion.settingBindings.releaseChannelSettingsDelete",
+      "cloudaicompanion.settingBindings.releaseChannelSettingsGet",
+      "cloudaicompanion.settingBindings.releaseChannelSettingsUpdate"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

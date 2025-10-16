@@ -3,7 +3,7 @@
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
 | Resources  | 97.15      |  1498       |  1542            |
-| Datasource | 97.28      |   608       |   625             |
+| Datasource | 100.00      |   625       |   625             |
 
 ```shell
 ./resource.ps1 aws_appsync_api
