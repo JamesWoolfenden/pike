@@ -2,8 +2,8 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 63.71      |   783       |  1229            |
-| Datasource | 100.00      |   398       |   398             |
+| Resources  | 62.94      |   783       |  1244            |
+| Datasource | 99.75      |   398       |   399             |
 
 ```shell
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -30,6 +30,7 @@
 ./resource.ps1 google_apigee_envgroup_attachment
 ./resource.ps1 google_apigee_environment
 ./resource.ps1 google_apigee_environment_addons_config
+./resource.ps1 google_apigee_environment_api_revision_deployment
 ./resource.ps1 google_apigee_environment_keyvaluemaps
 ./resource.ps1 google_apigee_environment_keyvaluemaps_entries
 ./resource.ps1 google_apigee_instance
@@ -68,6 +69,8 @@
 ./resource.ps1 google_certificate_manager_certificate_map
 ./resource.ps1 google_certificate_manager_certificate_map_entry
 ./resource.ps1 google_certificate_manager_trust_config
+./resource.ps1 google_ces_app
+./resource.ps1 google_ces_toolset
 ./resource.ps1 google_cloud_asset_folder_feed
 ./resource.ps1 google_cloud_asset_organization_feed
 ./resource.ps1 google_cloud_asset_project_feed
@@ -207,6 +210,7 @@
 ./resource.ps1 google_database_migration_service_migration_job
 ./resource.ps1 google_database_migration_service_private_connection
 ./resource.ps1 google_dataflow_flex_template_job
+./resource.ps1 google_dataplex_entry_link
 ./resource.ps1 google_dataproc_gdc_application_environment
 ./resource.ps1 google_dataproc_gdc_service_instance
 ./resource.ps1 google_dataproc_gdc_spark_application
@@ -217,8 +221,10 @@
 ./resource.ps1 google_datastream_stream
 ./resource.ps1 google_developer_connect_insights_config
 ./resource.ps1 google_discovery_engine_acl_config
+./resource.ps1 google_discovery_engine_assistant
 ./resource.ps1 google_discovery_engine_chat_engine
 ./resource.ps1 google_discovery_engine_cmek_config
+./resource.ps1 google_discovery_engine_control
 ./resource.ps1 google_discovery_engine_data_connector
 ./resource.ps1 google_discovery_engine_data_store
 ./resource.ps1 google_discovery_engine_license_config
@@ -258,6 +264,7 @@
 ./resource.ps1 google_firestore_document
 ./resource.ps1 google_firestore_field
 ./resource.ps1 google_firestore_index
+./resource.ps1 google_firestore_user_creds
 ./resource.ps1 google_folder
 ./resource.ps1 google_folder_access_approval_settings
 ./resource.ps1 google_folder_iam_audit_config
@@ -332,6 +339,7 @@
 ./resource.ps1 google_netapp_backup
 ./resource.ps1 google_netapp_backup_policy
 ./resource.ps1 google_netapp_backup_vault
+./resource.ps1 google_netapp_host_group
 ./resource.ps1 google_netapp_kmsconfig
 ./resource.ps1 google_netapp_storage_pool
 ./resource.ps1 google_netapp_volume
@@ -352,6 +360,7 @@
 ./resource.ps1 google_network_security_authz_policy
 ./resource.ps1 google_network_security_backend_authentication_config
 ./resource.ps1 google_network_security_client_tls_policy
+./resource.ps1 google_network_security_dns_threat_detector
 ./resource.ps1 google_network_security_firewall_endpoint
 ./resource.ps1 google_network_security_firewall_endpoint_association
 ./resource.ps1 google_network_security_gateway_security_policy
@@ -362,6 +371,7 @@
 ./resource.ps1 google_network_security_intercept_endpoint_group_association
 ./resource.ps1 google_network_security_mirroring_deployment
 ./resource.ps1 google_network_security_mirroring_deployment_group
+./resource.ps1 google_network_security_mirroring_endpoint
 ./resource.ps1 google_network_security_mirroring_endpoint_group
 ./resource.ps1 google_network_security_mirroring_endpoint_group_association
 ./resource.ps1 google_network_security_security_profile
@@ -380,14 +390,17 @@
 ./resource.ps1 google_network_services_lb_route_extension
 ./resource.ps1 google_network_services_lb_traffic_extension
 ./resource.ps1 google_network_services_mesh
+./resource.ps1 google_network_services_multicast_domain
 ./resource.ps1 google_network_services_service_binding
 ./resource.ps1 google_network_services_service_lb_policies
 ./resource.ps1 google_network_services_tcp_route
 ./resource.ps1 google_network_services_tls_route
 ./resource.ps1 google_network_services_wasm_plugin
+./resource.ps1 google_observability_trace_scope
 ./resource.ps1 google_oracle_database_autonomous_database
 ./resource.ps1 google_oracle_database_cloud_exadata_infrastructure
 ./resource.ps1 google_oracle_database_cloud_vm_cluster
+./resource.ps1 google_oracle_database_db_system
 ./resource.ps1 google_oracle_database_odb_network
 ./resource.ps1 google_oracle_database_odb_subnet
 ./resource.ps1 google_org_policy_custom_constraint
@@ -401,6 +414,7 @@
 ./resource.ps1 google_parameter_manager_parameter_version
 ./resource.ps1 google_parameter_manager_regional_parameter
 ./resource.ps1 google_parameter_manager_regional_parameter_version
+./resource.ps1 google_privileged_access_manager_settings
 ./resource.ps1 google_public_ca_external_account_key
 ./resource.ps1 google_recaptcha_enterprise_key
 ./resource.ps1 google_resource_manager_capability
@@ -409,6 +423,7 @@
 ./resource.ps1 google_saas_runtime_rollout_kind
 ./resource.ps1 google_saas_runtime_saas
 ./resource.ps1 google_saas_runtime_tenant
+./resource.ps1 google_saas_runtime_unit
 ./resource.ps1 google_saas_runtime_unit_kind
 ./resource.ps1 google_scc_event_threat_detection_custom_module
 ./resource.ps1 google_scc_folder_custom_module
@@ -452,4 +467,5 @@
 ./resource.ps1 google_storage_object_acl
 ./resource.ps1 google_storage_transfer_agent_pool
 ./resource.ps1 google_storage_transfer_job
+./resource.ps1 google_artifact_registry_packages -type data
 ```

@@ -1695,3 +1695,12 @@ var dataAwsOdbNetworkPeeringConnections []byte
 
 //go:embed  mapping/aws/data/odb/aws_odb_networks.json
 var dataAwsOdbNetworks []byte
+
+//go:embed  mapping/aws/data/ecr-public/aws_ecrpublic_images.json
+var dataAwsEcrPublicImages []byte
+
+//go:embed  mapping/aws/data/rds/aws_rds_global_cluster.json
+var dataAwsRdsGlobalCluster []byte
+
+//go:embed  mapping/aws/data/ec2/aws_vpn_connection.json
+var dataAwsVpnConnection []byte

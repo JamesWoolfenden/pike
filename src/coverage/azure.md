@@ -2,8 +2,8 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 4.43      |    49       |  1107            |
-| Datasource | 30.89      |   122       |   395             |
+| Resources  | 4.40      |    49       |  1113            |
+| Datasource | 30.58      |   122       |   399             |
 
 ```shell
 ./resource.ps1 azurerm_aadb2c_directory
@@ -66,6 +66,7 @@
 ./resource.ps1 azurerm_api_management_user
 ./resource.ps1 azurerm_api_management_workspace
 ./resource.ps1 azurerm_api_management_workspace_policy
+./resource.ps1 azurerm_api_management_workspace_policy_fragment
 ./resource.ps1 azurerm_app_configuration_feature
 ./resource.ps1 azurerm_app_configuration_key
 ./resource.ps1 azurerm_app_service_active_slot
@@ -550,6 +551,8 @@
 ./resource.ps1 azurerm_managed_application_definition
 ./resource.ps1 azurerm_managed_disk_sas_token
 ./resource.ps1 azurerm_managed_lustre_file_system
+./resource.ps1 azurerm_managed_redis
+./resource.ps1 azurerm_managed_redis_geo_replication
 ./resource.ps1 azurerm_management_group_policy_assignment
 ./resource.ps1 azurerm_management_group_policy_exemption
 ./resource.ps1 azurerm_management_group_policy_remediation
@@ -664,6 +667,7 @@
 ./resource.ps1 azurerm_network_manager_management_group_connection
 ./resource.ps1 azurerm_network_manager_network_group
 ./resource.ps1 azurerm_network_manager_routing_configuration
+./resource.ps1 azurerm_network_manager_routing_rule
 ./resource.ps1 azurerm_network_manager_routing_rule_collection
 ./resource.ps1 azurerm_network_manager_scope_connection
 ./resource.ps1 azurerm_network_manager_security_admin_configuration
@@ -687,6 +691,8 @@
 ./resource.ps1 azurerm_oracle_autonomous_database_clone_from_database
 ./resource.ps1 azurerm_oracle_cloud_vm_cluster
 ./resource.ps1 azurerm_oracle_exadata_infrastructure
+./resource.ps1 azurerm_oracle_exascale_database_storage_vault
+./resource.ps1 azurerm_oracle_resource_anchor
 ./resource.ps1 azurerm_orbital_contact
 ./resource.ps1 azurerm_orbital_contact_profile
 ./resource.ps1 azurerm_orbital_spacecraft
@@ -1175,6 +1181,7 @@
 ./resource.ps1 azurerm_firewall_policy -type data
 ./resource.ps1 azurerm_function_app -type data
 ./resource.ps1 azurerm_function_app_host_keys -type data
+./resource.ps1 azurerm_graph_services_account -type data
 ./resource.ps1 azurerm_hdinsight_cluster -type data
 ./resource.ps1 azurerm_healthcare_dicom_service -type data
 ./resource.ps1 azurerm_healthcare_fhir_service -type data
@@ -1217,6 +1224,7 @@
 ./resource.ps1 azurerm_managed_application_definition -type data
 ./resource.ps1 azurerm_managed_disk -type data
 ./resource.ps1 azurerm_managed_disks -type data
+./resource.ps1 azurerm_managed_redis -type data
 ./resource.ps1 azurerm_management_group -type data
 ./resource.ps1 azurerm_management_group_template_deployment -type data
 ./resource.ps1 azurerm_maps_account -type data
@@ -1284,7 +1292,9 @@
 ./resource.ps1 azurerm_oracle_db_servers -type data
 ./resource.ps1 azurerm_oracle_db_system_shapes -type data
 ./resource.ps1 azurerm_oracle_exadata_infrastructure -type data
+./resource.ps1 azurerm_oracle_exascale_database_storage_vault -type data
 ./resource.ps1 azurerm_oracle_gi_versions -type data
+./resource.ps1 azurerm_oracle_resource_anchor -type data
 ./resource.ps1 azurerm_orchestrated_virtual_machine_scale_set -type data
 ./resource.ps1 azurerm_palo_alto_local_rulestack -type data
 ./resource.ps1 azurerm_platform_image -type data

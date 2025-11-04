@@ -635,6 +635,9 @@ var tFLookupDataAWS = map[string]interface{}{
 	"aws_odb_network_peering_connection":                                    dataAwsOdbNetworkPeeringConnection,
 	"aws_odb_network_peering_connections":                                   dataAwsOdbNetworkPeeringConnections,
 	"aws_odb_networks":                                                      dataAwsOdbNetworks,
+	"aws_ecrpublic_images":                                                  dataAwsEcrPublicImages,
+	"aws_rds_global_cluster":                                                dataAwsRdsGlobalCluster,
+	"aws_vpn_connection":                                                    dataAwsVpnConnection,
 }
 
 // GetAWSDataPermissions gets permissions required for datasource's.
