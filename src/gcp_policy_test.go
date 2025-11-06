@@ -10,7 +10,7 @@ import (
 
 func TestGCPPolicy(t *testing.T) {
 	t.Parallel()
-	os.Setenv("GCP_PROJECT", "pike-412922")
+	_ = os.Setenv("GCP_PROJECT", "pike-412922")
 	type args struct {
 		permissions []string
 	}
@@ -66,9 +66,9 @@ func TestGetCurrentProject_EnvironmentVariables(t *testing.T) {
 
 	// Clean up after test
 	defer func() {
-		os.Setenv("GOOGLE_CLOUD_PROJECT", originalGoogleCloudProject)
-		os.Setenv("GOOGLE_PROJECT", originalGoogleProject)
-		os.Setenv("GCP_PROJECT", originalGcpProject)
+		_ = os.Setenv("GOOGLE_CLOUD_PROJECT", originalGoogleCloudProject)
+		_ = os.Setenv("GOOGLE_PROJECT", originalGoogleProject)
+		_ = os.Setenv("GCP_PROJECT", originalGcpProject)
 	}()
 
 	tests := []struct {
@@ -101,19 +101,19 @@ func TestGetCurrentProject_EnvironmentVariables(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			// Clear all environment variables
-			os.Unsetenv("GOOGLE_CLOUD_PROJECT")
-			os.Unsetenv("GOOGLE_PROJECT")
-			os.Unsetenv("GCP_PROJECT")
+			_ = os.Unsetenv("GOOGLE_CLOUD_PROJECT")
+			_ = os.Unsetenv("GOOGLE_PROJECT")
+			_ = os.Unsetenv("GCP_PROJECT")
 
 			// Set test values
 			if tt.googleCloudProject != "" {
-				os.Setenv("GOOGLE_CLOUD_PROJECT", tt.googleCloudProject)
+				_ = os.Setenv("GOOGLE_CLOUD_PROJECT", tt.googleCloudProject)
 			}
 			if tt.googleProject != "" {
-				os.Setenv("GOOGLE_PROJECT", tt.googleProject)
+				_ = os.Setenv("GOOGLE_PROJECT", tt.googleProject)
 			}
 			if tt.gcpProject != "" {
-				os.Setenv("GCP_PROJECT", tt.gcpProject)
+				_ = os.Setenv("GCP_PROJECT", tt.gcpProject)
 			}
 
 			project, err := getCurrentProject()
@@ -138,27 +138,27 @@ func TestGetCurrentProject_GcloudConfigFile(t *testing.T) {
 
 	// Clean up after test
 	defer func() {
-		os.Setenv("GOOGLE_CLOUD_PROJECT", originalGoogleCloudProject)
-		os.Setenv("GOOGLE_PROJECT", originalGoogleProject)
-		os.Setenv("GCP_PROJECT", originalGcpProject)
-		os.Setenv("HOME", originalHome)
-		os.Setenv("APPDATA", originalAppData)
+		_ = os.Setenv("GOOGLE_CLOUD_PROJECT", originalGoogleCloudProject)
+		_ = os.Setenv("GOOGLE_PROJECT", originalGoogleProject)
+		_ = os.Setenv("GCP_PROJECT", originalGcpProject)
+		_ = os.Setenv("HOME", originalHome)
+		_ = os.Setenv("APPDATA", originalAppData)
 	}()
 
 	// Clear environment variables to force config file reading
-	os.Unsetenv("GOOGLE_CLOUD_PROJECT")
-	os.Unsetenv("GOOGLE_PROJECT")
-	os.Unsetenv("GCP_PROJECT")
+	_ = os.Unsetenv("GOOGLE_CLOUD_PROJECT")
+	_ = os.Unsetenv("GOOGLE_PROJECT")
+	_ = os.Unsetenv("GCP_PROJECT")
 
 	// Create temporary directory structure
 	tempDir := t.TempDir()
 
 	var configPath string
 	if runtime.GOOS != "windows" {
-		os.Setenv("HOME", tempDir)
+		_ = os.Setenv("HOME", tempDir)
 		configPath = filepath.Join(tempDir, ".config", "gcloud", "configurations", "config_default")
 	} else {
-		os.Setenv("APPDATA", tempDir)
+		_ = os.Setenv("APPDATA", tempDir)
 		configPath = filepath.Join(tempDir, "gcloud", "configurations", "config_default")
 	}
 
@@ -201,15 +201,15 @@ func TestGetCurrentProject_EmptyEnvironmentVariables(t *testing.T) {
 
 	// Clean up after test
 	defer func() {
-		os.Setenv("GOOGLE_CLOUD_PROJECT", originalGoogleCloudProject)
-		os.Setenv("GOOGLE_PROJECT", originalGoogleProject)
-		os.Setenv("GCP_PROJECT", originalGcpProject)
+		_ = os.Setenv("GOOGLE_CLOUD_PROJECT", originalGoogleCloudProject)
+		_ = os.Setenv("GOOGLE_PROJECT", originalGoogleProject)
+		_ = os.Setenv("GCP_PROJECT", originalGcpProject)
 	}()
 
 	// Test empty string environment variables (should be treated as not set)
-	os.Setenv("GOOGLE_CLOUD_PROJECT", "")
-	os.Setenv("GOOGLE_PROJECT", "")
-	os.Setenv("GCP_PROJECT", "")
+	_ = os.Setenv("GOOGLE_CLOUD_PROJECT", "")
+	_ = os.Setenv("GOOGLE_PROJECT", "")
+	_ = os.Setenv("GCP_PROJECT", "")
 
 	// This will likely fail due to no credentials or config file, but we're testing the logic
 	_, err := getCurrentProject()
@@ -229,26 +229,26 @@ func TestGetCurrentProject_MissingConfigFile(t *testing.T) {
 
 	// Clean up after test
 	defer func() {
-		os.Setenv("GOOGLE_CLOUD_PROJECT", originalGoogleCloudProject)
-		os.Setenv("GOOGLE_PROJECT", originalGoogleProject)
-		os.Setenv("GCP_PROJECT", originalGcpProject)
-		os.Setenv("HOME", originalHome)
-		os.Setenv("APPDATA", originalAppData)
+		_ = os.Setenv("GOOGLE_CLOUD_PROJECT", originalGoogleCloudProject)
+		_ = os.Setenv("GOOGLE_PROJECT", originalGoogleProject)
+		_ = os.Setenv("GCP_PROJECT", originalGcpProject)
+		_ = os.Setenv("HOME", originalHome)
+		_ = os.Setenv("APPDATA", originalAppData)
 	}()
 
 	// Clear environment variables
-	os.Unsetenv("GOOGLE_CLOUD_PROJECT")
-	os.Unsetenv("GOOGLE_PROJECT")
-	os.Unsetenv("GCP_PROJECT")
+	_ = os.Unsetenv("GOOGLE_CLOUD_PROJECT")
+	_ = os.Unsetenv("GOOGLE_PROJECT")
+	_ = os.Unsetenv("GCP_PROJECT")
 
 	// Set HOME/APPDATA to non-existent directory
 	tempDir := t.TempDir()
 	nonExistentDir := filepath.Join(tempDir, "nonexistent")
 
 	if runtime.GOOS != "windows" {
-		os.Setenv("HOME", nonExistentDir)
+		_ = os.Setenv("HOME", nonExistentDir)
 	} else {
-		os.Setenv("APPDATA", nonExistentDir)
+		_ = os.Setenv("APPDATA", nonExistentDir)
 	}
 
 	_, err := getCurrentProject()
@@ -267,27 +267,27 @@ func TestGetCurrentProject_InvalidConfigFile(t *testing.T) {
 
 	// Clean up after test
 	defer func() {
-		os.Setenv("GOOGLE_CLOUD_PROJECT", originalGoogleCloudProject)
-		os.Setenv("GOOGLE_PROJECT", originalGoogleProject)
-		os.Setenv("GCP_PROJECT", originalGcpProject)
-		os.Setenv("HOME", originalHome)
-		os.Setenv("APPDATA", originalAppData)
+		_ = os.Setenv("GOOGLE_CLOUD_PROJECT", originalGoogleCloudProject)
+		_ = os.Setenv("GOOGLE_PROJECT", originalGoogleProject)
+		_ = os.Setenv("GCP_PROJECT", originalGcpProject)
+		_ = os.Setenv("HOME", originalHome)
+		_ = os.Setenv("APPDATA", originalAppData)
 	}()
 
 	// Clear environment variables
-	os.Unsetenv("GOOGLE_CLOUD_PROJECT")
-	os.Unsetenv("GOOGLE_PROJECT")
-	os.Unsetenv("GCP_PROJECT")
+	_ = os.Unsetenv("GOOGLE_CLOUD_PROJECT")
+	_ = os.Unsetenv("GOOGLE_PROJECT")
+	_ = os.Unsetenv("GCP_PROJECT")
 
 	// Create temporary directory structure
 	tempDir := t.TempDir()
 
 	var configPath string
 	if runtime.GOOS != "windows" {
-		os.Setenv("HOME", tempDir)
+		_ = os.Setenv("HOME", tempDir)
 		configPath = filepath.Join(tempDir, ".config", "gcloud", "configurations", "config_default")
 	} else {
-		os.Setenv("APPDATA", tempDir)
+		_ = os.Setenv("APPDATA", tempDir)
 		configPath = filepath.Join(tempDir, "gcloud", "configurations", "config_default")
 	}
 
@@ -324,27 +324,27 @@ func TestGetCurrentProject_ConfigFileWithoutProject(t *testing.T) {
 
 	// Clean up after test
 	defer func() {
-		os.Setenv("GOOGLE_CLOUD_PROJECT", originalGoogleCloudProject)
-		os.Setenv("GOOGLE_PROJECT", originalGoogleProject)
-		os.Setenv("GCP_PROJECT", originalGcpProject)
-		os.Setenv("HOME", originalHome)
-		os.Setenv("APPDATA", originalAppData)
+		_ = os.Setenv("GOOGLE_CLOUD_PROJECT", originalGoogleCloudProject)
+		_ = os.Setenv("GOOGLE_PROJECT", originalGoogleProject)
+		_ = os.Setenv("GCP_PROJECT", originalGcpProject)
+		_ = os.Setenv("HOME", originalHome)
+		_ = os.Setenv("APPDATA", originalAppData)
 	}()
 
 	// Clear environment variables
-	os.Unsetenv("GOOGLE_CLOUD_PROJECT")
-	os.Unsetenv("GOOGLE_PROJECT")
-	os.Unsetenv("GCP_PROJECT")
+	_ = os.Unsetenv("GOOGLE_CLOUD_PROJECT")
+	_ = os.Unsetenv("GOOGLE_PROJECT")
+	_ = os.Unsetenv("GCP_PROJECT")
 
 	// Create temporary directory structure
 	tempDir := t.TempDir()
 
 	var configPath string
 	if runtime.GOOS != "windows" {
-		os.Setenv("HOME", tempDir)
+		_ = os.Setenv("HOME", tempDir)
 		configPath = filepath.Join(tempDir, ".config", "gcloud", "configurations", "config_default")
 	} else {
-		os.Setenv("APPDATA", tempDir)
+		_ = os.Setenv("APPDATA", tempDir)
 		configPath = filepath.Join(tempDir, "gcloud", "configurations", "config_default")
 	}
 

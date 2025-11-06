@@ -993,3 +993,6 @@ var dataGoogleComputeInterconnectLocation []byte
 
 //go:embed mapping/google/data/compute/google_compute_interconnect_locations.json
 var dataGoogleComputeInterconnectLocations []byte
+
+//go:embed mapping/google/data/artifactregistry/google_artifact_registry_packages.json
+var dataGoogleArtifactRegistryPackages []byte

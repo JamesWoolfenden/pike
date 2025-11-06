@@ -422,6 +422,7 @@ func GCPDataLookup(result string) interface{} {
 		"google_artifact_registry_npm_packages":                        dataGoogleArtifactRegistryNpmPackages,
 		"google_compute_interconnect_location":                         dataGoogleComputeInterconnectLocation,
 		"google_compute_interconnect_locations":                        dataGoogleComputeInterconnectLocations,
+		"google_artifact_registry_packages":                            dataGoogleArtifactRegistryPackages,
 	}
 
 	return TFLookup[result]

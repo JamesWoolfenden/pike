@@ -19,16 +19,16 @@ func TestScan(t *testing.T) {
 		write   bool
 	}
 
-	testpath, _ := filepath.Abs("../terraform/aws/backup")
+	testPath, _ := filepath.Abs("../terraform/aws/backup")
 
 	tests := []struct {
 		name    string
 		args    args
 		wantErr bool
 	}{
-		{"aws", args{testpath, "json", false}, false},
-		{"aws-out", args{testpath, "terraform", true}, false},
-		{"google", args{testpath, "json", false}, false},
+		{"aws", args{testPath, "json", false}, false},
+		{"aws-out", args{testPath, "terraform", true}, false},
+		{"google", args{testPath, "json", false}, false},
 	}
 
 	for _, tt := range tests {

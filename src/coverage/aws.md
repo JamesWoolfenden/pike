@@ -2,8 +2,8 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 96.33      |  1498       |  1555            |
-| Datasource | 99.52      |   625       |   628             |
+| Resources  | 96.27      |  1498       |  1556            |
+| Datasource | 100.00      |   628       |   628             |
 
 ```shell
 ./resource.ps1 aws_appsync_api
@@ -25,6 +25,7 @@
 ./resource.ps1 aws_cognito_managed_login_branding
 ./resource.ps1 aws_connect_phone_number_contact_flow_association
 ./resource.ps1 aws_controltower_baseline
+./resource.ps1 aws_fis_target_account_configuration
 ./resource.ps1 aws_fsx_s3_access_point_attachment
 ./resource.ps1 aws_lakeformation_identity_center_configuration
 ./resource.ps1 aws_lakeformation_lf_tag_expression
@@ -63,7 +64,4 @@
 ./resource.ps1 aws_workspacesweb_trust_store_association
 ./resource.ps1 aws_workspacesweb_user_access_logging_settings_association
 ./resource.ps1 aws_workspacesweb_user_settings_association
-./resource.ps1 aws_ecrpublic_images -type data
-./resource.ps1 aws_rds_global_cluster -type data
-./resource.ps1 aws_vpn_connection -type data
 ```

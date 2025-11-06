@@ -2,8 +2,8 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 4.40      |    49       |  1113            |
-| Datasource | 30.58      |   122       |   399             |
+| Resources  | 4.41      |    49       |  1112            |
+| Datasource | 30.65      |   122       |   398             |
 
 ```shell
 ./resource.ps1 azurerm_aadb2c_directory
@@ -866,7 +866,6 @@
 ./resource.ps1 azurerm_site_recovery_vmware_replication_policy_association
 ./resource.ps1 azurerm_snapshot
 ./resource.ps1 azurerm_source_control_token
-./resource.ps1 azurerm_spatial_anchors_account
 ./resource.ps1 azurerm_spring_cloud_accelerator
 ./resource.ps1 azurerm_spring_cloud_active_deployment
 ./resource.ps1 azurerm_spring_cloud_api_portal
@@ -1335,7 +1334,6 @@
 ./resource.ps1 azurerm_servicebus_namespace_disaster_recovery_config -type data
 ./resource.ps1 azurerm_servicebus_topic_authorization_rule -type data
 ./resource.ps1 azurerm_site_recovery_replication_recovery_plan -type data
-./resource.ps1 azurerm_spatial_anchors_account -type data
 ./resource.ps1 azurerm_stack_hci_storage_path -type data
 ./resource.ps1 azurerm_static_web_app -type data
 ./resource.ps1 azurerm_storage_queue -type data

@@ -2,12 +2,15 @@ package pike
 
 import (
 	"context"
+	"errors"
 	"fmt"
 	"os"
 	"os/exec"
 	"path"
 	"path/filepath"
 	"strings"
+	"sync"
+	"time"
 
 	"github.com/hashicorp/go-version"
 	"github.com/hashicorp/hc-install/product"
@@ -18,7 +21,16 @@ import (
 
 const tfVersion = "1.5.4"
 
-var dotTfModules = path.Join(".terraform", "modules")
+const (
+	modulesJSON  = "modules.json"
+	dsStore      = ".DS_Store"
+	dotTfModules = ".terraform/modules"
+)
+
+var (
+	terraformMutex sync.Mutex
+	initMutex      sync.Map // per-directory mutex
+)
 
 type emptyIACError struct{}
 
@@ -184,23 +196,36 @@ func WriteOutput(outPolicy OutputPolicy, outputType string, scanPath string, out
 }
 
 // Init can download and install terraform if required and then terraform init your specified directory.
+
 func Init(dirName string) (*string, []string, error) {
+	// Per-directory locking
+	dirMutex, _ := initMutex.LoadOrStore(dirName, &sync.Mutex{})
+	mutex := dirMutex.(*sync.Mutex)
+	mutex.Lock()
+	defer mutex.Unlock()
+
 	tfPath, err := LocateTerraform()
 	if err != nil {
 		return nil, nil, &locateTerraformError{err}
 	}
 
 	tf, err := tfexec.NewTerraform(dirName, tfPath)
+
 	if err != nil {
 		return nil, nil, &terraformExecError{err}
 	}
 
-	err = tf.Init(context.Background(), tfexec.Upgrade(true))
+	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Minute)
+	defer cancel()
+	err = tf.Init(ctx, tfexec.Upgrade(true))
 	if err != nil {
+		if errors.Is(context.DeadlineExceeded, ctx.Err()) {
+			return nil, nil, fmt.Errorf("terraform init timed out after 10 minutes: %w", err)
+		}
 		return nil, nil, &terraformInitError{err}
 	}
 
-	log.Printf("terraform init at %s", dirName)
+	log.Info().Msgf("terraform init at %s", dirName)
 
 	modulesDir := path.Join(dirName, dotTfModules)
 	modules, err := os.ReadDir(modulesDir)
@@ -225,11 +250,14 @@ func Init(dirName string) (*string, []string, error) {
 
 // LocateTerraform finds the Terraform executable or installs it.
 func LocateTerraform() (string, error) {
+	terraformMutex.Lock()
+	defer terraformMutex.Unlock()
+
 	tfPath, err := exec.LookPath(terraform)
 
 	// if you don't have tf installed, we have to install it
 	if err != nil || tfPath == "" {
-		log.Printf("installing Terraform %s\n", tfVersion)
+		log.Info().Msgf("installing Terraform %s\n", tfVersion)
 		installer := &releases.ExactVersion{
 			Product: product.Terraform,
 			Version: version.Must(version.NewVersion(tfVersion)),
@@ -247,18 +275,20 @@ func LocateTerraform() (string, error) {
 }
 
 // MakePolicy does the guts of determining a policy from code.
-func MakePolicy(dirName string, file *string, init bool, EnableResources bool, provider string, policyName string) (OutputPolicy, error) {
-	var (
-		output OutputPolicy
-	)
-
-	permissionsBag, err := makePermissionBag(dirName, file, init, provider)
-
-	if err != nil {
-		return output, err
+func MakePolicy(dirName string, file *string, init bool, enableResources bool, provider string, policyName string) (OutputPolicy, error) {
+	// Validate inputs early
+	if dirName == "" && file == nil {
+		return OutputPolicy{}, errors.New("either directory or file should be be set")
 	}
 
-	output, err = GetPolicy(permissionsBag, EnableResources, policyName)
+	var output OutputPolicy
+
+	permissionsBag, err := makePermissionBag(dirName, file, init, provider)
+	if err != nil {
+		return output, fmt.Errorf("failed to create permission bag: %w", err)
+	}
+
+	output, err = GetPolicy(permissionsBag, enableResources, policyName)
 	if err != nil {
 		return output, &getPolicyError{err: err}
 	}
@@ -266,14 +296,22 @@ func MakePolicy(dirName string, file *string, init bool, EnableResources bool, p
 	return output, nil
 }
 
+// Extract common absolute path logic
+func getAbsolutePath(path string) (string, error) {
+	absPath, err := filepath.Abs(path)
+	if err != nil {
+		return "", &absolutePathError{directory: path, err: err}
+	}
+	return absPath, nil
+}
 func makePermissionBag(dirName string, file *string, init bool, provider string) (Sorted, error) {
 
 	var files []string
 
 	if file == nil {
-		fullPath, err := filepath.Abs(dirName)
+		fullPath, err := getAbsolutePath(dirName)
 		if err != nil {
-			return Sorted{}, &absolutePathError{directory: dirName, err: err}
+			return Sorted{}, err
 		}
 
 		if init {
@@ -292,9 +330,9 @@ func makePermissionBag(dirName string, file *string, init bool, provider string)
 			return Sorted{}, &getTFError{directory: fullPath, err: err}
 		}
 	} else {
-		myFile, err := filepath.Abs(*file)
+		myFile, err := getAbsolutePath(*file)
 		if err != nil {
-			return Sorted{}, &absolutePathError{directory: *file, err: err}
+			return Sorted{}, err
 		}
 
 		// is this a tfFile?
@@ -310,22 +348,34 @@ func makePermissionBag(dirName string, file *string, init bool, provider string)
 	}
 
 	var resources []ResourceV2
+	var failedFiles []string
+	var criticalErrors []error
 
 	for _, tfFile := range files {
 		resource, err := GetResources(tfFile, dirName)
 		if err != nil {
-			// parse the other files
-			log.Print(err)
+			failedFiles = append(failedFiles, tfFile)
+			criticalErrors = append(criticalErrors, fmt.Errorf("failed to parse %s: %w", tfFile, err))
+			continue
 		}
 
 		if resource != nil {
 			resources = append(resources, resource...)
 		}
 	}
+
+	// Fail fast if too many critical files failed
+	if len(criticalErrors) > 0 {
+		if len(failedFiles) > len(files)/2 { // More than 50% failed
+			return Sorted{}, fmt.Errorf("critical parsing failures in %d/%d files: %v",
+				len(failedFiles), len(files), criticalErrors)
+		}
+		log.Warn().Int("failed_files", len(failedFiles)).Msg("some terraform files failed to parse")
+	}
+
 	permissionsBag := GetPermissionBag(resources, provider)
 	return permissionsBag, nil
 }
-
 func GetPermissionBag(resources []ResourceV2, provider string) Sorted {
 	var permissionBag Sorted
 	var newPerms Sorted
@@ -417,4 +467,17 @@ func StringInSlice(a string, list []string) bool {
 // GetHCLType gets the resource Name.
 func GetHCLType(resourceName string) string {
 	return strings.Split(resourceName, "_")[0]
+}
+
+const (
+	maxFiles     = 1000
+	maxFileSize  = 10 * 1024 * 1024 // 10MB
+	maxResources = 50000
+)
+
+func validateLimits(files []string) error {
+	if len(files) > maxFiles {
+		return fmt.Errorf("too many files: %d > %d", len(files), maxFiles)
+	}
+	return nil
 }

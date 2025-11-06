@@ -2,8 +2,8 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 62.94      |   783       |  1244            |
-| Datasource | 99.75      |   398       |   399             |
+| Resources  | 62.84      |   783       |  1246            |
+| Datasource | 99.75      |   399       |   400             |
 
 ```shell
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -70,6 +70,7 @@
 ./resource.ps1 google_certificate_manager_certificate_map_entry
 ./resource.ps1 google_certificate_manager_trust_config
 ./resource.ps1 google_ces_app
+./resource.ps1 google_ces_deployment
 ./resource.ps1 google_ces_toolset
 ./resource.ps1 google_cloud_asset_folder_feed
 ./resource.ps1 google_cloud_asset_organization_feed
@@ -151,6 +152,7 @@
 ./resource.ps1 google_compute_region_commitment
 ./resource.ps1 google_compute_region_disk
 ./resource.ps1 google_compute_region_disk_resource_policy_attachment
+./resource.ps1 google_compute_region_health_aggregation_policy
 ./resource.ps1 google_compute_region_instance_group_manager
 ./resource.ps1 google_compute_region_instance_template
 ./resource.ps1 google_compute_region_network_endpoint
@@ -467,5 +469,5 @@
 ./resource.ps1 google_storage_object_acl
 ./resource.ps1 google_storage_transfer_agent_pool
 ./resource.ps1 google_storage_transfer_job
-./resource.ps1 google_artifact_registry_packages -type data
+./resource.ps1 google_cloud_identity_policy -type data
 ```

@@ -25,7 +25,6 @@ require (
 	golang.org/x/oauth2 v0.30.0
 	google.golang.org/api v0.240.0
 	gopkg.in/ini.v1 v1.67.0
-
 )
 
 require (

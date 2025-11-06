@@ -13,3 +13,7 @@ output "custom_role" {
 output "state_bucket" {
   value = google_storage_bucket.default
 }
+
+output "services" {
+  value = google_project_service.project
+}
