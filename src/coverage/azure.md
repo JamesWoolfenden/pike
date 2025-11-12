@@ -2,7 +2,7 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 4.41      |    49       |  1112            |
+| Resources  | 4.40      |    49       |  1114            |
 | Datasource | 30.65      |   122       |   398             |
 
 ```shell
@@ -65,6 +65,8 @@
 ./resource.ps1 azurerm_api_management_tag
 ./resource.ps1 azurerm_api_management_user
 ./resource.ps1 azurerm_api_management_workspace
+./resource.ps1 azurerm_api_management_workspace_api_version_set
+./resource.ps1 azurerm_api_management_workspace_certificate
 ./resource.ps1 azurerm_api_management_workspace_policy
 ./resource.ps1 azurerm_api_management_workspace_policy_fragment
 ./resource.ps1 azurerm_app_configuration_feature

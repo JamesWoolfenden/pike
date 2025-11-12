@@ -1,23 +1,19 @@
 provider "google" {
-  project = "pike-477416"
-  region  = "europe-west2"
-
-  # credentials = "C:\\Users\\jim_w\\pike-basic.json"
-  credentials = "/Users/jwoolfenden/pike-gcp-basic.json"
+  project     = "pike-477416"
+  region      = "europe-west2"
+  credentials = var.basic_gcp_credentials
 }
 
 provider "google-beta" {
   project = "pike-477416"
   # region  = "europe-west2"
-  region = "us-central1"
-  # credentials = "C:\\Users\\jim_w\\pike-basic.json"
-  credentials = "/Users/jwoolfenden/pike-gcp-basic.json"
+  region      = "us-central1"
+  credentials = var.basic_gcp_credentials
 }
 
 provider "google" {
-  alias   = "central"
-  project = "pike-477416"
-  region  = "us-central1"
-  # credentials = "C:\\Users\\jim_w\\pike-basic.json"
-  credentials = "/Users/jwoolfenden/pike-gcp-basic.json"
+  alias       = "central"
+  project     = "pike-477416"
+  region      = "us-central1"
+  credentials = var.basic_gcp_credentials
 }

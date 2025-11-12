@@ -2,8 +2,8 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 62.84      |   783       |  1246            |
-| Datasource | 99.75      |   399       |   400             |
+| Resources  | 62.74      |   783       |  1248            |
+| Datasource | 99.01      |   399       |   403             |
 
 ```shell
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -71,6 +71,7 @@
 ./resource.ps1 google_certificate_manager_trust_config
 ./resource.ps1 google_ces_app
 ./resource.ps1 google_ces_deployment
+./resource.ps1 google_ces_example
 ./resource.ps1 google_ces_toolset
 ./resource.ps1 google_cloud_asset_folder_feed
 ./resource.ps1 google_cloud_asset_organization_feed
@@ -235,6 +236,7 @@
 ./resource.ps1 google_discovery_engine_search_engine
 ./resource.ps1 google_discovery_engine_sitemap
 ./resource.ps1 google_discovery_engine_target_site
+./resource.ps1 google_discovery_engine_user_store
 ./resource.ps1 google_dns_response_policy
 ./resource.ps1 google_dns_response_policy_rule
 ./resource.ps1 google_document_ai_processor
@@ -469,5 +471,8 @@
 ./resource.ps1 google_storage_object_acl
 ./resource.ps1 google_storage_transfer_agent_pool
 ./resource.ps1 google_storage_transfer_job
+./resource.ps1 google_artifact_registry_python_packages -type data
 ./resource.ps1 google_cloud_identity_policy -type data
+./resource.ps1 google_compute_reservation_block -type data
+./resource.ps1 google_compute_reservation_sub_block -type data
 ```

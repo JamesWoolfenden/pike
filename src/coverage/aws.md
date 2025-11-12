@@ -2,7 +2,7 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 96.27      |  1498       |  1556            |
+| Resources  | 96.15      |  1498       |  1558            |
 | Datasource | 100.00      |   628       |   628             |
 
 ```shell
@@ -25,8 +25,10 @@
 ./resource.ps1 aws_cognito_managed_login_branding
 ./resource.ps1 aws_connect_phone_number_contact_flow_association
 ./resource.ps1 aws_controltower_baseline
+./resource.ps1 aws_ec2_allowed_images_settings
 ./resource.ps1 aws_fis_target_account_configuration
 ./resource.ps1 aws_fsx_s3_access_point_attachment
+./resource.ps1 aws_invoicing_invoice_unit
 ./resource.ps1 aws_lakeformation_identity_center_configuration
 ./resource.ps1 aws_lakeformation_lf_tag_expression
 ./resource.ps1 aws_nat_gateway_eip_association
