@@ -593,6 +593,7 @@
         "azurerm_mobile_network_site",
         "azurerm_mobile_network_slice",
         "azurerm_mongo_cluster",
+        "azurerm_mongo_cluster_firewall_rule",
         "azurerm_monitor_aad_diagnostic_setting",
         "azurerm_monitor_action_group",
         "azurerm_monitor_activity_log_alert",
