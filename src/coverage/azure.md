@@ -2,7 +2,7 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 4.40      |    49       |  1114            |
+| Resources  | 4.39      |    49       |  1115            |
 | Datasource | 30.65      |   122       |   398             |
 
 ```shell
@@ -580,6 +580,7 @@
 ./resource.ps1 azurerm_mobile_network_site
 ./resource.ps1 azurerm_mobile_network_slice
 ./resource.ps1 azurerm_mongo_cluster
+./resource.ps1 azurerm_mongo_cluster_firewall_rule
 ./resource.ps1 azurerm_monitor_aad_diagnostic_setting
 ./resource.ps1 azurerm_monitor_action_group
 ./resource.ps1 azurerm_monitor_activity_log_alert

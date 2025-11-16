@@ -2,7 +2,7 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 62.74      |   783       |  1248            |
+| Resources  | 62.39      |   783       |  1255            |
 | Datasource | 99.01      |   399       |   403             |
 
 ```shell
@@ -69,9 +69,12 @@
 ./resource.ps1 google_certificate_manager_certificate_map
 ./resource.ps1 google_certificate_manager_certificate_map_entry
 ./resource.ps1 google_certificate_manager_trust_config
+./resource.ps1 google_ces_agent
 ./resource.ps1 google_ces_app
 ./resource.ps1 google_ces_deployment
 ./resource.ps1 google_ces_example
+./resource.ps1 google_ces_guardrail
+./resource.ps1 google_ces_tool
 ./resource.ps1 google_ces_toolset
 ./resource.ps1 google_cloud_asset_folder_feed
 ./resource.ps1 google_cloud_asset_organization_feed
@@ -81,6 +84,9 @@
 ./resource.ps1 google_cloud_ids_endpoint
 ./resource.ps1 google_cloud_quotas_quota_adjuster_settings
 ./resource.ps1 google_cloud_quotas_quota_preference
+./resource.ps1 google_cloud_security_compliance_cloud_control
+./resource.ps1 google_cloud_security_compliance_framework
+./resource.ps1 google_cloud_security_compliance_framework_deployment
 ./resource.ps1 google_cloud_tasks_queue
 ./resource.ps1 google_cloudbuild_bitbucket_server_config
 ./resource.ps1 google_cloudbuild_worker_pool
@@ -405,6 +411,7 @@
 ./resource.ps1 google_oracle_database_cloud_exadata_infrastructure
 ./resource.ps1 google_oracle_database_cloud_vm_cluster
 ./resource.ps1 google_oracle_database_db_system
+./resource.ps1 google_oracle_database_exascale_db_storage_vault
 ./resource.ps1 google_oracle_database_odb_network
 ./resource.ps1 google_oracle_database_odb_subnet
 ./resource.ps1 google_org_policy_custom_constraint

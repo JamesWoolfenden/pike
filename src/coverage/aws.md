@@ -2,7 +2,7 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 96.15      |  1498       |  1558            |
+| Resources  | 95.96      |  1498       |  1561            |
 | Datasource | 100.00      |   628       |   628             |
 
 ```shell
@@ -34,6 +34,9 @@
 ./resource.ps1 aws_nat_gateway_eip_association
 ./resource.ps1 aws_networkfirewall_firewall_transit_gateway_attachment_accepter
 ./resource.ps1 aws_networkfirewall_vpc_endpoint_association
+./resource.ps1 aws_networkflowmonitor_monitor
+./resource.ps1 aws_networkflowmonitor_scope
+./resource.ps1 aws_observabilityadmin_centralization_rule_for_organization
 ./resource.ps1 aws_odb_cloud_autonomous_vm_cluster
 ./resource.ps1 aws_odb_cloud_exadata_infrastructure
 ./resource.ps1 aws_odb_cloud_vm_cluster
