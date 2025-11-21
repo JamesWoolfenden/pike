@@ -1130,6 +1130,7 @@
         "azurerm_api_management_product",
         "azurerm_api_management_subscription",
         "azurerm_api_management_user",
+        "azurerm_api_management_workspace",
         "azurerm_app_configuration",
         "azurerm_app_configuration_key",
         "azurerm_app_configuration_keys",
