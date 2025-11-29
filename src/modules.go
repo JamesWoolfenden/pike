@@ -8,6 +8,7 @@ import (
 	"path/filepath"
 
 	"github.com/hashicorp/go-version"
+	"github.com/rs/zerolog/log"
 )
 
 const (
@@ -87,7 +88,12 @@ func ReadModuleJsonForDir(dir string) (ModuleJson, error) {
 		}
 		return nil, err
 	}
-	defer r.Close()
+	defer func(r *os.File) {
+		err := r.Close()
+		if err != nil {
+			log.Warn().Msgf("Faile dto close file %s", r.Name())
+		}
+	}(r)
 	return ReadModuleJson(r)
 }
 
