@@ -2,7 +2,7 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 62.39      |   783       |  1255            |
+| Resources  | 61.95      |   783       |  1264            |
 | Datasource | 99.01      |   399       |   403             |
 
 ```shell
@@ -71,6 +71,7 @@
 ./resource.ps1 google_certificate_manager_trust_config
 ./resource.ps1 google_ces_agent
 ./resource.ps1 google_ces_app
+./resource.ps1 google_ces_app_version
 ./resource.ps1 google_ces_deployment
 ./resource.ps1 google_ces_example
 ./resource.ps1 google_ces_guardrail
@@ -229,6 +230,7 @@
 ./resource.ps1 google_datastream_private_connection
 ./resource.ps1 google_datastream_stream
 ./resource.ps1 google_developer_connect_insights_config
+./resource.ps1 google_dialogflow_version
 ./resource.ps1 google_discovery_engine_acl_config
 ./resource.ps1 google_discovery_engine_assistant
 ./resource.ps1 google_discovery_engine_chat_engine
@@ -315,6 +317,7 @@
 ./resource.ps1 google_iam_principal_access_boundary_policy
 ./resource.ps1 google_iam_projects_policy_binding
 ./resource.ps1 google_iam_workforce_pool_provider_scim_tenant
+./resource.ps1 google_iam_workforce_pool_provider_scim_token
 ./resource.ps1 google_iam_workload_identity_pool_managed_identity
 ./resource.ps1 google_iam_workload_identity_pool_namespace
 ./resource.ps1 google_identity_platform_config
@@ -384,6 +387,7 @@
 ./resource.ps1 google_network_security_mirroring_endpoint
 ./resource.ps1 google_network_security_mirroring_endpoint_group
 ./resource.ps1 google_network_security_mirroring_endpoint_group_association
+./resource.ps1 google_network_security_sac_realm
 ./resource.ps1 google_network_security_security_profile
 ./resource.ps1 google_network_security_security_profile_group
 ./resource.ps1 google_network_security_server_tls_policy
@@ -397,10 +401,15 @@
 ./resource.ps1 google_network_services_gateway
 ./resource.ps1 google_network_services_grpc_route
 ./resource.ps1 google_network_services_http_route
+./resource.ps1 google_network_services_lb_edge_extension
 ./resource.ps1 google_network_services_lb_route_extension
 ./resource.ps1 google_network_services_lb_traffic_extension
 ./resource.ps1 google_network_services_mesh
+./resource.ps1 google_network_services_multicast_consumer_association
 ./resource.ps1 google_network_services_multicast_domain
+./resource.ps1 google_network_services_multicast_domain_activation
+./resource.ps1 google_network_services_multicast_domain_group
+./resource.ps1 google_network_services_multicast_producer_association
 ./resource.ps1 google_network_services_service_binding
 ./resource.ps1 google_network_services_service_lb_policies
 ./resource.ps1 google_network_services_tcp_route

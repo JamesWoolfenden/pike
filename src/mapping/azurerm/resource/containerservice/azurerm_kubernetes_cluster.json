@@ -1,0 +1,90 @@
+[
+  {
+    "apply": [
+      "Microsoft.ContainerService/managedClusters/write",
+      "Microsoft.ContainerService/managedClusters/read",
+      "Microsoft.ContainerService/managedClusters/delete",
+      "Microsoft.ContainerService/managedClusters/listClusterAdminCredential/action",
+      "Microsoft.ContainerService/managedClusters/listClusterUserCredential/action",
+      "Microsoft.ContainerService/managedClusters/listClusterMonitoringUserCredential/action",
+      "Microsoft.ContainerService/managedClusters/accessProfiles/read",
+      "Microsoft.ContainerService/managedClusters/accessProfiles/listCredential/action",
+      "Microsoft.ContainerService/managedClusters/agentPools/write",
+      "Microsoft.ContainerService/managedClusters/agentPools/read",
+      "Microsoft.ContainerService/managedClusters/agentPools/delete",
+      "Microsoft.ContainerService/managedClusters/upgradeProfiles/read",
+      "Microsoft.ContainerService/managedClusters/availableAgentPoolVersions/read",
+      "Microsoft.ContainerService/locations/kubernetesversions/read",
+      "Microsoft.ContainerService/locations/operationresults/read",
+      "Microsoft.ContainerService/locations/operations/read",
+      "Microsoft.Network/virtualNetworks/read",
+      "Microsoft.Network/virtualNetworks/subnets/read",
+      "Microsoft.Network/virtualNetworks/subnets/join/action",
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Authorization/*/read"
+    ],
+    "attributes": {
+      "auto_scaler_profile": [],
+      "azure_active_directory_role_based_access_control": [
+        "Microsoft.ContainerService/managedClusters/resetAADProfile/action"
+      ],
+      "identity": [
+        "Microsoft.ManagedIdentity/userAssignedIdentities/read",
+        "Microsoft.ManagedIdentity/userAssignedIdentities/assign/action"
+      ],
+      "ingress_application_gateway": [
+        "Microsoft.Network/applicationGateways/read",
+        "Microsoft.Network/applicationGateways/write",
+        "Microsoft.Network/virtualNetworks/subnets/join/action"
+      ],
+      "key_vault_secrets_provider": [
+        "Microsoft.KeyVault/vaults/read",
+        "Microsoft.KeyVault/vaults/secrets/read"
+      ],
+      "maintenance_window": [
+        "Microsoft.ContainerService/managedClusters/maintenanceConfigurations/read",
+        "Microsoft.ContainerService/managedClusters/maintenanceConfigurations/write",
+        "Microsoft.ContainerService/managedClusters/maintenanceConfigurations/delete"
+      ],
+      "network_profile": [],
+      "oms_agent": [
+        "Microsoft.OperationalInsights/workspaces/read",
+        "Microsoft.OperationalInsights/workspaces/sharedkeys/read"
+      ],
+      "private_cluster_enabled": [
+        "Microsoft.ContainerService/managedClusters/privateEndpointConnections/read",
+        "Microsoft.ContainerService/managedClusters/privateEndpointConnections/write",
+        "Microsoft.ContainerService/managedClusters/privateEndpointConnections/delete",
+        "Microsoft.Network/privateEndpoints/read",
+        "Microsoft.Network/privateEndpoints/write",
+        "Microsoft.Network/privateDnsZones/read",
+        "Microsoft.Network/privateDnsZones/write",
+        "Microsoft.Network/privateDnsZones/virtualNetworkLinks/read",
+        "Microsoft.Network/privateDnsZones/virtualNetworkLinks/write"
+      ],
+      "service_principal": [
+        "Microsoft.ContainerService/managedClusters/resetServicePrincipalProfile/action"
+      ],
+      "windows_profile": []
+    },
+    "destroy": [
+      "Microsoft.ContainerService/managedClusters/delete",
+      "Microsoft.ContainerService/managedClusters/agentPools/delete"
+    ],
+    "modify": [
+      "Microsoft.ContainerService/managedClusters/read",
+      "Microsoft.ContainerService/managedClusters/accessProfiles/read",
+      "Microsoft.ContainerService/managedClusters/agentPools/read",
+      "Microsoft.ContainerService/managedClusters/upgradeProfiles/read"
+    ],
+    "plan": [
+      "Microsoft.ContainerService/managedClusters/read",
+      "Microsoft.ContainerService/managedClusters/accessProfiles/read",
+      "Microsoft.ContainerService/managedClusters/agentPools/read",
+      "Microsoft.ContainerService/locations/kubernetesversions/read",
+      "Microsoft.Network/virtualNetworks/read",
+      "Microsoft.Network/virtualNetworks/subnets/read",
+      "Microsoft.Resources/subscriptions/resourceGroups/read"
+    ]
+  }
+]

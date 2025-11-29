@@ -2,7 +2,7 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 95.96      |  1498       |  1561            |
+| Resources  | 95.60      |  1498       |  1567            |
 | Datasource | 100.00      |   628       |   628             |
 
 ```shell
@@ -21,11 +21,13 @@
 ./resource.ps1 aws_bedrockagentcore_oauth2_credential_provider
 ./resource.ps1 aws_bedrockagentcore_token_vault_cmk
 ./resource.ps1 aws_bedrockagentcore_workload_identity
+./resource.ps1 aws_billing_view
 ./resource.ps1 aws_cognito_log_delivery_configuration
 ./resource.ps1 aws_cognito_managed_login_branding
 ./resource.ps1 aws_connect_phone_number_contact_flow_association
 ./resource.ps1 aws_controltower_baseline
 ./resource.ps1 aws_ec2_allowed_images_settings
+./resource.ps1 aws_ecs_express_gateway_service
 ./resource.ps1 aws_fis_target_account_configuration
 ./resource.ps1 aws_fsx_s3_access_point_attachment
 ./resource.ps1 aws_invoicing_invoice_unit
@@ -49,13 +51,17 @@
 ./resource.ps1 aws_quicksight_key_registration
 ./resource.ps1 aws_quicksight_role_custom_permission
 ./resource.ps1 aws_quicksight_user_custom_permission
+./resource.ps1 aws_s3_bucket_abac
 ./resource.ps1 aws_s3_bucket_metadata_configuration
 ./resource.ps1 aws_timestreaminfluxdb_db_cluster
 ./resource.ps1 aws_transfer_host_key
 ./resource.ps1 aws_transfer_web_app
 ./resource.ps1 aws_transfer_web_app_customization
+./resource.ps1 aws_vpc_encryption_control
 ./resource.ps1 aws_vpc_route_server_endpoint
 ./resource.ps1 aws_vpc_route_server_peer
+./resource.ps1 aws_vpclattice_domain_verification
+./resource.ps1 aws_vpn_concentrator
 ./resource.ps1 aws_wafv2_web_acl_rule_group_association
 ./resource.ps1 aws_workspacesweb_browser_settings_association
 ./resource.ps1 aws_workspacesweb_data_protection_settings_association
