@@ -5,6 +5,13 @@ resource "google_project_iam_custom_role" "terraform_pike" {
   title       = "terraform_pike"
   description = "A user with least privileges"
   permissions = [
-    "artifactregistry.packages.list"
+
+    //google_artifact_registry_python_packages
+    "artifactregistry.pythonpackages.list",
+
+    "compute.reservationBlocks.get",
+
+    "compute.reservationSubBlocks.get"
+
   ]
 }

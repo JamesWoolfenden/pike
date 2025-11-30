@@ -1,5 +1,5 @@
 resource "google_project_iam_audit_config" "pike" {
-  project = "pike-412922"
+  project = "pike-477416"
   service = "allServices"
   audit_log_config {
     log_type = "ADMIN_READ"

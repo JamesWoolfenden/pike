@@ -19,13 +19,13 @@ resource "google_managed_kafka_acl" "example" {
   cluster  = google_managed_kafka_cluster.cluster.cluster_id
   location = "us-central1"
   acl_entries {
-    principal       = "User:admin@pike-412922.iam.gserviceaccount.com"
+    principal       = "User:admin@pike-477416.iam.gserviceaccount.com"
     permission_type = "ALLOW"
     operation       = "ALL"
     host            = "*"
   }
   acl_entries {
-    principal       = "User:producer-client@pike-412922.iam.gserviceaccount.com"
+    principal       = "User:producer-client@pike-477416.iam.gserviceaccount.com"
     permission_type = "ALLOW"
     operation       = "WRITE"
     host            = "*"

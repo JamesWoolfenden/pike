@@ -2,8 +2,8 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 4.39      |    49       |  1115            |
-| Datasource | 30.65      |   122       |   398             |
+| Resources  | 4.39      |    49       |  1117            |
+| Datasource | 30.58      |   122       |   399             |
 
 ```shell
 ./resource.ps1 azurerm_aadb2c_directory
@@ -188,6 +188,7 @@
 ./resource.ps1 azurerm_chaos_studio_experiment
 ./resource.ps1 azurerm_chaos_studio_target
 ./resource.ps1 azurerm_cognitive_account_customer_managed_key
+./resource.ps1 azurerm_cognitive_account_project
 ./resource.ps1 azurerm_cognitive_account_rai_blocklist
 ./resource.ps1 azurerm_cognitive_account_rai_policy
 ./resource.ps1 azurerm_cognitive_deployment
@@ -517,6 +518,7 @@
 ./resource.ps1 azurerm_log_analytics_saved_search
 ./resource.ps1 azurerm_log_analytics_storage_insights
 ./resource.ps1 azurerm_log_analytics_workspace_table
+./resource.ps1 azurerm_log_analytics_workspace_table_custom_log
 ./resource.ps1 azurerm_logic_app_action_custom
 ./resource.ps1 azurerm_logic_app_action_http
 ./resource.ps1 azurerm_logic_app_integration_account
@@ -1077,6 +1079,7 @@
 ./resource.ps1 azurerm_advisor_recommendations -type data
 ./resource.ps1 azurerm_api_connection -type data
 ./resource.ps1 azurerm_api_management_subscription -type data
+./resource.ps1 azurerm_api_management_workspace -type data
 ./resource.ps1 azurerm_arc_resource_bridge_appliance -type data
 ./resource.ps1 azurerm_attestation_provider -type data
 ./resource.ps1 azurerm_automation_runbook -type data

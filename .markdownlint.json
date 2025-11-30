@@ -4,5 +4,6 @@
     "allowed_elements": [
       "cloud"
     ]
-  }
+  },
+  "MD060": false
 }
