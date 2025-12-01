@@ -146,6 +146,7 @@ func AzureDataLookup(name string) interface{} {
 		"azurerm_batch_application":                              dataAzurermBatchApplication,
 		"azurerm_batch_certificate":                              dataAzurermBatchCertificate,
 		"azurerm_batch_pool":                                     dataAzurermBatchPool,
+		"backend":                                                azurermBackend,
 	}
 
 	return TFLookupAzureData[name]

@@ -54,6 +54,7 @@ var tFLookupAzure = map[string]interface{}{
 	"azurerm_web_pubsub":                           azurermWebPubsub,
 	"azurerm_windows_virtual_machine":              azurermVirtualMachine,
 	"azurerm_windows_virtual_machine_scale_set":    azurermLinuxVirtualMachineScaleSet,
+	"backend": azurermBackend,
 }
 
 // GetAZUREPermissions for GCP resources.

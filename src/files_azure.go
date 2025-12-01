@@ -150,3 +150,6 @@ var azurermStorageSync []byte
 
 //go:embed mapping/azurerm/resource/storagesync/azurerm_storage_sync_group.json
 var azurermStorageSyncGroup []byte
+
+//go:embed mapping/azurerm/resource/backend/azurerm.json
+var azurermBackend []byte
