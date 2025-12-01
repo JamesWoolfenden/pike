@@ -10,7 +10,7 @@ import (
 
 func TestGCPPolicy(t *testing.T) {
 	t.Parallel()
-	_ = os.Setenv("GCP_PROJECT", "pike-412922")
+	_ = os.Setenv("GCP_PROJECT", "pike-477416")
 	type args struct {
 		permissions []string
 	}
@@ -24,7 +24,7 @@ func TestGCPPolicy(t *testing.T) {
 		{
 			"basic",
 			args{[]string{"bigquery.datasets.create", "bigquery.jobs.create"}},
-			"resource\"google_project_iam_custom_role\"\"terraform_pike\"{project=\"pike-412922\"role_id=\"terraform_pike\"title=\"terraform_pike\"description=\"Auserwithleastprivileges\"permissions=[\"bigquery.datasets.create\",\"bigquery.jobs.create\"]}",
+			"resource\"google_project_iam_custom_role\"\"terraform_pike\"{project=\"pike-477416\"role_id=\"terraform_pike\"title=\"terraform_pike\"description=\"Auserwithleastprivileges\"permissions=[\"bigquery.datasets.create\",\"bigquery.jobs.create\"]}",
 			false,
 		},
 		{

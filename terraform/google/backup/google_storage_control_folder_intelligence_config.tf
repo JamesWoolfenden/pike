@@ -1,5 +1,5 @@
 resource "google_storage_control_folder_intelligence_config" "example" {
-  name           = "pike-412922"
+  name           = "pike-477416"
   edition_config = "STANDARD"
   filter {
     included_cloud_storage_buckets {

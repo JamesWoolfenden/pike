@@ -3,7 +3,7 @@ resource "google_cloud_run_domain_mapping" "pike" {
   name     = "verified-domain.com"
 
   metadata {
-    namespace = "pike-412922"
+    namespace = "pike-477416"
   }
 
   spec {

@@ -16,9 +16,14 @@ init:
 	tofu init
 
 role: FORCE
-	GOOGLE_CLOUD_KEYFILE_JSON="" terraform  -chdir=apply -auto-approve
+	GOOGLE_CLOUD_KEYFILE_JSON="" tofu apply -auto-approve
 
 role_init:
-	GOOGLE_CLOUD_KEYFILE_JSON="" terraform  -chdir= init
+	GOOGLE_CLOUD_KEYFILE_JSON="" tofu  init
+
+update:
+	tofu init --upgrade
+
+upgrade:update
 
 FORCE:

@@ -423,6 +423,10 @@ func GCPDataLookup(result string) interface{} {
 		"google_compute_interconnect_location":                         dataGoogleComputeInterconnectLocation,
 		"google_compute_interconnect_locations":                        dataGoogleComputeInterconnectLocations,
 		"google_artifact_registry_packages":                            dataGoogleArtifactRegistryPackages,
+		"google_artifact_registry_python_packages":                     dataGoogleArtifactRegistryPythonPackages,
+		"google_cloud_identity_policy":                                 placeholder,
+		"google_compute_reservation_block":                             dataGoogleComputeReservationBlock,
+		"google_compute_reservation_sub_block":                         dataGoogleComputeReservationSubBlock,
 	}
 
 	return TFLookup[result]

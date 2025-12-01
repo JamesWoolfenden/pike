@@ -996,3 +996,12 @@ var dataGoogleComputeInterconnectLocations []byte
 
 //go:embed mapping/google/data/artifactregistry/google_artifact_registry_packages.json
 var dataGoogleArtifactRegistryPackages []byte
+
+//go:embed mapping/google/data/artifactregistry/google_artifact_registry_python_packages.json
+var dataGoogleArtifactRegistryPythonPackages []byte
+
+//go:embed mapping/google/data/compute/google_compute_reservation_block.json
+var dataGoogleComputeReservationBlock []byte
+
+//go:embed mapping/google/data/compute/google_compute_reservation_sub_block.json
+var dataGoogleComputeReservationSubBlock []byte
