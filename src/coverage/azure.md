@@ -1350,5 +1350,5 @@
 ./resource.ps1 azurerm_virtual_desktop_application_group -type data
 ./resource.ps1 azurerm_virtual_desktop_workspace -type data
 ./resource.ps1 azurerm_virtual_network_peering -type data
-./resource.ps1 azurerm_vpn_server_configuration -type data
+
 ```
