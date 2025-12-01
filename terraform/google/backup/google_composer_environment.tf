@@ -27,7 +27,7 @@ resource "google_service_account" "test" {
 }
 
 resource "google_project_iam_member" "composer-worker" {
-  project = "pike-412922"
+  project = "pike-477416"
   role    = "roles/composer.worker"
   member  = "serviceAccount:${google_service_account.test.email}"
 }

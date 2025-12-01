@@ -1,5 +1,5 @@
 data "google_dataplex_data_quality_rules" "pike" {
-  project      = "pike-412922"
+  project      = "pike-477416"
   location     = "us-central1"
   data_scan_id = "pike"
 }

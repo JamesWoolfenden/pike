@@ -3,7 +3,7 @@
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
 | Resources  | 61.95      |   783       |  1264            |
-| Datasource | 99.01      |   399       |   403             |
+| Datasource | 100.00      |   403       |   403             |
 
 ```shell
 ./resource.ps1 google_access_context_manager_access_level_condition
@@ -487,8 +487,4 @@
 ./resource.ps1 google_storage_object_acl
 ./resource.ps1 google_storage_transfer_agent_pool
 ./resource.ps1 google_storage_transfer_job
-./resource.ps1 google_artifact_registry_python_packages -type data
-./resource.ps1 google_cloud_identity_policy -type data
-./resource.ps1 google_compute_reservation_block -type data
-./resource.ps1 google_compute_reservation_sub_block -type data
 ```

@@ -6,7 +6,7 @@ resource "google_tpu_v2_queued_resource" "qr" {
 
   tpu {
     node_spec {
-      parent  = "projects/pike-412922/locations/us-central1-c"
+      parent  = "projects/pike-477416/locations/us-central1-c"
       node_id = "test-tpu"
       node {
         runtime_version  = "tpu-vm-tf-2.13.0"

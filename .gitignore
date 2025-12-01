@@ -25,3 +25,6 @@ tf.plan
 tf.json
 
 dist/
+
+azure_permissions.json
+azure_permissions_full.json
