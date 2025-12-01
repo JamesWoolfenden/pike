@@ -2,7 +2,7 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 4.39      |    49       |  1117            |
+| Resources  | 4.48      |    50       |  1117            |
 | Datasource | 30.58      |   122       |   399             |
 
 ```shell
@@ -470,7 +470,6 @@
 ./resource.ps1 azurerm_key_vault_managed_storage_account
 ./resource.ps1 azurerm_key_vault_managed_storage_account_sas_token_definition
 ./resource.ps1 azurerm_key_vault_secret
-./resource.ps1 azurerm_kubernetes_cluster
 ./resource.ps1 azurerm_kubernetes_cluster_extension
 ./resource.ps1 azurerm_kubernetes_cluster_node_pool
 ./resource.ps1 azurerm_kubernetes_cluster_trusted_access_role_binding
