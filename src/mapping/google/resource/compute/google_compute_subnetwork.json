@@ -2,6 +2,7 @@
   {
     "apply": [
       "compute.subnetworks.create",
+      "compute.subnetworks.update",
       "compute.networks.updatePolicy",
       "compute.subnetworks.get",
       "compute.subnetworks.delete"
@@ -12,7 +13,9 @@
     "destroy": [
       "compute.subnetworks.delete"
     ],
-    "modify": [],
+    "modify": [
+      "compute.subnetworks.update"
+    ],
     "plan": [
       "compute.subnetworks.get"
     ]
