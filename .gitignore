@@ -23,6 +23,7 @@ terraform-provider-aws/
 .destination
 tf.plan
 tf.json
+.claude/
 
 dist/
 

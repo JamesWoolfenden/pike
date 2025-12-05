@@ -11,6 +11,26 @@
     },
     "destroy": [],
     "modify": [],
-    "plan": []
+    "plan": [],
+    "runtime": {
+      "service_account": [
+        "run.routes.invoke",
+        "cloudfunctions.functions.invoke",
+        "storage.objects.get",
+        "storage.objects.create",
+        "pubsub.topics.publish",
+        "bigquery.jobs.create",
+        "cloudtasks.tasks.create",
+        "secretmanager.versions.access",
+        "logging.logEntries.create"
+      ],
+      "source_contents": [
+        "run.routes.invoke",
+        "cloudfunctions.functions.invoke",
+        "storage.objects.get",
+        "pubsub.topics.publish",
+        "bigquery.jobs.create"
+      ]
+    }
   }
 ]

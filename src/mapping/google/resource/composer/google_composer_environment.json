@@ -19,6 +19,31 @@
     ],
     "plan": [
       "composer.environments.get"
-    ]
+    ],
+    "runtime": {
+      "config": [
+        "composer.environments.get",
+        "cloudsql.instances.connect",
+        "secretmanager.versions.access",
+        "bigquery.datasets.get",
+        "bigquery.tables.get",
+        "bigquery.jobs.create",
+        "pubsub.topics.publish",
+        "pubsub.subscriptions.consume"
+      ],
+      "environment_variables": [
+        "secretmanager.versions.access"
+      ],
+      "storage_config": [
+        "storage.buckets.get",
+        "storage.objects.create",
+        "storage.objects.get",
+        "storage.objects.list",
+        "storage.objects.delete"
+      ],
+      "user_workloads_secret": [
+        "secretmanager.versions.access"
+      ]
+    }
   }
 ]

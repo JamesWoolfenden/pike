@@ -12,6 +12,32 @@
     "modify": [],
     "plan": [
       "cloudbuild.builds.get"
-    ]
+    ],
+    "runtime": {
+      "build": [
+        "storage.objects.get",
+        "storage.objects.create",
+        "artifactregistry.repositories.downloadArtifacts",
+        "artifactregistry.repositories.uploadArtifacts"
+      ],
+      "service_account": [
+        "secretmanager.versions.access",
+        "storage.objects.get",
+        "storage.objects.create",
+        "storage.buckets.get",
+        "artifactregistry.repositories.downloadArtifacts",
+        "artifactregistry.repositories.uploadArtifacts",
+        "run.routes.invoke",
+        "run.services.get",
+        "run.services.update",
+        "cloudfunctions.functions.get",
+        "cloudfunctions.functions.update",
+        "iam.serviceAccounts.actAs",
+        "logging.logEntries.create"
+      ],
+      "substitutions": [
+        "secretmanager.versions.access"
+      ]
+    }
   }
 ]

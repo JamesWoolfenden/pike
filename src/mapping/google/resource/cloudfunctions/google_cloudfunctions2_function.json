@@ -19,6 +19,54 @@
     ],
     "plan": [
       "cloudfunctions.functions.get"
-    ]
+    ],
+    "runtime": {
+      "environment_variables": [
+        "secretmanager.versions.access",
+        "storage.objects.get",
+        "storage.objects.create",
+        "storage.buckets.get",
+        "pubsub.topics.publish",
+        "pubsub.subscriptions.consume",
+        "bigquery.datasets.get",
+        "bigquery.tables.getData",
+        "bigquery.jobs.create"
+      ],
+      "event_trigger": [
+        "pubsub.topics.publish",
+        "pubsub.subscriptions.consume",
+        "storage.objects.get",
+        "storage.objects.create",
+        "firestore.documents.get",
+        "firestore.documents.create"
+      ],
+      "pubsub_topic": [
+        "pubsub.topics.publish",
+        "pubsub.subscriptions.consume"
+      ],
+      "secret_environment_variables": [
+        "secretmanager.versions.access"
+      ],
+      "secret_volumes": [
+        "secretmanager.versions.access"
+      ],
+      "service_config": [
+        "storage.objects.get",
+        "storage.objects.create",
+        "logging.logEntries.create",
+        "monitoring.timeSeries.create",
+        "cloudtasks.tasks.create",
+        "datastore.entities.get",
+        "datastore.entities.create",
+        "firestore.documents.get",
+        "firestore.documents.create",
+        "spanner.databases.read",
+        "spanner.sessions.create"
+      ],
+      "vpc_connector": [
+        "cloudsql.instances.connect",
+        "cloudsql.instances.get"
+      ]
+    }
   }
 ]

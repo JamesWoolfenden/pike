@@ -10,6 +10,35 @@
     },
     "destroy": [],
     "modify": [],
-    "plan": []
+    "plan": [],
+    "runtime": {
+      "pyspark_batch": [
+        "storage.objects.get",
+        "bigquery.tables.getData"
+      ],
+      "service_account": [
+        "storage.objects.get",
+        "storage.objects.create",
+        "storage.objects.delete",
+        "storage.buckets.get",
+        "bigquery.datasets.get",
+        "bigquery.tables.get",
+        "bigquery.tables.getData",
+        "bigquery.tables.create",
+        "bigquery.tables.update",
+        "bigquery.jobs.create",
+        "metastore.tables.get",
+        "metastore.tables.list",
+        "bigtable.tables.readRows",
+        "bigtable.tables.mutateRows",
+        "dataproc.batches.get",
+        "logging.logEntries.create",
+        "monitoring.timeSeries.create"
+      ],
+      "spark_batch": [
+        "storage.objects.get",
+        "bigquery.tables.getData"
+      ]
+    }
   }
 ]

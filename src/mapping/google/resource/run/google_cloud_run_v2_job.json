@@ -18,6 +18,33 @@
     ],
     "plan": [
       "run.jobs.get"
-    ]
+    ],
+    "runtime": {
+      "containers": [
+        "storage.objects.get",
+        "logging.logEntries.create",
+        "monitoring.timeSeries.create"
+      ],
+      "template": [
+        "secretmanager.versions.access",
+        "storage.objects.get",
+        "storage.objects.create",
+        "pubsub.topics.publish",
+        "bigquery.datasets.get",
+        "bigquery.tables.getData",
+        "bigquery.jobs.create",
+        "cloudsql.instances.connect",
+        "cloudsql.instances.get",
+        "datastore.entities.get",
+        "datastore.entities.create",
+        "firestore.documents.get",
+        "firestore.documents.create",
+        "logging.logEntries.create",
+        "monitoring.timeSeries.create"
+      ],
+      "volumes": [
+        "secretmanager.versions.access"
+      ]
+    }
   }
 ]

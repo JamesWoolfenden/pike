@@ -16,6 +16,19 @@
     "modify": [
       "cloudscheduler.jobs.update"
     ],
-    "plan": []
+    "plan": [],
+    "runtime": {
+      "app_engine_http_target": [
+        "appengine.applications.get"
+      ],
+      "http_target": [
+        "run.routes.invoke",
+        "cloudfunctions.functions.invoke",
+        "iam.serviceAccounts.actAs"
+      ],
+      "pubsub_target": [
+        "pubsub.topics.publish"
+      ]
+    }
   }
 ]

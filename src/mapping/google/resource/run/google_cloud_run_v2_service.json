@@ -21,6 +21,41 @@
     ],
     "plan": [
       "run.services.get"
-    ]
+    ],
+    "runtime": {
+      "cloud_sql_instances": [
+        "cloudsql.instances.connect",
+        "cloudsql.instances.get"
+      ],
+      "containers": [
+        "storage.objects.get",
+        "storage.objects.create",
+        "logging.logEntries.create",
+        "monitoring.timeSeries.create"
+      ],
+      "env": [
+        "secretmanager.versions.access",
+        "storage.objects.get",
+        "storage.objects.create",
+        "storage.buckets.get",
+        "pubsub.topics.publish",
+        "bigquery.datasets.get",
+        "bigquery.tables.getData",
+        "bigquery.jobs.create"
+      ],
+      "template": [
+        "storage.objects.get",
+        "pubsub.topics.publish",
+        "bigquery.jobs.create",
+        "datastore.entities.get",
+        "datastore.entities.create",
+        "firestore.documents.get",
+        "firestore.documents.create"
+      ],
+      "volume_mounts": [
+        "secretmanager.versions.access",
+        "storage.objects.get"
+      ]
+    }
   }
 ]

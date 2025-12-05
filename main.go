@@ -195,6 +195,53 @@ func main() {
 				},
 			},
 			{
+				Name:    "runtime",
+				Aliases: []string{"rt"},
+				Usage:   "detect runtime IAM permissions needed by service accounts",
+				Flags: []cli.Flag{
+					&cli.StringFlag{
+						Name:        "directory",
+						Aliases:     []string{"d"},
+						Usage:       "Directory to scan (defaults to .)",
+						Value:       ".",
+						Destination: &directory,
+					},
+					&cli.StringFlag{
+						Name:        "output",
+						Aliases:     []string{"o"},
+						Usage:       "Output types e.g. `json` terraform",
+						Value:       "terraform",
+						Destination: &output,
+						EnvVars:     []string{"OUTPUT"},
+					},
+					&cli.StringFlag{
+						Name:        "file",
+						Aliases:     []string{"f"},
+						Usage:       "File to scan",
+						Destination: &file,
+					},
+					&cli.BoolFlag{
+						Name:        "init",
+						Aliases:     []string{"i"},
+						Usage:       "Run Terraform init to download modules",
+						Destination: &init,
+					},
+					&cli.StringFlag{
+						Name:        "provider",
+						Aliases:     []string{"p"},
+						Usage:       "Filter results for just this provider (e.g. aws, gcp, azure)",
+						Destination: &provider,
+					},
+				},
+				Action: func(*cli.Context) error {
+					if file == "" {
+						return pike.Runtime(directory, output, nil, init, provider)
+					}
+
+					return pike.Runtime(directory, output, &file, init, provider)
+				},
+			},
+			{
 				Name:    "compare",
 				Aliases: []string{"c"},
 				Usage:   "policy comparison of deployed versus IAC",

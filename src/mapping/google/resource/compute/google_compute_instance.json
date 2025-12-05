@@ -22,6 +22,25 @@
     "modify": [],
     "plan": [
       "compute.instances.get"
-    ]
+    ],
+    "runtime": {
+      "attached_disk": [
+        "cloudkms.cryptoKeyVersions.useToDecrypt"
+      ],
+      "metadata": [
+        "secretmanager.versions.access",
+        "storage.objects.get"
+      ],
+      "metadata_startup_script": [
+        "secretmanager.versions.access",
+        "storage.objects.get"
+      ],
+      "service_account": [
+        "storage.objects.get",
+        "storage.objects.create",
+        "logging.logEntries.create",
+        "monitoring.timeSeries.create"
+      ]
+    }
   }
 ]

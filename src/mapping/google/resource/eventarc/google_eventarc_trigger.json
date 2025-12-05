@@ -11,6 +11,25 @@
     },
     "destroy": [],
     "modify": [],
-    "plan": []
+    "plan": [],
+    "runtime": {
+      "destination": [
+        "run.routes.invoke",
+        "cloudfunctions.functions.invoke",
+        "workflows.executions.create"
+      ],
+      "service_account": [
+        "pubsub.subscriptions.consume",
+        "pubsub.topics.publish",
+        "run.routes.invoke",
+        "cloudfunctions.functions.invoke",
+        "workflows.executions.create",
+        "eventarc.events.receiveEvent",
+        "iam.serviceAccounts.actAs"
+      ],
+      "transport": [
+        "pubsub.subscriptions.consume"
+      ]
+    }
   }
 ]

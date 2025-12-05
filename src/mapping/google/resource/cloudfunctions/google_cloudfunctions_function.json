@@ -17,6 +17,27 @@
     "modify": [],
     "plan": [
       "cloudfunctions.functions.get"
-    ]
+    ],
+    "runtime": {
+      "environment_variables": [
+        "secretmanager.versions.access"
+      ],
+      "event_trigger": [
+        "pubsub.topics.publish"
+      ],
+      "secret_environment_variables": [
+        "secretmanager.versions.access"
+      ],
+      "secret_volumes": [
+        "secretmanager.versions.access"
+      ],
+      "trigger_http": [
+        "cloudfunctions.functions.invoke"
+      ],
+      "vpc_connector": [
+        "cloudsql.instances.connect",
+        "cloudsql.instances.get"
+      ]
+    }
   }
 ]

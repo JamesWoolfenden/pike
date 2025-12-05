@@ -19,6 +19,22 @@
     ],
     "plan": [
       "container.clusters.get"
-    ]
+    ],
+    "runtime": {
+      "node_config": [
+        "artifactregistry.repositories.downloadArtifacts",
+        "logging.logEntries.create",
+        "monitoring.timeSeries.create",
+        "storage.objects.get"
+      ],
+      "private_cluster_config": [
+        "compute.addresses.use"
+      ],
+      "workload_identity_config": [
+        "iam.serviceAccounts.getAccessToken",
+        "secretmanager.versions.access",
+        "storage.objects.get"
+      ]
+    }
   }
 ]

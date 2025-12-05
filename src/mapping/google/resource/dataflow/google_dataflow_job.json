@@ -10,6 +10,34 @@
     },
     "destroy": [],
     "modify": [],
-    "plan": []
+    "plan": [],
+    "runtime": {
+      "parameters": [
+        "storage.objects.get",
+        "bigquery.tables.getData"
+      ],
+      "service_account": [
+        "bigquery.datasets.get",
+        "bigquery.tables.get",
+        "bigquery.tables.getData",
+        "bigquery.tables.create",
+        "bigquery.tables.update",
+        "bigquery.jobs.create",
+        "pubsub.topics.publish",
+        "pubsub.subscriptions.consume",
+        "storage.objects.get",
+        "storage.objects.create",
+        "storage.objects.delete",
+        "storage.buckets.get",
+        "bigtable.tables.readRows",
+        "bigtable.tables.mutateRows",
+        "spanner.databases.read",
+        "spanner.databases.write",
+        "cloudsql.instances.connect",
+        "dataflow.jobs.get",
+        "logging.logEntries.create",
+        "monitoring.timeSeries.create"
+      ]
+    }
   }
 ]

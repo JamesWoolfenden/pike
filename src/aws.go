@@ -1728,6 +1728,59 @@ func getActionPermissions(permissionMap map[string]interface{}, found []string) 
 	return found, nil
 }
 
+// GetRuntimePermissions extracts runtime permissions needed by service accounts from mapping files.
+func GetRuntimePermissions(raw []byte, attributes []string, resource string) ([]string, error) {
+	if !json.Valid(raw) || len(raw) == 0 {
+		return nil, &invalidJSONError{}
+	}
+
+	var mappings []interface{}
+	err := json.Unmarshal(raw, &mappings)
+
+	if err != nil {
+		return nil, &unmarshallJSONError{err, resource}
+	}
+
+	if mappings == nil {
+		return nil, &mappingsEmptyError{}
+	}
+
+	temp, err := IsTypeOK(mappings[0])
+	if err != nil {
+		return nil, err
+	}
+
+	// Check if runtime field exists
+	if temp["runtime"] == nil {
+		return []string{}, nil // No runtime permissions defined
+	}
+
+	runtimeMap, err := IsTypeOK(temp["runtime"])
+	if err != nil {
+		return nil, &assertionFailedError{"temp[\"runtime\"]", err}
+	}
+
+	var found []string
+
+	// Check each attribute to see if it triggers runtime permissions
+	for _, attribute := range attributes {
+		if runtimeMap[attribute] != nil {
+			for _, entry := range runtimeMap[attribute].([]interface{}) {
+				value, ok := entry.(string)
+
+				if !ok {
+					log.Error().Msg("failed to cast runtime permission to string")
+					continue
+				}
+
+				found = append(found, value)
+			}
+		}
+	}
+
+	return found, nil
+}
+
 func IsTypeOK(mappings interface{}) (map[string]interface{}, error) {
 	temp, ok := mappings.(map[string]interface{})
 

@@ -144,6 +144,525 @@ func Scan(dirName string, outputType string, file *string, init bool, write bool
 	return err
 }
 
+// Runtime detects runtime IAM permissions needed by service accounts.
+func Runtime(dirName string, outputType string, file *string, init bool, provider string) error {
+	if dirName == "" && file == nil {
+		return &emptyScanLocationError{}
+	}
+
+	permissionsBag, err := makePermissionBag(dirName, file, init, provider)
+	if err != nil {
+		return fmt.Errorf("failed to create permission bag: %w", err)
+	}
+
+	// Output runtime permissions
+	output := formatRuntimePermissions(permissionsBag, provider)
+	if output == "" {
+		fmt.Println("No runtime permissions detected.")
+		return nil
+	}
+
+	fmt.Print(output)
+	return nil
+}
+
+// formatRuntimePermissions formats runtime permissions for output.
+func formatRuntimePermissions(perms Sorted, provider string) string {
+	var output string
+
+	switch strings.ToLower(provider) {
+	case "gcp", "google":
+		if len(perms.RuntimeGCP) > 0 {
+			output += formatGCPRuntimeWithValidation(perms.RuntimeGCP, perms.IAMBindings)
+		}
+	case "aws":
+		// TODO: Implement AWS runtime permission formatting
+		if len(perms.RuntimeAWS) > 0 {
+			output += "=== AWS Runtime Permissions ===\n"
+			output += "(AWS runtime permission detection not yet implemented)\n\n"
+		}
+	case "azure", "azurerm":
+		// TODO: Implement Azure runtime permission formatting
+		if len(perms.RuntimeAZURE) > 0 {
+			output += "=== Azure Runtime Permissions ===\n"
+			output += "(Azure runtime permission detection not yet implemented)\n\n"
+		}
+	case "":
+		// Show all
+		if len(perms.RuntimeGCP) > 0 {
+			output += formatGCPRuntimeWithValidation(perms.RuntimeGCP, perms.IAMBindings)
+		}
+		if len(perms.RuntimeAWS) > 0 {
+			output += "=== AWS Runtime Permissions ===\n"
+			output += "(AWS runtime permission detection not yet implemented)\n\n"
+		}
+		if len(perms.RuntimeAZURE) > 0 {
+			output += "=== Azure Runtime Permissions ===\n"
+			output += "(Azure runtime permission detection not yet implemented)\n\n"
+		}
+	}
+
+	return output
+}
+
+// ValidationResult tracks the status of an IAM binding requirement.
+type ValidationResult struct {
+	ResourceType   string
+	ResourceName   string
+	ServiceAccount string
+	Role           string
+	Permissions    []string
+	Status         string // "configured", "missing", "partial"
+	ExistingMember string // If configured, what member string is used
+}
+
+// validateRuntimePermissions checks if required runtime permissions have IAM bindings.
+func validateRuntimePermissions(runtimePerms []RuntimePermission, iamBindings []IAMBinding, permissionToRole map[string]string) []ValidationResult {
+	var results []ValidationResult
+
+	// Build a map of role -> IAM bindings for quick lookup
+	roleBindings := make(map[string][]IAMBinding)
+	for _, binding := range iamBindings {
+		roleBindings[binding.Role] = append(roleBindings[binding.Role], binding)
+	}
+
+	// Check each runtime permission requirement
+	for _, runtimePerm := range runtimePerms {
+		if len(runtimePerm.Permissions) == 0 {
+			continue
+		}
+
+		// Group permissions by role
+		rolesNeeded := make(map[string][]string)
+		for _, perm := range runtimePerm.Permissions {
+			if role, ok := permissionToRole[perm]; ok {
+				rolesNeeded[role] = append(rolesNeeded[role], perm)
+			}
+		}
+
+		// Check each role
+		for role, perms := range rolesNeeded {
+			result := ValidationResult{
+				ResourceType:   runtimePerm.ResourceType,
+				ResourceName:   runtimePerm.ResourceName,
+				ServiceAccount: runtimePerm.ServiceAccount,
+				Role:           role,
+				Permissions:    perms,
+				Status:         "missing",
+			}
+
+			// Check if this role has an IAM binding
+			if bindings, exists := roleBindings[role]; exists {
+				// Check if any binding references this service account
+				serviceAccountRef := extractServiceAccountRef(runtimePerm)
+				for _, binding := range bindings {
+					if matchesServiceAccount(binding.Member, serviceAccountRef, runtimePerm) {
+						result.Status = "configured"
+						result.ExistingMember = binding.Member
+						break
+					}
+				}
+			}
+
+			results = append(results, result)
+		}
+	}
+
+	return results
+}
+
+// extractServiceAccountRef creates a service account reference from runtime permission.
+func extractServiceAccountRef(runtimePerm RuntimePermission) string {
+	if runtimePerm.ServiceAccount == "custom" {
+		return fmt.Sprintf("${%s.%s.service_account}", runtimePerm.ResourceType, runtimePerm.ResourceName)
+	}
+	return "" // default service account - can't match
+}
+
+// matchesServiceAccount checks if an IAM binding member matches a service account reference.
+func matchesServiceAccount(member string, serviceAccountRef string, runtimePerm RuntimePermission) bool {
+	if serviceAccountRef == "" {
+		// Default service account - we can't reliably match
+		return false
+	}
+
+	// Check for exact match (for Terraform references)
+	memberRef := strings.TrimPrefix(member, "serviceAccount:")
+	if strings.Contains(memberRef, serviceAccountRef) {
+		return true
+	}
+
+	return false
+}
+
+// formatGCPRuntimeWithValidation generates output with validation results.
+func formatGCPRuntimeWithValidation(runtimePerms []RuntimePermission, iamBindings []IAMBinding) string {
+	if len(runtimePerms) == 0 {
+		return ""
+	}
+
+	// Permission to role mapping
+	permissionToRole := buildPermissionToRoleMap()
+
+	// Validate runtime permissions against IAM bindings
+	validationResults := validateRuntimePermissions(runtimePerms, iamBindings, permissionToRole)
+
+	var output strings.Builder
+
+	// Group results by resource
+	resourceResults := make(map[string][]ValidationResult)
+	for _, result := range validationResults {
+		key := fmt.Sprintf("%s.%s", result.ResourceType, result.ResourceName)
+		resourceResults[key] = append(resourceResults[key], result)
+	}
+
+	// Process each resource
+	for _, runtimePerm := range runtimePerms {
+		if len(runtimePerm.Permissions) == 0 {
+			continue
+		}
+
+		key := fmt.Sprintf("%s.%s", runtimePerm.ResourceType, runtimePerm.ResourceName)
+		results := resourceResults[key]
+
+		// Header for this resource
+		output.WriteString(fmt.Sprintf("# Resource: %s.%s\n", runtimePerm.ResourceType, runtimePerm.ResourceName))
+
+		// Warning about default service account
+		if runtimePerm.ServiceAccount == "default" {
+			output.WriteString("# ⚠️  WARNING: Using default service account (broad permissions).\n")
+			output.WriteString("#     Best practice: Define a dedicated service account with least-privilege access.\n")
+		} else if runtimePerm.ServiceAccount == "custom" {
+			output.WriteString(fmt.Sprintf("# ℹ️  Service account: Defined in resource (reference as ${%s.%s.service_account})\n",
+				runtimePerm.ResourceType, runtimePerm.ResourceName))
+		}
+		output.WriteString("#\n")
+
+		// Validation status
+		configured := 0
+		missing := 0
+		for _, result := range results {
+			if result.Status == "configured" {
+				configured++
+			} else {
+				missing++
+			}
+		}
+
+		if configured > 0 && missing == 0 {
+			output.WriteString("# ✅ IAM Status: All required permissions are configured\n")
+		} else if configured > 0 {
+			output.WriteString(fmt.Sprintf("# ⚠️  IAM Status: %d configured, %d missing\n", configured, missing))
+		} else {
+			output.WriteString(fmt.Sprintf("# ❌ IAM Status: No IAM bindings found (%d missing)\n", missing))
+		}
+		output.WriteString("#\n")
+
+		// Show validation details
+		if len(results) > 0 {
+			output.WriteString("# IAM Binding Requirements:\n")
+			for _, result := range results {
+				if result.Status == "configured" {
+					output.WriteString(fmt.Sprintf("#   ✅ %s - CONFIGURED\n", result.Role))
+					output.WriteString(fmt.Sprintf("#      Member: %s\n", result.ExistingMember))
+				} else {
+					output.WriteString(fmt.Sprintf("#   ❌ %s - MISSING\n", result.Role))
+					output.WriteString("#      Permissions: ")
+					output.WriteString(strings.Join(result.Permissions, ", "))
+					output.WriteString("\n")
+				}
+			}
+			output.WriteString("#\n")
+		}
+
+		// Generate Terraform code for missing bindings
+		missingResults := []ValidationResult{}
+		for _, result := range results {
+			if result.Status == "missing" {
+				missingResults = append(missingResults, result)
+			}
+		}
+
+		if len(missingResults) > 0 {
+			output.WriteString("# Suggested IAM bindings to add:\n#\n")
+
+			for _, result := range missingResults {
+				roleID := strings.ReplaceAll(strings.Split(result.Role, "/")[1], ".", "_")
+				resourceID := strings.ReplaceAll(runtimePerm.ResourceName, "-", "_")
+				bindingName := fmt.Sprintf("runtime_%s_%s", resourceID, roleID)
+
+				output.WriteString(fmt.Sprintf("resource \"google_project_iam_member\" \"%s\" {\n", bindingName))
+				output.WriteString("  project = var.project_id\n")
+				output.WriteString(fmt.Sprintf("  role    = \"%s\"\n", result.Role))
+
+				if runtimePerm.ServiceAccount == "custom" {
+					output.WriteString(fmt.Sprintf("  member  = \"serviceAccount:${%s.%s.service_account}\"\n",
+						runtimePerm.ResourceType, runtimePerm.ResourceName))
+				} else {
+					output.WriteString("  member  = \"serviceAccount:YOUR_SERVICE_ACCOUNT_EMAIL\"  # TODO: Replace with actual service account\n")
+				}
+
+				output.WriteString("}\n\n")
+			}
+		}
+
+		// List all detected permissions
+		output.WriteString("# All permissions detected:\n")
+		uniquePerms := Unique(runtimePerm.Permissions)
+		for _, perm := range uniquePerms {
+			output.WriteString(fmt.Sprintf("#   - %s\n", perm))
+		}
+		output.WriteString("\n")
+	}
+
+	return output.String()
+}
+
+// buildPermissionToRoleMap creates the GCP permission to role mapping.
+func buildPermissionToRoleMap() map[string]string {
+	return map[string]string{
+		// Secret Manager
+		"secretmanager.versions.access": "roles/secretmanager.secretAccessor",
+
+		// CloudSQL
+		"cloudsql.instances.connect": "roles/cloudsql.client",
+		"cloudsql.instances.get":     "roles/cloudsql.client",
+
+		// Cloud Storage
+		"storage.objects.get":    "roles/storage.objectViewer",
+		"storage.objects.create": "roles/storage.objectCreator",
+		"storage.objects.list":   "roles/storage.objectViewer",
+		"storage.objects.delete": "roles/storage.objectAdmin",
+		"storage.buckets.get":    "roles/storage.objectViewer",
+
+		// Pub/Sub
+		"pubsub.topics.publish":        "roles/pubsub.publisher",
+		"pubsub.subscriptions.consume": "roles/pubsub.subscriber",
+
+		// BigQuery
+		"bigquery.datasets.get":   "roles/bigquery.dataViewer",
+		"bigquery.tables.get":     "roles/bigquery.dataViewer",
+		"bigquery.tables.getData": "roles/bigquery.dataViewer",
+		"bigquery.jobs.create":    "roles/bigquery.jobUser",
+
+		// Artifact Registry
+		"artifactregistry.repositories.downloadArtifacts": "roles/artifactregistry.reader",
+
+		// Logging & Monitoring
+		"logging.logEntries.create":    "roles/logging.logWriter",
+		"monitoring.timeSeries.create": "roles/monitoring.metricWriter",
+
+		// IAM
+		"iam.serviceAccounts.getAccessToken": "roles/iam.workloadIdentityUser",
+		"iam.serviceAccounts.actAs":          "roles/iam.serviceAccountUser",
+
+		// KMS
+		"cloudkms.cryptoKeyVersions.useToDecrypt": "roles/cloudkms.cryptoKeyDecrypter",
+
+		// Compute
+		"compute.addresses.use": "roles/compute.networkUser",
+
+		// Cloud Functions
+		"cloudfunctions.functions.invoke": "roles/cloudfunctions.invoker",
+
+		// Cloud Run
+		"run.routes.invoke": "roles/run.invoker",
+
+		// Composer
+		"composer.environments.get": "roles/composer.worker",
+
+		// Cloud Tasks
+		"cloudtasks.tasks.create": "roles/cloudtasks.enqueuer",
+
+		// Firestore
+		"firestore.documents.get":    "roles/datastore.user",
+		"firestore.documents.create": "roles/datastore.user",
+
+		// Datastore
+		"datastore.entities.get":    "roles/datastore.user",
+		"datastore.entities.create": "roles/datastore.user",
+
+		// Spanner
+		"spanner.databases.read":  "roles/spanner.databaseReader",
+		"spanner.sessions.create": "roles/spanner.databaseReader",
+		"spanner.databases.write": "roles/spanner.databaseUser",
+
+		// App Engine
+		"appengine.applications.get": "roles/appengine.appViewer",
+
+		// Artifact Registry (upload)
+		"artifactregistry.repositories.uploadArtifacts": "roles/artifactregistry.writer",
+
+		// Bigtable
+		"bigtable.tables.readRows":   "roles/bigtable.reader",
+		"bigtable.tables.mutateRows": "roles/bigtable.user",
+
+		// Workflows
+		"workflows.executions.create": "roles/workflows.invoker",
+
+		// Eventarc
+		"eventarc.events.receiveEvent": "roles/eventarc.eventReceiver",
+
+		// Metastore
+		"metastore.tables.get":  "roles/metastore.metadataViewer",
+		"metastore.tables.list": "roles/metastore.metadataViewer",
+
+		// Cloud Run (services management for Cloud Build)
+		"run.services.get":    "roles/run.developer",
+		"run.services.update": "roles/run.developer",
+
+		// Cloud Functions (management for Cloud Build)
+		"cloudfunctions.functions.get":    "roles/cloudfunctions.developer",
+		"cloudfunctions.functions.update": "roles/cloudfunctions.developer",
+
+		// BigQuery (additional permissions)
+		"bigquery.tables.create": "roles/bigquery.dataEditor",
+		"bigquery.tables.update": "roles/bigquery.dataEditor",
+
+		// Dataflow
+		"dataflow.jobs.get": "roles/dataflow.worker",
+	}
+}
+
+// formatGCPRuntimeTerraform generates Terraform IAM bindings for GCP runtime permissions.
+func formatGCPRuntimeTerraform(runtimePerms []RuntimePermission) string {
+	if len(runtimePerms) == 0 {
+		return ""
+	}
+
+	// Map permissions to standard GCP roles
+	permissionToRole := map[string]string{
+		// Secret Manager
+		"secretmanager.versions.access": "roles/secretmanager.secretAccessor",
+
+		// CloudSQL
+		"cloudsql.instances.connect": "roles/cloudsql.client",
+		"cloudsql.instances.get":     "roles/cloudsql.client",
+
+		// Cloud Storage
+		"storage.objects.get":    "roles/storage.objectViewer",
+		"storage.objects.create": "roles/storage.objectCreator",
+		"storage.objects.list":   "roles/storage.objectViewer",
+		"storage.objects.delete": "roles/storage.objectAdmin",
+		"storage.buckets.get":    "roles/storage.objectViewer",
+
+		// Pub/Sub
+		"pubsub.topics.publish":        "roles/pubsub.publisher",
+		"pubsub.subscriptions.consume": "roles/pubsub.subscriber",
+
+		// BigQuery
+		"bigquery.datasets.get":   "roles/bigquery.dataViewer",
+		"bigquery.tables.get":     "roles/bigquery.dataViewer",
+		"bigquery.tables.getData": "roles/bigquery.dataViewer",
+		"bigquery.jobs.create":    "roles/bigquery.jobUser",
+
+		// Artifact Registry
+		"artifactregistry.repositories.downloadArtifacts": "roles/artifactregistry.reader",
+
+		// Logging & Monitoring
+		"logging.logEntries.create":    "roles/logging.logWriter",
+		"monitoring.timeSeries.create": "roles/monitoring.metricWriter",
+
+		// IAM
+		"iam.serviceAccounts.getAccessToken": "roles/iam.workloadIdentityUser",
+		"iam.serviceAccounts.actAs":          "roles/iam.serviceAccountUser",
+
+		// KMS
+		"cloudkms.cryptoKeyVersions.useToDecrypt": "roles/cloudkms.cryptoKeyDecrypter",
+
+		// Compute
+		"compute.addresses.use": "roles/compute.networkUser",
+
+		// Cloud Functions
+		"cloudfunctions.functions.invoke": "roles/cloudfunctions.invoker",
+
+		// Cloud Run
+		"run.routes.invoke": "roles/run.invoker",
+
+		// Composer
+		"composer.environments.get": "roles/composer.worker",
+
+		// Cloud Tasks
+		"cloudtasks.tasks.create": "roles/cloudtasks.enqueuer",
+
+		// Firestore
+		"firestore.documents.get":    "roles/datastore.user",
+		"firestore.documents.create": "roles/datastore.user",
+
+		// Datastore
+		"datastore.entities.get":    "roles/datastore.user",
+		"datastore.entities.create": "roles/datastore.user",
+
+		// Spanner
+		"spanner.databases.read":  "roles/spanner.databaseReader",
+		"spanner.sessions.create": "roles/spanner.databaseReader",
+
+		// App Engine
+		"appengine.applications.get": "roles/appengine.appViewer",
+	}
+
+	var output strings.Builder
+
+	// Process each resource
+	for _, runtimePerm := range runtimePerms {
+		if len(runtimePerm.Permissions) == 0 {
+			continue
+		}
+
+		// Header for this resource
+		output.WriteString(fmt.Sprintf("# Resource: %s.%s\n", runtimePerm.ResourceType, runtimePerm.ResourceName))
+
+		// Warning about default service account
+		if runtimePerm.ServiceAccount == "default" {
+			output.WriteString("# ⚠️  WARNING: Using default service account (broad permissions).\n")
+			output.WriteString("#     Best practice: Define a dedicated service account with least-privilege access.\n")
+		} else if runtimePerm.ServiceAccount == "custom" {
+			output.WriteString(fmt.Sprintf("# ℹ️  Service account: Defined in resource (reference as ${%s.%s.service_account})\n", runtimePerm.ResourceType, runtimePerm.ResourceName))
+		}
+
+		// Group permissions by role for this resource
+		rolesNeeded := make(map[string]bool)
+		for _, perm := range runtimePerm.Permissions {
+			if role, ok := permissionToRole[perm]; ok {
+				rolesNeeded[role] = true
+			}
+		}
+
+		if len(rolesNeeded) > 0 {
+			output.WriteString("#\n# Runtime IAM Bindings:\n\n")
+
+			// Generate IAM bindings
+			for role := range rolesNeeded {
+				roleID := strings.ReplaceAll(strings.Split(role, "/")[1], ".", "_")
+				resourceID := strings.ReplaceAll(runtimePerm.ResourceName, "-", "_")
+				bindingName := fmt.Sprintf("runtime_%s_%s", resourceID, roleID)
+
+				output.WriteString(fmt.Sprintf("resource \"google_project_iam_member\" \"%s\" {\n", bindingName))
+				output.WriteString("  project = var.project_id\n")
+				output.WriteString(fmt.Sprintf("  role    = \"%s\"\n", role))
+
+				if runtimePerm.ServiceAccount == "custom" {
+					output.WriteString(fmt.Sprintf("  member  = \"serviceAccount:${%s.%s.service_account}\"\n", runtimePerm.ResourceType, runtimePerm.ResourceName))
+				} else {
+					output.WriteString("  member  = \"serviceAccount:YOUR_SERVICE_ACCOUNT_EMAIL\"  # TODO: Replace with actual service account\n")
+				}
+
+				output.WriteString("}\n\n")
+			}
+		}
+
+		// List detected permissions
+		output.WriteString("# Permissions detected:\n")
+		uniquePerms := Unique(runtimePerm.Permissions)
+		for _, perm := range uniquePerms {
+			output.WriteString(fmt.Sprintf("#   - %s\n", perm))
+		}
+		output.WriteString("\n")
+	}
+
+	return output.String()
+}
+
 // WriteOutput writes out the policy as JSON or Terraform.
 func WriteOutput(outPolicy OutputPolicy, outputType string, scanPath string, outFile string) error {
 
@@ -304,6 +823,7 @@ func getAbsolutePath(path string) (string, error) {
 	}
 	return absPath, nil
 }
+
 func makePermissionBag(dirName string, file *string, init bool, provider string) (Sorted, error) {
 
 	var files []string
@@ -351,6 +871,8 @@ func makePermissionBag(dirName string, file *string, init bool, provider string)
 	var failedFiles []string
 	var criticalErrors []error
 
+	var allIAMBindings []IAMBinding
+
 	for _, tfFile := range files {
 		resource, err := GetResources(tfFile, dirName)
 		if err != nil {
@@ -361,6 +883,13 @@ func makePermissionBag(dirName string, file *string, init bool, provider string)
 
 		if resource != nil {
 			resources = append(resources, resource...)
+		}
+
+		// Also extract IAM bindings from this file
+		body, err := GetResourceBlocks(tfFile)
+		if err == nil && body != nil {
+			bindings := ExtractIAMBindings(body)
+			allIAMBindings = append(allIAMBindings, bindings...)
 		}
 	}
 
@@ -374,6 +903,7 @@ func makePermissionBag(dirName string, file *string, init bool, provider string)
 	}
 
 	permissionsBag := GetPermissionBag(resources, provider)
+	permissionsBag.IAMBindings = allIAMBindings
 	return permissionsBag, nil
 }
 func GetPermissionBag(resources []ResourceV2, provider string) Sorted {
@@ -397,14 +927,20 @@ func GetPermissionBag(resources []ResourceV2, provider string) Sorted {
 		switch strings.ToLower(provider) {
 		case "aws":
 			permissionBag.AWS = append(permissionBag.AWS, newPerms.AWS...)
+			permissionBag.RuntimeAWS = append(permissionBag.RuntimeAWS, newPerms.RuntimeAWS...)
 		case "gcp", "google":
 			permissionBag.GCP = append(permissionBag.GCP, newPerms.GCP...)
+			permissionBag.RuntimeGCP = append(permissionBag.RuntimeGCP, newPerms.RuntimeGCP...)
 		case "azure", "azurerm":
 			permissionBag.AZURE = append(permissionBag.AZURE, newPerms.AZURE...)
+			permissionBag.RuntimeAZURE = append(permissionBag.RuntimeAZURE, newPerms.RuntimeAZURE...)
 		case "":
 			permissionBag.AWS = append(permissionBag.AWS, newPerms.AWS...)
 			permissionBag.GCP = append(permissionBag.GCP, newPerms.GCP...)
 			permissionBag.AZURE = append(permissionBag.AZURE, newPerms.AZURE...)
+			permissionBag.RuntimeAWS = append(permissionBag.RuntimeAWS, newPerms.RuntimeAWS...)
+			permissionBag.RuntimeGCP = append(permissionBag.RuntimeGCP, newPerms.RuntimeGCP...)
+			permissionBag.RuntimeAZURE = append(permissionBag.RuntimeAZURE, newPerms.RuntimeAZURE...)
 		}
 	}
 	return permissionBag
