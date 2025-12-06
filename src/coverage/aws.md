@@ -2,7 +2,7 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 95.60      |  1498       |  1567            |
+| Resources  | 95.11      |  1498       |  1575            |
 | Datasource | 100.00      |   628       |   628             |
 
 ```shell
@@ -22,17 +22,20 @@
 ./resource.ps1 aws_bedrockagentcore_token_vault_cmk
 ./resource.ps1 aws_bedrockagentcore_workload_identity
 ./resource.ps1 aws_billing_view
+./resource.ps1 aws_cloudwatch_log_transformer
 ./resource.ps1 aws_cognito_log_delivery_configuration
 ./resource.ps1 aws_cognito_managed_login_branding
 ./resource.ps1 aws_connect_phone_number_contact_flow_association
 ./resource.ps1 aws_controltower_baseline
 ./resource.ps1 aws_ec2_allowed_images_settings
 ./resource.ps1 aws_ecs_express_gateway_service
+./resource.ps1 aws_eks_capability
 ./resource.ps1 aws_fis_target_account_configuration
 ./resource.ps1 aws_fsx_s3_access_point_attachment
 ./resource.ps1 aws_invoicing_invoice_unit
 ./resource.ps1 aws_lakeformation_identity_center_configuration
 ./resource.ps1 aws_lakeformation_lf_tag_expression
+./resource.ps1 aws_lambda_capacity_provider
 ./resource.ps1 aws_nat_gateway_eip_association
 ./resource.ps1 aws_networkfirewall_firewall_transit_gateway_attachment_accepter
 ./resource.ps1 aws_networkfirewall_vpc_endpoint_association
@@ -53,6 +56,11 @@
 ./resource.ps1 aws_quicksight_user_custom_permission
 ./resource.ps1 aws_s3_bucket_abac
 ./resource.ps1 aws_s3_bucket_metadata_configuration
+./resource.ps1 aws_s3tables_table_bucket_replication
+./resource.ps1 aws_s3tables_table_replication
+./resource.ps1 aws_s3vectors_index
+./resource.ps1 aws_s3vectors_vector_bucket
+./resource.ps1 aws_s3vectors_vector_bucket_policy
 ./resource.ps1 aws_timestreaminfluxdb_db_cluster
 ./resource.ps1 aws_transfer_host_key
 ./resource.ps1 aws_transfer_web_app

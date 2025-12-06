@@ -36,7 +36,7 @@ func TestGetResources(t *testing.T) {
 			"no_dir",
 			args{file, ""},
 			[]pike.ResourceV2{{
-				"resource", "aws_s3_bucket", "pike", "aws", []string{"bucket"},
+				"resource", "aws_s3_bucket", "pike", "aws", []string{"bucket"}, "",
 			}},
 			false,
 		},
@@ -44,7 +44,7 @@ func TestGetResources(t *testing.T) {
 			"dir",
 			args{file, "../testdata/scan/examples/simple"},
 			[]pike.ResourceV2{{
-				"resource", "aws_s3_bucket", "pike", "aws", []string{"bucket"},
+				"resource", "aws_s3_bucket", "pike", "aws", []string{"bucket"}, "",
 			}},
 			false,
 		},
@@ -53,9 +53,11 @@ func TestGetResources(t *testing.T) {
 			args{moduleFile, "../testdata/modules/examples/local"},
 			[]pike.ResourceV2{
 				{
-					"resource", "aws_s3_bucket", "pike", "aws", []string{"name"},
+					"resource", "aws_s3_bucket", "pike", "aws", []string{"name"}, "",
 				},
-				{"module", "local", "", "local", []string{"source"}},
+				{
+					"module", "local", "", "local", []string{"source"}, "",
+				},
 			},
 			false,
 		},
@@ -64,9 +66,9 @@ func TestGetResources(t *testing.T) {
 			args{moduleFile, "../testdata/modules/examples/rubbish"},
 			[]pike.ResourceV2{
 				{
-					"resource", "aws_s3_bucket", "pike", "aws", []string{"name"},
+					"resource", "aws_s3_bucket", "pike", "aws", []string{"name"}, "",
 				},
-				{"module", "local", "", "local", []string{"source"}},
+				{"module", "local", "", "local", []string{"source"}, ""},
 			},
 			false,
 		},
@@ -123,6 +125,7 @@ func Test_getLocalModules(t *testing.T) {
 				"pike",
 				"aws",
 				[]string{"name"},
+				"",
 			}},
 			false,
 		},

@@ -2,7 +2,7 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 61.95      |   783       |  1264            |
+| Resources  | 61.65      |   783       |  1270            |
 | Datasource | 100.00      |   403       |   403             |
 
 ```shell
@@ -230,6 +230,7 @@
 ./resource.ps1 google_datastream_private_connection
 ./resource.ps1 google_datastream_stream
 ./resource.ps1 google_developer_connect_insights_config
+./resource.ps1 google_dialogflow_generator
 ./resource.ps1 google_dialogflow_version
 ./resource.ps1 google_discovery_engine_acl_config
 ./resource.ps1 google_discovery_engine_assistant
@@ -245,6 +246,7 @@
 ./resource.ps1 google_discovery_engine_sitemap
 ./resource.ps1 google_discovery_engine_target_site
 ./resource.ps1 google_discovery_engine_user_store
+./resource.ps1 google_discovery_engine_widget_config
 ./resource.ps1 google_dns_response_policy
 ./resource.ps1 google_dns_response_policy_rule
 ./resource.ps1 google_document_ai_processor
@@ -359,6 +361,7 @@
 ./resource.ps1 google_netapp_volume_quota_rule
 ./resource.ps1 google_netapp_volume_replication
 ./resource.ps1 google_netapp_volume_snapshot
+./resource.ps1 google_network_connectivity_gateway_advertised_route
 ./resource.ps1 google_network_connectivity_group
 ./resource.ps1 google_network_connectivity_hub
 ./resource.ps1 google_network_connectivity_internal_range
@@ -387,6 +390,7 @@
 ./resource.ps1 google_network_security_mirroring_endpoint
 ./resource.ps1 google_network_security_mirroring_endpoint_group
 ./resource.ps1 google_network_security_mirroring_endpoint_group_association
+./resource.ps1 google_network_security_sac_attachment
 ./resource.ps1 google_network_security_sac_realm
 ./resource.ps1 google_network_security_security_profile
 ./resource.ps1 google_network_security_security_profile_group
@@ -409,6 +413,8 @@
 ./resource.ps1 google_network_services_multicast_domain
 ./resource.ps1 google_network_services_multicast_domain_activation
 ./resource.ps1 google_network_services_multicast_domain_group
+./resource.ps1 google_network_services_multicast_group_range
+./resource.ps1 google_network_services_multicast_group_range_activation
 ./resource.ps1 google_network_services_multicast_producer_association
 ./resource.ps1 google_network_services_service_binding
 ./resource.ps1 google_network_services_service_lb_policies

@@ -2,7 +2,7 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 4.48      |    50       |  1117            |
+| Resources  | 4.46      |    50       |  1120            |
 | Datasource | 30.58      |   122       |   399             |
 
 ```shell
@@ -582,6 +582,7 @@
 ./resource.ps1 azurerm_mobile_network_slice
 ./resource.ps1 azurerm_mongo_cluster
 ./resource.ps1 azurerm_mongo_cluster_firewall_rule
+./resource.ps1 azurerm_mongo_cluster_user
 ./resource.ps1 azurerm_monitor_aad_diagnostic_setting
 ./resource.ps1 azurerm_monitor_action_group
 ./resource.ps1 azurerm_monitor_activity_log_alert
@@ -710,8 +711,10 @@
 ./resource.ps1 azurerm_palo_alto_local_rulestack_rule
 ./resource.ps1 azurerm_palo_alto_next_generation_firewall_virtual_hub_local_rulestack
 ./resource.ps1 azurerm_palo_alto_next_generation_firewall_virtual_hub_panorama
+./resource.ps1 azurerm_palo_alto_next_generation_firewall_virtual_hub_strata_cloud_manager
 ./resource.ps1 azurerm_palo_alto_next_generation_firewall_virtual_network_local_rulestack
 ./resource.ps1 azurerm_palo_alto_next_generation_firewall_virtual_network_panorama
+./resource.ps1 azurerm_palo_alto_next_generation_firewall_virtual_network_strata_cloud_manager
 ./resource.ps1 azurerm_palo_alto_virtual_network_appliance
 ./resource.ps1 azurerm_pim_active_role_assignment
 ./resource.ps1 azurerm_pim_eligible_role_assignment
