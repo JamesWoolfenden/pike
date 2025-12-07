@@ -2,10 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 95.11      |  1498       |  1575            |
+| Resources  | 95.68      |  1507       |  1575            |
 | Datasource | 100.00      |   628       |   628             |
 
 ```shell
+./resource.ps1 aws_acm_certificate_validation
+./resource.ps1 aws_alb
 ./resource.ps1 aws_appsync_api
 ./resource.ps1 aws_appsync_channel_namespace
 ./resource.ps1 aws_bedrockagent_flow
@@ -47,7 +49,6 @@
 ./resource.ps1 aws_odb_cloud_vm_cluster
 ./resource.ps1 aws_odb_network
 ./resource.ps1 aws_odb_network_peering_connection
-./resource.ps1 aws_prometheus_query_logging_configuration
 ./resource.ps1 aws_prometheus_resource_policy
 ./resource.ps1 aws_quicksight_custom_permissions
 ./resource.ps1 aws_quicksight_ip_restriction
@@ -66,19 +67,9 @@
 ./resource.ps1 aws_transfer_web_app
 ./resource.ps1 aws_transfer_web_app_customization
 ./resource.ps1 aws_vpc_encryption_control
-./resource.ps1 aws_vpc_route_server_endpoint
-./resource.ps1 aws_vpc_route_server_peer
 ./resource.ps1 aws_vpclattice_domain_verification
 ./resource.ps1 aws_vpn_concentrator
 ./resource.ps1 aws_wafv2_web_acl_rule_group_association
-./resource.ps1 aws_workspacesweb_browser_settings_association
-./resource.ps1 aws_workspacesweb_data_protection_settings_association
-./resource.ps1 aws_workspacesweb_identity_provider
-./resource.ps1 aws_workspacesweb_ip_access_settings_association
-./resource.ps1 aws_workspacesweb_network_settings_association
-./resource.ps1 aws_workspacesweb_portal
-./resource.ps1 aws_workspacesweb_session_logger
-./resource.ps1 aws_workspacesweb_session_logger_association
 ./resource.ps1 aws_workspacesweb_trust_store
 ./resource.ps1 aws_workspacesweb_trust_store_association
 ./resource.ps1 aws_workspacesweb_user_access_logging_settings_association

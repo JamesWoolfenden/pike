@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "workspaces-web:GetSessionLogger",
+      "workspaces-web:CreateSessionLogger",
+      "workspaces-web:DeleteSessionLogger",
+      "workspaces-web:UpdateSessionLogger"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

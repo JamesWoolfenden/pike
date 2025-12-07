@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "workspaces-web:GetIdentityProvider",
+      "workspaces-web:CreateIdentityProvider",
+      "workspaces-web:DeleteIdentityProvider",
+      "workspaces-web:UpdateIdentityProvider"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeSubnets"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "ec2:DescribeSubnets"
+    ]
+  }
+]

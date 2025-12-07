@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "workspaces-web:AssociateIpAccessSettings",
+      "workspaces-web:DisassociateIpAccessSettings"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

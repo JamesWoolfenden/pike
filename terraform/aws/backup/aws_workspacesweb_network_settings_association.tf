@@ -1,0 +1,1 @@
+resource "aws_workspacesweb_network_settings_association" "pike" {}

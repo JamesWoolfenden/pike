@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "workspaces-web:AssociateDataProtectionSettings",
+      "workspaces-web:DisassociateDataProtectionSettings"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

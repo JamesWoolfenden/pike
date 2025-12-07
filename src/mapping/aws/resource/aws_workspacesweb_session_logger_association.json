@@ -1,7 +1,8 @@
 [
   {
     "apply": [
-      "ec2:DescribeSubnets"
+      "workspaces-web:AssociateSessionLogger",
+      "workspaces-web:DisassociateSessionLogger"
     ],
     "attributes": {
       "tags": []

@@ -32,28 +32,34 @@ function path()
 }
 
 # Enhancement 3: Resource Name Validation
-function Validate-Resource($resourceName, $provider) {
+function Validate-Resource($resourceName, $provider)
+{
     $membersFile = path $PSScriptRoot "src" "parse" "$provider-members.json"
 
-    if (-not (Test-Path $membersFile)) {
+    if (-not (Test-Path $membersFile))
+    {
         Write-Host "Warning: Cannot validate resource - $membersFile not found" -ForegroundColor Yellow
         return $true  # Allow to proceed if validation file doesn't exist
     }
 
-    try {
+    try
+    {
         $members = Get-Content $membersFile -Raw | ConvertFrom-Json
 
-        if ($members.resources -contains $resourceName) {
+        if ($members.resources -contains $resourceName)
+        {
             Write-Host "✓ Resource '$resourceName' validated in $provider provider" -ForegroundColor Green
             return $true
         }
-        else {
+        else
+        {
             Write-Host "✗ ERROR: Resource '$resourceName' not found in $provider provider" -ForegroundColor Red
 
             # Try to find similar resources
-            $similar = $members.resources | Where-Object { $_ -like "*$($resourceName.Split('_')[-1])*" } | Select-Object -First 5
+            $similar = $members.resources | Where-Object { $_ -like "*$( $resourceName.Split('_')[-1] )*" } | Select-Object -First 5
 
-            if ($similar) {
+            if ($similar)
+            {
                 Write-Host "`nDid you mean one of these?" -ForegroundColor Yellow
                 $similar | ForEach-Object { Write-Host "  - $_" -ForegroundColor Cyan }
             }
@@ -61,27 +67,32 @@ function Validate-Resource($resourceName, $provider) {
             return $false
         }
     }
-    catch {
+    catch
+    {
         Write-Host "Warning: Error reading members file: $_" -ForegroundColor Yellow
         return $true
     }
 }
 
 # Enhancement 5: Interactive Permission Selection
-function Get-AzurePermissions($resourceName, $provider, $isDataSource) {
-    if ($provider -ne "azurerm") {
+function Get-AzurePermissions($resourceName, $provider, $isDataSource)
+{
+    if ($provider -ne "azurerm")
+    {
         return $null  # Only works for Azure
     }
 
     $permissionsFile = path $PSScriptRoot "terraform" "azurerm" "azure_permissions.json"
 
-    if (-not (Test-Path $permissionsFile)) {
+    if (-not (Test-Path $permissionsFile))
+    {
         Write-Host "Info: azure_permissions.json not found - skipping permission lookup" -ForegroundColor Cyan
         Write-Host "      Run export_azure_permissions.ps1 to enable this feature" -ForegroundColor Cyan
         return $null
     }
 
-    try {
+    try
+    {
         $allPermissions = Get-Content $permissionsFile -Raw | ConvertFrom-Json -AsHashtable
 
         # Extract resource type from terraform resource name
@@ -92,16 +103,19 @@ function Get-AzurePermissions($resourceName, $provider, $isDataSource) {
         # Find potential matches in Azure providers
         $matches = @()
 
-        foreach ($providerName in $allPermissions.Keys) {
+        foreach ($providerName in $allPermissions.Keys)
+        {
             $provider = $allPermissions[$providerName]
 
-            foreach ($resourceType in $provider.Keys) {
+            foreach ($resourceType in $provider.Keys)
+            {
                 $resourceTypeLower = $resourceType.ToLower()
                 $resourcePartLower = $resourcePart.ToLower() -replace "_", ""
 
                 # Check if resource type matches (fuzzy)
                 if ($resourceTypeLower -like "*$resourcePartLower*" -or
-                    $resourcePartLower -like "*$resourceTypeLower*") {
+                        $resourcePartLower -like "*$resourceTypeLower*")
+                {
 
                     $perms = $provider[$resourceType]
                     $matches += @{
@@ -114,13 +128,15 @@ function Get-AzurePermissions($resourceName, $provider, $isDataSource) {
             }
         }
 
-        if ($matches.Count -eq 0) {
+        if ($matches.Count -eq 0)
+        {
             Write-Host "No Azure permissions found for '$resourceName'" -ForegroundColor Yellow
             return $null
         }
 
-        if ($matches.Count -eq 1) {
-            Write-Host "Found permissions for: $($matches[0].FullPath)" -ForegroundColor Green
+        if ($matches.Count -eq 1)
+        {
+            Write-Host "Found permissions for: $( $matches[0].FullPath )" -ForegroundColor Green
             return $matches[0].Permissions
         }
 
@@ -133,27 +149,28 @@ function Get-AzurePermissions($resourceName, $provider, $isDataSource) {
             $deleteCount = $m.Permissions.delete.Count
             $actionCount = $m.Permissions.action.Count
 
-            Write-Host "  [$($i + 1)] $($m.FullPath)" -ForegroundColor Yellow
+            Write-Host "  [$( $i + 1 )] $( $m.FullPath )" -ForegroundColor Yellow
             Write-Host "      Read: $readCount | Write: $writeCount | Delete: $deleteCount | Action: $actionCount" -ForegroundColor Gray
         }
 
-        do {
-            $choice = Read-Host "`nWhich resource type should we use? [1-$($matches.Count), or 0 to skip]"
+        do
+        {
+            $choice = Read-Host "`nWhich resource type should we use? [1-$( $matches.Count ), or 0 to skip]"
             $choiceNum = [int]$choice
         } while ($choiceNum -lt 0 -or $choiceNum -gt $matches.Count)
 
-        if ($choiceNum -eq 0) {
+        if ($choiceNum -eq 0)
+        {
             Write-Host "Skipping permission lookup" -ForegroundColor Yellow
             return $null
         }
 
         $selected = $matches[$choiceNum - 1]
-        Write-Host "✓ Selected: $($selected.FullPath)" -ForegroundColor Green
+        Write-Host "✓ Selected: $( $selected.FullPath )" -ForegroundColor Green
 
         return $selected.Permissions
 
-    }
-    catch {
+    } catch {
         Write-Host "Warning: Error reading permissions file: $_" -ForegroundColor Yellow
         return $null
     }
@@ -164,7 +181,8 @@ $provider = $resource.Split("_")[0]
 
 # Validate provider
 $supportedProviders = @("aws", "azurerm", "google")
-if ($provider -notin $supportedProviders) {
+if ($provider -notin $supportedProviders)
+{
     Write-Host "✗ ERROR: Unsupported provider '$provider'" -ForegroundColor Red
     Write-Host "`nSupported providers:" -ForegroundColor Yellow
     Write-Host "  - aws (e.g., aws_s3_bucket)" -ForegroundColor Cyan
@@ -174,35 +192,39 @@ if ($provider -notin $supportedProviders) {
 }
 
 Write-Host "`nPike Resource Creator" -ForegroundColor Cyan
-Write-Host ("─" * 60) -ForegroundColor Gray
+Write-Host ("-" * 60) -ForegroundColor Gray
 Write-Host "Provider: $provider" -ForegroundColor Gray
 Write-Host "Resource: $resource" -ForegroundColor Gray
 Write-Host "Type: $type" -ForegroundColor Gray
-Write-Host ("─" * 60) -ForegroundColor Gray
+Write-Host ("-" * 60) -ForegroundColor Gray
 
 # Validate resource name
 Write-Host "`nValidating resource..." -ForegroundColor Cyan
-if (-not (Validate-Resource $resource $provider)) {
+if (-not (Validate-Resource $resource $provider))
+{
     Write-Host "`nAborting: Resource validation failed" -ForegroundColor Red
     exit 1
 }
 
 # Look up Azure permissions (Azure only)
-if ($provider -eq "azurerm") {
+if ($provider -eq "azurerm")
+{
     Write-Host "`nLooking up Azure permissions..." -ForegroundColor Cyan
     $permissions = Get-AzurePermissions $resource $provider ($type -eq "data")
 }
-else {
+else
+{
     Write-Host "`nSkipping permission lookup (only available for Azure)" -ForegroundColor Gray
     $permissions = $null
 }
 
-if ($permissions) {
+if ($permissions)
+{
     Write-Host "`nPermission Summary:" -ForegroundColor Cyan
-    Write-Host "  Read permissions:   $($permissions.read.Count)" -ForegroundColor Gray
-    Write-Host "  Write permissions:  $($permissions.write.Count)" -ForegroundColor Gray
-    Write-Host "  Delete permissions: $($permissions.delete.Count)" -ForegroundColor Gray
-    Write-Host "  Action permissions: $($permissions.action.Count)" -ForegroundColor Gray
+    Write-Host "  Read permissions:   $( $permissions.read.Count )" -ForegroundColor Gray
+    Write-Host "  Write permissions:  $( $permissions.write.Count )" -ForegroundColor Gray
+    Write-Host "  Delete permissions: $( $permissions.delete.Count )" -ForegroundColor Gray
+    Write-Host "  Action permissions: $( $permissions.action.Count )" -ForegroundColor Gray
 }
 
 $baseMapping = path $PSScriptRoot "src" "mapping" $provider
@@ -215,11 +237,13 @@ if (test-path($baseMapping))
     $source = path $mapping "template.json"
     $destination = path $mapping "$resource.json"
 
-    if (Test-Path $source) {
+    if (Test-Path $source)
+    {
         Copy-Item -path $source -destination $destination
         Write-Host "✓ Copied template to: $destination" -ForegroundColor Green
     }
-    else {
+    else
+    {
         Write-Host "⚠ Template not found: $source" -ForegroundColor Yellow
         Write-Host "  Skipping JSON creation - you'll need to create it manually" -ForegroundColor Yellow
     }
@@ -250,15 +274,19 @@ Write-Host "✓ Created Terraform file: $tffile" -ForegroundColor Green
 Write-Host "`n✓ Done!" -ForegroundColor Green
 
 Write-Host "`nNext steps:" -ForegroundColor Cyan
-if ($permissions) {
+if ($permissions)
+{
     Write-Host "  1. Edit the JSON mapping file to add the permissions shown above" -ForegroundColor Yellow
     Write-Host "  2. Run: pwsh release.ps1 -Provider $provider  (to update Go embed files)" -ForegroundColor Yellow
 }
-else {
-    if (Test-Path $destination) {
+else
+{
+    if (Test-Path $destination)
+    {
         Write-Host "  1. Edit the JSON mapping file: $destination" -ForegroundColor Yellow
     }
-    else {
+    else
+    {
         Write-Host "  1. Create the JSON mapping file with appropriate permissions" -ForegroundColor Yellow
     }
     Write-Host "  2. Run: pwsh release.ps1 -Provider $provider  (to update Go embed files)" -ForegroundColor Yellow

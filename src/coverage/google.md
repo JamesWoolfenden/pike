@@ -2,7 +2,7 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 61.65      |   783       |  1270            |
+| Resources  | 61.97      |   787       |  1270            |
 | Datasource | 100.00      |   403       |   403             |
 
 ```shell
@@ -28,7 +28,6 @@
 ./resource.ps1 google_apigee_env_keystore
 ./resource.ps1 google_apigee_envgroup
 ./resource.ps1 google_apigee_envgroup_attachment
-./resource.ps1 google_apigee_environment
 ./resource.ps1 google_apigee_environment_addons_config
 ./resource.ps1 google_apigee_environment_api_revision_deployment
 ./resource.ps1 google_apigee_environment_keyvaluemaps
@@ -247,8 +246,6 @@
 ./resource.ps1 google_discovery_engine_target_site
 ./resource.ps1 google_discovery_engine_user_store
 ./resource.ps1 google_discovery_engine_widget_config
-./resource.ps1 google_dns_response_policy
-./resource.ps1 google_dns_response_policy_rule
 ./resource.ps1 google_document_ai_processor
 ./resource.ps1 google_document_ai_processor_default_version
 ./resource.ps1 google_document_ai_warehouse_document_schema
@@ -487,7 +484,6 @@
 ./resource.ps1 google_storage_anywhere_cache
 ./resource.ps1 google_storage_batch_operations_job
 ./resource.ps1 google_storage_folder
-./resource.ps1 google_storage_insights_dataset_config
 ./resource.ps1 google_storage_managed_folder
 ./resource.ps1 google_storage_notification
 ./resource.ps1 google_storage_object_acl

@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "workspaces-web:GetPortal",
+      "workspaces-web:CreatePortal",
+      "workspaces-web:DeletePortal",
+      "workspaces-web:UpdatePortal"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

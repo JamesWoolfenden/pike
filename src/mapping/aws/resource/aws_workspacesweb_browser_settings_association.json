@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "workspaces-web:AssociateBrowserSettings",
+      "workspaces-web:DisassociateBrowserSettings"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

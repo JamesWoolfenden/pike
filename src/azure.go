@@ -14,6 +14,7 @@ var tFLookupAzure = map[string]interface{}{
 	"azurerm_key_vault":                            azurermKeyVault,
 	"azurerm_key_vault_access_policy":              azurermKeyVaultAccessPolicy,
 	"azurerm_key_vault_key":                        azurermKeyVaultKey,
+	"azurerm_kubernetes_cluster":                   azurermKubernetesCluster,
 	"azurerm_linux_virtual_machine":                azurermVirtualMachine,
 	"azurerm_linux_virtual_machine_scale_set":      azurermLinuxVirtualMachineScaleSet,
 	"azurerm_log_analytics_solution":               azurermLogAnalyticsSolution,
@@ -46,7 +47,7 @@ var tFLookupAzure = map[string]interface{}{
 	"azurerm_storage_sync":                         azurermStorageSync,
 	"azurerm_storage_sync_group":                   azurermStorageSyncGroup,
 	"azurerm_subnet":                               azurermSubnet,
-	"azurerm_user_assigned_identity":               azurermUserAssignedIdentity,
+	"azurerm_user_assigned_identity":               azurermUserAssignedIDentity,
 	"azurerm_virtual_machine":                      azurermVirtualMachine,
 	"azurerm_virtual_machine_scale_set":            azurermLinuxVirtualMachineScaleSet,
 	"azurerm_virtual_network":                      azurermVirtualNetwork,
@@ -54,8 +55,7 @@ var tFLookupAzure = map[string]interface{}{
 	"azurerm_web_pubsub":                           azurermWebPubsub,
 	"azurerm_windows_virtual_machine":              azurermVirtualMachine,
 	"azurerm_windows_virtual_machine_scale_set":    azurermLinuxVirtualMachineScaleSet,
-	"azurerm_kubernetes_cluster":                   azurermKubernetesCluster,
-	"backend":                                      azurermBackend,
+	"backend": azurermBackend,
 }
 
 // GetAZUREPermissions for GCP resources.

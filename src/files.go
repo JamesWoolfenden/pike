@@ -269,7 +269,7 @@ var awsVpcEndpoint []byte
 var awsAPIGatewayRestAPI []byte
 
 //go:embed mapping/aws/resource/apigateway/aws_apigatewayv2_api.json
-var awsApigatewayv2Api []byte
+var awsAPIGatewayv2API []byte
 
 //go:embed mapping/aws/resource/apigateway/aws_api_gateway_account.json
 var awsAPIGatewayAccount []byte
@@ -1059,6 +1059,9 @@ var awsBackupReportPlan []byte
 
 //go:embed mapping/aws/resource/backup/aws_backup_selection.json
 var awsBackupSelection []byte
+
+//go:embed mapping/aws/resource/backup/aws_backup_restore_testing_plan.json
+var awsBackupRestoreTestingPlan []byte
 
 //go:embed mapping/aws/resource/backup/aws_backup_vault.json
 var awsBackupVault []byte

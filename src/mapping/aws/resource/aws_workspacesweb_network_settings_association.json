@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "workspaces-web:DisassociateNetworkSettings",
+      "workspaces-web:AssociateNetworkSettings"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

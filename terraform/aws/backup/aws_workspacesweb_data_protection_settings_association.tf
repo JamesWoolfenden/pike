@@ -1,0 +1,1 @@
+resource "aws_workspacesweb_data_protection_settings_association" "pike" {}
