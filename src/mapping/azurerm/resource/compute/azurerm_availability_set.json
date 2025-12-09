@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "Microsoft.Compute/availabilitySets/read",
+      "Microsoft.Compute/availabilitySets/write",
+      "Microsoft.Resources/subscriptions/resourcegroups/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Compute/availabilitySets/delete"
+    ],
+    "modify": [],
+    "plan": [
+      "Microsoft.Compute/availabilitySets/read"
+    ]
+  }
+]

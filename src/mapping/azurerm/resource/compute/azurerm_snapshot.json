@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "Microsoft.Compute/snapshots/read",
+      "Microsoft.Compute/snapshots/write",
+      "Microsoft.Resources/subscriptions/resourcegroups/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Compute/snapshots/delete"
+    ],
+    "modify": [],
+    "plan": [
+      "Microsoft.Compute/snapshots/read"
+    ]
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "Microsoft.Compute/sshPublicKeys/read",
+      "Microsoft.Compute/sshPublicKeys/write",
+      "Microsoft.Resources/subscriptions/resourcegroups/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Compute/sshPublicKeys/delete"
+    ],
+    "modify": [],
+    "plan": [
+      "Microsoft.Compute/sshPublicKeys/read"
+    ]
+  }
+]

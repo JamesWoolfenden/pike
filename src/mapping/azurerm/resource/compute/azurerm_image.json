@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "Microsoft.Compute/images/read",
+      "Microsoft.Compute/images/write",
+      "Microsoft.Resources/subscriptions/resourcegroups/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Compute/images/delete"
+    ],
+    "modify": [],
+    "plan": [
+      "Microsoft.Compute/images/read"
+    ]
+  }
+]

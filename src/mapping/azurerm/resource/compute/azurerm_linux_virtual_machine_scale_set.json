@@ -14,6 +14,8 @@
       "Microsoft.Compute/virtualMachineScaleSets/delete"
     ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "Microsoft.Compute/virtualMachineScaleSets/read"
+    ]
   }
 ]

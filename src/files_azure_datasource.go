@@ -269,7 +269,7 @@ var dataAzurermTenantTemplateDeployment []byte
 var dataAzurermTrafficManagerProfile []byte
 
 //go:embed mapping/azurerm/data/managedidentites/azurerm_user_assigned_identity.json
-var dataAzurermUserAssignedIDentity []byte
+var dataAzurermUserAssignedIdentity []byte
 
 //go:embed mapping/azurerm/data/desktopvirtualization/azurerm_virtual_desktop_host_pool.json
 var dataAzurermVirtualDesktopHostPool []byte

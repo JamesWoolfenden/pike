@@ -554,13 +554,13 @@ var dataGoogleHealthcareHl7V2StoreIAMPolicy []byte
 var dataGoogleIAMWorkforcePoolIAMPolicy []byte
 
 //go:embed mapping/google/data/iam.googleapis.com/google_iam_workload_identity_pool.json
-var dataGoogleIAMWorkloadIDentityPool []byte
+var dataGoogleIAMWorkloadIdentityPool []byte
 
 //go:embed mapping/google/data/iam.googleapis.com/google_iam_workload_identity_pool_iam_policy.json
-var dataGoogleIAMWorkloadIDentityPoolIAMPolicy []byte
+var dataGoogleIAMWorkloadIdentityPoolIAMPolicy []byte
 
 //go:embed mapping/google/data/iam.googleapis.com/google_iam_workload_identity_pool_provider.json
-var dataGoogleIAMWorkloadIDentityPoolProvIDer []byte
+var dataGoogleIAMWorkloadIdentityPoolProvIDer []byte
 
 //go:embed mapping/google/data/iap/google_iap_app_engine_service_iam_policy.json
 var dataGoogleIapAppEngineServiceIAMPolicy []byte

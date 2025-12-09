@@ -1310,19 +1310,19 @@ var googleIAMWorkforcePoolProvIDer []byte
 var googleIAMWorkforcePoolProvIDerKey []byte
 
 //go:embed mapping/google/resource/iam/google_iam_workload_identity_pool.json
-var googleIAMWorkloadIDentityPool []byte
+var googleIAMWorkloadIdentityPool []byte
 
 //go:embed mapping/google/resource/iam.googleapis.com/google_iam_workload_identity_pool_iam_binding.json
-var googleIAMWorkloadIDentityPoolIAMBinding []byte
+var googleIAMWorkloadIdentityPoolIAMBinding []byte
 
 //go:embed mapping/google/resource/iam.googleapis.com/google_iam_workload_identity_pool_iam_member.json
-var googleIAMWorkloadIDentityPoolIAMMember []byte
+var googleIAMWorkloadIdentityPoolIAMMember []byte
 
 //go:embed mapping/google/resource/iam.googleapis.com/google_iam_workload_identity_pool_iam_policy.json
-var googleIAMWorkloadIDentityPoolIAMPolicy []byte
+var googleIAMWorkloadIdentityPoolIAMPolicy []byte
 
 //go:embed mapping/google/resource/iam/google_iam_workload_identity_pool_provider.json
-var googleIAMWorkloadIDentityPoolProvIDer []byte
+var googleIAMWorkloadIdentityPoolProvIDer []byte
 
 //go:embed mapping/google/resource/iap/google_iap_app_engine_service_iam_binding.json
 var googleIapAppEngineServiceIAMBinding []byte

@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "Microsoft.Compute/sharedVMImages/read",
+      "Microsoft.Compute/sharedVMImages/write",
+      "Microsoft.Resources/subscriptions/resourcegroups/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Compute/sharedVMImages/delete"
+    ],
+    "modify": [],
+    "plan": [
+      "Microsoft.Compute/sharedVMImages/read"
+    ]
+  }
+]

@@ -143,7 +143,7 @@ var azurermStorageSyncGroup []byte
 var azurermSubnet []byte
 
 //go:embed mapping/azurerm/resource/managedidentity/azurerm_user_assigned_identity.json
-var azurermUserAssignedIDentity []byte
+var azurermUserAssignedIdentity []byte
 
 //go:embed mapping/azurerm/resource/compute/azurerm_virtual_machine.json
 var azurermVirtualMachine []byte
@@ -156,3 +156,24 @@ var azurermVirtualNetworkPeering []byte
 
 //go:embed mapping/azurerm/resource/signalrservice/azurerm_web_pubsub.json
 var azurermWebPubsub []byte
+
+//go:embed mapping/azurerm/resource/compute/azurerm_image.json
+var azurermImage []byte
+
+//go:embed mapping/azurerm/resource/compute/azurerm_proximity_placement_group.json
+var azurermProximityPlacementGroup []byte
+
+//go:embed mapping/azurerm/resource/compute/azurerm_shared_image.json
+var azurermSharedImage []byte
+
+//go:embed mapping/azurerm/resource/compute/azurerm_shared_image_gallery.json
+var azurermSharedImageGallery []byte
+
+//go:embed mapping/azurerm/resource/compute/azurerm_snapshot.json
+var azurermSnapshot []byte
+
+//go:embed mapping/azurerm/resource/compute/azurerm_ssh_public_key.json
+var azurermSshPublicKey []byte
+
+//go:embed mapping/azurerm/resource/compute/azurerm_availability_set.json
+var azurermAvailabilitySet []byte

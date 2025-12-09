@@ -188,7 +188,7 @@ var dataAwsCloudfrontOriginAccessControl []byte
 var dataAwsCloudfrontOriginAccessIDentities []byte
 
 //go:embed mapping/aws/data/cloudfront/aws_cloudfront_origin_access_identity.json
-var dataAwsCloudfrontOriginAccessIDentity []byte
+var dataAwsCloudfrontOriginAccessIdentity []byte
 
 //go:embed mapping/aws/data/cloudfront/aws_cloudfront_origin_request_policy.json
 var dataAwsCloudfrontOriginRequestPolicy []byte
@@ -245,7 +245,7 @@ var dataAwsCodeguruprofilerProfilingGroup []byte
 var dataAwsCodestarconnectionsConnection []byte
 
 //go:embed mapping/aws/data/cognito-identity/aws_cognito_identity_pool.json
-var dataAwsCognitoIDentityPool []byte
+var dataAwsCognitoIdentityPool []byte
 
 //go:embed mapping/aws/data/cognito-idp/aws_cognito_user_group.json
 var dataAwsCognitoUserGroup []byte
@@ -779,19 +779,19 @@ var dataAwsIAMUserSSHKey []byte
 var dataAwsIAMUsers []byte
 
 //go:embed mapping/aws/data/identitystore/aws_identitystore_group.json
-var dataAwsIDentitystoreGroup []byte
+var dataAwsIdentitystoreGroup []byte
 
 //go:embed mapping/aws/data/identitystore/aws_identitystore_group_memberships.json
-var dataAwsIDentitystoreGroupMembershIPs []byte
+var dataAwsIdentitystoreGroupMembershIPs []byte
 
 //go:embed mapping/aws/data/sso/aws_identitystore_groups.json
-var dataAwsIDentitystoreGroups []byte
+var dataAwsIdentitystoreGroups []byte
 
 //go:embed mapping/aws/data/identitystore/aws_identitystore_user.json
-var dataAwsIDentitystoreUser []byte
+var dataAwsIdentitystoreUser []byte
 
 //go:embed mapping/aws/data/identitystore/aws_identitystore_users.json
-var dataAwsIDentitystoreUsers []byte
+var dataAwsIdentitystoreUsers []byte
 
 //go:embed mapping/aws/data/imagebuilder/aws_imagebuilder_component.json
 var dataAwsImagebuilderComponent []byte
@@ -1502,7 +1502,7 @@ var dataAwsSesV2ConfigurationSet []byte
 var dataAwsSesV2DedicatedIPPool []byte
 
 //go:embed mapping/aws/data/ses/aws_sesv2_email_identity.json
-var dataAwsSesV2EmailIDentity []byte
+var dataAwsSesV2EmailIdentity []byte
 
 //go:embed mapping/aws/data/states/aws_sfn_activity.json
 var dataAwsSfnActivity []byte

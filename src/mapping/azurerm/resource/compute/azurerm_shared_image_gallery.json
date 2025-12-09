@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "Microsoft.Compute/galleries/read",
+      "Microsoft.Compute/galleries/write",
+      "Microsoft.Resources/subscriptions/resourcegroups/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Compute/galleries/delete"
+    ],
+    "modify": [],
+    "plan": [
+      "Microsoft.Compute/galleries/read"
+    ]
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "Microsoft.Compute/proximityPlacementGroups/read",
+      "Microsoft.Compute/proximityPlacementGroups/write",
+      "Microsoft.Resources/subscriptions/resourcegroups/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Compute/proximityPlacementGroups/delete"
+    ],
+    "modify": [],
+    "plan": [
+      "Microsoft.Compute/proximityPlacementGroups/read"
+    ]
+  }
+]
