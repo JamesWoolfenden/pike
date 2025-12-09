@@ -1,9 +1,9 @@
 
 terraform {
-  required_providers {
-    azurerm = {
-      source  = "hashicorp/azurerm"
-      version = "3.85.0"
-    }
+  backend "gcs" {
+    credentials = "/Users/jwoolfenden/pike-gcp-super.json"
+    # credentials = "c:/Users/jim_w/pike-super.json"
+    bucket = "terraform-pike-bucket-tfstate"
+    prefix = "trial/state"
   }
 }

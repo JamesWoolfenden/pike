@@ -7,13 +7,18 @@ apply: init
 	terraform apply -auto-approve
 
 plan: init
-	terraform plan
+	TF_LOG=DEBUG terraform plan
 
 destroy: init
 	terraform destroy -auto-approve
 
 init:
 	terraform init
+
+upgrade:
+	terraform init --upgrade
+
+update: upgrade
 
 role: FORCE
 	terraform  -chdir=./role apply -auto-approve
