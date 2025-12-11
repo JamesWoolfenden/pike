@@ -1,6 +1,7 @@
 package pike
 
 import (
+	"context"
 	"errors"
 	"fmt"
 
@@ -62,7 +63,7 @@ func Inspect(directory string, init bool) (PolicyDiff, error) {
 		}
 	}
 
-	iamIdentity, err := Identity.GetIam()
+	iamIdentity, err := Identity.GetIam(context.Background())
 	if err != nil {
 		log.Info().Msgf("nothing to do for AWS as %s ", err)
 

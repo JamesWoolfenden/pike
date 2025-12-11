@@ -3,8 +3,6 @@ package pike
 import (
 	"context"
 	"fmt"
-	"os"
-	"os/exec"
 	"path"
 	"path/filepath"
 	"time"
@@ -140,56 +138,4 @@ func Apply(target string, region string) error {
 	unSetAWSAuth()
 
 	return err
-}
-
-//goland:noinspection GoUnusedFunction,GoLinter
-func tfPlan(policyPath string) error {
-	tfPath, err := LocateTerraform()
-	if err != nil {
-		return &locateTerraformError{err}
-	}
-
-	terraform, err := tfexec.NewTerraform(policyPath, tfPath)
-	if err != nil {
-		return &terraformNewError{err}
-	}
-
-	err = terraform.Init(context.Background(), tfexec.Upgrade(true))
-	if err != nil {
-		return &terraformInitError{err: err}
-	}
-
-	chdir := "-chdir=" + policyPath
-	cmd := exec.Command(terraform.ExecPath(), chdir, "plan", "--out", "tf.plan")
-
-	stdout, err := cmd.Output()
-	if err != nil {
-		return &terraformPlanError{err}
-	}
-
-	if len(stdout) == 0 {
-		return &terraformOutputError{}
-	}
-
-	//goland:noinspection GoUnhandledErrorResult
-	defer os.Remove(filepath.Join(policyPath, "tf.plan"))
-
-	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Minute)
-	defer cancel()
-
-	cmd = exec.CommandContext(ctx, terraform.ExecPath(), chdir, "show", "--json", "tf.plan")
-	stdout, err = cmd.Output()
-
-	if err != nil {
-		return &terraformPlanError{err}
-	}
-
-	outfile := filepath.Join(policyPath, "tf.json")
-	err = os.WriteFile(outfile, stdout, 0o666)
-
-	if err != nil {
-		return &writeFileError{file: outfile, err: err}
-	}
-
-	return nil
 }

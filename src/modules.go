@@ -81,7 +81,7 @@ func ReadModuleJson(r io.Reader) (ModuleJson, error) {
 
 func ReadModuleJsonForDir(dir string) (ModuleJson, error) {
 	fn := filepath.Join(dir, ManifestSnapshotFilename)
-	r, err := os.Open(fn)
+	r, err := os.Open(fn) // #nosec G304 -- Reading Terraform module manifest from known location
 	if err != nil {
 		if os.IsNotExist(err) {
 			return make(ModuleJson), nil

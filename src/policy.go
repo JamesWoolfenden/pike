@@ -46,7 +46,7 @@ func NewAWSPolicy(actions []string, resources bool) (Policy, error) {
 	myArn := new(arn.AwsArn)
 
 	if resources {
-		myArn.Builder()
+		_, _ = myArn.Builder()
 	}
 
 	sections := Unique(categories)
@@ -75,7 +75,7 @@ func NewAWSPolicy(actions []string, resources bool) (Policy, error) {
 		if resources {
 			myArn.Service = section
 			myArn.Resource = &resource
-			myResource = myArn.Builder()
+			myResource, _ = myArn.Builder()
 		}
 
 		state := NewStatement(

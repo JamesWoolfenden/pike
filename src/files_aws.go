@@ -73,9 +73,6 @@ var awsBedrockagentDataSource []byte
 //go:embed mapping/aws/resource/bedrock/aws_bedrockagent_prompt.json
 var awsBedrockagentPrompt []byte
 
-//go:embed mapping/aws/resource/chime/aws_chimesdkmediapipelines_media_insights_pipeline_configuration.json
-var awsChimesdkmediaPipelinesMediaInsightsPipelineConfiguration []byte
-
 //go:embed mapping/aws/resource/cloudformation/aws_cloudcontrolapi_resource.json
 var awsCloudcontrolAPIResource []byte
 
@@ -428,7 +425,7 @@ var awsFinspaceKxVolume []byte
 var awsFsxOpenzfsSnapshot []byte
 
 //go:embed mapping/aws/resource/gamelift/aws_gamelift_script.json
-var awsGameliftScrIPt []byte
+var awsGameliftScript []byte
 
 //go:embed mapping/aws/resource/grafana/aws_grafana_role_association.json
 var awsGrafanaRoleAssociation []byte
@@ -1153,12 +1150,6 @@ var awsS3BucketAcl []byte
 //go:embed mapping/aws/resource/s3/aws_s3_bucket_object_lock_configuration.json
 var awsS3BucketObjectLockConfiguration []byte
 
-//go:embed mapping/aws/resource/s3/aws_s3_bucket_ownership_controls.json
-var awsS3BucketOwnershIPControls []byte
-
-//go:embed mapping/aws/resource/s3/aws_s3_bucket_server_side_encryption_configuration.json
-var awsS3BucketServerSIDeEncryptionConfiguration []byte
-
 //go:embed mapping/aws/resource/s3-express/aws_s3_directory_bucket.json
 var awsS3DirectoryBucket []byte
 
@@ -1593,9 +1584,6 @@ var awsWorkspaceswebUserSettings []byte
 
 //go:embed mapping/aws/resource/xray/aws_xray_resource_policy.json
 var awsXrayResourcePolicy []byte
-
-//go:embed mapping/aws/resource/backend/s3.json
-var awsS3 []byte
 
 //go:embed mapping/aws/data/template.json
 var placeholder []byte

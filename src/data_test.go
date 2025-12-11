@@ -459,6 +459,79 @@ func TestGetResourceBlocks(t *testing.T) {
 	}
 }
 
+func TestExtractIAMBindings(t *testing.T) {
+	t.Parallel()
+
+	tests := []struct {
+		name string
+		body *hclsyntax.Body
+		want []pike.IAMBinding
+	}{
+		{
+			name: "nil body",
+			body: nil,
+			want: nil,
+		},
+		{
+			name: "empty body",
+			body: &hclsyntax.Body{},
+			want: nil,
+		},
+	}
+
+	for _, tt := range tests {
+		tt := tt
+		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
+
+			got := pike.ExtractIAMBindings(tt.body)
+			if !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("ExtractIAMBindings() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestGetModuleJson(t *testing.T) {
+	t.Parallel()
+
+	tests := []struct {
+		name    string
+		dir     string
+		wantErr bool
+		wantNil bool
+	}{
+		{
+			name:    "non-existent directory returns empty map",
+			dir:     "/tmp/nonexistent-dir-pike-test-12345",
+			wantErr: false,
+			wantNil: false,
+		},
+		{
+			name:    "empty string returns empty map",
+			dir:     "",
+			wantErr: false,
+			wantNil: false,
+		},
+	}
+
+	for _, tt := range tests {
+		tt := tt
+		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
+
+			got, err := pike.GetModuleJson(tt.dir)
+			if (err != nil) != tt.wantErr {
+				t.Errorf("GetModuleJson() error = %v, wantErr %v", err, tt.wantErr)
+				return
+			}
+			if !tt.wantErr && !tt.wantNil && got == nil {
+				t.Errorf("GetModuleJson() returned nil map, want non-nil")
+			}
+		})
+	}
+}
+
 func TestDetectBackend(t *testing.T) {
 	t.Parallel()
 

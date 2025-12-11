@@ -119,8 +119,7 @@ func compareGCPRole(directory string, arn string, init bool) (bool, error) {
 		return false, &EnvVariableNotSetError{"GCP_PROJECT"}
 	}
 
-	var API string
-	API = gcpIAMAPIName
+	API := gcpIAMAPIName
 
 	enabled, err := isGCPAPIEnabled(*projectID, API)
 
@@ -374,7 +373,7 @@ func (e *gcpRoleNotVerified) Error() string {
 }
 
 func verifyGCPRole(role string) error {
-	r, err := regexp.Compile("projects/(.*\\S)/roles/(.*\\S)")
+	r, err := regexp.Compile(`projects/(.*\S)/roles/(.*\S)`)
 	// Regex should be compiled once as package variable
 	if err == nil {
 		if r.MatchString(role) {
@@ -386,7 +385,7 @@ func verifyGCPRole(role string) error {
 }
 
 func verifyAWSARN(ARN string) error {
-	r, err := regexp.Compile("arn:aws:iam::(.*\\S):role/(.*\\S)")
+	r, err := regexp.Compile(`arn:aws:iam::(.*\S):role/(.*\S)`)
 	// Regex should be compiled once as package variable
 	if err == nil {
 		if r.MatchString(ARN) {

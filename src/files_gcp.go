@@ -2080,9 +2080,6 @@ var googleVertexAiEndpoint []byte
 //go:embed mapping/google/resource/aiplatform/google_vertex_ai_endpoint_iam.json
 var googleVertexAiEndpointIAM []byte
 
-//go:embed mapping/google/resource/aiplatform/google_vertex_ai_endpoint_iam_policy.json
-var googleVertexAiEndpointIAMPolicy []byte
-
 //go:embed mapping/google/resource/aiplatform/google_vertex_ai_endpoint_with_model_garden_deployment.json
 var googleVertexAiEndpointWithModelGardenDeployment []byte
 

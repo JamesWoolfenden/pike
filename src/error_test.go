@@ -385,7 +385,7 @@ func TestEmptyTypeNameError(t *testing.T) {
 		var err error = &emptyTypeNameError{} // Verify it satisfies error interface
 
 		//goland:noinspection GoLinter
-		if err == nil {
+		if err.Error() == "" {
 			t.Error("emptyTypeNameError should implement error interface")
 		}
 	})

@@ -8,7 +8,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/aws/aws-sdk-go/service/sts"
+	"github.com/aws/aws-sdk-go-v2/service/sts"
+	"github.com/aws/aws-sdk-go-v2/service/sts/types"
 )
 
 func Test_getAWSCredentials(t *testing.T) {
@@ -17,12 +18,12 @@ func Test_getAWSCredentials(t *testing.T) {
 	}
 	arn := "arn:aws:sts::680235478471:assumed-role/terraform_pike_20220924074025950900000002/testAssumeRoleSession"
 	assumeroleid := "AROAZ4YJRVXDRTVF6YDQI:testAssumeRoleSession"
-	find := &sts.AssumedRoleUser{Arn: &arn, AssumedRoleId: &assumeroleid}
+	find := &types.AssumedRoleUser{Arn: &arn, AssumedRoleId: &assumeroleid}
 
 	tests := []struct {
 		name    string
 		args    args
-		want    *sts.AssumedRoleUser
+		want    *types.AssumedRoleUser
 		wantErr bool
 	}{
 		{"pass", args{"arn:aws:iam::680235478471:role/terraform_pike_20220924074025950900000002"}, find, false},

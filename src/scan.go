@@ -288,11 +288,7 @@ func matchesServiceAccount(member string, serviceAccountRef string, runtimePerm 
 
 	// Check for exact match (for Terraform references)
 	memberRef := strings.TrimPrefix(member, "serviceAccount:")
-	if strings.Contains(memberRef, serviceAccountRef) {
-		return true
-	}
-
-	return false
+	return strings.Contains(memberRef, serviceAccountRef)
 }
 
 // formatGCPRuntimeWithValidation generates output with validation results.
@@ -524,145 +520,6 @@ func buildPermissionToRoleMap() map[string]string {
 	}
 }
 
-// formatGCPRuntimeTerraform generates Terraform IAM bindings for GCP runtime permissions.
-func formatGCPRuntimeTerraform(runtimePerms []RuntimePermission) string {
-	if len(runtimePerms) == 0 {
-		return ""
-	}
-
-	// Map permissions to standard GCP roles
-	permissionToRole := map[string]string{
-		// Secret Manager
-		"secretmanager.versions.access": "roles/secretmanager.secretAccessor",
-
-		// CloudSQL
-		"cloudsql.instances.connect": "roles/cloudsql.client",
-		"cloudsql.instances.get":     "roles/cloudsql.client",
-
-		// Cloud Storage
-		"storage.objects.get":    "roles/storage.objectViewer",
-		"storage.objects.create": "roles/storage.objectCreator",
-		"storage.objects.list":   "roles/storage.objectViewer",
-		"storage.objects.delete": "roles/storage.objectAdmin",
-		"storage.buckets.get":    "roles/storage.objectViewer",
-
-		// Pub/Sub
-		"pubsub.topics.publish":        "roles/pubsub.publisher",
-		"pubsub.subscriptions.consume": "roles/pubsub.subscriber",
-
-		// BigQuery
-		"bigquery.datasets.get":   "roles/bigquery.dataViewer",
-		"bigquery.tables.get":     "roles/bigquery.dataViewer",
-		"bigquery.tables.getData": "roles/bigquery.dataViewer",
-		"bigquery.jobs.create":    "roles/bigquery.jobUser",
-
-		// Artifact Registry
-		"artifactregistry.repositories.downloadArtifacts": "roles/artifactregistry.reader",
-
-		// Logging & Monitoring
-		"logging.logEntries.create":    "roles/logging.logWriter",
-		"monitoring.timeSeries.create": "roles/monitoring.metricWriter",
-
-		// IAM
-		"iam.serviceAccounts.getAccessToken": "roles/iam.workloadIdentityUser",
-		"iam.serviceAccounts.actAs":          "roles/iam.serviceAccountUser",
-
-		// KMS
-		"cloudkms.cryptoKeyVersions.useToDecrypt": "roles/cloudkms.cryptoKeyDecrypter",
-
-		// Compute
-		"compute.addresses.use": "roles/compute.networkUser",
-
-		// Cloud Functions
-		"cloudfunctions.functions.invoke": "roles/cloudfunctions.invoker",
-
-		// Cloud Run
-		"run.routes.invoke": "roles/run.invoker",
-
-		// Composer
-		"composer.environments.get": "roles/composer.worker",
-
-		// Cloud Tasks
-		"cloudtasks.tasks.create": "roles/cloudtasks.enqueuer",
-
-		// Firestore
-		"firestore.documents.get":    "roles/datastore.user",
-		"firestore.documents.create": "roles/datastore.user",
-
-		// Datastore
-		"datastore.entities.get":    "roles/datastore.user",
-		"datastore.entities.create": "roles/datastore.user",
-
-		// Spanner
-		"spanner.databases.read":  "roles/spanner.databaseReader",
-		"spanner.sessions.create": "roles/spanner.databaseReader",
-
-		// App Engine
-		"appengine.applications.get": "roles/appengine.appViewer",
-	}
-
-	var output strings.Builder
-
-	// Process each resource
-	for _, runtimePerm := range runtimePerms {
-		if len(runtimePerm.Permissions) == 0 {
-			continue
-		}
-
-		// Header for this resource
-		output.WriteString(fmt.Sprintf("# Resource: %s.%s\n", runtimePerm.ResourceType, runtimePerm.ResourceName))
-
-		// Warning about default service account
-		if runtimePerm.ServiceAccount == "default" {
-			output.WriteString("# ⚠️  WARNING: Using default service account (broad permissions).\n")
-			output.WriteString("#     Best practice: Define a dedicated service account with least-privilege access.\n")
-		} else if runtimePerm.ServiceAccount == "custom" {
-			output.WriteString(fmt.Sprintf("# ℹ️  Service account: Defined in resource (reference as ${%s.%s.service_account})\n", runtimePerm.ResourceType, runtimePerm.ResourceName))
-		}
-
-		// Group permissions by role for this resource
-		rolesNeeded := make(map[string]bool)
-		for _, perm := range runtimePerm.Permissions {
-			if role, ok := permissionToRole[perm]; ok {
-				rolesNeeded[role] = true
-			}
-		}
-
-		if len(rolesNeeded) > 0 {
-			output.WriteString("#\n# Runtime IAM Bindings:\n\n")
-
-			// Generate IAM bindings
-			for role := range rolesNeeded {
-				roleID := strings.ReplaceAll(strings.Split(role, "/")[1], ".", "_")
-				resourceID := strings.ReplaceAll(runtimePerm.ResourceName, "-", "_")
-				bindingName := fmt.Sprintf("runtime_%s_%s", resourceID, roleID)
-
-				output.WriteString(fmt.Sprintf("resource \"google_project_iam_member\" \"%s\" {\n", bindingName))
-				output.WriteString("  project = var.project_id\n")
-				output.WriteString(fmt.Sprintf("  role    = \"%s\"\n", role))
-
-				if runtimePerm.ServiceAccount == "custom" {
-					output.WriteString(fmt.Sprintf("  member  = \"serviceAccount:${%s.%s.service_account}\"\n", runtimePerm.ResourceType, runtimePerm.ResourceName))
-				} else {
-					output.WriteString("  member  = \"serviceAccount:YOUR_SERVICE_ACCOUNT_EMAIL\"  # TODO: Replace with actual service account\n")
-				}
-
-				output.WriteString("}\n\n")
-			}
-		}
-
-		// List detected permissions
-		output.WriteString("# Permissions detected:\n")
-		uniquePerms := Unique(runtimePerm.Permissions)
-		for _, perm := range uniquePerms {
-			output.WriteString(fmt.Sprintf("#   - %s\n", perm))
-		}
-		output.WriteString("\n")
-	}
-
-	return output.String()
-}
-
 // WriteOutput writes out the policy as JSON or Terraform.
 func WriteOutput(outPolicy OutputPolicy, outputType string, scanPath string, outFile string) error {
 
@@ -678,7 +535,7 @@ func WriteOutput(outPolicy OutputPolicy, outputType string, scanPath string, out
 		}
 		newPath, _ = filepath.Abs(path.Join(scanPath, ".pike"))
 
-		err := os.MkdirAll(newPath, os.ModePerm)
+		err := os.MkdirAll(newPath, 0o750)
 
 		if err != nil {
 			return &makeDirectoryError{directory: newPath, err: err}
@@ -690,7 +547,7 @@ func WriteOutput(outPolicy OutputPolicy, outputType string, scanPath string, out
 
 			if outPolicy.AWS.Terraform != "" {
 				roleFile := path.Join(newPath, "aws_iam_role.terraform_pike.tf")
-				err = os.WriteFile(roleFile, roleTemplate, 0o644)
+				err = os.WriteFile(roleFile, roleTemplate, 0o600)
 
 				if err != nil {
 					return &writeFileError{file: roleFile, err: err}
@@ -704,7 +561,7 @@ func WriteOutput(outPolicy OutputPolicy, outputType string, scanPath string, out
 		}
 	}
 
-	err := os.WriteFile(outFile, d1, 0o644)
+	err := os.WriteFile(outFile, d1, 0o600)
 	if err != nil {
 		return &writeFileError{file: outFile, err: err}
 	}
@@ -738,7 +595,7 @@ func Init(dirName string) (*string, []string, error) {
 	defer cancel()
 	err = tf.Init(ctx, tfexec.Upgrade(true))
 	if err != nil {
-		if errors.Is(context.DeadlineExceeded, ctx.Err()) {
+		if errors.Is(ctx.Err(), context.DeadlineExceeded) {
 			return nil, nil, fmt.Errorf("terraform init timed out after 10 minutes: %w", err)
 		}
 		return nil, nil, &terraformInitError{err}
@@ -1003,17 +860,4 @@ func StringInSlice(a string, list []string) bool {
 // GetHCLType gets the resource Name.
 func GetHCLType(resourceName string) string {
 	return strings.Split(resourceName, "_")[0]
-}
-
-const (
-	maxFiles     = 1000
-	maxFileSize  = 10 * 1024 * 1024 // 10MB
-	maxResources = 50000
-)
-
-func validateLimits(files []string) error {
-	if len(files) > maxFiles {
-		return fmt.Errorf("too many files: %d > %d", len(files), maxFiles)
-	}
-	return nil
 }

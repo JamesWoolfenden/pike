@@ -27,7 +27,7 @@ var policyGCPTemplate []byte
 
 // GCPPolicy create an IAM policy.
 func GCPPolicy(permissions []string, policyName string) (string, error) {
-	if permissions == nil || len(permissions) == 0 {
+	if len(permissions) == 0 {
 		return "", &emptyPermissionsError{}
 	}
 

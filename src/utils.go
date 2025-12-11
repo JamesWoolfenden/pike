@@ -2,13 +2,13 @@ package pike
 
 import (
 	"bytes"
+	"crypto/rand"
 	"fmt"
 	"math"
-	"math/rand"
+	"math/big"
 	"os"
 	"path/filepath"
 	"strings"
-	"time"
 
 	"github.com/rs/zerolog/log"
 )
@@ -18,9 +18,14 @@ var letters = []rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ") //n
 // RandSeq generate a random sequence.
 func RandSeq(n int) string {
 	sequence := make([]rune, n)
+	lettersLen := big.NewInt(int64(len(letters)))
+
 	for i := range sequence {
-		r := rand.New(rand.NewSource(time.Now().UnixNano()))
-		sequence[i] = letters[r.Intn(len(letters))]
+		num, err := rand.Int(rand.Reader, lettersLen)
+		if err != nil {
+			log.Fatal().Err(err).Msg("failed to generate random number")
+		}
+		sequence[i] = letters[num.Int64()]
 	}
 
 	const last = "XVlBzgba"
@@ -72,7 +77,7 @@ func ReplaceSection(source string, middle string, autoadd bool) error {
 	)
 
 	newSource, _ := filepath.Abs(source)
-	dat, err := os.ReadFile(newSource)
+	dat, err := os.ReadFile(newSource) // #nosec G304 -- CLI tool reading user-specified file paths
 
 	if (err) != nil {
 		return &readFileError{newSource, err}
@@ -106,7 +111,7 @@ func ReplaceSection(source string, middle string, autoadd bool) error {
 	Output.WriteString(middle)
 	Output.WriteString(section2)
 
-	err = os.WriteFile(source, Output.Bytes(), 0o644)
+	err = os.WriteFile(source, Output.Bytes(), 0o600)
 
 	if err != nil {
 		return &writeFileError{source, err}

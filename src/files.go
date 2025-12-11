@@ -25,14 +25,8 @@ var awsLb []byte
 //go:embed mapping/aws/resource/s3/aws_s3_bucket.json
 var awsS3Bucket []byte
 
-//go:embed mapping/aws/resource/s3/aws_s3_bucket_acl.json
-var awsS3BucketACL []byte
-
 //go:embed mapping/aws/resource/s3/aws_s3_bucket_versioning.json
 var awsS3BucketVersioning []byte
-
-//go:embed mapping/aws/resource/s3/aws_s3_bucket_server_side_encryption_configuration.json
-var awsS3BucketServerSideEncryptionConfiguration []byte
 
 //go:embed mapping/aws/resource/s3/aws_s3_bucket_public_access_block.json
 var awsS3BucketPublicAccessBlock []byte
@@ -67,68 +61,8 @@ var awsLambdaAlias []byte
 //go:embed mapping/aws/resource/lambda/aws_lambda_permission.json
 var awsLambdaPermission []byte
 
-//go:embed mapping/aws/resource/ec2/aws_vpc.json
-var awsVpc []byte
-
 //go:embed mapping/aws/resource/ec2/aws_subnet.json
 var awsSubnet []byte
-
-//go:embed mapping/aws/resource/ec2/aws_network_acl.json
-var awsNetworkACL []byte
-
-//go:embed mapping/aws/resource/kms/aws_kms_key.json
-var awsKmsKey []byte
-
-//go:embed mapping/aws/resource/iam/aws_iam_role.json
-var awsIamRole []byte
-
-//go:embed mapping/aws/resource/iam/aws_iam_role_policy.json
-var awsIamRolePolicy []byte
-
-//go:embed mapping/aws/resource/iam/aws_iam_role_policy_attachment.json
-var awsIamRolePolicyAttachment []byte
-
-//go:embed mapping/aws/resource/iam/aws_iam_policy.json
-var awsIamPolicy []byte
-
-//go:embed mapping/aws/resource/iam/aws_iam_instance_profile.json
-var awsIamInstanceProfile []byte
-
-//go:embed mapping/aws/resource/iam/aws_iam_access_key.json
-var awsIamAccessKey []byte
-
-//go:embed mapping/aws/resource/iam/aws_iam_group.json
-var awsIamGroup []byte
-
-//go:embed mapping/aws/resource/iam/aws_iam_group_membership.json
-var awsIamGroupMembership []byte
-
-//go:embed mapping/aws/resource/iam/aws_iam_group_policy.json
-var awsIamGroupPolicy []byte
-
-//go:embed mapping/aws/resource/iam/aws_iam_group_policy_attachment.json
-var awsIamGroupPolicyAttachment []byte
-
-//go:embed mapping/aws/resource/iam/aws_iam_policy_attachment.json
-var awsIamPolicyAttachment []byte
-
-//go:embed mapping/aws/resource/iam/aws_iam_service_linked_role.json
-var awsIamServiceLinkedRole []byte
-
-//go:embed mapping/aws/resource/iam/aws_iam_server_certificate.json
-var awsIamServerCertificate []byte
-
-//go:embed mapping/aws/resource/iam/aws_iam_user.json
-var awsIamUser []byte
-
-//go:embed mapping/aws/resource/iam/aws_iam_user_login_profile.json
-var awsIamUserLoginProfile []byte
-
-//go:embed mapping/aws/resource/iam/aws_iam_user_policy.json
-var awsIamUserPolicy []byte
-
-//go:embed mapping/aws/resource/iam/aws_iam_user_policy_attachment.json
-var awsIamUserPolicyAttachment []byte
 
 //go:embed mapping/aws/resource/mq/aws_mq_broker.json
 var awsMqBroker []byte
@@ -187,18 +121,6 @@ var awsDBInstance []byte
 //go:embed mapping/aws/resource/rds/aws_db_cluster_snapshot.json
 var awsDBClusterSnapshot []byte
 
-//go:embed mapping/aws/resource/rds/aws_db_event_subscription.json
-var awsDBEventSubscription []byte
-
-//go:embed mapping/aws/resource/ram/aws_ram_principal_association.json
-var awsRAMPrincipleAssociation []byte
-
-//go:embed mapping/aws/resource/ram/aws_ram_resource_association.json
-var awsRAMResourceAssociation []byte
-
-//go:embed mapping/aws/resource/ram/aws_ram_resource_share.json
-var awsRAMResourceShare []byte
-
 //go:embed mapping/aws/resource/rds/aws_rds_cluster.json
 var awsRdsCluster []byte
 
@@ -226,44 +148,17 @@ var awsRoute []byte
 //go:embed mapping/aws/resource/ec2/aws_default_security_group.json
 var awsDefaultSecurityGroup []byte
 
-//go:embed mapping/aws/resource/ec2/aws_default_network_acl.json
-var awsDefaultNetworkACL []byte
-
 //go:embed mapping/aws/resource/ec2/aws_default_subnet.json
 var awsDefaultSubnet []byte
 
-//go:embed mapping/aws/resource/ec2/aws_default_vpc.json
-var awsDefaultVpc []byte
-
-//go:embed mapping/aws/resource/ec2/aws_default_route_table.json
-var awsDefaultRouteTable []byte
-
-//go:embed mapping/aws/resource/ec2/aws_default_vpc_dhcp_options.json
-var awsDefaultVpcDhcpOptions []byte
-
 //go:embed mapping/aws/resource/rds/aws_db_subnet_group.json
 var awsDBSubnetGroup []byte
-
-//go:embed mapping/aws/resource/wafv2/aws_wafv2_web_acl.json
-var awsWafv2WebACL []byte
-
-//go:embed mapping/aws/resource/wafv2/aws_wafv2_ip_set.json
-var awsWafv2IpSet []byte
-
-//go:embed mapping/aws/resource/wafv2/aws_wafv2_rule_group.json
-var awsWafv2RuleGroup []byte
-
-//go:embed mapping/aws/resource/wafv2/aws_wafv2_regex_pattern_set.json
-var awsWafv2RegexPatternSet []byte
 
 //go:embed mapping/aws/resource/ec2/aws_vpn_connection.json
 var awsVpnConnection []byte
 
 //go:embed mapping/aws/resource/ec2/aws_vpn_gateway.json
 var awsVpnGateway []byte
-
-//go:embed mapping/aws/resource/ec2/aws_vpc_endpoint.json
-var awsVpcEndpoint []byte
 
 //go:embed mapping/aws/resource/apigateway/aws_api_gateway_rest_api.json
 var awsAPIGatewayRestAPI []byte
@@ -322,17 +217,11 @@ var awsSpotInstanceRequest []byte
 //go:embed mapping/aws/resource/ec2/aws_volume_attachment.json
 var awsVolumeAttachment []byte
 
-//go:embed mapping/aws/resource/ec2/aws_eip.json
-var awsEip []byte
-
 //go:embed mapping/aws/resource/firehose/aws_kinesis_firehose_delivery_stream.json
 var awsKinesisFirehoseDeliveryStream []byte
 
 //go:embed mapping/aws/resource/firehose/aws_kinesis_stream.json
 var awsKinesisStream []byte
-
-//go:embed mapping/aws/resource/firehose/aws_kinesis_video_stream.json
-var awsKinesisVideoStream []byte
 
 //go:embed mapping/aws/resource/budgets/aws_budgets_budget.json
 var awsBudgetsBudget []byte
@@ -355,9 +244,6 @@ var awsEcrRegistryScanningConfiguration []byte
 //go:embed mapping/aws/resource/ecr/aws_ecr_repository.json
 var awsEcrRepository []byte
 
-//go:embed mapping/aws/resource/kms/aws_kms_alias.json
-var awsKmsAlias []byte
-
 //go:embed mapping/aws/resource/ec2/aws_route_table.json
 var awsRouteTable []byte
 
@@ -366,9 +252,6 @@ var awsRouteTableAssociation []byte
 
 //go:embed mapping/aws/resource/ec2/aws_nat_gateway.json
 var awsNatGateway []byte
-
-//go:embed mapping/aws/resource/rds/aws_db_option_group.json
-var awsDBOptionGroup []byte
 
 //go:embed mapping/aws/resource/rds/aws_db_parameter_group.json
 var awsDBParameterGroup []byte
@@ -478,20 +361,8 @@ var awsCloudtrail []byte
 //go:embed mapping/aws/resource/rds/aws_rds_cluster_parameter_group.json
 var awsRdsClusterParameterGroup []byte
 
-//go:embed mapping/aws/resource/ec2/aws_network_acl_rule.json
-var awsNetworkACLRule []byte
-
 //go:embed mapping/aws/resource/acm/aws_acm_certificate.json
 var AWSAcmCertificate []byte
-
-//go:embed mapping/aws/resource/acm-pa/aws_acmpca_certificate_authority.json
-var awsAcmpcaCertificateAuthority []byte
-
-//go:embed mapping/aws/resource/acm-pa/aws_acmpca_certificate_authority_certificate.json
-var awsAcmpcaCertificateAuthorityCertificate []byte
-
-//go:embed mapping/aws/resource/acm-pa/aws_acmpca_certificate.json
-var awsAcmpcaCertificate []byte
 
 //go:embed mapping/aws/resource/ecs/aws_ecs_cluster.json
 var awsEcsCluster []byte
@@ -538,9 +409,6 @@ var awsCognitoUserPoolClient []byte
 //go:embed mapping/aws/resource/cognito-idp/aws_cognito_user_pool_domain.json
 var awsCognitoUserPoolDomain []byte
 
-//go:embed mapping/aws/resource/cognito-idp/aws_cognito_user_pool_ui_customization.json
-var awsCognitoUserPoolUICustomization []byte
-
 //go:embed mapping/aws/resource/redshift/aws_redshift_subnet_group.json
 var awsRedshiftSubnetGroup []byte
 
@@ -553,14 +421,8 @@ var awsRedshiftScheduledAction []byte
 //go:embed mapping/aws/resource/redshift/aws_redshift_authentication_profile.json
 var awsRedshiftAuthenticationProfile []byte
 
-//go:embed mapping/aws/resource/redshift/aws_redshift_cluster_iam_roles.json
-var awsRedshiftClusterIamRoles []byte
-
 //go:embed mapping/aws/resource/redshift/aws_redshift_event_subscription.json
 var awsRedshiftEventSubscription []byte
-
-//go:embed mapping/aws/resource/redshift/aws_redshift_hsm_client_certificate.json
-var awsRedshiftHsmClientCertififcate []byte
 
 //go:embed mapping/aws/resource/redshift/aws_redshift_hsm_configuration.json
 var awsRedshiftHsmConfiguration []byte
@@ -585,9 +447,6 @@ var awsInspectorAssessmentTarget []byte
 
 //go:embed mapping/aws/resource/inspector/aws_inspector_assessment_template.json
 var awsInspectorAssessmentTemplate []byte
-
-//go:embed mapping/aws/resource/inspector/aws_inspector_resource_group.json
-var awsInspectorResouceGroup []byte
 
 //go:embed mapping/aws/resource/elasticfilesystem/aws_efs_access_point.json
 var awsEfsAccessPoint []byte
@@ -649,21 +508,6 @@ var awsConfigDeliveryChannel []byte
 //go:embed mapping/aws/resource/ec2/aws_ec2_tag.json
 var awsEc2Tag []byte
 
-//go:embed mapping/aws/resource/iam/aws_iam_account_alias.json
-var awsIamAccountAlias []byte
-
-//go:embed mapping/aws/resource/iam/aws_iam_account_password_policy.json
-var awsIamAccountPasswordPolicy []byte
-
-//go:embed mapping/aws/resource/iam/aws_iam_openid_connect_provider.json
-var awsIamOpenidConnectProvider []byte
-
-//go:embed mapping/aws/resource/iam/aws_iam_saml_provider.json
-var awsIamSamlProvider []byte
-
-//go:embed mapping/aws/resource/iam/aws_iam_user_ssh_key.json
-var awsIamUserSSHKey []byte
-
 //go:embed mapping/aws/resource/elasticache/aws_elasticache_cluster.json
 var awsElasticacheCluster []byte
 
@@ -690,12 +534,6 @@ var awsImagebuilderImage []byte
 
 //go:embed mapping/aws/resource/imagebuilder/aws_imagebuilder_image_pipeline.json
 var awsImagebuilderImagePipeline []byte
-
-//go:embed mapping/aws/resource/imagebuilder/aws_imagebuilder_image_recipe.json
-var awsImagebuilderImageRecipe []byte
-
-//go:embed mapping/aws/resource/imagebuilder/aws_imagebuilder_infrastructure_configuration.json
-var awsImagebuilderInstrastructureConfiguration []byte
 
 //go:embed mapping/aws/resource/glacier/aws_glacier_vault_lock.json
 var awsGlacierVaultLock []byte
@@ -727,35 +565,8 @@ var awsBatchSchedulingPolicy []byte
 //go:embed mapping/aws/resource/ecr/aws_ecr_repository_policy.json
 var awsEcrRepositoryPolicy []byte
 
-//go:embed mapping/aws/resource/ecr-public/aws_ecrpublic_repository.json
-var awsEcrPublicRepository []byte
-
 //go:embed mapping/aws/resource/ec2/aws_egress_only_internet_gateway.json
 var awsEgressOnlyInternetGateway []byte
-
-//go:embed mapping/aws/resource/ec2/aws_vpc_dhcp_options.json
-var awsVpcDhcpOptions []byte
-
-//go:embed mapping/aws/resource/ec2/aws_vpc_dhcp_options_association.json
-var awsVpcDhcpOptionsAssociation []byte
-
-//go:embed mapping/aws/resource/ec2/aws_vpc_endpoint_service.json
-var awsVpcEndpointService []byte
-
-//go:embed mapping/aws/resource/ec2/aws_vpc_endpoint_subnet_association.json
-var awsVpcEndpointSubnetAssociation []byte
-
-//go:embed mapping/aws/resource/ec2/aws_vpc_ipv4_cidr_block_association.json
-var awsVpcIpv4CidrBlockAssociation []byte
-
-//go:embed mapping/aws/resource/ec2/aws_vpc_peering_connection.json
-var awsVpcPeeringConnection []byte
-
-//go:embed mapping/aws/resource/ec2/aws_vpc_peering_connection_accepter.json
-var awsVpcPeeringConnectionAccepter []byte
-
-//go:embed mapping/aws/resource/ec2/aws_vpc_peering_connection_options.json
-var awsVpcPeeringConnectionOptions []byte
 
 //go:embed mapping/aws/resource/ec2/aws_vpn_gateway_attachment.json
 var awsVpnGatewayAttachment []byte
@@ -777,9 +588,6 @@ var awsFsxOpenzfsFileSystem []byte
 
 //go:embed mapping/aws/resource/fsx/aws_fsx_openzfs_volume.json
 var awsFsxOpenzfsVolume []byte
-
-//go:embed mapping/aws/resource/fsx/aws_fsx_openzfs_snapshot.json
-var awsFsxOpenzfsSnaphot []byte
 
 //go:embed mapping/aws/resource/codedeploy/aws_codedeploy_app.json
 var awsCodedeployApp []byte
@@ -823,12 +631,6 @@ var awsMedialiveInput []byte
 //go:embed mapping/aws/resource/medialive/aws_medialive_input_security_group.json
 var awsMedialiveInputSecurityGroup []byte
 
-//go:embed mapping/aws/resource/cloudformation/aws_cloudformation_stack_set.json
-var awsCloudFormationStackSet []byte
-
-//go:embed mapping/aws/resource/cloudformation/aws_cloudformation_stack_set_instance.json
-var awsCloudFormationStackSetInstance []byte
-
 //go:embed mapping/aws/resource/cloudfront/aws_cloudfront_origin_access_control.json
 var awsCloudfrontOriginAccessControl []byte
 
@@ -847,20 +649,11 @@ var awsMskScramSecretAssociation []byte
 //go:embed mapping/aws/resource/route53/aws_route53_delegation_set.json
 var awsRoute53DelegationSet []byte
 
-//go:embed mapping/aws/resource/route53/aws_route53_key_signing_key.json
-var awsRoute53KeySiginingKey []byte
-
 //go:embed mapping/aws/resource/route53/aws_route53_health_check.json
 var awsRoute53HealthCheck []byte
 
-//go:embed mapping/aws/resource/route53/aws_route53_hosted_zone_dnssec.json
-var awsRoute53HostedZoneDnssec []byte
-
 //go:embed mapping/aws/resource/route53/aws_route53_query_log.json
 var awsRoute53QueryLog []byte
-
-//go:embed mapping/aws/resource/route53/aws_route53_vpc_association_authorization.json
-var awsRoute53VpcAssociationAuthorization []byte
 
 //go:embed mapping/aws/resource/route53resolver/aws_route53_resolver_query_log_config.json
 var awsRoute53ResolverQueryLogConfig []byte
@@ -901,12 +694,6 @@ var awsEc2TransitGatewayRouteTableAssociation []byte
 //go:embed mapping/aws/resource/ec2/aws_ec2_transit_gateway_route_table_propagation.json
 var awsEc2TransitGatewayRouteTablePropagation []byte
 
-//go:embed mapping/aws/resource/ec2/aws_ec2_transit_gateway_vpc_attachment.json
-var awsEc2TransitGatewayVpcAttachment []byte
-
-//go:embed mapping/aws/resource/ec2/aws_vpc_endpoint_route_table_association.json
-var awsVpcEndpointRouteTableAssociation []byte
-
 //go:embed mapping/aws/resource/ec2/aws_ec2_network_insights_path.json
 var awsEc2NetworkInsightsPath []byte
 
@@ -937,9 +724,6 @@ var awsLambdaEventSourceMapping []byte
 //go:embed mapping/aws/resource/lambda/aws_lambda_function_event_invoke_config.json
 var awsLambdaFunctionEventInvokeConfig []byte
 
-//go:embed mapping/aws/resource/lambda/aws_lambda_function_url.json
-var awsLambdaFunctionURL []byte
-
 //go:embed mapping/aws/resource/lambda/aws_lambda_provisioned_concurrency_config.json
 var awsLambdaProvisionedConcurrencyConfig []byte
 
@@ -954,9 +738,6 @@ var awsS3BucketIntelligentTieringConfiguration []byte
 
 //go:embed mapping/aws/resource/s3/aws_s3_bucket_metric.json
 var awsS3BucketMetric []byte
-
-//go:embed mapping/aws/resource/s3/aws_s3_bucket_object_lock_configuration.json
-var awsS3BucketObjectLockCOnfiguration []byte
 
 //go:embed mapping/aws/resource/s3/aws_s3_bucket_ownership_controls.json
 var awsS3BucketOwnershipControls []byte
@@ -1069,9 +850,6 @@ var awsBackupVault []byte
 //go:embed mapping/aws/resource/backup/aws_backup_vault_lock_configuration.json
 var awsBackupVaultLockConfiguration []byte
 
-//go:embed mapping/aws/resource/backup/aws_backup_vault_notifications.json
-var awsBackupVaultNotification []byte
-
 //go:embed mapping/aws/resource/backup/aws_backup_vault_policy.json
 var awsBackupVaultPolicy []byte
 
@@ -1090,9 +868,6 @@ var awsXrayGroup []byte
 //go:embed mapping/aws/resource/xray/aws_xray_sampling_rule.json
 var awsXraySamplingRule []byte
 
-//go:embed mapping/aws/resource/kms/aws_kms_grant.json
-var awsKmsGrant []byte
-
 //go:embed mapping/aws/resource/applicationinsights/aws_applicationinsights_application.json
 var awsApplicationinsightsApplication []byte
 
@@ -1101,9 +876,6 @@ var awsResourcegroupsGroup []byte
 
 //go:embed mapping/aws/resource/s3/aws_s3_bucket_inventory.json
 var awsS3BucketInventory []byte
-
-//go:embed mapping/aws/resource/iam/aws_iam_user_group_membership.json
-var awsIamUserGroupMembership []byte
 
 //go:embed mapping/aws/resource/lambda/aws_lambda_invocation.json
 var awsLambdaInvocation []byte
@@ -1134,12 +906,6 @@ var awsSesIdentityNotificationTopic []byte
 
 //go:embed mapping/aws/resource/ses/aws_ses_identity_policy.json
 var awsSesIdentityPolicy []byte
-
-//go:embed mapping/aws/resource/ses/aws_ses_receipt_rule.json
-var awsSesReceiptRule []byte
-
-//go:embed mapping/aws/resource/ses/aws_ses_receipt_rule_set.json
-var awsSesReceiptRuleSet []byte
 
 //go:embed mapping/aws/resource/cloudfront/aws_cloudfront_origin_access_identity.json
 var awsCloudfrontOriginAccessIdentity []byte
@@ -1180,20 +946,11 @@ var awsEmrCluster []byte
 //go:embed mapping/aws/resource/elasticmapreduce/aws_emr_security_configuration.json
 var awsEmrSecurityConfiguration []byte
 
-//go:embed mapping/aws/resource/wafv2/aws_wafv2_web_acl_association.json
-var awsWafv2WebACLAssociation []byte
-
-//go:embed mapping/aws/resource/wafv2/aws_wafv2_web_acl_logging_configuration.json
-var awsWafv2WebACLLoggingConfiguration []byte
-
 //go:embed mapping/aws/resource/workspaces/aws_workspaces_workspace.json
 var awsWorkspacesWorkspace []byte
 
 //go:embed mapping/aws/resource/workspaces/aws_workspaces_directory.json
 var awsWorkspacesDirectory []byte
-
-//go:embed mapping/aws/resource/account/aws_account_alternate_contact.json
-var awsAccountAlternativeContact []byte
 
 //go:embed mapping/aws/resource/account/aws_account_primary_contact.json
 var awsAccountPrimaryContact []byte
@@ -1201,35 +958,14 @@ var awsAccountPrimaryContact []byte
 //go:embed mapping/aws/resource/sns/aws_sns_sms_preferences.json
 var awsSnsSmsPreferences []byte
 
-//go:embed mapping/aws/resource/sns/aws_sns_topic_data_protection_policy.json
-var awsSnsTopicDataProtection []byte
-
 //go:embed mapping/aws/resource/ssm-contacts/aws_ssmcontacts_contact.json
 var awsSsmcontactsContact []byte
-
-//go:embed mapping/aws/resource/ssm-contacts/aws_ssmcontacts_contact_channel.json
-var awsSsmcontactContactChannel []byte
 
 //go:embed mapping/aws/resource/ssm-contacts/aws_ssmcontacts_plan.json
 var awsSsmcontactsPlan []byte
 
-//go:embed mapping/aws/resource/ssm-incidents/aws_ssmincidents_replication_set.json
-var awsSsmincidentsReplicationSet []byte
-
 //go:embed mapping/aws/resource/swf/aws_swf_domain.json
 var awsSwfDomain []byte
-
-//go:embed mapping/aws/resource/ec2/aws_ami.json
-var awsAmi []byte
-
-//go:embed mapping/aws/resource/ec2/aws_ami_copy.json
-var awsAmiCopy []byte
-
-//go:embed mapping/aws/resource/ec2/aws_ami_from_instance.json
-var awsAmiFromInstance []byte
-
-//go:embed mapping/aws/resource/ec2/aws_ami_launch_permission.json
-var awsAmiLauchPermission []byte
 
 //go:embed mapping/aws/resource/budgets/aws_budgets_budget_action.json
 var awsBudgetsBudgetAction []byte
@@ -1254,24 +990,6 @@ var awsSecretsmanagerSecretRotation []byte
 
 //go:embed mapping/aws/resource/states/aws_sfn_alias.json
 var awsSfnAlias []byte
-
-//go:embed mapping/aws/resource/aoss/aws_opensearchserverless_access_policy.json
-var awsOpenseachserverlessAccessPolicy []byte
-
-//go:embed mapping/aws/resource/aoss/aws_opensearchserverless_collection.json
-var awsOpenseachserverlessCollection []byte
-
-//go:embed mapping/aws/resource/aoss/aws_opensearchserverless_lifecycle_policy.json
-var awsOpenseachserverlessLifecyclePolicy []byte
-
-//go:embed mapping/aws/resource/aoss/aws_opensearchserverless_security_config.json
-var awsOpenseachserverlessSecurityConfig []byte
-
-//go:embed mapping/aws/resource/aoss/aws_opensearchserverless_security_policy.json
-var awsOpenseachserverlessSecurityPolicy []byte
-
-//go:embed mapping/aws/resource/aoss/aws_opensearchserverless_vpc_endpoint.json
-var awsOpenseachserverlessVpcEndpoint []byte
 
 //go:embed mapping/aws/resource/cloudsearch/aws_cloudsearch_domain.json
 var awsCloudsearchDomain []byte
@@ -1299,15 +1017,6 @@ var awsKinesisStreamConsumer []byte
 
 //go:embed mapping/aws/resource/logs/aws_cloudwatch_log_destination_policy.json
 var awsCloudwatchLogDestinationPolicy []byte
-
-//go:embed mapping/aws/resource/logs/aws_cloudwatch_log_destination.json
-var awsCloudwatchQueryDestination []byte
-
-//go:embed mapping/aws/resource/datapipeline/aws_datapipeline_pipeline.json
-var awsDatapipelinePipeline []byte
-
-//go:embed mapping/aws/resource/datapipeline/aws_datapipeline_pipeline_definition.json
-var awsDatapipelinePipelineDefinition []byte
 
 //go:embed mapping/aws/resource/elasticloadbalancing/aws_proxy_protocol_policy.json
 var awsProxyProtocolPolicy []byte
@@ -1351,9 +1060,6 @@ var awsWafregionalByteMatchSet []byte
 //go:embed mapping/aws/resource/wafregional/aws_wafregional_geo_match_set.json
 var awsWafregionalGeoMatchSet []byte
 
-//go:embed mapping/aws/resource/wafregional/aws_wafregional_ipset.json
-var awsWafregionalIpset []byte
-
 //go:embed mapping/aws/resource/wafregional/aws_wafregional_rate_based_rule.json
 var awsWafregionalRateBasedRule []byte
 
@@ -1375,20 +1081,11 @@ var awsWafregionalSizeConstraintSet []byte
 //go:embed mapping/aws/resource/wafregional/aws_wafregional_sql_injection_match_set.json
 var awsWafregionalSQLInjectionMatchSet []byte
 
-//go:embed mapping/aws/resource/wafregional/aws_wafregional_web_acl.json
-var awsWafregionalWebACL []byte
-
-//go:embed mapping/aws/resource/wafregional/aws_wafregional_xss_match_set.json
-var awsWafregionalXSSNatchSet []byte
-
 //go:embed mapping/aws/resource/waf/aws_waf_byte_match_set.json
 var awsWafByteMatchSet []byte
 
 //go:embed mapping/aws/resource/waf/aws_waf_geo_match_set.json
 var awsWafGeoMatchSet []byte
-
-//go:embed mapping/aws/resource/waf/aws_waf_ipset.json
-var awsWafIpset []byte
 
 //go:embed mapping/aws/resource/waf/aws_waf_rate_based_rule.json
 var awsWafRateBasedRule []byte
@@ -1410,42 +1107,6 @@ var awsWafSizeConstraintSet []byte
 
 //go:embed mapping/aws/resource/waf/aws_waf_sql_injection_match_set.json
 var awsWafSQLInjectionMatchSet []byte
-
-//go:embed mapping/aws/resource/waf/aws_waf_web_acl.json
-var awsWafWebACL []byte
-
-//go:embed mapping/aws/resource/waf/aws_waf_xss_match_set.json
-var awsWafXSSNatchSet []byte
-
-//go:embed mapping/aws/resource/ec2/aws_vpc_ipam.json
-var awsVpcIpam []byte
-
-//go:embed mapping/aws/resource/ec2/aws_vpc_ipam_pool.json
-var awsVpcIpamPool []byte
-
-//go:embed mapping/aws/resource/ec2/aws_vpc_ipam_pool_cidr.json
-var awsVpcIpamPoolCidr []byte
-
-//go:embed mapping/aws/resource/ec2/aws_vpc_ipam_pool_cidr_allocation.json
-var awsVpcIpamPoolCidrAllocation []byte
-
-//go:embed mapping/aws/resource/ec2/aws_vpc_ipam_preview_next_cidr.json
-var awsVpcIpamPreviewNextCidr []byte
-
-//go:embed mapping/aws/resource/ec2/aws_vpc_ipam_resource_discovery.json
-var awsVpcIpamResourceDiscovery []byte
-
-//go:embed mapping/aws/resource/ec2/aws_vpc_ipam_resource_discovery_association.json
-var awsVpcIpamResourceDiscoveryAssociation []byte
-
-//go:embed mapping/aws/resource/ec2/aws_vpc_ipam_scope.json
-var awsVpcIpamScope []byte
-
-//go:embed mapping/aws/resource/ec2/aws_vpc_security_group_egress_rule.json
-var awsVpcSecurityGroupEgressRule []byte
-
-//go:embed mapping/aws/resource/ec2/aws_vpc_security_group_ingress_rule.json
-var awsVpcSecurityGroupIngressRule []byte
 
 //go:embed mapping/aws/resource/geo/aws_location_geofence_collection.json
 var awsLocationGeofenceCollection []byte
@@ -1471,17 +1132,8 @@ var awsLoadBalancerListenerPolicy []byte
 //go:embed mapping/aws/resource/elasticloadbalancing/aws_load_balancer_policy.json
 var awsLoadBalancerPolicy []byte
 
-//go:embed mapping/aws/resource/route53/aws_route53_cidr_collection.json
-var awsRoute53CidrCollection []byte
-
-//go:embed mapping/aws/resource/route53/aws_route53_cidr_location.json
-var awsRoute53CidrLocation []byte
-
 //go:embed mapping/aws/resource/route53resolver/aws_route53_resolver_config.json
 var awsRoute53ResolverConfig []byte
-
-//go:embed mapping/aws/resource/route53resolver/aws_route53_resolver_dnssec_config.json
-var awsRoute53ResolverDnssecConfig []byte
 
 //go:embed mapping/aws/resource/route53resolver/aws_route53_resolver_endpoint.json
 var awsRoute53ResolverEndpoint []byte
@@ -1546,35 +1198,8 @@ var awsCodecommitApprovalRuleTemplateAssociation []byte
 //go:embed mapping/aws/resource/codecommit/aws_codecommit_trigger.json
 var awsCodecommitTrigger []byte
 
-//go:embed mapping/aws/resource/ec2/aws_ebs_default_kms_key.json
-var awsEbsDefaultKmsKey []byte
-
 //go:embed mapping/aws/resource/ec2/aws_ebs_encryption_by_default.json
 var awsEbsEncryptionByDefault []byte
-
-//go:embed mapping/aws/resource/kms/aws_kms_key_policy.json
-var awsKmsKeyPolicy []byte
-
-//go:embed mapping/aws/resource/ec2/aws_ec2_availability_zone_group.json
-var awsEc2AvailabilityGroup []byte
-
-//go:embed mapping/aws/resource/ec2/aws_eip_association.json
-var awsEipAssociation []byte
-
-//go:embed mapping/aws/resource/iam/aws_iam_security_token_service_preferences.json
-var awsIamSecurityTokenServicePreferences []byte
-
-//go:embed mapping/aws/resource/iam/aws_iam_service_specific_credential.json
-var awsIamServiceSpecificCredential []byte
-
-//go:embed mapping/aws/resource/iam/aws_iam_signing_certificate.json
-var awsIamSigningCertificate []byte
-
-//go:embed mapping/aws/resource/iam/aws_iam_virtual_mfa_device.json
-var awsIamVirtualMfaDevice []byte
-
-//go:embed mapping/aws/resource/imagebuilder/aws_imagebuilder_container_recipe.json
-var awsImagebuilderContainerRecipe []byte
 
 //go:embed mapping/aws/resource/inspector2/aws_inspector2_delegated_admin_account.json
 var awsInspector2DelegatedAdminAccount []byte
@@ -1591,21 +1216,6 @@ var awsInspector2OrganizationConfiguration []byte
 //go:embed mapping/aws/resource/internetmonitor/aws_internetmonitor_monitor.json
 var awsInternetmonitorMonitor []byte
 
-//go:embed mapping/aws/resource/kms/aws_kms_ciphertext.json
-var awsKmsCiphertext []byte
-
-//go:embed mapping/aws/resource/kms/aws_kms_custom_key_store.json
-var awsKmsCustomKeyStore []byte
-
-//go:embed mapping/aws/resource/kms/aws_kms_external_key.json
-var awsKmsExternalKey []byte
-
-//go:embed mapping/aws/resource/kms/aws_kms_replica_external_key.json
-var awsKmsReplicaExternalKey []byte
-
-//go:embed mapping/aws/resource/kms/aws_kms_replica_key.json
-var awsKmsReplicaKey []byte
-
 //go:embed mapping/aws/resource/lambda/aws_lambda_code_signing_config.json
 var awsLambdaCodeSigningConfig []byte
 
@@ -1618,9 +1228,6 @@ var awsSignerSigningProfile []byte
 //go:embed mapping/aws/resource/signer/aws_signer_signing_profile_permission.json
 var awsSignerSigningProfilePermission []byte
 
-//go:embed mapping/aws/resource/elasticbeanstalk/aws_elastic_beanstalk_environment.json
-var awsElastiBeanstalkEnvironment []byte
-
 //go:embed mapping/aws/resource/elasticbeanstalk/aws_elastic_beanstalk_application_version.json
 var awsElasticBeanstalkApplicationVersion []byte
 
@@ -1630,44 +1237,8 @@ var awsElasticBeanstalkConfigurationTemplate []byte
 //go:embed mapping/aws/resource/codebuild/aws_codebuild_webhook.json
 var awsCodebuildWebhook []byte
 
-//go:embed mapping/aws/resource/access-analyzer/aws_accessanalyzer_analyzer.json
-var awsAccessAnalyzer []byte
-
 //go:embed mapping/aws/resource/geo/aws_location_tracker_association.json
 var awsLocationTrackerAssociation []byte
-
-//go:embed mapping/aws/resource/vpc-lattice/aws_vpclattice_access_log_subscription.json
-var awsVpclatticeAccesLogSubscription []byte
-
-//go:embed mapping/aws/resource/vpc-lattice/aws_vpclattice_auth_policy.json
-var awsVpclatticeAuthPolicy []byte
-
-//go:embed mapping/aws/resource/vpc-lattice/aws_vpclattice_listener.json
-var awsVpclatticeListener []byte
-
-//go:embed mapping/aws/resource/vpc-lattice/aws_vpclattice_listener_rule.json
-var awsVpclatticeListernerRule []byte
-
-//go:embed mapping/aws/resource/vpc-lattice/aws_vpclattice_resource_policy.json
-var awsVpclatticeResourcePolicy []byte
-
-//go:embed mapping/aws/resource/vpc-lattice/aws_vpclattice_service.json
-var awsVpclatticeService []byte
-
-//go:embed mapping/aws/resource/vpc-lattice/aws_vpclattice_service_network.json
-var awsVpclatticeServiceNetwork []byte
-
-//go:embed mapping/aws/resource/vpc-lattice/aws_vpclattice_service_network_service_association.json
-var awsVpclatticeServiceNetworkServiceAssocation []byte
-
-//go:embed mapping/aws/resource/vpc-lattice/aws_vpclattice_service_network_vpc_association.json
-var awsVpclatticeServiceNetworkVpcAssociation []byte
-
-//go:embed mapping/aws/resource/vpc-lattice/aws_vpclattice_target_group.json
-var awsVpclatticeTargetGroup []byte
-
-//go:embed mapping/aws/resource/vpc-lattice/aws_vpclattice_target_group_attachment.json
-var awsVpclatticeTargetGroupAssociation []byte
 
 //go:embed mapping/aws/resource/autoscaling/aws_autoscaling_group_tag.json
 var awsAutoscalingGroupTag []byte
@@ -1750,9 +1321,6 @@ var awsServicecatalogBudgetResourceAssociation []byte
 //go:embed mapping/aws/resource/servicecatalog/aws_servicecatalog_constraint.json
 var awsServicecatalogConstraint []byte
 
-//go:embed mapping/aws/resource/servicecatalog/aws_servicecatalog_organizations_access.json
-var awsServicecatalogOrganizationAccess []byte
-
 //go:embed mapping/aws/resource/servicecatalog/aws_servicecatalog_portfolio_share.json
 var awsServicecatalogPortfolioShare []byte
 
@@ -1777,12 +1345,6 @@ var awsServicecatalogTagOption []byte
 //go:embed mapping/aws/resource/servicecatalog/aws_servicecatalog_tag_option_resource_association.json
 var awsServicecatalogTagOptionResourceAssociation []byte
 
-//go:embed mapping/aws/resource/servicequotas/aws_servicequotas_template.json
-var awsServiceQuotasTemplate []byte
-
-//go:embed mapping/aws/resource/servicequotas/aws_servicequotas_template_association.json
-var awsServiceQuotasTemplateAssociation []byte
-
 //go:embed mapping/aws/resource/codeguru-profiler/aws_codeguruprofiler_profiling_group.json
 var awsCodeguruprofilerProfilingGroup []byte
 
@@ -1800,9 +1362,6 @@ var awsCodestarconnectionsConnection []byte
 
 //go:embed mapping/aws/resource/codestar-connections/aws_codestarconnections_host.json
 var awsCodestarconnectionsHost []byte
-
-//go:embed mapping/aws/resource/codestar-notifications/aws_codestarnotifications_notification_rule.json
-var awsCodestarconnectionsNotificationsRule []byte
 
 //go:embed mapping/aws/resource/auditmanager/aws_auditmanager_account_registration.json
 var awsAuditmanagerAccountRegistration []byte
@@ -1839,9 +1398,6 @@ var awsBedrockProvisionedModelThroughput []byte
 
 //go:embed mapping/aws/resource/bedrock/aws_bedrockagent_agent.json
 var awsBedrockagentAgent []byte
-
-//go:embed mapping/aws/resource/bedrock/aws_bedrockagent_agent_action_group.json
-var awsBedrockagentActionGroup []byte
 
 //go:embed mapping/aws/resource/bedrock/aws_bedrockagent_agent_alias.json
 var awsBedrockagentAgentAlias []byte
@@ -1945,9 +1501,6 @@ var awsStoragegatewayUploadBuffer []byte
 //go:embed mapping/aws/resource/storagegateway/aws_storagegateway_working_storage.json
 var awsStoragegatewayWorkingStorage []byte
 
-//go:embed mapping/aws/resource/ses/aws_ses_active_receipt_rule_set.json
-var awsSesActiveReceiptRuleSet []byte
-
 //go:embed mapping/aws/resource/ses/aws_ses_configuration_set.json
 var awsSesConfigurationSet []byte
 
@@ -1956,9 +1509,6 @@ var awsSesEmailIdentity []byte
 
 //go:embed mapping/aws/resource/ses/aws_ses_event_destination.json
 var awsSesEventDestination []byte
-
-//go:embed mapping/aws/resource/ses/aws_ses_receipt_filter.json
-var awsSesReceiptFilter []byte
 
 //go:embed mapping/aws/resource/ses/aws_ses_template.json
 var awsSesTemplate []byte
@@ -2038,9 +1588,6 @@ var awsSagemakerWorkteam []byte
 //go:embed mapping/aws/resource/ec2/aws_ec2_carrier_gateway.json
 var awsEc2CarrierGateway []byte
 
-//go:embed mapping/aws/resource/ec2/aws_ec2_client_vpn_authorization_rule.json
-var awsEc2ClientvpnAuthorizationRule []byte
-
 //go:embed mapping/aws/resource/ec2/aws_ec2_client_vpn_endpoint.json
 var awsEc2ClientVpnEndpoint []byte
 
@@ -2056,17 +1603,8 @@ var awsEc2Fleet []byte
 //go:embed mapping/aws/resource/ec2/aws_ec2_host.json
 var awsEc2Host []byte
 
-//go:embed mapping/aws/resource/access-analyzer/aws_accessanalyzer_archive_rule.json
-var awsAccessAnalyzerArchiveRule []byte
-
 //go:embed mapping/aws/resource/account/aws_account_region.json
 var awsAccountRegion []byte
-
-//go:embed mapping/aws/resource/acm-pa/aws_acmpca_permission.json
-var awsAcmpcaPermission []byte
-
-//go:embed mapping/aws/resource/acm-pa/aws_acmpca_policy.json
-var awsAcmpcaPolicy []byte
 
 //go:embed mapping/aws/resource/sdb/aws_simpledb_domain.json
 var awsSimpledbDomain []byte
@@ -2109,30 +1647,6 @@ var awsDmsS3Endpoint []byte
 
 //go:embed mapping/aws/resource/dms/aws_dms_replication_config.json
 var awsDmsReplicationConfig []byte
-
-//go:embed mapping/aws/resource/rds/aws_db_instance_automated_backups_replication.json
-var awsDBInstanceAutomatedBackupsReplication []byte
-
-//go:embed mapping/aws/resource/rds/aws_db_instance_role_association.json
-var awsDBInstanceRoleAssociation []byte
-
-//go:embed mapping/aws/resource/rds/aws_db_proxy.json
-var awsDBProxy []byte
-
-//go:embed mapping/aws/resource/rds/aws_db_proxy_default_target_group.json
-var awsDBProxyDefaultTargetGroup []byte
-
-//go:embed mapping/aws/resource/rds/aws_db_proxy_endpoint.json
-var awsDBProxyEndpoint []byte
-
-//go:embed mapping/aws/resource/rds/aws_db_proxy_target.json
-var awsDBProxyTarget []byte
-
-//go:embed mapping/aws/resource/rds/aws_db_snapshot.json
-var awsDBSnapshot []byte
-
-//go:embed mapping/aws/resource/rds/aws_db_snapshot_copy.json
-var awsDBSnapshotCopy []byte
 
 //go:embed mapping/aws/resource/transcribe/aws_transcribe_language_model.json
 var awsTranscribeLanguageModel []byte
@@ -2215,9 +1729,6 @@ var awsAppconfigExtension []byte
 //go:embed mapping/aws/resource/appconfig/aws_appconfig_extension_association.json
 var awsAppconfigExtensionAssociation []byte
 
-//go:embed mapping/aws/resource/bedrock/aws_bedrockagent_data_source.json
-var awsBedrockagentDatasource []byte
-
 //go:embed mapping/aws/resource/bedrock/aws_bedrockagent_knowledge_base.json
 var awsBedrockagentKnowledgeBase []byte
 
@@ -2256,12 +1767,6 @@ var awsApprunnerObservabilityConfiguration []byte
 
 //go:embed mapping/aws/resource/apprunner/aws_apprunner_service.json
 var awsApprunnerService []byte
-
-//go:embed mapping/aws/resource/apprunner/aws_apprunner_vpc_connector.json
-var awsApprunnerVpcConnector []byte
-
-//go:embed mapping/aws/resource/apprunner/aws_apprunner_vpc_ingress_connection.json
-var awsApprunnerVpcIngressConnection []byte
 
 //go:embed mapping/aws/resource/appstream/aws_appstream_image_builder.json
 var awsAppstreamImageBuilder []byte
@@ -2335,9 +1840,6 @@ var awsDetectiveGraph []byte
 //go:embed mapping/aws/resource/detective/aws_detective_invitation_accepter.json
 var awsDetectiveInvitationAccepter []byte
 
-//go:embed mapping/aws/resource/detective/aws_detective_organization_admin_account.json
-var awsDectectiveOrganizationAdminAccount []byte
-
 //go:embed mapping/aws/resource/devops-guru/aws_devopsguru_notification_channel.json
 var awsDevopsguruNotificationChannel []byte
 
@@ -2349,9 +1851,6 @@ var awsDocdbelasticCluster []byte
 
 //go:embed mapping/aws/resource/ec2/aws_ec2_local_gateway_route.json
 var awsEc2LocalGatewayRoute []byte
-
-//go:embed mapping/aws/resource/ec2/aws_ec2_local_gateway_route_table_vpc_association.json
-var awsEc2LocalGatewayRouteTableVpcAssociation []byte
 
 //go:embed mapping/aws/resource/ec2/aws_ec2_managed_prefix_list.json
 var awsEc2ManagedPrefixList []byte
@@ -2386,12 +1885,6 @@ var awsEcrRepositoryCreationTemplate []byte
 //go:embed mapping/aws/resource/ecs/aws_ecs_capacity_provider.json
 var awsEcsCapacityProvider []byte
 
-//go:embed mapping/aws/resource/ec2/aws_network_acl_association.json
-var awsNetworkACLAssociation []byte
-
-//go:embed mapping/aws/resource/ec2/aws_vpc_endpoint_connection_notification.json
-var awsVpcEndpointConnectionNotification []byte
-
 //go:embed mapping/aws/resource/ecs/aws_ecs_task_set.json
 var awsEcsTaskSet []byte
 
@@ -2418,9 +1911,6 @@ var awsEmrStudioSessionMapping []byte
 
 //go:embed mapping/aws/resource/elasticmapreduce/aws_emrcontainers_virtual_cluster.json
 var awsEmrcontainersVirtualCluster []byte
-
-//go:embed mapping/aws/resource/elasticmapreduce/aws_emrserverless_application.json
-var awsEmrseverlessApplication []byte
 
 //go:embed mapping/aws/resource/evidently/aws_evidently_feature.json
 var awsEvidentlyFeature []byte
@@ -2473,9 +1963,6 @@ var awsGameliftGameServerGroup []byte
 //go:embed mapping/aws/resource/gamelift/aws_gamelift_game_session_queue.json
 var awsGameliftGameSessionQueue []byte
 
-//go:embed mapping/aws/resource/gamelift/aws_gamelift_script.json
-var awsGameliftScript []byte
-
 //go:embed mapping/aws/resource/globalaccelerator/aws_globalaccelerator_accelerator.json
 var awsGlobalacceleratorAccelerator []byte
 
@@ -2493,9 +1980,6 @@ var awsGuarddutyDetector []byte
 
 //go:embed mapping/aws/resource/guardduty/aws_guardduty_filter.json
 var awsGuarddutyFilter []byte
-
-//go:embed mapping/aws/resource/guardduty/aws_guardduty_ipset.json
-var awsGuarddutyIpset []byte
 
 //go:embed mapping/aws/resource/guardduty/aws_guardduty_malware_protection_plan.json
 var awsGuarddutyMalwareProtectionPlan []byte
@@ -2551,9 +2035,6 @@ var awsIvsChannel []byte
 //go:embed mapping/aws/resource/ivschat/aws_ivs_playback_key_pair.json
 var awsIvsPlaybackKeyPair []byte
 
-//go:embed mapping/aws/resource/ivschat/aws_ivs_recording_configuration.json
-var awsIvsRecordingConfigration []byte
-
 //go:embed mapping/aws/resource/ivschat/aws_ivschat_logging_configuration.json
 var awsIvschatLoggingConfiguration []byte
 
@@ -2568,9 +2049,6 @@ var awsKendraFaq []byte
 
 //go:embed mapping/aws/resource/kendra/aws_kendra_index.json
 var awsKendraIndex []byte
-
-//go:embed mapping/aws/resource/kinesisanalytics/aws_kinesisanalyticsv2_application.json
-var awsKinesisanalyticsv2Application []byte
 
 //go:embed mapping/aws/resource/lakeformation/aws_lakeformation_data_cells_filter.json
 var awsLakeformationDataCellsFilter []byte
@@ -2589,12 +2067,6 @@ var awsLexIntent []byte
 
 //go:embed mapping/aws/resource/lex/aws_lex_slot_type.json
 var awsLexSlotType []byte
-
-//go:embed mapping/aws/resource/license-manager/aws_licensemanager_grant.json
-var awsLicencemanagerGrant []byte
-
-//go:embed mapping/aws/resource/license-manager/aws_licensemanager_license_configuration.json
-var awsLicenceManagerLicencenceConfiguration []byte
 
 //go:embed mapping/aws/resource/lightsail/aws_lightsail_bucket.json
 var awsLightsailBucket []byte
@@ -2626,15 +2098,6 @@ var awsMacie2FindingsFilter []byte
 //go:embed mapping/aws/resource/mediapackage/aws_media_package_channel.json
 var awsMediaPackageChannel []byte
 
-//go:embed mapping/aws/resource/medialive/aws_medialive_multiplex.json
-var awsMedialiveMulitplex []byte
-
-//go:embed mapping/aws/resource/medialive/aws_medialive_multiplex_program.json
-var awsMedialiveMultiplexProgram []byte
-
-//go:embed mapping/aws/resource/memorydb/aws_memorydb_acl.json
-var awsMemorydbACL []byte
-
 //go:embed mapping/aws/resource/memorydb/aws_memorydb_parameter_group.json
 var awsMemorydbParameterGroup []byte
 
@@ -2644,20 +2107,8 @@ var awsMskClusterPolicy []byte
 //go:embed mapping/aws/resource/kafka/aws_msk_replicator.json
 var awsMskReplicator []byte
 
-//go:embed mapping/aws/resource/kafka/aws_msk_vpc_connection.json
-var awsMskVpcConnection []byte
-
 //go:embed mapping/aws/resource/airflow/aws_mwaa_environment.json
 var awsMwaaEnvironment []byte
-
-//go:embed mapping/aws/resource/network-firewall/aws_networkfirewall_tls_inspection_configuration.json
-var awsNetworkfirewallTLSInspectionConfiguration []byte
-
-//go:embed mapping/aws/resource/networkmanager/aws_networkmanager_connect_attachment.json
-var awsNetworkManagerConnectAttachment []byte
-
-//go:embed mapping/aws/resource/networkmanager/aws_networkmanager_connect_peer.json
-var awsNetworkManagerConnectPeer []byte
 
 //go:embed mapping/aws/resource/networkmanager/aws_networkmanager_core_network.json
 var awsNetworkmanagerCoreNetwork []byte
@@ -2674,9 +2125,6 @@ var awsNetworkmanagerGlobalNetwork []byte
 //go:embed mapping/aws/resource/networkmanager/aws_networkmanager_link.json
 var awsNetworkmanagerLink []byte
 
-//go:embed mapping/aws/resource/networkmanager/aws_networkmanager_link_association.json
-var awsNetworkmanagerLinkAssocation []byte
-
 //go:embed mapping/aws/resource/networkmanager/aws_networkmanager_site.json
 var awsNetworkmanagerSite []byte
 
@@ -2692,9 +2140,6 @@ var awsNetworkmanagerTransitGatewayRegistration []byte
 //go:embed mapping/aws/resource/networkmanager/aws_networkmanager_transit_gateway_route_table_attachment.json
 var awsNetworkmanagerTransitGatewayRouteTableAttachment []byte
 
-//go:embed mapping/aws/resource/networkmanager/aws_networkmanager_vpc_attachment.json
-var awsNetworkmanagerVpcAttachment []byte
-
 //go:embed mapping/aws/resource/organizations/aws_organizations_account.json
 var awsOrganizationsAccount []byte
 
@@ -2709,15 +2154,6 @@ var awsOrganizationsResourcePolicy []byte
 
 //go:embed mapping/aws/resource/osis/aws_osis_pipeline.json
 var awsOsisPipeline []byte
-
-//go:embed mapping/aws/resource/payment-cryptography/aws_paymentcryptography_key.json
-var awsPaymentcrytopgraphyKey []byte
-
-//go:embed mapping/aws/resource/payment-cryptography/aws_paymentcryptography_key_alias.json
-var awsPaymentcrytopgraphyKeyAlias []byte
-
-//go:embed mapping/aws/resource/pipes/aws_pipes_pipe.json
-var awsPipesPipe []byte
 
 //go:embed mapping/aws/resource/qldb/aws_qldb_stream.json
 var awsQldbStream []byte
@@ -2812,18 +2248,6 @@ var awsS3AccessPoint []byte
 //go:embed mapping/aws/resource/s3/aws_s3control_access_grant.json
 var awsS3controlAccessGrant []byte
 
-//go:embed mapping/aws/resource/s3/aws_s3control_access_grants_instance.json
-var awsS3controlAccessGrantInstance []byte
-
-//go:embed mapping/aws/resource/s3/aws_s3control_access_grants_location.json
-var awsS3controlAccessGrantLocation []byte
-
-//go:embed mapping/aws/resource/s3/aws_s3control_multi_region_access_point.json
-var awscontrolMultiRegionAccessPoint []byte
-
-//go:embed mapping/aws/resource/s3/aws_s3control_multi_region_access_point_policy.json
-var awscontrolMultiRegionAccessPointPolicy []byte
-
 //go:embed mapping/aws/resource/s3-outposts/aws_s3outposts_endpoint.json
 var awsS3outpostsEndpoint []byte
 
@@ -2844,9 +2268,6 @@ var awsSecurityhubFindingAggregator []byte
 
 //go:embed mapping/aws/resource/sso/aws_ssoadmin_permission_set.json
 var awsSsoadminPermissionSet []byte
-
-//go:embed mapping/aws/resource/timestreamwrite/aws_timestreaminfluxdb_db_instance.json
-var awsTimestreamhubFindingAggregator []byte
 
 //go:embed mapping/aws/resource/securityhub/aws_securityhub_insight.json
 var awsSecurityhubInsight []byte
@@ -2892,9 +2313,6 @@ var awsSsmResourceDataSync []byte
 
 //go:embed mapping/aws/resource/ssm-contacts/aws_ssmcontacts_rotation.json
 var awsSsmcontactsRotation []byte
-
-//go:embed mapping/aws/resource/ssm-incidents/aws_ssmincidents_response_plan.json
-var awsSsmincidentsResponsePlan []byte
 
 //go:embed mapping/aws/resource/sso/aws_ssoadmin_application.json
 var awsSsoadminApplication []byte
@@ -2947,15 +2365,6 @@ var awsS3AccountPublicAccessBlock []byte
 //go:embed mapping/aws/resource/s3/aws_s3control_access_point_policy.json
 var awsS3controlAccessPointPolicy []byte
 
-//go:embed mapping/aws/resource/iam/aws_iam_role_policies_exclusive.json
-var awsIamGroupPoliciesExclusive []byte
-
-//go:embed mapping/aws/resource/iam/aws_iam_role_policies_exclusive.json
-var awsIamRolePoliciesExclusive []byte
-
-//go:embed mapping/aws/resource/iam/aws_iam_user_policies_exclusive.json
-var awsIamUserPoliciesExclusive []byte
-
 //go:embed mapping/aws/resource/m2/aws_m2_application.json
 var awsM2Application []byte
 
@@ -2967,9 +2376,6 @@ var awsM2Environment []byte
 
 //go:embed mapping/aws/resource/memorydb/aws_memorydb_user.json
 var awsMemorydbUser []byte
-
-//go:embed mapping/aws/resource/sagemaker/aws_sagemaker_human_task_ui.json
-var awsSagemakerHumanTaskUI []byte
 
 //go:embed mapping/aws/resource/cloudfront-keyvaluestore/aws_cloudfrontkeyvaluestore_key.json
 var awsCloudfrontkeyvaluestoreKey []byte
@@ -3025,17 +2431,11 @@ var awsQuicksightAccountSubscription []byte
 //go:embed mapping/aws/resource/quicksight/aws_quicksight_folder_membership.json
 var awsQuicksightFolderMembership []byte
 
-//go:embed mapping/aws/resource/quicksight/aws_quicksight_iam_policy_assignment.json
-var awsQuicksightIamPolicyAssignment []byte
-
 //go:embed mapping/aws/resource/quicksight/aws_quicksight_ingestion.json
 var awsQuicksightIngestion []byte
 
 //go:embed mapping/aws/resource/quicksight/aws_quicksight_template_alias.json
 var awsQuicksightTemplateAlias []byte
-
-//go:embed mapping/aws/resource/quicksight/aws_quicksight_vpc_connection.json
-var awsQuicksightVpcConnection []byte
 
 //go:embed mapping/aws/resource/s3/aws_s3_bucket_analytics_configuration.json
 var awsS3BucketAnalyticsConfiguration []byte
@@ -3048,9 +2448,6 @@ var awsKinesisResourcePolicy []byte
 
 //go:embed mapping/aws/resource/appconfig/aws_appconfig_deployment.json
 var awsAppconfigDeployment []byte
-
-//go:embed mapping/aws/resource/appsync/aws_appsync_graphql_api.json
-var awsAppsyncGraphAPI []byte
 
 //go:embed mapping/aws/resource/bedrock/aws_bedrock_inference_profile.json
 var awsBedrockInferenceProfile []byte
@@ -3181,9 +2578,6 @@ var awsImagebuilderLifecyclePolicy []byte
 //go:embed mapping/aws/resource/iot/aws_iot_domain_configuration.json
 var awsIotDomainConfiguration []byte
 
-//go:embed mapping/aws/resource/codebuild/aws_codebuild_fleet.json
-var awsCodeBuildFleet []byte
-
 //go:embed mapping/aws/resource/config/aws_config_aggregate_authorization.json
 var awsConfigAggregateAuthorization []byte
 
@@ -3265,18 +2659,6 @@ var awsTransferSSHKey []byte
 //go:embed mapping/aws/resource/transfer/aws_transfer_user.json
 var awsTransferUser []byte
 
-//go:embed mapping/aws/resource/ec2/aws_vpc_block_public_access_exclusion.json
-var awsVpcBlockPublicAccessExclusion []byte
-
-//go:embed mapping/aws/resource/ec2/aws_vpc_block_public_access_options.json
-var awsVpcBlockPublicAccessOptions []byte
-
-//go:embed mapping/aws/resource/vpc-lattice/aws_vpclattice_resource_configuration.json
-var awsVpclatticeResourceConfiguration []byte
-
-//go:embed mapping/aws/resource/vpc-lattice/aws_vpclattice_resource_gateway.json
-var awsVpclatticeResourceGateway []byte
-
 //go:embed mapping/aws/resource/amplify/aws_amplify_backend_environment.json
 var awsAmplifyBackendEnvironment []byte
 
@@ -3310,9 +2692,6 @@ var awsApprunnerDeployment []byte
 //go:embed mapping/aws/resource/cloud9/aws_cloud9_environment_membership.json
 var awsCloud9EnvironmentMembership []byte
 
-//go:embed mapping/aws/resource/cloudformation/aws_cloudcontrolapi_resource.json
-var awsCloudcontrolapiResource []byte
-
 //go:embed mapping/aws/resource/sagemaker/aws_sagemaker_flow_definition.json
 var awsSagemakerFlowDefinition []byte
 
@@ -3340,23 +2719,11 @@ var awsSsmServiceSetting []byte
 //go:embed mapping/aws/resource/ssm-quicksetup/aws_ssmquicksetup_configuration_manager.json
 var awsSsmquicksetupConfigurationManager []byte
 
-//go:embed mapping/aws/resource/wafregional/aws_wafregional_web_acl_association.json
-var awsWafregionalWebACLAssociation []byte
-
 //go:embed mapping/aws/resource/bedrock/aws_bedrockagent_agent_collaborator.json
 var awsBedrockagentAgentCollaborator []byte
 
-//go:embed mapping/aws/resource/bedrock/aws_bedrockagent_agent_knowledge_base_association.json
-var awsBedrockagentKnowledgeBaseAssociation []byte
-
 //go:embed mapping/aws/resource/cloudformation/aws_cloudformation_stack_instances.json
 var awsCloudformationStackInstances []byte
-
-//go:embed mapping/aws/resource/cloudfront/aws_cloudfront_vpc_origin.json
-var awsCloudfrontVpcOrigin []byte
-
-//go:embed mapping/aws/resource/cloudhsm/aws_cloudhsm_v2_cluster.json
-var awsCloudhsmV2Vluster []byte
 
 //go:embed mapping/aws/resource/cloudhsm/aws_cloudhsm_v2_hsm.json
 var awsCloudhsmV2Hsm []byte
@@ -3481,9 +2848,6 @@ var awsRdsCertificate []byte
 //go:embed mapping/aws/resource/rds/aws_rds_cluster_snapshot_copy.json
 var awsRdsClusterSnapshotCopy []byte
 
-//go:embed mapping/aws/resource/rds/aws_rds_custom_db_engine_version.json
-var awsRdsCustomDBEngineVersion []byte
-
 //go:embed mapping/aws/resource/rds/aws_rds_export_task.json
 var awsRdsExportTask []byte
 
@@ -3492,3 +2856,9 @@ var awsRdsReservedInstance []byte
 
 //go:embed mapping/aws/resource/lakeformation/aws_lakeformation_opt_in.json
 var awsLakeformationOptIn []byte
+
+//go:embed mapping/aws/resource/ec2/aws_default_route_table.json
+var awsDefaultRouteTable []byte
+
+//go:embed mapping/aws/resource/s3/aws_s3_bucket_server_side_encryption_configuration.json
+var awsS3BucketServerSideEncryptionConfiguration []byte

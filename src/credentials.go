@@ -1,14 +1,15 @@
 package pike
 
 import (
+	"context"
 	"errors"
 	"fmt"
 	"os"
 
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/awserr"
-	"github.com/aws/aws-sdk-go/aws/session"
-	"github.com/aws/aws-sdk-go/service/sts"
+	"github.com/aws/aws-sdk-go-v2/aws"
+	"github.com/aws/aws-sdk-go-v2/config"
+	"github.com/aws/aws-sdk-go-v2/service/sts"
+	"github.com/aws/aws-sdk-go-v2/service/sts/types"
 )
 
 const waitForConsistency = 900
@@ -34,12 +35,14 @@ func getAWSCredentials(iamRole string, region string) (*sts.AssumeRoleOutput, er
 		return nil, &emptyRegionError{}
 	}
 
-	config := aws.NewConfig()
+	ctx := context.Background()
+	cfg, err := config.LoadDefaultConfig(ctx, config.WithRegion(region))
+	if err != nil {
+		return nil, fmt.Errorf("failed to load AWS config: %w", err)
+	}
 
-	config.Region = &region
-	mySession := session.Must(session.NewSession(config))
-	svc := sts.New(mySession)
-	duration := int64(waitForConsistency)
+	svc := sts.NewFromConfig(cfg)
+	duration := int32(waitForConsistency)
 
 	input := &sts.AssumeRoleInput{
 		ExternalId:      aws.String("123ABC"),
@@ -47,29 +50,31 @@ func getAWSCredentials(iamRole string, region string) (*sts.AssumeRoleOutput, er
 		RoleArn:         aws.String(iamRole),
 		RoleSessionName: aws.String("testAssumeRoleSession"),
 		DurationSeconds: &duration,
-		Tags:            []*sts.Tag{},
-		TransitiveTagKeys: []*string{
-			aws.String("Project"),
-			aws.String("Cost-Center"),
+		Tags:            []types.Tag{},
+		TransitiveTagKeys: []string{
+			"Project",
+			"Cost-Center",
 		},
 	}
 
-	result, err := svc.AssumeRole(input)
+	result, err := svc.AssumeRole(ctx, input)
 	if err != nil {
-		var aerr awserr.Error
-		if errors.As(err, &aerr) {
-			switch aerr.Code() {
-			case sts.ErrCodeMalformedPolicyDocumentException:
-				fmt.Println(sts.ErrCodeMalformedPolicyDocumentException, aerr.Error())
-			case sts.ErrCodePackedPolicyTooLargeException:
-				fmt.Println(sts.ErrCodePackedPolicyTooLargeException, aerr.Error())
-			case sts.ErrCodeRegionDisabledException:
-				fmt.Println(sts.ErrCodeRegionDisabledException, aerr.Error())
-			case sts.ErrCodeExpiredTokenException:
-				fmt.Println(sts.ErrCodeExpiredTokenException, aerr.Error())
-			default:
-				fmt.Println(aerr.Error())
-			}
+		var mpde *types.MalformedPolicyDocumentException
+		var pptl *types.PackedPolicyTooLargeException
+		var rde *types.RegionDisabledException
+		var ete *types.ExpiredTokenException
+
+		switch {
+		case errors.As(err, &mpde):
+			fmt.Println("MalformedPolicyDocumentException:", err.Error())
+		case errors.As(err, &pptl):
+			fmt.Println("PackedPolicyTooLargeException:", err.Error())
+		case errors.As(err, &rde):
+			fmt.Println("RegionDisabledException:", err.Error())
+		case errors.As(err, &ete):
+			fmt.Println("ExpiredTokenException:", err.Error())
+		default:
+			fmt.Println(err.Error())
 		}
 
 		return nil, err

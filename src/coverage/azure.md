@@ -2,7 +2,7 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 4.46      |    50       |  1120            |
+| Resources  | 5.09      |    57       |  1120            |
 | Datasource | 30.58      |   122       |   399             |
 
 ```shell
@@ -138,7 +138,6 @@
 ./resource.ps1 azurerm_automation_variable_string
 ./resource.ps1 azurerm_automation_watcher
 ./resource.ps1 azurerm_automation_webhook
-./resource.ps1 azurerm_availability_set
 ./resource.ps1 azurerm_backup_container_storage_account
 ./resource.ps1 azurerm_backup_policy_file_share
 ./resource.ps1 azurerm_backup_policy_vm
@@ -433,7 +432,6 @@
 ./resource.ps1 azurerm_hpc_cache_blob_nfs_target
 ./resource.ps1 azurerm_hpc_cache_blob_target
 ./resource.ps1 azurerm_hpc_cache_nfs_target
-./resource.ps1 azurerm_image
 ./resource.ps1 azurerm_iot_security_device_group
 ./resource.ps1 azurerm_iot_security_solution
 ./resource.ps1 azurerm_iotcentral_application
@@ -756,7 +754,6 @@
 ./resource.ps1 azurerm_private_dns_zone_virtual_network_link
 ./resource.ps1 azurerm_private_endpoint_application_security_group_association
 ./resource.ps1 azurerm_private_link_service
-./resource.ps1 azurerm_proximity_placement_group
 ./resource.ps1 azurerm_public_ip
 ./resource.ps1 azurerm_public_ip_prefix
 ./resource.ps1 azurerm_purview_account
@@ -849,8 +846,6 @@
 ./resource.ps1 azurerm_servicebus_subscription_rule
 ./resource.ps1 azurerm_servicebus_topic
 ./resource.ps1 azurerm_servicebus_topic_authorization_rule
-./resource.ps1 azurerm_shared_image
-./resource.ps1 azurerm_shared_image_gallery
 ./resource.ps1 azurerm_shared_image_version
 ./resource.ps1 azurerm_signalr_service
 ./resource.ps1 azurerm_signalr_service_custom_certificate
@@ -871,7 +866,6 @@
 ./resource.ps1 azurerm_site_recovery_vmware_replicated_vm
 ./resource.ps1 azurerm_site_recovery_vmware_replication_policy
 ./resource.ps1 azurerm_site_recovery_vmware_replication_policy_association
-./resource.ps1 azurerm_snapshot
 ./resource.ps1 azurerm_source_control_token
 ./resource.ps1 azurerm_spring_cloud_accelerator
 ./resource.ps1 azurerm_spring_cloud_active_deployment
@@ -906,7 +900,6 @@
 ./resource.ps1 azurerm_sql_firewall_rule
 ./resource.ps1 azurerm_sql_server
 ./resource.ps1 azurerm_sql_virtual_network_rule
-./resource.ps1 azurerm_ssh_public_key
 ./resource.ps1 azurerm_stack_hci_cluster
 ./resource.ps1 azurerm_stack_hci_deployment_setting
 ./resource.ps1 azurerm_stack_hci_extension
@@ -1352,5 +1345,5 @@
 ./resource.ps1 azurerm_virtual_desktop_application_group -type data
 ./resource.ps1 azurerm_virtual_desktop_workspace -type data
 ./resource.ps1 azurerm_virtual_network_peering -type data
-
+./resource.ps1 azurerm_vpn_server_configuration -type data
 ```

@@ -66,7 +66,7 @@ func Parse(codebase string, name string) error {
 	}
 
 	log.Info().Msgf("creating %s-members.json", name)
-	err = os.WriteFile(name+"-members.json", jsonOut, 0o700)
+	err = os.WriteFile(name+"-members.json", jsonOut, 0o600)
 
 	if err != nil {
 		return err
@@ -87,7 +87,7 @@ func getMatches(source string, match string, extension string) ([]string, error)
 	)
 
 	for _, file := range files {
-		contents, _ := os.ReadFile(file)
+		contents, _ := os.ReadFile(file) // #nosec G304 -- Reading Terraform files from user-specified paths
 
 		re := regexp.MustCompile(match)
 		match := re.FindAllString(string(contents), -1)

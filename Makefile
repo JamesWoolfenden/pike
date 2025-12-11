@@ -51,9 +51,6 @@ generate-docs:
 docs:
 
 
-vet:
-	go vet ./...
-
 bump:
 	git push
 	$(eval VERSION=$(shell git describe --tags --abbrev=0 | awk -F. '{OFS="."; $$NF+=1; print $0}'))
@@ -69,9 +66,6 @@ update:
 	go mod tidy
 	pre-commit autoupdate
 
-lint:
-	golangci-lint run --fix
-
 gci:
 	gci -w .
 
@@ -80,3 +74,32 @@ fmt:
 
 schema:
 	wget -qO- https://schema.cloudformation.us-east-1.amazonaws.com/CloudformationSchema.zip  |tar xvz -C ./src/schema
+
+install-tools: ## Install development and security tools
+	@./scripts/install-tools.sh
+
+lint: ## Run linter
+	golangci-lint run
+
+vet: ## Run go vet
+	go vet ./...
+
+staticcheck: ## Run staticcheck
+	@./scripts/run-staticcheck.sh
+
+gosec: ## Run security scanner
+	gosec -quiet -exclude-generated ./...
+
+govulncheck: ## Check for known vulnerabilities
+	govulncheck ./...
+
+complexity: ## Check cyclomatic complexity
+	gocyclo -over 15 -avg .
+
+check-all: ## Run all checks (vet, staticcheck, gosec, govulncheck)
+	@echo "Running all code checks..."
+	@$(MAKE) vet
+	@$(MAKE) staticcheck
+	@$(MAKE) gosec
+	@$(MAKE) govulncheck
+	@echo "All checks passed!"

@@ -168,3 +168,50 @@ func Test_workflowInvokeError_Error(t *testing.T) {
 		})
 	}
 }
+
+func Test_listBranchesError_Error(t *testing.T) {
+	type fields struct {
+		err error
+	}
+	tests := []struct {
+		name   string
+		fields fields
+		want   string
+	}{
+		{"list error", fields{errors.New("api error")}, "failed to list branches api error"},
+		{"nil error", fields{nil}, "failed to list branches <nil>"},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			m := &listBranchesError{
+				err: tt.fields.err,
+			}
+			assert.Equalf(t, tt.want, m.Error(), "Error()")
+		})
+	}
+}
+
+func Test_branchNotFoundError_Error(t *testing.T) {
+	type fields struct {
+		branch string
+		repo   string
+	}
+	tests := []struct {
+		name   string
+		fields fields
+		want   string
+	}{
+		{"branch not found", fields{branch: "feature", repo: "myrepo"}, "branch feature not found for repo myrepo"},
+		{"empty branch", fields{branch: "", repo: "myrepo"}, "branch  not found for repo myrepo"},
+		{"empty repo", fields{branch: "main", repo: ""}, "branch main not found for repo "},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			m := &branchNotFoundError{
+				branch: tt.fields.branch,
+				repo:   tt.fields.repo,
+			}
+			assert.Equalf(t, tt.want, m.Error(), "Error()")
+		})
+	}
+}

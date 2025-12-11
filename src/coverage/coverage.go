@@ -43,7 +43,7 @@ func coverageAWS() error {
 	Prepend := resourceTable(missing, data, "AWS")
 
 	target = Prepend + target
-	err := os.WriteFile("aws.md", []byte(target), 0o700)
+	err := os.WriteFile("aws.md", []byte(target), 0o600)
 	if err != nil {
 		return &fileWriteError{err}
 	}
@@ -82,7 +82,7 @@ func coverageAzure() error {
 
 	Prepend := resourceTable(missing, data, "Azure")
 	target = Prepend + target
-	err := os.WriteFile("azure.md", []byte(target), 0o700)
+	err := os.WriteFile("azure.md", []byte(target), 0o600)
 
 	if err != nil {
 		return &fileWriteError{err}
@@ -115,7 +115,7 @@ func coverageGcp() error {
 	Prepend := resourceTable(missing, data, "Google")
 
 	target = Prepend + target
-	err := os.WriteFile("google.md", []byte(target), 0o700)
+	err := os.WriteFile("google.md", []byte(target), 0o600)
 
 	if err != nil {
 
@@ -128,7 +128,7 @@ func coverageGcp() error {
 func resourceTable(missing members, data members, cloud string) string {
 	Prepend := fmt.Sprintf("# %s Resource Status\n\n", cloud)
 	Prepend += fmt.Sprintf("| Terraform  | Coverage %% | Resources | Total Resources |\n")
-	Prepend += fmt.Sprintf("|------------|------------|-----------|-----------------|\n")
+	Prepend += "|------------|------------|-----------|-----------------|\n"
 	Prepend += fmt.Sprintf("| Resources  | %3.2f      | %5d       | %5d            |\n",
 		percent(missing.Resources, data.Resources),
 		len(data.Resources)-len(missing.Resources), len(data.Resources))
@@ -140,7 +140,7 @@ func resourceTable(missing members, data members, cloud string) string {
 
 func importMembers(targetMembers string) members {
 	fileName, _ := filepath.Abs(targetMembers)
-	file, _ := os.ReadFile(fileName)
+	file, _ := os.ReadFile(fileName) // #nosec G304 -- Test helper reading data files
 	data := members{}
 
 	_ = json.Unmarshal(file, &data)

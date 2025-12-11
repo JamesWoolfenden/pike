@@ -440,3 +440,117 @@ func Test_compareGCPPolicy(t *testing.T) {
 		})
 	}
 }
+
+func Test_invalidCloudError_Error(t *testing.T) {
+	type fields struct {
+		arn string
+	}
+	tests := []struct {
+		name   string
+		fields fields
+		want   string
+	}{
+		{"aws arn", fields{arn: "arn:aws:iam::123456789012:policy/test"}, "Invalid Cloud: arn:aws:iam::123456789012:policy/test"},
+		{"invalid format", fields{arn: "invalid-format"}, "Invalid Cloud: invalid-format"},
+		{"empty", fields{arn: ""}, "Invalid Cloud: "},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			e := &invalidCloudError{
+				arn: tt.fields.arn,
+			}
+			assert.Equalf(t, tt.want, e.Error(), "Error()")
+		})
+	}
+}
+
+func Test_apiNotFoundError_Error(t *testing.T) {
+	type fields struct {
+		API string
+	}
+	tests := []struct {
+		name   string
+		fields fields
+		want   string
+	}{
+		{"compute api", fields{API: "compute.googleapis.com"}, "API compute.googleapis.com not found"},
+		{"storage api", fields{API: "storage.googleapis.com"}, "API storage.googleapis.com not found"},
+		{"empty api", fields{API: ""}, "API  not found"},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			m := &apiNotFoundError{
+				API: tt.fields.API,
+			}
+			assert.Equalf(t, tt.want, m.Error(), "Error()")
+		})
+	}
+}
+
+func Test_apiNotEnabledError_Error(t *testing.T) {
+	type fields struct {
+		API string
+	}
+	tests := []struct {
+		name   string
+		fields fields
+		want   string
+	}{
+		{"compute api", fields{API: "compute.googleapis.com"}, "API compute.googleapis.com not enabled"},
+		{"storage api", fields{API: "storage.googleapis.com"}, "API storage.googleapis.com not enabled"},
+		{"empty api", fields{API: ""}, "API  not enabled"},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			m := &apiNotEnabledError{
+				API: tt.fields.API,
+			}
+			assert.Equalf(t, tt.want, m.Error(), "Error()")
+		})
+	}
+}
+
+func Test_formatterError_Error(t *testing.T) {
+	type fields struct {
+		err error
+	}
+	tests := []struct {
+		name   string
+		fields fields
+		want   string
+	}{
+		{"format error", fields{err: errors.New("failed to format")}, "formatter failed: failed to format"},
+		{"nil error", fields{err: nil}, "formatter failed: <nil>"},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			m := &formatterError{
+				err: tt.fields.err,
+			}
+			assert.Equalf(t, tt.want, m.Error(), "Error()")
+		})
+	}
+}
+
+func Test_arnNotVerified_Error(t *testing.T) {
+	type fields struct {
+		arn string
+	}
+	tests := []struct {
+		name   string
+		fields fields
+		want   string
+	}{
+		{"aws arn", fields{arn: "arn:aws:iam::123456789012:policy/test"}, "ARN arn:aws:iam::123456789012:policy/test not verified"},
+		{"invalid arn", fields{arn: "invalid"}, "ARN invalid not verified"},
+		{"empty arn", fields{arn: ""}, "ARN  not verified"},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			e := &arnNotVerified{
+				arn: tt.fields.arn,
+			}
+			assert.Equalf(t, tt.want, e.Error(), "Error()")
+		})
+	}
+}

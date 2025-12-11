@@ -187,7 +187,7 @@ func verifyURL(url string) error {
 		return &insecureProtocolError{}
 	}
 
-	resp, err := http.Get(url) //nolint:gosec
+	resp, err := http.Get(url) // #nosec G107 -- URL validated to be HTTPS only
 
 	if resp == nil {
 		return &nilResponseError{}

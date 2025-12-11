@@ -250,7 +250,7 @@ func GetResourceBlocks(file string) (*hclsyntax.Body, error) {
 		return nil, fmt.Errorf("failed to get absolute path: %w", err)
 	}
 
-	src, err := os.ReadFile(temp)
+	src, err := os.ReadFile(temp) // #nosec G304 -- Reading Terraform configuration files from user-specified paths
 	if err != nil {
 		return nil, fmt.Errorf("failed to read file: %w", err)
 	}

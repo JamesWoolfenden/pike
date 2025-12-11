@@ -133,9 +133,6 @@ var dataGoogleBigqueryAnalyticsHubListingIAMPolicy []byte
 //go:embed mapping/google/data/bigquery/google_bigquery_datapolicy_data_policy_iam_policy.json
 var dataGoogleBigqueryDatapolicyDataPolicyIAMPolicy []byte
 
-//go:embed mapping/google/data/bigquery/google_bigquery_datapolicyv2_data_policy_iam_policy.json
-var dataGoogleBigqueryDatapolicyV2DataPolicyIAMPolicy []byte
-
 //go:embed mapping/google/data/bigquery/google_bigquery_default_service_account.json
 var dataGoogleBigqueryDefaultServiceAccount []byte
 
