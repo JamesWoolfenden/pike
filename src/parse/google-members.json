@@ -921,6 +921,7 @@
         "google_netapp_volume_quota_rule",
         "google_netapp_volume_replication",
         "google_netapp_volume_snapshot",
+        "google_network_connectivity_destination",
         "google_network_connectivity_gateway_advertised_route",
         "google_network_connectivity_group",
         "google_network_connectivity_hub",
