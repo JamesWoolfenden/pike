@@ -1011,3 +1011,15 @@ var dataGoogleWorkstationsWorkstationIAMPolicy []byte
 
 //go:embed mapping/google/data/tags/google_tags_tag_value_iam_policy.json
 var dataGoogleTagsTagValueIAMPolicy []byte
+
+//go:embed mapping/google/data/compute/google_compute_region_security_policy.json
+var dataGoogleComputeRegionSecurityPolicy []byte
+
+//go:embed mapping/google/data/compute/google_compute_storage_pool.json
+var dataGoogleComputeStoragePool []byte
+
+//go:embed mapping/google/data/gkehub/google_gke_hub_membership_binding.json
+var dataGKEHubMembershipBinding []byte
+
+//go:embed mapping/google/data/servicenetworking/google_service_networking_peered_dns_domain.json
+var dataGoogleServiceNetworkingPeeredDNSDomain []byte

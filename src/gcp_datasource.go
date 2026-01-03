@@ -429,6 +429,10 @@ func GCPDataLookup(result string) interface{} {
 		"google_workbench_instance_iam_policy":                         dataGoogleWorkbenchInstanceIAMPolicy,
 		"google_workstations_workstation_config_iam_policy":            dataGoogleWorkstationsWorkstationConfigIAMPolicy,
 		"google_workstations_workstation_iam_policy":                   dataGoogleWorkstationsWorkstationIAMPolicy,
+		"google_compute_region_security_policy":                        dataGoogleComputeRegionSecurityPolicy,
+		"google_compute_storage_pool":                                  dataGoogleComputeStoragePool,
+		"google_gke_hub_membership_binding":                            dataGKEHubMembershipBinding,
+		"google_service_networking_peered_dns_domain":                  dataGoogleServiceNetworkingPeeredDNSDomain,
 	}
 
 	return TFLookup[result]

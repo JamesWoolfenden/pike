@@ -2,8 +2,8 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 5.09      |    57       |  1120            |
-| Datasource | 30.58      |   122       |   399             |
+| Resources  | 5.14      |    57       |  1110            |
+| Datasource | 31.44      |   122       |   388             |
 
 ```shell
 ./resource.ps1 azurerm_aadb2c_directory
@@ -128,6 +128,7 @@
 ./resource.ps1 azurerm_automation_powershell72_module
 ./resource.ps1 azurerm_automation_python3_package
 ./resource.ps1 azurerm_automation_runbook
+./resource.ps1 azurerm_automation_runtime_environment
 ./resource.ps1 azurerm_automation_schedule
 ./resource.ps1 azurerm_automation_software_update_configuration
 ./resource.ps1 azurerm_automation_source_control
@@ -567,17 +568,6 @@
 ./resource.ps1 azurerm_marketplace_role_assignment
 ./resource.ps1 azurerm_media_services_account
 ./resource.ps1 azurerm_media_transform
-./resource.ps1 azurerm_mobile_network
-./resource.ps1 azurerm_mobile_network_attached_data_network
-./resource.ps1 azurerm_mobile_network_data_network
-./resource.ps1 azurerm_mobile_network_packet_core_control_plane
-./resource.ps1 azurerm_mobile_network_packet_core_data_plane
-./resource.ps1 azurerm_mobile_network_service
-./resource.ps1 azurerm_mobile_network_sim
-./resource.ps1 azurerm_mobile_network_sim_group
-./resource.ps1 azurerm_mobile_network_sim_policy
-./resource.ps1 azurerm_mobile_network_site
-./resource.ps1 azurerm_mobile_network_slice
 ./resource.ps1 azurerm_mongo_cluster
 ./resource.ps1 azurerm_mongo_cluster_firewall_rule
 ./resource.ps1 azurerm_mongo_cluster_user
@@ -1229,17 +1219,6 @@
 ./resource.ps1 azurerm_management_group_template_deployment -type data
 ./resource.ps1 azurerm_maps_account -type data
 ./resource.ps1 azurerm_marketplace_agreement -type data
-./resource.ps1 azurerm_mobile_network -type data
-./resource.ps1 azurerm_mobile_network_attached_data_network -type data
-./resource.ps1 azurerm_mobile_network_data_network -type data
-./resource.ps1 azurerm_mobile_network_packet_core_control_plane -type data
-./resource.ps1 azurerm_mobile_network_packet_core_data_plane -type data
-./resource.ps1 azurerm_mobile_network_service -type data
-./resource.ps1 azurerm_mobile_network_sim -type data
-./resource.ps1 azurerm_mobile_network_sim_group -type data
-./resource.ps1 azurerm_mobile_network_sim_policy -type data
-./resource.ps1 azurerm_mobile_network_site -type data
-./resource.ps1 azurerm_mobile_network_slice -type data
 ./resource.ps1 azurerm_monitor_action_group -type data
 ./resource.ps1 azurerm_monitor_data_collection_endpoint -type data
 ./resource.ps1 azurerm_monitor_data_collection_rule -type data

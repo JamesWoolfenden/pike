@@ -170,7 +170,9 @@ function Get-AzurePermissions($resourceName, $provider, $isDataSource)
 
         return $selected.Permissions
 
-    } catch {
+    }
+    catch
+    {
         Write-Host "Warning: Error reading permissions file: $_" -ForegroundColor Yellow
         return $null
     }
