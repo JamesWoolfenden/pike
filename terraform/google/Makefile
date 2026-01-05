@@ -18,6 +18,9 @@ init:
 upgrade:
 	tofu init --upgrade
 
+update: upgrade
+
+
 role: FORCE
 	GOOGLE_CLOUD_KEYFILE_JSON="" tofu  -chdir=./role apply -auto-approve
 

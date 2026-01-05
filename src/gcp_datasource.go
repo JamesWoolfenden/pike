@@ -433,6 +433,7 @@ func GCPDataLookup(result string) interface{} {
 		"google_compute_storage_pool":                                  dataGoogleComputeStoragePool,
 		"google_gke_hub_membership_binding":                            dataGKEHubMembershipBinding,
 		"google_service_networking_peered_dns_domain":                  dataGoogleServiceNetworkingPeeredDNSDomain,
+		"google_cloud_identity_policies":                               placeholder,
 	}
 
 	return TFLookup[result]

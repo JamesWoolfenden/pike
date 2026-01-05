@@ -30,3 +30,5 @@ dist/
 
 azure_permissions.json
 azure_permissions_full.json
+
+terraform/google/terraform.auto.tfvars
