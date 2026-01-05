@@ -32,7 +32,7 @@ function path()
 }
 
 # Enhancement 3: Resource Name Validation
-function Validate-Resource($resourceName, $provider)
+function Validate-Resource($resourceName, $provider, $type)
 {
     $membersFile = path $PSScriptRoot "src" "parse" "$provider-members.json"
 
@@ -45,26 +45,54 @@ function Validate-Resource($resourceName, $provider)
     try
     {
         $members = Get-Content $membersFile -Raw | ConvertFrom-Json
+        Write-Debug "Get-Content $membersFile -Raw | ConvertFrom-Json"
+        Write-Debug "Type: $type"
 
-        if ($members.resources -contains $resourceName)
+        if ($type -eq "resource")
         {
-            Write-Host "✓ Resource '$resourceName' validated in $provider provider" -ForegroundColor Green
-            return $true
+            if ($members.resources -contains $resourceName)
+            {
+                Write-Host "✓ Resource '$resourceName' validated in $provider provider" -ForegroundColor Green
+                return $true
+            }
+            else
+            {
+                Write-Host "✗ ERROR: Resource '$resourceName' not found in $provider provider" -ForegroundColor Red
+
+                # Try to find similar resources
+                $similar = $members.resources | Where-Object { $_ -like "*$( $resourceName.Split('_')[-1] )*" } | Select-Object -First 5
+
+                if ($similar)
+                {
+                    Write-Host "`nDid you mean one of these?" -ForegroundColor Yellow
+                    $similar | ForEach-Object { Write-Host "  - $_" -ForegroundColor Cyan }
+                }
+
+                return $false
+            }
         }
         else
         {
-            Write-Host "✗ ERROR: Resource '$resourceName' not found in $provider provider" -ForegroundColor Red
-
-            # Try to find similar resources
-            $similar = $members.resources | Where-Object { $_ -like "*$( $resourceName.Split('_')[-1] )*" } | Select-Object -First 5
-
-            if ($similar)
+            if ($members.dataSources -contains $resourceName)
             {
-                Write-Host "`nDid you mean one of these?" -ForegroundColor Yellow
-                $similar | ForEach-Object { Write-Host "  - $_" -ForegroundColor Cyan }
+                Write-Host "✓ Datasource '$resourceName' validated in $provider provider" -ForegroundColor Green
+                return $true
             }
+            else
+            {
+                Write-Host "✗ ERROR: Datasource '$resourceName' not found in $provider provider" -ForegroundColor Red
 
-            return $false
+                # Try to find similar resources
+                $similar = $members.dataSources | Where-Object { $_ -like "*$( $resourceName.Split('_')[-1] )*" } | Select-Object -First 5
+
+                if ($similar)
+                {
+                    Write-Host "`nDid you mean one of these?" -ForegroundColor Yellow
+                    $similar | ForEach-Object { Write-Host "  - $_" -ForegroundColor Cyan }
+                }
+
+                return $false
+            }
         }
     }
     catch
@@ -202,7 +230,7 @@ Write-Host ("-" * 60) -ForegroundColor Gray
 
 # Validate resource name
 Write-Host "`nValidating resource..." -ForegroundColor Cyan
-if (-not (Validate-Resource $resource $provider))
+if (-not (Validate-Resource $resource $provider $type))
 {
     Write-Host "`nAborting: Resource validation failed" -ForegroundColor Red
     exit 1
