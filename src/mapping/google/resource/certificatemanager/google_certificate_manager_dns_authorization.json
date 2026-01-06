@@ -6,7 +6,8 @@
       "certificatemanager.dnsauthorizations.get",
       "certificatemanager.dnsauthorizations.delete",
       "certificatemanager.dnsauthorizations.update",
-      "certificatemanager.dnsauthorizations.delete"
+      "certificatemanager.dnsauthorizations.delete",
+      "certificatemanager.operations.get"
     ],
     "attributes": {
       "tags": []

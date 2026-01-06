@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "managedidentities.peerings.create",
+      "managedidentities.peerings.delete",
+      "managedidentities.peerings.get",
+      "managedidentities.peerings.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

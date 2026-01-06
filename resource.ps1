@@ -102,6 +102,135 @@ function Validate-Resource($resourceName, $provider, $type)
     }
 }
 
+# Enhancement 4: Google Cloud Permission Lookup
+function Get-GooglePermissions($resourceName, $provider, $isDataSource)
+{
+    if ($provider -ne "google")
+    {
+        return $null  # Only works for Google Cloud
+    }
+
+    $permissionsFile = path $PSScriptRoot "terraform" "google" "google_permissions.json"
+
+    if (-not (Test-Path $permissionsFile))
+    {
+        Write-Host "Info: google_permissions.json not found - skipping permission lookup" -ForegroundColor Cyan
+        Write-Host "      Run terraform/google/export_google_permissions.ps1 to enable this feature" -ForegroundColor Cyan
+        return $null
+    }
+
+    try
+    {
+        $allPermissions = Get-Content $permissionsFile -Raw | ConvertFrom-Json -AsHashtable
+
+        # Extract resource type from terraform resource name
+        # Example: google_compute_instance -> compute.instances
+        $resourcePart = $resourceName -replace "^google_", ""
+
+        # Find potential matches
+        $matches = @()
+
+        foreach ($key in $allPermissions.Keys)
+        {
+            $entry = $allPermissions[$key]
+
+            # Check if this service.resource matches the terraform resource
+            # Either by checking terraform_resources array or fuzzy match
+            if ($entry.terraform_resources -contains $resourceName)
+            {
+                # Direct match
+                $matches += @{
+                    ServiceResource = $key
+                    Entry = $entry
+                    MatchType = "exact"
+                }
+            }
+            else
+            {
+                # Fuzzy match
+                $service = $entry.service
+                $resource = $entry.resource
+
+                $resourcePartLower = $resourcePart.ToLower() -replace "_", ""
+                $keyLower = "$service$resource".ToLower()
+
+                if ($resourcePartLower -eq $keyLower -or
+                    $resourcePartLower -like "*$keyLower*" -or
+                    $keyLower -like "*$resourcePartLower*")
+                {
+                    $matches += @{
+                        ServiceResource = $key
+                        Entry = $entry
+                        MatchType = "fuzzy"
+                    }
+                }
+            }
+        }
+
+        if ($matches.Count -eq 0)
+        {
+            Write-Host "No Google Cloud permissions found for '$resourceName'" -ForegroundColor Yellow
+            Write-Host "  Searched across 2500+ GCP service.resource types" -ForegroundColor Gray
+            return $null
+        }
+
+        # Sort exact matches first
+        $matches = $matches | Sort-Object -Property @{Expression = {if ($_.MatchType -eq "exact") { 0 } else { 1 }}}
+
+        if ($matches.Count -eq 1)
+        {
+            $match = $matches[0]
+            Write-Host "✓ Found permissions for: $($match.ServiceResource)" -ForegroundColor Green
+            return $match.Entry
+        }
+
+        # Multiple matches - let user choose
+        Write-Host "`nFound multiple possible Google Cloud service.resource types:" -ForegroundColor Cyan
+
+        for ($i = 0; $i -lt [Math]::Min($matches.Count, 10); $i++)
+        {
+            $m = $matches[$i]
+            $entry = $m.Entry
+            $permCount = $entry.permissions.Count
+            $gaCount = $entry.stage_counts.GA
+            $betaCount = $entry.stage_counts.BETA
+            $matchIndicator = if ($m.MatchType -eq "exact") { "✓" } else { " " }
+
+            Write-Host "  [$($i + 1)]$matchIndicator $($m.ServiceResource)" -ForegroundColor Yellow
+            Write-Host "       Total: $permCount permissions (GA: $gaCount, BETA: $betaCount)" -ForegroundColor Gray
+        }
+
+        if ($matches.Count -gt 10)
+        {
+            Write-Host "  ... and $($matches.Count - 10) more matches" -ForegroundColor Gray
+        }
+
+        do
+        {
+            $maxChoice = [Math]::Min($matches.Count, 10)
+            $choice = Read-Host "`nWhich service.resource should we use? [1-$maxChoice, or 0 to skip]"
+            $choiceNum = [int]$choice
+        } while ($choiceNum -lt 0 -or $choiceNum -gt $maxChoice)
+
+        if ($choiceNum -eq 0)
+        {
+            Write-Host "Skipping permission lookup" -ForegroundColor Yellow
+            return $null
+        }
+
+        $selected = $matches[$choiceNum - 1]
+        Write-Host "✓ Selected: $($selected.ServiceResource)" -ForegroundColor Green
+
+        return $selected.Entry
+
+    }
+    catch
+    {
+        Write-Host "Warning: Error reading permissions file: $_" -ForegroundColor Yellow
+        return $null
+    }
+}
+
 # Enhancement 5: Interactive Permission Selection
 function Get-AzurePermissions($resourceName, $provider, $isDataSource)
 {
@@ -236,25 +365,54 @@ if (-not (Validate-Resource $resource $provider $type))
     exit 1
 }
 
-# Look up Azure permissions (Azure only)
+# Look up permissions (provider-specific)
 if ($provider -eq "azurerm")
 {
     Write-Host "`nLooking up Azure permissions..." -ForegroundColor Cyan
     $permissions = Get-AzurePermissions $resource $provider ($type -eq "data")
 }
+elseif ($provider -eq "google")
+{
+    Write-Host "`nLooking up Google Cloud permissions..." -ForegroundColor Cyan
+    $permissions = Get-GooglePermissions $resource $provider ($type -eq "data")
+}
 else
 {
-    Write-Host "`nSkipping permission lookup (only available for Azure)" -ForegroundColor Gray
+    Write-Host "`nSkipping permission lookup (only available for Azure and Google Cloud)" -ForegroundColor Gray
     $permissions = $null
 }
 
 if ($permissions)
 {
     Write-Host "`nPermission Summary:" -ForegroundColor Cyan
-    Write-Host "  Read permissions:   $( $permissions.read.Count )" -ForegroundColor Gray
-    Write-Host "  Write permissions:  $( $permissions.write.Count )" -ForegroundColor Gray
-    Write-Host "  Delete permissions: $( $permissions.delete.Count )" -ForegroundColor Gray
-    Write-Host "  Action permissions: $( $permissions.action.Count )" -ForegroundColor Gray
+
+    if ($provider -eq "azurerm")
+    {
+        # Azure format
+        Write-Host "  Read permissions:   $( $permissions.read.Count )" -ForegroundColor Gray
+        Write-Host "  Write permissions:  $( $permissions.write.Count )" -ForegroundColor Gray
+        Write-Host "  Delete permissions: $( $permissions.delete.Count )" -ForegroundColor Gray
+        Write-Host "  Action permissions: $( $permissions.action.Count )" -ForegroundColor Gray
+    }
+    elseif ($provider -eq "google")
+    {
+        # Google Cloud format
+        Write-Host "  Total permissions:  $( $permissions.permissions.Count )" -ForegroundColor Gray
+        Write-Host "  GA permissions:     $( $permissions.stage_counts.GA )" -ForegroundColor Gray
+        Write-Host "  BETA permissions:   $( $permissions.stage_counts.BETA )" -ForegroundColor Gray
+
+        # Show some example permissions
+        Write-Host "`n  Example permissions:" -ForegroundColor Cyan
+        $examplePerms = $permissions.permissions | Where-Object { $_.stage -eq "GA" } | Select-Object -First 10
+        foreach ($perm in $examplePerms)
+        {
+            Write-Host "    - $( $perm.name )" -ForegroundColor Gray
+        }
+        if ($permissions.permissions.Count -gt 10)
+        {
+            Write-Host "    ... and $( $permissions.permissions.Count - 10 ) more" -ForegroundColor Gray
+        }
+    }
 }
 
 $baseMapping = path $PSScriptRoot "src" "mapping" $provider

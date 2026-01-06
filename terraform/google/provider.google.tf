@@ -31,5 +31,5 @@ provider "google" {
 }
 
 locals {
-  gcp_credentials_path = fileexists("/Users/jwoolfenden/pike-gcp-super.json") ? "/Users/jwoolfenden/pike-gcp-super.json" : "c:/Users/jim_w/pike-super.json"
+  gcp_credentials_path = fileexists("/Users/jwoolfenden/pike-gcp-basic.json") ? "/Users/jwoolfenden/pike-gcp-basic.json" : "c:/Users/jim_w/pike-basic.json"
 }

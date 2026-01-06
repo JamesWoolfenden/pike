@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "managedidentities.domains.attachTrust",
+      "managedidentities.domains.detachTrust"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

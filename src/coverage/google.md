@@ -2,20 +2,10 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 61.44      |   787       |  1281            |
-| Datasource | 99.51      |   407       |   409             |
+| Resources  | 62.61      |   802       |  1281            |
+| Datasource | 99.76      |   408       |   409             |
 
 ```shell
-./resource.ps1 google_access_context_manager_access_level_condition
-./resource.ps1 google_access_context_manager_service_perimeter_dry_run_egress_policy
-./resource.ps1 google_access_context_manager_service_perimeter_dry_run_ingress_policy
-./resource.ps1 google_access_context_manager_service_perimeter_dry_run_resource
-./resource.ps1 google_access_context_manager_service_perimeter_egress_policy
-./resource.ps1 google_access_context_manager_service_perimeter_ingress_policy
-./resource.ps1 google_access_context_manager_service_perimeter_resource
-./resource.ps1 google_active_directory_domain
-./resource.ps1 google_active_directory_domain_trust
-./resource.ps1 google_active_directory_peering
 ./resource.ps1 google_apigee_addons_config
 ./resource.ps1 google_apigee_api
 ./resource.ps1 google_apigee_api_deployment
@@ -69,11 +59,6 @@
 ./resource.ps1 google_binary_authorization_attestor
 ./resource.ps1 google_binary_authorization_policy
 ./resource.ps1 google_blockchain_node_engine_blockchain_nodes
-./resource.ps1 google_certificate_manager_certificate
-./resource.ps1 google_certificate_manager_certificate_issuance_config
-./resource.ps1 google_certificate_manager_certificate_map
-./resource.ps1 google_certificate_manager_certificate_map_entry
-./resource.ps1 google_certificate_manager_trust_config
 ./resource.ps1 google_ces_agent
 ./resource.ps1 google_ces_app
 ./resource.ps1 google_ces_app_version
@@ -501,5 +486,4 @@
 ./resource.ps1 google_storage_transfer_agent_pool
 ./resource.ps1 google_storage_transfer_job
 ./resource.ps1 google_biglake_iceberg_catalog_iam_policy -type data
-./resource.ps1 google_cloud_identity_policies -type data
 ```

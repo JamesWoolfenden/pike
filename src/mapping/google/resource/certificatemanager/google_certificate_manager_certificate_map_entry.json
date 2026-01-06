@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "certificatemanager.certmapentries.create",
+      "certificatemanager.certmapentries.delete",
+      "certificatemanager.certmapentries.get",
+      "certificatemanager.certmapentries.update",
+      "certificatemanager.certs.use"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

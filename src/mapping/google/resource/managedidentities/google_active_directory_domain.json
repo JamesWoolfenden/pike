@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "managedidentities.domains.create",
+      "managedidentities.domains.get",
+      "managedidentities.domains.update",
+      "managedidentities.domains.delete",
+      "managedidentities.operations.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -61,17 +61,17 @@ var googleAPIGatewayGateway []byte
 //go:embed mapping/google/resource/apigateway/google_api_gateway_gateway_iam.json
 var googleAPIGatewayGatewayIAM []byte
 
-//go:embed mapping/google/resource/google_apigee_environment.json
-var googleAPIgeeEnvironment []byte
+//go:embed mapping/google/resource/apigee/google_apigee_environment.json
+var googleApigeeEnvironment []byte
 
 //go:embed mapping/google/resource/apigee/google_apigee_environment_iam_binding.json
-var googleAPIgeeEnvironmentIAMBinding []byte
+var googleApigeeEnvironmentIAMBinding []byte
 
 //go:embed mapping/google/resource/apigee/google_apigee_environment_iam_member.json
-var googleAPIgeeEnvironmentIAMMember []byte
+var googleApigeeEnvironmentIAMMember []byte
 
 //go:embed mapping/google/resource/apigee/google_apigee_environment_iam_policy.json
-var googleAPIgeeEnvironmentIAMPolicy []byte
+var googleApigeeEnvironmentIAMPolicy []byte
 
 //go:embed mapping/google/resource/apihub/google_apihub_api_hub_instance.json
 var googleAPIhubAPIHubInstance []byte
@@ -2244,3 +2244,48 @@ var googleDNSManagedZoneIAMPolicy []byte
 
 //go:embed mapping/google/resource/resourcemanager/google_project_iam_policy.json
 var googleProjectIAMPolicy []byte
+
+//go:embed mapping/google/resource/accesscontextmanager/google_access_context_manager_access_level_condition.json
+var googleAccessContextManagerAccessLevelCondition []byte
+
+//go:embed mapping/google/resource/accesscontextmanager/google_access_context_manager_service_perimeter_dry_run_egress_policy.json
+var googleAccessContextManagerServicePerimeterDryRunEgressPolicy []byte
+
+//go:embed mapping/google/resource/accesscontextmanager/google_access_context_manager_service_perimeter_dry_run_ingress_policy.json
+var googleAccessContextManagerServicePerimeterDryRunIngressPolicy []byte
+
+//go:embed mapping/google/resource/accesscontextmanager/google_access_context_manager_service_perimeter_dry_run_resource.json
+var googleAccessContextManagerServicePerimeterDryRunResource []byte
+
+//go:embed mapping/google/resource/accesscontextmanager/google_access_context_manager_service_perimeter_egress_policy.json
+var googleAccessContextManagerServicePerimeterEgressPolicy []byte
+
+//go:embed mapping/google/resource/accesscontextmanager/google_access_context_manager_service_perimeter_ingress_policy.json
+var googleAccessContextManagerServicePerimeterIngressPolicy []byte
+
+//go:embed mapping/google/resource/accesscontextmanager/google_access_context_manager_service_perimeter_resource.json
+var googleAccessContextManagerServicePerimeterResource []byte
+
+//go:embed mapping/google/resource/managedidentities/google_active_directory_domain.json
+var googleActiveDirectoryDomain []byte
+
+//go:embed mapping/google/resource/managedidentities/google_active_directory_domain_trust.json
+var googleActiveDirectoryDomainTrust []byte
+
+//go:embed mapping/google/resource/managedidentities/google_active_directory_peering.json
+var googleActiveDirectoryPeering []byte
+
+//go:embed mapping/google/resource/certificatemanager/google_certificate_manager_certificate.json
+var googleCertificateManagerCertificate []byte
+
+//go:embed mapping/google/resource/certificatemanager/google_certificate_manager_certificate_issuance_config.json
+var googleCertificateManagerCertificateIssuanceConfig []byte
+
+//go:embed mapping/google/resource/certificatemanager/google_certificate_manager_certificate_map.json
+var googleCertificateManagerCertificxateMap []byte
+
+//go:embed mapping/google/resource/certificatemanager/google_certificate_manager_certificate_map_entry.json
+var googleCertificateManagerCertificateMapEntry []byte
+
+//go:embed mapping/google/resource/certificatemanager/google_certificate_manager_trust_config.json
+var googleCertificateManagerTrustConfig []byte

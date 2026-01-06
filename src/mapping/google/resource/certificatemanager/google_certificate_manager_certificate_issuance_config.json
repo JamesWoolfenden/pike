@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "certificatemanager.certissuanceconfigs.create",
+      "certificatemanager.certissuanceconfigs.delete",
+      "certificatemanager.certissuanceconfigs.get",
+      "certificatemanager.certissuanceconfigs.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

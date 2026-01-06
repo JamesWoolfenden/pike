@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "certificatemanager.certmaps.get",
+      "certificatemanager.certmaps.delete",
+      "certificatemanager.certmaps.create",
+      "certificatemanager.certmaps.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

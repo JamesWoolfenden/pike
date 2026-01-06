@@ -4,7 +4,8 @@
       "privateca.caPools.create",
       "privateca.caPools.get",
       "privateca.caPools.delete",
-      "privateca.caPools.update"
+      "privateca.caPools.update",
+      "privateca.operations.get"
     ],
     "attributes": {
       "tags": []

@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "certificatemanager.trustconfigs.get",
+      "certificatemanager.trustconfigs.delete",
+      "certificatemanager.trustconfigs.create",
+      "certificatemanager.trustconfigs.update",
+      "certificatemanager.trustconfigs.use"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
