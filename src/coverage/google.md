@@ -2,7 +2,7 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 62.61      |   802       |  1281            |
+| Resources  | 62.76      |   804       |  1281            |
 | Datasource | 99.76      |   408       |   409             |
 
 ```shell
@@ -168,9 +168,7 @@
 ./resource.ps1 google_compute_resource_policy
 ./resource.ps1 google_compute_resource_policy_attachment
 ./resource.ps1 google_compute_route
-./resource.ps1 google_compute_router
 ./resource.ps1 google_compute_router_interface
-./resource.ps1 google_compute_router_nat
 ./resource.ps1 google_compute_router_nat_address
 ./resource.ps1 google_compute_router_peer
 ./resource.ps1 google_compute_router_route_policy

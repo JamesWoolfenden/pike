@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "compute.routers.create"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.routers.delete"
+    ],
+    "modify": [
+      "compute.routers.update"
+    ],
+    "plan": [
+      "compute.routers.get"
+    ]
+  }
+]

@@ -589,6 +589,12 @@ var googleComputeNetworkEndpointGroup []byte
 //go:embed mapping/google/resource/compute/google_compute_project_metadata_item.json
 var googleComputeProjectMetadataItem []byte
 
+//go:embed mapping/google/resource/compute/google_compute_router.json
+var googleComputeRouter []byte
+
+//go:embed mapping/google/resource/compute/google_compute_router_nat.json
+var googleComputeRouterNat []byte
+
 //go:embed mapping/google/resource/compute/google_compute_region_backend_service.json
 var googleComputeRegionBackendService []byte
 
