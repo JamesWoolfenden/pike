@@ -930,4 +930,9 @@ var gCPTfLookup = map[string]interface{}{
 	"google_iam_workforce_pool_provider_scim_token":                          placeholder,
 	"google_iam_workload_identity_pool_managed_identity":                     googleIamWorkloadIdentityPoolManagedIdentity,
 	"google_iam_workload_identity_pool_namespace":                            googleIamWorkloadIdentityPoolNamespace,
+	"google_compute_route":                                                   googleComputeRoute,
+	"google_compute_router_nat_address":                                      googleComputeRouterNatAddress,
+	"google_compute_router_peer":                                             googleComputeRouterPeer,
+	"google_compute_router_route_policy":                                     googleComputeRouterRoutePolicy,
+	"google_compute_router_interface":                                        googleComputeRouterInterface,
 }

@@ -167,11 +167,8 @@
 ./resource.ps1 google_compute_resize_request
 ./resource.ps1 google_compute_resource_policy
 ./resource.ps1 google_compute_resource_policy_attachment
-./resource.ps1 google_compute_route
-./resource.ps1 google_compute_router_interface
-./resource.ps1 google_compute_router_nat_address
-./resource.ps1 google_compute_router_peer
-./resource.ps1 google_compute_router_route_policy
+
+
 ./resource.ps1 google_compute_security_policy_rule
 ./resource.ps1 google_compute_service_attachment
 ./resource.ps1 google_compute_shared_vpc_host_project

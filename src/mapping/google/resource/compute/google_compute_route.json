@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "compute.routes.create",
+      "compute.routes.delete",
+      "compute.routes.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.routes.delete"
+    ],
+    "modify": [],
+    "plan": [
+      "compute.routes.get"
+    ]
+  }
+]

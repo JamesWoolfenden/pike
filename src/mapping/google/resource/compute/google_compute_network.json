@@ -2,7 +2,8 @@
   {
     "apply": [
       "compute.networks.create",
-      "compute.networks.get"
+      "compute.networks.get",
+      "compute.globalOperations.get"
     ],
     "attributes": {
       "tags": []

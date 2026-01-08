@@ -4,7 +4,8 @@
       "compute.addresses.create",
       "compute.subnetworks.use",
       "compute.networks.use",
-      "compute.addresses.get"
+      "compute.addresses.get",
+      "compute.addresses.setLabels"
     ],
     "attributes": {
       "address_type": [

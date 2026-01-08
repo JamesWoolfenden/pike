@@ -2325,3 +2325,18 @@ var googleIamWorkloadIdentityPoolManagedIdentity []byte
 
 //go:embed mapping/google/resource/iam/google_iam_workload_identity_pool_namespace.json
 var googleIamWorkloadIdentityPoolNamespace []byte
+
+//go:embed mapping/google/resource/compute/google_compute_route.json
+var googleComputeRoute []byte
+
+//go:embed mapping/google/resource/compute/google_compute_router_nat_address.json
+var googleComputeRouterNatAddress []byte
+
+//go:embed mapping/google/resource/compute/google_compute_router_peer.json
+var googleComputeRouterPeer []byte
+
+//go:embed mapping/google/resource/compute/google_compute_router_route_policy.json
+var googleComputeRouterRoutePolicy []byte
+
+//go:embed mapping/google/resource/compute/google_compute_router_interface.json
+var googleComputeRouterInterface []byte

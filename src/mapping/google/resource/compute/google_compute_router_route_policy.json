@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "compute.routers.updateRoutePolicy",
+      "compute.routers.getRoutePolicy",
+      "compute.routers.deleteRoutePolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.routers.deleteRoutePolicy"
+    ],
+    "modify": [
+      "compute.routers.updateRoutePolicy"
+    ],
+    "plan": [
+      "compute.routers.getRoutePolicy"
+    ]
+  }
+]

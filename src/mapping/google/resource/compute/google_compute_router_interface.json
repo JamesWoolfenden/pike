@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "compute.routers.create",
+      "compute.routers.delete",
+      "compute.routers.get",
+      "compute.routers.update",
+      "compute.vpnTunnels.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.routers.delete"
+    ],
+    "modify": [
+      "compute.routers.update"
+    ],
+    "plan": [
+      "compute.routers.get"
+    ]
+  }
+]
