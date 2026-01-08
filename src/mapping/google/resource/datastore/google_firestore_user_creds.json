@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "resourcemanager.projects.get",
+      "appengine.applications.get",
+      "datastore.operations.get",
+      "datastore.userCreds.create",
+      "datastore.userCreds.get",
+      "datastore.userCreds.update",
+      "datastore.userCreds.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

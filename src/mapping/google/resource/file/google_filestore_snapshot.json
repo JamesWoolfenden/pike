@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "file.snapshots.create",
+      "file.snapshots.delete",
+      "file.snapshots.get",
+      "file.snapshots.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

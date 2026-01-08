@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "resourcemanager.projects.get",
+      "appengine.applications.get",
+      "datastore.operations.get",
+      "datastore.databases.create",
+      "datastore.databases.delete",
+      "datastore.databases.get",
+      "datastore.databases.update",
+      "datastore.databases.getMetadata"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

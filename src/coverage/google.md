@@ -2,7 +2,7 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 64.48      |   826       |  1281            |
+| Resources  | 65.18      |   835       |  1281            |
 | Datasource | 99.76      |   408       |   409             |
 
 ```shell
@@ -233,9 +233,6 @@
 ./resource.ps1 google_document_ai_processor_default_version
 ./resource.ps1 google_document_ai_warehouse_document_schema
 ./resource.ps1 google_document_ai_warehouse_location
-./resource.ps1 google_filestore_backup
-./resource.ps1 google_filestore_instance
-./resource.ps1 google_filestore_snapshot
 ./resource.ps1 google_firebase_app_check_app_attest_config
 ./resource.ps1 google_firebase_app_check_debug_token
 ./resource.ps1 google_firebase_app_check_device_check_config
@@ -251,12 +248,6 @@
 ./resource.ps1 google_firebase_data_connect_service
 ./resource.ps1 google_firebase_extensions_instance
 ./resource.ps1 google_firebase_project_location
-./resource.ps1 google_firestore_backup_schedule
-./resource.ps1 google_firestore_database
-./resource.ps1 google_firestore_document
-./resource.ps1 google_firestore_field
-./resource.ps1 google_firestore_index
-./resource.ps1 google_firestore_user_creds
 ./resource.ps1 google_folder_access_approval_settings
 ./resource.ps1 google_folder_iam_audit_config
 ./resource.ps1 google_folder_organization_policy

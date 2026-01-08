@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "resourcemanager.projects.get",
+      "appengine.applications.get",
+      "datastore.operations.get",
+      "datastore.backupSchedules.create",
+      "datastore.backupSchedules.delete",
+      "datastore.backupSchedules.get",
+      "datastore.backupSchedules.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -2340,3 +2340,30 @@ var googleComputeRouterRoutePolicy []byte
 
 //go:embed mapping/google/resource/compute/google_compute_router_interface.json
 var googleComputeRouterInterface []byte
+
+//go:embed mapping/google/resource/file/google_filestore_backup.json
+var googleFilestoreBackup []byte
+
+//go:embed mapping/google/resource/file/google_filestore_instance.json
+var googleFilestoreInstance []byte
+
+//go:embed mapping/google/resource/file/google_filestore_snapshot.json
+var googleFilestoreSnapshot []byte
+
+//go:embed mapping/google/resource/datastore/google_firestore_backup_schedule.json
+var googleFirestoreBackupSchedule []byte
+
+//go:embed mapping/google/resource/datastore/google_firestore_database.json
+var googleFirestoreDatabase []byte
+
+//go:embed mapping/google/resource/datastore/google_firestore_document.json
+var googleFirestoreDocument []byte
+
+//go:embed mapping/google/resource/datastore/google_firestore_field.json
+var googleFirestoreField []byte
+
+//go:embed mapping/google/resource/datastore/google_firestore_index.json
+var googleFirestoreIndex []byte
+
+//go:embed mapping/google/resource/datastore/google_firestore_user_creds.json
+var googleFirestoreUserCreds []byte

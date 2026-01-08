@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "file.backups.create",
+      "file.backups.delete",
+      "file.backups.get",
+      "file.backups.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

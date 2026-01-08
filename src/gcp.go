@@ -935,4 +935,13 @@ var gCPTfLookup = map[string]interface{}{
 	"google_compute_router_peer":                                             googleComputeRouterPeer,
 	"google_compute_router_route_policy":                                     googleComputeRouterRoutePolicy,
 	"google_compute_router_interface":                                        googleComputeRouterInterface,
+	"google_filestore_backup":                                                googleFilestoreBackup,
+	"google_filestore_instance":                                              googleFilestoreInstance,
+	"google_filestore_snapshot":                                              googleFilestoreSnapshot,
+	"google_firestore_backup_schedule":                                       googleFirestoreBackupSchedule,
+	"google_firestore_database":                                              googleFirestoreDatabase,
+	"google_firestore_document":                                              googleFirestoreDocument,
+	"google_firestore_field":                                                 googleFirestoreField,
+	"google_firestore_index":                                                 googleFirestoreIndex,
+	"google_firestore_user_creds":                                            googleFirestoreUserCreds,
 }

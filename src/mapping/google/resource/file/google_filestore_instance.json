@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "file.instances.create",
+      "file.instances.get",
+      "file.instances.delete",
+      "file.instances.update",
+      "file.operations.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
