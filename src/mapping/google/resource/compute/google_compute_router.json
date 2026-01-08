@@ -1,7 +1,10 @@
 [
   {
     "apply": [
-      "compute.routers.create"
+      "compute.routers.create",
+      "compute.routers.delete",
+      "compute.routers.update",
+      "compute.routers.get"
     ],
     "attributes": {
       "tags": []
