@@ -325,6 +325,8 @@ var gCPTfLookup = map[string]interface{}{
 	"google_compute_network_attachment":                                      googleComputeNetworkAttachment,
 	"google_compute_network_endpoint_group":                                  googleComputeNetworkEndpointGroup,
 	"google_compute_project_metadata_item":                                   googleComputeProjectMetadataItem,
+	"google_compute_router":                                                  googleComputeRouter,
+	"google_compute_router_nat":                                              googleComputeRouterNat,
 	"google_compute_region_backend_service":                                  googleComputeRegionBackendService,
 	"google_compute_region_backend_service_iam_binding":                      googleComputeRegionBackendServiceIAMBinding,
 	"google_compute_region_backend_service_iam_member":                       googleComputeRegionBackendServiceIAMMember,
