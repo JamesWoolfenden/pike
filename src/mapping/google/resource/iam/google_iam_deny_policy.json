@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "iam.denypolicies.update",
+      "iam.denypolicies.list",
+      "iam.denypolicies.get",
+      "iam.denypolicies.delete",
+      "iam.denypolicies.create"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

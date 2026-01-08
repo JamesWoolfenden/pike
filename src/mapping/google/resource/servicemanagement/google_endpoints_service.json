@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "servicemanagement.services.create",
+      "servicemanagement.services.delete",
+      "servicemanagement.services.update",
+      "servicemanagement.services.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

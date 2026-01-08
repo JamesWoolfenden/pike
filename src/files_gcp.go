@@ -2295,3 +2295,33 @@ var googleCertificateManagerCertificateMapEntry []byte
 
 //go:embed mapping/google/resource/certificatemanager/google_certificate_manager_trust_config.json
 var googleCertificateManagerTrustConfig []byte
+
+//go:embed mapping/google/resource/datafusion/google_data_fusion_instance.json
+var googleDataFusionInstance []byte
+
+//go:embed mapping/google/resource/servicemanagement/google_endpoints_service.json
+var googleEndpointsService []byte
+
+//go:embed mapping/google/resource/essentialcontacts/google_essential_contacts_contact.json
+var googleEssentialContactsContact []byte
+
+//go:embed mapping/google/resource/iam/google_iam_access_boundary_policy.json
+var googleIamAccessBoundaryPolicy []byte
+
+//go:embed mapping/google/resource/iam/google_iam_deny_policy.json
+var googleIamDenyPolicy []byte
+
+//go:embed mapping/google/resource/iam/google_iam_oauth_client.json
+var googleIamOauthClient []byte
+
+//go:embed mapping/google/resource/iam/google_iam_oauth_client_credential.json
+var googleIamOauthClientCredential []byte
+
+//go:embed mapping/google/resource/iam/google_iam_principal_access_boundary_policy.json
+var googleIamPrincipalAccessBoundaryPolicy []byte
+
+//go:embed mapping/google/resource/iam/google_iam_workload_identity_pool_managed_identity.json
+var googleIamWorkloadIdentityPoolManagedIdentity []byte
+
+//go:embed mapping/google/resource/iam/google_iam_workload_identity_pool_namespace.json
+var googleIamWorkloadIdentityPoolNamespace []byte

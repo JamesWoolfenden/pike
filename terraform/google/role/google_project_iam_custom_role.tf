@@ -6,68 +6,57 @@ resource "google_project_iam_custom_role" "terraform_pike" {
   description = "A user with least privileges"
   permissions = [
 
-    "certificatemanager.dnsauthorizations.create",
-    "certificatemanager.dnsauthorizations.delete",
-    "certificatemanager.dnsauthorizations.get",
-    "certificatemanager.dnsauthorizations.update",
-    "certificatemanager.operations.delete",
-    "privateca.caPools.create",
-    "privateca.caPools.delete",
-    "privateca.caPools.get",
-    "privateca.caPools.update",
-    "privateca.certificateAuthorities.create",
-    "privateca.certificateAuthorities.delete",
-    "privateca.certificateAuthorities.get",
-    "privateca.certificateAuthorities.update",
-    "storage.buckets.get",
-
-    //google_privateca_ca_pool
-    "privateca.operations.get",
-
-
-    //google_certificate_manager_certificate_map
-    "certificatemanager.certmaps.create",
-
-
-    //google_certificate_manager_dns_authorization
-    "certificatemanager.operations.get",
-
-
-    //google_active_directory_domain
-    "managedidentities.domains.create",
-    "managedidentities.domains.get",
-    "managedidentities.domains.update",
-    "managedidentities.domains.delete",
-    "managedidentities.operations.get",
-
-    //google_active_directory_domain_trust
-    "managedidentities.domains.attachTrust",
-
-
-    //google_active_directory_peering
-    "managedidentities.peerings.create",
-
-    //google_certificate_manager_certificate_map
-    "certificatemanager.certmaps.get",
-    "certificatemanager.certmaps.delete",
-
-
-    //google_certificate_manager_certificate_issuance_config
-    "certificatemanager.certissuanceconfigs.create",
-
-
-    //google_certificate_manager_certificate
-    "certificatemanager.certs.create",
-    "certificatemanager.dnsauthorizations.use",
     "certificatemanager.certs.get",
     "certificatemanager.certs.delete",
-
-    //google_certificate_manager_certificate_map_entry
-    "certificatemanager.certmapentries.create",
-    "certificatemanager.certmapentries.delete",
+    "certificatemanager.dnsauthorizations.get",
+    "certificatemanager.dnsauthorizations.delete",
     "certificatemanager.certmapentries.get",
-    "certificatemanager.certmapentries.update",
-    "certificatemanager.certs.use"
+    "certificatemanager.certmapentries.delete",
+    "certificatemanager.certmaps.get",
+    "certificatemanager.certmaps.delete",
+    "certificatemanager.operations.get",
 
+    //google_iam_workload_identity_pool_namespace
+
+    //google_iam_workload_identity_pool_managed_identity
+    "iam.workloadIdentityPoolManagedIdentities.create",
+    "iam.workloadIdentityPoolManagedIdentities.delete",
+    "iam.workloadIdentityPoolManagedIdentities.get",
+    "iam.workloadIdentityPoolManagedIdentities.update",
+
+    //google_iam_principal_access_boundary_policy
+    # "iam.principalaccessboundarypolicies.create",
+    # "iam.principalaccessboundarypolicies.get",
+    # "iam.principalaccessboundarypolicies.update",
+    # "iam.principalaccessboundarypolicies.delete",
+
+    //google_iam_oauth_client
+    "iam.oauthClients.create",
+    "iam.oauthClients.delete",
+    "iam.oauthClients.update",
+    "iam.oauthClients.get",
+
+    # "iam.googleapis.com/workforcePoolProviders.create",
+    # "iam.googleapis.com/workforcePoolProviders.delete",
+    # "iam.googleapis.com/workforcePoolProviders.get",
+    # "iam.googleapis.com/workforcePoolProviders.update",
+    # "iam.googleapis.com/workforcePools.create",
+    # "iam.googleapis.com/workforcePools.delete",
+    # "iam.googleapis.com/workforcePools.get",
+    # "iam.googleapis.com/workforcePools.update",
+    "iam.serviceAccounts.create",
+    "iam.serviceAccounts.delete",
+    "iam.serviceAccounts.get",
+    "iam.serviceAccounts.update",
+    "iam.workloadIdentityPools.create",
+    "iam.workloadIdentityPools.delete",
+    "iam.workloadIdentityPools.get",
+    "iam.workloadIdentityPools.update",
+    # "resourcemanager.organizations.get",
+    # "resourcemanager.projects.create",
+    "resourcemanager.projects.delete",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.update",
+    "storage.buckets.get"
   ]
 }

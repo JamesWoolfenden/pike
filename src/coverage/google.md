@@ -2,7 +2,7 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 62.76      |   804       |  1281            |
+| Resources  | 64.09      |   821       |  1281            |
 | Datasource | 99.76      |   408       |   409             |
 
 ```shell
@@ -197,8 +197,6 @@
 ./resource.ps1 google_container_azure_client
 ./resource.ps1 google_container_azure_cluster
 ./resource.ps1 google_container_azure_node_pool
-./resource.ps1 google_container_registry
-./resource.ps1 google_data_fusion_instance
 ./resource.ps1 google_data_loss_prevention_deidentify_template
 ./resource.ps1 google_data_loss_prevention_discovery_config
 ./resource.ps1 google_data_loss_prevention_inspect_template
@@ -240,8 +238,6 @@
 ./resource.ps1 google_document_ai_processor_default_version
 ./resource.ps1 google_document_ai_warehouse_document_schema
 ./resource.ps1 google_document_ai_warehouse_location
-./resource.ps1 google_endpoints_service
-./resource.ps1 google_essential_contacts_contact
 ./resource.ps1 google_filestore_backup
 ./resource.ps1 google_filestore_instance
 ./resource.ps1 google_filestore_snapshot
@@ -266,7 +262,6 @@
 ./resource.ps1 google_firestore_field
 ./resource.ps1 google_firestore_index
 ./resource.ps1 google_firestore_user_creds
-./resource.ps1 google_folder
 ./resource.ps1 google_folder_access_approval_settings
 ./resource.ps1 google_folder_iam_audit_config
 ./resource.ps1 google_folder_organization_policy
@@ -297,18 +292,6 @@
 ./resource.ps1 google_healthcare_hl7_v2_store
 ./resource.ps1 google_healthcare_pipeline_job
 ./resource.ps1 google_healthcare_workspace
-./resource.ps1 google_iam_access_boundary_policy
-./resource.ps1 google_iam_deny_policy
-./resource.ps1 google_iam_folders_policy_binding
-./resource.ps1 google_iam_oauth_client
-./resource.ps1 google_iam_oauth_client_credential
-./resource.ps1 google_iam_organizations_policy_binding
-./resource.ps1 google_iam_principal_access_boundary_policy
-./resource.ps1 google_iam_projects_policy_binding
-./resource.ps1 google_iam_workforce_pool_provider_scim_tenant
-./resource.ps1 google_iam_workforce_pool_provider_scim_token
-./resource.ps1 google_iam_workload_identity_pool_managed_identity
-./resource.ps1 google_iam_workload_identity_pool_namespace
 ./resource.ps1 google_identity_platform_config
 ./resource.ps1 google_identity_platform_default_supported_idp_config
 ./resource.ps1 google_identity_platform_inbound_saml_config

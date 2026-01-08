@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "essentialcontacts.contacts.update",
+      "essentialcontacts.contacts.get",
+      "essentialcontacts.contacts.delete",
+      "essentialcontacts.contacts.create"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

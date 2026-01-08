@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "iam.workloadIdentityPoolManagedIdentities.create",
+      "iam.workloadIdentityPoolManagedIdentities.delete",
+      "iam.workloadIdentityPoolManagedIdentities.get",
+      "iam.workloadIdentityPoolManagedIdentities.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

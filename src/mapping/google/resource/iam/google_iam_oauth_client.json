@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "iam.oauthClients.create",
+      "iam.oauthClients.delete",
+      "iam.oauthClients.update",
+      "iam.oauthClients.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

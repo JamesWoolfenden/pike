@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "datafusion.instances.update",
+      "datafusion.instances.create",
+      "datafusion.instances.get",
+      "datafusion.instances.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

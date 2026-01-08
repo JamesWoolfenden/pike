@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "iam.workloadIdentityPoolNamespaces.create",
+      "iam.workloadIdentityPoolNamespaces.update",
+      "iam.workloadIdentityPoolNamespaces.get",
+      "iam.workloadIdentityPoolNamespaces.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "iam.principalaccessboundarypolicies.update",
+      "iam.principalaccessboundarypolicies.get",
+      "iam.principalaccessboundarypolicies.delete",
+      "iam.principalaccessboundarypolicies.create"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
