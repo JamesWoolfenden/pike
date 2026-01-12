@@ -2,8 +2,8 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 95.38      |  1507       |  1580            |
-| Datasource | 99.84      |   628       |   629             |
+| Resources  | 94.90      |  1507       |  1588            |
+| Datasource | 99.52      |   628       |   631             |
 
 ```shell
 ./resource.ps1 aws_acm_certificate_validation
@@ -24,6 +24,9 @@
 ./resource.ps1 aws_bedrockagentcore_token_vault_cmk
 ./resource.ps1 aws_bedrockagentcore_workload_identity
 ./resource.ps1 aws_billing_view
+./resource.ps1 aws_cloudfront_connection_function
+./resource.ps1 aws_cloudfront_connection_group
+./resource.ps1 aws_cloudfront_distribution_tenant
 ./resource.ps1 aws_cloudfront_multitenant_distribution
 ./resource.ps1 aws_cloudfront_trust_store
 ./resource.ps1 aws_cloudwatch_log_transformer
@@ -31,7 +34,9 @@
 ./resource.ps1 aws_cognito_managed_login_branding
 ./resource.ps1 aws_connect_phone_number_contact_flow_association
 ./resource.ps1 aws_controltower_baseline
+./resource.ps1 aws_dynamodb_global_secondary_index
 ./resource.ps1 aws_ec2_allowed_images_settings
+./resource.ps1 aws_ecr_pull_time_update_exclusion
 ./resource.ps1 aws_ecs_express_gateway_service
 ./resource.ps1 aws_eks_capability
 ./resource.ps1 aws_fis_target_account_configuration
@@ -59,6 +64,7 @@
 ./resource.ps1 aws_quicksight_key_registration
 ./resource.ps1 aws_quicksight_role_custom_permission
 ./resource.ps1 aws_quicksight_user_custom_permission
+./resource.ps1 aws_redshift_idc_application
 ./resource.ps1 aws_s3_bucket_abac
 ./resource.ps1 aws_s3_bucket_metadata_configuration
 ./resource.ps1 aws_s3tables_table_bucket_replication
@@ -66,12 +72,14 @@
 ./resource.ps1 aws_s3vectors_index
 ./resource.ps1 aws_s3vectors_vector_bucket
 ./resource.ps1 aws_s3vectors_vector_bucket_policy
+./resource.ps1 aws_secretsmanager_tag
 ./resource.ps1 aws_sesv2_tenant
 ./resource.ps1 aws_timestreaminfluxdb_db_cluster
 ./resource.ps1 aws_transfer_host_key
 ./resource.ps1 aws_transfer_web_app
 ./resource.ps1 aws_transfer_web_app_customization
 ./resource.ps1 aws_vpc_encryption_control
+./resource.ps1 aws_vpc_security_group_rules_exclusive
 ./resource.ps1 aws_vpclattice_domain_verification
 ./resource.ps1 aws_vpn_concentrator
 ./resource.ps1 aws_wafv2_web_acl_rule_group_association
@@ -79,5 +87,7 @@
 ./resource.ps1 aws_workspacesweb_trust_store_association
 ./resource.ps1 aws_workspacesweb_user_access_logging_settings_association
 ./resource.ps1 aws_workspacesweb_user_settings_association
+./resource.ps1 aws_cloudfront_connection_group -type data
+./resource.ps1 aws_cloudfront_distribution_tenant -type data
 ./resource.ps1 aws_organizations_account -type data
 ```

@@ -2,8 +2,8 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 65.18      |   835       |  1281            |
-| Datasource | 99.76      |   408       |   409             |
+| Resources  | 65.13      |   835       |  1282            |
+| Datasource | 99.51      |   408       |   410             |
 
 ```shell
 ./resource.ps1 google_apigee_addons_config
@@ -46,6 +46,7 @@
 ./resource.ps1 google_artifact_registry_package
 ./resource.ps1 google_artifact_registry_vpcsc_config
 ./resource.ps1 google_assured_workloads_workload
+./resource.ps1 google_backup_dr_restore_workload
 ./resource.ps1 google_biglake_iceberg_catalog
 ./resource.ps1 google_biglake_iceberg_catalog_iam_binding
 ./resource.ps1 google_biglake_iceberg_catalog_iam_member
@@ -453,4 +454,5 @@
 ./resource.ps1 google_storage_transfer_agent_pool
 ./resource.ps1 google_storage_transfer_job
 ./resource.ps1 google_biglake_iceberg_catalog_iam_policy -type data
+./resource.ps1 google_compute_routers -type data
 ```

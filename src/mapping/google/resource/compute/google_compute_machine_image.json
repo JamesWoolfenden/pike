@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "compute.zoneOperations.get",
+      "compute.machineImages.create",
+      "compute.machineImages.get",
+      "compute.machineImages.delete",
+      "compute.instances.useReadOnly",
+      "compute.disks.createSnapshot",
+      "compute.globalOperations.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

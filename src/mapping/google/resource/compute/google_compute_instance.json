@@ -9,7 +9,8 @@
       "compute.subnetworks.use",
       "compute.subnetworks.useExternalIp",
       "compute.instances.setMetadata",
-      "compute.instances.delete"
+      "compute.instances.delete",
+      "compute.instances.setLabels"
     ],
     "attributes": {
       "tags": [

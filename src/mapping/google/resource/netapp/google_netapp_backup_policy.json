@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "netapp.backupPolicies.create",
+      "netapp.backupPolicies.get",
+      "netapp.backupPolicies.update",
+      "netapp.backupPolicies.delete",
+      "netapp.operations.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

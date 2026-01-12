@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "compute.images.create",
+      "compute.images.get",
+      "compute.images.delete",
+      "compute.images.update",
+      "compute.images.setLabels",
+      "compute.disks.useReadOnly"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

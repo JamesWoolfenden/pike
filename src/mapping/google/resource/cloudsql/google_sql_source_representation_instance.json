@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "cloudsql.instances.create",
+      "cloudsql.instances.delete",
+      "cloudsql.instances.update",
+      "cloudsql.instances.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
