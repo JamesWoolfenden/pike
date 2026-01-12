@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "biglake.catalogs.create",
+      "biglake.catalogs.delete",
+      "biglake.catalogs.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -2,7 +2,7 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 65.13      |   835       |  1282            |
+| Resources  | 66.30      |   850       |  1282            |
 | Datasource | 99.51      |   408       |   410             |
 
 ```shell
@@ -47,15 +47,7 @@
 ./resource.ps1 google_artifact_registry_vpcsc_config
 ./resource.ps1 google_assured_workloads_workload
 ./resource.ps1 google_backup_dr_restore_workload
-./resource.ps1 google_biglake_iceberg_catalog
-./resource.ps1 google_biglake_iceberg_catalog_iam_binding
-./resource.ps1 google_biglake_iceberg_catalog_iam_member
-./resource.ps1 google_biglake_iceberg_catalog_iam_policy
 ./resource.ps1 google_bigquery_analytics_hub_data_exchange_subscription
-./resource.ps1 google_bigquery_datapolicyv2_data_policy
-./resource.ps1 google_bigquery_datapolicyv2_data_policy_iam_binding
-./resource.ps1 google_bigquery_datapolicyv2_data_policy_iam_member
-./resource.ps1 google_bigquery_datapolicyv2_data_policy_iam_policy
 ./resource.ps1 google_billing_subaccount
 ./resource.ps1 google_binary_authorization_attestor
 ./resource.ps1 google_binary_authorization_policy
@@ -98,7 +90,6 @@
 ./resource.ps1 google_compute_backend_bucket_signed_url_key
 ./resource.ps1 google_compute_backend_service_signed_url_key
 ./resource.ps1 google_compute_cross_site_network
-./resource.ps1 google_compute_disk
 ./resource.ps1 google_compute_disk_async_replication
 ./resource.ps1 google_compute_disk_resource_policy_attachment
 ./resource.ps1 google_compute_external_vpn_gateway
@@ -109,7 +100,6 @@
 ./resource.ps1 google_compute_future_reservation
 ./resource.ps1 google_compute_global_network_endpoint
 ./resource.ps1 google_compute_ha_vpn_gateway
-./resource.ps1 google_compute_image
 ./resource.ps1 google_compute_instance_from_machine_image
 ./resource.ps1 google_compute_instance_from_template
 ./resource.ps1 google_compute_instance_group
@@ -122,7 +112,6 @@
 ./resource.ps1 google_compute_interconnect_attachment
 ./resource.ps1 google_compute_interconnect_attachment_group
 ./resource.ps1 google_compute_interconnect_group
-./resource.ps1 google_compute_machine_image
 ./resource.ps1 google_compute_managed_ssl_certificate
 ./resource.ps1 google_compute_network_edge_security_service
 ./resource.ps1 google_compute_network_endpoint
@@ -309,7 +298,6 @@
 ./resource.ps1 google_ml_engine_model
 ./resource.ps1 google_netapp_active_directory
 ./resource.ps1 google_netapp_backup
-./resource.ps1 google_netapp_backup_policy
 ./resource.ps1 google_netapp_backup_vault
 ./resource.ps1 google_netapp_host_group
 ./resource.ps1 google_netapp_kmsconfig
@@ -382,7 +370,6 @@
 ./resource.ps1 google_network_services_tcp_route
 ./resource.ps1 google_network_services_tls_route
 ./resource.ps1 google_network_services_wasm_plugin
-./resource.ps1 google_observability_trace_scope
 ./resource.ps1 google_oracle_database_autonomous_database
 ./resource.ps1 google_oracle_database_cloud_exadata_infrastructure
 ./resource.ps1 google_oracle_database_cloud_vm_cluster
@@ -396,7 +383,6 @@
 ./resource.ps1 google_organization_iam_audit_config
 ./resource.ps1 google_organization_iam_custom_role
 ./resource.ps1 google_organization_policy
-./resource.ps1 google_os_login_ssh_public_key
 ./resource.ps1 google_parameter_manager_parameter
 ./resource.ps1 google_parameter_manager_parameter_version
 ./resource.ps1 google_parameter_manager_regional_parameter
@@ -444,7 +430,6 @@
 ./resource.ps1 google_service_networking_peered_dns_domain
 ./resource.ps1 google_service_networking_vpc_service_controls
 ./resource.ps1 google_service_usage_consumer_quota_override
-./resource.ps1 google_sql_source_representation_instance
 ./resource.ps1 google_storage_anywhere_cache
 ./resource.ps1 google_storage_batch_operations_job
 ./resource.ps1 google_storage_folder

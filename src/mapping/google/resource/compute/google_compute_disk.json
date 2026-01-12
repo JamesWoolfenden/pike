@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "compute.images.get",
+      "compute.disks.create",
+      "compute.disks.get",
+      "compute.disks.update",
+      "compute.disks.delete",
+      "compute.disks.setLabels",
+      "compute.zoneOperations.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

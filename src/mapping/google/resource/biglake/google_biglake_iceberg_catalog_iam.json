@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "biglake.catalogs.getIamPolicy",
+      "biglake.catalogs.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

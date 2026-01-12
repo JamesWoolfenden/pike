@@ -2367,3 +2367,33 @@ var googleFirestoreIndex []byte
 
 //go:embed mapping/google/resource/datastore/google_firestore_user_creds.json
 var googleFirestoreUserCreds []byte
+
+//go:embed mapping/google/resource/compute/google_compute_image.json
+var googleComputeImage []byte
+
+//go:embed mapping/google/resource/compute/google_compute_disk.json
+var googleComputeDisk []byte
+
+//go:embed mapping/google/resource/compute/google_compute_machine_image.json
+var googleComputeMachineImage []byte
+
+//go:embed mapping/google/resource/netapp/google_netapp_backup_policy.json
+var googleNetappBackupPolicy []byte
+
+//go:embed mapping/google/resource/observability/google_observability_trace_scope.json
+var googleObservabilityTraceScope []byte
+
+//go:embed mapping/google/resource/cloudsql/google_sql_source_representation_instance.json
+var googleSqlSourceRepresentationInstance []byte
+
+//go:embed mapping/google/resource/biglake/google_biglake_iceberg_catalog.json
+var googleBiglakeIcebergCatalog []byte
+
+//go:embed mapping/google/resource/biglake/google_biglake_iceberg_catalog_iam.json
+var googleBiglakeIcebergCatalogIam []byte
+
+//go:embed mapping/google/resource/bigquery/google_bigquery_datapolicyv2_data_policy.json
+var googleBigqueryDatapolicyv2DataPolicy []byte
+
+//go:embed mapping/google/resource/bigquery/google_bigquery_datapolicyv2_data_policy_iam.json
+var googleBigqueryDatapolicyv2DataPolicyIam []byte

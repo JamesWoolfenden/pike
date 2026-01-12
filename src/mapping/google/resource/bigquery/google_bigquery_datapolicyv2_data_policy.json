@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "bigquery.routines.get",
+      "bigquery.dataPolicies.create",
+      "bigquery.dataPolicies.delete",
+      "bigquery.dataPolicies.get",
+      "bigquery.dataPolicies.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
