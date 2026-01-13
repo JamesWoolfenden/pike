@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "lustre.instances.create",
+      "lustre.instances.delete",
+      "lustre.instances.get",
+      "lustre.instances.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

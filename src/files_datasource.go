@@ -1728,3 +1728,9 @@ var dataAwsWorkspacesWorkspace []byte
 
 //go:embed mapping/aws/data/backend/s3.json
 var dataBackend []byte
+
+//go:embed mapping/aws/data/organizations/aws_organizations_account.json
+var dataAwsOrganizationAccount []byte
+
+//go:embed mapping/aws/data/wafv2/aws_wafv2_managed_rule_group.json
+var dataAwsWafV2ManagedRuleGroup []byte

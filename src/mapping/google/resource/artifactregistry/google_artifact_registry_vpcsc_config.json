@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "artifactregistry.vpcscconfigs.update",
+      "artifactregistry.vpcscconfigs.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

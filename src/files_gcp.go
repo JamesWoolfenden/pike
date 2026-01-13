@@ -2397,3 +2397,45 @@ var googleBigqueryDatapolicyv2DataPolicy []byte
 
 //go:embed mapping/google/resource/bigquery/google_bigquery_datapolicyv2_data_policy_iam.json
 var googleBigqueryDatapolicyv2DataPolicyIam []byte
+
+//go:embed mapping/google/resource/apphub/google_apphub_boundary.json
+var googleApphubBoundary []byte
+
+//go:embed mapping/google/resource/artifactregistry/google_artifact_registry_vpcsc_config.json
+var googleArtifactRegistryVpcscConfig []byte
+
+//go:embed mapping/google/resource/assuredworkloads/google_assured_workloads_workload.json
+var googleAssuredWorkloadsWorkload []byte
+
+//go:embed mapping/google/resource/backupdr/google_backup_dr_restore_workload.json
+var googleBackupDrRestoreWorkload []byte
+
+//go:embed mapping/google/resource/billing/google_billing_subaccount.json
+var googleBillingSubaccount []byte
+
+//go:embed mapping/google/resource/binaryauthorization/google_binary_authorization_attestor.json
+var googleBinaryAuthorizationAttestor []byte
+
+//go:embed mapping/google/resource/containeranalysis/google_container_analysis_note.json
+var googleContainerAnalysisNote []byte
+
+//go:embed mapping/google/resource/binaryauthorization/google_binary_authorization_policy.json
+var googleBinaryAuthorizationPolicy []byte
+
+//go:embed mapping/google/resource/blockchainnodeengine/google_blockchain_node_engine_blockchain_nodes.json
+var googleBlockchainNodeEngineBlockchainNodes []byte
+
+//go:embed mapping/google/resource/looker/google_looker_instance.json
+var googleLookerInstance []byte
+
+//go:embed mapping/google/resource/lustre/google_lustre_instance.json
+var googleLustreInstance []byte
+
+//go:embed mapping/google/resource/privilegedaccessmanager/google_privileged_access_manager_settings.json
+var googlePrivilegedAccessManagerSettings []byte
+
+//go:embed mapping/google/resource/publicca/google_public_ca_external_account_key.json
+var googlePublicCaExternalAccountKey []byte
+
+//go:embed mapping/google/resource/recaptchaenterprise/google_recaptcha_enterprise_key.json
+var googleRecaptchaEnterpriseKey []byte

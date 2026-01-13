@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "assuredworkloads.workload.create",
+      "assuredworkloads.workload.get",
+      "assuredworkloads.workload.update",
+      "assuredworkloads.workload.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

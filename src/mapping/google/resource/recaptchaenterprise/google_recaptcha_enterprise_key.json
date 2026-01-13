@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "recaptchaenterprise.keys.create",
+      "recaptchaenterprise.keys.delete",
+      "recaptchaenterprise.keys.get",
+      "recaptchaenterprise.keys.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

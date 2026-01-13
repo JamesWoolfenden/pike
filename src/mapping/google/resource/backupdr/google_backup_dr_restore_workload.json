@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "backupdr.bvbackups.restore"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

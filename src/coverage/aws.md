@@ -3,7 +3,7 @@
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
 | Resources  | 94.90      |  1507       |  1588            |
-| Datasource | 99.52      |   628       |   631             |
+| Datasource | 100.00      |   632       |   632             |
 
 ```shell
 ./resource.ps1 aws_acm_certificate_validation
@@ -87,7 +87,4 @@
 ./resource.ps1 aws_workspacesweb_trust_store_association
 ./resource.ps1 aws_workspacesweb_user_access_logging_settings_association
 ./resource.ps1 aws_workspacesweb_user_settings_association
-./resource.ps1 aws_cloudfront_connection_group -type data
-./resource.ps1 aws_cloudfront_distribution_tenant -type data
-./resource.ps1 aws_organizations_account -type data
 ```

@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "blockchainnodeengine.blockchainNodes.create",
+      "blockchainnodeengine.blockchainNodes.get",
+      "blockchainnodeengine.blockchainNodes.update",
+      "blockchainnodeengine.blockchainNodes.delete",
+      "blockchainnodeengine.operations.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

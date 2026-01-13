@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "privilegedaccessmanager.settings.fetchEffective",
+      "privilegedaccessmanager.settings.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -6,14 +6,21 @@ resource "google_project_iam_custom_role" "terraform_pike" {
   description = "A user with least privileges"
   permissions = [
     "storage.buckets.get",
+    "compute.networks.get",
 
-    "compute.images.get",
-    "compute.disks.create",
     "compute.disks.get",
-    "compute.disks.update",
     "compute.disks.delete",
-    "compute.disks.setLabels",
-    "compute.zoneOperations.get"
+    "compute.zoneOperations.get",
+    //datasource
+    //google_biglake_iceberg_catalog_iam_policy
+    //none
+
+    //google_artifact_registry_package
+    //missing
+
+
+
+
 
 
   ]

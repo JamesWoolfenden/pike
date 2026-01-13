@@ -636,6 +636,10 @@ var tFLookupDataAWS = map[string]interface{}{
 	"aws_workspaces_image":                                                  dataAwsWorkspacesImage,
 	"aws_workspaces_workspace":                                              dataAwsWorkspacesWorkspace,
 	"backend":                                                               dataBackend,
+	"aws_cloudfront_connection_group":                                       placeholder,
+	"aws_cloudfront_distribution_tenant":                                    placeholder,
+	"aws_organizations_account":                                             dataAwsOrganizationAccount,
+	"aws_wafv2_managed_rule_group":                                          dataAwsWafV2ManagedRuleGroup,
 }
 
 // GetAWSDataPermissions gets permissions required for datasource's.

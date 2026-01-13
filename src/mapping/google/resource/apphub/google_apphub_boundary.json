@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "apphub.boundaries.attach",
+      "apphub.boundaries.get",
+      "apphub.boundaries.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

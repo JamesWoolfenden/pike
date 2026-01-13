@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "containeranalysis.notes.get",
+      "containeranalysis.notes.create",
+      "containeranalysis.notes.update",
+      "containeranalysis.notes.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "billing.accounts.close",
+      "billing.accounts.create",
+      "billing.accounts.get",
+      "billing.accounts.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

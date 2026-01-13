@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "binaryauthorization.policy.update",
+      "binaryauthorization.policy.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

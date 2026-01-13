@@ -2,8 +2,8 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 66.30      |   850       |  1282            |
-| Datasource | 99.51      |   408       |   410             |
+| Resources  | 67.63      |   867       |  1282            |
+| Datasource | 100.00      |   410       |   410             |
 
 ```shell
 ./resource.ps1 google_apigee_addons_config
@@ -163,7 +163,6 @@
 ./resource.ps1 google_compute_vpn_gateway
 ./resource.ps1 google_compute_vpn_tunnel
 ./resource.ps1 google_compute_wire_group
-./resource.ps1 google_container_analysis_note
 ./resource.ps1 google_container_analysis_occurrence
 ./resource.ps1 google_container_attached_cluster
 ./resource.ps1 google_container_aws_cluster
@@ -422,5 +421,4 @@
 ./resource.ps1 google_storage_object_acl
 ./resource.ps1 google_storage_transfer_agent_pool
 ./resource.ps1 google_storage_transfer_job
-
 ```

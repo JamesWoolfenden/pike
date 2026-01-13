@@ -1023,3 +1023,9 @@ var dataGKEHubMembershipBinding []byte
 
 //go:embed mapping/google/data/servicenetworking/google_service_networking_peered_dns_domain.json
 var dataGoogleServiceNetworkingPeeredDNSDomain []byte
+
+//go:embed mapping/google/data/biglake/google_biglake_iceberg_catalog_iam_policy.json
+var dataGoogleBiglakeIcebergCatalogIamPolicy []byte
+
+//go:embed mapping/google/data/compute/google_compute_routers.json
+var dataGoogleComputeRouters []byte

@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "publicca.externalAccountKeys.create"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

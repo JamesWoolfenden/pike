@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "binaryauthorization.attestors.create",
+      "binaryauthorization.attestors.get",
+      "binaryauthorization.attestors.update",
+      "binaryauthorization.attestors.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
