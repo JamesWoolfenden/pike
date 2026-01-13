@@ -42,16 +42,6 @@
 ./resource.ps1 google_app_engine_service_network_settings
 ./resource.ps1 google_app_engine_service_split_traffic
 ./resource.ps1 google_app_engine_standard_app_version
-./resource.ps1 google_apphub_boundary
-./resource.ps1 google_artifact_registry_package
-./resource.ps1 google_artifact_registry_vpcsc_config
-./resource.ps1 google_assured_workloads_workload
-./resource.ps1 google_backup_dr_restore_workload
-./resource.ps1 google_bigquery_analytics_hub_data_exchange_subscription
-./resource.ps1 google_billing_subaccount
-./resource.ps1 google_binary_authorization_attestor
-./resource.ps1 google_binary_authorization_policy
-./resource.ps1 google_blockchain_node_engine_blockchain_nodes
 ./resource.ps1 google_ces_agent
 ./resource.ps1 google_ces_app
 ./resource.ps1 google_ces_app_version
@@ -80,7 +70,6 @@
 ./resource.ps1 google_clouddeploy_deploy_policy
 ./resource.ps1 google_clouddeploy_target
 ./resource.ps1 google_clouddomains_registration
-./resource.ps1 google_cloudiot_registry
 ./resource.ps1 google_colab_notebook_execution
 ./resource.ps1 google_colab_runtime
 ./resource.ps1 google_colab_runtime_template
@@ -290,8 +279,6 @@
 ./resource.ps1 google_logging_folder_bucket_config
 ./resource.ps1 google_logging_organization_bucket_config
 ./resource.ps1 google_logging_project_bucket_config
-./resource.ps1 google_looker_instance
-./resource.ps1 google_lustre_instance
 ./resource.ps1 google_memorystore_instance_desired_user_created_endpoints
 ./resource.ps1 google_migration_center_group
 ./resource.ps1 google_migration_center_preference_set
@@ -387,9 +374,6 @@
 ./resource.ps1 google_parameter_manager_parameter_version
 ./resource.ps1 google_parameter_manager_regional_parameter
 ./resource.ps1 google_parameter_manager_regional_parameter_version
-./resource.ps1 google_privileged_access_manager_settings
-./resource.ps1 google_public_ca_external_account_key
-./resource.ps1 google_recaptcha_enterprise_key
 ./resource.ps1 google_resource_manager_capability
 ./resource.ps1 google_resource_manager_lien
 ./resource.ps1 google_saas_runtime_release
@@ -438,6 +422,5 @@
 ./resource.ps1 google_storage_object_acl
 ./resource.ps1 google_storage_transfer_agent_pool
 ./resource.ps1 google_storage_transfer_job
-./resource.ps1 google_biglake_iceberg_catalog_iam_policy -type data
-./resource.ps1 google_compute_routers -type data
+
 ```
