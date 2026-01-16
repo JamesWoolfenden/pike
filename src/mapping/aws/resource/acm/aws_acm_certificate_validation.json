@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "acm:GetCertificate"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
