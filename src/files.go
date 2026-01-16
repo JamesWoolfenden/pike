@@ -2864,4 +2864,4 @@ var awsDefaultRouteTable []byte
 var awsS3BucketServerSideEncryptionConfiguration []byte
 
 //go:embed mapping/aws/resource/acm/aws_acm_certificate_validation.json
-var AWSAcmCertificateValidation []byte
+var awsACMCertificateValidation []byte
