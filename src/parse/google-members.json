@@ -1086,6 +1086,7 @@
         "google_saas_runtime_tenant",
         "google_saas_runtime_unit",
         "google_saas_runtime_unit_kind",
+        "google_saas_runtime_unit_operation",
         "google_scc_event_threat_detection_custom_module",
         "google_scc_folder_custom_module",
         "google_scc_folder_notification_config",
