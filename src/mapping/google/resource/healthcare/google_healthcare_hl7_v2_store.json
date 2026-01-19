@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "healthcare.hl7V2Stores.create",
+      "healthcare.hl7V2Stores.get",
+      "healthcare.hl7V2Stores.update",
+      "healthcare.hl7V2Stores.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

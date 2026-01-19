@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "cloudkms.kajPolicyConfigs.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

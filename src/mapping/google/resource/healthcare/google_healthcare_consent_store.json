@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "healthcare.consentStores.create",
+      "healthcare.consentStores.get",
+      "healthcare.consentStores.delete",
+      "healthcare.consentStores.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

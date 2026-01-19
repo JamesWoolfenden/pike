@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "healthcare.datasets.create",
+      "healthcare.datasets.get",
+      "healthcare.datasets.delete",
+      "healthcare.datasets.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

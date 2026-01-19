@@ -2,7 +2,7 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 67.63      |   867       |  1282            |
+| Resources  | 68.90      |   884       |  1283            |
 | Datasource | 100.00      |   410       |   410             |
 
 ```shell
@@ -189,7 +189,6 @@
 ./resource.ps1 google_datastream_connection_profile
 ./resource.ps1 google_datastream_private_connection
 ./resource.ps1 google_datastream_stream
-./resource.ps1 google_developer_connect_insights_config
 ./resource.ps1 google_dialogflow_generator
 ./resource.ps1 google_dialogflow_version
 ./resource.ps1 google_discovery_engine_acl_config
@@ -249,13 +248,6 @@
 ./resource.ps1 google_gkeonprem_vmware_admin_cluster
 ./resource.ps1 google_gkeonprem_vmware_cluster
 ./resource.ps1 google_gkeonprem_vmware_node_pool
-./resource.ps1 google_healthcare_consent_store
-./resource.ps1 google_healthcare_dataset
-./resource.ps1 google_healthcare_dicom_store
-./resource.ps1 google_healthcare_fhir_store
-./resource.ps1 google_healthcare_hl7_v2_store
-./resource.ps1 google_healthcare_pipeline_job
-./resource.ps1 google_healthcare_workspace
 ./resource.ps1 google_identity_platform_config
 ./resource.ps1 google_identity_platform_default_supported_idp_config
 ./resource.ps1 google_identity_platform_inbound_saml_config
@@ -269,19 +261,10 @@
 ./resource.ps1 google_integration_connectors_managed_zone
 ./resource.ps1 google_integrations_auth_config
 ./resource.ps1 google_integrations_client
-./resource.ps1 google_kms_autokey_config
-./resource.ps1 google_kms_ekm_connection
-./resource.ps1 google_kms_folder_kaj_policy_config
-./resource.ps1 google_kms_organization_kaj_policy_config
-./resource.ps1 google_kms_project_kaj_policy_config
 ./resource.ps1 google_logging_billing_account_bucket_config
 ./resource.ps1 google_logging_folder_bucket_config
 ./resource.ps1 google_logging_organization_bucket_config
 ./resource.ps1 google_logging_project_bucket_config
-./resource.ps1 google_memorystore_instance_desired_user_created_endpoints
-./resource.ps1 google_migration_center_group
-./resource.ps1 google_migration_center_preference_set
-./resource.ps1 google_ml_engine_model
 ./resource.ps1 google_netapp_active_directory
 ./resource.ps1 google_netapp_backup
 ./resource.ps1 google_netapp_backup_vault
@@ -381,6 +364,7 @@
 ./resource.ps1 google_saas_runtime_tenant
 ./resource.ps1 google_saas_runtime_unit
 ./resource.ps1 google_saas_runtime_unit_kind
+./resource.ps1 google_saas_runtime_unit_operation
 ./resource.ps1 google_scc_event_threat_detection_custom_module
 ./resource.ps1 google_scc_folder_custom_module
 ./resource.ps1 google_scc_folder_notification_config

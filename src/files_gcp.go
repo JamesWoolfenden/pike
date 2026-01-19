@@ -2439,3 +2439,42 @@ var googlePublicCaExternalAccountKey []byte
 
 //go:embed mapping/google/resource/recaptchaenterprise/google_recaptcha_enterprise_key.json
 var googleRecaptchaEnterpriseKey []byte
+
+//go:embed mapping/google/resource/developerconnect/google_developer_connect_insights_config.json
+var googleDeveloperConnectInsightsConfig []byte
+
+//go:embed mapping/google/resource/healthcare/google_healthcare_consent_store.json
+var googleHealthcareConsentStore []byte
+
+//go:embed mapping/google/resource/healthcare/google_healthcare_dataset.json
+var googleHealthcareDataset []byte
+
+//go:embed mapping/google/resource/healthcare/google_healthcare_dicom_store.json
+var googleHealthcareDicomStore []byte
+
+//go:embed mapping/google/resource/healthcare/google_healthcare_fhir_store.json
+var googleHealthcareFhirStore []byte
+
+//go:embed mapping/google/resource/healthcare/google_healthcare_hl7_v2_store.json
+var googleHealthcareHl7V2Store []byte
+
+//go:embed mapping/google/resource/cloudkms/google_kms_ekm_connection.json
+var googleKmsEkmConnection []byte
+
+//go:embed mapping/google/resource/cloudkms/google_kms_folder_kaj_policy_config.json
+var googleKmsFolderKajPolicyConfig []byte
+
+//go:embed mapping/google/resource/cloudkms/google_kms_organization_kaj_policy_config.json
+var googleKmsOrganizationKajPolicyConfig []byte
+
+//go:embed mapping/google/resource/cloudkms/google_kms_project_kaj_policy_config.json
+var googleKmsProjectKajPolicyConfig []byte
+
+//go:embed mapping/google/resource/memorystore/google_memorystore_instance_desired_user_created_endpoints.json
+var googleMemorystoreInstanceDesiredUserCreatedEndpoints []byte
+
+//go:embed mapping/google/resource/migrationcenter/google_migration_center_group.json
+var googleMigrationCenterGroup []byte
+
+//go:embed mapping/google/resource/migrationcenter/google_migration_center_preference_set.json
+var googleMigrationCenterPreferenceSet []byte

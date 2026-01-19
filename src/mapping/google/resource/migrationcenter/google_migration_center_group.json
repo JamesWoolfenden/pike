@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "migrationcenter.groups.create",
+      "migrationcenter.groups.get",
+      "migrationcenter.groups.update",
+      "migrationcenter.groups.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

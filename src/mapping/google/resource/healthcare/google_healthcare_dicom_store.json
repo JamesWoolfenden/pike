@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "healthcare.dicomStores.create",
+      "healthcare.dicomStores.get",
+      "healthcare.dicomStores.update",
+      "healthcare.dicomStores.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

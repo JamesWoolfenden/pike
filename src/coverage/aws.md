@@ -2,8 +2,8 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 94.90      |  1507       |  1588            |
-| Datasource | 100.00      |   632       |   632             |
+| Resources  | 94.72      |  1507       |  1591            |
+| Datasource | 99.06      |   632       |   638             |
 
 ```shell
 ./resource.ps1 aws_acm_certificate_validation
@@ -24,6 +24,7 @@
 ./resource.ps1 aws_bedrockagentcore_token_vault_cmk
 ./resource.ps1 aws_bedrockagentcore_workload_identity
 ./resource.ps1 aws_billing_view
+./resource.ps1 aws_cloudfront_anycast_ip_list
 ./resource.ps1 aws_cloudfront_connection_function
 ./resource.ps1 aws_cloudfront_connection_group
 ./resource.ps1 aws_cloudfront_distribution_tenant
@@ -64,6 +65,7 @@
 ./resource.ps1 aws_quicksight_key_registration
 ./resource.ps1 aws_quicksight_role_custom_permission
 ./resource.ps1 aws_quicksight_user_custom_permission
+./resource.ps1 aws_ram_resource_share_associations_exclusive
 ./resource.ps1 aws_redshift_idc_application
 ./resource.ps1 aws_s3_bucket_abac
 ./resource.ps1 aws_s3_bucket_metadata_configuration
@@ -72,6 +74,7 @@
 ./resource.ps1 aws_s3vectors_index
 ./resource.ps1 aws_s3vectors_vector_bucket
 ./resource.ps1 aws_s3vectors_vector_bucket_policy
+./resource.ps1 aws_sagemaker_model_card
 ./resource.ps1 aws_secretsmanager_tag
 ./resource.ps1 aws_sesv2_tenant
 ./resource.ps1 aws_timestreaminfluxdb_db_cluster
@@ -87,4 +90,10 @@
 ./resource.ps1 aws_workspacesweb_trust_store_association
 ./resource.ps1 aws_workspacesweb_user_access_logging_settings_association
 ./resource.ps1 aws_workspacesweb_user_settings_association
+./resource.ps1 aws_organizations_entity_path -type data
+./resource.ps1 aws_resourcegroupstaggingapi_required_tags -type data
+./resource.ps1 aws_s3_bucket_object_lock_configuration -type data
+./resource.ps1 aws_s3_bucket_replication_configuration -type data
+./resource.ps1 aws_s3control_access_points -type data
+./resource.ps1 aws_s3control_multi_region_access_points -type data
 ```

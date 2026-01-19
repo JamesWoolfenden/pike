@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "migrationcenter.preferenceSets.create",
+      "migrationcenter.preferenceSets.get",
+      "migrationcenter.preferenceSets.delete",
+      "migrationcenter.preferenceSets.update",
+      "migrationcenter.operations.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

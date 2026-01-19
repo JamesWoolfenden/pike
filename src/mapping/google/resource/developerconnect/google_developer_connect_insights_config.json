@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "developerconnect.insightsConfigs.create",
+      "developerconnect.insightsConfigs.get",
+      "developerconnect.insightsConfigs.update",
+      "developerconnect.insightsConfigs.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

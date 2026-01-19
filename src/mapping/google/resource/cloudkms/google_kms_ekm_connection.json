@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "cloudkms.ekmConnections.get",
+      "cloudkms.ekmConnections.create",
+      "cloudkms.ekmConnections.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
