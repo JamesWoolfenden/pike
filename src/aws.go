@@ -21,6 +21,7 @@ var tFLookup = map[string]interface{}{
 	"aws_account_primary_contact":                                      awsAccountPrimaryContact,
 	"aws_account_region":                                               awsAccountRegion,
 	"aws_acm_certificate":                                              awsACMCertificate,
+	"aws_acm_certificate_validation":                                   awsACMCertificateValidation,
 	"aws_acmpca_certificate":                                           awsACMpcaCertificate,
 	"aws_acmpca_certificate_authority":                                 awsACMpcaCertificateAuthority,
 	"aws_acmpca_certificate_authority_certificate":                     awsACMpcaCertificateAuthorityCertificate,
