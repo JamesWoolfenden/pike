@@ -6,21 +6,22 @@
 [![CI](https://github.com/JamesWoolfenden/pike/actions/workflows/ci.yml/badge.svg)](https://github.com/JamesWoolfenden/pike/actions/workflows/ci.yml)
 [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/pike.svg)](https://github.com/JamesWoolfenden/pike/releases/latest)
 [![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/JamesWoolfenden/pike.svg?label=latest)](https://github.com/JamesWoolfenden/pike/releases/latest)
-![Terraform Version](https://img.shields.io/badge/tf-%3E%3D0.14.0-blue.svg)
+![OpenTofu/Terraform Version](https://img.shields.io/badge/tf-%3E%3D0.14.0-blue.svg)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 [![checkov](https://img.shields.io/badge/checkov-verified-brightgreen)](https://www.checkov.io/)
 [![Github All Releases](https://img.shields.io/github/downloads/jameswoolfenden/pike/total.svg)](https://github.com/JamesWoolfenden/pike/releases)
 [![codecov](https://codecov.io/gh/JamesWoolfenden/pike/branch/master/graph/badge.svg?token=S5SW3BHIQQ)](https://codecov.io/gh/JamesWoolfenden/pike)
 [![OpenSSF Best Practices](https://www.bestpractices.dev/projects/7032/badge)](https://www.bestpractices.dev/projects/7032)
 
-Pike is a tool to determine the minimum permissions required to run a TF/IAC run.
+Pike is a tool to determine the minimum IAM permissions required to run OpenTofu/Terraform infrastructure code.
 
 **What's new?**
+
 - json modules support.
 - GCP compare, checks IAC permissions required versus a deployed role.
 - Backend detection S3 and GCP.
 
-Pike currently supports Terraform and supports multiple providers (AWS, GCP and AZURE);
+Pike currently supports OpenTofu/Terraform and supports multiple providers (AWS, GCP and AZURE);
 Azure is the newest with AWS having the most supported resources
 <https://github.com/JamesWoolfenden/pike/tree/master/src/mapping>.
 Feel free to submit PR or Issue if you find an issue or even better add new resources, and then I'll take a look at
@@ -38,11 +39,49 @@ and then remotely (REMOTE) supply and invoke your builds (INVOKE).
 Ideally I would like to do this for you, but these policies are currently determined statically (QUICKER), and
 unrecorded intentions can be impossible to infer.
 
+## Quick Start
+
+Get started with Pike in 3 steps:
+
+1. **Install Pike**
+
+   ```shell
+   # macOS
+   brew tap jameswoolfenden/homebrew-tap
+   brew install jameswoolfenden/tap/pike
+
+   # Windows (using Scoop)
+   scoop bucket add iac https://github.com/JamesWoolfenden/scoop.git
+   scoop install pike
+
+   # Or install from source
+   go install github.com/jameswoolfenden/pike@latest
+   ```
+
+2. **Scan your OpenTofu/Terraform code**
+
+   ```shell
+   pike scan -d ./path/to/your/terraform
+   ```
+
+   This outputs the minimum IAM permissions required as JSON.
+
+3. **Generate as Terraform/OpenTofu code**
+
+   ```shell
+   pike scan -o terraform -d ./path/to/your/terraform
+   ```
+
+   This creates an `aws_iam_policy` resource you can deploy.
+
+**Next steps:** Use `pike make` to deploy the policy directly, or `pike compare` to validate against existing policies. See [Usage](#usage) for all commands.
+
 ## Table of Contents
 
 <!--toc:start-->
 
 - [Pike](#pike)
+    - [Quick Start](#quick-start)
     - [Table of Contents](#table-of-contents)
     - [Install](#install)
         - [MacOS](#macos)
@@ -53,7 +92,6 @@ unrecorded intentions can be impossible to infer.
         - [Output](#output)
         - [Make](#make)
         - [Invoke](#invoke)
-        - [Inspect](#inspect)
         - [Apply](#apply)
         - [Remote](#remote)
         - [Readme](#readme)
@@ -61,6 +99,7 @@ unrecorded intentions can be impossible to infer.
     - [Compare](#compare)
     - [Help](#help)
     - [Building](#building)
+    - [Inspect](#inspect)
     - [Extending](#extending)
         - [Add Import mapping file](#add-import-mapping-file)
         - [Add to provider Scan](#add-to-provider-scan)
@@ -122,7 +161,7 @@ docker run --tty --volume /local/path/to/tf:/tf jameswoolfenden/pike scan -d /tf
 
 ### Scan
 
-To scan a directory containing Terraform files:
+To scan a directory containing OpenTofu/Terraform files:
 
 ```shell
 ./pike scan -d .\terraform\
@@ -158,7 +197,7 @@ To scan a directory containing Terraform files:
 }
 ```
 
-You can also generate the policy as Terraform instead:
+You can also generate the policy as OpenTofu/Terraform instead:
 
 ```bash
 $pike scan -o terraform -d ../modules/aws/terraform-aws-activemq
@@ -320,8 +359,6 @@ resource "aws_iam_policy" "terraform_pike" {
 }
 ```
 
-I'm not finished with this yet as I am also working on bringing in resource names into the policies.
-
 ### Output
 
 If you select the -w flag, pike will write out the role/policy required to build your project into the .pike folder:
@@ -339,7 +376,7 @@ aws_iam_role.terraform_pike.tf
 pike.generated_policy.tf
 ```
 
-Which you can deploy using terraform to create the role/policy to build your IAC project.
+Which you can deploy using OpenTofu/Terraform to create the role/policy to build your infrastructure project.
 
 ### Make
 
@@ -412,7 +449,7 @@ Pike can now be used to update a projects README.md file:
 
 ./pike readme -o terraform -d ..\modules\aws\terraform-aws-activemq\
 
-This looks in the readme for the deliminators:
+This looks in the README for the delimiters:
 
 ```html
 <!-- BEGINNING OF PRE-COMMIT-PIKE DOCS HOOK -->
@@ -478,14 +515,14 @@ You can see an example here <https://github.com/jamesWoolfenden/terraform-aws-ac
 
 ## Compare
 
-Want to check your deployed IAM policy against your IAC requirement?
+Want to check your deployed IAM policy against your infrastructure code requirement?
 
 This works for AWS and GCP.
 
 >$./pike compare -d ../modules/aws/terraform-aws-appsync -a arn:aws:iam::680235478471:policy/basic
 
 ```markdown
-IAM Policy arn:aws:iam::680235478471:policy/basic versus Local ../modules/aws/terraform-aws-appsync
+IAM Policy arn:aws:iam::680235478471:policy/basic versus Infrastructure Code ../modules/aws/terraform-aws-appsync
  {
    "Statement": [
      0: {
@@ -561,7 +598,7 @@ IAM Policy arn:aws:iam::680235478471:policy/basic versus Local ../modules/aws/te
 ## Pull
 
 Pull adds the ability to work with Git repositories (thanks to **go-git**),
-to output the required permissions in JSON or Terraform:
+to output the required permissions in JSON or OpenTofu/Terraform:
 
 ```bash
 ./pike  pull
@@ -820,13 +857,11 @@ statement {
   }
 ```
 
-Expect this all to change and be configurable SOON.
-
 ## Extending
 
-Determine and Create IAM mapping file ("./src/mapping"),
-working out the permissions required for your resource:
-e.g. *aws_security_group.json*
+Determine and create IAM mapping files ("./src/mapping") by
+working out the permissions required for your resource.
+For example, *aws_security_group.json*:
 
 ```json
 [
@@ -861,14 +896,12 @@ e.g. *aws_security_group.json*
 
 ### How
 
-Datasources are the easiest to start with, I have a script (resource.ps1 - add pwsh with **brew install --cask powershell**)
-that creates a blank mapping file and tf
-resource, but you've seen the example JSON file - make one without any entries.
-You also need to create a minimal resource/datasource, that you are trying to figure out the permissions for, and place
-it in the correct dir
-e.g../terraform/aws, I have a script for making a profile for the profile in the role directory.
-You can then tf using the empty role against the resource/datasource with no permissions.
-The debug output from the tf run will help you figure out the permissions you need to add to your basic role.
+Datasources are the easiest to start with. There's a script (resource.ps1 - requires pwsh: **brew install --cask powershell**)
+that creates a blank mapping file and .tf resource file, but you've seen the example JSON file - make one without any entries.
+You also need to create a minimal resource/datasource that you are trying to figure out the permissions for, and place
+it in the correct directory (e.g., ../terraform/aws). There's a script for making a profile in the role directory.
+You can then run OpenTofu/Terraform using the empty role against the resource/datasource with no permissions.
+The debug output from the run will help you figure out the permissions you need to add to your basic role.
 You then update your "basic" role.
 
 Issues?
@@ -880,7 +913,7 @@ Some roles require *Passrole* and *CreateLinkedRole* but won't say so. Trail and
 #### What about "attributes"?
 
 Some cloud providers require extra permissions depending on the attributes you add; this is how this is handled.
-Build out your tf resources to cover all reasonable scenarios.
+Build out your .tf resources to cover all reasonable scenarios.
 
 #### Eventual consistency
 
@@ -911,8 +944,8 @@ func GetAWSResourcePermissions(result template) []interface{} {
 
 ```
 
-Also add an example Terraform file into the folder **terraform/<cloud>/backups** this helps test that all your
-new code is picked up pby pike.
+Also add an example .tf file into the folder **terraform/<cloud>/backups**. This helps test that all your
+new code is picked up by pike.
 
 ## Related Tools
 
