@@ -4,6 +4,7 @@
       "compute.globalAddresses.create",
       "compute.globalAddresses.delete",
       "compute.globalAddresses.get",
+      "compute.globalAddresses.setLabels",
       "compute.networks.use"
     ],
     "attributes": {

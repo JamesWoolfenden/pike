@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "apigee.targetservers.create",
+      "apigee.targetservers.delete",
+      "apigee.targetservers.get",
+      "apigee.targetservers.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

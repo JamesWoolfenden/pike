@@ -2,37 +2,10 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 68.90      |   884       |  1283            |
+| Resources  | 71.01      |   911       |  1283            |
 | Datasource | 100.00      |   410       |   410             |
 
 ```shell
-./resource.ps1 google_apigee_addons_config
-./resource.ps1 google_apigee_api
-./resource.ps1 google_apigee_api_deployment
-./resource.ps1 google_apigee_api_product
-./resource.ps1 google_apigee_app_group
-./resource.ps1 google_apigee_control_plane_access
-./resource.ps1 google_apigee_developer
-./resource.ps1 google_apigee_developer_app
-./resource.ps1 google_apigee_dns_zone
-./resource.ps1 google_apigee_env_keystore
-./resource.ps1 google_apigee_envgroup
-./resource.ps1 google_apigee_envgroup_attachment
-./resource.ps1 google_apigee_environment_addons_config
-./resource.ps1 google_apigee_environment_api_revision_deployment
-./resource.ps1 google_apigee_environment_keyvaluemaps
-./resource.ps1 google_apigee_environment_keyvaluemaps_entries
-./resource.ps1 google_apigee_instance
-./resource.ps1 google_apigee_instance_attachment
-./resource.ps1 google_apigee_keystores_aliases_self_signed_cert
-./resource.ps1 google_apigee_nat_address
-./resource.ps1 google_apigee_organization
-./resource.ps1 google_apigee_security_action
-./resource.ps1 google_apigee_security_feedback
-./resource.ps1 google_apigee_security_monitoring_condition
-./resource.ps1 google_apigee_security_profile_v2
-./resource.ps1 google_apigee_sync_authorization
-./resource.ps1 google_apigee_target_server
 ./resource.ps1 google_apikeys_key
 ./resource.ps1 google_app_engine_application
 ./resource.ps1 google_app_engine_application_url_dispatch_rules

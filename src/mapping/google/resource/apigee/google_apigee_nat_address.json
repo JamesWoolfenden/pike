@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "apigee.nataddresses.create",
+      "apigee.nataddresses.delete",
+      "apigee.nataddresses.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

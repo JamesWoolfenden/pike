@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "apigee.securityFeedback.create",
+      "apigee.securityFeedback.delete",
+      "apigee.securityFeedback.get",
+      "apigee.securityFeedback.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

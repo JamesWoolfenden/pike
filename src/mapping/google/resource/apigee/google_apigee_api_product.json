@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "apigee.apiproducts.create",
+      "apigee.apiproducts.delete",
+      "apigee.apiproducts.get",
+      "apigee.apiproducts.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

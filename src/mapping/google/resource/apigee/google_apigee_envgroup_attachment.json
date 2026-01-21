@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "apigee.envgroupattachments.create",
+      "apigee.envgroupattachments.delete",
+      "apigee.envgroupattachments.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

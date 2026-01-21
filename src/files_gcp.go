@@ -2478,3 +2478,57 @@ var googleMigrationCenterGroup []byte
 
 //go:embed mapping/google/resource/migrationcenter/google_migration_center_preference_set.json
 var googleMigrationCenterPreferenceSet []byte
+
+//go:embed mapping/google/resource/apigee/google_apigee_addons_config.json
+var GoogleApigeeAddonsConfig []byte
+
+//go:embed mapping/google/resource/apigee/google_apigee_api_deployment.json
+var GoogleApigeeApiDeployment []byte
+
+//go:embed mapping/google/resource/apigee/google_apigee_api_product.json
+var GoogleApigeeApiProduct []byte
+
+//go:embed mapping/google/resource/apigee/google_apigee_app_group.json
+var GoogleApigeeAppGroup []byte
+
+//go:embed mapping/google/resource/apigee/google_apigee_developer.json
+var GoogleApigeeDeveloper []byte
+
+//go:embed mapping/google/resource/apigee/google_apigee_developer_app.json
+var GoogleApigeeDeveloperApp []byte
+
+//go:embed mapping/google/resource/apigee/google_apigee_dns_zone.json
+var GoogleApigeeDnsZone []byte
+
+//go:embed mapping/google/resource/apigee/google_apigee_envgroup.json
+var GoogleApigeeEnvgroup []byte
+
+//go:embed mapping/google/resource/apigee/google_apigee_envgroup_attachment.json
+var GoogleApigeeEnvgroupAttachment []byte
+
+//go:embed mapping/google/resource/apigee/google_apigee_instance.json
+var GoogleApigeeInstance []byte
+
+//go:embed mapping/google/resource/apigee/google_apigee_instance_attachment.json
+var GoogleApigeeInstanceAttachment []byte
+
+//go:embed mapping/google/resource/apigee/google_apigee_nat_address.json
+var GoogleApigeeNatAddress []byte
+
+//go:embed mapping/google/resource/apigee/google_apigee_organization.json
+var GoogleApigeeOrganization []byte
+
+//go:embed mapping/google/resource/apigee/google_apigee_security_action.json
+var GoogleApigeeSecurityAction []byte
+
+//go:embed mapping/google/resource/apigee/google_apigee_security_feedback.json
+var GoogleApigeeSecurityFeedback []byte
+
+//go:embed mapping/google/resource/apigee/google_apigee_security_monitoring_condition.json
+var GoogleApigeeSecurityMonitoringCondition []byte
+
+//go:embed mapping/google/resource/apigee/google_apigee_security_profile_v2.json
+var GoogleApigeeSecurityProfileV2 []byte
+
+//go:embed mapping/google/resource/apigee/google_apigee_target_server.json
+var GoogleApigeeTargetServer []byte

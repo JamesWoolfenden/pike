@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "apigee.developers.create",
+      "apigee.developers.delete",
+      "apigee.developers.get",
+      "apigee.developers.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "apigee.securityActions.create",
+      "apigee.securityActions.get",
+      "apigee.securityActions.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

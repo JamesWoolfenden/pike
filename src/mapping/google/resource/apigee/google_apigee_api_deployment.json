@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "apigee.deployments.create",
+      "apigee.deployments.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

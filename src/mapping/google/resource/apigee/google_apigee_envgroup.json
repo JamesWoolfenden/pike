@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "apigee.envgroups.create",
+      "apigee.envgroups.delete",
+      "apigee.envgroups.get",
+      "apigee.envgroups.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

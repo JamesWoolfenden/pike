@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "apigee.organizations.create",
+      "apigee.organizations.get",
+      "apigee.organizations.update",
+      "apigee.organizations.delete",
+      "apigee.operations.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

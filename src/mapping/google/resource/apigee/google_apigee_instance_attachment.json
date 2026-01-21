@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "apigee.instanceattachments.create",
+      "apigee.instanceattachments.delete",
+      "apigee.instanceattachments.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

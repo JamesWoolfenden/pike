@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "apigee.dnsZones.create",
+      "apigee.dnsZones.delete",
+      "apigee.dnsZones.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

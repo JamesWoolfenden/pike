@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "apigee.addonsconfig.get",
+      "apigee.addonsconfig.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
