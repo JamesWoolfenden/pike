@@ -2,11 +2,10 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 94.72      |  1507       |  1591            |
+| Resources  | 94.78      |  1508       |  1591            |
 | Datasource | 99.06      |   632       |   638             |
 
 ```shell
-./resource.ps1 aws_acm_certificate_validation
 ./resource.ps1 aws_alb
 ./resource.ps1 aws_appsync_api
 ./resource.ps1 aws_appsync_channel_namespace
