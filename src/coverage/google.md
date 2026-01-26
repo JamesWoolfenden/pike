@@ -2,8 +2,8 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 75.76      |   972       |  1283            |
-| Datasource | 100.00      |   410       |   410             |
+| Resources  | 75.35      |   972       |  1290            |
+| Datasource | 99.76      |   410       |   411             |
 
 ```shell
 ./resource.ps1 google_cloud_identity_group
@@ -80,6 +80,7 @@
 ./resource.ps1 google_compute_public_delegated_prefix
 ./resource.ps1 google_compute_region_autoscaler
 ./resource.ps1 google_compute_region_commitment
+./resource.ps1 google_compute_region_composite_health_check
 ./resource.ps1 google_compute_region_disk
 ./resource.ps1 google_compute_region_disk_resource_policy_attachment
 ./resource.ps1 google_compute_region_health_aggregation_policy
@@ -133,6 +134,7 @@
 ./resource.ps1 google_database_migration_service_migration_job
 ./resource.ps1 google_database_migration_service_private_connection
 ./resource.ps1 google_dataflow_flex_template_job
+./resource.ps1 google_dataplex_data_product
 ./resource.ps1 google_dataplex_entry_link
 ./resource.ps1 google_dataproc_gdc_application_environment
 ./resource.ps1 google_dataproc_gdc_service_instance
@@ -142,12 +144,16 @@
 ./resource.ps1 google_datastream_connection_profile
 ./resource.ps1 google_datastream_private_connection
 ./resource.ps1 google_datastream_stream
+./resource.ps1 google_dialogflow_cx_tool_version
 ./resource.ps1 google_dialogflow_generator
 ./resource.ps1 google_dialogflow_version
 ./resource.ps1 google_document_ai_processor
 ./resource.ps1 google_document_ai_processor_default_version
 ./resource.ps1 google_document_ai_warehouse_document_schema
 ./resource.ps1 google_document_ai_warehouse_location
+./resource.ps1 google_firebase_ai_logic_config
+./resource.ps1 google_firebase_ai_logic_prompt_template
+./resource.ps1 google_firebase_ai_logic_prompt_template_lock
 ./resource.ps1 google_firebase_app_check_app_attest_config
 ./resource.ps1 google_firebase_app_check_debug_token
 ./resource.ps1 google_firebase_app_check_device_check_config
@@ -317,4 +323,6 @@
 ./resource.ps1 google_storage_object_acl
 ./resource.ps1 google_storage_transfer_agent_pool
 ./resource.ps1 google_storage_transfer_job
+./resource.ps1 google_vmwareengine_datastore
+./resource.ps1 google_vmwareengine_datastore -type data
 ```

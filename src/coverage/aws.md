@@ -2,11 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 94.78      |  1508       |  1591            |
-| Datasource | 99.06      |   632       |   638             |
+| Resources  | 94.19      |  1508       |  1601            |
+| Datasource | 98.90      |   632       |   639             |
 
 ```shell
 ./resource.ps1 aws_alb
+./resource.ps1 aws_apigatewayv2_routing_rule
 ./resource.ps1 aws_appsync_api
 ./resource.ps1 aws_appsync_channel_namespace
 ./resource.ps1 aws_bedrockagent_flow
@@ -51,12 +52,17 @@
 ./resource.ps1 aws_networkfirewall_vpc_endpoint_association
 ./resource.ps1 aws_networkflowmonitor_monitor
 ./resource.ps1 aws_networkflowmonitor_scope
+./resource.ps1 aws_notifications_managed_notification_account_contact_association
+./resource.ps1 aws_notifications_managed_notification_additional_channel_association
+./resource.ps1 aws_notifications_organizational_unit_association
+./resource.ps1 aws_notifications_organizations_access
 ./resource.ps1 aws_observabilityadmin_centralization_rule_for_organization
 ./resource.ps1 aws_odb_cloud_autonomous_vm_cluster
 ./resource.ps1 aws_odb_cloud_exadata_infrastructure
 ./resource.ps1 aws_odb_cloud_vm_cluster
 ./resource.ps1 aws_odb_network
 ./resource.ps1 aws_odb_network_peering_connection
+./resource.ps1 aws_opensearch_application
 ./resource.ps1 aws_organizations_tag
 ./resource.ps1 aws_prometheus_resource_policy
 ./resource.ps1 aws_quicksight_custom_permissions
@@ -64,6 +70,7 @@
 ./resource.ps1 aws_quicksight_key_registration
 ./resource.ps1 aws_quicksight_role_custom_permission
 ./resource.ps1 aws_quicksight_user_custom_permission
+./resource.ps1 aws_ram_permission
 ./resource.ps1 aws_ram_resource_share_associations_exclusive
 ./resource.ps1 aws_redshift_idc_application
 ./resource.ps1 aws_s3_bucket_abac
@@ -73,7 +80,10 @@
 ./resource.ps1 aws_s3vectors_index
 ./resource.ps1 aws_s3vectors_vector_bucket
 ./resource.ps1 aws_s3vectors_vector_bucket_policy
+./resource.ps1 aws_sagemaker_labeling_job
 ./resource.ps1 aws_sagemaker_model_card
+./resource.ps1 aws_sagemaker_model_card_export_job
+./resource.ps1 aws_savingsplans_savings_plan
 ./resource.ps1 aws_secretsmanager_tag
 ./resource.ps1 aws_sesv2_tenant
 ./resource.ps1 aws_timestreaminfluxdb_db_cluster
@@ -95,4 +105,5 @@
 ./resource.ps1 aws_s3_bucket_replication_configuration -type data
 ./resource.ps1 aws_s3control_access_points -type data
 ./resource.ps1 aws_s3control_multi_region_access_points -type data
+./resource.ps1 aws_savingsplans_savings_plan -type data
 ```

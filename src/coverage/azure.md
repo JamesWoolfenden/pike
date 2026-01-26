@@ -2,8 +2,8 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 5.14      |    57       |  1110            |
-| Datasource | 31.44      |   122       |   388             |
+| Resources  | 5.12      |    57       |  1114            |
+| Datasource | 31.28      |   122       |   390             |
 
 ```shell
 ./resource.ps1 azurerm_aadb2c_directory
@@ -669,6 +669,10 @@
 ./resource.ps1 azurerm_network_manager_verifier_workspace
 ./resource.ps1 azurerm_network_manager_verifier_workspace_reachability_analysis_intent
 ./resource.ps1 azurerm_network_profile
+./resource.ps1 azurerm_network_security_perimeter
+./resource.ps1 azurerm_network_security_perimeter_access_rule
+./resource.ps1 azurerm_network_security_perimeter_association
+./resource.ps1 azurerm_network_security_perimeter_profile
 ./resource.ps1 azurerm_new_relic_monitor
 ./resource.ps1 azurerm_new_relic_tag_rule
 ./resource.ps1 azurerm_nginx_api_key
@@ -1252,6 +1256,8 @@
 ./resource.ps1 azurerm_network_manager_ipam_pool -type data
 ./resource.ps1 azurerm_network_manager_network_group -type data
 ./resource.ps1 azurerm_network_security_group -type data
+./resource.ps1 azurerm_network_security_perimeter -type data
+./resource.ps1 azurerm_network_security_perimeter_profile -type data
 ./resource.ps1 azurerm_network_service_tags -type data
 ./resource.ps1 azurerm_nginx_api_key -type data
 ./resource.ps1 azurerm_nginx_certificate -type data
