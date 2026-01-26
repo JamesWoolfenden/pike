@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "ces.examples.create",
+      "ces.examples.delete",
+      "ces.examples.get",
+      "ces.examples.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

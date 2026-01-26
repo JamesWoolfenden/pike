@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "cloudasset.feeds.create",
+      "cloudasset.feeds.delete",
+      "cloudasset.feeds.get",
+      "cloudasset.feeds.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

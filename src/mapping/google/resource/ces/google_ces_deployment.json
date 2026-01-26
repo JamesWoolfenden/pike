@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "ces.deployments.create",
+      "ces.deployments.delete",
+      "ces.deployments.get",
+      "ces.deployments.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

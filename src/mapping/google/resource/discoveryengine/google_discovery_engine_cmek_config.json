@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "discoveryengine.cmekConfigs.get",
+      "discoveryengine.cmekConfigs.list",
+      "discoveryengine.cmekConfigs.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

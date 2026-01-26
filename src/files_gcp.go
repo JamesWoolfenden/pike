@@ -2492,43 +2492,226 @@ var GoogleApigeeApiProduct []byte
 var GoogleApigeeAppGroup []byte
 
 //go:embed mapping/google/resource/apigee/google_apigee_developer.json
-var GoogleApigeeDeveloper []byte
+var googleApigeeDeveloper []byte
 
 //go:embed mapping/google/resource/apigee/google_apigee_developer_app.json
-var GoogleApigeeDeveloperApp []byte
+var googleApigeeDeveloperApp []byte
 
 //go:embed mapping/google/resource/apigee/google_apigee_dns_zone.json
-var GoogleApigeeDnsZone []byte
+var googleApigeeDnsZone []byte
 
 //go:embed mapping/google/resource/apigee/google_apigee_envgroup.json
-var GoogleApigeeEnvgroup []byte
+var googleApigeeEnvgroup []byte
 
 //go:embed mapping/google/resource/apigee/google_apigee_envgroup_attachment.json
 var GoogleApigeeEnvgroupAttachment []byte
 
 //go:embed mapping/google/resource/apigee/google_apigee_instance.json
-var GoogleApigeeInstance []byte
+var googleApigeeInstance []byte
 
 //go:embed mapping/google/resource/apigee/google_apigee_instance_attachment.json
-var GoogleApigeeInstanceAttachment []byte
+var googleApigeeInstanceAttachment []byte
 
 //go:embed mapping/google/resource/apigee/google_apigee_nat_address.json
-var GoogleApigeeNatAddress []byte
+var googleApigeeNatAddress []byte
 
 //go:embed mapping/google/resource/apigee/google_apigee_organization.json
-var GoogleApigeeOrganization []byte
+var googleApigeeOrganization []byte
 
 //go:embed mapping/google/resource/apigee/google_apigee_security_action.json
-var GoogleApigeeSecurityAction []byte
+var googleApigeeSecurityAction []byte
 
 //go:embed mapping/google/resource/apigee/google_apigee_security_feedback.json
-var GoogleApigeeSecurityFeedback []byte
+var googleApigeeSecurityFeedback []byte
 
 //go:embed mapping/google/resource/apigee/google_apigee_security_monitoring_condition.json
-var GoogleApigeeSecurityMonitoringCondition []byte
+var googleApigeeSecurityMonitoringCondition []byte
 
 //go:embed mapping/google/resource/apigee/google_apigee_security_profile_v2.json
-var GoogleApigeeSecurityProfileV2 []byte
+var googleApigeeSecurityProfileV2 []byte
 
 //go:embed mapping/google/resource/apigee/google_apigee_target_server.json
-var GoogleApigeeTargetServer []byte
+var googleApigeeTargetServer []byte
+
+//go:embed mapping/google/resource/appengine/google_app_engine_application.json
+var googleAppEngineApplication []byte
+
+//go:embed mapping/google/resource/appengine/google_app_engine_application_url_dispatch_rules.json
+var googleAppEngineApplicationUrlDispacthRules []byte
+
+//go:embed mapping/google/resource/appengine/google_app_engine_domain_mapping.json
+var googleAppEngineDomainMapping []byte
+
+//go:embed mapping/google/resource/appengine/google_app_engine_firewall_rule.json
+var googleAppEngineFirewallRule []byte
+
+//go:embed mapping/google/resource/appengine/google_app_engine_flexible_app_version.json
+var googleAppEngineFlexibleAppVersion []byte
+
+//go:embed mapping/google/resource/appengine/google_app_engine_service_network_settings.json
+var googleAppEngineServiceNetworksSettings []byte
+
+//go:embed mapping/google/resource/appengine/google_app_engine_service_split_traffic.json
+var googleAppEngineServiceSplitTraffic []byte
+
+//go:embed mapping/google/resource/appengine/google_app_engine_standard_app_version.json
+var googleAppEngineStandardAppVersion []byte
+
+//go:embed mapping/google/resource/apikeys/google_apikeys_key.json
+var googleApikeysKey []byte
+
+//go:embed mapping/google/resource/ces/google_ces_agent.json
+var googleCesAgent []byte
+
+//go:embed mapping/google/resource/ces/google_ces_app.json
+var googleCesApp []byte
+
+//go:embed mapping/google/resource/ces/google_ces_app_version.json
+var googleCesAppVersion []byte
+
+//go:embed mapping/google/resource/ces/google_ces_deployment.json
+var googleCesDeployment []byte
+
+//go:embed mapping/google/resource/ces/google_ces_example.json
+var googleCesExample []byte
+
+//go:embed mapping/google/resource/ces/google_ces_guardrail.json
+var googleCesGuardrail []byte
+
+//go:embed mapping/google/resource/ces/google_ces_tool.json
+var googleCesTool []byte
+
+//go:embed mapping/google/resource/ces/google_ces_toolset.json
+var googleCesToolset []byte
+
+//go:embed mapping/google/resource/cloudasset/google_cloud_asset_folder_feed.json
+var googleCloudAssetFolderFeed []byte
+
+//go:embed mapping/google/resource/cloudasset/google_cloud_asset_organization_feed.json
+var googleClousAssetOrganizationFeed []byte
+
+//go:embed mapping/google/resource/cloudasset/google_cloud_asset_project_feed.json
+var googleCloudAssetProjectFeed []byte
+
+//go:embed mapping/google/resource/discoveryengine/google_discovery_engine_acl_config.json
+var googleDiscoveryEngineAclConfig []byte
+
+//go:embed mapping/google/resource/discoveryengine/google_discovery_engine_assistant.json
+var googleDiscoveryEngineAssistant []byte
+
+//go:embed mapping/google/resource/discoveryengine/google_discovery_engine_data_store.json
+var googleDiscoveryEngineDataStore []byte
+
+//go:embed mapping/google/resource/discoveryengine/google_discovery_engine_chat_engine.json
+var googleDiscoveryEngineChatEngine []byte
+
+//go:embed mapping/google/resource/discoveryengine/google_discovery_engine_cmek_config.json
+var googleDiscoveryEngineCmekConfig []byte
+
+//go:embed mapping/google/resource/discoveryengine/google_discovery_engine_control.json
+var googleDiscoveryEngineControl []byte
+
+//go:embed mapping/google/resource/discoveryengine/google_discovery_engine_data_connector.json
+var googleDiscoveryEngineDataConnector []byte
+
+//go:embed mapping/google/resource/discoveryengine/google_discovery_engine_license_config.json
+var googleDiscoveryEngineLicenseConfig []byte
+
+//go:embed mapping/google/resource/discoveryengine/google_discovery_engine_recommendation_engine.json
+var googleDiscoveryEngineRecommendationEngine []byte
+
+//go:embed mapping/google/resource/discoveryengine/google_discovery_engine_schema.json
+var googleDiscoveryEngineSchema []byte
+
+//go:embed mapping/google/resource/discoveryengine/google_discovery_engine_search_engine.json
+var googleDiscoveryEngineSearchEmgine []byte
+
+//go:embed mapping/google/resource/discoveryengine/google_discovery_engine_sitemap.json
+var googleDiscoveryEngineSitemap []byte
+
+//go:embed mapping/google/resource/discoveryengine/google_discovery_engine_target_site.json
+var googleDiscoveryEngineTargetSite []byte
+
+//go:embed mapping/google/resource/discoveryengine/google_discovery_engine_user_store.json
+var googleDiscoveryEngineUserStore []byte
+
+//go:embed mapping/google/resource/discoveryengine/google_discovery_engine_widget_config.json
+var googleDiscoveryEngineWidgetConfig []byte
+
+//go:embed mapping/google/resource/securitycenter/google_scc_event_threat_detection_custom_module.json
+var googleSccEventThreatDetectionCustomModule []byte
+
+//go:embed mapping/google/resource/securitycenter/google_scc_folder_custom_module.json
+var googleSccFolderCustomModule []byte
+
+//go:embed mapping/google/resource/securitycenter/google_scc_folder_notification_config.json
+var googleSccFolderNotificationConfig []byte
+
+//go:embed mapping/google/resource/securitycenter/google_scc_folder_scc_big_query_export.json
+var googleSccFolderSccBigQueryExport []byte
+
+//go:embed mapping/google/resource/securitycenter/google_scc_management_folder_security_health_analytics_custom_module.json
+var googleSccManagementFolderSecurityHealthAnalyticsCustomModule []byte
+
+//go:embed mapping/google/resource/securitycenter/google_scc_management_organization_event_threat_detection_custom_module.json
+var googleSccManagementOrganizationEventThreatDetectionCustomModule []byte
+
+//go:embed mapping/google/resource/securitycenter/google_scc_management_organization_security_health_analytics_custom_module.json
+var googleSccManagementOrganizationSecurityHealthAnalyticsCustomModule []byte
+
+//go:embed mapping/google/resource/securitycenter/google_scc_management_project_security_health_analytics_custom_module.json
+var googleSccManagementProjectSecurityHealthAnalyticsCustomModule []byte
+
+//go:embed mapping/google/resource/securitycenter/google_scc_mute_config.json
+var googleSccMuteConfig []byte
+
+//go:embed mapping/google/resource/securitycenter/google_scc_notification_config.json
+var googleSccNotificationConfig []byte
+
+//go:embed mapping/google/resource/securitycenter/google_scc_organization_custom_module.json
+var googleSccOrganizationCustomModule []byte
+
+//go:embed mapping/google/resource/securitycenter/google_scc_organization_scc_big_query_export.json
+var googleSccOrganizationSccBigQueryExport []byte
+
+//go:embed mapping/google/resource/securitycenter/google_scc_project_custom_module.json
+var googleSccProjectCustomModule []byte
+
+//go:embed mapping/google/resource/securitycenter/google_scc_project_notification_config.json
+var googleSccProjectNotificationConfig []byte
+
+//go:embed mapping/google/resource/securitycenter/google_scc_project_scc_big_query_export.json
+var googleSccProjectSccBigQueryExport []byte
+
+//go:embed mapping/google/resource/securitycenter/google_scc_source.json
+var googleSccSource []byte
+
+//go:embed mapping/google/resource/securitycenter/google_scc_v2_folder_mute_config.json
+var googleSccV2folderMuteConfig []byte
+
+//go:embed mapping/google/resource/securitycenter/google_scc_v2_folder_notification_config.json
+var googleSccV2folderNotificationConfig []byte
+
+//go:embed mapping/google/resource/securitycenter/google_scc_v2_folder_scc_big_query_export.json
+var googleSccV2folderSccBigQueryExport []byte
+
+//go:embed mapping/google/resource/securitycenter/google_scc_v2_organization_mute_config.json
+var googleSccV2OrganizationMuteConfig []byte
+
+//go:embed mapping/google/resource/securitycenter/google_scc_v2_organization_notification_config.json
+var googleSccV2OrganizationNotificationConfig []byte
+
+//go:embed mapping/google/resource/securitycenter/google_scc_v2_organization_scc_big_query_export.json
+var googleSccV2OrganizationSccBigQueryExport []byte
+
+//go:embed mapping/google/resource/securitycenter/google_scc_v2_organization_scc_big_query_exports.json
+var googleSccV2OrganizationSccBigQueryExports []byte
+
+//go:embed mapping/google/resource/securitycenter/google_scc_v2_project_mute_config.json
+var googleSccV2ProjectMuteConfig []byte
+
+//go:embed mapping/google/resource/securitycenter/google_scc_v2_project_notification_config.json
+var googleSccV2ProjectNotificationConfig []byte
+
+//go:embed mapping/google/resource/securitycenter/google_scc_v2_project_scc_big_query_export.json
+var googleSccV2ProjectSccBigQueryExport []byte

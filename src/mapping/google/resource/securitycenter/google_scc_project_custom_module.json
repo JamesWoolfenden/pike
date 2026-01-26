@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "securitycenter.securityhealthanalyticscustommodules.create",
+      "securitycenter.securityhealthanalyticscustommodules.delete",
+      "securitycenter.securityhealthanalyticscustommodules.get",
+      "securitycenter.securityhealthanalyticscustommodules.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

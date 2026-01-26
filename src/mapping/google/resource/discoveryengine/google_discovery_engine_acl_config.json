@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "discoveryengine.aclConfigs.get",
+      "discoveryengine.aclConfigs.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

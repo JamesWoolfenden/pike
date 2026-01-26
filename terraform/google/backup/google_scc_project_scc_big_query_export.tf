@@ -1,0 +1,1 @@
+resource "google_scc_project_scc_big_query_export" "pike" {}

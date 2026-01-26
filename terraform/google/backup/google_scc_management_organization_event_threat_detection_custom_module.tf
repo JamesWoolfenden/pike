@@ -1,0 +1,1 @@
+resource "google_scc_management_organization_event_threat_detection_custom_module" "pike" {}

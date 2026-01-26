@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "securitycenter.muteconfigs.create",
+      "securitycenter.muteconfigs.delete",
+      "securitycenter.muteconfigs.get",
+      "securitycenter.muteconfigs.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

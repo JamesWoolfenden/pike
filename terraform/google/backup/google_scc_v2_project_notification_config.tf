@@ -1,0 +1,1 @@
+resource "google_scc_v2_project_notification_config" "pike" {}

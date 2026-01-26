@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "appengine.applications.create",
+      "appengine.applications.get",
+      "appengine.applications.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

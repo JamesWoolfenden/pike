@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "discoveryengine.schemas.create",
+      "discoveryengine.schemas.get",
+      "discoveryengine.schemas.update",
+      "discoveryengine.schemas.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "ces.toolsets.create",
+      "ces.toolsets.delete",
+      "ces.toolsets.get",
+      "ces.toolsets.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

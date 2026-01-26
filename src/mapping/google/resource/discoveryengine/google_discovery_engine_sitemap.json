@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "discoveryengine.sitemaps.create",
+      "discoveryengine.sitemaps.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "ces.agents.create",
+      "ces.agents.delete",
+      "ces.agents.get",
+      "ces.agents.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

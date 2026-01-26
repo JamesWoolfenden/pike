@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "discoveryengine.controls.create",
+      "discoveryengine.controls.delete",
+      "discoveryengine.controls.get",
+      "discoveryengine.controls.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

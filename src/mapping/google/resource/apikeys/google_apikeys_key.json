@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "apikeys.keys.create",
+      "apikeys.keys.delete",
+      "apikeys.keys.get",
+      "apikeys.keys.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

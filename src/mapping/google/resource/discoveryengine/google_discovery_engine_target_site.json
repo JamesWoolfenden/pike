@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "discoveryengine.targetSites.create",
+      "discoveryengine.targetSites.delete",
+      "discoveryengine.targetSites.get",
+      "discoveryengine.targetSites.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -2,30 +2,10 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 71.01      |   911       |  1283            |
+| Resources  | 75.76      |   972       |  1283            |
 | Datasource | 100.00      |   410       |   410             |
 
 ```shell
-./resource.ps1 google_apikeys_key
-./resource.ps1 google_app_engine_application
-./resource.ps1 google_app_engine_application_url_dispatch_rules
-./resource.ps1 google_app_engine_domain_mapping
-./resource.ps1 google_app_engine_firewall_rule
-./resource.ps1 google_app_engine_flexible_app_version
-./resource.ps1 google_app_engine_service_network_settings
-./resource.ps1 google_app_engine_service_split_traffic
-./resource.ps1 google_app_engine_standard_app_version
-./resource.ps1 google_ces_agent
-./resource.ps1 google_ces_app
-./resource.ps1 google_ces_app_version
-./resource.ps1 google_ces_deployment
-./resource.ps1 google_ces_example
-./resource.ps1 google_ces_guardrail
-./resource.ps1 google_ces_tool
-./resource.ps1 google_ces_toolset
-./resource.ps1 google_cloud_asset_folder_feed
-./resource.ps1 google_cloud_asset_organization_feed
-./resource.ps1 google_cloud_asset_project_feed
 ./resource.ps1 google_cloud_identity_group
 ./resource.ps1 google_cloud_identity_group_membership
 ./resource.ps1 google_cloud_ids_endpoint
@@ -164,21 +144,6 @@
 ./resource.ps1 google_datastream_stream
 ./resource.ps1 google_dialogflow_generator
 ./resource.ps1 google_dialogflow_version
-./resource.ps1 google_discovery_engine_acl_config
-./resource.ps1 google_discovery_engine_assistant
-./resource.ps1 google_discovery_engine_chat_engine
-./resource.ps1 google_discovery_engine_cmek_config
-./resource.ps1 google_discovery_engine_control
-./resource.ps1 google_discovery_engine_data_connector
-./resource.ps1 google_discovery_engine_data_store
-./resource.ps1 google_discovery_engine_license_config
-./resource.ps1 google_discovery_engine_recommendation_engine
-./resource.ps1 google_discovery_engine_schema
-./resource.ps1 google_discovery_engine_search_engine
-./resource.ps1 google_discovery_engine_sitemap
-./resource.ps1 google_discovery_engine_target_site
-./resource.ps1 google_discovery_engine_user_store
-./resource.ps1 google_discovery_engine_widget_config
 ./resource.ps1 google_document_ai_processor
 ./resource.ps1 google_document_ai_processor_default_version
 ./resource.ps1 google_document_ai_warehouse_document_schema
@@ -338,32 +303,6 @@
 ./resource.ps1 google_saas_runtime_unit
 ./resource.ps1 google_saas_runtime_unit_kind
 ./resource.ps1 google_saas_runtime_unit_operation
-./resource.ps1 google_scc_event_threat_detection_custom_module
-./resource.ps1 google_scc_folder_custom_module
-./resource.ps1 google_scc_folder_notification_config
-./resource.ps1 google_scc_folder_scc_big_query_export
-./resource.ps1 google_scc_management_folder_security_health_analytics_custom_module
-./resource.ps1 google_scc_management_organization_event_threat_detection_custom_module
-./resource.ps1 google_scc_management_organization_security_health_analytics_custom_module
-./resource.ps1 google_scc_management_project_security_health_analytics_custom_module
-./resource.ps1 google_scc_mute_config
-./resource.ps1 google_scc_notification_config
-./resource.ps1 google_scc_organization_custom_module
-./resource.ps1 google_scc_organization_scc_big_query_export
-./resource.ps1 google_scc_project_custom_module
-./resource.ps1 google_scc_project_notification_config
-./resource.ps1 google_scc_project_scc_big_query_export
-./resource.ps1 google_scc_source
-./resource.ps1 google_scc_v2_folder_mute_config
-./resource.ps1 google_scc_v2_folder_notification_config
-./resource.ps1 google_scc_v2_folder_scc_big_query_export
-./resource.ps1 google_scc_v2_organization_mute_config
-./resource.ps1 google_scc_v2_organization_notification_config
-./resource.ps1 google_scc_v2_organization_scc_big_query_export
-./resource.ps1 google_scc_v2_organization_scc_big_query_exports
-./resource.ps1 google_scc_v2_project_mute_config
-./resource.ps1 google_scc_v2_project_notification_config
-./resource.ps1 google_scc_v2_project_scc_big_query_export
 ./resource.ps1 google_secure_source_manager_hook
 ./resource.ps1 google_security_scanner_scan_config
 ./resource.ps1 google_securityposture_posture

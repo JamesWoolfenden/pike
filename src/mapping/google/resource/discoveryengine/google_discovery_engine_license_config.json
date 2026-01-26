@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "discoveryengine.licenseConfigs.create",
+      "discoveryengine.licenseConfigs.get",
+      "discoveryengine.licenseConfigs.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

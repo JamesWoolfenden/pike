@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "discoveryengine.dataStores.create",
+      "discoveryengine.dataStores.delete",
+      "discoveryengine.dataStores.get",
+      "discoveryengine.dataStores.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "securitycenter.notificationconfig.create",
+      "securitycenter.notificationconfig.delete",
+      "securitycenter.notificationconfig.get",
+      "securitycenter.notificationconfig.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

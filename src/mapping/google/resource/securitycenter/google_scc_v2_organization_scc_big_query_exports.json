@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "securitycenter.bigQueryExports.create",
+      "securitycenter.bigQueryExports.delete",
+      "securitycenter.bigQueryExports.get",
+      "securitycenter.bigQueryExports.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

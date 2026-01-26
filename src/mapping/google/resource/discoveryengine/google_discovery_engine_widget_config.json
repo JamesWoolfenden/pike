@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "discoveryengine.widgetConfigs.get",
+      "discoveryengine.widgetConfigs.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "securitycenter.eventthreatdetectioncustommodules.create",
+      "securitycenter.eventthreatdetectioncustommodules.delete",
+      "securitycenter.eventthreatdetectioncustommodules.get",
+      "securitycenter.eventthreatdetectioncustommodules.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

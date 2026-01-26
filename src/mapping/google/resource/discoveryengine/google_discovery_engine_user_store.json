@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "discoveryengine.userStores.get",
+      "discoveryengine.userStores.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "discoveryengine.engines.create",
+      "discoveryengine.engines.delete",
+      "discoveryengine.engines.get",
+      "discoveryengine.engines.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

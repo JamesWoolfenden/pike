@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "securitycenter.sources.get",
+      "securitycenter.sources.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

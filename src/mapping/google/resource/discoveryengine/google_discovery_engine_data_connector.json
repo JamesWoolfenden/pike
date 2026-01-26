@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "discoveryengine.dataConnectors.get",
+      "discoveryengine.dataConnectors.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

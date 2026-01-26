@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "discoveryengine.assistants.create",
+      "discoveryengine.assistants.delete",
+      "discoveryengine.assistants.get",
+      "discoveryengine.assistants.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

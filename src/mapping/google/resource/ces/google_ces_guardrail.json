@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "ces.guardrails.create",
+      "ces.guardrails.delete",
+      "ces.guardrails.get",
+      "ces.guardrails.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
