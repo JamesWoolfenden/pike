@@ -1734,3 +1734,15 @@ var dataAwsOrganizationAccount []byte
 
 //go:embed mapping/aws/data/wafv2/aws_wafv2_managed_rule_group.json
 var dataAwsWafV2ManagedRuleGroup []byte
+
+//go:embed mapping/aws/data/tag/aws_resourcegroupstaggingapi_required_tags.json
+var dataAwsResourcegroupstaggingapiRequiredTags []byte
+
+//go:embed mapping/aws/data/s3/aws_s3control_access_points.json
+var dataAwsS3controlAccessPoints []byte
+
+//go:embed mapping/aws/data/s3/aws_s3control_multi_region_access_points.json
+var dataAwsS3controlMultiRegionAccessPoints []byte
+
+//go:embed mapping/aws/data/savingsplans/aws_savingsplans_savings_plan.json
+var dataAwsSavingsplansSavingsPlan []byte

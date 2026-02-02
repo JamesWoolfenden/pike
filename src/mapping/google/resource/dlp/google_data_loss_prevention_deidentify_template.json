@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "dlp.deidentifyTemplates.create",
+      "dlp.deidentifyTemplates.delete",
+      "dlp.deidentifyTemplates.update",
+      "dlp.deidentifyTemplates.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

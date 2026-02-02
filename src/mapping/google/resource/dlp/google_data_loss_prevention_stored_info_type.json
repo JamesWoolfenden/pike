@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "dlp.storedInfoTypes.create",
+      "dlp.storedInfoTypes.delete",
+      "dlp.storedInfoTypes.get",
+      "dlp.storedInfoTypes.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

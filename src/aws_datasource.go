@@ -640,6 +640,15 @@ var tFLookupDataAWS = map[string]interface{}{
 	"aws_cloudfront_distribution_tenant":                                    placeholder,
 	"aws_organizations_account":                                             dataAwsOrganizationAccount,
 	"aws_wafv2_managed_rule_group":                                          dataAwsWafV2ManagedRuleGroup,
+	"aws_arcregionswitch_plan":                                              placeholder,
+	"aws_arcregionswitch_route53_health_checks":                             placeholder,
+	"aws_organizations_entity_path":                                         placeholder,
+	"aws_resourcegroupstaggingapi_required_tags":                            dataAwsResourcegroupstaggingapiRequiredTags,
+	"aws_s3_bucket_object_lock_configuration":                               placeholder,
+	"aws_s3_bucket_replication_configuration":                               placeholder,
+	"aws_s3control_access_points":                                           dataAwsS3controlAccessPoints,
+	"aws_s3control_multi_region_access_points":                              dataAwsS3controlMultiRegionAccessPoints,
+	"aws_savingsplans_savings_plan":                                         dataAwsSavingsplansSavingsPlan,
 }
 
 // GetAWSDataPermissions gets permissions required for datasource's.

@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "parametermanager.parameters.create",
+      "parametermanager.parameters.delete",
+      "parametermanager.parameters.get",
+      "parametermanager.parameters.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

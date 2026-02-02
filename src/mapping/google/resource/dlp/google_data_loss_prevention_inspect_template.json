@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "dlp.inspectTemplates.create",
+      "dlp.inspectTemplates.delete",
+      "dlp.inspectTemplates.get",
+      "dlp.inspectTemplates.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

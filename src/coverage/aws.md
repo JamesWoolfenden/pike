@@ -2,14 +2,15 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 94.19      |  1508       |  1601            |
-| Datasource | 98.90      |   632       |   639             |
+| Resources  | 93.96      |  1508       |  1605            |
+| Datasource | 100.00      |   641       |   641             |
 
 ```shell
 ./resource.ps1 aws_alb
 ./resource.ps1 aws_apigatewayv2_routing_rule
 ./resource.ps1 aws_appsync_api
 ./resource.ps1 aws_appsync_channel_namespace
+./resource.ps1 aws_arcregionswitch_plan
 ./resource.ps1 aws_bedrockagent_flow
 ./resource.ps1 aws_bedrockagentcore_agent_runtime
 ./resource.ps1 aws_bedrockagentcore_agent_runtime_endpoint
@@ -86,6 +87,9 @@
 ./resource.ps1 aws_savingsplans_savings_plan
 ./resource.ps1 aws_secretsmanager_tag
 ./resource.ps1 aws_sesv2_tenant
+./resource.ps1 aws_sesv2_tenant_resource_association
+./resource.ps1 aws_ssoadmin_customer_managed_policy_attachments_exclusive
+./resource.ps1 aws_ssoadmin_managed_policy_attachments_exclusive
 ./resource.ps1 aws_timestreaminfluxdb_db_cluster
 ./resource.ps1 aws_transfer_host_key
 ./resource.ps1 aws_transfer_web_app
@@ -99,11 +103,4 @@
 ./resource.ps1 aws_workspacesweb_trust_store_association
 ./resource.ps1 aws_workspacesweb_user_access_logging_settings_association
 ./resource.ps1 aws_workspacesweb_user_settings_association
-./resource.ps1 aws_organizations_entity_path -type data
-./resource.ps1 aws_resourcegroupstaggingapi_required_tags -type data
-./resource.ps1 aws_s3_bucket_object_lock_configuration -type data
-./resource.ps1 aws_s3_bucket_replication_configuration -type data
-./resource.ps1 aws_s3control_access_points -type data
-./resource.ps1 aws_s3control_multi_region_access_points -type data
-./resource.ps1 aws_savingsplans_savings_plan -type data
 ```

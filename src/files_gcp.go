@@ -2715,3 +2715,30 @@ var googleSccV2ProjectNotificationConfig []byte
 
 //go:embed mapping/google/resource/securitycenter/google_scc_v2_project_scc_big_query_export.json
 var googleSccV2ProjectSccBigQueryExport []byte
+
+//go:embed mapping/google/resource/dlp/google_data_loss_prevention_deidentify_template.json
+var googleDataLossPreventionDeindentifyTemplate []byte
+
+//go:embed mapping/google/resource/dlp/google_data_loss_prevention_discovery_config.json
+var googleDataLossPreventionDiscoveryConfig []byte
+
+//go:embed mapping/google/resource/dlp/google_data_loss_prevention_inspect_template.json
+var googleDataLossPreventionInspectTemplate []byte
+
+//go:embed mapping/google/resource/dlp/google_data_loss_prevention_job_trigger.json
+var googleDataLossPreventionJobTrigger []byte
+
+//go:embed mapping/google/resource/dlp/google_data_loss_prevention_stored_info_type.json
+var googleDataLossPreventionStoredInfoType []byte
+
+//go:embed mapping/google/resource/parametermanager/google_parameter_manager_parameter.json
+var googleParameterManagerParameter []byte
+
+//go:embed mapping/google/resource/parametermanager/google_parameter_manager_parameter_version.json
+var googleParameterManagerParameterVersion []byte
+
+//go:embed mapping/google/resource/parametermanager/google_parameter_manager_regional_parameter.json
+var googleParameterManagerRegionalParameter []byte
+
+//go:embed mapping/google/resource/parametermanager/google_parameter_manager_regional_parameter_version.json
+var googleParameterManagerRegionalParameterVersion []byte

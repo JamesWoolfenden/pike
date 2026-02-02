@@ -2,12 +2,10 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 75.35      |   972       |  1290            |
+| Resources  | 76.08      |   983       |  1292            |
 | Datasource | 99.76      |   410       |   411             |
 
 ```shell
-./resource.ps1 google_cloud_identity_group
-./resource.ps1 google_cloud_identity_group_membership
 ./resource.ps1 google_cloud_ids_endpoint
 ./resource.ps1 google_cloud_quotas_quota_adjuster_settings
 ./resource.ps1 google_cloud_quotas_quota_preference
@@ -124,16 +122,12 @@
 ./resource.ps1 google_container_azure_client
 ./resource.ps1 google_container_azure_cluster
 ./resource.ps1 google_container_azure_node_pool
-./resource.ps1 google_data_loss_prevention_deidentify_template
-./resource.ps1 google_data_loss_prevention_discovery_config
-./resource.ps1 google_data_loss_prevention_inspect_template
-./resource.ps1 google_data_loss_prevention_job_trigger
-./resource.ps1 google_data_loss_prevention_stored_info_type
 ./resource.ps1 google_data_pipeline_pipeline
 ./resource.ps1 google_database_migration_service_connection_profile
 ./resource.ps1 google_database_migration_service_migration_job
 ./resource.ps1 google_database_migration_service_private_connection
 ./resource.ps1 google_dataflow_flex_template_job
+./resource.ps1 google_dataplex_data_asset
 ./resource.ps1 google_dataplex_data_product
 ./resource.ps1 google_dataplex_entry_link
 ./resource.ps1 google_dataproc_gdc_application_environment
@@ -209,6 +203,7 @@
 ./resource.ps1 google_logging_folder_bucket_config
 ./resource.ps1 google_logging_organization_bucket_config
 ./resource.ps1 google_logging_project_bucket_config
+./resource.ps1 google_logging_saved_query
 ./resource.ps1 google_netapp_active_directory
 ./resource.ps1 google_netapp_backup
 ./resource.ps1 google_netapp_backup_vault
@@ -296,10 +291,6 @@
 ./resource.ps1 google_organization_iam_audit_config
 ./resource.ps1 google_organization_iam_custom_role
 ./resource.ps1 google_organization_policy
-./resource.ps1 google_parameter_manager_parameter
-./resource.ps1 google_parameter_manager_parameter_version
-./resource.ps1 google_parameter_manager_regional_parameter
-./resource.ps1 google_parameter_manager_regional_parameter_version
 ./resource.ps1 google_resource_manager_capability
 ./resource.ps1 google_resource_manager_lien
 ./resource.ps1 google_saas_runtime_release

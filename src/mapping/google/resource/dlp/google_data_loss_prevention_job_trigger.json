@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "dlp.jobTriggers.create",
+      "dlp.jobTriggers.delete",
+      "dlp.jobTriggers.get",
+      "dlp.jobTriggers.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

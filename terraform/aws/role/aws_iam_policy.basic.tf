@@ -7,13 +7,9 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "VisualEditor0",
         "Effect" : "Allow",
         "Action" : [
-          //aws_vpn_connection
-          "ec2:DescribeVpnConnections",
-          //aws_rds_global_cluster
-          "rds:DescribeGlobalClusters",
-          //aws_ecrpublic_images
-          "ecr-public:DescribeImages"
 
+          //aws_s3control_multi_region_access_points
+          "s3:ListMultiRegionAccessPoints"
         ],
         "Resource" : [
           "*"
