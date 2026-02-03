@@ -2766,3 +2766,45 @@ var googleDataplexDataAsset []byte
 
 //go:embed mapping/google/resource/dataplex/google_dataplex_entry_link.json
 var googleDataplexEntryLink []byte
+
+//go:embed mapping/google/resource/oracledatabase/google_oracle_database_autonomous_database.json
+var googleOracleDatabaseAutonomousDatabase []byte
+
+//go:embed mapping/google/resource/oracledatabase/google_oracle_database_cloud_exadata_infrastructure.json
+var googleOracleDatabaseCloudExadataInfrastructure []byte
+
+//go:embed mapping/google/resource/oracledatabase/google_oracle_database_cloud_vm_cluster.json
+var googleOracleDatabaseCloudVmCluster []byte
+
+//go:embed mapping/google/resource/oracledatabase/google_oracle_database_db_system.json
+var googleOracleDatabaseDbSystem []byte
+
+//go:embed mapping/google/resource/oracledatabase/google_oracle_database_exascale_db_storage_vault.json
+var googleOracleDatabaseExascaleDbStorageVault []byte
+
+//go:embed mapping/google/resource/oracledatabase/google_oracle_database_odb_network.json
+var googleOracleDatabaseOdbNetwork []byte
+
+//go:embed mapping/google/resource/oracledatabase/google_oracle_database_odb_subnet.json
+var googleOracleDatabaseOdbSubnet []byte
+
+//go:embed mapping/google/resource/saasservicemgmt/google_saas_runtime_release.json
+var googleSaasRuntimeRelease []byte
+
+//go:embed mapping/google/resource/saasservicemgmt/google_saas_runtime_rollout_kind.json
+var googleSaasRuntimeRolloutKind []byte
+
+//go:embed mapping/google/resource/saasservicemgmt/google_saas_runtime_saas.json
+var googleSaasRuntimeSaas []byte
+
+//go:embed mapping/google/resource/saasservicemgmt/google_saas_runtime_tenant.json
+var googleSaasRuntimeTenant []byte
+
+//go:embed mapping/google/resource/saasservicemgmt/google_saas_runtime_unit.json
+var googleSaasRuntimeUnit []byte
+
+//go:embed mapping/google/resource/saasservicemgmt/google_saas_runtime_unit_kind.json
+var googleSaasRuntimeUnitKind []byte
+
+//go:embed mapping/google/resource/saasservicemgmt/google_saas_runtime_unit_operation.json
+var googleSaasRuntimeUnitOperation []byte

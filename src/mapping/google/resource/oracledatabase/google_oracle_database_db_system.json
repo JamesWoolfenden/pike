@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "oracledatabase.dbSystems.create",
+      "oracledatabase.dbSystems.delete",
+      "oracledatabase.dbSystems.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

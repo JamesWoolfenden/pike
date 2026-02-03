@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "saasservicemgmt.releases.create",
+      "saasservicemgmt.releases.delete",
+      "saasservicemgmt.releases.get",
+      "saasservicemgmt.releases.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

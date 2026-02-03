@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "saasservicemgmt.unitKinds.create",
+      "saasservicemgmt.unitKinds.delete",
+      "saasservicemgmt.unitKinds.get",
+      "saasservicemgmt.unitKinds.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

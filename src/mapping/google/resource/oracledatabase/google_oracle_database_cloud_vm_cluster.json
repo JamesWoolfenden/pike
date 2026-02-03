@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "oracledatabase.cloudVmClusters.create",
+      "oracledatabase.cloudVmClusters.delete",
+      "oracledatabase.cloudVmClusters.get",
+      "oracledatabase.cloudVmClusters.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

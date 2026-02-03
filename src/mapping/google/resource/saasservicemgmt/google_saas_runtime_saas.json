@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "saasservicemgmt.saas.create",
+      "saasservicemgmt.saas.delete",
+      "saasservicemgmt.saas.get",
+      "saasservicemgmt.saas.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,1 @@
+resource "google_oracle_database_cloud_exadata_infrastructure" "pike" {}

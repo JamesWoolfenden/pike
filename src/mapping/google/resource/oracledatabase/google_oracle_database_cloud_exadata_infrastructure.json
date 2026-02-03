@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "oracledatabase.cloudExadataInfrastructures.create",
+      "oracledatabase.cloudExadataInfrastructures.delete",
+      "oracledatabase.cloudExadataInfrastructures.get",
+      "oracledatabase.cloudExadataInfrastructures.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

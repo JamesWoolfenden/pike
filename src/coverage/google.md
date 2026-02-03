@@ -2,7 +2,7 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 76.70      |   991       |  1292            |
+| Resources  | 77.79      |  1005       |  1292            |
 | Datasource | 99.76      |   410       |   411             |
 
 ```shell
@@ -270,13 +270,6 @@
 ./resource.ps1 google_network_services_tcp_route
 ./resource.ps1 google_network_services_tls_route
 ./resource.ps1 google_network_services_wasm_plugin
-./resource.ps1 google_oracle_database_autonomous_database
-./resource.ps1 google_oracle_database_cloud_exadata_infrastructure
-./resource.ps1 google_oracle_database_cloud_vm_cluster
-./resource.ps1 google_oracle_database_db_system
-./resource.ps1 google_oracle_database_exascale_db_storage_vault
-./resource.ps1 google_oracle_database_odb_network
-./resource.ps1 google_oracle_database_odb_subnet
 ./resource.ps1 google_org_policy_custom_constraint
 ./resource.ps1 google_org_policy_policy
 ./resource.ps1 google_organization_access_approval_settings
@@ -285,13 +278,6 @@
 ./resource.ps1 google_organization_policy
 ./resource.ps1 google_resource_manager_capability
 ./resource.ps1 google_resource_manager_lien
-./resource.ps1 google_saas_runtime_release
-./resource.ps1 google_saas_runtime_rollout_kind
-./resource.ps1 google_saas_runtime_saas
-./resource.ps1 google_saas_runtime_tenant
-./resource.ps1 google_saas_runtime_unit
-./resource.ps1 google_saas_runtime_unit_kind
-./resource.ps1 google_saas_runtime_unit_operation
 ./resource.ps1 google_secure_source_manager_hook
 ./resource.ps1 google_security_scanner_scan_config
 ./resource.ps1 google_securityposture_posture
