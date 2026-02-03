@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "dataplex.entryLinks.create",
+      "dataplex.entryLinks.delete",
+      "dataplex.entryLinks.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

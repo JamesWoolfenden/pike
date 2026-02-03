@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "dataplex.dataProducts.create",
+      "dataplex.dataProducts.delete",
+      "dataplex.dataProducts.get",
+      "dataplex.dataProducts.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

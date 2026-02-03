@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "datamigration.connectionprofiles.create",
+      "datamigration.connectionprofiles.delete",
+      "datamigration.connectionprofiles.get",
+      "datamigration.connectionprofiles.update",
+      "datamigration.operations.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

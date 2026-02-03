@@ -2,7 +2,7 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 76.08      |   983       |  1292            |
+| Resources  | 76.70      |   991       |  1292            |
 | Datasource | 99.76      |   410       |   411             |
 
 ```shell
@@ -122,14 +122,6 @@
 ./resource.ps1 google_container_azure_client
 ./resource.ps1 google_container_azure_cluster
 ./resource.ps1 google_container_azure_node_pool
-./resource.ps1 google_data_pipeline_pipeline
-./resource.ps1 google_database_migration_service_connection_profile
-./resource.ps1 google_database_migration_service_migration_job
-./resource.ps1 google_database_migration_service_private_connection
-./resource.ps1 google_dataflow_flex_template_job
-./resource.ps1 google_dataplex_data_asset
-./resource.ps1 google_dataplex_data_product
-./resource.ps1 google_dataplex_entry_link
 ./resource.ps1 google_dataproc_gdc_application_environment
 ./resource.ps1 google_dataproc_gdc_service_instance
 ./resource.ps1 google_dataproc_gdc_spark_application

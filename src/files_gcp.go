@@ -2742,3 +2742,27 @@ var googleParameterManagerRegionalParameter []byte
 
 //go:embed mapping/google/resource/parametermanager/google_parameter_manager_regional_parameter_version.json
 var googleParameterManagerRegionalParameterVersion []byte
+
+//go:embed mapping/google/resource/datapipelines/google_data_pipeline_pipeline.json
+var googleDataPipelinePipeline []byte
+
+//go:embed mapping/google/resource/datamigration/google_database_migration_service_connection_profile.json
+var googleDatabaseMigrationServiceConnectionProfile []byte
+
+//go:embed mapping/google/resource/datamigration/google_database_migration_service_migration_job.json
+var googleDatabaseMigrationServiceMigrationJob []byte
+
+//go:embed mapping/google/resource/datamigration/google_database_migration_service_private_connection.json
+var googleDatabaseMigrationServicePrivateConnection []byte
+
+//go:embed mapping/google/resource/dataflow/google_dataflow_flex_template_job.json
+var googleDataflowFlexTemplateJob []byte
+
+//go:embed mapping/google/resource/dataplex/google_dataplex_data_product.json
+var googleDataplexDataProduct []byte
+
+//go:embed mapping/google/resource/dataplex/google_dataplex_data_asset.json
+var googleDataplexDataAsset []byte
+
+//go:embed mapping/google/resource/dataplex/google_dataplex_entry_link.json
+var googleDataplexEntryLink []byte

@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "datamigration.migrationjobs.create",
+      "datamigration.migrationjobs.delete",
+      "datamigration.migrationjobs.get",
+      "datamigration.migrationjobs.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

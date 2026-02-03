@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "datapipelines.pipelines.create",
+      "datapipelines.pipelines.update",
+      "datapipelines.pipelines.get",
+      "datapipelines.pipelines.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

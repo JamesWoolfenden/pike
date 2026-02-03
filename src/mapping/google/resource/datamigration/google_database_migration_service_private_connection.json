@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "datamigration.privateconnections.get",
+      "datamigration.privateconnections.delete",
+      "datamigration.privateconnections.create",
+      "datamigration.operations.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

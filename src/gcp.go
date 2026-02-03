@@ -1092,4 +1092,12 @@ var gCPTfLookup = map[string]interface{}{
 	"google_parameter_manager_regional_parameter_version":                        googleParameterManagerRegionalParameterVersion,
 	"google_cloud_identity_group":                                                placeholder,
 	"google_cloud_identity_group_membership":                                     placeholder,
+	"google_data_pipeline_pipeline":                                              googleDataPipelinePipeline,
+	"google_database_migration_service_connection_profile":                       googleDatabaseMigrationServiceConnectionProfile,
+	"google_database_migration_service_migration_job":                            googleDatabaseMigrationServiceMigrationJob,
+	"google_database_migration_service_private_connection":                       googleDatabaseMigrationServicePrivateConnection,
+	"google_dataflow_flex_template_job":                                          googleDataflowFlexTemplateJob,
+	"google_dataplex_data_product":                                               googleDataplexDataProduct,
+	"google_dataplex_data_asset":                                                 googleDataplexDataAsset,
+	"google_dataplex_entry_link":                                                 googleDataplexEntryLink,
 }
