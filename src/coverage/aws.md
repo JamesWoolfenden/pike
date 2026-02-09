@@ -3,7 +3,7 @@
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
 | Resources  | 93.96      |  1508       |  1605            |
-| Datasource | 100.00      |   641       |   641             |
+| Datasource | 99.84      |   641       |   642             |
 
 ```shell
 ./resource.ps1 aws_alb
@@ -103,4 +103,5 @@
 ./resource.ps1 aws_workspacesweb_trust_store_association
 ./resource.ps1 aws_workspacesweb_user_access_logging_settings_association
 ./resource.ps1 aws_workspacesweb_user_settings_association
+./resource.ps1 aws_account_regions -type data
 ```

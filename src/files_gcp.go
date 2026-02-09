@@ -2767,6 +2767,36 @@ var googleDataplexDataAsset []byte
 //go:embed mapping/google/resource/dataplex/google_dataplex_entry_link.json
 var googleDataplexEntryLink []byte
 
+//go:embed mapping/google/resource/vmwareengine/google_vmwareengine_datastore.json
+var googleVmwareengineDatastore []byte
+
+//go:embed mapping/google/resource/cloudtasks/google_cloud_tasks_queue.json
+var googleCloudTasksQueue []byte
+
+//go:embed mapping/google/resource/clouddeploy/google_clouddeploy_automation.json
+var googleClouddeployAutomation []byte
+
+//go:embed mapping/google/resource/clouddeploy/google_clouddeploy_custom_target_type.json
+var googleClouddeployCustomTargetType []byte
+
+//go:embed mapping/google/resource/clouddeploy/google_clouddeploy_delivery_pipeline.json
+var googleClouddeployDeliveryPipeline []byte
+
+//go:embed mapping/google/resource/clouddeploy/google_clouddeploy_deploy_policy.json
+var googleClouddeployDeployPolicy []byte
+
+//go:embed mapping/google/resource/clouddeploy/google_clouddeploy_target.json
+var googleClouddeployTarget []byte
+
+//go:embed mapping/google/resource/datastream/google_datastream_connection_profile.json
+var googleDatastreamConnectionProfile []byte
+
+//go:embed mapping/google/resource/datastream/google_datastream_private_connection.json
+var googleDatastreamPrivateConnection []byte
+
+//go:embed mapping/google/resource/datastream/google_datastream_stream.json
+var googleDatastreamStream []byte
+
 //go:embed mapping/google/resource/oracledatabase/google_oracle_database_autonomous_database.json
 var googleOracleDatabaseAutonomousDatabase []byte
 

@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "datastream.privateConnections.create",
+      "datastream.privateConnections.get",
+      "datastream.privateConnections.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

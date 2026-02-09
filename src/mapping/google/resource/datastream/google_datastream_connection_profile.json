@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "datastream.connectionProfiles.create",
+      "datastream.connectionProfiles.delete",
+      "datastream.connectionProfiles.get",
+      "datastream.connectionProfiles.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1029,3 +1029,6 @@ var dataGoogleBiglakeIcebergCatalogIamPolicy []byte
 
 //go:embed mapping/google/data/compute/google_compute_routers.json
 var dataGoogleComputeRouters []byte
+
+//go:embed mapping/google/data/vmwareengine/google_vmwareengine_datastore.json
+var dataGoogleVmwareengineDatastore []byte

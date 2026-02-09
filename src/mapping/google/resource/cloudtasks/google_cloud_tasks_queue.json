@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "cloudtasks.queues.create",
+      "cloudtasks.queues.get",
+      "cloudtasks.queues.update",
+      "cloudtasks.queues.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

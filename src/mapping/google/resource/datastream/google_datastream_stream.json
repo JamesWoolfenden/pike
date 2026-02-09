@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "datastream.streams.delete",
+      "datastream.streams.get",
+      "datastream.streams.create",
+      "datastream.streams.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

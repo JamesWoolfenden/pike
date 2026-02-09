@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "clouddeploy.customTargetTypes.create",
+      "clouddeploy.customTargetTypes.delete",
+      "clouddeploy.customTargetTypes.get",
+      "clouddeploy.customTargetTypes.update",
+      "clouddeploy.operations.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

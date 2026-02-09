@@ -2,8 +2,8 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 77.79      |  1005       |  1292            |
-| Datasource | 99.76      |   410       |   411             |
+| Resources  | 78.50      |  1015       |  1293            |
+| Datasource | 100.00      |   411       |   411             |
 
 ```shell
 ./resource.ps1 google_cloud_ids_endpoint
@@ -12,14 +12,8 @@
 ./resource.ps1 google_cloud_security_compliance_cloud_control
 ./resource.ps1 google_cloud_security_compliance_framework
 ./resource.ps1 google_cloud_security_compliance_framework_deployment
-./resource.ps1 google_cloud_tasks_queue
 ./resource.ps1 google_cloudbuild_bitbucket_server_config
 ./resource.ps1 google_cloudbuild_worker_pool
-./resource.ps1 google_clouddeploy_automation
-./resource.ps1 google_clouddeploy_custom_target_type
-./resource.ps1 google_clouddeploy_delivery_pipeline
-./resource.ps1 google_clouddeploy_deploy_policy
-./resource.ps1 google_clouddeploy_target
 ./resource.ps1 google_clouddomains_registration
 ./resource.ps1 google_colab_notebook_execution
 ./resource.ps1 google_colab_runtime
@@ -127,9 +121,6 @@
 ./resource.ps1 google_dataproc_gdc_spark_application
 ./resource.ps1 google_dataproc_metastore_federation
 ./resource.ps1 google_dataproc_metastore_service
-./resource.ps1 google_datastream_connection_profile
-./resource.ps1 google_datastream_private_connection
-./resource.ps1 google_datastream_stream
 ./resource.ps1 google_dialogflow_cx_tool_version
 ./resource.ps1 google_dialogflow_generator
 ./resource.ps1 google_dialogflow_version
@@ -270,6 +261,7 @@
 ./resource.ps1 google_network_services_tcp_route
 ./resource.ps1 google_network_services_tls_route
 ./resource.ps1 google_network_services_wasm_plugin
+./resource.ps1 google_oracle_database_exadb_vm_cluster
 ./resource.ps1 google_org_policy_custom_constraint
 ./resource.ps1 google_org_policy_policy
 ./resource.ps1 google_organization_access_approval_settings
@@ -292,6 +284,4 @@
 ./resource.ps1 google_storage_object_acl
 ./resource.ps1 google_storage_transfer_agent_pool
 ./resource.ps1 google_storage_transfer_job
-./resource.ps1 google_vmwareengine_datastore
-./resource.ps1 google_vmwareengine_datastore -type data
 ```
