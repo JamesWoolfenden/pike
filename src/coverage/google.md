@@ -2,8 +2,8 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 76.70      |   991       |  1292            |
-| Datasource | 99.76      |   410       |   411             |
+| Resources  | 76.72      |   992       |  1293            |
+| Datasource | 100.00      |   411       |   411             |
 
 ```shell
 ./resource.ps1 google_cloud_ids_endpoint
@@ -274,6 +274,7 @@
 ./resource.ps1 google_oracle_database_cloud_exadata_infrastructure
 ./resource.ps1 google_oracle_database_cloud_vm_cluster
 ./resource.ps1 google_oracle_database_db_system
+./resource.ps1 google_oracle_database_exadb_vm_cluster
 ./resource.ps1 google_oracle_database_exascale_db_storage_vault
 ./resource.ps1 google_oracle_database_odb_network
 ./resource.ps1 google_oracle_database_odb_subnet
@@ -306,6 +307,4 @@
 ./resource.ps1 google_storage_object_acl
 ./resource.ps1 google_storage_transfer_agent_pool
 ./resource.ps1 google_storage_transfer_job
-./resource.ps1 google_vmwareengine_datastore
-./resource.ps1 google_vmwareengine_datastore -type data
 ```

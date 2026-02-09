@@ -1100,4 +1100,5 @@ var gCPTfLookup = map[string]interface{}{
 	"google_dataplex_data_product":                                               googleDataplexDataProduct,
 	"google_dataplex_data_asset":                                                 googleDataplexDataAsset,
 	"google_dataplex_entry_link":                                                 googleDataplexEntryLink,
+	"google_vmwareengine_datastore":                                              googleVmwareengineDatastore,
 }

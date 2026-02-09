@@ -436,6 +436,7 @@ func GCPDataLookup(result string) interface{} {
 		"google_cloud_identity_policies":                               placeholder,
 		"google_biglake_iceberg_catalog_iam_policy":                    dataGoogleBiglakeIcebergCatalogIamPolicy,
 		"google_compute_routers":                                       dataGoogleComputeRouters,
+		"google_vmwareengine_datastore":                                dataGoogleVmwareengineDatastore,
 	}
 
 	return TFLookup[result]

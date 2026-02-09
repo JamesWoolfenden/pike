@@ -2766,3 +2766,6 @@ var googleDataplexDataAsset []byte
 
 //go:embed mapping/google/resource/dataplex/google_dataplex_entry_link.json
 var googleDataplexEntryLink []byte
+
+//go:embed mapping/google/resource/vmwareengine/google_vmwareengine_datastore.json
+var googleVmwareengineDatastore []byte

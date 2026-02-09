@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "vmwareengine.datastores.get",
+      "vmwareengine.datastores.create",
+      "vmwareengine.datastores.delete",
+      "vmwareengine.datastores.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
