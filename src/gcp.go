@@ -1101,4 +1101,13 @@ var gCPTfLookup = map[string]interface{}{
 	"google_dataplex_data_asset":                                                 googleDataplexDataAsset,
 	"google_dataplex_entry_link":                                                 googleDataplexEntryLink,
 	"google_vmwareengine_datastore":                                              googleVmwareengineDatastore,
+	"google_cloud_tasks_queue":                                                   googleCloudTasksQueue,
+	"google_clouddeploy_automation":                                              googleClouddeployAutomation,
+	"google_clouddeploy_custom_target_type":                                      googleClouddeployCustomTargetType,
+	"google_clouddeploy_delivery_pipeline":                                       googleClouddeployDeliveryPipeline,
+	"google_clouddeploy_deploy_policy":                                           googleClouddeployDeployPolicy,
+	"google_clouddeploy_target":                                                  googleClouddeployTarget,
+	"google_datastream_connection_profile":                                       googleDatastreamConnectionProfile,
+	"google_datastream_private_connection":                                       googleDatastreamPrivateConnection,
+	"google_datastream_stream":                                                   googleDatastreamStream,
 }

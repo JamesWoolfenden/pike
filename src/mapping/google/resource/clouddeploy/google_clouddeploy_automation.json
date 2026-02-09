@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "clouddeploy.automations.create",
+      "clouddeploy.automations.get",
+      "clouddeploy.automations.update",
+      "clouddeploy.automations.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

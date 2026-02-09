@@ -2,7 +2,7 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 76.72      |   992       |  1293            |
+| Resources  | 77.42      |  1001       |  1293            |
 | Datasource | 100.00      |   411       |   411             |
 
 ```shell
@@ -12,14 +12,8 @@
 ./resource.ps1 google_cloud_security_compliance_cloud_control
 ./resource.ps1 google_cloud_security_compliance_framework
 ./resource.ps1 google_cloud_security_compliance_framework_deployment
-./resource.ps1 google_cloud_tasks_queue
 ./resource.ps1 google_cloudbuild_bitbucket_server_config
 ./resource.ps1 google_cloudbuild_worker_pool
-./resource.ps1 google_clouddeploy_automation
-./resource.ps1 google_clouddeploy_custom_target_type
-./resource.ps1 google_clouddeploy_delivery_pipeline
-./resource.ps1 google_clouddeploy_deploy_policy
-./resource.ps1 google_clouddeploy_target
 ./resource.ps1 google_clouddomains_registration
 ./resource.ps1 google_colab_notebook_execution
 ./resource.ps1 google_colab_runtime
@@ -127,9 +121,6 @@
 ./resource.ps1 google_dataproc_gdc_spark_application
 ./resource.ps1 google_dataproc_metastore_federation
 ./resource.ps1 google_dataproc_metastore_service
-./resource.ps1 google_datastream_connection_profile
-./resource.ps1 google_datastream_private_connection
-./resource.ps1 google_datastream_stream
 ./resource.ps1 google_dialogflow_cx_tool_version
 ./resource.ps1 google_dialogflow_generator
 ./resource.ps1 google_dialogflow_version

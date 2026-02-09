@@ -5,14 +5,25 @@ resource "google_project_iam_custom_role" "terraform_pike" {
   title       = "terraform_pike"
   description = "A user with least privileges"
   permissions = [
-    //google_vmwareengine_datastore -- data
-    "vmwareengine.datastores.get",
 
-    //google_vmwareengine_datastore
-    "vmwareengine.datastores.get",
-    "vmwareengine.datastores.create",
-    "vmwareengine.datastores.delete",
-    "vmwareengine.datastores.update"
+    //google_cloud_tasks_queue
+
+
+    //google_clouddeploy_custom_target_type
+
+
+    //google_clouddeploy_delivery_pipeline
+
+    //google_clouddeploy_deploy_policy
+
+    //google_clouddeploy_target
+
+
+
+    //google_clouddeploy_automation
+
+
+    "iam.serviceAccounts.actAs",
 
   ]
 }

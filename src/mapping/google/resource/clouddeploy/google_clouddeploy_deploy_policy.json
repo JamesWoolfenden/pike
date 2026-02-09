@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "clouddeploy.deployPolicies.update",
+      "clouddeploy.deployPolicies.create",
+      "clouddeploy.deployPolicies.get",
+      "clouddeploy.deployPolicies.delete",
+      "clouddeploy.operations.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

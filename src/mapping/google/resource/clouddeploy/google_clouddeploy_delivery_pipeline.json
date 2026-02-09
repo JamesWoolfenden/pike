@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "clouddeploy.deliveryPipelines.get",
+      "clouddeploy.deliveryPipelines.update",
+      "clouddeploy.deliveryPipelines.create",
+      "clouddeploy.deliveryPipelines.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
