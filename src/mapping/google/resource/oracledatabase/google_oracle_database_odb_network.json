@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "oracledatabase.odbNetworks.create",
+      "oracledatabase.odbNetworks.delete",
+      "oracledatabase.odbNetworks.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

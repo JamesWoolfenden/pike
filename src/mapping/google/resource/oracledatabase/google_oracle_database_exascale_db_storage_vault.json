@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "oracledatabase.exascaleDbStorageVaults.create",
+      "oracledatabase.exascaleDbStorageVaults.delete",
+      "oracledatabase.exascaleDbStorageVaults.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "saasservicemgmt.rolloutKinds.create",
+      "saasservicemgmt.rolloutKinds.delete",
+      "saasservicemgmt.rolloutKinds.get",
+      "saasservicemgmt.rolloutKinds.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

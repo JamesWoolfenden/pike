@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "oracledatabase.odbSubnets.create",
+      "oracledatabase.odbSubnets.delete",
+      "oracledatabase.odbSubnets.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

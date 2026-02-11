@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "oracledatabase.autonomousDatabases.create",
+      "oracledatabase.autonomousDatabases.delete",
+      "oracledatabase.autonomousDatabases.get",
+      "oracledatabase.autonomousDatabases.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
