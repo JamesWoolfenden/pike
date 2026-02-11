@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "cloudsecuritycompliance.frameworks.create",
+      "cloudsecuritycompliance.frameworks.delete",
+      "cloudsecuritycompliance.frameworks.update",
+      "cloudsecuritycompliance.frameworks.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

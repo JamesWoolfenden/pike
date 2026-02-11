@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "cloudbuild.integrations.create",
+      "cloudbuild.integrations.delete",
+      "cloudbuild.integrations.get",
+      "cloudbuild.integrations.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

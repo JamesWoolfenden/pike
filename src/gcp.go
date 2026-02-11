@@ -1110,4 +1110,13 @@ var gCPTfLookup = map[string]interface{}{
 	"google_datastream_connection_profile":                                       googleDatastreamConnectionProfile,
 	"google_datastream_private_connection":                                       googleDatastreamPrivateConnection,
 	"google_datastream_stream":                                                   googleDatastreamStream,
+	"google_colab_notebook_execution":                                            googleColabNotebookExecution,
+	"google_colab_runtime":                                                       googleColabRuntime,
+	"google_colab_runtime_template":                                              googleColabRuntimeTemplate,
+	"google_colab_schedule":                                                      googleColabSchedule,
+	"google_cloud_security_compliance_cloud_control":                             googleCloudSecurityComplianceCloudControl,
+	"google_cloud_security_compliance_framework":                                 googleCloudSecurityComplianceFramework,
+	"google_cloud_security_compliance_framework_deployment":                      googleCloudSecurityComplianceFrameworkDeployment,
+	"google_cloudbuild_bitbucket_server_config":                                  googleCloudbuildBitbucketServerConfig,
+	"google_cloudbuild_worker_pool":                                              googleCloudbuildWorkerPool,
 }

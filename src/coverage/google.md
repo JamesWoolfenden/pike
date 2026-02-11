@@ -2,23 +2,14 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 77.42      |  1001       |  1293            |
+| Resources  | 78.11      |  1010       |  1293            |
 | Datasource | 100.00      |   411       |   411             |
 
 ```shell
 ./resource.ps1 google_cloud_ids_endpoint
 ./resource.ps1 google_cloud_quotas_quota_adjuster_settings
 ./resource.ps1 google_cloud_quotas_quota_preference
-./resource.ps1 google_cloud_security_compliance_cloud_control
-./resource.ps1 google_cloud_security_compliance_framework
-./resource.ps1 google_cloud_security_compliance_framework_deployment
-./resource.ps1 google_cloudbuild_bitbucket_server_config
-./resource.ps1 google_cloudbuild_worker_pool
 ./resource.ps1 google_clouddomains_registration
-./resource.ps1 google_colab_notebook_execution
-./resource.ps1 google_colab_runtime
-./resource.ps1 google_colab_runtime_template
-./resource.ps1 google_colab_schedule
 ./resource.ps1 google_compute_attached_disk
 ./resource.ps1 google_compute_autoscaler
 ./resource.ps1 google_compute_backend_bucket_signed_url_key

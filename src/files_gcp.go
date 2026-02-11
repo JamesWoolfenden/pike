@@ -2796,3 +2796,30 @@ var googleDatastreamPrivateConnection []byte
 
 //go:embed mapping/google/resource/datastream/google_datastream_stream.json
 var googleDatastreamStream []byte
+
+//go:embed mapping/google/resource/aiplatform/google_colab_notebook_execution.json
+var googleColabNotebookExecution []byte
+
+//go:embed mapping/google/resource/aiplatform/google_colab_runtime.json
+var googleColabRuntime []byte
+
+//go:embed mapping/google/resource/aiplatform/google_colab_runtime_template.json
+var googleColabRuntimeTemplate []byte
+
+//go:embed mapping/google/resource/aiplatform/google_colab_schedule.json
+var googleColabSchedule []byte
+
+//go:embed mapping/google/resource/cloudsecuritycompliance/google_cloud_security_compliance_cloud_control.json
+var googleCloudSecurityComplianceCloudControl []byte
+
+//go:embed mapping/google/resource/cloudsecuritycompliance/google_cloud_security_compliance_framework.json
+var googleCloudSecurityComplianceFramework []byte
+
+//go:embed mapping/google/resource/cloudsecuritycompliance/google_cloud_security_compliance_framework_deployment.json
+var googleCloudSecurityComplianceFrameworkDeployment []byte
+
+//go:embed mapping/google/resource/cloudbuild/google_cloudbuild_bitbucket_server_config.json
+var googleCloudbuildBitbucketServerConfig []byte
+
+//go:embed mapping/google/resource/cloudbuild/google_cloudbuild_worker_pool.json
+var googleCloudbuildWorkerPool []byte

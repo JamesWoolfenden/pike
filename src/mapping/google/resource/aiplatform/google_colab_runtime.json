@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "aiplatform.notebookRuntimes.assign",
+      "aiplatform.notebookRuntimes.get",
+      "aiplatform.notebookRuntimes.delete",
+      "aiplatform.notebookRuntimes.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,64 @@
+
+resource "google_storage_bucket" "output_bucket" {
+  name                        = "my_bucket_jgw_20"
+  location                    = "US"
+  force_destroy               = true
+  uniform_bucket_level_access = true
+}
+
+resource "google_colab_notebook_execution" "notebook-execution" {
+  display_name = "Notebook execution basic"
+  location     = "us-central1"
+
+  direct_notebook_source {
+    content = base64encode(<<EOT
+    {
+      "cells": [
+        {
+          "cell_type": "code",
+          "execution_count": null,
+          "metadata": {},
+          "outputs": [],
+          "source": [
+            "print(\"Hello, World!\")"
+          ]
+        }
+      ],
+      "metadata": {
+        "kernelspec": {
+          "display_name": "Python 3",
+          "language": "python",
+          "name": "python3"
+        },
+        "language_info": {
+          "codemirror_mode": {
+            "name": "ipython",
+            "version": 3
+          },
+          "file_extension": ".py",
+          "mimetype": "text/x-python",
+          "name": "python",
+          "nbconvert_exporter": "python",
+          "pygments_lexer": "ipython3",
+          "version": "3.8.5"
+        }
+      },
+      "nbformat": 4,
+      "nbformat_minor": 4
+    }
+    EOT
+    )
+  }
+
+  notebook_runtime_template_resource_name = "projects/${google_colab_runtime_template.my_template.project}/locations/${google_colab_runtime_template.my_template.location}/notebookRuntimeTemplates/${google_colab_runtime_template.my_template.name}"
+
+  gcs_output_uri = "gs://${google_storage_bucket.output_bucket.name}"
+
+  service_account = "pike-service@pike-477416.iam.gserviceaccount.com"
+
+  depends_on = [
+    google_colab_runtime_template.my_template,
+    google_storage_bucket.output_bucket,
+  ]
+
+}

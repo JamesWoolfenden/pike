@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "cloudbuild.workerpools.get",
+      "cloudbuild.workerpools.create",
+      "cloudbuild.workerpools.update",
+      "cloudbuild.workerpools.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

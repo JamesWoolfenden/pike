@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "aiplatform.pipelineJobs.create",
+      "aiplatform.pipelineJobs.get",
+      "aiplatform.pipelineJobs.delete",
+      "aiplatform.schedules.create",
+      "aiplatform.schedules.get",
+      "aiplatform.schedules.update",
+      "aiplatform.schedules.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

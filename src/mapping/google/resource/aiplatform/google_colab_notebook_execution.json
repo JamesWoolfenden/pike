@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "aiplatform.notebookExecutionJobs.create",
+      "aiplatform.notebookExecutionJobs.get",
+      "aiplatform.notebookExecutionJobs.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
