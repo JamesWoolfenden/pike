@@ -2,7 +2,7 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 79.20      |  1024       |  1293            |
+| Resources  | 79.74      |  1031       |  1293            |
 | Datasource | 100.00      |   411       |   411             |
 
 ```shell
@@ -27,10 +27,6 @@
 ./resource.ps1 google_compute_ha_vpn_gateway
 ./resource.ps1 google_compute_instance_from_machine_image
 ./resource.ps1 google_compute_instance_from_template
-./resource.ps1 google_compute_instance_group
-./resource.ps1 google_compute_instance_group_manager
-./resource.ps1 google_compute_instance_group_membership
-./resource.ps1 google_compute_instance_group_named_port
 ./resource.ps1 google_compute_instance_settings
 ./resource.ps1 google_compute_instant_snapshot
 ./resource.ps1 google_compute_interconnect
@@ -87,14 +83,11 @@
 ./resource.ps1 google_compute_service_attachment
 ./resource.ps1 google_compute_shared_vpc_host_project
 ./resource.ps1 google_compute_shared_vpc_service_project
-./resource.ps1 google_compute_snapshot
-./resource.ps1 google_compute_snapshot_settings
 ./resource.ps1 google_compute_ssl_certificate
 ./resource.ps1 google_compute_ssl_policy
 ./resource.ps1 google_compute_storage_pool
 ./resource.ps1 google_compute_target_grpc_proxy
 ./resource.ps1 google_compute_target_instance
-./resource.ps1 google_compute_target_pool
 ./resource.ps1 google_compute_target_ssl_proxy
 ./resource.ps1 google_compute_target_tcp_proxy
 ./resource.ps1 google_compute_vpn_gateway

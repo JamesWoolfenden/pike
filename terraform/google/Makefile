@@ -4,10 +4,10 @@ clean:
 	-rm terraform.tfstate
 	-rm terraform.tfstate.backup
 apply: init
-	tofu apply -auto-approve
+	GOOGLE_BACKEND_CREDENTIALS=$(PIKE_GOOGLE_BACKEND_CREDENTIALS) tofu apply -auto-approve
 
 plan: init
-	tofu plan
+	GOOGLE_BACKEND_CREDENTIALS=$(PIKE_GOOGLE_BACKEND_CREDENTIALS) tofu plan
 
 destroy: init
 	tofu destroy -auto-approve

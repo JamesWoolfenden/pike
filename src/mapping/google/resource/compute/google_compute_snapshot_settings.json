@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "compute.snapshotSettings.get",
+      "compute.snapshotSettings.update",
+      "compute.zoneOperations.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

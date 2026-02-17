@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "compute.instanceGroups.create",
+      "compute.instanceGroups.get",
+      "compute.instanceGroups.update",
+      "compute.instanceGroups.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

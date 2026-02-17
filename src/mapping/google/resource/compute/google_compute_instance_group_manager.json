@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "compute.instanceGroupManagers.create",
+      "compute.instanceGroupManagers.get",
+      "compute.instanceGroupManagers.update",
+      "compute.instanceGroupManagers.delete",
+      "compute.instanceTemplates.useReadOnly",
+      "compute.healthChecks.use"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

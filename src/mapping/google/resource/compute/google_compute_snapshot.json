@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "compute.disks.createSnapshot",
+      "compute.snapshots.create",
+      "compute.snapshots.delete",
+      "compute.snapshots.get",
+      "compute.snapshots.setLabels"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

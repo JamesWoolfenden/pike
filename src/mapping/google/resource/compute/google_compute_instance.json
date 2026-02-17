@@ -10,9 +10,14 @@
       "compute.subnetworks.useExternalIp",
       "compute.instances.setMetadata",
       "compute.instances.delete",
-      "compute.instances.setLabels"
+      "compute.instances.setLabels",
+      "compute.disks.setLabels",
+      "compute.instances.updateNetworkInterface"
     ],
     "attributes": {
+      "allow_stopping_for_update": [
+        "compute.instances.stop"
+      ],
       "tags": [
         "compute.instances.setTags"
       ]

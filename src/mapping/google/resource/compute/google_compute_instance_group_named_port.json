@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "compute.zoneOperations.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

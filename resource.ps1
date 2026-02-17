@@ -335,6 +335,146 @@ function Get-AzurePermissions($resourceName, $provider, $isDataSource)
     }
 }
 
+# Convert resource name to Go variable name (matches release.ps1 logic)
+function Convert-ToVariableName {
+    param(
+        [string]$ResourceName,
+        [string]$Prefix
+    )
+
+    # Remove provider prefix (aws_, azurerm_, google_)
+    $name = $ResourceName -replace '^(aws|azurerm|google)_', ''
+
+    # Split on underscore and convert to PascalCase
+    $parts = $name -split '_'
+    $pascalCase = ($parts | ForEach-Object {
+        if ($_.Length -gt 0) {
+            $_.Substring(0,1).ToUpper() + $_.Substring(1).ToLower()
+        }
+    }) -join ''
+
+    # Handle special cases (common across all providers)
+    $pascalCase = $pascalCase -replace 'Dns', 'DNS'
+    $pascalCase = $pascalCase -replace 'Ip', 'IP'
+    $pascalCase = $pascalCase -replace 'Api', 'API'
+    $pascalCase = $pascalCase -replace 'Sql', 'SQL'
+    $pascalCase = $pascalCase -replace 'Ssh', 'SSH'
+    $pascalCase = $pascalCase -replace 'Hci', 'HCI'
+    $pascalCase = $pascalCase -replace 'Vpc', 'VPC'
+    $pascalCase = $pascalCase -replace 'Acm', 'ACM'
+    $pascalCase = $pascalCase -replace 'Iam', 'IAM'
+    $pascalCase = $pascalCase -replace 'Kms', 'KMS'
+    $pascalCase = $pascalCase -replace 'Ami', 'AMI'
+    $pascalCase = $pascalCase -replace 'Id', 'ID'
+    $pascalCase = $pascalCase -replace 'Ids', 'IDs'
+    $pascalCase = $pascalCase -replace 'V([0-9]+)', 'V$1'  # Preserve version numbers
+
+    return "$Prefix$pascalCase"
+}
+
+# Update the lookup map in the provider's .go file
+function Update-LookupMap {
+    param(
+        [string]$Provider,
+        [string]$ResourceName,
+        [string]$VariableName,
+        [string]$Type,  # "resource" or "data"
+        [string]$BasePath
+    )
+
+    # Provider configurations
+    $providerConfigs = @{
+        aws = @{
+            ResourceLookupFile = "aws.go"
+            ResourceLookupMap = "tFLookup"
+            DataLookupFile = "aws_datasource.go"
+            DataLookupMap = "tFLookupDataAWS"
+        }
+        azurerm = @{
+            ResourceLookupFile = "azure.go"
+            ResourceLookupMap = "tFLookupAzure"
+            DataLookupFile = "azure_datasource.go"
+            DataLookupMap = "TFLookupAzureData"
+        }
+        google = @{
+            ResourceLookupFile = "gcp.go"
+            ResourceLookupMap = "gCPTfLookup"
+            DataLookupFile = "gcp_datasource.go"
+            DataLookupMap = "TFLookup"
+        }
+    }
+
+    $config = $providerConfigs[$Provider]
+    if ($Type -eq "data") {
+        $lookupFile = $config.DataLookupFile
+        $mapName = $config.DataLookupMap
+    } else {
+        $lookupFile = $config.ResourceLookupFile
+        $mapName = $config.ResourceLookupMap
+    }
+
+    $goFilePath = path $BasePath "src" $lookupFile
+
+    if (-not (Test-Path $goFilePath)) {
+        Write-Host "  ⚠ Lookup file not found: $goFilePath" -ForegroundColor Yellow
+        return $false
+    }
+
+    $content = Get-Content $goFilePath -Raw
+
+    # Extract the lookup map
+    $pattern = "(?s)(var $mapName = map\[string\]interface\{\}\{)(.*?)(\n\})"
+
+    if ($content -notmatch $pattern) {
+        Write-Host "  ⚠ Could not find $mapName map in $lookupFile" -ForegroundColor Yellow
+        return $false
+    }
+
+    $mapStart = $Matches[1]
+    $mapContent = $Matches[2]
+    $mapEnd = $Matches[3]
+
+    # Check if entry already exists
+    if ($mapContent -match "`"$ResourceName`":") {
+        Write-Host "  ℹ Entry already exists in $lookupFile" -ForegroundColor Cyan
+        return $true
+    }
+
+    # Parse existing entries
+    $entries = @()
+    $lines = $mapContent -split '\n' | Where-Object { $_ -match '^\s*"' }
+    foreach ($line in $lines) {
+        if ($line -match '^\s*"([^"]+)":\s*(\w+),') {
+            $entries += @{
+                ResourceName = $Matches[1]
+                VariableName = $Matches[2]
+                Line = $line
+            }
+        }
+    }
+
+    # Add new entry
+    $entries += @{
+        ResourceName = $ResourceName
+        VariableName = $VariableName
+        Line = "`t`"$ResourceName`": $VariableName,"
+    }
+
+    # Sort alphabetically by resource name
+    $entries = $entries | Sort-Object ResourceName
+
+    # Rebuild map content
+    $newMapContent = "`n" + (($entries | ForEach-Object { $_.Line }) -join "`n") + "`n"
+
+    # Replace in file
+    $newContent = $content -replace [regex]::Escape($mapStart + $mapContent + $mapEnd), ($mapStart + $newMapContent + $mapEnd)
+
+    $newContent | Out-File -FilePath $goFilePath -Encoding UTF8 -NoNewline
+
+    Write-Host "  ✓ Added entry to $lookupFile" -ForegroundColor Green
+    return $true
+}
+
 # Main script logic
 $provider = $resource.Split("_")[0]
 
@@ -459,13 +599,33 @@ $tffile = path $PSScriptRoot $tffile
 new-item $tffile -value $content -Force | Out-Null
 Write-Host "✓ Created Terraform file: $tffile" -ForegroundColor Green
 
+# Update the lookup map in the provider's .go file
+Write-Host "`nUpdating lookup map..." -ForegroundColor Cyan
+
+# Determine the variable name prefix
+$variablePrefix = @{
+    aws = if ($type -eq "data") { "dataAws" } else { "aws" }
+    azurerm = if ($type -eq "data") { "dataAzurerm" } else { "azurerm" }
+    google = if ($type -eq "data") { "dataGoogle" } else { "google" }
+}
+
+$prefix = $variablePrefix[$provider]
+$varName = Convert-ToVariableName -ResourceName $resource -Prefix $prefix
+
+Write-Host "  Variable name: $varName" -ForegroundColor Gray
+
+$updated = Update-LookupMap -Provider $provider `
+                           -ResourceName $resource `
+                           -VariableName $varName `
+                           -Type $type `
+                           -BasePath $PSScriptRoot
+
 Write-Host "`n✓ Done!" -ForegroundColor Green
 
 Write-Host "`nNext steps:" -ForegroundColor Cyan
 if ($permissions)
 {
     Write-Host "  1. Edit the JSON mapping file to add the permissions shown above" -ForegroundColor Yellow
-    Write-Host "  2. Run: pwsh release.ps1 -Provider $provider  (to update Go embed files)" -ForegroundColor Yellow
 }
 else
 {
@@ -477,7 +637,7 @@ else
     {
         Write-Host "  1. Create the JSON mapping file with appropriate permissions" -ForegroundColor Yellow
     }
-    Write-Host "  2. Run: pwsh release.ps1 -Provider $provider  (to update Go embed files)" -ForegroundColor Yellow
 }
-Write-Host "  3. Test with: go build" -ForegroundColor Yellow
-Write-Host "  4. Test with: go test ./..." -ForegroundColor Yellow
+Write-Host "  2. Move the JSON file to the correct service subdirectory" -ForegroundColor Yellow
+Write-Host "  3. Run: pwsh release.ps1 -Provider $provider  (to update Go embed files)" -ForegroundColor Yellow
+Write-Host "  4. Test with: go build && go test ./..." -ForegroundColor Yellow

@@ -2865,3 +2865,24 @@ var googleSaasRuntimeUnitKind []byte
 
 //go:embed mapping/google/resource/saasservicemgmt/google_saas_runtime_unit_operation.json
 var googleSaasRuntimeUnitOperation []byte
+
+//go:embed mapping/google/resource/compute/google_compute_instance_group.json
+var googleComputeInstanceGroup []byte
+
+//go:embed mapping/google/resource/compute/google_compute_instance_group_manager.json
+var googleComputeInstanceGroupManager []byte
+
+//go:embed mapping/google/resource/compute/google_compute_instance_group_membership.json
+var googleComputeInstanceGroupMembership []byte
+
+//go:embed mapping/google/resource/compute/google_compute_instance_group_named_port.json
+var googleComputeInstanceGroupNamedPort []byte
+
+//go:embed mapping/google/resource/compute/google_compute_snapshot.json
+var googleComputeSnapshot []byte
+
+//go:embed mapping/google/resource/compute/google_compute_snapshot_settings.json
+var googleComputeSnapshotSettings []byte
+
+//go:embed mapping/google/resource/compute/google_compute_target_pool.json
+var googleComputeTargetPool []byte

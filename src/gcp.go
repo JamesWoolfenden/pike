@@ -1133,4 +1133,11 @@ var gCPTfLookup = map[string]interface{}{
 	"google_cloud_security_compliance_framework_deployment":                      googleCloudSecurityComplianceFrameworkDeployment,
 	"google_cloudbuild_bitbucket_server_config":                                  googleCloudbuildBitbucketServerConfig,
 	"google_cloudbuild_worker_pool":                                              googleCloudbuildWorkerPool,
+	"google_compute_instance_group":                                              googleComputeInstanceGroup,
+	"google_compute_instance_group_manager":                                      googleComputeInstanceGroupManager,
+	"google_compute_instance_group_membership":                                   googleComputeInstanceGroupMembership,
+	"google_compute_instance_group_named_port":                                   googleComputeInstanceGroupNamedPort,
+	"google_compute_snapshot":                                                    googleComputeSnapshot,
+	"google_compute_snapshot_settings":                                           googleComputeSnapshotSettings,
+	"google_compute_target_pool":                                                 googleComputeTargetPool,
 }

@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "compute.targetPools.create",
+      "compute.targetPools.get",
+      "compute.targetPools.update",
+      "compute.targetPools.delete",
+      "compute.httpHealthChecks.useReadOnly",
+      "compute.instances.use"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
