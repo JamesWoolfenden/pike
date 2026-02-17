@@ -131,7 +131,8 @@ function Get-MappingFiles {
     $mappings = @()
 
     foreach ($file in $files) {
-        $relativePath = $file.FullName.Replace("$BasePath\", "").Replace("\", "/")
+        # Handle both Windows (\) and Unix (/) path separators
+        $relativePath = $file.FullName.Replace("$BasePath\", "").Replace("$BasePath/", "").Replace("\", "/")
         $relativePath = $relativePath -replace '^src/', ''
 
         # Extract resource name from filename
@@ -306,39 +307,48 @@ function Update-ProviderFiles {
         -FilePath (path $BasePath "src" $Config.DataLookupFile) `
         -MapName $Config.DataLookupMap
 
+    # Filter mappings to only include resources already in the lookup maps
+    # This prevents automatically adding ALL JSON files, only regenerates existing resources
+    Write-Host "  Filtering to only include already-registered resources..." -ForegroundColor Gray
+    $filteredResourceMappings = $resourceMappings | Where-Object { $existingResourceLookup.ContainsKey($_.ResourceName) }
+    $filteredDataMappings = $datasourceMappings | Where-Object { $existingDataLookup.ContainsKey($_.ResourceName) }
+
+    Write-Host "    Filtered resources: $($resourceMappings.Count) -> $($filteredResourceMappings.Count)" -ForegroundColor Gray
+    Write-Host "    Filtered datasources: $($datasourceMappings.Count) -> $($filteredDataMappings.Count)" -ForegroundColor Gray
+
     # Show what will be updated
     Write-Host ""
     Show-LookupMapUpdates -Existing $existingResourceLookup `
-                          -Mappings $resourceMappings `
+                          -Mappings $filteredResourceMappings `
                           -Type "Resource" `
                           -ProviderName $providerName
 
     Show-LookupMapUpdates -Existing $existingDataLookup `
-                          -Mappings $datasourceMappings `
+                          -Mappings $filteredDataMappings `
                           -Type "Datasource" `
                           -ProviderName $providerName
 
     if ($IsDryRun) {
         return @{
-            ResourceCount = $resourceMappings.Count
-            DataCount = $datasourceMappings.Count
+            ResourceCount = $filteredResourceMappings.Count
+            DataCount = $filteredDataMappings.Count
             Config = $Config
         }
     }
 
     # Generate files_*.go for resources
     Write-Host "`n  Generating src/$($Config.FilesResourceGo)..." -ForegroundColor Gray
-    $filesResourceContent = Generate-FilesGo -Mappings $resourceMappings
+    $filesResourceContent = Generate-FilesGo -Mappings $filteredResourceMappings
     $filesResourcePath = path $BasePath "src" $Config.FilesResourceGo
     $filesResourceContent | Out-File -FilePath $filesResourcePath -Encoding UTF8 -NoNewline
-    Write-Host "    ✓ Generated with $($resourceMappings.Count) embed statements" -ForegroundColor Green
+    Write-Host "    ✓ Generated with $($filteredResourceMappings.Count) embed statements" -ForegroundColor Green
 
     # Generate files_*.go for datasources
     Write-Host "  Generating src/$($Config.FilesDataGo)..." -ForegroundColor Gray
-    $filesDataContent = Generate-FilesGo -Mappings $datasourceMappings
+    $filesDataContent = Generate-FilesGo -Mappings $filteredDataMappings
     $filesDataPath = path $BasePath "src" $Config.FilesDataGo
     $filesDataContent | Out-File -FilePath $filesDataPath -Encoding UTF8 -NoNewline
-    Write-Host "    ✓ Generated with $($datasourceMappings.Count) embed statements" -ForegroundColor Green
+    Write-Host "    ✓ Generated with $($filteredDataMappings.Count) embed statements" -ForegroundColor Green
 
     # Update resource lookup map
     Write-Host "  Updating src/$($Config.ResourceLookupFile) lookup map..." -ForegroundColor Gray
@@ -347,7 +357,7 @@ function Update-ProviderFiles {
         $resourceContent = Get-Content $resourceGoPath -Raw
 
         # Generate new lookup map entries
-        $lookupEntries = ($resourceMappings | Sort-Object ResourceName | ForEach-Object {
+        $lookupEntries = ($filteredResourceMappings | Sort-Object ResourceName | ForEach-Object {
             "`t`"$($_.ResourceName)`": $($_.VariableName),"
         }) -join "`n"
 
@@ -362,7 +372,7 @@ $lookupEntries
         if ($resourceContent -match $pattern) {
             $resourceContent = $resourceContent -replace $pattern, $newLookupMap
             $resourceContent | Out-File -FilePath $resourceGoPath -Encoding UTF8 -NoNewline
-            Write-Host "    ✓ Updated $($Config.ResourceLookupMap) map with $($resourceMappings.Count) entries" -ForegroundColor Green
+            Write-Host "    ✓ Updated $($Config.ResourceLookupMap) map with $($filteredResourceMappings.Count) entries" -ForegroundColor Green
         }
         else {
             Write-Host "    ⚠ Could not find $($Config.ResourceLookupMap) map in $($Config.ResourceLookupFile)" -ForegroundColor Yellow
@@ -376,7 +386,7 @@ $lookupEntries
         $dataContent = Get-Content $dataGoPath -Raw
 
         # Generate new lookup map entries
-        $dataLookupEntries = ($datasourceMappings | Sort-Object ResourceName | ForEach-Object {
+        $dataLookupEntries = ($filteredDataMappings | Sort-Object ResourceName | ForEach-Object {
             "`t`"$($_.ResourceName)`": $($_.VariableName),"
         }) -join "`n"
 
@@ -410,7 +420,7 @@ $dataLookupEntries
         if ($dataContent -match $pattern) {
             $dataContent = $dataContent -replace $pattern, $newDataLookupMap
             $dataContent | Out-File -FilePath $dataGoPath -Encoding UTF8 -NoNewline
-            Write-Host "    ✓ Updated $($Config.DataLookupMap) map with $($datasourceMappings.Count) entries" -ForegroundColor Green
+            Write-Host "    ✓ Updated $($Config.DataLookupMap) map with $($filteredDataMappings.Count) entries" -ForegroundColor Green
         }
         else {
             Write-Host "    ⚠ Could not find $($Config.DataLookupMap) map in $($Config.DataLookupFile)" -ForegroundColor Yellow
@@ -418,8 +428,8 @@ $dataLookupEntries
     }
 
     return @{
-        ResourceCount = $resourceMappings.Count
-        DataCount = $datasourceMappings.Count
+        ResourceCount = $filteredResourceMappings.Count
+        DataCount = $filteredDataMappings.Count
         Config = $Config
     }
 }

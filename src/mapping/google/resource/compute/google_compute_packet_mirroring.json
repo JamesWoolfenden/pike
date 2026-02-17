@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "compute.instances.updateSecurity",
+      "compute.networks.mirror",
+      "compute.packetMirrorings.create",
+      "compute.packetMirrorings.get",
+      "compute.packetMirrorings.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.packetMirrorings.delete"
+    ],
+    "modify": [
+      "compute.packetMirrorings.update"
+    ],
+    "plan": [
+      "compute.packetMirrorings.get"
+    ]
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "compute.nodeTemplates.create",
+      "compute.nodeTemplates.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.nodeTemplates.delete"
+    ],
+    "modify": [],
+    "plan": [
+      "compute.nodeTemplates.get"
+    ]
+  }
+]

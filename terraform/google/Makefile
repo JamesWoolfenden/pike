@@ -10,22 +10,22 @@ plan: init
 	GOOGLE_BACKEND_CREDENTIALS=$(PIKE_GOOGLE_BACKEND_CREDENTIALS) tofu plan
 
 destroy: init
-	tofu destroy -auto-approve
+	GOOGLE_BACKEND_CREDENTIALS=$(PIKE_GOOGLE_BACKEND_CREDENTIALS) tofu destroy -auto-approve
 
 init:
-	tofu init
+	GOOGLE_BACKEND_CREDENTIALS=$(PIKE_GOOGLE_BACKEND_CREDENTIALS) tofu init
 
 upgrade:
-	tofu init --upgrade
+	GOOGLE_BACKEND_CREDENTIALS=$(PIKE_GOOGLE_BACKEND_CREDENTIALS) tofu init --upgrade
 
 update: upgrade
 
 
 role: FORCE
-	GOOGLE_CLOUD_KEYFILE_JSON="" tofu  -chdir=./role apply -auto-approve
+	GOOGLE_BACKEND_CREDENTIALS=$(PIKE_GOOGLE_BACKEND_CREDENTIALS) tofu  -chdir=./role apply -auto-approve
 
 role_init:
-	GOOGLE_CLOUD_KEYFILE_JSON="" tofu  -chdir=./role init
+	GOOGLE_BACKEND_CREDENTIALS=$(PIKE_GOOGLE_BACKEND_CREDENTIALS) tofu  -chdir=./role init
 
 scan:
 	GCP_PROJECT=pike-477416 pike scan -w -i -e -d ./ -outfile "./role/google_project_iam_custom_role.tf" -policyName terraform_pike

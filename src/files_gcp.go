@@ -469,6 +469,12 @@ var googleComposerUserWorkloadsSecret []byte
 //go:embed mapping/google/resource/compute/google_compute_address.json
 var googleComputeAddress []byte
 
+//go:embed mapping/google/resource/compute/google_compute_attached_disk.json
+var googleComputeAttachedDisk []byte
+
+//go:embed mapping/google/resource/compute/google_compute_autoscaler.json
+var googleComputeAutoscaler []byte
+
 //go:embed mapping/google/resource/compute/google_compute_backend_bucket.json
 var googleComputeBackendBucket []byte
 
@@ -502,6 +508,9 @@ var googleComputeDiskIAMMember []byte
 //go:embed mapping/google/resource/compute/google_compute_disk_iam_policy.json
 var googleComputeDiskIAMPolicy []byte
 
+//go:embed mapping/google/resource/compute/google_compute_disk_resource_policy_attachment.json
+var googleComputeDiskResourcePolicyAttachment []byte
+
 //go:embed mapping/google/resource/compute/google_compute_firewall.json
 var googleComputeFirewall []byte
 
@@ -516,6 +525,12 @@ var googleComputeGlobalForwardingRule []byte
 
 //go:embed mapping/google/resource/compute/google_compute_global_network_endpoint_group.json
 var googleComputeGlobalNetworkEndpointGroup []byte
+
+//go:embed mapping/google/resource/compute/google_compute_global_network_endpoint.json
+var googleComputeGlobalNetworkEndpoint []byte
+
+//go:embed mapping/google/resource/compute/google_compute_ha_vpn_gateway.json
+var googleComputeHaVpnGateway []byte
 
 //go:embed mapping/google/resource/compute/google_compute_health_check.json
 var googleComputeHealthCheck []byte
@@ -559,6 +574,9 @@ var googleComputeInstanceTemplateIAMMember []byte
 //go:embed mapping/google/resource/compute/google_compute_instance_template_iam_policy.json
 var googleComputeInstanceTemplateIAMPolicy []byte
 
+//go:embed mapping/google/resource/compute/google_compute_instant_snapshot.json
+var googleComputeInstantSnapshot []byte
+
 //go:embed mapping/google/resource/compute/google_compute_instant_snapshot_iam_binding.json
 var googleComputeInstantSnapshotIAMBinding []byte
 
@@ -586,8 +604,20 @@ var googleComputeNetworkAttachment []byte
 //go:embed mapping/google/resource/compute/google_compute_network_endpoint_group.json
 var googleComputeNetworkEndpointGroup []byte
 
+//go:embed mapping/google/resource/compute/google_compute_network_peering.json
+var googleComputeNetworkPeering []byte
+
+//go:embed mapping/google/resource/compute/google_compute_node_template.json
+var googleComputeNodeTemplate []byte
+
+//go:embed mapping/google/resource/compute/google_compute_packet_mirroring.json
+var googleComputePacketMirroring []byte
+
 //go:embed mapping/google/resource/compute/google_compute_project_metadata_item.json
 var googleComputeProjectMetadataItem []byte
+
+//go:embed mapping/google/resource/compute/google_compute_resource_policy.json
+var googleComputeResourcePolicy []byte
 
 //go:embed mapping/google/resource/compute/google_compute_router.json
 var googleComputeRouter []byte
@@ -648,6 +678,9 @@ var googleComputeSnapshotIAMMember []byte
 
 //go:embed mapping/google/resource/compute/google_compute_snapshot_iam_policy.json
 var googleComputeSnapshotIAMPolicy []byte
+
+//go:embed mapping/google/resource/compute/google_compute_ssl_certificate.json
+var googleComputeSslCertificate []byte
 
 //go:embed mapping/google/resource/compute/google_compute_storage_pool_iam_binding.json
 var googleComputeStoragePoolIAMBinding []byte
@@ -2022,6 +2055,9 @@ var googleStorageManagedFolderIAMMember []byte
 
 //go:embed mapping/google/resource/storage/google_storage_managed_folder_iam_policy.json
 var googleStorageManagedFolderIAMPolicy []byte
+
+//go:embed mapping/google/resource/storage/google_storage_notification.json
+var googleStorageNotification []byte
 
 //go:embed mapping/google/resource/storage/google_storage_object_access_control.json
 var googleStorageObjectAccessControl []byte

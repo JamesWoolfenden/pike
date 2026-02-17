@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "compute.networks.addPeering"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.networks.removePeering"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

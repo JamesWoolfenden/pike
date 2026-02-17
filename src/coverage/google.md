@@ -2,7 +2,7 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 79.74      |  1031       |  1293            |
+| Resources  | 80.67      |  1043       |  1293            |
 | Datasource | 100.00      |   411       |   411             |
 
 ```shell
@@ -10,25 +10,19 @@
 ./resource.ps1 google_cloud_quotas_quota_adjuster_settings
 ./resource.ps1 google_cloud_quotas_quota_preference
 ./resource.ps1 google_clouddomains_registration
-./resource.ps1 google_compute_attached_disk
-./resource.ps1 google_compute_autoscaler
 ./resource.ps1 google_compute_backend_bucket_signed_url_key
 ./resource.ps1 google_compute_backend_service_signed_url_key
 ./resource.ps1 google_compute_cross_site_network
 ./resource.ps1 google_compute_disk_async_replication
-./resource.ps1 google_compute_disk_resource_policy_attachment
 ./resource.ps1 google_compute_external_vpn_gateway
 ./resource.ps1 google_compute_firewall_policy
 ./resource.ps1 google_compute_firewall_policy_association
 ./resource.ps1 google_compute_firewall_policy_rule
 ./resource.ps1 google_compute_firewall_policy_with_rules
 ./resource.ps1 google_compute_future_reservation
-./resource.ps1 google_compute_global_network_endpoint
-./resource.ps1 google_compute_ha_vpn_gateway
 ./resource.ps1 google_compute_instance_from_machine_image
 ./resource.ps1 google_compute_instance_from_template
 ./resource.ps1 google_compute_instance_settings
-./resource.ps1 google_compute_instant_snapshot
 ./resource.ps1 google_compute_interconnect
 ./resource.ps1 google_compute_interconnect_attachment
 ./resource.ps1 google_compute_interconnect_attachment_group
@@ -42,14 +36,11 @@
 ./resource.ps1 google_compute_network_firewall_policy_packet_mirroring_rule
 ./resource.ps1 google_compute_network_firewall_policy_rule
 ./resource.ps1 google_compute_network_firewall_policy_with_rules
-./resource.ps1 google_compute_network_peering
 ./resource.ps1 google_compute_network_peering_routes_config
 ./resource.ps1 google_compute_node_group
-./resource.ps1 google_compute_node_template
 ./resource.ps1 google_compute_organization_security_policy
 ./resource.ps1 google_compute_organization_security_policy_association
 ./resource.ps1 google_compute_organization_security_policy_rule
-./resource.ps1 google_compute_packet_mirroring
 ./resource.ps1 google_compute_per_instance_config
 ./resource.ps1 google_compute_preview_feature
 ./resource.ps1 google_compute_project_cloud_armor_tier
@@ -77,13 +68,11 @@
 ./resource.ps1 google_compute_region_security_policy_rule
 ./resource.ps1 google_compute_reservation
 ./resource.ps1 google_compute_resize_request
-./resource.ps1 google_compute_resource_policy
 ./resource.ps1 google_compute_resource_policy_attachment
 ./resource.ps1 google_compute_security_policy_rule
 ./resource.ps1 google_compute_service_attachment
 ./resource.ps1 google_compute_shared_vpc_host_project
 ./resource.ps1 google_compute_shared_vpc_service_project
-./resource.ps1 google_compute_ssl_certificate
 ./resource.ps1 google_compute_ssl_policy
 ./resource.ps1 google_compute_storage_pool
 ./resource.ps1 google_compute_target_grpc_proxy
@@ -264,7 +253,6 @@
 ./resource.ps1 google_storage_batch_operations_job
 ./resource.ps1 google_storage_folder
 ./resource.ps1 google_storage_managed_folder
-./resource.ps1 google_storage_notification
 ./resource.ps1 google_storage_object_acl
 ./resource.ps1 google_storage_transfer_agent_pool
 ./resource.ps1 google_storage_transfer_job

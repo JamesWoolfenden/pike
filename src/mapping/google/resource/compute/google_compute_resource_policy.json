@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "compute.resourcePolicies.create",
+      "compute.resourcePolicies.get",
+      "compute.resourcePolicies.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.resourcePolicies.delete"
+    ],
+    "modify": [
+      "compute.resourcePolicies.update"
+    ],
+    "plan": [
+      "compute.resourcePolicies.get"
+    ]
+  }
+]

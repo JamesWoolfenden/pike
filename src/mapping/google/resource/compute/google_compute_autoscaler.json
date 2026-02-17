@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "compute.autoscalers.create",
+      "compute.autoscalers.get",
+      "compute.autoscalers.update",
+      "compute.autoscalers.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.autoscalers.delete"
+    ],
+    "modify": [
+      "compute.autoscalers.update"
+    ],
+    "plan": [
+      "compute.autoscalers.get"
+    ]
+  }
+]

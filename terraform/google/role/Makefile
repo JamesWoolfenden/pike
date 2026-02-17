@@ -4,25 +4,25 @@ clean:
 	-rm terraform.tfstate
 	-rm terraform.tfstate.backup
 apply: init
-	tofu apply -auto-approve
+	GOOGLE_BACKEND_CREDENTIALS=$(PIKE_GOOGLE_BACKEND_CREDENTIALS) tofu apply -auto-approve
 
 plan: init
-	tofu plan
+	GOOGLE_BACKEND_CREDENTIALS=$(PIKE_GOOGLE_BACKEND_CREDENTIALS) tofu plan
 
 destroy: init
-	tofu destroy -auto-approve
+	GOOGLE_BACKEND_CREDENTIALS=$(PIKE_GOOGLE_BACKEND_CREDENTIALS) tofu destroy -auto-approve
 
 init:
-	tofu init
+	GOOGLE_BACKEND_CREDENTIALS=$(PIKE_GOOGLE_BACKEND_CREDENTIALS) tofu init
 
 role: FORCE
-	GOOGLE_CLOUD_KEYFILE_JSON="" tofu apply -auto-approve
+	GOOGLE_BACKEND_CREDENTIALS=$(PIKE_GOOGLE_BACKEND_CREDENTIALS) tofu apply -auto-approve
 
 role_init:
-	GOOGLE_CLOUD_KEYFILE_JSON="" tofu  init
+	GOOGLE_BACKEND_CREDENTIALS=$(PIKE_GOOGLE_BACKEND_CREDENTIALS) tofu  init
 
 update:
-	tofu init --upgrade
+	GOOGLE_BACKEND_CREDENTIALS=$(PIKE_GOOGLE_BACKEND_CREDENTIALS) tofu init --upgrade
 
 upgrade:update
 

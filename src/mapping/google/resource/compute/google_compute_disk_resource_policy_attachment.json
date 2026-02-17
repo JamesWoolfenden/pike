@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "compute.disks.addResourcePolicies"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.disks.removeResourcePolicies"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "compute.disks.useReadOnly",
+      "compute.instantSnapshots.create",
+      "compute.instantSnapshots.get",
+      "compute.instantSnapshots.setLabels"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.instantSnapshots.delete"
+    ],
+    "modify": [
+      "compute.instantSnapshots.setLabels"
+    ],
+    "plan": [
+      "compute.instantSnapshots.get"
+    ]
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "compute.disks.use",
+      "compute.instances.attachDisk"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.instances.detachDisk"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "compute.vpnGateways.create",
+      "compute.vpnGateways.get",
+      "compute.vpnGateways.setLabels"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.vpnGateways.delete"
+    ],
+    "modify": [
+      "compute.vpnGateways.setLabels"
+    ],
+    "plan": [
+      "compute.vpnGateways.get"
+    ]
+  }
+]
