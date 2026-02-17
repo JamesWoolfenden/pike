@@ -523,6 +523,8 @@
         "aws_ec2_managed_prefix_list_entry",
         "aws_ec2_network_insights_analysis",
         "aws_ec2_network_insights_path",
+        "aws_ec2_secondary_network",
+        "aws_ec2_secondary_subnet",
         "aws_ec2_serial_console_access",
         "aws_ec2_subnet_cidr_reservation",
         "aws_ec2_tag",
