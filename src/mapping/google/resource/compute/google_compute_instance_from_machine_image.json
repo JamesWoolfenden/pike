@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "compute.instances.create",
+      "compute.instances.get",
+      "compute.instances.setLabels",
+      "compute.instances.setMetadata",
+      "compute.instances.setServiceAccount",
+      "compute.machineImages.useReadOnly"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.instances.delete"
+    ],
+    "modify": [
+      "compute.instances.setLabels",
+      "compute.instances.setMetadata",
+      "compute.zoneOperations.get"
+    ],
+    "plan": [
+      "compute.instances.get",
+      "compute.machineImages.useReadOnly"
+    ]
+  }
+]

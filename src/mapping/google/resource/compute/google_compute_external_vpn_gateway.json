@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "compute.externalVpnGateways.create",
+      "compute.externalVpnGateways.get",
+      "compute.externalVpnGateways.setLabels"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.externalVpnGateways.delete"
+    ],
+    "modify": [
+      "compute.externalVpnGateways.setLabels",
+      "compute.globalOperations.get"
+    ],
+    "plan": [
+      "compute.externalVpnGateways.get"
+    ]
+  }
+]

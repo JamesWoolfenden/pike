@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "compute.disks.startAsyncReplication"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.disks.stopAsyncReplication"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

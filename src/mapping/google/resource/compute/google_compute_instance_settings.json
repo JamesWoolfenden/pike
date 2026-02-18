@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "compute.instanceSettings.get",
+      "compute.instanceSettings.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [
+      "compute.instanceSettings.update"
+    ],
+    "plan": [
+      "compute.instanceSettings.get"
+    ]
+  }
+]

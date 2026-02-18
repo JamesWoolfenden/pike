@@ -487,6 +487,9 @@ var googleComputeBackendBucketIAMMember []byte
 //go:embed mapping/google/resource/compute/google_compute_backend_bucket_iam_policy.json
 var googleComputeBackendBucketIAMPolicy []byte
 
+//go:embed mapping/google/resource/compute/google_compute_backend_bucket_signed_url_key.json
+var googleComputeBackendBucketSignedUrlKey []byte
+
 //go:embed mapping/google/resource/compute/google_compute_backend_service.json
 var googleComputeBackendService []byte
 
@@ -499,6 +502,12 @@ var googleComputeBackendServiceIAMMember []byte
 //go:embed mapping/google/resource/compute/google_compute_backend_service_iam_policy.json
 var googleComputeBackendServiceIAMPolicy []byte
 
+//go:embed mapping/google/resource/compute/google_compute_backend_service_signed_url_key.json
+var googleComputeBackendServiceSignedUrlKey []byte
+
+//go:embed mapping/google/resource/compute/google_compute_disk_async_replication.json
+var googleComputeDiskAsyncReplication []byte
+
 //go:embed mapping/google/resource/compute/google_compute_disk_iam_binding.json
 var googleComputeDiskIAMBinding []byte
 
@@ -510,6 +519,9 @@ var googleComputeDiskIAMPolicy []byte
 
 //go:embed mapping/google/resource/compute/google_compute_disk_resource_policy_attachment.json
 var googleComputeDiskResourcePolicyAttachment []byte
+
+//go:embed mapping/google/resource/compute/google_compute_external_vpn_gateway.json
+var googleComputeExternalVpnGateway []byte
 
 //go:embed mapping/google/resource/compute/google_compute_firewall.json
 var googleComputeFirewall []byte
@@ -553,6 +565,12 @@ var googleComputeImageIAMPolicy []byte
 //go:embed mapping/google/resource/compute/google_compute_instance.json
 var googleComputeInstance []byte
 
+//go:embed mapping/google/resource/compute/google_compute_instance_from_machine_image.json
+var googleComputeInstanceFromMachineImage []byte
+
+//go:embed mapping/google/resource/compute/google_compute_instance_from_template.json
+var googleComputeInstanceFromTemplate []byte
+
 //go:embed mapping/google/resource/compute/google_compute_instance_iam_binding.json
 var googleComputeInstanceIAMBinding []byte
 
@@ -561,6 +579,9 @@ var googleComputeInstanceIAMMember []byte
 
 //go:embed mapping/google/resource/compute/google_compute_instance_iam_policy.json
 var googleComputeInstanceIAMPolicy []byte
+
+//go:embed mapping/google/resource/compute/google_compute_instance_settings.json
+var googleComputeInstanceSettings []byte
 
 //go:embed mapping/google/resource/compute/google_compute_instance_template.json
 var googleComputeInstanceTemplate []byte
@@ -594,6 +615,9 @@ var googleComputeMachineImageIAMMember []byte
 
 //go:embed mapping/google/resource/compute/google_compute_machine_image_iam_policy.json
 var googleComputeMachineImageIAMPolicy []byte
+
+//go:embed mapping/google/resource/compute/google_compute_managed_ssl_certificate.json
+var googleComputeManagedSslCertificate []byte
 
 //go:embed mapping/google/resource/compute/google_compute_network.json
 var googleComputeNetwork []byte

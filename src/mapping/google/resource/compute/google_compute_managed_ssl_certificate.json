@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "compute.sslCertificates.create",
+      "compute.sslCertificates.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.sslCertificates.delete"
+    ],
+    "modify": [],
+    "plan": [
+      "compute.sslCertificates.get"
+    ]
+  }
+]

@@ -2,32 +2,29 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 80.67      |  1043       |  1293            |
-| Datasource | 100.00      |   411       |   411             |
+| Resources  | 80.91      |  1051       |  1299            |
+| Datasource | 99.52      |   411       |   413             |
 
 ```shell
+./resource.ps1 google_biglake_iceberg_namespace
+./resource.ps1 google_biglake_iceberg_namespace_iam_binding
+./resource.ps1 google_biglake_iceberg_namespace_iam_member
+./resource.ps1 google_biglake_iceberg_namespace_iam_policy
+./resource.ps1 google_cloud_identity_policy
 ./resource.ps1 google_cloud_ids_endpoint
 ./resource.ps1 google_cloud_quotas_quota_adjuster_settings
 ./resource.ps1 google_cloud_quotas_quota_preference
 ./resource.ps1 google_clouddomains_registration
-./resource.ps1 google_compute_backend_bucket_signed_url_key
-./resource.ps1 google_compute_backend_service_signed_url_key
 ./resource.ps1 google_compute_cross_site_network
-./resource.ps1 google_compute_disk_async_replication
-./resource.ps1 google_compute_external_vpn_gateway
 ./resource.ps1 google_compute_firewall_policy
 ./resource.ps1 google_compute_firewall_policy_association
 ./resource.ps1 google_compute_firewall_policy_rule
 ./resource.ps1 google_compute_firewall_policy_with_rules
 ./resource.ps1 google_compute_future_reservation
-./resource.ps1 google_compute_instance_from_machine_image
-./resource.ps1 google_compute_instance_from_template
-./resource.ps1 google_compute_instance_settings
 ./resource.ps1 google_compute_interconnect
 ./resource.ps1 google_compute_interconnect_attachment
 ./resource.ps1 google_compute_interconnect_attachment_group
 ./resource.ps1 google_compute_interconnect_group
-./resource.ps1 google_compute_managed_ssl_certificate
 ./resource.ps1 google_compute_network_edge_security_service
 ./resource.ps1 google_compute_network_endpoint
 ./resource.ps1 google_compute_network_endpoints
@@ -89,6 +86,7 @@
 ./resource.ps1 google_container_azure_client
 ./resource.ps1 google_container_azure_cluster
 ./resource.ps1 google_container_azure_node_pool
+./resource.ps1 google_dataform_folder
 ./resource.ps1 google_dataproc_gdc_application_environment
 ./resource.ps1 google_dataproc_gdc_service_instance
 ./resource.ps1 google_dataproc_gdc_spark_application
@@ -256,4 +254,6 @@
 ./resource.ps1 google_storage_object_acl
 ./resource.ps1 google_storage_transfer_agent_pool
 ./resource.ps1 google_storage_transfer_job
+./resource.ps1 google_biglake_iceberg_namespace_iam_policy -type data
+./resource.ps1 google_storage_bucket_object_contents -type data
 ```

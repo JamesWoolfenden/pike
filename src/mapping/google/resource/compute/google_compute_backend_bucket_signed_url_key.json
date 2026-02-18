@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "compute.backendBuckets.addSignedUrlKey"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.backendBuckets.deleteSignedUrlKey"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]
