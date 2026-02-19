@@ -479,6 +479,7 @@ var gCPTfLookup = map[string]interface{}{
 	"google_compute_snapshot_iam_policy":                                         googleComputeSnapshotIAMPolicy,
 	"google_compute_snapshot_settings":                                           googleComputeSnapshotSettings,
 	"google_compute_ssl_certificate":                                             googleComputeSslCertificate,
+	"google_compute_ssl_policy":                                                  googleComputeSslPolicy,
 	"google_compute_storage_pool_iam_binding":                                    googleComputeStoragePoolIAMBinding,
 	"google_compute_storage_pool_iam_member":                                     googleComputeStoragePoolIAMMember,
 	"google_compute_storage_pool_iam_policy":                                     googleComputeStoragePoolIAMPolicy,

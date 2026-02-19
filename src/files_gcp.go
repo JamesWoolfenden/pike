@@ -715,6 +715,9 @@ var googleComputeSnapshotIAMPolicy []byte
 //go:embed mapping/google/resource/compute/google_compute_ssl_certificate.json
 var googleComputeSslCertificate []byte
 
+//go:embed mapping/google/resource/compute/google_compute_ssl_policy.json
+var googleComputeSslPolicy []byte
+
 //go:embed mapping/google/resource/compute/google_compute_storage_pool_iam_binding.json
 var googleComputeStoragePoolIAMBinding []byte
 
