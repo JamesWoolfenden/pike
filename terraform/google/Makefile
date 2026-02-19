@@ -18,6 +18,9 @@ init:
 upgrade:
 	GOOGLE_BACKEND_CREDENTIALS=$(PIKE_GOOGLE_BACKEND_CREDENTIALS) tofu init --upgrade
 
+rm:
+	GOOGLE_BACKEND_CREDENTIALS=$(PIKE_GOOGLE_BACKEND_CREDENTIALS) tofu state rm $(RESOURCE)
+
 update: upgrade
 
 

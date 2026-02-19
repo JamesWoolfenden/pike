@@ -2,7 +2,7 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 80.91      |  1051       |  1299            |
+| Resources  | 80.99      |  1052       |  1299            |
 | Datasource | 99.52      |   411       |   413             |
 
 ```shell
@@ -16,7 +16,6 @@
 ./resource.ps1 google_cloud_quotas_quota_preference
 ./resource.ps1 google_clouddomains_registration
 ./resource.ps1 google_compute_cross_site_network
-./resource.ps1 google_compute_firewall_policy
 ./resource.ps1 google_compute_firewall_policy_association
 ./resource.ps1 google_compute_firewall_policy_rule
 ./resource.ps1 google_compute_firewall_policy_with_rules

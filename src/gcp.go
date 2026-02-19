@@ -403,6 +403,7 @@ var gCPTfLookup = map[string]interface{}{
 	"google_compute_disk_resource_policy_attachment":                             googleComputeDiskResourcePolicyAttachment,
 	"google_compute_external_vpn_gateway":                                        googleComputeExternalVpnGateway,
 	"google_compute_firewall":                                                    googleComputeFirewall,
+	"google_compute_firewall_policy":                                             googleComputeFirewallPolicy,
 	"google_compute_forwarding_rule":                                             googleComputeForwardingRule,
 	"google_compute_global_address":                                              googleComputeGlobalAddress,
 	"google_compute_global_forwarding_rule":                                      googleComputeGlobalForwardingRule,

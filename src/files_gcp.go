@@ -526,6 +526,9 @@ var googleComputeExternalVpnGateway []byte
 //go:embed mapping/google/resource/compute/google_compute_firewall.json
 var googleComputeFirewall []byte
 
+//go:embed mapping/google/resource/compute/google_compute_firewall_policy.json
+var googleComputeFirewallPolicy []byte
+
 //go:embed mapping/google/resource/compute/google_compute_forwarding_rule.json
 var googleComputeForwardingRule []byte
 
