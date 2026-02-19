@@ -447,6 +447,7 @@ var gCPTfLookup = map[string]interface{}{
 	"google_compute_network_peering":                                             googleComputeNetworkPeering,
 	"google_compute_node_template":                                               googleComputeNodeTemplate,
 	"google_compute_packet_mirroring":                                            googleComputePacketMirroring,
+	"google_compute_project_default_network_tier":                                googleComputeProjectDefaultNetworkTier,
 	"google_compute_project_metadata":                                            googleComputeProjectMetadata,
 	"google_compute_project_metadata_item":                                       googleComputeProjectMetadataItem,
 	"google_compute_region_backend_service":                                      googleComputeRegionBackendService,

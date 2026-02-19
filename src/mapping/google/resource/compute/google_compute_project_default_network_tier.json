@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "compute.projects.get",
+      "compute.projects.setDefaultNetworkTier"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.projects.setDefaultNetworkTier"
+    ],
+    "modify": [
+      "compute.projects.setDefaultNetworkTier"
+    ],
+    "plan": [
+      "compute.projects.get"
+    ]
+  }
+]
