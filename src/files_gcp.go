@@ -640,6 +640,9 @@ var googleComputeNodeTemplate []byte
 //go:embed mapping/google/resource/compute/google_compute_packet_mirroring.json
 var googleComputePacketMirroring []byte
 
+//go:embed mapping/google/resource/compute/google_compute_project_cloud_armor_tier.json
+var googleComputeProjectCloudArmorTier []byte
+
 //go:embed mapping/google/resource/compute/google_compute_project_default_network_tier.json
 var googleComputeProjectDefaultNetworkTier []byte
 

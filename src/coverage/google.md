@@ -2,7 +2,7 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 81.37      |  1057       |  1299            |
+| Resources  | 81.45      |  1058       |  1299            |
 | Datasource | 99.52      |   411       |   413             |
 
 ```shell
@@ -39,7 +39,6 @@
 ./resource.ps1 google_compute_organization_security_policy_rule
 ./resource.ps1 google_compute_per_instance_config
 ./resource.ps1 google_compute_preview_feature
-./resource.ps1 google_compute_project_cloud_armor_tier
 ./resource.ps1 google_compute_public_advertised_prefix
 ./resource.ps1 google_compute_public_delegated_prefix
 ./resource.ps1 google_compute_region_autoscaler

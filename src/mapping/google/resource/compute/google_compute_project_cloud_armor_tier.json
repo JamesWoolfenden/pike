@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "compute.projects.get",
+      "compute.projects.setCloudArmorTier"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.projects.setCloudArmorTier"
+    ],
+    "modify": [
+      "compute.projects.setCloudArmorTier"
+    ],
+    "plan": [
+      "compute.projects.get"
+    ]
+  }
+]
