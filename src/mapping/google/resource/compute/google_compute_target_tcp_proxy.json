@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "compute.targetTcpProxies.create",
+      "compute.targetTcpProxies.get",
+      "compute.targetTcpProxies.update",
+      "compute.targetTcpProxies.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.targetTcpProxies.delete"
+    ],
+    "modify": [
+      "compute.targetTcpProxies.update"
+    ],
+    "plan": [
+      "compute.targetTcpProxies.get"
+    ]
+  }
+]

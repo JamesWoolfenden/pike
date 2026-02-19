@@ -491,6 +491,7 @@ var gCPTfLookup = map[string]interface{}{
 	"google_compute_target_https_proxy":                                          googleComputeTargetHttpsProxy,
 	"google_compute_target_instance":                                             googleComputeTargetInstance,
 	"google_compute_target_pool":                                                 googleComputeTargetPool,
+	"google_compute_target_tcp_proxy":                                            googleComputeTargetTcpProxy,
 	"google_compute_url_map":                                                     googleComputeUrlMap,
 	"google_contact_center_insights_analysis_rule":                               googleContactCenterInsightsAnalysisRule,
 	"google_contact_center_insights_view":                                        googleContactCenterInsightsView,

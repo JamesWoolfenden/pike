@@ -2,7 +2,7 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 81.29      |  1056       |  1299            |
+| Resources  | 81.37      |  1057       |  1299            |
 | Datasource | 99.52      |   411       |   413             |
 
 ```shell
@@ -70,7 +70,6 @@
 ./resource.ps1 google_compute_storage_pool
 ./resource.ps1 google_compute_target_grpc_proxy
 ./resource.ps1 google_compute_target_ssl_proxy
-./resource.ps1 google_compute_target_tcp_proxy
 ./resource.ps1 google_compute_vpn_gateway
 ./resource.ps1 google_compute_vpn_tunnel
 ./resource.ps1 google_compute_wire_group
