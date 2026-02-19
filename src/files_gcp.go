@@ -745,6 +745,9 @@ var googleComputeTargetHttpProxy []byte
 //go:embed mapping/google/resource/compute/google_compute_target_https_proxy.json
 var googleComputeTargetHttpsProxy []byte
 
+//go:embed mapping/google/resource/compute/google_compute_target_instance.json
+var googleComputeTargetInstance []byte
+
 //go:embed mapping/google/resource/compute/google_compute_url_map.json
 var googleComputeUrlMap []byte
 

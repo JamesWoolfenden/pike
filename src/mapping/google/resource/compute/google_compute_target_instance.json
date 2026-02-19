@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "compute.targetInstances.create",
+      "compute.targetInstances.get",
+      "compute.targetInstances.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.targetInstances.delete"
+    ],
+    "modify": [],
+    "plan": [
+      "compute.targetInstances.get"
+    ]
+  }
+]
