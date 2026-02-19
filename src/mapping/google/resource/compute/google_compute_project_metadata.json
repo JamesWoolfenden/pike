@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "compute.projects.get",
+      "compute.projects.setCommonInstanceMetadata"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.projects.setCommonInstanceMetadata"
+    ],
+    "modify": [
+      "compute.projects.setCommonInstanceMetadata"
+    ],
+    "plan": [
+      "compute.projects.get"
+    ]
+  }
+]
