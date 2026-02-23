@@ -2,8 +2,8 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 81.45      |  1058       |  1299            |
-| Datasource | 99.52      |   411       |   413             |
+| Resources  | 80.67      |  1043       |  1293            |
+| Datasource | 100.00      |   411       |   411             |
 
 ```shell
 ./resource.ps1 google_biglake_iceberg_namespace
@@ -42,6 +42,10 @@
 ./resource.ps1 google_compute_public_advertised_prefix
 ./resource.ps1 google_compute_public_delegated_prefix
 ./resource.ps1 google_compute_region_autoscaler
+./resource.ps1 google_compute_region_backend_bucket
+./resource.ps1 google_compute_region_backend_bucket_iam_binding
+./resource.ps1 google_compute_region_backend_bucket_iam_member
+./resource.ps1 google_compute_region_backend_bucket_iam_policy
 ./resource.ps1 google_compute_region_commitment
 ./resource.ps1 google_compute_region_composite_health_check
 ./resource.ps1 google_compute_region_disk
@@ -62,6 +66,7 @@
 ./resource.ps1 google_compute_reservation
 ./resource.ps1 google_compute_resize_request
 ./resource.ps1 google_compute_resource_policy_attachment
+./resource.ps1 google_compute_rollout_plan
 ./resource.ps1 google_compute_security_policy_rule
 ./resource.ps1 google_compute_service_attachment
 ./resource.ps1 google_compute_shared_vpc_host_project
@@ -80,6 +85,7 @@
 ./resource.ps1 google_container_azure_cluster
 ./resource.ps1 google_container_azure_node_pool
 ./resource.ps1 google_dataform_folder
+./resource.ps1 google_dataform_team_folder
 ./resource.ps1 google_dataproc_gdc_application_environment
 ./resource.ps1 google_dataproc_gdc_service_instance
 ./resource.ps1 google_dataproc_gdc_spark_application
@@ -199,6 +205,7 @@
 ./resource.ps1 google_network_security_server_tls_policy
 ./resource.ps1 google_network_security_tls_inspection_policy
 ./resource.ps1 google_network_security_url_lists
+./resource.ps1 google_network_services_agent_gateway
 ./resource.ps1 google_network_services_authz_extension
 ./resource.ps1 google_network_services_edge_cache_keyset
 ./resource.ps1 google_network_services_edge_cache_origin
@@ -247,6 +254,11 @@
 ./resource.ps1 google_storage_object_acl
 ./resource.ps1 google_storage_transfer_agent_pool
 ./resource.ps1 google_storage_transfer_job
+./resource.ps1 google_vector_search_collection
+./resource.ps1 google_access_context_manager_supported_service -type data
+./resource.ps1 google_access_context_manager_supported_services -type data
 ./resource.ps1 google_biglake_iceberg_namespace_iam_policy -type data
+./resource.ps1 google_compute_region_backend_bucket_iam_policy -type data
 ./resource.ps1 google_storage_bucket_object_contents -type data
+./resource.ps1 google_vmwareengine_announcements -type data
 ```

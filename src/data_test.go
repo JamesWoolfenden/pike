@@ -378,6 +378,8 @@ func TestGetPermission(t *testing.T) {
 				"compute.instances.setMetadata",
 				"compute.instances.delete",
 				"compute.instances.setLabels",
+				"compute.disks.setLabels",
+				"compute.instances.updateNetworkInterface",
 				"compute.instances.get",
 				"compute.instances.delete",
 			}},

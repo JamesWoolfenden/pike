@@ -975,6 +975,7 @@
         "aws_networkflowmonitor_monitor",
         "aws_networkflowmonitor_scope",
         "aws_networkmanager_attachment_accepter",
+        "aws_networkmanager_attachment_routing_policy_label",
         "aws_networkmanager_connect_attachment",
         "aws_networkmanager_connect_peer",
         "aws_networkmanager_connection",
