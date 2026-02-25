@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "compute.crossSiteNetworks.create",
+      "compute.crossSiteNetworks.delete",
+      "compute.crossSiteNetworks.get",
+      "compute.crossSiteNetworks.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.crossSiteNetworks.delete"
+    ],
+    "modify": [
+      "compute.crossSiteNetworks.update"
+    ],
+    "plan": [
+      "compute.crossSiteNetworks.get"
+    ]
+  }
+]

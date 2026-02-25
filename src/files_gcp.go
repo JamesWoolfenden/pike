@@ -2967,3 +2967,111 @@ var googleComputeSnapshotSettings []byte
 
 //go:embed mapping/google/resource/compute/google_compute_target_pool.json
 var googleComputeTargetPool []byte
+
+//go:embed mapping/google/resource/ids/google_cloud_ids_endpoint.json
+var googleCloudIDSEndpoint []byte
+
+//go:embed mapping/google/resource/clouddomains/google_clouddomains_registration.json
+var googleClouddomainsRegistration []byte
+
+//go:embed mapping/google/resource/compute/google_compute_cross_site_network.json
+var googleComputeCrossSiteNetwork []byte
+
+//go:embed mapping/google/resource/compute/google_compute_firewall_policy_association.json
+var googleComputeFirewallPolicyAssociation []byte
+
+//go:embed mapping/google/resource/compute/google_compute_firewall_policy_rule.json
+var googleComputeFirewallPolicyRule []byte
+
+//go:embed mapping/google/resource/compute/google_compute_future_reservation.json
+var googleComputeFuturereservation []byte
+
+//go:embed mapping/google/resource/compute/google_compute_interconnect.json
+var googleComputeInterconnect []byte
+
+//go:embed mapping/google/resource/compute/google_compute_interconnect_attachment.json
+var googleComputeInterconnectAttachment []byte
+
+//go:embed mapping/google/resource/compute/google_compute_network_edge_security_service.json
+var googleComputeNetworkEdgeSecurityService []byte
+
+//go:embed mapping/google/resource/compute/google_compute_network_endpoint.json
+var googleComputeNetworkEndpoint []byte
+
+//go:embed mapping/google/resource/compute/google_compute_network_endpoints.json
+var googleComputeNetworkEndpoints []byte
+
+//go:embed mapping/google/resource/compute/google_compute_network_firewall_policy.json
+var googleComputeNetworkFirewallPolicy []byte
+
+//go:embed mapping/google/resource/compute/google_compute_network_firewall_policy_association.json
+var googleComputeNetworkFirewallPolicyAssociation []byte
+
+//go:embed mapping/google/resource/compute/google_compute_network_firewall_policy_rule.json
+var googleComputeNetworkFirewallPolicyRule []byte
+
+//go:embed mapping/google/resource/compute/google_compute_network_peering_routes_config.json
+var googleComputeNetworkPeeringRoutesConfig []byte
+
+//go:embed mapping/google/resource/compute/google_compute_node_group.json
+var googleComputeNodeGroup []byte
+
+//go:embed mapping/google/resource/compute/google_compute_organization_security_policy.json
+var googleComputeOrganizationSecurityPolicy []byte
+
+//go:embed mapping/google/resource/compute/google_compute_organization_security_policy_association.json
+var googleComputeOrganizationSecurityPolicyAssociation []byte
+
+//go:embed mapping/google/resource/compute/google_compute_organization_security_policy_rule.json
+var googleComputeOrganizationSecurityPolicyRule []byte
+
+//go:embed mapping/google/resource/compute/google_compute_per_instance_config.json
+var googleComputePerInstanceConfig []byte
+
+//go:embed mapping/google/resource/compute/google_compute_public_advertised_prefix.json
+var googleComputePublicAdvertisedPrefix []byte
+
+//go:embed mapping/google/resource/compute/google_compute_public_delegated_prefix.json
+var googleComputePublicDelegatedPrefix []byte
+
+//go:embed mapping/google/resource/compute/google_compute_region_autoscaler.json
+var googleComputeRegionAutoscaler []byte
+
+//go:embed mapping/google/resource/compute/google_compute_region_disk.json
+var googleComputeRegionDisk []byte
+
+//go:embed mapping/google/resource/compute/google_compute_region_instance_group_manager.json
+var googleComputeRegionInstanceGroupManager []byte
+
+//go:embed mapping/google/resource/compute/google_compute_region_instance_template.json
+var googleComputeRegionInstanceTemplate []byte
+
+//go:embed mapping/google/resource/compute/google_compute_region_per_instance_config.json
+var googleComputeRegionPerInstanceConfig []byte
+
+//go:embed mapping/google/resource/compute/google_compute_reservation.json
+var googleComputeReservation []byte
+
+//go:embed mapping/google/resource/compute/google_compute_service_attachment.json
+var googleComputeServiceAttachment []byte
+
+//go:embed mapping/google/resource/compute/google_compute_shared_vpc_host_project.json
+var googleComputeSharedVPCHostProject []byte
+
+//go:embed mapping/google/resource/compute/google_compute_storage_pool.json
+var googleComputeStoragePool []byte
+
+//go:embed mapping/google/resource/compute/google_compute_target_grpc_proxy.json
+var googleComputeTargetGRPCProxy []byte
+
+//go:embed mapping/google/resource/compute/google_compute_target_ssl_proxy.json
+var googleComputeTargetSSLProxy []byte
+
+//go:embed mapping/google/resource/compute/google_compute_vpn_gateway.json
+var googleComputeVPNGateway []byte
+
+//go:embed mapping/google/resource/compute/google_compute_vpn_tunnel.json
+var googleComputeVPNTunnel []byte
+
+//go:embed mapping/google/resource/storage/google_storage_managed_folder.json
+var googleStorageManagedFolder []byte

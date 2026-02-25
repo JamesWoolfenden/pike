@@ -1,0 +1,1 @@
+resource "google_compute_network_edge_security_service" "pike" {}

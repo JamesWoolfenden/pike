@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "compute.regionInstanceTemplates.create",
+      "compute.regionInstanceTemplates.delete",
+      "compute.regionInstanceTemplates.get",
+      "compute.regionInstanceTemplates.useReadOnly"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.regionInstanceTemplates.delete"
+    ],
+    "modify": [],
+    "plan": [
+      "compute.regionInstanceTemplates.get"
+    ]
+  }
+]

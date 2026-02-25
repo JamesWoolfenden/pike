@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "compute.reservations.create",
+      "compute.reservations.delete",
+      "compute.reservations.get",
+      "compute.reservations.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.reservations.delete"
+    ],
+    "modify": [
+      "compute.reservations.update"
+    ],
+    "plan": [
+      "compute.reservations.get"
+    ]
+  }
+]

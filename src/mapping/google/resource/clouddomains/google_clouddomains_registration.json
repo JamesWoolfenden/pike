@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "domains.registrations.create",
+      "domains.registrations.delete",
+      "domains.registrations.get",
+      "domains.registrations.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "domains.registrations.delete"
+    ],
+    "modify": [
+      "domains.registrations.update"
+    ],
+    "plan": [
+      "domains.registrations.get"
+    ]
+  }
+]

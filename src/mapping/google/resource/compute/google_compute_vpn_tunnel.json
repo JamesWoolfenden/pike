@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "compute.vpnTunnels.create",
+      "compute.vpnTunnels.delete",
+      "compute.vpnTunnels.get",
+      "compute.vpnTunnels.setLabels"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.vpnTunnels.delete"
+    ],
+    "modify": [
+      "compute.vpnTunnels.setLabels"
+    ],
+    "plan": [
+      "compute.vpnTunnels.get"
+    ]
+  }
+]

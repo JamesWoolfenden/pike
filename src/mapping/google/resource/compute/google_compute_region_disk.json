@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "compute.regionDisks.create",
+      "compute.regionDisks.createSnapshot",
+      "compute.regionDisks.delete",
+      "compute.regionDisks.get",
+      "compute.regionDisks.setLabels",
+      "compute.regionDisks.update",
+      "compute.regionDisks.use",
+      "compute.regionDisks.useReadOnly"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.regionDisks.delete"
+    ],
+    "modify": [
+      "compute.regionDisks.setLabels",
+      "compute.regionDisks.update"
+    ],
+    "plan": [
+      "compute.regionDisks.get"
+    ]
+  }
+]

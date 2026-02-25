@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "compute.networks.get",
+      "compute.networks.updatePeering"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.networks.updatePeering"
+    ],
+    "modify": [
+      "compute.networks.updatePeering"
+    ],
+    "plan": [
+      "compute.networks.get"
+    ]
+  }
+]

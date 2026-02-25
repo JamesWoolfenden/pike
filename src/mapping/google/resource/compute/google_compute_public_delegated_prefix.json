@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "compute.publicDelegatedPrefixes.create",
+      "compute.publicDelegatedPrefixes.delete",
+      "compute.publicDelegatedPrefixes.get",
+      "compute.publicDelegatedPrefixes.update",
+      "compute.publicAdvertisedPrefixes.updatePolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.publicDelegatedPrefixes.delete"
+    ],
+    "modify": [
+      "compute.publicDelegatedPrefixes.update"
+    ],
+    "plan": [
+      "compute.publicDelegatedPrefixes.get"
+    ]
+  }
+]

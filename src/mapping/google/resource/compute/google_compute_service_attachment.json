@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "compute.serviceAttachments.create",
+      "compute.serviceAttachments.delete",
+      "compute.serviceAttachments.get",
+      "compute.serviceAttachments.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.serviceAttachments.delete"
+    ],
+    "modify": [
+      "compute.serviceAttachments.update"
+    ],
+    "plan": [
+      "compute.serviceAttachments.get"
+    ]
+  }
+]

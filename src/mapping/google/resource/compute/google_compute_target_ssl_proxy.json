@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "compute.targetSslProxies.create",
+      "compute.targetSslProxies.delete",
+      "compute.targetSslProxies.get",
+      "compute.targetSslProxies.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.targetSslProxies.delete"
+    ],
+    "modify": [
+      "compute.targetSslProxies.update"
+    ],
+    "plan": [
+      "compute.targetSslProxies.get"
+    ]
+  }
+]

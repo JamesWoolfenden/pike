@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "compute.networkEndpointGroups.attachNetworkEndpoints",
+      "compute.networkEndpointGroups.get",
+      "compute.instances.use"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.networkEndpointGroups.detachNetworkEndpoints"
+    ],
+    "modify": [],
+    "plan": [
+      "compute.networkEndpointGroups.get"
+    ]
+  }
+]

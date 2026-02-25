@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "compute.nodeGroups.create",
+      "compute.nodeGroups.delete",
+      "compute.nodeGroups.get",
+      "compute.nodeGroups.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.nodeGroups.delete"
+    ],
+    "modify": [
+      "compute.nodeGroups.update"
+    ],
+    "plan": [
+      "compute.nodeGroups.get"
+    ]
+  }
+]

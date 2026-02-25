@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "compute.storagePools.create",
+      "compute.storagePools.delete",
+      "compute.storagePools.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.storagePools.delete"
+    ],
+    "modify": [],
+    "plan": [
+      "compute.storagePools.get"
+    ]
+  }
+]

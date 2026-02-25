@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "compute.targetGrpcProxies.create",
+      "compute.targetGrpcProxies.delete",
+      "compute.targetGrpcProxies.get",
+      "compute.targetGrpcProxies.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.targetGrpcProxies.delete"
+    ],
+    "modify": [
+      "compute.targetGrpcProxies.update"
+    ],
+    "plan": [
+      "compute.targetGrpcProxies.get"
+    ]
+  }
+]

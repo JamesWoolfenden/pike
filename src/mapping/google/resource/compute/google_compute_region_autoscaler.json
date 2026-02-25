@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "compute.regionAutoscalers.create",
+      "compute.regionAutoscalers.delete",
+      "compute.regionAutoscalers.get",
+      "compute.regionAutoscalers.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.regionAutoscalers.delete"
+    ],
+    "modify": [
+      "compute.regionAutoscalers.update"
+    ],
+    "plan": [
+      "compute.regionAutoscalers.get"
+    ]
+  }
+]

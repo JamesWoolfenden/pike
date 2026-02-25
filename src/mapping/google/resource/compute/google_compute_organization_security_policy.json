@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "compute.organizationSecurityPolicies.create",
+      "compute.organizationSecurityPolicies.delete",
+      "compute.organizationSecurityPolicies.get",
+      "compute.organizationSecurityPolicies.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.organizationSecurityPolicies.delete"
+    ],
+    "modify": [
+      "compute.organizationSecurityPolicies.update"
+    ],
+    "plan": [
+      "compute.organizationSecurityPolicies.get"
+    ]
+  }
+]

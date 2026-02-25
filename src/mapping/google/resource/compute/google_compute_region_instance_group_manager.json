@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "compute.regionInstanceGroupManagers.create",
+      "compute.regionInstanceGroupManagers.delete",
+      "compute.regionInstanceGroupManagers.get",
+      "compute.regionInstanceGroupManagers.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.regionInstanceGroupManagers.delete"
+    ],
+    "modify": [
+      "compute.regionInstanceGroupManagers.update"
+    ],
+    "plan": [
+      "compute.regionInstanceGroupManagers.get"
+    ]
+  }
+]

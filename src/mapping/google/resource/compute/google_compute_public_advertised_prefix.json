@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "compute.publicAdvertisedPrefixes.create",
+      "compute.publicAdvertisedPrefixes.delete",
+      "compute.publicAdvertisedPrefixes.get",
+      "compute.publicAdvertisedPrefixes.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.publicAdvertisedPrefixes.delete"
+    ],
+    "modify": [
+      "compute.publicAdvertisedPrefixes.update"
+    ],
+    "plan": [
+      "compute.publicAdvertisedPrefixes.get"
+    ]
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "compute.projects.get",
+      "resourcemanager.projects.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.projects.get",
+      "resourcemanager.projects.get"
+    ],
+    "modify": [],
+    "plan": [
+      "compute.projects.get",
+      "resourcemanager.projects.get"
+    ]
+  }
+]

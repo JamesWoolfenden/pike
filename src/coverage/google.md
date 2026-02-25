@@ -2,8 +2,8 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 80.67      |  1043       |  1293            |
-| Datasource | 100.00      |   411       |   411             |
+| Resources  | 83.64      |  1094       |  1308            |
+| Datasource | 98.09      |   410       |   418             |
 
 ```shell
 ./resource.ps1 google_biglake_iceberg_namespace
@@ -11,71 +11,36 @@
 ./resource.ps1 google_biglake_iceberg_namespace_iam_member
 ./resource.ps1 google_biglake_iceberg_namespace_iam_policy
 ./resource.ps1 google_cloud_identity_policy
-./resource.ps1 google_cloud_ids_endpoint
 ./resource.ps1 google_cloud_quotas_quota_adjuster_settings
 ./resource.ps1 google_cloud_quotas_quota_preference
-./resource.ps1 google_clouddomains_registration
-./resource.ps1 google_compute_cross_site_network
-./resource.ps1 google_compute_firewall_policy_association
-./resource.ps1 google_compute_firewall_policy_rule
 ./resource.ps1 google_compute_firewall_policy_with_rules
-./resource.ps1 google_compute_future_reservation
-./resource.ps1 google_compute_interconnect
-./resource.ps1 google_compute_interconnect_attachment
 ./resource.ps1 google_compute_interconnect_attachment_group
 ./resource.ps1 google_compute_interconnect_group
-./resource.ps1 google_compute_network_edge_security_service
-./resource.ps1 google_compute_network_endpoint
-./resource.ps1 google_compute_network_endpoints
-./resource.ps1 google_compute_network_firewall_policy
-./resource.ps1 google_compute_network_firewall_policy_association
 ./resource.ps1 google_compute_network_firewall_policy_packet_mirroring_rule
-./resource.ps1 google_compute_network_firewall_policy_rule
 ./resource.ps1 google_compute_network_firewall_policy_with_rules
-./resource.ps1 google_compute_network_peering_routes_config
-./resource.ps1 google_compute_node_group
-./resource.ps1 google_compute_organization_security_policy
-./resource.ps1 google_compute_organization_security_policy_association
-./resource.ps1 google_compute_organization_security_policy_rule
-./resource.ps1 google_compute_per_instance_config
 ./resource.ps1 google_compute_preview_feature
-./resource.ps1 google_compute_public_advertised_prefix
-./resource.ps1 google_compute_public_delegated_prefix
-./resource.ps1 google_compute_region_autoscaler
 ./resource.ps1 google_compute_region_backend_bucket
 ./resource.ps1 google_compute_region_backend_bucket_iam_binding
 ./resource.ps1 google_compute_region_backend_bucket_iam_member
 ./resource.ps1 google_compute_region_backend_bucket_iam_policy
 ./resource.ps1 google_compute_region_commitment
 ./resource.ps1 google_compute_region_composite_health_check
-./resource.ps1 google_compute_region_disk
 ./resource.ps1 google_compute_region_disk_resource_policy_attachment
 ./resource.ps1 google_compute_region_health_aggregation_policy
 ./resource.ps1 google_compute_region_health_source
-./resource.ps1 google_compute_region_instance_group_manager
-./resource.ps1 google_compute_region_instance_template
 ./resource.ps1 google_compute_region_network_endpoint
 ./resource.ps1 google_compute_region_network_firewall_policy
 ./resource.ps1 google_compute_region_network_firewall_policy_association
 ./resource.ps1 google_compute_region_network_firewall_policy_rule
 ./resource.ps1 google_compute_region_network_firewall_policy_with_rules
-./resource.ps1 google_compute_region_per_instance_config
 ./resource.ps1 google_compute_region_resize_request
 ./resource.ps1 google_compute_region_security_policy
 ./resource.ps1 google_compute_region_security_policy_rule
-./resource.ps1 google_compute_reservation
 ./resource.ps1 google_compute_resize_request
 ./resource.ps1 google_compute_resource_policy_attachment
 ./resource.ps1 google_compute_rollout_plan
 ./resource.ps1 google_compute_security_policy_rule
-./resource.ps1 google_compute_service_attachment
-./resource.ps1 google_compute_shared_vpc_host_project
 ./resource.ps1 google_compute_shared_vpc_service_project
-./resource.ps1 google_compute_storage_pool
-./resource.ps1 google_compute_target_grpc_proxy
-./resource.ps1 google_compute_target_ssl_proxy
-./resource.ps1 google_compute_vpn_gateway
-./resource.ps1 google_compute_vpn_tunnel
 ./resource.ps1 google_compute_wire_group
 ./resource.ps1 google_container_analysis_occurrence
 ./resource.ps1 google_container_attached_cluster
@@ -139,6 +104,7 @@
 ./resource.ps1 google_gkeonprem_vmware_admin_cluster
 ./resource.ps1 google_gkeonprem_vmware_cluster
 ./resource.ps1 google_gkeonprem_vmware_node_pool
+./resource.ps1 google_hypercomputecluster_cluster
 ./resource.ps1 google_identity_platform_config
 ./resource.ps1 google_identity_platform_default_supported_idp_config
 ./resource.ps1 google_identity_platform_inbound_saml_config
@@ -250,15 +216,16 @@
 ./resource.ps1 google_storage_anywhere_cache
 ./resource.ps1 google_storage_batch_operations_job
 ./resource.ps1 google_storage_folder
-./resource.ps1 google_storage_managed_folder
 ./resource.ps1 google_storage_object_acl
 ./resource.ps1 google_storage_transfer_agent_pool
 ./resource.ps1 google_storage_transfer_job
 ./resource.ps1 google_vector_search_collection
 ./resource.ps1 google_access_context_manager_supported_service -type data
 ./resource.ps1 google_access_context_manager_supported_services -type data
+./resource.ps1 google_biglake_iceberg_catalog_iam_policy -type data
 ./resource.ps1 google_biglake_iceberg_namespace_iam_policy -type data
 ./resource.ps1 google_compute_region_backend_bucket_iam_policy -type data
 ./resource.ps1 google_storage_bucket_object_contents -type data
 ./resource.ps1 google_vmwareengine_announcements -type data
+./resource.ps1 google_vmwareengine_upgrades -type data
 ```

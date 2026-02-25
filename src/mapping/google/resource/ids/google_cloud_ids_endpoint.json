@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "ids.endpoints.create",
+      "ids.endpoints.delete",
+      "ids.endpoints.get",
+      "ids.endpoints.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "ids.endpoints.delete"
+    ],
+    "modify": [
+      "ids.endpoints.update"
+    ],
+    "plan": [
+      "ids.endpoints.get"
+    ]
+  }
+]

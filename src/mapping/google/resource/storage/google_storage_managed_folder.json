@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "storage.managedFolders.create",
+      "storage.managedFolders.delete",
+      "storage.managedFolders.get",
+      "storage.managedFolders.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "storage.managedFolders.delete"
+    ],
+    "modify": [
+      "storage.managedFolders.update"
+    ],
+    "plan": [
+      "storage.managedFolders.get"
+    ]
+  }
+]

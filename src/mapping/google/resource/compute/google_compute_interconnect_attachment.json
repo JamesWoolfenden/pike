@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "compute.interconnectAttachments.create",
+      "compute.interconnectAttachments.delete",
+      "compute.interconnectAttachments.get",
+      "compute.interconnectAttachments.setLabels",
+      "compute.interconnectAttachments.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.interconnectAttachments.delete"
+    ],
+    "modify": [
+      "compute.interconnectAttachments.update",
+      "compute.interconnectAttachments.setLabels"
+    ],
+    "plan": [
+      "compute.interconnectAttachments.get"
+    ]
+  }
+]

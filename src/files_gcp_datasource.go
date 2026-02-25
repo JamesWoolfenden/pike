@@ -133,6 +133,9 @@ var dataGoogleBigqueryAnalyticsHubListingIAMPolicy []byte
 //go:embed mapping/google/data/bigquery/google_bigquery_datapolicy_data_policy_iam_policy.json
 var dataGoogleBigqueryDatapolicyDataPolicyIAMPolicy []byte
 
+//go:embed mapping/google/data/bigquery/google_bigquery_datapolicyv2_data_policy_iam_policy.json
+var dataGoogleBigqueryDatapolicyV2DataPolicyIAMPolicy []byte
+
 //go:embed mapping/google/data/bigquery/google_bigquery_default_service_account.json
 var dataGoogleBigqueryDefaultServiceAccount []byte
 
@@ -343,6 +346,9 @@ var dataGoogleComputeRegionInstanceTemplate []byte
 //go:embed mapping/google/data/compute/google_compute_region_network_endpoint_group.json
 var dataGoogleComputeRegionNetworkEndpointGroup []byte
 
+//go:embed mapping/google/data/compute/google_compute_region_security_policy.json
+var dataGoogleComputeRegionSecurityPolicy []byte
+
 //go:embed mapping/google/data/compute/google_compute_regions.json
 var dataGoogleComputeRegions []byte
 
@@ -367,6 +373,9 @@ var dataGoogleComputeRouterNat []byte
 //go:embed mapping/google/data/compute/google_compute_router_status.json
 var dataGoogleComputeRouterStatus []byte
 
+//go:embed mapping/google/data/compute/google_compute_routers.json
+var dataGoogleComputeRouters []byte
+
 //go:embed mapping/google/data/compute/google_compute_security_policy.json
 var dataGoogleComputeSecurityPolicy []byte
 
@@ -381,6 +390,9 @@ var dataGoogleComputeSslCertificate []byte
 
 //go:embed mapping/google/data/compute/google_compute_ssl_policy.json
 var dataGoogleComputeSslPolicy []byte
+
+//go:embed mapping/google/data/compute/google_compute_storage_pool.json
+var dataGoogleComputeStoragePool []byte
 
 //go:embed mapping/google/data/compute/google_compute_storage_pool_iam_policy.json
 var dataGoogleComputeStoragePoolIAMPolicy []byte
@@ -856,6 +868,9 @@ var dataGoogleServiceDirectoryNamespaceIAMPolicy []byte
 //go:embed mapping/google/data/servicedirectory/google_service_directory_service_iam_policy.json
 var dataGoogleServiceDirectoryServiceIAMPolicy []byte
 
+//go:embed mapping/google/data/servicenetworking/google_service_networking_peered_dns_domain.json
+var dataGoogleServiceNetworkingPeeredDNSDomain []byte
+
 //go:embed mapping/google/data/source/google_sourcerepo_repository.json
 var dataGoogleSourcerepoRepository []byte
 
@@ -943,6 +958,9 @@ var dataGoogleTagsTagKeys []byte
 //go:embed mapping/google/data/resourcemanager/google_tags_tag_value.json
 var dataGoogleTagsTagValue []byte
 
+//go:embed mapping/google/data/tags/google_tags_tag_value_iam_policy.json
+var dataGoogleTagsTagValueIAMPolicy []byte
+
 //go:embed mapping/google/data/resourcemanager/google_tags_tag_values.json
 var dataGoogleTagsTagValues []byte
 
@@ -1009,26 +1027,14 @@ var dataGoogleWorkstationsWorkstationConfigIAMPolicy []byte
 //go:embed mapping/google/data/workstations/google_workstations_workstation_iam_policy.json
 var dataGoogleWorkstationsWorkstationIAMPolicy []byte
 
-//go:embed mapping/google/data/tags/google_tags_tag_value_iam_policy.json
-var dataGoogleTagsTagValueIAMPolicy []byte
-
-//go:embed mapping/google/data/compute/google_compute_region_security_policy.json
-var dataGoogleComputeRegionSecurityPolicy []byte
-
-//go:embed mapping/google/data/compute/google_compute_storage_pool.json
-var dataGoogleComputeStoragePool []byte
-
 //go:embed mapping/google/data/gkehub/google_gke_hub_membership_binding.json
 var dataGKEHubMembershipBinding []byte
 
-//go:embed mapping/google/data/servicenetworking/google_service_networking_peered_dns_domain.json
-var dataGoogleServiceNetworkingPeeredDNSDomain []byte
-
-//go:embed mapping/google/data/biglake/google_biglake_iceberg_catalog_iam_policy.json
-var dataGoogleBiglakeIcebergCatalogIamPolicy []byte
-
-//go:embed mapping/google/data/compute/google_compute_routers.json
-var dataGoogleComputeRouters []byte
-
 //go:embed mapping/google/data/vmwareengine/google_vmwareengine_datastore.json
 var dataGoogleVmwareengineDatastore []byte
+
+//go:embed mapping/google/data/gkehub/google_gke_hub_membership.json
+var dataGoogleGKEHubMembership []byte
+
+//go:embed mapping/google/data/gkehub/google_gke_hub_membership_iam_policy.json
+var dataGoogleGKEHubMembershipPolicy []byte

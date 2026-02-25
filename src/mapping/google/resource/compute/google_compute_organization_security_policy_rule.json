@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "compute.organizationSecurityPolicies.get",
+      "compute.organizationSecurityPolicies.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.organizationSecurityPolicies.update"
+    ],
+    "modify": [
+      "compute.organizationSecurityPolicies.update"
+    ],
+    "plan": [
+      "compute.organizationSecurityPolicies.get"
+    ]
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "compute.networkEdgeSecurityServices.create",
+      "compute.networkEdgeSecurityServices.delete",
+      "compute.networkEdgeSecurityServices.get",
+      "compute.networkEdgeSecurityServices.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.networkEdgeSecurityServices.delete"
+    ],
+    "modify": [
+      "compute.networkEdgeSecurityServices.update"
+    ],
+    "plan": [
+      "compute.networkEdgeSecurityServices.get"
+    ]
+  }
+]
