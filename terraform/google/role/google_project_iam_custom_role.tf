@@ -5,9 +5,9 @@ resource "google_project_iam_custom_role" "terraform_pike" {
   title       = "terraform_pike"
   description = "A user with least privileges"
   permissions = [
-    "domains.registrations.create",
-    "domains.registrations.delete",
-    "domains.registrations.get",
-    "domains.registrations.update"
+    "workflows.workflows.create",
+    "workflows.workflows.delete",
+    "workflows.workflows.get",
+    "workflows.workflows.update"
   ]
 }

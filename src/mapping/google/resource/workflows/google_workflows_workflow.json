@@ -1,17 +1,31 @@
 [
   {
     "apply": [
+      "workflows.locations.get",
+      "workflows.locations.list",
+      "workflows.operations.get",
       "workflows.workflows.create",
       "workflows.workflows.delete",
       "workflows.workflows.get",
+      "workflows.workflows.list",
       "workflows.workflows.update"
     ],
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": [],
+    "destroy": [
+      "workflows.operations.get",
+      "workflows.workflows.delete"
+    ],
+    "modify": [
+      "workflows.operations.get",
+      "workflows.workflows.get",
+      "workflows.workflows.update"
+    ],
+    "plan": [
+      "workflows.workflows.get",
+      "workflows.workflows.list"
+    ],
     "runtime": {
       "service_account": [
         "run.routes.invoke",
