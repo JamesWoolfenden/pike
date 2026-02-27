@@ -1,13 +1,10 @@
 [
   {
     "apply": [
-      "workflows.locations.get",
-      "workflows.locations.list",
       "workflows.operations.get",
       "workflows.workflows.create",
       "workflows.workflows.delete",
       "workflows.workflows.get",
-      "workflows.workflows.list",
       "workflows.workflows.update"
     ],
     "attributes": {
@@ -23,8 +20,7 @@
       "workflows.workflows.update"
     ],
     "plan": [
-      "workflows.workflows.get",
-      "workflows.workflows.list"
+      "workflows.workflows.get"
     ],
     "runtime": {
       "service_account": [
