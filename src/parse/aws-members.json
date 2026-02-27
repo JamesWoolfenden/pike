@@ -987,6 +987,7 @@
         "aws_networkmanager_global_network",
         "aws_networkmanager_link",
         "aws_networkmanager_link_association",
+        "aws_networkmanager_prefix_list_association",
         "aws_networkmanager_site",
         "aws_networkmanager_site_to_site_vpn_attachment",
         "aws_networkmanager_transit_gateway_connect_peer_association",
