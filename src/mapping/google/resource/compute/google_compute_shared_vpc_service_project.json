@@ -1,19 +1,19 @@
 [
   {
     "apply": [
-      "compute.projects.get",
+      "compute.organizations.enableXpnResource",
       "resourcemanager.projects.get"
     ],
     "attributes": {
       "tags": []
     },
     "destroy": [
-      "compute.projects.get",
-      "resourcemanager.projects.get"
+      "compute.organizations.disableXpnResource"
     ],
-    "modify": [],
+    "modify": [
+      "compute.organizations.enableXpnResource"
+    ],
     "plan": [
-      "compute.projects.get",
       "resourcemanager.projects.get"
     ]
   }

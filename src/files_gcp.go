@@ -655,6 +655,9 @@ var googleComputeProjectMetadataItem []byte
 //go:embed mapping/google/resource/compute/google_compute_resource_policy.json
 var googleComputeResourcePolicy []byte
 
+//go:embed mapping/google/resource/compute/google_compute_resource_policy_attachment.json
+var googleComputeResourcePolicyAttachment []byte
+
 //go:embed mapping/google/resource/compute/google_compute_router.json
 var googleComputeRouter []byte
 
@@ -672,6 +675,9 @@ var googleComputeRegionBackendServiceIAMMember []byte
 
 //go:embed mapping/google/resource/compute/google_compute_region_backend_service_iam_policy.json
 var googleComputeRegionBackendServiceIAMPolicy []byte
+
+//go:embed mapping/google/resource/compute/google_compute_region_commitment.json
+var googleComputeRegionCommitment []byte
 
 //go:embed mapping/google/resource/compute/google_compute_region_disk_iam_binding.json
 var googleComputeRegionDiskIAMBinding []byte
@@ -705,6 +711,9 @@ var googleComputeRegionUrlMap []byte
 
 //go:embed mapping/google/resource/compute/google_compute_security_policy.json
 var googleComputeSecurityPolicy []byte
+
+//go:embed mapping/google/resource/compute/google_compute_security_policy_rule.json
+var googleComputeSecurityPolicyRule []byte
 
 //go:embed mapping/google/resource/compute/google_compute_snapshot_iam_binding.json
 var googleComputeSnapshotIAMBinding []byte
@@ -3040,6 +3049,9 @@ var googleComputeRegionAutoscaler []byte
 //go:embed mapping/google/resource/compute/google_compute_region_disk.json
 var googleComputeRegionDisk []byte
 
+//go:embed mapping/google/resource/compute/google_compute_region_disk_resource_policy_attachment.json
+var googleComputeRegionDiskResourcePolicyAttachment []byte
+
 //go:embed mapping/google/resource/compute/google_compute_region_instance_group_manager.json
 var googleComputeRegionInstanceGroupManager []byte
 
@@ -3057,6 +3069,9 @@ var googleComputeServiceAttachment []byte
 
 //go:embed mapping/google/resource/compute/google_compute_shared_vpc_host_project.json
 var googleComputeSharedVPCHostProject []byte
+
+//go:embed mapping/google/resource/compute/google_compute_shared_vpc_service_project.json
+var googleComputeSharedVPCServiceProject []byte
 
 //go:embed mapping/google/resource/compute/google_compute_storage_pool.json
 var googleComputeStoragePool []byte

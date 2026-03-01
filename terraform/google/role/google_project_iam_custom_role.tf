@@ -4,10 +4,5 @@ resource "google_project_iam_custom_role" "terraform_pike" {
   role_id     = "terraform_pike"
   title       = "terraform_pike"
   description = "A user with least privileges"
-  permissions = [
-    "workflows.workflows.create",
-    "workflows.workflows.delete",
-    "workflows.workflows.get",
-    "workflows.workflows.update"
-  ]
+  permissions = []
 }

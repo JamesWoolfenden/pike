@@ -2,8 +2,8 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 83.64      |  1094       |  1308            |
-| Datasource | 98.09      |   410       |   418             |
+| Resources  | 83.96      |  1099       |  1309            |
+| Datasource | 97.85      |   410       |   419             |
 
 ```shell
 ./resource.ps1 google_biglake_iceberg_namespace
@@ -23,9 +23,7 @@
 ./resource.ps1 google_compute_region_backend_bucket_iam_binding
 ./resource.ps1 google_compute_region_backend_bucket_iam_member
 ./resource.ps1 google_compute_region_backend_bucket_iam_policy
-./resource.ps1 google_compute_region_commitment
 ./resource.ps1 google_compute_region_composite_health_check
-./resource.ps1 google_compute_region_disk_resource_policy_attachment
 ./resource.ps1 google_compute_region_health_aggregation_policy
 ./resource.ps1 google_compute_region_health_source
 ./resource.ps1 google_compute_region_network_endpoint
@@ -37,10 +35,7 @@
 ./resource.ps1 google_compute_region_security_policy
 ./resource.ps1 google_compute_region_security_policy_rule
 ./resource.ps1 google_compute_resize_request
-./resource.ps1 google_compute_resource_policy_attachment
 ./resource.ps1 google_compute_rollout_plan
-./resource.ps1 google_compute_security_policy_rule
-./resource.ps1 google_compute_shared_vpc_service_project
 ./resource.ps1 google_compute_wire_group
 ./resource.ps1 google_container_analysis_occurrence
 ./resource.ps1 google_container_attached_cluster
@@ -51,6 +46,7 @@
 ./resource.ps1 google_container_azure_node_pool
 ./resource.ps1 google_dataform_folder
 ./resource.ps1 google_dataform_team_folder
+./resource.ps1 google_dataplex_data_product_data_asset
 ./resource.ps1 google_dataproc_gdc_application_environment
 ./resource.ps1 google_dataproc_gdc_service_instance
 ./resource.ps1 google_dataproc_gdc_spark_application
@@ -222,6 +218,7 @@
 ./resource.ps1 google_vector_search_collection
 ./resource.ps1 google_access_context_manager_supported_service -type data
 ./resource.ps1 google_access_context_manager_supported_services -type data
+./resource.ps1 google_backup_dr_data_sources -type data
 ./resource.ps1 google_biglake_iceberg_catalog_iam_policy -type data
 ./resource.ps1 google_biglake_iceberg_namespace_iam_policy -type data
 ./resource.ps1 google_compute_region_backend_bucket_iam_policy -type data
