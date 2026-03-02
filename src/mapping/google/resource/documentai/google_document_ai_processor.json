@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "documentai.processors.create",
+      "documentai.processors.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "documentai.processors.delete"
+    ],
+    "modify": [
+      "documentai.processors.update"
+    ],
+    "plan": [
+      "documentai.processors.get"
+    ]
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "storage.folders.create",
+      "storage.folders.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "storage.folders.delete"
+    ],
+    "modify": [
+      "storage.folders.get"
+    ],
+    "plan": [
+      "storage.folders.get"
+    ]
+  }
+]

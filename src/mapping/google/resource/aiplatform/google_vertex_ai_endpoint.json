@@ -2,8 +2,6 @@
   {
     "apply": [
       "aiplatform.endpoints.create",
-      "aiplatform.endpoints.delete",
-      "aiplatform.endpoints.update",
       "aiplatform.endpoints.get"
     ],
     "attributes": {
@@ -15,6 +13,8 @@
     "modify": [
       "aiplatform.endpoints.update"
     ],
-    "plan": []
+    "plan": [
+      "aiplatform.endpoints.get"
+    ]
   }
 ]

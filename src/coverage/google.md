@@ -2,7 +2,7 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 83.96      |  1099       |  1309            |
+| Resources  | 84.26      |  1103       |  1309            |
 | Datasource | 97.85      |   410       |   419             |
 
 ```shell
@@ -26,7 +26,6 @@
 ./resource.ps1 google_compute_region_composite_health_check
 ./resource.ps1 google_compute_region_health_aggregation_policy
 ./resource.ps1 google_compute_region_health_source
-./resource.ps1 google_compute_region_network_endpoint
 ./resource.ps1 google_compute_region_network_firewall_policy
 ./resource.ps1 google_compute_region_network_firewall_policy_association
 ./resource.ps1 google_compute_region_network_firewall_policy_rule
@@ -55,7 +54,6 @@
 ./resource.ps1 google_dialogflow_cx_tool_version
 ./resource.ps1 google_dialogflow_generator
 ./resource.ps1 google_dialogflow_version
-./resource.ps1 google_document_ai_processor
 ./resource.ps1 google_document_ai_processor_default_version
 ./resource.ps1 google_document_ai_warehouse_document_schema
 ./resource.ps1 google_document_ai_warehouse_location
@@ -211,8 +209,6 @@
 ./resource.ps1 google_service_usage_consumer_quota_override
 ./resource.ps1 google_storage_anywhere_cache
 ./resource.ps1 google_storage_batch_operations_job
-./resource.ps1 google_storage_folder
-./resource.ps1 google_storage_object_acl
 ./resource.ps1 google_storage_transfer_agent_pool
 ./resource.ps1 google_storage_transfer_job
 ./resource.ps1 google_vector_search_collection

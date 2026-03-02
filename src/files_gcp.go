@@ -694,6 +694,9 @@ var googleComputeRegionHealthCheck []byte
 //go:embed mapping/google/resource/compute/google_compute_region_network_endpoint_group.json
 var googleComputeRegionNetworkEndpointGroup []byte
 
+//go:embed mapping/google/resource/compute/google_compute_region_network_endpoint.json
+var googleComputeRegionNetworkEndpoint []byte
+
 //go:embed mapping/google/resource/compute/google_compute_region_ssl_certificate.json
 var googleComputeRegionSslCertificate []byte
 
@@ -1140,6 +1143,9 @@ var googleDialogflowFulfillment []byte
 
 //go:embed mapping/google/resource/dialogflow/google_dialogflow_intent.json
 var googleDialogflowIntent []byte
+
+//go:embed mapping/google/resource/documentai/google_document_ai_processor.json
+var googleDocumentAIProcessor []byte
 
 //go:embed mapping/google/resource/dns/google_dns_managed_zone.json
 var googleDNSManagedZone []byte
@@ -2092,6 +2098,9 @@ var googleStorageDefaultObjectAccessControl []byte
 //go:embed mapping/google/resource/storage/google_storage_default_object_acl.json
 var googleStorageDefaultObjectAcl []byte
 
+//go:embed mapping/google/resource/storage/google_storage_folder.json
+var googleStorageFolder []byte
+
 //go:embed mapping/google/resource/storage/google_storage_hmac_key.json
 var googleStorageHmacKey []byte
 
@@ -2115,6 +2124,9 @@ var googleStorageNotification []byte
 
 //go:embed mapping/google/resource/storage/google_storage_object_access_control.json
 var googleStorageObjectAccessControl []byte
+
+//go:embed mapping/google/resource/storage/google_storage_object_acl.json
+var googleStorageObjectAcl []byte
 
 //go:embed mapping/google/resource/resourcemanager/google_tags_location_tag_binding.json
 var googleTagsLocationTagBinding []byte

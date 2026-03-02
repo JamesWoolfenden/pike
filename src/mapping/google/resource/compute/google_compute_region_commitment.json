@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "compute.commitments.create",
+      "compute.commitments.get",
+      "compute.commitments.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [
+      "compute.commitments.update"
+    ],
+    "plan": [
+      "compute.commitments.get"
+    ]
+  }
+]
