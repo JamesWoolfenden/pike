@@ -19,7 +19,7 @@ repos:
       - id: detect-aws-credentials
       - id: detect-private-key
   - repo: https://github.com/Lucas-C/pre-commit-hooks
-    rev: v1.5.5
+    rev: v1.5.6
     hooks:
       - id: forbid-tabs
         exclude_types: [ python, javascript, dtd, markdown, makefile, xml ]

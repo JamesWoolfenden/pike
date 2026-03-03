@@ -2,8 +2,8 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 84.26      |  1103       |  1309            |
-| Datasource | 97.85      |   410       |   419             |
+| Resources  | 84.20      |  1103       |  1310            |
+| Datasource | 97.63      |   412       |   422             |
 
 ```shell
 ./resource.ps1 google_biglake_iceberg_namespace
@@ -192,6 +192,7 @@
 ./resource.ps1 google_network_services_tcp_route
 ./resource.ps1 google_network_services_tls_route
 ./resource.ps1 google_network_services_wasm_plugin
+./resource.ps1 google_observability_organization_settings
 ./resource.ps1 google_oracle_database_exadb_vm_cluster
 ./resource.ps1 google_org_policy_custom_constraint
 ./resource.ps1 google_org_policy_policy
@@ -218,7 +219,8 @@
 ./resource.ps1 google_biglake_iceberg_catalog_iam_policy -type data
 ./resource.ps1 google_biglake_iceberg_namespace_iam_policy -type data
 ./resource.ps1 google_compute_region_backend_bucket_iam_policy -type data
+./resource.ps1 google_observability_organization_settings -type data
+./resource.ps1 google_oracle_database_odb_network -type data
+./resource.ps1 google_oracle_database_odb_subnet -type data
 ./resource.ps1 google_storage_bucket_object_contents -type data
-./resource.ps1 google_vmwareengine_announcements -type data
-./resource.ps1 google_vmwareengine_upgrades -type data
 ```

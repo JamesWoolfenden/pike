@@ -2,7 +2,7 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 93.78      |  1508       |  1608            |
+| Resources  | 93.72      |  1508       |  1609            |
 | Datasource | 99.84      |   641       |   642             |
 
 ```shell
@@ -56,6 +56,7 @@
 ./resource.ps1 aws_networkflowmonitor_monitor
 ./resource.ps1 aws_networkflowmonitor_scope
 ./resource.ps1 aws_networkmanager_attachment_routing_policy_label
+./resource.ps1 aws_networkmanager_prefix_list_association
 ./resource.ps1 aws_notifications_managed_notification_account_contact_association
 ./resource.ps1 aws_notifications_managed_notification_additional_channel_association
 ./resource.ps1 aws_notifications_organizational_unit_association

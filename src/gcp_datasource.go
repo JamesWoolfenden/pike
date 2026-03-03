@@ -436,6 +436,8 @@ func GCPDataLookup(result string) interface{} {
 		"google_workstations_workstation_iam_policy":                   dataGoogleWorkstationsWorkstationIAMPolicy,
 		"google_gke_hub_membership":                                    dataGoogleGKEHubMembership,
 		"google_gke_hub_membership_iam_policy":                         dataGoogleGKEHubMembershipPolicy,
+		"google_vmwareengine_announcements":                            dataGoogleVmwareengineAnnoucements,
+		"google_vmwareengine_upgrades":                                 placeholder,
 	}
 
 	return TFLookup[result]

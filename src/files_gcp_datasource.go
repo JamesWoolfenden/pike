@@ -1038,3 +1038,6 @@ var dataGoogleGKEHubMembership []byte
 
 //go:embed mapping/google/data/gkehub/google_gke_hub_membership_iam_policy.json
 var dataGoogleGKEHubMembershipPolicy []byte
+
+//go:embed mapping/google/data/vmwareengine/google_vmwareengine_announcements.json
+var dataGoogleVmwareengineAnnoucements []byte
