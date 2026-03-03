@@ -2,7 +2,7 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 85.04      |  1114       |  1310            |
+| Resources  | 85.19      |  1116       |  1310            |
 | Datasource | 100.00      |   422       |   422             |
 
 ```shell
@@ -106,12 +106,10 @@
 ./resource.ps1 google_logging_folder_bucket_config
 ./resource.ps1 google_logging_organization_bucket_config
 ./resource.ps1 google_logging_project_bucket_config
-./resource.ps1 google_logging_saved_query
 ./resource.ps1 google_netapp_active_directory
 ./resource.ps1 google_netapp_backup
 ./resource.ps1 google_netapp_backup_vault
 ./resource.ps1 google_netapp_host_group
-./resource.ps1 google_netapp_kmsconfig
 ./resource.ps1 google_netapp_storage_pool
 ./resource.ps1 google_netapp_volume
 ./resource.ps1 google_netapp_volume_quota_rule

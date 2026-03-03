@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "netapp.kmsConfigs.create",
+      "netapp.kmsConfigs.delete",
+      "netapp.kmsConfigs.get",
+      "netapp.kmsConfigs.update",
+      "netapp.operations.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "netapp.kmsConfigs.delete",
+      "netapp.operations.get"
+    ],
+    "modify": [
+      "netapp.kmsConfigs.update",
+      "netapp.operations.get"
+    ],
+    "plan": [
+      "netapp.kmsConfigs.get"
+    ]
+  }
+]

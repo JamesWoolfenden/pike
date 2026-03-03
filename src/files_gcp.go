@@ -1660,6 +1660,9 @@ var googleLoggingProjectExclusion []byte
 //go:embed mapping/google/resource/logging/google_logging_project_sink.json
 var googleLoggingProjectSink []byte
 
+//go:embed mapping/google/resource/logging/google_logging_saved_query.json
+var googleLoggingSavedQuery []byte
+
 //go:embed mapping/google/resource/managedkafka/google_managed_kafka_acl.json
 var googleManagedKafkaAcl []byte
 
@@ -2499,6 +2502,9 @@ var googleComputeMachineImage []byte
 
 //go:embed mapping/google/resource/netapp/google_netapp_backup_policy.json
 var googleNetappBackupPolicy []byte
+
+//go:embed mapping/google/resource/netapp/google_netapp_kmsconfig.json
+var googleNetappKMSconfig []byte
 
 //go:embed mapping/google/resource/observability/google_observability_trace_scope.json
 var googleObservabilityTraceScope []byte

@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "logging.queries.create",
+      "logging.queries.delete",
+      "logging.queries.get",
+      "logging.queries.update",
+      "logging.queries.usePrivate"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "logging.queries.delete"
+    ],
+    "modify": [
+      "logging.queries.update"
+    ],
+    "plan": [
+      "logging.queries.get"
+    ]
+  }
+]
