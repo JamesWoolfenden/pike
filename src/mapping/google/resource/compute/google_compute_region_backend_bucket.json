@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "compute.regionBackendBuckets.create",
+      "compute.regionBackendBuckets.delete",
+      "compute.regionBackendBuckets.get",
+      "compute.regionBackendBuckets.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.regionBackendBuckets.delete"
+    ],
+    "modify": [
+      "compute.regionBackendBuckets.update"
+    ],
+    "plan": [
+      "compute.regionBackendBuckets.get"
+    ]
+  }
+]

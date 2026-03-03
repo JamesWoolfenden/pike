@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "biglake.namespaces.getIamPolicy",
+      "biglake.namespaces.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

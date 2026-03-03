@@ -190,32 +190,25 @@ function Read-ExistingLookupMap {
 
     $content = Get-Content $FilePath -Raw
 
-    # Extract the lookup map using regex - handle both var and inline declarations
-    $pattern1 = "(?s)var $MapName = map\[string\]interface\{\}\{(.*?)\n\}"
-    $pattern2 = "(?s)$MapName := map\[string\]interface\{\}\{(.*?)\n\t\}"
+    # Extract all entries directly from the file without relying on map boundaries
+    # This is more robust than trying to parse the map structure
+    $entries = @{}
 
-    $mapContent = $null
-    if ($content -match $pattern1) {
-        $mapContent = $Matches[1]
-    }
-    elseif ($content -match $pattern2) {
-        $mapContent = $Matches[1]
-    }
+    # Match all entries that look like: "resource_name": variableName,
+    # This works regardless of where they appear in the file
+    $matches = [regex]::Matches($content, '^\s*"([^"]+)":\s+(\w+),\s*(?://.*)?$', [System.Text.RegularExpressions.RegexOptions]::Multiline)
 
-    if ($mapContent) {
-        $entries = @{}
-        $lines = $mapContent -split '\n' | Where-Object { $_ -match '^\s*"([^"]+)":\s*(\w+),' }
-
-        foreach ($line in $lines) {
-            if ($line -match '^\s*"([^"]+)":\s*(\w+),') {
-                $entries[$Matches[1]] = $Matches[2]
-            }
-        }
-
-        return $entries
+    foreach ($match in $matches) {
+        $resourceName = $match.Groups[1].Value
+        $variableName = $match.Groups[2].Value
+        $entries[$resourceName] = $variableName
     }
 
-    return @{}
+    if ($entries.Count -eq 0) {
+        Write-Warning "No entries found in $FilePath for map $MapName"
+    }
+
+    return $entries
 }
 
 function Show-LookupMapUpdates {

@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "biglake.namespaces.create",
+      "biglake.namespaces.delete",
+      "biglake.namespaces.get",
+      "biglake.namespaces.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

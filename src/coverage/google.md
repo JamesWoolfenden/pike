@@ -2,14 +2,10 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 84.20      |  1103       |  1310            |
-| Datasource | 97.63      |   412       |   422             |
+| Resources  | 84.89      |  1112       |  1310            |
+| Datasource | 100.00      |   422       |   422             |
 
 ```shell
-./resource.ps1 google_biglake_iceberg_namespace
-./resource.ps1 google_biglake_iceberg_namespace_iam_binding
-./resource.ps1 google_biglake_iceberg_namespace_iam_member
-./resource.ps1 google_biglake_iceberg_namespace_iam_policy
 ./resource.ps1 google_cloud_identity_policy
 ./resource.ps1 google_cloud_quotas_quota_adjuster_settings
 ./resource.ps1 google_cloud_quotas_quota_preference
@@ -19,10 +15,6 @@
 ./resource.ps1 google_compute_network_firewall_policy_packet_mirroring_rule
 ./resource.ps1 google_compute_network_firewall_policy_with_rules
 ./resource.ps1 google_compute_preview_feature
-./resource.ps1 google_compute_region_backend_bucket
-./resource.ps1 google_compute_region_backend_bucket_iam_binding
-./resource.ps1 google_compute_region_backend_bucket_iam_member
-./resource.ps1 google_compute_region_backend_bucket_iam_policy
 ./resource.ps1 google_compute_region_composite_health_check
 ./resource.ps1 google_compute_region_health_aggregation_policy
 ./resource.ps1 google_compute_region_health_source
@@ -192,7 +184,6 @@
 ./resource.ps1 google_network_services_tcp_route
 ./resource.ps1 google_network_services_tls_route
 ./resource.ps1 google_network_services_wasm_plugin
-./resource.ps1 google_observability_organization_settings
 ./resource.ps1 google_oracle_database_exadb_vm_cluster
 ./resource.ps1 google_org_policy_custom_constraint
 ./resource.ps1 google_org_policy_policy
@@ -213,14 +204,4 @@
 ./resource.ps1 google_storage_transfer_agent_pool
 ./resource.ps1 google_storage_transfer_job
 ./resource.ps1 google_vector_search_collection
-./resource.ps1 google_access_context_manager_supported_service -type data
-./resource.ps1 google_access_context_manager_supported_services -type data
-./resource.ps1 google_backup_dr_data_sources -type data
-./resource.ps1 google_biglake_iceberg_catalog_iam_policy -type data
-./resource.ps1 google_biglake_iceberg_namespace_iam_policy -type data
-./resource.ps1 google_compute_region_backend_bucket_iam_policy -type data
-./resource.ps1 google_observability_organization_settings -type data
-./resource.ps1 google_oracle_database_odb_network -type data
-./resource.ps1 google_oracle_database_odb_subnet -type data
-./resource.ps1 google_storage_bucket_object_contents -type data
 ```

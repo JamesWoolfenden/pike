@@ -103,6 +103,9 @@ var dataGoogleBackupDrDataSourceReference []byte
 //go:embed mapping/google/data/backupdr/google_backup_dr_data_source_references.json
 var dataGoogleBackupDrDataSourceReferences []byte
 
+//go:embed mapping/google/data/backupdr/google_backup_dr_data_sources.json
+var dataGoogleBackupDrDataSources []byte
+
 //go:embed mapping/google/data/beyondcorp/google_beyondcorp_app_connection.json
 var dataGoogleBeyondcorpAppConnection []byte
 
@@ -123,6 +126,12 @@ var dataGoogleBeyondcorpSecurityGatewayApplicationIAMPolicy []byte
 
 //go:embed mapping/google/data/beyondcorp/google_beyondcorp_security_gateway_iam_policy.json
 var dataGoogleBeyondcorpSecurityGatewayIAMPolicy []byte
+
+//go:embed mapping/google/data/biglake/google_biglake_iceberg_catalog_iam_policy.json
+var dataGoogleBiglakeIcebergCatalogIamPolicy []byte
+
+//go:embed mapping/google/data/biglake/google_biglake_iceberg_namespace_iam_policy.json
+var dataGoogleBiglakeIcebergNamespaceIamPolicy []byte
 
 //go:embed mapping/google/data/analyticshub/google_bigquery_analytics_hub_data_exchange_iam_policy.json
 var dataGoogleBigqueryAnalyticsHubDataExchangeIAMPolicy []byte
@@ -321,6 +330,9 @@ var dataGoogleComputeNetworks []byte
 
 //go:embed mapping/google/data/compute/google_compute_node_types.json
 var dataGoogleComputeNodeTypes []byte
+
+//go:embed mapping/google/data/compute/google_compute_region_backend_bucket_iam_policy.json
+var dataGoogleComputeRegionBackendBucketIamPolicy []byte
 
 //go:embed mapping/google/data/compute/google_compute_region_backend_service.json
 var dataGoogleComputeRegionBackendService []byte
@@ -706,6 +718,12 @@ var dataGoogleOracleDatabaseDbNodes []byte
 //go:embed mapping/google/data/oracledatabase/google_oracle_database_db_servers.json
 var dataGoogleOracleDatabaseDbServers []byte
 
+//go:embed mapping/google/data/oracledatabase/google_oracle_database_odb_network.json
+var dataGoogleOracleDatabaseOdbNetwork []byte
+
+//go:embed mapping/google/data/oracledatabase/google_oracle_database_odb_subnet.json
+var dataGoogleOracleDatabaseOdbSubnet []byte
+
 //go:embed mapping/google/data/iam/google_organization_iam_custom_role.json
 var dataGoogleOrganizationIAMCustomRole []byte
 
@@ -921,6 +939,9 @@ var dataGoogleStorageBucketObject []byte
 
 //go:embed mapping/google/data/storage/google_storage_bucket_object_content.json
 var dataGoogleStorageBucketObjectContent []byte
+
+//go:embed mapping/google/data/storage/google_storage_bucket_object_contents.json
+var dataGoogleStorageBucketObjectContents []byte
 
 //go:embed mapping/google/data/storage/google_storage_bucket_objects.json
 var dataGoogleStorageBucketObjects []byte

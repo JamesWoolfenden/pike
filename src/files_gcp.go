@@ -181,6 +181,18 @@ var googleBiglakeDatabase []byte
 //go:embed mapping/google/resource/biglake/google_biglake_table.json
 var googleBiglakeTable []byte
 
+//go:embed mapping/google/resource/biglake/google_biglake_iceberg_namespace.json
+var googleBiglakeIcebergNamespace []byte
+
+//go:embed mapping/google/resource/biglake/google_biglake_iceberg_namespace_iam_binding.json
+var googleBiglakeIcebergNamespaceIamBinding []byte
+
+//go:embed mapping/google/resource/biglake/google_biglake_iceberg_namespace_iam_member.json
+var googleBiglakeIcebergNamespaceIamMember []byte
+
+//go:embed mapping/google/resource/biglake/google_biglake_iceberg_namespace_iam_policy.json
+var googleBiglakeIcebergNamespaceIamPolicy []byte
+
 //go:embed mapping/google/resource/analyticshub/google_bigquery_analytics_hub_data_exchange.json
 var googleBigqueryAnalyticsHubDataExchange []byte
 
@@ -3057,6 +3069,18 @@ var googleComputePublicDelegatedPrefix []byte
 
 //go:embed mapping/google/resource/compute/google_compute_region_autoscaler.json
 var googleComputeRegionAutoscaler []byte
+
+//go:embed mapping/google/resource/compute/google_compute_region_backend_bucket.json
+var googleComputeRegionBackendBucket []byte
+
+//go:embed mapping/google/resource/compute/google_compute_region_backend_bucket_iam_binding.json
+var googleComputeRegionBackendBucketIamBinding []byte
+
+//go:embed mapping/google/resource/compute/google_compute_region_backend_bucket_iam_member.json
+var googleComputeRegionBackendBucketIamMember []byte
+
+//go:embed mapping/google/resource/compute/google_compute_region_backend_bucket_iam_policy.json
+var googleComputeRegionBackendBucketIamPolicy []byte
 
 //go:embed mapping/google/resource/compute/google_compute_region_disk.json
 var googleComputeRegionDisk []byte

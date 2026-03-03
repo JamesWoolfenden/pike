@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "compute.regionBackendBuckets.getIamPolicy",
+      "compute.regionBackendBuckets.setIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [
+      "compute.regionBackendBuckets.setIamPolicy"
+    ],
+    "plan": [
+      "compute.regionBackendBuckets.getIamPolicy"
+    ]
+  }
+]
