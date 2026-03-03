@@ -2,7 +2,7 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 84.89      |  1112       |  1310            |
+| Resources  | 85.04      |  1114       |  1310            |
 | Datasource | 100.00      |   422       |   422             |
 
 ```shell
@@ -23,8 +23,6 @@
 ./resource.ps1 google_compute_region_network_firewall_policy_rule
 ./resource.ps1 google_compute_region_network_firewall_policy_with_rules
 ./resource.ps1 google_compute_region_resize_request
-./resource.ps1 google_compute_region_security_policy
-./resource.ps1 google_compute_region_security_policy_rule
 ./resource.ps1 google_compute_resize_request
 ./resource.ps1 google_compute_rollout_plan
 ./resource.ps1 google_compute_wire_group

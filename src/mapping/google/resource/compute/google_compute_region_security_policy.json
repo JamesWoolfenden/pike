@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "compute.regionSecurityPolicies.create",
+      "compute.regionSecurityPolicies.delete",
+      "compute.regionSecurityPolicies.get",
+      "compute.regionSecurityPolicies.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.regionSecurityPolicies.delete"
+    ],
+    "modify": [
+      "compute.regionSecurityPolicies.update"
+    ],
+    "plan": [
+      "compute.regionSecurityPolicies.get"
+    ]
+  }
+]

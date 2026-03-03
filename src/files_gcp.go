@@ -709,6 +709,12 @@ var googleComputeRegionNetworkEndpointGroup []byte
 //go:embed mapping/google/resource/compute/google_compute_region_network_endpoint.json
 var googleComputeRegionNetworkEndpoint []byte
 
+//go:embed mapping/google/resource/compute/google_compute_region_security_policy.json
+var googleComputeRegionSecurityPolicy []byte
+
+//go:embed mapping/google/resource/compute/google_compute_region_security_policy_rule.json
+var googleComputeRegionSecurityPolicyRule []byte
+
 //go:embed mapping/google/resource/compute/google_compute_region_ssl_certificate.json
 var googleComputeRegionSslCertificate []byte
 

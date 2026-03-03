@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "compute.regionSecurityPolicies.get",
+      "compute.regionSecurityPolicies.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.regionSecurityPolicies.update"
+    ],
+    "modify": [
+      "compute.regionSecurityPolicies.update"
+    ],
+    "plan": [
+      "compute.regionSecurityPolicies.get"
+    ]
+  }
+]
