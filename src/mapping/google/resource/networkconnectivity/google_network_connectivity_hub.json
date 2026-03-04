@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "networkconnectivity.hubs.create",
+      "networkconnectivity.hubs.delete",
+      "networkconnectivity.hubs.get",
+      "networkconnectivity.hubs.update",
+      "networkconnectivity.operations.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "networkconnectivity.hubs.delete",
+      "networkconnectivity.operations.get"
+    ],
+    "modify": [
+      "networkconnectivity.hubs.update",
+      "networkconnectivity.operations.get"
+    ],
+    "plan": [
+      "networkconnectivity.hubs.get"
+    ]
+  }
+]

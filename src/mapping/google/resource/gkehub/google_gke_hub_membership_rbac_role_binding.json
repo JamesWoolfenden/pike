@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "gkehub.rbacrolebindings.create",
+      "gkehub.rbacrolebindings.delete",
+      "gkehub.rbacrolebindings.get",
+      "gkehub.rbacrolebindings.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

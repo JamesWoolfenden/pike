@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "gkehub.namespaces.create",
+      "gkehub.namespaces.delete",
+      "gkehub.namespaces.get",
+      "gkehub.namespaces.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

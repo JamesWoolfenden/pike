@@ -1729,6 +1729,15 @@ var googleMonitoringSlo []byte
 //go:embed mapping/google/resource/monitoring/google_monitoring_uptime_check_config.json
 var googleMonitoringUptimeCheckConfig []byte
 
+//go:embed mapping/google/resource/networkconnectivity/google_network_connectivity_hub.json
+var googleNetworkConnectivityHub []byte
+
+//go:embed mapping/google/resource/networksecurity/google_network_security_address_group.json
+var googleNetworkSecurityAddressGroup []byte
+
+//go:embed mapping/google/resource/networksecurity/google_network_security_client_tls_policy.json
+var googleNetworkSecurityClientTlsPolicy []byte
+
 //go:embed mapping/google/resource/networksecurity/google_network_security_address_group_iam_binding.json
 var googleNetworkSecurityAddressGroupIAMBinding []byte
 
@@ -3153,3 +3162,27 @@ var googleComputeVPNTunnel []byte
 
 //go:embed mapping/google/resource/storage/google_storage_managed_folder.json
 var googleStorageManagedFolder []byte
+
+//go:embed mapping/google/resource/gkehub/google_gke_hub_feature.json
+var googleGkeHubFeature []byte
+
+//go:embed mapping/google/resource/gkehub/google_gke_hub_feature_membership.json
+var googleGkeHubFeatureMembership []byte
+
+//go:embed mapping/google/resource/gkehub/google_gke_hub_fleet.json
+var googleGkeHubFleet []byte
+
+//go:embed mapping/google/resource/gkehub/google_gke_hub_membership.json
+var googleGkeHubMembership []byte
+
+//go:embed mapping/google/resource/gkehub/google_gke_hub_membership_binding.json
+var googleGkeHubMembershipBinding []byte
+
+//go:embed mapping/google/resource/gkehub/google_gke_hub_membership_rbac_role_binding.json
+var googleGkeHubMembershIPRbacRoleBinding []byte
+
+//go:embed mapping/google/resource/gkehub/google_gke_hub_namespace.json
+var googleGkeHubNamespace []byte
+
+//go:embed mapping/google/resource/gkehub/google_gke_hub_scope.json
+var googleGkeHubScope []byte

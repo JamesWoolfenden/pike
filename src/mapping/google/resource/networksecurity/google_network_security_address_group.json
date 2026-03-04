@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "networksecurity.addressGroups.create",
+      "networksecurity.addressGroups.delete",
+      "networksecurity.addressGroups.get",
+      "networksecurity.addressGroups.update",
+      "networksecurity.operations.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "networksecurity.addressGroups.delete",
+      "networksecurity.operations.get"
+    ],
+    "modify": [
+      "networksecurity.addressGroups.update",
+      "networksecurity.operations.get"
+    ],
+    "plan": [
+      "networksecurity.addressGroups.get"
+    ]
+  }
+]

@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "networksecurity.clientTlsPolicies.create",
+      "networksecurity.clientTlsPolicies.delete",
+      "networksecurity.clientTlsPolicies.get",
+      "networksecurity.clientTlsPolicies.update",
+      "networksecurity.operations.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "networksecurity.clientTlsPolicies.delete",
+      "networksecurity.operations.get"
+    ],
+    "modify": [
+      "networksecurity.clientTlsPolicies.update",
+      "networksecurity.operations.get"
+    ],
+    "plan": [
+      "networksecurity.clientTlsPolicies.get"
+    ]
+  }
+]

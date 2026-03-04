@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "gkehub.fleet.create",
+      "gkehub.fleet.delete",
+      "gkehub.fleet.get",
+      "gkehub.fleet.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "gkehub.fleet.delete"
+    ],
+    "modify": [
+      "gkehub.fleet.update"
+    ],
+    "plan": [
+      "gkehub.fleet.get"
+    ]
+  }
+]

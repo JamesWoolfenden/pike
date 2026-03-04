@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "gkehub.scopes.delete",
+      "gkehub.scopes.get",
+      "gkehub.scopes.create",
+      "gkehub.scopes.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

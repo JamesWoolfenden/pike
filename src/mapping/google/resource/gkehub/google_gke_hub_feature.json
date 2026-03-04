@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "gkehub.features.get",
+      "gkehub.features.create",
+      "gkehub.features.update",
+      "gkehub.features.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

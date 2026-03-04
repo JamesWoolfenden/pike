@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "gkehub.membershipbindings.create",
+      "gkehub.membershipbindings.delete",
+      "gkehub.membershipbindings.get",
+      "gkehub.membershipbindings.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

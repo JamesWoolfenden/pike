@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "gkehub.membershipfeatures.create",
+      "gkehub.membershipfeatures.delete",
+      "gkehub.membershipfeatures.get",
+      "gkehub.membershipfeatures.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

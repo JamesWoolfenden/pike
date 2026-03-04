@@ -2,7 +2,7 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 86.79      |  1137       |  1310            |
+| Resources  | 87.63      |  1148       |  1310            |
 | Datasource | 100.00      |   422       |   422             |
 
 ```shell
@@ -65,14 +65,6 @@
 ./resource.ps1 google_gke_backup_backup_plan
 ./resource.ps1 google_gke_backup_restore_channel
 ./resource.ps1 google_gke_backup_restore_plan
-./resource.ps1 google_gke_hub_feature
-./resource.ps1 google_gke_hub_feature_membership
-./resource.ps1 google_gke_hub_fleet
-./resource.ps1 google_gke_hub_membership
-./resource.ps1 google_gke_hub_membership_binding
-./resource.ps1 google_gke_hub_membership_rbac_role_binding
-./resource.ps1 google_gke_hub_namespace
-./resource.ps1 google_gke_hub_scope
 ./resource.ps1 google_gke_hub_scope_rbac_role_binding
 ./resource.ps1 google_gkeonprem_bare_metal_admin_cluster
 ./resource.ps1 google_gkeonprem_bare_metal_cluster
@@ -105,7 +97,6 @@
 ./resource.ps1 google_network_connectivity_destination
 ./resource.ps1 google_network_connectivity_gateway_advertised_route
 ./resource.ps1 google_network_connectivity_group
-./resource.ps1 google_network_connectivity_hub
 ./resource.ps1 google_network_connectivity_internal_range
 ./resource.ps1 google_network_connectivity_multicloud_data_transfer_config
 ./resource.ps1 google_network_connectivity_policy_based_route
@@ -113,11 +104,9 @@
 ./resource.ps1 google_network_connectivity_service_connection_policy
 ./resource.ps1 google_network_connectivity_spoke
 ./resource.ps1 google_network_management_vpc_flow_logs_config
-./resource.ps1 google_network_security_address_group
 ./resource.ps1 google_network_security_authorization_policy
 ./resource.ps1 google_network_security_authz_policy
 ./resource.ps1 google_network_security_backend_authentication_config
-./resource.ps1 google_network_security_client_tls_policy
 ./resource.ps1 google_network_security_dns_threat_detector
 ./resource.ps1 google_network_security_firewall_endpoint
 ./resource.ps1 google_network_security_firewall_endpoint_association
