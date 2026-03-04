@@ -27,6 +27,8 @@ Azure is the newest with AWS having the most supported resources
 Feel free to submit PR or Issue if you find an issue or even better add new resources, and then I'll take a look at
 merging it ASAP.
 
+**Note on Placeholder Resources:** Some resources in the lookup maps (particularly GCP organization, folder, and billing-level resources) are marked with `placeholder` entries. These resources are recognized by Pike but do not have empirically validated IAM permissions because they require organization-level access or specialized account types that are difficult to test. When Pike encounters these resources, it will not error, but the permissions have not been validated through actual resource lifecycle testing.
+
 **CAVEAT** The outputs of this tool are your first step, if you have AWS, you can now generate resources partially,
 there are no conditions and even partial resources are wild-carded (for now).
 (for AWS)minimum

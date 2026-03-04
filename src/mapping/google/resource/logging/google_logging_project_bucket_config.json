@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "logging.buckets.create",
+      "logging.buckets.delete",
+      "logging.buckets.get",
+      "logging.buckets.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "logging.buckets.delete"
+    ],
+    "modify": [
+      "logging.buckets.update"
+    ],
+    "plan": [
+      "logging.buckets.get"
+    ]
+  }
+]

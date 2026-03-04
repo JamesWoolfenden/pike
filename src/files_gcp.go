@@ -343,6 +343,12 @@ var googleChronicleRuleDeployment []byte
 //go:embed mapping/google/resource/chronicle/google_chronicle_watchlist.json
 var googleChronicleWatchlist []byte
 
+//go:embed mapping/google/resource/cloudquotas/google_cloud_quotas_quota_adjuster_settings.json
+var googleCloudQuotasQuotaAdjusterSettings []byte
+
+//go:embed mapping/google/resource/cloudquotas/google_cloud_quotas_quota_preference.json
+var googleCloudQuotasQuotaPreference []byte
+
 //go:embed mapping/google/resource/run/google_cloud_run_domain_mapping.json
 var googleCloudRunDomainMapping []byte
 
@@ -1657,6 +1663,9 @@ var googleLoggingOrganizationSink []byte
 //go:embed mapping/google/resource/logging/google_logging_project_exclusion.json
 var googleLoggingProjectExclusion []byte
 
+//go:embed mapping/google/resource/logging/google_logging_project_bucket_config.json
+var googleLoggingProjectBucketConfig []byte
+
 //go:embed mapping/google/resource/logging/google_logging_project_sink.json
 var googleLoggingProjectSink []byte
 
@@ -1902,6 +1911,9 @@ var googleRedisClusterUserCreatedConnections []byte
 
 //go:embed mapping/google/resource/redis/google_redis_instance.json
 var googleRedisInstance []byte
+
+//go:embed mapping/google/resource/resourcemanager/google_resource_manager_lien.json
+var googleResourceManagerLien []byte
 
 //go:embed mapping/google/resource/runtimeconfig/google_runtimeconfig_config.json
 var googleRuntimeconfigConfig []byte
@@ -2502,6 +2514,9 @@ var googleComputeMachineImage []byte
 
 //go:embed mapping/google/resource/netapp/google_netapp_backup_policy.json
 var googleNetappBackupPolicy []byte
+
+//go:embed mapping/google/resource/netapp/google_netapp_backup_vault.json
+var googleNetappBackupVault []byte
 
 //go:embed mapping/google/resource/netapp/google_netapp_kmsconfig.json
 var googleNetappKMSconfig []byte

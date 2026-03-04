@@ -8,6 +8,9 @@
       "cloudscheduler.jobs.update"
     ],
     "attributes": {
+      "pause": [
+        "cloudscheduler.jobs.pause"
+      ],
       "tags": []
     },
     "destroy": [

@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "netapp.backupVaults.create",
+      "netapp.backupVaults.delete",
+      "netapp.backupVaults.get",
+      "netapp.backupVaults.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "netapp.backupVaults.delete"
+    ],
+    "modify": [
+      "netapp.backupVaults.update"
+    ],
+    "plan": [
+      "netapp.backupVaults.get"
+    ]
+  }
+]

@@ -2,13 +2,11 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 85.19      |  1116       |  1310            |
+| Resources  | 86.79      |  1137       |  1310            |
 | Datasource | 100.00      |   422       |   422             |
 
 ```shell
 ./resource.ps1 google_cloud_identity_policy
-./resource.ps1 google_cloud_quotas_quota_adjuster_settings
-./resource.ps1 google_cloud_quotas_quota_preference
 ./resource.ps1 google_compute_firewall_policy_with_rules
 ./resource.ps1 google_compute_interconnect_attachment_group
 ./resource.ps1 google_compute_interconnect_group
@@ -33,8 +31,6 @@
 ./resource.ps1 google_container_azure_client
 ./resource.ps1 google_container_azure_cluster
 ./resource.ps1 google_container_azure_node_pool
-./resource.ps1 google_dataform_folder
-./resource.ps1 google_dataform_team_folder
 ./resource.ps1 google_dataplex_data_product_data_asset
 ./resource.ps1 google_dataproc_gdc_application_environment
 ./resource.ps1 google_dataproc_gdc_service_instance
@@ -65,10 +61,6 @@
 ./resource.ps1 google_firebase_data_connect_service
 ./resource.ps1 google_firebase_extensions_instance
 ./resource.ps1 google_firebase_project_location
-./resource.ps1 google_folder_access_approval_settings
-./resource.ps1 google_folder_iam_audit_config
-./resource.ps1 google_folder_organization_policy
-./resource.ps1 google_folder_service_identity
 ./resource.ps1 google_gke_backup_backup_channel
 ./resource.ps1 google_gke_backup_backup_plan
 ./resource.ps1 google_gke_backup_restore_channel
@@ -102,13 +94,8 @@
 ./resource.ps1 google_integration_connectors_managed_zone
 ./resource.ps1 google_integrations_auth_config
 ./resource.ps1 google_integrations_client
-./resource.ps1 google_logging_billing_account_bucket_config
-./resource.ps1 google_logging_folder_bucket_config
-./resource.ps1 google_logging_organization_bucket_config
-./resource.ps1 google_logging_project_bucket_config
 ./resource.ps1 google_netapp_active_directory
 ./resource.ps1 google_netapp_backup
-./resource.ps1 google_netapp_backup_vault
 ./resource.ps1 google_netapp_host_group
 ./resource.ps1 google_netapp_storage_pool
 ./resource.ps1 google_netapp_volume
@@ -125,7 +112,6 @@
 ./resource.ps1 google_network_connectivity_regional_endpoint
 ./resource.ps1 google_network_connectivity_service_connection_policy
 ./resource.ps1 google_network_connectivity_spoke
-./resource.ps1 google_network_management_organization_vpc_flow_logs_config
 ./resource.ps1 google_network_management_vpc_flow_logs_config
 ./resource.ps1 google_network_security_address_group
 ./resource.ps1 google_network_security_authorization_policy
@@ -181,14 +167,7 @@
 ./resource.ps1 google_network_services_tls_route
 ./resource.ps1 google_network_services_wasm_plugin
 ./resource.ps1 google_oracle_database_exadb_vm_cluster
-./resource.ps1 google_org_policy_custom_constraint
-./resource.ps1 google_org_policy_policy
-./resource.ps1 google_organization_access_approval_settings
-./resource.ps1 google_organization_iam_audit_config
-./resource.ps1 google_organization_iam_custom_role
-./resource.ps1 google_organization_policy
 ./resource.ps1 google_resource_manager_capability
-./resource.ps1 google_resource_manager_lien
 ./resource.ps1 google_secure_source_manager_hook
 ./resource.ps1 google_security_scanner_scan_config
 ./resource.ps1 google_securityposture_posture

@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "cloudquotas.quotas.get",
+      "cloudquotas.quotas.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [
+      "cloudquotas.quotas.update"
+    ],
+    "plan": [
+      "cloudquotas.quotas.get"
+    ]
+  }
+]
