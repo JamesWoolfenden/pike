@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "resourcemanager.projects.get",
+      "resourcemanager.projects.updateLiens"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "resourcemanager.projects.updateLiens"
+    ],
+    "modify": [],
+    "plan": [
+      "resourcemanager.projects.get"
+    ]
+  }
+]
