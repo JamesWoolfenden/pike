@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "gkebackup.backupChannels.create",
+      "gkebackup.backupChannels.delete",
+      "gkebackup.backupChannels.get",
+      "gkebackup.backupChannels.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

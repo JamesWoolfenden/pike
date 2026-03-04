@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "gkeonprem.vmwareAdminClusters.get",
+      "gkeonprem.vmwareAdminClusters.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

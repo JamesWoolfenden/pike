@@ -1,0 +1,1 @@
+resource "google_gkeonprem_vmware_node_pool" "pike" {}

@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "gkeonprem.bareMetalNodePools.create",
+      "gkeonprem.bareMetalNodePools.get",
+      "gkeonprem.bareMetalNodePools.delete",
+      "gkeonprem.bareMetalNodePools.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

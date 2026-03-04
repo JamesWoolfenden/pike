@@ -3186,3 +3186,33 @@ var googleGkeHubNamespace []byte
 
 //go:embed mapping/google/resource/gkehub/google_gke_hub_scope.json
 var googleGkeHubScope []byte
+
+//go:embed mapping/google/resource/gkebackup/google_gke_backup_backup_channel.json
+var googleGkeBackupBackupChannel []byte
+
+//go:embed mapping/google/resource/gkebackup/google_gke_backup_backup_plan.json
+var googleGkeBackupBackupPlan []byte
+
+//go:embed mapping/google/resource/gkebackup/google_gke_backup_restore_channel.json
+var googleGkeBackupRestoreChannel []byte
+
+//go:embed mapping/google/resource/gkebackup/google_gke_backup_restore_plan.json
+var googleGkeBackupRestorePlan []byte
+
+//go:embed mapping/google/resource/gkeonprem/google_gkeonprem_bare_metal_admin_cluster.json
+var googleGkeonpremBareMetalAdminCluster []byte
+
+//go:embed mapping/google/resource/gkeonprem/google_gkeonprem_bare_metal_cluster.json
+var googleGkeonpremBareMetalCluster []byte
+
+//go:embed mapping/google/resource/gkeonprem/google_gkeonprem_bare_metal_node_pool.json
+var googleGkeonpremBareMetalNodePool []byte
+
+//go:embed mapping/google/resource/gkeonprem/google_gkeonprem_vmware_admin_cluster.json
+var googleGkeonpremVmwareAdminCluster []byte
+
+//go:embed mapping/google/resource/gkeonprem/google_gkeonprem_vmware_cluster.json
+var googleGkeonpremVmwareCluster []byte
+
+//go:embed mapping/google/resource/gkeonprem/google_gkeonprem_vmware_node_pool.json
+var googleGkeonpremVmwareNodePool []byte

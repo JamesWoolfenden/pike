@@ -2,7 +2,7 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 87.63      |  1148       |  1310            |
+| Resources  | 88.40      |  1158       |  1310            |
 | Datasource | 100.00      |   422       |   422             |
 
 ```shell
@@ -61,17 +61,7 @@
 ./resource.ps1 google_firebase_data_connect_service
 ./resource.ps1 google_firebase_extensions_instance
 ./resource.ps1 google_firebase_project_location
-./resource.ps1 google_gke_backup_backup_channel
-./resource.ps1 google_gke_backup_backup_plan
-./resource.ps1 google_gke_backup_restore_channel
-./resource.ps1 google_gke_backup_restore_plan
 ./resource.ps1 google_gke_hub_scope_rbac_role_binding
-./resource.ps1 google_gkeonprem_bare_metal_admin_cluster
-./resource.ps1 google_gkeonprem_bare_metal_cluster
-./resource.ps1 google_gkeonprem_bare_metal_node_pool
-./resource.ps1 google_gkeonprem_vmware_admin_cluster
-./resource.ps1 google_gkeonprem_vmware_cluster
-./resource.ps1 google_gkeonprem_vmware_node_pool
 ./resource.ps1 google_hypercomputecluster_cluster
 ./resource.ps1 google_identity_platform_config
 ./resource.ps1 google_identity_platform_default_supported_idp_config

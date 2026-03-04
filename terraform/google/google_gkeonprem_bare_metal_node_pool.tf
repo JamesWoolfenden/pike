@@ -1,0 +1,1 @@
+resource "google_gkeonprem_bare_metal_node_pool" "pike" {}

@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "gkeonprem.bareMetalClusters.delete",
+      "gkeonprem.bareMetalClusters.create",
+      "gkeonprem.bareMetalClusters.get",
+      "gkeonprem.bareMetalClusters.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

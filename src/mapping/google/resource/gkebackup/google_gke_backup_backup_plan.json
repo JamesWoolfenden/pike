@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "gkebackup.backupPlans.create",
+      "gkebackup.backupPlans.delete",
+      "gkebackup.backupPlans.get",
+      "gkebackup.backupPlans.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
