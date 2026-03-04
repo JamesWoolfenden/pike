@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "compute.interconnectAttachmentGroups.create",
+      "compute.interconnectAttachmentGroups.delete",
+      "compute.interconnectAttachmentGroups.get",
+      "compute.interconnectAttachmentGroups.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

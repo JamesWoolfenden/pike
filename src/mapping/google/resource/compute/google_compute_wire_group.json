@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "compute.wireGroups.create",
+      "compute.wireGroups.delete",
+      "compute.wireGroups.get",
+      "compute.wireGroups.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

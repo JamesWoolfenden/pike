@@ -425,19 +425,19 @@ func main() {
 			{
 				Name:    "parse",
 				Aliases: []string{"p"},
-				Usage:   "Triggers a gitHub action specified with the workflow flag",
+				Usage:   "Extract provider resources and datasources from Terraform schema (authoritative method), triggers a gitHub action specified with the workflow flag",
 				Flags: []cli.Flag{
 					&cli.StringFlag{
 						Name:        "directory",
 						Aliases:     []string{"d"},
-						Usage:       "Directory to scan (defaults to .)",
+						Usage:       "Directory to scan (optional, only used as fallback if schema extraction fails)",
 						Value:       ".",
 						Destination: &directory,
 					},
 					&cli.StringFlag{
 						Name:        "name",
 						Aliases:     []string{"n"},
-						Usage:       "The name of the provider e.g. aws",
+						Usage:       "The name of the provider (google, aws, or azurerm)",
 						Required:    true,
 						Destination: &name,
 					},

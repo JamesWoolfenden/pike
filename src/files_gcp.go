@@ -3216,3 +3216,24 @@ var googleGkeonpremVmwareCluster []byte
 
 //go:embed mapping/google/resource/gkeonprem/google_gkeonprem_vmware_node_pool.json
 var googleGkeonpremVmwareNodePool []byte
+
+//go:embed mapping/google/resource/compute/google_compute_interconnect_attachment_group.json
+var googleComputeInterconnectAttachmentGroup []byte
+
+//go:embed mapping/google/resource/compute/google_compute_interconnect_group.json
+var googleComputeInterconnectGroup []byte
+
+//go:embed mapping/google/resource/compute/google_compute_rollout_plan.json
+var googleComputeRolloutPlan []byte
+
+//go:embed mapping/google/resource/compute/google_compute_wire_group.json
+var googleComputeWireGroup []byte
+
+//go:embed mapping/google/resource/hypercomputecluster/google_hypercomputecluster_cluster.json
+var googleHypercomputeclusterCluster []byte
+
+//go:embed mapping/google/resource/securityposture/google_securityposture_posture.json
+var googleSecurityposturePosture []byte
+
+//go:embed mapping/google/resource/securityposture/google_securityposture_posture_deployment.json
+var googleSecurityposturePostureDeployment []byte

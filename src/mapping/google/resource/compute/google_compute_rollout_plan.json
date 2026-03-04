@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "compute.rolloutPlans.create",
+      "compute.rolloutPlans.get",
+      "compute.rolloutPlans.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

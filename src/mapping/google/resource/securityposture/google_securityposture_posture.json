@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "securityposture.postures.create",
+      "securityposture.postures.get",
+      "securityposture.postures.delete",
+      "securityposture.postures.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

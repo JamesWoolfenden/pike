@@ -70,6 +70,10 @@ resource "google_project_iam_custom_role" "terraform_pike" {
     "networksecurity.clientTlsPolicies.get",
     "networksecurity.clientTlsPolicies.update",
     "networksecurity.operations.get",
+    "networksecurity.serverTlsPolicies.create",
+    "networksecurity.serverTlsPolicies.delete",
+    "networksecurity.serverTlsPolicies.get",
+    "networksecurity.serverTlsPolicies.update",
     "resourcemanager.projects.get",
     "resourcemanager.projects.updateLiens",
     "storage.buckets.get"

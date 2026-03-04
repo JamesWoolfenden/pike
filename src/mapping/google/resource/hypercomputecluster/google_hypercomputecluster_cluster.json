@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "hypercomputecluster.clusters.create",
+      "hypercomputecluster.clusters.delete",
+      "hypercomputecluster.clusters.get",
+      "hypercomputecluster.clusters.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
