@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "netapp.storagePools.create",
+      "netapp.storagePools.delete",
+      "netapp.storagePools.get",
+      "netapp.storagePools.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "networkservices.serviceBindings.update",
+      "networkservices.serviceBindings.get",
+      "networkservices.serviceBindings.delete",
+      "networkservices.serviceBindings.create"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

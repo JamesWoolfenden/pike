@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "networksecurity.authzPolicies.create",
+      "networksecurity.authzPolicies.get",
+      "networksecurity.authzPolicies.update",
+      "networksecurity.authzPolicies.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

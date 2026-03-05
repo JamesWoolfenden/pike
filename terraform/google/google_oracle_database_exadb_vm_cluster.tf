@@ -1,0 +1,1 @@
+resource "google_oracle_database_exadb_vm_cluster" "pike" {}

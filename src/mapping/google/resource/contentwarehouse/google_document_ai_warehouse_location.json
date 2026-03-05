@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "contentwarehouse.locations.getStatus",
+      "contentwarehouse.locations.initialize"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

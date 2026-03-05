@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "networkservices.tlsRoutes.create",
+      "networkservices.tlsRoutes.delete",
+      "networkservices.tlsRoutes.get",
+      "networkservices.tlsRoutes.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

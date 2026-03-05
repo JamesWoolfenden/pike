@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "networkservices.serviceLbPolicies.update",
+      "networkservices.serviceLbPolicies.get",
+      "networkservices.serviceLbPolicies.delete",
+      "networkservices.serviceLbPolicies.create"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

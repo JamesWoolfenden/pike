@@ -3252,3 +3252,78 @@ var googleStorageTransferJob []byte
 
 //go:embed mapping/google/resource/networksecurity/google_network_security_server_tls_policy.json
 var googleNetworkSecurityServerTlsPolicy []byte
+
+//go:embed mapping/google/resource/netapp/google_netapp_active_directory.json
+var googleNetappActiveDirectory []byte
+
+//go:embed mapping/google/resource/netapp/google_netapp_backup.json
+var googleNetappBackup []byte
+
+//go:embed mapping/google/resource/netapp/google_netapp_host_group.json
+var googleNetappHostGroup []byte
+
+//go:embed mapping/google/resource/netapp/google_netapp_storage_pool.json
+var googleNetappStoragePool []byte
+
+//go:embed mapping/google/resource/netapp/google_netapp_volume.json
+var googleNetappVolume []byte
+
+//go:embed mapping/google/resource/netapp/google_netapp_volume_quota_rule.json
+var googleNetappVolumeQuotaRule []byte
+
+//go:embed mapping/google/resource/netapp/google_netapp_volume_replication.json
+var googleNetappVolumeReplication []byte
+
+//go:embed mapping/google/resource/netapp/google_netapp_volume_snapshot.json
+var googleNetappVolumeSnapshot []byte
+
+//go:embed mapping/google/resource/dialogflow/google_dialogflow_generator.json
+var googleDialogflowGenerator []byte
+
+//go:embed mapping/google/resource/dialogflow/google_dialogflow_version.json
+var googleDialogflowVersion []byte
+
+//go:embed mapping/google/resource/dataform/google_dataform_config.json
+var googleDataformConfig []byte
+
+//go:embed mapping/google/resource/documentai/google_document_ai_processor_default_version.json
+var googleDocumentAIProcessorDefaultVersion []byte
+
+//go:embed mapping/google/resource/contentwarehouse/google_document_ai_warehouse_document_schema.json
+var googleDocumentAiWarehouseDocumentSchema []byte
+
+//go:embed mapping/google/resource/contentwarehouse/google_document_ai_warehouse_location.json
+var googleDocumentAiWarehouseLocation []byte
+
+//go:embed mapping/google/resource/networkservices/google_network_services_mesh.json
+var googleNetworkServicesMesh []byte
+
+//go:embed mapping/google/resource/networkservices/google_network_services_service_binding.json
+var googleNetworkServicesServiceBinding []byte
+
+//go:embed mapping/google/resource/networkservices/google_network_services_service_lb_policies.json
+var googleNetworkServicesServiceLbPolicies []byte
+
+//go:embed mapping/google/resource/networkservices/google_network_services_tcp_route.json
+var googleNetworkServicesTcpRoute []byte
+
+//go:embed mapping/google/resource/networkservices/google_network_services_tls_route.json
+var googleNetworkServicesTlsRoute []byte
+
+//go:embed mapping/google/resource/networkservices/google_network_services_wasm_plugin.json
+var googleNetworkServicesWasmPlugin []byte
+
+//go:embed mapping/google/resource/oracledatabase/google_oracle_database_exadb_vm_cluster.json
+var googleOracleDatabaseExadbVmCluster []byte
+
+//go:embed mapping/google/resource/resourcemanager/google_resource_manager_capability.json
+var googleResourceManagerCapability []byte
+
+//go:embed mapping/google/resource/securesourcemanager/google_secure_source_manager_hook.json
+var googleSecureSourceManagerHook []byte
+
+//go:embed mapping/google/resource/vectorsearch/google_vector_search_collection.json
+var googleVectorSearchCollection []byte
+
+//go:embed mapping/google/resource/networksecurity/google_network_security_authz_policy.json
+var googleNetworkSecurityAuthzPolicy []byte

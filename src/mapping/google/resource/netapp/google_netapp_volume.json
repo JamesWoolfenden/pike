@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "netapp.volumes.create",
+      "netapp.volumes.update",
+      "netapp.volumes.get",
+      "netapp.volumes.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

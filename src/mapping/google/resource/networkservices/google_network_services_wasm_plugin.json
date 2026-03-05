@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "networkservices.wasmPlugins.update",
+      "networkservices.wasmPlugins.get",
+      "networkservices.wasmPlugins.delete",
+      "networkservices.wasmPlugins.create"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

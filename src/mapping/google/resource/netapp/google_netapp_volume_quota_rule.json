@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "netapp.quotaRules.create",
+      "netapp.quotaRules.delete",
+      "netapp.quotaRules.get",
+      "netapp.quotaRules.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

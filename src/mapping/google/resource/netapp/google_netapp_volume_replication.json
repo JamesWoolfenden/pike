@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "netapp.replications.create",
+      "netapp.replications.get",
+      "netapp.replications.update",
+      "netapp.replications.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

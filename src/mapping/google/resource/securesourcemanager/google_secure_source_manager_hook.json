@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "securesourcemanager.hooks.update",
+      "securesourcemanager.hooks.get",
+      "securesourcemanager.hooks.delete",
+      "securesourcemanager.hooks.create"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

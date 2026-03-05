@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "contentwarehouse.documentSchemas.create",
+      "contentwarehouse.documentSchemas.get",
+      "contentwarehouse.documentSchemas.update",
+      "contentwarehouse.documentSchemas.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "dataform.config.get",
+      "dataform.config.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

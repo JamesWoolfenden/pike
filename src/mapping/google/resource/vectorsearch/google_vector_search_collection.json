@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "vectorsearch.collections.update",
+      "vectorsearch.collections.get",
+      "vectorsearch.collections.delete",
+      "vectorsearch.collections.create"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "oracledatabase.exadbVmClusters.update",
+      "oracledatabase.exadbVmClusters.get",
+      "oracledatabase.exadbVmClusters.delete",
+      "oracledatabase.exadbVmClusters.create"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

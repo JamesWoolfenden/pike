@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "resourcemanager.capabilities.update",
+      "resourcemanager.capabilities.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

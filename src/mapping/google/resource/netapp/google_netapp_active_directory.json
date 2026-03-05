@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "netapp.activeDirectories.create",
+      "netapp.activeDirectories.delete",
+      "netapp.activeDirectories.get",
+      "netapp.activeDirectories.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

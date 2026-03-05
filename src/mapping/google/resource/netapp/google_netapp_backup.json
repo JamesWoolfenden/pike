@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "netapp.backups.create",
+      "netapp.backups.delete",
+      "netapp.backups.get",
+      "netapp.backups.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

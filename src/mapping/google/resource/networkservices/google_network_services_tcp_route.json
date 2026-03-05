@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "networkservices.tcpRoutes.update",
+      "networkservices.tcpRoutes.get",
+      "networkservices.tcpRoutes.delete",
+      "networkservices.tcpRoutes.create"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

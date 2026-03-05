@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [
+      "documentai.processors.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "netapp.hostGroups.create",
+      "netapp.hostGroups.delete",
+      "netapp.hostGroups.get",
+      "netapp.hostGroups.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

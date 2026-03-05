@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "dialogflow.generators.create",
+      "dialogflow.generators.delete",
+      "dialogflow.generators.get",
+      "dialogflow.generators.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

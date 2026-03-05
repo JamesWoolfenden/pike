@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "networkservices.meshes.create",
+      "networkservices.meshes.delete",
+      "networkservices.meshes.get",
+      "networkservices.meshes.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]
