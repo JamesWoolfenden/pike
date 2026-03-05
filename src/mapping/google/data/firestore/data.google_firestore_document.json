@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "datastore.entities.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "datastore.entities.get"
+    ]
+  }
+]

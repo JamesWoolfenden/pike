@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "networkmanagement.connectivitytests.list"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "networkmanagement.connectivitytests.list"
+    ]
+  }
+]

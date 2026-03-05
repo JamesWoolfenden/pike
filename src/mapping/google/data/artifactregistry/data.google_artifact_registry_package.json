@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "artifactregistry.packages.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "artifactregistry.packages.get"
+    ]
+  }
+]

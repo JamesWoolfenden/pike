@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "storagetransfer.jobs.create",
+      "storagetransfer.jobs.delete",
+      "storagetransfer.jobs.get",
+      "storagetransfer.jobs.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

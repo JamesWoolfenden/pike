@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "storage.managedFolders.get",
+      "storage.managedFolders.getIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "storage.managedFolders.get",
+      "storage.managedFolders.getIamPolicy"
+    ]
+  }
+]

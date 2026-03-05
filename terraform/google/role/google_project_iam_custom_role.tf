@@ -5,77 +5,78 @@ resource "google_project_iam_custom_role" "terraform_pike" {
   title       = "terraform_pike"
   description = "A user with least privileges"
   permissions = [
-    "cloudkms.cryptoKeys.create",
-    "cloudkms.cryptoKeys.get",
-    "cloudkms.keyRings.create",
-    "cloudkms.keyRings.get",
-    "compute.commitments.create",
-    "compute.commitments.get",
-    "compute.commitments.update",
-    "compute.healthChecks.use",
-    "compute.instanceGroupManagers.create",
-    "compute.instanceGroupManagers.delete",
-    "compute.instanceGroupManagers.get",
-    "compute.instanceGroupManagers.update",
-    "compute.instanceTemplates.create",
-    "compute.instanceTemplates.delete",
-    "compute.instanceTemplates.get",
-    "compute.instanceTemplates.useReadOnly",
+    "compute.globalOperations.get",
     "compute.networks.create",
     "compute.networks.delete",
     "compute.networks.get",
-    "compute.networks.update",
     "compute.networks.updatePolicy",
     "compute.subnetworks.create",
     "compute.subnetworks.delete",
     "compute.subnetworks.get",
     "compute.subnetworks.update",
-    "documentai.processors.create",
-    "documentai.processors.delete",
-    "documentai.processors.get",
-    "documentai.processors.update",
-    "logging.buckets.create",
-    "logging.buckets.delete",
-    "logging.buckets.get",
-    "logging.buckets.update",
-    "logging.queries.create",
-    "logging.queries.delete",
-    "logging.queries.get",
-    "logging.queries.update",
-    "logging.queries.usePrivate",
-    "netapp.backupVaults.create",
-    "netapp.backupVaults.delete",
-    "netapp.backupVaults.get",
-    "netapp.backupVaults.update",
-    "netapp.kmsConfigs.create",
-    "netapp.kmsConfigs.delete",
-    "netapp.kmsConfigs.get",
-    "netapp.kmsConfigs.update",
-    "netapp.operations.get",
-    "networkconnectivity.hubs.create",
-    "networkconnectivity.hubs.delete",
-    "networkconnectivity.hubs.get",
-    "networkconnectivity.hubs.update",
-    "networkconnectivity.operations.get",
-    "networkconnectivity.spokes.create",
-    "networkconnectivity.spokes.delete",
-    "networkconnectivity.spokes.get",
-    "networkconnectivity.spokes.update",
-    "networksecurity.addressGroups.create",
-    "networksecurity.addressGroups.delete",
-    "networksecurity.addressGroups.get",
-    "networksecurity.addressGroups.update",
-    "networksecurity.clientTlsPolicies.create",
-    "networksecurity.clientTlsPolicies.delete",
-    "networksecurity.clientTlsPolicies.get",
-    "networksecurity.clientTlsPolicies.update",
-    "networksecurity.operations.get",
-    "networksecurity.serverTlsPolicies.create",
-    "networksecurity.serverTlsPolicies.delete",
-    "networksecurity.serverTlsPolicies.get",
-    "networksecurity.serverTlsPolicies.update",
-    "resourcemanager.projects.get",
-    "resourcemanager.projects.updateLiens",
-    "storage.buckets.get"
+    "storage.buckets.get",
+    "storage.buckets.create",
+    "storage.buckets.delete",
+    "storage.buckets.update",
+    "storage.objects.get",
+    "storage.objects.list",
+    "storage.objects.create",
+    "storage.objects.delete",
+
+    //Permissions to CREATE resources for testing data sources
+    "logging.sinks.create",
+    "logging.sinks.delete",
+    "logging.sinks.update",
+    "storage.managedFolders.create",
+    "storage.managedFolders.delete",
+    "appengine.applications.get",
+    "datastore.databases.create",
+    "datastore.databases.delete",
+    "datastore.databases.get",
+    "datastore.databases.update",
+    "datastore.operations.get",
+    "datastore.entities.create",
+    "datastore.entities.delete",
+    "datastore.entities.update",
+
+    //google_storage_managed_folder_iam_policy
+    "storage.managedFolders.get",
+    "storage.managedFolders.getIamPolicy",
+
+    //google_cloud_asset_search_all_resources
+    "cloudasset.assets.searchAllResources",
+
+    //google_firestore_document
+    "datastore.entities.get",
+
+    //google_iam_testable_permissions
+    "iam.roles.list",
+
+    //google_logging_sink
+    "logging.sinks.get",
+
+    //google_network_management_connectivity_test_run
+    "networkmanagement.connectivitytests.get",
+
+    //google_artifact_registry_package
+    "artifactregistry.packages.get",
+
+    //google_artifact_registry_tag
+    "artifactregistry.tags.get",
+
+    //google_backup_dr_backup_plan
+    "backupdr.backupPlans.get",
+
+    //google_backup_dr_management_server
+    "backupdr.managementServers.list",
+
+    //google_compute_region_ssl_policy
+    "compute.regionSslPolicies.get",
+
+    //google_vertex_ai_index
+    "aiplatform.indexes.get",
+
+    //google_network_management_connectivity_tests
+    "networkmanagement.connectivitytests.list"
   ]
 }

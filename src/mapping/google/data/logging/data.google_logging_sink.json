@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "logging.sinks.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "logging.sinks.get"
+    ]
+  }
+]

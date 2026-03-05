@@ -3237,3 +3237,18 @@ var googleSecurityposturePosture []byte
 
 //go:embed mapping/google/resource/securityposture/google_securityposture_posture_deployment.json
 var googleSecurityposturePostureDeployment []byte
+
+//go:embed mapping/google/resource/storage/google_storage_anywhere_cache.json
+var googleStorageAnywhereCache []byte
+
+//go:embed mapping/google/resource/storagebatchoperations/google_storage_batch_operations_job.json
+var googleStorageBatchOperationsJob []byte
+
+//go:embed mapping/google/resource/storagetransfer/google_storage_transfer_agent_pool.json
+var googleStorageTransferAgentPool []byte
+
+//go:embed mapping/google/resource/storagetransfer/google_storage_transfer_job.json
+var googleStorageTransferJob []byte
+
+//go:embed mapping/google/resource/networksecurity/google_network_security_server_tls_policy.json
+var googleNetworkSecurityServerTlsPolicy []byte

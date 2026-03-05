@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [
+      "storagebatchoperations.jobs.create",
+      "storagebatchoperations.jobs.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

@@ -2,8 +2,8 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 88.18      |  1044       |  1184            |
-| Datasource | 96.81      |   395       |   408             |
+| Resources  | 88.26      |  1045       |  1184            |
+| Datasource | 100.00      |   408       |   408             |
 
 ```shell
 ./resource.ps1 google_access_context_manager_egress_policy
@@ -107,7 +107,6 @@
 ./resource.ps1 google_network_security_mirroring_endpoint_group_association
 ./resource.ps1 google_network_security_security_profile
 ./resource.ps1 google_network_security_security_profile_group
-./resource.ps1 google_network_security_server_tls_policy
 ./resource.ps1 google_network_security_tls_inspection_policy
 ./resource.ps1 google_network_security_url_lists
 ./resource.ps1 google_network_services_authz_extension
@@ -139,24 +138,6 @@
 ./resource.ps1 google_resource_manager_capability
 ./resource.ps1 google_scc_v2_organization_source
 ./resource.ps1 google_secure_source_manager_hook
-./resource.ps1 google_securityposture_posture_deployment
 ./resource.ps1 google_service_networking_peered_dns_domain
 ./resource.ps1 google_service_networking_vpc_service_controls
-./resource.ps1 google_storage_anywhere_cache
-./resource.ps1 google_storage_batch_operations_job
-./resource.ps1 google_storage_transfer_agent_pool
-./resource.ps1 google_storage_transfer_job
-./resource.ps1 google_artifact_registry_package -type data
-./resource.ps1 google_artifact_registry_tag -type data
-./resource.ps1 google_backup_dr_backup_plan -type data
-./resource.ps1 google_backup_dr_management_server -type data
-./resource.ps1 google_cloud_asset_search_all_resources -type data
-./resource.ps1 google_compute_region_ssl_policy -type data
-./resource.ps1 google_firestore_document -type data
-./resource.ps1 google_iam_testable_permissions -type data
-./resource.ps1 google_logging_sink -type data
-./resource.ps1 google_network_management_connectivity_test_run -type data
-./resource.ps1 google_network_management_connectivity_tests -type data
-./resource.ps1 google_storage_managed_folder_iam_policy -type data
-./resource.ps1 google_vertex_ai_index -type data
 ```

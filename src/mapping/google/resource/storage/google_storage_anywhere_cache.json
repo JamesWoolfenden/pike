@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "storage.anywhereCaches.create",
+      "storage.anywhereCaches.get",
+      "storage.anywhereCaches.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

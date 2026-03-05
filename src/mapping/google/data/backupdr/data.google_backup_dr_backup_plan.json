@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "backupdr.backupPlans.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "backupdr.backupPlans.get"
+    ]
+  }
+]

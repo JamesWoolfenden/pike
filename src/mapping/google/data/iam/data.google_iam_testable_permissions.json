@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "iam.roles.list"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "iam.roles.list"
+    ]
+  }
+]

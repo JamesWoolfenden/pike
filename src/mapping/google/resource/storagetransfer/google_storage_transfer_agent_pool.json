@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [
+      "storagetransfer.agentpools.create",
+      "storagetransfer.agentpools.delete",
+      "storagetransfer.agentpools.get",
+      "storagetransfer.agentpools.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": []
+  }
+]

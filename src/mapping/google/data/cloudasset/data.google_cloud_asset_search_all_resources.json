@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "cloudasset.assets.searchAllResources"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "cloudasset.assets.searchAllResources"
+    ]
+  }
+]

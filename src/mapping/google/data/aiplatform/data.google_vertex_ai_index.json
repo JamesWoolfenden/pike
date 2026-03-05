@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "aiplatform.indexes.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "aiplatform.indexes.get"
+    ]
+  }
+]

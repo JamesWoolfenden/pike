@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [
+      "backupdr.managementServers.list"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "backupdr.managementServers.list"
+    ]
+  }
+]

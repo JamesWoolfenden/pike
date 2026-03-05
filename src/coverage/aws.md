@@ -2,7 +2,7 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 93.72      |  1508       |  1609            |
+| Resources  | 93.61      |  1508       |  1611            |
 | Datasource | 99.84      |   641       |   642             |
 
 ```shell
@@ -62,6 +62,7 @@
 ./resource.ps1 aws_notifications_organizational_unit_association
 ./resource.ps1 aws_notifications_organizations_access
 ./resource.ps1 aws_observabilityadmin_centralization_rule_for_organization
+./resource.ps1 aws_observabilityadmin_telemetry_pipeline
 ./resource.ps1 aws_odb_cloud_autonomous_vm_cluster
 ./resource.ps1 aws_odb_cloud_exadata_infrastructure
 ./resource.ps1 aws_odb_cloud_vm_cluster
@@ -86,6 +87,7 @@
 ./resource.ps1 aws_s3vectors_vector_bucket
 ./resource.ps1 aws_s3vectors_vector_bucket_policy
 ./resource.ps1 aws_sagemaker_labeling_job
+./resource.ps1 aws_sagemaker_mlflow_app
 ./resource.ps1 aws_sagemaker_model_card
 ./resource.ps1 aws_sagemaker_model_card_export_job
 ./resource.ps1 aws_savingsplans_savings_plan
