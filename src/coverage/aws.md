@@ -2,8 +2,8 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 93.61      |  1508       |  1611            |
-| Datasource | 99.84      |   641       |   642             |
+| Resources  | 93.43      |  1508       |  1614            |
+| Datasource | 99.69      |   641       |   643             |
 
 ```shell
 ./resource.ps1 aws_alb
@@ -40,6 +40,8 @@
 ./resource.ps1 aws_ec2_allowed_images_settings
 ./resource.ps1 aws_ec2_secondary_network
 ./resource.ps1 aws_ec2_secondary_subnet
+./resource.ps1 aws_ec2_transit_gateway_metering_policy
+./resource.ps1 aws_ec2_transit_gateway_metering_policy_entry
 ./resource.ps1 aws_ecr_pull_time_update_exclusion
 ./resource.ps1 aws_ecs_express_gateway_service
 ./resource.ps1 aws_eks_capability
@@ -105,9 +107,11 @@
 ./resource.ps1 aws_vpclattice_domain_verification
 ./resource.ps1 aws_vpn_concentrator
 ./resource.ps1 aws_wafv2_web_acl_rule_group_association
+./resource.ps1 aws_workmail_organization
 ./resource.ps1 aws_workspacesweb_trust_store
 ./resource.ps1 aws_workspacesweb_trust_store_association
 ./resource.ps1 aws_workspacesweb_user_access_logging_settings_association
 ./resource.ps1 aws_workspacesweb_user_settings_association
 ./resource.ps1 aws_account_regions -type data
+./resource.ps1 aws_iam_outbound_web_identity_federation -type data
 ```

@@ -202,17 +202,17 @@ resource "azurerm_storage_account" "pike" {}
 
 3. **Test compilation:**
 
-```bash
+   ```bash
    go build
    ```
 
 4. **Test the mapping:**
 
-```bash
+   ```bash
    cd terraform/azurerm
    terraform init
    pike scan -d . -o json
-```
+   ```
 
 ## Comparison: Manual vs Automated
 

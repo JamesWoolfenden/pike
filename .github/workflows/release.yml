@@ -7,6 +7,8 @@ on:
 permissions: read-all
 jobs:
   goreleaser:
+    env:
+      GOTOOLCHAIN: auto
     permissions: write-all
     runs-on: ubuntu-latest
     steps:
@@ -17,7 +19,7 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@4dc6199c7b1a012772edbd06daecab0f50c9053c # v6.1.0
         with:
-          go-version: 1.24
+          go-version: 1.25
       - name: Import GPG key
         id: import_gpg
         uses: crazy-max/ghaction-import-gpg@e89d40939c28e39f97cf32126055eeae86ba74ec # v6.3.0
@@ -30,6 +32,7 @@ jobs:
           version: latest
           args: release --clean
         env:
+          GOTOOLCHAIN: auto
           GPG_FINGERPRINT: ${{ steps.import_gpg.outputs.fingerprint }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}

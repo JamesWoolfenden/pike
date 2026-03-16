@@ -3,6 +3,8 @@ name: Pull request
 permissions: read-all
 jobs:
   lint:
+    env:
+      GOTOOLCHAIN: auto
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -10,7 +12,7 @@ jobs:
       - name: Install Go
         uses: actions/setup-go@4dc6199c7b1a012772edbd06daecab0f50c9053c # v6.1.0
         with:
-          go-version: 1.24.x
+          go-version: 1.25.x
       - name: Restore cache
         uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
@@ -19,11 +21,15 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-go-mod-
       - name: gofumpt
+        env:
+          GOTOOLCHAIN: auto
         uses: jameswoolfenden/auto-gofmt@1cbf4876b8bf705bb47dffac024c3a96883c1e35 # v0.0.4
   test:
+    env:
+      GOTOOLCHAIN: auto
     strategy:
       matrix:
-        go-version: [ 1.24.x ]
+        go-version: [ 1.25.x ]
         platform: [ ubuntu-latest, macos-latest, windows-latest ]
     runs-on: ${{ matrix.platform }}
     steps:
@@ -48,6 +54,8 @@ jobs:
       - name: Test
         run: go test ./... -coverprofile=./cover.out
   docs:
+    env:
+      GOTOOLCHAIN: auto
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -55,4 +63,4 @@ jobs:
       - name: Install Go
         uses: actions/setup-go@4dc6199c7b1a012772edbd06daecab0f50c9053c # v6.1.0
         with:
-          go-version: 1.24.x
+          go-version: 1.25.x

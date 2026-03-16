@@ -111,7 +111,7 @@ The initial validation was done **without** comparing against Azure RBAC permiss
 
 1. **Remove duplicate datasource files:**
 
-```bash
+   ```bash
    # Remove orphaned azurerm_availability_set (empty permissions)
    rm src/mapping/azurerm/data/recoveryservices/azurerm_availability_set.json
 
@@ -124,17 +124,17 @@ The initial validation was done **without** comparing against Azure RBAC permiss
 
 2. **Generate complete Azure permissions data:**
 
-```powershell
+   ```powershell
    cd terraform/azurerm
    ./export_azure_permissions.ps1
    python3 parse_azure_permissions.py
-```
+   ```
 
 3. **Re-run validator with full permissions data:**
 
-```bash
+   ```bash
    python3 terraform/azurerm/validate_datasources.py
-```
+   ```
 
 ### Future Validations
 

@@ -568,11 +568,8 @@ var dataGoogleGkeHubFeature []byte
 //go:embed mapping/google/data/gkehub/google_gke_hub_feature_iam_policy.json
 var dataGoogleGkeHubFeatureIAMPolicy []byte
 
-//go:embed mapping/google/data/gkehub/google_gke_hub_membership.json
-var dataGoogleGkeHubMembershIP []byte
-
 //go:embed mapping/google/data/gkehub/google_gke_hub_membership_iam_policy.json
-var dataGoogleGkeHubMembershIPIAMPolicy []byte
+var dataGoogleGKEHubMembershipIAMPolicy []byte
 
 //go:embed mapping/google/data/gkehub/google_gke_hub_scope_iam_policy.json
 var dataGoogleGkeHubScopeIAMPolicy []byte
@@ -1095,9 +1092,6 @@ var dataGoogleVmwareengineDatastore []byte
 
 //go:embed mapping/google/data/gkehub/google_gke_hub_membership.json
 var dataGoogleGKEHubMembership []byte
-
-//go:embed mapping/google/data/gkehub/google_gke_hub_membership_iam_policy.json
-var dataGoogleGKEHubMembershipPolicy []byte
 
 //go:embed mapping/google/data/vmwareengine/google_vmwareengine_announcements.json
 var dataGoogleVmwareengineAnnoucements []byte

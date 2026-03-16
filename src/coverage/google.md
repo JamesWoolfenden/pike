@@ -2,10 +2,15 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 90.94      |  1195       |  1314            |
-| Datasource | 99.53      |   422       |   424             |
+| Resources  | 90.33      |  1195       |  1323            |
+| Datasource | 99.29      |   422       |   425             |
 
 ```shell
+./resource.ps1 google_biglake_iceberg_table
+./resource.ps1 google_biglake_iceberg_table_iam_binding
+./resource.ps1 google_biglake_iceberg_table_iam_member
+./resource.ps1 google_biglake_iceberg_table_iam_policy
+./resource.ps1 google_chronicle_data_table
 ./resource.ps1 google_cloud_identity_policy
 ./resource.ps1 google_compute_firewall_policy_with_rules
 ./resource.ps1 google_compute_network_firewall_policy_packet_mirroring_rule
@@ -21,6 +26,7 @@
 ./resource.ps1 google_compute_region_resize_request
 ./resource.ps1 google_compute_resize_request
 ./resource.ps1 google_compute_router_named_set
+./resource.ps1 google_contact_center_insights_auto_labeling_rule
 ./resource.ps1 google_container_analysis_occurrence
 ./resource.ps1 google_container_attached_cluster
 ./resource.ps1 google_container_aws_cluster
@@ -97,6 +103,8 @@
 ./resource.ps1 google_network_security_security_profile
 ./resource.ps1 google_network_security_security_profile_group
 ./resource.ps1 google_network_security_tls_inspection_policy
+./resource.ps1 google_network_security_ull_mirroring_collector
+./resource.ps1 google_network_security_ull_mirroring_engine
 ./resource.ps1 google_network_security_url_lists
 ./resource.ps1 google_network_services_agent_gateway
 ./resource.ps1 google_network_services_authz_extension
@@ -125,6 +133,8 @@
 ./resource.ps1 google_service_networking_peered_dns_domain
 ./resource.ps1 google_service_networking_vpc_service_controls
 ./resource.ps1 google_service_usage_consumer_quota_override
+./resource.ps1 google_sql_provision_script
+./resource.ps1 google_biglake_iceberg_table_iam_policy -type data
 ./resource.ps1 google_observability_folder_settings -type data
 ./resource.ps1 google_observability_project_settings -type data
 ```
