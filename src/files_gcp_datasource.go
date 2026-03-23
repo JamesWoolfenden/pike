@@ -55,7 +55,7 @@ var dataGoogleArtifactRegistryNpmPackage []byte
 //go:embed mapping/google/data/artifactregistry/google_artifact_registry_npm_packages.json
 var dataGoogleArtifactRegistryNpmPackages []byte
 
-//go:embed mapping/google/data/artifactregistry/data.google_artifact_registry_package.json
+//go:embed mapping/google/data/artifactregistry/google_artifact_registry_package.json
 var dataGoogleArtifactRegistryPackage []byte
 
 //go:embed mapping/google/data/artifactregistry/google_artifact_registry_packages.json
@@ -76,7 +76,7 @@ var dataGoogleArtifactRegistryRepository []byte
 //go:embed mapping/google/data/artifactregistry/google_artifact_registry_repository_iam_policy.json
 var dataGoogleArtifactRegistryRepositoryIAMPolicy []byte
 
-//go:embed mapping/google/data/artifactregistry/data.google_artifact_registry_tag.json
+//go:embed mapping/google/data/artifactregistry/google_artifact_registry_tag.json
 var dataGoogleArtifactRegistryTag []byte
 
 //go:embed mapping/google/data/artifactregistry/google_artifact_registry_tags.json
@@ -91,7 +91,7 @@ var dataGoogleArtifactRegistryVersions []byte
 //go:embed mapping/google/data/backupdr/google_backup_dr_backup.json
 var dataGoogleBackupDrBackup []byte
 
-//go:embed mapping/google/data/backupdr/data.google_backup_dr_backup_plan.json
+//go:embed mapping/google/data/backupdr/google_backup_dr_backup_plan.json
 var dataGoogleBackupDrBackupPlan []byte
 
 //go:embed mapping/google/data/backupdr/google_backup_dr_backup_plan_association.json
@@ -109,7 +109,7 @@ var dataGoogleBackupDrDataSource []byte
 //go:embed mapping/google/data/backupdr/google_backup_dr_data_source_reference.json
 var dataGoogleBackupDrDataSourceReference []byte
 
-//go:embed mapping/google/data/backupdr/data.google_backup_dr_management_server.json
+//go:embed mapping/google/data/backupdr/google_backup_dr_management_server.json
 var dataGoogleBackupDrManagementServer []byte
 
 //go:embed mapping/google/data/backupdr/google_backup_dr_data_source_references.json
@@ -229,7 +229,7 @@ var dataGoogleCloudfunctionsFunctionIAMPolicy []byte
 //go:embed mapping/google/data/aiplatform/google_colab_runtime_template_iam_policy.json
 var dataGoogleColabRuntimeTemplateIAMPolicy []byte
 
-//go:embed mapping/google/data/cloudasset/data.google_cloud_asset_search_all_resources.json
+//go:embed mapping/google/data/cloudasset/google_cloud_asset_search_all_resources.json
 var dataGoogleCloudAssetSearchAllResources []byte
 
 //go:embed mapping/google/data/composer/google_composer_environment.json
@@ -376,7 +376,7 @@ var dataGoogleComputeRegionNetworkEndpointGroup []byte
 //go:embed mapping/google/data/compute/google_compute_region_security_policy.json
 var dataGoogleComputeRegionSecurityPolicy []byte
 
-//go:embed mapping/google/data/compute/data.google_compute_region_ssl_policy.json
+//go:embed mapping/google/data/compute/google_compute_region_ssl_policy.json
 var dataGoogleComputeRegionSslPolicy []byte
 
 //go:embed mapping/google/data/compute/google_compute_regions.json
@@ -445,7 +445,7 @@ var dataGoogleComputeVpnGateway []byte
 //go:embed mapping/google/data/compute/google_compute_zones.json
 var dataGoogleComputeZones []byte
 
-//go:embed mapping/google/data/firestore/data.google_firestore_document.json
+//go:embed mapping/google/data/datastore/google_firestore_document.json
 var dataGoogleFirestoreDocument []byte
 
 //go:embed mapping/google/data/containeranalysis/google_container_analysis_note_iam_policy.json
@@ -679,13 +679,13 @@ var dataGoogleLoggingProjectCmekSettings []byte
 //go:embed mapping/google/data/logging/google_logging_project_settings.json
 var dataGoogleLoggingProjectSettings []byte
 
-//go:embed mapping/google/data/logging/data.google_logging_sink.json
+//go:embed mapping/google/data/logging/google_logging_sink.json
 var dataGoogleLoggingSink []byte
 
-//go:embed mapping/google/data/networkmanagement/data.google_network_management_connectivity_test_run.json
+//go:embed mapping/google/data/networkmanagement/google_network_management_connectivity_test_run.json
 var dataGoogleNetworkManagementConnectivityTestRun []byte
 
-//go:embed mapping/google/data/networkmanagement/data.google_network_management_connectivity_tests.json
+//go:embed mapping/google/data/networkmanagement/google_network_management_connectivity_tests.json
 var dataGoogleNetworkManagementConnectivityTests []byte
 
 //go:embed mapping/google/data/lustre/google_lustre_instance.json
@@ -907,7 +907,7 @@ var dataGoogleServiceAccountKey []byte
 //go:embed mapping/google/data/iam/google_service_accounts.json
 var dataGoogleServiceAccounts []byte
 
-//go:embed mapping/google/data/iam/data.google_iam_testable_permissions.json
+//go:embed mapping/google/data/iam/google_iam_testable_permissions.json
 var dataGoogleIamTestablePermissions []byte
 
 //go:embed mapping/google/data/servicedirectory/google_service_directory_namespace_iam_policy.json
@@ -988,7 +988,7 @@ var dataGoogleStorageControlOrganizationIntelligenceConfig []byte
 //go:embed mapping/google/data/storage/google_storage_control_project_intelligence_config.json
 var dataGoogleStorageControlProjectIntelligenceConfig []byte
 
-//go:embed mapping/google/data/storage/data.google_storage_managed_folder_iam_policy.json
+//go:embed mapping/google/data/storage/google_storage_managed_folder_iam_policy.json
 var dataGoogleStorageManagedFolderIamPolicy []byte
 
 //go:embed mapping/google/data/storageinsights/google_storage_insights_dataset_config.json
@@ -1045,7 +1045,7 @@ var dataGoogleVertexAiFeaturestoreEntitytypeIAMPolicy []byte
 //go:embed mapping/google/data/aiplatform/google_vertex_ai_featurestore_iam_policy.json
 var dataGoogleVertexAiFeaturestoreIAMPolicy []byte
 
-//go:embed mapping/google/data/aiplatform/data.google_vertex_ai_index.json
+//go:embed mapping/google/data/aiplatform/google_vertex_ai_index.json
 var dataGoogleVertexAiIndex []byte
 
 //go:embed mapping/google/data/vmwareengine/google_vmwareengine_external_address.json
@@ -1095,3 +1095,6 @@ var dataGoogleGKEHubMembership []byte
 
 //go:embed mapping/google/data/vmwareengine/google_vmwareengine_announcements.json
 var dataGoogleVmwareengineAnnoucements []byte
+
+//go:embed mapping/google/data/biglake/google_biglake_iceberg_table_iam_policy.json
+var dataGoogleBiglakeIcebergTableIAMPolicy []byte

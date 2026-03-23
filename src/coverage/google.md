@@ -3,7 +3,7 @@
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
 | Resources  | 90.33      |  1195       |  1323            |
-| Datasource | 99.29      |   422       |   425             |
+| Datasource | 100.00      |   425       |   425             |
 
 ```shell
 ./resource.ps1 google_biglake_iceberg_table
@@ -134,7 +134,4 @@
 ./resource.ps1 google_service_networking_vpc_service_controls
 ./resource.ps1 google_service_usage_consumer_quota_override
 ./resource.ps1 google_sql_provision_script
-./resource.ps1 google_biglake_iceberg_table_iam_policy -type data
-./resource.ps1 google_observability_folder_settings -type data
-./resource.ps1 google_observability_project_settings -type data
 ```

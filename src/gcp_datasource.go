@@ -461,6 +461,9 @@ func GCPDataLookup(result string) interface{} {
 		"google_gke_hub_membership_iam_policy":                         dataGoogleGKEHubMembershipIAMPolicy,
 		"google_vmwareengine_announcements":                            dataGoogleVmwareengineAnnoucements,
 		"google_vmwareengine_upgrades":                                 placeholder,
+		"google_observability_folder_settings":                         placeholder,
+		"google_observability_project_settings":                        placeholder,
+		"google_biglake_iceberg_table_iam_policy":                      dataGoogleBiglakeIcebergTableIAMPolicy,
 	}
 
 	return TFLookup[result]
