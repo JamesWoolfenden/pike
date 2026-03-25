@@ -29,13 +29,13 @@ jobs:
       GOTOOLCHAIN: auto
     strategy:
       matrix:
-        go-version: [ 1.25.x ]
+        go-version: [ 1.25.8 ]
         platform: [ ubuntu-latest, macos-latest, windows-latest ]
     runs-on: ${{ matrix.platform }}
     steps:
-      - uses: hashicorp/setup-terraform@b9cd54a3c349d3f38e8881555d616ced269862dd # v3.1.2
+      - uses: opentofu/setup-opentofu@12f4debbf681675350b6cd1f0ff0897f1debc2a3 # v1.0.4
         with:
-          terraform_version: 1.5.4
+          tofu_version: 1.8.8
       - name: Checkout code
         uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
       - name: Install Go
