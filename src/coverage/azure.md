@@ -2,8 +2,8 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 5.10      |    57       |  1117            |
-| Datasource | 31.04      |   122       |   393             |
+| Resources  | 5.08      |    57       |  1122            |
+| Datasource | 30.96      |   122       |   394             |
 
 ```shell
 ./resource.ps1 azurerm_aadb2c_directory
@@ -300,12 +300,14 @@
 ./resource.ps1 azurerm_data_factory_trigger_schedule
 ./resource.ps1 azurerm_data_factory_trigger_tumbling_window
 ./resource.ps1 azurerm_data_protection_backup_instance_blob_storage
+./resource.ps1 azurerm_data_protection_backup_instance_data_lake_storage
 ./resource.ps1 azurerm_data_protection_backup_instance_disk
 ./resource.ps1 azurerm_data_protection_backup_instance_kubernetes_cluster
 ./resource.ps1 azurerm_data_protection_backup_instance_mysql_flexible_server
 ./resource.ps1 azurerm_data_protection_backup_instance_postgresql
 ./resource.ps1 azurerm_data_protection_backup_instance_postgresql_flexible_server
 ./resource.ps1 azurerm_data_protection_backup_policy_blob_storage
+./resource.ps1 azurerm_data_protection_backup_policy_data_lake_storage
 ./resource.ps1 azurerm_data_protection_backup_policy_disk
 ./resource.ps1 azurerm_data_protection_backup_policy_kubernetes_cluster
 ./resource.ps1 azurerm_data_protection_backup_policy_mysql_flexible_server
@@ -371,6 +373,7 @@
 ./resource.ps1 azurerm_eventgrid_domain_topic
 ./resource.ps1 azurerm_eventgrid_event_subscription
 ./resource.ps1 azurerm_eventgrid_namespace
+./resource.ps1 azurerm_eventgrid_namespace_topic
 ./resource.ps1 azurerm_eventgrid_partner_configuration
 ./resource.ps1 azurerm_eventgrid_partner_namespace
 ./resource.ps1 azurerm_eventgrid_partner_registration
@@ -471,6 +474,7 @@
 ./resource.ps1 azurerm_key_vault_managed_storage_account
 ./resource.ps1 azurerm_key_vault_managed_storage_account_sas_token_definition
 ./resource.ps1 azurerm_key_vault_secret
+./resource.ps1 azurerm_kubernetes_cluster_deployment_safeguard
 ./resource.ps1 azurerm_kubernetes_cluster_extension
 ./resource.ps1 azurerm_kubernetes_cluster_node_pool
 ./resource.ps1 azurerm_kubernetes_cluster_trusted_access_role_binding
@@ -781,6 +785,7 @@
 ./resource.ps1 azurerm_resource_policy_assignment
 ./resource.ps1 azurerm_resource_policy_exemption
 ./resource.ps1 azurerm_resource_policy_remediation
+./resource.ps1 azurerm_resource_provider_feature_registration
 ./resource.ps1 azurerm_resource_provider_registration
 ./resource.ps1 azurerm_role_definition
 ./resource.ps1 azurerm_role_management_policy
@@ -1098,6 +1103,7 @@
 ./resource.ps1 azurerm_container_app_environment -type data
 ./resource.ps1 azurerm_container_app_environment_certificate -type data
 ./resource.ps1 azurerm_container_app_environment_dapr_component. -type data
+./resource.ps1 azurerm_container_app_environment_storage -type data
 ./resource.ps1 azurerm_container_group -type data
 ./resource.ps1 azurerm_container_registry -type data
 ./resource.ps1 azurerm_container_registry_cache_rule -type data

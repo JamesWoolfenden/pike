@@ -2,15 +2,20 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 90.33      |  1195       |  1323            |
-| Datasource | 100.00      |   425       |   425             |
+| Resources  | 89.31      |  1195       |  1338            |
+| Datasource | 98.38      |   425       |   432             |
 
 ```shell
 ./resource.ps1 google_biglake_iceberg_table
 ./resource.ps1 google_biglake_iceberg_table_iam_binding
 ./resource.ps1 google_biglake_iceberg_table_iam_member
 ./resource.ps1 google_biglake_iceberg_table_iam_policy
+./resource.ps1 google_bigquery_reservation_group
+./resource.ps1 google_chronicle_dashboard_chart
 ./resource.ps1 google_chronicle_data_table
+./resource.ps1 google_chronicle_data_table_row
+./resource.ps1 google_chronicle_feed
+./resource.ps1 google_chronicle_native_dashboard
 ./resource.ps1 google_cloud_identity_policy
 ./resource.ps1 google_compute_firewall_policy_with_rules
 ./resource.ps1 google_compute_network_firewall_policy_packet_mirroring_rule
@@ -26,6 +31,7 @@
 ./resource.ps1 google_compute_region_resize_request
 ./resource.ps1 google_compute_resize_request
 ./resource.ps1 google_compute_router_named_set
+./resource.ps1 google_contact_center_insights_assessment_rule
 ./resource.ps1 google_contact_center_insights_auto_labeling_rule
 ./resource.ps1 google_container_analysis_occurrence
 ./resource.ps1 google_container_attached_cluster
@@ -40,6 +46,7 @@
 ./resource.ps1 google_dataproc_gdc_spark_application
 ./resource.ps1 google_dataproc_metastore_federation
 ./resource.ps1 google_dataproc_metastore_service
+./resource.ps1 google_dialogflow_environment
 ./resource.ps1 google_firebase_ai_logic_config
 ./resource.ps1 google_firebase_ai_logic_prompt_template
 ./resource.ps1 google_firebase_ai_logic_prompt_template_lock
@@ -72,6 +79,7 @@
 ./resource.ps1 google_integration_connectors_managed_zone
 ./resource.ps1 google_integrations_auth_config
 ./resource.ps1 google_integrations_client
+./resource.ps1 google_kms_project_autokey_config
 ./resource.ps1 google_network_connectivity_destination
 ./resource.ps1 google_network_connectivity_gateway_advertised_route
 ./resource.ps1 google_network_connectivity_group
@@ -81,6 +89,7 @@
 ./resource.ps1 google_network_connectivity_regional_endpoint
 ./resource.ps1 google_network_connectivity_service_connection_policy
 ./resource.ps1 google_network_connectivity_spoke
+./resource.ps1 google_network_connectivity_transport
 ./resource.ps1 google_network_management_vpc_flow_logs_config
 ./resource.ps1 google_network_security_authorization_policy
 ./resource.ps1 google_network_security_backend_authentication_config
@@ -129,9 +138,22 @@
 ./resource.ps1 google_network_services_multicast_producer_association
 ./resource.ps1 google_observability_folder_settings
 ./resource.ps1 google_observability_project_settings
+./resource.ps1 google_organization_service_identity
 ./resource.ps1 google_security_scanner_scan_config
 ./resource.ps1 google_service_networking_peered_dns_domain
 ./resource.ps1 google_service_networking_vpc_service_controls
 ./resource.ps1 google_service_usage_consumer_quota_override
+./resource.ps1 google_service_usage_v2_folder_consumer_policy
 ./resource.ps1 google_sql_provision_script
+./resource.ps1 google_vertex_ai_reasoning_engine_iam_binding
+./resource.ps1 google_vertex_ai_reasoning_engine_iam_member
+./resource.ps1 google_vertex_ai_reasoning_engine_iam_policy
+./resource.ps1 google_workload_identity_service_agent
+./resource.ps1 google_compute_network_endpoint_groups -type data
+./resource.ps1 google_discovery_engine_data_store -type data
+./resource.ps1 google_discovery_engine_data_stores -type data
+./resource.ps1 google_dns_record_sets -type data
+./resource.ps1 google_network_security_address_groups -type data
+./resource.ps1 google_vertex_ai_reasoning_engine_iam_policy -type data
+./resource.ps1 google_vertex_ai_reasoning_engine_query -type data
 ```

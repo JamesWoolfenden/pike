@@ -2,8 +2,8 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 93.43      |  1508       |  1614            |
-| Datasource | 99.69      |   641       |   643             |
+| Resources  | 92.74      |  1508       |  1626            |
+| Datasource | 98.62      |   641       |   650             |
 
 ```shell
 ./resource.ps1 aws_alb
@@ -52,6 +52,7 @@
 ./resource.ps1 aws_lakeformation_identity_center_configuration
 ./resource.ps1 aws_lakeformation_lf_tag_expression
 ./resource.ps1 aws_lambda_capacity_provider
+./resource.ps1 aws_msk_topic
 ./resource.ps1 aws_nat_gateway_eip_association
 ./resource.ps1 aws_networkfirewall_firewall_transit_gateway_attachment_accepter
 ./resource.ps1 aws_networkfirewall_vpc_endpoint_association
@@ -64,6 +65,7 @@
 ./resource.ps1 aws_notifications_organizational_unit_association
 ./resource.ps1 aws_notifications_organizations_access
 ./resource.ps1 aws_observabilityadmin_centralization_rule_for_organization
+./resource.ps1 aws_observabilityadmin_telemetry_enrichment
 ./resource.ps1 aws_observabilityadmin_telemetry_pipeline
 ./resource.ps1 aws_odb_cloud_autonomous_vm_cluster
 ./resource.ps1 aws_odb_cloud_exadata_infrastructure
@@ -71,6 +73,7 @@
 ./resource.ps1 aws_odb_network
 ./resource.ps1 aws_odb_network_peering_connection
 ./resource.ps1 aws_opensearch_application
+./resource.ps1 aws_organizations_aws_service_access
 ./resource.ps1 aws_organizations_tag
 ./resource.ps1 aws_prometheus_resource_policy
 ./resource.ps1 aws_quicksight_custom_permissions
@@ -88,12 +91,15 @@
 ./resource.ps1 aws_s3vectors_index
 ./resource.ps1 aws_s3vectors_vector_bucket
 ./resource.ps1 aws_s3vectors_vector_bucket_policy
+./resource.ps1 aws_sagemaker_algorithm
 ./resource.ps1 aws_sagemaker_labeling_job
 ./resource.ps1 aws_sagemaker_mlflow_app
 ./resource.ps1 aws_sagemaker_model_card
 ./resource.ps1 aws_sagemaker_model_card_export_job
+./resource.ps1 aws_sagemaker_training_job
 ./resource.ps1 aws_savingsplans_savings_plan
 ./resource.ps1 aws_secretsmanager_tag
+./resource.ps1 aws_servicequotas_auto_management
 ./resource.ps1 aws_sesv2_tenant
 ./resource.ps1 aws_sesv2_tenant_resource_association
 ./resource.ps1 aws_ssoadmin_customer_managed_policy_attachments_exclusive
@@ -102,16 +108,29 @@
 ./resource.ps1 aws_transfer_host_key
 ./resource.ps1 aws_transfer_web_app
 ./resource.ps1 aws_transfer_web_app_customization
+./resource.ps1 aws_uxc_account_customizations
 ./resource.ps1 aws_vpc_encryption_control
 ./resource.ps1 aws_vpc_security_group_rules_exclusive
 ./resource.ps1 aws_vpclattice_domain_verification
 ./resource.ps1 aws_vpn_concentrator
+./resource.ps1 aws_wafv2_web_acl_rule
 ./resource.ps1 aws_wafv2_web_acl_rule_group_association
+./resource.ps1 aws_workmail_default_domain
+./resource.ps1 aws_workmail_domain
+./resource.ps1 aws_workmail_group
 ./resource.ps1 aws_workmail_organization
+./resource.ps1 aws_workmail_user
 ./resource.ps1 aws_workspacesweb_trust_store
 ./resource.ps1 aws_workspacesweb_trust_store_association
 ./resource.ps1 aws_workspacesweb_user_access_logging_settings_association
 ./resource.ps1 aws_workspacesweb_user_settings_association
 ./resource.ps1 aws_account_regions -type data
+./resource.ps1 aws_dynamodb_backups -type data
 ./resource.ps1 aws_iam_outbound_web_identity_federation -type data
+./resource.ps1 aws_iam_role_policies -type data
+./resource.ps1 aws_iam_role_policy_attachments -type data
+./resource.ps1 aws_msk_topic -type data
+./resource.ps1 aws_networkmanager_core_network -type data
+./resource.ps1 aws_savingsplans_offerings -type data
+./resource.ps1 aws_uxc_services -type data
 ```
