@@ -65,6 +65,7 @@ update:
 	go get -u
 	go mod tidy
 	pre-commit autoupdate
+	ghat swot -d . true --stable 14
 
 gci:
 	gci -w .
