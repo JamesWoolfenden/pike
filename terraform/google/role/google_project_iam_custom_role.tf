@@ -5,6 +5,27 @@ resource "google_project_iam_custom_role" "terraform_pike" {
   title       = "terraform_pike"
   description = "A user with least privileges"
   permissions = [
+    //google_network_security_address_groups
+    "networksecurity.addressGroups.list",
+
+
+
+
+
+
+
+    //google_dns_record_sets
+    "dns.resourceRecordSets.get",
+
+    //google_discovery_engine_data_store
+    "discoveryengine.dataStores.get",
+
+
+    //google_discovery_engine_data_stores
+    "discoveryengine.dataStores.list",
+
+    "storage.objects.get",
+    "appengine.applications.get",
     "compute.globalOperations.get",
     "compute.networks.create",
     "compute.networks.delete",
@@ -14,37 +35,24 @@ resource "google_project_iam_custom_role" "terraform_pike" {
     "compute.subnetworks.delete",
     "compute.subnetworks.get",
     "compute.subnetworks.update",
-    "storage.buckets.get",
-    "storage.buckets.create",
-    "storage.buckets.delete",
-    "storage.buckets.update",
-    "storage.objects.get",
-    "storage.objects.list",
-    "storage.objects.create",
-    "storage.objects.delete",
-
-    //Permissions to CREATE resources for testing data sources
-    "logging.sinks.create",
-    "logging.sinks.delete",
-    "logging.sinks.update",
-    "storage.managedFolders.create",
-    "storage.managedFolders.delete",
-    "appengine.applications.get",
     "datastore.databases.create",
     "datastore.databases.delete",
     "datastore.databases.get",
+    "datastore.databases.getMetadata",
     "datastore.databases.update",
     "datastore.operations.get",
-    "datastore.entities.create",
-    "datastore.entities.delete",
-    "datastore.entities.update",
-
-
-
-
-
-
-
-    "biglake.tables.getIamPolicy"
+    "logging.sinks.create",
+    "logging.sinks.delete",
+    "logging.sinks.get",
+    "logging.sinks.update",
+    "resourcemanager.projects.get",
+    "storage.buckets.create",
+    "storage.buckets.delete",
+    "storage.buckets.get",
+    "storage.buckets.update",
+    # "storage.managedFolders.create",
+    "storage.managedFolders.delete",
+    "storage.managedFolders.get",
+    # "storage.managedFolders.update"
   ]
 }

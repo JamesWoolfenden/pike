@@ -3327,3 +3327,12 @@ var googleVectorSearchCollection []byte
 
 //go:embed mapping/google/resource/networksecurity/google_network_security_authz_policy.json
 var googleNetworkSecurityAuthzPolicy []byte
+
+//go:embed mapping/google/resource/aiplatform/google_vertex_ai_reasoning_engine_iam_binding.json
+var googleVertexAiReasoningEngineIAMBinding []byte
+
+//go:embed mapping/google/resource/aiplatform/google_vertex_ai_reasoning_engine_iam_member.json
+var googleVertexAiReasoningEngineIAMMember []byte
+
+//go:embed mapping/google/resource/aiplatform/google_vertex_ai_reasoning_engine_iam_policy.json
+var googleVertexAiReasoningEngineIAMPolicy []byte

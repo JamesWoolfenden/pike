@@ -1098,3 +1098,24 @@ var dataGoogleVmwareengineAnnoucements []byte
 
 //go:embed mapping/google/data/biglake/google_biglake_iceberg_table_iam_policy.json
 var dataGoogleBiglakeIcebergTableIAMPolicy []byte
+
+//go:embed mapping/google/data/compute/google_compute_network_endpoint_groups.json
+var dataGoogleComputeNetworkEndpointGroups []byte
+
+//go:embed mapping/google/data/discoveryengine/google_discovery_engine_data_store.json
+var dataGoogleDiscoveryEngineDataStore []byte
+
+//go:embed mapping/google/data/discoveryengine/google_discovery_engine_data_stores.json
+var dataGoogleDiscoveryEngineDataStores []byte
+
+//go:embed mapping/google/data/dns/google_dns_record_sets.json
+var dataGoogleDNSRecordSets []byte
+
+//go:embed mapping/google/data/networksecurity/google_network_security_address_groups.json
+var dataGoogleNetworkSecurityAddressGroups []byte
+
+//go:embed mapping/google/data/aiplatform/google_vertex_ai_reasoning_engine_iam_policy.json
+var dataGoogleVertexAIReasoningEngineIAMPolicy []byte
+
+//go:embed mapping/google/data/aiplatform/google_vertex_ai_reasoning_engine_query.json
+var dataGoogleVertexAIReasoningEngineQuery []byte

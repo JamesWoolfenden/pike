@@ -464,6 +464,13 @@ func GCPDataLookup(result string) interface{} {
 		"google_observability_folder_settings":                         placeholder,
 		"google_observability_project_settings":                        placeholder,
 		"google_biglake_iceberg_table_iam_policy":                      dataGoogleBiglakeIcebergTableIAMPolicy,
+		"google_compute_network_endpoint_groups":                       dataGoogleComputeNetworkEndpointGroups,
+		"google_discovery_engine_data_store":                           dataGoogleDiscoveryEngineDataStore,
+		"google_discovery_engine_data_stores":                          dataGoogleDiscoveryEngineDataStores,
+		"google_dns_record_sets":                                       dataGoogleDNSRecordSets,
+		"google_network_security_address_groups":                       dataGoogleNetworkSecurityAddressGroups,
+		"google_vertex_ai_reasoning_engine_iam_policy":                 dataGoogleVertexAIReasoningEngineIAMPolicy,
+		"google_vertex_ai_reasoning_engine_query":                      dataGoogleVertexAIReasoningEngineQuery,
 	}
 
 	return TFLookup[result]

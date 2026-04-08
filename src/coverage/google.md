@@ -2,8 +2,8 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 89.31      |  1195       |  1338            |
-| Datasource | 98.38      |   425       |   432             |
+| Resources  | 89.54      | 1198      | 1338            |
+| Datasource | 100.00     | 432       | 432             |
 
 ```shell
 ./resource.ps1 google_biglake_iceberg_table
@@ -145,15 +145,5 @@
 ./resource.ps1 google_service_usage_consumer_quota_override
 ./resource.ps1 google_service_usage_v2_folder_consumer_policy
 ./resource.ps1 google_sql_provision_script
-./resource.ps1 google_vertex_ai_reasoning_engine_iam_binding
-./resource.ps1 google_vertex_ai_reasoning_engine_iam_member
-./resource.ps1 google_vertex_ai_reasoning_engine_iam_policy
 ./resource.ps1 google_workload_identity_service_agent
-./resource.ps1 google_compute_network_endpoint_groups -type data
-./resource.ps1 google_discovery_engine_data_store -type data
-./resource.ps1 google_discovery_engine_data_stores -type data
-./resource.ps1 google_dns_record_sets -type data
-./resource.ps1 google_network_security_address_groups -type data
-./resource.ps1 google_vertex_ai_reasoning_engine_iam_policy -type data
-./resource.ps1 google_vertex_ai_reasoning_engine_query -type data
 ```
