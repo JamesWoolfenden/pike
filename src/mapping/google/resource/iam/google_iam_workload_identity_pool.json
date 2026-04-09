@@ -4,7 +4,8 @@
       "iam.workloadIdentityPools.create",
       "iam.workloadIdentityPools.delete",
       "iam.workloadIdentityPools.get",
-      "iam.workloadIdentityPools.update"
+      "iam.workloadIdentityPools.update",
+      "iam.workloadIdentityPools.getAttestationRules"
     ],
     "attributes": {
       "tags": []
