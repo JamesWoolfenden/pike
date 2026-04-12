@@ -2,8 +2,8 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 92.74      |  1508       |  1626            |
-| Datasource | 98.62      |   641       |   650             |
+| Resources  | 92.40      |  1508       |  1632            |
+| Datasource | 97.71      |   641       |   656             |
 
 ```shell
 ./resource.ps1 aws_alb
@@ -73,6 +73,7 @@
 ./resource.ps1 aws_odb_network
 ./resource.ps1 aws_odb_network_peering_connection
 ./resource.ps1 aws_opensearch_application
+./resource.ps1 aws_opensearchserverless_collection_group
 ./resource.ps1 aws_organizations_aws_service_access
 ./resource.ps1 aws_organizations_tag
 ./resource.ps1 aws_prometheus_resource_policy
@@ -86,6 +87,11 @@
 ./resource.ps1 aws_redshift_idc_application
 ./resource.ps1 aws_s3_bucket_abac
 ./resource.ps1 aws_s3_bucket_metadata_configuration
+./resource.ps1 aws_s3files_access_point
+./resource.ps1 aws_s3files_file_system
+./resource.ps1 aws_s3files_file_system_policy
+./resource.ps1 aws_s3files_mount_target
+./resource.ps1 aws_s3files_synchronization_configuration
 ./resource.ps1 aws_s3tables_table_bucket_replication
 ./resource.ps1 aws_s3tables_table_replication
 ./resource.ps1 aws_s3vectors_index
@@ -131,6 +137,12 @@
 ./resource.ps1 aws_iam_role_policy_attachments -type data
 ./resource.ps1 aws_msk_topic -type data
 ./resource.ps1 aws_networkmanager_core_network -type data
+./resource.ps1 aws_opensearchserverless_collection_group -type data
+./resource.ps1 aws_opensearchserverless_collection_groups -type data
+./resource.ps1 aws_s3files_access_point -type data
+./resource.ps1 aws_s3files_file_system -type data
+./resource.ps1 aws_s3files_file_systems -type data
+./resource.ps1 aws_s3files_mount_target -type data
 ./resource.ps1 aws_savingsplans_offerings -type data
 ./resource.ps1 aws_uxc_services -type data
 ```

@@ -2,10 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 89.54      | 1198      | 1338            |
-| Datasource | 100.00     | 432       | 432             |
+| Resources  | 89.07      |  1198       |  1345            |
+| Datasource | 99.54      |   432       |   434             |
 
 ```shell
+./resource.ps1 google_apigee_sharedflow
+./resource.ps1 google_apigee_space
 ./resource.ps1 google_biglake_iceberg_table
 ./resource.ps1 google_biglake_iceberg_table_iam_binding
 ./resource.ps1 google_biglake_iceberg_table_iam_member
@@ -66,6 +68,12 @@
 ./resource.ps1 google_firebase_extensions_instance
 ./resource.ps1 google_firebase_project_location
 ./resource.ps1 google_gke_hub_scope_rbac_role_binding
+./resource.ps1 google_iap_agent_registry_iam_binding
+./resource.ps1 google_iap_agent_registry_iam_member
+./resource.ps1 google_iap_agent_registry_iam_policy
+./resource.ps1 google_iap_location_web_iam_binding
+./resource.ps1 google_iap_location_web_iam_member
+./resource.ps1 google_iap_location_web_iam_policy
 ./resource.ps1 google_identity_platform_config
 ./resource.ps1 google_identity_platform_default_supported_idp_config
 ./resource.ps1 google_identity_platform_inbound_saml_config
@@ -143,7 +151,8 @@
 ./resource.ps1 google_service_networking_peered_dns_domain
 ./resource.ps1 google_service_networking_vpc_service_controls
 ./resource.ps1 google_service_usage_consumer_quota_override
-./resource.ps1 google_service_usage_v2_folder_consumer_policy
 ./resource.ps1 google_sql_provision_script
 ./resource.ps1 google_workload_identity_service_agent
+./resource.ps1 google_iap_agent_registry_iam_policy -type data
+./resource.ps1 google_iap_location_web_iam_policy -type data
 ```

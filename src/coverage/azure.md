@@ -2,8 +2,8 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 5.08      |    57       |  1122            |
-| Datasource | 30.96      |   122       |   394             |
+| Resources  | 5.07      |    57       |  1124            |
+| Datasource | 30.89      |   122       |   395             |
 
 ```shell
 ./resource.ps1 azurerm_aadb2c_directory
@@ -130,6 +130,7 @@
 ./resource.ps1 azurerm_automation_python3_package
 ./resource.ps1 azurerm_automation_runbook
 ./resource.ps1 azurerm_automation_runtime_environment
+./resource.ps1 azurerm_automation_runtime_environment_package
 ./resource.ps1 azurerm_automation_schedule
 ./resource.ps1 azurerm_automation_software_update_configuration
 ./resource.ps1 azurerm_automation_source_control
@@ -557,6 +558,7 @@
 ./resource.ps1 azurerm_maintenance_configuration
 ./resource.ps1 azurerm_managed_application
 ./resource.ps1 azurerm_managed_application_definition
+./resource.ps1 azurerm_managed_devops_pool
 ./resource.ps1 azurerm_managed_disk_sas_token
 ./resource.ps1 azurerm_managed_lustre_file_system
 ./resource.ps1 azurerm_managed_redis
@@ -1226,6 +1228,7 @@
 ./resource.ps1 azurerm_maintenance_configuration -type data
 ./resource.ps1 azurerm_managed_api -type data
 ./resource.ps1 azurerm_managed_application_definition -type data
+./resource.ps1 azurerm_managed_devops_pool -type data
 ./resource.ps1 azurerm_managed_disk -type data
 ./resource.ps1 azurerm_managed_disks -type data
 ./resource.ps1 azurerm_managed_redis -type data
