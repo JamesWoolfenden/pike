@@ -206,6 +206,7 @@
         "azurerm_container_app_environment_certificate",
         "azurerm_container_app_environment_custom_domain",
         "azurerm_container_app_environment_dapr_component",
+        "azurerm_container_app_environment_managed_certificate",
         "azurerm_container_app_environment_storage",
         "azurerm_container_app_job",
         "azurerm_container_connected_registry",
