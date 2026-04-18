@@ -2295,5 +2295,7 @@
     "aws_xray_group",
     "aws_xray_resource_policy",
     "aws_xray_sampling_rule"
+        "aws_ec2_service_link_virtual_interface",
+        "aws_ec2_service_link_virtual_interfaces",
   ]
 }
