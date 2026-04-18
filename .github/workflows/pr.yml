@@ -30,7 +30,7 @@ jobs:
       # TODO: SHA-pin like the other actions (the repo convention is sha # vX.Y.Z)
       - name: golangci-lint
         continue-on-error: true
-        uses: golangci/golangci-lint-action@v6
+        uses: golangci/golangci-lint-action@v9
         with:
           version: v1.64
       - name: govulncheck
