@@ -23,7 +23,7 @@ jobs:
       - name: gofumpt
         env:
           GOTOOLCHAIN: auto
-        uses: jameswoolfenden/auto-gofmt@1cbf4876b8bf705bb47dffac024c3a96883c1e35 # v0.0.4
+        uses: jameswoolfenden/auto-gofmt@966e6b689d24eeb2fb32d4900ed06f80b536c861 # v0.1
       # golangci-lint runs but is non-blocking initially so a dirty baseline
       # doesn't break CI on the first run. Remove `continue-on-error` once the
       # baseline is clean - it should then block merges on regressions.
