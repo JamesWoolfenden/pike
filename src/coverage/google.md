@@ -2,7 +2,7 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 89.07      |  1198       |  1345            |
+| Resources  | 89.00      |  1198       |  1346            |
 | Datasource | 99.54      |   432       |   434             |
 
 ```shell
@@ -67,6 +67,7 @@
 ./resource.ps1 google_firebase_data_connect_service
 ./resource.ps1 google_firebase_extensions_instance
 ./resource.ps1 google_firebase_project_location
+./resource.ps1 google_firebase_storage_default_bucket
 ./resource.ps1 google_gke_hub_scope_rbac_role_binding
 ./resource.ps1 google_iap_agent_registry_iam_binding
 ./resource.ps1 google_iap_agent_registry_iam_member

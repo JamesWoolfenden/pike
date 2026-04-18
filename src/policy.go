@@ -201,7 +201,7 @@ func AWSPolicy(permissions []string, resources bool, policyName string) (AwsOutp
 
 	err = tmpl.Execute(&output, theDetails)
 	if err != nil {
-		panic(err)
+		return OutPolicy, &templateExecuteError{err}
 	}
 
 	OutPolicy.Terraform = output.String()

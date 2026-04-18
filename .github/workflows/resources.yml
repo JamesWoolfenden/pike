@@ -55,9 +55,11 @@ jobs:
           run: cp ${{ github.workspace }}/*.json ${{ github.workspace }}/src/parse/
         - name: setup git config
           run: |
-            # setup the username and email. I tend to use 'GitHub Actions Bot' with no email by default
-            git config user.name "GitHub Actions Bot"
-            git config user.email "jim.wolf@duck.com"
+            # Attribute machine-generated commits to github-actions[bot] so they
+            # render with the bot badge in the UI and don't leak a personal email
+            # into the public commit log.
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
         - name: commit
           run: |

@@ -1,0 +1,20 @@
+# CODEOWNERS — https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+#
+# Review from the listed owner is requested automatically when a PR touches
+# matching paths. The last matching pattern wins, so more-specific rules go
+# at the bottom.
+
+# Default owner for everything not matched below.
+*                           @JamesWoolfenden
+
+# CI / release / supply-chain surface
+/.github/                   @JamesWoolfenden
+/.goreleaser.yml            @JamesWoolfenden
+/Dockerfile                 @JamesWoolfenden
+/SECURITY.md                @JamesWoolfenden
+
+# Provider mapping data — the contribution surface most likely to get PRs
+# from external contributors. Keeping this explicit signals that these files
+# are curated.
+/src/mapping/               @JamesWoolfenden
+/src/parse/                 @JamesWoolfenden

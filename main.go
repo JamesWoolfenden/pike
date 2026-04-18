@@ -338,8 +338,8 @@ func main() {
 					&cli.StringFlag{
 						Name:        "arn",
 						Aliases:     []string{"a"},
-						Usage:       "Policy identifier e.g. arn",
-						Value:       "arn:aws:iam::680235478471:policy/basic",
+						Usage:       "Policy identifier (ARN) of the policy to watch",
+						Required:    true,
 						Destination: &arn,
 						EnvVars:     []string{"ARN"},
 					},

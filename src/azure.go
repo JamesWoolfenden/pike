@@ -65,7 +65,7 @@ var tFLookupAzure = map[string]interface{}{
 	"backend": azurermBackend,
 }
 
-// GetAZUREPermissions for GCP resources.
+// GetAZUREPermissions for AZURE resources.
 func GetAZUREPermissions(result ResourceV2) ([]string, error) {
 	var (
 		err         error

@@ -1,0 +1,40 @@
+# Config for golangci-lint. Pinned to v1.64.x in .github/workflows/pr.yml.
+#
+# This is a conservative baseline: real-bug finders enabled, style linters
+# off. Once the tree is clean, consider layering on revive, gocyclo, gocritic,
+# misspell, and forbidigo (to enforce zerolog-only logging — see REVIEW.md I2).
+
+run:
+  timeout: 5m
+  tests: true
+
+linters:
+  disable-all: true
+  enable:
+    - errcheck      # unhandled errors
+    - govet         # correctness checks built into the toolchain
+    - ineffassign   # assignments that are never used
+    - staticcheck   # the big one: SA-series bug checks
+    - unused        # dead code
+    - gosimple      # simpler idiomatic forms
+    - typecheck     # compile-level sanity
+
+linters-settings:
+  errcheck:
+    # Don't warn on well-known intentional ignores
+    exclude-functions:
+      - (io.Closer).Close
+      - (*os.File).Close
+      - fmt.Fprintln
+      - fmt.Fprintf
+      - fmt.Fprint
+
+issues:
+  exclude-dirs:
+    - src/testdata
+    - src/mapping
+    - src/schema
+    - terraform
+    - venv
+  max-issues-per-linter: 0
+  max-same-issues: 0

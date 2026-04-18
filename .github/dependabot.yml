@@ -1,0 +1,60 @@
+version: 2
+updates:
+  # Go module upgrades
+  - package-ecosystem: gomod
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: "06:00"
+      timezone: "Europe/London"
+    open-pull-requests-limit: 10
+    commit-message:
+      prefix: "deps"
+      include: scope
+    labels:
+      - dependencies
+      - go
+    groups:
+      # Batch indirect / minor / patch upgrades into one PR per week to keep
+      # noise down. Majors stay individual so they're easier to review.
+      minor-and-patch:
+        update-types:
+          - minor
+          - patch
+      aws-sdk:
+        patterns:
+          - "github.com/aws/aws-sdk-go-v2*"
+      hashicorp:
+        patterns:
+          - "github.com/hashicorp/*"
+
+  # GitHub Actions (workflows/*) — pins actions used in CI
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: "06:00"
+      timezone: "Europe/London"
+    commit-message:
+      prefix: "ci"
+      include: scope
+    labels:
+      - dependencies
+      - github-actions
+
+  # Docker base-image updates (Dockerfile)
+  - package-ecosystem: docker
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: "06:00"
+      timezone: "Europe/London"
+    commit-message:
+      prefix: "docker"
+      include: scope
+    labels:
+      - dependencies
+      - docker

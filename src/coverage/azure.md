@@ -2,7 +2,7 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 5.07      |    57       |  1124            |
+| Resources  | 5.07      |    57       |  1125            |
 | Datasource | 30.89      |   122       |   395             |
 
 ```shell
@@ -206,6 +206,7 @@
 ./resource.ps1 azurerm_container_app_environment_certificate
 ./resource.ps1 azurerm_container_app_environment_custom_domain
 ./resource.ps1 azurerm_container_app_environment_dapr_component
+./resource.ps1 azurerm_container_app_environment_managed_certificate
 ./resource.ps1 azurerm_container_app_environment_storage
 ./resource.ps1 azurerm_container_app_job
 ./resource.ps1 azurerm_container_connected_registry
