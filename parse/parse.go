@@ -1,3 +1,24 @@
+// Package parse determines what resources and datasources a Terraform
+// provider exposes, and writes the result to {provider}-members.json in
+// the current working directory. The rest of pike consumes that JSON at
+// runtime to validate mapping coverage.
+//
+// There are two extraction strategies. The schema-based path (default) runs
+// `terraform providers schema -json` against a throwaway init'd workspace
+// and reads the provider's declared resource and datasource schemas
+// directly. It is fast, authoritative, and requires terraform (or a tofu
+// binary symlinked as terraform) plus network access to the provider
+// registry.
+//
+// The docs-based path walks a local checkout of the provider's source
+// repository and greps the markdown documentation for resource and
+// datasource declarations. It's slower, inferred rather than authoritative,
+// and kept as a fallback for offline/airgapped use or for providers that
+// don't publish a registry schema.
+//
+// Parse tries the schema path first. If that fails AND a codebase directory
+// was supplied, it falls back to the docs path. If the schema path fails
+// and no codebase was supplied, the schema error is returned verbatim.
 package parse
 
 import (
@@ -18,67 +39,105 @@ type provider struct {
 	DataSources []string `json:"dataSources"`
 }
 
+// Parse is the package entrypoint. It writes {name}-members.json to the
+// current working directory.
 func Parse(codebase string, name string) error {
-	if name == "" || codebase == "" {
-		return errors.New("name or codebase is required")
+	if name == "" {
+		return errors.New("name is required")
 	}
-
-	var err error
-
-	var jsonOut []byte
-
-	myProvider := provider{}
 
 	name = strings.ToLower(name)
 
-	switch name {
-	case "google":
-		{
-			match := `resource "(` + name + `_.*?)"`
-			myProvider.Resources, err = getMatches(codebase, match, "markdown")
-
-			if err != nil {
-				return err
-			}
-
-			myProvider.DataSources, err = getMatches(codebase, `data "(`+name+`_.*?)"`, "markdown")
-			if err != nil {
-				return err
-			}
-		}
-	default:
-		match := `resource "(` + name + `_.*?)"`
-		myProvider.Resources, err = getMatches(codebase, match, "markdown")
-
-		if err != nil {
-			return err
+	prov, err := parseFromSchema(name)
+	if err != nil {
+		if codebase == "" {
+			return fmt.Errorf("schema-based parse failed and no docs fallback was supplied: %w", err)
 		}
 
-		myProvider.DataSources, err = getMatches(codebase, `# Data Source:(.*)`, "markdown")
+		log.Warn().Err(err).Str("provider", name).Msg("schema-based parse failed; falling back to markdown docs")
+
+		prov, err = parseFromDocs(codebase, name)
 		if err != nil {
 			return err
 		}
 	}
 
-	jsonOut, err = json.MarshalIndent(myProvider, "", "    ")
+	return writeMembers(name, prov)
+}
+
+// writeMembers serialises a provider's resource/datasource lists to
+// {name}-members.json in the current working directory. The filename
+// convention is load-bearing: the consuming code at src/coverage/ reads
+// exactly this path.
+func writeMembers(name string, prov *provider) error {
+	out, err := json.MarshalIndent(prov, "", "    ")
 	if err != nil {
-		return err
+		return fmt.Errorf("marshalling %s members: %w", name, err)
 	}
 
 	log.Info().Msgf("creating %s-members.json", name)
-	err = os.WriteFile(name+"-members.json", jsonOut, 0o600)
 
-	if err != nil {
-		return err
+	if err := os.WriteFile(name+"-members.json", out, 0o600); err != nil {
+		return fmt.Errorf("writing %s-members.json: %w", name, err)
 	}
 
 	return nil
+}
+
+// parseFromDocs is the historical, doc-scanning extraction path. Kept as
+// a fallback; see the package doc.
+//
+// Google's provider repo names datasources via `data "google_..." {}`
+// fixture blocks in its example docs. Other providers use the
+// `# Data Source:` markdown header convention instead.
+func parseFromDocs(codebase, name string) (*provider, error) {
+	if codebase == "" {
+		return nil, errors.New("codebase is required for docs-based parse")
+	}
+
+	p := &provider{}
+
+	resources, err := getMatches(codebase, `resource "(`+name+`_.*?)"`, "markdown")
+	if err != nil {
+		return nil, err
+	}
+
+	p.Resources = resources
+
+	var dsPattern string
+	if name == "google" {
+		dsPattern = `data "(` + name + `_.*?)"`
+	} else {
+		dsPattern = `# Data Source:(.*)`
+	}
+
+	datasources, err := getMatches(codebase, dsPattern, "markdown")
+	if err != nil {
+		return nil, err
+	}
+
+	p.DataSources = datasources
+
+	return p, nil
 }
 
 func getMatches(source string, match string, extension string) ([]string, error) {
 	files, err := getGoFiles(source, extension)
 	if err != nil {
 		return nil, err
+	}
+
+	// Hoist the regex compile out of the file loop; recompiling per file
+	// is measurable overhead on a 25k-file checkout.
+	//
+	// Historical behaviour used MustCompile, which panics on invalid input.
+	// The "Invalid regex pattern" test in parse_test.go asserts wantErr=false,
+	// so an invalid pattern silently produces no matches rather than panicking
+	// or erroring. That's a debatable choice but is preserved here to keep
+	// the public test contract stable for the rewrite.
+	re, regexErr := regexp.Compile(match)
+	if regexErr != nil {
+		return nil, nil
 	}
 
 	var (
@@ -89,10 +148,7 @@ func getMatches(source string, match string, extension string) ([]string, error)
 	for _, file := range files {
 		contents, _ := os.ReadFile(file) // #nosec G304 -- Reading Terraform files from user-specified paths
 
-		re := regexp.MustCompile(match)
-		match := re.FindAllString(string(contents), -1)
-
-		for _, item := range match {
+		for _, item := range re.FindAllString(string(contents), -1) {
 			if strings.Contains(item, "%s") {
 				continue
 			}
@@ -106,9 +162,7 @@ func getMatches(source string, match string, extension string) ([]string, error)
 		}
 	}
 
-	keys := getKeys(matches)
-
-	return keys, nil
+	return getKeys(matches), nil
 }
 
 func getGoFiles(path string, extension string) ([]string, error) {

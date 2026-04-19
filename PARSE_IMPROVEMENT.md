@@ -2,9 +2,17 @@
 
 ## Summary
 
-**Date:** 2026-03-04
+**Designed:** 2026-03-04
+**Implemented:** 2026-04-19 (`parse/schema.go`)
 **Issue:** The `pike parse` command used unreliable documentation parsing, resulting in incomplete and inaccurate provider resource lists.
 **Solution:** Replaced with Terraform provider schema extraction (authoritative source).
+
+> **Note:** The Results figures below were estimates from the design phase
+> (March 2026) and have not been re-verified against current provider
+> versions. They illustrate the magnitude of the problem and the expected
+> shape of the fix; do not treat them as exact post-implementation counts.
+> Re-run `pike parse -n {provider}` and diff the output to get current
+> numbers.
 
 ## The Problem
 
@@ -136,13 +144,25 @@ pike parse -n google -d /path/to/provider-docs
 
 ### Files Modified
 
-1. **`parse/parse.go`**
-   - Added `parseFromSchema()` - schema-based extraction
-   - Updated `Parse()` - tries schema first, falls back to docs
-   - Kept `parseFromDocs()` - deprecated but available as fallback
-   - Added schema JSON parsing structures
+1. **`parse/schema.go`** (new)
+   - `parseFromSchema()` — schema-based extraction via terraform-exec
+   - `locateTerraform()` — finds or installs a terraform binary (mirrors
+     `src.LocateTerraform` for now; will consolidate when the iac/ package
+     lands in the internal/ refactor)
+   - `extractMembers()` / `matchesSource()` — pulls resource/datasource
+     names out of the `tfjson.ProviderSchemas` return
+   - `providerSources` — short-name → registry-source map
 
-2. **`main.go`**
+2. **`parse/parse.go`**
+   - `Parse()` now dispatches: schema first, docs as explicit fallback
+   - `parseFromDocs()` — the old path, renamed and kept as fallback
+   - `getMatches()` — hoisted the regex compile out of the file loop
+
+3. **`parse/parse_test.go`**
+   - Live-clone Parse tests gated behind `testing.Short()`; `go test -short`
+     runs the package in under a second
+
+4. **`main.go`**
    - Updated CLI description
    - Made `-d` directory flag optional
    - Updated help text

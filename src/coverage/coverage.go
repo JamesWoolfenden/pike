@@ -10,14 +10,26 @@ import (
 	pike "github.com/jameswoolfenden/pike/src"
 )
 
+// members mirrors the shape written by parse/parse.go's provider struct.
+// The JSON tag for DataSources MUST stay camelCase "dataSources" — that's
+// what Parse serialises. An earlier version of this struct had the tag as
+// lowercase "datasources", which silently unmarshalled to an empty slice
+// and made every coverage run under-report datasource coverage by 100%.
 type members struct {
-	DataSources []string `json:"datasources"`
+	DataSources []string `json:"dataSources"`
 	Resources   []string `json:"resources"`
 }
 
 //goland:noinspection GoUnusedFunction
 func coverageAWS() error {
-	data := importMembers("../parse/aws-members.json")
+	absolute, err := filepath.Abs("../../parse/aws-members.json")
+
+	if err != nil {
+		return &fileWriteError{err}
+	}
+
+	data := importMembers(absolute)
+
 	missing := members{}
 	target := "```shell\n"
 
@@ -43,7 +55,7 @@ func coverageAWS() error {
 	Prepend := resourceTable(missing, data, "AWS")
 
 	target = Prepend + target
-	err := os.WriteFile("aws.md", []byte(target), 0o600)
+	err = os.WriteFile("aws.md", []byte(target), 0o600)
 	if err != nil {
 		return &fileWriteError{err}
 	}
@@ -61,7 +73,15 @@ func (e *fileWriteError) Error() string {
 
 //goland:noinspection GoUnusedFunction
 func coverageAzure() error {
-	data := importMembers("../parse/azurerm-members.json")
+
+	absolute, err := filepath.Abs("../../parse/azurerm-members.json")
+
+	if err != nil {
+		return &fileWriteError{err}
+	}
+
+	data := importMembers(absolute)
+
 	missing := members{}
 	target := "```shell\n"
 
@@ -82,7 +102,7 @@ func coverageAzure() error {
 
 	Prepend := resourceTable(missing, data, "Azure")
 	target = Prepend + target
-	err := os.WriteFile("azure.md", []byte(target), 0o600)
+	err = os.WriteFile("azure.md", []byte(target), 0o600)
 
 	if err != nil {
 		return &fileWriteError{err}
@@ -93,7 +113,13 @@ func coverageAzure() error {
 
 //goland:noinspection GoUnusedFunction
 func coverageGcp() error {
-	data := importMembers("../parse/google-members.json")
+	absolute, err := filepath.Abs("../../parse/google-members.json")
+
+	if err != nil {
+		return &fileWriteError{err}
+	}
+
+	data := importMembers(absolute)
 	missing := members{}
 	target := "```shell\n"
 
@@ -115,7 +141,7 @@ func coverageGcp() error {
 	Prepend := resourceTable(missing, data, "Google")
 
 	target = Prepend + target
-	err := os.WriteFile("google.md", []byte(target), 0o600)
+	err = os.WriteFile("google.md", []byte(target), 0o600)
 
 	if err != nil {
 

@@ -27,7 +27,7 @@ func TestGetGoFiles(t *testing.T) {
 		wantErr bool
 	}{
 		{name: "Pass", args: args{path: "./testdata", extension: "go"}, want: wanted},
-		{name: "None", args: args{path: "../mapping", extension: "go"}},
+		{name: "None", args: args{path: "../src/mapping", extension: "go"}},
 		{
 			name: "Valid path",
 			args: args{
@@ -215,6 +215,14 @@ func teardown(cloud string) {
 	}
 }
 
+// TestParse exercises the end-to-end Parse entrypoint, including live
+// clones of the AWS, Azure, and Google provider source repos. Those clones
+// dominate runtime (tens of thousands of files each) and require network,
+// so we skip them under `go test -short`. CI's fast lane should pass
+// `-short`; the integration lane should not.
+//
+// The "Empty codebase" case is the one exception: it exercises an input
+// validation branch that doesn't touch the network, so we run it always.
 func TestParse(t *testing.T) {
 	type args struct {
 		codebase string
@@ -225,10 +233,11 @@ func TestParse(t *testing.T) {
 		name    string
 		args    args
 		wantErr bool
+		network bool
 	}{
-		{name: "aws", args: args{codebase: "./terraform-provider-aws", name: "aws"}},
-		{name: "azure", args: args{codebase: "./terraform-provider-azurerm", name: "azurerm"}},
-		{name: "google", args: args{codebase: "./terraform-provider-google", name: "google"}},
+		{name: "aws", args: args{codebase: "./terraform-provider-aws", name: "aws"}, network: true},
+		{name: "azure", args: args{codebase: "./terraform-provider-azurerm", name: "azurerm"}, network: true},
+		{name: "google", args: args{codebase: "./terraform-provider-google", name: "google"}, network: true},
 		{
 			name:    "Empty codebase",
 			args:    args{codebase: "", name: "azure"},
@@ -240,14 +249,20 @@ func TestParse(t *testing.T) {
 
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
+			if tt.network && testing.Short() {
+				t.Skip("skipping live-clone Parse test under -short")
+			}
+
 			t.Parallel()
-			setup(tt.args.name)
+
+			if tt.network {
+				setup(tt.args.name)
+				defer teardown(tt.args.name)
+			}
 
 			if err := Parse(tt.args.codebase, tt.args.name); (err != nil) != tt.wantErr {
 				t.Errorf("Parse() error = %v, wantErr %v", err, tt.wantErr)
 			}
-
-			teardown(tt.args.name)
 		})
 	}
 }
