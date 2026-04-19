@@ -17,4 +17,4 @@
 # from external contributors. Keeping this explicit signals that these files
 # are curated.
 /src/mapping/               @JamesWoolfenden
-/src/parse/                 @JamesWoolfenden
+/parse/                     @JamesWoolfenden

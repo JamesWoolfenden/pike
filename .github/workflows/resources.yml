@@ -52,7 +52,7 @@ jobs:
           run: ${{ github.workspace }}/pike parse -d ${{ github.workspace }}/google -name google
 
         - name: copy
-          run: cp ${{ github.workspace }}/*.json ${{ github.workspace }}/src/parse/
+          run: cp ${{ github.workspace }}/*.json ${{ github.workspace }}/parse/
         - name: setup git config
           run: |
             # Attribute machine-generated commits to github-actions[bot] so they
@@ -64,7 +64,7 @@ jobs:
         - name: commit
           run: |
             # Stage the file, commit and push
-            mv *-members.json src/parse
-            git add src/parse/*-members.json --ignore-errors
+            mv *-members.json parse
+            git add parse/*-members.json --ignore-errors
             git commit -m "updated resources" --allow-empty
             git push origin master

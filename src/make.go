@@ -114,12 +114,17 @@ func Apply(target string, region string) error {
 	if err != nil {
 		return &makeRoleError{err}
 	}
-	// clear any temp credentials
-	unSetAWSAuth()
+	// clear any temp credentials (best-effort: unsetenv failures on supported
+	// OSes are pathological, so we log and continue rather than abort)
+	if unsetErr := unSetAWSAuth(); unsetErr != nil {
+		log.Warn().Err(unsetErr).Msg("failed to clear AWS env vars before auth")
+	}
 
 	err = setAWSAuth(*iamRole, region)
 	if err != nil {
-		unSetAWSAuth()
+		if unsetErr := unSetAWSAuth(); unsetErr != nil {
+			log.Warn().Err(unsetErr).Msg("failed to clear AWS env vars after setAWSAuth error")
+		}
 
 		return &setAWSAuthError{err}
 	}
@@ -135,7 +140,9 @@ func Apply(target string, region string) error {
 		err = &terraformApplyError{target, err}
 	}
 
-	unSetAWSAuth()
+	if unsetErr := unSetAWSAuth(); unsetErr != nil {
+		log.Warn().Err(unsetErr).Msg("failed to clear AWS env vars after apply")
+	}
 
 	return err
 }

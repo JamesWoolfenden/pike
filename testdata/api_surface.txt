@@ -1,0 +1,88 @@
+const ManifestSnapshotFilename = "modules.json"
+const Version = "9.9.9"
+func AWSPolicy (permissions []string, resources bool, policyName string) (AwsOutput, error)
+func AZUREPolicy (permissions []string, policyName string) (string, error)
+func AlmostEqual (a , b float64) bool
+func Apply (target string, region string) error
+func AwsDataLookup (find string) interface{}
+func AwsLookup (name string) interface{}
+func AzureDataLookup (name string) interface{}
+func AzureLookup (name string) interface{}
+func Compare (directory string, arn string, init bool) (bool, error)
+func Contains (s []string, e string) bool
+func DetectBackend (resource ResourceV2, block *hclsyntax.Block, resources []ResourceV2) ([]ResourceV2, error)
+func EncryptPlaintext (plaintext string, publicKeyB64 string) ([]byte, error)
+func ExtractIAMBindings (body *hclsyntax.Body) []IAMBinding
+func FileExists (filename string) bool
+func GCPDataLookup (result string) interface{}
+func GCPLookup (result string) interface{}
+func GCPPolicy (permissions []string, policyName string) (string, error)
+func GetAWSDataPermissions (result ResourceV2) ([]string, error)
+func GetAWSPermissions (result ResourceV2) ([]string, error)
+func GetAWSResourcePermissions (result ResourceV2) ([]string, error)
+func GetAZUREDataPermissions (result ResourceV2) ([]string, error)
+func GetAZUREPermissions (result ResourceV2) ([]string, error)
+func GetAZUREResourcePermissions (result ResourceV2) ([]string, error)
+func GetBlockAttributes (attributes []string, block *hclsyntax.Block) []string
+func GetEnv (key string) (*string, error)
+func GetGCPDataPermissions (result ResourceV2) ([]string, error)
+func GetGithubClient () (context.Context, *github.Client)
+func GetHCLType (resourceName string) string
+func GetLocalModules (block *hclsyntax.Block, dirName string, listModulesJson ModuleJson) ([]ResourceV2, error)
+func GetModuleJson (dir string) (ModuleJson, error)
+func GetModulePath (block *hclsyntax.Block) string
+func GetPermission (result ResourceV2) (Sorted, error)
+func GetPermissionBag (resources []ResourceV2, provider string) Sorted
+func GetPermissionMap (raw []byte, attributes []string, resource string) ([]string, error)
+func GetPolicy (actions Sorted, resources bool, policyName string) (OutputPolicy, error)
+func GetPublicKeyDetails (owner string, repository string) (string, string, error)
+func GetResourceBlocks (file string) (*hclsyntax.Body, error)
+func GetResources (file string, dirName string) ([]ResourceV2, error)
+func GetRuntimePermissions (raw []byte, attributes []string, resource string) ([]string, error)
+func GetTF (dirName string) ([]string, error)
+func GetTFFiles (dirName string) ([]string, error)
+func Init (dirName string) (*string, []string, error)
+func Inspect (directory string, init bool) (PolicyDiff, error)
+func InvokeGithubDispatchEvent (repository string, workflowFileName string, branch string) error
+func IsTypeOK (mappings interface{}) (map[string]interface{}, error)
+func LocateTerraform () (string, error)
+func Make (directory string) (*string, error)
+func MakePolicy (dirName string, file *string, init bool, enableResources bool, provider string, policyName string) (OutputPolicy, error)
+func Minify (JSONOut string) string
+func NewAWSPolicy (actions []string, resources bool) (Policy, error)
+func NewStatement (sid string, effect string, action []string, resource []string) Statement
+func RandSeq (n int) string
+func ReadModuleJson (r io.Reader) (ModuleJson, error)
+func ReadModuleJsonForDir (dir string) (ModuleJson, error)
+func Readme (dirName string, output string, init bool, autoAppend bool) error
+func Remote (target string, repository string, region string) error
+func ReplaceSection (source string, middle string, autoadd bool) error
+func Repository (repository , destination , directory , output string, init , write , enableResources bool) error
+func ReturnLocalAddrFromSource (source string, listModules ModuleJson) string
+func Runtime (dirName string, outputType string, file *string, init bool, provider string) error
+func Scan (dirName string, outputType string, file *string, init bool, write bool, enableResources bool, provider string, outFile string, policyName string) error
+func SetRepoSecret (repository string, keyText string, keyName string) (*github.Response, error)
+func SplitHub (repository string) (string, string, error)
+func StringInSlice (a string, list []string) bool
+func Unique (s []string) []string
+func Watch (arn string, wait int) error
+func WriteOutput (outPolicy OutputPolicy, outputType string, scanPath string, outFile string) error
+type AwsOutput struct
+type EnvVariableNotSetError struct
+type IAMBinding struct
+type ModuleJson defined map[string]Record
+type OutputPolicy struct
+type Policy struct
+type PolicyDiff struct
+type Record struct
+type ResourceV2 struct
+type RuntimePermission struct
+type Sorted struct
+type Statement struct
+type ValidationResult struct
+var AWSAcmCertificate
+var GoogleApigeeAddonsConfig
+var GoogleApigeeApiDeployment
+var GoogleApigeeApiProduct
+var GoogleApigeeAppGroup
+var GoogleApigeeEnvgroupAttachment

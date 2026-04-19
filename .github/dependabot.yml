@@ -16,18 +16,21 @@ updates:
       - dependencies
       - go
     groups:
-      # Batch indirect / minor / patch upgrades into one PR per week to keep
-      # noise down. Majors stay individual so they're easier to review.
-      minor-and-patch:
-        update-types:
-          - minor
-          - patch
+      # Order matters: dependabot assigns a dependency to the FIRST matching
+      # group. Keep the pattern-based groups above the update-types group so
+      # aws-sdk and hashicorp bumps land in their dedicated PRs regardless of
+      # semver level. Majors outside these patterns stay individual so they're
+      # easier to review.
       aws-sdk:
         patterns:
           - "github.com/aws/aws-sdk-go-v2*"
       hashicorp:
         patterns:
           - "github.com/hashicorp/*"
+      minor-and-patch:
+        update-types:
+          - minor
+          - patch
 
   # GitHub Actions (workflows/*) — pins actions used in CI
   - package-ecosystem: github-actions
@@ -43,6 +46,15 @@ updates:
     labels:
       - dependencies
       - github-actions
+    groups:
+      # Actions bumps are almost always safe and reviewing them individually
+      # is a poor use of time. Collapse all non-major bumps into one weekly
+      # PR; majors stay separate so a breaking change can't slip through in
+      # a batch.
+      actions-minor-and-patch:
+        update-types:
+          - minor
+          - patch
 
   # Docker base-image updates (Dockerfile)
   - package-ecosystem: docker
@@ -58,3 +70,8 @@ updates:
     labels:
       - dependencies
       - docker
+    groups:
+      docker-minor-and-patch:
+        update-types:
+          - minor
+          - patch
