@@ -3,16 +3,16 @@
 // cannot silently change either. They are deliberately blunt:
 //
 //   - TestHelpGolden:    builds the current binary and diffs `pike --help` output
-//                        against testdata/help.golden. This catches accidental
-//                        subcommand drops, flag renames, and usage-string drift.
+//     against testdata/help.golden. This catches accidental
+//     subcommand drops, flag renames, and usage-string drift.
 //
 //   - TestAPISurfaceGolden: snapshots the exported identifiers in `package pike`
-//                           (names, signatures, const values) into
-//                           testdata/api_surface.txt. While we carve pike up
-//                           into internal/ packages the root `pike` package will
-//                           be re-exporting via type aliases; this test fails
-//                           loudly if an alias is forgotten or a type shape
-//                           drifts.
+//     (names, signatures, const values) into
+//     testdata/api_surface.txt. While we carve pike up
+//     into internal/ packages the root `pike` package will
+//     be re-exporting via type aliases; this test fails
+//     loudly if an alias is forgotten or a type shape
+//     drifts.
 //
 // Run `go test -run '^TestHelpGolden$|^TestAPISurfaceGolden$' -update` to
 // regenerate the goldens after an intentional change, then diff and commit.

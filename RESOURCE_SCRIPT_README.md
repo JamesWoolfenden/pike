@@ -8,7 +8,7 @@ The `resource.ps1` script helps create skeleton files for new Terraform resource
 
 Automatically validates that the resource exists in the Terraform provider schema before creating files.
 
-- Checks against `src/parse/{provider}-members.json`
+- Checks against `parse/{provider}-members.json`
 - Shows helpful suggestions if resource name is invalid
 - Prevents creating mappings for non-existent resources
 
@@ -32,7 +32,7 @@ Creates the necessary files for Pike:
 ## Prerequisites
 
 - **PowerShell Core** (pwsh)
-- **Provider members file**: `src/parse/{provider}-members.json` (for validation)
+- **Provider members file**: `parse/{provider}-members.json` (for validation)
 - **Azure permissions file** (optional): `terraform/azurerm/azure_permissions.json` (for permission lookup)
 
 ## Usage

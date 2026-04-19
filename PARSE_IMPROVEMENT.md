@@ -136,7 +136,7 @@ pike parse -n google -d /path/to/provider-docs
 
 ### Files Modified
 
-1. **`src/parse/parse.go`**
+1. **`parse/parse.go`**
    - Added `parseFromSchema()` - schema-based extraction
    - Updated `Parse()` - tries schema first, falls back to docs
    - Kept `parseFromDocs()` - deprecated but available as fallback
@@ -163,15 +163,15 @@ cd /Users/jwoolfenden/code/pike
 
 # Google
 pike parse -n google
-mv google-members.json src/parse/
+mv google-members.json parse/
 
 # AWS
 pike parse -n aws
-mv aws-members.json src/parse/
+mv aws-members.json parse/
 
 # Azure
 pike parse -n azurerm
-mv azurerm-members.json src/parse/
+mv azurerm-members.json parse/
 
 # Update coverage
 cd src/coverage

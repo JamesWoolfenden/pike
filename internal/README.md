@@ -12,7 +12,7 @@ under `internal/` is the new home for code with a clearer boundary.
 
 ## Target tree
 
-```
+```shell
 internal/
 ├── policy/        # pure types + assembly: Sorted, Policy, Statement, OutputPolicy,
 │                  #   PolicyDiff, RuntimePermission, IAMBinding,
@@ -49,7 +49,7 @@ discoverable.
 ## Migration stage progress
 
 - [x] Stage 0 — CI safety net (golden help diff + API surface snapshot).
-- [ ] Stage 1 — `git mv src/parse parse`.
+- [x] Stage 1 — `git mv src/parse parse`.
 - [ ] Stage 2 — `main.go` → `cmd/pike/main.go` + Dockerfile/goreleaser/Makefile updates.
 - [ ] Stage 3 — `internal/policy/` extraction; `src/` re-exports via type aliases.
 - [ ] Stage 4 — `internal/iac/` extraction.

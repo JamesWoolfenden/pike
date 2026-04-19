@@ -6,7 +6,7 @@
 #   2. Ship a minimal Alpine runtime with a non-root user and only the tools
 #      entrypoint.sh actually needs.
 
-ARG GO_VERSION=1.25.8
+ARG GO_VERSION=1.25.9
 ARG ALPINE_VERSION=3.20
 
 # ---- builder ----------------------------------------------------------------
