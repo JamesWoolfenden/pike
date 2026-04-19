@@ -32,6 +32,13 @@ test:
 	go test $(TEST) || exit 1
 	echo $(TEST) | xargs -t -n4 go test $(TESTARGS) -timeout=30s -parallel=4
 
+# Regenerate the surface_test.go goldens (testdata/help.golden and
+# testdata/api_surface.txt). Run this once to bootstrap them, and again
+# after any deliberate change to the CLI surface or the exported pike
+# package surface. Review the diff before committing.
+goldens:
+	go test -run '^TestHelpGolden$$|^TestAPISurfaceGolden$$' -update .
+
 testacc:
 	TF_ACC=1 go test $(TEST) -v $(TESTARGS) -timeout 120m
 

@@ -98,6 +98,9 @@ Get started with Pike in 3 steps:
     - [Remote](#remote)
     - [Readme](#readme)
     - [Pull](#pull)
+    - [Runtime](#runtime)
+    - [Watch](#watch)
+    - [Parse](#parse)
   - [Compare](#compare)
   - [Help](#help)
   - [Building](#building)
@@ -760,6 +763,36 @@ resource "aws_iam_policy" "terraform_pike" {
 
 ```
 
+### Runtime
+
+`runtime` inspects IAC for permissions that only matter at runtime — for example, a GCP Cloud Run service account that needs to read from a Pub/Sub topic at request time rather than at `terraform apply` time.
+
+```shell
+pike runtime -d ./path/to/your/terraform -p gcp
+```
+
+Only GCP is supported today. Passing `--provider aws` or `--provider azure` returns an "not yet implemented" error rather than misleading stub output.
+
+### Watch
+
+`watch` polls IAM to block until a named policy's changes have propagated - useful immediately after `pike make` or `pike apply`, where AWS eventual consistency otherwise forces you to add ad-hoc sleeps in CI.
+
+```shell
+pike watch --arn arn:aws:iam::ACCOUNT_ID:policy/my-policy --wait 100
+```
+
+`--wait` is in tenths of seconds.
+
+### Parse
+
+`parse` walks a cloned Terraform provider repository and extracts its resources and data sources into a `<name>-members.json` lookup file. It is how Pike's provider mapping tables are regenerated (see `.github/workflows/resources.yml`) and is mainly useful to contributors adding provider coverage.
+
+```shell
+pike parse -d /path/to/terraform-provider-aws -name aws
+```
+
+Supported names today: `aws`, `azurerm`, `google`.
+
 ## Help
 
 ```bash
@@ -835,28 +868,27 @@ billing:GetBillingPreferences
 
 ```
 
-This currently uses a different AWS profile to run the scan - presently hardcoded to "basic",
-which only has the following permissions:
+`inspect` uses the ambient AWS session (whatever `aws sts get-caller-identity` would resolve to — env vars, `AWS_PROFILE`, instance role, etc.), so it does not need a dedicated profile. The identity does need read access to IAM so it can enumerate the attached policies:
 
-```json
+```hcl
 statement {
-    effect = "Allow"
-    actions = [
-      "iam:ListUserPolicies",
-      "iam:ListAttachedUserPolicies",
-      "iam:ListRolePolicies",
-      "iam:ListAttachedRolePolicies",
-      "iam:ListGroupPolicies",
-      "iam:ListAttachedGroupPolicies",
-      "iam:GetPolicy",
-      "iam:GetPolicyVersion",
-      "iam:GetUserPolicy",
-      "iam:GetRolePolicy",
-      "iam:GetGroupPolicy",
-      "iam:ListGroupsForUser"
-    ]
-    resources = ["*"]
-  }
+  effect = "Allow"
+  actions = [
+    "iam:ListUserPolicies",
+    "iam:ListAttachedUserPolicies",
+    "iam:ListRolePolicies",
+    "iam:ListAttachedRolePolicies",
+    "iam:ListGroupPolicies",
+    "iam:ListAttachedGroupPolicies",
+    "iam:GetPolicy",
+    "iam:GetPolicyVersion",
+    "iam:GetUserPolicy",
+    "iam:GetRolePolicy",
+    "iam:GetGroupPolicy",
+    "iam:ListGroupsForUser",
+  ]
+  resources = ["*"]
+}
 ```
 
 ## Extending

@@ -97,15 +97,29 @@ func setAWSAuth(iamRole string, region string) error {
 		return &getAWSCredentialsError{err}
 	}
 
-	_ = os.Setenv("AWS_ACCESS_KEY_ID", *credentials.Credentials.AccessKeyId)
-	_ = os.Setenv("AWS_SECRET_ACCESS_KEY", *credentials.Credentials.SecretAccessKey)
-	_ = os.Setenv("AWS_SESSION_TOKEN", *credentials.Credentials.SessionToken)
+	// Set the three creds atomically-ish: if any one fails, report which
+	// variable blew up rather than silently proceeding with a half-populated
+	// environment (which would then look like "wrong creds" at the API call
+	// site and waste debugging time).
+	for _, kv := range []struct{ name, value string }{
+		{"AWS_ACCESS_KEY_ID", *credentials.Credentials.AccessKeyId},
+		{"AWS_SECRET_ACCESS_KEY", *credentials.Credentials.SecretAccessKey},
+		{"AWS_SESSION_TOKEN", *credentials.Credentials.SessionToken},
+	} {
+		if err := os.Setenv(kv.name, kv.value); err != nil {
+			return fmt.Errorf("setting %s: %w", kv.name, err)
+		}
+	}
 
 	return nil
 }
 
-func unSetAWSAuth() {
-	_ = os.Setenv("AWS_ACCESS_KEY_ID", "")
-	_ = os.Setenv("AWS_SECRET_ACCESS_KEY", "")
-	_ = os.Setenv("AWS_SESSION_TOKEN", "")
+func unSetAWSAuth() error {
+	var errs []error
+	for _, name := range []string{"AWS_ACCESS_KEY_ID", "AWS_SECRET_ACCESS_KEY", "AWS_SESSION_TOKEN"} {
+		if err := os.Unsetenv(name); err != nil {
+			errs = append(errs, fmt.Errorf("unsetting %s: %w", name, err))
+		}
+	}
+	return errors.Join(errs...)
 }

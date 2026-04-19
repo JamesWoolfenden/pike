@@ -271,15 +271,14 @@ func main() {
 				Action: func(*cli.Context) error {
 					theSame, err := pike.Compare(directory, arn, init)
 					if err != nil {
-						log.Fatal().Msg(err.Error())
-						os.Exit(1)
+						return err
 					}
 
 					if !theSame {
-						os.Exit(1)
+						return cli.Exit("policies differ", 1)
 					}
 
-					return err
+					return nil
 				},
 			},
 			{
@@ -526,6 +525,11 @@ func main() {
 	sort.Sort(cli.CommandsByName(app.Commands))
 
 	if err := app.Run(os.Args); err != nil {
-		log.Fatal().Err(err)
+		// urfave/cli handles cli.ExitCoder internally (prints + exits with
+		// the coded status). Anything else is logged with the error attached
+		// and we exit 1. Note: zerolog events need a terminating .Msg/.Send
+		// to actually emit - a bare log.Fatal().Err(err) is a no-op.
+		log.Error().Err(err).Msg("command failed")
+		os.Exit(1)
 	}
 }

@@ -69,7 +69,7 @@ func Test_setAWSAuth(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			// could inherit temp set from before
-			unSetAWSAuth()
+			_ = unSetAWSAuth()
 			got := setAWSAuth(tt.args.iamRole, tt.args.Region)
 
 			if tt.want == nil && got != nil {
@@ -98,7 +98,7 @@ func Test_unSetAWSAuth(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			unSetAWSAuth()
+			_ = unSetAWSAuth()
 		})
 	}
 }
@@ -159,7 +159,7 @@ func Test_unSetAWSAuth1(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			unSetAWSAuth()
+			_ = unSetAWSAuth()
 		})
 	}
 }

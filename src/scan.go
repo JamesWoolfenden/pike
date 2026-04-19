@@ -144,10 +144,34 @@ func Scan(dirName string, outputType string, file *string, init bool, write bool
 	return err
 }
 
+// unsupportedRuntimeProviderError signals that `pike runtime` was invoked
+// with a provider for which runtime permission detection is not yet wired up.
+// Today only GCP populates RuntimePermission values (see data.go); AWS and
+// Azure are tracked but not yet collected, so we refuse them up front rather
+// than emitting stub output.
+type unsupportedRuntimeProviderError struct {
+	provider string
+}
+
+func (e *unsupportedRuntimeProviderError) Error() string {
+	return fmt.Sprintf("runtime permission detection is not yet implemented for provider %q (supported: gcp)", e.provider)
+}
+
 // Runtime detects runtime IAM permissions needed by service accounts.
+//
+// Only GCP is supported today. AWS/Azure providers are rejected with
+// unsupportedRuntimeProviderError.
 func Runtime(dirName string, outputType string, file *string, init bool, provider string) error {
 	if dirName == "" && file == nil {
 		return &emptyScanLocationError{}
+	}
+
+	switch strings.ToLower(provider) {
+	case "gcp", "google", "":
+		// supported - fall through to the main path below
+	default:
+		// aws, azure, azurerm, and any typo all fail the same way
+		return &unsupportedRuntimeProviderError{provider: provider}
 	}
 
 	permissionsBag, err := makePermissionBag(dirName, file, init, provider)
@@ -167,42 +191,21 @@ func Runtime(dirName string, outputType string, file *string, init bool, provide
 }
 
 // formatRuntimePermissions formats runtime permissions for output.
+//
+// Only GCP is wired up today. An empty `provider` means "show all", which
+// currently reduces to the GCP formatter. Runtime() already rejects
+// unsupported providers before we get here, so this is a belt-and-braces check.
 func formatRuntimePermissions(perms Sorted, provider string) string {
-	var output string
-
-	switch strings.ToLower(provider) {
-	case "gcp", "google":
-		if len(perms.RuntimeGCP) > 0 {
-			output += formatGCPRuntimeWithValidation(perms.RuntimeGCP, perms.IAMBindings)
-		}
-	case "aws":
-		// TODO: Implement AWS runtime permission formatting
-		if len(perms.RuntimeAWS) > 0 {
-			output += "=== AWS Runtime Permissions ===\n"
-			output += "(AWS runtime permission detection not yet implemented)\n\n"
-		}
-	case "azure", "azurerm":
-		// TODO: Implement Azure runtime permission formatting
-		if len(perms.RuntimeAZURE) > 0 {
-			output += "=== Azure Runtime Permissions ===\n"
-			output += "(Azure runtime permission detection not yet implemented)\n\n"
-		}
-	case "":
-		// Show all
-		if len(perms.RuntimeGCP) > 0 {
-			output += formatGCPRuntimeWithValidation(perms.RuntimeGCP, perms.IAMBindings)
-		}
-		if len(perms.RuntimeAWS) > 0 {
-			output += "=== AWS Runtime Permissions ===\n"
-			output += "(AWS runtime permission detection not yet implemented)\n\n"
-		}
-		if len(perms.RuntimeAZURE) > 0 {
-			output += "=== Azure Runtime Permissions ===\n"
-			output += "(Azure runtime permission detection not yet implemented)\n\n"
-		}
+	p := strings.ToLower(provider)
+	if p != "gcp" && p != "google" && p != "" {
+		return ""
 	}
 
-	return output
+	if len(perms.RuntimeGCP) > 0 {
+		return formatGCPRuntimeWithValidation(perms.RuntimeGCP, perms.IAMBindings)
+	}
+
+	return ""
 }
 
 // ValidationResult tracks the status of an IAM binding requirement.
@@ -574,9 +577,15 @@ func WriteOutput(outPolicy OutputPolicy, outputType string, scanPath string, out
 // Init can download and install terraform if required and then terraform init your specified directory.
 
 func Init(dirName string) (*string, []string, error) {
-	// Per-directory locking
+	// Per-directory locking. initMutex should only ever hold *sync.Mutex,
+	// but use a comma-ok assertion so a future refactor that stores a
+	// different value type fails loudly with a real error instead of a
+	// panic deep in the stack.
 	dirMutex, _ := initMutex.LoadOrStore(dirName, &sync.Mutex{})
-	mutex := dirMutex.(*sync.Mutex)
+	mutex, ok := dirMutex.(*sync.Mutex)
+	if !ok {
+		return nil, nil, fmt.Errorf("initMutex corruption: expected *sync.Mutex for %q, got %T", dirName, dirMutex)
+	}
 	mutex.Lock()
 	defer mutex.Unlock()
 
