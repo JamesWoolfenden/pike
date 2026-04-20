@@ -173,13 +173,15 @@ func matchesSource(key, source string) bool {
 	return strings.HasSuffix(key, "/"+source)
 }
 
-// locateTerraform finds a terraform binary on PATH, installing one via
+// locateTerraform finds a terraform or tofu binary on PATH, installing one via
 // hc-install if absent. This mirrors src.LocateTerraform intentionally so
 // the parse package has no dependency on src/ during the internal/ refactor.
 // When iac/ lands (refactor stage 4) this duplication goes away.
 func locateTerraform() (string, error) {
-	if p, err := exec.LookPath("terraform"); err == nil && p != "" {
-		return p, nil
+	for _, bin := range []string{"tofu", "terraform"} {
+		if p, err := exec.LookPath(bin); err == nil && p != "" {
+			return p, nil
+		}
 	}
 
 	log.Info().Msgf("no terraform on PATH; installing %s for schema parse", tfVersion)

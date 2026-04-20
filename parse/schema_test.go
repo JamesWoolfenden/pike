@@ -1,12 +1,113 @@
 package parse
 
 import (
+	"encoding/json"
+	"os"
+	"os/exec"
+	"path/filepath"
 	"reflect"
 	"sort"
 	"testing"
 
 	tfjson "github.com/hashicorp/terraform-json"
 )
+
+// Test_locateTerraform verifies that locateTerraform finds a tofu or terraform
+// binary when one is present on PATH. This pins the fix that added tofu
+// detection: previously only "terraform" was checked, so CI (which installs
+// "tofu") fell through to hc-install.
+func Test_locateTerraform(t *testing.T) {
+	t.Parallel()
+
+	hasBinary := false
+	for _, bin := range []string{"tofu", "terraform"} {
+		if p, err := exec.LookPath(bin); err == nil && p != "" {
+			hasBinary = true
+			break
+		}
+	}
+
+	if !hasBinary {
+		t.Skip("neither tofu nor terraform on PATH")
+	}
+
+	got, err := locateTerraform()
+	if err != nil {
+		t.Fatalf("locateTerraform() error = %v", err)
+	}
+
+	if got == "" {
+		t.Error("locateTerraform() returned empty path")
+	}
+}
+
+// TestParse_createsJSON is an integration test that runs the full Parse
+// pipeline against a real provider and asserts that the members JSON file
+// is created with non-empty resource and datasource lists.
+//
+// Requires tofu or terraform on PATH plus registry network access; skipped
+// when neither binary is present or when -short is set.
+func TestParse_createsJSON(t *testing.T) {
+	if testing.Short() {
+		t.Skip("skipping integration test in short mode")
+	}
+
+	hasBinary := false
+	for _, bin := range []string{"tofu", "terraform"} {
+		if p, err := exec.LookPath(bin); err == nil && p != "" {
+			hasBinary = true
+			break
+		}
+	}
+
+	if !hasBinary {
+		t.Skip("neither tofu nor terraform on PATH")
+	}
+
+	providers := []string{"aws", "azurerm", "google"}
+
+	for _, name := range providers {
+		t.Run(name, func(t *testing.T) {
+			dir := t.TempDir()
+			orig, err := os.Getwd()
+			if err != nil {
+				t.Fatal(err)
+			}
+
+			if err := os.Chdir(dir); err != nil {
+				t.Fatal(err)
+			}
+
+			t.Cleanup(func() { _ = os.Chdir(orig) })
+
+			if err := Parse("", name); err != nil {
+				t.Fatalf("Parse(%q) error = %v", name, err)
+			}
+
+			out := filepath.Join(dir, name+"-members.json")
+
+			data, err := os.ReadFile(out)
+			if err != nil {
+				t.Fatalf("%s-members.json not created: %v", name, err)
+			}
+
+			var p provider
+			if err := json.Unmarshal(data, &p); err != nil {
+				t.Fatalf("%s-members.json is not valid JSON: %v", name, err)
+			}
+
+			if len(p.Resources) == 0 {
+				t.Errorf("%s-members.json has no resources", name)
+			}
+
+			if len(p.DataSources) == 0 {
+				t.Errorf("%s-members.json has no data sources", name)
+			}
+
+			t.Logf("%s: %d resources, %d data sources", name, len(p.Resources), len(p.DataSources))
+		})
+	}
+}
 
 // Test_extractMembers_Deprecated builds a synthetic ProviderSchemas
 // object that mixes deprecated and live resources/datasources, then
