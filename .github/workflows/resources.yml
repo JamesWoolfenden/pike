@@ -22,7 +22,7 @@ jobs:
       # TODO: SHA-pin this action like the others once ghat runs against
       # this file. Repo convention is sha # vX.Y.Z.
       - name: Install Terraform
-        uses: hashicorp/setup-terraform@v3
+        uses: hashicorp/setup-terraform@v4
         with:
           terraform_wrapper: false
 
