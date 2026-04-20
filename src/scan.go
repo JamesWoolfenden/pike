@@ -638,22 +638,21 @@ func LocateTerraform() (string, error) {
 	terraformMutex.Lock()
 	defer terraformMutex.Unlock()
 
-	tfPath, err := exec.LookPath(terraform)
-
-	// if you don't have tf installed, we have to install it
-	if err != nil || tfPath == "" {
-		log.Info().Msgf("installing Terraform %s\n", tfVersion)
-		installer := &releases.ExactVersion{
-			Product: product.Terraform,
-			Version: version.Must(version.NewVersion(tfVersion)),
+	for _, bin := range []string{"tofu", terraform} {
+		if tfPath, err := exec.LookPath(bin); err == nil && tfPath != "" {
+			return tfPath, nil
 		}
+	}
 
-		var err error
+	log.Info().Msgf("installing Terraform %s\n", tfVersion)
+	installer := &releases.ExactVersion{
+		Product: product.Terraform,
+		Version: version.Must(version.NewVersion(tfVersion)),
+	}
 
-		tfPath, err = installer.Install(context.Background())
-		if err != nil {
-			return "", &locateTerraformError{err}
-		}
+	tfPath, err := installer.Install(context.Background())
+	if err != nil {
+		return "", &locateTerraformError{err}
 	}
 
 	return tfPath, nil

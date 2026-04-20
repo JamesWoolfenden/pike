@@ -7,6 +7,8 @@ permissions: read-all
 
 jobs:
   build:
+    env:
+      GOTOOLCHAIN: auto
     permissions: write-all
     runs-on: ubuntu-latest
     steps:
@@ -16,15 +18,13 @@ jobs:
           go-version: '1.25.x'
 
       # Schema-based parse shells out to `terraform providers schema -json`,
-      # so terraform needs to be on PATH. Installing it once here avoids
+      # so a tf binary needs to be on PATH. Installing it once here avoids
       # locateTerraform() falling through to hc-install and downloading a
       # fresh copy for each of the three parse invocations below.
-      # TODO: SHA-pin this action like the others once ghat runs against
-      # this file. Repo convention is sha # vX.Y.Z.
-      - name: Install Terraform
-        uses: hashicorp/setup-terraform@v4
+      - uses: opentofu/setup-opentofu@fc711fa910b93cba0f3fbecaafc9f42fd0c411cb # v2.0.0
         with:
-          terraform_wrapper: false
+          tofu_version: 1.8.8
+          tofu_wrapper: false
 
       - name: Checkout code
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
