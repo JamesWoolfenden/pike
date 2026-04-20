@@ -91,6 +91,7 @@ func TestHelpGolden(t *testing.T) {
 		}
 		t.Fatalf("read golden: %v", err)
 	}
+	want = bytes.ReplaceAll(want, []byte("\r\n"), []byte("\n"))
 
 	if got != string(want) {
 		t.Errorf("pike --help output drifted from %s.\nRun `go test -run TestHelpGolden -update` to accept the change and review the diff before committing.\n\n--- got ---\n%s\n--- want ---\n%s", helpGoldenPath, got, string(want))
@@ -209,6 +210,7 @@ func TestAPISurfaceGolden(t *testing.T) {
 		}
 		t.Fatalf("read golden: %v", err)
 	}
+	want = bytes.ReplaceAll(want, []byte("\r\n"), []byte("\n"))
 
 	if got != string(want) {
 		t.Errorf("exported pike surface drifted from %s.\nRun `go test -run TestAPISurfaceGolden -update` to accept the change and review the diff before committing.\n\n--- got ---\n%s\n--- want ---\n%s", apiSurfaceGoldenPath, got, string(want))
