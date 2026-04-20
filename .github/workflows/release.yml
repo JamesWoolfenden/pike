@@ -46,7 +46,7 @@ jobs:
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       - name: Publish to Registry
-        uses: elgohr/Publish-Docker-Github-Action@4f0f7c9e4ac72db902c5142ffbbb4655d2d3dd3c # v5
+        uses: elgohr/Publish-Docker-Github-Action@1c2f28ccd9476e8a936ac9a1f287405504c93304 # v5
         with:
           name: jameswoolfenden/pike
           username: ${{ secrets.DOCKERHUB_USERNAME }}
