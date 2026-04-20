@@ -793,6 +793,18 @@ pike parse -d /path/to/terraform-provider-aws -name aws
 
 Supported names today: `aws`, `azurerm`, `google`.
 
+### Deprecated
+
+`deprecated` lists the resources and datasources flagged as deprecated in the latest provider schemas Pike has embedded. It's a quick way to audit your Terraform before bumping a provider major — anything listed here will either already be warning on `pike scan` or is queued to be removed in a future provider release.
+
+```shell
+pike deprecated                 # all providers, text output
+pike deprecated -n google       # google only
+pike deprecated -o json         # machine-readable
+```
+
+The data is refreshed weekly by the `Resources` GitHub workflow and baked into each release binary; running `pike deprecated` offline works because no network call is made.
+
 ## Help
 
 ```bash

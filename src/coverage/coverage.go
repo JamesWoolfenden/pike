@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"sort"
 	"strings"
 
 	pike "github.com/jameswoolfenden/pike/src"
@@ -15,9 +16,16 @@ import (
 // what Parse serialises. An earlier version of this struct had the tag as
 // lowercase "datasources", which silently unmarshalled to an empty slice
 // and made every coverage run under-report datasource coverage by 100%.
+//
+// DeprecatedResources and DeprecatedData were added in April 2026 when
+// pike parse started capturing Block.Deprecated off the provider schema.
+// Older members JSON files won't have these keys — json.Unmarshal leaves
+// them nil and the deprecated section of the report is omitted cleanly.
 type members struct {
-	DataSources []string `json:"dataSources"`
-	Resources   []string `json:"resources"`
+	DataSources         []string          `json:"dataSources"`
+	Resources           []string          `json:"resources"`
+	DeprecatedResources map[string]string `json:"deprecatedResources,omitempty"`
+	DeprecatedData      map[string]string `json:"deprecatedData,omitempty"`
 }
 
 //goland:noinspection GoUnusedFunction
@@ -52,7 +60,7 @@ func coverageAWS() error {
 	}
 	target += "```\n"
 
-	Prepend := resourceTable(missing, data, "AWS")
+	Prepend := resourceTable(missing, data, "AWS") + deprecatedSection(data)
 
 	target = Prepend + target
 	err = os.WriteFile("aws.md", []byte(target), 0o600)
@@ -100,7 +108,7 @@ func coverageAzure() error {
 	}
 	target += "```\n"
 
-	Prepend := resourceTable(missing, data, "Azure")
+	Prepend := resourceTable(missing, data, "Azure") + deprecatedSection(data)
 	target = Prepend + target
 	err = os.WriteFile("azure.md", []byte(target), 0o600)
 
@@ -138,7 +146,7 @@ func coverageGcp() error {
 	}
 	target += "```\n"
 
-	Prepend := resourceTable(missing, data, "Google")
+	Prepend := resourceTable(missing, data, "Google") + deprecatedSection(data)
 
 	target = Prepend + target
 	err = os.WriteFile("google.md", []byte(target), 0o600)
@@ -162,6 +170,83 @@ func resourceTable(missing members, data members, cloud string) string {
 		percent(missing.DataSources, data.DataSources),
 		len(data.DataSources)-len(missing.DataSources), len(data.DataSources))
 	return Prepend
+}
+
+// deprecatedSection renders a markdown block listing the resources and
+// datasources that the provider's latest schema marks as deprecated. It
+// returns the empty string when nothing is deprecated so older members
+// files (pre-April-2026 format, no deprecated fields) produce the same
+// output they always did.
+//
+// Output shape:
+//
+//	## Deprecated
+//
+//	{N resources, M datasources} flagged as deprecated in the latest ...
+//
+//	### Deprecated Resources
+//	| Resource | Note |
+//	...
+//
+//	### Deprecated Data Sources
+//	| Data Source | Note |
+//	...
+//
+// Tables are emitted only when non-empty so single-sided deprecations
+// (e.g. google resource removed but data form still live) don't leave
+// an empty header.
+func deprecatedSection(data members) string {
+	if len(data.DeprecatedResources) == 0 && len(data.DeprecatedData) == 0 {
+		return ""
+	}
+
+	var b strings.Builder
+	b.WriteString("## Deprecated\n\n")
+	b.WriteString(fmt.Sprintf(
+		"%d resources and %d datasources are flagged as deprecated in the latest provider schema. "+
+			"Users pinned to an older provider major may already be affected when they upgrade.\n\n",
+		len(data.DeprecatedResources), len(data.DeprecatedData),
+	))
+
+	if len(data.DeprecatedResources) > 0 {
+		b.WriteString("### Deprecated Resources\n\n")
+		b.WriteString(deprecationTable("Resource", data.DeprecatedResources))
+	}
+	if len(data.DeprecatedData) > 0 {
+		b.WriteString("### Deprecated Data Sources\n\n")
+		b.WriteString(deprecationTable("Data Source", data.DeprecatedData))
+	}
+
+	return b.String()
+}
+
+// deprecationTable renders a two-column markdown table with stable
+// (sorted) row order. An empty Note column just reads "—" so the table
+// doesn't collapse visually when a provider set Deprecated=true without
+// supplying a message.
+func deprecationTable(header string, entries map[string]string) string {
+	names := make([]string, 0, len(entries))
+	for n := range entries {
+		names = append(names, n)
+	}
+	sort.Strings(names)
+
+	var b strings.Builder
+	fmt.Fprintf(&b, "| %s | Note |\n", header)
+	b.WriteString("|---|---|\n")
+	for _, n := range names {
+		note := entries[n]
+		if note == "" {
+			note = "—"
+		}
+		// Escape pipes in the note so they don't break the table cell.
+		note = strings.ReplaceAll(note, "|", "\\|")
+		// Collapse newlines — some provider descriptions are multi-line.
+		note = strings.ReplaceAll(note, "\n", " ")
+		fmt.Fprintf(&b, "| %s | %s |\n", n, note)
+	}
+	b.WriteString("\n")
+	return b.String()
 }
 
 func importMembers(targetMembers string) members {

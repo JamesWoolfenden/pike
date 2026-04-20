@@ -446,6 +446,35 @@ func main() {
 				},
 			},
 			{
+				Name:    "deprecated",
+				Aliases: []string{"dep"},
+				Usage:   "List resources and datasources flagged as deprecated by the latest provider schema",
+				Flags: []cli.Flag{
+					&cli.StringFlag{
+						Name:        "name",
+						Aliases:     []string{"n"},
+						Usage:       "Limit to one provider (aws, azurerm, google). Empty = all.",
+						Value:       "",
+						Destination: &name,
+					},
+					&cli.StringFlag{
+						Name:        "output",
+						Aliases:     []string{"o"},
+						Usage:       "Output format: text (default) or json",
+						Value:       "text",
+						Destination: &output,
+					},
+				},
+				Action: func(*cli.Context) error {
+					rendered, err := pike.FormatDeprecated(pike.Deprecated(name), output)
+					if err != nil {
+						return fmt.Errorf("format deprecated: %w", err)
+					}
+					fmt.Print(rendered)
+					return nil
+				},
+			},
+			{
 				Name:    "pull",
 				Aliases: []string{"l"},
 				Usage:   "Clones remote repo and scans it using pike",

@@ -2,8 +2,66 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 5.07      |    57       |  1125            |
+| Resources  | 5.04      |    57       |  1132            |
 | Datasource | 30.89      |   122       |   395             |
+
+## Deprecated
+
+38 resources and 6 datasources are flagged as deprecated in the latest provider schema. Users pinned to an older provider major may already be affected when they upgrade.
+
+### Deprecated Resources
+
+| Resource | Note |
+|---|---|
+| azurerm_app_service | — |
+| azurerm_app_service_active_slot | — |
+| azurerm_app_service_hybrid_connection | — |
+| azurerm_app_service_plan | — |
+| azurerm_app_service_slot | — |
+| azurerm_app_service_source_control_token | — |
+| azurerm_automation_software_update_configuration | — |
+| azurerm_batch_certificate | — |
+| azurerm_data_protection_backup_instance_postgresql | — |
+| azurerm_data_protection_backup_policy_postgresql | — |
+| azurerm_databricks_workspace_customer_managed_key | — |
+| azurerm_extended_custom_location | — |
+| azurerm_function_app | — |
+| azurerm_function_app_slot | — |
+| azurerm_hpc_cache | — |
+| azurerm_hpc_cache_access_policy | — |
+| azurerm_hpc_cache_blob_nfs_target | — |
+| azurerm_hpc_cache_blob_target | — |
+| azurerm_hpc_cache_nfs_target | — |
+| azurerm_maps_creator | — |
+| azurerm_network_packet_capture | — |
+| azurerm_orbital_contact | — |
+| azurerm_orbital_contact_profile | — |
+| azurerm_orbital_spacecraft | — |
+| azurerm_postgresql_active_directory_administrator | — |
+| azurerm_postgresql_configuration | — |
+| azurerm_postgresql_database | — |
+| azurerm_postgresql_firewall_rule | — |
+| azurerm_postgresql_server | — |
+| azurerm_postgresql_server_key | — |
+| azurerm_postgresql_virtual_network_rule | — |
+| azurerm_redis_enterprise_cluster | — |
+| azurerm_redis_enterprise_database | — |
+| azurerm_restore_point_collection | — |
+| azurerm_security_center_auto_provisioning | — |
+| azurerm_static_site | — |
+| azurerm_static_site_custom_domain | — |
+| azurerm_virtual_machine_scale_set | — |
+
+### Deprecated Data Sources
+
+| Data Source | Note |
+|---|---|
+| azurerm_app_service | — |
+| azurerm_app_service_plan | — |
+| azurerm_batch_certificate | — |
+| azurerm_function_app | — |
+| azurerm_postgresql_server | — |
+| azurerm_redis_enterprise_database | — |
 
 ```shell
 ./resource.ps1 azurerm_aadb2c_directory
@@ -94,6 +152,8 @@
 ./resource.ps1 azurerm_application_insights_analytics_item
 ./resource.ps1 azurerm_application_insights_api_key
 ./resource.ps1 azurerm_application_insights_smart_detection_rule
+./resource.ps1 azurerm_application_insights_standard_web_test
+./resource.ps1 azurerm_application_insights_web_test
 ./resource.ps1 azurerm_application_insights_workbook
 ./resource.ps1 azurerm_application_insights_workbook_template
 ./resource.ps1 azurerm_application_load_balancer
@@ -247,7 +307,6 @@
 ./resource.ps1 azurerm_cost_management_scheduled_action
 ./resource.ps1 azurerm_custom_ip_prefix
 ./resource.ps1 azurerm_custom_provider
-./resource.ps1 azurerm_dashboard
 ./resource.ps1 azurerm_dashboard_grafana
 ./resource.ps1 azurerm_dashboard_grafana_managed_private_endpoint
 ./resource.ps1 azurerm_data_factory
@@ -330,6 +389,7 @@
 ./resource.ps1 azurerm_databricks_access_connector
 ./resource.ps1 azurerm_databricks_virtual_network_peering
 ./resource.ps1 azurerm_databricks_workspace
+./resource.ps1 azurerm_databricks_workspace_customer_managed_key
 ./resource.ps1 azurerm_databricks_workspace_root_dbfs_customer_managed_key
 ./resource.ps1 azurerm_datadog_monitor
 ./resource.ps1 azurerm_datadog_monitor_sso_configuration
@@ -347,6 +407,13 @@
 ./resource.ps1 azurerm_dev_center_project
 ./resource.ps1 azurerm_dev_center_project_environment_type
 ./resource.ps1 azurerm_dev_center_project_pool
+./resource.ps1 azurerm_dev_test_global_vm_shutdown_schedule
+./resource.ps1 azurerm_dev_test_lab
+./resource.ps1 azurerm_dev_test_linux_virtual_machine
+./resource.ps1 azurerm_dev_test_policy
+./resource.ps1 azurerm_dev_test_schedule
+./resource.ps1 azurerm_dev_test_virtual_network
+./resource.ps1 azurerm_dev_test_windows_virtual_machine
 ./resource.ps1 azurerm_digital_twins_endpoint_eventgrid
 ./resource.ps1 azurerm_digital_twins_endpoint_eventhub
 ./resource.ps1 azurerm_digital_twins_endpoint_servicebus
@@ -399,6 +466,7 @@
 ./resource.ps1 azurerm_express_route_gateway
 ./resource.ps1 azurerm_express_route_port
 ./resource.ps1 azurerm_express_route_port_authorization
+./resource.ps1 azurerm_extended_custom_location
 ./resource.ps1 azurerm_extended_location_custom_location
 ./resource.ps1 azurerm_fabric_capacity
 ./resource.ps1 azurerm_federated_identity_credential
@@ -511,6 +579,7 @@
 ./resource.ps1 azurerm_linux_function_app_slot
 ./resource.ps1 azurerm_linux_web_app
 ./resource.ps1 azurerm_linux_web_app_slot
+./resource.ps1 azurerm_load_test
 ./resource.ps1 azurerm_local_network_gateway
 ./resource.ps1 azurerm_log_analytics_cluster
 ./resource.ps1 azurerm_log_analytics_cluster_customer_managed_key
@@ -576,8 +645,6 @@
 ./resource.ps1 azurerm_maps_creator
 ./resource.ps1 azurerm_marketplace_agreement
 ./resource.ps1 azurerm_marketplace_role_assignment
-./resource.ps1 azurerm_media_services_account
-./resource.ps1 azurerm_media_transform
 ./resource.ps1 azurerm_mongo_cluster
 ./resource.ps1 azurerm_mongo_cluster_firewall_rule
 ./resource.ps1 azurerm_mongo_cluster_user
@@ -678,6 +745,7 @@
 ./resource.ps1 azurerm_network_manager_subscription_connection
 ./resource.ps1 azurerm_network_manager_verifier_workspace
 ./resource.ps1 azurerm_network_manager_verifier_workspace_reachability_analysis_intent
+./resource.ps1 azurerm_network_packet_capture
 ./resource.ps1 azurerm_network_profile
 ./resource.ps1 azurerm_network_security_perimeter
 ./resource.ps1 azurerm_network_security_perimeter_access_rule
@@ -752,7 +820,6 @@
 ./resource.ps1 azurerm_private_dns_resolver_inbound_endpoint
 ./resource.ps1 azurerm_private_dns_resolver_outbound_endpoint
 ./resource.ps1 azurerm_private_dns_resolver_virtual_network_link
-./resource.ps1 azurerm_private_dns_soa_record
 ./resource.ps1 azurerm_private_dns_srv_record
 ./resource.ps1 azurerm_private_dns_txt_record
 ./resource.ps1 azurerm_private_dns_zone_virtual_network_link
@@ -790,6 +857,7 @@
 ./resource.ps1 azurerm_resource_policy_remediation
 ./resource.ps1 azurerm_resource_provider_feature_registration
 ./resource.ps1 azurerm_resource_provider_registration
+./resource.ps1 azurerm_restore_point_collection
 ./resource.ps1 azurerm_role_definition
 ./resource.ps1 azurerm_role_management_policy
 ./resource.ps1 azurerm_route
@@ -902,9 +970,6 @@
 ./resource.ps1 azurerm_spring_cloud_new_relic_application_performance_monitoring
 ./resource.ps1 azurerm_spring_cloud_service
 ./resource.ps1 azurerm_spring_cloud_storage
-./resource.ps1 azurerm_sql_firewall_rule
-./resource.ps1 azurerm_sql_server
-./resource.ps1 azurerm_sql_virtual_network_rule
 ./resource.ps1 azurerm_stack_hci_cluster
 ./resource.ps1 azurerm_stack_hci_deployment_setting
 ./resource.ps1 azurerm_stack_hci_extension
@@ -1051,6 +1116,7 @@
 ./resource.ps1 azurerm_vmware_netapp_volume_attachment
 ./resource.ps1 azurerm_vmware_private_cloud
 ./resource.ps1 azurerm_voice_services_communications_gateway
+./resource.ps1 azurerm_voice_services_communications_gateway_test_line
 ./resource.ps1 azurerm_vpn_gateway
 ./resource.ps1 azurerm_vpn_gateway_connection
 ./resource.ps1 azurerm_vpn_gateway_nat_rule
@@ -1064,7 +1130,6 @@
 ./resource.ps1 azurerm_web_pubsub_custom_domain
 ./resource.ps1 azurerm_web_pubsub_hub
 ./resource.ps1 azurerm_web_pubsub_network_acl
-./resource.ps1 azurerm_web_pubsub_service
 ./resource.ps1 azurerm_web_pubsub_shared_private_link_resource
 ./resource.ps1 azurerm_web_pubsub_socketio
 ./resource.ps1 azurerm_windows_function_app
@@ -1105,7 +1170,6 @@
 ./resource.ps1 azurerm_container_app -type data
 ./resource.ps1 azurerm_container_app_environment -type data
 ./resource.ps1 azurerm_container_app_environment_certificate -type data
-./resource.ps1 azurerm_container_app_environment_dapr_component. -type data
 ./resource.ps1 azurerm_container_app_environment_storage -type data
 ./resource.ps1 azurerm_container_group -type data
 ./resource.ps1 azurerm_container_registry -type data
@@ -1121,12 +1185,10 @@
 ./resource.ps1 azurerm_data_factory -type data
 ./resource.ps1 azurerm_data_factory_trigger_schedule -type data
 ./resource.ps1 azurerm_data_factory_trigger_schedules -type data
-./resource.ps1 azurerm_data_lake_store -type data
 ./resource.ps1 azurerm_data_protection_backup_vault -type data
 ./resource.ps1 azurerm_data_share -type data
 ./resource.ps1 azurerm_data_share_account -type data
 ./resource.ps1 azurerm_data_share_dataset_blob_storage -type data
-./resource.ps1 azurerm_data_share_dataset_data_lake_gen1 -type data
 ./resource.ps1 azurerm_data_share_dataset_data_lake_gen2 -type data
 ./resource.ps1 azurerm_data_share_dataset_kusto_cluster -type data
 ./resource.ps1 azurerm_data_share_dataset_kusto_database -type data
@@ -1148,6 +1210,8 @@
 ./resource.ps1 azurerm_dev_center_project -type data
 ./resource.ps1 azurerm_dev_center_project_environment_type -type data
 ./resource.ps1 azurerm_dev_center_project_pool -type data
+./resource.ps1 azurerm_dev_test_lab -type data
+./resource.ps1 azurerm_dev_test_virtual_network -type data
 ./resource.ps1 azurerm_digital_twins_instance -type data
 ./resource.ps1 azurerm_disk_access -type data
 ./resource.ps1 azurerm_disk_encryption_set -type data
@@ -1218,6 +1282,7 @@
 ./resource.ps1 azurerm_lb_rule -type data
 ./resource.ps1 azurerm_linux_function_app -type data
 ./resource.ps1 azurerm_linux_web_app -type data
+./resource.ps1 azurerm_load_test -type data
 ./resource.ps1 azurerm_local_network_gateway -type data
 ./resource.ps1 azurerm_location -type data
 ./resource.ps1 azurerm_log_analytics_workspace -type data

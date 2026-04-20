@@ -659,6 +659,23 @@
     "aws_workspaces_image",
     "aws_workspaces_workspace"
   ],
+  "deprecatedData": {
+    "aws_cloudtrail_service_account": "",
+    "aws_s3_bucket_object": "",
+    "aws_s3_bucket_objects": ""
+  },
+  "deprecatedResources": {
+    "aws_elastictranscoder_pipeline": "",
+    "aws_elastictranscoder_preset": "",
+    "aws_evidently_feature": "",
+    "aws_evidently_launch": "",
+    "aws_evidently_project": "",
+    "aws_evidently_segment": "",
+    "aws_kinesis_analytics_application": "",
+    "aws_media_store_container": "",
+    "aws_media_store_container_policy": "",
+    "aws_s3_bucket_object": ""
+  },
   "resources": [
     "aws_accessanalyzer_analyzer",
     "aws_accessanalyzer_archive_rule",

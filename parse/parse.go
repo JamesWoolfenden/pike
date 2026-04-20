@@ -37,6 +37,17 @@ import (
 type provider struct {
 	Resources   []string `json:"resources"`
 	DataSources []string `json:"dataSources"`
+
+	// DeprecatedResources / DeprecatedData map each deprecated resource or
+	// datasource name to the upstream provider's deprecation message. Only
+	// populated by the schema-based path; the docs-based fallback has no
+	// reliable way to identify deprecation so it leaves these empty.
+	//
+	// omitempty so older consumers that unmarshal into the old shape don't
+	// see unexpected fields, and so members files for providers that
+	// happen to have nothing deprecated stay visually quiet.
+	DeprecatedResources map[string]string `json:"deprecatedResources,omitempty"`
+	DeprecatedData      map[string]string `json:"deprecatedData,omitempty"`
 }
 
 // Parse is the package entrypoint. It writes {name}-members.json to the

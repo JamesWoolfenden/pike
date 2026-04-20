@@ -2,15 +2,48 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 92.23      |  1508       |  1635            |
+| Resources  | 91.95      |  1507       |  1639            |
 | Datasource | 97.42      |   641       |   658             |
+
+## Deprecated
+
+10 resources and 3 datasources are flagged as deprecated in the latest provider schema. Users pinned to an older provider major may already be affected when they upgrade.
+
+### Deprecated Resources
+
+| Resource | Note |
+|---|---|
+| aws_elastictranscoder_pipeline | — |
+| aws_elastictranscoder_preset | — |
+| aws_evidently_feature | — |
+| aws_evidently_launch | — |
+| aws_evidently_project | — |
+| aws_evidently_segment | — |
+| aws_kinesis_analytics_application | — |
+| aws_media_store_container | — |
+| aws_media_store_container_policy | — |
+| aws_s3_bucket_object | — |
+
+### Deprecated Data Sources
+
+| Data Source | Note |
+|---|---|
+| aws_cloudtrail_service_account | — |
+| aws_s3_bucket_object | — |
+| aws_s3_bucket_objects | — |
 
 ```shell
 ./resource.ps1 aws_alb
+./resource.ps1 aws_alb_listener
+./resource.ps1 aws_alb_listener_certificate
+./resource.ps1 aws_alb_listener_rule
+./resource.ps1 aws_alb_target_group
+./resource.ps1 aws_alb_target_group_attachment
 ./resource.ps1 aws_apigatewayv2_routing_rule
 ./resource.ps1 aws_appsync_api
 ./resource.ps1 aws_appsync_channel_namespace
 ./resource.ps1 aws_arcregionswitch_plan
+./resource.ps1 aws_backup_restore_testing_selection
 ./resource.ps1 aws_bedrockagent_flow
 ./resource.ps1 aws_bedrockagentcore_agent_runtime
 ./resource.ps1 aws_bedrockagentcore_agent_runtime_endpoint
@@ -31,15 +64,14 @@
 ./resource.ps1 aws_cloudfront_distribution_tenant
 ./resource.ps1 aws_cloudfront_multitenant_distribution
 ./resource.ps1 aws_cloudfront_trust_store
-./resource.ps1 aws_cloudwatch_alarm
 ./resource.ps1 aws_cloudwatch_alarm_mute_rule
 ./resource.ps1 aws_cloudwatch_log_transformer
 ./resource.ps1 aws_cognito_log_delivery_configuration
 ./resource.ps1 aws_cognito_managed_login_branding
 ./resource.ps1 aws_connect_phone_number_contact_flow_association
 ./resource.ps1 aws_controltower_baseline
+./resource.ps1 aws_devicefarm_test_grid_project
 ./resource.ps1 aws_dynamodb_global_secondary_index
-./resource.ps1 aws_ebs_volume_copy
 ./resource.ps1 aws_ec2_allowed_images_settings
 ./resource.ps1 aws_ec2_secondary_network
 ./resource.ps1 aws_ec2_secondary_subnet
@@ -134,9 +166,9 @@
 ./resource.ps1 aws_workspacesweb_user_access_logging_settings_association
 ./resource.ps1 aws_workspacesweb_user_settings_association
 ./resource.ps1 aws_account_regions -type data
+./resource.ps1 aws_alb_listener -type data
+./resource.ps1 aws_alb_target_group -type data
 ./resource.ps1 aws_dynamodb_backups -type data
-./resource.ps1 aws_ec2_service_link_virtual_interface -type data
-./resource.ps1 aws_ec2_service_link_virtual_interfaces -type data
 ./resource.ps1 aws_iam_outbound_web_identity_federation -type data
 ./resource.ps1 aws_iam_role_policies -type data
 ./resource.ps1 aws_iam_role_policy_attachments -type data

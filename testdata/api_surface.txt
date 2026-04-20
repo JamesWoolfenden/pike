@@ -10,10 +10,13 @@ func AzureDataLookup (name string) interface{}
 func AzureLookup (name string) interface{}
 func Compare (directory string, arn string, init bool) (bool, error)
 func Contains (s []string, e string) bool
+func Deprecated (provider string) []ProviderDeprecations
+func DeprecationMessage (provider , name string, isData bool) (string, bool)
 func DetectBackend (resource ResourceV2, block *hclsyntax.Block, resources []ResourceV2) ([]ResourceV2, error)
 func EncryptPlaintext (plaintext string, publicKeyB64 string) ([]byte, error)
 func ExtractIAMBindings (body *hclsyntax.Body) []IAMBinding
 func FileExists (filename string) bool
+func FormatDeprecated (d []ProviderDeprecations, format string) (string, error)
 func GCPDataLookup (result string) interface{}
 func GCPLookup (result string) interface{}
 func GCPPolicy (permissions []string, policyName string) (string, error)
@@ -74,6 +77,7 @@ type ModuleJson defined map[string]Record
 type OutputPolicy struct
 type Policy struct
 type PolicyDiff struct
+type ProviderDeprecations struct
 type Record struct
 type ResourceV2 struct
 type RuntimePermission struct

@@ -776,6 +776,13 @@ func GetPermissionBag(resources []ResourceV2, provider string) Sorted {
 	var permissionBag Sorted
 	var newPerms Sorted
 
+	// Track which (provider, resource-type, kind) tuples we've already
+	// warned about so scanning the same deprecated resource declared five
+	// times in the user's terraform only logs once. Keyed on a composite
+	// string because that's cheaper than a nested map and readability here
+	// is not the priority.
+	warned := map[string]struct{}{}
+
 	for _, resource := range resources {
 		var err error
 
@@ -785,6 +792,12 @@ func GetPermissionBag(resources []ResourceV2, provider string) Sorted {
 		} else {
 			continue
 		}
+
+		// Deprecation warning is advisory — it runs regardless of whether
+		// GetPermission succeeded, because a resource can be deprecated
+		// and still have a valid mapping (and an unmapped resource can
+		// still be deprecated, which is arguably the more useful signal).
+		warnIfDeprecated(resource, warned)
 
 		if err != nil {
 			continue

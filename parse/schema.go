@@ -125,17 +125,36 @@ provider %[1]q {}
 // address (e.g. registry.terraform.io/hashicorp/aws) but we only know the
 // source suffix (hashicorp/aws), so we match by suffix rather than
 // equality.
+//
+// Deprecation tracking: when a resource/datasource block has Deprecated=true
+// we record the block's Description as the deprecation message. Providers
+// conventionally prefix the description with "Deprecated: use X instead" so
+// the raw description is serviceable; if a provider leaves Description empty
+// we still record the entry with an empty-string value so consumers can
+// treat presence-of-key as the deprecation signal.
 func extractMembers(schemas *tfjson.ProviderSchemas, source string) *provider {
 	out := &provider{}
 	for key, ps := range schemas.Schemas {
 		if !matchesSource(key, source) {
 			continue
 		}
-		for r := range ps.ResourceSchemas {
-			out.Resources = append(out.Resources, r)
+		for name, sch := range ps.ResourceSchemas {
+			out.Resources = append(out.Resources, name)
+			if sch != nil && sch.Block != nil && sch.Block.Deprecated {
+				if out.DeprecatedResources == nil {
+					out.DeprecatedResources = map[string]string{}
+				}
+				out.DeprecatedResources[name] = sch.Block.Description
+			}
 		}
-		for d := range ps.DataSourceSchemas {
-			out.DataSources = append(out.DataSources, d)
+		for name, sch := range ps.DataSourceSchemas {
+			out.DataSources = append(out.DataSources, name)
+			if sch != nil && sch.Block != nil && sch.Block.Deprecated {
+				if out.DeprecatedData == nil {
+					out.DeprecatedData = map[string]string{}
+				}
+				out.DeprecatedData[name] = sch.Block.Description
+			}
 		}
 		break
 	}

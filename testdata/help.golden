@@ -11,20 +11,21 @@ AUTHOR:
    James Woolfenden <james.woolfenden@gmail.com>
 
 COMMANDS:
-   apply, a     Create a policy and use it to instantiate the IAC
-   compare, c   policy comparison of deployed versus IAC
-   inspect, x   policy comparison of environment versus IAC
-   invoke, i    Triggers a gitHub action specified with the workflow flag
-   make, m      make the policy/role required for this IAC to deploy
-   parse, p     Extract provider resources and datasources from Terraform schema (authoritative method), triggers a gitHub action specified with the workflow flag
-   pull, l      Clones remote repo and scans it using pike
-   readme, r    Looks in dir for a README.md and updates it with the Policy required to build the code
-   remote, o    Create/Update the Policy and set credentials/secret for Github Action
-   runtime, rt  detect runtime IAM permissions needed by service accounts
-   scan, s      scan a directory for IAM code
-   version, v   Outputs the application version
-   watch, w     Waits for policy update
-   help, h      Shows a list of commands or help for one command
+   apply, a         Create a policy and use it to instantiate the IAC
+   compare, c       policy comparison of deployed versus IAC
+   deprecated, dep  List resources and datasources flagged as deprecated by the latest provider schema
+   inspect, x       policy comparison of environment versus IAC
+   invoke, i        Triggers a gitHub action specified with the workflow flag
+   make, m          make the policy/role required for this IAC to deploy
+   parse, p         Extract provider resources and datasources from Terraform schema (authoritative method), triggers a gitHub action specified with the workflow flag
+   pull, l          Clones remote repo and scans it using pike
+   readme, r        Looks in dir for a README.md and updates it with the Policy required to build the code
+   remote, o        Create/Update the Policy and set credentials/secret for Github Action
+   runtime, rt      detect runtime IAM permissions needed by service accounts
+   scan, s          scan a directory for IAM code
+   version, v       Outputs the application version
+   watch, w         Waits for policy update
+   help, h          Shows a list of commands or help for one command
 
 GLOBAL OPTIONS:
    --help, -h     show help
