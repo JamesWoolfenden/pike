@@ -1,13 +1,9 @@
 package parse
 
 import (
-	"log"
-	"os"
 	"path/filepath"
 	"reflect"
 	"testing"
-
-	"github.com/go-git/go-git/v5"
 )
 
 func TestGetGoFiles(t *testing.T) {
@@ -178,92 +174,35 @@ func TestGetMatches(t *testing.T) {
 	}
 }
 
-func setup(cloud string) {
-	log.Println("setup")
-
-	switch cloud {
-	case "aws":
-		_, _ = git.PlainClone("./terraform-provider-aws", false, &git.CloneOptions{
-			URL:      "https://github.com/hashicorp/terraform-provider-aws",
-			Progress: os.Stdout,
-			Depth:    1,
-		})
-	case "azurerm":
-		_, _ = git.PlainClone("./terraform-provider-azurerm", false, &git.CloneOptions{
-			URL:      "https://github.com/hashicorp/terraform-provider-azurerm",
-			Progress: os.Stdout,
-			Depth:    1,
-		})
-	case "google":
-		_, _ = git.PlainClone("./terraform-provider-google", false, &git.CloneOptions{
-			URL:      "https://github.com/hashicorp/terraform-provider-google",
-			Progress: os.Stdout,
-			Depth:    1,
-		})
-	}
-}
-
-func teardown(cloud string) {
-	log.Println("teardown")
-	switch cloud {
-	case "aws":
-		_ = os.RemoveAll("./terraform-provider-aws")
-	case "azurerm":
-		_ = os.RemoveAll("./terraform-provider-azurerm")
-	case "google":
-		_ = os.RemoveAll("./terraform-provider-google")
-	}
-}
-
-// TestParse exercises the end-to-end Parse entrypoint, including live
-// clones of the AWS, Azure, and Google provider source repos. Those clones
-// dominate runtime (tens of thousands of files each) and require network,
-// so we skip them under `go test -short`. CI's fast lane should pass
-// `-short`; the integration lane should not.
+// TestParse covers the input-validation contract of the public Parse
+// entrypoint: a missing name must error out before any schema or docs
+// work is attempted.
 //
-// The "Empty codebase" case is the one exception: it exercises an input
-// validation branch that doesn't touch the network, so we run it always.
+// End-to-end provider parsing used to live here too, via live git clones
+// of terraform-provider-{aws,azurerm,google}. Those subtests were dropped
+// after the schema-based rewrite because (a) Parse() now takes the schema
+// path first and ignores the codebase on success, so the clone was pure
+// overhead, and (b) the pass/fail signal didn't tell us which path ran
+// — environment-dependent coverage is worse than none. The schema path
+// is covered by schema_test.go; the docs path is covered below via
+// parseFromDocs directly.
 func TestParse(t *testing.T) {
-	type args struct {
-		codebase string
-		name     string
+	t.Parallel()
+
+	if err := Parse("", ""); err == nil {
+		t.Error("Parse(\"\", \"\") expected an error, got nil")
 	}
+}
 
-	tests := []struct {
-		name    string
-		args    args
-		wantErr bool
-		network bool
-	}{
-		{name: "aws", args: args{codebase: "./terraform-provider-aws", name: "aws"}, network: true},
-		{name: "azure", args: args{codebase: "./terraform-provider-azurerm", name: "azurerm"}, network: true},
-		{name: "google", args: args{codebase: "./terraform-provider-google", name: "google"}, network: true},
-		{
-			name:    "Empty codebase",
-			args:    args{codebase: "", name: "azure"},
-			wantErr: true,
-		},
-	}
+// TestParseFromDocs_EmptyCodebase pins the input-validation guard on the
+// docs fallback path. Previously this was reached via Parse("", "azure"),
+// but Parse now takes the schema path first — so to exercise this guard
+// deterministically we call parseFromDocs directly.
+func TestParseFromDocs_EmptyCodebase(t *testing.T) {
+	t.Parallel()
 
-	for _, tt := range tests {
-
-		tt := tt
-		t.Run(tt.name, func(t *testing.T) {
-			if tt.network && testing.Short() {
-				t.Skip("skipping live-clone Parse test under -short")
-			}
-
-			t.Parallel()
-
-			if tt.network {
-				setup(tt.args.name)
-				defer teardown(tt.args.name)
-			}
-
-			if err := Parse(tt.args.codebase, tt.args.name); (err != nil) != tt.wantErr {
-				t.Errorf("Parse() error = %v, wantErr %v", err, tt.wantErr)
-			}
-		})
+	if _, err := parseFromDocs("", "azurerm"); err == nil {
+		t.Error("parseFromDocs(\"\", ...) expected an error, got nil")
 	}
 }
 
