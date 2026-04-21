@@ -2,8 +2,8 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 5.04      |    57       |  1132            |
-| Datasource | 30.89      |   122       |   395             |
+| Resources  | 4.68      |    53       |  1132            |
+| Datasource | 25.57      |   101       |   395             |
 
 ## Deprecated
 
@@ -577,6 +577,7 @@
 ./resource.ps1 azurerm_lighthouse_definition
 ./resource.ps1 azurerm_linux_function_app
 ./resource.ps1 azurerm_linux_function_app_slot
+./resource.ps1 azurerm_linux_virtual_machine
 ./resource.ps1 azurerm_linux_web_app
 ./resource.ps1 azurerm_linux_web_app_slot
 ./resource.ps1 azurerm_load_test
@@ -1103,6 +1104,7 @@
 ./resource.ps1 azurerm_virtual_machine_restore_point
 ./resource.ps1 azurerm_virtual_machine_restore_point_collection
 ./resource.ps1 azurerm_virtual_machine_run_command
+./resource.ps1 azurerm_virtual_machine_scale_set
 ./resource.ps1 azurerm_virtual_machine_scale_set_extension
 ./resource.ps1 azurerm_virtual_machine_scale_set_packet_capture
 ./resource.ps1 azurerm_virtual_machine_scale_set_standby_pool
@@ -1134,6 +1136,8 @@
 ./resource.ps1 azurerm_web_pubsub_socketio
 ./resource.ps1 azurerm_windows_function_app
 ./resource.ps1 azurerm_windows_function_app_slot
+./resource.ps1 azurerm_windows_virtual_machine
+./resource.ps1 azurerm_windows_virtual_machine_scale_set
 ./resource.ps1 azurerm_windows_web_app
 ./resource.ps1 azurerm_windows_web_app_slot
 ./resource.ps1 azurerm_workloads_sap_discovery_virtual_instance
@@ -1148,6 +1152,12 @@
 ./resource.ps1 azurerm_arc_resource_bridge_appliance -type data
 ./resource.ps1 azurerm_attestation_provider -type data
 ./resource.ps1 azurerm_automation_runbook -type data
+./resource.ps1 azurerm_automation_variable_bool -type data
+./resource.ps1 azurerm_automation_variable_datetime -type data
+./resource.ps1 azurerm_automation_variable_int -type data
+./resource.ps1 azurerm_automation_variable_object -type data
+./resource.ps1 azurerm_automation_variable_string -type data
+./resource.ps1 azurerm_automation_variables -type data
 ./resource.ps1 azurerm_billing_enrollment_account_scope -type data
 ./resource.ps1 azurerm_billing_mca_account_scope -type data
 ./resource.ps1 azurerm_billing_mpa_account_scope -type data
@@ -1161,6 +1171,7 @@
 ./resource.ps1 azurerm_cdn_frontdoor_rule_set -type data
 ./resource.ps1 azurerm_cdn_frontdoor_secret -type data
 ./resource.ps1 azurerm_cdn_profile -type data
+./resource.ps1 azurerm_client_config -type data
 ./resource.ps1 azurerm_cognitive_account -type data
 ./resource.ps1 azurerm_cognitive_account_project -type data
 ./resource.ps1 azurerm_communication_service -type data
@@ -1267,6 +1278,8 @@
 ./resource.ps1 azurerm_iothub_shared_access_policy -type data
 ./resource.ps1 azurerm_ip_group -type data
 ./resource.ps1 azurerm_ip_groups -type data
+./resource.ps1 azurerm_key_vault_access_policy -type data
+./resource.ps1 azurerm_key_vault_encrypted_value -type data
 ./resource.ps1 azurerm_key_vault_managed_hardware_security_module_key -type data
 ./resource.ps1 azurerm_key_vault_managed_hardware_security_module_role_definition -type data
 ./resource.ps1 azurerm_kubernetes_cluster -type data
@@ -1394,22 +1407,34 @@
 ./resource.ps1 azurerm_proximity_placement_group -type data
 ./resource.ps1 azurerm_public_maintenance_configurations -type data
 ./resource.ps1 azurerm_recovery_services_vault -type data
+./resource.ps1 azurerm_resources -type data
 ./resource.ps1 azurerm_role_assignments -type data
+./resource.ps1 azurerm_role_definition -type data
 ./resource.ps1 azurerm_role_management_policy -type data
 ./resource.ps1 azurerm_search_service -type data
 ./resource.ps1 azurerm_sentinel_alert_rule_anomaly -type data
+./resource.ps1 azurerm_sentinel_alert_rule_template -type data
 ./resource.ps1 azurerm_servicebus_namespace_disaster_recovery_config -type data
 ./resource.ps1 azurerm_servicebus_topic_authorization_rule -type data
+./resource.ps1 azurerm_shared_image_version -type data
+./resource.ps1 azurerm_shared_image_versions -type data
 ./resource.ps1 azurerm_site_recovery_replication_recovery_plan -type data
+./resource.ps1 azurerm_source_control_token -type data
 ./resource.ps1 azurerm_stack_hci_storage_path -type data
 ./resource.ps1 azurerm_static_web_app -type data
+./resource.ps1 azurerm_storage_account_blob_container_sas -type data
+./resource.ps1 azurerm_storage_account_sas -type data
+./resource.ps1 azurerm_storage_containers -type data
 ./resource.ps1 azurerm_storage_queue -type data
 ./resource.ps1 azurerm_storage_table -type data
 ./resource.ps1 azurerm_storage_table_entities -type data
+./resource.ps1 azurerm_subscriptions -type data
 ./resource.ps1 azurerm_system_center_virtual_machine_manager_inventory_items -type data
+./resource.ps1 azurerm_traffic_manager_geographical_location -type data
 ./resource.ps1 azurerm_trusted_signing_account -type data
 ./resource.ps1 azurerm_virtual_desktop_application_group -type data
 ./resource.ps1 azurerm_virtual_desktop_workspace -type data
 ./resource.ps1 azurerm_virtual_network_peering -type data
 ./resource.ps1 azurerm_vpn_server_configuration -type data
+./resource.ps1 azurerm_web_pubsub_private_link_resource -type data
 ```

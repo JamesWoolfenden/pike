@@ -36,7 +36,7 @@ func TestScan(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
 
-			if err := Scan(tt.args.dirname, tt.args.output, nil, false, tt.args.write, false, "", "", ""); (err != nil) != tt.wantErr {
+			if err := Scan(tt.args.dirname, tt.args.output, nil, false, tt.args.write, false, "", "", "", false); (err != nil) != tt.wantErr {
 				t.Errorf("Scan() error = %v, wantErr %v", err, tt.wantErr)
 			}
 		})
@@ -148,7 +148,7 @@ func TestGetPermissionBag(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
 
-			permissionBag := GetPermissionBag(tt.args.resources, tt.args.provider)
+			permissionBag := GetPermissionBag(tt.args.resources, tt.args.provider, false)
 
 			if !reflect.DeepEqual(permissionBag, tt.want) {
 				t.Errorf("MakePolicy() = %v, want %v", permissionBag, tt.want)
@@ -563,7 +563,7 @@ func TestMakePolicy(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
 
-			got, err := MakePolicy(tt.args.dirName, tt.args.file, tt.args.init, false, "", "")
+			got, err := MakePolicy(tt.args.dirName, tt.args.file, tt.args.init, false, "", "", false)
 
 			if (err != nil) != tt.wantErr {
 				t.Errorf("MakePolicy() error = %v, wantErr %v", err, tt.wantErr)

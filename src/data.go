@@ -9,14 +9,8 @@ import (
 	"github.com/hashicorp/hcl/v2"
 	"github.com/hashicorp/hcl/v2/hclparse"
 	"github.com/hashicorp/hcl/v2/hclsyntax"
+	"github.com/jameswoolfenden/pike/internal/provider"
 	"github.com/rs/zerolog/log"
-)
-
-const (
-	providerAWS    = "aws"
-	providerAzure  = "azurerm"
-	providerGoogle = "google"
-	providerGCP    = "gcp"
 )
 
 type fileStringEmptyError struct{}
@@ -211,7 +205,7 @@ func DetectBackend(resource ResourceV2, block *hclsyntax.Block, resources []Reso
 				if terraform.Type == "backend" {
 					if terraform.Labels != nil && terraform.Labels[0] == "s3" {
 						resource.Name = "backend"
-						resource.Provider = providerAWS
+						resource.Provider = provider.AWS
 						resource.Attributes = []string{"s3"}
 						resources = append(resources, resource)
 
@@ -220,7 +214,7 @@ func DetectBackend(resource ResourceV2, block *hclsyntax.Block, resources []Reso
 
 					if terraform.Labels != nil && terraform.Labels[0] == "gcs" {
 						resource.Name = "backend"
-						resource.Provider = providerGCP
+						resource.Provider = provider.GCP
 						resource.Attributes = []string{"gcs"}
 						resources = append(resources, resource)
 
@@ -229,7 +223,7 @@ func DetectBackend(resource ResourceV2, block *hclsyntax.Block, resources []Reso
 
 					if terraform.Labels != nil && terraform.Labels[0] == "azurerm" {
 						resource.Name = "backend"
-						resource.Provider = providerAzure
+						resource.Provider = provider.Azure
 						resource.Attributes = []string{"azurerm"}
 						resources = append(resources, resource)
 
@@ -362,7 +356,7 @@ func GetPermission(result ResourceV2) (Sorted, error) {
 	var myPermission Sorted
 
 	switch result.Provider {
-	case providerAWS:
+	case provider.AWS:
 		myPermission.AWS, err = GetAWSPermissions(result)
 		if err != nil {
 			log.Print(err)
@@ -371,12 +365,12 @@ func GetPermission(result ResourceV2) (Sorted, error) {
 		log.Printf("Provider %s not yet implemented", result.Provider)
 
 		return myPermission, nil
-	case providerAzure, "azuread":
+	case provider.Azure, "azuread":
 		myPermission.AZURE, err = GetAZUREPermissions(result)
 		if err != nil {
 			log.Print(err)
 		}
-	case providerGoogle, providerGCP:
+	case provider.Google, provider.GCP:
 		myPermission.GCP, err = getGCPPermissions(result)
 		if err != nil {
 			log.Print(err)

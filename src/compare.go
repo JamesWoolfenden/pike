@@ -14,6 +14,7 @@ import (
 	"github.com/aws/aws-sdk-go-v2/config"
 	"github.com/aws/aws-sdk-go-v2/service/iam"
 	"github.com/google/go-cmp/cmp"
+	"github.com/jameswoolfenden/pike/internal/provider"
 	"github.com/rs/zerolog/log"
 	diff "github.com/yudai/gojsondiff"
 	"github.com/yudai/gojsondiff/formatter"
@@ -48,18 +49,12 @@ func Compare(directory string, arn string, init bool) (bool, error) {
 	}
 
 	switch getCloudFromRole(arn) {
-	case "aws":
-		{
-			result, err = compareAWSRole(directory, arn, init)
-		}
-	case "gcp":
-		{
-			result, err = compareGCPRole(directory, arn, init)
-		}
+	case provider.AWS:
+		result, err = compareAWSRole(directory, arn, init)
+	case provider.GCP:
+		result, err = compareGCPRole(directory, arn, init)
 	default:
-		{
-			err = &invalidCloudError{arn}
-		}
+		err = &invalidCloudError{arn}
 	}
 
 	return result, err
@@ -69,10 +64,10 @@ func getCloudFromRole(arn string) string {
 
 	var result string
 
-	if strings.Contains(arn, "arn:") {
-		result = "aws"
-	} else if strings.Contains(arn, "projects") {
-		result = "gcp"
+	if strings.Contains(arn, awsARNPrefix) {
+		result = provider.AWS
+	} else if strings.Contains(arn, gcpProjectPrefix) {
+		result = provider.GCP
 	} else {
 		result = "unknown"
 	}
@@ -107,7 +102,7 @@ func compareGCPRole(directory string, arn string, init bool) (bool, error) {
 		return false, &gcpRoleNotVerified{arn}
 	}
 
-	iacPolicy, err := makePermissionBag(directory, nil, init, "")
+	iacPolicy, err := makePermissionBag(directory, nil, init, "", false)
 	if err != nil {
 		return false, &getIAMVersionError{err}
 	}
@@ -229,7 +224,7 @@ func compareAWSRole(directory string, arn string, init bool) (bool, error) {
 		return false, &getPolicyVersionError{err}
 	}
 
-	iacPolicy, err := MakePolicy(directory, nil, init, false, "", "")
+	iacPolicy, err := MakePolicy(directory, nil, init, false, "", "", false)
 	if err != nil {
 		return false, &getIAMVersionError{err}
 	}

@@ -358,7 +358,7 @@ func TestGetPermissionMap(t *testing.T) {
 		{
 			name: "found",
 			args: args{
-				raw:        pike.AWSAcmCertificate,
+				raw:        pike.AwsLookup("aws_acm_certificate"),
 				attributes: []string{"validation_method", "tags", "domain_name", "lifecycle", "create_before_destroy"},
 				resource:   "aws_acm_certificate",
 			},

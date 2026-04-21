@@ -2,7 +2,7 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 89.66      |  1092       |  1218            |
+| Resources  | 89.57      |  1091       |  1218            |
 | Datasource | 100.00      |   421       |   421             |
 
 ## Deprecated
@@ -97,6 +97,7 @@
 ./resource.ps1 google_dataproc_metastore_federation
 ./resource.ps1 google_dataproc_metastore_service
 ./resource.ps1 google_dialogflow_cx_test_case
+./resource.ps1 google_dialogflow_cx_tool_version
 ./resource.ps1 google_dialogflow_environment
 ./resource.ps1 google_discovery_engine_serving_config
 ./resource.ps1 google_firebase_app_check_app_attest_config

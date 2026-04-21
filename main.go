@@ -16,24 +16,25 @@ import (
 
 func main() {
 	var (
-		branch          string
-		directory       string
-		destination     string
-		file            string
-		output          string
-		arn             string
-		wait            int
-		init            bool
-		autoAppend      bool
-		write           bool
-		enableResources bool
-		repository      string
-		region          string
-		workflow        string
-		name            string
-		provider        string
-		outfile         string
-		policyName      string
+		branch             string
+		directory          string
+		destination        string
+		file               string
+		output             string
+		arn                string
+		wait               int
+		init               bool
+		autoAppend         bool
+		write              bool
+		enableResources    bool
+		suppressDeprecated bool
+		repository         string
+		region             string
+		workflow           string
+		name               string
+		provider           string
+		outfile            string
+		policyName         string
 	)
 
 	log.Logger = log.Output(zerolog.ConsoleWriter{Out: os.Stderr})
@@ -185,13 +186,19 @@ func main() {
 						Usage:       "the name of the policy you want to write",
 						Destination: &policyName,
 					},
+					&cli.BoolFlag{
+						Name:        "suppress-deprecated",
+						Aliases:     []string{"suppress"},
+						Usage:       "Suppress deprecation warnings for resources",
+						Destination: &suppressDeprecated,
+					},
 				},
 				Action: func(*cli.Context) error {
 					if file == "" {
-						return pike.Scan(directory, output, nil, init, write, enableResources, provider, outfile, policyName)
+						return pike.Scan(directory, output, nil, init, write, enableResources, provider, outfile, policyName, suppressDeprecated)
 					}
 
-					return pike.Scan(directory, output, &file, init, write, enableResources, provider, outfile, policyName)
+					return pike.Scan(directory, output, &file, init, write, enableResources, provider, outfile, policyName, suppressDeprecated)
 				},
 			},
 			{

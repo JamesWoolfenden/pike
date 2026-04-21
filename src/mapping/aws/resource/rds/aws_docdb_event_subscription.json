@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "ec2:DescribeAccountAttributes",
+      "rds:CreateEventSubscription",
+      "rds:DescribeEventSubscriptions",
+      "rds:DeleteEventSubscription"
+    ],
+    "attributes": {
+      "tags": [
+        "rds:AddTagsToResource",
+        "rds:RemoveTagsFromResource"
+      ]
+    },
+    "destroy": [
+      "rds:DeleteEventSubscription"
+    ],
+    "modify": [
+      "rds:ModifyEventSubscription"
+    ],
+    "plan": []
+  }
+]

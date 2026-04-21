@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "firebasehosting.sites.create",
+      "firebasehosting.sites.delete",
+      "firebasehosting.sites.update",
+      "firebasehosting.sites.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "firebasehosting.sites.delete"
+    ],
+    "modify": [
+      "firebasehosting.sites.update"
+    ],
+    "plan": []
+  }
+]

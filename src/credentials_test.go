@@ -8,7 +8,6 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/aws/aws-sdk-go-v2/service/sts"
 	"github.com/aws/aws-sdk-go-v2/service/sts/types"
 )
 
@@ -92,74 +91,16 @@ func Test_setAWSAuth(t *testing.T) {
 
 func Test_unSetAWSAuth(t *testing.T) {
 	tests := []struct {
-		name string
-	}{
-		// TODO: Add test cases.
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			_ = unSetAWSAuth()
-		})
-	}
-}
-
-func Test_getAWSCredentials1(t *testing.T) {
-	type args struct {
-		IAMRole string
-		region  string
-	}
-	tests := []struct {
 		name    string
-		args    args
-		want    *sts.AssumeRoleOutput
 		wantErr bool
 	}{
-		// TODO: Add test cases.
+		{"clears env vars", false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got, err := getAWSCredentials(tt.args.IAMRole, tt.args.region)
-			if (err != nil) != tt.wantErr {
-				t.Errorf("getAWSCredentials() error = %v, wantErr %v", err, tt.wantErr)
-				return
+			if err := unSetAWSAuth(); (err != nil) != tt.wantErr {
+				t.Errorf("unSetAWSAuth() error = %v, wantErr %v", err, tt.wantErr)
 			}
-			if !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("getAWSCredentials() got = %v, want %v", got, tt.want)
-			}
-		})
-	}
-}
-
-func Test_setAWSAuth1(t *testing.T) {
-	type args struct {
-		iamRole string
-		region  string
-	}
-	tests := []struct {
-		name    string
-		args    args
-		wantErr bool
-	}{
-		// TODO: Add test cases.
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			if err := setAWSAuth(tt.args.iamRole, tt.args.region); (err != nil) != tt.wantErr {
-				t.Errorf("setAWSAuth() error = %v, wantErr %v", err, tt.wantErr)
-			}
-		})
-	}
-}
-
-func Test_unSetAWSAuth1(t *testing.T) {
-	tests := []struct {
-		name string
-	}{
-		// TODO: Add test cases.
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			_ = unSetAWSAuth()
 		})
 	}
 }

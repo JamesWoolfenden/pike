@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "source.repos.create",
+      "source.repos.get",
+      "source.repos.updateRepoConfig",
+      "source.repos.delete"
+    ],
+    "attributes": {
+      "pubsub_configs": [
+        "iam.serviceAccounts.actAs"
+      ]
+    },
+    "destroy": [
+      "source.repos.delete"
+    ],
+    "modify": [
+      "source.repos.updateRepoConfig"
+    ],
+    "plan": []
+  }
+]

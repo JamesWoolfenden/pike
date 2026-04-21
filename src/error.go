@@ -355,3 +355,99 @@ type splitHubError struct {
 func (e *splitHubError) Error() string {
 	return fmt.Sprintf("failed to split hub: %v", e.err)
 }
+
+type emptyIACError struct{}
+
+func (m *emptyIACError) Error() string {
+	return "no IAC found"
+}
+
+type makePolicyError struct {
+	err error
+}
+
+func (m *makePolicyError) Error() string {
+	return fmt.Sprintf("failed to make policy %v", m.err)
+}
+
+type emptyScanLocationError struct{}
+
+func (m *emptyScanLocationError) Error() string {
+	return "no scan location"
+}
+
+type makeDirectoryError struct {
+	directory string
+	err       error
+}
+
+func (m *makeDirectoryError) Error() string {
+	return fmt.Sprintf("failed to make directory %s %v", m.directory, m.err)
+}
+
+type locateTerraformError struct {
+	err error
+}
+
+func (m *locateTerraformError) Error() string {
+	return fmt.Sprintf("failed to find Terraform %v", m.err)
+}
+
+type terraformExecError struct {
+	err error
+}
+
+func (m *terraformExecError) Error() string {
+	return fmt.Sprintf("Terraform execution error %v", m.err)
+}
+
+type terraformInitError struct {
+	err error
+}
+
+func (m *terraformInitError) Error() string {
+	return fmt.Sprintf("Terraform init error %v", m.err)
+}
+
+type readDirectoryError struct {
+	directory string
+	err       error
+}
+
+func (m *readDirectoryError) Error() string {
+	return fmt.Sprintf("failed to read directory %s %v", m.directory, m.err)
+}
+
+type absolutePathError struct {
+	directory string
+	err       error
+}
+
+func (m *absolutePathError) Error() string {
+	return fmt.Sprintf("failed to get absolute path %s %v", m.directory, m.err)
+}
+
+type getTFError struct {
+	directory string
+	err       error
+}
+
+func (m *getTFError) Error() string {
+	return fmt.Sprintf("failed to get Terraform templates %s %v", m.directory, m.err)
+}
+
+type getPolicyError struct {
+	err error
+}
+
+func (m *getPolicyError) Error() string {
+	return fmt.Sprintf("failed to get policy %v", m.err)
+}
+
+type unsupportedRuntimeProviderError struct {
+	provider string
+}
+
+func (e *unsupportedRuntimeProviderError) Error() string {
+	return fmt.Sprintf("runtime permission detection is not yet implemented for provider %q (supported: gcp)", e.provider)
+}

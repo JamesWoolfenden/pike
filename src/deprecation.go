@@ -7,6 +7,7 @@ import (
 	"strings"
 	"sync"
 
+	"github.com/jameswoolfenden/pike/internal/provider"
 	"github.com/jameswoolfenden/pike/parse"
 	"github.com/rs/zerolog/log"
 )
@@ -66,19 +67,8 @@ func clearDeprecationsForTest() {
 	deprecations.entries = map[string]deprecationEntry{}
 }
 
-// normaliseProvider maps the various aliases pike accepts (gcp/google,
-// azure/azurerm) to the canonical short name used as the embed key.
 func normaliseProvider(p string) string {
-	switch strings.ToLower(p) {
-	case "aws":
-		return "aws"
-	case "azure", "azurerm":
-		return "azurerm"
-	case "gcp", "google":
-		return "google"
-	default:
-		return ""
-	}
+	return provider.Normalise(p)
 }
 
 // loadEntry decodes the embedded members JSON for a provider the first

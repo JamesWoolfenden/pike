@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "apigateway:POST",
+      "apigateway:PUT",
+      "apigateway:PATCH",
+      "apigateway:GET",
+      "apigateway:DELETE"
+    ],
+    "attributes": {
+      "endpoint_configuration": [
+        "apigateway:UpdateRestApiPolicy"
+      ]
+    },
+    "destroy": [
+      "apigateway:DELETE"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]

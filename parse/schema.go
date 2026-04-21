@@ -4,25 +4,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	"os/exec"
 	"path/filepath"
 	"sort"
 	"strings"
 	"time"
 
-	"github.com/hashicorp/go-version"
-	"github.com/hashicorp/hc-install/product"
-	"github.com/hashicorp/hc-install/releases"
 	"github.com/hashicorp/terraform-exec/tfexec"
 	tfjson "github.com/hashicorp/terraform-json"
+	"github.com/jameswoolfenden/pike/internal/tfinstall"
 	"github.com/rs/zerolog/log"
 )
-
-// tfVersion is the Terraform version fetched via hc-install when no terraform
-// binary is on PATH. Kept in sync with src/scan.go deliberately; once the
-// iac/ package lands in the internal/ refactor this constant will move to
-// a single home and be shared.
-const tfVersion = "1.5.4"
 
 // providerSource maps the short provider names pike has always accepted on
 // the CLI (aws, azurerm, google) to their canonical registry sources.
@@ -173,26 +164,6 @@ func matchesSource(key, source string) bool {
 	return strings.HasSuffix(key, "/"+source)
 }
 
-// locateTerraform finds a terraform or tofu binary on PATH, installing one via
-// hc-install if absent. This mirrors src.LocateTerraform intentionally so
-// the parse package has no dependency on src/ during the internal/ refactor.
-// When iac/ lands (refactor stage 4) this duplication goes away.
 func locateTerraform() (string, error) {
-	for _, bin := range []string{"tofu", "terraform"} {
-		if p, err := exec.LookPath(bin); err == nil && p != "" {
-			return p, nil
-		}
-	}
-
-	log.Info().Msgf("no terraform on PATH; installing %s for schema parse", tfVersion)
-	installer := &releases.ExactVersion{
-		Product: product.Terraform,
-		Version: version.Must(version.NewVersion(tfVersion)),
-	}
-
-	p, err := installer.Install(context.Background())
-	if err != nil {
-		return "", fmt.Errorf("installing terraform %s: %w", tfVersion, err)
-	}
-	return p, nil
+	return tfinstall.LocateTerraform()
 }

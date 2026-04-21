@@ -4,7 +4,6 @@ import (
 	"bytes"
 	_ "embed" // required for embed
 	"encoding/json"
-	"reflect"
 	"sort"
 	"strconv"
 	"strings"
@@ -96,72 +95,35 @@ func NewAWSPolicy(actions []string, resources bool) (Policy, error) {
 func GetPolicy(actions Sorted, resources bool, policyName string) (OutputPolicy, error) {
 	var (
 		OutPolicy OutputPolicy
-		Empty     bool
+		empty     = true
+		err       error
 	)
 
-	Empty = true
-
-	actionsValue := reflect.ValueOf(actions)
-	typeOfV := actionsValue.Type()
-	values := make([]interface{}, actionsValue.NumField())
-
-	var err error
-
-	for i := 0; i < actionsValue.NumField(); i++ {
-		values[i] = actionsValue.Field(i).Interface()
-
-		switch typeOfV.Field(i).Name {
-		case "AWS":
-			if actions.AWS == nil {
-				continue
-			}
-
-			Empty = false
-			// dedupe
-			AWSPermissions := Unique(actions.AWS)
-			OutPolicy.AWS, err = AWSPolicy(AWSPermissions, resources, policyName)
-
-			if err != nil {
-				log.Error().Err(err)
-
-				continue
-			}
-
-		case "GCP":
-			if actions.GCP == nil {
-				continue
-			}
-
-			Empty = false
-			// dedupe
-			GCPPermissions := Unique(actions.GCP)
-			OutPolicy.GCP, err = GCPPolicy(GCPPermissions, policyName)
-
-			if err != nil {
-				log.Error().Err(err)
-
-				continue
-			}
-
-		case "AZURE":
-			if actions.AZURE == nil {
-				continue
-			}
-
-			Empty = false
-			// dedupe
-			AZUREPermissions := Unique(actions.AZURE)
-			OutPolicy.AZURE, err = AZUREPolicy(AZUREPermissions, policyName)
-
-			if err != nil {
-				log.Error().Err(err)
-
-				continue
-			}
+	if actions.AWS != nil {
+		empty = false
+		OutPolicy.AWS, err = AWSPolicy(Unique(actions.AWS), resources, policyName)
+		if err != nil {
+			log.Error().Err(err)
 		}
 	}
 
-	if Empty {
+	if actions.GCP != nil {
+		empty = false
+		OutPolicy.GCP, err = GCPPolicy(Unique(actions.GCP), policyName)
+		if err != nil {
+			log.Error().Err(err)
+		}
+	}
+
+	if actions.AZURE != nil {
+		empty = false
+		OutPolicy.AZURE, err = AZUREPolicy(Unique(actions.AZURE), policyName)
+		if err != nil {
+			log.Error().Err(err)
+		}
+	}
+
+	if empty {
 		return OutPolicy, &emptyPermissionsError{}
 	}
 

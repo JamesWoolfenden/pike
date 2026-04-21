@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "s3:PutObject",
+      "s3:GetObject",
+      "s3:GetObjectTagging"
+    ],
+    "attributes": {
+      "kms": [
+        "kms:DescribeKey",
+        "kms:Encrypt"
+      ],
+      "tags": []
+    },
+    "destroy": [
+      "s3:DeleteObject"
+    ],
+    "modify": [],
+    "plan": []
+  }
+]
