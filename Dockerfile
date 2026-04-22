@@ -6,11 +6,10 @@
 #   2. Ship a minimal Alpine runtime with a non-root user and only the tools
 #      entrypoint.sh actually needs.
 
-ARG GO_VERSION=1.25.9
-ARG ALPINE_VERSION=3.22
+
 
 # ---- builder ----------------------------------------------------------------
-FROM golang:${GO_VERSION}-alpine${ALPINE_VERSION} AS builder
+FROM golang:1.25.9-alpine3.22@sha256:ea77c38bc50df598f22ae02b729b9d37eb0d70ed72d6dd336b8d6c02ae2b8b09 AS builder
 
 WORKDIR /src
 
@@ -29,7 +28,7 @@ RUN CGO_ENABLED=0 go build \
     -o /out/pike .
 
 # ---- runtime ----------------------------------------------------------------
-FROM alpine:${ALPINE_VERSION}
+FROM alpine:3.22@sha256:310c62b5e7ca5b08167e4384c68db0fd2905dd9c7493756d356e893909057601
 
 # entrypoint.sh needs bash; terraform/tofu flows often want git + ca-certificates.
 RUN apk add --no-cache bash ca-certificates git \
