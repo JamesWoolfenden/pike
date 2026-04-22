@@ -7,7 +7,7 @@
 #      entrypoint.sh actually needs.
 
 ARG GO_VERSION=1.25.9
-ARG ALPINE_VERSION=3.20
+ARG ALPINE_VERSION=3.22
 
 # ---- builder ----------------------------------------------------------------
 FROM golang:${GO_VERSION}-alpine${ALPINE_VERSION} AS builder
