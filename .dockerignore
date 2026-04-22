@@ -1,0 +1,37 @@
+# Build artifacts
+dist/
+pike.exe
+pike
+*.out
+
+# Test data and large local directories
+testdata/
+src/testdata/
+terraform/
+venv/
+
+# Terraform state/cache
+*.tfstate
+*.tfstate.lock.info
+tf.plan
+tf.json
+.terraform/
+.terraform.lock.hcl
+terraform-provider-*/
+
+# Dev tooling
+.idea/
+.vscode/
+.DS_Store
+.claude/
+
+# Git
+.git/
+
+# Misc
+*.pem
+*.csr
+*.backup
+*.orig
+.pike
+.destination
