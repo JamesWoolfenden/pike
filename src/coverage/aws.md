@@ -2,8 +2,8 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 91.95      |  1507       |  1639            |
-| Datasource | 97.42      |   641       |   658             |
+| Resources  | 91.78      |  1507       |  1642            |
+| Datasource | 97.12      |   641       |   660             |
 
 ## Deprecated
 
@@ -66,12 +66,14 @@
 ./resource.ps1 aws_cloudfront_trust_store
 ./resource.ps1 aws_cloudwatch_alarm_mute_rule
 ./resource.ps1 aws_cloudwatch_log_transformer
+./resource.ps1 aws_cloudwatch_otel_enrichment
 ./resource.ps1 aws_cognito_log_delivery_configuration
 ./resource.ps1 aws_cognito_managed_login_branding
 ./resource.ps1 aws_connect_phone_number_contact_flow_association
 ./resource.ps1 aws_controltower_baseline
 ./resource.ps1 aws_devicefarm_test_grid_project
 ./resource.ps1 aws_dynamodb_global_secondary_index
+./resource.ps1 aws_ebs_volume_copy
 ./resource.ps1 aws_ec2_allowed_images_settings
 ./resource.ps1 aws_ec2_secondary_network
 ./resource.ps1 aws_ec2_secondary_subnet
@@ -133,6 +135,7 @@
 ./resource.ps1 aws_s3vectors_vector_bucket
 ./resource.ps1 aws_s3vectors_vector_bucket_policy
 ./resource.ps1 aws_sagemaker_algorithm
+./resource.ps1 aws_sagemaker_hyper_parameter_tuning_job
 ./resource.ps1 aws_sagemaker_labeling_job
 ./resource.ps1 aws_sagemaker_mlflow_app
 ./resource.ps1 aws_sagemaker_model_card
@@ -169,6 +172,8 @@
 ./resource.ps1 aws_alb_listener -type data
 ./resource.ps1 aws_alb_target_group -type data
 ./resource.ps1 aws_dynamodb_backups -type data
+./resource.ps1 aws_ec2_service_link_virtual_interface -type data
+./resource.ps1 aws_ec2_service_link_virtual_interfaces -type data
 ./resource.ps1 aws_iam_outbound_web_identity_federation -type data
 ./resource.ps1 aws_iam_role_policies -type data
 ./resource.ps1 aws_iam_role_policy_attachments -type data

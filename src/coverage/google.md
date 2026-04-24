@@ -2,7 +2,7 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 89.57      |  1091       |  1218            |
+| Resources  | 89.44      |  1093       |  1222            |
 | Datasource | 100.00      |   421       |   421             |
 
 ## Deprecated
@@ -70,6 +70,8 @@
 ./resource.ps1 google_biglake_iceberg_table_iam_member
 ./resource.ps1 google_biglake_iceberg_table_iam_policy
 ./resource.ps1 google_bigquery_reservation_group
+./resource.ps1 google_chronicle_data_table
+./resource.ps1 google_chronicle_data_table_row
 ./resource.ps1 google_compute_firewall_policy_with_rules
 ./resource.ps1 google_compute_network_firewall_policy_with_rules
 ./resource.ps1 google_compute_preview_feature
