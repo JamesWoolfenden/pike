@@ -12,12 +12,12 @@ require (
 	github.com/google/go-cmp v0.7.0
 	github.com/google/go-github/v47 v47.1.0
 	github.com/hashicorp/go-version v1.9.0
-	github.com/hashicorp/hc-install v0.9.3
+	github.com/hashicorp/hc-install v0.9.4
 	github.com/hashicorp/hcl/v2 v2.24.0
-	github.com/hashicorp/terraform-exec v0.25.0
+	github.com/hashicorp/terraform-exec v0.25.1
 	github.com/hashicorp/terraform-json v0.27.2
 	github.com/jameswoolfenden/identity v0.0.6
-	github.com/rs/zerolog v1.35.0
+	github.com/rs/zerolog v1.35.1
 	github.com/stretchr/testify v1.11.1
 	github.com/urfave/cli/v2 v2.27.7
 	golang.org/x/crypto v0.50.0
