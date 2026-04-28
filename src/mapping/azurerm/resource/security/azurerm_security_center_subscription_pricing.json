@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Security/pricings/read",
+      "Microsoft.Security/pricings/write",
+      "Microsoft.Security/pricings/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Security/pricings/delete"
+    ],
+    "modify": [
+      "Microsoft.Security/pricings/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Security/pricings/read"
+    ]
+  }
+]

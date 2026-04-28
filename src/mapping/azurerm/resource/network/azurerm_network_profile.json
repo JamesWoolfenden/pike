@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/networkProfiles/read",
+      "Microsoft.Network/networkProfiles/write",
+      "Microsoft.Network/networkProfiles/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/networkProfiles/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/networkProfiles/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/networkProfiles/read"
+    ]
+  }
+]

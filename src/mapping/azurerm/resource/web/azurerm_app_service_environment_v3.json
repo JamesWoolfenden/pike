@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Web/hostingEnvironments/Read",
+      "Microsoft.Web/hostingEnvironments/Write",
+      "Microsoft.Web/hostingEnvironments/Delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Web/hostingEnvironments/Delete"
+    ],
+    "modify": [
+      "Microsoft.Web/hostingEnvironments/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Web/hostingEnvironments/Read"
+    ]
+  }
+]

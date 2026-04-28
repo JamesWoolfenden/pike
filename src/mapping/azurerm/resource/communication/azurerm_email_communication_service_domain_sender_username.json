@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Communication/EmailServices/Domains/SenderUsernames/read",
+      "Microsoft.Communication/EmailServices/Domains/SenderUsernames/write",
+      "Microsoft.Communication/EmailServices/Domains/SenderUsernames/delete",
+      "Microsoft.Communication/EmailServices/read",
+      "Microsoft.Communication/EmailServices/Domains/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Communication/EmailServices/Domains/SenderUsernames/delete"
+    ],
+    "modify": [
+      "Microsoft.Communication/EmailServices/Domains/SenderUsernames/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Communication/EmailServices/Domains/SenderUsernames/read",
+      "Microsoft.Communication/EmailServices/read",
+      "Microsoft.Communication/EmailServices/Domains/read"
+    ]
+  }
+]

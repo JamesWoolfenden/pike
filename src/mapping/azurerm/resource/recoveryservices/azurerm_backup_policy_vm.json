@@ -1,0 +1,26 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.RecoveryServices/Vaults/backupPolicies/read",
+      "Microsoft.RecoveryServices/Vaults/backupPolicies/write",
+      "Microsoft.RecoveryServices/Vaults/backupPolicies/delete",
+      "Microsoft.RecoveryServices/Vaults/read",
+      "Microsoft.RecoveryServices/Vaults/backupPolicies/operationResults/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.RecoveryServices/Vaults/backupPolicies/delete"
+    ],
+    "modify": [
+      "Microsoft.RecoveryServices/Vaults/backupPolicies/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.RecoveryServices/Vaults/backupPolicies/read",
+      "Microsoft.RecoveryServices/Vaults/read"
+    ]
+  }
+]

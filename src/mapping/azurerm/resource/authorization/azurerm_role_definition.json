@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Authorization/roleDefinitions/read",
+      "Microsoft.Authorization/roleDefinitions/write",
+      "Microsoft.Authorization/roleDefinitions/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Authorization/roleDefinitions/delete"
+    ],
+    "modify": [
+      "Microsoft.Authorization/roleDefinitions/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Authorization/roleDefinitions/read"
+    ]
+  }
+]

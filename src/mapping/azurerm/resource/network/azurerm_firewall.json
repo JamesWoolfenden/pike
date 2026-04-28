@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/azurefirewalls/read",
+      "Microsoft.Network/azurefirewalls/write",
+      "Microsoft.Network/azurefirewalls/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/azurefirewalls/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/azurefirewalls/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/azurefirewalls/read"
+    ]
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "Microsoft.ElasticSan/elasticSans/volumeGroups/read",
+      "Microsoft.ElasticSan/elasticSans/read"
+    ]
+  }
+]

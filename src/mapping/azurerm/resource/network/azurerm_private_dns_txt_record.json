@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/privateDnsZones/TXT/read",
+      "Microsoft.Network/privateDnsZones/TXT/write",
+      "Microsoft.Network/privateDnsZones/TXT/delete",
+      "Microsoft.Network/privateDnsZones/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/privateDnsZones/TXT/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/privateDnsZones/TXT/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/privateDnsZones/TXT/read",
+      "Microsoft.Network/privateDnsZones/read"
+    ]
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Web/certificates/Read",
+      "Microsoft.Web/certificates/Write",
+      "Microsoft.Web/certificates/Delete",
+      "microsoft.web/certificates/operationresults/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Web/certificates/Delete"
+    ],
+    "modify": [
+      "Microsoft.Web/certificates/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Web/certificates/Read"
+    ]
+  }
+]

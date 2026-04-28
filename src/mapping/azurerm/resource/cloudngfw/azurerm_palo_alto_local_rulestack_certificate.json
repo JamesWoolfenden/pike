@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "PaloAltoNetworks.Cloudngfw/localRulestacks/certificates/read",
+      "PaloAltoNetworks.Cloudngfw/localRulestacks/certificates/write",
+      "PaloAltoNetworks.Cloudngfw/localRulestacks/certificates/delete",
+      "PaloAltoNetworks.Cloudngfw/localRulestacks/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "PaloAltoNetworks.Cloudngfw/localRulestacks/certificates/delete"
+    ],
+    "modify": [
+      "PaloAltoNetworks.Cloudngfw/localRulestacks/certificates/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "PaloAltoNetworks.Cloudngfw/localRulestacks/certificates/read",
+      "PaloAltoNetworks.Cloudngfw/localRulestacks/read"
+    ]
+  }
+]

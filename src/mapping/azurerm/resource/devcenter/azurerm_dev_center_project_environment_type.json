@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DevCenter/projects/environmentTypes/read",
+      "Microsoft.DevCenter/projects/environmentTypes/write",
+      "Microsoft.DevCenter/projects/environmentTypes/delete",
+      "Microsoft.DevCenter/projects/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.DevCenter/projects/environmentTypes/delete"
+    ],
+    "modify": [
+      "Microsoft.DevCenter/projects/environmentTypes/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DevCenter/projects/environmentTypes/read",
+      "Microsoft.DevCenter/projects/read"
+    ]
+  }
+]

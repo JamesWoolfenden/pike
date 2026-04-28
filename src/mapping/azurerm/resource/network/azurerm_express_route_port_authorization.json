@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/expressRoutePorts/authorizations/read",
+      "Microsoft.Network/expressRoutePorts/authorizations/write",
+      "Microsoft.Network/expressRoutePorts/authorizations/delete",
+      "Microsoft.Network/expressRoutePorts/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/expressRoutePorts/authorizations/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/expressRoutePorts/authorizations/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/expressRoutePorts/authorizations/read",
+      "Microsoft.Network/expressRoutePorts/read"
+    ]
+  }
+]

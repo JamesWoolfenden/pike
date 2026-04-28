@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Synapse/privateLinkHubs/read",
+      "Microsoft.Synapse/privateLinkHubs/write",
+      "Microsoft.Synapse/privateLinkHubs/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Synapse/privateLinkHubs/delete"
+    ],
+    "modify": [
+      "Microsoft.Synapse/privateLinkHubs/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Synapse/privateLinkHubs/read"
+    ]
+  }
+]

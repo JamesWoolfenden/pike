@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.GraphServices/accounts/read",
+      "Microsoft.GraphServices/accounts/write",
+      "Microsoft.GraphServices/accounts/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.GraphServices/accounts/delete"
+    ],
+    "modify": [
+      "Microsoft.GraphServices/accounts/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.GraphServices/accounts/read"
+    ]
+  }
+]

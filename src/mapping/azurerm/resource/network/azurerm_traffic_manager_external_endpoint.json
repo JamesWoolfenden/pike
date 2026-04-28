@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/trafficManagerProfiles/externalEndpoints/read",
+      "Microsoft.Network/trafficManagerProfiles/externalEndpoints/write",
+      "Microsoft.Network/trafficManagerProfiles/externalEndpoints/delete",
+      "Microsoft.Network/trafficManagerProfiles/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/trafficManagerProfiles/externalEndpoints/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/trafficManagerProfiles/externalEndpoints/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/trafficManagerProfiles/externalEndpoints/read",
+      "Microsoft.Network/trafficManagerProfiles/read"
+    ]
+  }
+]

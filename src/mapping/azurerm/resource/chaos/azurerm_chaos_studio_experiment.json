@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Chaos/experiments/read",
+      "Microsoft.Chaos/experiments/write",
+      "Microsoft.Chaos/experiments/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Chaos/experiments/delete"
+    ],
+    "modify": [
+      "Microsoft.Chaos/experiments/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Chaos/experiments/read"
+    ]
+  }
+]

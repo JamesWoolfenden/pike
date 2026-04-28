@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Automation/automationAccounts/hybridRunbookWorkerGroups/read",
+      "Microsoft.Automation/automationAccounts/hybridRunbookWorkerGroups/write",
+      "Microsoft.Automation/automationAccounts/hybridRunbookWorkerGroups/delete",
+      "Microsoft.Automation/automationAccounts/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Automation/automationAccounts/hybridRunbookWorkerGroups/delete"
+    ],
+    "modify": [
+      "Microsoft.Automation/automationAccounts/hybridRunbookWorkerGroups/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Automation/automationAccounts/hybridRunbookWorkerGroups/read",
+      "Microsoft.Automation/automationAccounts/read"
+    ]
+  }
+]

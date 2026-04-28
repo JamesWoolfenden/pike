@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "Oracle.Database/cloudVmClusters/dbNodes/read",
+      "Oracle.Database/cloudVmClusters/read"
+    ]
+  }
+]

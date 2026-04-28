@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "microsoft.aadiam/diagnosticsettings/read",
+      "microsoft.aadiam/diagnosticsettings/write",
+      "microsoft.aadiam/diagnosticsettings/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "microsoft.aadiam/diagnosticsettings/delete"
+    ],
+    "modify": [
+      "microsoft.aadiam/diagnosticsettings/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "microsoft.aadiam/diagnosticsettings/read"
+    ]
+  }
+]

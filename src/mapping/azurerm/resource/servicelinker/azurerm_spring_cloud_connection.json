@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ServiceLinker/linkers/read",
+      "Microsoft.ServiceLinker/linkers/write",
+      "Microsoft.ServiceLinker/linkers/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.ServiceLinker/linkers/delete"
+    ],
+    "modify": [
+      "Microsoft.ServiceLinker/linkers/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ServiceLinker/linkers/read"
+    ]
+  }
+]

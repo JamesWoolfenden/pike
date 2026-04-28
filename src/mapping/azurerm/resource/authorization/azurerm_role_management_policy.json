@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Authorization/roleManagementPolicies/read",
+      "Microsoft.Authorization/roleManagementPolicies/write"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [
+      "Microsoft.Authorization/roleManagementPolicies/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Authorization/roleManagementPolicies/read"
+    ]
+  }
+]

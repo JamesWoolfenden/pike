@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Insights/Components/ProactiveDetectionConfigs/Read",
+      "Microsoft.Insights/Components/ProactiveDetectionConfigs/Write",
+      "Microsoft.Insights/Components/Read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [
+      "Microsoft.Insights/Components/ProactiveDetectionConfigs/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Insights/Components/ProactiveDetectionConfigs/Read",
+      "Microsoft.Insights/Components/Read"
+    ]
+  }
+]

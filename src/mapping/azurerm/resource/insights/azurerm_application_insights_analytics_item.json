@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Insights/Components/AnalyticsItems/Read",
+      "Microsoft.Insights/Components/AnalyticsItems/Write",
+      "Microsoft.Insights/Components/AnalyticsItems/Delete",
+      "Microsoft.Insights/Components/Read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Insights/Components/AnalyticsItems/Delete"
+    ],
+    "modify": [
+      "Microsoft.Insights/Components/AnalyticsItems/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Insights/Components/AnalyticsItems/Read",
+      "Microsoft.Insights/Components/Read"
+    ]
+  }
+]

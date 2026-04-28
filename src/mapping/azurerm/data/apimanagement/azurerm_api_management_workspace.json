@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "Microsoft.ApiManagement/service/workspaces/read",
+      "Microsoft.ApiManagement/service/read"
+    ]
+  }
+]

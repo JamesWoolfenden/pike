@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.EventGrid/namespaces/topics/read",
+      "Microsoft.EventGrid/namespaces/topics/write",
+      "Microsoft.EventGrid/namespaces/topics/delete",
+      "Microsoft.EventGrid/namespaces/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.EventGrid/namespaces/topics/delete"
+    ],
+    "modify": [
+      "Microsoft.EventGrid/namespaces/topics/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.EventGrid/namespaces/topics/read",
+      "Microsoft.EventGrid/namespaces/read"
+    ]
+  }
+]

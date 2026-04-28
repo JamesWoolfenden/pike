@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DBforPostgreSQL/servers/configurations/read",
+      "Microsoft.DBforPostgreSQL/servers/configurations/write",
+      "Microsoft.DBforPostgreSQL/servers/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [
+      "Microsoft.DBforPostgreSQL/servers/configurations/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DBforPostgreSQL/servers/configurations/read",
+      "Microsoft.DBforPostgreSQL/servers/read"
+    ]
+  }
+]

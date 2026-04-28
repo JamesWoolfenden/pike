@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ContainerService/managedClusters/trustedAccessRoleBindings/read",
+      "Microsoft.ContainerService/managedClusters/trustedAccessRoleBindings/write",
+      "Microsoft.ContainerService/managedClusters/trustedAccessRoleBindings/delete",
+      "Microsoft.ContainerService/managedClusters/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.ContainerService/managedClusters/trustedAccessRoleBindings/delete"
+    ],
+    "modify": [
+      "Microsoft.ContainerService/managedClusters/trustedAccessRoleBindings/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ContainerService/managedClusters/trustedAccessRoleBindings/read",
+      "Microsoft.ContainerService/managedClusters/read"
+    ]
+  }
+]

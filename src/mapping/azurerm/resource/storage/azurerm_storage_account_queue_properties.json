@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Storage/storageAccounts/queueServices/read",
+      "Microsoft.Storage/storageAccounts/queueServices/write",
+      "Microsoft.Storage/storageAccounts/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [
+      "Microsoft.Storage/storageAccounts/queueServices/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Storage/storageAccounts/queueServices/read",
+      "Microsoft.Storage/storageAccounts/read"
+    ]
+  }
+]

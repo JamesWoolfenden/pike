@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.HardwareSecurityModules/dedicatedhsms/read",
+      "Microsoft.HardwareSecurityModules/dedicatedhsms/write",
+      "Microsoft.HardwareSecurityModules/dedicatedhsms/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.HardwareSecurityModules/dedicatedhsms/delete"
+    ],
+    "modify": [
+      "Microsoft.HardwareSecurityModules/dedicatedhsms/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.HardwareSecurityModules/dedicatedhsms/read"
+    ]
+  }
+]

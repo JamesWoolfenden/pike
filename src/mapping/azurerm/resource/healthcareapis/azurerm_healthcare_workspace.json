@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.HealthcareApis/workspaces/read",
+      "Microsoft.HealthcareApis/workspaces/write",
+      "Microsoft.HealthcareApis/workspaces/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.HealthcareApis/workspaces/delete"
+    ],
+    "modify": [
+      "Microsoft.HealthcareApis/workspaces/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.HealthcareApis/workspaces/read"
+    ]
+  }
+]

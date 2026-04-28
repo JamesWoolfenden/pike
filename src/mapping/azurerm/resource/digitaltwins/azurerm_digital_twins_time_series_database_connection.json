@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DigitalTwins/digitalTwinsInstances/timeSeriesDatabaseConnections/read",
+      "Microsoft.DigitalTwins/digitalTwinsInstances/timeSeriesDatabaseConnections/write",
+      "Microsoft.DigitalTwins/digitalTwinsInstances/timeSeriesDatabaseConnections/delete",
+      "Microsoft.DigitalTwins/digitalTwinsInstances/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.DigitalTwins/digitalTwinsInstances/timeSeriesDatabaseConnections/delete"
+    ],
+    "modify": [
+      "Microsoft.DigitalTwins/digitalTwinsInstances/timeSeriesDatabaseConnections/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DigitalTwins/digitalTwinsInstances/timeSeriesDatabaseConnections/read",
+      "Microsoft.DigitalTwins/digitalTwinsInstances/read"
+    ]
+  }
+]

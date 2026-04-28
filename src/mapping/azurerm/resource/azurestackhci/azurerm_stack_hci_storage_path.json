@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AzureStackHCI/StorageContainers/Read",
+      "Microsoft.AzureStackHCI/StorageContainers/Write",
+      "Microsoft.AzureStackHCI/StorageContainers/Delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.AzureStackHCI/StorageContainers/Delete"
+    ],
+    "modify": [
+      "Microsoft.AzureStackHCI/StorageContainers/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AzureStackHCI/StorageContainers/Read"
+    ]
+  }
+]

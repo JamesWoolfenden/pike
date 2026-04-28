@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/expressRouteCircuits/authorizations/read",
+      "Microsoft.Network/expressRouteCircuits/authorizations/write",
+      "Microsoft.Network/expressRouteCircuits/authorizations/delete",
+      "Microsoft.Network/expressRouteCircuits/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/expressRouteCircuits/authorizations/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/expressRouteCircuits/authorizations/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/expressRouteCircuits/authorizations/read",
+      "Microsoft.Network/expressRouteCircuits/read"
+    ]
+  }
+]

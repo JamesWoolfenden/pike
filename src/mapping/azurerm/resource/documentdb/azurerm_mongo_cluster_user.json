@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DocumentDB/mongoClusters/users/read",
+      "Microsoft.DocumentDB/mongoClusters/users/write",
+      "Microsoft.DocumentDB/mongoClusters/users/delete",
+      "Microsoft.DocumentDB/mongoClusters/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.DocumentDB/mongoClusters/users/delete"
+    ],
+    "modify": [
+      "Microsoft.DocumentDB/mongoClusters/users/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DocumentDB/mongoClusters/users/read",
+      "Microsoft.DocumentDB/mongoClusters/read"
+    ]
+  }
+]

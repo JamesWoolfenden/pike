@@ -1,0 +1,29 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/volumeQuotaRules/read",
+      "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/volumeQuotaRules/write",
+      "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/volumeQuotaRules/delete",
+      "Microsoft.NetApp/netAppAccounts/read",
+      "Microsoft.NetApp/netAppAccounts/capacityPools/read",
+      "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/volumeQuotaRules/delete"
+    ],
+    "modify": [
+      "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/volumeQuotaRules/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/volumeQuotaRules/read",
+      "Microsoft.NetApp/netAppAccounts/read",
+      "Microsoft.NetApp/netAppAccounts/capacityPools/read",
+      "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/read"
+    ]
+  }
+]

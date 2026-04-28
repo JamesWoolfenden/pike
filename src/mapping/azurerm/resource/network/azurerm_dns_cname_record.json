@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/dnszones/CNAME/read",
+      "Microsoft.Network/dnszones/CNAME/write",
+      "Microsoft.Network/dnszones/CNAME/delete",
+      "Microsoft.Network/dnszones/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/dnszones/CNAME/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/dnszones/CNAME/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/dnszones/CNAME/read",
+      "Microsoft.Network/dnszones/read"
+    ]
+  }
+]

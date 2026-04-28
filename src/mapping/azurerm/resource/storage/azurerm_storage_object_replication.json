@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Storage/storageAccounts/objectReplicationPolicies/read",
+      "Microsoft.Storage/storageAccounts/objectReplicationPolicies/write",
+      "Microsoft.Storage/storageAccounts/objectReplicationPolicies/delete",
+      "Microsoft.Storage/storageAccounts/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Storage/storageAccounts/objectReplicationPolicies/delete"
+    ],
+    "modify": [
+      "Microsoft.Storage/storageAccounts/objectReplicationPolicies/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Storage/storageAccounts/objectReplicationPolicies/read",
+      "Microsoft.Storage/storageAccounts/read"
+    ]
+  }
+]

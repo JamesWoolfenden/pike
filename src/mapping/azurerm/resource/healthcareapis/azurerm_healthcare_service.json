@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.HealthcareApis/services/read",
+      "Microsoft.HealthcareApis/services/write",
+      "Microsoft.HealthcareApis/services/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.HealthcareApis/services/delete"
+    ],
+    "modify": [
+      "Microsoft.HealthcareApis/services/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.HealthcareApis/services/read"
+    ]
+  }
+]

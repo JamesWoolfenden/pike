@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DesktopVirtualization/scalingplans/read",
+      "Microsoft.DesktopVirtualization/scalingplans/write",
+      "Microsoft.DesktopVirtualization/scalingplans/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.DesktopVirtualization/scalingplans/delete"
+    ],
+    "modify": [
+      "Microsoft.DesktopVirtualization/scalingplans/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DesktopVirtualization/scalingplans/read"
+    ]
+  }
+]

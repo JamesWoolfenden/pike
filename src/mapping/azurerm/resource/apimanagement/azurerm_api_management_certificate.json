@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ApiManagement/service/certificates/read",
+      "Microsoft.ApiManagement/service/certificates/write",
+      "Microsoft.ApiManagement/service/certificates/delete",
+      "Microsoft.ApiManagement/service/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.ApiManagement/service/certificates/delete"
+    ],
+    "modify": [
+      "Microsoft.ApiManagement/service/certificates/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ApiManagement/service/certificates/read",
+      "Microsoft.ApiManagement/service/read"
+    ]
+  }
+]

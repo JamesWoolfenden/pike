@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/networkManagers/connectivityConfigurations/read",
+      "Microsoft.Network/networkManagers/connectivityConfigurations/write",
+      "Microsoft.Network/networkManagers/connectivityConfigurations/delete",
+      "Microsoft.Network/networkManagers/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/networkManagers/connectivityConfigurations/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/networkManagers/connectivityConfigurations/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/networkManagers/connectivityConfigurations/read",
+      "Microsoft.Network/networkManagers/read"
+    ]
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "Microsoft.DevCenter/projects/pools/read",
+      "Microsoft.DevCenter/projects/read"
+    ]
+  }
+]

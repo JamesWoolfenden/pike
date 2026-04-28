@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ContainerService/fleets/members/read",
+      "Microsoft.ContainerService/fleets/members/write",
+      "Microsoft.ContainerService/fleets/members/delete",
+      "Microsoft.ContainerService/fleets/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.ContainerService/fleets/members/delete"
+    ],
+    "modify": [
+      "Microsoft.ContainerService/fleets/members/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ContainerService/fleets/members/read",
+      "Microsoft.ContainerService/fleets/read"
+    ]
+  }
+]

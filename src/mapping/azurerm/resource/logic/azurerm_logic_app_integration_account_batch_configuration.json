@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Logic/integrationAccounts/batchConfigurations/read",
+      "Microsoft.Logic/integrationAccounts/batchConfigurations/write",
+      "Microsoft.Logic/integrationAccounts/batchConfigurations/delete",
+      "Microsoft.Logic/integrationAccounts/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Logic/integrationAccounts/batchConfigurations/delete"
+    ],
+    "modify": [
+      "Microsoft.Logic/integrationAccounts/batchConfigurations/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Logic/integrationAccounts/batchConfigurations/read",
+      "Microsoft.Logic/integrationAccounts/read"
+    ]
+  }
+]

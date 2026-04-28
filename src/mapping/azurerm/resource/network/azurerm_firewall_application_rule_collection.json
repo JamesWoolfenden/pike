@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/azureFirewalls/applicationRuleCollections/read",
+      "Microsoft.Network/azureFirewalls/applicationRuleCollections/write",
+      "Microsoft.Network/azureFirewalls/applicationRuleCollections/delete",
+      "Microsoft.Network/azurefirewalls/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/azureFirewalls/applicationRuleCollections/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/azureFirewalls/applicationRuleCollections/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/azureFirewalls/applicationRuleCollections/read",
+      "Microsoft.Network/azurefirewalls/read"
+    ]
+  }
+]

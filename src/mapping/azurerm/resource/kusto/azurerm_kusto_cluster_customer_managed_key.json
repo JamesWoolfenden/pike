@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Kusto/Clusters/read",
+      "Microsoft.Kusto/Clusters/write",
+      "Microsoft.Kusto/Clusters/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Kusto/Clusters/delete"
+    ],
+    "modify": [
+      "Microsoft.Kusto/Clusters/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Kusto/Clusters/read"
+    ]
+  }
+]

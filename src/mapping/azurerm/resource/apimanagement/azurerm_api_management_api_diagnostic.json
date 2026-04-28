@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ApiManagement/service/apis/diagnostics/read",
+      "Microsoft.ApiManagement/service/apis/diagnostics/write",
+      "Microsoft.ApiManagement/service/apis/diagnostics/delete",
+      "Microsoft.ApiManagement/service/read",
+      "Microsoft.ApiManagement/service/apis/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.ApiManagement/service/apis/diagnostics/delete"
+    ],
+    "modify": [
+      "Microsoft.ApiManagement/service/apis/diagnostics/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ApiManagement/service/apis/diagnostics/read",
+      "Microsoft.ApiManagement/service/read",
+      "Microsoft.ApiManagement/service/apis/read"
+    ]
+  }
+]

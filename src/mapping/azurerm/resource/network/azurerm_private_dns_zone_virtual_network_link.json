@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/privateDnsZones/virtualNetworkLinks/read",
+      "Microsoft.Network/privateDnsZones/virtualNetworkLinks/write",
+      "Microsoft.Network/privateDnsZones/virtualNetworkLinks/delete",
+      "Microsoft.Network/privateDnsZones/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/privateDnsZones/virtualNetworkLinks/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/privateDnsZones/virtualNetworkLinks/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/privateDnsZones/virtualNetworkLinks/read",
+      "Microsoft.Network/privateDnsZones/read"
+    ]
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AzureStackHCI/NetworkInterfaces/Read",
+      "Microsoft.AzureStackHCI/NetworkInterfaces/Write",
+      "Microsoft.AzureStackHCI/NetworkInterfaces/Delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.AzureStackHCI/NetworkInterfaces/Delete"
+    ],
+    "modify": [
+      "Microsoft.AzureStackHCI/NetworkInterfaces/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AzureStackHCI/NetworkInterfaces/Read"
+    ]
+  }
+]

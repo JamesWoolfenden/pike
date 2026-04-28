@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.HealthcareApis/workspaces/iotconnectors/fhirdestinations/read",
+      "Microsoft.HealthcareApis/workspaces/iotconnectors/fhirdestinations/write",
+      "Microsoft.HealthcareApis/workspaces/iotconnectors/fhirdestinations/delete",
+      "Microsoft.HealthcareApis/workspaces/read",
+      "Microsoft.HealthcareApis/workspaces/iotconnectors/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.HealthcareApis/workspaces/iotconnectors/fhirdestinations/delete"
+    ],
+    "modify": [
+      "Microsoft.HealthcareApis/workspaces/iotconnectors/fhirdestinations/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.HealthcareApis/workspaces/iotconnectors/fhirdestinations/read",
+      "Microsoft.HealthcareApis/workspaces/read",
+      "Microsoft.HealthcareApis/workspaces/iotconnectors/read"
+    ]
+  }
+]

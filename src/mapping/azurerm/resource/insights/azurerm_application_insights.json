@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Insights/Components/Read",
+      "Microsoft.Insights/Components/Write",
+      "Microsoft.Insights/Components/Delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Insights/Components/Delete"
+    ],
+    "modify": [
+      "Microsoft.Insights/Components/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Insights/Components/Read"
+    ]
+  }
+]

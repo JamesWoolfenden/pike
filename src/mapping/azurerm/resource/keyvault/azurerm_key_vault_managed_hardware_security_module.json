@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.KeyVault/managedHSMs/read",
+      "Microsoft.KeyVault/managedHSMs/write",
+      "Microsoft.KeyVault/managedHSMs/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.KeyVault/managedHSMs/delete"
+    ],
+    "modify": [
+      "Microsoft.KeyVault/managedHSMs/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.KeyVault/managedHSMs/read"
+    ]
+  }
+]

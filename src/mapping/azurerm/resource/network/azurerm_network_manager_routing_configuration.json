@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/networkManagers/routingConfigurations/read",
+      "Microsoft.Network/networkManagers/routingConfigurations/write",
+      "Microsoft.Network/networkManagers/routingConfigurations/delete",
+      "Microsoft.Network/networkManagers/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/networkManagers/routingConfigurations/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/networkManagers/routingConfigurations/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/networkManagers/routingConfigurations/read",
+      "Microsoft.Network/networkManagers/read"
+    ]
+  }
+]

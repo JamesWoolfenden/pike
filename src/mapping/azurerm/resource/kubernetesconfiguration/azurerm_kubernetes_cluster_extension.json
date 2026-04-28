@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.KubernetesConfiguration/extensions/read",
+      "Microsoft.KubernetesConfiguration/extensions/write",
+      "Microsoft.KubernetesConfiguration/extensions/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.KubernetesConfiguration/extensions/delete"
+    ],
+    "modify": [
+      "Microsoft.KubernetesConfiguration/extensions/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.KubernetesConfiguration/extensions/read"
+    ]
+  }
+]

@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ApiManagement/service/apiVersionSets/read",
+      "Microsoft.ApiManagement/service/apiVersionSets/write",
+      "Microsoft.ApiManagement/service/apiVersionSets/delete",
+      "Microsoft.ApiManagement/service/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.ApiManagement/service/apiVersionSets/delete"
+    ],
+    "modify": [
+      "Microsoft.ApiManagement/service/apiVersionSets/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ApiManagement/service/apiVersionSets/read",
+      "Microsoft.ApiManagement/service/read"
+    ]
+  }
+]

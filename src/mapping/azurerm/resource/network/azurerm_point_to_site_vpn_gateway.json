@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/p2sVpnGateways/read",
+      "Microsoft.Network/p2sVpnGateways/write",
+      "Microsoft.Network/p2sVpnGateways/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/p2sVpnGateways/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/p2sVpnGateways/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/p2sVpnGateways/read"
+    ]
+  }
+]

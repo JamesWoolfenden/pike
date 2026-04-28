@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.SCVMM/clouds/Read",
+      "Microsoft.SCVMM/clouds/Write",
+      "Microsoft.SCVMM/clouds/Delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.SCVMM/clouds/Delete"
+    ],
+    "modify": [
+      "Microsoft.SCVMM/clouds/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.SCVMM/clouds/Read"
+    ]
+  }
+]

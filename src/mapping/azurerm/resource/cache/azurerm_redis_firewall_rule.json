@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Cache/redis/firewallRules/read",
+      "Microsoft.Cache/redis/firewallRules/write",
+      "Microsoft.Cache/redis/firewallRules/delete",
+      "Microsoft.Cache/redis/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Cache/redis/firewallRules/delete"
+    ],
+    "modify": [
+      "Microsoft.Cache/redis/firewallRules/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Cache/redis/firewallRules/read",
+      "Microsoft.Cache/redis/read"
+    ]
+  }
+]

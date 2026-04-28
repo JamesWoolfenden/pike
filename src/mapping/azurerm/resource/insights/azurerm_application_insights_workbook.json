@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Insights/Workbooks/Read",
+      "Microsoft.Insights/Workbooks/Write",
+      "Microsoft.Insights/Workbooks/Delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Insights/Workbooks/Delete"
+    ],
+    "modify": [
+      "Microsoft.Insights/Workbooks/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Insights/Workbooks/Read"
+    ]
+  }
+]

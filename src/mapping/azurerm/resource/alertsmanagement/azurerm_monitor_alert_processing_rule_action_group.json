@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AlertsManagement/actionRules/read",
+      "Microsoft.AlertsManagement/actionRules/write",
+      "Microsoft.AlertsManagement/actionRules/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.AlertsManagement/actionRules/delete"
+    ],
+    "modify": [
+      "Microsoft.AlertsManagement/actionRules/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AlertsManagement/actionRules/read"
+    ]
+  }
+]

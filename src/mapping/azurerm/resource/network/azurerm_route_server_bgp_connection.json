@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/virtualHubs/bgpConnections/read",
+      "Microsoft.Network/virtualHubs/bgpConnections/write",
+      "Microsoft.Network/virtualHubs/bgpConnections/delete",
+      "Microsoft.Network/virtualHubs/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/virtualHubs/bgpConnections/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/virtualHubs/bgpConnections/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/virtualHubs/bgpConnections/read",
+      "Microsoft.Network/virtualHubs/read"
+    ]
+  }
+]

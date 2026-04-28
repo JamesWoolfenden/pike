@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.VideoIndexer/accounts/read",
+      "Microsoft.VideoIndexer/accounts/write",
+      "Microsoft.VideoIndexer/accounts/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.VideoIndexer/accounts/delete"
+    ],
+    "modify": [
+      "Microsoft.VideoIndexer/accounts/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.VideoIndexer/accounts/read"
+    ]
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "Oracle.Database/cloudExadataInfrastructures/dbServers/read",
+      "Oracle.Database/cloudExadataInfrastructures/read"
+    ]
+  }
+]

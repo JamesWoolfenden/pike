@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "Microsoft.HealthcareApis/workspaces/fhirservices/read",
+      "Microsoft.HealthcareApis/workspaces/read"
+    ]
+  }
+]

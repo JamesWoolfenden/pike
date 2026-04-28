@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "microsoft.web/sourcecontrols/read",
+      "microsoft.web/sourcecontrols/write"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [
+      "microsoft.web/sourcecontrols/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "microsoft.web/sourcecontrols/read"
+    ]
+  }
+]

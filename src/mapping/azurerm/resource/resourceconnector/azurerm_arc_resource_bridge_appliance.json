@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ResourceConnector/appliances/read",
+      "Microsoft.ResourceConnector/appliances/write",
+      "Microsoft.ResourceConnector/appliances/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.ResourceConnector/appliances/delete"
+    ],
+    "modify": [
+      "Microsoft.ResourceConnector/appliances/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ResourceConnector/appliances/read"
+    ]
+  }
+]

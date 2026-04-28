@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.SCVMM/virtualnetworks/Read",
+      "Microsoft.SCVMM/virtualnetworks/Write",
+      "Microsoft.SCVMM/virtualnetworks/Delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.SCVMM/virtualnetworks/Delete"
+    ],
+    "modify": [
+      "Microsoft.SCVMM/virtualnetworks/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.SCVMM/virtualnetworks/Read"
+    ]
+  }
+]

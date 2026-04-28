@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/dnsForwardingRulesets/read",
+      "Microsoft.Network/dnsForwardingRulesets/write",
+      "Microsoft.Network/dnsForwardingRulesets/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/dnsForwardingRulesets/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/dnsForwardingRulesets/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/dnsForwardingRulesets/read"
+    ]
+  }
+]

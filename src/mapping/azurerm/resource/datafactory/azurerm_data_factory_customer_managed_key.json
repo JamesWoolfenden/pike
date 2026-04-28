@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DataFactory/factories/read",
+      "Microsoft.DataFactory/factories/write",
+      "Microsoft.DataFactory/factories/delete",
+      "Microsoft.DataFactory/factories/operationResults/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.DataFactory/factories/delete"
+    ],
+    "modify": [
+      "Microsoft.DataFactory/factories/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DataFactory/factories/read"
+    ]
+  }
+]

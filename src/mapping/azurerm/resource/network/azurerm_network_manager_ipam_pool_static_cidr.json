@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "microsoft.network/networkmanagers/ipampools/staticcidrs/read",
+      "microsoft.network/networkmanagers/ipampools/staticcidrs/write",
+      "microsoft.network/networkmanagers/ipampools/staticcidrs/delete",
+      "Microsoft.Network/networkManagers/read",
+      "Microsoft.Network/networkManagers/ipamPools/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "microsoft.network/networkmanagers/ipampools/staticcidrs/delete"
+    ],
+    "modify": [
+      "microsoft.network/networkmanagers/ipampools/staticcidrs/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "microsoft.network/networkmanagers/ipampools/staticcidrs/read",
+      "Microsoft.Network/networkManagers/read",
+      "Microsoft.Network/networkManagers/ipamPools/read"
+    ]
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "Microsoft.DataShare/accounts/shares/read",
+      "Microsoft.DataShare/accounts/read"
+    ]
+  }
+]

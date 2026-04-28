@@ -1,0 +1,30 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/read",
+      "Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/write",
+      "Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/delete",
+      "Microsoft.RecoveryServices/Vaults/read",
+      "Microsoft.RecoveryServices/vaults/replicationFabrics/read",
+      "Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/read",
+      "Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/operationresults/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/delete"
+    ],
+    "modify": [
+      "Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/read",
+      "Microsoft.RecoveryServices/Vaults/read",
+      "Microsoft.RecoveryServices/vaults/replicationFabrics/read",
+      "Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/read"
+    ]
+  }
+]

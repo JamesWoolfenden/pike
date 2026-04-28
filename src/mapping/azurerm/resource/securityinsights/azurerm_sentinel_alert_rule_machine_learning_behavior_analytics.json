@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.SecurityInsights/alertRules/read",
+      "Microsoft.SecurityInsights/alertRules/write",
+      "Microsoft.SecurityInsights/alertRules/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.SecurityInsights/alertRules/delete"
+    ],
+    "modify": [
+      "Microsoft.SecurityInsights/alertRules/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.SecurityInsights/alertRules/read"
+    ]
+  }
+]

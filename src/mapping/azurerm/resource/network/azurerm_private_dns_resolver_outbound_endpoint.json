@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/dnsResolvers/outboundEndpoints/read",
+      "Microsoft.Network/dnsResolvers/outboundEndpoints/write",
+      "Microsoft.Network/dnsResolvers/outboundEndpoints/delete",
+      "Microsoft.Network/dnsResolvers/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/dnsResolvers/outboundEndpoints/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/dnsResolvers/outboundEndpoints/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/dnsResolvers/outboundEndpoints/read",
+      "Microsoft.Network/dnsResolvers/read"
+    ]
+  }
+]

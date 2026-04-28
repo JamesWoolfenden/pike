@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AzureStackHCI/VirtualHardDisks/Read",
+      "Microsoft.AzureStackHCI/VirtualHardDisks/Write",
+      "Microsoft.AzureStackHCI/VirtualHardDisks/Delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.AzureStackHCI/VirtualHardDisks/Delete"
+    ],
+    "modify": [
+      "Microsoft.AzureStackHCI/VirtualHardDisks/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AzureStackHCI/VirtualHardDisks/Read"
+    ]
+  }
+]

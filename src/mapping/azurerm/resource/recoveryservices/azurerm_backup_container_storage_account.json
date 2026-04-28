@@ -1,0 +1,26 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/read",
+      "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/write",
+      "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/delete",
+      "Microsoft.RecoveryServices/Vaults/read",
+      "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/operationResults/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/delete"
+    ],
+    "modify": [
+      "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/read",
+      "Microsoft.RecoveryServices/Vaults/read"
+    ]
+  }
+]

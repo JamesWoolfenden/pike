@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Insights/ActivityLogAlerts/Read",
+      "Microsoft.Insights/ActivityLogAlerts/Write",
+      "Microsoft.Insights/ActivityLogAlerts/Delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Insights/ActivityLogAlerts/Delete"
+    ],
+    "modify": [
+      "Microsoft.Insights/ActivityLogAlerts/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Insights/ActivityLogAlerts/Read"
+    ]
+  }
+]

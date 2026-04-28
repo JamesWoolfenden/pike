@@ -1,0 +1,17 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "microsoft.app/containerapps/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "microsoft.app/containerapps/read"
+    ]
+  }
+]

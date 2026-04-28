@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Cache/redis/accessPolicyAssignments/read",
+      "Microsoft.Cache/redis/accessPolicyAssignments/write",
+      "Microsoft.Cache/redis/accessPolicyAssignments/delete",
+      "Microsoft.Cache/redis/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Cache/redis/accessPolicyAssignments/delete"
+    ],
+    "modify": [
+      "Microsoft.Cache/redis/accessPolicyAssignments/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Cache/redis/accessPolicyAssignments/read",
+      "Microsoft.Cache/redis/read"
+    ]
+  }
+]

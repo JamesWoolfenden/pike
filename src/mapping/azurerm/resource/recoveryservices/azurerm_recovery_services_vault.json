@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.RecoveryServices/Vaults/read",
+      "Microsoft.RecoveryServices/Vaults/write",
+      "Microsoft.RecoveryServices/Vaults/delete",
+      "Microsoft.RecoveryServices/Vaults/operationResults/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.RecoveryServices/Vaults/delete"
+    ],
+    "modify": [
+      "Microsoft.RecoveryServices/Vaults/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.RecoveryServices/Vaults/read"
+    ]
+  }
+]

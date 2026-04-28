@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DesktopVirtualization/applicationgroups/read",
+      "Microsoft.DesktopVirtualization/applicationgroups/write",
+      "Microsoft.DesktopVirtualization/applicationgroups/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.DesktopVirtualization/applicationgroups/delete"
+    ],
+    "modify": [
+      "Microsoft.DesktopVirtualization/applicationgroups/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DesktopVirtualization/applicationgroups/read"
+    ]
+  }
+]

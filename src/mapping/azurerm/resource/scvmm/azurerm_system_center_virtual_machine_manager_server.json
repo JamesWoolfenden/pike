@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.SCVMM/vmmservers/Read",
+      "Microsoft.SCVMM/vmmservers/Write",
+      "Microsoft.SCVMM/vmmservers/Delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.SCVMM/vmmservers/Delete"
+    ],
+    "modify": [
+      "Microsoft.SCVMM/vmmservers/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.SCVMM/vmmservers/Read"
+    ]
+  }
+]

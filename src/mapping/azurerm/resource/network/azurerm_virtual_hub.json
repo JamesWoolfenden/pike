@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/virtualHubs/read",
+      "Microsoft.Network/virtualHubs/write",
+      "Microsoft.Network/virtualHubs/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/virtualHubs/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/virtualHubs/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/virtualHubs/read"
+    ]
+  }
+]

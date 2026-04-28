@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/trafficManagerProfiles/read",
+      "Microsoft.Network/trafficManagerProfiles/write",
+      "Microsoft.Network/trafficManagerProfiles/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/trafficManagerProfiles/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/trafficManagerProfiles/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/trafficManagerProfiles/read"
+    ]
+  }
+]

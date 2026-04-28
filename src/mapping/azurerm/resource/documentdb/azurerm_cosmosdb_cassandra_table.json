@@ -1,0 +1,28 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DocumentDB/databaseAccounts/cassandraKeyspaces/tables/read",
+      "Microsoft.DocumentDB/databaseAccounts/cassandraKeyspaces/tables/write",
+      "Microsoft.DocumentDB/databaseAccounts/cassandraKeyspaces/tables/delete",
+      "Microsoft.DocumentDB/databaseAccounts/read",
+      "Microsoft.DocumentDB/databaseAccounts/cassandraKeyspaces/read",
+      "Microsoft.DocumentDB/databaseAccounts/cassandraKeyspaces/tables/operationResults/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.DocumentDB/databaseAccounts/cassandraKeyspaces/tables/delete"
+    ],
+    "modify": [
+      "Microsoft.DocumentDB/databaseAccounts/cassandraKeyspaces/tables/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DocumentDB/databaseAccounts/cassandraKeyspaces/tables/read",
+      "Microsoft.DocumentDB/databaseAccounts/read",
+      "Microsoft.DocumentDB/databaseAccounts/cassandraKeyspaces/read"
+    ]
+  }
+]

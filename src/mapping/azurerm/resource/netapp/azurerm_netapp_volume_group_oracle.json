@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.NetApp/netAppAccounts/volumeGroups/read",
+      "Microsoft.NetApp/netAppAccounts/volumeGroups/write",
+      "Microsoft.NetApp/netAppAccounts/volumeGroups/delete",
+      "Microsoft.NetApp/netAppAccounts/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.NetApp/netAppAccounts/volumeGroups/delete"
+    ],
+    "modify": [
+      "Microsoft.NetApp/netAppAccounts/volumeGroups/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.NetApp/netAppAccounts/volumeGroups/read",
+      "Microsoft.NetApp/netAppAccounts/read"
+    ]
+  }
+]

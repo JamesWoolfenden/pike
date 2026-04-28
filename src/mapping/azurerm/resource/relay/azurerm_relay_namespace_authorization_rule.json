@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Relay/namespaces/authorizationRules/read",
+      "Microsoft.Relay/namespaces/authorizationRules/write",
+      "Microsoft.Relay/namespaces/authorizationRules/delete",
+      "Microsoft.Relay/namespaces/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Relay/namespaces/authorizationRules/delete"
+    ],
+    "modify": [
+      "Microsoft.Relay/namespaces/authorizationRules/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Relay/namespaces/authorizationRules/read",
+      "Microsoft.Relay/namespaces/read"
+    ]
+  }
+]

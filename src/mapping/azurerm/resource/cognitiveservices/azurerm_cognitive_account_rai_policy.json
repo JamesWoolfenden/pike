@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.CognitiveServices/accounts/raiPolicies/read",
+      "Microsoft.CognitiveServices/accounts/raiPolicies/write",
+      "Microsoft.CognitiveServices/accounts/raiPolicies/delete",
+      "Microsoft.CognitiveServices/accounts/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.CognitiveServices/accounts/raiPolicies/delete"
+    ],
+    "modify": [
+      "Microsoft.CognitiveServices/accounts/raiPolicies/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.CognitiveServices/accounts/raiPolicies/read",
+      "Microsoft.CognitiveServices/accounts/read"
+    ]
+  }
+]

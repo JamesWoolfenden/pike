@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DataBoxEdge/dataBoxEdgeDevices/read",
+      "Microsoft.DataBoxEdge/dataBoxEdgeDevices/write",
+      "Microsoft.DataBoxEdge/dataBoxEdgeDevices/delete",
+      "Microsoft.DataBoxEdge/dataBoxEdgeDevices/operationResults/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.DataBoxEdge/dataBoxEdgeDevices/delete"
+    ],
+    "modify": [
+      "Microsoft.DataBoxEdge/dataBoxEdgeDevices/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DataBoxEdge/dataBoxEdgeDevices/read"
+    ]
+  }
+]

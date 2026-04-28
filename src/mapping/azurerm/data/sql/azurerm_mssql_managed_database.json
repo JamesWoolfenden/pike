@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "Microsoft.Sql/managedInstances/databases/read",
+      "Microsoft.Sql/managedInstances/read"
+    ]
+  }
+]

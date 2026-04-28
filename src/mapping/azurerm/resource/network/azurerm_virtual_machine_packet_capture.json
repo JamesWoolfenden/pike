@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/networkWatchers/packetCaptures/read",
+      "Microsoft.Network/networkWatchers/packetCaptures/write",
+      "Microsoft.Network/networkWatchers/packetCaptures/delete",
+      "Microsoft.Network/networkWatchers/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/networkWatchers/packetCaptures/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/networkWatchers/packetCaptures/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/networkWatchers/packetCaptures/read",
+      "Microsoft.Network/networkWatchers/read"
+    ]
+  }
+]

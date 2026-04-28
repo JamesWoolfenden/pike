@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Relay/namespaces/HybridConnections/authorizationRules/read",
+      "Microsoft.Relay/namespaces/HybridConnections/authorizationRules/write",
+      "Microsoft.Relay/namespaces/HybridConnections/authorizationRules/delete",
+      "Microsoft.Relay/namespaces/read",
+      "Microsoft.Relay/namespaces/HybridConnections/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Relay/namespaces/HybridConnections/authorizationRules/delete"
+    ],
+    "modify": [
+      "Microsoft.Relay/namespaces/HybridConnections/authorizationRules/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Relay/namespaces/HybridConnections/authorizationRules/read",
+      "Microsoft.Relay/namespaces/read",
+      "Microsoft.Relay/namespaces/HybridConnections/read"
+    ]
+  }
+]

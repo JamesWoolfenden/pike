@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DigitalTwins/digitalTwinsInstances/endpoints/read",
+      "Microsoft.DigitalTwins/digitalTwinsInstances/endpoints/write",
+      "Microsoft.DigitalTwins/digitalTwinsInstances/endpoints/delete",
+      "Microsoft.DigitalTwins/digitalTwinsInstances/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.DigitalTwins/digitalTwinsInstances/endpoints/delete"
+    ],
+    "modify": [
+      "Microsoft.DigitalTwins/digitalTwinsInstances/endpoints/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DigitalTwins/digitalTwinsInstances/endpoints/read",
+      "Microsoft.DigitalTwins/digitalTwinsInstances/read"
+    ]
+  }
+]

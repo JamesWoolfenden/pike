@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Relay/namespaces/read",
+      "Microsoft.Relay/namespaces/write",
+      "Microsoft.Relay/namespaces/Delete",
+      "Microsoft.Relay/namespaces/operationresults/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Relay/namespaces/Delete"
+    ],
+    "modify": [
+      "Microsoft.Relay/namespaces/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Relay/namespaces/read"
+    ]
+  }
+]

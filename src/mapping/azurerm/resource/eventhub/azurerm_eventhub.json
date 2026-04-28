@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.EventHub/namespaces/eventhubs/read",
+      "Microsoft.EventHub/namespaces/eventhubs/write",
+      "Microsoft.EventHub/namespaces/eventhubs/Delete",
+      "Microsoft.EventHub/namespaces/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.EventHub/namespaces/eventhubs/Delete"
+    ],
+    "modify": [
+      "Microsoft.EventHub/namespaces/eventhubs/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.EventHub/namespaces/eventhubs/read",
+      "Microsoft.EventHub/namespaces/read"
+    ]
+  }
+]

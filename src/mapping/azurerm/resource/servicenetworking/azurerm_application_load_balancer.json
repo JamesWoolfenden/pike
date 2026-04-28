@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ServiceNetworking/trafficControllers/read",
+      "Microsoft.ServiceNetworking/trafficControllers/write",
+      "Microsoft.ServiceNetworking/trafficControllers/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.ServiceNetworking/trafficControllers/delete"
+    ],
+    "modify": [
+      "Microsoft.ServiceNetworking/trafficControllers/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ServiceNetworking/trafficControllers/read"
+    ]
+  }
+]

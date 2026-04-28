@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ElasticSan/elasticSans/volumeGroups/read",
+      "Microsoft.ElasticSan/elasticSans/volumeGroups/write",
+      "Microsoft.ElasticSan/elasticSans/volumeGroups/delete",
+      "Microsoft.ElasticSan/elasticSans/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.ElasticSan/elasticSans/volumeGroups/delete"
+    ],
+    "modify": [
+      "Microsoft.ElasticSan/elasticSans/volumeGroups/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ElasticSan/elasticSans/volumeGroups/read",
+      "Microsoft.ElasticSan/elasticSans/read"
+    ]
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ServiceBus/namespaces/topics/subscriptions/read",
+      "Microsoft.ServiceBus/namespaces/topics/subscriptions/write",
+      "Microsoft.ServiceBus/namespaces/topics/subscriptions/Delete",
+      "Microsoft.ServiceBus/namespaces/read",
+      "Microsoft.ServiceBus/namespaces/topics/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.ServiceBus/namespaces/topics/subscriptions/Delete"
+    ],
+    "modify": [
+      "Microsoft.ServiceBus/namespaces/topics/subscriptions/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ServiceBus/namespaces/topics/subscriptions/read",
+      "Microsoft.ServiceBus/namespaces/read",
+      "Microsoft.ServiceBus/namespaces/topics/read"
+    ]
+  }
+]

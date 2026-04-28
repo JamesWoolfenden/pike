@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.EventGrid/domains/read",
+      "Microsoft.EventGrid/domains/write",
+      "Microsoft.EventGrid/domains/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.EventGrid/domains/delete"
+    ],
+    "modify": [
+      "Microsoft.EventGrid/domains/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.EventGrid/domains/read"
+    ]
+  }
+]

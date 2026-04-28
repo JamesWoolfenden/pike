@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Batch/batchAccounts/applications/read",
+      "Microsoft.Batch/batchAccounts/applications/write",
+      "Microsoft.Batch/batchAccounts/applications/delete",
+      "Microsoft.Batch/batchAccounts/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Batch/batchAccounts/applications/delete"
+    ],
+    "modify": [
+      "Microsoft.Batch/batchAccounts/applications/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Batch/batchAccounts/applications/read",
+      "Microsoft.Batch/batchAccounts/read"
+    ]
+  }
+]

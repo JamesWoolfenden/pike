@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.OperationalInsights/querypacks/read",
+      "Microsoft.OperationalInsights/querypacks/write",
+      "Microsoft.OperationalInsights/querypacks/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.OperationalInsights/querypacks/delete"
+    ],
+    "modify": [
+      "Microsoft.OperationalInsights/querypacks/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.OperationalInsights/querypacks/read"
+    ]
+  }
+]

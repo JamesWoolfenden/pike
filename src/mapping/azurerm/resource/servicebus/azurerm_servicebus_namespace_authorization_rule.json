@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ServiceBus/namespaces/authorizationRules/read",
+      "Microsoft.ServiceBus/namespaces/authorizationRules/write",
+      "Microsoft.ServiceBus/namespaces/authorizationRules/delete",
+      "Microsoft.ServiceBus/namespaces/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.ServiceBus/namespaces/authorizationRules/delete"
+    ],
+    "modify": [
+      "Microsoft.ServiceBus/namespaces/authorizationRules/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ServiceBus/namespaces/authorizationRules/read",
+      "Microsoft.ServiceBus/namespaces/read"
+    ]
+  }
+]

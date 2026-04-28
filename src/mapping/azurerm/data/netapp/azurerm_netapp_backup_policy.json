@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "Microsoft.NetApp/netAppAccounts/backupPolicies/read",
+      "Microsoft.NetApp/netAppAccounts/read"
+    ]
+  }
+]

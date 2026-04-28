@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.HealthcareApis/workspaces/fhirservices/read",
+      "Microsoft.HealthcareApis/workspaces/fhirservices/write",
+      "Microsoft.HealthcareApis/workspaces/fhirservices/delete",
+      "Microsoft.HealthcareApis/workspaces/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.HealthcareApis/workspaces/fhirservices/delete"
+    ],
+    "modify": [
+      "Microsoft.HealthcareApis/workspaces/fhirservices/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.HealthcareApis/workspaces/fhirservices/read",
+      "Microsoft.HealthcareApis/workspaces/read"
+    ]
+  }
+]

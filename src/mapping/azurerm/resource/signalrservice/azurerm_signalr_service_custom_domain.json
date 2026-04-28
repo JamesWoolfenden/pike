@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.SignalRService/SignalR/customDomains/read",
+      "Microsoft.SignalRService/SignalR/customDomains/write",
+      "Microsoft.SignalRService/SignalR/customDomains/delete",
+      "Microsoft.SignalRService/SignalR/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.SignalRService/SignalR/customDomains/delete"
+    ],
+    "modify": [
+      "Microsoft.SignalRService/SignalR/customDomains/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.SignalRService/SignalR/customDomains/read",
+      "Microsoft.SignalRService/SignalR/read"
+    ]
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Security/assessmentMetadata/read",
+      "Microsoft.Security/assessmentMetadata/write"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [
+      "Microsoft.Security/assessmentMetadata/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Security/assessmentMetadata/read"
+    ]
+  }
+]

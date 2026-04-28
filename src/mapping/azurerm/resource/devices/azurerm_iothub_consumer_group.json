@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Devices/iotHubs/eventHubEndpoints/consumerGroups/Read",
+      "Microsoft.Devices/iotHubs/eventHubEndpoints/consumerGroups/Write",
+      "Microsoft.Devices/iotHubs/eventHubEndpoints/consumerGroups/Delete",
+      "Microsoft.Devices/iotHubs/Read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Devices/iotHubs/eventHubEndpoints/consumerGroups/Delete"
+    ],
+    "modify": [
+      "Microsoft.Devices/iotHubs/eventHubEndpoints/consumerGroups/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Devices/iotHubs/eventHubEndpoints/consumerGroups/Read",
+      "Microsoft.Devices/iotHubs/Read"
+    ]
+  }
+]

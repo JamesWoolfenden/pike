@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DBforPostgreSQL/flexibleServers/backups/read",
+      "Microsoft.DBforPostgreSQL/flexibleServers/backups/write",
+      "Microsoft.DBforPostgreSQL/flexibleServers/backups/delete",
+      "Microsoft.DBforPostgreSQL/flexibleServers/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.DBforPostgreSQL/flexibleServers/backups/delete"
+    ],
+    "modify": [
+      "Microsoft.DBforPostgreSQL/flexibleServers/backups/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DBforPostgreSQL/flexibleServers/backups/read",
+      "Microsoft.DBforPostgreSQL/flexibleServers/read"
+    ]
+  }
+]

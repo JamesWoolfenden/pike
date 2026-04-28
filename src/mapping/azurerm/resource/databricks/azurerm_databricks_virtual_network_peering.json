@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Databricks/workspaces/virtualNetworkPeerings/read",
+      "Microsoft.Databricks/workspaces/virtualNetworkPeerings/write",
+      "Microsoft.Databricks/workspaces/virtualNetworkPeerings/delete",
+      "Microsoft.Databricks/workspaces/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Databricks/workspaces/virtualNetworkPeerings/delete"
+    ],
+    "modify": [
+      "Microsoft.Databricks/workspaces/virtualNetworkPeerings/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Databricks/workspaces/virtualNetworkPeerings/read",
+      "Microsoft.Databricks/workspaces/read"
+    ]
+  }
+]

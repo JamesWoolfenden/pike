@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DataShare/accounts/read",
+      "Microsoft.DataShare/accounts/write",
+      "Microsoft.DataShare/accounts/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.DataShare/accounts/delete"
+    ],
+    "modify": [
+      "Microsoft.DataShare/accounts/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DataShare/accounts/read"
+    ]
+  }
+]

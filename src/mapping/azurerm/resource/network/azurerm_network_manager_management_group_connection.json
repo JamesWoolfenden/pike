@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/networkManagerConnections/read",
+      "Microsoft.Network/networkManagerConnections/write",
+      "Microsoft.Network/networkManagerConnections/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/networkManagerConnections/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/networkManagerConnections/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/networkManagerConnections/read"
+    ]
+  }
+]

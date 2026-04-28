@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Sql/managedInstances/read",
+      "Microsoft.Sql/managedInstances/write",
+      "Microsoft.Sql/managedInstances/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Sql/managedInstances/delete"
+    ],
+    "modify": [
+      "Microsoft.Sql/managedInstances/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Sql/managedInstances/read"
+    ]
+  }
+]

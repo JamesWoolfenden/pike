@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AzureStackHCI/LogicalNetworks/Read",
+      "Microsoft.AzureStackHCI/LogicalNetworks/Write",
+      "Microsoft.AzureStackHCI/LogicalNetworks/Delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.AzureStackHCI/LogicalNetworks/Delete"
+    ],
+    "modify": [
+      "Microsoft.AzureStackHCI/LogicalNetworks/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AzureStackHCI/LogicalNetworks/Read"
+    ]
+  }
+]

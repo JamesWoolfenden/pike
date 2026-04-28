@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Insights/MetricAlerts/Read",
+      "Microsoft.Insights/MetricAlerts/Write",
+      "Microsoft.Insights/MetricAlerts/Delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Insights/MetricAlerts/Delete"
+    ],
+    "modify": [
+      "Microsoft.Insights/MetricAlerts/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Insights/MetricAlerts/Read"
+    ]
+  }
+]

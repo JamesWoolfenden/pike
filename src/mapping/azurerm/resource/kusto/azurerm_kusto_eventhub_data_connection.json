@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Kusto/Clusters/Databases/DataConnections/read",
+      "Microsoft.Kusto/Clusters/Databases/DataConnections/write",
+      "Microsoft.Kusto/Clusters/Databases/DataConnections/delete",
+      "Microsoft.Kusto/Clusters/read",
+      "Microsoft.Kusto/Clusters/Databases/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Kusto/Clusters/Databases/DataConnections/delete"
+    ],
+    "modify": [
+      "Microsoft.Kusto/Clusters/Databases/DataConnections/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Kusto/Clusters/Databases/DataConnections/read",
+      "Microsoft.Kusto/Clusters/read",
+      "Microsoft.Kusto/Clusters/Databases/read"
+    ]
+  }
+]

@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/virtualHubs/hubVirtualNetworkConnections/read",
+      "Microsoft.Network/virtualHubs/hubVirtualNetworkConnections/write",
+      "Microsoft.Network/virtualHubs/hubVirtualNetworkConnections/delete",
+      "Microsoft.Network/virtualHubs/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/virtualHubs/hubVirtualNetworkConnections/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/virtualHubs/hubVirtualNetworkConnections/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/virtualHubs/hubVirtualNetworkConnections/read",
+      "Microsoft.Network/virtualHubs/read"
+    ]
+  }
+]

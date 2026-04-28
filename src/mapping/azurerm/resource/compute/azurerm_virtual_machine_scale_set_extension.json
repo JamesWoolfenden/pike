@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Compute/virtualMachineScaleSets/extensions/read",
+      "Microsoft.Compute/virtualMachineScaleSets/extensions/write",
+      "Microsoft.Compute/virtualMachineScaleSets/extensions/delete",
+      "Microsoft.Compute/virtualMachineScaleSets/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Compute/virtualMachineScaleSets/extensions/delete"
+    ],
+    "modify": [
+      "Microsoft.Compute/virtualMachineScaleSets/extensions/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Compute/virtualMachineScaleSets/extensions/read",
+      "Microsoft.Compute/virtualMachineScaleSets/read"
+    ]
+  }
+]

@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Compute/virtualMachines/runCommands/read",
+      "Microsoft.Compute/virtualMachines/runCommands/write",
+      "Microsoft.Compute/virtualMachines/runCommands/delete",
+      "Microsoft.Compute/virtualMachines/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Compute/virtualMachines/runCommands/delete"
+    ],
+    "modify": [
+      "Microsoft.Compute/virtualMachines/runCommands/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Compute/virtualMachines/runCommands/read",
+      "Microsoft.Compute/virtualMachines/read"
+    ]
+  }
+]

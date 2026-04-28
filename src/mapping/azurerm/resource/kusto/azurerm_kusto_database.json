@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Kusto/Clusters/Databases/read",
+      "Microsoft.Kusto/Clusters/Databases/write",
+      "Microsoft.Kusto/Clusters/Databases/delete",
+      "Microsoft.Kusto/Clusters/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Kusto/Clusters/Databases/delete"
+    ],
+    "modify": [
+      "Microsoft.Kusto/Clusters/Databases/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Kusto/Clusters/Databases/read",
+      "Microsoft.Kusto/Clusters/read"
+    ]
+  }
+]

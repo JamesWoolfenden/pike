@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/firewallPolicies/read",
+      "Microsoft.Network/firewallPolicies/write",
+      "Microsoft.Network/firewallPolicies/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/firewallPolicies/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/firewallPolicies/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/firewallPolicies/read"
+    ]
+  }
+]

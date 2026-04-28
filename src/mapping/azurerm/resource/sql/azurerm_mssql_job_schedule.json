@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Sql/servers/read",
+      "Microsoft.Sql/servers/jobAgents/read",
+      "Microsoft.Sql/servers/jobAgents/jobs/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Sql/servers/read",
+      "Microsoft.Sql/servers/jobAgents/read",
+      "Microsoft.Sql/servers/jobAgents/jobs/read"
+    ]
+  }
+]

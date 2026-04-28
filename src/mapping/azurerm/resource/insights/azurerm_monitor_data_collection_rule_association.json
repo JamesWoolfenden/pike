@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Insights/DataCollectionRuleAssociations/Read",
+      "Microsoft.Insights/DataCollectionRuleAssociations/Write",
+      "Microsoft.Insights/DataCollectionRuleAssociations/Delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Insights/DataCollectionRuleAssociations/Delete"
+    ],
+    "modify": [
+      "Microsoft.Insights/DataCollectionRuleAssociations/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Insights/DataCollectionRuleAssociations/Read"
+    ]
+  }
+]

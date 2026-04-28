@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Cdn/profiles/rulesets/read",
+      "Microsoft.Cdn/profiles/rulesets/write",
+      "Microsoft.Cdn/profiles/rulesets/delete",
+      "Microsoft.Cdn/profiles/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Cdn/profiles/rulesets/delete"
+    ],
+    "modify": [
+      "Microsoft.Cdn/profiles/rulesets/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Cdn/profiles/rulesets/read",
+      "Microsoft.Cdn/profiles/read"
+    ]
+  }
+]

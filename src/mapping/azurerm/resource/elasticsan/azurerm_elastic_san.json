@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ElasticSan/elasticSans/read",
+      "Microsoft.ElasticSan/elasticSans/write",
+      "Microsoft.ElasticSan/elasticSans/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.ElasticSan/elasticSans/delete"
+    ],
+    "modify": [
+      "Microsoft.ElasticSan/elasticSans/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ElasticSan/elasticSans/read"
+    ]
+  }
+]

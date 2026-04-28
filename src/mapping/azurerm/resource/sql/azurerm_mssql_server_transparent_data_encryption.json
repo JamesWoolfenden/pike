@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Sql/servers/encryptionProtector/read",
+      "Microsoft.Sql/servers/encryptionProtector/write",
+      "Microsoft.Sql/servers/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [
+      "Microsoft.Sql/servers/encryptionProtector/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Sql/servers/encryptionProtector/read",
+      "Microsoft.Sql/servers/read"
+    ]
+  }
+]

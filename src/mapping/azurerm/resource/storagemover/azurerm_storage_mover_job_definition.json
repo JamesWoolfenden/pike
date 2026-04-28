@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.StorageMover/storageMovers/projects/jobDefinitions/read",
+      "Microsoft.StorageMover/storageMovers/projects/jobDefinitions/write",
+      "Microsoft.StorageMover/storageMovers/projects/jobDefinitions/delete",
+      "Microsoft.StorageMover/storageMovers/read",
+      "Microsoft.StorageMover/storageMovers/projects/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.StorageMover/storageMovers/projects/jobDefinitions/delete"
+    ],
+    "modify": [
+      "Microsoft.StorageMover/storageMovers/projects/jobDefinitions/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.StorageMover/storageMovers/projects/jobDefinitions/read",
+      "Microsoft.StorageMover/storageMovers/read",
+      "Microsoft.StorageMover/storageMovers/projects/read"
+    ]
+  }
+]

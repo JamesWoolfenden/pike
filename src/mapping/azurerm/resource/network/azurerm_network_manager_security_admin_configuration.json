@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/networkManagers/securityAdminConfigurations/read",
+      "Microsoft.Network/networkManagers/securityAdminConfigurations/write",
+      "Microsoft.Network/networkManagers/securityAdminConfigurations/delete",
+      "Microsoft.Network/networkManagers/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/networkManagers/securityAdminConfigurations/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/networkManagers/securityAdminConfigurations/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/networkManagers/securityAdminConfigurations/read",
+      "Microsoft.Network/networkManagers/read"
+    ]
+  }
+]

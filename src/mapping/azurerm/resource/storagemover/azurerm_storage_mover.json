@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.StorageMover/storageMovers/read",
+      "Microsoft.StorageMover/storageMovers/write",
+      "Microsoft.StorageMover/storageMovers/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.StorageMover/storageMovers/delete"
+    ],
+    "modify": [
+      "Microsoft.StorageMover/storageMovers/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.StorageMover/storageMovers/read"
+    ]
+  }
+]

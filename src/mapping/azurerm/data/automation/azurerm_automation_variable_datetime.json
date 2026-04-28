@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "Microsoft.Automation/automationAccounts/variables/read",
+      "Microsoft.Automation/automationAccounts/read"
+    ]
+  }
+]

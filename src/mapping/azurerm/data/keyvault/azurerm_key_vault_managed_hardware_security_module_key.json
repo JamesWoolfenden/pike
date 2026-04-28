@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "Microsoft.KeyVault/managedHSMs/keys/read",
+      "Microsoft.KeyVault/managedHSMs/read"
+    ]
+  }
+]

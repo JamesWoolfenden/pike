@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/bastionHosts/read",
+      "Microsoft.Network/bastionHosts/write",
+      "Microsoft.Network/bastionHosts/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/bastionHosts/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/bastionHosts/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/bastionHosts/read"
+    ]
+  }
+]

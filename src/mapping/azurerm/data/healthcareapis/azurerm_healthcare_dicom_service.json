@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "Microsoft.HealthcareApis/workspaces/dicomservices/read",
+      "Microsoft.HealthcareApis/workspaces/read"
+    ]
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "Microsoft.SCVMM/vmmservers/inventoryitems/Read",
+      "Microsoft.SCVMM/vmmservers/Read"
+    ]
+  }
+]

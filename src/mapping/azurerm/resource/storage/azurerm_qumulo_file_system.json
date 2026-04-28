@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Qumulo.Storage/fileSystems/read",
+      "Qumulo.Storage/fileSystems/write",
+      "Qumulo.Storage/fileSystems/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Qumulo.Storage/fileSystems/delete"
+    ],
+    "modify": [
+      "Qumulo.Storage/fileSystems/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Qumulo.Storage/fileSystems/read"
+    ]
+  }
+]

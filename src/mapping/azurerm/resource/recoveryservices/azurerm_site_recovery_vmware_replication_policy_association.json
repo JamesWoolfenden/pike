@@ -1,0 +1,30 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectionContainerMappings/read",
+      "Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectionContainerMappings/write",
+      "Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectionContainerMappings/delete",
+      "Microsoft.RecoveryServices/Vaults/read",
+      "Microsoft.RecoveryServices/vaults/replicationFabrics/read",
+      "Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/read",
+      "Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectionContainerMappings/operationresults/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectionContainerMappings/delete"
+    ],
+    "modify": [
+      "Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectionContainerMappings/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectionContainerMappings/read",
+      "Microsoft.RecoveryServices/Vaults/read",
+      "Microsoft.RecoveryServices/vaults/replicationFabrics/read",
+      "Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/read"
+    ]
+  }
+]

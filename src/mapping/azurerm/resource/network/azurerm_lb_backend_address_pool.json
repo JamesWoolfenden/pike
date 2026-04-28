@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/loadBalancers/backendAddressPools/read",
+      "Microsoft.Network/loadBalancers/backendAddressPools/write",
+      "Microsoft.Network/loadBalancers/backendAddressPools/delete",
+      "Microsoft.Network/loadBalancers/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/loadBalancers/backendAddressPools/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/loadBalancers/backendAddressPools/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/loadBalancers/backendAddressPools/read",
+      "Microsoft.Network/loadBalancers/read"
+    ]
+  }
+]

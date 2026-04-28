@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ServiceNetworking/trafficControllers/securityPolicies/read",
+      "Microsoft.ServiceNetworking/trafficControllers/securityPolicies/write",
+      "Microsoft.ServiceNetworking/trafficControllers/securityPolicies/delete",
+      "Microsoft.ServiceNetworking/trafficControllers/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.ServiceNetworking/trafficControllers/securityPolicies/delete"
+    ],
+    "modify": [
+      "Microsoft.ServiceNetworking/trafficControllers/securityPolicies/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ServiceNetworking/trafficControllers/securityPolicies/read",
+      "Microsoft.ServiceNetworking/trafficControllers/read"
+    ]
+  }
+]

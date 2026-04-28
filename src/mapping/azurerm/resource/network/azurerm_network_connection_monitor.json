@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/networkWatchers/connectionMonitors/read",
+      "Microsoft.Network/networkWatchers/connectionMonitors/write",
+      "Microsoft.Network/networkWatchers/connectionMonitors/delete",
+      "Microsoft.Network/networkWatchers/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/networkWatchers/connectionMonitors/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/networkWatchers/connectionMonitors/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/networkWatchers/connectionMonitors/read",
+      "Microsoft.Network/networkWatchers/read"
+    ]
+  }
+]

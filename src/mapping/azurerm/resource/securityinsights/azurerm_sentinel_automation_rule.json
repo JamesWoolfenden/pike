@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.SecurityInsights/automationRules/read",
+      "Microsoft.SecurityInsights/automationRules/write",
+      "Microsoft.SecurityInsights/automationRules/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.SecurityInsights/automationRules/delete"
+    ],
+    "modify": [
+      "Microsoft.SecurityInsights/automationRules/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.SecurityInsights/automationRules/read"
+    ]
+  }
+]

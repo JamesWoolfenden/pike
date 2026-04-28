@@ -1,0 +1,29 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Sql/servers/jobAgents/jobs/steps/read",
+      "Microsoft.Sql/servers/jobAgents/jobs/steps/write",
+      "Microsoft.Sql/servers/jobAgents/jobs/steps/delete",
+      "Microsoft.Sql/servers/read",
+      "Microsoft.Sql/servers/jobAgents/read",
+      "Microsoft.Sql/servers/jobAgents/jobs/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Sql/servers/jobAgents/jobs/steps/delete"
+    ],
+    "modify": [
+      "Microsoft.Sql/servers/jobAgents/jobs/steps/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Sql/servers/jobAgents/jobs/steps/read",
+      "Microsoft.Sql/servers/read",
+      "Microsoft.Sql/servers/jobAgents/read",
+      "Microsoft.Sql/servers/jobAgents/jobs/read"
+    ]
+  }
+]

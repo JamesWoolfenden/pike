@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Sql/managedInstances/databases/read",
+      "Microsoft.Sql/managedInstances/databases/write",
+      "Microsoft.Sql/managedInstances/databases/delete",
+      "Microsoft.Sql/managedInstances/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Sql/managedInstances/databases/delete"
+    ],
+    "modify": [
+      "Microsoft.Sql/managedInstances/databases/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Sql/managedInstances/databases/read",
+      "Microsoft.Sql/managedInstances/read"
+    ]
+  }
+]

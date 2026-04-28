@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DBforPostgreSQL/flexibleServers/virtualendpoints/read",
+      "Microsoft.DBforPostgreSQL/flexibleServers/virtualendpoints/write",
+      "Microsoft.DBforPostgreSQL/flexibleServers/virtualendpoints/delete",
+      "Microsoft.DBforPostgreSQL/flexibleServers/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.DBforPostgreSQL/flexibleServers/virtualendpoints/delete"
+    ],
+    "modify": [
+      "Microsoft.DBforPostgreSQL/flexibleServers/virtualendpoints/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DBforPostgreSQL/flexibleServers/virtualendpoints/read",
+      "Microsoft.DBforPostgreSQL/flexibleServers/read"
+    ]
+  }
+]

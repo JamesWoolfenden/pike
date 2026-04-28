@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AppPlatform/Spring/applicationAccelerators/customizedAccelerators/read",
+      "Microsoft.AppPlatform/Spring/applicationAccelerators/customizedAccelerators/write",
+      "Microsoft.AppPlatform/Spring/applicationAccelerators/customizedAccelerators/delete",
+      "Microsoft.AppPlatform/Spring/read",
+      "Microsoft.AppPlatform/Spring/applicationAccelerators/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.AppPlatform/Spring/applicationAccelerators/customizedAccelerators/delete"
+    ],
+    "modify": [
+      "Microsoft.AppPlatform/Spring/applicationAccelerators/customizedAccelerators/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AppPlatform/Spring/applicationAccelerators/customizedAccelerators/read",
+      "Microsoft.AppPlatform/Spring/read",
+      "Microsoft.AppPlatform/Spring/applicationAccelerators/read"
+    ]
+  }
+]

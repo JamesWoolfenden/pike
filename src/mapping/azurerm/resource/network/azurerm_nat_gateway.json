@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/natGateways/read",
+      "Microsoft.Network/natGateways/write",
+      "Microsoft.Network/natGateways/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/natGateways/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/natGateways/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/natGateways/read"
+    ]
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "Microsoft.EventHub/namespaces/eventhubs/read",
+      "Microsoft.EventHub/namespaces/read"
+    ]
+  }
+]

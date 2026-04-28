@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/ddosProtectionPlans/read",
+      "Microsoft.Network/ddosProtectionPlans/write",
+      "Microsoft.Network/ddosProtectionPlans/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/ddosProtectionPlans/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/ddosProtectionPlans/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/ddosProtectionPlans/read"
+    ]
+  }
+]

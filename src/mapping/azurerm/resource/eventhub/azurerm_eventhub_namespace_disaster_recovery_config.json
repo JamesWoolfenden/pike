@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.EventHub/namespaces/disasterRecoveryConfigs/read",
+      "Microsoft.EventHub/namespaces/disasterRecoveryConfigs/write",
+      "Microsoft.EventHub/namespaces/disasterRecoveryConfigs/delete",
+      "Microsoft.EventHub/namespaces/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.EventHub/namespaces/disasterRecoveryConfigs/delete"
+    ],
+    "modify": [
+      "Microsoft.EventHub/namespaces/disasterRecoveryConfigs/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.EventHub/namespaces/disasterRecoveryConfigs/read",
+      "Microsoft.EventHub/namespaces/read"
+    ]
+  }
+]

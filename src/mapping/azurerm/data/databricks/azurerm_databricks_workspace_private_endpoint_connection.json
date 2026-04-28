@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "Microsoft.Databricks/workspaces/privateEndpointConnections/read",
+      "Microsoft.Databricks/workspaces/read"
+    ]
+  }
+]

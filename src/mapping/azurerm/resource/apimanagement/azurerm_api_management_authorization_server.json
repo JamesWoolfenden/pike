@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ApiManagement/service/authorizationServers/read",
+      "Microsoft.ApiManagement/service/authorizationServers/write",
+      "Microsoft.ApiManagement/service/authorizationServers/delete",
+      "Microsoft.ApiManagement/service/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.ApiManagement/service/authorizationServers/delete"
+    ],
+    "modify": [
+      "Microsoft.ApiManagement/service/authorizationServers/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ApiManagement/service/authorizationServers/read",
+      "Microsoft.ApiManagement/service/read"
+    ]
+  }
+]

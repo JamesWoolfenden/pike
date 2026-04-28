@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.MachineLearningServices/workspaces/outboundRules/read",
+      "Microsoft.MachineLearningServices/workspaces/outboundRules/write",
+      "Microsoft.MachineLearningServices/workspaces/outboundRules/delete",
+      "Microsoft.MachineLearningServices/workspaces/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.MachineLearningServices/workspaces/outboundRules/delete"
+    ],
+    "modify": [
+      "Microsoft.MachineLearningServices/workspaces/outboundRules/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.MachineLearningServices/workspaces/outboundRules/read",
+      "Microsoft.MachineLearningServices/workspaces/read"
+    ]
+  }
+]

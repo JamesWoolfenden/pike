@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/privateLinkServices/read",
+      "Microsoft.Network/privateLinkServices/write",
+      "Microsoft.Network/privateLinkServices/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/privateLinkServices/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/privateLinkServices/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/privateLinkServices/read"
+    ]
+  }
+]

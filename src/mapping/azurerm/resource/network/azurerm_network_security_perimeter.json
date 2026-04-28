@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/networkSecurityPerimeters/read",
+      "Microsoft.Network/networkSecurityPerimeters/write",
+      "Microsoft.Network/networkSecurityPerimeters/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/networkSecurityPerimeters/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/networkSecurityPerimeters/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/networkSecurityPerimeters/read"
+    ]
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.HybridCompute/privateLinkScopes/read",
+      "Microsoft.HybridCompute/privateLinkScopes/write",
+      "Microsoft.HybridCompute/privateLinkScopes/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.HybridCompute/privateLinkScopes/delete"
+    ],
+    "modify": [
+      "Microsoft.HybridCompute/privateLinkScopes/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.HybridCompute/privateLinkScopes/read"
+    ]
+  }
+]

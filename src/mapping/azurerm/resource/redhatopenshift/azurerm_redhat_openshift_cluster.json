@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.RedHatOpenShift/openShiftClusters/read",
+      "Microsoft.RedHatOpenShift/openShiftClusters/write",
+      "Microsoft.RedHatOpenShift/openShiftClusters/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.RedHatOpenShift/openShiftClusters/delete"
+    ],
+    "modify": [
+      "Microsoft.RedHatOpenShift/openShiftClusters/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.RedHatOpenShift/openShiftClusters/read"
+    ]
+  }
+]

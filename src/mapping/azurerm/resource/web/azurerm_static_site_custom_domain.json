@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Web/staticSites/customdomains/Read",
+      "Microsoft.Web/staticSites/customdomains/Write",
+      "Microsoft.Web/staticSites/customdomains/Delete",
+      "Microsoft.Web/staticSites/Read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Web/staticSites/customdomains/Delete"
+    ],
+    "modify": [
+      "Microsoft.Web/staticSites/customdomains/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Web/staticSites/customdomains/Read",
+      "Microsoft.Web/staticSites/Read"
+    ]
+  }
+]

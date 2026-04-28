@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Oracle.Database/autonomousDatabases/autonomousDatabaseBackups/read",
+      "Oracle.Database/autonomousDatabases/autonomousDatabaseBackups/write",
+      "Oracle.Database/autonomousDatabases/autonomousDatabaseBackups/delete",
+      "Oracle.Database/autonomousDatabases/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Oracle.Database/autonomousDatabases/autonomousDatabaseBackups/delete"
+    ],
+    "modify": [
+      "Oracle.Database/autonomousDatabases/autonomousDatabaseBackups/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Oracle.Database/autonomousDatabases/autonomousDatabaseBackups/read",
+      "Oracle.Database/autonomousDatabases/read"
+    ]
+  }
+]

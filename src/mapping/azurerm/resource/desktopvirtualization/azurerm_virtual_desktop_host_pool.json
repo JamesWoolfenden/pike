@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DesktopVirtualization/hostpools/read",
+      "Microsoft.DesktopVirtualization/hostpools/write",
+      "Microsoft.DesktopVirtualization/hostpools/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.DesktopVirtualization/hostpools/delete"
+    ],
+    "modify": [
+      "Microsoft.DesktopVirtualization/hostpools/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DesktopVirtualization/hostpools/read"
+    ]
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.FluidRelay/fluidRelayServers/read",
+      "Microsoft.FluidRelay/fluidRelayServers/write",
+      "Microsoft.FluidRelay/fluidRelayServers/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.FluidRelay/fluidRelayServers/delete"
+    ],
+    "modify": [
+      "Microsoft.FluidRelay/fluidRelayServers/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.FluidRelay/fluidRelayServers/read"
+    ]
+  }
+]

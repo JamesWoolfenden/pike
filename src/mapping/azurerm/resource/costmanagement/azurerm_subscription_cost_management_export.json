@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.CostManagement/exports/read",
+      "Microsoft.CostManagement/exports/write",
+      "Microsoft.CostManagement/exports/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.CostManagement/exports/delete"
+    ],
+    "modify": [
+      "Microsoft.CostManagement/exports/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.CostManagement/exports/read"
+    ]
+  }
+]

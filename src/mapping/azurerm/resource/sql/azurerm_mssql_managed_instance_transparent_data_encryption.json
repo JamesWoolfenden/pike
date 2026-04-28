@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Sql/managedInstances/encryptionProtector/read",
+      "Microsoft.Sql/managedInstances/encryptionProtector/write",
+      "Microsoft.Sql/managedInstances/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [
+      "Microsoft.Sql/managedInstances/encryptionProtector/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Sql/managedInstances/encryptionProtector/read",
+      "Microsoft.Sql/managedInstances/read"
+    ]
+  }
+]

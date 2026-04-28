@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/azureFirewalls/natRuleCollections/read",
+      "Microsoft.Network/azureFirewalls/natRuleCollections/write",
+      "Microsoft.Network/azureFirewalls/natRuleCollections/delete",
+      "Microsoft.Network/azurefirewalls/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/azureFirewalls/natRuleCollections/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/azureFirewalls/natRuleCollections/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/azureFirewalls/natRuleCollections/read",
+      "Microsoft.Network/azurefirewalls/read"
+    ]
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AlertsManagement/prometheusRuleGroups/read",
+      "Microsoft.AlertsManagement/prometheusRuleGroups/write",
+      "Microsoft.AlertsManagement/prometheusRuleGroups/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.AlertsManagement/prometheusRuleGroups/delete"
+    ],
+    "modify": [
+      "Microsoft.AlertsManagement/prometheusRuleGroups/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AlertsManagement/prometheusRuleGroups/read"
+    ]
+  }
+]

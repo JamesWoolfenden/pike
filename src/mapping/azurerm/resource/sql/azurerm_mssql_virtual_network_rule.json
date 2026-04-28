@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Sql/servers/virtualNetworkRules/read",
+      "Microsoft.Sql/servers/virtualNetworkRules/write",
+      "Microsoft.Sql/servers/virtualNetworkRules/delete",
+      "Microsoft.Sql/servers/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Sql/servers/virtualNetworkRules/delete"
+    ],
+    "modify": [
+      "Microsoft.Sql/servers/virtualNetworkRules/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Sql/servers/virtualNetworkRules/read",
+      "Microsoft.Sql/servers/read"
+    ]
+  }
+]

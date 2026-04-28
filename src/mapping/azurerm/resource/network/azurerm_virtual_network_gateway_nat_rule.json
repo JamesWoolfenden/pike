@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "microsoft.network/virtualNetworkGateways/natRules/read",
+      "microsoft.network/virtualNetworkGateways/natRules/write",
+      "microsoft.network/virtualNetworkGateways/natRules/delete",
+      "Microsoft.Network/virtualNetworkGateways/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "microsoft.network/virtualNetworkGateways/natRules/delete"
+    ],
+    "modify": [
+      "microsoft.network/virtualNetworkGateways/natRules/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "microsoft.network/virtualNetworkGateways/natRules/read",
+      "Microsoft.Network/virtualNetworkGateways/read"
+    ]
+  }
+]

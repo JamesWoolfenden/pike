@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Cache/redisEnterprise/read",
+      "Microsoft.Cache/redisEnterprise/databases/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Cache/redisEnterprise/read",
+      "Microsoft.Cache/redisEnterprise/databases/read"
+    ]
+  }
+]

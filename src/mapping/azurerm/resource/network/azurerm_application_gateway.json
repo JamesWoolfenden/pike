@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/applicationGateways/read",
+      "Microsoft.Network/applicationGateways/write",
+      "Microsoft.Network/applicationGateways/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/applicationGateways/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/applicationGateways/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/applicationGateways/read"
+    ]
+  }
+]

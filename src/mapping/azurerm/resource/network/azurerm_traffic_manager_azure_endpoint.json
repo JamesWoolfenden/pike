@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/trafficManagerProfiles/azureEndpoints/read",
+      "Microsoft.Network/trafficManagerProfiles/azureEndpoints/write",
+      "Microsoft.Network/trafficManagerProfiles/azureEndpoints/delete",
+      "Microsoft.Network/trafficManagerProfiles/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/trafficManagerProfiles/azureEndpoints/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/trafficManagerProfiles/azureEndpoints/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/trafficManagerProfiles/azureEndpoints/read",
+      "Microsoft.Network/trafficManagerProfiles/read"
+    ]
+  }
+]

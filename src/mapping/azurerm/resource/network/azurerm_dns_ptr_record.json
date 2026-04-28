@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/dnszones/PTR/read",
+      "Microsoft.Network/dnszones/PTR/write",
+      "Microsoft.Network/dnszones/PTR/delete",
+      "Microsoft.Network/dnszones/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/dnszones/PTR/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/dnszones/PTR/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/dnszones/PTR/read",
+      "Microsoft.Network/dnszones/read"
+    ]
+  }
+]

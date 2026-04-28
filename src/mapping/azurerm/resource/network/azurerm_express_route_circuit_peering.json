@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/expressRouteCircuits/peerings/read",
+      "Microsoft.Network/expressRouteCircuits/peerings/write",
+      "Microsoft.Network/expressRouteCircuits/peerings/delete",
+      "Microsoft.Network/expressRouteCircuits/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/expressRouteCircuits/peerings/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/expressRouteCircuits/peerings/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/expressRouteCircuits/peerings/read",
+      "Microsoft.Network/expressRouteCircuits/read"
+    ]
+  }
+]

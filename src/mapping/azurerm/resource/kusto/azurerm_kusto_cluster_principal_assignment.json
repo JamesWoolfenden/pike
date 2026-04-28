@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Kusto/Clusters/PrincipalAssignments/read",
+      "Microsoft.Kusto/Clusters/PrincipalAssignments/write",
+      "Microsoft.Kusto/Clusters/PrincipalAssignments/delete",
+      "Microsoft.Kusto/Clusters/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Kusto/Clusters/PrincipalAssignments/delete"
+    ],
+    "modify": [
+      "Microsoft.Kusto/Clusters/PrincipalAssignments/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Kusto/Clusters/PrincipalAssignments/read",
+      "Microsoft.Kusto/Clusters/read"
+    ]
+  }
+]

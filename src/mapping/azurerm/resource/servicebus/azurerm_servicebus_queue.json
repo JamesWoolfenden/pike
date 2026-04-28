@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ServiceBus/namespaces/queues/read",
+      "Microsoft.ServiceBus/namespaces/queues/write",
+      "Microsoft.ServiceBus/namespaces/queues/Delete",
+      "Microsoft.ServiceBus/namespaces/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.ServiceBus/namespaces/queues/Delete"
+    ],
+    "modify": [
+      "Microsoft.ServiceBus/namespaces/queues/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ServiceBus/namespaces/queues/read",
+      "Microsoft.ServiceBus/namespaces/read"
+    ]
+  }
+]

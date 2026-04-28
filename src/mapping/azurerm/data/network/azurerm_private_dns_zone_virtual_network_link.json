@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "Microsoft.Network/privateDnsZones/virtualNetworkLinks/read",
+      "Microsoft.Network/privateDnsZones/read"
+    ]
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Security/advancedThreatProtectionSettings/read",
+      "Microsoft.Security/advancedThreatProtectionSettings/write"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [
+      "Microsoft.Security/advancedThreatProtectionSettings/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Security/advancedThreatProtectionSettings/read"
+    ]
+  }
+]

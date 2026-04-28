@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Authorization/locks/read",
+      "Microsoft.Authorization/locks/write",
+      "Microsoft.Authorization/locks/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Authorization/locks/delete"
+    ],
+    "modify": [
+      "Microsoft.Authorization/locks/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Authorization/locks/read"
+    ]
+  }
+]

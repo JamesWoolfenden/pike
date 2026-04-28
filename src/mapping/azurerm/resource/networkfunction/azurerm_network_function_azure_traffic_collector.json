@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.NetworkFunction/azureTrafficCollectors/read",
+      "Microsoft.NetworkFunction/azureTrafficCollectors/write",
+      "Microsoft.NetworkFunction/azureTrafficCollectors/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.NetworkFunction/azureTrafficCollectors/delete"
+    ],
+    "modify": [
+      "Microsoft.NetworkFunction/azureTrafficCollectors/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.NetworkFunction/azureTrafficCollectors/read"
+    ]
+  }
+]

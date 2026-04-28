@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Insights/PrivateLinkScopes/ScopedResources/Read",
+      "Microsoft.Insights/PrivateLinkScopes/ScopedResources/Write",
+      "Microsoft.Insights/PrivateLinkScopes/ScopedResources/Delete",
+      "Microsoft.Insights/PrivateLinkScopes/Read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Insights/PrivateLinkScopes/ScopedResources/Delete"
+    ],
+    "modify": [
+      "Microsoft.Insights/PrivateLinkScopes/ScopedResources/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Insights/PrivateLinkScopes/ScopedResources/Read",
+      "Microsoft.Insights/PrivateLinkScopes/Read"
+    ]
+  }
+]

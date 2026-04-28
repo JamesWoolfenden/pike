@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DevCenter/devcenters/devboxdefinitions/read",
+      "Microsoft.DevCenter/devcenters/devboxdefinitions/write",
+      "Microsoft.DevCenter/devcenters/devboxdefinitions/delete",
+      "Microsoft.DevCenter/devcenters/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.DevCenter/devcenters/devboxdefinitions/delete"
+    ],
+    "modify": [
+      "Microsoft.DevCenter/devcenters/devboxdefinitions/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DevCenter/devcenters/devboxdefinitions/read",
+      "Microsoft.DevCenter/devcenters/read"
+    ]
+  }
+]

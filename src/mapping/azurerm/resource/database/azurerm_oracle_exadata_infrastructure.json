@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Oracle.Database/cloudExadataInfrastructures/read",
+      "Oracle.Database/cloudExadataInfrastructures/write",
+      "Oracle.Database/cloudExadataInfrastructures/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Oracle.Database/cloudExadataInfrastructures/delete"
+    ],
+    "modify": [
+      "Oracle.Database/cloudExadataInfrastructures/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Oracle.Database/cloudExadataInfrastructures/read"
+    ]
+  }
+]

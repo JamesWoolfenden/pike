@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DevTestLab/labs/virtualMachines/read",
+      "Microsoft.DevTestLab/labs/virtualMachines/write",
+      "Microsoft.DevTestLab/labs/virtualMachines/delete",
+      "Microsoft.DevTestLab/labs/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.DevTestLab/labs/virtualMachines/delete"
+    ],
+    "modify": [
+      "Microsoft.DevTestLab/labs/virtualMachines/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DevTestLab/labs/virtualMachines/read",
+      "Microsoft.DevTestLab/labs/read"
+    ]
+  }
+]

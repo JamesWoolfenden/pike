@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/dnsResolvers/read",
+      "Microsoft.Network/dnsResolvers/write",
+      "Microsoft.Network/dnsResolvers/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/dnsResolvers/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/dnsResolvers/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/dnsResolvers/read"
+    ]
+  }
+]

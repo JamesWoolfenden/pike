@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "microsoft.app/containerapps/read",
+      "microsoft.app/containerapps/write",
+      "microsoft.app/containerapps/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "microsoft.app/containerapps/delete"
+    ],
+    "modify": [
+      "microsoft.app/containerapps/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "microsoft.app/containerapps/read"
+    ]
+  }
+]

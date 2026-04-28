@@ -1,0 +1,26 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Cache/redisEnterprise/databases/read",
+      "Microsoft.Cache/redisEnterprise/databases/write",
+      "Microsoft.Cache/redisEnterprise/databases/delete",
+      "Microsoft.Cache/redisEnterprise/read",
+      "Microsoft.Cache/redisEnterprise/databases/operationResults/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Cache/redisEnterprise/databases/delete"
+    ],
+    "modify": [
+      "Microsoft.Cache/redisEnterprise/databases/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Cache/redisEnterprise/databases/read",
+      "Microsoft.Cache/redisEnterprise/read"
+    ]
+  }
+]

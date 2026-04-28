@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Automation/automationAccounts/variables/read",
+      "Microsoft.Automation/automationAccounts/variables/write",
+      "Microsoft.Automation/automationAccounts/variables/delete",
+      "Microsoft.Automation/automationAccounts/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Automation/automationAccounts/variables/delete"
+    ],
+    "modify": [
+      "Microsoft.Automation/automationAccounts/variables/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Automation/automationAccounts/variables/read",
+      "Microsoft.Automation/automationAccounts/read"
+    ]
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Resources/deploymentScripts/read",
+      "Microsoft.Resources/deploymentScripts/write",
+      "Microsoft.Resources/deploymentScripts/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Resources/deploymentScripts/delete"
+    ],
+    "modify": [
+      "Microsoft.Resources/deploymentScripts/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Resources/deploymentScripts/read"
+    ]
+  }
+]

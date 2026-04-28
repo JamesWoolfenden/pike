@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AppPlatform/Spring/read",
+      "Microsoft.AppPlatform/Spring/write",
+      "Microsoft.AppPlatform/Spring/delete",
+      "Microsoft.AppPlatform/Spring/operationStatuses/read",
+      "Microsoft.AppPlatform/Spring/operationResults/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.AppPlatform/Spring/delete"
+    ],
+    "modify": [
+      "Microsoft.AppPlatform/Spring/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AppPlatform/Spring/read"
+    ]
+  }
+]

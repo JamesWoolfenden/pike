@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Synapse/workspaces/read",
+      "Microsoft.Synapse/workspaces/write",
+      "Microsoft.Synapse/workspaces/delete",
+      "Microsoft.Synapse/workspaces/operationStatuses/read",
+      "Microsoft.Synapse/workspaces/operationResults/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Synapse/workspaces/delete"
+    ],
+    "modify": [
+      "Microsoft.Synapse/workspaces/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Synapse/workspaces/read"
+    ]
+  }
+]

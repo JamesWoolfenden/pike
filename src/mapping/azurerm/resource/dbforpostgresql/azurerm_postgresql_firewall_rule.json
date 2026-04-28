@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DBforPostgreSQL/servers/firewallRules/read",
+      "Microsoft.DBforPostgreSQL/servers/firewallRules/write",
+      "Microsoft.DBforPostgreSQL/servers/firewallRules/delete",
+      "Microsoft.DBforPostgreSQL/servers/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.DBforPostgreSQL/servers/firewallRules/delete"
+    ],
+    "modify": [
+      "Microsoft.DBforPostgreSQL/servers/firewallRules/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DBforPostgreSQL/servers/firewallRules/read",
+      "Microsoft.DBforPostgreSQL/servers/read"
+    ]
+  }
+]

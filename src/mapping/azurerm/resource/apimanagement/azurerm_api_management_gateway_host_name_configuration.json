@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ApiManagement/service/gateways/hostnameConfigurations/read",
+      "Microsoft.ApiManagement/service/gateways/hostnameConfigurations/write",
+      "Microsoft.ApiManagement/service/gateways/hostnameConfigurations/delete",
+      "Microsoft.ApiManagement/service/read",
+      "Microsoft.ApiManagement/service/gateways/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.ApiManagement/service/gateways/hostnameConfigurations/delete"
+    ],
+    "modify": [
+      "Microsoft.ApiManagement/service/gateways/hostnameConfigurations/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ApiManagement/service/gateways/hostnameConfigurations/read",
+      "Microsoft.ApiManagement/service/read",
+      "Microsoft.ApiManagement/service/gateways/read"
+    ]
+  }
+]

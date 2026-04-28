@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Insights/DataCollectionEndpoints/Read",
+      "Microsoft.Insights/DataCollectionEndpoints/Write",
+      "Microsoft.Insights/DataCollectionEndpoints/Delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Insights/DataCollectionEndpoints/Delete"
+    ],
+    "modify": [
+      "Microsoft.Insights/DataCollectionEndpoints/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Insights/DataCollectionEndpoints/Read"
+    ]
+  }
+]

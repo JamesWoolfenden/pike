@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "Microsoft.Network/privateDnsZones/SRV/read",
+      "Microsoft.Network/privateDnsZones/read"
+    ]
+  }
+]

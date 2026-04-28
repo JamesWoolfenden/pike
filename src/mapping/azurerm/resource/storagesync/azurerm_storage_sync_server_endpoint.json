@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.StorageSync/storageSyncServices/syncGroups/serverEndpoints/read",
+      "Microsoft.StorageSync/storageSyncServices/syncGroups/serverEndpoints/write",
+      "Microsoft.StorageSync/storageSyncServices/syncGroups/serverEndpoints/delete",
+      "Microsoft.StorageSync/storageSyncServices/read",
+      "Microsoft.StorageSync/storageSyncServices/syncGroups/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.StorageSync/storageSyncServices/syncGroups/serverEndpoints/delete"
+    ],
+    "modify": [
+      "Microsoft.StorageSync/storageSyncServices/syncGroups/serverEndpoints/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.StorageSync/storageSyncServices/syncGroups/serverEndpoints/read",
+      "Microsoft.StorageSync/storageSyncServices/read",
+      "Microsoft.StorageSync/storageSyncServices/syncGroups/read"
+    ]
+  }
+]

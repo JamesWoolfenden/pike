@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.KubernetesConfiguration/fluxConfigurations/read",
+      "Microsoft.KubernetesConfiguration/fluxConfigurations/write",
+      "Microsoft.KubernetesConfiguration/fluxConfigurations/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.KubernetesConfiguration/fluxConfigurations/delete"
+    ],
+    "modify": [
+      "Microsoft.KubernetesConfiguration/fluxConfigurations/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.KubernetesConfiguration/fluxConfigurations/read"
+    ]
+  }
+]

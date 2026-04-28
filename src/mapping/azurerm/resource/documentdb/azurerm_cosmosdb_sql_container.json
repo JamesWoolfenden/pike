@@ -1,0 +1,28 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers/read",
+      "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers/write",
+      "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers/delete",
+      "Microsoft.DocumentDB/databaseAccounts/read",
+      "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/read",
+      "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers/operationResults/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers/delete"
+    ],
+    "modify": [
+      "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers/read",
+      "Microsoft.DocumentDB/databaseAccounts/read",
+      "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/read"
+    ]
+  }
+]

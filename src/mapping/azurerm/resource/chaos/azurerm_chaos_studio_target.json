@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Chaos/targets/read",
+      "Microsoft.Chaos/targets/write",
+      "Microsoft.Chaos/targets/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Chaos/targets/delete"
+    ],
+    "modify": [
+      "Microsoft.Chaos/targets/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Chaos/targets/read"
+    ]
+  }
+]

@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Sql/locations/instanceFailoverGroups/read",
+      "Microsoft.Sql/locations/instanceFailoverGroups/write",
+      "Microsoft.Sql/locations/instanceFailoverGroups/delete",
+      "Microsoft.Sql/locations/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Sql/locations/instanceFailoverGroups/delete"
+    ],
+    "modify": [
+      "Microsoft.Sql/locations/instanceFailoverGroups/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Sql/locations/instanceFailoverGroups/read",
+      "Microsoft.Sql/locations/read"
+    ]
+  }
+]

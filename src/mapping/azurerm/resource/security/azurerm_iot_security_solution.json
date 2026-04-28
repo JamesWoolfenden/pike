@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Security/iotSecuritySolutions/read",
+      "Microsoft.Security/iotSecuritySolutions/write",
+      "Microsoft.Security/iotSecuritySolutions/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Security/iotSecuritySolutions/delete"
+    ],
+    "modify": [
+      "Microsoft.Security/iotSecuritySolutions/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Security/iotSecuritySolutions/read"
+    ]
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ApiManagement/service/workspaces/policies/read",
+      "Microsoft.ApiManagement/service/workspaces/policies/write",
+      "Microsoft.ApiManagement/service/workspaces/policies/delete",
+      "Microsoft.ApiManagement/service/read",
+      "Microsoft.ApiManagement/service/workspaces/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.ApiManagement/service/workspaces/policies/delete"
+    ],
+    "modify": [
+      "Microsoft.ApiManagement/service/workspaces/policies/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ApiManagement/service/workspaces/policies/read",
+      "Microsoft.ApiManagement/service/read",
+      "Microsoft.ApiManagement/service/workspaces/read"
+    ]
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/networkManagers/verifierWorkspaces/reachabilityAnalysisIntents/read",
+      "Microsoft.Network/networkManagers/verifierWorkspaces/reachabilityAnalysisIntents/write",
+      "Microsoft.Network/networkManagers/verifierWorkspaces/reachabilityAnalysisIntents/delete",
+      "Microsoft.Network/networkManagers/read",
+      "Microsoft.Network/networkManagers/verifierWorkspaces/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/networkManagers/verifierWorkspaces/reachabilityAnalysisIntents/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/networkManagers/verifierWorkspaces/reachabilityAnalysisIntents/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/networkManagers/verifierWorkspaces/reachabilityAnalysisIntents/read",
+      "Microsoft.Network/networkManagers/read",
+      "Microsoft.Network/networkManagers/verifierWorkspaces/read"
+    ]
+  }
+]

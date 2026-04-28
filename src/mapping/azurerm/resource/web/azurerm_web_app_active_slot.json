@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Web/sites/Read",
+      "Microsoft.Web/sites/Write",
+      "Microsoft.Web/sites/Delete",
+      "microsoft.web/sites/operationresults/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Web/sites/Delete"
+    ],
+    "modify": [
+      "Microsoft.Web/sites/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Web/sites/Read"
+    ]
+  }
+]

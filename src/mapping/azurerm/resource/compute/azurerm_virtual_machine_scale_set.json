@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Compute/virtualMachineScaleSets/read",
+      "Microsoft.Compute/virtualMachineScaleSets/write",
+      "Microsoft.Compute/virtualMachineScaleSets/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Compute/virtualMachineScaleSets/delete"
+    ],
+    "modify": [
+      "Microsoft.Compute/virtualMachineScaleSets/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Compute/virtualMachineScaleSets/read"
+    ]
+  }
+]

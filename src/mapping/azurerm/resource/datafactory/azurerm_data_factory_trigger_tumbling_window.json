@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DataFactory/factories/triggers/read",
+      "Microsoft.DataFactory/factories/triggers/write",
+      "Microsoft.DataFactory/factories/triggers/delete",
+      "Microsoft.DataFactory/factories/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.DataFactory/factories/triggers/delete"
+    ],
+    "modify": [
+      "Microsoft.DataFactory/factories/triggers/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DataFactory/factories/triggers/read",
+      "Microsoft.DataFactory/factories/read"
+    ]
+  }
+]

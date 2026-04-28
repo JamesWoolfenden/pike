@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/trafficManagerProfiles/nestedEndpoints/read",
+      "Microsoft.Network/trafficManagerProfiles/nestedEndpoints/write",
+      "Microsoft.Network/trafficManagerProfiles/nestedEndpoints/delete",
+      "Microsoft.Network/trafficManagerProfiles/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/trafficManagerProfiles/nestedEndpoints/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/trafficManagerProfiles/nestedEndpoints/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/trafficManagerProfiles/nestedEndpoints/read",
+      "Microsoft.Network/trafficManagerProfiles/read"
+    ]
+  }
+]

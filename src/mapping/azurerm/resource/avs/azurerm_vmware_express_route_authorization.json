@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AVS/privateClouds/authorizations/read",
+      "Microsoft.AVS/privateClouds/authorizations/write",
+      "Microsoft.AVS/privateClouds/authorizations/delete",
+      "Microsoft.AVS/privateClouds/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.AVS/privateClouds/authorizations/delete"
+    ],
+    "modify": [
+      "Microsoft.AVS/privateClouds/authorizations/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AVS/privateClouds/authorizations/read",
+      "Microsoft.AVS/privateClouds/read"
+    ]
+  }
+]

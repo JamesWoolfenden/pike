@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Storage/storageAccounts/tableServices/tables/read",
+      "Microsoft.Storage/storageAccounts/tableServices/tables/write",
+      "Microsoft.Storage/storageAccounts/tableServices/tables/delete",
+      "Microsoft.Storage/storageAccounts/read",
+      "Microsoft.Storage/storageAccounts/tableServices/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Storage/storageAccounts/tableServices/tables/delete"
+    ],
+    "modify": [
+      "Microsoft.Storage/storageAccounts/tableServices/tables/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Storage/storageAccounts/tableServices/tables/read",
+      "Microsoft.Storage/storageAccounts/read",
+      "Microsoft.Storage/storageAccounts/tableServices/read"
+    ]
+  }
+]

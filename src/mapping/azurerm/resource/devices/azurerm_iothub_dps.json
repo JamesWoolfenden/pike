@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Devices/provisioningServices/Read",
+      "Microsoft.Devices/provisioningServices/Write",
+      "Microsoft.Devices/provisioningServices/Delete",
+      "Microsoft.Devices/provisioningServices/operationresults/Read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Devices/provisioningServices/Delete"
+    ],
+    "modify": [
+      "Microsoft.Devices/provisioningServices/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Devices/provisioningServices/Read"
+    ]
+  }
+]

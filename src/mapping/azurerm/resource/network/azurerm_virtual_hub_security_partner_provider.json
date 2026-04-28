@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/securityPartnerProviders/read",
+      "Microsoft.Network/securityPartnerProviders/write",
+      "Microsoft.Network/securityPartnerProviders/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/securityPartnerProviders/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/securityPartnerProviders/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/securityPartnerProviders/read"
+    ]
+  }
+]

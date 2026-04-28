@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "Microsoft.MarketplaceOrdering/agreements/offers/plans/read",
+      "Microsoft.MarketplaceOrdering/agreements/read"
+    ]
+  }
+]

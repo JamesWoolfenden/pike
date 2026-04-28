@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "NGINX.NGINXPLUS/nginxDeployments/certificates/Read",
+      "NGINX.NGINXPLUS/nginxDeployments/Read"
+    ]
+  }
+]

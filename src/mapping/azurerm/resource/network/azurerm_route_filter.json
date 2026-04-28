@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/routeFilters/read",
+      "Microsoft.Network/routeFilters/write",
+      "Microsoft.Network/routeFilters/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/routeFilters/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/routeFilters/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/routeFilters/read"
+    ]
+  }
+]

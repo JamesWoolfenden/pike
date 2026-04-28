@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "microsoft.web/sites/networkConfig/read",
+      "microsoft.web/sites/networkConfig/write",
+      "microsoft.web/sites/networkConfig/delete",
+      "Microsoft.Web/sites/Read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "microsoft.web/sites/networkConfig/delete"
+    ],
+    "modify": [
+      "microsoft.web/sites/networkConfig/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "microsoft.web/sites/networkConfig/read",
+      "Microsoft.Web/sites/Read"
+    ]
+  }
+]

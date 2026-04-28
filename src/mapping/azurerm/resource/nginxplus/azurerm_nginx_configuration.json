@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "NGINX.NGINXPLUS/nginxDeployments/configurations/Read",
+      "NGINX.NGINXPLUS/nginxDeployments/configurations/Write",
+      "NGINX.NGINXPLUS/nginxDeployments/configurations/Delete",
+      "NGINX.NGINXPLUS/nginxDeployments/Read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "NGINX.NGINXPLUS/nginxDeployments/configurations/Delete"
+    ],
+    "modify": [
+      "NGINX.NGINXPLUS/nginxDeployments/configurations/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "NGINX.NGINXPLUS/nginxDeployments/configurations/Read",
+      "NGINX.NGINXPLUS/nginxDeployments/Read"
+    ]
+  }
+]

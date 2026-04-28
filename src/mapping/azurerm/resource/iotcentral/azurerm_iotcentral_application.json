@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.IoTCentral/IoTApps/read",
+      "Microsoft.IoTCentral/IoTApps/write",
+      "Microsoft.IoTCentral/IoTApps/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.IoTCentral/IoTApps/delete"
+    ],
+    "modify": [
+      "Microsoft.IoTCentral/IoTApps/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.IoTCentral/IoTApps/read"
+    ]
+  }
+]

@@ -1,0 +1,31 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Synapse/workspaces/sqlPools/workloadGroups/workloadClassifiers/read",
+      "Microsoft.Synapse/workspaces/sqlPools/workloadGroups/workloadClassifiers/write",
+      "Microsoft.Synapse/workspaces/sqlPools/workloadGroups/workloadClassifiers/delete",
+      "Microsoft.Synapse/workspaces/read",
+      "Microsoft.Synapse/workspaces/sqlPools/read",
+      "Microsoft.Synapse/workspaces/sqlPools/workloadGroups/read",
+      "Microsoft.Synapse/workspaces/sqlPools/workloadGroups/workloadClassifiers/operationStatuses/read",
+      "Microsoft.Synapse/workspaces/sqlPools/workloadGroups/workloadClassifiers/operationResults/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Synapse/workspaces/sqlPools/workloadGroups/workloadClassifiers/delete"
+    ],
+    "modify": [
+      "Microsoft.Synapse/workspaces/sqlPools/workloadGroups/workloadClassifiers/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Synapse/workspaces/sqlPools/workloadGroups/workloadClassifiers/read",
+      "Microsoft.Synapse/workspaces/read",
+      "Microsoft.Synapse/workspaces/sqlPools/read",
+      "Microsoft.Synapse/workspaces/sqlPools/workloadGroups/read"
+    ]
+  }
+]

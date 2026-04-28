@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/loadBalancers/inboundNatRules/read",
+      "Microsoft.Network/loadBalancers/inboundNatRules/write",
+      "Microsoft.Network/loadBalancers/inboundNatRules/delete",
+      "Microsoft.Network/loadBalancers/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/loadBalancers/inboundNatRules/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/loadBalancers/inboundNatRules/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/loadBalancers/inboundNatRules/read",
+      "Microsoft.Network/loadBalancers/read"
+    ]
+  }
+]

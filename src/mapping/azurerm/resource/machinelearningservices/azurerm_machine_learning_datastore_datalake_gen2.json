@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.MachineLearningServices/workspaces/datastores/read",
+      "Microsoft.MachineLearningServices/workspaces/datastores/write",
+      "Microsoft.MachineLearningServices/workspaces/datastores/delete",
+      "Microsoft.MachineLearningServices/workspaces/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.MachineLearningServices/workspaces/datastores/delete"
+    ],
+    "modify": [
+      "Microsoft.MachineLearningServices/workspaces/datastores/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.MachineLearningServices/workspaces/datastores/read",
+      "Microsoft.MachineLearningServices/workspaces/read"
+    ]
+  }
+]

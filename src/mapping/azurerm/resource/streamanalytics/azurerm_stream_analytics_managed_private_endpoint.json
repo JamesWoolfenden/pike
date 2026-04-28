@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.StreamAnalytics/clusters/privateEndpoints/Read",
+      "Microsoft.StreamAnalytics/clusters/privateEndpoints/Write",
+      "Microsoft.StreamAnalytics/clusters/privateEndpoints/Delete",
+      "Microsoft.StreamAnalytics/clusters/Read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.StreamAnalytics/clusters/privateEndpoints/Delete"
+    ],
+    "modify": [
+      "Microsoft.StreamAnalytics/clusters/privateEndpoints/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.StreamAnalytics/clusters/privateEndpoints/Read",
+      "Microsoft.StreamAnalytics/clusters/Read"
+    ]
+  }
+]

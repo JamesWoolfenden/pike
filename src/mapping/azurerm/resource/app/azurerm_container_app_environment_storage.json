@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "microsoft.app/managedenvironments/storages/read",
+      "microsoft.app/managedenvironments/storages/write",
+      "microsoft.app/managedenvironments/storages/delete",
+      "microsoft.app/managedenvironments/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "microsoft.app/managedenvironments/storages/delete"
+    ],
+    "modify": [
+      "microsoft.app/managedenvironments/storages/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "microsoft.app/managedenvironments/storages/read",
+      "microsoft.app/managedenvironments/read"
+    ]
+  }
+]

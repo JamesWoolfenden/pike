@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Logic/workflows/triggers/read",
+      "Microsoft.Logic/workflows/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Logic/workflows/triggers/read",
+      "Microsoft.Logic/workflows/read"
+    ]
+  }
+]

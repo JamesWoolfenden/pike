@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AppPlatform/Spring/devToolPortals/read",
+      "Microsoft.AppPlatform/Spring/devToolPortals/write",
+      "Microsoft.AppPlatform/Spring/devToolPortals/delete",
+      "Microsoft.AppPlatform/Spring/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.AppPlatform/Spring/devToolPortals/delete"
+    ],
+    "modify": [
+      "Microsoft.AppPlatform/Spring/devToolPortals/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AppPlatform/Spring/devToolPortals/read",
+      "Microsoft.AppPlatform/Spring/read"
+    ]
+  }
+]

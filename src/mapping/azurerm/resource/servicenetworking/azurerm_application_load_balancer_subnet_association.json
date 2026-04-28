@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ServiceNetworking/trafficControllers/associations/read",
+      "Microsoft.ServiceNetworking/trafficControllers/associations/write",
+      "Microsoft.ServiceNetworking/trafficControllers/associations/delete",
+      "Microsoft.ServiceNetworking/trafficControllers/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.ServiceNetworking/trafficControllers/associations/delete"
+    ],
+    "modify": [
+      "Microsoft.ServiceNetworking/trafficControllers/associations/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ServiceNetworking/trafficControllers/associations/read",
+      "Microsoft.ServiceNetworking/trafficControllers/read"
+    ]
+  }
+]

@@ -2,7 +2,7 @@ package pike
 
 // GetAZUREPermissions for AZURE resources.
 func GetAZUREPermissions(result ResourceV2) ([]string, error) {
-	if result.TypeName == resource {
+	if result.TypeName == resource || result.TypeName == terraform {
 		return GetAZUREResourcePermissions(result)
 	}
 	return GetAZUREDataPermissions(result)

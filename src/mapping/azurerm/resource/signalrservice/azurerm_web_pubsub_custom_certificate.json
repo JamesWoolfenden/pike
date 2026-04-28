@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.SignalRService/WebPubSub/customCertificates/read",
+      "Microsoft.SignalRService/WebPubSub/customCertificates/write",
+      "Microsoft.SignalRService/WebPubSub/customCertificates/delete",
+      "Microsoft.SignalRService/WebPubSub/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.SignalRService/WebPubSub/customCertificates/delete"
+    ],
+    "modify": [
+      "Microsoft.SignalRService/WebPubSub/customCertificates/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.SignalRService/WebPubSub/customCertificates/read",
+      "Microsoft.SignalRService/WebPubSub/read"
+    ]
+  }
+]

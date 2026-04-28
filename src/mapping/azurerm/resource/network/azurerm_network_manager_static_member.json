@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/networkManagers/networkGroups/staticMembers/read",
+      "Microsoft.Network/networkManagers/networkGroups/staticMembers/write",
+      "Microsoft.Network/networkManagers/networkGroups/staticMembers/delete",
+      "Microsoft.Network/networkManagers/read",
+      "Microsoft.Network/networkManagers/networkGroups/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/networkManagers/networkGroups/staticMembers/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/networkManagers/networkGroups/staticMembers/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/networkManagers/networkGroups/staticMembers/read",
+      "Microsoft.Network/networkManagers/read",
+      "Microsoft.Network/networkManagers/networkGroups/read"
+    ]
+  }
+]

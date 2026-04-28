@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.NetApp/netAppAccounts/backupVaults/read",
+      "Microsoft.NetApp/netAppAccounts/backupVaults/write",
+      "Microsoft.NetApp/netAppAccounts/backupVaults/delete",
+      "Microsoft.NetApp/netAppAccounts/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.NetApp/netAppAccounts/backupVaults/delete"
+    ],
+    "modify": [
+      "Microsoft.NetApp/netAppAccounts/backupVaults/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.NetApp/netAppAccounts/backupVaults/read",
+      "Microsoft.NetApp/netAppAccounts/read"
+    ]
+  }
+]

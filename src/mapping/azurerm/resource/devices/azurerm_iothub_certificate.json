@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Devices/iotHubs/certificates/Read",
+      "Microsoft.Devices/iotHubs/certificates/Write",
+      "Microsoft.Devices/iotHubs/certificates/Delete",
+      "Microsoft.Devices/iotHubs/Read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Devices/iotHubs/certificates/Delete"
+    ],
+    "modify": [
+      "Microsoft.Devices/iotHubs/certificates/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Devices/iotHubs/certificates/Read",
+      "Microsoft.Devices/iotHubs/Read"
+    ]
+  }
+]

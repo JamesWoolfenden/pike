@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.SecurityInsights/Watchlists/read",
+      "Microsoft.SecurityInsights/Watchlists/write",
+      "Microsoft.SecurityInsights/Watchlists/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.SecurityInsights/Watchlists/delete"
+    ],
+    "modify": [
+      "Microsoft.SecurityInsights/Watchlists/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.SecurityInsights/Watchlists/read"
+    ]
+  }
+]

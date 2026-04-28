@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "Microsoft.RecoveryServices/vaults/replicationRecoveryPlans/read",
+      "Microsoft.RecoveryServices/Vaults/read"
+    ]
+  }
+]

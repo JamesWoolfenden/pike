@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Sql/servers/elasticPools/read",
+      "Microsoft.Sql/servers/elasticPools/write",
+      "Microsoft.Sql/servers/elasticPools/delete",
+      "Microsoft.Sql/servers/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Sql/servers/elasticPools/delete"
+    ],
+    "modify": [
+      "Microsoft.Sql/servers/elasticPools/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Sql/servers/elasticPools/read",
+      "Microsoft.Sql/servers/read"
+    ]
+  }
+]

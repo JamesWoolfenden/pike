@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/networkSecurityPerimeters/profiles/accessRules/read",
+      "Microsoft.Network/networkSecurityPerimeters/profiles/accessRules/write",
+      "Microsoft.Network/networkSecurityPerimeters/profiles/accessRules/delete",
+      "Microsoft.Network/networkSecurityPerimeters/read",
+      "Microsoft.Network/networkSecurityPerimeters/profiles/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/networkSecurityPerimeters/profiles/accessRules/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/networkSecurityPerimeters/profiles/accessRules/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/networkSecurityPerimeters/profiles/accessRules/read",
+      "Microsoft.Network/networkSecurityPerimeters/read",
+      "Microsoft.Network/networkSecurityPerimeters/profiles/read"
+    ]
+  }
+]

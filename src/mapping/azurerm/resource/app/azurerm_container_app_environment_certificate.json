@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "microsoft.app/managedenvironments/certificates/read",
+      "microsoft.app/managedenvironments/certificates/write",
+      "microsoft.app/managedenvironments/certificates/delete",
+      "microsoft.app/managedenvironments/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "microsoft.app/managedenvironments/certificates/delete"
+    ],
+    "modify": [
+      "microsoft.app/managedenvironments/certificates/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "microsoft.app/managedenvironments/certificates/read",
+      "microsoft.app/managedenvironments/read"
+    ]
+  }
+]

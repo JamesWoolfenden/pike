@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DeviceUpdate/accounts/instances/read",
+      "Microsoft.DeviceUpdate/accounts/instances/write",
+      "Microsoft.DeviceUpdate/accounts/instances/delete",
+      "Microsoft.DeviceUpdate/accounts/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.DeviceUpdate/accounts/instances/delete"
+    ],
+    "modify": [
+      "Microsoft.DeviceUpdate/accounts/instances/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DeviceUpdate/accounts/instances/read",
+      "Microsoft.DeviceUpdate/accounts/read"
+    ]
+  }
+]

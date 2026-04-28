@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Purview/accounts/read",
+      "Microsoft.Purview/accounts/write",
+      "Microsoft.Purview/accounts/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Purview/accounts/delete"
+    ],
+    "modify": [
+      "Microsoft.Purview/accounts/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Purview/accounts/read"
+    ]
+  }
+]

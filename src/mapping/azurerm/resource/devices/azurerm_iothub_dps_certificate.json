@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Devices/provisioningServices/certificates/Read",
+      "Microsoft.Devices/provisioningServices/certificates/Write",
+      "Microsoft.Devices/provisioningServices/certificates/Delete",
+      "Microsoft.Devices/provisioningServices/Read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Devices/provisioningServices/certificates/Delete"
+    ],
+    "modify": [
+      "Microsoft.Devices/provisioningServices/certificates/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Devices/provisioningServices/certificates/Read",
+      "Microsoft.Devices/provisioningServices/Read"
+    ]
+  }
+]

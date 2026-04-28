@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AzureStackHCI/MarketPlaceGalleryImages/Read",
+      "Microsoft.AzureStackHCI/MarketPlaceGalleryImages/Write",
+      "Microsoft.AzureStackHCI/MarketPlaceGalleryImages/Delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.AzureStackHCI/MarketPlaceGalleryImages/Delete"
+    ],
+    "modify": [
+      "Microsoft.AzureStackHCI/MarketPlaceGalleryImages/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AzureStackHCI/MarketPlaceGalleryImages/Read"
+    ]
+  }
+]

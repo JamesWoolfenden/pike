@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ServiceBus/namespaces/disasterRecoveryConfigs/read",
+      "Microsoft.ServiceBus/namespaces/disasterRecoveryConfigs/write",
+      "Microsoft.ServiceBus/namespaces/disasterRecoveryConfigs/delete",
+      "Microsoft.ServiceBus/namespaces/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.ServiceBus/namespaces/disasterRecoveryConfigs/delete"
+    ],
+    "modify": [
+      "Microsoft.ServiceBus/namespaces/disasterRecoveryConfigs/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ServiceBus/namespaces/disasterRecoveryConfigs/read",
+      "Microsoft.ServiceBus/namespaces/read"
+    ]
+  }
+]

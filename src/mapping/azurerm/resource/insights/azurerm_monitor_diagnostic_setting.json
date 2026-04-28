@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Insights/DiagnosticSettings/Read",
+      "Microsoft.Insights/DiagnosticSettings/Write",
+      "Microsoft.Insights/DiagnosticSettings/Delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Insights/DiagnosticSettings/Delete"
+    ],
+    "modify": [
+      "Microsoft.Insights/DiagnosticSettings/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Insights/DiagnosticSettings/Read"
+    ]
+  }
+]

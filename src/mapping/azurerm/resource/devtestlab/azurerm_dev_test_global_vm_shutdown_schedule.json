@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DevTestLab/schedules/read",
+      "Microsoft.DevTestLab/schedules/write",
+      "Microsoft.DevTestLab/schedules/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.DevTestLab/schedules/delete"
+    ],
+    "modify": [
+      "Microsoft.DevTestLab/schedules/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DevTestLab/schedules/read"
+    ]
+  }
+]

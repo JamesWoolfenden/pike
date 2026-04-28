@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ConfidentialLedger/ledgers/read",
+      "Microsoft.ConfidentialLedger/ledgers/write",
+      "Microsoft.ConfidentialLedger/ledgers/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.ConfidentialLedger/ledgers/delete"
+    ],
+    "modify": [
+      "Microsoft.ConfidentialLedger/ledgers/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ConfidentialLedger/ledgers/read"
+    ]
+  }
+]

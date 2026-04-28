@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.RecoveryServices/Vaults/backupResourceGuardProxies/read",
+      "Microsoft.RecoveryServices/Vaults/backupResourceGuardProxies/write",
+      "Microsoft.RecoveryServices/Vaults/backupResourceGuardProxies/delete",
+      "Microsoft.RecoveryServices/Vaults/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.RecoveryServices/Vaults/backupResourceGuardProxies/delete"
+    ],
+    "modify": [
+      "Microsoft.RecoveryServices/Vaults/backupResourceGuardProxies/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.RecoveryServices/Vaults/backupResourceGuardProxies/read",
+      "Microsoft.RecoveryServices/Vaults/read"
+    ]
+  }
+]

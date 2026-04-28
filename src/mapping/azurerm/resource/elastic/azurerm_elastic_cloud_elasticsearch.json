@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Elastic/monitors/read",
+      "Microsoft.Elastic/monitors/write",
+      "Microsoft.Elastic/monitors/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Elastic/monitors/delete"
+    ],
+    "modify": [
+      "Microsoft.Elastic/monitors/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Elastic/monitors/read"
+    ]
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.EventGrid/partnerNamespaces/read",
+      "Microsoft.EventGrid/partnerNamespaces/write",
+      "Microsoft.EventGrid/partnerNamespaces/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.EventGrid/partnerNamespaces/delete"
+    ],
+    "modify": [
+      "Microsoft.EventGrid/partnerNamespaces/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.EventGrid/partnerNamespaces/read"
+    ]
+  }
+]

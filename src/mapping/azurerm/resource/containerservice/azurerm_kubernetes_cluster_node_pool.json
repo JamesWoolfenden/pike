@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ContainerService/managedClusters/agentPools/read",
+      "Microsoft.ContainerService/managedClusters/agentPools/write",
+      "Microsoft.ContainerService/managedClusters/agentPools/delete",
+      "Microsoft.ContainerService/managedClusters/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.ContainerService/managedClusters/agentPools/delete"
+    ],
+    "modify": [
+      "Microsoft.ContainerService/managedClusters/agentPools/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ContainerService/managedClusters/agentPools/read",
+      "Microsoft.ContainerService/managedClusters/read"
+    ]
+  }
+]

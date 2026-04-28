@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/vpnGateways/read",
+      "Microsoft.Network/vpnGateways/write",
+      "Microsoft.Network/vpnGateways/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/vpnGateways/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/vpnGateways/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/vpnGateways/read"
+    ]
+  }
+]

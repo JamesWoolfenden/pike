@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Oracle.Database/cloudVmClusters/read",
+      "Oracle.Database/cloudVmClusters/write",
+      "Oracle.Database/cloudVmClusters/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Oracle.Database/cloudVmClusters/delete"
+    ],
+    "modify": [
+      "Oracle.Database/cloudVmClusters/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Oracle.Database/cloudVmClusters/read"
+    ]
+  }
+]

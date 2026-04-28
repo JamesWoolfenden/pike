@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ContainerService/deploymentSafeguards/read",
+      "Microsoft.ContainerService/deploymentSafeguards/write",
+      "Microsoft.ContainerService/deploymentSafeguards/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.ContainerService/deploymentSafeguards/delete"
+    ],
+    "modify": [
+      "Microsoft.ContainerService/deploymentSafeguards/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ContainerService/deploymentSafeguards/read"
+    ]
+  }
+]

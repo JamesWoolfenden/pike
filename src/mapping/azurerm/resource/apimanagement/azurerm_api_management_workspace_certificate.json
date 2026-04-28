@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ApiManagement/service/workspaces/certificates/read",
+      "Microsoft.ApiManagement/service/workspaces/certificates/write",
+      "Microsoft.ApiManagement/service/workspaces/certificates/delete",
+      "Microsoft.ApiManagement/service/read",
+      "Microsoft.ApiManagement/service/workspaces/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.ApiManagement/service/workspaces/certificates/delete"
+    ],
+    "modify": [
+      "Microsoft.ApiManagement/service/workspaces/certificates/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ApiManagement/service/workspaces/certificates/read",
+      "Microsoft.ApiManagement/service/read",
+      "Microsoft.ApiManagement/service/workspaces/read"
+    ]
+  }
+]

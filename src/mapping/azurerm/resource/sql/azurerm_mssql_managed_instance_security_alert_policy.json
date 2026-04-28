@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Sql/managedInstances/securityAlertPolicies/read",
+      "Microsoft.Sql/managedInstances/securityAlertPolicies/write",
+      "Microsoft.Sql/managedInstances/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [
+      "Microsoft.Sql/managedInstances/securityAlertPolicies/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Sql/managedInstances/securityAlertPolicies/read",
+      "Microsoft.Sql/managedInstances/read"
+    ]
+  }
+]

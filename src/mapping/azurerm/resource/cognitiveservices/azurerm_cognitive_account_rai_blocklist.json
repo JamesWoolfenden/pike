@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.CognitiveServices/accounts/raiBlocklists/read",
+      "Microsoft.CognitiveServices/accounts/raiBlocklists/write",
+      "Microsoft.CognitiveServices/accounts/raiBlocklists/delete",
+      "Microsoft.CognitiveServices/accounts/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.CognitiveServices/accounts/raiBlocklists/delete"
+    ],
+    "modify": [
+      "Microsoft.CognitiveServices/accounts/raiBlocklists/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.CognitiveServices/accounts/raiBlocklists/read",
+      "Microsoft.CognitiveServices/accounts/read"
+    ]
+  }
+]

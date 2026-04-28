@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Storage/storageAccounts/queueServices/queues/read",
+      "Microsoft.Storage/storageAccounts/queueServices/queues/write",
+      "Microsoft.Storage/storageAccounts/queueServices/queues/delete",
+      "Microsoft.Storage/storageAccounts/read",
+      "Microsoft.Storage/storageAccounts/queueServices/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Storage/storageAccounts/queueServices/queues/delete"
+    ],
+    "modify": [
+      "Microsoft.Storage/storageAccounts/queueServices/queues/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Storage/storageAccounts/queueServices/queues/read",
+      "Microsoft.Storage/storageAccounts/read",
+      "Microsoft.Storage/storageAccounts/queueServices/read"
+    ]
+  }
+]

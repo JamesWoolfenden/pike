@@ -1,0 +1,16 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/volumeQuotaRules/read",
+      "Microsoft.NetApp/netAppAccounts/read",
+      "Microsoft.NetApp/netAppAccounts/capacityPools/read",
+      "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/read"
+    ]
+  }
+]

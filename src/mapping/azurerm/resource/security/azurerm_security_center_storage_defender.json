@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Security/defenderforstoragesettings/read",
+      "Microsoft.Security/defenderforstoragesettings/write",
+      "Microsoft.Security/defenderforstoragesettings/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Security/defenderforstoragesettings/delete"
+    ],
+    "modify": [
+      "Microsoft.Security/defenderforstoragesettings/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Security/defenderforstoragesettings/read"
+    ]
+  }
+]

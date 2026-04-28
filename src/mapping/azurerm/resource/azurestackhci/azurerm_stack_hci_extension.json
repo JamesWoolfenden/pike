@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AzureStackHCI/Clusters/ArcSettings/Extensions/Read",
+      "Microsoft.AzureStackHCI/Clusters/ArcSettings/Extensions/Write",
+      "Microsoft.AzureStackHCI/Clusters/ArcSettings/Extensions/Delete",
+      "Microsoft.AzureStackHCI/Clusters/Read",
+      "Microsoft.AzureStackHCI/Clusters/ArcSettings/Read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.AzureStackHCI/Clusters/ArcSettings/Extensions/Delete"
+    ],
+    "modify": [
+      "Microsoft.AzureStackHCI/Clusters/ArcSettings/Extensions/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AzureStackHCI/Clusters/ArcSettings/Extensions/Read",
+      "Microsoft.AzureStackHCI/Clusters/Read",
+      "Microsoft.AzureStackHCI/Clusters/ArcSettings/Read"
+    ]
+  }
+]

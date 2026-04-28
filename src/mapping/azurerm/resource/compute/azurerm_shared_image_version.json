@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Compute/galleries/images/versions/read",
+      "Microsoft.Compute/galleries/images/versions/write",
+      "Microsoft.Compute/galleries/images/versions/delete",
+      "Microsoft.Compute/galleries/read",
+      "Microsoft.Compute/galleries/images/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Compute/galleries/images/versions/delete"
+    ],
+    "modify": [
+      "Microsoft.Compute/galleries/images/versions/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Compute/galleries/images/versions/read",
+      "Microsoft.Compute/galleries/read",
+      "Microsoft.Compute/galleries/images/read"
+    ]
+  }
+]

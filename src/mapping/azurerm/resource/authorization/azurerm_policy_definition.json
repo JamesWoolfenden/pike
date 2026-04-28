@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Authorization/policyDefinitions/read",
+      "Microsoft.Authorization/policyDefinitions/write",
+      "Microsoft.Authorization/policyDefinitions/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Authorization/policyDefinitions/delete"
+    ],
+    "modify": [
+      "Microsoft.Authorization/policyDefinitions/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Authorization/policyDefinitions/read"
+    ]
+  }
+]

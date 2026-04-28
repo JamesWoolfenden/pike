@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Portal/tenantConfigurations/read",
+      "Microsoft.Portal/tenantConfigurations/write",
+      "Microsoft.Portal/tenantConfigurations/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Portal/tenantConfigurations/delete"
+    ],
+    "modify": [
+      "Microsoft.Portal/tenantConfigurations/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Portal/tenantConfigurations/read"
+    ]
+  }
+]

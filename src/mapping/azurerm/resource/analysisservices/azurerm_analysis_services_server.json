@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AnalysisServices/servers/read",
+      "Microsoft.AnalysisServices/servers/write",
+      "Microsoft.AnalysisServices/servers/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.AnalysisServices/servers/delete"
+    ],
+    "modify": [
+      "Microsoft.AnalysisServices/servers/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AnalysisServices/servers/read"
+    ]
+  }
+]

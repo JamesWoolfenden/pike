@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/virtualNetworkGateways/read",
+      "Microsoft.Network/virtualNetworkGateways/write",
+      "Microsoft.Network/virtualNetworkGateways/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/virtualNetworkGateways/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/virtualNetworkGateways/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/virtualNetworkGateways/read"
+    ]
+  }
+]

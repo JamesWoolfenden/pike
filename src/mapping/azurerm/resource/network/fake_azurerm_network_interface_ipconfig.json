@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/networkInterfaces/ipconfigurations/read",
+      "Microsoft.Network/networkInterfaces/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/networkInterfaces/ipconfigurations/read",
+      "Microsoft.Network/networkInterfaces/read"
+    ]
+  }
+]

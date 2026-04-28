@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Datadog/monitors/singleSignOnConfigurations/read",
+      "Microsoft.Datadog/monitors/singleSignOnConfigurations/write",
+      "Microsoft.Datadog/monitors/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [
+      "Microsoft.Datadog/monitors/singleSignOnConfigurations/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Datadog/monitors/singleSignOnConfigurations/read",
+      "Microsoft.Datadog/monitors/read"
+    ]
+  }
+]

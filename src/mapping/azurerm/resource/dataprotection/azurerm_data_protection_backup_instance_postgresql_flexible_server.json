@@ -1,0 +1,26 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DataProtection/backupVaults/backupInstances/read",
+      "Microsoft.DataProtection/backupVaults/backupInstances/write",
+      "Microsoft.DataProtection/backupVaults/backupInstances/delete",
+      "Microsoft.DataProtection/backupVaults/read",
+      "Microsoft.DataProtection/backupVaults/backupInstances/operationResults/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.DataProtection/backupVaults/backupInstances/delete"
+    ],
+    "modify": [
+      "Microsoft.DataProtection/backupVaults/backupInstances/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DataProtection/backupVaults/backupInstances/read",
+      "Microsoft.DataProtection/backupVaults/read"
+    ]
+  }
+]

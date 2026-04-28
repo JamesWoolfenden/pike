@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/networkVirtualAppliances/read",
+      "Microsoft.Network/networkVirtualAppliances/write",
+      "Microsoft.Network/networkVirtualAppliances/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/networkVirtualAppliances/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/networkVirtualAppliances/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/networkVirtualAppliances/read"
+    ]
+  }
+]

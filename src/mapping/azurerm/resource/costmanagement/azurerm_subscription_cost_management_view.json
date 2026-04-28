@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.CostManagement/views/read",
+      "Microsoft.CostManagement/views/write",
+      "Microsoft.CostManagement/views/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.CostManagement/views/delete"
+    ],
+    "modify": [
+      "Microsoft.CostManagement/views/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.CostManagement/views/read"
+    ]
+  }
+]

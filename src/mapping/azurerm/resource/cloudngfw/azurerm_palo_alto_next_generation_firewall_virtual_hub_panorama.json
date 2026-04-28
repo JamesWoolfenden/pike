@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "PaloAltoNetworks.Cloudngfw/firewalls/read",
+      "PaloAltoNetworks.Cloudngfw/firewalls/write",
+      "PaloAltoNetworks.Cloudngfw/firewalls/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "PaloAltoNetworks.Cloudngfw/firewalls/delete"
+    ],
+    "modify": [
+      "PaloAltoNetworks.Cloudngfw/firewalls/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "PaloAltoNetworks.Cloudngfw/firewalls/read"
+    ]
+  }
+]

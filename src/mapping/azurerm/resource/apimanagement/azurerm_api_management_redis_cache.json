@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ApiManagement/service/caches/read",
+      "Microsoft.ApiManagement/service/caches/write",
+      "Microsoft.ApiManagement/service/caches/delete",
+      "Microsoft.ApiManagement/service/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.ApiManagement/service/caches/delete"
+    ],
+    "modify": [
+      "Microsoft.ApiManagement/service/caches/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ApiManagement/service/caches/read",
+      "Microsoft.ApiManagement/service/read"
+    ]
+  }
+]

@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "microsoft.network/vpnGateways/natRules/read",
+      "microsoft.network/vpnGateways/natRules/write",
+      "microsoft.network/vpnGateways/natRules/delete",
+      "Microsoft.Network/vpnGateways/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "microsoft.network/vpnGateways/natRules/delete"
+    ],
+    "modify": [
+      "microsoft.network/vpnGateways/natRules/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "microsoft.network/vpnGateways/natRules/read",
+      "Microsoft.Network/vpnGateways/read"
+    ]
+  }
+]

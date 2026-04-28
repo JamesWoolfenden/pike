@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ApiManagement/service/policyFragments/read",
+      "Microsoft.ApiManagement/service/policyFragments/write",
+      "Microsoft.ApiManagement/service/policyFragments/delete",
+      "Microsoft.ApiManagement/service/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.ApiManagement/service/policyFragments/delete"
+    ],
+    "modify": [
+      "Microsoft.ApiManagement/service/policyFragments/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ApiManagement/service/policyFragments/read",
+      "Microsoft.ApiManagement/service/read"
+    ]
+  }
+]

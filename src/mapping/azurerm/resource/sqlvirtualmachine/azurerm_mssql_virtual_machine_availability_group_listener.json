@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.SqlVirtualMachine/sqlVirtualMachineGroups/availabilityGroupListeners/read",
+      "Microsoft.SqlVirtualMachine/sqlVirtualMachineGroups/availabilityGroupListeners/write",
+      "Microsoft.SqlVirtualMachine/sqlVirtualMachineGroups/availabilityGroupListeners/delete",
+      "Microsoft.SqlVirtualMachine/sqlVirtualMachineGroups/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.SqlVirtualMachine/sqlVirtualMachineGroups/availabilityGroupListeners/delete"
+    ],
+    "modify": [
+      "Microsoft.SqlVirtualMachine/sqlVirtualMachineGroups/availabilityGroupListeners/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.SqlVirtualMachine/sqlVirtualMachineGroups/availabilityGroupListeners/read",
+      "Microsoft.SqlVirtualMachine/sqlVirtualMachineGroups/read"
+    ]
+  }
+]

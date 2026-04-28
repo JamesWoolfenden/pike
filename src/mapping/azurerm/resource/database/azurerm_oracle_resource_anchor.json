@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Oracle.Database/resourceAnchors/read",
+      "Oracle.Database/resourceAnchors/write",
+      "Oracle.Database/resourceAnchors/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Oracle.Database/resourceAnchors/delete"
+    ],
+    "modify": [
+      "Oracle.Database/resourceAnchors/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Oracle.Database/resourceAnchors/read"
+    ]
+  }
+]

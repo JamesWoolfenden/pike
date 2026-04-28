@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AzureActiveDirectory/b2cDirectories/read",
+      "Microsoft.AzureActiveDirectory/b2cDirectories/write",
+      "Microsoft.AzureActiveDirectory/b2cDirectories/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.AzureActiveDirectory/b2cDirectories/delete"
+    ],
+    "modify": [
+      "Microsoft.AzureActiveDirectory/b2cDirectories/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AzureActiveDirectory/b2cDirectories/read"
+    ]
+  }
+]

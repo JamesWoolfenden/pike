@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.StreamAnalytics/streamingjobs/functions/Read",
+      "Microsoft.StreamAnalytics/streamingjobs/functions/Write",
+      "Microsoft.StreamAnalytics/streamingjobs/functions/Delete",
+      "Microsoft.StreamAnalytics/streamingjobs/Read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.StreamAnalytics/streamingjobs/functions/Delete"
+    ],
+    "modify": [
+      "Microsoft.StreamAnalytics/streamingjobs/functions/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.StreamAnalytics/streamingjobs/functions/Read",
+      "Microsoft.StreamAnalytics/streamingjobs/Read"
+    ]
+  }
+]

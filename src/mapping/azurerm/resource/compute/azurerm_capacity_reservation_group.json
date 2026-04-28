@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Compute/capacityReservationGroups/read",
+      "Microsoft.Compute/capacityReservationGroups/write",
+      "Microsoft.Compute/capacityReservationGroups/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Compute/capacityReservationGroups/delete"
+    ],
+    "modify": [
+      "Microsoft.Compute/capacityReservationGroups/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Compute/capacityReservationGroups/read"
+    ]
+  }
+]

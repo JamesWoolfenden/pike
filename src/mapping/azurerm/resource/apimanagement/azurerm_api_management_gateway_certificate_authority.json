@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ApiManagement/service/gateways/certificateAuthorities/read",
+      "Microsoft.ApiManagement/service/gateways/certificateAuthorities/write",
+      "Microsoft.ApiManagement/service/gateways/certificateAuthorities/delete",
+      "Microsoft.ApiManagement/service/read",
+      "Microsoft.ApiManagement/service/gateways/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.ApiManagement/service/gateways/certificateAuthorities/delete"
+    ],
+    "modify": [
+      "Microsoft.ApiManagement/service/gateways/certificateAuthorities/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ApiManagement/service/gateways/certificateAuthorities/read",
+      "Microsoft.ApiManagement/service/read",
+      "Microsoft.ApiManagement/service/gateways/read"
+    ]
+  }
+]

@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "microsoft.web/sites/functions/read",
+      "microsoft.web/sites/functions/write",
+      "microsoft.web/sites/functions/delete",
+      "Microsoft.Web/sites/Read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "microsoft.web/sites/functions/delete"
+    ],
+    "modify": [
+      "microsoft.web/sites/functions/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "microsoft.web/sites/functions/read",
+      "Microsoft.Web/sites/Read"
+    ]
+  }
+]

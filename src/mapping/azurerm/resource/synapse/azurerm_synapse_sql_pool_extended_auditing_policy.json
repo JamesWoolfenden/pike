@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Synapse/workspaces/sqlPools/extendedAuditingSettings/read",
+      "Microsoft.Synapse/workspaces/sqlPools/extendedAuditingSettings/write",
+      "Microsoft.Synapse/workspaces/read",
+      "Microsoft.Synapse/workspaces/sqlPools/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [
+      "Microsoft.Synapse/workspaces/sqlPools/extendedAuditingSettings/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Synapse/workspaces/sqlPools/extendedAuditingSettings/read",
+      "Microsoft.Synapse/workspaces/read",
+      "Microsoft.Synapse/workspaces/sqlPools/read"
+    ]
+  }
+]

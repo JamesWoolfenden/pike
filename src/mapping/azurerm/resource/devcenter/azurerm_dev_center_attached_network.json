@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DevCenter/devcenters/attachednetworks/read",
+      "Microsoft.DevCenter/devcenters/attachednetworks/write",
+      "Microsoft.DevCenter/devcenters/attachednetworks/delete",
+      "Microsoft.DevCenter/devcenters/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.DevCenter/devcenters/attachednetworks/delete"
+    ],
+    "modify": [
+      "Microsoft.DevCenter/devcenters/attachednetworks/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DevCenter/devcenters/attachednetworks/read",
+      "Microsoft.DevCenter/devcenters/read"
+    ]
+  }
+]

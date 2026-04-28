@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AppPlatform/Spring/certificates/read",
+      "Microsoft.AppPlatform/Spring/certificates/write",
+      "Microsoft.AppPlatform/Spring/certificates/delete",
+      "Microsoft.AppPlatform/Spring/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.AppPlatform/Spring/certificates/delete"
+    ],
+    "modify": [
+      "Microsoft.AppPlatform/Spring/certificates/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AppPlatform/Spring/certificates/read",
+      "Microsoft.AppPlatform/Spring/read"
+    ]
+  }
+]

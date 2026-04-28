@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ServiceNetworking/trafficControllers/frontends/read",
+      "Microsoft.ServiceNetworking/trafficControllers/frontends/write",
+      "Microsoft.ServiceNetworking/trafficControllers/frontends/delete",
+      "Microsoft.ServiceNetworking/trafficControllers/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.ServiceNetworking/trafficControllers/frontends/delete"
+    ],
+    "modify": [
+      "Microsoft.ServiceNetworking/trafficControllers/frontends/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ServiceNetworking/trafficControllers/frontends/read",
+      "Microsoft.ServiceNetworking/trafficControllers/read"
+    ]
+  }
+]

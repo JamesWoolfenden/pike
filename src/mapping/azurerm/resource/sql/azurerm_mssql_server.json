@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Sql/servers/read",
+      "Microsoft.Sql/servers/write",
+      "Microsoft.Sql/servers/delete",
+      "Microsoft.Sql/servers/operationResults/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Sql/servers/delete"
+    ],
+    "modify": [
+      "Microsoft.Sql/servers/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Sql/servers/read"
+    ]
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AAD/domainServices/read",
+      "Microsoft.AAD/domainServices/write",
+      "Microsoft.AAD/domainServices/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.AAD/domainServices/delete"
+    ],
+    "modify": [
+      "Microsoft.AAD/domainServices/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AAD/domainServices/read"
+    ]
+  }
+]

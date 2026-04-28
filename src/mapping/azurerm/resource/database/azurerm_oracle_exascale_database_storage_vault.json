@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Oracle.Database/exascaleDbStorageVaults/read",
+      "Oracle.Database/exascaleDbStorageVaults/write",
+      "Oracle.Database/exascaleDbStorageVaults/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Oracle.Database/exascaleDbStorageVaults/delete"
+    ],
+    "modify": [
+      "Oracle.Database/exascaleDbStorageVaults/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Oracle.Database/exascaleDbStorageVaults/read"
+    ]
+  }
+]

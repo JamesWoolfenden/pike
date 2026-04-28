@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.StandbyPool/standbyVirtualMachinePools/read",
+      "Microsoft.StandbyPool/standbyVirtualMachinePools/write",
+      "Microsoft.StandbyPool/standbyVirtualMachinePools/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.StandbyPool/standbyVirtualMachinePools/delete"
+    ],
+    "modify": [
+      "Microsoft.StandbyPool/standbyVirtualMachinePools/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.StandbyPool/standbyVirtualMachinePools/read"
+    ]
+  }
+]

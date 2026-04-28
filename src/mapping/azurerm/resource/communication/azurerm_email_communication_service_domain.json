@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Communication/EmailServices/Domains/read",
+      "Microsoft.Communication/EmailServices/Domains/write",
+      "Microsoft.Communication/EmailServices/Domains/delete",
+      "Microsoft.Communication/EmailServices/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Communication/EmailServices/Domains/delete"
+    ],
+    "modify": [
+      "Microsoft.Communication/EmailServices/Domains/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Communication/EmailServices/Domains/read",
+      "Microsoft.Communication/EmailServices/read"
+    ]
+  }
+]

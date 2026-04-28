@@ -1,0 +1,26 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DocumentDB/databaseAccounts/mongodbDatabases/read",
+      "Microsoft.DocumentDB/databaseAccounts/mongodbDatabases/write",
+      "Microsoft.DocumentDB/databaseAccounts/mongodbDatabases/delete",
+      "Microsoft.DocumentDB/databaseAccounts/read",
+      "Microsoft.DocumentDB/databaseAccounts/mongodbDatabases/operationResults/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.DocumentDB/databaseAccounts/mongodbDatabases/delete"
+    ],
+    "modify": [
+      "Microsoft.DocumentDB/databaseAccounts/mongodbDatabases/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DocumentDB/databaseAccounts/mongodbDatabases/read",
+      "Microsoft.DocumentDB/databaseAccounts/read"
+    ]
+  }
+]

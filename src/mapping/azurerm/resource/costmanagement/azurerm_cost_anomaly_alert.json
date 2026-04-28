@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.CostManagement/scheduledActions/read",
+      "Microsoft.CostManagement/scheduledActions/write",
+      "Microsoft.CostManagement/scheduledActions/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.CostManagement/scheduledActions/delete"
+    ],
+    "modify": [
+      "Microsoft.CostManagement/scheduledActions/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.CostManagement/scheduledActions/read"
+    ]
+  }
+]

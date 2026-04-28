@@ -1,0 +1,13 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "PaloAltoNetworks.Cloudngfw/localRulestacks/read"
+    ]
+  }
+]

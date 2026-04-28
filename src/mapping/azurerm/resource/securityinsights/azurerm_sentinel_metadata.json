@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.SecurityInsights/Metadata/read",
+      "Microsoft.SecurityInsights/Metadata/write",
+      "Microsoft.SecurityInsights/Metadata/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.SecurityInsights/Metadata/delete"
+    ],
+    "modify": [
+      "Microsoft.SecurityInsights/Metadata/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.SecurityInsights/Metadata/read"
+    ]
+  }
+]

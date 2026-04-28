@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Datadog/monitors/read",
+      "Microsoft.Datadog/monitors/write",
+      "Microsoft.Datadog/monitors/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Datadog/monitors/delete"
+    ],
+    "modify": [
+      "Microsoft.Datadog/monitors/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Datadog/monitors/read"
+    ]
+  }
+]

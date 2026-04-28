@@ -1,0 +1,29 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AppPlatform/Spring/apps/deployments/read",
+      "Microsoft.AppPlatform/Spring/apps/deployments/write",
+      "Microsoft.AppPlatform/Spring/apps/deployments/delete",
+      "Microsoft.AppPlatform/Spring/read",
+      "Microsoft.AppPlatform/Spring/apps/read",
+      "Microsoft.AppPlatform/Spring/apps/deployments/operationStatuses/read",
+      "Microsoft.AppPlatform/Spring/apps/deployments/operationResults/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.AppPlatform/Spring/apps/deployments/delete"
+    ],
+    "modify": [
+      "Microsoft.AppPlatform/Spring/apps/deployments/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AppPlatform/Spring/apps/deployments/read",
+      "Microsoft.AppPlatform/Spring/read",
+      "Microsoft.AppPlatform/Spring/apps/read"
+    ]
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "Microsoft.ServiceBus/namespaces/disasterRecoveryConfigs/read",
+      "Microsoft.ServiceBus/namespaces/read"
+    ]
+  }
+]

@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/firewallPolicies/ruleCollectionGroups/read",
+      "Microsoft.Network/firewallPolicies/ruleCollectionGroups/write",
+      "Microsoft.Network/firewallPolicies/ruleCollectionGroups/delete",
+      "Microsoft.Network/firewallPolicies/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/firewallPolicies/ruleCollectionGroups/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/firewallPolicies/ruleCollectionGroups/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/firewallPolicies/ruleCollectionGroups/read",
+      "Microsoft.Network/firewallPolicies/read"
+    ]
+  }
+]

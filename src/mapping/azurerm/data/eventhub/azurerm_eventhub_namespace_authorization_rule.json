@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "Microsoft.EventHub/namespaces/authorizationRules/read",
+      "Microsoft.EventHub/namespaces/read"
+    ]
+  }
+]

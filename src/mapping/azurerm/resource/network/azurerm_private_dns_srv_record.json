@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/privateDnsZones/SRV/read",
+      "Microsoft.Network/privateDnsZones/SRV/write",
+      "Microsoft.Network/privateDnsZones/SRV/delete",
+      "Microsoft.Network/privateDnsZones/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/privateDnsZones/SRV/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/privateDnsZones/SRV/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/privateDnsZones/SRV/read",
+      "Microsoft.Network/privateDnsZones/read"
+    ]
+  }
+]

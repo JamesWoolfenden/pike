@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/expressRouteGateways/expressRouteConnections/read",
+      "Microsoft.Network/expressRouteGateways/expressRouteConnections/write",
+      "Microsoft.Network/expressRouteGateways/expressRouteConnections/delete",
+      "Microsoft.Network/expressRouteGateways/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/expressRouteGateways/expressRouteConnections/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/expressRouteGateways/expressRouteConnections/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/expressRouteGateways/expressRouteConnections/read",
+      "Microsoft.Network/expressRouteGateways/read"
+    ]
+  }
+]

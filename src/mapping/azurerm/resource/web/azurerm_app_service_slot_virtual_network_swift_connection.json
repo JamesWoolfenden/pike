@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "microsoft.web/sites/slots/networkConfig/read",
+      "microsoft.web/sites/slots/networkConfig/write",
+      "microsoft.web/sites/slots/networkConfig/delete",
+      "Microsoft.Web/sites/Read",
+      "Microsoft.Web/sites/slots/Read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "microsoft.web/sites/slots/networkConfig/delete"
+    ],
+    "modify": [
+      "microsoft.web/sites/slots/networkConfig/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "microsoft.web/sites/slots/networkConfig/read",
+      "Microsoft.Web/sites/Read",
+      "Microsoft.Web/sites/slots/Read"
+    ]
+  }
+]

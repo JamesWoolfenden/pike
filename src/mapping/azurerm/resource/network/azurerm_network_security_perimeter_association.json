@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/networkSecurityPerimeters/resourceAssociations/read",
+      "Microsoft.Network/networkSecurityPerimeters/resourceAssociations/write",
+      "Microsoft.Network/networkSecurityPerimeters/resourceAssociations/delete",
+      "Microsoft.Network/networkSecurityPerimeters/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/networkSecurityPerimeters/resourceAssociations/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/networkSecurityPerimeters/resourceAssociations/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/networkSecurityPerimeters/resourceAssociations/read",
+      "Microsoft.Network/networkSecurityPerimeters/read"
+    ]
+  }
+]

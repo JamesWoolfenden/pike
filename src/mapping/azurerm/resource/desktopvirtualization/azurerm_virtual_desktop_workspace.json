@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DesktopVirtualization/workspaces/read",
+      "Microsoft.DesktopVirtualization/workspaces/write",
+      "Microsoft.DesktopVirtualization/workspaces/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.DesktopVirtualization/workspaces/delete"
+    ],
+    "modify": [
+      "Microsoft.DesktopVirtualization/workspaces/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DesktopVirtualization/workspaces/read"
+    ]
+  }
+]

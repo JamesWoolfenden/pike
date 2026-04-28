@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/virtualHubs/routingIntent/read",
+      "Microsoft.Network/virtualHubs/routingIntent/write",
+      "Microsoft.Network/virtualHubs/routingIntent/delete",
+      "Microsoft.Network/virtualHubs/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/virtualHubs/routingIntent/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/virtualHubs/routingIntent/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/virtualHubs/routingIntent/read",
+      "Microsoft.Network/virtualHubs/read"
+    ]
+  }
+]

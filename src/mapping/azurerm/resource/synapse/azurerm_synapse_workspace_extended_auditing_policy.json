@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Synapse/workspaces/extendedAuditingSettings/read",
+      "Microsoft.Synapse/workspaces/extendedAuditingSettings/write",
+      "Microsoft.Synapse/workspaces/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [
+      "Microsoft.Synapse/workspaces/extendedAuditingSettings/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Synapse/workspaces/extendedAuditingSettings/read",
+      "Microsoft.Synapse/workspaces/read"
+    ]
+  }
+]

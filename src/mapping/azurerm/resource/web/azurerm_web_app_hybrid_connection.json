@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "microsoft.web/sites/hybridconnectionnamespaces/relays/read",
+      "microsoft.web/sites/hybridconnectionnamespaces/relays/write",
+      "microsoft.web/sites/hybridconnectionnamespaces/relays/delete",
+      "Microsoft.Web/sites/Read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "microsoft.web/sites/hybridconnectionnamespaces/relays/delete"
+    ],
+    "modify": [
+      "microsoft.web/sites/hybridconnectionnamespaces/relays/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "microsoft.web/sites/hybridconnectionnamespaces/relays/read",
+      "Microsoft.Web/sites/Read"
+    ]
+  }
+]

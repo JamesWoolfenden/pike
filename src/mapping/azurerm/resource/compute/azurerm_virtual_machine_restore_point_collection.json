@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Compute/restorePointCollections/read",
+      "Microsoft.Compute/restorePointCollections/write",
+      "Microsoft.Compute/restorePointCollections/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Compute/restorePointCollections/delete"
+    ],
+    "modify": [
+      "Microsoft.Compute/restorePointCollections/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Compute/restorePointCollections/read"
+    ]
+  }
+]

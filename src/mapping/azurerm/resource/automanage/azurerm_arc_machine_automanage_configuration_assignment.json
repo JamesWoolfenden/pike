@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Automanage/configurationProfileAssignments/Read",
+      "Microsoft.Automanage/configurationProfileAssignments/Write",
+      "Microsoft.Automanage/configurationProfileAssignments/Delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Automanage/configurationProfileAssignments/Delete"
+    ],
+    "modify": [
+      "Microsoft.Automanage/configurationProfileAssignments/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Automanage/configurationProfileAssignments/Read"
+    ]
+  }
+]

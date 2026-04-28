@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Cache/redis/linkedServers/read",
+      "Microsoft.Cache/redis/linkedServers/write",
+      "Microsoft.Cache/redis/linkedServers/delete",
+      "Microsoft.Cache/redis/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Cache/redis/linkedServers/delete"
+    ],
+    "modify": [
+      "Microsoft.Cache/redis/linkedServers/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Cache/redis/linkedServers/read",
+      "Microsoft.Cache/redis/read"
+    ]
+  }
+]

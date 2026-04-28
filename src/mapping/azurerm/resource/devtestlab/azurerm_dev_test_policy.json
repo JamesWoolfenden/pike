@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DevTestLab/labs/policySets/policies/read",
+      "Microsoft.DevTestLab/labs/policySets/policies/write",
+      "Microsoft.DevTestLab/labs/policySets/policies/delete",
+      "Microsoft.DevTestLab/labs/read",
+      "Microsoft.DevTestLab/labs/policySets/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.DevTestLab/labs/policySets/policies/delete"
+    ],
+    "modify": [
+      "Microsoft.DevTestLab/labs/policySets/policies/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DevTestLab/labs/policySets/policies/read",
+      "Microsoft.DevTestLab/labs/read",
+      "Microsoft.DevTestLab/labs/policySets/read"
+    ]
+  }
+]

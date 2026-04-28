@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "microsoft.web/sites/hostnamebindings/read",
+      "microsoft.web/sites/hostnamebindings/write",
+      "microsoft.web/sites/hostnamebindings/delete",
+      "Microsoft.Web/sites/Read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "microsoft.web/sites/hostnamebindings/delete"
+    ],
+    "modify": [
+      "microsoft.web/sites/hostnamebindings/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "microsoft.web/sites/hostnamebindings/read",
+      "Microsoft.Web/sites/Read"
+    ]
+  }
+]

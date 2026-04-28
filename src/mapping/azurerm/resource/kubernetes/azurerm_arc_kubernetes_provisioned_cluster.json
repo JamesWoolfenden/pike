@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Kubernetes/connectedClusters/Read",
+      "Microsoft.Kubernetes/connectedClusters/Write",
+      "Microsoft.Kubernetes/connectedClusters/Delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Kubernetes/connectedClusters/Delete"
+    ],
+    "modify": [
+      "Microsoft.Kubernetes/connectedClusters/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Kubernetes/connectedClusters/Read"
+    ]
+  }
+]

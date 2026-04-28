@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.PolicyInsights/remediations/read",
+      "Microsoft.PolicyInsights/remediations/write",
+      "Microsoft.PolicyInsights/remediations/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.PolicyInsights/remediations/delete"
+    ],
+    "modify": [
+      "Microsoft.PolicyInsights/remediations/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.PolicyInsights/remediations/read"
+    ]
+  }
+]

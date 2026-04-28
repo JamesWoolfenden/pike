@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.HybridCompute/machines/read",
+      "Microsoft.HybridCompute/machines/write",
+      "Microsoft.HybridCompute/machines/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.HybridCompute/machines/delete"
+    ],
+    "modify": [
+      "Microsoft.HybridCompute/machines/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.HybridCompute/machines/read"
+    ]
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "microsoft.app/jobs/read",
+      "microsoft.app/jobs/write",
+      "microsoft.app/jobs/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "microsoft.app/jobs/delete"
+    ],
+    "modify": [
+      "microsoft.app/jobs/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "microsoft.app/jobs/read"
+    ]
+  }
+]

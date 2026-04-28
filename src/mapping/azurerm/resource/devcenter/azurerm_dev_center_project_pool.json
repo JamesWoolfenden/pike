@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DevCenter/projects/pools/read",
+      "Microsoft.DevCenter/projects/pools/write",
+      "Microsoft.DevCenter/projects/pools/delete",
+      "Microsoft.DevCenter/projects/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.DevCenter/projects/pools/delete"
+    ],
+    "modify": [
+      "Microsoft.DevCenter/projects/pools/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DevCenter/projects/pools/read",
+      "Microsoft.DevCenter/projects/read"
+    ]
+  }
+]

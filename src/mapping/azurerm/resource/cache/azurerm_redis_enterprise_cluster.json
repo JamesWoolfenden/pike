@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Cache/redisEnterprise/read",
+      "Microsoft.Cache/redisEnterprise/write",
+      "Microsoft.Cache/redisEnterprise/delete",
+      "Microsoft.Cache/redisEnterprise/operationResults/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Cache/redisEnterprise/delete"
+    ],
+    "modify": [
+      "Microsoft.Cache/redisEnterprise/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Cache/redisEnterprise/read"
+    ]
+  }
+]

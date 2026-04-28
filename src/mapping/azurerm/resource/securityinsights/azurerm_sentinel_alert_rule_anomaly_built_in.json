@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.SecurityInsights/securityMLAnalyticsSettings/read",
+      "Microsoft.SecurityInsights/securityMLAnalyticsSettings/write",
+      "Microsoft.SecurityInsights/securityMLAnalyticsSettings/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.SecurityInsights/securityMLAnalyticsSettings/delete"
+    ],
+    "modify": [
+      "Microsoft.SecurityInsights/securityMLAnalyticsSettings/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.SecurityInsights/securityMLAnalyticsSettings/read"
+    ]
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "Microsoft.Sql/servers/elasticPools/read",
+      "Microsoft.Sql/servers/read"
+    ]
+  }
+]

@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AzureStackHCI/Clusters/DeploymentSettings/Read",
+      "Microsoft.AzureStackHCI/Clusters/DeploymentSettings/Write",
+      "Microsoft.AzureStackHCI/Clusters/DeploymentSettings/Delete",
+      "Microsoft.AzureStackHCI/Clusters/Read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.AzureStackHCI/Clusters/DeploymentSettings/Delete"
+    ],
+    "modify": [
+      "Microsoft.AzureStackHCI/Clusters/DeploymentSettings/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AzureStackHCI/Clusters/DeploymentSettings/Read",
+      "Microsoft.AzureStackHCI/Clusters/Read"
+    ]
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.CodeSigning/codeSigningAccounts/Read",
+      "Microsoft.CodeSigning/codeSigningAccounts/Write",
+      "Microsoft.CodeSigning/codeSigningAccounts/Delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.CodeSigning/codeSigningAccounts/Delete"
+    ],
+    "modify": [
+      "Microsoft.CodeSigning/codeSigningAccounts/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.CodeSigning/codeSigningAccounts/Read"
+    ]
+  }
+]

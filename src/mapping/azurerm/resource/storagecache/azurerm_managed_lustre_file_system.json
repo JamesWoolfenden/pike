@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.StorageCache/amlFilesystems/read",
+      "Microsoft.StorageCache/amlFilesystems/write",
+      "Microsoft.StorageCache/amlFilesystems/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.StorageCache/amlFilesystems/delete"
+    ],
+    "modify": [
+      "Microsoft.StorageCache/amlFilesystems/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.StorageCache/amlFilesystems/read"
+    ]
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/applicationSecurityGroups/read",
+      "Microsoft.Network/applicationSecurityGroups/write",
+      "Microsoft.Network/applicationSecurityGroups/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/applicationSecurityGroups/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/applicationSecurityGroups/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/applicationSecurityGroups/read"
+    ]
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Storage/storageAccounts/fileServices/shares/read",
+      "Microsoft.Storage/storageAccounts/fileServices/shares/write",
+      "Microsoft.Storage/storageAccounts/fileServices/shares/delete",
+      "Microsoft.Storage/storageAccounts/read",
+      "Microsoft.Storage/storageAccounts/fileServices/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Storage/storageAccounts/fileServices/shares/delete"
+    ],
+    "modify": [
+      "Microsoft.Storage/storageAccounts/fileServices/shares/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Storage/storageAccounts/fileServices/shares/read",
+      "Microsoft.Storage/storageAccounts/read",
+      "Microsoft.Storage/storageAccounts/fileServices/read"
+    ]
+  }
+]

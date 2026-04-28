@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Insights/ScheduledQueryRules/Read",
+      "Microsoft.Insights/ScheduledQueryRules/Write",
+      "Microsoft.Insights/ScheduledQueryRules/Delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Insights/ScheduledQueryRules/Delete"
+    ],
+    "modify": [
+      "Microsoft.Insights/ScheduledQueryRules/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Insights/ScheduledQueryRules/Read"
+    ]
+  }
+]

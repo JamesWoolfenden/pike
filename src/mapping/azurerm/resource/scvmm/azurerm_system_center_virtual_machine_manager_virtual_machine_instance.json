@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.SCVMM/virtualMachineInstances/read",
+      "Microsoft.SCVMM/virtualMachineInstances/write",
+      "Microsoft.SCVMM/virtualMachineInstances/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.SCVMM/virtualMachineInstances/delete"
+    ],
+    "modify": [
+      "Microsoft.SCVMM/virtualMachineInstances/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.SCVMM/virtualMachineInstances/read"
+    ]
+  }
+]

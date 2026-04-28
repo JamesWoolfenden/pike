@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.SignalRService/WebPubSub/read",
+      "Microsoft.SignalRService/WebPubSub/write",
+      "Microsoft.SignalRService/WebPubSub/delete",
+      "Microsoft.SignalRService/WebPubSub/operationStatuses/read",
+      "Microsoft.SignalRService/WebPubSub/operationResults/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.SignalRService/WebPubSub/delete"
+    ],
+    "modify": [
+      "Microsoft.SignalRService/WebPubSub/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.SignalRService/WebPubSub/read"
+    ]
+  }
+]

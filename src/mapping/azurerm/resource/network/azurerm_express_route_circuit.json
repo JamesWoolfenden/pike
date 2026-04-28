@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/expressRouteCircuits/read",
+      "Microsoft.Network/expressRouteCircuits/write",
+      "Microsoft.Network/expressRouteCircuits/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/expressRouteCircuits/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/expressRouteCircuits/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/expressRouteCircuits/read"
+    ]
+  }
+]

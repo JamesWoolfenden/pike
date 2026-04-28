@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Consumption/budgets/read",
+      "Microsoft.Consumption/budgets/write",
+      "Microsoft.Consumption/budgets/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Consumption/budgets/delete"
+    ],
+    "modify": [
+      "Microsoft.Consumption/budgets/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Consumption/budgets/read"
+    ]
+  }
+]

@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.NetApp/netAppAccounts/snapshotPolicies/read",
+      "Microsoft.NetApp/netAppAccounts/snapshotPolicies/write",
+      "Microsoft.NetApp/netAppAccounts/snapshotPolicies/delete",
+      "Microsoft.NetApp/netAppAccounts/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.NetApp/netAppAccounts/snapshotPolicies/delete"
+    ],
+    "modify": [
+      "Microsoft.NetApp/netAppAccounts/snapshotPolicies/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.NetApp/netAppAccounts/snapshotPolicies/read",
+      "Microsoft.NetApp/netAppAccounts/read"
+    ]
+  }
+]

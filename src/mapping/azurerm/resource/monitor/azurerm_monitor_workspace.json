@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "microsoft.monitor/accounts/read",
+      "microsoft.monitor/accounts/write",
+      "microsoft.monitor/accounts/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "microsoft.monitor/accounts/delete"
+    ],
+    "modify": [
+      "microsoft.monitor/accounts/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "microsoft.monitor/accounts/read"
+    ]
+  }
+]

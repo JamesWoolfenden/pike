@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "Microsoft.DocumentDB/locations/restorableDatabaseAccounts/read",
+      "Microsoft.DocumentDB/locations/read"
+    ]
+  }
+]

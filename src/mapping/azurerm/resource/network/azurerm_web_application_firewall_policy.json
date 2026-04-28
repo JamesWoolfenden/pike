@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/ApplicationGatewayWebApplicationFirewallPolicies/read",
+      "Microsoft.Network/ApplicationGatewayWebApplicationFirewallPolicies/write",
+      "Microsoft.Network/ApplicationGatewayWebApplicationFirewallPolicies/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/ApplicationGatewayWebApplicationFirewallPolicies/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/ApplicationGatewayWebApplicationFirewallPolicies/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/ApplicationGatewayWebApplicationFirewallPolicies/read"
+    ]
+  }
+]

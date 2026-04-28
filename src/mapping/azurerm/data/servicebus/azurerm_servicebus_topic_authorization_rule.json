@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "Microsoft.ServiceBus/namespaces/topics/authorizationRules/read",
+      "Microsoft.ServiceBus/namespaces/read",
+      "Microsoft.ServiceBus/namespaces/topics/read"
+    ]
+  }
+]

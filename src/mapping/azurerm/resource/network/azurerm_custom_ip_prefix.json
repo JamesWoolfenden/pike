@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/customIpPrefixes/read",
+      "Microsoft.Network/customIpPrefixes/write",
+      "Microsoft.Network/customIpPrefixes/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/customIpPrefixes/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/customIpPrefixes/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/customIpPrefixes/read"
+    ]
+  }
+]

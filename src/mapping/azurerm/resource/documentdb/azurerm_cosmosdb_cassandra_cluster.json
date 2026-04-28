@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DocumentDB/cassandraClusters/read",
+      "Microsoft.DocumentDB/cassandraClusters/write",
+      "Microsoft.DocumentDB/cassandraClusters/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.DocumentDB/cassandraClusters/delete"
+    ],
+    "modify": [
+      "Microsoft.DocumentDB/cassandraClusters/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DocumentDB/cassandraClusters/read"
+    ]
+  }
+]

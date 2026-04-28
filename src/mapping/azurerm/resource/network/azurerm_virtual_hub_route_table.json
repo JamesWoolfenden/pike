@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/virtualHubs/hubRouteTables/read",
+      "Microsoft.Network/virtualHubs/hubRouteTables/write",
+      "Microsoft.Network/virtualHubs/hubRouteTables/delete",
+      "Microsoft.Network/virtualHubs/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/virtualHubs/hubRouteTables/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/virtualHubs/hubRouteTables/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/virtualHubs/hubRouteTables/read",
+      "Microsoft.Network/virtualHubs/read"
+    ]
+  }
+]

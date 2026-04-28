@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Synapse/workspaces/sqlPools/read",
+      "Microsoft.Synapse/workspaces/sqlPools/write",
+      "Microsoft.Synapse/workspaces/sqlPools/delete",
+      "Microsoft.Synapse/workspaces/read",
+      "Microsoft.Synapse/workspaces/sqlPools/operationStatuses/read",
+      "Microsoft.Synapse/workspaces/sqlPools/operationResults/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Synapse/workspaces/sqlPools/delete"
+    ],
+    "modify": [
+      "Microsoft.Synapse/workspaces/sqlPools/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Synapse/workspaces/sqlPools/read",
+      "Microsoft.Synapse/workspaces/read"
+    ]
+  }
+]

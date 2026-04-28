@@ -1,0 +1,29 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Storage/storageAccounts/blobServices/containers/immutabilityPolicies/read",
+      "Microsoft.Storage/storageAccounts/blobServices/containers/immutabilityPolicies/write",
+      "Microsoft.Storage/storageAccounts/blobServices/containers/immutabilityPolicies/delete",
+      "Microsoft.Storage/storageAccounts/read",
+      "Microsoft.Storage/storageAccounts/blobServices/read",
+      "Microsoft.Storage/storageAccounts/blobServices/containers/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Storage/storageAccounts/blobServices/containers/immutabilityPolicies/delete"
+    ],
+    "modify": [
+      "Microsoft.Storage/storageAccounts/blobServices/containers/immutabilityPolicies/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Storage/storageAccounts/blobServices/containers/immutabilityPolicies/read",
+      "Microsoft.Storage/storageAccounts/read",
+      "Microsoft.Storage/storageAccounts/blobServices/read",
+      "Microsoft.Storage/storageAccounts/blobServices/containers/read"
+    ]
+  }
+]

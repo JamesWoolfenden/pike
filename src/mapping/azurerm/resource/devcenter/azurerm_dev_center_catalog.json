@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DevCenter/devcenters/catalogs/read",
+      "Microsoft.DevCenter/devcenters/catalogs/write",
+      "Microsoft.DevCenter/devcenters/catalogs/delete",
+      "Microsoft.DevCenter/devcenters/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.DevCenter/devcenters/catalogs/delete"
+    ],
+    "modify": [
+      "Microsoft.DevCenter/devcenters/catalogs/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DevCenter/devcenters/catalogs/read",
+      "Microsoft.DevCenter/devcenters/read"
+    ]
+  }
+]

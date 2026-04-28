@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "Microsoft.ContainerRegistry/registries/cacheRules/read",
+      "Microsoft.ContainerRegistry/registries/read"
+    ]
+  }
+]

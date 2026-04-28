@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "Microsoft.NotificationHubs/Namespaces/NotificationHubs/read",
+      "Microsoft.NotificationHubs/Namespaces/read"
+    ]
+  }
+]

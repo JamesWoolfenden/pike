@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Web/staticSites/userProvidedFunctionApps/Read",
+      "Microsoft.Web/staticSites/userProvidedFunctionApps/Write",
+      "Microsoft.Web/staticSites/userProvidedFunctionApps/Delete",
+      "Microsoft.Web/staticSites/Read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Web/staticSites/userProvidedFunctionApps/Delete"
+    ],
+    "modify": [
+      "Microsoft.Web/staticSites/userProvidedFunctionApps/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Web/staticSites/userProvidedFunctionApps/Read",
+      "Microsoft.Web/staticSites/Read"
+    ]
+  }
+]

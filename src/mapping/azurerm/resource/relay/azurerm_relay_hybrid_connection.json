@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Relay/namespaces/HybridConnections/read",
+      "Microsoft.Relay/namespaces/HybridConnections/write",
+      "Microsoft.Relay/namespaces/HybridConnections/Delete",
+      "Microsoft.Relay/namespaces/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Relay/namespaces/HybridConnections/Delete"
+    ],
+    "modify": [
+      "Microsoft.Relay/namespaces/HybridConnections/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Relay/namespaces/HybridConnections/read",
+      "Microsoft.Relay/namespaces/read"
+    ]
+  }
+]

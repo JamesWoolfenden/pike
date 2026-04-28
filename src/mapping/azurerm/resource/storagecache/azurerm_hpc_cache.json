@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.StorageCache/caches/read",
+      "Microsoft.StorageCache/caches/write",
+      "Microsoft.StorageCache/caches/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.StorageCache/caches/delete"
+    ],
+    "modify": [
+      "Microsoft.StorageCache/caches/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.StorageCache/caches/read"
+    ]
+  }
+]

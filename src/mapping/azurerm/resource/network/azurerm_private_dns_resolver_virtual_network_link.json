@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/dnsForwardingRulesets/virtualNetworkLinks/read",
+      "Microsoft.Network/dnsForwardingRulesets/virtualNetworkLinks/write",
+      "Microsoft.Network/dnsForwardingRulesets/virtualNetworkLinks/delete",
+      "Microsoft.Network/dnsForwardingRulesets/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/dnsForwardingRulesets/virtualNetworkLinks/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/dnsForwardingRulesets/virtualNetworkLinks/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/dnsForwardingRulesets/virtualNetworkLinks/read",
+      "Microsoft.Network/dnsForwardingRulesets/read"
+    ]
+  }
+]

@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.OperationalInsights/workspaces/datasources/read",
+      "Microsoft.OperationalInsights/workspaces/datasources/write",
+      "Microsoft.OperationalInsights/workspaces/datasources/delete",
+      "Microsoft.OperationalInsights/workspaces/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.OperationalInsights/workspaces/datasources/delete"
+    ],
+    "modify": [
+      "Microsoft.OperationalInsights/workspaces/datasources/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.OperationalInsights/workspaces/datasources/read",
+      "Microsoft.OperationalInsights/workspaces/read"
+    ]
+  }
+]

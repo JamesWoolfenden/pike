@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/networkManagers/scopeConnections/read",
+      "Microsoft.Network/networkManagers/scopeConnections/write",
+      "Microsoft.Network/networkManagers/scopeConnections/delete",
+      "Microsoft.Network/networkManagers/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/networkManagers/scopeConnections/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/networkManagers/scopeConnections/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/networkManagers/scopeConnections/read",
+      "Microsoft.Network/networkManagers/read"
+    ]
+  }
+]

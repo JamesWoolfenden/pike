@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.SecurityInsights/dataConnectors/read",
+      "Microsoft.SecurityInsights/dataConnectors/write",
+      "Microsoft.SecurityInsights/dataConnectors/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.SecurityInsights/dataConnectors/delete"
+    ],
+    "modify": [
+      "Microsoft.SecurityInsights/dataConnectors/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.SecurityInsights/dataConnectors/read"
+    ]
+  }
+]

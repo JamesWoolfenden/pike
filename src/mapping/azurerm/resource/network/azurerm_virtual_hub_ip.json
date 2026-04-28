@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/virtualHubs/ipConfigurations/read",
+      "Microsoft.Network/virtualHubs/ipConfigurations/write",
+      "Microsoft.Network/virtualHubs/ipConfigurations/delete",
+      "Microsoft.Network/virtualHubs/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/virtualHubs/ipConfigurations/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/virtualHubs/ipConfigurations/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/virtualHubs/ipConfigurations/read",
+      "Microsoft.Network/virtualHubs/read"
+    ]
+  }
+]

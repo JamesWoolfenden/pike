@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.SignalRService/SignalR/sharedPrivateLinkResources/read",
+      "Microsoft.SignalRService/SignalR/sharedPrivateLinkResources/write",
+      "Microsoft.SignalRService/SignalR/sharedPrivateLinkResources/delete",
+      "Microsoft.SignalRService/SignalR/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.SignalRService/SignalR/sharedPrivateLinkResources/delete"
+    ],
+    "modify": [
+      "Microsoft.SignalRService/SignalR/sharedPrivateLinkResources/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.SignalRService/SignalR/sharedPrivateLinkResources/read",
+      "Microsoft.SignalRService/SignalR/read"
+    ]
+  }
+]

@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Cdn/profiles/securitypolicies/read",
+      "Microsoft.Cdn/profiles/securitypolicies/write",
+      "Microsoft.Cdn/profiles/securitypolicies/delete",
+      "Microsoft.Cdn/profiles/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Cdn/profiles/securitypolicies/delete"
+    ],
+    "modify": [
+      "Microsoft.Cdn/profiles/securitypolicies/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Cdn/profiles/securitypolicies/read",
+      "Microsoft.Cdn/profiles/read"
+    ]
+  }
+]

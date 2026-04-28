@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ServiceFabric/clusters/read",
+      "Microsoft.ServiceFabric/clusters/write",
+      "Microsoft.ServiceFabric/clusters/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.ServiceFabric/clusters/delete"
+    ],
+    "modify": [
+      "Microsoft.ServiceFabric/clusters/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ServiceFabric/clusters/read"
+    ]
+  }
+]

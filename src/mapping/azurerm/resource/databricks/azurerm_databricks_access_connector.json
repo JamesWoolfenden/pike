@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Databricks/accessConnectors/read",
+      "Microsoft.Databricks/accessConnectors/write",
+      "Microsoft.Databricks/accessConnectors/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Databricks/accessConnectors/delete"
+    ],
+    "modify": [
+      "Microsoft.Databricks/accessConnectors/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Databricks/accessConnectors/read"
+    ]
+  }
+]

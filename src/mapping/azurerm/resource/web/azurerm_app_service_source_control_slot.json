@@ -1,0 +1,26 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Web/sites/slots/Read",
+      "Microsoft.Web/sites/slots/Write",
+      "Microsoft.Web/sites/slots/Delete",
+      "Microsoft.Web/sites/Read",
+      "microsoft.web/sites/slots/operationresults/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Web/sites/slots/Delete"
+    ],
+    "modify": [
+      "Microsoft.Web/sites/slots/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Web/sites/slots/Read",
+      "Microsoft.Web/sites/Read"
+    ]
+  }
+]

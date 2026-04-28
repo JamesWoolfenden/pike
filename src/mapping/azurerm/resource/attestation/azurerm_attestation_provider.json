@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Attestation/attestationProviders/read",
+      "Microsoft.Attestation/attestationProviders/write",
+      "Microsoft.Attestation/attestationProviders/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Attestation/attestationProviders/delete"
+    ],
+    "modify": [
+      "Microsoft.Attestation/attestationProviders/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Attestation/attestationProviders/read"
+    ]
+  }
+]

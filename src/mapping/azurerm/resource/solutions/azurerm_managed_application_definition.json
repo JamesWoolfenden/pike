@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Solutions/applicationDefinitions/read",
+      "Microsoft.Solutions/applicationDefinitions/write",
+      "Microsoft.Solutions/applicationDefinitions/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Solutions/applicationDefinitions/delete"
+    ],
+    "modify": [
+      "Microsoft.Solutions/applicationDefinitions/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Solutions/applicationDefinitions/read"
+    ]
+  }
+]

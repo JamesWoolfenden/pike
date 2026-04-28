@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/vpnServerConfigurations/read",
+      "Microsoft.Network/vpnServerConfigurations/write",
+      "Microsoft.Network/vpnServerConfigurations/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/vpnServerConfigurations/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/vpnServerConfigurations/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/vpnServerConfigurations/read"
+    ]
+  }
+]

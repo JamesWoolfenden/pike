@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Workloads/sapVirtualInstances/read",
+      "Microsoft.Workloads/sapVirtualInstances/write",
+      "Microsoft.Workloads/sapVirtualInstances/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Workloads/sapVirtualInstances/delete"
+    ],
+    "modify": [
+      "Microsoft.Workloads/sapVirtualInstances/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Workloads/sapVirtualInstances/read"
+    ]
+  }
+]

@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.EventHub/namespaces/authorizationRules/read",
+      "Microsoft.EventHub/namespaces/authorizationRules/write",
+      "Microsoft.EventHub/namespaces/authorizationRules/delete",
+      "Microsoft.EventHub/namespaces/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.EventHub/namespaces/authorizationRules/delete"
+    ],
+    "modify": [
+      "Microsoft.EventHub/namespaces/authorizationRules/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.EventHub/namespaces/authorizationRules/read",
+      "Microsoft.EventHub/namespaces/read"
+    ]
+  }
+]

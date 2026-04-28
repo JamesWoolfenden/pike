@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AlertsManagement/smartDetectorAlertRules/read",
+      "Microsoft.AlertsManagement/smartDetectorAlertRules/write",
+      "Microsoft.AlertsManagement/smartDetectorAlertRules/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.AlertsManagement/smartDetectorAlertRules/delete"
+    ],
+    "modify": [
+      "Microsoft.AlertsManagement/smartDetectorAlertRules/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AlertsManagement/smartDetectorAlertRules/read"
+    ]
+  }
+]

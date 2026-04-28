@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.EventHub/namespaces/eventHubs/consumergroups/read",
+      "Microsoft.EventHub/namespaces/eventHubs/consumergroups/write",
+      "Microsoft.EventHub/namespaces/eventHubs/consumergroups/Delete",
+      "Microsoft.EventHub/namespaces/read",
+      "Microsoft.EventHub/namespaces/eventhubs/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.EventHub/namespaces/eventHubs/consumergroups/Delete"
+    ],
+    "modify": [
+      "Microsoft.EventHub/namespaces/eventHubs/consumergroups/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.EventHub/namespaces/eventHubs/consumergroups/read",
+      "Microsoft.EventHub/namespaces/read",
+      "Microsoft.EventHub/namespaces/eventhubs/read"
+    ]
+  }
+]

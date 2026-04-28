@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.HealthBot/healthBots/Read",
+      "Microsoft.HealthBot/healthBots/Write",
+      "Microsoft.HealthBot/healthBots/Delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.HealthBot/healthBots/Delete"
+    ],
+    "modify": [
+      "Microsoft.HealthBot/healthBots/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.HealthBot/healthBots/Read"
+    ]
+  }
+]

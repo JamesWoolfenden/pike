@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DevOpsInfrastructure/pools/read",
+      "Microsoft.DevOpsInfrastructure/pools/write",
+      "Microsoft.DevOpsInfrastructure/pools/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.DevOpsInfrastructure/pools/delete"
+    ],
+    "modify": [
+      "Microsoft.DevOpsInfrastructure/pools/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DevOpsInfrastructure/pools/read"
+    ]
+  }
+]

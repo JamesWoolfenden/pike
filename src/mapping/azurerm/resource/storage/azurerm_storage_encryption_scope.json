@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Storage/storageAccounts/encryptionScopes/read",
+      "Microsoft.Storage/storageAccounts/encryptionScopes/write",
+      "Microsoft.Storage/storageAccounts/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [
+      "Microsoft.Storage/storageAccounts/encryptionScopes/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Storage/storageAccounts/encryptionScopes/read",
+      "Microsoft.Storage/storageAccounts/read"
+    ]
+  }
+]

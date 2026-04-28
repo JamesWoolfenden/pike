@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Logic/integrationAccounts/certificates/read",
+      "Microsoft.Logic/integrationAccounts/certificates/write",
+      "Microsoft.Logic/integrationAccounts/certificates/delete",
+      "Microsoft.Logic/integrationAccounts/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Logic/integrationAccounts/certificates/delete"
+    ],
+    "modify": [
+      "Microsoft.Logic/integrationAccounts/certificates/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Logic/integrationAccounts/certificates/read",
+      "Microsoft.Logic/integrationAccounts/read"
+    ]
+  }
+]

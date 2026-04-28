@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.EventGrid/systemTopics/read",
+      "Microsoft.EventGrid/systemTopics/write",
+      "Microsoft.EventGrid/systemTopics/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.EventGrid/systemTopics/delete"
+    ],
+    "modify": [
+      "Microsoft.EventGrid/systemTopics/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.EventGrid/systemTopics/read"
+    ]
+  }
+]

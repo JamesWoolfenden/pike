@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DataMigration/services/projects/read",
+      "Microsoft.DataMigration/services/projects/write",
+      "Microsoft.DataMigration/services/projects/delete",
+      "Microsoft.DataMigration/services/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.DataMigration/services/projects/delete"
+    ],
+    "modify": [
+      "Microsoft.DataMigration/services/projects/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DataMigration/services/projects/read",
+      "Microsoft.DataMigration/services/read"
+    ]
+  }
+]

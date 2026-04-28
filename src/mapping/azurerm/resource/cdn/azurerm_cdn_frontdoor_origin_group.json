@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Cdn/profiles/origingroups/read",
+      "Microsoft.Cdn/profiles/origingroups/write",
+      "Microsoft.Cdn/profiles/origingroups/delete",
+      "Microsoft.Cdn/profiles/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Cdn/profiles/origingroups/delete"
+    ],
+    "modify": [
+      "Microsoft.Cdn/profiles/origingroups/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Cdn/profiles/origingroups/read",
+      "Microsoft.Cdn/profiles/read"
+    ]
+  }
+]

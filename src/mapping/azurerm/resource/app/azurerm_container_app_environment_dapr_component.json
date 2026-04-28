@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "microsoft.app/managedenvironments/daprcomponents/read",
+      "microsoft.app/managedenvironments/daprcomponents/write",
+      "microsoft.app/managedenvironments/daprcomponents/delete",
+      "microsoft.app/managedenvironments/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "microsoft.app/managedenvironments/daprcomponents/delete"
+    ],
+    "modify": [
+      "microsoft.app/managedenvironments/daprcomponents/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "microsoft.app/managedenvironments/daprcomponents/read",
+      "microsoft.app/managedenvironments/read"
+    ]
+  }
+]

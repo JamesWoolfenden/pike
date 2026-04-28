@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.NetApp/netAppAccounts/capacityPools/read",
+      "Microsoft.NetApp/netAppAccounts/capacityPools/write",
+      "Microsoft.NetApp/netAppAccounts/capacityPools/delete",
+      "Microsoft.NetApp/netAppAccounts/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.NetApp/netAppAccounts/capacityPools/delete"
+    ],
+    "modify": [
+      "Microsoft.NetApp/netAppAccounts/capacityPools/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.NetApp/netAppAccounts/capacityPools/read",
+      "Microsoft.NetApp/netAppAccounts/read"
+    ]
+  }
+]

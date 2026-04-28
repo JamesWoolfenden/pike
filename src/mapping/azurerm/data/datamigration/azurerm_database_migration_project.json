@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "Microsoft.DataMigration/services/projects/read",
+      "Microsoft.DataMigration/services/read"
+    ]
+  }
+]

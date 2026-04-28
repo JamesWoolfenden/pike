@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "PaloAltoNetworks.Cloudngfw/localRulestacks/fqdnlists/read",
+      "PaloAltoNetworks.Cloudngfw/localRulestacks/fqdnlists/write",
+      "PaloAltoNetworks.Cloudngfw/localRulestacks/fqdnlists/delete",
+      "PaloAltoNetworks.Cloudngfw/localRulestacks/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "PaloAltoNetworks.Cloudngfw/localRulestacks/fqdnlists/delete"
+    ],
+    "modify": [
+      "PaloAltoNetworks.Cloudngfw/localRulestacks/fqdnlists/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "PaloAltoNetworks.Cloudngfw/localRulestacks/fqdnlists/read",
+      "PaloAltoNetworks.Cloudngfw/localRulestacks/read"
+    ]
+  }
+]

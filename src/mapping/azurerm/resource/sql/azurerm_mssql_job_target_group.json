@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Sql/servers/jobAgents/targetGroups/read",
+      "Microsoft.Sql/servers/jobAgents/targetGroups/write",
+      "Microsoft.Sql/servers/jobAgents/targetGroups/delete",
+      "Microsoft.Sql/servers/read",
+      "Microsoft.Sql/servers/jobAgents/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Sql/servers/jobAgents/targetGroups/delete"
+    ],
+    "modify": [
+      "Microsoft.Sql/servers/jobAgents/targetGroups/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Sql/servers/jobAgents/targetGroups/read",
+      "Microsoft.Sql/servers/read",
+      "Microsoft.Sql/servers/jobAgents/read"
+    ]
+  }
+]

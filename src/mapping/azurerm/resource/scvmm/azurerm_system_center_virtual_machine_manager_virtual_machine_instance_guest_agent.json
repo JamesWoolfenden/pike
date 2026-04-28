@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.SCVMM/virtualMachineInstances/guestAgents/read",
+      "Microsoft.SCVMM/virtualMachineInstances/guestAgents/write",
+      "Microsoft.SCVMM/virtualMachineInstances/guestAgents/delete",
+      "Microsoft.SCVMM/virtualMachineInstances/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.SCVMM/virtualMachineInstances/guestAgents/delete"
+    ],
+    "modify": [
+      "Microsoft.SCVMM/virtualMachineInstances/guestAgents/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.SCVMM/virtualMachineInstances/guestAgents/read",
+      "Microsoft.SCVMM/virtualMachineInstances/read"
+    ]
+  }
+]

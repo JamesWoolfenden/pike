@@ -1,0 +1,29 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AppPlatform/Spring/buildServices/builders/buildpackBindings/read",
+      "Microsoft.AppPlatform/Spring/buildServices/builders/buildpackBindings/write",
+      "Microsoft.AppPlatform/Spring/buildServices/builders/buildpackBindings/delete",
+      "Microsoft.AppPlatform/Spring/read",
+      "Microsoft.AppPlatform/Spring/buildServices/read",
+      "Microsoft.AppPlatform/Spring/buildServices/builders/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.AppPlatform/Spring/buildServices/builders/buildpackBindings/delete"
+    ],
+    "modify": [
+      "Microsoft.AppPlatform/Spring/buildServices/builders/buildpackBindings/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AppPlatform/Spring/buildServices/builders/buildpackBindings/read",
+      "Microsoft.AppPlatform/Spring/read",
+      "Microsoft.AppPlatform/Spring/buildServices/read",
+      "Microsoft.AppPlatform/Spring/buildServices/builders/read"
+    ]
+  }
+]

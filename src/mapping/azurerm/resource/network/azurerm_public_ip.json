@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/publicIPAddresses/read",
+      "Microsoft.Network/publicIPAddresses/write",
+      "Microsoft.Network/publicIPAddresses/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/publicIPAddresses/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/publicIPAddresses/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/publicIPAddresses/read"
+    ]
+  }
+]

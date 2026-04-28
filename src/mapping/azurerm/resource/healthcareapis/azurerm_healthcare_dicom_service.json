@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.HealthcareApis/workspaces/dicomservices/read",
+      "Microsoft.HealthcareApis/workspaces/dicomservices/write",
+      "Microsoft.HealthcareApis/workspaces/dicomservices/delete",
+      "Microsoft.HealthcareApis/workspaces/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.HealthcareApis/workspaces/dicomservices/delete"
+    ],
+    "modify": [
+      "Microsoft.HealthcareApis/workspaces/dicomservices/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.HealthcareApis/workspaces/dicomservices/read",
+      "Microsoft.HealthcareApis/workspaces/read"
+    ]
+  }
+]

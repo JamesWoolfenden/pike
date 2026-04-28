@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DBforPostgreSQL/servers/virtualNetworkRules/read",
+      "Microsoft.DBforPostgreSQL/servers/virtualNetworkRules/write",
+      "Microsoft.DBforPostgreSQL/servers/virtualNetworkRules/delete",
+      "Microsoft.DBforPostgreSQL/servers/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.DBforPostgreSQL/servers/virtualNetworkRules/delete"
+    ],
+    "modify": [
+      "Microsoft.DBforPostgreSQL/servers/virtualNetworkRules/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DBforPostgreSQL/servers/virtualNetworkRules/read",
+      "Microsoft.DBforPostgreSQL/servers/read"
+    ]
+  }
+]

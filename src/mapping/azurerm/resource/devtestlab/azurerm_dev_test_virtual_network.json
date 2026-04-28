@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DevTestLab/labs/virtualNetworks/read",
+      "Microsoft.DevTestLab/labs/virtualNetworks/write",
+      "Microsoft.DevTestLab/labs/virtualNetworks/delete",
+      "Microsoft.DevTestLab/labs/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.DevTestLab/labs/virtualNetworks/delete"
+    ],
+    "modify": [
+      "Microsoft.DevTestLab/labs/virtualNetworks/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DevTestLab/labs/virtualNetworks/read",
+      "Microsoft.DevTestLab/labs/read"
+    ]
+  }
+]

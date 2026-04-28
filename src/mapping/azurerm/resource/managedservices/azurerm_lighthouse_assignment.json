@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ManagedServices/registrationAssignments/read",
+      "Microsoft.ManagedServices/registrationAssignments/write",
+      "Microsoft.ManagedServices/registrationAssignments/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.ManagedServices/registrationAssignments/delete"
+    ],
+    "modify": [
+      "Microsoft.ManagedServices/registrationAssignments/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ManagedServices/registrationAssignments/read"
+    ]
+  }
+]

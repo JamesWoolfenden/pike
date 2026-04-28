@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.EventHub/clusters/read",
+      "Microsoft.EventHub/clusters/write",
+      "Microsoft.EventHub/clusters/delete",
+      "Microsoft.EventHub/clusters/operationresults/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.EventHub/clusters/delete"
+    ],
+    "modify": [
+      "Microsoft.EventHub/clusters/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.EventHub/clusters/read"
+    ]
+  }
+]

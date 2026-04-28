@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.NotificationHubs/Namespaces/read",
+      "Microsoft.NotificationHubs/Namespaces/write",
+      "Microsoft.NotificationHubs/Namespaces/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.NotificationHubs/Namespaces/delete"
+    ],
+    "modify": [
+      "Microsoft.NotificationHubs/Namespaces/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.NotificationHubs/Namespaces/read"
+    ]
+  }
+]

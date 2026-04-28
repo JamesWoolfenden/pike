@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Dashboard/grafana/read",
+      "Microsoft.Dashboard/grafana/write",
+      "Microsoft.Dashboard/grafana/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Dashboard/grafana/delete"
+    ],
+    "modify": [
+      "Microsoft.Dashboard/grafana/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Dashboard/grafana/read"
+    ]
+  }
+]

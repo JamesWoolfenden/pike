@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DBforMySQL/flexibleServers/read",
+      "Microsoft.DBforMySQL/flexibleServers/write",
+      "Microsoft.DBforMySQL/flexibleServers/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.DBforMySQL/flexibleServers/delete"
+    ],
+    "modify": [
+      "Microsoft.DBforMySQL/flexibleServers/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DBforMySQL/flexibleServers/read"
+    ]
+  }
+]

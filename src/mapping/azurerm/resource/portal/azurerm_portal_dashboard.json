@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Portal/dashboards/read",
+      "Microsoft.Portal/dashboards/write",
+      "Microsoft.Portal/dashboards/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Portal/dashboards/delete"
+    ],
+    "modify": [
+      "Microsoft.Portal/dashboards/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Portal/dashboards/read"
+    ]
+  }
+]

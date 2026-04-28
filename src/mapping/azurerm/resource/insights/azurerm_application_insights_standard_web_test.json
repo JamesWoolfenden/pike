@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Insights/Webtests/Read",
+      "Microsoft.Insights/Webtests/Write",
+      "Microsoft.Insights/Webtests/Delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Insights/Webtests/Delete"
+    ],
+    "modify": [
+      "Microsoft.Insights/Webtests/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Insights/Webtests/Read"
+    ]
+  }
+]

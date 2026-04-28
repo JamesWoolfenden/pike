@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Automation/automationAccounts/webhooks/read",
+      "Microsoft.Automation/automationAccounts/webhooks/write",
+      "Microsoft.Automation/automationAccounts/webhooks/delete",
+      "Microsoft.Automation/automationAccounts/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Automation/automationAccounts/webhooks/delete"
+    ],
+    "modify": [
+      "Microsoft.Automation/automationAccounts/webhooks/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Automation/automationAccounts/webhooks/read",
+      "Microsoft.Automation/automationAccounts/read"
+    ]
+  }
+]

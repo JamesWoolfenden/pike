@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "Microsoft.DevTestLab/labs/virtualNetworks/read",
+      "Microsoft.DevTestLab/labs/read"
+    ]
+  }
+]

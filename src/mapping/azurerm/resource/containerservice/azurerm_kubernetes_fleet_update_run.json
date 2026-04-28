@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ContainerService/fleets/updateRuns/read",
+      "Microsoft.ContainerService/fleets/updateRuns/write",
+      "Microsoft.ContainerService/fleets/updateRuns/delete",
+      "Microsoft.ContainerService/fleets/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.ContainerService/fleets/updateRuns/delete"
+    ],
+    "modify": [
+      "Microsoft.ContainerService/fleets/updateRuns/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ContainerService/fleets/updateRuns/read",
+      "Microsoft.ContainerService/fleets/read"
+    ]
+  }
+]

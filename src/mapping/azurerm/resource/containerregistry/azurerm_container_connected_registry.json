@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ContainerRegistry/registries/connectedRegistries/read",
+      "Microsoft.ContainerRegistry/registries/connectedRegistries/write",
+      "Microsoft.ContainerRegistry/registries/connectedRegistries/delete",
+      "Microsoft.ContainerRegistry/registries/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.ContainerRegistry/registries/connectedRegistries/delete"
+    ],
+    "modify": [
+      "Microsoft.ContainerRegistry/registries/connectedRegistries/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ContainerRegistry/registries/connectedRegistries/read",
+      "Microsoft.ContainerRegistry/registries/read"
+    ]
+  }
+]

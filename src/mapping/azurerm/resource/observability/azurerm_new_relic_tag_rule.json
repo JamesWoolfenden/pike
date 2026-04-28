@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "NewRelic.Observability/monitors/tagRules/read",
+      "NewRelic.Observability/monitors/tagRules/write",
+      "NewRelic.Observability/monitors/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [
+      "NewRelic.Observability/monitors/tagRules/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "NewRelic.Observability/monitors/tagRules/read",
+      "NewRelic.Observability/monitors/read"
+    ]
+  }
+]

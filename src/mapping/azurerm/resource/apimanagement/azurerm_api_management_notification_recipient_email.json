@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ApiManagement/service/notifications/recipientEmails/read",
+      "Microsoft.ApiManagement/service/notifications/recipientEmails/write",
+      "Microsoft.ApiManagement/service/notifications/recipientEmails/delete",
+      "Microsoft.ApiManagement/service/read",
+      "Microsoft.ApiManagement/service/notifications/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.ApiManagement/service/notifications/recipientEmails/delete"
+    ],
+    "modify": [
+      "Microsoft.ApiManagement/service/notifications/recipientEmails/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ApiManagement/service/notifications/recipientEmails/read",
+      "Microsoft.ApiManagement/service/read",
+      "Microsoft.ApiManagement/service/notifications/read"
+    ]
+  }
+]

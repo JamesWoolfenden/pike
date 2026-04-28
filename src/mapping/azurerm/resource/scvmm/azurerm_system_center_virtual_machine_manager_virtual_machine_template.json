@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.SCVMM/virtualmachinetemplates/Read",
+      "Microsoft.SCVMM/virtualmachinetemplates/Write",
+      "Microsoft.SCVMM/virtualmachinetemplates/Delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.SCVMM/virtualmachinetemplates/Delete"
+    ],
+    "modify": [
+      "Microsoft.SCVMM/virtualmachinetemplates/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.SCVMM/virtualmachinetemplates/Read"
+    ]
+  }
+]

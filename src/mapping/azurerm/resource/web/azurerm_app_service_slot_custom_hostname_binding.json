@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "microsoft.web/sites/slots/hostnamebindings/read",
+      "microsoft.web/sites/slots/hostnamebindings/write",
+      "microsoft.web/sites/slots/hostnamebindings/delete",
+      "Microsoft.Web/sites/Read",
+      "Microsoft.Web/sites/slots/Read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "microsoft.web/sites/slots/hostnamebindings/delete"
+    ],
+    "modify": [
+      "microsoft.web/sites/slots/hostnamebindings/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "microsoft.web/sites/slots/hostnamebindings/read",
+      "Microsoft.Web/sites/Read",
+      "Microsoft.Web/sites/slots/Read"
+    ]
+  }
+]

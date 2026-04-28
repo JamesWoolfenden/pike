@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "Microsoft.Cdn/profiles/customdomains/read",
+      "Microsoft.Cdn/profiles/read"
+    ]
+  }
+]

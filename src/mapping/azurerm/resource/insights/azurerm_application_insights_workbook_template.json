@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Insights/WorkbookTemplates/Read",
+      "Microsoft.Insights/WorkbookTemplates/Write",
+      "Microsoft.Insights/WorkbookTemplates/Delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Insights/WorkbookTemplates/Delete"
+    ],
+    "modify": [
+      "Microsoft.Insights/WorkbookTemplates/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Insights/WorkbookTemplates/Read"
+    ]
+  }
+]

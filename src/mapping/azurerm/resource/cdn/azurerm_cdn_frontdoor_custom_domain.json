@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Cdn/profiles/customdomains/read",
+      "Microsoft.Cdn/profiles/customdomains/write",
+      "Microsoft.Cdn/profiles/customdomains/delete",
+      "Microsoft.Cdn/profiles/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Cdn/profiles/customdomains/delete"
+    ],
+    "modify": [
+      "Microsoft.Cdn/profiles/customdomains/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Cdn/profiles/customdomains/read",
+      "Microsoft.Cdn/profiles/read"
+    ]
+  }
+]

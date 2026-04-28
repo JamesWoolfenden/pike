@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ApiManagement/service/groups/users/read",
+      "Microsoft.ApiManagement/service/groups/users/write",
+      "Microsoft.ApiManagement/service/groups/users/delete",
+      "Microsoft.ApiManagement/service/read",
+      "Microsoft.ApiManagement/service/groups/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.ApiManagement/service/groups/users/delete"
+    ],
+    "modify": [
+      "Microsoft.ApiManagement/service/groups/users/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ApiManagement/service/groups/users/read",
+      "Microsoft.ApiManagement/service/read",
+      "Microsoft.ApiManagement/service/groups/read"
+    ]
+  }
+]

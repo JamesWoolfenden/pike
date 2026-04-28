@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AzureStackHCI/Clusters/Read",
+      "Microsoft.AzureStackHCI/Clusters/Write",
+      "Microsoft.AzureStackHCI/Clusters/Delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.AzureStackHCI/Clusters/Delete"
+    ],
+    "modify": [
+      "Microsoft.AzureStackHCI/Clusters/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AzureStackHCI/Clusters/Read"
+    ]
+  }
+]

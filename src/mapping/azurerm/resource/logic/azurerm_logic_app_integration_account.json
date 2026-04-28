@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Logic/integrationAccounts/read",
+      "Microsoft.Logic/integrationAccounts/write",
+      "Microsoft.Logic/integrationAccounts/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Logic/integrationAccounts/delete"
+    ],
+    "modify": [
+      "Microsoft.Logic/integrationAccounts/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Logic/integrationAccounts/read"
+    ]
+  }
+]

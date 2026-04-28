@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.SqlVirtualMachine/sqlVirtualMachineGroups/read",
+      "Microsoft.SqlVirtualMachine/sqlVirtualMachineGroups/write",
+      "Microsoft.SqlVirtualMachine/sqlVirtualMachineGroups/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.SqlVirtualMachine/sqlVirtualMachineGroups/delete"
+    ],
+    "modify": [
+      "Microsoft.SqlVirtualMachine/sqlVirtualMachineGroups/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.SqlVirtualMachine/sqlVirtualMachineGroups/read"
+    ]
+  }
+]

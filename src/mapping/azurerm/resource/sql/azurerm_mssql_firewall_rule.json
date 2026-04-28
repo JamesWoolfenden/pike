@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Sql/servers/firewallRules/read",
+      "Microsoft.Sql/servers/firewallRules/write",
+      "Microsoft.Sql/servers/firewallRules/delete",
+      "Microsoft.Sql/servers/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Sql/servers/firewallRules/delete"
+    ],
+    "modify": [
+      "Microsoft.Sql/servers/firewallRules/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Sql/servers/firewallRules/read",
+      "Microsoft.Sql/servers/read"
+    ]
+  }
+]

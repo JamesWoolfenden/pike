@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Sql/servers/dnsAliases/read",
+      "Microsoft.Sql/servers/dnsAliases/write",
+      "Microsoft.Sql/servers/dnsAliases/delete",
+      "Microsoft.Sql/servers/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Sql/servers/dnsAliases/delete"
+    ],
+    "modify": [
+      "Microsoft.Sql/servers/dnsAliases/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Sql/servers/dnsAliases/read",
+      "Microsoft.Sql/servers/read"
+    ]
+  }
+]

@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Automation/automationAccounts/sourceControls/read",
+      "Microsoft.Automation/automationAccounts/sourceControls/write",
+      "Microsoft.Automation/automationAccounts/sourceControls/delete",
+      "Microsoft.Automation/automationAccounts/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Automation/automationAccounts/sourceControls/delete"
+    ],
+    "modify": [
+      "Microsoft.Automation/automationAccounts/sourceControls/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Automation/automationAccounts/sourceControls/read",
+      "Microsoft.Automation/automationAccounts/read"
+    ]
+  }
+]

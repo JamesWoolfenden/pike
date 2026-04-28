@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Insights/PrivateLinkScopes/Read",
+      "Microsoft.Insights/PrivateLinkScopes/Write",
+      "Microsoft.Insights/PrivateLinkScopes/Delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Insights/PrivateLinkScopes/Delete"
+    ],
+    "modify": [
+      "Microsoft.Insights/PrivateLinkScopes/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Insights/PrivateLinkScopes/Read"
+    ]
+  }
+]

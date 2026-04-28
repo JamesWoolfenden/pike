@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AppPlatform/Spring/gateways/routeConfigs/read",
+      "Microsoft.AppPlatform/Spring/gateways/routeConfigs/write",
+      "Microsoft.AppPlatform/Spring/gateways/routeConfigs/delete",
+      "Microsoft.AppPlatform/Spring/read",
+      "Microsoft.AppPlatform/Spring/gateways/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.AppPlatform/Spring/gateways/routeConfigs/delete"
+    ],
+    "modify": [
+      "Microsoft.AppPlatform/Spring/gateways/routeConfigs/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AppPlatform/Spring/gateways/routeConfigs/read",
+      "Microsoft.AppPlatform/Spring/read",
+      "Microsoft.AppPlatform/Spring/gateways/read"
+    ]
+  }
+]

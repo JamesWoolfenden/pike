@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Sql/servers/failoverGroups/read",
+      "Microsoft.Sql/servers/failoverGroups/write",
+      "Microsoft.Sql/servers/failoverGroups/delete",
+      "Microsoft.Sql/servers/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Sql/servers/failoverGroups/delete"
+    ],
+    "modify": [
+      "Microsoft.Sql/servers/failoverGroups/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Sql/servers/failoverGroups/read",
+      "Microsoft.Sql/servers/read"
+    ]
+  }
+]

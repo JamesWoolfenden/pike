@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.NotificationHubs/Namespaces/NotificationHubs/authorizationRules/read",
+      "Microsoft.NotificationHubs/Namespaces/NotificationHubs/authorizationRules/write",
+      "Microsoft.NotificationHubs/Namespaces/NotificationHubs/authorizationRules/delete",
+      "Microsoft.NotificationHubs/Namespaces/read",
+      "Microsoft.NotificationHubs/Namespaces/NotificationHubs/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.NotificationHubs/Namespaces/NotificationHubs/authorizationRules/delete"
+    ],
+    "modify": [
+      "Microsoft.NotificationHubs/Namespaces/NotificationHubs/authorizationRules/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.NotificationHubs/Namespaces/NotificationHubs/authorizationRules/read",
+      "Microsoft.NotificationHubs/Namespaces/read",
+      "Microsoft.NotificationHubs/Namespaces/NotificationHubs/read"
+    ]
+  }
+]

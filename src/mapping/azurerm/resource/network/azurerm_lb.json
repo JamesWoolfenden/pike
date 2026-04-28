@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/loadBalancers/read",
+      "Microsoft.Network/loadBalancers/write",
+      "Microsoft.Network/loadBalancers/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/loadBalancers/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/loadBalancers/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/loadBalancers/read"
+    ]
+  }
+]

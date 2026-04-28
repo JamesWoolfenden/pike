@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.EventHub/namespaces/schemagroups/read",
+      "Microsoft.EventHub/namespaces/schemagroups/write",
+      "Microsoft.EventHub/namespaces/schemagroups/delete",
+      "Microsoft.EventHub/namespaces/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.EventHub/namespaces/schemagroups/delete"
+    ],
+    "modify": [
+      "Microsoft.EventHub/namespaces/schemagroups/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.EventHub/namespaces/schemagroups/read",
+      "Microsoft.EventHub/namespaces/read"
+    ]
+  }
+]

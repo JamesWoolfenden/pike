@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.HDInsight/clusters/read",
+      "Microsoft.HDInsight/clusters/write",
+      "Microsoft.HDInsight/clusters/delete",
+      "MICROSOFT.HDINSIGHT/CLUSTERS/OPERATIONRESULTS/READ"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.HDInsight/clusters/delete"
+    ],
+    "modify": [
+      "Microsoft.HDInsight/clusters/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.HDInsight/clusters/read"
+    ]
+  }
+]

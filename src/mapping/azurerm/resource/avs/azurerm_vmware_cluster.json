@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AVS/privateClouds/clusters/read",
+      "Microsoft.AVS/privateClouds/clusters/write",
+      "Microsoft.AVS/privateClouds/clusters/delete",
+      "Microsoft.AVS/privateClouds/read",
+      "Microsoft.AVS/privateClouds/clusters/operationstatuses/read",
+      "Microsoft.AVS/privateclouds/clusters/operationresults/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.AVS/privateClouds/clusters/delete"
+    ],
+    "modify": [
+      "Microsoft.AVS/privateClouds/clusters/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AVS/privateClouds/clusters/read",
+      "Microsoft.AVS/privateClouds/read"
+    ]
+  }
+]

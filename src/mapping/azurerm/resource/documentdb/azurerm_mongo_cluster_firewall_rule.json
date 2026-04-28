@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DocumentDB/mongoClusters/firewallRules/read",
+      "Microsoft.DocumentDB/mongoClusters/firewallRules/write",
+      "Microsoft.DocumentDB/mongoClusters/firewallRules/delete",
+      "Microsoft.DocumentDB/mongoClusters/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.DocumentDB/mongoClusters/firewallRules/delete"
+    ],
+    "modify": [
+      "Microsoft.DocumentDB/mongoClusters/firewallRules/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DocumentDB/mongoClusters/firewallRules/read",
+      "Microsoft.DocumentDB/mongoClusters/read"
+    ]
+  }
+]

@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.NetworkFunction/azureTrafficCollectors/collectorPolicies/read",
+      "Microsoft.NetworkFunction/azureTrafficCollectors/collectorPolicies/write",
+      "Microsoft.NetworkFunction/azureTrafficCollectors/collectorPolicies/delete",
+      "Microsoft.NetworkFunction/azureTrafficCollectors/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.NetworkFunction/azureTrafficCollectors/collectorPolicies/delete"
+    ],
+    "modify": [
+      "Microsoft.NetworkFunction/azureTrafficCollectors/collectorPolicies/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.NetworkFunction/azureTrafficCollectors/collectorPolicies/read",
+      "Microsoft.NetworkFunction/azureTrafficCollectors/read"
+    ]
+  }
+]

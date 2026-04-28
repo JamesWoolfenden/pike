@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.SignalRService/SignalR/read",
+      "Microsoft.SignalRService/SignalR/write",
+      "Microsoft.SignalRService/SignalR/delete",
+      "Microsoft.SignalRService/SignalR/operationStatuses/read",
+      "Microsoft.SignalRService/SignalR/operationResults/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.SignalRService/SignalR/delete"
+    ],
+    "modify": [
+      "Microsoft.SignalRService/SignalR/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.SignalRService/SignalR/read"
+    ]
+  }
+]

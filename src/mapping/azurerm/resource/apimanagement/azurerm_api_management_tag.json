@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ApiManagement/service/tags/read",
+      "Microsoft.ApiManagement/service/tags/write",
+      "Microsoft.ApiManagement/service/tags/delete",
+      "Microsoft.ApiManagement/service/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.ApiManagement/service/tags/delete"
+    ],
+    "modify": [
+      "Microsoft.ApiManagement/service/tags/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ApiManagement/service/tags/read",
+      "Microsoft.ApiManagement/service/read"
+    ]
+  }
+]

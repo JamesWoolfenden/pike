@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Storage/storageAccounts/localusers/read",
+      "Microsoft.Storage/storageAccounts/localusers/write",
+      "Microsoft.Storage/storageAccounts/localUsers/delete",
+      "Microsoft.Storage/storageAccounts/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Storage/storageAccounts/localUsers/delete"
+    ],
+    "modify": [
+      "Microsoft.Storage/storageAccounts/localusers/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Storage/storageAccounts/localusers/read",
+      "Microsoft.Storage/storageAccounts/read"
+    ]
+  }
+]

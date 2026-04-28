@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "Oracle.Database/autonomousDatabases/autonomousDatabaseBackups/read",
+      "Oracle.Database/autonomousDatabases/read"
+    ]
+  }
+]

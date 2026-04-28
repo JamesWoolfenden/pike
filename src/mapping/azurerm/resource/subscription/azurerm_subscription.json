@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Subscription/aliases/read",
+      "Microsoft.Subscription/aliases/write",
+      "Microsoft.Subscription/aliases/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Subscription/aliases/delete"
+    ],
+    "modify": [
+      "Microsoft.Subscription/aliases/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Subscription/aliases/read"
+    ]
+  }
+]

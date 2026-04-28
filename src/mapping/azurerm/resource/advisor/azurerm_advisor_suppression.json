@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Advisor/recommendations/suppressions/read",
+      "Microsoft.Advisor/recommendations/suppressions/write",
+      "Microsoft.Advisor/recommendations/suppressions/delete",
+      "Microsoft.Advisor/recommendations/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Advisor/recommendations/suppressions/delete"
+    ],
+    "modify": [
+      "Microsoft.Advisor/recommendations/suppressions/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Advisor/recommendations/suppressions/read",
+      "Microsoft.Advisor/recommendations/read"
+    ]
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Web/staticSites/Read",
+      "Microsoft.Web/staticSites/Write",
+      "Microsoft.Web/staticSites/Delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Web/staticSites/Delete"
+    ],
+    "modify": [
+      "Microsoft.Web/staticSites/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Web/staticSites/Read"
+    ]
+  }
+]

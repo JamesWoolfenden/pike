@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.PowerBIDedicated/capacities/read",
+      "Microsoft.PowerBIDedicated/capacities/write",
+      "Microsoft.PowerBIDedicated/capacities/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.PowerBIDedicated/capacities/delete"
+    ],
+    "modify": [
+      "Microsoft.PowerBIDedicated/capacities/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.PowerBIDedicated/capacities/read"
+    ]
+  }
+]

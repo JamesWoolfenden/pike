@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Automation/automationAccounts/python3Packages/read",
+      "Microsoft.Automation/automationAccounts/python3Packages/write",
+      "Microsoft.Automation/automationAccounts/python3Packages/delete",
+      "Microsoft.Automation/automationAccounts/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Automation/automationAccounts/python3Packages/delete"
+    ],
+    "modify": [
+      "Microsoft.Automation/automationAccounts/python3Packages/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Automation/automationAccounts/python3Packages/read",
+      "Microsoft.Automation/automationAccounts/read"
+    ]
+  }
+]

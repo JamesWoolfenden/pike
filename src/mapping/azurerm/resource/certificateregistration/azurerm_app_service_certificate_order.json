@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.CertificateRegistration/certificateOrders/Read",
+      "Microsoft.CertificateRegistration/certificateOrders/Write",
+      "Microsoft.CertificateRegistration/certificateOrders/Delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.CertificateRegistration/certificateOrders/Delete"
+    ],
+    "modify": [
+      "Microsoft.CertificateRegistration/certificateOrders/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.CertificateRegistration/certificateOrders/Read"
+    ]
+  }
+]

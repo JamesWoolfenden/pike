@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/localnetworkgateways/read",
+      "Microsoft.Network/localnetworkgateways/write",
+      "Microsoft.Network/localnetworkgateways/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/localnetworkgateways/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/localnetworkgateways/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/localnetworkgateways/read"
+    ]
+  }
+]

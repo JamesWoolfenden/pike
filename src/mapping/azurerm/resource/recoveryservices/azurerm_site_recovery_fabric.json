@@ -1,0 +1,26 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.RecoveryServices/vaults/replicationFabrics/read",
+      "Microsoft.RecoveryServices/vaults/replicationFabrics/write",
+      "Microsoft.RecoveryServices/vaults/replicationFabrics/delete",
+      "Microsoft.RecoveryServices/Vaults/read",
+      "Microsoft.RecoveryServices/vaults/replicationFabrics/operationresults/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.RecoveryServices/vaults/replicationFabrics/delete"
+    ],
+    "modify": [
+      "Microsoft.RecoveryServices/vaults/replicationFabrics/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.RecoveryServices/vaults/replicationFabrics/read",
+      "Microsoft.RecoveryServices/Vaults/read"
+    ]
+  }
+]

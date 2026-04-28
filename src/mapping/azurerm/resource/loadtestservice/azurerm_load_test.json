@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.LoadTestService/loadTests/read",
+      "Microsoft.LoadTestService/loadTests/write",
+      "Microsoft.LoadTestService/loadTests/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.LoadTestService/loadTests/delete"
+    ],
+    "modify": [
+      "Microsoft.LoadTestService/loadTests/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.LoadTestService/loadTests/read"
+    ]
+  }
+]

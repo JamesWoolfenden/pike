@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.SCVMM/availabilitySets/Read",
+      "Microsoft.SCVMM/availabilitySets/Write",
+      "Microsoft.SCVMM/availabilitySets/Delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.SCVMM/availabilitySets/Delete"
+    ],
+    "modify": [
+      "Microsoft.SCVMM/availabilitySets/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.SCVMM/availabilitySets/Read"
+    ]
+  }
+]

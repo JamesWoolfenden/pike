@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Kusto/Clusters/ManagedPrivateEndpoints/read",
+      "Microsoft.Kusto/Clusters/ManagedPrivateEndpoints/write",
+      "Microsoft.Kusto/Clusters/ManagedPrivateEndpoints/delete",
+      "Microsoft.Kusto/Clusters/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Kusto/Clusters/ManagedPrivateEndpoints/delete"
+    ],
+    "modify": [
+      "Microsoft.Kusto/Clusters/ManagedPrivateEndpoints/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Kusto/Clusters/ManagedPrivateEndpoints/read",
+      "Microsoft.Kusto/Clusters/read"
+    ]
+  }
+]

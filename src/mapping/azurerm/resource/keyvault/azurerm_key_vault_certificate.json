@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.KeyVault/vaults/certificates/read",
+      "Microsoft.KeyVault/vaults/certificates/delete",
+      "Microsoft.KeyVault/vaults/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.KeyVault/vaults/certificates/delete"
+    ],
+    "modify": [],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.KeyVault/vaults/certificates/read",
+      "Microsoft.KeyVault/vaults/read"
+    ]
+  }
+]

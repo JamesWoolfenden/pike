@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/routeTables/read",
+      "Microsoft.Network/routeTables/write",
+      "Microsoft.Network/routeTables/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/routeTables/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/routeTables/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/routeTables/read"
+    ]
+  }
+]

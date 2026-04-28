@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.GuestConfiguration/guestConfigurationAssignments/read",
+      "Microsoft.GuestConfiguration/guestConfigurationAssignments/write",
+      "Microsoft.GuestConfiguration/guestConfigurationAssignments/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.GuestConfiguration/guestConfigurationAssignments/delete"
+    ],
+    "modify": [
+      "Microsoft.GuestConfiguration/guestConfigurationAssignments/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.GuestConfiguration/guestConfigurationAssignments/read"
+    ]
+  }
+]

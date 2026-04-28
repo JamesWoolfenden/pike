@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Sql/servers/databases/extendedAuditingSettings/read",
+      "Microsoft.Sql/servers/databases/extendedAuditingSettings/write",
+      "Microsoft.Sql/servers/read",
+      "Microsoft.Sql/servers/databases/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [
+      "Microsoft.Sql/servers/databases/extendedAuditingSettings/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Sql/servers/databases/extendedAuditingSettings/read",
+      "Microsoft.Sql/servers/read",
+      "Microsoft.Sql/servers/databases/read"
+    ]
+  }
+]

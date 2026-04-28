@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Fabric/capacities/read",
+      "Microsoft.Fabric/capacities/write",
+      "Microsoft.Fabric/capacities/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Fabric/capacities/delete"
+    ],
+    "modify": [
+      "Microsoft.Fabric/capacities/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Fabric/capacities/read"
+    ]
+  }
+]

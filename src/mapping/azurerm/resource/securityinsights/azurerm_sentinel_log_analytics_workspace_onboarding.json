@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.SecurityInsights/onboardingStates/read",
+      "Microsoft.SecurityInsights/onboardingStates/write",
+      "Microsoft.SecurityInsights/onboardingStates/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.SecurityInsights/onboardingStates/delete"
+    ],
+    "modify": [
+      "Microsoft.SecurityInsights/onboardingStates/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.SecurityInsights/onboardingStates/read"
+    ]
+  }
+]

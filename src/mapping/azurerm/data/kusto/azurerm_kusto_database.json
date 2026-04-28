@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "Microsoft.Kusto/Clusters/Databases/read",
+      "Microsoft.Kusto/Clusters/read"
+    ]
+  }
+]

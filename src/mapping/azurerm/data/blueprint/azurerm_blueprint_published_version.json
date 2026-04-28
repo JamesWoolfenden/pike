@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "Microsoft.Blueprint/blueprints/versions/read",
+      "Microsoft.Blueprint/blueprints/read"
+    ]
+  }
+]

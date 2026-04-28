@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Insights/Components/ApiKeys/Read",
+      "Microsoft.Insights/Components/ApiKeys/Delete",
+      "Microsoft.Insights/Components/Read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Insights/Components/ApiKeys/Delete"
+    ],
+    "modify": [],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Insights/Components/ApiKeys/Read",
+      "Microsoft.Insights/Components/Read"
+    ]
+  }
+]

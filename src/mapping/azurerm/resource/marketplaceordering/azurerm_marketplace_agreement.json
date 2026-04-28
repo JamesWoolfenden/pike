@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.MarketplaceOrdering/agreements/offers/plans/read",
+      "Microsoft.MarketplaceOrdering/agreements/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.MarketplaceOrdering/agreements/offers/plans/read",
+      "Microsoft.MarketplaceOrdering/agreements/read"
+    ]
+  }
+]

@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/frontDoors/rulesEngines/read",
+      "Microsoft.Network/frontDoors/rulesEngines/write",
+      "Microsoft.Network/frontDoors/rulesEngines/delete",
+      "Microsoft.Network/frontDoors/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/frontDoors/rulesEngines/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/frontDoors/rulesEngines/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/frontDoors/rulesEngines/read",
+      "Microsoft.Network/frontDoors/read"
+    ]
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "microsoft.app/managedenvironments/certificates/read",
+      "microsoft.app/managedenvironments/read"
+    ]
+  }
+]

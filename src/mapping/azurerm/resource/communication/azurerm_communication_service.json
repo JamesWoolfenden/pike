@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Communication/CommunicationServices/Read",
+      "Microsoft.Communication/CommunicationServices/Write",
+      "Microsoft.Communication/CommunicationServices/Delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Communication/CommunicationServices/Delete"
+    ],
+    "modify": [
+      "Microsoft.Communication/CommunicationServices/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Communication/CommunicationServices/Read"
+    ]
+  }
+]

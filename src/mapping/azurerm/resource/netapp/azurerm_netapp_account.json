@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.NetApp/netAppAccounts/read",
+      "Microsoft.NetApp/netAppAccounts/write",
+      "Microsoft.NetApp/netAppAccounts/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.NetApp/netAppAccounts/delete"
+    ],
+    "modify": [
+      "Microsoft.NetApp/netAppAccounts/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.NetApp/netAppAccounts/read"
+    ]
+  }
+]

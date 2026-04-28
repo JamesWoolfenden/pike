@@ -1,0 +1,27 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DataFactory/factories/managedVirtualNetworks/managedPrivateEndpoints/read",
+      "Microsoft.DataFactory/factories/managedVirtualNetworks/managedPrivateEndpoints/write",
+      "Microsoft.DataFactory/factories/managedVirtualNetworks/managedPrivateEndpoints/delete",
+      "Microsoft.DataFactory/factories/read",
+      "Microsoft.DataFactory/factories/managedVirtualNetworks/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.DataFactory/factories/managedVirtualNetworks/managedPrivateEndpoints/delete"
+    ],
+    "modify": [
+      "Microsoft.DataFactory/factories/managedVirtualNetworks/managedPrivateEndpoints/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DataFactory/factories/managedVirtualNetworks/managedPrivateEndpoints/read",
+      "Microsoft.DataFactory/factories/read",
+      "Microsoft.DataFactory/factories/managedVirtualNetworks/read"
+    ]
+  }
+]

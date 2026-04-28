@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Security/deviceSecurityGroups/read",
+      "Microsoft.Security/deviceSecurityGroups/write",
+      "Microsoft.Security/deviceSecurityGroups/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Security/deviceSecurityGroups/delete"
+    ],
+    "modify": [
+      "Microsoft.Security/deviceSecurityGroups/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Security/deviceSecurityGroups/read"
+    ]
+  }
+]

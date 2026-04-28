@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.CognitiveServices/accounts/projects/read",
+      "Microsoft.CognitiveServices/accounts/projects/write",
+      "Microsoft.CognitiveServices/accounts/projects/delete",
+      "Microsoft.CognitiveServices/accounts/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.CognitiveServices/accounts/projects/delete"
+    ],
+    "modify": [
+      "Microsoft.CognitiveServices/accounts/projects/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.CognitiveServices/accounts/projects/read",
+      "Microsoft.CognitiveServices/accounts/read"
+    ]
+  }
+]

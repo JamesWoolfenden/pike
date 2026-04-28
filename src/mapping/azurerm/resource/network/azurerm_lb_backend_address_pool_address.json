@@ -1,0 +1,19 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/loadBalancers/read",
+      "Microsoft.Network/loadBalancers/backendAddressPools/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/loadBalancers/read",
+      "Microsoft.Network/loadBalancers/backendAddressPools/read"
+    ]
+  }
+]

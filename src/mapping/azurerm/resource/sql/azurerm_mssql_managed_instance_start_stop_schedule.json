@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Sql/managedInstances/startStopSchedules/read",
+      "Microsoft.Sql/managedInstances/startStopSchedules/write",
+      "Microsoft.Sql/managedInstances/startStopSchedules/delete",
+      "Microsoft.Sql/managedInstances/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Sql/managedInstances/startStopSchedules/delete"
+    ],
+    "modify": [
+      "Microsoft.Sql/managedInstances/startStopSchedules/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Sql/managedInstances/startStopSchedules/read",
+      "Microsoft.Sql/managedInstances/read"
+    ]
+  }
+]

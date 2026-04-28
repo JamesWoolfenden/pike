@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Synapse/workspaces/sqlPools/securityAlertPolicies/read",
+      "Microsoft.Synapse/workspaces/sqlPools/securityAlertPolicies/write",
+      "Microsoft.Synapse/workspaces/read",
+      "Microsoft.Synapse/workspaces/sqlPools/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [
+      "Microsoft.Synapse/workspaces/sqlPools/securityAlertPolicies/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Synapse/workspaces/sqlPools/securityAlertPolicies/read",
+      "Microsoft.Synapse/workspaces/read",
+      "Microsoft.Synapse/workspaces/sqlPools/read"
+    ]
+  }
+]

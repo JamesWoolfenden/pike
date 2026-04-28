@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Databricks/workspaces/read",
+      "Microsoft.Databricks/workspaces/write",
+      "Microsoft.Databricks/workspaces/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Databricks/workspaces/delete"
+    ],
+    "modify": [
+      "Microsoft.Databricks/workspaces/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Databricks/workspaces/read"
+    ]
+  }
+]

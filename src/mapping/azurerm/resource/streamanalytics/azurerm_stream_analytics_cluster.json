@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.StreamAnalytics/clusters/Read",
+      "Microsoft.StreamAnalytics/clusters/Write",
+      "Microsoft.StreamAnalytics/clusters/Delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.StreamAnalytics/clusters/Delete"
+    ],
+    "modify": [
+      "Microsoft.StreamAnalytics/clusters/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.StreamAnalytics/clusters/Read"
+    ]
+  }
+]

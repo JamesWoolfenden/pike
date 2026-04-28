@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/networkManagers/verifierWorkspaces/read",
+      "Microsoft.Network/networkManagers/verifierWorkspaces/write",
+      "Microsoft.Network/networkManagers/verifierWorkspaces/delete",
+      "Microsoft.Network/networkManagers/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/networkManagers/verifierWorkspaces/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/networkManagers/verifierWorkspaces/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/networkManagers/verifierWorkspaces/read",
+      "Microsoft.Network/networkManagers/read"
+    ]
+  }
+]

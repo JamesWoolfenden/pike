@@ -1,0 +1,29 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/networkManagers/securityAdminConfigurations/ruleCollections/rules/read",
+      "Microsoft.Network/networkManagers/securityAdminConfigurations/ruleCollections/rules/write",
+      "Microsoft.Network/networkManagers/securityAdminConfigurations/ruleCollections/rules/delete",
+      "Microsoft.Network/networkManagers/read",
+      "Microsoft.Network/networkManagers/securityAdminConfigurations/read",
+      "Microsoft.Network/networkManagers/securityAdminConfigurations/ruleCollections/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/networkManagers/securityAdminConfigurations/ruleCollections/rules/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/networkManagers/securityAdminConfigurations/ruleCollections/rules/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/networkManagers/securityAdminConfigurations/ruleCollections/rules/read",
+      "Microsoft.Network/networkManagers/read",
+      "Microsoft.Network/networkManagers/securityAdminConfigurations/read",
+      "Microsoft.Network/networkManagers/securityAdminConfigurations/ruleCollections/read"
+    ]
+  }
+]

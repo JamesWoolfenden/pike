@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DocumentDB/databaseAccounts/sqlRoleAssignments/read",
+      "Microsoft.DocumentDB/databaseAccounts/sqlRoleAssignments/write",
+      "Microsoft.DocumentDB/databaseAccounts/sqlRoleAssignments/delete",
+      "Microsoft.DocumentDB/databaseAccounts/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.DocumentDB/databaseAccounts/sqlRoleAssignments/delete"
+    ],
+    "modify": [
+      "Microsoft.DocumentDB/databaseAccounts/sqlRoleAssignments/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DocumentDB/databaseAccounts/sqlRoleAssignments/read",
+      "Microsoft.DocumentDB/databaseAccounts/read"
+    ]
+  }
+]

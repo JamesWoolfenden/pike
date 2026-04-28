@@ -1,0 +1,26 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Automation/automationAccounts/runbooks/read",
+      "Microsoft.Automation/automationAccounts/runbooks/write",
+      "Microsoft.Automation/automationAccounts/runbooks/delete",
+      "Microsoft.Automation/automationAccounts/read",
+      "Microsoft.Automation/automationAccounts/runbooks/operationResults/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Automation/automationAccounts/runbooks/delete"
+    ],
+    "modify": [
+      "Microsoft.Automation/automationAccounts/runbooks/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Automation/automationAccounts/runbooks/read",
+      "Microsoft.Automation/automationAccounts/read"
+    ]
+  }
+]

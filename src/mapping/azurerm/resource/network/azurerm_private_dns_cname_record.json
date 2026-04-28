@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/privateDnsZones/CNAME/read",
+      "Microsoft.Network/privateDnsZones/CNAME/write",
+      "Microsoft.Network/privateDnsZones/CNAME/delete",
+      "Microsoft.Network/privateDnsZones/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/privateDnsZones/CNAME/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/privateDnsZones/CNAME/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/privateDnsZones/CNAME/read",
+      "Microsoft.Network/privateDnsZones/read"
+    ]
+  }
+]

@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DataProtection/backupVaults/backupPolicies/read",
+      "Microsoft.DataProtection/backupVaults/backupPolicies/write",
+      "Microsoft.DataProtection/backupVaults/backupPolicies/delete",
+      "Microsoft.DataProtection/backupVaults/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.DataProtection/backupVaults/backupPolicies/delete"
+    ],
+    "modify": [
+      "Microsoft.DataProtection/backupVaults/backupPolicies/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DataProtection/backupVaults/backupPolicies/read",
+      "Microsoft.DataProtection/backupVaults/read"
+    ]
+  }
+]

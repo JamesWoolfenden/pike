@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Insights/AutoscaleSettings/Read",
+      "Microsoft.Insights/AutoscaleSettings/Write",
+      "Microsoft.Insights/AutoscaleSettings/Delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Insights/AutoscaleSettings/Delete"
+    ],
+    "modify": [
+      "Microsoft.Insights/AutoscaleSettings/Write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Insights/AutoscaleSettings/Read"
+    ]
+  }
+]

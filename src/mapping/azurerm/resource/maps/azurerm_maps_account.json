@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Maps/accounts/read",
+      "Microsoft.Maps/accounts/write",
+      "Microsoft.Maps/accounts/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Maps/accounts/delete"
+    ],
+    "modify": [
+      "Microsoft.Maps/accounts/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Maps/accounts/read"
+    ]
+  }
+]

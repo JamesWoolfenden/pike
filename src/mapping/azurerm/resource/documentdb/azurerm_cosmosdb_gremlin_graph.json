@@ -1,0 +1,28 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DocumentDB/databaseAccounts/gremlinDatabases/graphs/read",
+      "Microsoft.DocumentDB/databaseAccounts/gremlinDatabases/graphs/write",
+      "Microsoft.DocumentDB/databaseAccounts/gremlinDatabases/graphs/delete",
+      "Microsoft.DocumentDB/databaseAccounts/read",
+      "Microsoft.DocumentDB/databaseAccounts/gremlinDatabases/read",
+      "Microsoft.DocumentDB/databaseAccounts/gremlinDatabases/graphs/operationResults/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.DocumentDB/databaseAccounts/gremlinDatabases/graphs/delete"
+    ],
+    "modify": [
+      "Microsoft.DocumentDB/databaseAccounts/gremlinDatabases/graphs/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DocumentDB/databaseAccounts/gremlinDatabases/graphs/read",
+      "Microsoft.DocumentDB/databaseAccounts/read",
+      "Microsoft.DocumentDB/databaseAccounts/gremlinDatabases/read"
+    ]
+  }
+]

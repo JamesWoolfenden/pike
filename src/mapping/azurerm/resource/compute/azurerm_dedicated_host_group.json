@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Compute/hostGroups/read",
+      "Microsoft.Compute/hostGroups/write",
+      "Microsoft.Compute/hostGroups/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Compute/hostGroups/delete"
+    ],
+    "modify": [
+      "Microsoft.Compute/hostGroups/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Compute/hostGroups/read"
+    ]
+  }
+]

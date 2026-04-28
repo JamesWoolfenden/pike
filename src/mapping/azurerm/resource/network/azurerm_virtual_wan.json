@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/virtualWans/read",
+      "Microsoft.Network/virtualWans/write",
+      "Microsoft.Network/virtualWans/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/virtualWans/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/virtualWans/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/virtualWans/read"
+    ]
+  }
+]

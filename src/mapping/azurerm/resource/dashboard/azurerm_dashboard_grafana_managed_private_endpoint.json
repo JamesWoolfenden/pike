@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Dashboard/grafana/managedPrivateEndpoints/read",
+      "Microsoft.Dashboard/grafana/managedPrivateEndpoints/write",
+      "Microsoft.Dashboard/grafana/managedPrivateEndpoints/delete",
+      "Microsoft.Dashboard/grafana/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Dashboard/grafana/managedPrivateEndpoints/delete"
+    ],
+    "modify": [
+      "Microsoft.Dashboard/grafana/managedPrivateEndpoints/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Dashboard/grafana/managedPrivateEndpoints/read",
+      "Microsoft.Dashboard/grafana/read"
+    ]
+  }
+]

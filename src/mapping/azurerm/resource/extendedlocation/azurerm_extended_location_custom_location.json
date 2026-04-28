@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ExtendedLocation/customLocations/read",
+      "Microsoft.ExtendedLocation/customLocations/write",
+      "Microsoft.ExtendedLocation/customLocations/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.ExtendedLocation/customLocations/delete"
+    ],
+    "modify": [
+      "Microsoft.ExtendedLocation/customLocations/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ExtendedLocation/customLocations/read"
+    ]
+  }
+]

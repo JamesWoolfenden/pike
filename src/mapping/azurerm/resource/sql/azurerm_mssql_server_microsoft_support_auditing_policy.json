@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Sql/servers/devOpsAuditingSettings/read",
+      "Microsoft.Sql/servers/devOpsAuditingSettings/write",
+      "Microsoft.Sql/servers/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [
+      "Microsoft.Sql/servers/devOpsAuditingSettings/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Sql/servers/devOpsAuditingSettings/read",
+      "Microsoft.Sql/servers/read"
+    ]
+  }
+]

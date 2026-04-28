@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/frontDoorWebApplicationFirewallPolicies/read",
+      "Microsoft.Network/frontDoorWebApplicationFirewallPolicies/write",
+      "Microsoft.Network/frontDoorWebApplicationFirewallPolicies/delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Network/frontDoorWebApplicationFirewallPolicies/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/frontDoorWebApplicationFirewallPolicies/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Network/frontDoorWebApplicationFirewallPolicies/read"
+    ]
+  }
+]

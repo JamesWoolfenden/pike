@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Storage/storageAccounts/read",
+      "Microsoft.Storage/storageAccounts/tableServices/read",
+      "Microsoft.Storage/storageAccounts/tableServices/tables/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Storage/storageAccounts/read",
+      "Microsoft.Storage/storageAccounts/tableServices/read",
+      "Microsoft.Storage/storageAccounts/tableServices/tables/read"
+    ]
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "Microsoft.DocumentDB/databaseAccounts/mongodbDatabases/read",
+      "Microsoft.DocumentDB/databaseAccounts/read"
+    ]
+  }
+]

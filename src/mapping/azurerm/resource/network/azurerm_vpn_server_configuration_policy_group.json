@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "microsoft.network/vpnServerConfigurations/configurationPolicyGroups/read",
+      "microsoft.network/vpnServerConfigurations/configurationPolicyGroups/write",
+      "microsoft.network/vpnServerConfigurations/configurationPolicyGroups/delete",
+      "Microsoft.Network/vpnServerConfigurations/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "microsoft.network/vpnServerConfigurations/configurationPolicyGroups/delete"
+    ],
+    "modify": [
+      "microsoft.network/vpnServerConfigurations/configurationPolicyGroups/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "microsoft.network/vpnServerConfigurations/configurationPolicyGroups/read",
+      "Microsoft.Network/vpnServerConfigurations/read"
+    ]
+  }
+]

@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.SecurityInsights/threatintelligence/indicators/read",
+      "Microsoft.SecurityInsights/threatintelligence/indicators/write",
+      "Microsoft.SecurityInsights/threatintelligence/indicators/delete",
+      "Microsoft.SecurityInsights/threatintelligence/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.SecurityInsights/threatintelligence/indicators/delete"
+    ],
+    "modify": [
+      "Microsoft.SecurityInsights/threatintelligence/indicators/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.SecurityInsights/threatintelligence/indicators/read",
+      "Microsoft.SecurityInsights/threatintelligence/read"
+    ]
+  }
+]

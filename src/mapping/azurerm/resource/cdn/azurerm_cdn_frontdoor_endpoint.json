@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Cdn/profiles/afdendpoints/read",
+      "Microsoft.Cdn/profiles/afdendpoints/write",
+      "Microsoft.Cdn/profiles/afdendpoints/delete",
+      "Microsoft.Cdn/profiles/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.Cdn/profiles/afdendpoints/delete"
+    ],
+    "modify": [
+      "Microsoft.Cdn/profiles/afdendpoints/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Cdn/profiles/afdendpoints/read",
+      "Microsoft.Cdn/profiles/read"
+    ]
+  }
+]

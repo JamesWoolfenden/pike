@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Dynatrace.Observability/monitors/tagRules/read",
+      "Dynatrace.Observability/monitors/tagRules/write",
+      "Dynatrace.Observability/monitors/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [
+      "Dynatrace.Observability/monitors/tagRules/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Dynatrace.Observability/monitors/tagRules/read",
+      "Dynatrace.Observability/monitors/read"
+    ]
+  }
+]

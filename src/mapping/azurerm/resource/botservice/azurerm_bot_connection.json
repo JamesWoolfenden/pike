@@ -1,0 +1,25 @@
+[
+  {
+    "apply": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.BotService/botServices/connections/read",
+      "Microsoft.BotService/botServices/connections/write",
+      "Microsoft.BotService/botServices/connections/delete",
+      "Microsoft.BotService/botServices/read"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "Microsoft.BotService/botServices/connections/delete"
+    ],
+    "modify": [
+      "Microsoft.BotService/botServices/connections/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.BotService/botServices/connections/read",
+      "Microsoft.BotService/botServices/read"
+    ]
+  }
+]
