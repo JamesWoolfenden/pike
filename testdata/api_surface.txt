@@ -47,7 +47,7 @@ func GetTFFiles (dirName string) ([]string, error)
 func Init (dirName string) (*string, []string, error)
 func Inspect (directory string, init bool) (PolicyDiff, error)
 func InvokeGithubDispatchEvent (repository string, workflowFileName string, branch string) error
-func IsTypeOK (mappings interface{}) (map[string]interface{}, error)
+func IsTypeOK (mappings any) (map[string]any, error)
 func LocateTerraform () (string, error)
 func Make (directory string) (*string, error)
 func MakePolicy (dirName string, file *string, init bool, enableResources bool, provider string, policyName string, suppressDeprecated bool) (OutputPolicy, error)
