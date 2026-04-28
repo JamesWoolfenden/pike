@@ -340,7 +340,7 @@ func Test_gcpIAMRoleError_Error(t *testing.T) {
 		fields fields
 		want   string
 	}{
-		{"invoke", fields{err: &gcpRoleNotVerified{role: "test"}}, "IAM Role Error: test"},
+		{"invoke", fields{err: &gcpRoleNotVerified{role: "test"}}, `IAM Role Error: GCP role "test" not verified: expected projects/{PROJECT}/roles/{ROLE}, organizations/{ORG}/roles/{ROLE}, or roles/{ROLE}`},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -425,14 +425,22 @@ func Test_compareGCPPolicy(t *testing.T) {
 		args args
 		want bool
 	}{
-		{"Pass",
-			args{Roles: &gcpiam.Role{IncludedPermissions: []string{"Fred"}},
-				iacPolicy: Sorted{GCP: []string{"Fred"}}},
-			true},
-		{"False",
-			args{Roles: &gcpiam.Role{IncludedPermissions: []string{"Fred"}},
-				iacPolicy: Sorted{GCP: []string{"Jane"}}},
-			false},
+		{
+			"Pass",
+			args{
+				Roles:     &gcpiam.Role{IncludedPermissions: []string{"Fred"}},
+				iacPolicy: Sorted{GCP: []string{"Fred"}},
+			},
+			true,
+		},
+		{
+			"False",
+			args{
+				Roles:     &gcpiam.Role{IncludedPermissions: []string{"Fred"}},
+				iacPolicy: Sorted{GCP: []string{"Jane"}},
+			},
+			false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -541,9 +549,9 @@ func Test_arnNotVerified_Error(t *testing.T) {
 		fields fields
 		want   string
 	}{
-		{"aws arn", fields{arn: "arn:aws:iam::123456789012:policy/test"}, "ARN arn:aws:iam::123456789012:policy/test not verified"},
-		{"invalid arn", fields{arn: "invalid"}, "ARN invalid not verified"},
-		{"empty arn", fields{arn: ""}, "ARN  not verified"},
+		{"aws arn", fields{arn: "arn:aws:iam::123456789012:policy/test"}, "ARN arn:aws:iam::123456789012:policy/test not verified: expected format arn:aws:iam::123456789012:role/role-name"},
+		{"invalid arn", fields{arn: "invalid"}, "ARN invalid not verified: expected format arn:aws:iam::123456789012:role/role-name"},
+		{"empty arn", fields{arn: ""}, "ARN  not verified: expected format arn:aws:iam::123456789012:role/role-name"},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

@@ -3,6 +3,7 @@ package pike
 import (
 	"encoding/json"
 	"fmt"
+	"slices"
 
 	"github.com/rs/zerolog/log"
 )
@@ -32,49 +33,31 @@ func GetAWSPermissions(result ResourceV2) ([]string, error) {
 
 	switch result.TypeName {
 	case resource, terraform:
-		{
-			Permissions, err = GetAWSResourcePermissions(result)
-			if err != nil {
-				return Permissions, &getAWSResourcePermissionsError{err}
-			}
+		Permissions, err = GetAWSResourcePermissions(result)
+		if err != nil {
+			return Permissions, &getAWSResourcePermissionsError{err}
 		}
 	case data:
-		{
-			Permissions, err = GetAWSDataPermissions(result)
-			if err != nil {
-				return Permissions, &getAWSDataPermissionsError{err}
-			}
+		Permissions, err = GetAWSDataPermissions(result)
+		if err != nil {
+			return Permissions, &getAWSDataPermissionsError{err}
 		}
 	case module:
-		{
-			// do nothing this is a module not a base resource type, and
-			// we shouldn't really be able to get here unless well bad naming
-		}
+		// module block — not a base resource type, nothing to do
 	default:
-		{
-			return nil, &unknownPermissionError{result.Name}
-		}
+		return nil, &unknownPermissionError{result.Name}
 	}
 
 	return Permissions, nil
 }
 
-// GetAWSResourcePermissions looks up permissions required for resources
-//
-//goland:noinspection GoLinter
+// GetAWSResourcePermissions looks up permissions required for resources.
 func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
-	var (
-		Permissions []string
-		err         error
-	)
-
-	if temp := AwsLookup(result.Name); temp != nil {
-		Permissions, err = GetPermissionMap(temp, result.Attributes, result.Name)
-	} else {
+	temp := AwsLookup(result.Name)
+	if temp == nil {
 		return nil, &notImplementedResourceError{result.Name}
 	}
-
-	return Permissions, err
+	return GetPermissionMap(temp, result.Attributes, result.Name)
 }
 
 func AwsLookup(name string) []byte {
@@ -87,13 +70,7 @@ func AwsLookup(name string) []byte {
 
 // Contains looks if slice contains string.
 func Contains(s []string, e string) bool {
-	for _, a := range s {
-		if a == e {
-			return true
-		}
-	}
-
-	return false
+	return slices.Contains(s, e)
 }
 
 // GetPermissionMap Anonymous parsing.
@@ -102,9 +79,8 @@ func GetPermissionMap(raw []byte, attributes []string, resource string) ([]strin
 		return nil, &invalidJSONError{}
 	}
 
-	var mappings []interface{}
+	var mappings []any
 	err := json.Unmarshal(raw, &mappings)
-
 	if err != nil {
 		return nil, &unmarshallJSONError{err, resource}
 	}
@@ -131,7 +107,7 @@ func GetPermissionMap(raw []byte, attributes []string, resource string) ([]strin
 
 	for _, attribute := range attributes {
 		if resourceAttributes[attribute] != nil {
-			for _, entry := range resourceAttributes[attribute].([]interface{}) {
+			for _, entry := range resourceAttributes[attribute].([]any) {
 				value, ok := entry.(string)
 
 				if !ok {
@@ -171,7 +147,7 @@ func (m *parameterNilError) Error() string {
 	return fmt.Sprintf("%s was nil", m.parameter)
 }
 
-func getActionPermissions(permissionMap map[string]interface{}, found []string) ([]string, error) {
+func getActionPermissions(permissionMap map[string]any, found []string) ([]string, error) {
 	if permissionMap == nil {
 		return nil, &parameterNilError{parameter: "permissionMap"}
 	}
@@ -179,7 +155,7 @@ func getActionPermissions(permissionMap map[string]interface{}, found []string) 
 	for _, action := range []string{apply, plan, modify, destroy} {
 		if permissionMap[action] != nil {
 
-			temp, ok := permissionMap[action].([]interface{})
+			temp, ok := permissionMap[action].([]any)
 
 			if !ok {
 				log.Error().Msg("failed to cast permission map to list")
@@ -207,9 +183,8 @@ func GetRuntimePermissions(raw []byte, attributes []string, resource string) ([]
 		return nil, &invalidJSONError{}
 	}
 
-	var mappings []interface{}
+	var mappings []any
 	err := json.Unmarshal(raw, &mappings)
-
 	if err != nil {
 		return nil, &unmarshallJSONError{err, resource}
 	}
@@ -238,7 +213,7 @@ func GetRuntimePermissions(raw []byte, attributes []string, resource string) ([]
 	// Check each attribute to see if it triggers runtime permissions
 	for _, attribute := range attributes {
 		if runtimeMap[attribute] != nil {
-			for _, entry := range runtimeMap[attribute].([]interface{}) {
+			for _, entry := range runtimeMap[attribute].([]any) {
 				value, ok := entry.(string)
 
 				if !ok {
@@ -254,8 +229,8 @@ func GetRuntimePermissions(raw []byte, attributes []string, resource string) ([]
 	return found, nil
 }
 
-func IsTypeOK(mappings interface{}) (map[string]interface{}, error) {
-	temp, ok := mappings.(map[string]interface{})
+func IsTypeOK(mappings any) (map[string]any, error) {
+	temp, ok := mappings.(map[string]any)
 
 	if !ok {
 		return nil, &assertionError{"mappings to map[string]Interface{}"}

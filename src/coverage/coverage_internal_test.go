@@ -20,7 +20,7 @@ func createTestMembersFile(t *testing.T, data members) string {
 		t.Fatalf("Failed to marshal test data: %v", err)
 	}
 
-	err = os.WriteFile(filePath, jsonData, 0644)
+	err = os.WriteFile(filePath, jsonData, 0o644)
 	if err != nil {
 		t.Fatalf("Failed to write test file: %v", err)
 	}

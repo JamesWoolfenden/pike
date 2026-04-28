@@ -30,9 +30,9 @@ func Remote(target string, repository string, region string) error {
 		return &makeRoleError{err}
 	}
 
-	const magic = 5
+	const iamPropagationDelay = 5 * time.Second
 
-	time.Sleep(magic * time.Second)
+	time.Sleep(iamPropagationDelay)
 
 	Credentials, err := getAWSCredentials(*iamRole, region)
 	if err != nil {
@@ -44,11 +44,11 @@ func Remote(target string, repository string, region string) error {
 	_, err = SetRepoSecret(repository, *myCredentials.AccessKeyId, "AWS_ACCESS_KEY_ID")
 	if err != nil {
 		var response *github.ErrorResponse
-
-		errors.As(err, &response)
-
-		log.Info().Msgf("failed to set repo secrets: %s for repository %s", response.Message, repository)
-
+		if errors.As(err, &response) {
+			log.Info().Msgf("failed to set repo secrets: %s for repository %s", response.Message, repository)
+		} else {
+			log.Info().Err(err).Msgf("failed to set repo secrets for repository %s", repository)
+		}
 		return &setRepoSecretError{repository, err}
 	}
 
@@ -111,15 +111,11 @@ func SplitHub(repository string) (string, string, error) {
 
 	switch len(Splitter) {
 	case 2:
-		{
-			owner = Splitter[0]
-			repo = Splitter[1]
-		}
+		owner = Splitter[0]
+		repo = Splitter[1]
 	case 5:
-		{
-			owner = Splitter[3]
-			repo = Splitter[4]
-		}
+		owner = Splitter[3]
+		repo = Splitter[4]
 	default:
 		return "", "", &repositoryFormatError{repository}
 	}

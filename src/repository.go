@@ -42,7 +42,9 @@ func (m *gitCommitObjectError) Error() string {
 func Repository(repository, destination, directory, output string, init, write, enableResources bool) error {
 	if _, err := os.Stat(destination); !os.IsNotExist(err) {
 		log.Info().Msgf("%s was not empty, removing", destination)
-		_ = os.RemoveAll(destination)
+		if err := os.RemoveAll(destination); err != nil {
+			return fmt.Errorf("failed to remove %s: %w", destination, err)
+		}
 	}
 
 	// Clone the given repository to the given directory

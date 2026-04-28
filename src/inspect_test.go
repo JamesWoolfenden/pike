@@ -69,7 +69,7 @@ func TestCompareAllow(t *testing.T) {
 			PolicyDiff{nil, nil},
 			true,
 		},
-		//todo more testcases
+		// todo more testcases
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

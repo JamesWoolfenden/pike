@@ -73,7 +73,7 @@ func (m *insecureProtocolError) Error() string {
 func InvokeGithubDispatchEvent(repository string, workflowFileName string, branch string) error {
 	owner, repo, err := SplitHub(repository)
 	if err != nil {
-		log.Print(err)
+		log.Error().Err(err).Msg("failed to split repository")
 
 		return &splitHubError{err}
 	}
@@ -82,7 +82,7 @@ func InvokeGithubDispatchEvent(repository string, workflowFileName string, branc
 
 	err = verifyURL(url)
 	if err != nil {
-		log.Error().Err(err)
+		log.Error().Err(err).Msg("verifyURL failed")
 
 		return &verifyURLError{url, err}
 	}
@@ -91,7 +91,7 @@ func InvokeGithubDispatchEvent(repository string, workflowFileName string, branc
 
 	err = verifyBranch(client, owner, repo, branch)
 	if err != nil {
-		log.Error().Err(err)
+		log.Error().Err(err).Msg("verifyBranch failed")
 
 		return &verifyBranchError{branch, repo, owner, err}
 	}
@@ -150,7 +150,6 @@ func (m *listBranchesError) Error() string {
 func verifyBranch(client *github.Client, owner string, repo string, branch string) error {
 	ctx := context.Background()
 	branches, _, err := client.Repositories.ListBranches(ctx, owner, repo, nil)
-
 	if err != nil {
 		return &listBranchesError{err}
 	}

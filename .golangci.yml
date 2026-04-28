@@ -1,8 +1,4 @@
 # Config for golangci-lint. Pinned to v1.64.x in .github/workflows/pr.yml.
-#
-# This is a conservative baseline: real-bug finders enabled, style linters
-# off. Once the tree is clean, consider layering on revive, gocyclo, gocritic,
-# misspell, and forbidigo (to enforce zerolog-only logging — see REVIEW.md I2).
 
 run:
   timeout: 5m
@@ -18,6 +14,8 @@ linters:
     - unused        # dead code
     - gosimple      # simpler idiomatic forms
     - typecheck     # compile-level sanity
+    - forbidigo     # enforce zerolog-only logging
+    - misspell      # catch typos in strings and comments
 
 linters-settings:
   errcheck:
@@ -28,6 +26,10 @@ linters-settings:
       - fmt.Fprintln
       - fmt.Fprintf
       - fmt.Fprint
+  forbidigo:
+    forbid:
+      - p: ^log\.Print(f|ln)?$
+        msg: "use zerolog (log.Info/Warn/Error/Debug) instead of stdlib log"
 
 issues:
   exclude-dirs:

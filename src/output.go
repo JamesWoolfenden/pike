@@ -4,6 +4,7 @@ import (
 	"os"
 	"path"
 	"path/filepath"
+	"slices"
 	"strings"
 
 	"github.com/rs/zerolog/log"
@@ -11,20 +12,18 @@ import (
 
 // WriteOutput writes out the policy as JSON or Terraform.
 func WriteOutput(outPolicy OutputPolicy, outputType string, scanPath string, outFile string) error {
-
-	var newPath string
-
 	d1 := []byte(outPolicy.AsString(outputType))
 
-	if outFile != "" {
-
-	} else {
+	if outFile == "" {
 		if scanPath == "" {
 			scanPath = "."
 		}
-		newPath, _ = filepath.Abs(path.Join(scanPath, ".pike"))
+		newPath, err := filepath.Abs(path.Join(scanPath, ".pike"))
+		if err != nil {
+			return &absolutePathError{directory: scanPath, err: err}
+		}
 
-		err := os.MkdirAll(newPath, 0o750)
+		err = os.MkdirAll(newPath, 0o750)
 
 		if err != nil {
 			return &makeDirectoryError{directory: newPath, err: err}
@@ -32,7 +31,7 @@ func WriteOutput(outPolicy OutputPolicy, outputType string, scanPath string, out
 
 		switch strings.ToLower(outputType) {
 		case terraform:
-			outFile = filepath.Join(newPath, "pike.generated_policy.tf") //path.join does not work here
+			outFile = filepath.Join(newPath, "pike.generated_policy.tf") // path.join does not work here
 
 			if outPolicy.AWS.Terraform != "" {
 				roleFile := path.Join(newPath, "aws_iam_role.terraform_pike.tf")
@@ -63,7 +62,6 @@ func WriteOutput(outPolicy OutputPolicy, outputType string, scanPath string, out
 // GetTF return tf files in a directory.
 func GetTF(dirName string) ([]string, error) {
 	files, err := GetTFFiles(dirName)
-
 	if err != nil {
 		return nil, &directoryNotFoundError{dirName}
 	}
@@ -105,13 +103,7 @@ func GetTFFiles(dirName string) ([]string, error) {
 
 // StringInSlice looks for item in slice.
 func StringInSlice(a string, list []string) bool {
-	for _, b := range list {
-		if b == a {
-			return true
-		}
-	}
-
-	return false
+	return slices.Contains(list, a)
 }
 
 // GetHCLType gets the resource Name.

@@ -43,28 +43,23 @@ func GetResources(file string, dirName string) ([]ResourceV2, error) {
 
 		switch block.Type {
 		case terraform:
-			{
-				Resources, _ = DetectBackend(resource, block, Resources)
-
-				continue
+			var err error
+			Resources, err = DetectBackend(resource, block, Resources)
+			if err != nil {
+				log.Info().Err(err).Msg("backend detection failed")
 			}
+			continue
 		case module:
-			{
-				LocalResources, err := GetLocalModules(block, dirName, moduleJson)
-				if err == nil {
-					Resources = append(LocalResources, Resources...)
-				} else {
-					log.Info().Msg(err.Error())
-				}
+			LocalResources, err := GetLocalModules(block, dirName, moduleJson)
+			if err == nil {
+				Resources = append(LocalResources, Resources...)
+			} else {
+				log.Info().Err(err).Msg("local module scan failed")
 			}
 		case "output", "variable", "locals", "provider", "import":
-			{
-				continue
-			}
+			continue
 		default:
-			{
-				// currently missed
-			}
+			// block type not handled
 		}
 
 		if block.Labels != nil {
@@ -96,7 +91,7 @@ func GetResources(file string, dirName string) ([]ResourceV2, error) {
 func ExtractIAMBindings(body *hclsyntax.Body) []IAMBinding {
 	var bindings []IAMBinding
 
-	if body == nil || body.Blocks == nil {
+	if body == nil {
 		return bindings
 	}
 
@@ -142,16 +137,15 @@ func ExtractIAMBindings(body *hclsyntax.Body) []IAMBinding {
 func extractStringValue(expr hclsyntax.Expression) string {
 	// Handle template expressions (most common case)
 	if templateExpr, ok := expr.(*hclsyntax.TemplateExpr); ok {
-		var result string
+		var sb strings.Builder
 		for _, part := range templateExpr.Parts {
 			if literalExpr, ok := part.(*hclsyntax.LiteralValueExpr); ok {
-				result += literalExpr.Val.AsString()
+				sb.WriteString(literalExpr.Val.AsString())
 			} else if scopeExpr, ok := part.(*hclsyntax.ScopeTraversalExpr); ok {
-				// Handle variable references like ${google_service_account.app.email}
-				result += fmt.Sprintf("${%s}", traversalToString(scopeExpr.Traversal))
+				fmt.Fprintf(&sb, "${%s}", traversalToString(scopeExpr.Traversal))
 			}
 		}
-		return result
+		return sb.String()
 	}
 
 	// Handle literal value expressions
@@ -256,7 +250,7 @@ func GetResourceBlocks(file string) (*hclsyntax.Body, error) {
 		return nil, fileDiags
 	}
 
-	return parsedFile.Body.(*hclsyntax.Body), err
+	return parsedFile.Body.(*hclsyntax.Body), nil
 }
 
 // GetLocalModules return resource from a path.
@@ -331,18 +325,12 @@ func GetBlockAttributes(attributes []string, block *hclsyntax.Block) []string {
 
 		switch block.Type {
 		case "dynamic":
-			{
-				attributes = append(attributes, block.Labels...)
-			}
+			attributes = append(attributes, block.Labels...)
 		case "resource":
-			{
-				// do nothing
-			}
+			// do nothing
 		default:
-			{
-				attributes = append(attributes, block.Type)
-				attributes = GetBlockAttributes(attributes, block)
-			}
+			attributes = append(attributes, block.Type)
+			attributes = GetBlockAttributes(attributes, block)
 		}
 	}
 
@@ -359,26 +347,25 @@ func GetPermission(result ResourceV2) (Sorted, error) {
 	case provider.AWS:
 		myPermission.AWS, err = GetAWSPermissions(result)
 		if err != nil {
-			log.Print(err)
+			log.Error().Err(err).Msg("failed to get AWS permissions")
 		}
 	case "oci", "digitalocean", "linode", "helm":
-		log.Printf("Provider %s not yet implemented", result.Provider)
+		log.Info().Msgf("provider %s not yet implemented", result.Provider)
 
 		return myPermission, nil
 	case provider.Azure, "azuread":
 		myPermission.AZURE, err = GetAZUREPermissions(result)
 		if err != nil {
-			log.Print(err)
+			log.Error().Err(err).Msg("failed to get Azure permissions")
 		}
 	case provider.Google, provider.GCP:
 		myPermission.GCP, err = getGCPPermissions(result)
 		if err != nil {
-			log.Print(err)
+			log.Error().Err(err).Msg("failed to get GCP permissions")
 		}
-		// Also get runtime permissions for GCP
 		runtimePerm, err := getGCPRuntimePermissions(result)
 		if err != nil {
-			log.Print(err)
+			log.Error().Err(err).Msg("failed to get GCP runtime permissions")
 		}
 		if len(runtimePerm.Permissions) > 0 {
 			myPermission.RuntimeGCP = []RuntimePermission{runtimePerm}

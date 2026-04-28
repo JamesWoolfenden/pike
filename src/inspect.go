@@ -4,6 +4,7 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"slices"
 
 	Identity "github.com/jameswoolfenden/identity/src"
 	"github.com/rs/zerolog/log"
@@ -47,7 +48,8 @@ func Inspect(directory string, init bool) (PolicyDiff, error) {
 
 	rawIACPolicy, err := MakePolicy(directory, nil, init, false, "", "", false)
 	if err != nil {
-		if errors.Is(err, &emptyIACError{}) {
+		var emptyIAC *emptyIACError
+		if errors.As(err, &emptyIAC) {
 			log.Info().Msgf("nothing to do for IAC as %s for directory %s", err, directory)
 		} else {
 			return Difference, &makePolicyError{err: err}
@@ -56,7 +58,8 @@ func Inspect(directory string, init bool) (PolicyDiff, error) {
 
 	iacPolicy, err = Identity.Parse(rawIACPolicy.AWS.JSONOut)
 	if err != nil {
-		if errors.Is(err, &Identity.EmptyParseError{}) {
+		var emptyParse *Identity.EmptyParseError
+		if errors.As(err, &emptyParse) {
 			log.Info().Msgf("nothing to do for IAC as parse for %s was empty", directory)
 		} else {
 			return Difference, &identityParseError{err}
@@ -85,11 +88,6 @@ func (m *policyDifferenceError) Error() string {
 }
 
 func compareAllow(identity Identity.IAM, policy Identity.Policy) (PolicyDiff, error) {
-	// Add at start of function
-	if identity.Policies == nil || policy.Statements == nil {
-		return PolicyDiff{}, &policyDifferenceError{}
-	}
-
 	if len(identity.Policies) == 0 || len(policy.Statements) == 0 {
 		return PolicyDiff{}, &policyDifferenceError{}
 	}
@@ -100,13 +98,9 @@ func compareAllow(identity Identity.IAM, policy Identity.Policy) (PolicyDiff, er
 	var difference PolicyDiff
 
 	for _, identityPolicy := range identity.Policies {
-		statements := identityPolicy.Statements
-
-		if statements != nil {
-			for _, statement := range identityPolicy.Statements {
-				if statement.Effect == allow {
-					identityAllows = append(identityAllows, statement.Action...)
-				}
+		for _, statement := range identityPolicy.Statements {
+			if statement.Effect == allow {
+				identityAllows = append(identityAllows, statement.Action...)
 			}
 		}
 	}
@@ -118,26 +112,16 @@ func compareAllow(identity Identity.IAM, policy Identity.Policy) (PolicyDiff, er
 	}
 
 	for _, permission := range identityAllows {
-		if !contains(policyAllows, permission) {
+		if !slices.Contains(policyAllows, permission) {
 			difference.Over = append(difference.Over, permission)
 		}
 	}
 
 	for _, permission := range policyAllows {
-		if !contains(identityAllows, permission) {
+		if !slices.Contains(identityAllows, permission) {
 			difference.Under = append(difference.Under, permission)
 		}
 	}
 
 	return difference, nil
-}
-
-func contains(s []string, e string) bool {
-	for _, a := range s {
-		if a == e {
-			return true
-		}
-	}
-
-	return false
 }

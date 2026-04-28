@@ -28,7 +28,7 @@ func TestCompare(t *testing.T) {
 		{"fail arn is empty", args{"./testdata/init/nicconf", "", false}, false, true},
 		{"fail arn is not policy", args{"./testdata/init/nicconf", "arn:aws:iam::680235478471:user/readonly", false}, false, true},
 		{"works but fails", args{"./testdata/init/nicconf", "arn:aws:iam::680235478471:policy/allows3", false}, false, false},
-		//code is not aws
+		// code is not aws
 		{"gcp-basic-fail", args{"./testdata/gcp/basic", "basic", false}, false, true},
 		{"gcp-basic-exist-fail", args{"./testdata/gcp/basic", "projects/pike-477416/roles/terraform_pike", false}, false, false},
 	}
@@ -60,7 +60,8 @@ func Test_listEnabledAPIs(t *testing.T) {
 		wantErr bool
 	}{
 		{"All", args{"pike-"}, nil, true},
-		{"Enabled", args{"488072219970"}, []string{"analyticshub.googleapis.com",
+		{"Enabled", args{"488072219970"}, []string{
+			"analyticshub.googleapis.com",
 			"artifactregistry.googleapis.com", "autoscaling.googleapis.com", "bigquery.googleapis.com",
 			"bigqueryconnection.googleapis.com", "bigquerydatapolicy.googleapis.com", "bigquerymigration.googleapis.com",
 			"bigqueryreservation.googleapis.com", "bigquerystorage.googleapis.com", "bigtable.googleapis.com",
@@ -74,7 +75,8 @@ func Test_listEnabledAPIs(t *testing.T) {
 			"servicehealth.googleapis.com", "servicemanagement.googleapis.com", "serviceusage.googleapis.com",
 			"source.googleapis.com", "sql-component.googleapis.com", "sqladmin.googleapis.com", "storage-api.googleapis.com",
 			"storage-component.googleapis.com",
-			"storage.googleapis.com"}, false},
+			"storage.googleapis.com",
+		}, false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

@@ -24,12 +24,7 @@ jobs:
         env:
           GOTOOLCHAIN: auto
         uses: jameswoolfenden/auto-gofmt@966e6b689d24eeb2fb32d4900ed06f80b536c861 # v0.1
-      # golangci-lint runs but is non-blocking initially so a dirty baseline
-      # doesn't break CI on the first run. Remove `continue-on-error` once the
-      # baseline is clean - it should then block merges on regressions.
-      # TODO: SHA-pin like the other actions (the repo convention is sha # vX.Y.Z)
       - name: golangci-lint
-        continue-on-error: true
         uses: golangci/golangci-lint-action@1e7e51e771db61008b38414a730f564565cf7c20 # v9.2.0
         with:
           version: v1.64

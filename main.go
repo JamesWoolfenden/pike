@@ -175,14 +175,12 @@ func main() {
 						Destination: &provider,
 					},
 					&cli.StringFlag{
-						Name: "outfile",
-						//Aliases:     []string{""},
+						Name:        "outfile",
 						Usage:       "filepath you want to write to the policy to",
 						Destination: &outfile,
 					},
 					&cli.StringFlag{
-						Name: "policyName",
-						//Aliases:     []string{""},
+						Name:        "policyName",
 						Usage:       "the name of the policy you want to write",
 						Destination: &policyName,
 					},
@@ -389,7 +387,7 @@ func main() {
 						Destination: &init,
 					},
 					&cli.BoolFlag{
-						Name:        "auto append",
+						Name:        "auto-append",
 						Aliases:     []string{"A"},
 						Usage:       "Automatically adds policy section to the end of Readme",
 						Destination: &autoAppend,

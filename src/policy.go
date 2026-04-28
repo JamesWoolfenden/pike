@@ -103,7 +103,7 @@ func GetPolicy(actions Sorted, resources bool, policyName string) (OutputPolicy,
 		empty = false
 		OutPolicy.AWS, err = AWSPolicy(Unique(actions.AWS), resources, policyName)
 		if err != nil {
-			log.Error().Err(err)
+			log.Error().Err(err).Msg("AWS policy generation failed")
 		}
 	}
 
@@ -111,7 +111,7 @@ func GetPolicy(actions Sorted, resources bool, policyName string) (OutputPolicy,
 		empty = false
 		OutPolicy.GCP, err = GCPPolicy(Unique(actions.GCP), policyName)
 		if err != nil {
-			log.Error().Err(err)
+			log.Error().Err(err).Msg("GCP policy generation failed")
 		}
 	}
 
@@ -119,7 +119,7 @@ func GetPolicy(actions Sorted, resources bool, policyName string) (OutputPolicy,
 		empty = false
 		OutPolicy.AZURE, err = AZUREPolicy(Unique(actions.AZURE), policyName)
 		if err != nil {
-			log.Error().Err(err)
+			log.Error().Err(err).Msg("Azure policy generation failed")
 		}
 	}
 
@@ -141,7 +141,7 @@ func AWSPolicy(permissions []string, resources bool, policyName string) (AwsOutp
 
 	indent, err := json.MarshalIndent(Policy, "", "    ")
 	if err != nil {
-		log.Info().Err(err)
+		log.Error().Err(err).Msg("failed to marshal AWS policy")
 
 		return OutPolicy, &marshallAWSPolicyError{err}
 	}
@@ -174,14 +174,13 @@ func AWSPolicy(permissions []string, resources bool, policyName string) (AwsOutp
 
 // Unique make slice unique.
 func Unique(s []string) []string {
-	inResult := make(map[string]bool)
+	seen := make(map[string]struct{}, len(s))
 
 	var result []string
 
 	for _, str := range s {
-		if _, ok := inResult[str]; !ok {
-			inResult[str] = true
-
+		if _, ok := seen[str]; !ok {
+			seen[str] = struct{}{}
 			result = append(result, str)
 		}
 	}
@@ -191,10 +190,8 @@ func Unique(s []string) []string {
 	return result
 }
 
+var minifyReplacer = strings.NewReplacer("\n", "", "\r", "", "\t", "", "	", "", " ", "")
+
 func Minify(JSONOut string) string {
-	return strings.ReplaceAll(
-		strings.ReplaceAll(
-			strings.ReplaceAll(
-				strings.ReplaceAll(
-					strings.ReplaceAll(JSONOut, "\n", ""), "	", ""), " ", ""), "\r", ""), "\t", "")
+	return minifyReplacer.Replace(JSONOut)
 }

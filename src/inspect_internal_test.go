@@ -133,7 +133,7 @@ func TestCompareAllow(t *testing.T) {
 			PolicyDiff{nil, nil},
 			true,
 		},
-		//todo more testcases
+		// todo more testcases
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -144,28 +144,6 @@ func TestCompareAllow(t *testing.T) {
 			}
 			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("CompareAllow() got = %v, want %v", got, tt.want)
-			}
-		})
-	}
-}
-
-func Test_contains(t *testing.T) {
-	type args struct {
-		s []string
-		e string
-	}
-	tests := []struct {
-		name string
-		args args
-		want bool
-	}{
-		{"found", args{[]string{"foo", "bar"}, "foo"}, true},
-		{"not found", args{[]string{"foo", "bar"}, "bart"}, false},
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			if got := contains(tt.args.s, tt.args.e); got != tt.want {
-				t.Errorf("contains() = %v, want %v", got, tt.want)
 			}
 		})
 	}

@@ -63,7 +63,7 @@ func validateRuntimePermissions(runtimePerms []RuntimePermission, iamBindings []
 			if bindings, exists := roleBindings[role]; exists {
 				serviceAccountRef := extractServiceAccountRef(runtimePerm)
 				for _, binding := range bindings {
-					if matchesServiceAccount(binding.Member, serviceAccountRef, runtimePerm) {
+					if matchesServiceAccount(binding.Member, serviceAccountRef) {
 						result.Status = "configured"
 						result.ExistingMember = binding.Member
 						break
@@ -85,7 +85,7 @@ func extractServiceAccountRef(runtimePerm RuntimePermission) string {
 	return ""
 }
 
-func matchesServiceAccount(member string, serviceAccountRef string, runtimePerm RuntimePermission) bool {
+func matchesServiceAccount(member string, serviceAccountRef string) bool {
 	if serviceAccountRef == "" {
 		return false
 	}
@@ -118,14 +118,15 @@ func formatGCPRuntimeWithValidation(runtimePerms []RuntimePermission, iamBinding
 		key := fmt.Sprintf("%s.%s", runtimePerm.ResourceType, runtimePerm.ResourceName)
 		results := resourceResults[key]
 
-		output.WriteString(fmt.Sprintf("# Resource: %s.%s\n", runtimePerm.ResourceType, runtimePerm.ResourceName))
+		fmt.Fprintf(&output, "# Resource: %s.%s\n", runtimePerm.ResourceType, runtimePerm.ResourceName)
 
-		if runtimePerm.ServiceAccount == "default" {
+		switch runtimePerm.ServiceAccount {
+		case "default":
 			output.WriteString("# ⚠️  WARNING: Using default service account (broad permissions).\n")
 			output.WriteString("#     Best practice: Define a dedicated service account with least-privilege access.\n")
-		} else if runtimePerm.ServiceAccount == "custom" {
-			output.WriteString(fmt.Sprintf("# ℹ️  Service account: Defined in resource (reference as ${%s.%s.service_account})\n",
-				runtimePerm.ResourceType, runtimePerm.ResourceName))
+		case "custom":
+			fmt.Fprintf(&output, "# ℹ️  Service account: Defined in resource (reference as ${%s.%s.service_account})\n",
+				runtimePerm.ResourceType, runtimePerm.ResourceName)
 		}
 		output.WriteString("#\n")
 
@@ -141,9 +142,9 @@ func formatGCPRuntimeWithValidation(runtimePerms []RuntimePermission, iamBinding
 		if configured > 0 && missing == 0 {
 			output.WriteString("# ✅ IAM Status: All required permissions are configured\n")
 		} else if configured > 0 {
-			output.WriteString(fmt.Sprintf("# ⚠️  IAM Status: %d configured, %d missing\n", configured, missing))
+			fmt.Fprintf(&output, "# ⚠️  IAM Status: %d configured, %d missing\n", configured, missing)
 		} else {
-			output.WriteString(fmt.Sprintf("# ❌ IAM Status: No IAM bindings found (%d missing)\n", missing))
+			fmt.Fprintf(&output, "# ❌ IAM Status: No IAM bindings found (%d missing)\n", missing)
 		}
 		output.WriteString("#\n")
 
@@ -151,10 +152,10 @@ func formatGCPRuntimeWithValidation(runtimePerms []RuntimePermission, iamBinding
 			output.WriteString("# IAM Binding Requirements:\n")
 			for _, result := range results {
 				if result.Status == "configured" {
-					output.WriteString(fmt.Sprintf("#   ✅ %s - CONFIGURED\n", result.Role))
-					output.WriteString(fmt.Sprintf("#      Member: %s\n", result.ExistingMember))
+					fmt.Fprintf(&output, "#   ✅ %s - CONFIGURED\n", result.Role)
+					fmt.Fprintf(&output, "#      Member: %s\n", result.ExistingMember)
 				} else {
-					output.WriteString(fmt.Sprintf("#   ❌ %s - MISSING\n", result.Role))
+					fmt.Fprintf(&output, "#   ❌ %s - MISSING\n", result.Role)
 					output.WriteString("#      Permissions: ")
 					output.WriteString(strings.Join(result.Permissions, ", "))
 					output.WriteString("\n")
@@ -177,12 +178,12 @@ func formatGCPRuntimeWithValidation(runtimePerms []RuntimePermission, iamBinding
 				resourceID := strings.ReplaceAll(runtimePerm.ResourceName, "-", "_")
 				bindingName := fmt.Sprintf("runtime_%s_%s", resourceID, roleID)
 
-				output.WriteString(fmt.Sprintf("resource \"google_project_iam_member\" \"%s\" {\n", bindingName))
+				fmt.Fprintf(&output, "resource \"google_project_iam_member\" \"%s\" {\n", bindingName)
 				output.WriteString("  project = var.project_id\n")
-				output.WriteString(fmt.Sprintf("  role    = \"%s\"\n", result.Role))
+				fmt.Fprintf(&output, "  role    = \"%s\"\n", result.Role)
 				if runtimePerm.ServiceAccount == "custom" {
-					output.WriteString(fmt.Sprintf("  member  = \"serviceAccount:${%s.%s.service_account}\"\n",
-						runtimePerm.ResourceType, runtimePerm.ResourceName))
+					fmt.Fprintf(&output, "  member  = \"serviceAccount:${%s.%s.service_account}\"\n",
+						runtimePerm.ResourceType, runtimePerm.ResourceName)
 				} else {
 					output.WriteString("  member  = \"serviceAccount:YOUR_SERVICE_ACCOUNT_EMAIL\"  # TODO: Replace with actual service account\n")
 				}
@@ -192,7 +193,7 @@ func formatGCPRuntimeWithValidation(runtimePerms []RuntimePermission, iamBinding
 
 		output.WriteString("# All permissions detected:\n")
 		for _, perm := range Unique(runtimePerm.Permissions) {
-			output.WriteString(fmt.Sprintf("#   - %s\n", perm))
+			fmt.Fprintf(&output, "#   - %s\n", perm)
 		}
 		output.WriteString("\n")
 	}

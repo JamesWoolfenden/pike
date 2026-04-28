@@ -7,6 +7,60 @@ import (
 	"testing"
 )
 
+func TestExtractServiceAccount(t *testing.T) {
+	t.Parallel()
+
+	tests := []struct {
+		name       string
+		attributes []string
+		want       string
+	}{
+		{"with service_account", []string{"name", "service_account", "location"}, "custom"},
+		{"without service_account", []string{"name", "location"}, "default"},
+		{"empty attributes", []string{}, "default"},
+		{"nil attributes", nil, "default"},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
+			if got := extractServiceAccount(tt.attributes); got != tt.want {
+				t.Errorf("extractServiceAccount() = %q, want %q", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestGCPLookup(t *testing.T) {
+	t.Parallel()
+
+	tests := []struct {
+		name     string
+		resource string
+		wantNil  bool
+	}{
+		{"known resource", "google_compute_instance", false},
+		{"unknown resource", "google_does_not_exist_xyz", true},
+		{"empty name", "", true},
+		{"iam member variant strips suffix", "google_project_iam_member", false},
+		{"iam binding variant strips suffix", "google_project_iam_binding", false},
+		{"iam policy variant strips suffix", "google_project_iam_policy", false},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
+			got := GCPLookup(tt.resource)
+			if tt.wantNil && got != nil {
+				t.Errorf("GCPLookup(%q) = non-nil, want nil", tt.resource)
+			}
+			if !tt.wantNil && got == nil {
+				t.Errorf("GCPLookup(%q) = nil, want non-nil", tt.resource)
+			}
+		})
+	}
+}
+
 func TestGetGCPPermissions(t *testing.T) {
 	t.Parallel()
 

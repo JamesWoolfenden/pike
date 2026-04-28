@@ -26,7 +26,6 @@ func TestReadModuleJson_ValidInput(t *testing.T) {
 
 	reader := strings.NewReader(jsonInput)
 	result, err := ReadModuleJson(reader)
-
 	if err != nil {
 		t.Fatalf("Expected no error, got: %v", err)
 	}
@@ -68,7 +67,6 @@ func TestReadModuleJson_ValidInput(t *testing.T) {
 func TestReadModuleJson_EmptyInput(t *testing.T) {
 	reader := strings.NewReader("")
 	result, err := ReadModuleJson(reader)
-
 	if err != nil {
 		t.Fatalf("Expected no error, got: %v", err)
 	}
@@ -156,7 +154,6 @@ func TestReadModuleJson_WindowsPathHandling(t *testing.T) {
 
 	reader := strings.NewReader(jsonInput)
 	result, err := ReadModuleJson(reader)
-
 	if err != nil {
 		t.Fatalf("Expected no error, got: %v", err)
 	}
@@ -188,7 +185,7 @@ func TestReadModuleJsonForDir_ValidFile(t *testing.T) {
 	}`
 
 	modulesFile := filepath.Join(tempDir, ManifestSnapshotFilename)
-	err = os.WriteFile(modulesFile, []byte(jsonContent), 0644)
+	err = os.WriteFile(modulesFile, []byte(jsonContent), 0o644)
 	if err != nil {
 		t.Fatalf("Failed to write modules file: %v", err)
 	}

@@ -60,7 +60,7 @@ func Readme(dirName string, output string, init bool, autoAppend bool) error {
 
 	log.Info().Msg("readme updated")
 
-	return err
+	return nil
 }
 
 type tfPolicyFormatError struct{}

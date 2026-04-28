@@ -135,6 +135,7 @@ func TestGetCurrentProject_GcloudConfigFile(t *testing.T) {
 	originalGcpProject := os.Getenv("GCP_PROJECT")
 	originalHome := os.Getenv("HOME")
 	originalAppData := os.Getenv("APPDATA")
+	originalGoogleAppCreds := os.Getenv("GOOGLE_APPLICATION_CREDENTIALS")
 
 	// Clean up after test
 	defer func() {
@@ -143,12 +144,16 @@ func TestGetCurrentProject_GcloudConfigFile(t *testing.T) {
 		_ = os.Setenv("GCP_PROJECT", originalGcpProject)
 		_ = os.Setenv("HOME", originalHome)
 		_ = os.Setenv("APPDATA", originalAppData)
+		_ = os.Setenv("GOOGLE_APPLICATION_CREDENTIALS", originalGoogleAppCreds)
 	}()
 
-	// Clear environment variables to force config file reading
+	// Clear all env vars that could short-circuit the config file path.
+	// GOOGLE_APPLICATION_CREDENTIALS points to an absolute key file and
+	// is unaffected by HOME/APPDATA redirection, so it must be cleared too.
 	_ = os.Unsetenv("GOOGLE_CLOUD_PROJECT")
 	_ = os.Unsetenv("GOOGLE_PROJECT")
 	_ = os.Unsetenv("GCP_PROJECT")
+	_ = os.Unsetenv("GOOGLE_APPLICATION_CREDENTIALS")
 
 	// Create temporary directory structure
 	tempDir := t.TempDir()
@@ -163,7 +168,7 @@ func TestGetCurrentProject_GcloudConfigFile(t *testing.T) {
 	}
 
 	// Create directory structure
-	err := os.MkdirAll(filepath.Dir(configPath), 0755)
+	err := os.MkdirAll(filepath.Dir(configPath), 0o755)
 	if err != nil {
 		t.Fatalf("Failed to create config directory: %v", err)
 	}
@@ -178,7 +183,7 @@ region = us-central1
 zone = us-central1-a
 `
 
-	err = os.WriteFile(configPath, []byte(configContent), 0644)
+	err = os.WriteFile(configPath, []byte(configContent), 0o644)
 	if err != nil {
 		t.Fatalf("Failed to write config file: %v", err)
 	}
@@ -292,7 +297,7 @@ func TestGetCurrentProject_InvalidConfigFile(t *testing.T) {
 	}
 
 	// Create directory structure
-	err := os.MkdirAll(filepath.Dir(configPath), 0755)
+	err := os.MkdirAll(filepath.Dir(configPath), 0o755)
 	if err != nil {
 		t.Fatalf("Failed to create config directory: %v", err)
 	}
@@ -303,7 +308,7 @@ project = test-project
 invalid ini format
 `
 
-	err = os.WriteFile(configPath, []byte(invalidConfigContent), 0644)
+	err = os.WriteFile(configPath, []byte(invalidConfigContent), 0o644)
 	if err != nil {
 		t.Fatalf("Failed to write invalid config file: %v", err)
 	}
@@ -321,6 +326,7 @@ func TestGetCurrentProject_ConfigFileWithoutProject(t *testing.T) {
 	originalGcpProject := os.Getenv("GCP_PROJECT")
 	originalHome := os.Getenv("HOME")
 	originalAppData := os.Getenv("APPDATA")
+	originalGoogleAppCreds := os.Getenv("GOOGLE_APPLICATION_CREDENTIALS")
 
 	// Clean up after test
 	defer func() {
@@ -329,12 +335,13 @@ func TestGetCurrentProject_ConfigFileWithoutProject(t *testing.T) {
 		_ = os.Setenv("GCP_PROJECT", originalGcpProject)
 		_ = os.Setenv("HOME", originalHome)
 		_ = os.Setenv("APPDATA", originalAppData)
+		_ = os.Setenv("GOOGLE_APPLICATION_CREDENTIALS", originalGoogleAppCreds)
 	}()
 
-	// Clear environment variables
 	_ = os.Unsetenv("GOOGLE_CLOUD_PROJECT")
 	_ = os.Unsetenv("GOOGLE_PROJECT")
 	_ = os.Unsetenv("GCP_PROJECT")
+	_ = os.Unsetenv("GOOGLE_APPLICATION_CREDENTIALS")
 
 	// Create temporary directory structure
 	tempDir := t.TempDir()
@@ -349,7 +356,7 @@ func TestGetCurrentProject_ConfigFileWithoutProject(t *testing.T) {
 	}
 
 	// Create directory structure
-	err := os.MkdirAll(filepath.Dir(configPath), 0755)
+	err := os.MkdirAll(filepath.Dir(configPath), 0o755)
 	if err != nil {
 		t.Fatalf("Failed to create config directory: %v", err)
 	}
@@ -363,7 +370,7 @@ region = us-central1
 zone = us-central1-a
 `
 
-	err = os.WriteFile(configPath, []byte(configContent), 0644)
+	err = os.WriteFile(configPath, []byte(configContent), 0o644)
 	if err != nil {
 		t.Fatalf("Failed to write config file: %v", err)
 	}

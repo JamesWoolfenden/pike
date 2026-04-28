@@ -42,11 +42,14 @@ func GCPPolicy(permissions []string, policyName string) (string, error) {
 	}
 
 	var PolicyName string
+	var roleID string
 
 	if policyName != "" {
 		PolicyName = policyName
+		roleID = policyName
 	} else {
 		PolicyName = defaultPolicyName
+		roleID = defaultRoleID
 	}
 
 	project, err := getCurrentProject()
@@ -57,7 +60,7 @@ func GCPPolicy(permissions []string, policyName string) (string, error) {
 	theDetails := gCPPolicyDetails{
 		Name:        PolicyName,
 		Project:     project,
-		RoleID:      PolicyName,
+		RoleID:      roleID,
 		Permissions: test,
 	}
 
@@ -77,7 +80,7 @@ func GCPPolicy(permissions []string, policyName string) (string, error) {
 }
 
 func getCurrentProject() (string, error) {
-	//many different ways to ensure that a value for a GCP project is found
+	// many different ways to ensure that a value for a GCP project is found
 	if os.Getenv("GOOGLE_CLOUD_PROJECT") != "" {
 		return os.Getenv("GOOGLE_CLOUD_PROJECT"), nil
 	}
@@ -95,7 +98,7 @@ func getCurrentProject() (string, error) {
 
 	var configPath string
 	if err != nil || credentials.ProjectID == "" {
-		//gcloud info --format='value(config.paths.global_config_dir)'
+		// gcloud info --format='value(config.paths.global_config_dir)'
 		if runtime.GOOS != "windows" {
 			configPath = filepath.Join(os.Getenv("HOME"), ".config", "gcloud", "configurations", "config_default")
 		} else {
@@ -103,7 +106,6 @@ func getCurrentProject() (string, error) {
 		}
 
 		config, err := ini.Load(configPath)
-
 		if err != nil {
 			return "", err
 		}
@@ -115,5 +117,4 @@ func getCurrentProject() (string, error) {
 	result := credentials.ProjectID
 
 	return result, nil
-
 }

@@ -1,23 +1,12 @@
 package pike
 
-//goland:noinspection GoLinter
-
-// GetAWSDataPermissions gets permissions required for datasource's.
-//
-//goland:noinspection GoLinter
+// GetAWSDataPermissions gets permissions required for datasources.
 func GetAWSDataPermissions(result ResourceV2) ([]string, error) {
-	var (
-		Permissions []string
-		err         error
-	)
-
-	if temp := AwsDataLookup(result.Name); temp != nil {
-		Permissions, err = GetPermissionMap(temp, result.Attributes, result.Name)
-	} else {
+	temp := AwsDataLookup(result.Name)
+	if temp == nil {
 		return nil, &notImplementedDatasourceError{result.Name}
 	}
-
-	return Permissions, err
+	return GetPermissionMap(temp, result.Attributes, result.Name)
 }
 
 func AwsDataLookup(name string) []byte {

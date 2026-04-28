@@ -34,6 +34,12 @@ FROM alpine:3.22@sha256:310c62b5e7ca5b08167e4384c68db0fd2905dd9c7493756d356e8939
 RUN apk add --no-cache bash ca-certificates git \
     && adduser -D -u 10001 -h /home/pike pike
 
+LABEL org.opencontainers.image.title="pike" \
+      org.opencontainers.image.description="Determine the minimum IAM permissions required to run OpenTofu/Terraform infrastructure code." \
+      org.opencontainers.image.source="https://github.com/JamesWoolfenden/pike" \
+      org.opencontainers.image.licenses="Apache-2.0" \
+      org.opencontainers.image.authors="JamesWoolfenden"
+
 COPY --from=builder /out/pike /usr/bin/pike
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
@@ -42,9 +48,3 @@ USER pike
 WORKDIR /home/pike
 
 ENTRYPOINT ["/entrypoint.sh"]
-
-LABEL org.opencontainers.image.title="pike" \
-      org.opencontainers.image.description="Determine the minimum IAM permissions required to run OpenTofu/Terraform infrastructure code." \
-      org.opencontainers.image.source="https://github.com/JamesWoolfenden/pike" \
-      org.opencontainers.image.licenses="Apache-2.0" \
-      org.opencontainers.image.authors="JamesWoolfenden"

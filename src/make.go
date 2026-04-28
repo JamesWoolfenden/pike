@@ -45,18 +45,12 @@ func Make(directory string) (*string, error) {
 	if (state.Values.Outputs["arn"]) != nil {
 		arn := state.Values.Outputs["arn"]
 
-		myValue, ok := arn.Value.(string)
-		if !ok {
-			return nil, &castToStringError{"arn"}
-		}
-
-		log.Info().Msgf("aws role create/updated %s", myValue)
-
 		role, ok := arn.Value.(string)
-
 		if !ok {
 			return nil, &castToStringError{"arn"}
 		}
+
+		log.Info().Msgf("aws role create/updated %s", role)
 
 		return &role, nil
 	}
@@ -108,12 +102,11 @@ func tfApply(policyPath string) (*tfexec.Terraform, error) {
 // Apply executes tf using a prepared role.
 func Apply(target string, region string) error {
 	iamRole, err := Make(target)
-
-	time.Sleep(5 * time.Second)
-
 	if err != nil {
 		return &makeRoleError{err}
 	}
+
+	time.Sleep(5 * time.Second)
 	// clear any temp credentials (best-effort: unsetenv failures on supported
 	// OSes are pathological, so we log and continue rather than abort)
 	if unsetErr := unSetAWSAuth(); unsetErr != nil {

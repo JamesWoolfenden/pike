@@ -28,10 +28,10 @@ import (
 	"os"
 	"path/filepath"
 	"regexp"
+	"slices"
 	"strings"
 
 	"github.com/rs/zerolog/log"
-	"golang.org/x/exp/slices"
 )
 
 type provider struct {
@@ -151,10 +151,7 @@ func getMatches(source string, match string, extension string) ([]string, error)
 		return nil, nil
 	}
 
-	var (
-		matches = make(map[string]bool)
-		a       []string
-	)
+	matches := make(map[string]struct{})
 
 	for _, file := range files {
 		contents, _ := os.ReadFile(file) // #nosec G304 -- Reading Terraform files from user-specified paths
@@ -169,7 +166,7 @@ func getMatches(source string, match string, extension string) ([]string, error)
 			matched = strings.TrimSpace(strings.ReplaceAll(matched, "data ", ""))
 			matched = strings.TrimSpace(strings.ReplaceAll(matched, "resource ", ""))
 			matched = strings.TrimSpace(strings.ReplaceAll(matched, "`", ""))
-			a, matches = add(matched, matches, a)
+			matches[matched] = struct{}{}
 		}
 	}
 
@@ -187,12 +184,11 @@ func getGoFiles(path string, extension string) ([]string, error) {
 	}
 
 	absPath, err := filepath.Abs(path)
-
-	log.Info().Msg(absPath)
-
 	if err != nil {
 		return nil, fmt.Errorf("absolute path error %v", err)
 	}
+
+	log.Debug().Str("path", absPath).Msg("scanning for files")
 
 	_, err = os.Stat(absPath)
 	if err != nil {
@@ -202,13 +198,11 @@ func getGoFiles(path string, extension string) ([]string, error) {
 	var files []string
 
 	err = filepath.Walk(path, func(path string, info os.FileInfo, err error) error {
-		if err == nil && libRegEx.MatchString(info.Name()) {
-			if strings.Contains(path, "_test") || strings.Contains(path, ".ci") || info.IsDir() {
-			} else {
-				files = append(files, path)
-			}
+		if err != nil || info.IsDir() || !libRegEx.MatchString(info.Name()) ||
+			strings.Contains(path, "_test") || strings.Contains(path, ".ci") {
+			return nil
 		}
-
+		files = append(files, path)
 		return nil
 	})
 	if err != nil {
@@ -218,26 +212,11 @@ func getGoFiles(path string, extension string) ([]string, error) {
 	return files, nil
 }
 
-func getKeys(m map[string]bool) []string {
+func getKeys(m map[string]struct{}) []string {
 	var keys []string
-
 	for k := range m {
 		keys = append(keys, k)
 	}
-
 	slices.Sort(keys)
-
 	return keys
-}
-
-func add(s string, m map[string]bool, a []string) ([]string, map[string]bool) {
-	if m[s] {
-		return a, m
-	}
-
-	a = append(a, s)
-
-	m[s] = true
-
-	return a, m
 }

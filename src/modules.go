@@ -43,7 +43,6 @@ func (m *invalidVersionError) Error() string {
 
 func ReadModuleJson(r io.Reader) (ModuleJson, error) {
 	src, err := io.ReadAll(r)
-
 	if err != nil {
 		return nil, err
 	}
@@ -91,7 +90,7 @@ func ReadModuleJsonForDir(dir string) (ModuleJson, error) {
 	defer func(r *os.File) {
 		err := r.Close()
 		if err != nil {
-			log.Warn().Msgf("Faile dto close file %s", r.Name())
+			log.Warn().Msgf("Failed to close file %s", r.Name())
 		}
 	}(r)
 	return ReadModuleJson(r)

@@ -10,6 +10,7 @@ import (
 	"github.com/aws/aws-sdk-go-v2/config"
 	"github.com/aws/aws-sdk-go-v2/service/sts"
 	"github.com/aws/aws-sdk-go-v2/service/sts/types"
+	"github.com/rs/zerolog/log"
 )
 
 const waitForConsistency = 900
@@ -66,15 +67,15 @@ func getAWSCredentials(iamRole string, region string) (*sts.AssumeRoleOutput, er
 
 		switch {
 		case errors.As(err, &mpde):
-			fmt.Println("MalformedPolicyDocumentException:", err.Error())
+			log.Error().Err(err).Msg("MalformedPolicyDocumentException")
 		case errors.As(err, &pptl):
-			fmt.Println("PackedPolicyTooLargeException:", err.Error())
+			log.Error().Err(err).Msg("PackedPolicyTooLargeException")
 		case errors.As(err, &rde):
-			fmt.Println("RegionDisabledException:", err.Error())
+			log.Error().Err(err).Msg("RegionDisabledException")
 		case errors.As(err, &ete):
-			fmt.Println("ExpiredTokenException:", err.Error())
+			log.Error().Err(err).Msg("ExpiredTokenException")
 		default:
-			fmt.Println(err.Error())
+			log.Error().Err(err).Msg("AssumeRole failed")
 		}
 
 		return nil, err

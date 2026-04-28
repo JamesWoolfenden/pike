@@ -9,39 +9,40 @@ then
 fi
 
 echo "running command:"
+
+args=()
+
 if [ -n "$INPUT_DIRECTORY" ]
 then
-  FLAG="--directory"
-  COMMANDS="$INPUT_DIRECTORY"
+  args+=(--directory "$INPUT_DIRECTORY")
 fi
 
 if [ -n "$INPUT_FILE" ]
 then
-  FLAG="--file"
-  COMMANDS="$INPUT_FILE"
+  args+=(--file "$INPUT_FILE")
 fi
 
-if [ -n "$INPUT_AUTO" ];
+if [ -n "$INPUT_AUTO" ]
 then
-  COMMANDS+=" --auto"
+  args+=(--auto)
 fi
 
-if [ -n "$INPUT_WRITE" ] && [ "$INPUT_WRITE" = "true" ];
+if [ -n "$INPUT_WRITE" ] && [ "$INPUT_WRITE" = "true" ]
 then
-  COMMANDS+=" --write"
+  args+=(--write)
 fi
 
-if [ -n "$INPUT_INIT" ] && [ "$INPUT_INIT" = "true" ];
+if [ -n "$INPUT_INIT" ] && [ "$INPUT_INIT" = "true" ]
 then
-  COMMANDS+=" --init"
+  args+=(--init)
 fi
 
 if [ -n "$INPUT_OUTPUT" ]
 then
-  COMMANDS+=" --output "+ $INPUT_OUTPUT
+  args+=(--output "$INPUT_OUTPUT")
 fi
 
-echo pike "$INPUT_VERB" "$FLAG" "$COMMANDS"
-/usr/bin/pike "$INPUT_VERB" "$FLAG" "$COMMANDS"
+echo pike "$INPUT_VERB" "${args[@]}"
+/usr/bin/pike "$INPUT_VERB" "${args[@]}"
 
 export pike_EXIT_CODE=$?

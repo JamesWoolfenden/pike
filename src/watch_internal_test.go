@@ -41,13 +41,13 @@ func TestSortActions_WithArrayActions(t *testing.T) {
 	assert.NoError(t, err)
 	assert.NotNil(t, result)
 
-	var parsed map[string]interface{}
+	var parsed map[string]any
 	err = json.Unmarshal([]byte(*result), &parsed)
 	assert.NoError(t, err)
 
-	statements := parsed["Statement"].([]interface{})
-	statement := statements[0].(map[string]interface{})
-	actions := statement["Action"].([]interface{})
+	statements := parsed["Statement"].([]any)
+	statement := statements[0].(map[string]any)
+	actions := statement["Action"].([]any)
 
 	// Verify actions are sorted
 	assert.Equal(t, "s3:DeleteObject", actions[0])
@@ -72,7 +72,7 @@ func TestSortActions_WithStringAction(t *testing.T) {
 	assert.NoError(t, err)
 	assert.NotNil(t, result)
 
-	var parsed map[string]interface{}
+	var parsed map[string]any
 	err = json.Unmarshal([]byte(*result), &parsed)
 	assert.NoError(t, err)
 }
@@ -101,7 +101,7 @@ func TestSortActions_InvalidStatement(t *testing.T) {
 }
 
 func TestSortInterfaceStrings_Success(t *testing.T) {
-	actions := []interface{}{"s3:PutObject", "s3:GetObject", "s3:DeleteObject"}
+	actions := []any{"s3:PutObject", "s3:GetObject", "s3:DeleteObject"}
 
 	result := sortInterfaceStrings(actions)
 
@@ -112,25 +112,16 @@ func TestSortInterfaceStrings_Success(t *testing.T) {
 	assert.Equal(t, "s3:PutObject", result[2])
 }
 
-func TestSortInterfaceStrings_InvalidInput(t *testing.T) {
-	actions := "not an array"
-
-	result := sortInterfaceStrings(actions)
-
-	assert.Nil(t, result)
-}
-
 func TestSortInterfaceStrings_NonStringElements(t *testing.T) {
-	actions := []interface{}{"s3:Xavier", "s3:GetObject", 123, "s3:PutObject"}
+	actions := []any{"s3:Xavier", "s3:GetObject", 123, "s3:PutObject"}
 
 	result := sortInterfaceStrings(actions)
 
-	assert.NotNil(t, result)
-	assert.Len(t, result, 4)
-	// Non-string elements should be skipped, but array length preserved
-	assert.Equal(t, "s3:GetObject", result[1])
-	assert.Equal(t, "", result[0]) // default zero value for skipped element
-	assert.Equal(t, "s3:PutObject", result[2])
+	// non-string elements are dropped; only valid strings are returned, sorted
+	assert.Len(t, result, 3)
+	assert.Equal(t, "s3:GetObject", result[0])
+	assert.Equal(t, "s3:PutObject", result[1])
+	assert.Equal(t, "s3:Xavier", result[2])
 }
 
 func TestWaitExpiredError_Error(t *testing.T) {

@@ -22,12 +22,16 @@ import (
 	"google.golang.org/api/serviceusage/v1"
 )
 
-// Replace hardcoded values with constants
 const (
 	defaultTimeout   = 30 * time.Second
 	gcpIAMAPIName    = "iam.googleapis.com"
 	awsARNPrefix     = "arn:"
 	gcpProjectPrefix = "projects/"
+)
+
+var (
+	reAWSARN  = regexp.MustCompile(`arn:aws:iam::(.*\S):role/(.*\S)`)
+	reGCPRole = regexp.MustCompile(`projects/(.*\S)/roles/(.*\S)`)
 )
 
 type invalidCloudError struct {
@@ -61,7 +65,6 @@ func Compare(directory string, arn string, init bool) (bool, error) {
 }
 
 func getCloudFromRole(arn string) string {
-
 	var result string
 
 	if strings.Contains(arn, awsARNPrefix) {
@@ -97,7 +100,6 @@ func compareGCPRole(directory string, arn string, init bool) (bool, error) {
 	// `organizations/{ORGANIZATION_ID}/roles/{ROLE_NAME}`
 	// `projects/{PROJECT_ID}/roles/{ROLE_NAME}`
 	err := verifyGCPRole(arn)
-
 	if err != nil {
 		return false, &gcpRoleNotVerified{arn}
 	}
@@ -117,7 +119,6 @@ func compareGCPRole(directory string, arn string, init bool) (bool, error) {
 	API := gcpIAMAPIName
 
 	enabled, err := isGCPAPIEnabled(*projectID, API)
-
 	if err != nil {
 		return enabled, &apiNotFoundError{API}
 	}
@@ -126,7 +127,7 @@ func compareGCPRole(directory string, arn string, init bool) (bool, error) {
 		return enabled, &apiNotEnabledError{API}
 	}
 
-	ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
+	ctx, cancel := context.WithTimeout(context.Background(), defaultTimeout)
 	defer cancel()
 
 	iamService, err := gcpiam.NewService(ctx)
@@ -155,7 +156,7 @@ func compareGCPPolicy(Roles *gcpiam.Role, iacPolicy Sorted) bool {
 	if results != "" {
 		replacer := strings.NewReplacer("[]string{", "", "}", "")
 		results = replacer.Replace(results)
-		fmt.Print("Policy Comparison mismatch mismatch (-excess +needs):")
+		fmt.Print("Policy Comparison mismatch (-excess +needs):")
 		fmt.Print(results)
 		return false
 	}
@@ -201,7 +202,6 @@ func isGCPAPIEnabled(projectID string, want string) (bool, error) {
 }
 
 func compareAWSRole(directory string, arn string, init bool) (bool, error) {
-
 	// Load the Shared AWS Configuration (~/.aws/config)
 	ctx, cancel := context.WithTimeout(context.Background(), defaultTimeout)
 
@@ -276,7 +276,6 @@ func (m *compareDifferenceError) Error() string {
 func compareIAMPolicy(policy string, oldPolicy string) (bool, error) {
 	differ := diff.New()
 	compare, err := differ.Compare([]byte(policy), []byte(oldPolicy))
-
 	if err != nil {
 		return false, &compareDifferenceError{err}
 	}
@@ -297,9 +296,8 @@ func (m *formatterError) Error() string {
 }
 
 func showDifferences(policy string, compare diff.Diff) (bool, error) {
-	var aJSON map[string]interface{}
+	var aJSON map[string]any
 	err := json.Unmarshal([]byte(policy), &aJSON)
-
 	if err != nil {
 		return false, &marshallPolicyError{err}
 	}
@@ -311,7 +309,6 @@ func showDifferences(policy string, compare diff.Diff) (bool, error) {
 
 	myFormatter := formatter.NewAsciiFormatter(aJSON, myConfig)
 	diffString, err := myFormatter.Format(compare)
-
 	if err != nil {
 		return false, &formatterError{err}
 	}
@@ -349,9 +346,7 @@ type arnNotVerified struct {
 }
 
 func (e *arnNotVerified) Error() string {
-	fmt.Print("ARN must be in the following format:")
-	fmt.Print("arn:aws:iam::123456789012:role/role-name")
-	return fmt.Sprintf("ARN %s not verified", e.arn)
+	return fmt.Sprintf("ARN %s not verified: expected format arn:aws:iam::123456789012:role/role-name", e.arn)
 }
 
 type gcpRoleNotVerified struct {
@@ -359,33 +354,19 @@ type gcpRoleNotVerified struct {
 }
 
 func (e *gcpRoleNotVerified) Error() string {
-	fmt.Print(
-		`The resource name of the role in one of the following formats:
-        roles/{ROLE_NAME}
-        organizations/{ORGANIZATION_ID}/roles/{ROLE_NAME}
-        projects/{PROJECT_ID}/roles/{ROLE_NAME}`)
-	return e.role
+	return fmt.Sprintf("GCP role %q not verified: expected projects/{PROJECT}/roles/{ROLE}, organizations/{ORG}/roles/{ROLE}, or roles/{ROLE}", e.role)
 }
 
 func verifyGCPRole(role string) error {
-	r, err := regexp.Compile(`projects/(.*\S)/roles/(.*\S)`)
-	// Regex should be compiled once as package variable
-	if err == nil {
-		if r.MatchString(role) {
-			return nil
-		}
+	if reGCPRole.MatchString(role) {
+		return nil
 	}
-
 	return &gcpRoleNotVerified{role}
 }
 
 func verifyAWSARN(ARN string) error {
-	r, err := regexp.Compile(`arn:aws:iam::(.*\S):role/(.*\S)`)
-	// Regex should be compiled once as package variable
-	if err == nil {
-		if r.MatchString(ARN) {
-			return nil
-		}
+	if reAWSARN.MatchString(ARN) {
+		return nil
 	}
 	return &arnNotVerified{ARN}
 }

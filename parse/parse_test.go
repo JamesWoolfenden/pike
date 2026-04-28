@@ -66,38 +66,28 @@ func TestGetKeys(t *testing.T) {
 	t.Parallel()
 
 	type args struct {
-		m map[string]bool
+		m map[string]struct{}
 	}
 
-	sample := map[string]bool{
-		"first": true,
-	}
-
-	nothing := map[string]bool{}
+	sample := map[string]struct{}{"first": {}}
+	nothing := map[string]struct{}{}
 	var bumpkis []string
-
-	myKeys := []string{"first"}
 
 	tests := []struct {
 		name string
 		args args
 		want []string
 	}{
-		{name: "pass", args: args{sample}, want: myKeys},
+		{name: "pass", args: args{sample}, want: []string{"first"}},
 		{name: "nil", args: args{nothing}},
-
 		{
-			name: "Non-empty map", args: args{
-				m: map[string]bool{
-					"key1": true,
-					"key2": true,
-				},
-			},
+			name: "Non-empty map",
+			args: args{m: map[string]struct{}{"key1": {}, "key2": {}}},
 			want: []string{"key1", "key2"},
 		},
 		{
 			name: "Empty map",
-			args: args{m: map[string]bool{}},
+			args: args{m: map[string]struct{}{}},
 			want: bumpkis,
 		},
 	}
@@ -203,100 +193,5 @@ func TestParseFromDocs_EmptyCodebase(t *testing.T) {
 
 	if _, err := parseFromDocs("", "azurerm"); err == nil {
 		t.Error("parseFromDocs(\"\", ...) expected an error, got nil")
-	}
-}
-
-func Test_add(t *testing.T) {
-	t.Parallel()
-
-	type args struct {
-		s string
-		m map[string]bool
-		a []string
-	}
-
-	myMap := map[string]bool{
-		"aws_s3_bucket": true,
-	}
-
-	wantMap := map[string]bool{
-		"aws_ami":       true,
-		"aws_s3_bucket": true,
-	}
-
-	tests := []struct {
-		name  string
-		args  args
-		want  []string
-		want1 map[string]bool
-	}{
-		{
-			name: "pass",
-			args: args{s: "aws_ami", m: myMap, a: []string{"aws_s3_bucket"}},
-			want: []string{"aws_s3_bucket", "aws_ami"}, want1: wantMap,
-		},
-		{
-			name: "duplicate",
-			args: args{s: "aws_ami", m: wantMap, a: []string{"aws_s3_bucket", "aws_ami"}},
-			want: []string{"aws_s3_bucket", "aws_ami"}, want1: wantMap,
-		},
-	}
-
-	for _, tt := range tests {
-		tt := tt
-		t.Run(tt.name, func(t *testing.T) {
-			t.Parallel()
-			got, got1 := add(tt.args.s, tt.args.m, tt.args.a)
-
-			if !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("add() got = %v, want %v", got, tt.want)
-			}
-
-			if !reflect.DeepEqual(got1, tt.want1) {
-				t.Errorf("add() got1 = %v, want %v", got1, tt.want1)
-			}
-		})
-	}
-}
-
-func TestAdd(t *testing.T) {
-	tests := []struct {
-		name      string
-		s         string
-		m         map[string]bool
-		a         []string
-		wantSlice []string
-		wantMap   map[string]bool
-	}{
-		{
-			name:      "New element",
-			s:         "test",
-			m:         map[string]bool{},
-			a:         []string{},
-			wantSlice: []string{"test"},
-			wantMap:   map[string]bool{"test": true},
-		},
-		{
-			name:      "Duplicate element",
-			s:         "test",
-			m:         map[string]bool{"test": true},
-			a:         []string{"test"},
-			wantSlice: []string{"test"},
-			wantMap:   map[string]bool{"test": true},
-		},
-	}
-
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			gotSlice, gotMap := add(tt.s, tt.m, tt.a)
-
-			if !reflect.DeepEqual(gotSlice, tt.wantSlice) {
-				t.Errorf("add() gotSlice = %v, want %v", gotSlice, tt.wantSlice)
-			}
-
-			if !reflect.DeepEqual(gotMap, tt.wantMap) {
-				t.Errorf("add() gotMap = %v, want %v", gotMap, tt.wantMap)
-			}
-		})
 	}
 }

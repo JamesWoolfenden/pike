@@ -32,20 +32,18 @@ func Scan(dirName string, outputType string, file *string, init bool, write bool
 
 	OutPolicy, err := MakePolicy(dirName, file, init, enableResources, provider, policyName, suppressDeprecated)
 	if err != nil {
-		fmt.Print(err.Error())
 		return &makePolicyError{err}
 	}
 
 	if write {
-		err = WriteOutput(OutPolicy, outputType, dirName, outFile)
-		if err != nil {
+		if err = WriteOutput(OutPolicy, outputType, dirName, outFile); err != nil {
 			return &writeFileError{file: outputType, err: err}
 		}
 	} else {
 		fmt.Print(OutPolicy.AsString(outputType)) // permit
 	}
 
-	return err
+	return nil
 }
 
 // Runtime detects runtime IAM permissions needed by service accounts.
@@ -101,7 +99,6 @@ func Init(dirName string) (*string, []string, error) {
 	}
 
 	tf, err := tfexec.NewTerraform(dirName, tfPath)
-
 	if err != nil {
 		return nil, nil, &terraformExecError{err}
 	}
@@ -120,7 +117,6 @@ func Init(dirName string) (*string, []string, error) {
 
 	modulesDir := path.Join(dirName, dotTfModules)
 	modules, err := os.ReadDir(modulesDir)
-
 	if err != nil {
 		return &tfPath, nil, &readDirectoryError{directory: modulesDir, err: err}
 	}
@@ -129,7 +125,7 @@ func Init(dirName string) (*string, []string, error) {
 	var found []string
 
 	for _, module := range modules {
-		if module.Name() == "modules.json" || module.Name() == ".DS_Store" {
+		if module.Name() == modulesJSON || module.Name() == dsStore {
 			continue
 		}
 
@@ -139,7 +135,6 @@ func Init(dirName string) (*string, []string, error) {
 	return &tfPath, found, nil
 }
 
-// LocateTerraform finds the Terraform executable or installs it.
 // LocateTerraform finds the Terraform executable or installs it.
 // The search and install logic lives in internal/tfinstall; this wrapper
 // preserves the locateTerraformError type for callers that inspect it.
@@ -184,7 +179,6 @@ func getAbsolutePath(path string) (string, error) {
 }
 
 func makePermissionBag(dirName string, file *string, init bool, provider string, suppressDeprecated bool) (Sorted, error) {
-
 	var files []string
 
 	if file == nil {
@@ -196,11 +190,11 @@ func makePermissionBag(dirName string, file *string, init bool, provider string,
 		if init {
 			_, modules, err := Init(fullPath)
 			if err != nil {
-				log.Printf("modules not found at %s", dirName)
+				log.Warn().Err(err).Str("dir", dirName).Msg("modules not found")
 			}
 
 			for _, module := range modules {
-				log.Printf("downloaded %s", module)
+				log.Debug().Str("module", module).Msg("downloaded")
 			}
 		}
 
@@ -265,6 +259,7 @@ func makePermissionBag(dirName string, file *string, init bool, provider string,
 	permissionsBag.IAMBindings = allIAMBindings
 	return permissionsBag, nil
 }
+
 func GetPermissionBag(resources []ResourceV2, prov string, suppressDeprecated bool) Sorted {
 	var permissionBag Sorted
 	var newPerms Sorted

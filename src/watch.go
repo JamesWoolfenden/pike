@@ -5,7 +5,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/url"
-	"reflect"
 	"sort"
 	"time"
 
@@ -50,7 +49,7 @@ func Watch(arn string, wait int) error {
 
 	log.Info().Msgf("Waiting for change on policy Version %s", *Version)
 
-	delay, err := waitForPolicyChange(client, arn, *Version, wait, pollIntervalSeconds) // Added default pollInterval of 10
+	delay, err := waitForPolicyChange(client, arn, *Version, wait, pollIntervalSeconds)
 	if err != nil {
 		return &waitForPolicyChangeError{err}
 	}
@@ -63,7 +62,7 @@ func Watch(arn string, wait int) error {
 // waitForPolicyChange looks at IAM policy change.
 func waitForPolicyChange(client *iam.Client, arn string, version string, wait, pollInterval int) (int, error) {
 	for item := 1; item < wait; item++ {
-		time.Sleep(time.Duration(pollInterval))
+		time.Sleep(time.Duration(pollInterval) * time.Second)
 
 		NewVersion, err := getVersion(client, arn)
 		if err != nil {
@@ -74,7 +73,7 @@ func waitForPolicyChange(client *iam.Client, arn string, version string, wait, p
 			return item, nil
 		}
 
-		log.Print("Not equal")
+		log.Info().Msg("policy version unchanged")
 	}
 
 	return wait, &waitExpiredError{}
@@ -89,7 +88,6 @@ func (e *waitExpiredError) Error() string {
 // getVersion gets the version of the IAM policy.
 func getVersion(client *iam.Client, policyArn string) (*string, error) {
 	output, err := client.GetPolicy(context.Background(), &iam.GetPolicyInput{PolicyArn: aws.String(policyArn)})
-
 	if err != nil {
 		return nil, &getVersionError{err}
 	}
@@ -138,23 +136,22 @@ func (e *castToListOfInterfaceError) Error() string {
 
 // sortActions sorts the actions list of an IAM policy.
 func sortActions(myPolicy string) (*string, error) {
-	var raw map[string]interface{}
+	var raw map[string]any
 	err := json.Unmarshal([]byte(myPolicy), &raw)
-
 	if err != nil {
 		return nil, &unmarshallJSONError{err, myPolicy}
 	}
 
-	Statements, ok := raw["Statement"].([]interface{})
+	Statements, ok := raw["Statement"].([]any)
 
 	if !ok {
 		return nil, &castToListOfInterfaceError{}
 	}
 
-	var NewStatements []interface{}
+	var NewStatements []any
 
 	for _, block := range Statements {
-		blocked, ok := block.(map[string]interface{})
+		blocked, ok := block.(map[string]any)
 		if !ok {
 			log.Info().Msgf("assertion failed")
 		}
@@ -164,14 +161,14 @@ func sortActions(myPolicy string) (*string, error) {
 		switch v := Actions.(type) {
 		case string:
 			// handle string case
-		case []interface{}:
+		case []any:
 			theActions := sortInterfaceStrings(v)
 
 			if theActions != nil {
 				blocked["Action"] = theActions
 			}
 		default:
-			log.Print(reflect.TypeOf(v).Kind())
+			log.Warn().Str("type", fmt.Sprintf("%T", v)).Msg("unexpected Action type in policy statement")
 		}
 
 		NewStatements = append(NewStatements, block)
@@ -182,7 +179,6 @@ func sortActions(myPolicy string) (*string, error) {
 	}
 
 	fixed, err := json.Marshal(raw)
-
 	if err != nil {
 		return nil, &marshallPolicyError{err}
 	}
@@ -192,26 +188,16 @@ func sortActions(myPolicy string) (*string, error) {
 	return &result, nil
 }
 
-func sortInterfaceStrings(actions interface{}) []string {
-	temp, ok := actions.([]interface{})
+func sortInterfaceStrings(actions []any) []string {
+	myActions := make([]string, 0, len(actions))
 
-	if !ok {
-		log.Info().Msgf("failed to assert list for actions")
-
-		return nil
-	}
-
-	myActions := make([]string, len(temp))
-
-	for index, action := range temp {
+	for _, action := range actions {
 		myAction, ok := action.(string)
 		if !ok {
 			log.Info().Msgf("failed to convert to string %s", action)
-
 			continue
 		}
-
-		myActions[index] = myAction
+		myActions = append(myActions, myAction)
 	}
 
 	sort.Strings(myActions)

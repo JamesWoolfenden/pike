@@ -408,18 +408,18 @@ func TestIsTypeOK(t *testing.T) {
 
 	tests := []struct {
 		name    string
-		args    interface{}
-		want    map[string]interface{}
+		args    any
+		want    map[string]any
 		wantErr bool
 	}{
 		{
 			name: "valid_map",
-			args: map[string]interface{}{
+			args: map[string]any{
 				"key1": "value1",
 				"key2": 123,
 				"key3": true,
 			},
-			want: map[string]interface{}{
+			want: map[string]any{
 				"key1": "value1",
 				"key2": 123,
 				"key3": true,
@@ -446,19 +446,19 @@ func TestIsTypeOK(t *testing.T) {
 		},
 		{
 			name:    "empty_map",
-			args:    map[string]interface{}{},
-			want:    map[string]interface{}{},
+			args:    map[string]any{},
+			want:    map[string]any{},
 			wantErr: false,
 		},
 		{
 			name: "nested_map",
-			args: map[string]interface{}{
-				"outer": map[string]interface{}{
+			args: map[string]any{
+				"outer": map[string]any{
 					"inner": "value",
 				},
 			},
-			want: map[string]interface{}{
-				"outer": map[string]interface{}{
+			want: map[string]any{
+				"outer": map[string]any{
 					"inner": "value",
 				},
 			},
