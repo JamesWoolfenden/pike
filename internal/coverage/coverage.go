@@ -30,7 +30,7 @@ type members struct {
 
 //goland:noinspection GoUnusedFunction
 func coverageAWS() error {
-	absolute, err := filepath.Abs("../../parse/aws-members.json")
+	absolute, err := filepath.Abs("../../internal/parse/aws-members.json")
 	if err != nil {
 		return &fileWriteError{err}
 	}
@@ -80,7 +80,7 @@ func (e *fileWriteError) Error() string {
 
 //goland:noinspection GoUnusedFunction
 func coverageAzure() error {
-	absolute, err := filepath.Abs("../../parse/azurerm-members.json")
+	absolute, err := filepath.Abs("../../internal/parse/azurerm-members.json")
 	if err != nil {
 		return &fileWriteError{err}
 	}
@@ -118,7 +118,7 @@ func coverageAzure() error {
 
 //goland:noinspection GoUnusedFunction
 func coverageGcp() error {
-	absolute, err := filepath.Abs("../../parse/google-members.json")
+	absolute, err := filepath.Abs("../../internal/parse/google-members.json")
 	if err != nil {
 		return &fileWriteError{err}
 	}

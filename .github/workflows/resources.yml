@@ -47,14 +47,14 @@ jobs:
         run: ${{ github.workspace }}/pike parse -n google
 
       - name: Stage member files
-        run: cp ${{ github.workspace }}/*.json ${{ github.workspace }}/parse/
+        run: cp ${{ github.workspace }}/*.json ${{ github.workspace }}/internal/parse/
 
-      # Re-run coverage against the fresh member JSONs so src/coverage/*.md
+      # Re-run coverage against the fresh member JSONs so internal/coverage/*.md
       # stays in sync. Without this, the workflow ships new baselines but
       # leaves the published coverage tables stuck at whatever was last
       # regenerated locally.
       - name: Regenerate coverage markdowns
-        working-directory: src/coverage
+        working-directory: internal/coverage
         run: |
           go test -run Test_coverageAws
           go test -run Test_coverageAzure
@@ -71,7 +71,7 @@ jobs:
       - name: commit
         run: |
           # Stage the file, commit and push
-          mv *-members.json parse
-          git add parse/*-members.json src/coverage/aws.md src/coverage/azure.md src/coverage/google.md --ignore-errors
+          mv *-members.json internal/parse
+          git add internal/parse/*-members.json internal/coverage/aws.md internal/coverage/azure.md internal/coverage/google.md --ignore-errors
           git commit -m "updated resources" --allow-empty
           git push origin master

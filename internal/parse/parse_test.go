@@ -23,7 +23,7 @@ func TestGetGoFiles(t *testing.T) {
 		wantErr bool
 	}{
 		{name: "Pass", args: args{path: "./testdata", extension: "go"}, want: wanted},
-		{name: "None", args: args{path: "../src/mapping", extension: "go"}},
+		{name: "None", args: args{path: "../../src/mapping", extension: "go"}},
 		{
 			name: "Valid path",
 			args: args{

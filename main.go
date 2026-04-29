@@ -7,7 +7,7 @@ import (
 	"sort"
 	"time"
 
-	"github.com/jameswoolfenden/pike/parse"
+	"github.com/jameswoolfenden/pike/internal/parse"
 	pike "github.com/jameswoolfenden/pike/src"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
