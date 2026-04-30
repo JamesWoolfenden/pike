@@ -48,6 +48,12 @@ type provider struct {
 	// happen to have nothing deprecated stay visually quiet.
 	DeprecatedResources map[string]string `json:"deprecatedResources,omitempty"`
 	DeprecatedData      map[string]string `json:"deprecatedData,omitempty"`
+
+	// ProviderVersion is the exact version of the provider plugin installed
+	// during schema extraction (e.g. "5.82.2"). Only populated by the
+	// schema-based path; empty for docs-based fallback runs and for older
+	// members JSON files that predate this field.
+	ProviderVersion string `json:"providerVersion,omitempty"`
 }
 
 // Parse is the package entrypoint. It writes {name}-members.json to the

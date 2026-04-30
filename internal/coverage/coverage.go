@@ -26,6 +26,7 @@ type members struct {
 	Resources           []string          `json:"resources"`
 	DeprecatedResources map[string]string `json:"deprecatedResources,omitempty"`
 	DeprecatedData      map[string]string `json:"deprecatedData,omitempty"`
+	ProviderVersion     string            `json:"providerVersion,omitempty"`
 }
 
 //goland:noinspection GoUnusedFunction
@@ -197,10 +198,14 @@ func deprecatedSection(data members) string {
 
 	var b strings.Builder
 	b.WriteString("## Deprecated\n\n")
+	schemaRef := "the latest provider schema"
+	if data.ProviderVersion != "" {
+		schemaRef = "provider schema v" + data.ProviderVersion
+	}
 	b.WriteString(fmt.Sprintf(
-		"%d resources and %d datasources are flagged as deprecated in the latest provider schema. "+
+		"%d resources and %d datasources are flagged as deprecated in %s. "+
 			"Users pinned to an older provider major may already be affected when they upgrade.\n\n",
-		len(data.DeprecatedResources), len(data.DeprecatedData),
+		len(data.DeprecatedResources), len(data.DeprecatedData), schemaRef,
 	))
 
 	if len(data.DeprecatedResources) > 0 {

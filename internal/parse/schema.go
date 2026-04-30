@@ -108,7 +108,9 @@ provider %[1]q {}
 		return nil, fmt.Errorf("terraform providers schema for %s: %w", name, err)
 	}
 
-	return extractMembers(schemas, source), nil
+	p := extractMembers(schemas, source)
+	p.ProviderVersion = readLockVersion(workDir, source)
+	return p, nil
 }
 
 // extractMembers pulls resource and datasource names out of the schema map
@@ -166,4 +168,45 @@ func matchesSource(key, source string) bool {
 
 func locateTerraform() (string, error) {
 	return tfinstall.LocateTerraform()
+}
+
+// readLockVersion extracts the installed provider version from the
+// .terraform.lock.hcl written by `terraform init`. The lock file format is:
+//
+//	provider "registry.terraform.io/hashicorp/aws" {
+//	  version   = "5.82.2"
+//	}
+//
+// source is the short registry path (e.g. "hashicorp/aws"); we match on the
+// trailing segment so we find the right block regardless of whether the full
+// hostname prefix is present. Returns "" on any read or parse error so the
+// caller treats a missing version as non-fatal.
+func readLockVersion(workDir, source string) string {
+	data, err := os.ReadFile(filepath.Join(workDir, ".terraform.lock.hcl"))
+	if err != nil {
+		return ""
+	}
+	// Match only on the name component (e.g. "aws") to handle both
+	// "hashicorp/aws" and "registry.terraform.io/hashicorp/aws".
+	name := source[strings.LastIndex(source, "/")+1:]
+	lines := strings.Split(string(data), "\n")
+	inBlock := false
+	for _, line := range lines {
+		trimmed := strings.TrimSpace(line)
+		if strings.Contains(trimmed, "/"+name+`"`) {
+			inBlock = true
+			continue
+		}
+		if inBlock && strings.Contains(trimmed, "version") && strings.Contains(trimmed, "=") {
+			// version   = "5.82.2"
+			parts := strings.SplitN(trimmed, `"`, 3)
+			if len(parts) >= 2 {
+				return parts[1]
+			}
+		}
+		if inBlock && trimmed == "}" {
+			break
+		}
+	}
+	return ""
 }

@@ -19,6 +19,7 @@ import (
 type deprecationEntry struct {
 	DeprecatedResources map[string]string `json:"deprecatedResources"`
 	DeprecatedData      map[string]string `json:"deprecatedData"`
+	ProviderVersion     string            `json:"providerVersion,omitempty"`
 }
 
 // deprecationStore caches the per-provider deprecation maps extracted from
@@ -156,7 +157,12 @@ func warnIfDeprecated(r ResourceV2, warned map[string]struct{}) {
 	}
 	warned[key] = struct{}{}
 
-	evt := log.Warn().Str("provider", r.Provider).Str("resource", r.Name)
+	entry := deprecations.loadEntry(r.Provider)
+	evt := log.Warn().Str("provider", r.Provider)
+	if entry.ProviderVersion != "" {
+		evt = evt.Str("provider_version", entry.ProviderVersion)
+	}
+	evt = evt.Str("resource", r.Name)
 	if isData {
 		evt = evt.Str("kind", "data")
 	}
@@ -175,9 +181,10 @@ var supportedProviders = []string{"aws", "azurerm", "google"}
 // Kinds are split because the same name can appear as both a resource and
 // a datasource in the same provider, and conflating them loses detail.
 type ProviderDeprecations struct {
-	Provider    string            `json:"provider"`
-	Resources   map[string]string `json:"resources,omitempty"`
-	DataSources map[string]string `json:"dataSources,omitempty"`
+	Provider        string            `json:"provider"`
+	ProviderVersion string            `json:"providerVersion,omitempty"`
+	Resources       map[string]string `json:"resources,omitempty"`
+	DataSources     map[string]string `json:"dataSources,omitempty"`
 }
 
 // Deprecated returns the known-deprecated resources/datasources for one
@@ -208,9 +215,10 @@ func Deprecated(provider string) []ProviderDeprecations {
 			continue
 		}
 		out = append(out, ProviderDeprecations{
-			Provider:    n,
-			Resources:   entry.DeprecatedResources,
-			DataSources: entry.DeprecatedData,
+			Provider:        n,
+			ProviderVersion: entry.ProviderVersion,
+			Resources:       entry.DeprecatedResources,
+			DataSources:     entry.DeprecatedData,
 		})
 	}
 	return out
@@ -247,7 +255,11 @@ func FormatDeprecated(d []ProviderDeprecations, format string) (string, error) {
 	default:
 		var b strings.Builder
 		for _, p := range d {
-			fmt.Fprintf(&b, "%s:\n", p.Provider)
+			if p.ProviderVersion != "" {
+				fmt.Fprintf(&b, "%s (v%s):\n", p.Provider, p.ProviderVersion)
+			} else {
+				fmt.Fprintf(&b, "%s:\n", p.Provider)
+			}
 
 			for _, name := range sortedKeys(p.Resources) {
 				writeDeprecationLine(&b, name, "resource", p.Resources[name])
