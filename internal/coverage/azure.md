@@ -3,11 +3,11 @@
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
 | Resources  | 96.55      |  1093       |  1132            |
-| Datasource | 100.00      |   395       |   395             |
+| Datasource | 99.75      |   395       |   396             |
 
 ## Deprecated
 
-38 resources and 6 datasources are flagged as deprecated in the latest provider schema. Users pinned to an older provider major may already be affected when they upgrade.
+38 resources and 6 datasources are flagged as deprecated in provider schema v4.71.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -103,4 +103,5 @@
 ./resource.ps1 azurerm_virtual_machine_gallery_application_assignment
 ./resource.ps1 azurerm_voice_services_communications_gateway
 ./resource.ps1 azurerm_voice_services_communications_gateway_test_line
+./resource.ps1 azurerm_cdn_frontdoor_security_policy -type data
 ```

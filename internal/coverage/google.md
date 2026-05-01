@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 89.44      |  1093       |  1222            |
-| Datasource | 100.00      |   421       |   421             |
+| Resources  | 88.93      |  1093       |  1229            |
+| Datasource | 99.53      |   421       |   423             |
 
 ## Deprecated
 
-28 resources and 7 datasources are flagged as deprecated in the latest provider schema. Users pinned to an older provider major may already be affected when they upgrade.
+28 resources and 7 datasources are flagged as deprecated in provider schema v7.30.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -65,6 +65,7 @@
 ./resource.ps1 google_apigee_sharedflow
 ./resource.ps1 google_apigee_sharedflow_deployment
 ./resource.ps1 google_apigee_space
+./resource.ps1 google_artifact_registry_rule
 ./resource.ps1 google_biglake_iceberg_table
 ./resource.ps1 google_biglake_iceberg_table_iam_binding
 ./resource.ps1 google_biglake_iceberg_table_iam_member
@@ -93,6 +94,7 @@
 ./resource.ps1 google_container_azure_client
 ./resource.ps1 google_container_azure_cluster
 ./resource.ps1 google_container_azure_node_pool
+./resource.ps1 google_data_lineage_config
 ./resource.ps1 google_dataproc_gdc_application_environment
 ./resource.ps1 google_dataproc_gdc_service_instance
 ./resource.ps1 google_dataproc_gdc_spark_application
@@ -102,6 +104,7 @@
 ./resource.ps1 google_dialogflow_cx_tool_version
 ./resource.ps1 google_dialogflow_environment
 ./resource.ps1 google_discovery_engine_serving_config
+./resource.ps1 google_document_ai_schema
 ./resource.ps1 google_firebase_app_check_app_attest_config
 ./resource.ps1 google_firebase_app_check_debug_token
 ./resource.ps1 google_firebase_app_check_device_check_config
@@ -115,6 +118,7 @@
 ./resource.ps1 google_firebase_app_hosting_domain
 ./resource.ps1 google_firebase_app_hosting_traffic
 ./resource.ps1 google_firebase_data_connect_service
+./resource.ps1 google_firebase_remote_config_remote_config
 ./resource.ps1 google_gke_hub_scope_rbac_role_binding
 ./resource.ps1 google_identity_platform_config
 ./resource.ps1 google_identity_platform_default_supported_idp_config
@@ -132,6 +136,9 @@
 ./resource.ps1 google_kms_project_autokey_config
 ./resource.ps1 google_network_connectivity_destination
 ./resource.ps1 google_network_connectivity_group
+./resource.ps1 google_network_connectivity_hub_iam_binding
+./resource.ps1 google_network_connectivity_hub_iam_member
+./resource.ps1 google_network_connectivity_hub_iam_policy
 ./resource.ps1 google_network_connectivity_internal_range
 ./resource.ps1 google_network_connectivity_multicloud_data_transfer_config
 ./resource.ps1 google_network_connectivity_policy_based_route
@@ -184,4 +191,6 @@
 ./resource.ps1 google_service_networking_vpc_service_controls
 ./resource.ps1 google_sql_provision_script
 ./resource.ps1 google_workload_identity_service_agent
+./resource.ps1 google_data_lineage_config -type data
+./resource.ps1 google_network_connectivity_hub_iam_policy -type data
 ```

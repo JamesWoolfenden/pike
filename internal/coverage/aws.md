@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 91.78      |  1507       |  1642            |
-| Datasource | 97.12      |   641       |   660             |
+| Resources  | 91.61      |  1507       |  1645            |
+| Datasource | 96.83      |   641       |   662             |
 
 ## Deprecated
 
-10 resources and 3 datasources are flagged as deprecated in the latest provider schema. Users pinned to an older provider major may already be affected when they upgrade.
+10 resources and 3 datasources are flagged as deprecated in provider schema v6.43.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -43,6 +43,7 @@
 ./resource.ps1 aws_appsync_api
 ./resource.ps1 aws_appsync_channel_namespace
 ./resource.ps1 aws_arcregionswitch_plan
+./resource.ps1 aws_arczonalshift_autoshift_observer_notification_status
 ./resource.ps1 aws_backup_restore_testing_selection
 ./resource.ps1 aws_bedrockagent_flow
 ./resource.ps1 aws_bedrockagentcore_agent_runtime
@@ -75,6 +76,7 @@
 ./resource.ps1 aws_dynamodb_global_secondary_index
 ./resource.ps1 aws_ebs_volume_copy
 ./resource.ps1 aws_ec2_allowed_images_settings
+./resource.ps1 aws_ec2_network_insights_access_scope
 ./resource.ps1 aws_ec2_secondary_network
 ./resource.ps1 aws_ec2_secondary_subnet
 ./resource.ps1 aws_ec2_transit_gateway_metering_policy
@@ -143,6 +145,7 @@
 ./resource.ps1 aws_sagemaker_training_job
 ./resource.ps1 aws_savingsplans_savings_plan
 ./resource.ps1 aws_secretsmanager_tag
+./resource.ps1 aws_securityhub_account_v2
 ./resource.ps1 aws_servicequotas_auto_management
 ./resource.ps1 aws_sesv2_tenant
 ./resource.ps1 aws_sesv2_tenant_resource_association
@@ -186,5 +189,7 @@
 ./resource.ps1 aws_s3files_file_systems -type data
 ./resource.ps1 aws_s3files_mount_target -type data
 ./resource.ps1 aws_savingsplans_offerings -type data
+./resource.ps1 aws_securityhub_enabled_standards -type data
+./resource.ps1 aws_securityhub_security_controls -type data
 ./resource.ps1 aws_uxc_services -type data
 ```
