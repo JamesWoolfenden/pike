@@ -3,6 +3,6 @@ data "google_compute_instance" "pike" {
   name = "pike"
 }
 
-output "instance" {
+output "google_compute_instance" {
   value = data.google_compute_instance.pike
 }

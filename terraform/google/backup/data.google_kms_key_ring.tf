@@ -3,6 +3,6 @@ data "google_kms_key_ring" "pike" {
   location = "europe-west1"
 }
 
-output "ring" {
+output "google_kms_key_ring" {
   value = data.google_kms_key_ring.pike
 }

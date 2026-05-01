@@ -7,6 +7,6 @@ resource "google_project_service_identity" "hc_sa" {
   service = "healthcare.googleapis.com"
 }
 
-output "identity" {
+output "google_project_service_identity" {
   value = google_project_service_identity.hc_sa
 }

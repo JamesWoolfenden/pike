@@ -1,5 +1,5 @@
 data "google_container_engine_versions" "pike" {}
 
-output "versions" {
+output "google_container_engine_versions" {
   value = data.google_container_engine_versions.pike
 }

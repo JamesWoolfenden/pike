@@ -9,7 +9,7 @@ data "google_service_account_jwt" "pike" {
   expires_in = 60
 }
 
-output "jwt" {
+output "google_service_account_jwt" {
   value     = data.google_service_account_jwt.pike.jwt
   sensitive = true
 }

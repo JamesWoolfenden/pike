@@ -1,5 +1,5 @@
 data "google_sql_database_instances" "pike" {}
 
-output "instances" {
+output "google_sql_database_instances" {
   value = data.google_sql_database_instances.pike
 }

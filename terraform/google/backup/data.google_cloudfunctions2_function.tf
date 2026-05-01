@@ -3,6 +3,6 @@ data "google_cloudfunctions2_function" "pike" {
   name     = "pike"
 }
 
-output "function" {
+output "google_cloudfunctions2_function" {
   value = data.google_cloudfunctions2_function.pike
 }

@@ -1,5 +1,5 @@
 data "google_alloydb_locations" "pike" {}
 
-output "locations" {
+output "google_alloydb_locations" {
   value = data.google_alloydb_locations.pike
 }

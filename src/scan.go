@@ -7,6 +7,7 @@ import (
 	"os"
 	"path"
 	"path/filepath"
+	"strings"
 	"sync"
 	"time"
 
@@ -190,7 +191,12 @@ func makePermissionBag(dirName string, file *string, init bool, provider string,
 		if init {
 			_, modules, err := Init(fullPath)
 			if err != nil {
-				log.Warn().Err(err).Str("dir", dirName).Msg("modules not found")
+				log.Debug().Err(err).Str("dir", dirName).Msg("terraform init error detail")
+				errMsg := err.Error()
+				if nl := strings.IndexByte(errMsg, '\n'); nl > 0 {
+					errMsg = errMsg[:nl]
+				}
+				log.Warn().Str("error", errMsg).Str("dir", dirName).Msg("modules not found")
 			}
 
 			for _, module := range modules {

@@ -2,6 +2,6 @@ data "google_sql_backup_run" "pike" {
   instance = "examplea"
 }
 
-output "run" {
+output "google_sql_backup_run" {
   value = data.google_sql_backup_run.pike
 }

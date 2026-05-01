@@ -4,6 +4,6 @@ data "google_artifact_registry_repository_iam_policy" "pike" {
   repository = data.google_artifact_registry_repository.pike.name
 }
 
-output "policy" {
+output "google_artifact_registry_repository_iam_policy" {
   value = data.google_artifact_registry_repository_iam_policy.pike
 }

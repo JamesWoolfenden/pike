@@ -2,6 +2,6 @@ data "google_compute_subnetwork" "pike" {
   name = "pike"
 }
 
-output "subnetwork" {
+output "google_compute_subnetwork" {
   value = data.google_compute_subnetwork.pike
 }

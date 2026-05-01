@@ -5,6 +5,6 @@ data "google_artifact_registry_version" "pike" {
   version_name  = "pike"
 }
 
-output "google_artifact_registry_version" {
+output "google_artifact_registry_versions" {
   value = data.google_artifact_registry_version.pike
 }

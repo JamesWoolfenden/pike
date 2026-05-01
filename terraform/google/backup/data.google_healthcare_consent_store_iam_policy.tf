@@ -3,6 +3,6 @@ data "google_healthcare_consent_store_iam_policy" "pike" {
   dataset          = "pike"
 }
 
-output "policy5" {
+output "google_healthcare_consent_store_iam_policy" {
   value = data.google_healthcare_consent_store_iam_policy.pike
 }

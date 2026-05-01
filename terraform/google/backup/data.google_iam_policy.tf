@@ -32,6 +32,6 @@ data "google_iam_policy" "pike" {
   }
 }
 
-output "policy" {
+output "google_iam_policy" {
   value = data.google_iam_policy.pike
 }

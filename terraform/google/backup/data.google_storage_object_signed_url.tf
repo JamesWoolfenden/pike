@@ -3,7 +3,7 @@ data "google_storage_object_signed_url" "pike" {
   path   = "./"
 }
 
-output "url" {
+output "google_storage_object_signed_url" {
   value     = data.google_storage_object_signed_url.pike
   sensitive = true
 }

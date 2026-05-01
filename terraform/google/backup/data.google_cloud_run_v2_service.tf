@@ -5,6 +5,6 @@ data "google_cloud_run_v2_service" "pike" {
   location = "europe-west2"
 }
 
-output "service2" {
+output "google_cloud_run_v2_service" {
   value = data.google_cloud_run_v2_service.pike
 }

@@ -3,6 +3,6 @@ resource "google_service_account" "pike" {
   display_name = "Service Account update"
 }
 
-output "service_account_pike" {
+output "google_service_account" {
   value = google_service_account.pike
 }

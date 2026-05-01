@@ -3,6 +3,6 @@ data "google_notebooks_runtime_iam_policy" "pike" {
   location     = "us-central1"
 }
 
-output "policy3" {
+output "google_notebooks_runtime_iam_policy" {
   value = data.google_notebooks_runtime_iam_policy.pike
 }

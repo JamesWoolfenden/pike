@@ -3,6 +3,6 @@ data "google_cloud_run_service" "pike" {
   name     = "pike"
 }
 
-output "service" {
+output "google_cloud_run_service" {
   value = data.google_cloud_run_service.pike
 }

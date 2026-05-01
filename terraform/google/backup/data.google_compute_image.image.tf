@@ -3,6 +3,6 @@ data "google_compute_image" "image" {
   project = "debian-cloud"
 }
 
-output "image" {
+output "google_compute_image_image" {
   value = data.google_compute_image.image
 }

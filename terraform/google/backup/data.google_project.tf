@@ -1,5 +1,5 @@
 data "google_project" "pike" {}
 
-output "project" {
+output "google_project" {
   value = data.google_project.pike
 }

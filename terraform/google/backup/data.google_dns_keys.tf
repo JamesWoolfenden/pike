@@ -3,6 +3,6 @@ data "google_dns_keys" "pike" {
   managed_zone = "prod-zone"
 }
 
-output "keys" {
+output "google_dns_keys" {
   value = data.google_dns_keys.pike
 }

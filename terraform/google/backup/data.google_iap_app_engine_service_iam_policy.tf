@@ -3,6 +3,6 @@ data "google_iap_app_engine_service_iam_policy" "pike" {
   service = "pike"
 }
 
-output "policy5" {
+output "google_iap_app_engine_service_iam_policy" {
   value = data.google_iap_app_engine_service_iam_policy.pike
 }

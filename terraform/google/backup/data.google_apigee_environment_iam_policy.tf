@@ -3,6 +3,6 @@ data "google_apigee_environment_iam_policy" "pike" {
   org_id = "organization/1231234"
 }
 
-output "policy" {
+output "google_apigee_environment_iam_policy" {
   value = data.google_apigee_environment_iam_policy.pike
 }

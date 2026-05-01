@@ -3,6 +3,6 @@ data "google_kms_crypto_key" "pike" {
   key_ring = "projects/pike-361314/locations/europe-west1/keyRings/pike"
 }
 
-output "pike-key" {
+output "google_kms_crypto_key" {
   value = data.google_kms_crypto_key.pike
 }

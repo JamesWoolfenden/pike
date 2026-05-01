@@ -1,5 +1,5 @@
 data "google_compute_zones" "all" {}
 
-output "zones" {
+output "google_compute_zones" {
   value = data.google_compute_zones.all
 }

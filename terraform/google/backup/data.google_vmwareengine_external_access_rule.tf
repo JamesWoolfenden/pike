@@ -3,6 +3,6 @@ data "google_vmwareengine_external_access_rule" "pike" {
   parent = "projects/pike-gcp/locations/us-central1/privateClouds/my-cloud"
 }
 
-output "access_rule" {
+output "google_vmwareengine_external_access_rule" {
   value = data.google_vmwareengine_external_access_rule.pike
 }

@@ -3,6 +3,6 @@ data "google_iap_tunnel_instance_iam_policy" "pike" {
   zone     = "us-central1"
 }
 
-output "instance_policy" {
+output "google_iap_tunnel_instance_iam_policy" {
   value = data.google_iap_tunnel_instance_iam_policy.pike
 }
