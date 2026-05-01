@@ -12,7 +12,7 @@ func Compare (directory string, arn string, init bool) (bool, error)
 func Contains (s []string, e string) bool
 func Deprecated (provider string) []ProviderDeprecations
 func DeprecationMessage (provider , name string, isData bool) (string, bool)
-func DetectBackend (resource ResourceV2, block *hclsyntax.Block, resources []ResourceV2) ([]ResourceV2, error)
+func DetectBackend (resource ResourceV2, block *hclsyntax.Block, resources []ResourceV2) []ResourceV2
 func EncryptPlaintext (plaintext string, publicKeyB64 string) ([]byte, error)
 func ExtractIAMBindings (body *hclsyntax.Body) []IAMBinding
 func FileExists (filename string) bool

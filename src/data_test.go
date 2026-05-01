@@ -612,13 +612,12 @@ func TestDetectBackend(t *testing.T) {
 	found = append(found, item)
 
 	tests := []struct {
-		name    string
-		args    args
-		want    []pike.ResourceV2
-		wantErr bool
+		name string
+		args args
+		want []pike.ResourceV2
 	}{
-		{name: "nothing", args: args{resource, &emptyBlock, empty}, want: nought, wantErr: true},
-		{name: "backend", args: args{resource, &block, found}, want: wanted, wantErr: false},
+		{name: "nothing", args: args{resource, &emptyBlock, empty}, want: nought},
+		{name: "backend", args: args{resource, &block, found}, want: wanted},
 	}
 
 	for _, tt := range tests {
@@ -626,13 +625,7 @@ func TestDetectBackend(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
 
-			got, err := pike.DetectBackend(tt.args.resource, tt.args.block, tt.args.resources)
-
-			if (err != nil) != tt.wantErr {
-				t.Errorf("DetectBackend() error = %v, wantErr %v", err, tt.wantErr)
-
-				return
-			}
+			got := pike.DetectBackend(tt.args.resource, tt.args.block, tt.args.resources)
 
 			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("DetectBackend() got = %v, want %v", got, tt.want)

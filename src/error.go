@@ -44,12 +44,6 @@ func (m *gitReferenceError) Error() string {
 	return fmt.Sprintf("git reference in module source path unsupported %s", m.name)
 }
 
-type backendExistsError struct{}
-
-func (m *backendExistsError) Error() string {
-	return "backend already exists"
-}
-
 type mappingsEmptyError struct{}
 
 func (m *mappingsEmptyError) Error() string {

@@ -43,11 +43,7 @@ func GetResources(file string, dirName string) ([]ResourceV2, error) {
 
 		switch block.Type {
 		case terraform:
-			var err error
-			Resources, err = DetectBackend(resource, block, Resources)
-			if err != nil {
-				log.Info().Err(err).Msg("backend detection failed")
-			}
+			Resources = DetectBackend(resource, block, Resources)
 			continue
 		case module:
 			LocalResources, err := GetLocalModules(block, dirName, moduleJson)
@@ -192,43 +188,32 @@ func isIAMBindingResource(resourceType string) bool {
 }
 
 // DetectBackend handles permissions for backend blocks.
-func DetectBackend(resource ResourceV2, block *hclsyntax.Block, resources []ResourceV2) ([]ResourceV2, error) {
-	if resource.TypeName == terraform {
-		if block.Body != nil && block.Body.Blocks != nil {
-			for _, terraform := range block.Body.Blocks {
-				if terraform.Type == "backend" {
-					if terraform.Labels != nil && terraform.Labels[0] == "s3" {
-						resource.Name = "backend"
-						resource.Provider = provider.AWS
-						resource.Attributes = []string{"s3"}
-						resources = append(resources, resource)
-
-						return resources, nil
-					}
-
-					if terraform.Labels != nil && terraform.Labels[0] == "gcs" {
-						resource.Name = "backend"
-						resource.Provider = provider.GCP
-						resource.Attributes = []string{"gcs"}
-						resources = append(resources, resource)
-
-						return resources, nil
-					}
-
-					if terraform.Labels != nil && terraform.Labels[0] == "azurerm" {
-						resource.Name = "backend"
-						resource.Provider = provider.Azure
-						resource.Attributes = []string{"azurerm"}
-						resources = append(resources, resource)
-
-						return resources, nil
-					}
-				}
+func DetectBackend(resource ResourceV2, block *hclsyntax.Block, resources []ResourceV2) []ResourceV2 {
+	if resource.TypeName == terraform && block.Body != nil {
+		for _, b := range block.Body.Blocks {
+			if b.Type != "backend" || len(b.Labels) == 0 {
+				continue
+			}
+			switch b.Labels[0] {
+			case "s3":
+				resource.Name = "backend"
+				resource.Provider = provider.AWS
+				resource.Attributes = []string{"s3"}
+				return append(resources, resource)
+			case "gcs":
+				resource.Name = "backend"
+				resource.Provider = provider.GCP
+				resource.Attributes = []string{"gcs"}
+				return append(resources, resource)
+			case "azurerm":
+				resource.Name = "backend"
+				resource.Provider = provider.Azure
+				resource.Attributes = []string{"azurerm"}
+				return append(resources, resource)
 			}
 		}
 	}
-
-	return nil, &backendExistsError{}
+	return resources
 }
 
 // GetResourceBlocks breaks down a file into resources.

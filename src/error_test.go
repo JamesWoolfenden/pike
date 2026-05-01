@@ -146,38 +146,6 @@ func TestGitReferenceError_Error(t *testing.T) {
 	}
 }
 
-func TestBackendExistsError_Error(t *testing.T) {
-	t.Parallel()
-
-	tests := []struct {
-		name string
-		m    *backendExistsError
-		want string
-	}{
-		{
-			name: "basic backend error",
-			m:    &backendExistsError{},
-			want: "backend already exists",
-		},
-		{
-			name: "new instance",
-			m:    new(backendExistsError),
-			want: "backend already exists",
-		},
-	}
-
-	for _, tt := range tests {
-		tt := tt
-		t.Run(tt.name, func(t *testing.T) {
-			t.Parallel()
-
-			if got := tt.m.Error(); got != tt.want {
-				t.Errorf("backendExistsError.Error() = %v, want %v", got, tt.want)
-			}
-		})
-	}
-}
-
 func TestRepositoryFormatError_Error(t *testing.T) {
 	t.Parallel()
 
