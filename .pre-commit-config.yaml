@@ -4,7 +4,7 @@ default_language_version:
   python: python3.11
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v6.0.0
+    rev: 3e8a8703264a2f4a69428a0aa4dcb512790b2c8c # v6.0.0
     hooks:
       - id: check-json
       - id: check-merge-conflict
@@ -19,40 +19,40 @@ repos:
       - id: detect-aws-credentials
       - id: detect-private-key
   - repo: https://github.com/Lucas-C/pre-commit-hooks
-    rev: v1.5.6
+    rev: ad1b27d73581aa16cca06fc4a0761fc563ffe8e8 # v1.5.6
     hooks:
       - id: forbid-tabs
         exclude_types: [ python, javascript, dtd, markdown, makefile, xml , powershell]
         exclude: binary|\.bin$|rego|\.rego$|go|\.go$
   - repo: https://github.com/jameswoolfenden/pre-commit-shell
-    rev: 0.0.2
+    rev: 062f0b028ae65827e04f91c1e6738cfcbe9b337f # v1.0.6
     hooks:
       - id: shell-lint
   - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.48.0
+    rev: e72a3ca1632f0b11a07d171449fe447a7ff6795e # v0.48.0
     hooks:
       - id: markdownlint
         exclude: src/testdata|testdata
   - repo: https://github.com/jameswoolfenden/pre-commit
-    rev: v0.1.52
+    rev: ba5c36a3150a4184f9ee362a5cf11611ee9ae185 # v0.1.52
     hooks:
       - id: terraform-fmt
         language_version: python3.11
   - repo: https://github.com/gruntwork-io/pre-commit
-    rev: v0.1.30
+    rev: 40f924cd642f5dc98d12bd97b07f3752223553da # v0.1.30
     hooks:
       - id: gofmt
       - id: goimports
         exclude: parse/terraform-provider-*
   - repo: https://github.com/syntaqx/git-hooks
-    rev: v0.0.18
+    rev: a3b888f92cd5b40b270c9a9752181fdc1717cbe5 # v0.0.18
     hooks:
       - id: go-test
         args: [ "./..." ]
       - id: go-mod-tidy
       - id: go-generate
   - repo: https://github.com/jameswoolfenden/ghat
-    rev: v0.1.23
+    rev: 9ac03a27b221b0173a40e66aac1d09f5be4db40c # v0.1.23
     hooks:
       - id: ghat-go
         name: ghat
@@ -63,7 +63,7 @@ repos:
         pass_filenames: false
         types: [ yaml ]
   - repo: https://github.com/dnephin/pre-commit-golang
-    rev: v0.5.1
+    rev: fb24a639f7c938759fe56eeebbb7713b69d60494 # v0.5.1
     hooks:
       - id: validate-toml
       - id: no-go-testing

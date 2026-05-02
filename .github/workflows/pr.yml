@@ -23,7 +23,7 @@ jobs:
       - name: gofumpt
         env:
           GOTOOLCHAIN: auto
-        uses: jameswoolfenden/auto-gofmt@966e6b689d24eeb2fb32d4900ed06f80b536c861 # v0.1
+        uses: jameswoolfenden/auto-gofmt@42ff447df14551717c8f18c63e863a6f64a18a83 # v0.2
       - name: golangci-lint
         uses: golangci/golangci-lint-action@1e7e51e771db61008b38414a730f564565cf7c20 # v9.2.0
         with:
