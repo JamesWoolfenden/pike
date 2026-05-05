@@ -50,7 +50,7 @@ func TestGetTF(t *testing.T) {
 		dirname string
 	}
 
-	found := []string{"../testdata/scan/examples/notlocal/module.tf"}
+	found := []string{filepath.Join("..", "testdata", "scan", "examples", "notlocal", "module.tf")}
 
 	tests := []struct {
 		name    string
@@ -60,12 +60,12 @@ func TestGetTF(t *testing.T) {
 	}{
 		{
 			"first",
-			args{"../testdata/scan/examples/simple"},
-			[]string{"../testdata/scan/examples/simple/aws_s3_bucket.pike.tf"},
+			args{filepath.Join("..", "testdata", "scan", "examples", "simple")},
+			[]string{filepath.Join("..", "testdata", "scan", "examples", "simple", "aws_s3_bucket.pike.tf")},
 			false,
 		},
-		{"empty", args{"../testdata/scan"}, nil, false},
-		{"notlocal", args{"../testdata/scan/examples/notlocal"}, found, false},
+		{"empty", args{filepath.Join("..", "testdata", "scan")}, nil, false},
+		{"notlocal", args{filepath.Join("..", "testdata", "scan", "examples", "notlocal")}, found, false},
 	}
 
 	for _, tt := range tests {
@@ -629,12 +629,12 @@ func Test_getTFFiles(t *testing.T) {
 			"basic",
 			args{dirName},
 			[]string{
-				dirName + "/api_gateway.tf",
-				dirName + "/dynamodb.tf",
-				dirName + "/lambda_get.tf",
-				dirName + "/lambda_post.tf",
-				dirName + "/main.tf",
-				dirName + "/outputs.tf",
+				filepath.Join(dirName, "api_gateway.tf"),
+				filepath.Join(dirName, "dynamodb.tf"),
+				filepath.Join(dirName, "lambda_get.tf"),
+				filepath.Join(dirName, "lambda_post.tf"),
+				filepath.Join(dirName, "main.tf"),
+				filepath.Join(dirName, "outputs.tf"),
 			},
 			false,
 		},
