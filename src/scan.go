@@ -5,7 +5,6 @@ import (
 	"errors"
 	"fmt"
 	"os"
-	"path"
 	"path/filepath"
 	"strings"
 	"sync"
@@ -18,9 +17,8 @@ import (
 )
 
 const (
-	modulesJSON  = "modules.json"
-	dsStore      = ".DS_Store"
-	dotTfModules = ".terraform/modules"
+	modulesJSON = "modules.json"
+	dsStore     = ".DS_Store"
 )
 
 var initMutex sync.Map // per-directory mutex
@@ -116,7 +114,7 @@ func Init(dirName string) (*string, []string, error) {
 
 	log.Info().Msgf("terraform init at %s", dirName)
 
-	modulesDir := path.Join(dirName, dotTfModules)
+	modulesDir := filepath.Join(dirName, ".terraform", "modules")
 	modules, err := os.ReadDir(modulesDir)
 	if err != nil {
 		return &tfPath, nil, &readDirectoryError{directory: modulesDir, err: err}

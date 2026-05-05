@@ -32,7 +32,7 @@ func GetResources(file string, dirName string) ([]ResourceV2, error) {
 		return Resources, err
 	}
 
-	moduleJson, err := GetModuleJson(filepath.Join(dirName, "/", ".terraform", "modules"))
+	moduleJson, err := GetModuleJson(filepath.Join(dirName, ".terraform", "modules"))
 	if err != nil {
 		return Resources, err
 	}

@@ -2,7 +2,6 @@ package pike
 
 import (
 	"os"
-	"path"
 	"path/filepath"
 	"slices"
 	"strings"
@@ -18,7 +17,7 @@ func WriteOutput(outPolicy OutputPolicy, outputType string, scanPath string, out
 		if scanPath == "" {
 			scanPath = "."
 		}
-		newPath, err := filepath.Abs(path.Join(scanPath, ".pike"))
+		newPath, err := filepath.Abs(filepath.Join(scanPath, ".pike"))
 		if err != nil {
 			return &absolutePathError{directory: scanPath, err: err}
 		}
@@ -31,10 +30,10 @@ func WriteOutput(outPolicy OutputPolicy, outputType string, scanPath string, out
 
 		switch strings.ToLower(outputType) {
 		case terraform:
-			outFile = filepath.Join(newPath, "pike.generated_policy.tf") // path.join does not work here
+			outFile = filepath.Join(newPath, "pike.generated_policy.tf")
 
 			if outPolicy.AWS.Terraform != "" {
-				roleFile := path.Join(newPath, "aws_iam_role.terraform_pike.tf")
+				roleFile := filepath.Join(newPath, "aws_iam_role.terraform_pike.tf")
 				err = os.WriteFile(roleFile, roleTemplate, 0o600)
 
 				if err != nil {
@@ -43,7 +42,7 @@ func WriteOutput(outPolicy OutputPolicy, outputType string, scanPath string, out
 			}
 
 		case "json":
-			outFile = path.Join(newPath, "pike.generated_policy.json")
+			outFile = filepath.Join(newPath, "pike.generated_policy.json")
 		default:
 			return &tfPolicyFormatError{}
 		}
@@ -66,10 +65,10 @@ func GetTF(dirName string) ([]string, error) {
 		return nil, &directoryNotFoundError{dirName}
 	}
 
-	modulePath := path.Join(dirName, dotTfModules)
+	modulePath := filepath.Join(dirName, ".terraform", "modules")
 	if modules, err := os.ReadDir(modulePath); err == nil {
 		for _, module := range modules {
-			tfFilesPath := path.Join(modulePath, module.Name())
+			tfFilesPath := filepath.Join(modulePath, module.Name())
 			moreFiles, _ := GetTFFiles(tfFilesPath)
 			files = append(files, moreFiles...)
 		}
@@ -94,7 +93,7 @@ func GetTFFiles(dirName string) ([]string, error) {
 			continue
 		}
 
-		newFile := path.Join(dirName, file.Name())
+		newFile := filepath.Join(dirName, file.Name())
 		files = append(files, newFile)
 	}
 
