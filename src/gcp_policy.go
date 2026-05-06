@@ -19,7 +19,7 @@ import (
 
 const (
 	defaultPolicyName = "terraform_pike"
-	defaultProject    = "pike"
+	defaultProject    = "pike-477416"
 	defaultRoleID     = "terraform_pike"
 )
 
