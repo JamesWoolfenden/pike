@@ -182,7 +182,7 @@ func TestGetPolicy(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
 
-			got, err := GetPolicy(tt.args.actions, false, "")
+			got, err := GetPolicy(tt.args.actions, false, "", "")
 
 			if (err != nil) != tt.wantErr {
 				t.Errorf("GetPolicy() error = %v, wantErr %v", err, tt.wantErr)

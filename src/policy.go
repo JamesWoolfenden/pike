@@ -92,7 +92,7 @@ func NewAWSPolicy(actions []string, resources bool) (Policy, error) {
 }
 
 // GetPolicy creates new iam polices from a list of Permissions.
-func GetPolicy(actions Sorted, resources bool, policyName string) (OutputPolicy, error) {
+func GetPolicy(actions Sorted, resources bool, policyName string, dirName string) (OutputPolicy, error) {
 	var (
 		OutPolicy OutputPolicy
 		empty     = true
@@ -109,7 +109,7 @@ func GetPolicy(actions Sorted, resources bool, policyName string) (OutputPolicy,
 
 	if actions.GCP != nil {
 		empty = false
-		OutPolicy.GCP, err = GCPPolicy(Unique(actions.GCP), policyName)
+		OutPolicy.GCP, err = GCPPolicy(Unique(actions.GCP), policyName, dirName)
 		if err != nil {
 			log.Error().Err(err).Msg("GCP policy generation failed")
 		}

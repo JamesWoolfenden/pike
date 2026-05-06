@@ -160,7 +160,7 @@ func MakePolicy(dirName string, file *string, init bool, enableResources bool, p
 		return output, fmt.Errorf("failed to create permission bag: %w", err)
 	}
 
-	output, err = GetPolicy(permissionsBag, enableResources, policyName)
+	output, err = GetPolicy(permissionsBag, enableResources, policyName, dirName)
 	if err != nil {
 		return output, &getPolicyError{err: err}
 	}
