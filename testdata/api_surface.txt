@@ -19,7 +19,7 @@ func FileExists (filename string) bool
 func FormatDeprecated (d []ProviderDeprecations, format string) (string, error)
 func GCPDataLookup (name string) []byte
 func GCPLookup (name string) []byte
-func GCPPolicy (permissions []string, policyName string) (string, error)
+func GCPPolicy (permissions []string, policyName string, dirName string) (string, error)
 func GetAWSDataPermissions (result ResourceV2) ([]string, error)
 func GetAWSPermissions (result ResourceV2) ([]string, error)
 func GetAWSResourcePermissions (result ResourceV2) ([]string, error)
@@ -37,7 +37,7 @@ func GetModulePath (block *hclsyntax.Block) string
 func GetPermission (result ResourceV2) (Sorted, error)
 func GetPermissionBag (resources []ResourceV2, prov string, suppressDeprecated bool) Sorted
 func GetPermissionMap (raw []byte, attributes []string, resource string) ([]string, error)
-func GetPolicy (actions Sorted, resources bool, policyName string) (OutputPolicy, error)
+func GetPolicy (actions Sorted, resources bool, policyName string, dirName string) (OutputPolicy, error)
 func GetPublicKeyDetails (owner string, repository string) (string, string, error)
 func GetResourceBlocks (file string) (*hclsyntax.Body, error)
 func GetResources (file string, dirName string) ([]ResourceV2, error)
