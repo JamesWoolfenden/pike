@@ -15,7 +15,6 @@ jobs:
       ## this will contain a matrix of all the combinations
       ## we wish to test again:
       matrix:
-        go-version: [ 1.25.9 ]
         platform: [ ubuntu-latest, macos-latest, windows-latest ]
 
     ## Defines the platform for each test run
@@ -24,20 +23,20 @@ jobs:
     ## the steps that will be run through for each version and platform
     ## combination
     steps:
+      ## checks out our code locally, so we can work with the files
+      - name: Checkout code
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
       ## sets up go based on the version
       - name: Install Go
         uses: actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c # v6.4.0
         with:
-          go-version: ${{ matrix.go-version }}
+          go-version-file: go.mod
 
       - uses: opentofu/setup-opentofu@fc711fa910b93cba0f3fbecaafc9f42fd0c411cb # v2.0.0
         with:
           tofu_version: 1.8.8
           tofu_wrapper: false
-
-      ## checks out our code locally, so we can work with the files
-      - name: Checkout code
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
       ## cache the module download directory to avoid re-fetching deps every push
       - name: Restore cache

@@ -116,7 +116,7 @@ func InvokeGithubDispatchEvent(repository string, workflowFileName string, branc
 	}
 
 	if err != nil {
-		log.Info().Msgf("invoke failed %s", response.Response.Status)
+		log.Info().Msgf("invoke failed %s", response.Status)
 
 		return &workflowInvokeError{err: err}
 	}
