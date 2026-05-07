@@ -9,7 +9,8 @@ jobs:
   goreleaser:
     env:
       GOTOOLCHAIN: auto
-    permissions: write-all
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -29,7 +30,7 @@ jobs:
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@1a80836c5c9d9e5755a25cb59ec6f45a3b5f41a8 # v7.2.1
         with:
-          version: latest
+          version: "~> v2"
           args: release --clean
         env:
           GOTOOLCHAIN: auto
@@ -39,7 +40,8 @@ jobs:
           PASSPHRASE: ${{ secrets.PASSPHRASE }}
           HOMEBREW_TAP_GITHUB_TOKEN: ${{ secrets.HOMEBREW_TAP_GITHUB_TOKEN }}
   publish-dockerhub:
-    permissions: write-all
+    permissions:
+      contents: read
     runs-on: ubuntu-latest
     needs:
       - goreleaser
@@ -61,7 +63,8 @@ jobs:
           short-description: ${{ github.event.repository.description }}
           readme-filepath: ./README.md
   update-scoop:
-    permissions: write-all
+    permissions:
+      contents: read
     runs-on: ubuntu-latest
     needs:
       - goreleaser

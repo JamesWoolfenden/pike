@@ -16,7 +16,14 @@ before:
     - ./set-version.sh
 
 builds:
-  - goos:
+  - env:
+      - CGO_ENABLED=0
+    flags:
+      - -trimpath
+    ldflags:
+      - -s -w
+    mod_timestamp: "{{ .CommitTimestamp }}"
+    goos:
       - darwin
       - linux
       - windows
@@ -29,10 +36,26 @@ builds:
     ignore:
       - goarch: "386"
         goos: darwin
+
 archives:
   - format_overrides:
       - goos: windows
-        format: zip
+        formats: [zip]
+
+checksum:
+  name_template: checksums.txt
+  algorithm: sha256
+
+signs:
+  - artifacts: checksum
+    args:
+      - "--batch"
+      - "-u"
+      - "{{ .Env.GPG_FINGERPRINT }}"
+      - "--output"
+      - "${signature}"
+      - "--detach-sign"
+      - "${artifact}"
 
 brews:
   - name: pike
