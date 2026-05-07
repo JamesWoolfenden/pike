@@ -7,22 +7,22 @@ echo "Installing Go development and security tools..."
 
 # Security tools
 echo "📦 Installing security scanners..."
-go install github.com/securego/gosec/v2/cmd/gosec@latest
-go install golang.org/x/vuln/cmd/govulncheck@latest
+go install github.com/securego/gosec/v2/cmd/gosec@v2.26.1
+go install golang.org/x/vuln/cmd/govulncheck@v1.1.4
 
 # Code quality tools
 echo "📦 Installing code quality tools..."
-go install honnef.co/go/tools/cmd/staticcheck@latest
-go install github.com/fzipp/gocyclo/cmd/gocyclo@latest
+go install honnef.co/go/tools/cmd/staticcheck@2026.1
+go install github.com/fzipp/gocyclo/cmd/gocyclo@v0.6.0
 
 
 # Dependency analysis
 echo "📦 Installing dependency analysis tools..."
-go install github.com/sonatype-nexus-community/nancy@latest
+go install github.com/sonatype-nexus-community/nancy@v1.2.0
 
 # OpenAPI code generator (already in go.mod tools)
 echo "📦 Installing OpenAPI code generator..."
-go install github.com/oapi-codegen/oapi-codegen/v2/cmd/oapi-codegen@latest
+go install github.com/oapi-codegen/oapi-codegen/v2/cmd/oapi-codegen@v2.7.0
 
 echo ""
 echo "✅ All tools installed successfully!"
