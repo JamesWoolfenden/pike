@@ -65,25 +65,20 @@ signs:
       - "--detach-sign"
       - "${artifact}"
 
-brews:
+homebrew_casks:
   - name: pike
-
     repository:
       owner: JamesWoolfenden
       name: homebrew-tap
       token: "{{ .Env.HOMEBREW_TAP_GITHUB_TOKEN }}"
-
-
     commit_author:
       name: "GitHub Action"
       email: action@github.com
-
     homepage: "https://github.com/JamesWoolfenden/pike#readme"
-
     description: "Pike is a tool for determining the permissions or policy required for IAC code"
-
-    install: |
-      bin.install "pike"
-
-    test: |
-      system "#{bin}/pike", "--help"
+    hooks:
+      post:
+        install: |
+          if system_command("/usr/bin/xattr", args: ["-h"]).exit_status == 0
+            system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/pike"]
+          end
