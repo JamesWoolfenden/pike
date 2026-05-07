@@ -360,7 +360,7 @@ func GetPermission(result ResourceV2) (Sorted, error) {
 		"healthchecksio":
 		return myPermission, nil
 	default:
-		if result.Provider != "" && !(result.TypeName == "module") {
+		if result.Provider != "" && result.TypeName != "module" {
 			log.Info().Msgf("Provider %s was not found", result.Provider)
 		} else {
 			log.Info().Msgf("Provider %s Type %s not found", result.Provider, result.TypeName)

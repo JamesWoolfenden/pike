@@ -202,11 +202,11 @@ func deprecatedSection(data members) string {
 	if data.ProviderVersion != "" {
 		schemaRef = "provider schema v" + data.ProviderVersion
 	}
-	b.WriteString(fmt.Sprintf(
+	fmt.Fprintf(&b,
 		"%d resources and %d datasources are flagged as deprecated in %s. "+
 			"Users pinned to an older provider major may already be affected when they upgrade.\n\n",
 		len(data.DeprecatedResources), len(data.DeprecatedData), schemaRef,
-	))
+	)
 
 	if len(data.DeprecatedResources) > 0 {
 		b.WriteString("### Deprecated Resources\n\n")
