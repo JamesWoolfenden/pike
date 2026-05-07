@@ -51,8 +51,13 @@ sboms:
 
 signs:
   - artifacts: checksum
+    stdin: "{{ .Env.PASSPHRASE }}"
     args:
       - "--batch"
+      - "--pinentry-mode"
+      - "loopback"
+      - "--passphrase-fd"
+      - "0"
       - "-u"
       - "{{ .Env.GPG_FINGERPRINT }}"
       - "--output"
