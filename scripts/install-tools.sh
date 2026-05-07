@@ -12,7 +12,7 @@ go install golang.org/x/vuln/cmd/govulncheck@v1.1.4
 
 # Code quality tools
 echo "📦 Installing code quality tools..."
-go install honnef.co/go/tools/cmd/staticcheck@2026.1
+go install honnef.co/go/tools/cmd/staticcheck@v0.7.0
 go install github.com/fzipp/gocyclo/cmd/gocyclo@v0.6.0
 
 
