@@ -3,8 +3,39 @@ package pike
 import (
 	"testing"
 
+	"github.com/hashicorp/hcl/v2/hclparse"
+	"github.com/hashicorp/hcl/v2/hclsyntax"
 	"github.com/stretchr/testify/assert"
 )
+
+func parseHCL(t *testing.T, src string) *hclsyntax.Body {
+	t.Helper()
+	f, diags := hclparse.NewParser().ParseHCL([]byte(src), "test.tf")
+	if diags.HasErrors() {
+		t.Fatalf("parse: %v", diags)
+	}
+	return f.Body.(*hclsyntax.Body)
+}
+
+func TestHasAWSDefaultTags(t *testing.T) {
+	tests := []struct {
+		name string
+		src  string
+		want bool
+	}{
+		{"with default_tags", "provider \"aws\" {\n  default_tags {\n    tags = { env = \"prod\" }\n  }\n}\n", true},
+		{"aws no default_tags", "provider \"aws\" { region = \"eu-west-2\" }\n", false},
+		{"non-aws provider", "provider \"google\" {\n  default_tags {}\n}\n", false},
+		{"no provider", "resource \"aws_instance\" \"x\" {}\n", false},
+		{"mixed-case label", "provider \"AWS\" {\n  default_tags {}\n}\n", true},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			assert.Equal(t, tt.want, HasAWSDefaultTags(parseHCL(t, tt.src)))
+		})
+	}
+	assert.False(t, HasAWSDefaultTags(nil))
+}
 
 func Test_fileStringEmptyError_Error(t *testing.T) {
 	tests := []struct {

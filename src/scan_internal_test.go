@@ -7,6 +7,18 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+func Test_applyAWSDefaultTags(t *testing.T) {
+	resources := []ResourceV2{
+		{Provider: "aws", Name: "aws_instance", Attributes: []string{"ami"}},
+		{Provider: "aws", Name: "aws_vpc", Attributes: []string{"cidr_block", "tags"}},
+		{Provider: "google", Name: "google_compute_instance", Attributes: []string{"name"}},
+	}
+	applyAWSDefaultTags(resources)
+	assert.Contains(t, resources[0].Attributes, "tags")
+	assert.Equal(t, []string{"cidr_block", "tags"}, resources[1].Attributes)
+	assert.NotContains(t, resources[2].Attributes, "tags")
+}
+
 func Test_emptyIACError_Error(t *testing.T) {
 	tests := []struct {
 		name string
