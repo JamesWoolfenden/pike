@@ -18,7 +18,7 @@ const waitForConsistency = 900
 type emptyRegionError struct{}
 
 func (m emptyRegionError) Error() string {
-	return "region cannot be empty"
+	return "no AWS region: set -region, AWS_REGION, or a profile default"
 }
 
 type iamRoleEmptyError struct{}
@@ -32,15 +32,23 @@ func getAWSCredentials(iamRole string, region string) (*sts.AssumeRoleOutput, er
 		return nil, &iamRoleEmptyError{}
 	}
 
-	if region == "" {
-		return nil, &emptyRegionError{}
+	ctx := context.Background()
+
+	var opts []func(*config.LoadOptions) error
+	if region != "" {
+		opts = append(opts, config.WithRegion(region))
 	}
 
-	ctx := context.Background()
-	cfg, err := config.LoadDefaultConfig(ctx, config.WithRegion(region))
+	cfg, err := config.LoadDefaultConfig(ctx, opts...)
 	if err != nil {
 		return nil, fmt.Errorf("failed to load AWS config: %w", err)
 	}
+
+	if cfg.Region == "" {
+		return nil, &emptyRegionError{}
+	}
+
+	log.Debug().Msgf("using AWS region %s", cfg.Region)
 
 	svc := sts.NewFromConfig(cfg)
 	duration := int32(waitForConsistency)
