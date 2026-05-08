@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 88.93      |  1093       |  1229            |
-| Datasource | 99.53      |   421       |   423             |
+| Resources  | 88.57      |  1093       |  1234            |
+| Datasource | 99.29      |   421       |   424             |
 
 ## Deprecated
 
-28 resources and 7 datasources are flagged as deprecated in provider schema v7.30.0. Users pinned to an older provider major may already be affected when they upgrade.
+28 resources and 7 datasources are flagged as deprecated in provider schema v7.31.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -71,6 +71,7 @@
 ./resource.ps1 google_biglake_iceberg_table_iam_member
 ./resource.ps1 google_biglake_iceberg_table_iam_policy
 ./resource.ps1 google_bigquery_reservation_group
+./resource.ps1 google_ces_app_root_agent_association
 ./resource.ps1 google_chronicle_data_table
 ./resource.ps1 google_chronicle_data_table_row
 ./resource.ps1 google_compute_firewall_policy_with_rules
@@ -87,6 +88,9 @@
 ./resource.ps1 google_compute_resize_request
 ./resource.ps1 google_contact_center_insights_assessment_rule
 ./resource.ps1 google_contact_center_insights_auto_labeling_rule
+./resource.ps1 google_contact_center_insights_qa_question
+./resource.ps1 google_contact_center_insights_qa_scorecard
+./resource.ps1 google_contact_center_insights_qa_scorecard_revision
 ./resource.ps1 google_container_analysis_occurrence
 ./resource.ps1 google_container_attached_cluster
 ./resource.ps1 google_container_aws_cluster
@@ -111,6 +115,7 @@
 ./resource.ps1 google_firebase_app_check_play_integrity_config
 ./resource.ps1 google_firebase_app_check_recaptcha_enterprise_config
 ./resource.ps1 google_firebase_app_check_recaptcha_v3_config
+./resource.ps1 google_firebase_app_check_resource_policy
 ./resource.ps1 google_firebase_app_check_service_config
 ./resource.ps1 google_firebase_app_hosting_backend
 ./resource.ps1 google_firebase_app_hosting_build
@@ -191,6 +196,7 @@
 ./resource.ps1 google_service_networking_vpc_service_controls
 ./resource.ps1 google_sql_provision_script
 ./resource.ps1 google_workload_identity_service_agent
+./resource.ps1 google_artifact_registry_file -type data
 ./resource.ps1 google_data_lineage_config -type data
 ./resource.ps1 google_network_connectivity_hub_iam_policy -type data
 ```

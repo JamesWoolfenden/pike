@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 91.61      |  1507       |  1645            |
-| Datasource | 96.83      |   641       |   662             |
+| Resources  | 91.39      |  1507       |  1649            |
+| Datasource | 96.68      |   641       |   663             |
 
 ## Deprecated
 
-10 resources and 3 datasources are flagged as deprecated in provider schema v6.43.0. Users pinned to an older provider major may already be affected when they upgrade.
+10 resources and 3 datasources are flagged as deprecated in provider schema v6.44.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -44,6 +44,7 @@
 ./resource.ps1 aws_appsync_channel_namespace
 ./resource.ps1 aws_arcregionswitch_plan
 ./resource.ps1 aws_arczonalshift_autoshift_observer_notification_status
+./resource.ps1 aws_arczonalshift_zonal_autoshift_configuration
 ./resource.ps1 aws_backup_restore_testing_selection
 ./resource.ps1 aws_bedrockagent_flow
 ./resource.ps1 aws_bedrockagentcore_agent_runtime
@@ -86,6 +87,7 @@
 ./resource.ps1 aws_eks_capability
 ./resource.ps1 aws_fis_target_account_configuration
 ./resource.ps1 aws_fsx_s3_access_point_attachment
+./resource.ps1 aws_glue_catalog
 ./resource.ps1 aws_iam_outbound_web_identity_federation
 ./resource.ps1 aws_invoicing_invoice_unit
 ./resource.ps1 aws_lakeformation_identity_center_configuration
@@ -115,6 +117,7 @@
 ./resource.ps1 aws_opensearchserverless_collection_group
 ./resource.ps1 aws_organizations_aws_service_access
 ./resource.ps1 aws_organizations_tag
+./resource.ps1 aws_outposts_capacity_task
 ./resource.ps1 aws_prometheus_resource_policy
 ./resource.ps1 aws_quicksight_custom_permissions
 ./resource.ps1 aws_quicksight_ip_restriction
@@ -124,6 +127,7 @@
 ./resource.ps1 aws_ram_permission
 ./resource.ps1 aws_ram_resource_share_associations_exclusive
 ./resource.ps1 aws_redshift_idc_application
+./resource.ps1 aws_redshift_namespace_registration
 ./resource.ps1 aws_s3_bucket_abac
 ./resource.ps1 aws_s3_bucket_metadata_configuration
 ./resource.ps1 aws_s3files_access_point
@@ -177,6 +181,7 @@
 ./resource.ps1 aws_dynamodb_backups -type data
 ./resource.ps1 aws_ec2_service_link_virtual_interface -type data
 ./resource.ps1 aws_ec2_service_link_virtual_interfaces -type data
+./resource.ps1 aws_glue_catalog -type data
 ./resource.ps1 aws_iam_outbound_web_identity_federation -type data
 ./resource.ps1 aws_iam_role_policies -type data
 ./resource.ps1 aws_iam_role_policy_attachments -type data

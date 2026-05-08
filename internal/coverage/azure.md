@@ -7,7 +7,7 @@
 
 ## Deprecated
 
-38 resources and 6 datasources are flagged as deprecated in provider schema v4.71.0. Users pinned to an older provider major may already be affected when they upgrade.
+38 resources and 6 datasources are flagged as deprecated in provider schema v4.72.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
