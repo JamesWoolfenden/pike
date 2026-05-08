@@ -4,24 +4,33 @@ clean:
 	-rm terraform.tfstate
 	-rm terraform.tfstate.backup
 apply: init
-	terraform apply -auto-approve
+	tofu apply -auto-approve
 
 plan: init
-	terraform plan
+	tofu plan
 
 destroy: init
-	terraform destroy -auto-approve
+	tofu destroy -auto-approve
+
+apply-wait: init
+	go run ../../tools/retry-iam tofu apply -auto-approve
+
+plan-wait: init
+	go run ../../tools/retry-iam tofu plan
+
+destroy-wait: init
+	go run ../../tools/retry-iam tofu destroy -auto-approve
 
 init:
-	terraform init
+	tofu init
 
 upgrade:
-	terraform init --upgrade
+	tofu init --upgrade
 
 update: upgrade
 
 role: FORCE
-	terraform  -chdir=./role apply -auto-approve
+	tofu -chdir=./role apply -auto-approve
 
 FORCE:
 
@@ -32,7 +41,7 @@ up: role sleep apply
 
 mac: role init
 	sleep 5
-	terraform apply -auto-approve
+	tofu apply -auto-approve
 
 bump:
 	$(eval VERSION=$(shell git describe --tags --abbrev=0 | awk -F. '{OFS="."; $$NF+=1; print $0}'))
