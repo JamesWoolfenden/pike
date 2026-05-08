@@ -12,6 +12,15 @@ plan: init
 destroy: init
 	GOOGLE_BACKEND_CREDENTIALS=$(PIKE_GOOGLE_BACKEND_CREDENTIALS) tofu destroy -auto-approve
 
+apply-wait: init
+	GOOGLE_BACKEND_CREDENTIALS=$(PIKE_GOOGLE_BACKEND_CREDENTIALS) go run ../../tools/retry-iam tofu apply -auto-approve
+
+plan-wait: init
+	GOOGLE_BACKEND_CREDENTIALS=$(PIKE_GOOGLE_BACKEND_CREDENTIALS) go run ../../tools/retry-iam tofu plan
+
+destroy-wait: init
+	GOOGLE_BACKEND_CREDENTIALS=$(PIKE_GOOGLE_BACKEND_CREDENTIALS) go run ../../tools/retry-iam tofu destroy -auto-approve
+
 show: init
 	GOOGLE_BACKEND_CREDENTIALS=$(PIKE_GOOGLE_BACKEND_CREDENTIALS) tofu show
 
