@@ -5,11 +5,20 @@ import (
 	"fmt"
 	"path"
 	"path/filepath"
+	"regexp"
 	"time"
 
 	"github.com/hashicorp/terraform-exec/tfexec"
 	"github.com/rs/zerolog/log"
 )
+
+const (
+	iamRetryAttempts  = 12
+	iamRetryBaseSleep = 5 * time.Second
+	iamRetryMaxSleep  = 30 * time.Second
+)
+
+var iamDenied = regexp.MustCompile(`(?i)AccessDenied|AccessDeniedException|UnauthorizedOperation|is not authorized to perform`)
 
 // Make creates the required role.
 func Make(directory string) (*string, error) {
@@ -106,7 +115,6 @@ func Apply(target string, region string) error {
 		return &makeRoleError{err}
 	}
 
-	time.Sleep(5 * time.Second)
 	// clear any temp credentials (best-effort: unsetenv failures on supported
 	// OSes are pathological, so we log and continue rather than abort)
 	if unsetErr := unSetAWSAuth(); unsetErr != nil {
@@ -125,7 +133,7 @@ func Apply(target string, region string) error {
 	log.Debug().Msgf("Starting terraform apply in directory: %s", target)
 	defer log.Debug().Msg("Completed terraform apply")
 
-	_, err = tfApply(target)
+	err = tfApplyWithIAMRetry(target)
 
 	if err == nil {
 		log.Info().Msgf("provisioned %s", target)
@@ -138,4 +146,27 @@ func Apply(target string, region string) error {
 	}
 
 	return err
+}
+
+// tfApplyWithIAMRetry runs tfApply, retrying with linear backoff while the
+// failure looks like IAM eventual consistency on a just-created role. Any
+// other error returns immediately.
+func tfApplyWithIAMRetry(target string) error {
+	var err error
+	for i := 1; i <= iamRetryAttempts; i++ {
+		_, err = tfApply(target)
+		if err == nil {
+			return nil
+		}
+		if !iamDenied.MatchString(err.Error()) {
+			return err
+		}
+		if i == iamRetryAttempts {
+			break
+		}
+		sleep := min(iamRetryBaseSleep*time.Duration(i), iamRetryMaxSleep)
+		log.Info().Msgf("IAM not yet consistent (attempt %d/%d), retrying in %v", i, iamRetryAttempts, sleep)
+		time.Sleep(sleep)
+	}
+	return fmt.Errorf("still IAM-denied after %d attempts: %w", iamRetryAttempts, err)
 }
