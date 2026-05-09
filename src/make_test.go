@@ -34,6 +34,62 @@ func TestMake(t *testing.T) {
 	}
 }
 
+func TestMakeGCP(t *testing.T) {
+	t.Parallel()
+
+	type args struct {
+		directory string
+	}
+
+	tests := []struct {
+		name    string
+		args    args
+		wantErr bool
+	}{
+		{"empty", args{""}, true},
+		{"bad-dir", args{"testdata/scan/examples/nonexistent"}, true},
+		{"gcp-basic", args{"testdata/gcp/basic"}, false},
+	}
+
+	for _, tt := range tests {
+		tt := tt
+		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
+			if _, err := MakeGCP(tt.args.directory); (err != nil) != tt.wantErr {
+				t.Errorf("MakeGCP() error = %v, wantErr %v", err, tt.wantErr)
+			}
+		})
+	}
+}
+
+func TestMakeAzure(t *testing.T) {
+	t.Parallel()
+
+	type args struct {
+		directory string
+	}
+
+	tests := []struct {
+		name    string
+		args    args
+		wantErr bool
+	}{
+		{"empty", args{""}, true},
+		{"bad-dir", args{"testdata/scan/examples/nonexistent"}, true},
+		{"azure-basic", args{"testdata/azurerm/basic"}, false},
+	}
+
+	for _, tt := range tests {
+		tt := tt
+		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
+			if _, err := MakeAzure(tt.args.directory); (err != nil) != tt.wantErr {
+				t.Errorf("MakeAzure() error = %v, wantErr %v", err, tt.wantErr)
+			}
+		})
+	}
+}
+
 func Test_tfApply(t *testing.T) {
 	t.Parallel()
 

@@ -51,6 +51,8 @@ func InvokeGithubDispatchEvent (repository string, workflowFileName string, bran
 func IsTypeOK (mappings any) (map[string]any, error)
 func LocateTerraform () (string, error)
 func Make (directory string) (*string, error)
+func MakeAzure (directory string) (*string, error)
+func MakeGCP (directory string) (*string, error)
 func MakePolicy (dirName string, file *string, init bool, enableResources bool, provider string, policyName string, suppressDeprecated bool) (OutputPolicy, error)
 func Minify (JSONOut string) string
 func NewAWSPolicy (actions []string, resources bool) (Policy, error)

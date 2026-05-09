@@ -55,17 +55,40 @@ func main() {
 						Value:       ".",
 						Destination: &directory,
 					},
+					&cli.StringFlag{
+						Name:        "provider",
+						Aliases:     []string{"p"},
+						Usage:       "Cloud provider: aws (default), gcp, azure",
+						Destination: &provider,
+					},
 				},
 				Action: func(*cli.Context) error {
-					arn, err := pike.Make(directory)
-					if err != nil {
-						return fmt.Errorf("make failed: %w", err)
+					switch provider {
+					case "gcp", "google":
+						id, err := pike.MakeGCP(directory)
+						if err != nil {
+							return fmt.Errorf("make gcp failed: %w", err)
+						}
+						if id != nil {
+							fmt.Print(*id)
+						}
+					case "azure", "azurerm":
+						id, err := pike.MakeAzure(directory)
+						if err != nil {
+							return fmt.Errorf("make azure failed: %w", err)
+						}
+						if id != nil {
+							fmt.Print(*id)
+						}
+					default:
+						arn, err := pike.Make(directory)
+						if err != nil {
+							return fmt.Errorf("make failed: %w", err)
+						}
+						if arn != nil {
+							fmt.Print(*arn)
+						}
 					}
-
-					if arn != nil {
-						fmt.Print(*arn)
-					}
-
 					return nil
 				},
 			},

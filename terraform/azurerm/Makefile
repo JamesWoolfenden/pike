@@ -32,6 +32,9 @@ update: upgrade
 role: FORCE
 	tofu -chdir=./role apply -auto-approve
 
+scan:
+	pike scan -w -i -d ./ -outfile "./role/azurerm_role_definition.tf" -policyName terraform_pike
+
 FORCE:
 
 sleep:

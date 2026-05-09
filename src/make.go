@@ -81,6 +81,100 @@ func (e *arnNotFoundInStateError) Error() string {
 	return "no arn found in state"
 }
 
+type roleNotFoundInStateError struct {
+	provider string
+}
+
+func (e *roleNotFoundInStateError) Error() string {
+	return fmt.Sprintf("no role found in state for provider: %s", e.provider)
+}
+
+// MakeGCP creates the required GCP IAM custom role.
+func MakeGCP(directory string) (*string, error) {
+	if directory == "" {
+		return nil, &directoryNotFoundError{directory: directory}
+	}
+
+	err := Scan(directory, "terraform", nil, true, true, false, "google", "", "", false)
+	if err != nil {
+		return nil, fmt.Errorf("failed to scan directory: %w", err)
+	}
+
+	directory, err = filepath.Abs(directory)
+	if err != nil {
+		return nil, &absolutePathError{directory, err}
+	}
+
+	policyPath, err := filepath.Abs(path.Join(directory, ".pike"))
+	if err != nil {
+		return nil, &absolutePathError{directory, err}
+	}
+
+	tf, err := tfApply(policyPath)
+	if err != nil {
+		return nil, fmt.Errorf("failed to apply terraform: %w", err)
+	}
+
+	state, err := tf.Show(context.Background())
+	if err != nil {
+		return nil, fmt.Errorf("failed to show terraform state: %w", err)
+	}
+
+	for _, resource := range state.Values.RootModule.Resources {
+		if resource.Type == "google_project_iam_custom_role" {
+			if id, ok := resource.AttributeValues["id"].(string); ok {
+				log.Info().Msgf("GCP role created/updated: %s", id)
+				return &id, nil
+			}
+		}
+	}
+
+	return nil, &roleNotFoundInStateError{provider: "gcp"}
+}
+
+// MakeAzure creates the required Azure role definition.
+func MakeAzure(directory string) (*string, error) {
+	if directory == "" {
+		return nil, &directoryNotFoundError{directory: directory}
+	}
+
+	err := Scan(directory, "terraform", nil, true, true, false, "azurerm", "", "", false)
+	if err != nil {
+		return nil, fmt.Errorf("failed to scan directory: %w", err)
+	}
+
+	directory, err = filepath.Abs(directory)
+	if err != nil {
+		return nil, &absolutePathError{directory, err}
+	}
+
+	policyPath, err := filepath.Abs(path.Join(directory, ".pike"))
+	if err != nil {
+		return nil, &absolutePathError{directory, err}
+	}
+
+	tf, err := tfApply(policyPath)
+	if err != nil {
+		return nil, fmt.Errorf("failed to apply terraform: %w", err)
+	}
+
+	state, err := tf.Show(context.Background())
+	if err != nil {
+		return nil, fmt.Errorf("failed to show terraform state: %w", err)
+	}
+
+	for _, resource := range state.Values.RootModule.Resources {
+		if resource.Type == "azurerm_role_definition" {
+			if id, ok := resource.AttributeValues["role_definition_resource_id"].(string); ok {
+				log.Info().Msgf("Azure role definition created/updated: %s", id)
+				return &id, nil
+			}
+		}
+	}
+
+	return nil, &roleNotFoundInStateError{provider: "azure"}
+}
+
 func tfApply(policyPath string) (*tfexec.Terraform, error) {
 	tfPath, err := LocateTerraform()
 	if err != nil {
