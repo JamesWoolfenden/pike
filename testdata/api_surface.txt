@@ -44,6 +44,7 @@ func GetResources (file string, dirName string) ([]ResourceV2, error)
 func GetRuntimePermissions (raw []byte, attributes []string, resource string) ([]string, error)
 func GetTF (dirName string) ([]string, error)
 func GetTFFiles (dirName string) ([]string, error)
+func HasAWSDefaultTags (body *hclsyntax.Body) bool
 func Init (dirName string) (*string, []string, error)
 func Inspect (directory string, init bool) (PolicyDiff, error)
 func InvokeGithubDispatchEvent (repository string, workflowFileName string, branch string) error

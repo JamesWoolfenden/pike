@@ -229,6 +229,7 @@ func makePermissionBag(dirName string, file *string, init bool, provider string,
 	var criticalErrors []error
 
 	var allIAMBindings []IAMBinding
+	awsDefaultTags := false
 
 	for _, tfFile := range files {
 		resource, err := GetResources(tfFile, dirName)
@@ -247,7 +248,12 @@ func makePermissionBag(dirName string, file *string, init bool, provider string,
 		if err == nil && body != nil {
 			bindings := ExtractIAMBindings(body)
 			allIAMBindings = append(allIAMBindings, bindings...)
+			awsDefaultTags = awsDefaultTags || HasAWSDefaultTags(body)
 		}
+	}
+
+	if awsDefaultTags {
+		applyAWSDefaultTags(resources)
 	}
 
 	// Fail fast if too many critical files failed
@@ -262,6 +268,17 @@ func makePermissionBag(dirName string, file *string, init bool, provider string,
 	permissionsBag := GetPermissionBag(resources, provider, suppressDeprecated)
 	permissionsBag.IAMBindings = allIAMBindings
 	return permissionsBag, nil
+}
+
+// applyAWSDefaultTags injects a synthetic "tags" attribute into every AWS
+// resource so GetPermissionMap emits each mapping's attributes.tags actions.
+func applyAWSDefaultTags(resources []ResourceV2) {
+	for i := range resources {
+		if resources[i].Provider != provider.AWS || Contains(resources[i].Attributes, "tags") {
+			continue
+		}
+		resources[i].Attributes = append(resources[i].Attributes, "tags")
+	}
 }
 
 func GetPermissionBag(resources []ResourceV2, prov string, suppressDeprecated bool) Sorted {

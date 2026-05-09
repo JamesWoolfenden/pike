@@ -83,6 +83,26 @@ func GetResources(file string, dirName string) ([]ResourceV2, error) {
 	return Resources, nil
 }
 
+// HasAWSDefaultTags reports whether any provider "aws" block in body declares
+// a default_tags block, which causes the provider to tag every taggable
+// resource even when the resource itself has no tags attribute.
+func HasAWSDefaultTags(body *hclsyntax.Body) bool {
+	if body == nil {
+		return false
+	}
+	for _, block := range body.Blocks {
+		if block.Type != "provider" || len(block.Labels) == 0 || !strings.EqualFold(block.Labels[0], "aws") {
+			continue
+		}
+		for _, inner := range block.Body.Blocks {
+			if inner.Type == "default_tags" {
+				return true
+			}
+		}
+	}
+	return false
+}
+
 // ExtractIAMBindings extracts IAM binding resources from parsed HCL blocks.
 func ExtractIAMBindings(body *hclsyntax.Body) []IAMBinding {
 	var bindings []IAMBinding
