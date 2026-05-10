@@ -17,7 +17,7 @@ Pike is a tool to determine the minimum IAM permissions required to run OpenTofu
 
 **What's new?**
 
-- json modules support.
+- JSON modules support.
 - GCP compare, checks IAC permissions required versus a deployed role.
 - Backend detection S3 and GCP.
 

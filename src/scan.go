@@ -31,6 +31,12 @@ func Scan(dirName string, outputType string, file *string, init bool, write bool
 
 	OutPolicy, err := MakePolicy(dirName, file, init, enableResources, provider, policyName, suppressDeprecated)
 	if err != nil {
+		var emptyIAC *emptyIACError
+		var emptyPerms *emptyPermissionsError
+		if errors.As(err, &emptyIAC) || errors.As(err, &emptyPerms) {
+			log.Info().Str("dir", dirName).Msg("no IAM permissions found")
+			return nil
+		}
 		return &makePolicyError{err}
 	}
 

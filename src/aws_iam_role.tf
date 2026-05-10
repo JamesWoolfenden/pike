@@ -14,6 +14,7 @@ resource "aws_iam_role" "terraform_pike" {
   )
 }
 
+
 resource "aws_iam_policy" "version" {
   name_prefix = "terraform_pike_"
 

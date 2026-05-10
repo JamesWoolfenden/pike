@@ -20,6 +20,7 @@ func TestScan(t *testing.T) {
 	}
 
 	testPath, _ := filepath.Abs("../terraform/aws/backup")
+	tlsPath, _ := filepath.Abs("../testdata/scan/examples/tls-only")
 
 	tests := []struct {
 		name    string
@@ -29,6 +30,7 @@ func TestScan(t *testing.T) {
 		{"aws", args{testPath, "json", false}, false},
 		{"aws-out", args{testPath, "terraform", true}, false},
 		{"google", args{testPath, "json", false}, false},
+		{"tls-only-no-cloud-permissions", args{tlsPath, "json", false}, false},
 	}
 
 	for _, tt := range tests {

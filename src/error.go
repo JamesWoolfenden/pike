@@ -438,6 +438,10 @@ func (m *getPolicyError) Error() string {
 	return fmt.Sprintf("failed to get policy %v", m.err)
 }
 
+func (m *getPolicyError) Unwrap() error {
+	return m.err
+}
+
 type unsupportedRuntimeProviderError struct {
 	provider string
 }
