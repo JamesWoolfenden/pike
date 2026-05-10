@@ -22,12 +22,12 @@ func TestReadme(t *testing.T) {
 		{
 			name:    "missing",
 			args:    args{dirName: "../testdata/readme/missing", output: "json", init: true, autoAppend: false},
-			wantErr: true,
+			wantErr: false,
 		},
 		{
 			name:    "missing-tf",
 			args:    args{dirName: "../testdata/readme/missing", output: "terraform", init: true, autoAppend: false},
-			wantErr: true,
+			wantErr: false,
 		},
 		{name: "exists", args: args{dirName: "../testdata/readme/exists", output: "terraform", init: true, autoAppend: false}},
 		{
@@ -46,7 +46,11 @@ func TestReadme(t *testing.T) {
 		},
 		{
 			name: "empty", args: args{dirName: "../testdata/readme/empty", output: "terraform", init: true},
-			wantErr: true,
+			wantErr: false,
+		},
+		{
+			name: "tls-only-no-cloud-permissions", args: args{dirName: "../testdata/scan/examples/tls-only", output: "terraform", init: false},
+			wantErr: false,
 		},
 		{name: "exists-noInit", args: args{dirName: "../testdata/readme/exists", output: "terraform"}},
 	}

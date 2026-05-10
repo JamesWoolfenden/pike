@@ -49,7 +49,8 @@ func Inspect(directory string, init bool) (PolicyDiff, error) {
 	rawIACPolicy, err := MakePolicy(directory, nil, init, false, "", "", false)
 	if err != nil {
 		var emptyIAC *emptyIACError
-		if errors.As(err, &emptyIAC) {
+		var emptyPerms *emptyPermissionsError
+		if errors.As(err, &emptyIAC) || errors.As(err, &emptyPerms) {
 			log.Info().Msgf("nothing to do for IAC as %s for directory %s", err, directory)
 		} else {
 			return Difference, &makePolicyError{err: err}

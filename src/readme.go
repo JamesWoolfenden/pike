@@ -32,13 +32,19 @@ func Readme(dirName string, output string, init bool, autoAppend bool) error {
 	file := path.Join(dirName, "README.md")
 
 	if _, err := os.Stat(file); errors.Is(err, os.ErrNotExist) {
-		return &fileDoesNotExistError{file, err}
+		log.Info().Str("file", file).Msg("no README.md found, skipping")
+		return nil
 	}
 
 	OutPolicy, err := MakePolicy(dirName, nil, init, false, "", "", false)
 	if err != nil {
+		var emptyIAC *emptyIACError
+		var emptyPerms *emptyPermissionsError
+		if errors.As(err, &emptyIAC) || errors.As(err, &emptyPerms) {
+			log.Info().Str("dir", dirName).Msg("no IAM permissions found, readme unchanged")
+			return nil
+		}
 		log.Info().Msg("failed to make policy")
-
 		return &makePolicyError{err}
 	}
 

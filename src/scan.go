@@ -69,6 +69,11 @@ func Runtime(dirName string, outputType string, file *string, init bool, prov st
 
 	permissionsBag, err := makePermissionBag(dirName, file, init, prov, false)
 	if err != nil {
+		var emptyIAC *emptyIACError
+		if errors.As(err, &emptyIAC) {
+			fmt.Println("No runtime permissions detected.")
+			return nil
+		}
 		return fmt.Errorf("failed to create permission bag: %w", err)
 	}
 
