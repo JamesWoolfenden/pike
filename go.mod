@@ -1,6 +1,6 @@
 module github.com/jameswoolfenden/pike
 
-go 1.25.10
+go 1.26.2
 
 require (
 	github.com/JamesWoolfenden/arn v0.2.6

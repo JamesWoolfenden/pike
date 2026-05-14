@@ -9,11 +9,7 @@ version: 2
 
 before:
   hooks:
-    # You may remove this if you don't use go modules.
     - go mod tidy
-    # you may remove this if you don't use go generate
-    - go generate ./...
-    - ./set-version.sh
 
 builds:
   - env:
@@ -21,7 +17,7 @@ builds:
     flags:
       - -trimpath
     ldflags:
-      - -s -w
+      - -s -w -X github.com/jameswoolfenden/pike/src.Version={{.Version}}
     mod_timestamp: "{{ .CommitTimestamp }}"
     goos:
       - darwin
