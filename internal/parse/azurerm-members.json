@@ -1579,5 +1579,5 @@
         "azurerm_postgresql_server": "",
         "azurerm_redis_enterprise_database": ""
     },
-    "providerVersion": "4.72.0"
+    "providerVersion": "4.73.0"
 }

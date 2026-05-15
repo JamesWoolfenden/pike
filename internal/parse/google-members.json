@@ -201,6 +201,7 @@
         "google_ces_guardrail",
         "google_ces_tool",
         "google_ces_toolset",
+        "google_chronicle_dashboard_chart",
         "google_chronicle_data_access_label",
         "google_chronicle_data_access_scope",
         "google_chronicle_data_table",
@@ -378,6 +379,10 @@
         "google_compute_region_health_source",
         "google_compute_region_instance_group_manager",
         "google_compute_region_instance_template",
+        "google_compute_region_instant_snapshot",
+        "google_compute_region_instant_snapshot_iam_binding",
+        "google_compute_region_instant_snapshot_iam_member",
+        "google_compute_region_instant_snapshot_iam_policy",
         "google_compute_region_network_endpoint",
         "google_compute_region_network_endpoint_group",
         "google_compute_region_network_firewall_policy",
@@ -1388,6 +1393,7 @@
         "google_compute_region_instance_group",
         "google_compute_region_instance_group_manager",
         "google_compute_region_instance_template",
+        "google_compute_region_instant_snapshot_iam_policy",
         "google_compute_region_network_endpoint_group",
         "google_compute_region_security_policy",
         "google_compute_region_ssl_certificate",
@@ -1700,5 +1706,5 @@
         "google_notebooks_instance_iam_policy": "",
         "google_notebooks_runtime_iam_policy": ""
     },
-    "providerVersion": "7.31.0"
+    "providerVersion": "7.32.0"
 }

@@ -1028,7 +1028,10 @@
         "aws_oam_sink_policy",
         "aws_observabilityadmin_centralization_rule_for_organization",
         "aws_observabilityadmin_telemetry_enrichment",
+        "aws_observabilityadmin_telemetry_evaluation",
+        "aws_observabilityadmin_telemetry_evaluation_for_organization",
         "aws_observabilityadmin_telemetry_pipeline",
+        "aws_observabilityadmin_telemetry_rule",
         "aws_odb_cloud_autonomous_vm_cluster",
         "aws_odb_cloud_exadata_infrastructure",
         "aws_odb_cloud_vm_cluster",
@@ -1340,9 +1343,11 @@
         "aws_securityhub_account",
         "aws_securityhub_account_v2",
         "aws_securityhub_action_target",
+        "aws_securityhub_aggregator_v2",
         "aws_securityhub_automation_rule",
         "aws_securityhub_configuration_policy",
         "aws_securityhub_configuration_policy_association",
+        "aws_securityhub_connector_v2",
         "aws_securityhub_finding_aggregator",
         "aws_securityhub_insight",
         "aws_securityhub_invite_accepter",
@@ -2332,5 +2337,5 @@
         "aws_s3_bucket_object": "",
         "aws_s3_bucket_objects": ""
     },
-    "providerVersion": "6.44.0"
+    "providerVersion": "6.45.0"
 }
