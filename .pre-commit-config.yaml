@@ -52,7 +52,7 @@ repos:
       - id: go-mod-tidy
       - id: go-generate
   - repo: https://github.com/jameswoolfenden/ghat
-    rev: 9ac03a27b221b0173a40e66aac1d09f5be4db40c # v0.1.23
+    rev: 783f1adff1b67e121f0a3af745979b0ccab69e11 # v0.1.31
     hooks:
       - id: ghat-go
         name: ghat
