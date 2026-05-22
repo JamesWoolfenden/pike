@@ -189,6 +189,7 @@
         "aws_bedrockagentcore_code_interpreter",
         "aws_bedrockagentcore_gateway",
         "aws_bedrockagentcore_gateway_target",
+        "aws_bedrockagentcore_harness",
         "aws_bedrockagentcore_memory",
         "aws_bedrockagentcore_memory_strategy",
         "aws_bedrockagentcore_oauth2_credential_provider",
@@ -1032,6 +1033,7 @@
         "aws_observabilityadmin_telemetry_evaluation_for_organization",
         "aws_observabilityadmin_telemetry_pipeline",
         "aws_observabilityadmin_telemetry_rule",
+        "aws_observabilityadmin_telemetry_rule_for_organization",
         "aws_odb_cloud_autonomous_vm_cluster",
         "aws_odb_cloud_exadata_infrastructure",
         "aws_odb_cloud_vm_cluster",
@@ -1345,6 +1347,7 @@
         "aws_securityhub_action_target",
         "aws_securityhub_aggregator_v2",
         "aws_securityhub_automation_rule",
+        "aws_securityhub_automation_rule_v2",
         "aws_securityhub_configuration_policy",
         "aws_securityhub_configuration_policy_association",
         "aws_securityhub_connector_v2",
@@ -1652,8 +1655,10 @@
         "aws_workspacesweb_user_settings_association",
         "aws_xray_encryption_config",
         "aws_xray_group",
+        "aws_xray_indexing_rule",
         "aws_xray_resource_policy",
-        "aws_xray_sampling_rule"
+        "aws_xray_sampling_rule",
+        "aws_xray_trace_segment_destination"
     ],
     "dataSources": [
         "aws_account_primary_contact",
@@ -2330,6 +2335,9 @@
         "aws_kinesis_analytics_application": "",
         "aws_media_store_container": "",
         "aws_media_store_container_policy": "",
+        "aws_pinpoint_email_channel": "",
+        "aws_pinpoint_email_template": "",
+        "aws_pinpoint_event_stream": "",
         "aws_s3_bucket_object": ""
     },
     "deprecatedData": {
@@ -2337,5 +2345,5 @@
         "aws_s3_bucket_object": "",
         "aws_s3_bucket_objects": ""
     },
-    "providerVersion": "6.45.0"
+    "providerVersion": "6.46.0"
 }

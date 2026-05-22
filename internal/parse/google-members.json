@@ -31,6 +31,7 @@
         "google_apigee_api_product",
         "google_apigee_app_group",
         "google_apigee_control_plane_access",
+        "google_apigee_data_collector",
         "google_apigee_developer",
         "google_apigee_developer_app",
         "google_apigee_dns_zone",
@@ -206,6 +207,7 @@
         "google_chronicle_data_access_scope",
         "google_chronicle_data_table",
         "google_chronicle_data_table_row",
+        "google_chronicle_native_dashboard",
         "google_chronicle_reference_list",
         "google_chronicle_retrohunt",
         "google_chronicle_rule",
@@ -443,6 +445,7 @@
         "google_contact_center_insights_analysis_rule",
         "google_contact_center_insights_assessment_rule",
         "google_contact_center_insights_auto_labeling_rule",
+        "google_contact_center_insights_encryption_spec",
         "google_contact_center_insights_qa_question",
         "google_contact_center_insights_qa_scorecard",
         "google_contact_center_insights_qa_scorecard_revision",
@@ -1522,6 +1525,7 @@
         "google_kms_secret_asymmetric",
         "google_kms_secret_ciphertext",
         "google_logging_folder_settings",
+        "google_logging_log_view",
         "google_logging_log_view_iam_policy",
         "google_logging_organization_settings",
         "google_logging_project_cmek_settings",
@@ -1706,5 +1710,5 @@
         "google_notebooks_instance_iam_policy": "",
         "google_notebooks_runtime_iam_policy": ""
     },
-    "providerVersion": "7.32.0"
+    "providerVersion": "7.33.0"
 }
