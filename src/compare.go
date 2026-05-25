@@ -104,7 +104,7 @@ func compareGCPRole(directory string, arn string, init bool) (bool, error) {
 		return false, &gcpRoleNotVerified{arn}
 	}
 
-	iacPolicy, err := makePermissionBag(directory, nil, init, "", false)
+	iacPolicy, err := MakePermissionBag(directory, nil, init, "", false)
 	if err != nil {
 		return false, &getIAMVersionError{err}
 	}
