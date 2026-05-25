@@ -25,6 +25,7 @@ terraform-provider-aws/
 tf.plan
 tf.json
 .claude/
+docs/REVIEW.md
 
 dist/
 
