@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 91.39      |  1507       |  1649            |
+| Resources  | 90.84      |  1507       |  1659            |
 | Datasource | 96.68      |   641       |   663             |
 
 ## Deprecated
 
-10 resources and 3 datasources are flagged as deprecated in provider schema v6.44.0. Users pinned to an older provider major may already be affected when they upgrade.
+13 resources and 3 datasources are flagged as deprecated in provider schema v6.46.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -22,6 +22,9 @@
 | aws_kinesis_analytics_application | — |
 | aws_media_store_container | — |
 | aws_media_store_container_policy | — |
+| aws_pinpoint_email_channel | — |
+| aws_pinpoint_email_template | — |
+| aws_pinpoint_event_stream | — |
 | aws_s3_bucket_object | — |
 
 ### Deprecated Data Sources
@@ -54,6 +57,7 @@
 ./resource.ps1 aws_bedrockagentcore_code_interpreter
 ./resource.ps1 aws_bedrockagentcore_gateway
 ./resource.ps1 aws_bedrockagentcore_gateway_target
+./resource.ps1 aws_bedrockagentcore_harness
 ./resource.ps1 aws_bedrockagentcore_memory
 ./resource.ps1 aws_bedrockagentcore_memory_strategy
 ./resource.ps1 aws_bedrockagentcore_oauth2_credential_provider
@@ -107,7 +111,11 @@
 ./resource.ps1 aws_notifications_organizations_access
 ./resource.ps1 aws_observabilityadmin_centralization_rule_for_organization
 ./resource.ps1 aws_observabilityadmin_telemetry_enrichment
+./resource.ps1 aws_observabilityadmin_telemetry_evaluation
+./resource.ps1 aws_observabilityadmin_telemetry_evaluation_for_organization
 ./resource.ps1 aws_observabilityadmin_telemetry_pipeline
+./resource.ps1 aws_observabilityadmin_telemetry_rule
+./resource.ps1 aws_observabilityadmin_telemetry_rule_for_organization
 ./resource.ps1 aws_odb_cloud_autonomous_vm_cluster
 ./resource.ps1 aws_odb_cloud_exadata_infrastructure
 ./resource.ps1 aws_odb_cloud_vm_cluster
@@ -150,6 +158,9 @@
 ./resource.ps1 aws_savingsplans_savings_plan
 ./resource.ps1 aws_secretsmanager_tag
 ./resource.ps1 aws_securityhub_account_v2
+./resource.ps1 aws_securityhub_aggregator_v2
+./resource.ps1 aws_securityhub_automation_rule_v2
+./resource.ps1 aws_securityhub_connector_v2
 ./resource.ps1 aws_servicequotas_auto_management
 ./resource.ps1 aws_sesv2_tenant
 ./resource.ps1 aws_sesv2_tenant_resource_association
@@ -175,6 +186,8 @@
 ./resource.ps1 aws_workspacesweb_trust_store_association
 ./resource.ps1 aws_workspacesweb_user_access_logging_settings_association
 ./resource.ps1 aws_workspacesweb_user_settings_association
+./resource.ps1 aws_xray_indexing_rule
+./resource.ps1 aws_xray_trace_segment_destination
 ./resource.ps1 aws_account_regions -type data
 ./resource.ps1 aws_alb_listener -type data
 ./resource.ps1 aws_alb_target_group -type data

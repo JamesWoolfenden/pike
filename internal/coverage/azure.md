@@ -7,12 +7,13 @@
 
 ## Deprecated
 
-38 resources and 6 datasources are flagged as deprecated in provider schema v4.72.0. Users pinned to an older provider major may already be affected when they upgrade.
+39 resources and 6 datasources are flagged as deprecated in provider schema v4.74.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
 | Resource | Note |
 |---|---|
+| azurerm_ai_services | — |
 | azurerm_app_service | — |
 | azurerm_app_service_active_slot | — |
 | azurerm_app_service_hybrid_connection | — |

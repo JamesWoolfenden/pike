@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 88.57      |  1093       |  1234            |
-| Datasource | 99.29      |   421       |   424             |
+| Resources  | 88.00      |  1093       |  1242            |
+| Datasource | 98.83      |   421       |   426             |
 
 ## Deprecated
 
-28 resources and 7 datasources are flagged as deprecated in provider schema v7.31.0. Users pinned to an older provider major may already be affected when they upgrade.
+28 resources and 7 datasources are flagged as deprecated in provider schema v7.33.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -57,6 +57,7 @@
 ```shell
 ./resource.ps1 google_access_context_manager_egress_policy
 ./resource.ps1 google_access_context_manager_ingress_policy
+./resource.ps1 google_apigee_data_collector
 ./resource.ps1 google_apigee_endpoint_attachment
 ./resource.ps1 google_apigee_env_references
 ./resource.ps1 google_apigee_flowhook
@@ -72,14 +73,20 @@
 ./resource.ps1 google_biglake_iceberg_table_iam_policy
 ./resource.ps1 google_bigquery_reservation_group
 ./resource.ps1 google_ces_app_root_agent_association
+./resource.ps1 google_chronicle_dashboard_chart
 ./resource.ps1 google_chronicle_data_table
 ./resource.ps1 google_chronicle_data_table_row
+./resource.ps1 google_chronicle_native_dashboard
 ./resource.ps1 google_compute_firewall_policy_with_rules
 ./resource.ps1 google_compute_network_firewall_policy_with_rules
 ./resource.ps1 google_compute_preview_feature
 ./resource.ps1 google_compute_region_composite_health_check
 ./resource.ps1 google_compute_region_health_aggregation_policy
 ./resource.ps1 google_compute_region_health_source
+./resource.ps1 google_compute_region_instant_snapshot
+./resource.ps1 google_compute_region_instant_snapshot_iam_binding
+./resource.ps1 google_compute_region_instant_snapshot_iam_member
+./resource.ps1 google_compute_region_instant_snapshot_iam_policy
 ./resource.ps1 google_compute_region_network_firewall_policy
 ./resource.ps1 google_compute_region_network_firewall_policy_association
 ./resource.ps1 google_compute_region_network_firewall_policy_rule
@@ -88,6 +95,7 @@
 ./resource.ps1 google_compute_resize_request
 ./resource.ps1 google_contact_center_insights_assessment_rule
 ./resource.ps1 google_contact_center_insights_auto_labeling_rule
+./resource.ps1 google_contact_center_insights_encryption_spec
 ./resource.ps1 google_contact_center_insights_qa_question
 ./resource.ps1 google_contact_center_insights_qa_scorecard
 ./resource.ps1 google_contact_center_insights_qa_scorecard_revision
@@ -197,6 +205,8 @@
 ./resource.ps1 google_sql_provision_script
 ./resource.ps1 google_workload_identity_service_agent
 ./resource.ps1 google_artifact_registry_file -type data
+./resource.ps1 google_compute_region_instant_snapshot_iam_policy -type data
 ./resource.ps1 google_data_lineage_config -type data
+./resource.ps1 google_logging_log_view -type data
 ./resource.ps1 google_network_connectivity_hub_iam_policy -type data
 ```

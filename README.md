@@ -285,7 +285,7 @@ resource "aws_iam_policy" "terraformXVlBzgba" {
 
 And I am working on further enhancements to policy generation, if you have AWS auth installed:
 
-```hcl
+```shell
 e:\pike scan -d . -i -e
 9:13AM DBG terraform init at E:\Code\modules\aws\terraform-aws-activemq
 9:13AM DBG downloaded ip

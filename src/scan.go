@@ -67,7 +67,7 @@ func Runtime(dirName string, outputType string, file *string, init bool, prov st
 		return &unsupportedRuntimeProviderError{provider: prov}
 	}
 
-	permissionsBag, err := makePermissionBag(dirName, file, init, prov, false)
+	permissionsBag, err := MakePermissionBag(dirName, file, init, prov, false)
 	if err != nil {
 		var emptyIAC *emptyIACError
 		if errors.As(err, &emptyIAC) {
@@ -166,7 +166,7 @@ func MakePolicy(dirName string, file *string, init bool, enableResources bool, p
 
 	var output OutputPolicy
 
-	permissionsBag, err := makePermissionBag(dirName, file, init, provider, suppressDeprecated)
+	permissionsBag, err := MakePermissionBag(dirName, file, init, provider, suppressDeprecated)
 	if err != nil {
 		return output, fmt.Errorf("failed to create permission bag: %w", err)
 	}
@@ -188,7 +188,10 @@ func getAbsolutePath(path string) (string, error) {
 	return absPath, nil
 }
 
-func makePermissionBag(dirName string, file *string, init bool, provider string, suppressDeprecated bool) (Sorted, error) {
+// MakePermissionBag returns the full set of IAM permissions required to deploy
+// the Terraform in dirName (or a single file). Pass init=false for static
+// analysis without running terraform init.
+func MakePermissionBag(dirName string, file *string, init bool, provider string, suppressDeprecated bool) (Sorted, error) {
 	var files []string
 
 	if file == nil {

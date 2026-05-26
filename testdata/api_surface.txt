@@ -53,6 +53,7 @@ func LocateTerraform () (string, error)
 func Make (directory string) (*string, error)
 func MakeAzure (directory string) (*string, error)
 func MakeGCP (directory string) (*string, error)
+func MakePermissionBag (dirName string, file *string, init bool, provider string, suppressDeprecated bool) (Sorted, error)
 func MakePolicy (dirName string, file *string, init bool, enableResources bool, provider string, policyName string, suppressDeprecated bool) (OutputPolicy, error)
 func Minify (JSONOut string) string
 func NewAWSPolicy (actions []string, resources bool) (Policy, error)
