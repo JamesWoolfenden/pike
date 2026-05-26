@@ -1,5 +1,4 @@
 const ManifestSnapshotFilename = "modules.json"
-const Version = "9.9.9"
 func AWSPolicy (permissions []string, resources bool, policyName string) (AwsOutput, error)
 func AZUREPolicy (permissions []string, policyName string) (string, error)
 func AlmostEqual (a , b float64) bool
@@ -88,3 +87,4 @@ type RuntimePermission struct
 type Sorted struct
 type Statement struct
 type ValidationResult struct
+var Version = <redacted>
