@@ -42,6 +42,9 @@ role: FORCE
 role_init:
 	GOOGLE_BACKEND_CREDENTIALS=$(PIKE_GOOGLE_BACKEND_CREDENTIALS) tofu  -chdir=./role init
 
+role_init_upgrade:
+	GOOGLE_BACKEND_CREDENTIALS=$(PIKE_GOOGLE_BACKEND_CREDENTIALS) tofu  -chdir=./role init -upgrade
+
 scan:
 	GCP_PROJECT=pike-477416 pike scan -w -i -e -d ./ -outfile "./role/google_project_iam_custom_role.tf" -policyName terraform_pike
 

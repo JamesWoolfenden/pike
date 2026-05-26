@@ -3,7 +3,7 @@
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
 | Resources  | 88.00      |  1093       |  1242            |
-| Datasource | 98.83      |   421       |   426             |
+| Datasource | 100.00      |   426       |   426             |
 
 ## Deprecated
 
@@ -204,9 +204,4 @@
 ./resource.ps1 google_service_networking_vpc_service_controls
 ./resource.ps1 google_sql_provision_script
 ./resource.ps1 google_workload_identity_service_agent
-./resource.ps1 google_artifact_registry_file -type data
-./resource.ps1 google_compute_region_instant_snapshot_iam_policy -type data
-./resource.ps1 google_data_lineage_config -type data
-./resource.ps1 google_logging_log_view -type data
-./resource.ps1 google_network_connectivity_hub_iam_policy -type data
 ```
