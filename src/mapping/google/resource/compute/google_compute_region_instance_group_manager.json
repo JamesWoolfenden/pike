@@ -1,22 +1,22 @@
 [
   {
     "apply": [
-      "compute.regionInstanceGroupManagers.create",
-      "compute.regionInstanceGroupManagers.delete",
-      "compute.regionInstanceGroupManagers.get",
-      "compute.regionInstanceGroupManagers.update"
+      "compute.instanceGroupManagers.create",
+      "compute.instanceGroupManagers.delete",
+      "compute.instanceGroupManagers.get",
+      "compute.instanceGroupManagers.update"
     ],
     "attributes": {
       "tags": []
     },
     "destroy": [
-      "compute.regionInstanceGroupManagers.delete"
+      "compute.instanceGroupManagers.delete"
     ],
     "modify": [
-      "compute.regionInstanceGroupManagers.update"
+      "compute.instanceGroupManagers.update"
     ],
     "plan": [
-      "compute.regionInstanceGroupManagers.get"
+      "compute.instanceGroupManagers.get"
     ]
   }
 ]
