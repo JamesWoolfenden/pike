@@ -3,7 +3,7 @@
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
 | Resources  | 90.84      |  1507       |  1659            |
-| Datasource | 96.68      |   641       |   663             |
+| Datasource | 100.00      |   663       |   663             |
 
 ## Deprecated
 
@@ -188,26 +188,4 @@
 ./resource.ps1 aws_workspacesweb_user_settings_association
 ./resource.ps1 aws_xray_indexing_rule
 ./resource.ps1 aws_xray_trace_segment_destination
-./resource.ps1 aws_account_regions -type data
-./resource.ps1 aws_alb_listener -type data
-./resource.ps1 aws_alb_target_group -type data
-./resource.ps1 aws_dynamodb_backups -type data
-./resource.ps1 aws_ec2_service_link_virtual_interface -type data
-./resource.ps1 aws_ec2_service_link_virtual_interfaces -type data
-./resource.ps1 aws_glue_catalog -type data
-./resource.ps1 aws_iam_outbound_web_identity_federation -type data
-./resource.ps1 aws_iam_role_policies -type data
-./resource.ps1 aws_iam_role_policy_attachments -type data
-./resource.ps1 aws_msk_topic -type data
-./resource.ps1 aws_networkmanager_core_network -type data
-./resource.ps1 aws_opensearchserverless_collection_group -type data
-./resource.ps1 aws_opensearchserverless_collection_groups -type data
-./resource.ps1 aws_s3files_access_point -type data
-./resource.ps1 aws_s3files_file_system -type data
-./resource.ps1 aws_s3files_file_systems -type data
-./resource.ps1 aws_s3files_mount_target -type data
-./resource.ps1 aws_savingsplans_offerings -type data
-./resource.ps1 aws_securityhub_enabled_standards -type data
-./resource.ps1 aws_securityhub_security_controls -type data
-./resource.ps1 aws_uxc_services -type data
 ```

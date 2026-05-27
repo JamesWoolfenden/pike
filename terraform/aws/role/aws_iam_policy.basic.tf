@@ -7,9 +7,14 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "VisualEditor0",
         "Effect" : "Allow",
         "Action" : [
+          //aws_s3files_access_point
 
-          //aws_s3control_multi_region_access_points
-          "s3:ListMultiRegionAccessPoints"
+          //aws_securityhub_enabled_standards
+          "securityhub:GetEnabledStandards",
+          //aws_securityhub_security_controls
+          "securityhub:ListSecurityControlDefinitions",
+          //aws_uxc_services
+          "uxc:ListServices"
         ],
         "Resource" : [
           "*"

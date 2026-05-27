@@ -1,6 +1,4 @@
 package pike
 
-// Version controls the applications version
-//
-//goland:noinspection GoUnusedConst
-const Version = "9.9.9"
+// Version is set at build time via -ldflags.
+var Version = "999.999.999"

@@ -32,6 +32,9 @@ update: upgrade
 role: FORCE
 	tofu -chdir=./role apply -auto-approve
 
+role_init:
+	tofu -chdir=./role init --upgrade
+
 FORCE:
 
 sleep:

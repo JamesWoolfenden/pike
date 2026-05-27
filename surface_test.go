@@ -103,12 +103,18 @@ func TestHelpGolden(t *testing.T) {
 // pike.Version which is bumped per release) and any trailing whitespace.
 func normalizeHelp(s string) string {
 	var keep []string
+	skipNext := false
 	for _, line := range strings.Split(s, "\n") {
 		trimmed := strings.TrimRight(line, " \t\r")
-		// Skip the VERSION: block entirely - it's release-gated and would
-		// break the golden every tag.
+		if skipNext {
+			skipNext = false
+			continue
+		}
+		// urfave/cli prints "VERSION:\n   x.y.z" — redact both lines so the
+		// golden survives release bumps.
 		if strings.HasPrefix(strings.TrimSpace(trimmed), "VERSION:") {
 			keep = append(keep, "VERSION: <redacted-for-golden>")
+			skipNext = true
 			continue
 		}
 		keep = append(keep, trimmed)
@@ -181,6 +187,9 @@ func TestAPISurfaceGolden(t *testing.T) {
 							val := ""
 							if i < len(s.Values) {
 								val = " = " + exprString(s.Values[i])
+							}
+							if n.Name == "Version" {
+								val = " = <redacted>"
 							}
 							lines = append(lines, tok+" "+n.Name+val)
 						}

@@ -5,7 +5,6 @@ USAGE:
    Pike is a CLI for investigating IAM permissions
 
 VERSION: <redacted-for-golden>
-   9.9.9
 
 AUTHOR:
    James Woolfenden <james.woolfenden@gmail.com>
