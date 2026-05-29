@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 88.00      |  1093       |  1242            |
-| Datasource | 100.00      |   426       |   426             |
+| Resources  | 87.51      |  1093       |  1249            |
+| Datasource | 99.53      |   426       |   428             |
 
 ## Deprecated
 
-28 resources and 7 datasources are flagged as deprecated in provider schema v7.33.0. Users pinned to an older provider major may already be affected when they upgrade.
+28 resources and 7 datasources are flagged as deprecated in provider schema v7.34.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -93,6 +93,7 @@
 ./resource.ps1 google_compute_region_network_firewall_policy_with_rules
 ./resource.ps1 google_compute_region_ssl_policy
 ./resource.ps1 google_compute_resize_request
+./resource.ps1 google_config_deployment
 ./resource.ps1 google_contact_center_insights_assessment_rule
 ./resource.ps1 google_contact_center_insights_auto_labeling_rule
 ./resource.ps1 google_contact_center_insights_encryption_spec
@@ -115,6 +116,7 @@
 ./resource.ps1 google_dialogflow_cx_test_case
 ./resource.ps1 google_dialogflow_cx_tool_version
 ./resource.ps1 google_dialogflow_environment
+./resource.ps1 google_dialogflow_sip_trunk
 ./resource.ps1 google_discovery_engine_serving_config
 ./resource.ps1 google_document_ai_schema
 ./resource.ps1 google_firebase_app_check_app_attest_config
@@ -147,6 +149,10 @@
 ./resource.ps1 google_integrations_auth_config
 ./resource.ps1 google_integrations_client
 ./resource.ps1 google_kms_project_autokey_config
+./resource.ps1 google_migration_center_assets_export_job
+./resource.ps1 google_migration_center_report_config
+./resource.ps1 google_migration_center_settings
+./resource.ps1 google_migration_center_source
 ./resource.ps1 google_network_connectivity_destination
 ./resource.ps1 google_network_connectivity_group
 ./resource.ps1 google_network_connectivity_hub_iam_binding
@@ -158,6 +164,7 @@
 ./resource.ps1 google_network_connectivity_regional_endpoint
 ./resource.ps1 google_network_connectivity_service_connection_policy
 ./resource.ps1 google_network_connectivity_spoke
+./resource.ps1 google_network_connectivity_transport
 ./resource.ps1 google_network_management_connectivity_test
 ./resource.ps1 google_network_management_vpc_flow_logs_config
 ./resource.ps1 google_network_security_backend_authentication_config
@@ -204,4 +211,6 @@
 ./resource.ps1 google_service_networking_vpc_service_controls
 ./resource.ps1 google_sql_provision_script
 ./resource.ps1 google_workload_identity_service_agent
+./resource.ps1 google_compute_service_attachment -type data
+./resource.ps1 google_oracle_database_goldengate_deployment_environments -type data
 ```
