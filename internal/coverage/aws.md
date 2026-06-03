@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 90.84      |  1507       |  1659            |
+| Resources  | 90.62      |  1507       |  1663            |
 | Datasource | 100.00      |   663       |   663             |
 
 ## Deprecated
 
-13 resources and 3 datasources are flagged as deprecated in provider schema v6.46.0. Users pinned to an older provider major may already be affected when they upgrade.
+13 resources and 3 datasources are flagged as deprecated in provider schema v6.47.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -61,6 +61,9 @@
 ./resource.ps1 aws_bedrockagentcore_memory
 ./resource.ps1 aws_bedrockagentcore_memory_strategy
 ./resource.ps1 aws_bedrockagentcore_oauth2_credential_provider
+./resource.ps1 aws_bedrockagentcore_online_evaluation_config
+./resource.ps1 aws_bedrockagentcore_policy_engine
+./resource.ps1 aws_bedrockagentcore_resource_policy
 ./resource.ps1 aws_bedrockagentcore_token_vault_cmk
 ./resource.ps1 aws_bedrockagentcore_workload_identity
 ./resource.ps1 aws_billing_view
@@ -138,6 +141,7 @@
 ./resource.ps1 aws_redshift_namespace_registration
 ./resource.ps1 aws_s3_bucket_abac
 ./resource.ps1 aws_s3_bucket_metadata_configuration
+./resource.ps1 aws_s3control_multi_region_access_point_routes
 ./resource.ps1 aws_s3files_access_point
 ./resource.ps1 aws_s3files_file_system
 ./resource.ps1 aws_s3files_file_system_policy
