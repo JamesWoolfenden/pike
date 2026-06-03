@@ -9,7 +9,12 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "compute.snapshotSettings.update"
+    ],
+    "plan": [
+      "compute.snapshotSettings.get",
+      "compute.zoneOperations.get"
+    ]
   }
 ]

@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "dlp.storedInfoTypes.delete"
+    ],
+    "modify": [
+      "dlp.storedInfoTypes.update"
+    ],
+    "plan": [
+      "dlp.storedInfoTypes.get"
+    ]
   }
 ]

@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "clouddeploy.targets.delete"
+    ],
+    "modify": [
+      "clouddeploy.targets.update"
+    ],
+    "plan": [
+      "clouddeploy.targets.get"
+    ]
   }
 ]

@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "backupdr.backupPlans.delete"
+    ],
+    "modify": [
+      "backupdr.backupPlans.update"
+    ],
+    "plan": [
+      "backupdr.backupPlans.get"
+    ]
   }
 ]

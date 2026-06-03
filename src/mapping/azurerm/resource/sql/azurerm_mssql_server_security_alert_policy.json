@@ -16,8 +16,9 @@
     ],
     "plan": [
       "Microsoft.Resources/subscriptions/resourceGroups/read",
-      "Microsoft.Sql/servers/securityAlertPolicies/read",
-      "Microsoft.Sql/servers/read"
+      "Microsoft.Sql/servers/read",
+      "Microsoft.Sql/servers/securityAlertPolicies/operationResults/read",
+      "Microsoft.Sql/servers/securityAlertPolicies/read"
     ]
   }
 ]

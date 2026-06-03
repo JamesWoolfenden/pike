@@ -19,7 +19,8 @@
       "networkconnectivity.operations.get"
     ],
     "plan": [
-      "networkconnectivity.hubs.get"
+      "networkconnectivity.hubs.get",
+      "networkconnectivity.operations.get"
     ]
   }
 ]

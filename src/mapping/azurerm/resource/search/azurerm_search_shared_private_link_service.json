@@ -19,8 +19,9 @@
     ],
     "plan": [
       "Microsoft.Resources/subscriptions/resourceGroups/read",
-      "Microsoft.Search/searchServices/sharedPrivateLinkResources/read",
-      "Microsoft.Search/searchServices/read"
+      "Microsoft.Search/searchServices/read",
+      "Microsoft.Search/searchServices/sharedPrivateLinkResources/operationStatuses/read",
+      "Microsoft.Search/searchServices/sharedPrivateLinkResources/read"
     ]
   }
 ]

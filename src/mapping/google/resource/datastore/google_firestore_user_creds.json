@@ -12,8 +12,17 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "datastore.userCreds.delete"
+    ],
+    "modify": [
+      "datastore.userCreds.update"
+    ],
+    "plan": [
+      "appengine.applications.get",
+      "datastore.operations.get",
+      "datastore.userCreds.get",
+      "resourcemanager.projects.get"
+    ]
   }
 ]

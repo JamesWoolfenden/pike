@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "cloudbuild.workerpools.delete"
+    ],
+    "modify": [
+      "cloudbuild.workerpools.update"
+    ],
+    "plan": [
+      "cloudbuild.workerpools.get"
+    ]
   }
 ]

@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "cloudaicompanion.codeToolsSettings.delete"
+    ],
+    "modify": [
+      "cloudaicompanion.codeToolsSettings.update"
+    ],
+    "plan": [
+      "cloudaicompanion.codeToolsSettings.get"
+    ]
   }
 ]

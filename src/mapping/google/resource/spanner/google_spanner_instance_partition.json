@@ -17,6 +17,7 @@
       "spanner.instancePartitions.update"
     ],
     "plan": [
+      "spanner.instancePartitionOperations.get",
       "spanner.instancePartitions.get"
     ]
   }

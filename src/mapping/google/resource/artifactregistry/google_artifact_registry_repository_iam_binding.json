@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "artifactregistry.repositories.setIamPolicy"
+    ],
+    "plan": [
+      "artifactregistry.repositories.getIamPolicy"
+    ]
   }
 ]

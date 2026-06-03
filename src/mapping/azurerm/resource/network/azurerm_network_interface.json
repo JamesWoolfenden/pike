@@ -13,7 +13,13 @@
     "destroy": [
       "Microsoft.Network/networkInterfaces/delete"
     ],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "Microsoft.Network/networkInterfaces/write"
+    ],
+    "plan": [
+      "Microsoft.Network/networkInterfaces/read",
+      "Microsoft.Network/virtualNetworks/subnets/read",
+      "Microsoft.Resources/subscriptions/resourcegroups/read"
+    ]
   }
 ]

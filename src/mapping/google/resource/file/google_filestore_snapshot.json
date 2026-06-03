@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "file.snapshots.delete"
+    ],
+    "modify": [
+      "file.snapshots.update"
+    ],
+    "plan": [
+      "file.snapshots.get"
+    ]
   }
 ]

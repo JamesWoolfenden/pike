@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "cloudaicompanion.releaseChannelSettings.delete"
+    ],
+    "modify": [
+      "cloudaicompanion.releaseChannelSettings.update"
+    ],
+    "plan": [
+      "cloudaicompanion.releaseChannelSettings.get"
+    ]
   }
 ]

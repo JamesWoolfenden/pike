@@ -8,7 +8,9 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
+    "modify": [
+      "cloudkms.keyRings.setIamPolicy"
+    ],
     "plan": [
       "cloudkms.keyRings.getIamPolicy"
     ]

@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "accesscontextmanager.servicePerimeters.delete"
+    ],
+    "modify": [
+      "accesscontextmanager.servicePerimeters.update"
+    ],
+    "plan": [
+      "accesscontextmanager.servicePerimeters.get"
+    ]
   }
 ]

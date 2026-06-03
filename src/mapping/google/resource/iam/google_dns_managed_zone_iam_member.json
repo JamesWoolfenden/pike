@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "iam.serviceAccounts.setIamPolicy"
+    ],
+    "plan": [
+      "iam.serviceAccounts.getIamPolicy"
+    ]
   }
 ]

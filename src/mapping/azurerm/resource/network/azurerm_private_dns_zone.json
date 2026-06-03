@@ -9,8 +9,15 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "Microsoft.Network/privateDnsZones/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/privateDnsZones/write"
+    ],
+    "plan": [
+      "Microsoft.Network/privateDnsZones/SOA/read",
+      "Microsoft.Network/privateDnsZones/read"
+    ]
   }
 ]

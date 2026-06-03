@@ -12,8 +12,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "aiplatform.endpoints.delete"
+    ],
+    "modify": [
+      "aiplatform.endpoints.update"
+    ],
+    "plan": [
+      "aiplatform.endpoints.get"
+    ]
   }
 ]

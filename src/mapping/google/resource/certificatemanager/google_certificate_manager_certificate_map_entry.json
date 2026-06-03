@@ -10,8 +10,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "certificatemanager.certmapentries.delete"
+    ],
+    "modify": [
+      "certificatemanager.certmapentries.update"
+    ],
+    "plan": [
+      "certificatemanager.certmapentries.get"
+    ]
   }
 ]

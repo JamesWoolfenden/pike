@@ -17,6 +17,7 @@
       "cloudkms.cryptoKeys.update"
     ],
     "plan": [
+      "cloudkms.cryptoKeyVersions.list",
       "cloudkms.cryptoKeys.get"
     ]
   }

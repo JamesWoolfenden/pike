@@ -9,8 +9,12 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
+    "destroy": [
+      "pubsub.topics.delete"
+    ],
+    "modify": [
+      "pubsub.topics.update"
+    ],
     "plan": [
       "pubsub.topics.get"
     ]

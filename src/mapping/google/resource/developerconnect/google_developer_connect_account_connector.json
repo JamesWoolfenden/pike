@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "developerconnect.accountConnectors.delete"
+    ],
+    "modify": [
+      "developerconnect.accountConnectors.update"
+    ],
+    "plan": [
+      "developerconnect.accountConnectors.get"
+    ]
   }
 ]

@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "cloudaicompanion.loggingSettings.delete"
+    ],
+    "modify": [
+      "cloudaicompanion.loggingSettings.update"
+    ],
+    "plan": [
+      "cloudaicompanion.loggingSettings.get"
+    ]
   }
 ]

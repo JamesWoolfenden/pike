@@ -10,8 +10,15 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "blockchainnodeengine.blockchainNodes.delete"
+    ],
+    "modify": [
+      "blockchainnodeengine.blockchainNodes.update"
+    ],
+    "plan": [
+      "blockchainnodeengine.blockchainNodes.get",
+      "blockchainnodeengine.operations.get"
+    ]
   }
 ]

@@ -17,6 +17,14 @@ func GetAZUREResourcePermissions(result ResourceV2) ([]string, error) {
 	return GetPermissionMap(temp, result.Attributes, result.Name)
 }
 
+func getAZUREPlanPermissions(result ResourceV2) ([]string, error) {
+	temp := AzureLookup(result.Name)
+	if temp == nil {
+		return nil, &notImplementedResourceError{result.Name}
+	}
+	return getPlanPermissionMap(temp, result.Attributes, result.Name)
+}
+
 func AzureLookup(name string) []byte {
 	return azureResourceMap[name]
 }

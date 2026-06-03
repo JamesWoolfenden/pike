@@ -10,8 +10,15 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "compute.healthChecks.delete"
+    ],
+    "modify": [
+      "compute.healthChecks.update"
+    ],
+    "plan": [
+      "compute.globalOperations.get",
+      "compute.healthChecks.get"
+    ]
   }
 ]

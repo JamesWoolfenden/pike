@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "networkservices.tlsRoutes.delete"
+    ],
+    "modify": [
+      "networkservices.tlsRoutes.update"
+    ],
+    "plan": [
+      "networkservices.tlsRoutes.get"
+    ]
   }
 ]

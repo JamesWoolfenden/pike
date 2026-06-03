@@ -8,7 +8,9 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
+    "modify": [
+      "aiplatform.entityTypes.setIamPolicy"
+    ],
     "plan": [
       "aiplatform.entityTypes.getIamPolicy"
     ]

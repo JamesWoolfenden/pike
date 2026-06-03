@@ -8,8 +8,12 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
+    "destroy": [
+      "apigee.nataddresses.delete"
+    ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "apigee.nataddresses.get"
+    ]
   }
 ]

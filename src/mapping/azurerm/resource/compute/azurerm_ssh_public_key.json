@@ -11,9 +11,12 @@
     "destroy": [
       "Microsoft.Compute/sshPublicKeys/delete"
     ],
-    "modify": [],
+    "modify": [
+      "Microsoft.Compute/sshPublicKeys/write"
+    ],
     "plan": [
-      "Microsoft.Compute/sshPublicKeys/read"
+      "Microsoft.Compute/sshPublicKeys/read",
+      "Microsoft.Resources/subscriptions/resourcegroups/read"
     ]
   }
 ]

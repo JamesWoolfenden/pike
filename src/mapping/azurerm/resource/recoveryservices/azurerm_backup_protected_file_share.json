@@ -19,10 +19,11 @@
       "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/write"
     ],
     "plan": [
-      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/operationResults/read",
       "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/read",
+      "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/read",
       "Microsoft.RecoveryServices/Vaults/read",
-      "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/read"
+      "Microsoft.Resources/subscriptions/resourceGroups/read"
     ]
   }
 ]

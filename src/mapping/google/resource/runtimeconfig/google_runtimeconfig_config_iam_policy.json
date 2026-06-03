@@ -8,7 +8,9 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
+    "modify": [
+      "runtimeconfig.configs.setIamPolicy"
+    ],
     "plan": [
       "runtimeconfig.configs.getIamPolicy"
     ]

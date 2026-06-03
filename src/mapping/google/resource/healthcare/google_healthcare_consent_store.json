@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "healthcare.consentStores.delete"
+    ],
+    "modify": [
+      "healthcare.consentStores.update"
+    ],
+    "plan": [
+      "healthcare.consentStores.get"
+    ]
   }
 ]

@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "oracledatabase.cloudExadataInfrastructures.delete"
+    ],
+    "modify": [
+      "oracledatabase.cloudExadataInfrastructures.update"
+    ],
+    "plan": [
+      "oracledatabase.cloudExadataInfrastructures.get"
+    ]
   }
 ]

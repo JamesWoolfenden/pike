@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "source.repos.setIamPolicy"
+    ],
+    "plan": [
+      "source.repos.getIamPolicy"
+    ]
   }
 ]

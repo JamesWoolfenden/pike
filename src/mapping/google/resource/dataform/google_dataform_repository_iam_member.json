@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "dataform.repositories.setIamPolicy"
+    ],
+    "plan": [
+      "dataform.repositories.getIamPolicy"
+    ]
   }
 ]

@@ -8,8 +8,12 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
+    "destroy": [
+      "transcoder.jobTemplates.delete"
+    ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "transcoder.jobTemplates.get"
+    ]
   }
 ]

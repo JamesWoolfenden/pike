@@ -9,8 +9,13 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
+    "destroy": [
+      "compute.globalNetworkEndpointGroups.delete"
+    ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "compute.globalNetworkEndpointGroups.get",
+      "compute.globalOperations.get"
+    ]
   }
 ]

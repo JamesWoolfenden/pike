@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "osconfig.osPolicyAssignments.delete"
+    ],
+    "modify": [
+      "osconfig.osPolicyAssignments.update"
+    ],
+    "plan": [
+      "osconfig.osPolicyAssignments.get"
+    ]
   }
 ]

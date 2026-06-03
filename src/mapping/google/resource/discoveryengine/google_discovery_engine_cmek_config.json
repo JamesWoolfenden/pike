@@ -9,7 +9,12 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "discoveryengine.cmekConfigs.update"
+    ],
+    "plan": [
+      "discoveryengine.cmekConfigs.get",
+      "discoveryengine.cmekConfigs.list"
+    ]
   }
 ]

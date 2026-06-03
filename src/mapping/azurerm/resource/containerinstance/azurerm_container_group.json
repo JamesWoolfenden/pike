@@ -17,8 +17,9 @@
       "Microsoft.ContainerInstance/containerGroups/write"
     ],
     "plan": [
-      "Microsoft.Resources/subscriptions/resourceGroups/read",
-      "Microsoft.ContainerInstance/containerGroups/read"
+      "Microsoft.ContainerInstance/containerGroups/operationResults/read",
+      "Microsoft.ContainerInstance/containerGroups/read",
+      "Microsoft.Resources/subscriptions/resourceGroups/read"
     ]
   }
 ]

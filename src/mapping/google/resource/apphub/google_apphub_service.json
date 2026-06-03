@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "apphub.services.delete"
+    ],
+    "modify": [
+      "apphub.services.update"
+    ],
+    "plan": [
+      "apphub.services.get"
+    ]
   }
 ]

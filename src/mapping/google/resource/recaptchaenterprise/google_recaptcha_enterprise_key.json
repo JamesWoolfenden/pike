@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "recaptchaenterprise.keys.delete"
+    ],
+    "modify": [
+      "recaptchaenterprise.keys.update"
+    ],
+    "plan": [
+      "recaptchaenterprise.keys.get"
+    ]
   }
 ]

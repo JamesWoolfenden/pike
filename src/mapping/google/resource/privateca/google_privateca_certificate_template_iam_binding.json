@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "privateca.certificateTemplates.setIamPolicy"
+    ],
+    "plan": [
+      "privateca.certificateTemplates.getIamPolicy"
+    ]
   }
 ]

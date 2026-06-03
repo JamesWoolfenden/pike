@@ -7,7 +7,9 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
+    "destroy": [
+      "discoveryengine.sitemaps.delete"
+    ],
     "modify": [],
     "plan": []
   }

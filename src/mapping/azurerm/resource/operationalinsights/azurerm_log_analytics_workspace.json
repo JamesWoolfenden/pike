@@ -10,7 +10,11 @@
     "destroy": [
       "Microsoft.OperationalInsights/workspaces/delete"
     ],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "Microsoft.OperationalInsights/workspaces/write"
+    ],
+    "plan": [
+      "Microsoft.OperationalInsights/workspaces/read"
+    ]
   }
 ]

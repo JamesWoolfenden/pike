@@ -10,8 +10,15 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "redis.clusters.delete"
+    ],
+    "modify": [
+      "redis.clusters.update"
+    ],
+    "plan": [
+      "redis.clusters.get",
+      "redis.operations.get"
+    ]
   }
 ]

@@ -19,6 +19,8 @@
     ],
     "plan": [
       "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Synapse/workspaces/operationResults/read",
+      "Microsoft.Synapse/workspaces/operationStatuses/read",
       "Microsoft.Synapse/workspaces/read"
     ]
   }

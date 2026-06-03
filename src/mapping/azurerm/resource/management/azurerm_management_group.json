@@ -10,8 +10,15 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "Microsoft.Authorization/roleAssignments/delete"
+    ],
+    "modify": [
+      "Microsoft.Authorization/roleAssignments/write"
+    ],
+    "plan": [
+      "Microsoft.Authorization/roleAssignments/read",
+      "Microsoft.Resources/subscriptions/providers/read"
+    ]
   }
 ]

@@ -12,6 +12,8 @@
       "aiplatform.metadataStores.delete"
     ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "aiplatform.metadataStores.get"
+    ]
   }
 ]

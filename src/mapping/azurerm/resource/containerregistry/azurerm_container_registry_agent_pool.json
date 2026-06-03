@@ -18,9 +18,10 @@
       "Microsoft.ContainerRegistry/registries/agentpools/write"
     ],
     "plan": [
-      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ContainerRegistry/registries/agentpools/operationStatuses/read",
       "Microsoft.ContainerRegistry/registries/agentpools/read",
-      "Microsoft.ContainerRegistry/registries/read"
+      "Microsoft.ContainerRegistry/registries/read",
+      "Microsoft.Resources/subscriptions/resourceGroups/read"
     ]
   }
 ]

@@ -9,8 +9,13 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
+    "destroy": [
+      "datamigration.privateconnections.delete"
+    ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "datamigration.operations.get",
+      "datamigration.privateconnections.get"
+    ]
   }
 ]

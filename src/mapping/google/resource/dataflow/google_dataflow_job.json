@@ -10,7 +10,10 @@
     },
     "destroy": [],
     "modify": [],
-    "plan": [],
+    "plan": [
+      "dataflow.jobs.get",
+      "resourcemanager.projects.get"
+    ],
     "runtime": {
       "parameters": [
         "storage.objects.get",

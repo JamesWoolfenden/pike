@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "osconfig.patchDeployments.delete"
+    ],
+    "modify": [
+      "osconfig.patchDeployments.update"
+    ],
+    "plan": [
+      "osconfig.patchDeployments.get"
+    ]
   }
 ]

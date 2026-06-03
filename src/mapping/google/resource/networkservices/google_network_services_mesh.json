@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "networkservices.meshes.delete"
+    ],
+    "modify": [
+      "networkservices.meshes.update"
+    ],
+    "plan": [
+      "networkservices.meshes.get"
+    ]
   }
 ]

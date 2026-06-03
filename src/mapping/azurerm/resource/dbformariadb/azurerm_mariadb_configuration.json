@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "Microsoft.DBforMariaDB/servers/configurations/write"
+    ],
+    "plan": [
+      "Microsoft.DBforMariaDB/servers/configurations/read"
+    ]
   }
 ]

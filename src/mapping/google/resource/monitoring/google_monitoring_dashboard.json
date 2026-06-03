@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "monitoring.dashboards.delete"
+    ],
+    "modify": [
+      "monitoring.dashboards.update"
+    ],
+    "plan": [
+      "monitoring.dashboards.get"
+    ]
   }
 ]

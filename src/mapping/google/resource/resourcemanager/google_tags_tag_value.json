@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "resourcemanager.tagValues.delete"
+    ],
+    "modify": [
+      "resourcemanager.tagValues.update"
+    ],
+    "plan": [
+      "resourcemanager.tagValues.get"
+    ]
   }
 ]

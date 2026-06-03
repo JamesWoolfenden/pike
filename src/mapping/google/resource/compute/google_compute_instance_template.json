@@ -14,7 +14,8 @@
     ],
     "modify": [],
     "plan": [
-      "compute.instanceTemplates.get"
+      "compute.instanceTemplates.get",
+      "compute.networks.get"
     ]
   }
 ]

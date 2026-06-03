@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "essentialcontacts.contacts.delete"
+    ],
+    "modify": [
+      "essentialcontacts.contacts.update"
+    ],
+    "plan": [
+      "essentialcontacts.contacts.get"
+    ]
   }
 ]

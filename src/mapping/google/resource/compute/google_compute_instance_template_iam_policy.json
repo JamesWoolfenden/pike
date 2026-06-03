@@ -8,7 +8,9 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
+    "modify": [
+      "compute.instanceTemplates.setIamPolicy"
+    ],
     "plan": [
       "compute.instanceTemplates.getIamPolicy"
     ]

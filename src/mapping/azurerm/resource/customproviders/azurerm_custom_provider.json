@@ -17,8 +17,9 @@
       "Microsoft.CustomProviders/resourceproviders/write"
     ],
     "plan": [
-      "Microsoft.Resources/subscriptions/resourceGroups/read",
-      "Microsoft.CustomProviders/resourceproviders/read"
+      "Microsoft.CustomProviders/resourceproviders/operationstatuses/read",
+      "Microsoft.CustomProviders/resourceproviders/read",
+      "Microsoft.Resources/subscriptions/resourceGroups/read"
     ]
   }
 ]

@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "cloudaicompanion.geminiGcpEnablementSettings.delete"
+    ],
+    "modify": [
+      "cloudaicompanion.geminiGcpEnablementSettings.update"
+    ],
+    "plan": [
+      "cloudaicompanion.geminiGcpEnablementSettings.get"
+    ]
   }
 ]

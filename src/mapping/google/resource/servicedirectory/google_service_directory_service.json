@@ -15,6 +15,8 @@
     "modify": [
       "servicedirectory.services.update"
     ],
-    "plan": []
+    "plan": [
+      "servicedirectory.services.get"
+    ]
   }
 ]

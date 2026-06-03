@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "networkservices.serviceBindings.delete"
+    ],
+    "modify": [
+      "networkservices.serviceBindings.update"
+    ],
+    "plan": [
+      "networkservices.serviceBindings.get"
+    ]
   }
 ]

@@ -7,7 +7,9 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
+    "modify": [
+      "Microsoft.KeyVault/vaults/accessPolicies/write"
+    ],
     "plan": []
   }
 ]

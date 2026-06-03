@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "composer.userworkloadsconfigmaps.delete"
+    ],
+    "modify": [
+      "composer.userworkloadsconfigmaps.update"
+    ],
+    "plan": [
+      "composer.userworkloadsconfigmaps.get"
+    ]
   }
 ]

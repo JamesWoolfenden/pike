@@ -15,12 +15,18 @@
       "tags": []
     },
     "destroy": [
-      "Microsoft.Web/sites/config/delete"
+      "Microsoft.Web/sites/config/delete",
+      "Microsoft.Web/sites/delete"
     ],
-    "modify": [],
+    "modify": [
+      "Microsoft.Web/sites/config/write",
+      "Microsoft.Web/sites/write"
+    ],
     "plan": [
       "Microsoft.Resources/subscriptions/providers/read",
-      "Microsoft.Web/sites/read"
+      "Microsoft.Web/sites/config/read",
+      "Microsoft.Web/sites/read",
+      "Microsoft.Web/sites/sourcecontrols/read"
     ]
   }
 ]

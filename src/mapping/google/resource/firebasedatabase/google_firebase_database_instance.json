@@ -15,8 +15,11 @@
       "firebasedatabase.instances.disable"
     ],
     "modify": [
+      "firebasedatabase.instances.disable",
       "firebasedatabase.instances.update"
     ],
-    "plan": []
+    "plan": [
+      "firebasedatabase.instances.get"
+    ]
   }
 ]

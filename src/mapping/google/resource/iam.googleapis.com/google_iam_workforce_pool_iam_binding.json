@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "iam.googleapis.com/workforcePools.setIamPolicy"
+    ],
+    "plan": [
+      "iam.googleapis.com/workforcePools.getIamPolicy"
+    ]
   }
 ]

@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "contactcenterinsights.views.delete"
+    ],
+    "modify": [
+      "contactcenterinsights.views.update"
+    ],
+    "plan": [
+      "contactcenterinsights.views.get"
+    ]
   }
 ]

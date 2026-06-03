@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "edgenetwork.subnetworks.delete"
+    ],
+    "modify": [
+      "edgenetwork.subnetworks.update"
+    ],
+    "plan": [
+      "edgenetwork.subnetworks.get"
+    ]
   }
 ]

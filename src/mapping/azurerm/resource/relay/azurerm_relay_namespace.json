@@ -17,8 +17,9 @@
       "Microsoft.Relay/namespaces/write"
     ],
     "plan": [
-      "Microsoft.Resources/subscriptions/resourceGroups/read",
-      "Microsoft.Relay/namespaces/read"
+      "Microsoft.Relay/namespaces/operationresults/read",
+      "Microsoft.Relay/namespaces/read",
+      "Microsoft.Resources/subscriptions/resourceGroups/read"
     ]
   }
 ]

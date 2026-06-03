@@ -27,7 +27,8 @@
     ],
     "modify": [],
     "plan": [
-      "compute.instances.get"
+      "compute.instances.get",
+      "compute.zones.get"
     ],
     "runtime": {
       "attached_disk": [

@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "vmwareengine.clusters.delete"
+    ],
+    "modify": [
+      "vmwareengine.clusters.update"
+    ],
+    "plan": [
+      "vmwareengine.clusters.get"
+    ]
   }
 ]

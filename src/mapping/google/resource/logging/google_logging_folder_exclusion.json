@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "logging.exclusions.delete"
+    ],
+    "modify": [
+      "logging.exclusions.update"
+    ],
+    "plan": [
+      "logging.exclusions.get"
+    ]
   }
 ]

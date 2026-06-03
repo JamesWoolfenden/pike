@@ -9,8 +9,13 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
+    "destroy": [
+      "compute.regionNetworkEndpointGroups.delete"
+    ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "compute.regionNetworkEndpointGroups.get",
+      "compute.regionOperations.get"
+    ]
   }
 ]

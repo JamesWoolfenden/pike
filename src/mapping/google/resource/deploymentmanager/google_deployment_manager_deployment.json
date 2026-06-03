@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "deploymentmanager.deployments.delete"
+    ],
+    "modify": [
+      "deploymentmanager.deployments.update"
+    ],
+    "plan": [
+      "deploymentmanager.deployments.get"
+    ]
   }
 ]

@@ -8,7 +8,9 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
+    "modify": [
+      "beyondcorp.sgApplications.setIamPolicy"
+    ],
     "plan": [
       "beyondcorp.sgApplications.getIamPolicy"
     ]

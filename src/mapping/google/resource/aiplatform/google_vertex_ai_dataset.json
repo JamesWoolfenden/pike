@@ -16,6 +16,9 @@
     "modify": [
       "aiplatform.datasets.update"
     ],
-    "plan": []
+    "plan": [
+      "aiplatform.datasets.get",
+      "storage.objects.list"
+    ]
   }
 ]

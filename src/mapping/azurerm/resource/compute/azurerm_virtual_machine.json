@@ -13,10 +13,17 @@
       "tags": []
     },
     "destroy": [
-      "Microsoft.Compute/virtualMachines/delete",
-      "Microsoft.Compute/disks/delete"
+      "Microsoft.Compute/disks/delete",
+      "Microsoft.Compute/virtualMachines/delete"
     ],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "Microsoft.Compute/virtualMachines/write"
+    ],
+    "plan": [
+      "Microsoft.Compute/disks/read",
+      "Microsoft.Compute/virtualMachines/read",
+      "Microsoft.Network/networkInterfaces/read",
+      "Microsoft.Resources/subscriptions/resourcegroups/read"
+    ]
   }
 ]

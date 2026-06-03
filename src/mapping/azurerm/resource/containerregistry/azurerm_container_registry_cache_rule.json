@@ -18,9 +18,10 @@
       "Microsoft.ContainerRegistry/registries/cacheRules/write"
     ],
     "plan": [
-      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ContainerRegistry/registries/cacheRules/operationStatuses/read",
       "Microsoft.ContainerRegistry/registries/cacheRules/read",
-      "Microsoft.ContainerRegistry/registries/read"
+      "Microsoft.ContainerRegistry/registries/read",
+      "Microsoft.Resources/subscriptions/resourceGroups/read"
     ]
   }
 ]

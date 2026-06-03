@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "storage.buckets.update"
+    ],
+    "plan": [
+      "storage.buckets.get"
+    ]
   }
 ]

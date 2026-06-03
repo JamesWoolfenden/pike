@@ -10,7 +10,9 @@
     "destroy": [
       "compute.firewallPolicies.update"
     ],
-    "modify": [],
+    "modify": [
+      "compute.firewallPolicies.update"
+    ],
     "plan": [
       "compute.firewallPolicies.get"
     ]

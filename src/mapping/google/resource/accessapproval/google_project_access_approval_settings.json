@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "accessapproval.settings.delete"
+    ],
+    "modify": [
+      "accessapproval.settings.update"
+    ],
+    "plan": [
+      "accessapproval.settings.get"
+    ]
   }
 ]

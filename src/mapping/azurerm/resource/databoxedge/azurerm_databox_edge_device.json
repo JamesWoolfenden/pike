@@ -17,8 +17,9 @@
       "Microsoft.DataBoxEdge/dataBoxEdgeDevices/write"
     ],
     "plan": [
-      "Microsoft.Resources/subscriptions/resourceGroups/read",
-      "Microsoft.DataBoxEdge/dataBoxEdgeDevices/read"
+      "Microsoft.DataBoxEdge/dataBoxEdgeDevices/operationResults/read",
+      "Microsoft.DataBoxEdge/dataBoxEdgeDevices/read",
+      "Microsoft.Resources/subscriptions/resourceGroups/read"
     ]
   }
 ]

@@ -9,7 +9,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "apigee.securityActions.update"
+    ],
+    "plan": [
+      "apigee.securityActions.get"
+    ]
   }
 ]

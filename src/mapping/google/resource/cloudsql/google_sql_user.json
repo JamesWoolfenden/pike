@@ -14,6 +14,8 @@
     "modify": [
       "cloudsql.users.update"
     ],
-    "plan": []
+    "plan": [
+      "cloudsql.users.list"
+    ]
   }
 ]

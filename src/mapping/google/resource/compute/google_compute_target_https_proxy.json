@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "compute.targetHttpsProxies.delete"
+    ],
+    "modify": [
+      "compute.targetHttpsProxies.update"
+    ],
+    "plan": [
+      "compute.targetHttpsProxies.get"
+    ]
   }
 ]

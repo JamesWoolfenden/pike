@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "networksecurity.authzPolicies.delete"
+    ],
+    "modify": [
+      "networksecurity.authzPolicies.update"
+    ],
+    "plan": [
+      "networksecurity.authzPolicies.get"
+    ]
   }
 ]

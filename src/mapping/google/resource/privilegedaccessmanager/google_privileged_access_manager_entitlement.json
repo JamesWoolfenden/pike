@@ -11,10 +11,16 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
+    "destroy": [
+      "privilegedaccessmanager.entitlements.delete"
+    ],
+    "modify": [
+      "privilegedaccessmanager.entitlements.setIamPolicy",
+      "privilegedaccessmanager.entitlements.update"
+    ],
     "plan": [
-      "privilegedaccessmanager.entitlements.get"
+      "privilegedaccessmanager.entitlements.get",
+      "privilegedaccessmanager.entitlements.list"
     ]
   }
 ]

@@ -22,6 +22,8 @@
     },
     "destroy": [],
     "modify": [],
-    "plan": []
+    "plan": [
+      "backupdr.backupPlanAssociations.get"
+    ]
   }
 ]

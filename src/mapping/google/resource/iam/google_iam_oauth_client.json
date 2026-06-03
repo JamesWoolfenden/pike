@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "iam.oauthClients.delete"
+    ],
+    "modify": [
+      "iam.oauthClients.update"
+    ],
+    "plan": [
+      "iam.oauthClients.get"
+    ]
   }
 ]

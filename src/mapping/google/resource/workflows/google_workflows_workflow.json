@@ -20,6 +20,7 @@
       "workflows.workflows.update"
     ],
     "plan": [
+      "workflows.operations.get",
       "workflows.workflows.get"
     ],
     "runtime": {

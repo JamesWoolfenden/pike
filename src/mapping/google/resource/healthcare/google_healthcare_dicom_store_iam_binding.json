@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "healthcare.dicomStores.setIamPolicy"
+    ],
+    "plan": [
+      "healthcare.dicomStores.getIamPolicy"
+    ]
   }
 ]

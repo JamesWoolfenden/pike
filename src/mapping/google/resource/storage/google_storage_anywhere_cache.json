@@ -9,7 +9,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "storage.anywhereCaches.update"
+    ],
+    "plan": [
+      "storage.anywhereCaches.get"
+    ]
   }
 ]

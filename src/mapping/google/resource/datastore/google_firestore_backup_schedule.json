@@ -12,8 +12,17 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "datastore.backupSchedules.delete"
+    ],
+    "modify": [
+      "datastore.backupSchedules.update"
+    ],
+    "plan": [
+      "appengine.applications.get",
+      "datastore.backupSchedules.get",
+      "datastore.operations.get",
+      "resourcemanager.projects.get"
+    ]
   }
 ]

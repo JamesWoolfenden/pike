@@ -17,7 +17,8 @@
       "alloydb.clusters.update"
     ],
     "plan": [
-      "alloydb.clusters.get"
+      "alloydb.clusters.get",
+      "alloydb.operations.get"
     ]
   }
 ]

@@ -8,8 +8,12 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
+    "destroy": [
+      "cloudsql.sslCerts.delete"
+    ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "cloudsql.sslCerts.get"
+    ]
   }
 ]

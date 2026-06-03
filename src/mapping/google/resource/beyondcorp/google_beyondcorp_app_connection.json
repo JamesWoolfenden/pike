@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "beyondcorp.appConnections.delete"
+    ],
+    "modify": [
+      "beyondcorp.appConnections.update"
+    ],
+    "plan": [
+      "beyondcorp.appConnections.get"
+    ]
   }
 ]

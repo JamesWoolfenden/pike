@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "apphub.workloads.delete"
+    ],
+    "modify": [
+      "apphub.workloads.update"
+    ],
+    "plan": [
+      "apphub.workloads.get"
+    ]
   }
 ]

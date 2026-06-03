@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "networksecurity.addressGroups.setIamPolicy"
+    ],
+    "plan": [
+      "networksecurity.addressGroups.getIamPolicy"
+    ]
   }
 ]

@@ -10,8 +10,15 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "datamigration.connectionprofiles.delete"
+    ],
+    "modify": [
+      "datamigration.connectionprofiles.update"
+    ],
+    "plan": [
+      "datamigration.connectionprofiles.get",
+      "datamigration.operations.get"
+    ]
   }
 ]

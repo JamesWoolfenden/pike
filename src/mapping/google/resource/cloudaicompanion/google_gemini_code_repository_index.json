@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "cloudaicompanion.codeRepositoryIndexes.delete"
+    ],
+    "modify": [
+      "cloudaicompanion.codeRepositoryIndexes.update"
+    ],
+    "plan": [
+      "cloudaicompanion.codeRepositoryIndexes.get"
+    ]
   }
 ]

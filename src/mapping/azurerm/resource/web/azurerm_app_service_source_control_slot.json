@@ -19,8 +19,9 @@
     ],
     "plan": [
       "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Web/sites/Read",
       "Microsoft.Web/sites/slots/Read",
-      "Microsoft.Web/sites/Read"
+      "microsoft.web/sites/slots/operationresults/read"
     ]
   }
 ]

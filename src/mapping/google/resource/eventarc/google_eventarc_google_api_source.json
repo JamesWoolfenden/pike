@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "eventarc.googleApiSources.delete"
+    ],
+    "modify": [
+      "eventarc.googleApiSources.update"
+    ],
+    "plan": [
+      "eventarc.googleApiSources.get"
+    ]
   }
 ]

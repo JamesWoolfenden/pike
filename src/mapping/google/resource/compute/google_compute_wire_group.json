@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "compute.wireGroups.delete"
+    ],
+    "modify": [
+      "compute.wireGroups.update"
+    ],
+    "plan": [
+      "compute.wireGroups.get"
+    ]
   }
 ]

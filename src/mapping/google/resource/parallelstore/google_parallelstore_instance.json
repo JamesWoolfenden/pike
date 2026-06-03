@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "parallelstore.instances.delete"
+    ],
+    "modify": [
+      "parallelstore.instances.update"
+    ],
+    "plan": [
+      "parallelstore.instances.get"
+    ]
   }
 ]

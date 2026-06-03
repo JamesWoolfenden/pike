@@ -16,6 +16,9 @@
     "modify": [
       "aiplatform.featureGroups.update"
     ],
-    "plan": []
+    "plan": [
+      "aiplatform.featureGroups.get",
+      "aiplatform.featureGroups.list"
+    ]
   }
 ]

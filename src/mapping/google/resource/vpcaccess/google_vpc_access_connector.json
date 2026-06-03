@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "vpcaccess.connectors.delete"
+    ],
+    "modify": [
+      "vpcaccess.connectors.update"
+    ],
+    "plan": [
+      "vpcaccess.connectors.get"
+    ]
   }
 ]

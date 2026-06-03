@@ -12,8 +12,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
+    "destroy": [
+      "compute.machineImages.delete"
+    ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "compute.globalOperations.get",
+      "compute.machineImages.get",
+      "compute.zoneOperations.get"
+    ]
   }
 ]

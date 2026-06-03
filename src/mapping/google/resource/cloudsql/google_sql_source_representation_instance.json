@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "cloudsql.instances.delete"
+    ],
+    "modify": [
+      "cloudsql.instances.update"
+    ],
+    "plan": [
+      "cloudsql.instances.get"
+    ]
   }
 ]

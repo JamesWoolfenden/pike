@@ -18,6 +18,7 @@
     ],
     "plan": [
       "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Sql/servers/operationResults/read",
       "Microsoft.Sql/servers/read"
     ]
   }

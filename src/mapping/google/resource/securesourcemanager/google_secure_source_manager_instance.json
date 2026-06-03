@@ -8,8 +8,12 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
+    "destroy": [
+      "securesourcemanager.instances.delete"
+    ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "securesourcemanager.instances.get"
+    ]
   }
 ]

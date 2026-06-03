@@ -18,7 +18,9 @@
       "bigtable.instances.update"
     ],
     "plan": [
-      "bigtable.instances.get"
+      "bigtable.clusters.list",
+      "bigtable.instances.get",
+      "bigtable.instances.list"
     ]
   }
 ]

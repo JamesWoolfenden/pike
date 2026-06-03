@@ -11,8 +11,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "compute.images.delete"
+    ],
+    "modify": [
+      "compute.images.update"
+    ],
+    "plan": [
+      "compute.images.get"
+    ]
   }
 ]

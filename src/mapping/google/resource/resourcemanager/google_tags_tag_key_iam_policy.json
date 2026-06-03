@@ -8,7 +8,9 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
+    "modify": [
+      "resourcemanager.tagKeys.setIamPolicy"
+    ],
     "plan": [
       "resourcemanager.tagKeys.getIamPolicy"
     ]

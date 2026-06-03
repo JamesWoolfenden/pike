@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "aiplatform.deploymentResourcePools.delete"
+    ],
+    "modify": [
+      "aiplatform.deploymentResourcePools.update"
+    ],
+    "plan": [
+      "aiplatform.deploymentResourcePools.get"
+    ]
   }
 ]

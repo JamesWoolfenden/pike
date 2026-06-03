@@ -10,8 +10,15 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "dialogflow.versions.delete"
+    ],
+    "modify": [
+      "dialogflow.versions.update"
+    ],
+    "plan": [
+      "dialogflow.operations.get",
+      "dialogflow.versions.get"
+    ]
   }
 ]

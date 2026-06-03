@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "securityposture.postures.delete"
+    ],
+    "modify": [
+      "securityposture.postures.update"
+    ],
+    "plan": [
+      "securityposture.postures.get"
+    ]
   }
 ]

@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "parametermanager.parameterVersions.delete"
+    ],
+    "modify": [
+      "parametermanager.parameterVersions.update"
+    ],
+    "plan": [
+      "parametermanager.parameterVersions.get"
+    ]
   }
 ]

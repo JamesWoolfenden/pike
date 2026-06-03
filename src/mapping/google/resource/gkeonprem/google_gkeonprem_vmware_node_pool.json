@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "gkeonprem.vmwareNodePools.delete"
+    ],
+    "modify": [
+      "gkeonprem.vmwareNodePools.update"
+    ],
+    "plan": [
+      "gkeonprem.vmwareNodePools.get"
+    ]
   }
 ]

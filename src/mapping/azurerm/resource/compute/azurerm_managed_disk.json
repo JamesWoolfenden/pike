@@ -11,7 +11,12 @@
     "destroy": [
       "Microsoft.Compute/disks/delete"
     ],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "Microsoft.Compute/disks/write"
+    ],
+    "plan": [
+      "Microsoft.Compute/disks/read",
+      "Microsoft.Resources/subscriptions/resourcegroups/read"
+    ]
   }
 ]

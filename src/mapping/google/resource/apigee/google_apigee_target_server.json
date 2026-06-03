@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "apigee.targetservers.delete"
+    ],
+    "modify": [
+      "apigee.targetservers.update"
+    ],
+    "plan": [
+      "apigee.targetservers.get"
+    ]
   }
 ]

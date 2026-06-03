@@ -17,8 +17,9 @@
       "Microsoft.EventHub/clusters/write"
     ],
     "plan": [
-      "Microsoft.Resources/subscriptions/resourceGroups/read",
-      "Microsoft.EventHub/clusters/read"
+      "Microsoft.EventHub/clusters/operationresults/read",
+      "Microsoft.EventHub/clusters/read",
+      "Microsoft.Resources/subscriptions/resourceGroups/read"
     ]
   }
 ]

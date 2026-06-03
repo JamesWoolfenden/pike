@@ -8,7 +8,9 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
+    "modify": [
+      "aiplatform.featurestores.setIamPolicy"
+    ],
     "plan": [
       "aiplatform.featurestores.getIamPolicy"
     ]

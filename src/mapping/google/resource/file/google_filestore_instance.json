@@ -10,8 +10,15 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "file.instances.delete"
+    ],
+    "modify": [
+      "file.instances.update"
+    ],
+    "plan": [
+      "file.instances.get",
+      "file.operations.get"
+    ]
   }
 ]

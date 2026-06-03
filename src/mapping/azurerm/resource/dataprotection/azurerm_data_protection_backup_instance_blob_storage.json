@@ -18,9 +18,10 @@
       "Microsoft.DataProtection/backupVaults/backupInstances/write"
     ],
     "plan": [
-      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DataProtection/backupVaults/backupInstances/operationResults/read",
       "Microsoft.DataProtection/backupVaults/backupInstances/read",
-      "Microsoft.DataProtection/backupVaults/read"
+      "Microsoft.DataProtection/backupVaults/read",
+      "Microsoft.Resources/subscriptions/resourceGroups/read"
     ]
   }
 ]

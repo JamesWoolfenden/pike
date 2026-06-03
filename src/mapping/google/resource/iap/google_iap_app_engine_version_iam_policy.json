@@ -8,9 +8,12 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
+    "modify": [
+      "iap.webServices.setIamPolicy"
+    ],
     "plan": [
-      "iap.webServiceVersions.getIamPolicy"
+      "iap.webServiceVersions.getIamPolicy",
+      "iap.webServices.getIamPolicy"
     ]
   }
 ]

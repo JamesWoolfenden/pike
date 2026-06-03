@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "iam.principalaccessboundarypolicies.delete"
+    ],
+    "modify": [
+      "iam.principalaccessboundarypolicies.update"
+    ],
+    "plan": [
+      "iam.principalaccessboundarypolicies.get"
+    ]
   }
 ]

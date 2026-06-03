@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "binaryauthorization.attestors.setIamPolicy"
+    ],
+    "plan": [
+      "binaryauthorization.attestors.getIamPolicy"
+    ]
   }
 ]

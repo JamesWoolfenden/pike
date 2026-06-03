@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "managedidentities.peerings.delete"
+    ],
+    "modify": [
+      "managedidentities.peerings.update"
+    ],
+    "plan": [
+      "managedidentities.peerings.get"
+    ]
   }
 ]

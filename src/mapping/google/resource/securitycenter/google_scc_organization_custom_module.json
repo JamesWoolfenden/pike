@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "securitycenter.securityhealthanalyticscustommodules.delete"
+    ],
+    "modify": [
+      "securitycenter.securityhealthanalyticscustommodules.update"
+    ],
+    "plan": [
+      "securitycenter.securityhealthanalyticscustommodules.get"
+    ]
   }
 ]

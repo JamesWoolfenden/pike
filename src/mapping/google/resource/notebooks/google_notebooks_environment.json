@@ -8,8 +8,12 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
+    "destroy": [
+      "notebooks.environments.delete"
+    ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "notebooks.environments.get"
+    ]
   }
 ]

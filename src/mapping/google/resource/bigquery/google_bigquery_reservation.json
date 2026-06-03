@@ -16,6 +16,9 @@
     "modify": [
       "bigquery.reservations.update"
     ],
-    "plan": []
+    "plan": [
+      "bigquery.reservations.get",
+      "bigquery.reservations.list"
+    ]
   }
 ]

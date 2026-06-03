@@ -13,9 +13,13 @@
     "destroy": [
       "Microsoft.Compute/virtualMachineScaleSets/delete"
     ],
-    "modify": [],
+    "modify": [
+      "Microsoft.Compute/virtualMachineScaleSets/write"
+    ],
     "plan": [
-      "Microsoft.Compute/virtualMachineScaleSets/read"
+      "Microsoft.Compute/virtualMachineScaleSets/read",
+      "Microsoft.Network/virtualNetworks/subnets/read",
+      "Microsoft.Resources/subscriptions/resourcegroups/read"
     ]
   }
 ]

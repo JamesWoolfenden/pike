@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "iam.workloadIdentityPoolNamespaces.delete"
+    ],
+    "modify": [
+      "iam.workloadIdentityPoolNamespaces.update"
+    ],
+    "plan": [
+      "iam.workloadIdentityPoolNamespaces.get"
+    ]
   }
 ]

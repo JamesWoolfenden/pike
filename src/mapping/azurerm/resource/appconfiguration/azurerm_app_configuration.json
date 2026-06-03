@@ -10,8 +10,15 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "Microsoft.AppConfiguration/configurationStores/delete"
+    ],
+    "modify": [
+      "Microsoft.AppConfiguration/configurationStores/write"
+    ],
+    "plan": [
+      "Microsoft.AppConfiguration/configurationStores/read",
+      "Microsoft.AppConfiguration/locations/deletedConfigurationStores/read"
+    ]
   }
 ]

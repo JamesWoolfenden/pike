@@ -68,20 +68,27 @@
       "windows_profile": []
     },
     "destroy": [
-      "Microsoft.ContainerService/managedClusters/delete",
-      "Microsoft.ContainerService/managedClusters/agentPools/delete"
+      "Microsoft.ContainerService/managedClusters/agentPools/delete",
+      "Microsoft.ContainerService/managedClusters/delete"
     ],
     "modify": [
-      "Microsoft.ContainerService/managedClusters/read",
       "Microsoft.ContainerService/managedClusters/accessProfiles/read",
       "Microsoft.ContainerService/managedClusters/agentPools/read",
-      "Microsoft.ContainerService/managedClusters/upgradeProfiles/read"
+      "Microsoft.ContainerService/managedClusters/agentPools/write",
+      "Microsoft.ContainerService/managedClusters/read",
+      "Microsoft.ContainerService/managedClusters/upgradeProfiles/read",
+      "Microsoft.ContainerService/managedClusters/write"
     ],
     "plan": [
-      "Microsoft.ContainerService/managedClusters/read",
+      "Microsoft.Authorization/*/read",
+      "Microsoft.ContainerService/locations/kubernetesversions/read",
+      "Microsoft.ContainerService/locations/operationresults/read",
+      "Microsoft.ContainerService/locations/operations/read",
       "Microsoft.ContainerService/managedClusters/accessProfiles/read",
       "Microsoft.ContainerService/managedClusters/agentPools/read",
-      "Microsoft.ContainerService/locations/kubernetesversions/read",
+      "Microsoft.ContainerService/managedClusters/availableAgentPoolVersions/read",
+      "Microsoft.ContainerService/managedClusters/read",
+      "Microsoft.ContainerService/managedClusters/upgradeProfiles/read",
       "Microsoft.Network/virtualNetworks/read",
       "Microsoft.Network/virtualNetworks/subnets/read",
       "Microsoft.Resources/subscriptions/resourceGroups/read"

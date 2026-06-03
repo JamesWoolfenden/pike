@@ -18,8 +18,10 @@
       "Microsoft.AVS/privateClouds/write"
     ],
     "plan": [
-      "Microsoft.Resources/subscriptions/resourceGroups/read",
-      "Microsoft.AVS/privateClouds/read"
+      "Microsoft.AVS/privateClouds/operationresults/read",
+      "Microsoft.AVS/privateClouds/operationstatuses/read",
+      "Microsoft.AVS/privateClouds/read",
+      "Microsoft.Resources/subscriptions/resourceGroups/read"
     ]
   }
 ]

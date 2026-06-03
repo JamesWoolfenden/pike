@@ -11,7 +11,11 @@
     "destroy": [
       "Microsoft.Security/securityContacts/delete"
     ],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "Microsoft.Security/securityContacts/write"
+    ],
+    "plan": [
+      "Microsoft.Security/securityContacts/read"
+    ]
   }
 ]

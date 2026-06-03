@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "aiplatform.notebookRuntimes.delete"
+    ],
+    "modify": [
+      "aiplatform.notebookRuntimes.update"
+    ],
+    "plan": [
+      "aiplatform.notebookRuntimes.get"
+    ]
   }
 ]

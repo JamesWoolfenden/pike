@@ -8,7 +8,9 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
+    "modify": [
+      "compute.subnetworks.setIamPolicy"
+    ],
     "plan": [
       "compute.subnetworks.getIamPolicy"
     ]

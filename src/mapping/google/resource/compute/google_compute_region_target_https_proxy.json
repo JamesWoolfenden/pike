@@ -13,8 +13,14 @@
       ],
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "compute.regionTargetHttpsProxies.delete"
+    ],
+    "modify": [
+      "compute.regionTargetHttpsProxies.update"
+    ],
+    "plan": [
+      "compute.regionTargetHttpsProxies.get"
+    ]
   }
 ]

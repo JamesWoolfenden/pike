@@ -8,8 +8,12 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
+    "destroy": [
+      "apigee.developerapps.delete"
+    ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "apigee.developerapps.get"
+    ]
   }
 ]

@@ -8,7 +8,9 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
+    "modify": [
+      "iap.web.setIamPolicy"
+    ],
     "plan": [
       "iap.web.getIamPolicy"
     ]

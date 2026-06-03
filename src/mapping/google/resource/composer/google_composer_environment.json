@@ -18,7 +18,8 @@
       "composer.environments.update"
     ],
     "plan": [
-      "composer.environments.get"
+      "composer.environments.get",
+      "composer.operations.get"
     ],
     "runtime": {
       "config": [

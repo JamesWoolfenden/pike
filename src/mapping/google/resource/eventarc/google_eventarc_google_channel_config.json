@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "eventarc.googleChannelConfigs.update"
+    ],
+    "plan": [
+      "eventarc.googleChannelConfigs.get"
+    ]
   }
 ]

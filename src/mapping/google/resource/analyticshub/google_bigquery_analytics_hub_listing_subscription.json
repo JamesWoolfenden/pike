@@ -10,8 +10,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "analyticshub.subscriptions.delete"
+    ],
+    "modify": [
+      "analyticshub.subscriptions.update"
+    ],
+    "plan": [
+      "analyticshub.subscriptions.get"
+    ]
   }
 ]

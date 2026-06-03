@@ -8,8 +8,12 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
+    "destroy": [
+      "biglake.catalogs.delete"
+    ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "biglake.catalogs.get"
+    ]
   }
 ]

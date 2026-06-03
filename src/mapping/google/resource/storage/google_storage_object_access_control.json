@@ -10,7 +10,13 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "storage.objects.setIamPolicy",
+      "storage.objects.update"
+    ],
+    "plan": [
+      "storage.objects.get",
+      "storage.objects.getIamPolicy"
+    ]
   }
 ]

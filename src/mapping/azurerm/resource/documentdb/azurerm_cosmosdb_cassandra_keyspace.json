@@ -18,9 +18,10 @@
       "Microsoft.DocumentDB/databaseAccounts/cassandraKeyspaces/write"
     ],
     "plan": [
-      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DocumentDB/databaseAccounts/cassandraKeyspaces/operationResults/read",
       "Microsoft.DocumentDB/databaseAccounts/cassandraKeyspaces/read",
-      "Microsoft.DocumentDB/databaseAccounts/read"
+      "Microsoft.DocumentDB/databaseAccounts/read",
+      "Microsoft.Resources/subscriptions/resourceGroups/read"
     ]
   }
 ]

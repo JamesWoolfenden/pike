@@ -8,7 +8,9 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
+    "modify": [
+      "run.services.setIamPolicy"
+    ],
     "plan": [
       "run.services.getIamPolicy"
     ]

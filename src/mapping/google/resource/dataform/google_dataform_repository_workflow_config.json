@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "dataform.workflowConfigs.delete"
+    ],
+    "modify": [
+      "dataform.workflowConfigs.update"
+    ],
+    "plan": [
+      "dataform.workflowConfigs.get"
+    ]
   }
 ]

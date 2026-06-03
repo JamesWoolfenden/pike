@@ -17,7 +17,8 @@
       "privateca.caPools.update"
     ],
     "plan": [
-      "privateca.caPools.get"
+      "privateca.caPools.get",
+      "privateca.operations.get"
     ]
   }
 ]

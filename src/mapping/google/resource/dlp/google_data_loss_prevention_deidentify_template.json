@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "dlp.deidentifyTemplates.delete"
+    ],
+    "modify": [
+      "dlp.deidentifyTemplates.update"
+    ],
+    "plan": [
+      "dlp.deidentifyTemplates.get"
+    ]
   }
 ]

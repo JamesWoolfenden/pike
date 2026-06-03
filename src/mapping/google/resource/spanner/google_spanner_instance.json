@@ -17,6 +17,7 @@
       "spanner.instances.update"
     ],
     "plan": [
+      "spanner.instanceOperations.get",
       "spanner.instances.get"
     ]
   }

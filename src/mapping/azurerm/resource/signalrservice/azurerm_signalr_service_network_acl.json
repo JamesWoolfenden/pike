@@ -19,6 +19,8 @@
     ],
     "plan": [
       "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.SignalRService/SignalR/operationResults/read",
+      "Microsoft.SignalRService/SignalR/operationStatuses/read",
       "Microsoft.SignalRService/SignalR/read"
     ]
   }

@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "datastream.connectionProfiles.delete"
+    ],
+    "modify": [
+      "datastream.connectionProfiles.update"
+    ],
+    "plan": [
+      "datastream.connectionProfiles.get"
+    ]
   }
 ]

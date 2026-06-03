@@ -10,8 +10,15 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "resourcemanager.projects.delete"
+    ],
+    "modify": [
+      "resourcemanager.projects.update"
+    ],
+    "plan": [
+      "resourcemanager.organizations.get",
+      "resourcemanager.projects.get"
+    ]
   }
 ]

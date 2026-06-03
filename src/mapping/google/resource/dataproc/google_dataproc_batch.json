@@ -8,9 +8,13 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
+    "destroy": [
+      "dataproc.batches.delete"
+    ],
     "modify": [],
-    "plan": [],
+    "plan": [
+      "dataproc.batches.get"
+    ],
     "runtime": {
       "pyspark_batch": [
         "storage.objects.get",

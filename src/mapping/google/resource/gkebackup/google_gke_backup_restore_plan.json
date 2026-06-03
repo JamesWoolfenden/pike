@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "gkebackup.restorePlans.delete"
+    ],
+    "modify": [
+      "gkebackup.restorePlans.update"
+    ],
+    "plan": [
+      "gkebackup.restorePlans.get"
+    ]
   }
 ]

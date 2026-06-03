@@ -18,9 +18,10 @@
       "Microsoft.OperationalInsights/workspaces/tables/write"
     ],
     "plan": [
-      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.OperationalInsights/workspaces/read",
+      "Microsoft.OperationalInsights/workspaces/tables/operationresults/read",
       "Microsoft.OperationalInsights/workspaces/tables/read",
-      "Microsoft.OperationalInsights/workspaces/read"
+      "Microsoft.Resources/subscriptions/resourceGroups/read"
     ]
   }
 ]

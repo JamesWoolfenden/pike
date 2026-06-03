@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "cloudsecuritycompliance.frameworkDeployments.delete"
+    ],
+    "modify": [
+      "cloudsecuritycompliance.frameworkDeployments.update"
+    ],
+    "plan": [
+      "cloudsecuritycompliance.frameworkDeployments.get"
+    ]
   }
 ]

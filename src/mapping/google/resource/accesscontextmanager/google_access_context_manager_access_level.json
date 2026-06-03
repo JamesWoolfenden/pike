@@ -16,6 +16,9 @@
     "modify": [
       "accesscontextmanager.accessLevels.update"
     ],
-    "plan": []
+    "plan": [
+      "accesscontextmanager.accessLevels.get",
+      "bigquery.reservations.get"
+    ]
   }
 ]

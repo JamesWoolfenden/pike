@@ -12,8 +12,17 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "Microsoft.ApiManagement/service/delete"
+    ],
+    "modify": [
+      "Microsoft.ApiManagement/service/write"
+    ],
+    "plan": [
+      "Microsoft.ApiManagement/service/operationresults/read",
+      "Microsoft.ApiManagement/service/policies/read",
+      "Microsoft.ApiManagement/service/portalsettings/read",
+      "Microsoft.ApiManagement/service/read"
+    ]
   }
 ]

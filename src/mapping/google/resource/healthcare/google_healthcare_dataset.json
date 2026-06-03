@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "healthcare.datasets.delete"
+    ],
+    "modify": [
+      "healthcare.datasets.update"
+    ],
+    "plan": [
+      "healthcare.datasets.get"
+    ]
   }
 ]

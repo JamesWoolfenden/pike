@@ -8,8 +8,12 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
+    "destroy": [
+      "logging.links.delete"
+    ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "logging.links.get"
+    ]
   }
 ]

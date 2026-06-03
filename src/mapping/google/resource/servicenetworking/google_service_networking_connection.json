@@ -16,6 +16,9 @@
       "serviceusage.operations.get"
     ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "resourcemanager.projects.get",
+      "servicenetworking.services.get"
+    ]
   }
 ]

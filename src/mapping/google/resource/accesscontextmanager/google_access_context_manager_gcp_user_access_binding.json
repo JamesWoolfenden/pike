@@ -16,6 +16,9 @@
     "modify": [
       "accesscontextmanager.gcpUserAccessBindings.update"
     ],
-    "plan": []
+    "plan": [
+      "accesscontextmanager.gcpUserAccessBindings.get",
+      "bigquery.reservationAssignments.list"
+    ]
   }
 ]

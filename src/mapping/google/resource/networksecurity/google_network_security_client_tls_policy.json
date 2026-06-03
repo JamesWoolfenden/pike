@@ -19,7 +19,8 @@
       "networksecurity.operations.get"
     ],
     "plan": [
-      "networksecurity.clientTlsPolicies.get"
+      "networksecurity.clientTlsPolicies.get",
+      "networksecurity.operations.get"
     ]
   }
 ]

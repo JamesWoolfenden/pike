@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "apigee.environments.setIamPolicy"
+    ],
+    "plan": [
+      "apigee.environments.getIamPolicy"
+    ]
   }
 ]

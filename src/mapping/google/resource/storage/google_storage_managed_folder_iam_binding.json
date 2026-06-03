@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "storage.managedFolders.setIamPolicy"
+    ],
+    "plan": [
+      "storage.managedFolders.getIamPolicy"
+    ]
   }
 ]

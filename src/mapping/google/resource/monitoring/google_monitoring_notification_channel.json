@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "monitoring.notificationChannels.delete"
+    ],
+    "modify": [
+      "monitoring.notificationChannels.update"
+    ],
+    "plan": [
+      "monitoring.notificationChannels.get"
+    ]
   }
 ]

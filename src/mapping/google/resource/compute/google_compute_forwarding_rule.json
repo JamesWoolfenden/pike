@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "compute.forwardingRules.delete"
+    ],
+    "modify": [
+      "compute.forwardingRules.update"
+    ],
+    "plan": [
+      "compute.forwardingRules.get"
+    ]
   }
 ]

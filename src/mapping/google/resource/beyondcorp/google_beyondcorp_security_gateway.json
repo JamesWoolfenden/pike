@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "beyondcorp.securityGateways.delete"
+    ],
+    "modify": [
+      "beyondcorp.securityGateways.update"
+    ],
+    "plan": [
+      "beyondcorp.securityGateways.get"
+    ]
   }
 ]

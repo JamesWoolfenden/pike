@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "edgecontainer.nodePools.delete"
+    ],
+    "modify": [
+      "edgecontainer.nodePools.update"
+    ],
+    "plan": [
+      "edgecontainer.nodePools.get"
+    ]
   }
 ]

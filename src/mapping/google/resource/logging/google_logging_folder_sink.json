@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "logging.sinks.delete"
+    ],
+    "modify": [
+      "logging.sinks.update"
+    ],
+    "plan": [
+      "logging.sinks.get"
+    ]
   }
 ]

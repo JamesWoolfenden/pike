@@ -12,6 +12,8 @@
       "firebasestorage.buckets.removeFirebase"
     ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "firebasestorage.buckets.get"
+    ]
   }
 ]

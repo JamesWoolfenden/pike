@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "contentwarehouse.documentSchemas.delete"
+    ],
+    "modify": [
+      "contentwarehouse.documentSchemas.update"
+    ],
+    "plan": [
+      "contentwarehouse.documentSchemas.get"
+    ]
   }
 ]

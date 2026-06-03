@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "gkebackup.restoreChannels.delete"
+    ],
+    "modify": [
+      "gkebackup.restoreChannels.update"
+    ],
+    "plan": [
+      "gkebackup.restoreChannels.get"
+    ]
   }
 ]

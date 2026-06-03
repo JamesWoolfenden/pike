@@ -19,10 +19,11 @@
       "Microsoft.DocumentDB/databaseAccounts/mongodbDatabases/collections/write"
     ],
     "plan": [
-      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DocumentDB/databaseAccounts/mongodbDatabases/collections/operationResults/read",
       "Microsoft.DocumentDB/databaseAccounts/mongodbDatabases/collections/read",
+      "Microsoft.DocumentDB/databaseAccounts/mongodbDatabases/read",
       "Microsoft.DocumentDB/databaseAccounts/read",
-      "Microsoft.DocumentDB/databaseAccounts/mongodbDatabases/read"
+      "Microsoft.Resources/subscriptions/resourceGroups/read"
     ]
   }
 ]

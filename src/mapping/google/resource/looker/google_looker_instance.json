@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "looker.instances.delete"
+    ],
+    "modify": [
+      "looker.instances.update"
+    ],
+    "plan": [
+      "looker.instances.get"
+    ]
   }
 ]

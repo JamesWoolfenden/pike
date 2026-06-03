@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "apigee.securityMonitoringConditions.delete"
+    ],
+    "modify": [
+      "apigee.securityMonitoringConditions.update"
+    ],
+    "plan": [
+      "apigee.securityMonitoringConditions.get"
+    ]
   }
 ]

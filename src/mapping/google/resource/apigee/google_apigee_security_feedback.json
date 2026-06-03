@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "apigee.securityFeedback.delete"
+    ],
+    "modify": [
+      "apigee.securityFeedback.update"
+    ],
+    "plan": [
+      "apigee.securityFeedback.get"
+    ]
   }
 ]

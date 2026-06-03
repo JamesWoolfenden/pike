@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "gkehub.membershipbindings.delete"
+    ],
+    "modify": [
+      "gkehub.membershipbindings.update"
+    ],
+    "plan": [
+      "gkehub.membershipbindings.get"
+    ]
   }
 ]

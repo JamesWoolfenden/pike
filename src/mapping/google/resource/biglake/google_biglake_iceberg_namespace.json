@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "biglake.namespaces.delete"
+    ],
+    "modify": [
+      "biglake.namespaces.update"
+    ],
+    "plan": [
+      "biglake.namespaces.get"
+    ]
   }
 ]

@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "ces.deployments.delete"
+    ],
+    "modify": [
+      "ces.deployments.update"
+    ],
+    "plan": [
+      "ces.deployments.get"
+    ]
   }
 ]

@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "vmwareengine.subnets.update"
+    ],
+    "plan": [
+      "vmwareengine.subnets.get"
+    ]
   }
 ]

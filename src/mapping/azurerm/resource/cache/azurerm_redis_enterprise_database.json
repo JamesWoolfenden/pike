@@ -18,9 +18,10 @@
       "Microsoft.Cache/redisEnterprise/databases/write"
     ],
     "plan": [
-      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Cache/redisEnterprise/databases/operationResults/read",
       "Microsoft.Cache/redisEnterprise/databases/read",
-      "Microsoft.Cache/redisEnterprise/read"
+      "Microsoft.Cache/redisEnterprise/read",
+      "Microsoft.Resources/subscriptions/resourceGroups/read"
     ]
   }
 ]

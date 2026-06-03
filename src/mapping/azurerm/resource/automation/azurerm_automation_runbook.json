@@ -18,9 +18,10 @@
       "Microsoft.Automation/automationAccounts/runbooks/write"
     ],
     "plan": [
-      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.Automation/automationAccounts/read",
+      "Microsoft.Automation/automationAccounts/runbooks/operationResults/read",
       "Microsoft.Automation/automationAccounts/runbooks/read",
-      "Microsoft.Automation/automationAccounts/read"
+      "Microsoft.Resources/subscriptions/resourceGroups/read"
     ]
   }
 ]

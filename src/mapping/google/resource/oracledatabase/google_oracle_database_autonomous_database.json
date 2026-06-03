@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "oracledatabase.autonomousDatabases.delete"
+    ],
+    "modify": [
+      "oracledatabase.autonomousDatabases.update"
+    ],
+    "plan": [
+      "oracledatabase.autonomousDatabases.get"
+    ]
   }
 ]

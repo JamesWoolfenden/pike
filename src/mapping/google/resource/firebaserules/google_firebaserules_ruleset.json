@@ -12,6 +12,8 @@
       "firebaserules.rulesets.delete"
     ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "firebaserules.rulesets.get"
+    ]
   }
 ]

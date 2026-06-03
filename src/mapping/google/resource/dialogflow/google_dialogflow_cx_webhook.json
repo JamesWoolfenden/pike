@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "dialogflow.webhooks.delete"
+    ],
+    "modify": [
+      "dialogflow.webhooks.update"
+    ],
+    "plan": [
+      "dialogflow.webhooks.get"
+    ]
   }
 ]

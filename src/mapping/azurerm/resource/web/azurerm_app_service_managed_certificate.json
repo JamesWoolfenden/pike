@@ -18,7 +18,8 @@
     ],
     "plan": [
       "Microsoft.Resources/subscriptions/resourceGroups/read",
-      "Microsoft.Web/certificates/Read"
+      "Microsoft.Web/certificates/Read",
+      "microsoft.web/certificates/operationresults/read"
     ]
   }
 ]

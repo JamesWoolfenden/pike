@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "file.backups.delete"
+    ],
+    "modify": [
+      "file.backups.update"
+    ],
+    "plan": [
+      "file.backups.get"
+    ]
   }
 ]

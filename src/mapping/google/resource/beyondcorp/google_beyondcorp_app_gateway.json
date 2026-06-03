@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "beyondcorp.appGateways.delete"
+    ],
+    "modify": [
+      "beyondcorp.appGateways.update"
+    ],
+    "plan": [
+      "beyondcorp.appGateways.get"
+    ]
   }
 ]

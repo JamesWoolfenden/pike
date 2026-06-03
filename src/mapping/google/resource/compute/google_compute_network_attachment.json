@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "compute.networkAttachments.delete"
+    ],
+    "modify": [
+      "compute.networkAttachments.update"
+    ],
+    "plan": [
+      "compute.networkAttachments.get"
+    ]
   }
 ]

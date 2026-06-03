@@ -8,7 +8,9 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
+    "modify": [
+      "metastore.databases.setIamPolicy"
+    ],
     "plan": [
       "metastore.databases.getIamPolicy"
     ]

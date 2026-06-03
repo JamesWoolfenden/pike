@@ -10,8 +10,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
+    "destroy": [
+      "privateca.certificateTemplates.delete",
+      "privateca.operations.delete"
+    ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "privateca.certificateTemplates.get",
+      "privateca.operations.get"
+    ]
   }
 ]

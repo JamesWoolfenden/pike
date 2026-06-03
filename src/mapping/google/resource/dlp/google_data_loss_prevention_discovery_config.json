@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "dlp.jobTriggers.delete"
+    ],
+    "modify": [
+      "dlp.jobTriggers.update"
+    ],
+    "plan": [
+      "dlp.jobTriggers.get"
+    ]
   }
 ]

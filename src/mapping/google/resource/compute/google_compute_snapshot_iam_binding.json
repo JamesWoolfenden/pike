@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "compute.snapshots.setIamPolicy"
+    ],
+    "plan": [
+      "compute.snapshots.getIamPolicy"
+    ]
   }
 ]

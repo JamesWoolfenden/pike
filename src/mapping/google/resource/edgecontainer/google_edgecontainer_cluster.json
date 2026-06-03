@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "edgecontainer.clusters.delete"
+    ],
+    "modify": [
+      "edgecontainer.clusters.update"
+    ],
+    "plan": [
+      "edgecontainer.clusters.get"
+    ]
   }
 ]

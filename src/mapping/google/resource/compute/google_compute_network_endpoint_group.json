@@ -8,8 +8,12 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
+    "destroy": [
+      "compute.networkEndpointGroups.delete"
+    ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "compute.networkEndpointGroups.get"
+    ]
   }
 ]

@@ -8,8 +8,12 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
+    "destroy": [
+      "apihub.apiHubInstances.delete"
+    ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "apihub.apiHubInstances.get"
+    ]
   }
 ]

@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "apikeys.keys.delete"
+    ],
+    "modify": [
+      "apikeys.keys.update"
+    ],
+    "plan": [
+      "apikeys.keys.get"
+    ]
   }
 ]

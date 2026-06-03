@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "gkehub.rbacrolebindings.delete"
+    ],
+    "modify": [
+      "gkehub.rbacrolebindings.update"
+    ],
+    "plan": [
+      "gkehub.rbacrolebindings.get"
+    ]
   }
 ]

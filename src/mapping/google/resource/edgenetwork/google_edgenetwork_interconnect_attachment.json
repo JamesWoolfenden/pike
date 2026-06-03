@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "edgenetwork.interconnectAttachments.delete"
+    ],
+    "modify": [
+      "edgenetwork.interconnectAttachments.update"
+    ],
+    "plan": [
+      "edgenetwork.interconnectAttachments.get"
+    ]
   }
 ]

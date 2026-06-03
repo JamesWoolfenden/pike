@@ -12,7 +12,9 @@
     "destroy": [
       "artifactregistry.repositories.delete"
     ],
-    "modify": [],
+    "modify": [
+      "artifactregistry.repositories.update"
+    ],
     "plan": [
       "artifactregistry.repositories.get"
     ]

@@ -18,7 +18,9 @@
       "cloudfunctions.functions.update"
     ],
     "plan": [
-      "cloudfunctions.functions.get"
+      "cloudfunctions.functions.get",
+      "cloudfunctions.operations.get",
+      "storage.objects.list"
     ],
     "runtime": {
       "environment_variables": [

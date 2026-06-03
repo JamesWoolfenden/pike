@@ -13,11 +13,16 @@
       "tags": []
     },
     "destroy": [
-      "firebase.projects.delete"
+      "firebase.projects.delete",
+      "resourcemanager.projects.delete"
     ],
     "modify": [
-      "firebase.projects.update"
+      "firebase.projects.update",
+      "resourcemanager.projects.update"
     ],
-    "plan": []
+    "plan": [
+      "firebase.projects.get",
+      "resourcemanager.projects.get"
+    ]
   }
 ]

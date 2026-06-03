@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "securesourcemanager.hooks.delete"
+    ],
+    "modify": [
+      "securesourcemanager.hooks.update"
+    ],
+    "plan": [
+      "securesourcemanager.hooks.get"
+    ]
   }
 ]

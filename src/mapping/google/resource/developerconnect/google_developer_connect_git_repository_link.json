@@ -8,8 +8,12 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
+    "destroy": [
+      "developerconnect.gitRepositoryLinks.delete"
+    ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "developerconnect.gitRepositoryLinks.get"
+    ]
   }
 ]

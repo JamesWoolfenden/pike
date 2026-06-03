@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "servicemanagement.services.delete"
+    ],
+    "modify": [
+      "servicemanagement.services.update"
+    ],
+    "plan": [
+      "servicemanagement.services.get"
+    ]
   }
 ]

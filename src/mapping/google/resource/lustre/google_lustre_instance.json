@@ -9,8 +9,12 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
+    "destroy": [
+      "lustre.instances.delete"
+    ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "lustre.instances.get"
+    ]
   }
 ]

@@ -8,7 +8,9 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
+    "modify": [
+      "aiplatform.notebookRuntimeTemplates.setIamPolicy"
+    ],
     "plan": [
       "aiplatform.notebookRuntimeTemplates.getIamPolicy"
     ]

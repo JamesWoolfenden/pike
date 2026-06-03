@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "logging.logScopes.delete"
+    ],
+    "modify": [
+      "logging.logScopes.update"
+    ],
+    "plan": [
+      "logging.logScopes.get"
+    ]
   }
 ]

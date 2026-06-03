@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "securitycenter.notificationconfig.delete"
+    ],
+    "modify": [
+      "securitycenter.notificationconfig.update"
+    ],
+    "plan": [
+      "securitycenter.notificationconfig.get"
+    ]
   }
 ]

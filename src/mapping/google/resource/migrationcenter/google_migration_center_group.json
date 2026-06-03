@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "migrationcenter.groups.delete"
+    ],
+    "modify": [
+      "migrationcenter.groups.update"
+    ],
+    "plan": [
+      "migrationcenter.groups.get"
+    ]
   }
 ]

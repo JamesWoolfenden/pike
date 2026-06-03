@@ -17,7 +17,8 @@
       "compute.routers.update"
     ],
     "plan": [
-      "compute.routers.get"
+      "compute.routers.get",
+      "compute.vpnTunnels.get"
     ]
   }
 ]

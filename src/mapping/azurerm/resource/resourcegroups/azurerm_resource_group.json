@@ -10,9 +10,12 @@
     "destroy": [
       "Microsoft.Resources/subscriptions/resourcegroups/delete"
     ],
-    "modify": [],
+    "modify": [
+      "Microsoft.Resources/subscriptions/resourcegroups/write"
+    ],
     "plan": [
-      "Microsoft.Resources/subscriptions/providers/read"
+      "Microsoft.Resources/subscriptions/providers/read",
+      "Microsoft.Resources/subscriptions/resourcegroups/read"
     ]
   }
 ]

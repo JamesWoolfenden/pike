@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "servicedirectory.namespaces.setIamPolicy"
+    ],
+    "plan": [
+      "servicedirectory.namespaces.getIamPolicy"
+    ]
   }
 ]

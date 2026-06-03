@@ -10,8 +10,12 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
+    "destroy": [
+      "compute.snapshots.delete"
+    ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "compute.snapshots.get"
+    ]
   }
 ]

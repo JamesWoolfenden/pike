@@ -12,13 +12,15 @@
       "tags": []
     },
     "destroy": [
-      "cloudsql.instances.delete"
+      "cloudsql.instances.delete",
+      "cloudsql.users.delete"
     ],
     "modify": [
       "cloudsql.instances.update"
     ],
     "plan": [
-      "cloudsql.instances.get"
+      "cloudsql.instances.get",
+      "cloudsql.users.list"
     ]
   }
 ]

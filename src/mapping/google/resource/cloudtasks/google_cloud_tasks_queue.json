@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "cloudtasks.queues.delete"
+    ],
+    "modify": [
+      "cloudtasks.queues.update"
+    ],
+    "plan": [
+      "cloudtasks.queues.get"
+    ]
   }
 ]

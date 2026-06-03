@@ -8,8 +8,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "Microsoft.DBforMariaDB/servers/databases/delete"
+    ],
+    "modify": [
+      "Microsoft.DBforMariaDB/servers/databases/write"
+    ],
+    "plan": [
+      "Microsoft.DBforMariaDB/servers/databases/read"
+    ]
   }
 ]

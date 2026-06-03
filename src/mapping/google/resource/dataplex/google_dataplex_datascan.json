@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "dataplex.datascans.delete"
+    ],
+    "modify": [
+      "dataplex.datascans.update"
+    ],
+    "plan": [
+      "dataplex.datascans.get"
+    ]
   }
 ]

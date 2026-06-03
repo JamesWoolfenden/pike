@@ -13,8 +13,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "compute.regionBackendServices.delete"
+    ],
+    "modify": [
+      "compute.regionBackendServices.update"
+    ],
+    "plan": [
+      "compute.regionBackendServices.get"
+    ]
   }
 ]

@@ -20,6 +20,10 @@
     "modify": [
       "storageinsights.reportConfigs.update"
     ],
-    "plan": []
+    "plan": [
+      "storage.buckets.get",
+      "storage.objects.list",
+      "storageinsights.reportConfigs.get"
+    ]
   }
 ]

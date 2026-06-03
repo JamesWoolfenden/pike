@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "storagetransfer.agentpools.delete"
+    ],
+    "modify": [
+      "storagetransfer.agentpools.update"
+    ],
+    "plan": [
+      "storagetransfer.agentpools.get"
+    ]
   }
 ]

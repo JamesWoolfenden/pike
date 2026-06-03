@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "compute.interconnectAttachmentGroups.delete"
+    ],
+    "modify": [
+      "compute.interconnectAttachmentGroups.update"
+    ],
+    "plan": [
+      "compute.interconnectAttachmentGroups.get"
+    ]
   }
 ]

@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "netapp.quotaRules.delete"
+    ],
+    "modify": [
+      "netapp.quotaRules.update"
+    ],
+    "plan": [
+      "netapp.quotaRules.get"
+    ]
   }
 ]

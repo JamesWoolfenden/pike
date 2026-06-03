@@ -8,8 +8,12 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
+    "destroy": [
+      "datastream.privateConnections.delete"
+    ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "datastream.privateConnections.get"
+    ]
   }
 ]

@@ -10,8 +10,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "compute.regionUrlMaps.delete"
+    ],
+    "modify": [
+      "compute.regionUrlMaps.update"
+    ],
+    "plan": [
+      "compute.regionUrlMaps.get"
+    ]
   }
 ]

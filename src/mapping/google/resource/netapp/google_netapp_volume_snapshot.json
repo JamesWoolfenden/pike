@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "netapp.snapshots.delete"
+    ],
+    "modify": [
+      "netapp.snapshots.update"
+    ],
+    "plan": [
+      "netapp.snapshots.get"
+    ]
   }
 ]

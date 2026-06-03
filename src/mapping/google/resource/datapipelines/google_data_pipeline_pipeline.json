@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "datapipelines.pipelines.delete"
+    ],
+    "modify": [
+      "datapipelines.pipelines.update"
+    ],
+    "plan": [
+      "datapipelines.pipelines.get"
+    ]
   }
 ]

@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "gkeonprem.vmwareClusters.delete"
+    ],
+    "modify": [
+      "gkeonprem.vmwareClusters.update"
+    ],
+    "plan": [
+      "gkeonprem.vmwareClusters.get"
+    ]
   }
 ]

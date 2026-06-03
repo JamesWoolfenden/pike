@@ -9,7 +9,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "discoveryengine.licenseConfigs.update"
+    ],
+    "plan": [
+      "discoveryengine.licenseConfigs.get"
+    ]
   }
 ]

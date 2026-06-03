@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "eventarc.enrollments.delete"
+    ],
+    "modify": [
+      "eventarc.enrollments.update"
+    ],
+    "plan": [
+      "eventarc.enrollments.get"
+    ]
   }
 ]

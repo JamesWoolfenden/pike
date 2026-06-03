@@ -8,8 +8,12 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
+    "destroy": [
+      "ces.appVersions.delete"
+    ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "ces.appVersions.get"
+    ]
   }
 ]

@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "iap.web.setIamPolicy"
+    ],
+    "plan": [
+      "iap.web.getIamPolicy"
+    ]
   }
 ]

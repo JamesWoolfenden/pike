@@ -11,8 +11,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "compute.instanceGroupManagers.delete"
+    ],
+    "modify": [
+      "compute.instanceGroupManagers.update"
+    ],
+    "plan": [
+      "compute.instanceGroupManagers.get"
+    ]
   }
 ]

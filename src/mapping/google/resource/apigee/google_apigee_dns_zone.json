@@ -8,8 +8,12 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
+    "destroy": [
+      "apigee.dnsZones.delete"
+    ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "apigee.dnsZones.get"
+    ]
   }
 ]

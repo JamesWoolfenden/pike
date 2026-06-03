@@ -10,7 +10,11 @@
     "destroy": [
       "bigquery.transfers.update"
     ],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "bigquery.transfers.update"
+    ],
+    "plan": [
+      "bigquery.transfers.get"
+    ]
   }
 ]

@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "securesourcemanager.repositories.delete"
+    ],
+    "modify": [
+      "securesourcemanager.repositories.update"
+    ],
+    "plan": [
+      "securesourcemanager.repositories.get"
+    ]
   }
 ]

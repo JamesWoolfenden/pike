@@ -19,6 +19,7 @@
       "spanner.databases.update"
     ],
     "plan": [
+      "spanner.databaseOperations.get",
       "spanner.databases.get"
     ]
   }

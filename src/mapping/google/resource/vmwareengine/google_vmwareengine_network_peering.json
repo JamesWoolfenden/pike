@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "vmwareengine.externalAddresses.delete"
+    ],
+    "modify": [
+      "vmwareengine.externalAddresses.update"
+    ],
+    "plan": [
+      "vmwareengine.externalAddresses.get"
+    ]
   }
 ]

@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "observability.traceScopes.delete"
+    ],
+    "modify": [
+      "observability.traceScopes.update"
+    ],
+    "plan": [
+      "observability.traceScopes.get"
+    ]
   }
 ]

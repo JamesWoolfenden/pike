@@ -11,7 +11,12 @@
     "destroy": [
       "Microsoft.Web/serverfarms/delete"
     ],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "Microsoft.Web/serverfarms/write"
+    ],
+    "plan": [
+      "Microsoft.Resources/subscriptions/providers/read",
+      "Microsoft.Web/serverfarms/read"
+    ]
   }
 ]

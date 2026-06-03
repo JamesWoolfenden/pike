@@ -14,7 +14,13 @@
     "destroy": [
       "Microsoft.Storage/storageAccounts/delete"
     ],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "Microsoft.Storage/storageAccounts/write"
+    ],
+    "plan": [
+      "Microsoft.Storage/storageAccounts/blobServices/read",
+      "Microsoft.Storage/storageAccounts/fileServices/read",
+      "Microsoft.Storage/storageAccounts/read"
+    ]
   }
 ]

@@ -24,7 +24,8 @@
     ],
     "plan": [
       "dns.policies.get",
-      "dns.policies.getIamPolicy"
+      "dns.policies.getIamPolicy",
+      "dns.policies.list"
     ]
   }
 ]

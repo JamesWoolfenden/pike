@@ -14,8 +14,14 @@
       ],
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "Microsoft.Network/privateEndpoints/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/privateEndpoints/write"
+    ],
+    "plan": [
+      "Microsoft.Network/privateEndpoints/read"
+    ]
   }
 ]

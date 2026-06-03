@@ -8,7 +8,9 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
+    "modify": [
+      "dns.managedZones.setIamPolicy"
+    ],
     "plan": [
       "dns.managedZones.getIamPolicy"
     ]

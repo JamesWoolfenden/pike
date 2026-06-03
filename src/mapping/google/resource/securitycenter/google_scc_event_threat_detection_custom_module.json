@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "securitycenter.eventthreatdetectioncustommodules.delete"
+    ],
+    "modify": [
+      "securitycenter.eventthreatdetectioncustommodules.update"
+    ],
+    "plan": [
+      "securitycenter.eventthreatdetectioncustommodules.get"
+    ]
   }
 ]

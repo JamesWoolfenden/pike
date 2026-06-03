@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "osconfig.guestPolicies.delete"
+    ],
+    "modify": [
+      "osconfig.guestPolicies.update"
+    ],
+    "plan": [
+      "osconfig.guestPolicies.get"
+    ]
   }
 ]

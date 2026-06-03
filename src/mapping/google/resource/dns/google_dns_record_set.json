@@ -21,7 +21,9 @@
     ],
     "plan": [
       "dns.changes.get",
-      "dns.resourceRecordSets.get"
+      "dns.changes.list",
+      "dns.resourceRecordSets.get",
+      "dns.resourceRecordSets.list"
     ]
   }
 ]

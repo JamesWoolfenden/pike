@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "spanner.databases.setIamPolicy"
+    ],
+    "plan": [
+      "spanner.databases.getIamPolicy"
+    ]
   }
 ]

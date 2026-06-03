@@ -10,8 +10,15 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "managedidentities.domains.delete"
+    ],
+    "modify": [
+      "managedidentities.domains.update"
+    ],
+    "plan": [
+      "managedidentities.domains.get",
+      "managedidentities.operations.get"
+    ]
   }
 ]

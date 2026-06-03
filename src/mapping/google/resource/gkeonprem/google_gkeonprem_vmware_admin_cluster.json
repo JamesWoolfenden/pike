@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "gkeonprem.vmwareAdminClusters.update"
+    ],
+    "plan": [
+      "gkeonprem.vmwareAdminClusters.get"
+    ]
   }
 ]

@@ -10,8 +10,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "certificatemanager.trustconfigs.delete"
+    ],
+    "modify": [
+      "certificatemanager.trustconfigs.update"
+    ],
+    "plan": [
+      "certificatemanager.trustconfigs.get"
+    ]
   }
 ]

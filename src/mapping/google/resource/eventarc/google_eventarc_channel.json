@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "eventarc.channels.delete"
+    ],
+    "modify": [
+      "eventarc.channels.update"
+    ],
+    "plan": [
+      "eventarc.channels.get"
+    ]
   }
 ]

@@ -10,8 +10,15 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "dataplex.glossaries.delete"
+    ],
+    "modify": [
+      "dataplex.glossaries.update"
+    ],
+    "plan": [
+      "dataplex.glossaries.get",
+      "dataplex.operations.get"
+    ]
   }
 ]

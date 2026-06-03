@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "billing.budgets.delete"
+    ],
+    "modify": [
+      "billing.budgets.update"
+    ],
+    "plan": [
+      "billing.budgets.get"
+    ]
   }
 ]

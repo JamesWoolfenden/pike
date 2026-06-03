@@ -17,8 +17,9 @@
       "Microsoft.Batch/batchAccounts/write"
     ],
     "plan": [
-      "Microsoft.Resources/subscriptions/resourceGroups/read",
-      "Microsoft.Batch/batchAccounts/read"
+      "Microsoft.Batch/batchAccounts/operationResults/read",
+      "Microsoft.Batch/batchAccounts/read",
+      "Microsoft.Resources/subscriptions/resourceGroups/read"
     ]
   }
 ]

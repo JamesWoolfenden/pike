@@ -17,8 +17,9 @@
       "Microsoft.DataProtection/backupVaults/write"
     ],
     "plan": [
-      "Microsoft.Resources/subscriptions/resourceGroups/read",
-      "Microsoft.DataProtection/backupVaults/read"
+      "Microsoft.DataProtection/backupVaults/operationResults/read",
+      "Microsoft.DataProtection/backupVaults/read",
+      "Microsoft.Resources/subscriptions/resourceGroups/read"
     ]
   }
 ]

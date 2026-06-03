@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "apigee.securityProfilesV2.delete"
+    ],
+    "modify": [
+      "apigee.securityProfilesV2.update"
+    ],
+    "plan": [
+      "apigee.securityProfilesV2.get"
+    ]
   }
 ]

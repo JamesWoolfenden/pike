@@ -16,6 +16,9 @@
     "modify": [
       "bigquery.capacityCommitments.update"
     ],
-    "plan": []
+    "plan": [
+      "bigquery.capacityCommitments.get",
+      "bigquery.capacityCommitments.list"
+    ]
   }
 ]

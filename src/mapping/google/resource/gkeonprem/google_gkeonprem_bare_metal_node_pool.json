@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "gkeonprem.bareMetalNodePools.delete"
+    ],
+    "modify": [
+      "gkeonprem.bareMetalNodePools.update"
+    ],
+    "plan": [
+      "gkeonprem.bareMetalNodePools.get"
+    ]
   }
 ]

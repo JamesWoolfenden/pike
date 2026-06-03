@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "compute.backendBuckets.delete"
+    ],
+    "modify": [
+      "compute.backendBuckets.update"
+    ],
+    "plan": [
+      "compute.backendBuckets.get"
+    ]
   }
 ]

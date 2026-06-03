@@ -18,8 +18,16 @@
       ],
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "Microsoft.ContainerRegistry/registries/delete"
+    ],
+    "modify": [
+      "Microsoft.ContainerRegistry/registries/write"
+    ],
+    "plan": [
+      "Microsoft.ContainerRegistry/registries/operationStatuses/read",
+      "Microsoft.ContainerRegistry/registries/read",
+      "Microsoft.Resources/subscriptions/resourcegroups/read"
+    ]
   }
 ]

@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "Microsoft.Storage/storageAccounts/write"
+    ],
+    "plan": [
+      "Microsoft.Storage/storageAccounts/read"
+    ]
   }
 ]

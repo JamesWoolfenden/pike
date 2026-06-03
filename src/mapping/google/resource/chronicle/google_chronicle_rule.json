@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "chronicle.rules.delete"
+    ],
+    "modify": [
+      "chronicle.rules.update"
+    ],
+    "plan": [
+      "chronicle.rules.get"
+    ]
   }
 ]

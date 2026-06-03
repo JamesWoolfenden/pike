@@ -10,8 +10,15 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "migrationcenter.preferenceSets.delete"
+    ],
+    "modify": [
+      "migrationcenter.preferenceSets.update"
+    ],
+    "plan": [
+      "migrationcenter.operations.get",
+      "migrationcenter.preferenceSets.get"
+    ]
   }
 ]

@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "netapp.backups.delete"
+    ],
+    "modify": [
+      "netapp.backups.update"
+    ],
+    "plan": [
+      "netapp.backups.get"
+    ]
   }
 ]

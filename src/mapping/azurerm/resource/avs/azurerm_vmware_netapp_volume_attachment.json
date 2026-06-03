@@ -20,10 +20,12 @@
       "Microsoft.AVS/privateClouds/clusters/datastores/write"
     ],
     "plan": [
-      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.AVS/privateClouds/clusters/datastores/operationstatuses/read",
       "Microsoft.AVS/privateClouds/clusters/datastores/read",
+      "Microsoft.AVS/privateClouds/clusters/read",
       "Microsoft.AVS/privateClouds/read",
-      "Microsoft.AVS/privateClouds/clusters/read"
+      "Microsoft.AVS/privateclouds/clusters/datastores/operationresults/read",
+      "Microsoft.Resources/subscriptions/resourceGroups/read"
     ]
   }
 ]

@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "storagetransfer.jobs.delete"
+    ],
+    "modify": [
+      "storagetransfer.jobs.update"
+    ],
+    "plan": [
+      "storagetransfer.jobs.get"
+    ]
   }
 ]

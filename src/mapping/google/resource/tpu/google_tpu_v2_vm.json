@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "tpu.nodes.delete"
+    ],
+    "modify": [
+      "tpu.nodes.update"
+    ],
+    "plan": [
+      "tpu.nodes.get"
+    ]
   }
 ]

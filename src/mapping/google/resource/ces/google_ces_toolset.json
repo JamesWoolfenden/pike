@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "ces.toolsets.delete"
+    ],
+    "modify": [
+      "ces.toolsets.update"
+    ],
+    "plan": [
+      "ces.toolsets.get"
+    ]
   }
 ]

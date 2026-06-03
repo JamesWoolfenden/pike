@@ -11,9 +11,14 @@
       "tags": []
     },
     "destroy": [
-      "Microsoft.Cache/redis/delete"
+      "Microsoft.Cache/redis/delete",
+      "Microsoft.Cache/redis/patchSchedules/delete"
     ],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "Microsoft.Cache/redis/write"
+    ],
+    "plan": [
+      "Microsoft.Cache/redis/read"
+    ]
   }
 ]

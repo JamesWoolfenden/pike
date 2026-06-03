@@ -8,8 +8,12 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
+    "destroy": [
+      "apihub.hostProjectRegistrations.delete"
+    ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "apihub.hostProjectRegistrations.get"
+    ]
   }
 ]

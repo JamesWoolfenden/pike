@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "compute.regionHealthChecks.delete"
+    ],
+    "modify": [
+      "compute.regionHealthChecks.update"
+    ],
+    "plan": [
+      "compute.regionHealthChecks.get"
+    ]
   }
 ]

@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "vmwareengine.vmwareEngineNetworks.delete"
+    ],
+    "modify": [
+      "vmwareengine.vmwareEngineNetworks.update"
+    ],
+    "plan": [
+      "vmwareengine.vmwareEngineNetworks.get"
+    ]
   }
 ]

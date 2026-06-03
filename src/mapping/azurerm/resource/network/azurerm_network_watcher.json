@@ -8,8 +8,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "Microsoft.Network/networkWatchers/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/networkWatchers/write"
+    ],
+    "plan": [
+      "Microsoft.Network/networkWatchers/read"
+    ]
   }
 ]

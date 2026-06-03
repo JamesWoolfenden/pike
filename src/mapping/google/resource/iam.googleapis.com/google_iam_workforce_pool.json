@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "iam.googleapis.com/workforcePools.delete"
+    ],
+    "modify": [
+      "iam.googleapis.com/workforcePools.update"
+    ],
+    "plan": [
+      "iam.googleapis.com/workforcePools.get"
+    ]
   }
 ]

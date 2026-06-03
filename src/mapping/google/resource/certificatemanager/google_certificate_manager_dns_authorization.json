@@ -12,8 +12,16 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "certificatemanager.dnsauthorizations.delete",
+      "certificatemanager.operations.delete"
+    ],
+    "modify": [
+      "certificatemanager.dnsauthorizations.update"
+    ],
+    "plan": [
+      "certificatemanager.dnsauthorizations.get",
+      "certificatemanager.operations.get"
+    ]
   }
 ]

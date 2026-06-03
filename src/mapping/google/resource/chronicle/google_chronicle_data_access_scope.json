@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "chronicle.dataAccessScopes.delete"
+    ],
+    "modify": [
+      "chronicle.dataAccessScopes.update"
+    ],
+    "plan": [
+      "chronicle.dataAccessScopes.get"
+    ]
   }
 ]

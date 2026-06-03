@@ -13,8 +13,17 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "datastore.databases.delete"
+    ],
+    "modify": [
+      "datastore.databases.update"
+    ],
+    "plan": [
+      "appengine.applications.get",
+      "datastore.databases.get",
+      "datastore.operations.get",
+      "resourcemanager.projects.get"
+    ]
   }
 ]

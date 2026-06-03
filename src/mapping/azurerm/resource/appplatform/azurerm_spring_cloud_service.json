@@ -18,8 +18,10 @@
       "Microsoft.AppPlatform/Spring/write"
     ],
     "plan": [
-      "Microsoft.Resources/subscriptions/resourceGroups/read",
-      "Microsoft.AppPlatform/Spring/read"
+      "Microsoft.AppPlatform/Spring/operationResults/read",
+      "Microsoft.AppPlatform/Spring/operationStatuses/read",
+      "Microsoft.AppPlatform/Spring/read",
+      "Microsoft.Resources/subscriptions/resourceGroups/read"
     ]
   }
 ]

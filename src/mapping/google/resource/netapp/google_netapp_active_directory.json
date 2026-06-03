@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "netapp.activeDirectories.delete"
+    ],
+    "modify": [
+      "netapp.activeDirectories.update"
+    ],
+    "plan": [
+      "netapp.activeDirectories.get"
+    ]
   }
 ]

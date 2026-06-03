@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "eventarc.pipelines.delete"
+    ],
+    "modify": [
+      "eventarc.pipelines.update"
+    ],
+    "plan": [
+      "eventarc.pipelines.get"
+    ]
   }
 ]

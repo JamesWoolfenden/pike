@@ -16,6 +16,9 @@
     "modify": [
       "apigateway.apis.update"
     ],
-    "plan": []
+    "plan": [
+      "apigateway.apis.get",
+      "apigateway.operations.get"
+    ]
   }
 ]

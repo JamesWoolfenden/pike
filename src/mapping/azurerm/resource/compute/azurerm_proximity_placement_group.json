@@ -11,9 +11,12 @@
     "destroy": [
       "Microsoft.Compute/proximityPlacementGroups/delete"
     ],
-    "modify": [],
+    "modify": [
+      "Microsoft.Compute/proximityPlacementGroups/write"
+    ],
     "plan": [
-      "Microsoft.Compute/proximityPlacementGroups/read"
+      "Microsoft.Compute/proximityPlacementGroups/read",
+      "Microsoft.Resources/subscriptions/resourcegroups/read"
     ]
   }
 ]

@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "dataform.releaseConfigs.delete"
+    ],
+    "modify": [
+      "dataform.releaseConfigs.update"
+    ],
+    "plan": [
+      "dataform.releaseConfigs.get"
+    ]
   }
 ]

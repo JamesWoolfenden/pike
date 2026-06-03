@@ -10,7 +10,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "billing.accounts.update"
+    ],
+    "plan": [
+      "billing.accounts.get"
+    ]
   }
 ]

@@ -8,8 +8,12 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
+    "destroy": [
+      "compute.rolloutPlans.delete"
+    ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "compute.rolloutPlans.get"
+    ]
   }
 ]

@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "networkservices.serviceLbPolicies.delete"
+    ],
+    "modify": [
+      "networkservices.serviceLbPolicies.update"
+    ],
+    "plan": [
+      "networkservices.serviceLbPolicies.get"
+    ]
   }
 ]

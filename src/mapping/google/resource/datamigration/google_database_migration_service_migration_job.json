@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "datamigration.migrationjobs.delete"
+    ],
+    "modify": [
+      "datamigration.migrationjobs.update"
+    ],
+    "plan": [
+      "datamigration.migrationjobs.get"
+    ]
   }
 ]

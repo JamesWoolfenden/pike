@@ -19,7 +19,8 @@
       "networksecurity.operations.get"
     ],
     "plan": [
-      "networksecurity.addressGroups.get"
+      "networksecurity.addressGroups.get",
+      "networksecurity.operations.get"
     ]
   }
 ]

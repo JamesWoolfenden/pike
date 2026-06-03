@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "oracledatabase.exadbVmClusters.delete"
+    ],
+    "modify": [
+      "oracledatabase.exadbVmClusters.update"
+    ],
+    "plan": [
+      "oracledatabase.exadbVmClusters.get"
+    ]
   }
 ]

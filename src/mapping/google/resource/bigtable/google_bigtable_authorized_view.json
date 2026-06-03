@@ -17,6 +17,8 @@
     "modify": [
       "bigtable.authorizedViews.update"
     ],
-    "plan": []
+    "plan": [
+      "bigtable.authorizedViews.get"
+    ]
   }
 ]

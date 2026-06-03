@@ -17,6 +17,8 @@
     "modify": [
       "source.repos.updateRepoConfig"
     ],
-    "plan": []
+    "plan": [
+      "source.repos.get"
+    ]
   }
 ]

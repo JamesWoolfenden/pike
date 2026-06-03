@@ -12,6 +12,8 @@
       "biglake.catalogs.delete"
     ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "biglake.catalogs.get"
+    ]
   }
 ]

@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "assuredworkloads.workload.delete"
+    ],
+    "modify": [
+      "assuredworkloads.workload.update"
+    ],
+    "plan": [
+      "assuredworkloads.workload.get"
+    ]
   }
 ]

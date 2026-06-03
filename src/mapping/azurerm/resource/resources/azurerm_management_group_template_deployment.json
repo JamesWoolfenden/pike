@@ -17,8 +17,9 @@
       "Microsoft.Resources/deployments/write"
     ],
     "plan": [
-      "Microsoft.Resources/subscriptions/resourceGroups/read",
-      "Microsoft.Resources/deployments/read"
+      "Microsoft.Resources/deployments/operationstatuses/read",
+      "Microsoft.Resources/deployments/read",
+      "Microsoft.Resources/subscriptions/resourceGroups/read"
     ]
   }
 ]

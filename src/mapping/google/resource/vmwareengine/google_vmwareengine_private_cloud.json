@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "vmwareengine.privateClouds.delete"
+    ],
+    "modify": [
+      "vmwareengine.privateClouds.update"
+    ],
+    "plan": [
+      "vmwareengine.privateClouds.get"
+    ]
   }
 ]

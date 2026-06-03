@@ -11,8 +11,12 @@
     },
     "destroy": [],
     "modify": [
+      "accesscontextmanager.accessPolicies.setIamPolicy",
       "analyticshub.dataExchanges.update"
     ],
-    "plan": []
+    "plan": [
+      "accesscontextmanager.accessPolicies.getIamPolicy",
+      "analyticshub.dataExchanges.get"
+    ]
   }
 ]

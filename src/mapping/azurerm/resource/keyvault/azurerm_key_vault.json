@@ -9,10 +9,15 @@
       "tags": []
     },
     "destroy": [
-      "Microsoft.KeyVault/vaults/delete",
-      "Microsoft.KeyVault/locations/deletedVaults/read"
+      "Microsoft.KeyVault/locations/deletedVaults/read",
+      "Microsoft.KeyVault/vaults/delete"
     ],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "Microsoft.KeyVault/vaults/write"
+    ],
+    "plan": [
+      "Microsoft.KeyVault/vaults/read",
+      "Microsoft.Resources/subscriptions/resourcegroups/read"
+    ]
   }
 ]

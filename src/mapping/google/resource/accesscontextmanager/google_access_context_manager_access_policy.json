@@ -15,6 +15,8 @@
     "modify": [
       "accesscontextmanager.accessPolicies.update"
     ],
-    "plan": []
+    "plan": [
+      "accesscontextmanager.accessPolicies.get"
+    ]
   }
 ]

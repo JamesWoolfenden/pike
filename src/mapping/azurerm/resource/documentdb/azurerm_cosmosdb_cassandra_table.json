@@ -19,10 +19,11 @@
       "Microsoft.DocumentDB/databaseAccounts/cassandraKeyspaces/tables/write"
     ],
     "plan": [
-      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DocumentDB/databaseAccounts/cassandraKeyspaces/read",
+      "Microsoft.DocumentDB/databaseAccounts/cassandraKeyspaces/tables/operationResults/read",
       "Microsoft.DocumentDB/databaseAccounts/cassandraKeyspaces/tables/read",
       "Microsoft.DocumentDB/databaseAccounts/read",
-      "Microsoft.DocumentDB/databaseAccounts/cassandraKeyspaces/read"
+      "Microsoft.Resources/subscriptions/resourceGroups/read"
     ]
   }
 ]

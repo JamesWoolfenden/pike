@@ -8,7 +8,9 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
+    "modify": [
+      "iap.tunnelDestGroups.setIamPolicy"
+    ],
     "plan": [
       "iap.tunnelDestGroups.getIamPolicy"
     ]

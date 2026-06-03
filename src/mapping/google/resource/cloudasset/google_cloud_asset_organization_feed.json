@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "cloudasset.feeds.delete"
+    ],
+    "modify": [
+      "cloudasset.feeds.update"
+    ],
+    "plan": [
+      "cloudasset.feeds.get"
+    ]
   }
 ]

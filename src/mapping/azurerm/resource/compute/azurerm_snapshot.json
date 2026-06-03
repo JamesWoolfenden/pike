@@ -11,9 +11,12 @@
     "destroy": [
       "Microsoft.Compute/snapshots/delete"
     ],
-    "modify": [],
+    "modify": [
+      "Microsoft.Compute/snapshots/write"
+    ],
     "plan": [
-      "Microsoft.Compute/snapshots/read"
+      "Microsoft.Compute/snapshots/read",
+      "Microsoft.Resources/subscriptions/resourcegroups/read"
     ]
   }
 ]

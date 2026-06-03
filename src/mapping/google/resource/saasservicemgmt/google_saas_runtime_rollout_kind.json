@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "saasservicemgmt.rolloutKinds.delete"
+    ],
+    "modify": [
+      "saasservicemgmt.rolloutKinds.update"
+    ],
+    "plan": [
+      "saasservicemgmt.rolloutKinds.get"
+    ]
   }
 ]

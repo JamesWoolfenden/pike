@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "aiplatform.reasoningEngines.setIamPolicy"
+    ],
+    "plan": [
+      "aiplatform.reasoningEngines.getIamPolicy"
+    ]
   }
 ]

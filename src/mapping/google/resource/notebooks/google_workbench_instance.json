@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "notebooks.instances.delete"
+    ],
+    "modify": [
+      "notebooks.instances.update"
+    ],
+    "plan": [
+      "notebooks.instances.get"
+    ]
   }
 ]

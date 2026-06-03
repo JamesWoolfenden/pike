@@ -17,8 +17,14 @@
       "firebase.clients.delete"
     ],
     "modify": [
-      "firebase.clients.update"
+      "firebase.clients.update",
+      "serviceusage.services.enable"
     ],
-    "plan": []
+    "plan": [
+      "clientauthconfig.clients.get",
+      "firebase.clients.get",
+      "resourcemanager.projects.get",
+      "serviceusage.services.get"
+    ]
   }
 ]

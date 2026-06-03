@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "binaryauthorization.attestors.delete"
+    ],
+    "modify": [
+      "binaryauthorization.attestors.update"
+    ],
+    "plan": [
+      "binaryauthorization.attestors.get"
+    ]
   }
 ]

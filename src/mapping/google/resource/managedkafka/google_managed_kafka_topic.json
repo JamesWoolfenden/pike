@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "managedkafka.topics.delete"
+    ],
+    "modify": [
+      "managedkafka.topics.update"
+    ],
+    "plan": [
+      "managedkafka.topics.get"
+    ]
   }
 ]

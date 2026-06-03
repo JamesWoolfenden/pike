@@ -16,6 +16,8 @@
     "modify": [
       "spanner.backupSchedules.update"
     ],
-    "plan": []
+    "plan": [
+      "spanner.backupSchedules.get"
+    ]
   }
 ]

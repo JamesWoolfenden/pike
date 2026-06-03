@@ -8,7 +8,9 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
+    "modify": [
+      "cloudfunctions.functions.setIamPolicy"
+    ],
     "plan": [
       "cloudfunctions.functions.getIamPolicy"
     ]

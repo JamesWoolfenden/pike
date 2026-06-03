@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "containeranalysis.notes.setIamPolicy"
+    ],
+    "plan": [
+      "containeranalysis.notes.getIamPolicy"
+    ]
   }
 ]

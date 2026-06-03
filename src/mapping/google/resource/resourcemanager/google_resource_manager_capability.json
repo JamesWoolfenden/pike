@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "resourcemanager.capabilities.update"
+    ],
+    "plan": [
+      "resourcemanager.capabilities.get"
+    ]
   }
 ]

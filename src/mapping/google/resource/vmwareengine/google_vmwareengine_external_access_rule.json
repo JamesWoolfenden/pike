@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "vmwareengine.externalAccessRules.delete"
+    ],
+    "modify": [
+      "vmwareengine.externalAccessRules.update"
+    ],
+    "plan": [
+      "vmwareengine.externalAccessRules.get"
+    ]
   }
 ]

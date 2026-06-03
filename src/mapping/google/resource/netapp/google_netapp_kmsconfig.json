@@ -19,7 +19,8 @@
       "netapp.operations.get"
     ],
     "plan": [
-      "netapp.kmsConfigs.get"
+      "netapp.kmsConfigs.get",
+      "netapp.operations.get"
     ]
   }
 ]

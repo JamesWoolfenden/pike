@@ -10,6 +10,8 @@
     },
     "destroy": [],
     "modify": [],
-    "plan": []
+    "plan": [
+      "resourcemanager.projects.get"
+    ]
   }
 ]

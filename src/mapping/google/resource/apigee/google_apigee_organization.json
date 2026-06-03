@@ -10,8 +10,15 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "apigee.organizations.delete"
+    ],
+    "modify": [
+      "apigee.organizations.update"
+    ],
+    "plan": [
+      "apigee.operations.get",
+      "apigee.organizations.get"
+    ]
   }
 ]

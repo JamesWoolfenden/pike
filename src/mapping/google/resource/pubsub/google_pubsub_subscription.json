@@ -12,10 +12,15 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
+    "destroy": [
+      "pubsub.subscriptions.delete"
+    ],
+    "modify": [
+      "pubsub.subscriptions.update"
+    ],
     "plan": [
-      "pubsub.subscriptions.get"
+      "pubsub.subscriptions.get",
+      "pubsub.subscriptions.list"
     ]
   }
 ]

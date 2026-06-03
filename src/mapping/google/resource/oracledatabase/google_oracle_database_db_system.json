@@ -8,8 +8,12 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
+    "destroy": [
+      "oracledatabase.dbSystems.delete"
+    ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "oracledatabase.dbSystems.get"
+    ]
   }
 ]

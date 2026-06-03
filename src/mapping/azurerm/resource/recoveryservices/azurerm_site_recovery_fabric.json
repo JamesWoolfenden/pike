@@ -18,9 +18,10 @@
       "Microsoft.RecoveryServices/vaults/replicationFabrics/write"
     ],
     "plan": [
-      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.RecoveryServices/Vaults/read",
+      "Microsoft.RecoveryServices/vaults/replicationFabrics/operationresults/read",
       "Microsoft.RecoveryServices/vaults/replicationFabrics/read",
-      "Microsoft.RecoveryServices/Vaults/read"
+      "Microsoft.Resources/subscriptions/resourceGroups/read"
     ]
   }
 ]

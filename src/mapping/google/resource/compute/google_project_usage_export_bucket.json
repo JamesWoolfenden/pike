@@ -10,6 +10,9 @@
     },
     "destroy": [],
     "modify": [],
-    "plan": []
+    "plan": [
+      "compute.globalOperations.get",
+      "compute.projects.get"
+    ]
   }
 ]

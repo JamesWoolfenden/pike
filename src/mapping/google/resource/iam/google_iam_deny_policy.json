@@ -10,8 +10,15 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "iam.denypolicies.delete"
+    ],
+    "modify": [
+      "iam.denypolicies.update"
+    ],
+    "plan": [
+      "iam.denypolicies.get",
+      "iam.denypolicies.list"
+    ]
   }
 ]

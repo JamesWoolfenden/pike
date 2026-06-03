@@ -18,7 +18,8 @@
       "dns.responsePolicies.update"
     ],
     "plan": [
-      "dns.responsePolicies.get"
+      "dns.responsePolicies.get",
+      "dns.responsePolicies.list"
     ]
   }
 ]

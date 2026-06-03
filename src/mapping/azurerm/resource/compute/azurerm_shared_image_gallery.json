@@ -11,9 +11,12 @@
     "destroy": [
       "Microsoft.Compute/galleries/delete"
     ],
-    "modify": [],
+    "modify": [
+      "Microsoft.Compute/galleries/write"
+    ],
     "plan": [
-      "Microsoft.Compute/galleries/read"
+      "Microsoft.Compute/galleries/read",
+      "Microsoft.Resources/subscriptions/resourcegroups/read"
     ]
   }
 ]

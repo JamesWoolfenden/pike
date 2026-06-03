@@ -12,7 +12,11 @@
     "destroy": [
       "pubsublite.reservations.delete"
     ],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "pubsublite.reservations.update"
+    ],
+    "plan": [
+      "pubsublite.reservations.get"
+    ]
   }
 ]

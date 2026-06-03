@@ -17,8 +17,9 @@
       "Microsoft.DataFactory/factories/write"
     ],
     "plan": [
-      "Microsoft.Resources/subscriptions/resourceGroups/read",
-      "Microsoft.DataFactory/factories/read"
+      "Microsoft.DataFactory/factories/operationResults/read",
+      "Microsoft.DataFactory/factories/read",
+      "Microsoft.Resources/subscriptions/resourceGroups/read"
     ]
   }
 ]

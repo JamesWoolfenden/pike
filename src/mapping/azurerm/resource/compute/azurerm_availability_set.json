@@ -11,9 +11,12 @@
     "destroy": [
       "Microsoft.Compute/availabilitySets/delete"
     ],
-    "modify": [],
+    "modify": [
+      "Microsoft.Compute/availabilitySets/write"
+    ],
     "plan": [
-      "Microsoft.Compute/availabilitySets/read"
+      "Microsoft.Compute/availabilitySets/read",
+      "Microsoft.Resources/subscriptions/resourcegroups/read"
     ]
   }
 ]

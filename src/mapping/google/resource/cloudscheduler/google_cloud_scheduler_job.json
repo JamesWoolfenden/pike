@@ -17,9 +17,12 @@
       "cloudscheduler.jobs.delete"
     ],
     "modify": [
+      "cloudscheduler.jobs.enable",
       "cloudscheduler.jobs.update"
     ],
-    "plan": [],
+    "plan": [
+      "cloudscheduler.jobs.get"
+    ],
     "runtime": {
       "app_engine_http_target": [
         "appengine.applications.get"

@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "run.jobs.setIamPolicy"
+    ],
+    "plan": [
+      "run.jobs.getIamPolicy"
+    ]
   }
 ]

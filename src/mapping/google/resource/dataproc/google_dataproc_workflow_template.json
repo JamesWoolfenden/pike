@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "dataproc.workflowTemplates.delete"
+    ],
+    "modify": [
+      "dataproc.workflowTemplates.update"
+    ],
+    "plan": [
+      "dataproc.workflowTemplates.get"
+    ]
   }
 ]

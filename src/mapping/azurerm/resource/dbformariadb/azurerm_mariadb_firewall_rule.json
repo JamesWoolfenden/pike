@@ -8,8 +8,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "Microsoft.DBforMariaDB/servers/firewallRules/delete"
+    ],
+    "modify": [
+      "Microsoft.DBforMariaDB/servers/firewallRules/write"
+    ],
+    "plan": [
+      "Microsoft.DBforMariaDB/servers/firewallRules/read"
+    ]
   }
 ]

@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "cloudfunctions.functions.setIamPolicy"
+    ],
+    "plan": [
+      "cloudfunctions.functions.getIamPolicy"
+    ]
   }
 ]

@@ -18,9 +18,10 @@
       "Microsoft.DataShare/accounts/shares/write"
     ],
     "plan": [
-      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DataShare/accounts/read",
+      "Microsoft.DataShare/accounts/shares/operationResults/read",
       "Microsoft.DataShare/accounts/shares/read",
-      "Microsoft.DataShare/accounts/read"
+      "Microsoft.Resources/subscriptions/resourceGroups/read"
     ]
   }
 ]

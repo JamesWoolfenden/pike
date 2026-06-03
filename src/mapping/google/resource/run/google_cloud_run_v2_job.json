@@ -17,7 +17,8 @@
       "run.jobs.update"
     ],
     "plan": [
-      "run.jobs.get"
+      "run.jobs.get",
+      "run.operations.get"
     ],
     "runtime": {
       "containers": [

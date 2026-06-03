@@ -9,7 +9,12 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "Microsoft.Storage/storageAccounts/write"
+    ],
+    "plan": [
+      "Microsoft.KeyVault/vaults/read",
+      "Microsoft.Storage/storageAccounts/read"
+    ]
   }
 ]

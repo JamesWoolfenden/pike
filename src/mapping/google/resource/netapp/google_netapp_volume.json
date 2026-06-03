@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "netapp.volumes.delete"
+    ],
+    "modify": [
+      "netapp.volumes.update"
+    ],
+    "plan": [
+      "netapp.volumes.get"
+    ]
   }
 ]

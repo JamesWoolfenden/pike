@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "gkeonprem.bareMetalAdminClusters.delete"
+    ],
+    "modify": [
+      "gkeonprem.bareMetalAdminClusters.update"
+    ],
+    "plan": [
+      "gkeonprem.bareMetalAdminClusters.get"
+    ]
   }
 ]

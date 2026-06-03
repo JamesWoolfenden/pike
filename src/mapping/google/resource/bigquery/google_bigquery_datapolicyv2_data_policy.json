@@ -10,8 +10,15 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "bigquery.dataPolicies.delete"
+    ],
+    "modify": [
+      "bigquery.dataPolicies.update"
+    ],
+    "plan": [
+      "bigquery.dataPolicies.get",
+      "bigquery.routines.get"
+    ]
   }
 ]

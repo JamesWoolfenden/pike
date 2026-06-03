@@ -8,7 +8,9 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
+    "modify": [
+      "compute.regionBackendServices.setIamPolicy"
+    ],
     "plan": [
       "compute.regionBackendServices.getIamPolicy"
     ]

@@ -8,7 +8,9 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
+    "modify": [
+      "clouddeploy.customTargetTypes.setIamPolicy"
+    ],
     "plan": [
       "clouddeploy.customTargetTypes.getIamPolicy"
     ]

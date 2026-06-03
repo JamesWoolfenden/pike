@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "memcache.instances.delete"
+    ],
+    "modify": [
+      "memcache.instances.update"
+    ],
+    "plan": [
+      "memcache.instances.get"
+    ]
   }
 ]

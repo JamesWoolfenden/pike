@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "securitycenter.bigQueryExports.delete"
+    ],
+    "modify": [
+      "securitycenter.bigQueryExports.update"
+    ],
+    "plan": [
+      "securitycenter.bigQueryExports.get"
+    ]
   }
 ]

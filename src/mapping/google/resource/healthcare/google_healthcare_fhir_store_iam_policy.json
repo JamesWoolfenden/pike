@@ -8,7 +8,9 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
+    "modify": [
+      "healthcare.fhirStores.setIamPolicy"
+    ],
     "plan": [
       "healthcare.fhirStores.getIamPolicy"
     ]

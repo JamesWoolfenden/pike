@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "datacatalog.tagTemplates.setIamPolicy"
+    ],
+    "plan": [
+      "datacatalog.tagTemplates.getIamPolicy"
+    ]
   }
 ]

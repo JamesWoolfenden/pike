@@ -20,9 +20,10 @@
     ],
     "plan": [
       "Microsoft.Resources/subscriptions/resourceGroups/read",
-      "Microsoft.Synapse/workspaces/sqlPools/workloadGroups/read",
       "Microsoft.Synapse/workspaces/read",
-      "Microsoft.Synapse/workspaces/sqlPools/read"
+      "Microsoft.Synapse/workspaces/sqlPools/read",
+      "Microsoft.Synapse/workspaces/sqlPools/workloadGroups/operationStatuses/read",
+      "Microsoft.Synapse/workspaces/sqlPools/workloadGroups/read"
     ]
   }
 ]

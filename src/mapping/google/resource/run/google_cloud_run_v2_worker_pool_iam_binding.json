@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "run.workerpools.setIamPolicy"
+    ],
+    "plan": [
+      "run.workerpools.getIamPolicy"
+    ]
   }
 ]

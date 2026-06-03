@@ -18,9 +18,10 @@
       "Microsoft.ContainerRegistry/registries/scopeMaps/write"
     ],
     "plan": [
-      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ContainerRegistry/registries/read",
+      "Microsoft.ContainerRegistry/registries/scopeMaps/operationStatuses/read",
       "Microsoft.ContainerRegistry/registries/scopeMaps/read",
-      "Microsoft.ContainerRegistry/registries/read"
+      "Microsoft.Resources/subscriptions/resourceGroups/read"
     ]
   }
 ]

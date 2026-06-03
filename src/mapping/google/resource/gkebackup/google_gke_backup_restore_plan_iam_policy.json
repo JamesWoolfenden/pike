@@ -8,7 +8,9 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
+    "modify": [
+      "gkebackup.restorePlans.setIamPolicy"
+    ],
     "plan": [
       "gkebackup.restorePlans.getIamPolicy"
     ]

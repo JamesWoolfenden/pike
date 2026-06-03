@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "dialogflow.conversationProfiles.delete"
+    ],
+    "modify": [
+      "dialogflow.conversationProfiles.update"
+    ],
+    "plan": [
+      "dialogflow.conversationProfiles.get"
+    ]
   }
 ]

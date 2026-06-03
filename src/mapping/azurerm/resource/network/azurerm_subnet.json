@@ -12,7 +12,13 @@
     "destroy": [
       "Microsoft.Network/virtualNetworks/subnets/delete"
     ],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "Microsoft.Network/virtualNetworks/subnets/write"
+    ],
+    "plan": [
+      "Microsoft.Network/virtualNetworks/read",
+      "Microsoft.Network/virtualNetworks/subnets/read",
+      "Microsoft.Resources/subscriptions/resourcegroups/read"
+    ]
   }
 ]

@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "modelarmor.floorSettings.update"
+    ],
+    "plan": [
+      "modelarmor.floorSettings.get"
+    ]
   }
 ]

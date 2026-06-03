@@ -20,11 +20,12 @@
       "Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/write"
     ],
     "plan": [
-      "Microsoft.Resources/subscriptions/resourceGroups/read",
-      "Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/read",
       "Microsoft.RecoveryServices/Vaults/read",
       "Microsoft.RecoveryServices/vaults/replicationFabrics/read",
-      "Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/read"
+      "Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/read",
+      "Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/operationresults/read",
+      "Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/read",
+      "Microsoft.Resources/subscriptions/resourceGroups/read"
     ]
   }
 ]

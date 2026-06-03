@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "resourcemanager.folders.setIamPolicy"
+    ],
+    "plan": [
+      "resourcemanager.folders.getIamPolicy"
+    ]
   }
 ]

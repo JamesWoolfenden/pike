@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "biglake.namespaces.setIamPolicy"
+    ],
+    "plan": [
+      "biglake.namespaces.getIamPolicy"
+    ]
   }
 ]

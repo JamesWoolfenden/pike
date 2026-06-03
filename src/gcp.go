@@ -53,6 +53,14 @@ func getGCPResourcePermissions(sourceData ResourceV2) ([]string, error) {
 	return permissions, nil
 }
 
+func getGCPPlanPermissions(sourceData ResourceV2) ([]string, error) {
+	raw := GCPLookup(sourceData.Name)
+	if raw == nil {
+		return nil, &notImplementedResourceError{sourceData.Name}
+	}
+	return getPlanPermissionMap(raw, sourceData.Attributes, sourceData.Name)
+}
+
 func getGCPResourceRuntimePermissions(sourceData ResourceV2) (RuntimePermission, error) {
 	raw := GCPLookup(sourceData.Name)
 	if raw == nil {

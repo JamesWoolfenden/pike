@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "discoveryengine.targetSites.delete"
+    ],
+    "modify": [
+      "discoveryengine.targetSites.update"
+    ],
+    "plan": [
+      "discoveryengine.targetSites.get"
+    ]
   }
 ]

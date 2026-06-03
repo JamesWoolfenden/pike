@@ -9,7 +9,9 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
+    "modify": [
+      "cloudtasks.queues.setIamPolicy"
+    ],
     "plan": [
       "cloudtasks.queues.getIamPolicy",
       "cloudtasks.queues.list"

@@ -9,10 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
+    "destroy": [
+      "compute.firewalls.delete"
+    ],
     "modify": [
       "compute.firewalls.update"
     ],
-    "plan": []
+    "plan": [
+      "compute.firewalls.get"
+    ]
   }
 ]

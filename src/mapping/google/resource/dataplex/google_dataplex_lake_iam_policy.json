@@ -8,7 +8,9 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
+    "modify": [
+      "dataplex.lakes.setIamPolicy"
+    ],
     "plan": [
       "dataplex.lakes.getIamPolicy"
     ]

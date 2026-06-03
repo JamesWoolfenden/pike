@@ -17,8 +17,9 @@
       "Microsoft.OperationalInsights/clusters/write"
     ],
     "plan": [
-      "Microsoft.Resources/subscriptions/resourceGroups/read",
-      "Microsoft.OperationalInsights/clusters/read"
+      "Microsoft.OperationalInsights/clusters/operationresults/read",
+      "Microsoft.OperationalInsights/clusters/read",
+      "Microsoft.Resources/subscriptions/resourceGroups/read"
     ]
   }
 ]

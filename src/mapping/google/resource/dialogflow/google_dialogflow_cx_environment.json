@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "dialogflow.environments.delete"
+    ],
+    "modify": [
+      "dialogflow.environments.update"
+    ],
+    "plan": [
+      "dialogflow.environments.get"
+    ]
   }
 ]

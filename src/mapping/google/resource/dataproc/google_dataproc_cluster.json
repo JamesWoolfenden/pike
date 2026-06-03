@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "dataproc.clusters.delete"
+    ],
+    "modify": [
+      "dataproc.clusters.update"
+    ],
+    "plan": [
+      "dataproc.clusters.get"
+    ]
   }
 ]

@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "bigtable.schemaBundles.delete"
+    ],
+    "modify": [
+      "bigtable.schemaBundles.update"
+    ],
+    "plan": [
+      "bigtable.schemaBundles.get"
+    ]
   }
 ]

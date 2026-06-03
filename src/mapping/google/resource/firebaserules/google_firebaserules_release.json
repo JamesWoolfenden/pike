@@ -15,6 +15,8 @@
     "modify": [
       "firebaserules.releases.update"
     ],
-    "plan": []
+    "plan": [
+      "firebaserules.releases.get"
+    ]
   }
 ]

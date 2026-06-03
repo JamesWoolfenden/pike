@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "edgecontainer.vpnConnections.delete"
+    ],
+    "modify": [
+      "edgecontainer.vpnConnections.update"
+    ],
+    "plan": [
+      "edgecontainer.vpnConnections.get"
+    ]
   }
 ]

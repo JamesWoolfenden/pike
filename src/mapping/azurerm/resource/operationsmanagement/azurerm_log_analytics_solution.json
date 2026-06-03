@@ -11,7 +11,11 @@
     "destroy": [
       "Microsoft.OperationsManagement/solutions/delete"
     ],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "Microsoft.OperationsManagement/solutions/write"
+    ],
+    "plan": [
+      "Microsoft.OperationsManagement/solutions/read"
+    ]
   }
 ]

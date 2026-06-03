@@ -12,8 +12,16 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "aiplatform.pipelineJobs.delete",
+      "aiplatform.schedules.delete"
+    ],
+    "modify": [
+      "aiplatform.schedules.update"
+    ],
+    "plan": [
+      "aiplatform.pipelineJobs.get",
+      "aiplatform.schedules.get"
+    ]
   }
 ]

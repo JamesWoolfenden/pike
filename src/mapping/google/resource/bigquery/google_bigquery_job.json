@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "bigquery.jobs.delete"
+    ],
+    "modify": [
+      "bigquery.jobs.update"
+    ],
+    "plan": [
+      "bigquery.jobs.get"
+    ]
   }
 ]

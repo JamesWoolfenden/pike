@@ -8,8 +8,12 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
+    "destroy": [
+      "monitoring.metricDescriptors.delete"
+    ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "monitoring.metricDescriptors.get"
+    ]
   }
 ]

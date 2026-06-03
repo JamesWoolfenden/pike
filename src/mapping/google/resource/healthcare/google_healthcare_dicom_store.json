@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "healthcare.dicomStores.delete"
+    ],
+    "modify": [
+      "healthcare.dicomStores.update"
+    ],
+    "plan": [
+      "healthcare.dicomStores.get"
+    ]
   }
 ]

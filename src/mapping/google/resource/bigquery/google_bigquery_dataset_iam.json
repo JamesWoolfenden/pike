@@ -9,7 +9,12 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "bigquery.datasets.setIamPolicy",
+      "bigquery.datasets.update"
+    ],
+    "plan": [
+      "bigquery.datasets.getIamPolicy"
+    ]
   }
 ]

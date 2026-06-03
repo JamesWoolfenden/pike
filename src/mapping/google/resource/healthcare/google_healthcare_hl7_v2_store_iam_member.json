@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "healthcare.hl7V2Stores.setIamPolicy"
+    ],
+    "plan": [
+      "healthcare.hl7V2Stores.getIamPolicy"
+    ]
   }
 ]

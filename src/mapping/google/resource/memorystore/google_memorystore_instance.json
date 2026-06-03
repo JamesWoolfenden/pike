@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "memorystore.instances.delete"
+    ],
+    "modify": [
+      "memorystore.instances.update"
+    ],
+    "plan": [
+      "memorystore.instances.get"
+    ]
   }
 ]

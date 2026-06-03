@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "gkehub.namespaces.delete"
+    ],
+    "modify": [
+      "gkehub.namespaces.update"
+    ],
+    "plan": [
+      "gkehub.namespaces.get"
+    ]
   }
 ]

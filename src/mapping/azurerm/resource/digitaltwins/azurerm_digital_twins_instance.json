@@ -17,8 +17,9 @@
       "Microsoft.DigitalTwins/digitalTwinsInstances/write"
     ],
     "plan": [
-      "Microsoft.Resources/subscriptions/resourceGroups/read",
-      "Microsoft.DigitalTwins/digitalTwinsInstances/read"
+      "Microsoft.DigitalTwins/digitalTwinsInstances/operationResults/read",
+      "Microsoft.DigitalTwins/digitalTwinsInstances/read",
+      "Microsoft.Resources/subscriptions/resourceGroups/read"
     ]
   }
 ]

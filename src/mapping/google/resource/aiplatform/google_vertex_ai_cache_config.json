@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "aiplatform.cacheConfigs.update"
+    ],
+    "plan": [
+      "aiplatform.cacheConfigs.get"
+    ]
   }
 ]

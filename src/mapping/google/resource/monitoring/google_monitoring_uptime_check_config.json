@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "monitoring.uptimeCheckConfigs.delete"
+    ],
+    "modify": [
+      "monitoring.uptimeCheckConfigs.update"
+    ],
+    "plan": [
+      "monitoring.uptimeCheckConfigs.get"
+    ]
   }
 ]

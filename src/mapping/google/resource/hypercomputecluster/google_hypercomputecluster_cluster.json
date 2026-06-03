@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "hypercomputecluster.clusters.delete"
+    ],
+    "modify": [
+      "hypercomputecluster.clusters.update"
+    ],
+    "plan": [
+      "hypercomputecluster.clusters.get"
+    ]
   }
 ]

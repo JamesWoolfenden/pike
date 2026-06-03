@@ -12,7 +12,11 @@
     "destroy": [
       "pubsublite.topics.delete"
     ],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "pubsublite.topics.update"
+    ],
+    "plan": [
+      "pubsublite.topics.get"
+    ]
   }
 ]

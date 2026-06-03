@@ -10,8 +10,15 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "clouddeploy.customTargetTypes.delete"
+    ],
+    "modify": [
+      "clouddeploy.customTargetTypes.update"
+    ],
+    "plan": [
+      "clouddeploy.customTargetTypes.get",
+      "clouddeploy.operations.get"
+    ]
   }
 ]

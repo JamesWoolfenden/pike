@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "cloudaicompanion.repositoryGroups.delete"
+    ],
+    "modify": [
+      "cloudaicompanion.repositoryGroups.update"
+    ],
+    "plan": [
+      "cloudaicompanion.repositoryGroups.get"
+    ]
   }
 ]

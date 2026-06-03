@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "datafusion.instances.setIamPolicy"
+    ],
+    "plan": [
+      "datafusion.instances.getIamPolicy"
+    ]
   }
 ]

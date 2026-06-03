@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "bigquery.tables.setIamPolicy"
+    ],
+    "plan": [
+      "bigquery.tables.getIamPolicy"
+    ]
   }
 ]

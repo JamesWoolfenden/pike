@@ -9,7 +9,9 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
+    "modify": [
+      "cloudbuild.builds.update"
+    ],
     "plan": [
       "cloudbuild.builds.get"
     ],

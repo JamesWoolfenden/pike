@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "clouddeploy.deliveryPipelines.delete"
+    ],
+    "modify": [
+      "clouddeploy.deliveryPipelines.update"
+    ],
+    "plan": [
+      "clouddeploy.deliveryPipelines.get"
+    ]
   }
 ]

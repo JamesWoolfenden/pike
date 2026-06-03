@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "cloudbuild.integrations.delete"
+    ],
+    "modify": [
+      "cloudbuild.integrations.update"
+    ],
+    "plan": [
+      "cloudbuild.integrations.get"
+    ]
   }
 ]

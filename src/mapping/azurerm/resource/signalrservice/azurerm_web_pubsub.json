@@ -10,8 +10,15 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "Microsoft.SignalRService/webPubSub/delete"
+    ],
+    "modify": [
+      "Microsoft.SignalRService/webPubSub/write"
+    ],
+    "plan": [
+      "Microsoft.SignalRService/WebPubSub/operationStatuses/read",
+      "Microsoft.SignalRService/webPubSub/read"
+    ]
   }
 ]

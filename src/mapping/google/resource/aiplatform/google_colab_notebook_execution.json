@@ -8,8 +8,12 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
+    "destroy": [
+      "aiplatform.notebookExecutionJobs.delete"
+    ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "aiplatform.notebookExecutionJobs.get"
+    ]
   }
 ]

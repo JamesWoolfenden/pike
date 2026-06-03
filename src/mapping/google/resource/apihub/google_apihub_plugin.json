@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "apihub.plugins.delete"
+    ],
+    "modify": [
+      "apihub.plugins.update"
+    ],
+    "plan": [
+      "apihub.plugins.get"
+    ]
   }
 ]

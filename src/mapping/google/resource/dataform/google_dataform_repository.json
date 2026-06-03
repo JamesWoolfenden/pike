@@ -8,8 +8,12 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
+    "destroy": [
+      "dataform.repositories.delete"
+    ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "dataform.repositories.get"
+    ]
   }
 ]

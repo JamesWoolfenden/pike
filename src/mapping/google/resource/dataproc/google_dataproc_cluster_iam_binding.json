@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "dataproc.clusters.setIamPolicy"
+    ],
+    "plan": [
+      "dataproc.clusters.getIamPolicy"
+    ]
   }
 ]

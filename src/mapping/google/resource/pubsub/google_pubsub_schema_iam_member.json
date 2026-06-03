@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "pubsub.schemas.setIamPolicy"
+    ],
+    "plan": [
+      "pubsub.schemas.getIamPolicy"
+    ]
   }
 ]

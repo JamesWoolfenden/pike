@@ -7,7 +7,9 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
+    "destroy": [
+      "apigee.deployments.delete"
+    ],
     "modify": [],
     "plan": []
   }

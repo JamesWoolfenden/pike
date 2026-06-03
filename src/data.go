@@ -364,13 +364,13 @@ func GetPermission(result ResourceV2) (Sorted, error) {
 		if err != nil {
 			log.Error().Err(err).Msg("failed to get Azure permissions")
 		}
-		myPermission.PlanAZURE = filterPlanPermissionsAzure(myPermission.AZURE)
+		myPermission.PlanAZURE, _ = getAZUREPlanPermissions(result)
 	case provider.Google, provider.GCP:
 		myPermission.GCP, err = getGCPPermissions(result)
 		if err != nil {
 			log.Error().Err(err).Msg("failed to get GCP permissions")
 		}
-		myPermission.PlanGCP = filterPlanPermissionsGCP(myPermission.GCP)
+		myPermission.PlanGCP, _ = getGCPPlanPermissions(result)
 		runtimePerm, err := getGCPRuntimePermissions(result)
 		if err != nil {
 			log.Error().Err(err).Msg("failed to get GCP runtime permissions")

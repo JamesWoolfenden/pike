@@ -11,8 +11,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "compute.urlMaps.delete"
+    ],
+    "modify": [
+      "compute.urlMaps.update"
+    ],
+    "plan": [
+      "compute.urlMaps.get"
+    ]
   }
 ]

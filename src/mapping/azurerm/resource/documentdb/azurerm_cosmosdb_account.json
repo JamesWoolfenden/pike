@@ -15,7 +15,12 @@
     "destroy": [
       "Microsoft.DocumentDB/databaseAccounts/delete"
     ],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "Microsoft.DocumentDB/databaseAccounts/write"
+    ],
+    "plan": [
+      "Microsoft.DocumentDB/databaseAccounts/read",
+      "Microsoft.Resources/subscriptions/resourcegroups/read"
+    ]
   }
 ]

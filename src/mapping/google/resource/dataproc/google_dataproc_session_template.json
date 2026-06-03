@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "dataproc.sessionTemplates.delete"
+    ],
+    "modify": [
+      "dataproc.sessionTemplates.update"
+    ],
+    "plan": [
+      "dataproc.sessionTemplates.get"
+    ]
   }
 ]

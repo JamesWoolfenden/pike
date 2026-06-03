@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "netapp.hostGroups.delete"
+    ],
+    "modify": [
+      "netapp.hostGroups.update"
+    ],
+    "plan": [
+      "netapp.hostGroups.get"
+    ]
   }
 ]

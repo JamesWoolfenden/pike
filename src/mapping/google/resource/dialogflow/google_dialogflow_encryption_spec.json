@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "dialogflow.encryptionspec.update"
+    ],
+    "plan": [
+      "dialogflow.encryptionspec.get"
+    ]
   }
 ]

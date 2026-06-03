@@ -18,6 +18,7 @@
     ],
     "plan": [
       "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.ServiceBus/namespaces/operationresults/read",
       "Microsoft.ServiceBus/namespaces/read"
     ]
   }

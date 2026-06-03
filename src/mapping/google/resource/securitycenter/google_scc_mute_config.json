@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "securitycenter.muteconfigs.delete"
+    ],
+    "modify": [
+      "securitycenter.muteconfigs.update"
+    ],
+    "plan": [
+      "securitycenter.muteconfigs.get"
+    ]
   }
 ]

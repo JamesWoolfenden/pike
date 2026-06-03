@@ -10,7 +10,13 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "storage.buckets.setIamPolicy",
+      "storage.buckets.update"
+    ],
+    "plan": [
+      "storage.buckets.get",
+      "storage.buckets.getIamPolicy"
+    ]
   }
 ]

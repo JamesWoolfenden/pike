@@ -8,7 +8,9 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
+    "modify": [
+      "compute.instantSnapshots.setIamPolicy"
+    ],
     "plan": [
       "compute.instantSnapshots.getIamPolicy"
     ]

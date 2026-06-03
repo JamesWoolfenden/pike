@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "apigee.addonsconfig.update"
+    ],
+    "plan": [
+      "apigee.addonsconfig.get"
+    ]
   }
 ]

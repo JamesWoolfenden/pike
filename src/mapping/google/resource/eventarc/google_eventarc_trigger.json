@@ -9,9 +9,15 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": [],
+    "destroy": [
+      "eventarc.triggers.delete"
+    ],
+    "modify": [
+      "eventarc.triggers.update"
+    ],
+    "plan": [
+      "eventarc.triggers.get"
+    ],
     "runtime": {
       "destination": [
         "run.routes.invoke",

@@ -14,7 +14,9 @@
       ],
       "tags": []
     },
-    "destroy": [],
+    "destroy": [
+      "compute.globalAddresses.delete"
+    ],
     "modify": [],
     "plan": [
       "compute.globalAddresses.get"

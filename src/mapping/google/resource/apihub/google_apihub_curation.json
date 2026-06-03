@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "apihub.curations.delete"
+    ],
+    "modify": [
+      "apihub.curations.update"
+    ],
+    "plan": [
+      "apihub.curations.get"
+    ]
   }
 ]

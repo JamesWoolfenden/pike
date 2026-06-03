@@ -8,8 +8,12 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
+    "destroy": [
+      "oracledatabase.odbSubnets.delete"
+    ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "oracledatabase.odbSubnets.get"
+    ]
   }
 ]

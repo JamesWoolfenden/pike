@@ -8,7 +8,9 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
+    "modify": [
+      "gkehub.features.setIamPolicy"
+    ],
     "plan": [
       "gkehub.features.getIamPolicy"
     ]

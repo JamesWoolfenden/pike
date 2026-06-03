@@ -18,9 +18,10 @@
       "Microsoft.DocumentDB/databaseAccounts/gremlinDatabases/write"
     ],
     "plan": [
-      "Microsoft.Resources/subscriptions/resourceGroups/read",
+      "Microsoft.DocumentDB/databaseAccounts/gremlinDatabases/operationResults/read",
       "Microsoft.DocumentDB/databaseAccounts/gremlinDatabases/read",
-      "Microsoft.DocumentDB/databaseAccounts/read"
+      "Microsoft.DocumentDB/databaseAccounts/read",
+      "Microsoft.Resources/subscriptions/resourceGroups/read"
     ]
   }
 ]

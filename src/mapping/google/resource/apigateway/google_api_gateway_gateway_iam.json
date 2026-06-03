@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "apigateway.gateways.setIamPolicy"
+    ],
+    "plan": [
+      "apigateway.gateways.getIamPolicy"
+    ]
   }
 ]

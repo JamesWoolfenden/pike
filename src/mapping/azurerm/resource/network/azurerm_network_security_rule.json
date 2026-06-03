@@ -11,7 +11,12 @@
     "destroy": [
       "Microsoft.Network/networkSecurityGroups/securityRules/delete"
     ],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "Microsoft.Network/networkSecurityGroups/securityRules/write"
+    ],
+    "plan": [
+      "Microsoft.Network/networkSecurityGroups/read",
+      "Microsoft.Network/networkSecurityGroups/securityRules/read"
+    ]
   }
 ]

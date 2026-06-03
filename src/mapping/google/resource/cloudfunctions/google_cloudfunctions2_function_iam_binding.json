@@ -10,7 +10,13 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "cloudfunctions.functions.setIamPolicy",
+      "run.services.setIamPolicy"
+    ],
+    "plan": [
+      "cloudfunctions.functions.getIamPolicy",
+      "run.services.getIamPolicy"
+    ]
   }
 ]

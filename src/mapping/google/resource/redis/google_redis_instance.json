@@ -17,7 +17,8 @@
       "redis.instances.update"
     ],
     "plan": [
-      "redis.instances.get"
+      "redis.instances.get",
+      "redis.operations.get"
     ]
   }
 ]

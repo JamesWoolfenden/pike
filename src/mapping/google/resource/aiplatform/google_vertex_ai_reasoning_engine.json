@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "aiplatform.reasoningEngines.delete"
+    ],
+    "modify": [
+      "aiplatform.reasoningEngines.update"
+    ],
+    "plan": [
+      "aiplatform.reasoningEngines.get"
+    ]
   }
 ]

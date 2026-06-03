@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "dataproc.autoscalingPolicies.delete"
+    ],
+    "modify": [
+      "dataproc.autoscalingPolicies.update"
+    ],
+    "plan": [
+      "dataproc.autoscalingPolicies.get"
+    ]
   }
 ]

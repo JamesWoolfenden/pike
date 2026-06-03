@@ -8,8 +8,12 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
+    "destroy": [
+      "dataplex.entryLinks.delete"
+    ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "dataplex.entryLinks.get"
+    ]
   }
 ]

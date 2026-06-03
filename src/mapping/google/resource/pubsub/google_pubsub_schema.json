@@ -11,8 +11,13 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
+    "destroy": [
+      "pubsub.schemas.delete"
+    ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "pubsub.schemas.get",
+      "pubsub.schemas.list"
+    ]
   }
 ]

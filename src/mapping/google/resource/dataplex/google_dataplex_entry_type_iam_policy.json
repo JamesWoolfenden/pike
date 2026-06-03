@@ -8,7 +8,9 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
+    "modify": [
+      "dataplex.entryTypes.setIamPolicy"
+    ],
     "plan": [
       "dataplex.entryTypes.getIamPolicy"
     ]

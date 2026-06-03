@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "containeranalysis.notes.delete"
+    ],
+    "modify": [
+      "containeranalysis.notes.update"
+    ],
+    "plan": [
+      "containeranalysis.notes.get"
+    ]
   }
 ]

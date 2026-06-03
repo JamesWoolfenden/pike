@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "aiplatform.ragEngineConfigs.update"
+    ],
+    "plan": [
+      "aiplatform.ragEngineConfigs.get"
+    ]
   }
 ]

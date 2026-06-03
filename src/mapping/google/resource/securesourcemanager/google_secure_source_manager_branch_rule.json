@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "securesourcemanager.branchRules.delete"
+    ],
+    "modify": [
+      "securesourcemanager.branchRules.update"
+    ],
+    "plan": [
+      "securesourcemanager.branchRules.get"
+    ]
   }
 ]

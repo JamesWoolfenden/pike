@@ -12,7 +12,12 @@
     "destroy": [
       "Microsoft.Compute/diskEncryptionSets/delete"
     ],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "Microsoft.Compute/diskEncryptionSets/write"
+    ],
+    "plan": [
+      "Microsoft.Compute/diskEncryptionSets/read",
+      "Microsoft.KeyVault/vaults/read"
+    ]
   }
 ]

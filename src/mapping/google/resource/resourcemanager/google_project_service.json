@@ -13,9 +13,14 @@
     "destroy": [
       "serviceusage.services.disable"
     ],
-    "modify": [],
+    "modify": [
+      "serviceusage.services.disable",
+      "serviceusage.services.enable"
+    ],
     "plan": [
-      "resourcemanager.projects.get"
+      "resourcemanager.projects.get",
+      "serviceusage.services.get",
+      "serviceusage.services.list"
     ]
   }
 ]

@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "eventarc.messageBuses.delete"
+    ],
+    "modify": [
+      "eventarc.messageBuses.update"
+    ],
+    "plan": [
+      "eventarc.messageBuses.get"
+    ]
   }
 ]

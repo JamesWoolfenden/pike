@@ -17,8 +17,9 @@
       "Microsoft.EventHub/namespaces/write"
     ],
     "plan": [
-      "Microsoft.Resources/subscriptions/resourceGroups/read",
-      "Microsoft.EventHub/namespaces/read"
+      "Microsoft.EventHub/namespaces/operationresults/read",
+      "Microsoft.EventHub/namespaces/read",
+      "Microsoft.Resources/subscriptions/resourceGroups/read"
     ]
   }
 ]

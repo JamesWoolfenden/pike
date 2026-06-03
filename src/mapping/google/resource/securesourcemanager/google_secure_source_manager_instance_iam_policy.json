@@ -8,7 +8,9 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
+    "modify": [
+      "securesourcemanager.instances.setIamPolicy"
+    ],
     "plan": [
       "securesourcemanager.instances.getIamPolicy"
     ]

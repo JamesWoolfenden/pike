@@ -10,8 +10,15 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "Microsoft.Network/virtualNetworks/virtualNetworkPeerings/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/virtualNetworks/virtualNetworkPeerings/write"
+    ],
+    "plan": [
+      "Microsoft.Network/virtualNetworks/read",
+      "Microsoft.Network/virtualNetworks/virtualNetworkPeerings/read"
+    ]
   }
 ]

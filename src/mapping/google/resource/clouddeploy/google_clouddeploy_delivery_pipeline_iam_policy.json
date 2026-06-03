@@ -8,7 +8,9 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
+    "modify": [
+      "clouddeploy.deliveryPipelines.setIamPolicy"
+    ],
     "plan": [
       "clouddeploy.deliveryPipelines.getIamPolicy"
     ]

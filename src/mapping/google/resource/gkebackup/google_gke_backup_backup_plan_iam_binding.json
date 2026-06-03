@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "gkebackup.backupPlans.setIamPolicy"
+    ],
+    "plan": [
+      "gkebackup.backupPlans.getIamPolicy"
+    ]
   }
 ]

@@ -9,8 +9,12 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
+    "destroy": [
+      "certificatemanager.certs.delete"
+    ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "certificatemanager.certs.get"
+    ]
   }
 ]

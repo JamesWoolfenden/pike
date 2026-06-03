@@ -10,8 +10,15 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "managedkafka.clusters.delete"
+    ],
+    "modify": [
+      "managedkafka.clusters.update"
+    ],
+    "plan": [
+      "managedkafka.clusters.get",
+      "managedkafka.operations.get"
+    ]
   }
 ]

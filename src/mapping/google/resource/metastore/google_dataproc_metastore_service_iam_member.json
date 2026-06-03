@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "metastore.services.setIamPolicy"
+    ],
+    "plan": [
+      "metastore.services.getIamPolicy"
+    ]
   }
 ]

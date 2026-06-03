@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "runtimeconfig.variables.delete"
+    ],
+    "modify": [
+      "runtimeconfig.variables.update"
+    ],
+    "plan": [
+      "runtimeconfig.variables.get"
+    ]
   }
 ]

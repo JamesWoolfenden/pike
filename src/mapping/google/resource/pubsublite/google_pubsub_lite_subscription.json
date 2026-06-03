@@ -13,7 +13,11 @@
     "destroy": [
       "pubsublite.subscriptions.delete"
     ],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "pubsublite.subscriptions.update"
+    ],
+    "plan": [
+      "pubsublite.subscriptions.get"
+    ]
   }
 ]

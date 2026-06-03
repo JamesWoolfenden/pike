@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "iap.tunnelDestGroups.delete"
+    ],
+    "modify": [
+      "iap.tunnelDestGroups.update"
+    ],
+    "plan": [
+      "iap.tunnelDestGroups.get"
+    ]
   }
 ]

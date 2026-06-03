@@ -10,6 +10,9 @@
     },
     "destroy": [],
     "modify": [],
-    "plan": []
+    "plan": [
+      "datacatalog.tagTemplates.get",
+      "datacatalog.tagTemplates.getIamPolicy"
+    ]
   }
 ]

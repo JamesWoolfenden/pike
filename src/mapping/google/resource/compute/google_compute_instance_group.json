@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "compute.instanceGroups.delete"
+    ],
+    "modify": [
+      "compute.instanceGroups.update"
+    ],
+    "plan": [
+      "compute.instanceGroups.get"
+    ]
   }
 ]

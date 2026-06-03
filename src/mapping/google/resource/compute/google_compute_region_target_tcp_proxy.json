@@ -8,8 +8,12 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
+    "destroy": [
+      "compute.regionTargetTcpProxies.delete"
+    ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "compute.regionTargetTcpProxies.get"
+    ]
   }
 ]

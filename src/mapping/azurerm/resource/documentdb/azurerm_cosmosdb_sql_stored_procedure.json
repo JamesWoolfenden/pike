@@ -20,11 +20,12 @@
       "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers/storedProcedures/write"
     ],
     "plan": [
-      "Microsoft.Resources/subscriptions/resourceGroups/read",
-      "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers/storedProcedures/read",
       "Microsoft.DocumentDB/databaseAccounts/read",
+      "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers/read",
+      "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers/storedProcedures/operationResults/read",
+      "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers/storedProcedures/read",
       "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/read",
-      "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers/read"
+      "Microsoft.Resources/subscriptions/resourceGroups/read"
     ]
   }
 ]

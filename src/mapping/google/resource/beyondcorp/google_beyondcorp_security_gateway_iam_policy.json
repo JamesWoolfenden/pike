@@ -8,7 +8,9 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
+    "modify": [
+      "beyondcorp.securityGateways.setIamPolicy"
+    ],
     "plan": [
       "beyondcorp.securityGateways.getIamPolicy"
     ]

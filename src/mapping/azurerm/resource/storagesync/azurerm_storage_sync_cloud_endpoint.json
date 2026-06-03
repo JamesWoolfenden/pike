@@ -20,8 +20,9 @@
     ],
     "plan": [
       "Microsoft.Resources/subscriptions/resourceGroups/read",
-      "Microsoft.StorageSync/storageSyncServices/syncGroups/cloudEndpoints/read",
       "Microsoft.StorageSync/storageSyncServices/read",
+      "Microsoft.StorageSync/storageSyncServices/syncGroups/cloudEndpoints/operationresults/read",
+      "Microsoft.StorageSync/storageSyncServices/syncGroups/cloudEndpoints/read",
       "Microsoft.StorageSync/storageSyncServices/syncGroups/read"
     ]
   }

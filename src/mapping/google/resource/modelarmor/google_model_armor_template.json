@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "modelarmor.templates.delete"
+    ],
+    "modify": [
+      "modelarmor.templates.update"
+    ],
+    "plan": [
+      "modelarmor.templates.get"
+    ]
   }
 ]

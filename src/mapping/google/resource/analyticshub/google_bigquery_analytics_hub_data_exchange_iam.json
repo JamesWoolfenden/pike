@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "analyticshub.dataExchanges.setIamPolicy"
+    ],
+    "plan": [
+      "analyticshub.dataExchanges.getIamPolicy"
+    ]
   }
 ]

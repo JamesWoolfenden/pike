@@ -8,7 +8,9 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
+    "modify": [
+      "compute.machineImages.setIamPolicy"
+    ],
     "plan": [
       "compute.machineImages.getIamPolicy"
     ]

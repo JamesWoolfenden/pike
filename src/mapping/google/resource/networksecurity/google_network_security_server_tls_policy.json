@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "networksecurity.serverTlsPolicies.setIamPolicy"
+    ],
+    "plan": [
+      "networksecurity.serverTlsPolicies.getIamPolicy"
+    ]
   }
 ]

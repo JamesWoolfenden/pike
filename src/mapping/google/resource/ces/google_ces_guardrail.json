@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "ces.guardrails.delete"
+    ],
+    "modify": [
+      "ces.guardrails.update"
+    ],
+    "plan": [
+      "ces.guardrails.get"
+    ]
   }
 ]

@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "dataform.config.update"
+    ],
+    "plan": [
+      "dataform.config.get"
+    ]
   }
 ]

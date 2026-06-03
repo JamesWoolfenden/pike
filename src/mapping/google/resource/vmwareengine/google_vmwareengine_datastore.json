@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "vmwareengine.datastores.delete"
+    ],
+    "modify": [
+      "vmwareengine.datastores.update"
+    ],
+    "plan": [
+      "vmwareengine.datastores.get"
+    ]
   }
 ]

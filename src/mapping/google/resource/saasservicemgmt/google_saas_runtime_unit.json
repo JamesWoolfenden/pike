@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "saasservicemgmt.units.delete"
+    ],
+    "modify": [
+      "saasservicemgmt.units.update"
+    ],
+    "plan": [
+      "saasservicemgmt.units.get"
+    ]
   }
 ]

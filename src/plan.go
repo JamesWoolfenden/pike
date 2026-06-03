@@ -1,31 +1,9 @@
 package pike
 
-import (
-	"encoding/json"
-	"strings"
-)
+import "encoding/json"
 
-// gcpReadVerbs is the set of GCP permission verbs that are safe for
-// terraform plan — they only read state, never mutate it.
-var gcpReadVerbs = map[string]bool{
-	"get":          true,
-	"list":         true,
-	"getIamPolicy": true,
-	"fetch":        true,
-	"search":       true,
-	"query":        true,
-	"check":        true,
-	"access":       true,
-	"validate":     true,
-	"read":         true,
-	"view":         true,
-	"lookup":       true,
-	"describe":     true,
-	"export":       true,
-}
-
-// getPlanPermissionMap returns only the plan-array permissions for an AWS
-// resource mapping. GCP and Azure derive plan perms by filtering apply.
+// getPlanPermissionMap returns the plan-array permissions from a mapping file.
+// Used for all three providers now that plan arrays are populated at source.
 func getPlanPermissionMap(raw []byte, attributes []string, resource string) ([]string, error) {
 	if !json.Valid(raw) || len(raw) == 0 {
 		return nil, &invalidJSONError{}
@@ -72,37 +50,4 @@ func getPlanPermissionMap(raw []byte, attributes []string, resource string) ([]s
 	}
 
 	return found, nil
-}
-
-// filterPlanPermissionsGCP returns the deduplicated subset of GCP permissions
-// safe for terraform plan — those whose verb is in gcpReadVerbs.
-func filterPlanPermissionsGCP(perms []string) []string {
-	seen := make(map[string]bool)
-	var out []string
-	for _, p := range perms {
-		parts := strings.Split(p, ".")
-		if len(parts) == 0 {
-			continue
-		}
-		verb := parts[len(parts)-1]
-		if gcpReadVerbs[verb] && !seen[p] {
-			seen[p] = true
-			out = append(out, p)
-		}
-	}
-	return out
-}
-
-// filterPlanPermissionsAzure returns the deduplicated subset of Azure
-// permissions safe for terraform plan — those ending in "/read".
-func filterPlanPermissionsAzure(perms []string) []string {
-	seen := make(map[string]bool)
-	var out []string
-	for _, p := range perms {
-		if strings.HasSuffix(p, "/read") && !seen[p] {
-			seen[p] = true
-			out = append(out, p)
-		}
-	}
-	return out
 }

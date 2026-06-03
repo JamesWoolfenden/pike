@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "artifactregistry.vpcscconfigs.update"
+    ],
+    "plan": [
+      "artifactregistry.vpcscconfigs.get"
+    ]
   }
 ]

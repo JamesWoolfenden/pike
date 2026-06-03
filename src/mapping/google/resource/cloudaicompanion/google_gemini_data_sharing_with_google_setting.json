@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "cloudaicompanion.dataSharingWithGoogleSettings.delete"
+    ],
+    "modify": [
+      "cloudaicompanion.dataSharingWithGoogleSettings.update"
+    ],
+    "plan": [
+      "cloudaicompanion.dataSharingWithGoogleSettings.get"
+    ]
   }
 ]

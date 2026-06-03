@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "monitoring.slos.delete"
+    ],
+    "modify": [
+      "monitoring.slos.update"
+    ],
+    "plan": [
+      "monitoring.slos.get"
+    ]
   }
 ]

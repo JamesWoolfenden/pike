@@ -12,7 +12,12 @@
     "destroy": [
       "Microsoft.ManagedIdentity/userAssignedIdentities/delete"
     ],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "Microsoft.ManagedIdentity/userAssignedIdentities/write"
+    ],
+    "plan": [
+      "Microsoft.ManagedIdentity/userAssignedIdentities/read",
+      "Microsoft.Resources/subscriptions/resourcegroups/read"
+    ]
   }
 ]

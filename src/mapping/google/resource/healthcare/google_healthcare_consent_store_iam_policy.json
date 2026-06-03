@@ -8,7 +8,9 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
+    "modify": [
+      "healthcare.consentStores.setIamPolicy"
+    ],
     "plan": [
       "healthcare.consentStores.getIamPolicy"
     ]

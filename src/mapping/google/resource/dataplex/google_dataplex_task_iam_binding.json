@@ -8,7 +8,11 @@
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "dataplex.tasks.setIamPolicy"
+    ],
+    "plan": [
+      "dataplex.tasks.getIamPolicy"
+    ]
   }
 ]

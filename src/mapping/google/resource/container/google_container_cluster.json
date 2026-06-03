@@ -18,7 +18,9 @@
       "container.clusters.update"
     ],
     "plan": [
-      "container.clusters.get"
+      "compute.instanceGroupManagers.get",
+      "container.clusters.get",
+      "container.operations.get"
     ],
     "runtime": {
       "node_config": [

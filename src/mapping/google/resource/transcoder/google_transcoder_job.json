@@ -9,8 +9,12 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
+    "destroy": [
+      "transcoder.jobs.delete"
+    ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "transcoder.jobs.get"
+    ]
   }
 ]

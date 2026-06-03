@@ -9,8 +9,12 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
+    "destroy": [
+      "cloudbuild.repositories.delete"
+    ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "cloudbuild.repositories.get"
+    ]
   }
 ]

@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "healthcare.fhirStores.delete"
+    ],
+    "modify": [
+      "healthcare.fhirStores.update"
+    ],
+    "plan": [
+      "healthcare.fhirStores.get"
+    ]
   }
 ]

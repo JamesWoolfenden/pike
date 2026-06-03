@@ -10,8 +10,16 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "Microsoft.Network/dnsZones/delete"
+    ],
+    "modify": [
+      "Microsoft.Network/dnsZones/write"
+    ],
+    "plan": [
+      "Microsoft.Network/dnsZones/SOA/read",
+      "Microsoft.Network/dnsZones/read",
+      "Microsoft.Resources/subscriptions/resourcegroups/read"
+    ]
   }
 ]

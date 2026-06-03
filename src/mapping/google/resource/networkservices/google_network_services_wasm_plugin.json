@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "networkservices.wasmPlugins.delete"
+    ],
+    "modify": [
+      "networkservices.wasmPlugins.update"
+    ],
+    "plan": [
+      "networkservices.wasmPlugins.get"
+    ]
   }
 ]

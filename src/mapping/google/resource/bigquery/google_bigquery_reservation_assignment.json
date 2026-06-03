@@ -13,6 +13,9 @@
       "bigquery.reservationAssignments.delete"
     ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "bigquery.reservationAssignments.list",
+      "bigquery.reservationAssignments.search"
+    ]
   }
 ]

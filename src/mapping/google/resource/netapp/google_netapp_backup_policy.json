@@ -10,8 +10,15 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "netapp.backupPolicies.delete"
+    ],
+    "modify": [
+      "netapp.backupPolicies.update"
+    ],
+    "plan": [
+      "netapp.backupPolicies.get",
+      "netapp.operations.get"
+    ]
   }
 ]

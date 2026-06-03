@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "vectorsearch.collections.delete"
+    ],
+    "modify": [
+      "vectorsearch.collections.update"
+    ],
+    "plan": [
+      "vectorsearch.collections.get"
+    ]
   }
 ]

@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "datastream.streams.delete"
+    ],
+    "modify": [
+      "datastream.streams.update"
+    ],
+    "plan": [
+      "datastream.streams.get"
+    ]
   }
 ]

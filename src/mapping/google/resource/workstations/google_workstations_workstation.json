@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "workstations.workstations.delete"
+    ],
+    "modify": [
+      "workstations.workstations.update"
+    ],
+    "plan": [
+      "workstations.workstations.get"
+    ]
   }
 ]

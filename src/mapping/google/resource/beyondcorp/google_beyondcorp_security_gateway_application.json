@@ -9,8 +9,14 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "beyondcorp.sgApplications.delete"
+    ],
+    "modify": [
+      "beyondcorp.sgApplications.update"
+    ],
+    "plan": [
+      "beyondcorp.sgApplications.get"
+    ]
   }
 ]

@@ -17,6 +17,7 @@
       "run.services.update"
     ],
     "plan": [
+      "run.operations.get",
       "run.services.get"
     ]
   }

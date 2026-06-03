@@ -12,9 +12,16 @@
       "tags": []
     },
     "destroy": [
+      "Microsoft.CognitiveServices/accounts/delete",
+      "Microsoft.CognitiveServices/locations/resourceGroups/deletedAccounts/delete",
       "Microsoft.CognitiveServices/locations/resourceGroups/deletedAccounts/read"
     ],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "Microsoft.CognitiveServices/accounts/write"
+    ],
+    "plan": [
+      "Microsoft.CognitiveServices/accounts/read",
+      "Microsoft.Resources/subscriptions/providers/read"
+    ]
   }
 ]

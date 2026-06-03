@@ -17,7 +17,8 @@
       "spanner.instanceConfigs.update"
     ],
     "plan": [
-      "spanner.instanceConfigOperations.get"
+      "spanner.instanceConfigOperations.get",
+      "spanner.instanceConfigs.get"
     ]
   }
 ]

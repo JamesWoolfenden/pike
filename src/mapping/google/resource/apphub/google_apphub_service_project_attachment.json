@@ -10,8 +10,12 @@
     "attributes": {
       "tags": []
     },
-    "destroy": [],
+    "destroy": [
+      "apphub.serviceProjectAttachments.delete"
+    ],
     "modify": [],
-    "plan": []
+    "plan": [
+      "apphub.serviceProjectAttachments.get"
+    ]
   }
 ]

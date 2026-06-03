@@ -13,6 +13,7 @@
     ],
     "modify": [],
     "plan": [
+      "compute.globalOperations.get",
       "compute.networks.get"
     ]
   }

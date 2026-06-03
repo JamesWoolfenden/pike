@@ -11,7 +11,9 @@
     "destroy": [
       "Microsoft.StorageSync/storageSyncServices/syncGroups/delete"
     ],
-    "modify": [],
+    "modify": [
+      "Microsoft.StorageSync/storageSyncServices/syncGroups/write"
+    ],
     "plan": [
       "Microsoft.StorageSync/storageSyncServices/syncGroups/read"
     ]
