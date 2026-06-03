@@ -43,7 +43,7 @@ func (e *invalidCloudError) Error() string {
 }
 
 // Compare IAC codebase to AWS policy.
-func Compare(directory string, arn string, init bool) (bool, error) {
+func Compare(directory string, arn string, init bool, strict bool) (bool, error) {
 	var result bool
 
 	result, err := inputValidationCompare(directory, arn)
@@ -54,9 +54,9 @@ func Compare(directory string, arn string, init bool) (bool, error) {
 
 	switch getCloudFromRole(arn) {
 	case provider.AWS:
-		result, err = compareAWSRole(directory, arn, init)
+		result, err = compareAWSRole(directory, arn, init, strict)
 	case provider.GCP:
-		result, err = compareGCPRole(directory, arn, init)
+		result, err = compareGCPRole(directory, arn, init, strict)
 	default:
 		err = &invalidCloudError{arn}
 	}
@@ -94,7 +94,15 @@ func (m *apiNotEnabledError) Error() string {
 	return fmt.Sprintf("API %s not enabled", m.API)
 }
 
-func compareGCPRole(directory string, arn string, init bool) (bool, error) {
+type escalationClassError struct {
+	perms escalationSet
+}
+
+func (e *escalationClassError) Error() string {
+	return "escalation-class permissions present; use the two-role pattern (planner + applier) to limit blast radius"
+}
+
+func compareGCPRole(directory string, arn string, init bool, strict bool) (bool, error) {
 	// The resource name of the role in one of the following formats:
 	// `roles/{ROLE_NAME}`
 	// `organizations/{ORGANIZATION_ID}/roles/{ROLE_NAME}`
@@ -104,10 +112,12 @@ func compareGCPRole(directory string, arn string, init bool) (bool, error) {
 		return false, &gcpRoleNotVerified{arn}
 	}
 
-	iacPolicy, err := MakePermissionBag(directory, nil, init, "", false)
+	iacBag, err := MakePermissionBag(directory, nil, init, "", false)
 	if err != nil {
 		return false, &getIAMVersionError{err}
 	}
+
+	WarnEscalation(iacBag)
 
 	var projectID *string
 	projectID, err = GetEnv("GCP_PROJECT")
@@ -145,7 +155,13 @@ func compareGCPRole(directory string, arn string, init bool) (bool, error) {
 		return false, &gcpIAMRoleError{err}
 	}
 
-	return compareGCPPolicy(Roles, iacPolicy), nil
+	same := compareGCPPolicy(Roles, iacBag)
+
+	if strict && !findEscalation(iacBag).empty() {
+		return false, &escalationClassError{findEscalation(iacBag)}
+	}
+
+	return same, nil
 }
 
 func compareGCPPolicy(Roles *gcpiam.Role, iacPolicy Sorted) bool {
@@ -201,7 +217,7 @@ func isGCPAPIEnabled(projectID string, want string) (bool, error) {
 	return true, nil
 }
 
-func compareAWSRole(directory string, arn string, init bool) (bool, error) {
+func compareAWSRole(directory string, arn string, init bool, strict bool) (bool, error) {
 	// Load the Shared AWS Configuration (~/.aws/config)
 	ctx, cancel := context.WithTimeout(context.Background(), defaultTimeout)
 
@@ -224,7 +240,14 @@ func compareAWSRole(directory string, arn string, init bool) (bool, error) {
 		return false, &getPolicyVersionError{err}
 	}
 
-	iacPolicy, err := MakePolicy(directory, nil, init, false, "", "", false)
+	iacBag, err := MakePermissionBag(directory, nil, init, "", false)
+	if err != nil {
+		return false, &getIAMVersionError{err}
+	}
+
+	WarnEscalation(iacBag)
+
+	iacPolicy, err := GetPolicy(iacBag, false, "", directory)
 	if err != nil {
 		return false, &getIAMVersionError{err}
 	}
@@ -237,7 +260,16 @@ func compareAWSRole(directory string, arn string, init bool) (bool, error) {
 	// iam versus iac
 	fmt.Printf("IAM Policy %s versus Local %s \n", arn, directory)
 
-	return compareIAMPolicy(*policy, *sorted)
+	same, err := compareIAMPolicy(*policy, *sorted)
+	if err != nil {
+		return same, err
+	}
+
+	if strict && !findEscalation(iacBag).empty() {
+		return false, &escalationClassError{findEscalation(iacBag)}
+	}
+
+	return same, nil
 }
 
 func inputValidationCompare(directory string, arn string) (bool, error) {

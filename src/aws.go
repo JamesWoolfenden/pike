@@ -60,6 +60,14 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 	return GetPermissionMap(temp, result.Attributes, result.Name)
 }
 
+func getAWSPlanPermissions(result ResourceV2) ([]string, error) {
+	temp := AwsLookup(result.Name)
+	if temp == nil {
+		return nil, &notImplementedResourceError{result.Name}
+	}
+	return getPlanPermissionMap(temp, result.Attributes, result.Name)
+}
+
 func AwsLookup(name string) []byte {
 	if name == "" {
 		return nil
@@ -147,12 +155,16 @@ func (m *parameterNilError) Error() string {
 	return fmt.Sprintf("%s was nil", m.parameter)
 }
 
-func getActionPermissions(permissionMap map[string]any, found []string) ([]string, error) {
+func getActionPermissions(permissionMap map[string]any, found []string, actions ...string) ([]string, error) {
 	if permissionMap == nil {
 		return nil, &parameterNilError{parameter: "permissionMap"}
 	}
 
-	for _, action := range []string{apply, plan, modify, destroy} {
+	if len(actions) == 0 {
+		actions = []string{apply, plan, modify, destroy}
+	}
+
+	for _, action := range actions {
 		if permissionMap[action] != nil {
 
 			temp, ok := permissionMap[action].([]any)

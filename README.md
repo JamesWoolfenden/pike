@@ -364,6 +364,49 @@ resource "aws_iam_policy" "terraform_pike" {
 }
 ```
 
+### Escalation-class permissions
+
+When a Terraform config manages its own IAM (`google_project_iam_*`, `aws_iam_role_policy*`, `azurerm_role_assignment`), the minimum-sufficient role pike computes is also owner-equivalent — the holder can grant themselves anything. Pike always warns about these on stderr:
+
+```text
+WARNING: escalation-class permissions detected — holder can grant themselves additional access.
+         Consider the two-role pattern: planner SA (read-only) on all branches,
+         applier SA (full) on protected branches only.
+  aws:   iam:PassRole, iam:PutRolePolicy
+```
+
+No flag is needed to enable this; it fires whenever escalation-class permissions are present.
+
+### Split output
+
+Use `--output split` (or `-o split`) to emit two permission sets — `base` (safe to distribute broadly) and `escalation` (owner-equivalent, restrict to protected branches) — instead of a single flat policy:
+
+```bash
+pike scan -o split -d ./terraform
+```
+
+```json
+{
+    "aws": {
+        "base": [
+            "firehose:CreateDeliveryStream",
+            "firehose:DeleteDeliveryStream",
+            "iam:GetRole",
+            "iam:ListAttachedRolePolicies"
+        ],
+        "escalation": [
+            "iam:AttachRolePolicy",
+            "iam:PassRole",
+            "iam:PutRolePolicy"
+        ]
+    }
+}
+```
+
+The `base` set is the planner SA role (safe for `terraform plan` on every branch). The `escalation` set is the additional permissions the applier SA needs — bind this role only on protected branches.
+
+With `--write` / `-w`, the split JSON is saved to `.pike/pike.generated_policy.split.json`.
+
 ### Output
 
 If you select the -w flag, pike will write out the role/policy required to build your project into the .pike folder:
@@ -598,6 +641,12 @@ IAM Policy arn:aws:iam::680235478471:policy/basic versus Infrastructure Code ../
    ],
    "Version": "2012-10-17"
  }
+```
+
+Pike always warns to stderr when the computed policy contains escalation-class permissions (see [Escalation-class permissions](#escalation-class-permissions)). Pass `--strict` to also exit non-zero in that case, even if the policies otherwise match — useful in CI to enforce the two-role pattern:
+
+```bash
+pike compare --strict -d ./terraform -a arn:aws:iam::680235478471:policy/terraform_pike
 ```
 
 ## Pull

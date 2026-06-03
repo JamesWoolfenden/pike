@@ -26,7 +26,7 @@ func Make(directory string) (*string, error) {
 		return nil, &directoryNotFoundError{directory: directory}
 	}
 
-	err := Scan(directory, "terraform", nil, true, true, false, "", "", "", false)
+	err := Scan(directory, "terraform", nil, true, true, false, "", "", "", false, true)
 	if err != nil {
 		return nil, fmt.Errorf("failed to scan directory: %w", err)
 	}
@@ -95,7 +95,7 @@ func MakeGCP(directory string) (*string, error) {
 		return nil, &directoryNotFoundError{directory: directory}
 	}
 
-	err := Scan(directory, "terraform", nil, true, true, false, "google", "", "", false)
+	err := Scan(directory, "terraform", nil, true, true, false, "google", "", "", false, true)
 	if err != nil {
 		return nil, fmt.Errorf("failed to scan directory: %w", err)
 	}
@@ -138,7 +138,7 @@ func MakeAzure(directory string) (*string, error) {
 		return nil, &directoryNotFoundError{directory: directory}
 	}
 
-	err := Scan(directory, "terraform", nil, true, true, false, "azurerm", "", "", false)
+	err := Scan(directory, "terraform", nil, true, true, false, "azurerm", "", "", false, true)
 	if err != nil {
 		return nil, fmt.Errorf("failed to scan directory: %w", err)
 	}

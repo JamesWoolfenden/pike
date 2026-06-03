@@ -28,6 +28,8 @@ func main() {
 		write              bool
 		enableResources    bool
 		suppressDeprecated bool
+		strict             bool
+		legacy             bool
 		repository         string
 		region             string
 		workflow           string
@@ -213,13 +215,18 @@ func main() {
 						Usage:       "Suppress deprecation warnings for resources",
 						Destination: &suppressDeprecated,
 					},
+					&cli.BoolFlag{
+						Name:        "legacy",
+						Usage:       "Use legacy single-role output instead of the default two-role (plan + apply) output",
+						Destination: &legacy,
+					},
 				},
 				Action: func(*cli.Context) error {
 					if file == "" {
-						return pike.Scan(directory, output, nil, init, write, enableResources, provider, outfile, policyName, suppressDeprecated)
+						return pike.Scan(directory, output, nil, init, write, enableResources, provider, outfile, policyName, suppressDeprecated, legacy)
 					}
 
-					return pike.Scan(directory, output, &file, init, write, enableResources, provider, outfile, policyName, suppressDeprecated)
+					return pike.Scan(directory, output, &file, init, write, enableResources, provider, outfile, policyName, suppressDeprecated, legacy)
 				},
 			},
 			{
@@ -295,9 +302,14 @@ func main() {
 						Usage:       "Run Terraform init to download modules",
 						Destination: &init,
 					},
+					&cli.BoolFlag{
+						Name:        "strict",
+						Usage:       "Exit non-zero when escalation-class permissions are present, even if policies match",
+						Destination: &strict,
+					},
 				},
 				Action: func(*cli.Context) error {
-					theSame, err := pike.Compare(directory, arn, init)
+					theSame, err := pike.Compare(directory, arn, init, strict)
 					if err != nil {
 						return err
 					}

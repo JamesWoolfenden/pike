@@ -24,16 +24,37 @@ const (
 var initMutex sync.Map // per-directory mutex
 
 // Scan looks for resources in a given directory.
-func Scan(dirName string, outputType string, file *string, init bool, write bool, enableResources bool, provider string, outFile string, policyName string, suppressDeprecated bool) error {
+func Scan(dirName string, outputType string, file *string, init bool, write bool, enableResources bool, provider string, outFile string, policyName string, suppressDeprecated bool, legacy bool) error {
 	if dirName == "" && file == nil {
 		return &emptyScanLocationError{}
 	}
 
-	OutPolicy, err := MakePolicy(dirName, file, init, enableResources, provider, policyName, suppressDeprecated)
+	bag, err := MakePermissionBag(dirName, file, init, provider, suppressDeprecated)
 	if err != nil {
 		var emptyIAC *emptyIACError
+		if errors.As(err, &emptyIAC) {
+			log.Info().Str("dir", dirName).Msg("no IAM permissions found")
+			return nil
+		}
+		return &makePolicyError{err}
+	}
+
+	WarnEscalation(bag)
+
+	if strings.ToLower(outputType) == "split" {
+		sp := MakeSplitPolicy(bag)
+		out := sp.String()
+		if write {
+			return writeSplitOutput(out, dirName, outFile)
+		}
+		fmt.Print(out)
+		return nil
+	}
+
+	OutPolicy, err := GetPolicy(bag, enableResources, policyName, dirName)
+	if err != nil {
 		var emptyPerms *emptyPermissionsError
-		if errors.As(err, &emptyIAC) || errors.As(err, &emptyPerms) {
+		if errors.As(err, &emptyPerms) {
 			log.Info().Str("dir", dirName).Msg("no IAM permissions found")
 			return nil
 		}
@@ -41,11 +62,25 @@ func Scan(dirName string, outputType string, file *string, init bool, write bool
 	}
 
 	if write {
-		if err = WriteOutput(OutPolicy, outputType, dirName, outFile); err != nil {
-			return &writeFileError{file: outputType, err: err}
+		if legacy {
+			if err = WriteOutput(OutPolicy, outputType, dirName, outFile); err != nil {
+				return &writeFileError{file: outputType, err: err}
+			}
+		} else {
+			content, err := WriteTwoRoleOutput(bag, policyName, dirName)
+			if err != nil {
+				return &makePolicyError{err}
+			}
+			if err = writeTwoRoleFile(content, dirName, outFile); err != nil {
+				return &writeFileError{file: outFile, err: err}
+			}
 		}
 	} else {
-		fmt.Print(OutPolicy.AsString(outputType)) // permit
+		if legacy {
+			fmt.Print(OutPolicy.AsString(outputType))
+		} else {
+			fmt.Print(OutPolicy.AsTwoRoleString(outputType))
+		}
 	}
 
 	return nil
@@ -203,12 +238,11 @@ func MakePermissionBag(dirName string, file *string, init bool, provider string,
 		if init {
 			_, modules, err := Init(fullPath)
 			if err != nil {
-				log.Debug().Err(err).Str("dir", dirName).Msg("terraform init error detail")
 				errMsg := err.Error()
 				if nl := strings.IndexByte(errMsg, '\n'); nl > 0 {
 					errMsg = errMsg[:nl]
 				}
-				log.Warn().Str("error", errMsg).Str("dir", dirName).Msg("modules not found")
+				log.Warn().Str("error", errMsg).Str("dir", dirName).Msg("terraform init failed, continuing with static analysis")
 			}
 
 			for _, module := range modules {
@@ -327,17 +361,23 @@ func GetPermissionBag(resources []ResourceV2, prov string, suppressDeprecated bo
 		switch provider.Normalise(prov) {
 		case provider.AWS:
 			permissionBag.AWS = append(permissionBag.AWS, newPerms.AWS...)
+			permissionBag.PlanAWS = append(permissionBag.PlanAWS, newPerms.PlanAWS...)
 			permissionBag.RuntimeAWS = append(permissionBag.RuntimeAWS, newPerms.RuntimeAWS...)
 		case provider.Google:
 			permissionBag.GCP = append(permissionBag.GCP, newPerms.GCP...)
+			permissionBag.PlanGCP = append(permissionBag.PlanGCP, newPerms.PlanGCP...)
 			permissionBag.RuntimeGCP = append(permissionBag.RuntimeGCP, newPerms.RuntimeGCP...)
 		case provider.Azure:
 			permissionBag.AZURE = append(permissionBag.AZURE, newPerms.AZURE...)
+			permissionBag.PlanAZURE = append(permissionBag.PlanAZURE, newPerms.PlanAZURE...)
 			permissionBag.RuntimeAZURE = append(permissionBag.RuntimeAZURE, newPerms.RuntimeAZURE...)
 		case "":
 			permissionBag.AWS = append(permissionBag.AWS, newPerms.AWS...)
 			permissionBag.GCP = append(permissionBag.GCP, newPerms.GCP...)
 			permissionBag.AZURE = append(permissionBag.AZURE, newPerms.AZURE...)
+			permissionBag.PlanAWS = append(permissionBag.PlanAWS, newPerms.PlanAWS...)
+			permissionBag.PlanGCP = append(permissionBag.PlanGCP, newPerms.PlanGCP...)
+			permissionBag.PlanAZURE = append(permissionBag.PlanAZURE, newPerms.PlanAZURE...)
 			permissionBag.RuntimeAWS = append(permissionBag.RuntimeAWS, newPerms.RuntimeAWS...)
 			permissionBag.RuntimeGCP = append(permissionBag.RuntimeGCP, newPerms.RuntimeGCP...)
 			permissionBag.RuntimeAZURE = append(permissionBag.RuntimeAZURE, newPerms.RuntimeAZURE...)

@@ -9,6 +9,48 @@ import (
 	"github.com/rs/zerolog/log"
 )
 
+func writeTwoRoleFile(content string, scanPath string, outFile string) error {
+	if outFile == "" {
+		if scanPath == "" {
+			scanPath = "."
+		}
+		newPath, err := filepath.Abs(filepath.Join(scanPath, ".pike"))
+		if err != nil {
+			return &absolutePathError{directory: scanPath, err: err}
+		}
+		if err = os.MkdirAll(newPath, 0o750); err != nil {
+			return &makeDirectoryError{directory: newPath, err: err}
+		}
+		outFile = filepath.Join(newPath, "pike.two-role.tf")
+	}
+	if err := os.WriteFile(outFile, []byte(content), 0o600); err != nil {
+		return &writeFileError{file: outFile, err: err}
+	}
+	log.Info().Msgf("wrote %s", outFile)
+	return nil
+}
+
+func writeSplitOutput(content string, scanPath string, outFile string) error {
+	if outFile == "" {
+		if scanPath == "" {
+			scanPath = "."
+		}
+		newPath, err := filepath.Abs(filepath.Join(scanPath, ".pike"))
+		if err != nil {
+			return &absolutePathError{directory: scanPath, err: err}
+		}
+		if err = os.MkdirAll(newPath, 0o750); err != nil {
+			return &makeDirectoryError{directory: newPath, err: err}
+		}
+		outFile = filepath.Join(newPath, "pike.generated_policy.split.json")
+	}
+	if err := os.WriteFile(outFile, []byte(content), 0o600); err != nil {
+		return &writeFileError{file: outFile, err: err}
+	}
+	log.Info().Msgf("wrote %s", outFile)
+	return nil
+}
+
 // WriteOutput writes out the policy as JSON or Terraform.
 func WriteOutput(outPolicy OutputPolicy, outputType string, scanPath string, outFile string) error {
 	d1 := []byte(outPolicy.AsString(outputType))
@@ -56,6 +98,50 @@ func WriteOutput(outPolicy OutputPolicy, outputType string, scanPath string, out
 	log.Info().Msgf("wrote %s", outFile)
 
 	return nil
+}
+
+// MakeSplitPolicy partitions a permission bag into base and escalation-class
+// subsets per provider, for use with --output split.
+func MakeSplitPolicy(bag Sorted) SplitPolicy {
+	var sp SplitPolicy
+
+	if len(bag.AWS) > 0 {
+		set := &SplitSet{}
+		for _, p := range Unique(bag.AWS) {
+			if escalationAWS[p] {
+				set.Escalation = append(set.Escalation, p)
+			} else {
+				set.Base = append(set.Base, p)
+			}
+		}
+		sp.AWS = set
+	}
+
+	if len(bag.GCP) > 0 {
+		set := &SplitSet{}
+		for _, p := range Unique(bag.GCP) {
+			if escalationGCP[p] {
+				set.Escalation = append(set.Escalation, p)
+			} else {
+				set.Base = append(set.Base, p)
+			}
+		}
+		sp.GCP = set
+	}
+
+	if len(bag.AZURE) > 0 {
+		set := &SplitSet{}
+		for _, p := range Unique(bag.AZURE) {
+			if escalationAZURE[p] {
+				set.Escalation = append(set.Escalation, p)
+			} else {
+				set.Base = append(set.Base, p)
+			}
+		}
+		sp.AZURE = set
+	}
+
+	return sp
 }
 
 // GetTF return tf files in a directory.

@@ -70,5 +70,5 @@ func Repository(repository, destination, directory, output string, init, write, 
 		return &gitCommitObjectError{repository, destination, err}
 	}
 
-	return Scan(filepath.Join(destination, directory), output, nil, init, write, enableResources, "", "", "", false)
+	return Scan(filepath.Join(destination, directory), output, nil, init, write, enableResources, "", "", "", false, false)
 }

@@ -37,7 +37,7 @@ func TestCompare(t *testing.T) {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
-			got, err := Compare(tt.args.directory, tt.args.arn, tt.args.init)
+			got, err := Compare(tt.args.directory, tt.args.arn, tt.args.init, false)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("Compare() error = %v, wantErr %v", err, tt.wantErr)
 				return

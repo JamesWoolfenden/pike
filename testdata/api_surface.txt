@@ -7,7 +7,7 @@ func AwsDataLookup (name string) []byte
 func AwsLookup (name string) []byte
 func AzureDataLookup (name string) []byte
 func AzureLookup (name string) []byte
-func Compare (directory string, arn string, init bool) (bool, error)
+func Compare (directory string, arn string, init bool, strict bool) (bool, error)
 func Contains (s []string, e string) bool
 func Deprecated (provider string) []ProviderDeprecations
 func DeprecationMessage (provider , name string, isData bool) (string, bool)
@@ -54,6 +54,7 @@ func MakeAzure (directory string) (*string, error)
 func MakeGCP (directory string) (*string, error)
 func MakePermissionBag (dirName string, file *string, init bool, provider string, suppressDeprecated bool) (Sorted, error)
 func MakePolicy (dirName string, file *string, init bool, enableResources bool, provider string, policyName string, suppressDeprecated bool) (OutputPolicy, error)
+func MakeSplitPolicy (bag Sorted) SplitPolicy
 func Minify (JSONOut string) string
 func NewAWSPolicy (actions []string, resources bool) (Policy, error)
 func NewStatement (sid string, effect string, action []string, resource []string) Statement
@@ -66,13 +67,15 @@ func ReplaceSection (source string, middle string, autoadd bool) error
 func Repository (repository , destination , directory , output string, init , write , enableResources bool) error
 func ReturnLocalAddrFromSource (source string, listModules ModuleJson) string
 func Runtime (dirName string, outputType string, file *string, init bool, prov string) error
-func Scan (dirName string, outputType string, file *string, init bool, write bool, enableResources bool, provider string, outFile string, policyName string, suppressDeprecated bool) error
+func Scan (dirName string, outputType string, file *string, init bool, write bool, enableResources bool, provider string, outFile string, policyName string, suppressDeprecated bool, legacy bool) error
 func SetRepoSecret (repository string, keyText string, keyName string) (*github.Response, error)
 func SplitHub (repository string) (string, string, error)
 func StringInSlice (a string, list []string) bool
 func Unique (s []string) []string
+func WarnEscalation (bag Sorted)
 func Watch (arn string, wait int) error
 func WriteOutput (outPolicy OutputPolicy, outputType string, scanPath string, outFile string) error
+func WriteTwoRoleOutput (bag Sorted, policyName string, dirName string) (string, error)
 type AwsOutput struct
 type EnvVariableNotSetError struct
 type IAMBinding struct
@@ -85,6 +88,8 @@ type Record struct
 type ResourceV2 struct
 type RuntimePermission struct
 type Sorted struct
+type SplitPolicy struct
+type SplitSet struct
 type Statement struct
 type ValidationResult struct
 var Version = <redacted>

@@ -354,6 +354,7 @@ func GetPermission(result ResourceV2) (Sorted, error) {
 		if err != nil {
 			log.Error().Err(err).Msg("failed to get AWS permissions")
 		}
+		myPermission.PlanAWS, _ = getAWSPlanPermissions(result)
 	case "oci", "digitalocean", "linode", "helm":
 		log.Info().Msgf("provider %s not yet implemented", result.Provider)
 
@@ -363,11 +364,13 @@ func GetPermission(result ResourceV2) (Sorted, error) {
 		if err != nil {
 			log.Error().Err(err).Msg("failed to get Azure permissions")
 		}
+		myPermission.PlanAZURE = filterPlanPermissionsAzure(myPermission.AZURE)
 	case provider.Google, provider.GCP:
 		myPermission.GCP, err = getGCPPermissions(result)
 		if err != nil {
 			log.Error().Err(err).Msg("failed to get GCP permissions")
 		}
+		myPermission.PlanGCP = filterPlanPermissionsGCP(myPermission.GCP)
 		runtimePerm, err := getGCPRuntimePermissions(result)
 		if err != nil {
 			log.Error().Err(err).Msg("failed to get GCP runtime permissions")

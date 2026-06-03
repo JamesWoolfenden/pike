@@ -105,6 +105,12 @@ func GetPolicy(actions Sorted, resources bool, policyName string, dirName string
 		if err != nil {
 			log.Error().Err(err).Msg("AWS policy generation failed")
 		}
+		if actions.PlanAWS != nil {
+			OutPolicy.PlanAWS, err = AWSPolicy(Unique(actions.PlanAWS), resources, planPolicyName(policyName))
+			if err != nil {
+				log.Error().Err(err).Msg("AWS plan policy generation failed")
+			}
+		}
 	}
 
 	if actions.GCP != nil {
@@ -112,6 +118,12 @@ func GetPolicy(actions Sorted, resources bool, policyName string, dirName string
 		OutPolicy.GCP, err = GCPPolicy(Unique(actions.GCP), policyName, dirName)
 		if err != nil {
 			log.Error().Err(err).Msg("GCP policy generation failed")
+		}
+		if actions.PlanGCP != nil {
+			OutPolicy.PlanGCP, err = GCPPolicy(Unique(actions.PlanGCP), planPolicyName(policyName), dirName)
+			if err != nil {
+				log.Error().Err(err).Msg("GCP plan policy generation failed")
+			}
 		}
 	}
 
@@ -121,6 +133,12 @@ func GetPolicy(actions Sorted, resources bool, policyName string, dirName string
 		if err != nil {
 			log.Error().Err(err).Msg("Azure policy generation failed")
 		}
+		if actions.PlanAZURE != nil {
+			OutPolicy.PlanAZURE, err = AZUREPolicy(Unique(actions.PlanAZURE), planPolicyName(policyName))
+			if err != nil {
+				log.Error().Err(err).Msg("Azure plan policy generation failed")
+			}
+		}
 	}
 
 	if empty {
@@ -128,6 +146,13 @@ func GetPolicy(actions Sorted, resources bool, policyName string, dirName string
 	}
 
 	return OutPolicy, nil
+}
+
+func planPolicyName(base string) string {
+	if base == "" {
+		return defaultPolicyName + "_plan"
+	}
+	return base + "_plan"
 }
 
 // AWSPolicy create an IAM policy.

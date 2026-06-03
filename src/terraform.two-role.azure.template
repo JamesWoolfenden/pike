@@ -1,0 +1,37 @@
+
+# apply role — full permissions for terraform apply
+# Bind this role to the applier SA on protected branches only.
+resource "azurerm_role_definition" "{{.ApplyName}}" {
+  role_definition_id = local.apply_uuid
+  name               = "{{.ApplyName}}"
+  scope              = data.azurerm_subscription.primary.id
+
+  permissions {
+    actions     = ["{{ .ApplyPermissions }}"]
+    not_actions = []
+  }
+
+  assignable_scopes = [data.azurerm_subscription.primary.id]
+}
+
+# plan role — read-only permissions for terraform plan
+# Bind this role to the planner SA on all branches.
+resource "azurerm_role_definition" "{{.PlanName}}" {
+  role_definition_id = local.plan_uuid
+  name               = "{{.PlanName}}"
+  scope              = data.azurerm_subscription.primary.id
+
+  permissions {
+    actions     = ["{{ .PlanPermissions }}"]
+    not_actions = []
+  }
+
+  assignable_scopes = [data.azurerm_subscription.primary.id]
+}
+
+locals {
+  apply_uuid = uuid()
+  plan_uuid  = uuid()
+}
+
+data "azurerm_subscription" "primary" {}

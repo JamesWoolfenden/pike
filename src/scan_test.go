@@ -38,7 +38,7 @@ func TestScan(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
 
-			if err := Scan(tt.args.dirname, tt.args.output, nil, false, tt.args.write, false, "", "", "", false); (err != nil) != tt.wantErr {
+			if err := Scan(tt.args.dirname, tt.args.output, nil, false, tt.args.write, false, "", "", "", false, false); (err != nil) != tt.wantErr {
 				t.Errorf("Scan() error = %v, wantErr %v", err, tt.wantErr)
 			}
 		})
@@ -140,6 +140,25 @@ func TestGetPermissionBag(t *testing.T) {
 					"s3:GetBucketRequestPayment",
 					"s3:GetBucketCORS",
 					"s3:DeleteBucket",
+				},
+				PlanAWS: []string{
+					"s3:PutBucketTagging",
+					"s3:GetLifecycleConfiguration",
+					"s3:GetBucketTagging",
+					"s3:GetBucketWebsite",
+					"s3:GetBucketLogging",
+					"s3:ListBucket",
+					"s3:GetAccelerateConfiguration",
+					"s3:GetBucketVersioning",
+					"s3:GetBucketAcl",
+					"s3:GetBucketPolicy",
+					"s3:GetReplicationConfiguration",
+					"s3:GetBucketObjectLockConfiguration",
+					"s3:GetObjectAcl",
+					"s3:GetObject",
+					"s3:GetEncryptionConfiguration",
+					"s3:GetBucketRequestPayment",
+					"s3:GetBucketCORS",
 				},
 			},
 		},

@@ -1,0 +1,64 @@
+
+# apply role — full permissions for terraform apply
+# Bind this role to the applier SA on protected branches only.
+resource "aws_iam_policy" "{{.ApplyName}}" {
+  name_prefix = "{{.ApplyName}}_"
+  path        = "/"
+  description = "Pike apply policy — full permissions for terraform apply"
+
+  policy = jsonencode({{.ApplyPolicy}})
+}
+
+resource "aws_iam_role" "{{.ApplyName}}" {
+  name_prefix = "{{.ApplyName}}_"
+  assume_role_policy = jsonencode({
+    "Version" : "2012-10-17",
+    "Statement" : [{
+      "Effect"    : "Allow",
+      "Principal" : { "AWS" : "arn:aws:iam::${data.aws_caller_identity.current.account_id}:root" },
+      "Action"    : "sts:AssumeRole"
+    }]
+  })
+}
+
+resource "aws_iam_role_policy_attachment" "{{.ApplyName}}" {
+  role       = aws_iam_role.{{.ApplyName}}.name
+  policy_arn = aws_iam_policy.{{.ApplyName}}.arn
+}
+
+# plan role — read-only permissions for terraform plan
+# Bind this role to the planner SA on all branches.
+resource "aws_iam_policy" "{{.PlanName}}" {
+  name_prefix = "{{.PlanName}}_"
+  path        = "/"
+  description = "Pike plan policy — read-only permissions for terraform plan"
+
+  policy = jsonencode({{.PlanPolicy}})
+}
+
+resource "aws_iam_role" "{{.PlanName}}" {
+  name_prefix = "{{.PlanName}}_"
+  assume_role_policy = jsonencode({
+    "Version" : "2012-10-17",
+    "Statement" : [{
+      "Effect"    : "Allow",
+      "Principal" : { "AWS" : "arn:aws:iam::${data.aws_caller_identity.current.account_id}:root" },
+      "Action"    : "sts:AssumeRole"
+    }]
+  })
+}
+
+resource "aws_iam_role_policy_attachment" "{{.PlanName}}" {
+  role       = aws_iam_role.{{.PlanName}}.name
+  policy_arn = aws_iam_policy.{{.PlanName}}.arn
+}
+
+data "aws_caller_identity" "current" {}
+
+output "apply_arn" {
+  value = aws_iam_role.{{.ApplyName}}.arn
+}
+
+output "plan_arn" {
+  value = aws_iam_role.{{.PlanName}}.arn
+}
