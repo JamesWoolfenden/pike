@@ -508,6 +508,8 @@
         "google_dataplex_asset_iam_binding",
         "google_dataplex_asset_iam_member",
         "google_dataplex_asset_iam_policy",
+        "google_dataplex_data_product",
+        "google_dataplex_data_product_data_asset",
         "google_dataplex_datascan",
         "google_dataplex_datascan_iam_binding",
         "google_dataplex_datascan_iam_member",
@@ -889,8 +891,10 @@
         "google_memorystore_instance",
         "google_memorystore_instance_desired_user_created_endpoints",
         "google_migration_center_assets_export_job",
+        "google_migration_center_discovery_client",
         "google_migration_center_group",
         "google_migration_center_preference_set",
+        "google_migration_center_report",
         "google_migration_center_report_config",
         "google_migration_center_settings",
         "google_migration_center_source",
@@ -1001,6 +1005,9 @@
         "google_oracle_database_db_system",
         "google_oracle_database_exadb_vm_cluster",
         "google_oracle_database_exascale_db_storage_vault",
+        "google_oracle_database_goldengate_connection",
+        "google_oracle_database_goldengate_connection_assignment",
+        "google_oracle_database_goldengate_deployment",
         "google_oracle_database_odb_network",
         "google_oracle_database_odb_subnet",
         "google_org_policy_custom_constraint",
@@ -1564,6 +1571,7 @@
         "google_oracle_database_cloud_vm_clusters",
         "google_oracle_database_db_nodes",
         "google_oracle_database_db_servers",
+        "google_oracle_database_goldengate_connection_types",
         "google_oracle_database_goldengate_deployment_environments",
         "google_oracle_database_odb_network",
         "google_oracle_database_odb_subnet",
@@ -1719,5 +1727,5 @@
         "google_notebooks_instance_iam_policy": "",
         "google_notebooks_runtime_iam_policy": ""
     },
-    "providerVersion": "7.34.0"
+    "providerVersion": "7.35.0"
 }

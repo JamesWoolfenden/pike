@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 87.51      |  1093       |  1249            |
-| Datasource | 99.53      |   426       |   428             |
+| Resources  | 87.10      |  1094       |  1256            |
+| Datasource | 99.30      |   426       |   429             |
 
 ## Deprecated
 
-28 resources and 7 datasources are flagged as deprecated in provider schema v7.34.0. Users pinned to an older provider major may already be affected when they upgrade.
+28 resources and 7 datasources are flagged as deprecated in provider schema v7.35.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -108,6 +108,7 @@
 ./resource.ps1 google_container_azure_cluster
 ./resource.ps1 google_container_azure_node_pool
 ./resource.ps1 google_data_lineage_config
+./resource.ps1 google_dataplex_data_product_data_asset
 ./resource.ps1 google_dataproc_gdc_application_environment
 ./resource.ps1 google_dataproc_gdc_service_instance
 ./resource.ps1 google_dataproc_gdc_spark_application
@@ -150,6 +151,8 @@
 ./resource.ps1 google_integrations_client
 ./resource.ps1 google_kms_project_autokey_config
 ./resource.ps1 google_migration_center_assets_export_job
+./resource.ps1 google_migration_center_discovery_client
+./resource.ps1 google_migration_center_report
 ./resource.ps1 google_migration_center_report_config
 ./resource.ps1 google_migration_center_settings
 ./resource.ps1 google_migration_center_source
@@ -206,11 +209,15 @@
 ./resource.ps1 google_network_services_multicast_group_range
 ./resource.ps1 google_network_services_multicast_group_range_activation
 ./resource.ps1 google_network_services_multicast_producer_association
+./resource.ps1 google_oracle_database_goldengate_connection
+./resource.ps1 google_oracle_database_goldengate_connection_assignment
+./resource.ps1 google_oracle_database_goldengate_deployment
 ./resource.ps1 google_scc_v2_organization_source
 ./resource.ps1 google_service_networking_peered_dns_domain
 ./resource.ps1 google_service_networking_vpc_service_controls
 ./resource.ps1 google_sql_provision_script
 ./resource.ps1 google_workload_identity_service_agent
 ./resource.ps1 google_compute_service_attachment -type data
+./resource.ps1 google_oracle_database_goldengate_connection_types -type data
 ./resource.ps1 google_oracle_database_goldengate_deployment_environments -type data
 ```

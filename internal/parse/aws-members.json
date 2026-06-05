@@ -534,6 +534,8 @@
         "aws_ec2_instance_metadata_defaults",
         "aws_ec2_instance_state",
         "aws_ec2_local_gateway_route",
+        "aws_ec2_local_gateway_route_table",
+        "aws_ec2_local_gateway_route_table_virtual_interface_group_association",
         "aws_ec2_local_gateway_route_table_vpc_association",
         "aws_ec2_managed_prefix_list",
         "aws_ec2_managed_prefix_list_entry",
@@ -822,6 +824,7 @@
         "aws_key_pair",
         "aws_keyspaces_keyspace",
         "aws_keyspaces_table",
+        "aws_kinesis_account_settings",
         "aws_kinesis_analytics_application",
         "aws_kinesis_firehose_delivery_stream",
         "aws_kinesis_resource_policy",
@@ -1085,6 +1088,7 @@
         "aws_pinpoint_gcm_channel",
         "aws_pinpoint_sms_channel",
         "aws_pinpointsmsvoicev2_configuration_set",
+        "aws_pinpointsmsvoicev2_event_destination",
         "aws_pinpointsmsvoicev2_opt_out_list",
         "aws_pinpointsmsvoicev2_phone_number",
         "aws_pipes_pipe",
@@ -1842,6 +1846,7 @@
         "aws_ec2_coip_pool",
         "aws_ec2_coip_pools",
         "aws_ec2_host",
+        "aws_ec2_hosts",
         "aws_ec2_instance_type",
         "aws_ec2_instance_type_offering",
         "aws_ec2_instance_type_offerings",
@@ -2349,5 +2354,5 @@
         "aws_s3_bucket_object": "",
         "aws_s3_bucket_objects": ""
     },
-    "providerVersion": "6.47.0"
+    "providerVersion": "6.49.0"
 }

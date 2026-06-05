@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 90.62      |  1507       |  1663            |
-| Datasource | 100.00      |   663       |   663             |
+| Resources  | 90.40      |  1507       |  1667            |
+| Datasource | 99.85      |   663       |   664             |
 
 ## Deprecated
 
-13 resources and 3 datasources are flagged as deprecated in provider schema v6.47.0. Users pinned to an older provider major may already be affected when they upgrade.
+13 resources and 3 datasources are flagged as deprecated in provider schema v6.49.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -84,6 +84,8 @@
 ./resource.ps1 aws_dynamodb_global_secondary_index
 ./resource.ps1 aws_ebs_volume_copy
 ./resource.ps1 aws_ec2_allowed_images_settings
+./resource.ps1 aws_ec2_local_gateway_route_table
+./resource.ps1 aws_ec2_local_gateway_route_table_virtual_interface_group_association
 ./resource.ps1 aws_ec2_network_insights_access_scope
 ./resource.ps1 aws_ec2_secondary_network
 ./resource.ps1 aws_ec2_secondary_subnet
@@ -97,6 +99,7 @@
 ./resource.ps1 aws_glue_catalog
 ./resource.ps1 aws_iam_outbound_web_identity_federation
 ./resource.ps1 aws_invoicing_invoice_unit
+./resource.ps1 aws_kinesis_account_settings
 ./resource.ps1 aws_lakeformation_identity_center_configuration
 ./resource.ps1 aws_lakeformation_lf_tag_expression
 ./resource.ps1 aws_lambda_capacity_provider
@@ -129,6 +132,7 @@
 ./resource.ps1 aws_organizations_aws_service_access
 ./resource.ps1 aws_organizations_tag
 ./resource.ps1 aws_outposts_capacity_task
+./resource.ps1 aws_pinpointsmsvoicev2_event_destination
 ./resource.ps1 aws_prometheus_resource_policy
 ./resource.ps1 aws_quicksight_custom_permissions
 ./resource.ps1 aws_quicksight_ip_restriction
@@ -192,4 +196,5 @@
 ./resource.ps1 aws_workspacesweb_user_settings_association
 ./resource.ps1 aws_xray_indexing_rule
 ./resource.ps1 aws_xray_trace_segment_destination
+./resource.ps1 aws_ec2_hosts -type data
 ```
