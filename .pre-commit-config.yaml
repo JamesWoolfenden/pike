@@ -34,7 +34,7 @@ repos:
       - id: markdownlint
         exclude: src/testdata|testdata
   - repo: https://github.com/jameswoolfenden/pre-commit
-    rev: v0.1.61 # v0.1.53
+    rev: v0.1.62 # v0.1.53
     hooks:
       - id: terraform-fmt
         language_version: python3.11
