@@ -142,7 +142,6 @@ func TestGetPermissionBag(t *testing.T) {
 					"s3:DeleteBucket",
 				},
 				PlanAWS: []string{
-					"s3:PutBucketTagging",
 					"s3:GetLifecycleConfiguration",
 					"s3:GetBucketTagging",
 					"s3:GetBucketWebsite",

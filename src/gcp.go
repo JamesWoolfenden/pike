@@ -58,7 +58,7 @@ func getGCPPlanPermissions(sourceData ResourceV2) ([]string, error) {
 	if raw == nil {
 		return nil, &notImplementedResourceError{sourceData.Name}
 	}
-	return getPlanPermissionMap(raw, sourceData.Attributes, sourceData.Name)
+	return getPlanPermissionMap(raw, sourceData.Attributes, sourceData.Name, isGCPReadPerm)
 }
 
 func getGCPResourceRuntimePermissions(sourceData ResourceV2) (RuntimePermission, error) {

@@ -22,7 +22,7 @@ func getAZUREPlanPermissions(result ResourceV2) ([]string, error) {
 	if temp == nil {
 		return nil, &notImplementedResourceError{result.Name}
 	}
-	return getPlanPermissionMap(temp, result.Attributes, result.Name)
+	return getPlanPermissionMap(temp, result.Attributes, result.Name, isAzureReadPerm)
 }
 
 func AzureLookup(name string) []byte {

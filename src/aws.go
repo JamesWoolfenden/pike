@@ -65,7 +65,7 @@ func getAWSPlanPermissions(result ResourceV2) ([]string, error) {
 	if temp == nil {
 		return nil, &notImplementedResourceError{result.Name}
 	}
-	return getPlanPermissionMap(temp, result.Attributes, result.Name)
+	return getPlanPermissionMap(temp, result.Attributes, result.Name, isAWSReadPerm)
 }
 
 func AwsLookup(name string) []byte {

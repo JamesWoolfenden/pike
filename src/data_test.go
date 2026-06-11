@@ -277,10 +277,7 @@ func TestGetPermission(t *testing.T) {
 					"acm:DeleteCertificate",
 					"acm:DeleteCertificate",
 				},
-				PlanAWS: []string{
-					"acm:AddTagsToCertificate",
-					"acm:RemoveTagsFromCertificate",
-				},
+				PlanAWS: nil,
 			},
 		},
 		{
