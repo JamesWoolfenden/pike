@@ -138,6 +138,14 @@ func GetPolicy(actions Sorted, resources bool, policyName string, dirName string
 			if err != nil {
 				log.Error().Err(err).Msg("Azure plan policy generation failed")
 			}
+			applyName := policyName
+			if applyName == "" {
+				applyName = defaultPolicyName
+			}
+			OutPolicy.TwoRoleAZURE, err = renderAzureTwoRole(actions, applyName, planPolicyName(policyName))
+			if err != nil {
+				log.Error().Err(err).Msg("Azure two-role policy generation failed")
+			}
 		}
 	}
 

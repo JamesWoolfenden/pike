@@ -102,6 +102,10 @@ type OutputPolicy struct {
 	PlanAWS   AwsOutput
 	PlanGCP   string
 	PlanAZURE string
+	// TwoRoleAZURE is the combined apply+plan render for Azure stdout. The
+	// single-role template carries locals/data boilerplate that cannot be
+	// concatenated, so Azure two-role output is rendered as one chunk.
+	TwoRoleAZURE string
 }
 
 // AwsOutput structure.
@@ -156,14 +160,11 @@ func (out OutputPolicy) AsTwoRoleString(format string) string {
 			s.WriteString(out.PlanGCP)
 			s.WriteString("\n")
 		}
-		if out.AZURE != "" {
-			s.WriteString("# apply role\n")
-			s.WriteString(out.AZURE)
+		if out.TwoRoleAZURE != "" {
+			s.WriteString(out.TwoRoleAZURE)
 			s.WriteString("\n")
-		}
-		if out.PlanAZURE != "" {
-			s.WriteString("# plan role\n")
-			s.WriteString(out.PlanAZURE)
+		} else if out.AZURE != "" {
+			s.WriteString(out.AZURE)
 			s.WriteString("\n")
 		}
 		return s.String()
