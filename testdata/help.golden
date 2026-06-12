@@ -11,6 +11,7 @@ AUTHOR:
 
 COMMANDS:
    apply, a         Create a policy and use it to instantiate the IAC
+   audit, au        audit IAM resources defined in Terraform for over-broad or escalation-prone grants
    compare, c       policy comparison of deployed versus IAC
    deprecated, dep  List resources and datasources flagged as deprecated by the latest provider schema
    inspect, x       policy comparison of environment versus IAC

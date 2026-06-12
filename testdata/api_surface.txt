@@ -1,8 +1,14 @@
 const ManifestSnapshotFilename = "modules.json"
+const SevCritical
+const SevHigh
+const SevInfo = iota
+const SevLow
+const SevMedium
 func AWSPolicy (permissions []string, resources bool, policyName string) (AwsOutput, error)
 func AZUREPolicy (permissions []string, policyName string) (string, error)
 func AlmostEqual (a , b float64) bool
 func Apply (target string, region string) error
+func Audit (dir string, output string, minSeverity Severity) error
 func AwsDataLookup (name string) []byte
 func AwsLookup (name string) []byte
 func AzureDataLookup (name string) []byte
@@ -58,6 +64,7 @@ func MakeSplitPolicy (bag Sorted) SplitPolicy
 func Minify (JSONOut string) string
 func NewAWSPolicy (actions []string, resources bool) (Policy, error)
 func NewStatement (sid string, effect string, action []string, resource []string) Statement
+func ParseSeverity (name string) Severity
 func RandSeq (n int) string
 func ReadModuleJson (r io.Reader) (ModuleJson, error)
 func ReadModuleJsonForDir (dir string) (ModuleJson, error)
@@ -78,6 +85,7 @@ func WriteOutput (outPolicy OutputPolicy, outputType string, scanPath string, ou
 func WriteTwoRoleOutput (bag Sorted, policyName string, dirName string) (string, error)
 type AwsOutput struct
 type EnvVariableNotSetError struct
+type Finding struct
 type IAMBinding struct
 type ModuleJson defined map[string]Record
 type OutputPolicy struct
@@ -87,6 +95,7 @@ type ProviderDeprecations struct
 type Record struct
 type ResourceV2 struct
 type RuntimePermission struct
+type Severity defined int
 type Sorted struct
 type SplitPolicy struct
 type SplitSet struct
