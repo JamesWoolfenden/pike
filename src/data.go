@@ -177,6 +177,22 @@ func extractStringValue(expr hclsyntax.Expression) string {
 	return ""
 }
 
+// extractStringList returns the literal string elements of a tuple/list
+// expression. Non-literal elements are skipped.
+func extractStringList(expr hclsyntax.Expression) []string {
+	tuple, ok := expr.(*hclsyntax.TupleConsExpr)
+	if !ok {
+		return nil
+	}
+	var out []string
+	for _, e := range tuple.Exprs {
+		if s := extractStringValue(e); s != "" {
+			out = append(out, s)
+		}
+	}
+	return out
+}
+
 // traversalToString converts an HCL traversal to a string representation.
 func traversalToString(traversal hcl.Traversal) string {
 	var parts []string

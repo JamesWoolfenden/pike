@@ -94,6 +94,14 @@ func (m *unmarshallJSONError) Error() string {
 	return fmt.Sprintf("failed to unmarshal json %v for %s", m.err, m.resource)
 }
 
+type auditFindingsError struct {
+	count int
+}
+
+func (e *auditFindingsError) Error() string {
+	return fmt.Sprintf("%d audit finding(s)", e.count)
+}
+
 type attributesFieldMissingError struct{}
 
 func (m *attributesFieldMissingError) Error() string {

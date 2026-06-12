@@ -1,0 +1,12 @@
+{
+  "Statement": [
+    {
+      "Action": [
+        "kms:*"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    }
+  ],
+  "Version": "2012-10-17"
+}

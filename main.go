@@ -230,6 +230,35 @@ func main() {
 				},
 			},
 			{
+				Name:    "audit",
+				Aliases: []string{"au"},
+				Usage:   "audit IAM resources defined in Terraform for over-broad or escalation-prone grants",
+				Flags: []cli.Flag{
+					&cli.StringFlag{
+						Name:        "directory",
+						Aliases:     []string{"d"},
+						Usage:       "Directory to scan (defaults to .)",
+						Value:       ".",
+						Destination: &directory,
+					},
+					&cli.StringFlag{
+						Name:        "output",
+						Aliases:     []string{"o"},
+						Usage:       "Output format: text or json",
+						Value:       "text",
+						Destination: &output,
+					},
+					&cli.StringFlag{
+						Name:  "min-severity",
+						Usage: "Minimum severity to report: info|low|medium|high|critical",
+						Value: "low",
+					},
+				},
+				Action: func(c *cli.Context) error {
+					return pike.Audit(directory, output, pike.ParseSeverity(c.String("min-severity")))
+				},
+			},
+			{
 				Name:    "runtime",
 				Aliases: []string{"rt"},
 				Usage:   "detect runtime IAM permissions needed by service accounts",
