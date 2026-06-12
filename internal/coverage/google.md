@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 87.10      |  1094       |  1256            |
-| Datasource | 99.30      |   426       |   429             |
+| Resources  | 86.01      |  1094       |  1272            |
+| Datasource | 98.16      |   426       |   434             |
 
 ## Deprecated
 
-28 resources and 7 datasources are flagged as deprecated in provider schema v7.35.0. Users pinned to an older provider major may already be affected when they upgrade.
+28 resources and 7 datasources are flagged as deprecated in provider schema v7.36.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -58,6 +58,7 @@
 ./resource.ps1 google_access_context_manager_egress_policy
 ./resource.ps1 google_access_context_manager_ingress_policy
 ./resource.ps1 google_apigee_data_collector
+./resource.ps1 google_apigee_datastore
 ./resource.ps1 google_apigee_endpoint_attachment
 ./resource.ps1 google_apigee_env_references
 ./resource.ps1 google_apigee_flowhook
@@ -72,7 +73,11 @@
 ./resource.ps1 google_biglake_iceberg_table_iam_member
 ./resource.ps1 google_biglake_iceberg_table_iam_policy
 ./resource.ps1 google_bigquery_reservation_group
+./resource.ps1 google_bigquery_routine_iam_binding
+./resource.ps1 google_bigquery_routine_iam_member
+./resource.ps1 google_bigquery_routine_iam_policy
 ./resource.ps1 google_ces_app_root_agent_association
+./resource.ps1 google_chronicle_custom_list
 ./resource.ps1 google_chronicle_dashboard_chart
 ./resource.ps1 google_chronicle_data_table
 ./resource.ps1 google_chronicle_data_table_row
@@ -109,6 +114,9 @@
 ./resource.ps1 google_container_azure_node_pool
 ./resource.ps1 google_data_lineage_config
 ./resource.ps1 google_dataplex_data_product_data_asset
+./resource.ps1 google_dataplex_data_product_iam_binding
+./resource.ps1 google_dataplex_data_product_iam_member
+./resource.ps1 google_dataplex_data_product_iam_policy
 ./resource.ps1 google_dataproc_gdc_application_environment
 ./resource.ps1 google_dataproc_gdc_service_instance
 ./resource.ps1 google_dataproc_gdc_spark_application
@@ -118,6 +126,9 @@
 ./resource.ps1 google_dialogflow_cx_tool_version
 ./resource.ps1 google_dialogflow_environment
 ./resource.ps1 google_dialogflow_sip_trunk
+./resource.ps1 google_discovery_engine_search_engine_iam_binding
+./resource.ps1 google_discovery_engine_search_engine_iam_member
+./resource.ps1 google_discovery_engine_search_engine_iam_policy
 ./resource.ps1 google_discovery_engine_serving_config
 ./resource.ps1 google_document_ai_schema
 ./resource.ps1 google_firebase_app_check_app_attest_config
@@ -150,8 +161,10 @@
 ./resource.ps1 google_integrations_auth_config
 ./resource.ps1 google_integrations_client
 ./resource.ps1 google_kms_project_autokey_config
+./resource.ps1 google_license_manager_configuration
 ./resource.ps1 google_migration_center_assets_export_job
 ./resource.ps1 google_migration_center_discovery_client
+./resource.ps1 google_migration_center_import_job
 ./resource.ps1 google_migration_center_report
 ./resource.ps1 google_migration_center_report_config
 ./resource.ps1 google_migration_center_settings
@@ -188,6 +201,9 @@
 ./resource.ps1 google_network_security_security_profile
 ./resource.ps1 google_network_security_security_profile_group
 ./resource.ps1 google_network_security_tls_inspection_policy
+./resource.ps1 google_network_security_ull_mirroring_collector
+./resource.ps1 google_network_security_ull_mirroring_collector_rule
+./resource.ps1 google_network_security_ull_mirroring_engine
 ./resource.ps1 google_network_security_url_lists
 ./resource.ps1 google_network_services_authz_extension
 ./resource.ps1 google_network_services_edge_cache_keyset
@@ -217,7 +233,12 @@
 ./resource.ps1 google_service_networking_vpc_service_controls
 ./resource.ps1 google_sql_provision_script
 ./resource.ps1 google_workload_identity_service_agent
+./resource.ps1 google_apigee_instance -type data
+./resource.ps1 google_bigquery_routine_iam_policy -type data
 ./resource.ps1 google_compute_service_attachment -type data
+./resource.ps1 google_dataplex_data_product_iam_policy -type data
+./resource.ps1 google_discovery_engine_search_engine_iam_policy -type data
 ./resource.ps1 google_oracle_database_goldengate_connection_types -type data
 ./resource.ps1 google_oracle_database_goldengate_deployment_environments -type data
+./resource.ps1 google_oracle_database_goldengate_deployment_types -type data
 ```

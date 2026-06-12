@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 90.40      |  1507       |  1667            |
+| Resources  | 90.13      |  1507       |  1672            |
 | Datasource | 99.85      |   663       |   664             |
 
 ## Deprecated
 
-13 resources and 3 datasources are flagged as deprecated in provider schema v6.49.0. Users pinned to an older provider major may already be affected when they upgrade.
+13 resources and 3 datasources are flagged as deprecated in provider schema v6.50.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -62,6 +62,7 @@
 ./resource.ps1 aws_bedrockagentcore_memory_strategy
 ./resource.ps1 aws_bedrockagentcore_oauth2_credential_provider
 ./resource.ps1 aws_bedrockagentcore_online_evaluation_config
+./resource.ps1 aws_bedrockagentcore_policy
 ./resource.ps1 aws_bedrockagentcore_policy_engine
 ./resource.ps1 aws_bedrockagentcore_resource_policy
 ./resource.ps1 aws_bedrockagentcore_token_vault_cmk
@@ -74,6 +75,7 @@
 ./resource.ps1 aws_cloudfront_multitenant_distribution
 ./resource.ps1 aws_cloudfront_trust_store
 ./resource.ps1 aws_cloudwatch_alarm_mute_rule
+./resource.ps1 aws_cloudwatch_log_s3_table_integration_source
 ./resource.ps1 aws_cloudwatch_log_transformer
 ./resource.ps1 aws_cloudwatch_otel_enrichment
 ./resource.ps1 aws_cognito_log_delivery_configuration
@@ -92,6 +94,8 @@
 ./resource.ps1 aws_ec2_transit_gateway_metering_policy
 ./resource.ps1 aws_ec2_transit_gateway_metering_policy_entry
 ./resource.ps1 aws_ecr_pull_time_update_exclusion
+./resource.ps1 aws_ecs_daemon
+./resource.ps1 aws_ecs_daemon_task_definition
 ./resource.ps1 aws_ecs_express_gateway_service
 ./resource.ps1 aws_eks_capability
 ./resource.ps1 aws_fis_target_account_configuration
@@ -116,6 +120,7 @@
 ./resource.ps1 aws_notifications_organizational_unit_association
 ./resource.ps1 aws_notifications_organizations_access
 ./resource.ps1 aws_observabilityadmin_centralization_rule_for_organization
+./resource.ps1 aws_observabilityadmin_s3_table_integration
 ./resource.ps1 aws_observabilityadmin_telemetry_enrichment
 ./resource.ps1 aws_observabilityadmin_telemetry_evaluation
 ./resource.ps1 aws_observabilityadmin_telemetry_evaluation_for_organization
