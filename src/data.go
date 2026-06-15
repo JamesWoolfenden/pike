@@ -312,9 +312,12 @@ func GetModulePath(block *hclsyntax.Block) string {
 	var modulePath string
 
 	attributes := block.Body.Attributes
-	value := attributes["source"].Expr
+	source, ok := attributes["source"]
+	if !ok {
+		return ""
+	}
 
-	castValue, ok := value.(*hclsyntax.TemplateExpr)
+	castValue, ok := source.Expr.(*hclsyntax.TemplateExpr)
 
 	if !ok {
 		return ""

@@ -170,12 +170,19 @@ func TestGetModulePath(t *testing.T) {
 	dirName, _ := filepath.Abs("../testdata/modules/examples/local")
 	block := getInitialBlock(dirName + "/module.local.tf")
 
+	noSource := &hclsyntax.Block{
+		Type:   "module",
+		Labels: []string{"incomplete"},
+		Body:   &hclsyntax.Body{Attributes: hclsyntax.Attributes{}},
+	}
+
 	tests := []struct {
 		name string
 		args args
 		want string
 	}{
 		{"basic", args{block}, "../../"},
+		{"no source attribute", args{noSource}, ""},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
