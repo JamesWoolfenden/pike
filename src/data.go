@@ -280,6 +280,10 @@ func GetLocalModules(block *hclsyntax.Block, dirName string, listModulesJson Mod
 
 	modulePath := GetModulePath(block)
 
+	if modulePath == "" {
+		return nil, nil
+	}
+
 	// not local
 	if strings.Contains(modulePath, "git::") {
 		return nil, &gitReferenceError{modulePath}
