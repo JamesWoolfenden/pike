@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 90.13      |  1507       |  1672            |
+| Resources  | 90.02      |  1507       |  1674            |
 | Datasource | 99.85      |   663       |   664             |
 
 ## Deprecated
 
-13 resources and 3 datasources are flagged as deprecated in provider schema v6.50.0. Users pinned to an older provider major may already be affected when they upgrade.
+13 resources and 3 datasources are flagged as deprecated in provider schema v6.51.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -55,6 +55,7 @@
 ./resource.ps1 aws_bedrockagentcore_api_key_credential_provider
 ./resource.ps1 aws_bedrockagentcore_browser
 ./resource.ps1 aws_bedrockagentcore_code_interpreter
+./resource.ps1 aws_bedrockagentcore_evaluator
 ./resource.ps1 aws_bedrockagentcore_gateway
 ./resource.ps1 aws_bedrockagentcore_gateway_target
 ./resource.ps1 aws_bedrockagentcore_harness
@@ -162,6 +163,7 @@
 ./resource.ps1 aws_s3vectors_vector_bucket
 ./resource.ps1 aws_s3vectors_vector_bucket_policy
 ./resource.ps1 aws_sagemaker_algorithm
+./resource.ps1 aws_sagemaker_hub_content_reference
 ./resource.ps1 aws_sagemaker_hyper_parameter_tuning_job
 ./resource.ps1 aws_sagemaker_labeling_job
 ./resource.ps1 aws_sagemaker_mlflow_app
