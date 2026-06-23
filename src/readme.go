@@ -28,7 +28,7 @@ func (m *replaceSectionError) Error() string {
 }
 
 // Readme Updates a README.md file.
-func Readme(dirName string, output string, init bool, autoAppend bool) error {
+func Readme(dirName string, output string, init bool, autoAppend bool, legacy bool) error {
 	file := path.Join(dirName, "README.md")
 
 	if _, err := os.Stat(file); errors.Is(err, os.ErrNotExist) {
@@ -48,13 +48,20 @@ func Readme(dirName string, output string, init bool, autoAppend bool) error {
 		return &makePolicyError{err}
 	}
 
+	var rendered string
+	if legacy {
+		rendered = OutPolicy.AsString(output)
+	} else {
+		rendered = OutPolicy.AsTwoRoleString(output)
+	}
+
 	var markdown string
 
 	switch strings.ToLower(output) {
 	case terraform:
-		markdown = "\nThe Terraform resource required is:\n\n```golang\n" + OutPolicy.AsString(output) + "\n```\n"
+		markdown = "\nThe Terraform resource required is:\n\n```golang\n" + rendered + "\n```\n"
 	case "json":
-		markdown = "\nThe Policy required is:\n\n```json\n" + OutPolicy.AsString(output) + "\n```\n"
+		markdown = "\nThe Policy required is:\n\n```json\n" + rendered + "\n```\n"
 	default:
 		return &tfPolicyFormatError{}
 	}
