@@ -12,6 +12,7 @@ func TestReadme(t *testing.T) {
 		output     string
 		init       bool
 		autoAppend bool
+		legacy     bool
 	}
 
 	tests := []struct {
@@ -57,7 +58,7 @@ func TestReadme(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if err := pike.Readme(tt.args.dirName, tt.args.output, tt.args.init, tt.args.autoAppend); (err != nil) != tt.wantErr {
+			if err := pike.Readme(tt.args.dirName, tt.args.output, tt.args.init, tt.args.autoAppend, tt.args.legacy); (err != nil) != tt.wantErr {
 				t.Errorf("Readme() error = %v, wantErr %v", err, tt.wantErr)
 			}
 		})
