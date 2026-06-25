@@ -371,7 +371,7 @@ func TestCustomErrors(t *testing.T) {
 
 	t.Run("delimiterHooksMissingError", func(t *testing.T) {
 		err := &delimiterHooksMissingError{}
-		expected := "pike hooks delimiter missing in Readme,  consider using the flag -auto"
+		expected := "pike hooks delimiter missing in Readme,  consider using the flag -auto-append"
 		if err.Error() != expected {
 			t.Errorf("Expected: %s, got: %s", expected, err.Error())
 		}
