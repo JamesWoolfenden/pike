@@ -4,7 +4,8 @@
       "compute.forwardingRules.delete",
       "compute.forwardingRules.create",
       "compute.forwardingRules.get",
-      "compute.forwardingRules.update"
+      "compute.forwardingRules.update",
+      "compute.forwardingRules.setLabels"
     ],
     "attributes": {
       "tags": []

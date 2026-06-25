@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 86.01      |  1094       |  1272            |
-| Datasource | 98.16      |   426       |   434             |
+| Resources  | 85.67      |  1094       |  1277            |
+| Datasource | 96.60      |   426       |   441             |
 
 ## Deprecated
 
-28 resources and 7 datasources are flagged as deprecated in provider schema v7.36.0. Users pinned to an older provider major may already be affected when they upgrade.
+28 resources and 7 datasources are flagged as deprecated in provider schema v7.37.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -61,6 +61,7 @@
 ./resource.ps1 google_apigee_datastore
 ./resource.ps1 google_apigee_endpoint_attachment
 ./resource.ps1 google_apigee_env_references
+./resource.ps1 google_apigee_environment_debugmask
 ./resource.ps1 google_apigee_flowhook
 ./resource.ps1 google_apigee_keystores_aliases_key_cert_file
 ./resource.ps1 google_apigee_keystores_aliases_pkcs12
@@ -82,6 +83,7 @@
 ./resource.ps1 google_chronicle_data_table
 ./resource.ps1 google_chronicle_data_table_row
 ./resource.ps1 google_chronicle_native_dashboard
+./resource.ps1 google_chronicle_parser
 ./resource.ps1 google_compute_firewall_policy_with_rules
 ./resource.ps1 google_compute_network_firewall_policy_with_rules
 ./resource.ps1 google_compute_preview_feature
@@ -164,6 +166,7 @@
 ./resource.ps1 google_license_manager_configuration
 ./resource.ps1 google_migration_center_assets_export_job
 ./resource.ps1 google_migration_center_discovery_client
+./resource.ps1 google_migration_center_import_data_file
 ./resource.ps1 google_migration_center_import_job
 ./resource.ps1 google_migration_center_report
 ./resource.ps1 google_migration_center_report_config
@@ -205,6 +208,7 @@
 ./resource.ps1 google_network_security_ull_mirroring_collector_rule
 ./resource.ps1 google_network_security_ull_mirroring_engine
 ./resource.ps1 google_network_security_url_lists
+./resource.ps1 google_network_services_agent_gateway
 ./resource.ps1 google_network_services_authz_extension
 ./resource.ps1 google_network_services_edge_cache_keyset
 ./resource.ps1 google_network_services_edge_cache_origin
@@ -232,13 +236,21 @@
 ./resource.ps1 google_service_networking_peered_dns_domain
 ./resource.ps1 google_service_networking_vpc_service_controls
 ./resource.ps1 google_sql_provision_script
+./resource.ps1 google_vertex_ai_tensorboard_experiment
 ./resource.ps1 google_workload_identity_service_agent
 ./resource.ps1 google_apigee_instance -type data
 ./resource.ps1 google_bigquery_routine_iam_policy -type data
+./resource.ps1 google_compute_region_target_http_proxy -type data
+./resource.ps1 google_compute_region_target_https_proxy -type data
 ./resource.ps1 google_compute_service_attachment -type data
+./resource.ps1 google_compute_target_http_proxy -type data
+./resource.ps1 google_compute_target_https_proxy -type data
 ./resource.ps1 google_dataplex_data_product_iam_policy -type data
 ./resource.ps1 google_discovery_engine_search_engine_iam_policy -type data
 ./resource.ps1 google_oracle_database_goldengate_connection_types -type data
 ./resource.ps1 google_oracle_database_goldengate_deployment_environments -type data
 ./resource.ps1 google_oracle_database_goldengate_deployment_types -type data
+./resource.ps1 google_oracle_database_goldengate_deployment_versions -type data
+./resource.ps1 google_storage_control_project_intelligence_finding -type data
+./resource.ps1 google_storage_control_project_intelligence_findings -type data
 ```

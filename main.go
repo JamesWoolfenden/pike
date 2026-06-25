@@ -456,9 +456,14 @@ func main() {
 						Usage:       "Automatically adds policy section to the end of Readme",
 						Destination: &autoAppend,
 					},
+					&cli.BoolFlag{
+						Name:        "legacy",
+						Usage:       "Use legacy single-role output instead of the default two-role (plan + apply) output",
+						Destination: &legacy,
+					},
 				},
 				Action: func(*cli.Context) error {
-					return pike.Readme(directory, output, init, autoAppend)
+					return pike.Readme(directory, output, init, autoAppend, legacy)
 				},
 			},
 			{

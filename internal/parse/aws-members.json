@@ -187,6 +187,7 @@
         "aws_bedrockagentcore_api_key_credential_provider",
         "aws_bedrockagentcore_browser",
         "aws_bedrockagentcore_code_interpreter",
+        "aws_bedrockagentcore_evaluator",
         "aws_bedrockagentcore_gateway",
         "aws_bedrockagentcore_gateway_target",
         "aws_bedrockagentcore_harness",
@@ -1317,6 +1318,7 @@
         "aws_sagemaker_feature_group",
         "aws_sagemaker_flow_definition",
         "aws_sagemaker_hub",
+        "aws_sagemaker_hub_content_reference",
         "aws_sagemaker_human_task_ui",
         "aws_sagemaker_hyper_parameter_tuning_job",
         "aws_sagemaker_image",
@@ -2359,5 +2361,5 @@
         "aws_s3_bucket_object": "",
         "aws_s3_bucket_objects": ""
     },
-    "providerVersion": "6.50.0"
+    "providerVersion": "6.51.0"
 }

@@ -109,6 +109,12 @@ func Test_getLocalModules(t *testing.T) {
 	notLocal, _ := filepath.Abs("../testdata/modules/examples/notlocal")
 	notBlock := getInitialBlock(notLocal + "/module.local.tf")
 
+	noSourceBlock := &hclsyntax.Block{
+		Type:   "module",
+		Labels: []string{"incomplete"},
+		Body:   &hclsyntax.Body{Attributes: hclsyntax.Attributes{}},
+	}
+
 	moduleJson := make(pike.ModuleJson)
 	tests := []struct {
 		name    string
@@ -131,6 +137,7 @@ func Test_getLocalModules(t *testing.T) {
 		},
 		{name: "rubbish", args: args{duffBlock, duffName}, wantErr: false},
 		{name: "notLocal", args: args{notBlock, notLocal}, wantErr: false},
+		{name: "no source attribute", args: args{noSourceBlock, dirName}, wantErr: false},
 	}
 
 	for _, tt := range tests {
@@ -170,12 +177,19 @@ func TestGetModulePath(t *testing.T) {
 	dirName, _ := filepath.Abs("../testdata/modules/examples/local")
 	block := getInitialBlock(dirName + "/module.local.tf")
 
+	noSource := &hclsyntax.Block{
+		Type:   "module",
+		Labels: []string{"incomplete"},
+		Body:   &hclsyntax.Body{Attributes: hclsyntax.Attributes{}},
+	}
+
 	tests := []struct {
 		name string
 		args args
 		want string
 	}{
 		{"basic", args{block}, "../../"},
+		{"no source attribute", args{noSource}, ""},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
