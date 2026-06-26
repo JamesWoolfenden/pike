@@ -673,6 +673,8 @@
         "azurerm_netapp_snapshot",
         "azurerm_netapp_snapshot_policy",
         "azurerm_netapp_volume",
+        "azurerm_netapp_volume_bucket",
+        "azurerm_netapp_volume_bucket_with_server",
         "azurerm_netapp_volume_group_oracle",
         "azurerm_netapp_volume_group_sap_hana",
         "azurerm_netapp_volume_quota_rule",
@@ -1367,6 +1369,8 @@
         "azurerm_netapp_snapshot",
         "azurerm_netapp_snapshot_policy",
         "azurerm_netapp_volume",
+        "azurerm_netapp_volume_bucket",
+        "azurerm_netapp_volume_bucket_with_server",
         "azurerm_netapp_volume_group_oracle",
         "azurerm_netapp_volume_group_sap_hana",
         "azurerm_netapp_volume_quota_rule",
@@ -1578,5 +1582,5 @@
         "azurerm_postgresql_server": "",
         "azurerm_redis_enterprise_database": ""
     },
-    "providerVersion": "4.78.0"
+    "providerVersion": "4.79.0"
 }

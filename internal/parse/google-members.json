@@ -213,8 +213,10 @@
         "google_chronicle_data_access_scope",
         "google_chronicle_data_table",
         "google_chronicle_data_table_row",
+        "google_chronicle_feed",
         "google_chronicle_native_dashboard",
         "google_chronicle_parser",
+        "google_chronicle_parser_extension",
         "google_chronicle_reference_list",
         "google_chronicle_retrohunt",
         "google_chronicle_rule",
@@ -544,6 +546,7 @@
         "google_dataplex_lake_iam_binding",
         "google_dataplex_lake_iam_member",
         "google_dataplex_lake_iam_policy",
+        "google_dataplex_metadata_feed",
         "google_dataplex_task",
         "google_dataplex_task_iam_binding",
         "google_dataplex_task_iam_member",
@@ -1250,8 +1253,10 @@
         "google_vertex_ai_reasoning_engine_iam_binding",
         "google_vertex_ai_reasoning_engine_iam_member",
         "google_vertex_ai_reasoning_engine_iam_policy",
+        "google_vertex_ai_schedule",
         "google_vertex_ai_tensorboard",
         "google_vertex_ai_tensorboard_experiment",
+        "google_vertex_ai_tensorboard_run",
         "google_vmwareengine_cluster",
         "google_vmwareengine_datastore",
         "google_vmwareengine_external_access_rule",
@@ -1688,6 +1693,8 @@
         "google_storage_control_organization_intelligence_config",
         "google_storage_control_project_intelligence_config",
         "google_storage_control_project_intelligence_finding",
+        "google_storage_control_project_intelligence_finding_revision",
+        "google_storage_control_project_intelligence_finding_revisions",
         "google_storage_control_project_intelligence_findings",
         "google_storage_insights_dataset_config",
         "google_storage_managed_folder_iam_policy",
@@ -1760,5 +1767,5 @@
         "google_notebooks_instance_iam_policy": "",
         "google_notebooks_runtime_iam_policy": ""
     },
-    "providerVersion": "7.37.0"
+    "providerVersion": "7.38.0"
 }

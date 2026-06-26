@@ -197,6 +197,7 @@
         "aws_bedrockagentcore_online_evaluation_config",
         "aws_bedrockagentcore_policy",
         "aws_bedrockagentcore_policy_engine",
+        "aws_bedrockagentcore_registry",
         "aws_bedrockagentcore_resource_policy",
         "aws_bedrockagentcore_token_vault_cmk",
         "aws_bedrockagentcore_workload_identity",
@@ -2202,6 +2203,7 @@
         "aws_s3_access_point",
         "aws_s3_account_public_access_block",
         "aws_s3_bucket",
+        "aws_s3_bucket_notification",
         "aws_s3_bucket_object",
         "aws_s3_bucket_object_lock_configuration",
         "aws_s3_bucket_objects",
@@ -2361,5 +2363,5 @@
         "aws_s3_bucket_object": "",
         "aws_s3_bucket_objects": ""
     },
-    "providerVersion": "6.51.0"
+    "providerVersion": "6.52.0"
 }
