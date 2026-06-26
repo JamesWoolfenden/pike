@@ -52,7 +52,7 @@ func GetResources(file string, dirName string) ([]ResourceV2, error) {
 			} else {
 				log.Info().Err(err).Msg("local module scan failed")
 			}
-		case "output", "variable", "locals", "provider", "import":
+		case "output", "variable", "locals", "provider", "import", "moved", "removed":
 			continue
 		default:
 			// block type not handled
