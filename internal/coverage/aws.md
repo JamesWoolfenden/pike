@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 90.02      |  1507       |  1674            |
-| Datasource | 99.85      |   663       |   664             |
+| Resources  | 89.97      |  1507       |  1675            |
+| Datasource | 99.70      |   663       |   665             |
 
 ## Deprecated
 
-13 resources and 3 datasources are flagged as deprecated in provider schema v6.51.0. Users pinned to an older provider major may already be affected when they upgrade.
+13 resources and 3 datasources are flagged as deprecated in provider schema v6.52.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -65,6 +65,7 @@
 ./resource.ps1 aws_bedrockagentcore_online_evaluation_config
 ./resource.ps1 aws_bedrockagentcore_policy
 ./resource.ps1 aws_bedrockagentcore_policy_engine
+./resource.ps1 aws_bedrockagentcore_registry
 ./resource.ps1 aws_bedrockagentcore_resource_policy
 ./resource.ps1 aws_bedrockagentcore_token_vault_cmk
 ./resource.ps1 aws_bedrockagentcore_workload_identity
@@ -204,4 +205,5 @@
 ./resource.ps1 aws_xray_indexing_rule
 ./resource.ps1 aws_xray_trace_segment_destination
 ./resource.ps1 aws_ec2_hosts -type data
+./resource.ps1 aws_s3_bucket_notification -type data
 ```

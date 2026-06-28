@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 85.67      |  1094       |  1277            |
-| Datasource | 96.60      |   426       |   441             |
+| Resources  | 85.34      |  1094       |  1282            |
+| Datasource | 96.16      |   426       |   443             |
 
 ## Deprecated
 
-28 resources and 7 datasources are flagged as deprecated in provider schema v7.37.0. Users pinned to an older provider major may already be affected when they upgrade.
+28 resources and 7 datasources are flagged as deprecated in provider schema v7.38.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -82,8 +82,10 @@
 ./resource.ps1 google_chronicle_dashboard_chart
 ./resource.ps1 google_chronicle_data_table
 ./resource.ps1 google_chronicle_data_table_row
+./resource.ps1 google_chronicle_feed
 ./resource.ps1 google_chronicle_native_dashboard
 ./resource.ps1 google_chronicle_parser
+./resource.ps1 google_chronicle_parser_extension
 ./resource.ps1 google_compute_firewall_policy_with_rules
 ./resource.ps1 google_compute_network_firewall_policy_with_rules
 ./resource.ps1 google_compute_preview_feature
@@ -119,6 +121,7 @@
 ./resource.ps1 google_dataplex_data_product_iam_binding
 ./resource.ps1 google_dataplex_data_product_iam_member
 ./resource.ps1 google_dataplex_data_product_iam_policy
+./resource.ps1 google_dataplex_metadata_feed
 ./resource.ps1 google_dataproc_gdc_application_environment
 ./resource.ps1 google_dataproc_gdc_service_instance
 ./resource.ps1 google_dataproc_gdc_spark_application
@@ -236,7 +239,9 @@
 ./resource.ps1 google_service_networking_peered_dns_domain
 ./resource.ps1 google_service_networking_vpc_service_controls
 ./resource.ps1 google_sql_provision_script
+./resource.ps1 google_vertex_ai_schedule
 ./resource.ps1 google_vertex_ai_tensorboard_experiment
+./resource.ps1 google_vertex_ai_tensorboard_run
 ./resource.ps1 google_workload_identity_service_agent
 ./resource.ps1 google_apigee_instance -type data
 ./resource.ps1 google_bigquery_routine_iam_policy -type data
@@ -252,5 +257,7 @@
 ./resource.ps1 google_oracle_database_goldengate_deployment_types -type data
 ./resource.ps1 google_oracle_database_goldengate_deployment_versions -type data
 ./resource.ps1 google_storage_control_project_intelligence_finding -type data
+./resource.ps1 google_storage_control_project_intelligence_finding_revision -type data
+./resource.ps1 google_storage_control_project_intelligence_finding_revisions -type data
 ./resource.ps1 google_storage_control_project_intelligence_findings -type data
 ```
