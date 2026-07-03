@@ -2,17 +2,18 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 89.97      |  1507       |  1675            |
-| Datasource | 99.70      |   663       |   665             |
+| Resources  | 89.81      |  1507       |  1678            |
+| Datasource | 99.25      |   663       |   668             |
 
 ## Deprecated
 
-13 resources and 3 datasources are flagged as deprecated in provider schema v6.52.0. Users pinned to an older provider major may already be affected when they upgrade.
+14 resources and 3 datasources are flagged as deprecated in provider schema v6.53.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
 | Resource | Note |
 |---|---|
+| aws_bedrockagentcore_registry | — |
 | aws_elastictranscoder_pipeline | — |
 | aws_elastictranscoder_preset | — |
 | aws_evidently_feature | — |
@@ -49,6 +50,8 @@
 ./resource.ps1 aws_arczonalshift_autoshift_observer_notification_status
 ./resource.ps1 aws_arczonalshift_zonal_autoshift_configuration
 ./resource.ps1 aws_backup_restore_testing_selection
+./resource.ps1 aws_bedrock_foundation_model_agreement
+./resource.ps1 aws_bedrock_use_case_for_model_access
 ./resource.ps1 aws_bedrockagent_flow
 ./resource.ps1 aws_bedrockagentcore_agent_runtime
 ./resource.ps1 aws_bedrockagentcore_agent_runtime_endpoint
@@ -140,6 +143,7 @@
 ./resource.ps1 aws_organizations_tag
 ./resource.ps1 aws_outposts_capacity_task
 ./resource.ps1 aws_pinpointsmsvoicev2_event_destination
+./resource.ps1 aws_pinpointsmsvoicev2_pool
 ./resource.ps1 aws_prometheus_resource_policy
 ./resource.ps1 aws_quicksight_custom_permissions
 ./resource.ps1 aws_quicksight_ip_restriction
@@ -204,6 +208,9 @@
 ./resource.ps1 aws_workspacesweb_user_settings_association
 ./resource.ps1 aws_xray_indexing_rule
 ./resource.ps1 aws_xray_trace_segment_destination
+./resource.ps1 aws_bedrock_foundation_model_agreement_offers -type data
+./resource.ps1 aws_bedrock_use_case_for_model_access -type data
+./resource.ps1 aws_ec2_capacity_block_reservation -type data
 ./resource.ps1 aws_ec2_hosts -type data
 ./resource.ps1 aws_s3_bucket_notification -type data
 ```

@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 85.34      |  1094       |  1282            |
-| Datasource | 96.16      |   426       |   443             |
+| Resources  | 83.77      |  1094       |  1306            |
+| Datasource | 93.63      |   426       |   455             |
 
 ## Deprecated
 
-28 resources and 7 datasources are flagged as deprecated in provider schema v7.38.0. Users pinned to an older provider major may already be affected when they upgrade.
+28 resources and 7 datasources are flagged as deprecated in provider schema v7.39.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -57,6 +57,8 @@
 ```shell
 ./resource.ps1 google_access_context_manager_egress_policy
 ./resource.ps1 google_access_context_manager_ingress_policy
+./resource.ps1 google_agent_registry_binding
+./resource.ps1 google_agent_registry_service
 ./resource.ps1 google_apigee_data_collector
 ./resource.ps1 google_apigee_datastore
 ./resource.ps1 google_apigee_endpoint_attachment
@@ -68,6 +70,7 @@
 ./resource.ps1 google_apigee_sharedflow
 ./resource.ps1 google_apigee_sharedflow_deployment
 ./resource.ps1 google_apigee_space
+./resource.ps1 google_artifact_registry_project_config
 ./resource.ps1 google_artifact_registry_rule
 ./resource.ps1 google_biglake_iceberg_table
 ./resource.ps1 google_biglake_iceberg_table_iam_binding
@@ -83,10 +86,18 @@
 ./resource.ps1 google_chronicle_data_table
 ./resource.ps1 google_chronicle_data_table_row
 ./resource.ps1 google_chronicle_feed
+./resource.ps1 google_chronicle_findings_refinement
 ./resource.ps1 google_chronicle_native_dashboard
 ./resource.ps1 google_chronicle_parser
 ./resource.ps1 google_chronicle_parser_extension
+./resource.ps1 google_compute_bulk_per_instance_config
+./resource.ps1 google_compute_firewall_policy_iam_binding
+./resource.ps1 google_compute_firewall_policy_iam_member
+./resource.ps1 google_compute_firewall_policy_iam_policy
 ./resource.ps1 google_compute_firewall_policy_with_rules
+./resource.ps1 google_compute_network_firewall_policy_iam_binding
+./resource.ps1 google_compute_network_firewall_policy_iam_member
+./resource.ps1 google_compute_network_firewall_policy_iam_policy
 ./resource.ps1 google_compute_network_firewall_policy_with_rules
 ./resource.ps1 google_compute_preview_feature
 ./resource.ps1 google_compute_region_composite_health_check
@@ -98,10 +109,15 @@
 ./resource.ps1 google_compute_region_instant_snapshot_iam_policy
 ./resource.ps1 google_compute_region_network_firewall_policy
 ./resource.ps1 google_compute_region_network_firewall_policy_association
+./resource.ps1 google_compute_region_network_firewall_policy_iam_binding
+./resource.ps1 google_compute_region_network_firewall_policy_iam_member
+./resource.ps1 google_compute_region_network_firewall_policy_iam_policy
 ./resource.ps1 google_compute_region_network_firewall_policy_rule
 ./resource.ps1 google_compute_region_network_firewall_policy_with_rules
+./resource.ps1 google_compute_region_resize_request
 ./resource.ps1 google_compute_region_ssl_policy
 ./resource.ps1 google_compute_resize_request
+./resource.ps1 google_compute_zone_vm_extension_policy
 ./resource.ps1 google_config_deployment
 ./resource.ps1 google_contact_center_insights_assessment_rule
 ./resource.ps1 google_contact_center_insights_auto_labeling_rule
@@ -151,7 +167,14 @@
 ./resource.ps1 google_firebase_app_hosting_traffic
 ./resource.ps1 google_firebase_data_connect_service
 ./resource.ps1 google_firebase_remote_config_remote_config
+./resource.ps1 google_gke_hub_rollout_sequence
 ./resource.ps1 google_gke_hub_scope_rbac_role_binding
+./resource.ps1 google_iap_agent_registry_iam_binding
+./resource.ps1 google_iap_agent_registry_iam_member
+./resource.ps1 google_iap_agent_registry_iam_policy
+./resource.ps1 google_iap_location_web_iam_binding
+./resource.ps1 google_iap_location_web_iam_member
+./resource.ps1 google_iap_location_web_iam_policy
 ./resource.ps1 google_identity_platform_config
 ./resource.ps1 google_identity_platform_default_supported_idp_config
 ./resource.ps1 google_identity_platform_inbound_saml_config
@@ -232,6 +255,7 @@
 ./resource.ps1 google_network_services_multicast_group_range
 ./resource.ps1 google_network_services_multicast_group_range_activation
 ./resource.ps1 google_network_services_multicast_producer_association
+./resource.ps1 google_oracle_database_cloud_exadata_infrastructure_exascale_config
 ./resource.ps1 google_oracle_database_goldengate_connection
 ./resource.ps1 google_oracle_database_goldengate_connection_assignment
 ./resource.ps1 google_oracle_database_goldengate_deployment
@@ -243,8 +267,15 @@
 ./resource.ps1 google_vertex_ai_tensorboard_experiment
 ./resource.ps1 google_vertex_ai_tensorboard_run
 ./resource.ps1 google_workload_identity_service_agent
+./resource.ps1 google_agent_registry_agent -type data
+./resource.ps1 google_agent_registry_endpoint -type data
+./resource.ps1 google_agent_registry_mcp_server -type data
 ./resource.ps1 google_apigee_instance -type data
 ./resource.ps1 google_bigquery_routine_iam_policy -type data
+./resource.ps1 google_compute_firewall_policy_iam_policy -type data
+./resource.ps1 google_compute_instance_groups -type data
+./resource.ps1 google_compute_network_firewall_policy_iam_policy -type data
+./resource.ps1 google_compute_region_network_firewall_policy_iam_policy -type data
 ./resource.ps1 google_compute_region_target_http_proxy -type data
 ./resource.ps1 google_compute_region_target_https_proxy -type data
 ./resource.ps1 google_compute_service_attachment -type data
@@ -252,12 +283,17 @@
 ./resource.ps1 google_compute_target_https_proxy -type data
 ./resource.ps1 google_dataplex_data_product_iam_policy -type data
 ./resource.ps1 google_discovery_engine_search_engine_iam_policy -type data
+./resource.ps1 google_iap_agent_registry_iam_policy -type data
+./resource.ps1 google_iap_location_web_iam_policy -type data
 ./resource.ps1 google_oracle_database_goldengate_connection_types -type data
 ./resource.ps1 google_oracle_database_goldengate_deployment_environments -type data
 ./resource.ps1 google_oracle_database_goldengate_deployment_types -type data
 ./resource.ps1 google_oracle_database_goldengate_deployment_versions -type data
+./resource.ps1 google_storage_control_folder_intelligence_findings_summary -type data
+./resource.ps1 google_storage_control_organization_intelligence_findings_summary -type data
 ./resource.ps1 google_storage_control_project_intelligence_finding -type data
 ./resource.ps1 google_storage_control_project_intelligence_finding_revision -type data
 ./resource.ps1 google_storage_control_project_intelligence_finding_revisions -type data
 ./resource.ps1 google_storage_control_project_intelligence_findings -type data
+./resource.ps1 google_storage_control_project_intelligence_findings_summary -type data
 ```

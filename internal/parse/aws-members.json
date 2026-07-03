@@ -168,11 +168,13 @@
         "aws_batch_scheduling_policy",
         "aws_bcmdataexports_export",
         "aws_bedrock_custom_model",
+        "aws_bedrock_foundation_model_agreement",
         "aws_bedrock_guardrail",
         "aws_bedrock_guardrail_version",
         "aws_bedrock_inference_profile",
         "aws_bedrock_model_invocation_logging_configuration",
         "aws_bedrock_provisioned_model_throughput",
+        "aws_bedrock_use_case_for_model_access",
         "aws_bedrockagent_agent",
         "aws_bedrockagent_agent_action_group",
         "aws_bedrockagent_agent_alias",
@@ -1098,6 +1100,7 @@
         "aws_pinpointsmsvoicev2_event_destination",
         "aws_pinpointsmsvoicev2_opt_out_list",
         "aws_pinpointsmsvoicev2_phone_number",
+        "aws_pinpointsmsvoicev2_pool",
         "aws_pipes_pipe",
         "aws_placement_group",
         "aws_prometheus_alert_manager_definition",
@@ -1738,9 +1741,11 @@
         "aws_bedrock_custom_model",
         "aws_bedrock_custom_models",
         "aws_bedrock_foundation_model",
+        "aws_bedrock_foundation_model_agreement_offers",
         "aws_bedrock_foundation_models",
         "aws_bedrock_inference_profile",
         "aws_bedrock_inference_profiles",
+        "aws_bedrock_use_case_for_model_access",
         "aws_bedrockagent_agent_versions",
         "aws_billing_service_account",
         "aws_billing_views",
@@ -1850,6 +1855,7 @@
         "aws_ebs_volume",
         "aws_ebs_volumes",
         "aws_ec2_capacity_block_offering",
+        "aws_ec2_capacity_block_reservation",
         "aws_ec2_client_vpn_endpoint",
         "aws_ec2_coip_pool",
         "aws_ec2_coip_pools",
@@ -2344,6 +2350,7 @@
         "aws_workspaces_workspace"
     ],
     "deprecatedResources": {
+        "aws_bedrockagentcore_registry": "",
         "aws_elastictranscoder_pipeline": "",
         "aws_elastictranscoder_preset": "",
         "aws_evidently_feature": "",
@@ -2363,5 +2370,5 @@
         "aws_s3_bucket_object": "",
         "aws_s3_bucket_objects": ""
     },
-    "providerVersion": "6.52.0"
+    "providerVersion": "6.53.0"
 }
