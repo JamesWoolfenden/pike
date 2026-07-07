@@ -3,6 +3,8 @@
     "apply": [
       "elasticloadbalancing:CreateListener",
       "elasticloadbalancing:DescribeListeners",
+      "elasticloadbalancing:DescribeListenerAttributes",
+      "elasticloadbalancing:ModifyListenerAttributes",
       "elasticloadbalancing:DeleteListener",
       "elasticloadbalancing:ModifyListener"
     ],
@@ -24,7 +26,8 @@
       "elasticloadbalancing:DeleteListener"
     ],
     "modify": [
-      "elasticloadbalancing:ModifyListener"
+      "elasticloadbalancing:ModifyListener",
+      "elasticloadbalancing:ModifyListenerAttributes"
     ],
     "plan": []
   }
