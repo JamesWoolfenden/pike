@@ -5,22 +5,86 @@ resource "google_project_iam_custom_role" "terraform_pike" {
   title       = "terraform_pike"
   description = "A user with least privileges"
   permissions = [
-    //google_artifact_registry_file
-    "artifactregistry.files.get",
+    # google_agent_registry_agent
+    "agentregistry.agents.get",
+    "agentregistry.agents.list",
 
-    //google_compute_region_instant_snapshot_iam_policy
-    "compute.instantSnapshots.getIamPolicy",
+    # google_agent_registry_endpoint
+    "agentregistry.endpoints.get",
+    "agentregistry.endpoints.list",
 
-    //google_logging_log_view
+    # google_agent_registry_mcp_server
+    "agentregistry.mcpServers.get",
+    "agentregistry.mcpServers.list",
+
+    # google_apigee_instance
+    "apigee.instances.get",
+
+    # google_bigquery_routine_iam_policy
     # non required
 
-    //google_network_connectivity_hub_iam_policy
-    "networkconnectivity.hubs.getIamPolicy",
+    # google_compute_firewall_policy_iam_policy
+    # google_compute_network_firewall_policy_iam_policy
+    "compute.firewallPolicies.getIamPolicy",
 
-    //google_data_lineage_config
-    "datalineage.configs.get"
+    # google_compute_instance_groups
+    "compute.instanceGroups.list",
 
+    # google_compute_region_network_firewall_policy_iam_policy
+    "compute.regionFirewallPolicies.getIamPolicy",
 
+    # google_compute_region_target_http_proxy
+    "compute.regionTargetHttpProxies.get",
 
+    # google_compute_region_target_https_proxy
+    "compute.regionTargetHttpsProxies.get",
+
+    # google_compute_service_attachment
+    "compute.serviceAttachments.get",
+
+    # google_compute_target_http_proxy
+    "compute.targetHttpProxies.get",
+
+    # google_compute_target_https_proxy
+    "compute.targetHttpsProxies.get",
+
+    # google_dataplex_data_product_iam_policy
+    "dataplex.dataProducts.getIamPolicy",
+
+    # google_discovery_engine_search_engine_iam_policy
+    "discoveryengine.engines.getIamPolicy",
+
+    # google_iap_agent_registry_iam_policy
+    # google_iap_location_web_iam_policy
+    "iap.web.getIamPolicy",
+
+    # google_oracle_database_goldengate_connection_types
+    "oracledatabase.goldenGateConnectionTypes.list",
+
+    # google_oracle_database_goldengate_deployment_environments
+    "oracledatabase.goldenGateDeploymentEnvironments.list",
+
+    # google_oracle_database_goldengate_deployment_types
+    "oracledatabase.goldenGateDeploymentTypes.list",
+
+    # google_oracle_database_goldengate_deployment_versions
+    "oracledatabase.goldenGateDeploymentVersions.list",
+
+    # google_storage_control_project_intelligence_finding_revision
+    # "storage.intelligenceFindingRevisions.get",
+
+    # google_storage_control_project_intelligence_finding_revisions
+    # "storage.intelligenceFindingRevisions.list",
+
+    # google_storage_control_project_intelligence_finding
+    # "storage.intelligenceFindings.get",
+    #
+    # # google_storage_control_project_intelligence_findings
+    # "storage.intelligenceFindings.list",
+
+    # google_storage_control_folder_intelligence_findings_summary
+    # google_storage_control_organization_intelligence_findings_summary
+    # google_storage_control_project_intelligence_findings_summary
+    # "storage.intelligenceFindings.summarize",
   ]
 }
