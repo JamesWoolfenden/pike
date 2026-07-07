@@ -70,16 +70,12 @@ resource "google_project_iam_custom_role" "terraform_pike" {
     # google_oracle_database_goldengate_deployment_versions
     "oracledatabase.goldenGateDeploymentVersions.list",
 
-    # google_storage_control_project_intelligence_finding_revision
-    # "storage.intelligenceFindingRevisions.get",
-
-    # google_storage_control_project_intelligence_finding_revisions
-    # "storage.intelligenceFindingRevisions.list",
-
     # google_storage_control_project_intelligence_finding
+    # google_storage_control_project_intelligence_finding_revision
     # "storage.intelligenceFindings.get",
-    #
-    # # google_storage_control_project_intelligence_findings
+
+    # google_storage_control_project_intelligence_findings
+    # google_storage_control_project_intelligence_finding_revisions
     # "storage.intelligenceFindings.list",
 
     # google_storage_control_folder_intelligence_findings_summary
