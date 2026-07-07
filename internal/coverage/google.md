@@ -3,7 +3,7 @@
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
 | Resources  | 83.77      |  1094       |  1306            |
-| Datasource | 93.63      |   426       |   455             |
+| Datasource | 100.00      |   455       |   455             |
 
 ## Deprecated
 
@@ -267,33 +267,4 @@
 ./resource.ps1 google_vertex_ai_tensorboard_experiment
 ./resource.ps1 google_vertex_ai_tensorboard_run
 ./resource.ps1 google_workload_identity_service_agent
-./resource.ps1 google_agent_registry_agent -type data
-./resource.ps1 google_agent_registry_endpoint -type data
-./resource.ps1 google_agent_registry_mcp_server -type data
-./resource.ps1 google_apigee_instance -type data
-./resource.ps1 google_bigquery_routine_iam_policy -type data
-./resource.ps1 google_compute_firewall_policy_iam_policy -type data
-./resource.ps1 google_compute_instance_groups -type data
-./resource.ps1 google_compute_network_firewall_policy_iam_policy -type data
-./resource.ps1 google_compute_region_network_firewall_policy_iam_policy -type data
-./resource.ps1 google_compute_region_target_http_proxy -type data
-./resource.ps1 google_compute_region_target_https_proxy -type data
-./resource.ps1 google_compute_service_attachment -type data
-./resource.ps1 google_compute_target_http_proxy -type data
-./resource.ps1 google_compute_target_https_proxy -type data
-./resource.ps1 google_dataplex_data_product_iam_policy -type data
-./resource.ps1 google_discovery_engine_search_engine_iam_policy -type data
-./resource.ps1 google_iap_agent_registry_iam_policy -type data
-./resource.ps1 google_iap_location_web_iam_policy -type data
-./resource.ps1 google_oracle_database_goldengate_connection_types -type data
-./resource.ps1 google_oracle_database_goldengate_deployment_environments -type data
-./resource.ps1 google_oracle_database_goldengate_deployment_types -type data
-./resource.ps1 google_oracle_database_goldengate_deployment_versions -type data
-./resource.ps1 google_storage_control_folder_intelligence_findings_summary -type data
-./resource.ps1 google_storage_control_organization_intelligence_findings_summary -type data
-./resource.ps1 google_storage_control_project_intelligence_finding -type data
-./resource.ps1 google_storage_control_project_intelligence_finding_revision -type data
-./resource.ps1 google_storage_control_project_intelligence_finding_revisions -type data
-./resource.ps1 google_storage_control_project_intelligence_findings -type data
-./resource.ps1 google_storage_control_project_intelligence_findings_summary -type data
 ```

@@ -1,0 +1,14 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "agentregistry.endpoints.get",
+      "agentregistry.endpoints.list"
+    ]
+  }
+]
