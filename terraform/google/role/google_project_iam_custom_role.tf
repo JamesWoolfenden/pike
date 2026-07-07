@@ -21,7 +21,7 @@ resource "google_project_iam_custom_role" "terraform_pike" {
     "apigee.instances.get",
 
     # google_bigquery_routine_iam_policy
-    # non required
+    "bigquery.routines.getIamPolicy",
 
     # google_compute_firewall_policy_iam_policy
     # google_compute_network_firewall_policy_iam_policy
@@ -72,15 +72,12 @@ resource "google_project_iam_custom_role" "terraform_pike" {
 
     # google_storage_control_project_intelligence_finding
     # google_storage_control_project_intelligence_finding_revision
-    # "storage.intelligenceFindings.get",
+    "storage.buckets.viewIntelligenceDetails",
 
-    # google_storage_control_project_intelligence_findings
-    # google_storage_control_project_intelligence_finding_revisions
-    # "storage.intelligenceFindings.list",
 
     # google_storage_control_folder_intelligence_findings_summary
     # google_storage_control_organization_intelligence_findings_summary
     # google_storage_control_project_intelligence_findings_summary
-    # "storage.intelligenceFindings.summarize",
+    "storage.buckets.viewIntelligenceDetails",
   ]
 }

@@ -1,1 +1,13 @@
-[]
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "bigquery.routines.getIamPolicy"
+    ]
+  }
+]

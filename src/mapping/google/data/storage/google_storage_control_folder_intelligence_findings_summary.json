@@ -7,7 +7,7 @@
     "destroy": [],
     "modify": [],
     "plan": [
-      "storage.intelligenceFindings.summarize"
+      "storage.buckets.viewIntelligenceDetails"
     ]
   }
 ]
