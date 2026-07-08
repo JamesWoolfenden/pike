@@ -163,6 +163,10 @@ func Init(dirName string) (*string, []string, error) {
 	modulesDir := filepath.Join(dirName, ".terraform", "modules")
 	modules, err := os.ReadDir(modulesDir)
 	if err != nil {
+		if os.IsNotExist(err) {
+			// No modules directory means no external modules - this is fine
+			return &tfPath, nil, nil
+		}
 		return &tfPath, nil, &readDirectoryError{directory: modulesDir, err: err}
 	}
 

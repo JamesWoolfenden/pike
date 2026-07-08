@@ -94,6 +94,15 @@ func TestReplaceSection(t *testing.T) {
 			},
 			true,
 		},
+		{
+			"autoadd with no delimiters",
+			args{
+				"testdata/test-readme-no-delimiters.md",
+				"Test content",
+				true,
+			},
+			false,
+		},
 	}
 
 	for _, tt := range tests {
@@ -371,7 +380,7 @@ func TestCustomErrors(t *testing.T) {
 
 	t.Run("delimiterHooksMissingError", func(t *testing.T) {
 		err := &delimiterHooksMissingError{}
-		expected := "pike hooks delimiter missing in Readme,  consider using the flag -auto-append"
+		expected := "pike hooks delimiter missing in Readme, use: pike readme --auto-append (flags must come before positional arguments)"
 		if err.Error() != expected {
 			t.Errorf("Expected: %s, got: %s", expected, err.Error())
 		}
