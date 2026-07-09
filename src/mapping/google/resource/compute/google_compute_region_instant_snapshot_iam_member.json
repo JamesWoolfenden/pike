@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "compute.instantSnapshots.setIamPolicy",
+      "compute.instantSnapshots.getIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [
+      "compute.instantSnapshots.setIamPolicy"
+    ],
+    "plan": [
+      "compute.instantSnapshots.getIamPolicy"
+    ]
+  }
+]

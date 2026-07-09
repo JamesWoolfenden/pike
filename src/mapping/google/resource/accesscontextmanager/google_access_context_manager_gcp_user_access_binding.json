@@ -4,8 +4,7 @@
       "accesscontextmanager.gcpUserAccessBindings.create",
       "accesscontextmanager.gcpUserAccessBindings.get",
       "accesscontextmanager.gcpUserAccessBindings.delete",
-      "accesscontextmanager.gcpUserAccessBindings.update",
-      "bigquery.reservationAssignments.list"
+      "accesscontextmanager.gcpUserAccessBindings.update"
     ],
     "attributes": {
       "tags": []
@@ -17,8 +16,7 @@
       "accesscontextmanager.gcpUserAccessBindings.update"
     ],
     "plan": [
-      "accesscontextmanager.gcpUserAccessBindings.get",
-      "bigquery.reservationAssignments.list"
+      "accesscontextmanager.gcpUserAccessBindings.get"
     ]
   }
 ]

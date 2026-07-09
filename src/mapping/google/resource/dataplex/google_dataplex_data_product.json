@@ -4,7 +4,8 @@
       "dataplex.dataProducts.create",
       "dataplex.dataProducts.delete",
       "dataplex.dataProducts.get",
-      "dataplex.dataProducts.update"
+      "dataplex.dataProducts.update",
+      "dataplex.operations.get"
     ],
     "attributes": {
       "tags": []
@@ -16,7 +17,8 @@
       "dataplex.dataProducts.update"
     ],
     "plan": [
-      "dataplex.dataProducts.get"
+      "dataplex.dataProducts.get",
+      "dataplex.operations.get"
     ]
   }
 ]

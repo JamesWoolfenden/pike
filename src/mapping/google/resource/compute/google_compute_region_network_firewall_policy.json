@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "compute.regionFirewallPolicies.create",
+      "compute.regionFirewallPolicies.delete",
+      "compute.regionFirewallPolicies.update",
+      "compute.regionFirewallPolicies.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.regionFirewallPolicies.delete"
+    ],
+    "modify": [
+      "compute.regionFirewallPolicies.update"
+    ],
+    "plan": [
+      "compute.regionFirewallPolicies.get"
+    ]
+  }
+]
