@@ -765,8 +765,8 @@ func TestInitWithEmptyDir(t *testing.T) {
 	defer os.RemoveAll(tempDir)
 
 	tfPath, modules, err := Init(tempDir)
-	if err == nil {
-		t.Error("Expected error for empty directory, got nil")
+	if err != nil {
+		t.Errorf("Expected no error for empty directory (no modules dir is valid), got %v", err)
 	}
 
 	if tfPath == nil {
