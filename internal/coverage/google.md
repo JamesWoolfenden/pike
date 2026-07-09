@@ -2,7 +2,7 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 83.77      |  1094       |  1306            |
+| Resources  | 86.52      |  1130       |  1306            |
 | Datasource | 100.00      |   455       |   455             |
 
 ## Deprecated
@@ -72,14 +72,7 @@
 ./resource.ps1 google_apigee_space
 ./resource.ps1 google_artifact_registry_project_config
 ./resource.ps1 google_artifact_registry_rule
-./resource.ps1 google_biglake_iceberg_table
-./resource.ps1 google_biglake_iceberg_table_iam_binding
-./resource.ps1 google_biglake_iceberg_table_iam_member
-./resource.ps1 google_biglake_iceberg_table_iam_policy
 ./resource.ps1 google_bigquery_reservation_group
-./resource.ps1 google_bigquery_routine_iam_binding
-./resource.ps1 google_bigquery_routine_iam_member
-./resource.ps1 google_bigquery_routine_iam_policy
 ./resource.ps1 google_ces_app_root_agent_association
 ./resource.ps1 google_chronicle_custom_list
 ./resource.ps1 google_chronicle_dashboard_chart
@@ -91,27 +84,13 @@
 ./resource.ps1 google_chronicle_parser
 ./resource.ps1 google_chronicle_parser_extension
 ./resource.ps1 google_compute_bulk_per_instance_config
-./resource.ps1 google_compute_firewall_policy_iam_binding
-./resource.ps1 google_compute_firewall_policy_iam_member
-./resource.ps1 google_compute_firewall_policy_iam_policy
 ./resource.ps1 google_compute_firewall_policy_with_rules
-./resource.ps1 google_compute_network_firewall_policy_iam_binding
-./resource.ps1 google_compute_network_firewall_policy_iam_member
-./resource.ps1 google_compute_network_firewall_policy_iam_policy
 ./resource.ps1 google_compute_network_firewall_policy_with_rules
 ./resource.ps1 google_compute_preview_feature
 ./resource.ps1 google_compute_region_composite_health_check
 ./resource.ps1 google_compute_region_health_aggregation_policy
 ./resource.ps1 google_compute_region_health_source
-./resource.ps1 google_compute_region_instant_snapshot
-./resource.ps1 google_compute_region_instant_snapshot_iam_binding
-./resource.ps1 google_compute_region_instant_snapshot_iam_member
-./resource.ps1 google_compute_region_instant_snapshot_iam_policy
-./resource.ps1 google_compute_region_network_firewall_policy
 ./resource.ps1 google_compute_region_network_firewall_policy_association
-./resource.ps1 google_compute_region_network_firewall_policy_iam_binding
-./resource.ps1 google_compute_region_network_firewall_policy_iam_member
-./resource.ps1 google_compute_region_network_firewall_policy_iam_policy
 ./resource.ps1 google_compute_region_network_firewall_policy_rule
 ./resource.ps1 google_compute_region_network_firewall_policy_with_rules
 ./resource.ps1 google_compute_region_resize_request
@@ -134,9 +113,6 @@
 ./resource.ps1 google_container_azure_node_pool
 ./resource.ps1 google_data_lineage_config
 ./resource.ps1 google_dataplex_data_product_data_asset
-./resource.ps1 google_dataplex_data_product_iam_binding
-./resource.ps1 google_dataplex_data_product_iam_member
-./resource.ps1 google_dataplex_data_product_iam_policy
 ./resource.ps1 google_dataplex_metadata_feed
 ./resource.ps1 google_dataproc_gdc_application_environment
 ./resource.ps1 google_dataproc_gdc_service_instance
@@ -147,9 +123,6 @@
 ./resource.ps1 google_dialogflow_cx_tool_version
 ./resource.ps1 google_dialogflow_environment
 ./resource.ps1 google_dialogflow_sip_trunk
-./resource.ps1 google_discovery_engine_search_engine_iam_binding
-./resource.ps1 google_discovery_engine_search_engine_iam_member
-./resource.ps1 google_discovery_engine_search_engine_iam_policy
 ./resource.ps1 google_discovery_engine_serving_config
 ./resource.ps1 google_document_ai_schema
 ./resource.ps1 google_firebase_app_check_app_attest_config
@@ -169,12 +142,6 @@
 ./resource.ps1 google_firebase_remote_config_remote_config
 ./resource.ps1 google_gke_hub_rollout_sequence
 ./resource.ps1 google_gke_hub_scope_rbac_role_binding
-./resource.ps1 google_iap_agent_registry_iam_binding
-./resource.ps1 google_iap_agent_registry_iam_member
-./resource.ps1 google_iap_agent_registry_iam_policy
-./resource.ps1 google_iap_location_web_iam_binding
-./resource.ps1 google_iap_location_web_iam_member
-./resource.ps1 google_iap_location_web_iam_policy
 ./resource.ps1 google_identity_platform_config
 ./resource.ps1 google_identity_platform_default_supported_idp_config
 ./resource.ps1 google_identity_platform_inbound_saml_config
@@ -200,9 +167,6 @@
 ./resource.ps1 google_migration_center_source
 ./resource.ps1 google_network_connectivity_destination
 ./resource.ps1 google_network_connectivity_group
-./resource.ps1 google_network_connectivity_hub_iam_binding
-./resource.ps1 google_network_connectivity_hub_iam_member
-./resource.ps1 google_network_connectivity_hub_iam_policy
 ./resource.ps1 google_network_connectivity_internal_range
 ./resource.ps1 google_network_connectivity_multicloud_data_transfer_config
 ./resource.ps1 google_network_connectivity_policy_based_route

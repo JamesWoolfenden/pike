@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "biglake.tables.setIamPolicy",
+      "biglake.tables.getIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [
+      "biglake.tables.setIamPolicy"
+    ],
+    "plan": [
+      "biglake.tables.getIamPolicy"
+    ]
+  }
+]

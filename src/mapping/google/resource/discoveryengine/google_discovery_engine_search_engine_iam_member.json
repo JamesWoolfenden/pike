@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "discoveryengine.engines.setIamPolicy",
+      "discoveryengine.engines.getIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [
+      "discoveryengine.engines.setIamPolicy"
+    ],
+    "plan": [
+      "discoveryengine.engines.getIamPolicy"
+    ]
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "iap.web.setIamPolicy",
+      "iap.web.getIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [
+      "iap.web.setIamPolicy"
+    ],
+    "plan": [
+      "iap.web.getIamPolicy"
+    ]
+  }
+]

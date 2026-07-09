@@ -1,0 +1,18 @@
+[
+  {
+    "apply": [
+      "networkconnectivity.hubs.setIamPolicy",
+      "networkconnectivity.hubs.getIamPolicy"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [
+      "networkconnectivity.hubs.setIamPolicy"
+    ],
+    "plan": [
+      "networkconnectivity.hubs.getIamPolicy"
+    ]
+  }
+]

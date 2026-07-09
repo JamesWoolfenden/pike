@@ -5,79 +5,91 @@ resource "google_project_iam_custom_role" "terraform_pike" {
   title       = "terraform_pike"
   description = "A user with least privileges"
   permissions = [
-    # google_agent_registry_agent
-    "agentregistry.agents.get",
-    "agentregistry.agents.list",
+    "storage.buckets.create",
+    "storage.buckets.delete",
+    "storage.buckets.update",
+    "storage.buckets.get",
 
-    # google_agent_registry_endpoint
-    "agentregistry.endpoints.get",
-    "agentregistry.endpoints.list",
 
-    # google_agent_registry_mcp_server
-    "agentregistry.mcpServers.get",
-    "agentregistry.mcpServers.list",
+    "biglake.catalogs.create",
+    "biglake.catalogs.delete",
+    "biglake.catalogs.get",
+    "biglake.namespaces.create",
+    "biglake.namespaces.delete",
+    "biglake.namespaces.get",
+    "biglake.namespaces.update",
+    "bigquery.datasets.create",
+    "bigquery.datasets.delete",
+    "bigquery.datasets.get",
+    "bigquery.datasets.update",
+    "bigquery.routines.create",
+    "bigquery.routines.delete",
+    "bigquery.routines.get",
+    "bigquery.routines.update",
+    "compute.firewallPolicies.create",
+    "compute.firewallPolicies.delete",
+    "compute.firewallPolicies.get",
+    "compute.firewallPolicies.update",
 
-    # google_apigee_instance
-    "apigee.instances.get",
+    "compute.disks.create",
+    "compute.disks.createSnapshot",
+    "compute.disks.delete",
+    "compute.disks.get",
+    "compute.disks.setLabels",
+    "compute.disks.update",
+    "compute.disks.use",
+    "compute.disks.useReadOnly",
 
-    # google_bigquery_routine_iam_policy
-    "bigquery.routines.getIamPolicy",
+    //permissions not valid will need to change these in pike if the permissions above work
+    # "compute.regionDisks.create",
+    # "compute.regionDisks.createSnapshot",
+    # "compute.regionDisks.delete",
+    # "compute.regionDisks.get",
+    # "compute.regionDisks.setLabels",
+    # "compute.regionDisks.update",
+    # "compute.regionDisks.use",
+    # "compute.regionDisks.useReadOnly",
+    "dataplex.dataProducts.create",
+    "dataplex.dataProducts.delete",
+    "dataplex.dataProducts.get",
+    "dataplex.dataProducts.update",
+    "discoveryengine.dataStores.create",
+    "discoveryengine.dataStores.delete",
+    "discoveryengine.dataStores.get",
+    "discoveryengine.dataStores.update",
+    "discoveryengine.engines.create",
+    "discoveryengine.engines.delete",
+    "discoveryengine.engines.get",
+    "discoveryengine.engines.update",
+    "networkconnectivity.hubs.create",
+    "networkconnectivity.hubs.delete",
+    "networkconnectivity.hubs.get",
+    "networkconnectivity.hubs.update",
+    "networkconnectivity.operations.get",
+    "storage.buckets.get",
 
-    # google_compute_firewall_policy_iam_policy
-    # google_compute_network_firewall_policy_iam_policy
-    "compute.firewallPolicies.getIamPolicy",
-
-    # google_compute_instance_groups
-    "compute.instanceGroups.list",
 
     # google_compute_region_network_firewall_policy_iam_policy
     "compute.regionFirewallPolicies.getIamPolicy",
+    "compute.regionFirewallPolicies.setIamPolicy",
 
-    # google_compute_region_target_http_proxy
-    "compute.regionTargetHttpProxies.get",
 
-    # google_compute_region_target_https_proxy
-    "compute.regionTargetHttpsProxies.get",
 
-    # google_compute_service_attachment
-    "compute.serviceAttachments.get",
-
-    # google_compute_target_http_proxy
-    "compute.targetHttpProxies.get",
-
-    # google_compute_target_https_proxy
-    "compute.targetHttpsProxies.get",
-
-    # google_dataplex_data_product_iam_policy
-    "dataplex.dataProducts.getIamPolicy",
-
-    # google_discovery_engine_search_engine_iam_policy
-    "discoveryengine.engines.getIamPolicy",
-
+    # google_iap_agent_registry_iam_binding
+    # google_iap_agent_registry_iam_member
     # google_iap_agent_registry_iam_policy
+    # google_iap_location_web_iam_binding
+    # google_iap_location_web_iam_member
     # google_iap_location_web_iam_policy
+    "iap.web.setIamPolicy",
     "iap.web.getIamPolicy",
 
-    # google_oracle_database_goldengate_connection_types
-    "oracledatabase.goldenGateConnectionTypes.list",
-
-    # google_oracle_database_goldengate_deployment_environments
-    "oracledatabase.goldenGateDeploymentEnvironments.list",
-
-    # google_oracle_database_goldengate_deployment_types
-    "oracledatabase.goldenGateDeploymentTypes.list",
-
-    # google_oracle_database_goldengate_deployment_versions
-    "oracledatabase.goldenGateDeploymentVersions.list",
-
-    # google_storage_control_project_intelligence_finding
-    # google_storage_control_project_intelligence_finding_revision
-    "storage.buckets.viewIntelligenceDetails",
 
 
-    # google_storage_control_folder_intelligence_findings_summary
-    # google_storage_control_organization_intelligence_findings_summary
-    # google_storage_control_project_intelligence_findings_summary
-    "storage.buckets.viewIntelligenceDetails",
+    //google_discovery_engine_data_store
+    "discoveryengine.dataStores.create",
+    "discoveryengine.dataStores.get",
+    "discoveryengine.dataStores.update",
+    "discoveryengine.dataStores.delete",
   ]
 }
