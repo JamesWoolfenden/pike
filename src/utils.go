@@ -57,7 +57,7 @@ func (e *delimiterMismatchError) Error() string {
 type delimiterHooksMissingError struct{}
 
 func (e *delimiterHooksMissingError) Error() string {
-	return "pike hooks delimiter missing in Readme,  consider using the flag -auto-append"
+	return "pike hooks delimiter missing in Readme, use: pike readme --auto-append (flags must come before positional arguments)"
 }
 
 type writeFileError struct {
