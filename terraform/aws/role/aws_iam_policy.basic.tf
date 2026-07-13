@@ -7,14 +7,7 @@ resource "aws_iam_policy" "basic" {
         "Sid" : "VisualEditor0",
         "Effect" : "Allow",
         "Action" : [
-          //aws_s3files_access_point
-
-          //aws_securityhub_enabled_standards
-          "securityhub:GetEnabledStandards",
-          //aws_securityhub_security_controls
-          "securityhub:ListSecurityControlDefinitions",
-          //aws_uxc_services
-          "uxc:ListServices"
+          "ec2:DescribeAvailabilityZones" //required externallydoes that mean
         ],
         "Resource" : [
           "*"
