@@ -3,11 +3,11 @@
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
 | Resources  | 89.60      |  1507       |  1682            |
-| Datasource | 99.10      |   663       |   669             |
+| Datasource | 98.96      |   663       |   670             |
 
 ## Deprecated
 
-14 resources and 3 datasources are flagged as deprecated in provider schema v6.54.0. Users pinned to an older provider major may already be affected when they upgrade.
+14 resources and 3 datasources are flagged as deprecated in provider schema v6.55.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -216,6 +216,7 @@
 ./resource.ps1 aws_bedrock_use_case_for_model_access -type data
 ./resource.ps1 aws_ec2_capacity_block_reservation -type data
 ./resource.ps1 aws_ec2_hosts -type data
+./resource.ps1 aws_elasticache_service_updates -type data
 ./resource.ps1 aws_route53profiles_profile -type data
 ./resource.ps1 aws_s3_bucket_notification -type data
 ```
