@@ -1,0 +1,29 @@
+[
+  {
+    "apply": [
+      "elasticloadbalancing:CreateRule",
+      "elasticloadbalancing:SetRulePriorities",
+      "elasticloadbalancing:DescribeRules"
+    ],
+    "attributes": {
+      "authenticate_cognito": [
+        "cognito-idp:DescribeUserPoolClient"
+      ],
+      "tags": [
+        "elasticloadbalancing:AddTags",
+        "elasticloadbalancing:RemoveTags",
+        "elasticloadbalancing:DescribeTags"
+      ]
+    },
+    "destroy": [
+      "elasticloadbalancing:DeleteRule"
+    ],
+    "modify": [
+      "elasticloadbalancing:ModifyRule",
+      "elasticloadbalancing:SetRulePriorities"
+    ],
+    "plan": [
+      "elasticloadbalancing:DescribeRules"
+    ]
+  }
+]

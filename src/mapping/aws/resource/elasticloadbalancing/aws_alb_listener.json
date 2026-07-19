@@ -1,0 +1,34 @@
+[
+  {
+    "apply": [
+      "elasticloadbalancing:CreateListener",
+      "elasticloadbalancing:DescribeListeners",
+      "elasticloadbalancing:DescribeListenerAttributes",
+      "elasticloadbalancing:ModifyListenerAttributes",
+      "elasticloadbalancing:DeleteListener",
+      "elasticloadbalancing:ModifyListener"
+    ],
+    "attributes": {
+      "authenticate_cognito": [
+        "cognito-idp:DescribeUserPoolClient"
+      ],
+      "certificate_arn": [
+        "elasticloadbalancing:RemoveListenerCertificates",
+        "elasticloadbalancing:AddListenerCertificates",
+        "elasticloadbalancing:DescribeListenerCertificates"
+      ],
+      "tags": [
+        "elasticloadbalancing:AddTags",
+        "elasticloadbalancing:RemoveTags"
+      ]
+    },
+    "destroy": [
+      "elasticloadbalancing:DeleteListener"
+    ],
+    "modify": [
+      "elasticloadbalancing:ModifyListener",
+      "elasticloadbalancing:ModifyListenerAttributes"
+    ],
+    "plan": []
+  }
+]
