@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 86.52      |  1130       |  1306            |
-| Datasource | 100.00      |   455       |   455             |
+| Resources  | 85.67      |  1130       |  1319            |
+| Datasource | 98.70      |   455       |   461             |
 
 ## Deprecated
 
-28 resources and 7 datasources are flagged as deprecated in provider schema v7.39.0. Users pinned to an older provider major may already be affected when they upgrade.
+28 resources and 7 datasources are flagged as deprecated in provider schema v7.40.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -76,10 +76,13 @@
 ./resource.ps1 google_ces_app_root_agent_association
 ./resource.ps1 google_chronicle_custom_list
 ./resource.ps1 google_chronicle_dashboard_chart
+./resource.ps1 google_chronicle_data_export
 ./resource.ps1 google_chronicle_data_table
 ./resource.ps1 google_chronicle_data_table_row
+./resource.ps1 google_chronicle_environment
 ./resource.ps1 google_chronicle_feed
 ./resource.ps1 google_chronicle_findings_refinement
+./resource.ps1 google_chronicle_findings_refinement_deployment
 ./resource.ps1 google_chronicle_native_dashboard
 ./resource.ps1 google_chronicle_parser
 ./resource.ps1 google_chronicle_parser_extension
@@ -142,6 +145,15 @@
 ./resource.ps1 google_firebase_remote_config_remote_config
 ./resource.ps1 google_gke_hub_rollout_sequence
 ./resource.ps1 google_gke_hub_scope_rbac_role_binding
+./resource.ps1 google_iap_agent_registry_agent_iam_binding
+./resource.ps1 google_iap_agent_registry_agent_iam_member
+./resource.ps1 google_iap_agent_registry_agent_iam_policy
+./resource.ps1 google_iap_agent_registry_endpoint_iam_binding
+./resource.ps1 google_iap_agent_registry_endpoint_iam_member
+./resource.ps1 google_iap_agent_registry_endpoint_iam_policy
+./resource.ps1 google_iap_agent_registry_mcp_server_iam_binding
+./resource.ps1 google_iap_agent_registry_mcp_server_iam_member
+./resource.ps1 google_iap_agent_registry_mcp_server_iam_policy
 ./resource.ps1 google_identity_platform_config
 ./resource.ps1 google_identity_platform_default_supported_idp_config
 ./resource.ps1 google_identity_platform_inbound_saml_config
@@ -227,8 +239,15 @@
 ./resource.ps1 google_service_networking_peered_dns_domain
 ./resource.ps1 google_service_networking_vpc_service_controls
 ./resource.ps1 google_sql_provision_script
+./resource.ps1 google_vector_search_index
 ./resource.ps1 google_vertex_ai_schedule
 ./resource.ps1 google_vertex_ai_tensorboard_experiment
 ./resource.ps1 google_vertex_ai_tensorboard_run
 ./resource.ps1 google_workload_identity_service_agent
+./resource.ps1 google_data_catalog_taxonomy -type data
+./resource.ps1 google_iap_agent_registry_agent_iam_policy -type data
+./resource.ps1 google_iap_agent_registry_endpoint_iam_policy -type data
+./resource.ps1 google_iap_agent_registry_mcp_server_iam_policy -type data
+./resource.ps1 google_oracle_database_exascale_db_storage_vault -type data
+./resource.ps1 google_oracle_database_exascale_db_storage_vaults -type data
 ```

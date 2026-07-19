@@ -174,6 +174,7 @@
         "azurerm_capacity_reservation_group",
         "azurerm_cdn_endpoint",
         "azurerm_cdn_endpoint_custom_domain",
+        "azurerm_cdn_frontdoor_batch_rule_set",
         "azurerm_cdn_frontdoor_custom_domain",
         "azurerm_cdn_frontdoor_custom_domain_association",
         "azurerm_cdn_frontdoor_endpoint",
@@ -191,6 +192,11 @@
         "azurerm_chaos_studio_experiment",
         "azurerm_chaos_studio_target",
         "azurerm_cognitive_account",
+        "azurerm_cognitive_account_connection_account_key",
+        "azurerm_cognitive_account_connection_account_managed_identity",
+        "azurerm_cognitive_account_connection_api_key",
+        "azurerm_cognitive_account_connection_custom_keys",
+        "azurerm_cognitive_account_connection_entra_id",
         "azurerm_cognitive_account_customer_managed_key",
         "azurerm_cognitive_account_project",
         "azurerm_cognitive_account_rai_blocklist",
@@ -495,6 +501,7 @@
         "azurerm_key_vault_managed_storage_account",
         "azurerm_key_vault_managed_storage_account_sas_token_definition",
         "azurerm_key_vault_secret",
+        "azurerm_kubernetes_automatic_cluster",
         "azurerm_kubernetes_cluster",
         "azurerm_kubernetes_cluster_deployment_safeguard",
         "azurerm_kubernetes_cluster_extension",
@@ -550,6 +557,7 @@
         "azurerm_log_analytics_workspace",
         "azurerm_log_analytics_workspace_table",
         "azurerm_log_analytics_workspace_table_custom_log",
+        "azurerm_log_analytics_workspace_table_microsoft",
         "azurerm_logic_app_action_custom",
         "azurerm_logic_app_action_http",
         "azurerm_logic_app_integration_account",
@@ -969,6 +977,7 @@
         "azurerm_storage_account_network_rules",
         "azurerm_storage_account_queue_properties",
         "azurerm_storage_account_static_website",
+        "azurerm_storage_account_table_properties",
         "azurerm_storage_blob",
         "azurerm_storage_blob_inventory_policy",
         "azurerm_storage_container",
@@ -1183,6 +1192,7 @@
         "azurerm_billing_mpa_account_scope",
         "azurerm_blueprint_definition",
         "azurerm_blueprint_published_version",
+        "azurerm_cdn_frontdoor_batch_rule_set",
         "azurerm_cdn_frontdoor_custom_domain",
         "azurerm_cdn_frontdoor_endpoint",
         "azurerm_cdn_frontdoor_firewall_policy",
@@ -1582,5 +1592,5 @@
         "azurerm_postgresql_server": "",
         "azurerm_redis_enterprise_database": ""
     },
-    "providerVersion": "4.80.0"
+    "providerVersion": "4.81.0"
 }

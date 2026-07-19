@@ -9,7 +9,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/google/go-github/v47/github"
+	"github.com/google/go-github/v74/github"
 	"github.com/rs/zerolog/log"
 	"golang.org/x/crypto/nacl/box"
 	"golang.org/x/oauth2"
