@@ -54,6 +54,16 @@ If you change the CLI surface or exported package API, regenerate the golden fil
 make goldens
 ```
 
+### Adding Resource Mappings
+
+New resource-type permission mappings live under `src/mapping/<provider>/resource/<service>/<type>.json`
+(or `data/` for data sources). Filename must exactly match the Terraform resource type — pike resolves
+mappings by filename, not by any registered list.
+
+Every new mapping must also include a minimal example `.tf` fixture under
+`terraform/<provider>/backup/<type>.tf` so `TestScan` exercises the new resource type. PRs adding a
+mapping without a fixture will be asked to add one before merge.
+
 ### Pre-commit Hooks
 
 The repository uses [pre-commit](https://pre-commit.com). Install and run the hooks before submitting:
