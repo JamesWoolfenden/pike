@@ -8,7 +8,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/google/go-github/v47/github"
+	"github.com/google/go-github/v74/github"
 	pike "github.com/jameswoolfenden/pike/src"
 	"golang.org/x/oauth2"
 )
