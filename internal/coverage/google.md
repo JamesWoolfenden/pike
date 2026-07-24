@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 85.67      |  1130       |  1319            |
+| Resources  | 85.48      |  1130       |  1322            |
 | Datasource | 98.70      |   455       |   461             |
 
 ## Deprecated
 
-28 resources and 7 datasources are flagged as deprecated in provider schema v7.40.0. Users pinned to an older provider major may already be affected when they upgrade.
+28 resources and 7 datasources are flagged as deprecated in provider schema v7.41.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -80,6 +80,7 @@
 ./resource.ps1 google_chronicle_data_table
 ./resource.ps1 google_chronicle_data_table_row
 ./resource.ps1 google_chronicle_environment
+./resource.ps1 google_chronicle_environment_group
 ./resource.ps1 google_chronicle_feed
 ./resource.ps1 google_chronicle_findings_refinement
 ./resource.ps1 google_chronicle_findings_refinement_deployment
@@ -99,6 +100,7 @@
 ./resource.ps1 google_compute_region_resize_request
 ./resource.ps1 google_compute_region_ssl_policy
 ./resource.ps1 google_compute_resize_request
+./resource.ps1 google_compute_router_named_set
 ./resource.ps1 google_compute_zone_vm_extension_policy
 ./resource.ps1 google_config_deployment
 ./resource.ps1 google_contact_center_insights_assessment_rule
@@ -241,6 +243,7 @@
 ./resource.ps1 google_sql_provision_script
 ./resource.ps1 google_vector_search_index
 ./resource.ps1 google_vertex_ai_schedule
+./resource.ps1 google_vertex_ai_semantic_governance_policy_engine
 ./resource.ps1 google_vertex_ai_tensorboard_experiment
 ./resource.ps1 google_vertex_ai_tensorboard_run
 ./resource.ps1 google_workload_identity_service_agent

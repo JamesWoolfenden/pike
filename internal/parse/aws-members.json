@@ -1941,6 +1941,7 @@
         "aws_elasticache_replication_group",
         "aws_elasticache_reserved_cache_node_offering",
         "aws_elasticache_serverless_cache",
+        "aws_elasticache_service_update_actions",
         "aws_elasticache_service_updates",
         "aws_elasticache_subnet_group",
         "aws_elasticache_user",
@@ -2221,6 +2222,7 @@
         "aws_s3_bucket_objects",
         "aws_s3_bucket_policy",
         "aws_s3_bucket_replication_configuration",
+        "aws_s3_buckets",
         "aws_s3_directory_buckets",
         "aws_s3_object",
         "aws_s3_objects",
@@ -2376,5 +2378,5 @@
         "aws_s3_bucket_object": "",
         "aws_s3_bucket_objects": ""
     },
-    "providerVersion": "6.55.0"
+    "providerVersion": "6.56.0"
 }

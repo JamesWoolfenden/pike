@@ -218,6 +218,7 @@
         "google_chronicle_data_table",
         "google_chronicle_data_table_row",
         "google_chronicle_environment",
+        "google_chronicle_environment_group",
         "google_chronicle_feed",
         "google_chronicle_findings_refinement",
         "google_chronicle_findings_refinement_deployment",
@@ -434,6 +435,7 @@
         "google_compute_route",
         "google_compute_router",
         "google_compute_router_interface",
+        "google_compute_router_named_set",
         "google_compute_router_nat",
         "google_compute_router_nat_address",
         "google_compute_router_peer",
@@ -1291,6 +1293,7 @@
         "google_vertex_ai_reasoning_engine_iam_member",
         "google_vertex_ai_reasoning_engine_iam_policy",
         "google_vertex_ai_schedule",
+        "google_vertex_ai_semantic_governance_policy_engine",
         "google_vertex_ai_tensorboard",
         "google_vertex_ai_tensorboard_experiment",
         "google_vertex_ai_tensorboard_run",
@@ -1822,5 +1825,5 @@
         "google_notebooks_instance_iam_policy": "",
         "google_notebooks_runtime_iam_policy": ""
     },
-    "providerVersion": "7.40.0"
+    "providerVersion": "7.41.0"
 }
