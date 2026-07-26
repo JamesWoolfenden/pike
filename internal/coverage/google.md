@@ -2,7 +2,7 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 85.48      |  1130       |  1322            |
+| Resources  | 85.63      |  1132       |  1322            |
 | Datasource | 98.70      |   455       |   461             |
 
 ## Deprecated
@@ -183,7 +183,6 @@
 ./resource.ps1 google_network_connectivity_group
 ./resource.ps1 google_network_connectivity_internal_range
 ./resource.ps1 google_network_connectivity_multicloud_data_transfer_config
-./resource.ps1 google_network_connectivity_policy_based_route
 ./resource.ps1 google_network_connectivity_regional_endpoint
 ./resource.ps1 google_network_connectivity_service_connection_policy
 ./resource.ps1 google_network_connectivity_spoke
@@ -238,7 +237,6 @@
 ./resource.ps1 google_oracle_database_goldengate_connection_assignment
 ./resource.ps1 google_oracle_database_goldengate_deployment
 ./resource.ps1 google_scc_v2_organization_source
-./resource.ps1 google_service_networking_peered_dns_domain
 ./resource.ps1 google_service_networking_vpc_service_controls
 ./resource.ps1 google_sql_provision_script
 ./resource.ps1 google_vector_search_index

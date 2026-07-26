@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "resourcemanager.projects.get",
+      "servicenetworking.services.createPeeredDnsDomain",
+      "servicenetworking.services.listPeeredDnsDomains"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "resourcemanager.projects.get",
+      "servicenetworking.services.deletePeeredDnsDomain",
+      "servicenetworking.services.listPeeredDnsDomains"
+    ],
+    "modify": [],
+    "plan": [
+      "resourcemanager.projects.get",
+      "servicenetworking.services.listPeeredDnsDomains"
+    ]
+  }
+]

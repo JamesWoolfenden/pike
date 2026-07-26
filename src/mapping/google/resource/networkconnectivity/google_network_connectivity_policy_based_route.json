@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "networkconnectivity.policyBasedRoutes.create",
+      "networkconnectivity.policyBasedRoutes.get",
+      "networkconnectivity.operations.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "networkconnectivity.policyBasedRoutes.delete",
+      "networkconnectivity.operations.get"
+    ],
+    "modify": [],
+    "plan": [
+      "networkconnectivity.policyBasedRoutes.get",
+      "networkconnectivity.operations.get"
+    ]
+  }
+]
