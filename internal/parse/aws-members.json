@@ -168,6 +168,7 @@
         "aws_batch_scheduling_policy",
         "aws_bcmdataexports_export",
         "aws_bedrock_custom_model",
+        "aws_bedrock_evaluation_job",
         "aws_bedrock_foundation_model_agreement",
         "aws_bedrock_guardrail",
         "aws_bedrock_guardrail_version",
@@ -295,6 +296,7 @@
         "aws_cloudwatch_log_metric_filter",
         "aws_cloudwatch_log_resource_policy",
         "aws_cloudwatch_log_s3_table_integration_source",
+        "aws_cloudwatch_log_storage_tier_policy",
         "aws_cloudwatch_log_stream",
         "aws_cloudwatch_log_subscription_filter",
         "aws_cloudwatch_log_transformer",
@@ -946,6 +948,7 @@
         "aws_macie2_member",
         "aws_macie2_organization_admin_account",
         "aws_macie2_organization_configuration",
+        "aws_mailmanager_traffic_policy",
         "aws_main_route_table_association",
         "aws_media_convert_queue",
         "aws_media_package_channel",
@@ -1083,6 +1086,8 @@
         "aws_organizations_resource_policy",
         "aws_organizations_tag",
         "aws_osis_pipeline",
+        "aws_osis_pipeline_endpoint",
+        "aws_osis_resource_policy",
         "aws_outposts_capacity_task",
         "aws_paymentcryptography_key",
         "aws_paymentcryptography_key_alias",
@@ -1926,6 +1931,7 @@
         "aws_eip",
         "aws_eips",
         "aws_eks_access_entry",
+        "aws_eks_access_policies",
         "aws_eks_addon",
         "aws_eks_addon_version",
         "aws_eks_cluster",
@@ -2378,5 +2384,5 @@
         "aws_s3_bucket_object": "",
         "aws_s3_bucket_objects": ""
     },
-    "providerVersion": "6.56.0"
+    "providerVersion": "6.57.1"
 }

@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 89.83      |  1511       |  1682            |
-| Datasource | 98.66      |   663       |   672             |
+| Resources  | 89.57      |  1511       |  1687            |
+| Datasource | 98.51      |   663       |   673             |
 
 ## Deprecated
 
-14 resources and 3 datasources are flagged as deprecated in provider schema v6.56.0. Users pinned to an older provider major may already be affected when they upgrade.
+14 resources and 3 datasources are flagged as deprecated in provider schema v6.57.1. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -46,6 +46,7 @@
 ./resource.ps1 aws_arczonalshift_autoshift_observer_notification_status
 ./resource.ps1 aws_arczonalshift_zonal_autoshift_configuration
 ./resource.ps1 aws_backup_restore_testing_selection
+./resource.ps1 aws_bedrock_evaluation_job
 ./resource.ps1 aws_bedrock_foundation_model_agreement
 ./resource.ps1 aws_bedrock_use_case_for_model_access
 ./resource.ps1 aws_bedrockagent_flow
@@ -78,6 +79,7 @@
 ./resource.ps1 aws_cloudfront_trust_store
 ./resource.ps1 aws_cloudwatch_alarm_mute_rule
 ./resource.ps1 aws_cloudwatch_log_s3_table_integration_source
+./resource.ps1 aws_cloudwatch_log_storage_tier_policy
 ./resource.ps1 aws_cloudwatch_log_transformer
 ./resource.ps1 aws_cloudwatch_otel_enrichment
 ./resource.ps1 aws_cognito_log_delivery_configuration
@@ -110,6 +112,7 @@
 ./resource.ps1 aws_lakeformation_lf_tag_expression
 ./resource.ps1 aws_lambda_capacity_provider
 ./resource.ps1 aws_lambda_function_scaling_config
+./resource.ps1 aws_mailmanager_traffic_policy
 ./resource.ps1 aws_msk_topic
 ./resource.ps1 aws_nat_gateway_eip_association
 ./resource.ps1 aws_networkfirewall_firewall_transit_gateway_attachment_accepter
@@ -139,6 +142,8 @@
 ./resource.ps1 aws_opensearchserverless_collection_group
 ./resource.ps1 aws_organizations_aws_service_access
 ./resource.ps1 aws_organizations_tag
+./resource.ps1 aws_osis_pipeline_endpoint
+./resource.ps1 aws_osis_resource_policy
 ./resource.ps1 aws_outposts_capacity_task
 ./resource.ps1 aws_pinpointsmsvoicev2_event_destination
 ./resource.ps1 aws_pinpointsmsvoicev2_pool
@@ -212,6 +217,7 @@
 ./resource.ps1 aws_bedrock_use_case_for_model_access -type data
 ./resource.ps1 aws_ec2_capacity_block_reservation -type data
 ./resource.ps1 aws_ec2_hosts -type data
+./resource.ps1 aws_eks_access_policies -type data
 ./resource.ps1 aws_elasticache_service_update_actions -type data
 ./resource.ps1 aws_elasticache_service_updates -type data
 ./resource.ps1 aws_route53profiles_profile -type data

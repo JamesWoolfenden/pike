@@ -21,6 +21,7 @@
         "google_access_context_manager_service_perimeters",
         "google_active_directory_domain",
         "google_active_directory_domain_trust",
+        "google_agent_identity_auth_provider",
         "google_agent_registry_binding",
         "google_agent_registry_service",
         "google_alloydb_backup",
@@ -74,6 +75,7 @@
         "google_apihub_host_project_registration",
         "google_apihub_plugin",
         "google_apihub_plugin_instance",
+        "google_apihub_runtime_project_attachment",
         "google_apikeys_key",
         "google_app_engine_application",
         "google_app_engine_application_url_dispatch_rules",
@@ -210,6 +212,7 @@
         "google_ces_guardrail",
         "google_ces_tool",
         "google_ces_toolset",
+        "google_chronicle_big_query_export",
         "google_chronicle_custom_list",
         "google_chronicle_dashboard_chart",
         "google_chronicle_data_access_label",
@@ -236,6 +239,7 @@
         "google_cloud_identity_group",
         "google_cloud_identity_group_membership",
         "google_cloud_ids_endpoint",
+        "google_cloud_quotas_quota_adjuster_settings",
         "google_cloud_quotas_quota_preference",
         "google_cloud_run_domain_mapping",
         "google_cloud_run_service",
@@ -332,6 +336,7 @@
         "google_compute_global_forwarding_rule",
         "google_compute_global_network_endpoint",
         "google_compute_global_network_endpoint_group",
+        "google_compute_global_vm_extension_policy",
         "google_compute_ha_vpn_gateway",
         "google_compute_health_check",
         "google_compute_http_health_check",
@@ -432,6 +437,7 @@
         "google_compute_resize_request",
         "google_compute_resource_policy",
         "google_compute_resource_policy_attachment",
+        "google_compute_rollout_plan",
         "google_compute_route",
         "google_compute_router",
         "google_compute_router_interface",
@@ -1271,6 +1277,7 @@
         "google_transcoder_job",
         "google_transcoder_job_template",
         "google_vector_search_collection",
+        "google_vector_search_data_object",
         "google_vector_search_index",
         "google_vertex_ai_cache_config",
         "google_vertex_ai_dataset",
@@ -1287,6 +1294,7 @@
         "google_vertex_ai_index",
         "google_vertex_ai_index_endpoint",
         "google_vertex_ai_index_endpoint_deployed_index",
+        "google_vertex_ai_persistent_resource",
         "google_vertex_ai_rag_engine_config",
         "google_vertex_ai_reasoning_engine",
         "google_vertex_ai_reasoning_engine_iam_binding",
@@ -1814,7 +1822,8 @@
         "google_pubsub_lite_reservation": "",
         "google_pubsub_lite_subscription": "",
         "google_pubsub_lite_topic": "",
-        "google_scc_v2_organization_scc_big_query_exports": ""
+        "google_scc_v2_organization_scc_big_query_exports": "",
+        "google_vertex_ai_schedule": ""
     },
     "deprecatedData": {
         "google_container_registry_image": "",
@@ -1825,5 +1834,5 @@
         "google_notebooks_instance_iam_policy": "",
         "google_notebooks_runtime_iam_policy": ""
     },
-    "providerVersion": "7.41.0"
+    "providerVersion": "7.42.0"
 }

@@ -2,72 +2,57 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 95.79      |  1093       |  1141            |
-| Datasource | 99.00      |   395       |   399             |
+| Resources  | 96.55      |  1065       |  1103            |
+| Datasource | 98.73      |   389       |   394             |
 
 ## Deprecated
 
-39 resources and 6 datasources are flagged as deprecated in provider schema v4.81.0. Users pinned to an older provider major may already be affected when they upgrade.
+30 resources and 2 datasources are flagged as deprecated in provider schema v5.0.1. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
 | Resource | Note |
 |---|---|
-| azurerm_ai_services | — |
-| azurerm_app_service | — |
-| azurerm_app_service_active_slot | — |
-| azurerm_app_service_hybrid_connection | — |
-| azurerm_app_service_plan | — |
-| azurerm_app_service_slot | — |
-| azurerm_app_service_source_control_token | — |
-| azurerm_automation_software_update_configuration | — |
-| azurerm_batch_certificate | — |
-| azurerm_data_protection_backup_instance_postgresql | — |
-| azurerm_data_protection_backup_policy_postgresql | — |
-| azurerm_databricks_workspace_customer_managed_key | — |
-| azurerm_extended_custom_location | — |
-| azurerm_function_app | — |
-| azurerm_function_app_slot | — |
-| azurerm_hpc_cache | — |
-| azurerm_hpc_cache_access_policy | — |
-| azurerm_hpc_cache_blob_nfs_target | — |
-| azurerm_hpc_cache_blob_target | — |
-| azurerm_hpc_cache_nfs_target | — |
-| azurerm_maps_creator | — |
-| azurerm_network_packet_capture | — |
-| azurerm_orbital_contact | — |
-| azurerm_orbital_contact_profile | — |
-| azurerm_orbital_spacecraft | — |
-| azurerm_postgresql_active_directory_administrator | — |
-| azurerm_postgresql_configuration | — |
-| azurerm_postgresql_database | — |
-| azurerm_postgresql_firewall_rule | — |
-| azurerm_postgresql_server | — |
-| azurerm_postgresql_server_key | — |
-| azurerm_postgresql_virtual_network_rule | — |
-| azurerm_redis_enterprise_cluster | — |
-| azurerm_redis_enterprise_database | — |
-| azurerm_restore_point_collection | — |
-| azurerm_security_center_auto_provisioning | — |
-| azurerm_static_site | — |
-| azurerm_static_site_custom_domain | — |
+| azurerm_spring_cloud_accelerator | — |
+| azurerm_spring_cloud_active_deployment | — |
+| azurerm_spring_cloud_api_portal | — |
+| azurerm_spring_cloud_api_portal_custom_domain | — |
+| azurerm_spring_cloud_app | — |
+| azurerm_spring_cloud_app_cosmosdb_association | — |
+| azurerm_spring_cloud_app_dynamics_application_performance_monitoring | — |
+| azurerm_spring_cloud_app_mysql_association | — |
+| azurerm_spring_cloud_app_redis_association | — |
+| azurerm_spring_cloud_application_insights_application_performance_monitoring | — |
+| azurerm_spring_cloud_application_live_view | — |
+| azurerm_spring_cloud_build_deployment | — |
+| azurerm_spring_cloud_build_pack_binding | — |
+| azurerm_spring_cloud_builder | — |
+| azurerm_spring_cloud_certificate | — |
+| azurerm_spring_cloud_configuration_service | — |
+| azurerm_spring_cloud_container_deployment | — |
+| azurerm_spring_cloud_custom_domain | — |
+| azurerm_spring_cloud_customized_accelerator | — |
+| azurerm_spring_cloud_dev_tool_portal | — |
+| azurerm_spring_cloud_dynatrace_application_performance_monitoring | — |
+| azurerm_spring_cloud_elastic_application_performance_monitoring | — |
+| azurerm_spring_cloud_gateway | — |
+| azurerm_spring_cloud_gateway_custom_domain | — |
+| azurerm_spring_cloud_gateway_route_config | — |
+| azurerm_spring_cloud_java_deployment | — |
+| azurerm_spring_cloud_new_relic_application_performance_monitoring | — |
+| azurerm_spring_cloud_service | — |
+| azurerm_spring_cloud_storage | — |
 | azurerm_virtual_machine_scale_set | — |
 
 ### Deprecated Data Sources
 
 | Data Source | Note |
 |---|---|
-| azurerm_app_service | — |
-| azurerm_app_service_plan | — |
-| azurerm_batch_certificate | — |
-| azurerm_function_app | — |
-| azurerm_postgresql_server | — |
-| azurerm_redis_enterprise_database | — |
+| azurerm_spring_cloud_app | — |
+| azurerm_spring_cloud_service | — |
 
 ```shell
-./resource.ps1 azurerm_app_service_active_slot
 ./resource.ps1 azurerm_app_service_certificate_binding
-./resource.ps1 azurerm_app_service_source_control_token
 ./resource.ps1 azurerm_cdn_frontdoor_batch_rule_set
 ./resource.ps1 azurerm_cognitive_account_connection_account_key
 ./resource.ps1 azurerm_cognitive_account_connection_account_managed_identity
@@ -82,9 +67,7 @@
 ./resource.ps1 azurerm_cosmosdb_postgresql_node_configuration
 ./resource.ps1 azurerm_cosmosdb_postgresql_role
 ./resource.ps1 azurerm_data_protection_resource_guard
-./resource.ps1 azurerm_databricks_workspace_customer_managed_key
 ./resource.ps1 azurerm_dynatrace_monitor
-./resource.ps1 azurerm_extended_custom_location
 ./resource.ps1 azurerm_key_vault_managed_hardware_security_module_key
 ./resource.ps1 azurerm_key_vault_managed_hardware_security_module_key_rotation_policy
 ./resource.ps1 azurerm_key_vault_managed_hardware_security_module_role_assignment
@@ -95,10 +78,6 @@
 ./resource.ps1 azurerm_management_group_subscription_association
 ./resource.ps1 azurerm_netapp_volume_bucket
 ./resource.ps1 azurerm_netapp_volume_bucket_with_server
-./resource.ps1 azurerm_network_packet_capture
-./resource.ps1 azurerm_orbital_contact
-./resource.ps1 azurerm_orbital_contact_profile
-./resource.ps1 azurerm_orbital_spacecraft
 ./resource.ps1 azurerm_palo_alto_local_rulestack_outbound_trust_certificate_association
 ./resource.ps1 azurerm_palo_alto_local_rulestack_outbound_untrust_certificate_association
 ./resource.ps1 azurerm_pim_active_role_assignment
@@ -108,13 +87,12 @@
 ./resource.ps1 azurerm_resource_management_private_link_association
 ./resource.ps1 azurerm_resource_provider_feature_registration
 ./resource.ps1 azurerm_resource_provider_registration
-./resource.ps1 azurerm_restore_point_collection
-./resource.ps1 azurerm_security_center_auto_provisioning
 ./resource.ps1 azurerm_storage_account_table_properties
 ./resource.ps1 azurerm_virtual_desktop_scaling_plan_host_pool_association
 ./resource.ps1 azurerm_virtual_machine_gallery_application_assignment
 ./resource.ps1 azurerm_cdn_frontdoor_batch_rule_set -type data
 ./resource.ps1 azurerm_cdn_frontdoor_security_policy -type data
+./resource.ps1 azurerm_kubernetes_automatic_cluster -type data
 ./resource.ps1 azurerm_netapp_volume_bucket -type data
 ./resource.ps1 azurerm_netapp_volume_bucket_with_server -type data
 ```

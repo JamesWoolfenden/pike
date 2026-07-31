@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 85.63      |  1132       |  1322            |
+| Resources  | 85.26      |  1134       |  1330            |
 | Datasource | 98.70      |   455       |   461             |
 
 ## Deprecated
 
-28 resources and 7 datasources are flagged as deprecated in provider schema v7.41.0. Users pinned to an older provider major may already be affected when they upgrade.
+29 resources and 7 datasources are flagged as deprecated in provider schema v7.42.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -41,6 +41,7 @@
 | google_pubsub_lite_subscription | — |
 | google_pubsub_lite_topic | — |
 | google_scc_v2_organization_scc_big_query_exports | — |
+| google_vertex_ai_schedule | — |
 
 ### Deprecated Data Sources
 
@@ -57,6 +58,7 @@
 ```shell
 ./resource.ps1 google_access_context_manager_egress_policy
 ./resource.ps1 google_access_context_manager_ingress_policy
+./resource.ps1 google_agent_identity_auth_provider
 ./resource.ps1 google_agent_registry_binding
 ./resource.ps1 google_agent_registry_service
 ./resource.ps1 google_apigee_data_collector
@@ -70,10 +72,12 @@
 ./resource.ps1 google_apigee_sharedflow
 ./resource.ps1 google_apigee_sharedflow_deployment
 ./resource.ps1 google_apigee_space
+./resource.ps1 google_apihub_runtime_project_attachment
 ./resource.ps1 google_artifact_registry_project_config
 ./resource.ps1 google_artifact_registry_rule
 ./resource.ps1 google_bigquery_reservation_group
 ./resource.ps1 google_ces_app_root_agent_association
+./resource.ps1 google_chronicle_big_query_export
 ./resource.ps1 google_chronicle_custom_list
 ./resource.ps1 google_chronicle_dashboard_chart
 ./resource.ps1 google_chronicle_data_export
@@ -89,6 +93,7 @@
 ./resource.ps1 google_chronicle_parser_extension
 ./resource.ps1 google_compute_bulk_per_instance_config
 ./resource.ps1 google_compute_firewall_policy_with_rules
+./resource.ps1 google_compute_global_vm_extension_policy
 ./resource.ps1 google_compute_network_firewall_policy_with_rules
 ./resource.ps1 google_compute_preview_feature
 ./resource.ps1 google_compute_region_composite_health_check
@@ -239,7 +244,9 @@
 ./resource.ps1 google_scc_v2_organization_source
 ./resource.ps1 google_service_networking_vpc_service_controls
 ./resource.ps1 google_sql_provision_script
+./resource.ps1 google_vector_search_data_object
 ./resource.ps1 google_vector_search_index
+./resource.ps1 google_vertex_ai_persistent_resource
 ./resource.ps1 google_vertex_ai_schedule
 ./resource.ps1 google_vertex_ai_semantic_governance_policy_engine
 ./resource.ps1 google_vertex_ai_tensorboard_experiment
