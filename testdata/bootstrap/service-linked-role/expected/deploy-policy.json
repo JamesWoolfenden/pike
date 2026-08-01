@@ -1,0 +1,19 @@
+{
+  "Statement": [
+    {
+      "Action": [
+        "iam:CreateServiceLinkedRole",
+        "iam:DeleteServiceLinkedRole",
+        "iam:GetRole",
+        "iam:GetServiceLinkedRoleDeletionStatus",
+        "iam:UpdateRoleDescription"
+      ],
+      "Effect": "Allow",
+      "Resource": [
+        "*"
+      ],
+      "Sid": "DeployPolicy0"
+    }
+  ],
+  "Version": "2012-10-17"
+}

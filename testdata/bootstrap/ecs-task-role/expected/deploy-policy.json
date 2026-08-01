@@ -1,0 +1,34 @@
+{
+  "Statement": [
+    {
+      "Action": [
+        "ecs:DeregisterTaskDefinition",
+        "ecs:DescribeTaskDefinition",
+        "ecs:ListTagsForResource",
+        "ecs:RegisterTaskDefinition"
+      ],
+      "Effect": "Allow",
+      "Resource": [
+        "*"
+      ],
+      "Sid": "DeployPolicy0"
+    },
+    {
+      "Action": [
+        "iam:CreateRole",
+        "iam:DeleteRole",
+        "iam:GetRole",
+        "iam:ListAttachedRolePolicies",
+        "iam:ListInstanceProfilesForRole",
+        "iam:ListRolePolicies",
+        "iam:PassRole"
+      ],
+      "Effect": "Allow",
+      "Resource": [
+        "*"
+      ],
+      "Sid": "DeployPolicy1"
+    }
+  ],
+  "Version": "2012-10-17"
+}

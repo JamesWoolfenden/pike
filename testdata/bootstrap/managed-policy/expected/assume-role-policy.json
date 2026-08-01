@@ -1,0 +1,15 @@
+{
+  "Statement": [
+    {
+      "Action": [
+        "sts:AssumeRole"
+      ],
+      "Effect": "Allow",
+      "Resource": [
+        "arn:aws:iam::123456789012:role/terraform-deploy/TerraformDeployRole"
+      ],
+      "Sid": "AssumeTerraformDeployRole"
+    }
+  ],
+  "Version": "2012-10-17"
+}

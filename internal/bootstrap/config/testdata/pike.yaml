@@ -1,0 +1,66 @@
+version: 1
+
+aws:
+  account_id: "123456789012"
+  partition: aws
+  region: ap-northeast-2
+
+principal:
+  type: iam-user
+  name: me@qj0r9j0vc2.me-cli
+  mfa:
+    required: true
+    serial: arn:aws:iam::123456789012:mfa/me@qj0r9j0vc2.me-cli
+    max_age_seconds: 3600
+
+deploy_role:
+  name: TerraformDeployRole
+  path: /terraform-deploy/
+  max_session_duration: 3600
+
+managed_roles:
+  path: /terraform-managed/
+
+policies:
+  deploy:
+    name: TerraformDeployPolicy
+    path: /terraform-deploy/
+
+  deploy_boundary:
+    name: TerraformDeployBoundary
+    path: /boundaries/
+
+  workload_boundary:
+    name: TerraformWorkloadBoundary
+    path: /boundaries/
+    mode: allowlist
+    allowed_actions:
+      - ecr:GetAuthorizationToken
+      - ecr:BatchCheckLayerAvailability
+      - ecr:GetDownloadUrlForLayer
+      - ecr:BatchGetImage
+      - logs:CreateLogStream
+      - logs:PutLogEvents
+      - secretsmanager:GetSecretValue
+      - kms:Decrypt
+
+pass_role:
+  allowed_services:
+    - ecs-tasks.amazonaws.com
+    - scheduler.amazonaws.com
+
+service_linked_roles:
+  allowed_services:
+    - ecs.amazonaws.com
+
+security:
+  fail_on_unknown_iam_action: true
+  deny_boundary_removal: true
+  deny_boundary_policy_mutation: true
+  deny_human_principal_management: true
+  deny_access_key_management: true
+  deny_organization_management: true
+
+output:
+  directory: .pike/bootstrap
+  overwrite: false

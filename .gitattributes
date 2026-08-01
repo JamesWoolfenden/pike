@@ -1,0 +1,3 @@
+internal/bootstrap/config/testdata/*.yaml eol=lf
+testdata/bootstrap/**/*.yaml eol=lf
+testdata/bootstrap/**/expected/*.json eol=lf

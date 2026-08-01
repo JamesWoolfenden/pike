@@ -1,0 +1,71 @@
+{
+  "Statement": [
+    {
+      "Action": [
+        "iam:CreateAccessKey",
+        "iam:DeleteAccessKey",
+        "iam:UpdateAccessKey"
+      ],
+      "Effect": "Deny",
+      "Resource": [
+        "*"
+      ],
+      "Sid": "DenyAccessKeyManagement"
+    },
+    {
+      "Action": [
+        "iam:CreatePolicyVersion",
+        "iam:DeletePolicy",
+        "iam:DeletePolicyVersion",
+        "iam:SetDefaultPolicyVersion"
+      ],
+      "Effect": "Deny",
+      "Resource": [
+        "arn:aws:iam::123456789012:policy/boundaries/*"
+      ],
+      "Sid": "DenyBoundaryPolicyMutation"
+    },
+    {
+      "Action": [
+        "iam:CreateLoginProfile",
+        "iam:CreateUser",
+        "iam:CreateVirtualMFADevice",
+        "iam:DeactivateMFADevice",
+        "iam:DeleteLoginProfile",
+        "iam:DeleteUser",
+        "iam:DeleteVirtualMFADevice",
+        "iam:EnableMFADevice",
+        "iam:ResyncMFADevice",
+        "iam:UpdateLoginProfile",
+        "iam:UpdateUser"
+      ],
+      "Effect": "Deny",
+      "Resource": [
+        "*"
+      ],
+      "Sid": "DenyHumanPrincipalManagement"
+    },
+    {
+      "Action": [
+        "account:*",
+        "organizations:*"
+      ],
+      "Effect": "Deny",
+      "Resource": [
+        "*"
+      ],
+      "Sid": "DenyOrganizationManagement"
+    },
+    {
+      "Action": [
+        "iam:DeleteRolePermissionsBoundary"
+      ],
+      "Effect": "Deny",
+      "Resource": [
+        "arn:aws:iam::123456789012:role/terraform-managed/*"
+      ],
+      "Sid": "DenyWorkloadBoundaryRemoval"
+    }
+  ],
+  "Version": "2012-10-17"
+}

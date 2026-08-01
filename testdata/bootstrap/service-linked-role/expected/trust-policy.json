@@ -1,0 +1,21 @@
+{
+  "Statement": [
+    {
+      "Action": "sts:AssumeRole",
+      "Condition": {
+        "Bool": {
+          "aws:MultiFactorAuthPresent": "true"
+        },
+        "NumericLessThanEquals": {
+          "aws:MultiFactorAuthAge": "3600"
+        }
+      },
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::123456789012:user/cli-user"
+      },
+      "Sid": "AssumeWithMFA"
+    }
+  ],
+  "Version": "2012-10-17"
+}

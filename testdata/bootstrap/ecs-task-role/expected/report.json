@@ -1,0 +1,45 @@
+{
+  "artifacts": {
+    "deploy_boundary": "sha256:7037b7ad30f774393792d88033c0671e1a7c2d94abb9235b74bc67fd8b0f91bb",
+    "deploy_policy": "sha256:d0420c144cf497cdff9447c34cc8a332b9eb4abca511ab9c148846e56d275881",
+    "workload_boundary": "sha256:838c911da43aa22dd29ccf7c4280a2cb77ab35287bd3b6a84c3370fe5d210afd"
+  },
+  "generated_at": "2026-07-30T00:00:00Z",
+  "generator": {
+    "name": "pike",
+    "version": "0.1.0"
+  },
+  "inputs": {
+    "config_hash": "sha256:1fe80a1f8886bbe604bcd61649becc62fd05fddd732a885d5ffb12591c8bcacb",
+    "terraform_directory": "./terraform"
+  },
+  "rewrites": [
+    {
+      "action": "iam:CreateRole",
+      "classification": "role-create",
+      "rule": "CreateRoleWithRequiredBoundary"
+    },
+    {
+      "action": "iam:DeleteRole",
+      "classification": "role-policy-write",
+      "rule": "ManageTerraformRoles"
+    },
+    {
+      "action": "iam:PassRole",
+      "classification": "pass-role",
+      "rule": "PassManagedRolesToApprovedServices"
+    }
+  ],
+  "scanner": {
+    "mapping_revision": "test",
+    "name": "pike"
+  },
+  "schema_version": 1,
+  "summary": {
+    "blocking_findings": 0,
+    "escalation_actions": 3,
+    "iam_actions": 7,
+    "total_actions": 11
+  },
+  "warnings": null
+}
