@@ -928,3 +928,20 @@ func TestMakeRoleError(t *testing.T) {
 		t.Errorf("Expected %s, but got %s", expected, customErr.Error())
 	}
 }
+
+func TestIsEmptyIAC(t *testing.T) {
+	t.Parallel()
+
+	if !IsEmptyIAC(&emptyIACError{}) {
+		t.Error("IsEmptyIAC(&emptyIACError{}) = false, want true")
+	}
+
+	if IsEmptyIAC(errors.New("some other error")) {
+		t.Error("IsEmptyIAC(unrelated error) = true, want false")
+	}
+
+	wrapped := fmt.Errorf("wrapped: %w", &emptyIACError{})
+	if !IsEmptyIAC(wrapped) {
+		t.Error("IsEmptyIAC(wrapped emptyIACError) = false, want true")
+	}
+}

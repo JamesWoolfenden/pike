@@ -1,6 +1,7 @@
 package pike
 
 import (
+	"errors"
 	"fmt"
 )
 
@@ -362,6 +363,16 @@ type emptyIACError struct{}
 
 func (m *emptyIACError) Error() string {
 	return "no IAC found"
+}
+
+// IsEmptyIAC reports whether err indicates the scanned directory contained
+// no infrastructure-as-code to derive permissions from. Callers that want
+// to treat "nothing to scan" as an empty result rather than a hard failure
+// (as Scan does) can check this before surfacing err.
+func IsEmptyIAC(err error) bool {
+	var e *emptyIACError
+
+	return errors.As(err, &e)
 }
 
 type makePolicyError struct {
