@@ -1,0 +1,63 @@
+version: 1
+
+aws:
+  account_id: "123456789012"
+  partition: aws
+  region: us-east-1
+
+principal:
+  type: iam-user
+  name: cli-user
+  mfa:
+    required: true
+    serial: arn:aws:iam::123456789012:mfa/cli-user
+    max_age_seconds: 3600
+
+deploy_role:
+  name: TerraformDeployRole
+  path: /terraform-deploy/
+  max_session_duration: 3600
+
+managed_roles:
+  path: /terraform-managed/
+
+policies:
+  deploy:
+    name: TerraformDeployPolicy
+    path: /terraform-deploy/
+  deploy_boundary:
+    name: TerraformDeployBoundary
+    path: /boundaries/
+  workload_boundary:
+    name: TerraformWorkloadBoundary
+    path: /boundaries/
+    mode: allowlist
+    allowed_actions:
+      - logs:CreateLogStream
+      - logs:PutLogEvents
+
+pass_role:
+  allowed_services:
+    - ecs-tasks.amazonaws.com
+
+service_linked_roles:
+  allowed_services:
+    - ecs.amazonaws.com
+
+security:
+  # aws_iam_service_linked_role's modify/destroy mappings include
+  # iam:DeleteServiceLinkedRole, which the classifier doesn't recognize
+  # (spec's taxonomy has no entry for it). This fixture demonstrates the
+  # happy-path CreateServiceLinkedRole boundary statement, so unknown
+  # actions are dropped rather than failing generation; see the
+  # unknown-iam-action fixture for the fail-closed behavior itself.
+  fail_on_unknown_iam_action: false
+  deny_boundary_removal: true
+  deny_boundary_policy_mutation: true
+  deny_human_principal_management: true
+  deny_access_key_management: true
+  deny_organization_management: true
+
+output:
+  directory: .rampart/bootstrap
+  overwrite: false

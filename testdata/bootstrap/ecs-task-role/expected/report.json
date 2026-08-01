@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-30T00:00:00Z",
+  "generator": {
+    "name": "rampart",
+    "version": "0.1.0"
+  },
+  "scanner": {
+    "name": "pike",
+    "mapping_revision": "test"
+  },
+  "inputs": {
+    "terraform_directory": "./terraform",
+    "config_hash": "sha256:831782fa8c5ce37c1bc5042f024e9181f55ded58633982fe8b60e5b341a7e145"
+  },
+  "summary": {
+    "total_actions": 11,
+    "iam_actions": 7,
+    "escalation_actions": 3,
+    "blocking_findings": 0
+  },
+  "rewrites": [
+    {
+      "action": "iam:CreateRole",
+      "classification": "role-create",
+      "rule": "CreateRoleWithRequiredBoundary"
+    },
+    {
+      "action": "iam:DeleteRole",
+      "classification": "role-policy-write",
+      "rule": "ManageTerraformRoles"
+    },
+    {
+      "action": "iam:PassRole",
+      "classification": "pass-role",
+      "rule": "PassManagedRolesToApprovedServices"
+    }
+  ],
+  "warnings": null,
+  "artifacts": {
+    "deploy_policy": "sha256:d0420c144cf497cdff9447c34cc8a332b9eb4abca511ab9c148846e56d275881",
+    "deploy_boundary": "sha256:7037b7ad30f774393792d88033c0671e1a7c2d94abb9235b74bc67fd8b0f91bb",
+    "workload_boundary": "sha256:838c911da43aa22dd29ccf7c4280a2cb77ab35287bd3b6a84c3370fe5d210afd"
+  }
+}

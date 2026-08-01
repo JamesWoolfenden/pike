@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-30T00:00:00Z",
+  "generator": {
+    "name": "rampart",
+    "version": "0.1.0"
+  },
+  "scanner": {
+    "name": "pike",
+    "mapping_revision": "test"
+  },
+  "inputs": {
+    "terraform_directory": "./terraform",
+    "config_hash": "sha256:75b177c854a52cd078d75554e6c43505520e471777e01bba520ee06b6505a488"
+  },
+  "summary": {
+    "total_actions": 5,
+    "iam_actions": 5,
+    "escalation_actions": 3,
+    "blocking_findings": 0
+  },
+  "rewrites": [
+    {
+      "action": "iam:CreateServiceLinkedRole",
+      "classification": "service-linked-role",
+      "rule": "CreateApprovedServiceLinkedRoles"
+    }
+  ],
+  "warnings": null,
+  "artifacts": {
+    "deploy_policy": "sha256:044e216285b861dde9eee3e6d0443d901c285d6315e3e714664ab1d475213be9",
+    "deploy_boundary": "sha256:6fda33e23b7bf0d8740c5a246639d2a035903da3b09b52c14ef6e19dc541b5ac",
+    "workload_boundary": "sha256:838c911da43aa22dd29ccf7c4280a2cb77ab35287bd3b6a84c3370fe5d210afd"
+  }
+}

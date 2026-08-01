@@ -1,0 +1,22 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DeployPolicy0",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateVPC",
+        "ec2:DeleteVPC",
+        "ec2:DescribeAccountAttributes",
+        "ec2:DescribeNetworkAcls",
+        "ec2:DescribeVpcAttribute",
+        "ec2:DescribeVpcs",
+        "ec2:ModifyVpcAttribute",
+        "ec2:ModifyVpcTenancy"
+      ],
+      "Resource": [
+        "*"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-30T00:00:00Z",
+  "generator": {
+    "name": "rampart",
+    "version": "0.1.0"
+  },
+  "scanner": {
+    "name": "pike",
+    "mapping_revision": "test"
+  },
+  "inputs": {
+    "terraform_directory": "./terraform",
+    "config_hash": "sha256:831782fa8c5ce37c1bc5042f024e9181f55ded58633982fe8b60e5b341a7e145"
+  },
+  "summary": {
+    "total_actions": 8,
+    "iam_actions": 0,
+    "escalation_actions": 0,
+    "blocking_findings": 0
+  },
+  "rewrites": null,
+  "warnings": null,
+  "artifacts": {
+    "deploy_policy": "sha256:48548d138fd857d3093bb7404f33adaeb65a9cc48861594aa2850d8ae76f21f2",
+    "deploy_boundary": "sha256:9826d8600388e691e6516e11da58e8cadbd2ed163be56e99ff8b872822bcc352",
+    "workload_boundary": "sha256:838c911da43aa22dd29ccf7c4280a2cb77ab35287bd3b6a84c3370fe5d210afd"
+  }
+}

@@ -1,0 +1,7 @@
+# Normalize line endings to LF on checkout regardless of platform.
+# Without this, Windows checkouts convert text files to CRLF, changing
+# their raw byte content — the golden-fixture tests in
+# internal/bootstrap/golden_test.go hash rampart.yaml's bytes directly
+# (report.json's config_hash), so a CRLF/LF mismatch there is a real
+# cross-platform test failure, not just cosmetic.
+* text=auto eol=lf
