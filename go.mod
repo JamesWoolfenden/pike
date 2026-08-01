@@ -25,6 +25,7 @@ require (
 	golang.org/x/oauth2 v0.36.0
 	google.golang.org/api v0.290.0
 	gopkg.in/ini.v1 v1.67.3
+	gopkg.in/yaml.v3 v3.0.1
 )
 
 require (
@@ -96,7 +97,6 @@ require (
 	google.golang.org/grpc v1.82.1 // indirect
 	google.golang.org/protobuf v1.36.11 // indirect
 	gopkg.in/warnings.v0 v0.1.2 // indirect
-	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
 
 require (
