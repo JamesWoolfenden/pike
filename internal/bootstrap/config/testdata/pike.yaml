@@ -7,10 +7,10 @@ aws:
 
 principal:
   type: iam-user
-  name: me@qj0r9j0vc2.me-cli
+  name: cli-user
   mfa:
     required: true
-    serial: arn:aws:iam::123456789012:mfa/me@qj0r9j0vc2.me-cli
+    serial: arn:aws:iam::123456789012:mfa/cli-user
     max_age_seconds: 3600
 
 deploy_role:
