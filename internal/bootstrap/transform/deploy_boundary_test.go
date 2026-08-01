@@ -113,13 +113,16 @@ func TestDeployBoundary_CreateRole(t *testing.T) {
 func TestDeployBoundary_ManageTerraformRoles(t *testing.T) {
 	t.Parallel()
 
-	// Every action spec section 12.2 lists except PutRolePermissionsBoundary,
-	// to prove that one gets added even when Pike didn't separately detect it.
+	// Every action spec section 12.2 lists, plus PutRolePermissionsBoundary
+	// to prove that one is excluded from this statement even when Pike
+	// detects it directly - it always gets its own conditioned statement
+	// instead (TestDeployBoundary_MaintainRequiredBoundary).
 	p := policy.Policy{Statements: []policy.Statement{{Actions: []string{
 		"iam:AttachRolePolicy",
 		"iam:DeleteRole",
 		"iam:DeleteRolePolicy",
 		"iam:DetachRolePolicy",
+		"iam:PutRolePermissionsBoundary",
 		"iam:PutRolePolicy",
 		"iam:TagRole",
 		"iam:UntagRole",
@@ -142,7 +145,6 @@ func TestDeployBoundary_ManageTerraformRoles(t *testing.T) {
 		"iam:DeleteRole",
 		"iam:DeleteRolePolicy",
 		"iam:DetachRolePolicy",
-		"iam:PutRolePermissionsBoundary",
 		"iam:PutRolePolicy",
 		"iam:TagRole",
 		"iam:UntagRole",
@@ -159,9 +161,71 @@ func TestDeployBoundary_ManageTerraformRoles(t *testing.T) {
 		}
 	}
 
+	for _, a := range action {
+		if a == "iam:PutRolePermissionsBoundary" {
+			t.Errorf("ManageTerraformRoles.Action contains iam:PutRolePermissionsBoundary, want it excluded (unconditioned boundary-swap risk)")
+		}
+	}
+
 	resource, _ := s["Resource"].([]any)
 	if len(resource) != 1 || resource[0] != "arn:aws:iam::123456789012:role/terraform-managed/*" {
 		t.Errorf("Resource = %v, want the managed-role ARN", s["Resource"])
+	}
+}
+
+func TestDeployBoundary_MaintainRequiredBoundary(t *testing.T) {
+	t.Parallel()
+
+	p := policy.Policy{Statements: []policy.Statement{{Actions: []string{"iam:PutRolePolicy"}, Resources: []string{"*"}}}}
+
+	doc, err := transform.DeployBoundary(p, testConfig())
+	if err != nil {
+		t.Fatalf("DeployBoundary() error = %v", err)
+	}
+
+	raw, _ := json.Marshal(doc)
+	s := statementBySid(t, raw, "MaintainRequiredBoundary")
+
+	action, _ := s["Action"].([]any)
+	if len(action) != 1 || action[0] != "iam:PutRolePermissionsBoundary" {
+		t.Errorf("Action = %v, want [iam:PutRolePermissionsBoundary]", s["Action"])
+	}
+
+	resource, _ := s["Resource"].([]any)
+	if len(resource) != 1 || resource[0] != "arn:aws:iam::123456789012:role/terraform-managed/*" {
+		t.Errorf("Resource = %v, want the managed-role ARN", s["Resource"])
+	}
+
+	condition, _ := s["Condition"].(map[string]any)
+	stringEquals, _ := condition["StringEquals"].(map[string]any)
+
+	if stringEquals["iam:PermissionsBoundary"] != "arn:aws:iam::123456789012:policy/boundaries/TerraformWorkloadBoundary" {
+		t.Errorf("Condition.StringEquals[iam:PermissionsBoundary] = %v, want the workload boundary ARN", stringEquals["iam:PermissionsBoundary"])
+	}
+}
+
+// TestDeployBoundary_MaintainRequiredBoundary_PresentOnRoleCreateAlone
+// confirms the statement appears even when only iam:CreateRole was
+// detected, with no other role-policy-write actions - the exact case the
+// original unconditioned-PutRolePermissionsBoundary bug slipped through in,
+// since that case still legitimately needs to (re)apply the boundary.
+func TestDeployBoundary_MaintainRequiredBoundary_PresentOnRoleCreateAlone(t *testing.T) {
+	t.Parallel()
+
+	p := policy.Policy{Statements: []policy.Statement{{Actions: []string{"iam:CreateRole"}, Resources: []string{"*"}}}}
+
+	doc, err := transform.DeployBoundary(p, testConfig())
+	if err != nil {
+		t.Fatalf("DeployBoundary() error = %v", err)
+	}
+
+	raw, _ := json.Marshal(doc)
+	_ = statementBySid(t, raw, "MaintainRequiredBoundary")
+
+	for _, s := range doc.Statements {
+		if s.Sid == "ManageTerraformRoles" {
+			t.Errorf("ManageTerraformRoles present with no role-policy-write actions detected: %+v", s)
+		}
 	}
 }
 

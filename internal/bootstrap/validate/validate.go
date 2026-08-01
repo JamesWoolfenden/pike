@@ -18,6 +18,7 @@ package validate
 
 import (
 	"fmt"
+	"slices"
 	"strings"
 
 	"github.com/jameswoolfenden/pike/internal/bootstrap/classify"
@@ -54,6 +55,7 @@ func Validate(a Artifacts, cfg *config.Config) []Finding {
 	var findings []Finding
 
 	findings = append(findings, checkCreateRoleConditioned(a.DeployBoundary, cfg)...)
+	findings = append(findings, checkPutRolePermissionsBoundaryConditioned(a.DeployBoundary, cfg)...)
 	findings = append(findings, checkPassRole(a.DeployBoundary, cfg)...)
 	findings = append(findings, checkServiceLinkedRole(a.DeployBoundary)...)
 	findings = append(findings, checkBoundaryDenies(a.DeployBoundary)...)
@@ -93,6 +95,46 @@ func checkCreateRoleConditioned(doc render.Document, cfg *config.Config) []Findi
 				Code:     "RMP-E002",
 				Severity: Blocking,
 				Message:  fmt.Sprintf("iam:CreateRole Condition.StringEquals[iam:PermissionsBoundary] = %q, want %q", got, expectedBoundaryARN),
+			})
+		}
+	}
+
+	return findings
+}
+
+// checkPutRolePermissionsBoundaryConditioned covers RMP-E013 (unconditional
+// iam:PutRolePermissionsBoundary) and RMP-E014 (condition present but not
+// the exact expected boundary). An unconditioned or wrongly-scoped grant of
+// this action lets the deploy role re-point a managed role at a different,
+// more permissive boundary policy, bypassing CreateRole's own boundary
+// condition and the boundary-tampering denies entirely - the class of bug
+// that motivated this rule.
+func checkPutRolePermissionsBoundaryConditioned(doc render.Document, cfg *config.Config) []Finding {
+	var findings []Finding
+
+	expectedBoundaryARN := namedPolicyARN(cfg, cfg.Policies.WorkloadBoundary.Path, cfg.Policies.WorkloadBoundary.Name)
+
+	for _, s := range doc.Statements {
+		if s.Effect != "Allow" || !containsAction(s.Action, "iam:PutRolePermissionsBoundary") {
+			continue
+		}
+
+		if s.Condition == nil {
+			findings = append(findings, Finding{
+				Code:     "RMP-E013",
+				Severity: Blocking,
+				Message:  "iam:PutRolePermissionsBoundary is allowed without any Condition",
+			})
+
+			continue
+		}
+
+		got := conditionString(s.Condition, "iam:PermissionsBoundary")
+		if got != expectedBoundaryARN {
+			findings = append(findings, Finding{
+				Code:     "RMP-E014",
+				Severity: Blocking,
+				Message:  fmt.Sprintf("iam:PutRolePermissionsBoundary Condition.StringEquals[iam:PermissionsBoundary] = %q, want %q", got, expectedBoundaryARN),
 			})
 		}
 	}
@@ -289,13 +331,7 @@ func hasDenyFor(doc render.Document, action string) bool {
 }
 
 func containsAction(actions []string, action string) bool {
-	for _, a := range actions {
-		if a == action {
-			return true
-		}
-	}
-
-	return false
+	return slices.Contains(actions, action)
 }
 
 func isIAMOrSTS(action string) bool {

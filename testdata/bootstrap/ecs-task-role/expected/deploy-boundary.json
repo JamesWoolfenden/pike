@@ -96,8 +96,22 @@
     },
     {
       "Action": [
-        "iam:DeleteRole",
         "iam:PutRolePermissionsBoundary"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "iam:PermissionsBoundary": "arn:aws:iam::123456789012:policy/boundaries/TerraformWorkloadBoundary"
+        }
+      },
+      "Effect": "Allow",
+      "Resource": [
+        "arn:aws:iam::123456789012:role/terraform-managed/*"
+      ],
+      "Sid": "MaintainRequiredBoundary"
+    },
+    {
+      "Action": [
+        "iam:DeleteRole"
       ],
       "Effect": "Allow",
       "Resource": [

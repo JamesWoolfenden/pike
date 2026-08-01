@@ -1,6 +1,6 @@
 {
   "artifacts": {
-    "deploy_boundary": "sha256:7037b7ad30f774393792d88033c0671e1a7c2d94abb9235b74bc67fd8b0f91bb",
+    "deploy_boundary": "sha256:3e0a22630ab4f5d481d44806d3bceeec4672bc055b8e8faafc69c7da36735ac6",
     "deploy_policy": "sha256:d0420c144cf497cdff9447c34cc8a332b9eb4abca511ab9c148846e56d275881",
     "workload_boundary": "sha256:838c911da43aa22dd29ccf7c4280a2cb77ab35287bd3b6a84c3370fe5d210afd"
   },

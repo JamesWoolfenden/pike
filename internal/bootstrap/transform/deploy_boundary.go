@@ -77,12 +77,6 @@ var (
 	}
 )
 
-// managedRoleLifecycleActions are always included in ManageTerraformRoles
-// when it's generated at all, regardless of what Pike detected — the
-// deploy role needs them to fulfil the boundary lifecycle itself (spec
-// section 12.2: "Actions required for boundary lifecycle").
-var managedRoleLifecycleActions = []string{"iam:PutRolePermissionsBoundary"}
-
 // DeployBoundary transforms a scanned Policy into deploy-boundary.json:
 // the maximum permissions the deploy role may hold once bootstrapped.
 func DeployBoundary(p policy.Policy, cfg *config.Config) (render.Document, error) {
@@ -108,6 +102,7 @@ func DeployBoundary(p policy.Policy, cfg *config.Config) (render.Document, error
 	}
 
 	managedRoleARN := roleARN(cfg, cfg.ManagedRoles.Path)
+	workloadBoundaryARN := namedPolicyARN(cfg, cfg.Policies.WorkloadBoundary.Path, cfg.Policies.WorkloadBoundary.Name)
 
 	if len(grouped[classify.RoleCreate]) > 0 {
 		statements = append(statements, render.Statement{
@@ -116,17 +111,44 @@ func DeployBoundary(p policy.Policy, cfg *config.Config) (render.Document, error
 			Action:   []string{"iam:CreateRole"},
 			Resource: []string{managedRoleARN},
 			Condition: &render.Condition{StringEquals: map[string]any{
-				"iam:PermissionsBoundary": namedPolicyARN(cfg, cfg.Policies.WorkloadBoundary.Path, cfg.Policies.WorkloadBoundary.Name),
+				"iam:PermissionsBoundary": workloadBoundaryARN,
 			}},
 		})
 	}
 
-	if manageActions := union(grouped[classify.RolePolicyWrite], managedRoleLifecycleActions); len(grouped[classify.RoleCreate]) > 0 || len(grouped[classify.RolePolicyWrite]) > 0 {
+	rolePolicyWrite := grouped[classify.RolePolicyWrite]
+
+	// iam:PutRolePermissionsBoundary is deliberately excluded from
+	// ManageTerraformRoles (and given its own conditioned statement below)
+	// even when Pike detects it directly — an unconditioned grant of this
+	// action lets the deploy role re-point a role at a different, more
+	// permissive boundary policy, silently bypassing the boundary the
+	// CreateRole condition above and the boundary-tampering denies in
+	// mandatoryDenies exist to enforce. See MaintainRequiredBoundary.
+	if manageActions := removeAction(rolePolicyWrite, "iam:PutRolePermissionsBoundary"); len(manageActions) > 0 {
 		statements = append(statements, render.Statement{
 			Sid:      "ManageTerraformRoles",
 			Effect:   "Allow",
 			Action:   manageActions,
 			Resource: []string{managedRoleARN},
+		})
+	}
+
+	// The deploy role needs iam:PutRolePermissionsBoundary to maintain the
+	// boundary on roles it manages (e.g. Terraform reapplying an existing
+	// role's permissions_boundary attribute) whenever it creates or
+	// modifies roles at all (spec section 12.2: "Actions required for
+	// boundary lifecycle") — but only ever to (re)attach the one required
+	// workload boundary, never anything else.
+	if len(grouped[classify.RoleCreate]) > 0 || len(rolePolicyWrite) > 0 {
+		statements = append(statements, render.Statement{
+			Sid:      "MaintainRequiredBoundary",
+			Effect:   "Allow",
+			Action:   []string{"iam:PutRolePermissionsBoundary"},
+			Resource: []string{managedRoleARN},
+			Condition: &render.Condition{StringEquals: map[string]any{
+				"iam:PermissionsBoundary": workloadBoundaryARN,
+			}},
 		})
 	}
 
@@ -188,6 +210,19 @@ func mandatoryDenies(cfg *config.Config, managedRoleARN string) []render.Stateme
 	}
 
 	if cfg.Security.DenyBoundaryPolicyMutation {
+		// Covers both the deploy_boundary and workload_boundary policy
+		// paths, not just deploy_boundary's — they're free to be
+		// configured under different IAM paths (config.Validate only
+		// requires them distinct from deploy_role/managed_roles, not from
+		// each other), and the workload boundary is the one actually
+		// constraining roles CreateRoleWithRequiredBoundary/
+		// MaintainRequiredBoundary create. No statement currently grants
+		// iam:CreatePolicyVersion et al. at all (PolicyMutation-classified
+		// actions aren't wired into any Allow), so this is defense in
+		// depth rather than closing an active hole - but it means a
+		// future change that does grant one of these actions can't
+		// silently reopen the boundary via its content instead of its
+		// attachment.
 		denies = append(denies, render.Statement{
 			Sid:    "DenyBoundaryPolicyMutation",
 			Effect: "Deny",
@@ -197,7 +232,10 @@ func mandatoryDenies(cfg *config.Config, managedRoleARN string) []render.Stateme
 				"iam:SetDefaultPolicyVersion",
 				"iam:DeletePolicy",
 			}),
-			Resource: []string{policyPathARN(cfg, cfg.Policies.DeployBoundary.Path)},
+			Resource: sortedUnique([]string{
+				policyPathARN(cfg, cfg.Policies.DeployBoundary.Path),
+				policyPathARN(cfg, cfg.Policies.WorkloadBoundary.Path),
+			}),
 		})
 	}
 
@@ -332,20 +370,18 @@ func sortedUnique(s []string) []string {
 	return out
 }
 
-// union returns the sorted, deduplicated union of a and b.
-func union(a, b []string) []string {
-	seen := make(map[string]bool, len(a)+len(b))
-
+// removeAction returns a sorted copy of actions with target removed, if
+// present. Used to keep iam:PutRolePermissionsBoundary out of
+// ManageTerraformRoles regardless of whether it arrived there via direct
+// detection — it always gets its own conditioned statement instead (see
+// MaintainRequiredBoundary in DeployBoundary).
+func removeAction(actions []string, target string) []string {
 	var out []string
 
-	for _, s := range append(append([]string(nil), a...), b...) {
-		if seen[s] {
-			continue
+	for _, a := range actions {
+		if a != target {
+			out = append(out, a)
 		}
-
-		seen[s] = true
-
-		out = append(out, s)
 	}
 
 	sort.Strings(out)
