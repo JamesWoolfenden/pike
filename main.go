@@ -7,6 +7,7 @@ import (
 	"sort"
 	"time"
 
+	"github.com/jameswoolfenden/pike/internal/bootstrap"
 	"github.com/jameswoolfenden/pike/internal/parse"
 	pike "github.com/jameswoolfenden/pike/src"
 	"github.com/rs/zerolog"
@@ -37,6 +38,7 @@ func main() {
 		provider           string
 		outfile            string
 		policyName         string
+		bootstrapConfig    string
 	)
 
 	log.Logger = log.Output(zerolog.ConsoleWriter{Out: os.Stderr})
@@ -256,6 +258,28 @@ func main() {
 				},
 				Action: func(c *cli.Context) error {
 					return pike.Audit(directory, output, pike.ParseSeverity(c.String("min-severity")))
+				},
+			},
+			{
+				Name:  "bootstrap",
+				Usage: "EXPERIMENTAL: generate a safe AWS IAM deploy-role bootstrap (permissions boundary + MFA trust policy) from a pike.yaml config",
+				Flags: []cli.Flag{
+					&cli.StringFlag{
+						Name:        "directory",
+						Aliases:     []string{"d"},
+						Usage:       "Directory to scan (defaults to .)",
+						Value:       ".",
+						Destination: &directory,
+					},
+					&cli.StringFlag{
+						Name:        "config",
+						Usage:       "Path to the bootstrap config file",
+						Value:       "pike.yaml",
+						Destination: &bootstrapConfig,
+					},
+				},
+				Action: func(*cli.Context) error {
+					return bootstrap.Run(directory, bootstrapConfig)
 				},
 			},
 			{
