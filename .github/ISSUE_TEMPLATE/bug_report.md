@@ -12,7 +12,7 @@ A clear and concise description of what the bug is.
 
 **Environment**
 
-- `pike version`: [e.g. v2.3.1]
+- `rampart version`: [e.g. v2.3.1]
 - OpenTofu / Terraform version: [e.g. tofu 1.9.0]
 - Cloud provider: [AWS / Azure / GCP]
 - OS: [e.g. Windows 11, Ubuntu 24.04, macOS 15]
@@ -28,7 +28,7 @@ Minimal `.tf` snippet that triggers the bug:
 Full command and output:
 
 ```cli
-$ pike <subcommand> <flags>
+$ rampart <subcommand> <flags>
 <output here>
 ```
 

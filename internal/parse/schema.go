@@ -11,7 +11,7 @@ import (
 
 	"github.com/hashicorp/terraform-exec/tfexec"
 	tfjson "github.com/hashicorp/terraform-json"
-	"github.com/jameswoolfenden/pike/internal/tfinstall"
+	"github.com/qj0r9j0vc2/rampart/internal/tfinstall"
 	"github.com/rs/zerolog/log"
 )
 

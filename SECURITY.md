@@ -6,7 +6,7 @@
 
 Report privately using GitHub's Security Advisory workflow:
 
-👉 **[Report a vulnerability](https://github.com/JamesWoolfenden/pike/security/advisories/new)**
+👉 **[Report a vulnerability](https://github.com/qj0r9j0vc2/rampart/security/advisories/new)**
 
 This opens a private channel between you and the maintainers where we can
 discuss, reproduce, and patch the issue before disclosure.
@@ -15,7 +15,7 @@ When reporting, please include:
 
 - A description of the vulnerability and its impact
 - Steps to reproduce (a minimal Terraform/OpenTofu snippet is ideal)
-- The version of `pike`, OpenTofu/Terraform, and the affected provider
+- The version of `rampart`, OpenTofu/Terraform, and the affected provider
 - Any suggested mitigation or fix
 
 ## Supported Versions
@@ -51,9 +51,9 @@ Once a fix is available we will:
 
 In scope:
 
-- The `pike` CLI binary and its Go source under this repository.
+- The `rampart` CLI binary and its Go source under this repository.
 - The official Docker image published from this repository.
-- Published release artefacts (Homebrew tap, Scoop bucket, GitHub Releases).
+- Published release artefacts (GitHub Releases).
 
 Out of scope:
 

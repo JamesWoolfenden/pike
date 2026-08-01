@@ -4,21 +4,21 @@
 
 **Designed:** 2026-03-04
 **Implemented:** 2026-04-19 (`parse/schema.go`)
-**Issue:** The `pike parse` command used unreliable documentation parsing, resulting in incomplete and inaccurate provider resource lists.
+**Issue:** The `rampart parse` command used unreliable documentation parsing, resulting in incomplete and inaccurate provider resource lists.
 **Solution:** Replaced with Terraform provider schema extraction (authoritative source).
 
 > **Note:** The Results figures below were estimates from the design phase
 > (March 2026) and have not been re-verified against current provider
 > versions. They illustrate the magnitude of the problem and the expected
 > shape of the fix; do not treat them as exact post-implementation counts.
-> Re-run `pike parse -n {provider}` and diff the output to get current
+> Re-run `rampart parse -n {provider}` and diff the output to get current
 > numbers.
 
 ## The Problem
 
 ### Old Method: Documentation Parsing
 
-The original `pike parse` scanned provider documentation markdown files to extract resource names using regex patterns.
+The original `rampart parse` scanned provider documentation markdown files to extract resource names using regex patterns.
 
 **Critical Issues:**
 
@@ -51,7 +51,7 @@ The original `pike parse` scanned provider documentation markdown files to extra
 
 ### New Method: Terraform Schema Extraction
 
-The improved `pike parse` command now uses **Terraform's provider schema** via `terraform providers schema -json`.
+The improved `rampart parse` command now uses **Terraform's provider schema** via `terraform providers schema -json`.
 
 **Benefits:**
 
@@ -65,7 +65,7 @@ The improved `pike parse` command now uses **Terraform's provider schema** via `
 
 ```bash
 # Extract latest version
-pike parse -n google
+rampart parse -n google
 
 # Internally creates temp Terraform config:
 # terraform { required_providers { google = { source = "hashicorp/google" } } }
@@ -128,16 +128,16 @@ After:  1124 resources, 393 datasources
 
 ```bash
 # Extract from schema (no directory needed)
-pike parse -n google
-pike parse -n aws
-pike parse -n azurerm
+rampart parse -n google
+rampart parse -n aws
+rampart parse -n azurerm
 ```
 
 ### Old Command (Deprecated)
 
 ```bash
 # Only used if schema extraction fails
-pike parse -n google -d /path/to/provider-docs
+rampart parse -n google -d /path/to/provider-docs
 ```
 
 ## Technical Changes
@@ -174,23 +174,23 @@ pike parse -n google -d /path/to/provider-docs
 
 ## Migration Guide
 
-### For Pike Maintainers
+### For Rampart Maintainers
 
 **Update all provider member files:**
 
 ```bash
-cd /Users/jwoolfenden/code/pike
+cd /path/to/rampart
 
 # Google
-pike parse -n google
+rampart parse -n google
 mv google-members.json parse/
 
 # AWS
-pike parse -n aws
+rampart parse -n aws
 mv aws-members.json parse/
 
 # Azure
-pike parse -n azurerm
+rampart parse -n azurerm
 mv azurerm-members.json parse/
 
 # Update coverage
@@ -205,14 +205,14 @@ go test -run Test_coverageAzurerm
 No action required - the command works the same way:
 
 ```bash
-pike parse -n google
+rampart parse -n google
 ```
 
 Just don't rely on the old documentation parsing method.
 
 ## Future Improvements
 
-1. **Add version flag** - Support specific provider versions: `pike parse -n google --version 7.21.0`
+1. **Add version flag** - Support specific provider versions: `rampart parse -n google --version 7.21.0`
 2. **Cache schemas** - Avoid re-downloading for repeated runs
 3. **Parallel extraction** - Parse multiple providers simultaneously
 4. **Diff mode** - Show changes between versions

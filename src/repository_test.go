@@ -5,7 +5,7 @@ package pike_test
 import (
 	"testing"
 
-	pike "github.com/jameswoolfenden/pike/src"
+	pike "github.com/qj0r9j0vc2/rampart/src"
 )
 
 func TestRepository(t *testing.T) {

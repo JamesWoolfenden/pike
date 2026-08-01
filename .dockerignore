@@ -1,7 +1,7 @@
 # Build artifacts
 dist/
-pike.exe
-pike
+rampart.exe
+rampart
 *.out
 
 # Test data and large local directories

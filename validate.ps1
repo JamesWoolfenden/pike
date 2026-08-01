@@ -1,9 +1,9 @@
 #!/usr/bin/env pwsh
 <#
 .SYNOPSIS
-    Randomly validates Pike resource/datasource mappings against test files
+    Randomly validates Rampart resource/datasource mappings against test files
 .DESCRIPTION
-    Randomly selects resources/datasources from Pike's lookup maps and:
+    Randomly selects resources/datasources from Rampart's lookup maps and:
     - Checks if test files exist in terraform/{provider}/backup/
     - Optionally runs empirical lifecycle tests
     - Compares discovered permissions vs JSON mappings
@@ -179,7 +179,7 @@ function Test-ResourceLifecycle {
 # Main script
 $config = $providerConfigs[$Provider]
 
-Write-Host "`nPike Validation - Random Resource Testing" -ForegroundColor Cyan
+Write-Host "`nRampart Validation - Random Resource Testing" -ForegroundColor Cyan
 Write-Host ("═" * 70)
 Write-Host "Provider:    $($config.Name)" -ForegroundColor Gray
 Write-Host "Resources:   $Resources" -ForegroundColor Gray

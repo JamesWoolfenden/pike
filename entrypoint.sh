@@ -4,7 +4,7 @@
 # https://docs.github.com/en/actions/reference/environment-variables#default-environment-variables
 if [[ $GITHUB_ACTIONS != "true" ]]
 then
-  /usr/bin/pike "$@"
+  /usr/bin/rampart "$@"
   exit $?
 fi
 
@@ -42,7 +42,7 @@ then
   args+=(--output "$INPUT_OUTPUT")
 fi
 
-echo pike "$INPUT_VERB" "${args[@]}"
-/usr/bin/pike "$INPUT_VERB" "${args[@]}"
+echo rampart "$INPUT_VERB" "${args[@]}"
+/usr/bin/rampart "$INPUT_VERB" "${args[@]}"
 
-export pike_EXIT_CODE=$?
+export rampart_EXIT_CODE=$?

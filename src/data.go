@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/hcl/v2"
 	"github.com/hashicorp/hcl/v2/hclparse"
 	"github.com/hashicorp/hcl/v2/hclsyntax"
-	"github.com/jameswoolfenden/pike/internal/provider"
+	"github.com/qj0r9j0vc2/rampart/internal/provider"
 	"github.com/rs/zerolog/log"
 )
 

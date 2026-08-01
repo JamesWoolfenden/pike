@@ -7,7 +7,7 @@ import (
 
 	"github.com/hashicorp/hcl/v2"
 	"github.com/hashicorp/hcl/v2/hclsyntax"
-	pike "github.com/jameswoolfenden/pike/src"
+	pike "github.com/qj0r9j0vc2/rampart/src"
 )
 
 func TestGetResources(t *testing.T) {

@@ -1,6 +1,6 @@
 # resource.ps1 - Enhanced Resource Scaffolding Script
 
-The `resource.ps1` script helps create skeleton files for new Terraform resource/datasource mappings in Pike.
+The `resource.ps1` script helps create skeleton files for new Terraform resource/datasource mappings in Rampart.
 
 ## Features
 
@@ -24,7 +24,7 @@ When `azure_permissions.json` exists, the script will:
 
 ### 3. File Creation
 
-Creates the necessary files for Pike:
+Creates the necessary files for Rampart:
 
 - JSON mapping file (from template)
 - Terraform test file (.tf)
@@ -176,18 +176,18 @@ Copied from the template with empty permission arrays. You need to manually add 
 **For datasources:** `terraform/{provider}/data.{resource}.tf`
 
 ```hcl
-data "azurerm_storage_account" "pike" {
+data "azurerm_storage_account" "rampart" {
 }
 
 output "azurerm_storage_account" {
-  value = data.azurerm_storage_account.pike
+  value = data.azurerm_storage_account.rampart
 }
 ```
 
 **For resources:** `terraform/{provider}/{resource}.tf`
 
 ```hcl
-resource "azurerm_storage_account" "pike" {}
+resource "azurerm_storage_account" "rampart" {}
 ```
 
 ## Next Steps After Running the Script
@@ -211,7 +211,7 @@ resource "azurerm_storage_account" "pike" {}
    ```bash
    cd terraform/azurerm
    terraform init
-   pike scan -d . -o json
+   rampart scan -d . -o json
    ```
 
 ## Comparison: Manual vs Automated

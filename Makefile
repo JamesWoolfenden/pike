@@ -1,10 +1,10 @@
 .PHONY:
 TEST?=$$(go list ./... | grep -v 'vendor'| grep -v 'scripts'| grep -v 'version')
-HOSTNAME=jameswoolfenden
-FULL_PKG_NAME=github.com/jameswoolfenden/pike
+HOSTNAME=qj0r9j0vc2
+FULL_PKG_NAME=github.com/qj0r9j0vc2/rampart
 VERSION_PLACEHOLDER=version.ProviderVersion
 NAMESPACE=dev
-BINARY=pike
+BINARY=rampart
 OS_ARCH=darwin_amd64
 TERRAFORM=./terraform/
 TF_TEST=./terraform_test/

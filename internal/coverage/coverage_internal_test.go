@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	pike "github.com/jameswoolfenden/pike/src"
+	pike "github.com/qj0r9j0vc2/rampart/src"
 )
 
 // Helper function to create test JSON file

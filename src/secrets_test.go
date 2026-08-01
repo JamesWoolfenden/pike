@@ -9,7 +9,7 @@ import (
 	"testing"
 
 	"github.com/google/go-github/v74/github"
-	pike "github.com/jameswoolfenden/pike/src"
+	pike "github.com/qj0r9j0vc2/rampart/src"
 	"golang.org/x/oauth2"
 )
 

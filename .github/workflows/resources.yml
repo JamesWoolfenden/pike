@@ -35,17 +35,17 @@ jobs:
 
       # Schema-based parse no longer needs the provider source repos cloned —
       # it asks the provider binary directly via `terraform providers schema`.
-      # If schema extraction ever regresses, `pike parse -n <provider>` will
+      # If schema extraction ever regresses, `rampart parse -n <provider>` will
       # fail the step loudly, which is what we want (docs fallback would
       # silently produce worse data).
       - name: Parse AWS
-        run: ${{ github.workspace }}/pike parse -n aws
+        run: ${{ github.workspace }}/rampart parse -n aws
 
       - name: Parse Azurerm
-        run: ${{ github.workspace }}/pike parse -n azurerm
+        run: ${{ github.workspace }}/rampart parse -n azurerm
 
       - name: Parse Google
-        run: ${{ github.workspace }}/pike parse -n google
+        run: ${{ github.workspace }}/rampart parse -n google
 
       - name: Stage member files
         run: cp ${{ github.workspace }}/*.json ${{ github.workspace }}/internal/parse/

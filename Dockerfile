@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1.7
 #
 # Multi-stage build:
-#   1. Build pike from source so the image is reproducible from the checked-out SHA
+#   1. Build rampart from source so the image is reproducible from the checked-out SHA
 #      (no fetching the "latest" release at build time).
 #   2. Ship a minimal Alpine runtime with a non-root user and only the tools
 #      entrypoint.sh actually needs.
@@ -25,26 +25,26 @@ COPY . .
 RUN CGO_ENABLED=0 go build \
     -trimpath \
     -ldflags "-s -w" \
-    -o /out/pike .
+    -o /out/rampart .
 
 # ---- runtime ----------------------------------------------------------------
 FROM alpine:3.24@sha256:28bd5fe8b56d1bd048e5babf5b10710ebe0bae67db86916198a6eec434943f8b
 
 # entrypoint.sh needs bash; terraform/tofu flows often want git + ca-certificates.
 RUN apk add --no-cache bash ca-certificates git \
-    && adduser -D -u 10001 -h /home/pike pike
+    && adduser -D -u 10001 -h /home/rampart rampart
 
-LABEL org.opencontainers.image.title="pike" \
-      org.opencontainers.image.description="Determine the minimum IAM permissions required to run OpenTofu/Terraform infrastructure code." \
-      org.opencontainers.image.source="https://github.com/JamesWoolfenden/pike" \
+LABEL org.opencontainers.image.title="rampart" \
+      org.opencontainers.image.description="Secure AWS IAM bootstrap and permissions-boundary generation from Terraform, derived from Pike." \
+      org.opencontainers.image.source="https://github.com/qj0r9j0vc2/rampart" \
       org.opencontainers.image.licenses="Apache-2.0" \
-      org.opencontainers.image.authors="JamesWoolfenden"
+      org.opencontainers.image.authors="qj0r9j0vc2"
 
-COPY --from=builder /out/pike /usr/bin/pike
+COPY --from=builder /out/rampart /usr/bin/rampart
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
-USER pike
-WORKDIR /home/pike
+USER rampart
+WORKDIR /home/rampart
 
 ENTRYPOINT ["/entrypoint.sh"]

@@ -1,19 +1,23 @@
-# Pike
+# Rampart
 
-![alt text](pike.jfif "Pike")
-
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/jameswoolfenden/pike/graphs/commit-activity)
-[![CI](https://github.com/JamesWoolfenden/pike/actions/workflows/ci.yml/badge.svg)](https://github.com/JamesWoolfenden/pike/actions/workflows/ci.yml)
-[![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/pike.svg)](https://github.com/JamesWoolfenden/pike/releases/latest)
-[![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/JamesWoolfenden/pike.svg?label=latest)](https://github.com/JamesWoolfenden/pike/releases/latest)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/qj0r9j0vc2/rampart/graphs/commit-activity)
+[![CI](https://github.com/qj0r9j0vc2/rampart/actions/workflows/ci.yml/badge.svg)](https://github.com/qj0r9j0vc2/rampart/actions/workflows/ci.yml)
+[![Latest Release](https://img.shields.io/github/release/qj0r9j0vc2/rampart.svg)](https://github.com/qj0r9j0vc2/rampart/releases/latest)
+[![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/qj0r9j0vc2/rampart.svg?label=latest)](https://github.com/qj0r9j0vc2/rampart/releases/latest)
 ![OpenTofu/Terraform Version](https://img.shields.io/badge/tf-%3E%3D0.14.0-blue.svg)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 [![checkov](https://img.shields.io/badge/checkov-verified-brightgreen)](https://www.checkov.io/)
-[![Github All Releases](https://img.shields.io/github/downloads/jameswoolfenden/pike/total.svg)](https://github.com/JamesWoolfenden/pike/releases)
-[![codecov](https://codecov.io/gh/JamesWoolfenden/pike/branch/master/graph/badge.svg?token=S5SW3BHIQQ)](https://codecov.io/gh/JamesWoolfenden/pike)
-[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/7032/badge)](https://www.bestpractices.dev/projects/7032)
+[![Github All Releases](https://img.shields.io/github/downloads/qj0r9j0vc2/rampart/total.svg)](https://github.com/qj0r9j0vc2/rampart/releases)
 
-Pike is a tool to determine the minimum IAM permissions required to run OpenTofu/Terraform infrastructure code.
+Rampart is a tool to determine the minimum IAM permissions required to run OpenTofu/Terraform infrastructure code, and generate the AWS IAM bootstrap resources needed to delegate those permissions safely through an MFA-protected deploy role.
+
+## Origin
+
+Rampart is derived from [Pike](https://github.com/JamesWoolfenden/pike), originally created by James Woolfenden.
+
+Rampart extends Pike with AWS IAM bootstrap workflows, permissions-boundary generation, MFA-enforced role assumption and security-policy validation.
+
+This project is independently maintained and is not an official Pike release.
 
 **What's new?**
 
@@ -21,13 +25,13 @@ Pike is a tool to determine the minimum IAM permissions required to run OpenTofu
 - GCP compare, checks IAC permissions required versus a deployed role.
 - Backend detection S3 and GCP.
 
-Pike currently supports OpenTofu/Terraform and supports multiple providers (AWS, GCP and AZURE);
+Rampart currently supports OpenTofu/Terraform and supports multiple providers (AWS, GCP and AZURE);
 Azure is the newest with AWS having the most supported resources
-<https://github.com/JamesWoolfenden/pike/tree/master/src/mapping>.
+<https://github.com/qj0r9j0vc2/rampart/tree/master/src/mapping>.
 Feel free to submit PR or Issue if you find an issue or even better add new resources, and then I'll take a look at
 merging it ASAP.
 
-**Note on Placeholder Resources:** Some resources in the lookup maps (particularly GCP organization, folder, and billing-level resources) are marked with `placeholder` entries. These resources are recognized by Pike but do not have empirically validated IAM permissions because they require organization-level access or specialized account types that are difficult to test. When Pike encounters these resources, it will not error, but the permissions have not been validated through actual resource lifecycle testing.
+**Note on Placeholder Resources:** Some resources in the lookup maps (particularly GCP organization, folder, and billing-level resources) are marked with `placeholder` entries. These resources are recognized by Rampart but do not have empirically validated IAM permissions because they require organization-level access or specialized account types that are difficult to test. When Rampart encounters these resources, it will not error, but the permissions have not been validated through actual resource lifecycle testing.
 
 **CAVEAT** The outputs of this tool are your first step, if you have AWS, you can now generate resources partially,
 there are no conditions and even partial resources are wild-carded (for now).
@@ -43,27 +47,19 @@ unrecorded intentions can be impossible to infer.
 
 ## Quick Start
 
-Get started with Pike in 3 steps:
+Get started with Rampart in 3 steps:
 
-1. **Install Pike**
+1. **Install Rampart**
 
    ```shell
-   # macOS
-   brew tap jameswoolfenden/homebrew-tap
-   brew install jameswoolfenden/tap/pike
-
-   # Windows (using Scoop)
-   scoop bucket add iac https://github.com/JamesWoolfenden/scoop.git
-   scoop install pike
-
-   # Or install from source
-   go install github.com/jameswoolfenden/pike@latest
+   # Install from source
+   go install github.com/qj0r9j0vc2/rampart@latest
    ```
 
 2. **Scan your OpenTofu/Terraform code**
 
    ```shell
-   pike scan -d ./path/to/your/terraform
+   rampart scan -d ./path/to/your/terraform
    ```
 
    This outputs the minimum IAM permissions required as JSON.
@@ -71,23 +67,22 @@ Get started with Pike in 3 steps:
 3. **Generate as Terraform/OpenTofu code**
 
    ```shell
-   pike scan -o terraform -d ./path/to/your/terraform
+   rampart scan -o terraform -d ./path/to/your/terraform
    ```
 
    This creates an `aws_iam_policy` resource you can deploy.
 
-**Next steps:** Use `pike make` to deploy the policy directly, or `pike compare` to validate against existing policies. See [Usage](#usage) for all commands.
+**Next steps:** Use `rampart make` to deploy the policy directly, or `rampart compare` to validate against existing policies. See [Usage](#usage) for all commands.
 
 ## Table of Contents
 
 <!--toc:start-->
 
-- [Pike](#pike)
+- [Rampart](#rampart)
+  - [Origin](#origin)
   - [Quick Start](#quick-start)
   - [Table of Contents](#table-of-contents)
   - [Install](#install)
-    - [MacOS](#macos)
-    - [Windows](#windows)
     - [Docker](#docker)
   - [Usage](#usage)
     - [Scan](#scan)
@@ -116,7 +111,7 @@ Get started with Pike in 3 steps:
 
 Download the latest binary here:
 
-<https://github.com/JamesWoolfenden/pike/releases>
+<https://github.com/qj0r9j0vc2/rampart/releases>
 
 Install from code:
 
@@ -126,41 +121,19 @@ Install from code:
 Install remotely:
 
 ```shell
-go install  github.com/jameswoolfenden/pike@latest
+go install  github.com/qj0r9j0vc2/rampart@latest
 ```
 
-### MacOS
-
-```shell
-brew tap jameswoolfenden/homebrew-tap
-brew install jameswoolfenden/tap/pike
-```
-
-### Windows
-
-I'm now using Scoop to distribute releases, it's much quicker to update and easier to manage than previous methods,
-you can install scoop from <https://scoop.sh/>.
-
-Add my scoop bucket:
-
-```shell
-scoop bucket add iac https://github.com/JamesWoolfenden/scoop.git
-```
-
-Then you can install a tool:
-
-```bash
-scoop install pike
-```
+Homebrew and Scoop distribution channels are not set up yet — install from source or the GitHub release binaries above in the meantime.
 
 ### Docker
 
 ```shell
-docker pull jameswoolfenden/pike
-docker run --tty --volume /local/path/to/tf:/tf jameswoolfenden/pike scan -d /tf
+docker pull qj0r9j0vc2/rampart
+docker run --tty --volume /local/path/to/tf:/tf qj0r9j0vc2/rampart scan -d /tf
 ```
 
-<https://hub.docker.com/repository/docker/jameswoolfenden/pike>
+<https://hub.docker.com/repository/docker/qj0r9j0vc2/rampart>
 
 ## Usage
 
@@ -169,7 +142,7 @@ docker run --tty --volume /local/path/to/tf:/tf jameswoolfenden/pike scan -d /tf
 To scan a directory containing OpenTofu/Terraform files:
 
 ```shell
-./pike scan -d .\terraform\
+./rampart scan -d .\terraform\
 {
     "Version": "2012-10-17",
     "Statement": {
@@ -205,7 +178,7 @@ To scan a directory containing OpenTofu/Terraform files:
 You can also generate the policy as OpenTofu/Terraform instead:
 
 ```bash
-$pike scan -o terraform -d ../modules/aws/terraform-aws-activemq
+$rampart scan -o terraform -d ../modules/aws/terraform-aws-activemq
 resource "aws_iam_policy" "terraformXVlBzgba" {
   name        = "terraformXVlBzgba"
   path        = "/"
@@ -286,7 +259,7 @@ resource "aws_iam_policy" "terraformXVlBzgba" {
 And I am working on further enhancements to policy generation, if you have AWS auth installed:
 
 ```shell
-e:\pike scan -d . -i -e
+e:\rampart scan -d . -i -e
 9:13AM DBG terraform init at E:\Code\modules\aws\terraform-aws-activemq
 9:13AM DBG downloaded ip
 resource "aws_iam_policy" "terraform_pike" {
@@ -366,7 +339,7 @@ resource "aws_iam_policy" "terraform_pike" {
 
 ### Escalation-class permissions
 
-When a Terraform config manages its own IAM (`google_project_iam_*`, `aws_iam_role_policy*`, `azurerm_role_assignment`), the minimum-sufficient role pike computes is also owner-equivalent — the holder can grant themselves anything. Pike always warns about these on stderr:
+When a Terraform config manages its own IAM (`google_project_iam_*`, `aws_iam_role_policy*`, `azurerm_role_assignment`), the minimum-sufficient role rampart computes is also owner-equivalent — the holder can grant themselves anything. Rampart always warns about these on stderr:
 
 ```text
 WARNING: escalation-class permissions detected — holder can grant themselves additional access.
@@ -382,7 +355,7 @@ No flag is needed to enable this; it fires whenever escalation-class permissions
 Use `--output split` (or `-o split`) to emit two permission sets — `base` (safe to distribute broadly) and `escalation` (owner-equivalent, restrict to protected branches) — instead of a single flat policy:
 
 ```bash
-pike scan -o split -d ./terraform
+rampart scan -o split -d ./terraform
 ```
 
 ```json
@@ -409,10 +382,10 @@ With `--write` / `-w`, the split JSON is saved to `.pike/pike.generated_policy.s
 
 ### Output
 
-If you select the -w flag, pike will write out the role/policy required to build your project into the .pike folder:
+If you select the -w flag, rampart will write out the role/policy required to build your project into the .pike folder:
 
 ```bash
-$pike scan -w -i -d .
+$rampart scan -w -i -d .
 2022/09/17 13:50:51 terraform init at .
 2022/09/17 13:50:51 downloaded ip
 ```
@@ -431,7 +404,7 @@ Which you can deploy using OpenTofu/Terraform to create the role/policy to build
 You can now deploy the policy you need directly (AWS only so far):
 
 ```bash
-$pike make -d ../modules/aws/terraform-aws-apigateway/
+$rampart make -d ../modules/aws/terraform-aws-apigateway/
 
 2022/09/18 08:53:41 terraform init at ..\modules\aws\terraform-aws-apigateway\
 2022/09/18 08:53:41 modules not found at ..\modules\aws\terraform-aws-apigateway\
@@ -462,7 +435,7 @@ To authenticate with the GitHub API, you will need to set your GitHub Personal A
 To Invoke a workflow, it is then:
 
 ```shell
-pike invoke -workflow master.yml -branch master -repository JamesWoolfenden/terraform-aws-s3
+rampart invoke -workflow master.yml -branch master -repository JamesWoolfenden/terraform-aws-s3
 ```
 
 I created Invoke to be used in tandem with the new remote command which supplies temporary credentials to a workflow.
@@ -470,7 +443,7 @@ I created Invoke to be used in tandem with the new remote command which supplies
 **Note The GitHub API is rate-limited, usually 5000 calls per hour.
 
 ```shell
-pike make -d ./module/aws/terraform-aws-s3/example/examplea
+rampart make -d ./module/aws/terraform-aws-s3/example/examplea
 ```
 
 ### Apply
@@ -478,24 +451,24 @@ pike make -d ./module/aws/terraform-aws-s3/example/examplea
 Apply is an extension to make and will apply the policy and role and use that role to create your infrastructure:
 
 ```shell
-pike apply -d ./module/aws/terraform-aws-s3/example/examplea -region eu-west-2
+rampart apply -d ./module/aws/terraform-aws-s3/example/examplea -region eu-west-2
 ```
 
-It is intended for testing and developing the permissions for Pike itself
+It is intended for testing and developing the permissions for Rampart itself
 
 ### Remote
 
 Remote uses the core code of make and apply, to write temporary AWS credentials(only so far) into your workflow.
 
 ```shell
-pike remote -d ./module/aws/terraform-aws-s3/example/examplea -region eu-west-2 -repository terraform-aws-s3
+rampart remote -d ./module/aws/terraform-aws-s3/example/examplea -region eu-west-2 -repository terraform-aws-s3
 ```
 
 ### Readme
 
-Pike can now be used to update a projects README.md file:
+Rampart can now be used to update a projects README.md file:
 
-./pike readme -o terraform -d ..\modules\aws\terraform-aws-activemq\
+./rampart readme -o terraform -d ..\modules\aws\terraform-aws-activemq\
 
 This looks in the README for the delimiters:
 
@@ -567,7 +540,7 @@ Want to check your deployed IAM policy against your infrastructure code requirem
 
 This works for AWS and GCP.
 
->$./pike compare -d ../modules/aws/terraform-aws-appsync -a arn:aws:iam::680235478471:policy/basic
+>$./rampart compare -d ../modules/aws/terraform-aws-appsync -a arn:aws:iam::680235478471:policy/basic
 
 ```markdown
 IAM Policy arn:aws:iam::680235478471:policy/basic versus Infrastructure Code ../modules/aws/terraform-aws-appsync
@@ -643,10 +616,10 @@ IAM Policy arn:aws:iam::680235478471:policy/basic versus Infrastructure Code ../
  }
 ```
 
-Pike always warns to stderr when the computed policy contains escalation-class permissions (see [Escalation-class permissions](#escalation-class-permissions)). Pass `--strict` to also exit non-zero in that case, even if the policies otherwise match — useful in CI to enforce the two-role pattern:
+Rampart always warns to stderr when the computed policy contains escalation-class permissions (see [Escalation-class permissions](#escalation-class-permissions)). Pass `--strict` to also exit non-zero in that case, even if the policies otherwise match — useful in CI to enforce the two-role pattern:
 
 ```bash
-pike compare --strict -d ./terraform -a arn:aws:iam::680235478471:policy/terraform_pike
+rampart compare --strict -d ./terraform -a arn:aws:iam::680235478471:policy/terraform_pike
 ```
 
 ## Pull
@@ -655,12 +628,12 @@ Pull adds the ability to work with Git repositories (thanks to **go-git**),
 to output the required permissions in JSON or OpenTofu/Terraform:
 
 ```bash
-./pike  pull
+./rampart  pull
 NAME:
-   pike pull - Clones remote repo and scans it using pike
+   rampart pull - Clones remote repo and scans it using rampart
 
 USAGE:
-   pike pull [command options] [arguments...]
+   rampart pull [command options] [arguments...]
 
 OPTIONS:
    --directory value, -d value        Directory to scan (defaults to .) (default: ".")
@@ -676,7 +649,7 @@ OPTIONS:
 Like so:
 
 ```hcl
-$ ./pike.exe pull -r https://github.com/JamesWoolfenden/terraform-aws-codebuild -i -d .
+$ ./rampart.exe pull -r https://github.com/JamesWoolfenden/terraform-aws-codebuild -i -d .
 10:31PM INF .destination was not empty, removing
 10:31PM INF git clone https://github.com/JamesWoolfenden/terraform-aws-codebuild .destination --recursive
 10:31PM DBG terraform init at E:\Code\pike\.destination
@@ -817,58 +790,58 @@ resource "aws_iam_policy" "terraform_pike" {
 `runtime` inspects IAC for permissions that only matter at runtime — for example, a GCP Cloud Run service account that needs to read from a Pub/Sub topic at request time rather than at `terraform apply` time.
 
 ```shell
-pike runtime -d ./path/to/your/terraform -p gcp
+rampart runtime -d ./path/to/your/terraform -p gcp
 ```
 
 Only GCP is supported today. Passing `--provider aws` or `--provider azure` returns an "not yet implemented" error rather than misleading stub output.
 
 ### Watch
 
-`watch` polls IAM to block until a named policy's changes have propagated - useful immediately after `pike make` or `pike apply`, where AWS eventual consistency otherwise forces you to add ad-hoc sleeps in CI.
+`watch` polls IAM to block until a named policy's changes have propagated - useful immediately after `rampart make` or `rampart apply`, where AWS eventual consistency otherwise forces you to add ad-hoc sleeps in CI.
 
 ```shell
-pike watch --arn arn:aws:iam::ACCOUNT_ID:policy/my-policy --wait 100
+rampart watch --arn arn:aws:iam::ACCOUNT_ID:policy/my-policy --wait 100
 ```
 
 `--wait` is in tenths of seconds.
 
 ### Parse
 
-`parse` walks a cloned Terraform provider repository and extracts its resources and data sources into a `<name>-members.json` lookup file. It is how Pike's provider mapping tables are regenerated (see `.github/workflows/resources.yml`) and is mainly useful to contributors adding provider coverage.
+`parse` walks a cloned Terraform provider repository and extracts its resources and data sources into a `<name>-members.json` lookup file. It is how Rampart's provider mapping tables are regenerated (see `.github/workflows/resources.yml`) and is mainly useful to contributors adding provider coverage.
 
 ```shell
-pike parse -d /path/to/terraform-provider-aws -name aws
+rampart parse -d /path/to/terraform-provider-aws -name aws
 ```
 
 Supported names today: `aws`, `azurerm`, `google`.
 
 ### Deprecated
 
-`deprecated` lists the resources and datasources flagged as deprecated in the latest provider schemas Pike has embedded. It's a quick way to audit your Terraform before bumping a provider major — anything listed here will either already be warning on `pike scan` or is queued to be removed in a future provider release.
+`deprecated` lists the resources and datasources flagged as deprecated in the latest provider schemas Rampart has embedded. It's a quick way to audit your Terraform before bumping a provider major — anything listed here will either already be warning on `rampart scan` or is queued to be removed in a future provider release.
 
 ```shell
-pike deprecated                 # all providers, text output
-pike deprecated -n google       # google only
-pike deprecated -o json         # machine-readable
+rampart deprecated                 # all providers, text output
+rampart deprecated -n google       # google only
+rampart deprecated -o json         # machine-readable
 ```
 
-The data is refreshed weekly by the `Resources` GitHub workflow and baked into each release binary; running `pike deprecated` offline works because no network call is made.
+The data is refreshed weekly by the `Resources` GitHub workflow and baked into each release binary; running `rampart deprecated` offline works because no network call is made.
 
 ## Help
 
 ```bash
-./pike -h
+./rampart -h
 NAME:
-   pike - Generate IAM policy from your IAC code
+   rampart - Generate IAM policy from your IAC code
 
 USAGE:
-   pike [global options] command [command options]
+   rampart [global options] command [command options]
 
 VERSION:
    9.9.9
 
 AUTHOR:
-   James Woolfenden <james.woolfenden@gmail.com>
+   qj0r9j0vc2
 
 COMMANDS:
    apply, a    Create a policy and use it to instantiate the IAC
@@ -877,7 +850,7 @@ COMMANDS:
    invoke, i   Triggers a gitHub action specified with the workflow flag
    make, m     make the policy/role required for this IAC to deploy
    parse, p    Triggers a gitHub action specified with the workflow flag
-   pull, l     Clones remote repo and scans it using pike
+   pull, l     Clones remote repo and scans it using rampart
    readme, r   Looks in dir for a README.md and updates it with the Policy required to build the code
    remote, o   Create/Update the Policy and set credentials/secret for Github Action
    scan, s     scan a directory for IAM code
@@ -906,14 +879,14 @@ Make build
 ## Inspect
 
 This new feature is in *beta* and is not yet fully supported and currently only for AWS.
-When Pike is run with inspect, it will scan your code and output a policy that is required to deploy the code, as normal,
+When Rampart is run with inspect, it will scan your code and output a policy that is required to deploy the code, as normal,
 but it will also detect the running IAM credentials.
 It will then report on the overlap between the running credentials and the minimum policy.
 
 This works with AWS IAM user, group and role/assumed role credentials.
 
 ```bash
-./pike inspect -d terraform/aws
+./rampart inspect -d terraform/aws
 The following are over-permissive:
 s3:*
 s3-object-lambda:*
@@ -1040,7 +1013,7 @@ func GetAWSResourcePermissions(result template) []interface{} {
 ```
 
 Also add an example .tf file into the folder **terraform/<cloud>/backups**. This helps test that all your
-new code is picked up by pike.
+new code is picked up by rampart.
 
 ## Related Tools
 
@@ -1048,4 +1021,4 @@ new code is picked up by pike.
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=jameswoolfenden/pike&type=Date)](https://star-history.com/#jameswoolfenden/pike&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=qj0r9j0vc2/rampart&type=Date)](https://star-history.com/#qj0r9j0vc2/rampart&Date)

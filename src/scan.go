@@ -11,8 +11,8 @@ import (
 	"time"
 
 	"github.com/hashicorp/terraform-exec/tfexec"
-	"github.com/jameswoolfenden/pike/internal/provider"
-	"github.com/jameswoolfenden/pike/internal/tfinstall"
+	"github.com/qj0r9j0vc2/rampart/internal/provider"
+	"github.com/qj0r9j0vc2/rampart/internal/tfinstall"
 	"github.com/rs/zerolog/log"
 )
 

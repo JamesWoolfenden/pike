@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+Project forked from [Pike](https://github.com/JamesWoolfenden/pike) v1.0.0 and renamed to Rampart (module path, binary and CLI name). Entries below this point describe releases made as Pike prior to the fork; see [README.md](README.md#origin) for attribution.
+
 ## v1.0.0 (2026-06-03)
 
 ### Breaking changes

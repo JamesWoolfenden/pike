@@ -1,4 +1,4 @@
-module github.com/jameswoolfenden/pike
+module github.com/qj0r9j0vc2/rampart
 
 go 1.26.5
 

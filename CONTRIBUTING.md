@@ -1,4 +1,4 @@
-# Contributing to Pike
+# Contributing to Rampart
 
 ## Getting Started
 
@@ -57,7 +57,7 @@ make goldens
 ### Adding Resource Mappings
 
 New resource-type permission mappings live under `src/mapping/<provider>/resource/<service>/<type>.json`
-(or `data/` for data sources). Filename must exactly match the Terraform resource type — pike resolves
+(or `data/` for data sources). Filename must exactly match the Terraform resource type — rampart resolves
 mappings by filename, not by any registered list.
 
 Every new mapping must also include a minimal example `.tf` fixture under

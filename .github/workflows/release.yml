@@ -40,7 +40,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
           PASSPHRASE: ${{ secrets.PASSPHRASE }}
-          HOMEBREW_TAP_GITHUB_TOKEN: ${{ secrets.HOMEBREW_TAP_GITHUB_TOKEN }}
   publish-dockerhub:
     permissions:
       contents: read
@@ -52,7 +51,7 @@ jobs:
       - name: Publish to Registry
         uses: elgohr/Publish-Docker-Github-Action@1c2f28ccd9476e8a936ac9a1f287405504c93304 # v5
         with:
-          name: jameswoolfenden/pike
+          name: qj0r9j0vc2/rampart
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
           tags: "latest,${{ github.ref_name }}"
@@ -61,20 +60,8 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
-          repository: jameswoolfenden/pike
+          repository: qj0r9j0vc2/rampart
           short-description: ${{ github.event.repository.description }}
           readme-filepath: ./README.md
-  update-scoop:
-    permissions:
-      contents: read
-    runs-on: ubuntu-latest
-    needs:
-      - goreleaser
-    steps:
-      - name: Repository Dispatch
-        uses: peter-evans/repository-dispatch@28959ce8df70de7be546dd1250a005dd32156697 # v4.0.1
-        with:
-          token: ${{ secrets.PAT }}
-          repository: jameswoolfenden/scoop
-          event-type: pike
-          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
+# update-scoop intentionally omitted: it dispatched to jameswoolfenden/scoop,
+# the upstream author's own bucket repo. Rampart has no scoop bucket yet.

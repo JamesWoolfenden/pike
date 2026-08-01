@@ -7,8 +7,8 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/jameswoolfenden/pike/internal/parse"
-	"github.com/jameswoolfenden/pike/internal/provider"
+	"github.com/qj0r9j0vc2/rampart/internal/parse"
+	"github.com/qj0r9j0vc2/rampart/internal/provider"
 	"github.com/rs/zerolog/log"
 )
 

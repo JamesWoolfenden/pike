@@ -1,7 +1,7 @@
 #!/usr/bin/env pwsh
 <#
 .SYNOPSIS
-    Creates resource or datasource mappings for Pike (supports AWS, Azure, GCP)
+    Creates resource or datasource mappings for Rampart (supports AWS, Azure, GCP)
 .PARAMETER resource
     The full resource name (e.g., aws_s3_bucket, azurerm_storage_account, google_storage_bucket)
 .PARAMETER type
@@ -350,7 +350,7 @@ if ($provider -notin $supportedProviders)
     exit 1
 }
 
-Write-Host "`nPike Resource Creator" -ForegroundColor Cyan
+Write-Host "`nRampart Resource Creator" -ForegroundColor Cyan
 Write-Host ("-" * 60) -ForegroundColor Gray
 Write-Host "Provider: $provider" -ForegroundColor Gray
 Write-Host "Resource: $resource" -ForegroundColor Gray
@@ -444,14 +444,14 @@ else
 # Create Terraform test file
 if ($type -eq "data")
 {
-    $content = "data `"$resource`" `"pike`" {`n}`n`n"
-    $output = "output `"$resource`" {`n  value = data.$resource.pike`n}"
+    $content = "data `"$resource`" `"rampart`" {`n}`n`n"
+    $output = "output `"$resource`" {`n  value = data.$resource.rampart`n}"
     $content = $content + $output
     $tffile = path terraform $provider "$type.$resource.tf"
 }
 else
 {
-    $content = "resource `"$resource`" `"pike`" {}"
+    $content = "resource `"$resource`" `"rampart`" {}"
     $tffile = path terraform $provider "$resource.tf"
 }
 

@@ -17,7 +17,7 @@ builds:
     flags:
       - -trimpath
     ldflags:
-      - -s -w -X github.com/jameswoolfenden/pike/src.Version={{.Version}}
+      - -s -w -X github.com/qj0r9j0vc2/rampart/src.Version={{.Version}}
     mod_timestamp: "{{ .CommitTimestamp }}"
     goos:
       - darwin
@@ -61,20 +61,5 @@ signs:
       - "--detach-sign"
       - "${artifact}"
 
-homebrew_casks:
-  - name: pike
-    repository:
-      owner: JamesWoolfenden
-      name: homebrew-tap
-      token: "{{ .Env.HOMEBREW_TAP_GITHUB_TOKEN }}"
-    commit_author:
-      name: "GitHub Action"
-      email: action@github.com
-    homepage: "https://github.com/JamesWoolfenden/pike#readme"
-    description: "Pike is a tool for determining the permissions or policy required for IAC code"
-    hooks:
-      post:
-        install: |
-          if system_command("/usr/bin/xattr", args: ["-h"]).exit_status == 0
-            system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/pike"]
-          end
+# homebrew_casks intentionally omitted: the upstream cask published to
+# JamesWoolfenden/homebrew-tap. Rampart has no tap of its own yet.

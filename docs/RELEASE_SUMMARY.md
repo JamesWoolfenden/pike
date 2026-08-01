@@ -1,4 +1,4 @@
-# Pike Release Script - Summary
+# Rampart Release Script - Summary
 
 ## What Was Done
 
@@ -91,7 +91,7 @@ pwsh release.ps1 -Provider google
 2. **Add new resource (any provider):**
 
    ```bash
-   cd /path/to/pike
+   cd /path/to/rampart
 
    # AWS
    pwsh resource.ps1 -resource aws_s3_bucket

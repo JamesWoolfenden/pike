@@ -7,8 +7,8 @@ import (
 	"sort"
 	"time"
 
-	"github.com/jameswoolfenden/pike/internal/parse"
-	pike "github.com/jameswoolfenden/pike/src"
+	"github.com/qj0r9j0vc2/rampart/internal/parse"
+	pike "github.com/qj0r9j0vc2/rampart/src"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
 	"github.com/urfave/cli/v2"
@@ -43,7 +43,7 @@ func main() {
 	app := &cli.App{
 		EnableBashCompletion: true,
 		Flags:                []cli.Flag{},
-		UsageText:            "Pike is a CLI for investigating IAM permissions",
+		UsageText:            "Rampart is a CLI for investigating IAM permissions, derived from Pike",
 		Commands: []*cli.Command{
 			{
 				Name:    "make",
@@ -474,7 +474,7 @@ func main() {
 					&cli.StringFlag{
 						Name:        "repository",
 						Aliases:     []string{"r"},
-						Usage:       "The github repository and owner (to set secrets) e.g. jameswoolfenden/pike   ",
+						Usage:       "The github repository and owner (to set secrets) e.g. qj0r9j0vc2/rampart   ",
 						Destination: &repository,
 					},
 					&cli.StringFlag{
@@ -551,7 +551,7 @@ func main() {
 			{
 				Name:    "pull",
 				Aliases: []string{"l"},
-				Usage:   "Clones remote repo and scans it using pike",
+				Usage:   "Clones remote repo and scans it using rampart",
 				Flags: []cli.Flag{
 					&cli.StringFlag{
 						Name:        "directory",
@@ -610,7 +610,7 @@ func main() {
 				Name:      "version",
 				Aliases:   []string{"v"},
 				Usage:     "Outputs the application version",
-				UsageText: "pike version",
+				UsageText: "rampart version",
 				Action: func(*cli.Context) error {
 					fmt.Println(pike.Version)
 
@@ -618,10 +618,10 @@ func main() {
 				},
 			},
 		},
-		Name:     "pike",
+		Name:     "rampart",
 		Usage:    "Generate IAM policy from your IAC code",
 		Compiled: time.Time{},
-		Authors:  []*cli.Author{{Name: "James Woolfenden", Email: "james.woolfenden@gmail.com"}},
+		Authors:  []*cli.Author{{Name: "qj0r9j0vc2"}},
 		Version:  pike.Version,
 	}
 	sort.Sort(cli.FlagsByName(app.Flags))

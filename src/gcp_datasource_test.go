@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	pike "github.com/jameswoolfenden/pike/src"
+	pike "github.com/qj0r9j0vc2/rampart/src"
 )
 
 func TestGetGCPDataPermissions(t *testing.T) {
