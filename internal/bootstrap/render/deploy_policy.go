@@ -23,10 +23,21 @@ type Document struct {
 
 // Statement is a single Allow/Deny block within a Document.
 type Statement struct {
-	Sid      string   `json:"Sid"`
-	Effect   string   `json:"Effect"`
-	Action   []string `json:"Action"`
-	Resource []string `json:"Resource"`
+	Sid       string     `json:"Sid"`
+	Effect    string     `json:"Effect"`
+	Action    []string   `json:"Action"`
+	Resource  []string   `json:"Resource"`
+	Condition *Condition `json:"Condition,omitempty"`
+}
+
+// Condition is an IAM policy condition block. Only StringEquals is
+// needed for the conditions Rampart generates today: CreateRole's
+// PermissionsBoundary check and the PassRole/CreateServiceLinkedRole
+// service allowlists (spec section 12). Values are either a single
+// string or a string list; encoding/json sorts map keys automatically,
+// so this stays canonical (section 8.1) without extra work.
+type Condition struct {
+	StringEquals map[string]any `json:"StringEquals,omitempty"`
 }
 
 // DeployPolicy renders deploy-policy.json: the permissions Terraform
