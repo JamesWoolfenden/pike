@@ -65,7 +65,6 @@ func WriteOutput(outPolicy OutputPolicy, outputType string, scanPath string, out
 		}
 
 		err = os.MkdirAll(newPath, 0o750)
-
 		if err != nil {
 			return &makeDirectoryError{directory: newPath, err: err}
 		}
@@ -77,7 +76,6 @@ func WriteOutput(outPolicy OutputPolicy, outputType string, scanPath string, out
 			if outPolicy.AWS.Terraform != "" {
 				roleFile := filepath.Join(newPath, "aws_iam_role.terraform_pike.tf")
 				err = os.WriteFile(roleFile, roleTemplate, 0o600)
-
 				if err != nil {
 					return &writeFileError{file: roleFile, err: err}
 				}

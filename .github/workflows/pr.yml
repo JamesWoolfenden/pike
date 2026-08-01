@@ -23,7 +23,14 @@ jobs:
       - name: gofumpt
         env:
           GOTOOLCHAIN: auto
-        uses: jameswoolfenden/auto-gofmt@658e0ca3f44450eb0229a26371b1432db51059a7 # v0.4.0
+        run: |
+          go install mvdan.cc/gofumpt@v0.9.2
+          diff="$(gofumpt -l .)"
+          if [ -n "$diff" ]; then
+            echo "The following files are not gofumpt-formatted (run 'make fmt'):"
+            echo "$diff"
+            exit 1
+          fi
       - name: golangci-lint
         uses: golangci/golangci-lint-action@ba0d7d2ec06a0ea1cb5fa41b2e4a3ab91d21278a # v9.3.0
         with:

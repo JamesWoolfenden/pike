@@ -53,7 +53,6 @@ func ReadModuleJson(r io.Reader) (ModuleJson, error) {
 
 	var read modulesJson
 	err = json.Unmarshal(src, &read)
-
 	if err != nil {
 		return nil, &unmarshallJSONError{err, ""}
 	}

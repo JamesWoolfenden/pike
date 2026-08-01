@@ -121,7 +121,6 @@ func compareGCPRole(directory string, arn string, init bool, strict bool) (bool,
 
 	var projectID *string
 	projectID, err = GetEnv("GCP_PROJECT")
-
 	if err != nil {
 		return false, &EnvVariableNotSetError{"GCP_PROJECT"}
 	}

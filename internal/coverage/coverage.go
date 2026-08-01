@@ -109,7 +109,6 @@ func coverageAzure() error {
 	Prepend := resourceTable(missing, data, "Azure") + deprecatedSection(data)
 	target = Prepend + target
 	err = os.WriteFile("azure.md", []byte(target), 0o600)
-
 	if err != nil {
 		return &fileWriteError{err}
 	}
@@ -147,7 +146,6 @@ func coverageGcp() error {
 
 	target = Prepend + target
 	err = os.WriteFile("google.md", []byte(target), 0o600)
-
 	if err != nil {
 		return &fileWriteError{err}
 	}
