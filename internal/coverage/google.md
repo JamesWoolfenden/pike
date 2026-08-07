@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 85.26      |  1134       |  1330            |
+| Resources  | 85.07      |  1134       |  1333            |
 | Datasource | 98.70      |   455       |   461             |
 
 ## Deprecated
 
-29 resources and 7 datasources are flagged as deprecated in provider schema v7.42.0. Users pinned to an older provider major may already be affected when they upgrade.
+29 resources and 7 datasources are flagged as deprecated in provider schema v7.43.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -75,6 +75,7 @@
 ./resource.ps1 google_apihub_runtime_project_attachment
 ./resource.ps1 google_artifact_registry_project_config
 ./resource.ps1 google_artifact_registry_rule
+./resource.ps1 google_bigquery_analytics_hub_query_template
 ./resource.ps1 google_bigquery_reservation_group
 ./resource.ps1 google_ces_app_root_agent_association
 ./resource.ps1 google_chronicle_big_query_export
@@ -91,6 +92,7 @@
 ./resource.ps1 google_chronicle_native_dashboard
 ./resource.ps1 google_chronicle_parser
 ./resource.ps1 google_chronicle_parser_extension
+./resource.ps1 google_cloud_support_support_event_subscription
 ./resource.ps1 google_compute_bulk_per_instance_config
 ./resource.ps1 google_compute_firewall_policy_with_rules
 ./resource.ps1 google_compute_global_vm_extension_policy
@@ -185,6 +187,7 @@
 ./resource.ps1 google_migration_center_settings
 ./resource.ps1 google_migration_center_source
 ./resource.ps1 google_network_connectivity_destination
+./resource.ps1 google_network_connectivity_gateway_advertised_route
 ./resource.ps1 google_network_connectivity_group
 ./resource.ps1 google_network_connectivity_internal_range
 ./resource.ps1 google_network_connectivity_multicloud_data_transfer_config

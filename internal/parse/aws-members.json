@@ -948,6 +948,7 @@
         "aws_macie2_member",
         "aws_macie2_organization_admin_account",
         "aws_macie2_organization_configuration",
+        "aws_mailmanager_rule_set",
         "aws_mailmanager_traffic_policy",
         "aws_main_route_table_association",
         "aws_media_convert_queue",
@@ -1111,10 +1112,12 @@
         "aws_pipes_pipe",
         "aws_placement_group",
         "aws_prometheus_alert_manager_definition",
+        "aws_prometheus_anomaly_detector",
         "aws_prometheus_query_logging_configuration",
         "aws_prometheus_resource_policy",
         "aws_prometheus_rule_group_namespace",
         "aws_prometheus_scraper",
+        "aws_prometheus_scraper_logging_configuration",
         "aws_prometheus_workspace",
         "aws_prometheus_workspace_configuration",
         "aws_proxy_protocol_policy",
@@ -1206,6 +1209,7 @@
         "aws_rekognition_project",
         "aws_rekognition_stream_processor",
         "aws_resiliencehub_resiliency_policy",
+        "aws_resiliencehubv2_policy",
         "aws_resourceexplorer2_index",
         "aws_resourceexplorer2_view",
         "aws_resourcegroups_group",
@@ -2384,5 +2388,5 @@
         "aws_s3_bucket_object": "",
         "aws_s3_bucket_objects": ""
     },
-    "providerVersion": "6.57.1"
+    "providerVersion": "6.58.0"
 }

@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 89.57      |  1511       |  1687            |
+| Resources  | 89.36      |  1511       |  1691            |
 | Datasource | 98.51      |   663       |   673             |
 
 ## Deprecated
 
-14 resources and 3 datasources are flagged as deprecated in provider schema v6.57.1. Users pinned to an older provider major may already be affected when they upgrade.
+14 resources and 3 datasources are flagged as deprecated in provider schema v6.58.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -112,6 +112,7 @@
 ./resource.ps1 aws_lakeformation_lf_tag_expression
 ./resource.ps1 aws_lambda_capacity_provider
 ./resource.ps1 aws_lambda_function_scaling_config
+./resource.ps1 aws_mailmanager_rule_set
 ./resource.ps1 aws_mailmanager_traffic_policy
 ./resource.ps1 aws_msk_topic
 ./resource.ps1 aws_nat_gateway_eip_association
@@ -147,7 +148,9 @@
 ./resource.ps1 aws_outposts_capacity_task
 ./resource.ps1 aws_pinpointsmsvoicev2_event_destination
 ./resource.ps1 aws_pinpointsmsvoicev2_pool
+./resource.ps1 aws_prometheus_anomaly_detector
 ./resource.ps1 aws_prometheus_resource_policy
+./resource.ps1 aws_prometheus_scraper_logging_configuration
 ./resource.ps1 aws_quicksight_custom_permissions
 ./resource.ps1 aws_quicksight_ip_restriction
 ./resource.ps1 aws_quicksight_key_registration
@@ -157,6 +160,7 @@
 ./resource.ps1 aws_ram_resource_share_associations_exclusive
 ./resource.ps1 aws_redshift_idc_application
 ./resource.ps1 aws_redshift_namespace_registration
+./resource.ps1 aws_resiliencehubv2_policy
 ./resource.ps1 aws_s3_bucket_abac
 ./resource.ps1 aws_s3_bucket_metadata_configuration
 ./resource.ps1 aws_s3control_multi_region_access_point_routes

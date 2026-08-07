@@ -138,6 +138,7 @@
         "google_bigquery_analytics_hub_listing_iam_member",
         "google_bigquery_analytics_hub_listing_iam_policy",
         "google_bigquery_analytics_hub_listing_subscription",
+        "google_bigquery_analytics_hub_query_template",
         "google_bigquery_bi_reservation",
         "google_bigquery_capacity_commitment",
         "google_bigquery_connection",
@@ -262,6 +263,7 @@
         "google_cloud_security_compliance_cloud_control",
         "google_cloud_security_compliance_framework",
         "google_cloud_security_compliance_framework_deployment",
+        "google_cloud_support_support_event_subscription",
         "google_cloud_tasks_queue",
         "google_cloud_tasks_queue_iam_binding",
         "google_cloud_tasks_queue_iam_member",
@@ -985,6 +987,7 @@
         "google_netapp_volume_replication",
         "google_netapp_volume_snapshot",
         "google_network_connectivity_destination",
+        "google_network_connectivity_gateway_advertised_route",
         "google_network_connectivity_group",
         "google_network_connectivity_hub",
         "google_network_connectivity_hub_iam_binding",
@@ -1834,5 +1837,5 @@
         "google_notebooks_instance_iam_policy": "",
         "google_notebooks_runtime_iam_policy": ""
     },
-    "providerVersion": "7.42.0"
+    "providerVersion": "7.43.0"
 }
