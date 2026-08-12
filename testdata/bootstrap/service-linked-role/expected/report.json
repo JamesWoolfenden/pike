@@ -1,0 +1,35 @@
+{
+  "artifacts": {
+    "deploy_boundary": "sha256:6fda33e23b7bf0d8740c5a246639d2a035903da3b09b52c14ef6e19dc541b5ac",
+    "deploy_policy": "sha256:044e216285b861dde9eee3e6d0443d901c285d6315e3e714664ab1d475213be9",
+    "workload_boundary": "sha256:838c911da43aa22dd29ccf7c4280a2cb77ab35287bd3b6a84c3370fe5d210afd"
+  },
+  "generated_at": "2026-07-30T00:00:00Z",
+  "generator": {
+    "name": "pike",
+    "version": "0.1.0"
+  },
+  "inputs": {
+    "config_hash": "sha256:c34fe2d3569807623d879fa9966ad199d05cb6d12a328c8fa64f6873cf7916b5",
+    "terraform_directory": "./terraform"
+  },
+  "rewrites": [
+    {
+      "action": "iam:CreateServiceLinkedRole",
+      "classification": "service-linked-role",
+      "rule": "CreateApprovedServiceLinkedRoles"
+    }
+  ],
+  "scanner": {
+    "mapping_revision": "test",
+    "name": "pike"
+  },
+  "schema_version": 1,
+  "summary": {
+    "blocking_findings": 0,
+    "escalation_actions": 3,
+    "iam_actions": 5,
+    "total_actions": 5
+  },
+  "warnings": null
+}

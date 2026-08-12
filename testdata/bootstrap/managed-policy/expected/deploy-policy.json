@@ -1,0 +1,15 @@
+{
+  "Statement": [
+    {
+      "Action": [
+        "iam:CreatePolicyVersion"
+      ],
+      "Effect": "Allow",
+      "Resource": [
+        "*"
+      ],
+      "Sid": "DeployPolicy0"
+    }
+  ],
+  "Version": "2012-10-17"
+}

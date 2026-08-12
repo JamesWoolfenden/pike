@@ -20,6 +20,9 @@ Pike is a tool to determine the minimum IAM permissions required to run OpenTofu
 - JSON modules support.
 - GCP compare, checks IAC permissions required versus a deployed role.
 - Backend detection S3 and GCP.
+- `pike bootstrap` (**Experimental**, AWS-only): generates a permissions-boundary-constrained deploy role so a
+  Terraform deploy identity's IAM-management access can't be used to escalate to account admin. See
+  [Bootstrap (Experimental)](#bootstrap-experimental).
 
 Pike currently supports OpenTofu/Terraform and supports multiple providers (AWS, GCP and AZURE);
 Azure is the newest with AWS having the most supported resources
@@ -102,6 +105,7 @@ Get started with Pike in 3 steps:
     - [Watch](#watch)
     - [Parse](#parse)
   - [Compare](#compare)
+  - [Bootstrap (Experimental)](#bootstrap-experimental)
   - [Help](#help)
   - [Building](#building)
   - [Inspect](#inspect)
@@ -648,6 +652,40 @@ Pike always warns to stderr when the computed policy contains escalation-class p
 ```bash
 pike compare --strict -d ./terraform -a arn:aws:iam::680235478471:policy/terraform_pike
 ```
+
+## Bootstrap (Experimental)
+
+**This command is experimental and AWS-only.**
+
+Terraform/OpenTofu deploy identities usually need `iam:CreateRole`, `iam:PassRole` and similar IAM-management
+permissions to do their job. Combined, those are also the standard way an identity escalates itself to full account
+admin (create a role with broad permissions, pass it to something you can also provision, then run as that role).
+`pike bootstrap` generates a deploy-role setup that closes that specific escalation path: every role the deploy
+identity creates is forced to carry a permissions boundary it cannot remove or swap out, `iam:PassRole` is
+restricted to an explicit service allow-list, and the deploy role's own assumption requires MFA.
+
+```shell
+pike bootstrap -d ./path/to/your/terraform --config pike.yaml
+```
+
+This reads `pike.yaml` (see `internal/bootstrap/config/testdata/pike.yaml` for an example — the account ID,
+deploy-role path, MFA settings, and PassRole/service-linked-role allow-lists all live there), scans the
+directory the same way `pike scan` does, and writes six artifacts to `.pike/bootstrap/` (or wherever `pike.yaml`'s
+`output.directory` points):
+
+- `deploy-policy.json` — what Terraform actually requests, unrestricted.
+- `deploy-boundary.json` — the maximum permissions the deploy role may hold once bootstrapped: IAM/STS actions are
+  scoped, conditioned or denied per the rules above; every other action passes through unchanged.
+- `workload-boundary.json` — the permissions boundary attached to every role the deploy role creates.
+- `trust-policy.json` / `assume-role-policy.json` — the MFA-enforced trust relationship for the deploy role.
+- `report.json` — a summary of what was requested versus what was rewritten or denied, plus a hash of every
+  artifact.
+
+**What this does *not* give you: least privilege.** Non-IAM actions (S3, ECS, VPC, and so on) are still granted with
+`Resource: ["*"]`, for the same reason pike's other output is wildcard-resourced — generation is static analysis
+only and never queries live AWS state for real ARNs (see the CAVEAT at the top of this README). `pike bootstrap`
+only guarantees that the deploy role can't use its IAM-management access to escalate past the boundary you've
+configured; it does not scope down what that boundary itself allows for non-IAM services.
 
 ## Pull
 
