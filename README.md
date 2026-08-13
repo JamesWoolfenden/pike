@@ -1048,4 +1048,4 @@ new code is picked up by pike.
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=jameswoolfenden/pike&type=Date)](https://star-history.com/#jameswoolfenden/pike&Date)
+[![Star History Chart](https://star-history.dera.page/svg?repos=jameswoolfenden/pike&type=Date)](https://star-history.dera.page/#jameswoolfenden/pike&Date)
