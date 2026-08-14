@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 85.07      |  1134       |  1333            |
-| Datasource | 98.70      |   455       |   461             |
+| Resources  | 84.80      |  1138       |  1342            |
+| Datasource | 98.70      |   456       |   462             |
 
 ## Deprecated
 
-29 resources and 7 datasources are flagged as deprecated in provider schema v7.43.0. Users pinned to an older provider major may already be affected when they upgrade.
+29 resources and 7 datasources are flagged as deprecated in provider schema v7.44.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -92,6 +92,7 @@
 ./resource.ps1 google_chronicle_native_dashboard
 ./resource.ps1 google_chronicle_parser
 ./resource.ps1 google_chronicle_parser_extension
+./resource.ps1 google_chronicle_soar_network
 ./resource.ps1 google_cloud_support_support_event_subscription
 ./resource.ps1 google_compute_bulk_per_instance_config
 ./resource.ps1 google_compute_firewall_policy_with_rules
@@ -154,6 +155,9 @@
 ./resource.ps1 google_firebase_remote_config_remote_config
 ./resource.ps1 google_gke_hub_rollout_sequence
 ./resource.ps1 google_gke_hub_scope_rbac_role_binding
+./resource.ps1 google_iam_folder_access_policy
+./resource.ps1 google_iam_organization_access_policy
+./resource.ps1 google_iam_project_access_policy
 ./resource.ps1 google_iap_agent_registry_agent_iam_binding
 ./resource.ps1 google_iap_agent_registry_agent_iam_member
 ./resource.ps1 google_iap_agent_registry_agent_iam_policy
@@ -249,6 +253,7 @@
 ./resource.ps1 google_sql_provision_script
 ./resource.ps1 google_vector_search_data_object
 ./resource.ps1 google_vector_search_index
+./resource.ps1 google_vertex_ai_evaluation_metric
 ./resource.ps1 google_vertex_ai_persistent_resource
 ./resource.ps1 google_vertex_ai_schedule
 ./resource.ps1 google_vertex_ai_semantic_governance_policy_engine

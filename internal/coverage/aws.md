@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 89.36      |  1511       |  1691            |
-| Datasource | 98.51      |   663       |   673             |
+| Resources  | 88.88      |  1511       |  1700            |
+| Datasource | 97.79      |   663       |   678             |
 
 ## Deprecated
 
-14 resources and 3 datasources are flagged as deprecated in provider schema v6.58.0. Users pinned to an older provider major may already be affected when they upgrade.
+14 resources and 3 datasources are flagged as deprecated in provider schema v6.60.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -58,6 +58,7 @@
 ./resource.ps1 aws_bedrockagentcore_code_interpreter
 ./resource.ps1 aws_bedrockagentcore_evaluator
 ./resource.ps1 aws_bedrockagentcore_gateway
+./resource.ps1 aws_bedrockagentcore_gateway_rule
 ./resource.ps1 aws_bedrockagentcore_gateway_target
 ./resource.ps1 aws_bedrockagentcore_harness
 ./resource.ps1 aws_bedrockagentcore_memory
@@ -112,10 +113,13 @@
 ./resource.ps1 aws_lakeformation_lf_tag_expression
 ./resource.ps1 aws_lambda_capacity_provider
 ./resource.ps1 aws_lambda_function_scaling_config
+./resource.ps1 aws_mailmanager_ingress_point
 ./resource.ps1 aws_mailmanager_rule_set
 ./resource.ps1 aws_mailmanager_traffic_policy
 ./resource.ps1 aws_msk_topic
 ./resource.ps1 aws_nat_gateway_eip_association
+./resource.ps1 aws_neptunegraph_private_graph_endpoint
+./resource.ps1 aws_networkfirewall_container_association
 ./resource.ps1 aws_networkfirewall_firewall_transit_gateway_attachment_accepter
 ./resource.ps1 aws_networkfirewall_vpc_endpoint_association
 ./resource.ps1 aws_networkflowmonitor_monitor
@@ -148,6 +152,8 @@
 ./resource.ps1 aws_outposts_capacity_task
 ./resource.ps1 aws_pinpointsmsvoicev2_event_destination
 ./resource.ps1 aws_pinpointsmsvoicev2_pool
+./resource.ps1 aws_pinpointsmsvoicev2_resource_policy
+./resource.ps1 aws_pinpointsmsvoicev2_sender_id
 ./resource.ps1 aws_prometheus_anomaly_detector
 ./resource.ps1 aws_prometheus_resource_policy
 ./resource.ps1 aws_prometheus_scraper_logging_configuration
@@ -160,7 +166,10 @@
 ./resource.ps1 aws_ram_resource_share_associations_exclusive
 ./resource.ps1 aws_redshift_idc_application
 ./resource.ps1 aws_redshift_namespace_registration
+./resource.ps1 aws_resiliencehubv2_input_source
 ./resource.ps1 aws_resiliencehubv2_policy
+./resource.ps1 aws_resiliencehubv2_service
+./resource.ps1 aws_resiliencehubv2_system
 ./resource.ps1 aws_s3_bucket_abac
 ./resource.ps1 aws_s3_bucket_metadata_configuration
 ./resource.ps1 aws_s3control_multi_region_access_point_routes
@@ -224,7 +233,12 @@
 ./resource.ps1 aws_eks_access_policies -type data
 ./resource.ps1 aws_elasticache_service_update_actions -type data
 ./resource.ps1 aws_elasticache_service_updates -type data
+./resource.ps1 aws_rds_snapshots -type data
+./resource.ps1 aws_resiliencehubv2_policy -type data
+./resource.ps1 aws_resiliencehubv2_service -type data
+./resource.ps1 aws_resiliencehubv2_system -type data
 ./resource.ps1 aws_route53profiles_profile -type data
 ./resource.ps1 aws_s3_bucket_notification -type data
 ./resource.ps1 aws_s3_buckets -type data
+./resource.ps1 aws_vpclattice_service_network_service_associations -type data
 ```
