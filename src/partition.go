@@ -1,8 +1,12 @@
 package pike
 
 import (
+	"context"
 	"fmt"
 	"strings"
+
+	"github.com/aws/aws-sdk-go-v2/config"
+	"github.com/aws/aws-sdk-go-v2/service/sts"
 )
 
 // AWS Partition constants
@@ -15,9 +19,10 @@ const (
 // ExtractPartitionFromARN extracts the AWS partition from an ARN.
 // ARN format: arn:partition:service:region:account-id:resource-type/resource-id
 // Examples:
-//   arn:aws:iam::123456789012:role/MyRole -> "aws"
-//   arn:aws-cn:iam::123456789012:role/MyRole -> "aws-cn"
-//   arn:aws-us-gov:iam::123456789012:role/MyRole -> "aws-us-gov"
+//
+//	arn:aws:iam::123456789012:role/MyRole -> "aws"
+//	arn:aws-cn:iam::123456789012:role/MyRole -> "aws-cn"
+//	arn:aws-us-gov:iam::123456789012:role/MyRole -> "aws-us-gov"
 func ExtractPartitionFromARN(arn string) (string, error) {
 	if arn == "" {
 		return "", fmt.Errorf("ARN cannot be empty")
@@ -46,4 +51,23 @@ func ExtractPartitionFromARN(arn string) (string, error) {
 // IsNonCommercialPartition checks if the partition is non-commercial
 func IsNonCommercialPartition(partition string) bool {
 	return partition != PartitionStandard && partition != ""
+}
+
+// GetCallerPartition looks up the current caller identity's ARN via STS and
+// extracts its AWS partition, so callers can detect non-commercial partitions
+// (aws-cn, aws-us-gov) without hardcoding a region-to-partition mapping.
+func GetCallerPartition(ctx context.Context) (string, error) {
+	cfg, err := config.LoadDefaultConfig(ctx)
+	if err != nil {
+		return "", fmt.Errorf("failed to load AWS config: %w", err)
+	}
+
+	svc := sts.NewFromConfig(cfg)
+
+	result, err := svc.GetCallerIdentity(ctx, &sts.GetCallerIdentityInput{})
+	if err != nil {
+		return "", fmt.Errorf("failed to get caller identity: %w", err)
+	}
+
+	return ExtractPartitionFromARN(*result.Arn)
 }

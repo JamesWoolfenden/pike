@@ -82,10 +82,15 @@ func Inspect(directory string, init bool) (PolicyDiff, error) {
 		return Difference, &getIAMError{err: err}
 	}
 
-	// Detect partition from caller identity ARN for non-commercial partition support
-	// This allows pike inspect to work consistently across all AWS partitions
-	if iamIdentity.Policies != nil && len(iamIdentity.Policies) > 0 {
-		log.Info().Msgf("Successfully detected IAM identity with partition support for inspect")
+	partition, err := GetCallerPartition(context.Background())
+	if err != nil {
+		return Difference, &partitionDetectionError{err: err}
+	}
+
+	if IsNonCommercialPartition(partition) {
+		log.Info().Msgf("inspect: detected non-commercial AWS partition %q", partition)
+	} else {
+		log.Debug().Msgf("inspect: detected AWS partition %q", partition)
 	}
 
 	Difference, err = compareAllow(iamIdentity, iacPolicy)
