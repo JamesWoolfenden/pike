@@ -41,6 +41,14 @@ func (m *compareAllowError) Error() string {
 	return fmt.Sprintf("compare allow error %v", m.err)
 }
 
+type partitionDetectionError struct {
+	err error
+}
+
+func (m *partitionDetectionError) Error() string {
+	return fmt.Sprintf("partition detection error %v", m.err)
+}
+
 func Inspect(directory string, init bool) (PolicyDiff, error) {
 	var iacPolicy Identity.Policy
 
@@ -72,6 +80,17 @@ func Inspect(directory string, init bool) (PolicyDiff, error) {
 		log.Info().Msgf("nothing to do for AWS as %s ", err)
 
 		return Difference, &getIAMError{err: err}
+	}
+
+	partition, err := GetCallerPartition(context.Background())
+	if err != nil {
+		return Difference, &partitionDetectionError{err: err}
+	}
+
+	if IsNonCommercialPartition(partition) {
+		log.Info().Msgf("inspect: detected non-commercial AWS partition %q", partition)
+	} else {
+		log.Debug().Msgf("inspect: detected AWS partition %q", partition)
 	}
 
 	Difference, err = compareAllow(iamIdentity, iacPolicy)
