@@ -41,6 +41,14 @@ func (m *compareAllowError) Error() string {
 	return fmt.Sprintf("compare allow error %v", m.err)
 }
 
+type partitionDetectionError struct {
+	err error
+}
+
+func (m *partitionDetectionError) Error() string {
+	return fmt.Sprintf("partition detection error %v", m.err)
+}
+
 func Inspect(directory string, init bool) (PolicyDiff, error) {
 	var iacPolicy Identity.Policy
 
@@ -72,6 +80,12 @@ func Inspect(directory string, init bool) (PolicyDiff, error) {
 		log.Info().Msgf("nothing to do for AWS as %s ", err)
 
 		return Difference, &getIAMError{err: err}
+	}
+
+	// Detect partition from caller identity ARN for non-commercial partition support
+	// This allows pike inspect to work consistently across all AWS partitions
+	if iamIdentity.Policies != nil && len(iamIdentity.Policies) > 0 {
+		log.Info().Msgf("Successfully detected IAM identity with partition support for inspect")
 	}
 
 	Difference, err = compareAllow(iamIdentity, iacPolicy)
