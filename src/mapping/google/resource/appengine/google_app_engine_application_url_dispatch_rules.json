@@ -1,11 +1,18 @@
 [
   {
-    "apply": [],
+    "apply": [
+      "appengine.applications.get",
+      "appengine.applications.update"
+    ],
     "attributes": {
       "tags": []
     },
     "destroy": [],
-    "modify": [],
-    "plan": []
+    "modify": [
+      "appengine.applications.update"
+    ],
+    "plan": [
+      "appengine.applications.get"
+    ]
   }
 ]

@@ -145,6 +145,142 @@ func TestGetGCPPermissions(t *testing.T) {
 	}
 }
 
+// TestGetGCPAppEnginePermissions covers the App Engine resource mappings
+// (mapping/google/resource/appengine/*.json) that previously shipped as
+// empty stubs -- apply/destroy/modify/plan all [] -- so any Terraform using
+// these resource types silently floored to zero required IAM permissions.
+// Verified against the official App Engine Admin API "Authorization
+// requires..." IAM permission for each REST method (apps.services.versions,
+// apps.domainMappings, apps.firewall.ingressRules).
+func TestGetGCPAppEnginePermissions(t *testing.T) {
+	t.Parallel()
+
+	type args struct {
+		result ResourceV2
+	}
+
+	tests := []struct {
+		name string
+		args args
+		want []string
+	}{
+		{
+			name: "standard app version",
+			args: args{
+				result: ResourceV2{
+					TypeName: "resource", Name: "google_app_engine_standard_app_version",
+					Attributes: []string{"service", "runtime"},
+				},
+			},
+			want: []string{
+				"appengine.versions.create",
+				"appengine.versions.get",
+				"appengine.versions.update",
+				"appengine.versions.delete",
+				"appengine.versions.get",
+				"appengine.versions.update",
+				"appengine.versions.delete",
+			},
+		},
+		{
+			name: "flexible app version",
+			args: args{
+				result: ResourceV2{
+					TypeName: "resource", Name: "google_app_engine_flexible_app_version",
+					Attributes: []string{"service", "runtime"},
+				},
+			},
+			want: []string{
+				"appengine.versions.create",
+				"appengine.versions.get",
+				"appengine.versions.update",
+				"appengine.versions.delete",
+				"appengine.versions.get",
+				"appengine.versions.update",
+				"appengine.versions.delete",
+			},
+		},
+		{
+			name: "domain mapping",
+			args: args{
+				result: ResourceV2{
+					TypeName: "resource", Name: "google_app_engine_domain_mapping",
+					Attributes: []string{"domain_name"},
+				},
+			},
+			want: []string{
+				"appengine.applications.get",
+				"appengine.applications.update",
+				"appengine.applications.get",
+				"appengine.applications.update",
+				"appengine.applications.update",
+			},
+		},
+		{
+			name: "firewall rule",
+			args: args{
+				result: ResourceV2{
+					TypeName: "resource", Name: "google_app_engine_firewall_rule",
+					Attributes: []string{"priority", "action"},
+				},
+			},
+			want: []string{
+				"appengine.applications.get",
+				"appengine.applications.update",
+				"appengine.applications.get",
+				"appengine.applications.update",
+				"appengine.applications.update",
+			},
+		},
+		{
+			name: "application url dispatch rules",
+			args: args{
+				result: ResourceV2{
+					TypeName: "resource", Name: "google_app_engine_application_url_dispatch_rules",
+					Attributes: []string{"dispatch_rules"},
+				},
+			},
+			want: []string{
+				"appengine.applications.get",
+				"appengine.applications.update",
+				"appengine.applications.get",
+				"appengine.applications.update",
+			},
+		},
+		{
+			name: "service split traffic",
+			args: args{
+				result: ResourceV2{
+					TypeName: "resource", Name: "google_app_engine_service_split_traffic",
+					Attributes: []string{"service", "split"},
+				},
+			},
+			want: []string{
+				"appengine.services.update",
+				"appengine.services.get",
+				"appengine.services.get",
+				"appengine.services.update",
+			},
+		},
+	}
+
+	for _, tt := range tests {
+		tt := tt
+		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
+
+			got, err := getGCPPermissions(tt.args.result)
+			if err != nil {
+				t.Fatalf("getGCPPermissions() unexpected error = %v", err)
+			}
+
+			if !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("getGCPPermissions() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
 func TestGetGCPResourcePermissions(t *testing.T) {
 	t.Parallel()
 
