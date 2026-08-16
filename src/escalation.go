@@ -108,6 +108,9 @@ func WarnEscalation(bag Sorted) {
 	fmt.Fprintln(os.Stderr, "WARNING: escalation-class permissions detected — holder can grant themselves additional access.")
 	fmt.Fprintln(os.Stderr, "         Consider the two-role pattern: planner SA (read-only) on all branches,")
 	fmt.Fprintln(os.Stderr, "         applier SA (full) on protected branches only.")
+	fmt.Fprintln(os.Stderr, "         The escalation-class permissions below should not be granted to either CI")
+	fmt.Fprintln(os.Stderr, "         identity — move them to a separate role applied outside CI (e.g. by a human,")
+	fmt.Fprintln(os.Stderr, "         or a manually-triggered bootstrap pipeline) instead.")
 	fmt.Fprintln(os.Stderr, "  Escalation permissions:")
 	if len(found.AWS) > 0 {
 		fmt.Fprintf(os.Stderr, "    aws:   %s\n", strings.Join(found.AWS, ", "))
