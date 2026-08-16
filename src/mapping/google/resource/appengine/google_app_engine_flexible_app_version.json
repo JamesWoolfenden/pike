@@ -1,11 +1,22 @@
 [
   {
-    "apply": [],
+    "apply": [
+      "appengine.versions.create",
+      "appengine.versions.get",
+      "appengine.versions.update",
+      "appengine.versions.delete"
+    ],
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "appengine.versions.delete"
+    ],
+    "modify": [
+      "appengine.versions.update"
+    ],
+    "plan": [
+      "appengine.versions.get"
+    ]
   }
 ]
