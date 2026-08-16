@@ -24,7 +24,8 @@ terraform-provider-aws/
 .destination
 tf.plan
 tf.json
-.claude/
+.claude/*
+!.claude/skills/
 docs/REVIEW.md
 
 dist/
