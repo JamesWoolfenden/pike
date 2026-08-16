@@ -8,9 +8,9 @@ import (
 )
 
 var azureHighPrivBuiltins = map[string]bool{
-	"Contributor":                             true,
-	"User Access Administrator":               true,
-	"Role Based Access Control Administrator": true,
+	"contributor":                             true,
+	"user access administrator":               true,
+	"role based access control administrator": true,
 }
 
 func init() {
@@ -25,7 +25,7 @@ func auditAzureRoleAssignment(block *hclsyntax.Block, _ string) []Finding {
 		return []Finding{finding(block, "AZURE001", SevCritical,
 			"assigns built-in role Owner",
 			"Owner grants full control including RBAC; use a least-privilege role")}
-	case azureHighPrivBuiltins[name]:
+	case azureHighPrivBuiltins[strings.ToLower(name)]:
 		return []Finding{finding(block, "AZURE002", SevHigh,
 			fmt.Sprintf("assigns high-privilege built-in role %s", name),
 			"role permits broad resource or RBAC changes; scope down if possible")}

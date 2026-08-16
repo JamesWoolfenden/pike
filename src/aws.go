@@ -61,11 +61,22 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 }
 
 func getAWSPlanPermissions(result ResourceV2) ([]string, error) {
-	temp := AwsLookup(result.Name)
-	if temp == nil {
-		return nil, &notImplementedResourceError{result.Name}
+	switch result.TypeName {
+	case resource, terraform:
+		temp := AwsLookup(result.Name)
+		if temp == nil {
+			return nil, &notImplementedResourceError{result.Name}
+		}
+		return getPlanPermissionMap(temp, result.Attributes, result.Name, isAWSReadPerm)
+	case data:
+		temp := AwsDataLookup(result.Name)
+		if temp == nil {
+			return nil, &notImplementedDatasourceError{result.Name}
+		}
+		return getPlanPermissionMap(temp, result.Attributes, result.Name, isAWSReadPerm)
+	default:
+		return nil, nil
 	}
-	return getPlanPermissionMap(temp, result.Attributes, result.Name, isAWSReadPerm)
 }
 
 func AwsLookup(name string) []byte {

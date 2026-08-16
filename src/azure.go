@@ -18,11 +18,22 @@ func GetAZUREResourcePermissions(result ResourceV2) ([]string, error) {
 }
 
 func getAZUREPlanPermissions(result ResourceV2) ([]string, error) {
-	temp := AzureLookup(result.Name)
-	if temp == nil {
-		return nil, &notImplementedResourceError{result.Name}
+	switch result.TypeName {
+	case resource, terraform:
+		temp := AzureLookup(result.Name)
+		if temp == nil {
+			return nil, &notImplementedResourceError{result.Name}
+		}
+		return getPlanPermissionMap(temp, result.Attributes, result.Name, isAzureReadPerm)
+	case data:
+		temp := AzureDataLookup(result.Name)
+		if temp == nil {
+			return nil, &notImplementedDatasourceError{Name: result.Name}
+		}
+		return getPlanPermissionMap(temp, result.Attributes, result.Name, isAzureReadPerm)
+	default:
+		return nil, nil
 	}
-	return getPlanPermissionMap(temp, result.Attributes, result.Name, isAzureReadPerm)
 }
 
 func AzureLookup(name string) []byte {

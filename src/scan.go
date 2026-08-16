@@ -348,7 +348,7 @@ func GetPermissionBag(resources []ResourceV2, prov string, suppressDeprecated bo
 		var err error
 
 		// implement provider filter
-		if prov == "" || prov == resource.Provider {
+		if prov == "" || provider.Normalise(prov) == resource.Provider {
 			newPerms, err = GetPermission(resource)
 		} else {
 			continue

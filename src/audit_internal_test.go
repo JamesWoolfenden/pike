@@ -43,6 +43,7 @@ func TestAudit_Azure(t *testing.T) {
 	want := []string{
 		"AZURE001 azurerm_role_assignment.owner",
 		"AZURE002 azurerm_role_assignment.contributor",
+		"AZURE002 azurerm_role_assignment.contributor_lowercase",
 		"AZURE003 azurerm_role_definition.wide",
 		"AZURE004 azurerm_role_definition.wide",
 	}
@@ -60,9 +61,15 @@ func TestAudit_AWS(t *testing.T) {
 		"AWS001 aws_iam_policy.wildcard_jsonencode",
 		"AWS001 data.aws_iam_policy_document.doc",
 		"AWS002 aws_iam_policy.from_file",
+		"AWS002 aws_iam_role_policy.iam_wildcard",
 		"AWS002 aws_iam_role_policy.service_wildcard",
 		"AWS003 aws_iam_role.with_inline",
+		"AWS003 aws_iam_role_policy.region_condition_escalation",
+		"AWS003 aws_iam_user_policy.attach_user_policy",
 		"AWS003 aws_iam_user_policy.escalation_heredoc",
+		"AWS004 aws_iam_role_policy.iam_wildcard",
+		"AWS004 aws_iam_role_policy.region_condition_escalation",
+		"AWS004 aws_iam_user_policy.attach_user_policy",
 		"AWS004 aws_iam_user_policy.escalation_heredoc",
 		"AWS005 aws_iam_group_policy.not_action",
 		"AWS006 aws_iam_role_policy_attachment.admin",
@@ -95,6 +102,40 @@ func TestAudit_AWSConditionSuppressesEscalation(t *testing.T) {
 			t.Errorf("AWS004 fired on a statement with a condition: %+v", f)
 		}
 	}
+}
+
+func TestAudit_AWSNonScopingConditionDoesNotSuppressEscalation(t *testing.T) {
+	t.Parallel()
+	// aws_iam_role_policy.region_condition_escalation grants iam:PassRole
+	// guarded only by a Condition on aws:RequestedRegion, which has no
+	// bearing on escalation risk. AWS004 must still fire.
+	findings, err := collectAuditFindings("testdata/audit/aws")
+	if err != nil {
+		t.Fatal(err)
+	}
+	for _, f := range findings {
+		if f.RuleID == "AWS004" && f.Resource == "aws_iam_role_policy.region_condition_escalation" {
+			return
+		}
+	}
+	t.Errorf("AWS004 did not fire for iam:PassRole guarded only by a non-scoping condition (aws:RequestedRegion)")
+}
+
+func TestAudit_AWSServiceWildcardCoveringEscalationAction(t *testing.T) {
+	t.Parallel()
+	// aws_iam_role_policy.iam_wildcard grants "iam:*", which trivially
+	// includes every escalation-class iam: action; AWS004 must fire
+	// alongside AWS002, not just AWS002.
+	findings, err := collectAuditFindings("testdata/audit/aws")
+	if err != nil {
+		t.Fatal(err)
+	}
+	for _, f := range findings {
+		if f.RuleID == "AWS004" && f.Resource == "aws_iam_role_policy.iam_wildcard" {
+			return
+		}
+	}
+	t.Errorf("AWS004 did not fire for iam:* (a service-wide wildcard covering escalation-class actions)")
 }
 
 func TestParseSeverity(t *testing.T) {

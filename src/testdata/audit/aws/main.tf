@@ -85,6 +85,47 @@ resource "aws_iam_user_policy_attachment" "s3full" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonS3FullAccess"
 }
 
+resource "aws_iam_role_policy" "region_condition_escalation" {
+  name = "x"
+  role = "r"
+  policy = jsonencode({
+    Statement = [{
+      Effect   = "Allow"
+      Action   = "iam:PassRole"
+      Resource = "*"
+      Condition = {
+        StringEquals = {
+          "aws:RequestedRegion" = "us-east-1"
+        }
+      }
+    }]
+  })
+}
+
+resource "aws_iam_role_policy" "iam_wildcard" {
+  name = "x"
+  role = "r"
+  policy = jsonencode({
+    Statement = [{
+      Effect   = "Allow"
+      Action   = "iam:*"
+      Resource = "*"
+    }]
+  })
+}
+
+resource "aws_iam_user_policy" "attach_user_policy" {
+  name = "x"
+  user = "u"
+  policy = jsonencode({
+    Statement = [{
+      Effect   = "Allow"
+      Action   = "iam:AttachUserPolicy"
+      Resource = "*"
+    }]
+  })
+}
+
 resource "aws_iam_role" "with_inline" {
   name = "r"
   assume_role_policy = jsonencode({

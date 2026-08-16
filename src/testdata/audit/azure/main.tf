@@ -24,3 +24,9 @@ resource "azurerm_role_assignment" "ok" {
   role_definition_name = "Reader"
   principal_id         = "00000000-0000-0000-0000-000000000000"
 }
+
+resource "azurerm_role_assignment" "contributor_lowercase" {
+  scope                = "/subscriptions/x"
+  role_definition_name = "contributor"
+  principal_id         = "00000000-0000-0000-0000-000000000000"
+}

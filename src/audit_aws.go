@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"slices"
 	"strings"
 
 	"github.com/hashicorp/hcl/v2/hclsyntax"
@@ -63,10 +64,69 @@ type awsStmt struct {
 	Resource    stringOrSlice   `json:"Resource"`
 	NotResource stringOrSlice   `json:"NotResource"`
 	Condition   json.RawMessage `json:"Condition"`
+	// ConditionKeys holds the condition variable names (e.g.
+	// "iam:PassedToService", "aws:PrincipalTag/team") extracted from
+	// Condition, when its structure could be statically walked.
+	ConditionKeys []string `json:"-"`
 }
 
-func (s awsStmt) hasCondition() bool {
-	return len(s.Condition) > 0 && string(s.Condition) != "null"
+// escalationScopingConditionKeys are AWS condition keys that genuinely
+// narrow the blast radius of an escalation-class action (e.g. restricting
+// iam:PassRole to a specific service, or an action to specific
+// tagged/sourced principals/resources). A condition that only tests
+// something unrelated (region, time, TLS, ...) does not make the grant
+// safe, so it must not suppress AWS004.
+var escalationScopingConditionKeys = []string{
+	"iam:passedtoservice",
+	"iam:awsservicename",
+	"iam:permissionsboundary",
+	"iam:policyarn",
+	"iam:resourcetag",
+	"aws:resourcetag",
+	"aws:requesttag",
+	"aws:principaltag",
+	"aws:sourcearn",
+	"aws:sourceaccount",
+	"aws:resourceaccount",
+}
+
+func isScopingConditionKey(key string) bool {
+	lk := strings.ToLower(key)
+	for _, scoping := range escalationScopingConditionKeys {
+		if lk == scoping || strings.HasPrefix(lk, scoping+"/") {
+			return true
+		}
+	}
+	return false
+}
+
+// hasScopingCondition reports whether the statement's condition actually
+// restricts an escalation-class grant, as opposed to merely existing.
+func (s awsStmt) hasScopingCondition() bool {
+	return slices.ContainsFunc(s.ConditionKeys, isScopingConditionKey)
+}
+
+// conditionKeysFromRaw extracts condition variable names from a JSON
+// Condition object of the form {"Operator": {"key": value, ...}, ...}.
+func conditionKeysFromRaw(raw json.RawMessage) []string {
+	if len(raw) == 0 {
+		return nil
+	}
+	var ops map[string]json.RawMessage
+	if err := json.Unmarshal(raw, &ops); err != nil {
+		return nil
+	}
+	var keys []string
+	for _, v := range ops {
+		var kv map[string]json.RawMessage
+		if err := json.Unmarshal(v, &kv); err != nil {
+			continue
+		}
+		for k := range kv {
+			keys = append(keys, k)
+		}
+	}
+	return keys
 }
 
 type awsPolicyDoc struct {
@@ -128,6 +188,7 @@ func extractAWSPolicy(expr hclsyntax.Expression, baseDir string) (*awsPolicyDoc,
 			if err := json.Unmarshal(data, &doc); err != nil {
 				return nil, fmt.Sprintf("%s is not valid policy JSON: %v", path, err)
 			}
+			populateConditionKeys(&doc)
 			return &doc, ""
 		default:
 			return nil, fmt.Sprintf("policy is computed by %s()", e.Name)
@@ -141,11 +202,21 @@ func extractAWSPolicy(expr hclsyntax.Expression, baseDir string) (*awsPolicyDoc,
 		if err := json.Unmarshal([]byte(s), &doc); err != nil {
 			return nil, fmt.Sprintf("policy heredoc is not valid JSON: %v", err)
 		}
+		populateConditionKeys(&doc)
 		return &doc, ""
 	case *hclsyntax.ScopeTraversalExpr:
 		return nil, fmt.Sprintf("policy references %s", extractStringValue(e))
 	default:
 		return nil, "policy expression form not supported"
+	}
+}
+
+// populateConditionKeys fills in ConditionKeys for statements parsed
+// straight out of JSON (file/templatefile/heredoc), where Condition already
+// holds the real Condition object.
+func populateConditionKeys(doc *awsPolicyDoc) {
+	for i := range doc.Statement {
+		doc.Statement[i].ConditionKeys = conditionKeysFromRaw(doc.Statement[i].Condition)
 	}
 }
 
@@ -191,9 +262,33 @@ func stmtFromObjectExpr(obj *hclsyntax.ObjectConsExpr) awsStmt {
 			s.NotResource = stringOrListExpr(val)
 		case keyEquals(item.KeyExpr, "Condition"):
 			s.Condition = json.RawMessage(`{}`)
+			s.ConditionKeys = conditionKeysFromObjectExpr(val)
 		}
 	}
 	return s
+}
+
+// conditionKeysFromObjectExpr walks a Condition = { Operator = { key = val } }
+// HCL object literal and returns the condition variable names (the
+// second-level keys), e.g. "iam:PassedToService".
+func conditionKeysFromObjectExpr(expr hclsyntax.Expression) []string {
+	obj, ok := unwrapExpr(expr).(*hclsyntax.ObjectConsExpr)
+	if !ok {
+		return nil
+	}
+	var keys []string
+	for _, opItem := range obj.Items {
+		inner, ok := unwrapExpr(opItem.ValueExpr).(*hclsyntax.ObjectConsExpr)
+		if !ok {
+			continue
+		}
+		for _, kv := range inner.Items {
+			if k := hclKeyName(kv.KeyExpr); k != "" {
+				keys = append(keys, k)
+			}
+		}
+	}
+	return keys
 }
 
 func stringOrListExpr(expr hclsyntax.Expression) []string {
@@ -213,12 +308,18 @@ func stringOrListExpr(expr hclsyntax.Expression) []string {
 }
 
 func keyEquals(key hclsyntax.Expression, want string) bool {
+	return hclKeyName(key) == want
+}
+
+// hclKeyName returns the string name of an object-literal key, whether it's
+// a bare identifier (Statement = ...) or a quoted string ("Statement" = ...).
+func hclKeyName(key hclsyntax.Expression) string {
 	k := unwrapExpr(key)
 	// Bare identifier keys (Statement = ...) parse as a single-step traversal.
 	if t, ok := k.(*hclsyntax.ScopeTraversalExpr); ok && len(t.Traversal) == 1 {
-		return t.Traversal.RootName() == want
+		return t.Traversal.RootName()
 	}
-	return extractStringValue(k) == want
+	return extractStringValue(k)
 }
 
 func unwrapExpr(e hclsyntax.Expression) hclsyntax.Expression {
@@ -287,6 +388,9 @@ func auditAWSPolicyDocument(block *hclsyntax.Block, _ string) []Finding {
 		for _, c := range stmt.Body.Blocks {
 			if c.Type == "condition" {
 				s.Condition = json.RawMessage(`{}`)
+				if v := attrString(c, "variable"); v != "" {
+					s.ConditionKeys = append(s.ConditionKeys, v)
+				}
 			}
 		}
 		doc.Statement = append(doc.Statement, s)
@@ -319,6 +423,7 @@ func runAWSPolicyRules(block *hclsyntax.Block, doc *awsPolicyDoc) []Finding {
 		ref := stmtRef(s.Sid, i)
 
 		for _, a := range s.Action {
+			escalates := escalationAWS[a]
 			switch {
 			case a == "*":
 				out = append(out, finding(block, "AWS001", SevHigh,
@@ -328,10 +433,11 @@ func runAWSPolicyRules(block *hclsyntax.Block, doc *awsPolicyDoc) []Finding {
 				out = append(out, finding(block, "AWS002", SevMedium,
 					fmt.Sprintf("%s allows service-wide action %s", ref, a),
 					"prefer enumerating the specific actions required"))
+				escalates = escalates || escalationAWSServiceWildcards[a]
 			}
-			if escalationAWS[a] && !s.hasCondition() {
+			if escalates && !s.hasScopingCondition() {
 				out = append(out, finding(block, "AWS004", SevHigh,
-					fmt.Sprintf("%s allows escalation-class action %s without a Condition", ref, a),
+					fmt.Sprintf("%s allows escalation-class action %s without a scoping Condition", ref, a),
 					"add a service-scoping condition (e.g. iam:PassedToService) or restrict Resource"))
 			}
 		}

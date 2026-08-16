@@ -54,11 +54,22 @@ func getGCPResourcePermissions(sourceData ResourceV2) ([]string, error) {
 }
 
 func getGCPPlanPermissions(sourceData ResourceV2) ([]string, error) {
-	raw := GCPLookup(sourceData.Name)
-	if raw == nil {
-		return nil, &notImplementedResourceError{sourceData.Name}
+	switch sourceData.TypeName {
+	case resource, terraform:
+		raw := GCPLookup(sourceData.Name)
+		if raw == nil {
+			return nil, &notImplementedResourceError{sourceData.Name}
+		}
+		return getPlanPermissionMap(raw, sourceData.Attributes, sourceData.Name, isGCPReadPerm)
+	case data:
+		raw := GCPDataLookup(sourceData.Name)
+		if raw == nil {
+			return nil, &notImplementedDatasourceError{sourceData.Name}
+		}
+		return getPlanPermissionMap(raw, sourceData.Attributes, sourceData.Name, isGCPReadPerm)
+	default:
+		return nil, nil
 	}
-	return getPlanPermissionMap(raw, sourceData.Attributes, sourceData.Name, isGCPReadPerm)
 }
 
 func getGCPResourceRuntimePermissions(sourceData ResourceV2) (RuntimePermission, error) {

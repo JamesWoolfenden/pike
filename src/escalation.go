@@ -34,7 +34,27 @@ var escalationAWS = map[string]bool{
 	"iam:PassRole":                true,
 	"iam:CreateAccessKey":         true,
 	"sts:AssumeRole":              true,
+	"iam:AttachUserPolicy":        true,
+	"iam:AttachGroupPolicy":       true,
+	"iam:PutUserPolicy":           true,
+	"iam:PutGroupPolicy":          true,
+	"iam:AddUserToGroup":          true,
+	"iam:CreateLoginProfile":      true,
+	"iam:UpdateLoginProfile":      true,
 }
+
+// escalationAWSServiceWildcards is derived from escalationAWS: the set of
+// "service:*" wildcards that would grant every escalation-class action in
+// that service (e.g. "iam:*" covers iam:PassRole, iam:PutRolePolicy, ...).
+var escalationAWSServiceWildcards = func() map[string]bool {
+	out := map[string]bool{}
+	for action := range escalationAWS {
+		if service, _, ok := strings.Cut(action, ":"); ok {
+			out[service+":*"] = true
+		}
+	}
+	return out
+}()
 
 // escalationAZURE is the set of Azure permissions that grant owner-equivalent
 // privilege escalation.
