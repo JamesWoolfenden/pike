@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 84.80      |  1138       |  1342            |
-| Datasource | 98.70      |   456       |   462             |
+| Resources  | 84.67      |  1138       |  1344            |
+| Datasource | 98.49      |   456       |   463             |
 
 ## Deprecated
 
-29 resources and 7 datasources are flagged as deprecated in provider schema v7.44.0. Users pinned to an older provider major may already be affected when they upgrade.
+29 resources and 7 datasources are flagged as deprecated in provider schema v7.45.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -61,6 +61,7 @@
 ./resource.ps1 google_agent_identity_auth_provider
 ./resource.ps1 google_agent_registry_binding
 ./resource.ps1 google_agent_registry_service
+./resource.ps1 google_agentic_applications_analyst_agent_persona
 ./resource.ps1 google_apigee_data_collector
 ./resource.ps1 google_apigee_datastore
 ./resource.ps1 google_apigee_endpoint_attachment
@@ -153,6 +154,7 @@
 ./resource.ps1 google_firebase_app_hosting_traffic
 ./resource.ps1 google_firebase_data_connect_service
 ./resource.ps1 google_firebase_remote_config_remote_config
+./resource.ps1 google_firestore_change_stream
 ./resource.ps1 google_gke_hub_rollout_sequence
 ./resource.ps1 google_gke_hub_scope_rbac_role_binding
 ./resource.ps1 google_iam_folder_access_policy
@@ -261,6 +263,7 @@
 ./resource.ps1 google_vertex_ai_tensorboard_run
 ./resource.ps1 google_workload_identity_service_agent
 ./resource.ps1 google_data_catalog_taxonomy -type data
+./resource.ps1 google_iam_workload_identity_pool_openid_config -type data
 ./resource.ps1 google_iap_agent_registry_agent_iam_policy -type data
 ./resource.ps1 google_iap_agent_registry_endpoint_iam_policy -type data
 ./resource.ps1 google_iap_agent_registry_mcp_server_iam_policy -type data

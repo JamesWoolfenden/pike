@@ -24,6 +24,7 @@
         "google_agent_identity_auth_provider",
         "google_agent_registry_binding",
         "google_agent_registry_service",
+        "google_agentic_applications_analyst_agent_persona",
         "google_alloydb_backup",
         "google_alloydb_cluster",
         "google_alloydb_instance",
@@ -728,6 +729,7 @@
         "google_firebaserules_release",
         "google_firebaserules_ruleset",
         "google_firestore_backup_schedule",
+        "google_firestore_change_stream",
         "google_firestore_database",
         "google_firestore_document",
         "google_firestore_field",
@@ -1611,6 +1613,7 @@
         "google_iam_workforce_pool_iam_policy",
         "google_iam_workload_identity_pool",
         "google_iam_workload_identity_pool_iam_policy",
+        "google_iam_workload_identity_pool_openid_config",
         "google_iam_workload_identity_pool_provider",
         "google_iap_agent_registry_agent_iam_policy",
         "google_iap_agent_registry_endpoint_iam_policy",
@@ -1847,5 +1850,5 @@
         "google_notebooks_instance_iam_policy": "",
         "google_notebooks_runtime_iam_policy": ""
     },
-    "providerVersion": "7.44.0"
+    "providerVersion": "7.45.0"
 }

@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 88.88      |  1511       |  1700            |
-| Datasource | 97.79      |   663       |   678             |
+| Resources  | 88.41      |  1511       |  1709            |
+| Datasource | 97.64      |   663       |   679             |
 
 ## Deprecated
 
-14 resources and 3 datasources are flagged as deprecated in provider schema v6.60.0. Users pinned to an older provider major may already be affected when they upgrade.
+14 resources and 3 datasources are flagged as deprecated in provider schema v6.61.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -88,6 +88,7 @@
 ./resource.ps1 aws_connect_phone_number_contact_flow_association
 ./resource.ps1 aws_controltower_baseline
 ./resource.ps1 aws_devicefarm_test_grid_project
+./resource.ps1 aws_dsql_cluster_policy
 ./resource.ps1 aws_dynamodb_global_secondary_index
 ./resource.ps1 aws_ebs_volume_copy
 ./resource.ps1 aws_ec2_allowed_images_settings
@@ -113,7 +114,10 @@
 ./resource.ps1 aws_lakeformation_lf_tag_expression
 ./resource.ps1 aws_lambda_capacity_provider
 ./resource.ps1 aws_lambda_function_scaling_config
+./resource.ps1 aws_lambdacore_network_connector
+./resource.ps1 aws_lambdamicrovms_image
 ./resource.ps1 aws_mailmanager_ingress_point
+./resource.ps1 aws_mailmanager_relay
 ./resource.ps1 aws_mailmanager_rule_set
 ./resource.ps1 aws_mailmanager_traffic_policy
 ./resource.ps1 aws_msk_topic
@@ -141,6 +145,7 @@
 ./resource.ps1 aws_odb_cloud_autonomous_vm_cluster
 ./resource.ps1 aws_odb_cloud_exadata_infrastructure
 ./resource.ps1 aws_odb_cloud_vm_cluster
+./resource.ps1 aws_odb_iam_role_association
 ./resource.ps1 aws_odb_network
 ./resource.ps1 aws_odb_network_peering_connection
 ./resource.ps1 aws_opensearch_application
@@ -166,10 +171,13 @@
 ./resource.ps1 aws_ram_resource_share_associations_exclusive
 ./resource.ps1 aws_redshift_idc_application
 ./resource.ps1 aws_redshift_namespace_registration
+./resource.ps1 aws_resiliencehubv2_assertion
 ./resource.ps1 aws_resiliencehubv2_input_source
 ./resource.ps1 aws_resiliencehubv2_policy
 ./resource.ps1 aws_resiliencehubv2_service
+./resource.ps1 aws_resiliencehubv2_service_function
 ./resource.ps1 aws_resiliencehubv2_system
+./resource.ps1 aws_resiliencehubv2_user_journey
 ./resource.ps1 aws_s3_bucket_abac
 ./resource.ps1 aws_s3_bucket_metadata_configuration
 ./resource.ps1 aws_s3control_multi_region_access_point_routes
@@ -197,6 +205,7 @@
 ./resource.ps1 aws_securityhub_aggregator_v2
 ./resource.ps1 aws_securityhub_automation_rule_v2
 ./resource.ps1 aws_securityhub_connector_v2
+./resource.ps1 aws_securityhub_feature_v2
 ./resource.ps1 aws_servicequotas_auto_management
 ./resource.ps1 aws_sesv2_tenant
 ./resource.ps1 aws_sesv2_tenant_resource_association
@@ -233,6 +242,7 @@
 ./resource.ps1 aws_eks_access_policies -type data
 ./resource.ps1 aws_elasticache_service_update_actions -type data
 ./resource.ps1 aws_elasticache_service_updates -type data
+./resource.ps1 aws_odb_iam_role_association -type data
 ./resource.ps1 aws_rds_snapshots -type data
 ./resource.ps1 aws_resiliencehubv2_policy -type data
 ./resource.ps1 aws_resiliencehubv2_service -type data
