@@ -108,6 +108,22 @@ func Audit(dir string, output string, minSeverity Severity) error {
 	return nil
 }
 
+// CollectAuditFindings runs the audit rules over the Terraform in dir and
+// returns every finding, unfiltered and unsorted. It is the entry point for
+// callers that embed pike as a library rather than invoking the CLI.
+//
+// holden consumes this alongside MakePermissionBag: it needs pike's IAM
+// judgements — in particular whether a Condition genuinely scopes an
+// escalation-class action, which its own policy language cannot express — as
+// data it can attach to its graph. Without an exported collector the only way
+// to get at them is to capture Audit's stdout.
+//
+// Severity filtering, ordering and rendering belong to Audit, so an embedder
+// can apply its own.
+func CollectAuditFindings(dir string) ([]Finding, error) {
+	return collectAuditFindings(dir)
+}
+
 func collectAuditFindings(dir string) ([]Finding, error) {
 	files, err := GetTF(dir)
 	if err != nil {
