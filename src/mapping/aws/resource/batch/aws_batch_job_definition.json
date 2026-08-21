@@ -4,7 +4,7 @@
       "batch:DeregisterJobDefinition",
       "batch:DescribeJobDefinitions",
       "batch:RegisterJobDefinition",
-      "Iam:PassRole"
+      "iam:PassRole"
     ],
     "attributes": {
       "tags": [
