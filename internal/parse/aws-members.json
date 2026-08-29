@@ -1115,6 +1115,7 @@
         "aws_pinpoint_sms_channel",
         "aws_pinpointsmsvoicev2_configuration_set",
         "aws_pinpointsmsvoicev2_event_destination",
+        "aws_pinpointsmsvoicev2_keyword",
         "aws_pinpointsmsvoicev2_opt_out_list",
         "aws_pinpointsmsvoicev2_phone_number",
         "aws_pinpointsmsvoicev2_pool",
@@ -1465,6 +1466,7 @@
         "aws_sesv2_email_identity_feedback_attributes",
         "aws_sesv2_email_identity_mail_from_attributes",
         "aws_sesv2_email_identity_policy",
+        "aws_sesv2_multi_region_endpoint",
         "aws_sesv2_tenant",
         "aws_sesv2_tenant_resource_association",
         "aws_sfn_activity",
@@ -2412,5 +2414,5 @@
         "aws_s3_bucket_object": "",
         "aws_s3_bucket_objects": ""
     },
-    "providerVersion": "6.61.0"
+    "providerVersion": "6.62.0"
 }

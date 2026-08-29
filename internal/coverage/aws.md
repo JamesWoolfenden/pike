@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 88.41      |  1511       |  1709            |
+| Resources  | 88.31      |  1511       |  1711            |
 | Datasource | 97.64      |   663       |   679             |
 
 ## Deprecated
 
-14 resources and 3 datasources are flagged as deprecated in provider schema v6.61.0. Users pinned to an older provider major may already be affected when they upgrade.
+14 resources and 3 datasources are flagged as deprecated in provider schema v6.62.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -156,6 +156,7 @@
 ./resource.ps1 aws_osis_resource_policy
 ./resource.ps1 aws_outposts_capacity_task
 ./resource.ps1 aws_pinpointsmsvoicev2_event_destination
+./resource.ps1 aws_pinpointsmsvoicev2_keyword
 ./resource.ps1 aws_pinpointsmsvoicev2_pool
 ./resource.ps1 aws_pinpointsmsvoicev2_resource_policy
 ./resource.ps1 aws_pinpointsmsvoicev2_sender_id
@@ -207,6 +208,7 @@
 ./resource.ps1 aws_securityhub_connector_v2
 ./resource.ps1 aws_securityhub_feature_v2
 ./resource.ps1 aws_servicequotas_auto_management
+./resource.ps1 aws_sesv2_multi_region_endpoint
 ./resource.ps1 aws_sesv2_tenant
 ./resource.ps1 aws_sesv2_tenant_resource_association
 ./resource.ps1 aws_ssoadmin_customer_managed_policy_attachments_exclusive

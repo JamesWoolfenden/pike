@@ -736,6 +736,7 @@
         "azurerm_palo_alto_virtual_network_appliance",
         "azurerm_pim_active_role_assignment",
         "azurerm_pim_eligible_role_assignment",
+        "azurerm_playwright_workspace",
         "azurerm_point_to_site_vpn_gateway",
         "azurerm_policy_definition",
         "azurerm_policy_set_definition",
@@ -1379,6 +1380,7 @@
         "azurerm_orchestrated_virtual_machine_scale_set",
         "azurerm_palo_alto_local_rulestack",
         "azurerm_platform_image",
+        "azurerm_playwright_workspace",
         "azurerm_policy_assignment",
         "azurerm_policy_definition",
         "azurerm_policy_definition_built_in",
@@ -1536,5 +1538,5 @@
         "azurerm_spring_cloud_app": "",
         "azurerm_spring_cloud_service": ""
     },
-    "providerVersion": "5.2.0"
+    "providerVersion": "5.3.0"
 }

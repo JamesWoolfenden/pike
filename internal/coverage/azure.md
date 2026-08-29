@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 96.55      |  1065       |  1103            |
-| Datasource | 98.73      |   389       |   394             |
+| Resources  | 96.47      |  1065       |  1104            |
+| Datasource | 98.48      |   389       |   395             |
 
 ## Deprecated
 
-30 resources and 2 datasources are flagged as deprecated in provider schema v5.2.0. Users pinned to an older provider major may already be affected when they upgrade.
+30 resources and 2 datasources are flagged as deprecated in provider schema v5.3.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -82,6 +82,7 @@
 ./resource.ps1 azurerm_palo_alto_local_rulestack_outbound_untrust_certificate_association
 ./resource.ps1 azurerm_pim_active_role_assignment
 ./resource.ps1 azurerm_pim_eligible_role_assignment
+./resource.ps1 azurerm_playwright_workspace
 ./resource.ps1 azurerm_private_endpoint_application_security_group_association
 ./resource.ps1 azurerm_resource_management_private_link
 ./resource.ps1 azurerm_resource_management_private_link_association
@@ -95,4 +96,5 @@
 ./resource.ps1 azurerm_kubernetes_automatic_cluster -type data
 ./resource.ps1 azurerm_netapp_volume_bucket -type data
 ./resource.ps1 azurerm_netapp_volume_bucket_with_server -type data
+./resource.ps1 azurerm_playwright_workspace -type data
 ```

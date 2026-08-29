@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 84.67      |  1138       |  1344            |
-| Datasource | 98.49      |   456       |   463             |
+| Resources  | 84.44      |  1123       |  1330            |
+| Datasource | 98.04      |   450       |   459             |
 
 ## Deprecated
 
-29 resources and 7 datasources are flagged as deprecated in provider schema v7.45.0. Users pinned to an older provider major may already be affected when they upgrade.
+16 resources and 5 datasources are flagged as deprecated in provider schema v8.0.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -24,24 +24,11 @@
 | google_data_catalog_tag_template_iam_binding | — |
 | google_data_catalog_tag_template_iam_member | — |
 | google_data_catalog_tag_template_iam_policy | — |
-| google_iap_brand | — |
-| google_iap_client | — |
-| google_ml_engine_model | — |
 | google_network_services_service_binding | — |
-| google_notebooks_environment | — |
-| google_notebooks_instance | — |
-| google_notebooks_instance_iam_binding | — |
-| google_notebooks_instance_iam_member | — |
-| google_notebooks_instance_iam_policy | — |
-| google_notebooks_runtime | — |
-| google_notebooks_runtime_iam_binding | — |
-| google_notebooks_runtime_iam_member | — |
-| google_notebooks_runtime_iam_policy | — |
 | google_pubsub_lite_reservation | — |
 | google_pubsub_lite_subscription | — |
 | google_pubsub_lite_topic | — |
 | google_scc_v2_organization_scc_big_query_exports | — |
-| google_vertex_ai_schedule | — |
 
 ### Deprecated Data Sources
 
@@ -52,8 +39,6 @@
 | google_data_catalog_entry_group_iam_policy | — |
 | google_data_catalog_tag_template_iam_policy | — |
 | google_kms_secret_ciphertext | — |
-| google_notebooks_instance_iam_policy | — |
-| google_notebooks_runtime_iam_policy | — |
 
 ```shell
 ./resource.ps1 google_access_context_manager_egress_policy
@@ -184,6 +169,7 @@
 ./resource.ps1 google_integrations_client
 ./resource.ps1 google_kms_project_autokey_config
 ./resource.ps1 google_license_manager_configuration
+./resource.ps1 google_memorystore_acl_policy
 ./resource.ps1 google_migration_center_assets_export_job
 ./resource.ps1 google_migration_center_discovery_client
 ./resource.ps1 google_migration_center_import_data_file
@@ -250,6 +236,7 @@
 ./resource.ps1 google_oracle_database_goldengate_connection
 ./resource.ps1 google_oracle_database_goldengate_connection_assignment
 ./resource.ps1 google_oracle_database_goldengate_deployment
+./resource.ps1 google_redis_cluster_acl_policy
 ./resource.ps1 google_scc_v2_organization_source
 ./resource.ps1 google_service_networking_vpc_service_controls
 ./resource.ps1 google_sql_provision_script
@@ -257,7 +244,6 @@
 ./resource.ps1 google_vector_search_index
 ./resource.ps1 google_vertex_ai_evaluation_metric
 ./resource.ps1 google_vertex_ai_persistent_resource
-./resource.ps1 google_vertex_ai_schedule
 ./resource.ps1 google_vertex_ai_semantic_governance_policy_engine
 ./resource.ps1 google_vertex_ai_tensorboard_experiment
 ./resource.ps1 google_vertex_ai_tensorboard_run
@@ -267,6 +253,8 @@
 ./resource.ps1 google_iap_agent_registry_agent_iam_policy -type data
 ./resource.ps1 google_iap_agent_registry_endpoint_iam_policy -type data
 ./resource.ps1 google_iap_agent_registry_mcp_server_iam_policy -type data
+./resource.ps1 google_memorystore_acl_policy -type data
 ./resource.ps1 google_oracle_database_exascale_db_storage_vault -type data
 ./resource.ps1 google_oracle_database_exascale_db_storage_vaults -type data
+./resource.ps1 google_redis_cluster_acl_policy -type data
 ```
