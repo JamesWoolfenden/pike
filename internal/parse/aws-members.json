@@ -5,6 +5,7 @@
         "aws_account_alternate_contact",
         "aws_account_primary_contact",
         "aws_account_region",
+        "aws_accountaccess_application",
         "aws_acm_certificate",
         "aws_acm_certificate_validation",
         "aws_acmpca_certificate",
@@ -421,6 +422,7 @@
         "aws_datazone_form_type",
         "aws_datazone_glossary",
         "aws_datazone_glossary_term",
+        "aws_datazone_policy_grant",
         "aws_datazone_project",
         "aws_datazone_user_profile",
         "aws_dax_cluster",
@@ -882,6 +884,7 @@
         "aws_lambda_runtime_management_config",
         "aws_lambdacore_network_connector",
         "aws_lambdamicrovms_image",
+        "aws_lambdamicrovms_microvm",
         "aws_launch_configuration",
         "aws_launch_template",
         "aws_lb",
@@ -952,6 +955,7 @@
         "aws_macie2_member",
         "aws_macie2_organization_admin_account",
         "aws_macie2_organization_configuration",
+        "aws_mailmanager_archive",
         "aws_mailmanager_ingress_point",
         "aws_mailmanager_relay",
         "aws_mailmanager_rule_set",
@@ -2414,5 +2418,5 @@
         "aws_s3_bucket_object": "",
         "aws_s3_bucket_objects": ""
     },
-    "providerVersion": "6.62.0"
+    "providerVersion": "6.63.0"
 }
