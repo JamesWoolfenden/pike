@@ -11,6 +11,7 @@ jobs:
       GOTOOLCHAIN: auto
     permissions:
       contents: write
+    timeout-minutes: 30
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code

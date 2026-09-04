@@ -128,7 +128,7 @@ function Get-GooglePermissions($resourceName, $provider, $isDataSource)
         $resourcePart = $resourceName -replace "^google_", ""
 
         # Find potential matches
-        $matches = @()
+        $permissionMatches = @()
 
         foreach ($key in $allPermissions.Keys)
         {
@@ -139,7 +139,7 @@ function Get-GooglePermissions($resourceName, $provider, $isDataSource)
             if ($entry.terraform_resources -contains $resourceName)
             {
                 # Direct match
-                $matches += @{
+                $permissionMatches += @{
                     ServiceResource = $key
                     Entry = $entry
                     MatchType = "exact"
@@ -158,7 +158,7 @@ function Get-GooglePermissions($resourceName, $provider, $isDataSource)
                     $resourcePartLower -like "*$keyLower*" -or
                     $keyLower -like "*$resourcePartLower*")
                 {
-                    $matches += @{
+                    $permissionMatches += @{
                         ServiceResource = $key
                         Entry = $entry
                         MatchType = "fuzzy"
@@ -167,7 +167,7 @@ function Get-GooglePermissions($resourceName, $provider, $isDataSource)
             }
         }
 
-        if ($matches.Count -eq 0)
+        if ($permissionMatches.Count -eq 0)
         {
             Write-Host "No Google Cloud permissions found for '$resourceName'" -ForegroundColor Yellow
             Write-Host "  Searched across 2500+ GCP service.resource types" -ForegroundColor Gray
@@ -175,11 +175,11 @@ function Get-GooglePermissions($resourceName, $provider, $isDataSource)
         }
 
         # Sort exact matches first
-        $matches = $matches | Sort-Object -Property @{Expression = {if ($_.MatchType -eq "exact") { 0 } else { 1 }}}
+        $permissionMatches = $permissionMatches | Sort-Object -Property @{Expression = {if ($_.MatchType -eq "exact") { 0 } else { 1 }}}
 
-        if ($matches.Count -eq 1)
+        if ($permissionMatches.Count -eq 1)
         {
-            $match = $matches[0]
+            $match = $permissionMatches[0]
             Write-Host "✓ Found permissions for: $($match.ServiceResource)" -ForegroundColor Green
             return $match.Entry
         }
@@ -187,9 +187,9 @@ function Get-GooglePermissions($resourceName, $provider, $isDataSource)
         # Multiple matches - let user choose
         Write-Host "`nFound multiple possible Google Cloud service.resource types:" -ForegroundColor Cyan
 
-        for ($i = 0; $i -lt [Math]::Min($matches.Count, 10); $i++)
+        for ($i = 0; $i -lt [Math]::Min($permissionMatches.Count, 10); $i++)
         {
-            $m = $matches[$i]
+            $m = $permissionMatches[$i]
             $entry = $m.Entry
             $permCount = $entry.permissions.Count
             $gaCount = $entry.stage_counts.GA
@@ -200,14 +200,14 @@ function Get-GooglePermissions($resourceName, $provider, $isDataSource)
             Write-Host "       Total: $permCount permissions (GA: $gaCount, BETA: $betaCount)" -ForegroundColor Gray
         }
 
-        if ($matches.Count -gt 10)
+        if ($permissionMatches.Count -gt 10)
         {
-            Write-Host "  ... and $($matches.Count - 10) more matches" -ForegroundColor Gray
+            Write-Host "  ... and $($permissionMatches.Count - 10) more matches" -ForegroundColor Gray
         }
 
         do
         {
-            $maxChoice = [Math]::Min($matches.Count, 10)
+            $maxChoice = [Math]::Min($permissionMatches.Count, 10)
             $choice = Read-Host "`nWhich service.resource should we use? [1-$maxChoice, or 0 to skip]"
             $choiceNum = [int]$choice
         } while ($choiceNum -lt 0 -or $choiceNum -gt $maxChoice)
@@ -218,7 +218,7 @@ function Get-GooglePermissions($resourceName, $provider, $isDataSource)
             return $null
         }
 
-        $selected = $matches[$choiceNum - 1]
+        $selected = $permissionMatches[$choiceNum - 1]
         Write-Host "✓ Selected: $($selected.ServiceResource)" -ForegroundColor Green
 
         return $selected.Entry
@@ -258,7 +258,7 @@ function Get-AzurePermissions($resourceName, $provider, $isDataSource)
         $resourcePart = $resourceName -replace "^azurerm_", ""
 
         # Find potential matches in Azure providers
-        $matches = @()
+        $permissionMatches = @()
 
         foreach ($providerName in $allPermissions.Keys)
         {
@@ -275,7 +275,7 @@ function Get-AzurePermissions($resourceName, $provider, $isDataSource)
                 {
 
                     $perms = $provider[$resourceType]
-                    $matches += @{
+                    $permissionMatches += @{
                         Provider = $providerName
                         ResourceType = $resourceType
                         Permissions = $perms
@@ -285,22 +285,22 @@ function Get-AzurePermissions($resourceName, $provider, $isDataSource)
             }
         }
 
-        if ($matches.Count -eq 0)
+        if ($permissionMatches.Count -eq 0)
         {
             Write-Host "No Azure permissions found for '$resourceName'" -ForegroundColor Yellow
             return $null
         }
 
-        if ($matches.Count -eq 1)
+        if ($permissionMatches.Count -eq 1)
         {
             Write-Host "Found permissions for: $( $matches[0].FullPath )" -ForegroundColor Green
-            return $matches[0].Permissions
+            return $permissionMatches[0].Permissions
         }
 
         # Multiple matches - let user choose
         Write-Host "`nFound multiple possible Azure resource types:" -ForegroundColor Cyan
-        for ($i = 0; $i -lt $matches.Count; $i++) {
-            $m = $matches[$i]
+        for ($i = 0; $i -lt $permissionMatches.Count; $i++) {
+            $m = $permissionMatches[$i]
             $readCount = $m.Permissions.read.Count
             $writeCount = $m.Permissions.write.Count
             $deleteCount = $m.Permissions.delete.Count
@@ -312,9 +312,9 @@ function Get-AzurePermissions($resourceName, $provider, $isDataSource)
 
         do
         {
-            $choice = Read-Host "`nWhich resource type should we use? [1-$( $matches.Count ), or 0 to skip]"
+            $choice = Read-Host "`nWhich resource type should we use? [1-$( $permissionMatches.Count ), or 0 to skip]"
             $choiceNum = [int]$choice
-        } while ($choiceNum -lt 0 -or $choiceNum -gt $matches.Count)
+        } while ($choiceNum -lt 0 -or $choiceNum -gt $permissionMatches.Count)
 
         if ($choiceNum -eq 0)
         {
@@ -322,7 +322,7 @@ function Get-AzurePermissions($resourceName, $provider, $isDataSource)
             return $null
         }
 
-        $selected = $matches[$choiceNum - 1]
+        $selected = $permissionMatches[$choiceNum - 1]
         Write-Host "✓ Selected: $( $selected.FullPath )" -ForegroundColor Green
 
         return $selected.Permissions
