@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 88.31      |  1511       |  1711            |
+| Resources  | 88.10      |  1511       |  1715            |
 | Datasource | 97.64      |   663       |   679             |
 
 ## Deprecated
 
-14 resources and 3 datasources are flagged as deprecated in provider schema v6.62.0. Users pinned to an older provider major may already be affected when they upgrade.
+14 resources and 3 datasources are flagged as deprecated in provider schema v6.63.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -37,6 +37,7 @@
 | aws_s3_bucket_objects | — |
 
 ```shell
+./resource.ps1 aws_accountaccess_application
 ./resource.ps1 aws_alb_listener_certificate
 ./resource.ps1 aws_alb_target_group_attachment
 ./resource.ps1 aws_apigatewayv2_routing_rule
@@ -87,6 +88,7 @@
 ./resource.ps1 aws_cognito_managed_login_branding
 ./resource.ps1 aws_connect_phone_number_contact_flow_association
 ./resource.ps1 aws_controltower_baseline
+./resource.ps1 aws_datazone_policy_grant
 ./resource.ps1 aws_devicefarm_test_grid_project
 ./resource.ps1 aws_dsql_cluster_policy
 ./resource.ps1 aws_dynamodb_global_secondary_index
@@ -116,6 +118,8 @@
 ./resource.ps1 aws_lambda_function_scaling_config
 ./resource.ps1 aws_lambdacore_network_connector
 ./resource.ps1 aws_lambdamicrovms_image
+./resource.ps1 aws_lambdamicrovms_microvm
+./resource.ps1 aws_mailmanager_archive
 ./resource.ps1 aws_mailmanager_ingress_point
 ./resource.ps1 aws_mailmanager_relay
 ./resource.ps1 aws_mailmanager_rule_set

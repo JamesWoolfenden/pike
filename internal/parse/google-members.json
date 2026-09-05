@@ -704,6 +704,9 @@
         "google_eventarc_google_channel_config",
         "google_eventarc_message_bus",
         "google_eventarc_pipeline",
+        "google_eventarc_pipeline_iam_binding",
+        "google_eventarc_pipeline_iam_member",
+        "google_eventarc_pipeline_iam_policy",
         "google_eventarc_trigger",
         "google_filestore_backup",
         "google_filestore_instance",
@@ -979,6 +982,7 @@
         "google_monitoring_notification_channel",
         "google_monitoring_service",
         "google_monitoring_slo",
+        "google_monitoring_snooze",
         "google_monitoring_uptime_check_config",
         "google_netapp_active_directory",
         "google_netapp_backup",
@@ -1006,6 +1010,7 @@
         "google_network_connectivity_spoke",
         "google_network_connectivity_transport",
         "google_network_management_connectivity_test",
+        "google_network_management_network_monitoring_provider",
         "google_network_management_organization_vpc_flow_logs_config",
         "google_network_management_vpc_flow_logs_config",
         "google_network_security_address_group",
@@ -1063,6 +1068,7 @@
         "google_network_services_tcp_route",
         "google_network_services_tls_route",
         "google_network_services_wasm_plugin",
+        "google_observability_bucket",
         "google_observability_trace_scope",
         "google_oracle_database_autonomous_database",
         "google_oracle_database_cloud_exadata_infrastructure",
@@ -1152,6 +1158,7 @@
         "google_scc_management_project_security_health_analytics_custom_module",
         "google_scc_mute_config",
         "google_scc_notification_config",
+        "google_scc_notification_service_account",
         "google_scc_organization_custom_module",
         "google_scc_organization_scc_big_query_export",
         "google_scc_project_custom_module",
@@ -1570,6 +1577,7 @@
         "google_dns_record_sets",
         "google_endpoints_service_consumers_iam_policy",
         "google_endpoints_service_iam_policy",
+        "google_eventarc_pipeline_iam_policy",
         "google_filestore_instance",
         "google_firestore_document",
         "google_folder",
@@ -1817,5 +1825,5 @@
         "google_data_catalog_tag_template_iam_policy": "",
         "google_kms_secret_ciphertext": ""
     },
-    "providerVersion": "8.0.0"
+    "providerVersion": "8.1.0"
 }

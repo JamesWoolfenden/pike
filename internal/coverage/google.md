@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 84.44      |  1123       |  1330            |
-| Datasource | 98.04      |   450       |   459             |
+| Resources  | 83.99      |  1123       |  1337            |
+| Datasource | 97.83      |   450       |   460             |
 
 ## Deprecated
 
-16 resources and 5 datasources are flagged as deprecated in provider schema v8.0.0. Users pinned to an older provider major may already be affected when they upgrade.
+16 resources and 5 datasources are flagged as deprecated in provider schema v8.1.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -124,6 +124,9 @@
 ./resource.ps1 google_dialogflow_sip_trunk
 ./resource.ps1 google_discovery_engine_serving_config
 ./resource.ps1 google_document_ai_schema
+./resource.ps1 google_eventarc_pipeline_iam_binding
+./resource.ps1 google_eventarc_pipeline_iam_member
+./resource.ps1 google_eventarc_pipeline_iam_policy
 ./resource.ps1 google_firebase_app_check_app_attest_config
 ./resource.ps1 google_firebase_app_check_debug_token
 ./resource.ps1 google_firebase_app_check_device_check_config
@@ -178,6 +181,7 @@
 ./resource.ps1 google_migration_center_report_config
 ./resource.ps1 google_migration_center_settings
 ./resource.ps1 google_migration_center_source
+./resource.ps1 google_monitoring_snooze
 ./resource.ps1 google_network_connectivity_destination
 ./resource.ps1 google_network_connectivity_gateway_advertised_route
 ./resource.ps1 google_network_connectivity_group
@@ -188,6 +192,7 @@
 ./resource.ps1 google_network_connectivity_spoke
 ./resource.ps1 google_network_connectivity_transport
 ./resource.ps1 google_network_management_connectivity_test
+./resource.ps1 google_network_management_network_monitoring_provider
 ./resource.ps1 google_network_management_vpc_flow_logs_config
 ./resource.ps1 google_network_security_backend_authentication_config
 ./resource.ps1 google_network_security_dns_threat_detector
@@ -232,11 +237,13 @@
 ./resource.ps1 google_network_services_multicast_group_range
 ./resource.ps1 google_network_services_multicast_group_range_activation
 ./resource.ps1 google_network_services_multicast_producer_association
+./resource.ps1 google_observability_bucket
 ./resource.ps1 google_oracle_database_cloud_exadata_infrastructure_exascale_config
 ./resource.ps1 google_oracle_database_goldengate_connection
 ./resource.ps1 google_oracle_database_goldengate_connection_assignment
 ./resource.ps1 google_oracle_database_goldengate_deployment
 ./resource.ps1 google_redis_cluster_acl_policy
+./resource.ps1 google_scc_notification_service_account
 ./resource.ps1 google_scc_v2_organization_source
 ./resource.ps1 google_service_networking_vpc_service_controls
 ./resource.ps1 google_sql_provision_script
@@ -249,6 +256,7 @@
 ./resource.ps1 google_vertex_ai_tensorboard_run
 ./resource.ps1 google_workload_identity_service_agent
 ./resource.ps1 google_data_catalog_taxonomy -type data
+./resource.ps1 google_eventarc_pipeline_iam_policy -type data
 ./resource.ps1 google_iam_workload_identity_pool_openid_config -type data
 ./resource.ps1 google_iap_agent_registry_agent_iam_policy -type data
 ./resource.ps1 google_iap_agent_registry_endpoint_iam_policy -type data
