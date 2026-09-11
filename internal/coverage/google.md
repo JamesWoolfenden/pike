@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 83.99      |  1123       |  1337            |
-| Datasource | 97.83      |   450       |   460             |
+| Resources  | 82.77      |  1124       |  1358            |
+| Datasource | 97.21      |   453       |   466             |
 
 ## Deprecated
 
-16 resources and 5 datasources are flagged as deprecated in provider schema v8.1.0. Users pinned to an older provider major may already be affected when they upgrade.
+16 resources and 5 datasources are flagged as deprecated in provider schema v8.2.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -61,10 +61,25 @@
 ./resource.ps1 google_apihub_runtime_project_attachment
 ./resource.ps1 google_artifact_registry_project_config
 ./resource.ps1 google_artifact_registry_rule
+./resource.ps1 google_biglake_hive_catalog
+./resource.ps1 google_biglake_hive_catalog_iam_binding
+./resource.ps1 google_biglake_hive_catalog_iam_member
+./resource.ps1 google_biglake_hive_catalog_iam_policy
+./resource.ps1 google_biglake_hive_database
+./resource.ps1 google_biglake_hive_database_iam_binding
+./resource.ps1 google_biglake_hive_database_iam_member
+./resource.ps1 google_biglake_hive_database_iam_policy
+./resource.ps1 google_biglake_hive_table
+./resource.ps1 google_biglake_hive_table_iam_binding
+./resource.ps1 google_biglake_hive_table_iam_member
+./resource.ps1 google_biglake_hive_table_iam_policy
 ./resource.ps1 google_bigquery_analytics_hub_query_template
+./resource.ps1 google_bigquery_data_transfer_data_source_enrollment
 ./resource.ps1 google_bigquery_reservation_group
 ./resource.ps1 google_ces_app_root_agent_association
 ./resource.ps1 google_chronicle_big_query_export
+./resource.ps1 google_chronicle_case_close_definition
+./resource.ps1 google_chronicle_case_tag_definition
 ./resource.ps1 google_chronicle_custom_list
 ./resource.ps1 google_chronicle_dashboard_chart
 ./resource.ps1 google_chronicle_data_export
@@ -238,6 +253,9 @@
 ./resource.ps1 google_network_services_multicast_group_range_activation
 ./resource.ps1 google_network_services_multicast_producer_association
 ./resource.ps1 google_observability_bucket
+./resource.ps1 google_observability_folder_settings
+./resource.ps1 google_observability_link
+./resource.ps1 google_observability_project_settings
 ./resource.ps1 google_oracle_database_cloud_exadata_infrastructure_exascale_config
 ./resource.ps1 google_oracle_database_goldengate_connection
 ./resource.ps1 google_oracle_database_goldengate_connection_assignment
@@ -247,6 +265,8 @@
 ./resource.ps1 google_scc_v2_organization_source
 ./resource.ps1 google_service_networking_vpc_service_controls
 ./resource.ps1 google_sql_provision_script
+./resource.ps1 google_storage_ftp_server
+./resource.ps1 google_storage_ftp_user
 ./resource.ps1 google_vector_search_data_object
 ./resource.ps1 google_vector_search_index
 ./resource.ps1 google_vertex_ai_evaluation_metric
@@ -255,6 +275,9 @@
 ./resource.ps1 google_vertex_ai_tensorboard_experiment
 ./resource.ps1 google_vertex_ai_tensorboard_run
 ./resource.ps1 google_workload_identity_service_agent
+./resource.ps1 google_biglake_hive_catalog_iam_policy -type data
+./resource.ps1 google_biglake_hive_database_iam_policy -type data
+./resource.ps1 google_biglake_hive_table_iam_policy -type data
 ./resource.ps1 google_data_catalog_taxonomy -type data
 ./resource.ps1 google_eventarc_pipeline_iam_policy -type data
 ./resource.ps1 google_iam_workload_identity_pool_openid_config -type data

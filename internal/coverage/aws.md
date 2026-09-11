@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 88.10      |  1511       |  1715            |
-| Datasource | 97.64      |   663       |   679             |
+| Resources  | 87.80      |  1511       |  1721            |
+| Datasource | 97.07      |   663       |   683             |
 
 ## Deprecated
 
-14 resources and 3 datasources are flagged as deprecated in provider schema v6.63.0. Users pinned to an older provider major may already be affected when they upgrade.
+14 resources and 3 datasources are flagged as deprecated in provider schema v6.64.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -38,6 +38,8 @@
 
 ```shell
 ./resource.ps1 aws_accountaccess_application
+./resource.ps1 aws_accountaccess_entitlement
+./resource.ps1 aws_agentregistry_registry
 ./resource.ps1 aws_alb_listener_certificate
 ./resource.ps1 aws_alb_target_group_attachment
 ./resource.ps1 aws_apigatewayv2_routing_rule
@@ -49,6 +51,7 @@
 ./resource.ps1 aws_backup_restore_testing_selection
 ./resource.ps1 aws_bedrock_evaluation_job
 ./resource.ps1 aws_bedrock_foundation_model_agreement
+./resource.ps1 aws_bedrock_model_invocation_job
 ./resource.ps1 aws_bedrock_use_case_for_model_access
 ./resource.ps1 aws_bedrockagent_flow
 ./resource.ps1 aws_bedrockagentcore_agent_runtime
@@ -90,6 +93,8 @@
 ./resource.ps1 aws_controltower_baseline
 ./resource.ps1 aws_datazone_policy_grant
 ./resource.ps1 aws_devicefarm_test_grid_project
+./resource.ps1 aws_dms_data_provider
+./resource.ps1 aws_dms_instance_profile
 ./resource.ps1 aws_dsql_cluster_policy
 ./resource.ps1 aws_dynamodb_global_secondary_index
 ./resource.ps1 aws_ebs_volume_copy
@@ -106,6 +111,7 @@
 ./resource.ps1 aws_ecs_daemon_task_definition
 ./resource.ps1 aws_ecs_express_gateway_service
 ./resource.ps1 aws_eks_capability
+./resource.ps1 aws_fis_safety_lever_state
 ./resource.ps1 aws_fis_target_account_configuration
 ./resource.ps1 aws_fsx_s3_access_point_attachment
 ./resource.ps1 aws_glue_catalog
@@ -241,6 +247,9 @@
 ./resource.ps1 aws_workspacesweb_user_settings_association
 ./resource.ps1 aws_xray_indexing_rule
 ./resource.ps1 aws_xray_trace_segment_destination
+./resource.ps1 aws_accountaccess_application -type data
+./resource.ps1 aws_accountaccess_entitlements -type data
+./resource.ps1 aws_agentregistry_registry -type data
 ./resource.ps1 aws_bedrock_foundation_model_agreement_offers -type data
 ./resource.ps1 aws_bedrock_use_case_for_model_access -type data
 ./resource.ps1 aws_ec2_capacity_block_reservation -type data
@@ -249,6 +258,7 @@
 ./resource.ps1 aws_elasticache_service_update_actions -type data
 ./resource.ps1 aws_elasticache_service_updates -type data
 ./resource.ps1 aws_odb_iam_role_association -type data
+./resource.ps1 aws_rds_events -type data
 ./resource.ps1 aws_rds_snapshots -type data
 ./resource.ps1 aws_resiliencehubv2_policy -type data
 ./resource.ps1 aws_resiliencehubv2_service -type data
