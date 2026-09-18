@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 96.47      |  1065       |  1104            |
+| Resources  | 96.38      |  1065       |  1105            |
 | Datasource | 98.48      |   389       |   395             |
 
 ## Deprecated
 
-30 resources and 2 datasources are flagged as deprecated in provider schema v5.5.0. Users pinned to an older provider major may already be affected when they upgrade.
+30 resources and 2 datasources are flagged as deprecated in provider schema v5.6.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -89,6 +89,7 @@
 ./resource.ps1 azurerm_resource_provider_feature_registration
 ./resource.ps1 azurerm_resource_provider_registration
 ./resource.ps1 azurerm_storage_account_table_properties
+./resource.ps1 azurerm_storage_discovery_workspace
 ./resource.ps1 azurerm_virtual_desktop_scaling_plan_host_pool_association
 ./resource.ps1 azurerm_virtual_machine_gallery_application_assignment
 ./resource.ps1 azurerm_cdn_frontdoor_batch_rule_set -type data

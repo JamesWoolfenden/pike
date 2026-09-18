@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 87.80      |  1511       |  1721            |
+| Resources  | 87.65      |  1511       |  1724            |
 | Datasource | 97.07      |   663       |   683             |
 
 ## Deprecated
 
-14 resources and 3 datasources are flagged as deprecated in provider schema v6.64.0. Users pinned to an older provider major may already be affected when they upgrade.
+14 resources and 3 datasources are flagged as deprecated in provider schema v6.65.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -95,6 +95,7 @@
 ./resource.ps1 aws_devicefarm_test_grid_project
 ./resource.ps1 aws_dms_data_provider
 ./resource.ps1 aws_dms_instance_profile
+./resource.ps1 aws_dms_migration_project
 ./resource.ps1 aws_dsql_cluster_policy
 ./resource.ps1 aws_dynamodb_global_secondary_index
 ./resource.ps1 aws_ebs_volume_copy
@@ -106,6 +107,7 @@
 ./resource.ps1 aws_ec2_secondary_subnet
 ./resource.ps1 aws_ec2_transit_gateway_metering_policy
 ./resource.ps1 aws_ec2_transit_gateway_metering_policy_entry
+./resource.ps1 aws_ec2_transit_gateway_policy_table_entry
 ./resource.ps1 aws_ecr_pull_time_update_exclusion
 ./resource.ps1 aws_ecs_daemon
 ./resource.ps1 aws_ecs_daemon_task_definition
@@ -122,6 +124,7 @@
 ./resource.ps1 aws_lakeformation_lf_tag_expression
 ./resource.ps1 aws_lambda_capacity_provider
 ./resource.ps1 aws_lambda_function_scaling_config
+./resource.ps1 aws_lambda_resource_policy
 ./resource.ps1 aws_lambdacore_network_connector
 ./resource.ps1 aws_lambdamicrovms_image
 ./resource.ps1 aws_lambdamicrovms_microvm

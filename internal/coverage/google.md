@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 82.77      |  1124       |  1358            |
-| Datasource | 97.21      |   453       |   466             |
+| Resources  | 82.48      |  1125       |  1364            |
+| Datasource | 97.00      |   453       |   467             |
 
 ## Deprecated
 
-16 resources and 5 datasources are flagged as deprecated in provider schema v8.2.0. Users pinned to an older provider major may already be affected when they upgrade.
+16 resources and 5 datasources are flagged as deprecated in provider schema v8.3.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -79,6 +79,7 @@
 ./resource.ps1 google_ces_app_root_agent_association
 ./resource.ps1 google_chronicle_big_query_export
 ./resource.ps1 google_chronicle_case_close_definition
+./resource.ps1 google_chronicle_case_stage_definition
 ./resource.ps1 google_chronicle_case_tag_definition
 ./resource.ps1 google_chronicle_custom_list
 ./resource.ps1 google_chronicle_dashboard_chart
@@ -126,6 +127,7 @@
 ./resource.ps1 google_container_azure_cluster
 ./resource.ps1 google_container_azure_node_pool
 ./resource.ps1 google_data_lineage_config
+./resource.ps1 google_data_loss_prevention_content_policy
 ./resource.ps1 google_dataplex_data_product_data_asset
 ./resource.ps1 google_dataplex_metadata_feed
 ./resource.ps1 google_dataproc_gdc_application_environment
@@ -158,6 +160,8 @@
 ./resource.ps1 google_firebase_data_connect_service
 ./resource.ps1 google_firebase_remote_config_remote_config
 ./resource.ps1 google_firestore_change_stream
+./resource.ps1 google_gemini_gda_observability_setting
+./resource.ps1 google_gemini_gda_observability_setting_binding
 ./resource.ps1 google_gke_hub_rollout_sequence
 ./resource.ps1 google_gke_hub_scope_rbac_role_binding
 ./resource.ps1 google_iam_folder_access_policy
@@ -271,6 +275,7 @@
 ./resource.ps1 google_vector_search_index
 ./resource.ps1 google_vertex_ai_evaluation_metric
 ./resource.ps1 google_vertex_ai_persistent_resource
+./resource.ps1 google_vertex_ai_rag_corpus
 ./resource.ps1 google_vertex_ai_semantic_governance_policy_engine
 ./resource.ps1 google_vertex_ai_tensorboard_experiment
 ./resource.ps1 google_vertex_ai_tensorboard_run
@@ -278,6 +283,7 @@
 ./resource.ps1 google_biglake_hive_catalog_iam_policy -type data
 ./resource.ps1 google_biglake_hive_database_iam_policy -type data
 ./resource.ps1 google_biglake_hive_table_iam_policy -type data
+./resource.ps1 google_compute_service_attachments -type data
 ./resource.ps1 google_data_catalog_taxonomy -type data
 ./resource.ps1 google_eventarc_pipeline_iam_policy -type data
 ./resource.ps1 google_iam_workload_identity_pool_openid_config -type data

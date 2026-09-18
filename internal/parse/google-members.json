@@ -226,6 +226,7 @@
         "google_ces_toolset",
         "google_chronicle_big_query_export",
         "google_chronicle_case_close_definition",
+        "google_chronicle_case_stage_definition",
         "google_chronicle_case_tag_definition",
         "google_chronicle_custom_list",
         "google_chronicle_dashboard_chart",
@@ -386,6 +387,7 @@
         "google_compute_managed_ssl_certificate",
         "google_compute_network",
         "google_compute_network_attachment",
+        "google_compute_network_edge_security_service",
         "google_compute_network_endpoint",
         "google_compute_network_endpoint_group",
         "google_compute_network_endpoints",
@@ -540,6 +542,7 @@
         "google_data_fusion_instance_iam_member",
         "google_data_fusion_instance_iam_policy",
         "google_data_lineage_config",
+        "google_data_loss_prevention_content_policy",
         "google_data_loss_prevention_deidentify_template",
         "google_data_loss_prevention_discovery_config",
         "google_data_loss_prevention_inspect_template",
@@ -762,6 +765,8 @@
         "google_gemini_code_tools_setting_binding",
         "google_gemini_data_sharing_with_google_setting",
         "google_gemini_data_sharing_with_google_setting_binding",
+        "google_gemini_gda_observability_setting",
+        "google_gemini_gda_observability_setting_binding",
         "google_gemini_gemini_gcp_enablement_setting",
         "google_gemini_gemini_gcp_enablement_setting_binding",
         "google_gemini_logging_setting",
@@ -1324,6 +1329,7 @@
         "google_vertex_ai_index_endpoint",
         "google_vertex_ai_index_endpoint_deployed_index",
         "google_vertex_ai_persistent_resource",
+        "google_vertex_ai_rag_corpus",
         "google_vertex_ai_rag_engine_config",
         "google_vertex_ai_reasoning_engine",
         "google_vertex_ai_reasoning_engine_iam_binding",
@@ -1539,6 +1545,7 @@
         "google_compute_routers",
         "google_compute_security_policy",
         "google_compute_service_attachment",
+        "google_compute_service_attachments",
         "google_compute_snapshot",
         "google_compute_snapshot_iam_policy",
         "google_compute_ssl_certificate",
@@ -1852,5 +1859,5 @@
         "google_data_catalog_tag_template_iam_policy": "",
         "google_kms_secret_ciphertext": ""
     },
-    "providerVersion": "8.2.0"
+    "providerVersion": "8.3.0"
 }

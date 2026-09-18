@@ -480,6 +480,7 @@
         "aws_dms_endpoint",
         "aws_dms_event_subscription",
         "aws_dms_instance_profile",
+        "aws_dms_migration_project",
         "aws_dms_replication_config",
         "aws_dms_replication_instance",
         "aws_dms_replication_subnet_group",
@@ -584,6 +585,7 @@
         "aws_ec2_transit_gateway_peering_attachment_accepter",
         "aws_ec2_transit_gateway_policy_table",
         "aws_ec2_transit_gateway_policy_table_association",
+        "aws_ec2_transit_gateway_policy_table_entry",
         "aws_ec2_transit_gateway_prefix_list_reference",
         "aws_ec2_transit_gateway_route",
         "aws_ec2_transit_gateway_route_table",
@@ -887,6 +889,7 @@
         "aws_lambda_layer_version_permission",
         "aws_lambda_permission",
         "aws_lambda_provisioned_concurrency_config",
+        "aws_lambda_resource_policy",
         "aws_lambda_runtime_management_config",
         "aws_lambdacore_network_connector",
         "aws_lambdamicrovms_image",
@@ -2428,5 +2431,5 @@
         "aws_s3_bucket_object": "",
         "aws_s3_bucket_objects": ""
     },
-    "providerVersion": "6.64.0"
+    "providerVersion": "6.65.0"
 }
