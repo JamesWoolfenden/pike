@@ -1539,5 +1539,5 @@
         "azurerm_spring_cloud_app": "",
         "azurerm_spring_cloud_service": ""
     },
-    "providerVersion": "5.6.0"
+    "providerVersion": "5.7.0"
 }

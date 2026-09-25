@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 87.65      |  1511       |  1724            |
+| Resources  | 87.59      |  1511       |  1725            |
 | Datasource | 97.07      |   663       |   683             |
 
 ## Deprecated
 
-14 resources and 3 datasources are flagged as deprecated in provider schema v6.65.0. Users pinned to an older provider major may already be affected when they upgrade.
+14 resources and 3 datasources are flagged as deprecated in provider schema v6.66.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -133,6 +133,7 @@
 ./resource.ps1 aws_mailmanager_relay
 ./resource.ps1 aws_mailmanager_rule_set
 ./resource.ps1 aws_mailmanager_traffic_policy
+./resource.ps1 aws_msk_channel
 ./resource.ps1 aws_msk_topic
 ./resource.ps1 aws_nat_gateway_eip_association
 ./resource.ps1 aws_neptunegraph_private_graph_endpoint

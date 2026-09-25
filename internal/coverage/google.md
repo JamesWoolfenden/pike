@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 82.48      |  1125       |  1364            |
-| Datasource | 97.00      |   453       |   467             |
+| Resources  | 82.30      |  1125       |  1367            |
+| Datasource | 96.79      |   453       |   468             |
 
 ## Deprecated
 
-16 resources and 5 datasources are flagged as deprecated in provider schema v8.3.0. Users pinned to an older provider major may already be affected when they upgrade.
+16 resources and 5 datasources are flagged as deprecated in provider schema v8.4.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -162,6 +162,8 @@
 ./resource.ps1 google_firestore_change_stream
 ./resource.ps1 google_gemini_gda_observability_setting
 ./resource.ps1 google_gemini_gda_observability_setting_binding
+./resource.ps1 google_gemini_gibq_observability_setting
+./resource.ps1 google_gemini_gibq_observability_setting_binding
 ./resource.ps1 google_gke_hub_rollout_sequence
 ./resource.ps1 google_gke_hub_scope_rbac_role_binding
 ./resource.ps1 google_iam_folder_access_policy
@@ -235,6 +237,7 @@
 ./resource.ps1 google_network_security_ull_mirroring_collector_rule
 ./resource.ps1 google_network_security_ull_mirroring_engine
 ./resource.ps1 google_network_security_url_lists
+./resource.ps1 google_network_services_agent_connectivity_template
 ./resource.ps1 google_network_services_agent_gateway
 ./resource.ps1 google_network_services_authz_extension
 ./resource.ps1 google_network_services_edge_cache_keyset
@@ -283,6 +286,7 @@
 ./resource.ps1 google_biglake_hive_catalog_iam_policy -type data
 ./resource.ps1 google_biglake_hive_database_iam_policy -type data
 ./resource.ps1 google_biglake_hive_table_iam_policy -type data
+./resource.ps1 google_cloudbuild_worker_pool -type data
 ./resource.ps1 google_compute_service_attachments -type data
 ./resource.ps1 google_data_catalog_taxonomy -type data
 ./resource.ps1 google_eventarc_pipeline_iam_policy -type data

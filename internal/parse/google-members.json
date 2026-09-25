@@ -769,6 +769,8 @@
         "google_gemini_gda_observability_setting_binding",
         "google_gemini_gemini_gcp_enablement_setting",
         "google_gemini_gemini_gcp_enablement_setting_binding",
+        "google_gemini_gibq_observability_setting",
+        "google_gemini_gibq_observability_setting_binding",
         "google_gemini_logging_setting",
         "google_gemini_logging_setting_binding",
         "google_gemini_release_channel_setting",
@@ -1062,6 +1064,7 @@
         "google_network_security_ull_mirroring_collector_rule",
         "google_network_security_ull_mirroring_engine",
         "google_network_security_url_lists",
+        "google_network_services_agent_connectivity_template",
         "google_network_services_agent_gateway",
         "google_network_services_authz_extension",
         "google_network_services_edge_cache_keyset",
@@ -1468,6 +1471,7 @@
         "google_cloud_run_v2_worker_pool_iam_policy",
         "google_cloud_tasks_queue_iam_policy",
         "google_cloudbuild_trigger",
+        "google_cloudbuild_worker_pool",
         "google_cloudbuildv2_connection_iam_policy",
         "google_clouddeploy_custom_target_type_iam_policy",
         "google_clouddeploy_delivery_pipeline_iam_policy",
@@ -1859,5 +1863,5 @@
         "google_data_catalog_tag_template_iam_policy": "",
         "google_kms_secret_ciphertext": ""
     },
-    "providerVersion": "8.3.0"
+    "providerVersion": "8.4.0"
 }

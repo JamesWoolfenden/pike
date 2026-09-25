@@ -989,6 +989,7 @@
         "aws_memorydb_user",
         "aws_mq_broker",
         "aws_mq_configuration",
+        "aws_msk_channel",
         "aws_msk_cluster",
         "aws_msk_cluster_policy",
         "aws_msk_configuration",
@@ -2431,5 +2432,5 @@
         "aws_s3_bucket_object": "",
         "aws_s3_bucket_objects": ""
     },
-    "providerVersion": "6.65.0"
+    "providerVersion": "6.66.0"
 }
