@@ -30,7 +30,7 @@ RUN CGO_ENABLED=0 go build \
     -o /out/pike .
 
 # ---- runtime ----------------------------------------------------------------
-FROM alpine:3.24@sha256:28bd5fe8b56d1bd048e5babf5b10710ebe0bae67db86916198a6eec434943f8b
+FROM alpine:3.24@sha256:294b683cb724975bec92580e1e685676bd4b50bda910ddb8c51d4cabeaec77e6
 
 # entrypoint.sh needs bash; terraform/tofu flows often want git + ca-certificates.
 RUN apk add --no-cache bash=5.2.37-r0 ca-certificates=20250619-r0 git=2.49.1-r0 \
