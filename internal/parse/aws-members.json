@@ -468,12 +468,15 @@
         "aws_devopsguru_service_integration",
         "aws_directory_service_conditional_forwarder",
         "aws_directory_service_directory",
+        "aws_directory_service_ip_route",
+        "aws_directory_service_ip_routes_exclusive",
         "aws_directory_service_log_subscription",
         "aws_directory_service_radius_settings",
         "aws_directory_service_region",
         "aws_directory_service_shared_directory",
         "aws_directory_service_shared_directory_accepter",
         "aws_directory_service_trust",
+        "aws_directoryservicedata_user",
         "aws_dlm_lifecycle_policy",
         "aws_dms_certificate",
         "aws_dms_data_provider",
@@ -2432,5 +2435,5 @@
         "aws_s3_bucket_object": "",
         "aws_s3_bucket_objects": ""
     },
-    "providerVersion": "6.66.0"
+    "providerVersion": "6.67.0"
 }

@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 96.38      |  1065       |  1105            |
-| Datasource | 98.48      |   389       |   395             |
+| Resources  | 96.29      |  1065       |  1106            |
+| Datasource | 98.23      |   389       |   396             |
 
 ## Deprecated
 
-30 resources and 2 datasources are flagged as deprecated in provider schema v5.7.0. Users pinned to an older provider major may already be affected when they upgrade.
+30 resources and 2 datasources are flagged as deprecated in provider schema v5.8.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -78,6 +78,7 @@
 ./resource.ps1 azurerm_management_group_subscription_association
 ./resource.ps1 azurerm_netapp_volume_bucket
 ./resource.ps1 azurerm_netapp_volume_bucket_with_server
+./resource.ps1 azurerm_oracle_autonomous_database_cross_region_disaster_recovery
 ./resource.ps1 azurerm_palo_alto_local_rulestack_outbound_trust_certificate_association
 ./resource.ps1 azurerm_palo_alto_local_rulestack_outbound_untrust_certificate_association
 ./resource.ps1 azurerm_pim_active_role_assignment
@@ -97,5 +98,6 @@
 ./resource.ps1 azurerm_kubernetes_automatic_cluster -type data
 ./resource.ps1 azurerm_netapp_volume_bucket -type data
 ./resource.ps1 azurerm_netapp_volume_bucket_with_server -type data
+./resource.ps1 azurerm_oracle_autonomous_database_cross_region_disaster_recovery -type data
 ./resource.ps1 azurerm_playwright_workspace -type data
 ```

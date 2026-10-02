@@ -715,6 +715,7 @@
         "azurerm_oracle_autonomous_database_backup",
         "azurerm_oracle_autonomous_database_clone_from_backup",
         "azurerm_oracle_autonomous_database_clone_from_database",
+        "azurerm_oracle_autonomous_database_cross_region_disaster_recovery",
         "azurerm_oracle_cloud_vm_cluster",
         "azurerm_oracle_exadata_infrastructure",
         "azurerm_oracle_exascale_database_storage_vault",
@@ -1369,6 +1370,7 @@
         "azurerm_oracle_autonomous_database_backups",
         "azurerm_oracle_autonomous_database_clone_from_backup",
         "azurerm_oracle_autonomous_database_clone_from_database",
+        "azurerm_oracle_autonomous_database_cross_region_disaster_recovery",
         "azurerm_oracle_cloud_vm_cluster",
         "azurerm_oracle_database_system_versions",
         "azurerm_oracle_db_nodes",
@@ -1539,5 +1541,5 @@
         "azurerm_spring_cloud_app": "",
         "azurerm_spring_cloud_service": ""
     },
-    "providerVersion": "5.7.0"
+    "providerVersion": "5.8.0"
 }

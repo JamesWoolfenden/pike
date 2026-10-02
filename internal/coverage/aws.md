@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 87.59      |  1511       |  1725            |
+| Resources  | 87.44      |  1511       |  1728            |
 | Datasource | 97.07      |   663       |   683             |
 
 ## Deprecated
 
-14 resources and 3 datasources are flagged as deprecated in provider schema v6.66.0. Users pinned to an older provider major may already be affected when they upgrade.
+14 resources and 3 datasources are flagged as deprecated in provider schema v6.67.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -93,6 +93,9 @@
 ./resource.ps1 aws_controltower_baseline
 ./resource.ps1 aws_datazone_policy_grant
 ./resource.ps1 aws_devicefarm_test_grid_project
+./resource.ps1 aws_directory_service_ip_route
+./resource.ps1 aws_directory_service_ip_routes_exclusive
+./resource.ps1 aws_directoryservicedata_user
 ./resource.ps1 aws_dms_data_provider
 ./resource.ps1 aws_dms_instance_profile
 ./resource.ps1 aws_dms_migration_project

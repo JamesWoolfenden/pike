@@ -1174,6 +1174,7 @@
         "google_redis_cluster_user_created_connections",
         "google_redis_instance",
         "google_resource_manager_capability",
+        "google_resource_manager_capability_config",
         "google_resource_manager_lien",
         "google_scc_event_threat_detection_custom_module",
         "google_scc_folder_custom_module",
@@ -1338,6 +1339,7 @@
         "google_vertex_ai_reasoning_engine_iam_binding",
         "google_vertex_ai_reasoning_engine_iam_member",
         "google_vertex_ai_reasoning_engine_iam_policy",
+        "google_vertex_ai_semantic_governance_policy",
         "google_vertex_ai_semantic_governance_policy_engine",
         "google_vertex_ai_tensorboard",
         "google_vertex_ai_tensorboard_experiment",
@@ -1698,6 +1700,7 @@
         "google_network_management_connectivity_tests",
         "google_network_security_address_group_iam_policy",
         "google_network_security_address_groups",
+        "google_network_services_gateway",
         "google_observability_folder_settings",
         "google_observability_organization_settings",
         "google_observability_project_settings",
@@ -1863,5 +1866,5 @@
         "google_data_catalog_tag_template_iam_policy": "",
         "google_kms_secret_ciphertext": ""
     },
-    "providerVersion": "8.4.0"
+    "providerVersion": "8.5.0"
 }
