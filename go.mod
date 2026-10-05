@@ -23,14 +23,14 @@ require (
 	golang.org/x/crypto v0.57.0
 	golang.org/x/net v0.59.0
 	golang.org/x/oauth2 v0.37.0
-	google.golang.org/api v0.299.0
+	google.golang.org/api v0.300.0
 	gopkg.in/ini.v1 v1.67.3
 )
 
 require (
-	cloud.google.com/go/auth v0.23.3 // indirect
-	cloud.google.com/go/auth/oauth2adapt v0.2.8 // indirect
-	cloud.google.com/go/compute/metadata v0.9.1 // indirect
+	cloud.google.com/go/auth v0.24.0 // indirect
+	cloud.google.com/go/auth/oauth2adapt v0.3.0 // indirect
+	cloud.google.com/go/compute/metadata v0.10.0 // indirect
 	dario.cat/mergo v1.0.2 // indirect
 	github.com/Microsoft/go-winio v0.6.2 // indirect
 	github.com/ProtonMail/go-crypto v1.4.1 // indirect
@@ -58,14 +58,14 @@ require (
 	github.com/fsnotify/fsnotify v1.7.0 // indirect
 	github.com/go-git/gcfg v1.5.1-0.20230307220236-3a3c6141e376 // indirect
 	github.com/go-git/go-billy/v5 v5.9.0 // indirect
-	github.com/go-logr/logr v1.4.3 // indirect
+	github.com/go-logr/logr v1.4.4 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
 	github.com/golang/groupcache v0.0.0-20241129210726-2c02b8208cf8 // indirect
 	github.com/google/go-querystring v1.2.0 // indirect
 	github.com/google/s2a-go v0.1.10 // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/googleapis/enterprise-certificate-proxy v0.3.22 // indirect
-	github.com/googleapis/gax-go/v2 v2.24.1 // indirect
+	github.com/googleapis/gax-go/v2 v2.26.2 // indirect
 	github.com/hashicorp/go-cleanhttp v0.5.2 // indirect
 	github.com/hashicorp/go-retryablehttp v0.7.8 // indirect
 	github.com/jbenet/go-context v0.0.0-20150711004518-d14ea06fba99 // indirect
@@ -82,9 +82,9 @@ require (
 	github.com/zclconf/go-cty v1.19.0 // indirect
 	go.opentelemetry.io/auto/sdk v1.2.1 // indirect
 	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp v0.69.0 // indirect
-	go.opentelemetry.io/otel v1.44.0 // indirect
-	go.opentelemetry.io/otel/metric v1.44.0 // indirect
-	go.opentelemetry.io/otel/trace v1.44.0 // indirect
+	go.opentelemetry.io/otel v1.45.0 // indirect
+	go.opentelemetry.io/otel/metric v1.45.0 // indirect
+	go.opentelemetry.io/otel/trace v1.45.0 // indirect
 	go.yaml.in/yaml/v3 v3.0.5 // indirect
 	golang.org/x/mod v0.41.0 // indirect
 	golang.org/x/sync v0.23.0 // indirect
