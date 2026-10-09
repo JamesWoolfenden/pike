@@ -1080,6 +1080,8 @@
         "aws_observabilityadmin_telemetry_pipeline",
         "aws_observabilityadmin_telemetry_rule",
         "aws_observabilityadmin_telemetry_rule_for_organization",
+        "aws_odb_autonomous_database",
+        "aws_odb_autonomous_database_secrets_manager_integration",
         "aws_odb_cloud_autonomous_vm_cluster",
         "aws_odb_cloud_exadata_infrastructure",
         "aws_odb_cloud_vm_cluster",
@@ -2091,6 +2093,7 @@
         "aws_lambda_functions",
         "aws_lambda_invocation",
         "aws_lambda_layer_version",
+        "aws_lambdamicrovms_image_version",
         "aws_launch_configuration",
         "aws_launch_template",
         "aws_lb",
@@ -2161,6 +2164,7 @@
         "aws_oam_links",
         "aws_oam_sink",
         "aws_oam_sinks",
+        "aws_odb_autonomous_database",
         "aws_odb_cloud_autonomous_vm_cluster",
         "aws_odb_cloud_autonomous_vm_clusters",
         "aws_odb_cloud_exadata_infrastructure",
@@ -2435,5 +2439,5 @@
         "aws_s3_bucket_object": "",
         "aws_s3_bucket_objects": ""
     },
-    "providerVersion": "6.67.0"
+    "providerVersion": "6.68.0"
 }

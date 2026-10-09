@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 82.18      |  1125       |  1369            |
-| Datasource | 96.59      |   453       |   469             |
+| Resources  | 82.12      |  1125       |  1370            |
+| Datasource | 96.38      |   453       |   470             |
 
 ## Deprecated
 
-16 resources and 5 datasources are flagged as deprecated in provider schema v8.5.0. Users pinned to an older provider major may already be affected when they upgrade.
+16 resources and 5 datasources are flagged as deprecated in provider schema v8.6.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -139,6 +139,7 @@
 ./resource.ps1 google_dialogflow_cx_tool_version
 ./resource.ps1 google_dialogflow_environment
 ./resource.ps1 google_dialogflow_sip_trunk
+./resource.ps1 google_dialogflow_tool
 ./resource.ps1 google_discovery_engine_serving_config
 ./resource.ps1 google_document_ai_schema
 ./resource.ps1 google_eventarc_pipeline_iam_binding
@@ -292,6 +293,7 @@
 ./resource.ps1 google_compute_service_attachments -type data
 ./resource.ps1 google_data_catalog_taxonomy -type data
 ./resource.ps1 google_eventarc_pipeline_iam_policy -type data
+./resource.ps1 google_iam_workload_identity_pool_jwks -type data
 ./resource.ps1 google_iam_workload_identity_pool_openid_config -type data
 ./resource.ps1 google_iap_agent_registry_agent_iam_policy -type data
 ./resource.ps1 google_iap_agent_registry_endpoint_iam_policy -type data

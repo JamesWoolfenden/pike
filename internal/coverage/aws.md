@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 87.44      |  1511       |  1728            |
-| Datasource | 97.07      |   663       |   683             |
+| Resources  | 87.34      |  1511       |  1730            |
+| Datasource | 96.79      |   663       |   685             |
 
 ## Deprecated
 
-14 resources and 3 datasources are flagged as deprecated in provider schema v6.67.0. Users pinned to an older provider major may already be affected when they upgrade.
+14 resources and 3 datasources are flagged as deprecated in provider schema v6.68.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -159,6 +159,8 @@
 ./resource.ps1 aws_observabilityadmin_telemetry_pipeline
 ./resource.ps1 aws_observabilityadmin_telemetry_rule
 ./resource.ps1 aws_observabilityadmin_telemetry_rule_for_organization
+./resource.ps1 aws_odb_autonomous_database
+./resource.ps1 aws_odb_autonomous_database_secrets_manager_integration
 ./resource.ps1 aws_odb_cloud_autonomous_vm_cluster
 ./resource.ps1 aws_odb_cloud_exadata_infrastructure
 ./resource.ps1 aws_odb_cloud_vm_cluster
@@ -264,6 +266,8 @@
 ./resource.ps1 aws_eks_access_policies -type data
 ./resource.ps1 aws_elasticache_service_update_actions -type data
 ./resource.ps1 aws_elasticache_service_updates -type data
+./resource.ps1 aws_lambdamicrovms_image_version -type data
+./resource.ps1 aws_odb_autonomous_database -type data
 ./resource.ps1 aws_odb_iam_role_association -type data
 ./resource.ps1 aws_rds_events -type data
 ./resource.ps1 aws_rds_snapshots -type data
