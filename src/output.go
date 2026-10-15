@@ -9,7 +9,7 @@ import (
 	"github.com/rs/zerolog/log"
 )
 
-func writeTwoRoleFile(content string, scanPath string, outFile string) error {
+func writeTwoRoleFile(content string, scanPath string, outFile string, outputType string) error {
 	if outFile == "" {
 		if scanPath == "" {
 			scanPath = "."
@@ -22,6 +22,9 @@ func writeTwoRoleFile(content string, scanPath string, outFile string) error {
 			return &makeDirectoryError{directory: newPath, err: err}
 		}
 		outFile = filepath.Join(newPath, "pike.two-role.tf")
+		if strings.EqualFold(outputType, "json") {
+			outFile = filepath.Join(newPath, "pike.two-role.json")
+		}
 	}
 	if err := os.WriteFile(outFile, []byte(content), 0o600); err != nil {
 		return &writeFileError{file: outFile, err: err}

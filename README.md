@@ -409,6 +409,24 @@ With `--write` / `-w`, the split JSON is saved to `.pike/pike.generated_policy.s
 
 ### Output
 
+For GCP, `pike scan -p gcp -o json -d ./terraform` emits permission documents
+with Google's `includedPermissions` field, separated into `apply` and `plan`:
+
+```json
+{
+  "apply": {"includedPermissions": ["storage.buckets.get", "storage.buckets.update"]},
+  "plan": {"includedPermissions": ["storage.buckets.get"]}
+}
+```
+
+`--legacy` emits a single `includedPermissions` document instead. Mixed AWS/GCP
+JSON scans use top-level `aws` and `gcp` keys, each containing that provider's
+output; AWS-only JSON retains its existing shape. With `-w -o json`, the default
+two-role output is written to `.pike/pike.two-role.json`; legacy output uses
+`.pike/pike.generated_policy.json`. `--outfile` overrides either path.
+These GCP JSON documents contain permissions, not verified project assignments
+or complete deployable role definitions.
+
 If you select the -w flag, pike will write out the role/policy required to build your project into the .pike folder:
 
 ```bash

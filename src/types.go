@@ -106,6 +106,9 @@ type OutputPolicy struct {
 	// single-role template carries locals/data boilerplate that cannot be
 	// concatenated, so Azure two-role output is rendered as one chunk.
 	TwoRoleAZURE string
+	// Preserve structured GCP output without parsing the Terraform rendering.
+	gcpJSON     string
+	planGCPJSON string
 }
 
 // AwsOutput structure.
@@ -116,6 +119,9 @@ type AwsOutput struct {
 
 // AsString converts an object into string (legacy single-role output).
 func (out OutputPolicy) AsString(format string) string {
+	if strings.EqualFold(format, "json") && out.gcpJSON != "" {
+		return out.gcpJSONOutput(true)
+	}
 	var Output string
 	if strings.ToLower(format) == terraform {
 		Output = out.AWS.Terraform + "\n"
@@ -138,6 +144,9 @@ func (out OutputPolicy) AsString(format string) string {
 // For Terraform: two policy/role resource blocks.
 // For JSON: {"apply": ..., "plan": ...} structure.
 func (out OutputPolicy) AsTwoRoleString(format string) string {
+	if strings.EqualFold(format, "json") && out.gcpJSON != "" {
+		return out.gcpJSONOutput(false)
+	}
 	if strings.ToLower(format) == terraform {
 		var s strings.Builder
 		if out.AWS.Terraform != "" {

@@ -67,11 +67,14 @@ func Scan(dirName string, outputType string, file *string, init bool, write bool
 				return &writeFileError{file: outputType, err: err}
 			}
 		} else {
-			content, err := WriteTwoRoleOutput(bag, policyName, dirName)
-			if err != nil {
-				return &makePolicyError{err}
+			content := OutPolicy.AsTwoRoleString(outputType)
+			if !strings.EqualFold(outputType, "json") {
+				content, err = WriteTwoRoleOutput(bag, policyName, dirName)
+				if err != nil {
+					return &makePolicyError{err}
+				}
 			}
-			if err = writeTwoRoleFile(content, dirName, outFile); err != nil {
+			if err = writeTwoRoleFile(content, dirName, outFile, outputType); err != nil {
 				return &writeFileError{file: outFile, err: err}
 			}
 		}
