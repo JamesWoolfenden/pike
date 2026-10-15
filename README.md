@@ -407,6 +407,19 @@ The `base` set is the planner SA role (safe for `terraform plan` on every branch
 
 With `--write` / `-w`, the split JSON is saved to `.pike/pike.generated_policy.split.json`.
 
+### GCP quota-project permissions
+
+When a scanned `google` or `google-beta` provider sets
+`user_project_override = true`, Pike includes `serviceusage.services.use` in
+both plan and apply permissions. This permission is required on the **quota
+project** selected by `billing_project`, or on the resource project when no
+billing project is set. It is not a storage-bucket permission.
+See the [Google provider quota configuration reference](https://registry.terraform.io/providers/hashicorp/google/latest/docs/guides/provider_reference#quota-management-configuration).
+Aliases are included; unresolved override expressions are treated conservatively
+as potentially enabled, while literal false/null or an omitted setting add no
+quota permission. Static scans do not resolve variables, provider-to-resource
+alias usage, credential defaults, or live IAM scopes. Review the final grants.
+
 ### Output
 
 If you select the -w flag, pike will write out the role/policy required to build your project into the .pike folder:

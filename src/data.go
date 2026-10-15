@@ -52,7 +52,17 @@ func GetResources(file string, dirName string) ([]ResourceV2, error) {
 			} else {
 				log.Info().Err(err).Msg("local module scan failed")
 			}
-		case "output", "variable", "locals", "provider", "import", "moved", "removed":
+		case "provider":
+			if hasGoogleUserProjectOverride(block) {
+				Resources = append(Resources, ResourceV2{
+					TypeName:   "provider",
+					Name:       block.Labels[0],
+					Provider:   provider.Google,
+					Attributes: []string{"user_project_override"},
+				})
+			}
+			continue
+		case "output", "variable", "locals", "import", "moved", "removed":
 			continue
 		default:
 			// block type not handled
@@ -367,6 +377,13 @@ func GetBlockAttributes(attributes []string, block *hclsyntax.Block) []string {
 
 // GetPermission determines the IAM permissions required and returns a list of permission.
 func GetPermission(result ResourceV2) (Sorted, error) {
+	if result.TypeName == "provider" && result.Provider == provider.Google &&
+		Contains(result.Attributes, "user_project_override") {
+		return Sorted{
+			GCP:     []string{"serviceusage.services.use"},
+			PlanGCP: []string{"serviceusage.services.use"},
+		}, nil
+	}
 	var err error
 
 	var myPermission Sorted
