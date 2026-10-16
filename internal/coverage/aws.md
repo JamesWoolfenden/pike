@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 87.34      |  1511       |  1730            |
+| Resources  | 87.09      |  1511       |  1735            |
 | Datasource | 96.79      |   663       |   685             |
 
 ## Deprecated
 
-14 resources and 3 datasources are flagged as deprecated in provider schema v6.68.0. Users pinned to an older provider major may already be affected when they upgrade.
+14 resources and 3 datasources are flagged as deprecated in provider schema v6.69.1. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -87,12 +87,16 @@
 ./resource.ps1 aws_cloudwatch_log_storage_tier_policy
 ./resource.ps1 aws_cloudwatch_log_transformer
 ./resource.ps1 aws_cloudwatch_otel_enrichment
+./resource.ps1 aws_cloudwatch_resource_metrics_configuration
+./resource.ps1 aws_cloudwatchomni_domain
+./resource.ps1 aws_cloudwatchomni_space
 ./resource.ps1 aws_cognito_log_delivery_configuration
 ./resource.ps1 aws_cognito_managed_login_branding
 ./resource.ps1 aws_connect_phone_number_contact_flow_association
 ./resource.ps1 aws_controltower_baseline
 ./resource.ps1 aws_datazone_policy_grant
 ./resource.ps1 aws_devicefarm_test_grid_project
+./resource.ps1 aws_devopsagent_agent_space
 ./resource.ps1 aws_directory_service_ip_route
 ./resource.ps1 aws_directory_service_ip_routes_exclusive
 ./resource.ps1 aws_directoryservicedata_user
@@ -179,6 +183,7 @@
 ./resource.ps1 aws_pinpointsmsvoicev2_pool
 ./resource.ps1 aws_pinpointsmsvoicev2_resource_policy
 ./resource.ps1 aws_pinpointsmsvoicev2_sender_id
+./resource.ps1 aws_pricingplanmanager_subscription
 ./resource.ps1 aws_prometheus_anomaly_detector
 ./resource.ps1 aws_prometheus_resource_policy
 ./resource.ps1 aws_prometheus_scraper_logging_configuration

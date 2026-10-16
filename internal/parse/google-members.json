@@ -764,6 +764,10 @@
         "google_gemini_code_repository_index",
         "google_gemini_code_tools_setting",
         "google_gemini_code_tools_setting_binding",
+        "google_gemini_data_analytics_data_agent",
+        "google_gemini_data_analytics_data_agent_iam_binding",
+        "google_gemini_data_analytics_data_agent_iam_member",
+        "google_gemini_data_analytics_data_agent_iam_policy",
         "google_gemini_data_sharing_with_google_setting",
         "google_gemini_data_sharing_with_google_setting_binding",
         "google_gemini_gda_observability_setting",
@@ -1333,6 +1337,7 @@
         "google_vertex_ai_index",
         "google_vertex_ai_index_endpoint",
         "google_vertex_ai_index_endpoint_deployed_index",
+        "google_vertex_ai_online_evaluator",
         "google_vertex_ai_persistent_resource",
         "google_vertex_ai_rag_corpus",
         "google_vertex_ai_rag_engine_config",
@@ -1622,6 +1627,7 @@
         "google_folder_iam_policy",
         "google_folder_organization_policy",
         "google_folders",
+        "google_gemini_data_analytics_data_agent_iam_policy",
         "google_gemini_repository_group_iam_policy",
         "google_gke_backup_backup_plan_iam_policy",
         "google_gke_backup_restore_plan_iam_policy",
@@ -1868,5 +1874,5 @@
         "google_data_catalog_tag_template_iam_policy": "",
         "google_kms_secret_ciphertext": ""
     },
-    "providerVersion": "8.6.0"
+    "providerVersion": "8.7.0"
 }

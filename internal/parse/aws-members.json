@@ -309,6 +309,9 @@
         "aws_cloudwatch_metric_stream",
         "aws_cloudwatch_otel_enrichment",
         "aws_cloudwatch_query_definition",
+        "aws_cloudwatch_resource_metrics_configuration",
+        "aws_cloudwatchomni_domain",
+        "aws_cloudwatchomni_space",
         "aws_codeartifact_domain",
         "aws_codeartifact_domain_permissions_policy",
         "aws_codeartifact_repository",
@@ -462,6 +465,7 @@
         "aws_devicefarm_project",
         "aws_devicefarm_test_grid_project",
         "aws_devicefarm_upload",
+        "aws_devopsagent_agent_space",
         "aws_devopsguru_event_sources_config",
         "aws_devopsguru_notification_channel",
         "aws_devopsguru_resource_collection",
@@ -1142,6 +1146,7 @@
         "aws_pinpointsmsvoicev2_sender_id",
         "aws_pipes_pipe",
         "aws_placement_group",
+        "aws_pricingplanmanager_subscription",
         "aws_prometheus_alert_manager_definition",
         "aws_prometheus_anomaly_detector",
         "aws_prometheus_query_logging_configuration",
@@ -2439,5 +2444,5 @@
         "aws_s3_bucket_object": "",
         "aws_s3_bucket_objects": ""
     },
-    "providerVersion": "6.68.0"
+    "providerVersion": "6.69.1"
 }

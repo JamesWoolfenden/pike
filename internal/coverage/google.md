@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 82.12      |  1125       |  1370            |
-| Datasource | 96.38      |   453       |   470             |
+| Resources  | 81.82      |  1125       |  1375            |
+| Datasource | 96.18      |   453       |   471             |
 
 ## Deprecated
 
-16 resources and 5 datasources are flagged as deprecated in provider schema v8.6.0. Users pinned to an older provider major may already be affected when they upgrade.
+16 resources and 5 datasources are flagged as deprecated in provider schema v8.7.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -161,6 +161,10 @@
 ./resource.ps1 google_firebase_data_connect_service
 ./resource.ps1 google_firebase_remote_config_remote_config
 ./resource.ps1 google_firestore_change_stream
+./resource.ps1 google_gemini_data_analytics_data_agent
+./resource.ps1 google_gemini_data_analytics_data_agent_iam_binding
+./resource.ps1 google_gemini_data_analytics_data_agent_iam_member
+./resource.ps1 google_gemini_data_analytics_data_agent_iam_policy
 ./resource.ps1 google_gemini_gda_observability_setting
 ./resource.ps1 google_gemini_gda_observability_setting_binding
 ./resource.ps1 google_gemini_gibq_observability_setting
@@ -279,6 +283,7 @@
 ./resource.ps1 google_vector_search_data_object
 ./resource.ps1 google_vector_search_index
 ./resource.ps1 google_vertex_ai_evaluation_metric
+./resource.ps1 google_vertex_ai_online_evaluator
 ./resource.ps1 google_vertex_ai_persistent_resource
 ./resource.ps1 google_vertex_ai_rag_corpus
 ./resource.ps1 google_vertex_ai_semantic_governance_policy
@@ -293,6 +298,7 @@
 ./resource.ps1 google_compute_service_attachments -type data
 ./resource.ps1 google_data_catalog_taxonomy -type data
 ./resource.ps1 google_eventarc_pipeline_iam_policy -type data
+./resource.ps1 google_gemini_data_analytics_data_agent_iam_policy -type data
 ./resource.ps1 google_iam_workload_identity_pool_jwks -type data
 ./resource.ps1 google_iam_workload_identity_pool_openid_config -type data
 ./resource.ps1 google_iap_agent_registry_agent_iam_policy -type data
