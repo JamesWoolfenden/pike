@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "aiplatform.evaluationMetrics.create",
+      "aiplatform.evaluationMetrics.get",
+      "aiplatform.evaluationMetrics.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "aiplatform.evaluationMetrics.delete"
+    ],
+    "modify": [],
+    "plan": [
+      "aiplatform.evaluationMetrics.get"
+    ],
+    "verified_date": "2026-10-19",
+    "verified_provider_version": "8.7.0"
+  }
+]
