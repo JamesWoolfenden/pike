@@ -52,12 +52,12 @@ function Validate-Resource($resourceName, $provider, $type)
         {
             if ($members.resources -contains $resourceName)
             {
-                Write-Host "✓ Resource '$resourceName' validated in $provider provider" -ForegroundColor Green
+                Write-Host "[OK] Resource '$resourceName' validated in $provider provider" -ForegroundColor Green
                 return $true
             }
             else
             {
-                Write-Host "✗ ERROR: Resource '$resourceName' not found in $provider provider" -ForegroundColor Red
+                Write-Host "[FAIL] ERROR: Resource '$resourceName' not found in $provider provider" -ForegroundColor Red
 
                 # Try to find similar resources
                 $similar = $members.resources | Where-Object { $_ -like "*$( $resourceName.Split('_')[-1] )*" } | Select-Object -First 5
@@ -75,12 +75,12 @@ function Validate-Resource($resourceName, $provider, $type)
         {
             if ($members.dataSources -contains $resourceName)
             {
-                Write-Host "✓ Datasource '$resourceName' validated in $provider provider" -ForegroundColor Green
+                Write-Host "[OK] Datasource '$resourceName' validated in $provider provider" -ForegroundColor Green
                 return $true
             }
             else
             {
-                Write-Host "✗ ERROR: Datasource '$resourceName' not found in $provider provider" -ForegroundColor Red
+                Write-Host "[FAIL] ERROR: Datasource '$resourceName' not found in $provider provider" -ForegroundColor Red
 
                 # Try to find similar resources
                 $similar = $members.dataSources | Where-Object { $_ -like "*$( $resourceName.Split('_')[-1] )*" } | Select-Object -First 5
@@ -180,7 +180,7 @@ function Get-GooglePermissions($resourceName, $provider, $isDataSource)
         if ($permissionMatches.Count -eq 1)
         {
             $match = $permissionMatches[0]
-            Write-Host "✓ Found permissions for: $($match.ServiceResource)" -ForegroundColor Green
+            Write-Host "[OK] Found permissions for: $($match.ServiceResource)" -ForegroundColor Green
             return $match.Entry
         }
 
@@ -194,7 +194,7 @@ function Get-GooglePermissions($resourceName, $provider, $isDataSource)
             $permCount = $entry.permissions.Count
             $gaCount = $entry.stage_counts.GA
             $betaCount = $entry.stage_counts.BETA
-            $matchIndicator = if ($m.MatchType -eq "exact") { "✓" } else { " " }
+            $matchIndicator = if ($m.MatchType -eq "exact") { "[OK]" } else { " " }
 
             Write-Host "  [$($i + 1)]$matchIndicator $($m.ServiceResource)" -ForegroundColor Yellow
             Write-Host "       Total: $permCount permissions (GA: $gaCount, BETA: $betaCount)" -ForegroundColor Gray
@@ -219,7 +219,7 @@ function Get-GooglePermissions($resourceName, $provider, $isDataSource)
         }
 
         $selected = $permissionMatches[$choiceNum - 1]
-        Write-Host "✓ Selected: $($selected.ServiceResource)" -ForegroundColor Green
+        Write-Host "[OK] Selected: $($selected.ServiceResource)" -ForegroundColor Green
 
         return $selected.Entry
 
@@ -323,7 +323,7 @@ function Get-AzurePermissions($resourceName, $provider, $isDataSource)
         }
 
         $selected = $permissionMatches[$choiceNum - 1]
-        Write-Host "✓ Selected: $( $selected.FullPath )" -ForegroundColor Green
+        Write-Host "[OK] Selected: $( $selected.FullPath )" -ForegroundColor Green
 
         return $selected.Permissions
 
@@ -342,7 +342,7 @@ $provider = $resource.Split("_")[0]
 $supportedProviders = @("aws", "azurerm", "google")
 if ($provider -notin $supportedProviders)
 {
-    Write-Host "✗ ERROR: Unsupported provider '$provider'" -ForegroundColor Red
+    Write-Host "[FAIL] ERROR: Unsupported provider '$provider'" -ForegroundColor Red
     Write-Host "`nSupported providers:" -ForegroundColor Yellow
     Write-Host "  - aws (e.g., aws_s3_bucket)" -ForegroundColor Cyan
     Write-Host "  - azurerm (e.g., azurerm_storage_account)" -ForegroundColor Cyan
@@ -428,17 +428,17 @@ if (test-path($baseMapping))
     if (Test-Path $source)
     {
         Copy-Item -path $source -destination $destination
-        Write-Host "✓ Copied template to: $destination" -ForegroundColor Green
+        Write-Host "[OK] Copied template to: $destination" -ForegroundColor Green
     }
     else
     {
-        Write-Host "⚠ Template not found: $source" -ForegroundColor Yellow
+        Write-Host "[WARN] Template not found: $source" -ForegroundColor Yellow
         Write-Host "  Skipping JSON creation - you'll need to create it manually" -ForegroundColor Yellow
     }
 }
 else
 {
-    Write-Host "✗ Mapping directory not found: $baseMapping" -ForegroundColor Red
+    Write-Host "[FAIL] Mapping directory not found: $baseMapping" -ForegroundColor Red
 }
 
 # Create Terraform test file
@@ -457,9 +457,9 @@ else
 
 $tffile = path $PSScriptRoot $tffile
 new-item $tffile -value $content -Force | Out-Null
-Write-Host "✓ Created Terraform file: $tffile" -ForegroundColor Green
+Write-Host "[OK] Created Terraform file: $tffile" -ForegroundColor Green
 
-Write-Host "`n✓ Done!" -ForegroundColor Green
+Write-Host "`n[OK] Done!" -ForegroundColor Green
 
 Write-Host "`nNext steps:" -ForegroundColor Cyan
 if ($permissions)

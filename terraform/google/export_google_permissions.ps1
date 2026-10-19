@@ -38,7 +38,7 @@ if (-not $gcloudPath)
     exit 1
 }
 
-Write-Host "✓ Found gcloud CLI: $($gcloudPath.Source)" -ForegroundColor Green
+Write-Host "[OK] Found gcloud CLI: $($gcloudPath.Source)" -ForegroundColor Green
 
 # Check if project is set
 if (-not $Project)
@@ -49,7 +49,7 @@ if (-not $Project)
     exit 1
 }
 
-Write-Host "✓ Using GCP Project: $Project" -ForegroundColor Green
+Write-Host "[OK] Using GCP Project: $Project" -ForegroundColor Green
 
 # Query all testable permissions
 Write-Host "`nQuerying all testable permissions from Google Cloud..." -ForegroundColor Cyan
@@ -71,7 +71,7 @@ try
 
     $permissions = $permissionsJson | ConvertFrom-Json
 
-    Write-Host "✓ Retrieved $($permissions.Count) permissions" -ForegroundColor Green
+    Write-Host "[OK] Retrieved $($permissions.Count) permissions" -ForegroundColor Green
 
 }
 catch
@@ -129,7 +129,7 @@ foreach ($perm in $permissions)
     }
 }
 
-Write-Host "✓ Organized into $($permissionsDb.Count) service.resource groups" -ForegroundColor Green
+Write-Host "[OK] Organized into $($permissionsDb.Count) service.resource groups" -ForegroundColor Green
 
 # Enhance with Terraform resource name suggestions
 Write-Host "`nMapping to Terraform resource names..." -ForegroundColor Cyan
@@ -170,7 +170,7 @@ foreach ($key in $permissionsDb.Keys)
     $entry.terraform_resources = @($terraformNames | Select-Object -Unique)
 }
 
-Write-Host "✓ Added Terraform resource name suggestions" -ForegroundColor Green
+Write-Host "[OK] Added Terraform resource name suggestions" -ForegroundColor Green
 
 # Save to JSON
 Write-Host "`nWriting to $OutputFile..." -ForegroundColor Cyan
@@ -178,7 +178,7 @@ $outputPath = path $PSScriptRoot $OutputFile
 $json = $permissionsDb | ConvertTo-Json -Depth 10
 $json | Out-File -FilePath $outputPath -Encoding UTF8
 
-Write-Host "✓ Successfully exported to: $outputPath" -ForegroundColor Green
+Write-Host "[OK] Successfully exported to: $outputPath" -ForegroundColor Green
 
 # Statistics
 Write-Host "`nStatistics:" -ForegroundColor Cyan
@@ -202,4 +202,4 @@ $permissionsDb.Values | Group-Object service |
         Write-Host "  $($_.Name): $($_.Count) resource types" -ForegroundColor Gray
     }
 
-Write-Host "`n✓ Done! The permissions database is ready for use with resource.ps1" -ForegroundColor Green
+Write-Host "`n[OK] Done! The permissions database is ready for use with resource.ps1" -ForegroundColor Green

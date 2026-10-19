@@ -90,7 +90,7 @@ function Extract-LookupMapKeys {
     )
 
     if (-not (Test-Path $FilePath)) {
-        Write-Host "  ⚠ File not found: $FilePath" -ForegroundColor Yellow
+        Write-Host "  [WARN] File not found: $FilePath" -ForegroundColor Yellow
         return @()
     }
 
@@ -180,16 +180,16 @@ function Test-ResourceLifecycle {
 $config = $providerConfigs[$Provider]
 
 Write-Host "`nPike Validation - Random Resource Testing" -ForegroundColor Cyan
-Write-Host ("═" * 70)
+Write-Host ("=" * 70)
 Write-Host "Provider:    $($config.Name)" -ForegroundColor Gray
 Write-Host "Resources:   $Resources" -ForegroundColor Gray
 Write-Host "Datasources: $Datasources" -ForegroundColor Gray
 Write-Host "Seed:        $Seed" -ForegroundColor Gray
 Write-Host "Run Tests:   $RunTests" -ForegroundColor Gray
-Write-Host ("═" * 70)
+Write-Host ("=" * 70)
 
 # Extract resource keys from lookup maps
-Write-Host "`n📋 Reading lookup maps..." -ForegroundColor Cyan
+Write-Host "`nReading lookup maps..." -ForegroundColor Cyan
 
 $resourceLookupPath = path $PSScriptRoot "src" $config.ResourceLookupFile
 $allResources = Extract-LookupMapKeys -FilePath $resourceLookupPath -MapName $config.ResourceLookupMap
@@ -200,7 +200,7 @@ $allDatasources = Extract-LookupMapKeys -FilePath $dataLookupPath -MapName $conf
 Write-Host "  Found $($allDatasources.Count) datasources in $($config.DataLookupMap)" -ForegroundColor Gray
 
 # Select random resources
-Write-Host "`n🎲 Selecting random items (seed: $Seed)..." -ForegroundColor Cyan
+Write-Host "`nSelecting random items (seed: $Seed)..." -ForegroundColor Cyan
 
 $selectedResources = Select-RandomItems -Items $allResources -Count $Resources -Seed $Seed
 Write-Host "  Selected $($selectedResources.Count) resources" -ForegroundColor Gray
@@ -209,8 +209,8 @@ $selectedDatasources = Select-RandomItems -Items $allDatasources -Count $Datasou
 Write-Host "  Selected $($selectedDatasources.Count) datasources" -ForegroundColor Gray
 
 # Validate resources
-Write-Host "`n📦 Validating Resources" -ForegroundColor Cyan
-Write-Host ("─" * 70)
+Write-Host "`nValidating Resources" -ForegroundColor Cyan
+Write-Host ("-" * 70)
 
 $resourceResults = @()
 foreach ($resourceName in $selectedResources) {
@@ -225,7 +225,7 @@ foreach ($resourceName in $selectedResources) {
     }
 
     if ($testFile) {
-        Write-Host "  ✓ $resourceName" -ForegroundColor Green
+        Write-Host "  [OK] $resourceName" -ForegroundColor Green
         Write-Host "    Test file: $testFile" -ForegroundColor DarkGray
         $result.Status = "has_test"
 
@@ -236,7 +236,7 @@ foreach ($resourceName in $selectedResources) {
         }
     }
     else {
-        Write-Host "  ⚠ $resourceName" -ForegroundColor Yellow
+        Write-Host "  [WARN] $resourceName" -ForegroundColor Yellow
         Write-Host "    No test file found in $($config.BackupDir)" -ForegroundColor DarkGray
         $result.Status = "no_test"
     }
@@ -245,8 +245,8 @@ foreach ($resourceName in $selectedResources) {
 }
 
 # Validate datasources
-Write-Host "`n📊 Validating Datasources" -ForegroundColor Cyan
-Write-Host ("─" * 70)
+Write-Host "`nValidating Datasources" -ForegroundColor Cyan
+Write-Host ("-" * 70)
 
 $datasourceResults = @()
 foreach ($dsName in $selectedDatasources) {
@@ -261,7 +261,7 @@ foreach ($dsName in $selectedDatasources) {
     }
 
     if ($testFile) {
-        Write-Host "  ✓ $dsName" -ForegroundColor Green
+        Write-Host "  [OK] $dsName" -ForegroundColor Green
         Write-Host "    Test file: $testFile" -ForegroundColor DarkGray
         $result.Status = "has_test"
 
@@ -272,7 +272,7 @@ foreach ($dsName in $selectedDatasources) {
         }
     }
     else {
-        Write-Host "  ⚠ $dsName" -ForegroundColor Yellow
+        Write-Host "  [WARN] $dsName" -ForegroundColor Yellow
         Write-Host "    No test file found in $($config.BackupDir)" -ForegroundColor DarkGray
         $result.Status = "no_test"
     }
@@ -281,9 +281,9 @@ foreach ($dsName in $selectedDatasources) {
 }
 
 # Summary
-Write-Host "`n" + ("═" * 70)
-Write-Host "📈 Summary" -ForegroundColor Cyan
-Write-Host ("─" * 70)
+Write-Host "`n" + ("=" * 70)
+Write-Host "Summary" -ForegroundColor Cyan
+Write-Host ("-" * 70)
 
 $allResults = $resourceResults + $datasourceResults
 
@@ -300,7 +300,7 @@ if ($RunTests) {
 
 # Missing test files report
 if ($withoutTests -gt 0) {
-    Write-Host "`n⚠ Missing Test Files:" -ForegroundColor Yellow
+    Write-Host "`n[WARN] Missing Test Files:" -ForegroundColor Yellow
     foreach ($item in $allResults | Where-Object { -not $_.HasTestFile }) {
         Write-Host "  - $($item.Name) [$($item.Type)]" -ForegroundColor DarkGray
     }
@@ -333,7 +333,7 @@ $report = @{
 }
 
 $report | ConvertTo-Json -Depth 10 | Out-File -FilePath $reportPath -Encoding UTF8
-Write-Host "`n💾 Report saved to: $reportPath" -ForegroundColor Cyan
+Write-Host "`nReport saved to: $reportPath" -ForegroundColor Cyan
 
-Write-Host "`n✓ Validation complete!" -ForegroundColor Green
+Write-Host "`n[OK] Validation complete!" -ForegroundColor Green
 Write-Host ""
