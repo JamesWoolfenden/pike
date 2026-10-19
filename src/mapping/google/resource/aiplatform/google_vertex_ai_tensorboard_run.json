@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "aiplatform.tensorboardRuns.create",
+      "aiplatform.tensorboardRuns.get",
+      "aiplatform.tensorboardRuns.update",
+      "aiplatform.tensorboardRuns.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "aiplatform.tensorboardRuns.delete"
+    ],
+    "modify": [
+      "aiplatform.tensorboardRuns.update"
+    ],
+    "plan": [
+      "aiplatform.tensorboardRuns.get"
+    ],
+    "verified_date": "2026-10-20",
+    "verified_provider_version": "8.7.0"
+  }
+]
