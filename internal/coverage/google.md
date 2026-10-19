@@ -2,8 +2,8 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 81.82      |  1125       |  1375            |
-| Datasource | 96.18      |   453       |   471             |
+| Resources  | 81.89      |  1126       |  1375            |
+| Datasource | 99.79      |   470       |   471             |
 
 ## Deprecated
 
@@ -196,7 +196,6 @@
 ./resource.ps1 google_integration_connectors_managed_zone
 ./resource.ps1 google_integrations_auth_config
 ./resource.ps1 google_integrations_client
-./resource.ps1 google_kms_project_autokey_config
 ./resource.ps1 google_license_manager_configuration
 ./resource.ps1 google_memorystore_acl_policy
 ./resource.ps1 google_migration_center_assets_export_job
@@ -291,22 +290,5 @@
 ./resource.ps1 google_vertex_ai_tensorboard_experiment
 ./resource.ps1 google_vertex_ai_tensorboard_run
 ./resource.ps1 google_workload_identity_service_agent
-./resource.ps1 google_biglake_hive_catalog_iam_policy -type data
-./resource.ps1 google_biglake_hive_database_iam_policy -type data
-./resource.ps1 google_biglake_hive_table_iam_policy -type data
-./resource.ps1 google_cloudbuild_worker_pool -type data
-./resource.ps1 google_compute_service_attachments -type data
-./resource.ps1 google_data_catalog_taxonomy -type data
-./resource.ps1 google_eventarc_pipeline_iam_policy -type data
-./resource.ps1 google_gemini_data_analytics_data_agent_iam_policy -type data
-./resource.ps1 google_iam_workload_identity_pool_jwks -type data
-./resource.ps1 google_iam_workload_identity_pool_openid_config -type data
-./resource.ps1 google_iap_agent_registry_agent_iam_policy -type data
-./resource.ps1 google_iap_agent_registry_endpoint_iam_policy -type data
-./resource.ps1 google_iap_agent_registry_mcp_server_iam_policy -type data
-./resource.ps1 google_memorystore_acl_policy -type data
-./resource.ps1 google_network_services_gateway -type data
-./resource.ps1 google_oracle_database_exascale_db_storage_vault -type data
-./resource.ps1 google_oracle_database_exascale_db_storage_vaults -type data
 ./resource.ps1 google_redis_cluster_acl_policy -type data
 ```

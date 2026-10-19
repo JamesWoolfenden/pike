@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "cloudkms.autokeyConfigs.update",
+      "cloudkms.autokeyConfigs.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "cloudkms.autokeyConfigs.update"
+    ],
+    "modify": [
+      "cloudkms.autokeyConfigs.update"
+    ],
+    "plan": [
+      "cloudkms.autokeyConfigs.get"
+    ],
+    "verified_date": "2026-10-19",
+    "verified_provider_version": "8.7.0"
+  }
+]

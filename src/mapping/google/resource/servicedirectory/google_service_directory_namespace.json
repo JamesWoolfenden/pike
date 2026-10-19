@@ -1,11 +1,24 @@
 [
   {
-    "apply": [],
+    "apply": [
+      "servicedirectory.namespaces.get",
+      "servicedirectory.namespaces.create",
+      "servicedirectory.namespaces.delete",
+      "servicedirectory.namespaces.update"
+    ],
     "attributes": {
       "tags": []
     },
-    "destroy": [],
-    "modify": [],
-    "plan": []
+    "destroy": [
+      "servicedirectory.namespaces.delete"
+    ],
+    "modify": [
+      "servicedirectory.namespaces.update"
+    ],
+    "plan": [
+      "servicedirectory.namespaces.get"
+    ],
+    "verified_date": "2026-10-19",
+    "verified_provider_version": "8.7.0"
   }
 ]

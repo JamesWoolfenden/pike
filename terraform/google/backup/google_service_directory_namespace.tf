@@ -1,10 +1,7 @@
-resource "google_service_directory_namespace" "example" {
-  provider     = google-beta
-  namespace_id = "example-namespace"
-  location     = "us-central1"
-
+resource "google_service_directory_namespace" "pike" {
+  namespace_id = "pike-test-namespace"
+  location     = "europe-west2"
   labels = {
-    key = "value"
-    foo = "bar"
+    test = "modify"
   }
 }

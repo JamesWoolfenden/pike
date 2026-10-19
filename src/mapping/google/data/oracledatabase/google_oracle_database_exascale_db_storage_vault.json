@@ -1,0 +1,15 @@
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [
+      "oracledatabase.exascaleDbStorageVaults.get"
+    ],
+    "verified_date": "2026-10-19",
+    "verified_provider_version": "8.7.0"
+  }
+]
