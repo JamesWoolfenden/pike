@@ -1,0 +1,24 @@
+[
+  {
+    "apply": [
+      "aiplatform.tensorboardExperiments.create",
+      "aiplatform.tensorboardExperiments.get",
+      "aiplatform.tensorboardExperiments.update",
+      "aiplatform.tensorboardExperiments.delete"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "aiplatform.tensorboardExperiments.delete"
+    ],
+    "modify": [
+      "aiplatform.tensorboardExperiments.update"
+    ],
+    "plan": [
+      "aiplatform.tensorboardExperiments.get"
+    ],
+    "verified_date": "2026-10-20",
+    "verified_provider_version": "8.7.0"
+  }
+]
