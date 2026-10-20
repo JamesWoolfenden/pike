@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "datalineage.configs.update",
+      "datalineage.configs.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "datalineage.configs.update"
+    ],
+    "modify": [
+      "datalineage.configs.update"
+    ],
+    "plan": [
+      "datalineage.configs.get"
+    ],
+    "verified_date": "2026-10-20",
+    "verified_provider_version": "8.7.0"
+  }
+]
