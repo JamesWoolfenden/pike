@@ -1,0 +1,23 @@
+[
+  {
+    "apply": [
+      "aiplatform.semanticGovernancePolicyEngine.update",
+      "aiplatform.semanticGovernancePolicyEngine.get",
+      "aiplatform.semanticGovernancePolicyEngine.deprovision"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "aiplatform.semanticGovernancePolicyEngine.deprovision"
+    ],
+    "modify": [
+      "aiplatform.semanticGovernancePolicyEngine.update"
+    ],
+    "plan": [
+      "aiplatform.semanticGovernancePolicyEngine.get"
+    ],
+    "verified_date": "2026-10-20",
+    "verified_provider_version": "8.7.0"
+  }
+]

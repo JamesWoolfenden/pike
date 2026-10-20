@@ -1,0 +1,3 @@
+resource "google_vertex_ai_semantic_governance_policy_engine" "pike" {
+  region = "us-central1"
+}
