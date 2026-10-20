@@ -1,0 +1,20 @@
+[
+  {
+    "apply": [
+      "artifactregistry.projectconfigs.update",
+      "artifactregistry.projectconfigs.get"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [
+      "artifactregistry.projectconfigs.update"
+    ],
+    "plan": [
+      "artifactregistry.projectconfigs.get"
+    ],
+    "verified_date": "2026-10-20",
+    "verified_provider_version": "8.7.0"
+  }
+]
