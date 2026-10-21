@@ -42,8 +42,12 @@ func (e *invalidCloudError) Error() string {
 	return fmt.Sprintf("Invalid Cloud: %v", e.arn)
 }
 
-// Compare IAC codebase to AWS policy.
-func Compare(directory string, arn string, init bool, strict bool) (bool, error) {
+// Compare IAC codebase to AWS policy. targetFile, when non-empty, reads the
+// baseline ("deployed") policy from that local file instead of calling the
+// live AWS/GCP API — letting CI diff against a committed snapshot with no
+// cloud credentials. writeBaseline, when non-empty, writes the freshly
+// generated IaC policy to that path, to seed or refresh such a snapshot.
+func Compare(directory string, arn string, init bool, strict bool, targetFile string, writeBaseline string) (bool, error) {
 	var result bool
 
 	result, err := inputValidationCompare(directory, arn)
@@ -54,9 +58,9 @@ func Compare(directory string, arn string, init bool, strict bool) (bool, error)
 
 	switch getCloudFromRole(arn) {
 	case provider.AWS:
-		result, err = compareAWSRole(directory, arn, init, strict)
+		result, err = compareAWSRole(directory, arn, init, strict, targetFile, writeBaseline)
 	case provider.GCP:
-		result, err = compareGCPRole(directory, arn, init, strict)
+		result, err = compareGCPRole(directory, arn, init, strict, targetFile, writeBaseline)
 	default:
 		err = &invalidCloudError{arn}
 	}
@@ -102,7 +106,7 @@ func (e *escalationClassError) Error() string {
 	return "escalation-class permissions present; use the two-role pattern (planner + applier) to limit blast radius"
 }
 
-func compareGCPRole(directory string, arn string, init bool, strict bool) (bool, error) {
+func compareGCPRole(directory string, arn string, init bool, strict bool, targetFile string, writeBaseline string) (bool, error) {
 	// The resource name of the role in one of the following formats:
 	// `roles/{ROLE_NAME}`
 	// `organizations/{ORGANIZATION_ID}/roles/{ROLE_NAME}`
@@ -119,49 +123,102 @@ func compareGCPRole(directory string, arn string, init bool, strict bool) (bool,
 
 	WarnEscalation(iacBag)
 
-	var projectID *string
-	projectID, err = GetEnv("GCP_PROJECT")
-
-	if err != nil {
-		return false, &EnvVariableNotSetError{"GCP_PROJECT"}
+	if writeBaseline != "" {
+		if err := writeGCPBaseline(writeBaseline, iacBag.GCP); err != nil {
+			return false, err
+		}
 	}
 
-	API := gcpIAMAPIName
+	var permissions []string
 
-	enabled, err := isGCPAPIEnabled(*projectID, API)
-	if err != nil {
-		return enabled, &apiNotFoundError{API}
+	if targetFile != "" {
+		permissions, err = readGCPBaseline(targetFile)
+		if err != nil {
+			return false, err
+		}
+	} else {
+		var projectID *string
+		projectID, err = GetEnv("GCP_PROJECT")
+
+		if err != nil {
+			return false, &EnvVariableNotSetError{"GCP_PROJECT"}
+		}
+
+		API := gcpIAMAPIName
+
+		enabled, err := isGCPAPIEnabled(*projectID, API)
+		if err != nil {
+			return enabled, &apiNotFoundError{API}
+		}
+
+		if !enabled {
+			return enabled, &apiNotEnabledError{API}
+		}
+
+		ctx, cancel := context.WithTimeout(context.Background(), defaultTimeout)
+		defer cancel()
+
+		iamService, err := gcpiam.NewService(ctx)
+		if err != nil {
+			return false, &iamServiceError{err}
+		}
+
+		Roles, err := iamService.Roles.Get(arn).Context(ctx).Do()
+
+		if Roles == nil {
+			return false, &gcpRoleNotFound{arn}
+		}
+
+		if err != nil {
+			return false, &gcpIAMRoleError{err}
+		}
+
+		permissions = Roles.IncludedPermissions
 	}
 
-	if !enabled {
-		return enabled, &apiNotEnabledError{API}
-	}
-
-	ctx, cancel := context.WithTimeout(context.Background(), defaultTimeout)
-	defer cancel()
-
-	iamService, err := gcpiam.NewService(ctx)
-	if err != nil {
-		return false, &iamServiceError{err}
-	}
-
-	Roles, err := iamService.Roles.Get(arn).Context(ctx).Do()
-
-	if Roles == nil {
-		return false, &gcpRoleNotFound{arn}
-	}
-
-	if err != nil {
-		return false, &gcpIAMRoleError{err}
-	}
-
-	same := compareGCPPolicy(Roles, iacBag)
+	same := compareGCPPolicy(&gcpiam.Role{IncludedPermissions: permissions}, iacBag)
 
 	if strict && !findEscalation(iacBag).empty() {
 		return false, &escalationClassError{findEscalation(iacBag)}
 	}
 
 	return same, nil
+}
+
+// writeGCPBaseline writes the IaC-derived permission set to path as a
+// sorted JSON array, so it can be committed and later read back by
+// readGCPBaseline for a credential-less pike compare --target-file run.
+func writeGCPBaseline(path string, permissions []string) error {
+	sorted := Unique(permissions)
+	slices.Sort(sorted)
+
+	data, err := json.MarshalIndent(sorted, "", "  ")
+	if err != nil {
+		return &writeBaselineError{path, err}
+	}
+
+	if err := os.WriteFile(path, data, 0o600); err != nil {
+		return &writeBaselineError{path, err}
+	}
+
+	log.Info().Msgf("wrote baseline permissions to %s", path)
+
+	return nil
+}
+
+// readGCPBaseline reads back a permission set written by writeGCPBaseline.
+func readGCPBaseline(path string) ([]string, error) {
+	data, err := os.ReadFile(path) // #nosec G304 -- user-specified baseline file
+	if err != nil {
+		return nil, &readTargetFileError{path, err}
+	}
+
+	var permissions []string
+	if err := json.Unmarshal(data, &permissions); err != nil {
+		return nil, &readTargetFileError{path, err}
+	}
+
+	return permissions, nil
 }
 
 func compareGCPPolicy(Roles *gcpiam.Role, iacPolicy Sorted) bool {
@@ -217,29 +274,7 @@ func isGCPAPIEnabled(projectID string, want string) (bool, error) {
 	return true, nil
 }
 
-func compareAWSRole(directory string, arn string, init bool, strict bool) (bool, error) {
-	// Load the Shared AWS Configuration (~/.aws/config)
-	ctx, cancel := context.WithTimeout(context.Background(), defaultTimeout)
-
-	defer cancel()
-
-	cfg, err := config.LoadDefaultConfig(ctx)
-	if err != nil {
-		return false, &awsConfigError{err}
-	}
-
-	client := iam.NewFromConfig(cfg)
-
-	version, err := getVersion(client, arn)
-	if err != nil {
-		return false, &getVersionError{err}
-	}
-
-	policy, err := getPolicyVersion(client, arn, *version)
-	if err != nil {
-		return false, &getPolicyVersionError{err}
-	}
-
+func compareAWSRole(directory string, arn string, init bool, strict bool, targetFile string, writeBaseline string) (bool, error) {
 	iacBag, err := MakePermissionBag(directory, nil, init, "", false)
 	if err != nil {
 		return false, &getIAMVersionError{err}
@@ -257,10 +292,53 @@ func compareAWSRole(directory string, arn string, init bool, strict bool) (bool,
 		return false, &sortActionsError{iacPolicy.AWS.JSONOut}
 	}
 
-	// iam versus iac
+	if writeBaseline != "" {
+		if err := os.WriteFile(writeBaseline, []byte(*sorted), 0o600); err != nil {
+			return false, &writeBaselineError{writeBaseline, err}
+		}
+
+		log.Info().Msgf("wrote baseline policy to %s", writeBaseline)
+	}
+
+	var policy string
+
+	if targetFile != "" {
+		data, err := os.ReadFile(targetFile) // #nosec G304 -- user-specified baseline file
+		if err != nil {
+			return false, &readTargetFileError{targetFile, err}
+		}
+
+		policy = string(data)
+	} else {
+		// Load the Shared AWS Configuration (~/.aws/config)
+		ctx, cancel := context.WithTimeout(context.Background(), defaultTimeout)
+
+		defer cancel()
+
+		cfg, err := config.LoadDefaultConfig(ctx)
+		if err != nil {
+			return false, &awsConfigError{err}
+		}
+
+		client := iam.NewFromConfig(cfg)
+
+		version, err := getVersion(client, arn)
+		if err != nil {
+			return false, &getVersionError{err}
+		}
+
+		policyPtr, err := getPolicyVersion(client, arn, *version)
+		if err != nil {
+			return false, &getPolicyVersionError{err}
+		}
+
+		policy = *policyPtr
+	}
+
+	// deployed/baseline versus iac
 	fmt.Printf("IAM Policy %s versus Local %s \n", arn, directory)
 
-	same, err := compareIAMPolicy(*policy, *sorted)
+	same, err := compareIAMPolicy(policy, *sorted)
 	if err != nil {
 		return same, err
 	}

@@ -649,6 +649,18 @@ Pike always warns to stderr when the computed policy contains escalation-class p
 pike compare --strict -d ./terraform -a arn:aws:iam::680235478471:policy/terraform_pike
 ```
 
+### Comparing against a file instead of a live policy
+
+`--target-file` reads the baseline policy from a local file instead of calling the live AWS/GCP API, so CI can diff against a committed snapshot with no cloud credentials at all. `--write-baseline` writes the freshly generated IaC policy to a file, to seed or refresh that snapshot. `-a`/`--arn` is still required (its format is how pike picks AWS vs GCP), but with `--target-file` set it's never used to make a live call.
+
+```bash
+# One-off, with live credentials: seed the baseline and confirm it matches deployed today.
+pike compare -d ./terraform -a arn:aws:iam::680235478471:policy/terraform_pike --write-baseline ./policy-baseline.json
+
+# Every CI run after that: no credentials needed.
+pike compare -d ./terraform -a arn:aws:iam::680235478471:policy/terraform_pike --target-file ./policy-baseline.json
+```
+
 ## Pull
 
 Pull adds the ability to work with Git repositories (thanks to **go-git**),

@@ -220,6 +220,24 @@ func (m *getPolicyVersionError) Error() string {
 	return fmt.Sprintf("failed to get policy version: %v", m.err)
 }
 
+type readTargetFileError struct {
+	path string
+	err  error
+}
+
+func (m *readTargetFileError) Error() string {
+	return fmt.Sprintf("failed to read target file %s: %v", m.path, m.err)
+}
+
+type writeBaselineError struct {
+	path string
+	err  error
+}
+
+func (m *writeBaselineError) Error() string {
+	return fmt.Sprintf("failed to write baseline file %s: %v", m.path, m.err)
+}
+
 type inputValidationError struct {
 	err error
 }

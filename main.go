@@ -37,6 +37,8 @@ func main() {
 		provider           string
 		outfile            string
 		policyName         string
+		targetFile         string
+		writeBaseline      string
 	)
 
 	log.Logger = log.Output(zerolog.ConsoleWriter{Out: os.Stderr})
@@ -336,9 +338,20 @@ func main() {
 						Usage:       "Exit non-zero when escalation-class permissions are present, even if policies match",
 						Destination: &strict,
 					},
+					&cli.StringFlag{
+						Name:        "target-file",
+						Aliases:     []string{"t"},
+						Usage:       "Read the baseline policy from this local file instead of calling the live AWS/GCP API — no cloud credentials needed",
+						Destination: &targetFile,
+					},
+					&cli.StringFlag{
+						Name:        "write-baseline",
+						Usage:       "Write the freshly generated IaC policy to this path, to seed or refresh a --target-file baseline",
+						Destination: &writeBaseline,
+					},
 				},
 				Action: func(*cli.Context) error {
-					theSame, err := pike.Compare(directory, arn, init, strict)
+					theSame, err := pike.Compare(directory, arn, init, strict, targetFile, writeBaseline)
 					if err != nil {
 						return err
 					}

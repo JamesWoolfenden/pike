@@ -449,6 +449,130 @@ func Test_compareGCPPolicy(t *testing.T) {
 	}
 }
 
+func TestCompareAWSRole_TargetFileAndWriteBaseline(t *testing.T) {
+	t.Parallel()
+
+	const directory = "testdata/compare/aws_simple"
+	const arn = "arn:aws:iam::123456789012:policy/placeholder"
+
+	t.Run("write then read back round-trips as same, with no live API call", func(t *testing.T) {
+		t.Parallel()
+
+		baseline := filepath.Join(t.TempDir(), "baseline.json")
+
+		same, err := compareAWSRole(directory, arn, false, false, baseline, baseline)
+		if err != nil {
+			t.Fatalf("compareAWSRole() error = %v", err)
+		}
+
+		if !same {
+			t.Error("compareAWSRole() = false, want true (baseline just written by the same call)")
+		}
+
+		if _, err := os.Stat(baseline); err != nil {
+			t.Errorf("expected --write-baseline to create %s: %v", baseline, err)
+		}
+	})
+
+	t.Run("target-file differing from the generated policy reports a difference", func(t *testing.T) {
+		t.Parallel()
+
+		stale := filepath.Join(t.TempDir(), "stale.json")
+		if err := os.WriteFile(stale, []byte(`{"Version":"2012-10-17","Statement":[{"Sid":"0","Effect":"Allow","Action":["s3:bogus"],"Resource":"*"}]}`), 0o600); err != nil {
+			t.Fatal(err)
+		}
+
+		same, err := compareAWSRole(directory, arn, false, false, stale, "")
+		if err != nil {
+			t.Fatalf("compareAWSRole() error = %v", err)
+		}
+
+		if same {
+			t.Error("compareAWSRole() = true, want false (target-file content deliberately differs)")
+		}
+	})
+
+	t.Run("missing target-file errors instead of silently falling back to the live API", func(t *testing.T) {
+		t.Parallel()
+
+		_, err := compareAWSRole(directory, arn, false, false, filepath.Join(t.TempDir(), "missing.json"), "")
+		if err == nil {
+			t.Fatal("expected an error for a missing target-file, got nil")
+		}
+
+		if _, ok := err.(*readTargetFileError); !ok {
+			t.Errorf("expected *readTargetFileError, got %T", err)
+		}
+	})
+}
+
+func TestCompareGCPRole_TargetFileAndWriteBaseline(t *testing.T) {
+	t.Parallel()
+
+	const directory = "testdata/compare/gcp_simple"
+	const arn = "projects/pike-test/roles/placeholder"
+
+	t.Run("write then read back round-trips as same, with no live API call", func(t *testing.T) {
+		t.Parallel()
+
+		baseline := filepath.Join(t.TempDir(), "baseline.json")
+
+		same, err := compareGCPRole(directory, arn, false, false, baseline, baseline)
+		if err != nil {
+			t.Fatalf("compareGCPRole() error = %v", err)
+		}
+
+		if !same {
+			t.Error("compareGCPRole() = false, want true (baseline just written by the same call)")
+		}
+	})
+
+	t.Run("target-file differing from the generated permissions reports a difference", func(t *testing.T) {
+		t.Parallel()
+
+		stale := filepath.Join(t.TempDir(), "stale.json")
+		if err := os.WriteFile(stale, []byte(`["storage.bogus.permission"]`), 0o600); err != nil {
+			t.Fatal(err)
+		}
+
+		same, err := compareGCPRole(directory, arn, false, false, stale, "")
+		if err != nil {
+			t.Fatalf("compareGCPRole() error = %v", err)
+		}
+
+		if same {
+			t.Error("compareGCPRole() = true, want false (target-file content deliberately differs)")
+		}
+	})
+}
+
+func Test_writeGCPBaseline_readGCPBaseline(t *testing.T) {
+	t.Parallel()
+
+	path := filepath.Join(t.TempDir(), "perms.json")
+	want := []string{"storage.buckets.create", "storage.buckets.get"}
+
+	if err := writeGCPBaseline(path, []string{"storage.buckets.get", "storage.buckets.create", "storage.buckets.get"}); err != nil {
+		t.Fatalf("writeGCPBaseline() error = %v", err)
+	}
+
+	got, err := readGCPBaseline(path)
+	if err != nil {
+		t.Fatalf("readGCPBaseline() error = %v", err)
+	}
+
+	assert.Equal(t, want, got)
+}
+
+func Test_readGCPBaseline_missingFile(t *testing.T) {
+	t.Parallel()
+
+	_, err := readGCPBaseline(filepath.Join(t.TempDir(), "missing.json"))
+	if _, ok := err.(*readTargetFileError); !ok {
+		t.Errorf("expected *readTargetFileError, got %T (%v)", err, err)
+	}
+}
+
 func Test_invalidCloudError_Error(t *testing.T) {
 	type fields struct {
 		arn string
