@@ -6,6 +6,7 @@ import (
 	"io"
 	"os"
 	"path/filepath"
+	"regexp"
 	"sort"
 	"strings"
 
@@ -131,6 +132,9 @@ func collectAuditFindings(dir string) ([]Finding, error) {
 	}
 
 	var findings []Finding
+	var awsAttachments []referenceRef
+	var gcpPolicyDataRefs []referenceRef
+
 	for _, file := range files {
 		body, err := GetResourceBlocks(file)
 		if err != nil {
@@ -157,8 +161,25 @@ func collectAuditFindings(dir string) ([]Finding, error) {
 				f.File = rel
 				findings = append(findings, f)
 			}
+
+			if block.Type != "resource" {
+				continue
+			}
+			switch {
+			case awsPolicyAttachmentTypes[block.Labels[0]]:
+				awsAttachments = append(awsAttachments, referenceRef{block: block, file: rel})
+			case gcpPolicyDataTypes[block.Labels[0]]:
+				gcpPolicyDataRefs = append(gcpPolicyDataRefs, referenceRef{block: block, file: rel})
+			}
 		}
 	}
+
+	// Second pass: re-attribute findings on a resource that only carries IAM
+	// content indirectly, to whatever references it in this same scan. See
+	// the "reference graph" comment above.
+	findings = append(findings, resolveReferenceGraph(findings, awsAttachments, "policy_arn", awsAttachmentLabels)...)
+	findings = append(findings, resolveReferenceGraph(findings, gcpPolicyDataRefs, "policy_data", gcpPolicyDataLabels)...)
+
 	return findings, nil
 }
 
@@ -189,6 +210,114 @@ func renderFindings(w io.Writer, findings []Finding, format string) {
 			fmt.Fprintf(w, "       %s\n", f.Detail)
 		}
 	}
+}
+
+// ---- reference graph -------------------------------------------------------
+//
+// Some IAM content lives on one block (a customer-managed aws_iam_policy, a
+// GCP data.google_iam_policy) while another block merely references it (an
+// attachment's policy_arn, an authoritative policy's policy_data) — so that
+// content's findings get generated in isolation from whoever actually ends
+// up holding the grant. collectAuditFindings' second pass resolves those
+// references back to the resource they name, and re-attributes the
+// referenced resource's already-collected findings (pass one) to whatever
+// references it, so e.g. a wildcard-action policy finding also shows up as
+// "role X ends up with ... AWS001" on the attachment, not just on the policy
+// in isolation. Resolution is scoped to resources parsed in the same
+// collectAuditFindings call (one scan directory) — a policy defined in a
+// module with the attachment at the root call site, or vice versa, won't be
+// traced, since each is a separate GetResourceBlocks walk.
+
+// referenceRef is a block collectAuditFindings' first pass collected
+// because it might reference another resource's IAM content, held for the
+// second pass's reference-graph resolution.
+type referenceRef struct {
+	block *hclsyntax.Block
+	file  string
+}
+
+// resourceRefPattern matches the "${<traversal>}" string extractStringValue
+// produces for a bare attribute reference like aws_iam_policy.wide.arn —
+// the shape attrString already returns for a non-literal policy_arn/
+// policy_data/role/user/group attribute.
+var resourceRefPattern = regexp.MustCompile(`^\$\{([^}]+)\}$`)
+
+// resolveResourceRef extracts the "<type>.<name>" (or "data.<type>.<name>")
+// resource address a reference string names, e.g. "${aws_iam_policy.wide.arn}"
+// -> "aws_iam_policy.wide". Returns ok=false for anything else (a literal
+// ARN, a role name, an unresolvable expression) — this never guesses.
+func resolveResourceRef(s string) (string, bool) {
+	m := resourceRefPattern.FindStringSubmatch(s)
+	if m == nil {
+		return "", false
+	}
+
+	parts := strings.Split(m[1], ".")
+
+	if len(parts) >= 3 && parts[0] == "data" {
+		return strings.Join(parts[:3], "."), true
+	}
+
+	if len(parts) >= 2 && parts[0] != "data" {
+		return strings.Join(parts[:2], "."), true
+	}
+
+	return "", false
+}
+
+// principalIdentifier returns the resource address a reference names (e.g.
+// "aws_iam_role.ci" from role = aws_iam_role.ci.name), or the raw value
+// otherwise — a literal name, or an unresolvable reference shown verbatim
+// rather than silently dropped.
+func principalIdentifier(raw string) string {
+	if addr, ok := resolveResourceRef(raw); ok {
+		return addr
+	}
+	return raw
+}
+
+// resolveReferenceGraph re-attributes findings already collected on a
+// resource (indexed by its own address) to another resource that merely
+// references it via refAttr — e.g. an AWS attachment's policy_arn, or a GCP
+// authoritative policy's policy_data. labelsFor returns the label(s) (e.g.
+// "role aws_iam_role.ci", or a fixed "authoritative policy") a derived
+// finding should be attributed to for a given referencing block; an empty
+// result skips that block.
+func resolveReferenceGraph(findings []Finding, refs []referenceRef, refAttr string, labelsFor func(block *hclsyntax.Block) []string) []Finding {
+	byAddr := map[string][]Finding{}
+	for _, f := range findings {
+		byAddr[f.Resource] = append(byAddr[f.Resource], f)
+	}
+
+	var derived []Finding
+
+	for _, r := range refs {
+		targetAddr, ok := resolveResourceRef(attrString(r.block, refAttr))
+		if !ok {
+			continue
+		}
+
+		matches := byAddr[targetAddr]
+		if len(matches) == 0 {
+			continue
+		}
+
+		for _, label := range labelsFor(r.block) {
+			for _, f := range matches {
+				derived = append(derived, Finding{
+					RuleID:   f.RuleID,
+					Severity: f.Severity,
+					Resource: blockAddr(r.block),
+					File:     r.file,
+					Line:     r.block.DefRange().Start.Line,
+					Message:  fmt.Sprintf("%s ends up with (via %s): %s", label, targetAddr, f.Message),
+					Detail:   f.Detail,
+				})
+			}
+		}
+	}
+
+	return derived
 }
 
 // blockAddr returns the terraform-style address of a block, e.g.

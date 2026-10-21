@@ -3,6 +3,7 @@ package pike
 import (
 	"reflect"
 	"sort"
+	"strings"
 	"testing"
 )
 
@@ -25,6 +26,8 @@ func TestAudit_GCP(t *testing.T) {
 	got := collectRuleHits(t, "testdata/audit/gcp")
 	want := []string{
 		"GCP001 google_project_iam_member.owner",
+		"GCP001 data.google_iam_policy.x",
+		"GCP001 google_project_iam_policy.authoritative",
 		"GCP002 google_project_iam_binding.editor_public",
 		"GCP003 google_project_iam_policy.authoritative",
 		"GCP004 google_folder_iam_member.impersonate",
@@ -58,6 +61,8 @@ func TestAudit_AWS(t *testing.T) {
 	got := collectRuleHits(t, "testdata/audit/aws")
 	want := []string{
 		"AWS000 aws_iam_policy.interpolated",
+		"AWS001 aws_iam_policy.wide",
+		"AWS001 aws_iam_role_policy_attachment.wide_to_ci",
 		"AWS001 aws_iam_policy.wildcard_jsonencode",
 		"AWS001 data.aws_iam_policy_document.doc",
 		"AWS002 aws_iam_policy.from_file",
@@ -140,6 +145,97 @@ func TestAudit_AWSTrustPolicyConditionsSuppressFindings(t *testing.T) {
 		if f.Resource == "aws_iam_role.wildcard_trust_scoped" || f.Resource == "aws_iam_role.oidc_trust_scoped" {
 			t.Errorf("expected no findings for %s, got %s", f.Resource, f.RuleID)
 		}
+	}
+}
+
+func TestAudit_AWSAttachmentGraph(t *testing.T) {
+	t.Parallel()
+	// aws_iam_policy.wide (Action "*") is attached to aws_iam_role.ci via
+	// aws_iam_role_policy_attachment.wide_to_ci's policy_arn reference.
+	// AWS001 must fire on the attachment too, attributed to the role, not
+	// just on the policy in isolation.
+	findings, err := collectAuditFindings("testdata/audit/aws")
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	var derived *Finding
+	for i := range findings {
+		if findings[i].RuleID == "AWS001" && findings[i].Resource == "aws_iam_role_policy_attachment.wide_to_ci" {
+			derived = &findings[i]
+			break
+		}
+	}
+
+	if derived == nil {
+		t.Fatal("expected an AWS001 finding attributed to aws_iam_role_policy_attachment.wide_to_ci, found none")
+	}
+
+	if !strings.Contains(derived.Message, "role aws_iam_role.ci") {
+		t.Errorf("expected message to attribute the finding to role aws_iam_role.ci, got %q", derived.Message)
+	}
+
+	if !strings.Contains(derived.Message, "aws_iam_policy.wide") {
+		t.Errorf("expected message to name the source policy aws_iam_policy.wide, got %q", derived.Message)
+	}
+}
+
+func TestAudit_GCPPolicyDataGraph(t *testing.T) {
+	t.Parallel()
+	// data.google_iam_policy.x (roles/owner) is applied by
+	// google_project_iam_policy.authoritative via its policy_data
+	// reference. GCP001 must fire on the resource too, not just on the
+	// data source in isolation.
+	findings, err := collectAuditFindings("testdata/audit/gcp")
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	var derived *Finding
+	for i := range findings {
+		if findings[i].RuleID == "GCP001" && findings[i].Resource == "google_project_iam_policy.authoritative" {
+			derived = &findings[i]
+			break
+		}
+	}
+
+	if derived == nil {
+		t.Fatal("expected a GCP001 finding attributed to google_project_iam_policy.authoritative, found none")
+	}
+
+	if !strings.Contains(derived.Message, "data.google_iam_policy.x") {
+		t.Errorf("expected message to name the source data source data.google_iam_policy.x, got %q", derived.Message)
+	}
+}
+
+func TestResolveResourceRef(t *testing.T) {
+	t.Parallel()
+
+	tests := []struct {
+		name     string
+		in       string
+		wantAddr string
+		wantOK   bool
+	}{
+		{"resource attribute reference", "${aws_iam_policy.wide.arn}", "aws_iam_policy.wide", true},
+		{"data source attribute reference", "${data.aws_iam_policy_document.doc.json}", "data.aws_iam_policy_document.doc", true},
+		{"gcp policy_data reference", "${data.google_iam_policy.x.policy_data}", "data.google_iam_policy.x", true},
+		{"literal managed policy ARN", "arn:aws:iam::aws:policy/AdministratorAccess", "", false},
+		{"literal customer ARN", "arn:aws:iam::123456789012:policy/custom", "", false},
+		{"empty string", "", "", false},
+		{"bare literal role name", "ci", "", false},
+	}
+
+	for _, tt := range tests {
+		tt := tt
+		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
+
+			addr, ok := resolveResourceRef(tt.in)
+			if ok != tt.wantOK || addr != tt.wantAddr {
+				t.Errorf("resolveResourceRef(%q) = (%q, %v), want (%q, %v)", tt.in, addr, ok, tt.wantAddr, tt.wantOK)
+			}
+		})
 	}
 }
 

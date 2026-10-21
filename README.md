@@ -102,6 +102,7 @@ Get started with Pike in 3 steps:
     - [Watch](#watch)
     - [Parse](#parse)
   - [Compare](#compare)
+  - [Audit](#audit)
   - [Help](#help)
   - [Building](#building)
   - [Inspect](#inspect)
@@ -674,6 +675,36 @@ pike compare -d ./terraform -a arn:aws:iam::680235478471:policy/terraform_pike -
 # Every CI run after that: no credentials needed.
 pike compare -d ./terraform -a arn:aws:iam::680235478471:policy/terraform_pike --target-file ./policy-baseline.json
 ```
+
+## Audit
+
+`pike audit` runs a set of deterministic rules over the IAM-relevant resources in your Terraform — wildcard actions, escalation-class permissions granted without a scoping Condition, public principals, admin-class managed policy attachments, risky trust-policy principals, and more — without needing any cloud credentials at all.
+
+```bash
+pike audit -d ./terraform
+```
+
+Exits non-zero when any finding is present, so it's CI-friendly as a gate. Pass `-o json` for machine-readable output, or `--min-severity` to filter noise.
+
+### Attachment and policy-data reference graphs
+
+A policy's own findings are generated where the policy is *defined* — but the risk is really about who ends up *holding* it. When a customer-managed `aws_iam_policy` is attached via `aws_iam_role_policy_attachment`/`_user_`/`_group_`/`aws_iam_policy_attachment`, or a GCP `data.google_iam_policy`'s bindings are applied via a `google_project_iam_policy`/`_folder_`/`_organization_` resource's `policy_data`, pike resolves that reference and re-attributes the policy's findings to whoever ends up holding it — on top of (not instead of) the standalone finding on the policy/data source itself:
+
+```text
+129  HIGH     AWS001   aws_iam_policy.wide — statement[0] allows Action "*"
+     full-wildcard action grants every API call
+136  HIGH     AWS001   aws_iam_role_policy_attachment.wide_to_ci — role aws_iam_role.ci ends up with (via aws_iam_policy.wide): statement[0] allows Action "*"
+     full-wildcard action grants every API call
+```
+
+```text
+19   CRITICAL GCP001   google_project_iam_policy.authoritative — authoritative policy ends up with (via data.google_iam_policy.x): grants primitive role roles/owner
+     owner is project-admin equivalent; use a least-privilege predefined or custom role
+24   CRITICAL GCP001   data.google_iam_policy.x — grants primitive role roles/owner
+     owner is project-admin equivalent; use a least-privilege predefined or custom role
+```
+
+Resolution is scoped to resources parsed in a single `pike audit` run (one directory) — a policy defined in a module with the attachment at the root call site, or vice versa, won't be traced, since each is a separate pass over that location's `.tf` files.
 
 ## Pull
 

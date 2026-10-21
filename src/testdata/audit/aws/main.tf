@@ -126,6 +126,18 @@ resource "aws_iam_user_policy" "attach_user_policy" {
   })
 }
 
+resource "aws_iam_policy" "wide" {
+  name = "wide"
+  policy = jsonencode({
+    Statement = [{ Effect = "Allow", Action = "*", Resource = "*" }]
+  })
+}
+
+resource "aws_iam_role_policy_attachment" "wide_to_ci" {
+  role       = aws_iam_role.ci.name
+  policy_arn = aws_iam_policy.wide.arn
+}
+
 resource "aws_iam_role" "with_inline" {
   name = "r"
   assume_role_policy = jsonencode({

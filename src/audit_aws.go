@@ -19,6 +19,16 @@ var awsManagedPolicyDenylist = map[string]bool{
 	"PowerUserAccess":     true,
 }
 
+// awsPolicyAttachmentTypes are the resource types whose policy_arn may
+// reference a customer-managed aws_iam_policy defined in the same scan —
+// collectAuditFindings' attachment-graph pass looks for exactly these.
+var awsPolicyAttachmentTypes = map[string]bool{
+	"aws_iam_role_policy_attachment":  true,
+	"aws_iam_user_policy_attachment":  true,
+	"aws_iam_group_policy_attachment": true,
+	"aws_iam_policy_attachment":       true,
+}
+
 func init() {
 	for _, r := range []string{
 		"aws_iam_policy", "aws_iam_role_policy",
@@ -28,12 +38,7 @@ func init() {
 	}
 	auditHandlers["resource.aws_iam_role"] = auditAWSRoleInlinePolicies
 	auditHandlers["data.aws_iam_policy_document"] = auditAWSPolicyDocument
-	for _, r := range []string{
-		"aws_iam_role_policy_attachment",
-		"aws_iam_user_policy_attachment",
-		"aws_iam_group_policy_attachment",
-		"aws_iam_policy_attachment",
-	} {
+	for r := range awsPolicyAttachmentTypes {
 		auditHandlers["resource."+r] = auditAWSPolicyAttachment
 	}
 }
@@ -547,6 +552,40 @@ func auditAWSPolicyAttachment(block *hclsyntax.Block, _ string) []Finding {
 			"prefer a scoped customer-managed policy")}
 	}
 	return nil
+}
+
+// awsAttachmentLabels returns the principal label(s) (e.g. "role
+// aws_iam_role.ci") an attachment block names, for resolveReferenceGraph:
+// a single role/user/group attribute (aws_iam_{role,user,group}_policy_
+// attachment), or the plural roles/users/groups list form
+// (aws_iam_policy_attachment). A reference attribute (role = aws_iam_role.
+// ci.name) is identified by its resource address; a literal value (role =
+// "ci") is used verbatim.
+func awsAttachmentLabels(block *hclsyntax.Block) []string {
+	var labels []string
+
+	add := func(kind string, raw string) {
+		if raw == "" {
+			return
+		}
+		labels = append(labels, kind+" "+principalIdentifier(raw))
+	}
+
+	add("role", attrString(block, "role"))
+	add("user", attrString(block, "user"))
+	add("group", attrString(block, "group"))
+
+	for _, v := range attrStringList(block, "roles") {
+		add("role", v)
+	}
+	for _, v := range attrStringList(block, "users") {
+		add("user", v)
+	}
+	for _, v := range attrStringList(block, "groups") {
+		add("group", v)
+	}
+
+	return labels
 }
 
 // ---- rules ---------------------------------------------------------------

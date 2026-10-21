@@ -21,6 +21,13 @@ resource "google_project_iam_policy" "authoritative" {
   policy_data = data.google_iam_policy.x.policy_data
 }
 
+data "google_iam_policy" "x" {
+  binding {
+    role    = "roles/owner"
+    members = ["user:a@example.com"]
+  }
+}
+
 resource "google_project_iam_custom_role" "esc" {
   project     = "p"
   role_id     = "esc"
