@@ -39,6 +39,7 @@ func main() {
 		policyName         string
 		targetFile         string
 		writeBaseline      string
+		noLint             bool
 	)
 
 	log.Logger = log.Output(zerolog.ConsoleWriter{Out: os.Stderr})
@@ -222,13 +223,23 @@ func main() {
 						Usage:       "Use legacy single-role output instead of the default two-role (plan + apply) output",
 						Destination: &legacy,
 					},
+					&cli.BoolFlag{
+						Name:        "strict",
+						Usage:       "Exit non-zero when escalation-class permissions are present",
+						Destination: &strict,
+					},
+					&cli.BoolFlag{
+						Name:        "no-lint",
+						Usage:       "Suppress the escalation-class warning — for callers piping policy output",
+						Destination: &noLint,
+					},
 				},
 				Action: func(*cli.Context) error {
 					if file == "" {
-						return pike.Scan(directory, output, nil, init, write, enableResources, provider, outfile, policyName, suppressDeprecated, legacy)
+						return pike.Scan(directory, output, nil, init, write, enableResources, provider, outfile, policyName, suppressDeprecated, legacy, strict, noLint)
 					}
 
-					return pike.Scan(directory, output, &file, init, write, enableResources, provider, outfile, policyName, suppressDeprecated, legacy)
+					return pike.Scan(directory, output, &file, init, write, enableResources, provider, outfile, policyName, suppressDeprecated, legacy, strict, noLint)
 				},
 			},
 			{

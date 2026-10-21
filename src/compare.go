@@ -178,7 +178,7 @@ func compareGCPRole(directory string, arn string, init bool, strict bool, target
 
 	same := compareGCPPolicy(&gcpiam.Role{IncludedPermissions: permissions}, iacBag)
 
-	if strict && !findEscalation(iacBag).empty() {
+	if strict && (!findEscalation(iacBag).empty() || len(findEscalationCombos(iacBag)) > 0) {
 		return false, &escalationClassError{findEscalation(iacBag)}
 	}
 
@@ -343,7 +343,7 @@ func compareAWSRole(directory string, arn string, init bool, strict bool, target
 		return same, err
 	}
 
-	if strict && !findEscalation(iacBag).empty() {
+	if strict && (!findEscalation(iacBag).empty() || len(findEscalationCombos(iacBag)) > 0) {
 		return false, &escalationClassError{findEscalation(iacBag)}
 	}
 

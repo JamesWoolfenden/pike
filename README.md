@@ -377,6 +377,20 @@ WARNING: escalation-class permissions detected — holder can grant themselves a
 
 No flag is needed to enable this; it fires whenever escalation-class permissions are present.
 
+The same warning also fires for dangerous *combinations* of otherwise-unremarkable permissions — e.g. `iam:PassRole` paired with `lambda:CreateFunction` or `ec2:RunInstances` lets you choose which compute resource receives that role, and `iam:CreateAccessKey` paired with `iam:ListUsers` lets you mint credentials for any user:
+
+```text
+  Dangerous combinations (no single permission above reveals this; together they do):
+    aws:   iam:PassRole + lambda:CreateFunction
+```
+
+Pass `--strict` to `pike scan` to exit non-zero when either kind of escalation-class permission is present, even though scan still succeeds in producing output (`pike compare --strict` does the same for the live-vs-IaC comparison). Pass `--no-lint` to suppress the warning (and the `--strict` check) entirely — useful if you're piping scan's policy output somewhere and don't want lint noise on stderr.
+
+```bash
+pike scan --strict -d ./terraform
+pike scan --no-lint -o json -d ./terraform | some-other-tool
+```
+
 ### Split output
 
 Use `--output split` (or `-o split`) to emit two permission sets — `base` (safe to distribute broadly) and `escalation` (owner-equivalent, restrict to protected branches) — instead of a single flat policy:

@@ -38,11 +38,50 @@ func TestScan(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
 
-			if err := Scan(tt.args.dirname, tt.args.output, nil, false, tt.args.write, false, "", "", "", false, false); (err != nil) != tt.wantErr {
+			if err := Scan(tt.args.dirname, tt.args.output, nil, false, tt.args.write, false, "", "", "", false, false, false, false); (err != nil) != tt.wantErr {
 				t.Errorf("Scan() error = %v, wantErr %v", err, tt.wantErr)
 			}
 		})
 	}
+}
+
+func TestScan_StrictAndNoLint(t *testing.T) {
+	t.Parallel()
+
+	// testdata/scan/escalation has a single aws_lambda_function, whose
+	// mapping grants both iam:PassRole and lambda:CreateFunction
+	// unconditionally — an escalation-class combo (findEscalationCombos),
+	// even though neither permission alone is in escalationAWS.
+	escalationPath, err := filepath.Abs("testdata/scan/escalation")
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	t.Run("strict exits non-zero on the combo", func(t *testing.T) {
+		t.Parallel()
+
+		err := Scan(escalationPath, "json", nil, false, false, false, "", "", "", false, false, true, false)
+		if _, ok := err.(*escalationClassError); !ok {
+			t.Errorf("Scan(strict=true) error = %v (%T), want *escalationClassError", err, err)
+		}
+	})
+
+	t.Run("strict without the combo present does not error", func(t *testing.T) {
+		t.Parallel()
+
+		testPath, _ := filepath.Abs("../testdata/scan/examples/simple")
+		if err := Scan(testPath, "json", nil, false, false, false, "", "", "", false, false, true, false); err != nil {
+			t.Errorf("Scan(strict=true) on a combo-free directory error = %v, want nil", err)
+		}
+	})
+
+	t.Run("no-lint suppresses the strict check too", func(t *testing.T) {
+		t.Parallel()
+
+		if err := Scan(escalationPath, "json", nil, false, false, false, "", "", "", false, false, true, true); err != nil {
+			t.Errorf("Scan(strict=true, noLint=true) error = %v, want nil (no-lint should skip the check entirely)", err)
+		}
+	})
 }
 
 func TestGetTF(t *testing.T) {

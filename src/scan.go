@@ -23,8 +23,12 @@ const (
 
 var initMutex sync.Map // per-directory mutex
 
-// Scan looks for resources in a given directory.
-func Scan(dirName string, outputType string, file *string, init bool, write bool, enableResources bool, provider string, outFile string, policyName string, suppressDeprecated bool, legacy bool) error {
+// Scan looks for resources in a given directory. noLint suppresses the
+// escalation-class warning (and the strict check) entirely, for callers
+// piping policy output who don't want lint noise on stderr. strict makes
+// Scan return a non-zero-exit-worthy error when escalation-class
+// permissions are present, mirroring Compare's --strict.
+func Scan(dirName string, outputType string, file *string, init bool, write bool, enableResources bool, provider string, outFile string, policyName string, suppressDeprecated bool, legacy bool, strict bool, noLint bool) error {
 	if dirName == "" && file == nil {
 		return &emptyScanLocationError{}
 	}
@@ -39,7 +43,13 @@ func Scan(dirName string, outputType string, file *string, init bool, write bool
 		return &makePolicyError{err}
 	}
 
-	WarnEscalation(bag)
+	if !noLint {
+		WarnEscalation(bag)
+
+		if strict && (!findEscalation(bag).empty() || len(findEscalationCombos(bag)) > 0) {
+			return &escalationClassError{findEscalation(bag)}
+		}
+	}
 
 	if strings.ToLower(outputType) == "split" {
 		sp := MakeSplitPolicy(bag)
