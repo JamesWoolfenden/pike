@@ -11,6 +11,7 @@ import (
 	"github.com/hashicorp/hcl/v2/hclsyntax"
 	"github.com/jameswoolfenden/pike/internal/provider"
 	"github.com/rs/zerolog/log"
+	"github.com/zclconf/go-cty/cty"
 )
 
 type fileStringEmptyError struct{}
@@ -69,6 +70,7 @@ func GetResources(file string, dirName string) ([]ResourceV2, error) {
 		var attributes []string
 
 		resource.Attributes = GetBlockAttributes(attributes, block)
+		resource.AttributeValues = GetBlockAttributeValues(nil, block)
 		if len(block.Labels) > 0 {
 			resource.Provider = GetHCLType(block.Labels[0])
 		} else {
@@ -156,7 +158,9 @@ func extractStringValue(expr hclsyntax.Expression) string {
 		var sb strings.Builder
 		for _, part := range templateExpr.Parts {
 			if literalExpr, ok := part.(*hclsyntax.LiteralValueExpr); ok {
-				sb.WriteString(literalExpr.Val.AsString())
+				if literalExpr.Val.Type() == cty.String {
+					sb.WriteString(literalExpr.Val.AsString())
+				}
 			} else if scopeExpr, ok := part.(*hclsyntax.ScopeTraversalExpr); ok {
 				fmt.Fprintf(&sb, "${%s}", traversalToString(scopeExpr.Traversal))
 			}
@@ -166,6 +170,10 @@ func extractStringValue(expr hclsyntax.Expression) string {
 
 	// Handle literal value expressions
 	if literalExpr, ok := expr.(*hclsyntax.LiteralValueExpr); ok {
+		if literalExpr.Val.Type() != cty.String {
+			return ""
+		}
+
 		return literalExpr.Val.AsString()
 	}
 
@@ -363,6 +371,35 @@ func GetBlockAttributes(attributes []string, block *hclsyntax.Block) []string {
 	}
 
 	return attributes
+}
+
+// GetBlockAttributeValues walks a block, including nested blocks, collecting the
+// literal string-list values of its attributes, keyed by attribute name. This
+// backs permission lookups that depend on an attribute's value rather than just
+// its presence (e.g. azurerm_private_endpoint's subresource_names).
+func GetBlockAttributeValues(values map[string][]string, block *hclsyntax.Block) map[string][]string {
+	for _, attribute := range block.Body.Attributes {
+		list := extractStringList(attribute.Expr)
+		if len(list) == 0 {
+			continue
+		}
+
+		if values == nil {
+			values = make(map[string][]string)
+		}
+
+		values[attribute.Name] = append(values[attribute.Name], list...)
+	}
+
+	for _, inner := range block.Body.Blocks {
+		if inner.Type == "resource" {
+			continue
+		}
+
+		values = GetBlockAttributeValues(values, inner)
+	}
+
+	return values
 }
 
 // GetPermission determines the IAM permissions required and returns a list of permission.

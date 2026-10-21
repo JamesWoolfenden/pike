@@ -67,6 +67,10 @@ type ResourceV2 struct {
 	Provider       string
 	Attributes     []string
 	ServiceAccount string // The service account this resource uses (if any)
+	// AttributeValues holds the literal string-list values of attributes, keyed
+	// by attribute name, for permission lookups that depend on a value rather
+	// than just presence (e.g. azurerm_private_endpoint's subresource_names).
+	AttributeValues map[string][]string
 }
 
 // Policy represents and creates IAM policy structure.

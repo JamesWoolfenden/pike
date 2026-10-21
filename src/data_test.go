@@ -36,7 +36,7 @@ func TestGetResources(t *testing.T) {
 			"no_dir",
 			args{file, ""},
 			[]pike.ResourceV2{{
-				"resource", "aws_s3_bucket", "pike", "aws", []string{"bucket"}, "",
+				"resource", "aws_s3_bucket", "pike", "aws", []string{"bucket"}, "", nil,
 			}},
 			false,
 		},
@@ -44,7 +44,7 @@ func TestGetResources(t *testing.T) {
 			"dir",
 			args{file, "../testdata/scan/examples/simple"},
 			[]pike.ResourceV2{{
-				"resource", "aws_s3_bucket", "pike", "aws", []string{"bucket"}, "",
+				"resource", "aws_s3_bucket", "pike", "aws", []string{"bucket"}, "", nil,
 			}},
 			false,
 		},
@@ -53,10 +53,10 @@ func TestGetResources(t *testing.T) {
 			args{moduleFile, "../testdata/modules/examples/local"},
 			[]pike.ResourceV2{
 				{
-					"resource", "aws_s3_bucket", "pike", "aws", []string{"name"}, "",
+					"resource", "aws_s3_bucket", "pike", "aws", []string{"name"}, "", nil,
 				},
 				{
-					"module", "local", "", "local", []string{"source"}, "",
+					"module", "local", "", "local", []string{"source"}, "", nil,
 				},
 			},
 			false,
@@ -66,9 +66,9 @@ func TestGetResources(t *testing.T) {
 			args{moduleFile, "../testdata/modules/examples/rubbish"},
 			[]pike.ResourceV2{
 				{
-					"resource", "aws_s3_bucket", "pike", "aws", []string{"name"}, "",
+					"resource", "aws_s3_bucket", "pike", "aws", []string{"name"}, "", nil,
 				},
-				{"module", "local", "", "local", []string{"source"}, ""},
+				{"module", "local", "", "local", []string{"source"}, "", nil},
 			},
 			false,
 		},
@@ -132,6 +132,7 @@ func Test_getLocalModules(t *testing.T) {
 				"aws",
 				[]string{"name"},
 				"",
+				nil,
 			}},
 			false,
 		},
@@ -248,6 +249,34 @@ func TestGetBlockAttributes(t *testing.T) {
 				t.Errorf("GetBlockAttributes() = %v, want %v", got, tt.want)
 			}
 		})
+	}
+}
+
+func TestGetBlockAttributeValues(t *testing.T) {
+	t.Parallel()
+
+	file, err := filepath.Abs("../terraform/azurerm/backup/azurerm_private_endpoint.tf")
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	body, err := pike.GetResourceBlocks(file)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	if len(body.Blocks) != 1 {
+		t.Fatalf("expected 1 top-level block, got %d", len(body.Blocks))
+	}
+
+	got := pike.GetBlockAttributeValues(nil, body.Blocks[0])
+
+	want := map[string][]string{
+		"subresource_names":    {"redisCache"},
+		"private_dns_zone_ids": {"/subscriptions/037ce662-dfc1-4b8b-a8a7-6c414b540ed6/resourceGroups/pike/providers/Microsoft.Network/privateDnsZones/private.beer"},
+	}
+	if !reflect.DeepEqual(got, want) {
+		t.Errorf("GetBlockAttributeValues() = %v, want %v", got, want)
 	}
 }
 
