@@ -1,7 +1,5 @@
 ---
 # yamllint disable rule:line-length
-default_language_version:
-  python: python3.11
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0 # v6.0.0
@@ -16,7 +14,6 @@ repos:
       - id: pretty-format-json
         args:
           - --autofix
-      - id: detect-aws-credentials
       - id: detect-private-key
   - repo: https://github.com/Lucas-C/pre-commit-hooks
     rev: v1.5.6 # v1.5.6
@@ -37,7 +34,6 @@ repos:
     rev: v0.1.62 # v0.1.53
     hooks:
       - id: terraform-fmt
-        language_version: python3.11
   - repo: https://github.com/gruntwork-io/pre-commit
     rev: v0.1.30 # v0.1.30
     hooks:
