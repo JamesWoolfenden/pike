@@ -45,7 +45,7 @@ func getGCPResourcePermissions(sourceData ResourceV2) ([]string, error) {
 		return nil, &notImplementedResourceError{sourceData.Name}
 	}
 
-	permissions, err := GetPermissionMap(raw, sourceData.Attributes, sourceData.Name)
+	permissions, err := GetPermissionMap(raw, sourceData.Attributes, sourceData.AttributeValues, sourceData.Name)
 	if err != nil {
 		return nil, &invalidPermissionMapError{err}
 	}

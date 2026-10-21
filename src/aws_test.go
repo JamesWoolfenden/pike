@@ -344,9 +344,10 @@ func TestGetPermissionMap(t *testing.T) {
 	t.Parallel()
 
 	type args struct {
-		raw        []byte
-		attributes []string
-		resource   string
+		raw             []byte
+		attributes      []string
+		attributeValues map[string][]string
+		resource        string
 	}
 
 	tests := []struct {
@@ -381,6 +382,42 @@ func TestGetPermissionMap(t *testing.T) {
 			},
 			wantErr: true,
 		},
+		{
+			name: "attribute value match adds its permission",
+			args: args{
+				raw: []byte(`[{
+					"apply": ["base:Permission"],
+					"attributes": {},
+					"attributeValues": {
+						"subresource_names": {
+							"redisCache": ["Microsoft.Cache/redis/PrivateEndpointConnectionsApproval/action"]
+						}
+					}
+				}]`),
+				attributes:      []string{},
+				attributeValues: map[string][]string{"subresource_names": {"redisCache"}},
+				resource:        "azurerm_private_endpoint",
+			},
+			want: []string{"base:Permission", "Microsoft.Cache/redis/PrivateEndpointConnectionsApproval/action"},
+		},
+		{
+			name: "attribute value with no matching entry adds nothing",
+			args: args{
+				raw: []byte(`[{
+					"apply": ["base:Permission"],
+					"attributes": {},
+					"attributeValues": {
+						"subresource_names": {
+							"redisCache": ["Microsoft.Cache/redis/PrivateEndpointConnectionsApproval/action"]
+						}
+					}
+				}]`),
+				attributes:      []string{},
+				attributeValues: map[string][]string{"subresource_names": {"vault"}},
+				resource:        "azurerm_private_endpoint",
+			},
+			want: []string{"base:Permission"},
+		},
 	}
 
 	for _, tt := range tests {
@@ -388,7 +425,7 @@ func TestGetPermissionMap(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
 
-			got, err := pike.GetPermissionMap(tt.args.raw, tt.args.attributes, tt.args.resource)
+			got, err := pike.GetPermissionMap(tt.args.raw, tt.args.attributes, tt.args.attributeValues, tt.args.resource)
 
 			if (err != nil) != tt.wantErr {
 				t.Errorf("GetPermissionMap() error = %v, wantErr %v", err, tt.wantErr)

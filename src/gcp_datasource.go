@@ -6,7 +6,7 @@ func GetGCPDataPermissions(result ResourceV2) ([]string, error) {
 	if temp == nil {
 		return nil, &notImplementedDatasourceError{result.Name}
 	}
-	return GetPermissionMap(temp, result.Attributes, result.Name)
+	return GetPermissionMap(temp, result.Attributes, result.AttributeValues, result.Name)
 }
 
 func GCPDataLookup(name string) []byte {

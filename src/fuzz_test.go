@@ -16,7 +16,7 @@ func FuzzGetPermissionMap(f *testing.F) {
 
 	f.Fuzz(func(t *testing.T, data []byte, attribute string, resource string) {
 		//nolint:errcheck
-		pike.GetPermissionMap(data, []string{attribute}, resource)
+		pike.GetPermissionMap(data, []string{attribute}, nil, resource)
 	})
 }
 

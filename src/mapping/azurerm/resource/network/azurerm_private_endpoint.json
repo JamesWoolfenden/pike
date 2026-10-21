@@ -13,6 +13,13 @@
       ],
       "tags": []
     },
+    "attributeValues": {
+      "subresource_names": {
+        "redisCache": [
+          "Microsoft.Cache/redis/PrivateEndpointConnectionsApproval/action"
+        ]
+      }
+    },
     "destroy": [
       "Microsoft.Network/privateEndpoints/delete"
     ],

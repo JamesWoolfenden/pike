@@ -6,7 +6,7 @@ func GetAZUREDataPermissions(result ResourceV2) ([]string, error) {
 	if temp == nil {
 		return nil, &notImplementedDatasourceError{Name: result.Name}
 	}
-	return GetPermissionMap(temp, result.Attributes, result.Name)
+	return GetPermissionMap(temp, result.Attributes, result.AttributeValues, result.Name)
 }
 
 func AzureDataLookup(name string) []byte {

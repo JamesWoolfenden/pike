@@ -57,7 +57,7 @@ func GetAWSResourcePermissions(result ResourceV2) ([]string, error) {
 	if temp == nil {
 		return nil, &notImplementedResourceError{result.Name}
 	}
-	return GetPermissionMap(temp, result.Attributes, result.Name)
+	return GetPermissionMap(temp, result.Attributes, result.AttributeValues, result.Name)
 }
 
 func getAWSPlanPermissions(result ResourceV2) ([]string, error) {
@@ -93,7 +93,7 @@ func Contains(s []string, e string) bool {
 }
 
 // GetPermissionMap Anonymous parsing.
-func GetPermissionMap(raw []byte, attributes []string, resource string) ([]string, error) {
+func GetPermissionMap(raw []byte, attributes []string, attributeValues map[string][]string, resource string) ([]string, error) {
 	if !json.Valid(raw) || len(raw) == 0 {
 		return nil, &invalidJSONError{}
 	}
@@ -146,6 +146,65 @@ func GetPermissionMap(raw []byte, attributes []string, resource string) ([]strin
 	found, err = getActionPermissions(temp, found)
 	if err != nil {
 		return found, fmt.Errorf("getActionPermissions: %w", err)
+	}
+
+	found, err = getAttributeValuePermissions(temp, attributeValues, found)
+	if err != nil {
+		return found, fmt.Errorf("getAttributeValuePermissions: %w", err)
+	}
+
+	return found, nil
+}
+
+// getAttributeValuePermissions adds permissions keyed by the literal value
+// of an attribute, not merely its presence — e.g. azurerm_private_endpoint's
+// subresource_names needs a different permission for "redisCache" than for
+// "vault". The mapping JSON's optional "attributeValues" field has the
+// shape {"<attribute name>": {"<value>": ["<permission>", ...], ...}, ...}.
+// A mapping with no "attributeValues" field, or a value with no matching
+// entry, adds nothing here — this never guesses a permission for a value
+// the mapping doesn't explicitly know about.
+func getAttributeValuePermissions(permissionMap map[string]any, attributeValues map[string][]string, found []string) ([]string, error) {
+	raw, ok := permissionMap["attributeValues"]
+	if !ok || raw == nil {
+		return found, nil
+	}
+
+	byAttribute, err := IsTypeOK(raw)
+	if err != nil {
+		return found, &assertionFailedError{"temp[\"attributeValues\"]", err}
+	}
+
+	for attribute, values := range attributeValues {
+		rawByValue, ok := byAttribute[attribute]
+		if !ok {
+			continue
+		}
+
+		byValue, err := IsTypeOK(rawByValue)
+		if err != nil {
+			return found, &assertionFailedError{"attributeValues[\"" + attribute + "\"]", err}
+		}
+
+		for _, value := range values {
+			entries, ok := byValue[value].([]any)
+			if !ok {
+				continue
+			}
+
+			for _, entry := range entries {
+				permission, ok := entry.(string)
+				if !ok {
+					log.Error().Msg("failed to cast to string")
+
+					continue
+				}
+
+				if !Contains(found, permission) {
+					found = append(found, permission)
+				}
+			}
+		}
 	}
 
 	return found, nil
