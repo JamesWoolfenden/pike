@@ -64,10 +64,47 @@ type awsStmt struct {
 	Resource    stringOrSlice   `json:"Resource"`
 	NotResource stringOrSlice   `json:"NotResource"`
 	Condition   json.RawMessage `json:"Condition"`
+	// Principal is only meaningful on a trust policy (assume_role_policy)
+	// statement; it's absent/zero on an identity/resource policy statement.
+	Principal awsPrincipal `json:"Principal"`
 	// ConditionKeys holds the condition variable names (e.g.
 	// "iam:PassedToService", "aws:PrincipalTag/team") extracted from
 	// Condition, when its structure could be statically walked.
 	ConditionKeys []string `json:"-"`
+}
+
+// awsPrincipal models the shapes a trust policy's Principal can take: the
+// bare string "*", or an object with AWS/Service/Federated keys, each either
+// a single string or a list.
+type awsPrincipal struct {
+	Wildcard  bool // Principal: "*", or Principal: {"AWS": "*"}
+	AWS       []string
+	Service   []string
+	Federated []string
+}
+
+func (p *awsPrincipal) UnmarshalJSON(data []byte) error {
+	var asString string
+	if err := json.Unmarshal(data, &asString); err == nil {
+		p.Wildcard = asString == "*"
+		return nil
+	}
+
+	var asObject struct {
+		AWS       stringOrSlice `json:"AWS"`
+		Service   stringOrSlice `json:"Service"`
+		Federated stringOrSlice `json:"Federated"`
+	}
+	if err := json.Unmarshal(data, &asObject); err != nil {
+		return err
+	}
+
+	p.AWS = asObject.AWS
+	p.Service = asObject.Service
+	p.Federated = asObject.Federated
+	p.Wildcard = slices.Contains(p.AWS, "*")
+
+	return nil
 }
 
 // escalationScopingConditionKeys are AWS condition keys that genuinely
@@ -104,6 +141,55 @@ func isScopingConditionKey(key string) bool {
 // restricts an escalation-class grant, as opposed to merely existing.
 func (s awsStmt) hasScopingCondition() bool {
 	return slices.ContainsFunc(s.ConditionKeys, isScopingConditionKey)
+}
+
+// hasAnyCondition reports whether the statement has a Condition block at
+// all, regardless of which keys it tests.
+func (s awsStmt) hasAnyCondition() bool {
+	return len(s.ConditionKeys) > 0
+}
+
+// hasConditionKey reports whether any of the statement's condition keys
+// case-insensitively match one of want (exact match, ignoring a trailing
+// "/Tag"-style qualifier).
+func (s awsStmt) hasConditionKey(want ...string) bool {
+	return slices.ContainsFunc(s.ConditionKeys, func(key string) bool {
+		lk := strings.ToLower(key)
+		for _, w := range want {
+			if lk == w {
+				return true
+			}
+		}
+		return false
+	})
+}
+
+// hasSubOrAudCondition reports whether the statement scopes a federated/OIDC
+// principal by a claim condition, e.g. "token.actions.githubusercontent.com:sub"
+// or "accounts.google.com:aud" — any condition key ending in ":sub" or
+// ":aud", regardless of which OIDC provider it names.
+func (s awsStmt) hasSubOrAudCondition() bool {
+	return slices.ContainsFunc(s.ConditionKeys, func(key string) bool {
+		lk := strings.ToLower(key)
+		return strings.HasSuffix(lk, ":sub") || strings.HasSuffix(lk, ":aud")
+	})
+}
+
+// hasWildcardRootAccount reports whether principals contains an
+// account-root ARN with a wildcard account segment, e.g.
+// "arn:aws:iam::*:root" — which matches every account, not one specific one.
+func hasWildcardRootAccount(principals []string) bool {
+	return slices.ContainsFunc(principals, func(arn string) bool {
+		return strings.Contains(arn, ":iam::*:root")
+	})
+}
+
+// containsActionFold reports whether actions contains want, ignoring case —
+// AWS action names are case-insensitive.
+func containsActionFold(actions []string, want string) bool {
+	return slices.ContainsFunc(actions, func(a string) bool {
+		return strings.EqualFold(a, want)
+	})
 }
 
 // conditionKeysFromRaw extracts condition variable names from a JSON
@@ -263,9 +349,43 @@ func stmtFromObjectExpr(obj *hclsyntax.ObjectConsExpr) awsStmt {
 		case keyEquals(item.KeyExpr, "Condition"):
 			s.Condition = json.RawMessage(`{}`)
 			s.ConditionKeys = conditionKeysFromObjectExpr(val)
+		case keyEquals(item.KeyExpr, "Principal"):
+			s.Principal = principalFromExpr(val)
 		}
 	}
 	return s
+}
+
+// principalFromExpr walks a Principal = "*" or
+// Principal = { AWS = ..., Service = ..., Federated = ... } HCL literal.
+func principalFromExpr(expr hclsyntax.Expression) awsPrincipal {
+	var p awsPrincipal
+
+	if s := extractStringValue(expr); s != "" {
+		p.Wildcard = s == "*"
+		return p
+	}
+
+	obj, ok := unwrapExpr(expr).(*hclsyntax.ObjectConsExpr)
+	if !ok {
+		return p
+	}
+
+	for _, item := range obj.Items {
+		vals := stringOrListExpr(unwrapExpr(item.ValueExpr))
+		switch {
+		case keyEquals(item.KeyExpr, "AWS"):
+			p.AWS = vals
+		case keyEquals(item.KeyExpr, "Service"):
+			p.Service = vals
+		case keyEquals(item.KeyExpr, "Federated"):
+			p.Federated = vals
+		}
+	}
+
+	p.Wildcard = slices.Contains(p.AWS, "*")
+
+	return p
 }
 
 // conditionKeysFromObjectExpr walks a Condition = { Operator = { key = val } }
@@ -352,6 +472,23 @@ func auditAWSInlinePolicy(block *hclsyntax.Block, baseDir string) []Finding {
 
 func auditAWSRoleInlinePolicies(block *hclsyntax.Block, baseDir string) []Finding {
 	var out []Finding
+
+	if attr, ok := block.Body.Attributes["assume_role_policy"]; ok {
+		doc, reason := extractAWSPolicy(attr.Expr, baseDir)
+		if doc == nil {
+			out = append(out, finding(block, "AWS000", SevInfo,
+				"assume_role_policy not statically analysable", reason))
+		} else {
+			// A trust policy's statements carry a Principal, not a Resource, and
+			// its actions (sts:AssumeRole*) aren't meaningfully scoped by the
+			// same Conditions an identity policy's escalation-class actions are
+			// — so run the Principal-aware trust rules only, not the generic
+			// Action/Resource rules runAWSPolicyRules applies to identity/
+			// resource policies.
+			out = append(out, runAWSTrustPolicyRules(block, doc)...)
+		}
+	}
+
 	for _, inner := range block.Body.Blocks {
 		if inner.Type != "inline_policy" {
 			continue
@@ -452,6 +589,50 @@ func runAWSPolicyRules(block *hclsyntax.Block, doc *awsPolicyDoc) []Finding {
 			out = append(out, finding(block, "AWS003", SevMedium,
 				fmt.Sprintf("%s uses Resource \"*\" with resource-scopable actions", ref),
 				"restrict Resource to specific ARNs where the service supports it"))
+		}
+	}
+	return out
+}
+
+// runAWSTrustPolicyRules inspects an assume_role_policy's Principal/
+// Condition pairs for overly permissive trust relationships — who can
+// assume the role, as opposed to runAWSPolicyRules' what the role can then
+// do.
+func runAWSTrustPolicyRules(block *hclsyntax.Block, doc *awsPolicyDoc) []Finding {
+	var out []Finding
+	for i, s := range doc.Statement {
+		if !strings.EqualFold(s.Effect, "Allow") {
+			continue
+		}
+		ref := stmtRef(s.Sid, i)
+		p := s.Principal
+
+		if p.Wildcard && !s.hasAnyCondition() {
+			out = append(out, finding(block, "AWS007", SevHigh,
+				fmt.Sprintf("%s allows any principal (Principal \"*\" or AWS \"*\") to assume this role with no Condition", ref),
+				"anyone, in any account, can assume this role — restrict Principal or add a scoping Condition"))
+		}
+
+		if hasWildcardRootAccount(p.AWS) && !s.hasConditionKey("aws:principalorgid") {
+			out = append(out, finding(block, "AWS008", SevHigh,
+				fmt.Sprintf("%s trusts arn:aws:iam::*:root (any account's root user)", ref),
+				"restrict to specific account IDs, or scope with a Condition on aws:PrincipalOrgID"))
+		}
+
+		if len(p.Service) > 0 && containsActionFold(s.Action, "sts:AssumeRole") &&
+			!s.hasConditionKey("aws:sourcearn", "aws:sourceaccount") {
+			out = append(out, finding(block, "AWS009", SevMedium,
+				fmt.Sprintf("%s lets service principal %s call sts:AssumeRole with no aws:SourceArn/aws:SourceAccount Condition",
+					ref, strings.Join(p.Service, ",")),
+				"confused-deputy risk — scope with aws:SourceArn or aws:SourceAccount"))
+		}
+
+		if len(p.Federated) > 0 && containsActionFold(s.Action, "sts:AssumeRoleWithWebIdentity") &&
+			!s.hasSubOrAudCondition() {
+			out = append(out, finding(block, "AWS010", SevHigh,
+				fmt.Sprintf("%s lets federated/OIDC principal %s call sts:AssumeRoleWithWebIdentity with no claim-scoping Condition (e.g. a :sub or :aud key)",
+					ref, strings.Join(p.Federated, ",")),
+				"without a condition on the provider's sub/aud claim, any subject at that OIDC provider (e.g. any GitHub repo) can assume this role"))
 		}
 	}
 	return out

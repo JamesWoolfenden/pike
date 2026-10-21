@@ -74,6 +74,10 @@ func TestAudit_AWS(t *testing.T) {
 		"AWS005 aws_iam_group_policy.not_action",
 		"AWS006 aws_iam_role_policy_attachment.admin",
 		"AWS006 aws_iam_user_policy_attachment.s3full",
+		"AWS009 aws_iam_role.with_inline",
+		"AWS007 aws_iam_role.wildcard_trust",
+		"AWS008 aws_iam_role.root_wildcard_trust",
+		"AWS010 aws_iam_role.oidc_trust_no_sub",
 	}
 	sort.Strings(want)
 	if !reflect.DeepEqual(got, want) {
@@ -119,6 +123,24 @@ func TestAudit_AWSNonScopingConditionDoesNotSuppressEscalation(t *testing.T) {
 		}
 	}
 	t.Errorf("AWS004 did not fire for iam:PassRole guarded only by a non-scoping condition (aws:RequestedRegion)")
+}
+
+func TestAudit_AWSTrustPolicyConditionsSuppressFindings(t *testing.T) {
+	t.Parallel()
+	// wildcard_trust_scoped (Principal AWS:"*" + aws:PrincipalOrgID) and
+	// oidc_trust_scoped (Federated + token.actions.githubusercontent.com:sub)
+	// must not trigger AWS007/AWS008/AWS010 — the whole point of the
+	// condition exceptions is that these specific, deliberate patterns don't
+	// false-positive.
+	findings, err := collectAuditFindings("testdata/audit/aws")
+	if err != nil {
+		t.Fatal(err)
+	}
+	for _, f := range findings {
+		if f.Resource == "aws_iam_role.wildcard_trust_scoped" || f.Resource == "aws_iam_role.oidc_trust_scoped" {
+			t.Errorf("expected no findings for %s, got %s", f.Resource, f.RuleID)
+		}
+	}
 }
 
 func TestAudit_AWSServiceWildcardCoveringEscalationAction(t *testing.T) {

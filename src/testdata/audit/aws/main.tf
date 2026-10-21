@@ -138,3 +138,64 @@ resource "aws_iam_role" "with_inline" {
     })
   }
 }
+
+resource "aws_iam_role" "wildcard_trust" {
+  name = "r"
+  assume_role_policy = jsonencode({
+    Statement = [{ Effect = "Allow", Principal = "*", Action = "sts:AssumeRole" }]
+  })
+}
+
+resource "aws_iam_role" "wildcard_trust_scoped" {
+  name = "r"
+  assume_role_policy = jsonencode({
+    Statement = [{
+      Effect    = "Allow"
+      Principal = { AWS = "*" }
+      Action    = "sts:AssumeRole"
+      Condition = {
+        StringEquals = {
+          "aws:PrincipalOrgID" = "o-example"
+        }
+      }
+    }]
+  })
+}
+
+resource "aws_iam_role" "root_wildcard_trust" {
+  name = "r"
+  assume_role_policy = jsonencode({
+    Statement = [{
+      Effect    = "Allow"
+      Principal = { AWS = "arn:aws:iam::*:root" }
+      Action    = "sts:AssumeRole"
+    }]
+  })
+}
+
+resource "aws_iam_role" "oidc_trust_no_sub" {
+  name = "r"
+  assume_role_policy = jsonencode({
+    Statement = [{
+      Effect    = "Allow"
+      Principal = { Federated = "arn:aws:iam::123456789012:oidc-provider/token.actions.githubusercontent.com" }
+      Action    = "sts:AssumeRoleWithWebIdentity"
+    }]
+  })
+}
+
+resource "aws_iam_role" "oidc_trust_scoped" {
+  name = "r"
+  assume_role_policy = jsonencode({
+    Statement = [{
+      Effect    = "Allow"
+      Principal = { Federated = "arn:aws:iam::123456789012:oidc-provider/token.actions.githubusercontent.com" }
+      Action    = "sts:AssumeRoleWithWebIdentity"
+      Condition = {
+        StringLike = {
+          "token.actions.githubusercontent.com:sub" = "repo:my-org/my-repo:*"
+        }
+      }
+    }]
+  })
+}
