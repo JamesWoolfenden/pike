@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 81.89      |  1126       |  1375            |
-| Datasource | 99.79      |   470       |   471             |
+| Resources  | 82.04      |  1133       |  1381            |
+| Datasource | 99.58      |   470       |   472             |
 
 ## Deprecated
 
-16 resources and 5 datasources are flagged as deprecated in provider schema v8.7.0. Users pinned to an older provider major may already be affected when they upgrade.
+16 resources and 5 datasources are flagged as deprecated in provider schema v8.8.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -59,7 +59,6 @@
 ./resource.ps1 google_apigee_sharedflow_deployment
 ./resource.ps1 google_apigee_space
 ./resource.ps1 google_apihub_runtime_project_attachment
-./resource.ps1 google_artifact_registry_project_config
 ./resource.ps1 google_artifact_registry_rule
 ./resource.ps1 google_biglake_hive_catalog
 ./resource.ps1 google_biglake_hive_catalog_iam_binding
@@ -95,6 +94,10 @@
 ./resource.ps1 google_chronicle_parser
 ./resource.ps1 google_chronicle_parser_extension
 ./resource.ps1 google_chronicle_soar_network
+./resource.ps1 google_cloud_run_v2_instance
+./resource.ps1 google_cloud_run_v2_instance_iam_binding
+./resource.ps1 google_cloud_run_v2_instance_iam_member
+./resource.ps1 google_cloud_run_v2_instance_iam_policy
 ./resource.ps1 google_cloud_support_support_event_subscription
 ./resource.ps1 google_compute_bulk_per_instance_config
 ./resource.ps1 google_compute_firewall_policy_with_rules
@@ -126,7 +129,6 @@
 ./resource.ps1 google_container_azure_client
 ./resource.ps1 google_container_azure_cluster
 ./resource.ps1 google_container_azure_node_pool
-./resource.ps1 google_data_lineage_config
 ./resource.ps1 google_data_loss_prevention_content_policy
 ./resource.ps1 google_dataplex_data_product_data_asset
 ./resource.ps1 google_dataplex_metadata_feed
@@ -141,7 +143,9 @@
 ./resource.ps1 google_dialogflow_sip_trunk
 ./resource.ps1 google_dialogflow_tool
 ./resource.ps1 google_discovery_engine_serving_config
+./resource.ps1 google_dns_outbound_endpoint
 ./resource.ps1 google_document_ai_schema
+./resource.ps1 google_document_ai_schema_version
 ./resource.ps1 google_eventarc_pipeline_iam_binding
 ./resource.ps1 google_eventarc_pipeline_iam_member
 ./resource.ps1 google_eventarc_pipeline_iam_policy
@@ -281,14 +285,10 @@
 ./resource.ps1 google_storage_ftp_user
 ./resource.ps1 google_vector_search_data_object
 ./resource.ps1 google_vector_search_index
-./resource.ps1 google_vertex_ai_evaluation_metric
 ./resource.ps1 google_vertex_ai_online_evaluator
 ./resource.ps1 google_vertex_ai_persistent_resource
-./resource.ps1 google_vertex_ai_rag_corpus
 ./resource.ps1 google_vertex_ai_semantic_governance_policy
-./resource.ps1 google_vertex_ai_semantic_governance_policy_engine
-./resource.ps1 google_vertex_ai_tensorboard_experiment
-./resource.ps1 google_vertex_ai_tensorboard_run
 ./resource.ps1 google_workload_identity_service_agent
+./resource.ps1 google_cloud_run_v2_instance_iam_policy -type data
 ./resource.ps1 google_redis_cluster_acl_policy -type data
 ```

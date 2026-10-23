@@ -171,6 +171,7 @@
         "aws_batch_scheduling_policy",
         "aws_bcmdataexports_export",
         "aws_bedrock_custom_model",
+        "aws_bedrock_enforced_guardrail_configuration",
         "aws_bedrock_evaluation_job",
         "aws_bedrock_foundation_model_agreement",
         "aws_bedrock_guardrail",
@@ -310,8 +311,11 @@
         "aws_cloudwatch_otel_enrichment",
         "aws_cloudwatch_query_definition",
         "aws_cloudwatch_resource_metrics_configuration",
+        "aws_cloudwatchomni_access_grant",
+        "aws_cloudwatchomni_access_profile",
         "aws_cloudwatchomni_domain",
         "aws_cloudwatchomni_space",
+        "aws_cloudwatchomni_view",
         "aws_codeartifact_domain",
         "aws_codeartifact_domain_permissions_policy",
         "aws_codeartifact_repository",
@@ -472,6 +476,7 @@
         "aws_devopsguru_service_integration",
         "aws_directory_service_conditional_forwarder",
         "aws_directory_service_directory",
+        "aws_directory_service_directory_setting",
         "aws_directory_service_ip_route",
         "aws_directory_service_ip_routes_exclusive",
         "aws_directory_service_log_subscription",
@@ -480,6 +485,7 @@
         "aws_directory_service_shared_directory",
         "aws_directory_service_shared_directory_accepter",
         "aws_directory_service_trust",
+        "aws_directoryservicedata_group",
         "aws_directoryservicedata_user",
         "aws_dlm_lifecycle_policy",
         "aws_dms_certificate",
@@ -1380,6 +1386,7 @@
         "aws_sagemaker_hyper_parameter_tuning_job",
         "aws_sagemaker_image",
         "aws_sagemaker_image_version",
+        "aws_sagemaker_inference_component",
         "aws_sagemaker_labeling_job",
         "aws_sagemaker_mlflow_app",
         "aws_sagemaker_mlflow_tracking_server",
@@ -2444,5 +2451,5 @@
         "aws_s3_bucket_object": "",
         "aws_s3_bucket_objects": ""
     },
-    "providerVersion": "6.69.1"
+    "providerVersion": "6.70.0"
 }

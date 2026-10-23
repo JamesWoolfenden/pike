@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 87.09      |  1511       |  1735            |
+| Resources  | 86.74      |  1511       |  1742            |
 | Datasource | 96.79      |   663       |   685             |
 
 ## Deprecated
 
-14 resources and 3 datasources are flagged as deprecated in provider schema v6.69.1. Users pinned to an older provider major may already be affected when they upgrade.
+14 resources and 3 datasources are flagged as deprecated in provider schema v6.70.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -49,6 +49,7 @@
 ./resource.ps1 aws_arczonalshift_autoshift_observer_notification_status
 ./resource.ps1 aws_arczonalshift_zonal_autoshift_configuration
 ./resource.ps1 aws_backup_restore_testing_selection
+./resource.ps1 aws_bedrock_enforced_guardrail_configuration
 ./resource.ps1 aws_bedrock_evaluation_job
 ./resource.ps1 aws_bedrock_foundation_model_agreement
 ./resource.ps1 aws_bedrock_model_invocation_job
@@ -88,8 +89,11 @@
 ./resource.ps1 aws_cloudwatch_log_transformer
 ./resource.ps1 aws_cloudwatch_otel_enrichment
 ./resource.ps1 aws_cloudwatch_resource_metrics_configuration
+./resource.ps1 aws_cloudwatchomni_access_grant
+./resource.ps1 aws_cloudwatchomni_access_profile
 ./resource.ps1 aws_cloudwatchomni_domain
 ./resource.ps1 aws_cloudwatchomni_space
+./resource.ps1 aws_cloudwatchomni_view
 ./resource.ps1 aws_cognito_log_delivery_configuration
 ./resource.ps1 aws_cognito_managed_login_branding
 ./resource.ps1 aws_connect_phone_number_contact_flow_association
@@ -97,8 +101,10 @@
 ./resource.ps1 aws_datazone_policy_grant
 ./resource.ps1 aws_devicefarm_test_grid_project
 ./resource.ps1 aws_devopsagent_agent_space
+./resource.ps1 aws_directory_service_directory_setting
 ./resource.ps1 aws_directory_service_ip_route
 ./resource.ps1 aws_directory_service_ip_routes_exclusive
+./resource.ps1 aws_directoryservicedata_group
 ./resource.ps1 aws_directoryservicedata_user
 ./resource.ps1 aws_dms_data_provider
 ./resource.ps1 aws_dms_instance_profile
@@ -219,6 +225,7 @@
 ./resource.ps1 aws_sagemaker_algorithm
 ./resource.ps1 aws_sagemaker_hub_content_reference
 ./resource.ps1 aws_sagemaker_hyper_parameter_tuning_job
+./resource.ps1 aws_sagemaker_inference_component
 ./resource.ps1 aws_sagemaker_labeling_job
 ./resource.ps1 aws_sagemaker_mlflow_app
 ./resource.ps1 aws_sagemaker_model_card

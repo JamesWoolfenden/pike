@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 96.29      |  1065       |  1106            |
-| Datasource | 98.23      |   389       |   396             |
+| Resources  | 96.21      |  1065       |  1107            |
+| Datasource | 97.98      |   389       |   397             |
 
 ## Deprecated
 
-30 resources and 2 datasources are flagged as deprecated in provider schema v5.10.0. Users pinned to an older provider major may already be affected when they upgrade.
+30 resources and 2 datasources are flagged as deprecated in provider schema v5.11.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -66,6 +66,7 @@
 ./resource.ps1 azurerm_cosmosdb_postgresql_firewall_rule
 ./resource.ps1 azurerm_cosmosdb_postgresql_node_configuration
 ./resource.ps1 azurerm_cosmosdb_postgresql_role
+./resource.ps1 azurerm_data_protection_backup_policy_cosmosdb_account
 ./resource.ps1 azurerm_data_protection_resource_guard
 ./resource.ps1 azurerm_dynatrace_monitor
 ./resource.ps1 azurerm_key_vault_managed_hardware_security_module_key
@@ -100,4 +101,5 @@
 ./resource.ps1 azurerm_netapp_volume_bucket_with_server -type data
 ./resource.ps1 azurerm_oracle_autonomous_database_cross_region_disaster_recovery -type data
 ./resource.ps1 azurerm_playwright_workspace -type data
+./resource.ps1 azurerm_storage_account_static_website -type data
 ```

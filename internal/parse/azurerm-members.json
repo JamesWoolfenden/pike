@@ -309,6 +309,7 @@
         "azurerm_data_protection_backup_instance_mysql_flexible_server",
         "azurerm_data_protection_backup_instance_postgresql_flexible_server",
         "azurerm_data_protection_backup_policy_blob_storage",
+        "azurerm_data_protection_backup_policy_cosmosdb_account",
         "azurerm_data_protection_backup_policy_data_lake_storage",
         "azurerm_data_protection_backup_policy_disk",
         "azurerm_data_protection_backup_policy_kubernetes_cluster",
@@ -1458,6 +1459,7 @@
         "azurerm_storage_account",
         "azurerm_storage_account_blob_container_sas",
         "azurerm_storage_account_sas",
+        "azurerm_storage_account_static_website",
         "azurerm_storage_blob",
         "azurerm_storage_container",
         "azurerm_storage_containers",
@@ -1541,5 +1543,5 @@
         "azurerm_spring_cloud_app": "",
         "azurerm_spring_cloud_service": ""
     },
-    "providerVersion": "5.10.0"
+    "providerVersion": "5.11.0"
 }
