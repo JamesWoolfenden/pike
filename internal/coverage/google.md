@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 82.04      |  1133       |  1381            |
-| Datasource | 99.58      |   470       |   472             |
+| Resources  | 81.54      |  1135       |  1392            |
+| Datasource | 99.37      |   470       |   473             |
 
 ## Deprecated
 
-16 resources and 5 datasources are flagged as deprecated in provider schema v8.8.0. Users pinned to an older provider major may already be affected when they upgrade.
+17 resources and 5 datasources are flagged as deprecated in provider schema v8.9.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -25,6 +25,7 @@
 | google_data_catalog_tag_template_iam_member | — |
 | google_data_catalog_tag_template_iam_policy | — |
 | google_network_services_service_binding | — |
+| google_parallelstore_instance | — |
 | google_pubsub_lite_reservation | — |
 | google_pubsub_lite_subscription | — |
 | google_pubsub_lite_topic | — |
@@ -44,6 +45,9 @@
 ./resource.ps1 google_access_context_manager_egress_policy
 ./resource.ps1 google_access_context_manager_ingress_policy
 ./resource.ps1 google_agent_identity_auth_provider
+./resource.ps1 google_agent_identity_auth_provider_iam_binding
+./resource.ps1 google_agent_identity_auth_provider_iam_member
+./resource.ps1 google_agent_identity_auth_provider_iam_policy
 ./resource.ps1 google_agent_registry_binding
 ./resource.ps1 google_agent_registry_service
 ./resource.ps1 google_agentic_applications_analyst_agent_persona
@@ -75,6 +79,7 @@
 ./resource.ps1 google_bigquery_analytics_hub_query_template
 ./resource.ps1 google_bigquery_data_transfer_data_source_enrollment
 ./resource.ps1 google_bigquery_reservation_group
+./resource.ps1 google_bigtable_memory_layer
 ./resource.ps1 google_ces_app_root_agent_association
 ./resource.ps1 google_chronicle_big_query_export
 ./resource.ps1 google_chronicle_case_close_definition
@@ -276,6 +281,8 @@
 ./resource.ps1 google_oracle_database_goldengate_connection_assignment
 ./resource.ps1 google_oracle_database_goldengate_deployment
 ./resource.ps1 google_redis_cluster_acl_policy
+./resource.ps1 google_resource_manager_boundary
+./resource.ps1 google_resource_manager_boundary_config
 ./resource.ps1 google_resource_manager_capability_config
 ./resource.ps1 google_scc_notification_service_account
 ./resource.ps1 google_scc_v2_organization_source
@@ -285,10 +292,14 @@
 ./resource.ps1 google_storage_ftp_user
 ./resource.ps1 google_vector_search_data_object
 ./resource.ps1 google_vector_search_index
+./resource.ps1 google_vertex_ai_custom_job
 ./resource.ps1 google_vertex_ai_online_evaluator
 ./resource.ps1 google_vertex_ai_persistent_resource
+./resource.ps1 google_vertex_ai_pipeline_job
+./resource.ps1 google_vertex_ai_rag_file
 ./resource.ps1 google_vertex_ai_semantic_governance_policy
 ./resource.ps1 google_workload_identity_service_agent
+./resource.ps1 google_agent_identity_auth_provider_iam_policy -type data
 ./resource.ps1 google_cloud_run_v2_instance_iam_policy -type data
 ./resource.ps1 google_redis_cluster_acl_policy -type data
 ```

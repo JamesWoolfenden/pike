@@ -1418,6 +1418,7 @@
         "azurerm_public_maintenance_configurations",
         "azurerm_recovery_services_vault",
         "azurerm_redis_cache",
+        "azurerm_relay_namespace",
         "azurerm_resource_group",
         "azurerm_resource_group_template_deployment",
         "azurerm_resources",
@@ -1543,5 +1544,5 @@
         "azurerm_spring_cloud_app": "",
         "azurerm_spring_cloud_service": ""
     },
-    "providerVersion": "5.11.0"
+    "providerVersion": "5.12.0"
 }

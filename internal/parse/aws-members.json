@@ -313,7 +313,9 @@
         "aws_cloudwatch_resource_metrics_configuration",
         "aws_cloudwatchomni_access_grant",
         "aws_cloudwatchomni_access_profile",
+        "aws_cloudwatchomni_dashboard",
         "aws_cloudwatchomni_domain",
+        "aws_cloudwatchomni_organization_domain",
         "aws_cloudwatchomni_space",
         "aws_cloudwatchomni_view",
         "aws_codeartifact_domain",
@@ -470,6 +472,7 @@
         "aws_devicefarm_test_grid_project",
         "aws_devicefarm_upload",
         "aws_devopsagent_agent_space",
+        "aws_devopsagent_asset",
         "aws_devopsguru_event_sources_config",
         "aws_devopsguru_notification_channel",
         "aws_devopsguru_resource_collection",
@@ -1083,6 +1086,7 @@
         "aws_oam_sink",
         "aws_oam_sink_policy",
         "aws_observabilityadmin_centralization_rule_for_organization",
+        "aws_observabilityadmin_dataset_integration",
         "aws_observabilityadmin_s3_table_integration",
         "aws_observabilityadmin_telemetry_enrichment",
         "aws_observabilityadmin_telemetry_evaluation",
@@ -2176,6 +2180,7 @@
         "aws_oam_links",
         "aws_oam_sink",
         "aws_oam_sinks",
+        "aws_observabilityadmin_dataset_integration",
         "aws_odb_autonomous_database",
         "aws_odb_cloud_autonomous_vm_cluster",
         "aws_odb_cloud_autonomous_vm_clusters",
@@ -2305,6 +2310,7 @@
         "aws_s3files_file_system",
         "aws_s3files_file_systems",
         "aws_s3files_mount_target",
+        "aws_sagemaker_hub_content",
         "aws_sagemaker_prebuilt_ecr_image",
         "aws_savingsplans_offerings",
         "aws_savingsplans_savings_plan",
@@ -2451,5 +2457,5 @@
         "aws_s3_bucket_object": "",
         "aws_s3_bucket_objects": ""
     },
-    "providerVersion": "6.70.0"
+    "providerVersion": "6.71.0"
 }

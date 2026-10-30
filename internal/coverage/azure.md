@@ -3,11 +3,11 @@
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
 | Resources  | 96.21      |  1065       |  1107            |
-| Datasource | 97.98      |   389       |   397             |
+| Datasource | 97.74      |   389       |   398             |
 
 ## Deprecated
 
-30 resources and 2 datasources are flagged as deprecated in provider schema v5.11.0. Users pinned to an older provider major may already be affected when they upgrade.
+30 resources and 2 datasources are flagged as deprecated in provider schema v5.12.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -101,5 +101,6 @@
 ./resource.ps1 azurerm_netapp_volume_bucket_with_server -type data
 ./resource.ps1 azurerm_oracle_autonomous_database_cross_region_disaster_recovery -type data
 ./resource.ps1 azurerm_playwright_workspace -type data
+./resource.ps1 azurerm_relay_namespace -type data
 ./resource.ps1 azurerm_storage_account_static_website -type data
 ```

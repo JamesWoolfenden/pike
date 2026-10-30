@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 86.74      |  1511       |  1742            |
-| Datasource | 96.79      |   663       |   685             |
+| Resources  | 86.54      |  1511       |  1746            |
+| Datasource | 96.51      |   663       |   687             |
 
 ## Deprecated
 
-14 resources and 3 datasources are flagged as deprecated in provider schema v6.70.0. Users pinned to an older provider major may already be affected when they upgrade.
+14 resources and 3 datasources are flagged as deprecated in provider schema v6.71.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -91,7 +91,9 @@
 ./resource.ps1 aws_cloudwatch_resource_metrics_configuration
 ./resource.ps1 aws_cloudwatchomni_access_grant
 ./resource.ps1 aws_cloudwatchomni_access_profile
+./resource.ps1 aws_cloudwatchomni_dashboard
 ./resource.ps1 aws_cloudwatchomni_domain
+./resource.ps1 aws_cloudwatchomni_organization_domain
 ./resource.ps1 aws_cloudwatchomni_space
 ./resource.ps1 aws_cloudwatchomni_view
 ./resource.ps1 aws_cognito_log_delivery_configuration
@@ -101,6 +103,7 @@
 ./resource.ps1 aws_datazone_policy_grant
 ./resource.ps1 aws_devicefarm_test_grid_project
 ./resource.ps1 aws_devopsagent_agent_space
+./resource.ps1 aws_devopsagent_asset
 ./resource.ps1 aws_directory_service_directory_setting
 ./resource.ps1 aws_directory_service_ip_route
 ./resource.ps1 aws_directory_service_ip_routes_exclusive
@@ -162,6 +165,7 @@
 ./resource.ps1 aws_notifications_organizational_unit_association
 ./resource.ps1 aws_notifications_organizations_access
 ./resource.ps1 aws_observabilityadmin_centralization_rule_for_organization
+./resource.ps1 aws_observabilityadmin_dataset_integration
 ./resource.ps1 aws_observabilityadmin_s3_table_integration
 ./resource.ps1 aws_observabilityadmin_telemetry_enrichment
 ./resource.ps1 aws_observabilityadmin_telemetry_evaluation
@@ -279,6 +283,7 @@
 ./resource.ps1 aws_elasticache_service_update_actions -type data
 ./resource.ps1 aws_elasticache_service_updates -type data
 ./resource.ps1 aws_lambdamicrovms_image_version -type data
+./resource.ps1 aws_observabilityadmin_dataset_integration -type data
 ./resource.ps1 aws_odb_autonomous_database -type data
 ./resource.ps1 aws_odb_iam_role_association -type data
 ./resource.ps1 aws_rds_events -type data
@@ -289,5 +294,6 @@
 ./resource.ps1 aws_route53profiles_profile -type data
 ./resource.ps1 aws_s3_bucket_notification -type data
 ./resource.ps1 aws_s3_buckets -type data
+./resource.ps1 aws_sagemaker_hub_content -type data
 ./resource.ps1 aws_vpclattice_service_network_service_associations -type data
 ```
