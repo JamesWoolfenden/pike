@@ -1,0 +1,95 @@
+
+# safe role — day-to-day operations (create, read, update)
+# Bind this role to the applier SA. Does NOT include high-risk delete permissions.
+resource "aws_iam_policy" "{{.SafeName}}" {
+  name_prefix = "{{.SafeName}}_"
+  path        = "/"
+  description = "Pike safe policy — create/read/update without high-risk deletes"
+
+  policy = jsonencode({{.SafePolicy}})
+}
+
+resource "aws_iam_role" "{{.SafeName}}" {
+  name_prefix = "{{.SafeName}}_"
+  assume_role_policy = jsonencode({
+    "Version" : "2012-10-17",
+    "Statement" : [{
+      "Effect"    : "Allow",
+      "Principal" : { "AWS" : "arn:aws:iam::${data.aws_caller_identity.current.account_id}:root" },
+      "Action"    : "sts:AssumeRole"
+    }]
+  })
+}
+
+resource "aws_iam_role_policy_attachment" "{{.SafeName}}" {
+  role       = aws_iam_role.{{.SafeName}}.name
+  policy_arn = aws_iam_policy.{{.SafeName}}.arn
+}
+
+# delete role — high-risk destruction permissions (break-glass only)
+# Grant this role only to break-glass principals with approval workflows.
+{{if .DeletePolicy}}resource "aws_iam_policy" "{{.DeleteName}}" {
+  name_prefix = "{{.DeleteName}}_"
+  path        = "/"
+  description = "Pike delete policy — high-risk destruction permissions"
+
+  policy = jsonencode({{.DeletePolicy}})
+}
+
+resource "aws_iam_role" "{{.DeleteName}}" {
+  name_prefix = "{{.DeleteName}}_"
+  assume_role_policy = jsonencode({
+    "Version" : "2012-10-17",
+    "Statement" : [{
+      "Effect"    : "Allow",
+      "Principal" : { "AWS" : "arn:aws:iam::${data.aws_caller_identity.current.account_id}:root" },
+      "Action"    : "sts:AssumeRole"
+    }]
+  })
+}
+
+resource "aws_iam_role_policy_attachment" "{{.DeleteName}}" {
+  role       = aws_iam_role.{{.DeleteName}}.name
+  policy_arn = aws_iam_policy.{{.DeleteName}}.arn
+}{{else}}# (no deletion-sensitive permissions detected){{end}}
+
+# plan role — read-only permissions for terraform plan
+# Bind this role to the planner SA on all branches.
+resource "aws_iam_policy" "{{.PlanName}}" {
+  name_prefix = "{{.PlanName}}_"
+  path        = "/"
+  description = "Pike plan policy — read-only permissions for terraform plan"
+
+  policy = jsonencode({{.PlanPolicy}})
+}
+
+resource "aws_iam_role" "{{.PlanName}}" {
+  name_prefix = "{{.PlanName}}_"
+  assume_role_policy = jsonencode({
+    "Version" : "2012-10-17",
+    "Statement" : [{
+      "Effect"    : "Allow",
+      "Principal" : { "AWS" : "arn:aws:iam::${data.aws_caller_identity.current.account_id}:root" },
+      "Action"    : "sts:AssumeRole"
+    }]
+  })
+}
+
+resource "aws_iam_role_policy_attachment" "{{.PlanName}}" {
+  role       = aws_iam_role.{{.PlanName}}.name
+  policy_arn = aws_iam_policy.{{.PlanName}}.arn
+}
+
+data "aws_caller_identity" "current" {}
+
+output "safe_arn" {
+  value = aws_iam_role.{{.SafeName}}.arn
+}
+{{if .DeletePolicy}}
+output "delete_arn" {
+  value = aws_iam_role.{{.DeleteName}}.arn
+}
+{{end}}
+output "plan_arn" {
+  value = aws_iam_role.{{.PlanName}}.arn
+}

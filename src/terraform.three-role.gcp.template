@@ -1,0 +1,37 @@
+
+# safe role — day-to-day operations (create, read, update)
+# Bind this role to the applier SA. Does NOT include high-risk delete permissions.
+resource "google_project_iam_custom_role" "{{.SafeName}}" {
+  project     = "{{.Project}}"
+  role_id     = "{{.SafeRoleID}}"
+  title       = "{{.SafeName}}"
+  description = "Pike safe role — create/read/update without high-risk deletes"
+  permissions = [
+    "{{ .SafePermissions }}"
+  ]
+}
+
+# delete role — high-risk destruction permissions (break-glass only)
+# Grant this role only to break-glass principals with approval workflows,
+# decommissioning pipelines with manual gates, or disaster recovery automation.
+{{if .DeletePermissions}}resource "google_project_iam_custom_role" "{{.DeleteName}}" {
+  project     = "{{.Project}}"
+  role_id     = "{{.DeleteRoleID}}"
+  title       = "{{.DeleteName}}"
+  description = "Pike delete role — high-risk destruction permissions"
+  permissions = [
+    "{{ .DeletePermissions }}"
+  ]
+}{{else}}# (no deletion-sensitive permissions detected){{end}}
+
+# plan role — read-only permissions for terraform plan
+# Bind this role to the planner SA on all branches.
+resource "google_project_iam_custom_role" "{{.PlanName}}" {
+  project     = "{{.Project}}"
+  role_id     = "{{.PlanRoleID}}"
+  title       = "{{.PlanName}}"
+  description = "Pike plan role — read-only permissions for terraform plan"
+  permissions = [
+    "{{ .PlanPermissions }}"
+  ]
+}

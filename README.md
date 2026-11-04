@@ -422,6 +422,39 @@ The `base` set is the planner SA role (safe for `terraform plan` on every branch
 
 With `--write` / `-w`, the split JSON is saved to `.pike/pike.generated_policy.split.json`.
 
+### Deletion-sensitive permissions
+
+Pike also warns when your Terraform manages stateful or expensive resources (GKE/EKS clusters, Cloud SQL/RDS databases, storage buckets, KMS keys) where accidental deletion is costly:
+
+```text
+WARNING: deletion-sensitive permissions detected — granting destroy on stateful/expensive resources.
+
+  GCP:
+    [HIGH] google_container_cluster
+           GKE clusters take 10+ minutes to recreate; workloads experience downtime
+           → deletion_protection = true
+    [HIGH] google_sql_database_instance
+           Cloud SQL instances contain stateful data; point-in-time recovery may be lost
+           → deletion_protection_enabled = true
+```
+
+Use `--sensitive` to generate a three-role split that separates high-risk delete permissions into a break-glass role:
+
+```bash
+pike scan -d ./terraform --sensitive
+```
+
+This outputs three Terraform roles:
+
+- `terraform_pike_safe` — day-to-day operations (create, read, update) without high-risk deletes
+- `terraform_pike_delete` — high-risk destruction permissions only (break-glass, requires approval)
+- `terraform_pike_plan` — read-only permissions for `terraform plan`
+
+Grant the delete role only to:
+- Break-glass principals requiring approval workflows
+- Decommissioning pipelines with manual gates
+- Disaster recovery automation with audit logging
+
 ### Output
 
 If you select the -w flag, pike will write out the role/policy required to build your project into the .pike folder:

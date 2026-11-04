@@ -1,0 +1,53 @@
+
+# safe role — day-to-day operations (create, read, update)
+# Bind this role to the applier SA. Does NOT include high-risk delete permissions.
+resource "azurerm_role_definition" "{{.SafeName}}" {
+  role_definition_id = local.safe_uuid
+  name               = "{{.SafeName}}"
+  scope              = data.azurerm_subscription.primary.id
+
+  permissions {
+    actions     = ["{{ .SafePermissions }}"]
+    not_actions = []
+  }
+
+  assignable_scopes = [data.azurerm_subscription.primary.id]
+}
+
+# delete role — high-risk destruction permissions (break-glass only)
+# Grant this role only to break-glass principals with approval workflows.
+{{if .DeletePermissions}}resource "azurerm_role_definition" "{{.DeleteName}}" {
+  role_definition_id = local.delete_uuid
+  name               = "{{.DeleteName}}"
+  scope              = data.azurerm_subscription.primary.id
+
+  permissions {
+    actions     = ["{{ .DeletePermissions }}"]
+    not_actions = []
+  }
+
+  assignable_scopes = [data.azurerm_subscription.primary.id]
+}{{else}}# (no deletion-sensitive permissions detected){{end}}
+
+# plan role — read-only permissions for terraform plan
+# Bind this role to the planner SA on all branches.
+resource "azurerm_role_definition" "{{.PlanName}}" {
+  role_definition_id = local.plan_uuid
+  name               = "{{.PlanName}}"
+  scope              = data.azurerm_subscription.primary.id
+
+  permissions {
+    actions     = ["{{ .PlanPermissions }}"]
+    not_actions = []
+  }
+
+  assignable_scopes = [data.azurerm_subscription.primary.id]
+}
+
+locals {
+  safe_uuid   = uuid()
+  delete_uuid = uuid()
+  plan_uuid   = uuid()
+}
+
+data "azurerm_subscription" "primary" {}

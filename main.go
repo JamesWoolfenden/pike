@@ -30,6 +30,7 @@ func main() {
 		suppressDeprecated bool
 		strict             bool
 		legacy             bool
+		sensitive          bool
 		repository         string
 		region             string
 		workflow           string
@@ -233,13 +234,18 @@ func main() {
 						Usage:       "Suppress the escalation-class warning — for callers piping policy output",
 						Destination: &noLint,
 					},
+					&cli.BoolFlag{
+						Name:        "sensitive",
+						Usage:       "Output three-role split: safe (no high-risk deletes), delete (break-glass), plan (read-only)",
+						Destination: &sensitive,
+					},
 				},
 				Action: func(*cli.Context) error {
 					if file == "" {
-						return pike.Scan(directory, output, nil, init, write, enableResources, provider, outfile, policyName, suppressDeprecated, legacy, strict, noLint)
+						return pike.Scan(directory, output, nil, init, write, enableResources, provider, outfile, policyName, suppressDeprecated, legacy, strict, noLint, sensitive)
 					}
 
-					return pike.Scan(directory, output, &file, init, write, enableResources, provider, outfile, policyName, suppressDeprecated, legacy, strict, noLint)
+					return pike.Scan(directory, output, &file, init, write, enableResources, provider, outfile, policyName, suppressDeprecated, legacy, strict, noLint, sensitive)
 				},
 			},
 			{

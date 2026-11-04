@@ -27,8 +27,9 @@ var initMutex sync.Map // per-directory mutex
 // escalation-class warning (and the strict check) entirely, for callers
 // piping policy output who don't want lint noise on stderr. strict makes
 // Scan return a non-zero-exit-worthy error when escalation-class
-// permissions are present, mirroring Compare's --strict.
-func Scan(dirName string, outputType string, file *string, init bool, write bool, enableResources bool, provider string, outFile string, policyName string, suppressDeprecated bool, legacy bool, strict bool, noLint bool) error {
+// permissions are present, mirroring Compare's --strict. sensitive outputs
+// a three-role split: safe (no high-risk deletes), delete (break-glass), plan.
+func Scan(dirName string, outputType string, file *string, init bool, write bool, enableResources bool, provider string, outFile string, policyName string, suppressDeprecated bool, legacy bool, strict bool, noLint bool, sensitive bool) error {
 	if dirName == "" && file == nil {
 		return &emptyScanLocationError{}
 	}
@@ -45,10 +46,23 @@ func Scan(dirName string, outputType string, file *string, init bool, write bool
 
 	if !noLint {
 		WarnEscalation(bag)
+		WarnDeletionSensitive(bag)
 
 		if strict && (!findEscalation(bag).empty() || len(findEscalationCombos(bag)) > 0) {
 			return &escalationClassError{findEscalation(bag)}
 		}
+	}
+
+	if sensitive {
+		out, err := MakeDeletionSensitiveOutput(bag, dirName)
+		if err != nil {
+			return &makePolicyError{err}
+		}
+		if write {
+			return writeSplitOutput(out, dirName, outFile)
+		}
+		fmt.Print(out)
+		return nil
 	}
 
 	if strings.ToLower(outputType) == "split" {
