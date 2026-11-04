@@ -1,0 +1,40 @@
+# Decisions about dependencies `picard surface` flags. picard still reports the facts; a
+# recorded keep/defer settles the flag only while the baseline holds, so growth reopens it.
+decisions:
+  - dependency: github.com/go-git/go-git/v5
+    decision: keep
+    date: 2026-11-04
+    reason: >
+      Used for one shallow clone with submodules (src/repository.go). Replacing it with the
+      git binary moves the dependency to the host instead of removing it, hides it from
+      picard (which reads go.mod, not apk or the host), and makes the bare binary need git on
+      PATH. No advisory against it reaches the build (picard scan: not-shipped / none).
+    evidence: >
+      picard surface -d . on 2026-11-04: 14 modules, 80 compiled packages, 16 advisories in
+      3 years (11 events, 7 high or critical), 1 import path used.
+    revisit: >
+      an advisory against go-git with verdict reachable or shipped, the tree growing, or the
+      bare binary no longer being a supported way to run pike.
+    baseline:
+      packages: 14
+      recent_severe: 7
+
+  - dependency: google.golang.org/api
+    decision: defer
+    date: 2026-11-04
+    reason: >
+      Used for two REST calls (iam/v1 Roles.Get, serviceusage/v1 Services.List) plus the
+      compute scope constant. Removing the module means hand-writing both clients with
+      paging, errors and tests, about 80 lines with their own bug risk. Not worth it while
+      no advisory reaches the build. Cheap partial step if wanted: use the scope URL instead
+      of importing compute/v1.
+    evidence: >
+      picard surface -d . on 2026-11-04: 22 modules, 218 compiled packages, 10 advisories in
+      3 years (8 events, 6 high or critical), 5 import paths used. Call sites: src/compare.go,
+      src/gcp_policy.go.
+    revisit: >
+      a reachable advisory in google.golang.org/api or its gRPC/protobuf/otel dependencies, or
+      the tree growing.
+    baseline:
+      packages: 22
+      recent_severe: 6

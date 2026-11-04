@@ -46,7 +46,7 @@ jobs:
 
       # Initializes the CodeQL tools for scanning.
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@0fda7a646fd14a20daf520829ca1ae8847000819 # codeql-bundle-v2.27.3
+        uses: github/codeql-action/init@52cf1852265d99e9bea071b03366fc777a602909 # codeql-bundle-v2.27.4
         with:
           languages: ${{ matrix.language }}
           # If you wish to specify custom queries, you can do so here or in a config file.
@@ -62,7 +62,7 @@ jobs:
       - name: Autobuild
         env:
           GOTOOLCHAIN: auto
-        uses: github/codeql-action/autobuild@0fda7a646fd14a20daf520829ca1ae8847000819 # codeql-bundle-v2.27.3
+        uses: github/codeql-action/autobuild@52cf1852265d99e9bea071b03366fc777a602909 # codeql-bundle-v2.27.4
 
       # ℹ️ Command-line programs to run using the OS shell.
       # 📚 See https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsrun
@@ -75,4 +75,4 @@ jobs:
       #   ./location_of_script_within_repo/buildscript.sh
 
       - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@0fda7a646fd14a20daf520829ca1ae8847000819 # codeql-bundle-v2.27.3
+        uses: github/codeql-action/analyze@52cf1852265d99e9bea071b03366fc777a602909 # codeql-bundle-v2.27.4

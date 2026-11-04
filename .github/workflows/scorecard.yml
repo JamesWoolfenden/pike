@@ -29,6 +29,6 @@ jobs:
           results_format: sarif
           publish_results: true
       - name: Upload to code-scanning
-        uses: github/codeql-action/upload-sarif@486fec2a3ea2626afcd8c7e9208b4f515078dd7e # codeql-bundle-v2.26.4
+        uses: github/codeql-action/upload-sarif@52cf1852265d99e9bea071b03366fc777a602909 # codeql-bundle-v2.27.4
         with:
           sarif_file: results.sarif
