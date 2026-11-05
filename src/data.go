@@ -7,7 +7,6 @@ import (
 	"strings"
 
 	"github.com/hashicorp/hcl/v2"
-	"github.com/hashicorp/hcl/v2/hclparse"
 	"github.com/hashicorp/hcl/v2/hclsyntax"
 	"github.com/jameswoolfenden/pike/internal/provider"
 	"github.com/rs/zerolog/log"
@@ -22,20 +21,37 @@ func (e *fileStringEmptyError) Error() string {
 
 // GetResources retrieves all the resources in a tf file.
 func GetResources(file string, dirName string) ([]ResourceV2, error) {
-	var Resources []ResourceV2
-
 	if file == "" {
-		return Resources, &fileStringEmptyError{}
+		return nil, &fileStringEmptyError{}
 	}
 
 	temp, err := GetResourceBlocks(file)
 	if err != nil {
-		return Resources, err
+		return nil, err
 	}
 
+	return GetResourcesFromBody(temp, dirName)
+}
+
+// GetResourcesFromBody retrieves all the resources from an already parsed tf
+// file body, so callers that hold the parse result avoid re-reading the file.
+func GetResourcesFromBody(temp *hclsyntax.Body, dirName string) ([]ResourceV2, error) {
 	moduleJson, err := GetModuleJson(filepath.Join(dirName, ".terraform", "modules"))
-	if err != nil {
-		return Resources, err
+
+	return extractResources(temp, dirName, moduleJson, err)
+}
+
+// extractResources is the body of GetResourcesFromBody with the modules.json lookup
+// done by the caller, so a scan reads it once rather than once per file.
+func extractResources(temp *hclsyntax.Body, dirName string, moduleJson ModuleJson, moduleErr error) ([]ResourceV2, error) {
+	var Resources []ResourceV2
+
+	if temp == nil {
+		return Resources, nil
+	}
+
+	if moduleErr != nil {
+		return Resources, moduleErr
 	}
 
 	for _, block := range temp.Blocks {
@@ -272,14 +288,7 @@ func GetResourceBlocks(file string) (*hclsyntax.Body, error) {
 		return nil, fmt.Errorf("failed to read file: %w", err)
 	}
 
-	parser := hclparse.NewParser()
-	parsedFile, fileDiags := parser.ParseHCL(src, file)
-
-	if fileDiags != nil {
-		return nil, fileDiags
-	}
-
-	return parsedFile.Body.(*hclsyntax.Body), nil
+	return parseSource(src, file)
 }
 
 // GetLocalModules return resource from a path.
@@ -310,7 +319,12 @@ func GetLocalModules(block *hclsyntax.Block, dirName string, listModulesJson Mod
 	}
 
 	for _, file := range ExtraFiles {
-		resource, err := GetResources(file, dirName)
+		body, err := GetResourceBlocks(file)
+		if err != nil {
+			continue
+		}
+
+		resource, err := extractResources(body, dirName, listModulesJson, nil)
 		if err == nil {
 			Resources = append(Resources, resource...)
 		}

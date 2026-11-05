@@ -126,18 +126,25 @@ func CollectAuditFindings(dir string) ([]Finding, error) {
 }
 
 func collectAuditFindings(dir string) ([]Finding, error) {
-	files, err := GetTF(dir)
+	parsed, err := ParseDir(dir)
 	if err != nil {
 		return nil, err
 	}
+
+	return auditParsed(parsed)
+}
+
+// auditParsed runs the audit rules over files that are already parsed.
+func auditParsed(parsed *ParsedDir) ([]Finding, error) {
+	dir := parsed.Dir
 
 	var findings []Finding
 	var awsAttachments []referenceRef
 	var gcpPolicyDataRefs []referenceRef
 
-	for _, file := range files {
-		body, err := GetResourceBlocks(file)
-		if err != nil {
+	for _, file := range parsed.Files {
+		body, ok := parsed.Bodies[file]
+		if !ok || body == nil {
 			continue
 		}
 		baseDir := filepath.Dir(file)

@@ -300,34 +300,15 @@ func MakePermissionBag(dirName string, file *string, init bool, provider string,
 		return Sorted{}, &emptyIACError{}
 	}
 
-	var resources []ResourceV2
-	var failedFiles []string
-	var criticalErrors []error
+	return parseFiles(dirName, files).PermissionBag(provider, suppressDeprecated)
+}
 
-	var allIAMBindings []IAMBinding
-	awsDefaultTags := false
-
-	for _, tfFile := range files {
-		resource, err := GetResources(tfFile, dirName)
-		if err != nil {
-			failedFiles = append(failedFiles, tfFile)
-			criticalErrors = append(criticalErrors, fmt.Errorf("failed to parse %s: %w", tfFile, err))
-			continue
-		}
-
-		if resource != nil {
-			resources = append(resources, resource...)
-		}
-
-		// Also extract IAM bindings from this file
-		body, err := GetResourceBlocks(tfFile)
-		if err == nil && body != nil {
-			bindings := ExtractIAMBindings(body)
-			allIAMBindings = append(allIAMBindings, bindings...)
-			awsDefaultTags = awsDefaultTags || HasAWSDefaultTags(body)
-		}
-	}
-
+// finishPermissionBag turns the resources extracted from the parsed files into
+// the permission bag, failing fast when too many files could not be parsed.
+func finishPermissionBag(files []string, resources []ResourceV2, allIAMBindings []IAMBinding,
+	awsDefaultTags bool, failedFiles []string, criticalErrors []error,
+	provider string, suppressDeprecated bool,
+) (Sorted, error) {
 	if awsDefaultTags {
 		applyAWSDefaultTags(resources)
 	}
