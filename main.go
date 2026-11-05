@@ -240,7 +240,11 @@ func main() {
 						Destination: &sensitive,
 					},
 				},
-				Action: func(*cli.Context) error {
+				Action: func(c *cli.Context) error {
+					// Support positional argument for directory
+					if c.Args().Len() > 0 {
+						directory = c.Args().First()
+					}
 					if file == "" {
 						return pike.Scan(directory, output, nil, init, write, enableResources, provider, outfile, policyName, suppressDeprecated, legacy, strict, noLint, sensitive)
 					}

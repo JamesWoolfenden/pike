@@ -1,0 +1,22 @@
+[
+  {
+    "apply": [
+      "compute.regionSslPolicies.create",
+      "compute.regionSslPolicies.delete",
+      "compute.regionSslPolicies.get",
+      "compute.regionSslPolicies.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "compute.regionSslPolicies.delete"
+    ],
+    "modify": [
+      "compute.regionSslPolicies.update"
+    ],
+    "plan": [
+      "compute.regionSslPolicies.get"
+    ]
+  }
+]

@@ -1,0 +1,21 @@
+[
+  {
+    "apply": [
+      "monitoring.snoozes.create",
+      "monitoring.snoozes.get",
+      "monitoring.snoozes.update"
+    ],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [
+      "monitoring.snoozes.update"
+    ],
+    "modify": [
+      "monitoring.snoozes.update"
+    ],
+    "plan": [
+      "monitoring.snoozes.get"
+    ]
+  }
+]

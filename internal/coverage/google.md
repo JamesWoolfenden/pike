@@ -2,7 +2,7 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 81.54      |  1135       |  1392            |
+| Resources  | 81.68      |  1137       |  1392            |
 | Datasource | 99.37      |   470       |   473             |
 
 ## Deprecated
@@ -116,7 +116,6 @@
 ./resource.ps1 google_compute_region_network_firewall_policy_rule
 ./resource.ps1 google_compute_region_network_firewall_policy_with_rules
 ./resource.ps1 google_compute_region_resize_request
-./resource.ps1 google_compute_region_ssl_policy
 ./resource.ps1 google_compute_resize_request
 ./resource.ps1 google_compute_router_named_set
 ./resource.ps1 google_compute_zone_vm_extension_policy
@@ -215,7 +214,6 @@
 ./resource.ps1 google_migration_center_report_config
 ./resource.ps1 google_migration_center_settings
 ./resource.ps1 google_migration_center_source
-./resource.ps1 google_monitoring_snooze
 ./resource.ps1 google_network_connectivity_destination
 ./resource.ps1 google_network_connectivity_gateway_advertised_route
 ./resource.ps1 google_network_connectivity_group

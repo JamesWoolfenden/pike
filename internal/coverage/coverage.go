@@ -1,6 +1,7 @@
 package coverage
 
 import (
+	_ "embed"
 	"encoding/json"
 	"fmt"
 	"os"
@@ -10,6 +11,9 @@ import (
 
 	pike "github.com/jameswoolfenden/pike/src"
 )
+
+//go:embed phantom.json
+var phantomJSON []byte
 
 // members mirrors the shape written by parse/parse.go's provider struct.
 // The JSON tag for DataSources MUST stay camelCase "dataSources" — that's
@@ -27,6 +31,32 @@ type members struct {
 	DeprecatedResources map[string]string `json:"deprecatedResources,omitempty"`
 	DeprecatedData      map[string]string `json:"deprecatedData,omitempty"`
 	ProviderVersion     string            `json:"providerVersion,omitempty"`
+}
+
+// phantomResources lists resources/datasources that exist in the provider
+// schema but don't actually work — nested blocks incorrectly exposed as
+// top-level types, beta resources leaked to GA, or simply broken. Exclude
+// them from coverage reports so they don't show up as "missing mappings".
+//
+// Loaded from internal/coverage/phantom.json at init time. To verify if an
+// entry should be removed: search registry.terraform.io for the resource name.
+// If it now has documentation, remove from phantom.json and add a real mapping.
+var phantomResources map[string]bool
+
+func init() {
+	phantomResources = loadPhantomResources()
+}
+
+func loadPhantomResources() map[string]bool {
+	var list []string
+	if err := json.Unmarshal(phantomJSON, &list); err != nil {
+		return map[string]bool{}
+	}
+	m := make(map[string]bool, len(list))
+	for _, name := range list {
+		m[name] = true
+	}
+	return m
 }
 
 //goland:noinspection GoUnusedFunction
@@ -129,6 +159,9 @@ func coverageGcp() error {
 	target := "```shell\n"
 
 	for _, myData := range data.Resources {
+		if phantomResources[myData] {
+			continue
+		}
 		if temp := pike.GCPLookup(myData); temp == nil {
 			missing.Resources = append(missing.Resources, myData)
 			target += "./resource.ps1 " + myData + "\n"
@@ -136,6 +169,9 @@ func coverageGcp() error {
 	}
 
 	for _, myData := range data.DataSources {
+		if phantomResources[myData] {
+			continue
+		}
 		if temp := pike.GCPDataLookup(myData); temp == nil {
 			missing.DataSources = append(missing.DataSources, myData)
 			target += "./resource.ps1 " + myData + " -type data\n"
