@@ -19,7 +19,9 @@ RUN go mod download
 
 # Only the Go sources needed by the package build are copied into the image.
 # Keeping the copy explicit avoids sending the entire build context into a layer.
-COPY *.go ./
+COPY main.go ./
+COPY src ./src
+COPY internal ./internal
 
 # Note: pike.Version is declared as a `const` in src/version.go, so it cannot
 # be overridden at link time. Change it to a `var` if you want build-time
@@ -33,7 +35,7 @@ RUN CGO_ENABLED=0 go build \
 FROM alpine:3.24@sha256:be2656061b536c1883c4034790e21d0a09c5aaaf51968b89368a3c0371ea2c9a
 
 # entrypoint.sh needs bash; terraform/tofu flows often want git + ca-certificates.
-RUN apk add --no-cache bash=5.2.37-r0 ca-certificates=20250619-r0 git=2.49.1-r0 \
+RUN apk add --no-cache bash=5.3.9-r1 ca-certificates=20261020-r0 git=2.54.0-r0 \
     && adduser -D -u 10001 -h /home/pike pike
 
 LABEL org.opencontainers.image.title="pike" \
