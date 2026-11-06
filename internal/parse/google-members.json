@@ -991,6 +991,7 @@
         "google_looker_instance",
         "google_lustre_instance",
         "google_managed_kafka_acl",
+        "google_managed_kafka_acl_binding",
         "google_managed_kafka_cluster",
         "google_managed_kafka_connect_cluster",
         "google_managed_kafka_connector",
@@ -1124,6 +1125,7 @@
         "google_oracle_database_goldengate_connection",
         "google_oracle_database_goldengate_connection_assignment",
         "google_oracle_database_goldengate_deployment",
+        "google_oracle_database_odb_dns_zone",
         "google_oracle_database_odb_network",
         "google_oracle_database_odb_subnet",
         "google_org_policy_custom_constraint",
@@ -1233,6 +1235,7 @@
         "google_secret_manager_regional_secret_iam_binding",
         "google_secret_manager_regional_secret_iam_member",
         "google_secret_manager_regional_secret_iam_policy",
+        "google_secret_manager_regional_secret_managed_rotation",
         "google_secret_manager_regional_secret_version",
         "google_secret_manager_secret",
         "google_secret_manager_secret_iam_binding",
@@ -1367,6 +1370,7 @@
         "google_vertex_ai_tensorboard",
         "google_vertex_ai_tensorboard_experiment",
         "google_vertex_ai_tensorboard_run",
+        "google_vertex_ai_training_pipeline",
         "google_vmwareengine_cluster",
         "google_vmwareengine_datastore",
         "google_vmwareengine_external_access_rule",
@@ -1745,6 +1749,7 @@
         "google_oracle_database_goldengate_deployment_environments",
         "google_oracle_database_goldengate_deployment_types",
         "google_oracle_database_goldengate_deployment_versions",
+        "google_oracle_database_odb_dns_zone",
         "google_oracle_database_odb_network",
         "google_oracle_database_odb_subnet",
         "google_organization",
@@ -1894,5 +1899,5 @@
         "google_data_catalog_tag_template_iam_policy": "",
         "google_kms_secret_ciphertext": ""
     },
-    "providerVersion": "8.9.0"
+    "providerVersion": "8.10.0"
 }

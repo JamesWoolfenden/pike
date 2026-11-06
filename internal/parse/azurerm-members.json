@@ -303,6 +303,7 @@
         "azurerm_data_factory_trigger_schedule",
         "azurerm_data_factory_trigger_tumbling_window",
         "azurerm_data_protection_backup_instance_blob_storage",
+        "azurerm_data_protection_backup_instance_cosmosdb_account",
         "azurerm_data_protection_backup_instance_data_lake_storage",
         "azurerm_data_protection_backup_instance_disk",
         "azurerm_data_protection_backup_instance_kubernetes_cluster",
@@ -1544,5 +1545,5 @@
         "azurerm_spring_cloud_app": "",
         "azurerm_spring_cloud_service": ""
     },
-    "providerVersion": "5.12.0"
+    "providerVersion": "5.13.0"
 }

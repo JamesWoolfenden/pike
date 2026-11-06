@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 86.54      |  1511       |  1746            |
-| Datasource | 96.51      |   663       |   687             |
+| Resources  | 85.95      |  1511       |  1758            |
+| Datasource | 96.23      |   663       |   689             |
 
 ## Deprecated
 
-14 resources and 3 datasources are flagged as deprecated in provider schema v6.71.0. Users pinned to an older provider major may already be affected when they upgrade.
+14 resources and 3 datasources are flagged as deprecated in provider schema v6.72.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -76,6 +76,9 @@
 ./resource.ps1 aws_bedrockagentcore_resource_policy
 ./resource.ps1 aws_bedrockagentcore_token_vault_cmk
 ./resource.ps1 aws_bedrockagentcore_workload_identity
+./resource.ps1 aws_bedrockdataautomation_blueprint
+./resource.ps1 aws_bedrockdataautomation_library
+./resource.ps1 aws_bedrockdataautomation_project
 ./resource.ps1 aws_billing_view
 ./resource.ps1 aws_cloudfront_anycast_ip_list
 ./resource.ps1 aws_cloudfront_connection_function
@@ -116,6 +119,7 @@
 ./resource.ps1 aws_dynamodb_global_secondary_index
 ./resource.ps1 aws_ebs_volume_copy
 ./resource.ps1 aws_ec2_allowed_images_settings
+./resource.ps1 aws_ec2_capacity_manager
 ./resource.ps1 aws_ec2_local_gateway_route_table
 ./resource.ps1 aws_ec2_local_gateway_route_table_virtual_interface_group_association
 ./resource.ps1 aws_ec2_network_insights_access_scope
@@ -144,6 +148,10 @@
 ./resource.ps1 aws_lambdacore_network_connector
 ./resource.ps1 aws_lambdamicrovms_image
 ./resource.ps1 aws_lambdamicrovms_microvm
+./resource.ps1 aws_lambdaweb_function
+./resource.ps1 aws_lambdaweb_function_endpoint
+./resource.ps1 aws_lambdaweb_function_revision
+./resource.ps1 aws_lambdaweb_resource_policy
 ./resource.ps1 aws_mailmanager_archive
 ./resource.ps1 aws_mailmanager_ingress_point
 ./resource.ps1 aws_mailmanager_relay
@@ -160,6 +168,8 @@
 ./resource.ps1 aws_networkflowmonitor_scope
 ./resource.ps1 aws_networkmanager_attachment_routing_policy_label
 ./resource.ps1 aws_networkmanager_prefix_list_association
+./resource.ps1 aws_networksecuritymanager_rule
+./resource.ps1 aws_networksecuritymanager_scope
 ./resource.ps1 aws_notifications_managed_notification_account_contact_association
 ./resource.ps1 aws_notifications_managed_notification_additional_channel_association
 ./resource.ps1 aws_notifications_organizational_unit_association
@@ -197,6 +207,7 @@
 ./resource.ps1 aws_prometheus_anomaly_detector
 ./resource.ps1 aws_prometheus_resource_policy
 ./resource.ps1 aws_prometheus_scraper_logging_configuration
+./resource.ps1 aws_quicksight_account_custom_permission
 ./resource.ps1 aws_quicksight_custom_permissions
 ./resource.ps1 aws_quicksight_ip_restriction
 ./resource.ps1 aws_quicksight_key_registration
@@ -204,6 +215,7 @@
 ./resource.ps1 aws_quicksight_user_custom_permission
 ./resource.ps1 aws_ram_permission
 ./resource.ps1 aws_ram_resource_share_associations_exclusive
+./resource.ps1 aws_rds_tenant_database
 ./resource.ps1 aws_redshift_idc_application
 ./resource.ps1 aws_redshift_namespace_registration
 ./resource.ps1 aws_resiliencehubv2_assertion
@@ -283,6 +295,8 @@
 ./resource.ps1 aws_elasticache_service_update_actions -type data
 ./resource.ps1 aws_elasticache_service_updates -type data
 ./resource.ps1 aws_lambdamicrovms_image_version -type data
+./resource.ps1 aws_lambdaweb_function -type data
+./resource.ps1 aws_lambdaweb_function_endpoint -type data
 ./resource.ps1 aws_observabilityadmin_dataset_integration -type data
 ./resource.ps1 aws_odb_autonomous_database -type data
 ./resource.ps1 aws_odb_iam_role_association -type data

@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 96.21      |  1065       |  1107            |
+| Resources  | 96.12      |  1065       |  1108            |
 | Datasource | 97.74      |   389       |   398             |
 
 ## Deprecated
 
-30 resources and 2 datasources are flagged as deprecated in provider schema v5.12.0. Users pinned to an older provider major may already be affected when they upgrade.
+30 resources and 2 datasources are flagged as deprecated in provider schema v5.13.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -66,6 +66,7 @@
 ./resource.ps1 azurerm_cosmosdb_postgresql_firewall_rule
 ./resource.ps1 azurerm_cosmosdb_postgresql_node_configuration
 ./resource.ps1 azurerm_cosmosdb_postgresql_role
+./resource.ps1 azurerm_data_protection_backup_instance_cosmosdb_account
 ./resource.ps1 azurerm_data_protection_backup_policy_cosmosdb_account
 ./resource.ps1 azurerm_data_protection_resource_guard
 ./resource.ps1 azurerm_dynatrace_monitor
