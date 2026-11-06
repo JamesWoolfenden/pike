@@ -19,9 +19,9 @@ RUN go mod download
 
 # Only the Go sources needed by the package build are copied into the image.
 # Keeping the copy explicit avoids sending the entire build context into a layer.
-COPY *.go ./
-COPY internal ./internal
+COPY main.go ./
 COPY src ./src
+COPY internal ./internal
 
 # Note: pike.Version is declared as a `const` in src/version.go, so it cannot
 # be overridden at link time. Change it to a `var` if you want build-time
