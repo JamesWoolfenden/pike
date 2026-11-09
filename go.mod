@@ -4,17 +4,17 @@ go 1.26.10
 
 require (
 	github.com/JamesWoolfenden/arn v0.2.6
-	github.com/aws/aws-sdk-go-v2 v1.47.5
-	github.com/aws/aws-sdk-go-v2/config v1.33.12
-	github.com/aws/aws-sdk-go-v2/service/iam v1.64.6
-	github.com/aws/aws-sdk-go-v2/service/sts v1.51.6
+	github.com/aws/aws-sdk-go-v2 v1.47.7
+	github.com/aws/aws-sdk-go-v2/config v1.33.15
+	github.com/aws/aws-sdk-go-v2/service/iam v1.64.8
+	github.com/aws/aws-sdk-go-v2/service/sts v1.51.8
 	github.com/go-git/go-git/v5 v5.19.3
 	github.com/google/go-cmp v0.7.0
 	github.com/google/go-github/v74 v74.0.0
 	github.com/hashicorp/go-version v1.9.0
 	github.com/hashicorp/hc-install v0.10.0
 	github.com/hashicorp/hcl/v2 v2.25.0
-	github.com/hashicorp/terraform-exec v0.25.3
+	github.com/hashicorp/terraform-exec v0.26.0
 	github.com/hashicorp/terraform-json v0.29.0
 	github.com/jameswoolfenden/identity v0.0.6
 	github.com/rs/zerolog v1.35.1
@@ -24,13 +24,13 @@ require (
 	golang.org/x/crypto v0.58.0
 	golang.org/x/net v0.62.0
 	golang.org/x/oauth2 v0.37.0
-	google.golang.org/api v0.310.0
+	google.golang.org/api v0.311.0
 	gopkg.in/ini.v1 v1.67.3
 )
 
 require (
 	cloud.google.com/go/auth v0.24.1-0.20261001053825-dbc26066f70a // indirect
-	cloud.google.com/go/auth/oauth2adapt v0.3.0 // indirect
+	cloud.google.com/go/auth/oauth2adapt v0.3.1 // indirect
 	cloud.google.com/go/compute/metadata v0.10.0 // indirect
 	dario.cat/mergo v1.0.2 // indirect
 	github.com/Microsoft/go-winio v0.6.2 // indirect
@@ -38,17 +38,17 @@ require (
 	github.com/agext/levenshtein v1.2.3 // indirect
 	github.com/apparentlymart/go-textseg/v15 v15.0.0 // indirect
 	github.com/apparentlymart/go-textseg/v17 v17.0.1 // indirect
-	github.com/aws/aws-sdk-go-v2/credentials v1.20.12 // indirect
-	github.com/aws/aws-sdk-go-v2/feature/ec2/imds v1.20.5 // indirect
-	github.com/aws/aws-sdk-go-v2/internal/configsources v1.5.8 // indirect
-	github.com/aws/aws-sdk-go-v2/internal/endpoints/v2 v2.8.8 // indirect
-	github.com/aws/aws-sdk-go-v2/internal/v4a v1.5.8 // indirect
-	github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding v1.13.23 // indirect
-	github.com/aws/aws-sdk-go-v2/service/internal/presigned-url v1.14.8 // indirect
-	github.com/aws/aws-sdk-go-v2/service/signin v1.12.0 // indirect
-	github.com/aws/aws-sdk-go-v2/service/sso v1.39.0 // indirect
-	github.com/aws/aws-sdk-go-v2/service/ssooidc v1.44.0 // indirect
-	github.com/aws/smithy-go v1.28.7 // indirect
+	github.com/aws/aws-sdk-go-v2/credentials v1.20.15 // indirect
+	github.com/aws/aws-sdk-go-v2/feature/ec2/imds v1.20.7 // indirect
+	github.com/aws/aws-sdk-go-v2/internal/configsources v1.5.10 // indirect
+	github.com/aws/aws-sdk-go-v2/internal/endpoints/v2 v2.8.10 // indirect
+	github.com/aws/aws-sdk-go-v2/internal/v4a v1.5.10 // indirect
+	github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding v1.13.24 // indirect
+	github.com/aws/aws-sdk-go-v2/service/internal/presigned-url v1.14.10 // indirect
+	github.com/aws/aws-sdk-go-v2/service/signin v1.12.3 // indirect
+	github.com/aws/aws-sdk-go-v2/service/sso v1.39.3 // indirect
+	github.com/aws/aws-sdk-go-v2/service/ssooidc v1.44.3 // indirect
+	github.com/aws/smithy-go v1.28.8 // indirect
 	github.com/cespare/xxhash/v2 v2.3.0 // indirect
 	github.com/cloudflare/circl v1.6.4 // indirect
 	github.com/cpuguy83/go-md2man/v2 v2.0.7 // indirect
@@ -91,8 +91,8 @@ require (
 	golang.org/x/sys v0.49.0 // indirect
 	golang.org/x/text v0.43.0 // indirect
 	golang.org/x/tools v0.51.0 // indirect
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20261019180522-ce908d29299b // indirect
-	google.golang.org/grpc v1.84.0 // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20261026165753-2ffab32bce7e // indirect
+	google.golang.org/grpc v1.85.0 // indirect
 	google.golang.org/protobuf v1.36.12 // indirect
 	gopkg.in/warnings.v0 v0.1.2 // indirect
 )
