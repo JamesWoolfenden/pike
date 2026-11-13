@@ -190,6 +190,7 @@
         "azurerm_cognitive_account_connection_entra_id",
         "azurerm_cognitive_account_customer_managed_key",
         "azurerm_cognitive_account_project",
+        "azurerm_cognitive_account_project_connection_entra_id",
         "azurerm_cognitive_account_rai_blocklist",
         "azurerm_cognitive_account_rai_policy",
         "azurerm_cognitive_deployment",
@@ -1545,5 +1546,5 @@
         "azurerm_spring_cloud_app": "",
         "azurerm_spring_cloud_service": ""
     },
-    "providerVersion": "5.13.0"
+    "providerVersion": "5.14.0"
 }
