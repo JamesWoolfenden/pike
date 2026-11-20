@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 81.15      |  1141       |  1406            |
-| Datasource | 98.95      |   470       |   475             |
+| Resources  | 80.67      |  1148       |  1423            |
+| Datasource | 98.74      |   470       |   476             |
 
 ## Deprecated
 
-17 resources and 5 datasources are flagged as deprecated in provider schema v8.11.0. Users pinned to an older provider major may already be affected when they upgrade.
+17 resources and 5 datasources are flagged as deprecated in provider schema v8.12.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -62,9 +62,11 @@
 ./resource.ps1 google_apigee_sharedflow
 ./resource.ps1 google_apigee_sharedflow_deployment
 ./resource.ps1 google_apigee_space
+./resource.ps1 google_apihub_addon
 ./resource.ps1 google_apihub_runtime_project_attachment
 ./resource.ps1 google_artifact_registry_rule
 ./resource.ps1 google_backup_dr_auto_protection_policy
+./resource.ps1 google_backup_dr_auto_protection_policy_binding
 ./resource.ps1 google_biglake_hive_catalog
 ./resource.ps1 google_biglake_hive_catalog_iam_binding
 ./resource.ps1 google_biglake_hive_catalog_iam_member
@@ -100,6 +102,9 @@
 ./resource.ps1 google_chronicle_parser
 ./resource.ps1 google_chronicle_parser_extension
 ./resource.ps1 google_chronicle_soar_network
+./resource.ps1 google_cloud_identity_inbound_oidc_sso_profile
+./resource.ps1 google_cloud_identity_inbound_saml_sso_profile
+./resource.ps1 google_cloud_identity_policy
 ./resource.ps1 google_cloud_run_v2_instance
 ./resource.ps1 google_cloud_run_v2_instance_iam_binding
 ./resource.ps1 google_cloud_run_v2_instance_iam_member
@@ -144,6 +149,11 @@
 ./resource.ps1 google_dataproc_gdc_spark_application
 ./resource.ps1 google_dataproc_metastore_federation
 ./resource.ps1 google_dataproc_metastore_service
+./resource.ps1 google_design_center_application
+./resource.ps1 google_design_center_space
+./resource.ps1 google_design_center_space_iam_binding
+./resource.ps1 google_design_center_space_iam_member
+./resource.ps1 google_design_center_space_iam_policy
 ./resource.ps1 google_dialogflow_companion_agent
 ./resource.ps1 google_dialogflow_cx_test_case
 ./resource.ps1 google_dialogflow_cx_tool_version
@@ -309,6 +319,7 @@
 ./resource.ps1 google_workload_identity_service_agent
 ./resource.ps1 google_agent_identity_auth_provider_iam_policy -type data
 ./resource.ps1 google_cloud_run_v2_instance_iam_policy -type data
+./resource.ps1 google_design_center_space_iam_policy -type data
 ./resource.ps1 google_oracle_database_odb_dns_zone -type data
 ./resource.ps1 google_redis_cluster_acl_policy -type data
 ./resource.ps1 google_redis_cluster_token_auth_user -type data
