@@ -3,6 +3,7 @@
     "apply": [
       "dataform.repositories.create",
       "dataform.repositories.get",
+      "dataform.repositories.update",
       "dataform.repositories.delete"
     ],
     "attributes": {
@@ -11,9 +12,13 @@
     "destroy": [
       "dataform.repositories.delete"
     ],
-    "modify": [],
+    "modify": [
+      "dataform.repositories.update"
+    ],
     "plan": [
       "dataform.repositories.get"
-    ]
+    ],
+    "verified_date": "2026-11-22",
+    "verified_provider_version": "8.12.0"
   }
 ]
