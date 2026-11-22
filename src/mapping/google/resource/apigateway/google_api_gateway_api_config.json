@@ -4,19 +4,27 @@
       "apigateway.apiconfigs.get",
       "apigateway.apiconfigs.create",
       "apigateway.apiconfigs.delete",
-      "apigateway.apiconfigs.update"
+      "apigateway.apiconfigs.update",
+      "apigateway.operations.get"
     ],
     "attributes": {
+      "google_service_account": [
+        "iam.serviceAccounts.actAs"
+      ],
       "tags": []
     },
     "destroy": [
-      "apigateway.apiconfigs.delete"
+      "apigateway.apiconfigs.delete",
+      "apigateway.operations.get"
     ],
     "modify": [
-      "apigateway.apiconfigs.update"
+      "apigateway.apiconfigs.update",
+      "apigateway.operations.get"
     ],
     "plan": [
       "apigateway.apiconfigs.get"
-    ]
+    ],
+    "verified_date": "2026-11-22",
+    "verified_provider_version": "8.12.0"
   }
 ]

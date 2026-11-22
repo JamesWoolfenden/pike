@@ -7,7 +7,11 @@
     "destroy": [],
     "modify": [],
     "plan": [
-      "cloudkms.cryptoKeyVersions.get"
-    ]
+      "cloudkms.cryptoKeyVersions.get",
+      "cloudkms.cryptoKeyVersions.viewPublicKey",
+      "cloudkms.cryptoKeys.get"
+    ],
+    "verified_date": "2026-11-22",
+    "verified_provider_version": "8.12.0"
   }
 ]

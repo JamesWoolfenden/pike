@@ -1,1 +1,13 @@
-[]
+[
+  {
+    "apply": [],
+    "attributes": {
+      "tags": []
+    },
+    "destroy": [],
+    "modify": [],
+    "plan": [],
+    "verified_date": "2026-11-22",
+    "verified_provider_version": "8.12.0"
+  }
+]
