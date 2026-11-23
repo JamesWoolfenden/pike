@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 85.95      |  1511       |  1758            |
+| Resources  | 85.56      |  1511       |  1766            |
 | Datasource | 96.23      |   663       |   689             |
 
 ## Deprecated
 
-14 resources and 3 datasources are flagged as deprecated in provider schema v6.72.0. Users pinned to an older provider major may already be affected when they upgrade.
+14 resources and 3 datasources are flagged as deprecated in provider schema v6.73.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -52,6 +52,7 @@
 ./resource.ps1 aws_bedrock_enforced_guardrail_configuration
 ./resource.ps1 aws_bedrock_evaluation_job
 ./resource.ps1 aws_bedrock_foundation_model_agreement
+./resource.ps1 aws_bedrock_guardrail_resource_policy
 ./resource.ps1 aws_bedrock_model_invocation_job
 ./resource.ps1 aws_bedrock_use_case_for_model_access
 ./resource.ps1 aws_bedrockagent_flow
@@ -101,6 +102,7 @@
 ./resource.ps1 aws_cloudwatchomni_view
 ./resource.ps1 aws_cognito_log_delivery_configuration
 ./resource.ps1 aws_cognito_managed_login_branding
+./resource.ps1 aws_config_connector
 ./resource.ps1 aws_connect_phone_number_contact_flow_association
 ./resource.ps1 aws_controltower_baseline
 ./resource.ps1 aws_datazone_policy_grant
@@ -116,6 +118,7 @@
 ./resource.ps1 aws_dms_instance_profile
 ./resource.ps1 aws_dms_migration_project
 ./resource.ps1 aws_dsql_cluster_policy
+./resource.ps1 aws_dsql_stream
 ./resource.ps1 aws_dynamodb_global_secondary_index
 ./resource.ps1 aws_ebs_volume_copy
 ./resource.ps1 aws_ec2_allowed_images_settings
@@ -168,8 +171,12 @@
 ./resource.ps1 aws_networkflowmonitor_scope
 ./resource.ps1 aws_networkmanager_attachment_routing_policy_label
 ./resource.ps1 aws_networkmanager_prefix_list_association
+./resource.ps1 aws_networksecuritymanager_admin_account
+./resource.ps1 aws_networksecuritymanager_deployment
+./resource.ps1 aws_networksecuritymanager_policy
 ./resource.ps1 aws_networksecuritymanager_rule
 ./resource.ps1 aws_networksecuritymanager_scope
+./resource.ps1 aws_networksecuritymanager_template
 ./resource.ps1 aws_notifications_managed_notification_account_contact_association
 ./resource.ps1 aws_notifications_managed_notification_additional_channel_association
 ./resource.ps1 aws_notifications_organizational_unit_association
@@ -201,6 +208,7 @@
 ./resource.ps1 aws_pinpointsmsvoicev2_event_destination
 ./resource.ps1 aws_pinpointsmsvoicev2_keyword
 ./resource.ps1 aws_pinpointsmsvoicev2_pool
+./resource.ps1 aws_pinpointsmsvoicev2_protect_configuration
 ./resource.ps1 aws_pinpointsmsvoicev2_resource_policy
 ./resource.ps1 aws_pinpointsmsvoicev2_sender_id
 ./resource.ps1 aws_pricingplanmanager_subscription

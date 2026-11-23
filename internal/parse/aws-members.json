@@ -175,6 +175,7 @@
         "aws_bedrock_evaluation_job",
         "aws_bedrock_foundation_model_agreement",
         "aws_bedrock_guardrail",
+        "aws_bedrock_guardrail_resource_policy",
         "aws_bedrock_guardrail_version",
         "aws_bedrock_inference_profile",
         "aws_bedrock_model_invocation_job",
@@ -377,6 +378,7 @@
         "aws_config_configuration_recorder",
         "aws_config_configuration_recorder_status",
         "aws_config_conformance_pack",
+        "aws_config_connector",
         "aws_config_delivery_channel",
         "aws_config_organization_conformance_pack",
         "aws_config_organization_custom_policy_rule",
@@ -517,6 +519,7 @@
         "aws_dsql_cluster",
         "aws_dsql_cluster_peering",
         "aws_dsql_cluster_policy",
+        "aws_dsql_stream",
         "aws_dx_bgp_peer",
         "aws_dx_connection",
         "aws_dx_connection_association",
@@ -1081,8 +1084,12 @@
         "aws_networkmanager_vpc_attachment",
         "aws_networkmonitor_monitor",
         "aws_networkmonitor_probe",
+        "aws_networksecuritymanager_admin_account",
+        "aws_networksecuritymanager_deployment",
+        "aws_networksecuritymanager_policy",
         "aws_networksecuritymanager_rule",
         "aws_networksecuritymanager_scope",
+        "aws_networksecuritymanager_template",
         "aws_notifications_channel_association",
         "aws_notifications_event_rule",
         "aws_notifications_managed_notification_account_contact_association",
@@ -1162,6 +1169,7 @@
         "aws_pinpointsmsvoicev2_opt_out_list",
         "aws_pinpointsmsvoicev2_phone_number",
         "aws_pinpointsmsvoicev2_pool",
+        "aws_pinpointsmsvoicev2_protect_configuration",
         "aws_pinpointsmsvoicev2_resource_policy",
         "aws_pinpointsmsvoicev2_sender_id",
         "aws_pipes_pipe",
@@ -2471,5 +2479,5 @@
         "aws_s3_bucket_object": "",
         "aws_s3_bucket_objects": ""
     },
-    "providerVersion": "6.72.0"
+    "providerVersion": "6.73.0"
 }

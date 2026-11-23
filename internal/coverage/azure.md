@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 96.12      |  1065       |  1108            |
+| Resources  | 96.03      |  1065       |  1109            |
 | Datasource | 97.74      |   389       |   398             |
 
 ## Deprecated
 
-30 resources and 2 datasources are flagged as deprecated in provider schema v5.13.0. Users pinned to an older provider major may already be affected when they upgrade.
+30 resources and 2 datasources are flagged as deprecated in provider schema v5.14.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -59,6 +59,7 @@
 ./resource.ps1 azurerm_cognitive_account_connection_api_key
 ./resource.ps1 azurerm_cognitive_account_connection_custom_keys
 ./resource.ps1 azurerm_cognitive_account_connection_entra_id
+./resource.ps1 azurerm_cognitive_account_project_connection_entra_id
 ./resource.ps1 azurerm_communication_service_email_domain_association
 ./resource.ps1 azurerm_container_registry_task_schedule_run_now
 ./resource.ps1 azurerm_cosmosdb_postgresql_cluster
