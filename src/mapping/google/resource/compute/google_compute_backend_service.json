@@ -10,6 +10,15 @@
       "compute.httpsHealthChecks.useReadOnly"
     ],
     "attributes": {
+      "backend": [
+        "compute.instanceGroups.use",
+        "compute.networkEndpointGroups.use",
+        "compute.globalNetworkEndpointGroups.use"
+      ],
+      "security_policy": [
+        "compute.securityPolicies.use",
+        "compute.backendServices.setSecurityPolicy"
+      ],
       "tags": []
     },
     "destroy": [
@@ -20,6 +29,8 @@
     ],
     "plan": [
       "compute.backendServices.get"
-    ]
+    ],
+    "verified_date": "2026-11-23",
+    "verified_provider_version": "8.12.0"
   }
 ]

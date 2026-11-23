@@ -1,0 +1,59 @@
+# .holden.yaml — project configuration for holden.
+# Everything below is commented out: holden behaves exactly as it did
+# without this file until you uncomment something. CLI flags always
+# override these values when explicitly set. Full reference:
+# https://github.com/paloaltonetworks/holden/blob/main/docs/configuration.md
+
+# Minimum severity to report (default: all).
+# Values: CRITICAL, HIGH, MEDIUM, LOW, INFO
+# severity: MEDIUM
+
+# Filter findings to a single principle (default: all).
+# principle: ""
+
+# Filter findings to a category (default: all). Values: security, best-practices
+# category: ""
+
+# Descend into local modules during scan (default: false).
+# deep: false
+
+# Default output format (default: human).
+# Values: human, json, agent, sarif, ai-context
+# format: human
+
+# Include suppressed findings in output (default: false).
+# show_suppressed: false
+
+# Include passed checks in output (default: false).
+# show_passed: false
+
+# Policy IDs to exclude project-wide. Use when a policy doesn't apply to
+# this project and annotating every resource with holden:ignore would be
+# noise.
+# skip_policies:
+#   - HLD_TF_024
+
+# Glob patterns for paths to skip entirely (e.g. generated code, fixtures).
+# ignore_paths:
+#   - tests/fixtures/**
+
+# Additional policy directories to load alongside the built-in set.
+# Paths are relative to this file. Adds to the built-in set, never replaces it.
+# policies:
+#   - .holden/policies
+
+# Image registry prefixes trusted enough that a floating tag (e.g. :latest)
+# is downgraded from a HIGH finding to INFO instead of flagged outright.
+# trusted_registries:
+#   - gcr.io/my-company
+
+# LSP only: suppress live IDE diagnostics for modules rooted here. An
+# explicit "holden scan" of the same path is unaffected.
+# disable_diagnostics: false
+
+# Directories to scan with per-root target filters, used when "holden scan"
+# is invoked with no path arguments. Targets: terraform, dockerfile, k8s,
+# compose, gha, gitlab (omit to scan everything found).
+scan_roots:
+  - path: .
+    targets: [gha, dockerfile]
