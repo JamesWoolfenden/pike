@@ -8,7 +8,7 @@ updates:
       day: monday
       time: "06:00"
       timezone: "Europe/London"
-    open-pull-requests-limit: 10
+    open-pull-requests-limit: 0
     commit-message:
       prefix: "deps"
       include: scope
@@ -40,6 +40,7 @@ updates:
       day: monday
       time: "06:00"
       timezone: "Europe/London"
+    open-pull-requests-limit: 0
     commit-message:
       prefix: "ci"
       include: scope
@@ -64,6 +65,7 @@ updates:
       day: monday
       time: "06:00"
       timezone: "Europe/London"
+    open-pull-requests-limit: 0
     commit-message:
       prefix: "docker"
       include: scope
