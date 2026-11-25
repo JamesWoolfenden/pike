@@ -1,6 +1,7 @@
 package pike
 
 import (
+	"errors"
 	"os"
 	"path/filepath"
 	"slices"
@@ -9,21 +10,54 @@ import (
 	"github.com/rs/zerolog/log"
 )
 
+// ensurePikeDir returns the absolute path of <scanPath>/.pike, creating it if
+// needed. A symlinked .pike is refused: the scanned tree may be untrusted and
+// the link would redirect output outside it.
+func ensurePikeDir(scanPath string) (string, error) {
+	newPath, err := filepath.Abs(filepath.Join(scanPath, ".pike"))
+	if err != nil {
+		return "", &absolutePathError{directory: scanPath, err: err}
+	}
+
+	if info, lerr := os.Lstat(newPath); lerr == nil {
+		if info.Mode()&os.ModeSymlink != 0 {
+			return "", &makeDirectoryError{directory: newPath, err: errSymlinkRefused}
+		}
+	} else if !os.IsNotExist(lerr) {
+		return "", &makeDirectoryError{directory: newPath, err: lerr}
+	}
+
+	if err = os.MkdirAll(newPath, 0o750); err != nil {
+		return "", &makeDirectoryError{directory: newPath, err: err}
+	}
+
+	return newPath, nil
+}
+
+// writeFileNoSymlink writes a 0600 file but refuses to write through an
+// existing symlink at the target path.
+func writeFileNoSymlink(name string, data []byte) error {
+	if info, err := os.Lstat(name); err == nil && info.Mode()&os.ModeSymlink != 0 {
+		return errSymlinkRefused
+	}
+
+	return os.WriteFile(name, data, 0o600)
+}
+
+var errSymlinkRefused = errors.New("refusing to write through a symlink")
+
 func writeTwoRoleFile(content string, scanPath string, outFile string) error {
 	if outFile == "" {
 		if scanPath == "" {
 			scanPath = "."
 		}
-		newPath, err := filepath.Abs(filepath.Join(scanPath, ".pike"))
+		newPath, err := ensurePikeDir(scanPath)
 		if err != nil {
-			return &absolutePathError{directory: scanPath, err: err}
-		}
-		if err = os.MkdirAll(newPath, 0o750); err != nil {
-			return &makeDirectoryError{directory: newPath, err: err}
+			return err
 		}
 		outFile = filepath.Join(newPath, "pike.two-role.tf")
 	}
-	if err := os.WriteFile(outFile, []byte(content), 0o600); err != nil {
+	if err := writeFileNoSymlink(outFile, []byte(content)); err != nil {
 		return &writeFileError{file: outFile, err: err}
 	}
 	log.Info().Msgf("wrote %s", outFile)
@@ -35,16 +69,13 @@ func writeSplitOutput(content string, scanPath string, outFile string) error {
 		if scanPath == "" {
 			scanPath = "."
 		}
-		newPath, err := filepath.Abs(filepath.Join(scanPath, ".pike"))
+		newPath, err := ensurePikeDir(scanPath)
 		if err != nil {
-			return &absolutePathError{directory: scanPath, err: err}
-		}
-		if err = os.MkdirAll(newPath, 0o750); err != nil {
-			return &makeDirectoryError{directory: newPath, err: err}
+			return err
 		}
 		outFile = filepath.Join(newPath, "pike.generated_policy.split.json")
 	}
-	if err := os.WriteFile(outFile, []byte(content), 0o600); err != nil {
+	if err := writeFileNoSymlink(outFile, []byte(content)); err != nil {
 		return &writeFileError{file: outFile, err: err}
 	}
 	log.Info().Msgf("wrote %s", outFile)
@@ -59,15 +90,9 @@ func WriteOutput(outPolicy OutputPolicy, outputType string, scanPath string, out
 		if scanPath == "" {
 			scanPath = "."
 		}
-		newPath, err := filepath.Abs(filepath.Join(scanPath, ".pike"))
+		newPath, err := ensurePikeDir(scanPath)
 		if err != nil {
-			return &absolutePathError{directory: scanPath, err: err}
-		}
-
-		err = os.MkdirAll(newPath, 0o750)
-
-		if err != nil {
-			return &makeDirectoryError{directory: newPath, err: err}
+			return err
 		}
 
 		switch strings.ToLower(outputType) {
@@ -76,7 +101,7 @@ func WriteOutput(outPolicy OutputPolicy, outputType string, scanPath string, out
 
 			if outPolicy.AWS.Terraform != "" {
 				roleFile := filepath.Join(newPath, "aws_iam_role.terraform_pike.tf")
-				err = os.WriteFile(roleFile, roleTemplate, 0o600)
+				err = writeFileNoSymlink(roleFile, roleTemplate)
 
 				if err != nil {
 					return &writeFileError{file: roleFile, err: err}
@@ -90,7 +115,7 @@ func WriteOutput(outPolicy OutputPolicy, outputType string, scanPath string, out
 		}
 	}
 
-	err := os.WriteFile(outFile, d1, 0o600)
+	err := writeFileNoSymlink(outFile, d1)
 	if err != nil {
 		return &writeFileError{file: outFile, err: err}
 	}
