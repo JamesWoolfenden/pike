@@ -7,11 +7,13 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"regexp"
 	"runtime"
 	"strings"
 	"text/template"
 
 	"github.com/hashicorp/hcl/v2/hclsyntax"
+	"github.com/zclconf/go-cty/cty"
 	"golang.org/x/oauth2/google"
 	"google.golang.org/api/compute/v1"
 	"gopkg.in/ini.v1"
@@ -21,6 +23,15 @@ const (
 	defaultPolicyName = "terraform_pike"
 	defaultProject    = "pike-477416"
 	defaultRoleID     = "terraform_pike"
+)
+
+var (
+	// gcpProjectIDPattern is GCP's project ID grammar.
+	gcpProjectIDPattern = regexp.MustCompile(`^[a-z][a-z0-9-]{4,28}[a-z0-9]$`)
+	// gcpRoleIDPattern is GCP's custom role ID grammar.
+	gcpRoleIDPattern = regexp.MustCompile(`^[a-zA-Z0-9_.]{3,64}$`)
+	// terraformLabelPattern is a safe Terraform resource label.
+	terraformLabelPattern = regexp.MustCompile(`^[a-zA-Z_][a-zA-Z0-9_-]*$`)
 )
 
 //go:embed terraform.gcppolicy.template
@@ -53,9 +64,23 @@ func GCPPolicy(permissions []string, policyName string, dirName string) (string,
 		roleID = defaultRoleID
 	}
 
+	// these values are written into generated HCL, so reject anything that
+	// could break out of the quoted string.
+	if !terraformLabelPattern.MatchString(PolicyName) {
+		return "", fmt.Errorf("invalid policy name %q", PolicyName)
+	}
+
+	if !gcpRoleIDPattern.MatchString(roleID) {
+		return "", fmt.Errorf("invalid role id %q", roleID)
+	}
+
 	project, err := getCurrentProject(dirName)
 	if err != nil {
 		project = defaultProject
+	}
+
+	if !gcpProjectIDPattern.MatchString(project) {
+		return "", fmt.Errorf("invalid GCP project id %q", project)
 	}
 
 	theDetails := gCPPolicyDetails{
@@ -145,13 +170,13 @@ func getProjectFromTerraformProvider(dirName string) string {
 			}
 
 			if literalExpr, ok := projectAttr.Expr.(*hclsyntax.LiteralValueExpr); ok {
-				return literalExpr.Val.AsString()
+				return validProjectOrEmpty(literalExpr.Val)
 			}
 
 			if templateExpr, ok := projectAttr.Expr.(*hclsyntax.TemplateExpr); ok {
 				if len(templateExpr.Parts) == 1 {
 					if lit, ok := templateExpr.Parts[0].(*hclsyntax.LiteralValueExpr); ok {
-						return lit.Val.AsString()
+						return validProjectOrEmpty(lit.Val)
 					}
 				}
 			}
@@ -159,6 +184,21 @@ func getProjectFromTerraformProvider(dirName string) string {
 	}
 
 	return ""
+}
+
+// validProjectOrEmpty returns the project string only if it is a well-formed
+// GCP project ID; scanned Terraform is untrusted input.
+func validProjectOrEmpty(val cty.Value) string {
+	if !val.IsKnown() || val.IsNull() || val.Type() != cty.String {
+		return ""
+	}
+
+	project := val.AsString()
+	if !gcpProjectIDPattern.MatchString(project) {
+		return ""
+	}
+
+	return project
 }
 
 func getGcloudConfigProject() string {

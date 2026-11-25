@@ -3,6 +3,7 @@ package pike
 import (
 	"encoding/json"
 	"fmt"
+	"io"
 	"os"
 	"path/filepath"
 	"slices"
@@ -270,8 +271,7 @@ func extractAWSPolicy(expr hclsyntax.Expression, baseDir string) (*awsPolicyDoc,
 			if path == "" || strings.Contains(path, "${") {
 				return nil, e.Name + "() path is not a literal"
 			}
-			full := filepath.Join(baseDir, path)
-			data, err := os.ReadFile(full) // #nosec G304 -- path comes from user's own Terraform source
+			data, err := readConfinedFile(baseDir, path)
 			if err != nil {
 				return nil, fmt.Sprintf("cannot read %s: %v", path, err)
 			}
@@ -300,6 +300,60 @@ func extractAWSPolicy(expr hclsyntax.Expression, baseDir string) (*awsPolicyDoc,
 	default:
 		return nil, "policy expression form not supported"
 	}
+}
+
+// maxPolicyFileSize caps how much of a file()/templatefile() target is read.
+const maxPolicyFileSize = 1 << 20
+
+// readConfinedFile reads path (relative to baseDir) only if, after resolving
+// symlinks, it is a regular file inside baseDir. The audited Terraform may be
+// untrusted, so ".." segments and symlinks must not escape the scan directory.
+func readConfinedFile(baseDir string, path string) ([]byte, error) {
+	root, err := filepath.EvalSymlinks(baseDir)
+	if err != nil {
+		return nil, err
+	}
+
+	root, err = filepath.Abs(root)
+	if err != nil {
+		return nil, err
+	}
+
+	full, err := filepath.EvalSymlinks(filepath.Join(root, path))
+	if err != nil {
+		return nil, err
+	}
+
+	rel, err := filepath.Rel(root, full)
+	if err != nil || rel == ".." || strings.HasPrefix(rel, ".."+string(filepath.Separator)) || filepath.IsAbs(rel) {
+		return nil, fmt.Errorf("path escapes the scan directory")
+	}
+
+	file, err := os.Open(full) // #nosec G304 -- confined to baseDir above
+	if err != nil {
+		return nil, err
+	}
+	defer file.Close()
+
+	info, err := file.Stat()
+	if err != nil {
+		return nil, err
+	}
+
+	if !info.Mode().IsRegular() {
+		return nil, fmt.Errorf("not a regular file")
+	}
+
+	data, err := io.ReadAll(io.LimitReader(file, maxPolicyFileSize+1))
+	if err != nil {
+		return nil, err
+	}
+
+	if len(data) > maxPolicyFileSize {
+		return nil, fmt.Errorf("file exceeds %d bytes", maxPolicyFileSize)
+	}
+
+	return data, nil
 }
 
 // populateConditionKeys fills in ConditionKeys for statements parsed
