@@ -44,6 +44,21 @@ func GetResourcesFromBody(temp *hclsyntax.Body, dirName string) ([]ResourceV2, e
 // extractResources is the body of GetResourcesFromBody with the modules.json lookup
 // done by the caller, so a scan reads it once rather than once per file.
 func extractResources(temp *hclsyntax.Body, dirName string, moduleJson ModuleJson, moduleErr error) ([]ResourceV2, error) {
+	visited := map[string]bool{}
+	if abs, err := filepath.Abs(dirName); err == nil {
+		visited[abs] = true
+	}
+
+	return extractResourcesVisited(temp, dirName, moduleJson, moduleErr, visited)
+}
+
+// maxModuleDepth bounds local module nesting during a scan.
+const maxModuleDepth = 32
+
+// extractResourcesVisited carries the set of module directories currently being
+// expanded, so a module that (directly or indirectly) references itself ends
+// the recursion instead of hanging the scan.
+func extractResourcesVisited(temp *hclsyntax.Body, dirName string, moduleJson ModuleJson, moduleErr error, visited map[string]bool) ([]ResourceV2, error) {
 	var Resources []ResourceV2
 
 	if temp == nil {
@@ -63,7 +78,7 @@ func extractResources(temp *hclsyntax.Body, dirName string, moduleJson ModuleJso
 			Resources = DetectBackend(resource, block, Resources)
 			continue
 		case module:
-			LocalResources, err := GetLocalModules(block, dirName, moduleJson)
+			LocalResources, err := getLocalModules(block, dirName, moduleJson, visited)
 			if err == nil {
 				Resources = append(LocalResources, Resources...)
 			} else {
@@ -293,6 +308,10 @@ func GetResourceBlocks(file string) (*hclsyntax.Body, error) {
 
 // GetLocalModules return resource from a path.
 func GetLocalModules(block *hclsyntax.Block, dirName string, listModulesJson ModuleJson) ([]ResourceV2, error) {
+	return getLocalModules(block, dirName, listModulesJson, map[string]bool{})
+}
+
+func getLocalModules(block *hclsyntax.Block, dirName string, listModulesJson ModuleJson, visited map[string]bool) ([]ResourceV2, error) {
 	var Resources []ResourceV2
 
 	modulePath := GetModulePath(block)
@@ -312,6 +331,20 @@ func GetLocalModules(block *hclsyntax.Block, dirName string, listModulesJson Mod
 	}
 	// have the path to the module
 	modulePath = filepath.Join(dirName, modulePath)
+
+	absModule, err := filepath.Abs(modulePath)
+	if err != nil {
+		return nil, err
+	}
+
+	if visited[absModule] || len(visited) >= maxModuleDepth {
+		log.Info().Msgf("skipping recursive or too deeply nested module %s", modulePath)
+
+		return nil, nil
+	}
+
+	visited[absModule] = true
+	defer delete(visited, absModule)
 	// now process these extras
 	ExtraFiles, err := GetTF(modulePath)
 	if err != nil {
@@ -324,7 +357,7 @@ func GetLocalModules(block *hclsyntax.Block, dirName string, listModulesJson Mod
 			continue
 		}
 
-		resource, err := extractResources(body, dirName, listModulesJson, nil)
+		resource, err := extractResourcesVisited(body, dirName, listModulesJson, nil, visited)
 		if err == nil {
 			Resources = append(Resources, resource...)
 		}
@@ -355,6 +388,10 @@ func GetModulePath(block *hclsyntax.Block) string {
 		myPart, ok := part.(*hclsyntax.LiteralValueExpr)
 
 		if !ok {
+			return ""
+		}
+
+		if !myPart.Val.IsKnown() || myPart.Val.IsNull() || myPart.Val.Type() != cty.String {
 			return ""
 		}
 
