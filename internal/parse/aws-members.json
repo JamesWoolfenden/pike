@@ -317,8 +317,10 @@
         "aws_cloudwatch_resource_metrics_configuration",
         "aws_cloudwatchomni_access_grant",
         "aws_cloudwatchomni_access_profile",
+        "aws_cloudwatchomni_alert",
         "aws_cloudwatchomni_dashboard",
         "aws_cloudwatchomni_domain",
+        "aws_cloudwatchomni_organization_access_grant",
         "aws_cloudwatchomni_organization_domain",
         "aws_cloudwatchomni_space",
         "aws_cloudwatchomni_view",
@@ -478,6 +480,7 @@
         "aws_devicefarm_upload",
         "aws_devopsagent_agent_space",
         "aws_devopsagent_asset",
+        "aws_devopsagent_asset_file",
         "aws_devopsguru_event_sources_config",
         "aws_devopsguru_notification_channel",
         "aws_devopsguru_resource_collection",
@@ -1163,6 +1166,7 @@
         "aws_pinpoint_event_stream",
         "aws_pinpoint_gcm_channel",
         "aws_pinpoint_sms_channel",
+        "aws_pinpointsmsvoicev2_account_default_protect_configuration",
         "aws_pinpointsmsvoicev2_configuration_set",
         "aws_pinpointsmsvoicev2_event_destination",
         "aws_pinpointsmsvoicev2_keyword",
@@ -1170,6 +1174,7 @@
         "aws_pinpointsmsvoicev2_phone_number",
         "aws_pinpointsmsvoicev2_pool",
         "aws_pinpointsmsvoicev2_protect_configuration",
+        "aws_pinpointsmsvoicev2_protect_configuration_association",
         "aws_pinpointsmsvoicev2_resource_policy",
         "aws_pinpointsmsvoicev2_sender_id",
         "aws_pipes_pipe",
@@ -2479,5 +2484,5 @@
         "aws_s3_bucket_object": "",
         "aws_s3_bucket_objects": ""
     },
-    "providerVersion": "6.73.0"
+    "providerVersion": "6.74.0"
 }

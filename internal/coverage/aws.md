@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 85.56      |  1511       |  1766            |
+| Resources  | 85.32      |  1511       |  1771            |
 | Datasource | 96.23      |   663       |   689             |
 
 ## Deprecated
 
-14 resources and 3 datasources are flagged as deprecated in provider schema v6.73.0. Users pinned to an older provider major may already be affected when they upgrade.
+14 resources and 3 datasources are flagged as deprecated in provider schema v6.74.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -95,8 +95,10 @@
 ./resource.ps1 aws_cloudwatch_resource_metrics_configuration
 ./resource.ps1 aws_cloudwatchomni_access_grant
 ./resource.ps1 aws_cloudwatchomni_access_profile
+./resource.ps1 aws_cloudwatchomni_alert
 ./resource.ps1 aws_cloudwatchomni_dashboard
 ./resource.ps1 aws_cloudwatchomni_domain
+./resource.ps1 aws_cloudwatchomni_organization_access_grant
 ./resource.ps1 aws_cloudwatchomni_organization_domain
 ./resource.ps1 aws_cloudwatchomni_space
 ./resource.ps1 aws_cloudwatchomni_view
@@ -109,6 +111,7 @@
 ./resource.ps1 aws_devicefarm_test_grid_project
 ./resource.ps1 aws_devopsagent_agent_space
 ./resource.ps1 aws_devopsagent_asset
+./resource.ps1 aws_devopsagent_asset_file
 ./resource.ps1 aws_directory_service_directory_setting
 ./resource.ps1 aws_directory_service_ip_route
 ./resource.ps1 aws_directory_service_ip_routes_exclusive
@@ -205,10 +208,12 @@
 ./resource.ps1 aws_osis_pipeline_endpoint
 ./resource.ps1 aws_osis_resource_policy
 ./resource.ps1 aws_outposts_capacity_task
+./resource.ps1 aws_pinpointsmsvoicev2_account_default_protect_configuration
 ./resource.ps1 aws_pinpointsmsvoicev2_event_destination
 ./resource.ps1 aws_pinpointsmsvoicev2_keyword
 ./resource.ps1 aws_pinpointsmsvoicev2_pool
 ./resource.ps1 aws_pinpointsmsvoicev2_protect_configuration
+./resource.ps1 aws_pinpointsmsvoicev2_protect_configuration_association
 ./resource.ps1 aws_pinpointsmsvoicev2_resource_policy
 ./resource.ps1 aws_pinpointsmsvoicev2_sender_id
 ./resource.ps1 aws_pricingplanmanager_subscription

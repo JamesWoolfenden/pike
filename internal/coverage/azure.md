@@ -2,12 +2,12 @@
 
 | Terraform  | Coverage % | Resources | Total Resources |
 |------------|------------|-----------|-----------------|
-| Resources  | 96.03      |  1065       |  1109            |
+| Resources  | 95.60      |  1065       |  1114            |
 | Datasource | 97.74      |   389       |   398             |
 
 ## Deprecated
 
-30 resources and 2 datasources are flagged as deprecated in provider schema v5.14.0. Users pinned to an older provider major may already be affected when they upgrade.
+30 resources and 2 datasources are flagged as deprecated in provider schema v5.15.0. Users pinned to an older provider major may already be affected when they upgrade.
 
 ### Deprecated Resources
 
@@ -54,6 +54,7 @@
 ```shell
 ./resource.ps1 azurerm_app_service_certificate_binding
 ./resource.ps1 azurerm_cdn_frontdoor_batch_rule_set
+./resource.ps1 azurerm_cdn_frontdoor_edge_action
 ./resource.ps1 azurerm_cognitive_account_connection_account_key
 ./resource.ps1 azurerm_cognitive_account_connection_account_managed_identity
 ./resource.ps1 azurerm_cognitive_account_connection_api_key
@@ -69,8 +70,11 @@
 ./resource.ps1 azurerm_cosmosdb_postgresql_role
 ./resource.ps1 azurerm_data_protection_backup_instance_cosmosdb_account
 ./resource.ps1 azurerm_data_protection_backup_policy_cosmosdb_account
+./resource.ps1 azurerm_data_protection_backup_vault_resource_guard_association
 ./resource.ps1 azurerm_data_protection_resource_guard
 ./resource.ps1 azurerm_dynatrace_monitor
+./resource.ps1 azurerm_horizondb_cluster
+./resource.ps1 azurerm_horizondb_firewall_rule
 ./resource.ps1 azurerm_key_vault_managed_hardware_security_module_key
 ./resource.ps1 azurerm_key_vault_managed_hardware_security_module_key_rotation_policy
 ./resource.ps1 azurerm_key_vault_managed_hardware_security_module_role_assignment
@@ -92,6 +96,7 @@
 ./resource.ps1 azurerm_resource_management_private_link_association
 ./resource.ps1 azurerm_resource_provider_feature_registration
 ./resource.ps1 azurerm_resource_provider_registration
+./resource.ps1 azurerm_search_service_datasource_blob
 ./resource.ps1 azurerm_storage_account_table_properties
 ./resource.ps1 azurerm_storage_discovery_workspace
 ./resource.ps1 azurerm_virtual_desktop_scaling_plan_host_pool_association

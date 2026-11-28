@@ -168,6 +168,7 @@
         "azurerm_cdn_frontdoor_batch_rule_set",
         "azurerm_cdn_frontdoor_custom_domain",
         "azurerm_cdn_frontdoor_custom_domain_association",
+        "azurerm_cdn_frontdoor_edge_action",
         "azurerm_cdn_frontdoor_endpoint",
         "azurerm_cdn_frontdoor_firewall_policy",
         "azurerm_cdn_frontdoor_origin",
@@ -319,6 +320,7 @@
         "azurerm_data_protection_backup_policy_postgresql_flexible_server",
         "azurerm_data_protection_backup_vault",
         "azurerm_data_protection_backup_vault_customer_managed_key",
+        "azurerm_data_protection_backup_vault_resource_guard_association",
         "azurerm_data_protection_resource_guard",
         "azurerm_data_share",
         "azurerm_data_share_account",
@@ -444,6 +446,8 @@
         "azurerm_healthcare_medtech_service_fhir_destination",
         "azurerm_healthcare_service",
         "azurerm_healthcare_workspace",
+        "azurerm_horizondb_cluster",
+        "azurerm_horizondb_firewall_rule",
         "azurerm_image",
         "azurerm_iot_security_device_group",
         "azurerm_iot_security_solution",
@@ -816,6 +820,7 @@
         "azurerm_route_server_bgp_connection",
         "azurerm_route_table",
         "azurerm_search_service",
+        "azurerm_search_service_datasource_blob",
         "azurerm_search_shared_private_link_service",
         "azurerm_security_center_assessment",
         "azurerm_security_center_assessment_policy",
@@ -1546,5 +1551,5 @@
         "azurerm_spring_cloud_app": "",
         "azurerm_spring_cloud_service": ""
     },
-    "providerVersion": "5.14.0"
+    "providerVersion": "5.15.0"
 }
